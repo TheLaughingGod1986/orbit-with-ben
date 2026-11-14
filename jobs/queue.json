@@ -210582,10 +210582,10 @@
       "stage": "edit",
       "after": "J2403",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-14T23:40Z",
+      "eta": "2026-11-15T01:40Z",
       "created_by": "gemini",
       "created_at": "2026-11-08T17:32Z",
       "result": "",
@@ -210624,6 +210624,11 @@
           "at": "2026-11-14T20:20Z",
           "by": "gemini",
           "what": "re-scoped under J2829 Chief ruling: required_capabilities=[audio_input], 5-part review + <=5MB 360p proxy clips"
+        },
+        {
+          "at": "2026-11-14T23:40Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Build 720p UAT watch proxy, verify SHA-256 across NAS and iCloud OWB UAT, write jobs/reviews/J2404/REVIEW.md, and stage for Ben UAT watch",
