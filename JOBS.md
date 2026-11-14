@@ -82,6 +82,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2818 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2798 |  |
 | J2819 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2797 |  |
 | J2821 | mini | open | – | – | chief · Chief: resolve J01 edit orphan-review |  |
+| J2822 | mini | open | – | – | review · Verify condition for J2171 |  |
 
 Recently finished:
 

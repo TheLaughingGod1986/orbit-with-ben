@@ -1,5 +1,5 @@
 {
-  "next_id": 2822,
+  "next_id": 2823,
   "jobs": [
     {
       "id": "J0001",
@@ -188529,6 +188529,11 @@
           "at": "2026-11-14T03:45Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-14T20:30:00Z"
+        },
+        {
+          "at": "2026-11-14T12:16Z",
+          "by": "relay",
+          "what": "condition verification queued: J2822"
         }
       ],
       "remaining_action": "Await accepted revised music and the checked gravity long before assembling its Shorts",
@@ -188547,7 +188552,8 @@
       "hold": {
         "type": "dependency",
         "condition": "J2805 revised music route: J2806 production, J2807 capable ear review, final Chief score acceptance, then J2035 long assembly and all required composite/final gates. J2803 failed; prototype remains undeployed. Shorts narration and picture KEEP locks retained. No Shorts assembly release merely from scoped music or one passing metric.",
-        "check_at": "2026-11-14T20:30:00Z"
+        "check_at": "2026-11-14T13:16:37+00:00",
+        "recheck_task": "J2822"
       }
     },
     {
@@ -249318,6 +249324,37 @@
         "kind": "orphan-review",
         "signature": "5024233ca100308aecdc"
       }
+    },
+    {
+      "id": "J2822",
+      "title": "Verify condition for J2171",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2171: J2805 revised music route: J2806 production, J2807 capable ear review, final Chief score acceptance, then J2035 long assembly and all required composite/final gates. J2803 failed; prototype remains undeployed. Shorts narration and picture KEEP locks retained. No Shorts assembly release merely from scoped music or one passing metric.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2171 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-14T12:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T12:16Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await accepted revised music and the checked gravity long before assembling its Shorts",
+      "kind": "review",
+      "recheck_of": "J2171",
+      "due": "2026-11-14T13:16:37+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
