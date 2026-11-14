@@ -1,5 +1,5 @@
 {
-  "next_id": 2796,
+  "next_id": 2799,
   "jobs": [
     {
       "id": "J0001",
@@ -224223,32 +224223,35 @@
           "at": "2026-11-13T22:10Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-14T00:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-14T00:35Z",
+          "by": "claude",
+          "what": "step 3 of 4 done: Check moved to the Cloudflare host: the Vercel one stays paused"
+        },
+        {
+          "at": "2026-11-14T00:35Z",
+          "by": "claude",
+          "what": "rerouted to codex: Ben, 14 Nov: do all six board fixes. The waiting condition named studio-kanban.vercel.app, which answers 402 and will not come back; the board has been on Cloudflare Pages since 12 Nov (J2714). First say whether pull request 821's code is on main and deployed. Codex has wrangler on the Mini."
         }
       ],
-      "remaining_action": "After Ben clears the Vercel block, redeploy main and check the live pages",
+      "remaining_action": "On studio-kanban.pages.dev: deploy from main, check signed-out now and signed-in once BOARD_GH_TOKEN is set (J2714), then close",
       "due": "2026-11-14T18:00:00Z",
-      "kind": "review",
+      "kind": "studio",
       "plain": "Make the board work when the studio repo is private",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-11T13:01Z",
+        "at": "2026-11-14T00:35Z",
         "by": "claude",
-        "note": "Function, pages, tests and move notes are written and pass, in a real browser too; draft pull request #821 is open. Left"
+        "note": "Check moved to the Cloudflare host: the Vercel one stays paused"
       },
       "hold": {
         "type": "input",
         "condition": "The board site is redeployed from main and its live pages are checked. At 17:53Z on 13 Nov studio-kanban.vercel.app still returned HTTP 402 on every page and Vercel reports the project not live: a billing or usage block on the account, which only Ben can clear. The redeploy cannot start before that. Ben was pushed at 08:50Z.",
         "check_at": "2026-11-14T07:40:00Z"
       },
-      "rerouted_from": {
-        "needs": "cloud",
-        "for": "",
-        "model": "",
-        "status": "open",
-        "by": ""
-      },
-      "for": "gemini",
+      "for": "codex",
       "model": "gemini-argon"
     },
     {
@@ -244036,8 +244039,8 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-11-13T07:49Z",
       "eta": "",
       "created_by": "relay",
@@ -244083,6 +244086,11 @@
           "at": "2026-11-13T11:27Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-11-14T00:35Z",
+          "by": "claude",
+          "what": "cancelled: Ruled on Ben's go of 14 Nov (do all six board fixes): the condition this job verified named the old Vercel host, which is paused and will not come back. J2532 now checks the Cloudflare host and is with Codex, so this check is no longer needed."
         }
       ],
       "remaining_action": "Parking J2767 for holder/elected Chief to record wait --recheck J2767 on J2532 and close J2767",
@@ -246513,6 +246521,101 @@
       "taskKeys": [
         "HOS:009"
       ]
+    },
+    {
+      "id": "J2796",
+      "title": "Board: every script reads the board's address from one setting, the docs name the live address, and the board is kept out of search",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (14 Nov 00:35Z): \"Cool let's do all 6\"**, to six recommendations for the Studio board after a check of the live board at 00:05Z on 14 Nov. This is number 2: every script reads the board's address from one place.\n\n**Found on main.** The board has lived at `https://studio-kanban.pages.dev` since 12 Nov (J2714). The old Vercel address answers 402 and will not come back. These still name it:\n- `scripts/video_tracker.py:1671` reads `/api/checks` from the old address, as text in the code.\n- `scripts/stage_sync.py:28` `CHECKS_URL`, the same.\n- `scripts/board_pair_link.py:28` `SITE`, the same: a pairing link made today points at the dead host.\n- `scripts/kanban_snapshot.py:781` `WATCH_OK` lists only the old address for watch links. The live board's 80 Play links use the new address and the one tested plays, so say what this list gates and correct it.\n- `scripts/board_check.py:50`, `scripts/board_publish.py:65` and `scripts/kanban_snapshot.py:842` fall back to the old address when `BOARD_SITE_URL` is not set. The Mini sets it; a MacBook worker or a cloud session may not.\n- `AGENTS.md:345`, `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md`, `05_Analytics/kanban/README.md` and `07_Content-Ops/README.md` name the old address.\n- The live board data holds 6 mentions of the old address. Find the fields and correct them at their source.\n\n**Do.**\n1. One place gives the board's address: `BOARD_SITE_URL` if set, otherwise the live address. Every script asks it. No script holds the address as text.\n2. A test that fails if a tracked script or doc outside `_archive/` and `jobs/` names the old address.\n3. The docs name the live address.\n4. Keep the board out of search engines. It sends no `X-Robots-Tag`, has no robots meta tag and no `robots.txt` (checked 00:10Z), and the job after this one puts it on a public domain. Add `X-Robots-Tag: noindex, nofollow` for every path to the headers `build.py` writes, deploy once, and show the header on `/` and `/tracker`.\n5. Prove it: `board_check` passes against the live address; the tracker and stage sync reach `/api/checks` on the live address. Until Ben adds the token (J2714) that route answers 500 \"BOARD_GH_TOKEN isn't set\": reaching it is the pass here, and say so.\n\n**Guards.** £0, Cloudflare's free plan only; stop at anything that asks for a card. No secret, account address or email printed. Nothing deleted. The ticks' store and R2 stay as they are. Board open taps stay off. No private-network address or device name in a tracked file or on the thread. One pull request, merged the usual way.\n\n**Done when** no tracked script or current doc names the old address, the test guards it, the header is live, and the pull request is merged.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-14T00:35Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T00:35Z",
+          "by": "claude",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "One address setting for every board script, a guarding test, docs corrected, a noindex header deployed",
+      "due": "2026-11-14T12:00:00Z",
+      "for": "codex",
+      "kind": "studio",
+      "plain": "Point the last scripts and the handbook at the board's new address, so ticks are read again once Ben adds the token",
+      "urgent": 10
+    },
+    {
+      "id": "J2797",
+      "title": "Board: give it its own address, board.oppti.dev, and read its request count on Cloudflare",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (14 Nov 00:35Z): \"Cool let's do all 6\"**, to six recommendations for the Studio board after a check of the live board at 00:05Z on 14 Nov. This is numbers 5 and 6: the board gets an address of its own, and its request count is read.\n\n**Why.** The board changed address once already, and Ben's home-screen icon and phone link belong to an address. A name on a domain Ben owns stays the same whatever hosts the board. `oppti.dev` has had its DNS on the same Cloudflare account since 13 Nov (J2780).\n\n**The name.** `board.oppti.dev`, chosen by the cloud session as the default. If Ben has named a different one on the thread or in this job before you start, use his.\n\n**Do.**\n1. Add the custom domain to the Pages project `studio-kanban`. Cloudflare makes the one DNS record. Touch no other record in the `oppti.dev` zone: the 16 mail and verification records and the two site addresses on the Worker `oppti-dev` stay exactly as they are.\n2. When the certificate is issued, check on the new name: `/`, `/tracker`, `/ai`, `/version.json`, `/api/data?f=ref`, a freshly made Play link (302 to R2) and `X-Robots-Tag: noindex`. Check that `https://oppti.dev/` and `/pricing` still answer 200: the product site must not notice.\n3. Switch the one address setting (the job before this one) to the new name and run a publish. The board data's Play links then use the new name; open one and check it plays. The `pages.dev` address keeps working: do not remove it.\n4. Ben's phone. A phone link and a home-screen icon belong to an address. On the thread, in plain words, tell him how to open the new address, link his phone and add it to his home screen, once the token is in (J2714). No key or code on the thread.\n5. The docs name the new address (through the one setting and the same test).\n6. Request count. Read the Pages Functions requests for `studio-kanban` for each full day since 12 Nov, from the dashboard or the analytics API with the Mini's sign-in: requests a day against the 100,000 the free plan allows, any errors for exceeding CPU, and the busiest routes if shown. If any day is over 50,000, say what is polling.\n\n**Guards.** £0, Cloudflare's free plan only; stop at anything that asks for a card. No secret, account address or email printed. Nothing deleted. The ticks' store and R2 stay as they are. Board open taps stay off. No private-network address or device name in a tracked file or on the thread. One pull request, merged the usual way.\n\n**Done when** the board answers on its own name with the same data, a Play link plays from it, the publish and the every-minute check use it, the product site is unchanged, and the request numbers are in the result.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J2796",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-14T00:35Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T00:35Z",
+          "by": "claude",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Attach board.oppti.dev to the Pages project, switch the address setting, check Play links, read the request count",
+      "due": "2026-11-14T18:00:00Z",
+      "for": "codex",
+      "kind": "studio",
+      "plain": "Give the board a permanent address of its own, and check it is well inside Cloudflare's free allowance",
+      "urgent": 11
+    },
+    {
+      "id": "J2798",
+      "title": "Board: stop an open board downloading its whole 2 MB data file every minute",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (14 Nov 00:35Z): \"Cool let's do all 6\"**, to six recommendations for the Studio board after a check of the live board at 00:05Z on 14 Nov. This is number 4: an open board should not download everything every minute.\n\n**Measured at 00:05Z on 14 Nov.**\n- `/api/data?f=board` is 2,094,862 bytes, 273,062 over the wire with Brotli.\n- The page polls every 60 s (`setInterval(poll, 60 * 1000)`).\n- The data is republished about every minute (`publishedAt` 00:02:26Z, read at 00:03:58Z), so each poll fetches the lot: about 16 MB an hour for one open board.\n- A request with `If-None-Match` set to the ETag it was given came back 200 with the full body, not 304.\n\n**Aim.** An open board, with no change to the films, costs under 20 KB a minute.\n\n**Suggested design. Change it with the reason in your report.**\n1. Split what changes every minute (queue, machines, forecast, credits, the 24-hour progress, workflow counts) from what changes rarely (the film cards, briefs, tracker, channels). The data already carries `dataChangedAt` beside `publishedAt`: the page fetches the large part only when it has changed.\n2. `/api/data` answers 304 when the client's ETag matches, for both parts.\n3. No extra GitHub read per viewer: stay within the copies the function already holds for 30 to 60 s.\n4. The signed-in path of J2532 keeps working unchanged.\n5. The function still hands files on without parsing them (10 ms of CPU a request on the free plan).\n\n**Measure, before and after, in a real browser on the Mini.** Bytes transferred over ten minutes of an open board on `/` and on `/tracker`, once with no film change and once with one; and the time to first render on a phone profile. Put the numbers in the result.\n\n**Tests.** The two parts make the same board the single file made (same cards, same counts); the 304 path; a page loaded before the change still works with the new data, or reloads itself through `version.json`.\n\n**Guards.** £0, Cloudflare's free plan only; stop at anything that asks for a card. No secret, account address or email printed. Nothing deleted. The ticks' store and R2 stay as they are. Board open taps stay off. No private-network address or device name in a tracked file or on the thread. One pull request, merged the usual way.\n\n**Done when** the measured cost of an idle open board is under 20 KB a minute, the board shows the same cards, and the pull request is merged and deployed.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J2796",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-14T00:35Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T00:35Z",
+          "by": "claude",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Split the fast-changing data from the film data, answer 304, measure bytes a minute before and after",
+      "due": "2026-11-15T18:00:00Z",
+      "for": "codex",
+      "kind": "studio",
+      "plain": "Make the board use far less data on Ben's phone, by fetching only what changed"
     }
   ],
   "focus": [
