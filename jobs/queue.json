@@ -250523,13 +250523,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-11-14T15:51Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-14T15:33Z",
-      "result": "Waiting for: Link is already in iCloud Drive, not Notes: file 'Link this phone to the board.html' at the iCloud Drive root (not a shared folder). Thread 6880145196 tells Ben where. Delete only that file and say so on the thread once issue 219 pairs contains the nonce from the private pair-link file, or once the time is at or after 2026-11-15T16:00Z. If neither is true, leave the file and set the next check. Do not print the link. Do not delete anything else.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-14T15:33Z",
@@ -250570,6 +250570,11 @@
           "at": "2026-11-14T18:31Z",
           "by": "relay",
           "what": "condition verification queued: J2851"
+        },
+        {
+          "at": "2026-11-14T20:39Z",
+          "by": "gemini",
+          "what": "reopened: Condition satisfied (J2851, jobs/reviews/J2851/REVIEW.md, commit fc9d8134fe): issue #219 pairs[0] (at 2026-11-14T19:13:08.165Z, e=1795269633) matches the nonce in ~/.config/studio-kanban/ben_pair_link, and Ben's linked iPhone posted [Ben] OK J2222 v03 on #478 (#6882810716 at 19:13:16Z). Reopened for step 4/4 cleanup: delete only '~/Library/Mobile Documents/com~apple~CloudDocs/Link this phone to the board.html' and say so on #478."
         }
       ],
       "remaining_action": "Remove the iCloud phone-link file after Ben uses it or 24 hours have passed",
@@ -250577,20 +250582,7 @@
       "for": "cursor",
       "kind": "studio",
       "plain": "Get the phone-linking link to Ben's iPhone privately, so he can approve the Journey film",
-      "urgent": 10,
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-14T15:54Z",
-        "by": "cursor",
-        "note": "Thread 6880145196 says the file is in iCloud Drive. Cleanup waits on use or 24h."
-      },
-      "hold": {
-        "type": "date",
-        "condition": "Link is already in iCloud Drive, not Notes: file 'Link this phone to the board.html' at the iCloud Drive root (not a shared folder). Thread 6880145196 tells Ben where. Delete only that file and say so on the thread once issue 219 pairs contains the nonce from the private pair-link file, or once the time is at or after 2026-11-15T16:00Z. If neither is true, leave the file and set the next check. Do not print the link. Do not delete anything else.",
-        "check_at": "2026-11-14T19:31:20+00:00",
-        "recheck_task": "J2851"
-      }
+      "urgent": 10
     },
     {
       "id": "J2832",
