@@ -44,10 +44,14 @@
       "note": "08_Thumbnail/j01_v01/thumb_{A,B,C}*.jpg ready for Ben UAT watch (J2222)"
     },
     "upload": {
-      "state": "review",
-      "ref": "6c9b001b0e"
+      "state": "todo",
+      "ref": "6c9b001b0e",
+      "ruling": "PASS (J2826 Chief PASS on 11_Upload-Package, 988-cue en-GB SRT, 51s vertical trailer f3565f50e2, and youtube:package --dry-run; Private YouTube upload waits on Ben UAT watch J2222 awaits_ben)",
+      "package_manifest": "11_Upload-Package/PACKAGE_MANIFEST.json",
+      "trailer_sha256": "f3565f50e25061a28bc84e5e40a2a4a03748f024b91f6897e9e80a365aab749e",
+      "note": "Release upload package 11_Upload-Package/ built in J2823 & Chief-reviewed PASS in J2826 (youtube:package --dry-run ok:true, listing_package complete:true); Private YouTube upload waits for Ben's UAT watch on J2222 (awaits_ben)"
     }
   },
   "claims": [],
-  "next": "J01_Journey_v03.mp4 and 3 thumbnails in Ready for OK (J2222 awaits_ben); build 11_Upload-Package + dry-run and hold Private upload for Ben UAT watch OK"
+  "next": "J01_Journey_v03.mp4 and 3 thumbnails in Ready for OK (J2222 awaits_ben); 11_Upload-Package & dry-run PASS (J2823/J2826); Private YouTube upload waits for Ben UAT watch OK"
 }
