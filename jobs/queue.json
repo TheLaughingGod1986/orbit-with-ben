@@ -248664,9 +248664,14 @@
           "at": "2026-11-14T09:15Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Step 1/4: Verified Titan ffYKoNVPoqg has 100 settled YTA retention rows through 2026-11-12 (71 YTA/98 public views, <100 descriptive); located all 10 cut metas."
+        },
+        {
+          "at": "2026-11-14T09:23Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2/4: Retrieved sanitized 100-row YTA curves (10 Shorts, 2026-11-10 & 2026-11-12) + 28d search rows + cut SHA-256s."
         }
       ],
-      "remaining_action": "Retrieve and save sanitized YTA retention and search rows and cut metadata hashes for J2741/J2816",
+      "remaining_action": "Write jobs/reviews/J2741 and jobs/reviews/J2816 evidence reports in clean worktree and commit to main",
       "kind": "review",
       "recheck_of": "J2741",
       "mini_only": true,
@@ -248682,11 +248687,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-14T09:15Z",
+        "at": "2026-11-14T09:23Z",
         "by": "gemini",
-        "note": "Step 1/4: Verified Titan ffYKoNVPoqg has 100 settled YTA retention rows through 2026-11-12 (71 YTA/98 public views, <100"
+        "note": "Step 2/4: Retrieved sanitized 100-row YTA curves (10 Shorts, 2026-11-10 & 2026-11-12) + 28d search rows + cut SHA-256s."
       },
       "taskKeys": [
         "OWB:021",
