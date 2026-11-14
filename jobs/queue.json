@@ -248118,9 +248118,14 @@
           "at": "2026-11-14T06:25Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T06:25Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2812; reading J1130 history and J2768 evidence before Studio read-only check"
         }
       ],
-      "remaining_action": "Verify readiness: Read the Periodic Table thumbnail test finish time in Studio; verify the next London day before the approved title-only test",
+      "remaining_action": "Read J1130/J2768 evidence and check HOS Studio test T023 on AL_-qlWko_g for actual finish timestamp",
       "kind": "review",
       "recheck_of": "J1130",
       "due": "2026-11-14T06:15:31+00:00",
@@ -248139,9 +248144,11 @@
         "of": 3,
         "at": "2026-11-14T06:25Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2812; reading J1130 history and J2768 evidence before Studio read-only check"
+      },
+      "taskKeys": [
+        "HOS:002"
+      ]
     },
     {
       "id": "J2813",
