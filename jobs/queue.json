@@ -1,5 +1,5 @@
 {
-  "next_id": 2799,
+  "next_id": 2800,
   "jobs": [
     {
       "id": "J0001",
@@ -192526,6 +192526,11 @@
           "at": "2026-11-14T01:09Z",
           "by": "cursor",
           "what": "blocked: parked for Chief: picture_qa PASS on J01_Journey_v02. The 53:37 Betelgeuse sample was mean 23.58 and is now 44.55. v01 is unchanged. music_gate FAIL reused 0.948 against the owned 026 nearest-star bed, and length 180s against the 3502s cut. Option A uses that stem on purpose. Only reused can be waived, and only by Chief. Length cannot be waived in the gate. The linking effects stem is 27 LU under the voice. The linking bed is not ducked, so the bed check fails while the voice speaks. Do not re-stitch. No spend."
+        },
+        {
+          "at": "2026-11-14T01:18Z",
+          "by": "relay",
+          "what": "condition verification queued: J2799"
         }
       ],
       "remaining_action": "Chief ruling on the music gate. The picture check has passed.",
@@ -192536,6 +192541,12 @@
         "at": "2026-11-14T01:09Z",
         "by": "cursor",
         "note": "picture_qa PASS on v02. The 53:37 sample is mean 44.55. Music gate fails reused and length."
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-14T02:18:50+00:00",
+        "recheck_task": "J2799"
       }
     },
     {
@@ -246688,6 +246699,37 @@
       "for": "codex",
       "kind": "studio",
       "plain": "Make the board use far less data on Ben's phone, by fetching only what changed"
+    },
+    {
+      "id": "J2799",
+      "title": "Verify condition for J2221",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2221: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2221 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-14T01:18Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T01:18Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Chief ruling on the music gate. The picture check has passed.",
+      "kind": "review",
+      "recheck_of": "J2221",
+      "due": "2026-11-14T02:18:50+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
