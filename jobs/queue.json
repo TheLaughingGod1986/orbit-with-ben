@@ -247246,13 +247246,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-14T03:22Z",
-      "eta": "2026-11-14T05:22Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-14T03:20Z",
-      "result": "",
+      "result": "parked for Chief: J2804 verification complete (2026-11-14T03:32Z). (1) Mini normal system resolver: socket.getaddrinfo('board.oppti.dev', 443) still fails with gaierror(8) because the local upstream recursive resolver still caches pre-J2780 NS delegation (ns1/ns2.vercel-dns.com, remaining TTL ~42,560 s expiring ~2026-11-14T15:14Z), so env -u BOARD_SITE_URL python3 scripts/board_check.py --no-post still returns ok=false (site=0, 'live site https://board.oppti.dev/ answers no response, not 200'). (2) Public resolvers & Cloudflare TLS: 1.1.1.1 and 8.8.8.8 resolve board.oppti.dev to 104.21.41.71 / 172.67.189.201; via 104.21.41.71 with TLS verification, /, /tracker, /ai, /version.json, and 3 consecutive repeat reads of /api/data?f=ref and /api/data?f=board all return HTTP/2 200 with x-robots-tag: noindex, nofollow, and the c3c7e343 custom-domain Play link returns HTTP/2 302 to R2. (3) Publisher env note: launchctl getenv BOARD_SITE_URL on the Mini still holds https://studio-kanban.pages.dev, causing launchd/worker board_publish runs (e.g. c2b5172ca5) to rewrite the 80 Play links in origin/board-data back to studio-kanban.pages.dev; unset it with launchctl unsetenv BOARD_SITE_URL once system DNS resolves. Because jobs.py set_wait --recheck and do_done require chief_relay.elected_for (currently Codex), elected Chief should record jobs.py wait J2797 --recheck J2804 --check-at 2026-11-14T09:32:00Z and close J2804.",
       "history": [
         {
           "at": "2026-11-14T03:20Z",
@@ -247288,6 +247288,11 @@
           "at": "2026-11-14T03:32Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Verification complete: Mini normal system resolver still fails (cached NS TTL ~42560s -> ~15:14Z; board_check ok=false); public DNS/TLS 200 and 3x repeat /api/data?f=ref & f=board verified; parking for elected Chief (Codex) as jobs.py requires elected Chief for wait --recheck and done"
+        },
+        {
+          "at": "2026-11-14T03:32Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J2804 verification complete (2026-11-14T03:32Z). (1) Mini normal system resolver: socket.getaddrinfo('board.oppti.dev', 443) still fails with gaierror(8) because the local upstream recursive resolver still caches pre-J2780 NS delegation (ns1/ns2.vercel-dns.com, remaining TTL ~42,560 s expiring ~2026-11-14T15:14Z), so env -u BOARD_SITE_URL python3 scripts/board_check.py --no-post still returns ok=false (site=0, 'live site https://board.oppti.dev/ answers no response, not 200'). (2) Public resolvers & Cloudflare TLS: 1.1.1.1 and 8.8.8.8 resolve board.oppti.dev to 104.21.41.71 / 172.67.189.201; via 104.21.41.71 with TLS verification, /, /tracker, /ai, /version.json, and 3 consecutive repeat reads of /api/data?f=ref and /api/data?f=board all return HTTP/2 200 with x-robots-tag: noindex, nofollow, and the c3c7e343 custom-domain Play link returns HTTP/2 302 to R2. (3) Publisher env note: launchctl getenv BOARD_SITE_URL on the Mini still holds https://studio-kanban.pages.dev, causing launchd/worker board_publish runs (e.g. c2b5172ca5) to rewrite the 80 Play links in origin/board-data back to studio-kanban.pages.dev; unset it with launchctl unsetenv BOARD_SITE_URL once system DNS resolves. Because jobs.py set_wait --recheck and do_done require chief_relay.elected_for (currently Codex), elected Chief should record jobs.py wait J2797 --recheck J2804 --check-at 2026-11-14T09:32:00Z and close J2804."
         }
       ],
       "remaining_action": "Elected Chief (Codex) to record wait J2797 --recheck J2804 and close J2804",
