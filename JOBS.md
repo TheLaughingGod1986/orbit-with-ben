@@ -88,7 +88,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2832 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2805 |  |
 | J2833 | any | blocked | claudecode | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J2838 | mini | claimed | macbook-2 | 2026-11-14T18:41Z | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
-| J2839 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J2839 | mini | claimed | macbook | 2026-11-14T18:41Z | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J2840 | mini | open | – | – | for codex · review · Packaging panel (codex): OWB weekly audit 3 new thumbnail Bs + separate Title Bs (m09jUdwC5hk ALL STARS FADE, Mo93x0fxB1Q ZERO SIGNALS, ziKBPJ6FY0U 300 MILLION YEARS) |  |
 | J2841 | mini | open | – | – | for gemini · review · Packaging panel (gemini): OWB weekly audit 3 new thumbnail Bs + separate Title Bs (m09jUdwC5hk ALL STARS FADE, Mo93x0fxB1Q ZERO SIGNALS, ziKBPJ6FY0U 300 MILLION YEARS) |  |
 | J2843 | mini | open (after J2842) | – | – | for gemini · review · `gemini-argon` · Packaging panel decision: OWB weekly audit 3 new thumbnail Bs + separate Title Bs (m09jUdwC5hk ALL STARS FADE, Mo93x0fxB1Q ZERO SIGNALS, ziKBPJ6FY0U 300 MILLION YEARS) |  |
