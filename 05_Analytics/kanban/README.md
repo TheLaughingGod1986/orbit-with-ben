@@ -1,6 +1,6 @@
 # Studio Kanban
 
-**Videos tab (live, Ben 7 Nov 2026):** https://studio-kanban.pages.dev → **Videos** shows nine exclusive swim lanes:
+**Videos tab (live, Ben 7 Nov 2026):** https://board.oppti.dev → **Videos** shows nine exclusive swim lanes:
 
 **Backlog → To do → In progress → QA → UAT → Passed → Scheduled → Live → Post-live.**
 
@@ -51,11 +51,11 @@ npx wrangler pages deploy dist --project-name studio-kanban --branch main
 
 Check `/`, `/tracker`, `/ai`, `/version.json`, and the `X-Robots-Tag: noindex, nofollow` header on `/` and `/tracker`. `build.py` writes Pages headers and redirects from `vercel.json`, plus the API worker. Keep open taps off. No billing changes or card entry.
 
-Every client reads `BOARD_SITE_URL`, falling back to `studio/board_site.json`. Python uses `scripts/board_site.py`; the Node watch uploader reads the same JSON. `WATCH_OK` only validates explicitly supplied watch links; generated Play links use the same configured board address.
+The stable public address is https://board.oppti.dev; the original https://studio-kanban.pages.dev address remains available. Every client reads `BOARD_SITE_URL`, falling back to `studio/board_site.json`. Python uses `scripts/board_site.py`; the Node watch uploader reads the same JSON. `WATCH_OK` only validates explicitly supplied watch links; generated Play links use the same configured board address.
 
 ## Channel Tracker web app (Ben, 10 Oct 2026)
 
-https://studio-kanban.pages.dev/tracker is the Channel Tracker (`05_Analytics/dashboard/template.html`, the page behind
+https://board.oppti.dev/tracker is the Channel Tracker (`05_Analytics/dashboard/template.html`, the page behind
 `dashboard.html`) as a phone web app on the same site: "Add to Home Screen" opens it full screen (`board_site/tracker.webmanifest`,
 icons in `board_site/static/`). The board header links to it and it links back.
 
