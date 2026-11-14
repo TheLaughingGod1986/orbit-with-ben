@@ -47,7 +47,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2656 | cloud | open | – | – | for claude · studio · Rules: write Ben's answer on replacing a finished Test & Compare into the Never list (AGENTS.md) |  |
 | J2658 | mini | claimed | gemini | 2026-11-14T23:05Z | for gemini · qa · Supermoon v04: Gemini listens to ending and watches tail |  |
 | J2662 | mini | blocked | macbook-2 | – | 008 edit · assembly · HOS 008 Short C: re-cut hos_008_short_C_v04.mp4 for J2485 fix list (1.5 s surprise word, caption overlaps, S06/S07 offsets, S01/S02 crops, GBP0) | J2485 |
-| J2667 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2478 |  |
 | J2686 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2449 |  |
 | J2687 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2662 |  |
 | J2702 | mini | blocked | codex | – | 013 thumbs · studio · Run approved Moon, neutron star and alien worlds thumbnail comparisons after fresh Studio checks | 178d82bce3686a4ce48c89ced0e72334f901d6e3 |
