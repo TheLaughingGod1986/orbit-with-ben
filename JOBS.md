@@ -81,7 +81,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2816 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2741 |  |
 | J2818 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2798 |  |
 | J2819 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2797 |  |
-| J2821 | mini | claimed | gemini | 2026-11-14T14:33Z | for gemini · chief · `gemini-argon` · Chief: resolve J01 edit orphan-review |  |
+| J2821 | mini | open | – | – | for gemini · chief · `gemini-argon` · Chief: resolve J01 edit orphan-review |  |
 | J2822 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J2823 | mini | open | – | – | J01 upload · listing · J01 Journey Film 01: build 11_Upload-Package (PACKAGE_MANIFEST, 7 chapters, credits, en-GB SRT, trailer) + dry-run | 2ff9f5ccd5 |
 

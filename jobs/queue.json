@@ -249336,10 +249336,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-14T12:33Z",
-      "eta": "2026-11-14T14:33Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-14T11:08Z",
       "result": "",
@@ -249368,6 +249368,11 @@
           "at": "2026-11-14T12:46Z",
           "by": "gemini",
           "what": "step 1 of 3 done: OWB:J01: verified J01_Journey_v03.mp4 (SHA-256 bb93ea1343acde3f9f2f438e04b471e4c13044892b6b0861453839e14c71bb32), 3 thumbnails, j01_v03_pack, and R2 watch stream; identified why J01 edit was flagged orphan-review after J2222 closed"
+        },
+        {
+          "at": "2026-11-14T12:52Z",
+          "by": "gemini",
+          "what": "released: Handback to Claude (elected Chief returned at 12:50:00Z): J01 status.json reconciled and J2821 review committed at 2ff9f5ccd5 (workflow_handoffs count=0), iCloud UAT copy synced, and J01 stage:upload package job queued; ready for Claude Chief close"
         }
       ],
       "remaining_action": "Write Chief review closeout jobs/reviews/J2821/REVIEW.md and reconcile J01 status.json in clean worktree",
