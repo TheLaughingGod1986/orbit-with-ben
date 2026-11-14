@@ -89,7 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2833 | any | blocked | claudecode | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J2834 | mini | claimed | macbook-2 | 2026-11-14T19:47Z | thumb · Weekly OWB thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J2836 | mini | open (after J2835) | – | – | HOS:106 topic · for gemini · review · `gemini-argon` · HOS 106 Eels: rule-E topic go/no-go review |  |
-| J2837 | any | open (after J2835) | – | – | HOS:107 topic · review · HOS 107 Autumn Leaves: rule-E topic go/no-go review |  |
+| J2837 | mini | open (after J2835) | – | – | HOS:107 topic · for gemini · review · `gemini-argon` · HOS 107 Autumn Leaves: rule-E topic go/no-go review |  |
 
 Recently finished:
 
