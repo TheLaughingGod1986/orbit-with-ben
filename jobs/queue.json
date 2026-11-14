@@ -231720,9 +231720,14 @@
           "at": "2026-11-14T19:17Z",
           "by": "relay",
           "what": "condition verification queued: J2853"
+        },
+        {
+          "at": "2026-11-14T20:33Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-15T06:00:00Z"
         }
       ],
-      "remaining_action": "Chief ruling on HOS 008 v04 salon splice (20-frame f000 freeze at 2586..2605 and 1.12x crop jump at 2505->2506)",
+      "remaining_action": "Await J2854 (v05 salon splice) and J2855 (v05 salon sheet check) + Chief PASS per 6882919446 before closing J2614 and releasing J2243",
       "due": "2026-11-13T16:00:00Z",
       "kind": "qa",
       "plain": "Check that the join in the Franklin salon shot looks clean in the new cut",
@@ -231748,9 +231753,11 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-14T20:17:32+00:00",
-        "recheck_task": "J2853"
+        "condition": "Chief ruling 6882919446 (FIX on v04 salon splice): await J2854 (write hos_008_master_v05.mp4 salon window 2506..2665) and J2855 (read v05 salon sheets) completion and Chief PASS before closing J2614 and releasing J2243 on v05",
+        "check_at": "2026-11-15T06:00:00Z",
+        "last_recheck": "J2853",
+        "checked_at": "2026-11-14T20:33:48+00:00",
+        "checked_by": "gemini"
       }
     },
     {
