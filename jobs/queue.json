@@ -253238,10 +253238,10 @@
       "stage": "",
       "after": "",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-14T23:09Z",
+      "eta": "2026-11-15T02:09Z",
       "created_by": "claude",
       "created_at": "2026-11-14T22:46Z",
       "result": "",
@@ -253250,6 +253250,11 @@
           "at": "2026-11-14T22:46Z",
           "by": "claude",
           "what": "added for cursor"
+        },
+        {
+          "at": "2026-11-14T23:09Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Add studio/plan.json, a plan block in the publish, an Overview card and a #plan page with status and results, tests, deploy, two phone screenshots",
@@ -253257,7 +253262,15 @@
       "for": "cursor",
       "kind": "studio",
       "plain": "Put the new plan for long videos on the board: what we're doing, when, and how it's going",
-      "urgent": 14
+      "urgent": 14,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-14T23:09Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2867",
