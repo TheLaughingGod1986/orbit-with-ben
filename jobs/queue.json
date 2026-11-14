@@ -248113,9 +248113,14 @@
           "at": "2026-11-14T05:36Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T05:36Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2814; starting 3-step verification of J2797 waiting condition"
         }
       ],
-      "remaining_action": "Verify readiness: Verify stable reference and pinned board data after the existing GitHub token setup",
+      "remaining_action": "Read J2797, J2714, and J2532 status and probe live board reference/commit-pinned data endpoints",
       "kind": "review",
       "recheck_of": "J2797",
       "due": "2026-11-14T06:24:58+00:00",
@@ -248134,8 +248139,7 @@
         "of": 3,
         "at": "2026-11-14T05:36Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Claimed J2814; starting 3-step verification of J2797 waiting condition"
       }
     }
   ],
