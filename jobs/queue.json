@@ -240010,9 +240010,14 @@
           "at": "2026-11-14T13:55Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Claimed on the Mini. Checking secret names only, then a production deploy."
+        },
+        {
+          "at": "2026-11-14T13:56Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Production secrets include BOARD_GH_TOKEN, BOARD_KEY, WATCH_UPLOAD_KEY, WATCH_LINK_SECRET and the four R2 names. Wrangler is signed in. Deploying next."
         }
       ],
-      "remaining_action": "Confirm the board token is set, then deploy the board from main",
+      "remaining_action": "Build the board from main and deploy it to production",
       "due": "2026-11-13T18:00:00Z",
       "for": "cursor",
       "kind": "studio",
@@ -240026,11 +240031,11 @@
         "by": ""
       },
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-14T13:55Z",
+        "at": "2026-11-14T13:56Z",
         "by": "cursor",
-        "note": "Claimed on the Mini. Checking secret names only, then a production deploy."
+        "note": "Production secrets include BOARD_GH_TOKEN, BOARD_KEY, WATCH_UPLOAD_KEY, WATCH_LINK_SECRET and the four R2 names. Wrangle"
       }
     },
     {
