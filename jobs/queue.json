@@ -247205,9 +247205,14 @@
           "at": "2026-11-14T07:21Z",
           "by": "codex",
           "what": "step 3 of 4 done: Resumed prior three completed steps. Latest production capture still fails: board 113429.2 bytes/min, tracker 2569.1; 16 KB history currently retains only two revisions, so active publishing loses the client chain."
+        },
+        {
+          "at": "2026-11-14T07:25Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: PR 920 adds bounded publisher gzip history and exact recovery for branch-cache skew. 9 parity, 37 publisher, 19 API, 4 site, 13 security tests and JS regressions pass; explicit real-Chrome auth passes. Detached twenty-minute fixture capture is running."
         }
       ],
-      "remaining_action": "Fix the short update-history window, then remeasure production polling traffic",
+      "remaining_action": "Merge and deploy the tested history correction, then measure real browser transfer totals",
       "due": "2026-11-15T18:00:00Z",
       "for": "codex",
       "kind": "studio",
@@ -247215,9 +247220,9 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-14T07:21Z",
+        "at": "2026-11-14T07:25Z",
         "by": "codex",
-        "note": "Resumed prior three completed steps. Latest production capture still fails: board 113429.2 bytes/min, tracker 2569.1; 16"
+        "note": "PR 920 adds bounded publisher gzip history and exact recovery for branch-cache skew. 9 parity, 37 publisher, 19 API, 4 s"
       }
     },
     {
