@@ -192659,10 +192659,10 @@
       "stage": "edit",
       "after": "J2221",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-14T10:18Z",
+      "eta": "2026-11-14T12:18Z",
       "created_by": "gemini",
       "created_at": "2026-11-05T13:50Z",
       "result": "",
@@ -192681,6 +192681,11 @@
           "at": "2026-11-14T10:16Z",
           "by": "codex",
           "what": "J2815 close-out follow-up: current v03 target, final-file evidence checks and standing Ben-watch rule; dependency J2221 retained."
+        },
+        {
+          "at": "2026-11-14T10:18Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Check the assembled Journey film and its three thumbnails before Ben watches it",
@@ -192694,7 +192699,15 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "plain": "Check the finished Journey film and its three thumbnails before Ben watches it"
+      "plain": "Check the finished Journey film and its three thumbnails before Ben watches it",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-14T10:18Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2223",
