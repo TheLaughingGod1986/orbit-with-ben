@@ -246872,10 +246872,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-14T02:12Z",
+      "eta": "2026-11-14T03:12Z",
       "created_by": "refill",
       "created_at": "2026-11-14T02:10Z",
       "result": "",
@@ -246884,11 +246884,24 @@
           "at": "2026-11-14T02:10Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-11-14T02:12Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Check the chapters, sources and links on recent Orbit videos",
       "kind": "listing",
-      "backlog": "owb-live-listing-fixes"
+      "backlog": "owb-live-listing-fixes",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-14T02:12Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
