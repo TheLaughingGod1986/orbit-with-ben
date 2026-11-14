@@ -192454,13 +192454,13 @@
       "stage": "edit",
       "after": "J2220",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-11-14T00:56Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T13:50Z",
-      "result": "parked for Chief: picture_qa PASS on J01_Journey_v02. The 53:37 Betelgeuse sample was mean 23.58 and is now 44.55. v01 is unchanged. music_gate FAIL reused 0.948 against the owned 026 nearest-star bed, and length 180s against the 3502s cut. Option A uses that stem on purpose. Only reused can be waived, and only by Chief. Length cannot be waived in the gate. The linking effects stem is 27 LU under the voice. The linking bed is not ducked, so the bed check fails while the voice speaks. Do not re-stitch. No spend.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-05T13:50Z",
@@ -192561,24 +192561,28 @@
           "at": "2026-11-14T04:06Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-14T05:58Z",
+          "by": "codex",
+          "what": "reopened: J2799 FIX ruling 905fe020ec, jobs/reviews/J2799/CHIEF_RULING.md: predecessor J2220/J2786 complete; actual NAS v02 reports confirm music length and 63 linking-bed speech failures. Option A reused-only waiver recorded. Resume assembly Step 5 now: duck actual linking mix, verify actual laid-score full coverage without double-scoring source masters, preserve v02 picture and seven slices, version all outputs, pass unchanged gates then review/UAT. No spend or upload."
+        },
+        {
+          "at": "2026-11-14T05:58Z",
+          "by": "codex",
+          "what": "Preserved existing 4-of-5 assembly plan on repair resume; no external wait. Ruling 905fe020ec."
         }
       ],
-      "remaining_action": "Chief ruling on the music gate. The picture check has passed.",
+      "remaining_action": "Repair Journey linking music levels and verify the actual full-film score, then submit a new cut with passing checks.",
       "kind": "assembly",
+      "escalated_at": "2026-11-14T04:06Z",
       "progress": {
         "step": 4,
         "of": 5,
         "at": "2026-11-14T01:09Z",
         "by": "cursor",
         "note": "picture_qa PASS on v02. The 53:37 sample is mean 44.55. Music gate fails reused and length."
-      },
-      "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-14T02:18:50+00:00",
-        "recheck_task": "J2799"
-      },
-      "escalated_at": "2026-11-14T04:06Z"
+      }
     },
     {
       "id": "J2222",
@@ -247143,13 +247147,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-14T05:56Z",
-      "eta": "2026-11-14T07:56Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-14T01:18Z",
-      "result": "",
+      "result": "FIX ruling 905fe020ec recorded. J2221 reopened for zero-spend audio repair only, existing 4-of-5 plan retained. Owned-score reused-only waiver copied and verified on NAS. Actual laid-score coverage and 63 speech-window failures must be fixed; no finished-film PASS or upload approval.",
       "history": [
         {
           "at": "2026-11-14T01:18Z",
@@ -247205,9 +247209,19 @@
           "at": "2026-11-14T05:56Z",
           "by": "codex",
           "what": "step 0 of 3 done: Chief review uses separate review-progress milestones; worker verification retained in history."
+        },
+        {
+          "at": "2026-11-14T05:58Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Recorded Chief FIX ruling and scoped waiver; J2221 returned to assembly with 4-of-5 progress retained."
+        },
+        {
+          "at": "2026-11-14T05:58Z",
+          "by": "codex",
+          "what": "done: FIX ruling 905fe020ec recorded. J2221 reopened for zero-spend audio repair only, existing 4-of-5 plan retained. Owned-score reused-only waiver copied and verified on NAS. Actual laid-score coverage and 63 speech-window failures must be fixed; no finished-film PASS or upload approval."
         }
       ],
-      "remaining_action": "Record the Journey film audio repair ruling and release the repair work.",
+      "remaining_action": "Review complete; Journey audio repair is ready in J2221.",
       "kind": "review",
       "recheck_of": "J2221",
       "due": "2026-11-14T02:18:50+00:00",
@@ -247223,12 +247237,13 @@
       ],
       "escalated_at": "2026-11-14T04:06Z",
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-14T05:56Z",
+        "at": "2026-11-14T05:58Z",
         "by": "codex",
-        "note": "Chief review uses separate review-progress milestones; worker verification retained in history."
-      }
+        "note": "Recorded Chief FIX ruling and scoped waiver; J2221 returned to assembly with 4-of-5 progress retained."
+      },
+      "done_ref": "905fe020ec"
     },
     {
       "id": "J2800",
