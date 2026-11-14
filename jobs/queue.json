@@ -250556,9 +250556,14 @@
           "at": "2026-11-14T19:33Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T19:35Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Started J2832 condition verification for J2805 (HOS:009 revised music scope)"
         }
       ],
-      "remaining_action": "Verify readiness: Obtain explicit approval to push codex/j2805-revised-music (4b92c042), open/merge the HOS decision PR, and complete J2805",
+      "remaining_action": "Verify HOS #180, OWB #478, HOS remote branches/PRs, and /Volumes/MiniWork/scratch/j2805-hos commit 4b92c042 for J2805 waiting condition",
       "kind": "review",
       "recheck_of": "J2805",
       "due": "2026-11-14T06:00:00+00:00",
@@ -250575,11 +250580,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-14T19:33Z",
+        "at": "2026-11-14T19:35Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Started J2832 condition verification for J2805 (HOS:009 revised music scope)"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J2833",
