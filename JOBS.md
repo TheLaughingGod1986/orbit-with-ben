@@ -28,7 +28,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2040 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Codex allow-list for unattended Mini runs (Ben's yes to F, 4 Nov): our 2 repos, R2 owb-media, Buffer, YouTube API |  |
 | J2171 | mini | blocked | gemini | – | 009 edit · assembly · HOS 009: assemble locked Shorts A/B for conditional 27 and 30 Nov | J2023 |
 | J2172 | mini | blocked | codex | – | 010 edit · assembly · HOS 010: inventory and assemble two locked Shorts for conditional 4 and 7 Dec | J2023 |
-| J2230 | mini | open | – | – | for cursor · assembly · `cursor-grok-4-7` · HOS Shorts gap after 17 Nov: cut six search-titled Shorts from the locked Harvey, Willow and Vaccine longs, slot 18 Nov to 6 Dec |  |
+| J2230 | mini | claimed | cursor | 2026-11-14T18:52Z | for cursor · assembly · `cursor-grok-4-7` · HOS Shorts gap after 17 Nov: cut six search-titled Shorts from the locked Harvey, Willow and Vaccine longs, slot 18 Nov to 6 Dec |  |
 | J2243 | mini | open (after J2614) | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Franklin: multimodal moving-video + audio QA & Chief review of hos_008_master_v04.mp4 (8 defect items + 32 captions + full cut, GBP0) | J1881 / J2241 / J2242 |
 | J2271 | mini | blocked | codex | – | 010 picture · for codex · qa · `gpt-6-astra` · HOS 010: independently review twelve generated Shorts plates | J2267 |
 | J2383 | mini | open (after J2320) | – | – | 034 edit · for gemini · review · `gemini-argon` · 034 Pluto: review long master v01 + Shorts 1 & 2 (J2376, J2319, J2320) | J2376,J2319,J2320 |
