@@ -247258,13 +247258,27 @@
           "at": "2026-11-14T03:20Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-14T03:20Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 143 min (heartbeat 2026-11-13T22:07:35Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Recheck the board address after DNS propagation and finish its live check",
       "kind": "review",
       "recheck_of": "J2797",
       "due": "2026-11-14T04:20:10+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [

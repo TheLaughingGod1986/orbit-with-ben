@@ -79,7 +79,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2799 | mini | blocked | gemini | – | review · Verify condition for J2221 |  |
 | J2800 | any | blocked | macbook-2 | – | script · HOS: learn from our data, add two new films to the backlog |  |
 | J2802 | any | blocked | macbook | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J2804 | mini | open | – | – | review · Verify condition for J2797 |  |
+| J2804 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2797 |  |
 
 Recently finished:
 
