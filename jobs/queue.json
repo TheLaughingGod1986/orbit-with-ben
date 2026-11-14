@@ -246998,13 +246998,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-14T02:38Z",
-      "eta": "2026-11-14T03:38Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-14T02:34Z",
-      "result": "",
+      "result": "parked for Chief: cannot run on the MacBook Claude Code slot (second time in a row: released 02:38Z, re-claimed the same minute). npm and curl to youtube.com need approval here and the HOS worker checkout has no 07_Content-Ops/.env, so live listings cannot be read; the daily snapshot has no chapters, sources, end screens or Related. No audit run, no fix list written, nothing changed, no branch or PR. Reopen for the Mini or the MacBook Gemini slot.",
       "history": [
         {
           "at": "2026-11-14T02:34Z",
@@ -247030,6 +247030,11 @@
           "at": "2026-11-14T02:38Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T02:40Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: cannot run on the MacBook Claude Code slot (second time in a row: released 02:38Z, re-claimed the same minute). npm and curl to youtube.com need approval here and the HOS worker checkout has no 07_Content-Ops/.env, so live listings cannot be read; the daily snapshot has no chapters, sources, end screens or Related. No audit run, no fix list written, nothing changed, no branch or PR. Reopen for the Mini or the MacBook Gemini slot."
         }
       ],
       "remaining_action": "Run the HOS audit, write the dated fix list, open the HOS PR",
