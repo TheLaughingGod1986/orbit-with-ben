@@ -210649,9 +210649,14 @@
           "at": "2026-11-14T23:55Z",
           "by": "gemini",
           "what": "step 3 of 6 done: Inspected all 146 +/-3 frame cut-boundary strips (cuts_pm3_01..03.jpg) and final 3.0s 72-frame strip (final_3s_72f.jpg)"
+        },
+        {
+          "at": "2026-11-14T23:57Z",
+          "by": "gemini",
+          "what": "step 4 of 6 done: Verified all 5 automated gates and Scribe word timestamps; identified 3 systemic visual FIX items across v01/v02 (12 cropped code-graphic pills, 28% starfield bleed + square inset boxes on stills, and 12 narrow Voyager ring-strip plates + R57 window glare still)"
         }
       ],
-      "remaining_action": "Run and verify all 5 automated gates and VO/audio boundary checks",
+      "remaining_action": "Write and commit jobs/reviews/J2404/REVIEW.md from clean detached worktree",
       "due": "2026-11-15T23:00:00Z",
       "kind": "review",
       "required_capabilities": [
@@ -210668,11 +210673,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 6,
-        "at": "2026-11-14T23:55Z",
+        "at": "2026-11-14T23:57Z",
         "by": "gemini",
-        "note": "Inspected all 146 +/-3 frame cut-boundary strips (cuts_pm3_01..03.jpg) and final 3.0s 72-frame strip (final_3s_72f.jpg)"
+        "note": "Verified all 5 automated gates and Scribe word timestamps; identified 3 systemic visual FIX items across v01/v02 (12 cro"
       },
       "taskKeys": [
         "OWB:033"
