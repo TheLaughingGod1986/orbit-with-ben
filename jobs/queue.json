@@ -247279,9 +247279,14 @@
           "at": "2026-11-14T08:34Z",
           "by": "codex",
           "what": "step 3 of 4 done: Completed captures fail board budget: 146428 bytes/min live; tracker 1508.1. Fixture snapshots lack exact publisher serialization. Tracing live fallback in Chrome."
+        },
+        {
+          "at": "2026-11-14T08:38Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: PR 924 corrects stale CDN update fallback and fixture serialization. 10 parity, 37 publisher, 19 API and JS checks pass; real Chrome auth passes. Captures remain detached."
         }
       ],
-      "remaining_action": "Correct the browser fixture and diagnose repeated live full snapshots",
+      "remaining_action": "Chief review and deploy PR 924, then measure ten minutes of corrected production traffic",
       "due": "2026-11-15T18:00:00Z",
       "for": "codex",
       "kind": "studio",
@@ -247289,9 +247294,9 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-14T08:34Z",
+        "at": "2026-11-14T08:38Z",
         "by": "codex",
-        "note": "Completed captures fail board budget: 146428 bytes/min live; tracker 1508.1. Fixture snapshots lack exact publisher seri"
+        "note": "PR 924 corrects stale CDN update fallback and fixture serialization. 10 parity, 37 publisher, 19 API and JS checks pass;"
       }
     },
     {
