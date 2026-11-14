@@ -79,7 +79,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2799 | mini | blocked | gemini | – | review · Verify condition for J2221 |  |
 | J2800 | any | blocked | macbook-2 | – | script · HOS: learn from our data, add two new films to the backlog |  |
 | J2802 | any | blocked | macbook | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J2803 | mini | open (after J2795) | – | – | 009 edit · assembly · `gpt-6.1-sol` · J2795-V: Validate music reuse correction on owned recordings | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6867889512 |
+| J2803 | mini | claimed | macbook-2 | 2026-11-14T03:27Z | 009 edit · assembly · `gpt-6.1-sol` · J2795-V: Validate music reuse correction on owned recordings | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6867889512 |
 
 Recently finished:
 
