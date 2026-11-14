@@ -75,7 +75,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2792 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
 | J2794 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J2795 | mini | blocked | codex | – | 009 edit · for codex · assembly · `gpt-6.1-sol` · Music gate: diagnose reuse false positives without waivers | J2791 |
-| J2797 | mini | open (after J2796) | – | – | for codex · studio · Board: give it its own address, board.oppti.dev, and read its request count on Cloudflare |  |
+| J2797 | mini | claimed | codex | 2026-11-14T03:46Z | for codex · studio · Board: give it its own address, board.oppti.dev, and read its request count on Cloudflare |  |
 | J2798 | mini | open (after J2796) | – | – | for codex · studio · Board: stop an open board downloading its whole 2 MB data file every minute |  |
 | J2799 | mini | blocked | gemini | – | review · Verify condition for J2221 |  |
 | J2800 | any | blocked | macbook-2 | – | script · HOS: learn from our data, add two new films to the backlog |  |
