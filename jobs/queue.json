@@ -246869,10 +246869,10 @@
       "stage": "",
       "after": "J2796",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-14T03:09Z",
+      "eta": "2026-11-14T06:09Z",
       "created_by": "claude",
       "created_at": "2026-11-14T00:35Z",
       "result": "",
@@ -246881,13 +246881,26 @@
           "at": "2026-11-14T00:35Z",
           "by": "claude",
           "what": "added for codex"
+        },
+        {
+          "at": "2026-11-14T03:09Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Split the fast-changing data from the film data, answer 304, measure bytes a minute before and after",
       "due": "2026-11-15T18:00:00Z",
       "for": "codex",
       "kind": "studio",
-      "plain": "Make the board use far less data on Ben's phone, by fetching only what changed"
+      "plain": "Make the board use far less data on Ben's phone, by fetching only what changed",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-14T03:09Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2799",
