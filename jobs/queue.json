@@ -246656,19 +246656,25 @@
           "at": "2026-11-14T02:01Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-14T02:04Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Located stale clients and fixtures; Cloudflare migration PR 858 remains unmerged, so its deployed adapter is required to preserve live API routes."
         }
       ],
-      "remaining_action": "Checking where the board address is used before updating and testing it",
+      "remaining_action": "Updating the board clients and checking the build before deployment",
       "due": "2026-11-14T12:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Point the last scripts and the handbook at the board's new address, so ticks are read again once Ben adds the token",
       "urgent": 10,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-14T02:01Z",
-        "by": "codex"
+        "at": "2026-11-14T02:04Z",
+        "by": "codex",
+        "note": "Located stale clients and fixtures; Cloudflare migration PR 858 remains unmerged, so its deployed adapter is required to"
       }
     },
     {
