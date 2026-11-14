@@ -247210,9 +247210,14 @@
           "at": "2026-11-14T07:25Z",
           "by": "codex",
           "what": "step 3 of 4 done: PR 920 adds bounded publisher gzip history and exact recovery for branch-cache skew. 9 parity, 37 publisher, 19 API, 4 site, 13 security tests and JS regressions pass; explicit real-Chrome auth passes. Detached twenty-minute fixture capture is running."
+        },
+        {
+          "at": "2026-11-14T07:27Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: PR 920 CI PASS and merged fa909c9529; Pages deployment 40f6ec3f complete. Publisher rollout started. Detached J2798-packed-live waits for schema-2 history, then captures ten minutes on / and /tracker; fixture capture also running. Acceptance remains open."
         }
       ],
-      "remaining_action": "Merge and deploy the tested history correction, then measure real browser transfer totals",
+      "remaining_action": "Verify production transfer totals after the deployed polling correction",
       "due": "2026-11-15T18:00:00Z",
       "for": "codex",
       "kind": "studio",
@@ -247220,9 +247225,9 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-14T07:25Z",
+        "at": "2026-11-14T07:27Z",
         "by": "codex",
-        "note": "PR 920 adds bounded publisher gzip history and exact recovery for branch-cache skew. 9 parity, 37 publisher, 19 API, 4 s"
+        "note": "PR 920 CI PASS and merged fa909c9529; Pages deployment 40f6ec3f complete. Publisher rollout started. Detached J2798-pack"
       }
     },
     {
