@@ -248269,10 +248269,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-14T07:39Z",
+      "eta": "2026-11-14T09:39Z",
       "created_by": "relay",
       "created_at": "2026-11-14T05:15Z",
       "result": "",
@@ -248326,6 +248326,11 @@
           "at": "2026-11-14T07:39Z",
           "by": "codex",
           "what": "rerouted to codex on gpt-6-astra: Elected Chief administrative closure after accepting Gemini evidence and recording parent hold; no repeat specialist work."
+        },
+        {
+          "at": "2026-11-14T07:39Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief (codex) to run jobs.py wait J2040 --recheck J2813 (to 2026-11-14T12:55:00Z) and jobs.py done J2813",
@@ -248341,7 +248346,15 @@
         "by": ""
       },
       "for": "codex",
-      "model": "gpt-6-astra"
+      "model": "gpt-6-astra",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-14T07:39Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2814",
