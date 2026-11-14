@@ -246902,19 +246902,28 @@
           "at": "2026-11-14T02:12Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T02:13Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Identified candidate last 10 public OWB videos spanning OWB:023, OWB:024, OWB:025 and standalone test Shorts; starting live YouTube verification"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on recent Orbit videos",
+      "remaining_action": "Fetch live YouTube watch/Shorts metadata for the last 10 public OWB videos and verify chapters, sources, end screens and Related pills",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-14T02:12Z",
+        "at": "2026-11-14T02:13Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Identified candidate last 10 public OWB videos spanning OWB:023, OWB:024, OWB:025 and standalone test Shorts; starting l"
+      },
+      "taskKeys": [
+        "OWB:023",
+        "OWB:024",
+        "OWB:025"
+      ]
     }
   ],
   "focus": [
