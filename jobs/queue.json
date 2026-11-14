@@ -247053,9 +247053,14 @@
           "at": "2026-11-14T05:24Z",
           "by": "relay",
           "what": "condition verification queued: J2814"
+        },
+        {
+          "at": "2026-11-14T07:16Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-14T07:40:00Z"
         }
       ],
-      "remaining_action": "Verify stable reference and pinned board data after the existing GitHub token setup",
+      "remaining_action": "Verify normal board routing and reliable data after the existing token setup and data checks",
       "due": "2026-11-14T18:00:00Z",
       "for": "codex",
       "kind": "studio",
@@ -247070,9 +247075,11 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "After existing J2714 token setup and J2532 data verification, repeat reference and commit-pinned board reads must return 200 reliably. Domain and real launchd override are fixed; 80 live canonical Play links and sampled 302/R2 206 pass, board_check ok=true expected=6 site=200. Intermittent ref 502 remains; original Pages host reports GitHub 403. No DNS retry or new deployment needed.",
-        "check_at": "2026-11-14T06:24:58+00:00",
-        "recheck_task": "J2814"
+        "condition": "J2814 Chief ruling 2026-11-14T07:15Z: NOT MET. Existing J2714 token setup and J2532 data verification remain prerequisites. Current Cloudflare-directed ref probes: 3/5 HTTP 200, 2/5 HTTP 502; pinned board at bf5b56743122b92d450361171ee39b44dbe5168a: 3/3 HTTP 200, each 80 canonical Play links. Pages checks endpoint returns 500 BOARD_GH_TOKEN missing. Normal Mini resolver now reaches retired Vercel (5/5 ref 404 DEPLOYMENT_NOT_FOUND), while public DNS reaches Cloudflare; no matching hosts-file entry. At 07:40Z verify normal resolver versus authoritative/public DNS, token availability through existing J2714, repeated normal-path reference and pinned reads, then board_check. If resolver remains wrong, scope its repair immediately; do not duplicate DNS, redeploy, or change unrelated records. Keep parent at 2/3 and existing approval/deadline intact.",
+        "check_at": "2026-11-14T07:40:00Z",
+        "last_recheck": "J2814",
+        "checked_at": "2026-11-14T07:16:10+00:00",
+        "checked_by": "codex"
       }
     },
     {
