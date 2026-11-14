@@ -194269,10 +194269,10 @@
       "stage": "edit",
       "after": "J2593",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-14T04:09Z",
+      "eta": "2026-11-14T06:09Z",
       "created_by": "gemini",
       "created_at": "2026-11-05T18:52Z",
       "result": "",
@@ -195116,6 +195116,11 @@
           "at": "2026-11-14T02:33Z",
           "by": "cursor",
           "what": "released: 2/3. Encoded 28 fully changed groups, 3540 frames, H264 High qp 1, silent, lowest PSNR 62.59 dB. HOS commit dd81c210 on codex/J2242-source-preflight, PR 542. Desk 6870274736. 143 tests OK, check_all PASS. Refused groups that still contain master frames: 2718-2887, 3168-3343, 4016-4138, 11038-11245. Also open: two-nut groups 272-422 and 423-544, salon 2506-2665, electricity split 8189/8269, path title 10777-10852 (not yuv420p), metal title 10996-11037. Resume jobs/reviews/J2242/RESUME.md. Scratch J2242-encode-v01. No v04, no mux, no spend, no publication. Encode process ended; no detached work."
+        },
+        {
+          "at": "2026-11-14T04:09Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Encode the remaining Franklin groups, then mux the original audio",
