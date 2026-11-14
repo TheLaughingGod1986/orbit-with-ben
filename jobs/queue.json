@@ -247093,10 +247093,10 @@
       "stage": "",
       "after": "J2796",
       "eta_min": 180,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-14T07:19Z",
-      "eta": "2026-11-14T10:19Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-14T00:35Z",
       "result": "",
@@ -247220,6 +247220,11 @@
           "at": "2026-11-14T07:33Z",
           "by": "codex",
           "what": "step 3 of 4 done: PR 920 merged fa909c9529 and Pages 40f6ec3f deployed; publisher schema 2 verified. Real Chrome board/tracker/updates validators return empty 304; public/private auth passes. Production capture J2798-packed-live-v2 rendered both pages and started its ten-minute window. Fixture capture J2798-packed-fixture runs ten idle minutes then ten with one fixture film change. Acceptance remains open until actual totals are inspected."
+        },
+        {
+          "at": "2026-11-14T07:33Z",
+          "by": "codex",
+          "what": "released: Step 3/4. Correction PR 920 merged fa909c9529, Pages 40f6ec3f deployed, publisher schema 2 live. Read /Users/benjaminoats/_desk/logs/J2798-live-packed-v2.done/.log/.json from tmux J2798-packed-live-v2 (ten production minutes), and J2798-packed-fixture.done/.log/.json from tmux J2798-packed-fixture (ten idle + ten fixture-film-change minutes). Missing done means still running: do not duplicate. The first packed production process stalled before its measurement window and was stopped; v2 is the sole active production capture. Require both production bytesPerMinute <20000, inspect snapshot repeats/errors and fixture totals/first-render before done. Smoke confirms 304 for all three files; prior /api/checks 500 remains unchanged. Nine parity, 37 publisher, 19 API, 4 site and 13 security tests pass, as do JS client/Studio regressions and explicit real-Chrome authentication. No acceptance PASS yet."
         }
       ],
       "remaining_action": "Read the detached browser measurements and confirm both pages stay below 20 KB per minute",
