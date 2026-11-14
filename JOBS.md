@@ -96,7 +96,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2850 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0979 |  |
 | J2851 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2831 |  |
 | J2852 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2843 |  |
-| J2853 | mini | claimed | gemini | 2026-11-14T21:19Z | for gemini · review · `gemini-argon` · Verify condition for J2614 |  |
+| J2853 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2614 |  |
 | J2854 | mini | open | – | – | 008 edit · assembly · HOS 008: write master v05 salon window (full-frame tail, f000-f029 slow, spark on 2635) | 6882919446 |
 | J2855 | mini | open (after J2854) | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008: read the v05 salon sheets (scale, freeze, ghosting, spark) | 6882926175 |
 
