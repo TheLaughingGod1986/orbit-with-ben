@@ -247862,7 +247862,7 @@
     {
       "id": "J2811",
       "title": "HOS 105 Venus Flytrap: rule-E topic go/no-go review",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Rule-E topic go/no-go review for **HOS:105 (`02_Video-Projects/105_Ellis-Darwin-BurdonSanderson-Venus-Flytrap-Carnivorous-Plants`)** on HOS PR `#581` (`https://github.com/TheLaughingGod1986/history-of-science/pull/581`, branch `gemini/J2809-hos-topics-104-105`), queued by `J2809`.\n\n### Topic Summary\n- **Title A (Primary Proposal, Rule 26, 59 chars, 0 collisions):** `How Do Venus Flytraps Work? (The Plant That Counts to Five)`\n- **Title B (T&C, Rule 23, 44 chars, 0 collisions):** `The Plant That Counts to Five Before It Eats`\n- **Title C (Rule 26 Exact Phrase First, 55 chars, 0 collisions):** `Carnivorous Plants: Why Darwin Fed Roast Beef to a Leaf`\n- **Short S01 (39 chars, 0 collisions):** `How Does a Venus Flytrap Count to Five?`\n- **Short S02 (54 chars, 0 collisions):** `Why Do Venus Flytraps Eat Insects? (Darwin's Bog Test)`\n- **Saved Evidence (`2026-11-14`):**\n  - `11_Upload-Package/evidence_2026-11-14_neighbours.json` (`PASS`: `6` education videos `≥1,000,000` views, `TED-Ed/TED: yes`, led by TED-Ed `4,447,004` `Hja0SLs2kus` *The amazing ways plants defend themselves*, TED `3,302,069` `pvBlSFVmoaw` *Electrical experiments with plants that count and communicate | Greg Gage*, TED-Ed `2,362,056` `ee7muQ_qKU0` *The wild world of carnivorous plants - Kenny Coogan*, TED-Ed `1,742,029` `fSaHVHTqDY0`, Amoeba Sisters `1,289,643` `DGpPHrLF-5M`, Amoeba Sisters `1,182,864` `A_DF246uVlU`).\n  - `11_Upload-Package/evidence_2026-11-14_public_search.json` (`\"how do venus flytraps work\"`, `\"carnivorous plants\"`, `\"why do some plants eat insects\"` autocomplete `yes`; ranking videos `BBC` `O7eQKSf0LmY` `13,770,762` views & `Insider Science` `YPzp-p-na88` `7,610,046` views; `0` exact title collisions).\n\n### Reviewer Checklist (AGENTS.md Rule E)\n1. Verify `TOPIC.md`, `status.json`, `production-status.md`, `11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md`, and the two raw JSON evidence files on HOS PR `#581`.\n2. Score the Rule-E topic rubric (neighbour demand `≥3` at `1M+` views with TED/TED-Ed presence, signed-out YouTube autocomplete demand, title collision check, non-duplication across `02_Video-Projects/`, `ideas/`, and `WIP.json`, and visual proof-first hook).\n3. Confirm that all historical and scientific claims remain marked **UNVERIFIED** until `SOURCES.md` exact quotes and the `facts` lane run when an active HOS WIP slot opens under Rule G (`jobs/WIP.json` `next_hos`).\n4. Record the Rule-E go/no-go verdict.\n",
       "ref": "",
@@ -247882,11 +247882,25 @@
           "at": "2026-11-14T05:14Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-14T05:15Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 260 min (heartbeat 2026-11-13T22:07:35Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Review HOS:105 topic brief and neighbour/search evidence on HOS PR #581, score Rule-E rubric, and write go/no-go verdict",
       "kind": "review",
-      "plain": "Checking whether the carnivorous plants history film is worth making: similar big videos, search demand, and non-duplication"
+      "plain": "Checking whether the carnivorous plants history film is worth making: similar big videos, search demand, and non-duplication",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2812",
