@@ -252749,18 +252749,24 @@
           "at": "2026-11-14T21:55Z",
           "by": "macbook",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-14T22:09Z",
+          "by": "macbook",
+          "what": "step 1 of 5 done: Root cause found: High 4:4:4 Predictive lossless profile in ch11-13 stream-copied after High profile corrupts decode at 97:38 and ch12-13; frame sheets built"
         }
       ],
-      "remaining_action": "Inspect sleep_video_01 master at 97:38 and make frame sheets",
+      "remaining_action": "Run full-master pixel check, re-encode ch11-13 in High profile crf18, rebuild master v02 and verify",
       "due": "2026-11-16T18:00:00Z",
       "kind": "studio",
       "plain": "Fix the broken picture Ben spotted in the two-hour sleep film, and show him the repair",
       "urgent": 17,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-14T21:55Z",
-        "by": "macbook"
+        "at": "2026-11-14T22:09Z",
+        "by": "macbook",
+        "note": "Root cause found: High 4:4:4 Predictive lossless profile in ch11-13 stream-copied after High profile corrupts decode at "
       }
     }
   ],
