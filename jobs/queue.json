@@ -246728,9 +246728,14 @@
           "at": "2026-11-14T01:20Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T01:23Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Started J2799 condition verification for J2221 (J01 Journey Film 01 assembly across OWB 023-029)"
         }
       ],
-      "remaining_action": "Verify readiness: Chief ruling on the music gate. The picture check has passed.",
+      "remaining_action": "Inspect J2221 predecessor J2220/J2786, J01_Journey_v01/v02 deliverables, and picture_qa/music_gate/sfx_kit gates",
       "kind": "review",
       "recheck_of": "J2221",
       "due": "2026-11-14T02:18:50+00:00",
@@ -246738,11 +246743,19 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-14T01:20Z",
+        "at": "2026-11-14T01:23Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Started J2799 condition verification for J2221 (J01 Journey Film 01 assembly across OWB 023-029)"
+      },
+      "taskKeys": [
+        "OWB:023",
+        "OWB:024",
+        "OWB:025",
+        "OWB:026",
+        "OWB:027",
+        "OWB:028",
+        "OWB:029"
+      ]
     }
   ],
   "focus": [
