@@ -94,7 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2840 | mini | open | – | – | for codex · review · Packaging panel (codex): OWB weekly audit 3 new thumbnail Bs + separate Title Bs (m09jUdwC5hk ALL STARS FADE, Mo93x0fxB1Q ZERO SIGNALS, ziKBPJ6FY0U 300 MILLION YEARS) |  |
 | J2841 | mini | open | – | – | for gemini · review · Packaging panel (gemini): OWB weekly audit 3 new thumbnail Bs + separate Title Bs (m09jUdwC5hk ALL STARS FADE, Mo93x0fxB1Q ZERO SIGNALS, ziKBPJ6FY0U 300 MILLION YEARS) |  |
 | J2842 | mini | open | – | – | for cursor · review · Packaging panel (cursor): OWB weekly audit 3 new thumbnail Bs + separate Title Bs (m09jUdwC5hk ALL STARS FADE, Mo93x0fxB1Q ZERO SIGNALS, ziKBPJ6FY0U 300 MILLION YEARS) |  |
-| J2843 | cloud | open (after J2842) | – | – | review · Packaging panel decision: OWB weekly audit 3 new thumbnail Bs + separate Title Bs (m09jUdwC5hk ALL STARS FADE, Mo93x0fxB1Q ZERO SIGNALS, ziKBPJ6FY0U 300 MILLION YEARS) |  |
+| J2843 | mini | open (after J2842) | – | – | for gemini · review · `gemini-argon` · Packaging panel decision: OWB weekly audit 3 new thumbnail Bs + separate Title Bs (m09jUdwC5hk ALL STARS FADE, Mo93x0fxB1Q ZERO SIGNALS, ziKBPJ6FY0U 300 MILLION YEARS) |  |
 | J2844 | any | open (after J2843) | – | – | chief · Chief gate: pass J2834 weekly audit thumbnail Bs (T035 m09jUdwC5hk, T036 Mo93x0fxB1Q, T037 ziKBPJ6FY0U) after J2843 panel | J2834 |
 | J2845 | mini | open (after J2844) | – | – | studio · Studio: arm thumbnail Test & Compare on m09jUdwC5hk (A=live THE LAST LIGHT vs B=ALL STARS FADE, T035) | J2834 |
 | J2846 | mini | open (after J2844) | – | – | studio · Studio: arm thumbnail Test & Compare on Mo93x0fxB1Q (A=live SILENCE vs B=ZERO SIGNALS, T036) | J2834 |
