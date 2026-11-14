@@ -240015,9 +240015,14 @@
           "at": "2026-11-14T13:56Z",
           "by": "cursor",
           "what": "step 1 of 4 done: Production secrets include BOARD_GH_TOKEN, BOARD_KEY, WATCH_UPLOAD_KEY, WATCH_LINK_SECRET and the four R2 names. Wrangler is signed in. Deploying next."
+        },
+        {
+          "at": "2026-11-14T13:58Z",
+          "by": "cursor",
+          "what": "step 2 of 4 done: Production deploy is up. studio-kanban.pages.dev answers 200 for checks, the stamp and the data ref. Next is a test tick and 30 reads on both addresses."
         }
       ],
-      "remaining_action": "Build the board from main and deploy it to production",
+      "remaining_action": "Prove a tick saves and that both board addresses can read the data",
       "due": "2026-11-13T18:00:00Z",
       "for": "cursor",
       "kind": "studio",
@@ -240031,11 +240036,11 @@
         "by": ""
       },
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-14T13:56Z",
+        "at": "2026-11-14T13:58Z",
         "by": "cursor",
-        "note": "Production secrets include BOARD_GH_TOKEN, BOARD_KEY, WATCH_UPLOAD_KEY, WATCH_LINK_SECRET and the four R2 names. Wrangle"
+        "note": "Production deploy is up. studio-kanban.pages.dev answers 200 for checks, the stamp and the data ref. Next is a test tick"
       }
     },
     {
