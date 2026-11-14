@@ -219742,13 +219742,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-14T22:20Z",
-      "eta": "2026-11-15T00:20Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T03:03Z",
-      "result": "",
+      "result": "KEEP (PASS, commit 5dbd6f396e, jobs/reviews/J2477/REVIEW.md): 032 Titan long master v02 (585.44s, sha256 51986972...ed073) passes all 5 J2829 multimodal checks (audio_input, moving_video_input, 1171 2fps frames, 910 pm3 cut frames, 90 tail frames), First-30s Rule, Teach-on-Screen, and all 5 automated gates (clip_check, picture_qa, polish_gate, music_gate, sfx_kit level). Verified SHA-256 across 09_Final-Export, NAS OWB UAT, and iCloud OWB UAT; uploaded 720p _PHONE.mp4 to R2 (owb-032-v02); armed awaits_ben for Sun 16 Nov; advanced WIP.json (OWB:062 promoted to active).",
       "history": [
         {
           "at": "2026-11-10T03:03Z",
@@ -219799,6 +219799,11 @@
           "at": "2026-11-14T22:40Z",
           "by": "gemini",
           "what": "waits on Ben: Watch 032 Titan long master v02 (9m 45s, re-cut first 30s) and thumbnails A/B (by 2026-11-16 18:00 London)"
+        },
+        {
+          "at": "2026-11-14T22:41Z",
+          "by": "gemini",
+          "what": "done: KEEP (PASS, commit 5dbd6f396e, jobs/reviews/J2477/REVIEW.md): 032 Titan long master v02 (585.44s, sha256 51986972...ed073) passes all 5 J2829 multimodal checks (audio_input, moving_video_input, 1171 2fps frames, 910 pm3 cut frames, 90 tail frames), First-30s Rule, Teach-on-Screen, and all 5 automated gates (clip_check, picture_qa, polish_gate, music_gate, sfx_kit level). Verified SHA-256 across 09_Final-Export, NAS OWB UAT, and iCloud OWB UAT; uploaded 720p _PHONE.mp4 to R2 (owb-032-v02); armed awaits_ben for Sun 16 Nov; advanced WIP.json (OWB:062 promoted to active)."
         }
       ],
       "remaining_action": "Completed 032 master v02 review (KEEP) and staged for Ben UAT watch",
@@ -219838,7 +219843,8 @@
         "title": "What Would Happen If You Landed on Titan?",
         "number": "032",
         "type": "long"
-      }
+      },
+      "done_ref": "5dbd6f396e"
     },
     {
       "id": "J2478",
