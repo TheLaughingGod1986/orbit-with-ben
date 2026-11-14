@@ -192458,13 +192458,13 @@
       "stage": "edit",
       "after": "J2220",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-14T10:15Z",
-      "eta": "2026-11-14T12:15Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T13:50Z",
-      "result": "",
+      "result": "Executed existing Grok PASS Option A (6874618419, reiterated 6874993329). Independently matched restored score, laid score and v03 master hashes; NAS music, linking-level and picture reports PASS. J2222 reviews v03 with final encoded loudness, decode/timing/end-hold checks and flagged-still review before Ben watch. See jobs/reviews/J2815/CHIEF_CLOSEOUT.md. No upload approval.",
       "history": [
         {
           "at": "2026-11-05T13:50Z",
@@ -192620,6 +192620,11 @@
           "at": "2026-11-14T10:15Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T10:15Z",
+          "by": "codex",
+          "what": "done: Executed existing Grok PASS Option A (6874618419, reiterated 6874993329). Independently matched restored score, laid score and v03 master hashes; NAS music, linking-level and picture reports PASS. J2222 reviews v03 with final encoded loudness, decode/timing/end-hold checks and flagged-still review before Ben watch. See jobs/reviews/J2815/CHIEF_CLOSEOUT.md. No upload approval."
         }
       ],
       "remaining_action": "Review the assembled Journey cut and its three thumbnails before the finished-film watch",
@@ -192640,7 +192645,8 @@
         "at": "2026-11-14T10:15Z",
         "by": "codex",
         "note": "Assembly accepted by prior Chief ruling 6874618419; v03 and restored score hashes match. Final cut review follows in J22"
-      }
+      },
+      "done_ref": "9ebb517772"
     },
     {
       "id": "J2222",
