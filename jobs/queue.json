@@ -1,5 +1,5 @@
 {
-  "next_id": 2830,
+  "next_id": 2831,
   "jobs": [
     {
       "id": "J0001",
@@ -250093,6 +250093,35 @@
       "kind": "studio",
       "plain": "Get the stalled film reviews moving, so the Pluto, Uranus and Titan films and the Supermoon Short reach Ben",
       "urgent": 10
+    },
+    {
+      "id": "J2830",
+      "title": "Backlog OWB: this week's dated-event Short (LEARNINGS rule 16 test), script + packaging, park for Chief",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Weekly dated-event Short test (Ben's go, 4 Nov 2026; LEARNINGS rule 16; evidence 05_Analytics/owb/FACEBOOK_APOPHIS_2026-10-30.md). Pick ONE real dated sky or space event 10-21 days ahead (flyby, eclipse, meteor shower peak, launch, conjunction, notable anniversary) that is not already covered by an open, scheduled or live Short (check UPLOADS.json, film_briefs.json and the AR cohort J1356). Facts first from NASA/ESA/IAU or an official source, with the exact date and time in UTC. Write one 17-20 s, 44-52 word script in the Apophis mould: subject named + surprise claim inside 1 s (rule 8: moving subject at frame 0, no meta-promise), one everyday scale comparison, the answer by about 13 s, a 'you can see it / look up / will it hit us' payoff whose last line runs back into line 1. Title as a plain question naming the subject and the date hook. Picture plan from existing or free-licensed footage only. Target publish 3-7 days before the event; say the slot. Record the pick, sources and slot in 02_Video-Projects/_dated_shorts/<YYYY-MM-DD>_<slug>.md. Spend nothing: no TTS, no picture generation, no Studio or publish change in this job. End with jobs.py block <id> --reason \"parked for Chief: dated-event Short script + slot\" --git.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-11-14T15:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T15:14Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Draft this week's dated-event Short script and slot for the Chief",
+      "kind": "script",
+      "backlog": "owb-dated-short"
     }
   ],
   "focus": [
@@ -250124,6 +250153,6 @@
     "hos-weekly-thumb-audit": "2026-11-08T12:28Z",
     "monthly-improvement-hos": "2026-11-03T15:46Z",
     "monthly-improvement-owb": "2026-11-03T15:46Z",
-    "owb-dated-short": "2026-11-07T14:52Z"
+    "owb-dated-short": "2026-11-14T15:14Z"
   }
 }
