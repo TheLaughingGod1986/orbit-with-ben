@@ -252372,9 +252372,14 @@
           "at": "2026-11-14T21:21Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T21:21Z",
+          "by": "cursor",
+          "what": "step 0 of 5 done: Claimed J2854. v04 is 2.7 GB on studio-live. Looking up tube, composite, and J2242 packet method."
         }
       ],
-      "remaining_action": "Write v05 beside v04, change only frames 2506-2665, and post the salon sheets",
+      "remaining_action": "Check source hashes and the old packet method before writing any frames",
       "due": "2026-11-15T18:00:00Z",
       "kind": "assembly",
       "plain": "Rebuild the Franklin salon join so the tube is full frame and the opening no longer freezes",
@@ -252382,12 +252387,14 @@
       "urgent": 11,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-14T21:21Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2854. v04 is 2.7 GB on studio-live. Looking up tube, composite, and J2242 packet method."
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J2855",
