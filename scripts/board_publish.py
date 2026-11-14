@@ -479,13 +479,43 @@ def board_diff(old, new, path=()):
     return [["set", list(path), new]]
 
 
+def compact_edits(ops):
+    """Share repeated list-field updates (hundreds of per-film asOf stamps in live snapshots)."""
+    compact = []
+    pending = None
+    def flush():
+        nonlocal pending
+        if pending:
+            prefix, suffix, value, indices = pending
+            if len(indices) > 1:
+                compact.append(["setMany", prefix, indices, suffix, value])
+            else:
+                compact.append(["set", prefix + [indices[0]] + suffix, value])
+            pending = None
+    for op in ops:
+        if op[0] == "set" and any(isinstance(k, int) for k in op[1]):
+            path, value = op[1:]
+            at = next(i for i, k in enumerate(path) if isinstance(k, int))
+            prefix, index, suffix = path[:at], path[at], path[at + 1:]
+            if pending and pending[:3] == [prefix, suffix, value]:
+                pending[3].append(index)
+            else:
+                flush()
+                pending = [prefix, suffix, value, [index]]
+        else:
+            flush()
+            compact.append(op)
+    flush()
+    return compact
+
+
 def updates_payload(board, previous, history, tracker):
     """Keep at most 16 KB of recent edits. A tab outside this window gets the full board."""
     revision = digest(board)
     tracker_hash = hashlib.sha256((tracker or "").encode()).hexdigest()
     edits = list((history or {}).get("edits") or [])
     if previous is not None and digest(previous) != revision:
-        edits.append({"from": digest(previous), "to": revision, "ops": board_diff(previous, board)})
+        edits.append({"from": digest(previous), "to": revision, "ops": compact_edits(board_diff(previous, board))})
     result = {"schema": 1, "revision": revision, "tracker": tracker_hash, "edits": edits[-12:]}
     while result["edits"] and len(json.dumps(result, ensure_ascii=False, separators=(",", ":")).encode()) > 16000:
         result["edits"].pop(0)

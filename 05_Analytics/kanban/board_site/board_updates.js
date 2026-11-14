@@ -8,7 +8,18 @@
       let parent = result;
       for (const key of path.slice(0, -1)) parent = parent[key];
       const key = path[path.length - 1];
-      if (kind === "splice") {
+      if (kind === "setMany") {
+        const [indices, suffix, value] = args;
+        if (suffix.some(k => ["__proto__", "prototype", "constructor"].includes(String(k)))) throw new Error("Unsafe update path");
+        const list = path.length ? parent[key] : result;
+        for (const index of indices) {
+          if (!Number.isInteger(index) || index < 0 || index >= list.length) throw new Error("Invalid update index");
+          let item = list;
+          const target = [index, ...suffix];
+          for (const part of target.slice(0, -1)) item = item[part];
+          item[target[target.length - 1]] = structuredClone(value);
+        }
+      } else if (kind === "splice") {
         const list = path.length ? parent[key] : result;
         list.splice(args[0], args[1], ...args[2]);
       } else if (kind === "delete") delete parent[key];

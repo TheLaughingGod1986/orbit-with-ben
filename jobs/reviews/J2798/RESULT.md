@@ -59,3 +59,9 @@ Phone-profile first render was 514/440 ms on the live baseline and 129/153 ms on
 Re-ran 37 publisher tests, 5 parity tests, 19 API tests (4 existing browser checks skipped by dependency probe), JS transport and full Studio app regressions: PASS. Site build and diff whitespace check: PASS. Existing explicit Chrome auth capture remains the browser authentication evidence. Current main merged cleanly into the branch.
 
 Chief review: KEEP. The bounded edit-history design meets the small-update objective while avoiding retransmission of the whole live queue, which a simple static/live split would still cause. The full snapshot and version-based reload preserve older clients. The function hashes raw bytes once per held copy and does not parse the board payload. Production validation must confirm live API status, content ETags/304 and ten-minute transfer totals; rollout will be reported separately on the studio thread.
+
+## Production acceptance failure and correction
+
+The first production rollout did not meet acceptance: the live board carries 312 per-film production timestamps. Updating those repeated fields made a normal edit payload 31,257 bytes, over the history cap, so history was discarded and clients fell back to a full snapshot. The small local fixture missed this. J2798 remains incomplete until a new production capture passes.
+
+A correction groups consecutive identical updates to the same field across list entries, preserving exact indices and operation ordering. On the captured live delta this reduces 31,257 bytes to 3,373 bytes. A new 312-film regression verifies history stays within budget and reconstructs the full snapshot exactly; an additional splice-order test verifies compaction does not reorder edits. Seven parity/publisher tests and the JS client suite pass. Older clients safely fall back to the full snapshot for the new operation, then receive the usual version reload. No film data is omitted or made stale.
