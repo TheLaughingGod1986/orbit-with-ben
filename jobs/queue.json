@@ -1,5 +1,5 @@
 {
-  "next_id": 2807,
+  "next_id": 2808,
   "jobs": [
     {
       "id": "J0001",
@@ -247427,6 +247427,39 @@
       "kind": "assembly",
       "plain": "Make a revised opening score for the gravity film and check it against earlier music",
       "mini_only": true
+    },
+    {
+      "id": "J2807",
+      "title": "HOS 009: audition revised opening and joined score",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Review HOS009 revised score under SCORE_SCOPE_J2805.json after its single bounded production attempt. Requires demonstrated audio_input in this session. Prior J2783 covers v01 only. Audition new 180s wonder, complete joined v02, 168-186s transition, entire five-part locked-VO reference mix and tail; assess period fit, wonder/teach contrast, distinctness, tempo, joins, coverage and speech clarity. Check exact hashes and all complete-library gate results. Give concrete timestamps for failures; never waive numeric FAIL. If no candidate was generated, record production blocker and finish review as not performed for Chief disposition, not PASS. Missing capability uses typed capability hold. No spending, new takes, media edits, approval, assembly release, YouTube or Buffer. Report to HOS desk and commit findings in clean HOS worktree.",
+      "ref": "",
+      "film": "009",
+      "stage": "edit",
+      "after": "J2806",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-14T03:44Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T03:44Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Audition the complete revised score and report precise acceptance or faults",
+      "due": "2026-11-14T18:00:00Z",
+      "kind": "review",
+      "required_capabilities": [
+        "audio_input"
+      ],
+      "plain": "Listen to the revised gravity film music with the narration"
     }
   ],
   "focus": [
