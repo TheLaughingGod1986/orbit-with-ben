@@ -208584,9 +208584,14 @@
           "at": "2026-11-14T22:50Z",
           "by": "gemini",
           "what": "step 1 of 6 done: Step 1/6 done: verified SHA-256 hashes, ffprobe streams, and automated gates on long v01 (10ff8979...) and Shorts 1 & 2 (d70031ea..., f9798f17...); both Shorts v01 FAIL gate_shorts_open 9:16 full-bleed check (57% and 100% blur-pad)"
+        },
+        {
+          "at": "2026-11-14T22:52Z",
+          "by": "gemini",
+          "what": "step 2 of 6 done: Step 2/6 done: demonstrated audio_input and moving_video_input on 034 long and Shorts 1 & 2; generated 2fps contact sheets and 90f final-3s strips"
         }
       ],
-      "remaining_action": "Generating and inspecting 2 fps contact sheets, cut strips, final-3s strips, audio, and 360p proxies for 034 long v01 and Shorts 1 & 2",
+      "remaining_action": "Inspecting full-film 2fps contact sheets, cut-boundary strips, final-3s strips, and full 646.94s audio",
       "kind": "review",
       "required_capabilities": [
         "audio_input"
@@ -208604,11 +208609,11 @@
       "urgent": 7,
       "due": "2026-11-15T20:00:00Z",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 6,
-        "at": "2026-11-14T22:50Z",
+        "at": "2026-11-14T22:52Z",
         "by": "gemini",
-        "note": "Step 1/6 done: verified SHA-256 hashes, ffprobe streams, and automated gates on long v01 (10ff8979...) and Shorts 1 & 2 "
+        "note": "Step 2/6 done: demonstrated audio_input and moving_video_input on 034 long and Shorts 1 & 2; generated 2fps contact shee"
       },
       "taskKeys": [
         "OWB:034"
