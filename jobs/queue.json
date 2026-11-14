@@ -192701,9 +192701,14 @@
           "at": "2026-11-14T10:30Z",
           "by": "gemini",
           "what": "step 2 of 6 done: Step 2 done: verified 7 joins, single subscribe beat in Part 1 (03:37.56), 0 in Parts 2-7, 7 cards & 7 distance maps"
+        },
+        {
+          "at": "2026-11-14T10:31Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: Step 3 done: verified final audio (-14.0 LUFS / -0.75 dBTP), linking sfx_level PASS, score provenance, and music_gate warnings/BPM"
         }
       ],
-      "remaining_action": "Verify audio levels, score provenance, unreadable music-comparison warnings, and 80 BPM vs 66-70 BPM",
+      "remaining_action": "Review all 15 picture warnings on picture_qa_review.jpg and applicable polish checks",
       "kind": "review",
       "rerouted_from": {
         "needs": "mini",
@@ -192716,11 +192721,11 @@
       "model": "gemini-argon",
       "plain": "Check the finished Journey film and its three thumbnails before Ben watches it",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 6,
-        "at": "2026-11-14T10:30Z",
+        "at": "2026-11-14T10:31Z",
         "by": "gemini",
-        "note": "Step 2 done: verified 7 joins, single subscribe beat in Part 1 (03:37.56), 0 in Parts 2-7, 7 cards & 7 distance maps"
+        "note": "Step 3 done: verified final audio (-14.0 LUFS / -0.75 dBTP), linking sfx_level PASS, score provenance, and music_gate wa"
       },
       "taskKeys": [
         "OWB:023",
