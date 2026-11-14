@@ -187,7 +187,7 @@ class WholeRun(unittest.TestCase):
         self.assertEqual(res["counts"]["unrouted"], 0)
         self.assertEqual(res["counts"]["keys"], 0, [g for g in res["groups"] if g["key"] == "keys"])
         text = split.report(res)
-        self.assertIn(f"{res['left']} thing", text)
+        self.assertIn("PASS. Nothing stops the move." if not res["left"] else f"{res['left']} thing", text)
         one = split.report(dict(res, left=1))
         self.assertIn("1 thing still stops the move.", one)                 # one thing stops; two things stop
         self.assertIn("2 things still stop the move.", split.report(dict(res, left=2)))

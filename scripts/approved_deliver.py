@@ -413,8 +413,8 @@ def plan_actions(videos: list[dict], alljobs: list[dict], *, now: dt.datetime | 
         actions.append({
             "op": "create", "key": v.get("key"), "destination": dest, "title": title, "body": body,
             # The queue can only claim a stage on the default channel's films, so only those carry film and stage.
-            "kind": kind, "film": num if channel == default_label() and re.fullmatch(r"\d{3}", str(num)) else "",
-            "stage": "upload" if channel == default_label() and re.fullmatch(r"\d{3}", str(num)) else "",
+            "kind": kind, "film": num if channel == default_label() and re.fullmatch(r"(?:\d{3}|[A-Z]\d{2})", str(num)) else "",
+            "stage": "upload" if channel == default_label() and re.fullmatch(r"(?:\d{3}|[A-Z]\d{2})", str(num)) else "",
             "repo": slug_of(channel) or channels.default(),
             "airs": slot, "version": ver, "channel": channel, "type": vtype,
             "approved_job": (v.get("approved") or {}).get("job") or "",

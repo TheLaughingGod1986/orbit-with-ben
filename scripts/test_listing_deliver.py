@@ -476,6 +476,10 @@ class AnyChannel(unittest.TestCase):
             }))
             self.assertEqual(ad.lp.find_manifest(root, number="J01", vtype="long"), manifest)
             self.assertTrue(ad.lp.for_video({"number": "J01", "type": "long"}, root)["complete"])
+            v = {"key": "OWB:OK:J2222", "lane": "approved", "channel": "OWB", "number": "J01", "type": "long",
+                 "title": "A Calm Journey", "youtube": None, "approved": {"job": "J2222", "version": "v03"}}
+            actions = ad.plan_actions([v], [], now=NOW, root=root)
+            self.assertEqual((actions[0]["op"], actions[0]["film"], actions[0]["stage"]), ("create", "J01", "upload"))
 
 
 if __name__ == "__main__":
