@@ -248893,9 +248893,14 @@
           "at": "2026-11-14T09:33Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T09:34Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2819; reading J2797, J2814, J2714, J2532 and running live resolver/endpoint/board_check probes"
         }
       ],
-      "remaining_action": "Verify readiness: Verify normal board routing and reliable data after the existing token setup and data checks",
+      "remaining_action": "Inspect J2797/J2814/J2714/J2532, probe normal resolver vs public DNS, Pages token/data endpoints, and board_check",
       "kind": "review",
       "recheck_of": "J2797",
       "due": "2026-11-14T10:31:21+00:00",
@@ -248912,10 +248917,9 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-14T09:33Z",
+        "at": "2026-11-14T09:34Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Claimed J2819; reading J2797, J2814, J2714, J2532 and running live resolver/endpoint/board_check probes"
       }
     }
   ],
