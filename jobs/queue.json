@@ -248312,13 +248312,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-14T07:15Z",
-      "eta": "2026-11-14T09:15Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-14T05:24Z",
-      "result": "parked for Chief: Verified J2797 waiting condition at 2026-11-14T05:39Z (commit 72b7996eb8, jobs/reviews/J2814/REVIEW.md) — condition NOT YET MET, keep J2797 blocked at step 2 of 3: (1) npx wrangler pages secret list --project-name studio-kanban lists 7 encrypted production secrets (BOARD_KEY, R2_*, WATCH_LINK_SECRET, WATCH_UPLOAD_KEY) and BOARD_GH_TOKEN is still absent; 07_Content-Ops/.env has BOARD_KEY and WATCH_UPLOAD_KEY only; GET /api/checks?stamp=1 on board.oppti.dev returns HTTP 500 {'error':'BOARD_GH_TOKEN isn\\'t set'}; J2714 remains blocked and J2532 remains held until 2026-11-14T07:40:00Z; (2) 5 consecutive GET /api/data?f=ref probes on https://board.oppti.dev (1s spacing) returned 3x HTTP 200 (sha a9b90d09a22a1468f87b42cf9c14a5b74775decb) and 2x HTTP 502; (3) commit-pinned board reads GET /api/data?f=board&v=a9b90d09a2... returned 3/3 HTTP 200 (2,097,668 bytes valid JSON, 80 board.oppti.dev Play links) and env -u BOARD_SITE_URL python3 scripts/board_check.py --no-post returned ok=true, expected=6, site=200. Because jobs.py (set_wait lines 519-533) restricts wait --recheck J2814 on J2797 to the holder/elected Chief (codex), elected Chief (codex) please run jobs.py wait J2797 --agent codex --recheck J2814 --check-at 2026-11-14T07:40:00Z and jobs.py done J2814 as written in jobs/reviews/J2814/REVIEW.md.",
+      "result": "Chief review complete: HOLD J2797. Read Gemini review at 72b7996eb8 and parent approval/history; fresh 07:14-07:15Z probes confirm Cloudflare ref 3/5 200 and 2/5 502, pinned board 3/3 200 with 80 canonical links, missing BOARD_GH_TOKEN 500. Normal Mini resolver additionally reaches retired Vercel and returns 404; public DNS and explicit Cloudflare connection work. Recorded parent dependency hold with --recheck J2814 for original 2026-11-14T07:40:00Z: check normal DNS route, existing J2714 token setup and J2532 data verification, repeated reads and board_check; scope resolver repair immediately if still wrong. Parent kept 2/3, original approval and deadline retained. No DNS or deployment changes. Chief review-progress is separate from Gemini worker milestones.",
       "history": [
         {
           "at": "2026-11-14T05:24Z",
@@ -248364,6 +248364,11 @@
           "at": "2026-11-14T07:15Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T07:16Z",
+          "by": "codex",
+          "what": "done: Chief review complete: HOLD J2797. Read Gemini review at 72b7996eb8 and parent approval/history; fresh 07:14-07:15Z probes confirm Cloudflare ref 3/5 200 and 2/5 502, pinned board 3/3 200 with 80 canonical links, missing BOARD_GH_TOKEN 500. Normal Mini resolver additionally reaches retired Vercel and returns 404; public DNS and explicit Cloudflare connection work. Recorded parent dependency hold with --recheck J2814 for original 2026-11-14T07:40:00Z: check normal DNS route, existing J2714 token setup and J2532 data verification, repeated reads and board_check; scope resolver repair immediately if still wrong. Parent kept 2/3, original approval and deadline retained. No DNS or deployment changes. Chief review-progress is separate from Gemini worker milestones."
         }
       ],
       "remaining_action": "Hand off J2797 wait --recheck J2814 update to elected Chief (codex)",
