@@ -90,6 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2834 | mini | claimed | macbook-2 | 2026-11-14T19:47Z | thumb · Weekly OWB thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J2836 | mini | open (after J2835) | – | – | HOS:106 topic · for gemini · review · `gemini-argon` · HOS 106 Eels: rule-E topic go/no-go review |  |
 | J2837 | mini | open (after J2835) | – | – | HOS:107 topic · for gemini · review · `gemini-argon` · HOS 107 Autumn Leaves: rule-E topic go/no-go review |  |
+| J2838 | any | open | – | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
