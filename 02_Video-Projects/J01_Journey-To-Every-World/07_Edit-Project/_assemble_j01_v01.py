@@ -679,23 +679,35 @@ def run_trim(src: Path, start: float, duration: float, out: Path) -> None:
          "-pix_fmt", "yuv420p", str(out)])
 
 
+def loudnorm_json(blob: str) -> dict:
+    """ffmpeg prints the loudnorm object, then more log lines. json.loads rejects that tail."""
+    dec = json.JSONDecoder()
+    start = blob.rfind("\n{")
+    start = blob.find("{") if start < 0 else start + 1
+    if start < 0:
+        raise RuntimeError("loudnorm measure failed\n" + blob[-500:])
+    try:
+        measured, _end = dec.raw_decode(blob[start:])
+    except json.JSONDecodeError as exc:
+        raise RuntimeError(f"loudnorm measure failed: {exc}\n" + blob[-500:]) from exc
+    if "input_i" not in measured:
+        raise RuntimeError("loudnorm measure had no input_i\n" + blob[-500:])
+    return measured
+
+
 def loudnorm(src: Path, out: Path) -> None:
     if ready(out, probe(src) - 1.0):
         log("keep loudnorm")
         return
     log("measure loudness")
-    r = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(src),
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-vn", "-i", str(src),
                         "-af", "loudnorm=I=-14:TP=-1.0:LRA=11:print_format=json",
                         "-f", "null", "-"], capture_output=True, text=True)
-    blob = r.stderr
-    i = blob.rfind("{")
-    if i < 0:
-        raise RuntimeError("loudnorm measure failed\n" + blob[-500:])
-    measured = json.loads(blob[i:])
+    measured = loudnorm_json(r.stderr or "")
     af = ("loudnorm=I=-14:TP=-1.0:LRA=11:measured_I={input_i}:measured_TP={input_tp}:"
           "measured_LRA={input_lra}:measured_thresh={input_thresh}:offset={target_offset}:linear=true")
     af = af.format(**{k: measured[k] for k in ("input_i", "input_tp", "input_lra", "input_thresh", "target_offset")})
-    log("apply loudnorm")
+    log(f"apply loudnorm I={measured['input_i']} TP={measured['input_tp']}")
     run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", str(src),
          "-af", af, "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", str(out)])
 
@@ -843,11 +855,78 @@ def smoke() -> None:
     log(f"smoke ok {probe(sdir / 'smoke.mp4'):.2f}s frame {frame}")
 
 
+def segment_list() -> list[tuple[str, Path, str]]:
+    segs: list[tuple[str, Path, str]] = [("cold", SCRATCH / "seg_cold.mp4", "Cold open")]
+    for i in range(7):
+        name, _key, title, _windows = PARTS[i]
+        segs.append((f"card{i+1}", SCRATCH / f"seg_card_{i+1}.mp4", CARDS[i][0] + " " + CARDS[i][1]))
+        segs.append((name, SCRATCH / f"seg_{name}.mp4", title))
+        if i < 6:
+            _mid, _film, _start, _bed, btitle, _scale = BRIDGE_META[i]
+            segs.append((f"bridge{i+1}", SCRATCH / f"seg_bridge_{i+1}.mp4", btitle))
+    segs.append(("close", SCRATCH / "seg_close.mp4", "Closing and end hold"))
+    return segs
+
+
+def write_timeline(dest: Path, digest: str, segs: list[tuple[str, Path, str]]) -> list[dict]:
+    durs = [probe(p) for _n, p, _t in segs]
+    placed = []
+    for i, ((name, path, title), dur) in enumerate(zip(segs, durs)):
+        placed.append({
+            "name": name,
+            "title": title,
+            "file": str(path),
+            "timeline_in": round(0.0 if i == 0 else sum(durs[:i]) - XFADE * i, 3),
+            "duration": round(dur, 3),
+        })
+    for i, row in enumerate(placed):
+        row["timeline_out"] = round(row["timeline_in"] + durs[i] - (XFADE if i < len(durs) - 1 else 0.0), 3)
+    (OUT_DIR / "J01_Journey_v01_timeline.json").write_text(json.dumps({
+        "duration": probe(dest), "sha256": digest, "fps": FPS, "hold_s": HOLD,
+        "segments": placed,
+        "note": "Chapter times follow the real takes, which run longer than the plan's targets.",
+    }, indent=2) + "\n")
+    return placed
+
+
+def finish() -> int:
+    """Loudness, copy, thumbnails and gates for a join that already exists. Does not re-stitch."""
+    if (pid := running_pid()) and pid != os.getpid():
+        log(f"already running as pid {pid}")
+        return 3
+    (SCRATCH / "RUNNING").write_text(str(os.getpid()))
+    final_local = SCRATCH / FINAL_NAME
+    if not ready(final_local, 3000):
+        raise RuntimeError(f"join missing or short: {final_local}")
+    segs = segment_list()
+    missing = [str(p) for _n, p, _t in segs if not p.exists()]
+    if missing:
+        raise RuntimeError("missing segments: " + ", ".join(missing))
+    norm = SCRATCH / "J01_Journey_v01_loudnorm.mp4"
+    loudnorm(final_local, norm)
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    dest = OUT_DIR / FINAL_NAME
+    log(f"copy {dest}")
+    run(["rsync", "-a", "--partial", str(norm), str(dest)])
+    digest = sha256(dest)
+    (OUT_DIR / "J01_Journey_v01.sha256").write_text(f"{digest}  {FINAL_NAME}\n")
+    placed = write_timeline(dest, digest, segs)
+    build_thumbs()
+    qa_code, music_code = gates(dest, placed)
+    report(4, "Journey cut is on the shared film folder for review",
+           f"File {probe(dest):.0f}s. picture_qa {qa_code}, music_gate {music_code}.")
+    (SCRATCH / "RUNNING").unlink(missing_ok=True)
+    log("done")
+    return 0
+
+
 def main() -> int:
     if "--smoke" in sys.argv:
         smoke()
         return 0
     try:
+        if "--finish" in sys.argv:
+            return finish() or 0
         return build() or 0
     except Exception as exc:
         log(f"FAILED {exc}")
