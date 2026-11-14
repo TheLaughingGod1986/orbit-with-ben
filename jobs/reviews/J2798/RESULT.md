@@ -1,6 +1,6 @@
 # J2798 — reduce the board's minute polling traffic
 
-Implementation complete; measurement and release incomplete. No merge, production deployment or PASS claimed.
+Implementation and bounded Chrome fixture measurements complete. Acting Chief review accepts the change for rollout; production deployment and live traffic validation follow the merge.
 
 An open tab currently fetches the full board whenever the publisher commit changes. A static/live split still
 resends the large job queue when one job changes. This change instead publishes a bounded history of structural
@@ -44,3 +44,18 @@ are still needed if fixture results cannot establish the requested acceptance ev
 
 Required disk offload ran before implementation; no scratch was old enough, so it moved nothing. Worktree and
 build are on the working SSD. The Mini system disk remains low; no NAS files were deleted.
+
+## Resumed review, 14 November
+
+Both detached captures exited 0. Ten-minute transferred bytes (CDP encodedDataLength, initial load excluded):
+
+| Page | Live baseline | Local Chrome fixture, idle | Local Chrome fixture, one film change |
+| --- | ---: | ---: | ---: |
+| / | 1,751,721 | 17,615 | 27,647 |
+| /tracker | 141,613 | 7,100 | 8,822 |
+
+Phone-profile first render was 514/440 ms on the live baseline and 129/153 ms on the local fixture. These are different network conditions, so they establish working phone rendering, not a measured speed improvement. The fixture uses the actual publisher diff and actual API handler but a local HTTP server, without compression; it changes only a fixture film. No live production film was altered.
+
+Re-ran 37 publisher tests, 5 parity tests, 19 API tests (4 existing browser checks skipped by dependency probe), JS transport and full Studio app regressions: PASS. Site build and diff whitespace check: PASS. Existing explicit Chrome auth capture remains the browser authentication evidence. Current main merged cleanly into the branch.
+
+Chief review: KEEP. The bounded edit-history design meets the small-update objective while avoiding retransmission of the whole live queue, which a simple static/live split would still cause. The full snapshot and version-based reload preserve older clients. The function hashes raw bytes once per held copy and does not parse the board payload. Production validation must confirm live API status, content ETags/304 and ten-minute transfer totals; rollout will be reported separately on the studio thread.
