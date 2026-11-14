@@ -63,6 +63,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| J01 | upload | gemini | 2026-11-14T12:55Z | 2026-11-14T14:54Z | J2823 J01 Journey Film 01: build 11_Upload-Package (PACKAGE_MANIFEST, 7 chapters, credits, en-GB SRT, trailer) + dry-run |
+| J01 | upload | gemini | 2026-11-14T12:55Z | 2026-11-14T13:55Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
