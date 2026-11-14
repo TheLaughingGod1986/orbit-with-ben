@@ -92,7 +92,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2855 | mini | blocked | gemini | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008: read the v05 salon sheets (scale, freeze, ghosting, spark) | 6882926175 |
 | J2857 | mini | open (after J2859) | – | – | J01 upload · studio · Upload OWB J01 long v03 (A Calm Journey From Venus to a Dying Star) Private + arm 3-way thumb Test & Compare | 6882810716 |
 | J2858 | mini | open | – | – | studio · Board: check Mini lookup for board.oppti.dev and move /api/checks reads back from pages.dev |  |
-| J2860 | mini | open | – | – | studio · Sleep film: repair the picture Ben flagged at 97:38, show him before and after, then let it go on |  |
+| J2860 | mini | claimed | macbook | 2026-11-15T00:21Z | studio · Sleep film: repair the picture Ben flagged at 97:38, show him before and after, then let it go on |  |
 | J2861 | mini | open (after J2860) | – | – | for gemini · listing · `gemini-argon` · Sleep film: upload the repaired master as Private with the researched listing, scheduled Sat 12 Dec 21:00 London |  |
 | J2862 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2855 |  |
 | J2863 | mini | claimed | macbook-2 | 2026-11-14T23:51Z | review · Longs get almost no showings: prepare one test of a format that works for channels our size, every planet explained in about ten minutes |  |
