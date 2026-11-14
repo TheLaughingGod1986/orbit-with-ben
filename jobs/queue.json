@@ -247767,9 +247767,14 @@
           "at": "2026-11-14T05:01Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Step 2 complete: saved neighbours.py (PASS: 11 >=1M for 104, 7 >=1M for 105) and public_search.py (autocomplete=yes, 0 exact title collisions) JSON evidence for HOS:104 and HOS:105"
+        },
+        {
+          "at": "2026-11-14T05:12Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Step 3 complete: HOS:104 and HOS:105 project folders, TOPIC.md, status.json, and evidence committed and opened as HOS PR #581 (check_all.sh PASS)"
         }
       ],
-      "remaining_action": "Write TOPIC.md, status.json, README.md, production-status.md, and PRE_BUILD_VIDIQ_AUDIT.md for HOS:104 and HOS:105 in the HOS worktree, run checks, and open HOS PR",
+      "remaining_action": "Append HOS:104 and HOS:105 to jobs/WIP.json next_hos in OWB PR and queue two Rule-E topic review jobs",
       "kind": "script",
       "plain": "Choose two new History of Science films using our audience data and comparable videos",
       "mini_only": true,
@@ -247783,11 +247788,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-14T05:01Z",
+        "at": "2026-11-14T05:12Z",
         "by": "gemini",
-        "note": "Step 2 complete: saved neighbours.py (PASS: 11 >=1M for 104, 7 >=1M for 105) and public_search.py (autocomplete=yes, 0 e"
+        "note": "Step 3 complete: HOS:104 and HOS:105 project folders, TOPIC.md, status.json, and evidence committed and opened as HOS PR"
       },
       "taskKeys": [
         "HOS:104",
