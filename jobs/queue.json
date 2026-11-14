@@ -1,5 +1,5 @@
 {
-  "next_id": 2831,
+  "next_id": 2832,
   "jobs": [
     {
       "id": "J0001",
@@ -250163,6 +250163,38 @@
       "remaining_action": "Draft this week's dated-event Short script and slot for the Chief",
       "kind": "script",
       "backlog": "owb-dated-short"
+    },
+    {
+      "id": "J2831",
+      "title": "Board: pass Ben's one-time phone link to his iPhone privately, so his Approve button works",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (14 Nov 15:33Z).** His iPhone shows \"Not sent: This phone isn't linked to the board yet\" when he taps Approve on `board.oppti.dev` in Safari (his screenshots of 15:17, 15:20 and 15:32). Asked whether he had opened the one-time link from the Mini, he answered \"No\". The link is in the usual private file on the Mini (J2714, made 14:00Z). He needs it on his phone without sitting at the Mini. The Journey film is waiting for his verdict.\n\n**Do.**\n1. Check the link in the private file is unused and points at `https://board.oppti.dev`, the address Ben uses. If it has been used or points anywhere else, make a fresh one with `scripts/board_pair_link.py`.\n2. Put it where only Ben can open it on his iPhone, as something he can tap:\n   - First choice: a new note in his own Notes on the Mini (his iCloud account), titled \"Link this phone to the board\", holding the link and nothing else. Not in a shared folder.\n   - If Notes cannot be driven without a permission prompt that nobody is there to click: a small file in his own iCloud Drive, in a folder that is shared with nobody (check the folder's sharing first), with the same name. Use a form that opens as a link he can tap on an iPhone; a page holding one large link is the fallback, with a plain text copy beside it.\n3. Never print the link. Not in terminal output you keep, the job result, a log, git or the thread. Move it from the file into the note or the new file directly.\n4. Say on the thread, in plain words, where Ben finds it and what to do: tap it so it opens in Safari, not in the home-screen icon; when the board opens, tap Share, then Add to Home Screen; delete the old icon. It works once. No link on the thread.\n5. When the board shows the link has been used, or after 24 hours, delete the note or the file and say so.\n\n**Guards.** £0. No secret printed. No shared folder and no shared note. Nothing else deleted. Board open taps stay off.\n\n**Done when** the note or file is in place and the thread says where, and in the result: which of the two places you used. Then, when a tick from Ben's phone reaches the thread, record that and clean up.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-14T15:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T15:33Z",
+          "by": "claude",
+          "what": "added for cursor"
+        }
+      ],
+      "remaining_action": "Put the unused one-time link in Ben's own Notes or private iCloud Drive, tell him on the thread where, clean up after use",
+      "due": "2026-11-14T17:00:00Z",
+      "for": "cursor",
+      "kind": "studio",
+      "plain": "Get the phone-linking link to Ben's iPhone privately, so he can approve the Journey film",
+      "urgent": 11
     }
   ],
   "focus": [
