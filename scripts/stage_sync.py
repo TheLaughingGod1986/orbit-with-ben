@@ -17,6 +17,8 @@ Only todo/doing/review/blocked stages move, never skip. Dry run by default; --ap
 """
 from __future__ import annotations
 
+from board_site import site_url
+
 import argparse
 import json
 import sys
@@ -25,7 +27,7 @@ import urllib.request
 import studio
 import channels
 
-CHECKS_URL = "https://studio-kanban.vercel.app/api/checks"
+CHECKS_URL = site_url() + "/api/checks"
 OPEN = ("todo", "doing", "review", "blocked")
 # Stages a later finished stage proves. Thumbnails are made alongside the edit, so only upload proves them.
 PARALLEL = {"thumbs"}
@@ -63,7 +65,8 @@ def ben_oks(checks: dict, slug: str | None = None) -> dict:
 
 def fetch_checks(url: str = CHECKS_URL) -> dict:
     try:
-        with urllib.request.urlopen(url, timeout=20) as r:
+        request = urllib.request.Request(url, headers={"User-Agent": "studio-kanban stage_sync"})
+        with urllib.request.urlopen(request, timeout=20) as r:
             return json.load(r).get("checks", {})
     except (OSError, ValueError):
         return {}  # the board being down never stops rule 1

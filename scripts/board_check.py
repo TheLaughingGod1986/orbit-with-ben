@@ -10,7 +10,7 @@ with the cards actually published on the board-data branch, and checks the live 
   - after J2427, an ask/approved entry whose cut is already Private+scheduled or live on YouTube
     (`matched_upload` / `read_back`, or a Done card with the same key or video id) is satisfied even when
     `settle_uploaded` moved the card to Done and dropped its ask/approved keys (or removed the job-keyed card)
-  - the live site (studio-kanban.vercel.app) answers 200
+  - the configured live site answers 200
 
 Result, every run (for a routine to watch): ~/_desk/state/board/board_check.json
   {"at", "ok": true|false, "expected": n, "problems": [...], "cards": [...]}
@@ -26,6 +26,8 @@ thread for six days after the November one opened.
 board_publish.py starts it in the background after a run, at most every CHECK_EVERY_S.
 """
 from __future__ import annotations
+
+from board_site import site_url
 
 import argparse
 import datetime as dt
@@ -47,7 +49,7 @@ HOME = pathlib.Path.home()
 ROOT = HERE.parent
 STUDIO = channels.studio_checkout()
 STATE = pathlib.Path(os.environ.get("BOARD_STATE", str(HOME / "_desk" / "state" / "board")))
-SITE = os.environ.get("BOARD_SITE_URL", "https://studio-kanban.vercel.app").rstrip("/")
+SITE = site_url()
 BRANCH = os.environ.get("BOARD_BRANCH", "board-data")
 _THREAD = json.loads((HERE / "thread.json").read_text())   # the studio thread: the file owb_thread.py posts by
 THREAD = (_THREAD["repo"], int(_THREAD["number"]))

@@ -47,7 +47,7 @@
       if (g.ok) sha = ((await g.json()).object || {}).sha || "";
     } catch (e) { if (e && e.signIn) { signIn = true; return null; } }
     try {
-      const r = await elsewhere(own("f=tracker" + (sha ? "&sha=" + sha : ""), sha ? "force-cache" : "no-store"),
+      const r = await elsewhere(own("f=tracker", "no-cache"),
         () => fetch(sha ? AT(sha) : BRANCH + "?t=" + Date.now(), { cache: sha ? "force-cache" : "no-store" }));
       if (!r.ok) return null;
       const t = await r.text();

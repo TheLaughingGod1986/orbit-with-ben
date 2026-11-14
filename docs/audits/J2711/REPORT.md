@@ -108,3 +108,18 @@ The historical Mars result has package, upload and Buffer outcome fields, but do
 The operational prevention and seven listing/three future-caption repairs from earlier runs remain complete; published posts stay untouched. Chief review remains required for this evidence PR. Exhaustive historical comparison remains incomplete; further work needs original artifacts for one of the 78 listed IDs or the actual Mars creation-time snippet. Do not repeat the repaired listings/captions. No Ben action or spend.
 
 Disk maintenance: the required detached scratch offload completed with exit 0; no eligible old scratch existed. Thread read to #6840721900.
+
+## Acceptance readback, 13 November 2026, 07:35 UTC (J2764)
+
+Gemini (`gemini` on `gemini-argon`) covering as specialist worker; Codex is Chief. £0 spent. No YouTube or Buffer mutations were made.
+
+- **Routine 07:05 Buffer check (`2026-11-13T07:05:05Z`, code `a3243ecaf6`, ledger commit `87f3a769cf`):**
+  - **History of Science (`--channel hos`):** checked 16 videos and automatically mirrored **`ChbsigHD5_o`** (*How Do Plants Clean the Air?*, HOS 006 Short B v02 promoting `VbPubYd6Fbs`, `publishAt: 2026-11-18T11:30:00Z`).
+  - **Orbit (`owb`):** checked 34 videos and mirrored 0 new videos (none newly entered the 168-hour window at `07:05:05Z`; next eligible registered Orbit video is **`aAUgIGEuPwQ`**, `publishAt: 2026-11-20T11:30:00Z`, which enters the 7-day window at `2026-11-13T11:30:00Z` for the `2026-11-14T07:05:00Z` run; `kKN8Ale42sE` remains held for its known SHA256 mismatch and open full-frame re-cut job `J2550`).
+- **Authenticated readback of `ChbsigHD5_o` (`jobs/reviews/J2711/automatic_mirror_readback_2026-11-13.json`):**
+  - Live YouTube tags (`6` tags, matching original package manifest): `["history of science", "how do plants clean the air", "joseph priestley", "joseph priestley experiment", "mint plant", "photosynthesis"]`.
+  - Instagram (`6af6b6d7da25c4db3e9f1105`, created `2026-11-13T07:05:59.848Z`, `scheduled` for `2026-11-18T11:30:00.000Z`): ends with **5** subject hashtags (`#HowDoPlantsCleanTheAir #MintPlant #HistoryOfScience #JosephPriestley #JosephPriestleyExperiment`).
+  - Facebook (`6af6b6d95ec1c9d5be66ea7a`, created `2026-11-13T07:06:01.748Z`, `scheduled` for `2026-11-18T11:30:00.000Z`): ends with **3** subject hashtags (`#HowDoPlantsCleanTheAir #MintPlant #HistoryOfScience`).
+  - TikTok (`6af6b6dae1d8eff610a86e55`, created `2026-11-13T07:06:02.951Z`, `scheduled` for `2026-11-18T11:30:00.000Z`): ends with **5** subject hashtags (`#HowDoPlantsCleanTheAir #MintPlant #HistoryOfScience #JosephPriestley #JosephPriestleyExperiment`).
+  - Threads: not enabled on HOS (`00_Brand/Channel-Setup/social/hos/BUFFER_CHANNELS.json`).
+- **Historical limitations retained (`jobs/reviews/J2711/CHIEF_REVIEW.md`, `412dc1b281`):** `84/162` original package baselines recovered (`59/120` Orbit, `25/42` HOS), `78` unidentified (`61` Orbit, `17` HOS), and exact Mars creation-time snippet unavailable. Seven tag repairs and three scheduled Voyager caption repairs remain untouched; sent posts untouched.

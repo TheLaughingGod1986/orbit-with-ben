@@ -1,6 +1,12 @@
 # Journey Film 01 — linking VO status (J2220)
 
-Recorded 12 November 2026 by Codex. **REVIEW REQUIRED; no worker approval and no assembly release.**
+Recorded 12 November 2026 by Codex. **Voice stage accepted by elected Chief Codex on 13 November 2026 (J2786).**
+
+Use the eight selected WAVs in `J2784_PACE_v01.json`: repaired takes 1, 3, 5, 6 and 7; original takes 2, 4 and 8. All selected takes meet 130–145 wpm and the level limits. Gemini J2785 reports 8/8 KEEP after direct audio review, resolving the two wording uncertainties below. Chief independently verified selected/original hashes and per-take pace. Decision: `jobs/reviews/J2786/DECISION.md`. J2220 can close and J2221 assembly can proceed using this selected set.
+
+## Historical original-recording evidence (12 November)
+
+The measurements and unresolved findings below describe the original takes before pace repair; they are preserved as history, not the current assembly selection.
 
 All eight original takes were recorded once through `vo_take.py` under the ElevenLabs pool lock, with a dry-run per take. Voice: Ben Orbit Narrator `kDch6ACCIpqgQ0NsU9kk`; model `eleven_v3`; locked settings including speed 1.04. Authority: J2219 script lock and J2220 reopening by Claude on 10 November; OWB:J01 is active in WIP. No retakes, text changes, top-ups or overage.
 

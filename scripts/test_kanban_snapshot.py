@@ -364,6 +364,29 @@ class AnyChannel(unittest.TestCase):
             self.assertEqual(ks.film_rows("sky", got["sky"])[0][0], "001")
             self.assertEqual(ks.film_rows("deep-sea", got["deep-sea"])[0][0], "007")
 
+    def test_a_film_with_no_receipt_reads_its_long_from_uploads_json_like_a_one_file_channel(self):
+        # J2790: HOS 004's long is registered in UPLOADS.json but has no receipt in its folder. The one-file shape
+        # showed it live; the per-film shape lost it. A receipt still wins; a retired copy or a Short never counts.
+        with tempfile.TemporaryDirectory() as tmp, plugged(self.SKY):
+            root = checkout_of("sky", Path(tmp), ["001", "002", "003"])
+            social = root / "00_Brand/Channel-Setup/social"
+            social.mkdir(parents=True, exist_ok=True)
+            (social / "UPLOADS.json").write_text(json.dumps({"videos": {
+                "LIVEone1111": {"kind": "long", "film": "001", "privacyStatus": "public", "publishAt": "2026-10-15T17:00:24Z"},
+                "SCHEDtwo222": {"kind": "long", "film": "002", "privacyStatus": "private", "publishAt": "2026-12-01T18:00:00Z"},
+                "OLDthree333": {"kind": "long", "film": "003", "retired": True},
+                "SHORTone111": {"kind": "short", "film": "003", "publishAt": "2026-12-02T11:30:00Z"}}}))
+            got = {f["film"]: f for f in ks.read_documents({"sky": root})["sky"]}
+            self.assertEqual((got["001"]["release"]["state"], got["001"]["release"]["videoId"]), ("live", "LIVEone1111"))
+            self.assertEqual((got["002"]["release"]["state"], got["002"]["release"]["publishAt"]), ("scheduled", "2026-12-01T18:00:00Z"))
+            self.assertNotIn("release", got["003"])
+            pkg = root / "02_Video-Projects" / "001_Made-Up" / "11_Upload-Package"
+            pkg.mkdir(parents=True, exist_ok=True)
+            (pkg / "PACKAGE_UPLOAD_RESULT.json").write_text(json.dumps({"ok": True, "dryRun": False, "upload": {
+                "platformPostId": "RECEIPTone11", "responseSummary": {"privacyStatus": "public"}}}))
+            got = {f["film"]: f for f in ks.read_documents({"sky": root})["sky"]}
+            self.assertEqual(got["001"]["release"]["videoId"], "RECEIPTone11")
+
     def test_a_pipeline_file_with_no_films_list_stops_the_run(self):
         with tempfile.TemporaryDirectory() as tmp, plugged(self.SEA):
             root = checkout_of("deep-sea", Path(tmp))

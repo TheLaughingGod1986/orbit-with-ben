@@ -5,6 +5,7 @@ that delivers what Ben OK'd; video_tracker shows it in the "approved" lane until
 flags an approved job with no card there."""
 from __future__ import annotations
 
+from board_site import site_url
 import datetime as dt
 import sys
 import unittest
@@ -30,7 +31,7 @@ def tearDownModule():
     PIN.stop()
 
 NOW = dt.datetime(2026, 10, 25, 14, 30, tzinfo=dt.timezone.utc)
-URL = "https://studio-kanban.vercel.app/api/watch?v=x&e=1&s=y"
+URL = (site_url() + '/api/watch?v=x&e=1&s=y')
 
 
 def job(jid, status="open", **kw):

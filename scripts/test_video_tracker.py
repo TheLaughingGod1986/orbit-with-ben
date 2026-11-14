@@ -2,6 +2,7 @@
 """Tests for the five-lane per-video Studio tracker (Ben, 24 Oct 2026)."""
 from __future__ import annotations
 
+from board_site import site_url
 import io
 import json
 import sys
@@ -45,7 +46,7 @@ def live_fixture():
     briefs = json.loads((ROOT / "05_Analytics" / "kanban" / "film_briefs.json").read_text())["films"]
     jobs = json.loads((ROOT / "jobs" / "queue.json").read_text())["jobs"]
     try:
-        with urllib.request.urlopen("https://studio-kanban.vercel.app/api/checks", timeout=15) as r:
+        with urllib.request.urlopen((site_url() + '/api/checks'), timeout=15) as r:
             checks = json.loads(r.read().decode()).get("checks") or {}
     except Exception as e:
         raise unittest.SkipTest(f"checks API unavailable: {e}")
@@ -278,7 +279,7 @@ class RealYouTubeState(unittest.TestCase):
                            {"id": "006", "title": "Willow", "air": "2026-11-05"}]},
             briefs={"HOS:009": {"you": "Your final OK on Sun 22 Nov.", "youShort": "your final OK Sun 22 Nov", "youWhen": "2026-11-22"},
                     "HOS:006": {"you": "Watch v06 and OK it."}},
-            watch={"HOS:006": {"url": "https://studio-kanban.vercel.app/api/watch?v=hos-006-v06", "version": "v06"}},
+            watch={"HOS:006": {"url": (site_url() + '/api/watch?v=hos-006-v06'), "version": "v06"}},
             jobs=[{"id": "J0862", "status": "blocked", "title": "HOS 009 + 010: Shorts voiceover from the v02 Shorts scripts, park for Chief", "taskKeys": ["HOS:009"]}],
             overrides={"jobFilms": {"J0862": ["HOS:009"]}},
         )

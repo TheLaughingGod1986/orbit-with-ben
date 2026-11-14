@@ -41,6 +41,8 @@ class Routes(unittest.TestCase):
         self.assertEqual(split.route("05_Analytics/ccc/x.json", slugs)[0], split.STUDIO)   # not a channel: the studio's
         for path in ("02_Video-Projects/001_X/status.json", "00_Brand/logo.png", "studio/channel.json", "_archive/x.md"):
             self.assertEqual(split.route(path, slugs)[0], split.HOME_CHANNEL, path)
+        self.assertEqual(split.route("studio/board_site.json", slugs)[0], split.STUDIO)   # J2822: the board's address is the studio's
+        self.assertEqual(split.route("studio/channel.json", slugs)[0], split.HOME_CHANNEL)
         self.assertEqual(split.route("STATUS.md", slugs)[0], split.BUILT)
         self.assertIsNone(split.route("somewhere/new.txt", slugs))
 

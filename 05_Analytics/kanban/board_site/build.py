@@ -14,7 +14,7 @@ Outputs:
   dist/version.json, updater.js, static/, tracker.webmanifest
 
 Data still comes from board.json on the `board-data` branch (scripts/board_publish.py). Page changes need a
-redeploy of the Vercel project studio-kanban; data changes do not. api/checks.js (Ben's ticks → the studio thread / HOS #180)
+direct upload to Cloudflare Pages: build, then `npx wrangler pages deploy` in this folder; data changes do not. api/checks.js (Ben's ticks → the studio thread / HOS #180)
 and vercel.json sit next to this file.
 """
 from __future__ import annotations
@@ -65,7 +65,7 @@ TRACKER_PATCHES = [
 def app_version() -> str:
     files = [TRACKER, AI_PAGE, STUDIO, HERE / "studio_app.js", HERE / "build.py",
              HERE / "ai_app.js", HERE / "tracker_loader.js", HERE / "updater.js", HERE / "api" / "checks.js",
-             HERE / "api" / "data.js"]
+             HERE / "api" / "data.js", HERE / "board_updates.js"]
     return hashlib.sha256(b"\0".join(f.read_bytes() for f in files if f.exists())).hexdigest()[:16]
 
 
@@ -79,7 +79,7 @@ def build_studio(out: pathlib.Path) -> None:
     marker = "<script>\n/* STUDIO_APP_BOOT */\n</script>"
     if html.count(marker) != 1:
         sys.exit("build: expected one STUDIO_APP_BOOT script block in studio_app.html")
-    html = html.replace(marker, "<script>\n" + (HERE / "studio_app.js").read_text() + "\n</script>")
+    html = html.replace(marker, "<script>\n" + (HERE / "board_updates.js").read_text() + "\n" + (HERE / "studio_app.js").read_text() + "\n</script>")
     (out / "index.html").write_text(versioned_page(html))
     print(f"built {out / 'index.html'} ({len(html):,} bytes)")
 
@@ -89,7 +89,7 @@ def build_ai(out: pathlib.Path) -> None:
     marker = "<script>\n/* AI_APP_BOOT */\n</script>"
     if html.count(marker) != 1:
         sys.exit("build: expected one AI_APP_BOOT script block in ai_credits.html")
-    html = html.replace(marker, "<script>\n" + (HERE / "ai_app.js").read_text() + "\n</script>")
+    html = html.replace(marker, "<script>\n" + (HERE / "board_updates.js").read_text() + "\n" + (HERE / "ai_app.js").read_text() + "\n</script>")
     (out / "ai.html").write_text(versioned_page(html))
     print(f"built {out / 'ai.html'} ({len(html):,} bytes)")
 
@@ -119,6 +119,31 @@ def build_tracker(out: pathlib.Path) -> None:
     print(f"built {out / 'tracker.html'} ({len(html):,} bytes)")
 
 
+def build_host_config(out: pathlib.Path) -> None:
+    # One routing/header list serves both hosts; never hand-maintain a second copy.
+    config = json.loads((HERE / "vercel.json").read_text())
+    redirects = [f"{x['source']} {x['destination']} {301 if x['permanent'] else 302}" for x in config["redirects"]]
+    # Pages resolves .html files at their clean URL itself. A 200 rewrite back to
+    # .html triggers its canonical redirect to the same clean URL and loops.
+    for rule in config["rewrites"]:
+        if rule["destination"] != rule["source"].rstrip("/") + ".html":
+            redirects.append(f"{rule['source']} {rule['destination']} 200")
+    (out / "_redirects").write_text("\n".join(redirects) + "\n")
+    headers = []
+    for rule in config["headers"]:
+        headers.append(rule["source"])
+        headers.extend(f"  {h['key']}: {h['value']}" for h in rule["headers"])
+    (out / "_headers").write_text("\n".join(headers) + "\n")
+    (out / "_routes.json").write_text(json.dumps({"version": 1, "include": ["/api/*"], "exclude": []}))
+    # Only _worker.js is executable; no handler sources or secrets are public assets.
+    worker = out / "_worker.js"
+    worker.mkdir()
+    for name in ("cf_adapter.js", "benauth.js", "r2sign.js", "watchsign.js"):
+        shutil.copy(HERE / name, worker / name)
+    shutil.copy(HERE / "cf_worker.js", worker / "index.js")
+    shutil.copytree(HERE / "api", worker / "api")
+
+
 def build(out: pathlib.Path) -> None:
     if out.exists():
         shutil.rmtree(out)
@@ -126,6 +151,7 @@ def build(out: pathlib.Path) -> None:
     build_tracker(out)
     build_ai(out)
     build_studio(out)
+    build_host_config(out)
     (out / "version.json").write_text(json.dumps({"version": app_version()}))
     shutil.copy(HERE / "updater.js", out / "updater.js")
     print(f"built {out}")

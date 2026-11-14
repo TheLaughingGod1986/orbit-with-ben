@@ -1,10 +1,9 @@
 # Upcoming Shorts: gate check
 
-Written by `gate_upcoming.py` at 2026-11-13 06:40 London for Shorts scheduled in the next 14 days. Don't edit by hand.
+Written by `gate_upcoming.py` at 2026-11-14 06:40 London for Shorts scheduled in the next 14 days. Don't edit by hand.
 
 | Airs (London) | Short | In library | Gate |
 |---|---|---|---|
-| 2026-11-13 11:30 | [Why Does Pluto's Giant Ice Heart Have Zero Craters?](https://youtu.be/z5V6gIXXYs8) `z5V6gIXXYs8` | yes | PASS |
 | 2026-11-14 11:30 | [How Did a Helicopter Fly 72 Times on Mars?](https://youtu.be/RT-ec4_GcOk) `RT-ec4_GcOk` | yes | PASS |
 | 2026-11-16 11:30 | [If You Can't See the Nearest Star, How Far Away Is It?](https://youtu.be/aEfdxex__Bo) `aEfdxex__Bo` | yes | PASS |
 | 2026-11-17 11:30 | [How Far From Earth Is Voyager 1 Right Now?](https://youtu.be/kKN8Ale42sE) `kKN8Ale42sE` | yes | **FAIL** |
@@ -13,6 +12,7 @@ Written by `gate_upcoming.py` at 2026-11-13 06:40 London for Shorts scheduled in
 | 2026-11-21 11:30 | [Muons Shouldn't Reach the Ground. They Do.](https://youtu.be/rvug71d7Dqk) `rvug71d7Dqk` | yes | **FAIL** |
 | 2026-11-23 11:30 | [Why Do You Weigh Less at Earth's Equator?](https://youtu.be/Dm4xsF1Ateg) `Dm4xsF1Ateg` | yes | PASS |
 | 2026-11-25 11:30 | [Where Will the International Space Station Crash?](https://youtu.be/xdurJQcoiGM) `xdurJQcoiGM` | yes | **FAIL** |
+| 2026-11-27 11:30 | [Will Asteroid 2024 YR4 Hit the Moon in 2032?](https://youtu.be/93JL_IK57EM) `93JL_IK57EM` | yes | PASS |
 
 ## Details
 

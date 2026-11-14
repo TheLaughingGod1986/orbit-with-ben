@@ -80,3 +80,6 @@ node_modules/
 *_bearer
 *.cookies.json
 storage_state*.json
+
+# Cloudflare local build/deploy state (no credentials in git).
+05_Analytics/kanban/board_site/.wrangler/

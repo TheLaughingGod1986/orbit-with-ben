@@ -29,10 +29,94 @@
   "shorts": {
     "planned_per_long": 4
   },
-  "stages": "from pipeline",
+  "stages": [
+    {
+      "key": "topic",
+      "label": "Topic",
+      "weight": 3,
+      "owner": "Claude",
+      "kind": "review"
+    },
+    {
+      "key": "script",
+      "label": "Script",
+      "weight": 10,
+      "owner": "Grok",
+      "kind": "script"
+    },
+    {
+      "key": "facts",
+      "label": "Fact check",
+      "weight": 5,
+      "owner": "Grok",
+      "kind": "facts"
+    },
+    {
+      "key": "package",
+      "label": "Audit + upload package",
+      "weight": 4,
+      "owner": "Grok",
+      "kind": "listing"
+    },
+    {
+      "key": "vo",
+      "label": "Voiceover (long)",
+      "weight": 10,
+      "owner": "Grok",
+      "kind": "vo"
+    },
+    {
+      "key": "shorts_scripts",
+      "label": "Shorts scripts",
+      "weight": 3,
+      "owner": "Grok",
+      "kind": "script"
+    },
+    {
+      "key": "shorts_vo",
+      "label": "Shorts voiceover",
+      "weight": 5,
+      "owner": "Grok",
+      "kind": "vo"
+    },
+    {
+      "key": "picture",
+      "label": "Picture",
+      "weight": 35,
+      "owner": "Grok",
+      "kind": "video"
+    },
+    {
+      "key": "edit",
+      "label": "Edit + master",
+      "weight": 10,
+      "owner": "Grok",
+      "kind": "assembly"
+    },
+    {
+      "key": "thumbnails",
+      "label": "Thumbnails",
+      "weight": 5,
+      "owner": "Grok",
+      "kind": "chart"
+    },
+    {
+      "key": "ben_ok",
+      "label": "Ben's final OK",
+      "weight": 5,
+      "owner": "Ben"
+    },
+    {
+      "key": "scheduled",
+      "label": "Scheduled",
+      "weight": 5,
+      "owner": "Grok",
+      "kind": "studio"
+    }
+  ],
   "pipeline": {
-    "kind": "pipeline_json",
-    "path": "00_Brand/Channel-Setup/PIPELINE.json"
+    "kind": "film_status",
+    "path": "02_Video-Projects/*/status.json"
   },
   "uat_dir": {
     "env": "HOS_UAT_DIR",

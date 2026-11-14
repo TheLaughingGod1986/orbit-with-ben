@@ -1,38 +1,57 @@
 {
   "film": "J01",
-  "title": "From Earth to Orion: A 600-Light-Year Space Journey",
+  "slug": "J01_Journey-To-Every-World",
+  "title": "A Calm Journey From Venus to a Dying Star",
   "air": "",
   "stages": {
     "topic": {
-      "state": "done"
+      "state": "done",
+      "ref": "57f5785df9"
     },
     "script": {
       "state": "done",
-      "ref": "fab7cf9b61"
+      "ref": "57f5785df9"
     },
     "sources": {
-      "state": "done"
+      "state": "done",
+      "ref": "57f5785df9"
     },
     "vo": {
-      "state": "review",
-      "ref": "6fd3a85d7d"
+      "state": "done",
+      "ref": "3a3eb0019b",
+      "ruling": "PASS (J2786 accepted all eight selected linking takes)",
+      "note": "J2786 accepted all eight selected linking takes; J2784_PACE_v01.json (mean 2.382 w/s, 0/8 fails)"
     },
     "shots": {
-      "state": "done"
+      "state": "done",
+      "ref": "57f5785df9"
     },
     "picture": {
-      "state": "todo"
+      "state": "done",
+      "ref": "fd789925ca",
+      "note": "7 outward distance maps (code_graphic_J01_map_00..06) + 7 chapter cards + 7 locked 023-029 master slices passed picture_qa.py (0 fails) in J2815/J2222"
     },
     "edit": {
-      "state": "todo"
+      "state": "done",
+      "ref": "fd789925ca",
+      "ruling": "PASS (technical/gate KEEP for Ben UAT watch; J2815 9ebb517772 + J2222 fd789925ca)",
+      "note": "J01_Journey_v03.mp4 (3502.30s, -14.0 LUFS, -0.75 dBTP, SHA-256 bb93ea1343) passed sfx_level, music_gate, and picture_qa; in Ready for OK (J2222 awaits_ben)"
     },
     "thumbs": {
-      "state": "todo"
+      "state": "done",
+      "ref": "fd789925ca",
+      "ruling": "PASS (thumb_A, thumb_B, thumb_C passed thumb_preview.py long --score and 168x94 review in J2222)",
+      "note": "08_Thumbnail/j01_v01/thumb_{A,B,C}*.jpg ready for Ben UAT watch (J2222)"
     },
     "upload": {
-      "state": "todo"
+      "state": "todo",
+      "ref": "6c9b001b0e",
+      "ruling": "PASS (J2826 Chief PASS on 11_Upload-Package, 988-cue en-GB SRT, 51s vertical trailer f3565f50e2, and youtube:package --dry-run; Private YouTube upload waits on Ben UAT watch J2222 awaits_ben)",
+      "package_manifest": "11_Upload-Package/PACKAGE_MANIFEST.json",
+      "trailer_sha256": "f3565f50e25061a28bc84e5e40a2a4a03748f024b91f6897e9e80a365aab749e",
+      "note": "Release upload package 11_Upload-Package/ built in J2823 & Chief-reviewed PASS in J2826 (youtube:package --dry-run ok:true, listing_package complete:true); Private YouTube upload waits for Ben's UAT watch on J2222 (awaits_ben)"
     }
   },
   "claims": [],
-  "next": "KEEP (J2219, PR #553 fab7cf9b61): plan & linking script locked; takes next WIP slot when 031 or 032 reaches Ben's watch, then J2220 (VO), J2221 (assembly), J2222 (review)"
+  "next": "J01_Journey_v03.mp4 and 3 thumbnails in Ready for OK (J2222 awaits_ben); 11_Upload-Package & dry-run PASS (J2823/J2826); Private YouTube upload waits for Ben UAT watch OK"
 }

@@ -38,6 +38,8 @@ repos at origin/main: ~/_desk/scratch/chief/board-wt/{owb,hos} (small; they shar
 """
 from __future__ import annotations
 
+from board_site import site_url
+
 import argparse
 import datetime as dt
 import fcntl
@@ -62,7 +64,7 @@ STUDIO_REPO = REPOS[STUDIO] if STUDIO else channels.studio_checkout(HOME)
 STATE = pathlib.Path(os.environ.get("BOARD_STATE", str(HOME / "_desk" / "state" / "board")))
 WT = pathlib.Path(os.environ.get("BOARD_WT", str(HOME / "_desk" / "scratch" / "chief" / "board-wt")))
 BRANCH = os.environ.get("BOARD_BRANCH", "board-data")
-SITE = os.environ.get("BOARD_SITE_URL", "https://studio-kanban.vercel.app").rstrip("/")
+SITE = site_url()
 CHECKS_EVERY_S = 60 * 60  # Ben's OK/change ticks: a full re-read (one Blob list call) at least hourly, as a safety net
 CHECKS_MIN_GAP_S = 60     # ...and a stamp-triggered re-read at most once a minute (the stamp can lag a write by 60 s)
 CHECK_FIELDS = ("checks", "checksAt", "checksVersion", "stampUrl")
@@ -448,23 +450,121 @@ def assemble(docs: dict, prev: dict, checks: dict, at: dt.datetime) -> tuple[dic
 NO_DEPLOY = json.dumps({"git": {"deploymentEnabled": False}}) + "\n"
 
 
-def tree_listing(board_blob: str, nd_blob: str, sub_tree: str, tracker_blob: str | None) -> str:
+def board_diff(old, new, path=()):
+    """Small, deterministic edits; list edits preserve matching job/video identities."""
+    import difflib
+    if old == new:
+        return []
+    if isinstance(old, dict) and isinstance(new, dict):
+        ops = [["delete", list(path + (k,))] for k in sorted(old.keys() - new.keys())]
+        for k, value in new.items():
+            ops.extend(board_diff(old[k], value, path + (k,)) if k in old else [["set", list(path + (k,)), value]])
+        return ops
+    if isinstance(old, list) and isinstance(new, list):
+        def identity(v):
+            if isinstance(v, dict):
+                for key in ("id", "key"):
+                    if key in v:
+                        return (key, str(v[key]))
+            return json.dumps(v, sort_keys=True, separators=(",", ":"))
+        ops, offset = [], 0
+        for tag, a, b, c, d in difflib.SequenceMatcher(None, list(map(identity, old)), list(map(identity, new)), autojunk=False).get_opcodes():
+            if tag == "equal":
+                for i, j in zip(range(a, b), range(c, d)):
+                    ops.extend(board_diff(old[i], new[j], path + (j,)))
+            else:
+                ops.append(["splice", list(path), a + offset, b - a, new[c:d]])
+                offset += (d - c) - (b - a)
+        return ops
+    return [["set", list(path), new]]
+
+
+def compact_edits(ops):
+    """Share repeated list-field updates (hundreds of per-film asOf stamps in live snapshots)."""
+    compact = []
+    pending = None
+    def flush():
+        nonlocal pending
+        if pending:
+            prefix, suffix, value, indices = pending
+            if len(indices) > 1:
+                compact.append(["setMany", prefix, indices, suffix, value])
+            else:
+                compact.append(["set", prefix + [indices[0]] + suffix, value])
+            pending = None
+    for op in ops:
+        if op[0] == "set" and any(isinstance(k, int) for k in op[1]):
+            path, value = op[1:]
+            at = next(i for i, k in enumerate(path) if isinstance(k, int))
+            prefix, index, suffix = path[:at], path[at], path[at + 1:]
+            if pending and pending[:3] == [prefix, suffix, value]:
+                pending[3].append(index)
+            else:
+                flush()
+                pending = [prefix, suffix, value, [index]]
+        else:
+            flush()
+            compact.append(op)
+    flush()
+    return compact
+
+
+def unpack_updates(history):
+    """Publisher-side decoding; the request function still only passes bytes through."""
+    if (history or {}).get("schema") == 2:
+        import base64
+        import gzip
+        return json.loads(gzip.decompress(base64.b64decode(history["payload"])))
+    return history or {}
+
+
+def pack_updates(payload):
+    import base64
+    import gzip
+    body = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode()
+    return {"schema": 2, "encoding": "gzip-base64",
+            "payload": base64.b64encode(gzip.compress(body, mtime=0)).decode()}
+
+
+def updates_payload(board, previous, history, tracker):
+    """Keep recent edits within 14 KB on the wire, including during frequent publishes."""
+    revision = digest(board)
+    tracker_hash = hashlib.sha256((tracker or "").encode()).hexdigest()
+    edits = list(unpack_updates(history).get("edits") or [])
+    if previous is not None and digest(previous) != revision:
+        previous_bytes = json.dumps(previous, ensure_ascii=False, separators=(",", ":")) + "\n"
+        edits.append({"from": digest(previous), "to": revision,
+                      "fromEtag": hashlib.sha256(previous_bytes.encode()).hexdigest(),
+                      "ops": compact_edits(board_diff(previous, board))})
+    snapshot = json.dumps(board, ensure_ascii=False, separators=(",", ":")) + "\n"
+    result = {"schema": 1, "revision": revision, "snapshotEtag": hashlib.sha256(snapshot.encode()).hexdigest(), "tracker": tracker_hash, "edits": edits[-120:]}
+    packed = pack_updates(result)
+    while result["edits"] and len(json.dumps(packed, separators=(",", ":")).encode()) > 14000:
+        result["edits"].pop(0)
+        packed = pack_updates(result)
+    return packed
+
+
+def tree_listing(board_blob: str, nd_blob: str, sub_tree: str, tracker_blob: str | None, updates_blob: str | None = None) -> str:
     """git mktree input for the board-data commit (entries sorted by name, as git wants)."""
     rows = [f"040000 tree {sub_tree}\t07_Content-Ops", f"100644 blob {board_blob}\tboard.json"]
     if tracker_blob:
         rows.append(f"100644 blob {tracker_blob}\ttracker.json")
+    if updates_blob:
+        rows.append(f"100644 blob {updates_blob}\tupdates.json")
     rows.append(f"100644 blob {nd_blob}\tvercel.json")
     return "\n".join(rows) + "\n"
 
 
-def push(board: dict, at: dt.datetime, tracker: str | None = None) -> str:
+def push(board: dict, at: dt.datetime, tracker: str | None = None, updates: dict | None = None) -> str:
     body = json.dumps(board, ensure_ascii=False, separators=(",", ":")) + "\n"
     repo = STUDIO_REPO
     blob = git(repo, "hash-object", "-w", "--stdin", inp=body)
     nd = git(repo, "hash-object", "-w", "--stdin", inp=NO_DEPLOY)
     sub = git(repo, "mktree", inp=f"100644 blob {nd}\tvercel.json\n")
     tb = git(repo, "hash-object", "-w", "--stdin", inp=tracker) if tracker else None
-    tree = git(repo, "mktree", inp=tree_listing(blob, nd, sub, tb))
+    ub = git(repo, "hash-object", "-w", "--stdin", inp=json.dumps(updates, ensure_ascii=False, separators=(",", ":"))) if updates else None
+    tree = git(repo, "mktree", inp=tree_listing(blob, nd, sub, tb, ub))
     commit = git(repo, "commit-tree", tree, "-m", f"board data {iso(at)}")
     git(repo, "push", "-q", "-f", "origin", f"{commit}:refs/heads/{BRANCH}")
     return commit
@@ -634,6 +734,13 @@ def finish(a, at, prev, prev_path, key, docs, board, hashes, checks, checks_at, 
     if tracker:  # a new tracker snapshot is a change too (board.json alone stays as it was)
         whole = digest([whole, hashlib.sha256(tracker.encode()).hexdigest()])
     board["publishedAt"] = iso(at)  # the page's small "Updated HH:MM"; after the digest, so it never forces a push
+    try:
+        previous = json.loads((STATE / "board.json").read_text())
+        history = json.loads((STATE / "updates.json").read_text())
+    except (OSError, ValueError):
+        previous, history = None, None
+    updates = updates_payload(board, previous, history, tracker)
+    (STATE / "updates.json").write_text(json.dumps(updates, ensure_ascii=False, separators=(",", ":")))
     (STATE / "board.json").write_text(json.dumps(board, ensure_ascii=False, indent=1))
     summary = (f"{films_summary(docs)}, "
                f"{len(docs[QUEUE].get('jobs') or [])} live jobs, {len(checks)} checks; last change {board['dataChangedAt']}"
@@ -649,7 +756,7 @@ def finish(a, at, prev, prev_path, key, docs, board, hashes, checks, checks_at, 
         if not a.quiet:
             print("unchanged")
         return 0
-    commit = push(board, at, tracker)
+    commit = push(board, at, tracker, updates)
     prev_path.write_text(json.dumps({"hashes": hashes, "changedAt": board["changedAt"], "whole": whole,
                                      "checks": checks, "checksAt": checks_at, **checks_meta, "pushed": iso(at),
                                      "commit": commit, **built}, indent=1))

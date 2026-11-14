@@ -1,0 +1,2722 @@
+{
+  "job": "J2784",
+  "version": "pace_v01",
+  "film": "J01_Journey-To-Every-World",
+  "made_at": "2026-11-13T17:12:30Z",
+  "worker": "cursor",
+  "ruling": "J2665 FIX, 13 Nov 2026. Pitch-preserving ffmpeg atempo on takes 1, 3, 5, 6 and 7. Takes 2, 4 and 8 unchanged.",
+  "spend": {
+    "elevenlabs": 0,
+    "flow": 0,
+    "vertex_gbp": 0
+  },
+  "heard_by_this_worker": false,
+  "audio_review": "J2785 listens. This manifest is measurement and local ASR text only.",
+  "store": "studio-live orbit-with-ben/02_Video-Projects/J01_Journey-To-Every-World/02_Voiceover/pace_v01",
+  "target_wpm": 140,
+  "wpm_band": [
+    130,
+    145
+  ],
+  "mean_db_band": [
+    -28,
+    -19
+  ],
+  "takes": [
+    {
+      "n": 1,
+      "stem": "j01_vo_01_intro",
+      "role": "derivative",
+      "words": 117,
+      "word_count_basis": "J2220 submitted-script whitespace count",
+      "original_wav": "j01_vo_01_intro.wav",
+      "original_wav_sha256": "0cf827be5d2fd8aabf317d552e4c9aede3de74b0ddeb058f8d919f7ba6666c35",
+      "original_mp3": "j01_vo_01_intro.mp3",
+      "original_mp3_sha256": "61cd2b030ef8145cad11fec13ceaeeab10a59276f6172cfc0fbd2695b5c04be2",
+      "original_take_json": "j01_vo_01_intro_TAKE.json",
+      "original_take_json_sha256": "1622ae264513a6e5e426b2bf8818a8fc045319035cf3cf7e84a3ad21ee4d7326",
+      "input_duration_s": 44.24,
+      "input_sample_rate": 48000,
+      "input_sample_fmt": "s16",
+      "input_codec": "pcm_s16le",
+      "input_wpm": 158.68,
+      "input_mean_volume_db": -22.4,
+      "input_max_volume_db": -3.6,
+      "selected_path": "pace_v01/j01_vo_01_intro_pace_v01.wav",
+      "filter": "atempo=0.8822792023",
+      "factor": 0.8822792023,
+      "factor_formula": "140/(60*117/44.240000)",
+      "factor_corrected_once": false,
+      "output_duration_s": 50.131,
+      "output_sample_rate": 48000,
+      "output_channels": 2,
+      "output_sample_fmt": "s16",
+      "output_sha256": "dd9f442f5009c5d7c41a751980bd09caa71c47328c0c3fff0a7f677a4df9e799",
+      "output_bytes": 9625234,
+      "wpm": 140.03,
+      "mean_volume_db": -22.4,
+      "max_volume_db": -3.6,
+      "decode": {
+        "ok": true,
+        "stderr": ""
+      },
+      "format_preserved": true,
+      "numeric_pass": true,
+      "prior_whisper_text": "Every machine humanity has ever landed on another world, sits inside a bubble of light less than two light hours across, while the nearest star beyond our sun is 4.24 light years away. Inside that small neighborhood we have set cameras down on a scorching twin where lead melts on the ground and on a frozen red desert where nuclear rovers drive for years through the dust. This is one continuous journey outward from the ground moving under your feet, past the worlds our landers have touched, through the comet cloud at the edge of the sun's reach and out to the giant stars that forge the atoms in your hands. It begins right where you are sitting.",
+      "originals_unchanged": true,
+      "asr": {
+        "engine": "faster-whisper small.en local, cpu int8, no network",
+        "language": "en",
+        "language_probability": 1.0,
+        "text": "Every machine humanity has ever landed on another world sits inside a bubble of light less than two light hours across while the nearest star beyond our sun is 4.24 light years away. Inside that small neighborhood we have set cameras down on a scorching twin where lead melts on the ground and on a frozen red desert where nuclear rovers drive for years through the dust. This is one continuous journey outward from the ground moving under your feet past the world's our landers have touched through the comet cloud at the edge of the sun's reach and out to the giant stars that forged the atoms in your hands. It begins right where you are sitting",
+        "word_count": 118,
+        "words": [
+          {
+            "word": "Every",
+            "start": 0.0,
+            "end": 0.42
+          },
+          {
+            "word": "machine",
+            "start": 0.42,
+            "end": 1.02
+          },
+          {
+            "word": "humanity",
+            "start": 1.02,
+            "end": 1.7
+          },
+          {
+            "word": "has",
+            "start": 1.7,
+            "end": 2.1
+          },
+          {
+            "word": "ever",
+            "start": 2.1,
+            "end": 2.46
+          },
+          {
+            "word": "landed",
+            "start": 2.46,
+            "end": 2.98
+          },
+          {
+            "word": "on",
+            "start": 2.98,
+            "end": 3.4
+          },
+          {
+            "word": "another",
+            "start": 3.4,
+            "end": 3.76
+          },
+          {
+            "word": "world",
+            "start": 3.76,
+            "end": 4.52
+          },
+          {
+            "word": "sits",
+            "start": 4.52,
+            "end": 5.2
+          },
+          {
+            "word": "inside",
+            "start": 5.2,
+            "end": 5.72
+          },
+          {
+            "word": "a",
+            "start": 5.72,
+            "end": 5.94
+          },
+          {
+            "word": "bubble",
+            "start": 5.94,
+            "end": 6.12
+          },
+          {
+            "word": "of",
+            "start": 6.12,
+            "end": 6.4
+          },
+          {
+            "word": "light",
+            "start": 6.4,
+            "end": 6.7
+          },
+          {
+            "word": "less",
+            "start": 6.7,
+            "end": 7.02
+          },
+          {
+            "word": "than",
+            "start": 7.02,
+            "end": 7.32
+          },
+          {
+            "word": "two",
+            "start": 7.32,
+            "end": 7.62
+          },
+          {
+            "word": "light",
+            "start": 7.62,
+            "end": 7.98
+          },
+          {
+            "word": "hours",
+            "start": 7.98,
+            "end": 8.26
+          },
+          {
+            "word": "across",
+            "start": 8.26,
+            "end": 8.88
+          },
+          {
+            "word": "while",
+            "start": 9.54,
+            "end": 9.92
+          },
+          {
+            "word": "the",
+            "start": 9.92,
+            "end": 10.1
+          },
+          {
+            "word": "nearest",
+            "start": 10.1,
+            "end": 10.4
+          },
+          {
+            "word": "star",
+            "start": 10.4,
+            "end": 10.88
+          },
+          {
+            "word": "beyond",
+            "start": 10.88,
+            "end": 11.18
+          },
+          {
+            "word": "our",
+            "start": 11.18,
+            "end": 11.5
+          },
+          {
+            "word": "sun",
+            "start": 11.5,
+            "end": 11.82
+          },
+          {
+            "word": "is",
+            "start": 11.82,
+            "end": 12.44
+          },
+          {
+            "word": "4",
+            "start": 12.44,
+            "end": 12.86
+          },
+          {
+            "word": ".24",
+            "start": 12.86,
+            "end": 13.76
+          },
+          {
+            "word": "light",
+            "start": 13.76,
+            "end": 14.18
+          },
+          {
+            "word": "years",
+            "start": 14.18,
+            "end": 14.44
+          },
+          {
+            "word": "away.",
+            "start": 14.44,
+            "end": 15.12
+          },
+          {
+            "word": "Inside",
+            "start": 16.16,
+            "end": 16.54
+          },
+          {
+            "word": "that",
+            "start": 16.54,
+            "end": 16.82
+          },
+          {
+            "word": "small",
+            "start": 16.82,
+            "end": 17.22
+          },
+          {
+            "word": "neighborhood",
+            "start": 17.22,
+            "end": 17.76
+          },
+          {
+            "word": "we",
+            "start": 17.76,
+            "end": 18.36
+          },
+          {
+            "word": "have",
+            "start": 18.36,
+            "end": 18.46
+          },
+          {
+            "word": "set",
+            "start": 18.46,
+            "end": 18.72
+          },
+          {
+            "word": "cameras",
+            "start": 18.72,
+            "end": 19.14
+          },
+          {
+            "word": "down",
+            "start": 19.14,
+            "end": 19.48
+          },
+          {
+            "word": "on",
+            "start": 19.48,
+            "end": 19.68
+          },
+          {
+            "word": "a",
+            "start": 19.68,
+            "end": 19.84
+          },
+          {
+            "word": "scorching",
+            "start": 19.84,
+            "end": 20.38
+          },
+          {
+            "word": "twin",
+            "start": 20.38,
+            "end": 20.8
+          },
+          {
+            "word": "where",
+            "start": 20.8,
+            "end": 21.54
+          },
+          {
+            "word": "lead",
+            "start": 21.54,
+            "end": 21.92
+          },
+          {
+            "word": "melts",
+            "start": 21.92,
+            "end": 22.32
+          },
+          {
+            "word": "on",
+            "start": 22.32,
+            "end": 22.56
+          },
+          {
+            "word": "the",
+            "start": 22.56,
+            "end": 22.7
+          },
+          {
+            "word": "ground",
+            "start": 22.7,
+            "end": 23.1
+          },
+          {
+            "word": "and",
+            "start": 23.1,
+            "end": 23.9
+          },
+          {
+            "word": "on",
+            "start": 23.9,
+            "end": 24.02
+          },
+          {
+            "word": "a",
+            "start": 24.02,
+            "end": 24.2
+          },
+          {
+            "word": "frozen",
+            "start": 24.2,
+            "end": 24.56
+          },
+          {
+            "word": "red",
+            "start": 24.56,
+            "end": 24.88
+          },
+          {
+            "word": "desert",
+            "start": 24.88,
+            "end": 25.38
+          },
+          {
+            "word": "where",
+            "start": 25.38,
+            "end": 26.0
+          },
+          {
+            "word": "nuclear",
+            "start": 26.0,
+            "end": 26.56
+          },
+          {
+            "word": "rovers",
+            "start": 26.56,
+            "end": 27.2
+          },
+          {
+            "word": "drive",
+            "start": 27.2,
+            "end": 27.56
+          },
+          {
+            "word": "for",
+            "start": 27.56,
+            "end": 27.86
+          },
+          {
+            "word": "years",
+            "start": 27.86,
+            "end": 28.22
+          },
+          {
+            "word": "through",
+            "start": 28.22,
+            "end": 28.68
+          },
+          {
+            "word": "the",
+            "start": 28.68,
+            "end": 28.86
+          },
+          {
+            "word": "dust.",
+            "start": 28.86,
+            "end": 29.26
+          },
+          {
+            "word": "This",
+            "start": 30.48,
+            "end": 30.8
+          },
+          {
+            "word": "is",
+            "start": 30.8,
+            "end": 30.98
+          },
+          {
+            "word": "one",
+            "start": 30.98,
+            "end": 31.34
+          },
+          {
+            "word": "continuous",
+            "start": 31.34,
+            "end": 32.12
+          },
+          {
+            "word": "journey",
+            "start": 32.12,
+            "end": 32.66
+          },
+          {
+            "word": "outward",
+            "start": 32.66,
+            "end": 33.14
+          },
+          {
+            "word": "from",
+            "start": 33.14,
+            "end": 33.78
+          },
+          {
+            "word": "the",
+            "start": 33.78,
+            "end": 33.96
+          },
+          {
+            "word": "ground",
+            "start": 33.96,
+            "end": 34.34
+          },
+          {
+            "word": "moving",
+            "start": 34.34,
+            "end": 34.78
+          },
+          {
+            "word": "under",
+            "start": 34.78,
+            "end": 35.1
+          },
+          {
+            "word": "your",
+            "start": 35.1,
+            "end": 35.32
+          },
+          {
+            "word": "feet",
+            "start": 35.32,
+            "end": 35.76
+          },
+          {
+            "word": "past",
+            "start": 35.76,
+            "end": 36.6
+          },
+          {
+            "word": "the",
+            "start": 36.6,
+            "end": 36.88
+          },
+          {
+            "word": "world's",
+            "start": 36.88,
+            "end": 37.34
+          },
+          {
+            "word": "our",
+            "start": 37.34,
+            "end": 37.44
+          },
+          {
+            "word": "landers",
+            "start": 37.44,
+            "end": 37.9
+          },
+          {
+            "word": "have",
+            "start": 37.9,
+            "end": 38.04
+          },
+          {
+            "word": "touched",
+            "start": 38.04,
+            "end": 38.58
+          },
+          {
+            "word": "through",
+            "start": 38.58,
+            "end": 39.4
+          },
+          {
+            "word": "the",
+            "start": 39.4,
+            "end": 39.6
+          },
+          {
+            "word": "comet",
+            "start": 39.6,
+            "end": 39.94
+          },
+          {
+            "word": "cloud",
+            "start": 39.94,
+            "end": 40.28
+          },
+          {
+            "word": "at",
+            "start": 40.28,
+            "end": 40.52
+          },
+          {
+            "word": "the",
+            "start": 40.52,
+            "end": 40.66
+          },
+          {
+            "word": "edge",
+            "start": 40.66,
+            "end": 40.84
+          },
+          {
+            "word": "of",
+            "start": 40.84,
+            "end": 41.02
+          },
+          {
+            "word": "the",
+            "start": 41.02,
+            "end": 41.16
+          },
+          {
+            "word": "sun's",
+            "start": 41.16,
+            "end": 41.58
+          },
+          {
+            "word": "reach",
+            "start": 41.58,
+            "end": 41.98
+          },
+          {
+            "word": "and",
+            "start": 41.98,
+            "end": 42.72
+          },
+          {
+            "word": "out",
+            "start": 42.72,
+            "end": 43.08
+          },
+          {
+            "word": "to",
+            "start": 43.08,
+            "end": 43.34
+          },
+          {
+            "word": "the",
+            "start": 43.34,
+            "end": 43.48
+          },
+          {
+            "word": "giant",
+            "start": 43.48,
+            "end": 43.84
+          },
+          {
+            "word": "stars",
+            "start": 43.84,
+            "end": 44.36
+          },
+          {
+            "word": "that",
+            "start": 44.36,
+            "end": 44.7
+          },
+          {
+            "word": "forged",
+            "start": 44.7,
+            "end": 45.16
+          },
+          {
+            "word": "the",
+            "start": 45.16,
+            "end": 45.5
+          },
+          {
+            "word": "atoms",
+            "start": 45.5,
+            "end": 45.82
+          },
+          {
+            "word": "in",
+            "start": 45.82,
+            "end": 46.14
+          },
+          {
+            "word": "your",
+            "start": 46.14,
+            "end": 46.34
+          },
+          {
+            "word": "hands.",
+            "start": 46.34,
+            "end": 46.88
+          },
+          {
+            "word": "It",
+            "start": 47.66,
+            "end": 48.1
+          },
+          {
+            "word": "begins",
+            "start": 48.1,
+            "end": 48.48
+          },
+          {
+            "word": "right",
+            "start": 48.48,
+            "end": 49.04
+          },
+          {
+            "word": "where",
+            "start": 49.04,
+            "end": 49.28
+          },
+          {
+            "word": "you",
+            "start": 49.28,
+            "end": 49.44
+          },
+          {
+            "word": "are",
+            "start": 49.44,
+            "end": 49.58
+          },
+          {
+            "word": "sitting",
+            "start": 49.58,
+            "end": 49.84
+          }
+        ],
+        "repeated_phrases": [],
+        "versus_original_whisper": {
+          "reference": "original whisper transcript in J2220_VERIFICATION.json",
+          "sequence_ratio": 0.9746,
+          "reference_words": 118,
+          "new_words": 118,
+          "full_words_retained": true
+        },
+        "wording_flag": false
+      },
+      "pass_for_measurement": true
+    },
+    {
+      "n": 2,
+      "stem": "j01_vo_02_bridge1_venus",
+      "role": "original",
+      "words": 44,
+      "word_count_basis": "J2220 submitted-script whitespace count",
+      "original_wav": "j01_vo_02_bridge1_venus.wav",
+      "original_wav_sha256": "d11035fe2ed4a6d0330a1011a65d4f96930d9f08b96c5f2ccd43ca3abad0cebc",
+      "original_mp3": "j01_vo_02_bridge1_venus.mp3",
+      "original_mp3_sha256": "0f78680590c5250f56175cf0d97097f02da85fcf0eb5aa31f1d4018b545bb341",
+      "original_take_json": "j01_vo_02_bridge1_venus_TAKE.json",
+      "original_take_json_sha256": "3e73d6df0f4c123bf29aaea9acdf3ebd4a8a6f2fe7fd180e4a682d90f1f41106",
+      "input_duration_s": 19.44,
+      "input_sample_rate": 48000,
+      "input_sample_fmt": "s16",
+      "input_codec": "pcm_s16le",
+      "input_wpm": 135.8,
+      "input_mean_volume_db": -23.1,
+      "input_max_volume_db": -4.0,
+      "selected_path": "j01_vo_02_bridge1_venus.wav",
+      "filter": null,
+      "factor": null,
+      "output_duration_s": 19.44,
+      "output_sha256": "d11035fe2ed4a6d0330a1011a65d4f96930d9f08b96c5f2ccd43ca3abad0cebc",
+      "wpm": 135.8,
+      "mean_volume_db": -23.1,
+      "max_volume_db": -4.0,
+      "decode": {
+        "ok": true,
+        "stderr": ""
+      },
+      "numeric_pass": true,
+      "prior_whisper_text": "Earth's 24-hour spin and liquid oceans kept its carbon locks safely in stone beneath the sea. Step 40 million kilometers inward to our closest planetary neighbor, where a single day lasts 243 Earth days and that same carbon escaped into the sky.",
+      "originals_unchanged": true,
+      "asr": {
+        "engine": "faster-whisper small.en local, cpu int8, no network",
+        "language": "en",
+        "language_probability": 1.0,
+        "text": "Earth's 24-hour spin and liquid oceans kept its carbon locks safely in stone beneath the sea. Step 40 million kilometers inward to our closest planetary neighbor, where a single day lasts 243 Earth days and that same carbon escaped into the sky.",
+        "word_count": 43,
+        "words": [
+          {
+            "word": "Earth's",
+            "start": 0.0,
+            "end": 0.42
+          },
+          {
+            "word": "24",
+            "start": 0.42,
+            "end": 0.84
+          },
+          {
+            "word": "-hour",
+            "start": 0.84,
+            "end": 1.02
+          },
+          {
+            "word": "spin",
+            "start": 1.02,
+            "end": 1.42
+          },
+          {
+            "word": "and",
+            "start": 1.42,
+            "end": 1.66
+          },
+          {
+            "word": "liquid",
+            "start": 1.66,
+            "end": 1.96
+          },
+          {
+            "word": "oceans",
+            "start": 1.96,
+            "end": 2.44
+          },
+          {
+            "word": "kept",
+            "start": 2.44,
+            "end": 2.78
+          },
+          {
+            "word": "its",
+            "start": 2.78,
+            "end": 3.0
+          },
+          {
+            "word": "carbon",
+            "start": 3.0,
+            "end": 3.44
+          },
+          {
+            "word": "locks",
+            "start": 3.44,
+            "end": 3.78
+          },
+          {
+            "word": "safely",
+            "start": 3.78,
+            "end": 4.32
+          },
+          {
+            "word": "in",
+            "start": 4.32,
+            "end": 4.5
+          },
+          {
+            "word": "stone",
+            "start": 4.5,
+            "end": 4.88
+          },
+          {
+            "word": "beneath",
+            "start": 4.88,
+            "end": 5.26
+          },
+          {
+            "word": "the",
+            "start": 5.26,
+            "end": 5.52
+          },
+          {
+            "word": "sea.",
+            "start": 5.52,
+            "end": 5.86
+          },
+          {
+            "word": "Step",
+            "start": 6.98,
+            "end": 7.04
+          },
+          {
+            "word": "40",
+            "start": 7.04,
+            "end": 7.5
+          },
+          {
+            "word": "million",
+            "start": 7.5,
+            "end": 7.74
+          },
+          {
+            "word": "kilometers",
+            "start": 7.74,
+            "end": 8.3
+          },
+          {
+            "word": "inward",
+            "start": 8.3,
+            "end": 8.74
+          },
+          {
+            "word": "to",
+            "start": 8.74,
+            "end": 8.96
+          },
+          {
+            "word": "our",
+            "start": 8.96,
+            "end": 9.12
+          },
+          {
+            "word": "closest",
+            "start": 9.12,
+            "end": 9.56
+          },
+          {
+            "word": "planetary",
+            "start": 9.56,
+            "end": 10.06
+          },
+          {
+            "word": "neighbor,",
+            "start": 10.06,
+            "end": 10.6
+          },
+          {
+            "word": "where",
+            "start": 10.9,
+            "end": 11.26
+          },
+          {
+            "word": "a",
+            "start": 11.26,
+            "end": 11.4
+          },
+          {
+            "word": "single",
+            "start": 11.4,
+            "end": 11.7
+          },
+          {
+            "word": "day",
+            "start": 11.7,
+            "end": 12.08
+          },
+          {
+            "word": "lasts",
+            "start": 12.08,
+            "end": 12.66
+          },
+          {
+            "word": "243",
+            "start": 12.66,
+            "end": 14.08
+          },
+          {
+            "word": "Earth",
+            "start": 14.08,
+            "end": 15.04
+          },
+          {
+            "word": "days",
+            "start": 15.04,
+            "end": 15.46
+          },
+          {
+            "word": "and",
+            "start": 15.46,
+            "end": 16.3
+          },
+          {
+            "word": "that",
+            "start": 16.3,
+            "end": 16.44
+          },
+          {
+            "word": "same",
+            "start": 16.44,
+            "end": 16.86
+          },
+          {
+            "word": "carbon",
+            "start": 16.86,
+            "end": 17.48
+          },
+          {
+            "word": "escaped",
+            "start": 17.48,
+            "end": 18.32
+          },
+          {
+            "word": "into",
+            "start": 18.32,
+            "end": 18.66
+          },
+          {
+            "word": "the",
+            "start": 18.66,
+            "end": 18.88
+          },
+          {
+            "word": "sky.",
+            "start": 18.88,
+            "end": 19.24
+          }
+        ],
+        "repeated_phrases": [],
+        "versus_original_whisper": {
+          "reference": "original whisper transcript in J2220_VERIFICATION.json",
+          "sequence_ratio": 1.0,
+          "reference_words": 43,
+          "new_words": 43,
+          "full_words_retained": true
+        },
+        "wording_flag": false
+      },
+      "pass_for_measurement": true
+    },
+    {
+      "n": 3,
+      "stem": "j01_vo_03_bridge2_mars",
+      "role": "derivative",
+      "words": 49,
+      "word_count_basis": "J2220 submitted-script whitespace count",
+      "original_wav": "j01_vo_03_bridge2_mars.wav",
+      "original_wav_sha256": "68bc6fad2052d39267b70ef50beacccabed90de0d11fabe20045948165cf1a37",
+      "original_mp3": "j01_vo_03_bridge2_mars.mp3",
+      "original_mp3_sha256": "f8bf78792f7328c53b457d1c63bcbf786646face886723d59e0e58fdbe2862d0",
+      "original_take_json": "j01_vo_03_bridge2_mars_TAKE.json",
+      "original_take_json_sha256": "b52a7faabdc385740dabd359bbd3dbd042c7aba2453c916dbe06e5ed1e61d823",
+      "input_duration_s": 18.96,
+      "input_sample_rate": 48000,
+      "input_sample_fmt": "s16",
+      "input_codec": "pcm_s16le",
+      "input_wpm": 155.06,
+      "input_mean_volume_db": -22.3,
+      "input_max_volume_db": -4.8,
+      "selected_path": "pace_v01/j01_vo_03_bridge2_mars_pace_v01.wav",
+      "filter": "atempo=0.9028571429",
+      "factor": 0.9028571429,
+      "factor_formula": "140/(60*49/18.960000)",
+      "factor_corrected_once": false,
+      "output_duration_s": 20.988,
+      "output_sample_rate": 48000,
+      "output_channels": 2,
+      "output_sample_fmt": "s16",
+      "output_sha256": "83e80e3ec05db2cf84bfbb1a965d9da11bd4b1b27bc8787cf1a5754ad3bd3997",
+      "output_bytes": 4029774,
+      "wpm": 140.08,
+      "mean_volume_db": -22.2,
+      "max_volume_db": -4.8,
+      "decode": {
+        "ok": true,
+        "stderr": ""
+      },
+      "format_preserved": true,
+      "numeric_pass": true,
+      "prior_whisper_text": "On Venus, 92 bars of crushing heat silenced our toughest lander in just over 2 hours. Head the other way from the sun, 225 million kilometers out to Mars, and the problem flips. An air so thin and cold that our robots can roam for over a decade.",
+      "originals_unchanged": true,
+      "asr": {
+        "engine": "faster-whisper small.en local, cpu int8, no network",
+        "language": "en",
+        "language_probability": 1.0,
+        "text": "On Venus, 92 bars of crushing heat silenced our toughest lander in just over 2 hours. Head the other way from the sun, 225 million kilometers out to Mars and the problem flips, an air so thin and cold that our robots can roam for over a decade.",
+        "word_count": 48,
+        "words": [
+          {
+            "word": "On",
+            "start": 0.0,
+            "end": 0.22
+          },
+          {
+            "word": "Venus,",
+            "start": 0.22,
+            "end": 0.62
+          },
+          {
+            "word": "92",
+            "start": 0.92,
+            "end": 1.42
+          },
+          {
+            "word": "bars",
+            "start": 1.42,
+            "end": 1.84
+          },
+          {
+            "word": "of",
+            "start": 1.84,
+            "end": 2.1
+          },
+          {
+            "word": "crushing",
+            "start": 2.1,
+            "end": 2.48
+          },
+          {
+            "word": "heat",
+            "start": 2.48,
+            "end": 2.98
+          },
+          {
+            "word": "silenced",
+            "start": 2.98,
+            "end": 3.76
+          },
+          {
+            "word": "our",
+            "start": 3.76,
+            "end": 4.06
+          },
+          {
+            "word": "toughest",
+            "start": 4.06,
+            "end": 4.48
+          },
+          {
+            "word": "lander",
+            "start": 4.48,
+            "end": 5.12
+          },
+          {
+            "word": "in",
+            "start": 5.12,
+            "end": 5.4
+          },
+          {
+            "word": "just",
+            "start": 5.4,
+            "end": 5.62
+          },
+          {
+            "word": "over",
+            "start": 5.62,
+            "end": 5.94
+          },
+          {
+            "word": "2",
+            "start": 5.94,
+            "end": 6.18
+          },
+          {
+            "word": "hours.",
+            "start": 6.18,
+            "end": 6.72
+          },
+          {
+            "word": "Head",
+            "start": 7.64,
+            "end": 7.84
+          },
+          {
+            "word": "the",
+            "start": 7.84,
+            "end": 8.02
+          },
+          {
+            "word": "other",
+            "start": 8.02,
+            "end": 8.16
+          },
+          {
+            "word": "way",
+            "start": 8.16,
+            "end": 8.44
+          },
+          {
+            "word": "from",
+            "start": 8.44,
+            "end": 8.7
+          },
+          {
+            "word": "the",
+            "start": 8.7,
+            "end": 8.9
+          },
+          {
+            "word": "sun,",
+            "start": 8.9,
+            "end": 9.16
+          },
+          {
+            "word": "225",
+            "start": 9.74,
+            "end": 10.28
+          },
+          {
+            "word": "million",
+            "start": 10.28,
+            "end": 11.48
+          },
+          {
+            "word": "kilometers",
+            "start": 11.48,
+            "end": 12.08
+          },
+          {
+            "word": "out",
+            "start": 12.08,
+            "end": 12.46
+          },
+          {
+            "word": "to",
+            "start": 12.46,
+            "end": 12.62
+          },
+          {
+            "word": "Mars",
+            "start": 12.62,
+            "end": 12.98
+          },
+          {
+            "word": "and",
+            "start": 12.98,
+            "end": 13.76
+          },
+          {
+            "word": "the",
+            "start": 13.76,
+            "end": 13.88
+          },
+          {
+            "word": "problem",
+            "start": 13.88,
+            "end": 14.2
+          },
+          {
+            "word": "flips,",
+            "start": 14.2,
+            "end": 14.76
+          },
+          {
+            "word": "an",
+            "start": 15.48,
+            "end": 15.76
+          },
+          {
+            "word": "air",
+            "start": 15.76,
+            "end": 16.04
+          },
+          {
+            "word": "so",
+            "start": 16.04,
+            "end": 16.42
+          },
+          {
+            "word": "thin",
+            "start": 16.42,
+            "end": 16.86
+          },
+          {
+            "word": "and",
+            "start": 16.86,
+            "end": 17.12
+          },
+          {
+            "word": "cold",
+            "start": 17.12,
+            "end": 17.6
+          },
+          {
+            "word": "that",
+            "start": 17.6,
+            "end": 18.16
+          },
+          {
+            "word": "our",
+            "start": 18.16,
+            "end": 18.34
+          },
+          {
+            "word": "robots",
+            "start": 18.34,
+            "end": 18.72
+          },
+          {
+            "word": "can",
+            "start": 18.72,
+            "end": 19.06
+          },
+          {
+            "word": "roam",
+            "start": 19.06,
+            "end": 19.38
+          },
+          {
+            "word": "for",
+            "start": 19.38,
+            "end": 19.74
+          },
+          {
+            "word": "over",
+            "start": 19.74,
+            "end": 20.04
+          },
+          {
+            "word": "a",
+            "start": 20.04,
+            "end": 20.26
+          },
+          {
+            "word": "decade.",
+            "start": 20.26,
+            "end": 20.56
+          }
+        ],
+        "repeated_phrases": [],
+        "versus_original_whisper": {
+          "reference": "original whisper transcript in J2220_VERIFICATION.json",
+          "sequence_ratio": 0.9792,
+          "reference_words": 48,
+          "new_words": 48,
+          "full_words_retained": true
+        },
+        "wording_flag": false
+      },
+      "pass_for_measurement": true
+    },
+    {
+      "n": 4,
+      "stem": "j01_vo_04_bridge3_oort",
+      "role": "original",
+      "words": 45,
+      "word_count_basis": "J2220 submitted-script whitespace count",
+      "original_wav": "j01_vo_04_bridge3_oort.wav",
+      "original_wav_sha256": "0d72ab5a1b95db4d35a54f37d2ceefb374d9e1ea6ef47ca0bff1d66b25939a2e",
+      "original_mp3": "j01_vo_04_bridge3_oort.mp3",
+      "original_mp3_sha256": "28a1ecf1b064d4ed538fb4c19b9ad9ceec0f1cdaeac2c4b740bee5160f255251",
+      "original_take_json": "j01_vo_04_bridge3_oort_TAKE.json",
+      "original_take_json_sha256": "98e38b38d66a4a7db6a9f78e4e97edbc802aff8b381ed42dfb21b126de49ebca",
+      "input_duration_s": 20.48,
+      "input_sample_rate": 48000,
+      "input_sample_fmt": "s16",
+      "input_codec": "pcm_s16le",
+      "input_wpm": 131.84,
+      "input_mean_volume_db": -24.0,
+      "input_max_volume_db": -3.9,
+      "selected_path": "j01_vo_04_bridge3_oort.wav",
+      "filter": null,
+      "factor": null,
+      "output_duration_s": 20.48,
+      "output_sha256": "0d72ab5a1b95db4d35a54f37d2ceefb374d9e1ea6ef47ca0bff1d66b25939a2e",
+      "wpm": 131.84,
+      "mean_volume_db": -24.0,
+      "max_volume_db": -3.9,
+      "decode": {
+        "ok": true,
+        "stderr": ""
+      },
+      "numeric_pass": true,
+      "prior_whisper_text": "Beyond the rusty plains of Mars and the giant planets, the Sun's gravity still holds a vast shell of frozen comets 10,000 to 100,000 times further out than Earth. And out there, in the dark, another star is already heading our way.",
+      "originals_unchanged": true,
+      "asr": {
+        "engine": "faster-whisper small.en local, cpu int8, no network",
+        "language": "en",
+        "language_probability": 1.0,
+        "text": "Beyond the rusty plains of Mars and the giant planets, the Sun's gravity still holds a vast shell of frozen comets 10,000 to 100,000 times further out than Earth. And out there, in the dark, another star is already heading our way.",
+        "word_count": 44,
+        "words": [
+          {
+            "word": "Beyond",
+            "start": 0.0,
+            "end": 0.32
+          },
+          {
+            "word": "the",
+            "start": 0.32,
+            "end": 0.54
+          },
+          {
+            "word": "rusty",
+            "start": 0.54,
+            "end": 0.86
+          },
+          {
+            "word": "plains",
+            "start": 0.86,
+            "end": 1.32
+          },
+          {
+            "word": "of",
+            "start": 1.32,
+            "end": 1.58
+          },
+          {
+            "word": "Mars",
+            "start": 1.58,
+            "end": 2.02
+          },
+          {
+            "word": "and",
+            "start": 2.02,
+            "end": 2.56
+          },
+          {
+            "word": "the",
+            "start": 2.56,
+            "end": 2.68
+          },
+          {
+            "word": "giant",
+            "start": 2.68,
+            "end": 3.0
+          },
+          {
+            "word": "planets,",
+            "start": 3.0,
+            "end": 3.58
+          },
+          {
+            "word": "the",
+            "start": 4.12,
+            "end": 4.22
+          },
+          {
+            "word": "Sun's",
+            "start": 4.22,
+            "end": 4.66
+          },
+          {
+            "word": "gravity",
+            "start": 4.66,
+            "end": 5.04
+          },
+          {
+            "word": "still",
+            "start": 5.04,
+            "end": 5.48
+          },
+          {
+            "word": "holds",
+            "start": 5.48,
+            "end": 6.02
+          },
+          {
+            "word": "a",
+            "start": 6.02,
+            "end": 6.22
+          },
+          {
+            "word": "vast",
+            "start": 6.22,
+            "end": 6.6
+          },
+          {
+            "word": "shell",
+            "start": 6.6,
+            "end": 7.06
+          },
+          {
+            "word": "of",
+            "start": 7.06,
+            "end": 7.6
+          },
+          {
+            "word": "frozen",
+            "start": 7.6,
+            "end": 8.1
+          },
+          {
+            "word": "comets",
+            "start": 8.1,
+            "end": 8.76
+          },
+          {
+            "word": "10",
+            "start": 8.76,
+            "end": 9.46
+          },
+          {
+            "word": ",000",
+            "start": 9.46,
+            "end": 10.16
+          },
+          {
+            "word": "to",
+            "start": 10.16,
+            "end": 10.5
+          },
+          {
+            "word": "100",
+            "start": 10.5,
+            "end": 10.96
+          },
+          {
+            "word": ",000",
+            "start": 10.96,
+            "end": 11.56
+          },
+          {
+            "word": "times",
+            "start": 11.56,
+            "end": 12.06
+          },
+          {
+            "word": "further",
+            "start": 12.06,
+            "end": 12.38
+          },
+          {
+            "word": "out",
+            "start": 12.38,
+            "end": 12.76
+          },
+          {
+            "word": "than",
+            "start": 12.76,
+            "end": 13.0
+          },
+          {
+            "word": "Earth.",
+            "start": 13.0,
+            "end": 13.38
+          },
+          {
+            "word": "And",
+            "start": 14.52,
+            "end": 14.64
+          },
+          {
+            "word": "out",
+            "start": 14.64,
+            "end": 14.88
+          },
+          {
+            "word": "there,",
+            "start": 14.88,
+            "end": 15.3
+          },
+          {
+            "word": "in",
+            "start": 15.56,
+            "end": 15.78
+          },
+          {
+            "word": "the",
+            "start": 15.78,
+            "end": 15.92
+          },
+          {
+            "word": "dark,",
+            "start": 15.92,
+            "end": 16.34
+          },
+          {
+            "word": "another",
+            "start": 17.0,
+            "end": 17.38
+          },
+          {
+            "word": "star",
+            "start": 17.38,
+            "end": 17.86
+          },
+          {
+            "word": "is",
+            "start": 17.86,
+            "end": 18.46
+          },
+          {
+            "word": "already",
+            "start": 18.46,
+            "end": 18.88
+          },
+          {
+            "word": "heading",
+            "start": 18.88,
+            "end": 19.72
+          },
+          {
+            "word": "our",
+            "start": 19.72,
+            "end": 20.08
+          },
+          {
+            "word": "way.",
+            "start": 20.08,
+            "end": 20.38
+          }
+        ],
+        "repeated_phrases": [],
+        "versus_original_whisper": {
+          "reference": "original whisper transcript in J2220_VERIFICATION.json",
+          "sequence_ratio": 1.0,
+          "reference_words": 44,
+          "new_words": 44,
+          "full_words_retained": true
+        },
+        "wording_flag": false
+      },
+      "pass_for_measurement": true
+    },
+    {
+      "n": 5,
+      "stem": "j01_vo_05_bridge4_proxima",
+      "role": "derivative",
+      "words": 42,
+      "word_count_basis": "J2220 submitted-script whitespace count",
+      "original_wav": "j01_vo_05_bridge4_proxima.wav",
+      "original_wav_sha256": "ef9183e2e75c144b0e54c758c36850cc8f6d5303618649fca7400f4f5e385f52",
+      "original_mp3": "j01_vo_05_bridge4_proxima.mp3",
+      "original_mp3_sha256": "74fd6ce2f788bb782ff0d98aabd1bb74ae88f315676e654c160f29532b9c7493",
+      "original_take_json": "j01_vo_05_bridge4_proxima_TAKE.json",
+      "original_take_json_sha256": "9efdcaf12b5ca79bbb28596b65352d57a0af5e9451b24929d06ac051098dd36e",
+      "input_duration_s": 17.12,
+      "input_sample_rate": 48000,
+      "input_sample_fmt": "s16",
+      "input_codec": "pcm_s16le",
+      "input_wpm": 147.2,
+      "input_mean_volume_db": -23.4,
+      "input_max_volume_db": -4.5,
+      "selected_path": "pace_v01/j01_vo_05_bridge4_proxima_pace_v01.wav",
+      "filter": "atempo=0.9511111111",
+      "factor": 0.9511111111,
+      "factor_formula": "140/(60*42/17.120000)",
+      "factor_corrected_once": false,
+      "output_duration_s": 17.985,
+      "output_sample_rate": 48000,
+      "output_channels": 2,
+      "output_sample_fmt": "s16",
+      "output_sha256": "bec4d66c908c0297bfe1afdd1d22ed4fd5300f5a811618f4ca7d6bfaa29a2c71",
+      "output_bytes": 3453190,
+      "wpm": 140.12,
+      "mean_volume_db": -23.3,
+      "max_volume_db": -4.5,
+      "decode": {
+        "ok": true,
+        "stderr": ""
+      },
+      "format_preserved": true,
+      "numeric_pass": true,
+      "prior_whisper_text": "Gliese 710 will not reach our comet cloud for another 1.3 million years, but right now, just beyond that outer shell of ice sits our true nearest neighbor in the galaxy, a dim red star 40 trillion kilometers across the dark.",
+      "originals_unchanged": true,
+      "asr": {
+        "engine": "faster-whisper small.en local, cpu int8, no network",
+        "language": "en",
+        "language_probability": 1.0,
+        "text": "Gliese 710 will not reach our comet cloud for another 1.3 million years, but right now, just beyond that outer shell of ice sits our true nearest neighbor in the galaxy, a dim red star 40 trillion kilometers across the dark.",
+        "word_count": 41,
+        "words": [
+          {
+            "word": "Gliese",
+            "start": 0.0,
+            "end": 0.5
+          },
+          {
+            "word": "710",
+            "start": 0.5,
+            "end": 1.08
+          },
+          {
+            "word": "will",
+            "start": 1.08,
+            "end": 1.36
+          },
+          {
+            "word": "not",
+            "start": 1.36,
+            "end": 1.58
+          },
+          {
+            "word": "reach",
+            "start": 1.58,
+            "end": 1.86
+          },
+          {
+            "word": "our",
+            "start": 1.86,
+            "end": 2.12
+          },
+          {
+            "word": "comet",
+            "start": 2.12,
+            "end": 2.44
+          },
+          {
+            "word": "cloud",
+            "start": 2.44,
+            "end": 2.74
+          },
+          {
+            "word": "for",
+            "start": 2.74,
+            "end": 3.02
+          },
+          {
+            "word": "another",
+            "start": 3.02,
+            "end": 3.28
+          },
+          {
+            "word": "1",
+            "start": 3.28,
+            "end": 3.68
+          },
+          {
+            "word": ".3",
+            "start": 3.68,
+            "end": 4.34
+          },
+          {
+            "word": "million",
+            "start": 4.34,
+            "end": 4.72
+          },
+          {
+            "word": "years,",
+            "start": 4.72,
+            "end": 5.42
+          },
+          {
+            "word": "but",
+            "start": 5.42,
+            "end": 6.52
+          },
+          {
+            "word": "right",
+            "start": 6.52,
+            "end": 6.76
+          },
+          {
+            "word": "now,",
+            "start": 6.76,
+            "end": 7.2
+          },
+          {
+            "word": "just",
+            "start": 7.64,
+            "end": 7.82
+          },
+          {
+            "word": "beyond",
+            "start": 7.82,
+            "end": 8.18
+          },
+          {
+            "word": "that",
+            "start": 8.18,
+            "end": 8.46
+          },
+          {
+            "word": "outer",
+            "start": 8.46,
+            "end": 8.84
+          },
+          {
+            "word": "shell",
+            "start": 8.84,
+            "end": 9.12
+          },
+          {
+            "word": "of",
+            "start": 9.12,
+            "end": 9.28
+          },
+          {
+            "word": "ice",
+            "start": 9.28,
+            "end": 9.64
+          },
+          {
+            "word": "sits",
+            "start": 9.64,
+            "end": 10.16
+          },
+          {
+            "word": "our",
+            "start": 10.16,
+            "end": 10.46
+          },
+          {
+            "word": "true",
+            "start": 10.46,
+            "end": 10.84
+          },
+          {
+            "word": "nearest",
+            "start": 10.84,
+            "end": 11.34
+          },
+          {
+            "word": "neighbor",
+            "start": 11.34,
+            "end": 11.66
+          },
+          {
+            "word": "in",
+            "start": 11.66,
+            "end": 11.94
+          },
+          {
+            "word": "the",
+            "start": 11.94,
+            "end": 12.06
+          },
+          {
+            "word": "galaxy,",
+            "start": 12.06,
+            "end": 12.56
+          },
+          {
+            "word": "a",
+            "start": 13.3,
+            "end": 13.54
+          },
+          {
+            "word": "dim",
+            "start": 13.54,
+            "end": 13.84
+          },
+          {
+            "word": "red",
+            "start": 13.84,
+            "end": 14.18
+          },
+          {
+            "word": "star",
+            "start": 14.18,
+            "end": 14.76
+          },
+          {
+            "word": "40",
+            "start": 14.76,
+            "end": 15.46
+          },
+          {
+            "word": "trillion",
+            "start": 15.46,
+            "end": 16.08
+          },
+          {
+            "word": "kilometers",
+            "start": 16.08,
+            "end": 16.76
+          },
+          {
+            "word": "across",
+            "start": 16.76,
+            "end": 17.26
+          },
+          {
+            "word": "the",
+            "start": 17.26,
+            "end": 17.56
+          },
+          {
+            "word": "dark.",
+            "start": 17.56,
+            "end": 17.82
+          }
+        ],
+        "repeated_phrases": [],
+        "versus_original_whisper": {
+          "reference": "original whisper transcript in J2220_VERIFICATION.json",
+          "sequence_ratio": 1.0,
+          "reference_words": 41,
+          "new_words": 41,
+          "full_words_retained": true
+        },
+        "wording_flag": false
+      },
+      "pass_for_measurement": true
+    },
+    {
+      "n": 6,
+      "stem": "j01_vo_06_bridge5_lightspeed",
+      "role": "derivative",
+      "words": 48,
+      "word_count_basis": "J2220 submitted-script whitespace count",
+      "original_wav": "j01_vo_06_bridge5_lightspeed.wav",
+      "original_wav_sha256": "8207b0455ccac826af7455bdf00fabd97ccb5cd1ad0fdd0251dbaa878dca2a63",
+      "original_mp3": "j01_vo_06_bridge5_lightspeed.mp3",
+      "original_mp3_sha256": "8942dcf86bc690e9b476cb3ac17a64ac2de9fd7153884198081c625e5fc37c6a",
+      "original_take_json": "j01_vo_06_bridge5_lightspeed_TAKE.json",
+      "original_take_json_sha256": "2c76bead59c68b2a99f36a1e3287faa4131833ef379f7e693e98f734a9440e68",
+      "input_duration_s": 18.96,
+      "input_sample_rate": 48000,
+      "input_sample_fmt": "s16",
+      "input_codec": "pcm_s16le",
+      "input_wpm": 151.9,
+      "input_mean_volume_db": -23.6,
+      "input_max_volume_db": -4.6,
+      "selected_path": "pace_v01/j01_vo_06_bridge5_lightspeed_pace_v01.wav",
+      "filter": "atempo=0.9216666667",
+      "factor": 0.9216666667,
+      "factor_formula": "140/(60*48/18.960000)",
+      "factor_corrected_once": false,
+      "output_duration_s": 20.568,
+      "output_sample_rate": 48000,
+      "output_channels": 2,
+      "output_sample_fmt": "s16",
+      "output_sha256": "d93f6119aa979955c0d888562126df22c1c03470c2de6acc40cb5e1016b219dc",
+      "output_bytes": 3949130,
+      "wpm": 140.02,
+      "mean_volume_db": -23.4,
+      "max_volume_db": -4.7,
+      "decode": {
+        "ok": true,
+        "stderr": ""
+      },
+      "format_preserved": true,
+      "numeric_pass": true,
+      "prior_whisper_text": "At the speed of our fastest space probes crossing even that first four light year gap takes 75,000 years. To reach the stars inside a single human lifetime a ship would have to push toward the speed of light itself where time stops behaving the way it does at home.",
+      "originals_unchanged": true,
+      "asr": {
+        "engine": "faster-whisper small.en local, cpu int8, no network",
+        "language": "en",
+        "language_probability": 1.0,
+        "text": "At the speed of our fastest space probes, crossing even that first four light year gap takes 75,000 years. To reach the stars inside a single human lifetime, a ship would have to push toward the speed of light itself, where time stops behaving the way it does at home.",
+        "word_count": 51,
+        "words": [
+          {
+            "word": "At",
+            "start": 0.0,
+            "end": 0.24
+          },
+          {
+            "word": "the",
+            "start": 0.24,
+            "end": 0.36
+          },
+          {
+            "word": "speed",
+            "start": 0.36,
+            "end": 0.66
+          },
+          {
+            "word": "of",
+            "start": 0.66,
+            "end": 0.86
+          },
+          {
+            "word": "our",
+            "start": 0.86,
+            "end": 1.0
+          },
+          {
+            "word": "fastest",
+            "start": 1.0,
+            "end": 1.52
+          },
+          {
+            "word": "space",
+            "start": 1.52,
+            "end": 1.94
+          },
+          {
+            "word": "probes,",
+            "start": 1.94,
+            "end": 2.62
+          },
+          {
+            "word": "crossing",
+            "start": 3.22,
+            "end": 3.4
+          },
+          {
+            "word": "even",
+            "start": 3.4,
+            "end": 3.86
+          },
+          {
+            "word": "that",
+            "start": 3.86,
+            "end": 4.14
+          },
+          {
+            "word": "first",
+            "start": 4.14,
+            "end": 4.62
+          },
+          {
+            "word": "four",
+            "start": 4.62,
+            "end": 5.14
+          },
+          {
+            "word": "light",
+            "start": 5.14,
+            "end": 5.48
+          },
+          {
+            "word": "year",
+            "start": 5.48,
+            "end": 5.82
+          },
+          {
+            "word": "gap",
+            "start": 5.82,
+            "end": 6.4
+          },
+          {
+            "word": "takes",
+            "start": 6.4,
+            "end": 6.86
+          },
+          {
+            "word": "75",
+            "start": 6.86,
+            "end": 7.54
+          },
+          {
+            "word": ",000",
+            "start": 7.54,
+            "end": 8.46
+          },
+          {
+            "word": "years.",
+            "start": 8.46,
+            "end": 8.98
+          },
+          {
+            "word": "To",
+            "start": 9.88,
+            "end": 10.06
+          },
+          {
+            "word": "reach",
+            "start": 10.06,
+            "end": 10.3
+          },
+          {
+            "word": "the",
+            "start": 10.3,
+            "end": 10.54
+          },
+          {
+            "word": "stars",
+            "start": 10.54,
+            "end": 10.98
+          },
+          {
+            "word": "inside",
+            "start": 10.98,
+            "end": 11.48
+          },
+          {
+            "word": "a",
+            "start": 11.48,
+            "end": 11.74
+          },
+          {
+            "word": "single",
+            "start": 11.74,
+            "end": 12.12
+          },
+          {
+            "word": "human",
+            "start": 12.12,
+            "end": 12.56
+          },
+          {
+            "word": "lifetime,",
+            "start": 12.56,
+            "end": 13.26
+          },
+          {
+            "word": "a",
+            "start": 13.96,
+            "end": 13.98
+          },
+          {
+            "word": "ship",
+            "start": 13.98,
+            "end": 14.2
+          },
+          {
+            "word": "would",
+            "start": 14.2,
+            "end": 14.42
+          },
+          {
+            "word": "have",
+            "start": 14.42,
+            "end": 14.6
+          },
+          {
+            "word": "to",
+            "start": 14.6,
+            "end": 14.76
+          },
+          {
+            "word": "push",
+            "start": 14.76,
+            "end": 15.08
+          },
+          {
+            "word": "toward",
+            "start": 15.08,
+            "end": 15.38
+          },
+          {
+            "word": "the",
+            "start": 15.38,
+            "end": 15.62
+          },
+          {
+            "word": "speed",
+            "start": 15.62,
+            "end": 15.9
+          },
+          {
+            "word": "of",
+            "start": 15.9,
+            "end": 16.08
+          },
+          {
+            "word": "light",
+            "start": 16.08,
+            "end": 16.3
+          },
+          {
+            "word": "itself,",
+            "start": 16.3,
+            "end": 16.9
+          },
+          {
+            "word": "where",
+            "start": 17.2,
+            "end": 17.72
+          },
+          {
+            "word": "time",
+            "start": 17.72,
+            "end": 18.14
+          },
+          {
+            "word": "stops",
+            "start": 18.14,
+            "end": 18.62
+          },
+          {
+            "word": "behaving",
+            "start": 18.62,
+            "end": 19.12
+          },
+          {
+            "word": "the",
+            "start": 19.12,
+            "end": 19.38
+          },
+          {
+            "word": "way",
+            "start": 19.38,
+            "end": 19.54
+          },
+          {
+            "word": "it",
+            "start": 19.54,
+            "end": 19.68
+          },
+          {
+            "word": "does",
+            "start": 19.68,
+            "end": 19.88
+          },
+          {
+            "word": "at",
+            "start": 19.88,
+            "end": 20.1
+          },
+          {
+            "word": "home.",
+            "start": 20.1,
+            "end": 20.42
+          }
+        ],
+        "repeated_phrases": [],
+        "versus_original_whisper": {
+          "reference": "original whisper transcript in J2220_VERIFICATION.json",
+          "sequence_ratio": 1.0,
+          "reference_words": 51,
+          "new_words": 51,
+          "full_words_retained": true
+        },
+        "wording_flag": false
+      },
+      "pass_for_measurement": true
+    },
+    {
+      "n": 7,
+      "stem": "j01_vo_07_bridge6_betelgeuse",
+      "role": "derivative",
+      "words": 47,
+      "word_count_basis": "J2220 submitted-script whitespace count",
+      "original_wav": "j01_vo_07_bridge6_betelgeuse.wav",
+      "original_wav_sha256": "b7e45e9de1d9776430f2526f4f27006cb751a820274d7ddd16e0e8291e0d5baf",
+      "original_mp3": "j01_vo_07_bridge6_betelgeuse.mp3",
+      "original_mp3_sha256": "9616f619d17b6ec19876e405ea29fd831bf8b614e9392ee25ea0330effa2b666",
+      "original_take_json": "j01_vo_07_bridge6_betelgeuse_TAKE.json",
+      "original_take_json_sha256": "2fcda5169c57216a227197f312cf7f244af311314a1113c9c5ff0e24965fcaad",
+      "input_duration_s": 18.72,
+      "input_sample_rate": 48000,
+      "input_sample_fmt": "s16",
+      "input_codec": "pcm_s16le",
+      "input_wpm": 150.64,
+      "input_mean_volume_db": -23.8,
+      "input_max_volume_db": -4.6,
+      "selected_path": "pace_v01/j01_vo_07_bridge6_betelgeuse_pace_v01.wav",
+      "filter": "atempo=0.9293617021",
+      "factor": 0.9293617021,
+      "factor_formula": "140/(60*47/18.720000)",
+      "factor_corrected_once": false,
+      "output_duration_s": 20.131,
+      "output_sample_rate": 48000,
+      "output_channels": 2,
+      "output_sample_fmt": "s16",
+      "output_sha256": "7e66ba0a949262b6e9a7227139d1a0e6f202bb24dcca81e7e80eb6b6e873770e",
+      "output_bytes": 3865238,
+      "wpm": 140.08,
+      "mean_volume_db": -23.7,
+      "max_volume_db": -4.6,
+      "decode": {
+        "ok": true,
+        "stderr": ""
+      },
+      "format_preserved": true,
+      "numeric_pass": true,
+      "prior_whisper_text": "Even without a relativistic starship, light itself brings the deeper galaxy to our eyes. Look 600 light years out to the shoulder of Orion and you see a dying supergiant 764 times wider than the sun, building the heavy elements that made our world possible.",
+      "originals_unchanged": true,
+      "asr": {
+        "engine": "faster-whisper small.en local, cpu int8, no network",
+        "language": "en",
+        "language_probability": 1.0,
+        "text": "Even without a relativistic starship, light itself brings the deeper galaxy to our eyes. Look 600 light years out to the shoulder of Orion and you see a dying supergiant 764 times wider than the sun, building the heavy elements that made our world possible.",
+        "word_count": 45,
+        "words": [
+          {
+            "word": "Even",
+            "start": 0.0,
+            "end": 0.3
+          },
+          {
+            "word": "without",
+            "start": 0.3,
+            "end": 0.68
+          },
+          {
+            "word": "a",
+            "start": 0.68,
+            "end": 0.94
+          },
+          {
+            "word": "relativistic",
+            "start": 0.94,
+            "end": 1.62
+          },
+          {
+            "word": "starship,",
+            "start": 1.62,
+            "end": 2.18
+          },
+          {
+            "word": "light",
+            "start": 2.88,
+            "end": 3.0
+          },
+          {
+            "word": "itself",
+            "start": 3.0,
+            "end": 3.5
+          },
+          {
+            "word": "brings",
+            "start": 3.5,
+            "end": 3.96
+          },
+          {
+            "word": "the",
+            "start": 3.96,
+            "end": 4.28
+          },
+          {
+            "word": "deeper",
+            "start": 4.28,
+            "end": 4.6
+          },
+          {
+            "word": "galaxy",
+            "start": 4.6,
+            "end": 5.06
+          },
+          {
+            "word": "to",
+            "start": 5.06,
+            "end": 5.42
+          },
+          {
+            "word": "our",
+            "start": 5.42,
+            "end": 5.6
+          },
+          {
+            "word": "eyes.",
+            "start": 5.6,
+            "end": 6.04
+          },
+          {
+            "word": "Look",
+            "start": 7.1,
+            "end": 7.34
+          },
+          {
+            "word": "600",
+            "start": 7.34,
+            "end": 7.94
+          },
+          {
+            "word": "light",
+            "start": 7.94,
+            "end": 8.36
+          },
+          {
+            "word": "years",
+            "start": 8.36,
+            "end": 8.6
+          },
+          {
+            "word": "out",
+            "start": 8.6,
+            "end": 8.94
+          },
+          {
+            "word": "to",
+            "start": 8.94,
+            "end": 9.26
+          },
+          {
+            "word": "the",
+            "start": 9.26,
+            "end": 9.38
+          },
+          {
+            "word": "shoulder",
+            "start": 9.38,
+            "end": 9.66
+          },
+          {
+            "word": "of",
+            "start": 9.66,
+            "end": 9.9
+          },
+          {
+            "word": "Orion",
+            "start": 9.9,
+            "end": 10.26
+          },
+          {
+            "word": "and",
+            "start": 10.26,
+            "end": 10.98
+          },
+          {
+            "word": "you",
+            "start": 10.98,
+            "end": 11.12
+          },
+          {
+            "word": "see",
+            "start": 11.12,
+            "end": 11.32
+          },
+          {
+            "word": "a",
+            "start": 11.32,
+            "end": 11.48
+          },
+          {
+            "word": "dying",
+            "start": 11.48,
+            "end": 11.8
+          },
+          {
+            "word": "supergiant",
+            "start": 11.8,
+            "end": 12.7
+          },
+          {
+            "word": "764",
+            "start": 12.7,
+            "end": 14.66
+          },
+          {
+            "word": "times",
+            "start": 14.66,
+            "end": 15.22
+          },
+          {
+            "word": "wider",
+            "start": 15.22,
+            "end": 15.58
+          },
+          {
+            "word": "than",
+            "start": 15.58,
+            "end": 15.88
+          },
+          {
+            "word": "the",
+            "start": 15.88,
+            "end": 16.04
+          },
+          {
+            "word": "sun,",
+            "start": 16.04,
+            "end": 16.28
+          },
+          {
+            "word": "building",
+            "start": 17.12,
+            "end": 17.38
+          },
+          {
+            "word": "the",
+            "start": 17.38,
+            "end": 17.66
+          },
+          {
+            "word": "heavy",
+            "start": 17.66,
+            "end": 17.9
+          },
+          {
+            "word": "elements",
+            "start": 17.9,
+            "end": 18.38
+          },
+          {
+            "word": "that",
+            "start": 18.38,
+            "end": 18.7
+          },
+          {
+            "word": "made",
+            "start": 18.7,
+            "end": 18.92
+          },
+          {
+            "word": "our",
+            "start": 18.92,
+            "end": 19.12
+          },
+          {
+            "word": "world",
+            "start": 19.12,
+            "end": 19.42
+          },
+          {
+            "word": "possible.",
+            "start": 19.42,
+            "end": 19.84
+          }
+        ],
+        "repeated_phrases": [],
+        "versus_original_whisper": {
+          "reference": "original whisper transcript in J2220_VERIFICATION.json",
+          "sequence_ratio": 1.0,
+          "reference_words": 45,
+          "new_words": 45,
+          "full_words_retained": true
+        },
+        "wording_flag": false
+      },
+      "pass_for_measurement": true
+    },
+    {
+      "n": 8,
+      "stem": "j01_vo_08_closing",
+      "role": "original",
+      "words": 50,
+      "word_count_basis": "J2220 submitted-script whitespace count",
+      "original_wav": "j01_vo_08_closing.wav",
+      "original_wav_sha256": "7454fc2c8d2bd0343b756d4c8f09f7e4c1193417ac0f0aca8a8d03ba5c65775b",
+      "original_mp3": "j01_vo_08_closing.mp3",
+      "original_mp3_sha256": "99e9d1de848a68533ed3260cba136526b7a356b17de664151a6dce7f3c579571",
+      "original_take_json": "j01_vo_08_closing_TAKE.json",
+      "original_take_json_sha256": "131f0551cb9696f000a09c9454c3f3260d17854ba0aeb4276254a9fc88be5c7c",
+      "input_duration_s": 20.88,
+      "input_sample_rate": 48000,
+      "input_sample_fmt": "s16",
+      "input_codec": "pcm_s16le",
+      "input_wpm": 143.68,
+      "input_mean_volume_db": -24.0,
+      "input_max_volume_db": -4.5,
+      "selected_path": "j01_vo_08_closing.wav",
+      "filter": null,
+      "factor": null,
+      "output_duration_s": 20.88,
+      "output_sha256": "7454fc2c8d2bd0343b756d4c8f09f7e4c1193417ac0f0aca8a8d03ba5c65775b",
+      "wpm": 143.68,
+      "mean_volume_db": -24.0,
+      "max_volume_db": -4.5,
+      "decode": {
+        "ok": true,
+        "stderr": ""
+      },
+      "numeric_pass": true,
+      "prior_whisper_text": "From the calcium in our bones forged inside dying supergiants, back across the light years to the red dust of Mars, the thick clouds of Venus and the spinning earth beneath your feet, every world we study is part of the same long story. Good night and thank you for watching with us.",
+      "originals_unchanged": true,
+      "asr": {
+        "engine": "faster-whisper small.en local, cpu int8, no network",
+        "language": "en",
+        "language_probability": 1.0,
+        "text": "From the calcium in our bones forged inside dying supergiants, back across the light years to the red dust of Mars, the thick clouds of Venus and the spinning earth beneath your feet, every world we study is part of the same long story. Good night and thank you for watching with us.",
+        "word_count": 53,
+        "words": [
+          {
+            "word": "From",
+            "start": 0.0,
+            "end": 0.18
+          },
+          {
+            "word": "the",
+            "start": 0.18,
+            "end": 0.34
+          },
+          {
+            "word": "calcium",
+            "start": 0.34,
+            "end": 0.9
+          },
+          {
+            "word": "in",
+            "start": 0.9,
+            "end": 1.18
+          },
+          {
+            "word": "our",
+            "start": 1.18,
+            "end": 1.36
+          },
+          {
+            "word": "bones",
+            "start": 1.36,
+            "end": 1.92
+          },
+          {
+            "word": "forged",
+            "start": 1.92,
+            "end": 2.46
+          },
+          {
+            "word": "inside",
+            "start": 2.46,
+            "end": 2.9
+          },
+          {
+            "word": "dying",
+            "start": 2.9,
+            "end": 3.36
+          },
+          {
+            "word": "supergiants,",
+            "start": 3.36,
+            "end": 4.44
+          },
+          {
+            "word": "back",
+            "start": 4.7,
+            "end": 5.02
+          },
+          {
+            "word": "across",
+            "start": 5.02,
+            "end": 5.3
+          },
+          {
+            "word": "the",
+            "start": 5.3,
+            "end": 5.54
+          },
+          {
+            "word": "light",
+            "start": 5.54,
+            "end": 5.74
+          },
+          {
+            "word": "years",
+            "start": 5.74,
+            "end": 6.04
+          },
+          {
+            "word": "to",
+            "start": 6.04,
+            "end": 6.36
+          },
+          {
+            "word": "the",
+            "start": 6.36,
+            "end": 6.5
+          },
+          {
+            "word": "red",
+            "start": 6.5,
+            "end": 6.7
+          },
+          {
+            "word": "dust",
+            "start": 6.7,
+            "end": 7.06
+          },
+          {
+            "word": "of",
+            "start": 7.06,
+            "end": 7.24
+          },
+          {
+            "word": "Mars,",
+            "start": 7.24,
+            "end": 7.66
+          },
+          {
+            "word": "the",
+            "start": 8.3,
+            "end": 8.4
+          },
+          {
+            "word": "thick",
+            "start": 8.4,
+            "end": 8.64
+          },
+          {
+            "word": "clouds",
+            "start": 8.64,
+            "end": 9.06
+          },
+          {
+            "word": "of",
+            "start": 9.06,
+            "end": 9.4
+          },
+          {
+            "word": "Venus",
+            "start": 9.4,
+            "end": 9.76
+          },
+          {
+            "word": "and",
+            "start": 9.76,
+            "end": 10.48
+          },
+          {
+            "word": "the",
+            "start": 10.48,
+            "end": 10.6
+          },
+          {
+            "word": "spinning",
+            "start": 10.6,
+            "end": 10.96
+          },
+          {
+            "word": "earth",
+            "start": 10.96,
+            "end": 11.32
+          },
+          {
+            "word": "beneath",
+            "start": 11.32,
+            "end": 11.7
+          },
+          {
+            "word": "your",
+            "start": 11.7,
+            "end": 11.98
+          },
+          {
+            "word": "feet,",
+            "start": 11.98,
+            "end": 12.34
+          },
+          {
+            "word": "every",
+            "start": 13.16,
+            "end": 13.46
+          },
+          {
+            "word": "world",
+            "start": 13.46,
+            "end": 13.76
+          },
+          {
+            "word": "we",
+            "start": 13.76,
+            "end": 13.94
+          },
+          {
+            "word": "study",
+            "start": 13.94,
+            "end": 14.24
+          },
+          {
+            "word": "is",
+            "start": 14.24,
+            "end": 14.82
+          },
+          {
+            "word": "part",
+            "start": 14.82,
+            "end": 15.06
+          },
+          {
+            "word": "of",
+            "start": 15.06,
+            "end": 15.24
+          },
+          {
+            "word": "the",
+            "start": 15.24,
+            "end": 15.4
+          },
+          {
+            "word": "same",
+            "start": 15.4,
+            "end": 15.8
+          },
+          {
+            "word": "long",
+            "start": 15.8,
+            "end": 16.28
+          },
+          {
+            "word": "story.",
+            "start": 16.28,
+            "end": 16.94
+          },
+          {
+            "word": "Good",
+            "start": 17.82,
+            "end": 17.94
+          },
+          {
+            "word": "night",
+            "start": 17.94,
+            "end": 18.22
+          },
+          {
+            "word": "and",
+            "start": 18.22,
+            "end": 18.9
+          },
+          {
+            "word": "thank",
+            "start": 18.9,
+            "end": 19.1
+          },
+          {
+            "word": "you",
+            "start": 19.1,
+            "end": 19.48
+          },
+          {
+            "word": "for",
+            "start": 19.48,
+            "end": 19.84
+          },
+          {
+            "word": "watching",
+            "start": 19.84,
+            "end": 20.16
+          },
+          {
+            "word": "with",
+            "start": 20.16,
+            "end": 20.38
+          },
+          {
+            "word": "us.",
+            "start": 20.38,
+            "end": 20.66
+          }
+        ],
+        "repeated_phrases": [],
+        "versus_original_whisper": {
+          "reference": "original whisper transcript in J2220_VERIFICATION.json",
+          "sequence_ratio": 1.0,
+          "reference_words": 53,
+          "new_words": 53,
+          "full_words_retained": true
+        },
+        "wording_flag": false
+      },
+      "pass_for_measurement": true
+    }
+  ],
+  "all_numeric_pass": true,
+  "any_wording_flag": false,
+  "originals_unchanged": true
+}
