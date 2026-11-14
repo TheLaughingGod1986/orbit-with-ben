@@ -239748,13 +239748,13 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-12T23:55Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-12T16:42Z",
-      "result": "Vercel refuses protected secret export. Ben must create the board GitHub token and set BOARD_GH_TOKEN in Cloudflare Pages studio-kanban production secrets. Fallback board/upload keys are set; report at thread comment 6839530655.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-12T16:42Z",
@@ -239860,27 +239860,19 @@
           "at": "2026-11-13T06:11Z",
           "by": "relay",
           "what": "condition verification queued: J2760"
+        },
+        {
+          "at": "2026-11-14T11:34Z",
+          "by": "claude",
+          "what": "reopened: Ben, in chat (14 Nov 11:34Z): \"token's in\". He made a fine-grained GitHub token for orbit-with-ben and history-of-science (Issues read and write, Contents read-only) and added it to the Pages project studio-kanban as a production secret. His screenshot of the project's settings at 11:32Z shows a secret whose name begins BOARD_G; the check of 13 Nov 06:15Z listed none. The live route still answered \"BOARD_GH_TOKEN isn't set\" at 11:33Z on both addresses, because a Pages secret applies from the next deployment. DO: (1) list the project's production secrets, names only, and confirm BOARD_GH_TOKEN is there; if it is not, park for Ben with the exact name he should check. (2) Deploy the board from main (build.py, then wrangler pages deploy), production. (3) On studio-kanban.pages.dev and board.oppti.dev: /api/checks answers 200; one tick written with the board key on a test id and then removed; /api/data?f=ref asked 30 times over two minutes answers 200 every time (the GitHub 403 and 502 seen in J2797 should be gone now reads are signed). (4) If GitHub refuses a read or a write, say which repository and which permission is missing. Never print the token. (5) Then tell Ben on the thread, in plain words, how to open board.oppti.dev, link his phone and add it to his home screen. No key or code on the thread. (6) Say in the result that J2797 and J2532 can now be checked. Guards: £0, no secret printed, nothing deleted, board open taps stay off."
         }
       ],
-      "remaining_action": "Add the missing GitHub token, then verify board ticks and phone linking",
+      "remaining_action": "Confirm BOARD_GH_TOKEN is set, deploy the board, prove a tick saves and reads are reliable, tell Ben how to link his phone",
       "due": "2026-11-13T18:00:00Z",
       "for": "codex",
       "kind": "studio",
-      "plain": "Finish the board's move: bring three settings over so ticks and phone linking work at the new address",
-      "urgent": 9,
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-12T23:57Z",
-        "by": "codex",
-        "note": "Vercel refuses protected secret export; fallback board and upload keys saved locally and set on Cloudflare; GitHub token"
-      },
-      "hold": {
-        "type": "input",
-        "condition": "Vercel refuses protected secret export. Ben must create the board GitHub token and set BOARD_GH_TOKEN in Cloudflare Pages studio-kanban production secrets. Fallback board/upload keys are set; report at thread comment 6839530655.",
-        "check_at": "2026-11-13T07:11:23+00:00",
-        "recheck_task": "J2760"
-      }
+      "plain": "Ben has added the board's token: redeploy the board, prove ticks save again, and tell him how to link his phone",
+      "urgent": 10
     },
     {
       "id": "J2715",
@@ -247266,7 +247258,7 @@
       "for": "codex",
       "kind": "studio",
       "plain": "Give the board a permanent address of its own, and check it is well inside Cloudflare's free allowance",
-      "urgent": 11,
+      "urgent": 9,
       "progress": {
         "step": 2,
         "of": 3,
