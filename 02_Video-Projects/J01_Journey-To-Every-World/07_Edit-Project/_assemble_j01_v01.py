@@ -23,7 +23,7 @@ import time
 from pathlib import Path
 
 import numpy as np
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageEnhance, ImageFont
 
 REPO = Path("/Users/benjaminoats/YouTube/orbit-with-ben")
 SCRATCH = Path("/Volumes/MiniWork/scratch/J2221")
@@ -736,11 +736,12 @@ def build_thumbs() -> None:
     a.paste(cover(venus, (W, H)), (0, 0))
     right = cover(mars_im, (W // 2, H))
     a.paste(right, (W // 2, 0))
+    a = ImageEnhance.Color(a).enhance(1.95)
     stamp(a, "464°C", "TO -60°C")
     b = cover(betel_im, (W, H))
     # bright grade
     arr = np.clip(np.asarray(b).astype(np.float32) * 1.15 + 8, 0, 255).astype(np.uint8)
-    b = Image.fromarray(arr)
+    b = ImageEnhance.Color(Image.fromarray(arr)).enhance(1.55)
     disc = earth.resize((220, 220), Image.Resampling.LANCZOS)
     mask = Image.new("L", (220, 220), 0)
     ImageDraw.Draw(mask).ellipse((2, 2, 218, 218), fill=255)
