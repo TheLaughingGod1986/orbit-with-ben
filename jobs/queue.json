@@ -246843,13 +246843,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-14T02:12Z",
-      "eta": "2026-11-14T03:42Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-14T02:10Z",
-      "result": "",
+      "result": "parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J2800 in orbit-with-ben is 1 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/911. Review and merge it and close the job, or reopen the job with a note.",
       "history": [
         {
           "at": "2026-11-14T02:10Z",
@@ -246860,6 +246860,11 @@
           "at": "2026-11-14T02:12Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T02:15Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J2800 in orbit-with-ben is 1 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/911. Review and merge it and close the job, or reopen the job with a note."
         }
       ],
       "remaining_action": "Pick two data-backed History of Science topics and add them to the waiting line",
