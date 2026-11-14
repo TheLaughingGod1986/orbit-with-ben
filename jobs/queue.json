@@ -194269,10 +194269,10 @@
       "stage": "edit",
       "after": "J2593",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-11-14T04:09Z",
-      "eta": "2026-11-14T06:09Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T18:52Z",
       "result": "",
@@ -195136,6 +195136,11 @@
           "at": "2026-11-14T04:17Z",
           "by": "cursor",
           "what": "step 2 of 3 done: Seven skipped groups encoded at High qp 1. Commit 2b5160bd. Lowest frame 62.70 dB. Four groups with master frames stay unencoded. No v04."
+        },
+        {
+          "at": "2026-11-14T04:17Z",
+          "by": "cursor",
+          "what": "released: Seven fully changed groups encoded (711 frames, High qp 1, lowest 62.70 dB). HOS commit 2b5160bd on PR 542. Resume /Volumes/MiniWork/scratch/J2242-hos jobs/reviews/J2242/RESUME.md. Four groups that still hold master frames stay unencoded: 2718-2887, 3168-3343, 4016-4138, 11038-11245. No v04. Encode process ended; done file /Users/benjaminoats/_desk/logs/J2242-group-nuts.done exit 0. Do not start a second copy. Next is those four groups without giving up master pixels, then the packet mux and gates. No spend or publication."
         }
       ],
       "remaining_action": "Encode the four Franklin groups that still hold master frames, then mux the original audio",
