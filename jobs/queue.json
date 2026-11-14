@@ -252382,9 +252382,14 @@
           "at": "2026-11-14T21:28Z",
           "by": "cursor",
           "what": "step 1 of 5 done: Source hashes match. Tube is 1280x720 so it will be Lanczos-scaled. Composite is already 1920x1080. Salon sits across IDRs at 2413 and 2512; 2672 is the next IDR and already carries SPS/PPS. No B-frames from 2413 through 2671."
+        },
+        {
+          "at": "2026-11-14T21:32Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: Frame 2506 is the IDR at pts 1286144. Frame 2666 is the next IDR. The 160 new frames are a byte copy of tube 99-178 and the composite schedule, with no blend."
         }
       ],
-      "remaining_action": "Build the lossless 160-frame salon intermediate and prove each frame matches one source frame",
+      "remaining_action": "Write the v05 salon splice on the proven frame schedule",
       "due": "2026-11-15T18:00:00Z",
       "kind": "assembly",
       "plain": "Rebuild the Franklin salon join so the tube is full frame and the opening no longer freezes",
@@ -252393,9 +252398,9 @@
       "progress": {
         "step": 1,
         "of": 5,
-        "at": "2026-11-14T21:28Z",
+        "at": "2026-11-14T21:32Z",
         "by": "cursor",
-        "note": "Source hashes match. Tube is 1280x720 so it will be Lanczos-scaled. Composite is already 1920x1080. Salon sits across ID"
+        "note": "Frame 2506 is the IDR at pts 1286144. Frame 2666 is the next IDR. The 160 new frames are a byte copy of tube 99-178 and "
       },
       "taskKeys": [
         "HOS:008"
