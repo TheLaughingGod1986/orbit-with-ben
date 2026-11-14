@@ -193702,9 +193702,14 @@
           "at": "2026-11-14T16:11Z",
           "by": "cursor",
           "what": "step 3 of 4 done: v01 is built. Variolation is 22.93s. Eradication is 21.23s, under the 22s band. Open gate failed on a still open and a hot peak. v02 is rendering. Willow stays scheduled. No upload."
+        },
+        {
+          "at": "2026-11-14T16:16Z",
+          "by": "cursor",
+          "what": "step 3 of 4 done: Eradication v02 open gate PASS at 21.23s with a duration warning. Variolation v03 is 22.93s and still fails the moving-open check. No awaits. No upload."
         }
       ],
-      "remaining_action": "Rebuild the two Vaccine Shorts so the open is moving and the peak is under the limit",
+      "remaining_action": "Give Variolation a moving opening, then run the remaining checks on both Vaccine Shorts",
       "kind": "assembly",
       "urgent": 6,
       "taskKeys": [
@@ -193727,9 +193732,9 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-14T16:11Z",
+        "at": "2026-11-14T16:16Z",
         "by": "cursor",
-        "note": "v01 is built. Variolation is 22.93s. Eradication is 21.23s, under the 22s band. Open gate failed on a still open and a h"
+        "note": "Eradication v02 open gate PASS at 21.23s with a duration warning. Variolation v03 is 22.93s and still fails the moving-o"
       }
     },
     {
