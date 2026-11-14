@@ -1,5 +1,5 @@
 {
-  "next_id": 2806,
+  "next_id": 2807,
   "jobs": [
     {
       "id": "J0001",
@@ -247396,6 +247396,37 @@
       "taskKeys": [
         "HOS:009"
       ]
+    },
+    {
+      "id": "J2806",
+      "title": "HOS 009: produce one revised opening music cue",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Elected HOS Chief Codex scope J2805. Execute only after J2805 completes and its HOS decision PR is merged (verify exact scope). Mini-only existing ElevenLabs API through guards. Read SCORE_SCOPE_J2805.json and SCORE_DECISION_J2805.md in HOS009/05_Music. One new 180s wonder cue, one request, cap3000 subscription credits, GBP0; fresh duration tariff/balance less pending/overage-off checks mandatory. Retain exact teach v01. No retries or extra takes. Deliver v02 joined score, five stems, full library production gate, sanitized provenance and checked NAS copy. Preserve v01, VO and diagram KEEP locks. No generation in parent decision job. This job owns only this bounded production; no score acceptance or assembly release. If gate or guard fails, record exact failure and close this bounded attempt as failed outcome for the linked Chief disposition (do not imply PASS). Hand off immediately to queued audio review if artifacts exist, otherwise explain why review cannot run. Never substitute ASR for listening. No YouTube/Buffer. Use detached process/log/done for any >20-minute run.\n\n# HOS 009 revised opening score — J2805, 14 November 2026\n\nCodex, elected HOS acting Chief, implements the fallback in owner-authored desk ruling 6867889512. Relay status confirmed Codex before the decision. This approves a separately queued production scope; J2805 generates nothing, spends nothing and grants no score or film PASS. This session has no demonstrated audio input: musical observations below are attributed to J2783, not a new audition.\n\nJ2803 (OWB PR913, e3b04e94a3accc4614ed8b2435e9b77ddccfadc5) failed the required validation: the prototype missed a known 0.37-second reuse trim at 0.693 and combined transformation at 0.633. J2795's general defect diagnosis remains accepted, but PR908 remains draft/unmerged and undeployed. The production reuse FAIL remains. Neither the old ear PASS nor the prototype is a substitute.\n\n## Bounded choice\n\nReplace only the opening wonder cue: **one 180-second instrumental Music v2 request, one take, at most 3,000 subscription credits, £0 cash, no retries**. Retain the existing 360-second teach cue at its recorded SHA-256. All three production matches are against candidate seconds 0–21, so replacing both cues would spend more without evidence it is necessary. J2783 describes the teach cue as fitting the explanation and modern-orbit return; that is prior testimony, and the revised join still needs a new audition.\n\nThe revised creative direction is intimate, lightly articulated lute/viol conversation and changing harmony at 60–66 BPM, replacing the sustained bass-drone opening. Wonder remains spacious; the teach cue remains the more regular harpsichord explanation. This is a new composition brief, not a proposal to filter, crop, normalize or otherwise disguise the old candidate to defeat a metric. A new composition is not guaranteed to pass this detector. One attempt bounds that uncertainty; failure returns an exact result to the named Chief successor, not another automatic take.\n\nThe full prompt, limits, guards and acceptance checks are in SCORE_SCOPE_J2805.json. The old 30,000-credit allowance is not renewed or pooled with this one. J2664's historical 2,475-credit charge for 180 seconds supports a 3,000 ceiling but proves neither today's tariff nor remaining balance. Fresh duration-based price, balance less pending spend, and overage-off evidence are mandatory before the production request. Unknown evidence means no POST. Preserve the recorder lock, pause file and ledger. No service change or top-up.\n\n## Timing and acceptance\n\nKeep Parts 1–2, locked narration, all diagram KEEP windows and every later row unchanged. New wonder occupies 0–178.28 seconds; unchanged teach begins at 175.28. Crossfade 175.28–178.28, centred on the cannon chapter card at 176.78, for three seconds. Retain full source tail to about 535.28 seconds; cover the actual final master endpoint, including its final card, without loops or silence. The locked narration ends at 518.40 seconds. No timing extension to use spare music.\n\nWrite new cue, continuous joined bed and five part stems as v02 beside v01. Preserve all previous bytes, hashes, generator plans, gate outputs and ear review. Commit only the new provenance/plan/reports, with request identity, actual credits and source windows; copy media to studio-live and verify hashes.\n\nRun the unchanged production gate over the complete current library. The prior 77 readable comparisons are the minimum historical inventory, not a fixed cap: include newly added earlier beds and both channels' local/UAT/working/archive roots. Every unreadable entry is unresolved until a verified copy is read. Same-film and AppleDouble exclusions must be explicit; retain comparison scores. Own, brief, reused and gap must pass; endpoint coverage must pass in the reference mix and again against the actual assembled master. No waiver.\n\nA separately queued reviewer with demonstrated audio_input hears the entire new cue and joined bed, the 168–186-second chapter transition, the complete five-part locked-VO reference mix and ending. Review period fit, non-distracting melody, wonder/teach contrast, musical distinctness, seams, coverage and narration clarity. J2783 covers v01 only. Chief accepts the score only after this review and complete gate evidence agree. J2035 then runs its own assembly, composite and final-cut gates. J2171 remains held until the long and its own required inputs/gates are ready. Assembly deadline remains **15 November 18:00 UTC**.\n\nIf the one request cannot be made safely, or the candidate fails, the production successor records the exact guard/gate failure and stops spending. The queued Chief successor gets a 20-minute, no-spend disposition, preserving the failed state and choosing a genuinely new bounded route if justified. PR908 is not deployed; no generic verification loop or implied acceptance. No YouTube, Buffer, narration or picture change is authorized.\n",
+      "ref": "",
+      "film": "009",
+      "stage": "edit",
+      "after": "J2805",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-14T03:44Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T03:44Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Generate one guarded opening cue and deliver the complete checked revised score",
+      "due": "2026-11-14T16:00:00Z",
+      "kind": "assembly",
+      "plain": "Make a revised opening score for the gravity film and check it against earlier music",
+      "mini_only": true
     }
   ],
   "focus": [
