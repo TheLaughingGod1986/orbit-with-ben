@@ -195168,9 +195168,14 @@
           "at": "2026-11-14T05:32Z",
           "by": "cursor",
           "what": "step 2 of 3 done: Source has B-frames, so master frames stay unencoded. Next is High qp 1 on the five changed runs only. No v04."
+        },
+        {
+          "at": "2026-11-14T05:34Z",
+          "by": "cursor",
+          "what": "step 2 of 3 done: Five changed runs encoded, 447 frames, High qp 1, lowest 62.43 dB. Commit dd792e28. Master frames 2869, 3168-3259, 4130-4138 and 11118-11245 stay unencoded. No v04."
         }
       ],
-      "remaining_action": "Encode the changed stretches inside the four mixed Franklin groups",
+      "remaining_action": "Keep the four master-frame runs exact, then mux the original audio",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
@@ -195179,9 +195184,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-14T05:32Z",
+        "at": "2026-11-14T05:34Z",
         "by": "cursor",
-        "note": "Source has B-frames, so master frames stay unencoded. Next is High qp 1 on the five changed runs only. No v04."
+        "note": "Five changed runs encoded, 447 frames, High qp 1, lowest 62.43 dB. Commit dd792e28. Master frames 2869, 3168-3259, 4130-"
       }
     },
     {
