@@ -248603,10 +248603,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-14T10:16Z",
+      "eta": "2026-11-14T12:16Z",
       "created_by": "relay",
       "created_at": "2026-11-14T07:11Z",
       "result": "",
@@ -248665,6 +248665,11 @@
           "at": "2026-11-14T10:16Z",
           "by": "codex",
           "what": "rerouted to codex: Administrative close-out assigned explicitly to elected Codex by current dispatch and Grok thread 6874993329; specialist review already completed."
+        },
+        {
+          "at": "2026-11-14T10:16Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief (codex/claude): close J2221 + J2815 done (unblocking J2222) or reopen J2221 per jobs/reviews/J2815/REVIEW.md",
@@ -248689,7 +248694,15 @@
         "OWB:027",
         "OWB:028",
         "OWB:029"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-14T10:16Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2816",
