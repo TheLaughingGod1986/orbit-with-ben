@@ -224324,9 +224324,14 @@
           "at": "2026-11-14T00:35Z",
           "by": "claude",
           "what": "rerouted to codex: Ben, 14 Nov: do all six board fixes. The waiting condition named studio-kanban.vercel.app, which answers 402 and will not come back; the board has been on Cloudflare Pages since 12 Nov (J2714). First say whether pull request 821's code is on main and deployed. Codex has wrangler on the Mini."
+        },
+        {
+          "at": "2026-11-14T02:40Z",
+          "by": "codex",
+          "what": "J2796 Chief review: corrected stale inactive deployment condition; J2532 remains open for its existing worker, token dependency and 07:40 UTC check retained. No history rewritten."
         }
       ],
-      "remaining_action": "On studio-kanban.pages.dev: deploy from main, check signed-out now and signed-in once BOARD_GH_TOKEN is set (J2714), then close",
+      "remaining_action": "Verify the merged Cloudflare release, signed-out access, and signed-in data after J2714 token setup; review at 07:40 UTC",
       "due": "2026-11-14T18:00:00Z",
       "kind": "studio",
       "plain": "Make the board work when the studio repo is private",
@@ -224338,8 +224343,8 @@
         "note": "Check moved to the Cloudflare host: the Vercel one stays paused"
       },
       "hold": {
-        "type": "input",
-        "condition": "The board site is redeployed from main and its live pages are checked. At 17:53Z on 13 Nov studio-kanban.vercel.app still returned HTTP 402 on every page and Vercel reports the project not live: a billing or usage block on the account, which only Ben can clear. The redeploy cannot start before that. Ben was pushed at 08:50Z.",
+        "type": "dependency",
+        "condition": "Verify the merged-main board release on Cloudflare Pages and signed-in data access after the existing J2714 token setup. The retired host billing is no longer a dependency. Historical deployment records remain unchanged.",
         "check_at": "2026-11-14T07:40:00Z"
       },
       "for": "codex",
