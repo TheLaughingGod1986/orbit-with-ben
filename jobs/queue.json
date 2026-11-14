@@ -247107,9 +247107,14 @@
           "at": "2026-11-14T05:48Z",
           "by": "codex",
           "what": "step 3 of 4 done: Live Chrome isolated GitHub 403 on commit lookups. PR 919 removes that dependency and verifies snapshot ETags; eight parity tests, API/publisher/client regressions and explicit Chrome authentication pass."
+        },
+        {
+          "at": "2026-11-14T05:51Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: PR 919 CI PASS, merged 4c90240a21 and deployed Pages 41cd92b9. Publisher snapshot hashes confirmed. Detached J2798-branch-traffic waits for API cache readiness then measures ten minutes; final acceptance remains open."
         }
       ],
-      "remaining_action": "Deploying the branch-read correction and repeating the live traffic measurement",
+      "remaining_action": "Waiting for the new ten-minute live traffic capture, then checking the data budget",
       "due": "2026-11-15T18:00:00Z",
       "for": "codex",
       "kind": "studio",
@@ -247117,9 +247122,9 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-14T05:48Z",
+        "at": "2026-11-14T05:51Z",
         "by": "codex",
-        "note": "Live Chrome isolated GitHub 403 on commit lookups. PR 919 removes that dependency and verifies snapshot ETags; eight par"
+        "note": "PR 919 CI PASS, merged 4c90240a21 and deployed Pages 41cd92b9. Publisher snapshot hashes confirmed. Detached J2798-branc"
       }
     },
     {
