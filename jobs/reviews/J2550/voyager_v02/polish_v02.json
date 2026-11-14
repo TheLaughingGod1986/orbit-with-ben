@@ -1,0 +1,188 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Volumes/MiniWork/scratch/J2550-wt/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/06_Final-Exports/owb_sa_s8_voyager1_v02.mp4",
+  "edge_floor": 0.0352,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": 5,
+      "cut": 4,
+      "t": 13.68,
+      "source": "/Volumes/MiniWork/scratch/J2550/plates/s8_voyager/PIA17464.jpg",
+      "why": [
+        "low detail: edge density 0.032 < film p5 0.0352"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": 1,
+      "source": "/Volumes/MiniWork/scratch/J2550/plates/s8_voyager/PIA04495.jpg",
+      "t": 1.3,
+      "std": 62.71,
+      "mean": 59.4,
+      "p95": 255.0,
+      "edge": 0.0732,
+      "hf": 14.9,
+      "lf": 54.33,
+      "std8": 57.67,
+      "edge8": 0.1958,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -6.092,
+        "trend_y": -1.528,
+        "max_off_trend_px": 0.121,
+        "reversals": 0,
+        "frames": 50,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": 2,
+      "source": "/Volumes/MiniWork/scratch/J2550/plates/s8_voyager/as17-148-22727.jpg",
+      "t": 3.58,
+      "std": 78.72,
+      "mean": 106.76,
+      "p95": 227.0,
+      "edge": 0.2951,
+      "hf": 21.62,
+      "lf": 69.41,
+      "std8": 72.09,
+      "edge8": 0.4963,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -3.026,
+        "trend_y": -3.027,
+        "max_off_trend_px": 0.02,
+        "reversals": 0,
+        "frames": 31,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": 3,
+      "source": "/Volumes/MiniWork/scratch/J2550/plates/s8_voyager/PIA21741.jpg",
+      "t": 6.35,
+      "std": 49.1,
+      "mean": 141.89,
+      "p95": 216.0,
+      "edge": 0.0479,
+      "hf": 15.28,
+      "lf": 41.1,
+      "std8": 43.56,
+      "edge8": 0.3028,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -1.634,
+        "trend_y": -1.66,
+        "max_off_trend_px": 0.278,
+        "reversals": 0,
+        "frames": 81,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": 4,
+      "source": "/Volumes/MiniWork/scratch/J2550/plates/s8_voyager/PIA23682.jpg",
+      "t": 10.0,
+      "std": 57.51,
+      "mean": 121.16,
+      "p95": 255.0,
+      "edge": 0.1162,
+      "hf": 17.19,
+      "lf": 48.78,
+      "std8": 51.29,
+      "edge8": 0.2711,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -3.333,
+        "trend_y": -1.047,
+        "max_off_trend_px": 0.248,
+        "reversals": 0,
+        "frames": 84,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": 5,
+      "source": "/Volumes/MiniWork/scratch/J2550/plates/s8_voyager/PIA17464.jpg",
+      "t": 13.68,
+      "std": 92.37,
+      "mean": 114.47,
+      "p95": 255.0,
+      "edge": 0.032,
+      "hf": 14.36,
+      "lf": 88.09,
+      "std8": 88.9,
+      "edge8": 0.1668,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -1.851,
+        "trend_y": -0.738,
+        "max_off_trend_px": 0.138,
+        "reversals": 0,
+        "frames": 83,
+        "fail": false
+      },
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.032 < film p5 0.0352"
+      ]
+    }
+  ]
+}
