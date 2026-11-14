@@ -193405,10 +193405,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-11-14T12:01Z",
-      "eta": "2026-11-14T14:01Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-05T17:12Z",
       "result": "",
@@ -193627,6 +193627,11 @@
           "at": "2026-11-14T12:16Z",
           "by": "cursor",
           "what": "step 3 of 4 done: Harvey v03 built. Cuff 23.10s sha de20949cd60c, open gate PASS with pad warnings at 15-16s and 23-24s. Heart pump 25.10s sha 357e310c9833, open gate PASS, mirror warning at 4s from the Harvey card. No awaits. Branch cursor/J2230-harvey-v03 af4be75a."
+        },
+        {
+          "at": "2026-11-14T12:16Z",
+          "by": "cursor",
+          "what": "released: Harvey v03 is built and the open gate PASSes, with pad warnings on the cuff (15-16s, 23-24s) and a mirror warning at 4s on the heart pump from the Harvey card. Not ready for awaits. Next: clear those frames, then build Vaccine Variolation and Option A Eradication from the locked audio. Willow stays scheduled. Branch cursor/J2230-harvey-v03 af4be75a. Files in _desk/renders/J2230/s06_v03 and s07_v03. No render running. £0."
         }
       ],
       "remaining_action": "Clear the remaining Harvey frame warnings, then build the two Vaccine Shorts from the locked audio",
