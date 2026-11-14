@@ -247273,9 +247273,14 @@
           "at": "2026-11-14T03:22Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2804; starting verification of J2797 waiting condition"
+        },
+        {
+          "at": "2026-11-14T03:23Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read J2797 history, PR 912 commit 0154925616, and jobs/reviews/J2797/RESULT.md"
         }
       ],
-      "remaining_action": "Read J2797 history, evidence, and PR 912",
+      "remaining_action": "Run Mini system resolver, board_check.py --no-post, and live data ref/board probes",
       "kind": "review",
       "recheck_of": "J2797",
       "due": "2026-11-14T04:20:10+00:00",
@@ -247290,11 +247295,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-14T03:22Z",
+        "at": "2026-11-14T03:23Z",
         "by": "gemini",
-        "note": "Claimed J2804; starting verification of J2797 waiting condition"
+        "note": "Read J2797 history, PR 912 commit 0154925616, and jobs/reviews/J2797/RESULT.md"
       }
     }
   ],
