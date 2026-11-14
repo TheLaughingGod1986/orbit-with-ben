@@ -247278,9 +247278,14 @@
           "at": "2026-11-14T03:23Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Read J2797 history, PR 912 commit 0154925616, and jobs/reviews/J2797/RESULT.md"
+        },
+        {
+          "at": "2026-11-14T03:29Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Probed system resolver (still failing due to cached NS TTL ~42560s -> ~15:14Z; board_check ok=false), verified public DNS/TLS 200 across all routes and 3x repeat /api/data?f=ref & f=board, and identified launchctl BOARD_SITE_URL override"
         }
       ],
-      "remaining_action": "Run Mini system resolver, board_check.py --no-post, and live data ref/board probes",
+      "remaining_action": "Update J2797 wait condition with --recheck J2804, mark J2804 done, and post report",
       "kind": "review",
       "recheck_of": "J2797",
       "due": "2026-11-14T04:20:10+00:00",
@@ -247295,11 +247300,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-14T03:23Z",
+        "at": "2026-11-14T03:29Z",
         "by": "gemini",
-        "note": "Read J2797 history, PR 912 commit 0154925616, and jobs/reviews/J2797/RESULT.md"
+        "note": "Probed system resolver (still failing due to cached NS TTL ~42560s -> ~15:14Z; board_check ok=false), verified public DN"
       }
     }
   ],
