@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2242, J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2797.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2242, J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2797, J2829.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -83,6 +83,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2825 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
 | J2827 | any | blocked | macbook-2 | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J2828 | any | blocked | macbook-2 | – | script · OWB: learn from our data, add two new films to the backlog |  |
+| J2829 | mini | open | – | – | for cursor · studio · Film reviews stuck for up to six days because no worker can show it watches video: probe every worker, then route or re-scope the waiting reviews |  |
 
 Recently finished:
 

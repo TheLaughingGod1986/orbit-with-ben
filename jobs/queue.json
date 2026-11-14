@@ -1,5 +1,5 @@
 {
-  "next_id": 2829,
+  "next_id": 2830,
   "jobs": [
     {
       "id": "J0001",
@@ -250061,6 +250061,38 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J2829",
+      "title": "Film reviews stuck for up to six days because no worker can show it watches video: probe every worker, then route or re-scope the waiting reviews",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (14 Nov 15:13Z): \"yes\"**, to queuing a fix for the film reviews that have stopped reaching him.\n\n**What is stuck (read from the queue at 14 Nov 15:13Z).** Twelve open or blocked jobs carry `required_capabilities: moving_video_input`: J0912, J2243, J2271, J2383, J2400, J2404, J2477, J2550, J2551, J2658, J2661, J2758. Five of them are the reviews that stand between a finished film and Ben's watch, all for Gemini:\n- J2383, the Pluto film and its two Shorts: no work for six days.\n- J2400 and J2404, the Uranus Shorts and film: five days. J2404's last note is \"Waiting for verified capability: moving_video_input\".\n- J2477, the Titan film v02.\n- J2658, the Supermoon v04 ending. That Short goes out Thu 19 Nov and J2478 waits on this check.\n\n**Why.** `scripts/capability_probe.py` records that on 5 Nov Gemini, through `agy` 1.5.1, transcribed audio word for word but described a six-second moving clip wrongly twice. The relay probes again on its own and the requirement fails closed each time (`workflow_state.capability_problem`), so these jobs can never be claimed. The only such job closed since 11 Nov was J2509, by Claude. Nothing tells the Chief that a job is waiting on an ability no worker has.\n\n**Do, in this order.**\n1. Measure now. Run `python3 scripts/capability_probe.py gemini` on the Mini's current `agy`. Then do the same for each other Mini worker the probe can drive; if a worker has no runner in `RUNNERS` and adding one is a few lines, add it. For each, report the tool's version, the audio result, the video result, and the clip's truth beside the answer given. No shell tool inside a probe, as the script already requires.\n2. If a worker passes on video, record it with `--record`, hand it the five reviews (J2658 first), and note how long each takes.\n3. If none passes, do not leave it there. Put ONE proposal on the Chief's desk for a ruling today and say on the thread that it is there. Suggested: a review that needs no moving-video input and is at least as strict as the one J2222 did for the Journey film. That is the automated gates (picture_qa, polish_gate, music_gate, the Shorts padded-frame gate), a frame sheet on a half-second grid for the whole film, every frame at each cut and for the last three seconds (as J2614 does for the Franklin splice), and the whole soundtrack heard with `audio_input`. Ben's own watch stays the last check. If the Chief rules for it, re-scope the five reviews to that method, release them with J2658 first, and say which of the other seven the ruling covers.\n4. Close the trap either way. A job that needs an ability no worker has shown for 24 hours goes to the Chief with that reason; it does not sit open. Say where the check belongs (the refill or the stuck sweep), add it with a test, one pull request.\n\n**Guards.** £0. No paid API and no new subscription: if watching video properly needs paid Gemini API use or credits, give the price and stop, because that is Ben's call. Nothing published, no listing touched. The review standard is not lowered quietly: any change to how a film is reviewed is a Chief ruling, recorded.\n\n**Done when** the five reviews are in the hands of a worker that can do them, the Supermoon ending check is finished before Mon 16 Nov, and the 24-hour check is merged.\n\n**Also seen while writing this.** Codex has logged nothing on the queue since 10:15Z today. Three board jobs are waiting for it (J2797, J2798, J2532). If it is still silent when you start, say so on the thread.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-14T15:13Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T15:13Z",
+          "by": "claude",
+          "what": "added for cursor"
+        }
+      ],
+      "remaining_action": "Probe each Mini worker's video input, route the five stalled reviews or put one re-scoping proposal to the Chief, add a 24-hour escalation check",
+      "due": "2026-11-15T12:00:00Z",
+      "for": "cursor",
+      "kind": "studio",
+      "plain": "Get the stalled film reviews moving, so the Pluto, Uranus and Titan films and the Supermoon Short reach Ben",
+      "urgent": 10
     }
   ],
   "focus": [
