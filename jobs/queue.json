@@ -246478,13 +246478,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-14T03:38Z",
-      "eta": "2026-11-14T05:38Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-13T23:32Z",
-      "result": "",
+      "result": "Acting-Chief ruling NOT MET, recorded on J2171 with wait --recheck J2794 and dependency recheck 2026-11-14T06:15:00Z. Independently matched delivered score d7f5bf3d, provenance a9ee4435, VO lock 530743c5 and Shorts plan 6a0fb1df across Mini/NAS; neither has 09_Final-Render. J2803 validation PR913 e3b04e94a failed known reuse positives 0.693/0.633; production reused FAIL unchanged. Existing HOS desk 6867889512 stands. Queued J2805 after J2803, due 2026-11-14T06:00Z, for bounded revised-music scope, then separately authorized production and complete passing gate/score acceptance before J2035 assembly and J2171 Shorts. No waiver, prototype deployment, credit spend, upload or schedule change. Separate Chief review steps recorded; worker milestones preserved.",
       "history": [
         {
           "at": "2026-11-13T23:32Z",
@@ -246545,6 +246545,11 @@
           "at": "2026-11-14T03:38Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T03:39Z",
+          "by": "codex",
+          "what": "done: Acting-Chief ruling NOT MET, recorded on J2171 with wait --recheck J2794 and dependency recheck 2026-11-14T06:15:00Z. Independently matched delivered score d7f5bf3d, provenance a9ee4435, VO lock 530743c5 and Shorts plan 6a0fb1df across Mini/NAS; neither has 09_Final-Render. J2803 validation PR913 e3b04e94a failed known reuse positives 0.693/0.633; production reused FAIL unchanged. Existing HOS desk 6867889512 stands. Queued J2805 after J2803, due 2026-11-14T06:00Z, for bounded revised-music scope, then separately authorized production and complete passing gate/score acceptance before J2035 assembly and J2171 Shorts. No waiver, prototype deployment, credit spend, upload or schedule change. Separate Chief review steps recorded; worker milestones preserved."
         }
       ],
       "remaining_action": "Elected Chief to record wait --recheck J2794 on J2171 (check-at 2026-11-14T06:15:00Z) and close J2794",

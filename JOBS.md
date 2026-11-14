@@ -73,7 +73,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2774 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2622 |  |
 | J2782 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2780 |  |
 | J2792 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
-| J2794 | mini | claimed | codex | 2026-11-14T05:38Z | for codex · review · `gpt-6-astra` · Verify condition for J2171 |  |
 | J2797 | mini | blocked | codex | – | for codex · studio · Board: give it its own address, board.oppti.dev, and read its request count on Cloudflare |  |
 | J2798 | mini | open (after J2796) | – | – | for codex · studio · Board: stop an open board downloading its whole 2 MB data file every minute |  |
 | J2799 | mini | blocked | gemini | – | review · Verify condition for J2221 |  |
@@ -88,6 +87,7 @@ Recently finished:
 - J2801 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (10/10 live public OWB videos (z5V6gIXXYs8 through rVqgtkBV3jc, plus #11-#15) pass chapters, sources, end screens and Related checks against 2026-11-13.json snapshot, cuts, manifests and live YouTube watch/Shorts pages; wrote 05_Analytics/live_fixes/2026-11-14.md (16e1e6231d); 0 fixes needed)
 - J2796 done: Board: every script reads the board's address from one setting, the docs name the live address, and the board is kept out of search (Chief KEEP completed: PR 910 merged 7060b03eb5, both CI checks pass; protected docs and address guard fixed. Live / and /tracker have noindex/nofollow; board_check passes, both client endpoints reach expected missing-token 500. Published board-data 61a9dfac has zero retired-host mentions. J2532 follow-up corrected with J2714 token dependency and 07:40 UTC retry retained; history preserved. PRs 858/909 closed as superseded. Evidence jobs/reviews/J2796/CHIEF_REVIEW.md.)
 - J2795 done: Music gate: diagnose reuse false positives without waivers (Recorded existing Chief ruling HOS desk 6867889512 (OWNER verified): diagnosis accepted as grounds for a general correction, NOT gate PASS. PR908 at 838773d2d4 remains draft/unmerged; prototype not deployed. Follow-up J2803 (J2795-V), Codex/Sol with routing fallback, tests owned ambient/chamber/drone recordings, reuse transformations and matched-window reporting; due 2026-11-14T16:00Z. J2035 dependency hold now names J2803, retains 2026-11-14T06:00Z recheck and 15 Nov 18:00Z assembly deadline. Failed/late validation goes to Chief for separately bounded revised-music scope. No waiver, generation, spend or assembly release; required approval and full production gate rerun remain before score acceptance. Review steps recorded separately with chief_relay review-progress.)
+- J2794 done: Verify condition for J2171 (Acting-Chief ruling NOT MET, recorded on J2171 with wait --recheck J2794 and dependency recheck 2026-11-14T06:15:00Z. Independently matched delivered score d7f5bf3d, provenance a9ee4435, VO lock 530743c5 and Shorts plan 6a0fb1df across Mini/NAS; neither has 09_Final-Render. J2803 validation PR913 e3b04e94a failed known reuse positives 0.693/0.633; production reused FAIL unchanged. Existing HOS desk 6867889512 stands. Queued J2805 after J2803, due 2026-11-14T06:00Z, for bounded revised-music scope, then separately authorized production and complete passing gate/score acceptance before J2035 assembly and J2171 Shorts. No waiver, prototype deployment, credit spend, upload or schedule change. Separate Chief review steps recorded; worker milestones preserved.)
 - J2793 done: oppti.dev: put the growth pass live (guides rows, Blog in the menu, search markup in the page) (Growth pass 08cf657 live as 3dcd2eef-215a-42a1-9b23-bab0b5b357df; rollback f858ae31 retained. All 22 routes 200, guides/Blog/JSON-LD/GBP/www/domains verified. CPU first median 29 ms max 179; warm median 7.5 max 13; all ok. Zero spend; report posted to thread 6867174443.)
 - J2791 done: Verify condition for J2035 (Chief close of the condition check. Ruling NOT MET, as recorded in PR 907 (merge 3a02f4d952). music_gate still FAILs reused at 0.804, 0.811 and 0.821 on the complete 77-file comparison. J2663 forbids a waiver. This is not a music PASS and not a film PASS. J2035 stays on its dependency hold, next check 2026-11-14T06:00:00Z. J2795 remains the bounded no-spend diagnosis. No assembly release, waiver, generation, upload or spend.)
 - J2790 done: History of Science Atom film: board loses its live video when film state moves to one file per film (Done by Claude: cause found and fixed in orbit-with-ben PR 905 (merged 7730379d, 13 Nov 22:15Z). The per-film shape read only upload receipts; it now falls back to the channel's UPLOADS.json long, as the one-file shape does. Board built from HOS main and the PR 548 branch: 313 cards each, none differ; Orbit unchanged. Strong-model review: MERGE. Minor follow-up: video_tracker's CLI and approved_deliver.py still read receipts only.)
@@ -112,19 +112,3 @@ Do now
 
 Carry forward
   - A strong start is a lesson too: note what is different about this one.)
-- J2787 done: First-day check at 6 h: "What Was the Edward Jenner Experiment?" (cLKDiYP55J8) ("What Was the Edward Jenner Experiment?" (cLKDiYP55J8) · History of Science · Short · went live Fri 13 Nov 11:30 London
-At 6 h: views 9 · Studio rank 9 of 10 · shown in feed about 14 (from 3 feed views) · stayed to watch 22.2% · average viewed 57.2%
-Usual for this channel: stayed to watch 29.6%, average viewed 74.5%
-
-Verdict: USUAL
-  - 9 views at 6 h; Studio says the usual for us at this age is 20.
-  - Studio ranks it 9 of 10 against our latest videos at the same age.
-
-What is different about this one
-  - The title starts with "What", like 3 earlier Shorts: they had 37 views by the next morning (median), against 81 for all Shorts.
-  - It is a second upload of the same video (it replaced -I_GHK-GcFs).
-
-Do now
-  - Nothing to fix.
-
-PR #904 (`macbook/J2787` -> `main`): `05_Analytics/hos/launch/cLKDiYP55J8.json` + `jobs/reviews/J2787/REVIEW.md` (0 faults in Studio; left open for Chief merge).)
