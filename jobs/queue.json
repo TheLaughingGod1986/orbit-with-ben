@@ -247848,10 +247848,10 @@
       "stage": "topic",
       "after": "J2809",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-14T05:25Z",
+      "eta": "2026-11-14T07:25Z",
       "created_by": "gemini",
       "created_at": "2026-11-14T05:14Z",
       "result": "",
@@ -247865,6 +247865,11 @@
           "at": "2026-11-14T05:15Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 260 min (heartbeat 2026-11-13T22:07:35Z)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-14T05:25Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review HOS:104 topic brief and neighbour/search evidence on HOS PR #581, score Rule-E rubric, and write go/no-go verdict",
@@ -247878,7 +247883,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-14T05:25Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2811",

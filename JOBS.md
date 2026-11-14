@@ -80,7 +80,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2806 | mini | open (after J2805) | – | – | 009 edit · assembly · HOS 009: produce one revised opening music cue |  |
 | J2807 | mini | open (after J2806) | – | – | 009 edit · for gemini · review · `gemini-argon` · HOS 009: audition revised opening and joined score |  |
 | J2808 | mini | open (after J2807) | – | – | 009 edit · chief · HOS 009: decide revised score acceptance or bounded failure route |  |
-| J2810 | mini | open (after J2809) | – | – | HOS:104 topic · for gemini · review · `gemini-argon` · HOS 104 Speed of Light: rule-E topic go/no-go review |  |
+| J2810 | mini | claimed | macbook | 2026-11-14T07:25Z | HOS:104 topic · for gemini · review · `gemini-argon` · HOS 104 Speed of Light: rule-E topic go/no-go review |  |
 | J2811 | mini | open (after J2809) | – | – | HOS:105 topic · for gemini · review · `gemini-argon` · HOS 105 Venus Flytrap: rule-E topic go/no-go review |  |
 | J2812 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J1130 |  |
 | J2813 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
