@@ -240005,9 +240005,14 @@
           "at": "2026-11-14T13:55Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T13:55Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed on the Mini. Checking secret names only, then a production deploy."
         }
       ],
-      "remaining_action": "On the Mini: confirm BOARD_GH_TOKEN in wrangler, deploy studio-kanban, prove /api/checks tick and 30x ref reads, post phone link steps",
+      "remaining_action": "Confirm the board token is set, then deploy the board from main",
       "due": "2026-11-13T18:00:00Z",
       "for": "cursor",
       "kind": "studio",
@@ -240022,11 +240027,10 @@
       },
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-14T13:55Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Claimed on the Mini. Checking secret names only, then a production deploy."
       }
     },
     {
