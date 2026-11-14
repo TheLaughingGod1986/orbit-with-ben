@@ -251119,10 +251119,10 @@
       "stage": "",
       "after": "J2842",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-14T17:51Z",
+      "eta": "2026-11-14T18:21Z",
       "created_by": "macbook-2",
       "created_at": "2026-11-14T17:08Z",
       "result": "",
@@ -251136,6 +251136,11 @@
           "at": "2026-11-14T17:29Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-14T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-14T17:51Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Packaging panel decision: OWB weekly audit 3 new thumbnail Bs + separate Title Bs (m09jUdwC5hk ALL STARS FADE, Mo93x0fxB1Q ZERO SIGNALS, ziKBPJ6FY0U 300 MILLION YEARS)",
@@ -251148,7 +251153,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-14T17:51Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2844",
