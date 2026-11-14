@@ -232010,13 +232010,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "claude",
       "since": "2026-11-11T18:39Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T13:55Z",
-      "result": "Waiting for: Last piece: History of Science PR 585 writes film 010's picture stage into its status.json (from PR 538, as Grok ruled on the desk). Opened 14 Nov 12:55Z, all checks green except `tests`, which was still running; I mark it ready when it is green and Grok merges. Then this job is done: the settings copy is refreshed (PR 922), film 004 reads right (PR 905), and the board publishes on the new host.",
+      "result": "Done. History of Science half merged (PR 548, 13 Nov 22:18Z); the studio's copy of that channel's settings refreshed (orbit-with-ben PR 922); film 004's live video fixed on the per-film path (PR 905); film 010's picture stage written from PR 538 (History of Science PR 585, merged 14 Nov 12:57Z); the board builds from the merged main with the same cards. J2537 is the only decoupling item left.",
       "history": [
         {
           "at": "2026-11-11T13:55Z",
@@ -232122,6 +232122,11 @@
           "at": "2026-11-14T12:54Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-14T17:40:00Z"
+        },
+        {
+          "at": "2026-11-14T12:57Z",
+          "by": "claude",
+          "what": "done: Done. History of Science half merged (PR 548, 13 Nov 22:18Z); the studio's copy of that channel's settings refreshed (orbit-with-ben PR 922); film 004's live video fixed on the per-film path (PR 905); film 010's picture stage written from PR 538 (History of Science PR 585, merged 14 Nov 12:57Z); the board builds from the merged main with the same cards. J2537 is the only decoupling item left."
         }
       ],
       "remaining_action": "Mark PR 585 ready when green; close this job after Grok merges it",
@@ -232135,11 +232140,7 @@
         "by": "claude",
         "note": "studio half pushed onto orbit-with-ben 833 as four more commits (head 9455ca294), so it is not only in one session's scr"
       },
-      "hold": {
-        "type": "dependency",
-        "condition": "Last piece: History of Science PR 585 writes film 010's picture stage into its status.json (from PR 538, as Grok ruled on the desk). Opened 14 Nov 12:55Z, all checks green except `tests`, which was still running; I mark it ready when it is green and Grok merges. Then this job is done: the settings copy is refreshed (PR 922), film 004 reads right (PR 905), and the board publishes on the new host.",
-        "check_at": "2026-11-14T17:40:00Z"
-      }
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/585"
     },
     {
       "id": "J2623",
