@@ -63,6 +63,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 032 | edit | gemini | 2026-11-14T22:20Z | 2026-11-15T00:19Z | J2477 032 Titan: review long master v02 (J2436) + stage for Ben UAT watch |
+| 032 | edit | gemini | 2026-11-14T22:21Z | 2026-11-14T23:21Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
