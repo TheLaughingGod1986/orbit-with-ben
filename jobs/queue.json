@@ -210186,9 +210186,14 @@
           "at": "2026-11-14T23:29Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Steps 2-3/5 done: inspected 2fps sheets, +-3f cut strips, final 3s strips, and picture_qa WARNs for Shorts 1 & 2; confirmed 16:9 band-over-blur in Short 1 (R01b-R09b) and Short 2 (R49b-R53c) plus ruled-line plates PIA00142/PIA01977/PIA01985 in Short 2"
+        },
+        {
+          "at": "2026-11-14T23:33Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Completed Parts 4 & 5: heard short1_audio.mp3 and short2_audio.mp3 via audio_input (caught clipped '80%' -> '-ty percent' at 11.8s and '9,000' -> '-n thousand' at 23.8s in Short 2, plus 'How' onset at 31.2s in Short 1) and watched 360p proxies via moving_video_input"
         }
       ],
-      "remaining_action": "Inspect audio soundtracks (Part 4) and 360p moving-video proxies (Part 5) via read_file",
+      "remaining_action": "Write jobs/reviews/J2400/REVIEW.md with 5-part review findings and v02 fix spec",
       "kind": "review",
       "required_capabilities": [
         "audio_input"
@@ -210206,11 +210211,11 @@
       "urgent": 8,
       "due": "2026-11-15T22:00:00Z",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-14T23:29Z",
+        "at": "2026-11-14T23:33Z",
         "by": "gemini",
-        "note": "Steps 2-3/5 done: inspected 2fps sheets, +-3f cut strips, final 3s strips, and picture_qa WARNs for Shorts 1 & 2; confir"
+        "note": "Completed Parts 4 & 5: heard short1_audio.mp3 and short2_audio.mp3 via audio_input (caught clipped '80%' -> '-ty percent"
       },
       "taskKeys": [
         "OWB:033"
