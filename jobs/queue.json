@@ -194305,10 +194305,10 @@
       "stage": "edit",
       "after": "J2593",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-14T06:59Z",
+      "eta": "2026-11-14T08:59Z",
       "created_by": "gemini",
       "created_at": "2026-11-05T18:52Z",
       "result": "",
@@ -195202,6 +195202,11 @@
           "at": "2026-11-14T05:34Z",
           "by": "cursor",
           "what": "released: 2/3. Encoded five changed runs inside the mixed groups, 447 frames, High qp 1, lowest 62.43 dB. Master frames stay unencoded: 2869, 3168-3259, 4130-4138, 11118-11245. The v03 master has B-frames, so those runs are not a safe packet copy, and High qp 1 cannot keep their source hashes. HOS commit dd792e28 on codex/J2242-source-preflight, PR 542. Desk 6872467943. 148 tests OK, check_all PASS. No v04, no mux, no spend, no publication. Next: keep those master frames exact, then mux copied packets and the original audio. Resume /Volumes/MiniWork/scratch/J2242-hos jobs/reviews/J2242/RESUME.md."
+        },
+        {
+          "at": "2026-11-14T06:59Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Keep the four master-frame runs exact, then mux the original audio",
