@@ -188508,9 +188508,14 @@
           "at": "2026-11-14T03:38Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-14T06:15:00Z"
+        },
+        {
+          "at": "2026-11-14T03:45Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-14T20:30:00Z"
         }
       ],
-      "remaining_action": "Build the gravity Shorts after the revised score passes its checks and the long assembly is completed",
+      "remaining_action": "Await accepted revised music and the checked gravity long before assembling its Shorts",
       "due": "2026-11-22T18:00:00Z",
       "kind": "assembly",
       "progress": {
@@ -188525,11 +188530,8 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "J2794 Chief ruling: NOT MET. Delivered joined score d7f5bf3d7553d7c611a913e93602b8ec83419821059294ddeaee32269a4f9572, provenance, VO lock and Shorts plan independently match Mini/NAS; no 09_Final-Render on either. J2803 validation PR913 e3b04e94a failed known reuse positives at 0.693/0.633; production reused FAIL remains, prototype not approved. Existing desk ruling 6867889512 stands. Follow-up J2805 after J2803 scopes revised music, due 14 Nov 06:00Z, available now. Require accepted revised score with passing full production music gate, then J2035 long assembly and composites/gates before J2171. Preserve all picture/VO locks, GBP0 Shorts scope, final watch and no-public-change limits. Recheck is verification only, never automatic release.",
-        "check_at": "2026-11-14T06:15:00Z",
-        "last_recheck": "J2794",
-        "checked_at": "2026-11-14T03:38:37+00:00",
-        "checked_by": "codex"
+        "condition": "J2805 revised music route: J2806 production, J2807 capable ear review, final Chief score acceptance, then J2035 long assembly and all required composite/final gates. J2803 failed; prototype remains undeployed. Shorts narration and picture KEEP locks retained. No Shorts assembly release merely from scoped music or one passing metric.",
+        "check_at": "2026-11-14T20:30:00Z"
       }
     },
     {
