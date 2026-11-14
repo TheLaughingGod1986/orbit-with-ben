@@ -231658,9 +231658,14 @@
           "at": "2026-11-14T18:36Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2614; starting step 1: locate hos_008_master_v04.mp4, build the half-second contact sheet (2560..2665) and check take-4 f060 boundary"
+        },
+        {
+          "at": "2026-11-14T18:57Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Extracted frames 2560..2666 from hos_008_master_v04.mp4, verified no take-4 frame after f060 appears in v04 (max source frame = f060), and built J2614_salon_splice_half_second_sheet.jpg (sha256 90c276ebbe21)"
         }
       ],
-      "remaining_action": "Build the half-second sheet across frames 2560 to 2665 of hos_008_master_v04.mp4 and verify no take-4 frame after f060 appears in v04",
+      "remaining_action": "Visually inspect the half-second sheet across frames 2560..2665 and answer the three QA questions",
       "due": "2026-11-13T16:00:00Z",
       "kind": "qa",
       "plain": "Check that the join in the Franklin salon shot looks clean in the new cut",
@@ -231675,11 +231680,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-14T18:36Z",
+        "at": "2026-11-14T18:57Z",
         "by": "gemini",
-        "note": "Claimed J2614; starting step 1: locate hos_008_master_v04.mp4, build the half-second contact sheet (2560..2665) and chec"
+        "note": "Extracted frames 2560..2666 from hos_008_master_v04.mp4, verified no take-4 frame after f060 appears in v04 (max source "
       },
       "taskKeys": [
         "HOS:008"
