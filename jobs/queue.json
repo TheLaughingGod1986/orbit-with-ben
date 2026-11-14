@@ -247200,19 +247200,24 @@
           "at": "2026-11-14T07:20Z",
           "by": "codex",
           "what": "step 0 of 4 done: Isolated SSD worktree created; required scratch offload started in tmux j2798-offload."
+        },
+        {
+          "at": "2026-11-14T07:21Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Resumed prior three completed steps. Latest production capture still fails: board 113429.2 bytes/min, tracker 2569.1; 16 KB history currently retains only two revisions, so active publishing loses the client chain."
         }
       ],
-      "remaining_action": "Inspect the board data feed, then reduce polling traffic and verify it in the browser",
+      "remaining_action": "Fix the short update-history window, then remeasure production polling traffic",
       "due": "2026-11-15T18:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Make the board use far less data on Ben's phone, by fetching only what changed",
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-14T07:20Z",
+        "at": "2026-11-14T07:21Z",
         "by": "codex",
-        "note": "Isolated SSD worktree created; required scratch offload started in tmux j2798-offload."
+        "note": "Resumed prior three completed steps. Latest production capture still fails: board 113429.2 bytes/min, tracker 2569.1; 16"
       }
     },
     {
