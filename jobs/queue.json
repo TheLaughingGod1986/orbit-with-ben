@@ -195257,20 +195257,25 @@
           "at": "2026-11-14T08:28Z",
           "by": "cursor",
           "what": "step 0 of 3 done: Unit tests passed. Copying frames 3168-3258 from the master. Frame 3259 stays out. No v04."
+        },
+        {
+          "at": "2026-11-14T08:29Z",
+          "by": "cursor",
+          "what": "step 1 of 3 done: Jar keep 3168-3258 copied. 91 frames match the master hashes. Frame 3259 stays out. Commit dbe0c58a. No v04."
         }
       ],
-      "remaining_action": "Copy the exact jar packets and check they still match the master",
+      "remaining_action": "Keep the four blocked frames exact, then mux the master",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "urgent": 1,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-14T08:28Z",
+        "at": "2026-11-14T08:29Z",
         "by": "cursor",
-        "note": "Unit tests passed. Copying frames 3168-3258 from the master. Frame 3259 stays out. No v04."
+        "note": "Jar keep 3168-3258 copied. 91 frames match the master hashes. Frame 3259 stays out. Commit dbe0c58a. No v04."
       }
     },
     {
