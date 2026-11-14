@@ -36,7 +36,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2404 | mini | open (after J2403) | – | – | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus: review long master v01 (J2403) + stage for Ben UAT watch | J2403; J2398 f8c59c0344 |
 | J2438 | mini | blocked | codex | – | 034 edit · assembly · 034 Pluto: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2477 | mini | open | – | – | 032 edit · for gemini · review · `gemini-argon` · 032 Titan: review long master v02 (J2436) + stage for Ben UAT watch |  |
-| J2478 | mini | open | – | – | for cursor · assembly · `cursor-grok-4-7` · Supermoon dated-event Short (airs Thu 19 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review |  |
+| J2478 | mini | claimed | cursor | 2026-11-14T23:15Z | for cursor · assembly · `cursor-grok-4-7` · Supermoon dated-event Short (airs Thu 19 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review |  |
 | J2529 | mini | blocked | gemini | – | 013 picture · for gemini · video · HOS 013 Darwin & Wallace: mint pass 1, the 66 Quality rows of picture plan v02 (at most 6,600 Flow credits, none in cash), before the credits reset on Thu 12 Nov | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6805898066 |
 | J2532 | mini | open | – | – | for cursor · studio · `cursor-grok-4-7` · Private-ready 2: the board reads its data through its own server, for signed-in viewers only |  |
 | J2537 | cloud | blocked | claude | – | chief · HOS, then Orbit: take the email addresses out of the files and then out of the history (Ben's OK 10 Nov), in stages with planned windows | Ben 10 Nov: Ok on both |
