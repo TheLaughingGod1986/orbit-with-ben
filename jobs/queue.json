@@ -247819,7 +247819,7 @@
     {
       "id": "J2810",
       "title": "HOS 104 Speed of Light: rule-E topic go/no-go review",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Rule-E topic go/no-go review for **HOS:104 (`02_Video-Projects/104_Roemer-Fizeau-Foucault-Speed-Of-Light`)** on HOS PR `#581` (`https://github.com/TheLaughingGod1986/history-of-science/pull/581`, branch `gemini/J2809-hos-topics-104-105`), queued by `J2809`.\n\n### Topic Summary\n- **Title A (Primary Proposal, Rule 26, 58 chars, 0 collisions):** `How Did We Measure the Speed of Light? (A 720-Tooth Wheel)`\n- **Title B (T&C, Rule 23, 52 chars, 0 collisions):** `The 720-Tooth Wheel That Measured the Speed of Light`\n- **Title C (Rule 26 Exact Phrase First, 57 chars, 0 collisions):** `Speed of Light: How a 720-Tooth Wheel Measured It in 1849`\n- **Short S01 (51 chars, 0 collisions):** `How Did Jupiter's Moons Measure the Speed of Light?`\n- **Short S02 (57 chars, 0 collisions):** `Why Does Light Slow Down in Water? (Foucault's 1850 Test)`\n- **Saved Evidence (`2026-11-14`):**\n  - `11_Upload-Package/evidence_2026-11-14_neighbours.json` (`PASS`: `11` education videos `≥1,000,000` views, `TED-Ed/TED: yes`, led by Veritasium `24,352,264` `pTn6Ewhb27k`, Veritasium `17,596,419` `NIk_0AW5hFU`, Vsauce `10,047,754` `ACUuFg9Y9dY`, Kurzgesagt `9,990,677` `IXxZRZxafEQ`, PBS Space Time `7,134,459` `msVuCEs8Ydo`, minutephysics `4,304,501` `lR4tJr7sMPM`, TED-Ed `3,695,293` `Op3AYaJc0Xw`, TED-Ed `1,816,164` `J1yIApZtLos`, TED-Ed `1,276,309` `O0PawPSdk28`, TED-Ed `1,015,443` `g12bxfYVhMk`).\n  - `11_Upload-Package/evidence_2026-11-14_public_search.json` (`\"how did we measure the speed of light\"` & `\"speed of light\"` autocomplete `yes`; ranking videos `Veritasium` `pTn6Ewhb27k` `24,352,264` views & `Rational Thinker` `Jl1I4MA-TaU` `2,001,964` views; `0` exact title collisions).\n\n### Reviewer Checklist (AGENTS.md Rule E)\n1. Verify `TOPIC.md`, `status.json`, `production-status.md`, `11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md`, and the two raw JSON evidence files on HOS PR `#581`.\n2. Score the Rule-E topic rubric (neighbour demand `≥3` at `1M+` views with TED/TED-Ed presence, signed-out YouTube autocomplete demand, title collision check, non-duplication across `02_Video-Projects/`, `ideas/`, and `WIP.json`, and visual proof-first hook).\n3. Confirm that all historical and scientific claims remain marked **UNVERIFIED** until `SOURCES.md` exact quotes and the `facts` lane run when an active HOS WIP slot opens under Rule G (`jobs/WIP.json` `next_hos`).\n4. Record the Rule-E go/no-go verdict.\n",
       "ref": "",
@@ -247839,11 +247839,25 @@
           "at": "2026-11-14T05:14Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-14T05:15Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (no Claude run for 260 min (heartbeat 2026-11-13T22:07:35Z)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Review HOS:104 topic brief and neighbour/search evidence on HOS PR #581, score Rule-E rubric, and write go/no-go verdict",
       "kind": "review",
-      "plain": "Checking whether the speed of light history film is worth making: similar big videos, search demand, and non-duplication"
+      "plain": "Checking whether the speed of light history film is worth making: similar big videos, search demand, and non-duplication",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2811",
