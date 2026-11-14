@@ -1,5 +1,5 @@
 {
-  "next_id": 2803,
+  "next_id": 2804,
   "jobs": [
     {
       "id": "J0001",
@@ -247124,6 +247124,37 @@
         "at": "2026-11-14T02:37Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J2803",
+      "title": "J2795-V: Validate music reuse correction on owned recordings",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Implement existing elected-Chief ruling, HOS desk comment 6867889512 (OWNER verified), following J2795 draft OWB PR 908 at 838773d2d4. Diagnosis accepted as grounds for a general correction; prototype is NOT a gate PASS. This is J2795-V, no spend, no generation, no unlicensed music downloads. Codex/Sol primary; Cursor backup through the routing chain. Report by 2026-11-14T16:00Z; parent assembly deadline 2026-11-15T18:00Z.\n\nBound active work to 20 minutes per run; use detached execution for a longer corpus run with log and done file, release at a clean checkpoint, never duplicate an active run. Use already owned OWB/HOS beds covering ambient, chamber, and drone/stationary music. Record corpus paths, hashes, source/provenance and labels before measuring. Different hashes alone do not establish independent composition. Mark uncertain negative labels unresolved and obtain a demonstrated audio-input specialist assessment if needed; do not claim to hear audio from numerical features.\n\nCreate known reuse positives from those recordings with fractional-second trims, gain, fades in/out and lossy re-encoding, including combined changes and stationary/drone positives. Negatives pair independently composed beds. Run current production features and isolated candidate against the identical labelled corpus. Report all scores and failures. Acceptance bar: every positive detected at >=0.8, every independent negative rejected below 0.8, stationary/drone positives retained. Preserve threshold and complete library coverage; no film-specific tuning or hidden exclusions. Include all existing 77 comparisons and match windows as regression context, without representing prototype scores as production results.\n\nAdd proposed matched-window reporting (lag, overlap and both source windows in seconds) in the same draft, with focused regressions. Keep production scripts byte-unchanged outside the proposal branch: no merge, deploy, waiver, gate PASS or assembly release. PR908 stays draft/unmerged; validation and diagnosis are reviewed together as a records merge. Read J2795 REVIEW.md, RESULTS.json, candidate.py and probe.py plus HOS scope/decision and the J2791 Chief ruling. Retain prior files, score/stems, VO and diagram KEEP locks. No YouTube/Buffer changes.\n\nReturn results for elected-Chief review. If validation passes, present the concrete correction for the approval required by the existing ruling before deployment; only after authorised deployment may the complete production gate be rerun and score acceptance considered. If validation fails or is absent at 14 Nov 16:00Z, Chief scopes a revised-music fallback separately (bounded takes, subscription cap, fresh meter/guard checks). This job authorises no fallback generation. J2035 remains held; its existing 14 Nov 06:00Z dependency recheck stays intact.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6867889512",
+      "film": "009",
+      "stage": "edit",
+      "after": "J2795",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-14T03:04Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T03:04Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Validate the proposed music checker and report every positive and negative result",
+      "due": "2026-11-14T16:00:00Z",
+      "kind": "assembly",
+      "model": "gpt-6.1-sol",
+      "plain": "Test the music checker against original and reused recordings for the gravity film"
     }
   ],
   "focus": [
