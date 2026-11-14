@@ -246771,13 +246771,13 @@
       "stage": "",
       "after": "J2796",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-14T02:46Z",
-      "eta": "2026-11-14T03:46Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-14T00:35Z",
-      "result": "",
+      "result": "Waiting for: board.oppti.dev resolves through the Mini normal system resolver and env -u BOARD_SITE_URL python3 scripts/board_check.py --no-post returns ok=true; verify live data ref/board again. Cloudflare domain/TLS active, public resolvers correct, 80 published custom-domain Play links verified. Do not duplicate domain or DNS record; PR 912 already merged. Existing tick-token work remains J2714/J2532.",
       "history": [
         {
           "at": "2026-11-14T00:35Z",
@@ -246808,9 +246808,19 @@
           "at": "2026-11-14T02:59Z",
           "by": "codex",
           "what": "step 2 of 3 done: PR 912 merged as 0154925616. Removed stale local publisher override; board-data c3c7e343 contains 80 new-domain Play links, live JSON parses and published Play returns 302. Public DNS/TLS active; Mini system resolver still fails, so final board_check is held."
+        },
+        {
+          "at": "2026-11-14T02:59Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: board.oppti.dev resolves through the Mini normal system resolver and env -u BOARD_SITE_URL python3 scripts/board_check.py --no-post returns ok=true; verify live data ref/board again. Cloudflare domain/TLS active, public resolvers correct, 80 published custom-domain Play links verified. Do not duplicate domain or DNS record; PR 912 already merged. Existing tick-token work remains J2714/J2532."
+        },
+        {
+          "at": "2026-11-14T02:59Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-14T03:20:00Z"
         }
       ],
-      "remaining_action": "Recheck the Mini DNS and run the board check on its new address",
+      "remaining_action": "Recheck the board address after DNS propagation and finish its live check",
       "due": "2026-11-14T18:00:00Z",
       "for": "codex",
       "kind": "studio",
@@ -246822,6 +246832,11 @@
         "at": "2026-11-14T02:59Z",
         "by": "codex",
         "note": "PR 912 merged as 0154925616. Removed stale local publisher override; board-data c3c7e343 contains 80 new-domain Play lin"
+      },
+      "hold": {
+        "type": "public",
+        "condition": "board.oppti.dev resolves through the Mini normal system resolver and env -u BOARD_SITE_URL python3 scripts/board_check.py --no-post returns ok=true; verify live data ref/board again. Cloudflare domain/TLS active, public resolvers correct, 80 published custom-domain Play links verified. Do not duplicate domain or DNS record; PR 912 already merged. Existing tick-token work remains J2714/J2532.",
+        "check_at": "2026-11-14T03:20:00Z"
       }
     },
     {
