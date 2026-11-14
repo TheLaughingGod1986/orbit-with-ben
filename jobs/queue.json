@@ -1,5 +1,5 @@
 {
-  "next_id": 2859,
+  "next_id": 2861,
   "jobs": [
     {
       "id": "J0001",
@@ -210128,7 +210128,7 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "urgent": 8,
+      "urgent": 9,
       "due": "2026-11-15T22:00:00Z"
     },
     {
@@ -210547,7 +210547,7 @@
       "taskKeys": [
         "OWB:033"
       ],
-      "urgent": 8
+      "urgent": 10
     },
     {
       "id": "J2405",
@@ -219776,7 +219776,7 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "urgent": 9
+      "urgent": 12
     },
     {
       "id": "J2478",
@@ -247973,7 +247973,7 @@
       "for": "codex",
       "kind": "studio",
       "plain": "Give the board a permanent address of its own, and check it is well inside Cloudflare's free allowance",
-      "urgent": 8,
+      "urgent": 11,
       "progress": {
         "step": 2,
         "of": 3,
@@ -250823,7 +250823,7 @@
       "for": "cursor",
       "kind": "studio",
       "plain": "Get the phone-linking link to Ben's iPhone privately, so he can approve the Journey film",
-      "urgent": 10,
+      "urgent": 13,
       "progress": {
         "step": 3,
         "of": 4,
@@ -252416,7 +252416,7 @@
       "kind": "assembly",
       "plain": "Rebuild the Franklin salon join so the tube is full frame and the opening no longer freezes",
       "mini_only": true,
-      "urgent": 11,
+      "urgent": 14,
       "progress": {
         "step": 0,
         "of": 5,
@@ -252459,7 +252459,7 @@
       "model": "gemini-argon",
       "plain": "Look at the new Franklin salon frames and say whether the jump, the freeze and the spark are fixed",
       "mini_only": true,
-      "urgent": 12
+      "urgent": 15
     },
     {
       "id": "J2856",
@@ -252539,7 +252539,7 @@
       "ref": "6882810716",
       "film": "J01",
       "stage": "upload",
-      "after": "",
+      "after": "J2859",
       "eta_min": 120,
       "status": "open",
       "by": "",
@@ -252558,6 +252558,11 @@
           "at": "2026-11-14T20:37Z",
           "by": "macbook",
           "what": "approved by Ben: Watch the finished 58-minute Journey Film 01 (J01_Journey_v03.mp4) and approve the 3 thumbnails (thumb_A, thumb_B, thumb_C) v03 (asked in J2222)"
+        },
+        {
+          "at": "2026-11-14T21:53Z",
+          "by": "claude",
+          "what": "now waits for J2859: Ben asked (14 Nov 21:53Z) for the title, description and tags to come from research on channels that offer this, and a title must be set before any test is armed. Upload with the v02 listing from J2859; the three-thumbnail test is unchanged."
         }
       ],
       "remaining_action": "Upload OWB J01 long v03 (A Calm Journey From Venus to a Dying Star) Private + arm 3-way thumb Test & Compare",
@@ -252606,6 +252611,68 @@
       "kind": "studio",
       "plain": "Checking whether the Mac mini can read Ben's board domain directly again",
       "mini_only": true
+    },
+    {
+      "id": "J2859",
+      "title": "Listings for the two long films from research on channels that do this: search-led titles, first lines and tags",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (14 Nov 21:53Z), on the two long films:** \"the title and descriptions including tags please do deep research with other channels that offer this, we don't want a few hour videos that get no views\".\n\n**What the research found (vidIQ, 14 Nov 2026; the cloud session ran it).**\n- The channel has 19 subscribers, so these films live or die on search and suggested. The search-first title rule applies (the plain phrase first, 70 characters at most).\n- People do search for this. Estimated searches a month, with competition out of 100: `documentary for sleep` 132,154 (44); `sleep documentary` 84,942 (37); `science to fall asleep to` 48,402 (52); `space documentary for sleep` 40,774 (44); `space facts to fall asleep` 21,901 (64, up 74%); `relaxing space documentary` 4,085 (44); `space journey to fall asleep to` 3,238 (36). `space documentary` alone is 465,768 (58).\n- Very small channels get views here. A channel with 96 subscribers: 12,300 views in two weeks for a 1 h 58 film titled as a slow journey to the edge of the universe, \"space for sleep\". 79 subscribers: 2,400 in two weeks (8 h 37). 1,400 subscribers: 18,300 in one week (2 h 37). 4,100 subscribers: 49,900 (3 h 43).\n- What those films share: the sleep phrase in the title beside one concrete subject; a first description line that says it is slow and made for sleep; chapters; \"no sudden sounds\"; tags that are the search phrases; three hashtags at the end of the description. Most run two to eight hours. Ours are 58 and 108 minutes, so the shorter one is sold as a calm documentary, not as a sleep video.\n- Our current Journey package has none of the search phrases in its title, first line or its 13 tags.\n\n**Journey film (the 58-minute one, approved by Ben today). Apply before the upload job J2857 runs.**\n- Title, set first and side A of any later title test: `Space Documentary: A Calm 600-Light-Year Journey From Earth` (59 characters; vidIQ title score 94).\n- Held for a later test, not armed now: `Relaxing Space Documentary: From Earth to Betelgeuse in 58 Minutes` (score 90), and the package's present A.\n- Do NOT use \"for sleep\" in this film's title. It is mixed at -14 LUFS with the films' own music and is not darkened.\n- Description, first two lines (they show in search): `A calm space documentary: a 58-minute journey outward from Earth, past Venus and Mars, through the Oort Cloud to Proxima Centauri, and 600 light-years on to the dying star Betelgeuse. Slow narration and real images of space, to relax with at the end of the day.` Then the present opening paragraph, chapters, the links to the seven films, sources, credits and the line on how the film is made, in the order RULES.md gives. Last line: `#spacedocumentary #spacejourney #astronomy`.\n- Tags (subject words and search phrases, no channel names): `space documentary, calm space documentary, relaxing space documentary, space journey, journey through space, solar system documentary, universe documentary, astronomy documentary, Venus, Mars rovers, Oort Cloud, Gliese 710, Proxima Centauri, speed of light, time dilation, Betelgeuse, light years`.\n- Write these as v02 files beside the v01 ones, point the package manifest at them, run the package's dry run, and say so in J2857. The three-thumbnail test in J2857 is unchanged.\n\n**Sleep film (the 108-minute one, Moon first and Andromeda last). Prepare now, use when its repaired master is ready (the next job).**\n- Title, side A: `Space Documentary for Sleep: A Slow Journey From the Moon to Andromeda` (70 characters; score 90).\n- For a later title test: `Fall Asleep to Space: 13 Calm Stories From the Moon to Andromeda` (91) and `Space Facts to Fall Asleep To: From the Moon to Andromeda` (91).\n- Description, first two lines: `A slow space documentary for sleep: 108 minutes drifting from the Moon, out through the planets and the nearby stars, to the Andromeda galaxy. Quiet narration over one soft bed of music, a picture that dims after twenty minutes, and no sudden sounds.` Then the chapters by their quiet names with times, the links to the films it is made from, sources, credits and the line on how it is made. Last line: `#spaceforsleep #sleepdocumentary #spacedocumentary`. Every claim in those two lines must be true of the finished file: check the dimming and \"no sudden sounds\" against the film's own reports and change the words if they are not.\n- Tags: `space documentary for sleep, sleep documentary, documentary for sleep, space for sleep, science for sleep, space facts to fall asleep to, facts to fall asleep to, science to fall asleep to, fall asleep to space, calm space documentary, relaxing space documentary, astronomy for sleep, bedtime documentary, space journey, solar system, the Moon, Andromeda galaxy, Betelgeuse`.\n\n**Checks.** Each title is 70 characters or fewer, starts with the plain phrase, has no hashtag, and does not copy a public video's title (search each before setting). Tags total under 500 characters. No \"no ads\" and no \"no AI\" claim anywhere.\n\n**Guards.** £0. Nothing uploaded or published by this job. No listing of a live video touched.\n\n**Done when** the Journey package holds the v02 title, description and tags and its dry run passes, the sleep film's listing is drafted beside its master, and J2857 is told.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-14T21:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T21:53Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Write the researched title, description and tags into the Journey package before its upload; draft the sleep film's listing",
+      "due": "2026-11-15T12:00:00Z",
+      "kind": "listing",
+      "plain": "Give the two long films the titles, descriptions and tags that small channels in this niche get views with",
+      "urgent": 16
+    },
+    {
+      "id": "J2860",
+      "title": "Sleep film: repair the picture Ben flagged at 97:38, show him before and after, then let it go on",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben's note on the board, 12 Nov 09:23Z, on `sleep_video_01_master_v01`:** \"97:38 picture is messed up here please take screenshots to see\". No job was made for it; the board has said \"Fixing your changes\" since.\n\n**Ben, in chat (14 Nov 21:53Z), asked whether to fix that or approve the film as it stands:** \"Again your decision\". The decision, by the cloud session: fix it first. A fault he could see is not published.\n\n**Do.**\n1. Look. Make a frame sheet of the master from 97:20 to 98:00, one frame a second, and every frame from 97:36 to 97:40. Say in one line what is wrong (a broken frame, the wrong shot, a bad join, an encode fault) and which chapter and which film's master it comes from. Put the sheet on his board card: he asked for screenshots.\n2. Check the same fault is not elsewhere: run the pixel check over the whole master again and list any other window that scores like this one.\n3. Repair only what is wrong, the way the brief for this film already rules: the film's own finished picture for that stretch, cut where the narration is cut. No new footage, no new searches. Rebuild that chapter, join again with the same single bed, darken as before.\n4. Check the new master: same length to the frame, the pixel check and `picture_qa` on every cut this job made, the sound checks on the joins either side, and the darkening by measurement. Save it as v02 with its hash; v01 stays.\n5. Put a short before-and-after of that window (the same frames, old and new) on Ben's board card, with a Play link that opens at 97:20. He does not need to watch the whole film again unless the check in step 2 found more: his wish to approve the rest stands, and the film goes on to its listing and a Private upload once this window passes. If step 2 finds other faults, list them and ask him.\n\n**Guards.** £0. Nothing deleted. No upload and nothing in Studio from this job. Earliest air date as the film's brief says.\n\n**Done when** v02 exists with the window repaired and checked, the before-and-after is on his card, and the listing job has been told the master is ready.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-14T21:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T21:53Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Frame-sheet 97:20 to 98:00, repair the faulty stretch from the film's own picture, re-check, save v02, put before and after on Ben's card",
+      "due": "2026-11-16T18:00:00Z",
+      "kind": "studio",
+      "plain": "Fix the broken picture Ben spotted in the two-hour sleep film, and show him the repair",
+      "urgent": 17
     }
   ],
   "focus": [

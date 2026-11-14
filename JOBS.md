@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2383, J2400, J2404, J2797, J2477, J2831, J2854, J2855.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2383, J2400, J2404, J2797, J2477, J2831, J2854, J2855, J2859, J2860.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -91,8 +91,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2852 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2843 |  |
 | J2854 | mini | claimed | cursor | 2026-11-14T23:21Z | 008 edit · assembly · HOS 008: write master v05 salon window (full-frame tail, f000-f029 slow, spark on 2635) | 6882919446 |
 | J2855 | mini | open (after J2854) | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008: read the v05 salon sheets (scale, freeze, ghosting, spark) | 6882926175 |
-| J2857 | mini | open | – | – | J01 upload · studio · Upload OWB J01 long v03 (A Calm Journey From Venus to a Dying Star) Private + arm 3-way thumb Test & Compare | 6882810716 |
+| J2857 | mini | open (after J2859) | – | – | J01 upload · studio · Upload OWB J01 long v03 (A Calm Journey From Venus to a Dying Star) Private + arm 3-way thumb Test & Compare | 6882810716 |
 | J2858 | mini | open | – | – | studio · Board: check Mini lookup for board.oppti.dev and move /api/checks reads back from pages.dev |  |
+| J2859 | mini | open | – | – | listing · Listings for the two long films from research on channels that do this: search-led titles, first lines and tags |  |
+| J2860 | mini | open | – | – | studio · Sleep film: repair the picture Ben flagged at 97:38, show him before and after, then let it go on |  |
 
 Recently finished:
 
