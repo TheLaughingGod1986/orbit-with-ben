@@ -1,5 +1,5 @@
 {
-  "next_id": 2855,
+  "next_id": 2856,
   "jobs": [
     {
       "id": "J0001",
@@ -251895,6 +251895,39 @@
       "due": "2026-11-15T18:00:00Z",
       "kind": "assembly",
       "plain": "Rebuild the Franklin salon join so the tube is full frame and the opening no longer freezes",
+      "mini_only": true
+    },
+    {
+      "id": "J2855",
+      "title": "HOS 008: read the v05 salon sheets (scale, freeze, ghosting, spark)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Look only. Stills. £0. No render, no retune, no pass.\n\nAfter the v05 salon assembly, open `hos_008_master_v05.mp4` and the two sheets it posted (half-second sheet of timeline 2504–2666, and the strip of every frame 2586–2636). Answer these. Any no: block this job parked for Chief and say which check failed. All yes: block it parked for Chief with the sheet paths and hashes. Do not mark the film approved. Do not start J2243. J2243 still waits on J2614 and must not review v04.\n\n1. Scale. 2505→2506 is one scale. The audience, the tube stand and the sleeve are not closer on 2506, and the lecturer’s nose does not enter from a crop.\n2. Freeze. In 2586–2665 no run of 3 identical frames. 2586–2634 is composite f000–f029, each frame once or twice, longest run 2. Mean absolute difference of a repeated pair may be encode noise; a third copy is a fail.\n3. Ghosting. No blended faces or hands. On the lossless intermediate, each display frame matches exactly one source frame. A mix of two source frames is a fail.\n4. Spark. Pre-glow on 2634 (f029), peak on 2635 (f030), half on 2636 (f031), and clean frames on either side. Nowhere else in 2504–2666.\n5. Bound. The last composite frame in the window is f060, on timeline 2665. Nothing after f060. Frame 2666 is still the audience cut.\n\nAlso confirm frames outside 2506–2665, and the audio, match v04 sha256 `735ac816e00ba4a2690494bfeb9fddecfdeaa2f60417c5192f48155a9333db31`.\n",
+      "ref": "6882926175",
+      "film": "008",
+      "stage": "edit",
+      "after": "J2854",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "grok",
+      "created_at": "2026-11-14T19:28Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T19:28Z",
+          "by": "grok",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "Read the v05 salon sheets and park the five checks for Chief",
+      "due": "2026-11-15T18:00:00Z",
+      "for": "gemini",
+      "kind": "qa",
+      "model": "gemini-argon",
+      "plain": "Look at the new Franklin salon frames and say whether the jump, the freeze and the spark are fixed",
       "mini_only": true
     }
   ],
