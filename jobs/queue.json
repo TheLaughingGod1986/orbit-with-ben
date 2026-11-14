@@ -248096,13 +248096,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-14T06:25Z",
-      "eta": "2026-11-14T08:25Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-14T05:15Z",
-      "result": "",
+      "result": "parked for Chief: J1130 condition PROVEN SATISFIED in HOS Studio (CDP 9222, 14 Nov 06:41Z): T023 on AL_-qlWko_g finished 12 Nov 2026 at 01:34 (ran 29 Oct 00:45 to 12 Nov 01:34, 11 views, no winner, Option A visible to all) and London date is 14 Nov 2026. T023 recorded in THUMB_LEDGER.json and full report committed at c890865242 (jobs/reviews/J2812/REVIEW.md). Because jobs.py reopen on a held job requires the elected Chief, run: jobs.py reopen J1130 --agent codex --note 'J2812 verified T023 finished 12 Nov 2026 01:34 and London date is 14 Nov (c890865242)' --git && jobs.py done J2812 --agent codex --result 'Verified T023 finished 12 Nov 2026 01:34, recorded in THUMB_LEDGER.json (c890865242), and reopened J1130' --git",
       "history": [
         {
           "at": "2026-11-14T05:15Z",
@@ -248138,6 +248138,11 @@
           "at": "2026-11-14T06:46Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Committed THUMB_LEDGER T023 result and jobs/reviews/J2812/REVIEW.md at c890865242"
+        },
+        {
+          "at": "2026-11-14T06:46Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J1130 condition PROVEN SATISFIED in HOS Studio (CDP 9222, 14 Nov 06:41Z): T023 on AL_-qlWko_g finished 12 Nov 2026 at 01:34 (ran 29 Oct 00:45 to 12 Nov 01:34, 11 views, no winner, Option A visible to all) and London date is 14 Nov 2026. T023 recorded in THUMB_LEDGER.json and full report committed at c890865242 (jobs/reviews/J2812/REVIEW.md). Because jobs.py reopen on a held job requires the elected Chief, run: jobs.py reopen J1130 --agent codex --note 'J2812 verified T023 finished 12 Nov 2026 01:34 and London date is 14 Nov (c890865242)' --git && jobs.py done J2812 --agent codex --result 'Verified T023 finished 12 Nov 2026 01:34, recorded in THUMB_LEDGER.json (c890865242), and reopened J1130' --git"
         }
       ],
       "remaining_action": "Elected Chief (codex) to reopen J1130 and close J2812",
