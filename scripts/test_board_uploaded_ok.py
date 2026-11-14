@@ -8,6 +8,7 @@ board_check must treat those settled ask/approved entries as satisfied (no false
 card) while still flagging a genuinely missing card or a dead Play link."""
 from __future__ import annotations
 
+from board_site import site_url
 import datetime as dt
 import sys
 import unittest
@@ -33,7 +34,7 @@ def tearDownModule():
     PIN.stop()
 
 NOW = dt.datetime(2026, 11, 9, 9, 0, tzinfo=dt.timezone.utc)
-URL = "https://studio-kanban.vercel.app/api/watch?v=x&e=1&s=y"
+URL = (site_url() + '/api/watch?v=x&e=1&s=y')
 
 FILES = {
     "file": {

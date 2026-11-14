@@ -1,6 +1,6 @@
 # Studio Kanban
 
-**Videos tab (live, Ben 7 Nov 2026):** https://studio-kanban.vercel.app → **Videos** shows nine exclusive swim lanes:
+**Videos tab (live, Ben 7 Nov 2026):** https://studio-kanban.pages.dev → **Videos** shows nine exclusive swim lanes:
 
 **Backlog → To do → In progress → QA → UAT → Passed → Scheduled → Live → Post-live.**
 
@@ -20,7 +20,7 @@ It's set once by a one-time "link this phone" link from `python3 scripts/board_p
 `~/.config/studio-kanban/ben_pair_link`, 0600, never printed; works once, expires in 7 days; send it only in Ben's private
 chat). A phone that still has the old `#k=` board code upgrades to the cookie by itself. Anyone else gets 401 and nothing
 posts. Test without approving: `POST /api/checks {"id": "...", "doc": {...}, "dryRun": true}` returns the line it would post.
-Revoke every linked phone by rotating `BOARD_KEY` in Vercel.
+Revoke every linked phone by rotating `BOARD_KEY` in Cloudflare Pages.
 
 Job and video progress (18 Oct 2026, classic board): the Now box and video rows use the same live queue and
 channel-qualified video links. Workers record the chosen video(s) with `jobs.py progress ... --films HOS:006` and a
@@ -42,28 +42,20 @@ board_publish.py. It writes `~/_desk/state/board/board_check.json` (`ok`, `probl
 
 ## Deploying the page (studio-kanban has no Git link)
 
-The Vercel project `studio-kanban` (prj_vZED3mMIu9NfPnBdoME18ALtfVNk, team bens-projects-11c93b15, Hobby) is **not
-connected to GitHub** (checked 25 Oct 2026), so a merge never auto-builds it. That is on purpose: main takes dozens of
-`jobs:` pushes a day, and on Hobby every triggered build, ignored or cancelled ones included, counts toward the
-100-a-day deploy cap (the same reason `orbit-content-ops` has git auto-deploy off). Data needs no deploy. Only a change
-under `board_site/` or the pages it builds does. After such a merge, deploy main by hand at its merge sha:
+The live board is on Cloudflare Pages, on its free plan. There is no Git integration: routine data pushes do not deploy the page. After Chief review, build and upload from `05_Analytics/kanban/board_site`:
 
-- **Vercel MCP** `create_deployment`: `{"teamId": "team_UPErYpfb3ww71LYTIWUoKvcH", "requestBody": {"name": "studio-kanban",
-  "project": "studio-kanban", "target": "production", "gitSource": {"type": "github", "org": "TheLaughingGod1986",
-  "repo": "orbit-with-ben", "ref": "main", "sha": "<merge sha>"}, "projectSettings": {"framework": null,
-  "rootDirectory": "05_Analytics/kanban/board_site", "installCommand": "npm install", "buildCommand": "python3 build.py",
-  "outputDirectory": "dist", "sourceFilesOutsideRootDirectory": true}}, "forceNew": "1", "skipAutoDetectionConfirmation": "1"}`.
-  **Always pass `projectSettings`.** Without them Vercel builds the repo root, finds nothing to serve, and the live site
-  returns 404 on every path. That happened on 25 Oct 2026 08:54 London (dpl_8Ca8ziAEVP6s9FGrsxHmrH6CgoAE). The fix was
-  redeploying with the settings above (dpl_8dxxvQKf9cic7UqvR1ND5Ko5ZdNg, 200 again by 08:57).
-- **CLI** (where `vercel` is signed in): `cd 05_Analytics/kanban/board_site && npx vercel deploy --prod --scope bens-projects-11c93b15`
-  (uses `.vercel/project.json`).
+```sh
+python3 build.py
+npx wrangler pages deploy dist --project-name studio-kanban --branch main
+```
 
-Then check the deployment is READY and that `curl -s -o /dev/null -w '%{http_code}' https://studio-kanban.vercel.app/` prints 200.
+Check `/`, `/tracker`, `/ai`, `/version.json`, and the `X-Robots-Tag: noindex, nofollow` header on `/` and `/tracker`. `build.py` writes Pages headers and redirects from `vercel.json`, plus the API worker. Keep open taps off. No billing changes or card entry.
+
+Every client reads `BOARD_SITE_URL`, falling back to `studio/board_site.json`. Python uses `scripts/board_site.py`; the Node watch uploader reads the same JSON. `WATCH_OK` only validates explicitly supplied watch links; generated Play links use the same configured board address.
 
 ## Channel Tracker web app (Ben, 10 Oct 2026)
 
-https://studio-kanban.vercel.app/tracker is the Channel Tracker (`05_Analytics/dashboard/template.html`, the page behind
+https://studio-kanban.pages.dev/tracker is the Channel Tracker (`05_Analytics/dashboard/template.html`, the page behind
 `dashboard.html`) as a phone web app on the same site: "Add to Home Screen" opens it full screen (`board_site/tracker.webmanifest`,
 icons in `board_site/static/`). The board header links to it and it links back.
 

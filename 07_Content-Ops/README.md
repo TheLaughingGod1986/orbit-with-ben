@@ -74,3 +74,5 @@ the daily mirror silently.
 file sha256 unless `--force-new`. Buffer mirror already skips channels that have
 a post id, and `executeActions` re-checks the ledger under the lock before each
 create.
+
+The Studio board lives at https://studio-kanban.pages.dev. Workers use `BOARD_SITE_URL` or the default in `studio/board_site.json`; page deployments use Cloudflare Pages on the free plan (see `05_Analytics/kanban/README.md`).

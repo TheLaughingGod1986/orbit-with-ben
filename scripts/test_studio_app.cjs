@@ -65,7 +65,7 @@ assert(t.canTick(v({})) && t.canTick(v({type: 'short', ask: {job: 'J1'}})) && !t
 // UAT screen: a streamable cut plays in the page with a timestamp button; Approve and Request changes are there.
 const stream = t.uat(board, 'OWB:019');
 assert(!stream.includes('<video'), 'an https link that is not a stream opens outside the page');
-board.tracker.videos[0].watch = {url: 'https://studio-kanban.vercel.app/api/watch?v=x', version: 'v06', kind: 'stream'};
+board.tracker.videos[0].watch = {url: 'https://board.example/api/watch?v=x', version: 'v06', kind: 'stream'};
 const play = t.uat(board, 'OWB:019');
 assert(play.includes('<video id="uat-video"') && play.includes('data-stamp') && play.includes('data-ok="OWB:019"') && play.includes('data-chg="OWB:019"'));
 board.tracker.videos[0].watch = {url: 'shareddocuments:///x.mp4', version: 'v06', kind: 'files', source: 'iCloud Drive'};
