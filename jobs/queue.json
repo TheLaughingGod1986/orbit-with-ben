@@ -195414,9 +195414,14 @@
           "at": "2026-11-14T11:16Z",
           "by": "cursor",
           "what": "step 2 of 3 done: The exact pictures, jar packet copy and High encodes are already on disk. Building the order that joins them."
+        },
+        {
+          "at": "2026-11-14T11:19Z",
+          "by": "cursor",
+          "what": "step 2 of 3 done: Assembly order covers 12923 frames: 8086 original packets, 4698 High encodes, 139 exact pictures. Clock keeps 23 steps of 1024 ticks. Commit e750b97e. No v04."
         }
       ],
-      "remaining_action": "Write the Franklin assembly order that places every frame on the original clock. No master yet.",
+      "remaining_action": "Mux the 73 Franklin runs with the original audio on the source clock. No master yet.",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
@@ -195425,9 +195430,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-14T11:16Z",
+        "at": "2026-11-14T11:19Z",
         "by": "cursor",
-        "note": "The exact pictures, jar packet copy and High encodes are already on disk. Building the order that joins them."
+        "note": "Assembly order covers 12923 frames: 8086 original packets, 4698 High encodes, 139 exact pictures. Clock keeps 23 steps o"
       }
     },
     {
