@@ -210176,9 +210176,14 @@
           "at": "2026-11-14T23:23Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J2400; starting 5-part review under J2829 ruling"
+        },
+        {
+          "at": "2026-11-14T23:26Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Step 1/5 done: SHA-256 verified (iCloud UAT copies are 0B placeholders); picture_qa, polish_gate, music_gate, sfx_kit level, thumb_preview PASS; gate_shorts_open FAIL on both (Short 1 14/37=38% blur-pad, Short 2 24/27=89% blur-pad)"
         }
       ],
-      "remaining_action": "Verify automated gates and SHA-256 hashes on 033 Shorts 1 & 2",
+      "remaining_action": "Generate and inspect 2 fps contact sheets, +-3 frame cut strips, and final 3.0s strips for 033 Shorts 1 & 2",
       "kind": "review",
       "required_capabilities": [
         "audio_input"
@@ -210196,11 +210201,11 @@
       "urgent": 8,
       "due": "2026-11-15T22:00:00Z",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-14T23:23Z",
+        "at": "2026-11-14T23:26Z",
         "by": "gemini",
-        "note": "Claimed J2400; starting 5-part review under J2829 ruling"
+        "note": "Step 1/5 done: SHA-256 verified (iCloud UAT copies are 0B placeholders); picture_qa, polish_gate, music_gate, sfx_kit le"
       },
       "taskKeys": [
         "OWB:033"
