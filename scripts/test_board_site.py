@@ -7,7 +7,7 @@ import tempfile
 import subprocess
 import unittest
 from unittest.mock import patch
-from board_site import site_url
+from board_site import board_request, site_url
 ROOT = Path(__file__).resolve().parents[1]
 SITE = ROOT / '05_Analytics/kanban/board_site'
 class BoardSite(unittest.TestCase):
@@ -36,6 +36,11 @@ class BoardSite(unittest.TestCase):
         import kanban_snapshot as ks
         self.assertIsNotNone(ks.explicit_watch({'url': site_url() + '/api/watch?v=example'}))
         self.assertIsNone(ks.explicit_watch({'url': 'https://untrusted.example/api/watch?v=x'}))
+
+    def test_client_identifies_itself(self):
+        request = board_request(site_url() + '/api/checks')
+        self.assertEqual(request.full_url, site_url() + '/api/checks')
+        self.assertEqual(request.get_header('User-agent'), 'studio-kanban client')
 
     def test_host_rules(self):
         spec = importlib.util.spec_from_file_location('site_build', SITE / 'build.py')

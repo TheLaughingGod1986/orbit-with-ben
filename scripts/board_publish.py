@@ -43,7 +43,7 @@ import datetime as dt
 import fcntl
 import hashlib
 import json
-from board_site import site_url
+from board_site import board_request, site_url
 import os
 import workflow_state as workflow
 import channels
@@ -419,7 +419,7 @@ def fetch_checks(prev: dict, at: dt.datetime, force: bool, stamp=stamp_version, 
     if not (checks_due(prev, at, force, stamp) if due is None else due):
         return keep
     try:
-        with urllib.request.urlopen(f"{SITE}/api/checks?t={int(at.timestamp())}", timeout=15) as r:
+        with urllib.request.urlopen(board_request(f"{SITE}/api/checks?t={int(at.timestamp())}"), timeout=15) as r:
             body = json.loads(r.read().decode())
         checks = body.get("checks") if isinstance(body, dict) else None
         if isinstance(checks, dict):

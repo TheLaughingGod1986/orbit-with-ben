@@ -19,7 +19,7 @@ from __future__ import annotations
 
 import argparse
 import json
-from board_site import site_url
+from board_site import board_request, site_url
 import sys
 import urllib.request
 
@@ -64,7 +64,7 @@ def ben_oks(checks: dict, slug: str | None = None) -> dict:
 
 def fetch_checks(url: str = CHECKS_URL) -> dict:
     try:
-        with urllib.request.urlopen(url, timeout=20) as r:
+        with urllib.request.urlopen(board_request(url), timeout=20) as r:
             return json.load(r).get("checks", {})
     except (OSError, ValueError):
         return {}  # the board being down never stops rule 1

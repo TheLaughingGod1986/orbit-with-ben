@@ -2,6 +2,7 @@
 import json
 import os
 from pathlib import Path
+from urllib.request import Request
 
 
 def site_url():
@@ -10,3 +11,8 @@ def site_url():
         return override.rstrip("/")
     setting = Path(__file__).resolve().parents[1] / "studio/board_site.json"
     return json.loads(setting.read_text())["url"].rstrip("/")
+
+
+def board_request(url):
+    """Identify studio tools: Cloudflare rejects urllib's default user agent."""
+    return Request(url, headers={"User-Agent": "studio-kanban client"})
