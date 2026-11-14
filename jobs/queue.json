@@ -246565,20 +246565,25 @@
           "at": "2026-11-14T00:42Z",
           "by": "codex",
           "what": "step 0 of 4 done: Plan: inspect references, centralise settings and update docs, test and deploy, merge and report."
+        },
+        {
+          "at": "2026-11-14T00:45Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Found deployed migration in PR 858, reused it; stale live-data mentions originate in queue notes, not watch URLs. WATCH_OK gates only explicit hand-set links."
         }
       ],
-      "remaining_action": "Checking every place that uses the Studio board address",
+      "remaining_action": "Updating the shared board address, docs and search headers",
       "due": "2026-11-14T12:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Point the last scripts and the handbook at the board's new address, so ticks are read again once Ben adds the token",
       "urgent": 10,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-14T00:42Z",
+        "at": "2026-11-14T00:45Z",
         "by": "codex",
-        "note": "Plan: inspect references, centralise settings and update docs, test and deploy, merge and report."
+        "note": "Found deployed migration in PR 858, reused it; stale live-data mentions originate in queue notes, not watch URLs. WATCH_"
       }
     },
     {
