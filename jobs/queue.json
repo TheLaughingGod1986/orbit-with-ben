@@ -252010,10 +252010,10 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-14T19:52Z",
+      "eta": "2026-11-14T20:37Z",
       "created_by": "claude",
       "created_at": "2026-11-14T19:49Z",
       "result": "",
@@ -252022,6 +252022,11 @@
           "at": "2026-11-14T19:49Z",
           "by": "claude",
           "what": "added for cursor"
+        },
+        {
+          "at": "2026-11-14T19:52Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Make the Mini's reads of the board work (flush, or read via pages.dev), publish, record the OK on J2222, add a ten-minute guard",
@@ -252029,7 +252034,15 @@
       "for": "cursor",
       "kind": "studio",
       "plain": "Ben's approval is saved but the studio can't see it: fix how the Mini reaches the board",
-      "urgent": 13
+      "urgent": 13,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-14T19:52Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
