@@ -1,5 +1,5 @@
 {
-  "next_id": 2809,
+  "next_id": 2810,
   "jobs": [
     {
       "id": "J0001",
@@ -247573,6 +247573,36 @@
       "due": "2026-11-14T20:00:00Z",
       "kind": "chief",
       "plain": "Decide whether the revised gravity film score is ready for editing"
+    },
+    {
+      "id": "J2809",
+      "title": "HOS: complete the two data-backed topic briefs handed back in J2800",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief follow-up to J2800 / OWB PR 911. The previous run produced only a hand-back note, no topic deliverables. Complete the full original brief below. This task is pinned to the Mini because the MacBook Claude lane reported search and queue mutations refused; use free search and saved public evidence, never paid vidIQ calls. Keep the specialist script routing chain. No time hold: ready immediately.\n\nBefore choosing IDs, check current HOS main, open PRs, ideas and WIP; the prior worker reported 102/103 reserved in HOS PR 572 and proposed 104/105, but these are not reservations and must be rechecked. Preserve J2748 and its FIX scope. Save search evidence and three qualifying neighbour videos per topic; do not claim a pass from invented or missing views. Queue each rule-E review, keep Rule G backlog-only, and record exact PRs/results. If approaching the unattended cap, hand back concrete progress rather than restart the analysis.\n\nHistory of Science daily topic job: discovery stories with a person, a date and a twist.\n\nLEARN FROM OUR DATA FIRST (Ben, 5 Nov 2026: 'learn off past data what works well and build the videos around the data'). Read 05_Analytics/hos/channel_daily.json, 05_Analytics/hos/studio_ctr.json, 05_Analytics/hos/REPORT.md, the newest 05_Analytics/hos/snapshots/ and 05_Analytics/LEARNINGS.md (rules 1-22). Rank our own longs and Shorts by views per day since publish, CTR, average % viewed and Shorts 'stayed'. Write down the 3 best and 3 worst with the numbers and what they share (subject, title shape, opening, thumbnail concept, length).\nTHEN ADD TWO NEW FILMS TO THE BACKLOG (every day; Ben: 'one or two new a day ... a healthy big full backlog so we're never short'). For each: a working title in the shape that wins for us, one-line hook, why it should work (name the past winners it resembles, with their numbers, and the LEARNINGS rules it follows), a neighbour pass (three big videos on the subject with views), and two Short angles from it. Never repeat a topic already in 02_Video-Projects, the ideas folder or WIP. Create its project folder from the template with this as TOPIC.md, and append it to jobs/WIP.json `next_hos` (rule G: it starts only when a place frees up). Queue its rule-E topic review as a kind:review job. Spend nothing: existing subscriptions and free tools only, no paid API, TTS or picture generation; no Studio or publish change. Finish with jobs.py done <id> --result listing the two topics and the data line behind each. HOS films are written in the history-of-science repo; the WIP line and the review job live in orbit-with-ben.\n",
+      "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/911",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-14T04:04Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-14T04:04Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Research two new topics, save the evidence and queue their reviews",
+      "kind": "script",
+      "plain": "Choose two new History of Science films using our audience data and comparable videos",
+      "mini_only": true
     }
   ],
   "focus": [
