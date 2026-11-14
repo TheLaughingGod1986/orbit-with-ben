@@ -247752,9 +247752,14 @@
           "at": "2026-11-14T04:51Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T04:51Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Started J2809: set 5-step plan (1: data+ID audit, 2: search+neighbours evidence, 3: HOS folders+TOPIC.md+status.json, 4: OWB WIP.json+review jobs, 5: verify+close)"
         }
       ],
-      "remaining_action": "Research two new topics, save the evidence and queue their reviews",
+      "remaining_action": "Read HOS performance data and check existing HOS film IDs, open PRs, ideas, and WIP before selecting two new topics",
       "kind": "script",
       "plain": "Choose two new History of Science films using our audience data and comparable videos",
       "mini_only": true,
@@ -247769,11 +247774,10 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-14T04:51Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Started J2809: set 5-step plan (1: data+ID audit, 2: search+neighbours evidence, 3: HOS folders+TOPIC.md+status.json, 4:"
       }
     }
   ],
