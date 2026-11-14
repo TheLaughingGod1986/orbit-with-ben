@@ -249017,9 +249017,14 @@
           "at": "2026-11-14T10:04Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Verified J2805 commit 4b92c042 on /Volumes/MiniWork/scratch/j2805-hos (ALL CHECKS PASS); no push/PR/approval on HOS #180 or OWB #478"
+        },
+        {
+          "at": "2026-11-14T10:08Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Committed jobs/reviews/J2820/REVIEW.md at 449bde6d3c: condition NOT MET (4b92c042 local only, no push approval)"
         }
       ],
-      "remaining_action": "Write jobs/reviews/J2820/REVIEW.md from a clean OWB worktree and record the verification outcome",
+      "remaining_action": "Park J2820 for elected Chief codex to record wait --recheck J2820 on J2805 and close J2820",
       "kind": "review",
       "recheck_of": "J2805",
       "due": "2026-11-14T06:00:00+00:00",
@@ -249034,11 +249039,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-14T10:04Z",
+        "at": "2026-11-14T10:08Z",
         "by": "gemini",
-        "note": "Verified J2805 commit 4b92c042 on /Volumes/MiniWork/scratch/j2805-hos (ALL CHECKS PASS); no push/PR/approval on HOS #180"
+        "note": "Committed jobs/reviews/J2820/REVIEW.md at 449bde6d3c: condition NOT MET (4b92c042 local only, no push approval)"
       },
       "taskKeys": [
         "HOS:009"
