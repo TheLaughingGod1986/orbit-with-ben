@@ -248208,9 +248208,14 @@
           "at": "2026-11-14T06:50Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2813; starting verification of J2040 waiting condition"
+        },
+        {
+          "at": "2026-11-14T06:52Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified J2517/J2559 done, all 8 ~/.codex hashes unchanged from 4-6 Nov checkpoint, PR #490 still draft at f521bcd3f1, and live codex execpolicy check output"
         }
       ],
-      "remaining_action": "Read J2040, J2719, PR #490, and local approval-settings evidence",
+      "remaining_action": "Write and commit jobs/reviews/J2813/REVIEW.md from a clean worktree",
       "kind": "review",
       "recheck_of": "J2040",
       "due": "2026-11-14T06:15:31+00:00",
@@ -248225,11 +248230,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-14T06:50Z",
+        "at": "2026-11-14T06:52Z",
         "by": "gemini",
-        "note": "Claimed J2813; starting verification of J2040 waiting condition"
+        "note": "Verified J2517/J2559 done, all 8 ~/.codex hashes unchanged from 4-6 Nov checkpoint, PR #490 still draft at f521bcd3f1, a"
       }
     },
     {
