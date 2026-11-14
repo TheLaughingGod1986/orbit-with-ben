@@ -249007,9 +249007,14 @@
           "at": "2026-11-14T09:59Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-14T10:00Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Started J2820 condition verification for J2805 (HOS:009 revised music scope)"
         }
       ],
-      "remaining_action": "Verify readiness: Commit and verify the music decision and linked production review handoff",
+      "remaining_action": "Inspect J2805 hold record, local commit 4b92c042 on /Volumes/MiniWork/scratch/j2805-hos, and HOS remote/approval history",
       "kind": "review",
       "recheck_of": "J2805",
       "due": "2026-11-14T06:00:00+00:00",
@@ -249026,11 +249031,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-14T09:59Z",
+        "at": "2026-11-14T10:00Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Started J2820 condition verification for J2805 (HOS:009 revised music scope)"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     }
   ],
   "focus": [
