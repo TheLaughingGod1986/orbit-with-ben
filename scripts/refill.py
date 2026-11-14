@@ -32,10 +32,12 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import jobs  # noqa: E402
 import channels  # noqa: E402
 import studio  # noqa: E402
+import workflow_state as workflow  # noqa: E402
 
 BACKLOG = jobs.ROOT / "jobs" / "backlog.json"
 MIN_READY = 3
 STALE_H = 2.0
+CAPABILITY_TRAP_H = 24.0
 # One live copy per key (Chief J0811, 21 Oct 2026): a key counted as busy only while open or claimed, so every copy
 # the workers parked freed it, and 16-21 Oct added 28-30 copies of each of 15 keys (406 jobs). A parked job still
 # holds only itself among the other keys' work (Ben, 12 Oct); it holds the next copy of its own key until it is done.
@@ -149,12 +151,83 @@ def parked_since(job: dict):
     return None
 
 
-def do_escalate(data: dict, at: dt.datetime, hours: float = STALE_H) -> list:
+def capability_waiting_since(job: dict, by_id: dict):
+    stamps = [workflow.timestamp(job.get("created_at") or job.get("addedAt"))]
+    if not stamps[0]:
+        stamps = [workflow.timestamp(h.get("at")) for h in (job.get("history") or []) if h.get("at")][:1]
+    base = next((t for t in stamps if t), None)
+    if not base:
+        return None
+    for h in job.get("history") or []:
+        t = workflow.timestamp(h.get("at"))
+        if t and str(h.get("what") or "").startswith("reopened") and t > base:
+            base = t
+    if job.get("after"):
+        parent = by_id.get(job["after"]) or {}
+        for h in parent.get("history") or []:
+            t = workflow.timestamp(h.get("at"))
+            if t and str(h.get("what") or "").startswith("done") and t > base:
+                base = t
+    return base
+
+
+def park_unshown_capabilities(data: dict, at: dt.datetime, capabilities: dict | None = None,
+                              hours: float = CAPABILITY_TRAP_H) -> list:
+    """A job needing a capability no worker has demonstrated in `hours` (24 h) goes to the Chief instead of sitting open."""
+    by_id = {j["id"]: j for j in data["jobs"]}
+    limit = dt.timedelta(hours=hours)
     out = []
+    for j in data["jobs"]:
+        if j.get("status") not in ("open", "blocked") or j.get("recheck_of"):
+            continue
+        if parked_for_chief(j) or j.get("capability_escalated"):
+            continue
+        if j.get("needs") == "ben" or j.get("awaits_ben") or workflow.dependency_problem(j, by_id):
+            continue
+        if j.get("after") and by_id.get(j["after"], {}).get("status") != "done":
+            continue
+        hold = j.get("hold") or {}
+        if hold and hold.get("type") != "capability":
+            continue
+        if not hold and workflow.external_hold(j, at):
+            continue
+        reqs = workflow.capability_names(j.get("required_capabilities") or hold.get("requires") or [])
+        if not reqs:
+            continue
+        since = capability_waiting_since(j, by_id)
+        if not since or at - since < limit:
+            continue
+        missing = [c for c in reqs
+                   if (last := workflow.capability_last_shown(c, capabilities)) is None or at - last >= limit]
+        if not missing:
+            continue
+        if hold.get("type") == "capability":
+            j.pop("hold", None)
+            for x in data["jobs"]:
+                if x.get("recheck_of") == j["id"] and x.get("status") in ("open", "blocked"):
+                    x.update(status="cancelled",
+                             result=f"superseded: {j['id']} parked for Chief after {int(hours)} h without {', '.join(missing)}",
+                             eta="")
+                    jobs.log(x, at, "refill", "cancelled: parent parked for Chief")
+        j["required_capabilities"] = reqs
+        waited_h = int((at - since).total_seconds() // 3600)
+        reason = (f"parked for Chief: no worker has shown {', '.join(missing)} in {int(hours)} h "
+                  f"(waiting {waited_h} h); route or re-scope")
+        j.update(status="blocked", by="", since="", eta="", result=reason,
+                 capability_escalated={"missing": missing, "at": studio.iso(at)},
+                 escalated_at=studio.iso(at))
+        jobs.log(j, at, "refill", "blocked: " + reason)
+        out.append(j)
+    return out
+
+
+def do_escalate(data: dict, at: dt.datetime, hours: float = STALE_H,
+                capabilities: dict | None = None, capability_hours: float = CAPABILITY_TRAP_H) -> list:
+    out = list(park_unshown_capabilities(data, at, capabilities, capability_hours))
     recent = studio.iso(at - dt.timedelta(hours=ESCALATE_EVERY_H))
     posted = {j["backlog"] for j in data["jobs"] if j.get("backlog") and j.get("escalated_at", "") > recent}
     for j in data["jobs"]:
-        if not parked_for_chief(j):
+        if j in out or not parked_for_chief(j):
             continue
         since = parked_since(j)
         if not since or at - since < dt.timedelta(hours=hours) or j.get("escalated_at", "") >= studio.iso(since):
@@ -193,7 +266,8 @@ def run(cmd: str, git: bool, min_ready: int = MIN_READY, hours: float = STALE_H)
         apply = lambda d: (top_up(d, items, at, min_ready), None, [])  # noqa: E731
         msg = "jobs: refill from backlog by relay"
     else:
-        apply = lambda d: ([j["id"] + " " + j["title"][:80] for j in do_escalate(d, at, hours)], None, [])  # noqa: E731
+        caps = jobs.chief_relay.worker_capabilities()
+        apply = lambda d: ([j["id"] + " " + j["title"][:80] for j in do_escalate(d, at, hours, capabilities=caps)], None, [])  # noqa: E731
         msg = "jobs: escalate stale Chief reviews by relay"
     if git:
         out, err = jobs.with_git(apply, msg)
