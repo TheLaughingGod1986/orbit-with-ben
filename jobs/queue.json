@@ -239828,13 +239828,13 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-14T12:25Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-12T16:42Z",
-      "result": "parked for Chief: MacBook slot macbook-2 cannot run wrangler or the BOARD_KEY tick check (wrangler CLI/login and local studio-kanban keys live on the Mini only). Opened PR #925 (456b3656d) so MacBook Studio CDP workers stop claiming Cloudflare Pages / wrangler jobs. On the Mini: merge PR #925 first (otherwise MacBook slots immediately re-claim J2714), then run the 11:34Z steps on the Mini (wrangler secret list, build.py + wrangler pages deploy dist --project-name studio-kanban --branch main, /api/checks tick test, 30x /api/data?f=ref on studio-kanban.pages.dev and board.oppti.dev, and post phone-linking steps) or reopen J2714 for Mini cursor after #925 merges.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-12T16:42Z",
@@ -239965,6 +239965,11 @@
           "at": "2026-11-14T12:38Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: MacBook slot macbook-2 cannot run wrangler or the BOARD_KEY tick check (wrangler CLI/login and local studio-kanban keys live on the Mini only). Opened PR #925 (456b3656d) so MacBook Studio CDP workers stop claiming Cloudflare Pages / wrangler jobs. On the Mini: merge PR #925 first (otherwise MacBook slots immediately re-claim J2714), then run the 11:34Z steps on the Mini (wrangler secret list, build.py + wrangler pages deploy dist --project-name studio-kanban --branch main, /api/checks tick test, 30x /api/data?f=ref on studio-kanban.pages.dev and board.oppti.dev, and post phone-linking steps) or reopen J2714 for Mini cursor after #925 merges."
+        },
+        {
+          "at": "2026-11-14T13:29Z",
+          "by": "gemini",
+          "what": "reopened: Chief review PASS (5656541953, jobs/reviews/J2714/REVIEW.md): merged PR #925 (71be7cfcb8) so MacBook Studio CDP workers stop claiming Cloudflare Pages / wrangler jobs. Reopened for Mini cursor to run the 11:34Z steps: list studio-kanban secret names only to confirm BOARD_GH_TOKEN, deploy studio-kanban from main, verify /api/checks tick and 30x /api/data?f=ref on studio-kanban.pages.dev and board.oppti.dev, and post phone-linking steps for Ben."
         }
       ],
       "remaining_action": "On the Mini: confirm BOARD_GH_TOKEN in wrangler, deploy studio-kanban, prove /api/checks tick and 30x ref reads, post phone link steps",
@@ -239979,13 +239984,6 @@
         "model": "",
         "status": "open",
         "by": ""
-      },
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-14T12:36Z",
-        "by": "macbook-2",
-        "note": "Preflight verified build.py; Wrangler login and BOARD_KEY live on the Mini only; fixing MacBook Studio filter"
       }
     },
     {
