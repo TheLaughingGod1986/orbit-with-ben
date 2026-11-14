@@ -246896,19 +246896,24 @@
           "at": "2026-11-14T03:13Z",
           "by": "codex",
           "what": "step 1 of 4 done: Publisher, API and browser changes implemented in isolated worktree. Required scratch offload found no eligible old scratch; baseline browser capture started detached."
+        },
+        {
+          "at": "2026-11-14T03:18Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Implementation and regression verification complete: publisher/API/UI and real Chrome authentication pass. Long measurements are detached; no production deployment or completion claimed."
         }
       ],
-      "remaining_action": "Test bounded board updates and measure browser traffic before deployment",
+      "remaining_action": "Collect traffic captures, review the change, then merge and deploy the board",
       "due": "2026-11-15T18:00:00Z",
       "for": "codex",
       "kind": "studio",
       "plain": "Make the board use far less data on Ben's phone, by fetching only what changed",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-14T03:13Z",
+        "at": "2026-11-14T03:18Z",
         "by": "codex",
-        "note": "Publisher, API and browser changes implemented in isolated worktree. Required scratch offload found no eligible old scra"
+        "note": "Implementation and regression verification complete: publisher/API/UI and real Chrome authentication pass. Long measurem"
       }
     },
     {
