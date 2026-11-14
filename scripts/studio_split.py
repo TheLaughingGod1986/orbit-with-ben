@@ -70,6 +70,7 @@ ROUTES = (
     # A file both need.
     (r"\.gitignore$", BOTH, "ignore rules"),
     # Everything else here is the home channel's content: films, brand, character, old work.
+    (r"studio/board_site\.json$", STUDIO, "the board's own web address, kept by the studio"),   # J2822: not a channel's setting
     (r"studio/", HOME_CHANNEL, "the channel's own settings and rules"),
     (r"02_Video-Projects/|00_Brand/|01_[^/]+/|04_Audio/|_archive/|_evidence/", HOME_CHANNEL, "films, brand and old work"),
 )
