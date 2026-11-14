@@ -249924,9 +249924,14 @@
           "at": "2026-11-14T14:54Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2826; starting inspection of J01 upload stage and related jobs."
+        },
+        {
+          "at": "2026-11-14T14:57Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1 done: inspected J01 status.json, workflow_handoffs.py, and 11_Upload-Package; found stale v01 thumb hashes/hooks in manifest."
         }
       ],
-      "remaining_action": "Inspect J01 upload stage, J2823 results, and workflow_state orphan-review logic",
+      "remaining_action": "Audit J01 11_Upload-Package files, fix thumbnail SHA-256/byte/hook discrepancies, and verify SRT and dry-run",
       "kind": "chief",
       "handoff": {
         "film": "J01",
@@ -249935,11 +249940,11 @@
         "signature": "2c6d36d22d89b2dd4443"
       },
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-14T14:54Z",
+        "at": "2026-11-14T14:57Z",
         "by": "gemini",
-        "note": "Claimed J2826; starting inspection of J01 upload stage and related jobs."
+        "note": "Step 1 done: inspected J01 status.json, workflow_handoffs.py, and 11_Upload-Package; found stale v01 thumb hashes/hooks "
       }
     },
     {
