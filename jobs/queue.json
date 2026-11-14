@@ -193430,10 +193430,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-11-14T14:24Z",
-      "eta": "2026-11-14T16:24Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-05T17:12Z",
       "result": "",
@@ -193677,6 +193677,11 @@
           "at": "2026-11-14T14:39Z",
           "by": "cursor",
           "what": "step 3 of 4 done: Harvey v04 open gate PASS with no padded frames. Cuff sha 7fe460307b47. Heart pump sha e94cbf4c5a54. HOS PR 586. Vaccine Variolation and Eradication are still to build. No awaits."
+        },
+        {
+          "at": "2026-11-14T14:39Z",
+          "by": "cursor",
+          "what": "released: Harvey v04 is built and the open gate PASSes with no padded or mirrored frames. Cuff 23.10s sha 7fe460307b47, heart pump 25.10s sha e94cbf4c5a54. Polish and picture checks PASS. Cuff voice stem PASS. Heart stem still has the known speech-to-text flag already cleared by ear. Not ready for awaits. Next: Vaccine Variolation and Option A Eradication from the locked audio. Willow stays scheduled. HOS PR 586, commit ebbde75c. Files in _desk/renders/J2230/s06_v04 and s07_v04. No render running. £0."
         }
       ],
       "remaining_action": "Build the two Vaccine Shorts from the locked audio",
