@@ -1,0 +1,1397 @@
+{
+  "source": "OWB draft PR 908 commit 838773d2d4 jobs/reviews/J2795/RESULTS.json",
+  "note": "Copied scores and match windows for regression context. Prototype scores are not production gate results. This file does not rerun the 77-file gate.",
+  "gate_sha256": "62b5159f95598eaca5256b30ba66144812bad97dc86fd0c9de4618e4a1dd5385",
+  "bed_sha256": "d7f5bf3d7553d7c611a913e93602b8ec83419821059294ddeaee32269a4f9572",
+  "count": 77,
+  "production_at_or_above_0_8": 3,
+  "prototype_at_or_above_0_8": 0,
+  "rows": [
+    {
+      "file": "trees006_score_bed_v01.mp3",
+      "sha256": "4ca1cf2df83b8cdba0bc9d709f1947b1f47f30612113a63d3dd940102c9d46e6",
+      "production": {
+        "score": 0.07439290876216241,
+        "lag_frames": 200,
+        "overlap_seconds": 100,
+        "a_start": 0,
+        "b_start": 200
+      },
+      "prototype": {
+        "score": 0.09415956706762231,
+        "lag_frames": 266,
+        "overlap_seconds": 34,
+        "a_start": 0,
+        "b_start": 266
+      }
+    },
+    {
+      "file": "hos003_s04_synth_pad_v01.wav",
+      "sha256": "b5e157d2e545707afb6ad17208c6fa2f05d0c28d0bd4c8b30abb940a56599492",
+      "production": {
+        "score": 0.07696354324383974,
+        "lag_frames": -280,
+        "overlap_seconds": 20,
+        "a_start": 280,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.07890339142418604,
+        "lag_frames": -280,
+        "overlap_seconds": 20,
+        "a_start": 280,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "hos003_s05_synth_pad_v01.wav",
+      "sha256": "5cda03044860c0e83736c52f2937326cef8d65f408e90c56fd4b3590ab620167",
+      "production": {
+        "score": 0.07720307425227975,
+        "lag_frames": -173,
+        "overlap_seconds": 25,
+        "a_start": 173,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.10187197393442463,
+        "lag_frames": -116,
+        "overlap_seconds": 25,
+        "a_start": 116,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "hos003_s06_synth_pad_v01.wav",
+      "sha256": "2c76505e8d38825bdd463614ce69ceae2ff4206d14fb5abde5787d2f961a42b5",
+      "production": {
+        "score": 0.11038333136394243,
+        "lag_frames": -126,
+        "overlap_seconds": 25,
+        "a_start": 126,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.13393389058972416,
+        "lag_frames": -126,
+        "overlap_seconds": 25,
+        "a_start": 126,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "hos003_s07_synth_pad_v01.wav",
+      "sha256": "259ab9ea8aae7c4efb3694a4e8ab85969bdab062a3ade0086a4f2644b5305e8e",
+      "production": {
+        "score": 0.11277142240916939,
+        "lag_frames": -209,
+        "overlap_seconds": 25,
+        "a_start": 209,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.10100476657657277,
+        "lag_frames": -209,
+        "overlap_seconds": 25,
+        "a_start": 209,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "hos_008_short_A_v04_bed.wav",
+      "sha256": "0a64b7379ec721facf53824d23bea2f29364e9264a6ea50e7a457f7185aae0d9",
+      "production": {
+        "score": 0.11362689880895675,
+        "lag_frames": -118,
+        "overlap_seconds": 23,
+        "a_start": 118,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.10996969038766218,
+        "lag_frames": -79,
+        "overlap_seconds": 23,
+        "a_start": 79,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "lightning008_score_bed_v01.mp3",
+      "sha256": "3dffce5ebe85d2e2727c8e54f62c2ec7604a2f45b44753c017c8bad6110b5ac2",
+      "production": {
+        "score": 0.22762979505637343,
+        "lag_frames": 1,
+        "overlap_seconds": 299,
+        "a_start": 0,
+        "b_start": 1
+      },
+      "prototype": {
+        "score": 0.08866202218276377,
+        "lag_frames": 135,
+        "overlap_seconds": 165,
+        "a_start": 0,
+        "b_start": 135
+      }
+    },
+    {
+      "file": "lightning008_score_bed_v02.mp3",
+      "sha256": "40937135976eeb99fe33acedc5924b0bd41f89b20244b81a2759da7792f4404c",
+      "production": {
+        "score": 0.21931988851671808,
+        "lag_frames": 0,
+        "overlap_seconds": 300,
+        "a_start": 0,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.0779867100289869,
+        "lag_frames": 34,
+        "overlap_seconds": 266,
+        "a_start": 0,
+        "b_start": 34
+      }
+    },
+    {
+      "file": "hos_008_short_A_v03_bed.wav",
+      "sha256": "0a64b7379ec721facf53824d23bea2f29364e9264a6ea50e7a457f7185aae0d9",
+      "production": {
+        "score": 0.11362689880895675,
+        "lag_frames": -118,
+        "overlap_seconds": 23,
+        "a_start": 118,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.10996969038766218,
+        "lag_frames": -79,
+        "overlap_seconds": 23,
+        "a_start": 79,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "lightning008_score_bed_v01_take.mp3",
+      "sha256": "42917e83640e9802ed4f3214221608e3fc4065da4b3cd70fcb76a628dab7c17e",
+      "production": {
+        "score": 0.33974370392583364,
+        "lag_frames": -124,
+        "overlap_seconds": 176,
+        "a_start": 124,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.10293283570124576,
+        "lag_frames": 125,
+        "overlap_seconds": 175,
+        "a_start": 0,
+        "b_start": 125
+      }
+    },
+    {
+      "file": "hos_004_s07_outer_electrons_v01_bed.wav",
+      "sha256": "3838ab85fd8e89735c6e3811f23f6599dee160f4659d1e44b88f6fa1bf367713",
+      "production": {
+        "score": 0.1156098497977824,
+        "lag_frames": -135,
+        "overlap_seconds": 25,
+        "a_start": 135,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.08286766710854829,
+        "lag_frames": -135,
+        "overlap_seconds": 25,
+        "a_start": 135,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "hos_004_s05_dalton_v04_bed.wav",
+      "sha256": "54b9952c9f60ef029055620f9b507568e2e9eb8f88b36e0b9e8147e5cd2388d0",
+      "production": {
+        "score": 0.11338998852814389,
+        "lag_frames": -135,
+        "overlap_seconds": 25,
+        "a_start": 135,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.08876098551982511,
+        "lag_frames": -135,
+        "overlap_seconds": 25,
+        "a_start": 135,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "hos004-part03-temp_score_bed_v01.mp3",
+      "sha256": "529a989a0e84eb76798453aa1ee03d51ed67c0d9d9e808039b0a9245c4e0c335",
+      "production": {
+        "score": 0.43183946559392655,
+        "lag_frames": -154,
+        "overlap_seconds": 95,
+        "a_start": 154,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.2705039445810056,
+        "lag_frames": 68,
+        "overlap_seconds": 27,
+        "a_start": 0,
+        "b_start": 68
+      }
+    },
+    {
+      "file": "hos_004_backcat_gold_foil_v02_bed.wav",
+      "sha256": "c85b139cbec2cd1189be85380c52938c4cb171961ff99d4b6b6efa416aa49202",
+      "production": {
+        "score": 0.09317591613794544,
+        "lag_frames": -47,
+        "overlap_seconds": 25,
+        "a_start": 47,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.11080719076244563,
+        "lag_frames": -234,
+        "overlap_seconds": 25,
+        "a_start": 234,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "hos_004_s06_moseley_atomic_number_v01_bed.wav",
+      "sha256": "d8e8d3f1deec6eb4edf3a14c313963348ab6c9835ec179ebe9e3c3726a32ae4f",
+      "production": {
+        "score": 0.10625658045276708,
+        "lag_frames": -111,
+        "overlap_seconds": 26,
+        "a_start": 111,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.09191989711865943,
+        "lag_frames": -111,
+        "overlap_seconds": 26,
+        "a_start": 111,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "hos_004_s05_dalton_v03_bed.wav",
+      "sha256": "28b745aadbb22338bef22b28349561d101831789cb1001fbc339b5e8d0cf76af",
+      "production": {
+        "score": 0.11372478512430448,
+        "lag_frames": -135,
+        "overlap_seconds": 25,
+        "a_start": 135,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.08886288978793955,
+        "lag_frames": -135,
+        "overlap_seconds": 25,
+        "a_start": 135,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "light-speed_score_bed_v01_full.mp3",
+      "sha256": "7859c2294b05250d24e733d22a971d5356fc6a92056f5fba0bf828035af8673b",
+      "production": {
+        "score": 0.26808127297969764,
+        "lag_frames": -80,
+        "overlap_seconds": 220,
+        "a_start": 80,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.29415028728192477,
+        "lag_frames": -183,
+        "overlap_seconds": 117,
+        "a_start": 183,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "earth-spin_score_take2_straight_v01j.wav",
+      "sha256": "b263932e09ac11a2523d6d794902b9ec8a94563d87f2e13539fe947fbc5c7ba5",
+      "production": {
+        "score": 0.25879989106081397,
+        "lag_frames": -165,
+        "overlap_seconds": 26,
+        "a_start": 165,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.09925368542237335,
+        "lag_frames": -27,
+        "overlap_seconds": 26,
+        "a_start": 27,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "betelgeuse_score_bed_v01.mp3",
+      "sha256": "c57755de833b12f9cccf23924958e90714654c2fbf51e5a8d1378a4b1187311b",
+      "production": {
+        "score": 0.13253646885749512,
+        "lag_frames": 272,
+        "overlap_seconds": 28,
+        "a_start": 0,
+        "b_start": 272
+      },
+      "prototype": {
+        "score": 0.16844353455271896,
+        "lag_frames": 267,
+        "overlap_seconds": 33,
+        "a_start": 0,
+        "b_start": 267
+      }
+    },
+    {
+      "file": "jupiter_no_crust_short_bed_v01.mp3",
+      "sha256": "5c5327f5466a001324abe1108d5289e2129d88396663d24463666f565e6ed222",
+      "production": {
+        "score": 0.14032264859937507,
+        "lag_frames": -168,
+        "overlap_seconds": 30,
+        "a_start": 168,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.1555916191140782,
+        "lag_frames": -169,
+        "overlap_seconds": 30,
+        "a_start": 169,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "gliese_score_bed_v03.mp3",
+      "sha256": "380adcbf914a30b5441d3a0d32eb8c99623c07cf7a1b478ab9dc19844e4c7205",
+      "production": {
+        "score": 0.10242778251496552,
+        "lag_frames": 244,
+        "overlap_seconds": 56,
+        "a_start": 0,
+        "b_start": 244
+      },
+      "prototype": {
+        "score": 0.12360990940324387,
+        "lag_frames": 280,
+        "overlap_seconds": 20,
+        "a_start": 0,
+        "b_start": 280
+      }
+    },
+    {
+      "file": "pluto_score_bed_v01.mp3",
+      "sha256": "8230d846d2cd3a315a96ea5e922a93f0b377301951ded860a614a69832285a1c",
+      "production": {
+        "score": 0.051344356003045044,
+        "lag_frames": -163,
+        "overlap_seconds": 137,
+        "a_start": 163,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.059047176121471125,
+        "lag_frames": 232,
+        "overlap_seconds": 68,
+        "a_start": 0,
+        "b_start": 232
+      }
+    },
+    {
+      "file": "owb-standalone-shorts_score_bed_v01.mp3",
+      "sha256": "13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1",
+      "production": {
+        "score": 0.18160546323465857,
+        "lag_frames": -160,
+        "overlap_seconds": 60,
+        "a_start": 160,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.11990813075599871,
+        "lag_frames": -279,
+        "overlap_seconds": 21,
+        "a_start": 279,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "hos_008_short_A_v03_bed.wav",
+      "sha256": "0a64b7379ec721facf53824d23bea2f29364e9264a6ea50e7a457f7185aae0d9",
+      "production": {
+        "score": 0.11362689880895675,
+        "lag_frames": -118,
+        "overlap_seconds": 23,
+        "a_start": 118,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.10996969038766218,
+        "lag_frames": -79,
+        "overlap_seconds": 23,
+        "a_start": 79,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "hos_008_short_A_v04_bed.wav",
+      "sha256": "0a64b7379ec721facf53824d23bea2f29364e9264a6ea50e7a457f7185aae0d9",
+      "production": {
+        "score": 0.11362689880895675,
+        "lag_frames": -118,
+        "overlap_seconds": 23,
+        "a_start": 118,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.10996969038766218,
+        "lag_frames": -79,
+        "overlap_seconds": 23,
+        "a_start": 79,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "lightning008_score_bed_v01.mp3",
+      "sha256": "3dffce5ebe85d2e2727c8e54f62c2ec7604a2f45b44753c017c8bad6110b5ac2",
+      "production": {
+        "score": 0.22762979505637343,
+        "lag_frames": 1,
+        "overlap_seconds": 299,
+        "a_start": 0,
+        "b_start": 1
+      },
+      "prototype": {
+        "score": 0.08866202218276377,
+        "lag_frames": 135,
+        "overlap_seconds": 165,
+        "a_start": 0,
+        "b_start": 135
+      }
+    },
+    {
+      "file": "lightning008_score_bed_v01_take.mp3",
+      "sha256": "42917e83640e9802ed4f3214221608e3fc4065da4b3cd70fcb76a628dab7c17e",
+      "production": {
+        "score": 0.33974370392583364,
+        "lag_frames": -124,
+        "overlap_seconds": 176,
+        "a_start": 124,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.10293283570124576,
+        "lag_frames": 125,
+        "overlap_seconds": 175,
+        "a_start": 0,
+        "b_start": 125
+      }
+    },
+    {
+      "file": "lightning008_score_bed_v02.mp3",
+      "sha256": "40937135976eeb99fe33acedc5924b0bd41f89b20244b81a2759da7792f4404c",
+      "production": {
+        "score": 0.21931988851671808,
+        "lag_frames": 0,
+        "overlap_seconds": 300,
+        "a_start": 0,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.0779867100289869,
+        "lag_frames": 34,
+        "overlap_seconds": 266,
+        "a_start": 0,
+        "b_start": 34
+      }
+    },
+    {
+      "file": "trees006_score_bed_v01.mp3",
+      "sha256": "4ca1cf2df83b8cdba0bc9d709f1947b1f47f30612113a63d3dd940102c9d46e6",
+      "production": {
+        "score": 0.07439290876216241,
+        "lag_frames": 200,
+        "overlap_seconds": 100,
+        "a_start": 0,
+        "b_start": 200
+      },
+      "prototype": {
+        "score": 0.09415956706762231,
+        "lag_frames": 266,
+        "overlap_seconds": 34,
+        "a_start": 0,
+        "b_start": 266
+      }
+    },
+    {
+      "file": "owb-standalone-shorts_score_bed_v01.mp3",
+      "sha256": "13adc03164e7f86871cc6d8e7d37babfca5c1dea37125c847b66b6baed6138c1",
+      "production": {
+        "score": 0.18160546323465857,
+        "lag_frames": -160,
+        "overlap_seconds": 60,
+        "a_start": 160,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.11990813075599871,
+        "lag_frames": -279,
+        "overlap_seconds": 21,
+        "a_start": 279,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "magnetic_field_flip_score_bed_v01.wav",
+      "sha256": "302886e03195ec305237ae00d3e39f4a3ee1152ccb196446c08e57ca65726f7d",
+      "production": {
+        "score": 0.07914037089183171,
+        "lag_frames": -196,
+        "overlap_seconds": 104,
+        "a_start": 196,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.04062733948525694,
+        "lag_frames": 279,
+        "overlap_seconds": 21,
+        "a_start": 0,
+        "b_start": 279
+      }
+    },
+    {
+      "file": "magnetic_field_flip_score_bed_v01.mp3",
+      "sha256": "9fe2f87876f9b0bbf1a80fb58d14f2ded4fddf4437efc3a83dfa4e321d0ec71f",
+      "production": {
+        "score": 0.07751745125402766,
+        "lag_frames": -196,
+        "overlap_seconds": 104,
+        "a_start": 196,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.04224665069759081,
+        "lag_frames": 279,
+        "overlap_seconds": 21,
+        "a_start": 0,
+        "b_start": 279
+      }
+    },
+    {
+      "file": "titan_score_bed_v01.mp3",
+      "sha256": "02c7d95865f8b39de4f9d3dfda8aa85084ecea04fc56dbd6776268279dab8f9e",
+      "production": {
+        "score": 0.10480555716118864,
+        "lag_frames": -242,
+        "overlap_seconds": 58,
+        "a_start": 242,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.13335342885443796,
+        "lag_frames": -279,
+        "overlap_seconds": 21,
+        "a_start": 279,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "uranus_score_bed_v01.wav",
+      "sha256": "0cd785972bdb1fbd297d909dfd970c390d480bb6293e89530a50e91c0c3ec3e2",
+      "production": {
+        "score": 0.10455857707492591,
+        "lag_frames": -163,
+        "overlap_seconds": 137,
+        "a_start": 163,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.21524136953541487,
+        "lag_frames": -278,
+        "overlap_seconds": 22,
+        "a_start": 278,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "uranus_score_bed_v01.mp3",
+      "sha256": "47f68d66c4ef7b0287c4939b14e7d906582309ca2a3354c3c262daa7e21309f0",
+      "production": {
+        "score": 0.09979361340244451,
+        "lag_frames": -163,
+        "overlap_seconds": 137,
+        "a_start": 163,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.2136687355951619,
+        "lag_frames": -278,
+        "overlap_seconds": 22,
+        "a_start": 278,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "pluto_score_bed_v01.mp3",
+      "sha256": "8230d846d2cd3a315a96ea5e922a93f0b377301951ded860a614a69832285a1c",
+      "production": {
+        "score": 0.051344356003045044,
+        "lag_frames": -163,
+        "overlap_seconds": 137,
+        "a_start": 163,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.059047176121471125,
+        "lag_frames": 232,
+        "overlap_seconds": 68,
+        "a_start": 0,
+        "b_start": 232
+      }
+    },
+    {
+      "file": "nearest-star_score_bed_v01_full.wav",
+      "sha256": "0e98ed6485a24cc3e5906fd604af6cade4f27295bc7ff522a2416455c0eb775c",
+      "production": {
+        "score": 0.46715032969952425,
+        "lag_frames": 279,
+        "overlap_seconds": 21,
+        "a_start": 0,
+        "b_start": 279
+      },
+      "prototype": {
+        "score": 0.20085565761609667,
+        "lag_frames": 261,
+        "overlap_seconds": 39,
+        "a_start": 0,
+        "b_start": 261
+      }
+    },
+    {
+      "file": "nearest-star_score_bed_v01.mp3",
+      "sha256": "767a574c164e296bcc9d70b7d56cd98e129de6c961f38e4b30bf6a28f5ae8452",
+      "production": {
+        "score": 0.7840836485773749,
+        "lag_frames": 150,
+        "overlap_seconds": 20,
+        "a_start": 0,
+        "b_start": 150
+      },
+      "prototype": {
+        "score": 0.34592938556861413,
+        "lag_frames": 129,
+        "overlap_seconds": 41,
+        "a_start": 0,
+        "b_start": 129
+      }
+    },
+    {
+      "file": "nearest-star_score_bed_v01_full.mp3",
+      "sha256": "4db6d824cff97d012af29b731e9b0ce66f4af882764b4685fc4a6161e8a23d84",
+      "production": {
+        "score": 0.5091344301481439,
+        "lag_frames": 279,
+        "overlap_seconds": 21,
+        "a_start": 0,
+        "b_start": 279
+      },
+      "prototype": {
+        "score": 0.13103482726479024,
+        "lag_frames": -57,
+        "overlap_seconds": 243,
+        "a_start": 57,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "earth-spin_score_take2_straight_v01j.wav",
+      "sha256": "b263932e09ac11a2523d6d794902b9ec8a94563d87f2e13539fe947fbc5c7ba5",
+      "production": {
+        "score": 0.25879989106081397,
+        "lag_frames": -165,
+        "overlap_seconds": 26,
+        "a_start": 165,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.09925368542237335,
+        "lag_frames": -27,
+        "overlap_seconds": 26,
+        "a_start": 27,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "gliese_score_bed_v03.mp3",
+      "sha256": "380adcbf914a30b5441d3a0d32eb8c99623c07cf7a1b478ab9dc19844e4c7205",
+      "production": {
+        "score": 0.10242778251496552,
+        "lag_frames": 244,
+        "overlap_seconds": 56,
+        "a_start": 0,
+        "b_start": 244
+      },
+      "prototype": {
+        "score": 0.12360990940324387,
+        "lag_frames": 280,
+        "overlap_seconds": 20,
+        "a_start": 0,
+        "b_start": 280
+      }
+    },
+    {
+      "file": "betelgeuse_score_bed_v01.mp3",
+      "sha256": "c57755de833b12f9cccf23924958e90714654c2fbf51e5a8d1378a4b1187311b",
+      "production": {
+        "score": 0.13253646885749512,
+        "lag_frames": 272,
+        "overlap_seconds": 28,
+        "a_start": 0,
+        "b_start": 272
+      },
+      "prototype": {
+        "score": 0.16844353455271896,
+        "lag_frames": 267,
+        "overlap_seconds": 33,
+        "a_start": 0,
+        "b_start": 267
+      }
+    },
+    {
+      "file": "venus_score_bed_v01_full.mp3",
+      "sha256": "e2f7204e8cd1dc9d337e5ad34ebc6ecc87bea7e0aa259d034bb6970ab1bc3d35",
+      "production": {
+        "score": 0.38595078090469076,
+        "lag_frames": 273,
+        "overlap_seconds": 27,
+        "a_start": 0,
+        "b_start": 273
+      },
+      "prototype": {
+        "score": 0.18250879743488743,
+        "lag_frames": -271,
+        "overlap_seconds": 29,
+        "a_start": 271,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "venus_score_bed_v01.mp3",
+      "sha256": "9d8467e3b69486a6138eb54c2a7955f7bb009d29209bc33270ea53548adb37f8",
+      "production": {
+        "score": 0.3142828734451488,
+        "lag_frames": -147,
+        "overlap_seconds": 153,
+        "a_start": 147,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.319221719024365,
+        "lag_frames": 249,
+        "overlap_seconds": 21,
+        "a_start": 0,
+        "b_start": 249
+      }
+    },
+    {
+      "file": "moon-leaving-part01_score_bed_v01.mp3",
+      "sha256": "b52817c1ee16fa4d89ddec93192d6d4463d3bdb13b49c0d16a537cca2393193d",
+      "production": {
+        "score": 0.3051133840122312,
+        "lag_frames": -155,
+        "overlap_seconds": 100,
+        "a_start": 155,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.2061861119944768,
+        "lag_frames": -155,
+        "overlap_seconds": 100,
+        "a_start": 155,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "moon-leaving-part02_score_bed_v01.mp3",
+      "sha256": "5093a4c23253748eb2cd4e1cbbb216ecf896350aea15760ff69e137988b6ccb1",
+      "production": {
+        "score": 0.8213383914460104,
+        "lag_frames": 129,
+        "overlap_seconds": 21,
+        "a_start": 0,
+        "b_start": 129
+      },
+      "prototype": {
+        "score": 0.45013792829156607,
+        "lag_frames": 130,
+        "overlap_seconds": 20,
+        "a_start": 0,
+        "b_start": 130
+      }
+    },
+    {
+      "file": "moon-leaving-part03_score_bed_v01.mp3",
+      "sha256": "38ab6e3e876860e72c49c547df6cbe1d05a82e021e6d517e4e64478db6f8de2b",
+      "production": {
+        "score": 0.5673604245390522,
+        "lag_frames": 139,
+        "overlap_seconds": 21,
+        "a_start": 0,
+        "b_start": 139
+      },
+      "prototype": {
+        "score": 0.31476891734064544,
+        "lag_frames": 139,
+        "overlap_seconds": 21,
+        "a_start": 0,
+        "b_start": 139
+      }
+    },
+    {
+      "file": "_test_ward.wav",
+      "sha256": "4ec55cb7b60fe6f220b6848ac64172d94c867182242be6e1ee83c831304919b1",
+      "production": {
+        "score": 0.18637388134688535,
+        "lag_frames": -222,
+        "overlap_seconds": 78,
+        "a_start": 222,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.10839938915422585,
+        "lag_frames": 62,
+        "overlap_seconds": 23,
+        "a_start": 0,
+        "b_start": 62
+      }
+    },
+    {
+      "file": "hos_001_part01_ominous_ward_v12.wav",
+      "sha256": "4ec55cb7b60fe6f220b6848ac64172d94c867182242be6e1ee83c831304919b1",
+      "production": {
+        "score": 0.18637388134688535,
+        "lag_frames": -222,
+        "overlap_seconds": 78,
+        "a_start": 222,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.10839938915422585,
+        "lag_frames": 62,
+        "overlap_seconds": 23,
+        "a_start": 0,
+        "b_start": 62
+      }
+    },
+    {
+      "file": "hos_001_part01_ominous_ward_v12_norm.wav",
+      "sha256": "d0ec69156ecff8e9d21805293699a5acc89b37c885cdbd741831ad3e0ce2cb68",
+      "production": {
+        "score": 0.34997702659583196,
+        "lag_frames": -255,
+        "overlap_seconds": 45,
+        "a_start": 255,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.12587535434285965,
+        "lag_frames": -267,
+        "overlap_seconds": 33,
+        "a_start": 267,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "hos_001_part01_ominous_ward_v14_norm.wav",
+      "sha256": "6a8c47bb2421ff63e2922203ad3bd1ee6e67c0a0c0c5e9c1509658eb61563d2b",
+      "production": {
+        "score": 0.21742465865001648,
+        "lag_frames": -267,
+        "overlap_seconds": 33,
+        "a_start": 267,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.11377225522473115,
+        "lag_frames": 62,
+        "overlap_seconds": 23,
+        "a_start": 0,
+        "b_start": 62
+      }
+    },
+    {
+      "file": "hos_001_part02_ominous_ward_v08_norm.wav",
+      "sha256": "6a8c47bb2421ff63e2922203ad3bd1ee6e67c0a0c0c5e9c1509658eb61563d2b",
+      "production": {
+        "score": 0.21742465865001648,
+        "lag_frames": -267,
+        "overlap_seconds": 33,
+        "a_start": 267,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.11377225522473115,
+        "lag_frames": 62,
+        "overlap_seconds": 23,
+        "a_start": 0,
+        "b_start": 62
+      }
+    },
+    {
+      "file": "hos_001_part02_ominous_ward_v09_norm.wav",
+      "sha256": "d2129d9cdf01adeaf20e32480fb1a01efedcaa986ee314add8930fbe4679c25d",
+      "production": {
+        "score": 0.21703696545161344,
+        "lag_frames": -267,
+        "overlap_seconds": 33,
+        "a_start": 267,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.11329925912785735,
+        "lag_frames": 62,
+        "overlap_seconds": 23,
+        "a_start": 0,
+        "b_start": 62
+      }
+    },
+    {
+      "file": "hos_001_part03_dry_ward_v01.wav",
+      "sha256": "2a9337e538bbe8db6cecc4804663e91b6e2002dfeb3bbd90154f40a3f3f8f983",
+      "production": {
+        "score": 0.20420725334214698,
+        "lag_frames": -267,
+        "overlap_seconds": 33,
+        "a_start": 267,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.10557280567813995,
+        "lag_frames": -267,
+        "overlap_seconds": 33,
+        "a_start": 267,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "hos_001_part04_lab_bed_v01.wav",
+      "sha256": "3a99d24c81c019756ecd3d7a3d7f9a09d753f214bf624a695007d09d706c7d02",
+      "production": {
+        "score": 0.1861684680169058,
+        "lag_frames": -237,
+        "overlap_seconds": 63,
+        "a_start": 237,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.0986211612695576,
+        "lag_frames": -267,
+        "overlap_seconds": 33,
+        "a_start": 267,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "hos_001_part04_lab_bed_v06.wav",
+      "sha256": "2ec79247ec826173f07b08c8ab26905cac1653ae69a6e638620d5cfac8b581d2",
+      "production": {
+        "score": 0.19228528132087838,
+        "lag_frames": -222,
+        "overlap_seconds": 78,
+        "a_start": 222,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.10510688235715501,
+        "lag_frames": -267,
+        "overlap_seconds": 33,
+        "a_start": 267,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "hos_001_part05_theatre_bed_v01.wav",
+      "sha256": "2ec79247ec826173f07b08c8ab26905cac1653ae69a6e638620d5cfac8b581d2",
+      "production": {
+        "score": 0.19228528132087838,
+        "lag_frames": -222,
+        "overlap_seconds": 78,
+        "a_start": 222,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.10510688235715501,
+        "lag_frames": -267,
+        "overlap_seconds": 33,
+        "a_start": 267,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "hos_002_part01_curious_workshop_v01.wav",
+      "sha256": "a6b9945111432e03cfea0210a3818415ee798f5a52069c9418bcfb0091ab2e93",
+      "production": {
+        "score": 0.14151127248780276,
+        "lag_frames": -156,
+        "overlap_seconds": 110,
+        "a_start": 156,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.09239836301389187,
+        "lag_frames": 88,
+        "overlap_seconds": 22,
+        "a_start": 0,
+        "b_start": 88
+      }
+    },
+    {
+      "file": "hos_002_part01_curious_workshop_v01_norm.wav",
+      "sha256": "46eb493fb8850b33a147ac9911bbcbd6c9b5f31e95a496f240d5e369d3876eaf",
+      "production": {
+        "score": 0.8038055440273927,
+        "lag_frames": 89,
+        "overlap_seconds": 21,
+        "a_start": 0,
+        "b_start": 89
+      },
+      "prototype": {
+        "score": 0.27808013012173455,
+        "lag_frames": 90,
+        "overlap_seconds": 20,
+        "a_start": 0,
+        "b_start": 90
+      }
+    },
+    {
+      "file": "hos_002_part01_curious_workshop_v02.wav",
+      "sha256": "f94518c01019f724ff88b3614f7ccec33b62adc2ee2f0dbc9b46f89b00fb7929",
+      "production": {
+        "score": 0.2587605946955804,
+        "lag_frames": -169,
+        "overlap_seconds": 110,
+        "a_start": 169,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.1273549821961443,
+        "lag_frames": 84,
+        "overlap_seconds": 26,
+        "a_start": 0,
+        "b_start": 84
+      }
+    },
+    {
+      "file": "hos_002_part01_curious_workshop_v02_loop150_norm.wav",
+      "sha256": "8e7871584f1d46e9e142a55084a216ea33f84c04633969b158c9a1da2b70c15d",
+      "production": {
+        "score": 0.13096402863459286,
+        "lag_frames": -169,
+        "overlap_seconds": 131,
+        "a_start": 169,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.10354815033329152,
+        "lag_frames": 113,
+        "overlap_seconds": 37,
+        "a_start": 0,
+        "b_start": 113
+      }
+    },
+    {
+      "file": "hos_002_part01_curious_workshop_v02_norm.wav",
+      "sha256": "8bc0d04982cb8938547b42303b37016449b9a135fe2199c6362291973878e887",
+      "production": {
+        "score": 0.8105529443629713,
+        "lag_frames": 89,
+        "overlap_seconds": 21,
+        "a_start": 0,
+        "b_start": 89
+      },
+      "prototype": {
+        "score": 0.35471752814152696,
+        "lag_frames": 90,
+        "overlap_seconds": 20,
+        "a_start": 0,
+        "b_start": 90
+      }
+    },
+    {
+      "file": "part01_zoo_of_stuff_v02.mp3",
+      "sha256": "93f64d6d043c35b1eeeb79b264f37ba8b6cbcb2f255d3b5995cced1476101e6c",
+      "production": {
+        "score": 0.2360989175957843,
+        "lag_frames": -275,
+        "overlap_seconds": 25,
+        "a_start": 275,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.08262887107793222,
+        "lag_frames": 37,
+        "overlap_seconds": 48,
+        "a_start": 0,
+        "b_start": 37
+      }
+    },
+    {
+      "file": "part01_zoo_of_stuff_v02.wav",
+      "sha256": "5887a6648c44a571972d70f7e5910ebce9264fe1f0b59d4eaccea2c963e43937",
+      "production": {
+        "score": 0.23609800294108294,
+        "lag_frames": -275,
+        "overlap_seconds": 25,
+        "a_start": 275,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.08263033632388718,
+        "lag_frames": 37,
+        "overlap_seconds": 48,
+        "a_start": 0,
+        "b_start": 37
+      }
+    },
+    {
+      "file": "saturn_long_vo_v02_LISTEN.wav",
+      "sha256": "42a332257386f46d5dd5592639b6e19c3d933ef4b8308356318e44503fe1bce3",
+      "production": {
+        "score": 0.27459098877813426,
+        "lag_frames": -279,
+        "overlap_seconds": 21,
+        "a_start": 279,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.08449909238308634,
+        "lag_frames": -258,
+        "overlap_seconds": 42,
+        "a_start": 258,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "jupiter-vo.mp3",
+      "sha256": "85948a85fa7208c381e1bf2a517ccbef140dd3d9413383354dc12addd763d272",
+      "production": {
+        "score": 0.1187461093977152,
+        "lag_frames": -279,
+        "overlap_seconds": 21,
+        "a_start": 279,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.07705265378449948,
+        "lag_frames": -262,
+        "overlap_seconds": 38,
+        "a_start": 262,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "jupiter-music.mp3",
+      "sha256": "38ab6e3e876860e72c49c547df6cbe1d05a82e021e6d517e4e64478db6f8de2b",
+      "production": {
+        "score": 0.5673604245390522,
+        "lag_frames": 139,
+        "overlap_seconds": 21,
+        "a_start": 0,
+        "b_start": 139
+      },
+      "prototype": {
+        "score": 0.31476891734064544,
+        "lag_frames": 139,
+        "overlap_seconds": 21,
+        "a_start": 0,
+        "b_start": 139
+      }
+    },
+    {
+      "file": "friday_black_dwarf_short_vo_v01_LISTEN.wav",
+      "sha256": "c5c47cdd0fd731bd60ca5674785c4401d33ec5e6f3dfe3e1a941b9f2b1bd4a51",
+      "production": {
+        "score": 0.14421904683566156,
+        "lag_frames": -213,
+        "overlap_seconds": 26,
+        "a_start": 213,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.1122010586917137,
+        "lag_frames": -66,
+        "overlap_seconds": 26,
+        "a_start": 66,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "saturn_long_vo_v02_LISTEN.m4a",
+      "sha256": "37a445b6e075c751953b8ab5b8ae5461c667bc406f2fd48fa63d3e52c7d60351",
+      "production": {
+        "score": 0.2780805869628693,
+        "lag_frames": -279,
+        "overlap_seconds": 21,
+        "a_start": 279,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.08448145953407724,
+        "lag_frames": -258,
+        "overlap_seconds": 42,
+        "a_start": 258,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "monday_saturn_short_vo_v02_how_long.wav",
+      "sha256": "8feb143ec959527e78f3c50561bee13df50cf8e8dbb67c2ff415f01e7f44bcca",
+      "production": {
+        "score": 0.1966238663466773,
+        "lag_frames": -228,
+        "overlap_seconds": 23,
+        "a_start": 228,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.16126992846710683,
+        "lag_frames": -75,
+        "overlap_seconds": 23,
+        "a_start": 75,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "saturn_long_vo_v03_tightened.m4a",
+      "sha256": "b4ed2610c578e07c0413df60572dd2088e426d6a1a8daec9ecafc99a467c0cab",
+      "production": {
+        "score": 0.12286907210240401,
+        "lag_frames": -280,
+        "overlap_seconds": 20,
+        "a_start": 280,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.09426089883825062,
+        "lag_frames": 275,
+        "overlap_seconds": 25,
+        "a_start": 0,
+        "b_start": 275
+      }
+    },
+    {
+      "file": "monday_saturn_short_vo_v01_LISTEN.wav",
+      "sha256": "8cf03befdc54869bd0a8afc1369647bbff32bbe87f34a6f0d26b9aa4342f325c",
+      "production": {
+        "score": 0.2187862090894585,
+        "lag_frames": -228,
+        "overlap_seconds": 23,
+        "a_start": 228,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.15862711952513164,
+        "lag_frames": -75,
+        "overlap_seconds": 23,
+        "a_start": 75,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "saturn_long_vo_v03b_tightened_LOCK.m4a",
+      "sha256": "f2e57b8f60619d751ed819dbaf038697c0e6e7977be62336a42b6f5569dd60cb",
+      "production": {
+        "score": 0.12286907210240401,
+        "lag_frames": -280,
+        "overlap_seconds": 20,
+        "a_start": 280,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.09426089883825062,
+        "lag_frames": 275,
+        "overlap_seconds": 25,
+        "a_start": 0,
+        "b_start": 275
+      }
+    },
+    {
+      "file": "saturn_long_vo_v03b_tightened_LOCK.wav",
+      "sha256": "a0498dbdbba264655973dd9d88c4a04717500f239ba68dabbe233e76618a2c5f",
+      "production": {
+        "score": 0.1230658800487083,
+        "lag_frames": -280,
+        "overlap_seconds": 20,
+        "a_start": 280,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.09414255610470429,
+        "lag_frames": 276,
+        "overlap_seconds": 24,
+        "a_start": 0,
+        "b_start": 276
+      }
+    },
+    {
+      "file": "saturn_long_vo_v01_LISTEN.wav",
+      "sha256": "6c0ccb126a03130aade8edfcdaec1c954ba844973437d2742fe35ac44b597d00",
+      "production": {
+        "score": 0.16040617626522408,
+        "lag_frames": -280,
+        "overlap_seconds": 20,
+        "a_start": 280,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.08434668514762084,
+        "lag_frames": 278,
+        "overlap_seconds": 22,
+        "a_start": 0,
+        "b_start": 278
+      }
+    },
+    {
+      "file": "monday_saturn_short_vo_v02_how_long.mp3",
+      "sha256": "bd20832435ea3e9aed5f59dd3ad016f4bdade6f0dba436c7abefc00dc740cb08",
+      "production": {
+        "score": 0.19519449732210986,
+        "lag_frames": -228,
+        "overlap_seconds": 23,
+        "a_start": 228,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.16097037336737485,
+        "lag_frames": -75,
+        "overlap_seconds": 23,
+        "a_start": 75,
+        "b_start": 0
+      }
+    },
+    {
+      "file": "saturn_long_vo_v03_tightened.wav",
+      "sha256": "e11a38c6665512cf75f68f570447102720ce4c9909b2745a196d8f85797f3375",
+      "production": {
+        "score": 0.1230658800487083,
+        "lag_frames": -280,
+        "overlap_seconds": 20,
+        "a_start": 280,
+        "b_start": 0
+      },
+      "prototype": {
+        "score": 0.09414255610470429,
+        "lag_frames": 276,
+        "overlap_seconds": 24,
+        "a_start": 0,
+        "b_start": 276
+      }
+    }
+  ]
+}
