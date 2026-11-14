@@ -430,6 +430,12 @@ CLAUDE_DENIED_TOOLS = (
     "Bash(git push --force:*)",
     "Bash(git push -f:*)",
     "Bash(git push --force-with-lease:*)",
+    # The same three through the GitHub connector. The repo's .claude/settings.json, which a run in the clone also
+    # reads, allows mcp__github__merge_pull_request for the Chief's own sessions, so without these a run that has the
+    # connector could merge (or set auto-merge, or approve) with no prompt at all.
+    "mcp__github__merge_pull_request",
+    "mcp__github__enable_pr_auto_merge",
+    "mcp__github__pull_request_review_write",
 )
 
 
