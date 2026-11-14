@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2242, J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2797, J2714.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2242, J2614, J2550, J2037, J2040, J2230, J2035, J2529, J2797.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -56,7 +56,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2704 | mini | blocked | codex | – | assembly · HOS tooling: validate Next upgrade in preview and diagnose home page error | 6813294950 |
 | J2708 | mini | blocked | cursor | – | assembly · HOS app: establish isolated hosted PostgreSQL for Preview validation | J2704 |
 | J2709 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Verify condition for J2704 |  |
-| J2714 | mini | claimed | cursor | 2026-11-14T17:55Z | for cursor · studio · Move the Studio board from Vercel to Cloudflare Pages on the free plan: same pages, same five routes, one address setting |  |
 | J2720 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
 | J2722 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2702 |  |
 | J2723 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2537 |  |

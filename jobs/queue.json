@@ -239858,13 +239858,13 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-11-14T13:55Z",
-      "eta": "2026-11-14T17:55Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-12T16:42Z",
-      "result": "",
+      "result": "Board redeployed from main. BOARD_GH_TOKEN is in the production secret list. studio-kanban.pages.dev and board.oppti.dev (public DNS, Cloudflare) answer 200 for checks and for 30 data reads over two minutes. A test tick was saved and removed and did not post. Phone steps are on the studio thread (6878418684). A fresh one-time link is on the Mini, not on the thread. J2797 and J2532 can be checked. The Mini's own name lookup still hits the old Vercel addresses, so its every-minute check still reports 404 for board.oppti.dev. DNS settings were not changed.",
       "history": [
         {
           "at": "2026-11-12T16:42Z",
@@ -240030,6 +240030,11 @@
           "at": "2026-11-14T14:03Z",
           "by": "cursor",
           "what": "step 4 of 4 done: Phone steps are on the studio thread. A fresh one-time link is on the Mini and was not posted."
+        },
+        {
+          "at": "2026-11-14T14:03Z",
+          "by": "cursor",
+          "what": "done: Board redeployed from main. BOARD_GH_TOKEN is in the production secret list. studio-kanban.pages.dev and board.oppti.dev (public DNS, Cloudflare) answer 200 for checks and for 30 data reads over two minutes. A test tick was saved and removed and did not post. Phone steps are on the studio thread (6878418684). A fresh one-time link is on the Mini, not on the thread. J2797 and J2532 can be checked. The Mini's own name lookup still hits the old Vercel addresses, so its every-minute check still reports 404 for board.oppti.dev. DNS settings were not changed."
         }
       ],
       "remaining_action": "Nothing left on this job",
@@ -240051,7 +240056,8 @@
         "at": "2026-11-14T14:03Z",
         "by": "cursor",
         "note": "Phone steps are on the studio thread. A fresh one-time link is on the Mini and was not posted."
-      }
+      },
+      "done_ref": "6878418684"
     },
     {
       "id": "J2715",
