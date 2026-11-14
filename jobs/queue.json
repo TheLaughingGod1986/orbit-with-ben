@@ -195217,20 +195217,25 @@
           "at": "2026-11-14T07:08Z",
           "by": "cursor",
           "what": "step 0 of 3 done: Reference parser is in the HOS worktree. Running it on the v03 master."
+        },
+        {
+          "at": "2026-11-14T07:10Z",
+          "by": "cursor",
+          "what": "step 1 of 3 done: Reference check done. Frames 3168-3258 can stay original packets. Frame 2869 refs 2866, frame 3259 refs 3260, fire tail 4130-4138 and safe-path tail 11118-11245 look into a replaced picture. HOS 49574eef, PR 542. 153 tests OK. No v04."
         }
       ],
-      "remaining_action": "Check which kept Franklin frames reference a replaced picture",
+      "remaining_action": "Copy the exact jar packets, then keep the blocked frames exact and mux the master",
       "kind": "assembly",
       "taskKeys": [
         "HOS:008"
       ],
       "urgent": 1,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-14T07:08Z",
+        "at": "2026-11-14T07:10Z",
         "by": "cursor",
-        "note": "Reference parser is in the HOS worktree. Running it on the v03 master."
+        "note": "Reference check done. Frames 3168-3258 can stay original packets. Frame 2869 refs 2866, frame 3259 refs 3260, fire tail "
       }
     },
     {
