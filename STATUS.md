@@ -64,6 +64,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 033 | edit | cursor | 2026-11-15T05:01Z | 2026-11-15T05:26Z | - |
+| 033 | edit | cursor | 2026-11-15T05:26Z | 2026-11-15T06:06Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
