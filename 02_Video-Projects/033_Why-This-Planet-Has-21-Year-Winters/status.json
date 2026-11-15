@@ -54,8 +54,19 @@
       "thumb_a_sha256": "9c029267c0a80fbb13572c40cc7b42cf012f2582bfcc3d5c49bf7c8f7a325e6f",
       "thumb_b_sha256": "1185ea680e5284c6f893769a94e1280c28a36828803671a445effdc8ed629a8e",
       "thumb_c_sha256": "48abb438ed7a8de3fa0a7d5b1474c725efbc48198c4260b35da5dce5607bc1b2"
+    },
+    "upload": {
+      "state": "doing"
     }
   },
-  "claims": [],
+  "claims": [
+    {
+      "stage": "upload",
+      "by": "gemini",
+      "at": "2026-11-15T15:21Z",
+      "eta": "2026-11-15T17:20Z",
+      "note": "J2901 033 Uranus: build 11_Upload-Package (PACKAGE_MANIFEST, chapters, credits, en-GB SRT, trailer) + dry-run (no upload)"
+    }
+  ],
   "next": "Build & dry-run 033 11_Upload-Package (J2901, no upload); Ben UAT watch on 033 Uranus long master v04 + thumbs A/B (J2890 awaits_ben, target Sun 29 Nov; airs Wed 09 Dec 18:00 London); Shorts 1 & 2 v02 OK'd by Ben (J2896/J2895 held until long is public)"
 }
