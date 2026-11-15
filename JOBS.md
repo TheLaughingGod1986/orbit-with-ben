@@ -66,7 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2816 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2741 |  |
 | J2818 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2798 |  |
 | J2819 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2797 |  |
-| J2825 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
+| J2825 | mini | claimed | gemini | 2026-11-15T14:03Z | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
 | J2827 | any | blocked | macbook-2 | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J2828 | any | blocked | macbook-2 | – | script · OWB: learn from our data, add two new films to the backlog |  |
 | J2830 | mini | blocked | macbook | – | script · Backlog OWB: this week's dated-event Short (LEARNINGS rule 16 test), script + packaging, park for Chief |  |
