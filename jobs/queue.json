@@ -255846,6 +255846,11 @@
           "at": "2026-11-15T11:22Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-15T11:23Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-15T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Run 5-part J2829 review on master_v04.mp4, write REVIEW.md, and stage for Ben's UAT watch on KEEP",
@@ -255854,7 +255859,16 @@
         "audio_input",
         "moving_video_input"
       ],
-      "plain": "5-part review of Uranus long video (v04) and stage for Ben's UAT watch on KEEP"
+      "plain": "5-part review of Uranus long video (v04) and stage for Ben's UAT watch on KEEP",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
