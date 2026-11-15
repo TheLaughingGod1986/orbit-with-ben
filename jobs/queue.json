@@ -258092,7 +258092,7 @@
     {
       "id": "J2911",
       "title": "Rule-E topic go/no-go review: OWB 068 (Mercury 176-Day Solar Day) and 069 (Landing on a Comet Rosetta 67P) from J2828",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Rule-E topic go/no-go review for the two new Orbit With Ben backlog films created in J2828 (commit b24f599eee on main):\n1. OWB:068 (02_Video-Projects/068_How-Long-Is-A-Day-On-Mercury/TOPIC.md): How Long Is a Day on Mercury? (Longer Than Two of Its Years) (Rule 26 search phrase \"how long is a day on mercury\" + studio/plan.json 8-planet day-length tour recast \"How Long Is a Day on Each Planet Explained in 10 Minutes (8 Worlds)\"; 0 exact title collisions; 8 verified neighbours >=1.68M views: KLT 10.37M, TED-Ed 4.75M, Astrum 4.08M & 2.84M, A TOY DAY 3.76M, BBC Earth Science 2.05M, Peekaboo Kidz 1.71M, CrashCourse 1.68M + neighbours.py PASS; verbatim NASA NSSDCA / Pettengill & Dyce 1965 / Colombo 1965 sources; 2 E1 Short angles).\n2. OWB:069 (02_Video-Projects/069_Landing-On-A-Comet-Rosetta-67P/TOPIC.md): Landing on a Comet: What Real Spacecraft Footage Showed (Rosetta) (Rule 26 search phrases \"landing on a comet\", \"rosetta comet 67p\", \"why do comets have tails\" + studio/plan.json 7-world landings tour recast \"Every World Humans Have Landed On in 10 Minutes (7 Real Landings)\"; 0 exact title collisions; 7 verified neighbours >=1.01M views: TED 7.95M, Astrum 2.76M, AumSum 2.67M, Learn Bright 1.78M, Peekaboo Kidz 1.69M, CrashCourse 1.18M, Astronimate 1.01M + Vox 830k + neighbours.py PASS; verbatim ESA / Science / Nature sources Biele et al. 2015, Sierks et al. 2015, Altwegg et al. 2015; 2 E1 Short angles).\nCheck TOPIC.md in both folders against AGENTS.md Rule E, STUDIO_PLAYBOOK.md §2, studio/plan.json (14 Nov 2026 long-video plan), and LEARNINGS.md rules 1-33 + OWB-2026-11-E1. Both films remain in jobs/WIP.json next under Rule G until an active OWB WIP slot frees up.\n",
       "ref": "b24f599eee",
@@ -258100,10 +258100,10 @@
       "stage": "topic",
       "after": "J2828",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "macbook-2",
-      "since": "2026-11-15T20:28Z",
-      "eta": "2026-11-15T22:28Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-15T20:25Z",
       "result": "",
@@ -258117,6 +258117,11 @@
           "at": "2026-11-15T20:28Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-15T20:28Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-15T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Rule-E topic go/no-go review: OWB 068 (Mercury 176-Day Solar Day) and 069 (Landing on a Comet Rosetta 67P) from J2828",
@@ -258129,7 +258134,16 @@
         "by": "macbook-2",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "claimed",
+        "by": "macbook-2"
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
