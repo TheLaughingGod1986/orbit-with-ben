@@ -257697,9 +257697,14 @@
           "at": "2026-11-15T18:56Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Verified on both studio-kanban.pages.dev and board.oppti.dev: GET /api/checks -> 200 (84 ticks incl. HOS-J2230.1), write+delete of TEST-J2907 -> 200 stored=True chief='', GET /api/data?f=ref -> 200"
+        },
+        {
+          "at": "2026-11-15T19:03Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Probed both threads via deployed /api/checks (dryRun+checkThreads): OWB #478 read=200 writeProbe=422 (canPostComment=true); HOS #180 read=200 writeProbe=403 Resource not accessible by personal access token (canPostComment=false)"
         }
       ],
-      "remaining_action": "Prove whether verdicts/reads reach both orbit-with-ben and history-of-science threads via the deployed board",
+      "remaining_action": "Run board_publish.py once, verify checksStatus fresh in board.json and HOS-J2230.1 present, then park for Ben on HOS repo access",
       "due": "2026-11-15T19:00:00Z",
       "for": "gemini",
       "kind": "studio",
@@ -257707,11 +257712,11 @@
       "urgent": 8,
       "model": "gemini-argon",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-15T18:56Z",
+        "at": "2026-11-15T19:03Z",
         "by": "gemini",
-        "note": "Verified on both studio-kanban.pages.dev and board.oppti.dev: GET /api/checks -> 200 (84 ticks incl. HOS-J2230.1), write"
+        "note": "Probed both threads via deployed /api/checks (dryRun+checkThreads): OWB #478 read=200 writeProbe=422 (canPostComment=tru"
       }
     },
     {
