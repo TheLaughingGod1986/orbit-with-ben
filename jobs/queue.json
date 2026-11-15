@@ -1,5 +1,5 @@
 {
-  "next_id": 2895,
+  "next_id": 2899,
   "jobs": [
     {
       "id": "J0001",
@@ -216374,7 +216374,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-09T21:38Z",
-      "result": "Completed 15/15. Master 108:22.333 and 12:26 reel NAS SHA256 verified; master 195070 frames, mux payload identities PASS. Existing audio -20.1 LUFS/-6.4 dBTP, silence/CTA/twelve joins/full decode PASS. Watch card and delivery evidence in open PR #789 commit 62c95efcf; awaits_ben recorded for finished master. No upload until Ben OKs, earliest air 12 Dec. Checkout main; all launched processes exited.",
+      "result": "Completed 15/15. Master 108:22.333 and 12:26 reel NAS SHA256 verified; master 195070 frames, mux payload identities PASS. Existing audio -20.1 LUFS/-6.4 dBTP, silence/CTA/twelve joins/full decode PASS. Watch card and delivery evidence in open PR #789 commit 62c95efcf; awaits_ben recorded for finished master. No upload until Ben OKs, earliest air 12 Dec. Checkout main; all launched processes exited. | Ben asked for a change 15 Nov 10:42Z; follow-on J2898.",
       "history": [
         {
           "at": "2026-11-09T21:38Z",
@@ -217680,6 +217680,11 @@
           "at": "2026-11-15T01:00Z",
           "by": "gemini",
           "what": "waits on Ben: Check the 83s before-and-after at 97:20 + thumbnail FALL ASLEEP IN SPACE (opens at 97:20 of v02, then side-by-side 97:32-97:44, screenshot sheets, and thumbnail preview); Private upload 13q4_EoLEN4 scheduled Sat 12 Dec 21:00 London"
+        },
+        {
+          "at": "2026-11-15T12:52Z",
+          "by": "claude",
+          "what": "no longer waits on Ben"
         }
       ],
       "remaining_action": "Verified master and reel delivered; submit finished cut for Ben watch",
@@ -217693,7 +217698,7 @@
         "at": "2026-11-12T01:35Z",
         "by": "macbook-2"
       },
-      "awaits_ben": {
+      "awaits_was": {
         "what": "Check the 83s before-and-after at 97:20 + thumbnail FALL ASLEEP IN SPACE (opens at 97:20 of v02, then side-by-side 97:32-97:44, screenshot sheets, and thumbnail preview); Private upload 13q4_EoLEN4 scheduled Sat 12 Dec 21:00 London",
         "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_sleep_video_01/j2860_v02/sleep_video_01_97m20_before_after_v03.mp4",
         "version": "sleep_video_01_master_v02",
@@ -227483,6 +227488,11 @@
           "at": "2026-11-15T04:16Z",
           "by": "gemini",
           "what": "released: Time cap at 24m: Short 1 (031 opening v02, 5 Dec) 100% done, gated, J2829-reviewed, Watch Card 1 armed, pushed on PR #944 (6779ba1247). Next run: build 029 Shorts 2-4 as v06 (v05 exists from J2310) per jobs/reviews/J2551/SHORT1_031_OPENING_v02_REVIEW.md and append cards 2-4 with --add."
+        },
+        {
+          "at": "2026-11-15T12:52Z",
+          "by": "claude",
+          "what": "no longer waits on Ben: OK'd, delivered by J2897"
         }
       ],
       "remaining_action": "Build, gate, J2829-review and arm watch cards (--add) for the three 029 Shorts as v06 (9, 11, 14 Dec)",
@@ -227504,7 +227514,7 @@
       "required_capabilities": [
         "audio_input"
       ],
-      "awaits_ben": {
+      "awaits_was": {
         "what": "031 opening Short v02 (C8lPx5N2DwM, Sat 5 Dec): rebuilt the 3 diagrams upright 9:16 and reframed the 8.4-11.4 s and 16.2-31.7 s space/aurora shots full-frame so there is no blurred band anywhere; same voice, words and length",
         "file": "OWB UAT/031_short_testA_opening_flip_v02/031_short_testA_opening_flip_v02.mp4",
         "version": "v02",
@@ -254332,6 +254342,16 @@
           "at": "2026-11-15T08:40Z",
           "by": "gemini",
           "what": "done: 5-part multimodal review PASS (KEEP) on 033_short01_testA_opening_v02.mp4 (db6a2342..., 36.48s) and 033_short02_ice_giant_surface_v02.mp4 (279c9531..., 27.48s); committed jobs/reviews/J2870/REVIEW.md (a5dbd584ab) and armed jobs.py awaits J2870 for Ben phone watch (OWB UAT/033_shorts_v02/). Zero YouTube uploads."
+        },
+        {
+          "at": "2026-11-15T12:52Z",
+          "by": "claude",
+          "what": "no longer waits on Ben (entry 2): OK'd, delivered by J2895"
+        },
+        {
+          "at": "2026-11-15T12:52Z",
+          "by": "claude",
+          "what": "no longer waits on Ben (entry 1): OK'd, delivered by J2896"
         }
       ],
       "remaining_action": "Stage both 033 Uranus Shorts v02 for Ben phone watch (jobs.py awaits J2870) and close J2870",
@@ -254359,31 +254379,18 @@
       "taskKeys": [
         "OWB:033"
       ],
-      "awaits_ben": [
-        {
-          "what": "Watch 033 Uranus Active Short #1 v02 (\"Why Does Knocked-Sideways Uranus Have 21-Year Winters?\", Test A opening, 36.48s): full-bleed 9:16 throughout, vertical R05a axial-tilt gauge, unclipped \"How\" onset",
-          "file": "OWB UAT/033_shorts_v02/033_short01_testA_opening_v02.mp4",
-          "version": "033_short01_v02",
-          "due": "2026-12-16T18:00Z",
-          "airs": "2026-12-18T11:30Z",
-          "ifNot": "Held on disk unuploaded until Ben OK and 033 long goes public",
-          "title": "Why Does Knocked-Sideways Uranus Have 21-Year Winters?",
-          "number": "033 S1",
-          "type": "short"
-        },
-        {
-          "what": "Watch 033 Uranus Active Short #2 v02 (\"What Happens If a Spacecraft Tries to Land on Ice Giant Uranus?\", Keeper question, 27.48s): full-bleed 9:16 throughout, vertical R52 interior cutaway, high-res Uranus plates, unclipped \"80%\" and \"9,000\" onsets",
-          "file": "OWB UAT/033_shorts_v02/033_short02_ice_giant_surface_v02.mp4",
-          "version": "033_short02_v02",
-          "due": "2026-12-16T18:00Z",
-          "airs": "2026-12-19T11:30Z",
-          "ifNot": "Held on disk unuploaded until Ben OK and 033 long goes public",
-          "title": "What Happens If a Spacecraft Tries to Land on Ice Giant Uranus?",
-          "number": "033 S2",
-          "type": "short"
-        }
-      ],
-      "done_ref": "a5dbd584ab"
+      "done_ref": "a5dbd584ab",
+      "awaits_was": {
+        "what": "Watch 033 Uranus Active Short #1 v02 (\"Why Does Knocked-Sideways Uranus Have 21-Year Winters?\", Test A opening, 36.48s): full-bleed 9:16 throughout, vertical R05a axial-tilt gauge, unclipped \"How\" onset",
+        "file": "OWB UAT/033_shorts_v02/033_short01_testA_opening_v02.mp4",
+        "version": "033_short01_v02",
+        "due": "2026-12-16T18:00Z",
+        "airs": "2026-12-18T11:30Z",
+        "ifNot": "Held on disk unuploaded until Ben OK and 033 long goes public",
+        "title": "Why Does Knocked-Sideways Uranus Have 21-Year Winters?",
+        "number": "033 S1",
+        "type": "short"
+      }
     },
     {
       "id": "J2871",
@@ -256280,6 +256287,174 @@
         "at": "2026-11-15T12:50Z",
         "by": "macbook-2"
       }
+    },
+    {
+      "id": "J2895",
+      "title": "Upload the Uranus Short about landing on an ice giant (v02) Private, slot Sat 19 Dec 11:30",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben OK'd this cut on the board (15 Nov 10:37-10:41Z, ticks OWB-J2870).** Chief evidence: jobs/reviews/J2870/REVIEW.md (five-part review, KEEP). File `033_short02_ice_giant_surface_v02.mp4` in `OWB UAT/033_shorts_v02/` (sha256 starts `279c9531`; read the full hash from the review and check it).\n\nHold until the Uranus long is public (it airs Wed 9 Dec 18:00 London); if it is not public by Fri 11 Dec, park for the Chief. Then upload as a NEW Private video, publish time Sat 19 Dec 11:30 London, title/description/tags/cover from the Short's package, Related video = the Uranus long, language en-GB, captions en-GB. Read back privacy and publish time, record it in `00_Brand/Channel-Setup/social/UPLOADS.json`, post the read-back on the thread.\n\nNever Public, never delete, no force-push, no Replace. £0. If anything does not match (privacy, publish time, hash), upload nothing and park for the Chief with the lines.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-15T12:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-15T12:52Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-15T12:52Z",
+          "by": "claude",
+          "what": "approved by Ben: Watch 033 Uranus Active Short #2 v02 (\"What Happens If a Spacecraft Tries to Land on Ice Giant Uranus?\", Keeper question, 27.48s): full-bleed 9:16 throughout, vertical R52 interior cutaway, high-res Uranus plates, unclipped \"80%\" and \"9,000\" onsets 033_short02_v02 (asked in J2870)"
+        }
+      ],
+      "remaining_action": "Upload the Uranus Short about landing on an ice giant (v02) Private, slot Sat 19 Dec 11:30",
+      "due": "2026-12-16T18:00:00Z",
+      "kind": "listing",
+      "approved_from": {
+        "what": "Watch 033 Uranus Active Short #2 v02 (\"What Happens If a Spacecraft Tries to Land on Ice Giant Uranus?\", Keeper question, 27.48s): full-bleed 9:16 throughout, vertical R52 interior cutaway, high-res Uranus plates, unclipped \"80%\" and \"9,000\" onsets",
+        "file": "OWB UAT/033_shorts_v02/033_short02_ice_giant_surface_v02.mp4",
+        "version": "033_short02_v02",
+        "airs": "2026-12-19T11:30Z",
+        "title": "What Happens If a Spacecraft Tries to Land on Ice Giant Uranus?",
+        "number": "033 S2",
+        "type": "short",
+        "channel": "OWB",
+        "job": "J2870",
+        "askId": "J2870.2",
+        "okAt": "2026-11-15T10:41Z"
+      }
+    },
+    {
+      "id": "J2896",
+      "title": "Upload the Uranus Short about the 21-year winters (v02, Test A opening) Private, slot Fri 18 Dec 11:30",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben OK'd this cut on the board (15 Nov 10:37-10:41Z, ticks OWB-J2870).** Chief evidence: jobs/reviews/J2870/REVIEW.md (five-part review, KEEP). File `033_short01_testA_opening_v02.mp4` in `OWB UAT/033_shorts_v02/` (sha256 starts `db6a2342`; read the full hash from the review and check it).\n\nHold until the Uranus long is public (it airs Wed 9 Dec 18:00 London); if it is not public by Fri 11 Dec, park for the Chief. Then upload as a NEW Private video, publish time Fri 18 Dec 11:30 London, title/description/tags/cover from the Short's package, Related video = the Uranus long, language en-GB, captions en-GB. Read back privacy and publish time, record it in `00_Brand/Channel-Setup/social/UPLOADS.json`, post the read-back on the thread.\n\nNever Public, never delete, no force-push, no Replace. £0. If anything does not match (privacy, publish time, hash), upload nothing and park for the Chief with the lines.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-15T12:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-15T12:52Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-15T12:52Z",
+          "by": "claude",
+          "what": "approved by Ben: Watch 033 Uranus Active Short #1 v02 (\"Why Does Knocked-Sideways Uranus Have 21-Year Winters?\", Test A opening, 36.48s): full-bleed 9:16 throughout, vertical R05a axial-tilt gauge, unclipped \"How\" onset 033_short01_v02 (asked in J2870)"
+        }
+      ],
+      "remaining_action": "Upload the Uranus Short about the 21-year winters (v02, Test A opening) Private, slot Fri 18 Dec 11:30",
+      "due": "2026-12-16T18:00:00Z",
+      "kind": "listing",
+      "approved_from": {
+        "what": "Watch 033 Uranus Active Short #1 v02 (\"Why Does Knocked-Sideways Uranus Have 21-Year Winters?\", Test A opening, 36.48s): full-bleed 9:16 throughout, vertical R05a axial-tilt gauge, unclipped \"How\" onset",
+        "file": "OWB UAT/033_shorts_v02/033_short01_testA_opening_v02.mp4",
+        "version": "033_short01_v02",
+        "airs": "2026-12-18T11:30Z",
+        "title": "Why Does Knocked-Sideways Uranus Have 21-Year Winters?",
+        "number": "033 S1",
+        "type": "short",
+        "channel": "OWB",
+        "job": "J2870",
+        "okAt": "2026-11-15T10:37Z"
+      }
+    },
+    {
+      "id": "J2897",
+      "title": "Swap the 031 opening Short C8lPx5N2DwM (Sat 5 Dec) to the full-screen cut Ben OK'd, v02",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben OK'd the rebuilt 031 opening Short v02 on the board (15 Nov 10:36Z, tick OWB-J2551).** Swap it into the Sat 5 Dec 11:30 slot.\n\nOld video: `C8lPx5N2DwM`, Private and scheduled Sat 5 Dec 11:30 London. New file: `031_short_testA_opening_flip_v02.mp4` in `OWB UAT/031_short_testA_opening_flip_v02/`; read its sha256 and the five-gate record from J2551's result and review folder.\n\n0. Run `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <file> --air-date 2026-12-05 --id 031_short_testA_opening_flip_v02` without `--report-only`; it must PASS.\n1. Read back the old id (privacy, publish time, title, description, tags, cover, language, Related video). It should be Private and scheduled. If not, park for the Chief.\n2. Upload the new file as a NEW Private video with the same publish time; copy title, description, tags, cover and Related from the old id; en-GB, captions en-GB.\n3. Only after step 2 reads back right: set the old id Private and unscheduled. Nothing deleted.\n4. Verify the swap (`verify-swap.ts`), update `UPLOADS.json` (`supersedes` / `supersededBy` / `unscheduledAt`), Buffer posts for the slot, and any queued job naming the old id. Post the read-back on the thread.\n\nNever Public, never delete, no force-push, no Replace. £0. If anything does not match (privacy, publish time, hash), upload nothing and park for the Chief with the lines.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-15T12:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-15T12:52Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-15T12:52Z",
+          "by": "claude",
+          "what": "approved by Ben: 031 opening Short v02 (C8lPx5N2DwM, Sat 5 Dec): rebuilt the 3 diagrams upright 9:16 and reframed the 8.4-11.4 s and 16.2-31.7 s space/aurora shots full-frame so there is no blurred band anywhere; same voice, words and length v02 (asked in J2551)"
+        }
+      ],
+      "remaining_action": "Swap the 031 opening Short C8lPx5N2DwM (Sat 5 Dec) to the full-screen cut Ben OK'd, v02",
+      "due": "2026-12-03T18:00:00Z",
+      "kind": "listing",
+      "approved_from": {
+        "what": "031 opening Short v02 (C8lPx5N2DwM, Sat 5 Dec): rebuilt the 3 diagrams upright 9:16 and reframed the 8.4-11.4 s and 16.2-31.7 s space/aurora shots full-frame so there is no blurred band anywhere; same voice, words and length",
+        "file": "OWB UAT/031_short_testA_opening_flip_v02/031_short_testA_opening_flip_v02.mp4",
+        "version": "v02",
+        "airs": "2026-12-05T11:30Z",
+        "title": "What Happens When Earth's Magnetic Field Flips?",
+        "number": "031",
+        "type": "short",
+        "channel": "OWB",
+        "job": "J2551",
+        "okAt": "2026-11-15T10:36Z"
+      }
+    },
+    {
+      "id": "J2898",
+      "title": "Sleep video: rebuild Ben's watch clip as one clean clip and check the whole film for anything unfinished",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben's answer on the sleep-video watch card (15 Nov 10:42Z, tick OWB-J2452, version sleep_video_01_master_v02). His words: \"0:59 brakes into multiple shots, video\" and \"Not finished\".**\n\nThe card he watched was the 83 s clip `sleep_video_01_97m20_before_after_v03.mp4` (97:20 opening, 97:32-97:44 side-by-side, then screenshot sheets from 0:57, then the thumbnail preview). At 0:59 that clip is the screenshot sheets: many small frames on one screen. That is most likely what he means by 'multiple shots'. 'Not finished' may mean the card or the whole film; the words do not say.\n\n1. Rebuild the watch card so it is one clean, continuous clip: the same fixed stretch (97:20 to about 97:44 of v02) played at full size, and the thumbnail shown once as a still. No sheets or grids of small frames inside what Ben plays. Keep the sheets as files in the review folder for the Chief.\n2. Check the whole 108-minute master again for anything that looks unfinished at any point: black or frozen frames, a chapter that stops short, an end that cuts off, missing captions or title cards. List what you find with timecodes; fix only what is clearly a defect and say what you fixed.\n3. Send Ben a new watch card with `jobs.py awaits` for the new clip. If 'Not finished' cannot be answered from the evidence, park for the Chief with the exact question for Ben (one plain line).\n4. The Private upload `13q4_EoLEN4` stays Private and scheduled Sat 12 Dec 21:00 London; change nothing in Studio. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-15T12:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-15T12:52Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Sleep video: rebuild Ben's watch clip as one clean clip and check the whole film for anything unfinished",
+      "due": "2026-11-20T18:00:00Z",
+      "kind": "assembly"
     }
   ],
   "focus": [
