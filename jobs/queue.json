@@ -227574,9 +227574,14 @@
           "at": "2026-11-15T18:03Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Checked J2551-render.done (rc=1 on fri11_opening_testA gate_shorts_open; 9/10 other gates PASS); inspecting _assemble_029_shorts_v06.py in J2551-wt"
+        },
+        {
+          "at": "2026-11-15T18:07Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Diagnosed all 3 fri11 gate_shorts_open checks (sky_bg outer star sharpness, s01 background match vs SWDCZfWZVao, 2.23s scdet contrast); testing candidate fixes against gate functions"
         }
       ],
-      "remaining_action": "Fix fri11 gate_shorts_open checks, render + J2829 5-part review fri11 & mon14, arm 11 & 14 Dec watch cards",
+      "remaining_action": "Update _assemble_029_shorts_v06.py, run full render + gates + J2829 5-part review on fri11 & mon14, arm watch cards",
       "due": "2026-11-27T18:00:00Z",
       "kind": "assembly",
       "plain": "Make four December Shorts fill the screen all the way through, then offer you the fixed versions",
@@ -227584,9 +227589,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-15T18:03Z",
+        "at": "2026-11-15T18:07Z",
         "by": "gemini",
-        "note": "Checked J2551-render.done (rc=1 on fri11_opening_testA gate_shorts_open; 9/10 other gates PASS); inspecting _assemble_02"
+        "note": "Diagnosed all 3 fri11 gate_shorts_open checks (sky_bg outer star sharpness, s01 background match vs SWDCZfWZVao, 2.23s s"
       },
       "taskKeys": [
         "OWB:031",
