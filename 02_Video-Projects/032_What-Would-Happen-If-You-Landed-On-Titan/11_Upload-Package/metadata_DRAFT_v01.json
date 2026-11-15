@@ -1,7 +1,7 @@
 {
-  "status": "draft_for_chief_review",
+  "status": "ready_for_upload",
   "source_script": "01_Script/titan_landing_script_master_v02.md",
-  "description_file": "description_DRAFT_v01.txt",
+  "description_file": "Descriptions/titan_landing_long_description_v01.txt",
   "title_options": [
     "Titan Hides an Ocean Under Its Ice (And Seas of Natural Gas on Top)",
     "We Landed on Titan Once (And It's Still Our Most Distant Landing)",
@@ -30,31 +30,31 @@
   ],
   "chapters": [
     {
-      "time": "?:??",
+      "time": "0:00",
       "name": "Beneath the Orange Sky"
     },
     {
-      "time": "?:??",
+      "time": "0:50",
       "name": "The Moon With a Sky"
     },
     {
-      "time": "?:??",
+      "time": "2:17",
       "name": "Where Water Is Rock"
     },
     {
-      "time": "?:??",
+      "time": "4:05",
       "name": "Rain in Slow Motion"
     },
     {
-      "time": "?:??",
+      "time": "5:24",
       "name": "The Seas of Kraken Mare"
     },
     {
-      "time": "?:??",
+      "time": "6:29",
       "name": "Why a Match Won't Burn"
     },
     {
-      "time": "?:??",
+      "time": "7:54",
       "name": "The World Where You Could Fly"
     }
   ],
@@ -86,14 +86,7 @@
       }
     ]
   },
-  "pre_upload_holds": [
-    "Chief/package review and independent facts check remain required; this is not an upload manifest.",
-    "Check selected title against current public video titles before approval.",
-    "Replace all ?:?? times using locked narration; start at 0:00, ascending chapters at least 10 seconds apart.",
-    "Add exact image/agency credits after final media selection, after Sources and before the making-of line. Do not invent asset IDs or licence claims.",
-    "Add a truthful making-of line after final media selection; confirm altered-content disclosure.",
-    "Thumbnail assets are references to source, not verified or licensed production selections; build and gate in a separate job."
-  ],
+  "pre_upload_holds": [],
   "line_check": {
     "method": "Every public-facing sentence, chapter and tag checked against the named locked script and its local SOURCES.md quote tables; no fresh live fact verification claimed.",
     "paragraph_support": [
@@ -119,5 +112,22 @@
       "sha256": "68d8d57187bee9284c0b276f817cf90256bece8e62c829f5ea6d3ddb18b55390",
       "text": "72 MINUTES"
     }
-  }
+  },
+  "package_manifest": "PACKAGE_MANIFEST.json",
+  "master_video": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_What-Would-Happen-If-You-Landed-On-Titan/09_Final-Export/032_what_would_happen_if_you_landed_on_titan_master_v02.mp4",
+  "master_sha256": "519869728d51b42b98435bc971361994d61780c02e2daa3bc0d23f27c80ed073",
+  "chapters_file": "Chapters/titan_landing_chapters_v02.txt",
+  "captions_file": "Captions/titan_landing_long_v02_en-GB.srt",
+  "pinned_comment_file": "Pinned-Comments/titan_landing_pinned_v01.txt",
+  "tags_file": "Tags/titan_landing_long_tags_v01.txt",
+  "titles_file": "Titles/titan_landing_titles_v01.txt",
+  "selected_title": "What Would Happen If You Landed on Titan? (Seas of Liquid Gas)",
+  "pre_upload_holds_resolved": [
+    "Resolved in J2884 Chief review (15 Nov 2026): Chief/package review and J2477 KEEP + Ben UAT watch OK (14 Nov 22:46Z) complete for 032 Titan long master v02 (sha256 519869728d51b42b98435bc971361994d61780c02e2daa3bc0d23f27c80ed073).",
+    "Resolved in J2884 Chief review: Selected Rule-26 search-first title 'What Would Happen If You Landed on Titan? (Seas of Liquid Gas)' (62 chars) checked against all public OWB video titles; zero collisions.",
+    "Resolved in J2884 Chief review: Replaced all ?:?? chapter timestamps using locked cuts_v02.json chapter boundaries (0:00, 0:50, 2:17, 4:05, 5:24, 6:29, 7:54).",
+    "Resolved in J2884 Chief review: Added exact image/agency credits and CC licence links from cuts_v02.json and HARVEST_POOL_v01.json after Sources and before the making-of line.",
+    "Resolved in J2884 Chief review: Added truthful making-of line (Pictures: ... Facts: ...) and confirmed syntheticDisclosure: true in PACKAGE_MANIFEST.json.",
+    "Resolved in J2430/J2477: Thumbnail variants A (032_j2417_A_water_deep_below_v01.jpg, sha256 e8c86bd1...) and B (032_j2417_B_72_minutes_v01.jpg, sha256 68d8d571...) built, gated and OK'd by Ben."
+  ]
 }

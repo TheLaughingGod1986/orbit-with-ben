@@ -108,7 +108,7 @@ python3 04_Audio/tools/vidiq_title_score_sheet.py --project-dir 02_Video-Project
 cd 07_Content-Ops && npm run review:script -- --file <path-to-script.md>
 ```
 
-- [ ] Score ≥ **90 / 100**  
+- [x] Score ≥ **90 / 100** (`93/100` PASS on `titan_landing_script_master_v02.md`)  
 - Scorecard: `templates/SCRIPT_REVIEW_SCORECARD.md`  
 - Reject / rewrite if below threshold  
 
@@ -171,26 +171,26 @@ Design for **watching through**, not just CTR (Growth System v2):
 | Final chapter | Payoff + bigger question | Answer loop · open next |
 | Outro | Soft return CTA | Brand outro — don’t dump new science |
 
-- [ ] No 30s+ stretch without a new teach or turn  
-- [ ] Every chapter earns the next one  
-- [ ] Runtime target **8–12 min** in trust-building window  
+- [x] No 30s+ stretch without a new teach or turn  
+- [x] Every chapter earns the next one  
+- [x] Runtime target **8–12 min** in trust-building window  
 
 ---
 
 ## 7. Sign-off (block production until checked)
 
-- [ ] Keywords pulled and primary locked  
-- [ ] Title ≥90 locked (fearbait / series-suffix clutter rejected)  
-- [ ] Script reviewer ≥ 90  
-- [ ] Outlier patterns mapped into chapter arc  
-- [ ] Thumb concepts match title promise (one object · one emotion)  
-- [ ] Chapter teach-points listed (4–6 acts)  
-- [ ] Cold-open clock (5 / 15 / 30s) written  
-- [ ] Retention plan filled  
-- [ ] Production checklist path noted: `templates/PRODUCTION_CHECKLIST_V2.md`  
+- [x] Keywords pulled and primary locked  
+- [x] Title ≥90 locked (fearbait / series-suffix clutter rejected)  
+- [x] Script reviewer ≥ 90  
+- [x] Outlier patterns mapped into chapter arc  
+- [x] Thumb concepts match title promise (one object · one emotion)  
+- [x] Chapter teach-points listed (4–6 acts)  
+- [x] Cold-open clock (5 / 15 / 30s) written  
+- [x] Retention plan filled  
+- [x] Production checklist path noted: `templates/PRODUCTION_CHECKLIST_V2.md`  
 
-**Signed off by:**  
-**Date:**  
+**Signed off by:** Claude (`J0296`/`J0301` script `93/100` PASS) & Gemini (`J2477` KEEP + `J2884` acting Chief package verification)  
+**Date:** 15 Nov 2026  
 
 **Only then:** full script → ElevenLabs VO → AI Studio picture (stills first · Veo world · Omni Orbit-only) → edit.
 
