@@ -257637,9 +257637,14 @@
           "at": "2026-11-15T19:15Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J2906; starting step 1 (file hash, J2551 review record, and gate_shorts_open check)"
+        },
+        {
+          "at": "2026-11-15T19:19Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Step 1 done: verified v06 sha256 5251b3fc9aac... matches UAT SHA256SUMS.json and J2551 5-gate PASS record; gate_shorts_open.py check PASS (dur=22.73s, 0/23 & 0/46 padded)"
         }
       ],
-      "remaining_action": "Verify v06 sha256, J2551 five-gate record, and run gate_shorts_open.py check",
+      "remaining_action": "Read back old id SWDCZfWZVao via YouTube Data API and Studio (CDP 9223)",
       "due": "2026-12-07T18:00:00Z",
       "kind": "listing",
       "approved_from": {
@@ -257664,11 +257669,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-15T19:15Z",
+        "at": "2026-11-15T19:19Z",
         "by": "gemini",
-        "note": "Claimed J2906; starting step 1 (file hash, J2551 review record, and gate_shorts_open check)"
+        "note": "Step 1 done: verified v06 sha256 5251b3fc9aac... matches UAT SHA256SUMS.json and J2551 5-gate PASS record; gate_shorts_o"
       },
       "taskKeys": [
         "OWB:029"
