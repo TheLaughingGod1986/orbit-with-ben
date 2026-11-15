@@ -257647,9 +257647,14 @@
           "at": "2026-11-15T18:27Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-15T18:29Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Plan: 1) inspect J0124 history, evidence, and approvals; 2) check live YouTube public status of c5AdqQsnnys via API/oEmbed/watch page; 3) write jobs/reviews/J2908/REVIEW.md and reopen or re-hold J0124, then finish J2908"
         }
       ],
-      "remaining_action": "Verify readiness: Swap the Mars long's end-screen video from the Jupiter film to the nearest-star long once it is public",
+      "remaining_action": "Read J0124 history/approvals and verify live YouTube Public status of 026 long c5AdqQsnnys",
       "kind": "review",
       "recheck_of": "J0124",
       "due": "2026-11-11T12:00:00+00:00",
@@ -257666,11 +257671,14 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-15T18:27Z",
+        "at": "2026-11-15T18:29Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Plan: 1) inspect J0124 history, evidence, and approvals; 2) check live YouTube public status of c5AdqQsnnys via API/oEmb"
+      },
+      "taskKeys": [
+        "OWB:025",
+        "OWB:026"
+      ]
     },
     {
       "id": "J2909",
