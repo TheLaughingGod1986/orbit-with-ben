@@ -256472,9 +256472,14 @@
           "at": "2026-11-15T13:10Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-15T13:10Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J2897 for OWB:031 opening Short v02 swap; starting step 1 (hash, J2551 record, and gate_shorts_open.py check)"
         }
       ],
-      "remaining_action": "Swap the 031 opening Short C8lPx5N2DwM (Sat 5 Dec) to the full-screen cut Ben OK'd, v02",
+      "remaining_action": "Verify J2551 sha256 and five-gate record and run gate_shorts_open.py check on 031_short_testA_opening_flip_v02.mp4",
       "due": "2026-12-03T18:00:00Z",
       "kind": "listing",
       "approved_from": {
@@ -256500,12 +256505,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-15T13:10Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2897 for OWB:031 opening Short v02 swap; starting step 1 (hash, J2551 record, and gate_shorts_open.py check)"
+      },
+      "taskKeys": [
+        "OWB:031"
+      ]
     },
     {
       "id": "J2898",
