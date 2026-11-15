@@ -257682,9 +257682,14 @@
           "at": "2026-11-15T18:50Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J2907; starting 5-step board redeploy and token verification plan"
+        },
+        {
+          "at": "2026-11-15T18:52Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Confirmed BOARD_GH_TOKEN is present in studio-kanban production secrets (alongside BOARD_KEY, R2_*, WATCH_*)"
         }
       ],
-      "remaining_action": "Confirm BOARD_GH_TOKEN secret name on studio-kanban and inspect api/checks.js and J2714 deploy method",
+      "remaining_action": "Build and deploy the board from main to production (build.py, then wrangler pages deploy)",
       "due": "2026-11-15T19:00:00Z",
       "for": "gemini",
       "kind": "studio",
@@ -257692,11 +257697,11 @@
       "urgent": 8,
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-15T18:50Z",
+        "at": "2026-11-15T18:52Z",
         "by": "gemini",
-        "note": "Claimed J2907; starting 5-step board redeploy and token verification plan"
+        "note": "Confirmed BOARD_GH_TOKEN is present in studio-kanban production secrets (alongside BOARD_KEY, R2_*, WATCH_*)"
       }
     },
     {
