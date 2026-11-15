@@ -251849,14 +251849,26 @@
           "at": "2026-11-15T20:57Z",
           "by": "gemini",
           "what": "reopened: Condition satisfied (J2913, jobs/reviews/J2913/REVIEW.md, commit dcbc95223b): 24h cleanup cutoff 2026-11-15T20:45:00Z (and exact mtime + 24h 2026-11-15T20:45:46Z) passed at 2026-11-15T20:53:53Z; '~/Library/Mobile Documents/com~apple~CloudDocs/Link this phone to the board.html' (mode 0600, 772B, mtime 2026-11-14T20:45:46Z) verified present; issue #219 pairs[0] (2026-11-14T19:13:08.165Z, e=1795269633) already paired Ben's iPhone. Reopened for step 4/4 cleanup ONLY: delete ONLY '~/Library/Mobile Documents/com~apple~CloudDocs/Link this phone to the board.html', confirm on #478, and DO NOT mint another link."
+        },
+        {
+          "at": "2026-11-15T20:57Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Reopened at step 3/4 after 24h cutoff (J2913, dcbc95223b); only step 4/4 iCloud file deletion + #478 note remains"
         }
       ],
-      "remaining_action": "Step 4/4 cleanup only: delete Link this phone to the board.html once used or after 2026-11-15T20:45:00Z and confirm on #478 (do not mint a new link)",
+      "remaining_action": "Step 4/4 cleanup ONLY: delete Link this phone to the board.html (24h passed) and confirm on #478 (do NOT mint a new link)",
       "due": "2026-11-14T17:00:00Z",
       "for": "cursor",
       "kind": "studio",
       "plain": "Get the phone-linking link to Ben's iPhone privately, so he can approve the Journey film",
-      "urgent": 6
+      "urgent": 6,
+      "progress": {
+        "step": 3,
+        "of": 4,
+        "at": "2026-11-15T20:57Z",
+        "by": "gemini",
+        "note": "Reopened at step 3/4 after 24h cutoff (J2913, dcbc95223b); only step 4/4 iCloud file deletion + #478 note remains"
+      }
     },
     {
       "id": "J2832",
