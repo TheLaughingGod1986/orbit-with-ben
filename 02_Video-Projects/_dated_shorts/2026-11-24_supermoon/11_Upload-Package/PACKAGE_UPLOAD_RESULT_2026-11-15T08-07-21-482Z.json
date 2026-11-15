@@ -1,0 +1,131 @@
+{
+  "ok": true,
+  "dryRun": false,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": true,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-11-19T11:30:00.000Z",
+    "platformPostId": "HXacmpYkXcA",
+    "platformUrl": "https://youtu.be/HXacmpYkXcA",
+    "message": "Uploaded to YouTube; scheduled to go live at 2026-11-19T11:30:00.000Z; thumbnail set",
+    "responseSummary": "{\"id\":\"HXacmpYkXcA\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-11-19T11:30:00.000Z\"}"
+  },
+  "package": {
+    "packageDir": "02_Video-Projects/_dated_shorts/2026-11-24_supermoon/11_Upload-Package",
+    "sha256": "85eba87339b45a3ec4df6e0396fcbec435c8f0482d84c9e2c39eb665bccc0e68",
+    "title": "How Close Will the Supermoon Get on November 24?",
+    "format": "shorts",
+    "privacy": "private",
+    "tagCount": 13,
+    "hasPinnedComment": false,
+    "thumbnailPath": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/_dated_shorts/2026-11-24_supermoon/11_Upload-Package/supermoon_2026_11_24_cover_v04.jpg",
+    "scheduledAt": "2026-11-19T11:30:00.000Z",
+    "sources": {
+      "manifest": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/_dated_shorts/2026-11-24_supermoon/11_Upload-Package/PACKAGE_MANIFEST.json",
+      "video": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/_dated_shorts/2026-11-24_supermoon/06_Final-Exports/owb_dated_2026_11_24_supermoon_v04.mp4",
+      "thumbnail": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/_dated_shorts/2026-11-24_supermoon/11_Upload-Package/supermoon_2026_11_24_cover_v04.jpg"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "buffer": {
+    "sent": true,
+    "planOnly": false,
+    "errors": [],
+    "warnings": [],
+    "results": [
+      {
+        "channel": "instagram",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6af96837e86a5789a6f9ad23"
+      },
+      {
+        "channel": "facebook",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6af9683876c23bf1c767e77c"
+      },
+      {
+        "channel": "threads",
+        "action": "create_post",
+        "ok": true,
+        "postId": "6af9683976c23bf1c767e7a8"
+      }
+    ]
+  },
+  "studioFinish": {
+    "videoId": "HXacmpYkXcA",
+    "studioEditUrl": "https://studio.youtube.com/video/HXacmpYkXcA/edit",
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "api_done",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Uploaded via YouTube Data API"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set",
+        "studioUrlHint": "https://studio.youtube.com/video/HXacmpYkXcA/edit"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": false,
+        "status": "n/a",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "A/B Testing not available for Shorts",
+        "studioUrlHint": "https://studio.youtube.com/video/HXacmpYkXcA/edit"
+      },
+      {
+        "id": "first_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "First / pinned comment text",
+        "detail": "No pinned comment file in package",
+        "studioUrlHint": "https://studio.youtube.com/video/HXacmpYkXcA/comments"
+      },
+      {
+        "id": "pin_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint",
+        "studioUrlHint": "https://studio.youtube.com/video/HXacmpYkXcA/comments"
+      },
+      {
+        "id": "related_watch_next",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Related video (full film)",
+        "detail": "Desktop Studio: set Related video to 2fsQcea-voM (its own full film). No new Short pins.",
+        "studioUrlHint": "https://studio.youtube.com/video/HXacmpYkXcA/edit"
+      },
+      {
+        "id": "end_screens_cards",
+        "required": false,
+        "status": "n/a",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video",
+        "studioUrlHint": "https://studio.youtube.com/video/HXacmpYkXcA/edit"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "API upload done (HXacmpYkXcA). 1 required Studio finish step(s) remain."
+  }
+}
