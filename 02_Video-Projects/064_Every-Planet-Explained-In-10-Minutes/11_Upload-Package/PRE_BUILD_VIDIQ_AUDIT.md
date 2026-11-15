@@ -33,14 +33,20 @@
 
 ---
 
-## 2. Neighbour Pass (`≥3` Big Videos `≥1M` Views)
+## 2. Neighbour Pass (`≥3` Big Videos `≥1M` Views — Verified `2026-11-15` in `J2875`)
 
-| # | Views | Channel (internal only) | Video ID | Title | Words we may reuse |
+- **YouTube GB Autocomplete (`gl=GB&hl=en-GB`, `2026-11-15`):** `#1: "every planet explained"`, `#2: "every planet explained in 12 minutes"`, `#3: "every dwarf planet explained"`.
+- **Two Ranking Videos for `"every planet explained"` (`LEARNINGS.md` Rule 26, `2026-11-15`):**
+  1. `lVdYYpoozZU` — *Every Planet From Our Solar System Explained in 20 Minutes* (`Jaydone History`, **888,006 views**, `20:29`, ranks `#1`)
+  2. `oytUCOzAYpo` — *Every Planet in the Solar System Explained in 6 Minutes* (`Mr. Ask`, **99,049 views**, `5:49`, ranks `#2`, alongside `#3` `iqJjTeYv5-M` at **3,676,506 views** and `9zaruOUM_0o` *Every Type Of Planet Explained in 12 Minutes* at **181,027 views**)
+
+| # | Views (`2026-11-15` GB read) | Channel (internal only) | Video ID | Title | Words we may reuse |
 |---|------:|-------------------------|----------|-------|--------------------|
-| 1 | `12,400,000+` | National Geographic | `libKVRa01L8` | *Solar System 101 \| National Geographic* | `solar system`, `every planet explained`, `mercury to neptune`, `eight planets`, `gas giants`, `ice giants` |
-| 2 | `9,279,757` | Astrum | `tyMbktsAScE` | *NASA Cassini's Final Images of Saturn Stunned Me* | `real nasa images`, `solar system planets`, `saturn`, `jupiter`, `uranus`, `neptune` |
-| 3 | `5,807,331` | NASA Jet Propulsion Laboratory | `xrGAQCq9BMU` | *NASA at Saturn: Cassini's Grand Finale* | `nasa missions`, `cassini`, `voyager 2`, `juno`, `messenger`, `curiosity` |
-| 4 | `3,846,744` | The Secrets of the Universe | `qaRBmeYyHoc` | *Real Images From Saturn: What Cassini Actually Saw There* | `real images of every planet`, `what spacecraft saw`, `solar system tour` |
+| 1 | `39,831,294` | National Geographic | `libKVRa01L8` | *Solar System 101 \| National Geographic* | `solar system`, `every planet explained`, `mercury to neptune`, `eight planets`, `gas giants`, `ice giants` |
+| 2 | `10,558,560` | BBC Earth Science | `wkQuOrsgVGY` | *Eight Wonders Of Our Solar System \| The Planets \| BBC Earth Science* | `eight planets`, `solar system tour`, `every planet in the solar system`, `mercury`, `venus`, `mars`, `jupiter`, `saturn`, `uranus`, `neptune` |
+| 3 | `5,006,819` | Beyond Nature | `lcZTcfdZ3Ow` | *The Planets In Our Solar System* | `planets in our solar system`, `every planet explained`, `real nasa images`, `solar system documentary` |
+| 4 | `3,676,506` | Science Channel | `iqJjTeYv5-M` | *Everything You Want to Know About Planets \| How the Universe Works \| Science Channel* | `planets explained`, `how planets work`, `gas giants`, `rocky planets`, `ice giants` |
+| 5 | `2,231,803` | What If | `WOgatB4daq8` | *What If You Spent a Day on Every Planet, from 800 °F Mercury to Neptune?* | `every planet`, `mercury to neptune`, `surface conditions on every planet`, `solar system` |
 
 ---
 

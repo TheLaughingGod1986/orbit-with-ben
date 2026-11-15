@@ -50,23 +50,27 @@
 
 ## 2. Go/No-Go Evidence (`STUDIO_PLAYBOOK.md` §2 & `TOPIC_OPPORTUNITY_SCORE.md`)
 
-### 2.1 Exact Search Phrase & Two Videos That Rank for It Now
+### 2.1 Exact Search Phrase & Videos That Rank for It Now
 
-- **Primary search phrase people type:** `every planet explained`
+- **Primary search phrase people type (`YouTube GB signed-out autocomplete`, verified `2026-11-15` in `J2875`):** `every planet explained` (`#1` autocomplete suggestion for `every planet explained`, followed by `#2` `every planet explained in 12 minutes` and `#3` `every dwarf planet explained`).
   - **Search volume (vidIQ, 14 Nov 2026):** **20,191 searches/month** · **Competition:** **45 / 100** (Medium — open to small channels with strong packaging and completion rate).
 - **Broader parent phrase:** `space explained` (**129,513 searches/month**, competition **46 / 100**) and `solar system planets explained` / `every planet in the solar system explained`.
-- **Two videos that rank for `every planet explained` / `every … solar system explained` right now (plus small-channel proof):**
-  1. ***Every Type Of Solar System Explained in 9 Minutes*** — **172,800 views** on a **1,700-subscriber** channel (`101×` subscriber multiple; ranks in top search & suggested results for `"every … solar system explained in … minutes"`).
-  2. ***Every major Solar System object in 5 minutes*** — **35,000 views** on a **1,100-subscriber** channel (`31×` subscriber multiple; ranks directly on the completeness-plus-minutes query alongside *"Every Star System Closest To Earth Explained in 10 Minutes"* at **68,000 views** and *"What the Sun Looks Like From Every Planet"* at **10,800 views** on a **93-subscriber** channel).
+- **Two videos that rank directly on YouTube GB search for `every planet explained` right now (`LEARNINGS.md` Rule 26, verified `2026-11-15` in `J2875`):**
+  1. `lVdYYpoozZU` — ***Every Planet From Our Solar System Explained in 20 Minutes*** (`Jaydone History`, **888,006 views**, `20:29`, ranks `#1` on YouTube GB for `"every planet explained"` and `"every planet in the solar system"`).
+  2. `oytUCOzAYpo` — ***Every Planet in the Solar System Explained in 6 Minutes*** (`Mr. Ask`, **99,049 views**, `5:49`, ranks `#2` on YouTube GB for `"every planet explained"`, alongside `#3` `iqJjTeYv5-M` *Everything You Want to Know About Planets | How the Universe Works | Science Channel* at **3,676,506 views** and `9zaruOUM_0o` *Every Type Of Planet Explained in 12 Minutes* at **181,027 views**).
+- **Small-channel breakout proof (`<5,000` subscribers, vidIQ 14 Nov 2026):**
+  1. ***Every Type Of Solar System Explained in 9 Minutes*** — **172,800 views** on a **1,700-subscriber** channel (`101×` subscriber multiple).
+  2. ***Every major Solar System object in 5 minutes*** — **35,000 views** on a **1,100-subscriber** channel (`31×` subscriber multiple; alongside *"Every Star System Closest To Earth Explained in 10 Minutes"* at **68,000 views** and *"What the Sun Looks Like From Every Planet"* at **10,800 views** on a **93-subscriber** channel).
 
-### 2.2 Neighbour Pass (`≥3` Big Education/Space Videos `≥1M` Views on the Subject)
+### 2.2 Neighbour Pass (`≥3` Big Education/Space Videos `≥1M` Views on the Subject — Verified `2026-11-15` in `J2875`)
 
-| # | Views | Channel (internal note only — never in tags/copy) | Video ID / Reference | Title | Subject Keywords We Reuse |
+| # | Views (`2026-11-15` GB read) | Channel (internal note only — never in tags/copy) | Video ID / Reference | Title | Subject Keywords We Reuse |
 |---|------:|---------------------------------------------------|----------------------|-------|---------------------------|
-| 1 | `12,400,000+` | National Geographic | `libKVRa01L8` | *Solar System 101 \| National Geographic* | `solar system planets`, `every planet explained`, `mercury to neptune`, `terrestrial planets`, `gas giants`, `ice giants` |
-| 2 | `9,279,757` | Astrum | `tyMbktsAScE` | *NASA Cassini's Final Images of Saturn Stunned Me* (plus Astrum's multi-million-view *Every Planet* / Solar System tour series) | `real nasa images`, `every planet in the solar system`, `saturn rings`, `jupiter`, `uranus`, `neptune` |
-| 3 | `5,807,331` | NASA Jet Propulsion Laboratory | `xrGAQCq9BMU` | *NASA at Saturn: Cassini's Grand Finale* (NASA JPL Solar System mission archive) | `nasa planetary missions`, `cassini`, `voyager 2`, `juno`, `messenger`, `curiosity` |
-| 4 | `3,846,744` | The Secrets of the Universe | `qaRBmeYyHoc` | *Real Images From Saturn: What Cassini Actually Saw There* (part of the *Real Images From Every Planet* cluster) | `real images of the planets`, `what spacecraft saw on every planet`, `solar system tour` |
+| 1 | `39,831,294` | National Geographic | `libKVRa01L8` | *Solar System 101 \| National Geographic* | `solar system planets`, `every planet explained`, `mercury to neptune`, `terrestrial planets`, `gas giants`, `ice giants` |
+| 2 | `10,558,560` | BBC Earth Science | `wkQuOrsgVGY` | *Eight Wonders Of Our Solar System \| The Planets \| BBC Earth Science* | `eight planets`, `solar system tour`, `every planet in the solar system`, `mercury`, `venus`, `mars`, `jupiter`, `saturn`, `uranus`, `neptune` |
+| 3 | `5,006,819` | Beyond Nature | `lcZTcfdZ3Ow` | *The Planets In Our Solar System* | `planets in our solar system`, `every planet explained`, `real nasa images`, `solar system documentary` |
+| 4 | `3,676,506` | Science Channel | `iqJjTeYv5-M` | *Everything You Want to Know About Planets \| How the Universe Works \| Science Channel* | `planets explained`, `how planets work`, `gas giants`, `rocky planets`, `ice giants` |
+| 5 | `2,231,803` | What If | `WOgatB4daq8` | *What If You Spent a Day on Every Planet, from 800 °F Mercury to Neptune?* | `every planet`, `mercury to neptune`, `surface conditions on every planet`, `solar system` |
 
 ### 2.3 Why a 19-Subscriber Channel Can Be Found for This Film
 

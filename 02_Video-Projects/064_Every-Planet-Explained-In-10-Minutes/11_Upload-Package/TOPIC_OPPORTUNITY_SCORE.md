@@ -18,7 +18,7 @@
 ---
 
 ## Pre-Greenlight Sign-Off
-- [x] Outlier links attached (`172.8K` on `1.7K` subs, `68K`, `35K` on `1.1K` subs, `10.8K` on `93` subs + `12.4M` NatGeo `libKVRa01L8`, `9.28M` Astrum `tyMbktsAScE`, `5.81M` NASA JPL `xrGAQCq9BMU`, `3.85M` Secrets of the Universe `qaRBmeYyHoc`)
+- [x] Outlier & neighbour links attached (`172.8K` on `1.7K` subs, `68K`, `35K` on `1.1K` subs, `10.8K` on `93` subs; YouTube GB ranking IDs `lVdYYpoozZU` `888,006` views & `oytUCOzAYpo` `99,049` views; 5 multi-planet Solar System neighbours `≥1M` views verified `2026-11-15` in `J2875`: `39.83M` NatGeo `libKVRa01L8`, `10.56M` BBC Earth Science `wkQuOrsgVGY`, `5.01M` Beyond Nature `lcZTcfdZ3Ow`, `3.68M` Science Channel `iqJjTeYv5-M`, `2.23M` What If `WOgatB4daq8`)
 - [x] Primary keyword identified (`every planet explained` — `20,191` searches/mo, competition `45/100`)
 - [x] Working title + 2 A/B variants drafted (`≤70 chars`, starting with `Every Planet Explained`):
   - **Title 1 (57 chars):** `Every Planet Explained in 10 Minutes (Mercury to Neptune)`
