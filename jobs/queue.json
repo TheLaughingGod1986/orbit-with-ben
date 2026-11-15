@@ -256235,13 +256235,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-15T13:58Z",
-      "eta": "2026-11-15T15:58Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-15T12:45Z",
-      "result": "",
+      "result": "PASS (662b236e18, jobs/reviews/J2893/REVIEW.md): Resolved 033 edit orphan-review (bc87449771f3f409ba4b). Directly verified 033 Uranus Long Master v04 (3712479ae8, 629.42s, 5 gates + 5-part J2829 multimodal review PASS in J2890, R2 owb-033-v04, awaits_ben armed) and Active Shorts 1 & 2 v02 (db6a234209 & 279c9531f2, J2870 PASS, Ben OK 15 Nov -> J2896/J2895); set 033 edit=done and queued £0 033 thumbs (J2899/J2900) + 11_Upload-Package dry-run (J2901).",
       "history": [
         {
           "at": "2026-11-15T12:45Z",
@@ -256277,6 +256277,11 @@
           "at": "2026-11-15T14:20Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed jobs/reviews/J2893/REVIEW.md + status.json (edit=done) at 662b236e18, queued J2899/J2900/J2901, 0 handoff gaps"
+        },
+        {
+          "at": "2026-11-15T14:20Z",
+          "by": "gemini",
+          "what": "done: PASS (662b236e18, jobs/reviews/J2893/REVIEW.md): Resolved 033 edit orphan-review (bc87449771f3f409ba4b). Directly verified 033 Uranus Long Master v04 (3712479ae8, 629.42s, 5 gates + 5-part J2829 multimodal review PASS in J2890, R2 owb-033-v04, awaits_ben armed) and Active Shorts 1 & 2 v02 (db6a234209 & 279c9531f2, J2870 PASS, Ben OK 15 Nov -> J2896/J2895); set 033 edit=done and queued £0 033 thumbs (J2899/J2900) + 11_Upload-Package dry-run (J2901)."
         }
       ],
       "remaining_action": "Close J2893 and post Chief report on #99",
@@ -256296,7 +256301,8 @@
       },
       "taskKeys": [
         "OWB:033"
-      ]
+      ],
+      "done_ref": "662b236e18"
     },
     {
       "id": "J2894",
