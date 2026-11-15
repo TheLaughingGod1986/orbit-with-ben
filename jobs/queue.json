@@ -256857,20 +256857,26 @@
           "at": "2026-11-15T14:48Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-15T14:49Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Build 3 1920x1080 thumbnail concepts A/B/C for 033 Uranus (incl. Rule-19 real JWST/Voyager frame), run thumb_preview --score, and stage A/B to OWB UAT",
+      "remaining_action": "Inspect Uranus plates, thumbnail rules, and the existing builder",
       "due": "2026-11-28T18:00:00Z",
       "kind": "thumb",
       "plain": "Making three thumbnail pictures for the Uranus video so Ben can compare them",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-15T14:48Z",
-        "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "of": 4,
+        "at": "2026-11-15T14:49Z",
+        "by": "cursor"
+      },
+      "taskKeys": [
+        "OWB:033"
+      ]
     },
     {
       "id": "J2900",
