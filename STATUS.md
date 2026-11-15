@@ -64,6 +64,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 033 | edit | cursor | 2026-11-15T04:54Z | 2026-11-15T06:53Z | J2869 033 Uranus Shorts 1 & 2: build v02 full-bleed 9:16 cuts + fix Short 2 VO word-onset clips (J2400 FIX; no upload) |
+| 033 | edit | cursor | 2026-11-15T05:01Z | 2026-11-15T05:26Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
