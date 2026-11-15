@@ -253520,10 +253520,10 @@
       "stage": "",
       "after": "",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-15T02:12Z",
+      "eta": "2026-11-15T05:12Z",
       "created_by": "claude",
       "created_at": "2026-11-14T22:46Z",
       "result": "",
@@ -253567,6 +253567,11 @@
           "at": "2026-11-15T02:12Z",
           "by": "gemini",
           "what": "rerouted to gemini on gemini-argon: Elected Chief closing after merging PR #939 and publishing board.plan"
+        },
+        {
+          "at": "2026-11-15T02:12Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Waiting for the plan pull request to be merged",
@@ -253586,7 +253591,15 @@
         "status": "open",
         "by": ""
       },
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-15T02:12Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2867",

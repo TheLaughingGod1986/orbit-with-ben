@@ -87,7 +87,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2858 | mini | open | – | – | studio · Board: check Mini lookup for board.oppti.dev and move /api/checks reads back from pages.dev |  |
 | J2864 | cloud | open | – | – | for claude · studio · Write Ben's pause on new single-question Orbit longs into the rules, until a new format has been tested |  |
 | J2865 | mini | open (after J2864) | – | – | 062 script · for gemini · script · `gemini-argon` · 062 Phobos: write script v01 + SOURCES.md + SHORTS_SCRIPTS_v02.md from Rule-E GO brief (J2420) | 5dbd6f396e |
-| J2866 | mini | open | – | – | for gemini · studio · `gemini-argon` · Board: a Plan card and page showing the plan for Orbit's long videos, what is being done, when, and how it is doing |  |
+| J2866 | mini | claimed | gemini | 2026-11-15T05:12Z | for gemini · studio · `gemini-argon` · Board: a Plan card and page showing the plan for Orbit's long videos, what is being done, when, and how it is doing |  |
 | J2867 | mini | open (after J2438) | – | – | 034 edit · assembly · 034 Pluto: rebuild Shorts 1 & 2 v02 full-bleed 9:16 (gate_shorts_open PASS) + verify/apply J2383 R08-R74 finishing fixes on long master v02 | J2383,J2438 |
 | J2868 | mini | open (after J2867) | – | – | 034 edit · for gemini · review · `gemini-argon` · 034 Pluto: review long master v02 + Shorts 1 & 2 v02 (after J2438, J2867) | J2383,J2438,J2867 |
 | J2869 | mini | open | – | – | 033 edit · assembly · 033 Uranus Shorts 1 & 2: build v02 full-bleed 9:16 cuts + fix Short 2 VO word-onset clips (J2400 FIX; no upload) | J2400 |
