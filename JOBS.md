@@ -92,7 +92,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2872 | mini | open (after J2871) | – | – | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus: 5-part review of long master v03 (after J2871) + stage for Ben UAT watch | J2404 4314787d18; J2871 |
 | J2875 | mini | open | – | – | chief · Chief: resolve 064 topic orphan-review |  |
 | J2877 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2243 |  |
-| J2879 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
+| J2879 | mini | claimed | cursor | 2026-11-15T08:27Z | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 
 Recently finished:
 
