@@ -1,5 +1,5 @@
 {
-  "next_id": 2876,
+  "next_id": 2877,
   "jobs": [
     {
       "id": "J0001",
@@ -198615,6 +198615,11 @@
           "at": "2026-11-15T03:51Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J2271 moving-video + 4fps strip + 936x1664 (2.311x) crop-rescue review complete (HOS PR #593 merged 220d5730, OWB 1589e865b3 jobs/reviews/J2271/REVIEW.md): 4 Batch-1 codex plates independently KEEP (P1:01_clay_line, P2:01_walter_hammer shifted x=620, P2:03_tiny_shells, P3:08_asaro_michel left x=180); 4 Batch-2/3 gemini plates crop-rescued at 936x1664 £0 awaiting non-producer (claude/grok) KEEP sign-off (P5:09_robin clean t=2.15-5.03s x=425, P5:09a_pigeon_pavement tracked x=360->530 t=1.10-3.74s, P5:13a_gull_seaside shifted x=605 t=4.30-7.02s, P5:10_explorer_robin tracked x=390->455 t=0.00-3.60s; plus P5:12_clay_callback x=275 t=3.00-5.79s for Long Part 05); 4 Short mapping/timing FIXes (R1 P2:05 upper rock, R2 P4:06a asteroid strike, R3 P5:08a living birds around you, R4 P5:12a birds wheeling in sky = 400 Flow credits) scoped for Chief spend authorization before J2172 release."
+        },
+        {
+          "at": "2026-11-15T03:51Z",
+          "by": "relay",
+          "what": "condition verification queued: J2876"
         }
       ],
       "remaining_action": "Parked for Chief: non-producer KEEP on 4 rescued Batch 2-3 plates and 400-credit Flow spend approval for R1-R4 before J2172",
@@ -198639,7 +198644,13 @@
       },
       "taskKeys": [
         "HOS:010"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-15T04:51:33+00:00",
+        "recheck_task": "J2876"
+      }
     },
     {
       "id": "J2272",
@@ -254118,6 +254129,37 @@
         "kind": "orphan-review",
         "signature": "88d9ced37bb93c2d3fd0"
       }
+    },
+    {
+      "id": "J2876",
+      "title": "Verify condition for J2271",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2271: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2271 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-15T03:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-15T03:51Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Parked for Chief: non-producer KEEP on 4 rescued Batch 2-3 plates and 400-credit Flow spend approval for R1-R4 before J2172",
+      "kind": "review",
+      "recheck_of": "J2271",
+      "due": "2026-11-15T04:51:33+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
