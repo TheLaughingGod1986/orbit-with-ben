@@ -93,7 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2893 | mini | open | – | – | chief · Chief: resolve 033 edit orphan-review |  |
 | J2894 | mini | claimed | macbook-2 | 2026-11-15T15:48Z | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J2895 | mini | open | – | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about landing on an ice giant (v02) Private, slot Sat 19 Dec 11:30 |  |
-| J2896 | mini | open | – | – | listing · Upload the Uranus Short about the 21-year winters (v02, Test A opening) Private, slot Fri 18 Dec 11:30 |  |
+| J2896 | mini | open | – | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about the 21-year winters (v02, Test A opening) Private, slot Fri 18 Dec 11:30 |  |
 | J2897 | mini | open | – | – | listing · Swap the 031 opening Short C8lPx5N2DwM (Sat 5 Dec) to the full-screen cut Ben OK'd, v02 |  |
 | J2898 | mini | open | – | – | assembly · Sleep video: rebuild Ben's watch clip as one clean clip and check the whole film for anything unfinished |  |
 

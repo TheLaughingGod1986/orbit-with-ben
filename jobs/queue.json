@@ -256392,6 +256392,11 @@
           "at": "2026-11-15T12:52Z",
           "by": "claude",
           "what": "approved by Ben: Watch 033 Uranus Active Short #1 v02 (\"Why Does Knocked-Sideways Uranus Have 21-Year Winters?\", Test A opening, 36.48s): full-bleed 9:16 throughout, vertical R05a axial-tilt gauge, unclipped \"How\" onset 033_short01_v02 (asked in J2870)"
+        },
+        {
+          "at": "2026-11-15T12:56Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-15T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Upload the Uranus Short about the 21-year winters (v02, Test A opening) Private, slot Fri 18 Dec 11:30",
@@ -256408,7 +256413,16 @@
         "channel": "OWB",
         "job": "J2870",
         "okAt": "2026-11-15T10:37Z"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2897",
