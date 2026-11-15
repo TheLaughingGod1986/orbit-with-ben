@@ -257692,9 +257692,14 @@
           "at": "2026-11-15T18:54Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Built dist/ from main (3fc29468e9) and deployed to Cloudflare Pages production (a1e9d50d.studio-kanban.pages.dev)"
+        },
+        {
+          "at": "2026-11-15T18:56Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Verified on both studio-kanban.pages.dev and board.oppti.dev: GET /api/checks -> 200 (84 ticks incl. HOS-J2230.1), write+delete of TEST-J2907 -> 200 stored=True chief='', GET /api/data?f=ref -> 200"
         }
       ],
-      "remaining_action": "Check /api/checks, write+delete test tick, and /api/data?f=ref on both studio-kanban.pages.dev and board.oppti.dev",
+      "remaining_action": "Prove whether verdicts/reads reach both orbit-with-ben and history-of-science threads via the deployed board",
       "due": "2026-11-15T19:00:00Z",
       "for": "gemini",
       "kind": "studio",
@@ -257702,11 +257707,11 @@
       "urgent": 8,
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-15T18:54Z",
+        "at": "2026-11-15T18:56Z",
         "by": "gemini",
-        "note": "Built dist/ from main (3fc29468e9) and deployed to Cloudflare Pages production (a1e9d50d.studio-kanban.pages.dev)"
+        "note": "Verified on both studio-kanban.pages.dev and board.oppti.dev: GET /api/checks -> 200 (84 ticks incl. HOS-J2230.1), write"
       }
     },
     {
