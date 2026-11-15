@@ -254846,6 +254846,11 @@
           "at": "2026-11-15T07:58Z",
           "by": "claude",
           "what": "approved by Ben: Watch the Muons Short for Sat 21 Nov (v05) rebuilt full-screen throughout with 4K Space Station Earth views and animated muon tracks. OK to swap it in? v05 (asked in J2550)"
+        },
+        {
+          "at": "2026-11-15T08:14Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-15T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Swap the Muons Short rvug71d7Dqk (Sat 21 Nov) to the full-screen cut Ben OK'd, v05",
@@ -254863,7 +254868,16 @@
         "job": "J2550",
         "askId": "J2550.2",
         "okAt": "2026-11-14T22:39Z"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2882",

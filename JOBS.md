@@ -91,7 +91,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2875 | mini | open | – | – | chief · Chief: resolve 064 topic orphan-review |  |
 | J2877 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2243 |  |
 | J2880 | mini | open | – | – | for gemini · listing · `gemini-argon` · Swap the Space Station Short xdurJQcoiGM (Wed 25 Nov) to the full-screen cut Ben OK'd, v14 |  |
-| J2881 | mini | open | – | – | listing · Swap the Muons Short rvug71d7Dqk (Sat 21 Nov) to the full-screen cut Ben OK'd, v05 |  |
+| J2881 | mini | open | – | – | for gemini · listing · `gemini-argon` · Swap the Muons Short rvug71d7Dqk (Sat 21 Nov) to the full-screen cut Ben OK'd, v05 |  |
 | J2884 | mini | open | – | – | 032 upload · studio · Upload the Titan long master v02 Private and scheduled for Wed 25 Nov 18:00, arm the thumbnail test |  |
 
 Recently finished:
