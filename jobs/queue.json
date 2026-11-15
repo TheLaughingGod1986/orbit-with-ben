@@ -198620,9 +198620,14 @@
           "at": "2026-11-15T03:51Z",
           "by": "relay",
           "what": "condition verification queued: J2876"
+        },
+        {
+          "at": "2026-11-15T04:26Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-15T10:25:00Z"
         }
       ],
-      "remaining_action": "Parked for Chief: non-producer KEEP on 4 rescued Batch 2-3 plates and 400-credit Flow spend approval for R1-R4 before J2172",
+      "remaining_action": "Wait for non-producer (claude/grok) KEEP sign-off on 4 crop-rescued Batch 2-3 plates and 400-credit Flow spend approval for R1-R4 on HOS desk #180 (6889141917)",
       "kind": "qa",
       "plain": "Check all twelve Dinosaur Shorts scenes before editing the finished videos.",
       "required_capabilities": [],
@@ -198646,10 +198651,12 @@
         "HOS:010"
       ],
       "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-15T04:51:33+00:00",
-        "recheck_task": "J2876"
+        "type": "input",
+        "condition": "Non-producer (claude/grok) KEEP sign-off on 4 crop-rescued gemini-produced Batch 2-3 plates (P5:09_robin, P5:10_explorer_robin, P5:09a_pigeon_pavement, P5:13a_gull_seaside; no self-KEEP under J2731) and Chief/Claude 400-credit Flow spend approval for 4 Short replacement plates (R1-R4) on HOS desk #180 (6889141917) before J2172 assembly",
+        "check_at": "2026-11-15T10:25:00Z",
+        "last_recheck": "J2876",
+        "checked_at": "2026-11-15T04:26:54+00:00",
+        "checked_by": "gemini"
       }
     },
     {
