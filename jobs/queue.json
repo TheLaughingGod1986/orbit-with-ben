@@ -254484,9 +254484,14 @@
           "at": "2026-11-15T11:10Z",
           "by": "gemini",
           "what": "step 3 of 6 done: Step 3 PASS: inspected ±3 frame strips across all 146 internal cut boundaries (cuts_pm3_01..03.jpg) and all 72 frames of the final 3.0s (f15035..f15106); zero flash/black frames and clean R67 Miranda ending"
+        },
+        {
+          "at": "2026-11-15T11:10Z",
+          "by": "gemini",
+          "what": "step 4 of 6 done: Step 4 PASS: listened to full 629.40s soundtrack via audio_input (audio_first45s.wav, audio_part1_000_315s.mp3, audio_part2_315_629s.mp3, audio_final25s.wav); bit-identical to v02 with clean breaths, SFX/music balance, and 18.08s ending music fade"
         }
       ],
-      "remaining_action": "Listen to complete soundtrack via verified audio_input and watch 640x360 review proxies via moving_video_input",
+      "remaining_action": "Watch 640x360 moving-video review proxies via read_file and record capabilities",
       "kind": "review",
       "required_capabilities": [
         "audio_input"
@@ -254502,11 +254507,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 6,
         "at": "2026-11-15T11:10Z",
         "by": "gemini",
-        "note": "Step 3 PASS: inspected ±3 frame strips across all 146 internal cut boundaries (cuts_pm3_01..03.jpg) and all 72 frames of"
+        "note": "Step 4 PASS: listened to full 629.40s soundtrack via audio_input (audio_first45s.wav, audio_part1_000_315s.mp3, audio_pa"
       },
       "taskKeys": [
         "OWB:033"
