@@ -255934,17 +255934,22 @@
           "at": "2026-11-15T12:21Z",
           "by": "cursor",
           "what": "step 2 of 4 done: Picture is rebuilt and picture_qa is running on the new master. The two Miranda cuts already measure under the jitter line. Session j2889-render. Log /Users/benjaminoats/_desk/logs/j2889-render.log."
+        },
+        {
+          "at": "2026-11-15T12:26Z",
+          "by": "cursor",
+          "what": "step 4 of 4 done: Five gates passed. Master 629.42s, 1920x1080, 24fps, 15106 frames, -14.5 LUFS, -1.5 dBTP, no black frames. SHA-256 3712479ae852dd318c4d8d0dfd18f7df08c1a857068c24c3d3792a35a27f11c3 matches the film folder, the archive UAT copy and the iCloud UAT copy. Phone copy matches too. No reuse warning over 15 seconds."
         }
       ],
-      "remaining_action": "Wait for the Uranus v04 picture check to finish, then the polish, music and sound checks",
+      "remaining_action": "Uranus long v04 is exported and the five automated checks passed",
       "kind": "assembly",
       "plain": "Re-render Uranus long video (v04) fixing 3 clipped moon edges, 2 static/diagram stills, and a 25-second repeated shot",
       "progress": {
-        "step": 2,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-15T12:21Z",
+        "at": "2026-11-15T12:26Z",
         "by": "cursor",
-        "note": "Picture is rebuilt and picture_qa is running on the new master. The two Miranda cuts already measure under the jitter li"
+        "note": "Five gates passed. Master 629.42s, 1920x1080, 24fps, 15106 frames, -14.5 LUFS, -1.5 dBTP, no black frames. SHA-256 37124"
       },
       "taskKeys": [
         "OWB:033"
