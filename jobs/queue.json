@@ -257950,6 +257950,11 @@
           "at": "2026-11-15T21:15Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-16T09:00:00Z"
+        },
+        {
+          "at": "2026-11-15T22:45Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 3 h"
         }
       ],
       "remaining_action": "Ben (in his own GitHub account): add TheLaughingGod1986/history-of-science (Issues: Read and write, Pull requests: Read and write, Contents: Read-only) to the fine-grained token",
@@ -257970,7 +257975,8 @@
         "type": "ben",
         "condition": "In his own account on GitHub, add history-of-science to the fine-grained token (Issues+PRs R/W, Contents R/O) — Chief ruling (2026-11-15T21:15Z): steps 1-3 and 5 of J2907 PASS in production (BOARD_GH_TOKEN deployed to studio-kanban at a1e9d50d.studio-kanban.pages.dev and board.oppti.dev; /api/checks 200 with 84 ticks incl. HOS-J2230.1; test tick write+delete 200; /api/data?f=ref 200; board_publish.py checksStatus fresh; OWB #478 writeProbe 422 canPostComment=true). Step 4 HOS #180 writeProbe still returns 403 Resource not accessible by personal access token (re-verified live at 21:12Z).",
         "check_at": "2026-11-16T09:00:00Z"
-      }
+      },
+      "escalated_at": "2026-11-15T22:45Z"
     },
     {
       "id": "J2908",
@@ -258346,6 +258352,11 @@
           "at": "2026-11-15T20:38Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: needs a worker with web. Second time on the MacBook Claude Code slot today: WebSearch is still refused here, so the neighbour pass (three big videos with views per topic) cannot be done. Nothing written, no branch or PR. Please route to the Mini or the MacBook Gemini slot."
+        },
+        {
+          "at": "2026-11-15T22:45Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Rank our videos from the data, write two topic briefs, add them to the waiting line, open the PR",
@@ -258356,7 +258367,8 @@
         "of": 4,
         "at": "2026-11-15T20:35Z",
         "by": "macbook"
-      }
+      },
+      "escalated_at": "2026-11-15T22:45Z"
     },
     {
       "id": "J2913",
