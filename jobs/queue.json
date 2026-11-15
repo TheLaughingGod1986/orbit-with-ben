@@ -255919,17 +255919,22 @@
           "at": "2026-11-15T12:13Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-15T12:16Z",
+          "by": "cursor",
+          "what": "step 2 of 4 done: v04 gates: picture_qa and polish_gate failed on one cut. PIA18182 at 0:56 measured 0.418 px off trend. Threshold is 0.35. The same cut on v03 was 0.057. Easing that globe's push from 4.5% to 1.8%, the same treatment as the smooth crescents."
         }
       ],
-      "remaining_action": "Waiting for the Uranus v04 render to finish its gates and export",
+      "remaining_action": "Re-render the Miranda globe cut that failed the jitter check, then run the five gates again",
       "kind": "assembly",
       "plain": "Re-render Uranus long video (v04) fixing 3 clipped moon edges, 2 static/diagram stills, and a 25-second repeated shot",
       "progress": {
         "step": 2,
         "of": 4,
-        "at": "2026-11-15T11:34Z",
+        "at": "2026-11-15T12:16Z",
         "by": "cursor",
-        "note": "Detached render is producing cuts. 20 of 96 remaining cuts were done in the first half-minute after the restart. Session"
+        "note": "v04 gates: picture_qa and polish_gate failed on one cut. PIA18182 at 0:56 measured 0.418 px off trend. Threshold is 0.35"
       },
       "taskKeys": [
         "OWB:033"
