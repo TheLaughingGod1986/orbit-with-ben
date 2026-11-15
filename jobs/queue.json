@@ -258594,10 +258594,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-15T22:15Z",
+      "eta": "2026-11-16T00:15Z",
       "created_by": "gemini",
       "created_at": "2026-11-15T22:12Z",
       "result": "",
@@ -258606,13 +258606,26 @@
           "at": "2026-11-15T22:12Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-15T22:15Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Record Ben VO (<=2 takes, C7 trim order), assemble full-bleed 9:16 v01 from local pool_v01 + NASA Juno/SVS 5587, pass all Shorts gates, park for review",
       "due": "2026-11-25T18:00:00Z",
       "kind": "assembly",
       "plain": "Record the voice-over and build the 30 Nov Moon-Jupiter dated-event Short from free NASA footage for Thursday 26 Nov",
-      "mini_only": true
+      "mini_only": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-15T22:15Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
