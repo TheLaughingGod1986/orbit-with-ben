@@ -94,7 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2877 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2243 |  |
 | J2880 | mini | open | – | – | listing · Swap the Space Station Short xdurJQcoiGM (Wed 25 Nov) to the full-screen cut Ben OK'd, v14 |  |
 | J2881 | mini | open | – | – | listing · Swap the Muons Short rvug71d7Dqk (Sat 21 Nov) to the full-screen cut Ben OK'd, v05 |  |
-| J2882 | mini | open | – | – | listing · Swap the Voyager 1 Short kKN8Ale42sE (Tue 17 Nov) to the full-screen cut Ben OK'd, v02 |  |
+| J2882 | mini | claimed | claudecode | 2026-11-15T09:59Z | listing · Swap the Voyager 1 Short kKN8Ale42sE (Tue 17 Nov) to the full-screen cut Ben OK'd, v02 |  |
 | J2883 | mini | open | – | – | listing · Upload the Supermoon Short v04 (dated, Thu 19 Nov 11:30) Private and scheduled |  |
 | J2884 | mini | open | – | – | 032 upload · studio · Upload the Titan long master v02 Private and scheduled for Wed 25 Nov 18:00, arm the thumbnail test |  |
 
