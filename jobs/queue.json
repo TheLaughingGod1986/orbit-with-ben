@@ -257458,6 +257458,11 @@
           "at": "2026-11-15T17:51Z",
           "by": "claude",
           "what": "approved by Ben: 029 Great Dimming Short v06 (SWDCZfWZVao, Wed 9 Dec): rebuilt the 2.7-5.1 s brightness-dip graphic upright 9:16 and reframed the 12.4-15.1 s Paranal and VLT/ESO plates full-frame so there is no blurred band anywhere; same voice, words and length v06 (asked in J2551)"
+        },
+        {
+          "at": "2026-11-15T17:59Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-15T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Swap the Great Dimming Short SWDCZfWZVao (Wed 9 Dec) to the full-screen cut Ben OK'd, v06",
@@ -257474,7 +257479,16 @@
         "channel": "OWB",
         "job": "J2551",
         "okAt": "2026-11-15T17:37Z"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
