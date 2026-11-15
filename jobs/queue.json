@@ -251035,9 +251035,14 @@
           "at": "2026-11-15T12:04Z",
           "by": "gemini",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-15T12:05Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified J2517/J2559 done, all 8 ~/.codex approval-settings and gateway hashes unchanged from 4-6 Nov checkpoint, PR #490 still OPEN/draft at f521bcd3f1 with 0 comments, docs/CODEX_ALLOWLIST.md not on main, and live codex execpolicy check output"
         }
       ],
-      "remaining_action": "Inspect J2040, J2813 review, local approval-settings/gateway hashes, and PR #490 operator evidence",
+      "remaining_action": "Write and commit jobs/reviews/J2825/REVIEW.md from a clean detached worktree",
       "kind": "review",
       "recheck_of": "J2040",
       "due": "2026-11-14T14:19:42+00:00",
@@ -251052,10 +251057,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-15T12:04Z",
-        "by": "gemini"
+        "at": "2026-11-15T12:05Z",
+        "by": "gemini",
+        "note": "Verified J2517/J2559 done, all 8 ~/.codex approval-settings and gateway hashes unchanged from 4-6 Nov checkpoint, PR #49"
       }
     },
     {
