@@ -257687,9 +257687,14 @@
           "at": "2026-11-15T18:52Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Confirmed BOARD_GH_TOKEN is present in studio-kanban production secrets (alongside BOARD_KEY, R2_*, WATCH_*)"
+        },
+        {
+          "at": "2026-11-15T18:54Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Built dist/ from main (3fc29468e9) and deployed to Cloudflare Pages production (a1e9d50d.studio-kanban.pages.dev)"
         }
       ],
-      "remaining_action": "Build and deploy the board from main to production (build.py, then wrangler pages deploy)",
+      "remaining_action": "Check /api/checks, write+delete test tick, and /api/data?f=ref on both studio-kanban.pages.dev and board.oppti.dev",
       "due": "2026-11-15T19:00:00Z",
       "for": "gemini",
       "kind": "studio",
@@ -257697,11 +257702,11 @@
       "urgent": 8,
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-15T18:52Z",
+        "at": "2026-11-15T18:54Z",
         "by": "gemini",
-        "note": "Confirmed BOARD_GH_TOKEN is present in studio-kanban production secrets (alongside BOARD_KEY, R2_*, WATCH_*)"
+        "note": "Built dist/ from main (3fc29468e9) and deployed to Cloudflare Pages production (a1e9d50d.studio-kanban.pages.dev)"
       }
     },
     {
