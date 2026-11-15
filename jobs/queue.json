@@ -251549,9 +251549,14 @@
           "at": "2026-11-15T20:10Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Completed full OWB data ranking (16 public longs, 86 public Shorts from 2026-11-15 snapshot & studio_ctr.json) and existing-topic audit across 02_Video-Projects, PRs #849/#853/#901/#902, ideas/, and WIP.json"
+        },
+        {
+          "at": "2026-11-15T20:16Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Selected OWB:068 (How Long Is a Day on Mercury / 8-world day tour) and OWB:069 (Landing on a Comet Rosetta 67P / 7-world landing tour); both passed public_search.py and neighbours.py (>=3 1M+ education neighbours)"
         }
       ],
-      "remaining_action": "Selecting non-overlapping topics for OWB:068 and OWB:069 and running free YouTube search and neighbour checks",
+      "remaining_action": "Scaffolding 068_How-Long-Is-A-Day-On-Mercury and 069_Landing-On-A-Comet-Rosetta-67P from template with TOPIC.md, status.json, and search/neighbour evidence",
       "kind": "script",
       "backlog": "owb-ideas",
       "escalated_at": "2026-11-14T16:23Z",
@@ -251566,11 +251571,11 @@
       "model": "gemini-argon",
       "mini_only": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-15T20:10Z",
+        "at": "2026-11-15T20:16Z",
         "by": "gemini",
-        "note": "Completed full OWB data ranking (16 public longs, 86 public Shorts from 2026-11-15 snapshot & studio_ctr.json) and exist"
+        "note": "Selected OWB:068 (How Long Is a Day on Mercury / 8-world day tour) and OWB:069 (Landing on a Comet Rosetta 67P / 7-world"
       },
       "taskKeys": [
         "OWB:068",
