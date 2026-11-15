@@ -257647,14 +257647,20 @@
           "at": "2026-11-15T18:14Z",
           "by": "claude",
           "what": "added for cursor"
+        },
+        {
+          "at": "2026-11-15T18:42Z",
+          "by": "claude",
+          "what": "rerouted to gemini on gemini-argon: Cursor has not claimed this in 27 minutes (its last act was 17:59Z) and Ben cannot approve on the board until it is done. Gemini is working and did the last board deploy (J2866), so it goes to Gemini."
         }
       ],
       "remaining_action": "Confirm BOARD_GH_TOKEN is set, redeploy the board, prove ticks save and a verdict reaches both channel threads",
       "due": "2026-11-15T19:00:00Z",
-      "for": "cursor",
+      "for": "gemini",
       "kind": "studio",
       "plain": "Ben replaced the board's expired token: redeploy the board so he can approve again, and prove it works for both channels",
-      "urgent": 8
+      "urgent": 8,
+      "model": "gemini-argon"
     },
     {
       "id": "J2908",
