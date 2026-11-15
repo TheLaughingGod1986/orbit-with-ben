@@ -254948,9 +254948,14 @@
           "at": "2026-11-15T08:58Z",
           "by": "gemini",
           "what": "step 3 of 6 done: Step 2 PASS: new video gc1hWQQJOq4 uploaded Private with publishAt 2026-11-21T11:30:00Z, cover set, en-GB language and en-GB captions serving, Studio Related video set to rVqgtkBV3jc"
+        },
+        {
+          "at": "2026-11-15T08:59Z",
+          "by": "gemini",
+          "what": "step 4 of 6 done: Step 3 PASS: old video rvug71d7Dqk set to Private and unscheduled (publishAt null verified via API and Studio)"
         }
       ],
-      "remaining_action": "Set old video rvug71d7Dqk to Private and unscheduled via set-private.ts and read back",
+      "remaining_action": "Run verify-swap.ts, update UPLOADS.json, library.json, BUFFER_POSTS.json, and check queued jobs for rvug71d7Dqk",
       "due": "2026-11-20T18:00:00Z",
       "kind": "listing",
       "approved_from": {
@@ -254976,11 +254981,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 6,
-        "at": "2026-11-15T08:58Z",
+        "at": "2026-11-15T08:59Z",
         "by": "gemini",
-        "note": "Step 2 PASS: new video gc1hWQQJOq4 uploaded Private with publishAt 2026-11-21T11:30:00Z, cover set, en-GB language and e"
+        "note": "Step 3 PASS: old video rvug71d7Dqk set to Private and unscheduled (publishAt null verified via API and Studio)"
       },
       "taskKeys": [
         "OWB:024"
