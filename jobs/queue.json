@@ -198717,9 +198717,14 @@
           "at": "2026-11-15T10:28Z",
           "by": "relay",
           "what": "condition verification queued: J2887"
+        },
+        {
+          "at": "2026-11-15T10:44Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-15T16:45:00Z"
         }
       ],
-      "remaining_action": "Wait for non-producer (claude/grok) KEEP sign-off on 4 crop-rescued Batch 2-3 plates and 400-credit Flow spend approval for R1-R4 on HOS desk #180 (6889141917)",
+      "remaining_action": "Wait for Chief/Claude 600-credit Flow spend authorization and generation/stills-review of 6 Short replacement plates (R1-R6) on HOS desk #180 (6893147101) before J2172 assembly",
       "kind": "qa",
       "plain": "Check all twelve Dinosaur Shorts scenes before editing the finished videos.",
       "required_capabilities": [],
@@ -198744,12 +198749,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "Non-producer (claude/grok) KEEP sign-off on 4 crop-rescued gemini-produced Batch 2-3 plates (P5:09_robin, P5:10_explorer_robin, P5:09a_pigeon_pavement, P5:13a_gull_seaside; no self-KEEP under J2731) and Chief/Claude 400-credit Flow spend approval for 4 Short replacement plates (R1-R4) on HOS desk #180 (6889141917) before J2172 assembly",
-        "check_at": "2026-11-15T11:28:49+00:00",
-        "last_recheck": "J2876",
-        "checked_at": "2026-11-15T04:26:54+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J2887"
+        "condition": "Chief/Claude 600-credit Flow spend authorization and generation/stills-review of 6 Short replacement plates (R1-R6: P2:05_almost_none, P4:06_dust_veil, P5:08_all_at_once, P5:12_clay_callback, 09d P5:10_explorer_robin, 08c P5:09_robin) on HOS desk #180 (6889364319/6889440776/6893147101) before J2172 assembly (all 12 initial plates now have final KEEP/FIX calls: 6 KEEP incl. 11c pigeon & 12d gull with J2887 flap motion PASS; 6 FIX R1-R6)",
+        "check_at": "2026-11-15T16:45:00Z",
+        "last_recheck": "J2887",
+        "checked_at": "2026-11-15T10:44:19+00:00",
+        "checked_by": "gemini"
       },
       "escalated_at": "2026-11-15T06:09Z"
     },
