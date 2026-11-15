@@ -255074,9 +255074,14 @@
           "at": "2026-11-15T08:16Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-15T08:16Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed J2884. Next: sha256 of master v02 and the J1195 upload package."
         }
       ],
-      "remaining_action": "Upload the Titan long master v02 Private and scheduled for Wed 25 Nov 18:00, arm the thumbnail test",
+      "remaining_action": "Check the Titan master hash and the upload package",
       "due": "2026-11-24T18:00:00Z",
       "kind": "studio",
       "approved_from": {
@@ -255094,12 +255099,14 @@
       },
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-15T08:16Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2884. Next: sha256 of master v02 and the J1195 upload package."
+      },
+      "taskKeys": [
+        "OWB:032"
+      ]
     }
   ],
   "focus": [
