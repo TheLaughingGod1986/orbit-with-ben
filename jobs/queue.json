@@ -258653,19 +258653,24 @@
           "at": "2026-11-15T22:52Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Session resumed after 25m cap; verified VO audio and moving-video capabilities; downloading Hubble m13279 asset and running assembly + gates"
+        },
+        {
+          "at": "2026-11-15T22:57Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2+3 gates PASS: sfx=0, music=0, picture=0, polish=0, shorts_open=0 (0/20 and 0/39 padded), thumbnail=0"
         }
       ],
-      "remaining_action": "Verify Hubble m13279 video, refine s07/title/DATA bar timing, run assemble_j2916.py and all Shorts gates",
+      "remaining_action": "Inspect every shot/audio/motion of v01, sync to studio-live with SHA-256 manifest, run repo checks and park for review",
       "due": "2026-11-25T18:00:00Z",
       "kind": "assembly",
       "plain": "Record the voice-over and build the 30 Nov Moon-Jupiter dated-event Short from free NASA footage for Thursday 26 Nov",
       "mini_only": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-15T22:52Z",
+        "at": "2026-11-15T22:57Z",
         "by": "gemini",
-        "note": "Session resumed after 25m cap; verified VO audio and moving-video capabilities; downloading Hubble m13279 asset and runn"
+        "note": "Step 2+3 gates PASS: sfx=0, music=0, picture=0, polish=0, shorts_open=0 (0/20 and 0/39 padded), thumbnail=0"
       },
       "rerouted_from": {
         "needs": "mini",
