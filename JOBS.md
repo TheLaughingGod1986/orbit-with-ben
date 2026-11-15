@@ -89,6 +89,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2885 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2857 |  |
 | J2886 | mini | blocked | cursor | – | studio · Pin the Titan long comment once T3cBBss1F60 is public |  |
 | J2891 | any | blocked | macbook | – | script · HOS: learn from our data, add two new films to the backlog |  |
+| J2892 | mini | open | – | – | review · Verify condition for J2035 |  |
+| J2893 | mini | open | – | – | chief · Chief: resolve 033 edit orphan-review |  |
 
 Recently finished:
 
