@@ -248,7 +248,7 @@
     },
     {
       "id": "T009",
-      "status": "running",
+      "status": "done",
       "started": "2026-10-22",
       "channel": "hos",
       "video": "_C92tIJCk8A",
@@ -262,9 +262,22 @@
         "maker": "cursor",
         "file": "02_Video-Projects/001_How-Did-We-Discover-Germs/08_Thumbnail/j0279/germs_B_invisible_life_v02.jpg"
       },
-      "result": null,
-      "readBack": "2026-11-05",
-      "note": "Armed 22 Oct (J0288, Chief KEEP on J0279 fbcbc6f): thumbnail-only. A house live HOW DID WE DISCOVER GERMS?, B cursor j0279 v02 INVISIBLE LIFE? (1280x720, 267906 bytes, sha256 46b9e18d). Prior 1–16 Oct title+thumb test finished inconclusive (no winner, A visible to all). Title and Public privacy unchanged. Studio report: Test running (13d 23h remaining). | J2397 check 9 Nov 2026: Studio edit page shows 'Thumbnail: Results ready' (14-day run 22 Oct–5 Nov complete; 28d: 14 impr, 7.14% CTR; lifetime: 44 impr, 6.8% CTR). Ready for Mini Studio modal readback."
+      "result": {
+        "read": "2026-11-15",
+        "winner": "draw",
+        "studioVerdict": "Not enough impressions to declare a winner",
+        "startedAt": "2026-10-22T01:42:50Z",
+        "finishedAt": "2026-11-05T02:21:59Z",
+        "experimentId": 3,
+        "selectedArm": "CREATOR_EXPERIMENT_ARM_1",
+        "wt_a": null,
+        "wt_b": null,
+        "impressions": 49,
+        "note": "J2894 read-back (15 Nov 2026, HOS Studio CDP 9222 videoCreatorExperiment): state CREATOR_EXPERIMENT_STATE_FINISHED (2026-10-22T01:42:50Z to 2026-11-05T02:21:59Z), resultState CREATOR_EXPERIMENT_RESULT_STATE_NOT_ENOUGH_DATA, selectedArm CREATOR_EXPERIMENT_ARM_1 (live house A remains visible). Read-only: finished experiment record left intact pending Chief decision."
+      },
+      "readBack": "2026-11-15",
+      "note": "Armed 22 Oct (J0288, Chief KEEP on J0279 fbcbc6f): thumbnail-only. A house live HOW DID WE DISCOVER GERMS?, B cursor j0279 v02 INVISIBLE LIFE? (1280x720, 267906 bytes, sha256 46b9e18d). Prior 1–16 Oct title+thumb test finished inconclusive (no winner, A visible to all). Title and Public privacy unchanged. Studio report: Test running (13d 23h remaining). | J2397 check 9 Nov 2026: Studio edit page shows 'Thumbnail: Results ready' (14-day run 22 Oct–5 Nov complete; 28d: 14 impr, 7.14% CTR; lifetime: 44 impr, 6.8% CTR). Ready for Mini Studio modal readback.",
+      "ended": "2026-11-05"
     },
     {
       "id": "T010",
@@ -918,7 +931,7 @@
       "result": null,
       "film": "007",
       "readBack": "2026-11-10",
-      "note": "Armed 10 Nov 2026 (J2536; Ben 10 Nov 'Ok on both', third exception in AGENTS.md Never, Studio): replaces the J0959 title-and-thumbnail test on History of Science 007 ETynHpIYLeY, which had not started (Studio: Ineligible) and had no ledger row. 'Edit title' confirmed, Studio showed 'Experiment deleted'; title set; new Title and thumbnail Test & Compare set and saved. Slot 1: How Was the First Vaccine Made? (And Why It's Named After a Cow) + the video's own thumbnail (THE MILKMAID'S SECRET, thumbnail A, kept by Studio, not uploaded again); Slot 2: Why Vaccines Are Named After a Cow + hos_007_thumb_B_immune_v01.jpg (uploaded from the Mini). The J0959 pairing was A title + A thumbnail, 'How Was the First Vaccine Made?' + B thumbnail; thumbnail B now sits with the old side A title, as the brief says. Private, scheduled 2026-11-12T18:00:00Z. Studio state at read-back: Ineligible until public. Makers of the two thumbnails are not recorded in this repo, so both are 'unknown'."
+      "note": "Armed 10 Nov 2026 (J2536; Ben 10 Nov 'Ok on both', third exception in AGENTS.md Never, Studio): replaces the J0959 title-and-thumbnail test on History of Science 007 ETynHpIYLeY, which had not started (Studio: Ineligible) and had no ledger row. 'Edit title' confirmed, Studio showed 'Experiment deleted'; title set; new Title and thumbnail Test & Compare set and saved. Slot 1: How Was the First Vaccine Made? (And Why It's Named After a Cow) + the video's own thumbnail (THE MILKMAID'S SECRET, thumbnail A, kept by Studio, not uploaded again); Slot 2: Why Vaccines Are Named After a Cow + hos_007_thumb_B_immune_v01.jpg (uploaded from the Mini). The J0959 pairing was A title + A thumbnail, 'How Was the First Vaccine Made?' + B thumbnail; thumbnail B now sits with the old side A title, as the brief says. Private, scheduled 2026-11-12T18:00:00Z. Studio state at read-back: Ineligible until public. Makers of the two thumbnails are not recorded in this repo, so both are 'unknown'. | J2894 check 15 Nov 2026: Public 2026-11-12T18:00:36Z; Studio experimentId 2 state CREATOR_EXPERIMENT_STATE_STARTED (started 2026-11-12T18:00:43Z, due ~26 Nov); early reach 16 impr, 12.50% CTR, 3 views from impressions."
     },
     {
       "id": "T030",
