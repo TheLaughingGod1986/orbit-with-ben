@@ -256252,9 +256252,14 @@
           "at": "2026-11-15T13:58Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-15T13:58Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2893 to resolve OWB 033 edit orphan-review workflow gap"
         }
       ],
-      "remaining_action": "Chief resolves 033 edit handoff and records the next owner/action",
+      "remaining_action": "Read 033 film status, edit job history, approval records, and evidence",
       "kind": "chief",
       "handoff": {
         "film": "033",
@@ -256264,12 +256269,14 @@
       },
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-15T13:58Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2893 to resolve OWB 033 edit orphan-review workflow gap"
+      },
+      "taskKeys": [
+        "OWB:033"
+      ]
     },
     {
       "id": "J2894",
