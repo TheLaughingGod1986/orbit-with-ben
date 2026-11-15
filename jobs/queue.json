@@ -1,5 +1,5 @@
 {
-  "next_id": 2907,
+  "next_id": 2908,
   "jobs": [
     {
       "id": "J0001",
@@ -178642,7 +178642,7 @@
       "taskKeys": [
         "HOS:009"
       ],
-      "urgent": 5,
+      "urgent": 3,
       "progress": {
         "step": 1,
         "of": 3,
@@ -178791,7 +178791,7 @@
         "by": "codex",
         "note": "Queued successor under J2026; not claimed or started"
       },
-      "urgent": 2,
+      "urgent": 1,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -179189,7 +179189,7 @@
       ],
       "remaining_action": "Verify operator configuration and fresh-session acceptance evidence before resuming remaining allow-list work",
       "kind": "assembly",
-      "urgent": 3,
+      "urgent": 2,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -225236,7 +225236,7 @@
         "HOS:013"
       ],
       "action": "Run the 14 batches one at a time under the Chief's guards: --floor 3000 stated, live balance before each Create, release between batches",
-      "urgent": 6,
+      "urgent": 4,
       "progress": {
         "step": 11,
         "of": 14,
@@ -248700,7 +248700,7 @@
       "for": "codex",
       "kind": "studio",
       "plain": "Give the board a permanent address of its own, and check it is well inside Cloudflare's free allowance",
-      "urgent": 10,
+      "urgent": 5,
       "progress": {
         "step": 2,
         "of": 3,
@@ -251619,7 +251619,7 @@
       "for": "cursor",
       "kind": "studio",
       "plain": "Get the phone-linking link to Ben's iPhone privately, so he can approve the Journey film",
-      "urgent": 11,
+      "urgent": 6,
       "progress": {
         "step": 3,
         "of": 4,
@@ -254052,7 +254052,7 @@
       "for": "claude",
       "kind": "studio",
       "plain": "Record Ben's decision to pause the kind of long video that isn't getting views, until a new kind has been tested",
-      "urgent": 13
+      "urgent": 7
     },
     {
       "id": "J2865",
@@ -257509,6 +257509,38 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2907",
+      "title": "Board: redeploy with Ben's new GitHub token, prove ticks save and reach both threads",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (15 Nov 18:14Z): \"token's in\".** The board's GitHub token expired today, so Ben made a new fine-grained one and put it in the Cloudflare Pages project `studio-kanban` as the production secret `BOARD_GH_TOKEN`, replacing the old value. A Pages secret only applies from the next deployment, so the live board still holds the dead token: at 18:13Z `/api/checks` answered `500 {\"error\":\"store read 401\"}` on both `board.oppti.dev` and `studio-kanban.pages.dev`. Until this is done Ben cannot approve anything on the board, and the Mini cannot read ticks.\n\n**Second fault to prove fixed.** At 11:53Z today Ben's OK on the History of Science Heart Short (key `HOS-J2230.1`) saved, but its post to the History of Science thread failed: the old token did not cover that repository. Ben was asked to give the new token both repositories (`orbit-with-ben` and `history-of-science`) with Issues: read and write and Contents: read-only.\n\n**Do.**\n1. List the project's production secrets, names only, and confirm `BOARD_GH_TOKEN` is there. If it is not, park for Ben with the exact name he should check.\n2. Deploy the board from main to production (`build.py`, then `wrangler pages deploy`), the same way as J2714.\n3. On both addresses: `/api/checks` answers 200 and returns the saved ticks; write one tick with the board key on a test id and remove it again; `/api/data?f=ref` answers 200.\n4. Prove a verdict can reach BOTH threads. Read how `api/checks.js` posts, then check with the deployed board (not with a token of the Mini's own) that it can post to the Orbit thread and to the History of Science thread. If the route offers no harmless way to test a post, say so and instead report what GitHub answers when the board reads each thread. If GitHub refuses either one, name the repository and the missing permission in the result so Ben can fix the token, and park for him.\n5. Run `board_publish.py` once and confirm the Mini reads the ticks again (`checksStatus` fresh in board.json), and that Ben's Heart Short OK of 11:53Z is in what the Mini read.\n\n**Guards.** £0. Never print the token or any part of it. No account address, email or private network detail in the result or on the thread. Nothing deleted except the one test tick. Board open taps stay off. Do not touch the Git connection of the Pages project.\n\n**Result.** The deployment, what each check returned on each address, whether a post reaches each thread, and anything Ben still has to change on the token.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-15T18:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-15T18:14Z",
+          "by": "claude",
+          "what": "added for cursor"
+        }
+      ],
+      "remaining_action": "Confirm BOARD_GH_TOKEN is set, redeploy the board, prove ticks save and a verdict reaches both channel threads",
+      "due": "2026-11-15T19:00:00Z",
+      "for": "cursor",
+      "kind": "studio",
+      "plain": "Ben replaced the board's expired token: redeploy the board so he can approve again, and prove it works for both channels",
+      "urgent": 8
     }
   ],
   "focus": [
