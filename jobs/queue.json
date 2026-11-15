@@ -253216,9 +253216,14 @@
           "at": "2026-11-15T00:14Z",
           "by": "gemini",
           "what": "step 0 of 6 done: Claimed J2861; replacing default plan with 6-step execution plan for Sleep film v02 Private upload scheduled Sat 12 Dec 2026 21:00Z"
+        },
+        {
+          "at": "2026-11-15T00:26Z",
+          "by": "gemini",
+          "what": "step 1 of 6 done: Verified J2860 v02 master (195070 frames, 6502.333s, max_hw_vs_sw_mad=0.0, other_faults=[]), J2859 listing claims against v02, all 13 parent film links public before 12 Dec, and merged PR #937 + PR #940"
         }
       ],
-      "remaining_action": "Verify J2859/J2860 v02 master, listing claims, chapters, and thumbnail on NAS and git",
+      "remaining_action": "Build upload package for v02, add pinned comment & schedule Sat 12 Dec 21:00Z, and append thumbnail to J2860 before/after watch clip",
       "due": "2026-11-20T18:00:00Z",
       "kind": "listing",
       "plain": "Upload the two-hour sleep film privately and schedule it for Saturday 12 December at 9pm",
@@ -253232,11 +253237,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-11-15T00:14Z",
+        "at": "2026-11-15T00:26Z",
         "by": "gemini",
-        "note": "Claimed J2861; replacing default plan with 6-step execution plan for Sleep film v02 Private upload scheduled Sat 12 Dec "
+        "note": "Verified J2860 v02 master (195070 frames, 6502.333s, max_hw_vs_sw_mad=0.0, other_faults=[]), J2859 listing claims agains"
       }
     },
     {
