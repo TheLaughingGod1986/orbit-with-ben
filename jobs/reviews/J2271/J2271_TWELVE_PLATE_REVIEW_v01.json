@@ -1,0 +1,788 @@
+{
+  "job": "J2271",
+  "film": "HOS:010",
+  "reviewed_at": "2026-11-15T03:35:00Z",
+  "reviewer": "gemini",
+  "acting_chief_ruling_applied": "J2829 (2026-11-14) + HOS desk 6853110063 (Chief Grok output-scale & crop-first ruling)",
+  "demonstrated_capabilities": {
+    "agent": "gemini",
+    "available": [
+      "audio_input",
+      "moving_video_input"
+    ],
+    "probe_evidence": "relay probe of gemini, fresh clips, file tools only: audio PASS (match 0.91); video PASS (truth left_to_right red>green>yellow; answer left_to_right red>green>yellow)",
+    "session_id": "62fe76d3-d338-4f25-b021-d544619bf441",
+    "direct_perception_performed": "Opened and inspected all 12 compact 640x360 .mp4 proxy clips, all 12 4fps (0.25s step, 32-frame) timestamped contact strips, Explorer reference hos-explorer-reference-v01.jpg, and 14 portrait 936x1664 (2.311111x) crop test sheets via read_file."
+  },
+  "output_master_scale_ruling": {
+    "ruling_ref": "hos-desk 6853110063 (Chief Grok)",
+    "source_crop_px": "405x720",
+    "output_master_px": "936x1664",
+    "aspect_ratio": "9:16 exact",
+    "upscale_factor": 2.311111,
+    "ceiling": 2.35,
+    "padding": "none (0% blurred/mirrored/flat fill)"
+  },
+  "counts": {
+    "total_plates": 12,
+    "independent_keep_batch1_codex": 4,
+    "crop_rescued_batch2_3_gemini_awaiting_non_producer_keep": 4,
+    "short_mapping_or_timing_fix_requiring_retake": 4,
+    "scoped_replacement_takes": 4,
+    "scoped_replacement_credits": 400
+  },
+  "preserved_locks": {
+    "short_a_vo_mp3_sha256": "68d88b5b5883f2376bcec29c26d77efea7634d5c7705693f41202ca587b927fb",
+    "short_a_vo_wav_sha256": "2488aa8b49beb3a642597e08f30ca53e723fbee00cd21ad8bdc581a9293ff228",
+    "short_c_vo_mp3_sha256": "20432ecd645b28e9fdc051578a284cb2845bd09f3040170b192089b256055b87",
+    "short_c_vo_wav_sha256": "ca814ab01ad72fde015b4e157638b5e346d592e5df54cefe97e38969340fcb0c",
+    "j1004_option_a1_preserved": true,
+    "j2172_released": false,
+    "j2172_progress_preserved": "1/3"
+  },
+  "nas_archive_review_dir": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664",
+  "plates": [
+    {
+      "order": 1,
+      "row_id": "P1:01_clay_line",
+      "producer": "codex",
+      "independent_reviewers": [
+        "gemini",
+        "codex",
+        "claude",
+        "grok"
+      ],
+      "verdict": "KEEP",
+      "keep": true,
+      "working_mp4": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/part01/raw/v01_twelve_plates/P01_01_clay_line_t1.mp4",
+      "archive_mp4": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/P01_01_clay_line_t1.mp4",
+      "mp4_sha256": "927e826b3fe8f83c66a879b2e9a932b683d711d91c075fc235a6a4012dd0338b",
+      "mp4_bytes": 2245864,
+      "start_still_png": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/part01/refs/v01_twelve_plates_stills/P01_01_clay_line_t1.png",
+      "archive_still_png": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/P01_01_clay_line_t1.png",
+      "still_sha256": "342d94e424b9dfebebea6ffa7fdafb4e7a5c689726cbcf87545b303c3235a88f",
+      "technical": {
+        "width": 1280,
+        "height": 720,
+        "fps": 24,
+        "duration_s": 7.916667,
+        "audio_streams": 0,
+        "decode_errors": 0,
+        "baked_text": false,
+        "orbit_robot": false
+      },
+      "short_uses": [
+        "Short_A:S01 (0.000-2.849s)",
+        "Short_A:loop_tail (22.289-23.289s, 1.000s)"
+      ],
+      "approved_crop_936x1664": "crop=405:720:437:0,scale=936:1664:flags=lanczos",
+      "source_window_s": {
+        "Short_A:S01": [
+          1.0,
+          3.849
+        ],
+        "Short_A:loop_tail": [
+          0.0,
+          1.0
+        ],
+        "alternate_sequential": {
+          "Short_A:S01": [
+            0.0,
+            2.849
+          ],
+          "Short_A:loop_tail": [
+            2.849,
+            3.849
+          ]
+        }
+      },
+      "motion_and_crop_notes": "Continuous native camera push-in on the sunlit Gubbio limestone cliff with pointing fingertip resting on the dark clay band from frame 0 through 7.917s. Static centre crop x=437..842 -> 936x1664 (2.311111x) keeps the fingertip and dark clay layer centered well above the 81% caption safe line across all 3.849s.",
+      "strip_4fps": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/strips_4fps/01_P1_01_clay_line_4fps.jpg",
+        "sha256": "57688584d82a2bffdf9f0d4fdb698c38700074ef4b89968d98357962014400e0",
+        "bytes": 515092
+      },
+      "proxy_640x360": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/proxies_640x360/01_P1_01_clay_line_640x360.mp4",
+        "sha256": "d9eb3301a9a1789686dde30f9b56b581bf3fd392fd2d345b2c8fcdf58919e216",
+        "bytes": 383032
+      },
+      "crop_sheet_936x1664": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/crop_tests_936x1664/01_P1_01_clay_line_x437_t0.00-3.85_sheet.jpg",
+        "sha256": "7b8fcd54c0a80cdba65913fbd088954b874e9ffe40284dc670966e8494125f95",
+        "bytes": 356601
+      }
+    },
+    {
+      "order": 2,
+      "row_id": "P2:01_walter_hammer",
+      "producer": "codex",
+      "independent_reviewers": [
+        "gemini"
+      ],
+      "verdict": "KEEP",
+      "keep": true,
+      "working_mp4": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/part02/raw/v01_twelve_plates/P02_01_walter_hammer_t1.mp4",
+      "archive_mp4": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/P02_01_walter_hammer_t1.mp4",
+      "mp4_sha256": "db506d28c3abd7ee5c441e22e0bdb55494b715e4811163885b7cfd2d5ade60f6",
+      "mp4_bytes": 3437207,
+      "start_still_png": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/part02/refs/v01_twelve_plates_stills/P02_01_walter_hammer_t1.png",
+      "archive_still_png": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/P02_01_walter_hammer_t1.png",
+      "still_sha256": "9b5b3b6603f89e134fdd9aa2e60dc70a0094af965b276eee231eca1cc846a721",
+      "technical": {
+        "width": 1280,
+        "height": 720,
+        "fps": 24,
+        "duration_s": 7.916667,
+        "audio_streams": 0,
+        "decode_errors": 0,
+        "baked_text": false,
+        "orbit_robot": false
+      },
+      "short_uses": [
+        "Short_A:S02 (2.849-6.189s, 3.340s; or 2.849-6.289s, 3.440s under Option A1-7B)"
+      ],
+      "approved_crop_936x1664": "crop=405:720:620:0,scale=936:1664:flags=lanczos",
+      "source_window_s": {
+        "Short_A:S02": [
+          0.0,
+          3.34
+        ],
+        "Option_A1_7B": [
+          0.0,
+          3.44
+        ]
+      },
+      "motion_and_crop_notes": "Crop-rescued at \u00a30 per Chief Grok ruling 6853110063. Right-shifted static portrait crop x=620..1025 -> 936x1664 (2.311111x) across t=0.000..3.340s frames Walter Alvarez (clean-shaven, fair hair, glasses, 1970s field shirt) raising and tapping his rock hammer against the sunlit Gubbio cliff face, with rock chips falling at t=2.75-3.25s and zero edge clipping above the caption safe line.",
+      "strip_4fps": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/strips_4fps/02_P2_01_walter_hammer_4fps.jpg",
+        "sha256": "9330438ee0b271319d59715dcbd5f3e6b1e08eddf53cce9b6180789f4b574105",
+        "bytes": 658703
+      },
+      "proxy_640x360": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/proxies_640x360/02_P2_01_walter_hammer_640x360.mp4",
+        "sha256": "6a506cc6cc1958bdb646ae5fe5da7994bf91a41365e50d451602b923b3969cc2",
+        "bytes": 636850
+      },
+      "crop_sheet_936x1664": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/crop_tests_936x1664/02_P2_01_walter_hammer_x620_t0.00-3.34_sheet.jpg",
+        "sha256": "b27cf195bdc0864f84594d531c83b3af65a29efe26a7e7321692739d2c81e11b",
+        "bytes": 422625
+      }
+    },
+    {
+      "order": 3,
+      "row_id": "P2:03_tiny_shells",
+      "producer": "codex",
+      "independent_reviewers": [
+        "gemini",
+        "codex",
+        "claude",
+        "grok"
+      ],
+      "verdict": "KEEP",
+      "keep": true,
+      "working_mp4": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/part02/raw/v01_twelve_plates/P02_03_tiny_shells_t1.mp4",
+      "archive_mp4": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/P02_03_tiny_shells_t1.mp4",
+      "mp4_sha256": "1c32a8521956d95ccc6922e6220a84b568ae02ddcb43662c7ee41c810beca205",
+      "mp4_bytes": 2217618,
+      "start_still_png": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/part02/refs/v01_twelve_plates_stills/P02_03_tiny_shells_t1.png",
+      "archive_still_png": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/P02_03_tiny_shells_t1.png",
+      "still_sha256": "5878bc8bafe1dde2aab52b2d718fe23cea97c73fa6c204233bc833bf74776bb6",
+      "technical": {
+        "width": 1280,
+        "height": 720,
+        "fps": 24,
+        "duration_s": 7.916667,
+        "audio_streams": 0,
+        "decode_errors": 0,
+        "baked_text": false,
+        "orbit_robot": false
+      },
+      "short_uses": [
+        "Short_A:S03 (6.189-9.549s, 3.360s; or 6.289-9.989s, 3.700s under Option A1-7B)"
+      ],
+      "approved_crop_936x1664": "crop=405:720:437:0,scale=936:1664:flags=lanczos",
+      "source_window_s": {
+        "Short_A:S03": [
+          0.0,
+          3.36
+        ],
+        "Option_A1_7B": [
+          0.0,
+          3.7
+        ]
+      },
+      "motion_and_crop_notes": "Smooth continuous hand-lens inspection over the pale lower limestone crowded with tiny sand-sized fossil foraminifera shells below the dark clay band across t=0.000..3.750s. Static centre crop x=437..842 -> 936x1664 (2.311111x) keeps the brass magnifying glass and magnified shells centered above the caption safe line.",
+      "strip_4fps": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/strips_4fps/03_P2_03_tiny_shells_4fps.jpg",
+        "sha256": "8523025ffaa8efad04850799d59d05ba1341d41a7ea7c02bb1a7ec69b0c43e06",
+        "bytes": 487722
+      },
+      "proxy_640x360": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/proxies_640x360/03_P2_03_tiny_shells_640x360.mp4",
+        "sha256": "d999f25862458dc7499a218a2d63f343e380bae80c23388b1d72192a8ee3d3c0",
+        "bytes": 420344
+      },
+      "crop_sheet_936x1664": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/crop_tests_936x1664/03_P2_03_tiny_shells_x437_t0.00-3.36_sheet.jpg",
+        "sha256": "808b904b1a56e311c921e8d0a79e413cbc669f8378816aab28339aac52c4c9e7",
+        "bytes": 349264
+      }
+    },
+    {
+      "order": 4,
+      "row_id": "P2:05_almost_none",
+      "producer": "codex",
+      "independent_reviewers": [
+        "gemini",
+        "codex",
+        "claude",
+        "grok"
+      ],
+      "verdict": "FIX",
+      "keep": false,
+      "working_mp4": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/part02/raw/v01_twelve_plates/P02_05_almost_none_t1.mp4",
+      "archive_mp4": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/P02_05_almost_none_t1.mp4",
+      "mp4_sha256": "6b1b1fcf5ffe3aa132d87b54a67cf7e140858b869300ac78d599f1bd163d8a25",
+      "mp4_bytes": 1485026,
+      "start_still_png": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/part02/refs/v01_twelve_plates_stills/P02_05_almost_none_t1.png",
+      "archive_still_png": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/P02_05_almost_none_t1.png",
+      "still_sha256": "8c30c6fda0b935870441979d3860cf8ab21d095f4d3d541606cbb37ab7103f05",
+      "technical": {
+        "width": 1280,
+        "height": 720,
+        "fps": 24,
+        "duration_s": 7.916667,
+        "audio_streams": 0,
+        "decode_errors": 0,
+        "baked_text": false,
+        "orbit_robot": false
+      },
+      "short_uses": [
+        "Short_A:S04 (9.549-13.269s, 3.720s; or 9.989-13.129s, 3.140s under Option A1-7B)"
+      ],
+      "approved_crop_936x1664": null,
+      "source_window_s": null,
+      "motion_and_crop_notes": "FIX (late upper-rock timing, replacement R1 required): Moving video and 4fps strip confirm the hand lens stays centered over the dark clay band from t=0.00s to t=2.50s, lifts onto the nearly empty pale upper limestone only between t=2.75s and t=4.50s (~1.75s clean upper-rock duration vs 3.720s / 3.140s needed), and descends back onto the clay band by t=4.75-5.00s. Needs 1 retake (R1, 100 Flow credits) where the hand lens starts on or moves onto the pale upper limestone above the clay line within <=0.40s and remains on the nearly empty upper rock through >=4.50s.",
+      "strip_4fps": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/strips_4fps/04_P2_05_almost_none_4fps.jpg",
+        "sha256": "2d7a2ed4aff351916b688bdac8d5bff530f9041d3b9bd07e4a10059393a0077c",
+        "bytes": 433264
+      },
+      "proxy_640x360": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/proxies_640x360/04_P2_05_almost_none_640x360.mp4",
+        "sha256": "85f74cb74782f80602204c7243cee6c5c5ffd8618892527beb8c1ee788fc81b5",
+        "bytes": 248105
+      },
+      "crop_sheet_936x1664": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/crop_tests_936x1664/04_P2_05_almost_none_x437_t1.80-4.94_sheet.jpg",
+        "sha256": "6faae220a96051e025a0fc9aa5ba76cb00c086e304010890e62923896e86fc6f",
+        "bytes": 252349
+      }
+    },
+    {
+      "order": 5,
+      "row_id": "P3:08_asaro_michel",
+      "producer": "codex",
+      "independent_reviewers": [
+        "gemini"
+      ],
+      "verdict": "KEEP",
+      "keep": true,
+      "working_mp4": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/part03/raw/v01_twelve_plates/P03_08_asaro_michel_t1.mp4",
+      "archive_mp4": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/P03_08_asaro_michel_t1.mp4",
+      "mp4_sha256": "2c512d8bc8bf29b4bfbac37aa9eae1bdebdd4bb14fbfe64256cc2ac1ab0d5d18",
+      "mp4_bytes": 2277403,
+      "start_still_png": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/part03/refs/v01_twelve_plates_stills/P03_08_asaro_michel_t1.png",
+      "archive_still_png": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/P03_08_asaro_michel_t1.png",
+      "still_sha256": "fd6c9582ac17a29ec5e0f929f7caeb624a31b570a619928d4d99a13b2713f7ef",
+      "technical": {
+        "width": 1280,
+        "height": 720,
+        "fps": 24,
+        "duration_s": 7.916667,
+        "audio_streams": 0,
+        "decode_errors": 0,
+        "baked_text": false,
+        "orbit_robot": false
+      },
+      "short_uses": [
+        "Short_A:S05 (13.269-16.389s, 3.120s)"
+      ],
+      "approved_crop_936x1664": "crop=405:720:180:0,scale=936:1664:flags=lanczos",
+      "source_window_s": {
+        "Short_A:S05_asaro_left": [
+          0.0,
+          3.12
+        ],
+        "alternate_michel_right_x690": [
+          3.12,
+          6.84
+        ]
+      },
+      "motion_and_crop_notes": "Crop-rescued at \u00a30 per Chief Grok ruling 6853110063. Left-shifted portrait crop x=180..585 -> 936x1664 (2.311111x) across t=0.000..3.120s cleanly frames Berkeley nuclear chemist Frank Asaro pressing powdered clay sample pills at the lab press with turning tape reels behind him and zero edge clipping. Right-shifted crop x=690..1095 across t=3.120..6.840s cleanly frames Helen Michel loading sample pills beside the detector rack.",
+      "strip_4fps": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/strips_4fps/05_P3_08_asaro_michel_4fps.jpg",
+        "sha256": "91621deb3a53e8a0410189c7476450c4ea0923c33ea43172a6a1c77f63d00b7e",
+        "bytes": 593367
+      },
+      "proxy_640x360": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/proxies_640x360/05_P3_08_asaro_michel_640x360.mp4",
+        "sha256": "aacb5fd22c7f788c4ec09414c4ff9bb9cf02ae8952e741b9a48b44bc6ed91ff7",
+        "bytes": 406902
+      },
+      "crop_sheet_936x1664": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/crop_tests_936x1664/05a_P3_08_asaro_left_x180_t0.00-3.12_sheet.jpg",
+        "sha256": "951a5d20d57690b43846f356d6f2de5a07bf934e02d2fef2e1ad48a23e526e47",
+        "bytes": 322013
+      }
+    },
+    {
+      "order": 6,
+      "row_id": "P4:06_dust_veil",
+      "producer": "gemini",
+      "independent_reviewers": [
+        "codex",
+        "claude",
+        "grok"
+      ],
+      "verdict": "FIX",
+      "keep": false,
+      "working_mp4": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/part04/raw/v01_twelve_plates/P04_06_dust_veil_t1.mp4",
+      "archive_mp4": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/P04_06_dust_veil_t1.mp4",
+      "mp4_sha256": "3b11fb5881213c31860c1ac2fccf0a7192749b25238969d7b30c44c8ca32b011",
+      "mp4_bytes": 4930065,
+      "start_still_png": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/part04/refs/v01_twelve_plates_stills/P04_06_dust_veil_t1.png",
+      "archive_still_png": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/P04_06_dust_veil_t1.png",
+      "still_sha256": "8227b8fc5945b606d884ac0cca7080ef6fbd1808548b0d4a7d9d94b8379e3df3",
+      "technical": {
+        "width": 1280,
+        "height": 720,
+        "fps": 24,
+        "duration_s": 7.916667,
+        "audio_streams": 0,
+        "decode_errors": 0,
+        "baked_text": false,
+        "orbit_robot": false
+      },
+      "short_uses": [
+        "Short_A:S07 (19.289-22.289s, 3.000s)",
+        "Short_C:S02 (1.880-5.200s, 3.320s)"
+      ],
+      "approved_crop_936x1664": null,
+      "source_window_s": null,
+      "motion_and_crop_notes": "FIX for Short_A:S07 and Short_C:S02 (spoken-line mismatch; retained as Long Part 04 forest dust-veil candidate): Moving video shows a quiet Cretaceous fern/conifer forest as a dark grey dust cloud spreads across the sky (t=0.00..7.917s) with no asteroid, impact flash, or strike, whereas Short_A:S07 says 'Something huge had hit the Earth' and Short_C:S02 says 'When the asteroid struck sixty-six million years ago,'. Needs 1 shared asteroid-strike replacement plate (R2, 100 Flow credits) serving both Short_A:S07 and Short_C:S02.",
+      "strip_4fps": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/strips_4fps/06_P4_06_dust_veil_4fps.jpg",
+        "sha256": "303e7af2b336b58d89a44e0f19a06c08fac171d37b6751ba52d075eec8a34c6f",
+        "bytes": 430742
+      },
+      "proxy_640x360": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/proxies_640x360/06_P4_06_dust_veil_640x360.mp4",
+        "sha256": "5bccdfcd1fb880897dbd3a693c023255474d29881db51572e40e48046fde43f5",
+        "bytes": 635345
+      },
+      "crop_sheet_936x1664": null
+    },
+    {
+      "order": 7,
+      "row_id": "P5:08_all_at_once",
+      "producer": "gemini",
+      "independent_reviewers": [
+        "codex",
+        "claude",
+        "grok"
+      ],
+      "verdict": "FIX",
+      "keep": false,
+      "working_mp4": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/part05/raw/v01_twelve_plates/P05_08_all_at_once_t1.mp4",
+      "archive_mp4": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/P05_08_all_at_once_t1.mp4",
+      "mp4_sha256": "a41a019590435fb4ea3b6a7b1d8f4e05b10d51428be97cb2e150d2cf39d8f9dc",
+      "mp4_bytes": 1647520,
+      "start_still_png": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/part05/refs/v01_twelve_plates_stills/P05_08_all_at_once_t1.png",
+      "archive_still_png": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/P05_08_all_at_once_t1.png",
+      "still_sha256": "90c4a50f63fb7d7bdf8e7f84f4083e7961b830a926e0e4ff08ebd204d8a0fb64",
+      "technical": {
+        "width": 1280,
+        "height": 720,
+        "fps": 24,
+        "duration_s": 7.916667,
+        "audio_streams": 0,
+        "decode_errors": 0,
+        "baked_text": false,
+        "orbit_robot": false
+      },
+      "short_uses": [
+        "Short_C:S04 (7.920-10.420s, 2.500s)"
+      ],
+      "approved_crop_936x1664": null,
+      "source_window_s": null,
+      "motion_and_crop_notes": "FIX for Short_C:S04 (spoken-line mismatch; retained as Long Part 05 cliff-strata candidate): Moving video shows a slow camera pan across sunlit canyon rock layers and the dark clay band (t=0.00..7.917s) with no living birds, whereas Short_C:S04 says 'Their descendants are all around you now:'. Needs 1 replacement plate (R3, 100 Flow credits) showing living birds in a sunlit garden/town scene around the viewer.",
+      "strip_4fps": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/strips_4fps/07_P5_08_all_at_once_4fps.jpg",
+        "sha256": "7667f9ca742dd7b3c30a2e4b63602df1cca69e5a8b4c098ae224da2b3e6a3cb1",
+        "bytes": 462047
+      },
+      "proxy_640x360": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/proxies_640x360/07_P5_08_all_at_once_640x360.mp4",
+        "sha256": "739c2f9080a12c57b034c4b3dfb3cb3ca74384a4a2700ed77d8b637363b29184",
+        "bytes": 251288
+      },
+      "crop_sheet_936x1664": null
+    },
+    {
+      "order": 8,
+      "row_id": "P5:09_robin",
+      "producer": "gemini",
+      "independent_reviewers": [
+        "codex",
+        "claude",
+        "grok"
+      ],
+      "verdict": "CROP_RESCUED_AWAITING_NON_PRODUCER_KEEP",
+      "keep": false,
+      "working_mp4": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/part05/raw/v01_twelve_plates/P05_09_robin_t1.mp4",
+      "archive_mp4": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/P05_09_robin_t1.mp4",
+      "mp4_sha256": "11c34c1ef5b74f21bfae4c9c2df69f096912051b8fe260b9ec56a0f73747988a",
+      "mp4_bytes": 1770313,
+      "start_still_png": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/part05/refs/v01_twelve_plates_stills/P05_09_robin_t1.png",
+      "archive_still_png": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/P05_09_robin_t1.png",
+      "still_sha256": "fa1e928220f4e4ba948d99581abbb4e65ba805d79af4eeb8c4b29b7e53537874",
+      "technical": {
+        "width": 1280,
+        "height": 720,
+        "fps": 24,
+        "duration_s": 7.916667,
+        "audio_streams": 0,
+        "decode_errors": 0,
+        "baked_text": false,
+        "orbit_robot": false
+      },
+      "short_uses": [
+        "Short_C:S01 (0.000-1.880s, 1.880s)",
+        "Short_C:loop_tail (22.560-23.560s, 1.000s)"
+      ],
+      "approved_crop_936x1664": "crop=405:720:425:0,scale=936:1664:flags=lanczos",
+      "source_window_s": {
+        "Short_C:S01": [
+          2.15,
+          4.03
+        ],
+        "Short_C:loop_tail": [
+          4.03,
+          5.03
+        ],
+        "alternate_preroll": {
+          "Short_C:S01": [
+            3.15,
+            5.03
+          ],
+          "Short_C:loop_tail": [
+            2.15,
+            3.15
+          ]
+        }
+      },
+      "motion_and_crop_notes": "Detached-skeleton opening (t=0.00..1.75s) retired per Chief Grok ruling 6853110063. From t=2.150s to t=5.030s (2.880s total = 1.880s S01 + 1.000s loop_tail), the skeleton overlay is 100% gone: the European robin hops on the mossy garden fence post (t=2.15-2.97s), perches brightly in warm morning light, and turns its head alertly. Static crop x=425..830 -> 936x1664 (2.311111x) keeps the robin centered above the caption safe line across all 2.880s. Because gemini produced Batch 2, keep=false is preserved under no-self-KEEP until non-producer (claude/grok) signs off on 08b_P5_09_robin_clean_x425_t2.15-5.03_sheet.jpg.",
+      "strip_4fps": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/strips_4fps/08_P5_09_robin_4fps.jpg",
+        "sha256": "02fdbabca7459a0fff5ebb838616847e47598462006d0e79bb388b666882baa8",
+        "bytes": 570953
+      },
+      "proxy_640x360": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/proxies_640x360/08_P5_09_robin_640x360.mp4",
+        "sha256": "c56f4e56410ae6a35baabdc99db524bcb203960a473428d96a930bb3f207cf12",
+        "bytes": 309678
+      },
+      "crop_sheet_936x1664": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/crop_tests_936x1664/08b_P5_09_robin_clean_x425_t2.15-5.03_sheet.jpg",
+        "sha256": "034931b253a3142d5a0bdcc0935873621478473b8673d763414891c8f5edb7d5",
+        "bytes": 317071
+      }
+    },
+    {
+      "order": 9,
+      "row_id": "P5:10_explorer_robin",
+      "producer": "gemini",
+      "independent_reviewers": [
+        "codex",
+        "claude",
+        "grok"
+      ],
+      "verdict": "CROP_RESCUED_AWAITING_NON_PRODUCER_KEEP",
+      "keep": false,
+      "working_mp4": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/part05/raw/v01_twelve_plates/P05_10_explorer_robin_t1.mp4",
+      "archive_mp4": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/P05_10_explorer_robin_t1.mp4",
+      "mp4_sha256": "33ef221b08965c620d7d76f70715c0b2201a0c5d84c023c04a62c0b4b1b1c978",
+      "mp4_bytes": 2101763,
+      "start_still_png": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/part05/refs/v01_twelve_plates_stills/P05_10_explorer_robin_t1.png",
+      "archive_still_png": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/P05_10_explorer_robin_t1.png",
+      "still_sha256": "7adfe5071e9b4290276f21f29ce5baf709ab3763a663a948670173e01d3205c7",
+      "technical": {
+        "width": 1280,
+        "height": 720,
+        "fps": 24,
+        "duration_s": 7.916667,
+        "audio_streams": 0,
+        "decode_errors": 0,
+        "baked_text": false,
+        "orbit_robot": false
+      },
+      "short_uses": [
+        "Short_C:S07 (15.780-19.380s, 3.600s)"
+      ],
+      "approved_crop_936x1664": "crop=405:720:x='390+65*(t-0.00)/3.60':y=0,scale=936:1664:flags=lanczos",
+      "source_window_s": {
+        "Short_C:S07_tracked_3.60s": [
+          0.0,
+          3.6
+        ],
+        "alternate_static_x395": [
+          0.15,
+          3.75
+        ]
+      },
+      "motion_and_crop_notes": "Crop-rescued at \u00a30 per Chief Grok ruling 6853110063. Explorer matches 01_Character/05_Generation-References/hos-explorer-reference-v01.jpg (round gold glasses, teal coat, brown waistcoat, satchel, messy brown hair). Smooth natural motion as the Explorer crouches offering crumbs on a sunlit garden path while the robin hops toward his hand (t=0.00..3.25s) and lifts into flight (t=3.30..3.75s) as the Explorer looks up smiling. Tracked portrait crop x=390->455 across t=0.000..3.600s (09d_P5_10_explorer_robin_track_x390-455_t0.00-3.60_sheet.jpg) keeps both the robin and the Explorer inside the 936x1664 frame. Because gemini produced Batch 2, keep=false is preserved under no-self-KEEP until non-producer (claude/grok) signs off.",
+      "strip_4fps": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/strips_4fps/09_P5_10_explorer_robin_4fps.jpg",
+        "sha256": "d55105932f7114b31c14893328c8312f3dd7b0c625952e749df76ff953d1d7d5",
+        "bytes": 623917
+      },
+      "proxy_640x360": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/proxies_640x360/09_P5_10_explorer_robin_640x360.mp4",
+        "sha256": "3bd8ea644d8eec1479ebefffdf62c2e1aa944f2066dd8faa4eaffa7dd1c20558",
+        "bytes": 375458
+      },
+      "crop_sheet_936x1664": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/crop_tests_936x1664/09d_P5_10_explorer_robin_track_x390-455_t0.00-3.60_sheet.jpg",
+        "sha256": "1518500c97232f3b41453686384d1379e97e7f09326daade8c19d3fbcf06c865",
+        "bytes": 319827
+      }
+    },
+    {
+      "order": 10,
+      "row_id": "P5:12_clay_callback",
+      "producer": "gemini",
+      "independent_reviewers": [
+        "codex",
+        "claude",
+        "grok"
+      ],
+      "verdict": "FIX",
+      "keep": false,
+      "working_mp4": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/part05/raw/v01_twelve_plates/P05_12_clay_callback_t1.mp4",
+      "archive_mp4": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/P05_12_clay_callback_t1.mp4",
+      "mp4_sha256": "569a147879e23dc0b420317933b796acb2c8299020c59c0cde760cf89e5a94e2",
+      "mp4_bytes": 4666615,
+      "start_still_png": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/part05/refs/v01_twelve_plates_stills/P05_12_clay_callback_t1.png",
+      "archive_still_png": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/P05_12_clay_callback_t1.png",
+      "still_sha256": "38b26f0604b37a5546cf6c048b7804c4971144c45eaf0aec63b9c769893b329a",
+      "technical": {
+        "width": 1280,
+        "height": 720,
+        "fps": 24,
+        "duration_s": 7.916667,
+        "audio_streams": 0,
+        "decode_errors": 0,
+        "baked_text": false,
+        "orbit_robot": false
+      },
+      "short_uses": [
+        "Short_C:S08 (19.380-22.560s, 3.180s)"
+      ],
+      "approved_crop_936x1664": "crop=405:720:275:0,scale=936:1664:flags=lanczos (valid for Long Part 05 callback / geological callback only; FIX for Short_C:S08)",
+      "source_window_s": {
+        "long_or_geological_callback_only": [
+          3.0,
+          5.789
+        ]
+      },
+      "motion_and_crop_notes": "FIX for Short_C:S08 (spoken-line mismatch; retained as Long Part 05 Gubbio callback candidate): Moving video shows Walter and Luis Alvarez crouching at the Gubbio outcrop inspecting the dark clay band with a hand lens (distinct scene and hash from P1:01_clay_line), whereas Short_C:S08 says 'Look up. They never really left'. Needs 1 replacement plate (R4, 100 Flow credits) showing living birds wheeling overhead in a bright morning sky as the camera tilts up. Separately crop-rescued at x=275, t=3.00..5.79s (06c_P5_12_clay_callback_x275_t3.00-5.79_sheet.jpg) for geological callback use.",
+      "strip_4fps": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/strips_4fps/10_P5_12_clay_callback_4fps.jpg",
+        "sha256": "060c43eac71886dcb8bc13100e781c8fa530b885936a12ccc2b0cff766255c0a",
+        "bytes": 618065
+      },
+      "proxy_640x360": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/proxies_640x360/10_P5_12_clay_callback_640x360.mp4",
+        "sha256": "aa90ff2b70a68a224979f40b02f016a1171495008425834dc474b9a34f70e5ab",
+        "bytes": 625981
+      },
+      "crop_sheet_936x1664": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/crop_tests_936x1664/06c_P5_12_clay_callback_x275_t3.00-5.79_sheet.jpg",
+        "sha256": "6e07d88776d45362fc0504e9bd922f8aed3b3d6db11bc49cee493d9d377953ec",
+        "bytes": 390140
+      }
+    },
+    {
+      "order": 11,
+      "row_id": "P5:09a_pigeon_pavement",
+      "producer": "gemini",
+      "independent_reviewers": [
+        "codex",
+        "claude",
+        "grok"
+      ],
+      "verdict": "CROP_RESCUED_AWAITING_NON_PRODUCER_KEEP",
+      "keep": false,
+      "working_mp4": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/part05/raw/v01_twelve_plates/P05_09a_pigeon_pavement_t1.mp4",
+      "archive_mp4": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/P05_09a_pigeon_pavement_t1.mp4",
+      "mp4_sha256": "0a9797df0ac726b20aab4c358e498f7fdf62aa96f85f0a7238193c2db5e3b59a",
+      "mp4_bytes": 3022879,
+      "start_still_png": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/part05/refs/v01_twelve_plates_stills/P05_09a_pigeon_pavement_t1.png",
+      "archive_still_png": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/P05_09a_pigeon_pavement_t1.png",
+      "still_sha256": "de15c2643d174eb2623526d8c10e10c68f474837c919f103b18a0e2bf210a264",
+      "technical": {
+        "width": 1280,
+        "height": 720,
+        "fps": 24,
+        "duration_s": 7.916667,
+        "audio_streams": 0,
+        "decode_errors": 0,
+        "baked_text": false,
+        "orbit_robot": false
+      },
+      "short_uses": [
+        "Short_C:S05 (10.420-13.060s, 2.640s)"
+      ],
+      "approved_crop_936x1664": "crop=405:720:x='360+170*(t-1.10)/2.64':y=0,scale=936:1664:flags=lanczos",
+      "source_window_s": {
+        "Short_C:S05": [
+          1.1,
+          3.74
+        ]
+      },
+      "motion_and_crop_notes": "Crop-rescued at \u00a30 per Chief Grok ruling 6853110063. Linear tracked portrait crop x=360->530 across t=1.100..3.740s (exact 2.640s Short_C:S05 duration) keeps the strutting pigeon centered in the foreground from 0.00s of the cut ('the pigeon on the pavement') and brings the European robin perched on the wooden garden fence cleanly into the upper-right frame by 0.75s of the cut ('the robin'), with both birds unclipped and above the caption safe line through 2.640s (11c_P5_09a_pigeon_track_x360-530_t1.10-3.74_sheet.jpg). Because gemini produced Batch 3, keep=false is preserved under no-self-KEEP until non-producer (claude/grok) signs off.",
+      "strip_4fps": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/strips_4fps/11_P5_09a_pigeon_pavement_4fps.jpg",
+        "sha256": "269b982af45b9489bd5dea0ec142b0fc5481b2ffc446617f2e5528f4c5e2db3b",
+        "bytes": 645703
+      },
+      "proxy_640x360": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/proxies_640x360/11_P5_09a_pigeon_pavement_640x360.mp4",
+        "sha256": "f1b9ef7d1f689dadd3a5ed4be7011d340d610439fa0727bf2775c46502c754d6",
+        "bytes": 513978
+      },
+      "crop_sheet_936x1664": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/crop_tests_936x1664/11c_P5_09a_pigeon_track_x360-530_t1.10-3.74_sheet.jpg",
+        "sha256": "9bcc976d993d608bc1fed5c42a63e5f30ed2d496df14b18808eec2807e712416",
+        "bytes": 295596
+      }
+    },
+    {
+      "order": 12,
+      "row_id": "P5:13a_gull_seaside",
+      "producer": "gemini",
+      "independent_reviewers": [
+        "codex",
+        "claude",
+        "grok"
+      ],
+      "verdict": "CROP_RESCUED_AWAITING_NON_PRODUCER_KEEP",
+      "keep": false,
+      "working_mp4": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/part05/raw/v01_twelve_plates/P05_13a_gull_seaside_t1.mp4",
+      "archive_mp4": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/P05_13a_gull_seaside_t1.mp4",
+      "mp4_sha256": "893b17b8d5f3f0b9b5e245688d17145dfa3933f09e027f124acd8593de74b74a",
+      "mp4_bytes": 2865676,
+      "start_still_png": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/part05/refs/v01_twelve_plates_stills/P05_13a_gull_seaside_t1.png",
+      "archive_still_png": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/P05_13a_gull_seaside_t1.png",
+      "still_sha256": "6ada8318e8b3e89e93125c3da5df5493bd3b8c7fa2d8ec8ab65efa2bb95fc37e",
+      "technical": {
+        "width": 1280,
+        "height": 720,
+        "fps": 24,
+        "duration_s": 7.916667,
+        "audio_streams": 0,
+        "decode_errors": 0,
+        "baked_text": false,
+        "orbit_robot": false
+      },
+      "short_uses": [
+        "Short_C:S06 (13.060-15.780s, 2.720s)"
+      ],
+      "approved_crop_936x1664": "crop=405:720:605:0,scale=936:1664:flags=lanczos",
+      "source_window_s": {
+        "Short_C:S06": [
+          4.3,
+          7.02
+        ]
+      },
+      "motion_and_crop_notes": "Crop-rescued at \u00a30 per Chief Grok ruling 6853110063. Right-shifted static portrait crop x=605..1010 -> 936x1664 (2.311111x) across t=4.300..7.020s (exact 2.720s Short_C:S06 duration) keeps the white-and-grey gull soaring over sunlit white chalk cliffs and moving sea waves fully inside the portrait frame above the caption safe line across both wing extremes (12c_P5_13a_gull_x605_t4.30-7.02_sheet.jpg). Because gemini produced Batch 3, keep=false is preserved under no-self-KEEP until non-producer (claude/grok) signs off.",
+      "strip_4fps": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/strips_4fps/12_P5_13a_gull_seaside_4fps.jpg",
+        "sha256": "e616bf206d171d98a1b0296d78409e28961fcad3ec3ade9b20740e233a99f5b6",
+        "bytes": 478029
+      },
+      "proxy_640x360": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/proxies_640x360/12_P5_13a_gull_seaside_640x360.mp4",
+        "sha256": "95305564456a075f1245dd8a8e3bcd13c2a3d0ccf8c1eb7d47d0e71c3b45478b",
+        "bytes": 517587
+      },
+      "crop_sheet_936x1664": {
+        "path": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/04_Generated-Clips/archive_v01_twelve_plates/review_J2271_motion_and_crop_936x1664/crop_tests_936x1664/12c_P5_13a_gull_x605_t4.30-7.02_sheet.jpg",
+        "sha256": "7fc3455c8a70cbf811d079a908d96537f50685c468a044844400bf0b801b1a14",
+        "bytes": 202936
+      }
+    }
+  ],
+  "scoped_repairs_for_chief_authorization": [
+    {
+      "repair_id": "R1",
+      "replaces_row_id": "P2:05_almost_none",
+      "short_targets": [
+        "Short_A:S04 (9.549-13.269s, 3.720s; or 9.989-13.129s, 3.140s under Option A1-7B)"
+      ],
+      "spoken_line": "shells. Above it, almost all of them are gone.",
+      "defect": "Existing take keeps the magnifying glass on the dark clay band from 0.00s to 2.50s and only shows the nearly empty upper limestone from 2.75s to 4.50s (~1.75s window) before dropping back onto the clay band.",
+      "proposed_prompt": "Premium Animistry-class 3D cartoon. Frame 0: a brass hand lens is already positioned over the pale limestone layer directly above the thin dark Gubbio clay band on a sunlit wooden study table. Through the lens, the pale upper limestone is almost completely bare and empty, with only one or two tiny pinpoint specks, contrasting with the dark clay line visible along the lower edge of the rock block. The hand glides the magnifying glass slowly across the nearly empty upper limestone layer for the entire shot. Keep the lens and upper limestone centered in the middle third of the 16:9 frame. No readable words or numbers anywhere. Silent. Continuous motion through the final frame. No Explorer. No Orbit.",
+      "model": "Veo 3.1 Quality",
+      "aspect": "16:9",
+      "clip_s": 8,
+      "credits": 100
+    },
+    {
+      "repair_id": "R2",
+      "replaces_row_id": "P4:06_dust_veil (for Short_A:S07 and Short_C:S02; P4:06_dust_veil retained for Long Part 04)",
+      "short_targets": [
+        "Short_A:S07 (19.289-22.289s, 3.000s)",
+        "Short_C:S02 (1.880-5.200s, 3.320s)"
+      ],
+      "spoken_line": "Short_A:S07: 'Something huge had hit the Earth' | Short_C:S02: 'When the asteroid struck sixty-six million years ago,'",
+      "defect": "Existing P4:06_dust_veil shows a quiet forest under darkening clouds with no asteroid or impact strike.",
+      "proposed_prompt": "Premium Animistry-class 3D cartoon. Frame 0: a massive glowing asteroid streaks down through the clouds above a prehistoric Cretaceous coastline and strikes the horizon in a blinding golden-white flash, sending a towering incandescent plume of rock and dust surging upward into the sky. Keep the descending asteroid and rising impact plume centered in the middle third of the 16:9 frame. No readable words or numbers anywhere. Silent. Continuous motion through the final frame. No Explorer. No Orbit.",
+      "model": "Veo 3.1 Quality",
+      "aspect": "16:9",
+      "clip_s": 8,
+      "credits": 100
+    },
+    {
+      "repair_id": "R3",
+      "replaces_row_id": "P5:08_all_at_once (for Short_C:S04; P5:08_all_at_once retained for Long Part 05)",
+      "short_targets": [
+        "Short_C:S04 (7.920-10.420s, 2.500s)"
+      ],
+      "spoken_line": "Their descendants are all around you now:",
+      "defect": "Existing P5:08_all_at_once shows sunlit canyon rock strata with no living birds.",
+      "proposed_prompt": "Premium Animistry-class 3D cartoon. Frame 0: a sunlit British morning garden and stone lane alive with everyday birds in the middle third of the frame\u2014sparrows and finches hopping on a mossy stone wall while a blackbird and starlings flutter between leafy branches in warm golden daylight. Gentle camera push-in keeping the birds centered in the middle 9:16 band. No readable words or numbers anywhere. Silent. Continuous natural bird and camera motion through the final frame. No Explorer. No Orbit.",
+      "model": "Veo 3.1 Quality",
+      "aspect": "16:9",
+      "clip_s": 8,
+      "credits": 100
+    },
+    {
+      "repair_id": "R4",
+      "replaces_row_id": "P5:12_clay_callback (for Short_C:S08; P5:12_clay_callback retained for Long Part 05 callback)",
+      "short_targets": [
+        "Short_C:S08 (19.380-22.560s, 3.180s)"
+      ],
+      "spoken_line": "Look up. They never really left",
+      "defect": "Existing P5:12_clay_callback shows Walter and Luis Alvarez crouching at the Gubbio rock face, not birds overhead.",
+      "proposed_prompt": "Premium Animistry-class 3D cartoon. Frame 0: looking up past sunlit green garden treetops into a luminous morning sky as a graceful flock of birds\u2014swifts, robins, and gulls\u2014wheels and soars overhead across warm golden sunbeams in the middle third of the 16:9 frame. Smooth upward camera tilt tracking the soaring birds through the sky. No readable words or numbers anywhere. Silent. Continuous natural flight and camera motion through the final frame. No Explorer. No Orbit.",
+      "model": "Veo 3.1 Quality",
+      "aspect": "16:9",
+      "clip_s": 8,
+      "credits": 100
+    }
+  ]
+}
