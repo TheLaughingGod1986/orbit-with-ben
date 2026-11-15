@@ -257051,9 +257051,14 @@
           "at": "2026-11-15T15:35Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Step 2 complete: wrote Titles, Descriptions, Chapters (0:00 to 8:35), Tags, Pinned-Comments, and 206-cue en-GB.srt captions (<=42 chars/line, 0.100-611.324s)"
+        },
+        {
+          "at": "2026-11-15T15:38Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Rendered 033 vertical social trailer (48.75s, 608x1080, 24/1 CFR, SHA-256 08af084e76) to NAS and built 11_Upload-Package/PACKAGE_MANIFEST.json for Wed 09 Dec 2026 18:00 London slot."
         }
       ],
-      "remaining_action": "Render social trailer 033_why_this_planet_has_21_year_winters_trailer.mp4 to NAS Trailer/ and write PACKAGE_MANIFEST.json",
+      "remaining_action": "Update 033 checklists/status and run npm run gate:episode and npm run youtube:package -- --dry-run",
       "due": "2026-11-29T18:00:00Z",
       "kind": "listing",
       "plain": "Preparing the title, description, chapters, captions and upload package for the Uranus video",
@@ -257067,11 +257072,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-15T15:35Z",
+        "at": "2026-11-15T15:38Z",
         "by": "gemini",
-        "note": "Step 2 complete: wrote Titles, Descriptions, Chapters (0:00 to 8:35), Tags, Pinned-Comments, and 206-cue en-GB.srt capti"
+        "note": "Rendered 033 vertical social trailer (48.75s, 608x1080, 24/1 CFR, SHA-256 08af084e76) to NAS and built 11_Upload-Package"
       },
       "taskKeys": [
         "OWB:033"
