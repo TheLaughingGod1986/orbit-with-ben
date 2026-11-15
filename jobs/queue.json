@@ -251539,9 +251539,14 @@
           "at": "2026-11-15T20:04Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-15T20:05Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2828; starting step 1 of 4 (OWB data ranking and duplicate check)"
         }
       ],
-      "remaining_action": "Complete OWB:068 & OWB:069 data-backed TOPIC.md packages with >=3 >=1M neighbour passes on the Mini, append to WIP.json next, and queue Rule-E review",
+      "remaining_action": "Ranking OWB analytics data and auditing existing topics/PRs to avoid duplicates",
       "kind": "script",
       "backlog": "owb-ideas",
       "escalated_at": "2026-11-14T16:23Z",
@@ -251557,12 +251562,15 @@
       "mini_only": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-15T20:04Z",
+        "of": 4,
+        "at": "2026-11-15T20:05Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2828; starting step 1 of 4 (OWB data ranking and duplicate check)"
+      },
+      "taskKeys": [
+        "OWB:068",
+        "OWB:069"
+      ]
     },
     {
       "id": "J2829",
