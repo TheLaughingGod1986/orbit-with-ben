@@ -1,19 +1,19 @@
 {
-  "status": "draft_for_chief_review",
+  "status": "ready_for_upload",
   "series": "Real Worlds",
   "source_script": "01_Script/uranus_21_year_winter_script_master_v02.md",
-  "description_file": "description_DRAFT_v01.txt",
+  "description_file": "Descriptions/uranus_21_year_winters_long_description_v01.txt",
   "title_options": [
     "Why Knocked-Sideways Uranus Has 21-Year Winters",
-    "Why Uranus Rolls Sideways With 21-Year Winters",
     "What Voyager 2 Saw in Just 6 Hours at Uranus",
-    "The Only Spacecraft Photos Ever Taken at Uranus"
+    "The Only Spacecraft Photos Ever Taken at Uranus",
+    "Why Uranus Rolls Sideways With 21-Year Winters"
   ],
   "title_notes": {
     "Why Knocked-Sideways Uranus Has 21-Year Winters": "rule 15 scenario/stakes title (47 chars <= 50): names subject (Uranus), sideways tilt cause, and 21-year winter stakes",
-    "Why Uranus Rolls Sideways With 21-Year Winters": "rule 15 scenario/stakes alternate (46 chars <= 50)",
     "What Voyager 2 Saw in Just 6 Hours at Uranus": "LEARNINGS rule 18 real-imagery variant (44 chars <= 50): sells real January 1986 Voyager 2 encounter imagery + sourced 6-hour flyby window (SOURCES.md row 8)",
-    "The Only Spacecraft Photos Ever Taken at Uranus": "LEARNINGS rule 18 real-imagery variant (47 chars <= 50): 'Only' backed verbatim by SOURCES.md row 8 (science.nasa.gov/uranus/exploration/: 'Only one spacecraft has visited distant Uranus' / 'made the first – and so far the only – visit to Uranus')"
+    "The Only Spacecraft Photos Ever Taken at Uranus": "LEARNINGS rule 18 real-imagery variant (47 chars <= 50): 'Only' backed verbatim by SOURCES.md row 8 (science.nasa.gov/uranus/exploration/: 'Only one spacecraft has visited distant Uranus' / 'made the first – and so far the only – visit to Uranus')",
+    "Why Uranus Rolls Sideways With 21-Year Winters": "rule 15 scenario/stakes alternate (46 chars <= 50)"
   },
   "series_plan": {
     "rule": "LEARNINGS rule 20 (Ben, 4 Nov 2026)",
@@ -25,41 +25,43 @@
     "Uranus",
     "why is Uranus on its side",
     "Uranus 21 year winter",
+    "Why Knocked-Sideways Uranus Has 21-Year Winters",
     "Voyager 2 Uranus",
     "Uranus rings",
     "ice giant",
     "Miranda moon",
     "William Herschel",
     "Uranus magnetic field",
+    "Verona Rupes",
     "space documentary"
   ],
   "chapters": [
     {
-      "time": "?:??",
+      "time": "0:00",
       "name": "21-Year Winter at the Pole"
     },
     {
-      "time": "?:??",
+      "time": "0:58",
       "name": "The Star That Moved"
     },
     {
-      "time": "?:??",
+      "time": "2:35",
       "name": "The World Knocked Sideways"
     },
     {
-      "time": "?:??",
+      "time": "4:26",
       "name": "Six Hours at the Ice Giant"
     },
     {
-      "time": "?:??",
+      "time": "5:57",
       "name": "The Corkscrew Magnet"
     },
     {
-      "time": "?:??",
+      "time": "7:25",
       "name": "Why You Can't Land on Ice"
     },
     {
-      "time": "?:??",
+      "time": "8:35",
       "name": "The Ten-Minute Cliff on Miranda"
     }
   ],
@@ -71,35 +73,42 @@
       {
         "variant": "A",
         "rule": "LEARNINGS rule 19 — single clean real spacecraft frame, graded, 0-3 words, no composite",
+        "file": "08_Thumbnail/033_thumb_A_v01.jpg",
+        "sha256": "9c029267c0a80fbb13572c40cc7b42cf012f2582bfcc3d5c49bf7c8f7a325e6f",
         "text": "21-YEAR WINTER",
-        "yellow_word": "21-YEAR",
-        "picture": "Single striking real spacecraft exposure of sideways Uranus with its vertical rings and bright polar cap filling the frame, graded to high contrast and saturation (no composite, no added foreground objects).",
-        "source_image": "NASA/ESA/CSA James Webb Space Telescope NIRCam real frame PIA25770 (STScI-01GWQ3, 2023 showing Uranus tipped on its side with glowing vertical rings and bright polar cap) or NASA/JPL Voyager 2 real Uranus frame PIA18182 (24 Jan 1986)."
+        "yellow_word": "WINTER",
+        "picture": "Single striking real JWST NIRCam frame of sideways Uranus with its vertical rings and bright polar cap filling the frame, shadow-lifted in its own sky colour.",
+        "source_image": "NASA/ESA/CSA James Webb Space Telescope NIRCam real frame weic2332a_hires.jpg (PIA25770 / STScI-01GWQ3)."
       },
       {
         "variant": "B",
-        "rule": "LEARNINGS rule 12 — distinct picture concept showing scale/consequence",
-        "text": "10-MINUTE DROP",
-        "yellow_word": "10-MINUTE",
-        "picture": "One suited explorer stands at the rim of Miranda's towering ice fault cliff (Verona Rupes scale) looking down into the deep chasm while turquoise Uranus and its vertical rings hang in the sky above.",
-        "source_image": "Original illustrative scene referenced to real NASA/JPL Voyager 2 Miranda cliff mosaic PIA00141 (24 Jan 1986)."
+        "rule": "LEARNINGS rule 12 — distinct picture concept showing comparison",
+        "file": "08_Thumbnail/033_thumb_B_v01.jpg",
+        "sha256": "1185ea680e5284c6f893769a94e1280c28a36828803671a445effdc8ed629a8e",
+        "text": "COLDER THAN NEPTUNE",
+        "yellow_word": "COLDER",
+        "picture": "Side-by-side comparison of pale Voyager 2 Uranus disk on the left and glowing JWST NIRCam ringed Uranus on the right.",
+        "source_image": "NASA/JPL Voyager 2 PIA18182.jpg (24 Jan 1986) + NASA/ESA/CSA JWST NIRCam weic2310a_unannotated.png."
       },
       {
         "variant": "C",
         "rule": "LEARNINGS rule 14 — bright high-contrast background test",
-        "text": "KNOCKED SIDEWAYS",
-        "yellow_word": "SIDEWAYS",
-        "picture": "Turquoise Uranus tipped at 98 degrees with its vertical ring system set against a bright cyan-to-gold equinox glow, contrasting with the standard dark space template.",
-        "source_image": "Graded from NASA/ESA Hubble 2007 equinox / Keck ring-plane imagery of Uranus."
+        "file": "08_Thumbnail/033_thumb_C_v01.jpg",
+        "sha256": "48abb438ed7a8de3fa0a7d5b1474c725efbc48198c4260b35da5dce5607bc1b2",
+        "text": "97.77° SIDEWAYS",
+        "yellow_word": "97.77°",
+        "picture": "Uranus tipped at 97.77 degrees with its vertical ring system set against a bright cyan-teal field.",
+        "source_image": "Graded from NASA/ESA/CSA JWST NIRCam weic2310a_unannotated.png."
       }
     ]
   },
-  "pre_upload_holds": [
-    "Chief/package review remains required before upload; this is a draft metadata specification.",
-    "Check selected title against current public video titles before approval.",
-    "Replace all ?:?? times using locked narration; start at 0:00, ascending chapters at least 10 seconds apart.",
-    "Add exact image/agency credits after final media selection, after Sources and before the making-of line.",
-    "Add a truthful making-of line after final media selection; confirm altered-content disclosure."
+  "pre_upload_holds": [],
+  "pre_upload_holds_resolved": [
+    "Resolved in J2890/J2893/J2900/J2901: Long Master v04 (sha256 3712479ae8...) and thumbnails A/B/C (033_thumb_{A,B,C}_v01.jpg) reviewed and ruled KEEP.",
+    "Resolved in J2901: Checked primary title Why Knocked-Sideways Uranus Has 21-Year Winters (47 chars) and Rule-18 variants against all public OWB video titles; zero collisions.",
+    "Resolved in J2901: Replaced all ?:?? chapter timestamps using locked SHOT_LIST_v02.md / cuts_033_v04.json chapter boundaries (0:00, 0:58, 2:35, 4:26, 5:57, 7:25, 8:35).",
+    "Resolved in J2901: Added exact image/agency credits and CC licence links from cuts_033_v04.json and SHOT_LIST_v02.md after Sources and before the making-of line.",
+    "Resolved in J2901: Added truthful making-of line (Pictures: ... Facts: ...) and confirmed syntheticDisclosure: true in PACKAGE_MANIFEST.json."
   ],
   "line_check": {
     "method": "Every public-facing sentence, chapter and tag checked against locked uranus_21_year_winter_script_master_v02.md and verified SOURCES.md quote tables (J2148, 4 Nov 2026).",

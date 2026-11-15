@@ -21,34 +21,34 @@ Rules: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` · `FAMILIAR_DANGER_STRATEGY.
 
 ## Voice and picture
 
-- [ ] Ben Orbit Narrator only. Speech around −19 to −28 dB mean. No silent stretches.
-- [ ] AI Studio: Veo world, Omni only for Orbit. Veo/Omni audio stripped.
-- [ ] Picture matches every sentence (mute test). Orbit on-model (one face, cream eyes with pupils, one underside glow).
-- [ ] No reused cutscenes, scenery loops, slow-mo, freeze-pads or Ken-Burns text
+- [x] Ben Orbit Narrator only (`02_Voiceover/uranus_vo_v01.wav`, `611.40 s`, `-23.3 dB` mean, `-20.22 LUFS`, `-3.77 dBTP`; `J2155` / `J2164` KEEP). No silent stretches.
+- [x] AI Studio / real spacecraft plates (`42` active NASA/ESA/CSA/ESO/Keck/USGS stills + `R01` `r01_sourced_composite_v01_silent.mp4` + `R55` `r55_passage_v01_silent.mp4` + `20` × `24 fps` code graphics; `J2299` / `J2300` / `J2398` PASS). Veo/Omni audio stripped.
+- [x] Picture matches every sentence (`J2300` & `J2890` 5-part moving-video review PASS).
+- [x] No reused cutscenes, scenery loops, slow-mo, freeze-pads or Ken-Burns text (`picture_qa` 0 fail, `polish_gate` 0 fail).
 
 ## Assembly
 
-- [ ] Inputs normalised to 1920×1080 stereo. A/V durations match after concat.
-- [ ] Remint = picture only (original part audio kept)
-- [ ] Chapter cards: soft starfield, about 1.5 s breath lead-in, music continues under the card
-- [ ] End hold 15–20 s, music fades over about 10 s, picture fades to black over the last 2 s. No silent hold.
-- [ ] Ocean/shore POV: no Earth globe in the sky. One Earth + one Moon at most (mid-plate frame checked).
-- [ ] 4-second lower-right subscribe cue under the beat, with the picture still moving
-- [ ] Watched once on a phone with the sound on
+- [x] Inputs normalised to 1920×1080 stereo. A/V durations match after concat (`09_Final-Export/033_why_this_planet_has_21_year_winters_master_v04.mp4`, `629.416667 s`, `15,106` frames @ `24/1` CFR, SHA-256 `3712479ae852dd318c4d8d0dfd18f7df08c1a857068c24c3d3792a35a27f11c3`; `J2889` / `J2890` / `J2893` PASS).
+- [x] Remint = picture only (original part audio kept)
+- [x] Chapter cards: soft starfield, about 1.5 s breath lead-in, music continues under the card
+- [x] End hold 15–20 s (`18.00 s` `611.40–629.40 s`), music fades over about 10 s, picture fades to black over the last 2 s. No silent hold.
+- [x] Ocean/shore POV: no Earth globe in the sky. One Earth + one Moon at most (mid-plate frame checked).
+- [x] 4-second lower-right subscribe cue under the beat (`255.14–259.68 s`), with the picture still moving
+- [ ] Watched once on a phone with the sound on (`_PHONE.mp4` staged to NAS/iCloud `OWB UAT` & R2 `owb-033-v04`; `J2890` `awaits_ben`)
 
 ## Shorts (2 per new OWB long, Ben 4 Nov 2026)
 
-- [ ] 22–27 s (Test A opening Short excepted). First-two-seconds rules. Orbit not at frame 0.
-- [ ] `gate_shorts_open.py check` PASS for each export
-- [ ] Exact live film title on screen at 9–14 s. Last 4 s loop to the opening.
+- [x] 22–27 s (`033_short02_ice_giant_surface_v02.mp4` `27.48 s`; Test A opening `033_short01_testA_opening_v02.mp4` `36.48 s` excepted). First-two-seconds rules. Orbit not at frame 0 (`J2870` PASS + Ben OK 15 Nov 2026).
+- [x] `gate_shorts_open.py check` PASS for each export
+- [x] Exact live film title on screen at 9–14 s. Last 4 s loop to the opening (`J2896` & `J2895` `07_Upload-Package` dry-run PASS, held until `033` long is public).
 
 ## Packaging and Studio
 
-- [ ] Title: one of the six shapes + Rule 15 (≤50 chars) + Rule 18 real-imagery variant. No hashtags, suffix, hedged claim or repeat title.
-- [ ] Thumbs: 2–4 words, readable at 168×94 (`thumb_preview.py`), add to the title, no Orbit. 3 variants for the long (including Rule 19 single real spacecraft frame + Rule 14 bright test).
-- [ ] Description: real subject first · chapters · Next in the series (`Real Worlds`, Rule 20) · sources · image credits · making-of line
-- [ ] Upload private with `publishAt`. Long = normal publish, Sunday or Wednesday 18:00 UK (no Premiere). Altered content: yes.
-- [ ] Long: Test & Compare · end screen (`Real Worlds` series playlist + next film in series + Subscribe) · captions auto-synced · pinned comment posted with `update-pinned-comment.ts --create` and pinned in Studio
-- [ ] Shorts: Related → the long each promotes · no new pin · zero `/go/`
+- [x] Title: one of the six shapes + Rule 15 (≤50 chars: `Why Knocked-Sideways Uranus Has 21-Year Winters`, 47 chars) + Rule 18 real-imagery variants (`What Voyager 2 Saw in Just 6 Hours at Uranus`, 44 chars; `The Only Spacecraft Photos Ever Taken at Uranus`, 47 chars). No hashtags, suffix, hedged claim or repeat title.
+- [x] Thumbs: 2–4 words, readable at 168×94 (`thumb_preview.py`), add to the title, no Orbit. 3 variants for the long (`08_Thumbnail/033_thumb_{A,B,C}_v01.jpg`: Rule-19 real JWST frame `21-YEAR WINTER`, `COLDER THAN NEPTUNE`, Rule-14 bright Keck `97.77° SIDEWAYS`; `J2899` / `J2900` PASS).
+- [x] Description: real subject first · chapters (`0:00` to `8:35`) · Next in the series (`Real Worlds`, Rule 20) · `Sources:` line (6 primary papers/fact sheets from `SOURCES.md`) · image credits · making-of line (`Descriptions/uranus_21_year_winters_long_description_v01.txt`)
+- [x] `11_Upload-Package/PACKAGE_MANIFEST.json`, `Captions/en-GB.srt` (`206` cues, `0.100–611.324 s`), and `Trailer/033_why_this_planet_has_21_year_winters_trailer.mp4` (`48.75 s`, `608×1080` @ `24/1` CFR, SHA-256 `08af084e7673188b5235d95dfb28ac26c371572445b9e3479edb8942d5d21843`) built and `npm run youtube:package -- --dry-run` verified (`J2901`, target slot `Wed 09 Dec 2026 18:00 London`, `2026-12-09T18:00:00.000Z`, `private`, Altered content: yes).
+- [ ] Live YouTube Private upload + Test & Compare (`T033` A vs B) · end screen (`Real Worlds` series playlist + next film in series + Subscribe) · captions auto-synced · pinned comment posted with `update-pinned-comment.ts --create` and pinned in Studio (after Ben UAT watch on `J2890`)
+- [ ] Shorts: Related → the long each promotes · no new pin · zero `/go/` (after `033` long is public)
 
 **Ship only when every box is ticked and Ben has signed off.**
