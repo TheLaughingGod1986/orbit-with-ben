@@ -205,9 +205,9 @@ SHOT_PLAN = [
         "in": 18.44,
         "out": 20.68,
         "kind": "r03b_earth_limb_916",
-        "source": "plate_031_r21_earth_limb_v01.mp4",
-        "title": "Earth Blue Atmospheric Limb from Low Orbit (NASA)",
-        "offset": 0.6,
+        "source": "plate_031_r26_iss_clouds_v01.mp4",
+        "title": "Sunlit Earth Cloud Deck and Ocean from Orbit (NASA ISS)",
+        "offset": 0.5,
     },
     {
         "row": "R04a",
@@ -388,26 +388,32 @@ def load_raw_video_frames(src: Path, offset: float, frames_n: int, sw: int = 192
 
 
 def lift_navy_floor(arr: np.ndarray) -> np.ndarray:
-    """Guarantee max(R,G,B) >= 54 so near_black == 0.0% and visor_frac == 0.0."""
-    mx = arr.max(axis=2, keepdims=True)
-    return np.where(mx < 54.0, np.maximum(arr, NAVY_FLOOR * 1.45), arr)
+    """Smooth screen-lift floor so dark shadows blend smoothly into house navy (max(R,G,B) >= 58, zero contour jump)."""
+    floor = np.array([28.0, 40.0, 58.0], dtype=np.float32)
+    u = np.clip(arr / 255.0, 0.0, 1.0)
+    f = floor / 255.0
+    return (1.0 - (1.0 - u) * (1.0 - f)) * 255.0
 
 
 def draw_vertical_house_canvas() -> tuple[Image.Image, ImageDraw.ImageDraw]:
-    """Full-height 1080x1920 Orbit dark-navy technical canvas with 80 px grid and subtle radial glow."""
+    """Full-height 1080x1920 Orbit dark-navy technical canvas with dashed 80 px blueprint grid & polar arcs."""
     yy, xx = np.mgrid[:H, :W].astype(np.float32)
-    dist = np.sqrt(((xx - 540.0) / 540.0) ** 2 + ((yy - 760.0) / 760.0) ** 2)
-    glow = np.clip(1.0 - 0.55 * dist, 0.45, 1.0)
+    dist = np.sqrt(((xx - 540.0) / 540.0) ** 2 + ((yy - 760.0) / 860.0) ** 2)
+    glow = np.clip(1.0 - 0.50 * dist, 0.48, 1.0)
     base = np.zeros((H, W, 3), dtype=np.float32)
     base[:, :, 0] = 28.0 + 18.0 * glow
     base[:, :, 1] = 40.0 + 26.0 * glow
     base[:, :, 2] = 62.0 + 42.0 * glow
     im = Image.fromarray(base.astype(np.uint8)).convert("RGBA")
     dr = ImageDraw.Draw(im)
-    for x in range(0, W + 1, 80):
-        dr.line((x, 0, x, H), fill=(46, 68, 98, 255), width=2)
-    for y in range(0, H + 1, 80):
-        dr.line((0, y, W, y), fill=(46, 68, 98, 255), width=2)
+    for rr in range(200, 1280, 180):
+        dr.ellipse((540 - rr, 820 - int(rr * 1.15), 540 + rr, 820 + int(rr * 1.15)), outline=(42, 64, 96, 190), width=2)
+    for x in range(80, W, 80):
+        for y0 in range(0, H, 80):
+            dr.line((x, y0 + 12, x, min(H, y0 + 52)), fill=(48, 72, 106, 235), width=2)
+    for y in range(80, H, 80):
+        for x0 in range(0, W, 80):
+            dr.line((x0 + 12, y, min(W, x0 + 52), y), fill=(48, 72, 106, 235), width=2)
     return im, dr
 
 
@@ -758,10 +764,10 @@ def render_standard_shot(shot: dict, dest: Path, open_f0: Path) -> float:
 
     if kind == "r03b_earth_limb_916":
         return render_fullbleed_plate(
-            NAS_PLATES_V01 / "plate_031_r21_earth_limb_v01.mp4",
-            offset=0.6, dur_s=dur_s, dest=dest,
+            NAS_PLATES_V01 / "plate_031_r26_iss_clouds_v01.mp4",
+            offset=0.5, dur_s=dur_s, dest=dest,
             sw=1920, sh=1080, cw=608, ch=1080,
-            x0_start=620, x0_end=700, y0_start=0, y0_end=0, speed=1.10, gamma=0.88,
+            x0_start=628, x0_end=696, y0_start=0, y0_end=0, speed=1.10, gamma=0.90,
         )
 
     if kind == "r04a_iss_ext_916":
@@ -787,8 +793,8 @@ def render_standard_shot(shot: dict, dest: Path, open_f0: Path) -> float:
         return render_fullbleed_plate(
             GERST_4K,
             offset=11.4, dur_s=dur_s, dest=dest,
-            sw=3840, sh=2160, cw=1080, ch=1920,
-            x0_start=1340, x0_end=1460, y0_start=180, y0_end=140, speed=1.15, gamma=0.82,
+            sw=3840, sh=2160, cw=698, ch=1240,
+            x0_start=1440, x0_end=1540, y0_start=760, y0_end=720, speed=1.15, gamma=0.82,
         )
 
     raise ValueError(f"Unknown shot kind: {kind}")
@@ -1321,8 +1327,8 @@ def main() -> None:
     def run_gate(cmd: list) -> sp.CompletedProcess:
         return sp.run([str(x) for x in cmd], capture_output=True, text=True)
 
-    g_txt = run_gate([sys.executable, REPO / "00_Brand/Channel-Setup/tools/gate_shorts_open.py", "check", final_mp4, "--air-date", AIR_DATE, "--sheet-dir", NAS_SUB_OUT])
-    g_json = run_gate([sys.executable, REPO / "00_Brand/Channel-Setup/tools/gate_shorts_open.py", "check", final_mp4, "--air-date", AIR_DATE, "--sheet-dir", NAS_SUB_OUT, "--json"])
+    g_txt = run_gate([sys.executable, REPO / "00_Brand/Channel-Setup/tools/gate_shorts_open.py", "check", final_mp4, "--air-date", AIR_DATE, "--id", "C8lPx5N2DwM", "--sheet-dir", NAS_SUB_OUT])
+    g_json = run_gate([sys.executable, REPO / "00_Brand/Channel-Setup/tools/gate_shorts_open.py", "check", final_mp4, "--air-date", AIR_DATE, "--id", "C8lPx5N2DwM", "--sheet-dir", NAS_SUB_OUT, "--json"])
     (NAS_SUB_OUT / f"{STEM}_gate.txt").write_text((g_txt.stdout or "") + (g_txt.stderr or ""))
     (NAS_SUB_OUT / f"{STEM}_gate.json").write_text(g_json.stdout or g_json.stderr)
     print(g_txt.stdout, end="", flush=True)
