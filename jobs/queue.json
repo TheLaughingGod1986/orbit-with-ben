@@ -254489,9 +254489,14 @@
           "at": "2026-11-15T11:10Z",
           "by": "gemini",
           "what": "step 4 of 6 done: Step 4 PASS: listened to full 629.40s soundtrack via audio_input (audio_first45s.wav, audio_part1_000_315s.mp3, audio_part2_315_629s.mp3, audio_final25s.wav); bit-identical to v02 with clean breaths, SFX/music balance, and 18.08s ending music fade"
+        },
+        {
+          "at": "2026-11-15T11:19Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: Step 5 PASS: watched all 4 640x360 moving-video proxies via read_file and inspected high-res suspect cut sheet; identified FIX-A (3 partial-limb moon cutouts), FIX-B (PIA01487 stair-step curve diagram & PIA01350 B&W static), and FIX-C (25.3s weic2332a repeat)"
         }
       ],
-      "remaining_action": "Watch 640x360 moving-video review proxies via read_file and record capabilities",
+      "remaining_action": "Write jobs/reviews/J2872/REVIEW.md (FIX), queue v04 assembly + review jobs, and close J2872",
       "kind": "review",
       "required_capabilities": [
         "audio_input"
@@ -254507,11 +254512,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 6,
-        "at": "2026-11-15T11:10Z",
+        "at": "2026-11-15T11:19Z",
         "by": "gemini",
-        "note": "Step 4 PASS: listened to full 629.40s soundtrack via audio_input (audio_first45s.wav, audio_part1_000_315s.mp3, audio_pa"
+        "note": "Step 5 PASS: watched all 4 640x360 moving-video proxies via read_file and inspected high-res suspect cut sheet; identifi"
       },
       "taskKeys": [
         "OWB:033"
