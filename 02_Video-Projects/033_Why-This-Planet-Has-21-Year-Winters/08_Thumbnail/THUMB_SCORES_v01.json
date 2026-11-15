@@ -1,0 +1,59 @@
+{
+  "film": "033_Why-This-Planet-Has-21-Year-Winters",
+  "job": "J2899",
+  "built": "2026-11-15",
+  "size": "1920x1080",
+  "tool": "python3 00_Brand/Channel-Setup/tools/thumb_preview.py long <thumb> --out <sheet> --score",
+  "spend": "\u00a30 local Pillow grade of harvest plates. No generation, no upload.",
+  "font": "Bebas Neue Regular (SIL OFL, fonts/OFL.txt)",
+  "concepts": {
+    "A": {
+      "file": "033_thumb_A_v01.jpg",
+      "sheet": "033_thumb_A_v01_sheet.jpg",
+      "width": 1920,
+      "height": 1080,
+      "saturation": 131.1,
+      "near_black": 0.023,
+      "verdict": "PASS",
+      "fails": [],
+      "sha256": "9c029267c0a80fbb13572c40cc7b42cf012f2582bfcc3d5c49bf7c8f7a325e6f",
+      "hook": "21-YEAR WINTER",
+      "hook_gold": "WINTER",
+      "rule": "19 real JWST frame",
+      "source": "weic2332a_hires.jpg",
+      "source_note": "NASA/ESA/CSA JWST NIRCam, PIA25770 / STScI-01GWQ3"
+    },
+    "B": {
+      "file": "033_thumb_B_v01.jpg",
+      "sheet": "033_thumb_B_v01_sheet.jpg",
+      "width": 1920,
+      "height": 1080,
+      "saturation": 151.6,
+      "near_black": 0.044,
+      "verdict": "PASS",
+      "fails": [],
+      "sha256": "1185ea680e5284c6f893769a94e1280c28a36828803671a445effdc8ed629a8e",
+      "hook": "COLDER THAN NEPTUNE",
+      "hook_gold": "COLDER",
+      "rule": "12 comparison",
+      "source": "PIA18182.jpg + weic2310a_unannotated.png",
+      "source_note": "Voyager 2 PIA18182 (24 Jan 1986) beside JWST weic2310a"
+    },
+    "C": {
+      "file": "033_thumb_C_v01.jpg",
+      "sheet": "033_thumb_C_v01_sheet.jpg",
+      "width": 1920,
+      "height": 1080,
+      "saturation": 175.4,
+      "near_black": 0.022,
+      "verdict": "PASS",
+      "fails": [],
+      "sha256": "48abb438ed7a8de3fa0a7d5b1474c725efbc48198c4260b35da5dce5607bc1b2",
+      "hook": "97.77\u00b0 SIDEWAYS",
+      "hook_gold": "97.77\u00b0",
+      "rule": "12 + 14 bright background",
+      "source": "weic2310a_unannotated.png",
+      "source_note": "NASA/ESA/CSA JWST weic2310a, bright cyan grade"
+    }
+  }
+}
