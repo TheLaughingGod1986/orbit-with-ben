@@ -255236,9 +255236,14 @@
           "at": "2026-11-15T09:30Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Claimed. Checking sha256 and 11_Upload-Package against v02."
+        },
+        {
+          "at": "2026-11-15T09:33Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Master sha256 51986972 matches v02, 585.440s. Package title, private privacy and 2026-11-25T18:00:00Z match. Dry run passed. Live upload starting."
         }
       ],
-      "remaining_action": "Check the Titan master hash and the upload package before anything is uploaded",
+      "remaining_action": "Upload the Titan long as a new private video scheduled for Wednesday 25 November at 18:00 London",
       "due": "2026-11-24T18:00:00Z",
       "kind": "studio",
       "approved_from": {
@@ -255258,11 +255263,11 @@
         "OWB:032"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-15T09:30Z",
+        "at": "2026-11-15T09:33Z",
         "by": "cursor",
-        "note": "Claimed. Checking sha256 and 11_Upload-Package against v02."
+        "note": "Master sha256 51986972 matches v02, 585.440s. Package title, private privacy and 2026-11-25T18:00:00Z match. Dry run pas"
       }
     },
     {
