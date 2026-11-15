@@ -64,6 +64,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 033 | edit | gemini | 2026-11-15T06:57Z | 2026-11-15T08:56Z | J2870 033 Uranus Shorts 1 & 2: 5-part review of v02 cuts (after J2869) + stage for Ben phone watch |
+| 033 | edit | gemini | 2026-11-15T06:58Z | 2026-11-15T07:58Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
