@@ -6829,20 +6829,25 @@
           "at": "2026-11-15T18:39Z",
           "by": "claudecode",
           "what": "step 1 of 3 done: Step 1 done 18:41Z: Studio read (Mini 9223) shows Subscribe + Video: Why You Can't Stand On Jupiter, 7:50:06-8:10:06, unchanged. J0119 (same swap plus the card) is claimed by macbook-2 since 18:31Z and in flight, so no write from here until it lands"
+        },
+        {
+          "at": "2026-11-15T18:47Z",
+          "by": "claudecode",
+          "what": "step 3 of 3 done: Steps 2-3: the swap itself was saved by macbook-2 under twin job J0119 at 18:45Z (no second write from the Mini, to avoid two saves on one end screen). Independent read-back on the Mini Studio at 18:46Z: Subscribe: Orbit With Ben + Video: How Far Is the Nearest Star? (c5AdqQsnnys), 7:50:06-8:10:06, Save disabled"
         }
       ],
-      "remaining_action": "Swap the Mars long's end-screen video to the nearest-star long without colliding with the MacBook's twin job on the same end screen, then read it back",
+      "remaining_action": "Nothing left: end screen now points at the nearest-star long",
       "due": "2026-11-11T12:00:00Z",
       "taskKeys": [
         "OWB:025",
         "OWB:026"
       ],
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-15T18:39Z",
+        "at": "2026-11-15T18:47Z",
         "by": "claudecode",
-        "note": "Step 1 done 18:41Z: Studio read (Mini 9223) shows Subscribe + Video: Why You Can't Stand On Jupiter, 7:50:06-8:10:06, un"
+        "note": "Steps 2-3: the swap itself was saved by macbook-2 under twin job J0119 at 18:45Z (no second write from the Mini, to avoi"
       }
     },
     {
