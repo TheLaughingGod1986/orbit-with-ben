@@ -227381,10 +227381,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-15T16:05Z",
+      "eta": "2026-11-15T18:05Z",
       "created_by": "claude",
       "created_at": "2026-11-11T00:55Z",
       "result": "",
@@ -227523,6 +227523,11 @@
           "at": "2026-11-15T14:45Z",
           "by": "gemini",
           "what": "released: Detached render running in tmux session J2551-render; log ~/_desk/logs/J2551-render.log; completion sentinel ~/_desk/logs/J2551-render.done. Next run: check .done exit code, inspect J2829 5-part review packs in /Volumes/MiniWork/scratch/J2551/029_v06_review/<slug>/ via read_file, write review report on PR #944, and arm Ben's 3 watch cards (SWDCZfWZVao, k2kEaA7ICjc, heiGCnGKTkE)."
+        },
+        {
+          "at": "2026-11-15T16:05Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Wait for detached J2551-render.done, complete J2829 5-part review on all three 029 v06 Shorts, and arm Ben's watch cards",
