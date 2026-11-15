@@ -256487,9 +256487,14 @@
           "at": "2026-11-15T13:51Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Verified J2870 5-part KEEP review and 033_short01_testA_opening_v02.mp4 sha256 db6a23420952151244161c7be209cdebd0440f3ce4aef314c1ce9fc6a3f9d203 across studio-live, NAS OWB UAT, and iCloud OWB UAT"
+        },
+        {
+          "at": "2026-11-15T13:52Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: gate_shorts_open.py check PASS on 033_short01_testA_opening_v02.mp4 (36.48s, 0/37 at 1fps and 0/73 at 2fps padded, cover sha256 83a6685be7323dece7863b01c34380ce0e15ddcb4f5b34a4d200f1586bd0ea06)"
         }
       ],
-      "remaining_action": "Run gate_shorts_open.py check on 033_short01_testA_opening_v02.mp4 and inspect existing Short 1 subfolder and Short 2 upload package",
+      "remaining_action": "Build 033_short01_testA_opening/07_Upload-Package (PACKAGE_MANIFEST.json + en-GB.srt) and run youtube:package --dry-run",
       "due": "2026-12-16T18:00:00Z",
       "kind": "listing",
       "approved_from": {
@@ -256514,11 +256519,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-15T13:51Z",
+        "at": "2026-11-15T13:52Z",
         "by": "gemini",
-        "note": "Verified J2870 5-part KEEP review and 033_short01_testA_opening_v02.mp4 sha256 db6a23420952151244161c7be209cdebd0440f3ce"
+        "note": "gate_shorts_open.py check PASS on 033_short01_testA_opening_v02.mp4 (36.48s, 0/37 at 1fps and 0/73 at 2fps padded, cover"
       },
       "taskKeys": [
         "OWB:033"
