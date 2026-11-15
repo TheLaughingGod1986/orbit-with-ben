@@ -92,11 +92,27 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2895 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about landing on an ice giant (v02) Private, slot Sat 19 Dec 11:30 |  |
 | J2896 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about the 21-year winters (v02, Test A opening) Private, slot Fri 18 Dec 11:30 |  |
 | J2904 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2271 |  |
-| J2905 | mini | claimed | cursor | 2026-11-15T18:16Z | studio · First-day check at 6 h: "The Blood Vessels Finer Than a Hair" (Wvjd8g0CpzE) |  |
 | J2906 | mini | open | – | – | listing · Swap the Great Dimming Short SWDCZfWZVao (Wed 9 Dec) to the full-screen cut Ben OK'd, v06 |  |
 
 Recently finished:
 
+- J2905 done: First-day check at 6 h: "The Blood Vessels Finer Than a Hair" (Wvjd8g0CpzE) ("The Blood Vessels Finer Than a Hair" (Wvjd8g0CpzE) · History of Science · Short · went live Sun 15 Nov 11:30 London
+At 6 h: views 210 · Studio rank 1 of 10 · shown in feed no figure yet · stayed to watch 15.0% · average viewed 76.6%
+Usual for this channel: stayed to watch 29.6%, average viewed 75.2%
+
+Verdict: AHEAD
+  - 210 views at 6 h; Studio says the usual for us at this age is 90.
+  - Studio ranks it 1 of 10 against our latest videos at the same age.
+
+What is different about this one
+  - It is a second upload of the same video (it replaced x_3L_IdYgEc).
+
+Do now
+  - Nothing to fix.
+
+Carry forward
+  - A strong start is a lesson too: note what is different about this one.
+)
 - J2903 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (PASS: verified live on Mini (lint:package PASS, channel:audit 64 videos 0 errors: 37 public + 5 scheduled + 22 private, Wvjd8g0CpzE public serving Related=wwcjcFfC-5M and AI disclosure live, 7/7 public longs endscreenRenderer live), updated 2026-11-15.md (62aec706) and merged HOS PR #598 (ebc36817). 0 fixes needed.)
 - J2902 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (No fixes found, 10/10 pass; PR #948 adds 05_Analytics/live_fixes/2026-11-15.md (not merged, Chief's). Nothing changed in Studio. Checked from repo records (snapshot, Studio/API readbacks, first-day check), not live pages: this run cannot load YouTube. New video RT-ec4_GcOk: Related = Js6EQJ8qDi8, description links the long; needs a live re-read from the Mini at the next check.)
 - J2901 done: 033 Uranus: build 11_Upload-Package (PACKAGE_MANIFEST, chapters, credits, en-GB SRT, trailer) + dry-run (no upload) (Built and dry-run verified 033 Uranus 11_Upload-Package (de275a0551) for Long Master v04 (3712479ae852dd318c4d8d0dfd18f7df08c1a857068c24c3d3792a35a27f11c3, 629.416667 s): PACKAGE_MANIFEST.json (slot Wed 09 Dec 2026 18:00 London / 2026-12-09T18:00:00.000Z, private, en-GB, thumb A 9c029267c0 + B/C Test & Compare T033, social block), Titles, Descriptions (with 6 story-beat chapters 0:00-8:35, Real Worlds series handoff, 5 primary Sources entries from SOURCES.md, agency/Commons image credits, and AI/NASA visual disclosure), Tags, Pinned-Comments, 206-cue en-GB.srt (0.100-611.324 s), and NAS social trailer (033_why_this_planet_has_21_year_winters_trailer.mp4, 48.75 s, 608x1080 @ 24/1 CFR, SHA-256 08af084e7673188b5235d95dfb28ac26c371572445b9e3479edb8942d5d21843). Both npm run gate:episode (PASS 95.2/100) and npm run youtube:package -- --dry-run (ok: true, dryRun: true) passed. Zero live upload (£0); awaits Ben UAT watch on J2890.)
@@ -106,4 +122,3 @@ Recently finished:
 - J2897 done: Swap the 031 opening Short C8lPx5N2DwM (Sat 5 Dec) to the full-screen cut Ben OK'd, v02 (Swapped OWB 031 opening Short C8lPx5N2DwM -> 5qw8oW5Pwpc (v02, sha256 6cce94c4499aff1c9994b433629fbb379acfd264e637d6236e36c2ea96ea13d0, Private scheduled Sat 2026-12-05T11:30:00Z, en-GB language/captions, C8lPx5N2DwM Private unscheduled; verify-swap PASS; commit 52e582b032).)
 - J2894 done: Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest (Weekly HOS thumbnail audit (2026-11-15) in OWB PR #947 (parked for Chief before Studio jobs run): 42 videos inventoried & scored (7 pub + 1 sched longs, 30 pub + 4 sched Shorts); 28d CTR rose 2.49% -> 2.78% (Shorts median 2.05% -> 2.44%); closed T009 (_C92tIJCk8A) as done/draw in THUMB_LEDGER.json; coded 90d reference sample (n=95) + updated PATTERNS.md; mapped single-variable J0777/J1126 tests for 001/002 (J1130)/003 + urgent custom covers for 4 scheduled Shorts (xzKoHg0E0_U airs 16 Nov 11:30Z).)
 - J2893 done: Chief: resolve 033 edit orphan-review (PASS (662b236e18, jobs/reviews/J2893/REVIEW.md): Resolved 033 edit orphan-review (bc87449771f3f409ba4b). Directly verified 033 Uranus Long Master v04 (3712479ae8, 629.42s, 5 gates + 5-part J2829 multimodal review PASS in J2890, R2 owb-033-v04, awaits_ben armed) and Active Shorts 1 & 2 v02 (db6a234209 & 279c9531f2, J2870 PASS, Ben OK 15 Nov -> J2896/J2895); set 033 edit=done and queued £0 033 thumbs (J2899/J2900) + 11_Upload-Package dry-run (J2901).)
-- J2890 done: 033 Uranus: 5-part review of long master v04 (after J2889) + stage for Ben UAT watch (PASS (KEEP) on 033 Uranus long master v04 (033_why_this_planet_has_21_year_winters_master_v04.mp4, SHA-256 3712479ae852dd318c4d8d0dfd18f7df08c1a857068c24c3d3792a35a27f11c3, 629.42s, 1920x1080 24fps CFR, -14.5 LUFS, -1.5 dBTP, 0 black frames, 0 >15s reuse warnings); FIX-A, FIX-B, FIX-C verified across all 5 parts of J2829; R2 watch copy owb-033-v04 uploaded; awaits_ben armed for Wed 09 Dec 2026 18:00 London (jobs/reviews/J2890/REVIEW.md, commit 002d7af11b))
