@@ -1,5 +1,5 @@
 {
-  "next_id": 2871,
+  "next_id": 2872,
   "jobs": [
     {
       "id": "J0001",
@@ -253593,6 +253593,35 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2871",
+      "title": "033 Uranus: assemble long master v03 (fix J2404 cropped pills, still inset boxes/star bleed & narrow ring strips)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Assemble `033_why_this_planet_has_21_year_winters_master_v03.mp4` (`629.40 s`, `1920x1080` `24 fps` CFR) on `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/` starting from the `v02` (`J2437`) 147-cut timeline (`07_Edit-Project/full_master_v02_pack/`), fixing all three `J2404` visual review items (`jobs/reviews/J2404/REVIEW.md`, `0` credit spend):\n\n1. **FIX-1 (Uncrop 12 mutilated burned-in code-graphic pills, `R03, R05, R08, R09, R23, R25, R29, R30, R35, R38, R43, R54`):** Never apply a sub-cut `crop=` over burned-in text pills on `04_Generated-Clips/J2299_code_graphics_v01/` clips that slices through the pill text (`\"ARTH YEARS\"`, `\"LT\"`, `\"RECORD COLD\"`, `\"TUNE\"`, `\"05\"`, `\"-YEAR ORBIT\"`, `\"YEAR WINTER\"`, `\"LE FACES SUN\"`, `\"FLUX\"`, `\"KM/H WINDS\"`, `\"0 MPH JETS\"`, `\"5,000 °C\"`). Render the code-graphic clips at full safe `1920x1080` or apply camera zoom/pan only to the diagram layer before compositing the pill inside the `5%-10%` title-safe margin.\n2. **FIX-2 (Fix `build_still_base()` harsh rectangular inset boxes & 28% synthetic starfield bleed across all 45 still rows):** Remove `arr_fg = np.clip(arr_fg * 0.72 + bg_patch * 0.28, 28.0, 224.0)` so synthetic white star dots from `bg_canvas` never bleed through foreground planets (`PIA00032`, `apollo17_blue_marble`, `stsci-h-p1906a-f`, `PIA01391`, `PIA18182`, `nh-pluto-in-true-color`), portraits (`Herschel`, `Bode`, `Kuiper`), or `herschel_1781_comet_paper`. Feather or scale-to-fill non-16:9 planetary space plates seamlessly into deep space with zero visible square box border while keeping subtle background star/nebula texture strictly outside the foreground subject to satisfy `polish_gate.py`.\n3. **FIX-3 (Replace 12 narrow Voyager 2 ring-strip diagnostic plates `PIA01985`, `PIA01977`, `PIA00142`, `PIA01984` in `R12, R17, R22, R28, R30, R33, R47, R48, R49, R50, R51, R53, R63` + crop `R57` `mcdonald_observatory_dome.jpg` window-blind glare):** Replace the flat grey ruled-line diagnostic strips with recognizable full-planet/ring/moon plates and diagrams already in `03_Reference-Material/harvest_J2299_v01/` and `04_Generated-Clips/` per `jobs/reviews/J2404/REVIEW.md` §3 (`FIX-3`).\n4. **Gates & Delivery:** Preserve the exact `v02` (`J2437`) 13-cut opening (`0:00–0:38.67`, all cuts `<= 3.83 s`) and exact AAC audio stream (`-14.12 LUFS`, `-0.98 dBTP`). Run all 5 automated gates (`clip_check.py`, `picture_qa.py`, `polish_gate.py`, `music_gate.py`, `sfx_kit.py level`), export `master_v03.mp4` and `master_v03_PHONE.mp4` to `09_Final-Export/`, NAS `OWB UAT`, and iCloud `OWB UAT` (verified non-evicted SHA-256), and record `07_Edit-Project/full_master_v03_pack/`.",
+      "ref": "J2404 4314787d18; J2437",
+      "film": "033",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-15T00:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-15T00:03Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Assemble 033 long master v03 with FIX-1..3, pass all 5 automated gates, and export v03 + PHONE to 09_Final-Export, NAS OWB UAT, and iCloud OWB UAT",
+      "kind": "assembly",
+      "plain": "Rebuild 033 Uranus long master v03 to fix cropped code-graphic pills, square inset boxes/star bleed on stills, and narrow ring-strip plates"
     }
   ],
   "focus": [

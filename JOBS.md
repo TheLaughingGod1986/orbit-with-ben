@@ -95,6 +95,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2868 | mini | open (after J2867) | – | – | 034 edit · for gemini · review · `gemini-argon` · 034 Pluto: review long master v02 + Shorts 1 & 2 v02 (after J2438, J2867) | J2383,J2438,J2867 |
 | J2869 | mini | open | – | – | 033 edit · assembly · 033 Uranus Shorts 1 & 2: build v02 full-bleed 9:16 cuts + fix Short 2 VO word-onset clips (J2400 FIX; no upload) | J2400 |
 | J2870 | mini | open (after J2869) | – | – | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus Shorts 1 & 2: 5-part review of v02 cuts (after J2869) + stage for Ben phone watch | J2869 |
+| J2871 | mini | open | – | – | 033 edit · assembly · 033 Uranus: assemble long master v03 (fix J2404 cropped pills, still inset boxes/star bleed & narrow ring strips) | J2404 4314787d18; J2437 |
 
 Recently finished:
 
