@@ -1,0 +1,113 @@
+{
+  "ok": true,
+  "dryRun": false,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": true,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-12-05T11:30:00.000Z",
+    "platformPostId": "5qw8oW5Pwpc",
+    "platformUrl": "https://youtu.be/5qw8oW5Pwpc",
+    "message": "Uploaded to YouTube; scheduled to go live at 2026-12-05T11:30:00.000Z; thumbnail set",
+    "responseSummary": "{\"id\":\"5qw8oW5Pwpc\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-12-05T11:30:00.000Z\"}"
+  },
+  "package": {
+    "packageDir": "02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/testA_opening_flip/07_Upload-Package",
+    "sha256": "6cce94c4499aff1c9994b433629fbb379acfd264e637d6236e36c2ea96ea13d0",
+    "title": "What Happens When Earth's Magnetic Field Flips?",
+    "format": "shorts",
+    "privacy": "private",
+    "tagCount": 7,
+    "hasPinnedComment": false,
+    "thumbnailPath": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/testA_opening_flip/06_Final-Exports/031_short_testA_opening_flip_v02_cover.jpg",
+    "scheduledAt": "2026-12-05T11:30:00.000Z",
+    "sources": {
+      "manifest": "/Volumes/MiniWork/scratch/J2897-wt/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/testA_opening_flip/07_Upload-Package/PACKAGE_MANIFEST.json",
+      "video": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/testA_opening_flip/06_Final-Exports/031_short_testA_opening_flip_v02.mp4",
+      "thumbnail": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/10_Shorts/testA_opening_flip/06_Final-Exports/031_short_testA_opening_flip_v02_cover.jpg"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "buffer": {
+    "sent": false,
+    "deferred": "goes public 2026-12-05T11:30:00.000Z, beyond Buffer's 7-day window: the daily check schedules it nearer the time",
+    "planOnly": false,
+    "errors": [],
+    "warnings": [],
+    "results": []
+  },
+  "studioFinish": {
+    "videoId": "5qw8oW5Pwpc",
+    "studioEditUrl": "https://studio.youtube.com/video/5qw8oW5Pwpc/edit",
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "api_done",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Uploaded via YouTube Data API"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set",
+        "studioUrlHint": "https://studio.youtube.com/video/5qw8oW5Pwpc/edit"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": false,
+        "status": "n/a",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "A/B Testing not available for Shorts",
+        "studioUrlHint": "https://studio.youtube.com/video/5qw8oW5Pwpc/edit"
+      },
+      {
+        "id": "first_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "First / pinned comment text",
+        "detail": "No pinned comment file in package",
+        "studioUrlHint": "https://studio.youtube.com/video/5qw8oW5Pwpc/comments"
+      },
+      {
+        "id": "pin_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint",
+        "studioUrlHint": "https://studio.youtube.com/video/5qw8oW5Pwpc/comments"
+      },
+      {
+        "id": "related_watch_next",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Related video (full film)",
+        "detail": "Desktop Studio: set Related video to G5uMANXHtNU (its own full film). No new Short pins.",
+        "studioUrlHint": "https://studio.youtube.com/video/5qw8oW5Pwpc/edit"
+      },
+      {
+        "id": "end_screens_cards",
+        "required": false,
+        "status": "n/a",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video",
+        "studioUrlHint": "https://studio.youtube.com/video/5qw8oW5Pwpc/edit"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "API upload done (5qw8oW5Pwpc). 1 required Studio finish step(s) remain."
+  }
+}
