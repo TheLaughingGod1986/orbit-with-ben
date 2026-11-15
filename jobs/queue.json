@@ -1,5 +1,5 @@
 {
-  "next_id": 2904,
+  "next_id": 2905,
   "jobs": [
     {
       "id": "J0001",
@@ -198846,6 +198846,11 @@
           "at": "2026-11-15T10:44Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-15T16:45:00Z"
+        },
+        {
+          "at": "2026-11-15T16:58Z",
+          "by": "relay",
+          "what": "condition verification queued: J2904"
         }
       ],
       "remaining_action": "Wait for Chief/Claude 600-credit Flow spend authorization and generation/stills-review of 6 Short replacement plates (R1-R6) on HOS desk #180 (6893147101) before J2172 assembly",
@@ -198874,10 +198879,11 @@
       "hold": {
         "type": "input",
         "condition": "Chief/Claude 600-credit Flow spend authorization and generation/stills-review of 6 Short replacement plates (R1-R6: P2:05_almost_none, P4:06_dust_veil, P5:08_all_at_once, P5:12_clay_callback, 09d P5:10_explorer_robin, 08c P5:09_robin) on HOS desk #180 (6889364319/6889440776/6893147101) before J2172 assembly (all 12 initial plates now have final KEEP/FIX calls: 6 KEEP incl. 11c pigeon & 12d gull with J2887 flap motion PASS; 6 FIX R1-R6)",
-        "check_at": "2026-11-15T16:45:00Z",
+        "check_at": "2026-11-15T17:58:06+00:00",
         "last_recheck": "J2887",
         "checked_at": "2026-11-15T10:44:19+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J2904"
       },
       "escalated_at": "2026-11-15T06:09Z"
     },
@@ -257268,6 +257274,37 @@
         "note": "Starting: check the brief, complete the work, verify the result"
       },
       "done_ref": "ebc36817"
+    },
+    {
+      "id": "J2904",
+      "title": "Verify condition for J2271",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2271: Chief/Claude 600-credit Flow spend authorization and generation/stills-review of 6 Short replacement plates (R1-R6: P2:05_almost_none, P4:06_dust_veil, P5:08_all_at_once, P5:12_clay_callback, 09d P5:10_explorer_robin, 08c P5:09_robin) on HOS desk #180 (6889364319/6889440776/6893147101) before J2172 assembly (all 12 initial plates now have final KEEP/FIX calls: 6 KEEP incl. 11c pigeon & 12d gull with J2887 flap motion PASS; 6 FIX R1-R6). Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2271 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-15T16:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-15T16:58Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Wait for Chief/Claude 600-credit Flow spend authorization and generation/stills-review of 6 Short replacement plates (R1-R6) on HOS desk #180 (6893147101) before ",
+      "kind": "review",
+      "recheck_of": "J2271",
+      "due": "2026-11-15T17:58:06+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
