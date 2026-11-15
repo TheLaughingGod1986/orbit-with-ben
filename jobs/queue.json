@@ -254709,18 +254709,23 @@
           "at": "2026-11-15T07:50Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Studio totals are coming from the signed-in analytics session. One Short id is rejected by the query and will be left out if Studio has no row."
+        },
+        {
+          "at": "2026-11-15T07:58Z",
+          "by": "cursor",
+          "what": "step 3 of 4 done: Tracker rebuilt and published. 16 Orbit longs and 7 History of Science longs, plus 115 Shorts. Two Orbit longs are at or above 4% click-through."
         }
       ],
-      "remaining_action": "Reading lifetime Studio numbers for both channels",
+      "remaining_action": "Closing the daily Studio read",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-15T07:50Z",
+        "at": "2026-11-15T07:58Z",
         "by": "cursor",
-        "note": "Studio totals are coming from the signed-in analytics session. One Short id is rejected by the query and will be left ou"
+        "note": "Tracker rebuilt and published. 16 Orbit longs and 7 History of Science longs, plus 115 Shorts. Two Orbit longs are at or"
       },
       "taskKeys": [
         "OWB:026",
