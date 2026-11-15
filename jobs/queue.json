@@ -256331,6 +256331,11 @@
           "at": "2026-11-15T12:52Z",
           "by": "claude",
           "what": "approved by Ben: Watch 033 Uranus Active Short #2 v02 (\"What Happens If a Spacecraft Tries to Land on Ice Giant Uranus?\", Keeper question, 27.48s): full-bleed 9:16 throughout, vertical R52 interior cutaway, high-res Uranus plates, unclipped \"80%\" and \"9,000\" onsets 033_short02_v02 (asked in J2870)"
+        },
+        {
+          "at": "2026-11-15T12:56Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-15T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Upload the Uranus Short about landing on an ice giant (v02) Private, slot Sat 19 Dec 11:30",
@@ -256348,7 +256353,16 @@
         "job": "J2870",
         "askId": "J2870.2",
         "okAt": "2026-11-15T10:41Z"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2896",
