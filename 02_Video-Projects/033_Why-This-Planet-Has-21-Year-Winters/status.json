@@ -44,18 +44,18 @@
       "short2_v02_sha256": "279c9531f2c89d16fb37e285b6ef981e8db7bf8d2dd1c297b2940bf07daf5468"
     },
     "thumbs": {
-      "state": "doing",
-      "ref": "f33d8f03df"
+      "state": "done",
+      "ref": "jobs/reviews/J2900/REVIEW.md",
+      "ruling": "KEEP (J2899 f33d8f03df & J2900 PASS on A 9c029267c0, B 1185ea680e, C 48abb438ed; A & B staged to NAS/iCloud OWB UAT; T033 proposed in THUMB_LEDGER.json)",
+      "reviewer": "gemini",
+      "review_job": "J2900",
+      "review_result": "KEEP (PASS)",
+      "review_evidence": "jobs/reviews/J2900/REVIEW.md",
+      "thumb_a_sha256": "9c029267c0a80fbb13572c40cc7b42cf012f2582bfcc3d5c49bf7c8f7a325e6f",
+      "thumb_b_sha256": "1185ea680e5284c6f893769a94e1280c28a36828803671a445effdc8ed629a8e",
+      "thumb_c_sha256": "48abb438ed7a8de3fa0a7d5b1474c725efbc48198c4260b35da5dce5607bc1b2"
     }
   },
-  "claims": [
-    {
-      "stage": "thumbs",
-      "by": "gemini",
-      "at": "2026-11-15T15:04Z",
-      "eta": "2026-11-15T17:03Z",
-      "note": "J2900 033 Uranus: review 3 long thumbnail concepts A/B/C (HOOK/BAND/GRADE/PHONE + OWB UAT staging)"
-    }
-  ],
-  "next": "Build & review 033 long thumbnails A/B/C (J2899 -> J2900) and 11_Upload-Package dry-run (J2901); Ben UAT watch on 033 Uranus long master v04 (J2890 awaits_ben, target Sun 29 Nov; airs Wed 09 Dec 18:00 London); Shorts 1 & 2 v02 OK'd by Ben (J2896/J2895 held until long is public)"
+  "claims": [],
+  "next": "Build & dry-run 033 11_Upload-Package (J2901, no upload); Ben UAT watch on 033 Uranus long master v04 + thumbs A/B (J2890 awaits_ben, target Sun 29 Nov; airs Wed 09 Dec 18:00 London); Shorts 1 & 2 v02 OK'd by Ben (J2896/J2895 held until long is public)"
 }

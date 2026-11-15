@@ -8,7 +8,7 @@
 | Working title (Rule 15, 47 chars) | `Why Knocked-Sideways Uranus Has 21-Year Winters` |
 | Rule-18 real-imagery variants | `What Voyager 2 Saw in Just 6 Hours at Uranus` (44 chars) · `The Only Spacecraft Photos Ever Taken at Uranus` (47 chars) |
 | Series (Rule 20) | `Real Worlds` |
-| Rule-19 real-frame thumb (Concept A) | NASA/ESA/CSA JWST NIRCam real frame `PIA25770` (`STScI-01GWQ3`, 2023 sideways Uranus + vertical rings) or NASA/JPL Voyager 2 real frame `PIA18182` (24 Jan 1986), graded, hook `21-YEAR WINTER` |
+| Rule-19 real-frame thumb (Concept A) | **DONE (`J2899` / `J2900` KEEP, £0 local Pillow grade)** (`08_Thumbnail/033_thumb_A_v01.jpg` `21-YEAR WINTER` SHA-256 `9c029267c0a80fbb13572c40cc7b42cf012f2582bfcc3d5c49bf7c8f7a325e6f` sat `131.1` nb `2.3%` on JWST `weic2332a_hires.jpg`; `033_thumb_B_v01.jpg` `COLDER THAN NEPTUNE` SHA-256 `1185ea680e5284c6f893769a94e1280c28a36828803671a445effdc8ed629a8e` sat `151.6` nb `4.4%`; `033_thumb_C_v01.jpg` `97.77° SIDEWAYS` SHA-256 `48abb438ed7a8de3fa0a7d5b1474c725efbc48198c4260b35da5dce5607bc1b2` sat `175.4` nb `2.2%`; `A` & `B` staged to NAS/iCloud `OWB UAT`; `T033` proposed in `THUMB_LEDGER.json`; review: `jobs/reviews/J2900/REVIEW.md`) |
 | Gate | `npm run gate:episode` **PASS** (VO / Gemini Veo allowed) |
 | Script review | `npm run review:script` **PASS 95.2 / 100** on locked `uranus_21_year_winter_script_master_v02.md` (1,290 spoken words / 1,347 reviewer words, ~9.0 min, 6 chapters; subscribe beat line 6 at 43%) |
 | Sources | 15 / 15 MUST QUOTE rows **VERIFIED** live in `01_Script/SOURCES.md` + `01_Script/CLAUDE_QUOTE_CHECK_v01.md` |
@@ -39,7 +39,7 @@
 - [x] `033` Long Master `v04` (`629.42 s`, `67` rows / `147` cuts) moving-video/audio review (`J2890` PASS `KEEP`, `jobs/reviews/J2890/REVIEW.md`, reviewing `J2889` `033_why_this_planet_has_21_year_winters_master_v04.mp4` SHA-256 `3712479ae852dd318c4d8d0dfd18f7df08c1a857068c24c3d3792a35a27f11c3`; R2 stream `owb-033-v04` live; `J2890` armed `awaits_ben` for Wed 09 Dec 18:00 London slot)
 - [x] `033` Active Shorts 1 & 2 `v02` 5-part moving-video review (`J2870` PASS `KEEP`, `jobs/reviews/J2870/REVIEW.md`) + Ben phone watch OK'd 15 Nov 10:37–10:41Z (`J2896` `96477b52d8` & `J2895` `5772c0c52d` `07_Upload-Package` built & dry-run verified, held on `public` hold until `033` long airs Wed 09 Dec 18:00 London)
 - [x] Protected Chief `033` `edit` stage sign-off (`J2893` PASS `KEEP`, `jobs/reviews/J2893/REVIEW.md`; `stages.edit.state = "done"`)
-- [ ] `033` long thumbnails `A`/`B`/`C` build & review (`J2899` -> `J2900`, including Rule-19 real JWST/Voyager frame Concept A + `OWB UAT` staging)
+- [x] `033` long thumbnails `A`/`B`/`C` build & review (`J2899` -> `J2900` PASS `KEEP`, `jobs/reviews/J2900/REVIEW.md`: `033_thumb_{A,B,C}_v01.jpg` all PASS `thumb_preview.py long --score` + `HOOK/BAND/GRADE/PHONE`; `A` & `B` staged to NAS/iCloud `OWB UAT`; `T033` proposed in `THUMB_LEDGER.json`; `stages.thumbs.state = "done"`)
 - [ ] `033` `11_Upload-Package` build & dry-run (`J2901`, after `J2900`; no live upload until Ben approves `J2890`)
 - [ ] Ben UAT watch on `033` Long Master `v04` (`J2890` `awaits_ben`)
 
