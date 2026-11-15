@@ -256492,9 +256492,14 @@
           "at": "2026-11-15T13:52Z",
           "by": "gemini",
           "what": "step 2 of 5 done: gate_shorts_open.py check PASS on 033_short01_testA_opening_v02.mp4 (36.48s, 0/37 at 1fps and 0/73 at 2fps padded, cover sha256 83a6685be7323dece7863b01c34380ce0e15ddcb4f5b34a4d200f1586bd0ea06)"
+        },
+        {
+          "at": "2026-11-15T13:54Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Built 033_short01_testA_opening/07_Upload-Package (PACKAGE_MANIFEST.json + 14-cue en-GB.srt); youtube:package --dry-run PASS for Fri 2026-12-18T11:30:00.000Z"
         }
       ],
-      "remaining_action": "Build 033_short01_testA_opening/07_Upload-Package (PACKAGE_MANIFEST.json + en-GB.srt) and run youtube:package --dry-run",
+      "remaining_action": "Commit 033_short01_testA_opening/07_Upload-Package from clean worktree, sync to NAS studio-live, and record public hold until 033 Uranus long airs Wed 9 Dec 18:00 London",
       "due": "2026-12-16T18:00:00Z",
       "kind": "listing",
       "approved_from": {
@@ -256519,11 +256524,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-15T13:52Z",
+        "at": "2026-11-15T13:54Z",
         "by": "gemini",
-        "note": "gate_shorts_open.py check PASS on 033_short01_testA_opening_v02.mp4 (36.48s, 0/37 at 1fps and 0/73 at 2fps padded, cover"
+        "note": "Built 033_short01_testA_opening/07_Upload-Package (PACKAGE_MANIFEST.json + 14-cue en-GB.srt); youtube:package --dry-run "
       },
       "taskKeys": [
         "OWB:033"
