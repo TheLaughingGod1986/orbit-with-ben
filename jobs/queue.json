@@ -257041,9 +257041,14 @@
           "at": "2026-11-15T15:21Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J2901 and 033 upload stage; starting 5-step build and dry-run of 033 11_Upload-Package"
+        },
+        {
+          "at": "2026-11-15T15:25Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Step 1 complete: inspected 033 SHOT_LIST_v02.md, SOURCES.md, VO Scribe timings, and 032 upload package reference"
         }
       ],
-      "remaining_action": "Inspect 033 script, shot list, sources, VO timings, and template upload packages",
+      "remaining_action": "Build 11_Upload-Package metadata files (PACKAGE_MANIFEST.json, Titles, Descriptions, Chapters, Tags, Pinned-Comments) and en-GB.srt captions",
       "due": "2026-11-29T18:00:00Z",
       "kind": "listing",
       "plain": "Preparing the title, description, chapters, captions and upload package for the Uranus video",
@@ -257057,11 +257062,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-15T15:21Z",
+        "at": "2026-11-15T15:25Z",
         "by": "gemini",
-        "note": "Claimed J2901 and 033 upload stage; starting 5-step build and dry-run of 033 11_Upload-Package"
+        "note": "Step 1 complete: inspected 033 SHOT_LIST_v02.md, SOURCES.md, VO Scribe timings, and 032 upload package reference"
       },
       "taskKeys": [
         "OWB:033"
