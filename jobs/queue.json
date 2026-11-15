@@ -255924,17 +255924,22 @@
           "at": "2026-11-15T12:16Z",
           "by": "cursor",
           "what": "step 2 of 4 done: v04 gates: picture_qa and polish_gate failed on one cut. PIA18182 at 0:56 measured 0.418 px off trend. Threshold is 0.35. The same cut on v03 was 0.057. Easing that globe's push from 4.5% to 1.8%, the same treatment as the smooth crescents."
+        },
+        {
+          "at": "2026-11-15T12:17Z",
+          "by": "cursor",
+          "what": "step 2 of 4 done: Miranda cuts 16 and 29 re-rendered with a 1.8% push. Jitter on those cuts is now 0.043 and 0.049 px, under the 0.35 px line. Session j2889-render is concatenating and running the gates. Log /Users/benjaminoats/_desk/logs/j2889-render.log."
         }
       ],
-      "remaining_action": "Re-render the Miranda globe cut that failed the jitter check, then run the five gates again",
+      "remaining_action": "Wait for the Uranus v04 picture rebuild and the five automated gates",
       "kind": "assembly",
       "plain": "Re-render Uranus long video (v04) fixing 3 clipped moon edges, 2 static/diagram stills, and a 25-second repeated shot",
       "progress": {
         "step": 2,
         "of": 4,
-        "at": "2026-11-15T12:16Z",
+        "at": "2026-11-15T12:17Z",
         "by": "cursor",
-        "note": "v04 gates: picture_qa and polish_gate failed on one cut. PIA18182 at 0:56 measured 0.418 px off trend. Threshold is 0.35"
+        "note": "Miranda cuts 16 and 29 re-rendered with a 1.8% push. Jitter on those cuts is now 0.043 and 0.049 px, under the 0.35 px l"
       },
       "taskKeys": [
         "OWB:033"
