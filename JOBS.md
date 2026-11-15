@@ -89,7 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2885 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2857 |  |
 | J2886 | mini | blocked | cursor | – | studio · Pin the Titan long comment once T3cBBss1F60 is public |  |
 | J2890 | mini | claimed | gemini | 2026-11-15T14:28Z | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus: 5-part review of long master v04 (after J2889) + stage for Ben UAT watch | J2872 5ea0a96ee9; J2889 |
-| J2891 | any | claimed | macbook | 2026-11-15T14:00Z | script · HOS: learn from our data, add two new films to the backlog |  |
+| J2891 | any | open | – | – | script · HOS: learn from our data, add two new films to the backlog |  |
 
 Recently finished:
 
