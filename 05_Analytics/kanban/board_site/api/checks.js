@@ -63,6 +63,31 @@ async function postToChief(id, body) {
   return `not posted: GitHub ${r.status} ${why.slice(0, 160)}`;
 }
 
+async function checkThreads() {
+  const out = {};
+  for (const [ch, [repo, n]] of Object.entries(THREADS)) {
+    const rRead = await gh(`repos/${repo}/issues/${n}`);
+    // An empty JSON object {} has no `body` field, so GitHub validates repo access + `issues=write` permission first
+    // (returning 403/404 if missing) and then stops at 422 Validation Failed without ever creating a comment.
+    const rWrite = await gh(`repos/${repo}/issues/${n}/comments`, { method: "POST", body: "{}" });
+    const rContents = await gh(`repos/${repo}/git/ref/heads/main`);
+    const hdr = r => (r && r.headers && typeof r.headers.get === "function" ? r.headers.get("x-accepted-github-permissions") || "" : "");
+    const readText = rRead.ok ? "" : (await rRead.text().catch(() => "")).slice(0, 160);
+    const writeText = rWrite.status === 422 ? "" : (await rWrite.text().catch(() => "")).slice(0, 160);
+    out[ch] = {
+      repo, issue: n,
+      readStatus: rRead.status,
+      writeProbeStatus: rWrite.status,
+      canPostComment: rWrite.status === 422,
+      contentsReadStatus: rContents.status,
+      acceptedPermissions: hdr(rWrite) || hdr(rRead),
+      readError: readText,
+      writeError: writeText,
+    };
+  }
+  return out;
+}
+
 const ID = /^[A-Za-z0-9_.-]{1,48}$/;
 
 // The store issue's body: a note, then one ```json fenced block.
@@ -145,7 +170,9 @@ export default async function handler(req, res) {
     // dryRun: proves this phone can post (auth + id + the line it would post) without saving or posting anything.
     if (b.dryRun) {
       const doc = b.doc && typeof b.doc === "object" ? b.doc : null;
-      return res.status(200).json({ ok: true, dryRun: true, auth: how, wouldPost: doc ? benLine(b.id, doc, null, via) : null });
+      const out = { ok: true, dryRun: true, auth: how, wouldPost: doc ? benLine(b.id, doc, null, via) : null };
+      if (b.checkThreads) out.threads = await checkThreads();
+      return res.status(200).json(out);
     }
     const { state } = await load();
     const prev = state.checks[b.id] || null;
