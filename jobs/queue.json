@@ -255993,9 +255993,14 @@
           "at": "2026-11-15T12:28Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-15T12:28Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Started J2890 6-step review of OWB 033 master_v04.mp4"
         }
       ],
-      "remaining_action": "Run 5-part J2829 review on master_v04.mp4, write REVIEW.md, and stage for Ben's UAT watch on KEEP",
+      "remaining_action": "Verify all 5 automated gates on 033 master_v04.mp4",
       "kind": "review",
       "required_capabilities": [
         "audio_input",
@@ -256013,12 +256018,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 6,
         "at": "2026-11-15T12:28Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Started J2890 6-step review of OWB 033 master_v04.mp4"
+      },
+      "taskKeys": [
+        "OWB:033"
+      ]
     },
     {
       "id": "J2891",
