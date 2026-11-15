@@ -255179,10 +255179,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-15T09:30Z",
+      "eta": "2026-11-15T11:30Z",
       "created_by": "claude",
       "created_at": "2026-11-15T07:58Z",
       "result": "",
@@ -255226,6 +255226,11 @@
           "at": "2026-11-15T09:26Z",
           "by": "gemini",
           "what": "remaining action: Upload 032 Titan long master v02 Private for Wed 25 Nov 18:00Z via youtube:package and arm Studio thumbnail Test & Compare A/B"
+        },
+        {
+          "at": "2026-11-15T09:30Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Upload 032 Titan long master v02 Private for Wed 25 Nov 18:00Z via youtube:package and arm Studio thumbnail Test & Compare A/B",
@@ -255246,7 +255251,15 @@
       },
       "taskKeys": [
         "OWB:032"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-15T09:30Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2885",
