@@ -253913,19 +253913,25 @@
           "at": "2026-11-15T04:54Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-15T04:54Z",
+          "by": "cursor",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Build 033_short01_testA_opening_v02.mp4 and 033_short02_ice_giant_surface_v02.mp4 per jobs/reviews/J2400/REVIEW.md",
+      "remaining_action": "Read the Uranus Shorts review and the two assembly scripts",
       "kind": "assembly",
       "plain": "Rebuild 033 Uranus Shorts 1 and 2 as full-bleed 9:16 v02 cuts and fix clipped word onsets in Short 2 VO",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-15T04:54Z",
-        "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "cursor"
+      },
+      "taskKeys": [
+        "OWB:033"
+      ]
     },
     {
       "id": "J2870",
