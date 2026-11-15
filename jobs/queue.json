@@ -195836,6 +195836,11 @@
           "at": "2026-11-15T04:53Z",
           "by": "relay",
           "what": "condition verification queued: J2877"
+        },
+        {
+          "at": "2026-11-15T08:22Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 3 h"
         }
       ],
       "remaining_action": "Park J2243 for Chief UAT staging authorization and Ben's final watch",
@@ -195867,7 +195872,8 @@
         "condition": "Required predecessor is complete; verify remaining gates and approvals",
         "check_at": "2026-11-15T05:53:17+00:00",
         "recheck_task": "J2877"
-      }
+      },
+      "escalated_at": "2026-11-15T08:22Z"
     },
     {
       "id": "J2244",
