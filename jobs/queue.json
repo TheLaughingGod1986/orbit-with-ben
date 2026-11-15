@@ -258541,10 +258541,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-15T23:06Z",
+      "eta": "2026-11-16T00:36Z",
       "created_by": "gemini",
       "created_at": "2026-11-15T21:26Z",
       "result": "",
@@ -258578,6 +258578,11 @@
           "at": "2026-11-15T21:35Z",
           "by": "cursor",
           "what": "released: Mint still running. Do not start a second copy. tmux session j2915-render. Log /Users/benjaminoats/_desk/logs/J2915/mint.log. Done file /Users/benjaminoats/_desk/logs/J2915/mint.done is absent, so batch 1 (R1-R5) is in progress and batch 2 starts only if it exits 0. Preflight is on HOS desk 6901726941. Next run: if the done file is missing, leave the session; if present, read the exit code and make the R1-R6 contact sheets."
+        },
+        {
+          "at": "2026-11-15T23:06Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Flow is generating the five replacement plates, then the sixth. Contact sheets come after both batches finish.",
