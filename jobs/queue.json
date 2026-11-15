@@ -255079,9 +255079,14 @@
           "at": "2026-11-15T08:16Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Claimed J2884. Next: sha256 of master v02 and the J1195 upload package."
+        },
+        {
+          "at": "2026-11-15T08:18Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Master sha256 matches 519869728d51b42b98435bc971361994d61780c02e2daa3bc0d23f27c80ed073, 585.440s, 389705443 bytes. No PACKAGE_MANIFEST.json. metadata_DRAFT_v01.json is draft_for_chief_review and does not name the v02 master. Description chapters are still ?:??. Thumbs A/B hashes match. Uploaded nothing."
         }
       ],
-      "remaining_action": "Check the Titan master hash and the upload package",
+      "remaining_action": "Park the Titan upload for the Chief: the package does not name v02",
       "due": "2026-11-24T18:00:00Z",
       "kind": "studio",
       "approved_from": {
@@ -255098,11 +255103,11 @@
         "okAt": "2026-11-14T22:46Z"
       },
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-15T08:16Z",
+        "at": "2026-11-15T08:18Z",
         "by": "cursor",
-        "note": "Claimed J2884. Next: sha256 of master v02 and the J1195 upload package."
+        "note": "Master sha256 matches 519869728d51b42b98435bc971361994d61780c02e2daa3bc0d23f27c80ed073, 585.440s, 389705443 bytes. No PA"
       },
       "taskKeys": [
         "OWB:032"
