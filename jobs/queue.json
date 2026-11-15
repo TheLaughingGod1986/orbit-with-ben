@@ -227166,10 +227166,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-15T03:54Z",
-      "eta": "2026-11-15T05:54Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T00:55Z",
       "result": "",
@@ -227268,6 +227268,11 @@
           "at": "2026-11-15T04:16Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Finished Short 1 (031 opening v02, C8lPx5N2DwM): 8/8 gates PASS + 5-part J2829 review + Watch Card 1 armed; PR #944 updated"
+        },
+        {
+          "at": "2026-11-15T04:16Z",
+          "by": "gemini",
+          "what": "released: Time cap at 24m: Short 1 (031 opening v02, 5 Dec) 100% done, gated, J2829-reviewed, Watch Card 1 armed, pushed on PR #944 (6779ba1247). Next run: build 029 Shorts 2-4 as v06 (v05 exists from J2310) per jobs/reviews/J2551/SHORT1_031_OPENING_v02_REVIEW.md and append cards 2-4 with --add."
         }
       ],
       "remaining_action": "Build, gate, J2829-review and arm watch cards (--add) for the three 029 Shorts as v06 (9, 11, 14 Dec)",
