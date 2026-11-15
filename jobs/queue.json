@@ -250621,9 +250621,14 @@
           "at": "2026-11-15T00:10Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-15T00:10Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Recorded wait --recheck J2824 on J2035 (next check 2026-11-15T06:15:00Z); closing J2824"
         }
       ],
-      "remaining_action": "Elected Chief to record wait --recheck J2824 on J2035 (check-at 2026-11-14T20:15:00Z) and close J2824",
+      "remaining_action": "Close J2824 after recording wait --recheck J2824 on J2035",
       "kind": "review",
       "recheck_of": "J2035",
       "due": "2026-11-14T14:19:42+00:00",
@@ -250642,12 +250647,11 @@
       ],
       "escalated_at": "2026-11-14T16:23Z",
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 3,
         "at": "2026-11-15T00:10Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Recorded wait --recheck J2824 on J2035 (next check 2026-11-15T06:15:00Z); closing J2824"
       }
     },
     {
