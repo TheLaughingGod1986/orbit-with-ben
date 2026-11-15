@@ -254882,9 +254882,14 @@
           "at": "2026-11-15T10:01Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Uploaded owb_ar2_iss_2030_deorbit_v14.mp4 as new Private video _dVWVUnbDzA scheduled 2026-11-25T11:30:00Z; set en-GB language/captions and Studio Related video VBaYRPp85Sw"
+        },
+        {
+          "at": "2026-11-15T10:03Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Unscheduled old video xdurJQcoiGM (Private, publishAt null) and verified swap via verify-swap.ts (old xdurJQcoiGM private/unscheduled, new _dVWVUnbDzA private/scheduled 2026-11-25T11:30:00Z)"
         }
       ],
-      "remaining_action": "Set old video xdurJQcoiGM to Private and unscheduled via set-private.ts and verify in Studio",
+      "remaining_action": "Update UPLOADS.json, buffer-plans, 030 status.json, run gate_upcoming --stage, and commit/push from worktree",
       "due": "2026-11-24T18:00:00Z",
       "kind": "listing",
       "approved_from": {
@@ -254910,11 +254915,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-15T10:01Z",
+        "at": "2026-11-15T10:03Z",
         "by": "gemini",
-        "note": "Uploaded owb_ar2_iss_2030_deorbit_v14.mp4 as new Private video _dVWVUnbDzA scheduled 2026-11-25T11:30:00Z; set en-GB lan"
+        "note": "Unscheduled old video xdurJQcoiGM (Private, publishAt null) and verified swap via verify-swap.ts (old xdurJQcoiGM privat"
       },
       "taskKeys": [
         "OWB:030"
