@@ -64,6 +64,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 033 | thumbs | cursor | 2026-11-15T14:48Z | 2026-11-15T16:47Z | J2899 033 Uranus: build 3 long thumbnail concepts A/B/C (incl. Rule-19 real JWST/Voyager frame) + stage A/B to OWB UAT |
+| 033 | thumbs | cursor | 2026-11-15T14:49Z | 2026-11-15T15:14Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
