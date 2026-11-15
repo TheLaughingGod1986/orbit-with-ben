@@ -602,38 +602,36 @@ def render_standard_shot(shot: dict, dest: Path, open_f0: Path) -> float:
         return 1.50
 
     if kind == "r52_interior_mantle":
-        # Native 1080x1920 cutaway. Globe diameter 820, centre y=860.
-        g_u = make_globe_rgba(NAS_HARV / "PIA18182.jpg", 820)
-        label = ImageFont.truetype(FONT_BLACK, 54)
-        small = ImageFont.truetype(FONT_BLACK, 42)
+        # Native 1080x1920 cutaway. Globe diameter 720, centre y=720 (y=360..1080), clear of TEACH_TEXT (y=1174) and captions (y=1300).
+        g_u = make_globe_rgba(NAS_HARV / "PIA18182.jpg", 720)
+        label = ImageFont.truetype(FONT_BLACK, 52)
+        small = ImageFont.truetype(FONT_BLACK, 36)
         frames = []
         for i in range(frames_n):
             u = i / max(1, frames_n - 1)
             ease_u = 0.5 - 0.5 * math.cos(math.pi * min(1.0, u / 0.80))
             fg = bleed.star_base(0.2 + 0.3 * u).convert("RGBA")
-            cx, cy = W // 2, 860
-            gx, gy = cx - 410, cy - 410
+            cx, cy = W // 2, 720
+            gx, gy = cx - 360, cy - 360
             fg.alpha_composite(g_u, (gx, gy))
             cut_layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
             cd = ImageDraw.Draw(cut_layer)
             sweep_deg = int(round(20.0 + 140.0 * ease_u))
             start_deg, end_deg = -75, -75 + sweep_deg
-            r_cloud = 400
+            r_cloud = 350
             cd.pieslice((cx - r_cloud, cy - r_cloud, cx + r_cloud, cy + r_cloud), start_deg, end_deg, fill=(38, 125, 168, 235), outline=CYAN, width=6)
-            r_mantle = int(round(330 * (0.35 + 0.65 * ease_u)))
+            r_mantle = int(round(290 * (0.35 + 0.65 * ease_u)))
             cd.pieslice((cx - r_mantle, cy - r_mantle, cx + r_mantle, cy + r_mantle), start_deg, end_deg, fill=(24, 178, 215, 245), outline=YELLOW, width=7)
-            for ring_r in (150, 220, 290):
+            for ring_r in (135, 195, 255):
                 if ring_r < r_mantle - 12:
                     cd.arc((cx - ring_r, cy - ring_r, cx + ring_r, cy + ring_r), start_deg + 6, end_deg - 6, fill=(185, 245, 255, 210), width=4)
-            r_core = int(round(78 * min(1.0, max(0.25, (u - 0.15) / 0.65))))
+            r_core = int(round(68 * min(1.0, max(0.25, (u - 0.15) / 0.65))))
             cd.ellipse((cx - r_core, cy - r_core, cx + r_core, cy + r_core), fill=(235, 195, 95, 255), outline=WHITE, width=4)
             fg.alpha_composite(cut_layer)
             d = ImageDraw.Draw(fg)
-            centred(d, 250, "ICE GIANT CUTAWAY", label, WHITE, stroke=6)
-            centred(d, 1360, "CLOUDS", small, CYAN, stroke=5)
-            centred(d, 1440, "HOT OCEAN", small, YELLOW, stroke=5)
-            centred(d, 1520, "ROCKY CORE", small, WHITE, stroke=5)
-            frames.append(bleed.finish_rgb(fg))
+            centred(d, 175, "ICE GIANT CUTAWAY", label, WHITE, stroke=6)
+            centred(d, 260, "CLOUDS · HOT FLUID · ROCKY CORE", small, CYAN, stroke=5)
+            frames.append(bleed.finish_rgb(fg, u))
         pipe_frames(frames, dest)
         return 1.08
 

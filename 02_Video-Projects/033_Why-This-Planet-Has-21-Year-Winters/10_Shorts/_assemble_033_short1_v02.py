@@ -627,39 +627,39 @@ def render_standard_shot(shot: dict, dest: Path, open_f0: Path) -> float:
         return 1.15
 
     if kind == "r05a_tilt_gauge":
-        # Native 1080x1920. Earth in y=260..880, Uranus in y=960..1580.
-        g_e = make_globe_rgba(NAS_HARV / "PIA18033.jpg", 520)
-        g_u = make_globe_rgba(NAS_HARV / "PIA18182.jpg", 540)
-        label = ImageFont.truetype(FONT_BLACK, 64)
+        # Native 1080x1920. Stack both comparison globes above TEACH_TEXT (y=1174) and captions (y=1300).
+        g_e = make_globe_rgba(NAS_HARV / "PIA18033.jpg", 390)
+        g_u = make_globe_rgba(NAS_HARV / "PIA18182.jpg", 410)
+        label = ImageFont.truetype(FONT_BLACK, 58)
         frames = []
         for i in range(frames_n):
             u = i / max(1, frames_n - 1)
             ease_u = 0.5 - 0.5 * math.cos(math.pi * min(1.0, u / 0.82))
             fg = bleed.star_base(u * 0.35).convert("RGBA")
-            ex, ey = (W - 520) // 2, 300
-            ux, uy = (W - 540) // 2, 1000
+            ex, ey = (W - 390) // 2, 210
+            ux, uy = (W - 410) // 2, 710
             fg.alpha_composite(g_e, (ex, ey))
             fg.alpha_composite(g_u, (ux, uy))
             d = ImageDraw.Draw(fg)
-            centred(d, 210, "EARTH 23.4°", label, CYAN, stroke=6)
-            centred(d, 900, "URANUS 97.77°", label, YELLOW, stroke=6)
+            centred(d, 130, "EARTH 23.4°", label, CYAN, stroke=6)
+            centred(d, 630, "URANUS 97.77°", label, YELLOW, stroke=6)
             e_ang = 23.44 * ease_u
             u_ang = 97.77 * ease_u
-            ecx, ecy = ex + 260, ey + 260
-            ucx, ucy = ux + 270, uy + 270
-            d.arc((ecx - 290, ecy - 290, ecx + 290, ecy + 290), -90, -90 + e_ang, fill=CYAN, width=14)
-            d.arc((ucx - 310, ucy - 310, ucx + 310, ucy + 310), -90, -90 + u_ang, fill=YELLOW, width=16)
+            ecx, ecy = ex + 195, ey + 195
+            ucx, ucy = ux + 205, uy + 205
+            d.arc((ecx - 220, ecy - 220, ecx + 220, ecy + 220), -90, -90 + e_ang, fill=CYAN, width=12)
+            d.arc((ucx - 235, ucy - 235, ucx + 235, ucy + 235), -90, -90 + u_ang, fill=YELLOW, width=14)
             re_rad = math.radians(-90 + e_ang)
             ru_rad = math.radians(-90 + u_ang)
             d.line(
-                (ecx - 300 * math.cos(re_rad), ecy - 300 * math.sin(re_rad), ecx + 300 * math.cos(re_rad), ecy + 300 * math.sin(re_rad)),
+                (ecx - 230 * math.cos(re_rad), ecy - 230 * math.sin(re_rad), ecx + 230 * math.cos(re_rad), ecy + 230 * math.sin(re_rad)),
                 fill=CYAN, width=8,
             )
             d.line(
-                (ucx - 320 * math.cos(ru_rad), ucy - 320 * math.sin(ru_rad), ucx + 320 * math.cos(ru_rad), ucy + 320 * math.sin(ru_rad)),
+                (ucx - 245 * math.cos(ru_rad), ucy - 245 * math.sin(ru_rad), ucx + 245 * math.cos(ru_rad), ucy + 245 * math.sin(ru_rad)),
                 fill=YELLOW, width=10,
             )
-            frames.append(bleed.finish_rgb(fg))
+            frames.append(bleed.finish_rgb(fg, u))
         pipe_frames(frames, dest)
         return 1.05
 

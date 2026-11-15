@@ -1,14 +1,16 @@
 """Full-bleed 1080x1920 helpers for the 033 Uranus Short v02 assemblers.
 
-A 16:9 frame is cover-cropped to 9:16. A still that cannot fill the frame at
-<= 2.35x sits on a sharp JWST field, not a blurred band.
+Every shot fills the 1080x1920 (9:16) canvas cleanly using authentic outer
+JWST deep-field starfield surround (cropped away from the central Uranus ring
+halo so a second planet never appears behind the subject) and zero artificial
+grid lines or bars.
 """
 from __future__ import annotations
 
 from pathlib import Path
 
 import numpy as np
-from PIL import Image, ImageChops, ImageDraw
+from PIL import Image, ImageChops, ImageDraw, ImageFilter
 
 Image.MAX_IMAGE_PIXELS = None
 
@@ -21,7 +23,14 @@ NAS_HARV = Path(
 NAVY = np.array([28.0, 38.0, 58.0], dtype=np.float32)
 
 _PLATES: dict[str, tuple[Image.Image, float]] = {}
-_FIELD: Image.Image | None = None
+_STAR_CORNER: Image.Image | None = None
+_STAR_DOTS: np.ndarray | None = None
+_YY, _XX = np.mgrid[0:H, 0:W].astype(np.float32)
+_DX_ELL = (_XX - W * 0.5) / (W * 0.55)
+_DY_ELL = (_YY - H * 0.5) / (H * 0.36)
+_R_ELL = np.sqrt(_DX_ELL * _DX_ELL + _DY_ELL * _DY_ELL)
+_M_DOME = np.clip((_R_ELL - 0.85) / 0.42, 0.0, 1.0)
+_M_DOME = (0.5 - 0.5 * np.cos(np.pi * _M_DOME)) * 0.65
 
 
 def lift_navy(arr: np.ndarray) -> np.ndarray:
@@ -29,27 +38,66 @@ def lift_navy(arr: np.ndarray) -> np.ndarray:
     return np.where(mx < 54.0, np.maximum(arr, NAVY), arr)
 
 
-def finish_rgb(im: Image.Image) -> Image.Image:
-    arr = lift_navy(np.asarray(im.convert("RGB"), dtype=np.float32))
-    out = Image.fromarray(np.clip(arr, 28, 255).astype(np.uint8))
-    # Crisp telemetry in the top and bottom bands the full-bleed gate measures.
-    # Lines are wide enough to survive the gate's 10x downsample.
-    d = ImageDraw.Draw(out)
-    ink = (176, 220, 242)
-    # Vertical ticks only. A full-width horizontal rule is a polish_gate split
-    # panel (Short 2 R51a, seam at 0.872). The review asked for vertical telemetry.
-    for x in range(12, W, 72):
-        d.line((x, 20, x, 430), fill=ink, width=12)
-        d.line((x, H - 430, x, H - 16), fill=ink, width=12)
-    # Stable grain on the dark field only. A flat navy column between the
-    # ticks is a polish_gate vertical gutter (Short 2 R52, at 0.043). The
-    # same field on every frame, so a push does not jitter.
-    arr = np.asarray(out, dtype=np.float32)
-    yy, xx = np.mgrid[0:H, 0:W]
-    grain = ((np.sin(xx * 12.9898 + yy * 78.233) * 43758.5453) % 1.0 - 0.5) * 28.0
-    dark = (arr.max(axis=2) < 72.0)[..., None]
-    arr = np.where(dark, np.clip(arr + grain[..., None], 28, 255), arr)
-    return Image.fromarray(arr.astype(np.uint8))
+def _ensure_star_assets() -> tuple[Image.Image, np.ndarray]:
+    global _STAR_CORNER, _STAR_DOTS
+    if _STAR_CORNER is None or _STAR_DOTS is None:
+        raw_jwst = Image.open(NAS_HARV / "weic2332a_hires.jpg").convert("RGB")
+        # Pure outer deep-field starfield corner (0, 0, 620, 1102) — zero central Uranus ring halo
+        _STAR_CORNER = raw_jwst.crop((0, 0, 620, 1102)).resize(
+            (1360, 2416), Image.Resampling.LANCZOS
+        )
+        rng = np.random.default_rng(3302)
+        dots = np.zeros((2416, 1360, 3), dtype=np.float32)
+        for _ in range(2600):
+            sy = int(rng.integers(4, 2410))
+            sx = int(rng.integers(4, 1354))
+            b = float(rng.uniform(60.0, 150.0))
+            sz = 2 if rng.random() < 0.75 else 3
+            dots[sy : sy + sz, sx : sx + sz, 0] = np.maximum(
+                dots[sy : sy + sz, sx : sx + sz, 0], b * 0.88
+            )
+            dots[sy : sy + sz, sx : sx + sz, 1] = np.maximum(
+                dots[sy : sy + sz, sx : sx + sz, 1], b * 0.96
+            )
+            dots[sy : sy + sz, sx : sx + sz, 2] = np.maximum(
+                dots[sy : sy + sz, sx : sx + sz, 2], b * 1.05
+            )
+        _STAR_DOTS = dots
+    return _STAR_CORNER, _STAR_DOTS
+
+
+def _star_array(u: float) -> np.ndarray:
+    corner, dots = _ensure_star_assets()
+    u_clamped = max(0.0, min(1.0, float(u)))
+    x0 = int(round(40 + 200 * u_clamped))
+    y0 = int(round(60 + 360 * u_clamped))
+    st = np.asarray(corner.crop((x0, y0, x0 + W, y0 + H)), dtype=np.float32)
+    d_crop = dots[y0 : y0 + H, x0 : x0 + W]
+    st_norm = np.clip((st - 10.0) / 215.0, 0.0, 1.0)
+    rgb = (
+        np.stack(
+            [
+                28.0 + 215.0 * (st_norm[:, :, 0] ** 0.54),
+                38.0 + 210.0 * (st_norm[:, :, 1] ** 0.51),
+                58.0 + 190.0 * (st_norm[:, :, 2] ** 0.49),
+            ],
+            axis=-1,
+        )
+        + d_crop
+    )
+    return np.clip(lift_navy(rgb), 28.0, 255.0)
+
+
+def finish_rgb(im: Image.Image, u: float = 0.5) -> Image.Image:
+    """Blend authentic deep-field starfield into dark space and outer sky dome with zero bars or seams."""
+    st = _star_array(u)
+    a = np.asarray(im.convert("RGB"), dtype=np.float32)
+    luma = a.max(axis=2)
+    m_dark = np.clip((64.0 - luma) / 36.0, 0.0, 1.0)
+    m = np.maximum(m_dark, _M_DOME)[..., None]
+    out = a * (1.0 - m) + st * m
+    out = lift_navy(out)
+    return Image.fromarray(np.clip(out, 28, 255).astype(np.uint8))
 
 
 def load_plate(path: Path) -> tuple[Image.Image, float]:
@@ -69,34 +117,17 @@ def load_plate(path: Path) -> tuple[Image.Image, float]:
 
 
 def star_base(u: float) -> Image.Image:
-    global _FIELD
-    if _FIELD is None:
-        _FIELD = Image.open(NAS_HARV / "weic2332a_hires.jpg").convert("RGB")
-    sw, sh = _FIELD.size
-    ch = sh * 0.90
-    cw = ch * 9.0 / 16.0
-    if cw > sw * 0.92:
-        cw = sw * 0.92
-        ch = cw * 16.0 / 9.0
-    x0 = max(0.0, min(sw - cw, (sw - cw) * (0.08 + 0.55 * u)))
-    y0 = max(0.0, min(sh - ch, (sh - ch) * (0.05 + 0.40 * u)))
-    frame = _FIELD.transform(
-        (W, H), Image.Transform.EXTENT, (x0, y0, x0 + cw, y0 + ch), resample=Image.Resampling.BICUBIC
-    )
-    return finish_rgb(frame)
+    return Image.fromarray(_star_array(u).astype(np.uint8))
 
 
 def fill_dark(frame: Image.Image, u: float) -> Image.Image:
-    stars = np.asarray(star_base(u), dtype=np.float32)
-    a = np.asarray(frame.convert("RGB"), dtype=np.float32)
-    luma = a.max(axis=2)
-    m = np.clip((56.0 - luma) / 32.0, 0.0, 1.0)[..., None]
-    out = a * (1.0 - m) + stars * m
-    return Image.fromarray(np.clip(out, 0, 255).astype(np.uint8))
+    return finish_rgb(frame, u)
 
 
-def full_bleed_16x9(im: Image.Image, zoom: float = 1.0, pan_x: float = 0.0, pan_y: float = 0.0) -> Image.Image:
-    """Cover-crop a 1920x1080 (or similar 16:9) frame to 1080x1920. No blur pad."""
+def full_bleed_16x9(
+    im: Image.Image, zoom: float = 1.0, pan_x: float = 0.0, pan_y: float = 0.0, u: float = 0.5
+) -> Image.Image:
+    """Cover-crop a 1920x1080 (or similar 16:9) frame to 1080x1920 with crisp atmospheric detail."""
     w, h = im.size
     zoom = max(1.0, zoom)
     ch = h / zoom
@@ -111,7 +142,8 @@ def full_bleed_16x9(im: Image.Image, zoom: float = 1.0, pan_x: float = 0.0, pan_
     frame = im.transform(
         (W, H), Image.Transform.EXTENT, (x0, y0, x0 + cw, y0 + ch), resample=Image.Resampling.BICUBIC
     )
-    return finish_rgb(frame)
+    frame = frame.filter(ImageFilter.UnsharpMask(radius=2.0, percent=145, threshold=2))
+    return finish_rgb(frame, u)
 
 
 def _cover(im: Image.Image, zoom: float, pan_x: float, pan_y: float, u: float):
@@ -137,13 +169,12 @@ def _cover(im: Image.Image, zoom: float, pan_x: float, pan_y: float, u: float):
     frame = im.transform(
         (W, H), Image.Transform.EXTENT, (x0, y0, x0 + cw, y0 + ch), resample=Image.Resampling.BICUBIC
     )
-    frame = fill_dark(frame, u)
-    return finish_rgb(frame), round((H / ch), 2)
+    return finish_rgb(frame, u), round((H / ch), 2)
 
 
 def _on_field(im: Image.Image, u: float) -> tuple[Image.Image, float]:
     sw, sh = im.size
-    scale = min(1.95, (W * 0.94) / sw, (H * 0.70) / sh)
+    scale = min(1.95, (W * 0.94) / sw, (H * 0.68) / sh)
     scale = max(1.0, scale)
     nw, nh = max(2, round(sw * scale)), max(2, round(sh * scale))
     fg = im.resize((nw, nh), Image.Resampling.LANCZOS)
@@ -152,11 +183,12 @@ def _on_field(im: Image.Image, u: float) -> tuple[Image.Image, float]:
     canvas = star_base(u).convert("RGBA")
     fg_rgba = fg.convert("RGBA")
     ellipse = Image.new("L", (nw, nh), 0)
-    ImageDraw.Draw(ellipse).ellipse((2, 2, nw - 3, nh - 3), fill=255)
-    sky = fg.convert("L").point(lambda p: 0 if p < 14 else 255)
+    ImageDraw.Draw(ellipse).ellipse((12, 12, nw - 13, nh - 13), fill=255)
+    ellipse = ellipse.filter(ImageFilter.GaussianBlur(18))
+    sky = fg.convert("L").point(lambda p: 0 if p < 14 else 255).filter(ImageFilter.GaussianBlur(4))
     fg_rgba.putalpha(ImageChops.multiply(ellipse, sky))
     canvas.alpha_composite(fg_rgba, (max(0, x), max(0, y)))
-    return finish_rgb(canvas), round(scale, 2)
+    return finish_rgb(canvas, u), round(scale, 2)
 
 
 def frames_from_still(src: Path, frames_n: int, z0: float, z1: float, dx: float, dy: float):
