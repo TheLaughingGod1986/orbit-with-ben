@@ -256018,6 +256018,11 @@
           "at": "2026-11-15T12:43Z",
           "by": "gemini",
           "what": "step 6 of 6 done: Step 6/6 complete: jobs/reviews/J2890/REVIEW.md committed (002d7af11b), R2 stream owb-033-v04 uploaded, WIP.json updated (OWB:033 enters UAT)"
+        },
+        {
+          "at": "2026-11-15T12:43Z",
+          "by": "gemini",
+          "what": "waits on Ben: Watch 033 Uranus long master v04 (10m 29s) and thumbnails A/B (by 2026-11-29 18:00 London)"
         }
       ],
       "remaining_action": "Completed 033 master v04 review (KEEP) and staged for Ben UAT watch",
@@ -256045,7 +256050,19 @@
       },
       "taskKeys": [
         "OWB:033"
-      ]
+      ],
+      "awaits_ben": {
+        "what": "Watch 033 Uranus long master v04 (10m 29s) and thumbnails A/B",
+        "file": "OWB UAT/033_why_this_planet_has_21_year_winters_master_v04_PHONE.mp4",
+        "version": "v04",
+        "due": "2026-11-29T18:00Z",
+        "airs": "2026-12-09T18:00Z",
+        "ifNot": "Chief's final OK and private upload go ahead",
+        "card": "OWB:033",
+        "title": "Why Knocked-Sideways Uranus Has 21-Year Winters",
+        "number": "033",
+        "type": "long"
+      }
     },
     {
       "id": "J2891",
