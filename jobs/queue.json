@@ -227584,9 +227584,14 @@
           "at": "2026-11-15T18:11Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Verified UprightCodeRenderer sky_bg full-bleed (sharp=0.28/0.45/0.29, 0 padded frames) and s01_visir first_cut_s=2.23s + f0diff=2.81; launching full v06 render for fri11 & mon14"
+        },
+        {
+          "at": "2026-11-15T18:15Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified s01_visir starfield composite + sky_bg star/reticle fix; starting fri11 and mon14 v06 render + 10-gate runs"
         }
       ],
-      "remaining_action": "Render fri11 & mon14 v06, run all 10 gates + J2829 5-part review on both, arm 11 & 14 Dec watch cards",
+      "remaining_action": "Applying verified sky_bg + s01_visir full-bleed fixes to _assemble_029_shorts_v06.py and rendering Shorts 3 & 4",
       "due": "2026-11-27T18:00:00Z",
       "kind": "assembly",
       "plain": "Make four December Shorts fill the screen all the way through, then offer you the fixed versions",
@@ -227594,9 +227599,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-15T18:11Z",
+        "at": "2026-11-15T18:15Z",
         "by": "gemini",
-        "note": "Verified UprightCodeRenderer sky_bg full-bleed (sharp=0.28/0.45/0.29, 0 padded frames) and s01_visir first_cut_s=2.23s +"
+        "note": "Verified s01_visir starfield composite + sky_bg star/reticle fix; starting fri11 and mon14 v06 render + 10-gate runs"
       },
       "taskKeys": [
         "OWB:031",
