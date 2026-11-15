@@ -256235,10 +256235,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-15T13:58Z",
+      "eta": "2026-11-15T15:58Z",
       "created_by": "relay",
       "created_at": "2026-11-15T12:45Z",
       "result": "",
@@ -256247,6 +256247,11 @@
           "at": "2026-11-15T12:45Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-15T13:58Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief resolves 033 edit handoff and records the next owner/action",
@@ -256256,6 +256261,14 @@
         "stage": "edit",
         "kind": "orphan-review",
         "signature": "bc87449771f3f409ba4b"
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-15T13:58Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
