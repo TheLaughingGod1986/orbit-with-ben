@@ -251718,13 +251718,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-15T16:45Z",
-      "eta": "2026-11-15T18:45Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-14T16:16Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-14T16:16Z",
@@ -251770,6 +251770,11 @@
           "at": "2026-11-15T16:45Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-15T16:45Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Chief reviews the weekly audit and decides the proposed Shorts title test; the skipped reads are picked up next run",
@@ -251787,7 +251792,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "18db594341"
     },
     {
       "id": "J2834",
