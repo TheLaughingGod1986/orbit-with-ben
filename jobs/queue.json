@@ -257657,9 +257657,14 @@
           "at": "2026-11-15T18:29Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Plan: 1) inspect J0124 history, evidence, and approvals; 2) check live YouTube public status of c5AdqQsnnys via API/oEmbed/watch page; 3) write jobs/reviews/J2908/REVIEW.md and reopen or re-hold J0124, then finish J2908"
+        },
+        {
+          "at": "2026-11-15T18:30Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Step 1 done: reviewed J0124, J0084, J0103, J2504, and 025/026 upload/approval records; Related links (J2504), pinned comment (6ee3657ae), and Buffer checks are complete, leaving only the 025->026 end-screen video swap waiting on c5AdqQsnnys Public"
         }
       ],
-      "remaining_action": "Read J0124 history/approvals and verify live YouTube Public status of 026 long c5AdqQsnnys",
+      "remaining_action": "Query live YouTube status for 026 long c5AdqQsnnys via watch page, oEmbed, channel Atom feed, and Data API",
       "kind": "review",
       "recheck_of": "J0124",
       "due": "2026-11-11T12:00:00+00:00",
@@ -257674,11 +257679,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-15T18:29Z",
+        "at": "2026-11-15T18:30Z",
         "by": "gemini",
-        "note": "Plan: 1) inspect J0124 history, evidence, and approvals; 2) check live YouTube public status of c5AdqQsnnys via API/oEmb"
+        "note": "Step 1 done: reviewed J0124, J0084, J0103, J2504, and 025/026 upload/approval records; Related links (J2504), pinned com"
       },
       "taskKeys": [
         "OWB:025",
