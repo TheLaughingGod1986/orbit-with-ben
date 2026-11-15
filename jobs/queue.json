@@ -254016,10 +254016,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-15T05:42Z",
+      "eta": "2026-11-15T07:42Z",
       "created_by": "gemini",
       "created_at": "2026-11-15T00:03Z",
       "result": "",
@@ -254028,11 +254028,24 @@
           "at": "2026-11-15T00:03Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-15T05:42Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Assemble 033 long master v03 with FIX-1..3, pass all 5 automated gates, and export v03 + PHONE to 09_Final-Export, NAS OWB UAT, and iCloud OWB UAT",
       "kind": "assembly",
-      "plain": "Rebuild 033 Uranus long master v03 to fix cropped code-graphic pills, square inset boxes/star bleed on stills, and narrow ring-strip plates"
+      "plain": "Rebuild 033 Uranus long master v03 to fix cropped code-graphic pills, square inset boxes/star bleed on stills, and narrow ring-strip plates",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-15T05:42Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2872",
