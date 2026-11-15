@@ -66,7 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2819 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2797 |  |
 | J2825 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
 | J2830 | mini | blocked | macbook | – | script · Backlog OWB: this week's dated-event Short (LEARNINGS rule 16 test), script + packaging, park for Chief |  |
-| J2831 | mini | blocked | cursor | – | for cursor · studio · Board: pass Ben's one-time phone link to his iPhone privately, so his Approve button works |  |
+| J2831 | mini | open | – | – | for cursor · studio · Board: pass Ben's one-time phone link to his iPhone privately, so his Approve button works |  |
 | J2832 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2805 |  |
 | J2843 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Packaging panel decision: OWB weekly audit 3 new thumbnail Bs + separate Title Bs (m09jUdwC5hk ALL STARS FADE, Mo93x0fxB1Q ZERO SIGNALS, ziKBPJ6FY0U 300 MILLION YEARS) |  |
 | J2844 | any | open (after J2843) | – | – | chief · Chief gate: pass J2834 weekly audit thumbnail Bs (T035 m09jUdwC5hk, T036 Mo93x0fxB1Q, T037 ziKBPJ6FY0U) after J2843 panel | J2834 |

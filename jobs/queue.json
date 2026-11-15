@@ -251747,13 +251747,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-11-14T20:42Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-14T15:33Z",
-      "result": "Waiting for: The one-time link is in Ben's own iCloud Drive, not a shared folder, file name Link this phone to the board.html. Notes needed a permission prompt, so that place was used. Delete only that file once its code is in the board pair store or after 2026-11-15T20:45:00Z, then say so on the thread. If neither is true yet, wait again. Do not print the link.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-14T15:33Z",
@@ -251844,6 +251844,11 @@
           "at": "2026-11-15T20:49Z",
           "by": "relay",
           "what": "condition verification queued: J2913"
+        },
+        {
+          "at": "2026-11-15T20:57Z",
+          "by": "gemini",
+          "what": "reopened: Condition satisfied (J2913, jobs/reviews/J2913/REVIEW.md, commit dcbc95223b): 24h cleanup cutoff 2026-11-15T20:45:00Z (and exact mtime + 24h 2026-11-15T20:45:46Z) passed at 2026-11-15T20:53:53Z; '~/Library/Mobile Documents/com~apple~CloudDocs/Link this phone to the board.html' (mode 0600, 772B, mtime 2026-11-14T20:45:46Z) verified present; issue #219 pairs[0] (2026-11-14T19:13:08.165Z, e=1795269633) already paired Ben's iPhone. Reopened for step 4/4 cleanup ONLY: delete ONLY '~/Library/Mobile Documents/com~apple~CloudDocs/Link this phone to the board.html', confirm on #478, and DO NOT mint another link."
         }
       ],
       "remaining_action": "Step 4/4 cleanup only: delete Link this phone to the board.html once used or after 2026-11-15T20:45:00Z and confirm on #478 (do not mint a new link)",
@@ -251851,23 +251856,7 @@
       "for": "cursor",
       "kind": "studio",
       "plain": "Get the phone-linking link to Ben's iPhone privately, so he can approve the Journey film",
-      "urgent": 6,
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-14T20:46Z",
-        "by": "cursor",
-        "note": "Thread posted. Link file is in his own iCloud Drive. Notes needed a permission prompt."
-      },
-      "hold": {
-        "type": "input",
-        "condition": "Second one-time link (e=1795293772, mtime 2026-11-14T20:45:46Z, #6883958273) is in '~/Library/Mobile Documents/com~apple~CloudDocs/Link this phone to the board.html'; its nonce is not in issue #219 pairs (pairs[0] is e=1795269633 from 19:13:08Z) and 2026-11-15T20:45:00Z has not passed. Delete ONLY that file once e=1795293772 is in issue #219 pairs or at/after 2026-11-15T20:45:00Z, post cleanup on #478, and DO NOT mint another link.",
-        "check_at": "2026-11-15T21:49:10+00:00",
-        "last_recheck": "J2874",
-        "checked_at": "2026-11-15T02:23:57+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J2913"
-      }
+      "urgent": 6
     },
     {
       "id": "J2832",
