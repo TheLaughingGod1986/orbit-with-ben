@@ -256477,9 +256477,14 @@
           "at": "2026-11-15T13:49Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-15T13:50Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Starting J2896: inspecting J2870 review, 033 Short 1 v02 file hash, package, and 033 long status"
         }
       ],
-      "remaining_action": "Upload the Uranus Short about the 21-year winters (v02, Test A opening) Private, slot Fri 18 Dec 11:30",
+      "remaining_action": "Verify J2870 review, 033 Short 1 v02 sha256 across all 3 stores, and gate_shorts_open.py check",
       "due": "2026-12-16T18:00:00Z",
       "kind": "listing",
       "approved_from": {
@@ -256505,12 +256510,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-15T13:49Z",
+        "of": 5,
+        "at": "2026-11-15T13:50Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Starting J2896: inspecting J2870 review, 033 Short 1 v02 file hash, package, and 033 long status"
+      },
+      "taskKeys": [
+        "OWB:033"
+      ]
     },
     {
       "id": "J2897",
