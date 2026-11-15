@@ -255052,13 +255052,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-11-15T08:16Z",
-      "eta": "2026-11-15T10:16Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-15T07:58Z",
-      "result": "",
+      "result": "parked for Chief: master hash MATCHES 519869728d51b42b98435bc971361994d61780c02e2daa3bc0d23f27c80ed073 (585.440s, 389705443 bytes). Upload package does not: no PACKAGE_MANIFEST.json; metadata_DRAFT_v01.json is draft_for_chief_review and says it is not an upload manifest; it does not name master v02; description chapters are still ?:??; no captions, trailer, or pinned comment. Thumbs A e8c86bd181fb7196ab62bf95ec19b9ce6f1096f27e06ac13fd2ff97d640eb534 and B 68d8d57187bee9284c0b276f817cf90256bece8e62c829f5ea6d3ddb18b55390 match. Uploaded nothing. Privacy and publish time were not sent.",
       "history": [
         {
           "at": "2026-11-15T07:58Z",
@@ -255084,6 +255084,11 @@
           "at": "2026-11-15T08:18Z",
           "by": "cursor",
           "what": "step 1 of 4 done: Master sha256 matches 519869728d51b42b98435bc971361994d61780c02e2daa3bc0d23f27c80ed073, 585.440s, 389705443 bytes. No PACKAGE_MANIFEST.json. metadata_DRAFT_v01.json is draft_for_chief_review and does not name the v02 master. Description chapters are still ?:??. Thumbs A/B hashes match. Uploaded nothing."
+        },
+        {
+          "at": "2026-11-15T08:18Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: master hash MATCHES 519869728d51b42b98435bc971361994d61780c02e2daa3bc0d23f27c80ed073 (585.440s, 389705443 bytes). Upload package does not: no PACKAGE_MANIFEST.json; metadata_DRAFT_v01.json is draft_for_chief_review and says it is not an upload manifest; it does not name master v02; description chapters are still ?:??; no captions, trailer, or pinned comment. Thumbs A e8c86bd181fb7196ab62bf95ec19b9ce6f1096f27e06ac13fd2ff97d640eb534 and B 68d8d57187bee9284c0b276f817cf90256bece8e62c829f5ea6d3ddb18b55390 match. Uploaded nothing. Privacy and publish time were not sent."
         }
       ],
       "remaining_action": "Park the Titan upload for the Chief: the package does not name v02",
