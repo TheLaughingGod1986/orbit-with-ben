@@ -254867,9 +254867,14 @@
           "at": "2026-11-15T09:46Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-15T09:47Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Swap the Space Station Short xdurJQcoiGM (Wed 25 Nov) to the full-screen cut Ben OK'd, v14",
+      "remaining_action": "Run gate_shorts_open check on owb_ar2_iss_2030_deorbit_v14.mp4 and read back xdurJQcoiGM",
       "due": "2026-11-24T18:00:00Z",
       "kind": "listing",
       "approved_from": {
@@ -254896,12 +254901,13 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-15T09:46Z",
-        "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "of": 5,
+        "at": "2026-11-15T09:47Z",
+        "by": "gemini"
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     },
     {
       "id": "J2881",
