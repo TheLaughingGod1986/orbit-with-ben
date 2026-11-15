@@ -91,7 +91,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2896 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about the 21-year winters (v02, Test A opening) Private, slot Fri 18 Dec 11:30 |  |
 | J2904 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2271 |  |
 | J2906 | mini | open | – | – | for gemini · listing · `gemini-argon` · Swap the Great Dimming Short SWDCZfWZVao (Wed 9 Dec) to the full-screen cut Ben OK'd, v06 |  |
-| J2907 | mini | open | – | – | for gemini · studio · `gemini-argon` · Board: redeploy with Ben's new GitHub token, prove ticks save and reach both threads |  |
+| J2907 | mini | claimed | gemini | 2026-11-15T19:09Z | for gemini · studio · `gemini-argon` · Board: redeploy with Ben's new GitHub token, prove ticks save and reach both threads |  |
 | J2909 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0861 |  |
 
 Recently finished:

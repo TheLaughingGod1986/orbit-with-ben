@@ -257655,10 +257655,10 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-15T18:49Z",
+      "eta": "2026-11-15T19:09Z",
       "created_by": "claude",
       "created_at": "2026-11-15T18:14Z",
       "result": "",
@@ -257672,6 +257672,11 @@
           "at": "2026-11-15T18:42Z",
           "by": "claude",
           "what": "rerouted to gemini on gemini-argon: Cursor has not claimed this in 27 minutes (its last act was 17:59Z) and Ben cannot approve on the board until it is done. Gemini is working and did the last board deploy (J2866), so it goes to Gemini."
+        },
+        {
+          "at": "2026-11-15T18:49Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Confirm BOARD_GH_TOKEN is set, redeploy the board, prove ticks save and a verdict reaches both channel threads",
@@ -257680,7 +257685,15 @@
       "kind": "studio",
       "plain": "Ben replaced the board's expired token: redeploy the board so he can approve again, and prove it works for both channels",
       "urgent": 8,
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-15T18:49Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2908",
