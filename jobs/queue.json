@@ -254474,9 +254474,14 @@
           "at": "2026-11-15T11:08Z",
           "by": "gemini",
           "what": "step 1 of 6 done: Step 1 PASS: verified all 5 automated gates (clip_check, picture_qa, polish_gate, music_gate, sfx_kit level) + -14.5 LUFS, -1.5 dBTP, 0 black frames on 033 master_v03.mp4 (2eb6455414)"
+        },
+        {
+          "at": "2026-11-15T11:10Z",
+          "by": "gemini",
+          "what": "step 2 of 6 done: Step 2 PASS: inspected all 6 full-film 2fps contact sheets (1,259 frames) and high-res FIX-1/FIX-3 sheets; all 12 code-graphic pills uncropped, zero rectangular inset boxes or star bleed, all 12 ring-strip plates and R57 glare still replaced"
         }
       ],
-      "remaining_action": "Render and inspect full-film 2fps contact sheets, ±3 cut boundary strips, final 3.0s frames, audio chunks, and 360p proxies",
+      "remaining_action": "Inspect ±3 frame strips at all 146 internal cut boundaries and all 72 frames of the final 3.0s",
       "kind": "review",
       "required_capabilities": [
         "audio_input"
@@ -254492,11 +254497,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 6,
-        "at": "2026-11-15T11:08Z",
+        "at": "2026-11-15T11:10Z",
         "by": "gemini",
-        "note": "Step 1 PASS: verified all 5 automated gates (clip_check, picture_qa, polish_gate, music_gate, sfx_kit level) + -14.5 LUF"
+        "note": "Step 2 PASS: inspected all 6 full-film 2fps contact sheets (1,259 frames) and high-res FIX-1/FIX-3 sheets; all 12 code-g"
       },
       "taskKeys": [
         "OWB:033"
