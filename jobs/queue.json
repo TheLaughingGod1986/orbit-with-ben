@@ -253221,9 +253221,14 @@
           "at": "2026-11-15T00:26Z",
           "by": "gemini",
           "what": "step 1 of 6 done: Verified J2860 v02 master (195070 frames, 6502.333s, max_hw_vs_sw_mad=0.0, other_faults=[]), J2859 listing claims against v02, all 13 parent film links public before 12 Dec, and merged PR #937 + PR #940"
+        },
+        {
+          "at": "2026-11-15T00:31Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: Built v02 upload package with schedule 2026-12-12T21:00:00Z, pinned comment, vertical trailer, and combined before/after+thumbnail watch clip v03; dry-run package validation passed"
         }
       ],
-      "remaining_action": "Build upload package for v02, add pinned comment & schedule Sat 12 Dec 21:00Z, and append thumbnail to J2860 before/after watch clip",
+      "remaining_action": "Upload sleep_video_01_master_v02.mp4 to YouTube as Private scheduled Sat 12 Dec 2026 21:00Z and verify API readback",
       "due": "2026-11-20T18:00:00Z",
       "kind": "listing",
       "plain": "Upload the two-hour sleep film privately and schedule it for Saturday 12 December at 9pm",
@@ -253237,11 +253242,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 6,
-        "at": "2026-11-15T00:26Z",
+        "at": "2026-11-15T00:31Z",
         "by": "gemini",
-        "note": "Verified J2860 v02 master (195070 frames, 6502.333s, max_hw_vs_sw_mad=0.0, other_faults=[]), J2859 listing claims agains"
+        "note": "Built v02 upload package with schedule 2026-12-12T21:00:00Z, pinned comment, vertical trailer, and combined before/after"
       }
     },
     {
