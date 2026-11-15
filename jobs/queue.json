@@ -1,5 +1,5 @@
 {
-  "next_id": 2900,
+  "next_id": 2901,
   "jobs": [
     {
       "id": "J0001",
@@ -256817,6 +256817,36 @@
       "due": "2026-11-28T18:00:00Z",
       "kind": "thumb",
       "plain": "Making three thumbnail pictures for the Uranus video so Ben can compare them"
+    },
+    {
+      "id": "J2900",
+      "title": "033 Uranus: review 3 long thumbnail concepts A/B/C (HOOK/BAND/GRADE/PHONE + OWB UAT staging)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Rule H review (Ben, 5 Nov 2026) of `J2899` (`033 Uranus: build 3 long thumbnail concepts A/B/C`).\n\n1. Read `J2899`'s brief, result, history, and `02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/08_Thumbnail/BUILD_REPORT_v01.md` + `THUMB_SCORES_v01.json`.\n2. Inspect all 3 full-size `1920x1080` thumbnail concepts (`033_thumb_A_v01.jpg`, `033_thumb_B_v01.jpg`, `033_thumb_C_v01.jpg`) and their `thumb_preview.py long --score` sheets at `168x94` phone size:\n   - **HOOK:** 2–3 words, Bebas Neue / bold condensed caps, white or warm gold `#FFD60A` with dark stroke, high contrast against the plate.\n   - **BAND:** Top band only; planet/rings unobstructed; bottom-right duration badge zone clear; no Orbit character on long thumbnails (Standing Lesson 3).\n   - **GRADE:** `sat >= 100` (at least one `>= 120`), `near_black <= 30%`, Concept A uses a verified real JWST/Voyager frame (`weic2332a_hires.jpg` or `PIA18182.jpg`, Rule 19).\n   - **PHONE (`168x94`):** Hook text and sideways Uranus silhouette read clearly at mobile feed size.\n3. Verify SHA-256 parity of `033_thumb_A_v01.jpg` and `033_thumb_B_v01.jpg` in `/Volumes/data/studio-live/orbit-with-ben/OWB UAT/` and iCloud `/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/` (staged alongside `033_why_this_planet_has_21_year_winters_master_v04_PHONE.mp4` for `J2890`'s `awaits_ben` watch), and verify the proposed unarmed entry in `05_Analytics/tests/THUMB_LEDGER.json`.\n4. Write `jobs/reviews/<this-id>/REVIEW.md` (`KEEP` or `FIX`). On `KEEP`, mark `033` `stages.thumbs.state = \"done\"` in `02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/status.json`. On `FIX`, set `stages.thumbs` back to `\"doing\"` and queue a specific fix job with `--film 033 --stage thumbs`.\n5. **Zero paid generation (`£0`), zero YouTube uploads.**\n",
+      "ref": "",
+      "film": "033",
+      "stage": "thumbs",
+      "after": "J2899",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-15T14:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-15T14:16Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review 033 Uranus long thumbnail concepts A/B/C at 1920x1080 and 168x94, verify OWB UAT staging, and write REVIEW.md (KEEP/FIX)",
+      "due": "2026-11-29T12:00:00Z",
+      "kind": "review",
+      "plain": "Checking the three Uranus thumbnail pictures at phone size and full size"
     }
   ],
   "focus": [
