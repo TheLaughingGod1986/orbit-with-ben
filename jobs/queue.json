@@ -258593,18 +258593,23 @@
           "at": "2026-11-15T23:14Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Opened PR for R1-R6 live_named_charge_submit overlay fix (aed53d3f); 11/11 unit tests PASS; 0 Create clicks and 0 credits spent on failed Batch 1 precheck"
+        },
+        {
+          "at": "2026-11-15T23:23Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Pushed PR #601 (535b4d4c) fixing Settings popover open before guarded_create and v02 0-credit start stills; 344 local tests passed; awaiting GitHub CI"
         }
       ],
-      "remaining_action": "Wait for GitHub CI on R1-R6 overlay fix PR, merge to main under elected Chief authority, re-run pre-flight Checks 1-3, and launch guarded Batch 1 + Batch 2",
+      "remaining_action": "Merge PR #601 once CI passes, run live £0 Flow pre-flight, post to #180, and start detached tmux j2915-render",
       "kind": "video",
       "plain": "Generate the six Dinosaur Short replacement scenes in Flow and post their review stills.",
       "mini_only": true,
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-15T23:14Z",
+        "at": "2026-11-15T23:23Z",
         "by": "gemini",
-        "note": "Opened PR for R1-R6 live_named_charge_submit overlay fix (aed53d3f); 11/11 unit tests PASS; 0 Create clicks and 0 credit"
+        "note": "Pushed PR #601 (535b4d4c) fixing Settings popover open before guarded_create and v02 0-credit start stills; 344 local te"
       },
       "taskKeys": [
         "HOS:010"
