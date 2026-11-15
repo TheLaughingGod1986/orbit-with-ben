@@ -255827,17 +255827,22 @@
           "at": "2026-11-15T11:28Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Claimed J2889. v03 assembler is on the shared film folder. FIX-A anchors three partial moons. FIX-B and FIX-C follow the review plate table. One Hubble run is 15.2s, so the last of those three cuts gets its own tighter crop to stay under the 15s reuse warning."
+        },
+        {
+          "at": "2026-11-15T11:34Z",
+          "by": "cursor",
+          "what": "step 2 of 4 done: Detached render is producing cuts. 20 of 96 remaining cuts were done in the first half-minute after the restart. Session j2889-render. Log /Users/benjaminoats/_desk/logs/j2889-render.log. Done file /Users/benjaminoats/_desk/logs/j2889-render.done."
         }
       ],
-      "remaining_action": "Writing the Uranus v04 assembler and the replacement plates",
+      "remaining_action": "Waiting for the Uranus v04 render to finish its gates and export",
       "kind": "assembly",
       "plain": "Re-render Uranus long video (v04) fixing 3 clipped moon edges, 2 static/diagram stills, and a 25-second repeated shot",
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-15T11:28Z",
+        "at": "2026-11-15T11:34Z",
         "by": "cursor",
-        "note": "Claimed J2889. v03 assembler is on the shared film folder. FIX-A anchors three partial moons. FIX-B and FIX-C follow the"
+        "note": "Detached render is producing cuts. 20 of 96 remaining cuts were done in the first half-minute after the restart. Session"
       },
       "taskKeys": [
         "OWB:033"
