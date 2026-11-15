@@ -256486,10 +256486,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-15T12:57Z",
+      "eta": "2026-11-15T14:57Z",
       "created_by": "claude",
       "created_at": "2026-11-15T12:52Z",
       "result": "",
@@ -256498,11 +256498,24 @@
           "at": "2026-11-15T12:52Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-15T12:57Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Sleep video: rebuild Ben's watch clip as one clean clip and check the whole film for anything unfinished",
       "due": "2026-11-20T18:00:00Z",
-      "kind": "assembly"
+      "kind": "assembly",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-15T12:57Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
