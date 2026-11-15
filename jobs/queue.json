@@ -258606,13 +258606,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-15T22:21Z",
-      "eta": "2026-11-16T00:21Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-15T22:12Z",
-      "result": "",
+      "result": "parked for Chief: dated-event Short v01 ready for review",
       "history": [
         {
           "at": "2026-11-15T22:12Z",
@@ -258663,6 +258663,11 @@
           "at": "2026-11-15T23:03Z",
           "by": "gemini",
           "what": "step 4 of 4 done: All 4 steps complete (adf77c5a88): VO (1 take, 18.48s) + full-bleed 9:16 v01 (19.50s, 0/20 & 0/39 padded) + all Shorts gates PASS + 56 files SHA-verified on studio-live NAS"
+        },
+        {
+          "at": "2026-11-15T23:03Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: dated-event Short v01 ready for review"
         }
       ],
       "remaining_action": "Chief/Claude review of dated-event Short v01 before Ben's watch (due Wed 25 Nov 18:00)",
