@@ -257036,9 +257036,14 @@
           "at": "2026-11-15T15:21Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-15T15:21Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J2901 and 033 upload stage; starting 5-step build and dry-run of 033 11_Upload-Package"
         }
       ],
-      "remaining_action": "Build 033 Uranus 11_Upload-Package (manifest, chapters, Sources/credits, en-GB.srt, trailer) and verify gate:episode + youtube:package --dry-run (no live upload)",
+      "remaining_action": "Inspect 033 script, shot list, sources, VO timings, and template upload packages",
       "due": "2026-11-29T18:00:00Z",
       "kind": "listing",
       "plain": "Preparing the title, description, chapters, captions and upload package for the Uranus video",
@@ -257053,12 +257058,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-15T15:21Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2901 and 033 upload stage; starting 5-step build and dry-run of 033 11_Upload-Package"
+      },
+      "taskKeys": [
+        "OWB:033"
+      ]
     },
     {
       "id": "J2902",
