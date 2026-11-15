@@ -16,6 +16,9 @@ import datetime as dt
 import re
 from zoneinfo import ZoneInfo
 
+import channels
+from video_progress import job_targets
+
 LONDON = ZoneInfo("Europe/London")
 UTC = dt.timezone.utc
 
@@ -141,17 +144,19 @@ def _until_label(publish_at: str, days: int) -> str:
 
 def _video_for(step: dict, videos: list, jobs_by_id: dict) -> dict | None:
     films = [str(step.get("film") or "").strip()]
+    keys = set()
     for job_id in step.get("jobs") or []:
-        film = str((jobs_by_id.get(job_id) or {}).get("film") or "").strip()
+        job = jobs_by_id.get(job_id) or {}
+        film = str(job.get("film") or "").strip()
         if film:
             films.append(film)
-    keys = set()
+        keys.update(job_targets(job))
     for film in films:
         if not film:
             continue
         keys.add(film)
-        keys.add(f"OWB:{film}")
-        keys.add(f"HOS:{film}")
+        for label in channels.labels():
+            keys.add(f"{label}:{film}")
     wanted = set(step.get("jobs") or [])
     for video in videos or []:
         if not isinstance(video, dict):
