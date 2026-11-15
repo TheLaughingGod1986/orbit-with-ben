@@ -91,6 +91,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2885 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2857 |  |
 | J2886 | mini | blocked | cursor | – | studio · Pin the Titan long comment once T3cBBss1F60 is public |  |
 | J2889 | mini | open | – | – | 033 edit · assembly · 033 Uranus: assemble long master v04 (fix J2872 partial-limb moon cutouts, PIA01487/PIA01350 plates & 25.3s weic2332a repeat) | J2872 5ea0a96ee9; J2871 |
+| J2890 | mini | open (after J2889) | – | – | 033 edit · review · 033 Uranus: 5-part review of long master v04 (after J2889) + stage for Ben UAT watch | J2872 5ea0a96ee9; J2889 |
 
 Recently finished:
 

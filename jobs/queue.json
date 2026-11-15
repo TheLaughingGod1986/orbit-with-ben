@@ -1,5 +1,5 @@
 {
-  "next_id": 2890,
+  "next_id": 2891,
   "jobs": [
     {
       "id": "J0001",
@@ -255812,6 +255812,39 @@
       "remaining_action": "Apply FIX-A, FIX-B, and FIX-C from jobs/reviews/J2872/REVIEW.md, run all 5 gates, and export master_v04.mp4 + PHONE",
       "kind": "assembly",
       "plain": "Re-render Uranus long video (v04) fixing 3 clipped moon edges, 2 static/diagram stills, and a 25-second repeated shot"
+    },
+    {
+      "id": "J2890",
+      "title": "033 Uranus: 5-part review of long master v04 (after J2889) + stage for Ben UAT watch",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Review `033_why_this_planet_has_21_year_winters_master_v04.mp4` (`629.40 s`, `1920x1080` `24 fps` CFR) under the 5-part `J2829` review standard (`jobs/reviews/J2829/RULING.md` and `jobs/reviews/J2872/REVIEW.md`):\n1. Verify all 5 automated gates (`clip_check.py`, `picture_qa.py`, `polish_gate.py`, `music_gate.py`, `sfx_kit.py level`, plus `~-14 LUFS`, `<= -1.0 dBTP`, `0` black frames, and `0` `>15 s` reuse warnings) PASS on `master_v04.mp4`.\n2. Render and inspect the full-film `0.5 s` (`2 fps`) contact-sheet grid (`1,259` frames) with burned-in timestamps, verifying `FIX-A` (zero unfeathered partial-limb moon cutout edges on `C054, C086, C087, C121, C130, C134, C141`), `FIX-B` (`PIA01487.jpg` and `PIA01350.jpg` replaced on `C064, C073, C074, C105, C106, C136, C137`), and `FIX-C` (`weic2332a_hires.jpg` consecutive duration `<= 15 s` across `C107–C111`).\n3. Render and inspect `±3` frame strips at every internal cut (`146` boundaries) and all `72` frames of the final `3.0 s` (`f15035..f15106`).\n4. Listen to the complete soundtrack via verified `audio_input` (extracted `.wav`/`.mp3` `<= 5 MB`).\n5. Watch compact `640x360` `.mp4` review proxies (`<= 5 MB`) via `read_file` (`moving_video_input`).\n6. Write `jobs/reviews/<this-job-id>/REVIEW.md` (`KEEP` or `FIX`). On `KEEP`, verify non-evicted SHA-256 in NAS `OWB UAT` and iCloud `OWB UAT`, upload `master_v04_PHONE.mp4` to R2 (`scripts/watch_upload.mjs`), call `jobs.py awaits` for Ben's UAT watch (`Wed 09 Dec 2026 18:00 London` slot), and advance `033` `edit` / `jobs/WIP.json` per `AGENTS.md`.\n",
+      "ref": "J2872 5ea0a96ee9; J2889",
+      "film": "033",
+      "stage": "edit",
+      "after": "J2889",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-15T11:22Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-15T11:22Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Run 5-part J2829 review on master_v04.mp4, write REVIEW.md, and stage for Ben's UAT watch on KEEP",
+      "kind": "review",
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ],
+      "plain": "5-part review of Uranus long video (v04) and stage for Ben's UAT watch on KEEP"
     }
   ],
   "focus": [
