@@ -250559,10 +250559,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-15T00:10Z",
+      "eta": "2026-11-15T02:10Z",
       "created_by": "relay",
       "created_at": "2026-11-14T13:19Z",
       "result": "",
@@ -250616,6 +250616,11 @@
           "at": "2026-11-15T00:10Z",
           "by": "gemini",
           "what": "reopened: Elected acting Chief Gemini reopening J2824 after recording wait --recheck J2824 on J2035 to close J2824"
+        },
+        {
+          "at": "2026-11-15T00:10Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief to record wait --recheck J2824 on J2035 (check-at 2026-11-14T20:15:00Z) and close J2824",
@@ -250635,7 +250640,15 @@
       "taskKeys": [
         "HOS:009"
       ],
-      "escalated_at": "2026-11-14T16:23Z"
+      "escalated_at": "2026-11-14T16:23Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-15T00:10Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2825",
