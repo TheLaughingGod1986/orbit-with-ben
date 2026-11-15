@@ -225978,7 +225978,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T19:53Z",
-      "result": "Waiting for: Ledger step done: orbit-with-ben PR 935 merged 14 Nov 18:00Z (227dd360); the dry run of the move read 0 that day, the first zero (streak 1). Still open on this job, in the order written on it: History of Science's own current files (374 files, about 980 places, ordinary pull requests, not touching files a working job pins by hash), the open pull requests, the mirror rehearsal, and the history-rewrite window (Ben told the day before). The move itself is a separate decision: seven zero days in a row, Ben told at day six.",
+      "result": "Waiting for: Ledger step done (PR 935). The dry run of the move read 0 on 14 and 15 Nov (streak 2; the 15 Nov routing fix is PR 946). Still open, in the order written on this job: History of Science's own current files (374 files, about 980 places, ordinary pull requests, not touching files a working job pins by hash), the open pull requests, the mirror rehearsal, and the history-rewrite window (Ben told the day before). The move is a separate decision: seven zero days in a row, Ben told at day six (19 Nov).",
       "history": [
         {
           "at": "2026-11-10T19:53Z",
@@ -226069,6 +226069,11 @@
           "at": "2026-11-14T18:01Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-15T07:40:00Z"
+        },
+        {
+          "at": "2026-11-15T21:51Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-16T07:40:00Z"
         }
       ],
       "remaining_action": "Start History of Science's own files: count them and plan the first small pull requests",
@@ -226077,8 +226082,8 @@
       "plain": "Remove email addresses from both channels' repos, including their past versions",
       "hold": {
         "type": "dependency",
-        "condition": "Ledger step done: orbit-with-ben PR 935 merged 14 Nov 18:00Z (227dd360); the dry run of the move read 0 that day, the first zero (streak 1). Still open on this job, in the order written on it: History of Science's own current files (374 files, about 980 places, ordinary pull requests, not touching files a working job pins by hash), the open pull requests, the mirror rehearsal, and the history-rewrite window (Ben told the day before). The move itself is a separate decision: seven zero days in a row, Ben told at day six.",
-        "check_at": "2026-11-15T07:40:00Z"
+        "condition": "Ledger step done (PR 935). The dry run of the move read 0 on 14 and 15 Nov (streak 2; the 15 Nov routing fix is PR 946). Still open, in the order written on this job: History of Science's own current files (374 files, about 980 places, ordinary pull requests, not touching files a working job pins by hash), the open pull requests, the mirror rehearsal, and the history-rewrite window (Ben told the day before). The move is a separate decision: seven zero days in a row, Ben told at day six (19 Nov).",
+        "check_at": "2026-11-16T07:40:00Z"
       }
     },
     {
