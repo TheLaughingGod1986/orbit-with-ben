@@ -256361,9 +256361,14 @@
           "at": "2026-11-15T13:32Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-15T13:32Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Starting J2895: inspecting J2870 review, 033 Short 2 v02 file hash, package, and 033 long status"
         }
       ],
-      "remaining_action": "Upload the Uranus Short about landing on an ice giant (v02) Private, slot Sat 19 Dec 11:30",
+      "remaining_action": "Verify J2870 review, sha256 of 033_short02_ice_giant_surface_v02.mp4, package metadata, and 033 long status",
       "due": "2026-12-16T18:00:00Z",
       "kind": "listing",
       "approved_from": {
@@ -256390,12 +256395,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-15T13:32Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Starting J2895: inspecting J2870 review, 033 Short 2 v02 file hash, package, and 033 long status"
+      },
+      "taskKeys": [
+        "OWB:033"
+      ]
     },
     {
       "id": "J2896",
