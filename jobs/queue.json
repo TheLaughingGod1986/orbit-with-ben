@@ -255485,9 +255485,14 @@
           "at": "2026-11-15T10:36Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Capability probe PASS (audio 0.87, video PASS); inspected 12d_gull_tracked_crop_t4.30-7.02.mp4 and 24fps f108-f126 strip via read_file: 4.69-5.08s is normal continuous wing flap, confirming 12d KEEP"
+        },
+        {
+          "at": "2026-11-15T10:39Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: check_all.sh and status_board.py --check PASS in clean worktree ~/_desk/wt/hos-J2887"
         }
       ],
-      "remaining_action": "Record 12d wing-flap motion PASS and Chief 6889364319/6889440776 calls in HOS 010 J2271 review files and status.json via clean worktree",
+      "remaining_action": "Commit, push and merge HOS 010 J2271 ruling sync PR (#180 6889364319/6889440776 + 12d motion flap PASS), then post desk #180 reply and update J2271 hold",
       "kind": "review",
       "recheck_of": "J2271",
       "due": "2026-11-15T11:28:49+00:00",
@@ -255502,11 +255507,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-15T10:36Z",
+        "at": "2026-11-15T10:39Z",
         "by": "gemini",
-        "note": "Capability probe PASS (audio 0.87, video PASS); inspected 12d_gull_tracked_crop_t4.30-7.02.mp4 and 24fps f108-f126 strip"
+        "note": "check_all.sh and status_board.py --check PASS in clean worktree ~/_desk/wt/hos-J2887"
       },
       "taskKeys": [
         "HOS:010"
