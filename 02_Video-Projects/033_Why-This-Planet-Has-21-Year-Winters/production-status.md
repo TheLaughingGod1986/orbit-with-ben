@@ -36,8 +36,9 @@
 - [x] `J2318` Active Short #2 (`033_short02_ice_giant_surface_v01.mp4`, `26.28 s` Keeper question cut, SHA-256 `c2404d5a05ada2c257bf9e5fdc2b10edaa126d36de6aa32b38cb27df6d08dbc2`) built & passed all 7 tool gates (`gate_shorts_open`, `picture_qa`, `polish_gate`, `sfx_kit level`, `music_gate`, `thumb_preview` frame 0 & cover)
 - [x] Protected Chief picture stage sign-off & long master assembly release (`J2398` PASS, `jobs/reviews/J2398/REVIEW.md`)
 - [x] `033` Long Master `v01` (`629.40 s`, `67` rows / `144` cuts) assembly + all 5 tool gates (`J2403` PASS, `07_Edit-Project/ASSEMBLY_HANDOFF_J2403_v01.md`: `clip_check` 67 rows PASS, `picture_qa` 0/144 fail 8 warn PASS, `polish_gate` 0/144 fail PASS, `music_gate` 629.4 s 70.6 BPM PASS, `sfx_kit level` VO -20.2 / SFX -47.2 LUFS 21 hits PASS, `-14.5 LUFS` / `-1.5 dBTP` / `24/1` CFR / `0` black frames)
-- [ ] `033` Long Master `v01` moving-video/audio review (`J2404`) & Ben UAT watch
-- [ ] `033` Active Shorts 1 & 2 moving-video review (`J2400`) + Ben phone watch (`OWB UAT/033_shorts_v01/`)
+- [x] `033` Long Master `v04` (`629.42 s`, `67` rows / `147` cuts) moving-video/audio review (`J2890` PASS `KEEP`, `jobs/reviews/J2890/REVIEW.md`, reviewing `J2889` `033_why_this_planet_has_21_year_winters_master_v04.mp4` SHA-256 `3712479ae852dd318c4d8d0dfd18f7df08c1a857068c24c3d3792a35a27f11c3`; R2 stream `owb-033-v04` live; `J2890` armed `awaits_ben` for Wed 09 Dec 18:00 London slot)
+- [ ] Ben UAT watch on `033` Long Master `v04` (`J2890` `awaits_ben`)
+- [ ] `033` Active Shorts 1 & 2 `v02` moving-video review (`J2870`) + Ben phone watch (`OWB UAT/033_shorts_v02/`)
 
 ## `npm run review:script` & `npm run gate:episode` (J2148, 4 Nov 2026)
 
