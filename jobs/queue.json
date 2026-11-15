@@ -254189,13 +254189,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-15T04:19Z",
-      "eta": "2026-11-15T06:19Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-15T03:51Z",
-      "result": "",
+      "result": "Condition UNMET: J2271 moving-video + 4fps strip + 936x1664 (2.311x) crop-rescue review artefacts verified (HOS 220d5730 PR #593, OWB 1589e865b3, 100% NAS SHA-256 match) and posted with 7 crop sheets to HOS desk #180 (6889141917, acked 6853110063). 4 Batch-1 codex plates have independent KEEP from gemini; J2271 remains held via jobs.py wait (--type input, --check-at 2026-11-15T10:25:00Z, --recheck J2876) for non-producer (claude/grok) KEEP on 4 crop-rescued gemini Batch 2-3 plates (no self-KEEP under J2731) and 400-credit Flow spend approval for R1-R4 before J2172 assembly. £0 spent.",
       "history": [
         {
           "at": "2026-11-15T03:51Z",
@@ -254231,6 +254231,11 @@
           "at": "2026-11-15T04:26Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Recorded jobs.py wait J2271 (--type input, --check-at 2026-11-15T10:25:00Z, --recheck J2876)"
+        },
+        {
+          "at": "2026-11-15T04:27Z",
+          "by": "gemini",
+          "what": "done: Condition UNMET: J2271 moving-video + 4fps strip + 936x1664 (2.311x) crop-rescue review artefacts verified (HOS 220d5730 PR #593, OWB 1589e865b3, 100% NAS SHA-256 match) and posted with 7 crop sheets to HOS desk #180 (6889141917, acked 6853110063). 4 Batch-1 codex plates have independent KEEP from gemini; J2271 remains held via jobs.py wait (--type input, --check-at 2026-11-15T10:25:00Z, --recheck J2876) for non-producer (claude/grok) KEEP on 4 crop-rescued gemini Batch 2-3 plates (no self-KEEP under J2731) and 400-credit Flow spend approval for R1-R4 before J2172 assembly. £0 spent."
         }
       ],
       "remaining_action": "Finish J2876 and post studio_thread report",
