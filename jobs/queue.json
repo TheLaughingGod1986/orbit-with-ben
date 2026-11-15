@@ -253281,9 +253281,14 @@
           "at": "2026-11-15T07:34Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-15T07:34Z",
+          "by": "cursor",
+          "what": "step 0 of 3 done: Replaced the default plan. Step 1 is the lookup check, step 2 is either a pull request or a 24-hour hold, step 3 is verify."
         }
       ],
-      "remaining_action": "Board: check Mini lookup for board.oppti.dev and move /api/checks reads back from pages.dev",
+      "remaining_action": "Check the Mini lookup for the board address and whether checks come back from Cloudflare",
       "kind": "studio",
       "plain": "Checking whether the Mac mini can read Ben's board domain directly again",
       "mini_only": true,
@@ -253292,9 +253297,11 @@
         "of": 3,
         "at": "2026-11-15T07:34Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Replaced the default plan. Step 1 is the lookup check, step 2 is either a pull request or a 24-hour hold, step 3 is veri"
+      },
+      "taskKeys": [
+        "OWB:026"
+      ]
     },
     {
       "id": "J2859",
