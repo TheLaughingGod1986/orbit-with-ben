@@ -91,7 +91,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2907 | mini | blocked | gemini | – | for gemini · studio · `gemini-argon` · Board: redeploy with Ben's new GitHub token, prove ticks save and reach both threads |  |
 | J2909 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0861 |  |
 | J2912 | any | blocked | macbook | – | script · OWB: learn from our data, add two new films to the backlog |  |
-| J2913 | mini | open | – | – | review · Verify condition for J2831 |  |
+| J2913 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2831 |  |
 
 Recently finished:
 

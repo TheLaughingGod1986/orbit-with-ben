@@ -258288,13 +258288,27 @@
           "at": "2026-11-15T20:49Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-15T20:49Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-15T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Step 4/4 cleanup only: delete Link this phone to the board.html once used or after 2026-11-15T20:45:00Z and confirm on #478 (do not mint a new link)",
       "kind": "review",
       "recheck_of": "J2831",
       "due": "2026-11-14T17:00:00+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
