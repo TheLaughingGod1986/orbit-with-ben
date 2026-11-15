@@ -256938,9 +256938,14 @@
           "at": "2026-11-15T15:05Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Read J2899 brief, result, BUILD_REPORT_v01.md, THUMB_SCORES_v01.json, and build_033_thumbs_v01.py"
+        },
+        {
+          "at": "2026-11-15T15:06Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Inspected all 3 full-size 1920x1080 thumbnails A/B/C and 168x94 preview sheets: HOOK/BAND/GRADE/PHONE all PASS"
         }
       ],
-      "remaining_action": "Inspect all 3 full-size 1920x1080 thumbnails and 168x94 sheets for HOOK/BAND/GRADE/PHONE",
+      "remaining_action": "Verify thumb_preview.py scores, SHA-256 parity across git/NAS/OWB UAT/iCloud, and THUMB_LEDGER.json",
       "due": "2026-11-29T12:00:00Z",
       "kind": "review",
       "plain": "Checking the three Uranus thumbnail pictures at phone size and full size",
@@ -256954,11 +256959,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-15T15:05Z",
+        "at": "2026-11-15T15:06Z",
         "by": "gemini",
-        "note": "Read J2899 brief, result, BUILD_REPORT_v01.md, THUMB_SCORES_v01.json, and build_033_thumbs_v01.py"
+        "note": "Inspected all 3 full-size 1920x1080 thumbnails A/B/C and 168x94 preview sheets: HOOK/BAND/GRADE/PHONE all PASS"
       },
       "taskKeys": [
         "OWB:033"
