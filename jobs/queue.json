@@ -1,5 +1,5 @@
 {
-  "next_id": 2906,
+  "next_id": 2907,
   "jobs": [
     {
       "id": "J0001",
@@ -227559,6 +227559,11 @@
           "at": "2026-11-15T16:26Z",
           "by": "gemini",
           "what": "released: Short 2 (SWDCZfWZVao v06) finished, UAT-staged and watch card armed; detached tmux J2551-render (~/_desk/logs/J2551-render.log, ~/_desk/logs/J2551-render.done) running for fri11 & mon14"
+        },
+        {
+          "at": "2026-11-15T17:51Z",
+          "by": "claude",
+          "what": "no longer waits on Ben: OK'd, delivered by J2906"
         }
       ],
       "remaining_action": "Check J2551-render.done, fix fri11 opening plate uniqueness, gate + J2829 review fri11 & mon14, arm 11 & 14 Dec watch cards",
@@ -227581,17 +227586,6 @@
         "audio_input"
       ],
       "awaits_was": {
-        "what": "031 opening Short v02 (C8lPx5N2DwM, Sat 5 Dec): rebuilt the 3 diagrams upright 9:16 and reframed the 8.4-11.4 s and 16.2-31.7 s space/aurora shots full-frame so there is no blurred band anywhere; same voice, words and length",
-        "file": "OWB UAT/031_short_testA_opening_flip_v02/031_short_testA_opening_flip_v02.mp4",
-        "version": "v02",
-        "due": "2026-12-02T18:00Z",
-        "airs": "2026-12-05T11:30Z",
-        "ifNot": "the cut you OK'd airs",
-        "title": "What Happens When Earth's Magnetic Field Flips?",
-        "number": "031",
-        "type": "short"
-      },
-      "awaits_ben": {
         "what": "029 Great Dimming Short v06 (SWDCZfWZVao, Wed 9 Dec): rebuilt the 2.7-5.1 s brightness-dip graphic upright 9:16 and reframed the 12.4-15.1 s Paranal and VLT/ESO plates full-frame so there is no blurred band anywhere; same voice, words and length",
         "file": "OWB UAT/029_short_wed09_great_dimming_v06/029_short_wed09_great_dimming_v06.mp4",
         "version": "v06",
@@ -257409,6 +257403,52 @@
       "taskKeys": [
         "HOS:006"
       ]
+    },
+    {
+      "id": "J2906",
+      "title": "Swap the Great Dimming Short SWDCZfWZVao (Wed 9 Dec) to the full-screen cut Ben OK'd, v06",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben OK'd the rebuilt Great Dimming Short v06 on the board (15 Nov 17:37Z, tick OWB-J2551).** Swap it into the Wed 9 Dec 11:30 slot.\n\nOld video: `SWDCZfWZVao`, Private and scheduled Wed 9 Dec 11:30 London. New file: `029_short_wed09_great_dimming_v06.mp4` in `OWB UAT/029_short_wed09_great_dimming_v06/`; read its sha256 and the five-gate record from J2551's review folder and check it.\n\n0. Run `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <file> --air-date 2026-12-09 --id 029_short_wed09_great_dimming_v06` without `--report-only`; it must PASS.\n1. Read back the old id (privacy, publish time, title, description, tags, cover, language, Related video). It should be Private and scheduled. If not, park for the Chief.\n2. Upload the new file as a NEW Private video, same publish time; copy title, description, tags, cover and Related from the old id; en-GB, captions en-GB.\n3. Only after step 2 reads back right: set the old id Private and unscheduled. Nothing deleted.\n4. Verify the swap (`verify-swap.ts`), update `UPLOADS.json` (`supersedes` / `supersededBy` / `unscheduledAt`), Buffer posts for the slot, and any queued job naming the old id. Post the read-back on the thread.\n\nNever Public, never delete, no force-push, no Replace. £0. If anything does not match (privacy, publish time, hash), upload nothing and park for the Chief with the lines.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-15T17:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-15T17:51Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-15T17:51Z",
+          "by": "claude",
+          "what": "approved by Ben: 029 Great Dimming Short v06 (SWDCZfWZVao, Wed 9 Dec): rebuilt the 2.7-5.1 s brightness-dip graphic upright 9:16 and reframed the 12.4-15.1 s Paranal and VLT/ESO plates full-frame so there is no blurred band anywhere; same voice, words and length v06 (asked in J2551)"
+        }
+      ],
+      "remaining_action": "Swap the Great Dimming Short SWDCZfWZVao (Wed 9 Dec) to the full-screen cut Ben OK'd, v06",
+      "due": "2026-12-07T18:00:00Z",
+      "kind": "listing",
+      "approved_from": {
+        "what": "029 Great Dimming Short v06 (SWDCZfWZVao, Wed 9 Dec): rebuilt the 2.7-5.1 s brightness-dip graphic upright 9:16 and reframed the 12.4-15.1 s Paranal and VLT/ESO plates full-frame so there is no blurred band anywhere; same voice, words and length",
+        "file": "OWB UAT/029_short_wed09_great_dimming_v06/029_short_wed09_great_dimming_v06.mp4",
+        "version": "v06",
+        "airs": "2026-12-09T11:30Z",
+        "title": "Why Did Betelgeuse Suddenly Lose Two-Thirds of Its Light?",
+        "number": "029",
+        "type": "short",
+        "channel": "OWB",
+        "job": "J2551",
+        "okAt": "2026-11-15T17:37Z"
+      }
     }
   ],
   "focus": [
