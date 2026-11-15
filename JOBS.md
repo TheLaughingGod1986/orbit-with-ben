@@ -90,7 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2904 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2271 |  |
 | J2907 | mini | blocked | gemini | – | for gemini · studio · `gemini-argon` · Board: redeploy with Ben's new GitHub token, prove ticks save and reach both threads |  |
 | J2909 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0861 |  |
-| J2911 | any | open (after J2828) | – | – | 068 topic · review · Rule-E topic go/no-go review: OWB 068 (Mercury 176-Day Solar Day) and 069 (Landing on a Comet Rosetta 67P) from J2828 | b24f599eee |
+| J2911 | any | claimed | macbook-2 | 2026-11-15T22:28Z | 068 topic · review · Rule-E topic go/no-go review: OWB 068 (Mercury 176-Day Solar Day) and 069 (Landing on a Comet Rosetta 67P) from J2828 | b24f599eee |
 
 Recently finished:
 
