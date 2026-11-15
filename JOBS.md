@@ -29,7 +29,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2171 | mini | blocked | gemini | – | 009 edit · assembly · HOS 009: assemble locked Shorts A/B for conditional 27 and 30 Nov | J2023 |
 | J2172 | mini | blocked | codex | – | 010 edit · assembly · HOS 010: inventory and assemble two locked Shorts for conditional 4 and 7 Dec | J2023 |
 | J2230 | mini | blocked | cursor | – | for cursor · assembly · `cursor-grok-4-7` · HOS Shorts gap after 17 Nov: cut six search-titled Shorts from the locked Harvey, Willow and Vaccine longs, slot 18 Nov to 6 Dec |  |
-| J2243 | mini | claimed | gemini | 2026-11-15T06:29Z | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Franklin: multimodal QA and Chief review of hos_008_master_v05.mp4 only (d1ffb78d…841b). Do not review v04. GBP0 | J1881 / J2241 / J2242 |
+| J2243 | mini | blocked | gemini | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Franklin: multimodal QA and Chief review of hos_008_master_v05.mp4 only (d1ffb78d…841b). Do not review v04. GBP0 | J1881 / J2241 / J2242 |
 | J2271 | mini | blocked | gemini | – | 010 picture · for gemini · qa · `gpt-6-astra` · HOS 010: independently review twelve generated Shorts plates | J2267 |
 | J2438 | mini | blocked | codex | – | 034 edit · assembly · 034 Pluto: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2478 | mini | blocked | cursor | – | for cursor · assembly · `cursor-grok-4-7` · Supermoon dated-event Short (airs Thu 19 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review |  |
