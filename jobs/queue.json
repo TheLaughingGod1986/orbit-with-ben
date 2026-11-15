@@ -258475,10 +258475,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-15T21:30Z",
+      "eta": "2026-11-15T23:00Z",
       "created_by": "gemini",
       "created_at": "2026-11-15T21:26Z",
       "result": "",
@@ -258487,12 +258487,25 @@
           "at": "2026-11-15T21:26Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-15T21:30Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Re-read Checks 1-3 on the Mini, run Batch 1 (R1-R5) and Batch 2 (R6) via _mint_flow_r1_r6_plates_j2271.py submit under Chief go 6898337122, and post review stills on #180",
       "kind": "video",
       "plain": "Generate the six Dinosaur Short replacement scenes in Flow and post their review stills.",
-      "mini_only": true
+      "mini_only": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-15T21:30Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
