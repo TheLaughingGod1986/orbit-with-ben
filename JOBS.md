@@ -89,7 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2872 | mini | open (after J2871) | – | – | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus: 5-part review of long master v03 (after J2871) + stage for Ben UAT watch | J2404 4314787d18; J2871 |
 | J2875 | mini | open | – | – | chief · Chief: resolve 064 topic orphan-review |  |
 | J2877 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2243 |  |
-| J2880 | mini | open | – | – | for gemini · listing · `gemini-argon` · Swap the Space Station Short xdurJQcoiGM (Wed 25 Nov) to the full-screen cut Ben OK'd, v14 |  |
+| J2880 | mini | claimed | gemini | 2026-11-15T11:46Z | for gemini · listing · `gemini-argon` · Swap the Space Station Short xdurJQcoiGM (Wed 25 Nov) to the full-screen cut Ben OK'd, v14 |  |
 | J2885 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2857 |  |
 | J2886 | mini | blocked | cursor | – | studio · Pin the Titan long comment once T3cBBss1F60 is public |  |
 
