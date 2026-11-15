@@ -193482,10 +193482,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-15T10:55Z",
+      "eta": "2026-11-15T12:55Z",
       "created_by": "claude",
       "created_at": "2026-11-05T17:12Z",
       "result": "",
@@ -193834,6 +193834,11 @@
           "at": "2026-11-15T10:26Z",
           "by": "gemini",
           "what": "remaining action: Render eradication_v06 (22.07s pauses in _build_j2230_vaccine_shorts_v01.py), run HOS gate_shorts_open.py, copy 4 approved masters to NAS/HOS UAT, and arm jobs.py awaits"
+        },
+        {
+          "at": "2026-11-15T10:55Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Render eradication_v06 (22.07s pauses in _build_j2230_vaccine_shorts_v01.py), run HOS gate_shorts_open.py, copy 4 approved masters to NAS/HOS UAT, and arm jobs.py awaits",
@@ -193855,7 +193860,15 @@
         "status": "open",
         "by": ""
       },
-      "model": "cursor-grok-4-7"
+      "model": "cursor-grok-4-7",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-15T10:55Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2231",
