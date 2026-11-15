@@ -256462,6 +256462,11 @@
           "at": "2026-11-15T12:52Z",
           "by": "claude",
           "what": "approved by Ben: 031 opening Short v02 (C8lPx5N2DwM, Sat 5 Dec): rebuilt the 3 diagrams upright 9:16 and reframed the 8.4-11.4 s and 16.2-31.7 s space/aurora shots full-frame so there is no blurred band anywhere; same voice, words and length v02 (asked in J2551)"
+        },
+        {
+          "at": "2026-11-15T13:08Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-15T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Swap the 031 opening Short C8lPx5N2DwM (Sat 5 Dec) to the full-screen cut Ben OK'd, v02",
@@ -256478,7 +256483,16 @@
         "channel": "OWB",
         "job": "J2551",
         "okAt": "2026-11-15T10:36Z"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2898",
