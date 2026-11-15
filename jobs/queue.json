@@ -1,5 +1,5 @@
 {
-  "next_id": 2887,
+  "next_id": 2888,
   "jobs": [
     {
       "id": "J0001",
@@ -198712,6 +198712,11 @@
           "at": "2026-11-15T06:09Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-15T10:28Z",
+          "by": "relay",
+          "what": "condition verification queued: J2887"
         }
       ],
       "remaining_action": "Wait for non-producer (claude/grok) KEEP sign-off on 4 crop-rescued Batch 2-3 plates and 400-credit Flow spend approval for R1-R4 on HOS desk #180 (6889141917)",
@@ -198740,10 +198745,11 @@
       "hold": {
         "type": "input",
         "condition": "Non-producer (claude/grok) KEEP sign-off on 4 crop-rescued gemini-produced Batch 2-3 plates (P5:09_robin, P5:10_explorer_robin, P5:09a_pigeon_pavement, P5:13a_gull_seaside; no self-KEEP under J2731) and Chief/Claude 400-credit Flow spend approval for 4 Short replacement plates (R1-R4) on HOS desk #180 (6889141917) before J2172 assembly",
-        "check_at": "2026-11-15T10:25:00Z",
+        "check_at": "2026-11-15T11:28:49+00:00",
         "last_recheck": "J2876",
         "checked_at": "2026-11-15T04:26:54+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J2887"
       },
       "escalated_at": "2026-11-15T06:09Z"
     },
@@ -255435,6 +255441,37 @@
         "condition": "T3cBBss1F60 privacyStatus is public",
         "check_at": "2026-11-25T18:10:00Z"
       }
+    },
+    {
+      "id": "J2887",
+      "title": "Verify condition for J2271",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2271: Non-producer (claude/grok) KEEP sign-off on 4 crop-rescued gemini-produced Batch 2-3 plates (P5:09_robin, P5:10_explorer_robin, P5:09a_pigeon_pavement, P5:13a_gull_seaside; no self-KEEP under J2731) and Chief/Claude 400-credit Flow spend approval for 4 Short replacement plates (R1-R4) on HOS desk #180 (6889141917) before J2172 assembly. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2271 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-15T10:28Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-15T10:28Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Wait for non-producer (claude/grok) KEEP sign-off on 4 crop-rescued Batch 2-3 plates and 400-credit Flow spend approval for R1-R4 on HOS desk #180 (6889141917)",
+      "kind": "review",
+      "recheck_of": "J2271",
+      "due": "2026-11-15T11:28:49+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
