@@ -89,7 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2865 | mini | open (after J2864) | – | – | 062 script · for gemini · script · `gemini-argon` · 062 Phobos: write script v01 + SOURCES.md + SHORTS_SCRIPTS_v02.md from Rule-E GO brief (J2420) | 5dbd6f396e |
 | J2867 | mini | open (after J2438) | – | – | 034 edit · assembly · 034 Pluto: rebuild Shorts 1 & 2 v02 full-bleed 9:16 (gate_shorts_open PASS) + verify/apply J2383 R08-R74 finishing fixes on long master v02 | J2383,J2438 |
 | J2868 | mini | open (after J2867) | – | – | 034 edit · for gemini · review · `gemini-argon` · 034 Pluto: review long master v02 + Shorts 1 & 2 v02 (after J2438, J2867) | J2383,J2438,J2867 |
-| J2869 | mini | open | – | – | 033 edit · assembly · 033 Uranus Shorts 1 & 2: build v02 full-bleed 9:16 cuts + fix Short 2 VO word-onset clips (J2400 FIX; no upload) | J2400 |
+| J2869 | mini | claimed | cursor | 2026-11-15T06:54Z | 033 edit · assembly · 033 Uranus Shorts 1 & 2: build v02 full-bleed 9:16 cuts + fix Short 2 VO word-onset clips (J2400 FIX; no upload) | J2400 |
 | J2870 | mini | open (after J2869) | – | – | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus Shorts 1 & 2: 5-part review of v02 cuts (after J2869) + stage for Ben phone watch | J2869 |
 | J2871 | mini | open | – | – | 033 edit · assembly · 033 Uranus: assemble long master v03 (fix J2404 cropped pills, still inset boxes/star bleed & narrow ring strips) | J2404 4314787d18; J2437 |
 | J2872 | mini | open (after J2871) | – | – | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus: 5-part review of long master v03 (after J2871) + stage for Ben UAT watch | J2404 4314787d18; J2871 |

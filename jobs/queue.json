@@ -253896,10 +253896,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-15T04:54Z",
+      "eta": "2026-11-15T06:54Z",
       "created_by": "gemini",
       "created_at": "2026-11-14T23:37Z",
       "result": "",
@@ -253908,11 +253908,24 @@
           "at": "2026-11-14T23:37Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-15T04:54Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Build 033_short01_testA_opening_v02.mp4 and 033_short02_ice_giant_surface_v02.mp4 per jobs/reviews/J2400/REVIEW.md",
       "kind": "assembly",
-      "plain": "Rebuild 033 Uranus Shorts 1 and 2 as full-bleed 9:16 v02 cuts and fix clipped word onsets in Short 2 VO"
+      "plain": "Rebuild 033 Uranus Shorts 1 and 2 as full-bleed 9:16 v02 cuts and fix clipped word onsets in Short 2 VO",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-15T04:54Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2870",
