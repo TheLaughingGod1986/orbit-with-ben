@@ -93,6 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2893 | mini | claimed | gemini | 2026-11-15T15:58Z | chief · Chief: resolve 033 edit orphan-review |  |
 | J2895 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about landing on an ice giant (v02) Private, slot Sat 19 Dec 11:30 |  |
 | J2896 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about the 21-year winters (v02, Test A opening) Private, slot Fri 18 Dec 11:30 |  |
+| J2899 | mini | open | – | – | 033 thumbs · thumb · 033 Uranus: build 3 long thumbnail concepts A/B/C (incl. Rule-19 real JWST/Voyager frame) + stage A/B to OWB UAT |  |
 
 Recently finished:
 

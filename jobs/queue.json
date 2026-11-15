@@ -1,5 +1,5 @@
 {
-  "next_id": 2899,
+  "next_id": 2900,
   "jobs": [
     {
       "id": "J0001",
@@ -256787,6 +256787,36 @@
           "Checked the whole 108-minute film: no broken frames, no chapter that stops early, and it fades out at the end. The film file was not changed."
         ]
       }
+    },
+    {
+      "id": "J2899",
+      "title": "033 Uranus: build 3 long thumbnail concepts A/B/C (incl. Rule-19 real JWST/Voyager frame) + stage A/B to OWB UAT",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Build and stage the 3 long thumbnail concepts (`1920x1080`) for `033_Why-This-Planet-Has-21-Year-Winters` (*Why Knocked-Sideways Uranus Has 21-Year Winters*) in `02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/08_Thumbnail/` (`£0` local Python/Pillow from verified plates in `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/03_Reference-Material/harvest_J2299_v01/`):\n\n1. **Concept A (Rule 19 real-frame reference-channel test, `033_thumb_A_v01.jpg`):**\n   - Single striking REAL spacecraft/telescope frame of sideways Uranus (`97.77°` axial tilt, vertical ring plane): NASA/ESA/CSA JWST NIRCam `weic2332a_hires.jpg` (`PIA25770` / `STScI-01GWQ3`) or NASA/JPL Voyager 2 `PIA18182.jpg` (`24 Jan 1986`), graded to the `--score` target, top hook text `21-YEAR WINTER` (Rule 12: 2–3 words, Bebas Neue / bold condensed caps, white or warm gold `#FFD60A` with dark stroke, top band only, clear of planet/rings and bottom-right duration badge).\n2. **Concept B (Rule 12 stakes / comparison variant, `033_thumb_B_v01.jpg`):**\n   - High-contrast real JWST/Voyager plate or split/comparison plate (`weic2310a_unannotated.png` / `PIA18182.jpg`), hook text `COLDER THAN NEPTUNE` or `SIDEWAYS PLANET` (2–3 words, top band only).\n3. **Concept C (Rule 12 + Rule 14 bright-background variant, `033_thumb_C_v01.jpg`):**\n   - Bright cyan/teal atmosphere + ring glow (`sat >= 120`, `near_black <= 30%`), hook text `97.77° SIDEWAYS` or `42 YEARS DARK` (2–3 words, top band only).\n\n### Required Checks & Deliverables\n- Run `python3 00_Brand/Channel-Setup/tools/thumb_preview.py long <thumb.jpg> --out <sheet.jpg> --score` on all 3 concepts (`A`, `B`, `C`) and commit the preview sheets + `08_Thumbnail/THUMB_SCORES_v01.json` + `08_Thumbnail/BUILD_REPORT_v01.md`.\n- Every concept must PASS `sat >= 100` (at least one `>= 120`), `near_black <= 30%`, full readability at `168x94` phone size, no Orbit character on long thumbnails (Standing Lesson 3), and bottom-right duration badge zone clear.\n- Copy `033_thumb_A_v01.jpg` and `033_thumb_B_v01.jpg` to `/Volumes/data/studio-live/orbit-with-ben/OWB UAT/033_thumb_A_v01.jpg` & `033_thumb_B_v01.jpg` and iCloud `/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/OWB UAT/033_thumb_A_v01.jpg` & `033_thumb_B_v01.jpg` (matching the paths named in `J2890`'s `awaits_ben` entry).\n- Add a proposed unarmed entry for `033` in `05_Analytics/tests/THUMB_LEDGER.json` (`status: \"proposed\"`, tagged `\"rule19\"` for Concept A vs Concept B).\n- **Zero paid generation (`£0`), zero YouTube uploads.**\n",
+      "ref": "",
+      "film": "033",
+      "stage": "thumbs",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-15T14:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-15T14:14Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build 3 1920x1080 thumbnail concepts A/B/C for 033 Uranus (incl. Rule-19 real JWST/Voyager frame), run thumb_preview --score, and stage A/B to OWB UAT",
+      "due": "2026-11-28T18:00:00Z",
+      "kind": "thumb",
+      "plain": "Making three thumbnail pictures for the Uranus video so Ben can compare them"
     }
   ],
   "focus": [
