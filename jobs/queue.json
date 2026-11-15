@@ -195744,10 +195744,10 @@
       "stage": "edit",
       "after": "J2614",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-15T04:29Z",
+      "eta": "2026-11-15T06:29Z",
       "created_by": "gemini",
       "created_at": "2026-11-05T18:52Z",
       "result": "",
@@ -195781,6 +195781,11 @@
           "at": "2026-11-14T22:35Z",
           "by": "chief",
           "what": "retargeted: review hos_008_master_v05.mp4 only (d1ffb78d…841b); v04 is not the review file; left open"
+        },
+        {
+          "at": "2026-11-15T04:29Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review hos_008_master_v05.mp4 only (d1ffb78d…841b). Do not review v04.",
@@ -195799,7 +195804,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-15T04:29Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2244",
