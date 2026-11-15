@@ -254785,6 +254785,11 @@
           "at": "2026-11-15T07:58Z",
           "by": "claude",
           "what": "approved by Ben: Watch the Space Station deorbit Short for Wed 25 Nov (v14) with the padded final shot replaced by a full-screen 4K orbital pass. OK to swap it in? v14 (asked in J2550)"
+        },
+        {
+          "at": "2026-11-15T08:14Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-15T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Swap the Space Station Short xdurJQcoiGM (Wed 25 Nov) to the full-screen cut Ben OK'd, v14",
@@ -254802,7 +254807,16 @@
         "job": "J2550",
         "askId": "J2550.3",
         "okAt": "2026-11-14T22:39Z"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2881",
