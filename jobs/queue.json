@@ -251484,21 +251484,21 @@
     {
       "id": "J2828",
       "title": "OWB: learn from our data, add two new films to the backlog",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
-      "body": "Orbit With Ben daily topic job.\n\nLEARN FROM OUR DATA FIRST (Ben, 5 Nov 2026: 'learn off past data what works well and build the videos around the data'). Read 05_Analytics/owb/channel_daily.json, 05_Analytics/owb/studio_ctr.json, 05_Analytics/owb/REPORT.md, the newest 05_Analytics/owb/snapshots/ and 05_Analytics/LEARNINGS.md (rules 1-22). Rank our own longs and Shorts by views per day since publish, CTR, average % viewed and Shorts 'stayed'. Write down the 3 best and 3 worst with the numbers and what they share (subject, title shape, opening, thumbnail concept, length).\nTHEN ADD TWO NEW FILMS TO THE BACKLOG (every day; Ben: 'one or two new a day ... a healthy big full backlog so we're never short'). For each: a working title in the shape that wins for us, one-line hook, why it should work (name the past winners it resembles, with their numbers, and the LEARNINGS rules it follows), a neighbour pass (three big videos on the subject with views), and two Short angles from it. Never repeat a topic already in 02_Video-Projects, the ideas folder or WIP. Create its project folder from the template with this as TOPIC.md, and append it to jobs/WIP.json `next` (rule G: it starts only when a place frees up). Queue its rule-E topic review as a kind:review job. Spend nothing: existing subscriptions and free tools only, no paid API, TTS or picture generation; no Studio or publish change. Finish with jobs.py done <id> --result listing the two topics and the data line behind each.",
+      "body": "CHIEF RULING & ROUTING (15 Nov 2026, jobs/reviews/J2828/RULING.md): PR #927 (ecf937a00c) recorded only the MacBook Claude hand-back note (jobs/reviews/J2828/HANDBACK.md) because WebSearch and jobs.py were refused there. This job is pinned to the Mini (needs=mini, mini_only=true, for=gemini, model=gemini-argon) so it runs with free search and queue access and never loops back to the restricted MacBook Claude lane.\n\nREQUIRED DELIVERABLES TO CLOSE J2828:\n1. Use film numbers OWB:068 and OWB:069 (064 is Every Planet Explained in 10 Minutes on main; 064/065 are in open PRs #849/#853; 066/067 are in open PRs #901/#902). Do not repeat any topic in 02_Video-Projects/, open PRs #849/#853/#901/#902, 00_Brand/Channel-Setup/ideas/, or jobs/WIP.json.\n2. Complete the full OWB data ranking using 05_Analytics/owb/snapshots/2026-11-15.json, studio_ctr.json, channel_daily.json, REPORT.md, 05_Analytics/weekly_audit/OWB_2026-11-14.md, LEARNINGS.md (rules 1-31), and studio/plan.json.\n3. Create 02_Video-Projects/068_<Slug>/ and 02_Video-Projects/069_<Slug>/ from _template_NNN_Episode-Slug/ with TOPIC.md and status.json (all stages todo). Save free public_search / neighbour evidence (>=3 education/space videos with ~1M+ views per topic; £0 spend, no paid vidIQ). Per studio/plan.json (Ben, 14 Nov 2026 pause on new single-question longs after 034 Pluto on 13 Dec), include both the Rule 26 search-led title and how each topic works as or recasts into a multi-body / number-in-title tour format, plus two 22-27 s Short angles.\n4. Append OWB:068 and OWB:069 to jobs/WIP.json next (Rule G waiting line only; unlocked) and queue one kind:review Rule-E topic go/no-go job (--after J2828) before calling jobs.py done J2828.\n\nORIGINAL BRIEF:\nOrbit With Ben daily topic job.\n\nLEARN FROM OUR DATA FIRST (Ben, 5 Nov 2026: 'learn off past data what works well and build the videos around the data'). Read 05_Analytics/owb/channel_daily.json, 05_Analytics/owb/studio_ctr.json, 05_Analytics/owb/REPORT.md, the newest 05_Analytics/owb/snapshots/ and 05_Analytics/LEARNINGS.md (rules 1-22). Rank our own longs and Shorts by views per day since publish, CTR, average % viewed and Shorts 'stayed'. Write down the 3 best and 3 worst with the numbers and what they share (subject, title shape, opening, thumbnail concept, length).\nTHEN ADD TWO NEW FILMS TO THE BACKLOG (every day; Ben: 'one or two new a day ... a healthy big full backlog so we're never short'). For each: a working title in the shape that wins for us, one-line hook, why it should work (name the past winners it resembles, with their numbers, and the LEARNINGS rules it follows), a neighbour pass (three big videos on the subject with views), and two Short angles from it. Never repeat a topic already in 02_Video-Projects, the ideas folder or WIP. Create its project folder from the template with this as TOPIC.md, and append it to jobs/WIP.json `next` (rule G: it starts only when a place frees up). Queue its rule-E topic review as a kind:review job. Spend nothing: existing subscriptions and free tools only, no paid API, TTS or picture generation; no Studio or publish change. Finish with jobs.py done <id> --result listing the two topics and the data line behind each.",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-14T14:06Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-14T14:03Z",
-      "result": "parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J2828 in orbit-with-ben is 1 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/927. Review and merge it and close the job, or reopen the job with a note.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-14T14:03Z",
@@ -251519,20 +251519,37 @@
           "at": "2026-11-14T16:23Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-15T20:01Z",
+          "by": "gemini",
+          "what": "reopened: SEND BACK / REOPEN & REROUTE (acting Chief Gemini, 2026-11-15, jobs/reviews/J2828/RULING.md): PR #927 (merged as ecf937a00c) contained only macbook-2 hand-back note jobs/reviews/J2828/HANDBACK.md (WebSearch, vidIQ, and jobs.py refused on unattended MacBook Claude lane; no topics, folders, WIP entries, or review jobs written). Reopened and pinned to the Mini on gemini-argon (mini_only=true) to complete OWB:068 and OWB:069 with full free search/neighbour evidence, aligned with studio/plan.json (unlocked in WIP.json next under Rule G; include multi-body/number-in-title tour recast option alongside Rule 26 search title; £0 spend)."
+        },
+        {
+          "at": "2026-11-15T20:01Z",
+          "by": "gemini",
+          "what": "rerouted to gemini on gemini-argon: Rulings jobs/reviews/J2828/RULING.md & jobs/reviews/J2828/HANDBACK.md: route to Mini gemini-argon (mini_only=true) with free YouTube search/neighbours access; exclude unattended MacBook Claude lane."
+        },
+        {
+          "at": "2026-11-15T20:01Z",
+          "by": "gemini",
+          "what": "remaining action: Complete OWB:068 & OWB:069 data-backed TOPIC.md packages with >=3 >=1M neighbour passes on the Mini, append to WIP.json next, and queue Rule-E review"
         }
       ],
-      "remaining_action": "Pick two data-backed Orbit topics and add them to the waiting line",
+      "remaining_action": "Complete OWB:068 & OWB:069 data-backed TOPIC.md packages with >=3 >=1M neighbour passes on the Mini, append to WIP.json next, and queue Rule-E review",
       "kind": "script",
       "backlog": "owb-ideas",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-14T14:06Z",
-        "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+      "escalated_at": "2026-11-14T16:23Z",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
       },
-      "escalated_at": "2026-11-14T16:23Z"
+      "for": "gemini",
+      "model": "gemini-argon",
+      "mini_only": true
     },
     {
       "id": "J2829",
