@@ -255929,17 +255929,22 @@
           "at": "2026-11-15T12:17Z",
           "by": "cursor",
           "what": "step 2 of 4 done: Miranda cuts 16 and 29 re-rendered with a 1.8% push. Jitter on those cuts is now 0.043 and 0.049 px, under the 0.35 px line. Session j2889-render is concatenating and running the gates. Log /Users/benjaminoats/_desk/logs/j2889-render.log."
+        },
+        {
+          "at": "2026-11-15T12:21Z",
+          "by": "cursor",
+          "what": "step 2 of 4 done: Picture is rebuilt and picture_qa is running on the new master. The two Miranda cuts already measure under the jitter line. Session j2889-render. Log /Users/benjaminoats/_desk/logs/j2889-render.log."
         }
       ],
-      "remaining_action": "Wait for the Uranus v04 picture rebuild and the five automated gates",
+      "remaining_action": "Wait for the Uranus v04 picture check to finish, then the polish, music and sound checks",
       "kind": "assembly",
       "plain": "Re-render Uranus long video (v04) fixing 3 clipped moon edges, 2 static/diagram stills, and a 25-second repeated shot",
       "progress": {
         "step": 2,
         "of": 4,
-        "at": "2026-11-15T12:17Z",
+        "at": "2026-11-15T12:21Z",
         "by": "cursor",
-        "note": "Miranda cuts 16 and 29 re-rendered with a 1.8% push. Jitter on those cuts is now 0.043 and 0.049 px, under the 0.35 px l"
+        "note": "Picture is rebuilt and picture_qa is running on the new master. The two Miranda cuts already measure under the jitter li"
       },
       "taskKeys": [
         "OWB:033"
