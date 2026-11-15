@@ -94,7 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2896 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about the 21-year winters (v02, Test A opening) Private, slot Fri 18 Dec 11:30 |  |
 | J2900 | mini | claimed | gemini | 2026-11-15T17:04Z | 033 thumbs · for gemini · review · `gemini-argon` · 033 Uranus: review 3 long thumbnail concepts A/B/C (HOOK/BAND/GRADE/PHONE + OWB UAT staging) |  |
 | J2901 | mini | open (after J2900) | – | – | 033 upload · for gemini · listing · `gemini-argon` · 033 Uranus: build 11_Upload-Package (PACKAGE_MANIFEST, chapters, credits, en-GB SRT, trailer) + dry-run (no upload) |  |
-| J2902 | any | open | – | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
+| J2902 | any | claimed | macbook | 2026-11-15T16:05Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
