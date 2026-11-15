@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 032, OWB:032, 031, OWB:031, 033, OWB:033.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2550, J2037, J2040, J2230, J2035, J2529, J2797, J2831, J2864, J2866.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2550, J2037, J2040, J2230, J2035, J2529, J2797, J2831, J2864.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -87,7 +87,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2858 | mini | open | – | – | studio · Board: check Mini lookup for board.oppti.dev and move /api/checks reads back from pages.dev |  |
 | J2864 | cloud | open | – | – | for claude · studio · Write Ben's pause on new single-question Orbit longs into the rules, until a new format has been tested |  |
 | J2865 | mini | open (after J2864) | – | – | 062 script · for gemini · script · `gemini-argon` · 062 Phobos: write script v01 + SOURCES.md + SHORTS_SCRIPTS_v02.md from Rule-E GO brief (J2420) | 5dbd6f396e |
-| J2866 | mini | claimed | gemini | 2026-11-15T05:12Z | for gemini · studio · `gemini-argon` · Board: a Plan card and page showing the plan for Orbit's long videos, what is being done, when, and how it is doing |  |
 | J2867 | mini | open (after J2438) | – | – | 034 edit · assembly · 034 Pluto: rebuild Shorts 1 & 2 v02 full-bleed 9:16 (gate_shorts_open PASS) + verify/apply J2383 R08-R74 finishing fixes on long master v02 | J2383,J2438 |
 | J2868 | mini | open (after J2867) | – | – | 034 edit · for gemini · review · `gemini-argon` · 034 Pluto: review long master v02 + Shorts 1 & 2 v02 (after J2438, J2867) | J2383,J2438,J2867 |
 | J2869 | mini | open | – | – | 033 edit · assembly · 033 Uranus Shorts 1 & 2: build v02 full-bleed 9:16 cuts + fix Short 2 VO word-onset clips (J2400 FIX; no upload) | J2400 |
@@ -98,6 +97,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 Recently finished:
 
+- J2866 done: Board: a Plan card and page showing the plan for Orbit's long videos, what is being done, when, and how it is doing (PASS (elected Chief): fixed channel_ratchet in scripts/plan_board.py (cd81509d8c), merged PR #938 and PR #939 (90cd56a6d7), synced OWB:064 status.json/STATUS.md (b978ed77f5), deployed studio-kanban Pages (https://3050c9d0.studio-kanban.pages.dev), and published board.plan to board-data (909319bf).)
 - J2863 done: Longs get almost no showings: prepare one test of a format that works for channels our size, every planet explained in about ten minutes (PR #938 open: prepared 'Every Planet Explained in 10 Minutes (Mercury to Neptune)' (OWB:064) format test go/no-go (25/25; 'every planet explained' 20,191 searches/mo at 45/100 comp; 172.8K/68K/35K/10.8K small-channel breakouts; NatGeo 12.4M, Astrum 9.28M, NASA JPL 5.81M, Secrets of the Universe 3.85M neighbours), per-planet shelf audit (6 of 8 planets already have finished OWB long masters on disk: Venus 023, Earth 027/031, Mars 025, Jupiter 020, Saturn 021, Uranus 033; all 8 have verified SOURCES.md tables including Mercury 036/044 and Neptune 035; 80-85% shelf reuse, £0 cash, 0 Flow/Vertex credits, ~8k ElevenLabs chars, ~5h build after lock), 3 search-led titles <=70 chars, 3 thumbnail concepts (ALL 8 WORLDS, 464°C TO -224°C, REAL NASA PHOTOS), proposed Wed 16 Dec or Sun 20 Dec 18:00 slot (moves zero dated films), and OWB:064 card on Ben's board.)
 - J2862 cancelled: Verify condition for J2855 ()
 - J2861 done: Sleep film: upload the repaired master as Private with the researched listing, scheduled Sat 12 Dec 21:00 London (done)
@@ -107,4 +107,3 @@ Recently finished:
 - J2855 done: HOS 008: read the v05 salon sheets (scale, freeze, ghosting, spark) (v05 salon PASS (desk 6885137818, Claude 6885141620). All 5 checks YES. hos_008_master_v05.mp4 sha256 d1ffb78dfc3d77519b5f37dfbddeec2f7802fa2d79e58b4524be31551a67841b. v04 untouched (mtime 14 Nov 13:49). J2243 reviews v05 only.)
 - J2854 done: HOS 008: write master v05 salon window (full-frame tail, f000-f029 slow, spark on 2635) (done)
 - J2853 done: Verify condition for J2614 (Verified J2614 review evidence and Chief ruling 6882919446 (jobs/reviews/J2853/REVIEW.md @ 921043ba87): J2854 (v05 salon re-splice 2506..2665) and J2855 (v05 salon sheet check) are queued; recorded dependency hold on J2614 (--recheck J2853, check_at 2026-11-15T06:00:00Z) awaiting J2854/J2855 completion and Chief PASS so J2243 stays held off v04.)
-- J2851 done: Verify condition for J2831 (Chief ruling (gemini, elected acting Chief): CONDITION PROVEN SATISFIED for J2831 (jobs/reviews/J2851/REVIEW.md, commit fc9d8134fe). In-memory check confirmed GitHub issue #219 pairs[0] (2026-11-14T19:13:08.165Z, e=1795269633) contains the exact 24-character nonce from ~/.config/studio-kanban/ben_pair_link, and Ben's linked iPhone Approve button recorded OWB-J2222 (verdict: ok) and posted [Ben] OK J2222 v03 on #478 (#6882810716, #6882823558). Reopened J2831 for Cursor step 4/4 cleanup: delete only '~/Library/Mobile Documents/com~apple~CloudDocs/Link this phone to the board.html' and confirm on #478.)
