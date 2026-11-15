@@ -94,11 +94,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2904 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2271 |  |
 | J2906 | mini | open | – | – | for gemini · listing · `gemini-argon` · Swap the Great Dimming Short SWDCZfWZVao (Wed 9 Dec) to the full-screen cut Ben OK'd, v06 |  |
 | J2907 | mini | open | – | – | for cursor · studio · Board: redeploy with Ben's new GitHub token, prove ticks save and reach both threads |  |
-| J2908 | mini | claimed | gemini | 2026-11-15T20:27Z | for gemini · review · `gemini-argon` · Verify condition for J0124 |  |
 | J2909 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0861 |  |
 
 Recently finished:
 
+- J2908 done: Verify condition for J0124 (Condition SATISFIED: 026 Nearest Star long c5AdqQsnnys verified Public at 2026-11-15T18:31:16Z (live since 2026-11-15T18:00:37Z via YouTube oEmbed HTTP 200, watch page ytInitialPlayerResponse playabilityStatus=OK/isPrivate=False/isUnlisted=False, and channel Atom feed; jobs/reviews/J2908/REVIEW.md, 872a0e63b1). Original 025/026 gates and Ben approvals (6077231242, J0833) remain valid; J0124 reopened for the 025->026 end-screen video swap (Js6EQJ8qDi8: -jmMROGoZCM -> c5AdqQsnnys).)
 - J2905 done: First-day check at 6 h: "The Blood Vessels Finer Than a Hair" (Wvjd8g0CpzE) ("The Blood Vessels Finer Than a Hair" (Wvjd8g0CpzE) · History of Science · Short · went live Sun 15 Nov 11:30 London
 At 6 h: views 210 · Studio rank 1 of 10 · shown in feed no figure yet · stayed to watch 15.0% · average viewed 76.6%
 Usual for this channel: stayed to watch 29.6%, average viewed 75.2%
@@ -124,4 +124,3 @@ Carry forward
 - J2898 done: Sleep video: rebuild Ben's watch clip as one clean clip and check the whole film for anything unfinished (Clean 30s watch clip replaces the screenshot sheet. Whole 108-minute master checked, no defect re-cut. Ben's card is up. Private 13q4_EoLEN4 untouched.)
 - J2897 done: Swap the 031 opening Short C8lPx5N2DwM (Sat 5 Dec) to the full-screen cut Ben OK'd, v02 (Swapped OWB 031 opening Short C8lPx5N2DwM -> 5qw8oW5Pwpc (v02, sha256 6cce94c4499aff1c9994b433629fbb379acfd264e637d6236e36c2ea96ea13d0, Private scheduled Sat 2026-12-05T11:30:00Z, en-GB language/captions, C8lPx5N2DwM Private unscheduled; verify-swap PASS; commit 52e582b032).)
 - J2894 done: Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest (Weekly HOS thumbnail audit (2026-11-15) in OWB PR #947 (parked for Chief before Studio jobs run): 42 videos inventoried & scored (7 pub + 1 sched longs, 30 pub + 4 sched Shorts); 28d CTR rose 2.49% -> 2.78% (Shorts median 2.05% -> 2.44%); closed T009 (_C92tIJCk8A) as done/draw in THUMB_LEDGER.json; coded 90d reference sample (n=95) + updated PATTERNS.md; mapped single-variable J0777/J1126 tests for 001/002 (J1130)/003 + urgent custom covers for 4 scheduled Shorts (xzKoHg0E0_U airs 16 Nov 11:30Z).)
-- J2893 done: Chief: resolve 033 edit orphan-review (PASS (662b236e18, jobs/reviews/J2893/REVIEW.md): Resolved 033 edit orphan-review (bc87449771f3f409ba4b). Directly verified 033 Uranus Long Master v04 (3712479ae8, 629.42s, 5 gates + 5-part J2829 multimodal review PASS in J2890, R2 owb-033-v04, awaits_ben armed) and Active Shorts 1 & 2 v02 (db6a234209 & 279c9531f2, J2870 PASS, Ben OK 15 Nov -> J2896/J2895); set 033 edit=done and queued £0 033 thumbs (J2899/J2900) + 11_Upload-Package dry-run (J2901).)

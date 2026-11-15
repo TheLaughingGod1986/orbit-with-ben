@@ -257635,13 +257635,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-15T18:27Z",
-      "eta": "2026-11-15T20:27Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-15T18:25Z",
-      "result": "",
+      "result": "Condition SATISFIED: 026 Nearest Star long c5AdqQsnnys verified Public at 2026-11-15T18:31:16Z (live since 2026-11-15T18:00:37Z via YouTube oEmbed HTTP 200, watch page ytInitialPlayerResponse playabilityStatus=OK/isPrivate=False/isUnlisted=False, and channel Atom feed; jobs/reviews/J2908/REVIEW.md, 872a0e63b1). Original 025/026 gates and Ben approvals (6077231242, J0833) remain valid; J0124 reopened for the 025->026 end-screen video swap (Js6EQJ8qDi8: -jmMROGoZCM -> c5AdqQsnnys).",
       "history": [
         {
           "at": "2026-11-15T18:25Z",
@@ -257677,6 +257677,11 @@
           "at": "2026-11-15T18:34Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Step 3 done: committed jobs/reviews/J2908/REVIEW.md (872a0e63b1) and reopened J0124 with live Public evidence for c5AdqQsnnys"
+        },
+        {
+          "at": "2026-11-15T18:34Z",
+          "by": "gemini",
+          "what": "done: Condition SATISFIED: 026 Nearest Star long c5AdqQsnnys verified Public at 2026-11-15T18:31:16Z (live since 2026-11-15T18:00:37Z via YouTube oEmbed HTTP 200, watch page ytInitialPlayerResponse playabilityStatus=OK/isPrivate=False/isUnlisted=False, and channel Atom feed; jobs/reviews/J2908/REVIEW.md, 872a0e63b1). Original 025/026 gates and Ben approvals (6077231242, J0833) remain valid; J0124 reopened for the 025->026 end-screen video swap (Js6EQJ8qDi8: -jmMROGoZCM -> c5AdqQsnnys)."
         }
       ],
       "remaining_action": "Mark J2908 done",
@@ -257703,7 +257708,8 @@
       "taskKeys": [
         "OWB:025",
         "OWB:026"
-      ]
+      ],
+      "done_ref": "872a0e63b1"
     },
     {
       "id": "J2909",
