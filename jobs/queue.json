@@ -257573,13 +257573,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-15T21:28Z",
-      "eta": "2026-11-15T23:28Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-15T16:58Z",
-      "result": "",
+      "result": "Elected-Chief ruling (c1d8578e9f, jobs/reviews/J2904/REVIEW.md): Checks 1-4 PASS (PR #599 e739d3b6), Chief 600-credit Flow go 6898337122 active, R1-R6 Create-path PR #600 merged at 4308c896 (desk 6898699679, 10/10 unit tests OK), and signed authorization file staged (/Users/benjaminoats/_desk/state/flow/hos010-r1-r6/chief_authorization_6898337122.json, dry-run verified 0 blockers, 22,550 headroom); queued J2915 (Mini video) to execute guarded R1-R6 generation + review branch, and kept J2271 held (--recheck J2904, check-at 2026-11-16T03:30:00Z) until J2915 and R1-R6 KEEP/FIX review finish.",
       "history": [
         {
           "at": "2026-11-15T16:58Z",
@@ -257635,6 +257635,11 @@
           "at": "2026-11-15T21:28Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-15T21:28Z",
+          "by": "gemini",
+          "what": "done: Elected-Chief ruling (c1d8578e9f, jobs/reviews/J2904/REVIEW.md): Checks 1-4 PASS (PR #599 e739d3b6), Chief 600-credit Flow go 6898337122 active, R1-R6 Create-path PR #600 merged at 4308c896 (desk 6898699679, 10/10 unit tests OK), and signed authorization file staged (/Users/benjaminoats/_desk/state/flow/hos010-r1-r6/chief_authorization_6898337122.json, dry-run verified 0 blockers, 22,550 headroom); queued J2915 (Mini video) to execute guarded R1-R6 generation + review branch, and kept J2271 held (--recheck J2904, check-at 2026-11-16T03:30:00Z) until J2915 and R1-R6 KEEP/FIX review finish."
         }
       ],
       "remaining_action": "Elected Chief: run jobs.py wait J2271 --recheck J2904 (check-at 2026-11-15T23:45:00Z) and close J2904",
@@ -257662,7 +257667,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "c1d8578e9f"
     },
     {
       "id": "J2905",
