@@ -258425,10 +258425,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-15T21:46Z",
+      "eta": "2026-11-15T22:46Z",
       "created_by": "refill",
       "created_at": "2026-11-15T21:08Z",
       "result": "",
@@ -258457,11 +258457,24 @@
           "at": "2026-11-15T21:46Z",
           "by": "gemini",
           "what": "reopened: acting Chief (gemini) ruling: audited the last 10 live public OWB videos (#1 c5AdqQsnnys 026 long through #10 ZpEA8stoSPA, plus #11-#16) directly on the Mini against 2026-11-15.json, overlays_v06.json, overlays_v03f.json and upload manifests; wrote 05_Analytics/live_fixes/2026-11-15.md (0bc3365027); 10/10 pass, 0 fixes needed"
+        },
+        {
+          "at": "2026-11-15T21:46Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "audit the last 10 live videos and write the fix list",
       "kind": "listing",
-      "backlog": "owb-live-listing-fixes"
+      "backlog": "owb-live-listing-fixes",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-15T21:46Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2915",
