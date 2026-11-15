@@ -91,7 +91,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2877 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2243 |  |
 | J2880 | mini | open | – | – | for gemini · listing · `gemini-argon` · Swap the Space Station Short xdurJQcoiGM (Wed 25 Nov) to the full-screen cut Ben OK'd, v14 |  |
 | J2885 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2857 |  |
-| J2886 | mini | open | – | – | studio · Pin the Titan long comment once T3cBBss1F60 is public |  |
+| J2886 | mini | claimed | cursor | 2026-11-15T11:43Z | studio · Pin the Titan long comment once T3cBBss1F60 is public |  |
 
 Recently finished:
 
