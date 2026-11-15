@@ -1,0 +1,202 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Users/benjaminoats/_desk/wt-J2478/02_Video-Projects/_dated_shorts/2026-11-24_supermoon/06_Final-Exports/owb_dated_2026_11_24_supermoon_v01.mp4",
+  "edge_floor": 0.0597,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "supermoon_00_s01",
+      "cut": 0,
+      "t": 1.32,
+      "source": "phases_2026_plain_2160p30",
+      "why": [
+        "low detail: edge density 0.0584 < film p5 0.0597"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "supermoon_00_s01",
+      "source": "phases_2026_plain_2160p30",
+      "t": 1.32,
+      "std": 45.48,
+      "mean": 169.69,
+      "p95": 230.0,
+      "edge": 0.0584,
+      "hf": 16.09,
+      "lf": 36.64,
+      "std8": 38.9,
+      "edge8": 0.2242,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: edge density 0.0584 < film p5 0.0597"
+      ]
+    },
+    {
+      "cut": 1,
+      "row": "supermoon_01_s02",
+      "source": "GSFC_20171208_Archive_e002130",
+      "t": 3.63,
+      "std": 53.24,
+      "mean": 95.77,
+      "p95": 193.0,
+      "edge": 0.2164,
+      "hf": 15.45,
+      "lf": 45.7,
+      "std8": 47.99,
+      "edge8": 0.4612,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "supermoon_02_s03",
+      "source": "GSFC_20171208_Archive_e001939",
+      "t": 5.47,
+      "std": 31.39,
+      "mean": 86.44,
+      "p95": 136.0,
+      "edge": 0.3478,
+      "hf": 15.19,
+      "lf": 22.03,
+      "std8": 23.88,
+      "edge8": 0.262,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "supermoon_03_s04",
+      "source": "as14-67-09386",
+      "t": 7.6,
+      "std": 44.91,
+      "mean": 127.45,
+      "p95": 211.0,
+      "edge": 0.185,
+      "hf": 14.72,
+      "lf": 35.39,
+      "std8": 38.17,
+      "edge8": 0.4561,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "supermoon_04_s05",
+      "source": "as11-44-6667",
+      "t": 10.53,
+      "std": 43.76,
+      "mean": 167.13,
+      "p95": 223.0,
+      "edge": 0.2037,
+      "hf": 17.77,
+      "lf": 35.8,
+      "std8": 36.95,
+      "edge8": 0.2685,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "supermoon_05_s06",
+      "source": "plain_frame_7864",
+      "t": 14.0,
+      "std": 40.1,
+      "mean": 169.62,
+      "p95": 228.0,
+      "edge": 0.0622,
+      "hf": 17.11,
+      "lf": 31.8,
+      "std8": 33.52,
+      "edge8": 0.2154,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "supermoon_06_s07",
+      "source": "iss070e062746",
+      "t": 17.22,
+      "std": 46.37,
+      "mean": 51.17,
+      "p95": 157.0,
+      "edge": 0.5108,
+      "hf": 19.82,
+      "lf": 36.04,
+      "std8": 38.76,
+      "edge8": 0.3272,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 7,
+      "row": "supermoon_07_loop",
+      "source": "phases_2026_plain_2160p30_loop_preroll",
+      "t": 19.1,
+      "std": 60.31,
+      "mean": 117.41,
+      "p95": 203.0,
+      "edge": 0.0622,
+      "hf": 7.26,
+      "lf": 59.19,
+      "std8": 59.41,
+      "edge8": 0.1038,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    }
+  ]
+}

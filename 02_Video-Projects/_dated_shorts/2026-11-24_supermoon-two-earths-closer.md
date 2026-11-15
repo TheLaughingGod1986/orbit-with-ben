@@ -44,21 +44,21 @@ All numbers, dates, and comparisons are verified against official NASA sources (
 
 ## 3. Target Publish Slot (3–7 Days Before Event) & Measurement Plan
 
-### Current OWB Schedule Around 17–24 November 2026 (`05_Analytics/owb/snapshots/2026-11-08.json`)
+### Current OWB Schedule Around 17–24 November 2026 (`05_Analytics/owb/snapshots/2026-11-08.json` + `J2478` Slot Update)
 - **Tue 17 Nov 2026, 11:30 UTC:** `kKN8Ale42sE` — *How Far From Earth Is Voyager 1 Right Now?* (Standalone S8)
 - **Wed 18 Nov 2026, 11:30 UTC:** `cwU_0WWeNZ4` — *If Voyager Needs 75,000 Years, How Far Is the Nearest Star?* (`026` Short #2)
+- **Thu 19 Nov 2026, 11:30 UTC:** *No video scheduled — locked for this 24 Nov Supermoon dated-event Short (`J2478`)*
 - **Fri 20 Nov 2026, 11:30 UTC:** `aAUgIGEuPwQ` — *The Nearest Star Is a Cherry Past Cairo. How Do We Know?* (`026` Short #3)
-- **Sat 21 Nov 2026, 11:30 UTC:** *No video scheduled (open OWB Saturday 11:30 London Short slot)*
+- **Sat 21 Nov 2026, 11:30 UTC:** Taken by `024` muons Short v04 (`J2478` slot update)
 - **Sun 22 Nov 2026, 18:00 UTC:** `6bbbvfCx6zY` — *What If Earth Stopped Spinning?* (Long `027`)
 - **Mon 23 Nov 2026, 11:30 UTC:** `Dm4xsF1Ateg` — *Why Do You Weigh Less at Earth's Equator?* (`027` Short #1)
 
-### Locked Target Slot
-- **Locked Target Slot (`PASS`):** **Saturday, 21 November 2026 at 11:30 UTC (London)**
-  - **Lead time:** **3 days (75 hours) before** the `24 November 2026 14:54 UTC` Full Supermoon (and 4 days before `25 November 21:00 UTC` perigee) — squarely inside the **3–7 days before the event** window required by `LEARNINGS` Rule 16 and `J2369`.
-  - **Cadence fit:** Saturday 11:30 London is a locked OWB Short slot (`Mon/Wed/Fri/Sat 11:30 London`; `AGENTS.md` Locked Weekly Targets, leaving Tue/Thu/Sun free), verified empty in `05_Analytics/owb/snapshots/2026-11-08.json`, and respects the hard rule *"never more than one Short a day"*.
+### Locked Target Slot (`J2478`)
+- **Locked Target Slot (`PASS`):** **Thursday, 19 November 2026 at 11:30 UTC (London)**
+  - **Lead time:** **5 days (~123 hours) before** the `24 November 2026 14:54 UTC` Full Supermoon (and 6 days before `25 November 21:00 UTC` perigee) — squarely inside the **3–7 days before the event** window required by `LEARNINGS` Rule 16 (`J2369` / `J2478`).
+  - **Slot change (`J2478`, 10 Nov 2026):** Sat 21 Nov 11:30 London was subsequently taken by the `024` muons Short v04; Acting Chief (Claude) moved this dated-event Short to **Thu 19 Nov 2026 at 11:30 London** (nothing else of Orbit's airs that day, respecting *"never more than one Short a day"*).
 - **Related Video Link:**
-  - At upload / on Sat 21 Nov: `2fsQcea-voM` (*Why the Moon Is Slowly Leaving Us — and What Happens When It's Gone*, public Long `013` on Moon orbit/distance).
-  - Or switch Related Video after Sun 22 Nov 18:00 UTC to `6bbbvfCx6zY` (*What If Earth Stopped Spinning?*, Long `027`).
+  - At upload / on Thu 19 Nov: `2fsQcea-voM` (*Why the Moon Is Slowly Leaving Us — and What Happens When It's Gone*, public Long `013` on Moon orbit/distance).
 - **Rule 16 Pass / Fail Readout (`2026-11-28` / `2026-12-01`):**
   - **PASS:** YouTube views or Cross-network reach within 7 days of publish is **`≥2x` the October 2026 non-dated Short median** (`118` YouTube views → **`≥236` YouTube views**, or strong Facebook/IG distribution via Buffer mirror).
   - **FAIL:** `<236` YouTube views and no Facebook/IG breakout after 4 dated-event Shorts.
@@ -77,7 +77,7 @@ All numbers, dates, and comparisons are verified against official NASA sources (
 - **Single Teach Overlay (`13.25–16.35 s`, inside 16:9 band, clear of `0–2 s` and `9.4–13.1 s` title banner; 1-overlay Short cap):**
   `DATA` animated horizontal scale bar shrinking from `384,400 KM (30 EARTHS)` to `360,000 KM (28 EARTHS)` · `SCALE: two Earths closer` (4 words per label). No other teach overlay, badge, or `WHEN` stamp appears in the Short.
 
-### Full Spoken Script (46 Words, ~18.80 s Total Runtime = 17.80 s VO + 1.00 s Loop Tail)
+### Full Spoken Script (45 Words, ~18.80 s Total Runtime = 17.80 s VO + 1.00 s Loop Tail)
 
 ```markdown
 [VISUAL MUST: Frame 0 opens on unlabelled NASA SVS 5587 4K plain Moon globe (`phases_2026_plain_2160p30.mp4`) rotating and swelling toward camera against deep space (no still hold, no Orbit at frame 0, no meta-promise). Hook caption 0.0-2.0 s: "**TWO EARTHS** CLOSER". At 2.65 s cut to graded NASA Blue Marble Earth (`GSFC_20171208_Archive_e002130.jpg`), then at 4.65 s pair with NASA LRO full Moon (`GSFC_20171208_Archive_e001939.jpg`) side by side at true 1 : 3.67 diameter scale with no text or badge overlay. At 6.15 s cut to our unlabelled `code_graphics.py` true-scale Earth-to-Moon span render using real NASA Blue Marble Earth (`GSFC_20171208_Archive_e002130.jpg`) and Moon (`GSFC_20171208_Archive_e000868.jpg`) discs over graded dark space (or clean unlabelled NASA Moon plate `as14-67-09386.jpg` from `pool_v01/moon/`, zero text/labels). At 9.40-13.10 s cut to Apollo 11 Moon (`as11-44-6667.jpg`) with on-screen title banner "How Close Will the Supermoon Get on November 24?". At 13.10 s cut to unlabelled perigee close-up of the 24 November 2026 full Moon (`frames/3840x2160_16x9_30p/plain/comp.7864.tif` + `phases_2026_plain_2160p30.mp4`) · DATA: animated scale bar shrinking from 384,400 KM (30 EARTHS) to 360,000 KM (28 EARTHS) · SCALE: two Earths closer. At 16.45 s cut to full Moon shining through Earth's glowing sunset atmosphere limb (`pool_v01/moon/s103e5050.jpg` or `phases_2026_plain_2160p30.mp4` rising over cropped Earth twilight limb), holding 1.00 s past the last word to bridge back into frame 0 (`<=0.3 s` crossfade).]
@@ -86,7 +86,7 @@ All numbers, dates, and comparisons are verified against official NASA sources (
 > If Earth were a nickel, the Moon is a coffee bean.
 > Normally thirty Earths fit across three hundred and eighty-four thousand kilometres.
 > This Supermoon passes three hundred and sixty thousand kilometres up.
-> Look east at sunset, as…
+> Look east at sunset.
 ```
 
 ### Pre-Approved VO Trim Order (`C7` — Binding Duration & Answer-Start Guard)
@@ -95,11 +95,11 @@ Per `CHIEF_H37` C7 and `CHIEF_H40_VO_LOCK.md` (where 46-word 5-sentence scripts 
 2. **Trim 2 (`35 words`, `4 sentences`):** If still over `20.0 s` cut or `13.5 s` answer start, drop Line 2 (*"If Earth were a nickel, the Moon is a coffee bean."*), keeping full Line 3 **`"Normally thirty Earths fit across three hundred and eighty-four thousand kilometres."`** as the everyday 30-Earths scale comparison (`35` words, `4` sentences, matching `AR1 v03` `33w` / `AR3 v03` `31w`).
 
 ### Seamless Loop Check (Line 5 → Line 1)
-> *"Look east at sunset, **as the Moon swings two Earths closer on November twenty-fourth.**"*
-- Grammatically continuous clause across the end/start boundary, matching `030_apophis_short_v13a` (*"If it missed by one keyhole, an asteroid wider than the Eiffel Tower will miss Earth in twenty twenty-nine."*).
+> *"Look east at sunset."*
+- Ben requested a complete ending on 11 November (J2478); the grammatical loop bridge is waived. Picture and music retain the existing forward-loop tail.
 
 ### Word-Count & Timing Verification Table
-- **Whitespace word count (`.split()`):** `9 + 11 + 11 + 10 + 5 = 46 words` (inside `44–52 words` brief window and `≤46 words` E1 ceiling; pre-approved `C7` trims at `41` and `35` words if `eleven_v3` reads slower than `2.57 w/s`).
+- **Whitespace word count (`.split()`):** `9 + 11 + 11 + 10 + 4 = 45 words` (inside `44–52 words` brief window and `≤46 words` E1 ceiling; pre-approved `C7` trims at `41` and `35` words if `eleven_v3` reads slower than `2.57 w/s`).
 - **Hyphen-split alphanumeric token count (`re.findall(r"[A-Za-z0-9']+", text)`):** `48 tokens` (`twenty-fourth` and `eighty-four` split to 2 each — still well inside `44–52`).
 - **Spoken pace:** `46 words / 17.72 s speech = 2.60 words/sec` (`156 WPM`, matching Ben's `030_apophis_short_v13a` pace of `43 words / 16.76 s = 2.57 words/sec`; **re-measure on VO** with `C7` trim order above).
 
@@ -109,7 +109,7 @@ Per `CHIEF_H37` C7 and `CHIEF_H40_VO_LOCK.md` (where 46-word 5-sentence scripts 
 | **2** | *If Earth were a nickel, the Moon is a coffee bean.* | 11 | `2.80 – 6.05 s` | **Everyday scale comparison** (NASA *Moon Facts* verbatim analogy). Bridged across Cut 2 at `4.65 s ≤ 4.8 s`. Zero text/badge overlay. |
 | **3** | *Normally thirty Earths fit across three hundred and eighty-four thousand kilometres.* | 11 | `6.20 – 13.10 s` | **Baseline distance & scale** (`384,400 km` = `30 Earths`). Cut 3 at `6.15 s`, Cut 4 at `9.40 s`. Title banner on screen `9.40 – 13.10 s`. |
 | **4** | *This Supermoon passes three hundred and sixty thousand kilometres up.* | 10 | `13.25 – 16.35 s` | **The Answer / Payoff starts at `13.25 s`** (`13.25 / 18.80 = 70.5% ≥ 70%` of runtime, and right at `"about 13 s"`). Single `DATA` scale bar animates `13.25 – 16.35 s`. |
-| **5** | *Look east at sunset, as…* | 5 | `16.45 – 17.80 s` | **"You can see it / look up" payoff** + incomplete conjunction `as…` at `17.80 s`, followed by `1.00 s` moving picture + music tail (`17.80 – 18.80 s`) into Frame 0 (`≤0.3 s` crossfade). |
+| **5** | *Look east at sunset.* | 5 | `16.45 – 17.80 s` | **"You can see it / look up" payoff**, complete sentence ending (Ben’s J2478 change), followed by `1.00 s` moving picture + music tail (`17.80 – 18.80 s`) into Frame 0 (`≤0.3 s` crossfade). |
 
 ### Apophis Mould + `LEARNINGS` Rule 8 & `OWB-2026-11-E1` Compliance Matrix
 
@@ -126,7 +126,7 @@ Per `CHIEF_H37` C7 and `CHIEF_H40_VO_LOCK.md` (where 46-word 5-sentence scripts 
 | **Answer timing (Rule 6 & Brief)** | Answer by `~13 s` and `≥ 70%` of total runtime | Line 4 starts at **`13.25 s`** (`13.25 / 18.80 = 70.5% ≥ 70%`, re-measured on VO) | **PASS** |
 | **Title banner window** | `9.0 – 14.0 s` | **`9.40 – 13.10 s`** (`How Close Will the Supermoon Get on November 24?`) | **PASS** |
 | **Single teach overlay** | At most 1 overlay in 16:9 band, clear of `0–2 s` and `9–14 s` title | Single `DATA` scale bar at **`13.25 – 16.35 s`** (`384,400 KM (30 EARTHS)` → `360,000 KM (28 EARTHS)`); zero other overlays/badges/`WHEN` stamps | **PASS** |
-| **Loop close** | Viewer action payoff + seamless grammatical bridge into Line 1 | *"Look east at sunset, as… [The Moon swings two Earths closer…]"* | **PASS** |
+| **Loop close** | Viewer action payoff + seamless grammatical bridge into Line 1 | *"Look east at sunset. [The Moon swings two Earths closer…]"* | **PASS** |
 
 ---
 
@@ -144,7 +144,7 @@ All visual plates come from **existing local NAS footage** (`/Volumes/data/mac-m
 | **`s04`** | `6.15 – 9.40` | `3.25` | *Normally thirty Earths fit across* | **Own Unlabelled Real-Body Render or NAS (`027` pool):** Unlabelled `code_graphics.py` true-scale Earth-to-Moon span render using real NASA Blue Marble Earth (`GSFC_20171208_Archive_e002130.jpg`, `3718×3718`) and Moon (`GSFC_20171208_Archive_e000868.jpg`, `3240×3240`) discs over graded dark space (zero text/labels), or clean unlabelled NASA lunar plate `/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/moon/as14-67-09386.jpg` (`4020×4020`). | Graded dark-space plate inside `16:9` band with feathered vertical blur top/bottom. **Zero text/labels and no external source diagram.** |
 | **`s05`** | `9.40 – 13.10` | `3.70` | *three hundred and eighty-four thousand kilometres.* | **NAS (`027` pool):** `/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/moon/as11-44-6667.jpg` (`1920×1930` Apollo 11 high-contrast Moon in deep space, smooth push-in). | **On-screen Title Banner (`9.40–13.10 s`):** `How Close Will the Supermoon Get on November 24?` (upper-middle safe zone, alone on screen). |
 | **`s06`** | `13.10 – 16.45` | `3.35` | *This Supermoon passes three hundred and sixty thousand kilometres up.* | **NASA SVS 5587 (unlabelled plain):** Unlabelled Frame 7864 (`frames/3840x2160_16x9_30p/plain/comp.7864.tif`, `https://svs.gsfc.nasa.gov/vis/a000000/a005500/a005587/frames/3840x2160_16x9_30p/plain/comp.7864.tif`, exact `2026-11-24 15:00 UTC` Supermoon phase `99.81%`, `360,755 km`) + unlabelled `phases_2026_plain_2160p30.mp4` perigee push. | **Sole Teach Overlay (`13.25–16.35 s`, inside 16:9 band, `11.5%` band height):** Animated `DATA` scale bar shrinking from `384,400 KM (30 EARTHS)` to **`360,000 KM (28 EARTHS)`** (`SCALE: two Earths closer`) in house type (`0.35 s` slide-in, active bar contraction, `0.35 s` fade-out). |
-| **`s07`** | `16.45 – 18.80` | `2.35` | *Look east at sunset, as…* (`16.45–17.80 s`) + `1.00 s` forward-loop tail (`17.80–18.80 s`) | **NAS (`027` pool) / NASA SVS 5587 (unlabelled plain):** `/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/moon/s103e5050.jpg` (NASA STS-103 photo of the full Moon shining through Earth's glowing blue-orange sunset atmosphere limb, verified on NAS; keep `≤2.35×` upscale or fetch full-res original via `images-api.nasa.gov`) or `phases_2026_plain_2160p30.mp4` (`3840×2160`) rising over a clean cropped Earth twilight limb (`Five_Minutes_in_Orbit.webm` `1920×1280` / `iss070e062746.jpg` `5568×3712` in `pool_v01/iss/`). | Full moving twilight horizon + rising Moon plate; no text on screen during the final `2.35 s` so the `17.80–18.80 s` loop tail bridges cleanly into `s01` Frame 0 (`≤0.3 s` crossfade per `OWB-2026-11-E1`). |
+| **`s07`** | `16.45 – 18.80` | `2.35` | *Look east at sunset.* (`16.45–17.80 s`) + `1.00 s` forward-loop tail (`17.80–18.80 s`) | **NAS (`027` pool) / NASA SVS 5587 (unlabelled plain):** `/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/027_What-If-Earth-Stopped-Spinning/07_Edit-Project/pool_v01/moon/s103e5050.jpg` (NASA STS-103 photo of the full Moon shining through Earth's glowing blue-orange sunset atmosphere limb, verified on NAS; keep `≤2.35×` upscale or fetch full-res original via `images-api.nasa.gov`) or `phases_2026_plain_2160p30.mp4` (`3840×2160`) rising over a clean cropped Earth twilight limb (`Five_Minutes_in_Orbit.webm` `1920×1280` / `iss070e062746.jpg` `5568×3712` in `pool_v01/iss/`). | Full moving twilight horizon + rising Moon plate; no text on screen during the final `2.35 s` so the `17.80–18.80 s` loop tail bridges cleanly into `s01` Frame 0 (`≤0.3 s` crossfade per `OWB-2026-11-E1`). |
 
 ### Audio & SFX Plan (Once Approved by Chief)
 - **Voiceover (wait for Chief OK before spending ElevenLabs credits):** One take via `04_Audio/tools/vo_take.py` (`eleven_v3`, Ben Orbit Narrator), checked with `vo_check.py` and the pre-approved `C7` VO trim order in §4 if runtime exceeds `20.0 s` or answer start exceeds `13.5 s`.
@@ -169,10 +169,10 @@ All visual plates come from **existing local NAS footage** (`/Volumes/data/mac-m
   "relatedVideoId": "2fsQcea-voM",
   "relatedVideoTitle": "Why the Moon Is Slowly Leaving Us — and What Happens When It's Gone",
   "schedule": {
-    "publishAt": "2026-11-21T11:30:00Z",
+    "publishAt": "2026-11-19T11:30:00Z",
     "eventUtc": "2026-11-24T14:54:00Z",
     "perigeeUtc": "2026-11-25T21:00:00Z",
-    "leadTimeDays": 3
+    "leadTimeDays": 5
   },
   "description": "On November 24, 2026 at 14:54 UTC, the first of three consecutive full Supermoons reaches full phase nearly two Earth diameters closer to us than average.\n\nNormally the Moon orbits at an average distance of 384,400 kilometres — wide enough to fit 30 Earth-sized planets side by side. During the November 24, 2026 Supermoon, its elliptical orbit brings it to about 360,755 kilometres (and 359,336 kilometres at perigee on November 25 at 21:00 UTC), or roughly 28 Earth diameters away. Look east around sunset on November 24 to watch it rise.\n\nWatch the full Moon film next: Why the Moon Is Slowly Leaving Us — and What Happens When It's Gone (https://www.youtube.com/watch?v=2fsQcea-voM)\n\nSources: NASA Science, 'Supermoons: In Depth' (science.nasa.gov/solar-system/moon/what-is-a-supermoon/); NASA Science, 'What's Up: November 2026 Skywatching Tips from NASA' (2026); NASA Science, 'Moon Facts' (science.nasa.gov/moon/facts/); Ernie Wright, 'Moon Phase and Libration, 2026', NASA Scientific Visualization Studio #5587 (svs.gsfc.nasa.gov/5587).\n\nImage credits: NASA's Scientific Visualization Studio (Ernie Wright, SVS #5587 unlabelled plain Moon visualizations); NASA Goddard Space Flight Center / Lunar Reconnaissance Orbiter; NASA Johnson Space Center (Apollo 11 AS11-44-6667, Apollo 14 AS14-67-09386, STS-103 S103E5050, ISS Crew Earth Observations).",
   "tags": [
@@ -197,3 +197,7 @@ All visual plates come from **existing local NAS footage** (`/Volumes/data/mac-m
   }
 }
 ```
+
+### v04 ending revision (12 November 2026)
+
+Ben requested removal of the final “as”. The primary script is now 45 words; the existing C7 trim-1 narration is 40 whitespace words. No new words or take were added. v04 keeps the v03 picture timing and total 551 frames (18.366667 s). The final voice is trimmed at 16.810 s with a 40 ms fade starting 16.770 s, after the low-level final consonant and before the next voiced onset near 16.82 s. These are waveform measurements; Gemini must listen to the last three seconds and watch the tail before the conditional Chief KEEP applies. The grammatical loop requirement alone is waived by Ben’s instruction.
