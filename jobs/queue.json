@@ -254710,13 +254710,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-15T11:36Z",
-      "eta": "2026-11-15T13:36Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-15T02:15Z",
-      "result": "",
+      "result": "Resolved OWB 064 topic orphan-review (dc13a30b69): recorded Chief/Rule-E PASS (25/25, 100%) in jobs/reviews/J2875/REVIEW.md with live YouTube GB autocomplete (#1 every planet explained), ranking video IDs (lVdYYpoozZU 888k, oytUCOzAYpo 99k, iqJjTeYv5-M 3.68M), and 5 multi-planet >=1M neighbours (libKVRa01L8 39.83M, wkQuOrsgVGY 10.56M, lcZTcfdZ3Ow 5.01M, iqJjTeYv5-M 3.68M, WOgatB4daq8 2.23M); updated 064/status.json stages.topic to done (PASS) and STATUS.md; workflow_handoffs.py count=0; preserved Ben lock gate on #plan (£0 spent, zero build jobs queued).",
       "history": [
         {
           "at": "2026-11-15T02:15Z",
@@ -254747,6 +254747,11 @@
           "at": "2026-11-15T11:56Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Step 3 done: verified workflow_handoffs.py returns count 0; 064 remains waiting on Ben's lock on #plan (£0 spent)"
+        },
+        {
+          "at": "2026-11-15T11:56Z",
+          "by": "gemini",
+          "what": "done: Resolved OWB 064 topic orphan-review (dc13a30b69): recorded Chief/Rule-E PASS (25/25, 100%) in jobs/reviews/J2875/REVIEW.md with live YouTube GB autocomplete (#1 every planet explained), ranking video IDs (lVdYYpoozZU 888k, oytUCOzAYpo 99k, iqJjTeYv5-M 3.68M), and 5 multi-planet >=1M neighbours (libKVRa01L8 39.83M, wkQuOrsgVGY 10.56M, lcZTcfdZ3Ow 5.01M, iqJjTeYv5-M 3.68M, WOgatB4daq8 2.23M); updated 064/status.json stages.topic to done (PASS) and STATUS.md; workflow_handoffs.py count=0; preserved Ben lock gate on #plan (£0 spent, zero build jobs queued)."
         }
       ],
       "remaining_action": "Done: 064 topic orphan-review resolved",
