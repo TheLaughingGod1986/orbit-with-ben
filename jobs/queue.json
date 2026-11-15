@@ -1,5 +1,5 @@
 {
-  "next_id": 2880,
+  "next_id": 2885,
   "jobs": [
     {
       "id": "J0001",
@@ -220108,6 +220108,11 @@
           "at": "2026-11-14T22:41Z",
           "by": "gemini",
           "what": "done: KEEP (PASS, commit 5dbd6f396e, jobs/reviews/J2477/REVIEW.md): 032 Titan long master v02 (585.44s, sha256 51986972...ed073) passes all 5 J2829 multimodal checks (audio_input, moving_video_input, 1171 2fps frames, 910 pm3 cut frames, 90 tail frames), First-30s Rule, Teach-on-Screen, and all 5 automated gates (clip_check, picture_qa, polish_gate, music_gate, sfx_kit level). Verified SHA-256 across 09_Final-Export, NAS OWB UAT, and iCloud OWB UAT; uploaded 720p _PHONE.mp4 to R2 (owb-032-v02); armed awaits_ben for Sun 16 Nov; advanced WIP.json (OWB:062 promoted to active)."
+        },
+        {
+          "at": "2026-11-15T07:58Z",
+          "by": "claude",
+          "what": "no longer waits on Ben: OK'd, delivered by J2884"
         }
       ],
       "remaining_action": "Completed 032 master v02 review (KEEP) and staged for Ben UAT watch",
@@ -220136,7 +220141,8 @@
       "taskKeys": [
         "OWB:032"
       ],
-      "awaits_ben": {
+      "done_ref": "5dbd6f396e",
+      "awaits_was": {
         "what": "Watch 032 Titan long master v02 (9m 45s, re-cut first 30s) and thumbnails A/B",
         "file": "OWB UAT/032_what_would_happen_if_you_landed_on_titan_master_v02_PHONE.mp4",
         "version": "v02",
@@ -220147,8 +220153,7 @@
         "title": "What Would Happen If You Landed on Titan?",
         "number": "032",
         "type": "long"
-      },
-      "done_ref": "5dbd6f396e"
+      }
     },
     {
       "id": "J2478",
@@ -220548,6 +220553,11 @@
           "at": "2026-11-14T21:20Z",
           "by": "cursor",
           "what": "blocked: v04 and its cover are in the watch folders and the watch card is up. Ben's OK is needed by Wed 18 Nov 18:00 London, or this dated Short is not uploaded. Pull request 834 is mergeable at a747a6d69f; the Chief merges it when the check passes. No upload."
+        },
+        {
+          "at": "2026-11-15T07:58Z",
+          "by": "claude",
+          "what": "no longer waits on Ben: OK'd, delivered by J2883"
         }
       ],
       "remaining_action": "Ben watches the Supermoon Short v04 by Wed 18 Nov 18:00 London. The Chief merges the pull request once its check passes.",
@@ -220560,14 +220570,20 @@
       "for": "cursor",
       "action": "v04: end the voice on \"Look east at sunset.\" (cut \"as\"), re-run the gates, Gemini checks the ending, back to Ben's watch",
       "awaits_was": {
-        "what": "Watch the Supermoon Short and its cover",
-        "file": "OWB UAT/owb_dated_2026_11_24_supermoon_v03.mp4",
-        "version": "v03",
+        "what": "Watch the Supermoon Short v04 and its cover",
+        "file": "OWB UAT/owb_dated_2026_11_24_supermoon_v04.mp4",
+        "version": "v04",
         "due": "2026-11-18T18:00Z",
         "airs": "2026-11-19T11:30Z",
         "ifNot": "Do not upload this dated Short if approval misses the deadline",
         "title": "Supermoon: two Earths closer on November 24",
-        "type": "short"
+        "type": "short",
+        "prev": [
+          "OWB-J2478"
+        ],
+        "fixed": [
+          "The voice now ends on Look east at sunset. The word as is cut out, and the last caption matches."
+        ]
       },
       "rerouted_from": {
         "needs": "mini",
@@ -220583,22 +220599,6 @@
         "at": "2026-11-14T21:20Z",
         "by": "cursor",
         "note": "v04 is in the watch folders. Pull request 834 is mergeable; its check is still running."
-      },
-      "awaits_ben": {
-        "what": "Watch the Supermoon Short v04 and its cover",
-        "file": "OWB UAT/owb_dated_2026_11_24_supermoon_v04.mp4",
-        "version": "v04",
-        "due": "2026-11-18T18:00Z",
-        "airs": "2026-11-19T11:30Z",
-        "ifNot": "Do not upload this dated Short if approval misses the deadline",
-        "title": "Supermoon: two Earths closer on November 24",
-        "type": "short",
-        "prev": [
-          "OWB-J2478"
-        ],
-        "fixed": [
-          "The voice now ends on Look east at sunset. The word as is cut out, and the last caption matches."
-        ]
       },
       "hold": {
         "type": "ben",
@@ -227150,6 +227150,21 @@
           "at": "2026-11-14T21:01Z",
           "by": "gemini",
           "what": "blocked: Waiting for Ben: his watch of the three full-screen Orbit Shorts (Voyager v02 by Sun 15 Nov 18:00 London, Muons v05 by Thu 19 Nov 18:00 London, ISS v14 by Mon 23 Nov 18:00 London; PR #893 merged after 5-part Chief review PASS). With no OK by each deadline, the cut he OK'd airs. After his OKs, separate swap jobs carry the approved cuts."
+        },
+        {
+          "at": "2026-11-15T07:58Z",
+          "by": "claude",
+          "what": "no longer waits on Ben (entry 3): OK'd, delivered by J2880"
+        },
+        {
+          "at": "2026-11-15T07:58Z",
+          "by": "claude",
+          "what": "no longer waits on Ben (entry 2): OK'd, delivered by J2881"
+        },
+        {
+          "at": "2026-11-15T07:58Z",
+          "by": "claude",
+          "what": "no longer waits on Ben (entry 1): OK'd, delivered by J2882"
         }
       ],
       "remaining_action": "Waiting for Ben's UAT watch of Voyager v02 (by Sun 15 Nov 18:00), Muons v05 (by Thu 19 Nov 18:00), and ISS v14 (by Mon 23 Nov 18:00)",
@@ -227186,50 +227201,6 @@
           "Replaced the blurred-band shot with full-screen NASA Voyager 1 and Apollo 17 Blue Marble Earth photos, moved the first picture cut to 2.6 s, and trimmed 'Stay, and I'll show you how far that is.' cleanly from the narration stem so the 26 billion km figure arrives straight away."
         ]
       },
-      "awaits_ben": [
-        {
-          "what": "Watch the Voyager 1 Short for Tue 17 Nov (v02) with every shot full-screen and the filler promise sentence trimmed out. OK to swap it in?",
-          "file": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/J2550_voyager1_v02/owb_sa_s8_voyager1_v02.mp4",
-          "version": "v02",
-          "due": "2026-11-15T18:00Z",
-          "airs": "2026-11-17T11:30Z",
-          "ifNot": "the cut you OK'd airs",
-          "title": "Voyager 1: full-screen pictures for Tue 17 Nov",
-          "number": "S8",
-          "type": "short",
-          "fixed": [
-            "Replaced the blurred-band shot with full-screen NASA Voyager 1 and Apollo 17 Blue Marble Earth photos, moved the first picture cut to 2.6 s, and trimmed 'Stay, and I'll show you how far that is.' cleanly from the narration stem so the 26 billion km figure arrives straight away."
-          ]
-        },
-        {
-          "what": "Watch the Muons Short for Sat 21 Nov (v05) rebuilt full-screen throughout with 4K Space Station Earth views and animated muon tracks. OK to swap it in?",
-          "file": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/J2550_muons_v05/fri06_muons_ground_v05.mp4",
-          "version": "v05",
-          "due": "2026-11-19T18:00Z",
-          "airs": "2026-11-21T11:30Z",
-          "ifNot": "the cut you OK'd airs",
-          "title": "Muons: full-screen pictures for Sat 21 Nov",
-          "number": "024",
-          "type": "short",
-          "fixed": [
-            "Replaced every blurred-band segment with full-screen 9:16 4K Space Station Earth views and an animated falling-muon aurora graphic. Sound, words, captions, 3-line endcard, and 22.2 s length are unchanged."
-          ]
-        },
-        {
-          "what": "Watch the Space Station deorbit Short for Wed 25 Nov (v14) with the padded final shot replaced by a full-screen 4K orbital pass. OK to swap it in?",
-          "file": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/J2550_iss_v14/owb_ar2_iss_2030_deorbit_v14.mp4",
-          "version": "v14",
-          "due": "2026-11-23T18:00Z",
-          "airs": "2026-11-25T11:30Z",
-          "ifNot": "the cut you OK'd airs",
-          "title": "Space Station 2030: full-screen ending for Wed 25 Nov",
-          "number": "030",
-          "type": "short",
-          "fixed": [
-            "Replaced the blurred-band final shot (14.8-18.4 s) with a full-screen 9:16 4K Space Station Canadarm2 orbital pass above sunlit Earth. Opening 0.0-14.8 s, sound, words, captions, and 18.4 s length are unchanged."
-          ]
-        }
-      ],
       "hold": {
         "type": "ben",
         "condition": "Waiting for Ben: his watch of the three full-screen Orbit Shorts (Voyager v02 by Sun 15 Nov 18:00 London, Muons v05 by Thu 19 Nov 18:00 London, ISS v14 by Mon 23 Nov 18:00 London; PR #893 merged after 5-part Chief review PASS). With no OK by each deadline, the cut he OK'd airs. After his OKs, separate swap jobs carry the approved cuts.",
@@ -254755,6 +254726,240 @@
         "OWB:026",
         "HOS:007"
       ]
+    },
+    {
+      "id": "J2880",
+      "title": "Swap the Space Station Short xdurJQcoiGM (Wed 25 Nov) to the full-screen cut Ben OK'd, v14",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben OK'd v14 on the board (14 Nov 22:39Z, ticks OWB-J2550, Chief evidence jobs/reviews/J2550/REVIEW.md, five gates passed, KEEP).** Swap it into the Wed 25 Nov 11:30 slot. Same steps as J2520.\n\nOld video: `xdurJQcoiGM`, Private and scheduled Wed 25 Nov 11:30 London. New file: `owb_ar2_iss_2030_deorbit_v14.mp4`, sha256 `e9f2c5330f4e57c066742e932774bc67d6af87399cd6ea3a53a0f6a085041287`. Records: `jobs/reviews/J2550/iss_v14/`.\n\n0. Run `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <file> --air-date <air date> --id <file stem>` without `--report-only`; it must PASS on its own.\n1. Read back the old id: privacy, publish time, title, description, tags, cover, language, Related video. It should be Private and scheduled for the slot. If not, park for the Chief.\n2. Check the new file's sha256. Upload it as a NEW Private video with the same publish time. Copy title, description, tags, cover and Related video from the old id. Language en-GB, captions en-GB (same words; the SRT is in the review folder where one exists). \n3. Only after step 2 reads back Private with the right publish time: set the old id to Private and unscheduled. Nothing is deleted.\n4. Verify the swap (`verify-swap.ts`), update `00_Brand/Channel-Setup/social/UPLOADS.json` (new entry with `supersedes`, old entry `supersededBy` and `unscheduledAt`), the Buffer posts for that slot, and any queued job that names the old id.\n5. Post the read-back on the thread.\n\nNever Public, never delete, no force-push, no Replace. £0. If anything does not match (privacy, publish time, hash), upload nothing and park for the Chief with the lines.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-15T07:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-15T07:58Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-15T07:58Z",
+          "by": "claude",
+          "what": "approved by Ben: Watch the Space Station deorbit Short for Wed 25 Nov (v14) with the padded final shot replaced by a full-screen 4K orbital pass. OK to swap it in? v14 (asked in J2550)"
+        }
+      ],
+      "remaining_action": "Swap the Space Station Short xdurJQcoiGM (Wed 25 Nov) to the full-screen cut Ben OK'd, v14",
+      "due": "2026-11-24T18:00:00Z",
+      "kind": "listing",
+      "approved_from": {
+        "what": "Watch the Space Station deorbit Short for Wed 25 Nov (v14) with the padded final shot replaced by a full-screen 4K orbital pass. OK to swap it in?",
+        "file": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/J2550_iss_v14/owb_ar2_iss_2030_deorbit_v14.mp4",
+        "version": "v14",
+        "airs": "2026-11-25T11:30Z",
+        "title": "Space Station 2030: full-screen ending for Wed 25 Nov",
+        "number": "030",
+        "type": "short",
+        "channel": "OWB",
+        "job": "J2550",
+        "askId": "J2550.3",
+        "okAt": "2026-11-14T22:39Z"
+      }
+    },
+    {
+      "id": "J2881",
+      "title": "Swap the Muons Short rvug71d7Dqk (Sat 21 Nov) to the full-screen cut Ben OK'd, v05",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben OK'd v05 on the board (14 Nov 22:39Z, ticks OWB-J2550, Chief evidence jobs/reviews/J2550/REVIEW.md, five gates passed, KEEP).** Swap it into the Sat 21 Nov 11:30 slot. Same steps as J2520.\n\nOld video: `rvug71d7Dqk`, Private and scheduled Sat 21 Nov 11:30 London. New file: `fri06_muons_ground_v05.mp4`, sha256 `1232cb5041f9aae09e51cbf3895136142e19af379331e2b93a8607d593b331b8`. Records: `jobs/reviews/J2550/muons_v05/`.\n\n0. Run `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <file> --air-date <air date> --id <file stem>` without `--report-only`; it must PASS on its own.\n1. Read back the old id: privacy, publish time, title, description, tags, cover, language, Related video. It should be Private and scheduled for the slot. If not, park for the Chief.\n2. Check the new file's sha256. Upload it as a NEW Private video with the same publish time. Copy title, description, tags, cover and Related video from the old id. Language en-GB, captions en-GB (same words; the SRT is in the review folder where one exists). \n3. Only after step 2 reads back Private with the right publish time: set the old id to Private and unscheduled. Nothing is deleted.\n4. Verify the swap (`verify-swap.ts`), update `00_Brand/Channel-Setup/social/UPLOADS.json` (new entry with `supersedes`, old entry `supersededBy` and `unscheduledAt`), the Buffer posts for that slot, and any queued job that names the old id.\n5. Post the read-back on the thread.\n\nNever Public, never delete, no force-push, no Replace. £0. If anything does not match (privacy, publish time, hash), upload nothing and park for the Chief with the lines.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-15T07:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-15T07:58Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-15T07:58Z",
+          "by": "claude",
+          "what": "approved by Ben: Watch the Muons Short for Sat 21 Nov (v05) rebuilt full-screen throughout with 4K Space Station Earth views and animated muon tracks. OK to swap it in? v05 (asked in J2550)"
+        }
+      ],
+      "remaining_action": "Swap the Muons Short rvug71d7Dqk (Sat 21 Nov) to the full-screen cut Ben OK'd, v05",
+      "due": "2026-11-20T18:00:00Z",
+      "kind": "listing",
+      "approved_from": {
+        "what": "Watch the Muons Short for Sat 21 Nov (v05) rebuilt full-screen throughout with 4K Space Station Earth views and animated muon tracks. OK to swap it in?",
+        "file": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/J2550_muons_v05/fri06_muons_ground_v05.mp4",
+        "version": "v05",
+        "airs": "2026-11-21T11:30Z",
+        "title": "Muons: full-screen pictures for Sat 21 Nov",
+        "number": "024",
+        "type": "short",
+        "channel": "OWB",
+        "job": "J2550",
+        "askId": "J2550.2",
+        "okAt": "2026-11-14T22:39Z"
+      }
+    },
+    {
+      "id": "J2882",
+      "title": "Swap the Voyager 1 Short kKN8Ale42sE (Tue 17 Nov) to the full-screen cut Ben OK'd, v02",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben OK'd v02 on the board (14 Nov 22:39Z, ticks OWB-J2550, Chief evidence jobs/reviews/J2550/REVIEW.md, five gates passed, KEEP).** Swap it into the Tue 17 Nov 11:30 slot. Same steps as J2520.\n\nOld video: `kKN8Ale42sE`, Private and scheduled Tue 17 Nov 11:30 London. New file: `owb_sa_s8_voyager1_v02.mp4`, sha256 `5cf55cb1a543638475277220ebec1e6872e82ee12b979b08c11e528efad8a6ce`. Records: `jobs/reviews/J2550/voyager_v02/`.\n\n0. Run `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <file> --air-date <air date> --id <file stem>` without `--report-only`; it must PASS on its own.\n1. Read back the old id: privacy, publish time, title, description, tags, cover, language, Related video. It should be Private and scheduled for the slot. If not, park for the Chief.\n2. Check the new file's sha256. Upload it as a NEW Private video with the same publish time. Copy title, description, tags, cover and Related video from the old id. Language en-GB, captions en-GB (same words; the SRT is in the review folder where one exists). The Voyager Short names its date and cannot move.\n3. Only after step 2 reads back Private with the right publish time: set the old id to Private and unscheduled. Nothing is deleted.\n4. Verify the swap (`verify-swap.ts`), update `00_Brand/Channel-Setup/social/UPLOADS.json` (new entry with `supersedes`, old entry `supersededBy` and `unscheduledAt`), the Buffer posts for that slot, and any queued job that names the old id.\n5. Post the read-back on the thread.\n\nNever Public, never delete, no force-push, no Replace. £0. If anything does not match (privacy, publish time, hash), upload nothing and park for the Chief with the lines.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-15T07:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-15T07:58Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-15T07:58Z",
+          "by": "claude",
+          "what": "approved by Ben: Watch the Voyager 1 Short for Tue 17 Nov (v02) with every shot full-screen and the filler promise sentence trimmed out. OK to swap it in? v02 (asked in J2550)"
+        }
+      ],
+      "remaining_action": "Swap the Voyager 1 Short kKN8Ale42sE (Tue 17 Nov) to the full-screen cut Ben OK'd, v02",
+      "due": "2026-11-16T18:00:00Z",
+      "kind": "listing",
+      "approved_from": {
+        "what": "Watch the Voyager 1 Short for Tue 17 Nov (v02) with every shot full-screen and the filler promise sentence trimmed out. OK to swap it in?",
+        "file": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/OWB UAT/J2550_voyager1_v02/owb_sa_s8_voyager1_v02.mp4",
+        "version": "v02",
+        "airs": "2026-11-17T11:30Z",
+        "title": "Voyager 1: full-screen pictures for Tue 17 Nov",
+        "number": "S8",
+        "type": "short",
+        "channel": "OWB",
+        "job": "J2550",
+        "okAt": "2026-11-14T22:39Z",
+        "askId": "J2550.1"
+      }
+    },
+    {
+      "id": "J2883",
+      "title": "Upload the Supermoon Short v04 (dated, Thu 19 Nov 11:30) Private and scheduled",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben OK'd v04 and its cover on the board (14 Nov 22:39Z, tick OWB-J2478).** The voice ends on 'Look east at sunset.'; Gemini's ending review passed (jobs/reviews/J2646 for v03, v04 ending review in J2478's result). File: `owb_dated_2026_11_24_supermoon_v04.mp4` in the watch folders; cover `supermoon_2026_11_24_cover_v04.jpg` (check its name beside the video). Read both sha256s from J2478's records and from the file before upload.\n\n1. Upload as a NEW Private video (never replace anything). Publish time Thu 19 Nov 11:30 London (2026-11-19T11:30:00Z). Title, description, tags and credits from the Supermoon package/meta beside the file; language en-GB; captions en-GB from the v04 words (45-word script ending 'Look east at sunset.'). Related video `2fsQcea-voM`. Not made for kids.\n2. Read back privacy, publish time, title, cover, Related.\n3. Record it in `00_Brand/Channel-Setup/social/UPLOADS.json`, queue the Buffer posts for the slot only if inside Buffer's 7-day window, and post the read-back on the thread.\n\nNever Public, never delete, no force-push, no Replace. £0. If anything does not match (privacy, publish time, hash), upload nothing and park for the Chief with the lines.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-15T07:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-15T07:58Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-15T07:58Z",
+          "by": "claude",
+          "what": "approved by Ben: Watch the Supermoon Short v04 and its cover v04 (asked in J2478)"
+        }
+      ],
+      "remaining_action": "Upload the Supermoon Short v04 (dated, Thu 19 Nov 11:30) Private and scheduled",
+      "due": "2026-11-18T18:00:00Z",
+      "kind": "listing",
+      "approved_from": {
+        "what": "Watch the Supermoon Short v04 and its cover",
+        "file": "OWB UAT/owb_dated_2026_11_24_supermoon_v04.mp4",
+        "version": "v04",
+        "airs": "2026-11-19T11:30Z",
+        "title": "Supermoon: two Earths closer on November 24",
+        "type": "short",
+        "channel": "OWB",
+        "number": "",
+        "job": "J2478",
+        "okAt": "2026-11-14T22:39Z"
+      }
+    },
+    {
+      "id": "J2884",
+      "title": "Upload the Titan long master v02 Private and scheduled for Wed 25 Nov 18:00, arm the thumbnail test",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben OK'd 032 Titan long master v02 and thumbnails A and B on the board (14 Nov 22:46Z, tick OWB-032, from J2477).** Chief evidence: jobs/reviews/J2477/REVIEW.md (KEEP, five gates passed).\n\nMaster `032_what_would_happen_if_you_landed_on_titan_master_v02.mp4`, sha256 `519869728d51b42b98435bc971361994d61780c02e2daa3bc0d23f27c80ed073`, 585.44 s, in `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/032_*/`.\n\n1. Check the sha256 of the master and the upload package (`11_Upload-Package`, built in J1195; check its manifest names v02 and the title/description are current).\n2. Upload as a NEW Private video via `npm run youtube:package`. Publish time Wed 25 Nov 2026 18:00 London (18:00Z). Language en-GB, captions en-GB, end screen, playlist, pinned comment once public.\n3. Arm the Studio thumbnail Test & Compare with A and B (the two Ben OK'd), only where no test is set, and record it in `thumb_ledger.py`. Title-first rule: the title is set before the test is armed.\n4. Record the new videoId in the film's status and on the thread.\n\nNever Public, never delete, no force-push, no Replace. £0. If anything does not match (privacy, publish time, hash), upload nothing and park for the Chief with the lines.",
+      "ref": "",
+      "film": "032",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-15T07:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-15T07:58Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-15T07:58Z",
+          "by": "claude",
+          "what": "approved by Ben: Watch 032 Titan long master v02 (9m 45s, re-cut first 30s) and thumbnails A/B v02 (asked in J2477)"
+        }
+      ],
+      "remaining_action": "Upload the Titan long master v02 Private and scheduled for Wed 25 Nov 18:00, arm the thumbnail test",
+      "due": "2026-11-24T18:00:00Z",
+      "kind": "studio",
+      "approved_from": {
+        "what": "Watch 032 Titan long master v02 (9m 45s, re-cut first 30s) and thumbnails A/B",
+        "file": "OWB UAT/032_what_would_happen_if_you_landed_on_titan_master_v02_PHONE.mp4",
+        "version": "v02",
+        "airs": "2026-11-25T18:00Z",
+        "card": "OWB:032",
+        "title": "What Would Happen If You Landed on Titan?",
+        "number": "032",
+        "type": "long",
+        "channel": "OWB",
+        "job": "J2477",
+        "okAt": "2026-11-14T22:46Z"
+      }
     }
   ],
   "focus": [
