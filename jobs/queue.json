@@ -258394,13 +258394,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-15T21:09Z",
-      "eta": "2026-11-15T22:09Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-15T21:08Z",
-      "result": "",
+      "result": "parked for Chief: live fixes audit cannot run on the MacBook Claude slot. It has no way to read the live YouTube pages (curl and web fetch both need an approval nobody is here to give), so chapters, Sources lines, end screens and Related pills could not be read. Nothing audited, no fix list written, nothing changed in Studio. Please route to the Mini or the MacBook Gemini slot (as J2801 ran). Two videos are new since the 14 Nov check and unaudited: RT-ec4_GcOk (025 Short, 14 Nov) and c5AdqQsnnys (026 long, due public 15 Nov 18:00Z); the 025 end-screen swap to 026 held in J0124 falls due once 026 is public.",
       "history": [
         {
           "at": "2026-11-15T21:08Z",
@@ -258416,6 +258416,11 @@
           "at": "2026-11-15T21:09Z",
           "by": "macbook",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-15T21:10Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: live fixes audit cannot run on the MacBook Claude slot. It has no way to read the live YouTube pages (curl and web fetch both need an approval nobody is here to give), so chapters, Sources lines, end screens and Related pills could not be read. Nothing audited, no fix list written, nothing changed in Studio. Please route to the Mini or the MacBook Gemini slot (as J2801 ran). Two videos are new since the 14 Nov check and unaudited: RT-ec4_GcOk (025 Short, 14 Nov) and c5AdqQsnnys (026 long, due public 15 Nov 18:00Z); the 025 end-screen swap to 026 held in J0124 falls due once 026 is public."
         }
       ],
       "remaining_action": "audit the last 10 live videos and write the fix list",
