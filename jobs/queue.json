@@ -253562,18 +253562,31 @@
           "at": "2026-11-15T02:12Z",
           "by": "gemini",
           "what": "reopened"
+        },
+        {
+          "at": "2026-11-15T02:12Z",
+          "by": "gemini",
+          "what": "rerouted to gemini on gemini-argon: Elected Chief closing after merging PR #939 and publishing board.plan"
         }
       ],
       "remaining_action": "Waiting for the plan pull request to be merged",
       "due": "2026-11-16T18:00:00Z",
-      "for": "cursor",
+      "for": "gemini",
       "kind": "studio",
       "plain": "Put the new plan for long videos on the board: what we're doing, when, and how it's going",
       "urgent": 14,
       "taskKeys": [
         "OWB:064"
       ],
-      "escalated_at": "2026-11-15T01:38Z"
+      "escalated_at": "2026-11-15T01:38Z",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "cursor",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "model": "gemini-argon"
     },
     {
       "id": "J2867",
