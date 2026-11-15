@@ -30,7 +30,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2172 | mini | blocked | codex | – | 010 edit · assembly · HOS 010: inventory and assemble two locked Shorts for conditional 4 and 7 Dec | J2023 |
 | J2230 | mini | blocked | cursor | – | for cursor · assembly · `cursor-grok-4-7` · HOS Shorts gap after 17 Nov: cut six search-titled Shorts from the locked Harvey, Willow and Vaccine longs, slot 18 Nov to 6 Dec |  |
 | J2243 | mini | open (after J2614) | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Franklin: multimodal QA and Chief review of hos_008_master_v05.mp4 only (d1ffb78d…841b). Do not review v04. GBP0 | J1881 / J2241 / J2242 |
-| J2271 | mini | claimed | gemini | 2026-11-15T04:59Z | 010 picture · for gemini · qa · `gpt-6-astra` · HOS 010: independently review twelve generated Shorts plates | J2267 |
+| J2271 | mini | blocked | gemini | – | 010 picture · for gemini · qa · `gpt-6-astra` · HOS 010: independently review twelve generated Shorts plates | J2267 |
 | J2438 | mini | blocked | codex | – | 034 edit · assembly · 034 Pluto: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2478 | mini | blocked | cursor | – | for cursor · assembly · `cursor-grok-4-7` · Supermoon dated-event Short (airs Thu 19 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review |  |
 | J2529 | mini | blocked | gemini | – | 013 picture · for gemini · video · HOS 013 Darwin & Wallace: mint pass 1, the 66 Quality rows of picture plan v02 (at most 6,600 Flow credits, none in cash), before the credits reset on Thu 12 Nov | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6805898066 |
