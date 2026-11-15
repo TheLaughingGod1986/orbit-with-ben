@@ -251424,10 +251424,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-15T19:47Z",
+      "eta": "2026-11-15T21:47Z",
       "created_by": "refill",
       "created_at": "2026-11-14T13:52Z",
       "result": "",
@@ -251456,12 +251456,25 @@
           "at": "2026-11-15T19:47Z",
           "by": "gemini",
           "what": "reopened: Chief review complete (jobs/reviews/J2827/REVIEW.md); reopening to claim and close done after merging PR #926"
+        },
+        {
+          "at": "2026-11-15T19:47Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review Orbit performance and identify improvements",
       "kind": "review",
       "backlog": "owb-weekly-audit",
-      "escalated_at": "2026-11-14T16:23Z"
+      "escalated_at": "2026-11-14T16:23Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-15T19:47Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2828",
