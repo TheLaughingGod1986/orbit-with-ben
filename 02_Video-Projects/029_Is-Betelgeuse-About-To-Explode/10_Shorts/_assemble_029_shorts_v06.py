@@ -648,7 +648,7 @@ def render_still_fullbleed(
 ) -> float:
     """Full-bleed 9:16 still move with zero GaussianBlur and smooth shadow lift."""
     frames_n = max(1, round(dur_s * FPS))
-    room = 1.18 if drive else 1.06
+    room = 1.18 if drive else 1.025
     base, fit = fit_fullbleed(src, box, max_up=1.95)
     big = base.resize((round(W * room), round(H * room)), Image.Resampling.BICUBIC)
     bw, bh = big.size
@@ -657,9 +657,13 @@ def render_still_fullbleed(
         t = n / max(1, frames_n - 1)
         z = 1.0 + (room - 1.0) * t
         cw, ch = bw / z, bh / z
-        drift = (t - 0.5) * (0.09 if drive else 0.03)
-        cx = min(max(0.0, (bw - cw) / 2 + drift * bw), bw - cw)
-        cy = min(max(0.0, (bh - ch) / 2), bh - ch)
+        if drive:
+            drift = (t - 0.5) * 0.09
+            cx = min(max(0.0, (bw - cw) / 2 + drift * bw), bw - cw)
+            cy = min(max(0.0, (bh - ch) / 2), bh - ch)
+        else:
+            cx = (bw - cw) / 2.0
+            cy = (bh - ch) / 2.0
         frame = big.resize((W, H), Image.Resampling.BICUBIC, box=(cx, cy, cx + cw, cy + ch))
         if rings:
             arr = np.asarray(frame, dtype=np.float32)
@@ -1888,33 +1892,77 @@ def build_one(spec: dict) -> dict:
     aud["aac_tp_dbtp"] = aac_tp
 
     final_mp4 = s_dir / f"{stem}.mp4"
-    inputs = ["-t", f"{total:.3f}", "-i", str(pic)]
-    for name in ("hook.png", "title.png", "end_card.png", "teach.png"):
-        inputs += ["-loop", "1", "-framerate", str(FPS), "-t", f"{total:.3f}", "-i", str(work / name)]
-    inputs += ["-i", str(cal_wav)]
-    base_idx = 6
-    for i in range(len(caps)):
-        inputs += ["-loop", "1", "-framerate", str(FPS), "-t", f"{total:.3f}", "-i", str(work / f"cap_{i:02d}.png")]
-    fc = [
-        f"[0:v]fps={FPS},setsar=1,format=yuv420p[v0]",
-        f"[1:v]format=rgba,fade=t=out:st={HOOK_END - 0.25:.2f}:d=0.25:alpha=1[hk]",
-        f"[v0][hk]overlay=0:0:enable='gte(t,0)*lt(t,{HOOK_END})'[v1]",
-        f"[2:v]format=rgba,fade=t=in:st={TITLE_IN}:d=0.30:alpha=1,fade=t=out:st={TITLE_OUT - 0.30:.2f}:d=0.30:alpha=1[tt]",
-        f"[v1][tt]overlay=0:0:enable='gte(t,{TITLE_IN})*lt(t,{TITLE_OUT})'[v2]",
-        f"[3:v]format=rgba,fade=t=in:st={end_in:.2f}:d=0.28:alpha=1[ec]",
-        f"[v2][ec]overlay=0:0:enable='gte(t,{end_in})'[v3]",
-        f"[4:v]format=rgba,fade=t=in:st={teach_s}:d=0.25:alpha=1,fade=t=out:st={teach_e - 0.25:.2f}:d=0.25:alpha=1[th]",
-        f"[v3][th]overlay=0:0:enable='gte(t,{teach_s})*lt(t,{teach_e})'[v4]",
+    hook_im = Image.open(work / "hook.png").convert("RGBA")
+    title_im = Image.open(work / "title.png").convert("RGBA")
+    end_im = Image.open(work / "end_card.png").convert("RGBA")
+    teach_im = Image.open(work / "teach.png").convert("RGBA")
+    cap_ims = [Image.open(work / f"cap_{i:02d}.png").convert("RGBA") for i in range(len(caps))]
+    blank_rgba = Image.new("RGBA", (W, H), (0, 0, 0, 0)).tobytes()
+
+    def _scale_alpha(im: Image.Image, a: float) -> Image.Image:
+        if a >= 0.999:
+            return im
+        r, g, b, al = im.split()
+        al = al.point(lambda p, f=a: int(round(p * f)))
+        return Image.merge("RGBA", (r, g, b, al))
+
+    n_total_frames = int(round(total * FPS))
+    ff_cmd = [
+        "ffmpeg", "-y", "-v", "error",
+        "-t", f"{total:.3f}", "-i", str(pic),
+        "-f", "rawvideo", "-pix_fmt", "rgba", "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-",
+        "-i", str(cal_wav),
+        "-filter_complex", f"[0:v]fps={FPS},setsar=1,format=yuv420p[v0];[v0][1:v]overlay=0:0,noise=alls=2:allf=t,format=yuv420p[v]",
+        "-map", "[v]", "-map", "2:a", *shorts_encode_args(fps=FPS), "-t", f"{total:.3f}", str(final_mp4),
     ]
-    last_v = "v4"
-    for i, c in enumerate(caps):
-        fc.append(f"[{last_v}][{base_idx + i}:v]overlay=0:0:enable='gte(t,{c['s']})*lt(t,{c['e']})'[c{i}]")
-        last_v = f"c{i}"
-    fc.append(f"[{last_v}]noise=alls=2:allf=t,format=yuv420p[v]")
-    run([
-        "ffmpeg", "-y", "-v", "error", *inputs, "-filter_complex", ";".join(fc),
-        "-map", "[v]", "-map", "5:a", *shorts_encode_args(fps=FPS), "-t", f"{total:.3f}", str(final_mp4),
-    ])
+    proc = sp.Popen(ff_cmd, stdin=sp.PIPE)
+    assert proc.stdin is not None
+    last_state_key = None
+    last_state_bytes = blank_rgba
+    try:
+        for fi in range(n_total_frames):
+            t = fi / FPS
+            hk_a = 0.0
+            if 0.0 <= t < HOOK_END:
+                hk_a = 1.0 if t < (HOOK_END - 0.25) else max(0.0, min(1.0, (HOOK_END - t) / 0.25))
+            tt_a = 0.0
+            if TITLE_IN <= t < TITLE_OUT:
+                tt_a = max(0.0, min(1.0, (t - TITLE_IN) / 0.30, (TITLE_OUT - t) / 0.30))
+            ec_a = 0.0
+            if t >= end_in:
+                ec_a = max(0.0, min(1.0, (t - end_in) / 0.28))
+            th_a = 0.0
+            if teach_s <= t < teach_e:
+                th_a = max(0.0, min(1.0, (t - teach_s) / 0.25, (teach_e - t) / 0.25))
+            cap_idx = -1
+            for ci, c in enumerate(caps):
+                if c["s"] <= t < c["e"]:
+                    cap_idx = ci
+                    break
+            state_key = (round(hk_a, 3), round(tt_a, 3), round(ec_a, 3), round(th_a, 3), cap_idx)
+            if state_key != last_state_key:
+                if state_key == (0.0, 0.0, 0.0, 0.0, -1):
+                    last_state_bytes = blank_rgba
+                else:
+                    canvas = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+                    if hk_a > 0.0:
+                        canvas.alpha_composite(_scale_alpha(hook_im, hk_a))
+                    if tt_a > 0.0:
+                        canvas.alpha_composite(_scale_alpha(title_im, tt_a))
+                    if ec_a > 0.0:
+                        canvas.alpha_composite(_scale_alpha(end_im, ec_a))
+                    if th_a > 0.0:
+                        canvas.alpha_composite(_scale_alpha(teach_im, th_a))
+                    if cap_idx >= 0:
+                        canvas.alpha_composite(cap_ims[cap_idx])
+                    last_state_bytes = canvas.tobytes()
+                last_state_key = state_key
+            proc.stdin.write(last_state_bytes)
+    finally:
+        proc.stdin.close()
+    rc_mux = proc.wait()
+    if rc_mux != 0:
+        raise SystemExit(f"final mux failed on {slug} with rc={rc_mux}")
 
     final_i, final_tp = gso.aac_loudness(final_mp4)
     aud["aac_lufs"] = final_i
@@ -2005,9 +2053,11 @@ def build_one(spec: dict) -> dict:
     (s_dir / f"{stem}_sfx.txt").write_text((sfx_res.stdout or "") + (sfx_res.stderr or ""))
     print(sfx_res.stdout, end="", flush=True)
 
+    mg_film = LOCAL_FILM if (LOCAL_FILM / "05_Music" / BED_MP3.name).exists() else LIVE_FILM
+    mg_bed = mg_film / "05_Music" / BED_MP3.name
     mg_res = run_gate([
-        sys.executable, MAIN_REPO / "scripts/music_gate.py", LIVE_FILM,
-        "--bed", BED_MP3, "--video", final_mp4,
+        sys.executable, MAIN_REPO / "scripts/music_gate.py", mg_film,
+        "--bed", mg_bed, "--video", final_mp4,
         "--out", s_dir / f"{stem}_music_gate.json",
     ])
     (s_dir / f"{stem}_music_gate.txt").write_text((mg_res.stdout or "") + (mg_res.stderr or ""))
@@ -2079,14 +2129,7 @@ def build_one(spec: dict) -> dict:
     if any(v != 0 for v in gates.values()):
         raise SystemExit(f"GATE FAILURE on {slug}: {json.dumps(gates)}")
 
-    # Sync v06 outputs to LOCAL_FILM (if separate from LIVE_FILM) and stage UAT folders
-    local_exp = LOCAL_FILM / "10_Shorts" / slug / "06_Final-Exports"
-    if local_exp.resolve() != s_dir.resolve():
-        local_exp.mkdir(parents=True, exist_ok=True)
-        for f in s_dir.glob(f"{stem}*"):
-            if f.is_file():
-                shutil.copy2(f, local_exp / f.name)
-
+    # Stage UAT folders (do not copy sidecars into MAIN_REPO local checkout; keep git status clean)
     uat_files = [
         final_mp4,
         cover_jpg,
