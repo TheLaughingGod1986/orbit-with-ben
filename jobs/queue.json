@@ -256906,13 +256906,13 @@
       "stage": "thumbs",
       "after": "J2899",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-15T15:04Z",
-      "eta": "2026-11-15T17:04Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-15T14:16Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-15T14:16Z",
@@ -256953,6 +256953,11 @@
           "at": "2026-11-15T15:13Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Committed jobs/reviews/J2900/REVIEW.md (de6fdc9f6f) and marked 033 stages.thumbs.state = done in status.json"
+        },
+        {
+          "at": "2026-11-15T15:13Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Close J2900 and post report on #99",
@@ -256977,7 +256982,8 @@
       },
       "taskKeys": [
         "OWB:033"
-      ]
+      ],
+      "done_ref": "de6fdc9f6f"
     },
     {
       "id": "J2901",
