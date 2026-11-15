@@ -253905,13 +253905,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-15T02:17Z",
-      "eta": "2026-11-15T04:17Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-15T02:15Z",
-      "result": "",
+      "result": "Condition NOT YET SATISFIED (jobs/reviews/J2874/REVIEW.md @ 6770c75e07): second iCloud link (e=1795293772, 20:45:46Z) is not in issue #219 pairs (pairs[0] is first link e=1795269633 from 19:13:08Z) and 24h cutoff 2026-11-15T20:45:00Z is 18h 22m away. Updated J2831 wait (--recheck J2874, --check-at 2026-11-15T20:45:00Z) with guard against minting a third link.",
       "history": [
         {
           "at": "2026-11-15T02:15Z",
@@ -253947,6 +253947,11 @@
           "at": "2026-11-15T02:24Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Recorded J2874 recheck on J2831 (--check-at 2026-11-15T20:45:00Z)"
+        },
+        {
+          "at": "2026-11-15T02:24Z",
+          "by": "gemini",
+          "what": "done: Condition NOT YET SATISFIED (jobs/reviews/J2874/REVIEW.md @ 6770c75e07): second iCloud link (e=1795293772, 20:45:46Z) is not in issue #219 pairs (pairs[0] is first link e=1795269633 from 19:13:08Z) and 24h cutoff 2026-11-15T20:45:00Z is 18h 22m away. Updated J2831 wait (--recheck J2874, --check-at 2026-11-15T20:45:00Z) with guard against minting a third link."
         }
       ],
       "remaining_action": "Close J2874 and post report on thread #478",
