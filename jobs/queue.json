@@ -1,5 +1,5 @@
 {
-  "next_id": 2901,
+  "next_id": 2902,
   "jobs": [
     {
       "id": "J0001",
@@ -256847,6 +256847,36 @@
       "due": "2026-11-29T12:00:00Z",
       "kind": "review",
       "plain": "Checking the three Uranus thumbnail pictures at phone size and full size"
+    },
+    {
+      "id": "J2901",
+      "title": "033 Uranus: build 11_Upload-Package (PACKAGE_MANIFEST, chapters, credits, en-GB SRT, trailer) + dry-run (no upload)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Build and dry-run verify the release upload package for `033_Why-This-Planet-Has-21-Year-Winters` (*Why Knocked-Sideways Uranus Has 21-Year Winters*) Long Master `v04` (`J2889` / `J2890` / `J2893` KEEP, `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/09_Final-Export/033_why_this_planet_has_21_year_winters_master_v04.mp4`, SHA-256 `3712479ae852dd318c4d8d0dfd18f7df08c1a857068c24c3d3792a35a27f11c3`, `629.416667 s`, `15,106` frames @ `24/1` fps CFR, `-14.5 LUFS`, `-1.5 dBTP`).\n\n### Note on Active Shorts 1 & 2 (`v02`)\n- Active Short #1 (`033_short01_testA_opening_v02.mp4`, SHA-256 `db6a23420952151244161c7be209cdebd0440f3ce4aef314c1ce9fc6a3f9d203`) and Active Short #2 (`033_short02_ice_giant_surface_v02.mp4`, SHA-256 `279c9531f2c89d16fb37e285b6ef981e8db7bf8d2dd1c297b2940bf07daf5468`) passed review in `J2870`, were OK'd by Ben on 15 Nov 10:37–10:41Z, and already have their `07_Upload-Package` manifests/SRTs committed in `J2896` (`96477b52d8`) and `J2895` (`5772c0c52d`), held on `public` hold until the `033` long goes public (`Wed 09 Dec 2026 18:00 London`). Do not overwrite or re-upload Shorts 1 & 2 here.\n\n### Required Deliverables in `02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/11_Upload-Package/`\n1. **`PACKAGE_MANIFEST.json`**:\n   - Target slot: `Wed 09 Dec 2026 18:00 London` (`2026-12-09T18:00:00.000Z`), `privacyStatus: \"private\"`, `language: \"en-GB\"`.\n   - Video master: `09_Final-Export/033_why_this_planet_has_21_year_winters_master_v04.mp4` (`SHA-256: 3712479ae852dd318c4d8d0dfd18f7df08c1a857068c24c3d3792a35a27f11c3`).\n   - Thumbnail: `08_Thumbnail/033_thumb_A_v01.jpg` (verified in `J2899`/`J2900`).\n   - Social copy block (`social`: `hook`, `question`, `alt`) per `STUDIO_PLAYBOOK.md` §12.\n2. **`Titles/`**, **`Descriptions/`**, **`Chapters/`**, **`Tags/`**, **`Pinned-Comments/`**:\n   - Primary title (`Why Knocked-Sideways Uranus Has 21-Year Winters`, 47 chars, Rule 15) + Rule-18 real-imagery Test & Compare title variants (`What Voyager 2 Saw in Just 6 Hours at Uranus`, `The Only Spacecraft Photos Ever Taken at Uranus`).\n   - 6 story-beat chapters (`00:00` to `08:25`) matching `07_Edit-Project/SHOT_LIST_v02.md` (no `Intro`, `Conclusion`, or `Outro`).\n   - Description with `Sources:` line (4–6 primary papers/fact sheets from `01_Script/SOURCES.md` with author, year, journal, and what it backs, never naming AI checkers) before the agency/image credits (`NASA/JPL-Caltech`, `NASA/ESA/CSA/STScI`, `ESO`, `Keck`, `USGS`) and honest AI/NASA visual disclosure.\n3. **`Captions/`**:\n   - `en-GB.srt` built from Scribe word timings (`02_Voiceover/uranus_vo_v01.json`) covering `0.00–611.40 s`.\n4. **`Trailer/033_why_this_planet_has_21_year_winters_trailer.mp4`**:\n   - Social trailer cut (`STUDIO_PLAYBOOK.md` §12) synced to `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/11_Upload-Package/Trailer/`.\n5. **Dry-run & Gate Verification**:\n   - Run `cd 07_Content-Ops && npm run gate:episode -- --project ../02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters` (must PASS).\n   - Run `cd 07_Content-Ops && npm run youtube:package -- --package ../02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/11_Upload-Package --video /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/033_Why-This-Planet-Has-21-Year-Winters/09_Final-Export/033_why_this_planet_has_21_year_winters_master_v04.mp4 --dry-run` (must PASS).\n   - **Do NOT perform a live YouTube upload in this job** (`J2890` is `awaits_ben` for Ben's UAT watch of `033` Long Master `v04`; when Ben ticks `J2890` OK, the approved Private upload job will run from this verified `11_Upload-Package`).\n   - **Zero paid generation (`£0`).**\n",
+      "ref": "",
+      "film": "033",
+      "stage": "upload",
+      "after": "J2900",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-15T14:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-15T14:16Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build 033 Uranus 11_Upload-Package (manifest, chapters, Sources/credits, en-GB.srt, trailer) and verify gate:episode + youtube:package --dry-run (no live upload)",
+      "due": "2026-11-29T18:00:00Z",
+      "kind": "listing",
+      "plain": "Preparing the title, description, chapters, captions and upload package for the Uranus video"
     }
   ],
   "focus": [
