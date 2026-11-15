@@ -254865,9 +254865,14 @@
           "at": "2026-11-15T08:00Z",
           "by": "claudecode",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-15T08:00Z",
+          "by": "claudecode",
+          "what": "step 1 of 5 done: opening gate PASS on its own (16.4 s, two blur-pad warnings, no FAIL); sha256 matches 5cf55cb1"
         }
       ],
-      "remaining_action": "Run the opening gate on the v02 file and read back the old video",
+      "remaining_action": "Read back the old video, then upload v02 as a new Private video in the same slot",
       "due": "2026-11-16T18:00:00Z",
       "kind": "listing",
       "approved_from": {
@@ -254884,10 +254889,11 @@
         "askId": "J2550.1"
       },
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
         "at": "2026-11-15T08:00Z",
-        "by": "claudecode"
+        "by": "claudecode",
+        "note": "opening gate PASS on its own (16.4 s, two blur-pad warnings, no FAIL); sha256 matches 5cf55cb1"
       }
     },
     {
