@@ -253286,18 +253286,23 @@
           "at": "2026-11-15T07:34Z",
           "by": "cursor",
           "what": "step 0 of 3 done: Replaced the default plan. Step 1 is the lookup check, step 2 is either a pull request or a 24-hour hold, step 3 is verify."
+        },
+        {
+          "at": "2026-11-15T07:36Z",
+          "by": "cursor",
+          "what": "step 1 of 3 done: Router lookup matches the public answers. Two checks of the checks address returned HTTP 200 from Cloudflare, with no stale Vercel response. No hosts override."
         }
       ],
-      "remaining_action": "Check the Mini lookup for the board address and whether checks come back from Cloudflare",
+      "remaining_action": "Open a pull request that sends board reads back to the same address as the links",
       "kind": "studio",
       "plain": "Checking whether the Mac mini can read Ben's board domain directly again",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-15T07:34Z",
+        "at": "2026-11-15T07:36Z",
         "by": "cursor",
-        "note": "Replaced the default plan. Step 1 is the lookup check, step 2 is either a pull request or a 24-hour hold, step 3 is veri"
+        "note": "Router lookup matches the public answers. Two checks of the checks address returned HTTP 200 from Cloudflare, with no st"
       },
       "taskKeys": [
         "OWB:026"
