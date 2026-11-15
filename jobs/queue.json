@@ -217395,6 +217395,11 @@
           "at": "2026-11-14T23:46Z",
           "by": "macbook",
           "what": "waits on Ben: Check the 73s before-and-after at 97:20 (opens at 97:20 of v02, then side-by-side 97:32-97:44 + screenshot sheets); no need to re-watch the full 108m film"
+        },
+        {
+          "at": "2026-11-15T01:00Z",
+          "by": "gemini",
+          "what": "waits on Ben: Check the 83s before-and-after at 97:20 + thumbnail FALL ASLEEP IN SPACE (opens at 97:20 of v02, then side-by-side 97:32-97:44, screenshot sheets, and thumbnail preview); Private upload 13q4_EoLEN4 scheduled Sat 12 Dec 21:00 London"
         }
       ],
       "remaining_action": "Verified master and reel delivered; submit finished cut for Ben watch",
@@ -217409,12 +217414,12 @@
         "by": "macbook-2"
       },
       "awaits_ben": {
-        "what": "Check the 73s before-and-after at 97:20 (opens at 97:20 of v02, then side-by-side 97:32-97:44 + screenshot sheets); no need to re-watch the full 108m film",
-        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_sleep_video_01/j2860_v02/sleep_video_01_97m20_before_after_v02.mp4",
+        "what": "Check the 83s before-and-after at 97:20 + thumbnail FALL ASLEEP IN SPACE (opens at 97:20 of v02, then side-by-side 97:32-97:44, screenshot sheets, and thumbnail preview); Private upload 13q4_EoLEN4 scheduled Sat 12 Dec 21:00 London",
+        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_sleep_video_01/j2860_v02/sleep_video_01_97m20_before_after_v03.mp4",
         "version": "sleep_video_01_master_v02",
         "airs": "2026-12-12T21:00Z",
-        "ifNot": "No public release before Sat 12 Dec 21:00 London; J2861 prepares Private upload",
-        "title": "Space Documentary for Sleep — 97:38 repair (before & after)",
+        "ifNot": "Held Private (13q4_EoLEN4) until Sat 12 Dec 21:00 London; unscheduled if changes requested",
+        "title": "Space Documentary for Sleep: A Slow Journey From the Moon to Andromeda",
         "number": "SLEEP01",
         "type": "long",
         "prev": [
@@ -217423,7 +217428,8 @@
         "fixed": [
           "One-line root cause: MP4 mixed-profile stream-concat encode fault in Chapter XII (026 Nearest Star master 026_NearestStar_v06_cfr18.mp4 @ 07:55.8) — Chapters XI-XIII were darkened with lossless High 4:4:4 Predictive (-crf 0) and stream-copied behind Chapter I's High-profile avc1 header, corrupting hardware decode & the Watch stream at 97:36-97:39 (97:38).",
           "Whole-master check: Chapters I-X (00:00-82:14.7) had 0 faults; Chapters XI (024), XII (026) and XIII (019) shared the same profile-mismatch fault and all three + joins 10-12 were re-encoded to High profile in sleep_video_01_master_v02.mp4 (195,070 frames, 6502.333s, 0 decode faults anywhere in v02).",
-          "Play opens directly at 97:20 of v02 (0:00-0:45), followed by 97:32-97:44 side-by-side Before/After (0:45-0:57) and the requested 97:20-98:00 (1 fps) & 97:36-97:40 (30 fps) screenshot sheets (0:57-1:13)."
+          "Play opens directly at 97:20 of v02 (0:00-0:45), followed by 97:32-97:44 side-by-side Before/After (0:45-0:57), the requested 97:20-98:00 (1 fps) & 97:36-97:40 (30 fps) screenshot sheets (0:57-1:13), and the thumbnail + 168x94 preview sheet (1:13-1:23: Cassini backlit Saturn, FALL ASLEEP IN SPACE).",
+          "Uploaded Private as 13q4_EoLEN4 with publishAt 2026-12-12T21:00:00Z (Sat 12 Dec 21:00 London), researched search-led listing ('Space Documentary for Sleep: A Slow Journey From the Moon to Andromeda'), 13 quiet chapters, 18 tags, custom thumbnail set, and synthetic disclosure ON."
         ]
       }
     },
