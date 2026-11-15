@@ -258594,10 +258594,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-11-15T22:15Z",
-      "eta": "2026-11-16T00:15Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-15T22:12Z",
       "result": "",
@@ -258616,6 +258616,11 @@
           "at": "2026-11-15T22:15Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Claimed. Moon-Jupiter Short for Thu 26 Nov. No film number yet, so no swim-lane id."
+        },
+        {
+          "at": "2026-11-15T22:16Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Cursor out of usage; next in its chain: gemini"
         }
       ],
       "remaining_action": "Read the approved Short plan and check NASA footage already on disk",
@@ -258629,7 +258634,16 @@
         "at": "2026-11-15T22:15Z",
         "by": "cursor",
         "note": "Claimed. Moon-Jupiter Short for Thu 26 Nov. No film number yet, so no swim-lane id."
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "claimed",
+        "by": "cursor"
+      },
+      "for": "gemini",
+      "model": "gemini-agy"
     }
   ],
   "focus": [

@@ -90,7 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2909 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0861 |  |
 | J2912 | any | blocked | macbook | – | script · OWB: learn from our data, add two new films to the backlog |  |
 | J2915 | mini | open | – | – | 010 picture · video · HOS 010: mint R1-R6 Short replacement plates under Chief go 6898337122 and post review branch | J2271 |
-| J2916 | mini | claimed | cursor | 2026-11-16T00:15Z | assembly · Moon-Jupiter 30 Nov dated-event Short (airs Thu 26 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review | 02_Video-Projects/_dated_shorts/2026-11-30_moon-jupiter-conjunction.md |
+| J2916 | mini | open | – | – | for gemini · assembly · `gemini-agy` · Moon-Jupiter 30 Nov dated-event Short (airs Thu 26 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review | 02_Video-Projects/_dated_shorts/2026-11-30_moon-jupiter-conjunction.md |
 
 Recently finished:
 
