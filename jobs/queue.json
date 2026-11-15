@@ -257642,9 +257642,14 @@
           "at": "2026-11-15T19:19Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Step 1 done: verified v06 sha256 5251b3fc9aac... matches UAT SHA256SUMS.json and J2551 5-gate PASS record; gate_shorts_open.py check PASS (dur=22.73s, 0/23 & 0/46 padded)"
+        },
+        {
+          "at": "2026-11-15T19:20Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Step 2 done: read back SWDCZfWZVao via API and Studio (Private, publishAt 2026-12-09T11:30:00Z, en-GB, Related None as long vP1BbqZ_dnM is Private until 6 Dec)"
         }
       ],
-      "remaining_action": "Read back old id SWDCZfWZVao via YouTube Data API and Studio (CDP 9223)",
+      "remaining_action": "Upload v06 as NEW Private video for 2026-12-09T11:30:00Z, set cover & en-GB captions, and read back",
       "due": "2026-12-07T18:00:00Z",
       "kind": "listing",
       "approved_from": {
@@ -257669,11 +257674,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-15T19:19Z",
+        "at": "2026-11-15T19:20Z",
         "by": "gemini",
-        "note": "Step 1 done: verified v06 sha256 5251b3fc9aac... matches UAT SHA256SUMS.json and J2551 5-gate PASS record; gate_shorts_o"
+        "note": "Step 2 done: read back SWDCZfWZVao via API and Studio (Private, publishAt 2026-12-09T11:30:00Z, en-GB, Related None as l"
       },
       "taskKeys": [
         "OWB:029"
