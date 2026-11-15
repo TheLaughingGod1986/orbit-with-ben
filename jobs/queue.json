@@ -1,5 +1,5 @@
 {
-  "next_id": 2874,
+  "next_id": 2876,
   "jobs": [
     {
       "id": "J0001",
@@ -251132,6 +251132,11 @@
           "at": "2026-11-14T20:46Z",
           "by": "cursor",
           "what": "condition recorded; next verification 2026-11-15T02:00:00Z"
+        },
+        {
+          "at": "2026-11-15T02:15Z",
+          "by": "relay",
+          "what": "condition verification queued: J2874"
         }
       ],
       "remaining_action": "Delete the private iPhone link file once it is used or 24 hours have passed",
@@ -251150,7 +251155,8 @@
       "hold": {
         "type": "date",
         "condition": "The one-time link is in Ben's own iCloud Drive, not a shared folder, file name Link this phone to the board.html. Notes needed a permission prompt, so that place was used. Delete only that file once its code is in the board pair store or after 2026-11-15T20:45:00Z, then say so on the thread. If neither is true yet, wait again. Do not print the link.",
-        "check_at": "2026-11-15T02:00:00Z"
+        "check_at": "2026-11-15T03:15:44+00:00",
+        "recheck_task": "J2874"
       }
     },
     {
@@ -253880,6 +253886,71 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2874",
+      "title": "Verify condition for J2831",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2831: The one-time link is in Ben's own iCloud Drive, not a shared folder, file name Link this phone to the board.html. Notes needed a permission prompt, so that place was used. Delete only that file once its code is in the board pair store or after 2026-11-15T20:45:00Z, then say so on the thread. If neither is true yet, wait again. Do not print the link.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2831 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-15T02:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-15T02:15Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Delete the private iPhone link file once it is used or 24 hours have passed",
+      "kind": "review",
+      "recheck_of": "J2831",
+      "due": "2026-11-14T17:00:00+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2875",
+      "title": "Chief: resolve 064 topic orphan-review",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Resolve recorded workflow gap: {\"film\": \"064\", \"stage\": \"topic\", \"kind\": \"orphan-review\", \"signature\": \"88d9ced37bb93c2d3fd0\"}. Read the current film status, original job results, approval history and actual evidence. Record a specific PASS/FIX or queue the missing next action with film/stage and dependencies. Unknown records are not approvals. Never mark media approved from a filename, prose lock, or job completion alone. If review needs media, verify on the Mini and perform required listening/viewing. Preserve all Chief/Ben gates, focus priority, holds and scheduling. No paid generation, upload or visibility change is authorized by this repair task. Before closing, resolve the stage state or create a linked successor/correction/review job; otherwise keep this task on a structured hold with a specific condition and next check.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-15T02:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-15T02:15Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief resolves 064 topic handoff and records the next owner/action",
+      "kind": "chief",
+      "handoff": {
+        "film": "064",
+        "stage": "topic",
+        "kind": "orphan-review",
+        "signature": "88d9ced37bb93c2d3fd0"
+      }
     }
   ],
   "focus": [
