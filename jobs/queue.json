@@ -255337,13 +255337,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-11-15T09:43Z",
-      "eta": "2026-11-15T11:43Z",
+      "eta": "",
       "created_by": "cursor",
       "created_at": "2026-11-15T09:43Z",
-      "result": "",
+      "result": "Waiting for: T3cBBss1F60 privacyStatus is public",
       "history": [
         {
           "at": "2026-11-15T09:43Z",
@@ -255354,9 +255354,19 @@
           "at": "2026-11-15T09:43Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-15T09:43Z",
+          "by": "cursor",
+          "what": "blocked: Waiting for: T3cBBss1F60 privacyStatus is public"
+        },
+        {
+          "at": "2026-11-15T09:43Z",
+          "by": "cursor",
+          "what": "condition recorded; next verification 2026-11-25T18:10:00Z"
         }
       ],
-      "remaining_action": "Wait until the Titan long is public, then pin the prepared comment",
+      "remaining_action": "Pin the prepared comment once the Titan long is public",
       "kind": "studio",
       "plain": "Pin the prepared comment on the Titan long once it is public",
       "progress": {
@@ -255366,6 +255376,11 @@
         "by": "cursor",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "date",
+        "condition": "T3cBBss1F60 privacyStatus is public",
+        "check_at": "2026-11-25T18:10:00Z"
       }
     }
   ],
