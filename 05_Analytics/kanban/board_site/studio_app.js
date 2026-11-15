@@ -275,10 +275,10 @@
     if (v.collapsed && isLive(v)) return null;
     if (isLive(v) && (v.jobs || []).some(LIVE)) return "postlive";
     if (isLive(v)) return "live";
+    if (needsBenWatch(v)) return "uat";
     if (isScheduledNotPublic(v)) return "scheduled";
     // Passed stays Passed even while an upload/social job runs — it is ready to schedule, not a Ben hold.
     if (v.lane === "approved") return "passed";
-    if (needsBenWatch(v)) return "uat";
     // Ben's Request changes / notes return the film to In progress before QA.
     if (pendingChanges(v) || v.lane === "changes") return "progress";
     // Claimed work wins over QA: a sibling open/blocked review/QA/Chief must not hide a film
@@ -1974,7 +1974,7 @@
       ${section("This week · scheduled",actualWeek.length,byDay(actualWeek)||empty("Nothing scheduled this week."))}
       ${planned.length?section("This week · planned",planned.length,byDay(planned)):''}
       ${section("Next week",next.length,byDay(next)||empty("Nothing yet."))}
-      ${section("Later",later.length,byDay(later.slice(0,12))||empty("Nothing yet."))}`;
+      ${section("Later",later.length,byDay(later)||empty("Nothing yet."))}`;
   }
 
   function renderTab(tab, b, now) {

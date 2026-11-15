@@ -755,7 +755,10 @@ def _cut_name(path: str) -> str:
 def matched_upload(e: dict, files: dict | None, result: str = "") -> dict | None:
     """The upload that carries this OK'd cut, if it is on YouTube as Private + scheduled or Public."""
     files = files or {}
-    row = (files.get("file") or {}).get(_cut_name(e.get("file") or ""))
+    by_file = files.get("file") or {}
+    row = by_file.get(_cut_name(e.get("file") or ""))
+    if row is None and e.get("version"):
+        row = by_file.get(_cut_name(f"{e['version']}.mp4"))
     if row is None and result:
         ids = {x for x in re.findall(r"(?<![A-Za-z0-9_-])[A-Za-z0-9_-]{11}(?![A-Za-z0-9_-])", result)}
         rows = [(files.get("id") or {}).get(x) for x in ids]
@@ -807,11 +810,16 @@ def add_asks(videos: list[dict], asks: list[dict], checks: dict, now: datetime, 
             videos.append(card)
             by_key[card["key"]] = card
         apply_ask(card, e, checks, now)
-        row = matched_upload(e, files) if card.get("lane") == "approved" else None
-        if row:
+        row = matched_upload(e, files)
+        if row and card.get("lane") == "approved":
             settle_uploaded(videos, card, row, now)
             if card not in videos:
                 by_key.pop(card["key"], None)
+        elif row and card.get("lane") == "ready" and not card.get("youtube"):
+            card["youtube"] = youtube_state(None, row)
+            if row.get("publishAt") and not card.get("airText"):
+                card["airText"] = london_slot(row["publishAt"])
+                card["air"] = str(row["publishAt"])[:10]
 
 
 # ---- Approved, on its way (Ben, 25 Oct 2026 14:13: "Ones I approve can they go into a waiting for deployment lane or
@@ -962,7 +970,7 @@ def add_approved(videos: list[dict], entries: list[dict], jobs_by_id: dict, now:
                 (card.get("ask") or {}).get("version") not in ("", None, e.get("version")):
             continue  # a newer cut of the same video asks Ben again: that ask wins
         row = matched_upload(e, files, e.get("result") or "") if e.get("jobStatus") == "done" else None
-        if row and not read_back(e, card):
+        if row and (not read_back(e, card) or not ((card or {}).get("youtube") or {}).get("publishAt")):
             if card is None:
                 card = approved_card(e)
                 videos.append(card)

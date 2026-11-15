@@ -1,0 +1,116 @@
+{
+  "ok": true,
+  "dryRun": false,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": true,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-12-12T21:00:00.000Z",
+    "platformPostId": "13q4_EoLEN4",
+    "platformUrl": "https://youtu.be/13q4_EoLEN4",
+    "message": "Uploaded to YouTube; scheduled to go live at 2026-12-12T21:00:00.000Z; thumbnail set",
+    "responseSummary": "{\"id\":\"13q4_EoLEN4\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-12-12T21:00:00.000Z\"}"
+  },
+  "package": {
+    "packageDir": "02_Video-Projects/_sleep_video_01/11_Upload-Package",
+    "sha256": "e6f1064dc83b2c48bb05898f90139a4a250da2b316d3d3086699518379481ec0",
+    "title": "Space Documentary for Sleep: A Slow Journey From the Moon to Andromeda",
+    "format": "longform",
+    "privacy": "private",
+    "tagCount": 18,
+    "hasPinnedComment": true,
+    "thumbnailPath": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_sleep_video_01/08_Thumbnail/sleep_video_01_thumb_option_A_v01.jpg",
+    "scheduledAt": "2026-12-12T21:00:00.000Z",
+    "sources": {
+      "manifest": "/private/tmp/owb-J2861/02_Video-Projects/_sleep_video_01/11_Upload-Package/PACKAGE_MANIFEST.json",
+      "chaptersFile": "/private/tmp/owb-J2861/02_Video-Projects/_sleep_video_01/11_Upload-Package/Chapters/sleep_video_01_chapters_v01.txt",
+      "pinnedCommentFile": "/private/tmp/owb-J2861/02_Video-Projects/_sleep_video_01/11_Upload-Package/Pinned-Comments/sleep_video_01_pinned_v01.txt",
+      "video": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_sleep_video_01/sleep_video_01_master_v02.mp4",
+      "thumbnail": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_sleep_video_01/08_Thumbnail/sleep_video_01_thumb_option_A_v01.jpg",
+      "trailer": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_sleep_video_01/11_Upload-Package/Trailer/sleep_video_01_trailer_v01.mp4"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": "{\"error\":{\"code\":403,\"message\":\"The comment thread could not be created due to insufficient permissions. The request might not be properly authorized.\",\"errors\":[{\"message\":\"The comment thread could not be created due to insufficient permissions. The request might not be properly authorized.\",\"domain\":\"youtube.commentThread\",\"reason\":\"forbidden\",\"location\":\"body\",\"locationType\":\"other\"}]}}",
+    "playlistAdded": true,
+    "playlistMessage": "added to playlist"
+  },
+  "buffer": {
+    "sent": false,
+    "deferred": "goes public 2026-12-12T21:00:00.000Z, beyond Buffer's 7-day window: the daily check schedules it nearer the time",
+    "planOnly": false,
+    "errors": [],
+    "warnings": [],
+    "results": []
+  },
+  "studioFinish": {
+    "videoId": "13q4_EoLEN4",
+    "studioEditUrl": "https://studio.youtube.com/video/13q4_EoLEN4/edit",
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "api_done",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Uploaded via YouTube Data API"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set",
+        "studioUrlHint": "https://studio.youtube.com/video/13q4_EoLEN4/edit"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "Studio A/B Testing — titles (3) · thumbs (0). Not available via Data API.",
+        "studioUrlHint": "https://studio.youtube.com/video/13q4_EoLEN4/edit"
+      },
+      {
+        "id": "first_comment",
+        "required": true,
+        "status": "pending_studio",
+        "title": "First / pinned comment text",
+        "detail": "Post + pin in Studio Comments (API post failed or scope missing)",
+        "studioUrlHint": "https://studio.youtube.com/video/13q4_EoLEN4/comments"
+      },
+      {
+        "id": "pin_comment",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint",
+        "studioUrlHint": "https://studio.youtube.com/video/13q4_EoLEN4/comments"
+      },
+      {
+        "id": "related_watch_next",
+        "required": false,
+        "status": "n/a",
+        "title": "Related video (full film)",
+        "detail": "Desktop Studio: Content → Short → Related video → its own full film (once that long is public) → Save. Required. No new Short pins.",
+        "studioUrlHint": "https://studio.youtube.com/video/13q4_EoLEN4/edit"
+      },
+      {
+        "id": "end_screens_cards",
+        "required": true,
+        "status": "pending_studio",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video",
+        "studioUrlHint": "https://studio.youtube.com/video/13q4_EoLEN4/edit"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "api_done",
+        "title": "Add to playlist",
+        "detail": "Added to PLdoEpeiktw_Y"
+      }
+    ],
+    "summary": "API upload done (13q4_EoLEN4). 4 required Studio finish step(s) remain."
+  }
+}
