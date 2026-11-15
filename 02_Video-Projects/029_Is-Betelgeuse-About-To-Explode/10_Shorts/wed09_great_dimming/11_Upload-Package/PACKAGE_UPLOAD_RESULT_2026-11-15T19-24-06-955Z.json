@@ -1,0 +1,113 @@
+{
+  "ok": true,
+  "dryRun": false,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": true,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-12-09T11:30:00.000Z",
+    "platformPostId": "rXKIOUoZSGg",
+    "platformUrl": "https://youtu.be/rXKIOUoZSGg",
+    "message": "Uploaded to YouTube; scheduled to go live at 2026-12-09T11:30:00.000Z; thumbnail set",
+    "responseSummary": "{\"id\":\"rXKIOUoZSGg\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-12-09T11:30:00.000Z\"}"
+  },
+  "package": {
+    "packageDir": "02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/wed09_great_dimming/11_Upload-Package",
+    "sha256": "5251b3fc9aace716cfef19c2354dcc4ed1aed64f5966da779ec520397f1c1982",
+    "title": "Why Did Betelgeuse Suddenly Lose Two-Thirds of Its Light?",
+    "format": "shorts",
+    "privacy": "private",
+    "tagCount": 7,
+    "hasPinnedComment": false,
+    "thumbnailPath": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/wed09_great_dimming/06_Final-Exports/029_short_wed09_great_dimming_v06_cover.jpg",
+    "scheduledAt": "2026-12-09T11:30:00.000Z",
+    "sources": {
+      "manifest": "/Volumes/MiniWork/desk/worktrees/gemini-J2906/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/wed09_great_dimming/11_Upload-Package/PACKAGE_MANIFEST.json",
+      "video": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/wed09_great_dimming/06_Final-Exports/029_short_wed09_great_dimming_v06.mp4",
+      "thumbnail": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/wed09_great_dimming/06_Final-Exports/029_short_wed09_great_dimming_v06_cover.jpg"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "buffer": {
+    "sent": false,
+    "deferred": "goes public 2026-12-09T11:30:00.000Z, beyond Buffer's 7-day window: the daily check schedules it nearer the time",
+    "planOnly": false,
+    "errors": [],
+    "warnings": [],
+    "results": []
+  },
+  "studioFinish": {
+    "videoId": "rXKIOUoZSGg",
+    "studioEditUrl": "https://studio.youtube.com/video/rXKIOUoZSGg/edit",
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "api_done",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Uploaded via YouTube Data API"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set",
+        "studioUrlHint": "https://studio.youtube.com/video/rXKIOUoZSGg/edit"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": false,
+        "status": "n/a",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "A/B Testing not available for Shorts",
+        "studioUrlHint": "https://studio.youtube.com/video/rXKIOUoZSGg/edit"
+      },
+      {
+        "id": "first_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "First / pinned comment text",
+        "detail": "No pinned comment file in package",
+        "studioUrlHint": "https://studio.youtube.com/video/rXKIOUoZSGg/comments"
+      },
+      {
+        "id": "pin_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint",
+        "studioUrlHint": "https://studio.youtube.com/video/rXKIOUoZSGg/comments"
+      },
+      {
+        "id": "related_watch_next",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Related video (full film)",
+        "detail": "Desktop Studio: set Related video to vP1BbqZ_dnM (its own full film). No new Short pins.",
+        "studioUrlHint": "https://studio.youtube.com/video/rXKIOUoZSGg/edit"
+      },
+      {
+        "id": "end_screens_cards",
+        "required": false,
+        "status": "n/a",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video",
+        "studioUrlHint": "https://studio.youtube.com/video/rXKIOUoZSGg/edit"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "API upload done (rXKIOUoZSGg). 1 required Studio finish step(s) remain."
+  }
+}
