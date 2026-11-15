@@ -253930,9 +253930,14 @@
           "at": "2026-11-15T02:21Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Verified issue #219 pairs (1 entry: 19:13:08Z e=1795269633) vs current iCloud/private pair link (20:43:52Z e=1795293772, match=False) and 24h cutoff (2026-11-15T20:45:00Z)"
+        },
+        {
+          "at": "2026-11-15T02:23Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Committed jobs/reviews/J2874/REVIEW.md @ 6770c75e07"
         }
       ],
-      "remaining_action": "Write J2874 condition verification report (jobs/reviews/J2874/REVIEW.md) and update J2831 hold",
+      "remaining_action": "Record condition check on J2831 (--recheck J2874) and close J2874",
       "kind": "review",
       "recheck_of": "J2831",
       "due": "2026-11-14T17:00:00+00:00",
@@ -253947,11 +253952,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-15T02:21Z",
+        "at": "2026-11-15T02:23Z",
         "by": "gemini",
-        "note": "Verified issue #219 pairs (1 entry: 19:13:08Z e=1795269633) vs current iCloud/private pair link (20:43:52Z e=1795293772,"
+        "note": "Committed jobs/reviews/J2874/REVIEW.md @ 6770c75e07"
       }
     },
     {
