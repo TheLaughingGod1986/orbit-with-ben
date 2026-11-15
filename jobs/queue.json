@@ -227609,6 +227609,11 @@
           "at": "2026-11-15T18:23Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Short 4 (029 mon14_half_moon_daylight v06, heiGCnGKTkE) passed 10/10 gates + J2829 5-part review and staged to OWB UAT"
+        },
+        {
+          "at": "2026-11-15T18:23Z",
+          "by": "gemini",
+          "what": "waits on Ben: 029 half-Moon Short v06 (heiGCnGKTkE, Mon 14 Dec): rebuilt the 3.0-5.8 s neutrino burst, 5.8-8.9 s La Silla sky and 12.4-16.2 s / 19.8-21.9 s Orion flare graphics full-frame 9:16 so there is no blurred band anywhere; same voice, words and length (by 2026-12-11 18:00 London)"
         }
       ],
       "remaining_action": "All 4 Shorts rebuilt, 10/10 gated, J2829-reviewed and UAT-staged; arming Short 4 watch card and closing J2551",
@@ -227641,17 +227646,30 @@
         "number": "029",
         "type": "short"
       },
-      "awaits_ben": {
-        "what": "029 opening Short v06 (k2kEaA7ICjc, Fri 11 Dec, Test A): rebuilt the 8.6-12.1 s, 12.1-18.7 s and 21.1-26.9 s graphics and telescope plates full-frame 9:16 so there is no blurred band anywhere; same voice, words and length",
-        "file": "OWB UAT/029_short_fri11_opening_testA_v06/029_short_fri11_opening_testA_v06.mp4",
-        "version": "v06",
-        "due": "2026-12-08T18:00Z",
-        "airs": "2026-12-11T11:30Z",
-        "ifNot": "the cut you OK'd airs",
-        "title": "Is Betelgeuse Really About to Explode?",
-        "number": "029",
-        "type": "short"
-      }
+      "awaits_ben": [
+        {
+          "what": "029 opening Short v06 (k2kEaA7ICjc, Fri 11 Dec, Test A): rebuilt the 8.6-12.1 s, 12.1-18.7 s and 21.1-26.9 s graphics and telescope plates full-frame 9:16 so there is no blurred band anywhere; same voice, words and length",
+          "file": "OWB UAT/029_short_fri11_opening_testA_v06/029_short_fri11_opening_testA_v06.mp4",
+          "version": "v06",
+          "due": "2026-12-08T18:00Z",
+          "airs": "2026-12-11T11:30Z",
+          "ifNot": "the cut you OK'd airs",
+          "title": "Is Betelgeuse Really About to Explode?",
+          "number": "029",
+          "type": "short"
+        },
+        {
+          "what": "029 half-Moon Short v06 (heiGCnGKTkE, Mon 14 Dec): rebuilt the 3.0-5.8 s neutrino burst, 5.8-8.9 s La Silla sky and 12.4-16.2 s / 19.8-21.9 s Orion flare graphics full-frame 9:16 so there is no blurred band anywhere; same voice, words and length",
+          "file": "OWB UAT/029_short_mon14_half_moon_daylight_v06/029_short_mon14_half_moon_daylight_v06.mp4",
+          "version": "v06",
+          "due": "2026-12-11T18:00Z",
+          "airs": "2026-12-14T11:30Z",
+          "ifNot": "the cut you OK'd airs",
+          "title": "How Bright Will Betelgeuse Get When It Explodes?",
+          "number": "029",
+          "type": "short"
+        }
+      ]
     },
     {
       "id": "J2552",
