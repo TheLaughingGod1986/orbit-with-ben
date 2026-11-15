@@ -28,15 +28,22 @@
       "ref": "f8c59c0344 jobs/reviews/J2398/REVIEW.md (J2300/J2299/J2386 PASS)"
     },
     "edit": {
-      "state": "review",
-      "ref": "jobs/reviews/J2890/REVIEW.md",
+      "state": "done",
+      "ref": "jobs/reviews/J2893/REVIEW.md",
+      "ruling": "KEEP (J2890 002d7af11b & J2893 Chief PASS on Long Master v04 3712479ae8 + J2870 a5dbd584ab PASS on Active Shorts 1 & 2 v02 db6a234209 & 279c9531f2, Ben OK 15 Nov -> J2896/J2895; Long Master v04 staged in NAS/iCloud OWB UAT and R2 watch store owb-033-v04, awaiting Ben UAT watch on J2890)",
       "reviewer": "gemini",
       "review_job": "J2890",
+      "chief_job": "J2893",
       "review_result": "KEEP (PASS)",
+      "review_evidence": "jobs/reviews/J2893/REVIEW.md",
       "version": "v04",
-      "sha256": "3712479ae852dd318c4d8d0dfd18f7df08c1a857068c24c3d3792a35a27f11c3"
+      "sha256": "3712479ae852dd318c4d8d0dfd18f7df08c1a857068c24c3d3792a35a27f11c3",
+      "master_v04_sha256": "3712479ae852dd318c4d8d0dfd18f7df08c1a857068c24c3d3792a35a27f11c3",
+      "master_v04_phone_sha256": "3ef32f4b673431835449a590f2246de19d84ff32a330893709cb2ccf6b954a19",
+      "short1_v02_sha256": "db6a23420952151244161c7be209cdebd0440f3ce4aef314c1ce9fc6a3f9d203",
+      "short2_v02_sha256": "279c9531f2c89d16fb37e285b6ef981e8db7bf8d2dd1c297b2940bf07daf5468"
     }
   },
   "claims": [],
-  "next": "Ben UAT watch on 033 Uranus long master v04 (J2890 awaits_ben, target Sun 29 Nov; airs Wed 09 Dec 18:00 London), Active Shorts 1 & 2 v02 review (J2870), and thumbnails A/B"
+  "next": "Build & review 033 long thumbnails A/B/C (J2899 -> J2900) and 11_Upload-Package dry-run (J2901); Ben UAT watch on 033 Uranus long master v04 (J2890 awaits_ben, target Sun 29 Nov; airs Wed 09 Dec 18:00 London); Shorts 1 & 2 v02 OK'd by Ben (J2896/J2895 held until long is public)"
 }
