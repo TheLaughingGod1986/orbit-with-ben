@@ -253291,18 +253291,23 @@
           "at": "2026-11-15T07:36Z",
           "by": "cursor",
           "what": "step 1 of 3 done: Router lookup matches the public answers. Two checks of the checks address returned HTTP 200 from Cloudflare, with no stale Vercel response. No hosts override."
+        },
+        {
+          "at": "2026-11-15T07:40Z",
+          "by": "cursor",
+          "what": "step 2 of 3 done: PR 945 is open. Board check returned ok with site 200. Publish dry-run exited 0 and read 80 checks."
         }
       ],
-      "remaining_action": "Open a pull request that sends board reads back to the same address as the links",
+      "remaining_action": "Record the pull request and the check results",
       "kind": "studio",
       "plain": "Checking whether the Mac mini can read Ben's board domain directly again",
       "mini_only": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-15T07:36Z",
+        "at": "2026-11-15T07:40Z",
         "by": "cursor",
-        "note": "Router lookup matches the public answers. Two checks of the checks address returned HTTP 200 from Cloudflare, with no st"
+        "note": "PR 945 is open. Board check returned ok with site 200. Publish dry-run exited 0 and read 80 checks."
       },
       "taskKeys": [
         "OWB:026"
