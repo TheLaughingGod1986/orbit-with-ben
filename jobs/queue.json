@@ -257286,13 +257286,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-15T17:00Z",
-      "eta": "2026-11-15T19:00Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-15T16:58Z",
-      "result": "",
+      "result": "parked for Chief: Verified J2271 waiting condition in jobs/reviews/J2904/REVIEW.md (b7368c0d45): (1) All 12 initial plates have final KEEP/FIX calls (6 KEEP incl. 11c pigeon & 12d gull with J2887 flap motion PASS; 6 FIX R1-R6); (2) Checks 1-4 PASS at GBP0 (25,050 Flow credits, no unusual-activity banner, 20Gi free disk, and disarmed R1-R6 scope/dry-run adapter merged in HOS PR #599 e739d3b6, desk 6898320038); (3) Chief 600-credit Flow spend go granted (6898337122/6898400383, HOS010_R1_R6_PLATES_J2271, cap 600, floor 3000, scope sha e3c802d2...9874, GBP0); (4) R1-R6 submit Create-wiring PR #600 (80bb6ec2, 9/9 tests OK) opened on HOS desk #180 (6898590991), awaiting Claude review PASS, Chief merge, guarded R1-R6 Flow generation, and Claude/Chief KEEP/FIX review before J2172 assembly. Only the elected Chief may run jobs.py wait J2271 --recheck J2904 (check-at 2026-11-15T23:45:00Z) and close J2904.",
       "history": [
         {
           "at": "2026-11-15T16:58Z",
@@ -257328,6 +257328,11 @@
           "at": "2026-11-15T17:46Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Committed jobs/reviews/J2904/REVIEW.md (b7368c0d45) verifying Checks 1-4 PASS (PR #599 e739d3b6), Chief 600-credit Flow go (6898337122/6898400383), and R1-R6 Create-wiring PR #600 (80bb6ec2, desk 6898590991); parking at protected elected-Chief wait --recheck J2904 call."
+        },
+        {
+          "at": "2026-11-15T17:46Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Verified J2271 waiting condition in jobs/reviews/J2904/REVIEW.md (b7368c0d45): (1) All 12 initial plates have final KEEP/FIX calls (6 KEEP incl. 11c pigeon & 12d gull with J2887 flap motion PASS; 6 FIX R1-R6); (2) Checks 1-4 PASS at GBP0 (25,050 Flow credits, no unusual-activity banner, 20Gi free disk, and disarmed R1-R6 scope/dry-run adapter merged in HOS PR #599 e739d3b6, desk 6898320038); (3) Chief 600-credit Flow spend go granted (6898337122/6898400383, HOS010_R1_R6_PLATES_J2271, cap 600, floor 3000, scope sha e3c802d2...9874, GBP0); (4) R1-R6 submit Create-wiring PR #600 (80bb6ec2, 9/9 tests OK) opened on HOS desk #180 (6898590991), awaiting Claude review PASS, Chief merge, guarded R1-R6 Flow generation, and Claude/Chief KEEP/FIX review before J2172 assembly. Only the elected Chief may run jobs.py wait J2271 --recheck J2904 (check-at 2026-11-15T23:45:00Z) and close J2904."
         }
       ],
       "remaining_action": "Elected Chief: run jobs.py wait J2271 --recheck J2904 (check-at 2026-11-15T23:45:00Z) and close J2904",
