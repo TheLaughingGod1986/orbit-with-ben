@@ -575,6 +575,8 @@ def render_starfield_star_composite(
     sky_origin: tuple[int, int],
     disk_sz: int = 800,
     drive: bool = False,
+    bg_gain: float = 1.0,
+    shimmer: bool = False,
     save_f0: Path | None = None,
 ) -> float:
     """Composite a square ESO telescope plate (sphere_jan, sphere_dec, visir_flames) cleanly over a
@@ -583,9 +585,13 @@ def render_starfield_star_composite(
     frames_n = max(1, round(dur_s * FPS))
     bg_src = _load_gemini_night()
     sx0, sy0 = sky_origin
-    bg_crop = bg_src.crop((sx0, sy0, sx0 + 2400, sy0 + 4266))
+    sx1 = min(bg_src.width, sx0 + 2400)
+    sy1 = min(bg_src.height, sy0 + 4266)
+    bg_crop = bg_src.crop((sx0, sy0, sx1, sy1))
     cw0, ch0 = bg_crop.size
     bg_crop = ImageEnhance.Contrast(ImageEnhance.Color(bg_crop).enhance(1.24)).enhance(1.20)
+    if abs(bg_gain - 1.0) > 1e-3:
+        bg_crop = ImageEnhance.Brightness(bg_crop).enhance(bg_gain)
     bw, bh = 1620, 2880
     bg_big = bg_crop.resize((bw, bh), Image.Resampling.LANCZOS)
 
@@ -598,7 +604,13 @@ def render_starfield_star_composite(
     frames = []
     for n in range(frames_n):
         tn = n / max(1, frames_n - 1)
-        if drive:
+        t_s = n / FPS
+        if shimmer:
+            cw = 1520 - 430 * tn
+            ch = 2702 - 764 * tn
+            cx = (bw - cw) * (0.95 - 0.90 * tn)
+            cy = (bh - ch) * (0.08 + 0.84 * tn)
+        elif drive:
             cw = 1420 - 300 * tn
             ch = 2524 - 533 * tn
             cx = (bw - cw) * (0.90 - 0.80 * tn)
@@ -611,20 +623,39 @@ def render_starfield_star_composite(
         frame_bg = bg_big.resize((W, H), Image.Resampling.BICUBIC, box=(cx, cy, cx + cw, cy + ch))
         arr = np.asarray(frame_bg, dtype=np.float32)
 
-        cur_sz = int(round(disk_sz * (0.94 + (0.16 if drive else 0.09) * tn)))
+        cur_sz = int(round(disk_sz * (0.92 + (0.20 if shimmer else (0.16 if drive else 0.09)) * tn)))
         cur_sz = min(W - 40, max(320, cur_sz))
         fg_im = np.asarray(fg_crop.resize((cur_sz, cur_sz), Image.Resampling.LANCZOS), dtype=np.float32)
         yy, xx = np.mgrid[:cur_sz, :cur_sz]
-        rr = np.sqrt((xx - cur_sz / 2) ** 2 + (yy - cur_sz / 2) ** 2) / (cur_sz / 2)
+        dx = xx - cur_sz / 2
+        dy = yy - cur_sz / 2
+        rr = np.sqrt(dx ** 2 + dy ** 2) / (cur_sz / 2)
         radial = np.clip((0.88 - rr) / 0.28, 0.0, 1.0) ** 1.35
         lum = fg_im.max(axis=2) / 255.0
-        al = np.clip(radial * np.clip((lum - 0.09) / 0.24, 0.0, 1.0), 0.0, 1.0)[..., None]
+        if shimmer:
+            ang = np.arctan2(dy, dx)
+            wave_f = np.sin(7.0 * ang + 15.0 * rr - 14.5 * t_s) * np.cos(4.0 * ang - 11.0 * rr + 10.5 * t_s)
+            plume_env = np.clip((lum - 0.16) / 0.35, 0.0, 1.0) * np.clip((rr - 0.14) / 0.10, 0.0, 1.0) * np.clip((0.80 - rr) / 0.22, 0.0, 1.0)
+            fg_im = np.clip(
+                fg_im + plume_env[..., None] * wave_f[..., None] * np.array([150.0, 66.0, 18.0], dtype=np.float32),
+                0.0,
+                255.0,
+            )
+            core_mask = np.clip((0.12 - rr) / 0.03, 0.0, 1.0)
+            al = np.clip(np.maximum(core_mask, radial * np.clip((lum - 0.09) / 0.24, 0.0, 1.0)), 0.0, 1.0)[..., None]
+        else:
+            al = np.clip(radial * np.clip((lum - 0.09) / 0.24, 0.0, 1.0), 0.0, 1.0)[..., None]
 
-        x0 = (W - cur_sz) // 2 + int(round((44 if drive else 20) * math.sin(tn * math.pi)))
+        x0 = (W - cur_sz) // 2 + int(round((54 if shimmer else (44 if drive else 20)) * math.sin(tn * math.pi)))
         y0 = (980 if drive else 960) - cur_sz // 2
         patch = arr[y0:y0 + cur_sz, x0:x0 + cur_sz]
-        # Screen/additive-aware blend so fiery plume illuminates starfield without dark square halo
-        blended = patch * (1.0 - al) + np.maximum(patch * 0.55, fg_im * 1.12) * al
+        if shimmer:
+            core_w = np.clip((0.12 - rr) / 0.03, 0.0, 1.0)[..., None]
+            fg_blend = np.maximum(patch * (0.55 * (1.0 - core_w)), fg_im * 1.12)
+            blended = patch * (1.0 - al) + fg_blend * al
+        else:
+            # Screen/additive-aware blend so fiery plume illuminates starfield without dark square halo
+            blended = patch * (1.0 - al) + np.maximum(patch * 0.55, fg_im * 1.12) * al
         arr[y0:y0 + cur_sz, x0:x0 + cur_sz] = np.clip(blended, 0, 255)
 
         floors = np.array([20.0, 30.0, 52.0], dtype=np.float32)
@@ -800,21 +831,32 @@ class UprightCodeRenderer:
                 ld.ellipse((sx - r_px, sy - r_px, sx + r_px, sy + r_px), fill=(215, 232, 252, alpha))
         self.chart_bg = Image.alpha_composite(bg.convert("RGBA"), chart_layer).convert("RGB")
 
-        # Sky background: full-height dashed celestial RA/Dec reticle (no solid horizontal step lines)
+        # Sky background: full-height dashed celestial RA/Dec reticle + crisp starfield + compass ticks
         sky_layer = Image.new("RGBA", (W, H), (0, 0, 0, 0))
         sld = ImageDraw.Draw(sky_layer)
         for ra_h in (4.75, 5.15, 5.55, 5.95, 6.35):
             gx, _ = self.orion_px(ra_h, 0.0)
             if 40 <= gx <= W - 40:
                 for yy in range(70, H - 70, 28):
-                    sld.line((gx, yy, gx, min(H - 70, yy + 14)), fill=(120, 158, 198, 48), width=1)
+                    sld.line((gx, yy, gx, min(H - 70, yy + 14)), fill=(120, 158, 198, 56), width=1)
         for dec_d in (-35, -25, -15, -5, 5, 15, 25, 35):
             _, gy = self.orion_px(5.56, dec_d)
             if 70 <= gy <= H - 70:
                 for xx in range(54, W - 54, 28):
-                    sld.line((xx, gy, min(W - 54, xx + 14), gy), fill=(120, 158, 198, 48), width=1)
-        for crx, cry in ((460, 740), (340, 540)):
-            sld.ellipse((540 - crx, 960 - cry, 540 + crx, 960 + cry), outline=(145, 180, 220, 46), width=2)
+                    sld.line((xx, gy, min(W - 54, xx + 14), gy), fill=(120, 158, 198, 56), width=1)
+        for crx, cry in ((460, 740), (340, 540), (510, 840)):
+            sld.ellipse((540 - crx, 960 - cry, 540 + crx, 960 + cry), outline=(160, 194, 232, 76), width=2)
+            for deg in range(0, 360, 6):
+                ang = math.radians(deg)
+                t_len = 9 if deg % 18 == 0 else 4
+                sld.line((
+                    540 + (crx - t_len) * math.cos(ang), 960 + (cry - t_len) * math.sin(ang),
+                    540 + (crx + t_len) * math.cos(ang), 960 + (cry + t_len) * math.sin(ang),
+                ), fill=(182, 210, 242, 98), width=2)
+        sky_srng = np.random.default_rng(29011)
+        for n_stars, r_px, alpha in [(480, 2.2, 138), (220, 3.2, 165), (75, 4.4, 188)]:
+            for sx, sy in sky_srng.uniform([28, 36], [W - 28, H - 36], (n_stars, 2)):
+                sld.ellipse((sx - r_px, sy - r_px, sx + r_px, sy + r_px), fill=(215, 232, 252, alpha))
         self.sky_bg = Image.alpha_composite(bg.convert("RGBA"), sky_layer).convert("RGB")
 
         self.field = rng.uniform([18, 24], [W - 18, H - 24], (180, 2))
@@ -1507,7 +1549,7 @@ SHORTS = [
             {"a": 22.58, "b": 36.94, "tighten": True},
         ],
         "plates": [
-            {"row": "s01_visir", "prefer_out": 2.50, "kind": "starfield_comp", "src": "visir_flames.jpg", "sky_origin": (1100, 2100), "disk_sz": 830, "drive": True},
+            {"row": "s01_visir", "prefer_out": 2.50, "kind": "starfield_comp", "src": "visir_flames.jpg", "sky_origin": (18200, 80), "bg_gain": 0.64, "shimmer": True, "disk_sz": 830, "drive": True},
             {"row": "s02_orion_b", "prefer_out": 5.28, "kind": "video", "src": "orion_rise_vlt.mp4", "offset": 1.2, "cx": 640},
             {"row": "s03_paranal", "prefer_out": 9.24, "kind": "video", "src": "orion_over_paranal.mp4", "offset": 0.45, "cx": 700},
             {"row": "s04_sphere", "prefer_out": 12.80, "kind": "starfield_comp", "src": "sphere_jan.jpg", "sky_origin": (15600, 1400), "disk_sz": 760},
@@ -1760,6 +1802,8 @@ def render_plates_and_audio(spec: dict, work: Path, s_dir: Path, plates: list[di
                 sky_origin=p["sky_origin"],
                 disk_sz=p.get("disk_sz", 780),
                 drive=p.get("drive", False),
+                bg_gain=p.get("bg_gain", 1.0),
+                shimmer=p.get("shimmer", False),
                 save_f0=(work / "open_f0.png") if i == 0 else None,
             )
             video, offset, framing = True, 0.0, {"offset": 0.0, "sky_origin": list(p["sky_origin"])}
