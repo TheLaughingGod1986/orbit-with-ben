@@ -203,10 +203,14 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [What Would Standing on Saturn's Moon Titan Feel Like?](https://youtu.be/ffYKoNVPoqg) | 4 d | 46 | 39.6% | too few to judge | 48.8% | too few to judge |
-| [Could a Robot Survive a Night on Mars?](https://youtu.be/iyvWYFP_ETA) | 5 d | 1060 | 38.8% | MISS | 62.6% | WATCH |
-| [What Are Shooting Stars Really Made Of?](https://youtu.be/T9fVlG3CCzU) | 7 d | 1282 | 49.8% | WATCH | 66.3% | WATCH |
+| [How Did a Helicopter Fly 72 Times on Mars?](https://youtu.be/RT-ec4_GcOk) | 20 h (early) | 1120 | 50.5% | WATCH | 104.1% | LOOP |
+| [Why Does Pluto's Giant Ice Heart Have Zero Craters?](https://youtu.be/z5V6gIXXYs8) | 44 h (early) | 341 | 37.1% | MISS | 104.5% | LOOP |
+| [How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?](https://youtu.be/uhZSRcvngvE) | 2 d | 57 | 41.9% | too few to judge | 52.4% | too few to judge |
+| [Why Did a 90-Day Mars Rover Last 14 Years?](https://youtu.be/B1z2dv7m7Vk) | 3 d | 113 | 52.7% | WATCH | 72.7% | PASS |
+| [What Would Standing on Saturn's Moon Titan Feel Like?](https://youtu.be/ffYKoNVPoqg) | 4 d | 100 | 46.1% | WATCH | 54.0% | WATCH |
+| [Could a Robot Survive a Night on Mars?](https://youtu.be/iyvWYFP_ETA) | 5 d | 1073 | 38.8% | MISS | 62.7% | WATCH |
+| [What Are Shooting Stars Really Made Of?](https://youtu.be/T9fVlG3CCzU) | 7 d | 1288 | 49.9% | WATCH | 66.2% | WATCH |
 | [Why Does Uranus Have 21-Year Winters?](https://youtu.be/ZpEA8stoSPA) | 11 d | 481 | 26.9% | MISS | 306.8% | LOOP |
 | [How Big Is Venus Compared to Earth?](https://youtu.be/hZH0C7fpCk4) | 12 d | 566 | 31.6% | MISS | 66.2% | WATCH |
 
-Stayed to watch: 0 of 4 judged Shorts at 60%+. Average viewed: 1 of 4 at 70%+.
+Stayed to watch: 0 of 8 judged Shorts at 60%+. Average viewed: 4 of 8 at 70%+.

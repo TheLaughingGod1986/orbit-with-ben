@@ -127,9 +127,10 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [One Tight Band Proved Your Blood Goes Round](https://youtu.be/PFj6172YU4Q) | 6 d | 218 | 15.2% | MISS | 61.1% | WATCH |
-| [Why Do Veins Have Valves?](https://youtu.be/xHnIi9GqOsM) | 9 d | 39 | 18.2% | too few to judge | 51.5% | too few to judge |
-| [The Four Elements Were Wrong](https://youtu.be/qW2OsD4mujc) | 11 d | 34 | 57.7% | too few to judge | 192.6% | too few to judge |
+| [What Was the Edward Jenner Experiment?](https://youtu.be/cLKDiYP55J8) | 44 h (early) | 16 | 26.7% | too few to judge | 50.0% | too few to judge |
+| [One Tight Band Proved Your Blood Goes Round](https://youtu.be/PFj6172YU4Q) | 6 d | 223 | 16.0% | MISS | 63.0% | WATCH |
+| [Why Do Veins Have Valves?](https://youtu.be/xHnIi9GqOsM) | 9 d | 41 | 20.6% | too few to judge | 61.5% | too few to judge |
+| [The Four Elements Were Wrong](https://youtu.be/qW2OsD4mujc) | 11 d | 35 | 57.7% | too few to judge | 192.6% | too few to judge |
 | [Why Gold Foil Bounced Rutherford's Particles Back](https://youtu.be/pWySvZsneZg) | 13 d | 137 | 37.2% | MISS | 112.4% | LOOP |
 
 Stayed to watch: 0 of 2 judged Shorts at 60%+. Average viewed: 1 of 2 at 70%+.
