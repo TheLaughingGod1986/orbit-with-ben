@@ -254938,9 +254938,14 @@
           "at": "2026-11-15T08:49Z",
           "by": "gemini",
           "what": "step 1 of 6 done: Step 0 PASS: gate_shorts_open.py check fri06_muons_ground_v05.mp4 --air-date 2026-11-21 --id fri06_muons_ground_v05 exited 0 (0/23 @ 1fps, 0/45 @ 2fps padded) and sha256 verified 1232cb5041f9aae09e51cbf3895136142e19af379331e2b93a8607d593b331b8"
+        },
+        {
+          "at": "2026-11-15T08:53Z",
+          "by": "gemini",
+          "what": "step 2 of 6 done: Step 1 PASS: old video rvug71d7Dqk read back as Private, publishAt 2026-11-21T11:30:00Z, title/description/tags/language verified"
         }
       ],
-      "remaining_action": "Read back old video rvug71d7Dqk via YouTube Data API and Studio CDP 9223",
+      "remaining_action": "Upload fri06_muons_ground_v05.mp4 as Private for Sat 21 Nov 11:30Z and set en-GB language/captions and Related video",
       "due": "2026-11-20T18:00:00Z",
       "kind": "listing",
       "approved_from": {
@@ -254966,11 +254971,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 6,
-        "at": "2026-11-15T08:49Z",
+        "at": "2026-11-15T08:53Z",
         "by": "gemini",
-        "note": "Step 0 PASS: gate_shorts_open.py check fri06_muons_ground_v05.mp4 --air-date 2026-11-21 --id fri06_muons_ground_v05 exit"
+        "note": "Step 1 PASS: old video rvug71d7Dqk read back as Private, publishAt 2026-11-21T11:30:00Z, title/description/tags/language"
       },
       "taskKeys": [
         "OWB:024"
