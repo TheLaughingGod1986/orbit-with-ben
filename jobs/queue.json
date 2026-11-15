@@ -227381,10 +227381,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-15T16:05Z",
-      "eta": "2026-11-15T18:05Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T00:55Z",
       "result": "",
@@ -227548,6 +227548,11 @@
           "at": "2026-11-15T16:26Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Short 2 (029 Wed 9 Dec SWDCZfWZVao v06) passed all 10 gates + 5-part J2829 review, staged to UAT, watch card armed, PR #944 bd0f1c9e27"
+        },
+        {
+          "at": "2026-11-15T16:26Z",
+          "by": "gemini",
+          "what": "released: Short 2 (SWDCZfWZVao v06) finished, UAT-staged and watch card armed; detached tmux J2551-render (~/_desk/logs/J2551-render.log, ~/_desk/logs/J2551-render.done) running for fri11 & mon14"
         }
       ],
       "remaining_action": "Check J2551-render.done, fix fri11 opening plate uniqueness, gate + J2829 review fri11 & mon14, arm 11 & 14 Dec watch cards",
