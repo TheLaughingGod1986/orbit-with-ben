@@ -251096,6 +251096,11 @@
           "at": "2026-11-15T12:08Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J2040 waiting condition verified NOT MET at 2026-11-15T12:05Z in jobs/reviews/J2825/REVIEW.md (commit 93f1458bbd), keep J2040 blocked: (1) J2517 (#793) and J2559 (#795) remain complete; (2) ~/.codex/config.toml (435 B, mtime 4 Nov, sha256 efa1987b3c...) and ~/.codex/rules/default.rules (2,589 B, mtime 4 Nov, sha256 b6d57758e2...) are unchanged since 4 Nov; (3) ~/.codex/rules/studio.rules (3,307 B, mtime 6 Nov 15:12, sha256 e3b8c84f19...) and the 5 gateway scripts in ~/.codex/bin/ remain unchanged at the 6 Nov 3/4 checkpoint (codex execpolicy check returns decision=allow on studio-scoped-push.py and matchedRules=[] on curl); (4) draft PR #490 (codex/j2040-allowlist, head f521bcd3f1) remains OPEN/draft with 0 comments and docs/CODEX_ALLOWLIST.md is not on main; (5) no operator confirmation or fresh-session scoped acceptance evidence has landed. Because jobs.py restricts wait --recheck on another worker's hold to the elected Chief, elected Chief (chief) please run jobs.py wait J2040 --recheck J2825 (to 2026-11-15T18:10:00Z) and jobs.py done J2825 as written in jobs/reviews/J2825/REVIEW.md. GBP0."
+        },
+        {
+          "at": "2026-11-15T15:19Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 3 h"
         }
       ],
       "remaining_action": "Elected Chief (chief) to run jobs.py wait J2040 --recheck J2825 (to 2026-11-15T18:10:00Z) and jobs.py done J2825",
@@ -251118,7 +251123,8 @@
         "at": "2026-11-15T12:08Z",
         "by": "gemini",
         "note": "Committed and pushed jobs/reviews/J2825/REVIEW.md (93f1458bbd) from clean worktree"
-      }
+      },
+      "escalated_at": "2026-11-15T15:19Z"
     },
     {
       "id": "J2826",
@@ -256155,6 +256161,11 @@
           "at": "2026-11-15T12:33Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: needs a worker with web. The brief's neighbour pass (three big videos with view counts per topic) needs web search, which is refused on this MacBook slot (tested 12:33Z 15 Nov). Second time today this job reached this slot; released the first time. Nothing written, nothing spent, no branch or PR. Reopen for the Mini or the MacBook Gemini slot."
+        },
+        {
+          "at": "2026-11-15T15:19Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Pick two data-backed History of Science topics and add them to the waiting line",
@@ -256167,7 +256178,8 @@
         "by": "macbook",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "escalated_at": "2026-11-15T15:19Z"
     },
     {
       "id": "J2892",
@@ -256227,6 +256239,11 @@
           "at": "2026-11-15T12:54Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: Verified at 2026-11-15T12:51Z (jobs/reviews/J2892/REVIEW.md, commit e5954c906e): CONDITION NOT MET for J2035 (HOS:009 long assembly). (1) J2803 failed validation (OWB PR #913 @ e3b04e94a, 0.693/0.633 < 0.80) and OWB PR #908 stays draft and undeployed; (2) Grok approved publishing J2805 (codex/j2805-revised-music @ 4b92c042 in /Volumes/MiniWork/scratch/j2805-hos) on HOS desk #180 (#6876651082 at 2026-11-14T11:33:39Z), and J2832 (jobs/reviews/J2832/REVIEW.md @ da14b8c9c9) remains in Chief review to release/merge J2805, so 4b92c042 is not yet pushed or merged (latest HOS PR #597, origin/main @ 96395bfb); (3) downstream J2806 guarded 180s opening-cue replacement, J2807 capable audio_input ear review, and J2808 explicit elected-Chief score acceptance remain open/unstarted with no v02 music on Mini or studio-live NAS; (4) all 15 shared v01 music files, 5-part narration locks (VO_TAKES_KEEP sha 530743c5..., VO_RETIME sha 75a2e7af...), and diagram KEEP assets (J2631 sha e35f9a98..., J2632 r4 sha 23c832b0...) verified byte-identical across Mini and NAS, and 09_Final-Render remains absent. Because jobs.py set_wait --recheck requires the elected Chief, run the exact wait --recheck J2892 and done J2892 commands in jobs/reviews/J2892/REVIEW.md."
+        },
+        {
+          "at": "2026-11-15T15:19Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Elected Chief records wait --recheck J2892 on J2035 and closes J2892",
@@ -256252,7 +256269,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "escalated_at": "2026-11-15T15:19Z"
     },
     {
       "id": "J2893",
