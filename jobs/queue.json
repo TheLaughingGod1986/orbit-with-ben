@@ -1,5 +1,5 @@
 {
-  "next_id": 2908,
+  "next_id": 2910,
   "jobs": [
     {
       "id": "J0001",
@@ -6772,6 +6772,11 @@
           "at": "2026-11-11T13:47Z",
           "by": "gemini",
           "what": "J2520: Fri 13 Nov Mars helicopter Short swapped bSjWiCbB7pY -> RT-ec4_GcOk (v08, Private, 2026-11-13T11:30:00Z, Related Js6EQJ8qDi8 & Buffer set; bSjWiCbB7pY Private and unscheduled)"
+        },
+        {
+          "at": "2026-11-15T18:25Z",
+          "by": "relay",
+          "what": "condition verification queued: J2908"
         }
       ],
       "remaining_action": "Swap the Mars long's end-screen video from the Jupiter film to the nearest-star long once it is public",
@@ -6789,7 +6794,8 @@
       "hold": {
         "type": "public",
         "condition": "026 nearest-star long c5AdqQsnnys reads Public (publishAt 2026-11-15T18:00:00Z); it is Private and scheduled as of 10 Nov 16:35Z",
-        "check_at": "2026-11-15T18:05:00Z"
+        "check_at": "2026-11-15T19:25:18+00:00",
+        "recheck_task": "J2908"
       }
     },
     {
@@ -72874,6 +72880,11 @@
           "at": "2026-11-11T04:44Z",
           "by": "gemini",
           "what": "J2514: Wed 18 Nov Short swapped cwU_0WWeNZ4 -> dH_yCRmzkMo (v07, Private, 2026-11-18T11:30:00Z, cover & en-GB captions set, Buffer deferred >7d; cwU_0WWeNZ4 Private and unscheduled)"
+        },
+        {
+          "at": "2026-11-15T18:25Z",
+          "by": "relay",
+          "what": "condition verification queued: J2909"
         }
       ],
       "kind": "studio",
@@ -72881,7 +72892,8 @@
       "hold": {
         "type": "public",
         "condition": "Nearest Star long c5AdqQsnnys must read back Public",
-        "check_at": "2026-11-15T18:05:00Z"
+        "check_at": "2026-11-15T19:25:18+00:00",
+        "recheck_task": "J2909"
       }
     },
     {
@@ -257601,6 +257613,68 @@
       "kind": "studio",
       "plain": "Ben replaced the board's expired token: redeploy the board so he can approve again, and prove it works for both channels",
       "urgent": 8
+    },
+    {
+      "id": "J2908",
+      "title": "Verify condition for J0124",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0124: 026 nearest-star long c5AdqQsnnys reads Public (publishAt 2026-11-15T18:00:00Z); it is Private and scheduled as of 10 Nov 16:35Z. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0124 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-15T18:25Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-15T18:25Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Swap the Mars long's end-screen video from the Jupiter film to the nearest-star long once it is public",
+      "kind": "review",
+      "recheck_of": "J0124",
+      "due": "2026-11-11T12:00:00+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2909",
+      "title": "Verify condition for J0861",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0861: Nearest Star long c5AdqQsnnys must read back Public. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0861 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-15T18:25Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-15T18:25Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Add Related links and pin the Nearest Star comment",
+      "kind": "review",
+      "recheck_of": "J0861",
+      "due": "2026-11-15T19:25:18+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
