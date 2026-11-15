@@ -254054,17 +254054,22 @@
           "at": "2026-11-15T06:00Z",
           "by": "cursor",
           "what": "step 2 of 5 done: All 147 cuts rendered. Picture and master v03 are on disk. Audio is copied from v02. Gates are running."
+        },
+        {
+          "at": "2026-11-15T06:16Z",
+          "by": "cursor",
+          "what": "step 2 of 5 done: Picture check failed on ten frames. Crescent night sides now stay solid, and the Miranda black bar is cropped. Re-rendering those cuts."
         }
       ],
-      "remaining_action": "Run the five automated gates on the Uranus master v03 and copy the passing files",
+      "remaining_action": "Re-render the eleven Uranus cuts that failed the picture check, then run the gates again",
       "kind": "assembly",
       "plain": "Rebuild 033 Uranus long master v03 to fix cropped code-graphic pills, square inset boxes/star bleed on stills, and narrow ring-strip plates",
       "progress": {
         "step": 2,
         "of": 5,
-        "at": "2026-11-15T06:00Z",
+        "at": "2026-11-15T06:16Z",
         "by": "cursor",
-        "note": "All 147 cuts rendered. Picture and master v03 are on disk. Audio is copied from v02. Gates are running."
+        "note": "Picture check failed on ten frames. Crescent night sides now stay solid, and the Miranda black bar is cropped. Re-render"
       },
       "taskKeys": [
         "OWB:033"
