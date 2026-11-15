@@ -94,7 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2871 | mini | open | – | – | 033 edit · assembly · 033 Uranus: assemble long master v03 (fix J2404 cropped pills, still inset boxes/star bleed & narrow ring strips) | J2404 4314787d18; J2437 |
 | J2872 | mini | open (after J2871) | – | – | 033 edit · for gemini · review · `gemini-argon` · 033 Uranus: 5-part review of long master v03 (after J2871) + stage for Ben UAT watch | J2404 4314787d18; J2871 |
 | J2873 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
-| J2874 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2831 |  |
+| J2874 | mini | claimed | gemini | 2026-11-15T04:17Z | for gemini · review · `gemini-argon` · Verify condition for J2831 |  |
 | J2875 | mini | open | – | – | chief · Chief: resolve 064 topic orphan-review |  |
 
 Recently finished:
