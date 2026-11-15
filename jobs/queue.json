@@ -178624,6 +178624,11 @@
           "at": "2026-11-15T06:35Z",
           "by": "relay",
           "what": "condition verification queued: J2878"
+        },
+        {
+          "at": "2026-11-15T06:52Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-15T12:45:00Z"
         }
       ],
       "remaining_action": "Await the revised score production (J2805-J2808), complete gate and final acceptance before assembling the gravity film",
@@ -178641,13 +178646,12 @@
         "note": "Input inventory finished: five locked narration hashes match Mini/NAS; five-metre diagram matches; falling-Moon r4 verif"
       },
       "hold": {
-        "type": "dependency",
-        "condition": "J2824 Chief ruling (2026-11-15T00:09Z): NOT MET. J2803 validation failed (OWB PR #913 @ e3b04e94a) and OWB PR #908 stays draft and undeployed. Grok approved publishing J2805 (codex/j2805-revised-music @ 4b92c042) on HOS desk #180 (#6876651082 at 2026-11-14T11:33:39Z), and J2832 is queued for Chief release/merge of J2805; downstream J2806 guarded 180s opening-cue replacement, J2807 capable audio_input review, and J2808 explicit elected-Chief score acceptance (with full current-library production music_gate PASS, own-score provenance and endpoint coverage) remain open and unstarted (no v02 music on Mini or studio-live NAS). Existing 5-part narration and J2631/J2632 r4 diagram KEEP locks verified byte-identical across Mini and NAS; 09_Final-Render absent. No assembly release until accepted score; deadline stays 2026-11-15T18:00Z.",
-        "check_at": "2026-11-15T07:35:24+00:00",
-        "last_recheck": "J2824",
-        "checked_at": "2026-11-15T00:10:00+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J2878"
+        "type": "input",
+        "condition": "J2878 Chief ruling (2026-11-15T06:51Z, jobs/reviews/J2878/REVIEW.md @ 9bfa91397a): NOT MET. J2803 validation failed (OWB PR #913 @ e3b04e94a) and OWB PR #908 stays draft and undeployed. Grok approved publishing J2805 (codex/j2805-revised-music @ 4b92c042) on HOS desk #180 (#6876651082 at 2026-11-14T11:33:39Z), and J2832 (jobs/reviews/J2832/REVIEW.md @ da14b8c9c9) is queued for Chief release/merge of J2805, but 4b92c042 is not yet pushed or merged; downstream J2806 guarded 180s opening-cue replacement, J2807 capable audio_input review, and J2808 explicit elected-Chief score acceptance (with full current-library production music_gate PASS, own-score provenance and endpoint coverage) remain open and unstarted (no v02 music on Mini or studio-live NAS). Existing 5-part narration and J2631/J2632 r4 diagram KEEP locks verified byte-identical across Mini and NAS; 09_Final-Render absent. No assembly release until accepted score; deadline stays 2026-11-15T18:00Z.",
+        "check_at": "2026-11-15T12:45:00Z",
+        "last_recheck": "J2878",
+        "checked_at": "2026-11-15T06:52:00+00:00",
+        "checked_by": "gemini"
       }
     },
     {
