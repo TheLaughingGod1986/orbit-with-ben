@@ -253160,13 +253160,13 @@
       "stage": "upload",
       "after": "J2859",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-11-15T07:21Z",
-      "eta": "2026-11-15T09:21Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-14T20:37Z",
-      "result": "",
+      "result": "Waiting for: YouTube processingStatus for ileYnHpLLCU is succeeded (it is processing now). Then, in Studio only, arm a thumbnail-only 3-way test with the three approved thumbs, add an end screen (Subscribe plus VBaYRPp85Sw), and pin the comment in Pinned-Comments/j01_pinned_v01.txt. Do not upload again.",
       "history": [
         {
           "at": "2026-11-14T20:37Z",
@@ -253212,9 +253212,19 @@
           "at": "2026-11-15T07:30Z",
           "by": "cursor",
           "what": "step 2 of 4 done: ileYnHpLLCU is Private, scheduled Tue 8 Dec 2026 18:00 London, premiere off. Comment box and end screen are still locked while YouTube processes the file."
+        },
+        {
+          "at": "2026-11-15T07:32Z",
+          "by": "cursor",
+          "what": "blocked: Waiting for: YouTube processingStatus for ileYnHpLLCU is succeeded (it is processing now). Then, in Studio only, arm a thumbnail-only 3-way test with the three approved thumbs, add an end screen (Subscribe plus VBaYRPp85Sw), and pin the comment in Pinned-Comments/j01_pinned_v01.txt. Do not upload again."
+        },
+        {
+          "at": "2026-11-15T07:32Z",
+          "by": "cursor",
+          "what": "condition recorded; next verification 2026-11-15T08:10:00Z"
         }
       ],
-      "remaining_action": "Set the three-thumbnail test, end screen and pinned comment once YouTube finishes processing",
+      "remaining_action": "Finish the thumbnail test, end screen and pinned comment once YouTube processing succeeds",
       "kind": "studio",
       "plain": "Uploading Journey Film 01 as Private on YouTube and starting its 3-thumbnail test",
       "mini_only": true,
@@ -253236,6 +253246,11 @@
         "at": "2026-11-15T07:30Z",
         "by": "cursor",
         "note": "ileYnHpLLCU is Private, scheduled Tue 8 Dec 2026 18:00 London, premiere off. Comment box and end screen are still locked"
+      },
+      "hold": {
+        "type": "input",
+        "condition": "YouTube processingStatus for ileYnHpLLCU is succeeded (it is processing now). Then, in Studio only, arm a thumbnail-only 3-way test with the three approved thumbs, add an end screen (Subscribe plus VBaYRPp85Sw), and pin the comment in Pinned-Comments/j01_pinned_v01.txt. Do not upload again.",
+        "check_at": "2026-11-15T08:10:00Z"
       }
     },
     {
