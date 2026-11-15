@@ -227528,9 +227528,14 @@
           "at": "2026-11-15T16:05Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-15T16:06Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Checked J2551-render.done (rc=1 on wed09_great_dimming): gate_shorts_open/thumbs/SFX/OCR/decode/loop all PASS (0/46 padded), fixing subpixel push jitter (0.71px) on s08/s09 and music_gate self-match"
         }
       ],
-      "remaining_action": "Wait for detached J2551-render.done, complete J2829 5-part review on all three 029 v06 Shorts, and arm Ben's watch cards",
+      "remaining_action": "Fix push-jitter and music_gate path in _assemble_029_shorts_v06.py, build and J2829-review 029 Shorts 2-4 v06, and arm Ben's watch cards",
       "due": "2026-11-27T18:00:00Z",
       "kind": "assembly",
       "plain": "Make four December Shorts fill the screen all the way through, then offer you the fixed versions",
@@ -227538,9 +227543,9 @@
       "progress": {
         "step": 1,
         "of": 3,
-        "at": "2026-11-15T14:45Z",
+        "at": "2026-11-15T16:06Z",
         "by": "gemini",
-        "note": "Committed _assemble_029_shorts_v06.py to PR #944 (169a2284c8) and started detached tmux J2551-render (~/_desk/logs/J2551"
+        "note": "Checked J2551-render.done (rc=1 on wed09_great_dimming): gate_shorts_open/thumbs/SFX/OCR/decode/loop all PASS (0/46 padd"
       },
       "taskKeys": [
         "OWB:031",
