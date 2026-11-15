@@ -1,5 +1,5 @@
 {
-  "next_id": 2889,
+  "next_id": 2890,
   "jobs": [
     {
       "id": "J0001",
@@ -255783,6 +255783,35 @@
       "taskKeys": [
         "HOS:009"
       ]
+    },
+    {
+      "id": "J2889",
+      "title": "033 Uranus: assemble long master v04 (fix J2872 partial-limb moon cutouts, PIA01487/PIA01350 plates & 25.3s weic2332a repeat)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Assemble `033_why_this_planet_has_21_year_winters_master_v04.mp4` (`629.40 s`, `1920x1080` `24 fps` CFR) on top of `_assemble_033_full_master_v03.py` (`J2871`), fixing the 3 visual QA defects identified in `jobs/reviews/J2872/REVIEW.md` (`£0` spend, local Python/FFmpeg only):\n\n1. **`FIX-A` — Fix 3 Partial-Limb Moon Stills (`PIA00037.jpg`, `PIA00141.jpg`, `PIA00042.jpg`) With Unfeathered Straight Cutout Edges Floating in Mid-Space (7 Cuts: `C054, C086, C087, C121, C130, C134, C141`):**\n   - For `PIA00037.jpg` (`C054 R25`, `C086–C087 R39`): strip the vertical black calibration artifact bar on the left (`x < 350`), scale by `<= 2.25x` (`picture_qa.py` limit `<= 2.35x`), and anchor flush to the top-right corner `(W - nw, 0)` of the `1920x1080` canvas so Ariel's clipped top and right edges sit flush against the physical top-right frame boundary while its natural curved terminator faces the center-left.\n   - For `PIA00141.jpg` (`C121 R56`, `C134 R62` `10-MINUTE CLIFF DROP`): anchor the scaled (`<= 2.25x`) image flush to the left frame edge (`ox = 0`) so Miranda's clipped left edge sits flush at `x = 0` while its curved limb arcs across the frame (or apply `cover_soft(trim_straight_void(im))` if within `<= 2.35x` upscale).\n   - For `PIA00042.jpg` (`C130 R60` `PATCHWORK ICE MOON`, `C141 R65`): anchor flush to the left frame edge (`ox = 0`) with a wide (`64 px`) cosine alpha feather along its straight interior mosaic boundaries (or replace `C130` and `C141` with full-disc moon plates / crops that have no clipped interior edges).\n2. **`FIX-B` & `FIX-C` — Replace `PIA01487.jpg` (Stair-Step Curve Diagram in `C064, C136, C137`), `PIA01350.jpg` (Noisy B&W Streak Plate in `C073, C074, C105, C106`), and Break the `25.31 s` 5-Cut Repeat of `weic2332a_hires.jpg` (`C107–C111`):**\n   - Follow the pre-verified `picture_qa.py`-compliant replacement table in `jobs/reviews/J2872/REVIEW.md` §3 (`C064 -> PIA00346.jpg`, `C073 -> PIA01356.jpg`, `C074 -> PIA01280.jpg`, `C105 -> GSFC_20171208_Archive_e000100_right_globe.jpg`, `C106 -> PIA00032_falsecolor_disk_v03.jpg`, `C107–C108 -> weic2332a_hires.jpg`, `C109–C110 -> PIA01279_left_globe.jpg`, `C111 & C136–C137 -> stsci_p1906a_right_globe_v04.png` cropped from `x:514..1028, y:0..543` of `stsci-h-p1906a-f-1028x543.png`) so every still stays at `<= 2` appearances and `<= 13.5 s` consecutive hold.\n3. Run all 5 automated gates (`clip_check.py`, `picture_qa.py`, `polish_gate.py`, `music_gate.py`, `sfx_kit.py level`) and verify `0` fails and `0` `>15 s` reuse warnings.\n4. Export `033_why_this_planet_has_21_year_winters_master_v04.mp4` and `..._master_v04_PHONE.mp4` to `09_Final-Export/`, NAS `OWB UAT`, and iCloud `OWB UAT` with verified SHA-256 hashes.\n",
+      "ref": "J2872 5ea0a96ee9; J2871",
+      "film": "033",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-15T11:22Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-15T11:22Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Apply FIX-A, FIX-B, and FIX-C from jobs/reviews/J2872/REVIEW.md, run all 5 gates, and export master_v04.mp4 + PHONE",
+      "kind": "assembly",
+      "plain": "Re-render Uranus long video (v04) fixing 3 clipped moon edges, 2 static/diagram stills, and a 25-second repeated shot"
     }
   ],
   "focus": [
