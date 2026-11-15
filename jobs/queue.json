@@ -254953,9 +254953,14 @@
           "at": "2026-11-15T08:59Z",
           "by": "gemini",
           "what": "step 4 of 6 done: Step 3 PASS: old video rvug71d7Dqk set to Private and unscheduled (publishAt null verified via API and Studio)"
+        },
+        {
+          "at": "2026-11-15T09:01Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: Step 4 PASS: verify-swap.ts exited 0 (ok=true), UPLOADS.json and library.json updated, Buffer check removed rvug71d7Dqk posts/R2 media and scheduled gc1hWQQJOq4 on Instagram/Facebook/Threads for 2026-11-21T11:30:00Z, 0 queued jobs reference rvug71d7Dqk"
         }
       ],
-      "remaining_action": "Run verify-swap.ts, update UPLOADS.json, library.json, BUFFER_POSTS.json, and check queued jobs for rvug71d7Dqk",
+      "remaining_action": "Commit swap records from clean worktree, post read-back on thread, and close J2881",
       "due": "2026-11-20T18:00:00Z",
       "kind": "listing",
       "approved_from": {
@@ -254981,11 +254986,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 6,
-        "at": "2026-11-15T08:59Z",
+        "at": "2026-11-15T09:01Z",
         "by": "gemini",
-        "note": "Step 3 PASS: old video rvug71d7Dqk set to Private and unscheduled (publishAt null verified via API and Studio)"
+        "note": "Step 4 PASS: verify-swap.ts exited 0 (ok=true), UPLOADS.json and library.json updated, Buffer check removed rvug71d7Dqk "
       },
       "taskKeys": [
         "OWB:024"
