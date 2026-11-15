@@ -93,7 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2895 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about landing on an ice giant (v02) Private, slot Sat 19 Dec 11:30 |  |
 | J2896 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about the 21-year winters (v02, Test A opening) Private, slot Fri 18 Dec 11:30 |  |
 | J2899 | mini | open | – | – | 033 thumbs · thumb · 033 Uranus: build 3 long thumbnail concepts A/B/C (incl. Rule-19 real JWST/Voyager frame) + stage A/B to OWB UAT |  |
-| J2900 | mini | open (after J2899) | – | – | 033 thumbs · review · 033 Uranus: review 3 long thumbnail concepts A/B/C (HOOK/BAND/GRADE/PHONE + OWB UAT staging) |  |
+| J2900 | mini | open (after J2899) | – | – | 033 thumbs · for gemini · review · `gemini-argon` · 033 Uranus: review 3 long thumbnail concepts A/B/C (HOOK/BAND/GRADE/PHONE + OWB UAT staging) |  |
 | J2901 | mini | open (after J2900) | – | – | 033 upload · listing · 033 Uranus: build 11_Upload-Package (PACKAGE_MANIFEST, chapters, credits, en-GB SRT, trailer) + dry-run (no upload) |  |
 
 Recently finished:
