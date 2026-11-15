@@ -253264,13 +253264,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-11-15T07:34Z",
-      "eta": "2026-11-15T09:34Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-14T20:37Z",
-      "result": "",
+      "result": "PR #945 is open for the Chief to merge (cb4bf3a779). The system lookup is the router resolver and matches the public answers, with no hosts override. Two checks of /api/checks, and every resolved answer, returned HTTP 200 from Cloudflare with no stale Vercel response. readUrl is removed so reads use the same address as the links. test_board_site and the checks guard passed. board_check --no-post returned ok, site 200, no problems. board_publish --dry-run exited 0 and read 80 checks. No DNS, hosts, or environment changes.",
       "history": [
         {
           "at": "2026-11-14T20:37Z",
@@ -253301,6 +253301,11 @@
           "at": "2026-11-15T07:40Z",
           "by": "cursor",
           "what": "step 3 of 3 done: PR 945 is open for the Chief to merge. Lookup, board check, and publish dry-run all passed."
+        },
+        {
+          "at": "2026-11-15T07:40Z",
+          "by": "cursor",
+          "what": "done: PR #945 is open for the Chief to merge (cb4bf3a779). The system lookup is the router resolver and matches the public answers, with no hosts override. Two checks of /api/checks, and every resolved answer, returned HTTP 200 from Cloudflare with no stale Vercel response. readUrl is removed so reads use the same address as the links. test_board_site and the checks guard passed. board_check --no-post returned ok, site 200, no problems. board_publish --dry-run exited 0 and read 80 checks. No DNS, hosts, or environment changes."
         }
       ],
       "remaining_action": "Nothing left on this check",
