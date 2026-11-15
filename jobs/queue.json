@@ -178614,9 +178614,14 @@
           "at": "2026-11-14T13:19Z",
           "by": "relay",
           "what": "condition verification queued: J2824"
+        },
+        {
+          "at": "2026-11-15T00:10Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-15T06:15:00Z"
         }
       ],
-      "remaining_action": "Await the revised score production, complete gate and final acceptance before assembling the gravity film",
+      "remaining_action": "Await the revised score production (J2805-J2808), complete gate and final acceptance before assembling the gravity film",
       "due": "2026-11-15T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -178632,9 +178637,11 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "J2803 validation failed; PR908 stays draft and undeployed. J2805 scopes one guarded opening-cue replacement via J2806, capable audio review J2807, then explicit elected-Chief score acceptance. Require full current library production music gate PASS, own-score provenance and endpoint coverage. Existing narration and diagram KEEP locks retained. No assembly release until accepted score; deadline stays 2026-11-15T18:00Z.",
-        "check_at": "2026-11-14T14:19:42+00:00",
-        "recheck_task": "J2824"
+        "condition": "J2824 Chief ruling (2026-11-15T00:09Z): NOT MET. J2803 validation failed (OWB PR #913 @ e3b04e94a) and OWB PR #908 stays draft and undeployed. Grok approved publishing J2805 (codex/j2805-revised-music @ 4b92c042) on HOS desk #180 (#6876651082 at 2026-11-14T11:33:39Z), and J2832 is queued for Chief release/merge of J2805; downstream J2806 guarded 180s opening-cue replacement, J2807 capable audio_input review, and J2808 explicit elected-Chief score acceptance (with full current-library production music_gate PASS, own-score provenance and endpoint coverage) remain open and unstarted (no v02 music on Mini or studio-live NAS). Existing 5-part narration and J2631/J2632 r4 diagram KEEP locks verified byte-identical across Mini and NAS; 09_Final-Render absent. No assembly release until accepted score; deadline stays 2026-11-15T18:00Z.",
+        "check_at": "2026-11-15T06:15:00Z",
+        "last_recheck": "J2824",
+        "checked_at": "2026-11-15T00:10:00+00:00",
+        "checked_by": "gemini"
       }
     },
     {
