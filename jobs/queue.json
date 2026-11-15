@@ -251137,9 +251137,14 @@
           "at": "2026-11-15T02:15Z",
           "by": "relay",
           "what": "condition verification queued: J2874"
+        },
+        {
+          "at": "2026-11-15T02:23Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-15T20:45:00Z"
         }
       ],
-      "remaining_action": "Delete the private iPhone link file once it is used or 24 hours have passed",
+      "remaining_action": "Step 4/4 cleanup only: delete Link this phone to the board.html once used or after 2026-11-15T20:45:00Z and confirm on #478 (do not mint a new link)",
       "due": "2026-11-14T17:00:00Z",
       "for": "cursor",
       "kind": "studio",
@@ -251153,10 +251158,12 @@
         "note": "Thread posted. Link file is in his own iCloud Drive. Notes needed a permission prompt."
       },
       "hold": {
-        "type": "date",
-        "condition": "The one-time link is in Ben's own iCloud Drive, not a shared folder, file name Link this phone to the board.html. Notes needed a permission prompt, so that place was used. Delete only that file once its code is in the board pair store or after 2026-11-15T20:45:00Z, then say so on the thread. If neither is true yet, wait again. Do not print the link.",
-        "check_at": "2026-11-15T03:15:44+00:00",
-        "recheck_task": "J2874"
+        "type": "input",
+        "condition": "Second one-time link (e=1795293772, mtime 2026-11-14T20:45:46Z, #6883958273) is in '~/Library/Mobile Documents/com~apple~CloudDocs/Link this phone to the board.html'; its nonce is not in issue #219 pairs (pairs[0] is e=1795269633 from 19:13:08Z) and 2026-11-15T20:45:00Z has not passed. Delete ONLY that file once e=1795293772 is in issue #219 pairs or at/after 2026-11-15T20:45:00Z, post cleanup on #478, and DO NOT mint another link.",
+        "check_at": "2026-11-15T20:45:00Z",
+        "last_recheck": "J2874",
+        "checked_at": "2026-11-15T02:23:57+00:00",
+        "checked_by": "gemini"
       }
     },
     {
