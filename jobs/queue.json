@@ -257014,13 +257014,13 @@
       "stage": "upload",
       "after": "J2900",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-15T15:21Z",
-      "eta": "2026-11-15T17:21Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-15T14:16Z",
-      "result": "",
+      "result": "Built and dry-run verified 033 Uranus 11_Upload-Package (de275a0551) for Long Master v04 (3712479ae852dd318c4d8d0dfd18f7df08c1a857068c24c3d3792a35a27f11c3, 629.416667 s): PACKAGE_MANIFEST.json (slot Wed 09 Dec 2026 18:00 London / 2026-12-09T18:00:00.000Z, private, en-GB, thumb A 9c029267c0 + B/C Test & Compare T033, social block), Titles, Descriptions (with 6 story-beat chapters 0:00-8:35, Real Worlds series handoff, 5 primary Sources entries from SOURCES.md, agency/Commons image credits, and AI/NASA visual disclosure), Tags, Pinned-Comments, 206-cue en-GB.srt (0.100-611.324 s), and NAS social trailer (033_why_this_planet_has_21_year_winters_trailer.mp4, 48.75 s, 608x1080 @ 24/1 CFR, SHA-256 08af084e7673188b5235d95dfb28ac26c371572445b9e3479edb8942d5d21843). Both npm run gate:episode (PASS 95.2/100) and npm run youtube:package -- --dry-run (ok: true, dryRun: true) passed. Zero live upload (£0); awaits Ben UAT watch on J2890.",
       "history": [
         {
           "at": "2026-11-15T14:16Z",
@@ -257066,6 +257066,11 @@
           "at": "2026-11-15T15:57Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Step 5 complete: committed and pushed 033 11_Upload-Package (de275a0551), verified security tests, gate:episode (95.2/100 PASS) and youtube:package --dry-run (ok: true, scheduledFor: 2026-12-09T18:00:00.000Z), and released 033 upload stage to todo awaiting Ben UAT watch on J2890."
+        },
+        {
+          "at": "2026-11-15T15:57Z",
+          "by": "gemini",
+          "what": "done: Built and dry-run verified 033 Uranus 11_Upload-Package (de275a0551) for Long Master v04 (3712479ae852dd318c4d8d0dfd18f7df08c1a857068c24c3d3792a35a27f11c3, 629.416667 s): PACKAGE_MANIFEST.json (slot Wed 09 Dec 2026 18:00 London / 2026-12-09T18:00:00.000Z, private, en-GB, thumb A 9c029267c0 + B/C Test & Compare T033, social block), Titles, Descriptions (with 6 story-beat chapters 0:00-8:35, Real Worlds series handoff, 5 primary Sources entries from SOURCES.md, agency/Commons image credits, and AI/NASA visual disclosure), Tags, Pinned-Comments, 206-cue en-GB.srt (0.100-611.324 s), and NAS social trailer (033_why_this_planet_has_21_year_winters_trailer.mp4, 48.75 s, 608x1080 @ 24/1 CFR, SHA-256 08af084e7673188b5235d95dfb28ac26c371572445b9e3479edb8942d5d21843). Both npm run gate:episode (PASS 95.2/100) and npm run youtube:package -- --dry-run (ok: true, dryRun: true) passed. Zero live upload (£0); awaits Ben UAT watch on J2890."
         }
       ],
       "remaining_action": "Complete J2901 and post thread report",
@@ -257090,7 +257095,8 @@
       },
       "taskKeys": [
         "OWB:033"
-      ]
+      ],
+      "done_ref": "de275a0551"
     },
     {
       "id": "J2902",
