@@ -92,7 +92,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2895 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about landing on an ice giant (v02) Private, slot Sat 19 Dec 11:30 |  |
 | J2896 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about the 21-year winters (v02, Test A opening) Private, slot Fri 18 Dec 11:30 |  |
 | J2904 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2271 |  |
-| J2905 | mini | open | – | – | studio · First-day check at 6 h: "The Blood Vessels Finer Than a Hair" (Wvjd8g0CpzE) |  |
+| J2905 | mini | claimed | cursor | 2026-11-15T18:09Z | studio · First-day check at 6 h: "The Blood Vessels Finer Than a Hair" (Wvjd8g0CpzE) |  |
 
 Recently finished:
 
