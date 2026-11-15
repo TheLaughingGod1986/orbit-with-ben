@@ -1,0 +1,141 @@
+{
+  "master_comparison": {
+    "v01_nas": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_sleep_video_01/sleep_video_01_master_v01.mp4",
+    "v01_bytes": 26505479537,
+    "v01_sha256": "05b439cbc3a0ab77d006f571f79fb8d0d9b3054a0023250c569941c70887d698",
+    "v01_video_frames": 195070,
+    "v01_video_duration_s": 6502.332333,
+    "v01_audio_frames": 304798,
+    "v02_local": "/Users/ben/_desk/J2860-sleep-v02/sleep_video_01_master_v02.mp4",
+    "v02_nas": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_sleep_video_01/sleep_video_01_master_v02.mp4",
+    "v02_bytes": 4216695410,
+    "v02_nas_bytes": 4216695410,
+    "v02_sha256": "e6f1064dc83b2c48bb05898f90139a4a250da2b316d3d3086699518379481ec0",
+    "v02_nas_sha256_verified": true,
+    "v02_video_frames": 195070,
+    "v02_video_duration_s": 6502.333333,
+    "v02_video_profile": "High",
+    "v02_audio_frames": 304798,
+    "exact_frame_match": true,
+    "exact_audio_frames_match": true
+  },
+  "v02_whole_master_videotoolbox_vs_sw": {
+    "spot_windows_checked": 27,
+    "chapters_covered": "All 13 chapters (013, 021, 027, 025, 023, 031, 020, 022, 028, 029, 024, 026, 019) + joins + final fade",
+    "max_hw_vs_sw_mad": 0.0,
+    "continuous_videotoolbox_decode_windows": [
+      "join10_transition_82m08_82m22 (PASS, rc=0, stderr='')",
+      "join11_transition_89m55_90m09 (PASS, rc=0, stderr='')",
+      "ben_window_and_join12_97m15_98m10 (PASS, rc=0, stderr='')",
+      "final_fade_108m00_108m22 (PASS, rc=0, stderr='')"
+    ],
+    "other_faults_in_v02": []
+  },
+  "darkening_measurement": {
+    "024_light": {
+      "samples_1fps": 463,
+      "undarkened_mean_y": 74.2907,
+      "darkened_high_mean_y": 63.2763,
+      "brightness_ratio": 0.85174,
+      "target_085_pm_002_pass": true
+    },
+    "026_proxima": {
+      "samples_1fps": 471,
+      "undarkened_mean_y": 76.9462,
+      "darkened_high_mean_y": 66.7334,
+      "brightness_ratio": 0.86727,
+      "target_085_pm_002_pass": true
+    },
+    "019_andromeda": {
+      "samples_1fps": 605,
+      "undarkened_mean_y": 69.718,
+      "darkened_high_mean_y": 59.4,
+      "brightness_ratio": 0.852,
+      "target_085_pm_002_pass": true
+    }
+  },
+  "rebuilt_joins_gates": {
+    "join_10_029_to_024": {
+      "polish_gate_summary": null,
+      "picture_qa_verdict": "PASS",
+      "picture_qa_summary": null
+    },
+    "join_11_024_to_026": {
+      "polish_gate_summary": null,
+      "picture_qa_verdict": "PASS",
+      "picture_qa_summary": null
+    },
+    "join_12_026_to_019": {
+      "polish_gate_summary": null,
+      "picture_qa_verdict": "PASS",
+      "picture_qa_summary": null
+    }
+  },
+  "chapter_12_026_undarkened_changed_cuts": {
+    "polish_gate_rc": 0,
+    "polish_gate_summary": null,
+    "picture_qa_rc": 0,
+    "picture_qa_verdict": "PASS"
+  },
+  "audio_stream_hash": {
+    "v02": "SHA256=74f9ab69f926dee582179764d158a2af07e2c2523c38624d9a5068ecd45041d2",
+    "encoded_v05_source": "SHA256=74f9ab69f926dee582179764d158a2af07e2c2523c38624d9a5068ecd45041d2",
+    "exact_match": true
+  },
+  "join_sound_checks": {
+    "join10_82m05_82m25": [
+      "[Parsed_ebur128_1 @ 0x77e0c0de00] t: 19.599979  TARGET:-23 LUFS    M: -36.5 S: -19.7     I: -19.7 LUFS       LRA:  15.0 LU  FTPK: -30.1 -28.5 dBFS  TPK:  -6.6  -6.5 dBFS",
+      "[Parsed_ebur128_1 @ 0x77e0c0de00] t: 19.699979  TARGET:-23 LUFS    M: -25.8 S: -19.6     I: -19.7 LUFS       LRA:  15.0 LU  FTPK: -10.5 -10.6 dBFS  TPK:  -6.6  -6.5 dBFS",
+      "[Parsed_ebur128_1 @ 0x77e0c0de00] t: 19.799979  TARGET:-23 LUFS    M: -22.0 S: -19.4     I: -19.8 LUFS       LRA:  15.0 LU  FTPK: -10.9 -11.2 dBFS  TPK:  -6.6  -6.5 dBFS",
+      "[Parsed_ebur128_1 @ 0x77e0c0de00] t: 19.899979  TARGET:-23 LUFS    M: -18.8 S: -19.2     I: -19.8 LUFS       LRA:  15.0 LU  FTPK:  -6.7  -6.5 dBFS  TPK:  -6.6  -6.5 dBFS",
+      "[Parsed_ebur128_1 @ 0x77e0c0de00] t: 19.999979  TARGET:-23 LUFS    M: -17.6 S: -19.4     I: -19.7 LUFS       LRA:  14.8 LU  FTPK:  -7.5  -7.3 dBFS  TPK:  -6.6  -6.5 dBFS",
+      "I:         -19.7 LUFS",
+      "LRA:        14.8 LU",
+      "Peak:       -6.5 dBFS"
+    ],
+    "join11_89m52_90m12": [
+      "[Parsed_ebur128_1 @ 0x7c1f04d8c0] t: 19.599979  TARGET:-23 LUFS    M: -19.2 S: -22.1     I: -20.7 LUFS       LRA:  14.2 LU  FTPK: -10.6 -10.2 dBFS  TPK:  -6.5  -6.5 dBFS",
+      "[Parsed_ebur128_1 @ 0x7c1f04d8c0] t: 19.699979  TARGET:-23 LUFS    M: -19.6 S: -22.3     I: -20.6 LUFS       LRA:  14.2 LU  FTPK: -12.6 -13.4 dBFS  TPK:  -6.5  -6.5 dBFS",
+      "[Parsed_ebur128_1 @ 0x7c1f04d8c0] t: 19.799979  TARGET:-23 LUFS    M: -19.4 S: -22.2     I: -20.6 LUFS       LRA:  14.2 LU  FTPK: -12.1 -11.8 dBFS  TPK:  -6.5  -6.5 dBFS",
+      "[Parsed_ebur128_1 @ 0x7c1f04d8c0] t: 19.899979  TARGET:-23 LUFS    M: -22.3 S: -22.2     I: -20.6 LUFS       LRA:  14.2 LU  FTPK:  -7.7  -6.8 dBFS  TPK:  -6.5  -6.5 dBFS",
+      "[Parsed_ebur128_1 @ 0x7c1f04d8c0] t: 19.999979  TARGET:-23 LUFS    M: -21.0 S: -22.1     I: -20.6 LUFS       LRA:  14.2 LU  FTPK: -11.0 -10.4 dBFS  TPK:  -6.5  -6.5 dBFS",
+      "I:         -20.6 LUFS",
+      "LRA:        14.2 LU",
+      "Peak:       -6.5 dBFS"
+    ],
+    "join12_97m48_98m08": [
+      "[Parsed_ebur128_1 @ 0x755104d8c0] t: 19.599979  TARGET:-23 LUFS    M: -28.0 S: -21.4     I: -21.0 LUFS       LRA:  12.9 LU  FTPK: -25.3 -22.5 dBFS  TPK:  -7.0  -6.9 dBFS",
+      "[Parsed_ebur128_1 @ 0x755104d8c0] t: 19.699979  TARGET:-23 LUFS    M: -30.3 S: -21.6     I: -21.0 LUFS       LRA:  12.9 LU  FTPK: -24.7 -24.1 dBFS  TPK:  -7.0  -6.9 dBFS",
+      "[Parsed_ebur128_1 @ 0x755104d8c0] t: 19.799979  TARGET:-23 LUFS    M: -30.8 S: -21.7     I: -21.1 LUFS       LRA:  12.9 LU  FTPK: -27.1 -25.8 dBFS  TPK:  -7.0  -6.9 dBFS",
+      "[Parsed_ebur128_1 @ 0x755104d8c0] t: 19.899979  TARGET:-23 LUFS    M: -24.2 S: -21.6     I: -21.1 LUFS       LRA:  12.9 LU  FTPK: -10.8 -11.3 dBFS  TPK:  -7.0  -6.9 dBFS",
+      "[Parsed_ebur128_1 @ 0x755104d8c0] t: 19.999979  TARGET:-23 LUFS    M: -22.5 S: -22.1     I: -21.1 LUFS       LRA:  12.9 LU  FTPK: -13.8 -13.8 dBFS  TPK:  -7.0  -6.9 dBFS",
+      "I:         -21.1 LUFS",
+      "LRA:        12.9 LU",
+      "Peak:       -6.9 dBFS"
+    ]
+  },
+  "deliverables": {
+    "sheet_1fps": {
+      "path": "/Users/ben/_desk/J2860-sleep-v02/qa/sleep_97m20_98m00_1fps_before_after.jpg",
+      "bytes": 879151,
+      "sha256": "810bdcb0b081ca2ac62f81b6375cc44ad011487ef5dd11763048c84bc8123f47"
+    },
+    "sheet_30fps": {
+      "path": "/Users/ben/_desk/J2860-sleep-v02/qa/sleep_97m36_97m40_30fps_before_after.jpg",
+      "bytes": 1225957,
+      "sha256": "12f7a8e6f898a72bfe5bc9f5f25a536fc15299e5d1c6735e802f44d44988975b"
+    },
+    "focus_card_png": {
+      "path": "/Users/ben/_desk/J2860-sleep-v02/qa/card_focus_9736_9739.png",
+      "bytes": 1376197,
+      "sha256": "f90eff8eaa2dae658d530a5b33ac1259b051066112934d50153a26406f46be6b"
+    },
+    "board_card_reel_97m20": {
+      "path": "/Users/ben/_desk/J2860-sleep-v02/qa/sleep_video_01_97m20_before_after_v02.mp4",
+      "bytes": 27305320,
+      "sha256": "912a5f16f4b0740c0d3eaaceff7a4a25f81339cc8c755bc3f5123a01ad07d864",
+      "duration_s": 73.033333
+    }
+  },
+  "elapsed_s": 12.25
+}
