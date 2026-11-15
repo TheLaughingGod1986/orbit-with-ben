@@ -91,6 +91,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2891 | any | blocked | macbook | – | script · HOS: learn from our data, add two new films to the backlog |  |
 | J2892 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2035 |  |
 | J2893 | mini | open | – | – | chief · Chief: resolve 033 edit orphan-review |  |
+| J2894 | mini | open | – | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 
 Recently finished:
 
