@@ -5,7 +5,7 @@ Built 15 Nov 2026. £0. Local Pillow grade of the verified harvest plates. No pa
 All three are 1920×1080. Hook type is Bebas Neue, capitals, dark stroke. One word is warm gold `#FFD60A` and the rest is white. The line sits in the top band, clear of the planet and the bottom-right duration corner. No Orbit character.
 
 | Concept | Hook | Plate | Saturation | Near-black | Score |
-|---|---|---|---|---:|---:|---|
+|---|---|---|---|---:|---:|
 | A | 21-YEAR WINTER | JWST `weic2332a_hires.jpg` (PIA25770), one real frame | 131.1 | 2.3% | PASS |
 | B | COLDER THAN NEPTUNE | Voyager 2 `PIA18182.jpg` beside JWST `weic2310a_unannotated.png` | 151.6 | 4.4% | PASS |
 | C | 97.77° SIDEWAYS | JWST `weic2310a_unannotated.png`, bright cyan field | 175.4 | 2.2% | PASS |
