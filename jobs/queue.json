@@ -256450,13 +256450,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-15T13:49Z",
-      "eta": "2026-11-15T15:49Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-15T12:52Z",
-      "result": "",
+      "result": "Waiting for: 033 Uranus long is public (airs Wed 9 Dec 2026 18:00 London; currently awaiting Ben UAT watch on J2890; if not public by Fri 11 Dec, park for the Chief)",
       "history": [
         {
           "at": "2026-11-15T12:52Z",
@@ -256502,6 +256502,16 @@
           "at": "2026-11-15T13:55Z",
           "by": "gemini",
           "what": "step 4 of 5 done: Committed 033_short01_testA_opening/07_Upload-Package at 96477b52d8 and synced to NAS studio-live; placing J2896 on public hold until 033 Uranus long airs Wed 2026-12-09T18:00:00Z"
+        },
+        {
+          "at": "2026-11-15T13:56Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: 033 Uranus long is public (airs Wed 9 Dec 2026 18:00 London; currently awaiting Ben UAT watch on J2890; if not public by Fri 11 Dec, park for the Chief)"
+        },
+        {
+          "at": "2026-11-15T13:56Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-12-09T18:05:00Z"
         }
       ],
       "remaining_action": "Upload 033 Short 1 v02 Private for Fri 18 Dec 11:30Z, set Related video = 033 Uranus long, record in UPLOADS.json, and post read-back",
@@ -256537,7 +256547,12 @@
       },
       "taskKeys": [
         "OWB:033"
-      ]
+      ],
+      "hold": {
+        "type": "public",
+        "condition": "033 Uranus long is public (airs Wed 9 Dec 2026 18:00 London; currently awaiting Ben UAT watch on J2890; if not public by Fri 11 Dec, park for the Chief)",
+        "check_at": "2026-12-09T18:05:00Z"
+      }
     },
     {
       "id": "J2897",
