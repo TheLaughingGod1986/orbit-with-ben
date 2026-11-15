@@ -255822,19 +255822,26 @@
           "at": "2026-11-15T11:25Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-15T11:28Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed J2889. v03 assembler is on the shared film folder. FIX-A anchors three partial moons. FIX-B and FIX-C follow the review plate table. One Hubble run is 15.2s, so the last of those three cuts gets its own tighter crop to stay under the 15s reuse warning."
         }
       ],
-      "remaining_action": "Apply FIX-A, FIX-B, and FIX-C from jobs/reviews/J2872/REVIEW.md, run all 5 gates, and export master_v04.mp4 + PHONE",
+      "remaining_action": "Writing the Uranus v04 assembler and the replacement plates",
       "kind": "assembly",
       "plain": "Re-render Uranus long video (v04) fixing 3 clipped moon edges, 2 static/diagram stills, and a 25-second repeated shot",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-15T11:25Z",
+        "of": 4,
+        "at": "2026-11-15T11:28Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2889. v03 assembler is on the shared film folder. FIX-A anchors three partial moons. FIX-B and FIX-C follow the"
+      },
+      "taskKeys": [
+        "OWB:033"
+      ]
     },
     {
       "id": "J2890",
