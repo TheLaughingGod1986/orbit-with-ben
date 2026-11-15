@@ -10,7 +10,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
 | J0119 | mini | claimed | macbook-2 | 2026-11-15T19:01Z | 025 end screen + card: Jupiter -jmMROGoZCM -> 026 id, NOT BEFORE Sun 15 Nov 18:00 London (026 public) |  |
-| J0124 | mini | blocked | claudecode | – | 025 Mars robot after go-public: Related video on 3 Shorts, pinned comment, Buffer check (rest of J0103) | 6103189873 |
+| J0124 | mini | open (after J0123) | – | – | 025 Mars robot after go-public: Related video on 3 Shorts, pinned comment, Buffer check (rest of J0103) | 6103189873 |
 | J0317 | mini | open | – | – | studio · 027 Shorts (OVLv9dxTcpE, emwQsPxnRGM): set Related video to 6bbbvfCx6zY after Sun 22 Nov 18:00Z | 6197845034 |
 | J0861 | mini | blocked | gemini | – | studio · 026 Nearest Star after go-public: Related on 3 Shorts (aEfdxex__Bo, dH_yCRmzkMo, aAUgIGEuPwQ) -> c5AdqQsnnys + pinned comment on the long (before Mon 16 Nov 11:30Z) |  |
 | J0910 | mini | blocked | chief | – | studio · 028 Shorts: set Related video -> F-jImX5h7ws after Sun 29 Nov 18:00Z + pinned comment on long |  |
