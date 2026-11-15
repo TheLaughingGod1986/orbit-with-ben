@@ -91,7 +91,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2877 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2243 |  |
 | J2885 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2857 |  |
 | J2886 | mini | blocked | cursor | – | studio · Pin the Titan long comment once T3cBBss1F60 is public |  |
-| J2887 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2271 |  |
+| J2887 | mini | claimed | gemini | 2026-11-15T12:30Z | for gemini · review · `gemini-argon` · Verify condition for J2271 |  |
 
 Recently finished:
 
