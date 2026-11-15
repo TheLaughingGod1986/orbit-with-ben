@@ -258425,13 +258425,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-15T21:09Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-15T21:08Z",
-      "result": "parked for Chief: live fixes audit cannot run on the MacBook Claude slot. It has no way to read the live YouTube pages (curl and web fetch both need an approval nobody is here to give), so chapters, Sources lines, end screens and Related pills could not be read. Nothing audited, no fix list written, nothing changed in Studio. Please route to the Mini or the MacBook Gemini slot (as J2801 ran). Two videos are new since the 14 Nov check and unaudited: RT-ec4_GcOk (025 Short, 14 Nov) and c5AdqQsnnys (026 long, due public 15 Nov 18:00Z); the 025 end-screen swap to 026 held in J0124 falls due once 026 is public.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-15T21:08Z",
@@ -258452,17 +258452,16 @@
           "at": "2026-11-15T21:10Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: live fixes audit cannot run on the MacBook Claude slot. It has no way to read the live YouTube pages (curl and web fetch both need an approval nobody is here to give), so chapters, Sources lines, end screens and Related pills could not be read. Nothing audited, no fix list written, nothing changed in Studio. Please route to the Mini or the MacBook Gemini slot (as J2801 ran). Two videos are new since the 14 Nov check and unaudited: RT-ec4_GcOk (025 Short, 14 Nov) and c5AdqQsnnys (026 long, due public 15 Nov 18:00Z); the 025 end-screen swap to 026 held in J0124 falls due once 026 is public."
+        },
+        {
+          "at": "2026-11-15T21:46Z",
+          "by": "gemini",
+          "what": "reopened: acting Chief (gemini) ruling: audited the last 10 live public OWB videos (#1 c5AdqQsnnys 026 long through #10 ZpEA8stoSPA, plus #11-#16) directly on the Mini against 2026-11-15.json, overlays_v06.json, overlays_v03f.json and upload manifests; wrote 05_Analytics/live_fixes/2026-11-15.md (0bc3365027); 10/10 pass, 0 fixes needed"
         }
       ],
       "remaining_action": "audit the last 10 live videos and write the fix list",
       "kind": "listing",
-      "backlog": "owb-live-listing-fixes",
-      "progress": {
-        "step": 0,
-        "of": 4,
-        "at": "2026-11-15T21:09Z",
-        "by": "macbook"
-      }
+      "backlog": "owb-live-listing-fixes"
     },
     {
       "id": "J2915",

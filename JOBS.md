@@ -90,7 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2907 | mini | blocked | gemini | – | for gemini · studio · `gemini-argon` · Board: redeploy with Ben's new GitHub token, prove ticks save and reach both threads |  |
 | J2909 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0861 |  |
 | J2912 | any | blocked | macbook | – | script · OWB: learn from our data, add two new films to the backlog |  |
-| J2914 | any | blocked | macbook | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
+| J2914 | any | open | – | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J2915 | mini | open | – | – | 010 picture · video · HOS 010: mint R1-R6 Short replacement plates under Chief go 6898337122 and post review branch | J2271 |
 
 Recently finished:
