@@ -193472,13 +193472,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-11-14T17:06Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-05T17:12Z",
-      "result": "parked for Chief: Eradication v05 is 21.23s and the approved pauses cannot reach 22s (speech 19.37s plus at most about 2.0s of breaths). Variolation v05 voice, tick, polish and picture PASS at 23.33s but the open gate FAILs visor 0.0103 on the lancet in the red case, and every portrait crop of that plate stayed above 0.009. The child plate passes visor and was already too still. Willow stays scheduled. Harvey v04 unchanged. HOS PR 590. No awaits, no upload, £0.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-05T17:12Z",
@@ -193809,9 +193809,24 @@
           "at": "2026-11-14T20:24Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-15T10:25Z",
+          "by": "gemini",
+          "what": "reopened: Elected Acting Chief (gemini) ruling recorded in jobs/reviews/J2230/REVIEW.md and HOS PR #596 (merged to main along with #586 and #590): (1) KEEP Harvey s06_v04 (7fe460307b47, 23.10s) and s07_v04 (e94cbf4c5a54, 25.10s) — both PASS HOS gate_shorts_open.py (0 padded, 0 warn) and visual frame-0 inspection; (2) KEEP Vaccine variolation_v05 (c7ae95379e11, 23.33s) — PASSes HOS gate_shorts_open.py (0 padded, 0 warn) and visual frame-0 inspection (OWB visor check was run by mistake in #590; HOS channel_profile sets ROBOT_FRAME0_CHECK=False); (3) Authorise £0 pause widening on Vaccine eradication_v06 (0.45/0.55/0.55/1.15s -> 22.07s, within 22-27s band, already committed to _build_j2230_vaccine_shorts_v01.py in HOS #596); (4) Render eradication_v06, run HOS gate_shorts_open.py + checks, copy all 4 masters to NAS/HOS UAT, and arm jobs.py awaits."
+        },
+        {
+          "at": "2026-11-15T10:25Z",
+          "by": "gemini",
+          "what": "rerouted to cursor on cursor-grok-4-7: Handing J2230 back to cursor on cursor-grok-4-7 to render eradication_v06 (22.07s), verify HOS gates, copy the 4 approved masters to NAS/HOS UAT, and arm jobs.py awaits."
+        },
+        {
+          "at": "2026-11-15T10:26Z",
+          "by": "gemini",
+          "what": "remaining action: Render eradication_v06 (22.07s pauses in _build_j2230_vaccine_shorts_v01.py), run HOS gate_shorts_open.py, copy 4 approved masters to NAS/HOS UAT, and arm jobs.py awaits"
         }
       ],
-      "remaining_action": "Chief ruling on the Eradication length and the lancet visor check",
+      "remaining_action": "Render eradication_v06 (22.07s pauses in _build_j2230_vaccine_shorts_v01.py), run HOS gate_shorts_open.py, copy 4 approved masters to NAS/HOS UAT, and arm jobs.py awaits",
       "kind": "assembly",
       "urgent": 4,
       "taskKeys": [
@@ -193830,14 +193845,7 @@
         "status": "open",
         "by": ""
       },
-      "model": "cursor-grok-4-7",
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-14T17:29Z",
-        "by": "cursor",
-        "note": "Vaccine v05 built. Variolation voice, tick, polish and picture PASS, 23.33s, sha c7ae95379e11. Open gate FAIL visor 0.01"
-      }
+      "model": "cursor-grok-4-7"
     },
     {
       "id": "J2231",
