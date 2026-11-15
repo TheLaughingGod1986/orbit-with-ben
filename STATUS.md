@@ -64,6 +64,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 033 | upload | gemini | 2026-11-15T15:21Z | 2026-11-15T17:20Z | J2901 033 Uranus: build 11_Upload-Package (PACKAGE_MANIFEST, chapters, credits, en-GB SRT, trailer) + dry-run (no upload) |
+| 033 | upload | gemini | 2026-11-15T15:21Z | 2026-11-15T16:21Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
