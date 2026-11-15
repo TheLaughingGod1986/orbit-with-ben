@@ -93,7 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2906 | mini | open | – | – | for gemini · listing · `gemini-argon` · Swap the Great Dimming Short SWDCZfWZVao (Wed 9 Dec) to the full-screen cut Ben OK'd, v06 |  |
 | J2907 | mini | blocked | gemini | – | for gemini · studio · `gemini-argon` · Board: redeploy with Ben's new GitHub token, prove ticks save and reach both threads |  |
 | J2909 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0861 |  |
-| J2910 | mini | open | – | – | review · Verify condition for J2171 |  |
+| J2910 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 
 Recently finished:
 
