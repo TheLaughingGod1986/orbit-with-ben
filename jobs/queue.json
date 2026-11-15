@@ -251424,13 +251424,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-14T13:54Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-14T13:52Z",
-      "result": "parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J2827 in orbit-with-ben is 1 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/926. Review and merge it and close the job, or reopen the job with a note.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-14T13:52Z",
@@ -251451,19 +251451,16 @@
           "at": "2026-11-14T16:23Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-15T19:47Z",
+          "by": "gemini",
+          "what": "reopened: Chief review complete (jobs/reviews/J2827/REVIEW.md); reopening to claim and close done after merging PR #926"
         }
       ],
       "remaining_action": "Review Orbit performance and identify improvements",
       "kind": "review",
       "backlog": "owb-weekly-audit",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-14T13:54Z",
-        "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      },
       "escalated_at": "2026-11-14T16:23Z"
     },
     {
