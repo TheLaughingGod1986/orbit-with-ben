@@ -259612,13 +259612,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-16T03:18Z",
-      "eta": "2026-11-16T04:18Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-16T03:17Z",
-      "result": "",
+      "result": "HOS listing check 16 Nov: 0 fixes, nothing parked. Records check only (no live read possible on the MacBook lane); nothing changed on HOS main or in the queue since the J2903 live read on 15 Nov 16:50Z, so its result stands. One live read owed: Short xzKoHg0E0_U after it goes public 16 Nov 11:30Z (Related GHZDsiH7L7A, AI label). File 00_Brand/Channel-Setup/audits/live_fixes/2026-11-16.md in history-of-science PR #606 (open, not merged). Nothing changed in Studio.",
       "history": [
         {
           "at": "2026-11-16T03:17Z",
@@ -259634,6 +259634,11 @@
           "at": "2026-11-16T03:20Z",
           "by": "macbook",
           "what": "step 1 of 3 done"
+        },
+        {
+          "at": "2026-11-16T03:21Z",
+          "by": "macbook",
+          "what": "done: HOS listing check 16 Nov: 0 fixes, nothing parked. Records check only (no live read possible on the MacBook lane); nothing changed on HOS main or in the queue since the J2903 live read on 15 Nov 16:50Z, so its result stands. One live read owed: Short xzKoHg0E0_U after it goes public 16 Nov 11:30Z (Related GHZDsiH7L7A, AI label). File 00_Brand/Channel-Setup/audits/live_fixes/2026-11-16.md in history-of-science PR #606 (open, not merged). Nothing changed in Studio."
         }
       ],
       "remaining_action": "Compare HOS records with the 15 Nov check and write the fix list",
