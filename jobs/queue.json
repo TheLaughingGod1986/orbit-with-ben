@@ -258018,13 +258018,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-16T00:46Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-15T18:14Z",
-      "result": "Waiting for: Needs Ben in his own account: at 2026-11-16T00:38:40Z (when the fine-grained GitHub token was edited/regenerated), the 18:14Z token in BOARD_GH_TOKEN was invalidated on GitHub and now returns 401 Bad credentials (GET /api/checks -> 500 store read 401; POST /api/checks dryRun+checkThreads -> readStatus 401, writeProbeStatus 401, canPostComment false on both orbit-with-ben #478 and history-of-science #180 across studio-kanban.pages.dev and board.oppti.dev). In addition, BOARD_KEY in Cloudflare Pages had been overwritten (likely when pasting the new token into row 2 BOARD_KEY instead of row 1 BOARD_GH_TOKEN); BOARD_KEY has now been restored from 07_Content-Ops/.env and redeployed (95c94655.studio-kanban.pages.dev) so Ben's linked phone session works. Ben: in Cloudflare Pages -> studio-kanban -> Settings -> Variables and Secrets -> Production, paste the current valid GitHub token into BOARD_GH_TOKEN (row 1, not BOARD_KEY), then reply so we can redeploy and verify both threads.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-15T18:14Z",
@@ -258135,28 +258135,21 @@
           "at": "2026-11-16T01:05Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-16T09:00:00Z"
+        },
+        {
+          "at": "2026-11-16T01:44Z",
+          "by": "claude",
+          "what": "reopened: Ben, in chat (16 Nov 01:44Z): \"token's in\". The condition this job waited on is met: Ben was asked to regenerate the studio-board token (with Pull requests: read and write added, both repositories, no expiry) and paste the new value into the Pages project's production secret BOARD_GH_TOKEN, leaving BOARD_KEY alone. /api/checks still answered 500 on both addresses just before this note, as expected until the next deployment. DO: (1) List production secrets by name only: BOARD_GH_TOKEN and BOARD_KEY both present. Before deploying, make sure BOARD_KEY still matches the Mini's own copy (test after the deploy with the x-board-key call you used before; if it fails, restore it as you did at 01:04Z and say so). (2) Deploy the board from main to production. (3) On both addresses: GET /api/checks 200 with the saved ticks; one test tick written and removed; /api/data?f=ref 200. (4) Probe both threads through the deployed board (dryRun + checkThreads): Orbit #478 and History of Science #180 should both say canPostComment true. If #180 still says 403, the Pull requests permission is not on the token: park for Ben saying exactly that. If anything says 401, the value in BOARD_GH_TOKEN is not the live token: park for Ben saying that. (5) Run board_publish.py once and confirm checksStatus is ok and fresh. Then close the job. Do not post a real comment to either thread to test. Guards as before: never print the token or the board key, no address, nothing deleted but the test tick."
         }
       ],
-      "remaining_action": "Paste the current valid GitHub token into BOARD_GH_TOKEN (not BOARD_KEY) in Cloudflare Pages studio-kanban Production secrets, then redeploy and re-probe both threads",
+      "remaining_action": "Redeploy the board with Ben's regenerated token, prove ticks save and both channel threads accept a post",
       "due": "2026-11-15T19:00:00Z",
       "for": "gemini",
       "kind": "studio",
-      "plain": "Ben fixed the board token's permission: re-check that his approvals now reach the History of Science thread too",
+      "plain": "Ben put the regenerated token in: redeploy the board so he can approve again, and prove it reaches both channels",
       "urgent": 8,
       "model": "gemini-argon",
-      "escalated_at": "2026-11-15T22:45Z",
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-16T01:05Z",
-        "by": "gemini",
-        "note": "Verified board_publish.py state: ticks succeeded until 00:36:55Z and started returning 500 (store read 401) at 00:38:40Z"
-      },
-      "hold": {
-        "type": "ben",
-        "condition": "Needs Ben in his own account: at 2026-11-16T00:38:40Z (when the fine-grained GitHub token was edited/regenerated), the 18:14Z token in BOARD_GH_TOKEN was invalidated on GitHub and now returns 401 Bad credentials (GET /api/checks -> 500 store read 401; POST /api/checks dryRun+checkThreads -> readStatus 401, writeProbeStatus 401, canPostComment false on both orbit-with-ben #478 and history-of-science #180 across studio-kanban.pages.dev and board.oppti.dev). In addition, BOARD_KEY in Cloudflare Pages had been overwritten (likely when pasting the new token into row 2 BOARD_KEY instead of row 1 BOARD_GH_TOKEN); BOARD_KEY has now been restored from 07_Content-Ops/.env and redeployed (95c94655.studio-kanban.pages.dev) so Ben's linked phone session works. Ben: in Cloudflare Pages -> studio-kanban -> Settings -> Variables and Secrets -> Production, paste the current valid GitHub token into BOARD_GH_TOKEN (row 1, not BOARD_KEY), then reply so we can redeploy and verify both threads.",
-        "check_at": "2026-11-16T09:00:00Z"
-      }
+      "escalated_at": "2026-11-15T22:45Z"
     },
     {
       "id": "J2908",
