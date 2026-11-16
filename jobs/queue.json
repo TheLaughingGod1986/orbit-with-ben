@@ -253262,9 +253262,14 @@
           "at": "2026-11-16T01:45Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2850; starting verification of J0979 waiting condition on OWB:032"
+        },
+        {
+          "at": "2026-11-16T01:49Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified J0979 condition SATISFIED: J2477 KEEP (5dbd6f396e), Ben OK (14 Nov 22:46Z, 491feb6967), J2884 uploaded T3cBBss1F60, master/VO/bed hashes verified"
         }
       ],
-      "remaining_action": "Read J0979, J2477, and OWB:032 edit/UAT status to verify waiting condition",
+      "remaining_action": "Write jobs/reviews/J2850/REVIEW.md in a clean worktree and reopen J0979 with verified evidence",
       "kind": "review",
       "recheck_of": "J0979",
       "due": "2026-11-14T19:31:20+00:00",
@@ -253279,11 +253284,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-16T01:45Z",
+        "at": "2026-11-16T01:49Z",
         "by": "gemini",
-        "note": "Claimed J2850; starting verification of J0979 waiting condition on OWB:032"
+        "note": "Verified J0979 condition SATISFIED: J2477 KEEP (5dbd6f396e), Ben OK (14 Nov 22:46Z, 491feb6967), J2884 uploaded T3cBBss1"
       },
       "taskKeys": [
         "OWB:032"
