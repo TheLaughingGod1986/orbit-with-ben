@@ -258906,10 +258906,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-16T02:24Z",
+      "eta": "2026-11-16T03:54Z",
       "created_by": "gemini",
       "created_at": "2026-11-15T21:26Z",
       "result": "",
@@ -258978,6 +258978,11 @@
           "at": "2026-11-16T02:22Z",
           "by": "relay",
           "what": "rerouted to gemini: Cursor out of usage; next in its chain: gemini"
+        },
+        {
+          "at": "2026-11-16T02:24Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Wait for detached tmux j2915-render (/Users/benjaminoats/_desk/logs/J2915/mint.done), then build R1-R6 4fps contact strips and motion note on a review branch and post to #180",
