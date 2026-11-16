@@ -259919,13 +259919,27 @@
           "at": "2026-11-16T03:43Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-16T03:43Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-16T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Wait for J2915 guarded R1-R6 Flow generation (under Chief go 6898337122, PR #600 4308c896) and non-producer KEEP/FIX review on HOS desk #180 before J2172 assembly",
       "kind": "review",
       "recheck_of": "J2271",
       "due": "2026-11-16T04:43:24+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
