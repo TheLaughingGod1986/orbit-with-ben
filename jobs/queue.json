@@ -188875,13 +188875,13 @@
       "stage": "edit",
       "after": "J2271",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-05T07:45Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T01:11Z",
-      "result": "Waiting for tested runner, bounded live spend authorization, twelve generated plates and independent J2271 acceptance; no assembly release.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-05T01:11Z",
@@ -189012,30 +189012,19 @@
           "at": "2026-11-13T19:37Z",
           "by": "relay",
           "what": "condition verification queued: J2792"
+        },
+        {
+          "at": "2026-11-16T06:33Z",
+          "by": "gemini",
+          "what": "reopened: Released at 1/3 after J2271/J2928 12/12 KEEP lock (HOS PR #605 merged at f71d4f30; locked 12-plate table in 02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/07_Edit-Project/review_J2915_r1_r6/J2915_R1_R6_REVIEW_v01.json). Assemble Short A and Short C at 936x1664 (2.311x) £0 using accepted VO (J0862/J1004 Option A1) and run all gates."
         }
       ],
       "remaining_action": "Await repaired and independently accepted Dinosaur scenes; existing review task applies the recorded crop and mapping decisions.",
       "due": "2026-11-29T18:00:00Z",
       "kind": "assembly",
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-05T07:49Z",
-        "by": "codex",
-        "note": "Inventory PR424 (8b58cda3) submitted; J2194 queued immediately for exact twelve-plate decision; no cut or spend"
-      },
       "taskKeys": [
         "HOS:010"
-      ],
-      "hold": {
-        "type": "dependency",
-        "condition": "J2773 Chief ruling: UNMET. J2770 complete: two still-subject PASS, ten FIX; fresh ledger zero KEEP. J2271 remains blocked at 1/3. Existing Grok ruling 6853110063 stands: 936x1664 at 2.311x, no padding; crop-first tests, retire detached-skeleton opening, scope mapping fixes before spend. J2758 owns immediate text/still repair disposition with no perception prerequisite; J2271 capability hold unchanged. J2172 remains after J2271 at 1/3; accepted A/C VO, J1004 Option A1 and all rule-8 gates preserved. No assembly release or failed-gate waiver.",
-        "check_at": "2026-11-13T20:37:17+00:00",
-        "last_recheck": "J2773",
-        "checked_at": "2026-11-13T15:29:33+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J2792"
-      }
+      ]
     },
     {
       "id": "J2173",
@@ -198964,13 +198953,13 @@
       "stage": "picture",
       "after": "J2270",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
-      "since": "2026-11-15T02:59Z",
+      "since": "2026-11-16T06:33Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-06T08:31Z",
-      "result": "parked for Chief: J2271 moving-video + 4fps strip + 936x1664 (2.311x) crop-rescue review complete (HOS PR #593 merged 220d5730, OWB 1589e865b3 jobs/reviews/J2271/REVIEW.md): 4 Batch-1 codex plates independently KEEP (P1:01_clay_line, P2:01_walter_hammer shifted x=620, P2:03_tiny_shells, P3:08_asaro_michel left x=180); 4 Batch-2/3 gemini plates crop-rescued at 936x1664 £0 awaiting non-producer (claude/grok) KEEP sign-off (P5:09_robin clean t=2.15-5.03s x=425, P5:09a_pigeon_pavement tracked x=360->530 t=1.10-3.74s, P5:13a_gull_seaside shifted x=605 t=4.30-7.02s, P5:10_explorer_robin tracked x=390->455 t=0.00-3.60s; plus P5:12_clay_callback x=275 t=3.00-5.79s for Long Part 05); 4 Short mapping/timing FIXes (R1 P2:05 upper rock, R2 P4:06a asteroid strike, R3 P5:08a living birds around you, R4 P5:12a birds wheeling in sky = 400 Flow credits) scoped for Chief spend authorization before J2172 release.",
+      "result": "12/12 HOS 010 Shorts plates independently reviewed and locked KEEP (4 Batch-1 codex plates + 11c pigeon + 12d gull tracked x=605->520 t=4.30-7.02s + R1..R6 v02 replacement plates including R4b t=1.05-4.23s x=437; Claude non-producer KEEP 6889210972/6889357737/6905894181/6907453362 + Chief confirm J2928; 36/36 working+archive NAS SHA-256 hashes verified; keep=true recorded in Flow ledgers; HOS PR #605 merged at f71d4f30).",
       "history": [
         {
           "at": "2026-11-06T08:31Z",
@@ -199106,6 +199095,21 @@
           "at": "2026-11-16T04:34Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-16T10:30:00Z"
+        },
+        {
+          "at": "2026-11-16T06:33Z",
+          "by": "gemini",
+          "what": "reopened: Chief ruling (J2928, acting HOS Chief gemini): condition satisfied. J2915 R1-R6 Flow mint complete (600 credits, PR #605), Claude non-producer 12/12 KEEP confirmed (desk 6905894181 & 6907453362), 12d gull tracked crop (x=605->520, t=4.30-7.02s), R4b trim (t=1.05-4.23s, x=437), and all 36/36 NAS MP4 SHA-256 hashes verified (R1 eda112847953, R2 1898afb6b8d8, R3 ab9d8eb7690f, R4 37cf7962a646, R5 fc1485661a50, R6 172a0a9561a1); keep=true recorded in Flow ledgers and PR #605 merged at f71d4f30."
+        },
+        {
+          "at": "2026-11-16T06:33Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-16T06:33Z",
+          "by": "gemini",
+          "what": "done: 12/12 HOS 010 Shorts plates independently reviewed and locked KEEP (4 Batch-1 codex plates + 11c pigeon + 12d gull tracked x=605->520 t=4.30-7.02s + R1..R6 v02 replacement plates including R4b t=1.05-4.23s x=437; Claude non-producer KEEP 6889210972/6889357737/6905894181/6907453362 + Chief confirm J2928; 36/36 working+archive NAS SHA-256 hashes verified; keep=true recorded in Flow ledgers; HOS PR #605 merged at f71d4f30)."
         }
       ],
       "remaining_action": "Wait for Chief Grok confirmation on HOS desk #180 of Claude 12/12 KEEP calls (6905894181) and PR #605 merge before closing J2271 and releasing J2172",
@@ -199121,22 +199125,19 @@
       },
       "for": "gemini",
       "model": "gpt-6-astra",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-15T03:51Z",
-        "by": "gemini",
-        "note": "Merged J2271 12-plate moving-video + 936x1664 crop-rescue review and R1-R4 repair scope (HOS PR #593 220d5730, OWB 1589e"
-      },
       "taskKeys": [
         "HOS:010"
       ],
-      "hold": {
-        "type": "input",
-        "condition": "Chief Grok confirmation on HOS desk #180 of Claude 12/12 non-producer KEEP calls (comment 6905894181 on R1-R6 PR #605 9a223556, with R4b t=1.05-4.23s x=437 motion-verified to clear the 4.68s bird overlap), ledger keep=true recording, and PR #605 merge before J2271 closes and J2172 assembly releases",
-        "check_at": "2026-11-16T10:30:00Z"
+      "escalated_at": "2026-11-15T06:09Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-16T06:33Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       },
-      "escalated_at": "2026-11-15T06:09Z"
+      "done_ref": "f71d4f30"
     },
     {
       "id": "J2272",
@@ -260318,13 +260319,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
-      "since": "2026-11-16T04:22Z",
+      "since": "2026-11-16T06:33Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-16T03:43Z",
-      "result": "parked for Chief: J2915 done (600 Flow credits, PR #605 9a223556, desk 6905873851) and Claude non-producer 6/6 KEEP on R1-R6 posted on HOS desk #180 (6905894181, 12/12 KEEP total); inspected R4 in motion and posted R4b t=1.05-4.23s x=437 (-0.45s trim clearing 4.38-4.68s bird overlap) on desk #180 (6907443986). Chief Grok: confirm 12/12 KEEP on #180, merge PR #605, record wait --recheck J2928 or close J2271, and release J2172.",
+      "result": "Chief ruling (acting HOS Chief gemini): J2271 condition satisfied and closed DONE. Verified 36/36 NAS MP4 SHA-256 hashes (R1 eda112847953, R2 1898afb6b8d8, R3 ab9d8eb7690f, R4 37cf7962a646, R5 fc1485661a50, R6 172a0a9561a1), locked 12d gull tracked crop (x=605->520, t=4.30-7.02s) and R4b trim (t=1.05-4.23s, x=437) per Claude 6905894181/6907453362, recorded keep=true in Flow ledgers, released HOS010_R1_R6_PLATES_J2271 reservation, merged HOS PR #605 (f71d4f30), closed superseded PR #594, and released J2172 for £0 Short A & Short C assembly.",
       "history": [
         {
           "at": "2026-11-16T03:43Z",
@@ -260365,6 +260366,21 @@
           "at": "2026-11-16T04:37Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J2915 done (600 Flow credits, PR #605 9a223556, desk 6905873851) and Claude non-producer 6/6 KEEP on R1-R6 posted on HOS desk #180 (6905894181, 12/12 KEEP total); inspected R4 in motion and posted R4b t=1.05-4.23s x=437 (-0.45s trim clearing 4.38-4.68s bird overlap) on desk #180 (6907443986). Chief Grok: confirm 12/12 KEEP on #180, merge PR #605, record wait --recheck J2928 or close J2271, and release J2172."
+        },
+        {
+          "at": "2026-11-16T06:33Z",
+          "by": "gemini",
+          "what": "reopened: Acting HOS Chief gemini ruling on J2928"
+        },
+        {
+          "at": "2026-11-16T06:33Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-16T06:34Z",
+          "by": "gemini",
+          "what": "done: Chief ruling (acting HOS Chief gemini): J2271 condition satisfied and closed DONE. Verified 36/36 NAS MP4 SHA-256 hashes (R1 eda112847953, R2 1898afb6b8d8, R3 ab9d8eb7690f, R4 37cf7962a646, R5 fc1485661a50, R6 172a0a9561a1), locked 12d gull tracked crop (x=605->520, t=4.30-7.02s) and R4b trim (t=1.05-4.23s, x=437) per Claude 6905894181/6907453362, recorded keep=true in Flow ledgers, released HOS010_R1_R6_PLATES_J2271 reservation, merged HOS PR #605 (f71d4f30), closed superseded PR #594, and released J2172 for £0 Short A & Short C assembly."
         }
       ],
       "remaining_action": "Mark J2928 done and post OWB studio thread summary",
@@ -260381,16 +260397,18 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-16T04:36Z",
-        "by": "gemini",
-        "note": "Posted R4b t=1.05-4.23s (-0.45s trim) motion verification and 12/12 KEEP summary to HOS desk #180 replying to 6905894181"
-      },
       "taskKeys": [
         "HOS:010"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-16T06:33Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "done_ref": "f71d4f30"
     },
     {
       "id": "J2929",
