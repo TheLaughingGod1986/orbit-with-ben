@@ -261143,10 +261143,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-16T09:27Z",
+      "eta": "2026-11-16T10:57Z",
       "created_by": "refill",
       "created_at": "2026-11-16T09:25Z",
       "result": "",
@@ -261155,11 +261155,24 @@
           "at": "2026-11-16T09:25Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-11-16T09:27Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Pick two data-backed History of Science topics and add them to the waiting line",
       "kind": "script",
-      "backlog": "hos-ideas"
+      "backlog": "hos-ideas",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-16T09:27Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
