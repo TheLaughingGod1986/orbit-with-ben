@@ -260818,6 +260818,11 @@
           "at": "2026-11-16T07:52Z",
           "by": "claudecode",
           "what": "waits on Ben: Watch HOS 010 Short A, What Killed the Dinosaurs? (23 s), before it is uploaded (by 2026-12-01 18:00 London)"
+        },
+        {
+          "at": "2026-11-16T07:52Z",
+          "by": "claudecode",
+          "what": "waits on Ben: Watch HOS 010 Short C, Are Birds Really Dinosaurs? (24 s), before it is uploaded (by 2026-12-01 18:00 London)"
         }
       ],
       "remaining_action": "Confirm Play links for both UAT files and set awaits_ben",
@@ -260836,16 +260841,28 @@
       "taskKeys": [
         "HOS:010"
       ],
-      "awaits_ben": {
-        "what": "Watch HOS 010 Short A, What Killed the Dinosaurs? (23 s), before it is uploaded",
-        "file": "HOS UAT/010_Alvarez-Clay-Line-Dinosaurs/10_Shorts/hos_010_short_A_v01.mp4",
-        "version": "v01",
-        "due": "2026-12-01T18:00Z",
-        "ifNot": "Short A is not uploaded or scheduled; it also waits for the HOS 010 long to be public",
-        "title": "HOS 010 Short A: What Killed the Dinosaurs?",
-        "number": "010 Short A",
-        "type": "short"
-      }
+      "awaits_ben": [
+        {
+          "what": "Watch HOS 010 Short A, What Killed the Dinosaurs? (23 s), before it is uploaded",
+          "file": "HOS UAT/010_Alvarez-Clay-Line-Dinosaurs/10_Shorts/hos_010_short_A_v01.mp4",
+          "version": "v01",
+          "due": "2026-12-01T18:00Z",
+          "ifNot": "Short A is not uploaded or scheduled; it also waits for the HOS 010 long to be public",
+          "title": "HOS 010 Short A: What Killed the Dinosaurs?",
+          "number": "010 Short A",
+          "type": "short"
+        },
+        {
+          "what": "Watch HOS 010 Short C, Are Birds Really Dinosaurs? (24 s), before it is uploaded",
+          "file": "HOS UAT/010_Alvarez-Clay-Line-Dinosaurs/10_Shorts/hos_010_short_C_v01.mp4",
+          "version": "v01",
+          "due": "2026-12-01T18:00Z",
+          "ifNot": "Short C is not uploaded or scheduled; it also waits for the HOS 010 long to be public",
+          "title": "HOS 010 Short C: Are Birds Really Dinosaurs?",
+          "number": "010 Short C",
+          "type": "short"
+        }
+      ]
     },
     {
       "id": "J2934",
