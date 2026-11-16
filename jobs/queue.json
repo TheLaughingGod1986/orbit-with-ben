@@ -259868,13 +259868,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-16T02:49Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-16T02:48Z",
-      "result": "parked for Chief: J2921 QA sweep complete across OWB (89dfdf6613) and HOS PR #610 (b1403d3b) with byte-identical J2921_QA_SWEEP_INVENTORY_2026-11-16.json (sha256 82bd7163851a0229d7a73ebc18405df4f8117b97e3275b875fb61528cd38cf88) and J2921_QA_SWEEP_REPORT_2026-11-16.md (sha256 dfe41ed00d5134b55aeecd91e7307c043aefc6cfcf3938e3e1e7c01c168596e4). 255 entries inventoried (163 OWB + 92 HOS; 400 enumerated media files = 358 directly hashed unwrapped + 41 NAS tar + 1 manifest-backed iCloud stub; 27 net new post-J2753 renders + 1 updated export owb_sa_s8_voyager1_v02). All 744/744 applicable picture_qa/polish_gate/music_gate sidecars (717 JSON + 27 .txt) present, fresh vs media, and reconciled 1-to-1 against raw sidecars on disk with 0 mismatches; 0 unaddressed current_newest FAILs across all 155 newest candidates (all 27 gate_failure_indicators belong strictly to 8 historical_superseded cuts whose current_newest replacements pass all 3 gates with 0 FAIL); 0 new repair jobs required. Spend: £0.",
+      "result": "Chief KEEP by gemini: J2921 QA sweep accepted after independent 255-entry / 744-sidecar validation (0 missing sidecars, 0 SHA-256/verdict/field/item-list/derived-entry/freshness mismatches, 255/255 Section 6 rows, 0 current_newest FAILs across 155 newest candidates; all 27 fail indicators on 8 historical_superseded cuts). HOS PR #610 merged as 5e2a291d18e6f12e2dd5dc9703330b23b6a65669; OWB and HOS main copies byte-identical (inventory 82bd7163851a..., report dfe41ed00d51...). See jobs/reviews/J2921/REVIEW.md and CHIEF_VALIDATION.json. Audit complete only; 3,227 warnings and 154 partial_unreadable_comparisons music coverage limits plus all independent film/date/credit/Ben-watch holds preserved. 0 new repair jobs required. Spend: £0.",
       "history": [
         {
           "at": "2026-11-16T02:48Z",
@@ -259935,9 +259935,14 @@
           "at": "2026-11-16T06:14Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-16T08:15Z",
+          "by": "gemini",
+          "what": "Chief review KEEP: Chief KEEP by gemini: J2921 QA sweep accepted after independent 255-entry / 744-sidecar validation (0 missing sidecars, 0 SHA-256/verdict/field/item-list/derived-entry/freshness mismatches, 255/255 Section 6 rows, 0 current_newest FAILs across 155 newest candidates; all 27 fail indicators on 8 historical_superseded cuts). HOS PR #610 merged as 5e2a291d18e6f12e2dd5dc9703330b23b6a65669; OWB and HOS main copies byte-identical (inventory 82bd7163851a..., report dfe41ed00d51...). See jobs/reviews/J2921/REVIEW.md and CHIEF_VALIDATION.json. Audit complete only; 3,227 warnings and 154 partial_unreadable_comparisons music coverage limits plus all independent film/date/credit/Ben-watch holds preserved. 0 new repair jobs required. Spend: £0."
         }
       ],
-      "remaining_action": "Await Chief review of J2921 QA sweep inventory and report",
+      "remaining_action": "Complete: J2921 QA sweep accepted; existing film reviews retain all warnings and holds",
       "kind": "qa",
       "backlog": "both-qa-sweep",
       "progress": {
@@ -259958,7 +259963,8 @@
         "HOS:007",
         "HOS:008"
       ],
-      "escalated_at": "2026-11-16T06:14Z"
+      "escalated_at": "2026-11-16T06:14Z",
+      "done_ref": "jobs/reviews/J2921/REVIEW.md"
     },
     {
       "id": "J2922",
