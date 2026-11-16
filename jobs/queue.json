@@ -1,5 +1,5 @@
 {
-  "next_id": 2949,
+  "next_id": 2950,
   "jobs": [
     {
       "id": "J0001",
@@ -262347,6 +262347,35 @@
         "OWB:076",
         "OWB:077"
       ]
+    },
+    {
+      "id": "J2949",
+      "title": "Rule-E topic go/no-go review: OWB 076 (Every Space Shuttle Explained in 10 Minutes) and 077 (When Comet Shoemaker-Levy 9 Hit Jupiter) from J2948",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Rule-E topic go/no-go review for the two new Orbit With Ben backlog films created in J2948 (commit `9033ff1365` on `main`, branch `gemini/J2948`, mirrored to `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/` with 18/18 SHA-256 verification on each):\n\n1. **OWB:076 (`02_Video-Projects/076_Every-Space-Shuttle-Explained-In-10-Minutes/TOPIC.md`):** *Every Space Shuttle Explained in 10 Minutes (All 6 NASA Orbiters)* (Rule 26 + `studio/plan.json` Step 3 complete-tour title `\"Every Space Shuttle Explained in 10 Minutes (All 6 NASA Orbiters)\"`, exact `#1` autocomplete variant `\"Every Space Shuttle Mission Explained in 10 Minutes (135 Flights)\"`, and Rule 15 compact title `\"Every Space Shuttle Explained in 10 Minutes\"`; `0` exact title collisions; `17` verified neighbours `>=1.30M` views up to `21.88M` — Jared Owen `21.88M`/`16.43M`/`4.98M`/`3.04M`, SmarterEveryDay `13.40M`/`7.16M`/`5.37M`/`5.02M`/`4.09M`/`1.95M`/`1.77M`/`1.30M`, Tier-1 TED Chris Hadfield `10.19M`, Real Engineering `4.83M`/`2.11M`, Things That Go TV! `2.00M`, Tier-1 TED-Ed `1.79M`, plus complete-tour breakouts The Interpreter `328.1k`, Dr_Curio `219.7k`, CaljuCotcas `190.4k`, Classic Aerospace History `146.9k`, and Supernova `88.2k` + `neighbours.py` `PASS` with `11` strictly on-topic `>=1M` education videos; primary NASA SP-2011-613 *Wings in Orbit*, NASA SP-4225, CAIB `2003`, & Rogers Commission `1986` sources; 2 E1 Short angles on `24,300` `LI-900` silica thermal tiles at `1,650 °C` and `STS-61` `Endeavour` astronauts fixing Hubble's `2.2-µm` mirror flaw).\n2. **OWB:077 (`02_Video-Projects/077_When-Comet-Shoemaker-Levy-9-Hit-Jupiter/TOPIC.md`):** *What Happened When Comet Shoemaker-Levy 9 Hit Jupiter? (1994 Crash)* (Rule 26 `#1` autocomplete search phrase `\"What Happened When Comet Shoemaker-Levy 9 Hit Jupiter? (1994 Crash)\"` + Rule 15 compact title `\"Why Did Comet Shoemaker-Levy 9 Crash Into Jupiter?\"` + `studio/plan.json` complete-tour contingency recast `\"Every Giant Impact in the Solar System Explained in 10 Minutes\"`; `0` exact title collisions; `9` verified neighbours `>=1.18M` views up to `3.15M` — Naked Science `3.15M`, Astrum `3.10M`, CrashCourse `2.38M`/`2.04M`/`2.02M`/`1.83M`/`1.76M`/`1.34M`/`1.18M`, plus NASA Science `880k`, SH1R33N `824k`, BBC Studios `613k`, and Tier-1 TED Phil Plait `152k` & TED-Ed `139k` + `neighbours.py` `PASS` with `7` strictly on-topic `>=1M` Tier-2 education videos; primary *Science*, *Nature*, and *A&A* sources Asphaug & Benz 1994, Hammel et al. 1995, Martin et al. 1995, Lellouch et al. 1995, Cavalié et al. 2013; 2 E1 Short angles on Jupiter's `July 1992` Roche-limit breakup into `21` fragments and `July 1994` `6,000,000-megaton` Fragment G scar wider than Earth).\n\nCheck `TOPIC.md` and `11_Upload-Package/` audit sheets in both folders against `AGENTS.md` Rule E, `STUDIO_PLAYBOOK.md` §2, `studio/plan.json` (14 Nov 2026 long-video plan), and `LEARNINGS.md` rules 1–33 + `OWB-2026-11-E1`. Both films remain in `jobs/WIP.json` `next` under Rule G until an active OWB WIP slot frees up and `studio/plan.json` format tests read out.\n",
+      "ref": "9033ff1365",
+      "film": "076",
+      "stage": "topic",
+      "after": "J2948",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-16T16:32Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-16T16:32Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Rule-E topic go/no-go review: OWB 076 (Every Space Shuttle Explained in 10 Minutes) and 077 (When Comet Shoemaker-Levy 9 Hit Jupiter) from J2948",
+      "kind": "review",
+      "plain": "Review OWB 076 (Every Space Shuttle Explained in 10 Minutes) and OWB 077 (When Comet Shoemaker-Levy 9 Hit Jupiter) topic briefs against Rule E and studio/plan.json"
     }
   ],
   "focus": [

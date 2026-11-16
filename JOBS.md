@@ -79,6 +79,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2927 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J2933 | mini | blocked | claudecode | – | 010 edit · qa · `mini-claude-opus-5-5` · Review HOS 010 Short A v01 and Short C v01 (J2172, PR #611) | J2172 |
 | J2948 | any | claimed | gemini | 2026-11-16T17:38Z | script · OWB: learn from our data, add two new films to the backlog |  |
+| J2949 | mini | open (after J2948) | – | – | 076 topic · review · Rule-E topic go/no-go review: OWB 076 (Every Space Shuttle Explained in 10 Minutes) and 077 (When Comet Shoemaker-Levy 9 Hit Jupiter) from J2948 | 9033ff1365 |
 
 Recently finished:
 
