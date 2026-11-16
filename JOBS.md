@@ -46,7 +46,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2722 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2702 |  |
 | J2723 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2537 |  |
 | J2732 | any | blocked | codex | – | review · Mars wind Short: read next-morning snapshot after J2716 | 6831935790 |
-| J2741 | mini | claimed | gemini | 2026-11-16T03:36Z | review · J2683: recheck settled Titan curve and retain reproducible audit rows | 6829905842 |
 | J2744 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · Readout: 4-6 s drop, stayed-to-watch and APV on the three J2683 Shorts (Supermoon v04, 032 strike-match, 033 Short 2) | 6829905842 |
 | J2754 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2438 |  |
 | J2760 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2714 |  |

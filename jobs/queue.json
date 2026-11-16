@@ -243780,13 +243780,13 @@
       "stage": "",
       "after": "J2683",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-16T01:36Z",
-      "eta": "2026-11-16T03:36Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-12T23:35Z",
-      "result": "",
+      "result": "Chief PASS (26815189ed, 2ec1be0b2c): Titan ffYKoNVPoqg settled 100-row YTA curve (46v thru 10 Nov, 71v thru 12 Nov, <100 descriptive unscored; max 1-bucket -9.09 pp, max 5-bucket -30.30 pp at 3.96-4.86s, fixed 4-6s -39.39 pp) and reproducible 10-Short curves, hashes, and 28d search comparisons archived in jobs/reviews/J2741/{sanitized_evidence.json,REVIEW.md,DECISION.md}.",
       "history": [
         {
           "at": "2026-11-12T23:35Z",
@@ -243827,6 +243827,11 @@
           "at": "2026-11-16T01:36Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Verified 2ec1be0b2c and Chief DECISION.md (26815189ed)"
+        },
+        {
+          "at": "2026-11-16T01:36Z",
+          "by": "gemini",
+          "what": "done: Chief PASS (26815189ed, 2ec1be0b2c): Titan ffYKoNVPoqg settled 100-row YTA curve (46v thru 10 Nov, 71v thru 12 Nov, <100 descriptive unscored; max 1-bucket -9.09 pp, max 5-bucket -30.30 pp at 3.96-4.86s, fixed 4-6s -39.39 pp) and reproducible 10-Short curves, hashes, and 28d search comparisons archived in jobs/reviews/J2741/{sanitized_evidence.json,REVIEW.md,DECISION.md}."
         }
       ],
       "remaining_action": "Close J2741 with verified J2816/J2741 deliverables",
@@ -243846,7 +243851,8 @@
         "OWB:025",
         "OWB:030",
         "OWB:032"
-      ]
+      ],
+      "done_ref": "26815189ed"
     },
     {
       "id": "J2742",
