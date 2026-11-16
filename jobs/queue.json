@@ -1,5 +1,5 @@
 {
-  "next_id": 2958,
+  "next_id": 2959,
   "jobs": [
     {
       "id": "J0001",
@@ -262942,6 +262942,56 @@
         "askId": "J2230.3",
         "okAt": "2026-11-16T21:16Z",
         "okRef": "6912169020"
+      }
+    },
+    {
+      "id": "J2958",
+      "title": "Upload HOS 007 Short eradication v06 (How Was Smallpox Eradicated?) Private, Sun 29 Nov 11:30",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "# Upload HOS 007 Short eradication v06 (\"How Was Smallpox Eradicated?\") Private, Sun 29 Nov 11:30 London\n\nBen OK'd `J2230.4` (`v06`) on the Studio Kanban (`2026-11-16T11:11:11Z`, HOS #180 `6914782767`: \"watched it, looks good. Release held job J2230.\"). Elected Acting Chief (`gemini`) verified the master, hash, duration, public parent long, and free slot, and queued this Mini Studio delivery job.\n\n## Verified Master & Parent Long\n- **Master (NAS `studio-live`):** `/Volumes/data/studio-live/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/J2230/hos_007_eradication_v06.mp4`\n- **Mini local copy:** `/Users/benjaminoats/_desk/renders/J2230/vaccine_v05/hos_007_eradication_v06.mp4`\n- **SHA-256:** `33696b704872db9586f067d6c1b0573e118f19496936c5335e1be664926e935f` (`22.100 s`, `1080x1920`, `30 fps`, `61 words`)\n- **Spec & QA record:** `jobs/J2230/CURRENT_HANDOFF.md` and `02_Video-Projects/007_The-First-Vaccine/10_Shorts/_build_j2230_vaccine_shorts_v01.py`\n- **Parent long (`ETynHpIYLeY`):** *How Was the First Vaccine Made? (And Why It's Named After a Cow)* — **PUBLIC** (verified live in `J2947`; publish gate clear).\n- **Locked HOS Short slot:** **Sunday 29 November 2026 at 11:30 London (`2026-11-29T11:30:00Z`)** — verified free in `social/hos/UPLOADS.json` and `channel:audit`. Never two HOS Shorts on the same day; if taken when run, use the next free HOS Short slot (`Sat/Fri/Sun/Tue 11:30 London`).\n\n## Steps (GBP 0, no new generation, never Replace, never delete)\n1. In a clean HOS worktree from `origin/main`, create `02_Video-Projects/007_The-First-Vaccine/10_Shorts/11_Upload-Package/s07_eradication_v06/` with:\n   - `PACKAGE_MANIFEST.json` (`format: \"shorts\"`, `channel: \"@HistoryOfScienceYT\"`, `title: \"How Was Smallpox Eradicated?\"`, description starting with the answer hook + full film link `How Was the First Vaccine Made? (And Why It's Named After a Cow)` `https://www.youtube.com/watch?v=ETynHpIYLeY` + honest AI disclosure line, subject tags with zero channel names, `privacy: \"private\"`, `madeForKids: false`, `alteredContent: true`, `language: \"en-GB\"`, `categoryId: \"27\"`, `schedule: \"2026-11-29T11:30:00Z\"`, `videoSha256`, frame-0 `cover.jpg`, and `social: {hook, question, alt}`).\n   - `cover.jpg` extracted cleanly from frame 0 of `hos_007_eradication_v06.mp4` (no Explorer at frame 0) and `Captions/hos_007_eradication_v06.en-GB.srt` matching the 61 spoken words.\n2. Run in the **HOS checkout** (not OWB — OWB's `ROBOT_FRAME0_CHECK` is for the Orbit visor):\n   - `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <video> --air-date 2026-11-29` -> must PASS.\n   - `cd 07_Content-Ops && npm run lint:package -- --film 007` -> must PASS (0 errors).\n   - `cd 07_Content-Ops && npm run youtube:package -- --package <pkg_dir> --video <video> --dry-run` -> must PASS.\n3. Upload as a **NEW Private** video scheduled for `2026-11-29T11:30:00Z` (`PUBLISHING_DRY_RUN=false` on that one command line only; never edit `.env`).\n4. In HOS YouTube Studio (reusing one tab via `cdp_tabs.reuse_page`), set **Related video** to `ETynHpIYLeY` (*How Was the First Vaccine Made? (And Why It's Named After a Cow)*), verify `en-GB` captions are serving, re-check **Audience = Not Made for Kids** and **Altered content = Yes**, and confirm Visibility remains **Scheduled (`2026-11-29T11:30:00Z`)**.\n5. Register the new YouTube ID in OWB `00_Brand/Channel-Setup/social/hos/UPLOADS.json` (`buffer-mirror.ts register --channel hos --video <id> --media <video> --long ETynHpIYLeY`), update HOS `SHORTS_RELEASE.json` / `gate_shorts_open.py status`, run `cd 07_Content-Ops && npm run channel:audit` (0 errors) and `00_Brand/Channel-Setup/tools/check_all.sh`, and open/land the HOS package receipt PR.\n",
+      "ref": "6914782767",
+      "film": "007",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-16T21:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-16T21:16Z",
+          "by": "gemini",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-16T21:16Z",
+          "by": "gemini",
+          "what": "approved by Ben: Watch the Vaccine eradication Short. It is ready to schedule for Sunday 29 November at 11:30 London if you pass it. v06 (asked in J2230)"
+        }
+      ],
+      "remaining_action": "Package, gate, and upload HOS 007 eradication Short v06 Private for Sun 29 Nov 11:30 London",
+      "due": "2026-11-28T20:00:00Z",
+      "kind": "studio",
+      "plain": "Upload the Ben-OK'd HOS 007 smallpox eradication Short v06 Private for Sun 29 Nov 11:30 London, linked to the live Vaccine long.",
+      "mini_only": true,
+      "approved_from": {
+        "what": "Watch the Vaccine eradication Short. It is ready to schedule for Sunday 29 November at 11:30 London if you pass it.",
+        "file": "HOS UAT/007_The-First-Vaccine/10_Shorts/hos_007_eradication_v06.mp4",
+        "version": "v06",
+        "airs": "2026-11-29T11:30Z",
+        "title": "How Was Smallpox Eradicated?",
+        "number": "007",
+        "type": "short",
+        "channel": "HOS",
+        "job": "J2230",
+        "askId": "J2230.4",
+        "okAt": "2026-11-16T21:16Z",
+        "okRef": "6914782767"
       }
     }
   ],
