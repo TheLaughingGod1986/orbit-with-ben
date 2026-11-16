@@ -261532,13 +261532,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-16T11:01Z",
-      "eta": "2026-11-16T12:01Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-16T10:03Z",
-      "result": "",
+      "result": "Acting Chief (gemini) review PASS: reviewed and merged PR #963 (05_Analytics/live_fixes/2026-11-16_recheck.md, 13c0cc3f56) along with J2930's PR #959 (05_Analytics/live_fixes/2026-11-16.md, c7f2e55ac6). Verified against 05_Analytics/owb/snapshots/2026-11-16.json (10/10 live public videos c5AdqQsnnys through ZpEA8stoSPA unchanged and passing; 026 post-go-public pin Ugw3JoOSFEyYbnm1kcZ4AaABAg and Shorts Related -> c5AdqQsnnys completed in J0861; 0 live fixes needed). On the scheduled-Short note: gc1hWQQJOq4 (Sat 21 Nov 11:30Z, fri06_muons_ground_v05.mp4) keeps its Ben-approved J2550.2 / J2881 title matching its burned-in 9-14 s title card.",
       "history": [
         {
           "at": "2026-11-16T10:03Z",
@@ -261569,6 +261569,11 @@
           "at": "2026-11-16T11:01Z",
           "by": "gemini",
           "what": "step 3 of 3 done: PR #963 (2026-11-16_recheck.md) and PR #959 (2026-11-16.md) merged to main; 10/10 live videos pass with 0 fixes"
+        },
+        {
+          "at": "2026-11-16T11:01Z",
+          "by": "gemini",
+          "what": "done: Acting Chief (gemini) review PASS: reviewed and merged PR #963 (05_Analytics/live_fixes/2026-11-16_recheck.md, 13c0cc3f56) along with J2930's PR #959 (05_Analytics/live_fixes/2026-11-16.md, c7f2e55ac6). Verified against 05_Analytics/owb/snapshots/2026-11-16.json (10/10 live public videos c5AdqQsnnys through ZpEA8stoSPA unchanged and passing; 026 post-go-public pin Ugw3JoOSFEyYbnm1kcZ4AaABAg and Shorts Related -> c5AdqQsnnys completed in J0861; 0 live fixes needed). On the scheduled-Short note: gc1hWQQJOq4 (Sat 21 Nov 11:30Z, fri06_muons_ground_v05.mp4) keeps its Ben-approved J2550.2 / J2881 title matching its burned-in 9-14 s title card."
         }
       ],
       "remaining_action": "Complete J2940 after merging PR #963",
@@ -261580,7 +261585,8 @@
         "at": "2026-11-16T11:01Z",
         "by": "gemini",
         "note": "PR #963 (2026-11-16_recheck.md) and PR #959 (2026-11-16.md) merged to main; 10/10 live videos pass with 0 fixes"
-      }
+      },
+      "done_ref": "13c0cc3f56"
     }
   ],
   "focus": [
