@@ -251319,13 +251319,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-16T01:42Z",
-      "eta": "2026-11-16T03:42Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-14T13:19Z",
-      "result": "",
+      "result": "Chief review complete: CONDITION NOT MET (jobs/reviews/J2825/REVIEW.md). Fresh checks at 2026-11-16T01:40Z confirm J2517 (#793) and J2559 (#795) remain done, all eight ~/.codex approval-settings and gateway hashes match the 4-6 Nov 3/4 checkpoint unchanged, draft PR #490 (f521bcd3f1) remains open in draft with 0 comments, docs/CODEX_ALLOWLIST.md is not on main, and no operator confirmation or fresh-session scoped acceptance evidence has landed. J2040 remains held with last_recheck J2825 and next check 2026-11-16T07:45:00Z; fallback routing stays active and no autonomous approval-control changes made. GBP0.",
       "history": [
         {
           "at": "2026-11-14T13:19Z",
@@ -251381,6 +251381,11 @@
           "at": "2026-11-16T01:42Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Recorded Chief NOT MET ruling on J2040 with --recheck J2825 (next check 2026-11-16T07:45:00Z)"
+        },
+        {
+          "at": "2026-11-16T01:42Z",
+          "by": "gemini",
+          "what": "done: Chief review complete: CONDITION NOT MET (jobs/reviews/J2825/REVIEW.md). Fresh checks at 2026-11-16T01:40Z confirm J2517 (#793) and J2559 (#795) remain done, all eight ~/.codex approval-settings and gateway hashes match the 4-6 Nov 3/4 checkpoint unchanged, draft PR #490 (f521bcd3f1) remains open in draft with 0 comments, docs/CODEX_ALLOWLIST.md is not on main, and no operator confirmation or fresh-session scoped acceptance evidence has landed. J2040 remains held with last_recheck J2825 and next check 2026-11-16T07:45:00Z; fallback routing stays active and no autonomous approval-control changes made. GBP0."
         }
       ],
       "remaining_action": "Complete Chief administrative closure of J2825",
@@ -251404,7 +251409,8 @@
         "at": "2026-11-16T01:42Z",
         "by": "gemini",
         "note": "Recorded Chief NOT MET ruling on J2040 with --recheck J2825 (next check 2026-11-16T07:45:00Z)"
-      }
+      },
+      "done_ref": "jobs/reviews/J2825/REVIEW.md"
     },
     {
       "id": "J2826",
