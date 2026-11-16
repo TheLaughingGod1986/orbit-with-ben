@@ -82,7 +82,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2927 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J2932 | mini | open | – | – | for claudecode · studio · `mini-claude-opus-5-5` · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J2933 | mini | blocked | claudecode | – | 010 edit · qa · `mini-claude-opus-5-5` · Review HOS 010 Short A v01 and Short C v01 (J2172, PR #611) | J2172 |
-| J2934 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
+| J2934 | mini | claimed | gemini | 2026-11-16T10:46Z | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
 
 Recently finished:
 
