@@ -255596,9 +255596,14 @@
           "at": "2026-11-16T04:50Z",
           "by": "gemini",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-16T04:58Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Inspected J2243, J2614, HOS PR #595 (0cf1743f), OWB aa702b68a8, and HOS #180 / OWB #478 history"
         }
       ],
-      "remaining_action": "Inspect J2243 record, predecessor status, and latest block/wait history",
+      "remaining_action": "Verify NAS SHA-256 checksums for hos_008_master_v05.mp4 and _precheck/master_v05/J2243 artefacts",
       "kind": "review",
       "recheck_of": "J2243",
       "due": "2026-11-15T05:53:17+00:00",
@@ -255613,10 +255618,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-16T04:50Z",
-        "by": "gemini"
+        "at": "2026-11-16T04:58Z",
+        "by": "gemini",
+        "note": "Inspected J2243, J2614, HOS PR #595 (0cf1743f), OWB aa702b68a8, and HOS #180 / OWB #478 history"
       },
       "taskKeys": [
         "HOS:008"
