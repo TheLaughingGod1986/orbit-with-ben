@@ -262868,10 +262868,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-16T23:32Z",
+      "eta": "2026-11-17T01:02Z",
       "created_by": "gemini",
       "created_at": "2026-11-16T21:16Z",
       "result": "",
@@ -262950,6 +262950,11 @@
           "at": "2026-11-16T22:54Z",
           "by": "claudecode",
           "what": "released: UPLOADED, do not upload again: Sq_lV89VMUs Private, publishAt 2026-11-20T11:30:00Z. This run: en-GB captions uploaded and serving (API read-back, HOS branch claudecode/J2955-s06-cuff-upload 20b0d9d1); Studio read Scheduled, Not Made for Kids, Altered content Yes, Related video None. HOS Studio browser is CDP port 9460 (9222 is down). Left: set Related=wwcjcFfC-5M (picker click hung in scratch/J2955_work/related.py, nothing saved; open ytcp-shorts-content-links-picker another way), buffer-mirror register --channel hos from the Orbit checkout, gate status scheduled, SHORTS_RELEASE check, channel:audit, check_all, PR (sibling PR 621 already carries the first receipt commit)."
+        },
+        {
+          "at": "2026-11-16T23:32Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Set the Related video on the uploaded cuff Short in Studio, register it for social, run the channel checks and open the receipt pull request",
