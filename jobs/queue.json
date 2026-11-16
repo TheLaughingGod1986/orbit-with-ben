@@ -1,5 +1,5 @@
 {
-  "next_id": 2920,
+  "next_id": 2921,
   "jobs": [
     {
       "id": "J0001",
@@ -259076,6 +259076,36 @@
         "OWB:026"
       ],
       "done_ref": "1811535ed6"
+    },
+    {
+      "id": "J2920",
+      "title": "Rule-E topic go/no-go review: OWB 070 (Every Mars Rover Explained in 10 Minutes) and 071 (Why Did NASA Crash Cassini Into Saturn?) from J2912",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Rule-E topic go/no-go review for the two new Orbit With Ben backlog films created in J2912 (commit 993e658f86 on main):\n1. OWB:070 (02_Video-Projects/070_Every-Mars-Rover-Explained-In-10-Minutes/TOPIC.md): Every Mars Rover Explained in 10 Minutes (All 6 Rovers) (Rule 26 search phrase \"every mars rover explained\" + Rule 15 compact title \"Every Mars Rover Explained in 10 Minutes\" in studio/plan.json Step 3's number-in-title complete-tour format; 0 exact title collisions; 11 verified neighbours >=1.09M views: Mark Rober 26.14M, ElderFox 13.75M & 2.97M & 1.09M, Jared Owen 6.27M, NASA JPL 5.85M, TED 5.64M, Real Engineering 5.45M, TED-Ed 2.15M, Astrum Extra 1.64M, NASA 1.25M + neighbours.py PASS; verbatim NASA/JPL, Science, Nature, and Science Advances sources Golombek et al. 1997, Squyres et al. 2004/2008, Grotzinger et al. 2014, Li et al. 2022, Hoffman et al. 2022; 2 E1 Short angles on Perseverance MOXIE 122g O2 & 11.5kg Sojourner vs 1,025kg Perseverance).\n2. OWB:071 (02_Video-Projects/071_Why-Did-NASA-Crash-Cassini-Into-Saturn/TOPIC.md): Why Did NASA Crash Cassini Into Saturn? (To Protect Two Moons) (Rule 26 search phrases \"cassini crash into saturn footage\", \"cassini saturn final images\", \"cassini grand finale\" + Rule 15 compact title \"Why Did NASA Crash Cassini Into Saturn?\" + studio/plan.json 6-mission tour recast \"Every Spacecraft We Crashed Into a World Explained in 10 Minutes\"; 0 exact title collisions; 9 verified neighbours >=1.05M views: Astrum 9.28M & 2.50M & 1.17M & 1.05M, NASA JPL 5.81M & 1.92M & 1.62M, CrashCourse 1.65M, NASA 1.22M + NatGeo 328k + neighbours.py PASS; verbatim NASA/JPL, Science, Nature, and ApJ sources Spilker 2019, Iess et al. 2019, Waite et al. 2017/2018, Dougherty et al. 2018, Mankovich et al. 2019; 2 E1 Short angles on $4B planetary-protection plunge & 22 Grand Finale ring-gap dives).\nCheck TOPIC.md and 11_Upload-Package/ audit sheets in both folders against AGENTS.md Rule E, STUDIO_PLAYBOOK.md §2, studio/plan.json (14 Nov 2026 long-video plan), and LEARNINGS.md rules 1-33 + OWB-2026-11-E1. Both films remain in jobs/WIP.json next under Rule G until an active OWB WIP slot frees up and studio/plan.json format tests read out.\n",
+      "ref": "993e658f86",
+      "film": "070",
+      "stage": "topic",
+      "after": "J2912",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-16T00:42Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-16T00:42Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Rule-E topic go/no-go review: OWB 070 (Every Mars Rover Explained in 10 Minutes) and 071 (Why Did NASA Crash Cassini Into Saturn?) from J2912",
+      "kind": "review",
+      "plain": "Review OWB 070 (Every Mars Rover Explained in 10 Minutes) and OWB 071 (Why Did NASA Crash Cassini Into Saturn?) topic briefs against Rule E and studio/plan.json",
+      "mini_only": true
     }
   ],
   "focus": [
