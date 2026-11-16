@@ -259180,9 +259180,14 @@
           "at": "2026-11-16T01:15Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Audited OWB:070: verified 11 >=1M neighbours, #1 autocomplete phrase, non-overlap with 025/064, and primary Science/Nature/SciAdv sources; identified 6 precision/Rule-6/table fixes to apply"
+        },
+        {
+          "at": "2026-11-16T01:15Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Audited OWB:071: verified 9 >=1M neighbours, autocomplete phrases, non-overlap with 021/032/046, and Science/Nature/ApJ sources; identified 6 precision/policy/Rule-6/evidence fixes to apply"
         }
       ],
-      "remaining_action": "Audit OWB:071 TOPIC.md and 11_Upload-Package evidence against Rule E, STUDIO_PLAYBOOK.md §2, studio/plan.json, and LEARNINGS.md rules 1-33",
+      "remaining_action": "Apply Rule-E review fixes to OWB:070 and OWB:071 in a clean worktree, write jobs/reviews/J2920/REVIEW.md, and update status.json",
       "kind": "review",
       "plain": "Review OWB 070 (Every Mars Rover Explained in 10 Minutes) and OWB 071 (Why Did NASA Crash Cassini Into Saturn?) topic briefs against Rule E and studio/plan.json",
       "mini_only": true,
@@ -259196,11 +259201,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
         "at": "2026-11-16T01:15Z",
         "by": "gemini",
-        "note": "Audited OWB:070: verified 11 >=1M neighbours, #1 autocomplete phrase, non-overlap with 025/064, and primary Science/Natu"
+        "note": "Audited OWB:071: verified 9 >=1M neighbours, autocomplete phrases, non-overlap with 021/032/046, and Science/Nature/ApJ "
       },
       "taskKeys": [
         "OWB:070",
