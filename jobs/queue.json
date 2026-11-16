@@ -263151,9 +263151,14 @@
           "at": "2026-11-16T23:04Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-16T23:04Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Package, gate, and upload HOS 007 variolation Short v05 Private for Sat 28 Nov 11:30 London",
+      "remaining_action": "Build the upload package for the variolation Short, run the gates, upload it Private for Sat 28 Nov, finish Studio settings and record it",
       "due": "2026-11-27T20:00:00Z",
       "kind": "studio",
       "plain": "Upload the Ben-OK'd HOS 007 variolation Short v05 Private for Sat 28 Nov 11:30 London, linked to the live Vaccine long.",
@@ -263183,12 +263188,13 @@
       "model": "mini-claude-opus-5-5",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-16T23:04Z",
-        "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "claudecode"
+      },
+      "taskKeys": [
+        "HOS:007"
+      ]
     },
     {
       "id": "J2958",
