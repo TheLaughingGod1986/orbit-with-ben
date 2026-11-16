@@ -262006,18 +262006,27 @@
           "at": "2026-11-16T15:28Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J2944; starting HOS data analysis and existing backlog check"
+        },
+        {
+          "at": "2026-11-16T15:32Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Step 1 complete: ranked all 7 HOS longs and 30 Shorts from 2026-11-16 snapshot + studio_ctr.json + LEARNINGS.md; verified 000-113 and ideas 011-095 for non-overlap"
         }
       ],
-      "remaining_action": "Read HOS analytics, snapshots and LEARNINGS rules 1-22 to rank top 3 and bottom 3 longs and Shorts",
+      "remaining_action": "Run public_search.py and neighbours.py on HOS:114 and HOS:115 topic candidates",
       "kind": "script",
       "backlog": "hos-ideas",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-16T15:28Z",
+        "at": "2026-11-16T15:32Z",
         "by": "gemini",
-        "note": "Claimed J2944; starting HOS data analysis and existing backlog check"
-      }
+        "note": "Step 1 complete: ranked all 7 HOS longs and 30 Shorts from 2026-11-16 snapshot + studio_ctr.json + LEARNINGS.md; verifie"
+      },
+      "taskKeys": [
+        "HOS:114",
+        "HOS:115"
+      ]
     }
   ],
   "focus": [
