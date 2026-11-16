@@ -262871,6 +262871,11 @@
           "at": "2026-11-16T21:16Z",
           "by": "gemini",
           "what": "approved by Ben: Watch the Harvey cuff Short. It is ready to schedule for Friday 20 November at 11:30 London if you pass it. v04 (asked in J2230)"
+        },
+        {
+          "at": "2026-11-16T21:37Z",
+          "by": "relay",
+          "what": "rerouted to claudecode on mini-claude-opus-5-5: Cursor out of usage; next in its chain: claudecode"
         }
       ],
       "remaining_action": "Package, gate, and upload HOS 005 cuff Short v04 Private for Fri 20 Nov 11:30 London",
@@ -262891,7 +262896,16 @@
         "askId": "J2230.1",
         "okAt": "2026-11-16T21:16Z",
         "okRef": "HOS-J2230.1"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "claudecode",
+      "model": "mini-claude-opus-5-5"
     },
     {
       "id": "J2956",
