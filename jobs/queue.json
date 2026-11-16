@@ -263084,9 +263084,14 @@
           "at": "2026-11-16T21:22Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-16T21:22Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2960; reading J2831 history and checking iCloud pair file."
         }
       ],
-      "remaining_action": "Verify readiness: Remove the iCloud phone-link file after it is used or 24 hours have passed",
+      "remaining_action": "Inspect J2831 pair link status and iCloud Drive file 'Link this phone to the board'",
       "kind": "review",
       "recheck_of": "J2831",
       "due": "2026-11-14T17:00:00+00:00",
@@ -263105,8 +263110,7 @@
         "of": 3,
         "at": "2026-11-16T21:22Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Claimed J2960; reading J2831 history and checking iCloud pair file."
       }
     }
   ],
