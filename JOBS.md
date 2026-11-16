@@ -91,7 +91,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2915 | mini | open | – | – | 010 picture · video · HOS 010: mint R1-R6 Short replacement plates under Chief go 6898337122 and post review branch | J2271 |
 | J2916 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · Moon-Jupiter 30 Nov dated-event Short (airs Thu 26 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review | 02_Video-Projects/_dated_shorts/2026-11-30_moon-jupiter-conjunction.md |
 | J2917 | mini | open (after J2891) | – | – | 108 topic · for gemini · review · `gemini-argon` · HOS 108 Why Is Ice Slippery: rule-E topic go/no-go review |  |
-| J2918 | any | open (after J2891) | – | – | 109 topic · review · HOS 109 Why Do Fingers Wrinkle in Water: rule-E topic go/no-go review |  |
+| J2918 | mini | open (after J2891) | – | – | 109 topic · for gemini · review · `gemini-argon` · HOS 109 Why Do Fingers Wrinkle in Water: rule-E topic go/no-go review |  |
 
 Recently finished:
 

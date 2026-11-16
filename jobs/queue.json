@@ -258830,7 +258830,7 @@
     {
       "id": "J2918",
       "title": "HOS 109 Why Do Fingers Wrinkle in Water: rule-E topic go/no-go review",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Rule-E topic go/no-go review for **HOS:109 (`02_Video-Projects/109_Lewis-Pickering-WilderSmith-Smulders-Why-Fingers-Wrinkle`)** on HOS PR `#602` (`https://github.com/TheLaughingGod1986/history-of-science/pull/602`, branch `gemini/J2891-hos-topics-108-109`) and OWB PR `#951` (`https://github.com/TheLaughingGod1986/orbit-with-ben/pull/951`), queued by `J2891`.\n\n### Topic Summary\n- **Title A (Primary Proposal, Rule 26, 54 chars, 0 collisions):** `Why Do Fingers Wrinkle in Water? (The Cut-Nerve Proof)`\n- **Title B (T&C, Rule 23, 54 chars, 0 collisions):** `The Cut Nerve That Proved Why Fingers Wrinkle in Water`\n- **Title C (Rule 26 Exact Phrase First, 60 chars, 0 collisions):** `Why Do Fingers Wrinkle in Water? Not Because Skin Absorbs It`\n- **Short S01 (49 chars, 0 collisions):** `Why Doesn't Cut-Nerve Skin Wrinkle in Warm Water?`\n- **Short S02 (53 chars, 0 collisions):** `Do Wrinkled Fingers Really Help You Grip Wet Objects?`\n- **Saved Evidence (`2026-11-15`):**\n  - `11_Upload-Package/evidence_2026-11-15_neighbours.json` (`PASS`: `11` education videos `≥1,000,000` views, `TED-Ed/TED: yes`, led by `CrashCourse` `5,941,690` `Orumw-PyNjw`, `Veritasium` `4,840,049` `jn5M48MVWyg`, `Amoeba Sisters` `4,321,347` `RNLceVI8jcc`, `CrashCourse` `3,639,077` `71pCilo8k4M`, `TED-Ed` `3,540,775` `_r4c2NT4naQ`, `TED-Ed` `3,273,435` `VVL-8zr2hk4`, `TED-Ed` `2,360,295` `gsV7SJDDCY4`, `TED-Ed` `2,355,668` `OxPlCkTKhzY`, plus `TED-Ed` `115,153` `k7ve_ibAY1s`).\n  - `11_Upload-Package/evidence_2026-11-15_public_search.json` (`\"why do fingers wrinkle in water\"` autocomplete `yes`; ranking videos `Colossal Cranium` `1,370,412` views & `SciShow` `1,180,362` views, plus `TED-Ed` `k7ve_ibAY1s` `115,153` views; `0` exact title collisions).\n\n### Reviewer Checklist (AGENTS.md Rule E)\n1. Verify `TOPIC.md`, `status.json`, `production-status.md`, `11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md`, and the two raw JSON evidence files on HOS PR `#602`.\n2. Score the Rule-E topic rubric (neighbour demand `≥3` at `1M+` views with TED/TED-Ed presence, signed-out YouTube autocomplete demand, title collision check, non-duplication across `02_Video-Projects/`, `ideas/`, and `WIP.json`, and visual proof-first hook).\n3. Confirm that all historical and scientific claims remain marked **UNVERIFIED** until `SOURCES.md` exact quotes and the `facts` lane run when an active HOS WIP slot opens under Rule G (`jobs/WIP.json` `next_hos`).\n4. Record the Rule-E go/no-go verdict.\n",
       "ref": "",
@@ -258850,10 +258850,24 @@
           "at": "2026-11-16T00:05Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-16T00:06Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-16T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "HOS 109 Why Do Fingers Wrinkle in Water: rule-E topic go/no-go review",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
