@@ -261465,10 +261465,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-16T11:19Z",
+      "eta": "2026-11-16T12:49Z",
       "created_by": "refill",
       "created_at": "2026-11-16T09:53Z",
       "result": "",
@@ -261522,6 +261522,11 @@
           "at": "2026-11-16T11:16Z",
           "by": "gemini",
           "what": "remaining action: Complete OWB:074 & OWB:075 data-backed TOPIC.md packages with >=3 >=1M neighbour passes on the Mini, append to WIP.json next, and queue Rule-E review"
+        },
+        {
+          "at": "2026-11-16T11:19Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Complete OWB:074 & OWB:075 data-backed TOPIC.md packages with >=3 >=1M neighbour passes on the Mini, append to WIP.json next, and queue Rule-E review",
@@ -261536,7 +261541,15 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "mini_only": true
+      "mini_only": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-16T11:19Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2940",
