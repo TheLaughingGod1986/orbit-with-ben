@@ -79,7 +79,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2933 | mini | blocked | claudecode | – | 010 edit · qa · `mini-claude-opus-5-5` · Review HOS 010 Short A v01 and Short C v01 (J2172, PR #611) | J2172 |
 | J2951 | cloud | open | – | – | assembly · Stop the refill tick using 3-4 GB: read the acting Chief once per scan |  |
 | J2957 | mini | blocked | claudecode | – | 007 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload HOS 007 Short variolation v05 (What Is Variolation?) Private, Sat 28 Nov 11:30 | 6912169020 |
-| J2958 | mini | open | – | – | 007 upload · studio · Upload HOS 007 Short eradication v06 (How Was Smallpox Eradicated?) Private, Sun 29 Nov 11:30 | 6914782767 |
+| J2958 | mini | claimed | claudecode | 2026-11-17T01:14Z | 007 upload · studio · Upload HOS 007 Short eradication v06 (How Was Smallpox Eradicated?) Private, Sun 29 Nov 11:30 | 6914782767 |
 
 Recently finished:
 
