@@ -83,7 +83,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2896 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about the 21-year winters (v02, Test A opening) Private, slot Fri 18 Dec 11:30 |  |
 | J2916 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · Moon-Jupiter 30 Nov dated-event Short (airs Thu 26 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review | 02_Video-Projects/_dated_shorts/2026-11-30_moon-jupiter-conjunction.md |
 | J2921 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J2926 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0979 |  |
+| J2926 | mini | claimed | gemini | 2026-11-16T07:51Z | for gemini · review · `gemini-argon` · Verify condition for J0979 |  |
 | J2927 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J2928 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2271 |  |
 
