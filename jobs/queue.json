@@ -260781,13 +260781,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-16T07:51Z",
-      "eta": "2026-11-16T09:51Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-16T07:48Z",
-      "result": "",
+      "result": "parked for Chief: merge HOS PR #611 (CI green at 91cc0662; non-producer review found no blockers; SHA parity and both Play links 302 confirmed). Both Shorts wait for Ben's watch, awaits_ben J2933.1 and J2933.2, due 1 Dec 18:00",
       "history": [
         {
           "at": "2026-11-16T07:48Z",
@@ -260833,6 +260833,11 @@
           "at": "2026-11-16T07:54Z",
           "by": "claudecode",
           "what": "step 4 of 5 done: board_check OK at 07:54Z: cards HOS:ASK:J2933.1 and J2933.2 in Ben's lane, both Play links answer 302"
+        },
+        {
+          "at": "2026-11-16T07:54Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: merge HOS PR #611 (CI green at 91cc0662; non-producer review found no blockers; SHA parity and both Play links 302 confirmed). Both Shorts wait for Ben's watch, awaits_ben J2933.1 and J2933.2, due 1 Dec 18:00"
         }
       ],
       "remaining_action": "Chief to merge HOS PR #611; Ben to watch both Shorts",
