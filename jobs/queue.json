@@ -1,5 +1,5 @@
 {
-  "next_id": 2933,
+  "next_id": 2934,
   "jobs": [
     {
       "id": "J0001",
@@ -260752,6 +260752,38 @@
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0
+    },
+    {
+      "id": "J2933",
+      "title": "Review HOS 010 Short A v01 and Short C v01 (J2172, PR #611)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Non-producer QA & private final-watch handoff for HOS 010 Shorts A and C assembled in J2172 (HOS PR #611, commit `91cc066271b5a8a89ba29f4053e733871f685fd3`, £0, 0 credits).\n\nProducers to exclude from self-review: `gemini` assembled both Shorts and rendered the two £0 `9:16` code graphics; `cursor` minted the 12 Flow Veo plates. `claudecode` / `claude` / `codex` may review; if `gemini` or `cursor` is woken while non-producers are temporarily down, park with `jobs.py wait` until `claudecode` or `claude` is available rather than self-reviewing.\n\nDeliverables to verify (£0, no upload/schedule/privacy/retitle/Buffer):\n1. HOS PR #611 (`j2172-hos-010-shorts-assembly` @ `91cc0662`): inspect `10_Shorts/J2172/INVENTORY_AND_ASSEMBLY_REPORT.md`, `DELIVERY_MANIFEST.json`, and the QA outputs + contact sheets synced on the NAS under `/Volumes/data/studio-live/History Of Science/02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/10_Shorts/qa_short_A_v01/` and `qa_short_C_v01/` (`sheets/*_open_sheet.jpg`, `*_rows_sheet.jpg`, `picture_qa/picture_qa_review.jpg`, `cg_s06_iridium_spike_9x16.jpg`, `cg_s03_why_survive_9x16.jpg`), and merge PR #611 once CI is green (if elected Chief, or hand merge to Chief).\n2. Verify SHA-256 parity across NAS (`10_Shorts/J2172/short_A/` & `short_C/`) and `HOS UAT/010_Alvarez-Clay-Line-Dinosaurs/10_Shorts/`:\n   - `hos_010_short_A_v01.mp4` (*What Killed the Dinosaurs?*, `23.3 s`, `936x1664`, SHA-256 `ea29e26487d6631416449c9adf712f51b1b9508db06b7b6c29edc4236970fe59`)\n   - `hos_010_short_C_v01.mp4` (*Are Birds Really Dinosaurs?*, `23.6 s`, `936x1664`, SHA-256 `698db62789e1e6884ae15797dc51083c39bbc0ee3c0cc1ecf83f92e2e87a0359`)\n3. Confirm working unique Play 302 links for both `HOS UAT/010_Alvarez-Clay-Line-Dinosaurs/10_Shorts/*.mp4` files and set `awaits_ben` (`due: 2026-12-01T18:00Z`) for Ben's UAT watch under the 4 Nov order (`watched`/`heard` remain false until Ben watches).\n4. Keep scheduling conditional: HOS 010 long (planned Thu 3 Dec 2026 18:00Z, not yet uploaded) MUST be public before either Short airs; note Mon 7 Dec is not a locked HOS Sat/Fri/Sun/Tue Short weekday (`2026-12-04` Fri and `2026-12-06` Sun or `2026-12-08` Tue).\n",
+      "ref": "J2172",
+      "film": "010",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-16T07:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-16T07:48Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Inspect PR #611, NAS/UAT hashes & contact sheets, then set awaits_ben with working Play 302 links",
+      "due": "2026-11-30T18:00:00Z",
+      "kind": "qa",
+      "model": "mini-claude-opus-5-5",
+      "plain": "Non-producer QA review of HOS 010 Short A and Short C, then place both on Ben's watch with working Play links",
+      "mini_only": true
     }
   ],
   "focus": [
