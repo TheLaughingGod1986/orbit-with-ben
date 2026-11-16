@@ -262736,17 +262736,22 @@
           "at": "2026-11-16T18:13Z",
           "by": "gemini",
           "what": "step 2 of 4 done: 720p PHONE copy built & verified: 564,468,035 B, 6502.333s (195070f), exact master audio streamhash 74f9ab69..."
+        },
+        {
+          "at": "2026-11-16T18:19Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: NAS PHONE copy verified (sha256 4cf44797...), uploaded to R2 owb-sleep-01-v02 (302->206), registered in 55e4e2c5b8"
         }
       ],
-      "remaining_action": "Copy 720p PHONE proxy to NAS, upload to R2 watch store, register in watch_uploads.json, and verify HTTP 302/206",
+      "remaining_action": "Send Ben the whole-film watch card via jobs.py awaits and close J2954",
       "due": "2026-11-20T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-16T18:13Z",
+        "at": "2026-11-16T18:19Z",
         "by": "gemini",
-        "note": "720p PHONE copy built & verified: 564,468,035 B, 6502.333s (195070f), exact master audio streamhash 74f9ab69..."
+        "note": "NAS PHONE copy verified (sha256 4cf44797...), uploaded to R2 owb-sleep-01-v02 (302->206), registered in 55e4e2c5b8"
       }
     }
   ],
