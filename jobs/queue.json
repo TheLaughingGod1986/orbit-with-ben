@@ -260107,9 +260107,14 @@
           "at": "2026-11-16T05:51Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-16T05:51Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2926; starting verification and Acting-Chief review of J0979 (OWB:032 Short v02)"
         }
       ],
-      "remaining_action": "Verify readiness: Rendering final 032 Short v02 with zero picture_qa/polish_gate fails and verifying NAS SHA-256 copies",
+      "remaining_action": "Inspect J0979 submission (032 Short v02), studio thread, git commits, and NAS files",
       "kind": "review",
       "recheck_of": "J0979",
       "due": "2026-11-16T04:43:24+00:00",
@@ -260125,12 +260130,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-16T05:51Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2926; starting verification and Acting-Chief review of J0979 (OWB:032 Short v02)"
+      },
+      "taskKeys": [
+        "OWB:032"
+      ]
     },
     {
       "id": "J2927",
