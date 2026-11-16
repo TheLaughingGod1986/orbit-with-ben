@@ -1,8 +1,8 @@
 # Topic Go/No-Go Sheet & Opportunity Score — `OWB:074`
 
 - **Film:** `OWB:074` (`02_Video-Projects/074_Every-Apollo-Moon-Landing-Explained-In-10-Minutes`)
-- **Source Brief Job:** `J2939` (`gemini` on the Mac mini, `2026-11-16`)
-- **Status:** **READY FOR RULE-E REVIEW (`95 / 100` est. Opportunity Score; appended to `jobs/WIP.json` `next`, waiting on `studio/plan.json` `064` format-test readout & Rule G slot)**
+- **Source Brief Job:** `J2939` (`gemini` on the Mac mini, `2026-11-16`) · **Rule-E Review Job:** `J2941` (`gemini`, `2026-11-16`, `jobs/reviews/J2941/REVIEW.md`)
+- **Status:** **GO — PRE-CLEARED IN `jobs/WIP.json` `next` (`95 / 100` Opportunity Score; all `6` fixes applied; waiting on `studio/plan.json` `064` format-test readout & Rule G slot)**
 - **Primary Complete-Tour Title (`Rule 26` + `studio/plan.json`, `66 chars`):** `Every Apollo Moon Landing Explained in 10 Minutes (All 6 Landings)`
 - **Exact `#1` Autocomplete Variant (`Rule 26`, `62 chars`):** `Every Apollo Mission Explained in 10 Minutes (Apollo 11 to 17)`
 - **Compact Number-in-Title Variant (`Rule 15`, `49 chars`):** `Every Apollo Moon Landing Explained in 10 Minutes`

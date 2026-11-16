@@ -4,7 +4,8 @@
   "air": "",
   "stages": {
     "topic": {
-      "state": "doing"
+      "state": "done",
+      "ref": "jobs/reviews/J2941/REVIEW.md"
     },
     "script": {
       "state": "todo"
@@ -31,14 +32,6 @@
       "state": "todo"
     }
   },
-  "claims": [
-    {
-      "stage": "topic",
-      "by": "gemini",
-      "at": "2026-11-16T12:02Z",
-      "eta": "2026-11-16T13:31Z",
-      "note": "J2941 Rule-E topic go/no-go review: OWB 074 (Every Apollo Moon Landing Explained in 10 Minutes) and 075 (What Was 'Oumuamua?) from J2939"
-    }
-  ],
-  "next": "Appended to jobs/WIP.json next in J2939 (built natively in studio/plan.json Step 3 complete-tour format); Rule-E topic go/no-go review queued (--after J2939)"
+  "claims": [],
+  "next": "Pre-cleared in jobs/WIP.json next (Rule-E GO in J2941, 95/100; all 6 fixes applied); starts Script stage when an active OWB WIP slot opens after studio/plan.json format tests"
 }

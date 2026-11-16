@@ -1,8 +1,8 @@
 # OWB Topic Brief — `075` · *What Was 'Oumuamua? (The First Interstellar Object Explained)*
 
 - **Film ID:** `OWB:075` (`02_Video-Projects/075_What-Was-Oumuamua-The-First-Interstellar-Object`)
-- **Job:** `J2939` (`gemini` on the Mac mini, `2026-11-16`) · **Rule-E Review:** Queued (`--after J2939`)
-- **Rule-G WIP Status:** Appended to `jobs/WIP.json` `next` (waiting line only; unlocked while `studio/plan.json` pauses new single-question long builds after `034` Pluto on `2026-12-13` until the `064` / `SLEEP01` / `J01` format tests read out, with a native complete-tour recast `Every Interstellar Object Ever Discovered Explained in 10 Minutes` ready if `064` wins).
+- **Job:** `J2939` (`gemini` on the Mac mini, `2026-11-16`) · **Rule-E Review:** **GO (`96 / 100`, `J2941` by `gemini`, `2026-11-16`; all `6` fixes applied)**
+- **Rule-G WIP Status:** Pre-cleared in `jobs/WIP.json` `next` (Rule-E `GO` in `J2941`; unlocked while `studio/plan.json` pauses new single-question long builds after `034` Pluto on `2026-12-13` until the `064` / `SLEEP01` / `J01` format tests read out, with a native complete-tour recast `Every Interstellar Object Ever Discovered Explained in 10 Minutes` ready if `064` wins).
 - **Evidence Files Saved in Package (`£0` spend, no paid vidIQ):**
   - `11_Upload-Package/evidence_2026-11-16_public_search.json` (`public_search.py` signed-out YouTube GB autocomplete + top results, including `#1` exact autocomplete matches for `oumuamua explained`, `oumuamua`, and `interstellar object`, plus `7` on-topic `≥1M`-view `'Oumuamua`/interstellar-object videos up to `7.95M`)
   - `11_Upload-Package/evidence_2026-11-16_neighbours.json` (`neighbours.py` gate: **PASS**, `5` strictly on-topic `≥1M` `'Oumuamua`/comet/asteroid/Oort-Cloud education videos in `neighbours.json` — Tier-1 `TED` Karen J. Meech `7.95M`, CrashCourse `2.04M` / `1.34M` / `1.18M`, PBS Space Time `1.55M` — with off-topic rows marked `onTopic: false`)
@@ -66,10 +66,12 @@
        6. **`oumuamua trajectory`**
      - Query `"interstellar object"` returns `#1` exact autocomplete match:
        1. **`interstellar object`**
-       2. **`interstellar object in our solar system`**
-       3. **`interstellar object oumuamua`**
-       4. **`interstellar objects in space`**
-       5. **`interstellar object oumuamua trajectory`**
+       2. **`interstellar object 3i atlas`**
+       3. **`interstellar object in our solar system`**
+       4. **`interstellar object oumuamua`**
+       5. **`interstellar object 3i/atlas`**
+       6. **`interstellar objects in space`**
+       7. **`interstellar object oumuamua trajectory`**
      - Query `"what was oumuamua"` returns related autocomplete:
        1. **`what is oumuamua asteroid`**
    - **Top Ranking Videos on `"what was oumuamua"`, `"oumuamua explained"`, `"oumuamua"` & `"interstellar object"` (`gl=GB`, `2026-11-16`):**
@@ -79,18 +81,18 @@
      4. `XEggZo3SXNM` — *Everything We Know About 3I/ATLAS, the New ‘Oumuamua* | Astrum | **3,119,952 views** | `20:11`
      5. `ZJscxTyI__s` — *The Oort Cloud: Crash Course Astronomy #22* | CrashCourse | **2,043,881 views** | `11:41`
      6. `L007NADsqcQ` — *Was ‘Oumuamua an Alien Ship? Everything We Know So Far* | Destiny | **1,783,701–1,783,702 views** | `41:16`
-     7. `nYGs92-qnFY` — *The Origin of 'Oumuamua, Our First Interstellar Visitor | Space Time* | PBS Space Time | **1,550,231 views** | `14:04`
+     7. `nYGs92-qnFY` — *The Origin of 'Oumuamua, Our First Interstellar Visitor | Space Time* | PBS Space Time | **1,550,231 views** | `11:36`
      8. `kzlryv_55UI` — *Astrophysicists Discuss Our First Encounters with Interstellar Objects* | StarTalk | **1,462,533 views** | `37:17`
      9. `hkZRUs8A_9Q` — *'Oumuamua Finally Explained Using a Brilliant Analysis* | Anton Petrov | **1,341,210 views** | `12:05`
-     10. `auxpcdQimCs` — *Asteroids: Crash Course Astronomy #20* | CrashCourse | **1,339,570 views** | `11:36`
-     11. `yB9HHyPpKds` — *Comets: Crash Course Astronomy #21* | CrashCourse | **1,180,941 views** | `11:58`
+     10. `auxpcdQimCs` — *Asteroids: Crash Course Astronomy #20* | CrashCourse | **1,339,570 views** | `11:33`
+     11. `yB9HHyPpKds` — *Comets: Crash Course Astronomy #21* | CrashCourse | **1,180,941 views** | `11:55`
    - **Search Competition Note:** While `TED` (`7.95M`), `Astrum` (`6.84M` & `3.12M`), `The Space Race` (`6.41M`), `Destiny` (`1.78M`), `PBS Space Time` (`1.55M` & `790k`), `StarTalk` (`1.46M`), `Anton Petrov` (`1.34M`), `Sabine Hossenfelder` (`g0dcuXxHRaA`, `895,928 views`), and `DW Documentary` (`nAlCB3fB6W4`, `542,888–542,893 views`) prove massive ongoing viewer fascination with `'Oumuamua` and interstellar objects, `evidence_2026-11-16_public_search.json` also records that smaller channels on `"what was oumuamua"` / `"oumuamua explained"` range from `Insane Curiosity` (`mVVuSUBLi5c`, `155,614 views`), `Space Matters` (`h9qMofA4QwQ`, `98,927 views`), `Perimeter Institute` (`CzpJkCw1EDE`, `91,438 views` in `3 weeks`), `Professor Dave Explains` (`BJCO97BpYIE`, `68,046 views`), `Vigyan Show` (`AVEfdI-HAV4`, `60,102 views`), and `Inverse` (`-XqXouK7sqg`, `12,934 views`) down to unestablished `Space Explained` (`DuVjujqDv-4`, `27 views`) — reinforcing why `075` sits in `jobs/WIP.json` `next` behind `studio/plan.json`'s single-question pause after `034` Pluto (`2026-12-13`).
 
 2. **`studio/plan.json` Contingency Note Only — Complete Interstellar Visitors Tour Recast:**
    - **Status under `studio/plan.json` (`longs-2026-11`):** `064` (*Every Planet Explained in 10 Minutes*) is the plan's designated tour test film awaiting Ben's lock and its 14-day readout (`keep: 500`, `drop: 230`).
    - **Contingency Note (only if `064` passes its 14-day readout and Chief updates `studio/plan.json`, `65 chars ≤ 70`, `0` exact YouTube collisions):**
      `Every Interstellar Object Ever Discovered Explained in 10 Minutes`
-     - Tours every confirmed and candidate interstellar visitor to our solar system: (1) **`1I/2017 U1 ('Oumuamua)`** (`October 2017`, `e = 1.201`, `10:1` brightness swings, non-gravitational `H₂` acceleration), (2) **`2I/Borisov`** (`August 2019`, `e = 3.357`, `32.3 km/s` incoming speed, pristine `CO`-rich comet from another star), (3) **Interstellar dust & meteor candidates** (`Ulysses`/`Galileo`/`Cassini` interstellar dust streams + the debated `CNEOS 2014-01-08` bolide), and (4) how the **Vera C. Rubin Observatory (`LSST`)** and ESA's **2029 `Comet Interceptor`** at `L2` will catch the next interstellar visitors.
+     - Tours every confirmed and candidate interstellar visitor to our solar system: (1) **`1I/2017 U1 ('Oumuamua)`** (`October 2017`, `e = 1.201`, `10:1` brightness swings, non-gravitational `H₂` acceleration), (2) **`2I/Borisov`** (`August 2019`, `e = 3.357`, `32.3 km/s` incoming speed, pristine `CO`-rich comet from another star), (3) **`3I/ATLAS` (`C/2025 N1`, discovered July 2025 by ATLAS)** + **interstellar dust & meteor candidates** (`Ulysses`/`Galileo`/`Cassini` interstellar dust streams + the debated `CNEOS 2014-01-08` bolide), and (4) how the **Vera C. Rubin Observatory (`LSST`)** and ESA's **2029 `Comet Interceptor`** at `L2` will catch the next interstellar visitors.
 
 3. **Three Distinct Thumbnail Concepts (`LEARNINGS.md` Rules 11, 12, 14, 18, 19; `0` Orbit character):**
    - **Thumbnail A (ESO/NASA Tumbling Reddish Interstellar Object Against the Sun's Hyperbolic Arc):** High-contrast ESO/M. Kornmesser / NASA view of dark-red elongated `'Oumuamua` tumbling end-over-end past the Earth-Moon orbit on a steep hyperbolic trajectory line. Top-band text (`3 words`): **`FROM ANOTHER STAR`** (`ANOTHER STAR` in `#FFE000`, `FROM` in `#FFFFFF`).
@@ -101,7 +103,7 @@
 > *"In October 2017, telescopes in Hawaii spotted a tumbling red object racing past Earth at eighty-seven kilometres per second on an orbit so steep it could only have come from another star — and as it left the Sun, it inexplicably sped up."*
 
 - **First-30-Second Retention Architecture (`J2428` / `AGENTS.md` Lesson 7):**
-  - **`0:00` (Frame 0):** Real European Southern Observatory `VLT` / `Pan-STARRS1` discovery tracking frames showing `'Oumuamua` moving across streaked background stars, cutting to its steep `119°`-inclined hyperbolic dive through the inner solar system (zero Orbit character, zero title card, zero fade-from-black).
+  - **`0:00` (Frame 0):** Real European Southern Observatory `VLT` / `Pan-STARRS1` discovery tracking frames showing `'Oumuamua` moving across streaked background stars, cutting to its steep `122.74°`-inclined retrograde hyperbolic dive through the inner solar system (zero Orbit character, zero title card, zero fade-from-black).
   - **`0:00–0:08`:** Spoken Sentence 1 states the `October 2017` discovery, the `87.7 km/s` perihelion speed, the extrasolar origin, and the unexplained outward acceleration.
   - **`0:08–0:20`:** Concrete payoff hint + `DATA` #1 (animated hyperbolic eccentricity & lightcurve chart: bound planets/comets have eccentricity `e < 1.0`, whereas `'Oumuamua` hit **`e = 1.201`**, dimmed and brightened by **`10×` (`2.5 magnitudes`) every `7.3–8.7 hours`**, and pulled **`40,000 km` ahead** of gravity with zero visible dust tail). Zero agenda line (`"In this film..."` banned).
   - **`0:20–0:45`:** Visual change every `≤4 s` contrasting the `2018` competing hypotheses (`nitrogen iceberg`, `hydrogen iceberg`, `solar radiation pressure`) with the **`2023` `Bergner & Seligman` (*Nature*) breakthrough** showing cosmic-ray-formed molecular hydrogen (`H₂`) escaping warming amorphous water ice before the first chapter card at `≥0:45`.
@@ -122,7 +124,7 @@
   - Emergency observations with the **European Southern Observatory's `8.2-m` Very Large Telescope (`VLT`)**, Gemini South, Keck, and the **Hubble Space Telescope** (`Karen J. Meech` team) showed `'Oumuamua`'s brightness varied by **`~2.5–2.6 magnitudes` — a factor of `10:1` (`10×`) — every `~7.3 to 8.67 hours`** due to non-principal-axis **"tumbling" rotation** (`Belton et al. 2018`).
   - Assuming an albedo of `0.04–0.10`, `Meech et al. 2017` derived an effective radius of `~102 m` with an extreme axis ratio (`>5:1` to `10:1`, roughly `~230–400 m` long by `~35–40 m` wide if cigar-shaped / prolate), while full 3D lightcurve modelling by `Mashchenko 2019` (*MNRAS*) showed an **oblate "pancake" spheroid (`~115 × 111 × 19 m`, `~6:1` ratio)** fits the lightcurve minimum probabilities even better than a cigar.
 - **Zero Coma in Spitzer & the Non-Gravitational Acceleration Paradox (`Micheli et al. 2018`, *Nature* `559`, `223–226`; `Trilling et al. 2018`, *AJ* `156`, `261`):**
-  - Deep optical imaging (`Meech et al. 2017`) and `33 hours` of **NASA Spitzer Space Telescope** infrared (`4.5 µm`) observations in November 2017 (`Trilling et al. 2018`) detected **zero dust coma and zero carbon monoxide (`CO`) or carbon dioxide (`CO₂`) outgassing** (placing an upper limit on `CO` production of `< 2 × 10²² molecules/s` and an infrared effective diameter constraint of `~100–440 m` depending on albedo).
+  - Deep optical imaging (`Meech et al. 2017`) and `33 hours` of **NASA Spitzer Space Telescope** infrared (`4.5 µm` IRAC Channel 2) observations in November 2017 (`Trilling et al. 2018`) detected **zero dust coma and zero carbon dioxide (`CO₂`) or carbon monoxide (`CO`) outgassing** (placing `3σ` upper limits of `Q(CO₂) < 9 × 10²² molecules/s` and `Q(CO) < 9 × 10²¹–2 × 10²² molecules/s`, and `3σ` effective diameter limits of `< 98 m`, `< 140 m`, and `< 440 m` for albedos `p_V = 0.20, 0.10, 0.01`).
   - Yet in **June 2018**, **Marco Micheli** and colleagues (`Micheli et al. 2018`, *Nature*) analysed `208` astrometric positions from Hubble and ground telescopes across an `80-day` arc (`October 2017 – January 2018`) and proved `'Oumuamua` experienced a **`30σ` non-gravitational radial acceleration** scaling with solar distance as **`a ≈ 4.92 × 10⁻⁶ × (1 AU / r)² m/s²`** (about `0.1%` of solar gravity), pushing `'Oumuamua` **`~40,000 km` farther out** than a purely gravitational orbit by January 2018.
 - **How Science Solved the Acceleration — `2023` Radiolytic Molecular Hydrogen Outgassing (`Bergner & Seligman 2023`, *Nature* `615`, `610–613`):**
   - Between `2018` and `2021`, astrophysicists tested competing models: pure molecular hydrogen (`H₂`) ice (`Seligman & Laughlin 2020`, which would sublime too rapidly in the interstellar medium), solid nitrogen (`N₂`) ice knocked off an exo-Pluto (`Jackson & Desch 2021`), or solar radiation pressure requiring a `<1-mm`-thick membrane (`Bialy & Loeb 2018`).
@@ -138,17 +140,17 @@ Saved raw pulls: `11_Upload-Package/evidence_2026-11-16_public_search.json` and 
 
 | # | Verified Views (`2026-11-16`) | Channel (Internal Note Only) | YouTube ID | Length | Title | Subject Words to Reuse (Never Channel Names) |
 |---:|---:|---|---|---:|---|---|
-| **1** | **7,947,514** | TED | `rfi3w9Bzwik` | `13:25` | *The story of 'Oumuamua, the first visitor from another star system \| Karen J. Meech \| TED* | `oumuamua`, `first visitor from another star system`, `interstellar object`, `pan-starrs` |
+| **1** | **7,947,513–7,947,514** | TED | `rfi3w9Bzwik` | `13:25` | *The story of 'Oumuamua, the first visitor from another star system \| Karen J. Meech \| TED* | `oumuamua`, `first visitor from another star system`, `interstellar object`, `pan-starrs` |
 | **2** | **6,840,954** | Astrum | `u4tzK89ZfmA` | `31:13` | *Everything We Know About 'Oumuamua* | `everything we know about oumuamua`, `what was oumuamua`, `oumuamua explained` |
 | **3** | **6,405,405** | The Space Race | `b2_M-1YqnNI` | `19:59` | *The Object That Will Change Your View of Space Forever* | `interstellar object`, `oumuamua trajectory`, `interstellar visitor` |
 | **4** | **3,119,952** | Astrum | `XEggZo3SXNM` | `20:11` | *Everything We Know About 3I/ATLAS, the New ‘Oumuamua* | `oumuamua`, `interstellar objects in our solar system`, `hyperbolic orbit` |
 | **5** | **2,043,881** | CrashCourse | `ZJscxTyI__s` | `11:41` | *The Oort Cloud: Crash Course Astronomy #22* | `oort cloud`, `interstellar comets`, `hyperbolic trajectory` |
-| **6** | **1,783,702** | Destiny | `L007NADsqcQ` | `41:16` | *Was ‘Oumuamua an Alien Ship? Everything We Know So Far* | `what was oumuamua`, `oumuamua acceleration`, `1i/2017 u1` |
-| **7** | **1,550,231** | PBS Space Time | `nYGs92-qnFY` | `14:04` | *The Origin of 'Oumuamua, Our First Interstellar Visitor \| Space Time* | `origin of oumuamua`, `first interstellar visitor`, `oumuamua speed` |
+| **6** | **1,783,701–1,783,702** | Destiny | `L007NADsqcQ` | `41:16` | *Was ‘Oumuamua an Alien Ship? Everything We Know So Far* | `what was oumuamua`, `oumuamua acceleration`, `1i/2017 u1` |
+| **7** | **1,550,231** | PBS Space Time | `nYGs92-qnFY` | `11:36` | *The Origin of 'Oumuamua, Our First Interstellar Visitor \| Space Time* | `origin of oumuamua`, `first interstellar visitor`, `oumuamua speed` |
 | **8** | **1,462,533** | StarTalk | `kzlryv_55UI` | `37:17` | *Astrophysicists Discuss Our First Encounters with Interstellar Objects* | `interstellar objects`, `oumuamua and borisov`, `2i/borisov` |
 | **9** | **1,341,210** | Anton Petrov | `hkZRUs8A_9Q` | `12:05` | *'Oumuamua Finally Explained Using a Brilliant Analysis* | `oumuamua finally explained`, `oumuamua explained`, `hydrogen outgassing` |
-| **10** | **1,339,570** | CrashCourse | `auxpcdQimCs` | `11:36` | *Asteroids: Crash Course Astronomy #20* | `asteroids`, `lightcurve rotation`, `solar system objects` |
-| **11** | **1,180,941** | CrashCourse | `yB9HHyPpKds` | `11:58` | *Comets: Crash Course Astronomy #21* | `comets`, `comet outgassing`, `non-gravitational acceleration` |
+| **10** | **1,339,570** | CrashCourse | `auxpcdQimCs` | `11:33` | *Asteroids: Crash Course Astronomy #20* | `asteroids`, `lightcurve rotation`, `solar system objects` |
+| **11** | **1,180,941** | CrashCourse | `yB9HHyPpKds` | `11:55` | *Comets: Crash Course Astronomy #21* | `comets`, `comet outgassing`, `non-gravitational acceleration` |
 
 - **Pool Strength:** **11 on-topic education/space videos in the table above between `1.18M` and `7.95M` views** (including `5` strictly on-topic `≥1M` Tier-1/Tier-2 videos inside `neighbours.json` alone — Tier-1 `TED` Karen J. Meech `7,947,514` [`7,947,513` in `public_search.json`], `CrashCourse` `2,043,881` / `1,339,570` / `1,180,941`, and `PBS Space Time` `1,550,231` — plus `PBS Space Time` `wICOlaQOpM0` at **789,993 views**, `Sabine Hossenfelder` `g0dcuXxHRaA` at **895,928 views**, `SciShow` `q7AM3ViYckA` at **560,949 views**, and `DW Documentary` `nAlCB3fB6W4` at **542,888–542,893 views**), all verified in `evidence_2026-11-16_public_search.json` and `evidence_2026-11-16_neighbours.json`.
 
@@ -168,14 +170,14 @@ Saved raw pulls: `11_Upload-Package/evidence_2026-11-16_public_search.json` and 
    - **Single Fact & Payoff (answer starts at word `44 of 60 = 73.3% ≥ 70%` duration, `60 words` total, `<1.2 s` loop tail):**
      > *"'Oumuamua sped up leaving our Sun. After whipping past Earth in October 2017, the tumbling interstellar object pulled forty thousand kilometres ahead of where solar gravity alone should have put it, yet telescopes saw zero comet dust or glowing gas tail behind it. In 2023, researchers showed sunlight released invisible hydrogen trapped in ancient water ice, gently pushing 'Oumuamua outward."*
 
-2. **Short `S02` (`24 s`, `61 words` — How Astronomers Proved `'Oumuamua` Came From Another Star System):**
+2. **Short `S02` (`24 s`, `63 words` — How Astronomers Proved `'Oumuamua` Came From Another Star System):**
    - **YouTube Title (`68 chars`, verified `0` exact YouTube collisions):**
      **`How Did Astronomers Spot 'Oumuamua Passing Through Our Solar System?`**
    - **Frame 0 (`t = 0.0 s`) Top-Safe Hook Text (`3` words, `#FFE000` keyword):**
      `FROM ANOTHER STAR` (`ANOTHER STAR` in `#FFE000`, `mode: "cover"` full-bleed `9:16` moving real `VLT`/`Pan-STARRS1` tracking sequence of pinpoint `'Oumuamua` racing across streaked background stars into its steep hyperbolic solar-system dive, `0%` blur bars).
    - **First Spoken Sentence (`0.0–1.5 s` Surprise per Rule 24, `6 words`, `Cut 1 ≤ 2.8 s`):**
      *"'Oumuamua came from another star system."*
-   - **Mid-Short Stat Overlay (`8.0–11.0 s`, `4 words ≤ 4`, exact word-for-word match to spoken `eighty-seven kilometres per second` line so the `hyperbolic orbit and ten-to-one brightness` payoff is withheld to `≥70%` runtime per Rule 6):**
+   - **Mid-Short Stat Overlay (`8.0–11.0 s`, `4 words ≤ 4`, exact word-for-word match to spoken `eighty-seven kilometres per second` line so the `hyperbolic trajectory and tenfold brightness` payoff is withheld to `≥70%` runtime per Rule 6):**
      `EIGHTY-SEVEN KILOMETRES PER SECOND`
-   - **Single Fact & Payoff (answer starts at word `43 of 61 = 70.5% ≥ 70%` duration, `61 words` total, `<1.2 s` loop tail):**
-     > *"'Oumuamua came from another star system. On the nineteenth of October 2017, astronomer Robert Weryk spotted a faint dot in Hawaii's Pan-STARRS telescope that had already whipped around the Sun at eighty-seven kilometres per second and was racing back into deep space. Its open hyperbolic orbit and ten-to-one brightness swings proved it was a tumbling interstellar visitor unbound to our Sun."*
+   - **Single Fact & Payoff (answer starts at word `46 of 63 = 73.0% ≥ 70%` duration [`48 of 65 = 73.8%` hyphen-split], `63 words` total, `<1.2 s` loop tail):**
+     > *"'Oumuamua came from another star system. On the nineteenth of October 2017, astronomer Robert Weryk spotted a faint dot in Hawaii's Pan-STARRS telescope that had already whipped around the Sun at eighty-seven kilometres per second and was racing past Earth's orbit back into deep space. Its open hyperbolic trajectory and tenfold brightness swings proved it was a tumbling visitor unbound to our Sun."*
