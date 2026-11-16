@@ -1,5 +1,5 @@
 {
-  "next_id": 2951,
+  "next_id": 2952,
   "jobs": [
     {
       "id": "J0001",
@@ -262504,6 +262504,35 @@
         "by": "macbook",
         "note": "no live page read from this lane"
       }
+    },
+    {
+      "id": "J2951",
+      "title": "Stop the refill tick using 3-4 GB: read the acting Chief once per scan",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "The Mini ran out of application memory on 16 Nov 2026 (macOS Force Quit dialog). Cause found in this session:\n`scripts/refill.py refill --git`, started by the relay every minute, grew to 2.7-4 GB and took ~50 s.\n\n`refill.ready()` calls `jobs.can_any_mini_claim()` for each of the 2,950 queue jobs. For every Chief-role job that\ncalled `chief_relay.acting()`, which re-reads every Chief's state, including the whole 15 MB `jobs/queue.json`\n(`state_of(\"claude\")` -> `claude_out`). One scan parsed that file ~1,500 times (13,188 json.loads in a profile).\n\nFix: `can_any_mini_claim` takes a per-scan `memo`; `refill.ready` and `do_watch` pass one, so the acting Chief (per\nchain), the execution lease and the capability reports are read once per scan at one `at`. Same answer, since none\ncan change within one instant. Measured on the live queue: 49 s / 3.7 GB -> 1.7 s / 301 MB, same result (0 ready).\nRegression test in test_refill.py; full scripts suite 1329 passed.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-16T17:18Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-16T17:18Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Merge the fix and confirm the relay's refill runs small",
+      "kind": "assembly",
+      "plain": "Fixing a background check that used up the Mac mini's memory every minute"
     }
   ],
   "focus": [
