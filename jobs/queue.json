@@ -261919,9 +261919,14 @@
           "at": "2026-11-16T14:54Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2943; starting 4-step verification of J2040 waiting condition"
+        },
+        {
+          "at": "2026-11-16T14:55Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Verified J2517/J2559 done, all 8 local ~/.codex hashes unchanged, PR #490 still draft at f521bcd3f1 with 0 comments, docs/CODEX_ALLOWLIST.md absent on main"
         }
       ],
-      "remaining_action": "Read J2040, J2934 review, and inspect local ~/.codex files and PR #490 state",
+      "remaining_action": "Write jobs/reviews/J2943/REVIEW.md in a clean worktree and commit/push to main",
       "kind": "review",
       "recheck_of": "J2040",
       "due": "2026-11-16T15:50:28+00:00",
@@ -261936,11 +261941,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-16T14:54Z",
+        "at": "2026-11-16T14:55Z",
         "by": "gemini",
-        "note": "Claimed J2943; starting 4-step verification of J2040 waiting condition"
+        "note": "Verified J2517/J2559 done, all 8 local ~/.codex hashes unchanged, PR #490 still draft at f521bcd3f1 with 0 comments, doc"
       }
     }
   ],
