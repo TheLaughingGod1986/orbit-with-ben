@@ -258038,9 +258038,14 @@
           "at": "2026-11-16T00:50Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Confirmed BOARD_GH_TOKEN in studio-kanban production secret list; live worker started returning 401 at 00:38Z after token edit/regeneration, redeploying now"
+        },
+        {
+          "at": "2026-11-16T01:04Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Restored BOARD_KEY in studio-kanban production secrets from 07_Content-Ops/.env (after discovering BOARD_KEY had been overwritten between 19:02Z and 00:51Z) and deployed main to production (95c94655.studio-kanban.pages.dev)"
         }
       ],
-      "remaining_action": "Deploy studio-kanban from main to pick up updated BOARD_GH_TOKEN",
+      "remaining_action": "Probe /api/checks and /api/data?f=ref on both studio-kanban.pages.dev and board.oppti.dev",
       "due": "2026-11-15T19:00:00Z",
       "for": "gemini",
       "kind": "studio",
@@ -258049,11 +258054,11 @@
       "model": "gemini-argon",
       "escalated_at": "2026-11-15T22:45Z",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-16T00:50Z",
+        "at": "2026-11-16T01:04Z",
         "by": "gemini",
-        "note": "Confirmed BOARD_GH_TOKEN in studio-kanban production secret list; live worker started returning 401 at 00:38Z after toke"
+        "note": "Restored BOARD_KEY in studio-kanban production secrets from 07_Content-Ops/.env (after discovering BOARD_KEY had been ov"
       }
     },
     {
