@@ -1,5 +1,5 @@
 {
-  "next_id": 2942,
+  "next_id": 2943,
   "jobs": [
     {
       "id": "J0001",
@@ -259498,13 +259498,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-15T22:21Z",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-15T22:12Z",
-      "result": "HELD ON BEN'S OK: Chief KEEP v01 (jobs/reviews/J2916/REVIEW.md, 3ad36fcfca). owb_dated_2026_11_30_moon_jupiter_v01.mp4 and moon_jupiter_2026_11_30_cover_v01.jpg are in OWB UAT and WATCH_FULL and the watch card is on the board. Needs Ben's OK by Wed 25 Nov 18:00 London for Thu 26 Nov 11:30 London publish (Related -jmMROGoZCM); if missed, do not upload.",
+      "result": "Ben OK'd v01 on the board (16 Nov 11:08Z). Upload job J2942 carries it into Thu 26 Nov 11:30, Private.",
       "history": [
         {
           "at": "2026-11-15T22:12Z",
@@ -259575,6 +259575,16 @@
           "at": "2026-11-16T02:19Z",
           "by": "gemini",
           "what": "ruling: HELD ON BEN'S OK: Chief KEEP v01 (jobs/reviews/J2916/REVIEW.md, 3ad36fcfca). owb_dated_2026_11_30_moon_jupiter_v01.mp4 and moon_jupiter_2026_11_30_cover_v01.jpg are in OWB UAT and WATCH_FULL and the watch card is on the board. Needs Ben's OK by Wed 25 Nov 18:00 London for Thu 26 Nov 11:30 London publish (Related -jmMROGoZCM); if missed, do not upload."
+        },
+        {
+          "at": "2026-11-16T12:55Z",
+          "by": "claude",
+          "what": "no longer waits on Ben: OK'd, delivered by J2942"
+        },
+        {
+          "at": "2026-11-16T12:55Z",
+          "by": "claude",
+          "what": "done: Ben OK'd v01 on the board (16 Nov 11:08Z). Upload job J2942 carries it into Thu 26 Nov 11:30, Private."
         }
       ],
       "remaining_action": "Wait for Ben's OK on the board by Wed 25 Nov 18:00 London, then upload Private for Thu 26 Nov 11:30 London (Related -jmMROGoZCM)",
@@ -259598,7 +259608,7 @@
       },
       "for": "gemini",
       "model": "gemini-agy",
-      "awaits_ben": {
+      "awaits_was": {
         "what": "Watch the 30 Nov Moon-Jupiter dated-event Short v01 and its cover",
         "file": "OWB UAT/owb_dated_2026_11_30_moon_jupiter_v01.mp4",
         "version": "v01",
@@ -261745,6 +261755,52 @@
         "OWB:074",
         "OWB:075"
       ]
+    },
+    {
+      "id": "J2942",
+      "title": "Upload the Moon and Jupiter dated Short v01 (Thu 26 Nov 11:30) Private and scheduled",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben OK'd the Moon-Jupiter dated-event Short v01 and its cover on the board (16 Nov 11:08Z, tick OWB-J2916).** Chief evidence: jobs/reviews/J2916/REVIEW.md (KEEP). File `owb_dated_2026_11_30_moon_jupiter_v01.mp4` and cover `moon_jupiter_2026_11_30_cover_v01.jpg` in `OWB UAT/`; read both sha256s from the review folder and check them.\n\n1. Upload as a NEW Private video, publish time Thu 26 Nov 2026 11:30 London (11:30Z). Title, description, tags and credits from the plan `02_Video-Projects/_dated_shorts/2026-11-30_moon-jupiter-conjunction.md` and the meta beside the file; language en-GB; captions en-GB from the cut's words; Related video `-jmMROGoZCM`. Not made for kids.\n2. Run `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <file> --air-date 2026-11-26 --id owb_dated_2026_11_30_moon_jupiter_v01` without `--report-only` first; it must PASS.\n3. Read back privacy, publish time, title, cover, Related. Record it in `00_Brand/Channel-Setup/social/UPLOADS.json`; queue Buffer posts only inside Buffer's 7-day window. Post the read-back on the thread.\n\nNever Public, never delete, no force-push, no Replace. £0. If anything does not match (privacy, publish time, hash), upload nothing and park for the Chief with the lines.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-16T12:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-16T12:55Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-16T12:55Z",
+          "by": "claude",
+          "what": "approved by Ben: Watch the 30 Nov Moon-Jupiter dated-event Short v01 and its cover v01 (asked in J2916)"
+        }
+      ],
+      "remaining_action": "Upload the Moon and Jupiter dated Short v01 (Thu 26 Nov 11:30) Private and scheduled",
+      "due": "2026-11-25T18:00:00Z",
+      "kind": "listing",
+      "approved_from": {
+        "what": "Watch the 30 Nov Moon-Jupiter dated-event Short v01 and its cover",
+        "file": "OWB UAT/owb_dated_2026_11_30_moon_jupiter_v01.mp4",
+        "version": "v01",
+        "airs": "2026-11-26T11:30Z",
+        "title": "Why Is Jupiter Beside the Moon on November 30?",
+        "type": "short",
+        "channel": "OWB",
+        "number": "",
+        "job": "J2916",
+        "okAt": "2026-11-16T11:08Z"
+      }
     }
   ],
   "focus": [

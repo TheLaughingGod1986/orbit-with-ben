@@ -76,9 +76,9 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2892 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2035 |  |
 | J2895 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about landing on an ice giant (v02) Private, slot Sat 19 Dec 11:30 |  |
 | J2896 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about the 21-year winters (v02, Test A opening) Private, slot Fri 18 Dec 11:30 |  |
-| J2916 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · Moon-Jupiter 30 Nov dated-event Short (airs Thu 26 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review | 02_Video-Projects/_dated_shorts/2026-11-30_moon-jupiter-conjunction.md |
 | J2927 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J2933 | mini | blocked | claudecode | – | 010 edit · qa · `mini-claude-opus-5-5` · Review HOS 010 Short A v01 and Short C v01 (J2172, PR #611) | J2172 |
+| J2942 | mini | open | – | – | listing · Upload the Moon and Jupiter dated Short v01 (Thu 26 Nov 11:30) Private and scheduled |  |
 
 Recently finished:
 
