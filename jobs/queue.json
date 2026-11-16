@@ -1,5 +1,5 @@
 {
-  "next_id": 2955,
+  "next_id": 2956,
   "jobs": [
     {
       "id": "J0001",
@@ -262793,6 +262793,56 @@
         ]
       },
       "done_ref": "55e4e2c5b8"
+    },
+    {
+      "id": "J2955",
+      "title": "Upload HOS 005 Short s06 v04 (How Does a Blood Pressure Cuff Work?) Private, Fri 20 Nov 11:30",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "# Upload HOS 005 Short s06 v04 (\"How Does a Blood Pressure Cuff Work?\") Private, Fri 20 Nov 11:30 London\n\nBen OK'd `J2230.1` (`v04`) on the Studio Kanban (`2026-11-15T11:53:15Z`, board check `HOS-J2230.1`: `verdict: ok`; companion `J2230.2`–`J2230.4` OKs on HOS #180 `6912157706`, `6912169020`, `6914782767`: \"Release held job J2230\"). Elected Acting Chief (`gemini`) verified the master, hash, duration, public parent long, and free slot, and queued this Mini Studio delivery job.\n\n## Verified Master & Parent Long\n- **Master (NAS `studio-live`):** `/Volumes/data/studio-live/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/J2230/hos_005_s06_blood_pressure_cuff_v04.mp4`\n- **Mini local copy:** `/Users/benjaminoats/_desk/renders/J2230/s06_v04/hos_005_s06_blood_pressure_cuff_v04.mp4`\n- **SHA-256:** `7fe460307b4723e6801a6274e3390ab41e20a324052f4f6880bd2ef6a13aef35` (`23.100 s`, `1080x1920`, `30 fps`, `59 words`)\n- **Spec & QA record:** `02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/SHORT_s06_blood_pressure_cuff_v04.json` and `jobs/J2230/HARVEY_V04_2026-11-14.md`\n- **Parent long (`wwcjcFfC-5M`):** *The Tied Arm That Proved Your Blood Circulates* — **PUBLIC** (publish gate clear).\n- **Locked HOS Short slot:** **Friday 20 November 2026 at 11:30 London (`2026-11-20T11:30:00Z`)** — verified free in `social/hos/UPLOADS.json` and `channel:audit`. Never two HOS Shorts on the same day; if taken when run, use the next free HOS Short slot (`Sat/Fri/Sun/Tue 11:30 London`).\n\n## Steps (GBP 0, no new generation, never Replace, never delete)\n1. In a clean HOS worktree from `origin/main`, create `02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/11_Upload-Package/s06_blood_pressure_cuff_v04/` with:\n   - `PACKAGE_MANIFEST.json` (`format: \"shorts\"`, `channel: \"@HistoryOfScienceYT\"`, `title: \"How Does a Blood Pressure Cuff Work?\"`, description starting with the answer hook + full film link `The Tied Arm That Proved Your Blood Circulates` `https://www.youtube.com/watch?v=wwcjcFfC-5M` + honest AI disclosure line, subject tags with zero channel names, `privacy: \"private\"`, `madeForKids: false`, `alteredContent: true`, `language: \"en-GB\"`, `categoryId: \"27\"`, `schedule: \"2026-11-20T11:30:00Z\"`, `videoSha256`, frame-0 `cover.jpg`, and `social: {hook, question, alt}`).\n   - `cover.jpg` extracted cleanly from frame 0 of `hos_005_s06_blood_pressure_cuff_v04.mp4` (`THE CUFF`, no Explorer at frame 0) and `Captions/hos_005_s06_blood_pressure_cuff_v04.en-GB.srt` matching the 59 spoken words.\n2. Run in the **HOS checkout** (not OWB):\n   - `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <video> --air-date 2026-11-20` -> must PASS.\n   - `cd 07_Content-Ops && npm run lint:package -- --film 005` -> must PASS (0 errors).\n   - `cd 07_Content-Ops && npm run youtube:package -- --package <pkg_dir> --video <video> --dry-run` -> must PASS.\n3. Upload as a **NEW Private** video scheduled for `2026-11-20T11:30:00Z` (`PUBLISHING_DRY_RUN=false` on that one command line only; never edit `.env`).\n4. In HOS YouTube Studio (reusing one tab via `cdp_tabs.reuse_page`), set **Related video** to `wwcjcFfC-5M` (*The Tied Arm That Proved Your Blood Circulates*), verify `en-GB` captions are serving, re-check **Audience = Not Made for Kids** and **Altered content = Yes**, and confirm Visibility remains **Scheduled (`2026-11-20T11:30:00Z`)**.\n5. Register the new YouTube ID in OWB `00_Brand/Channel-Setup/social/hos/UPLOADS.json` (`buffer-mirror.ts register --channel hos --video <id> --media <video> --long wwcjcFfC-5M`), update HOS `SHORTS_RELEASE.json` / `gate_shorts_open.py status`, run `cd 07_Content-Ops && npm run channel:audit` (0 errors) and `00_Brand/Channel-Setup/tools/check_all.sh`, and open/land the HOS package receipt PR.\n",
+      "ref": "HOS-J2230.1",
+      "film": "005",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-16T21:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-16T21:16Z",
+          "by": "gemini",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-16T21:16Z",
+          "by": "gemini",
+          "what": "approved by Ben: Watch the Harvey cuff Short. It is ready to schedule for Friday 20 November at 11:30 London if you pass it. v04 (asked in J2230)"
+        }
+      ],
+      "remaining_action": "Package, gate, and upload HOS 005 cuff Short v04 Private for Fri 20 Nov 11:30 London",
+      "due": "2026-11-19T20:00:00Z",
+      "kind": "studio",
+      "plain": "Upload the Ben-OK'd HOS 005 blood-pressure cuff Short v04 Private for Fri 20 Nov 11:30 London, linked to the live Harvey long.",
+      "mini_only": true,
+      "approved_from": {
+        "what": "Watch the Harvey cuff Short. It is ready to schedule for Friday 20 November at 11:30 London if you pass it.",
+        "file": "HOS UAT/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s06_blood_pressure_cuff_v04.mp4",
+        "version": "v04",
+        "airs": "2026-11-20T11:30Z",
+        "title": "How Does a Blood Pressure Cuff Work?",
+        "number": "005",
+        "type": "short",
+        "channel": "HOS",
+        "job": "J2230",
+        "askId": "J2230.1",
+        "okAt": "2026-11-16T21:16Z",
+        "okRef": "HOS-J2230.1"
+      }
     }
   ],
   "focus": [
