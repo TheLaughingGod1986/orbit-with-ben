@@ -258796,10 +258796,10 @@
       "stage": "topic",
       "after": "J2891",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-16T00:06Z",
+      "eta": "2026-11-16T02:06Z",
       "created_by": "gemini",
       "created_at": "2026-11-16T00:05Z",
       "result": "",
@@ -258813,6 +258813,11 @@
           "at": "2026-11-16T00:05Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-16T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-16T00:06Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "HOS 108 Why Is Ice Slippery: rule-E topic go/no-go review",
@@ -258825,7 +258830,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-16T00:06Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2918",
