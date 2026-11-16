@@ -68,6 +68,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 070 | topic | gemini | 2026-11-16T01:11Z | 2026-11-16T03:10Z | J2920 Rule-E topic go/no-go review: OWB 070 (Every Mars Rover Explained in 10 Minutes) and 071 (Why Did NASA Crash Cassini Into Saturn?) from J2912 |
+| 070 | topic | gemini | 2026-11-16T01:12Z | 2026-11-16T02:12Z | J2920 Rule-E topic go/no-go review |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
