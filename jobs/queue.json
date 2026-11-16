@@ -258440,9 +258440,14 @@
           "at": "2026-11-16T00:24Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-16T00:25Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J2912; starting step 1 (analytics data ranking and topic audit)"
         }
       ],
-      "remaining_action": "Complete OWB:070 & OWB:071 data-backed TOPIC.md packages with >=3 >=1M neighbour passes on the Mini, append to WIP.json next, and queue Rule-E review",
+      "remaining_action": "Read OWB analytics data, existing topics/PRs, and precedent film folders",
       "kind": "script",
       "backlog": "owb-ideas",
       "escalated_at": "2026-11-15T22:45Z",
@@ -258458,12 +258463,15 @@
       "mini_only": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-16T00:24Z",
+        "of": 5,
+        "at": "2026-11-16T00:25Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2912; starting step 1 (analytics data ranking and topic audit)"
+      },
+      "taskKeys": [
+        "OWB:070",
+        "OWB:071"
+      ]
     },
     {
       "id": "J2913",
