@@ -258836,13 +258836,13 @@
       "stage": "topic",
       "after": "J2891",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-16T00:06Z",
-      "eta": "2026-11-16T02:06Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-16T00:05Z",
-      "result": "",
+      "result": "GO for HOS:108 (94/100, Opportunity 9.40/10) in next_hos under Rule G (4/4 active HOS slots full). HOS PR #604 (macbook/J2917, isolated to 108 so J2918 can update 109 cleanly) adds 11_Upload-Package/TOPIC_GO_NO_GO_SHEET.md, TOPIC_OPPORTUNITY_SCORE.md, re-pulled public_search.py evidence (populating missing Title B search results + adding 'does pressure melt ice' and 'how do crystals work'; 0 collisions across all 5 candidate titles), and synced IDs/titles/views in TOPIC.md, PRE_BUILD_VIDIQ_AUDIT.md, and production-status.md (qd4CVvItJlo 5.99M SmarterEveryDay, PgSRAsgrKmg 3.74M TED-Ed, gM3zP72-rJE 3.05M Veritasium, _bcfxty39Cw 2.51M minutephysics, UukRgqzk-KE 2.05M TED-Ed, yjSf7Yh9UZc 1.16M Be Smart, 20zyW0qoSTE 811k Dr Ben Miles, Stx6kLd9dYI 806k Veritasium; 11 strictly on-topic education videos >=1M views). OWB PR #953 (macbook/J2917) adds jobs/reviews/J2917/REVIEW.md + evidence_2026-11-15_public_search_108.json. All historical and scientific claims in TOPIC.md §4-§5 remain explicitly UNVERIFIED (with added guardrails on Faraday 1850 vs Tyndall/Huxley 1857 regelation coinage, the -22 C Ice Ih-III-liquid triple-point limit, and Bowden & Hughes 1939 Jungfraujoch cave vs Cambridge liquid-air lab) until an active HOS WIP slot opens and SOURCES.md + facts lane run. Spend: £0.00.",
       "history": [
         {
           "at": "2026-11-16T00:05Z",
@@ -258873,6 +258873,11 @@
           "at": "2026-11-16T00:26Z",
           "by": "macbook-2",
           "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-11-16T00:26Z",
+          "by": "macbook-2",
+          "what": "done: GO for HOS:108 (94/100, Opportunity 9.40/10) in next_hos under Rule G (4/4 active HOS slots full). HOS PR #604 (macbook/J2917, isolated to 108 so J2918 can update 109 cleanly) adds 11_Upload-Package/TOPIC_GO_NO_GO_SHEET.md, TOPIC_OPPORTUNITY_SCORE.md, re-pulled public_search.py evidence (populating missing Title B search results + adding 'does pressure melt ice' and 'how do crystals work'; 0 collisions across all 5 candidate titles), and synced IDs/titles/views in TOPIC.md, PRE_BUILD_VIDIQ_AUDIT.md, and production-status.md (qd4CVvItJlo 5.99M SmarterEveryDay, PgSRAsgrKmg 3.74M TED-Ed, gM3zP72-rJE 3.05M Veritasium, _bcfxty39Cw 2.51M minutephysics, UukRgqzk-KE 2.05M TED-Ed, yjSf7Yh9UZc 1.16M Be Smart, 20zyW0qoSTE 811k Dr Ben Miles, Stx6kLd9dYI 806k Veritasium; 11 strictly on-topic education videos >=1M views). OWB PR #953 (macbook/J2917) adds jobs/reviews/J2917/REVIEW.md + evidence_2026-11-15_public_search_108.json. All historical and scientific claims in TOPIC.md §4-§5 remain explicitly UNVERIFIED (with added guardrails on Faraday 1850 vs Tyndall/Huxley 1857 regelation coinage, the -22 C Ice Ih-III-liquid triple-point limit, and Bowden & Hughes 1939 Jungfraujoch cave vs Cambridge liquid-air lab) until an active HOS WIP slot opens and SOURCES.md + facts lane run. Spend: £0.00."
         }
       ],
       "remaining_action": "Opened HOS PR #604 and OWB PR #953; closing J2917 and posting studio thread report",
