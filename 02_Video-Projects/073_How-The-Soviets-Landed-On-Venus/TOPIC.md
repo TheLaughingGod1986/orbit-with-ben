@@ -165,8 +165,8 @@ Saved raw pulls: `11_Upload-Package/evidence_2026-11-16_public_search.json` and 
      `ONLY VENUS PHOTOS` (`VENUS` in `#FFE000`, `mode: "cover"` full-bleed `9:16` moving pan across the real Soviet **Venera 13** colour surface panorama of dark volcanic rock slabs under an orange sky at Phoebe Regio, `0%` blur bars).
    - **First Spoken Sentence (`0.0–1.5 s` Surprise per Rule 24, `7 words`, `Cut 1 ≤ 2.8 s`):**
      *"Venera 13 photographed Venus's surface in colour."*
-   - **Mid-Short Stat Overlay (`8.0–11.0 s`, `4 words ≤ 4`, matched to spoken `ninety times Earth's pressure` line so the `127 minutes` survival payoff is withheld to `≥70%` runtime per Rule 6):**
-     `90X EARTH AIR PRESSURE`
+   - **Mid-Short Stat Overlay (`8.0–11.0 s`, `3 words ≤ 4`, exact word-for-word match to spoken `ninety times Earth's pressure` line so the `127 minutes` survival payoff is withheld to `≥70%` runtime per Rule 6):**
+     `90X EARTH'S PRESSURE`
    - **Single Fact & Payoff (`≥70%` duration, `64 words` total, `<1.2 s` loop tail):**
      > *"Venera 13 photographed Venus's surface in colour. On the first of March 1982, the Soviet lander dropped onto Venus where the air crushes at ninety times Earth's pressure and heat reaches four hundred and sixty degrees Celsius. Chilled before entry and sealed inside a titanium pressure sphere, Venera 13 beat its thirty-two-minute design life to transmit colour panoramas for one hundred and twenty-seven minutes."*
 
@@ -177,7 +177,7 @@ Saved raw pulls: `11_Upload-Package/evidence_2026-11-16_public_search.json` and 
      `1-IN-A-MILLION BAD LUCK` (`BAD LUCK` in `#FFE000`, `mode: "cover"` full-bleed `9:16` moving real **Venera 14** surface panorama showing the spring-loaded soil penetrometer arm resting directly on the white ejected camera lens cap on Venus's basalt floor, `0%` blur bars).
    - **First Spoken Sentence (`0.0–1.5 s` Surprise per Rule 24, `7 words`, `Cut 1 ≤ 2.8 s`):**
      *"Venera 14 accidentally tested its own lens cap."*
-   - **Mid-Short Stat Overlay (`8.0–11.0 s`, `4 words ≤ 4`, matched to spoken `four camera caps fail` line so the `5 March 1982` titanium-cap penetrometer payoff is withheld to `≥70%` runtime per Rule 6):**
-     `4 STUCK LENS CAPS`
+   - **Mid-Short Stat Overlay (`8.0–11.0 s`, `4 words ≤ 4`, exact word-for-word match to spoken `four camera caps fail` line so the `5 March 1982` titanium-cap penetrometer payoff is withheld to `≥70%` runtime per Rule 6):**
+     `FOUR CAMERA CAPS FAIL`
    - **Single Fact & Payoff (`≥70%` duration, `63 words` total, `<1.2 s` loop tail):**
      > *"Venera 14 accidentally tested its own lens cap. Earlier Soviet landers on Venus had four camera caps fail to pop off under crushing atmospheric pressure. On the fifth of March 1982, Venera 14 ejected both titanium lens caps cleanly — but one cap bounced to the exact spot where the spring-loaded soil arm unfolded, measuring the compressibility of titanium instead of Venusian rock."*
