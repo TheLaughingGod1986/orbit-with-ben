@@ -261924,9 +261924,14 @@
           "at": "2026-11-16T14:55Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Verified J2517/J2559 done, all 8 local ~/.codex hashes unchanged, PR #490 still draft at f521bcd3f1 with 0 comments, docs/CODEX_ALLOWLIST.md absent on main"
+        },
+        {
+          "at": "2026-11-16T14:57Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Committed jobs/reviews/J2943/REVIEW.md to main"
         }
       ],
-      "remaining_action": "Write jobs/reviews/J2943/REVIEW.md in a clean worktree and commit/push to main",
+      "remaining_action": "Re-check chief_relay.py status and update J2040 hold with --recheck J2943",
       "kind": "review",
       "recheck_of": "J2040",
       "due": "2026-11-16T15:50:28+00:00",
@@ -261941,11 +261946,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-16T14:55Z",
+        "at": "2026-11-16T14:57Z",
         "by": "gemini",
-        "note": "Verified J2517/J2559 done, all 8 local ~/.codex hashes unchanged, PR #490 still draft at f521bcd3f1 with 0 comments, doc"
+        "note": "Committed jobs/reviews/J2943/REVIEW.md to main"
       }
     }
   ],
