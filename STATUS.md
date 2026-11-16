@@ -74,6 +74,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 076 | topic | gemini | 2026-11-16T16:35Z | 2026-11-16T18:04Z | J2949 Rule-E topic go/no-go review: OWB 076 (Every Space Shuttle Explained in 10 Minutes) and 077 (When Comet Shoemaker-Levy 9 Hit Jupiter) from J2948 |
+| 076 | topic | gemini | 2026-11-16T16:35Z | 2026-11-16T16:55Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
