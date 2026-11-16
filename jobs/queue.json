@@ -263373,13 +263373,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-16T22:04Z",
-      "eta": "2026-11-17T00:04Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-16T21:52Z",
-      "result": "",
+      "result": "PASS (KEEP) on 033 Uranus long master v05 (033_why_this_planet_has_21_year_winters_master_v05.mp4, SHA-256 1bb4a006bb0dab86cbe5a243ba42328a636bd9177b4fb421e7b19c6d8e954cbb, 629.42s, 1920x1080 24fps CFR, -14.5 LUFS, -1.5 dBTP, 0 black frames): replaced 0:00-4.35s R01 still composite with public-domain NASA Goddard SVS 20390 Shot 8 4K moving video (66fc943702) beside untouched v04; audio and cuts 2..146 bit-identical to v04; Flow balance 24,450 credits (£0 and 0 Flow credits spent); all 5 gates, first-30s check, package dry-run, and native moving_video_input/audio_input QA PASS; staged to NAS/iCloud OWB UAT & R2 owb-033-v05; awaits_ben armed with --prev OWB-033 (jobs/reviews/J2962/REVIEW.md, 9c00f1895b).",
       "history": [
         {
           "at": "2026-11-16T21:52Z",
@@ -263430,6 +263430,11 @@
           "at": "2026-11-16T22:47Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Staged v05 in NAS/iCloud OWB UAT + R2 owb-033-v05, updated package/credits (9c00f1895b), and armed awaits_ben (--prev OWB-033)"
+        },
+        {
+          "at": "2026-11-16T22:47Z",
+          "by": "gemini",
+          "what": "done: PASS (KEEP) on 033 Uranus long master v05 (033_why_this_planet_has_21_year_winters_master_v05.mp4, SHA-256 1bb4a006bb0dab86cbe5a243ba42328a636bd9177b4fb421e7b19c6d8e954cbb, 629.42s, 1920x1080 24fps CFR, -14.5 LUFS, -1.5 dBTP, 0 black frames): replaced 0:00-4.35s R01 still composite with public-domain NASA Goddard SVS 20390 Shot 8 4K moving video (66fc943702) beside untouched v04; audio and cuts 2..146 bit-identical to v04; Flow balance 24,450 credits (£0 and 0 Flow credits spent); all 5 gates, first-30s check, package dry-run, and native moving_video_input/audio_input QA PASS; staged to NAS/iCloud OWB UAT & R2 owb-033-v05; awaits_ben armed with --prev OWB-033 (jobs/reviews/J2962/REVIEW.md, 9c00f1895b)."
         }
       ],
       "remaining_action": "Completed 033 Uranus long master v05 moving opening and staged for Ben UAT watch",
@@ -263463,7 +263468,8 @@
           "Replaced the 0:00–4.35 s opening still composite with real 4K moving NASA Goddard SVS 20390 animation of sideways Uranus, its upright rings, swirling polar clouds, and orbiting moons (Shot 8, wide then closer cut; £0 and 0 Flow credits).",
           "Kept voice, music, length (10m 29s) and every cut from 4.35 s onward bit-for-bit identical to v04; all 5 gates and first-30-seconds checks passed."
         ]
-      }
+      },
+      "done_ref": "9c00f1895b"
     }
   ],
   "focus": [
