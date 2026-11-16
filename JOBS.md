@@ -79,11 +79,26 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2927 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J2933 | mini | blocked | claudecode | – | 010 edit · qa · `mini-claude-opus-5-5` · Review HOS 010 Short A v01 and Short C v01 (J2172, PR #611) | J2172 |
 | J2951 | cloud | open | – | – | assembly · Stop the refill tick using 3-4 GB: read the acting Chief once per scan |  |
-| J2952 | mini | claimed | claudecode | 2026-11-16T17:52Z | for claudecode · studio · `mini-claude-opus-5-5` · First-day check at 6 h: "If You Can't See the Nearest Star, How Far Away Is It?" (aEfdxex__Bo) |  |
 | J2953 | mini | claimed | macbook-2 | 2026-11-16T17:52Z | studio · First-day check at 6 h: "What Is Dalton's Atomic Theory?" (xzKoHg0E0_U) |  |
 
 Recently finished:
 
+- J2952 done: First-day check at 6 h: "If You Can't See the Nearest Star, How Far Away Is It?" (aEfdxex__Bo) ("If You Can't See the Nearest Star, How Far Away Is It?" (aEfdxex__Bo) · Orbit With Ben · Short · went live Mon 16 Nov 11:30 London
+At 6 h: views 234 · Studio rank 6 of 10 · shown in feed about 613 (from 212 feed views) · stayed to watch 34.6% · average viewed 59.9%
+Usual for this channel: stayed to watch 32.5%, average viewed 66.2%
+
+Verdict: AHEAD
+  - 234 views at 6 h; the last 5 checked at the same age had 45 (median).
+  - Studio ranks it 6 of 10 against our latest videos at the same age.
+
+What is different about this one
+  - It is a second upload of the same video (it replaced HZGTovJu_TQ).
+
+Do now
+  - Nothing to fix.
+
+Carry forward
+  - A strong start is a lesson too: note what is different about this one.)
 - J2950 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (PR #969 (open, not merged). Third 16 Nov listing check, records only (no live page read from this lane): 0 fixes, nothing parked. New Short aEfdxex__Bo: Related, description link and Sources right as last read in Studio 06:04Z; its going public at 11:30Z is not confirmed by any record, first-day check will read it. File 05_Analytics/live_fixes/2026-11-16_recheck2.md)
 - J2949 done: Rule-E topic go/no-go review: OWB 076 (Every Space Shuttle Explained in 10 Minutes) and 077 (When Comet Shoemaker-Levy 9 Hit Jupiter) from J2948 (done)
 - J2948 done: OWB: learn from our data, add two new films to the backlog (Added OWB:076 Every Space Shuttle Explained in 10 Minutes (All 6 NASA Orbiters) (matches #1 VPD Short RT-ec4_GcOk 562.5 vpd / 100.07% LOOP & #2 stayed B1z2dv7m7Vk 52.69% + studio/plan.json Step 3 complete-tour format + #1 autocomplete every space shuttle explained; 17 >=1M neighbours up to 21.88M) and OWB:077 What Happened When Comet Shoemaker-Levy 9 Hit Jupiter? (1994 Crash) (matches #1 total-views Short T9fVlG3CCzU 1,288v, Apophis gJwNJN_yMKU 228.91% LOOP + 214k FB views, and #1 mature CTR Long Jupiter -jmMROGoZCM 5.17% + #1 autocomplete comet shoemaker levy 9; 9 >=1M neighbours up to 3.15M) in 9033ff1365, appended to jobs/WIP.json next, mirrored to studio-live NAS, and queued Rule-E review.)
@@ -93,4 +108,3 @@ Recently finished:
 - J2944 done: HOS: learn from our data, add two new films to the backlog (Ranked all 7 public HOS longs and 30 public HOS Shorts from 2026-11-16 snapshot + studio_ctr.json + channel_daily.json + REPORT.md + LEARNINGS.md (rules 1-33) and added two new non-overlapping HOS backlog proposals (£0 spend): (1) HOS:114 'How Do Chameleons Change Colour? (The Nanocrystal Twist)' (02_Video-Projects/114_Bruecke-Milinkovitch-How-Do-Chameleons-Change-Colour) — Data line: modelled on #1 HOS long 002 Periodic Table (161 views, 2.68/d, 1,160 impr, 3.36% CTR) + #3 long 006 Willow (13 views, 1.18/d, 6.52% CTR, 53.96% Studio / 79% 28d YTA avg viewed) + #1 stayed Short -3L6HzJ_d_4 Pasteur (77.14% stayed PASS, 75.23% avg viewed PASS, 92.2% YT_SEARCH); follows Rules 1, 10, 12, 14, 15, 23, 24, 26, 27, 28, 30, 32; autocomplete 'how do chameleons change color' & 'why do chameleons change color' = yes (Veritasium SQggDnScsvI 3.48M, Odd Animal Specimens Dd7UVLkuxC4 2.26M), 0 exact title collisions, neighbours.py PASS with 10 education videos >=1M views (TED-Ed/TED: yes). (2) HOS:115 'Why Do Zebras Have Stripes? (The Horsefly Coat Experiment)' (02_Video-Projects/115_Wallace-Caro-Why-Do-Zebras-Have-Stripes) — Data line: fixes 005 Tied Arm's statement-title impression starvation (15 impr) by pairing exact autocomplete question 'why do zebras have stripes' (TED-Ed QJB0nmEjbDY 665k, SciShow LbVSYO-Y-kU 540k) with Caro & How's 2019 Somerset horse-in-a-zebra-coat high-speed camera experiment, matching 002/004 search discovery and 29bpGAI0wb8 (39.58/d) / -3L6HzJ_d_4 (77.14% stayed) Short hooks; follows Rules 1, 10, 12, 14, 15, 23, 24, 26, 27, 28, 30, 32; 0 exact title collisions, neighbours.py PASS with 12 education videos >=1M views (TED-Ed/TED: yes). HOS PR #618, OWB WIP PR #966, and dependent Rule-E review jobs J2945 (HOS:114) & J2946 (HOS:115) queued.)
 - J2943 done: Verify condition for J2040 (CONDITION NOT MET (jobs/reviews/J2943/REVIEW.md, commit 132100225b): J2517 (#793) and J2559 (#795) remain done, but all 8 ~/.codex approval-settings and gateway hashes match jobs/reviews/J2934/REVIEW.md and the 4-6 Nov 3/4 checkpoint unchanged, draft PR #490 (f521bcd3f1) remains open in draft with 0 comments, docs/CODEX_ALLOWLIST.md is not on main, and no operator confirmation or fresh-session scoped acceptance evidence has landed. J2040 stays held (type: input, --recheck J2943) until 2026-11-16T20:55:00Z. GBP0.)
 - J2942 done: Upload the Moon and Jupiter dated Short v01 (Thu 26 Nov 11:30) Private and scheduled (Moon-Jupiter dated Short v01 uploaded as GbELka8Yu9U: Private, publishAt 2026-11-26T11:30:00Z, en-GB, en-GB captions serving, cover v01 and Related -jmMROGoZCM set in Studio and read back, UPLOADS.json and library.json updated, Buffer deferred (outside 7-day window). Read-back in jobs/readbacks/J2942.json)
-- J2941 done: Rule-E topic go/no-go review: OWB 074 (Every Apollo Moon Landing Explained in 10 Minutes) and 075 (What Was 'Oumuamua?) from J2939 (done)
