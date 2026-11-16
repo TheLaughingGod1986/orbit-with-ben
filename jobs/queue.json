@@ -189047,9 +189047,14 @@
           "at": "2026-11-16T07:11Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Resumed J2172 at step 1/4; checking /Volumes/MiniWork/scratch/J2172-build and J2172-hos-wt from previous run"
+        },
+        {
+          "at": "2026-11-16T07:18Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2/4 complete: assembled Short A v01 (23.3s, 06408d02) & Short C v01 (23.6s, 6ddf12aa) at 936x1664 (£0, 0 credits); all 6 ship gates exit 0 on both cuts"
         }
       ],
-      "remaining_action": "Inspecting resumed J2172 build artifacts, completing Short A & Short C assembly at 936x1664, running all gates, and staging PR/review",
+      "remaining_action": "Verifying gate reports, inspecting moving MP4s & contact sheets, staging iCloud HOS UAT copies, running check_all.sh, opening HOS PR and queuing review successor",
       "due": "2026-11-29T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -189065,11 +189070,11 @@
       "for": "gemini",
       "model": "gemini-agy",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-16T07:11Z",
+        "at": "2026-11-16T07:18Z",
         "by": "gemini",
-        "note": "Resumed J2172 at step 1/4; checking /Volumes/MiniWork/scratch/J2172-build and J2172-hos-wt from previous run"
+        "note": "Step 2/4 complete: assembled Short A v01 (23.3s, 06408d02) & Short C v01 (23.6s, 6ddf12aa) at 936x1664 (£0, 0 credits); "
       }
     },
     {
