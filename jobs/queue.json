@@ -262731,17 +262731,22 @@
           "at": "2026-11-16T18:11Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Encoding 720p PHONE copy: 141,044 / 195,070 frames (78m23s of 108m22s, 19.2x speed, ~668 kbps)"
+        },
+        {
+          "at": "2026-11-16T18:13Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: 720p PHONE copy built & verified: 564,468,035 B, 6502.333s (195070f), exact master audio streamhash 74f9ab69..."
         }
       ],
-      "remaining_action": "Finish 720p phone encode (72% / 78m23s of 108m22s encoded at 19.2x), then verify length and sound",
+      "remaining_action": "Copy 720p PHONE proxy to NAS, upload to R2 watch store, register in watch_uploads.json, and verify HTTP 302/206",
       "due": "2026-11-20T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-16T18:11Z",
+        "at": "2026-11-16T18:13Z",
         "by": "gemini",
-        "note": "Encoding 720p PHONE copy: 141,044 / 195,070 frames (78m23s of 108m22s, 19.2x speed, ~668 kbps)"
+        "note": "720p PHONE copy built & verified: 564,468,035 B, 6502.333s (195070f), exact master audio streamhash 74f9ab69..."
       }
     }
   ],
