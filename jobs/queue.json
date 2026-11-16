@@ -263420,6 +263420,11 @@
           "at": "2026-11-16T22:40Z",
           "by": "gemini",
           "what": "step 4 of 5 done: Built v05 _PHONE.mp4 (a5bd1cd2f2), mirrored both v05 files to NAS and iCloud OWB UAT (SHA-256 verified), uploaded R2 watch copy owb-033-v05, and cleaned intermediate render scratch"
+        },
+        {
+          "at": "2026-11-16T22:47Z",
+          "by": "gemini",
+          "what": "waits on Ben: Watch 033 Uranus long master v05 (10m 29s, moving NASA SVS 20390 4K opening) and thumbnails A/B (by 2026-11-29 18:00 London)"
         }
       ],
       "remaining_action": "Updating watch_uploads.json, 033 status/package credits & manifest, arming awaits_ben (--prev OWB-033), and closing J2962",
@@ -263434,7 +263439,26 @@
       },
       "taskKeys": [
         "OWB:033"
-      ]
+      ],
+      "awaits_ben": {
+        "what": "Watch 033 Uranus long master v05 (10m 29s, moving NASA SVS 20390 4K opening) and thumbnails A/B",
+        "file": "OWB UAT/033_why_this_planet_has_21_year_winters_master_v05_PHONE.mp4",
+        "version": "v05",
+        "due": "2026-11-29T18:00Z",
+        "airs": "2026-12-09T18:00Z",
+        "ifNot": "Chief's final OK and private upload go ahead",
+        "card": "OWB:033",
+        "title": "Why Knocked-Sideways Uranus Has 21-Year Winters",
+        "number": "033",
+        "type": "long",
+        "prev": [
+          "OWB-033"
+        ],
+        "fixed": [
+          "Replaced the 0:00–4.35 s opening still composite with real 4K moving NASA Goddard SVS 20390 animation of sideways Uranus, its upright rings, swirling polar clouds, and orbiting moons (Shot 8, wide then closer cut; £0 and 0 Flow credits).",
+          "Kept voice, music, length (10m 29s) and every cut from 4.35 s onward bit-for-bit identical to v04; all 5 gates and first-30-seconds checks passed."
+        ]
+      }
     }
   ],
   "focus": [
