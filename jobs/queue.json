@@ -261160,19 +261160,27 @@
           "at": "2026-11-16T09:27Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-16T09:27Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Set 4-step plan for J2935 (1: rank HOS analytics data; 2: run public_search.py and neighbours.py on HOS:112 & HOS:113; 3: build 112 & 113 folders from template and open HOS PR; 4: open OWB WIP.json PR and queue Rule-E review jobs)"
         }
       ],
-      "remaining_action": "Pick two data-backed History of Science topics and add them to the waiting line",
+      "remaining_action": "Ranking all public HOS longs and Shorts from 05_Analytics/hos/ data and LEARNINGS.md",
       "kind": "script",
       "backlog": "hos-ideas",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-16T09:27Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Set 4-step plan for J2935 (1: rank HOS analytics data; 2: run public_search.py and neighbours.py on HOS:112 & HOS:113; 3"
+      },
+      "taskKeys": [
+        "HOS:112",
+        "HOS:113"
+      ]
     }
   ],
   "focus": [
