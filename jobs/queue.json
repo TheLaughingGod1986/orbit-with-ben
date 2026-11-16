@@ -1,5 +1,5 @@
 {
-  "next_id": 2946,
+  "next_id": 2947,
   "jobs": [
     {
       "id": "J0001",
@@ -262066,6 +262066,35 @@
       "remaining_action": "Run Rule-E topic go/no-go review on HOS:114 (PR #618 / OWB PR #966)",
       "kind": "review",
       "plain": "Check whether HOS 114 (How Do Chameleons Change Colour?) passes the topic rules to stay on the waiting list"
+    },
+    {
+      "id": "J2946",
+      "title": "HOS 115 Why Do Zebras Have Stripes?: rule-E topic go/no-go review",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Rule-E topic go/no-go review for **HOS:115 (`02_Video-Projects/115_Wallace-Caro-Why-Do-Zebras-Have-Stripes`)** on HOS PR `#618` (`https://github.com/TheLaughingGod1986/history-of-science/pull/618`, branch `gemini/J2944-hos-topics-114-115`) and OWB PR `#966` (`https://github.com/TheLaughingGod1986/orbit-with-ben/pull/966`), queued by `J2944`.\n\n### Topic Summary\n- **Title A (Primary Proposal, Rule 26, 58 chars, 0 collisions):** `Why Do Zebras Have Stripes? (The Horsefly Coat Experiment)`\n- **Title B (T&C, Rule 23, 57 chars, 0 collisions):** `The Striped Horse Coat That Solved Darwin's Zebra Mystery`\n- **Title C (Rule 26 Exact Phrase First, 54 chars, 0 collisions):** `Why Do Zebras Have Stripes? How a Horse Coat Solved It`\n- **Short S01 (47 chars, 0 collisions):** `Do Zebra Stripes Actually Hide Them From Lions?`\n- **Short S02 (47 chars, 0 collisions):** `Why Did Scientists Dress Horses in Zebra Coats?`\n- **Saved Evidence (`2026-11-16`):**\n  - `11_Upload-Package/evidence_2026-11-16_neighbours.json` (`PASS`: `12` education videos `≥1,000,000` views, `TED-Ed/TED: yes`, led by `TED-Ed` `4,959,777` `li1kO3hg4iE`, `TED-Ed` `4,610,116` `jdrNjHPYKz4`, `TED-Ed` `3,297,627` `mZt1Gn0R22Q`, `TEDx Talks` `3,037,161` `-wkdH_wluhw`, `TED-Ed` `2,534,442` `NTeOhj6dxsU`, `TEDx Talks` `2,162,694` `18YwBwIK_no`, `TED` `2,041,052` `GcJxRqTs5nk`, `TED-Ed` `1,926,976` `5NdMnlt2keE`, `TED-Ed` `1,656,436` `j43wzuciAkk`, `TED-Ed` `1,535,781` `qrKZBh8BL_U`, plus `TED-Ed` `665,336` `QJB0nmEjbDY` *The surprising reason zebras have stripes - Cella Wright*).\n  - `11_Upload-Package/evidence_2026-11-16_public_search.json` (`\"why do zebras have stripes\"` autocomplete `yes`; ranking videos `TED-Ed` `QJB0nmEjbDY` `665,336` views & `SciShow` `LbVSYO-Y-kU` `540,283` views, plus `SciShow Kids` `GhfBOyPQqX0` `431,527` views, `Mystery Science` `q57fauR3Syk` `390,742` views, `SciShow` `vWKDMKO-hQM` `346,443` views, and `Colossal Cranium` `J5EtNvHtl8A` `150,662` views; `0` exact title collisions).\n\n### Reviewer Checklist (AGENTS.md Rule E)\n1. Verify `TOPIC.md`, `status.json`, `production-status.md`, `11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md`, and the two raw JSON evidence files on HOS PR `#618`.\n2. Score the Rule-E topic rubric (neighbour demand `≥3` at `1M+` views with TED/TED-Ed presence, signed-out YouTube autocomplete demand, title collision check, non-duplication across `02_Video-Projects/`, `ideas/`, and `WIP.json`, and visual proof-first hook).\n3. Confirm that all historical and scientific claims remain marked **UNVERIFIED** until `SOURCES.md` exact quotes and the `facts` lane run when an active HOS WIP slot opens under Rule G (`jobs/WIP.json` `next_hos`).\n4. Record the Rule-E go/no-go verdict.\n",
+      "ref": "",
+      "film": "115",
+      "stage": "topic",
+      "after": "J2944",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-16T15:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-16T15:43Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Run Rule-E topic go/no-go review on HOS:115 (PR #618 / OWB PR #966)",
+      "kind": "review",
+      "plain": "Check whether HOS 115 (Why Do Zebras Have Stripes?) passes the topic rules to stay on the waiting list"
     }
   ],
   "focus": [
