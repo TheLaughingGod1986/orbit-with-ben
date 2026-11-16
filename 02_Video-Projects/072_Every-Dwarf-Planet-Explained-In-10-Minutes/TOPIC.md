@@ -190,8 +190,8 @@ Saved raw pulls: `11_Upload-Package/evidence_2026-11-16_public_search.json` and 
      `4-HOUR RUGBY PLANET` (`4-HOUR` in `#FFE000`, `mode: "cover"` full-bleed `9:16` moving sequence of rapidly spinning triaxial ellipsoid dwarf planet **Haumea** inside its `70-km` ring, `0%` blur bars).
    - **First Spoken Sentence (`0.0–1.5 s` Surprise per Rule 24, `7 words`, `Cut 1 ≤ 2.8 s`):**
      *"Haumea spins so fast it stretched flat."*
-   - **Mid-Short Stat Overlay (`8.0–11.0 s`, `4 words ≤ 4`, matched to spoken `less than four hours` line so the `2,000-km rugby ball` and `70-km ring` payoff is withheld to `≥70%` runtime per Rule 6):**
-     `3.9-HOUR FULL DAY`
+   - **Mid-Short Stat Overlay (`8.0–11.0 s`, `4 words ≤ 4`, exact word-for-word match to spoken `less than four hours` line so the `2,000-km rugby ball` and `70-km ring` payoff is withheld to `≥70%` runtime per Rule 6):**
+     `LESS THAN FOUR HOURS`
    - **Single Fact & Payoff (`≥70%` duration, `64 words` total, `<1.2 s` loop tail):**
      > *"Haumea spins so fast it stretched flat. Out beyond Neptune in the Kuiper Belt, this icy dwarf planet completes a full rotation in less than four hours — the fastest spin of any large world in our solar system. An ancient giant impact spun Haumea so violently that centrifugal force stretched it into a two-thousand-kilometre rugby ball surrounded by two moons and a seventy-kilometre ring."*
 
@@ -202,7 +202,7 @@ Saved raw pulls: `11_Upload-Package/evidence_2026-11-16_public_search.json` and 
      `HEAVIER THAN PLUTO` (`HEAVIER` in `#FFE000`, `mode: "cover"` full-bleed `9:16` moving scale comparison of brilliant white **Eris** and its moon **Dysnomia** beside **Pluto**, `0%` blur bars).
    - **First Spoken Sentence (`0.0–1.5 s` Surprise per Rule 24, `6 words`, `Cut 1 ≤ 2.8 s`):**
      *"Eris is heavier than Pluto itself."*
-   - **Mid-Short Stat Overlay (`8.0–11.0 s`, `4 words ≤ 4`, matched to spoken `January 2005` discovery line so the `27% heavier` and `2006` reclassification payoff is withheld to `≥70%` runtime per Rule 6):**
-     `DISCOVERED IN 2005`
+   - **Mid-Short Stat Overlay (`8.0–11.0 s`, `3 words ≤ 4`, exact word-for-word match to spoken `in January 2005` discovery line so the `27% heavier` and `2006` reclassification payoff is withheld to `≥70%` runtime per Rule 6):**
+     `IN JANUARY 2005`
    - **Single Fact & Payoff (`≥70%` duration, `63 words` total, `<1.2 s` loop tail):**
      > *"Eris is heavier than Pluto itself. When astronomer Mike Brown spotted Eris in the Kuiper Belt in January 2005, everyone assumed it was the tenth planet. Then tracking its moon Dysnomia proved Eris weighs twenty-seven percent more than Pluto. Rather than adding dozens of icy Kuiper Belt worlds as planets, astronomers voted in 2006 to reclassify both Pluto and Eris as dwarf planets."*
