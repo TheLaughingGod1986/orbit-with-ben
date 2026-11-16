@@ -28,13 +28,13 @@ Rules: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` · `FAMILIAR_DANGER_STRATEGY.
 
 ## Assembly
 
-- [x] Inputs normalised to 1920×1080 stereo. A/V durations match after concat (`09_Final-Export/033_why_this_planet_has_21_year_winters_master_v04.mp4`, `629.416667 s`, `15,106` frames @ `24/1` CFR, SHA-256 `3712479ae852dd318c4d8d0dfd18f7df08c1a857068c24c3d3792a35a27f11c3`; `J2889` / `J2890` / `J2893` PASS).
+- [x] Inputs normalised to 1920×1080 stereo. A/V durations match after concat (`09_Final-Export/033_why_this_planet_has_21_year_winters_master_v05.mp4`, `629.416667 s`, `15,106` frames @ `24/1` CFR, SHA-256 `1bb4a006bb0dab86cbe5a243ba42328a636bd9177b4fb421e7b19c6d8e954cbb`, built beside `v04` `3712479ae8...`; `J2889` / `J2890` / `J2893` / `J2962` PASS).
 - [x] Remint = picture only (original part audio kept)
 - [x] Chapter cards: soft starfield, about 1.5 s breath lead-in, music continues under the card
 - [x] End hold 15–20 s (`18.00 s` `611.40–629.40 s`), music fades over about 10 s, picture fades to black over the last 2 s. No silent hold.
 - [x] Ocean/shore POV: no Earth globe in the sky. One Earth + one Moon at most (mid-plate frame checked).
 - [x] 4-second lower-right subscribe cue under the beat (`255.14–259.68 s`), with the picture still moving
-- [ ] Watched once on a phone with the sound on (`_PHONE.mp4` staged to NAS/iCloud `OWB UAT` & R2 `owb-033-v04`; `J2890` `awaits_ben`)
+- [ ] Watched once on a phone with the sound on (`_PHONE.mp4` staged to NAS/iCloud `OWB UAT` & R2 `owb-033-v05`; `J2962` `awaits_ben` answering `OWB-033`)
 
 ## Shorts (2 per new OWB long, Ben 4 Nov 2026)
 
