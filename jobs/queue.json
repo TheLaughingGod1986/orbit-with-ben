@@ -258588,9 +258588,14 @@
           "at": "2026-11-16T05:44Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Step 1 done: read J0861, J0833, J0851, J1825/J1927, J2497, J2513, J2514, and RELATED_CHECK_J2679_2026-11-12.json; all Ben/Chief approvals for 026 long and 3 Shorts remain valid"
+        },
+        {
+          "at": "2026-11-16T05:46Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Step 2 done: YouTube Data API v3 readback confirmed c5AdqQsnnys is Public (publishedAt 2026-11-15T18:00:37Z, processed, madeForKids=false) and all 3 Shorts (aEfdxex__Bo, dH_yCRmzkMo, aAUgIGEuPwQ) are Private/scheduled"
         }
       ],
-      "remaining_action": "Query live YouTube API status for c5AdqQsnnys and 026 Shorts aEfdxex__Bo, dH_yCRmzkMo, aAUgIGEuPwQ",
+      "remaining_action": "Reopen J0861 with live YouTube API verification evidence and close J2909",
       "kind": "review",
       "recheck_of": "J0861",
       "due": "2026-11-15T19:25:18+00:00",
@@ -258605,11 +258610,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-16T05:44Z",
+        "at": "2026-11-16T05:46Z",
         "by": "gemini",
-        "note": "Step 1 done: read J0861, J0833, J0851, J1825/J1927, J2497, J2513, J2514, and RELATED_CHECK_J2679_2026-11-12.json; all Be"
+        "note": "Step 2 done: YouTube Data API v3 readback confirmed c5AdqQsnnys is Public (publishedAt 2026-11-15T18:00:37Z, processed, "
       },
       "taskKeys": [
         "OWB:026"
