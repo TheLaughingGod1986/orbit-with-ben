@@ -85,7 +85,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2892 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2035 |  |
 | J2895 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about landing on an ice giant (v02) Private, slot Sat 19 Dec 11:30 |  |
 | J2896 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about the 21-year winters (v02, Test A opening) Private, slot Fri 18 Dec 11:30 |  |
-| J2907 | mini | claimed | gemini | 2026-11-16T01:06Z | for gemini · studio · `gemini-argon` · Board: redeploy with Ben's new GitHub token, prove ticks save and reach both threads |  |
+| J2907 | mini | blocked | gemini | – | for gemini · studio · `gemini-argon` · Board: redeploy with Ben's new GitHub token, prove ticks save and reach both threads |  |
 | J2909 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0861 |  |
 | J2915 | mini | open | – | – | 010 picture · video · HOS 010: mint R1-R6 Short replacement plates under Chief go 6898337122 and post review branch | J2271 |
 | J2916 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · Moon-Jupiter 30 Nov dated-event Short (airs Thu 26 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review | 02_Video-Projects/_dated_shorts/2026-11-30_moon-jupiter-conjunction.md |
