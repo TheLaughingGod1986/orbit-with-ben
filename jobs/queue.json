@@ -253543,9 +253543,14 @@
           "at": "2026-11-16T04:40Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2852; starting condition verification for J2843"
+        },
+        {
+          "at": "2026-11-16T04:43Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified J2840 (codex.md, 6f240fbd52), J2841 (gemini.md, dd08bb322e), and J2842 (cursor.md, 7915cbebaf) are done and present on main, and all 10 J2834_v02 NAS SHA-256 hashes match SHA256SUMS.txt"
         }
       ],
-      "remaining_action": "Inspect J2843, J2840, J2841, J2842 and panel directory 05_Analytics/tests/panels/owb-j2834-weekly-2026-11-14/",
+      "remaining_action": "Write verification report jobs/reviews/J2852/REVIEW.md and commit from clean worktree",
       "kind": "review",
       "recheck_of": "J2843",
       "due": "2026-11-14T20:02:27+00:00",
@@ -253560,12 +253565,17 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-16T04:40Z",
+        "at": "2026-11-16T04:43Z",
         "by": "gemini",
-        "note": "Claimed J2852; starting condition verification for J2843"
-      }
+        "note": "Verified J2840 (codex.md, 6f240fbd52), J2841 (gemini.md, dd08bb322e), and J2842 (cursor.md, 7915cbebaf) are done and pre"
+      },
+      "taskKeys": [
+        "OWB:001",
+        "OWB:004",
+        "OWB:005"
+      ]
     },
     {
       "id": "J2853",
