@@ -255782,13 +255782,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-16T04:49Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-15T04:53Z",
-      "result": "parked for Chief: Verified at 2026-11-16T05:01Z (jobs/reviews/J2877/REVIEW.md @ 49c709872a): predecessor J2614 is done and J2243 5-part v05 multimodal QA PASS is complete (HOS PR #595 0cf1743f, OWB aa702b68a8, v05 sha256 d1ffb78d...841b + all 19 NAS artefacts intact, all 8 Ben notes tracked with note_resolved: false; HOS desk #180 report posted). Do not reopen J2243 for worker re-execution; ready for Chief Grok to close J2877/J2243 and authorize UAT staging of hos_008_master_v05.mp4 for Ben's final watch.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-15T04:53Z",
@@ -255834,6 +255834,11 @@
           "at": "2026-11-16T07:07Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-16T09:21Z",
+          "by": "gemini",
+          "what": "reopened: Elected-Chief (gemini) ruling (a2f7e08a34, HOS PR #613): J2243 condition verified & closed done with HOS:008 staged on Ready for OK; reopening J2877 to close done"
         }
       ],
       "remaining_action": "Park J2877 for Chief Grok to close J2877/J2243 and authorize UAT staging of hos_008_master_v05.mp4",
@@ -255850,13 +255855,6 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-16T05:06Z",
-        "by": "gemini",
-        "note": "Updated J2243 hold condition (check-at 2026-11-16T11:05:00Z) and posted J2243+J2877 reports to HOS #180 and OWB #954"
-      },
       "taskKeys": [
         "HOS:008"
       ],
