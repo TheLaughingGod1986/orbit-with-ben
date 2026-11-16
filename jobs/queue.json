@@ -262741,6 +262741,11 @@
           "at": "2026-11-16T18:19Z",
           "by": "gemini",
           "what": "step 3 of 4 done: NAS PHONE copy verified (sha256 4cf44797...), uploaded to R2 owb-sleep-01-v02 (302->206), registered in 55e4e2c5b8"
+        },
+        {
+          "at": "2026-11-16T18:19Z",
+          "by": "gemini",
+          "what": "waits on Ben: Watch the whole 108-minute sleep film from start to finish (not a 30-second clip). The 97:20 fix is inside this full film. (by 2026-12-10 18:00 London)"
         }
       ],
       "remaining_action": "Send Ben the whole-film watch card via jobs.py awaits and close J2954",
@@ -262752,6 +262757,25 @@
         "at": "2026-11-16T18:19Z",
         "by": "gemini",
         "note": "NAS PHONE copy verified (sha256 4cf44797...), uploaded to R2 owb-sleep-01-v02 (302->206), registered in 55e4e2c5b8"
+      },
+      "awaits_ben": {
+        "what": "Watch the whole 108-minute sleep film from start to finish (not a 30-second clip). The 97:20 fix is inside this full film.",
+        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_sleep_video_01/sleep_video_01_master_v02_PHONE.mp4",
+        "version": "sleep_video_01_master_v02",
+        "due": "2026-12-10T18:00Z",
+        "airs": "2026-12-12T21:00Z",
+        "ifNot": "Private upload 13q4_EoLEN4 stays scheduled for Sat 12 Dec 21:00 London",
+        "title": "Space Documentary for Sleep: A Slow Journey From the Moon to Andromeda",
+        "number": "SLEEP01",
+        "type": "long",
+        "prev": [
+          "OWB-J2898",
+          "OWB-J2452"
+        ],
+        "fixed": [
+          "Replaced the 30-second extract with the whole 108-minute film (1 hr 48 min 22 s, all 13 chapters from the Moon to Andromeda) in one continuous 720p stream.",
+          "The 97:20 fix is inside this full film, and the length, frame count (195,070), and audio match the 108-minute master."
+        ]
       }
     }
   ],
