@@ -263089,9 +263089,14 @@
           "at": "2026-11-16T21:22Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2960; reading J2831 history and checking iCloud pair file."
+        },
+        {
+          "at": "2026-11-16T21:27Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified 24h cleanup cutoff 2026-11-16T21:06:07Z and check_at 2026-11-16T21:10:00Z passed; iCloud file (865B, 0600) present; issue #219 pairs[0] active."
         }
       ],
-      "remaining_action": "Inspect J2831 pair link status and iCloud Drive file 'Link this phone to the board'",
+      "remaining_action": "Write and commit jobs/reviews/J2960/REVIEW.md in a clean detached worktree",
       "kind": "review",
       "recheck_of": "J2831",
       "due": "2026-11-14T17:00:00+00:00",
@@ -263106,11 +263111,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-16T21:22Z",
+        "at": "2026-11-16T21:27Z",
         "by": "gemini",
-        "note": "Claimed J2960; reading J2831 history and checking iCloud pair file."
+        "note": "Verified 24h cleanup cutoff 2026-11-16T21:06:07Z and check_at 2026-11-16T21:10:00Z passed; iCloud file (865B, 0600) pres"
       }
     }
   ],
