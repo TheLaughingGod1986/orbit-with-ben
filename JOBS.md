@@ -86,6 +86,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2921 | mini | claimed | gemini | 2026-11-16T03:49Z | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J2922 | mini | claimed | macbook | 2026-11-16T04:51Z | for gemini · script · `gemini-argon` · HOS: learn from our data, add two new films to the backlog |  |
 | J2924 | mini | open (after J2922) | – | – | HOS:110 topic · review · HOS 110 Why Do Onions Make You Cry: rule-E topic go/no-go review |  |
+| J2925 | mini | open (after J2922) | – | – | HOS:111 topic · review · HOS 111 Why Do Knuckles Crack: rule-E topic go/no-go review |  |
 
 Recently finished:
 
