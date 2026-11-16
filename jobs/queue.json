@@ -259063,6 +259063,11 @@
           "at": "2026-11-16T01:57Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-16T02:19Z",
+          "by": "gemini",
+          "what": "waits on Ben: Watch the 30 Nov Moon-Jupiter dated-event Short v01 and its cover (by 2026-11-25 18:00 London)"
         }
       ],
       "remaining_action": "Chief/Claude review of dated-event Short v01 before Ben's watch (due Wed 25 Nov 18:00)",
@@ -259086,7 +259091,17 @@
       },
       "for": "gemini",
       "model": "gemini-agy",
-      "escalated_at": "2026-11-16T01:57Z"
+      "escalated_at": "2026-11-16T01:57Z",
+      "awaits_ben": {
+        "what": "Watch the 30 Nov Moon-Jupiter dated-event Short v01 and its cover",
+        "file": "OWB UAT/owb_dated_2026_11_30_moon_jupiter_v01.mp4",
+        "version": "v01",
+        "due": "2026-11-25T18:00Z",
+        "airs": "2026-11-26T11:30Z",
+        "ifNot": "Do not upload this dated Short if approval misses the deadline",
+        "title": "Why Is Jupiter Beside the Moon on November 30?",
+        "type": "short"
+      }
     },
     {
       "id": "J2917",
