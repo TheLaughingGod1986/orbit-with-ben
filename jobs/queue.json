@@ -88760,6 +88760,11 @@
           "at": "2026-11-16T06:10Z",
           "by": "gemini",
           "what": "waits on Ben: Watch 032 Titan Short #2 (Test A Opening) v02 and its cover: Could You Survive Stepping Onto Saturn's Moon Titan? (by 2026-11-20 18:00 London)"
+        },
+        {
+          "at": "2026-11-16T06:14Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "kind": "assembly",
@@ -88767,7 +88772,7 @@
       "taskKeys": [
         "OWB:032"
       ],
-      "escalated_at": "2026-10-26T18:37Z",
+      "escalated_at": "2026-11-16T06:14Z",
       "remaining_action": "Wait for Ben's final UAT watch on the board by Fri 20 Nov 18:00 London before any Private upload for Fri 27 Nov 11:30 London (Related T3cBBss1F60)",
       "progress": {
         "step": 3,
@@ -259824,6 +259829,11 @@
           "at": "2026-11-16T04:10Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J2921 QA sweep complete across OWB (89dfdf6613) and HOS PR #610 (b1403d3b) with byte-identical J2921_QA_SWEEP_INVENTORY_2026-11-16.json (sha256 82bd7163851a0229d7a73ebc18405df4f8117b97e3275b875fb61528cd38cf88) and J2921_QA_SWEEP_REPORT_2026-11-16.md (sha256 dfe41ed00d5134b55aeecd91e7307c043aefc6cfcf3938e3e1e7c01c168596e4). 255 entries inventoried (163 OWB + 92 HOS; 400 enumerated media files = 358 directly hashed unwrapped + 41 NAS tar + 1 manifest-backed iCloud stub; 27 net new post-J2753 renders + 1 updated export owb_sa_s8_voyager1_v02). All 744/744 applicable picture_qa/polish_gate/music_gate sidecars (717 JSON + 27 .txt) present, fresh vs media, and reconciled 1-to-1 against raw sidecars on disk with 0 mismatches; 0 unaddressed current_newest FAILs across all 155 newest candidates (all 27 gate_failure_indicators belong strictly to 8 historical_superseded cuts whose current_newest replacements pass all 3 gates with 0 FAIL); 0 new repair jobs required. Spend: £0."
+        },
+        {
+          "at": "2026-11-16T06:14Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Await Chief review of J2921 QA sweep inventory and report",
@@ -259846,7 +259856,8 @@
         "HOS:005",
         "HOS:007",
         "HOS:008"
-      ]
+      ],
+      "escalated_at": "2026-11-16T06:14Z"
     },
     {
       "id": "J2922",
