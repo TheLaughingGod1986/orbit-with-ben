@@ -253257,9 +253257,14 @@
           "at": "2026-11-16T01:45Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-16T01:45Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2850; starting verification of J0979 waiting condition on OWB:032"
         }
       ],
-      "remaining_action": "Verify readiness: Wait for J2477 and Ben's watch, then cut the Short from the approved master",
+      "remaining_action": "Read J0979, J2477, and OWB:032 edit/UAT status to verify waiting condition",
       "kind": "review",
       "recheck_of": "J0979",
       "due": "2026-11-14T19:31:20+00:00",
@@ -253278,9 +253283,11 @@
         "of": 3,
         "at": "2026-11-16T01:45Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2850; starting verification of J0979 waiting condition on OWB:032"
+      },
+      "taskKeys": [
+        "OWB:032"
+      ]
     },
     {
       "id": "J2851",
