@@ -260164,9 +260164,14 @@
           "at": "2026-11-16T06:08Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Committed J2926 REVIEW.md + 032 Short #2 Test A v02 package (592efd8d8c) and verified UAT SHA-256 copies"
+        },
+        {
+          "at": "2026-11-16T06:09Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Armed J0979 watch card on board (due 20 Nov 18:00 London) and recorded wait --recheck J2926"
         }
       ],
-      "remaining_action": "Arm awaits_ben + wait --recheck J2926 on J0979, verify board_check, and close J2926",
+      "remaining_action": "Close J2926 and publish/check Studio board",
       "kind": "review",
       "recheck_of": "J0979",
       "due": "2026-11-16T04:43:24+00:00",
@@ -260181,11 +260186,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-16T06:08Z",
+        "at": "2026-11-16T06:09Z",
         "by": "gemini",
-        "note": "Committed J2926 REVIEW.md + 032 Short #2 Test A v02 package (592efd8d8c) and verified UAT SHA-256 copies"
+        "note": "Armed J0979 watch card on board (due 20 Nov 18:00 London) and recorded wait --recheck J2926"
       },
       "taskKeys": [
         "OWB:032"
