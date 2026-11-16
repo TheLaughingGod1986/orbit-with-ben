@@ -263094,9 +263094,14 @@
           "at": "2026-11-16T21:27Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Verified 24h cleanup cutoff 2026-11-16T21:06:07Z and check_at 2026-11-16T21:10:00Z passed; iCloud file (865B, 0600) present; issue #219 pairs[0] active."
+        },
+        {
+          "at": "2026-11-16T21:28Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Committed jobs/reviews/J2960/REVIEW.md (52888613c4)."
         }
       ],
-      "remaining_action": "Write and commit jobs/reviews/J2960/REVIEW.md in a clean detached worktree",
+      "remaining_action": "Reopen J2831 at step 3/4 (rerouted to gemini) and close J2960",
       "kind": "review",
       "recheck_of": "J2831",
       "due": "2026-11-14T17:00:00+00:00",
@@ -263111,11 +263116,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-16T21:27Z",
+        "at": "2026-11-16T21:28Z",
         "by": "gemini",
-        "note": "Verified 24h cleanup cutoff 2026-11-16T21:06:07Z and check_at 2026-11-16T21:10:00Z passed; iCloud file (865B, 0600) pres"
+        "note": "Committed jobs/reviews/J2960/REVIEW.md (52888613c4)."
       }
     }
   ],
