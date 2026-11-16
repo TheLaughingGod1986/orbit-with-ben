@@ -259535,17 +259535,22 @@
           "at": "2026-11-16T03:19Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Resumed J2921 at step 2/4; checking earlier scratch/worktree and running HOS gates next"
+        },
+        {
+          "at": "2026-11-16T03:25Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Step 3/4 complete: ran and verified all 11 post-J2753 HOS exports (HOS 005 s06/s07 v03..v04, HOS 007 variolation v03..v05 & eradication v05..v06, HOS 008 master v04..v05); all current_newest HOS exports pass all 3 gates with 0 FAIL"
         }
       ],
-      "remaining_action": "Run missing or stale picture_qa, polish_gate, and music_gate sidecars on post-J2753 HOS exports",
+      "remaining_action": "Build and verify reconciled J2921 QA sweep inventory and report across OWB and HOS, commit to clean worktrees, and post report",
       "kind": "qa",
       "backlog": "both-qa-sweep",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-16T03:19Z",
+        "at": "2026-11-16T03:25Z",
         "by": "gemini",
-        "note": "Resumed J2921 at step 2/4; checking earlier scratch/worktree and running HOS gates next"
+        "note": "Step 3/4 complete: ran and verified all 11 post-J2753 HOS exports (HOS 005 s06/s07 v03..v04, HOS 007 variolation v03..v0"
       },
       "taskKeys": [
         "OWB:024",
