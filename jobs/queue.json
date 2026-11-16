@@ -253227,13 +253227,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-16T01:45Z",
-      "eta": "2026-11-16T03:45Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-14T18:31Z",
-      "result": "",
+      "result": "CONDITION SATISFIED — REOPENED J0979 (commit e7da793304, jobs/reviews/J2850/REVIEW.md): Verified 032 locked VO titan_landing_vo_v02b.wav (sha256 55232eeb...5301abc5), J2089/J2378 picture package (7920d0f777), titan_score_bed_v01.mp3 (sha256 02c7d958...9dab8f9e), J2477 KEEP PASS on 032 long master v02 (5dbd6f396e, sha256 51986972...c80ed073), Ben's UAT watch approval (14 Nov 22:46Z, 491feb6967), and J2884 finalized upload package (e88a785705) + Private scheduled upload T3cBBss1F60 for Wed 25 Nov 2026 18:00Z (ffc51864ef, 64fd9fb84d). Reopened J0979 for £0 assembly from approved master v02 / cuts_v02.json (no upload, no schedule change).",
       "history": [
         {
           "at": "2026-11-14T18:31Z",
@@ -253269,6 +253269,11 @@
           "at": "2026-11-16T01:53Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Reopened J0979 with verified evidence (e7da793304); completing J2850"
+        },
+        {
+          "at": "2026-11-16T01:53Z",
+          "by": "gemini",
+          "what": "done: CONDITION SATISFIED — REOPENED J0979 (commit e7da793304, jobs/reviews/J2850/REVIEW.md): Verified 032 locked VO titan_landing_vo_v02b.wav (sha256 55232eeb...5301abc5), J2089/J2378 picture package (7920d0f777), titan_score_bed_v01.mp3 (sha256 02c7d958...9dab8f9e), J2477 KEEP PASS on 032 long master v02 (5dbd6f396e, sha256 51986972...c80ed073), Ben's UAT watch approval (14 Nov 22:46Z, 491feb6967), and J2884 finalized upload package (e88a785705) + Private scheduled upload T3cBBss1F60 for Wed 25 Nov 2026 18:00Z (ffc51864ef, 64fd9fb84d). Reopened J0979 for £0 assembly from approved master v02 / cuts_v02.json (no upload, no schedule change)."
         }
       ],
       "remaining_action": "Close J2850 done and post studio thread report",
@@ -253294,7 +253299,8 @@
       },
       "taskKeys": [
         "OWB:032"
-      ]
+      ],
+      "done_ref": "e7da793304"
     },
     {
       "id": "J2851",
