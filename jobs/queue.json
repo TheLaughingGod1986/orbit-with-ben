@@ -260365,10 +260365,10 @@
       "stage": "topic",
       "after": "J2929",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-16T05:15Z",
+      "eta": "2026-11-16T06:45Z",
       "created_by": "macbook-2",
       "created_at": "2026-11-16T04:52Z",
       "result": "",
@@ -260377,11 +260377,24 @@
           "at": "2026-11-16T04:52Z",
           "by": "macbook-2",
           "what": "added"
+        },
+        {
+          "at": "2026-11-16T05:15Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Rule-E topic go/no-go review: OWB 072 (Every Dwarf Planet Explained in 10 Minutes) and 073 (How the Soviets Landed on Venus) from J2929",
       "kind": "review",
-      "plain": "Review OWB 072 (Every Dwarf Planet Explained in 10 Minutes) and OWB 073 (How the Soviets Landed on Venus) topic briefs against Rule E and studio/plan.json"
+      "plain": "Review OWB 072 (Every Dwarf Planet Explained in 10 Minutes) and OWB 073 (How the Soviets Landed on Venus) topic briefs against Rule E and studio/plan.json",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-16T05:15Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [

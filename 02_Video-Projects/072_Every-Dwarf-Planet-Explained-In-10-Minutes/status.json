@@ -4,7 +4,7 @@
   "air": "",
   "stages": {
     "topic": {
-      "state": "todo"
+      "state": "doing"
     },
     "script": {
       "state": "todo"
@@ -31,6 +31,14 @@
       "state": "todo"
     }
   },
-  "claims": [],
+  "claims": [
+    {
+      "stage": "topic",
+      "by": "gemini",
+      "at": "2026-11-16T05:15Z",
+      "eta": "2026-11-16T06:44Z",
+      "note": "J2931 Rule-E topic go/no-go review: OWB 072 (Every Dwarf Planet Explained in 10 Minutes) and 073 (How the Soviets Landed on Venus) from J2929"
+    }
+  ],
   "next": "Appended to jobs/WIP.json next (J2929); Rule-E topic go/no-go review queued; starts Script stage only when an active OWB WIP slot opens after studio/plan.json format tests"
 }
