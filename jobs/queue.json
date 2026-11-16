@@ -260782,10 +260782,10 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-16T08:54Z",
+      "eta": "2026-11-16T09:39Z",
       "created_by": "refill",
       "created_at": "2026-11-16T07:04Z",
       "result": "",
@@ -260819,6 +260819,11 @@
           "at": "2026-11-16T08:01Z",
           "by": "claudecode",
           "what": "released: Hand-back, not done. Studio's video analytics moved to new hub pages (hub_reach/hub_overview/hub_engagement); yta_web/get_screen is no longer sent, so the old reader and scripts/studio_reach.py scraping both fail. New data is in youtubei/v1/browse (FEanalytics_hub_video_*; gzip request body). Exact impressions and views are in the chart tooltips; exact CTR, average view duration, average % viewed and stayed-to-watch still to locate (try the explore TABLE_AND_CHART route). Notes and read-only probe scripts: /Volumes/MiniWork/scratch/j2932/NOTES.md. studio_ctr.json untouched (still 15 Nov). Nothing changed in Studio."
+        },
+        {
+          "at": "2026-11-16T08:54Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Rebuilding the Studio numbers reader for YouTube's new analytics pages, then reading every long and Short",
