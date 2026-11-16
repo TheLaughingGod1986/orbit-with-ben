@@ -189017,6 +189017,11 @@
           "at": "2026-11-16T06:33Z",
           "by": "gemini",
           "what": "reopened: Released at 1/3 after J2271/J2928 12/12 KEEP lock (HOS PR #605 merged at f71d4f30; locked 12-plate table in 02_Video-Projects/010_Alvarez-Clay-Line-Dinosaurs/07_Edit-Project/review_J2915_r1_r6/J2915_R1_R6_REVIEW_v01.json). Assemble Short A and Short C at 936x1664 (2.311x) £0 using accepted VO (J0862/J1004 Option A1) and run all gates."
+        },
+        {
+          "at": "2026-11-16T06:38Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Cursor out of usage; next in its chain: gemini"
         }
       ],
       "remaining_action": "Await repaired and independently accepted Dinosaur scenes; existing review task applies the recorded crop and mapping decisions.",
@@ -189024,7 +189029,16 @@
       "kind": "assembly",
       "taskKeys": [
         "HOS:010"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-agy"
     },
     {
       "id": "J2173",
