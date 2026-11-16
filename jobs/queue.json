@@ -72905,13 +72905,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "open",
+      "by": "",
       "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-10-22T20:55Z",
-      "result": "waits for input: 026 long c5AdqQsnnys public (its YouTube publishAt Sun 15 Nov 2026 18:00Z is a release date, not a job start); reopen when public; must finish before Mon 16 Nov 11:30Z when Short aEfdxex__Bo airs",
+      "result": "",
       "history": [
         {
           "at": "2026-10-22T20:55Z",
@@ -72947,16 +72947,15 @@
           "at": "2026-11-15T18:25Z",
           "by": "relay",
           "what": "condition verification queued: J2909"
+        },
+        {
+          "at": "2026-11-16T05:46Z",
+          "by": "gemini",
+          "what": "reopened: Verified by J2909 via YouTube Data API v3 at 2026-11-16T05:45Z: 026 long c5AdqQsnnys ('How Far Is the Nearest Star? (You Can'\\''t See It, and It Has a Planet)') is Public (publishedAt 2026-11-15T18:00:37Z, privacyStatus=public, publishAt=null, uploadStatus=processed, madeForKids=false). All three 026 weekday Shorts (aEfdxex__Bo Mon 16 Nov 11:30Z, dH_yCRmzkMo Wed 18 Nov 11:30Z, aAUgIGEuPwQ Fri 20 Nov 11:30Z) read back Private/scheduled and all original Ben/Chief approvals (J0833, J0851, J1101, J1825/J1927, J2497, J2513, J2514) remain valid."
         }
       ],
       "kind": "studio",
-      "remaining_action": "Add Related links and pin the Nearest Star comment",
-      "hold": {
-        "type": "public",
-        "condition": "Nearest Star long c5AdqQsnnys must read back Public",
-        "check_at": "2026-11-15T19:25:18+00:00",
-        "recheck_task": "J2909"
-      }
+      "remaining_action": "Add Related links and pin the Nearest Star comment"
     },
     {
       "id": "J0862",
