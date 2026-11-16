@@ -258973,6 +258973,11 @@
           "at": "2026-11-15T23:26Z",
           "by": "gemini",
           "what": "released: Detached tmux session j2915-render running on merged main bd44652b (Batch 1 R1-R5 + Batch 2 R6 under Chief go 6898337122). Log: /Users/benjaminoats/_desk/logs/J2915/mint.log | Done file: /Users/benjaminoats/_desk/logs/J2915/mint.done (missing = still running, leave it; present = check exit code and build R1-R6 4fps contact strips + motion note on review branch)."
+        },
+        {
+          "at": "2026-11-16T02:22Z",
+          "by": "relay",
+          "what": "rerouted to gemini: Cursor out of usage; next in its chain: gemini"
         }
       ],
       "remaining_action": "Wait for detached tmux j2915-render (/Users/benjaminoats/_desk/logs/J2915/mint.done), then build R1-R6 4fps contact strips and motion note on a review branch and post to #180",
@@ -258988,7 +258993,15 @@
       },
       "taskKeys": [
         "HOS:010"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini"
     },
     {
       "id": "J2916",
