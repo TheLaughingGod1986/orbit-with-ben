@@ -255782,13 +255782,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-16T09:21Z",
-      "eta": "2026-11-16T11:21Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-15T04:53Z",
-      "result": "",
+      "result": "Elected-Chief ruling (gemini, OWB a2f7e08a34, HOS PR #613): Verified J2243 5-part v05 multimodal QA PASS (HOS PR #595 0cf1743f, OWB aa702b68a8, v05 sha256 d1ffb78d...841b + 19/19 NAS artefacts intact), closed J2243 done, cleared superseded J1297 v03 ask, and staged hos_008_master_v05_PHONE.mp4 (sha256 9e9c8784..., watch id hos-008-v05-42f37ffc34923d7af3ba, Play 302) on Ready for OK card HOS:008 for Ben's final watch with all 8 v03 notes tracked.",
       "history": [
         {
           "at": "2026-11-15T04:53Z",
@@ -255849,6 +255849,11 @@
           "at": "2026-11-16T09:21Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Recorded Elected-Chief PASS on J2243, cleared superseded J1297 v03 ask, and staged HOS:008 v05 on Ready for OK"
+        },
+        {
+          "at": "2026-11-16T09:21Z",
+          "by": "gemini",
+          "what": "done: Elected-Chief ruling (gemini, OWB a2f7e08a34, HOS PR #613): Verified J2243 5-part v05 multimodal QA PASS (HOS PR #595 0cf1743f, OWB aa702b68a8, v05 sha256 d1ffb78d...841b + 19/19 NAS artefacts intact), closed J2243 done, cleared superseded J1297 v03 ask, and staged hos_008_master_v05_PHONE.mp4 (sha256 9e9c8784..., watch id hos-008-v05-42f37ffc34923d7af3ba, Play 302) on Ready for OK card HOS:008 for Ben's final watch with all 8 v03 notes tracked."
         }
       ],
       "remaining_action": "Close J2877 done after recording Elected-Chief PASS on J2243 and staging HOS:008 v05 on Ready for OK",
@@ -255875,7 +255880,8 @@
         "at": "2026-11-16T09:21Z",
         "by": "gemini",
         "note": "Recorded Elected-Chief PASS on J2243, cleared superseded J1297 v03 ask, and staged HOS:008 v05 on Ready for OK"
-      }
+      },
+      "done_ref": "0cf1743ff0ba904d5733843f9ac5cf0f1cc1d74c"
     },
     {
       "id": "J2878",
