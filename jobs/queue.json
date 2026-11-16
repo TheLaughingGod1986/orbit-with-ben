@@ -1,5 +1,5 @@
 {
-  "next_id": 2961,
+  "next_id": 2963,
   "jobs": [
     {
       "id": "J0001",
@@ -257107,6 +257107,11 @@
           "at": "2026-11-15T12:43Z",
           "by": "gemini",
           "what": "done: PASS (KEEP) on 033 Uranus long master v04 (033_why_this_planet_has_21_year_winters_master_v04.mp4, SHA-256 3712479ae852dd318c4d8d0dfd18f7df08c1a857068c24c3d3792a35a27f11c3, 629.42s, 1920x1080 24fps CFR, -14.5 LUFS, -1.5 dBTP, 0 black frames, 0 >15s reuse warnings); FIX-A, FIX-B, FIX-C verified across all 5 parts of J2829; R2 watch copy owb-033-v04 uploaded; awaits_ben armed for Wed 09 Dec 2026 18:00 London (jobs/reviews/J2890/REVIEW.md, commit 002d7af11b)"
+        },
+        {
+          "at": "2026-11-16T21:52Z",
+          "by": "claude",
+          "what": "no longer waits on Ben"
         }
       ],
       "remaining_action": "Completed 033 master v04 review (KEEP) and staged for Ben UAT watch",
@@ -257135,7 +257140,7 @@
       "taskKeys": [
         "OWB:033"
       ],
-      "awaits_ben": {
+      "awaits_was": {
         "what": "Watch 033 Uranus long master v04 (10m 29s) and thumbnails A/B",
         "file": "OWB UAT/033_why_this_planet_has_21_year_winters_master_v04_PHONE.mp4",
         "version": "v04",
@@ -262810,6 +262815,11 @@
           "at": "2026-11-16T18:19Z",
           "by": "gemini",
           "what": "done: Built and verified full 108-minute 720p phone copy sleep_video_01_master_v02_PHONE.mp4 (sha256 4cf4479719ac..., 6502.333s, 195070 frames, bit-identical master audio), uploaded to R2 owb-sleep-01-v02 (302->206 verified), registered in watch_uploads.json (55e4e2c5b8), and sent Ben's whole-film watch card. Private upload 13q4_EoLEN4 untouched."
+        },
+        {
+          "at": "2026-11-16T21:52Z",
+          "by": "claude",
+          "what": "no longer waits on Ben: OK'd, delivered by J2961"
         }
       ],
       "remaining_action": "Watch card sent for whole 108-minute film; Private upload 13q4_EoLEN4 left scheduled.",
@@ -262822,7 +262832,8 @@
         "by": "gemini",
         "note": "Whole-film watch card armed on J2954 (owb-sleep-01-v02, 108m22s); Private upload 13q4_EoLEN4 untouched"
       },
-      "awaits_ben": {
+      "done_ref": "55e4e2c5b8",
+      "awaits_was": {
         "what": "Watch the whole 108-minute sleep film from start to finish (not a 30-second clip). The 97:20 fix is inside this full film.",
         "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_sleep_video_01/sleep_video_01_master_v02_PHONE.mp4",
         "version": "sleep_video_01_master_v02",
@@ -262840,8 +262851,7 @@
           "Replaced the 30-second extract with the whole 108-minute film (1 hr 48 min 22 s, all 13 chapters from the Moon to Andromeda) in one continuous 720p stream.",
           "The 97:20 fix is inside this full film, and the length, frame count (195,070), and audio match the 108-minute master."
         ]
-      },
-      "done_ref": "55e4e2c5b8"
+      }
     },
     {
       "id": "J2955",
@@ -263263,6 +263273,81 @@
         "by": "gemini",
         "note": "Reopened J2831 at step 3/4 and rerouted to gemini for step 4/4 cleanup only."
       }
+    },
+    {
+      "id": "J2961",
+      "title": "Sleep video: read back the Private upload against the master Ben OK'd, before it airs Sat 12 Dec",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben OK'd the whole 108-minute sleep film on the board (16 Nov 20:51Z, tick OWB-J2954, sleep_video_01_master_v02).** Final-OK read-back before it airs Sat 12 Dec 21:00 London.\n\nThe Private upload `13q4_EoLEN4` already exists, scheduled for Sat 12 Dec 21:00 London. Do NOT upload again.\n1. Read the upload back in Studio: Private, publish time 2026-12-12T21:00:00Z, duration about 108:22 (6,502 s), title 'Space Documentary for Sleep: A Slow Journey From the Moon to Andromeda', thumbnail FALL ASLEEP IN SPACE, synthetic-content disclosure on, 13 chapters.\n2. Check the upload is the OK'd master: compare its duration and a frame at 97:36 with `sleep_video_01_master_v02.mp4` (sha256 in jobs/reviews/J2954 and J2452). If the upload was made from an older render, park for the Chief with the difference: do not replace or upload anything without the Chief.\n3. Post the read-back on the thread. £0. Nothing public, nothing deleted.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-16T21:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-16T21:52Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-16T21:52Z",
+          "by": "claude",
+          "what": "approved by Ben: Watch the whole 108-minute sleep film from start to finish (not a 30-second clip). The 97:20 fix is inside this full film. sleep_video_01_master_v02 (asked in J2954)"
+        }
+      ],
+      "remaining_action": "Sleep video: read back the Private upload against the master Ben OK'd, before it airs Sat 12 Dec",
+      "due": "2026-11-20T18:00:00Z",
+      "kind": "studio",
+      "approved_from": {
+        "what": "Watch the whole 108-minute sleep film from start to finish (not a 30-second clip). The 97:20 fix is inside this full film.",
+        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_sleep_video_01/sleep_video_01_master_v02_PHONE.mp4",
+        "version": "sleep_video_01_master_v02",
+        "airs": "2026-12-12T21:00Z",
+        "title": "Space Documentary for Sleep: A Slow Journey From the Moon to Andromeda",
+        "number": "SLEEP01",
+        "type": "long",
+        "channel": "OWB",
+        "job": "J2954",
+        "okAt": "2026-11-16T20:51Z"
+      }
+    },
+    {
+      "id": "J2962",
+      "title": "Uranus long: give the opening moving picture instead of a still (v05)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben's answer on the Uranus long watch card (16 Nov 20:50Z, tick OWB-033, master v04). His words: \"0:00 starts on a still image maybe we can add some video with our google flow credit or api\".**\n\nHe wants the first shot of the film to move. Fix it as a new version (v05) beside v04; never overwrite v04.\n1. Look at the opening (0:00 to the first cut). Replace the still with moving picture. Prefer real, free moving footage first: NASA/ESA/JPL video or animation of Uranus (Voyager 2 flyby, Hubble/Webb animations, SVS). Check the licence and the picture credit for each clip. If a still must stay, give it real camera motion (slow push-in or drift) at native resolution, no blur-pad.\n2. Ben named Google Flow credits or the API. No cash spend. Read the Flow plan-credit balance and its reset date with `python3 scripts/ai_spend.py report` (never print an address). If free footage cannot do it and a generated clip would, do NOT mint it: park for the Chief with the clip idea, the prompt, the cost in plan credits, and the balance. The Chief rules on the price pass.\n3. Keep voice, music, length and every other cut as in v04. Re-run the five gates and the first-30-seconds check on v05; copy to the watch folders and call `jobs.py awaits` for v05 with `prev` OWB-033 and the fix named in plain words.\n4. No upload, nothing scheduled. £0 unless the Chief rules otherwise.\n",
+      "ref": "",
+      "film": "033",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-16T21:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-16T21:52Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Uranus long: give the opening moving picture instead of a still (v05)",
+      "due": "2026-11-24T18:00:00Z",
+      "kind": "video"
     }
   ],
   "focus": [
