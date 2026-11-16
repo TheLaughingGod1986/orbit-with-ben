@@ -262854,10 +262854,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
-      "by": "claudecode",
-      "since": "2026-11-16T21:38Z",
-      "eta": "2026-11-16T23:08Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-16T21:16Z",
       "result": "",
@@ -262901,6 +262901,11 @@
           "at": "2026-11-16T21:41Z",
           "by": "claudecode",
           "what": "step 3 of 5 done: UPLOADED: new Private id Sq_lV89VMUs, publishAt 2026-11-20T11:30:00Z, cover set by the API. Do not upload again."
+        },
+        {
+          "at": "2026-11-16T21:41Z",
+          "by": "claudecode",
+          "what": "released: UPLOADED, do not upload again: Private id Sq_lV89VMUs, publishAt 2026-11-20T11:30:00Z, cover set. Receipt on HOS branch claudecode/J2955-s06-cuff-upload (8bb0e870), worktree scratch/J2955-wt, log ~/_desk/logs/J2955-upload.log. Left (steps 4-5): Studio Related=wwcjcFfC-5M, audience/altered re-check, upload the en-GB srt from the package, buffer-mirror register --channel hos (failed in upload: OWB_ROOT), gate status scheduled, channel:audit, check_all, open the PR."
         }
       ],
       "remaining_action": "Set the Related video and re-check audience, altered content and captions in Studio; register the Short for social; land the receipt",
