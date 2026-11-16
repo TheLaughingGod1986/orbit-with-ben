@@ -251319,10 +251319,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-16T01:42Z",
+      "eta": "2026-11-16T03:42Z",
       "created_by": "relay",
       "created_at": "2026-11-14T13:19Z",
       "result": "",
@@ -251371,6 +251371,11 @@
           "at": "2026-11-16T01:42Z",
           "by": "gemini",
           "what": "reopened: Chief condition ruling is now recorded on J2040; reopen only this verification to claim and complete its administrative closure. J2040 stays held."
+        },
+        {
+          "at": "2026-11-16T01:42Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief (chief) to run jobs.py wait J2040 --recheck J2825 (to 2026-11-15T18:10:00Z) and jobs.py done J2825",
@@ -251387,7 +251392,15 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "escalated_at": "2026-11-15T15:19Z"
+      "escalated_at": "2026-11-15T15:19Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-16T01:42Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2826",
