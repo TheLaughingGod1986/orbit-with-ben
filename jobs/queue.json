@@ -255782,10 +255782,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-16T09:21Z",
+      "eta": "2026-11-16T11:21Z",
       "created_by": "relay",
       "created_at": "2026-11-15T04:53Z",
       "result": "",
@@ -255839,6 +255839,11 @@
           "at": "2026-11-16T09:21Z",
           "by": "gemini",
           "what": "reopened: Elected-Chief (gemini) ruling (a2f7e08a34, HOS PR #613): J2243 condition verified & closed done with HOS:008 staged on Ready for OK; reopening J2877 to close done"
+        },
+        {
+          "at": "2026-11-16T09:21Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Park J2877 for Chief Grok to close J2877/J2243 and authorize UAT staging of hos_008_master_v05.mp4",
@@ -255858,7 +255863,15 @@
       "taskKeys": [
         "HOS:008"
       ],
-      "escalated_at": "2026-11-16T07:07Z"
+      "escalated_at": "2026-11-16T07:07Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-16T09:21Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2878",
