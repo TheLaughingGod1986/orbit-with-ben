@@ -83,6 +83,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2956 | mini | open | – | – | 005 upload · studio · Upload HOS 005 Short s07 v04 (How Does the Heart Pump Blood?) Private, Sun 22 Nov 11:30 | 6912157706 |
 | J2957 | mini | open | – | – | 007 upload · studio · Upload HOS 007 Short variolation v05 (What Is Variolation?) Private, Sat 28 Nov 11:30 | 6912169020 |
 | J2958 | mini | open | – | – | 007 upload · studio · Upload HOS 007 Short eradication v06 (How Was Smallpox Eradicated?) Private, Sun 29 Nov 11:30 | 6914782767 |
+| J2959 | mini | open | – | – | review · Verify condition for J2040 |  |
+| J2960 | mini | open | – | – | review · Verify condition for J2831 |  |
 
 Recently finished:
 

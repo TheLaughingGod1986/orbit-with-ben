@@ -1,5 +1,5 @@
 {
-  "next_id": 2959,
+  "next_id": 2961,
   "jobs": [
     {
       "id": "J0001",
@@ -179431,6 +179431,11 @@
           "at": "2026-11-16T14:57Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-16T20:55:00Z"
+        },
+        {
+          "at": "2026-11-16T21:20Z",
+          "by": "relay",
+          "what": "condition verification queued: J2959"
         }
       ],
       "remaining_action": "Verify operator configuration and fresh-session acceptance evidence before resuming remaining allow-list work",
@@ -179455,10 +179460,11 @@
       "hold": {
         "type": "input",
         "condition": "Chief ruling on J2943: NOT MET. Fresh review at 2026-11-16T14:56Z (jobs/reviews/J2943/REVIEW.md) confirms J2517 (#793) and J2559 (#795) remain complete, all eight local ~/.codex approval-settings and gateway hashes match jobs/reviews/J2934/REVIEW.md and the 4-6 Nov 3/4 checkpoint unchanged (config.toml sha256 efa1987b3c..., default.rules sha256 b6d57758e2..., studio.rules sha256 e3b8c84f19..., 5 gateways in ~/.codex/bin/ unchanged since 6 Nov 15:12), draft PR #490 remains OPEN/draft at f521bcd3f1 with 0 comments, and docs/CODEX_ALLOWLIST.md is not on main. Await authorized operator confirmation of local approval configuration and fresh-session scoped acceptance evidence; keep fallback routing active and make no autonomous approval-control changes. Recheck operator evidence at 2026-11-16T20:55:00Z.",
-        "check_at": "2026-11-16T20:55:00Z",
+        "check_at": "2026-11-16T22:20:54+00:00",
         "last_recheck": "J2943",
         "checked_at": "2026-11-16T14:57:44+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J2959"
       },
       "plain": "Let Codex run the studio's routine commands on the Mac mini without asking each time (needs you at the Mini)"
     },
@@ -252280,6 +252286,11 @@
           "at": "2026-11-15T21:08Z",
           "by": "cursor",
           "what": "condition recorded; next verification 2026-11-16T21:10:00Z"
+        },
+        {
+          "at": "2026-11-16T21:20Z",
+          "by": "relay",
+          "what": "condition verification queued: J2960"
         }
       ],
       "remaining_action": "Remove the iCloud phone-link file after it is used or 24 hours have passed",
@@ -252298,7 +252309,8 @@
       "hold": {
         "type": "date",
         "condition": "The one-time link is already in Ben's own iCloud Drive, file name Link this phone to the board, and that folder is not shared. Do not mint another link and do not print the link. Delete that file when the private pair link has been used, or at this check time if it is still there. Then say on the thread that the file was removed.",
-        "check_at": "2026-11-16T21:10:00Z"
+        "check_at": "2026-11-16T22:20:54+00:00",
+        "recheck_task": "J2960"
       }
     },
     {
@@ -262993,6 +263005,68 @@
         "okAt": "2026-11-16T21:16Z",
         "okRef": "6914782767"
       }
+    },
+    {
+      "id": "J2959",
+      "title": "Verify condition for J2040",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2040: Chief ruling on J2943: NOT MET. Fresh review at 2026-11-16T14:56Z (jobs/reviews/J2943/REVIEW.md) confirms J2517 (#793) and J2559 (#795) remain complete, all eight local ~/.codex approval-settings and gateway hashes match jobs/reviews/J2934/REVIEW.md and the 4-6 Nov 3/4 checkpoint unchanged (config.toml sha256 efa1987b3c..., default.rules sha256 b6d57758e2..., studio.rules sha256 e3b8c84f19..., 5 gateways in ~/.codex/bin/ unchanged since 6 Nov 15:12), draft PR #490 remains OPEN/draft at f521bcd3f1 with 0 comments, and docs/CODEX_ALLOWLIST.md is not on main. Await authorized operator confirmation of local approval configuration and fresh-session scoped acceptance evidence; keep fallback routing active and make no autonomous approval-control changes. Recheck operator evidence at 2026-11-16T20:55:00Z.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2040 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-16T21:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-16T21:20Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Verify operator configuration and fresh-session acceptance evidence before resuming remaining allow-list work",
+      "kind": "review",
+      "recheck_of": "J2040",
+      "due": "2026-11-16T22:20:54+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2960",
+      "title": "Verify condition for J2831",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2831: The one-time link is already in Ben's own iCloud Drive, file name Link this phone to the board, and that folder is not shared. Do not mint another link and do not print the link. Delete that file when the private pair link has been used, or at this check time if it is still there. Then say on the thread that the file was removed.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2831 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-16T21:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-16T21:20Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Remove the iCloud phone-link file after it is used or 24 hours have passed",
+      "kind": "review",
+      "recheck_of": "J2831",
+      "due": "2026-11-14T17:00:00+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
