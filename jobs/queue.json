@@ -252149,13 +252149,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-11-15T21:00Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-14T15:33Z",
-      "result": "Waiting for: The one-time link is already in Ben's own iCloud Drive, file name Link this phone to the board, and that folder is not shared. Do not mint another link and do not print the link. Delete that file when the private pair link has been used, or at this check time if it is still there. Then say on the thread that the file was removed.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-14T15:33Z",
@@ -252291,6 +252291,11 @@
           "at": "2026-11-16T21:20Z",
           "by": "relay",
           "what": "condition verification queued: J2960"
+        },
+        {
+          "at": "2026-11-16T21:28Z",
+          "by": "gemini",
+          "what": "reopened: Condition satisfied (J2960, jobs/reviews/J2960/REVIEW.md, commit 52888613c4): scheduled check time 2026-11-16T21:10:00Z and 24h file cutoff 2026-11-16T21:06:07Z passed at 2026-11-16T21:24:06Z; '~/Library/Mobile Documents/com~apple~CloudDocs/Link this phone to the board.html' (mode 0600, 865B, mtime 2026-11-15T21:06:07Z) verified present; issue #219 pairs[0] (2026-11-14T19:13:08.165Z, e=1795269633) already paired Ben's iPhone (verdicts through 2026-11-16T20:51:28.150Z). Reopened for step 4/4 cleanup ONLY: delete ONLY '~/Library/Mobile Documents/com~apple~CloudDocs/Link this phone to the board.html', confirm on #478, and DO NOT mint another link."
         }
       ],
       "remaining_action": "Remove the iCloud phone-link file after it is used or 24 hours have passed",
@@ -252298,20 +252303,7 @@
       "for": "cursor",
       "kind": "studio",
       "plain": "Get the phone-linking link to Ben's iPhone privately, so he can approve the Journey film",
-      "urgent": 6,
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-15T21:07Z",
-        "by": "cursor",
-        "note": "Thread posted. Ben opens Files, iCloud Drive, the file named Link this phone to the board, then the link in Safari."
-      },
-      "hold": {
-        "type": "date",
-        "condition": "The one-time link is already in Ben's own iCloud Drive, file name Link this phone to the board, and that folder is not shared. Do not mint another link and do not print the link. Delete that file when the private pair link has been used, or at this check time if it is still there. Then say on the thread that the file was removed.",
-        "check_at": "2026-11-16T22:20:54+00:00",
-        "recheck_task": "J2960"
-      }
+      "urgent": 6
     },
     {
       "id": "J2832",
