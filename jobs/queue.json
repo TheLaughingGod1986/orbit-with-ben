@@ -262699,13 +262699,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-16T17:56Z",
-      "eta": "2026-11-16T19:56Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-16T17:52Z",
-      "result": "",
+      "result": "Built and verified full 108-minute 720p phone copy sleep_video_01_master_v02_PHONE.mp4 (sha256 4cf4479719ac..., 6502.333s, 195070 frames, bit-identical master audio), uploaded to R2 owb-sleep-01-v02 (302->206 verified), registered in watch_uploads.json (55e4e2c5b8), and sent Ben's whole-film watch card. Private upload 13q4_EoLEN4 untouched.",
       "history": [
         {
           "at": "2026-11-16T17:52Z",
@@ -262751,6 +262751,11 @@
           "at": "2026-11-16T18:19Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Whole-film watch card armed on J2954 (owb-sleep-01-v02, 108m22s); Private upload 13q4_EoLEN4 untouched"
+        },
+        {
+          "at": "2026-11-16T18:19Z",
+          "by": "gemini",
+          "what": "done: Built and verified full 108-minute 720p phone copy sleep_video_01_master_v02_PHONE.mp4 (sha256 4cf4479719ac..., 6502.333s, 195070 frames, bit-identical master audio), uploaded to R2 owb-sleep-01-v02 (302->206 verified), registered in watch_uploads.json (55e4e2c5b8), and sent Ben's whole-film watch card. Private upload 13q4_EoLEN4 untouched."
         }
       ],
       "remaining_action": "Watch card sent for whole 108-minute film; Private upload 13q4_EoLEN4 left scheduled.",
@@ -262781,7 +262786,8 @@
           "Replaced the 30-second extract with the whole 108-minute film (1 hr 48 min 22 s, all 13 chapters from the Moon to Andromeda) in one continuous 720p stream.",
           "The 97:20 fix is inside this full film, and the length, frame count (195,070), and audio match the 108-minute master."
         ]
-      }
+      },
+      "done_ref": "55e4e2c5b8"
     }
   ],
   "focus": [
