@@ -261143,13 +261143,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-16T09:27Z",
-      "eta": "2026-11-16T10:57Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-16T09:25Z",
-      "result": "",
+      "result": "Ranked all 7 public HOS longs and 30 public HOS Shorts from 2026-11-16 snapshot + studio_ctr.json + channel_daily.json + REPORT.md + LEARNINGS.md (rules 1-33) and added two new non-overlapping HOS backlog proposals (£0 spend): (1) HOS:112 'Why Do We Yawn? (The Brain-Cooling Experiment)' (02_Video-Projects/112_Provine-Gallup-Why-Do-We-Yawn) — Data line: modelled on #1 HOS long 002 Periodic Table (161 views, 2.68/d, 1,160 impr, 3.36% CTR) + #3 long 006 Willow (13 views, 1.18/d, 6.52% CTR, 53.96% Studio / 79% 28d YTA avg viewed) + #1 stayed Short -3L6HzJ_d_4 Pasteur (77.14% stayed PASS, 75.23% avg viewed PASS, 92.9% YT_SEARCH); follows Rules 1, 10, 12, 14, 15, 23, 24, 26, 27, 28, 30, 32; autocomplete 'why do we yawn' & 'why is yawning contagious' = yes (Vsauce jGIbUK4NwIw 4.83M, AsapSCIENCE I0dQx4SNSwE 4.65M), 0 exact title collisions, neighbours.py PASS with 15 education videos >=1M views (TED-Ed/TED: yes). (2) HOS:113 'How Do Cats Land on Their Feet? (The 1894 Camera Twist)' (02_Video-Projects/113_Marey-Maxwell-Kane-How-Do-Cats-Land-On-Their-Feet) — Data line: fixes 005 Tied Arm's statement-title impression starvation (15 impr) by pairing exact autocomplete question 'how do cats land on their feet' (SmarterEveryDay RtWbpyjJqrU 11.25M, Vox Xs87FijgVaA 2.53M) with Marey's 1894 60-photo-per-second chronophotographic camera proof and Kane's 1969 NASA zero-gravity equations, matching 002/004 search discovery and 29bpGAI0wb8 (39.58/d) / -3L6HzJ_d_4 (77.14% stayed) Short hooks; follows Rules 1, 10, 12, 14, 15, 23, 24, 26, 27, 28, 30, 32; 0 exact title collisions, neighbours.py PASS with 6 education videos >=1M views (TED-Ed/TED: yes). HOS PR #614, OWB WIP PR #962, and dependent Rule-E review jobs J2936 (HOS:112) & J2937 (HOS:113) queued.",
       "history": [
         {
           "at": "2026-11-16T09:25Z",
@@ -261190,6 +261190,11 @@
           "at": "2026-11-16T10:01Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Verified HOS PR #614 (112 & 113 folders, TOPIC.md, status.json, public_search.py & neighbours.py PASS), OWB PR #962 (WIP.json next_hos), and queued Rule-E review jobs J2936 & J2937"
+        },
+        {
+          "at": "2026-11-16T10:01Z",
+          "by": "gemini",
+          "what": "done: Ranked all 7 public HOS longs and 30 public HOS Shorts from 2026-11-16 snapshot + studio_ctr.json + channel_daily.json + REPORT.md + LEARNINGS.md (rules 1-33) and added two new non-overlapping HOS backlog proposals (£0 spend): (1) HOS:112 'Why Do We Yawn? (The Brain-Cooling Experiment)' (02_Video-Projects/112_Provine-Gallup-Why-Do-We-Yawn) — Data line: modelled on #1 HOS long 002 Periodic Table (161 views, 2.68/d, 1,160 impr, 3.36% CTR) + #3 long 006 Willow (13 views, 1.18/d, 6.52% CTR, 53.96% Studio / 79% 28d YTA avg viewed) + #1 stayed Short -3L6HzJ_d_4 Pasteur (77.14% stayed PASS, 75.23% avg viewed PASS, 92.9% YT_SEARCH); follows Rules 1, 10, 12, 14, 15, 23, 24, 26, 27, 28, 30, 32; autocomplete 'why do we yawn' & 'why is yawning contagious' = yes (Vsauce jGIbUK4NwIw 4.83M, AsapSCIENCE I0dQx4SNSwE 4.65M), 0 exact title collisions, neighbours.py PASS with 15 education videos >=1M views (TED-Ed/TED: yes). (2) HOS:113 'How Do Cats Land on Their Feet? (The 1894 Camera Twist)' (02_Video-Projects/113_Marey-Maxwell-Kane-How-Do-Cats-Land-On-Their-Feet) — Data line: fixes 005 Tied Arm's statement-title impression starvation (15 impr) by pairing exact autocomplete question 'how do cats land on their feet' (SmarterEveryDay RtWbpyjJqrU 11.25M, Vox Xs87FijgVaA 2.53M) with Marey's 1894 60-photo-per-second chronophotographic camera proof and Kane's 1969 NASA zero-gravity equations, matching 002/004 search discovery and 29bpGAI0wb8 (39.58/d) / -3L6HzJ_d_4 (77.14% stayed) Short hooks; follows Rules 1, 10, 12, 14, 15, 23, 24, 26, 27, 28, 30, 32; 0 exact title collisions, neighbours.py PASS with 6 education videos >=1M views (TED-Ed/TED: yes). HOS PR #614, OWB WIP PR #962, and dependent Rule-E review jobs J2936 (HOS:112) & J2937 (HOS:113) queued."
         }
       ],
       "remaining_action": "Closing J2935 and posting HOS desk report",
