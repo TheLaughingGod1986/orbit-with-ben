@@ -79,7 +79,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2916 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · Moon-Jupiter 30 Nov dated-event Short (airs Thu 26 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review | 02_Video-Projects/_dated_shorts/2026-11-30_moon-jupiter-conjunction.md |
 | J2927 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J2933 | mini | blocked | claudecode | – | 010 edit · qa · `mini-claude-opus-5-5` · Review HOS 010 Short A v01 and Short C v01 (J2172, PR #611) | J2172 |
-| J2941 | mini | open (after J2939) | – | – | 074 topic · review · Rule-E topic go/no-go review: OWB 074 (Every Apollo Moon Landing Explained in 10 Minutes) and 075 (What Was 'Oumuamua?) from J2939 | 5aaa966dff |
+| J2941 | mini | open (after J2939) | – | – | 074 topic · for gemini · review · `gemini-argon` · Rule-E topic go/no-go review: OWB 074 (Every Apollo Moon Landing Explained in 10 Minutes) and 075 (What Was 'Oumuamua?) from J2939 | 5aaa966dff |
 
 Recently finished:
 
