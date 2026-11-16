@@ -79,7 +79,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2927 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J2933 | mini | blocked | claudecode | – | 010 edit · qa · `mini-claude-opus-5-5` · Review HOS 010 Short A v01 and Short C v01 (J2172, PR #611) | J2172 |
 | J2945 | mini | open (after J2944) | – | – | 114 topic · for gemini · review · `gemini-argon` · HOS 114 How Do Chameleons Change Colour?: rule-E topic go/no-go review |  |
-| J2946 | mini | open (after J2944) | – | – | 115 topic · review · HOS 115 Why Do Zebras Have Stripes?: rule-E topic go/no-go review |  |
+| J2946 | mini | open (after J2944) | – | – | 115 topic · for gemini · review · `gemini-argon` · HOS 115 Why Do Zebras Have Stripes?: rule-E topic go/no-go review |  |
 
 Recently finished:
 
