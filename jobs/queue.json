@@ -262721,17 +262721,22 @@
           "at": "2026-11-16T18:01Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Plan set (4 steps): 1) verify master_v02 sha256, 2) build & check 720p PHONE copy, 3) upload to R2 & register, 4) arm awaits card"
+        },
+        {
+          "at": "2026-11-16T18:05Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Master v02 verified: sha256 e6f1064dc83b..., 6502.333s (195070 frames, 30fps, 304798 audio frames)"
         }
       ],
-      "remaining_action": "Verify sleep_video_01_master_v02.mp4 SHA-256 and audio/video specs before building 720p phone copy",
+      "remaining_action": "Encode 720p faststart phone copy of whole 108-minute sleep_video_01_master_v02.mp4 and verify length and sound",
       "due": "2026-11-20T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-16T18:01Z",
+        "at": "2026-11-16T18:05Z",
         "by": "gemini",
-        "note": "Plan set (4 steps): 1) verify master_v02 sha256, 2) build & check 720p PHONE copy, 3) upload to R2 & register, 4) arm aw"
+        "note": "Master v02 verified: sha256 e6f1064dc83b..., 6502.333s (195070 frames, 30fps, 304798 audio frames)"
       }
     }
   ],
