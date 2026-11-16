@@ -259515,18 +259515,33 @@
           "at": "2026-11-16T02:50Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2921; replacing default_plan with 4-step QA sweep plan (1: scan OWB+HOS packs since J2753/J2756, 2: run missing/stale OWB gates, 3: run missing/stale HOS gates, 4: commit byte-identical inventory+report and queue any no-spend fix jobs)"
+        },
+        {
+          "at": "2026-11-16T03:06Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1/4 complete: scanned all 228 J2753 entries + post-J2753 renders across OWB and HOS; found 1 updated OWB export (owb_sa_s8_voyager1_v02) + 15 new OWB exports + 11 new HOS exports needing inventory/fresh gate sidecars (note: 032 Test A Short v01->v02 is actively in-flight under J0979 macbook-2)"
         }
       ],
-      "remaining_action": "Scan OWB and HOS video projects since J2753/J2756 for newest renders or packs missing fresh picture_qa, polish_gate, or music_gate outputs",
+      "remaining_action": "Run missing or stale picture_qa, polish_gate, and music_gate sidecars on post-J2753 OWB exports",
       "kind": "qa",
       "backlog": "both-qa-sweep",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-16T02:50Z",
+        "at": "2026-11-16T03:06Z",
         "by": "gemini",
-        "note": "Claimed J2921; replacing default_plan with 4-step QA sweep plan (1: scan OWB+HOS packs since J2753/J2756, 2: run missing"
-      }
+        "note": "Step 1/4 complete: scanned all 228 J2753 entries + post-J2753 renders across OWB and HOS; found 1 updated OWB export (ow"
+      },
+      "taskKeys": [
+        "OWB:024",
+        "OWB:029",
+        "OWB:030",
+        "OWB:031",
+        "OWB:033",
+        "HOS:005",
+        "HOS:007",
+        "HOS:008"
+      ]
     }
   ],
   "focus": [
