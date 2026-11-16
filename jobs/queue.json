@@ -261896,13 +261896,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-16T14:54Z",
-      "eta": "2026-11-16T16:54Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-16T14:50Z",
-      "result": "",
+      "result": "CONDITION NOT MET (jobs/reviews/J2943/REVIEW.md, commit 132100225b): J2517 (#793) and J2559 (#795) remain done, but all 8 ~/.codex approval-settings and gateway hashes match jobs/reviews/J2934/REVIEW.md and the 4-6 Nov 3/4 checkpoint unchanged, draft PR #490 (f521bcd3f1) remains open in draft with 0 comments, docs/CODEX_ALLOWLIST.md is not on main, and no operator confirmation or fresh-session scoped acceptance evidence has landed. J2040 stays held (type: input, --recheck J2943) until 2026-11-16T20:55:00Z. GBP0.",
       "history": [
         {
           "at": "2026-11-16T14:50Z",
@@ -261943,6 +261943,11 @@
           "at": "2026-11-16T14:57Z",
           "by": "gemini",
           "what": "step 4 of 4 done: All 4 verification steps complete; closing J2943"
+        },
+        {
+          "at": "2026-11-16T14:57Z",
+          "by": "gemini",
+          "what": "done: CONDITION NOT MET (jobs/reviews/J2943/REVIEW.md, commit 132100225b): J2517 (#793) and J2559 (#795) remain done, but all 8 ~/.codex approval-settings and gateway hashes match jobs/reviews/J2934/REVIEW.md and the 4-6 Nov 3/4 checkpoint unchanged, draft PR #490 (f521bcd3f1) remains open in draft with 0 comments, docs/CODEX_ALLOWLIST.md is not on main, and no operator confirmation or fresh-session scoped acceptance evidence has landed. J2040 stays held (type: input, --recheck J2943) until 2026-11-16T20:55:00Z. GBP0."
         }
       ],
       "remaining_action": "Complete J2943",
@@ -261965,7 +261970,8 @@
         "at": "2026-11-16T14:57Z",
         "by": "gemini",
         "note": "All 4 verification steps complete; closing J2943"
-      }
+      },
+      "done_ref": "jobs/reviews/J2943/REVIEW.md"
     }
   ],
   "focus": [
