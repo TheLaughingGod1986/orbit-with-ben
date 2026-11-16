@@ -257951,13 +257951,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-15T18:49Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-15T18:14Z",
-      "result": "parked for Chief: needs Ben: fine-grained GitHub token returns 403 Resource not accessible by personal access token when posting to TheLaughingGod1986/history-of-science #180; add history-of-science to the token's selected repositories with Issues: Read and write, Pull requests: Read and write, and Contents: Read-only (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-15T18:14Z",
@@ -258018,27 +258018,20 @@
           "at": "2026-11-15T22:45Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-11-16T00:43Z",
+          "by": "claude",
+          "what": "reopened: Ben, in chat (16 Nov 00:42Z): \"Done\". His token already covered both repositories (his screenshot of the token page showed orbit-with-ben and history-of-science, Contents read, Issues read and write). The 403 on the History of Science thread was the permission, not the repository: that thread (#180) is a pull request and the Orbit thread (#478) is an issue, and a fine-grained token needs Pull requests: read and write to comment on a pull request. Ben has now added Pull requests: read and write to the same token. The token's value is unchanged, so NO redeploy and nothing to change in Cloudflare. DO: (1) run the same probe as step 4 again through the deployed board (/api/checks, dryRun + checkThreads) on both addresses and report read and writeProbe for each thread; both should now say canPostComment true. (2) If History of Science still answers 403, wait two minutes and try once more (a permission edit can take a moment), then park for Ben saying exactly what GitHub answered. (3) If it passes, close this job: the board can post Ben's verdicts to both channels. Do not post a real comment to either thread to test. Guards as before: never print the token, no address, nothing deleted."
         }
       ],
-      "remaining_action": "Ben (in his own GitHub account): add TheLaughingGod1986/history-of-science (Issues: Read and write, Pull requests: Read and write, Contents: Read-only) to the fine-grained token",
+      "remaining_action": "Re-run the thread probe through the board: Ben added Pull requests write, both threads should accept a post",
       "due": "2026-11-15T19:00:00Z",
       "for": "gemini",
       "kind": "studio",
-      "plain": "Ben replaced the board's expired token: redeploy the board so he can approve again, and prove it works for both channels",
+      "plain": "Ben fixed the board token's permission: re-check that his approvals now reach the History of Science thread too",
       "urgent": 8,
       "model": "gemini-argon",
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-15T19:06Z",
-        "by": "gemini",
-        "note": "board_publish.py verified checksStatus fresh ({ok: true, stale: false}) and HOS-J2230.1 (11:53:15Z OK) present in board."
-      },
-      "hold": {
-        "type": "ben",
-        "condition": "In his own account on GitHub, add history-of-science to the fine-grained token (Issues+PRs R/W, Contents R/O) — Chief ruling (2026-11-15T21:15Z): steps 1-3 and 5 of J2907 PASS in production (BOARD_GH_TOKEN deployed to studio-kanban at a1e9d50d.studio-kanban.pages.dev and board.oppti.dev; /api/checks 200 with 84 ticks incl. HOS-J2230.1; test tick write+delete 200; /api/data?f=ref 200; board_publish.py checksStatus fresh; OWB #478 writeProbe 422 canPostComment=true). Step 4 HOS #180 writeProbe still returns 403 Resource not accessible by personal access token (re-verified live at 21:12Z).",
-        "check_at": "2026-11-16T09:00:00Z"
-      },
       "escalated_at": "2026-11-15T22:45Z"
     },
     {
