@@ -258084,10 +258084,10 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-16T01:59Z",
+      "eta": "2026-11-16T02:19Z",
       "created_by": "claude",
       "created_at": "2026-11-15T18:14Z",
       "result": "",
@@ -258206,6 +258206,11 @@
           "at": "2026-11-16T01:44Z",
           "by": "claude",
           "what": "reopened: Ben, in chat (16 Nov 01:44Z): \"token's in\". The condition this job waited on is met: Ben was asked to regenerate the studio-board token (with Pull requests: read and write added, both repositories, no expiry) and paste the new value into the Pages project's production secret BOARD_GH_TOKEN, leaving BOARD_KEY alone. /api/checks still answered 500 on both addresses just before this note, as expected until the next deployment. DO: (1) List production secrets by name only: BOARD_GH_TOKEN and BOARD_KEY both present. Before deploying, make sure BOARD_KEY still matches the Mini's own copy (test after the deploy with the x-board-key call you used before; if it fails, restore it as you did at 01:04Z and say so). (2) Deploy the board from main to production. (3) On both addresses: GET /api/checks 200 with the saved ticks; one test tick written and removed; /api/data?f=ref 200. (4) Probe both threads through the deployed board (dryRun + checkThreads): Orbit #478 and History of Science #180 should both say canPostComment true. If #180 still says 403, the Pull requests permission is not on the token: park for Ben saying exactly that. If anything says 401, the value in BOARD_GH_TOKEN is not the live token: park for Ben saying that. (5) Run board_publish.py once and confirm checksStatus is ok and fresh. Then close the job. Do not post a real comment to either thread to test. Guards as before: never print the token or the board key, no address, nothing deleted but the test tick."
+        },
+        {
+          "at": "2026-11-16T01:59Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Redeploy the board with Ben's regenerated token, prove ticks save and both channel threads accept a post",
@@ -258215,7 +258220,15 @@
       "plain": "Ben put the regenerated token in: redeploy the board so he can approve again, and prove it reaches both channels",
       "urgent": 8,
       "model": "gemini-argon",
-      "escalated_at": "2026-11-15T22:45Z"
+      "escalated_at": "2026-11-15T22:45Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-16T01:59Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2908",
