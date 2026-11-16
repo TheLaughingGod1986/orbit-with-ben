@@ -262294,13 +262294,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-16T16:08Z",
-      "eta": "2026-11-16T17:38Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-16T16:06Z",
-      "result": "",
+      "result": "Added OWB:076 Every Space Shuttle Explained in 10 Minutes (All 6 NASA Orbiters) (matches #1 VPD Short RT-ec4_GcOk 562.5 vpd / 100.07% LOOP & #2 stayed B1z2dv7m7Vk 52.69% + studio/plan.json Step 3 complete-tour format + #1 autocomplete every space shuttle explained; 17 >=1M neighbours up to 21.88M) and OWB:077 What Happened When Comet Shoemaker-Levy 9 Hit Jupiter? (1994 Crash) (matches #1 total-views Short T9fVlG3CCzU 1,288v, Apophis gJwNJN_yMKU 228.91% LOOP + 214k FB views, and #1 mature CTR Long Jupiter -jmMROGoZCM 5.17% + #1 autocomplete comet shoemaker levy 9; 9 >=1M neighbours up to 3.15M) in 9033ff1365, appended to jobs/WIP.json next, mirrored to studio-live NAS, and queued Rule-E review.",
       "history": [
         {
           "at": "2026-11-16T16:06Z",
@@ -262336,6 +262336,11 @@
           "at": "2026-11-16T16:32Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Landed 9033ff1365 on main, mirrored 076 and 077 to NAS (18/18 SHA-256 verified), and queued Rule-E review job"
+        },
+        {
+          "at": "2026-11-16T16:32Z",
+          "by": "gemini",
+          "what": "done: Added OWB:076 Every Space Shuttle Explained in 10 Minutes (All 6 NASA Orbiters) (matches #1 VPD Short RT-ec4_GcOk 562.5 vpd / 100.07% LOOP & #2 stayed B1z2dv7m7Vk 52.69% + studio/plan.json Step 3 complete-tour format + #1 autocomplete every space shuttle explained; 17 >=1M neighbours up to 21.88M) and OWB:077 What Happened When Comet Shoemaker-Levy 9 Hit Jupiter? (1994 Crash) (matches #1 total-views Short T9fVlG3CCzU 1,288v, Apophis gJwNJN_yMKU 228.91% LOOP + 214k FB views, and #1 mature CTR Long Jupiter -jmMROGoZCM 5.17% + #1 autocomplete comet shoemaker levy 9; 9 >=1M neighbours up to 3.15M) in 9033ff1365, appended to jobs/WIP.json next, mirrored to studio-live NAS, and queued Rule-E review."
         }
       ],
       "remaining_action": "All 4 steps complete; marking J2948 done",
@@ -262351,7 +262356,8 @@
       "taskKeys": [
         "OWB:076",
         "OWB:077"
-      ]
+      ],
+      "done_ref": "9033ff1365"
     },
     {
       "id": "J2949",
