@@ -261486,13 +261486,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-16T10:07Z",
-      "eta": "2026-11-16T11:07Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-16T10:03Z",
-      "result": "",
+      "result": "parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J2940 in orbit-with-ben is 1 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/963. Review and merge it and close the job, or reopen the job with a note.",
       "history": [
         {
           "at": "2026-11-16T10:03Z",
@@ -261503,6 +261503,11 @@
           "at": "2026-11-16T10:07Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-16T10:09Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J2940 in orbit-with-ben is 1 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/963. Review and merge it and close the job, or reopen the job with a note."
         }
       ],
       "remaining_action": "Check the chapters, sources and links on recent Orbit videos",

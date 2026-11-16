@@ -82,7 +82,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2936 | mini | claimed | macbook | 2026-11-16T12:03Z | 112 topic · for gemini · review · `gemini-argon` · HOS 112 Why Do We Yawn?: rule-E topic go/no-go review |  |
 | J2937 | mini | claimed | gemini | 2026-11-16T12:05Z | 113 topic · for gemini · review · `gemini-argon` · HOS 113 How Do Cats Land on Their Feet?: rule-E topic go/no-go review |  |
 | J2939 | any | blocked | macbook | – | script · OWB: learn from our data, add two new films to the backlog |  |
-| J2940 | any | claimed | macbook-2 | 2026-11-16T11:07Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
+| J2940 | any | blocked | macbook-2 | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
