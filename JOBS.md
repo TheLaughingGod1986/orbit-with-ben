@@ -81,7 +81,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2933 | mini | blocked | claudecode | – | 010 edit · qa · `mini-claude-opus-5-5` · Review HOS 010 Short A v01 and Short C v01 (J2172, PR #611) | J2172 |
 | J2935 | any | claimed | gemini | 2026-11-16T10:57Z | script · HOS: learn from our data, add two new films to the backlog |  |
 | J2936 | mini | open (after J2935) | – | – | 112 topic · for gemini · review · `gemini-argon` · HOS 112 Why Do We Yawn?: rule-E topic go/no-go review |  |
-| J2937 | mini | open (after J2935) | – | – | 113 topic · review · HOS 113 How Do Cats Land on Their Feet?: rule-E topic go/no-go review |  |
+| J2937 | mini | open (after J2935) | – | – | 113 topic · for gemini · review · `gemini-argon` · HOS 113 How Do Cats Land on Their Feet?: rule-E topic go/no-go review |  |
 
 Recently finished:
 
