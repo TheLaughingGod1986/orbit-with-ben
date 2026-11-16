@@ -1,5 +1,5 @@
 {
-  "next_id": 2917,
+  "next_id": 2918,
   "jobs": [
     {
       "id": "J0001",
@@ -258774,6 +258774,34 @@
       },
       "for": "gemini",
       "model": "gemini-agy"
+    },
+    {
+      "id": "J2917",
+      "title": "HOS 108 Why Is Ice Slippery: rule-E topic go/no-go review",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Rule-E topic go/no-go review for **HOS:108 (`02_Video-Projects/108_Faraday-Thomson-Joly-Somorjai-Why-Ice-Is-Slippery`)** on HOS PR `#602` (`https://github.com/TheLaughingGod1986/history-of-science/pull/602`, branch `gemini/J2891-hos-topics-108-109`) and OWB PR `#951` (`https://github.com/TheLaughingGod1986/orbit-with-ben/pull/951`), queued by `J2891`.\n\n### Topic Summary\n- **Title A (Primary Proposal, Rule 26, 49 chars, 0 collisions):** `Why Is Ice Slippery? (The 150-Year Textbook Myth)`\n- **Title B (T&C, Rule 23, 52 chars, 0 collisions):** `The 150-Year Textbook Myth About Why Ice Is Slippery`\n- **Title C (Rule 26 Exact Phrase First, 53 chars, 0 collisions):** `Why Is Ice Slippery? How Faraday Beat a 150-Year Myth`\n- **Short S01 (50 chars, 0 collisions):** `Why Do Two Ice Cubes Freeze Together When Pressed?`\n- **Short S02 (55 chars, 0 collisions):** `Can Skate Pressure Really Melt Ice at Minus 20 Degrees?`\n- **Saved Evidence (`2026-11-15`):**\n  - `11_Upload-Package/evidence_2026-11-15_neighbours.json` (`PASS`: `9` education videos `≥1,000,000` views, `TED-Ed/TED: yes`, led by `TED-Ed` `23,950,623` `9iMGFqMmUFs`, `TED-Ed` `2,053,167` `UukRgqzk-KE`, `FuseSchool` `1,867,406` `xYU7RSoOZ0U`, `TED-Ed` `1,338,064` `ASLUY2U1M-8`, `Veritasium` `1,326,829` `KCL8zqjXbME`, `FuseSchool` `1,197,225` `21CR01rlmv4`, `Be Smart` `1,158,527` `yjSf7Yh9UZc`, `TED-Ed` `1,123,773` `OCzYdNSJF-k`, `Cognito` `1,021,477` `hkBrw2fG75U`).\n  - `11_Upload-Package/evidence_2026-11-15_public_search.json` (`\"why is ice slippery\"` & `\"how does ice skating work\"` autocomplete `yes`; ranking videos `Be Smart` `yjSf7Yh9UZc` `1,158,527` views & `Veritasium` `Stx6kLd9dYI` `806,131` views, plus `SmarterEveryDay` `N7rR82Zk17U` `5,991,243` views & `Dr Ben Miles` `fzhT-hB8w0w` `810,742` views; `0` exact title collisions).\n\n### Reviewer Checklist (AGENTS.md Rule E)\n1. Verify `TOPIC.md`, `status.json`, `production-status.md`, `11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md`, and the two raw JSON evidence files on HOS PR `#602`.\n2. Score the Rule-E topic rubric (neighbour demand `≥3` at `1M+` views with TED/TED-Ed presence, signed-out YouTube autocomplete demand, title collision check, non-duplication across `02_Video-Projects/`, `ideas/`, and `WIP.json`, and visual proof-first hook).\n3. Confirm that all historical and scientific claims remain marked **UNVERIFIED** until `SOURCES.md` exact quotes and the `facts` lane run when an active HOS WIP slot opens under Rule G (`jobs/WIP.json` `next_hos`).\n4. Record the Rule-E go/no-go verdict.\n",
+      "ref": "",
+      "film": "108",
+      "stage": "topic",
+      "after": "J2891",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-16T00:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-16T00:05Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 108 Why Is Ice Slippery: rule-E topic go/no-go review",
+      "kind": "review"
     }
   ],
   "focus": [
