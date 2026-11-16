@@ -83,7 +83,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2896 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about the 21-year winters (v02, Test A opening) Private, slot Fri 18 Dec 11:30 |  |
 | J2909 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0861 |  |
 | J2916 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · Moon-Jupiter 30 Nov dated-event Short (airs Thu 26 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review | 02_Video-Projects/_dated_shorts/2026-11-30_moon-jupiter-conjunction.md |
-| J2921 | mini | claimed | gemini | 2026-11-16T03:49Z | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
+| J2921 | mini | claimed | gemini | 2026-11-16T04:19Z | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J2924 | mini | claimed | macbook-2 | 2026-11-16T05:47Z | HOS:110 topic · for gemini · review · `gemini-argon` · HOS 110 Why Do Onions Make You Cry: rule-E topic go/no-go review |  |
 | J2925 | mini | claimed | macbook | 2026-11-16T05:47Z | HOS:111 topic · for gemini · review · `gemini-argon` · HOS 111 Why Do Knuckles Crack: rule-E topic go/no-go review |  |
 | J2926 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0979 |  |
