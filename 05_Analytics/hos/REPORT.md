@@ -124,9 +124,10 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [What Was the Edward Jenner Experiment?](https://youtu.be/cLKDiYP55J8) | 2 d | 16 | 26.7% | too few to judge | 50.0% | too few to judge |
+| [The Blood Vessels Finer Than a Hair](https://youtu.be/Wvjd8g0CpzE) | 21 h (early) | 213 | 14.8% | MISS | 76.6% | PASS |
+| [What Was the Edward Jenner Experiment?](https://youtu.be/cLKDiYP55J8) | 2 d | 21 | 29.4% | too few to judge | 87.6% | too few to judge |
 | [One Tight Band Proved Your Blood Goes Round](https://youtu.be/PFj6172YU4Q) | 7 d | 223 | 16.0% | MISS | 63.0% | WATCH |
 | [Why Do Veins Have Valves?](https://youtu.be/xHnIi9GqOsM) | 10 d | 41 | 20.6% | too few to judge | 61.5% | too few to judge |
 | [The Four Elements Were Wrong](https://youtu.be/qW2OsD4mujc) | 12 d | 35 | 57.7% | too few to judge | 192.6% | too few to judge |
 
-Stayed to watch: 0 of 1 judged Shorts at 60%+. Average viewed: 0 of 1 at 70%+.
+Stayed to watch: 0 of 2 judged Shorts at 60%+. Average viewed: 1 of 2 at 70%+.
