@@ -1,11 +1,11 @@
 # OWB Topic Brief — `070` · *Every Mars Rover Explained in 10 Minutes (All 6 Rovers)*
 
 - **Film ID:** `OWB:070` (`02_Video-Projects/070_Every-Mars-Rover-Explained-In-10-Minutes`)
-- **Job:** `J2912` (`gemini`, `2026-11-16`, Mac mini)
-- **Rule-G WIP Status:** Appended to `jobs/WIP.json` `next` (waiting line only; unlocked while `studio/plan.json` tests the number-in-title complete-tour format on `064` and pauses new single-question longs after `034` Pluto on `2026-12-13`).
+- **Job:** `J2912` (`gemini`, `2026-11-16`, Mac mini) · **Rule-E Review:** `J2920` (`gemini`, `2026-11-16`, **GO — `95 / 100`**, all 6 fixes applied)
+- **Rule-G WIP Status:** Pre-cleared in `jobs/WIP.json` `next` (waiting line only; unlocked while `studio/plan.json` tests the number-in-title complete-tour format on `064` and pauses new single-question longs after `034` Pluto on `2026-12-13`).
 - **Evidence Files Saved in Package (`£0` spend, no paid vidIQ):**
-  - `11_Upload-Package/evidence_2026-11-16_public_search.json` (`public_search.py` signed-out YouTube GB autocomplete + top results, including `8` on-topic `≥1M`-view Mars rover videos)
-  - `11_Upload-Package/evidence_2026-11-16_neighbours.json` (`neighbours.py` gate: **PASS**, `5` `≥1M` videos including TED-Ed, TED, and Real Engineering `5.45M`)
+  - `11_Upload-Package/evidence_2026-11-16_public_search.json` (`public_search.py` signed-out YouTube GB autocomplete + top results, including `13` on-topic `≥1M`-view Mars rover videos)
+  - `11_Upload-Package/evidence_2026-11-16_neighbours.json` (`neighbours.py` gate: **PASS**, `3` on-topic `≥1M` videos in `neighbours.json` — TED `5.64M`, Real Engineering `5.45M`, TED-Ed `2.15M` — with off-topic Duckworth grit talk `H14bBuluwB8` and seven-planets riddle `dh4nEuhZBgg` marked `onTopic: false`)
 
 ---
 
@@ -101,17 +101,18 @@
      2. `Vy_RPd0rblI` — *Mars in 4K: The Clearest Footage You Will Ever See* | ElderFox Documentaries | **13,748,161 views** | `9:27`
      3. `0-oQRSViZQE` — *How does a Mars Rover work? (Perseverance)* | Jared Owen | **6,270,275 views** | `16:32`
      4. `rzmd7RouGrM` — *NASA's Mars 2020 Perseverance Rover Landing Animations* | NASA Jet Propulsion Laboratory | **5,851,969 views** | `3:11`
-     5. `yqqaW8DCc-I` — *The Insane Engineering of the Perseverance Rover* | Real Engineering | **5,453,539 views** | `22:45`
-     6. `l_t4fG-C0kE` / `DeepSpaceCourier` — **3,586,259 views**
-     7. `n--9w6zt9MM` — *10 Years On Mars: The Full Journey* | ElderFox Documentaries | **2,974,623 views** | `1:17:19`
-     8. `w3mEeF3dlVc` — *Do You Know The Name Of EVERY Mars Rover?* | KLT | **736,025 views** | `2:49`
-     9. `ujh-dtEvyIw` — *Meet the Mars Rovers! | Let's Explore Mars!* | SciShow Kids | **349,319 views** | `6:48`
-   - **Search Gap Note:** While single-rover engineering videos (`Jared Owen` `6.27M`, `Real Engineering` `5.45M`, `ElderFox` `13.75M` & `2.97M`) and children's songs (`KLT` `736k`, `SciShow Kids` `349k`) have massive demand, the exact query `"every mars rover explained"` currently has only two small-channel uploads (`lt2vPFc0qEE` at `24,616 views` in `5:25` and `DShru6lp_Tk` at `28,762 views` in `17:02`) — both outperforming small-channel baselines (`24k–28k` views) and zero `10-minute` real-NASA-imagery tours titled *Every Mars Rover Explained in 10 Minutes*.
+     5. `yqqaW8DCc-I` — *The Insane Engineering of the Perseverance Rover* | Real Engineering | **5,453,539 views** | `19:42`
+     6. `ER6EO4B7V68` — *Every spacecraft on Mars - comparison* | DeepSpaceCourier | **3,586,259 views** | `5:12`
+     7. `X2UaFuJsqxk` — *Curiosity Mars Rover Snaps 1.8 Billion-Pixel Panorama (narrated video)* | NASA Jet Propulsion Laboratory | **3,243,733 views** | `3:10`
+     8. `n--9w6zt9MM` — *10 Years On Mars: The Full Journey* | ElderFox Documentaries | **2,974,623 views** | `1:17:19`
+     9. `qaUhLXolGaI` — *Voyage of Curiosity: A Martian Chronicle 4k* | SpaceRip | **2,700,136 views** | `54:40`
+     10. `ujh-dtEvyIw` — *Meet the Mars Rovers! | Let's Explore Mars!* | SciShow Kids | **349,319 views** | `6:48`
+   - **Search Gap Note:** While single-rover engineering videos (`Jared Owen` `6.27M`, `Real Engineering` `5.45M`, `ElderFox` `13.75M` & `2.97M`), spacecraft scale comparisons (`DeepSpaceCourier` `ER6EO4B7V68` `3.59M`), and children's overviews (`SciShow Kids` `ujh-dtEvyIw` `349k`) have massive demand, the exact query `"every mars rover explained"` currently has only two small-channel uploads (`lt2vPFc0qEE` at `24,616 views` in `5:25` and `DShru6lp_Tk` at `28,762 views` in `17:02`) — both outperforming small-channel baselines (`24k–28k` views) and zero `10-minute` real-NASA-imagery tours titled *Every Mars Rover Explained in 10 Minutes*.
 
 2. **Companion Single-Question / Real-Imagery Title Variants (for Test & Compare & Recast):**
-   - **Title B (`Rule 26` Search Question + 6-Rover Scale Tail, `66 chars`):**
+   - **Title B (`Rule 26` Search Question + 6-Rover Scale Tail, `63 chars`):**
      `How Did NASA's Mars Rovers Grow 89x Bigger? (All 6 Mars Rovers)`
-   - **Title C (`Rule 18` Real NASA Surface Footage Variant, `64 chars`):**
+   - **Title C (`Rule 18` Real NASA Surface Footage Variant, `63 chars`):**
      `What All 6 Mars Rovers Actually Saw on Mars (Real NASA Footage)`
 
 3. **Three Distinct Thumbnail Concepts (`LEARNINGS.md` Rules 11, 12, 14, 18, 19; `0` Orbit character):**
@@ -179,7 +180,7 @@ Saved raw pulls: `11_Upload-Package/evidence_2026-11-16_public_search.json` and 
 | **10** | **1,252,991** | NASA | `GUqsH5y1j1M` | `1:09` | *Watch NASA's Perseverance Rover Land \| Video from Mars!* | `mars rover landing video`, `perseverance landing`, `real footage from mars` |
 | **11** | **1,087,971** | ElderFox Documentaries | `6-Tt-3viios` | `2:44:02` | *How NASA's Perseverance Mars Rover Shocked Scientists, and Made People Cry...* | `nasa perseverance mars rover`, `mars rovers explained` |
 
-- **Pool Strength:** **11 on-topic education/space videos between `1.09M` and `26.14M` views** (plus `KLT` `w3mEeF3dlVc` at **736,025 views** and `SciShow Kids` `ujh-dtEvyIw` at **349,319 views**), all verified in `evidence_2026-11-16_public_search.json` and `evidence_2026-11-16_neighbours.json`.
+- **Pool Strength:** **11 on-topic education/space videos in the table above between `1.09M` and `26.14M` views** (plus `ER6EO4B7V68` `DeepSpaceCourier` at **3,586,259 views**, `X2UaFuJsqxk` `NASA JPL` at **3,243,733 views**, `qaUhLXolGaI` `SpaceRip` at **2,700,136 views**, `8DZl56tS9ko` `NASA JPL` at **1,943,860 views**, `GHenFGnixzU` `NASA JPL` at **1,681,955 views**, `5qqsMjy8Rx0` `NASA JPL` at **1,007,756 views**, and `SciShow Kids` `ujh-dtEvyIw` at **349,319 views**), all verified in `evidence_2026-11-16_public_search.json` and `evidence_2026-11-16_neighbours.json`.
 
 ### 2.7 Two Short Angles (`22–27 s`, `55–65` Words, `LEARNINGS.md` Rules 1–8, 24 + `OWB-2026-11-E1`)
 
@@ -192,19 +193,19 @@ Saved raw pulls: `11_Upload-Package/evidence_2026-11-16_public_search.json` and 
      `OXYGEN ON MARS` (`OXYGEN` in `#FFE000`, `mode: "cover"` full-bleed `9:16` moving NASA Perseverance rover Mastcam-Z footage in Jezero Crater, `0%` blur bars).
    - **First Spoken Sentence (`0.0–1.5 s` Surprise per Rule 24, `6 words`, `Cut 1 ≤ 2.8 s`):**
      *"Perseverance just made oxygen on Mars."*
-   - **Mid-Short Stat Overlay (`5.5–8.5 s`, `4 words ≤ 4`):**
-     `122 GRAMS OF OXYGEN`
+   - **Mid-Short Stat Overlay (`12.5–15.5 s`, `4 words ≤ 4`, matched to spoken `800 °C` line so `122 g` payoff is withheld to `≥70%` runtime per Rule 6):**
+     `800 °C OXYGEN BOX`
    - **Single Fact & Payoff (`≥70%` duration, `63 words` total, `<1.2 s` loop tail):**
      > *"Perseverance just made oxygen on Mars. Ninety-five percent of the Martian atmosphere is carbon dioxide, with almost no oxygen to breathe. Inside NASA's Perseverance rover, a toaster-sized box called MOXIE pulled in that thin air and heated it to eight hundred degrees Celsius. Across sixteen test runs, it split carbon dioxide molecules to produce one hundred and twenty-two grams of pure, breathable oxygen."*
 
-2. **Short `S02` (`24 s`, `57 words` — How Small Was the First Mars Rover (`11.5 kg` Sojourner) Compared to Today's (`1,025 kg` Perseverance)?):**
+2. **Short `S02` (`24 s`, `60 words` — How Small Was the First Mars Rover (`11.5 kg` Sojourner) Compared to Today's (`1,025 kg` Perseverance)?):**
    - **YouTube Title (`55 chars`, verified `0` exact YouTube collisions):**
      **`How Small Was the First Mars Rover Compared to Today's?`**
    - **Frame 0 (`t = 0.0 s`) Top-Safe Hook Text (`4` words, `#FFE000` keyword):**
-     `11 KG VS 1,025 KG` (`1,025 KG` in `#FFE000`, `mode: "cover"` full-bleed `9:16` moving NASA JPL side-by-side rover comparison of tiny `Sojourner` next to SUV-sized `Perseverance`, `0%` blur bars).
+     `11.5 KG VS 1,025 KG` (`1,025 KG` in `#FFE000`, `mode: "cover"` full-bleed `9:16` moving NASA JPL side-by-side rover comparison of tiny `Sojourner` next to SUV-sized `Perseverance`, `0%` blur bars).
    - **First Spoken Sentence (`0.0–1.5 s` Surprise per Rule 24, `7 words`, `Cut 1 ≤ 2.8 s`):**
-     *"The first Mars rover weighed eleven kilograms."*
-   - **Mid-Short Stat Overlay (`5.5–8.5 s`, `3 words ≤ 4`):**
-     `89X HEAVIER TODAY`
-   - **Single Fact & Payoff (`≥70%` duration, `57 words` total, `<1.2 s` loop tail):**
-     > *"The first Mars rover weighed eleven kilograms. When NASA's Sojourner rolled onto Mars in July 1997, it was the size of a microwave oven and crept at one centimetre per second. Twenty-four years later, Perseverance touched down weighing one thousand and twenty-five kilograms — eighty-nine times heavier, the size of an SUV, powered by plutonium instead of sunlight."*
+     *"The first Mars rover weighed 11.5 kilograms."*
+   - **Mid-Short Stat Overlay (`8.5–11.5 s`, `4 words ≤ 4`, matched to spoken `1 cm/s` line so `89×` payoff is withheld to `≥70%` runtime per Rule 6):**
+     `1 CM/S TOP SPEED`
+   - **Single Fact & Payoff (`≥70%` duration, `60 words` total, `<1.2 s` loop tail):**
+     > *"The first Mars rover weighed eleven point five kilograms. When NASA's Sojourner rolled onto Mars in July 1997, it was the size of a microwave oven and crept at one centimetre per second. Twenty-four years later, Perseverance touched down weighing one thousand and twenty-five kilograms — eighty-nine times heavier, the size of an SUV, powered by plutonium instead of sunlight."*

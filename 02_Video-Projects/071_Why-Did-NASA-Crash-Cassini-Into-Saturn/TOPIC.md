@@ -1,11 +1,11 @@
 # OWB Topic Brief — `071` · *Why Did NASA Crash Cassini Into Saturn? (To Protect Two Moons)*
 
 - **Film ID:** `OWB:071` (`02_Video-Projects/071_Why-Did-NASA-Crash-Cassini-Into-Saturn`)
-- **Job:** `J2912` (`gemini`, `2026-11-16`, Mac mini)
-- **Rule-G WIP Status:** Appended to `jobs/WIP.json` `next` (waiting line only; unlocked while `studio/plan.json` pauses new single-question long builds after `034` Pluto on `2026-12-13` until the `064` / `SLEEP01` / `J01` format tests read out).
+- **Job:** `J2912` (`gemini`, `2026-11-16`, Mac mini) · **Rule-E Review:** `J2920` (`gemini`, `2026-11-16`, **GO — `96 / 100`**, all 6 fixes applied)
+- **Rule-G WIP Status:** Pre-cleared in `jobs/WIP.json` `next` (waiting line only; unlocked while `studio/plan.json` pauses new single-question long builds after `034` Pluto on `2026-12-13` until the `064` / `SLEEP01` / `J01` format tests read out).
 - **Evidence Files Saved in Package (`£0` spend, no paid vidIQ):**
-  - `11_Upload-Package/evidence_2026-11-16_public_search.json` (`public_search.py` signed-out YouTube GB autocomplete + top results, including `8` on-topic `≥1M`-view Cassini/Saturn videos up to `9.28M`)
-  - `11_Upload-Package/evidence_2026-11-16_neighbours.json` (`neighbours.py` gate: **PASS**, including `CrashCourse` `1.65M` and `National Geographic` `328k`)
+  - `11_Upload-Package/evidence_2026-11-16_public_search.json` (`public_search.py` signed-out YouTube GB autocomplete + top results, including `11` on-topic `≥1M`-view Cassini/Saturn videos up to `9.28M`)
+  - `11_Upload-Package/evidence_2026-11-16_neighbours.json` (`neighbours.py` gate: **PASS**, including `CrashCourse` `1.65M` and `National Geographic` `328k`, with off-topic solar-panels `xKxrkht7CpY` and seven-planets riddle `dh4nEuhZBgg` marked `onTopic: false`)
 
 ---
 
@@ -78,11 +78,11 @@
      5. `oGsajLIALJE` — *JPL and the Space Age: Triumph at Saturn (Part II)* | NASA Jet Propulsion Laboratory | **1,621,161 views** | `1:29:53`
      6. `B2XQLHDtkqw` — *Cassini End of Mission Commentary* | NASA | **1,217,869 views** | `1:28:16`
      7. `WOjP63R2Hd8` — *Cassini's Fatal Crash \| Mission Saturn* | National Geographic | **328,477 views** | `3:25`
-   - **Search Competition Note:** While Astrum (`9.28M` and `2.50M`) and NASA JPL (`5.81M`, `1.92M`, `1.62M`) prove massive evergreen viewer demand for Cassini's final Saturn images and Grand Finale crash, `evidence_2026-11-16_public_search.json` shows that recent small-channel uploads on `"why did nasa crash cassini into saturn"` (`Far Signal` `518` views, `The Dream Lab` `325` views) get limited search impressions without a subscriber base — reinforcing why `071` waits in `jobs/WIP.json` `next` behind `studio/plan.json`'s single-question pause after `034` Pluto (`2026-12-13`).
+   - **Search Competition Note:** While Astrum (`9.28M` and `2.50M`), WSJ (`4c8eSr7x7AA` `6.73M`), NASA JPL (`5.81M`, `1.92M`, `1.62M`), and Secrets of the Universe (`qaRBmeYyHoc` `3.85M`) prove massive evergreen viewer demand for Cassini's final Saturn images and Grand Finale crash, `evidence_2026-11-16_public_search.json` shows that recent small-channel uploads on `"why did nasa crash cassini into saturn"` and `"cassini grand finale"` (`Far Signal` `jGto0fs0Xg8` `518` views, `Spectral Observer` `TWdz7n4mHvs` `286` views, `Cosmos & Bones` `Jl0FHL8QISM` `8` views, `Orrery` `5Zs7IKpXSEE` `690` views, `Pure Physics` `i1qgxzj9vpc` `513` views) get limited search impressions without a subscriber base — reinforcing why `071` waits in `jobs/WIP.json` `next` behind `studio/plan.json`'s single-question pause after `034` Pluto (`2026-12-13`).
 
 2. **`studio/plan.json` Contingency Note Only — Multi-Mission Intentional Spacecraft Crashes Tour Recast:**
    - **Status under `studio/plan.json` (`longs-2026-11`):** `064` (*Every Planet Explained in 10 Minutes*) is the plan's designated tour test film awaiting Ben's lock and its 14-day readout (`keep: 500`, `drop: 230`).
-   - **Contingency Note (only if `064` passes its 14-day readout and Chief updates `studio/plan.json`, `65 chars ≤ 70`):**
+   - **Contingency Note (only if `064` passes its 14-day readout and Chief updates `studio/plan.json`, `64 chars ≤ 70`):**
      `Every Spacecraft We Crashed Into a World Explained in 10 Minutes`
      - Covers the **6 landmark missions intentionally crashed into solar-system worlds for planetary protection or impact science**: (1) **Galileo into Jupiter** (`21 September 2003`, `48.2 km/s` to protect Europa's ocean), (2) **Deep Impact into Comet Tempel 1** (`4 July 2005`, `370-kg` copper impactor at `10.2 km/s`), (3) **LCROSS into the Moon's Cabeus Crater** (`9 October 2009`, confirming lunar water ice), (4) **MESSENGER into Mercury** (`30 April 2015`, `3.91 km/s` creating a `16-m` crater after running out of helium/hydrazine), (5) **Rosetta into Comet 67P** (`30 September 2016`, `0.9 m/s` walk-speed touchdown at Ma'at), and (6) **Cassini into Saturn** (`15 September 2017`, `31.4 km/s` / `113,000 km/h` after `22` Grand Finale ring-gap dives to protect Enceladus and Titan).
 
@@ -92,7 +92,7 @@
    - **Thumbnail C (Planetary Protection Paradox — Saturn With Enceladus Plumes & Titan):** Real NASA Cassini frame showing icy **Enceladus** spraying its south-polar ocean plume (`PIA17184`) and golden **Titan** (`PIA14919`) in front of Saturn's rings. Top-band text (`3 words`): **`TO SAVE 2 MOONS`** (`2 MOONS` in `#FFE000`, `TO SAVE` in `#FFFFFF`).
 
 ### 2.3 One-Line Cold-Open Hook (`0:00–0:08` Proof-First Open per `J2428` & Rule 10, Zero Agenda Line)
-> *"On the fifteenth of September 2017, NASA deliberately steered a four-billion-dollar spacecraft straight into Saturn at one hundred and thirteen thousand kilometres per hour — because Cassini had discovered something on two of Saturn's moons that it could never be allowed to touch."*
+> *"On the fifteenth of September 2017, NASA deliberately steered a 3.9-billion-dollar spacecraft straight into Saturn at one hundred and thirteen thousand kilometres per hour — because Cassini had discovered something on two of Saturn's moons that it could never be allowed to touch."*
 
 - **First-30-Second Retention Architecture (`J2428` / `AGENTS.md` Lesson 7):**
   - **`0:00` (Frame 0):** Real moving NASA Cassini ISS Grand Finale sequence (`PIA21441` / `PIA21888`) diving over Saturn's sunlit cloud tops beneath the razor-thin shadow of the rings (zero Orbit character, zero title card, zero fade-from-black).
@@ -122,7 +122,7 @@
     3. **Zero-tilt magnetic field (`Dougherty et al. 2018`, *Science* `362`, `eaat5434`) & `10h 33m 38s` rotation (`Mankovich et al. 2019`, *ApJ* `871`, `1`):** Magnetic dipole tilt `<0.0095°` from the spin axis; ring-wave seismology pinned Saturn's bulk interior rotation period to **`10 hours, 33 minutes, 38 seconds`**.
     4. **Deep atmospheric jet streams (`Iess et al. 2019`):** Zonal winds extend **`~9,000 km` deep** into Saturn.
 - **Final Atmospheric Entry (`15 September 2017`, Orbit 293, NASA/JPL End of Mission Timeline):**
-  - Final image (`PIA21900`, narrow-angle camera view of the impact site on Saturn's night side lit by ringshine) taken on **14 September 2017 at `19:59 UTC`** from `634,000 km`.
+  - Final image (`PIA21900`, wide-angle camera [`WAC`] natural-colour view of the impact site on Saturn's night side lit by ringshine; `PIA21901` monochrome) taken on **14 September 2017 at `19:59 UTC`** from `634,000 km`.
   - On **15 September 2017**, Cassini entered Saturn's atmosphere near `9.4° N` latitude at **`~113,000 km/h` (`31.4 km/s` / `~70,000 mph`)**, streaming real-time `INMS` and magnetometer data across `1.4 billion km` (`83 minutes` one-way light time) with no camera recording so every bit arrived live before destruction.
   - Hydrazine thrusters pulsed from `10%` to **`100%` continuous duty cycle** for the final `~91 seconds` against atmospheric torque until Saturn's upper atmosphere overpowered the thrusters at **`~1,510 km` above the 1-bar cloud tops**, breaking the radio beam at **`10:31:48 UTC` spacecraft event time (`11:55:46 UTC` Earth received time at Canberra DSS-43)** before aerodynamic heating melted and dissociated the spacecraft within `~30–45 seconds`.
 
@@ -146,26 +146,26 @@ Saved raw pulls: `11_Upload-Package/evidence_2026-11-16_public_search.json` and 
 
 ### 2.7 Two Short Angles (`22–27 s`, `55–65` Words, `LEARNINGS.md` Rules 1–8, 24 + `OWB-2026-11-E1`)
 
-1. **Short `S01` (`24 s`, `64 words` — Why NASA Deliberately Crashed a $4 Billion Spacecraft Into Saturn):**
+1. **Short `S01` (`24 s`, `64 words` — Why NASA Deliberately Crashed a $4 Billion (`$3.9B`) Spacecraft Into Saturn):**
    - **YouTube Title (`55 chars`, verified `0` exact YouTube collisions):**
      **`Why Did NASA Crash a $4 Billion Spacecraft Into Saturn?`**
    - **Frame 0 (`t = 0.0 s`) Top-Safe Hook Text (`3` words, `#FFE000` keyword):**
      `CRASHED ON PURPOSE` (`PURPOSE` in `#FFE000`, `mode: "cover"` full-bleed `9:16` moving NASA Cassini ISS approach over Saturn's sunlit cloud bands and rings, `0%` blur bars).
    - **First Spoken Sentence (`0.0–1.5 s` Surprise per Rule 24, `7 words`, `Cut 1 ≤ 2.8 s`):**
      *"NASA crashed Cassini into Saturn on purpose."*
-   - **Mid-Short Stat Overlay (`5.5–8.5 s`, `4 words ≤ 4`):**
-     `113,000 KM/H FINAL DIVE`
+   - **Mid-Short Stat Overlay (`8.0–11.0 s`, `4 words ≤ 4`, matched to spoken ocean-moons line so `113,000 km/h` payoff is withheld to `≥70%` runtime per Rule 6):**
+     `2 HIDDEN OCEAN MOONS`
    - **Single Fact & Payoff (`≥70%` duration, `64 words` total, `<1.2 s` loop tail):**
      > *"NASA crashed Cassini into Saturn on purpose. After thirteen years orbiting Saturn, the probe was running out of fuel. But Cassini had discovered hidden liquid oceans inside Saturn's moons Enceladus and Titan. To make sure the unsterilized spacecraft could never crash into those moons and contaminate them with Earth microbes, engineers plunged Cassini into Saturn at one hundred and thirteen thousand kilometres per hour."*
 
 2. **Short `S02` (`24 s`, `62 words` — What Cassini Found Inside the 2,000-Kilometre Gap Under Saturn's Rings):**
    - **YouTube Title (`58 chars`, verified `0` exact YouTube collisions):**
      **`What Did Cassini Find Inside the Gap Under Saturn's Rings?`**
-   - **Frame 0 (`t = 0.0 s`) Top-Safe Hook Text (`4` words, `#FFE000` keyword):**
-     `22 SUICIDE RING DIVES` (`22` in `#FFE000`, `mode: "cover"` full-bleed `9:16` moving NASA Cassini ISS Grand Finale sequence threading between Saturn's innermost D ring and cloud tops, `0%` blur bars).
+   - **Frame 0 (`t = 0.0 s`) Top-Safe Hook Text (`3` words, `#FFE000` keyword; policy-clean, zero `"SUICIDE"` wording):**
+     `22 RING-GAP DIVES` (`22` in `#FFE000`, `mode: "cover"` full-bleed `9:16` moving NASA Cassini ISS Grand Finale sequence threading between Saturn's innermost D ring and cloud tops, `0%` blur bars).
    - **First Spoken Sentence (`0.0–1.5 s` Surprise per Rule 24, `7 words`, `Cut 1 ≤ 2.8 s`):**
      *"Cassini flew under Saturn's rings twenty-two times."*
-   - **Mid-Short Stat Overlay (`5.5–8.5 s`, `4 words ≤ 4`):**
-     `10,000 KG/S RING RAIN`
+   - **Mid-Short Stat Overlay (`6.0–9.0 s`, `4 words ≤ 4`, matched to spoken `2,000 km` gap line so `10 tonnes/s` ring-rain payoff is withheld to `≥70%` runtime per Rule 6):**
+     `2,000 KM RING GAP`
    - **Single Fact & Payoff (`≥70%` duration, `62 words` total, `<1.2 s` loop tail):**
      > *"Cassini flew under Saturn's rings twenty-two times. Before burning up in 2017, the spacecraft threaded a two-thousand-kilometre gap between Saturn's clouds and its innermost ring at over one hundred and twenty thousand kilometres per hour. Inside that gap, Cassini weighed the rings for the first time and flew through ten tonnes of ring ice and organic molecules pouring into Saturn every second."*

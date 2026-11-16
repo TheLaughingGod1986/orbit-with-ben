@@ -24,7 +24,7 @@
 | Title score | ≥ **90** (`94 / 100` est.) |
 | Primary keyword overall | `every mars rover explained` (`#1` signed-out YouTube GB autocomplete; also matches `mars rover explained` & `nasa mars rovers explained`) |
 | Hook promise | From `1997`'s `11.5-kg` microwave-sized Sojourner to `2021`'s `1,025-kg` nuclear Perseverance and China's Zhurong, how all 6 Mars rovers grew `89×` heavier and proved Mars once had rivers, lakes, and hot springs |
-| Retention design | Proof-first `0:00–0:30` (`J2428`: real Perseverance Sky Crane descent camera Frame 0, zero Orbit/title/fade before `0:30`, zero chapter card before `0:45`, 6-rover scale payoff hint by `0:20`) + 6 chronological chapters |
+| Retention design | Proof-first `0:00–0:30` (`J2428`: real Perseverance Sky Crane descent camera Frame 0, zero Orbit/title/fade before `0:30`, zero chapter card before `0:45`, 6-rover scale payoff hint by `0:20`) + 5 chronological chapters covering all 6 rovers |
 | Packaging | 3-way Thumbnail Test & Compare from day 1 (Thumb A `ALL 6 ROVERS` Sojourner vs Perseverance scale vs Thumb B Rule 14 bright Sky Crane touchdown `1997 TO NOW` vs Thumb C Rule 18/19 real NASA Perseverance selfie `89X HEAVIER`; no Orbit) |
 
 ---
@@ -119,7 +119,7 @@ cd 07_Content-Ops && npm run review:script -- --file ../02_Video-Projects/070_Ev
 | Non-overlap with `025` (`Could a Robot Survive on Mars?`) | Focus on the chronological 6-rover engineering & geological discovery tour (`Sojourner 1997`, `Spirit 2004` Home Plate hydrothermal silica, `Opportunity 2004` hematite blueberries, `Curiosity 2012` Sky Crane & `ChemCam` laser, `Zhurong 2021` radar, `Perseverance 2021` `MOXIE` `122 g` oxygen & sample depot) rather than repeating `025`'s cold/dust/wheel-wear survival essay |
 | `RT-ec4_GcOk` (`1,120`v) & `B1z2dv7m7Vk` (`52.69%` stayed) proof | Open cold at Frame 0 on real moving Perseverance Sky Crane touchdown footage (`PIA24431`) |
 
-**Chapter list after audit** (6 chronological acts, each with a teach-point + `Teach on screen` markers):
+**Chapter list after audit** (5 chronological acts covering all 6 rovers, each with a teach-point + `Teach on screen` markers):
 
 1. **Rover #1: `Sojourner` (`4 July 1997`) — The `11.5-kg` Microwave That Proved Wheels Work on Mars** — After the Soviet `4.5-kg` `Prop-M` ski-rover on `Mars 3` (`2 December 1971`, `WHEN: December 1971`) lost contact after `14.5 seconds`, NASA's `Mars Pathfinder` bounced `>15 times` across Ares Vallis inside a `24-lobe` airbag cocoon (`WHEN: 4 July 1997`). **Sojourner** (`11.5 kg`, `1 cm/s` top speed, `Donald Bickler`'s `6-wheel` rocker-bogie suspension, `WHO: Donald Bickler (born 1931) — JPL rover engineer`) used silica aerogel insulation to outlast its `7-sol` plan by `12×` (`83 sols`, `100 m` driven, `DATA` #1).
 2. **Rovers #2 & #3: `Spirit` & `Opportunity` (`January 2004`) — Following the Water** — Scaling up `16×` to **`185 kg` (`408 lb`)** golf-cart twins (`WHO: Steve Squyres (born 1956) — MER principal investigator` · `WHEN: January 2004`): **Spirit** (`Gusev Crater`, `7.73 km`) accidentally scraped **`90%` opaline silica** at Home Plate (`2006`, `FACT: Broken wheel found hot spring`) proving ancient hydrothermal steam vents, while **Opportunity** (`Meridiani Planum`, `45.16 km` across `5,111 sols`, `DATA` #2) discovered hematite **"blueberries"** and jarosite formed in liquid water.
@@ -159,5 +159,5 @@ cd 07_Content-Ops && npm run review:script -- --file ../02_Video-Projects/070_Ev
 - [x] Retention plan filled
 - [x] Production checklist path noted: `templates/PRODUCTION_CHECKLIST_V2.md`
 
-**Pre-build Topic Audit (`§1–§6`) Completed by:** `gemini` (`J2912`) on `2026-11-16`  
+**Pre-build Topic Audit (`§1–§6`) Completed by:** `gemini` (`J2912` brief + `J2920` Rule-E GO review, `95 / 100`) on `2026-11-16`  
 **Final Pre-VO Sign-off (`§7` after Script & `SOURCES.md` gates):** *(leave unsigned until script scores `≥90` upon active WIP entry)*
