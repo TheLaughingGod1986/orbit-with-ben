@@ -188875,13 +188875,13 @@
       "stage": "edit",
       "after": "J2271",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-16T06:41Z",
-      "eta": "2026-11-16T08:41Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T01:11Z",
-      "result": "",
+      "result": "Assembled HOS 010 Short A v01 (23.3s, 936x1664, sha256 ea29e26487d6631416449c9adf712f51b1b9508db06b7b6c29edc4236970fe59) and Short C v01 (23.6s, 936x1664, sha256 698db62789e1e6884ae15797dc51083c39bbc0ee3c0cc1ecf83f92e2e87a0359) at GBP0 from 12/12 KEEP plates (cursor) + two GBP0 9:16 code graphics + accepted VO (J0862/J1004 Option A1). All 6 ship gates exit 0 on both cuts. Staged NAS + HOS UAT copies; HOS PR #611 (91cc0662) green; non-producer QA review queued as J2933. Long 010 not yet uploaded (must be public before Shorts air). Zero spend, zero uploads/Buffer.",
       "history": [
         {
           "at": "2026-11-05T01:11Z",
@@ -189062,6 +189062,11 @@
           "at": "2026-11-16T07:49Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Step 4/4 complete: PR #611 (91cc0662) green on all 6 CI checks + check_all.sh PASS; synced QA contact sheets to NAS; queued non-producer review J2933 and posted desk report"
+        },
+        {
+          "at": "2026-11-16T07:49Z",
+          "by": "gemini",
+          "what": "done: Assembled HOS 010 Short A v01 (23.3s, 936x1664, sha256 ea29e26487d6631416449c9adf712f51b1b9508db06b7b6c29edc4236970fe59) and Short C v01 (23.6s, 936x1664, sha256 698db62789e1e6884ae15797dc51083c39bbc0ee3c0cc1ecf83f92e2e87a0359) at GBP0 from 12/12 KEEP plates (cursor) + two GBP0 9:16 code graphics + accepted VO (J0862/J1004 Option A1). All 6 ship gates exit 0 on both cuts. Staged NAS + HOS UAT copies; HOS PR #611 (91cc0662) green; non-producer QA review queued as J2933. Long 010 not yet uploaded (must be public before Shorts air). Zero spend, zero uploads/Buffer."
         }
       ],
       "remaining_action": "Hand assembled HOS 010 Shorts A and C to non-producer QA review J2933",
@@ -189085,7 +189090,8 @@
         "at": "2026-11-16T07:49Z",
         "by": "gemini",
         "note": "Step 4/4 complete: PR #611 (91cc0662) green on all 6 CI checks + check_all.sh PASS; synced QA contact sheets to NAS; que"
-      }
+      },
+      "done_ref": "91cc0662"
     },
     {
       "id": "J2173",
