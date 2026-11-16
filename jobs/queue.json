@@ -252296,14 +252296,27 @@
           "at": "2026-11-16T21:28Z",
           "by": "gemini",
           "what": "reopened: Condition satisfied (J2960, jobs/reviews/J2960/REVIEW.md, commit 52888613c4): scheduled check time 2026-11-16T21:10:00Z and 24h file cutoff 2026-11-16T21:06:07Z passed at 2026-11-16T21:24:06Z; '~/Library/Mobile Documents/com~apple~CloudDocs/Link this phone to the board.html' (mode 0600, 865B, mtime 2026-11-15T21:06:07Z) verified present; issue #219 pairs[0] (2026-11-14T19:13:08.165Z, e=1795269633) already paired Ben's iPhone (verdicts through 2026-11-16T20:51:28.150Z). Reopened for step 4/4 cleanup ONLY: delete ONLY '~/Library/Mobile Documents/com~apple~CloudDocs/Link this phone to the board.html', confirm on #478, and DO NOT mint another link."
+        },
+        {
+          "at": "2026-11-16T21:29Z",
+          "by": "gemini",
+          "what": "rerouted to gemini on gemini-argon: Rerouted to gemini for step 4/4 cleanup ONLY after cursor (grok-4.7) twice re-created Link this phone to the board.html and re-blocked J2831 on 14 Nov 20:45Z and 15 Nov 21:00Z."
         }
       ],
       "remaining_action": "Remove the iCloud phone-link file after it is used or 24 hours have passed",
       "due": "2026-11-14T17:00:00Z",
-      "for": "cursor",
+      "for": "gemini",
       "kind": "studio",
       "plain": "Get the phone-linking link to Ben's iPhone privately, so he can approve the Journey film",
-      "urgent": 6
+      "urgent": 6,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "cursor",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "model": "gemini-argon"
     },
     {
       "id": "J2832",
