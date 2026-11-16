@@ -88,7 +88,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2924 | mini | open (after J2922) | – | – | HOS:110 topic · for gemini · review · `gemini-argon` · HOS 110 Why Do Onions Make You Cry: rule-E topic go/no-go review |  |
 | J2925 | mini | open (after J2922) | – | – | HOS:111 topic · for gemini · review · `gemini-argon` · HOS 111 Why Do Knuckles Crack: rule-E topic go/no-go review |  |
 | J2926 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0979 |  |
-| J2927 | mini | open | – | – | review · Verify condition for J2171 |  |
+| J2927 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J2928 | mini | open | – | – | review · Verify condition for J2271 |  |
 
 Recently finished:
