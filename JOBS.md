@@ -83,7 +83,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2957 | mini | open | – | – | 007 upload · studio · Upload HOS 007 Short variolation v05 (What Is Variolation?) Private, Sat 28 Nov 11:30 | 6912169020 |
 | J2958 | mini | open | – | – | 007 upload · studio · Upload HOS 007 Short eradication v06 (How Was Smallpox Eradicated?) Private, Sun 29 Nov 11:30 | 6914782767 |
 | J2959 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
-| J2962 | mini | open | – | – | 033 edit · video · Uranus long: give the opening moving picture instead of a still (v05) |  |
+| J2962 | mini | claimed | gemini | 2026-11-17T00:04Z | 033 edit · video · Uranus long: give the opening moving picture instead of a still (v05) |  |
 
 Recently finished:
 
