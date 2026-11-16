@@ -261813,9 +261813,14 @@
           "at": "2026-11-16T12:59Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2942; inspected J2916 REVIEW.md and 2026-11-30_moon-jupiter-conjunction.md"
+        },
+        {
+          "at": "2026-11-16T13:05Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1 done: SHA-256 verified (MP4 b0050a0a... and cover ab1244c6...) in OWB UAT and NAS; gate_shorts_open.py check without --report-only PASS"
         }
       ],
-      "remaining_action": "Verify SHA-256 hashes of v01 MP4 and cover in OWB UAT/ and run gate_shorts_open.py check without --report-only",
+      "remaining_action": "Upload Moon-Jupiter Short v01 as Private scheduled for Thu 26 Nov 11:30Z with en-GB language and en-GB captions",
       "due": "2026-11-25T18:00:00Z",
       "kind": "listing",
       "approved_from": {
@@ -261840,11 +261845,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-16T12:59Z",
+        "at": "2026-11-16T13:05Z",
         "by": "gemini",
-        "note": "Claimed J2942; inspected J2916 REVIEW.md and 2026-11-30_moon-jupiter-conjunction.md"
+        "note": "Step 1 done: SHA-256 verified (MP4 b0050a0a... and cover ab1244c6...) in OWB UAT and NAS; gate_shorts_open.py check with"
       },
       "taskKeys": [
         "OWB:020"
