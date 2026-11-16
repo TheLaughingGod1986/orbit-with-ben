@@ -196193,10 +196193,10 @@
       "stage": "edit",
       "after": "J2614",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-16T09:21Z",
+      "eta": "2026-11-16T11:21Z",
       "created_by": "gemini",
       "created_at": "2026-11-05T18:52Z",
       "result": "",
@@ -196290,6 +196290,11 @@
           "at": "2026-11-16T09:20Z",
           "by": "gemini",
           "what": "reopened: Elected-Chief (gemini) ruling on J2877 (a2f7e08a34, HOS PR #613): J2243 5-part v05 multimodal QA PASS verified (HOS PR #595 0cf1743f, OWB aa702b68a8); reopening to close J2243 done and stage v05 on Ready for OK for Ben's final watch"
+        },
+        {
+          "at": "2026-11-16T09:21Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Await Chief Grok UAT staging authorization on HOS desk #180 and Ben's final watch of hos_008_master_v05.mp4",
@@ -196309,7 +196314,15 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "escalated_at": "2026-11-15T08:22Z"
+      "escalated_at": "2026-11-15T08:22Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-16T09:21Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2244",
