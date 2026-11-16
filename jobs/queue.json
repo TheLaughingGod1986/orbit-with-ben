@@ -253516,13 +253516,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-16T04:40Z",
-      "eta": "2026-11-16T06:40Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-14T19:02Z",
-      "result": "",
+      "result": "parked for Chief: Verified at 2026-11-16T04:43:37Z (jobs/reviews/J2852/REVIEW.md, commit 0bb552ddda): CONDITION PROVEN SATISFIED for J2843. All 3 Packaging Panel critiques in 05_Analytics/tests/panels/owb-j2834-weekly-2026-11-14/ are complete on main: J2840 codex.md (6f240fbd52, 12930 B), J2841 gemini.md (dd08bb322e, 16663 B), and J2842 cursor.md (7915cbebaf, 8155 B), and all 10 J2834_v02 NAS SHA-256 hashes match SHA256SUMS.txt. Because jobs.py reopen on a held job requires the elected Chief (Grok Bot / chief UP per chief_relay.py status), run: jobs.py reopen J2843 --agent chief --note 'J2852 verified J2840 codex.md (6f240fbd52), J2841 gemini.md (dd08bb322e), J2842 cursor.md (7915cbebaf) complete on main and all 10 J2834_v02 NAS SHA-256 hashes intact (0bb552ddda)' --git && jobs.py done J2852 --agent chief --result 'Condition satisfied: J2840-J2842 critiques complete on main and all 10 J2834_v02 NAS hashes verified (0bb552ddda); reopened J2843' --git",
       "history": [
         {
           "at": "2026-11-14T19:02Z",
@@ -253558,6 +253558,11 @@
           "at": "2026-11-16T04:46Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Verification complete at 0bb552ddda; parking J2852 for elected Chief to reopen J2843"
+        },
+        {
+          "at": "2026-11-16T04:47Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Verified at 2026-11-16T04:43:37Z (jobs/reviews/J2852/REVIEW.md, commit 0bb552ddda): CONDITION PROVEN SATISFIED for J2843. All 3 Packaging Panel critiques in 05_Analytics/tests/panels/owb-j2834-weekly-2026-11-14/ are complete on main: J2840 codex.md (6f240fbd52, 12930 B), J2841 gemini.md (dd08bb322e, 16663 B), and J2842 cursor.md (7915cbebaf, 8155 B), and all 10 J2834_v02 NAS SHA-256 hashes match SHA256SUMS.txt. Because jobs.py reopen on a held job requires the elected Chief (Grok Bot / chief UP per chief_relay.py status), run: jobs.py reopen J2843 --agent chief --note 'J2852 verified J2840 codex.md (6f240fbd52), J2841 gemini.md (dd08bb322e), J2842 cursor.md (7915cbebaf) complete on main and all 10 J2834_v02 NAS SHA-256 hashes intact (0bb552ddda)' --git && jobs.py done J2852 --agent chief --result 'Condition satisfied: J2840-J2842 critiques complete on main and all 10 J2834_v02 NAS hashes verified (0bb552ddda); reopened J2843' --git"
         }
       ],
       "remaining_action": "Elected Chief reopens J2843 and closes J2852",
