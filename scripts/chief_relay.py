@@ -1567,7 +1567,7 @@ def _offload_finished(at: dt.datetime) -> bool:
     write_json(d("offload.json"), {"at": st.get("at") or iso(at), "before_mb": rep["before_mb"], "after_mb": rep["after_mb"],
                                    "moved": len(rep["moved"]), "kept": len(rep["kept"]), "nas": rep["nas"]})
     log(line)
-    if rep["moved"] or rep["kept"] or rep["nas"] != "ok":
+    if rep["moved"] or rep["kept"] or rep["nas"] != "ok" or (rep.get("worktrees") or {}).get("removed"):
         notify(f"Chief relay: {line}")
     return False
 
@@ -1605,16 +1605,30 @@ def offload_scratch(at: dt.datetime) -> None:
         free = shutil.disk_usage(str(HOME)).free // (1024 * 1024)
     except OSError:
         return
+    args = ["--target-gb", str(target), "--min-age-h", age_h]
+    what = ""
     if free >= target * 1024:
-        return
+        # The internal disk is fine: look at the working SSD (Ben, 16 Nov 2026). Scratch moved there on 9 Nov and
+        # nothing cleared it: 140 GiB in a week. Under CHIEF_SSD_OFFLOAD_GB free (default 100) finished worktrees
+        # are removed and scratch untouched for CHIEF_SSD_OFFLOAD_AGE_H (default 48 h) goes to the NAS.
+        sd = scratch_dir()
+        ssd_target = float(os.environ.get("CHIEF_SSD_OFFLOAD_GB", "100"))
+        try:
+            free = shutil.disk_usage(str(sd)).free // (1024 * 1024) if sd else None
+        except OSError:
+            free = None
+        if free is None or free >= ssd_target * 1024:
+            return
+        args = ["--root", str(sd), "--worktrees", "--target-gb", str(ssd_target), "--min-mb", "50",
+                "--min-age-h", os.environ.get("CHIEF_SSD_OFFLOAD_AGE_H", "48")]
+        what = " for the SSD"
     last = read_json(d("offload.json")) or {}
     if last.get("at") and at - parse(last["at"]) < dt.timedelta(hours=float(os.environ.get("CHIEF_OFFLOAD_H", "3"))):
         return
     try:
         d().mkdir(parents=True, exist_ok=True)
         with open(d("offload.out"), "w") as out:
-            proc = subprocess.Popen([sys.executable, str(_offload_path()), "--apply", "--json", "--target-gb", str(target),
-                                     "--min-age-h", age_h],
+            proc = subprocess.Popen([sys.executable, str(_offload_path()), "--apply", "--json", *args],
                                     stdout=out, stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL,
                                     start_new_session=True, cwd=str(HOME))
     except Exception as e:  # never let the offload stop the relay
@@ -1622,7 +1636,7 @@ def offload_scratch(at: dt.datetime) -> None:
         write_json(d("offload.json"), {"at": iso(at), "error": str(e)[:300]})
         return
     write_json(d("offload.json"), {"at": iso(at), "running": True, "pid": proc.pid})
-    log(f"offload: started in the background (pid {proc.pid}, {free:,} MB free)")
+    log(f"offload{what}: started in the background (pid {proc.pid}, {free:,} MB free)")
 
 
 def weekly_caches(at: dt.datetime) -> None:
