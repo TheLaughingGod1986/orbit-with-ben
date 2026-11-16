@@ -1,8 +1,8 @@
 # OWB Topic Brief — `072` · *Every Dwarf Planet Explained in 10 Minutes (All 5 Dwarf Planets)*
 
 - **Film ID:** `OWB:072` (`02_Video-Projects/072_Every-Dwarf-Planet-Explained-In-10-Minutes`)
-- **Job:** `J2929` (`macbook-2`, `2026-11-16`) · **Rule-E Review:** Queued (`kind: review`)
-- **Rule-G WIP Status:** Appended to `jobs/WIP.json` `next` (waiting line only; built natively in `studio/plan.json` Step 3's number-in-title complete-tour format alongside `064` and `070`, waiting until an active OWB WIP slot opens and `studio/plan.json` format tests read out).
+- **Job:** `J2929` (`macbook-2`, `2026-11-16`) · **Rule-E Review:** **GO (`95 / 100`, `J2931` by `gemini`, `2026-11-16`; `jobs/reviews/J2931/REVIEW.md`)**
+- **Rule-G WIP Status:** Pre-cleared in `jobs/WIP.json` `next` (waiting line only; built natively in `studio/plan.json` Step 3's number-in-title complete-tour format alongside `064` and `070`, waiting until an active OWB WIP slot opens and `studio/plan.json` format tests read out).
 - **Evidence Files Saved in Package (`£0` spend, no paid vidIQ):**
   - `11_Upload-Package/evidence_2026-11-16_public_search.json` (`public_search.py` signed-out YouTube GB autocomplete + top results, including `#1` exact autocomplete match `every dwarf planet explained` and `8` on-topic `≥1M`-view dwarf-planet/Pluto videos up to `96.03M`)
   - `11_Upload-Package/evidence_2026-11-16_neighbours.json` (`neighbours.py` gate: **PASS**, `4` strictly on-topic `≥1M` education videos in `neighbours.json` — Kurzgesagt `4.33M`, TED-Ed `3.44M`, CrashCourse `2.04M`, SciShow Kids `1.59M` — with off-topic rows marked `onTopic: false`)
@@ -100,7 +100,7 @@
      3. `EsFSUuou14Y` — *The Dwarf Planet Song* | KLT | **16,609,878 views** | `3:59`
      4. `GWk45S7i9QQ` — *Why Is PLUTO Not A Planet? | Dwarf Planet* | Peekaboo Kidz | **13,516,627 views** | `5:11`
      5. `n6dbT9StGCE` — *That's Why Pluto Is Not a Planet Anymore* | BRIGHT SIDE | **3,036,244 views** | `8:42`
-     6. `evIsmxM5c7o` — *Meet the 5 Dwarf Planets!* | SciShow Kids | **1,592,733 views** | `4:33`
+     6. `evIsmxM5c7o` — *Meet the 5 Dwarf Planets!* | SciShow Kids | **1,592,733 views** (`1,592,746` in `neighbours.json`) | `4:33`
      7. `dAv6JrTQJw0` — *The Solar System's Forgotten Planets* | Signore Galilei | **1,529,388 views** | `10:10`
      8. `QqSl7TVoCUQ` — *Bizarre Worlds NASA Discovered Beyond Pluto in the Kuiper Belt* | Astrum | **1,444,256 views** | `18:17`
      9. `MHsDI83dZ_s` — *The Discovery That Demoted Pluto* | Astrum | **1,043,822 views** | `20:26`
@@ -108,7 +108,7 @@
    - **Small-Channel Breakout Proof on the Exact Query `"every dwarf planet explained"`:**
      - `uBVOoIPhxcA` (*Every Dwarf Planet in our System Explained*, `Dr_Curio`, `6:43`) — **128,710 views** (7 mo ago)
      - `5p21k1j_Ss8` (*Every STRANGE Dwarf Planet In Our Solar System Explained In 15 Minutes*, `The Escalist`, `15:52`) — **36,665 views** (5 mo ago)
-     - `edRnJkwvNoo` (*Every Dwarf Planet Explained*, `Supernova`, `9:43`) — **36,072 views** (3 mo ago)
+     - `edRnJkwvNoo` (*Every Dwarf Planet Explained*, `Supernova`, `9:43`) — **36,068–36,072 views** (3 mo ago)
      - Multiple small channels are earning `36k–128k` views on this exact complete-tour search query (`studio/plan.json` Step 3), and there is currently **zero** video titled *Every Dwarf Planet Explained in 10 Minutes* that combines real `Dawn`, `New Horizons`, `Hubble`, and `2024 JWST` findings.
 
 2. **Companion Single-Question & Real-Imagery Title Variants (for Test & Compare):**
@@ -140,11 +140,11 @@
 ### 2.5 Primary Scientific & Agency Fact Sheet (Pre-Verified for `SOURCES.md`)
 - **The 2005 Discovery of `Eris` & the 2006 IAU Vote (`Brown, Trujillo & Rabinowitz 2005`, *ApJ* `635`, `L97`; `Brown & Schaller 2007`, *Science* `316`, `1585`; IAU Resolution B5, `24 August 2006`):**
   - On **5 January 2005**, **Mike Brown**, **Chad Trujillo**, and **David Rabinowitz** discovered **Eris** (`2003 UB313`) in Palomar Observatory images taken on `21 October 2003`.
-  - Tracking its moon **Dysnomia** with Hubble and Keck (`Brown & Schaller 2007`) proved Eris has a mass of **`(1.66 ± 0.02) × 10²² kg`** (**`27%` more massive than Pluto's `1.303 × 10²² kg`**), while stellar occultations (`Sicardy et al. 2011`, *Nature* `478`, `493–496`) pinned Eris's diameter to **`2,326 ± 12 km`** (slightly smaller in volume than Pluto's **`2,376.6 km`**, because Eris is denser rock-and-ice at `2.43 g/cm³` vs Pluto's `1.854 g/cm³`) with a geometric albedo of **`0.96`** (brighter than fresh Earth snow due to frozen nitrogen-methane frost at `-243 °C` / `30 K` at `96.3 AU` aphelion, `559-year` orbit).
+  - Tracking its moon **Dysnomia** with Hubble and Keck (`Brown & Schaller 2007`) proved Eris has a mass of **`(1.66 ± 0.02) × 10²² kg`** (**`27%` more massive than Pluto's `1.303 × 10²² kg`**), while stellar occultations (`Sicardy et al. 2011`, *Nature* `478`, `493–496`) pinned Eris's diameter to **`2,326 ± 12 km`** (slightly smaller in volume than Pluto's **`2,376.6 km`**, because Eris is denser rock-and-ice at **`2.52 ± 0.05 g/cm³`** in `Sicardy et al. 2011` [`2.43 g/cm³` in `Holler et al. 2021`] vs Pluto's `1.854 g/cm³`) with a geometric albedo of **`0.96`** (brighter than fresh Earth snow due to frozen nitrogen-methane frost at `-243 °C` / `30 K` at `96.3 AU` aphelion, `559-year` orbit).
   - On **24 August 2006** in Prague, the International Astronomical Union passed **Resolution B5**, defining a planet by three rules: (1) orbits the Sun, (2) has enough mass for hydrostatic equilibrium (nearly round), and (3) has **cleared the neighbourhood** around its orbit (Steven Soter's planetary discriminant `µ = M/m`: Earth is `1.7 × 10⁶`, whereas Ceres is `0.33` and Pluto is `0.077`, below the `µ > 100` threshold). Worlds meeting only (1) and (2) that are not satellites became **dwarf planets**.
 - **Dwarf Planet #1 — `Ceres` (`Dawn` Mission, `Russell et al. 2016`, *Science* `353`, `1008–1010`; `De Sanctis et al. 2016`, *Nature* `536`, `54–57`):**
   - Discovered on **1 January 1801** by **Giuseppe Piazzi** (`1746–1826`) in Palermo (originally classified as the 8th planet for half a century before becoming the first asteroid, then elevated to dwarf planet in `2006`).
-  - Only dwarf planet in the inner solar system (`2.77 AU`, `4.6-year` orbit), diameter **`939.4 km` (`~940 km`)**, holding **`~39%` (`>1/3`) of the entire Asteroid Belt's mass** (`9.38 × 10²⁰ kg`).
+  - Only dwarf planet in the inner solar system (`2.77 AU`, `4.6-year` orbit), diameter **`939.4 km` (`~940 km`)**, holding **`~31%–39%` (roughly one-third to two-fifths)** of the entire Asteroid Belt's mass (`9.3835 × 10²⁰ kg`).
   - NASA's ion-propelled **Dawn** orbiter (`arrived 6 March 2015`) discovered **Ahuna Mons** (a `4-km`-high cryovolcano) and the glowing bright spots (`Cerealia Facula` & `Vinalia Faculae`) inside `92-km` **Occator Crater** — **`sodium carbonate (Na₂CO₃)`** and ammonium chloride salt domes left behind by subsurface brine percolating up from a deep muddy relic ocean (`De Sanctis et al. 2016`; `Raymond et al. 2020`, *Nature Astronomy*).
 - **Dwarf Planet #2 — `Pluto` (`New Horizons`, `Stern et al. 2015`, *Science* `350`, `aad1815`):**
   - Discovered **18 February 1930** by **Clyde Tombaugh** (`1906–1997`) at Lowell Observatory; diameter **`2,376.6 km`** (`~68%` of Earth's Moon), `248-year` orbit (`29.7 to 49.3 AU`), `5` moons led by **`1,212-km` Charon** (a true binary system whose barycentre sits in space outside Pluto).
@@ -155,7 +155,7 @@
   - On **21 January 2017**, `12` European telescopes watching Haumea pass in front of star `URAT1 533-182543` (`Ortiz et al. 2017`, *Nature*) discovered a **`70-km`-wide ring** at a radius of `2,287 km` in a `3:1` spin-orbit resonance — making Haumea the **first known Kuiper Belt object and dwarf planet with a ring system**.
 - **Dwarf Planets #4 & #5 — `Makemake` & `Eris` (`Brown et al. 2005`; `Glein et al. 2024`, *Icarus* `412`, `115999`; `Grundy et al. 2024`, *Icarus* `411`, `115923`):**
   - **Makemake** (`2005 FY9`, discovered **31 March 2005** just after Easter, `306-year` orbit at `45.3 AU`, diameter **`~1,430 km`**, `1` moon `MK 2` discovered by Hubble in `2016`): covered in reddish tholins and frozen methane (`CH₄`) and ethane pellets up to `1 cm` wide; a `2011` stellar occultation (`Ortiz et al. 2012`, *Nature* `491`, `566–569`) showed Makemake lacks a global atmosphere (`<4–12 nanobar`).
-  - **2024 JWST Geothermal Breakout on `Eris` and `Makemake` (`Glein et al. 2024`; `Grundy et al. 2024`):** Using the **James Webb Space Telescope (`NIRSpec`)**, planetary scientists measured the deuterium-to-hydrogen (`D/H`) and `¹³C/¹²C` ratios in methane ice on both **Eris** and **Makemake**, finding `D/H` ratios (`~2.5–2.9 × 10⁻⁴`) far lower than primordial comet methane — proving their surface methane was cooked inside **warm (`>150 °C` / `>400 K`) rocky cores by hydrothermal or radiogenic geochemistry** and vented to the surface via cryovolcanism or outgassing.
+  - **2024 JWST Geothermal Breakout on `Eris` and `Makemake` (`Glein et al. 2024`; `Grundy et al. 2024`):** Using the **James Webb Space Telescope (`NIRSpec`)**, planetary scientists measured the deuterium-to-hydrogen (`D/H`) and `¹²C/¹³C` (`82 ± 3` on Eris, `85 ± 6` on Makemake) ratios in methane ice on both **Eris** and **Makemake**, finding **`D/H = (2.9 ± 0.6) × 10⁻⁴` on Makemake and `D/H < 2.5 × 10⁻⁴` (`3σ` upper limit; nominal `~1.3 × 10⁻⁴`) on Eris** — far lower than primordial comet methane, proving their surface methane was cooked inside **warm (`>150 °C` / `>400 K`) rocky cores by hydrothermal or radiogenic geochemistry** and vented to the surface via cryovolcanism or outgassing.
 - **Beyond the Official 5 — `Quaoar`, `Orcus`, `Gonggong` & `Sedna` (`Morgado et al. 2023`, *Nature* `614`, `239–243`):**
   - Astronomers estimate dozens to hundreds of additional Kuiper Belt worlds meet hydrostatic equilibrium, led by **`Gonggong`** (`~1,230 km`), **`Quaoar`** (`~1,090 km`, where `Morgado et al. 2023` discovered a dense ring at `4,057 km` — **`7.4` planetary radii**, more than twice the classic Roche limit where a ring should have coalesced into a moon), **`Orcus`** (`~910 km`, the "anti-Pluto" in a `2:3` Neptune resonance), and **`Sedna`** (`~995 km`, whose `76 to 937 AU`, **`11,400-year` orbit** never touches the Kuiper Belt).
 
@@ -192,10 +192,10 @@ Saved raw pulls: `11_Upload-Package/evidence_2026-11-16_public_search.json` and 
      *"Haumea spins so fast it stretched flat."*
    - **Mid-Short Stat Overlay (`8.0–11.0 s`, `4 words ≤ 4`, exact word-for-word match to spoken `less than four hours` line so the `2,000-km rugby ball` and `70-km ring` payoff is withheld to `≥70%` runtime per Rule 6):**
      `LESS THAN FOUR HOURS`
-   - **Single Fact & Payoff (`≥70%` duration, `64 words` total, `<1.2 s` loop tail):**
-     > *"Haumea spins so fast it stretched flat. Out beyond Neptune in the Kuiper Belt, this icy dwarf planet completes a full rotation in less than four hours — the fastest spin of any large world in our solar system. An ancient giant impact spun Haumea so violently that centrifugal force stretched it into a two-thousand-kilometre rugby ball surrounded by two moons and a seventy-kilometre ring."*
+   - **Single Fact & Payoff (answer starts at word `45 of 64 = 70.3% ≥ 70%` duration, `64 words` total, `<1.2 s` loop tail):**
+     > *"Haumea spins so fast it stretched flat. Orbiting beyond Neptune in the freezing Kuiper Belt, this icy dwarf planet completes a full rotation in less than four hours — six times faster than Earth and the fastest spin of any large world around our Sun. A giant collision spun Haumea so violently that centrifugal force stretched it into a two-thousand-kilometre rugby ball with a ring."*
 
-2. **Short `S02` (`24 s`, `63 words` — Why Discovering Eris Cost Pluto Its Planet Status in 2006):**
+2. **Short `S02` (`24 s`, `62 words` — Why Discovering Eris Cost Pluto Its Planet Status in 2006):**
    - **YouTube Title (`54 chars`, verified `0` exact YouTube collisions):**
      **`Why Did Discovering Eris Cost Pluto Its Planet Status?`**
    - **Frame 0 (`t = 0.0 s`) Top-Safe Hook Text (`3` words, `#FFE000` keyword):**
@@ -204,5 +204,5 @@ Saved raw pulls: `11_Upload-Package/evidence_2026-11-16_public_search.json` and 
      *"Eris is heavier than Pluto itself."*
    - **Mid-Short Stat Overlay (`8.0–11.0 s`, `3 words ≤ 4`, exact word-for-word match to spoken `in January 2005` discovery line so the `27% heavier` and `2006` reclassification payoff is withheld to `≥70%` runtime per Rule 6):**
      `IN JANUARY 2005`
-   - **Single Fact & Payoff (`≥70%` duration, `63 words` total, `<1.2 s` loop tail):**
-     > *"Eris is heavier than Pluto itself. When astronomer Mike Brown spotted Eris in the Kuiper Belt in January 2005, everyone assumed it was the tenth planet. Then tracking its moon Dysnomia proved Eris weighs twenty-seven percent more than Pluto. Rather than adding dozens of icy Kuiper Belt worlds as planets, astronomers voted in 2006 to reclassify both Pluto and Eris as dwarf planets."*
+   - **Single Fact & Payoff (answer starts at word `45 of 62 = 72.6% ≥ 70%` duration, `62 words` total, `<1.2 s` loop tail):**
+     > *"Eris is heavier than Pluto itself. When astronomer Mike Brown spotted Eris beyond Neptune in January 2005, many hailed it as our tenth planet. Then Hubble tracked its moon Dysnomia and proved Eris weighs twenty-seven percent more than Pluto, with more icy twins waiting. Rather than counting dozens of Kuiper Belt planets, astronomers voted in 2006 to make both worlds dwarf planets."*

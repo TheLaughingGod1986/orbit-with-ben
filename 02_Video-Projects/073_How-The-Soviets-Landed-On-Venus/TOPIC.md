@@ -1,8 +1,8 @@
 # OWB Topic Brief — `073` · *How the Soviets Landed on Venus (The Only Photos Ever Taken)*
 
 - **Film ID:** `OWB:073` (`02_Video-Projects/073_How-The-Soviets-Landed-On-Venus`)
-- **Job:** `J2929` (`macbook-2`, `2026-11-16`) · **Rule-E Review:** Queued (`kind: review`)
-- **Rule-G WIP Status:** Appended to `jobs/WIP.json` `next` (waiting line only; unlocked while `studio/plan.json` pauses new single-question long builds after `034` Pluto on `2026-12-13` until the `064` / `SLEEP01` / `J01` format tests read out, with a native 10-lander complete-tour recast `Every Spacecraft That Landed on Venus Explained in 10 Minutes` ready if `064` wins).
+- **Job:** `J2929` (`macbook-2`, `2026-11-16`) · **Rule-E Review:** **GO (`96 / 100`, `J2931` by `gemini`, `2026-11-16`; `jobs/reviews/J2931/REVIEW.md`)**
+- **Rule-G WIP Status:** Pre-cleared in `jobs/WIP.json` `next` (waiting line only; unlocked while `studio/plan.json` pauses new single-question long builds after `034` Pluto on `2026-12-13` until the `064` / `SLEEP01` / `J01` format tests read out, with a native 10-lander complete-tour recast `Every Spacecraft That Landed on Venus Explained in 10 Minutes` ready if `064` wins).
 - **Evidence Files Saved in Package (`£0` spend, no paid vidIQ):**
   - `11_Upload-Package/evidence_2026-11-16_public_search.json` (`public_search.py` signed-out YouTube GB autocomplete + top results, including `#1` exact autocomplete matches for `how the soviets landed on venus`, `landing on venus`, `venus surface photos`, and `venera 13`, plus `12` on-topic `≥1M`-view Venus/Venera videos up to `22.80M`)
   - `11_Upload-Package/evidence_2026-11-16_neighbours.json` (`neighbours.py` gate: **PASS**, `5` on-topic `≥1M` Venus & planetary-engineering education videos in `neighbours.json` — Kurzgesagt `22.80M`, Real Engineering `5.45M` / `3.20M` / `1.46M`, CrashCourse `1.84M` — with off-topic rows marked `onTopic: false`)
@@ -84,7 +84,7 @@
      10. `UEmlOjKmL68` — *How the Soviets Landed on Venus* | Asianometry | **2,007,235 views** | `17:25`
      11. `XZJfHBc4-0w` — *What They Found on Venus Is Terrifying* | Astrum | **1,550,763 views** | `42:53`
      12. `7u785oK8TvQ` — *How the Soviets Landed on Venus!* | Xverse | **1,473,688 views** | `17:13` (published **2 months ago**!)
-   - **Search Competition Note:** While `Xverse` (`7u785oK8TvQ`, **1,473,688 views in 2 months**), `The Space Race` (`4_iTuvomj0Y`, **4,552,087 views in 11 months**), `Fexl` (`-N2PhuRQYM0`, **5,990,515 views in 9 months**), `Primal Space` (`5.51M`), `V101 SPACE` (`5.34M`), `Scientific American` (`4.95M`), `Destiny` (`2.88M`), `Astrum` (`2.05M` & `1.55M`), and `Asianometry` (`2.01M`) prove huge recent and evergreen demand for the Soviet Venus landings, `evidence_2026-11-16_public_search.json` also records that unestablished small channels posting single-question Venera 13 videos (`BossCat` `mximZvBTEnk` `732` views, `Universe Unfolded HQ` `d2Oz3OWPVl0` `150` views, `Lost Empires` `ozJ_ZgBBwa8` `133` views, `Survival By Science` `6hkXUGA1wHY` `103` views, `Cosmic Frame` `Es4LMekTXWI` `57` views) get limited initial search impressions — reinforcing why `073` sits in `jobs/WIP.json` `next` behind `studio/plan.json`'s single-question pause after `034` Pluto (`2026-12-13`).
+   - **Search Competition Note:** While `Xverse` (`7u785oK8TvQ`, **1,473,688 views in 2 months**), `The Space Race` (`4_iTuvomj0Y`, **4,552,087 views in 11 months**), `Fexl` (`-N2PhuRQYM0`, **5,990,515 views in 9 months**), `Primal Space` (`5.51M`), `V101 SPACE` (`5.34M`), `Scientific American` (`4.95M`), `Destiny` (`2.88M`), `Astrum` (`2.05M` & `1.55M`), and `Asianometry` (`2.01M`) prove huge recent and evergreen demand for the Soviet Venus landings, `evidence_2026-11-16_public_search.json` also records that unestablished small channels posting single-question Venera 13 videos (`BossCat` `mximZvBTEnk` `732` views, `THAT DESK` `JrxsR9P-7T4` `671` views, `Universe Unfolded HQ` `d2Oz3OWPVl0` `150` views, `Lost Empires` `ozJ_ZgBBwa8` `133` views, `Survival By Science` `6hkXUGA1wHY` `103` views, `Cosmic Frame` `Es4LMekTXWI` `57` views, `Rebuillt From Evidence` `JFM9EHmceV0` `4` views) get limited initial search impressions (`4–732` views) — reinforcing why `073` sits in `jobs/WIP.json` `next` behind `studio/plan.json`'s single-question pause after `034` Pluto (`2026-12-13`).
 
 2. **`studio/plan.json` Contingency Note Only — Complete 10-Lander Tour Recast:**
    - **Status under `studio/plan.json` (`longs-2026-11`):** `064` (*Every Planet Explained in 10 Minutes*) is the plan's designated tour test film awaiting Ben's lock and its 14-day readout (`keep: 500`, `drop: 230`).
@@ -114,8 +114,8 @@
    - `Xverse`'s *How the Soviets Landed on Venus!* (`7u785oK8TvQ`) earned **1,473,688 views in just 2 months**, `Fexl` earned **5,990,515 views in 9 months**, `The Space Race` earned **4,552,087 views in 11 months**, `Primal Space` has **5,510,292 views**, and `V101 SPACE` has **5,338,730 views**.
 
 ### 2.5 Primary Scientific & Agency Fact Sheet (Pre-Verified for `SOURCES.md`)
-- **Crushed in the Clouds — `Venera 4`, `5` & `6` (`1967–1969`, NPO Lavochkin / `Georgy Babakin`, NASA NSSDCA):**
-  - On **18 October 1967**, **Venera 4** (`383 kg` descent capsule designed by **Georgy Babakin**, `1914–1971`) became the first spacecraft to transmit direct measurements from inside another planet's atmosphere (`90–95% CO₂`), but its hull was rated for `25 atmospheres` and failed after `93 minutes` at **`~24.96 km` altitude** (`~18–22 atm`, `262 °C`).
+- **Crushed in the Clouds — `Venera 4`, `5` & `6` (`1967–1969`, NPO Lavochkin / `Georgy Babakin`, `Avduevsky et al. 1968`, *JAS* `25`, `537–545`; `Kliore et al. 1967`, *Science* `158`, `1683`; NASA NSSDCA):**
+  - On **18 October 1967**, **Venera 4** (`383 kg` descent capsule designed by **Georgy Babakin**, `1914–1971`) became the first spacecraft to transmit direct measurements from inside another planet's atmosphere (`90–95% CO₂`), but its hull was rated for `25 atmospheres` and failed after `93 minutes` at **`~25 km` (`24.96 km` / `24–28 km` after Mariner 5 radar-altimeter reconciliation) altitude** (`~18–22 atm`, `262–271 °C`).
   - **Venera 5** (`16 May 1969`) and **Venera 6** (`17 May 1969`) were reinforced to `25–27 atm` and crushed at `~18–20 km` altitude after extrapolation showed surface conditions reached **`~470 °C` and `~90 atmospheres`**.
 - **First Soft Landing on Another Planet — `Venera 7` & `Venera 8` (`1970–1972`, `Avduevsky et al. 1971`, *Journal of the Atmospheric Sciences* `28`, `263–269`; `Marov et al. 1973`, *Icarus* `20`, `407–421`):**
   - **Venera 7** (`495 kg` lander, titanium alloy shell tested to **`180 atmospheres`** and `540 °C`): On **15 December 1970**, after its reefed fibreglass parachute partially tore during descent, Venera 7 struck the night side of Venus at **`~16.5 m/s` (`~37 mph`)**, rolled onto its side (`1%` signal strength), and transmitted surface temperature (**`475 ± 20 °C`**) and pressure (**`90 ± 15 atm`**) for **`23 minutes`** — the **first soft landing on another planet**.
@@ -158,7 +158,7 @@ Saved raw pulls: `11_Upload-Package/evidence_2026-11-16_public_search.json` and 
 
 *(Note: Neither Short overlaps with `023`'s climate Shorts `_a66uhRDips` [Why Is Venus Hot Enough to Melt Lead?] or `hZH0C7fpCk4` [How Big Is Venus Compared to Earth?] — both focus on the `1982` `Venera 13` & `Venera 14` spacecraft hardware and surface photographs.)*
 
-1. **Short `S01` (`24 s`, `64 words` — How Venera 13 Survived 127 Minutes on the Surface of Venus):**
+1. **Short `S01` (`24 s`, `62 words` — How Venera 13 Survived 127 Minutes on the Surface of Venus):**
    - **YouTube Title (`62 chars`, verified `0` exact YouTube collisions):**
      **`How Did Venera 13 Survive 127 Minutes on the Surface of Venus?`**
    - **Frame 0 (`t = 0.0 s`) Top-Safe Hook Text (`3` words, `#FFE000` keyword):**
@@ -167,8 +167,8 @@ Saved raw pulls: `11_Upload-Package/evidence_2026-11-16_public_search.json` and 
      *"Venera 13 photographed Venus's surface in colour."*
    - **Mid-Short Stat Overlay (`8.0–11.0 s`, `3 words ≤ 4`, exact word-for-word match to spoken `ninety times Earth's pressure` line so the `127 minutes` survival payoff is withheld to `≥70%` runtime per Rule 6):**
      `90X EARTH'S PRESSURE`
-   - **Single Fact & Payoff (`≥70%` duration, `64 words` total, `<1.2 s` loop tail):**
-     > *"Venera 13 photographed Venus's surface in colour. On the first of March 1982, the Soviet lander dropped onto Venus where the air crushes at ninety times Earth's pressure and heat reaches four hundred and sixty degrees Celsius. Chilled before entry and sealed inside a titanium pressure sphere, Venera 13 beat its thirty-two-minute design life to transmit colour panoramas for one hundred and twenty-seven minutes."*
+   - **Single Fact & Payoff (answer starts at word `45 of 62 = 72.6% ≥ 70%` duration, `62 words` total, `<1.2 s` loop tail):**
+     > *"Venera 13 photographed Venus's surface in colour. On the first of March 1982, the Soviet lander touched down where air crushes at ninety times Earth's pressure and heat reaches four hundred and sixty degrees Celsius — an oven meant to kill it in thirty-two minutes. By pre-freezing its core inside a titanium sphere with heat-absorbing salt, it survived one hundred and twenty-seven minutes."*
 
 2. **Short `S02` (`24 s`, `63 words` — Why Soviet Venus Lander Venera 14 Tested Its Own Camera Lens Cap):**
    - **YouTube Title (`59 chars`, verified `0` exact YouTube collisions):**
@@ -176,8 +176,8 @@ Saved raw pulls: `11_Upload-Package/evidence_2026-11-16_public_search.json` and 
    - **Frame 0 (`t = 0.0 s`) Top-Safe Hook Text (`4` words, `#FFE000` keyword):**
      `1-IN-A-MILLION BAD LUCK` (`BAD LUCK` in `#FFE000`, `mode: "cover"` full-bleed `9:16` moving real **Venera 14** surface panorama showing the spring-loaded soil penetrometer arm resting directly on the white ejected camera lens cap on Venus's basalt floor, `0%` blur bars).
    - **First Spoken Sentence (`0.0–1.5 s` Surprise per Rule 24, `7 words`, `Cut 1 ≤ 2.8 s`):**
-     *"Venera 14 accidentally tested its own lens cap."*
+     *"Venera 14 tested its own lens cap."*
    - **Mid-Short Stat Overlay (`8.0–11.0 s`, `4 words ≤ 4`, exact word-for-word match to spoken `four camera caps fail` line so the `5 March 1982` titanium-cap penetrometer payoff is withheld to `≥70%` runtime per Rule 6):**
      `FOUR CAMERA CAPS FAIL`
-   - **Single Fact & Payoff (`≥70%` duration, `63 words` total, `<1.2 s` loop tail):**
-     > *"Venera 14 accidentally tested its own lens cap. Earlier Soviet landers on Venus had four camera caps fail to pop off under crushing atmospheric pressure. On the fifth of March 1982, Venera 14 ejected both titanium lens caps cleanly — but one cap bounced to the exact spot where the spring-loaded soil arm unfolded, measuring the compressibility of titanium instead of Venusian rock."*
+   - **Single Fact & Payoff (answer starts at word `46 of 63 = 73.0% ≥ 70%` duration, `63 words` total, `<1.2 s` loop tail):**
+     > *"Venera 14 tested its own lens cap. Earlier Soviet landers on Venus had four camera caps fail to pop off under ninety atmospheres of crushing pressure. So on the fifth of March 1982, engineers used pyrotechnic bolts to blast Venera 14's titanium caps wide open — only for one cap to land directly under the unfolding soil arm, testing solid titanium instead of rock."*

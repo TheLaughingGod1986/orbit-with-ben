@@ -4,7 +4,8 @@
   "air": "",
   "stages": {
     "topic": {
-      "state": "doing"
+      "state": "done",
+      "ref": "jobs/reviews/J2931/REVIEW.md"
     },
     "script": {
       "state": "todo"
@@ -31,14 +32,6 @@
       "state": "todo"
     }
   },
-  "claims": [
-    {
-      "stage": "topic",
-      "by": "gemini",
-      "at": "2026-11-16T05:16Z",
-      "eta": "2026-11-16T06:46Z",
-      "note": "J2931 Rule-E topic go/no-go review"
-    }
-  ],
-  "next": "Appended to jobs/WIP.json next (J2929); Rule-E topic go/no-go review queued; starts Script stage only when an active OWB WIP slot opens after studio/plan.json format tests"
+  "claims": [],
+  "next": "Pre-cleared in jobs/WIP.json next (Rule-E GO in J2931, 96/100; all 6 fixes applied); starts Script stage when an active OWB WIP slot opens after studio/plan.json format tests"
 }
