@@ -258053,9 +258053,14 @@
           "at": "2026-11-16T01:05Z",
           "by": "gemini",
           "what": "step 4 of 5 done: Probed both threads via POST /api/checks (dryRun+checkThreads) at 00:49Z, 01:02Z, and 01:03Z on both addresses: OWB #478 and HOS #180 both return readStatus=401, writeProbeStatus=401, contentsReadStatus=401, canPostComment=false ('Bad credentials')"
+        },
+        {
+          "at": "2026-11-16T01:05Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Verified board_publish.py state: ticks succeeded until 00:36:55Z and started returning 500 (store read 401) at 00:38:40Z when the token was regenerated; 84 cached ticks incl. HOS-J2230.1 remain preserved in board.json. Parking for Ben to update BOARD_GH_TOKEN in Cloudflare Pages."
         }
       ],
-      "remaining_action": "Check board_publish.py state and park for Ben to paste the current valid token into BOARD_GH_TOKEN",
+      "remaining_action": "Ben (in his own account): paste the current valid GitHub token into BOARD_GH_TOKEN (not BOARD_KEY) in Cloudflare Pages studio-kanban Production secrets",
       "due": "2026-11-15T19:00:00Z",
       "for": "gemini",
       "kind": "studio",
@@ -258064,11 +258069,11 @@
       "model": "gemini-argon",
       "escalated_at": "2026-11-15T22:45Z",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 5,
         "at": "2026-11-16T01:05Z",
         "by": "gemini",
-        "note": "Probed both threads via POST /api/checks (dryRun+checkThreads) at 00:49Z, 01:02Z, and 01:03Z on both addresses: OWB #478"
+        "note": "Verified board_publish.py state: ticks succeeded until 00:36:55Z and started returning 500 (store read 401) at 00:38:40Z"
       }
     },
     {
