@@ -83,6 +83,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2937 | mini | open (after J2935) | – | – | 113 topic · for gemini · review · `gemini-argon` · HOS 113 How Do Cats Land on Their Feet?: rule-E topic go/no-go review |  |
 | J2938 | mini | claimed | macbook-2 | 2026-11-16T10:54Z | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J2939 | any | blocked | macbook | – | script · OWB: learn from our data, add two new films to the backlog |  |
+| J2940 | any | open | – | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
