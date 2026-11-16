@@ -88,6 +88,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2927 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J2928 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2271 |  |
 | J2929 | mini | claimed | macbook-2 | 2026-11-16T06:09Z | for gemini · script · `gemini-argon` · OWB: learn from our data, add two new films to the backlog |  |
+| J2931 | mini | open (after J2929) | – | – | 072 topic · review · Rule-E topic go/no-go review: OWB 072 (Every Dwarf Planet Explained in 10 Minutes) and 073 (How the Soviets Landed on Venus) from J2929 | ebb018d8b |
 
 Recently finished:
 

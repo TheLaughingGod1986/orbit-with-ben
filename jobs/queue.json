@@ -1,5 +1,5 @@
 {
-  "next_id": 2931,
+  "next_id": 2932,
   "jobs": [
     {
       "id": "J0001",
@@ -260318,6 +260318,35 @@
         "at": "2026-11-16T04:17Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J2931",
+      "title": "Rule-E topic go/no-go review: OWB 072 (Every Dwarf Planet Explained in 10 Minutes) and 073 (How the Soviets Landed on Venus) from J2929",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Rule-E topic go/no-go review for the two new Orbit With Ben backlog films created in J2929 (PR #960, branch `macbook/J2929`, commit `ebb018d8b`, mirrored to `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/`):\n1. **OWB:072 (`02_Video-Projects/072_Every-Dwarf-Planet-Explained-In-10-Minutes/TOPIC.md`):** *Every Dwarf Planet Explained in 10 Minutes (All 5 Dwarf Planets)* (Rule 26 search phrase `\"every dwarf planet explained\"` + Rule 15 compact title `\"Every Dwarf Planet Explained in 10 Minutes\"` in `studio/plan.json` Step 3's number-in-title complete-tour format; `0` exact title collisions; `11` verified neighbours `>=1.04M` views: KLT `96.03M`, Hopscotch `60.54M`, Peekaboo Kidz `13.52M`, Kurzgesagt `4.33M`, TED-Ed `3.44M`, BRIGHT SIDE `3.04M`, CrashCourse `2.04M`, SciShow Kids `1.59M`, Signore Galilei `1.53M`, Astrum `1.44M` & `1.04M`, plus small-channel breakouts Dr_Curio `128.7k`, The Escalist `36.7k`, Supernova `36.1k` + `neighbours.py` `PASS`; primary *ApJ*, *Science*, *Nature*, and *Icarus* sources Brown et al. 2005, Brown & Schaller 2007, Sicardy et al. 2011, Stern et al. 2015, Russell et al. 2016, De Sanctis et al. 2016, Ortiz et al. 2017, Morgado et al. 2023, Glein et al. 2024, Grundy et al. 2024; 2 E1 Short angles on Haumea's `3.9-hour` rugby-ball spin & ring and Eris's `27%` mass advantage over Pluto).\n2. **OWB:073 (`02_Video-Projects/073_How-The-Soviets-Landed-On-Venus/TOPIC.md`):** *How the Soviets Landed on Venus (The Only Photos Ever Taken)* (Rule 26 `#1` search phrase `\"how the soviets landed on venus\"` + Rule 18 real-imagery tail + Rule 15 compact title `\"How the Soviets Landed on Venus (Venera 13)\"` + `studio/plan.json` 10-lander complete-tour contingency recast `\"Every Spacecraft That Landed on Venus Explained in 10 Minutes\"`; `0` exact title collisions; `12+` verified neighbours `>=1.47M` views: Kurzgesagt `22.80M`, What If `6.36M`, Fexl `5.99M`, Primal Space `5.51M`, Real Engineering `5.45M`, V101 SPACE `5.34M`, Scientific American `4.95M`, The Space Race `4.55M`, Destiny `2.88M`, Astrum `2.05M` & `1.55M`, Asianometry `2.01M`, CrashCourse `1.84M`, Xverse `1.47M` + `neighbours.py` `PASS`; primary *JAS*, *Icarus*, *Space Science Reviews*, *JGR*, and *Science* sources Avduevsky et al. 1971, Marov et al. 1973, Keldysh 1977, Moroz 1983, Surkov et al. 1983, Sagdeev et al. 1986; 2 E1 Short angles on Venera 13's `127-minute` survival & colour panorama and Venera 14 testing its own titanium camera lens cap).\nCheck `TOPIC.md` and `11_Upload-Package/` audit sheets in both folders on PR #960 against `AGENTS.md` Rule E, `STUDIO_PLAYBOOK.md` §2, `studio/plan.json` (14 Nov 2026 long-video plan), and `LEARNINGS.md` rules 1–33 + `OWB-2026-11-E1`. Both films remain in `jobs/WIP.json` `next` under Rule G until an active OWB WIP slot frees up and `studio/plan.json` format tests read out.\n",
+      "ref": "ebb018d8b",
+      "film": "072",
+      "stage": "topic",
+      "after": "J2929",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-16T04:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-16T04:52Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Rule-E topic go/no-go review: OWB 072 (Every Dwarf Planet Explained in 10 Minutes) and 073 (How the Soviets Landed on Venus) from J2929",
+      "kind": "review",
+      "plain": "Review OWB 072 (Every Dwarf Planet Explained in 10 Minutes) and OWB 073 (How the Soviets Landed on Venus) topic briefs against Rule E and studio/plan.json"
     }
   ],
   "focus": [
