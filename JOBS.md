@@ -80,7 +80,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2933 | mini | blocked | claudecode | – | 010 edit · qa · `mini-claude-opus-5-5` · Review HOS 010 Short A v01 and Short C v01 (J2172, PR #611) | J2172 |
 | J2945 | mini | claimed | macbook-2 | 2026-11-16T17:45Z | 114 topic · for gemini · review · `gemini-argon` · HOS 114 How Do Chameleons Change Colour?: rule-E topic go/no-go review |  |
 | J2946 | mini | claimed | macbook | 2026-11-16T17:45Z | 115 topic · for gemini · review · `gemini-argon` · HOS 115 Why Do Zebras Have Stripes?: rule-E topic go/no-go review |  |
-| J2947 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J2947 | any | claimed | gemini | 2026-11-16T16:54Z | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
