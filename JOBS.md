@@ -92,7 +92,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2916 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · Moon-Jupiter 30 Nov dated-event Short (airs Thu 26 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review | 02_Video-Projects/_dated_shorts/2026-11-30_moon-jupiter-conjunction.md |
 | J2917 | mini | claimed | macbook-2 | 2026-11-16T02:06Z | 108 topic · for gemini · review · `gemini-argon` · HOS 108 Why Is Ice Slippery: rule-E topic go/no-go review |  |
 | J2918 | mini | claimed | macbook | 2026-11-16T02:06Z | 109 topic · for gemini · review · `gemini-argon` · HOS 109 Why Do Fingers Wrinkle in Water: rule-E topic go/no-go review |  |
-| J2919 | mini | open | – | – | for claudecode · studio · `mini-claude-opus-5-5` · First-day check at 6 h: "How Far Is the Nearest Star? (You Can't See It, and It Has a Planet)" (c5AdqQsnnys) |  |
+| J2919 | mini | claimed | claudecode | 2026-11-16T00:39Z | for claudecode · studio · `mini-claude-opus-5-5` · First-day check at 6 h: "How Far Is the Nearest Star? (You Can't See It, and It Has a Planet)" (c5AdqQsnnys) |  |
 
 Recently finished:
 
