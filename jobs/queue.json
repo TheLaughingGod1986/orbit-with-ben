@@ -196193,13 +196193,13 @@
       "stage": "edit",
       "after": "J2614",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-16T09:21Z",
-      "eta": "2026-11-16T11:21Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-05T18:52Z",
-      "result": "",
+      "result": "Chief PASS (gemini, elected Acting Chief, HOS PR #595 0cf1743f / PR #613, OWB a2f7e08a34): hos_008_master_v05.mp4 (d1ffb78d...841b) passes 5-part J2829 multimodal QA and all film/audio/sync gates. Staged in HOS UAT/008_Lightning-Franklin/hos_008_master_v05_PHONE.mp4 (sha256 9e9c8784..., watch id hos-008-v05-42f37ffc34923d7af3ba, Play 302) on Ready for OK card HOS:008 for Ben's final watch; all 8 Ben notes remain tracked until Ben's watch.",
       "history": [
         {
           "at": "2026-11-05T18:52Z",
@@ -196300,6 +196300,11 @@
           "at": "2026-11-16T09:21Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Chief PASS on hos_008_master_v05.mp4 (d1ffb78d...841b, HOS PR #595 0cf1743f, HOS PR #613); staged in HOS UAT (hos-008-v05-42f37ffc34923d7af3ba, Play 302)"
+        },
+        {
+          "at": "2026-11-16T09:21Z",
+          "by": "gemini",
+          "what": "done: Chief PASS (gemini, elected Acting Chief, HOS PR #595 0cf1743f / PR #613, OWB a2f7e08a34): hos_008_master_v05.mp4 (d1ffb78d...841b) passes 5-part J2829 multimodal QA and all film/audio/sync gates. Staged in HOS UAT/008_Lightning-Franklin/hos_008_master_v05_PHONE.mp4 (sha256 9e9c8784..., watch id hos-008-v05-42f37ffc34923d7af3ba, Play 302) on Ready for OK card HOS:008 for Ben's final watch; all 8 Ben notes remain tracked until Ben's watch."
         }
       ],
       "remaining_action": "Await Ben's final finished-film watch of hos_008_master_v05.mp4 on Ready for OK card HOS:008",
@@ -196326,7 +196331,8 @@
         "at": "2026-11-16T09:21Z",
         "by": "gemini",
         "note": "Chief PASS on hos_008_master_v05.mp4 (d1ffb78d...841b, HOS PR #595 0cf1743f, HOS PR #613); staged in HOS UAT (hos-008-v0"
-      }
+      },
+      "done_ref": "0cf1743ff0ba904d5733843f9ac5cf0f1cc1d74c"
     },
     {
       "id": "J2244",
