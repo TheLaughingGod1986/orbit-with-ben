@@ -262392,9 +262392,14 @@
           "at": "2026-11-16T16:35Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-16T16:35Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2949; starting Rule-E topic go/no-go review of OWB:076 and OWB:077"
         }
       ],
-      "remaining_action": "Rule-E topic go/no-go review: OWB 076 (Every Space Shuttle Explained in 10 Minutes) and 077 (When Comet Shoemaker-Levy 9 Hit Jupiter) from J2948",
+      "remaining_action": "Claim 076/077 topic stages and audit OWB:076 and OWB:077 against Rule E, STUDIO_PLAYBOOK, plan.json, and LEARNINGS",
       "kind": "review",
       "plain": "Review OWB 076 (Every Space Shuttle Explained in 10 Minutes) and OWB 077 (When Comet Shoemaker-Levy 9 Hit Jupiter) topic briefs against Rule E and studio/plan.json",
       "rerouted_from": {
@@ -262408,12 +262413,15 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-16T16:35Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2949; starting Rule-E topic go/no-go review of OWB:076 and OWB:077"
+      },
+      "taskKeys": [
+        "OWB:076",
+        "OWB:077"
+      ]
     },
     {
       "id": "J2950",
