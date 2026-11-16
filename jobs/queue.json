@@ -258048,9 +258048,14 @@
           "at": "2026-11-16T01:04Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Checked both studio-kanban.pages.dev and board.oppti.dev: x-board-key auth restored (200), GET /api/checks returns 500 {'error':'store read 401'} and GET /api/data?f=ref returns 502 {'error':'GitHub 403'} because BOARD_GH_TOKEN returns 401 Bad credentials since 00:38:40Z"
+        },
+        {
+          "at": "2026-11-16T01:05Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Probed both threads via POST /api/checks (dryRun+checkThreads) at 00:49Z, 01:02Z, and 01:03Z on both addresses: OWB #478 and HOS #180 both return readStatus=401, writeProbeStatus=401, contentsReadStatus=401, canPostComment=false ('Bad credentials')"
         }
       ],
-      "remaining_action": "Run dryRun+checkThreads probe on both studio-kanban.pages.dev and board.oppti.dev",
+      "remaining_action": "Check board_publish.py state and park for Ben to paste the current valid token into BOARD_GH_TOKEN",
       "due": "2026-11-15T19:00:00Z",
       "for": "gemini",
       "kind": "studio",
@@ -258059,11 +258064,11 @@
       "model": "gemini-argon",
       "escalated_at": "2026-11-15T22:45Z",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-16T01:04Z",
+        "at": "2026-11-16T01:05Z",
         "by": "gemini",
-        "note": "Checked both studio-kanban.pages.dev and board.oppti.dev: x-board-key auth restored (200), GET /api/checks returns 500 {"
+        "note": "Probed both threads via POST /api/checks (dryRun+checkThreads) at 00:49Z, 01:02Z, and 01:03Z on both addresses: OWB #478"
       }
     },
     {
