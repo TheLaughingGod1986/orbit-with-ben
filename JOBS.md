@@ -85,7 +85,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2916 | mini | blocked | gemini | – | for gemini · assembly · `gemini-agy` · Moon-Jupiter 30 Nov dated-event Short (airs Thu 26 Nov): voice-over, build from free NASA footage, all Shorts gates, park for review | 02_Video-Projects/_dated_shorts/2026-11-30_moon-jupiter-conjunction.md |
 | J2921 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J2926 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J0979 |  |
-| J2927 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
+| J2927 | mini | claimed | gemini | 2026-11-16T06:14Z | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J2928 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2271 |  |
 | J2929 | mini | claimed | macbook-2 | 2026-11-16T05:43Z | for gemini · script · `gemini-argon` · OWB: learn from our data, add two new films to the backlog |  |
 | J2930 | mini | claimed | macbook | 2026-11-16T05:13Z | for gemini · listing · `gemini-argon` · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
