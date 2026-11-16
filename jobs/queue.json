@@ -258231,9 +258231,14 @@
           "at": "2026-11-16T02:03Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Verified on both studio-kanban.pages.dev and board.oppti.dev: GET /api/checks -> 200 (84 ticks incl. HOS-J2230.1, ben=True), write+delete TEST-J2907 -> 200 (stored=True, chief='', count 84->85->84), GET /api/data?f=ref -> 200"
+        },
+        {
+          "at": "2026-11-16T02:03Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Probed both threads via deployed /api/checks (dryRun+checkThreads) on both addresses: OWB #954 and HOS #180 both return readStatus=200, writeProbeStatus=422, canPostComment=true, contentsReadStatus=200, acceptedPermissions='issues=write; pull_requests=write'"
         }
       ],
-      "remaining_action": "Probe both channel threads via deployed /api/checks (dryRun+checkThreads) and run board_publish.py",
+      "remaining_action": "Run board_publish.py once and confirm checksStatus is ok and fresh and HOS-J2230.1 is in board.json",
       "due": "2026-11-15T19:00:00Z",
       "for": "gemini",
       "kind": "studio",
@@ -258242,11 +258247,11 @@
       "model": "gemini-argon",
       "escalated_at": "2026-11-15T22:45Z",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
         "at": "2026-11-16T02:03Z",
         "by": "gemini",
-        "note": "Verified on both studio-kanban.pages.dev and board.oppti.dev: GET /api/checks -> 200 (84 ticks incl. HOS-J2230.1, ben=Tr"
+        "note": "Probed both threads via deployed /api/checks (dryRun+checkThreads) on both addresses: OWB #954 and HOS #180 both return "
       }
     },
     {
