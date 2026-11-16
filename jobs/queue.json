@@ -259505,18 +259505,22 @@
           "at": "2026-11-16T02:49Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-16T02:50Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2921; replacing default_plan with 4-step QA sweep plan (1: scan OWB+HOS packs since J2753/J2756, 2: run missing/stale OWB gates, 3: run missing/stale HOS gates, 4: commit byte-identical inventory+report and queue any no-spend fix jobs)"
         }
       ],
-      "remaining_action": "Check the newest video packs and record any missing checks",
+      "remaining_action": "Scan OWB and HOS video projects since J2753/J2756 for newest renders or packs missing fresh picture_qa, polish_gate, or music_gate outputs",
       "kind": "qa",
       "backlog": "both-qa-sweep",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-16T02:49Z",
+        "of": 4,
+        "at": "2026-11-16T02:50Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Claimed J2921; replacing default_plan with 4-step QA sweep plan (1: scan OWB+HOS packs since J2753/J2756, 2: run missing"
       }
     }
   ],
