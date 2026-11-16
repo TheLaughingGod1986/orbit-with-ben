@@ -261527,9 +261527,14 @@
           "at": "2026-11-16T11:19Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-16T11:20Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J2939 on Mini (gemini-argon); starting 5-step execution plan for OWB:074 and OWB:075"
         }
       ],
-      "remaining_action": "Complete OWB:074 & OWB:075 data-backed TOPIC.md packages with >=3 >=1M neighbour passes on the Mini, append to WIP.json next, and queue Rule-E review",
+      "remaining_action": "Read OWB analytics data, existing topics, and J2939 ruling to rank longs/Shorts and pick OWB:074 and OWB:075",
       "kind": "script",
       "backlog": "owb-ideas",
       "rerouted_from": {
@@ -261544,12 +261549,15 @@
       "mini_only": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-16T11:19Z",
+        "of": 5,
+        "at": "2026-11-16T11:20Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2939 on Mini (gemini-argon); starting 5-step execution plan for OWB:074 and OWB:075"
+      },
+      "taskKeys": [
+        "OWB:074",
+        "OWB:075"
+      ]
     },
     {
       "id": "J2940",
