@@ -199034,9 +199034,14 @@
           "at": "2026-11-16T03:43Z",
           "by": "relay",
           "what": "condition verification queued: J2928"
+        },
+        {
+          "at": "2026-11-16T04:34Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-16T10:30:00Z"
         }
       ],
-      "remaining_action": "Wait for J2915 guarded R1-R6 Flow generation (under Chief go 6898337122, PR #600 4308c896) and non-producer KEEP/FIX review on HOS desk #180 before J2172 assembly",
+      "remaining_action": "Wait for Chief Grok confirmation on HOS desk #180 of Claude 12/12 KEEP calls (6905894181) and PR #605 merge before closing J2271 and releasing J2172",
       "kind": "qa",
       "plain": "Check all twelve Dinosaur Shorts scenes before editing the finished videos.",
       "required_capabilities": [],
@@ -199061,12 +199066,8 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "Completion of J2915 guarded 600-credit R1-R6 Flow generation on the Mini (under Chief go 6898337122 / 6898699679, PR #600 merged at 4308c896, HOS010_R1_R6_PLATES_J2271, signed auth file /Users/benjaminoats/_desk/state/flow/hos010-r1-r6/chief_authorization_6898337122.json + HOS010_R1_R6_PLATES_SUBMIT=1, >=3000 headroom) and non-producer KEEP/FIX review of the 6 Short replacement plates (R1-R6) on HOS desk #180 before J2172 assembly",
-        "check_at": "2026-11-16T04:43:24+00:00",
-        "last_recheck": "J2904",
-        "checked_at": "2026-11-15T21:27:29+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J2928"
+        "condition": "Chief Grok confirmation on HOS desk #180 of Claude 12/12 non-producer KEEP calls (comment 6905894181 on R1-R6 PR #605 9a223556, with R4b t=1.05-4.23s x=437 motion-verified to clear the 4.68s bird overlap), ledger keep=true recording, and PR #605 merge before J2271 closes and J2172 assembly releases",
+        "check_at": "2026-11-16T10:30:00Z"
       },
       "escalated_at": "2026-11-15T06:09Z"
     },
