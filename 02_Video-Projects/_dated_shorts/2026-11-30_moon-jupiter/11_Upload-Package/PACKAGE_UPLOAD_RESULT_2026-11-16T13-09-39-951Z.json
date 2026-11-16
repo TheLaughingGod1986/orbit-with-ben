@@ -1,0 +1,113 @@
+{
+  "ok": true,
+  "dryRun": false,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": true,
+    "scheduledOnPlatform": true,
+    "scheduledFor": "2026-11-26T11:30:00.000Z",
+    "platformPostId": "GbELka8Yu9U",
+    "platformUrl": "https://youtu.be/GbELka8Yu9U",
+    "message": "Uploaded to YouTube; scheduled to go live at 2026-11-26T11:30:00.000Z; thumbnail set",
+    "responseSummary": "{\"id\":\"GbELka8Yu9U\",\"privacyStatus\":\"private\",\"publishAt\":\"2026-11-26T11:30:00.000Z\"}"
+  },
+  "package": {
+    "packageDir": "02_Video-Projects/_dated_shorts/2026-11-30_moon-jupiter/11_Upload-Package",
+    "sha256": "b0050a0a3e3a83da004dc62f23fd220d2a7fdd316020b2c9b24b66fdedc11344",
+    "title": "Why Is Jupiter Beside the Moon on November 30?",
+    "format": "shorts",
+    "privacy": "private",
+    "tagCount": 12,
+    "hasPinnedComment": false,
+    "thumbnailPath": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_dated_shorts/2026-11-30_moon-jupiter/11_Upload-Package/moon_jupiter_2026_11_30_cover_v01.jpg",
+    "scheduledAt": "2026-11-26T11:30:00.000Z",
+    "sources": {
+      "manifest": "/Users/benjaminoats/_desk/wt-J2942/02_Video-Projects/_dated_shorts/2026-11-30_moon-jupiter/11_Upload-Package/PACKAGE_MANIFEST.json",
+      "video": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_dated_shorts/2026-11-30_moon-jupiter/06_Final-Exports/owb_dated_2026_11_30_moon_jupiter_v01.mp4",
+      "thumbnail": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_dated_shorts/2026-11-30_moon-jupiter/11_Upload-Package/moon_jupiter_2026_11_30_cover_v01.jpg"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "buffer": {
+    "sent": false,
+    "deferred": "goes public 2026-11-26T11:30:00.000Z, beyond Buffer's 7-day window: the daily check schedules it nearer the time",
+    "planOnly": false,
+    "errors": [],
+    "warnings": [],
+    "results": []
+  },
+  "studioFinish": {
+    "videoId": "GbELka8Yu9U",
+    "studioEditUrl": "https://studio.youtube.com/video/GbELka8Yu9U/edit",
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "api_done",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Uploaded via YouTube Data API"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set",
+        "studioUrlHint": "https://studio.youtube.com/video/GbELka8Yu9U/edit"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": false,
+        "status": "n/a",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "A/B Testing not available for Shorts",
+        "studioUrlHint": "https://studio.youtube.com/video/GbELka8Yu9U/edit"
+      },
+      {
+        "id": "first_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "First / pinned comment text",
+        "detail": "No pinned comment file in package",
+        "studioUrlHint": "https://studio.youtube.com/video/GbELka8Yu9U/comments"
+      },
+      {
+        "id": "pin_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint",
+        "studioUrlHint": "https://studio.youtube.com/video/GbELka8Yu9U/comments"
+      },
+      {
+        "id": "related_watch_next",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Related video (full film)",
+        "detail": "Desktop Studio: set Related video to -jmMROGoZCM (its own full film). No new Short pins.",
+        "studioUrlHint": "https://studio.youtube.com/video/GbELka8Yu9U/edit"
+      },
+      {
+        "id": "end_screens_cards",
+        "required": false,
+        "status": "n/a",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video",
+        "studioUrlHint": "https://studio.youtube.com/video/GbELka8Yu9U/edit"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "API upload done (GbELka8Yu9U). 1 required Studio finish step(s) remain."
+  }
+}
