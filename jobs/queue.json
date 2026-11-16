@@ -262980,9 +262980,14 @@
           "at": "2026-11-16T21:43Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-16T21:43Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Package, gate, and upload HOS 005 heart Short v04 Private for Sun 22 Nov 11:30 London",
+      "remaining_action": "Build the upload package for the heart Short, run the gates, upload it Private for Sun 22 Nov, finish Studio settings and register it",
       "due": "2026-11-21T20:00:00Z",
       "kind": "studio",
       "plain": "Upload the Ben-OK'd HOS 005 heart-pump Short v04 Private for Sun 22 Nov 11:30 London, linked to the live Harvey long.",
@@ -263003,12 +263008,13 @@
       },
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-16T21:43Z",
-        "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "claudecode"
+      },
+      "taskKeys": [
+        "HOS:005"
+      ]
     },
     {
       "id": "J2957",
