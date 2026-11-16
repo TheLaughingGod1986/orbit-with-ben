@@ -196305,6 +196305,11 @@
           "at": "2026-11-16T09:21Z",
           "by": "gemini",
           "what": "done: Chief PASS (gemini, elected Acting Chief, HOS PR #595 0cf1743f / PR #613, OWB a2f7e08a34): hos_008_master_v05.mp4 (d1ffb78d...841b) passes 5-part J2829 multimodal QA and all film/audio/sync gates. Staged in HOS UAT/008_Lightning-Franklin/hos_008_master_v05_PHONE.mp4 (sha256 9e9c8784..., watch id hos-008-v05-42f37ffc34923d7af3ba, Play 302) on Ready for OK card HOS:008 for Ben's final watch; all 8 Ben notes remain tracked until Ben's watch."
+        },
+        {
+          "at": "2026-11-16T09:21Z",
+          "by": "gemini",
+          "what": "waits on Ben: Watch HOS 008 Franklin master v05 (all 8 fixes in: 0:20 & 33 bottom-text cards on dark umber panels, 0:30 flash gone, 0:51 night street & 1:49 salon spark clean with no flying hair, 2:18 upright jar workbench, 3:13 points desk take 3, 3:31 3D packet ship + letter icon, 7:59 stationary rods take 2) (by 2026-11-18 18:00 London)"
         }
       ],
       "remaining_action": "Await Ben's final finished-film watch of hos_008_master_v05.mp4 on Ready for OK card HOS:008",
@@ -196332,7 +196337,28 @@
         "by": "gemini",
         "note": "Chief PASS on hos_008_master_v05.mp4 (d1ffb78d...841b, HOS PR #595 0cf1743f, HOS PR #613); staged in HOS UAT (hos-008-v0"
       },
-      "done_ref": "0cf1743ff0ba904d5733843f9ac5cf0f1cc1d74c"
+      "done_ref": "0cf1743ff0ba904d5733843f9ac5cf0f1cc1d74c",
+      "awaits_ben": {
+        "what": "Watch HOS 008 Franklin master v05 (all 8 fixes in: 0:20 & 33 bottom-text cards on dark umber panels, 0:30 flash gone, 0:51 night street & 1:49 salon spark clean with no flying hair, 2:18 upright jar workbench, 3:13 points desk take 3, 3:31 3D packet ship + letter icon, 7:59 stationary rods take 2)",
+        "file": "HOS UAT/008_Lightning-Franklin/hos_008_master_v05_PHONE.mp4",
+        "version": "v05",
+        "due": "2026-11-18T18:00Z",
+        "airs": "2026-11-19T18:00Z",
+        "ifNot": "Held Private off YouTube until you pass v05",
+        "card": "HOS:008",
+        "prev": [
+          "HOS-008"
+        ],
+        "fixed": [
+          "0:20 & bottom text: replaced 6-word pill with 3 sequential cards (A KITE / A KEY / A JAR) and gave all 32 side_label cards + SAFE PATH DOWN a soft dark-umber panel (#2b1e14 at 78% opacity)",
+          "0:30 flash: removed premature single-frame next-scene flash before 04_storm_mystery",
+          "0:51 / 1:49 tube & hair: 0:51 is clean summer night street; 1:44-1:51 salon continues 01_salon_tube_t1 full-frame into smooth slow-ramp spark at 1:50.04 (f2635) with zero flying hair or freeze",
+          "2:18 & 2:20 jar flip: replaced upside-down jar flip (f3260..3343) with upright two-jar workbench plate before f3344..3404 upright foil jar spark",
+          "3:13 globe paper: replaced with 01_points_desk take 3 (clean brass globe and flat paper on desk)",
+          "3:31 letter crossing: replaced flat map/brown boxes with 3D Atlantic packet ship and cream wax-sealed letter icon",
+          "7:59 church rods: replaced with 13_rods_spread take 2 (straight stationary vertical lightning rods on steeple, roofs, and ship mast)"
+        ]
+      }
     },
     {
       "id": "J2244",
