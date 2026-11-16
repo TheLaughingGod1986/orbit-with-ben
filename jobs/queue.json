@@ -261457,21 +261457,21 @@
     {
       "id": "J2939",
       "title": "OWB: learn from our data, add two new films to the backlog",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
-      "body": "Orbit With Ben daily topic job.\n\nLEARN FROM OUR DATA FIRST (Ben, 5 Nov 2026: 'learn off past data what works well and build the videos around the data'). Read 05_Analytics/owb/channel_daily.json, 05_Analytics/owb/studio_ctr.json, 05_Analytics/owb/REPORT.md, the newest 05_Analytics/owb/snapshots/ and 05_Analytics/LEARNINGS.md (rules 1-22). Rank our own longs and Shorts by views per day since publish, CTR, average % viewed and Shorts 'stayed'. Write down the 3 best and 3 worst with the numbers and what they share (subject, title shape, opening, thumbnail concept, length).\nTHEN ADD TWO NEW FILMS TO THE BACKLOG (every day; Ben: 'one or two new a day ... a healthy big full backlog so we're never short'). For each: a working title in the shape that wins for us, one-line hook, why it should work (name the past winners it resembles, with their numbers, and the LEARNINGS rules it follows), a neighbour pass (three big videos on the subject with views), and two Short angles from it. Never repeat a topic already in 02_Video-Projects, the ideas folder or WIP. Create its project folder from the template with this as TOPIC.md, and append it to jobs/WIP.json `next` (rule G: it starts only when a place frees up). Queue its rule-E topic review as a kind:review job. Spend nothing: existing subscriptions and free tools only, no paid API, TTS or picture generation; no Studio or publish change. Finish with jobs.py done <id> --result listing the two topics and the data line behind each.",
+      "body": "CHIEF RULING & ROUTING (16 Nov 2026, jobs/reviews/J2939/RULING.md): macbook released and blocked J2939 (#6913174770, #6913219307, #6913248604) because WebSearch/WebFetch and public_search.py/neighbours.py are refused on the unattended MacBook Claude Code lane (0 files/branches written). Ruling on macbook's two options: (1) NO to spending vidIQ search credits (5 credits/call) on neighbour passes — the brief requires existing subscriptions and free tools only (£0 / 0 credits), and public_search.py / neighbours.py plus Gemini agy web search provide deterministic autocomplete and >=1M-view neighbour verification at 0 credits; (2) Reopen and pin J2939 to the Mini on gemini-argon (needs=mini, mini_only=true, for=gemini, model=gemini-argon) so it runs with free YouTube search/neighbours and queue access and never loops back to the restricted MacBook Claude Code lane.\n\nREQUIRED DELIVERABLES TO CLOSE J2939:\n1. Use film numbers OWB:074 and OWB:075 (001-064 and 068-073 are on main; 064/065 are in open PRs #849/#853; 066/067 are in open PRs #901/#902). Do not repeat any topic in 02_Video-Projects/, open PRs #849/#853/#901/#902, 00_Brand/Channel-Setup/ideas/, VIDEO_BACKLOG.json, or jobs/WIP.json.\n2. Complete the full OWB data ranking using 05_Analytics/owb/snapshots/2026-11-16.json, today's refreshed 05_Analytics/owb/studio_ctr.json (17 OWB longs + 86 OWB Shorts from J2932 e44482bdc0), 05_Analytics/owb/channel_daily.json, 05_Analytics/owb/REPORT.md, 05_Analytics/weekly_audit/OWB_2026-11-14.md, 05_Analytics/LEARNINGS.md (rules 1-33), and studio/plan.json.\n3. Create 02_Video-Projects/074_<Slug>/ and 02_Video-Projects/075_<Slug>/ from _template_NNN_Episode-Slug/ with TOPIC.md, status.json (all stages todo), README.md, production-status.md, and 11_Upload-Package audit sheets (PRE_BUILD_VIDIQ_AUDIT.md, TOPIC_OPPORTUNITY_SCORE.md, TOPIC_GO_NO_GO_SHEET.md, PRODUCTION_CHECKLIST_V2.md) + saved public_search.py / neighbours.py evidence (>=3 education/space videos with ~1M+ views per topic; £0 spend, no paid vidIQ), and mirror both folders to /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/ with SHA-256 verification. Per studio/plan.json (Ben, 14 Nov 2026 pause on new single-question longs after 034 Pluto on 13 Dec), include both the Rule 26 search-led title (<=70 chars) + Rule 15 (<=50 chars) title and how each topic works as or recasts into a multi-body / number-in-title complete-tour format, plus two 22-27 s Short angles (with mid-Short stat overlays matching spoken VO word-for-word and payoff withheld until >=70% runtime).\n4. Append OWB:074 and OWB:075 to jobs/WIP.json next (Rule G waiting line only; unlocked) and queue one kind:review Rule-E topic go/no-go job (--after J2939) before calling jobs.py done J2939.\n\nORIGINAL BRIEF:\nOrbit With Ben daily topic job.\n\nLEARN FROM OUR DATA FIRST (Ben, 5 Nov 2026: 'learn off past data what works well and build the videos around the data'). Read 05_Analytics/owb/channel_daily.json, 05_Analytics/owb/studio_ctr.json, 05_Analytics/owb/REPORT.md, the newest 05_Analytics/owb/snapshots/ and 05_Analytics/LEARNINGS.md (rules 1-22). Rank our own longs and Shorts by views per day since publish, CTR, average % viewed and Shorts 'stayed'. Write down the 3 best and 3 worst with the numbers and what they share (subject, title shape, opening, thumbnail concept, length).\nTHEN ADD TWO NEW FILMS TO THE BACKLOG (every day; Ben: 'one or two new a day ... a healthy big full backlog so we're never short'). For each: a working title in the shape that wins for us, one-line hook, why it should work (name the past winners it resembles, with their numbers, and the LEARNINGS rules it follows), a neighbour pass (three big videos on the subject with views), and two Short angles from it. Never repeat a topic already in 02_Video-Projects, the ideas folder or WIP. Create its project folder from the template with this as TOPIC.md, and append it to jobs/WIP.json `next` (rule G: it starts only when a place frees up). Queue its rule-E topic review as a kind:review job. Spend nothing: existing subscriptions and free tools only, no paid API, TTS or picture generation; no Studio or publish change. Finish with jobs.py done <id> --result listing the two topics and the data line behind each.",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-16T09:58Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-16T09:53Z",
-      "result": "parked for Chief: fifth hand-back of this daily topic job to the MacBook Claude Code lane (J2912 x2 on 15 Nov, J2939 x3 today). WebSearch is still refused unattended here, so the neighbour pass (three big videos with real views) and the rule-26 search phrase cannot be evidenced; I will not invent view counts. Nothing written, no branch, no spend. Chief to pick one: (1) reroute to a web lane, e.g. jobs.py reroute J2939 --to gemini (Gemini finished J2929 with web evidence), or (2) rule in writing that vidIQ search credits (5 a call) may be used for neighbour passes with a per-job cap, then reopen it here.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-16T09:53Z",
@@ -261507,19 +261507,36 @@
           "at": "2026-11-16T09:59Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: fifth hand-back of this daily topic job to the MacBook Claude Code lane (J2912 x2 on 15 Nov, J2939 x3 today). WebSearch is still refused unattended here, so the neighbour pass (three big videos with real views) and the rule-26 search phrase cannot be evidenced; I will not invent view counts. Nothing written, no branch, no spend. Chief to pick one: (1) reroute to a web lane, e.g. jobs.py reroute J2939 --to gemini (Gemini finished J2929 with web evidence), or (2) rule in writing that vidIQ search credits (5 a call) may be used for neighbour passes with a per-job cap, then reopen it here."
+        },
+        {
+          "at": "2026-11-16T11:16Z",
+          "by": "gemini",
+          "what": "reopened: SEND BACK / REOPEN & REROUTE (acting Chief Gemini, 2026-11-16, jobs/reviews/J2939/RULING.md): macbook released and blocked J2939 (#6913174770, #6913219307, #6913248604) because WebSearch/WebFetch and public_search.py/neighbours.py are refused on the unattended MacBook Claude Code lane (0 files/branches written). Ruled NO to spending vidIQ search credits (5 credits/call); reopened and pinned to the Mini on gemini-argon (needs=mini, mini_only=true, for=gemini, model=gemini-argon) to complete OWB:074 and OWB:075 with free public_search.py/neighbours.py evidence, aligned with studio/plan.json (unlocked in WIP.json next under Rule G; include multi-body/number-in-title tour format/recast alongside Rule 26 search title; £0 spend)."
+        },
+        {
+          "at": "2026-11-16T11:16Z",
+          "by": "gemini",
+          "what": "rerouted to gemini on gemini-argon: Ruling jobs/reviews/J2939/RULING.md: route to Mini gemini-argon (needs=mini, mini_only=true) with free YouTube search/neighbours access; exclude unattended MacBook Claude Code lane and paid/capped vidIQ search credits."
+        },
+        {
+          "at": "2026-11-16T11:16Z",
+          "by": "gemini",
+          "what": "remaining action: Complete OWB:074 & OWB:075 data-backed TOPIC.md packages with >=3 >=1M neighbour passes on the Mini, append to WIP.json next, and queue Rule-E review"
         }
       ],
-      "remaining_action": "Pick two data-backed Orbit topics and add them to the waiting line",
+      "remaining_action": "Complete OWB:074 & OWB:075 data-backed TOPIC.md packages with >=3 >=1M neighbour passes on the Mini, append to WIP.json next, and queue Rule-E review",
       "kind": "script",
       "backlog": "owb-ideas",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-16T09:54Z",
-        "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon",
+      "mini_only": true
     },
     {
       "id": "J2940",
