@@ -262229,17 +262229,22 @@
           "at": "2026-11-16T15:59Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Live audit PASS at 15:58Z: lint:package 0 errors; channel:audit 64 videos 0 errors (38 public [7 longs + 31 Shorts incl. xzKoHg0E0_U] + 4 scheduled + 22 private); xzKoHg0E0_U live serving Related=GHZDsiH7L7A and AI disclosure; 7/7 longs and 31/31 Shorts PASS"
+        },
+        {
+          "at": "2026-11-16T16:02Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Updated 00_Brand/Channel-Setup/audits/live_fixes/2026-11-16.md with post-11:30Z Mini verification; check_all.sh PASS; pushed to PR #615"
         }
       ],
-      "remaining_action": "Update 00_Brand/Channel-Setup/audits/live_fixes/2026-11-16.md in clean HOS worktree, run check_all.sh, and merge as Acting Chief",
+      "remaining_action": "Verify CI on HOS PR #615, merge PR #615 as Acting Chief, close superseded PR #606, and complete J2947",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-16T15:59Z",
+        "at": "2026-11-16T16:02Z",
         "by": "gemini",
-        "note": "Live audit PASS at 15:58Z: lint:package 0 errors; channel:audit 64 videos 0 errors (38 public [7 longs + 31 Shorts incl."
+        "note": "Updated 00_Brand/Channel-Setup/audits/live_fixes/2026-11-16.md with post-11:30Z Mini verification; check_all.sh PASS; pu"
       },
       "taskKeys": [
         "HOS:001",
