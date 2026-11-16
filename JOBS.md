@@ -81,7 +81,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2955 | mini | open | – | – | 005 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload HOS 005 Short s06 v04 (How Does a Blood Pressure Cuff Work?) Private, Fri 20 Nov 11:30 | HOS-J2230.1 |
 | J2957 | mini | open | – | – | 007 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload HOS 007 Short variolation v05 (What Is Variolation?) Private, Sat 28 Nov 11:30 | 6912169020 |
 | J2958 | mini | open | – | – | 007 upload · studio · Upload HOS 007 Short eradication v06 (How Was Smallpox Eradicated?) Private, Sun 29 Nov 11:30 | 6914782767 |
-| J2959 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
+| J2959 | mini | claimed | gemini | 2026-11-17T01:23Z | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
 
 Recently finished:
 
