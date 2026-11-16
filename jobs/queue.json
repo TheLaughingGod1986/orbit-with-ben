@@ -243780,10 +243780,10 @@
       "stage": "",
       "after": "J2683",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-16T01:36Z",
+      "eta": "2026-11-16T03:36Z",
       "created_by": "codex",
       "created_at": "2026-11-12T23:35Z",
       "result": "",
@@ -243817,12 +243817,25 @@
           "at": "2026-11-16T01:35Z",
           "by": "gemini",
           "what": "reopened: Chief PASS on J2816/J2741 (26815189ed, 2ec1be0b2c): Titan ffYKoNVPoqg 100-row YTA curve settled post-14 Nov 07:00Z (46v thru 10 Nov, 71v thru 12 Nov, <100 descriptive unscored) and all 10 Shorts raw curves, hashes, fixed 4-6s drops, and 28d search comparisons verified in jobs/reviews/J2741/{sanitized_evidence.json,REVIEW.md,DECISION.md}."
+        },
+        {
+          "at": "2026-11-16T01:36Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Check whether Titan retention data has settled and save reproducible audit rows",
       "kind": "review",
       "plain": "Checking Titan viewer retention and saving the data behind the Orbit audit",
-      "mini_only": true
+      "mini_only": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-16T01:36Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2742",
