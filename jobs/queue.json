@@ -1,5 +1,5 @@
 {
-  "next_id": 2941,
+  "next_id": 2942,
   "jobs": [
     {
       "id": "J0001",
@@ -261650,6 +261650,35 @@
         "note": "PR #963 (2026-11-16_recheck.md) and PR #959 (2026-11-16.md) merged to main; 10/10 live videos pass with 0 fixes"
       },
       "done_ref": "13c0cc3f56"
+    },
+    {
+      "id": "J2941",
+      "title": "Rule-E topic go/no-go review: OWB 074 (Every Apollo Moon Landing Explained in 10 Minutes) and 075 (What Was 'Oumuamua?) from J2939",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Rule-E topic go/no-go review for the two new Orbit With Ben backlog films created in J2939 (commit `5aaa966dff` on `main`, branch `gemini/J2939`, mirrored to `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/` with 18/18 SHA-256 verification on each):\n\n1. **OWB:074 (`02_Video-Projects/074_Every-Apollo-Moon-Landing-Explained-In-10-Minutes/TOPIC.md`):** *Every Apollo Moon Landing Explained in 10 Minutes (All 6 Landings)* (Rule 26 + `studio/plan.json` Step 3 complete-tour title `\"Every Apollo Moon Landing Explained in 10 Minutes (All 6 Landings)\"`, exact `#1` autocomplete variant `\"Every Apollo Mission Explained in 10 Minutes (Apollo 11 to 17)\"`, and Rule 15 compact title `\"Every Apollo Moon Landing Explained in 10 Minutes\"`; `0` exact title collisions; `14` verified neighbours `>=1.92M` views up to `31.10M` — NTD `31.10M`, Kurzgesagt `22.63M`/`20.79M`/`17.48M`/`2.49M`, Dutchsteammachine `5.51M`, SmarterEveryDay `5.37M`/`5.02M`, Jared Owen `4.98M`, NASA `4.46M`, Johnny Harris `4.39M`, Epic History `3.51M`, Vox `3.36M`, CrashCourse `1.92M`, plus complete-tour breakouts Supernova `528.4k` and Dr_Curio `93.4k` + `neighbours.py` `PASS` with `7` strictly on-topic `>=1M` education videos; primary NASA SP-4029/SP-4205, *Nature*, *Science*, and *EPSL* sources Orloff 2000, Saal et al. 2008, Hauri et al. 2011, Bellucci et al. 2019; 2 E1 Short angles on Apollo 11's `25 seconds of fuel` at West Crater and Apollo 17's `3.64-billion-year-old` volcanic orange glass beads at Shorty Crater).\n2. **OWB:075 (`02_Video-Projects/075_What-Was-Oumuamua-The-First-Interstellar-Object/TOPIC.md`):** *What Was 'Oumuamua? (The First Interstellar Object Explained)* (Rule 26 `#1` autocomplete search phrase `\"What Was 'Oumuamua? (The First Interstellar Object Explained)\"` + Rule 15 compact title `\"What Was 'Oumuamua? The First Interstellar Visitor\"` + `studio/plan.json` complete-tour contingency recast `\"Every Interstellar Object Ever Discovered Explained in 10 Minutes\"`; `0` exact title collisions; `11` verified neighbours `>=1.18M` views up to `7.95M` — Tier-1 TED Karen J. Meech `7.95M`, Astrum `6.84M` & `3.12M`, The Space Race `6.41M`, CrashCourse `2.04M`/`1.34M`/`1.18M`, Destiny `1.78M`, PBS Space Time `1.55M`, StarTalk `1.46M`, Anton Petrov `1.34M` + `neighbours.py` `PASS` with `5` strictly on-topic `>=1M` Tier-1/Tier-2 videos; primary *Nature*, *Nature Astronomy*, *AJ*, *ApJL*, and *MNRAS* sources Meech et al. 2017, Micheli et al. 2018, Trilling et al. 2018, Belton et al. 2018, Mashchenko 2019, Guzik et al. 2020, Bodewits et al. 2020, Bergner & Seligman 2023; 2 E1 Short angles on `'Oumuamua`'s `40,000-km` `H₂` outgassing acceleration and `87-km/s` Pan-STARRS hyperbolic discovery).\n\nCheck `TOPIC.md` and `11_Upload-Package/` audit sheets in both folders against `AGENTS.md` Rule E, `STUDIO_PLAYBOOK.md` §2, `studio/plan.json` (14 Nov 2026 long-video plan), and `LEARNINGS.md` rules 1–33 + `OWB-2026-11-E1`. Both films remain in `jobs/WIP.json` `next` under Rule G until an active OWB WIP slot frees up and `studio/plan.json` format tests read out.\n",
+      "ref": "5aaa966dff",
+      "film": "074",
+      "stage": "topic",
+      "after": "J2939",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-16T11:57Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-16T11:57Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Rule-E topic go/no-go review: OWB 074 (Every Apollo Moon Landing Explained in 10 Minutes) and 075 (What Was 'Oumuamua?) from J2939",
+      "kind": "review",
+      "plain": "Review OWB 074 (Every Apollo Moon Landing Explained in 10 Minutes) and OWB 075 (What Was 'Oumuamua?) topic briefs against Rule E and studio/plan.json"
     }
   ],
   "focus": [
