@@ -80,7 +80,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2927 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J2933 | mini | blocked | claudecode | – | 010 edit · qa · `mini-claude-opus-5-5` · Review HOS 010 Short A v01 and Short C v01 (J2172, PR #611) | J2172 |
 | J2939 | any | blocked | macbook | – | script · OWB: learn from our data, add two new films to the backlog |  |
-| J2940 | any | open | – | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
+| J2940 | any | claimed | gemini | 2026-11-16T12:01Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
