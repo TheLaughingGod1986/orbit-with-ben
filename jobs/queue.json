@@ -254740,7 +254740,7 @@
     {
       "id": "J2865",
       "title": "062 Phobos: write script v01 + SOURCES.md + SHORTS_SCRIPTS_v02.md from Rule-E GO brief (J2420)",
-      "needs": "mini",
+      "needs": "cloud",
       "repo": "owb",
       "body": "OWB:062 ('Why Is Mars's Moon Phobos Spiralling In to Crash?') was promoted into active WIP in J2477 (replacing OWB:032 on UAT entry) following its Rule-E GO verdict (93/100) in J2420 (jobs/reviews/J2420/REVIEW.md). Write 02_Video-Projects/062_Why-Is-Marss-Moon-Phobos-Spiralling-In-To-Crash/01_Script/062_why_is_marss_moon_phobos_spiralling_in_to_crash_script_master_v01.md (scoring >= 90 on npm run review:script, following the First-30s Rule in AGENTS.md), 01_Script/SOURCES.md with exact quotes and primary mission sources (Viking, Mars Express, MRO, Bills et al. 2005, Black & Mittal 2015, Hurford et al. 2016, JAXA MMX), and 10_Shorts/SHORTS_SCRIPTS_v02.md (two search-titled Shorts). Then queue the Gemini facts/quotes check.",
       "ref": "5dbd6f396e",
@@ -254780,20 +254780,16 @@
           "at": "2026-11-15T08:14Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-15T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-16T07:55Z",
+          "by": "relay",
+          "what": "handed back: Claude is back online"
         }
       ],
       "remaining_action": "062 Phobos: write script v01 + SOURCES.md + SHORTS_SCRIPTS_v02.md from Rule-E GO brief (J2420)",
       "kind": "script",
-      "plain": "Write the script, source table, and two Short scripts for film 062 (Phobos spiralling into Mars)",
-      "rerouted_from": {
-        "needs": "cloud",
-        "for": "",
-        "model": "",
-        "status": "open",
-        "by": ""
-      },
-      "for": "gemini",
-      "model": "gemini-argon"
+      "plain": "Write the script, source table, and two Short scripts for film 062 (Phobos spiralling into Mars)"
     },
     {
       "id": "J2866",
