@@ -1,5 +1,5 @@
 {
-  "next_id": 2926,
+  "next_id": 2929,
   "jobs": [
     {
       "id": "J0001",
@@ -88710,6 +88710,11 @@
           "at": "2026-11-16T03:40Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: Short PASS"
+        },
+        {
+          "at": "2026-11-16T03:43Z",
+          "by": "relay",
+          "what": "condition verification queued: J2926"
         }
       ],
       "kind": "assembly",
@@ -88724,6 +88729,12 @@
         "of": 4,
         "at": "2026-11-16T03:31Z",
         "by": "macbook-2"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-16T04:43:24+00:00",
+        "recheck_task": "J2926"
       }
     },
     {
@@ -188760,6 +188771,11 @@
           "at": "2026-11-15T19:12Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-16T01:10:00Z"
+        },
+        {
+          "at": "2026-11-16T03:43Z",
+          "by": "relay",
+          "what": "condition verification queued: J2927"
         }
       ],
       "remaining_action": "Await accepted revised music (J2805-J2808) and the checked gravity long (J2035) before assembling its Shorts",
@@ -188778,10 +188794,11 @@
       "hold": {
         "type": "input",
         "condition": "J2910 Chief ruling (gemini, 6aa205a96d): NOT MET. Grok approved publishing J2805 (codex/j2805-revised-music @ 4b92c042) on HOS desk #180 (#6876651082 at 2026-11-14T11:33:39Z) and J2832 is parked for Chief release/merge of J2805, but J2805 is still blocked pending push/PR/merge; J2806 revised wonder-cue production, J2807 capable ear review, J2808 Chief score acceptance, and J2035 long assembly + required composite/final gates (J2892 recheck verified NOT MET at 12:51Z, e5954c906e; 09_Final-Render absent on Mini and NAS) have not yet completed. J2803 failed and PR #908 remains undeployed. Shorts A/B and 5-part narration locks, SHORTS_PICTURE_PLAN_v03.json, and picture KEEP locks (J2631, J2632 r4, Short A S03) verified intact across Mini and NAS. No Shorts assembly release before accepted revised score and checked J2035 long.",
-        "check_at": "2026-11-16T01:10:00Z",
+        "check_at": "2026-11-16T04:43:24+00:00",
         "last_recheck": "J2910",
         "checked_at": "2026-11-15T19:12:13+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J2927"
       }
     },
     {
@@ -199012,6 +199029,11 @@
           "at": "2026-11-15T21:27Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-16T03:30:00Z"
+        },
+        {
+          "at": "2026-11-16T03:43Z",
+          "by": "relay",
+          "what": "condition verification queued: J2928"
         }
       ],
       "remaining_action": "Wait for J2915 guarded R1-R6 Flow generation (under Chief go 6898337122, PR #600 4308c896) and non-producer KEEP/FIX review on HOS desk #180 before J2172 assembly",
@@ -199040,10 +199062,11 @@
       "hold": {
         "type": "input",
         "condition": "Completion of J2915 guarded 600-credit R1-R6 Flow generation on the Mini (under Chief go 6898337122 / 6898699679, PR #600 merged at 4308c896, HOS010_R1_R6_PLATES_J2271, signed auth file /Users/benjaminoats/_desk/state/flow/hos010-r1-r6/chief_authorization_6898337122.json + HOS010_R1_R6_PLATES_SUBMIT=1, >=3000 headroom) and non-producer KEEP/FIX review of the 6 Short replacement plates (R1-R6) on HOS desk #180 before J2172 assembly",
-        "check_at": "2026-11-16T03:30:00Z",
+        "check_at": "2026-11-16T04:43:24+00:00",
         "last_recheck": "J2904",
         "checked_at": "2026-11-15T21:27:29+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J2928"
       },
       "escalated_at": "2026-11-15T06:09Z"
     },
@@ -259754,6 +259777,99 @@
       "remaining_action": "HOS 111 Why Do Knuckles Crack: rule-E topic go/no-go review",
       "kind": "review",
       "plain": "Check whether HOS 111 (Why Do Knuckles Crack?) passes the topic rules to stay on the waiting list"
+    },
+    {
+      "id": "J2926",
+      "title": "Verify condition for J0979",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0979: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0979 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-16T03:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-16T03:43Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Rendering final 032 Short v02 with zero picture_qa/polish_gate fails and verifying NAS SHA-256 copies",
+      "kind": "review",
+      "recheck_of": "J0979",
+      "due": "2026-11-16T04:43:24+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2927",
+      "title": "Verify condition for J2171",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2171: J2910 Chief ruling (gemini, 6aa205a96d): NOT MET. Grok approved publishing J2805 (codex/j2805-revised-music @ 4b92c042) on HOS desk #180 (#6876651082 at 2026-11-14T11:33:39Z) and J2832 is parked for Chief release/merge of J2805, but J2805 is still blocked pending push/PR/merge; J2806 revised wonder-cue production, J2807 capable ear review, J2808 Chief score acceptance, and J2035 long assembly + required composite/final gates (J2892 recheck verified NOT MET at 12:51Z, e5954c906e; 09_Final-Render absent on Mini and NAS) have not yet completed. J2803 failed and PR #908 remains undeployed. Shorts A/B and 5-part narration locks, SHORTS_PICTURE_PLAN_v03.json, and picture KEEP locks (J2631, J2632 r4, Short A S03) verified intact across Mini and NAS. No Shorts assembly release before accepted revised score and checked J2035 long.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2171 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-16T03:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-16T03:43Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await accepted revised music (J2805-J2808) and the checked gravity long (J2035) before assembling its Shorts",
+      "kind": "review",
+      "recheck_of": "J2171",
+      "due": "2026-11-16T04:43:24+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J2928",
+      "title": "Verify condition for J2271",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2271: Completion of J2915 guarded 600-credit R1-R6 Flow generation on the Mini (under Chief go 6898337122 / 6898699679, PR #600 merged at 4308c896, HOS010_R1_R6_PLATES_J2271, signed auth file /Users/benjaminoats/_desk/state/flow/hos010-r1-r6/chief_authorization_6898337122.json + HOS010_R1_R6_PLATES_SUBMIT=1, >=3000 headroom) and non-producer KEEP/FIX review of the 6 Short replacement plates (R1-R6) on HOS desk #180 before J2172 assembly. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2271 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-16T03:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-16T03:43Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Wait for J2915 guarded R1-R6 Flow generation (under Chief go 6898337122, PR #600 4308c896) and non-producer KEEP/FIX review on HOS desk #180 before J2172 assembly",
+      "kind": "review",
+      "recheck_of": "J2271",
+      "due": "2026-11-16T04:43:24+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
