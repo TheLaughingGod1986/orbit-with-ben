@@ -253267,9 +253267,14 @@
           "at": "2026-11-16T01:49Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Verified J0979 condition SATISFIED: J2477 KEEP (5dbd6f396e), Ben OK (14 Nov 22:46Z, 491feb6967), J2884 uploaded T3cBBss1F60, master/VO/bed hashes verified"
+        },
+        {
+          "at": "2026-11-16T01:53Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Committed jobs/reviews/J2850/REVIEW.md (e7da793304); re-verified Chief status before reopening J0979"
         }
       ],
-      "remaining_action": "Write jobs/reviews/J2850/REVIEW.md in a clean worktree and reopen J0979 with verified evidence",
+      "remaining_action": "Reopen J0979 with verified evidence and complete J2850",
       "kind": "review",
       "recheck_of": "J0979",
       "due": "2026-11-14T19:31:20+00:00",
@@ -253284,11 +253289,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-16T01:49Z",
+        "at": "2026-11-16T01:53Z",
         "by": "gemini",
-        "note": "Verified J0979 condition SATISFIED: J2477 KEEP (5dbd6f396e), Ben OK (14 Nov 22:46Z, 491feb6967), J2884 uploaded T3cBBss1"
+        "note": "Committed jobs/reviews/J2850/REVIEW.md (e7da793304); re-verified Chief status before reopening J0979"
       },
       "taskKeys": [
         "OWB:032"
