@@ -258226,9 +258226,14 @@
           "at": "2026-11-16T02:02Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Built dist/ from main (06b88be7d9) and deployed to Cloudflare Pages production (f91db0ab.studio-kanban.pages.dev)"
+        },
+        {
+          "at": "2026-11-16T02:03Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Verified on both studio-kanban.pages.dev and board.oppti.dev: GET /api/checks -> 200 (84 ticks incl. HOS-J2230.1, ben=True), write+delete TEST-J2907 -> 200 (stored=True, chief='', count 84->85->84), GET /api/data?f=ref -> 200"
         }
       ],
-      "remaining_action": "Test GET/POST /api/checks (read, write+delete TEST-J2907, dryRun+checkThreads) and /api/data?f=ref on studio-kanban.pages.dev and board.oppti.dev",
+      "remaining_action": "Probe both channel threads via deployed /api/checks (dryRun+checkThreads) and run board_publish.py",
       "due": "2026-11-15T19:00:00Z",
       "for": "gemini",
       "kind": "studio",
@@ -258237,11 +258242,11 @@
       "model": "gemini-argon",
       "escalated_at": "2026-11-15T22:45Z",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-16T02:02Z",
+        "at": "2026-11-16T02:03Z",
         "by": "gemini",
-        "note": "Built dist/ from main (06b88be7d9) and deployed to Cloudflare Pages production (f91db0ab.studio-kanban.pages.dev)"
+        "note": "Verified on both studio-kanban.pages.dev and board.oppti.dev: GET /api/checks -> 200 (84 ticks incl. HOS-J2230.1, ben=Tr"
       }
     },
     {
