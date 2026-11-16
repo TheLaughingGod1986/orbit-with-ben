@@ -260803,19 +260803,25 @@
           "at": "2026-11-16T07:51Z",
           "by": "claudecode",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-16T07:51Z",
+          "by": "claudecode",
+          "what": "step 2 of 5 done: PR #611 CI green at 91cc0662, report and manifest read; SHA-256 of both masters identical on NAS and HOS UAT and equal to the brief"
         }
       ],
-      "remaining_action": "Inspect PR #611 report and manifest for HOS 010 Shorts A and C",
+      "remaining_action": "Look at the contact sheets and re-probe both masters",
       "due": "2026-11-30T18:00:00Z",
       "kind": "qa",
       "model": "mini-claude-opus-5-5",
       "plain": "Non-producer QA review of HOS 010 Short A and Short C, then place both on Ben's watch with working Play links",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 5,
         "at": "2026-11-16T07:51Z",
-        "by": "claudecode"
+        "by": "claudecode",
+        "note": "PR #611 CI green at 91cc0662, report and manifest read; SHA-256 of both masters identical on NAS and HOS UAT and equal t"
       },
       "taskKeys": [
         "HOS:010"
