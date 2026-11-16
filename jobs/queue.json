@@ -88358,10 +88358,10 @@
       "stage": "edit",
       "after": "J2477",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-16T01:54Z",
+      "eta": "2026-11-16T03:54Z",
       "created_by": "refill",
       "created_at": "2026-10-26T12:14Z",
       "result": "",
@@ -88645,6 +88645,11 @@
           "at": "2026-11-16T01:53Z",
           "by": "gemini",
           "what": "reopened: J2850 condition verified (e7da793304, jobs/reviews/J2850/REVIEW.md): (1) 032 locked VO titan_landing_vo_v02b.wav (sha256 55232eeb...5301abc5), J2089/J2378 picture package (7920d0f777), and titan_score_bed_v01.mp3 (sha256 02c7d958...9dab8f9e) verified intact; (2) J2477 completed KEEP (PASS) at 5dbd6f396e (jobs/reviews/J2477/REVIEW.md) on 032_what_would_happen_if_you_landed_on_titan_master_v02.mp4 (sha256 51986972...c80ed073); (3) Ben OK'd 032 long master v02 and thumbnails A/B on 2026-11-14T22:46Z (491feb6967); (4) J2884 finalized 11_Upload-Package (e88a785705) and uploaded T3cBBss1F60 Private for Wed 25 Nov 2026 18:00Z (ffc51864ef, 64fd9fb84d). Cut 032 Short at £0 from approved master v02 / cuts_v02.json (not v01), full-bleed 9:16, pass all gates, park for review, never upload."
+        },
+        {
+          "at": "2026-11-16T01:54Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "kind": "assembly",
@@ -88653,7 +88658,15 @@
         "OWB:032"
       ],
       "escalated_at": "2026-10-26T18:37Z",
-      "remaining_action": "Wait for J2477 and Ben's watch, then cut the Short from the approved master"
+      "remaining_action": "Wait for J2477 and Ben's watch, then cut the Short from the approved master",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-16T01:54Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J0980",
