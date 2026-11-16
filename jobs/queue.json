@@ -261170,17 +261170,22 @@
           "at": "2026-11-16T09:31Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Step 1 complete: ranked all 7 public HOS longs and 30 public HOS Shorts from 2026-11-16 snapshot (takenAt 2026-11-16T06:40:22.396Z), studio_ctr.json (readAt 2026-11-16T08:57:01Z), channel_daily.json (through 2026-11-14), REPORT.md, and LEARNINGS.md (rules 1-33)"
+        },
+        {
+          "at": "2026-11-16T09:35Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2 complete: verified public_search.py (autocomplete=yes, 0 exact collisions) and neighbours.py PASS for HOS:112 (Why Do We Yawn? — 15 neighbours >=1M, TED-Ed/TED: yes) and HOS:113 (How Do Cats Land on Their Feet? — 6 neighbours >=1M, TED-Ed/TED: yes)"
         }
       ],
-      "remaining_action": "Selecting two non-overlapping HOS topics (HOS:112 & HOS:113) and running public_search.py and neighbours.py",
+      "remaining_action": "Building HOS:112 and HOS:113 folders from template in a clean HOS worktree and opening the HOS PR",
       "kind": "script",
       "backlog": "hos-ideas",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-16T09:31Z",
+        "at": "2026-11-16T09:35Z",
         "by": "gemini",
-        "note": "Step 1 complete: ranked all 7 public HOS longs and 30 public HOS Shorts from 2026-11-16 snapshot (takenAt 2026-11-16T06:"
+        "note": "Step 2 complete: verified public_search.py (autocomplete=yes, 0 exact collisions) and neighbours.py PASS for HOS:112 (Wh"
       },
       "taskKeys": [
         "HOS:112",
