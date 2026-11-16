@@ -250461,13 +250461,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-16T01:37Z",
-      "eta": "2026-11-16T03:37Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-14T07:11Z",
-      "result": "",
+      "result": "Chief PASS (26815189ed): J2741 waiting condition verified and full J2741 deliverable accepted from 2ec1be0b2c (jobs/reviews/J2741/{sanitized_evidence.json,REVIEW.md,DECISION.md}, jobs/reviews/J2816/{REVIEW.md,DECISION.md}); J2741 reopened and closed. Titan ffYKoNVPoqg (<100 YTA views in J2741 window) and Saturn 6dcL5rBmHPM (45v) remain descriptive and unscored.",
       "history": [
         {
           "at": "2026-11-14T07:11Z",
@@ -250533,6 +250533,11 @@
           "at": "2026-11-16T01:37Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Chief PASS recorded in jobs/reviews/J2816/DECISION.md (26815189ed); J2741 reopened and closed."
+        },
+        {
+          "at": "2026-11-16T01:37Z",
+          "by": "gemini",
+          "what": "done: Chief PASS (26815189ed): J2741 waiting condition verified and full J2741 deliverable accepted from 2ec1be0b2c (jobs/reviews/J2741/{sanitized_evidence.json,REVIEW.md,DECISION.md}, jobs/reviews/J2816/{REVIEW.md,DECISION.md}); J2741 reopened and closed. Titan ffYKoNVPoqg (<100 YTA views in J2741 window) and Saturn 6dcL5rBmHPM (45v) remain descriptive and unscored."
         }
       ],
       "remaining_action": "Close J2816 after recording Chief PASS and closing J2741",
@@ -250564,7 +250569,8 @@
         "at": "2026-11-16T01:37Z",
         "by": "gemini",
         "note": "Chief PASS recorded in jobs/reviews/J2816/DECISION.md (26815189ed); J2741 reopened and closed."
-      }
+      },
+      "done_ref": "26815189ed"
     },
     {
       "id": "J2817",
