@@ -37,6 +37,18 @@ class Refill(unittest.TestCase):
         self.assertEqual(refill.do_refill(d, ITEMS[:1], T0 + H), [])
         self.assertEqual(len(refill.do_refill(d, ITEMS[:1], T0 + 13 * H)), 1)
 
+    def test_one_scan_asks_for_the_acting_chief_once(self):
+        # acting() parses the whole queue; once per Chief job it ran the Mini out of memory (Claude, 16 Nov 2026).
+        from unittest.mock import patch
+        d = empty()
+        for i in range(5):
+            jobs.do_add(d, title=f"rule {i}", needs="mini", body="", by="chief", at=T0, kind="chief")
+        with patch.object(jobs.chief_relay, "acting", return_value=([], "gemini")) as acting, \
+             patch.object(jobs.chief_relay, "worker_capabilities", return_value={}) as caps:
+            refill.ready(d, T0)
+        self.assertEqual(acting.call_count, 1)
+        self.assertEqual(caps.call_count, 1)
+
     def test_backlog_file_is_valid(self):
         for it in refill.load_backlog():
             self.assertIn(it["needs"], jobs.NEEDS)

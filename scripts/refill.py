@@ -57,8 +57,10 @@ def load_backlog(path: pathlib.Path = BACKLOG) -> list:
 
 
 def ready(data: dict, at: dt.datetime) -> list:
-    """Jobs a Mini worker could claim right now."""
-    return [j for j in data["jobs"] if not j.get("for") and jobs.can_any_mini_claim(data, j, at)]
+    """Jobs a Mini worker could claim right now. One memo for the scan: the acting Chief is read once, not once per
+    job (each read parses the whole queue; see jobs.can_any_mini_claim)."""
+    memo: dict = {}
+    return [j for j in data["jobs"] if not j.get("for") and jobs.can_any_mini_claim(data, j, at, memo)]
 
 
 def parked_for_chief(job: dict) -> bool:
