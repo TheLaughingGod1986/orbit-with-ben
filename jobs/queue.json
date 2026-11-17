@@ -266611,10 +266611,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-17T17:11Z",
+      "eta": "2026-11-17T18:11Z",
       "created_by": "claude",
       "created_at": "2026-11-17T14:26Z",
       "result": "",
@@ -266638,6 +266638,11 @@
           "at": "2026-11-17T14:35Z",
           "by": "macbook",
           "what": "released: Released to Mini: J2987 needs YouTube Data API v3 credentials in 07_Content-Ops/.env (Mini only; not present on MacBook). Updated remaining_action so MacBook Studio-CDP lane will not re-claim it."
+        },
+        {
+          "at": "2026-11-17T17:11Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Run on Mini with 07_Content-Ops/.env YouTube Data API token (same .env as youtube:package): pull 53 channels + 16 GB/US searches",
