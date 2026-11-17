@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-06",
+  "tests": {
+    "new": 16,
+    "existing": 24,
+    "total": 40,
+    "result": "PASS"
+  },
+  "installed": {
+    "gateway": {
+      "source": "07_Content-Ops/scripts/codex_buffer_reschedule.py",
+      "installed": "/Users/benjaminoats/.codex/bin/studio-buffer-reschedule.py",
+      "sha256": "6a78c3509966f3a23d9db79888b8de8072ff6dd36eee778114b828cd508a66c9"
+    },
+    "rules": {
+      "source": "docs/codex/studio.rules",
+      "installed": "/Users/benjaminoats/.codex/rules/studio.rules",
+      "sha256": "ff640ef14474c532ade1b949d7b4e39e85e7fc0a5ffff171ab9cbeb934b0c590"
+    }
+  },
+  "live_plan": {
+    "channel": "owb",
+    "video": "Js6EQJ8qDi8",
+    "publishAt": "2026-11-08T18:00:00Z",
+    "posts_checked": 3,
+    "changes_needed": 0,
+    "mutations_sent": 0
+  },
+  "policy": {
+    "version": "codex-cli 0.160.0",
+    "gateway": "allow by execpolicy check",
+    "outside_curl": "unmatched by studio.rules; explicit require_escalated request approved HTTP200, not refused",
+    "fresh_rule_reload_proven": false,
+    "approval_policy_changed": false
+  },
+  "git_probe": {
+    "dry_run": "exit0 without escalation; credential helper store warning 100001",
+    "remote_branch": "absent; dry run created no ref, no deletion needed"
+  },
+  "remaining": [
+    "Buffer create gateway preserving mirror package/media/approval checks",
+    "YouTube writes gateway preserving channel/package/schedule gates",
+    "Full new-rule startup proof"
+  ],
+  "disk": {
+    "offload": "completed, no eligible scratch folders",
+    "free_mb": 4814,
+    "detached_process": false
+  }
+}

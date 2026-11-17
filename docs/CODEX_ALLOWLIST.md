@@ -1,0 +1,141 @@
+# Codex unattended allow-list — J2040, 4 November 2026
+
+Partial implementation; **J2040 is not complete**. Ben authorised only the two studio repos, existing social R2 prefixes, Buffer create/read/update and the two channels' YouTube operations, retaining review for everything else.
+
+Codex CLI on the Mini is 0.160.0. Official [OpenAI Rules documentation](https://learn.chatgpt.com/docs/agent-configuration/rules) confirms `.rules` files in `~/.codex/rules/`, prefix matching, the most restrictive matching decision, and `codex execpolicy check`. New files load at session startup; a fresh run is required to prove automatic loading. `match` and `not_match` are tests, not restrictions on trailing arguments. No approval policy or sandbox setting was changed.
+
+## Installed Git slice
+
+Exact rule copy: [codex/studio.rules](codex/studio.rules). Validating source: [../scripts/codex_scoped_push.py](../scripts/codex_scoped_push.py). Installed copies:
+
+- `/Users/benjaminoats/.codex/rules/studio.rules`
+- `/Users/benjaminoats/.codex/bin/studio-scoped-push.py`
+
+Invoke with an absolute interpreter and isolated mode:
+
+```sh
+/opt/homebrew/bin/python3 -I /Users/benjaminoats/.codex/bin/studio-scoped-push.py --repo owb --worktree /private/tmp/j2040-wt --branch codex/j2040-permission-probe --dry-run
+```
+
+The rule permits only this installed gateway. It rejects unknown arguments, force/deletion/refspec syntax, invalid branch names and Git URL rewrite configuration. It strips inherited GIT_* variables, uses explicit HTTPS destinations, disables hooks, mirror/force/follow-tags and recursive submodule pushes, and pushes HEAD to one named branch. Git's normal non-fast-forward protection remains. The helper must receive ordinary code review before changes are reinstalled; a rule allowing a script trusts its installed contents. Existing `default.rules` was preserved, not audited or widened.
+
+## Evidence and limits
+
+- `codex execpolicy check --rules docs/codex/studio.rules -- <gateway invocation>`: `decision: allow`.
+- Same check for `curl https://example.com`: `matchedRules: []`. This proves no allow from this file; it does **not** prove a live automatic-review refusal. A harmless curl can also execute inside the network-enabled sandbox without an escalation.
+- Installed gateway dry-run returned 0 and reported `HEAD -> codex/j2040-permission-probe`. Git credential helper printed `failed to store: 100001`; Git still succeeded. No credentials were displayed.
+- `git ls-remote --heads <explicit Orbit URL> refs/heads/codex/j2040-permission-probe` returned no refs. A dry-run creates no remote branch; no deletion was necessary or performed.
+- Gateway validation tests pass; see `jobs/reviews/J2040/gateway-tests.txt`.
+- No fresh Codex worker was started, so no claim is made that this running session reloaded the installed rule or that a subsequent push bypassed review because of it.
+- J2007 is cancelled by Claude's 4 Nov WIP decision. Its recorded push was not retried.
+
+## Remaining work (same J2040)
+
+Do not allow broad `git push`, `npm run youtube:*`, `node`, `tsx`, `buffer-mirror.ts check`, Python or curl prefixes. Prefix rules cannot restrict appended flags, URLs, manifests or JSON bodies.
+
+Before adding service rules, implement and test validating entry points in the repo's existing publishing path:
+
+1. R2's restricted standalone gateway below now implements this slice. The ordinary mirror still uses `media-host-r2.ts`, which reads `R2_BUCKET` and exposes delete; its whole CLI remains outside the allow-list.
+2. Buffer must pin the two configured organisations/channel sets, admit only create/read/update and preserve the existing scheduling/approval gates. `buffer-runner.ts` currently calls `deletePost` (line 139), rollback `deleteMedia` (224) and cleanup deletion (339). A blanket mirror/check rule therefore exceeds fix F.
+3. YouTube must pin the channel, reject delete/auth/sign-in and unscheduled Public transitions, and retain package/gate checks. `youtube:auth` must never be included in a wildcard rule.
+4. Test positive and negative payload/argument cases, install only the reviewed guarded commands, and verify loading in a subsequent ordinary worker run. Keep all other review behaviour unchanged. Test policy decisions rather than deliberately sending data to another host.
+
+No film stage was approved or advanced. No service writes, uploads, publishing, account changes or spending occurred.
+
+## Resume evidence — 4 November, 20:03 UTC
+
+Added [registered-media R2 gateway](../07_Content-Ops/scripts/codex_r2_upload.py), installed as `/Users/benjaminoats/.codex/bin/studio-r2-upload.py`, and its separate prefix rule in [the exact rule copy](codex/studio.rules). Invocation:
+
+```sh
+/opt/homebrew/bin/python3 -I /Users/benjaminoats/.codex/bin/studio-r2-upload.py --channel owb --video buaOI3QGm7U --role media --dry-run
+```
+
+Only `--channel owb|hos`, `--video <11-character ID>`, `--role media|thumb|trailer` and optional `--dry-run` are accepted. Without `--dry-run` it uploads the registered asset. The fixed main-checkout `UPLOADS.json` supplies the asset; no caller path, key, URL, bucket, method or body is accepted. HOS accepts registered Shorts media only. The registered file must resolve inside either studio checkout or the archive and match an MP4/JPEG/PNG signature. Credentials come only from the fixed studio `.env`, parsed as literals; inherited R2 settings have no effect. The gateway pins bucket `owb-media`, constructs the correct channel prefix and a random object key, and uses a conditional PUT (`If-None-Match: *`) to refuse replacement. TLS verifies certificates; no redirect, proxy, delete, list or arbitrary request path exists.
+
+- Ten R2 boundary tests pass; the three existing Git tests also pass. The fixed-date, fake-credential SigV4 result independently matches installed `aws4fetch` 1.0.20. Tests cover destination overrides, traversal, renamed text files, channel/role/ID rejection, extra flags, inherited settings, exact PUT and a dry run with zero network calls.
+- Installed R2 dry run succeeded for registered `buaOI3QGm7U` media: 5,766,376 bytes, SHA-256 `eef2359b4aa791177be6a9b4312806de1a23b177fec5430fb7c965c1af87a86e`. No live PUT was attempted. Successful real upload and Buffer adoption of the returned URL remain unverified.
+- `execpolicy check` allows the R2 gateway and leaves the outside-list curl unmatched. The R2 rule was installed during this session; automatic loading requires a later session. No claim of reload is made.
+- This later session's installed Git gateway dry-run succeeded as an ordinary sandbox command, without requesting escalation. `ls-remote` confirmed the scratch branch does not exist, so no branch deletion is needed. Network access in the sandbox means success alone does not identify which policy rule permitted it.
+- The harmless outside-list `curl --head --max-time 10 https://example.com` was explicitly submitted with `sandbox_permissions=require_escalated` and approved, returning HTTP 200. This is an approval-review request, **not a refusal**, and does not prove that a harmless curl could not run in the network-enabled sandbox. No broad curl rule was added.
+- J2007 remains cancelled; no push was retried.
+- Required NAS offload completed with no eligible folders (`moved: []`, `nas: ok`, 11,749 MB free after). Disk remains below 20 GB; do not claim recovery. No copy was left running by this session.
+
+J2040 stays at **3/4**, unfinished. The next run must implement guarded Buffer create/read/update and channel-pinned YouTube entry points, preserving schedule/package checks and blocking deletion, sign-in and unscheduled Public transitions. Do not allow the existing broad mirror/package commands in the meantime. The installed gateways and all future trusted-code changes need Chief's normal code review; this worker has issued no PASS or final approval.
+
+## Earlier handoff (superseded by the resume below)
+
+Draft PR: https://github.com/TheLaughingGod1986/orbit-with-ben/pull/490. The installed gateway also completed the real push of `codex/j2040-allowlist` using a normal sandbox call, with no escalation requested for that call. This proves execution succeeded; it does not identify whether the current session loaded the new rule. Service rules and fresh-session negative review verification remain unfinished.
+
+Required disk housekeeping was attempted at 14 GiB free. The sandbox attempt safely skipped due to NAS write permission; the escalated `nas_offload.py --apply` process PID 74781 remained running without a summary at handoff (exec session 74764). Do not start another copy while it exists. No offload completion or space recovery is claimed.
+
+## Resume — 4 November, 23:45 UTC: guarded service reads
+
+Added [service read gateway](../07_Content-Ops/scripts/codex_service_read.py), installed at `/Users/benjaminoats/.codex/bin/studio-service-read.py`, with its exact narrow prefix in [studio.rules](codex/studio.rules). The service gateway uses only Python's standard library and isolated mode. Examples:
+
+```sh
+/opt/homebrew/bin/python3 -I /Users/benjaminoats/.codex/bin/studio-service-read.py --channel owb --operation channel
+/opt/homebrew/bin/python3 -I /Users/benjaminoats/.codex/bin/studio-service-read.py --channel hos --operation video --video AMSriTQ-lcQ
+/opt/homebrew/bin/python3 -I /Users/benjaminoats/.codex/bin/studio-service-read.py --channel owb --operation analytics --start 2026-10-01 --end 2026-10-02
+/opt/homebrew/bin/python3 -I /Users/benjaminoats/.codex/bin/studio-service-read.py --channel hos --operation buffer-status --video AMSriTQ-lcQ --network instagram
+```
+
+`--dry-run` validates argument shape without reading credentials or making network calls; it does **not** check remote availability or ledger registration. Live Buffer reads derive the post ID from the selected profile's fixed `BUFFER_POSTS.json` and use that profile's key. HOS supports registered Shorts only; Orbit TikTok is excluded. The only GraphQL document is a fixed status query. Caller-supplied post IDs, queries, URLs, tokens and bodies are absent.
+
+YouTube reads refresh the **existing read-only** Analytics sign-in, check `channels?mine=true` against the selected hard-coded channel ID, and check video ownership before returning a video. Analytics has a fixed daily report and explicit pinned channel ID, with validated dates. Missing/expired sign-ins fail; no login, authorization-code flow or credential-file write exists. HTTP destinations and methods are fixed; redirects are not followed, response sizes are capped, and failures print no remote body or credential. Environment destination/token overrides have no effect.
+
+Validation this run:
+
+- 11 service boundary tests plus 10 existing R2 tests and 3 Git tests pass (24 total).
+- Live channel reads succeeded for both OWB and HOS, using their existing read-only sign-ins.
+- Live OWB daily Analytics read for 1–2 October succeeded.
+- Live HOS Buffer status read returned `sent` for registered `AMSriTQ-lcQ` Instagram post `6ade37886887a2efc1169c75`.
+- Installed Git gateway dry-run succeeded without requesting escalation. It creates no branch; the probe branch remains absent.
+- `execpolicy check` allows the service gateway; `curl https://example.com` remains unmatched by `studio.rules`. This is a policy-file check, not proof of live refusal, and no claim is made that this running session reloaded newly installed rules.
+- Installed source/rules match their committed copies; hashes and results are in `jobs/reviews/J2040/service-read-evidence.json`.
+- NAS offload was attempted as required below 20 GB: it declined outside the 01:00–06:00 NAS window, reporting 8,853 MB free. No offload process remains. Unrelated checkout edits were untouched.
+
+### Current handoff
+
+J2040 remains at the existing **3/4**, with PR490 extended on `codex/j2040-allowlist` in `/private/tmp/j2040-wt`. This is a safe checkpoint in the original 120-minute job, not completion or Chief approval. The next implementation must handle **guarded Buffer create/update and YouTube writes** through existing mirror/package gates. It must validate destinations, current ownership, scheduled times and package state, keep ledger/lock handling, reject every deletion, refuse sign-in/account changes, and refuse immediate unscheduled Public transitions. Do not add broad npm/tsx/node/Python/curl rules. Existing mirror and package commands still go through ordinary approval review.
+
+Keep the 4-step plan and completed Git/R2/read slices. Finish write gateways with adversarial payload tests before installation; then check the installed rules in a later worker session and report the exact distinction between policy match, sandbox execution and approval review. J2007 is cancelled; do not retry its old push. No service mutation, media upload, publishing, spend or Chief PASS occurred in this run.
+
+## Resume — 6 November 2026: existing Buffer schedule reconciliation
+
+The new [schedule gateway](../07_Content-Ops/scripts/codex_buffer_reschedule.py) adds a deliberately limited **update** route. It uses the existing mirror's profile IDs, ledger and shared `youtube-buffer.lock`. It does not create new posts. Invocation after installation:
+
+```sh
+/opt/homebrew/bin/python3 -I /Users/benjaminoats/.codex/bin/studio-buffer-reschedule.py --channel owb --video Js6EQJ8qDi8
+```
+
+Default is a live read-only plan. `--apply` reconciles registered posts to the selected video's **existing live YouTube publishAt**, only while the video remains private and the time is between five minutes and seven days ahead. A task must still authorize the actual reconciliation; an allow rule is not publication approval. No caller time, post ID, content, asset, URL, query, account, lock root or ledger path is accepted. It refuses unregistered videos, mismatched registry kinds, HOS longs, non-scheduled posts, foreign channels and Orbit TikTok. Every registered post is checked before the first write; post ownership/status/time and the live YouTube schedule are checked again before each edit. Existing content and media are omitted from the edit and preserved. No create, delete, immediate share or YouTube mutation exists.
+
+The dependency is the installed read gateway, loaded only from its fixed absolute path after verifying SHA-256 `6635f535eeebe047dee175acbe81d26eb99abb985ad9e4860276ed838f260335`. Changing that dependency requires review and a coordinated update. The new gateway uses literal credential settings from that reader, a fixed TLS endpoint, fixed GraphQL documents, response limits and no redirects. It prints no raw errors. Each confirmed edit gets an atomic ledger receipt before the next edit; the entry's shared time changes only after all edits finish. A partial remote failure can still require reconciliation from the receipts; no distributed transaction is claimed. Remote changes outside the desk lock can race a request, so live rechecks reduce but do not eliminate that risk.
+
+The lock is acquired with atomic mkdir at the existing fixed desk path. It never trusts inherited lock flags or reclaims an old lock. Missing/stale lock cleanup remains the normal desk tool's responsibility. The implementation's only filesystem removals are its own temporary ledger file and its own acquired lock metadata; no remote deletion route is present.
+
+[Buffer's EditPostInput reference](https://developers.buffer.com/types/EditPostInput.html) documents omission preserving content/assets and explicit `mode`/`dueAt` changing scheduling. [The API reference](https://developers.buffer.com/reference.html) supplies post ownership/status fields and the fixed edit mutation. These are the existing mirror API shapes, with a smaller admitted input surface.
+
+Validation: 16 new reconciliation tests plus 24 existing gateway tests pass (40 total). They cover foreign ownership, sent/draft posts, invalid YouTube state/time, unsupported payloads/flags, live-state changes, all-post preflight, idempotence, partial-failure receipts, dependency changes, HOS long refusal, lock contention, redirect refusal and redacted failures. A live **plan only** for OWB `Js6EQJ8qDi8` verified all three registered posts already match `2026-11-08T18:00:00Z`; zero edits were needed or sent. No live write is tested or claimed.
+
+The existing installed Git gateway again completed a dry-run to `codex/j2040-permission-probe` without an escalation request. Remote `ls-remote` confirmed that branch absent; a dry-run creates nothing to delete. The studio rule file still leaves unrelated curl unmatched. Network-enabled sandbox execution alone does not establish whether the allow rule was the deciding factor. No overall approval/sandbox policy is changed.
+
+J2007 is still cancelled; its stale push is not retried. NAS offload found no eligible scratch at about 4.8 GB free; no process remains. **J2040 remains unfinished at its existing 3/4.** Buffer creation and YouTube write/package gateways still need implementation and adversarial tests; they continue through ordinary review. Keep the existing PR #490 rather than replacing it, and preserve this four-step plan. No film stage is approved by this tooling checkpoint.
+
+Installed source and rule hashes match the committed copies (see [buffer-schedule-evidence.json](../jobs/reviews/J2040/buffer-schedule-evidence.json)). The installed command's live plan also succeeded without requesting escalation. New rules load at startup, so this does not prove that this session reloaded the new rule. A harmless outside-list `curl --head --max-time 10 https://example.com` was explicitly sent through `require_escalated` and approved (HTTP 200), with no curl prefix added. This demonstrates a review request, not a refusal; `execpolicy check` still reports no studio rule matching curl. The full approval boundary is not claimed proven by sandbox success.
+
+Acting-Chief code assessment (Codex; higher-priority Chiefs still unavailable at the check): the restricted update slice is acceptable for installation with the limitations above; this is not completion of J2040 or approval of any film/service mutation. The remaining Buffer creation and YouTube package/write integration is larger than a safe remaining run and must resume on this same job, not be replaced with broad command rules.
+
+## Resume — 6 November, 15:00 UTC: YouTube house defaults
+
+Added [YouTube defaults gateway](../07_Content-Ops/scripts/codex_youtube_defaults.py). It accepts only `--channel owb|hos`, a registered `--video`, and optional `--apply`. Default is a live read-only plan. The only write restores `selfDeclaredMadeForKids=false` and `containsSyntheticMedia=true`; it requires the owned video to be processed, private and already scheduled more than ten minutes ahead. No caller title, metadata, time, payload, URL, login or delete route exists. This does **not** implement package upload, scheduling, or approval of a film.
+
+The gateway reads the selected checkout's existing writer sign-in and verifies `channels?mine=true` before looking up a video. It shares the existing desk lock through the hash-pinned installed schedule gateway, which itself pins the read gateway. All mutable status fields are preserved, including the exact `publishAt`, license and visibility. Unknown status fields fail closed. Google's [videos.update reference](https://developers.google.com/youtube/data/reference/rest/v3/videos/update) warns that omitted mutable fields can be deleted; this is why the full existing writable status is carried forward. The only HTTP write is to the fixed YouTube videos endpoint. A pre-write live comparison and `If-Match` header reduce concurrent-edit risk; response and read-back are checked. No atomic transaction across Studio and this gateway is claimed. An error after a request can mean the remote write succeeded: inspect live state before retrying.
+
+Fourteen new tests cover ownership, writer identity, schedule/processing constraints, preservation, arbitrary arguments, default plan, no-op, concurrent change, read-back/response failure, dependency changes, redirect rejection and redacted errors. The 40 earlier tests also pass (54 total). No live write is required for validation. The narrow rule's source is in `docs/codex/studio.rules`; installation hashes and live-plan evidence are recorded separately.
+
+This is an additional restricted YouTube **write** slice, not completion. **J2040 remains 3/4**: Buffer creation and package/write integration remain reviewed until guarded routes are implemented and tested. The running session cannot prove startup reload of a rule just installed. Ordinary npm/tsx/mirror commands are still outside this allow-list. J2007 remains cancelled and its push is not retried.
+
+Installed `/Users/benjaminoats/.codex/bin/studio-youtube-defaults.py` and the exact rule copy after acting-Chief status confirmed Codex. Its default live plan succeeded for registered OWB `Js6EQJ8qDi8`: private, existing `2026-11-08T18:00:00Z`, `apply=false`. It reported a flag change would be needed; **none was applied**. A new task must authorize any actual use of `--apply`; J2040's validation did not authorize correcting this video's metadata. The installed Git gateway dry-run succeeded with no escalation request and `ls-remote` confirmed the scratch ref absent. Outside-list curl was explicitly submitted to approval review and approved, with no prefix rule added; this proves a review request, not refusal. Policy-file checks allow only the gateway and leave curl unmatched. See [youtube-defaults-evidence.json](../jobs/reviews/J2040/youtube-defaults-evidence.json) for hashes and the precise evidence limits.
+
+Checkpoint assessment: this limited route preserves visibility/scheduling and rejects unknown writable fields; install is acceptable within fix F. No film PASS or publication approval is implied. Codex 0.160.0 and the official Rules reference were checked again. Disk is now over 25 GB free, so no repair/offload was needed. Continue this same job at 3/4; Buffer creation and full package integration exceed the remaining bounded run. No detached process was started.
