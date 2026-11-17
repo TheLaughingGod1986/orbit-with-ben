@@ -1580,41 +1580,46 @@
       ]
     },
     "OWB:064": {
-      "updated": "2026-11-14T22:39Z",
-      "mood": "waiting",
-      "timing": "Format test \u2014 proposed Wed 16 Dec or Sun 20 Dec 18:00 London (moves zero dated films).",
+      "updated": "2026-11-17T23:38Z",
+      "mood": "good",
+      "timing": "Reserved: Wednesday 16 December at 18:00 London. Finished cut for Ben to watch by Friday 11 December at 18:00.",
       "line": "Format test for a completeness promise that works on small channels: Every Planet Explained in 10 Minutes (Mercury to Neptune). One newly written and narrated 10-minute film with 60\u201375 seconds per planet, opening on Mercury by 0:05 with no agenda line. Six of the eight planets (Venus 023, Earth 027/031, Mars 025, Jupiter 020, Saturn 021, Uranus 033) already have finished OWB long films on our shelf, and all eight have checked SOURCES.md tables (including Mercury 036/044 and Neptune 035), so 80\u201385% of the visuals are already on disk (\u00a30 cash, 0 Flow/Vertex credits, ~8k ElevenLabs chars, ~5 agent hours total).",
-      "done": "Go/no-go (25/25), search & neighbour pass (every planet explained: 20,191 searches/mo at 45/100 competition; 172.8K views on 1.7K subs), per-planet shelf audit, 3 titles (<=70 chars) and 3 thumbnail concepts (ALL 8 WORLDS, 464\u00b0C TO -224\u00b0C, REAL NASA PHOTOS) in 05_Analytics/owb/EVERY_PLANET_EXPLAINED_GO_NO_GO.md.",
-      "holdup": "Nothing is built yet (\u00a30 spent). Waiting for your one-tap lock or decline on the board before any script, voice-over or picture work starts.",
+      "done": "Ben locked the film on 17 November: \"Lock it.\" Topic and shelf audit passed; the date is reserved and the four build stages are queued.",
+      "holdup": "No decision needed. The script and source checks come first, followed by narration, shelf pictures and graphics, then the checked final edit.",
       "limit": "",
       "you": "",
       "youShort": "",
       "youWhen": "",
       "steps": [
         {
-          "who": "MacBook",
-          "what": "prepare go/no-go, per-planet shelf audit, 3 titles, 3 thumbnail ideas and schedule slot",
-          "job": "J2863",
-          "kind": "review",
-          "done": true,
-          "doneText": "ready on board \u00b7 Sat 14 Nov"
-        },
-        {
           "who": "Ben",
-          "what": "lock or decline this 10-minute format test (Every Planet Explained in 10 Minutes)",
-          "whenText": "when you are ready \u2014 \u00a30 spent until locked"
+          "what": "Lock the every-planet film",
+          "done": true,
+          "doneText": "Locked 17 November"
         },
         {
-          "who": "Agent",
-          "what": "write continuous 8-planet script (~1,350 words, 60\u201375 s per planet, Mercury by 0:05) + assemble SOURCES.md from shelf",
           "kind": "script",
-          "whenText": "after Ben locks (~2 hours, \u00a30)"
+          "what": "Write and check the script for the every-planet film",
+          "job": "J3020",
+          "whenText": "Due 2026-11-23 18:00 London"
         },
         {
-          "who": "Mac mini",
-          "what": "record Ben Orbit Narrator voice-over (~8k chars) and assemble 80\u201385% shelf footage + NASA MESSENGER/Voyager 2 plates + 3 thumbnails",
+          "kind": "vo",
+          "what": "Record and check narration for the every-planet film",
+          "job": "J3021",
+          "whenText": "Due 2026-11-25 18:00 London"
+        },
+        {
+          "kind": "chart",
+          "what": "Prepare shelf pictures, graphics and three thumbnails for the every-planet film",
+          "job": "J3022",
+          "whenText": "Due 2026-12-04 18:00 London"
+        },
+        {
           "kind": "assembly",
-          "whenText": "after script passes (~3.5 hours, \u00a30 cash)"
+          "what": "Assemble and check the every-planet film, then put it on Ben\u2019s watch board",
+          "job": "J3023",
+          "whenText": "Due 2026-12-11 18:00 London"
         }
       ]
     }
