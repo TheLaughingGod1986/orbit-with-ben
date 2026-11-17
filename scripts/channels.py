@@ -169,7 +169,7 @@ def of_job(job: dict) -> str:
     for c in _load():
         if c["slug"] != own and re.search(c["title_match"], title, re.I):
             return c["slug"]
-    return repo or own
+    return repo if repo in slugs() else own
 
 
 def label_of_job(job: dict) -> str:
@@ -277,14 +277,25 @@ def wip_line(slug: str) -> str:
     return get(slug)["wip"].get("line") or f"next_{slug}"
 
 
+def _reg_checkouts(slug: str) -> list[str]:
+    try:
+        reg = json.loads((DIR / "channels.json").read_text())["channels"]
+        return list(next((e.get("checkouts") or [] for e in reg if e.get("slug") == slug), []))
+    except (OSError, ValueError, KeyError):
+        return []
+
+
 def repo_path(slug: str, home_dir: pathlib.Path | None = None) -> pathlib.Path:
-    """The channel's checkout: its env var, else the first ~/YouTube/<name> that exists, else the first name."""
+    """The channel's checkout: its env var, else the first ~/YouTube/<name> (or sibling folder) that exists, else the first name."""
     r = get(slug)["repo"]
     if os.environ.get(r.get("env", "")):
         return pathlib.Path(os.environ[r["env"]])
+    names = list(dict.fromkeys([*(r.get("checkouts") or [slug]), *(_reg_checkouts(slug) if home_dir is None else [])]))
     base = (home_dir or pathlib.Path.home()) / "YouTube"
-    cands = [base / n for n in r.get("checkouts") or [slug]]
-    return next((c for c in cands if c.is_dir()), cands[0])
+    cands = [base / n for n in names]
+    if home_dir is None:
+        cands += [ROOT.parent / n for n in names]
+    return next((c for c in cands if c.is_dir()), base / (r.get("checkouts") or [slug])[0])
 
 
 def studio_port(slug: str) -> str:

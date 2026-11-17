@@ -19,6 +19,7 @@ def docs(job_status="open", heartbeat="2026-10-09T20:00:00Z"):
     return {"hos": {"updatedAt": "x", "pipeline": {"films": [{"id": "005"}]}},
             "owb": {"updatedAt": "x", "films": [{"film": "027"}], "jobs": [{"id": "J1", "status": job_status}],
                     "lanes": {"mini": {"busy": 1, "heartbeat": {"at": heartbeat}}}},
+            "ww2": {"updatedAt": "x", "films": [{"film": "001"}]},
             "briefs": {"updatedAt": "x", "films": {"027": "note"}},
             "credits": {"pools": {"flow": {}}},
             "tracker": {"updatedAt": "x", "lanes": [], "videos": []}}
@@ -300,6 +301,7 @@ class ButtonStamp(unittest.TestCase):
         # after the November thread opened, so his words went where no agent was reading). A rollover must change both.
         thread = json.loads((HERE / "thread.json").read_text())
         self.assertIn(f'OWB: ["{thread["repo"]}", {thread["number"]}]', js)
+        self.assertIn(f'WW2: ["{thread["repo"]}", {thread["number"]}]', js)
         self.assertNotIn(', 264]', js)
         self.assertIn('HOS: ["TheLaughingGod1986/history-of-science", 180]', js)
         self.assertNotIn(', 99]', js)
@@ -386,21 +388,23 @@ class AsksTheLoader(unittest.TestCase):
     def sky(self):
         import channels
         base = channels._load()
-        sky = dict(base[0], slug="sky", label="SKY", name="Night Sky", short="Sky", home=False, order=3,
+        sky = dict(base[0], slug="sky", label="SKY", name="Night Sky", short="Sky", home=False, order=4,
                    title_match=r"\bSKY\b", repo={"env": "SKY_REPO", "checkouts": ["night-sky"]},
                    pipeline={"kind": "pipeline_json", "path": "PIPELINE.json"})
         return unittest.mock.patch.object(channels, "_load", lambda directory=None: base + (sky,))
 
     def test_nothing_changed_for_the_two_channels(self):
         import channels
-        self.assertEqual(bp.SECTIONS, ("hos", "owb", "briefs", "credits", "tracker"))
+        self.assertEqual(bp.SECTIONS, ("hos", "owb", "ww2", "briefs", "credits", "tracker"))
         self.assertEqual((bp.STUDIO, bp.QUEUE), ("owb", "owb"))
         self.assertEqual(bp.STUDIO_REPO, channels.repo_path("owb", bp.HOME))
         if not os.environ.get("OWB_REPO"):
             self.assertEqual(bp.STUDIO_REPO, bp.HOME / "YouTube" / "orbit-with-ben")
         self.assertEqual(bp.REPOS["hos"], channels.repo_path("hos", bp.HOME))
+        self.assertEqual(bp.REPOS["ww2"], channels.repo_path("ww2", bp.HOME))
         self.assertEqual(bp.wt(), bp.WT / "owb")
         self.assertEqual(bp.wt("hos"), bp.WT / "hos")
+        self.assertEqual(bp.wt("ww2"), bp.WT / "ww2")
         shared = ["/STATUS.md", "/00_Brand/Channel-Setup/kanban/index.html", "/studio-core/CORE_FILES.json"]
         self.assertEqual(sorted(bp.sparse("owb")), sorted([
             "/scripts/", "/channels/", "/studio/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_spend/",
@@ -421,10 +425,10 @@ class AsksTheLoader(unittest.TestCase):
         with unittest.mock.patch.object(bp, "chief_args", lambda: []):
             self.assertEqual(bp.snapshot_command(out),
                              [sys.executable, str(bp.WT / "owb" / "scripts" / "kanban_snapshot.py"),
-                              "--hos", str(bp.WT / "hos"), "--db-out", str(out)])
+                              "--hos", str(bp.WT / "hos"), "--ww2", str(bp.WT / "ww2"), "--db-out", str(out)])
 
     def test_the_summary_reads_as_before(self):
-        self.assertEqual(bp.films_summary(docs()), "1 HOS films, 1 OWB films")
+        self.assertEqual(bp.films_summary(docs()), "1 HOS films, 1 OWB films, 1 WW2 films")
 
     def test_the_quick_check_asks_each_repo_as_before(self):
         asked = []
@@ -432,7 +436,8 @@ class AsksTheLoader(unittest.TestCase):
         self.assertEqual(asked, [
             (bp.STUDIO_REPO, ("refs/heads/main", "refs/heads/mini-heartbeat", "refs/heads/macbook-heartbeat",
                               "refs/heads/macbook-heartbeat-2")),
-            (bp.REPOS["hos"], ("refs/heads/main",))])
+            (bp.REPOS["hos"], ("refs/heads/main",)),
+            (bp.REPOS["ww2"], ("refs/heads/main",))])
 
     def test_once_the_studio_has_its_own_repo_it_gets_its_own_copy_and_every_channel_is_beside_it(self):
         # J2621 (plan decision 1: no home channel). No channel's repo carries the studio: its files are read from a
@@ -445,12 +450,14 @@ class AsksTheLoader(unittest.TestCase):
                 unittest.mock.patch.object(bp, "STUDIO", None), unittest.mock.patch.object(bp, "STUDIO_REPO", studio_repo), \
                 unittest.mock.patch.object(bp, "chief_args", lambda: []):
             self.assertEqual(bp.wt(), bp.WT / "studio")
-            self.assertEqual((bp.wt("owb"), bp.wt("hos")), (bp.WT / "owb", bp.WT / "hos"))
+            self.assertEqual((bp.wt("owb"), bp.wt("hos"), bp.wt("ww2")),
+                             (bp.WT / "owb", bp.WT / "hos", bp.WT / "ww2"))
             self.assertFalse(set(bp.STUDIO_SPARSE) & set(bp.sparse("owb")))          # no studio file in a channel's copy
             self.assertIn("/02_Video-Projects/*/status.json", bp.sparse("owb"))
             self.assertEqual(bp.snapshot_command(Path("/tmp/out")),
                              [sys.executable, str(bp.WT / "studio" / "scripts" / "kanban_snapshot.py"),
-                              "--owb", str(bp.WT / "owb"), "--hos", str(bp.WT / "hos"), "--db-out", "/tmp/out"])
+                              "--owb", str(bp.WT / "owb"), "--hos", str(bp.WT / "hos"),
+                              "--ww2", str(bp.WT / "ww2"), "--db-out", "/tmp/out"])
             bp.quick_key(lambda repo, *refs: asked.append((repo, refs)) or "x")
             with tempfile.TemporaryDirectory() as d, \
                     unittest.mock.patch.object(bp, "worktree", lambda repo, path, sparse: made.append((repo, path, sparse))), \
@@ -459,9 +466,10 @@ class AsksTheLoader(unittest.TestCase):
         self.assertEqual(asked[0][0], studio_repo)
         # Set when the module loads, so the line is held here; the dry run of the move loads it with no home channel.
         self.assertIn("\nSTUDIO_REPO = REPOS[STUDIO] if STUDIO else channels.studio_checkout(HOME)\n", Path(bp.__file__).read_text())
-        self.assertEqual([repo for repo, _ in asked[1:]], [bp.REPOS["owb"], bp.REPOS["hos"]])
+        self.assertEqual([repo for repo, _ in asked[1:]], [bp.REPOS["owb"], bp.REPOS["hos"], bp.REPOS["ww2"]])
         self.assertEqual([(repo, path) for repo, path, _ in made],
-                         [(bp.REPOS["owb"], bp.WT / "owb"), (bp.REPOS["hos"], bp.WT / "hos"), (studio_repo, bp.WT / "studio")])
+                         [(bp.REPOS["owb"], bp.WT / "owb"), (bp.REPOS["hos"], bp.WT / "hos"),
+                          (bp.REPOS["ww2"], bp.WT / "ww2"), (studio_repo, bp.WT / "studio")])
         self.assertEqual(made[-1][2], bp.STUDIO_SPARSE)
 
     def test_the_heartbeat_is_left_out_of_the_queue_sections_change_check_only(self):
@@ -471,17 +479,17 @@ class AsksTheLoader(unittest.TestCase):
 
     def test_a_third_channel_is_on_the_board_with_its_own_section(self):
         with self.sky():
-            self.assertEqual(bp.sections(), ("hos", "owb", "sky", "briefs", "credits", "tracker"))
+            self.assertEqual(bp.sections(), ("hos", "owb", "sky", "ww2", "briefs", "credits", "tracker"))
             self.assertEqual(bp.sparse("sky"), ["/studio/", "/PIPELINE.json",
                                                 "/00_Brand/Channel-Setup/social/UPLOADS.json", *bp.CHANNEL_SPARSE])
             with unittest.mock.patch.object(bp, "chief_args", lambda: []):
                 cmd = bp.snapshot_command(Path("/tmp/out"))
             self.assertEqual(cmd[cmd.index("--sky") + 1], str(bp.WT / "sky"))
             d = dict(docs(), sky={"pipeline": {"films": [{"id": "001"}, {"id": "002"}]}})
-            self.assertEqual(bp.films_summary(d), "1 HOS films, 1 OWB films, 2 SKY films")
+            self.assertEqual(bp.films_summary(d), "1 HOS films, 1 OWB films, 2 SKY films, 1 WW2 films")
             board = {}
             bp.add_channels(board)
-        self.assertEqual([c["slug"] for c in board["channels"]], ["owb", "hos", "sky"])
+        self.assertEqual([c["slug"] for c in board["channels"]], ["owb", "hos", "ww2", "sky"])
         self.assertEqual(board["channels"][-1]["name"], "Night Sky")
 
 
