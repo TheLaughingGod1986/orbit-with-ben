@@ -66,6 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3011 | mini | open | – | – | chief · Orbit: Ben locked the every-planet film, book its slot and start the build |  |
 | J3012 | mini | open | – | – | chief · Decoupling phase 3: move the studio engine into its own repo, runbook now, move after a clean week |  |
 | J3013 | mini | open | – | – | chief · Chief: resolve 003 script orphan-doing |  |
+| J3014 | mini | open | – | – | chief · Chief: resolve 001 script orphan-review |  |
 
 Recently finished:
 
