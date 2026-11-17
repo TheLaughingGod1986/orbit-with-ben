@@ -265708,13 +265708,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-17T10:54Z",
-      "eta": "2026-11-17T12:24Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T08:37Z",
-      "result": "",
+      "result": "parked for Chief: merge OWB PR #984 and HOS PR #635 (and deploy board_site); all four stale credit pools fixed and recorded fresh on board-data (Vertex £144.66; Cursor/Grok 0% left, resets 19 Nov; Claude 38% left, resets Wednesday 10:00 AM; Flow 24,500 credits; zero Ben sign-ins needed)",
       "history": [
         {
           "at": "2026-11-17T08:37Z",
@@ -265745,6 +265745,11 @@
           "at": "2026-11-17T11:18Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Opened OWB PR #984 and HOS PR #635 with full unit test suites green; all credit pools recorded fresh on main and published to board-data (d582102d); zero Ben sign-ins needed"
+        },
+        {
+          "at": "2026-11-17T11:18Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: merge OWB PR #984 and HOS PR #635 (and deploy board_site); all four stale credit pools fixed and recorded fresh on board-data (Vertex £144.66; Cursor/Grok 0% left, resets 19 Nov; Claude 38% left, resets Wednesday 10:00 AM; Flow 24,500 credits; zero Ben sign-ins needed)"
         }
       ],
       "remaining_action": "Parked for Chief merge of OWB PR #984 and HOS PR #635 (and board_site deploy)",
