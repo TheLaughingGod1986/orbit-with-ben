@@ -38,6 +38,12 @@ class PlanBoardTest(unittest.TestCase):
         texts = [row["text"] for row in block["plans"][0]["decisions"]]
         self.assertTrue(texts[0].startswith("Pause"))
         self.assertTrue(texts[-1].startswith("Titles"))
+        ww2 = block["plans"][1]
+        self.assertEqual(ww2["id"], "ww2-launch-2026-11")
+        self.assertEqual(ww2["card"]["title"], "Plan: starting our WW2 documentary channel")
+        self.assertEqual(ww2["card"]["needs"], "10 things need you")
+        self.assertEqual(len(ww2["steps"]), 10)
+        self.assertTrue(all(s["stand"] == "Waiting for your lock" and s["needsYou"] for s in ww2["steps"]))
 
     def test_stands_from_jobs_and_the_tracker(self):
         plans = json.loads((ROOT / "studio" / "plan.json").read_text())
@@ -49,6 +55,7 @@ class PlanBoardTest(unittest.TestCase):
             job("J2861", "open", "listing"),
             job("J2863", "done", "review"),
             job("J2864", "open", "studio"),
+            job("J2989", "done", "studio"),
         ]
         videos = [
             {"key": "OWB:064", "jobs": [{"id": "J2863"}], "youtube": {}},
@@ -114,7 +121,7 @@ class PlanBoardTest(unittest.TestCase):
 
     def test_a_quiet_publish_keeps_the_same_block(self):
         plans = json.loads((ROOT / "studio" / "plan.json").read_text())
-        jobs = [job(job_id) for job_id in ("J2859", "J2857", "J2860", "J2861", "J2863", "J2864")]
+        jobs = [job(job_id) for job_id in ("J2859", "J2857", "J2860", "J2861", "J2863", "J2864", "J2989")]
         first = plan_board.section(plans, jobs, [], None, "2026-11-14T23:00:00Z", now=NOW)
         second = plan_board.section(plans, jobs, [], None, "2026-11-14T23:05:00Z", previous=first, now=NOW)
         self.assertEqual(first, second)
@@ -128,8 +135,8 @@ class PlanBoardTest(unittest.TestCase):
         other = json.loads(json.dumps(plans[0]))
         other["id"] = "later"
         other["title"] = "A second plan"
-        jobs = [job(job_id) for job_id in ("J2859", "J2857", "J2860", "J2861", "J2863", "J2864")]
-        block = plan_board.section(plans + [other], jobs, [], None, "2026-11-14T23:00:00Z", now=NOW)
+        jobs = [job(job_id) for job_id in ("J2859", "J2857", "J2860", "J2861", "J2863", "J2864", "J2989")]
+        block = plan_board.section([plans[0], other], jobs, [], None, "2026-11-14T23:00:00Z", now=NOW)
         self.assertEqual([plan["card"]["title"] for plan in block["plans"]],
                          ["Plan: getting our long videos seen", "Plan: a second plan"])
 
@@ -140,7 +147,7 @@ class PlanBoardTest(unittest.TestCase):
         broken = json.loads(json.dumps(plans))
         broken[0]["steps"][0]["when"] = "next tuesday"
         with self.assertRaises(plan_board.PlanError):
-            plan_board.validate(broken, {"J2859", "J2857", "J2860", "J2861", "J2863", "J2864"})
+            plan_board.validate(broken, {"J2859", "J2857", "J2860", "J2861", "J2863", "J2864", "J2989"})
 
 
 if __name__ == "__main__":

@@ -1,0 +1,26 @@
+# Media never goes in git: it lives on the NAS.
+**/*.mp4
+**/*.mov
+**/*.m4v
+**/*.webm
+**/*.wav
+**/*.mp3
+**/*.m4a
+**/*.aif
+**/*.aiff
+**/*.flac
+**/*.png
+**/*.jpg
+**/*.jpeg
+**/*.webp
+**/*.psd
+
+# Secrets never go in git either.
+*.env
+.env
+.env.*
+!.env.example
+
+.DS_Store
+*.log
+node_modules/
