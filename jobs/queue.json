@@ -265278,10 +265278,10 @@
       "stage": "",
       "after": "",
       "eta_min": 150,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-17T09:00Z",
-      "eta": "2026-11-17T11:30Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T08:37Z",
       "result": "",
@@ -265315,6 +265315,11 @@
           "at": "2026-11-17T09:23Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Step 2 done: ruled on all 26 Chief-parked jobs (closed 21 + J2702 done, reopened 8 incl. 6 parents, kept 3 on dated holds; 0 Chief-parked left); merged HOS PR #611"
+        },
+        {
+          "at": "2026-11-17T09:24Z",
+          "by": "gemini",
+          "what": "released: Steps 1 and 2 of 4 complete (PRs #924, #945, HOS #611 merged; J2864 pause rule at 584fed17a0; 7 stale/pause jobs closed; all 26 Chief-parked jobs resolved -> 0 remaining). Next run: Step 3 (triage open OWB PRs) and Step 4 (finish)."
         }
       ],
       "remaining_action": "Triage and resolve open pull requests on orbit-with-ben (merge green records-only, close superseded/cancelled, comment on 5 machinery PRs)",

@@ -53,7 +53,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2933 | mini | blocked | claudecode | – | 010 edit · qa · `mini-claude-opus-5-5` · Review HOS 010 Short A v01 and Short C v01 (J2172, PR #611) | J2172 |
 | J2951 | cloud | open | – | – | assembly · Stop the refill tick using 3-4 GB: read the acting Chief once per scan |  |
 | J2976 | mini | open | – | – | for claudecode · studio · `mini-claude-opus-5-5` · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
-| J2979 | mini | claimed | gemini | 2026-11-17T11:30Z | chief · Chief sweep: close stale board jobs, rule on the 26 parked jobs and the 75 open pull requests |  |
+| J2979 | mini | open | – | – | chief · Chief sweep: close stale board jobs, rule on the 26 parked jobs and the 75 open pull requests |  |
 | J2980 | mini | open | – | – | for gemini · studio · Dispatch: an agent marked out of usage is down in the forecast too, and its jobs move on |  |
 | J2981 | mini | open | – | – | for gemini · studio · Board credits: four usage readings stale since 8-13 Nov (Cursor, Claude, Vertex, Grok) |  |
 | J2982 | mini | open | – | – | for gemini · studio · Board clean-up: plain times on the Agents tab, no Mac folder path in public data, Vercel leftovers out |  |
