@@ -64,7 +64,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3005 | mini | claimed | gemini | 2026-11-17T22:18Z | for gemini · studio · WW2 channel: packaging library, which titles and thumbnails beat their channel's normal views |  |
 | J3006 | mini | open (after J2990) | – | – | for codex · studio · WW2 channel: read its own analytics from day one, and a progress-to-monetisation card |  |
 | J3007 | mini | open (after J2990) | – | – | for codex · studio · Board: show the WW2 channel before launch, its films, its review and Ben's ticks |  |
-| J3009 | mini | open (after J2990) | – | – | for gemini · studio · WW2 channel: move it into its own repo with history, register it, check it out on both Macs |  |
+| J3009 | mini | claimed | macbook-2 | 2026-11-17T21:38Z | for gemini · studio · WW2 channel: move it into its own repo with history, register it, check it out on both Macs |  |
 | J3010 | mini | blocked | gemini | – | 007 upload · review · HOS 007 Vaccine Short (xgx2lYHhYZM): read next-morning snapshot after J3004 | f57ab150da |
 | J3011 | mini | open | – | – | chief · Orbit: Ben locked the every-planet film, book its slot and start the build |  |
 | J3012 | mini | open | – | – | chief · Decoupling phase 3: move the studio engine into its own repo, runbook now, move after a clean week |  |

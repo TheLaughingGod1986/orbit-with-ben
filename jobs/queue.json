@@ -267976,10 +267976,10 @@
       "stage": "",
       "after": "J2990",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-17T20:08Z",
+      "eta": "2026-11-17T21:38Z",
       "created_by": "claude",
       "created_at": "2026-11-17T18:15Z",
       "result": "",
@@ -267993,13 +267993,26 @@
           "at": "2026-11-17T18:33Z",
           "by": "claude",
           "what": "Condition met 17 Nov 18:33Z: Ben created TheLaughingGod1986/ww2-channel (private, empty, default branch main) and the Claude GitHub app can reach it (Claude cloned it). Run this as soon as J2990 has merged the plan; no need to wait for a daily check."
+        },
+        {
+          "at": "2026-11-17T20:08Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "When TheLaughingGod1986/ww2-channel exists: move channels/ww2 there with history, register like HOS, check out and push-test on both Macs, repoint WW2 jobs",
       "due": "2026-11-24T18:00:00Z",
       "for": "gemini",
       "kind": "studio",
-      "plain": "Give the new WW2 channel its own separate repository, as Ben asked, without losing any work"
+      "plain": "Give the new WW2 channel its own separate repository, as Ben asked, without losing any work",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-17T20:08Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3010",
