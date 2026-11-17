@@ -41,9 +41,10 @@ class PlanBoardTest(unittest.TestCase):
         ww2 = block["plans"][1]
         self.assertEqual(ww2["id"], "ww2-launch-2026-11")
         self.assertEqual(ww2["card"]["title"], "Plan: starting our WW2 documentary channel")
-        self.assertEqual(ww2["card"]["needs"], "10 things need you")
-        self.assertEqual(len(ww2["steps"]), 10)
-        self.assertTrue(all(s["stand"] == "Waiting for your lock" and s["needsYou"] for s in ww2["steps"]))
+        # Ben, 17 Nov 2026: on this channel he is asked only to watch finished films, so its plan asks him for nothing.
+        self.assertEqual(ww2["card"]["needs"], "")
+        self.assertEqual(len(ww2["steps"]), 12)
+        self.assertFalse(any(s["needsYou"] for s in ww2["steps"]))
 
     def test_stands_from_jobs_and_the_tracker(self):
         plans = json.loads((ROOT / "studio" / "plan.json").read_text())

@@ -1,5 +1,10 @@
 # WW2 & Military History Documentary Channel — Launch & Three-Film Pilot Plan (`J2989`)
 
+> **17 Nov 2026, later the same day:** where this plan differs, `studio/RULES.md` (the channel's own rules, written
+> fresh) and `00_Brand/PLAYBOOK.md` govern. Ben is asked only to watch finished films: the Chief locks topics after
+> review, and Ben picks the name when he creates the channel. Working titles changed after scoring: see the playbook.
+
+
 **Date:** `2026-11-17` · **Prepared by:** `macbook-2` (`J2989`)  
 **Spend:** `£0.00` (prepared offline/read-only; zero channels created, zero sign-ins, zero ElevenLabs credits spent)  
 **Board status:** Added to `studio/plan.json` (`#plan`) for Ben to pick the channel name and lock the first topics, matching the `Every Planet Explained in 10 Minutes` lock card workflow.
