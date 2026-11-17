@@ -266527,9 +266527,14 @@
           "at": "2026-11-17T23:50Z",
           "by": "codex",
           "what": "step 3 of 4 done: PR #1006 opened; review found and fixed compressed legacy update-history paths. 41 publisher tests and related board suites pass."
+        },
+        {
+          "at": "2026-11-17T23:57Z",
+          "by": "codex",
+          "what": "step 4 of 4 done: PR #1006 merged as 9f8e981802; Pages deployed. Both addresses return 200 for page, checks and data with f=board. Public data has zero home prefixes; production HTML/live data render plain Agents wording."
         }
       ],
-      "remaining_action": "Merge the tested board changes, deploy them and check the live page and APIs",
+      "remaining_action": "Record the completed board cleanup and live checks",
       "due": "2026-11-19T12:00:00Z",
       "for": "codex",
       "kind": "studio",
@@ -266544,11 +266549,11 @@
       },
       "model": "gpt-6.1-sol",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-17T23:50Z",
+        "at": "2026-11-17T23:57Z",
         "by": "codex",
-        "note": "PR #1006 opened; review found and fixed compressed legacy update-history paths. 41 publisher tests and related board sui"
+        "note": "PR #1006 merged as 9f8e981802; Pages deployed. Both addresses return 200 for page, checks and data with f=board. Public "
       }
     },
     {
