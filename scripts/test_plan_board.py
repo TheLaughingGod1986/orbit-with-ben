@@ -38,12 +38,14 @@ class PlanBoardTest(unittest.TestCase):
         card = block["plans"][0]["card"]
         self.assertEqual(card["title"], "Plan: getting our long videos seen")
         self.assertEqual(card["next"], "Next: Journey film, Tue 8 Dec")
-        self.assertEqual(card["needs"], "1 thing needs you: lock the every-planet film")
+        # Ben locked the every-planet film on 17 Nov, so the plan asks him for nothing.
+        self.assertEqual(card["needs"], "")
         self.assertEqual(card["score"], "No test film is public yet. Best long so far: 230 views")
         self.assertEqual(block["plans"][0]["baseline"]["showings"],
                          "All 16 longs: about 4,050 showings (read 12 Nov)")
         texts = [row["text"] for row in block["plans"][0]["decisions"]]
-        self.assertTrue(texts[0].startswith("Pause"))
+        self.assertTrue(texts[0].startswith("Lock the every-planet film"))
+        self.assertTrue(texts[1].startswith("Pause"))
         self.assertTrue(texts[-1].startswith("Titles"))
         ww2 = block["plans"][1]
         self.assertEqual(ww2["id"], "ww2-launch-2026-11")
@@ -75,11 +77,20 @@ class PlanBoardTest(unittest.TestCase):
         stands = {step["id"]: step["stand"] for step in block["plans"][0]["steps"]}
         self.assertEqual(stands["journey"], "Listing ready")
         self.assertEqual(stands["sleep"], "Being repaired, step 1 of 5")
-        self.assertEqual(stands["planets"], "Waiting for your lock")
+        self.assertEqual(stands["planets"], "Waiting its turn")
         self.assertEqual(stands["pause"], "Waiting its turn")
         planets = next(step for step in block["plans"][0]["steps"] if step["id"] == "planets")
-        self.assertTrue(planets["needsYou"])
+        self.assertFalse(planets["needsYou"])
         self.assertEqual(planets["videoKey"], "OWB:064")
+        # A step that still needs Ben's lock, with no date yet, says so and counts on the card.
+        waiting = json.loads(json.dumps(plans))
+        step = next(step for step in waiting[0]["steps"] if step["id"] == "planets")
+        step["needsBen"], step["when"] = "Lock or decline this film on its card", ""
+        block = plan_board.section(waiting, jobs, videos, None, "2026-11-14T23:00:00Z", now=NOW)
+        planets = next(step for step in block["plans"][0]["steps"] if step["id"] == "planets")
+        self.assertEqual(planets["stand"], "Waiting for your lock")
+        self.assertTrue(planets["needsYou"])
+        self.assertEqual(block["plans"][0]["card"]["needs"], "1 thing needs you: lock the every-planet film")
 
     def test_youtube_states_and_the_fourteen_day_verdict(self):
         step = {
@@ -146,7 +157,7 @@ class PlanBoardTest(unittest.TestCase):
         other = json.loads(json.dumps(plans[0]))
         other["id"] = "later"
         other["title"] = "A second plan"
-        jobs = [job(job_id) for job_id in ("J2859", "J2857", "J2860", "J2861", "J2863", "J2864", "J2989")]
+        jobs = every_job([plans[0], other])
         block = plan_board.section([plans[0], other], jobs, [], None, "2026-11-14T23:00:00Z", now=NOW)
         self.assertEqual([plan["card"]["title"] for plan in block["plans"]],
                          ["Plan: getting our long videos seen", "Plan: a second plan"])
