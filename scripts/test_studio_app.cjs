@@ -353,6 +353,16 @@ const vx = t.poolMeter('vertex', {unit: 'GBP', latest: {left: 69.48, at: new Dat
 assert.equal(vx.fig, '69%'); assert(vx.note.includes('of £100 this month'));
 const cx = t.poolMeter('codex', {unit: '%', latest: {left: 40, total: 100, at: new Date(NOW).toISOString(), note: 'weekly 60% used, resets Wed 04 Nov 06:36Z'}}, {}, NOW);
 assert.equal(cx.fig, '40%'); assert(cx.note.includes('resets Wed 04 Nov 06:36Z'), cx.note);
+const curFresh = t.poolMeter('cursor', {unit: '%', latest: {left: 0, total: 100, at: new Date(NOW).toISOString(), note: 'Weekly included usage 100% used (Grok Bot 54%, Cursor 46%); weekly resets 19 Nov; $1.06 used this month (resets 1 Dec)'}}, {}, NOW);
+assert.equal(curFresh.fig, '0%'); assert.equal(curFresh.note, 'resets 19 Nov');
+const clFresh = t.poolMeter('claude', {unit: '%', latest: {left: 38, total: 100, at: new Date(NOW).toISOString(), note: 'weekly 62% used, resets Wednesday 10:00 AM; Fable 100% used'}}, {}, NOW);
+assert.equal(clFresh.fig, '38%'); assert.equal(clFresh.note, 'resets Wednesday 10:00 AM');
+const staleOneDay = t.poolMeter('cursor', {unit: '%', latest: {left: 70, total: 100, at: new Date(NOW - 36 * 36e5).toISOString(), note: 'weekly resets 12 Nov'}}, {}, NOW);
+assert.equal(staleOneDay.fig, '70%'); assert.equal(staleOneDay.note, 'reading stale');
+const oldNineNov = t.poolMeter('cursor', {unit: '%', latest: {left: 0, total: 100, at: '2026-11-09T08:30:00Z', note: 'weekly resets 12 Nov'}}, {}, Date.parse('2026-11-17T10:00:00Z'));
+assert.equal(oldNineNov.fig, '0% · 9 Nov'); assert.equal(oldNineNov.note, 'last read 9 Nov'); assert.equal(oldNineNov.tone, 'amber');
+const oldVertex = t.poolMeter('vertex', {unit: 'GBP', latest: {left: 144.66, at: '2026-11-13T08:30:30Z'}}, {}, Date.parse('2026-11-17T10:00:00Z'));
+assert(oldVertex.fig.includes('13 Nov') && oldVertex.note.includes('last read 13 Nov'), oldVertex.note);
 assert.equal(t.poolMeter('claude', undefined, {}, NOW), null, 'no reading, no bar');
 const ag = t.renderTab('agents', {tracker: {videos: []}, models: {chiefChain: [{agent: 'claude', up: true}]}, credits: {pools: {cursor: {unit: '%', latest: {left: 0, total: 100, at: new Date(NOW).toISOString(), note: 'weekly resets Oct 29'}}}}}, NOW);
 assert((ag.match(/<span>Grok<\/span><b class="red">0%/) || []).length === 1, 'Grok shows the shared Cursor weekly pool');

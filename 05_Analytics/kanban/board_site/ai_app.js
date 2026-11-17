@@ -30,8 +30,10 @@
     elevenlabs: ["ElevenLabs", "voice credits"],
     flow: ["Google Flow", "picture credits (AI Ultra)"],
     vertex: ["Google Cloud / Vertex", "£ of Cloud credit"],
-    cursor: ["Cursor", "% of Cursor models left (Grok Bot runs here)"],
+    cursor: ["Cursor", "% of weekly included usage left (Grok Bot runs here)"],
     codex: ["Codex", "% of the weekly limit left (one ChatGPT Pro account: Mac mini + MacBook)"],
+    claude: ["Claude", "% of the weekly limit left"],
+    gemini: ["Gemini", "% of the Gemini Models weekly limit left"],
   };
   let board = null, lastSha = "";
 
@@ -111,18 +113,22 @@
 
   function poolsHtml(credits, now) {
     const pools = credits.pools || {};
-    const ids = Object.keys(POOLS).filter(id => pools[id]).concat(Object.keys(pools).filter(id => !POOLS[id] && id !== "claude"));
+    const hasMeter = id => pools[id] && (id !== "claude" || (pools[id].latest || {}).left != null);
+    const ids = Object.keys(POOLS).filter(hasMeter).concat(Object.keys(pools).filter(id => !POOLS[id] && hasMeter(id)));
     const rows = ids.map(id => {
       const p = pools[id], s = poolState(id, p, credits, now), [name, what] = POOLS[id] || [id, p.unit];
       const bar = s.share != null ? `<div class="bar"><i class="${s.status}" style="width:${Math.max(2, Math.min(100, s.share * 100)).toFixed(0)}%"></i></div>` : "";
       const of = s.total && p.unit !== "%" ? ` of ${num(s.total, p.unit)}` : "";
       const pace = s.daysLeft >= 1 ? ` · at this pace about ${Math.round(s.daysLeft)} days left` : "";
+      const atMs = Date.parse(s.at || ""), oldDate = !isNaN(atMs) && (now - atMs) / 36e5 > 48
+        ? "last read " + new Date(atMs).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "Europe/London" }) : "";
+      const whyText = oldDate ? `${s.why} (${oldDate})` : s.why;
       return `<li class="pool">${dot(s.status)}<div><b>${esc(name)}</b> <span class="muted">${esc(what)}</span>
-        <div class="figure">${num(s.left, p.unit)} left${of}${s.why ? ` · <span class="${s.status}t">${esc(s.why)}</span>` : ""}</div>${bar}
+        <div class="figure">${num(s.left, p.unit)} left${of}${whyText ? ` · <span class="${s.status}t">${esc(whyText)}</span>` : ""}</div>${bar}
         <div class="muted small">Read ${esc(ago(s.at, now))}${pace}${s.note ? " · " + esc(clip(s.note, 160)) : ""}</div></div></li>`;
     }).join("");
     return `<section class="card"><h2>Credit left</h2><ul class="rows">${rows || '<li class="muted">No readings yet.</li>'}</ul>
-      <p class="muted">The Mac mini reads these every morning (scripts/ai_spend_daily.py), and the MacBook updates the shared Codex reading after its runs. Claude and Gemini don't publish a meter: their status above comes from what their runs report.</p></section>`;
+      <p class="muted">The Mac mini reads these every morning (scripts/ai_spend_daily.py), and the MacBook updates the shared Codex reading after its runs.</p></section>`;
   }
 
   function plansHtml(credits) {
