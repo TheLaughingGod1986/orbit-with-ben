@@ -265110,20 +265110,24 @@
           "at": "2026-11-17T08:39Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T08:42Z",
+          "by": "macbook-2",
+          "what": "step 1 of 5 done: Read AGENTS.md, studio/RULES.md, queue_eta.py, board_publish.py, chief_relay.py, workflow_state.py, routing.py, jobs.py"
         }
       ],
-      "remaining_action": "Make the queue forecast and dispatcher read the same out-of-usage mark as the Agents tab, and move jobs off a down agent",
+      "remaining_action": "Inspect live board.json readings and diagnose forecast, models, and dispatch divergence",
       "due": "2026-11-18T12:00:00Z",
       "for": "gemini",
       "kind": "studio",
       "plain": "Stop sending jobs to an agent the board already shows is out of usage, so nothing waits on it",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-17T08:39Z",
+        "step": 1,
+        "of": 5,
+        "at": "2026-11-17T08:42Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Read AGENTS.md, studio/RULES.md, queue_eta.py, board_publish.py, chief_relay.py, workflow_state.py, routing.py, jobs.py"
       }
     },
     {
