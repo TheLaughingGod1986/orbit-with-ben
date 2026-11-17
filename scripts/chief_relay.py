@@ -75,6 +75,8 @@ import subprocess
 import sys
 import time
 
+from zoneinfo import ZoneInfo
+
 HOME = pathlib.Path.home()
 STATE = pathlib.Path(os.environ.get("DESK_STATE", HOME / "_desk" / "state"))
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
@@ -473,57 +475,382 @@ def note_grok_posts(at: dt.datetime) -> None:
     write_json(d("grok_thread.json"), {"checked": iso(at), "last_post": last})
 
 
-def grok_post_age(at: dt.datetime, after=None):
+def grok_post_age(at: dt.datetime, after=None, state: pathlib.Path | None = None):
     """Minutes since Grok's newest own thread post (as of the last relay run), or None; only posts after `after`."""
-    last = (read_json(d("grok_thread.json")) or {}).get("last_post")
+    base = state or d()
+    last = (read_json(base / "grok_thread.json") or {}).get("last_post")
     if not last or (after and parse(last) <= after):
         return None
     return int((at - parse(last)).total_seconds() // 60)
 
 
+USAGE_POOLS = {"cursor": "cursor", "chief": "cursor", "codex": "codex", "claude": "claude",
+               "claudecode": "claude", "gemini": "gemini"}
+MONTHS = {"jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6,
+          "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12}
+WEEKDAYS = {"mon": 0, "tue": 1, "wed": 2, "thu": 3, "fri": 4, "sat": 5, "sun": 6}
+LONDON = ZoneInfo("Europe/London")
+URGENT_DOWN_MAX = dt.timedelta(minutes=20)
+
+
+def usage_retry_hours() -> float:
+    """Fallback retry interval (hours) when an out-of-usage agent has no future reset time in its usage reading."""
+    raw = os.environ.get("CHIEF_USAGE_RETRY_H") or os.environ.get("CHIEF_RETRY_H") or "3"
+    return float(raw)
+
+
+def _clock_parts(hm: str, ampm: str | None) -> tuple[int, int] | None:
+    try:
+        h, m = (int(x) for x in hm.split(":", 1))
+    except ValueError:
+        return None
+    if ampm:
+        ap = ampm.lower()
+        h = (0 if h == 12 else h) + (12 if ap == "pm" else 0)
+    return (h, m) if 0 <= h <= 23 and 0 <= m <= 59 else None
+
+
+def _parse_reset_token(raw: str, ref: dt.datetime) -> tuple[dt.datetime, bool] | None:
+    """Parse one reset timestamp phrase relative to `ref` (the reading's timestamp).
+    Returns (utc_dt, is_session_only) or None."""
+    s = raw.strip().rstrip(".,")
+    if not s or re.fullmatch(r"\d{1,3}%\s*used", s, re.I):
+        return None
+    if re.match(r"^\d{4}-\d{2}-\d{2}[T ]", s):
+        try:
+            return parse(s).astimezone(dt.timezone.utc), False
+        except ValueError:
+            return None
+    # Optional weekday + "17 Nov [2026] [23:22[Z]]" or "Nov 17[, 2026] [23:22[Z]]"
+    m_dm = re.match(
+        r"^(?:(?:mon|tue|wed|thu|fri|sat|sun)[a-z]*\s+)?"
+        r"(?:(\d{1,2})\s+([A-Za-z]{3,9})(?:\s+(\d{4}))?|([A-Za-z]{3,9})\s+(\d{1,2})(?:,?\s*(\d{4}))?)"
+        r"(?:\s+(?:at\s+)?(\d{1,2}:\d{2})(?:\s*(am|pm))?\s*(z|utc|gmt)?)?$",
+        s, re.I,
+    )
+    if m_dm:
+        day = int(m_dm.group(1) or m_dm.group(5))
+        mon = MONTHS.get((m_dm.group(2) or m_dm.group(4))[:3].lower())
+        year = int(m_dm.group(3) or m_dm.group(6) or ref.year)
+        if not mon:
+            return None
+        hm = _clock_parts(m_dm.group(7), m_dm.group(8)) if m_dm.group(7) else (0, 0)
+        if not hm:
+            return None
+        tz = dt.timezone.utc if (m_dm.group(9) or not m_dm.group(7)) else LONDON
+        try:
+            cand = dt.datetime(year, mon, day, hm[0], hm[1], tzinfo=tz).astimezone(dt.timezone.utc)
+        except ValueError:
+            return None
+        if not (m_dm.group(3) or m_dm.group(6)) and cand < ref - dt.timedelta(days=60):
+            cand = dt.datetime(year + 1, mon, day, hm[0], hm[1], tzinfo=tz).astimezone(dt.timezone.utc)
+        return cand, False
+    # Weekday + clock: "Wednesday 10:00 AM"
+    m_wd = re.match(r"^([A-Za-z]{3,9})\s+(\d{1,2}:\d{2})(?:\s*(am|pm))?\s*(z|utc|gmt)?$", s, re.I)
+    if m_wd and m_wd.group(1)[:3].lower() in WEEKDAYS:
+        target_wd = WEEKDAYS[m_wd.group(1)[:3].lower()]
+        hm = _clock_parts(m_wd.group(2), m_wd.group(3))
+        if not hm:
+            return None
+        tz = dt.timezone.utc if m_wd.group(4) else LONDON
+        local_ref = ref.astimezone(tz)
+        days_ahead = (target_wd - local_ref.weekday()) % 7
+        cand_local = local_ref.replace(hour=hm[0], minute=hm[1], second=0, microsecond=0) + dt.timedelta(days=days_ahead)
+        if cand_local <= local_ref:
+            cand_local += dt.timedelta(days=7)
+        return cand_local.astimezone(dt.timezone.utc), False
+    # Session clock only: "12:50Z", "8:50 PM"
+    m_tm = re.match(r"^(\d{1,2}:\d{2})(?:\s*(am|pm))?\s*(z|utc|gmt)?$", s, re.I)
+    if m_tm:
+        hm = _clock_parts(m_tm.group(1), m_tm.group(2))
+        if not hm:
+            return None
+        tz = dt.timezone.utc if m_tm.group(3) else LONDON
+        local_ref = ref.astimezone(tz)
+        cand_local = local_ref.replace(hour=hm[0], minute=hm[1], second=0, microsecond=0)
+        if cand_local <= local_ref:
+            cand_local += dt.timedelta(days=1)
+        return cand_local.astimezone(dt.timezone.utc), True
+    return None
+
+
+def usage_reset_until(agent: str, at: dt.datetime, studio: pathlib.Path | None = None) -> dt.datetime | None:
+    """Future reset time from the agent's newest usage reading in ai_spend (ledger.jsonl), if one exists."""
+    pool = USAGE_POOLS.get(agent)
+    if not pool:
+        return None
+    root = studio or STUDIO
+    ledger = root / channels.studio_records("ai_spend", "ledger.jsonl").relative_to(channels.ROOT)
+    try:
+        lines = ledger.read_text().splitlines()
+    except OSError:
+        return None
+    newest = None
+    for line in lines:
+        if not line.strip() or f'"{pool}"' not in line:
+            continue
+        try:
+            row = json.loads(line)
+        except ValueError:
+            continue
+        if row.get("kind") != "record" or row.get("pool") != pool or not row.get("at"):
+            continue
+        try:
+            rat = parse(str(row["at"])).astimezone(dt.timezone.utc)
+        except ValueError:
+            continue
+        if rat <= at and (at - rat) <= dt.timedelta(days=14):
+            if newest is None or rat >= newest[0]:
+                newest = (rat, row)
+    if newest is None:
+        return None
+    rat, row = newest
+    for field in ("reset", "resets_at", "until", "out_until"):
+        if row.get(field):
+            try:
+                explicit = parse(str(row[field])).astimezone(dt.timezone.utc)
+                if at < explicit <= at + dt.timedelta(days=35):
+                    return explicit
+            except ValueError:
+                pass
+    note = re.sub(r"\$[\d,]+(?:\.\d\d)?\s+used\s+this\s+month\s*\(resets?\s+[^)]*\)", "", str(row.get("note") or ""), flags=re.I)
+    left = row.get("left")
+    weekly_out = (left is not None and float(left) <= 1) or bool(re.search(r"weekly[^;]*?\b(?:99|100)%\s*used", note, re.I))
+    has_session = bool(re.search(r"\b(?:5-hour|five-hour|current\s+session|session)\b", note, re.I))
+    weekly_hits, session_hits = [], []
+    for m in re.finditer(r"\bresets?(?:\s+(?:on|at))?\s+([^;\n()•·]+)", note, re.I):
+        parsed = _parse_reset_token(m.group(1), rat)
+        if not parsed:
+            continue
+        cand, session_only = parsed
+        if not (at < cand <= at + dt.timedelta(days=35)):
+            continue
+        # "(resets 12:50Z) session" or "5-hour ... resets ..." is a 5-hour session window, not a weekly reset.
+        before_text = note[max(0, m.start() - 40):m.start()].lower()
+        after_text = note[m.end():m.end() + 20].lower()
+        if (session_only or "session" in after_text or "5-hour" in before_text or "five-hour" in before_text) and "weekly" not in before_text[-20:]:
+            session_hits.append(cand)
+        else:
+            weekly_hits.append(cand)
+    if weekly_out:
+        return min(weekly_hits) if weekly_hits else (min(session_hits) if session_hits else None)
+    if has_session:
+        return min(session_hits) if session_hits else None
+    return min(weekly_hits) if weekly_hits else None
+
+
+def usage_retry_until(agent: str, since: dt.datetime, at: dt.datetime, studio: pathlib.Path | None = None) -> dt.datetime:
+    """When to retry an out-of-usage agent: its usage reading's reset time if known, else `since` + a few hours."""
+    return usage_reset_until(agent, at, studio) or (since + dt.timedelta(hours=usage_retry_hours()))
+
+
+def last_worker_runs(state: pathlib.Path | None = None) -> dict[str, dict]:
+    """Newest runs.jsonl row per worker."""
+    base = state or d()
+    try:
+        lines = (base / "runs.jsonl").read_text().splitlines()[-400:]
+    except OSError:
+        return {}
+    out: dict[str, dict] = {}
+    for line in lines:
+        try:
+            r = json.loads(line)
+        except ValueError:
+            continue
+        if isinstance(r, dict) and r.get("worker"):
+            out[str(r["worker"])] = r
+    return out
+
+
+def _last_seen_in(state: pathlib.Path, agent: str) -> dt.datetime | None:
+    try:
+        return parse((state / "heartbeat" / agent).read_text().strip())
+    except (OSError, ValueError):
+        return None
+
+
+def _hard_flag_in(flags_file: pathlib.Path, agent: str, at: dt.datetime) -> bool:
+    flag = ((read_json(flags_file) or {}).get("flags") or {}).get(agent) or {}
+    try:
+        return bool(flag.get("hard")) and parse(flag["out_until"]) > at
+    except (KeyError, ValueError, TypeError):
+        return False
+
+
+def agent_status(agent: str, at: dt.datetime, *, state: pathlib.Path | None = None, studio: pathlib.Path | None = None,
+                 flags_file: pathlib.Path | None = None, mutate: bool = False, use_chain: bool = False,
+                 runs: dict | None = None) -> dict:
+    """Single source of truth for dispatcher, board `models` and `queueForecast`:
+    returns {"agent", "up", "why", "reason", "until"}."""
+    base = state or d()
+    studio_dir = studio or STUDIO
+    ff = flags_file or (studio_dir / "scripts" / "credit_flags.json")
+    fresh_grok = int(os.environ.get("CHIEF_GROK_FRESH_MIN", "180"))
+    if agent == "claude":
+        beat_doc = (read_json(base / "claude_beat.json") or {}).get("beat")
+        if beat_doc and beat_doc.get("at"):
+            try:
+                bat = parse(beat_doc["at"])
+            except (ValueError, TypeError):
+                bat = None
+            if bat is not None:
+                if beat_doc.get("out"):
+                    until_dt = parse(beat_doc["until"]) if beat_doc.get("until") else bat + dt.timedelta(hours=5)
+                    if at < until_dt:
+                        why = f"Claude said it's out of usage until {iso(until_dt)}" + (
+                            f": {beat_doc['reason']}" if beat_doc.get("reason") else "")
+                        return {"agent": agent, "up": False, "why": why, "reason": why, "until": iso(until_dt)}
+                mark0 = read_json(base / "down" / "claude.json")
+                if mark0 and not beat_doc.get("out") and mark0.get("since") and parse(mark0["since"]) < bat:
+                    if mutate:
+                        mark_up("claude")
+                        log(f"claude: heartbeat {beat_doc['at']} is newer than its down mark: Claude is back")
+                    mark = None
+                else:
+                    mark = mark0
+            else:
+                mark = read_json(base / "down" / f"{agent}.json")
+        else:
+            mark = read_json(base / "down" / f"{agent}.json")
+    else:
+        mark = read_json(base / "down" / f"{agent}.json")
+
+    if mark:
+        raw_until = parse(mark["until"]) if mark.get("until") else None
+        since = parse(mark["since"]) if mark.get("since") else at
+        reason = str(mark.get("reason") or "no reason given")
+        beat = _last_seen_in(base, agent)
+        if agent == "chief" and ((beat and beat > since) or (mark.get("kind") != "stalled"
+                                                             and grok_post_age(at, after=since, state=base) is not None)):
+            if mutate:
+                mark_up("chief")
+        else:
+            is_usage = mark.get("kind") == "usage" or (agent != "chief" and bool(CLAUDE_LIMIT_RE.search(reason)))
+            if raw_until is None and is_usage:
+                until = usage_retry_until(agent, since, at, studio_dir)
+            elif mark.get("kind") == "usage":
+                until = usage_reset_until(agent, at, studio_dir) or raw_until
+            else:
+                until = raw_until
+            if until and at >= until:
+                if mutate:
+                    mark_up(agent)
+            else:
+                until_s = iso(until) if until else ""
+                why = f"marked down: {reason}" + (f" (retry after {until_s})" if until_s else "")
+                return {"agent": agent, "up": False, "why": why, "reason": reason, "until": until_s}
+
+    flag = routing.read_flags(at, str(ff)).get(agent)
+    grok_age = grok_post_age(at, state=base) if agent == "chief" else None
+    if flag and (_hard_flag_in(ff, agent, at) or not (agent == "chief" and grok_age is not None and grok_age <= fresh_grok)):
+        raw_flag = (((read_json(ff) or {}).get("flags") or {}).get(agent)) or {}
+        until_s = iso(parse(raw_flag["out_until"])) if raw_flag.get("out_until") else ""
+        reason = str(raw_flag.get("reason") or flag)
+        return {"agent": agent, "up": False, "why": f"flagged out of credit: {flag}", "reason": reason, "until": until_s}
+
+    runs_map = runs if runs is not None else last_worker_runs(base)
+    last = runs_map.get(agent) or {}
+    last_at = workflow.timestamp(last.get("at"))
+    beat = _last_seen_in(base, agent)
+    recent_usage_out = bool(
+        last.get("out_of_usage")
+        and last.get("model") not in routing.SEPARATE_POOLS
+        and last_at
+        and not (beat and beat > last_at + dt.timedelta(seconds=5))
+    )
+
+    if use_chain:
+        chain_doc = read_json(base / "chain.json") or {}
+        checked = workflow.timestamp(chain_doc.get("at"))
+        chain_rows = {r.get("agent"): r for r in (chain_doc.get("rows") or []) + (chain_doc.get("workers") or [])
+                      if isinstance(r, dict) and r.get("agent")}
+        if (checked and (at - checked) <= dt.timedelta(minutes=60) and agent in chain_rows
+                and not (recent_usage_out and last_at > checked)):
+            r = chain_rows[agent]
+            r_why = str(r.get("why") or ("ready" if r.get("up") else "down"))
+            if not r.get("up"):
+                r_until = str(r.get("until") or "")
+                if not r_until and CLAUDE_LIMIT_RE.search(r_why):
+                    r_until = iso(usage_retry_until(agent, checked, at, studio_dir))
+                r_reason = re.sub(r"\s*\(retry after [^)]*\)\s*$", "", re.sub(r"^marked down:\s*", "", r_why))
+                return {"agent": agent, "up": False, "why": r_why, "reason": r_reason or r_why, "until": r_until}
+            return {"agent": agent, "up": True, "why": r_why, "reason": r_why, "until": ""}
+
+    if recent_usage_out:
+        until = usage_retry_until(agent, last_at, at, studio_dir)
+        if at < until:
+            until_s = iso(until)
+            job_s = f" ({last['job']})" if last.get("job") else ""
+            reason = f"last run out of usage{job_s}"
+            why = f"marked down: {reason} (retry after {until_s})"
+            return {"agent": agent, "up": False, "why": why, "reason": reason, "until": until_s}
+
+    if agent == "chief":
+        if beat and int((at - beat).total_seconds() // 60) <= fresh_grok:
+            why = f"ran jobs.py {int((at - beat).total_seconds() // 60)} min ago"
+            return {"agent": agent, "up": True, "why": why, "reason": why, "until": ""}
+        if grok_age is not None and grok_age <= fresh_grok:
+            why = f"posted on the thread {grok_age} min ago"
+            return {"agent": agent, "up": True, "why": why, "reason": why, "until": ""}
+        why = "no Grok post on the thread in the last {} h".format(fresh_grok // 60) + (
+            f"; last jobs.py run {int((at - beat).total_seconds() // 3600)} h ago" if beat else "")
+        return {"agent": agent, "up": False, "why": why, "reason": why, "until": ""}
+
+    if agent == "claude":
+        qdata = read_json(studio_dir / "jobs" / "queue.json") or {}
+        if base == d() and studio_dir == STUDIO:
+            out, why = claude_out(at, qdata)
+        else:
+            beat_doc = (read_json(base / "claude_beat.json") or {}).get("beat")
+            out, why = False, "no usage-limit sign"
+            if beat_doc and beat_doc.get("at"):
+                bat = parse(beat_doc["at"])
+                if beat_doc.get("out"):
+                    u_dt = parse(beat_doc["until"]) if beat_doc.get("until") else bat + dt.timedelta(hours=5)
+                    if at < u_dt:
+                        out, why = True, f"Claude said it's out of usage until {iso(u_dt)}"
+                    else:
+                        bat = u_dt
+                age = int((at - bat).total_seconds() // 60)
+                if not out and age > int(os.environ.get("CHIEF_CLAUDE_STALE_MIN", "90")):
+                    out, why = True, f"no Claude run for {age} min (heartbeat {beat_doc['at']})"
+        if out:
+            until_s = ""
+            m_u = re.search(r"until (\d{4}-\d{2}-\d{2}T[\d:]+Z)", why)
+            if m_u:
+                until_s = m_u.group(1)
+            elif CLAUDE_LIMIT_RE.search(why):
+                until_s = iso(usage_retry_until("claude", at, at, studio_dir))
+            return {"agent": agent, "up": False, "why": why, "reason": why, "until": until_s}
+        beat_at = ((read_json(base / "claude_beat.json") or {}).get("beat") or {}).get("at")
+        if not beat_at:
+            return {"agent": agent, "up": False, "why": "no heartbeat yet", "reason": "no heartbeat yet", "until": ""}
+        why = f"heartbeat {int((at - parse(beat_at)).total_seconds() // 60)} min ago"
+        return {"agent": agent, "up": True, "why": why, "reason": why, "until": ""}
+
+    if agent in routing.MINI_WORKERS:
+        if use_chain and state is not None and state != d():
+            return {"agent": agent, "up": True, "why": "ready", "reason": "ready", "until": ""}
+        ok = bool(cli_spec(agent))
+        why = "ready" if ok else "CLI not installed"
+        return {"agent": agent, "up": ok, "why": why, "reason": why, "until": ""}
+    return {"agent": agent, "up": False, "why": "unknown agent", "reason": "unknown agent", "until": ""}
+
+
+def agent_states(at: dt.datetime, *, state: pathlib.Path | None = None, studio: pathlib.Path | None = None,
+                 flags_file: pathlib.Path | None = None, use_chain: bool = True) -> dict[str, dict]:
+    """Unified {agent: status_dict} across Chief-chain and Mini-worker agents."""
+    base = state or d()
+    runs = last_worker_runs(base)
+    names = list(dict.fromkeys([*chain(), "claude", "chief", *routing.MINI_WORKERS]))
+    return {a: agent_status(a, at, state=base, studio=studio, flags_file=flags_file, mutate=False,
+                            use_chain=use_chain, runs=runs) for a in names}
+
+
 def state_of(agent: str, at: dt.datetime) -> tuple:
     """(up, why) for one agent in the chain."""
-    if agent == "claude":
-        claude_beat_state(at)  # a newer heartbeat clears its old down mark before election
-    mark = read_json(d("down", agent + ".json"))
-    if mark:
-        until = parse(mark["until"]) if mark.get("until") else None
-        since = parse(mark["since"])
-        beat = last_seen(agent)
-        if until and at >= until:
-            mark_up(agent)
-        elif agent == "chief" and ((beat and beat > since) or (mark.get("kind") != "stalled"
-                                                              and grok_post_age(at, after=since) is not None)):
-            # Grok has worked since it was marked down: it's back. A stall (inbox taken, not progressed) clears only
-            # when Grok runs jobs.py again; a post on the thread is talk, not progress.
-            mark_up(agent)
-        else:
-            return False, f"marked down: {mark.get('reason') or 'no reason given'}" + (f" (retry after {mark['until']})" if until else "")
-    flag = routing.read_flags(at, str(STUDIO / "scripts" / "credit_flags.json")).get(agent)
-    if flag and (hard_flag(agent, at) or not (agent == "chief" and grok_post_age(at) is not None
-                                             and grok_post_age(at) <= int(os.environ.get("CHIEF_GROK_FRESH_MIN", "180")))):
-        return False, f"flagged out of credit: {flag}"   # Grok posting again proves it's back, flag or not
-    if agent == "chief":
-        fresh = int(os.environ.get("CHIEF_GROK_FRESH_MIN", "180"))
-        beat = last_seen(agent)
-        if beat and int((at - beat).total_seconds() // 60) <= fresh:
-            return True, f"ran jobs.py {int((at - beat).total_seconds() // 60)} min ago"
-        age = grok_post_age(at)
-        if age is not None and age <= fresh:
-            return True, f"posted on the thread {age} min ago"
-        return False, "no Grok post on the thread in the last {} h".format(fresh // 60) + (
-            f"; last jobs.py run {int((at - beat).total_seconds() // 3600)} h ago" if beat else "")
-    if agent == "claude":
-        out, why = claude_out(at, read_json(STUDIO / "jobs" / "queue.json") or {})
-        if out:
-            return False, why
-        beat = ((read_json(d("claude_beat.json")) or {}).get("beat") or {}).get("at")
-        if not beat:
-            return False, "no heartbeat yet"
-        return True, f"heartbeat {int((at - parse(beat)).total_seconds() // 60)} min ago"
-    if agent in routing.MINI_WORKERS:
-        return (True, "ready") if cli_spec(agent) else (False, "CLI not installed")
-    return False, "unknown agent"
+    st = agent_status(agent, at, mutate=True, use_chain=False)
+    return st["up"], st["why"]
 
 
 def override(at: dt.datetime):
@@ -1018,9 +1345,13 @@ def heartbeat_doc(at: dt.datetime, state: str, agent: str = "", note: str = "") 
     """What the Kanban shows about the Mini: when the relay last ran and what it found (idle, running, busy, paused),
     and who the acting Chief is (Claude's hourly run reads it to know whether the Chief work is its own)."""
     chief = (read_json(d("current.json")) or {}).get("agent") or ""
-    chain_rows = (read_json(d("chain.json")) or {}).get("rows") or []
-    return {"at": iso(at), "state": state, "agent": agent, "note": note[:200], "host": "mac-mini", "chief": chief,
-            "chain": chain_rows}
+    chain_doc = read_json(d("chain.json")) or {}
+    chain_rows = chain_doc.get("rows") or []
+    doc = {"at": iso(at), "state": state, "agent": agent, "note": note[:200], "host": "mac-mini", "chief": chief,
+           "chain": chain_rows}
+    if chain_doc.get("workers"):
+        doc["workers"] = chain_doc["workers"]
+    return doc
 
 
 def parked_reviews(data: dict) -> list:
@@ -1377,6 +1708,123 @@ def hand_back_claude(data: dict) -> list:
     return back
 
 
+BEN_WAITING_TEXT_RE = re.compile(
+    r"\bBen\b[^.\n]{0,90}\b(?:is waiting|waits|cannot approve|can't approve|so he can approve|approve again|until this is done Ben)\b"
+    r"|\b(?:blocking Ben|until this is done Ben cannot)\b",
+    re.I,
+)
+
+
+def ben_waiting_on(job: dict, rows: list, by_id: dict) -> str:
+    """Why Ben is waiting on this open job (immediate request, approved delivery, blocking a Ben job, or explicit text)."""
+    if job.get("due_kind") == "user-immediate-claim":
+        return "Ben is waiting on this immediate request"
+    if job.get("ben_waiting") or job.get("awaits_ben"):
+        return "Ben is waiting on this job"
+    if job.get("approved_from"):
+        return "Ben approved the cut and is waiting on delivery"
+    for other in rows:
+        if other.get("status") not in workflow.LIVE:
+            continue
+        if not (other.get("needs") == "ben" or other.get("awaits_ben") or other.get("approved_from")
+                or other.get("due_kind") == "user-immediate-claim"):
+            continue
+        seen, cur = {other.get("id")}, other
+        while cur and cur.get("after") and cur["after"] not in seen:
+            if cur["after"] == job.get("id"):
+                return f"Ben is waiting on {other['id']}"
+            seen.add(cur["after"])
+            cur = by_id.get(cur["after"])
+    blob = " ".join(str(job.get(k) or "") for k in ("title", "plain", "body"))
+    if BEN_WAITING_TEXT_RE.search(blob):
+        return "Ben is waiting on this job"
+    return ""
+
+
+def _addressed_since(job: dict) -> dt.datetime | None:
+    for h in reversed(job.get("history") or []):
+        what = str(h.get("what") or "")
+        if what.startswith(("rerouted to ", "reopened", "added")):
+            ts = workflow.timestamp(h.get("at"))
+            if ts:
+                return ts
+    return workflow.timestamp(job.get("created_at") or job.get("addedAt"))
+
+
+def _next_addressed_lane(job: dict, after_agent: str, eligible: set[str]):
+    """Next lane in the job's routing chain, or another eligible Mini worker when an urgent/overdue/Ben job runs out of chain."""
+    lane = routing.next_lane(job, after_agent, eligible, job.get("model") or "")
+    if lane:
+        return lane
+    rest = eligible - {after_agent}
+    lane = routing.next_lane(job, "", rest)
+    if lane:
+        return lane
+    for w in routing.MINI_WORKERS:
+        if w in rest:
+            m = routing.model_for(job, w)
+            if routing.lane_ok(w, m):
+                return (w, m)
+    return None
+
+
+def addressed_jobs_to_reroute(data: dict, up: set, at: dt.datetime | None = None) -> list[tuple[dict, tuple[str, str] | None, str]]:
+    """Open jobs addressed to a down agent (`for: <agent>`, without `rerouted_from`) that must move on:
+      - Ben is waiting on the job -> never sits on a down agent;
+      - the agent is down past the job's due time (`at >= due` or `until > due`);
+      - the job is urgent and the agent is down for > 20 min (`until - at > 20m`, `at - down_since > 20m`, or `at - job_since > 20m`).
+    Ordinary hand-addressed jobs (e.g. an unhurried second opinion) keep waiting for the named agent."""
+    at = at or now()
+    rows = data.get("jobs", [])
+    by_id = {j["id"]: j for j in rows if j.get("id")}
+    due_map = workflow.deadlines(rows)
+    capabilities = worker_capabilities()
+    out = []
+    for j in rows:
+        target = str(j.get("for") or "").strip()
+        if not target or j.get("rerouted_from") or j.get("status") != "open":
+            continue
+        if workflow.role_job(j) or j.get("needs") in ("ben", "macbook"):
+            continue
+        if workflow.external_hold(j, at) or workflow.dependency_problem(j, by_id):
+            continue
+        if j.get("after") and by_id.get(j["after"], {}).get("status") != "done":
+            continue
+        st = agent_status(target, at, mutate=False, use_chain=False)
+        model_down = bool(j.get("model") and not routing.lane_ok(target, j["model"]))
+        worker_down = (target in routing.MINI_WORKERS and target not in up) or not st["up"] or model_down
+        if not worker_down:
+            continue
+        down_until = workflow.timestamp(st.get("until"))
+        mark = read_json(d("down", f"{target}.json")) or {}
+        down_since = workflow.timestamp(mark.get("since"))
+        wait_since = _addressed_since(j)
+        reason_detail = st.get("reason") or ("flagged model unavailable" if model_down else "down")
+        why = ""
+        ben_why = ben_waiting_on(j, rows, by_id)
+        job_due = due_map.get(j["id"])
+        if ben_why:
+            why = f"{NAMES.get(target, target)} is down ({reason_detail}) and {ben_why}"
+        elif job_due and at >= job_due:
+            why = f"{NAMES.get(target, target)} is down past due time {iso(job_due)} ({reason_detail})"
+        elif job_due and down_until and down_until > job_due:
+            why = f"{NAMES.get(target, target)} is down until {iso(down_until)}, past due time {iso(job_due)}"
+        elif j.get("urgent"):
+            over_20 = (
+                (down_until is not None and (down_until - at) > URGENT_DOWN_MAX)
+                or (down_since is not None and (at - down_since) > URGENT_DOWN_MAX)
+                or (wait_since is not None and (at - wait_since) > URGENT_DOWN_MAX)
+            )
+            if over_20:
+                span = f"until {iso(down_until)}" if down_until and (down_until - at) > URGENT_DOWN_MAX else "for over 20 min"
+                why = f"urgent job on {NAMES.get(target, target)}, which is down {span} ({reason_detail})"
+        if not why:
+            continue
+        elig = {a for a in up if not workflow.capability_problem(j, a, at, capabilities)}
+        out.append((j, _next_addressed_lane(j, target, elig), why))
+    return out
+
+
 def lane_model(lane) -> str:
     """The model to pin on a rerouted job: the lane's model when that worker runs it by name, else none."""
     return lane[1] if routing.RUNS_ON.get(lane[1]) == lane[0] else ""
@@ -1391,8 +1839,8 @@ def reroute_work(at: dt.datetime) -> list:
     data = read_json(STUDIO / "jobs" / "queue.json") or {}
     out, why = claude_out(at, data)
     if any(claude_blocked_on_limit(j) for j in data.get("jobs", [])) and not read_json(d("down", "claude.json")):
-        retry_h = float(os.environ.get("CHIEF_RETRY_H", "3"))
-        mark_down("claude", "a Claude job was blocked on a usage limit", at + dt.timedelta(hours=retry_h), at)
+        until = usage_retry_until("claude", at, at)
+        mark_down("claude", "a Claude job was blocked on a usage limit", until, at, kind="usage")
     if not out:
         hand_back_claude(data)
     capabilities = worker_capabilities()
@@ -1401,6 +1849,7 @@ def reroute_work(at: dt.datetime) -> list:
              for j in claude_jobs_to_reroute(data, at, out)]
     moves += [(j, routing.next_lane(j, j["for"], eligible(j), j.get("model") or ""), f"{NAMES.get(j['for'], j['for'])} is unavailable or lacks required input")
               for j in stranded_jobs(data, up, at)]
+    moves += addressed_jobs_to_reroute(data, up, at)
     moves += [(j, routing.next_lane(j, j["by"], eligible(j), j.get("model") or ""), f"{NAMES.get(j['by'], j['by'])} stopped answering on it (claim past its ETA)")
               for j in stalled_claims(data, at)]
     moved = []
@@ -1814,7 +2263,16 @@ def run_locked(at: dt.datetime) -> int:
         alert_no_chief(who, rows, at)
         # The board shows who is Chief and who is out, and why (Ben, 21 Oct 2026).
         # `rows` stays the home chain. The other channel is stored under its slug.
-        chain_state = {"at": iso(at), "rows": [{"agent": a, "up": up, "why": why[:120]} for a, up, why in rows]}
+        worker_states = [agent_status(w, at, mutate=False, use_chain=False) for w in routing.MINI_WORKERS]
+        worker_by_id = {st["agent"]: st for st in worker_states}
+        chain_state = {
+            "at": iso(at),
+            "rows": [{"agent": a, "up": up, "why": why[:120],
+                      "until": (worker_by_id.get(a) or agent_status(a, at, mutate=False, use_chain=False))["until"]}
+                     for a, up, why in rows],
+            "workers": [{"agent": st["agent"], "up": st["up"], "why": st["why"][:120], "until": st["until"]}
+                        for st in worker_states],
+        }
         if guest:
             chain_state[guest] = {"chief": guest_who,
                                   "rows": [{"agent": a, "up": up, "why": why[:120]} for a, up, why in guest_rows]}
@@ -1997,27 +2455,30 @@ def run_locked(at: dt.datetime) -> int:
             record_chief_attempt(reviews[0], who, now())
             reviewed.add(reviews[0]["id"])
         if usage:
-            until = now() + dt.timedelta(hours=retry_h)
-            on_auto = who == "cursor" and model not in routing.SEPARATE_POOLS and bool(cursor_default_out(now()))
+            now_at = now()
+            until = usage_retry_until(who, now_at, now_at)
+            on_auto = who == "cursor" and model not in routing.SEPARATE_POOLS and (
+                bool(cursor_default_out(now_at)) or not routing.lane_ok("cursor", "cursor-auto"))
             if who == "cursor" and MODEL_LIMIT_RE.search(said) and model not in routing.SEPARATE_POOLS and not on_auto:
                 # Only the model Cursor defaults to is out (its Opus pool), not Cursor: run it on Auto for the
                 # mark's length and keep it up (Ben, 15 Oct 2026: Cursor was benched overnight with credit left).
-                write_json(d("cursor_default_out.json"), {"since": iso(now()), "until": iso(until), "said": said})
-                log(f"cursor: its default model is out ({said}); Cursor runs on Auto until {iso(until)}")
-                at = now()
+                auto_until = now_at + dt.timedelta(hours=retry_h)
+                write_json(d("cursor_default_out.json"), {"since": iso(now_at), "until": iso(auto_until), "said": said})
+                log(f"cursor: its default model is out ({said}); Cursor runs on Auto until {iso(auto_until)}")
+                at = now_at
                 continue   # the same job, on Auto, in this same run
             elif model in routing.SEPARATE_POOLS:
                 # Only this model's pool is empty (Claude-in-Cursor): flag the model, keep the worker up for its other
                 # models, and move the job on down its chain (Ben, 14 Oct 2026: run 24/7 on whoever has credit).
-                mark_model_down(model, f"{NAMES.get(who, who)} on {routing.cli_model(model)} said out of credit", until, now())
+                mark_model_down(model, f"{NAMES.get(who, who)} on {routing.cli_model(model)} said out of credit", until, now_at)
                 routing.OUT.add(model)
                 log(f"{who} on {model} looks out of credit: that model is flagged until {iso(until)}; {who} stays up")
             else:
-                mark_down(who, f"out of usage, credit or signed out (its last run ended: \"{said}\")", until, now())
+                mark_down(who, f"out of usage, credit or signed out (its last run ended: \"{said}\")", until, now_at, kind="usage")
                 log(f"{who} looks out of usage or signed out: down until {iso(until)}; walking the job's chain")
             if job:
-                walk_on(job, who, model, now())
-            at = now()
+                walk_on(job, who, model, now_at)
+            at = now_at
             continue
         bad_model = (model or ("cursor-grok-4-7" if who == "cursor" and not cursor_default_out(now()) else ""))
         if code not in (0, 124) and bad_model and UNKNOWN_MODEL_RE.search(tail[-1500:]):
@@ -2189,6 +2650,7 @@ def main(argv=None) -> int:
         mark_down(a.agent, a.reason, parse(a.until) if a.until else None, at)
     elif a.cmd == "up":
         mark_up(a.agent)
+        seen(a.agent, at)
     return cmd_status(at)
 
 

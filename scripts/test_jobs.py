@@ -725,5 +725,60 @@ class QueueHoldsNoPrivateDetail(unittest.TestCase):
             self.assertFalse(test_email_ratchet.ADDRESS.search(jobs.scrub(line)) or test_no_private_network.ADDRESS.search(jobs.scrub(line)))
 
 
+class DownAgentAddressedFailover(unittest.TestCase):
+    """J2980: jobs addressed to a down agent move on when overdue, urgent (>20 min), or blocking Ben."""
+
+    def test_addressed_job_past_due_moves_to_next_in_chain_with_history_reason(self):
+        d = queue(("mini", "Studio daily check", {"for_agent": "cursor", "kind": "studio", "due": "2026-10-07T11:30Z"}))
+        with patch.object(jobs.chief_relay, "agent_status",
+                          side_effect=lambda a, *args, **kw: {"agent": a, "up": a != "cursor",
+                                                              "why": "out of usage", "reason": "last run out of usage",
+                                                              "until": "2026-10-07T15:00:00Z"}):
+            moved = jobs.reconcile_addressed(d, T0, up={"codex", "gemini", "claudecode"})
+        j = d["jobs"][0]
+        self.assertEqual(moved, ["J0001"])
+        self.assertEqual((j["for"], j["model"]), ("codex", "gpt-6.1-sol"))
+        self.assertIn("past due time 2026-10-07T11:30:00Z", j["history"][-1]["what"])
+
+    def test_urgent_addressed_job_waits_for_brief_blip_and_moves_past_20_minutes(self):
+        # 1) Down for only 15 min (<20 min) and just added: stays on the addressed agent.
+        d = queue(("mini", "Urgent thumb check", {"for_agent": "codex", "kind": "thumb"}))
+        d["jobs"][0]["urgent"] = 1
+        with patch.object(jobs.chief_relay, "agent_status",
+                          side_effect=lambda a, *args, **kw: {"agent": a, "up": a != "codex",
+                                                              "why": "capacity", "reason": "provider at capacity",
+                                                              "until": "2026-10-07T12:15:00Z"}):
+            self.assertEqual(jobs.reconcile_addressed(d, T0, up={"cursor", "gemini"}), [])
+            # 2) At +21 min (or when down until >20 min out), urgent job moves on with history line saying why.
+            moved = jobs.reconcile_addressed(d, T0 + 21 * MIN, up={"cursor", "gemini"})
+        j = d["jobs"][0]
+        self.assertEqual(moved, ["J0001"])
+        self.assertEqual((j["for"], j["model"]), ("cursor", "cursor-grok-4-7"))
+        self.assertIn("urgent job on Codex", j["history"][-1]["what"])
+
+    def test_ben_waiting_job_never_sits_on_a_down_agent(self):
+        # J2907: Ben was waiting on the board token redeploy to approve anything; even at minute 0 on a short down mark it moves.
+        d = queue(("mini", "Redeploy board token", {"for_agent": "cursor", "kind": "studio"}))
+        d["jobs"][0]["plain"] = "Ben put the regenerated token in: redeploy the board so he can approve again"
+        with patch.object(jobs.chief_relay, "agent_status",
+                          side_effect=lambda a, *args, **kw: {"agent": a, "up": a != "cursor",
+                                                              "why": "down", "reason": "last run out of usage",
+                                                              "until": "2026-10-07T12:05:00Z"}):
+            moved = jobs.reconcile_addressed(d, T0, up={"gemini", "claudecode"})
+        j = d["jobs"][0]
+        self.assertEqual(moved, ["J0001"])
+        self.assertEqual((j["for"], j["model"]), ("claudecode", "mini-claude-opus-5-5"))
+        self.assertIn("Ben is waiting on this job", j["history"][-1]["what"])
+
+    def test_ordinary_unhurried_addressed_job_keeps_waiting_for_its_named_agent(self):
+        d = queue(("mini", "Second opinion from Codex on plan", {"for_agent": "codex", "kind": "review"}))
+        with patch.object(jobs.chief_relay, "agent_status",
+                          side_effect=lambda a, *args, **kw: {"agent": a, "up": a != "codex",
+                                                              "why": "down", "reason": "usage limit",
+                                                              "until": "2026-10-08T00:00:00Z"}):
+            self.assertEqual(jobs.reconcile_addressed(d, T0, up={"cursor", "gemini"}), [])
+        self.assertEqual(d["jobs"][0]["for"], "codex")
+
+
 if __name__ == "__main__":
     unittest.main()
