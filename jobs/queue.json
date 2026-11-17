@@ -250822,13 +250822,13 @@
       "stage": "edit",
       "after": "J2807",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-17T22:33Z",
-      "eta": "2026-11-17T22:53Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-14T03:45Z",
-      "result": "",
+      "result": "HOS 009 revised score v02 NOT ACCEPTED (HOLD) in SCORE_DISPOSITION_J2808.md / .json (HOS PR #638 merged at cf8d334e; PRs #636 and #637 merged; desk #6963231302). J2806 passed preflight guards (2,475 <= 3,000 subscription credits, GBP0, 0 overage) and complete 89-bed music_gate (max 0.6615 < 0.80, 0 fails, 0 unreadable), and J2807 passed 175.28-178.28s crossfade, tempo (~55-70 BPM), VO clarity, and 526s/535.3s tail coverage, but failed wonder_v02 (0-178.28s) by ear on six 0.61-2.29s < -45 dB inter-phrase silent dropouts in 18.95-97.92s (plus no lute), caused by 'space between short, gently changing phrases' in the J2805 prompt. Candidate v01 failed unchanged music_gate (0.821 on 0-21s) and PR908 failed J2803 validation. With no extra take, loop, splice, filter, waiver or PR908 deploy permitted in J2808, no compliant route is presently available; J2035 (retained 15 Nov 18:00Z deadline) and J2171 remain held. GBP0 / 0 credits spent.",
       "history": [
         {
           "at": "2026-11-14T03:45Z",
@@ -250869,6 +250869,11 @@
           "at": "2026-11-17T22:48Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Merged HOS PR #636, #637, #638 (cf8d334e); posted desk ruling #6963231302; updated J2035/J2171 hold metadata and retained 15 Nov 18:00Z deadline."
+        },
+        {
+          "at": "2026-11-17T22:48Z",
+          "by": "gemini",
+          "what": "done: HOS 009 revised score v02 NOT ACCEPTED (HOLD) in SCORE_DISPOSITION_J2808.md / .json (HOS PR #638 merged at cf8d334e; PRs #636 and #637 merged; desk #6963231302). J2806 passed preflight guards (2,475 <= 3,000 subscription credits, GBP0, 0 overage) and complete 89-bed music_gate (max 0.6615 < 0.80, 0 fails, 0 unreadable), and J2807 passed 175.28-178.28s crossfade, tempo (~55-70 BPM), VO clarity, and 526s/535.3s tail coverage, but failed wonder_v02 (0-178.28s) by ear on six 0.61-2.29s < -45 dB inter-phrase silent dropouts in 18.95-97.92s (plus no lute), caused by 'space between short, gently changing phrases' in the J2805 prompt. Candidate v01 failed unchanged music_gate (0.821 on 0-21s) and PR908 failed J2803 validation. With no extra take, loop, splice, filter, waiver or PR908 deploy permitted in J2808, no compliant route is presently available; J2035 (retained 15 Nov 18:00Z deadline) and J2171 remain held. GBP0 / 0 credits spent."
         }
       ],
       "remaining_action": "Mark J2808 done after merging HOS PR #638 and posting desk ruling #6963231302",
@@ -250884,7 +250889,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/638"
     },
     {
       "id": "J2809",
