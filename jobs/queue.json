@@ -236528,9 +236528,14 @@
           "at": "2026-11-17T10:08Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Restored 2/3 progress; verifying commit 2ecf84b2, NAS diagnostic rough/sheets, check_all.sh, and PR 551 status"
+        },
+        {
+          "at": "2026-11-17T10:15Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Verified 2ecf84b2 check_all.sh PASS, 6/6 v03f unit tests PASS, clip_check PASS, NAS SHA256s & full decode PASS; fixing double-portrait overlap on P5:02b_wide in v03f-r3 without touching v03f/v03f-r2"
         }
       ],
-      "remaining_action": "Verifying pushed checkpoint 2ecf84b2 (35 free graphics + v03f-r2 NAS rough + 390px sheets + tests) to complete step 3/3 and hand off to Chief",
+      "remaining_action": "Patching double-portrait overlap on P5:02b_joint_papers_lectern_wide & P3:09a into non-destructive v03f-r3, then completing step 3/3 and reporting on desk #180",
       "due": "2026-11-16T18:00:00Z",
       "for": "gemini",
       "kind": "chart",
@@ -236550,9 +236555,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-17T10:08Z",
+        "at": "2026-11-17T10:15Z",
         "by": "gemini",
-        "note": "Restored 2/3 progress; verifying commit 2ecf84b2, NAS diagnostic rough/sheets, check_all.sh, and PR 551 status"
+        "note": "Verified 2ecf84b2 check_all.sh PASS, 6/6 v03f unit tests PASS, clip_check PASS, NAS SHA256s & full decode PASS; fixing d"
       }
     },
     {
