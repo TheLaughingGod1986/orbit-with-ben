@@ -237236,13 +237236,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-17T11:41Z",
-      "eta": "2026-11-17T13:41Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-12T01:54Z",
-      "result": "",
+      "result": "Assembled hos_008_short_C_v07.mp4 on studio-live NAS (22.083 s, 936x1664, -14.0 LUFS, -2.5 dBTP, sha256 a3404a314a444a0fd987ca648c28425be8afb768f83748ee64e553951c8f06a8; v03..v06 preserved untouched) fixing all 5 J2485 items (Franklin's 0.980-1.489s <=1.50s / ASR 0.820-1.480s, 0 caption overlaps/orphans, S06 4.00s, S07 3.10s, S01/loop_tail [600,0,405,720] & S02 [180,0,405,720] crops). All 7 gates + check_all.sh PASS; HOS PR #556 (macbook/J2662 @ 168f8915) open against main for Chief merge; queued non-producer QA/UAT job J2984. GBP0.",
       "history": [
         {
           "at": "2026-11-12T01:54Z",
@@ -237383,6 +237383,11 @@
           "at": "2026-11-17T11:44Z",
           "by": "macbook",
           "what": "step 4 of 5 done"
+        },
+        {
+          "at": "2026-11-17T11:50Z",
+          "by": "macbook",
+          "what": "done: Assembled hos_008_short_C_v07.mp4 on studio-live NAS (22.083 s, 936x1664, -14.0 LUFS, -2.5 dBTP, sha256 a3404a314a444a0fd987ca648c28425be8afb768f83748ee64e553951c8f06a8; v03..v06 preserved untouched) fixing all 5 J2485 items (Franklin's 0.980-1.489s <=1.50s / ASR 0.820-1.480s, 0 caption overlaps/orphans, S06 4.00s, S07 3.10s, S01/loop_tail [600,0,405,720] & S02 [180,0,405,720] crops). All 7 gates + check_all.sh PASS; HOS PR #556 (macbook/J2662 @ 168f8915) open against main for Chief merge; queued non-producer QA/UAT job J2984. GBP0."
         }
       ],
       "remaining_action": "Verify restored v07 master, inspect 1fps/audio & all J2485 fixes, run check_all.sh, push PR #556",
