@@ -78,7 +78,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2927 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J2933 | mini | blocked | claudecode | – | 010 edit · qa · `mini-claude-opus-5-5` · Review HOS 010 Short A v01 and Short C v01 (J2172, PR #611) | J2172 |
 | J2951 | cloud | open | – | – | assembly · Stop the refill tick using 3-4 GB: read the acting Chief once per scan |  |
-| J2957 | mini | claimed | gemini | 2026-11-17T01:33Z | 007 upload · studio · Upload HOS 007 Short variolation v05 (What Is Variolation?) Private, Sat 28 Nov 11:30 | 6912169020 |
 | J2958 | mini | blocked | claudecode | – | 007 upload · studio · Upload HOS 007 Short eradication v06 (How Was Smallpox Eradicated?) Private, Sun 29 Nov 11:30 | 6914782767 |
 | J2965 | any | open | – | – | 116 topic · review · HOS 116 Why Do We Get Goosebumps?: rule-E topic go/no-go review |  |
 | J2966 | any | open | – | – | 117 topic · review · HOS 117 Why Don't Woodpeckers Get Concussions?: rule-E topic go/no-go review |  |
@@ -91,22 +90,7 @@ Recently finished:
 - J2961 done: Sleep video: read back the Private upload against the master Ben OK'd, before it airs Sat 12 Dec (Read-back posted on the thread: 13q4_EoLEN4 is Private, scheduled 2026-12-12T21:00:00Z, PT1H48M23S, title exact, FALL ASLEEP IN SPACE thumbnail, synthetic-content disclosure on, 13 chapters. Upload is master v02: NAS sha256 e6f1064d...81ec0 re-verified, YouTube fileSize 4,216,695,410 = master bytes, frame at 97:40.5 matches (SSIM 0.94). Sound not checked (no audio input). Nothing changed in Studio. Final OK left to the Chief.)
 - J2960 done: Verify condition for J2831 (Chief ruling (gemini): CONDITION MET for J2831 (jobs/reviews/J2960/REVIEW.md, commit 52888613c4). Scheduled check time 2026-11-16T21:10:00Z and 24h file cutoff 2026-11-16T21:06:07Z passed at 2026-11-16T21:24:06Z; '~/Library/Mobile Documents/com~apple~CloudDocs/Link this phone to the board.html' (0600, 865B, mtime 2026-11-15T21:06:07Z) verified present; Ben's iPhone remains paired via issue #219 pairs[0] (2026-11-14T19:13:08.165Z, e=1795269633; verdicts through 2026-11-16T20:51:28.150Z). Reopened J2831 at step 3/4 and rerouted to gemini for step 4/4 cleanup ONLY (delete iCloud file and confirm on #478; do not mint another link).)
 - J2959 done: Verify condition for J2040 (done)
+- J2957 done: Upload HOS 007 Short variolation v05 (What Is Variolation?) Private, Sat 28 Nov 11:30 (PASS & DONE: HOS 007 Short variolation v05 (What Is Variolation?, sha256 c7ae9537...bbc2) is Private as sY0PSQFxjp8 scheduled for Sat 28 Nov 2026 11:30Z (cover set, en-GB captions serving, Related video ETynHpIYLeY set & read back in Studio, Not Made for Kids, Altered content Yes, registered in social/hos/UPLOADS.json, open-gate library scheduled). Accidental duplicate wkyGOKepjeQ unscheduled to Private (no publishAt, never deleted; channel:audit 67 videos, 0 errors). Receipt PR #622 merged at 177f0254.)
 - J2956 done: Upload HOS 005 Short s07 v04 (How Does the Heart Pump Blood?) Private, Sun 22 Nov 11:30 (PASS (Elected Acting Chief gemini): Reviewed and merged history-of-science PR #621 (commit 091db2ba). HOS 005 Short s07 v04 (fgsR8yAHr5s, How Does the Heart Pump Blood?) is Private and scheduled for Sun 22 Nov 2026 11:30 London (2026-11-22T11:30:00Z); frame-0 cover set, en-GB 64-word captions serving, Related video set to wwcjcFfC-5M, Not Made for Kids, Altered content Yes, registered in OWB social/hos/UPLOADS.json (ea03dabe93), SHORTS_RELEASE.json and open-gate library updated, channel:audit 0 errors, check_all PASS.)
 - J2955 done: Upload HOS 005 Short s06 v04 (How Does a Blood Pressure Cuff Work?) Private, Fri 20 Nov 11:30 (Sq_lV89VMUs Private, publishAt 2026-11-20T11:30:00Z, uploaded once. en-GB captions serving. Studio saved and read back: Related video wwcjcFfC-5M, Not Made for Kids, Altered content Yes, Scheduled. Social register on OWB main 3f8fe0c0b5. Open-gate library scheduled. channel:audit 0 errors, check_all PASS. Receipt: history-of-science PR 624, for the Chief to merge. HOS Studio tab (CDP 9460) was frozen; replaced with one fresh tab, so J2957/J2958 Related video can now be set.)
 - J2954 done: Sleep video: send Ben the whole 108-minute film to watch, not a 30-second clip (Built and verified full 108-minute 720p phone copy sleep_video_01_master_v02_PHONE.mp4 (sha256 4cf4479719ac..., 6502.333s, 195070 frames, bit-identical master audio), uploaded to R2 owb-sleep-01-v02 (302->206 verified), registered in watch_uploads.json (55e4e2c5b8), and sent Ben's whole-film watch card. Private upload 13q4_EoLEN4 untouched.)
-- J2953 done: First-day check at 6 h: "What Is Dalton's Atomic Theory?" (xzKoHg0E0_U) ("What Is Dalton's Atomic Theory?" (xzKoHg0E0_U) · History of Science · Short · went live Mon 16 Nov 11:30 London
-At 6 h: views 53 · Studio rank 6 of 10 · shown in feed about 21 (from 10 feed views) · stayed to watch 48.4% · average viewed 51.6%
-Usual for this channel: stayed to watch 28.9%, average viewed 75.9%
-
-Verdict: USUAL
-  - 53 views at 6 h; Studio says the usual for us at this age is 55.
-  - Studio ranks it 6 of 10 against our latest videos at the same age.
-
-What is different about this one
-  - The title starts with "What", like 4 earlier Shorts: they had 36 views by the next morning (median), against 81 for all Shorts.
-  - It is a second upload of the same video (it replaced -sa2t7dAtCk).
-
-Do now
-  - Nothing to fix.
-
-PR #971 (macbook/J2953 -> main, commit f1a0bee56): 05_Analytics/hos/launch/xzKoHg0E0_U.json + jobs/reviews/J2953/REVIEW.md (0 faults in Studio; left open for Chief merge).)

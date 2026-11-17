@@ -263158,13 +263158,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-17T00:03Z",
-      "eta": "2026-11-17T01:33Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-16T21:16Z",
-      "result": "",
+      "result": "PASS & DONE: HOS 007 Short variolation v05 (What Is Variolation?, sha256 c7ae9537...bbc2) is Private as sY0PSQFxjp8 scheduled for Sat 28 Nov 2026 11:30Z (cover set, en-GB captions serving, Related video ETynHpIYLeY set & read back in Studio, Not Made for Kids, Altered content Yes, registered in social/hos/UPLOADS.json, open-gate library scheduled). Accidental duplicate wkyGOKepjeQ unscheduled to Private (no publishAt, never deleted; channel:audit 67 videos, 0 errors). Receipt PR #622 merged at 177f0254.",
       "history": [
         {
           "at": "2026-11-16T21:16Z",
@@ -263265,6 +263265,11 @@
           "at": "2026-11-17T00:10Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Related video ETynHpIYLeY set & read back in Studio (STUDIO_READBACK_J2957.json); PR 622 merged at 177f0254"
+        },
+        {
+          "at": "2026-11-17T00:10Z",
+          "by": "gemini",
+          "what": "done: PASS & DONE: HOS 007 Short variolation v05 (What Is Variolation?, sha256 c7ae9537...bbc2) is Private as sY0PSQFxjp8 scheduled for Sat 28 Nov 2026 11:30Z (cover set, en-GB captions serving, Related video ETynHpIYLeY set & read back in Studio, Not Made for Kids, Altered content Yes, registered in social/hos/UPLOADS.json, open-gate library scheduled). Accidental duplicate wkyGOKepjeQ unscheduled to Private (no publishAt, never deleted; channel:audit 67 videos, 0 errors). Receipt PR #622 merged at 177f0254."
         }
       ],
       "remaining_action": "Complete J2957 after PR 622 merge",
@@ -263295,7 +263300,8 @@
         "at": "2026-11-17T00:10Z",
         "by": "gemini",
         "note": "Related video ETynHpIYLeY set & read back in Studio (STUDIO_READBACK_J2957.json); PR 622 merged at 177f0254"
-      }
+      },
+      "done_ref": "177f0254"
     },
     {
       "id": "J2958",
