@@ -4,7 +4,10 @@
   "air": "",
   "stages": {
     "topic": {
-      "state": "doing"
+      "state": "done",
+      "at": "2026-11-17",
+      "by": "gemini",
+      "ref": "jobs/reviews/J2978/REVIEW.md"
     },
     "script": {
       "state": "todo"
@@ -31,14 +34,6 @@
       "state": "todo"
     }
   },
-  "claims": [
-    {
-      "stage": "topic",
-      "by": "gemini",
-      "at": "2026-11-17T08:40Z",
-      "eta": "2026-11-17T09:40Z",
-      "note": ""
-    }
-  ],
-  "next": "Waiting in jobs/WIP.json next (Rule-E topic go/no-go review queued from J2974; starts Script stage only when an active OWB WIP slot opens after studio/plan.json format tests)"
+  "claims": [],
+  "next": "Pre-cleared in jobs/WIP.json next (Rule-E GO in J2978, 96/100; all 6 fixes applied); starts Script stage when an active OWB WIP slot opens after studio/plan.json format tests"
 }
