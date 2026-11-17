@@ -81,6 +81,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2974 | mini | claimed | macbook | 2026-11-17T08:12Z | for gemini · script · `gemini-argon` · OWB: learn from our data, add two new films to the backlog |  |
 | J2976 | mini | open | – | – | for claudecode · studio · `mini-claude-opus-5-5` · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J2977 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
+| J2978 | mini | open | – | – | 080 topic · review · Rule-E topic go/no-go review: OWB 080 (Every Rocket Explained in 10 Minutes) and 081 (Where Does Space Begin) from J2974 | 84d7b954e |
 
 Recently finished:
 

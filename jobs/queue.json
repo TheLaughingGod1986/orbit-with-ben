@@ -1,5 +1,5 @@
 {
-  "next_id": 2978,
+  "next_id": 2979,
   "jobs": [
     {
       "id": "J0001",
@@ -264976,6 +264976,34 @@
         "by": "gemini",
         "note": "Verification complete in jobs/reviews/J2977/REVIEW.md (078a54fca0); stopping at protected elected-Chief call wait --rech"
       }
+    },
+    {
+      "id": "J2978",
+      "title": "Rule-E topic go/no-go review: OWB 080 (Every Rocket Explained in 10 Minutes) and 081 (Where Does Space Begin) from J2974",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Rule-E topic go/no-go review for the two new Orbit With Ben backlog films created in J2974 (PR #980, commit `84d7b954e` on branch `macbook/J2974`, mirrored to `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/` with 18/18 SHA-256 verification on each):\n\n1. **OWB:080 (`02_Video-Projects/080_Every-Rocket-Explained-In-10-Minutes/TOPIC.md`):** *Every Rocket Explained in 10 Minutes (Saturn V to Starship)* (Rule 26 + `studio/plan.json` Step 3 complete-tour title `\"Every Rocket Explained in 10 Minutes (Saturn V to Starship)\"`, exact `#1` autocomplete + span variant `\"Every Rocket Explained in 10 Minutes (V-2 to Starship)\"`, and Rule 15 compact title `\"Every Rocket Explained in 10 Minutes\"`; `0` exact title collisions; `14` verified on-topic `>=1.07M` neighbours up to `16.43M` — Jared Owen `16.43M`/`4.99M`, SmarterEveryDay `13.40M`/`5.37M`/`5.02M`, Veritasium `13.20M`, Real Engineering `4.84M`/`2.11M`, The Royal Institution `4.27M`, Simple History `1.95M`, Peekaboo Kidz `1.89M`, Tier-1 TED-Ed `1.79M`, Science ABC `1.28M`, and minutephysics `1.07M`, plus The Space Race `765.3k` on Soviet rockets, Hazegrayart `745.7k` on `N1`, SciShow Kids `844.8k`, Tier-1 TEDx Don Pettit `235.0k`, and Tier-1 TED Peter Beck `180.9k` + `neighbours.py` `PASS` with `10` strictly on-topic `>=1M` Tier-1/Tier-2 education videos; primary `Tsiolkovsky 1903`, NASA SP-4206 *Stages to Saturn* `Bilstein 1980`, NASA *Saturn V Flight Manual*, `Siddiqi 2000`, & NASA/SpaceX sources; 2 E1 Short angles on how `Saturn V`'s five `F-1` engines burned `13 metric tonnes` [`15 US tons`] of fuel/s with `55,000-hp` turbopumps and why the `30-engine` Soviet `N1` Moon rocket exploded on all `4` launches).\n2. **OWB:081 (`02_Video-Projects/081_Where-Does-Space-Begin-The-Karman-Line/TOPIC.md`):** *Where Does Space Begin? (The 100 km Kármán Line Explained)* (Rule 26 `#1` autocomplete search phrase `\"Where Does Space Begin? (The 100 km Kármán Line Explained)\"` + `#1` autocomplete + Geocorona variant `\"Where Does Space Begin? (And Why Earth's Air Reaches Past the Moon)\"` + Rule 15 compact title `\"Where Does Space Begin? (100 km vs 80 km)\"` + `studio/plan.json` complete-tour contingency recast `\"Every Layer of Earth's Atmosphere Explained in 10 Minutes\"`; `0` exact title collisions; `15` strictly on-topic `>=1.02M` education/space videos up to `14.09M` — Kurzgesagt `14.09M`, Tier-1 TED Chris Hadfield `10.19M`, Seeker `6.92M` *No Human Has Ever Left Earth's Atmosphere*, CrashCourse `5.73M`/`2.82M`/`1.83M`/`1.77M`/`1.10M`, Peekaboo Kidz `3.86M`, Tier-1 TED-Ed `2.80M`/`1.79M`/`1.38M`/`1.38M`, StarTalk `1.76M`, and KINETIC SCHOOL `1.02M`, plus Seeker `485.5k` & Astrum `478.1k` on `Where Does Space Start?` + `neighbours.py` `PASS` with `11` strictly on-topic `>=1M` Tier-1/Tier-2 education videos; primary `von Kármán 1957`, `McDowell 2018` *Acta Astronautica*, `U.S. Standard Atmosphere 1976`, `Carruthers & Page 1972` *Science*, & `Baliukin et al. 2019` *JGR Space Physics* sources; 2 E1 Short angles on why space officially begins `100 km` up at the Kármán line and how `SOHO/SWAN` proved Earth's `630,000-km` hydrogen `Geocorona` reaches past the Moon).\n\nCheck `TOPIC.md` and `11_Upload-Package/` audit sheets in both folders (on PR #980 / `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/`) against `AGENTS.md` Rule E, `STUDIO_PLAYBOOK.md` §2, `studio/plan.json` (14 Nov 2026 long-video plan), and `LEARNINGS.md` rules 1–33 + `OWB-2026-11-E1`. Both films remain in `jobs/WIP.json` `next` under Rule G until an active OWB WIP slot frees up and `studio/plan.json` format tests read out.\n",
+      "ref": "84d7b954e",
+      "film": "080",
+      "stage": "topic",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-17T08:31Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T08:31Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Rule-E topic go/no-go review: OWB 080 (Every Rocket Explained in 10 Minutes) and 081 (Where Does Space Begin) from J2974",
+      "kind": "review"
     }
   ],
   "focus": [
