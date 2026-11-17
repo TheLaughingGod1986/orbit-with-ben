@@ -264540,9 +264540,14 @@
           "at": "2026-11-17T06:21Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Step 1 done: lint:package PASS and channel:audit PASS (67 videos, 0 errors)"
+        },
+        {
+          "at": "2026-11-17T06:23Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2 done: verified 38/38 public videos (7 longs end screens + 31 Shorts Related pills) and 8/8 scheduled videos live; 0 fixes needed"
         }
       ],
-      "remaining_action": "Verify live public watch-page end screens and Shorts Related pills, and inspect J2955-J2958 Studio readbacks",
+      "remaining_action": "Write 00_Brand/Channel-Setup/audits/live_fixes/2026-11-17.md, run check_all.sh, and commit/push on HOS",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "rerouted_from": {
@@ -264555,11 +264560,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-17T06:21Z",
+        "at": "2026-11-17T06:23Z",
         "by": "gemini",
-        "note": "Step 1 done: lint:package PASS and channel:audit PASS (67 videos, 0 errors)"
+        "note": "Step 2 done: verified 38/38 public videos (7 longs end screens + 31 Shorts Related pills) and 8/8 scheduled videos live;"
       },
       "taskKeys": [
         "HOS:001",
