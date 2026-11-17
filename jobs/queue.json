@@ -237321,9 +237321,14 @@
           "at": "2026-11-17T10:16Z",
           "by": "macbook-2",
           "what": "step 3 of 5 done"
+        },
+        {
+          "at": "2026-11-17T10:24Z",
+          "by": "macbook-2",
+          "what": "step 4 of 5 done"
         }
       ],
-      "remaining_action": "Verify NAS hos_008_short_C_v04.mp4 against J2485 fixes 1-5, run all gates + 1fps/audio inspection, and push evidence to PR #556",
+      "remaining_action": "Write J2662 recipe/build/contract files, run all automated gates (open, polish, picture_qa, music, sfx, atempo, check_all), and update PR #556",
       "kind": "assembly",
       "plain": "Re-cut HOS 008 Short C v04 from existing voice and picture to fix the J2485 review items",
       "rerouted_from": {
@@ -237336,9 +237341,9 @@
       "for": "gemini",
       "model": "gemini-agy",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-17T10:16Z",
+        "at": "2026-11-17T10:24Z",
         "by": "macbook-2"
       }
     },
