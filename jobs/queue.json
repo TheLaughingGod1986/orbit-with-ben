@@ -266435,13 +266435,13 @@
       "stage": "",
       "after": "",
       "eta_min": 75,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-17T11:20Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T08:37Z",
-      "result": "parked for Chief: review and merge PR #986 (scripts/board_publish.py + board_site cleanup), then deploy board_site to Cloudflare Pages, run board_publish.py --force, and verify 200 on both board addresses",
+      "result": "",
       "history": [
         {
           "at": "2026-11-17T08:37Z",
@@ -266492,6 +266492,11 @@
           "at": "2026-11-17T13:41Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-17T23:43Z",
+          "by": "codex",
+          "what": "reopened: Chief FIX on PR 986 head 3c62f76def: stale MacBook heartbeat renders Silent plus Working on a job. Review and reproduction: PR comment 6964344637. Reopen for bounded code repair and fresh/stale/missing-timestamp rendered tests; return for Chief review before merge or deploy. 108 Python tests OK (4 skipped) and three Node suites passed; new probe exposes missing coverage."
         }
       ],
       "remaining_action": "Chief review & merge PR #986, then deploy board_site to Cloudflare Pages, run board_publish.py --force, and verify 200 on both addresses",
@@ -266499,13 +266504,6 @@
       "for": "gemini",
       "kind": "studio",
       "plain": "Small tidy-ups on the board: readable times, no private folder path in its data, old Vercel files gone",
-      "progress": {
-        "step": 4,
-        "of": 5,
-        "at": "2026-11-17T11:40Z",
-        "by": "gemini",
-        "note": "Opened PR #986; parking for Chief merge and post-merge deploy verification"
-      },
       "escalated_at": "2026-11-17T13:41Z"
     },
     {
