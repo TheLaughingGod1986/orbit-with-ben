@@ -215684,9 +215684,14 @@
           "at": "2026-11-17T11:43Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T11:44Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J2438; read corrected FIRST30_PLAN.md, J2668, and J2383 review checklist"
         }
       ],
-      "remaining_action": "Execute corrected FIRST30_PLAN.md (0870bcdf52) to assemble 034 Pluto long master v02 and run picture_qa, polish_gate and music_gate",
+      "remaining_action": "Build _assemble_034_full_master_v02.py & shot_list_v02.csv per FIRST30_PLAN.md + J2383, render long v02 + Short 1 v02, and run all gates",
       "kind": "assembly",
       "plain": "Trim 034 Pluto Sentence 1 to <8 s, re-cut the first 30 s to <=4 s per cut (FIRST30_PLAN.md), and assemble master v02",
       "taskKeys": [
@@ -215704,11 +215709,10 @@
       "model": "gemini-agy",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-17T11:43Z",
+        "of": 5,
+        "at": "2026-11-17T11:44Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Claimed J2438; read corrected FIRST30_PLAN.md, J2668, and J2383 review checklist"
       }
     },
     {
