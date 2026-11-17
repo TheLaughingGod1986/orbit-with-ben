@@ -1,5 +1,5 @@
 {
-  "next_id": 2983,
+  "next_id": 2984,
   "jobs": [
     {
       "id": "J0001",
@@ -265683,6 +265683,35 @@
       "for": "gemini",
       "kind": "studio",
       "plain": "Small tidy-ups on the board: readable times, no private folder path in its data, old Vercel files gone"
+    },
+    {
+      "id": "J2983",
+      "title": "Rebuild three OWB weekly audit thumbnail Bs per panel decision J2843 (m09jUdwC5hk, Mo93x0fxB1Q, ziKBPJ6FY0U)",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Packaging panel decision `J2843` (`05_Analytics/tests/panels/owb-j2834-weekly-2026-11-14/DECISION.md`): all three critics scored the three `J2834` draft thumbnail Bs under `8/10` at `168×94` and agreed on concrete fixes. Rebuild the three challenger Bs (`£0` spend, real NASA public-domain plates only, new version filenames in each video's shared NAS `repackage_2026-11/J2834_v03/` folder as listed in `DECISION.md`, never overwriting `v04`/`v05`) before any Studio Test & Compare is armed:\n\n1. **`m09jUdwC5hk` (Compilation, *How Long Will Anything in Space Last?*): REBUILD (`m09jUdwC5hk_B_v05.jpg`)**\n   - **Plate & subject (2-of-3 consensus: `codex.md` + `cursor.md`):** Replace the cyan UV/IR Helix Nebula (`PIA09178`) with a real NASA/JPL-Caltech Cassini photograph of Saturn and its rings filling at least 1/3 of the frame (e.g., Cassini backlit *\"In Saturn's Shadow\"* mosaic `PIA08329` or natural-colour Cassini Saturn plate, graded to pass `thumb_preview.py long --score`).\n   - **Hook text (top band, 2–3 words, off subject):** **`RINGS ARE LEAVING`** (`LEAVING` in yellow `#FFE600`, `RINGS ARE` in white `#FFFFFF`; 2-word reserve if larger phone-size lettering is needed: **`RINGS: GONE`** with `GONE` in `#FFE600`).\n   - **Pointer:** One crisp white discovery arrow pointing at the rings raining inward toward Saturn's equator; bottom-right duration badge zone (`x>980, y>600`) clear.\n\n2. **`Mo93x0fxB1Q` (Fermi Paradox, *Why Haven't We Found Aliens Yet? The Fermi Paradox Explained*): KEEP concept & hook, REBUILD clean-up (`Mo93x0fxB1Q_B_v05.jpg`)**\n   - **Hook text (top band, 2 words, off subject):** **KEEP `ZERO SIGNALS`** (`ZERO` in yellow `#FFE600`, `SIGNALS` in white `#FFFFFF`).\n   - **Three concrete fixes (3-of-3 consensus: `codex.md` + `cursor.md` + `gemini.md`):**\n     1. Feather the top dark navy gradient smoothly over `y=0..180` to eliminate the hard horizontal seam at `y≈72` cutting through `ZERO SIGNALS`.\n     2. Move the yellow search reticle off the blazing white Galactic Centre core onto a dark dust pocket / darkened empty sky region (and darken/desaturate the sky inside the reticle by ~40%) so at `168×94` the target reads as **empty** (`ZERO SIGNALS`), not locked onto a bright source.\n     3. Anchor the Goldstone 70m dish (`PIA26716`) cleanly to the bottom-left frame edge (fixing the slanted cut at the bottom-left corner) and pull highlights down 10–15% with a subtle blue rim light on the sky side so the dish mesh retains structural contrast rather than clipped flat white.\n\n3. **`ziKBPJ6FY0U` (JWST, *JWST Found Galaxies That Shouldn't Exist Yet*): REBUILD loupe source & hook (`ziKBPJ6FY0U_B_v06.jpg`)**\n   - **Loupe & origin-circle fix (2-of-3 consensus: `codex.md` + `gemini.md`):** Keep the find-and-zoom layout on the real JWST NIRCam deep field (`SMACS 0723` or a confirmed `JADES` `z≈13–14` NIRCam cutout), **place the small yellow origin circle directly on the actual compact deep-red high-redshift galaxy source** magnified in the `4.5×` zoom loupe (not on empty sky at `(485, 610)`, and not on the foreground `z~1–2` bright orange gravitational lensing arc), dim the central white foreground diffraction-spiked star by ~30%, and soften background posterisation.\n   - **Hook text (top band, 3 words, off subject):** **`300 MILLION YEARS`** (`300` in yellow `#FFE600`, `MILLION YEARS` in white `#FFFFFF`, tightened tracking for thicker `168×94` strokes) or **`300M YEARS OLD`** (`300M` in `#FFE600`, `YEARS OLD` in `#FFFFFF`). *(If the bright SMACS 0723 lensed galaxy crop is kept for `168×94` contrast with the origin ring fixed to circle that exact arc, use the 3-word anomaly hook **`WAY TOO EARLY`** with `EARLY` in `#FFE600` so a foreground arc is never labelled as 300 million years old.)*\n\n4. **Verification & Ledger:**\n   - Update `00_Brand/Channel-Setup/tools/build_weekly_thumbs_j2834.py` and run `python3 00_Brand/Channel-Setup/tools/thumb_preview.py long <thumb> --out <sheet> --score` on all three rebuilt JPEGs (`saturation ≥ 100`, `near_black ≤ 30%`).\n   - Build the updated `168×94` + `352×198` `PHONE_SHEET_v03.jpg` and `DESIGN_MANIFEST.json` on the shared NAS paths specified in `05_Analytics/tests/panels/owb-j2834-weekly-2026-11-14/DECISION.md`.\n   - Log/update the three proposed entries in `05_Analytics/tests/THUMB_LEDGER.json` (reconciling IDs cleanly with `main`'s `T032`/`T033` rows and updating `title_b` to the panel-approved single-variable Title Bs in `DECISION.md`).\n   - Do not touch YouTube Studio; park for Chief (`J2844`) with the new file paths and SHA-256 hashes before conditional Studio arming (`J2845`–`J2847`).\n",
+      "ref": "J2843",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-17T10:23Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T10:23Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Rebuild m09jUdwC5hk_B_v05.jpg, Mo93x0fxB1Q_B_v05.jpg, and ziKBPJ6FY0U_B_v06.jpg per DECISION.md, run thumb_preview.py --score, and update THUMB_LEDGER.json",
+      "kind": "thumb",
+      "plain": "Rebuild the three OWB weekly audit Test & Compare B thumbnails per panel decision J2843 (Saturn rings for m09jUdwC5hk, feathered band + dark-sky reticle for Mo93x0fxB1Q, and true high-z galaxy loupe for ziKBPJ6FY0U)"
     }
   ],
   "focus": [
