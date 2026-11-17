@@ -1,5 +1,5 @@
 {
-  "next_id": 2986,
+  "next_id": 2987,
   "jobs": [
     {
       "id": "J0001",
@@ -264332,6 +264332,11 @@
           "at": "2026-11-16T22:47Z",
           "by": "gemini",
           "what": "done: PASS (KEEP) on 033 Uranus long master v05 (033_why_this_planet_has_21_year_winters_master_v05.mp4, SHA-256 1bb4a006bb0dab86cbe5a243ba42328a636bd9177b4fb421e7b19c6d8e954cbb, 629.42s, 1920x1080 24fps CFR, -14.5 LUFS, -1.5 dBTP, 0 black frames): replaced 0:00-4.35s R01 still composite with public-domain NASA Goddard SVS 20390 Shot 8 4K moving video (66fc943702) beside untouched v04; audio and cuts 2..146 bit-identical to v04; Flow balance 24,450 credits (£0 and 0 Flow credits spent); all 5 gates, first-30s check, package dry-run, and native moving_video_input/audio_input QA PASS; staged to NAS/iCloud OWB UAT & R2 owb-033-v05; awaits_ben armed with --prev OWB-033 (jobs/reviews/J2962/REVIEW.md, 9c00f1895b)."
+        },
+        {
+          "at": "2026-11-17T12:53Z",
+          "by": "claude",
+          "what": "no longer waits on Ben: OK'd, delivered by J2986"
         }
       ],
       "remaining_action": "Completed 033 Uranus long master v05 moving opening and staged for Ben UAT watch",
@@ -264347,7 +264352,8 @@
       "taskKeys": [
         "OWB:033"
       ],
-      "awaits_ben": {
+      "done_ref": "9c00f1895b",
+      "awaits_was": {
         "what": "Watch 033 Uranus long master v05 (10m 29s, moving NASA SVS 20390 4K opening) and thumbnails A/B",
         "file": "OWB UAT/033_why_this_planet_has_21_year_winters_master_v05_PHONE.mp4",
         "version": "v05",
@@ -264365,8 +264371,7 @@
           "Replaced the 0:00–4.35 s opening still composite with real 4K moving NASA Goddard SVS 20390 animation of sideways Uranus, its upright rings, swirling polar clouds, and orbiting moons (Shot 8, wide then closer cut; £0 and 0 Flow credits).",
           "Kept voice, music, length (10m 29s) and every cut from 4.35 s onward bit-for-bit identical to v04; all 5 gates and first-30-seconds checks passed."
         ]
-      },
-      "done_ref": "9c00f1895b"
+      }
     },
     {
       "id": "J2963",
@@ -266125,6 +266130,53 @@
       "for": "gemini",
       "kind": "studio",
       "plain": "Show on each credit card how far through the month we are next to how much we've used, so Ben can see where a cheaper plan would do"
+    },
+    {
+      "id": "J2986",
+      "title": "Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben OK'd Uranus long master v05 and thumbnails A and B on the board (17 Nov 09:39Z, tick OWB-033, from J2962).** Chief evidence: jobs/reviews/J2962/REVIEW.md (KEEP, five gates passed).\n\nMaster `033_why_this_planet_has_21_year_winters_master_v05.mp4`, sha256 `1bb4a006bb0dab86cbe5a243ba42328a636bd9177b4fb421e7b19c6d8e954cbb`, 629.42 s, in `02_Video-Projects/033_*/`. Not v04.\n\n1. Check the master's sha256. Open `11_Upload-Package` (built in J2901): its manifest must name **v05** and that hash. If it still names v04, update the manifest only (same title, description, chapters; chapters after 4.35 s are unchanged from v04) and say what changed.\n2. Upload as a NEW Private video via `npm run youtube:package`. Publish time Wed 9 Dec 2026 18:00 London (18:00Z). Language en-GB, captions en-GB, end screen, playlist, not made for kids, synthetic-content disclosure as the package says.\n3. Arm the Studio thumbnail Test & Compare with A and B (the two Ben OK'd), only where no test is set, title set first; record it in `thumb_ledger.py`. Pinned comment once public.\n4. Record the new videoId in the film's status and on the thread. The two Uranus Shorts (J2895, J2896) wait for this long to be public; set their Related video to it when it is.\n\nNever Public, never delete, no force-push, no Replace. £0. If anything does not match (privacy, publish time, hash), upload nothing and park for the Chief with the lines.",
+      "ref": "",
+      "film": "033",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T12:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T12:53Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-17T12:53Z",
+          "by": "claude",
+          "what": "approved by Ben: Watch 033 Uranus long master v05 (10m 29s, moving NASA SVS 20390 4K opening) and thumbnails A/B v05 (asked in J2962)"
+        }
+      ],
+      "remaining_action": "Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test",
+      "due": "2026-12-07T18:00:00Z",
+      "kind": "studio",
+      "approved_from": {
+        "what": "Watch 033 Uranus long master v05 (10m 29s, moving NASA SVS 20390 4K opening) and thumbnails A/B",
+        "file": "OWB UAT/033_why_this_planet_has_21_year_winters_master_v05_PHONE.mp4",
+        "version": "v05",
+        "airs": "2026-12-09T18:00Z",
+        "card": "OWB:033",
+        "title": "Why Knocked-Sideways Uranus Has 21-Year Winters",
+        "number": "033",
+        "type": "long",
+        "channel": "OWB",
+        "job": "J2962",
+        "okAt": "2026-11-17T09:39Z"
+      }
     }
   ],
   "focus": [
