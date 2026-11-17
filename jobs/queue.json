@@ -236271,10 +236271,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-17T09:39Z",
+      "eta": "2026-11-17T11:39Z",
       "created_by": "claude",
       "created_at": "2026-11-11T22:56Z",
       "result": "",
@@ -236493,6 +236493,11 @@
           "at": "2026-11-17T09:36Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-agy: Cursor out of usage; next in its chain: gemini"
+        },
+        {
+          "at": "2026-11-17T09:39Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Finish step 3/3 on HOS PR #551: render remaining authorized £0 free code graphics and complete the v03f diagnostic rough",
@@ -236511,7 +236516,15 @@
         "status": "open",
         "by": ""
       },
-      "model": "gemini-agy"
+      "model": "gemini-agy",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-17T09:39Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2653",
