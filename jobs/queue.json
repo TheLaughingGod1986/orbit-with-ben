@@ -266437,13 +266437,27 @@
           "at": "2026-11-17T15:36Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-17T15:36Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-17T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Non-producer QA reviewer (claudecode/claude/codex) to review PR #556 + v07 contact sheets, write REVIEW.md, and stage hos_008_short_C_v07.mp4 to HOS UAT + awaits_",
       "kind": "review",
       "recheck_of": "J2984",
       "due": "2026-11-17T16:36:39+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
