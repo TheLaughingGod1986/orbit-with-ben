@@ -236271,13 +236271,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-17T09:39Z",
-      "eta": "2026-11-17T11:39Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T22:56Z",
-      "result": "",
+      "result": "parked for Chief: review HOS PR #551 at 36456857 (REVIEW_v03f_r3.md + 390px sheets in repo) and desk #180 #6945366409. All 7 checks from ruling #6808560760 PASS in worker evidence: (1) 0 in-word cuts (6/6 tests + clip_check passed=true), (2) v03f timing PASS per #6841022166/J2979, (3) 35/35 £0 v03f-r3 free renders <=6.96s PASS polish_gate & picture_qa with zero portrait overlaps, (4) J1310 WAV hash verified, (5) callback 3.56s<=4.20s direct trim, (6) 43 word-level onsets, (7) 3 COST_OPTIONS retained as already-minted Quality. 515s NAS rough (93/104 real video, 11 J2529 P5/P6 slates) SHA-256 & decode verified. £0 spent.",
       "history": [
         {
           "at": "2026-11-11T22:56Z",
@@ -236538,6 +236538,11 @@
           "at": "2026-11-17T10:26Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Step 3/3 complete: all 35 £0 v03f-r3 free graphics PASS polish_gate & picture_qa (0 fails, zero portrait overlaps); 515s NAS rough (93/104 real video beats, 11 P5/P6 slates) + 390px sheets committed at 36456857 & posted at #6945366409"
+        },
+        {
+          "at": "2026-11-17T10:26Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: review HOS PR #551 at 36456857 (REVIEW_v03f_r3.md + 390px sheets in repo) and desk #180 #6945366409. All 7 checks from ruling #6808560760 PASS in worker evidence: (1) 0 in-word cuts (6/6 tests + clip_check passed=true), (2) v03f timing PASS per #6841022166/J2979, (3) 35/35 £0 v03f-r3 free renders <=6.96s PASS polish_gate & picture_qa with zero portrait overlaps, (4) J1310 WAV hash verified, (5) callback 3.56s<=4.20s direct trim, (6) 43 word-level onsets, (7) 3 COST_OPTIONS retained as already-minted Quality. 515s NAS rough (93/104 real video, 11 J2529 P5/P6 slates) SHA-256 & decode verified. £0 spent."
         }
       ],
       "remaining_action": "Parked for Chief review of HOS PR 551 (36456857) & desk #6945366409: v03f-r3 35/35 £0 free graphics + 515s rough + 390px sheets + 7 ruling checks",
