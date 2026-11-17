@@ -4,7 +4,8 @@
   "air": "",
   "stages": {
     "topic": {
-      "state": "doing"
+      "state": "done",
+      "ref": "jobs/reviews/J2969/REVIEW.md"
     },
     "script": {
       "state": "todo"
@@ -31,14 +32,6 @@
       "state": "todo"
     }
   },
-  "claims": [
-    {
-      "stage": "topic",
-      "by": "gemini",
-      "at": "2026-11-17T01:19Z",
-      "eta": "2026-11-17T03:18Z",
-      "note": "J2969 Rule-E topic go/no-go review: OWB 078 (Every Space Station Explained in 10 Minutes) and 079 (Why Is Space Cold If the Sun Is Hot) from J2967"
-    }
-  ],
-  "next": "Queued in jobs/WIP.json next for Rule-E topic go/no-go review (from J2967); starts Script stage when an active OWB WIP slot opens after studio/plan.json format tests"
+  "claims": [],
+  "next": "Pre-cleared in jobs/WIP.json next (Rule-E GO in J2969, 95/100; all 6 fixes applied); starts Script stage when an active OWB WIP slot opens after studio/plan.json format tests"
 }
