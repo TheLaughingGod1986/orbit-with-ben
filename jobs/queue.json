@@ -255816,13 +255816,13 @@
       "stage": "edit",
       "after": "J2438",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-17T16:52Z",
-      "eta": "2026-11-17T18:22Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-14T23:03Z",
-      "result": "",
+      "result": "PR #990 (macbook/J2867, 0765a3d7c): rebuilt 034_short02_water_ice_mountains_v02.mp4 (sha256 f3e3d47d0c86, 25.800s/774f 100% full-bleed 9:16, locked v01 stems reused byte-for-byte, 6/6 gates PASS incl. gate_shorts_open 0/26 padded) and verified J2438 034_short01_testA_opening_v02.mp4 (sha256 c9a02052ff7a, 36.500s/1095f, 0/37 padded, 5/5 gates PASS) + 034_pluto_frozen_heart_master_v02.mp4 (sha256 e5a886dfef20) have 100% of J2383 R08-R74 finishing fixes. £0.",
       "history": [
         {
           "at": "2026-11-14T23:03Z",
@@ -255898,6 +255898,11 @@
           "at": "2026-11-17T17:08Z",
           "by": "macbook",
           "what": "step 4 of 4 done"
+        },
+        {
+          "at": "2026-11-17T17:15Z",
+          "by": "macbook",
+          "what": "done: PR #990 (macbook/J2867, 0765a3d7c): rebuilt 034_short02_water_ice_mountains_v02.mp4 (sha256 f3e3d47d0c86, 25.800s/774f 100% full-bleed 9:16, locked v01 stems reused byte-for-byte, 6/6 gates PASS incl. gate_shorts_open 0/26 padded) and verified J2438 034_short01_testA_opening_v02.mp4 (sha256 c9a02052ff7a, 36.500s/1095f, 0/37 padded, 5/5 gates PASS) + 034_pluto_frozen_heart_master_v02.mp4 (sha256 e5a886dfef20) have 100% of J2383 R08-R74 finishing fixes. £0."
         }
       ],
       "remaining_action": "Visual/audio QA verified on Short 2 v02, Short 1 v02, and long master v02; opening PR macbook/J2867 with Short 2 v02 builder, gate sidecars, and production-status.md",
