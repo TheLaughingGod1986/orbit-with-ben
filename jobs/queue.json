@@ -250684,9 +250684,14 @@
           "at": "2026-11-17T16:45Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2807 for HOS 009 score review; starting step 0 inspection"
+        },
+        {
+          "at": "2026-11-17T16:48Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Demonstrated audio_input recorded; auditioned hos_009_wonder_v02.mp3 (180.04s) and 168-186s transition bed/mix via read_file"
         }
       ],
-      "remaining_action": "Inspect SCORE_SCOPE_J2805.json, verify audio_input capability via read_file probe on HOS 009 audio files, and perform audition or capability hold",
+      "remaining_action": "Audition full joined score v02, teach_v01, and entire five-part locked-VO reference mix + tail via read_file, and verify exact SHA-256 hashes and music_gate results",
       "due": "2026-11-17T18:00:00Z",
       "kind": "review",
       "required_capabilities": [
@@ -250703,11 +250708,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-17T16:45Z",
+        "at": "2026-11-17T16:48Z",
         "by": "gemini",
-        "note": "Claimed J2807 for HOS 009 score review; starting step 0 inspection"
+        "note": "Demonstrated audio_input recorded; auditioned hos_009_wonder_v02.mp3 (180.04s) and 168-186s transition bed/mix via read_"
       },
       "taskKeys": [
         "HOS:009"
