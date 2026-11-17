@@ -215623,10 +215623,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-17T11:43Z",
-      "eta": "2026-11-17T13:43Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-09T10:36Z",
       "result": "",
@@ -215725,6 +215725,11 @@
           "at": "2026-11-17T12:32Z",
           "by": "gemini",
           "what": "step 4 of 5 done: Step 4/5 done: muxed 034_pluto_frozen_heart_master_v02.mp4 (19408f, -14.7 LUFS, -1.0 dBTP) + pushed gemini/j2438-pluto-v02; final gates running in tmux J2438-render"
+        },
+        {
+          "at": "2026-11-17T12:34Z",
+          "by": "gemini",
+          "what": "released: Step 4/5 done: Short 1 v02 PASS 5/5 gates (sha256 c9a02052ff, 317095e946 on gemini/j2438-pluto-v02); Long v02 muxed in detached tmux J2438-render (log ~/_desk/logs/J2438-render.log, done ~/_desk/logs/J2438-render.done); next run checks .done, patches 17 PICTURE_QA cuts using cached /Volumes/MiniWork/scratch/j2438_pluto_master_v02_work/cuts/, and finishes gates"
         }
       ],
       "remaining_action": "Verify J2438-render gate_results_v02.json on 034_pluto_frozen_heart_master_v02.mp4 and commit pack sidecars",
