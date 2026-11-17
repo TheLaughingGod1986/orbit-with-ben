@@ -55,7 +55,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2982 | mini | blocked | gemini | – | for gemini · studio · Board clean-up: plain times on the Agents tab, no Mac folder path in public data, Vercel leftovers out |  |
 | J2984 | mini | open | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Short C v07: non-producer QA review of J2662 (PR #556) and HOS UAT staging for Ben's watch | J2662 |
 | J2985 | mini | blocked | gemini | – | for gemini · studio · Board credits: a time bar beside each usage bar, renewal dates, and a plain verdict per plan |  |
-| J2986 | mini | open | – | – | 033 upload · studio · Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test |  |
+| J2986 | mini | open | – | – | 033 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test |  |
 | J2987 | mini | claimed | macbook | 2026-11-17T15:26Z | for gemini · studio · New-channel research: check the shortlist and 53 example channels through the YouTube Data API |  |
 
 Recently finished:

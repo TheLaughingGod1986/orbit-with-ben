@@ -266258,6 +266258,11 @@
           "at": "2026-11-17T12:53Z",
           "by": "claude",
           "what": "approved by Ben: Watch 033 Uranus long master v05 (10m 29s, moving NASA SVS 20390 4K opening) and thumbnails A/B v05 (asked in J2962)"
+        },
+        {
+          "at": "2026-11-17T14:30Z",
+          "by": "relay",
+          "what": "rerouted to claudecode on mini-claude-opus-5-5: Cursor out of usage; next in its chain: claudecode"
         }
       ],
       "remaining_action": "Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test",
@@ -266275,7 +266280,16 @@
         "channel": "OWB",
         "job": "J2962",
         "okAt": "2026-11-17T09:39Z"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "claudecode",
+      "model": "mini-claude-opus-5-5"
     },
     {
       "id": "J2987",
