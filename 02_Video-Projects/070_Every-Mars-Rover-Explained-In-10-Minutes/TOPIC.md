@@ -182,9 +182,9 @@ Saved raw pulls: `11_Upload-Package/evidence_2026-11-16_public_search.json` and 
 
 - **Pool Strength:** **11 on-topic education/space videos in the table above between `1.09M` and `26.14M` views** (plus `ER6EO4B7V68` `DeepSpaceCourier` at **3,586,259 views**, `X2UaFuJsqxk` `NASA JPL` at **3,243,733 views**, `qaUhLXolGaI` `SpaceRip` at **2,700,136 views**, `8DZl56tS9ko` `NASA JPL` at **1,943,860 views**, `GHenFGnixzU` `NASA JPL` at **1,681,955 views**, `5qqsMjy8Rx0` `NASA JPL` at **1,007,756 views**, and `SciShow Kids` `ujh-dtEvyIw` at **349,319 views**), all verified in `evidence_2026-11-16_public_search.json` and `evidence_2026-11-16_neighbours.json`.
 
-### 2.7 Two Short Angles (`22–27 s`, `55–65` Words, `LEARNINGS.md` Rules 1–8, 24 + `OWB-2026-11-E1`)
+### 2.7 Two Short Angles (`22–27 s`, `55–65` Words, `LEARNINGS.md` Rules 1–8, 24, 33 + `OWB-2026-11-E1`)
 
-*(Note: Both Shorts cover hardware never used in any `025` Short — `Perseverance`'s `MOXIE` `800 °C` oxygen generator and `1997` `11.5-kg` `Sojourner` vs `1,025-kg` `Perseverance` — so there is zero overlap with `iyvWYFP_ETA`, `B1z2dv7m7Vk`, `uhZSRcvngvE`, or `RT-ec4_GcOk`.)*
+*(Note: Both Shorts cover hardware never used in any `025` Short — `Perseverance`'s `MOXIE` `800 °C` oxygen generator and `1997` `11.5-kg` `Sojourner` vs `1,025-kg` `Perseverance` — so there is zero overlap with `iyvWYFP_ETA`, `B1z2dv7m7Vk`, `uhZSRcvngvE`, or `RT-ec4_GcOk`. Per Chief ruling `6831935790` and `J2732`, because `uhZSRcvngvE` [*How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?*, `55 s` length test] recorded `30` views in its next-morning snapshot [`2026-11-13.json`, `7.08%` — under one tenth — of the recent 10-Short `firstMorning` median `423.5`] immediately after `B1z2dv7m7Vk` [*Why Did a 90-Day Mars Rover Last 14 Years?*, `59` views next morning], whereas `iyvWYFP_ETA` [`1,025` next morning] and `RT-ec4_GcOk` [*How Did a Helicopter Fly 72 Times on Mars?*, `1,118` next morning] were strongly fed, neither `070` Short repeats the `"90-Day Rover / 14 Years"` Opportunity survival title or sub-angle, and they must be spaced at least 3+ days apart under `LEARNINGS.md` Learning 33.)*
 
 1. **Short `S01` (`24 s`, `63 words` — How Perseverance Made Breathable Oxygen on Mars With `MOXIE`):**
    - **YouTube Title (`52 chars`, verified `0` exact YouTube collisions):**

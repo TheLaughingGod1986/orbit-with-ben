@@ -1,5 +1,5 @@
 {
-  "next_id": 2990,
+  "next_id": 3013,
   "jobs": [
     {
       "id": "J0001",
@@ -105044,13 +105044,13 @@
       "stage": "",
       "after": "J1129",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-17T09:26Z",
+      "status": "done",
+      "by": "gemini",
+      "since": "2026-11-17T18:49Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-28T21:12Z",
-      "result": "parked for Chief: HOS PR #634 (1c4bc42f). Verified finished T023 report in HOS Studio at 2026-11-17T09:33:24Z (ran 29 Oct 00:45 to 12 Nov 01:34, not enough impressions, Option A visible to all, already in THUMB_LEDGER.json; screenshot ~/_desk/j1130/t023_report_2026-11-17.png sha256 84449bb3ee0212b3e17da0a2078e9a67b03951dc326a17dee5ef9e20f9b8be4d). Clicking New test prompts 'Start a new experiment? This deletes your current experiment. Do you want to continue?'; selected Cancel per brief/Never list and verified clean reload with zero changes. Chief must explicitly authorize Continue on finished T023 to arm title-only B ('How Mendeleev's Periodic Table Predicted Missing Metals') or close J1130.",
+      "result": "Chief ruling (J2979 follow-through): merged HOS PR #634 (4675609a). Finished T023 on AL_-qlWko_g (002 Periodic Table) is already recorded in THUMB_LEDGER.json; per the Never list, do not click Continue on Start a new experiment? This deletes your current experiment. Live search-led title How Did We Discover the Periodic Table? (Mendeleev's Blank Spaces) and finished T023 preserved untouched. £0.",
       "history": [
         {
           "at": "2026-10-28T21:12Z",
@@ -105536,6 +105536,11 @@
           "at": "2026-11-17T12:10Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-17T18:49Z",
+          "by": "gemini",
+          "what": "done: Chief ruling (J2979 follow-through): merged HOS PR #634 (4675609a). Finished T023 on AL_-qlWko_g (002 Periodic Table) is already recorded in THUMB_LEDGER.json; per the Never list, do not click Continue on Start a new experiment? This deletes your current experiment. Live search-led title How Did We Discover the Periodic Table? (Mendeleev's Blank Spaces) and finished T023 preserved untouched. £0."
         }
       ],
       "remaining_action": "New test requires protected delete-current-experiment confirmation; Cancelled per brief/Never list, opening HOS read-back PR and parking for Chief",
@@ -226456,13 +226461,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claude",
+      "status": "open",
+      "by": "",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T19:53Z",
-      "result": "Waiting for: Ledger step done (PR 935). The dry run of the move read 0 on 14, 15, 16 and 17 Nov (streak 4). Still open, in the order written on this job: History of Science's own current files (374 files, about 980 places, ordinary pull requests, not touching files a working job pins by hash), the open pull requests, the mirror rehearsal, and the history-rewrite window (Ben told the day before). The move is a separate decision: seven zero days in a row, Ben told at day six (19 Nov).",
+      "result": "",
       "history": [
         {
           "at": "2026-11-10T19:53Z",
@@ -226568,20 +226573,23 @@
           "at": "2026-11-17T07:54Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-18T07:40:00Z"
+        },
+        {
+          "at": "2026-11-17T19:00Z",
+          "by": "claude",
+          "what": "Ben created TheLaughingGod1986/studio (17 Nov 19:00Z). The engine move waits on this job: J3012."
+        },
+        {
+          "at": "2026-11-17T19:12Z",
+          "by": "claude",
+          "what": "reopened: Reopened by Claude 17 Nov 19:12Z. Ben asked when the studio will be fully decoupled. This job has re-recorded the same wait every day since 12 Nov, but nothing it waits on is outside the studio: step 1 (History of Science's own current files, 374 files, about 980 places, ordinary pull requests, leaving files a working job pins by hash) can start now. Do step 1 now, then step 2 (the Chief sweep J2979 is already closing and merging the open pull requests), then step 3 (the mirror rehearsal). Step 4, the history-rewrite window, keeps its rule: Ben is told the day before, as a notice. Step 5's GitHub support request is drafted for Ben but is not needed for the move."
         }
       ],
-      "remaining_action": "Start History of Science's own files: count them and plan the first small pull requests",
+      "remaining_action": "Step 1 now: replace the addresses in History of Science's current files by ordinary PRs, then steps 2 and 3; history rewrite with a day's notice to Ben",
       "due": "2026-11-18T18:00:00Z",
       "kind": "chief",
       "plain": "Remove email addresses from both channels' repos, including their past versions",
-      "hold": {
-        "type": "dependency",
-        "condition": "Ledger step done (PR 935). The dry run of the move read 0 on 14, 15, 16 and 17 Nov (streak 4). Still open, in the order written on this job: History of Science's own current files (374 files, about 980 places, ordinary pull requests, not touching files a working job pins by hash), the open pull requests, the mirror rehearsal, and the history-rewrite window (Ben told the day before). The move is a separate decision: seven zero days in a row, Ben told at day six (19 Nov).",
-        "check_at": "2026-11-18T07:40:00Z",
-        "last_recheck": "J2723",
-        "checked_at": "2026-11-17T09:23:01+00:00",
-        "checked_by": "gemini"
-      }
+      "for": "codex"
     },
     {
       "id": "J2538",
@@ -236380,13 +236388,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "claimed",
       "by": "gemini",
-      "since": "2026-11-17T09:39Z",
-      "eta": "",
+      "since": "2026-11-17T18:52Z",
+      "eta": "2026-11-17T20:52Z",
       "created_by": "claude",
       "created_at": "2026-11-11T22:56Z",
-      "result": "parked for Chief: review HOS PR #551 at 36456857 (REVIEW_v03f_r3.md + 390px sheets in repo) and desk #180 #6945366409. All 7 checks from ruling #6808560760 PASS in worker evidence: (1) 0 in-word cuts (6/6 tests + clip_check passed=true), (2) v03f timing PASS per #6841022166/J2979, (3) 35/35 £0 v03f-r3 free renders <=6.96s PASS polish_gate & picture_qa with zero portrait overlaps, (4) J1310 WAV hash verified, (5) callback 3.56s<=4.20s direct trim, (6) 43 word-level onsets, (7) 3 COST_OPTIONS retained as already-minted Quality. 515s NAS rough (93/104 real video, 11 J2529 P5/P6 slates) SHA-256 & decode verified. £0 spent.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-11T22:56Z",
@@ -236657,9 +236665,39 @@
           "at": "2026-11-17T13:41Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-11-17T18:37Z",
+          "by": "gemini",
+          "what": "reopened: Chief PASS on all 7 v03f timing checks (#6808560760) in v03f-r3 (36456857). Next step per Claude's review #6945397541 on HOS desk #180: in v03f-r4 on HOS PR #551 (£0), (1) unclip bottom-left source credit lines so they end on a full word on P2:12a, P3:10a, P4:06b, P5:05b; (2) enlarge small phone-width labels/tags (P1:10 year/page tags, OFFSPRING BORN, 1,250 COPIES PRE-SOLD) for 390px readability; (3) verify/fix P2:01_card_p02 Part II title in the window; re-run polish_gate, picture_qa and 390px contact sheet."
+        },
+        {
+          "at": "2026-11-17T18:37Z",
+          "by": "gemini",
+          "what": "rerouted to gemini on gemini-agy: Rerouted J2652 to gemini (gemini-agy) for v03f-r4 card fixes on HOS PR #551"
+        },
+        {
+          "at": "2026-11-17T18:52Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T18:54Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Started J2652 v03f-r4 pass per Chief reopen and Claude review #6945397541"
+        },
+        {
+          "at": "2026-11-17T19:02Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Built _build_v03f_r4.py fixing all 8 archive credits (0 truncation), enlarging 390px labels/badges/WHO cards, and sampling P2:01 Part II title window + dual-window verification sheet"
+        },
+        {
+          "at": "2026-11-17T19:13Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Rendered all 35 £0 v03f-r4 50fps clips (incl. custom vector arrows replacing missing Didot U+2192), passed polish_gate (0/35 fail) and picture_qa (0/35 fail), visually verified CONTACT_SHEET_v03f_r4_390px.jpg and CHAPTER_WINDOWS_v03f_r4_390px.jpg, and verified 515s NAS rough SHA-256 & full decode"
         }
       ],
-      "remaining_action": "Parked for Chief review of HOS PR 551 (36456857) & desk #6945366409: v03f-r3 35/35 £0 free graphics + 515s rough + 390px sheets + 7 ruling checks",
+      "remaining_action": "Write REVIEW_v03f_r4.md, run check_all.sh and unit/clip checks, push v03f-r4 to HOS PR #551, and post review report to HOS desk #180",
       "due": "2026-11-16T18:00:00Z",
       "for": "gemini",
       "kind": "chart",
@@ -236677,11 +236715,11 @@
       },
       "model": "gemini-agy",
       "progress": {
-        "step": 3,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-17T10:26Z",
+        "at": "2026-11-17T19:13Z",
         "by": "gemini",
-        "note": "Step 3/3 complete: all 35 £0 v03f-r3 free graphics PASS polish_gate & picture_qa (0 fails, zero portrait overlaps); 515s"
+        "note": "Rendered all 35 £0 v03f-r4 50fps clips (incl. custom vector arrows replacing missing Didot U+2192), passed polish_gate ("
       }
     },
     {
@@ -250551,13 +250589,13 @@
       "stage": "edit",
       "after": "J2805",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-17T16:05Z",
-      "eta": "2026-11-17T16:25Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-14T03:44Z",
-      "result": "",
+      "result": "Delivered HOS 009 wonder_v02 (180.04s, song RSFcaVQewwmuA3OjSPz3, sha b38ae892, 2475 subscription credits <= 3000 cap, GBP0 cash, overage 0, 77389 left), retained teach_v01 (sha 4c1f0a17, 0 new credits), built hos_009_score_joined_v02.wav (535.33s, sha 6fc8628a, 3s equal-power crossfade 175.28-178.28s), 5 v02 stems, and 4 VO audition mixes in Mini local + studio-live NAS (hashes verified; all v01/VO/diagram locks preserved). Unchanged production music_gate PASS across complete 89-bed library (>=77 min, 0 unreadable, max similarity 0.6615 < 0.80). Provenance/plans/gate in HOS PR #636 (bda25cec, unmerged); desk report #6954489223. Not accepted here; J2807 audio_input review is now unlocked, J2808 Chief disposition follows, J2035/J2171 stay held.",
       "history": [
         {
           "at": "2026-11-14T03:44Z",
@@ -250593,9 +250631,29 @@
           "at": "2026-11-17T16:22Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Generated hos_009_wonder_v02.mp3 (180.04s, song RSFcaVQewwmuA3OjSPz3, sha b38ae892, 2475 credits <= 3000 cap, 77389 left, overage 0)"
+        },
+        {
+          "at": "2026-11-17T16:36Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Verified joined hos_009_score_joined_v02.wav (535.33s), 5 v02 stems, VO reference mix + transition artifacts, NAS studio-live SHA-256 parity, and preserved v01/VO/diagram locks"
+        },
+        {
+          "at": "2026-11-17T16:41Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Opened HOS PR #636 (bda25cec) with sanitized v02 provenance, plans, and complete-library music_gate PASS (89 comparisons, max 0.6615 < 0.80, 0 unreadable)"
+        },
+        {
+          "at": "2026-11-17T16:42Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Posted HOS desk report #6954489223 and verified PR #636 (bda25cec); closing J2806 to hand off to J2807 audio review"
+        },
+        {
+          "at": "2026-11-17T16:42Z",
+          "by": "gemini",
+          "what": "done: Delivered HOS 009 wonder_v02 (180.04s, song RSFcaVQewwmuA3OjSPz3, sha b38ae892, 2475 subscription credits <= 3000 cap, GBP0 cash, overage 0, 77389 left), retained teach_v01 (sha 4c1f0a17, 0 new credits), built hos_009_score_joined_v02.wav (535.33s, sha 6fc8628a, 3s equal-power crossfade 175.28-178.28s), 5 v02 stems, and 4 VO audition mixes in Mini local + studio-live NAS (hashes verified; all v01/VO/diagram locks preserved). Unchanged production music_gate PASS across complete 89-bed library (>=77 min, 0 unreadable, max similarity 0.6615 < 0.80). Provenance/plans/gate in HOS PR #636 (bda25cec, unmerged); desk report #6954489223. Not accepted here; J2807 audio_input review is now unlocked, J2808 Chief disposition follows, J2035/J2171 stay held."
         }
       ],
-      "remaining_action": "Join wonder_v02 with retained teach_v01, cut 5 v02 stems + VO reference mix, and run complete library music_gate",
+      "remaining_action": "Close J2806 and unlock J2807 audio review",
       "due": "2026-11-17T16:00:00Z",
       "kind": "assembly",
       "plain": "Make a revised opening score for the gravity film and check it against earlier music",
@@ -250610,15 +250668,16 @@
       "for": "gemini",
       "model": "gemini-agy",
       "progress": {
-        "step": 2,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-17T16:22Z",
+        "at": "2026-11-17T16:42Z",
         "by": "gemini",
-        "note": "Generated hos_009_wonder_v02.mp3 (180.04s, song RSFcaVQewwmuA3OjSPz3, sha b38ae892, 2475 credits <= 3000 cap, 77389 left"
+        "note": "Posted HOS desk report #6954489223 and verified PR #636 (bda25cec); closing J2806 to hand off to J2807 audio review"
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/636"
     },
     {
       "id": "J2807",
@@ -250631,13 +250690,13 @@
       "stage": "edit",
       "after": "J2806",
       "eta_min": 20,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "gemini",
+      "since": "2026-11-17T16:45Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-14T03:44Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-14T03:44Z",
@@ -250653,9 +250712,44 @@
           "at": "2026-11-17T12:50Z",
           "by": "gemini",
           "what": "deadline: 2026-11-17T18:00:00Z"
+        },
+        {
+          "at": "2026-11-17T16:45Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T16:45Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2807 for HOS 009 score review; starting step 0 inspection"
+        },
+        {
+          "at": "2026-11-17T16:48Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Demonstrated audio_input recorded; auditioned hos_009_wonder_v02.mp3 (180.04s) and 168-186s transition bed/mix via read_file"
+        },
+        {
+          "at": "2026-11-17T16:50Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Auditioned all 5 parts of locked-VO reference mix + tail, teach_v01, and v02 stems via read_file; verified all local and NAS SHA-256 hashes"
+        },
+        {
+          "at": "2026-11-17T16:57Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Wrote EAR_REVIEW_J2807.md with concrete dropout timestamps (18.95-21.00s, 66.48-67.83s, 73.04-75.33s, 81.70-82.84s, 88.91-90.39s, 97.31-97.92s) and updated 009 status.json"
+        },
+        {
+          "at": "2026-11-17T17:02Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Opened HOS PR #637 (b1507352) with EAR_REVIEW_J2807.md and 009 status.json; ALL CHECKS PASS; posted report to HOS desk #180"
+        },
+        {
+          "at": "2026-11-17T17:03Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
-      "remaining_action": "Audition the complete revised score and report precise acceptance or faults",
+      "remaining_action": "Mark J2807 done and hand off to J2808 Chief score disposition",
       "due": "2026-11-17T18:00:00Z",
       "kind": "review",
       "required_capabilities": [
@@ -250670,7 +250764,17 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 4,
+        "of": 4,
+        "at": "2026-11-17T17:02Z",
+        "by": "gemini",
+        "note": "Opened HOS PR #637 (b1507352) with EAR_REVIEW_J2807.md and 009 status.json; ALL CHECKS PASS; posted report to HOS desk #"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J2808",
@@ -255471,6 +255575,11 @@
           "at": "2026-11-14T22:43Z",
           "by": "macbook-2",
           "what": "done: PR #938 open: prepared 'Every Planet Explained in 10 Minutes (Mercury to Neptune)' (OWB:064) format test go/no-go (25/25; 'every planet explained' 20,191 searches/mo at 45/100 comp; 172.8K/68K/35K/10.8K small-channel breakouts; NatGeo 12.4M, Astrum 9.28M, NASA JPL 5.81M, Secrets of the Universe 3.85M neighbours), per-planet shelf audit (6 of 8 planets already have finished OWB long masters on disk: Venus 023, Earth 027/031, Mars 025, Jupiter 020, Saturn 021, Uranus 033; all 8 have verified SOURCES.md tables including Mercury 036/044 and Neptune 035; 80-85% shelf reuse, £0 cash, 0 Flow/Vertex credits, ~8k ElevenLabs chars, ~5h build after lock), 3 search-led titles <=70 chars, 3 thumbnail concepts (ALL 8 WORLDS, 464°C TO -224°C, REAL NASA PHOTOS), proposed Wed 16 Dec or Sun 20 Dec 18:00 slot (moves zero dated films), and OWB:064 card on Ben's board."
+        },
+        {
+          "at": "2026-11-17T18:44Z",
+          "by": "claude",
+          "what": "Ben locked it in chat 17 Nov 18:44Z (\"Lock it.\"); build queued as J3011."
         }
       ],
       "remaining_action": "Shelf audit complete; writing go/no-go document and 064 project files",
@@ -255750,13 +255859,13 @@
       "stage": "edit",
       "after": "J2438",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
-      "since": "2026-11-17T16:23Z",
-      "eta": "2026-11-17T17:53Z",
+      "since": "2026-11-17T16:52Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-14T23:03Z",
-      "result": "",
+      "result": "PR #990 (macbook/J2867, 0765a3d7c): rebuilt 034_short02_water_ice_mountains_v02.mp4 (sha256 f3e3d47d0c86, 25.800s/774f 100% full-bleed 9:16, locked v01 stems reused byte-for-byte, 6/6 gates PASS incl. gate_shorts_open 0/26 padded) and verified J2438 034_short01_testA_opening_v02.mp4 (sha256 c9a02052ff7a, 36.500s/1095f, 0/37 padded, 5/5 gates PASS) + 034_pluto_frozen_heart_master_v02.mp4 (sha256 e5a886dfef20) have 100% of J2383 R08-R74 finishing fixes. £0.",
       "history": [
         {
           "at": "2026-11-14T23:03Z",
@@ -255807,17 +255916,46 @@
           "at": "2026-11-17T16:23Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T16:35Z",
+          "by": "macbook",
+          "what": "step 2 of 4 done"
+        },
+        {
+          "at": "2026-11-17T16:44Z",
+          "by": "macbook",
+          "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-11-17T16:48Z",
+          "by": "macbook",
+          "what": "released"
+        },
+        {
+          "at": "2026-11-17T16:52Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T17:08Z",
+          "by": "macbook",
+          "what": "step 4 of 4 done"
+        },
+        {
+          "at": "2026-11-17T17:15Z",
+          "by": "macbook",
+          "what": "done: PR #990 (macbook/J2867, 0765a3d7c): rebuilt 034_short02_water_ice_mountains_v02.mp4 (sha256 f3e3d47d0c86, 25.800s/774f 100% full-bleed 9:16, locked v01 stems reused byte-for-byte, 6/6 gates PASS incl. gate_shorts_open 0/26 padded) and verified J2438 034_short01_testA_opening_v02.mp4 (sha256 c9a02052ff7a, 36.500s/1095f, 0/37 padded, 5/5 gates PASS) + 034_pluto_frozen_heart_master_v02.mp4 (sha256 e5a886dfef20) have 100% of J2383 R08-R74 finishing fixes. £0."
         }
       ],
-      "remaining_action": "Build 034_short02_water_ice_mountains_v02.mp4 full-bleed 1080x1920 9:16 (<=2.00x upscale, 0% blur-pad, locked v01 audio stems) and pass all 5 gates",
+      "remaining_action": "Visual/audio QA verified on Short 2 v02, Short 1 v02, and long master v02; opening PR macbook/J2867 with Short 2 v02 builder, gate sidecars, and production-status.md",
       "kind": "assembly",
       "plain": "Rebuild 034 Pluto Shorts 1 & 2 v02 full-bleed 9:16 and apply J2383 finishing fixes on long master v02",
       "progress": {
-        "step": 1,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-17T16:05Z",
-        "by": "macbook",
-        "note": "Step 1/4 done: verified J2438 long master v02 (e5a886df...) and Short 1 v02 (c9a02052...) already have 100% of J2383 §5."
+        "at": "2026-11-17T17:08Z",
+        "by": "macbook"
       }
     },
     {
@@ -265836,13 +265974,13 @@
       "stage": "",
       "after": "",
       "eta_min": 150,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "gemini",
+      "since": "2026-11-17T18:27Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T08:37Z",
-      "result": "",
+      "result": "Chief sweep complete (£0 spent, 0 branches/files/videos deleted): (1) Stale board & pause jobs: measured board.oppti.dev from Mini (200 OK 5/5), merged PRs #924 & #945, wrote J2864 pause rule (584fed17a0), and closed 7 jobs (J2797, J2819, J2798, J2818, J2532, J2864, J2865). (2) Chief-parked jobs: 26 before -> 0 after (22 now done incl. J2438 + parents J2702 & J1130 via HOS #634; J2652 reopened for v03f-r4 card fixes on HOS #551 per #6945397541; 3 kept on dated holds with 0 Chief-parked: J0979 & J2933 on Ben UAT watch, J2529 on 18 Nov input hold; also closed J2988 and reopened J2984 for claudecode). (3) OWB open pull requests: 75 at job creation (94 peak) -> 12 after (59 OWB PRs merged: #924, #945 + 57 records-only PRs #840..#991; 2 HOS PRs #611 & #634 merged; 25 superseded/cancelled OWB PRs closed with reasons; 5 protected machinery PRs #490, #827, #832, #868, #869 commented and kept open; 7 active code/launch PRs #970, #972, #984, #985, #986, #987, #989 left open for their jobs). Left for Ben (UAT watch only): J0979 (032 Short 2 v02), J2933 (HOS 010 Shorts A & C v01), J2243 (HOS 008 master v05), J2699 (HOS 008 Short A v04), J2551 (029 Shorts v06), J1356 (AR1-AR3), and OWB 064 format-test card.",
       "history": [
         {
           "at": "2026-11-17T08:37Z",
@@ -265898,18 +266036,53 @@
           "at": "2026-11-17T13:10Z",
           "by": "gemini",
           "what": "released: Handing back at Step 2/4 per Chief-election rule: at 13:09:05Z chief_relay.py status switched to Chief: Grok Bot when the 13:09:05Z retry window expired. Steps 1 and 2 of 4 are done; PR #977 is rebased at a06b87ec41 (consolidating HOS:102-119, OWB:080-081, and J2748), and all 90 open OWB PRs are classified in the studio thread report ready for Step 3 execution."
+        },
+        {
+          "at": "2026-11-17T18:27Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T18:28Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Resumed J2979 at Step 3 of 4 as elected acting Chief (gemini)"
+        },
+        {
+          "at": "2026-11-17T18:39Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Closed 25 superseded/cancelled OWB PRs, posted status comments on 5 protected machinery PRs (#490, #827, #832, #868, #869), merged HOS PR #634, and reopened/rerouted J2652; now merging the 57 green records-only OWB PRs"
+        },
+        {
+          "at": "2026-11-17T18:46Z",
+          "by": "claude",
+          "what": "Correction to this brief (17 Nov 18:46Z): #868 and #869 are not live machinery. The decoupling studio half they carry merged on 13 Nov 05:17Z as PR 886 (same tree; J2618 and J2621 are done). Check that main holds their changes, then close both as superseded by #886 with a one-line comment. #490, #827 and #832 stay as ruled."
+        },
+        {
+          "at": "2026-11-17T18:49Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Step 3 complete: merged 57 green records-only OWB PRs (#840..#991, 59 total OWB PRs + 2 HOS PRs #611 & #634 across J2979), closed 25 superseded/cancelled OWB PRs with one-line reasons, and posted status comments on the 5 protected machinery PRs (#490, #827, #832, #868, #869); open OWB PRs reduced to 12 (5 protected + 7 active code/launch PRs)"
+        },
+        {
+          "at": "2026-11-17T18:49Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: All 4 steps of J2979 complete: 7 stale/pause jobs closed, 26 Chief-parked jobs resolved (0 remaining), and open OWB PRs swept from 75 (94 peak) down to 12"
+        },
+        {
+          "at": "2026-11-17T18:49Z",
+          "by": "gemini",
+          "what": "done: Chief sweep complete (£0 spent, 0 branches/files/videos deleted): (1) Stale board & pause jobs: measured board.oppti.dev from Mini (200 OK 5/5), merged PRs #924 & #945, wrote J2864 pause rule (584fed17a0), and closed 7 jobs (J2797, J2819, J2798, J2818, J2532, J2864, J2865). (2) Chief-parked jobs: 26 before -> 0 after (22 now done incl. J2438 + parents J2702 & J1130 via HOS #634; J2652 reopened for v03f-r4 card fixes on HOS #551 per #6945397541; 3 kept on dated holds with 0 Chief-parked: J0979 & J2933 on Ben UAT watch, J2529 on 18 Nov input hold; also closed J2988 and reopened J2984 for claudecode). (3) OWB open pull requests: 75 at job creation (94 peak) -> 12 after (59 OWB PRs merged: #924, #945 + 57 records-only PRs #840..#991; 2 HOS PRs #611 & #634 merged; 25 superseded/cancelled OWB PRs closed with reasons; 5 protected machinery PRs #490, #827, #832, #868, #869 commented and kept open; 7 active code/launch PRs #970, #972, #984, #985, #986, #987, #989 left open for their jobs). Left for Ben (UAT watch only): J0979 (032 Short 2 v02), J2933 (HOS 010 Shorts A & C v01), J2243 (HOS 008 master v05), J2699 (HOS 008 Short A v04), J2551 (029 Shorts v06), J1356 (AR1-AR3), and OWB 064 format-test card."
         }
       ],
-      "remaining_action": "Merging 54 green records-only PRs, closing 26 superseded/cancelled PRs, and commenting on 5 protected machinery PRs",
+      "remaining_action": "Complete: posting final Chief sweep report on the studio thread",
       "due": "2026-11-18T12:00:00Z",
       "kind": "chief",
       "plain": "Tidy up after the board check: close finished board jobs, and clear the pile of jobs and pull requests waiting on the Chief",
       "progress": {
-        "step": 2,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-17T13:08Z",
+        "at": "2026-11-17T18:49Z",
         "by": "gemini",
-        "note": "Audited all 90 open OWB PRs against main and QUEUE.json; executing merges, closes, and status comments now"
+        "note": "All 4 steps of J2979 complete: 7 stale/pause jobs closed, 26 Chief-parked jobs resolved (0 remaining), and open OWB PRs "
       },
       "taskKeys": [
         "OWB:062",
@@ -266282,13 +266455,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-17T14:33Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-17T11:49Z",
-      "result": "Waiting for: Non-producer QA reviewer required (gemini/macbook assembled v07 in J2662 and brief forbids self-review): claudecode down until 2026-11-17T15:31:13Z, claude down until 2026-11-17T17:50:00Z, codex down until 2026-11-17T23:22:00Z, cursor-claude-opus-5-5 out of credit. Pre-flight verified NAS SHA-256 (v07 a3404a314a44..., v03 9f25a16de5fc...) and HOS PR #556 @ 168f8915 green.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-17T11:49Z",
@@ -266324,6 +266497,16 @@
           "at": "2026-11-17T15:36Z",
           "by": "relay",
           "what": "condition verification queued: J2988"
+        },
+        {
+          "at": "2026-11-17T18:49Z",
+          "by": "gemini",
+          "what": "reopened: Reopened via J2988 verification now that claudecode retry window (18:29:37Z) has passed and claudecode is UP on the Mini (can open NAS sheets directly per Claude desk #180 #6951245427 option 2)"
+        },
+        {
+          "at": "2026-11-17T18:49Z",
+          "by": "gemini",
+          "what": "rerouted to claudecode on mini-claude-opus-5-5: Rerouted J2984 to claudecode on Mini per Claude desk #180 #6951245427 option 2"
         }
       ],
       "remaining_action": "Non-producer QA reviewer (claudecode/claude/codex) to review PR #556 + v07 contact sheets, write REVIEW.md, and stage hos_008_short_C_v07.mp4 to HOS UAT + awaits_ben",
@@ -266336,24 +266519,11 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-17T14:38Z",
-        "by": "gemini",
-        "note": "Pre-flight verified NAS SHA-256 parity (v07 a3404a314a444a0fd987ca648c28425be8afb768f83748ee64e553951c8f06a8, v03 9f25a1"
-      },
+      "for": "claudecode",
+      "model": "mini-claude-opus-5-5",
       "taskKeys": [
         "HOS:008"
-      ],
-      "hold": {
-        "type": "credits",
-        "condition": "Non-producer QA reviewer required (gemini/macbook assembled v07 in J2662 and brief forbids self-review): claudecode down until 2026-11-17T15:31:13Z, claude down until 2026-11-17T17:50:00Z, codex down until 2026-11-17T23:22:00Z, cursor-claude-opus-5-5 out of credit. Pre-flight verified NAS SHA-256 (v07 a3404a314a44..., v03 9f25a16de5fc...) and HOS PR #556 @ 168f8915 green.",
-        "check_at": "2026-11-17T16:36:39+00:00",
-        "recheck_task": "J2988"
-      }
+      ]
     },
     {
       "id": "J2985",
@@ -266521,13 +266691,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "gemini",
+      "since": "2026-11-17T17:11Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T14:26Z",
-      "result": "",
+      "result": "PR #991 (05_Analytics/new_channel_research/: SUMMARY.md, channels_53_raw.json, searches_16x2_raw.json, run_summary.json). Quota used: 3,323 units (search.list 3,200, videos.list 62, playlistItems.list 53, channels.list 8; 0 errors). 1) Pre-May-2025 channels (3/53): Wheely Explained (UCl3ps8skJPWeQeYBfp2J_CQ, created 2019-11-07, 1,700 subs, first upload 2026-06-23), Stellar (UCNSbgDRlAHM55EXMxEKPrmg, created 2022-07-21, 29,200 subs), Dinodust (UC_MCKNUrukBBApIg4-stGBg, created 2023-07-29, 17,100 subs). 2) Format outliers: GLK (UCSEaZLka_GS5v9vbepw6Ajg) is only 10.0% (5/50) >8m (41/50 Shorts <=60s, median 0:25) and Frames Of Myth (UC9eon0MV-L3JM0Wm8r7nwSg) is 52.0% (26/50) >8m (23/50 Shorts); 46/53 channels have 0 Shorts on page 1. 3) vidIQ WW2 benchmarks in J2989 match API (0% sub drift): WW2 Dossier (UChjdsX71krIrJ4WFyZYFvYA) created 2026-04-30, 14,300 subs, 98% >8m (med 49:18); Military Studio 2026-05-06, 7,580 subs; WW2 Combat Files 2026-07-11, 3,610 subs.",
       "history": [
         {
           "at": "2026-11-17T14:26Z",
@@ -266548,19 +266718,51 @@
           "at": "2026-11-17T14:35Z",
           "by": "macbook",
           "what": "released: Released to Mini: J2987 needs YouTube Data API v3 credentials in 07_Content-Ops/.env (Mini only; not present on MacBook). Updated remaining_action so MacBook Studio-CDP lane will not re-claim it."
+        },
+        {
+          "at": "2026-11-17T17:11Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T17:12Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-17T17:20Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Fetched all 53 channels + first-page uploads via YouTube Data API (53/53 found, 106 quota units)"
+        },
+        {
+          "at": "2026-11-17T17:21Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Completed all 32 GB/US search.list + videos.list + channels.list calls (total 3,323 quota units, 0 quota errors)"
+        },
+        {
+          "at": "2026-11-17T17:27Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Saved raw JSON and SUMMARY.md in 05_Analytics/new_channel_research/ and opened PR #991 (all repo ratchets PASS)"
+        },
+        {
+          "at": "2026-11-17T17:27Z",
+          "by": "gemini",
+          "what": "done: PR #991 (05_Analytics/new_channel_research/: SUMMARY.md, channels_53_raw.json, searches_16x2_raw.json, run_summary.json). Quota used: 3,323 units (search.list 3,200, videos.list 62, playlistItems.list 53, channels.list 8; 0 errors). 1) Pre-May-2025 channels (3/53): Wheely Explained (UCl3ps8skJPWeQeYBfp2J_CQ, created 2019-11-07, 1,700 subs, first upload 2026-06-23), Stellar (UCNSbgDRlAHM55EXMxEKPrmg, created 2022-07-21, 29,200 subs), Dinodust (UC_MCKNUrukBBApIg4-stGBg, created 2023-07-29, 17,100 subs). 2) Format outliers: GLK (UCSEaZLka_GS5v9vbepw6Ajg) is only 10.0% (5/50) >8m (41/50 Shorts <=60s, median 0:25) and Frames Of Myth (UC9eon0MV-L3JM0Wm8r7nwSg) is 52.0% (26/50) >8m (23/50 Shorts); 46/53 channels have 0 Shorts on page 1. 3) vidIQ WW2 benchmarks in J2989 match API (0% sub drift): WW2 Dossier (UChjdsX71krIrJ4WFyZYFvYA) created 2026-04-30, 14,300 subs, 98% >8m (med 49:18); Military Studio 2026-05-06, 7,580 subs; WW2 Combat Files 2026-07-11, 3,610 subs."
         }
       ],
-      "remaining_action": "Run on Mini with 07_Content-Ops/.env YouTube Data API token (same .env as youtube:package): pull 53 channels + 16 GB/US searches",
+      "remaining_action": "Record result on J2987 and post studio thread report",
       "due": "2026-11-18T18:00:00Z",
       "for": "gemini",
       "kind": "studio",
       "plain": "Double-check the new-channel research with YouTube's own data before Ben picks a niche",
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-17T14:35Z",
-        "by": "macbook"
-      }
+        "at": "2026-11-17T17:27Z",
+        "by": "gemini",
+        "note": "Saved raw JSON and SUMMARY.md in 05_Analytics/new_channel_research/ and opened PR #991 (all repo ratchets PASS)"
+      },
+      "done_ref": "#991"
     },
     {
       "id": "J2988",
@@ -266573,13 +266775,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "gemini",
+      "since": "2026-11-17T18:49Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-17T15:36Z",
-      "result": "",
+      "result": "Chief ruling: verified J2988 condition report (jobs/reviews/J2988/REVIEW.md at a40e2e612e); claudecode retry window (18:29:37Z) has passed so reopened and rerouted parent J2984 to claudecode on the Mini per Claude desk #180 #6951245427 option 2. £0.",
       "history": [
         {
           "at": "2026-11-17T15:36Z",
@@ -266590,9 +266792,44 @@
           "at": "2026-11-17T15:36Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-17T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-17T17:38Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T17:39Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2988 condition verification for J2984 (HOS:008 Short C v07 QA review); checking J2984 brief, worker availability, and HOS PR #556 / NAS media"
+        },
+        {
+          "at": "2026-11-17T17:43Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified J2984 waiting condition NOT MET: all non-producer QA lanes down (claude until 17:50Z, claudecode Fable limit 10am London / retry 18:29:37Z, codex until 23:22Z, cursor-claude-opus-5-5 out of credit); HOS PR #556 @ 168f8915 OPEN/6 green and NAS v07/v03 SHA-256 intact"
+        },
+        {
+          "at": "2026-11-17T17:46Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Committed jobs/reviews/J2988/REVIEW.md (a40e2e612e) on main"
+        },
+        {
+          "at": "2026-11-17T17:47Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Verification complete in jobs/reviews/J2988/REVIEW.md (a40e2e612e); stopping at protected elected-Chief call wait --recheck J2988"
+        },
+        {
+          "at": "2026-11-17T17:47Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J2988 condition verification complete (jobs/reviews/J2988/REVIEW.md at a40e2e612e) — J2984 waiting condition remains NOT MET (gemini/macbook assembled v07 in J2662 and J2984 brief forbids self-review; all non-producer QA lanes down: claudecode hit Fable limit at 17:23:53Z resetting 10am London / 2026-11-18T10:00:00Z with relay retry 2026-11-17T18:29:37Z, claude out until 2026-11-17T17:50:00Z, codex out until 2026-11-17T23:22:00Z, cursor-claude-opus-5-5 out of credit; HOS PR #556 @ 168f8915 OPEN/6 green and NAS v07 a3404a314a44... & v03 9f25a16de5fc... verified intact). Recording jobs.py wait J2984 --recheck J2988 and closing J2988 requires elected Chief authority (Grok Bot is currently UP)."
+        },
+        {
+          "at": "2026-11-17T18:49Z",
+          "by": "gemini",
+          "what": "done: Chief ruling: verified J2988 condition report (jobs/reviews/J2988/REVIEW.md at a40e2e612e); claudecode retry window (18:29:37Z) has passed so reopened and rerouted parent J2984 to claudecode on the Mini per Claude desk #180 #6951245427 option 2. £0."
         }
       ],
-      "remaining_action": "Verify readiness: Non-producer QA reviewer (claudecode/claude/codex) to review PR #556 + v07 contact sheets, write REVIEW.md, and stage hos_008_short_C_v07.mp4 to HOS UAT + awaits_",
+      "remaining_action": "Elected Chief to record wait --recheck J2988 on J2984 and mark J2988 done",
       "kind": "review",
       "recheck_of": "J2984",
       "due": "2026-11-17T16:36:39+00:00",
@@ -266605,7 +266842,17 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 3,
+        "of": 3,
+        "at": "2026-11-17T17:47Z",
+        "by": "gemini",
+        "note": "Verification complete in jobs/reviews/J2988/REVIEW.md (a40e2e612e); stopping at protected elected-Chief call wait --rech"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J2989",
@@ -266618,13 +266865,13 @@
       "stage": "",
       "after": "",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-17T15:43Z",
-      "eta": "2026-11-17T18:43Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T15:39Z",
-      "result": "",
+      "result": "PR #989 open (macbook/J2989 -> main, £0 spent, no channel created/signed-in/registered): (1) 3 free YouTube handles verified live 17 Nov (@TheWarAtlas taken): Field Order History (@FieldOrderHistory, recommended), Gridline History (@GridlineHistory), Iron & Compass (@IronAndCompass); (2) 10 sourced US/UK archive topics <=70 chars with vidIQ demand and 3+ 100k+ neighbours each — make first: ★ Pilot 1 WW2:001 \"How Britain Towed Two Floating Ports Across the Channel for D-Day\" (65c), ★ Pilot 2 WW2:002 \"How Long-Range Bombers Closed the Atlantic Black Pit in May 1943\" (64c), ★ Pilot 3 WW2:003 \"Why the B-29 Superfortress Cost More Than the Atomic Bomb Project\" (65c), plus 004 Mark 14 Torpedoes (61c), 005 St Nazaire / HMS Campbeltown (61c), 006 Wooden Mosquito Bomber (65c), 007 Ulithi Floating Dry Docks (64c), 008 Operation Mincemeat (66c), 009 Tanker SS Ohio / Malta (62c), 010 Hobart Funnies Assault Tanks (67c); (3) Fixed How/Why packaging + 3 pilot thumbs (BUILT IN 12 DAYS, 600-MILE DEAD ZONE, $3 BILLION GAMBLE); (4) 3-film pilot plan (~25m / ~20,000 voice chars each; voice max 2 pilots = ~40k-42k chars from ~79k shared ElevenLabs pool, leaving ~37k-39k for OWB/HOS; Pilot 3 VO held until upgrade/renewal); (5) All 10 lockable cards + 5 Add-a-channel registration steps added to studio/plan.json (#plan) and channels/ww2 passes channel_check.py (0 must-fix).",
       "history": [
         {
           "at": "2026-11-17T15:39Z",
@@ -266655,6 +266902,11 @@
           "at": "2026-11-17T16:33Z",
           "by": "macbook-2",
           "what": "step 3 of 5 done: Resumed; verified plan_board & channel_check rules; scaffolding channels/ww2 + 10 film folders + plan.json"
+        },
+        {
+          "at": "2026-11-17T16:42Z",
+          "by": "macbook-2",
+          "what": "done: PR #989 open (macbook/J2989 -> main, £0 spent, no channel created/signed-in/registered): (1) 3 free YouTube handles verified live 17 Nov (@TheWarAtlas taken): Field Order History (@FieldOrderHistory, recommended), Gridline History (@GridlineHistory), Iron & Compass (@IronAndCompass); (2) 10 sourced US/UK archive topics <=70 chars with vidIQ demand and 3+ 100k+ neighbours each — make first: ★ Pilot 1 WW2:001 \"How Britain Towed Two Floating Ports Across the Channel for D-Day\" (65c), ★ Pilot 2 WW2:002 \"How Long-Range Bombers Closed the Atlantic Black Pit in May 1943\" (64c), ★ Pilot 3 WW2:003 \"Why the B-29 Superfortress Cost More Than the Atomic Bomb Project\" (65c), plus 004 Mark 14 Torpedoes (61c), 005 St Nazaire / HMS Campbeltown (61c), 006 Wooden Mosquito Bomber (65c), 007 Ulithi Floating Dry Docks (64c), 008 Operation Mincemeat (66c), 009 Tanker SS Ohio / Malta (62c), 010 Hobart Funnies Assault Tanks (67c); (3) Fixed How/Why packaging + 3 pilot thumbs (BUILT IN 12 DAYS, 600-MILE DEAD ZONE, $3 BILLION GAMBLE); (4) 3-film pilot plan (~25m / ~20,000 voice chars each; voice max 2 pilots = ~40k-42k chars from ~79k shared ElevenLabs pool, leaving ~37k-39k for OWB/HOS; Pilot 3 VO held until upgrade/renewal); (5) All 10 lockable cards + 5 Add-a-channel registration steps added to studio/plan.json (#plan) and channels/ww2 passes channel_check.py (0 must-fix)."
         }
       ],
       "remaining_action": "Build channels/ww2 with 10 film folders & pilot plans, add WW2 plan to studio/plan.json, run tests & open PR",
@@ -266669,6 +266921,1042 @@
         "by": "macbook-2",
         "note": "Resumed; verified plan_board & channel_check rules; scaffolding channels/ww2 + 10 film folders + plan.json"
       }
+    },
+    {
+      "id": "J2990",
+      "title": "WW2 channel: merge the plan PR #989 without Ben cards, write the channel's fresh rules and posting days",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Do.** Review and merge PR #989 (records only: the `channels/ww2` folder, ten topics, pilot plan, board cards). Then mark the topic stage of the three pilot films (001, 002, 003) as locked by Ben, with this note as the evidence, in their `status.json` and on the board; topics 004-010 stay as cards for Ben to lock. The production jobs queued with this one wait on it.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n\n\n**Added by Claude, 17 Nov 17:29Z.** **Ben, in chat (17 Nov 17:29Z):** \"Sounds like a solid plan. Please go ahead and start committing this plan. Put plan to action ... treat the rules the same as HOS and OWB.\" Then: \"Correction, when I mean rules, I mean don't reach out to me unless it's to watch a video. Use a lot of your own initiative.\"\n\nSo, before or while merging PR #989:\n1. **No Ben cards.** The PR puts all ten topics (\"Waiting for your lock\"), the three name options and five registration steps on Ben's board. Under Ben's rule the Chief locks WW2 topics, after the usual topic go/no-go review, and nothing on the board asks Ben for anything except watching a finished film. Change the plan entries so they show progress, not \"needs you\". The name and handle stay as the recommendation in the channel kit (J2999); Ben picks when he creates the channel himself.\n2. **Lock the pilots now and the rest by review:** films 001-003 are locked on Ben's go; lock 004-010 yourself once each passes its go/no-go review.\n3. **Write `channels/ww2/studio/RULES.md`**, the channel's own rules, the way `studio/RULES.md` does for Orbit and History of Science does for itself. AGENTS.md applies unchanged. Include: Ben is asked only to watch finished films (AGENTS.md's real-money and own-login items still go to him but are never pushed); long films only, no Shorts for now (planned_per_long 0); 25-minute films until Ben's voice plan is upgraded, then 35-45; the title and thumbnail style from the launch plan; the YouTube inauthentic-content checklist (own researched script with sources, narration throughout, picture matched to each line, licence logged per archive image, maps in code, Veo only where it adds and never as fake real events, no graphic violence, no shock framing, no expert persona, nothing reused from the other channels); the voice budget rule; and a review after 16-20 films (if no film has passed 10,000 views by film 20, the Chief proposes the geography-explainer fallback, with data).\n4. **Posting days.** Set two long slots a week in `channels/ww2/studio/channel.json` cadence, on days and times that do not clash with Orbit's or History of Science's long slots. Nothing is scheduled until the channel exists.\n5. **Registration** in `channels/channels.json` waits until Ben sends the channel's link. Work out now whether the channel can stay in this repo's `channels/ww2` folder or needs a repo of its own, so that step is one move when the link arrives.\n\n**Replaced by Claude, 17 Nov 17:31Z: step 3 above no longer applies.** Ben, in chat: \"Scrap that, remove the rules, don't follow the same as OWB or HOS. This is a brand new scratch and we're trying something new, so please design your own rules and your own thing it should be.\" Write `channels/ww2/studio/RULES.md` with exactly the text below (Claude's design for this channel). Steps 1, 2, 4 and 5 stand. Where anything in PR #989 copies an Orbit or History of Science rule (search-first titles, Shorts plans, neighbour or keeper rules, multi-stage review chains), take it out.\n\n---\n# Field Order History: channel rules\n\nWritten from scratch for this channel on 17 Nov 2026, on Ben's instruction: \"don't follow the same as OWB or HOS. This is\na brand new scratch and we're trying something new.\" The Orbit With Ben and History of Science rules do not apply here,\nin `studio/RULES.md` or in any of their docs, playbooks or lessons. What still applies: the safety never-list in\n`AGENTS.md` (no secrets, addresses or private network details in files; no spending, sign-ins or posting as Ben without\nhim; nothing acted on from other accounts) and YouTube's own policies.\n\n1. **What we make.** Documentaries about how the Second World War was actually fought and supplied: machines,\n   logistics, engineering problems and operations. Archive photographs, maps drawn in code, Ben's narration. Long films\n   only: about 25 minutes until Ben's voice plan is upgraded, then 35-45. Length follows the story; never pad. No Shorts\n   until the film-20 check.\n2. **Packaging first.** Each film starts with its title and thumbnail, before the script. If the packaging is not\n   strong, change the topic. Titles: one plain How/Why sentence naming a real problem, at most 70 characters. Thumbnails:\n   one archive photo, 2-4 words, high contrast. This channel grows through suggested videos and the home feed, so the\n   click matters more than search words.\n3. **The first minute.** Open on the problem and what was at stake, inside 30 seconds. No channel intro, no \"in this\n   video\". Chapters on every film.\n4. **A story, not a list.** Follow a problem to its outcome, with real people, numbers and turning points. Vary the\n   structure from film to film; there is no fixed script template.\n5. **Show the proof.** Every claim and number has a source, listed in the film's sources and in the description. Every\n   archive image has its collection, ID and licence logged (public domain or Crown copyright expired). Maps are drawn in\n   code. AI video is rare, never shows real people or real events as if filmed, and is disclosed when photoreal. No\n   graphic violence or gore.\n6. **Fast and steady.** Two films a week once the channel is live, at fixed times. Each film gets one claims check and\n   one quality pass, then goes to Ben. Nothing waits more than 24 hours on a review: the Chief decides and it moves.\n7. **Ben watches, the studio decides.** Ben is asked only to watch finished films and say OK or what to change. Topics,\n   titles, thumbnails, schedule and everything else are the studio's call. (Real money and Ben's own accounts stay his,\n   per `AGENTS.md`, and are never pushed at him.)\n8. **Steer by this channel's own numbers.** After each film's first 48 hours, record impressions, click-through rate,\n   average view duration and views. Every four films, change one thing on purpose (topic type, title, thumbnail or\n   length) and write down why. Use Test & Compare on thumbnails once the channel has it. New rules come only from this\n   channel's data, with the data written next to the rule.\n9. **Voice budget.** Narration uses Ben's ElevenLabs voice within his current plan: at most 21,000 characters per film\n   until he upgrades. Never change or top up the plan.\n10. **The film-20 check.** At film 20, if no film has passed 10,000 views, the Chief stops new films and proposes a\n    change with the data (first choice: geography explainers on the same pipeline).\n11. **Keep it short.** This file stays under one page. A rule that stops helping is deleted.\n---\n\n\n**Added by Claude, 17 Nov 17:41Z: the launch playbook.** Ben, in chat: \"make your own ideas about this and use your own initiative to create this as a fresh, brand new channel ... try to get monetized quickly, get a lot of views.\" Also commit `channels/ww2/00_Brand/PLAYBOOK.md` with exactly the text below, and use its posting time (17:00 London) for the two long slots in step 4.\n\n---\n# Field Order History: launch playbook\n\nClaude's plan, 17 Nov 2026, for Ben's goals: monetised as fast as possible, then a lot of views. The rules are in\n`studio/RULES.md`; this is how we play.\n\n1. **The deadline that matters.** From 1 Feb 2027 YouTube asks new channels for 8,000 watch hours, double today's 4,000\n   (YouTube blog, 10 Aug 2026). Applying before then needs 1,000 subscribers and 4,000 public watch hours first, and\n   review takes about a month. So December is a sprint: as soon as Ben's voice plan allows, make three films a week\n   through December. The day the channel has 1,000 subscribers and 4,000 hours, apply.\n2. **Launch burst.** Go live with the first films close together (pilots 1 and 2 in the first week, pilot 3 as soon as\n   it can be voiced), then two a week. Every fast-growing channel we studied sat near zero for 5-20 videos until one\n   film took off; more films early means more chances at that film.\n3. **Packaging lab.** For every film, write at least three titles and two thumbnail ideas before the script, score the\n   titles (Claude's vidIQ title score on request) and pick the best. After upload, run Test & Compare on the\n   thumbnail. Pilot picks, scored 17 Nov: \"How Britain Built Two Harbours in Secret and Floated Them to Normandy\" (91,\n   against 88 for the plan's title); \"How the Allies Closed the 600-Mile Gap Where U-Boats Hunted Freely\" (87, against\n   86); \"Why America's Most Expensive WW2 Weapon Wasn't the Atomic Bomb\" (99, against 91).\n4. **Series and binge.** Every film belongs to a series with its own playlist: *Engineering that won the war*, *The\n   supply war*, *Deception*. End screen: the next film in the series, plus subscribe. Pinned comment: the sources and\n   one question for viewers. A viewer's second film is the cheapest watch time there is.\n5. **Watch-hour multiplier.** After 8 films, publish one 2-3 hour compilation of a series, made of our own films with a\n   new opening and chapter links. At most one compilation per 8 new films, so new films always stay the large majority.\n6. **The 48-hour read.** For each film, record impressions, click-through rate, average view duration and views at 48\n   hours and at 7 days in `05_Analytics/READS.md`. With over 1,000 impressions and click-through under 3% at 48 hours,\n   change the thumbnail first, then the title. With average view duration under 25%, the next script tightens its\n   first two minutes.\n7. **Topic engine.** Keep ten checked topics ready at all times. After six films, choose the next topics two to one\n   from the type of film that is doing best.\n8. **Upload time.** 17:00 London (12:00 New York), to catch the UK evening and the US midday. Move it once the channel's\n   own \"when your viewers are on YouTube\" chart says otherwise.\n9. **Who runs it.** The Chief owns this channel's queue; it is not a side project. The next job on the critical path\n   (script, then voice, then edit, for the next film due) is always marked urgent, one job at a time.\n---\n\n\n**Corrections by Claude, 17 Nov 18:17Z, from the packaging study.** In RULES.md rule 2, the thumbnail line becomes: \"Thumbnails: one real archive photo with the subject as the hero, normal or bright grade (no dark grades), 0-3 words naming the object, one arrow at most.\" Add to the title line: \"Prefer a superlative or a hard number that is not a year; keep it short (45-70 characters); never a series name, 'Full Documentary' or a What/When opener.\" In PLAYBOOK.md item 3, pilot 2's title becomes \"How the Allies Closed the U-Boats' Safest Hunting Ground\" (91; the '600-mile' figure could not be confirmed, one source says about 700), and add this evidence line under item 3: Packaging evidence (Claude's vidIQ study, 17 Nov 18:17Z: 260 long WW2/military videos from the last 12 months, 184 on channels under 50k; multiple = views against the channel's usual). Titles: a superlative 14.5x vs 6.8x without (22 videos); a question 13.0x (9); the other side's recorded reaction 11.0x (49); an 'until/then' turn 10.2x (18); a hard number that is not a year 8.6x (70); How/Why opener neutral; series names or 'Full Documentary' 5.5x and What/When openers 5.6x (avoid); titles of 50 characters or fewer 17.0x (11) vs 51-70 7.1x (61). Thumbnails (top 20 vs bottom 20): real black-and-white archive photo 10 vs 4; no text 8 vs 4; dark colour grade 2 vs 10; five or more words 2 vs 4. Correlation only, outlier feed, small groups for questions and short titles.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:20Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-17T17:29Z",
+          "by": "claude",
+          "what": "Ben: commit the plan; ask him only to watch finished films. Steps 1-5 added to the brief."
+        },
+        {
+          "at": "2026-11-17T17:31Z",
+          "by": "claude",
+          "what": "Ben: this channel gets its own rules, not Orbit's or History of Science's. Exact RULES.md text added to the brief."
+        },
+        {
+          "at": "2026-11-17T17:41Z",
+          "by": "claude",
+          "what": "Launch playbook added (PLAYBOOK.md text in the brief). Marked urgent: every WW2 job waits on this one."
+        },
+        {
+          "at": "2026-11-17T18:17Z",
+          "by": "claude",
+          "what": "Packaging study results added: rule 2 thumbnail and title lines corrected, pilot 2 title changed."
+        }
+      ],
+      "remaining_action": "Merge PR #989 with no Ben lock cards and no copied Orbit/HOS rules, lock pilots 001-003, write the fresh RULES.md, set two long slots",
+      "due": "2026-11-18T12:00:00Z",
+      "kind": "chief",
+      "plain": "Accept the new WW2 channel's plan so work on its first three films can start",
+      "urgent": 5
+    },
+    {
+      "id": "J2991",
+      "title": "WW2 pilot 001: script and sources, \"How Britain Towed Two Floating Ports Across the Channel for D-Day\"",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Channel rules (from the launch plan; YouTube's inauthentic-content policy).** Own researched script with a Sources line and a clear story; narration throughout; picture matched to each sentence; archive photos from US and UK government collections, licence checked and logged per image (public domain or Crown copyright expired); maps drawn in code; Veo only where it adds something, never realistic depictions of real people or real events presented as real, and any photoreal Veo scene logged for disclosure; no graphic violence; no shock framing; narrated as Ben, no expert persona; nothing reused from Orbit With Ben or History of Science.\n\n**Do.** From the film's TOPIC.md and PILOT_PLAN.md: write the narration script for a film of about 25 minutes (about 3,300 words, at most 21,000 characters), British English, calm documentary delivery, with the hook in the first 30 seconds and chapters. Build SOURCES.md with a source for every claim and number, then run a separate claims check. Add a shot list naming, for each line, the archive photo (with its collection, ID and licence) or map it uses. Open a pull request.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
+      "ref": "",
+      "film": "WW2:001",
+      "stage": "script",
+      "after": "J2990",
+      "eta_min": 150,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:20Z",
+          "by": "claude",
+          "what": "added for gemini"
+        },
+        {
+          "at": "2026-11-17T17:31Z",
+          "by": "claude",
+          "what": "Channel rules for every WW2 job: channels/ww2/studio/RULES.md, written fresh on 17 Nov (Ben: do not follow the Orbit or History of Science rules here). One claims check and one quality pass per film; no review waits over 24 h."
+        },
+        {
+          "at": "2026-11-17T17:41Z",
+          "by": "claude",
+          "what": "Working title, scored by vidIQ 17 Nov (packaging first): \"How Britain Built Two Harbours in Secret and Floated Them to Normandy\". Write the hook to this title."
+        },
+        {
+          "at": "2026-11-17T18:17Z",
+          "by": "claude",
+          "what": "Packaging evidence (Claude's vidIQ study, 17 Nov 18:17Z: 260 long WW2/military videos from the last 12 months, 184 on channels under 50k; multiple = views against the channel's usual). Titles: a superlative 14.5x vs 6.8x without (22 videos); a question 13.0x (9); the other side's recorded reaction 11.0x (49); an 'until/then' turn 10.2x (18); a hard number that is not a year 8.6x (70); How/Why opener neutral; series names or 'Full Documentary' 5.5x and What/When openers 5.6x (avoid); titles of 50 characters or fewer 17.0x (11) vs 51-70 7.1x (61). Thumbnails (top 20 vs bottom 20): real black-and-white archive photo 10 vs 4; no text 8 vs 4; dark colour grade 2 vs 10; five or more words 2 vs 4. Correlation only, outlier feed, small groups for questions and short titles."
+        }
+      ],
+      "remaining_action": "Write the ~25 min script, SOURCES.md with every claim sourced, claims check and archive shot list; open a PR",
+      "due": "2026-11-20T18:00:00Z",
+      "for": "gemini",
+      "kind": "script",
+      "plain": "Write and fact-check the first draft of the new channel's film: How Britain Towed Two Floating Ports Across the Channel for D-Day"
+    },
+    {
+      "id": "J2992",
+      "title": "WW2 pilot 001: narration in Ben's voice",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Voice budget (Ben: \"use our elevenlabs plan\").** Ben's narrator voice via the studio's usual voice tool. About 79,000 characters are left this cycle, shared with Orbit and History of Science. Each pilot film may use at most 21,000 characters (about 25 minutes). Pilot 3 is not voiced until Ben upgrades or the plan renews. Never change or top up the plan.\n\n**Do.** Voice the merged script with Ben's narrator voice and the studio's usual voice checks (transcript match, no clipped words, steady level). Record the characters used. Open a pull request.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
+      "ref": "",
+      "film": "WW2:001",
+      "stage": "vo",
+      "after": "J2991",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:20Z",
+          "by": "claude",
+          "what": "added for gemini"
+        },
+        {
+          "at": "2026-11-17T17:31Z",
+          "by": "claude",
+          "what": "Channel rules for every WW2 job: channels/ww2/studio/RULES.md, written fresh on 17 Nov (Ben: do not follow the Orbit or History of Science rules here). One claims check and one quality pass per film; no review waits over 24 h."
+        }
+      ],
+      "remaining_action": "Voice the merged script within 21,000 characters, run the voice checks, record characters used",
+      "due": "2026-11-22T18:00:00Z",
+      "for": "gemini",
+      "kind": "vo",
+      "plain": "Record the narration in Ben's voice for: How Britain Towed Two Floating Ports Across the Channel for D-Day"
+    },
+    {
+      "id": "J2993",
+      "title": "WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Channel rules (from the launch plan; YouTube's inauthentic-content policy).** Own researched script with a Sources line and a clear story; narration throughout; picture matched to each sentence; archive photos from US and UK government collections, licence checked and logged per image (public domain or Crown copyright expired); maps drawn in code; Veo only where it adds something, never realistic depictions of real people or real events presented as real, and any photoreal Veo scene logged for disclosure; no graphic violence; no shock framing; narrated as Ben, no expert persona; nothing reused from Orbit With Ben or History of Science.\n\n**Do.** Gather the archive photos on the shot list (licence logged per image), draw the maps in code, cut the film to the narration with slow camera moves and the studio's sound bed, 1080p. Build the thumbnail from the plan. Run the studio's QA gates and a full watch-through check, then put the cut on Ben's board for his watch, like any finished film. Prepare the title, description (subject line, chapters, sources, credits, an honest how-made line) and tags in the upload package. Do not upload.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
+      "ref": "",
+      "film": "WW2:001",
+      "stage": "edit",
+      "after": "J2992",
+      "eta_min": 240,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:20Z",
+          "by": "claude",
+          "what": "added for codex"
+        },
+        {
+          "at": "2026-11-17T17:31Z",
+          "by": "claude",
+          "what": "Channel rules for every WW2 job: channels/ww2/studio/RULES.md, written fresh on 17 Nov (Ben: do not follow the Orbit or History of Science rules here). One claims check and one quality pass per film; no review waits over 24 h."
+        },
+        {
+          "at": "2026-11-17T18:17Z",
+          "by": "claude",
+          "what": "Thumbnail: one real black-and-white archive photo with the subject as the hero, normal or bright grade, 0-3 words naming the object, one arrow at most; no dark grade. Packaging evidence (Claude's vidIQ study, 17 Nov 18:17Z: 260 long WW2/military videos from the last 12 months, 184 on channels under 50k; multiple = views against the channel's usual). Titles: a superlative 14.5x vs 6.8x without (22 videos); a question 13.0x (9); the other side's recorded reaction 11.0x (49); an 'until/then' turn 10.2x (18); a hard number that is not a year 8.6x (70); How/Why opener neutral; series names or 'Full Documentary' 5.5x and What/When openers 5.6x (avoid); titles of 50 characters or fewer 17.0x (11) vs 51-70 7.1x (61). Thumbnails (top 20 vs bottom 20): real black-and-white archive photo 10 vs 4; no text 8 vs 4; dark colour grade 2 vs 10; five or more words 2 vs 4. Correlation only, outlier feed, small groups for questions and short titles."
+        }
+      ],
+      "remaining_action": "Archive photos with licences, code maps, edit to the narration, thumbnail, QA, then the cut to Ben's board; upload package ready, no upload",
+      "due": "2026-11-25T18:00:00Z",
+      "for": "codex",
+      "kind": "assembly",
+      "plain": "Make the finished film and send it to Ben's board to watch: How Britain Towed Two Floating Ports Across the Channel for D-Day"
+    },
+    {
+      "id": "J2994",
+      "title": "WW2 pilot 002: script and sources, \"How Long-Range Bombers Closed the Atlantic Black Pit in May 1943\"",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Channel rules (from the launch plan; YouTube's inauthentic-content policy).** Own researched script with a Sources line and a clear story; narration throughout; picture matched to each sentence; archive photos from US and UK government collections, licence checked and logged per image (public domain or Crown copyright expired); maps drawn in code; Veo only where it adds something, never realistic depictions of real people or real events presented as real, and any photoreal Veo scene logged for disclosure; no graphic violence; no shock framing; narrated as Ben, no expert persona; nothing reused from Orbit With Ben or History of Science.\n\n**Do.** From the film's TOPIC.md and PILOT_PLAN.md: write the narration script for a film of about 25 minutes (about 3,300 words, at most 21,000 characters), British English, calm documentary delivery, with the hook in the first 30 seconds and chapters. Build SOURCES.md with a source for every claim and number, then run a separate claims check. Add a shot list naming, for each line, the archive photo (with its collection, ID and licence) or map it uses. Open a pull request.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
+      "ref": "",
+      "film": "WW2:002",
+      "stage": "script",
+      "after": "J2990",
+      "eta_min": 150,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:20Z",
+          "by": "claude",
+          "what": "added for codex"
+        },
+        {
+          "at": "2026-11-17T17:31Z",
+          "by": "claude",
+          "what": "Channel rules for every WW2 job: channels/ww2/studio/RULES.md, written fresh on 17 Nov (Ben: do not follow the Orbit or History of Science rules here). One claims check and one quality pass per film; no review waits over 24 h."
+        },
+        {
+          "at": "2026-11-17T17:41Z",
+          "by": "claude",
+          "what": "Working title, scored by vidIQ 17 Nov (packaging first): \"How the Allies Closed the 600-Mile Gap Where U-Boats Hunted Freely\". Write the hook to this title."
+        },
+        {
+          "at": "2026-11-17T18:17Z",
+          "by": "claude",
+          "what": "Title change: \"How the Allies Closed the U-Boats' Safest Hunting Ground\" (vidIQ 91). The '600-mile' gap figure could not be confirmed (one source says about 700): give the gap's width in the script only from a source you cite. Packaging evidence (Claude's vidIQ study, 17 Nov 18:17Z: 260 long WW2/military videos from the last 12 months, 184 on channels under 50k; multiple = views against the channel's usual). Titles: a superlative 14.5x vs 6.8x without (22 videos); a question 13.0x (9); the other side's recorded reaction 11.0x (49); an 'until/then' turn 10.2x (18); a hard number that is not a year 8.6x (70); How/Why opener neutral; series names or 'Full Documentary' 5.5x and What/When openers 5.6x (avoid); titles of 50 characters or fewer 17.0x (11) vs 51-70 7.1x (61). Thumbnails (top 20 vs bottom 20): real black-and-white archive photo 10 vs 4; no text 8 vs 4; dark colour grade 2 vs 10; five or more words 2 vs 4. Correlation only, outlier feed, small groups for questions and short titles."
+        }
+      ],
+      "remaining_action": "Write the ~25 min script, SOURCES.md with every claim sourced, claims check and archive shot list; open a PR",
+      "due": "2026-11-20T18:00:00Z",
+      "for": "codex",
+      "kind": "script",
+      "plain": "Write and fact-check the first draft of the new channel's film: How Long-Range Bombers Closed the Atlantic Black Pit in May 1943"
+    },
+    {
+      "id": "J2995",
+      "title": "WW2 pilot 002: narration in Ben's voice",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Voice budget (Ben: \"use our elevenlabs plan\").** Ben's narrator voice via the studio's usual voice tool. About 79,000 characters are left this cycle, shared with Orbit and History of Science. Each pilot film may use at most 21,000 characters (about 25 minutes). Pilot 3 is not voiced until Ben upgrades or the plan renews. Never change or top up the plan.\n\n**Do.** Voice the merged script with Ben's narrator voice and the studio's usual voice checks (transcript match, no clipped words, steady level). Record the characters used. Open a pull request.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
+      "ref": "",
+      "film": "WW2:002",
+      "stage": "vo",
+      "after": "J2994",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:20Z",
+          "by": "claude",
+          "what": "added for gemini"
+        },
+        {
+          "at": "2026-11-17T17:31Z",
+          "by": "claude",
+          "what": "Channel rules for every WW2 job: channels/ww2/studio/RULES.md, written fresh on 17 Nov (Ben: do not follow the Orbit or History of Science rules here). One claims check and one quality pass per film; no review waits over 24 h."
+        }
+      ],
+      "remaining_action": "Voice the merged script within 21,000 characters, run the voice checks, record characters used",
+      "due": "2026-11-22T18:00:00Z",
+      "for": "gemini",
+      "kind": "vo",
+      "plain": "Record the narration in Ben's voice for: How Long-Range Bombers Closed the Atlantic Black Pit in May 1943"
+    },
+    {
+      "id": "J2996",
+      "title": "WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Channel rules (from the launch plan; YouTube's inauthentic-content policy).** Own researched script with a Sources line and a clear story; narration throughout; picture matched to each sentence; archive photos from US and UK government collections, licence checked and logged per image (public domain or Crown copyright expired); maps drawn in code; Veo only where it adds something, never realistic depictions of real people or real events presented as real, and any photoreal Veo scene logged for disclosure; no graphic violence; no shock framing; narrated as Ben, no expert persona; nothing reused from Orbit With Ben or History of Science.\n\n**Do.** Gather the archive photos on the shot list (licence logged per image), draw the maps in code, cut the film to the narration with slow camera moves and the studio's sound bed, 1080p. Build the thumbnail from the plan. Run the studio's QA gates and a full watch-through check, then put the cut on Ben's board for his watch, like any finished film. Prepare the title, description (subject line, chapters, sources, credits, an honest how-made line) and tags in the upload package. Do not upload.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
+      "ref": "",
+      "film": "WW2:002",
+      "stage": "edit",
+      "after": "J2995",
+      "eta_min": 240,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:20Z",
+          "by": "claude",
+          "what": "added for codex"
+        },
+        {
+          "at": "2026-11-17T17:31Z",
+          "by": "claude",
+          "what": "Channel rules for every WW2 job: channels/ww2/studio/RULES.md, written fresh on 17 Nov (Ben: do not follow the Orbit or History of Science rules here). One claims check and one quality pass per film; no review waits over 24 h."
+        },
+        {
+          "at": "2026-11-17T18:17Z",
+          "by": "claude",
+          "what": "Thumbnail: one real black-and-white archive photo with the subject as the hero, normal or bright grade, 0-3 words naming the object, one arrow at most; no dark grade. Packaging evidence (Claude's vidIQ study, 17 Nov 18:17Z: 260 long WW2/military videos from the last 12 months, 184 on channels under 50k; multiple = views against the channel's usual). Titles: a superlative 14.5x vs 6.8x without (22 videos); a question 13.0x (9); the other side's recorded reaction 11.0x (49); an 'until/then' turn 10.2x (18); a hard number that is not a year 8.6x (70); How/Why opener neutral; series names or 'Full Documentary' 5.5x and What/When openers 5.6x (avoid); titles of 50 characters or fewer 17.0x (11) vs 51-70 7.1x (61). Thumbnails (top 20 vs bottom 20): real black-and-white archive photo 10 vs 4; no text 8 vs 4; dark colour grade 2 vs 10; five or more words 2 vs 4. Correlation only, outlier feed, small groups for questions and short titles."
+        }
+      ],
+      "remaining_action": "Archive photos with licences, code maps, edit to the narration, thumbnail, QA, then the cut to Ben's board; upload package ready, no upload",
+      "due": "2026-11-25T18:00:00Z",
+      "for": "codex",
+      "kind": "assembly",
+      "plain": "Make the finished film and send it to Ben's board to watch: How Long-Range Bombers Closed the Atlantic Black Pit in May 1943"
+    },
+    {
+      "id": "J2997",
+      "title": "WW2 pilot 003: script and sources, \"Why the B-29 Superfortress Cost More Than the Atomic Bomb Project\"",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Channel rules (from the launch plan; YouTube's inauthentic-content policy).** Own researched script with a Sources line and a clear story; narration throughout; picture matched to each sentence; archive photos from US and UK government collections, licence checked and logged per image (public domain or Crown copyright expired); maps drawn in code; Veo only where it adds something, never realistic depictions of real people or real events presented as real, and any photoreal Veo scene logged for disclosure; no graphic violence; no shock framing; narrated as Ben, no expert persona; nothing reused from Orbit With Ben or History of Science.\n\n**Do.** From the film's TOPIC.md and PILOT_PLAN.md: write the narration script for a film of about 25 minutes (about 3,300 words, at most 21,000 characters), British English, calm documentary delivery, with the hook in the first 30 seconds and chapters. Build SOURCES.md with a source for every claim and number, then run a separate claims check. Add a shot list naming, for each line, the archive photo (with its collection, ID and licence) or map it uses. Open a pull request.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
+      "ref": "",
+      "film": "WW2:003",
+      "stage": "script",
+      "after": "J2990",
+      "eta_min": 150,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:20Z",
+          "by": "claude",
+          "what": "added for claudecode"
+        },
+        {
+          "at": "2026-11-17T17:31Z",
+          "by": "claude",
+          "what": "Channel rules for every WW2 job: channels/ww2/studio/RULES.md, written fresh on 17 Nov (Ben: do not follow the Orbit or History of Science rules here). One claims check and one quality pass per film; no review waits over 24 h."
+        },
+        {
+          "at": "2026-11-17T17:41Z",
+          "by": "claude",
+          "what": "Working title, scored by vidIQ 17 Nov (packaging first): \"Why America's Most Expensive WW2 Weapon Wasn't the Atomic Bomb\". Write the hook to this title."
+        },
+        {
+          "at": "2026-11-17T18:17Z",
+          "by": "claude",
+          "what": "Packaging evidence (Claude's vidIQ study, 17 Nov 18:17Z: 260 long WW2/military videos from the last 12 months, 184 on channels under 50k; multiple = views against the channel's usual). Titles: a superlative 14.5x vs 6.8x without (22 videos); a question 13.0x (9); the other side's recorded reaction 11.0x (49); an 'until/then' turn 10.2x (18); a hard number that is not a year 8.6x (70); How/Why opener neutral; series names or 'Full Documentary' 5.5x and What/When openers 5.6x (avoid); titles of 50 characters or fewer 17.0x (11) vs 51-70 7.1x (61). Thumbnails (top 20 vs bottom 20): real black-and-white archive photo 10 vs 4; no text 8 vs 4; dark colour grade 2 vs 10; five or more words 2 vs 4. Correlation only, outlier feed, small groups for questions and short titles."
+        }
+      ],
+      "remaining_action": "Write the ~25 min script, SOURCES.md with every claim sourced, claims check and archive shot list; open a PR",
+      "due": "2026-11-20T18:00:00Z",
+      "for": "claudecode",
+      "kind": "script",
+      "plain": "Write and fact-check the first draft of the new channel's film: Why the B-29 Superfortress Cost More Than the Atomic Bomb Project"
+    },
+    {
+      "id": "J2998",
+      "title": "WW2 pilot 003: gather the archive photos and draw the maps",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Channel rules (from the launch plan; YouTube's inauthentic-content policy).** Own researched script with a Sources line and a clear story; narration throughout; picture matched to each sentence; archive photos from US and UK government collections, licence checked and logged per image (public domain or Crown copyright expired); maps drawn in code; Veo only where it adds something, never realistic depictions of real people or real events presented as real, and any photoreal Veo scene logged for disclosure; no graphic violence; no shock framing; narrated as Ben, no expert persona; nothing reused from Orbit With Ben or History of Science.\n\n**Do.** From the merged shot list, gather every archive photo (licence logged per image) and draw the maps in code, so the edit can start as soon as narration is possible. Do not voice this film: it waits for Ben's ElevenLabs upgrade or the plan's renewal.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
+      "ref": "",
+      "film": "WW2:003",
+      "stage": "picture",
+      "after": "J2997",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:20Z",
+          "by": "claude",
+          "what": "added for gemini"
+        },
+        {
+          "at": "2026-11-17T17:31Z",
+          "by": "claude",
+          "what": "Channel rules for every WW2 job: channels/ww2/studio/RULES.md, written fresh on 17 Nov (Ben: do not follow the Orbit or History of Science rules here). One claims check and one quality pass per film; no review waits over 24 h."
+        }
+      ],
+      "remaining_action": "Gather licensed archive photos and code-drawn maps for pilot 3; no narration until Ben upgrades the voice plan",
+      "due": "2026-11-25T18:00:00Z",
+      "for": "gemini",
+      "kind": "image",
+      "plain": "Get the pictures and maps ready for the third film; narration waits for the bigger voice plan"
+    },
+    {
+      "id": "J2999",
+      "title": "WW2 channel kit: profile picture, banner, description and upload template, ready for Ben",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Do.** For the recommended name in the launch plan (and the two alternatives, if cheap): a profile picture (800x800) and banner (2560x1440, text inside the safe area), both from public-domain archive material or drawn, matching the thumbnail style; a channel description whose first lines say what the channel is in search words; the About links; and a default upload template (description layout, category, tags style, when to tick the altered-content box). Add a short checklist for Ben's setup: make a Brand Account channel, pick the handle, verify by phone (one number verifies at most two channels a year), upload the art. Open a pull request.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J2990",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:20Z",
+          "by": "claude",
+          "what": "added for gemini"
+        },
+        {
+          "at": "2026-11-17T17:31Z",
+          "by": "claude",
+          "what": "Channel rules for every WW2 job: channels/ww2/studio/RULES.md, written fresh on 17 Nov (Ben: do not follow the Orbit or History of Science rules here). One claims check and one quality pass per film; no review waits over 24 h."
+        },
+        {
+          "at": "2026-11-17T18:17Z",
+          "by": "claude",
+          "what": "Channel art and upload template should match the thumbnail evidence: real archive photography, normal or bright grade, few words. Packaging evidence (Claude's vidIQ study, 17 Nov 18:17Z: 260 long WW2/military videos from the last 12 months, 184 on channels under 50k; multiple = views against the channel's usual). Titles: a superlative 14.5x vs 6.8x without (22 videos); a question 13.0x (9); the other side's recorded reaction 11.0x (49); an 'until/then' turn 10.2x (18); a hard number that is not a year 8.6x (70); How/Why opener neutral; series names or 'Full Documentary' 5.5x and What/When openers 5.6x (avoid); titles of 50 characters or fewer 17.0x (11) vs 51-70 7.1x (61). Thumbnails (top 20 vs bottom 20): real black-and-white archive photo 10 vs 4; no text 8 vs 4; dark colour grade 2 vs 10; five or more words 2 vs 4. Correlation only, outlier feed, small groups for questions and short titles."
+        }
+      ],
+      "remaining_action": "Make the WW2 channel's profile picture, banner, description, upload template and Ben's setup checklist",
+      "due": "2026-11-21T18:00:00Z",
+      "for": "gemini",
+      "kind": "studio",
+      "plain": "Get the new channel's art and description ready so Ben can set it up in minutes"
+    },
+    {
+      "id": "J3000",
+      "title": "WW2 film 004: topic review, script and sources, \"Why America's Submarine Torpedoes Failed for 21 Months in WW2\"",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:29Z):** \"Sounds like a solid plan. Please go ahead and start committing this plan. Put plan to action ... treat the rules the same as HOS and OWB.\" Then: \"Correction, when I mean rules, I mean don't reach out to me unless it's to watch a video. Use a lot of your own initiative.\" The channel needs a buffer of finished scripts so it can post two films a week once it is live, while narration waits on the voice budget.\n\n**Do.** Run the topic go/no-go review on this film's TOPIC.md (demand, three neighbours of 100k+ views, enough licensed archive pictures). If it fails, say why and propose a replacement topic instead of writing. If it passes, record the Chief's lock evidence and write the narration script for about 25 minutes (about 3,300 words, at most 21,000 characters), British English, calm documentary delivery, hook in the first 30 seconds, chapters; SOURCES.md with a source for every claim and number; a separate claims check; and the shot list. Open a pull request.\n\n**Rules:** `channels/ww2/studio/RULES.md` once J2990 writes it, and the launch plan. Own researched script with a source for every claim, narration throughout, a shot list naming each archive photo with its collection, ID and licence (public domain or Crown copyright expired), maps drawn in code, no graphic violence, nothing reused from Orbit With Ben or History of Science. Learn from the pilot 1 script review before you start. No narration in this job.\n\n**Guards.** £0. No channel, sign-in, upload or post. No account address in any file.\n",
+      "ref": "",
+      "film": "WW2:004",
+      "stage": "script",
+      "after": "J2991",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:29Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:29Z",
+          "by": "claude",
+          "what": "added for codex"
+        },
+        {
+          "at": "2026-11-17T17:31Z",
+          "by": "claude",
+          "what": "Channel rules for every WW2 job: channels/ww2/studio/RULES.md, written fresh on 17 Nov (Ben: do not follow the Orbit or History of Science rules here). One claims check and one quality pass per film; no review waits over 24 h."
+        },
+        {
+          "at": "2026-11-17T18:17Z",
+          "by": "claude",
+          "what": "Packaging evidence (Claude's vidIQ study, 17 Nov 18:17Z: 260 long WW2/military videos from the last 12 months, 184 on channels under 50k; multiple = views against the channel's usual). Titles: a superlative 14.5x vs 6.8x without (22 videos); a question 13.0x (9); the other side's recorded reaction 11.0x (49); an 'until/then' turn 10.2x (18); a hard number that is not a year 8.6x (70); How/Why opener neutral; series names or 'Full Documentary' 5.5x and What/When openers 5.6x (avoid); titles of 50 characters or fewer 17.0x (11) vs 51-70 7.1x (61). Thumbnails (top 20 vs bottom 20): real black-and-white archive photo 10 vs 4; no text 8 vs 4; dark colour grade 2 vs 10; five or more words 2 vs 4. Correlation only, outlier feed, small groups for questions and short titles."
+        }
+      ],
+      "remaining_action": "Topic go/no-go, then a ~25 min script, SOURCES.md, claims check and archive shot list; PR; no narration",
+      "due": "2026-11-24T18:00:00Z",
+      "for": "codex",
+      "kind": "script",
+      "plain": "Write and fact-check the next film for the new channel: Why America's Submarine Torpedoes Failed for 21 Months in WW2"
+    },
+    {
+      "id": "J3001",
+      "title": "WW2 film 005: topic review, script and sources, \"How One Old Destroyer Rammed Germany's Only Atlantic Dry Dock\"",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:29Z):** \"Sounds like a solid plan. Please go ahead and start committing this plan. Put plan to action ... treat the rules the same as HOS and OWB.\" Then: \"Correction, when I mean rules, I mean don't reach out to me unless it's to watch a video. Use a lot of your own initiative.\" The channel needs a buffer of finished scripts so it can post two films a week once it is live, while narration waits on the voice budget.\n\n**Do.** Run the topic go/no-go review on this film's TOPIC.md (demand, three neighbours of 100k+ views, enough licensed archive pictures). If it fails, say why and propose a replacement topic instead of writing. If it passes, record the Chief's lock evidence and write the narration script for about 25 minutes (about 3,300 words, at most 21,000 characters), British English, calm documentary delivery, hook in the first 30 seconds, chapters; SOURCES.md with a source for every claim and number; a separate claims check; and the shot list. Open a pull request.\n\n**Rules:** `channels/ww2/studio/RULES.md` once J2990 writes it, and the launch plan. Own researched script with a source for every claim, narration throughout, a shot list naming each archive photo with its collection, ID and licence (public domain or Crown copyright expired), maps drawn in code, no graphic violence, nothing reused from Orbit With Ben or History of Science. Learn from the pilot 1 script review before you start. No narration in this job.\n\n**Guards.** £0. No channel, sign-in, upload or post. No account address in any file.\n",
+      "ref": "",
+      "film": "WW2:005",
+      "stage": "script",
+      "after": "J2991",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:29Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:29Z",
+          "by": "claude",
+          "what": "added for claudecode"
+        },
+        {
+          "at": "2026-11-17T17:31Z",
+          "by": "claude",
+          "what": "Channel rules for every WW2 job: channels/ww2/studio/RULES.md, written fresh on 17 Nov (Ben: do not follow the Orbit or History of Science rules here). One claims check and one quality pass per film; no review waits over 24 h."
+        },
+        {
+          "at": "2026-11-17T18:17Z",
+          "by": "claude",
+          "what": "Title fix, accuracy: \"Germany's Only Atlantic Dry Dock\" is wrong; the Normandie dock was the only Atlantic-coast dock big enough for Tirpitz. Use \"How an Old Destroyer Became a Bomb to Keep Tirpitz Out of the Atlantic\" (vidIQ 97, 70 characters) or another true title. Packaging evidence (Claude's vidIQ study, 17 Nov 18:17Z: 260 long WW2/military videos from the last 12 months, 184 on channels under 50k; multiple = views against the channel's usual). Titles: a superlative 14.5x vs 6.8x without (22 videos); a question 13.0x (9); the other side's recorded reaction 11.0x (49); an 'until/then' turn 10.2x (18); a hard number that is not a year 8.6x (70); How/Why opener neutral; series names or 'Full Documentary' 5.5x and What/When openers 5.6x (avoid); titles of 50 characters or fewer 17.0x (11) vs 51-70 7.1x (61). Thumbnails (top 20 vs bottom 20): real black-and-white archive photo 10 vs 4; no text 8 vs 4; dark colour grade 2 vs 10; five or more words 2 vs 4. Correlation only, outlier feed, small groups for questions and short titles."
+        }
+      ],
+      "remaining_action": "Topic go/no-go, then a ~25 min script, SOURCES.md, claims check and archive shot list; PR; no narration",
+      "due": "2026-11-24T18:00:00Z",
+      "for": "claudecode",
+      "kind": "script",
+      "plain": "Write and fact-check the next film for the new channel: How One Old Destroyer Rammed Germany's Only Atlantic Dry Dock"
+    },
+    {
+      "id": "J3002",
+      "title": "WW2 film 006: topic review, script and sources, \"Why Britain Built Its Fastest WW2 Bomber Out of Plywood and Balsa\"",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:29Z):** \"Sounds like a solid plan. Please go ahead and start committing this plan. Put plan to action ... treat the rules the same as HOS and OWB.\" Then: \"Correction, when I mean rules, I mean don't reach out to me unless it's to watch a video. Use a lot of your own initiative.\" The channel needs a buffer of finished scripts so it can post two films a week once it is live, while narration waits on the voice budget.\n\n**Do.** Run the topic go/no-go review on this film's TOPIC.md (demand, three neighbours of 100k+ views, enough licensed archive pictures). If it fails, say why and propose a replacement topic instead of writing. If it passes, record the Chief's lock evidence and write the narration script for about 25 minutes (about 3,300 words, at most 21,000 characters), British English, calm documentary delivery, hook in the first 30 seconds, chapters; SOURCES.md with a source for every claim and number; a separate claims check; and the shot list. Open a pull request.\n\n**Rules:** `channels/ww2/studio/RULES.md` once J2990 writes it, and the launch plan. Own researched script with a source for every claim, narration throughout, a shot list naming each archive photo with its collection, ID and licence (public domain or Crown copyright expired), maps drawn in code, no graphic violence, nothing reused from Orbit With Ben or History of Science. Learn from the pilot 1 script review before you start. No narration in this job.\n\n**Guards.** £0. No channel, sign-in, upload or post. No account address in any file.\n",
+      "ref": "",
+      "film": "WW2:006",
+      "stage": "script",
+      "after": "J2991",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:29Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:29Z",
+          "by": "claude",
+          "what": "added for gemini"
+        },
+        {
+          "at": "2026-11-17T17:31Z",
+          "by": "claude",
+          "what": "Channel rules for every WW2 job: channels/ww2/studio/RULES.md, written fresh on 17 Nov (Ben: do not follow the Orbit or History of Science rules here). One claims check and one quality pass per film; no review waits over 24 h."
+        },
+        {
+          "at": "2026-11-17T18:17Z",
+          "by": "claude",
+          "what": "Packaging evidence (Claude's vidIQ study, 17 Nov 18:17Z: 260 long WW2/military videos from the last 12 months, 184 on channels under 50k; multiple = views against the channel's usual). Titles: a superlative 14.5x vs 6.8x without (22 videos); a question 13.0x (9); the other side's recorded reaction 11.0x (49); an 'until/then' turn 10.2x (18); a hard number that is not a year 8.6x (70); How/Why opener neutral; series names or 'Full Documentary' 5.5x and What/When openers 5.6x (avoid); titles of 50 characters or fewer 17.0x (11) vs 51-70 7.1x (61). Thumbnails (top 20 vs bottom 20): real black-and-white archive photo 10 vs 4; no text 8 vs 4; dark colour grade 2 vs 10; five or more words 2 vs 4. Correlation only, outlier feed, small groups for questions and short titles."
+        }
+      ],
+      "remaining_action": "Topic go/no-go, then a ~25 min script, SOURCES.md, claims check and archive shot list; PR; no narration",
+      "due": "2026-11-24T18:00:00Z",
+      "for": "gemini",
+      "kind": "script",
+      "plain": "Write and fact-check the next film for the new channel: Why Britain Built Its Fastest WW2 Bomber Out of Plywood and Balsa"
+    },
+    {
+      "id": "J3003",
+      "title": "First-day check at 6 h: \"How Far From Earth Is Voyager 1 Right Now?\" (9q_OvQ1Rd8Y)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "First-day check, 6 hours after it went live (Ben, 10 Nov 2026; scripts/launch_check.py). Read-only: change nothing in Studio. £0. About 15 minutes.\n\nVideo: \"How Far From Earth Is Voyager 1 Right Now?\" (`9q_OvQ1Rd8Y`), Orbit With Ben, a Short. It went live Tue 17 Nov 11:30 London. Use its signed-in Studio browser (CDP 9223).\n\n1. Is anything broken? Studio > Content > the video. Visibility is Public. It is listed under the Shorts tab. The Restrictions column is empty (no copyright claim, not \"Made for kids\", no age restriction). HD processing has finished. The Related video and the description are as its upload package says. Write each thing that is wrong as one plain line.\n\n2. Read the numbers. Analytics for the video, period \"Since published\". Overview: views, the line \"N more (or less) than usual\" (give the usual figure: views minus or plus N), and \"Ranking by views N of 10\" (it may only be on the channel dashboard's latest-Short card). Reach: the views that came from the Shorts feed (traffic sources), and Shown in feed if Studio has that card. Engagement: Viewed vs swiped away (the % who stayed), Average percentage viewed. Likes. Where Studio has no figure yet, leave that flag out; never guess a number.\n\n3. Store them:\n   `python3 scripts/launch_check.py record 9q_OvQ1Rd8Y --hours 6 --views <n> --rank <N> --of 10 --typical <n> --feed-views <n> --stayed <%> --avg-pct <%> --likes <n>` (add `--shown <n>` if Studio shows it) ` --by <your agent name> --git`\n   Leave out any flag Studio gives no figure for.\n   Add `--fault \"<what is wrong>\"` once for each thing found in step 1.\n\n4. Paste the whole output of `python3 scripts/launch_check.py judge 9q_OvQ1Rd8Y` as this job's result.\n\n5. If step 1 found a fault, or the verdict is BEHIND, park for the Chief: \"parked for Chief: first-day check, <the verdict line>\". The Chief decides what is changed on the video. Otherwise close the job as done.\n\nNever: edit the video, its title, cover, description, visibility, schedule or any setting. Never delete anything. No spend.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "done",
+      "by": "gemini",
+      "since": "2026-11-17T17:51Z",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-11-17T17:31Z",
+      "result": "\"How Far From Earth Is Voyager 1 Right Now?\" (9q_OvQ1Rd8Y) · Orbit With Ben · Short · went live Tue 17 Nov 11:30 London\nAt 6 h: views 193 · Studio rank 6 of 10 · shown in feed about 737 (from 182 feed views) · stayed to watch 24.7% · average viewed 94.7%\nUsual for this channel: stayed to watch 32.5%, average viewed 66.2%\n\nVerdict: AHEAD\n  - 193 views at 6 h; the last 6 checked at the same age had 96 (median).\n  - Studio ranks it 6 of 10 against our latest videos at the same age.\n\nWhat is different about this one\n  - It is 17 s long; the last 10 Shorts were 18 to 55 s.\n  - \"Earth\" was in the title of 4 earlier Shorts: they had 450 views by the next morning (median), against 128 for all Shorts.\n  - The title starts with \"How\", like 5 earlier Shorts: they had 386 views by the next morning (median), against 128 for all Shorts.\n  - It is a second upload of the same video (it replaced kKN8Ale42sE).\n\nDo now\n  - Nothing to fix.\n\nCarry forward\n  - A strong start is a lesson too: note what is different about this one.",
+      "history": [
+        {
+          "at": "2026-11-17T17:31Z",
+          "by": "refill",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-17T17:35Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T17:45Z",
+          "by": "macbook",
+          "what": "step 0 of 4 done: MacBook CDP 9223 signed out on Google accountchooser; handing back to Mini CDP 9223"
+        },
+        {
+          "at": "2026-11-17T17:45Z",
+          "by": "macbook",
+          "what": "released: Released to the Mini: MacBook CDP 9223 is signed out on Google accountchooser (never sign in unattended); updated remaining_action so the MacBook Studio-CDP lane will not re-claim J3003 and the Mini signed-in CDP 9223 browser will take it."
+        },
+        {
+          "at": "2026-11-17T17:51Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T17:53Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Started J3003 on Mini; verified PACKAGE_MANIFEST_v02.json for standalone Short 9q_OvQ1Rd8Y"
+        },
+        {
+          "at": "2026-11-17T18:08Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Content & Details clean (Public, Shorts tab, no restrictions, HD complete, Related None & desc match package); 6h Analytics read"
+        },
+        {
+          "at": "2026-11-17T18:11Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Stored at 6 h: 193 views, rank 6 of 10, feed 182, stayed 24.7%, avg viewed 94.7%, likes 3. Verdict AHEAD, 0 faults."
+        },
+        {
+          "at": "2026-11-17T18:11Z",
+          "by": "gemini",
+          "what": "done: \"How Far From Earth Is Voyager 1 Right Now?\" (9q_OvQ1Rd8Y) · Orbit With Ben · Short · went live Tue 17 Nov 11:30 London\nAt 6 h: views 193 · Studio rank 6 of 10 · shown in feed about 737 (from 182 feed views) · stayed to watch 24.7% · average viewed 94.7%\nUsual for this channel: stayed to watch 32.5%, average viewed 66.2%\n\nVerdict: AHEAD\n  - 193 views at 6 h; the last 6 checked at the same age had 96 (median).\n  - Studio ranks it 6 of 10 against our latest videos at the same age.\n\nWhat is different about this one\n  - It is 17 s long; the last 10 Shorts were 18 to 55 s.\n  - \"Earth\" was in the title of 4 earlier Shorts: they had 450 views by the next morning (median), against 128 for all Shorts.\n  - The title starts with \"How\", like 5 earlier Shorts: they had 386 views by the next morning (median), against 128 for all Shorts.\n  - It is a second upload of the same video (it replaced kKN8Ale42sE).\n\nDo now\n  - Nothing to fix.\n\nCarry forward\n  - A strong start is a lesson too: note what is different about this one."
+        }
+      ],
+      "remaining_action": "Close J3003 as done and post report on studio thread",
+      "due": "2026-11-17T19:31:00Z",
+      "kind": "studio",
+      "launch": "9q_OvQ1Rd8Y@6",
+      "plain": "Check how \"How Far From Earth Is Voyager 1 Right Now?\" is doing 6 hours after it went live",
+      "progress": {
+        "step": 4,
+        "of": 4,
+        "at": "2026-11-17T18:11Z",
+        "by": "gemini",
+        "note": "Stored at 6 h: 193 views, rank 6 of 10, feed 182, stayed 24.7%, avg viewed 94.7%, likes 3. Verdict AHEAD, 0 faults."
+      },
+      "done_ref": "8d53b8f4a2"
+    },
+    {
+      "id": "J3004",
+      "title": "First-day check at 6 h: \"Why Is It Called a Vaccine?\" (xgx2lYHhYZM)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "First-day check, 6 hours after it went live (Ben, 10 Nov 2026; scripts/launch_check.py). Read-only: change nothing in Studio. £0. About 15 minutes.\n\nVideo: \"Why Is It Called a Vaccine?\" (`xgx2lYHhYZM`), History of Science, a Short. It went live Tue 17 Nov 11:30 London. Use its signed-in Studio browser (CDP 9222).\n\n1. Is anything broken? Studio > Content > the video. Visibility is Public. It is listed under the Shorts tab. The Restrictions column is empty (no copyright claim, not \"Made for kids\", no age restriction). HD processing has finished. The Related video and the description are as its upload package says. Write each thing that is wrong as one plain line.\n\n2. Read the numbers. Analytics for the video, period \"Since published\". Overview: views, the line \"N more (or less) than usual\" (give the usual figure: views minus or plus N), and \"Ranking by views N of 10\" (it may only be on the channel dashboard's latest-Short card). Reach: the views that came from the Shorts feed (traffic sources), and Shown in feed if Studio has that card. Engagement: Viewed vs swiped away (the % who stayed), Average percentage viewed. Likes. Where Studio has no figure yet, leave that flag out; never guess a number.\n\n3. Store them:\n   `python3 scripts/launch_check.py record xgx2lYHhYZM --hours 6 --views <n> --rank <N> --of 10 --typical <n> --feed-views <n> --stayed <%> --avg-pct <%> --likes <n>` (add `--shown <n>` if Studio shows it) ` --by <your agent name> --git`\n   Leave out any flag Studio gives no figure for.\n   Add `--fault \"<what is wrong>\"` once for each thing found in step 1.\n\n4. Paste the whole output of `python3 scripts/launch_check.py judge xgx2lYHhYZM` as this job's result.\n\n5. If step 1 found a fault, or the verdict is BEHIND, park for the Chief: \"parked for Chief: first-day check, <the verdict line>\". The Chief decides what is changed on the video. Otherwise close the job as done.\n\nNever: edit the video, its title, cover, description, visibility, schedule or any setting. Never delete anything. No spend.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "done",
+      "by": "gemini",
+      "since": "2026-11-17T18:23Z",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-11-17T17:31Z",
+      "result": "Ruled, acting Chief (Gemini) 17 Nov: PASS / no fault (PR #992 merged at f57ab150da; launch note at 4bd26a8b74). Public in Shorts, HD complete, no notices, not Made for Kids, Altered content Yes, language en-GB, Related set to ETynHpIYLeY, and description/tags match s05_vacca_jesty_v05/PACKAGE_MANIFEST.json. At 6 h: 0 views vs 20 usual, rank 10 of 10, and Not enough data on reach/engagement (Verdict: BEHIND; Studio gave no reach figures yet). No re-cut, no second upload, and no Studio changes today. Follow-up J3010 queued (after J3004, date hold until 2026-11-18T06:45:00Z after the 06:40Z snapshot) to read next-morning snapshot and Studio reach figures and check whether Vaccine Shorts remain unfed alongside cLKDiYP55J8 ahead of the 28-29 Nov 007 Shorts. GBP 0.",
+      "history": [
+        {
+          "at": "2026-11-17T17:31Z",
+          "by": "refill",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-17T17:35Z",
+          "by": "macbook-2",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T17:38Z",
+          "by": "macbook-2",
+          "what": "step 1 of 4 done"
+        },
+        {
+          "at": "2026-11-17T17:42Z",
+          "by": "macbook-2",
+          "what": "step 2 of 4 done"
+        },
+        {
+          "at": "2026-11-17T17:52Z",
+          "by": "macbook-2",
+          "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-11-17T17:52Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: first-day check, Verdict: BEHIND"
+        },
+        {
+          "at": "2026-11-17T18:23Z",
+          "by": "gemini",
+          "what": "reopened: Chief review (Gemini): PR #992 merged at f57ab150da; recording ruling and closing J3004 with follow-up J3010"
+        },
+        {
+          "at": "2026-11-17T18:23Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T18:23Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: PR #992 merged (f57ab150da); launch_check note saved; follow-up J3010 queued"
+        },
+        {
+          "at": "2026-11-17T18:23Z",
+          "by": "gemini",
+          "what": "done: Ruled, acting Chief (Gemini) 17 Nov: PASS / no fault (PR #992 merged at f57ab150da; launch note at 4bd26a8b74). Public in Shorts, HD complete, no notices, not Made for Kids, Altered content Yes, language en-GB, Related set to ETynHpIYLeY, and description/tags match s05_vacca_jesty_v05/PACKAGE_MANIFEST.json. At 6 h: 0 views vs 20 usual, rank 10 of 10, and Not enough data on reach/engagement (Verdict: BEHIND; Studio gave no reach figures yet). No re-cut, no second upload, and no Studio changes today. Follow-up J3010 queued (after J3004, date hold until 2026-11-18T06:45:00Z after the 06:40Z snapshot) to read next-morning snapshot and Studio reach figures and check whether Vaccine Shorts remain unfed alongside cLKDiYP55J8 ahead of the 28-29 Nov 007 Shorts. GBP 0."
+        }
+      ],
+      "remaining_action": "Record Chief ruling on J3004 and set date hold on follow-up J3010",
+      "due": "2026-11-17T19:31:00Z",
+      "kind": "studio",
+      "launch": "xgx2lYHhYZM@6",
+      "plain": "Check how \"Why Is It Called a Vaccine?\" is doing 6 hours after it went live",
+      "progress": {
+        "step": 4,
+        "of": 4,
+        "at": "2026-11-17T18:23Z",
+        "by": "gemini",
+        "note": "PR #992 merged (f57ab150da); launch_check note saved; follow-up J3010 queued"
+      },
+      "taskKeys": [
+        "HOS:007"
+      ],
+      "done_ref": "f57ab150da"
+    },
+    {
+      "id": "J3005",
+      "title": "WW2 channel: packaging library, which titles and thumbnails beat their channel's normal views",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:43Z):** \"So how we're going to do the research and understand what video packaging and everything is needed and do well. What data are we going to gather to make sure we progress well here?\" New WW2 channel (Field Order History, `channels/ww2`); rules and playbook come with J2990. Ben is asked only to watch finished films.\n\n**Goal.** A packaging library for this niche: which titles and thumbnails beat their own channel's normal views, so every WW2 film's packaging is chosen from evidence.\n\n**Do (YouTube Data API, read-only, as in J2987; under 2,000 quota units).**\n1. Channels: WW2 Dossier (UChjdsX71krIrJ4WFyZYFvYA), WW2 Combat Files (UCwxjLJ5vMJ8WVXozeiYyEFg), Military Studio (UCWwCEHGxwFkf2Zf36mlEAug), INKTROOPS (UCcsQf3nDqM8o3O2BJhOTimQ), plus 8-10 established WW2 or military-history documentary channels between 100k and 2M subscribers (resolve by handle with channels.list forHandle, 1 unit each, or one search). For each, the last 100 uploads: title, length, views, publish date, thumbnail URL.\n2. Per video: views per day since publishing, and an outlier score = its views divided by its channel's median for videos of similar age. Long videos only (over 8 minutes).\n3. Tag every title: How/Why opener, number, money figure, superlative (most, only, first), nationality framing, named machine or operation, mystery or secret word, length in characters. Tag every thumbnail by looking at it: real archive photo or AI image, colourised or not, number of words, text colour, arrows or circles, a face, a machine, a map, overall brightness.\n4. Rank each tag by the median outlier score of the videos that carry it, with sample sizes, and list the 30 biggest outliers with their packaging. Say plainly which findings rest on too few videos.\n5. Save `channels/ww2/05_Analytics/PACKAGING_LIBRARY.json` and a one-page `PACKAGING_FINDINGS.md` (what to do, what to avoid, with numbers), and open a records PR. Repeat monthly (note it in the playbook's topic engine).\n\n**Guards.** Read-only API calls. £0. No token or account address in any file.\n\n**Result.** The PR, quota used, and the five strongest findings in one line each.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J2990",
+      "eta_min": 150,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:43Z",
+          "by": "claude",
+          "what": "added for gemini"
+        },
+        {
+          "at": "2026-11-17T18:17Z",
+          "by": "claude",
+          "what": "Starting point from Claude's vidIQ study (outlier feed, not random): Packaging evidence (Claude's vidIQ study, 17 Nov 18:17Z: 260 long WW2/military videos from the last 12 months, 184 on channels under 50k; multiple = views against the channel's usual). Titles: a superlative 14.5x vs 6.8x without (22 videos); a question 13.0x (9); the other side's recorded reaction 11.0x (49); an 'until/then' turn 10.2x (18); a hard number that is not a year 8.6x (70); How/Why opener neutral; series names or 'Full Documentary' 5.5x and What/When openers 5.6x (avoid); titles of 50 characters or fewer 17.0x (11) vs 51-70 7.1x (61). Thumbnails (top 20 vs bottom 20): real black-and-white archive photo 10 vs 4; no text 8 vs 4; dark colour grade 2 vs 10; five or more words 2 vs 4. Correlation only, outlier feed, small groups for questions and short titles. Your API pull should test these on a fair sample (whole recent uploads of each channel) and say which hold."
+        }
+      ],
+      "remaining_action": "YouTube API pull of 12-14 WW2 channels' last 100 uploads, outlier scores, title and thumbnail tags ranked; PACKAGING_FINDINGS.md; records PR",
+      "due": "2026-11-20T18:00:00Z",
+      "for": "gemini",
+      "kind": "studio",
+      "plain": "Study what packaging works for WW2 videos so the new channel's titles and thumbnails start from evidence"
+    },
+    {
+      "id": "J3006",
+      "title": "WW2 channel: read its own analytics from day one, and a progress-to-monetisation card",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:43Z):** \"So how we're going to do the research and understand what video packaging and everything is needed and do well. What data are we going to gather to make sure we progress well here?\" New WW2 channel (Field Order History, `channels/ww2`); rules and playbook come with J2990. Ben is asked only to watch finished films.\n\n**Goal.** From the first upload, the studio reads this channel's own numbers and acts on them (playbook items 6-8), and the board shows how far the channel is from monetisation.\n\n**Build now, switch on when the channel exists.**\n1. Extend the studio's YouTube Analytics reading (the snapshot scripts used for Orbit and History of Science) to a third channel, read-only. Per film: impressions, impressions click-through rate, views, watch hours, average view duration and percentage, the audience-retention curve (keep 0:30, 1:00, 2:00 and each chapter start), traffic sources (browse, suggested, search, external, playlists), the top suggested-from videos (whose audience we are reaching), subscribers gained, new versus returning viewers, and Test & Compare results. Channel level: total public watch hours in the last 365 days, subscribers, top countries, age groups, and when viewers are on YouTube.\n2. Write each film's 48-hour and 7-day read into `channels/ww2/05_Analytics/READS.md` automatically, and flag the playbook's triggers (over 1,000 impressions with click-through under 3%: change the thumbnail, then the title; average view duration under 25%: tighten the next script's opening).\n3. A Field Order History card on the board: subscribers against 1,000, watch hours against 4,000 and 8,000, the date each is reached at the current 7-day pace, the 1 Feb 2027 line, and each film's click-through and average view duration against the channel median.\n4. Tests with fixture data. Open a pull request. It switches on when Ben has created the channel and authorised the studio to read it; that sign-in is his, and the Chief will ask him once, then.\n\n**Guards.** Read-only. £0. No token or account address in any file.\n\n**Result.** The PR, the fields read, and what is still needed to switch it on.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J2990",
+      "eta_min": 240,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:43Z",
+          "by": "claude",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Extend the YouTube Analytics reader to the WW2 channel, auto 48h/7d reads with playbook triggers, board card for 1,000 subs and 4,000/8,000 hours",
+      "due": "2026-11-26T18:00:00Z",
+      "for": "codex",
+      "kind": "studio",
+      "plain": "Track the new channel's numbers from its first video, and show on the board how close it is to being paid"
+    },
+    {
+      "id": "J3007",
+      "title": "Board: show the WW2 channel before launch, its films, its review and Ben's ticks",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 18:08Z):** \"Would I see this on the dashboard, even about a GitHub repo or a new channel yet?\" New WW2 channel, Field Order History (`channels/ww2`, rules and playbook from J2990). It has no YouTube channel and no GitHub repo yet, and it is not in `channels/channels.json` (only owb and hos are). Today the board shows its jobs in the Agents queue and, once J2990 merges, its plan on the Plan page, but nothing else.\n\n**The gap, found by Claude.**\n- The Videos, Review and Schedule tabs and the Channels section list only registered channels, so the WW2 films will not appear.\n- `05_Analytics/kanban/board_site/api/checks.js` accepts ticks only for OWB and HOS (`THREADS`; unknown channel returns null), so Ben could not pass or send back the first WW2 film when it lands (its edit is due about 25 Nov).\n- `scripts/approved_deliver.py` walks `channels.slugs()`, so an approved WW2 cut would not be handled.\n\n**Do.**\n1. Show WW2 on the board now, in a pre-launch state, reading `channels/ww2` inside this repo. No GitHub repo is needed for that; decide whether one is ever needed, and prefer not. If one truly is, that is Ben's own account and is asked once, later, not now.\n2. Its films appear in Videos with their stage, its finished cuts in Review, and its Channels card says \"Getting ready: YouTube not connected yet\". Add the Field Order History progress card from J3006 when that lands.\n3. Ben's tick works for WW2 films: add WW2 to `checks.js` (verdicts post to the Orbit studio thread #954 until the channel has its own), deploy the board, and prove a test tick saves and is read by the Mini.\n4. An approved WW2 cut is recorded as approved and waits for the YouTube link: no upload and no scheduling until the channel exists.\n5. Tests for each part. Open a pull request for the Chief, then deploy.\n\n**Guards.** £0. No channel, repo or sign-in created. Board open taps stay off. No token or account address in any file.\n\n**Result.** The PR, screenshots of the WW2 card and a WW2 film in Videos, and the tick test result.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J2990",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T18:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T18:08Z",
+          "by": "claude",
+          "what": "added for codex"
+        },
+        {
+          "at": "2026-11-17T18:15Z",
+          "by": "claude",
+          "what": "Ben wants the WW2 channel fully decoupled in its own repo (TheLaughingGod1986/ww2-channel; Ben is creating it, Claude's attempt was refused by GitHub). Build the board side for a registered channel with its own repo, like History of Science; until the move job lands, read channels/ww2 here."
+        }
+      ],
+      "remaining_action": "Register WW2 on the board in a pre-launch state from channels/ww2, films in Videos and Review, WW2 ticks in checks.js, approved cuts wait for the YouTube link",
+      "due": "2026-11-23T18:00:00Z",
+      "for": "codex",
+      "kind": "studio",
+      "plain": "Make the new WW2 channel show up on Ben's board, so he can watch and pass its films before it is on YouTube"
+    },
+    {
+      "id": "J3008",
+      "title": "First-day check at 48 h: \"How Far Is the Nearest Star? (You Can't See It, and It Has a Planet)\" (c5AdqQsnnys)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "First-day check, 48 hours after it went live (Ben, 10 Nov 2026; scripts/launch_check.py). Read-only: change nothing in Studio. £0. About 15 minutes.\n\nVideo: \"How Far Is the Nearest Star? (You Can't See It, and It Has a Planet)\" (`c5AdqQsnnys`), Orbit With Ben, a long. It went live Sun 15 Nov 18:00 London. Use its signed-in Studio browser (CDP 9223).\n\n1. Is anything broken? Studio > Content > the video. Visibility is Public. The Restrictions column is empty (no copyright claim, not \"Made for kids\", no age restriction). HD processing has finished. The Related video and the description are as its upload package says. Write each thing that is wrong as one plain line.\n\n2. Read the numbers. Analytics for the video, period \"Since published\". Overview: views, the line \"N more (or less) than usual\" (give the usual figure: views minus or plus N), and \"Ranking by views N of 10\". Reach: Impressions and Impressions click-through rate. Engagement: Average percentage viewed. Likes. Where Studio has no figure yet, leave that flag out; never guess a number.\n\n3. Store them:\n   `python3 scripts/launch_check.py record c5AdqQsnnys --hours 48 --views <n> --rank <N> --of 10 --typical <n> --impressions <n> --ctr <%> --avg-pct <%> --likes <n> --by <your agent name> --git`\n   Leave out any flag Studio gives no figure for.\n   Add `--fault \"<what is wrong>\"` once for each thing found in step 1.\n\n4. Paste the whole output of `python3 scripts/launch_check.py judge c5AdqQsnnys` as this job's result.\n\n5. If step 1 found a fault, or the verdict is BEHIND, park for the Chief: \"parked for Chief: first-day check, <the verdict line>\". The Chief decides what is changed on the video. Otherwise close the job as done.\n\nNever: edit the video, its title, cover, description, visibility, schedule or any setting. Never delete anything. No spend.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-11-17T18:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T18:12Z",
+          "by": "refill",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-17T18:14Z",
+          "by": "macbook-2",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T18:17Z",
+          "by": "macbook-2",
+          "what": "step 1 of 4 done"
+        },
+        {
+          "at": "2026-11-17T18:25Z",
+          "by": "macbook-2",
+          "what": "step 1 of 4 done: MacBook CDP 9223 signed out on Google accountchooser; handing back to Mini CDP 9223"
+        },
+        {
+          "at": "2026-11-17T18:25Z",
+          "by": "macbook-2",
+          "what": "released: Released to the Mini: MacBook CDP 9223 is signed out on Google accountchooser (never sign in unattended); updated remaining_action so the MacBook Studio-CDP lane will not re-claim J3008 and the Mini signed-in CDP 9223 browser will take it."
+        }
+      ],
+      "remaining_action": "Read Studio Content and 48 h Analytics on the Mini signed-in CDP 9223 browser for c5AdqQsnnys (026_NearestStar_v06_cfr18.mp4), record and judge",
+      "due": "2026-11-17T20:12:00Z",
+      "kind": "studio",
+      "launch": "c5AdqQsnnys@48",
+      "plain": "Check how \"How Far Is the Nearest Star? (You Can't See It, and It Has a\" is doing 48 hours after it went live",
+      "progress": {
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-17T18:25Z",
+        "by": "macbook-2",
+        "note": "MacBook CDP 9223 signed out on Google accountchooser; handing back to Mini CDP 9223"
+      }
+    },
+    {
+      "id": "J3009",
+      "title": "WW2 channel: move it into its own repo with history, register it, check it out on both Macs",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 18:15Z):** \"make the repo, best to separate it now and keep it fully decoupled.\" Claude tried to create `TheLaughingGod1986/ww2-channel` (private) through the GitHub connector; GitHub refused with 403 \"Resource not accessible by integration\" (the Claude app cannot create repositories on a personal account). Ben has been told how to create it himself and give the Claude app access.\n\n**Do, once `TheLaughingGod1986/ww2-channel` exists** (check daily; if it does not exist yet, park with that condition and do not post to Ben about it):\n1. Move everything in `channels/ww2/` to the root of the new repo **with its history** (for example `git subtree split --prefix channels/ww2`), push to its main branch, then remove the folder from this repo in a pull request that points to the new home.\n2. Register the channel in `channels/channels.json` the way History of Science is registered (its own repo and checkout), still pre-launch: no YouTube link yet. Run `scripts/channel_check.py --all`.\n3. Check it out on the Mac mini and the MacBook where the other channel checkouts live, and prove each machine can pull and push it. If a machine's GitHub credentials do not cover the new repo, say exactly which machine and which credential is missing, and park for Ben with that one line.\n4. Point every open or blocked WW2 job (film keys WW2:..., and J2999, J3005, J3006, J3007) at the new repo, and check that the board (J3007) and the analytics (J3006) read it.\n5. Board ticks for WW2 keep posting to the Orbit studio thread until the channel has its own; the board's GitHub token does not need the new repo for that.\n\n**Guards.** £0. Nothing deleted except the moved folder, and only after the new repo holds it with history. No token or account address in any file.\n\n**Result.** The new repo's first commit, the registry change, which machines can push, and the jobs repointed.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J2990",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T18:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T18:15Z",
+          "by": "claude",
+          "what": "added for gemini"
+        },
+        {
+          "at": "2026-11-17T18:33Z",
+          "by": "claude",
+          "what": "Condition met 17 Nov 18:33Z: Ben created TheLaughingGod1986/ww2-channel (private, empty, default branch main) and the Claude GitHub app can reach it (Claude cloned it). Run this as soon as J2990 has merged the plan; no need to wait for a daily check."
+        }
+      ],
+      "remaining_action": "When TheLaughingGod1986/ww2-channel exists: move channels/ww2 there with history, register like HOS, check out and push-test on both Macs, repoint WW2 jobs",
+      "due": "2026-11-24T18:00:00Z",
+      "for": "gemini",
+      "kind": "studio",
+      "plain": "Give the new WW2 channel its own separate repository, as Ben asked, without losing any work"
+    },
+    {
+      "id": "J3010",
+      "title": "HOS 007 Vaccine Short (xgx2lYHhYZM): read next-morning snapshot after J3004",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Follow up acting-Chief (Gemini) ruling on J3004 for History of Science 007 Short \"Why Is It Called a Vaccine?\" (`xgx2lYHhYZM`, went live `2026-11-17T11:30:00Z`). Read-only, £0 spend, zero Studio mutations.\n\nAt the 6-hour check (`J3004`, PR #992 merged at `f57ab150da`), Studio Content & Details had 0 technical or packaging faults (`Public`, listed under `Shorts`, `Notices: —`, not Made for Kids, HD complete, `Related video` -> `ETynHpIYLeY`, `en-GB` audio/metadata/captions, `Altered content: Yes`, exact manifest description and tags), and Studio Analytics showed `0` views (`--typical 20`, rank `10 of 10`) with `Not enough data` on `How viewers found this Short`, `Shorts feed impressions`, `Viewed vs swiped away`, and `Average percentage viewed`.\n\nAfter the `2026-11-18T06:40:00Z` daily analytics snapshot runs:\n1. Read `05_Analytics/hos/snapshots/2026-11-18.json` (and Studio Analytics for `xgx2lYHhYZM` on CDP `9222` if reach/engagement cards have populated: `Shown in feed`, `Shorts feed` views, `Viewed vs swiped away`, `Average percentage viewed`).\n2. Record a note on `05_Analytics/hos/launch/xgx2lYHhYZM.json` via `python3 scripts/launch_check.py note xgx2lYHhYZM \"...\" --by <agent> --git` comparing the next-morning numbers against HOS's recent Shorts baseline (`Wvjd8g0CpzE` 214 views, `xzKoHg0E0_U` 121 views) and against the first 007 Vaccine Short (`cLKDiYP55J8`, 9 views at 6 h / 33 next morning).\n3. Check `studio/RULES.md` Lesson 5 (day-1 Shorts-feed share >= 50% means fed; stop a topic after 2 not-fed Shorts in a row): if `xgx2lYHhYZM` is a second consecutive not-fed Vaccine/Smallpox Short or stays under a tenth of the usual first day, note that finding for the Chief in the desk/thread report with respect to the two remaining scheduled 007 Shorts on 28-29 Nov (`sY0PSQFxjp8` and `jkUZpyO71lU`). Never change any live or scheduled YouTube video setting without a Chief ruling.\n4. Close this follow-up job as done once the morning read and note are recorded.\n",
+      "ref": "f57ab150da",
+      "film": "007",
+      "stage": "upload",
+      "after": "J3004",
+      "eta_min": 120,
+      "status": "blocked",
+      "by": "gemini",
+      "since": "2026-11-17T18:24Z",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-17T18:22Z",
+      "result": "Waiting for: The 18 Nov 2026 morning tracker snapshot is available after the 06:40 UTC run",
+      "history": [
+        {
+          "at": "2026-11-17T18:22Z",
+          "by": "gemini",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-17T18:24Z",
+          "by": "gemini",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T18:24Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Follow-up queued by Chief after J3004; holding until 18 Nov 06:45Z after morning snapshot"
+        },
+        {
+          "at": "2026-11-17T18:24Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: The 18 Nov 2026 morning tracker snapshot is available after the 06:40 UTC run"
+        },
+        {
+          "at": "2026-11-17T18:24Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-18T06:45:00Z"
+        }
+      ],
+      "remaining_action": "Wait for 2026-11-18T06:40:00Z daily snapshot, then read xgx2lYHhYZM overnight reach and views",
+      "due": "2026-11-18T10:00:00Z",
+      "kind": "review",
+      "plain": "Check Why Is It Called a Vaccine? after its first night",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-17T18:24Z",
+        "by": "gemini",
+        "note": "Follow-up queued by Chief after J3004; holding until 18 Nov 06:45Z after morning snapshot"
+      },
+      "taskKeys": [
+        "HOS:007"
+      ],
+      "hold": {
+        "type": "date",
+        "condition": "The 18 Nov 2026 morning tracker snapshot is available after the 06:40 UTC run",
+        "check_at": "2026-11-18T06:45:00Z"
+      }
+    },
+    {
+      "id": "J3011",
+      "title": "Orbit: Ben locked the every-planet film, book its slot and start the build",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 18:44Z): \"Lock it.\"** This is Ben's topic lock on Orbit film 064, \"Every Planet Explained in 10 Minutes (Mercury to Neptune)\", the format test in the long-video plan (studio/plan.json step `planets`; go/no-go J2863 and J2875, PR #938; `02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/11_Upload-Package/TOPIC_GO_NO_GO_SHEET.md`). Claude recommended locking it (about 20,000 searches a month for \"every planet explained\", six of the eight planets already have finished Orbit films to reuse, £0).\n\n**Do.**\n1. Record the lock with this quote as evidence in the film's `status.json` and `STATUS.md`.\n2. Book the slot: Wed 16 Dec 2026 at 18:00 London, or Sun 20 Dec 18:00 if 16 Dec is taken; move no dated film.\n3. Update `studio/plan.json`: the `planets` step gets its date, `needsBen` is removed, and the card no longer says \"1 thing needs you\".\n4. Queue the build exactly as the go/no-go sheet's section 6 says (script and sources, narration, shelf picture with code graphics and three thumbnails, master edit with QA, then Ben's watch on the board), with film 064 and the right stage on each job, and due dates that land the cut on Ben's board by Fri 11 Dec.\n5. **Voice budget:** about 8,000 characters. Ben's ElevenLabs plan has about 79,000 left this cycle, and the new WW2 channel's two pilot films take up to 42,000, so this fits; do not change or top up the plan.\n\n**Guards.** £0 (no Flow or Vertex credits; the sheet's shelf-reuse plan). Orbit's own rules apply to this film. No account address in any file.\n\n**Result.** The slot booked, the build jobs' IDs, and the plan card's new line.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T18:44Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T18:44Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Record Ben's lock on film 064, book Wed 16 Dec 18:00 (or Sun 20 Dec), clear the plan card, queue the build per the go/no-go sheet",
+      "due": "2026-11-19T12:00:00Z",
+      "kind": "chief",
+      "plain": "Ben said yes to the every-planet film: book its date and start making it"
+    },
+    {
+      "id": "J3012",
+      "title": "Decoupling phase 3: move the studio engine into its own repo, runbook now, move after a clean week",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 19:00Z):** created `https://github.com/TheLaughingGod1986/studio` for the studio engine (private, empty, default branch main). Claude checked that the Claude GitHub app can reach it (cloned it, empty). This is phase 3 of `docs/MULTI_CHANNEL_PLAN.md`: the engine (queue, board, relay, agents' scripts, thread) moves out of orbit-with-ben into its own repo, and Orbit With Ben, History of Science and the WW2 channel all plug in through the registry. Ben, 10 Nov: \"there should be 3 GitHub repos. One for Studio, one for Orbit with Ben, and one for History of Science\" (now four, with ww2-channel).\n\n**Do not move before all of these hold:**\n1. `scripts/studio_split.py` has read 0 on seven days in a row (it read 0 on 14, 15, 16 and 17 Nov; the earliest is 20 Nov).\n2. J2537 is done: email addresses out of both channels' current files and git history.\n3. Ben has been told the day before the move, in one message on the thread: the date, what he will notice (none, if it goes right), and any credential he must change. That message is a notice, not a question, unless a credential change is truly needed.\n\n**Do now, while waiting.** Write the move runbook in `docs/STUDIO_MOVE.md`: what the new repo holds (from the dry run's layout); how queue history and the thread carry over; every machine change (the Mac mini's and the MacBook's checkouts, launchd jobs, the relay, the board publisher, `board_site.json`, GitHub workflows); every credential that must cover the new repo (the board's GitHub token currently covers orbit-with-ben and history-of-science only; the board's tick store and thread can stay where they are if that avoids a token change, so say which is simpler); the rollback; and a rehearsal on a branch of the new repo that leaves live work untouched. Open a pull request for the runbook. When the three conditions hold, run the move by the runbook, prove one full relay cycle, one board publish and one tick, and close.\n\n**Guards.** £0. Nothing deleted from orbit-with-ben until the new repo is live and proven. No token or account address in any file. Nothing that needs Ben beyond the day-before notice and, only if unavoidable, one credential change.\n\n**Result.** The runbook PR now; at the move, the new repo's state, the checks, and anything left.\n\n\n**Changed by Claude, 17 Nov 19:12Z: the move does not wait for J2537's history rewrite.** Start the new studio repo with one clean first commit built from the split, not with orbit-with-ben's history, so no old address can travel into it; the history stays readable in orbit-with-ben. Condition 2 above becomes: the dry run's address count is 0 on the files that move (it is). Conditions 1 and 3 stand (seven zero days, so 20 Nov at the earliest; Ben told the day before). Aim: runbook and rehearsal by Sat 21 Nov, move Mon 23 or Tue 24 Nov.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 240,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T19:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T19:00Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-17T19:12Z",
+          "by": "claude",
+          "what": "The move no longer waits for J2537's history rewrite: clean first commit in the studio repo. Aim Mon 23 or Tue 24 Nov."
+        }
+      ],
+      "remaining_action": "Write the move runbook now; move the engine to the new studio repo once the dry run reads 0 for seven days and J2537 is done",
+      "due": "2026-11-24T18:00:00Z",
+      "kind": "chief",
+      "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week"
     }
   ],
   "focus": [
