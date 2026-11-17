@@ -119,7 +119,7 @@ class SiteBuild(unittest.TestCase):
             self.assertIn(f'<meta name="studio-version" content="{version}">',tracker)
 
     def test_retired_addresses_go_to_the_studio_app(self):
-        site = json.loads((HERE.parent / "05_Analytics/kanban/board_site/vercel.json").read_text())
+        site = json.loads((HERE.parent / "05_Analytics/kanban/board_site/host_config.json").read_text())
         gone = {r["source"]: r["destination"] for r in site["redirects"]}
         for source in ("/board", "/board/", "/board.html", "/classic", "/classic/", "/classic.html"):
             # No fragment in the destination: the browser then carries an old link's own #v=<video> or #k=<key> over.
@@ -150,7 +150,7 @@ class SiteBuild(unittest.TestCase):
             for icon in man["icons"]:
                 self.assertTrue((dist / icon["src"].lstrip("/")).exists(), icon["src"])
             self.assertTrue((dist / "static/tracker-180.png").exists())
-        vercel = json.loads((HERE.parent / "05_Analytics/kanban/board_site/vercel.json").read_text())
+        vercel = json.loads((HERE.parent / "05_Analytics/kanban/board_site/host_config.json").read_text())
         self.assertIn({"source": "/tracker", "destination": "/tracker.html"}, vercel["rewrites"])
         self.assertIn({"source": "/classic", "destination": "/", "permanent": False}, vercel["redirects"])
 
@@ -602,3 +602,22 @@ class TenMinuteChecksGuard(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class PublicStrings(unittest.TestCase):
+    def test_nested_public_data_and_keys(self):
+        raw = {"jobs": [{"result": "Built /Users/example/work and /Users/other/file"}],
+               "/Users/example/key": None, "count": 7, "flag": True}
+        clean = bp.public_strings(raw)
+        self.assertEqual(clean["jobs"][0]["result"], "Built ~/work and ~/file")
+        self.assertIn("~/key", clean)
+        self.assertEqual((clean["count"], clean["flag"]), (7, True))
+        self.assertNotIn("/Users/", json.dumps(clean))
+        self.assertIn("/Users/", json.dumps(raw))
+
+    def test_encoded_legacy_history_does_not_republish_home_paths(self):
+        history = bp.pack_updates({"edits": [{"ops": [["set", "note", "/Users/example/work"]]}]})
+        packed = bp.updates_payload({"note": "~/work"}, None, history, "")
+        decoded = bp.unpack_updates(packed)
+        self.assertEqual(decoded["edits"], [])
+        self.assertNotIn("/Users/", json.dumps(decoded))

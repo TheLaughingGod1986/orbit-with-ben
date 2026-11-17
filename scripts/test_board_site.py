@@ -34,7 +34,7 @@ class BoardSite(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             out = Path(tmp)
             mod.build_host_config(out)
-            config = json.loads((SITE / 'vercel.json').read_text())
+            config = json.loads((SITE / 'host_config.json').read_text())
             for rule in config['redirects']:
                 self.assertIn(f"{rule['source']} {rule['destination']} ", (out / '_redirects').read_text())
             self.assertNotIn('/tracker /tracker.html 200', (out / '_redirects').read_text())
@@ -61,7 +61,7 @@ class BoardSite(unittest.TestCase):
         self.assertEqual(offenders, [], "Retired board address: " + ", ".join(offenders))
 
     def test_noindex_all_paths(self):
-        config = json.loads((SITE / "vercel.json").read_text())
+        config = json.loads((SITE / "host_config.json").read_text())
         self.assertTrue(any(rule["source"] == "/*" and
             {"key": "X-Robots-Tag", "value": "noindex, nofollow"} in rule["headers"]
             for rule in config["headers"]))

@@ -6,7 +6,7 @@
 Outputs:
   dist/index.html     — Studio app (Ben, 28 Oct 2026): Overview, Videos, Review, Agents, Schedule (/)
   (/board, the five-lane per-video tracker, was retired on 10 Nov 2026: Ben, "This seems legacy. I think we can
-   remove this section." The Studio app's Videos and Review tabs do its job. vercel.json redirects /board to /, so old
+   remove this section." The Studio app's Videos and Review tabs do its job. host_config.json redirects /board to /, so old
    links with #v=<video> or #k=<key> still land on the right page. Its files are in _archive/05_Analytics/kanban/.
    /classic, the October swim-lane board, was retired the same way on 28 Oct.)
   dist/tracker.html   — Channel Tracker web app (/tracker)
@@ -15,7 +15,7 @@ Outputs:
 
 Data still comes from board.json on the `board-data` branch (scripts/board_publish.py). Page changes need a
 direct upload to Cloudflare Pages: build, then `npx wrangler pages deploy` in this folder; data changes do not. api/checks.js (Ben's ticks → the studio thread / HOS #180)
-and vercel.json sit next to this file.
+and host_config.json sit next to this file.
 """
 from __future__ import annotations
 
@@ -120,8 +120,8 @@ def build_tracker(out: pathlib.Path) -> None:
 
 
 def build_host_config(out: pathlib.Path) -> None:
-    # One routing/header list serves both hosts; never hand-maintain a second copy.
-    config = json.loads((HERE / "vercel.json").read_text())
+    # One routing/header list serves Pages; never hand-maintain a second copy.
+    config = json.loads((HERE / "host_config.json").read_text())
     redirects = [f"{x['source']} {x['destination']} {301 if x['permanent'] else 302}" for x in config["redirects"]]
     # Pages resolves .html files at their clean URL itself. A 200 rewrite back to
     # .html triggers its canonical redirect to the same clean URL and loops.
