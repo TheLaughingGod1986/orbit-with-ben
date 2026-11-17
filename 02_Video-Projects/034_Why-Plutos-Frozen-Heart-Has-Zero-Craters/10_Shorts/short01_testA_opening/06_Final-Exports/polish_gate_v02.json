@@ -1,0 +1,340 @@
+{
+  "rule": {
+    "low_detail": "FAIL: luma std < 13.44 and edge density < 0.0259 (absolute floor); WARN: luma std < 18.0 or edge density < film p5",
+    "split_panel": "full-height/width seam or gutter",
+    "split_panel_gutter": "gutter counts only with edge density >= 0.01 in the 10% band on both sides",
+    "near_black": "mean < 28.0 or p95 < 50.0",
+    "noise": "grain std > 6 over structure std < 12, and the 8x-downscaled frame under the low-detail floor (std < 13.44 and edge density < 0.0259)",
+    "jitter": "centre-patch phase correlation: reversal against trend or > 0.35 px off trend"
+  },
+  "low_detail_floor": {
+    "std": 13.44,
+    "edge": 0.0259,
+    "calibration": {
+      "video": "025_MarsRobot_full_rough_v02d.mp4",
+      "factor": 1.2,
+      "frames": [
+        {
+          "source": "PIA22223.jpg",
+          "t": 201.0,
+          "std": 12.1,
+          "edge": 0.0223
+        },
+        {
+          "source": "PIA22223.jpg",
+          "t": 216.3,
+          "std": 11.2,
+          "edge": 0.0216
+        },
+        {
+          "source": "PIA22929.jpg",
+          "t": 297.4,
+          "std": 26.54,
+          "edge": 0.5735
+        }
+      ]
+    }
+  },
+  "video": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/10_Shorts/short01_testA_opening/06_Final-Exports/034_short01_testA_opening_v02.mp4",
+  "edge_floor": 0.0196,
+  "verdict": "PASS",
+  "failed": [],
+  "warn": [
+    {
+      "row": "R03a",
+      "cut": 6,
+      "t": 18.57,
+      "source": "File_Video_-_Nasa_s_New_Horizons_-_Pluto_Flyby_14_7_2015__51718116305_.webm.webm",
+      "why": [
+        "low detail: luma std 14.24 < 18.0",
+        "low detail: edge density 0.0142 < film p5 0.0196"
+      ]
+    }
+  ],
+  "reviewed_ok": [],
+  "rows": [
+    {
+      "cut": 0,
+      "row": "R01a",
+      "source": "File_Video_-_Nasa_s_New_Horizons_-_Pluto_Flyby_14_7_2015__51718116305_.webm.webm",
+      "t": 1.05,
+      "std": 32.62,
+      "mean": 130.23,
+      "p95": 170.0,
+      "edge": 0.0341,
+      "hf": 11.63,
+      "lf": 22.76,
+      "std8": 26.72,
+      "edge8": 0.344,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 1,
+      "row": "R01b",
+      "source": "PIA20291.jpg",
+      "t": 3.15,
+      "std": 63.51,
+      "mean": 104.9,
+      "p95": 213.0,
+      "edge": 0.0592,
+      "hf": 9.46,
+      "lf": 61.6,
+      "std8": 62.17,
+      "edge8": 0.1331,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.005,
+        "trend_y": -0.006,
+        "max_off_trend_px": 0.006,
+        "reversals": 0,
+        "frames": 35,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 2,
+      "row": "R01c",
+      "source": "PIA20726.jpg",
+      "t": 5.27,
+      "std": 48.22,
+      "mean": 156.75,
+      "p95": 215.0,
+      "edge": 0.4146,
+      "hf": 21.19,
+      "lf": 39.35,
+      "std8": 40.62,
+      "edge8": 0.2424,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.003,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 36,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 3,
+      "row": "R02a",
+      "source": "code_graphic_034_r02a_sputnik_width_9x16.mp4",
+      "t": 8.08,
+      "std": 39.05,
+      "mean": 103.32,
+      "p95": 200.0,
+      "edge": 0.1095,
+      "hf": 13.52,
+      "lf": 31.37,
+      "std8": 33.65,
+      "edge8": 0.1897,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 4,
+      "row": "R02b",
+      "source": "PIA19952.jpg",
+      "t": 11.57,
+      "std": 65.4,
+      "mean": 119.3,
+      "p95": 225.0,
+      "edge": 0.2894,
+      "hf": 18.62,
+      "lf": 60.34,
+      "std8": 61.17,
+      "edge8": 0.1676,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.003,
+        "trend_y": 0.0,
+        "max_off_trend_px": 0.002,
+        "reversals": 0,
+        "frames": 77,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 5,
+      "row": "R02c",
+      "source": "code_graphic_034_r02b_texas_oklahoma_scale_9x16.mp4",
+      "t": 15.05,
+      "std": 37.38,
+      "mean": 103.91,
+      "p95": 189.0,
+      "edge": 0.1258,
+      "hf": 15.44,
+      "lf": 27.5,
+      "std8": 30.19,
+      "edge8": 0.2238,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 6,
+      "row": "R03a",
+      "source": "File_Video_-_Nasa_s_New_Horizons_-_Pluto_Flyby_14_7_2015__51718116305_.webm.webm",
+      "t": 18.57,
+      "std": 14.24,
+      "mean": 150.03,
+      "p95": 161.0,
+      "edge": 0.0142,
+      "hf": 7.97,
+      "lf": 6.94,
+      "std8": 8.8,
+      "edge8": 0.0483,
+      "seams": [],
+      "video": true,
+      "fail": [],
+      "warn": [
+        "low detail: luma std 14.24 < 18.0",
+        "low detail: edge density 0.0142 < film p5 0.0196"
+      ]
+    },
+    {
+      "cut": 7,
+      "row": "R03b",
+      "source": "PIA20534.jpg",
+      "t": 22.1,
+      "std": 54.45,
+      "mean": 104.67,
+      "p95": 192.0,
+      "edge": 0.4336,
+      "hf": 24.0,
+      "lf": 40.04,
+      "std8": 43.28,
+      "edge8": 0.5409,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.001,
+        "trend_y": 0.002,
+        "max_off_trend_px": 0.005,
+        "reversals": 0,
+        "frames": 79,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 8,
+      "row": "R03c",
+      "source": "PIA20198.jpg",
+      "t": 25.63,
+      "std": 47.68,
+      "mean": 142.76,
+      "p95": 214.0,
+      "edge": 0.6722,
+      "hf": 30.72,
+      "lf": 25.47,
+      "std8": 30.04,
+      "edge8": 0.5307,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.0,
+        "trend_y": 0.002,
+        "max_off_trend_px": 0.008,
+        "reversals": 0,
+        "frames": 79,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 9,
+      "row": "R04a",
+      "source": "PIA20038.jpg",
+      "t": 28.92,
+      "std": 19.63,
+      "mean": 62.9,
+      "p95": 79.0,
+      "edge": 0.024,
+      "hf": 8.0,
+      "lf": 14.45,
+      "std8": 16.06,
+      "edge8": 0.0304,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": -0.001,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.003,
+        "reversals": 0,
+        "frames": 63,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 10,
+      "row": "R04b",
+      "source": "PIA20732.jpg",
+      "t": 31.95,
+      "std": 50.9,
+      "mean": 119.28,
+      "p95": 201.0,
+      "edge": 0.7468,
+      "hf": 37.77,
+      "lf": 29.08,
+      "std8": 31.12,
+      "edge8": 0.2413,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.001,
+        "trend_y": -0.001,
+        "max_off_trend_px": 0.001,
+        "reversals": 0,
+        "frames": 64,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    },
+    {
+      "cut": 11,
+      "row": "R04c",
+      "source": "PIA19936.jpg",
+      "t": 34.98,
+      "std": 19.66,
+      "mean": 163.97,
+      "p95": 184.0,
+      "edge": 0.2067,
+      "hf": 15.05,
+      "lf": 9.98,
+      "std8": 10.87,
+      "edge8": 0.0615,
+      "seams": [],
+      "video": false,
+      "jitter": {
+        "trend_x": 0.002,
+        "trend_y": -0.0,
+        "max_off_trend_px": 0.004,
+        "reversals": 0,
+        "frames": 64,
+        "fail": false
+      },
+      "fail": [],
+      "warn": []
+    }
+  ]
+}
