@@ -264334,18 +264334,27 @@
           "at": "2026-11-17T05:51Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2970; starting data analysis of HOS channel performance and existing backlog"
+        },
+        {
+          "at": "2026-11-17T05:56Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Ranked all 7 public HOS longs and 30 public HOS Shorts from 2026-11-16 snapshot + studio_ctr.json + channel_daily.json + REPORT.md + LEARNINGS.md; selected non-overlapping HOS:118 (Why Do We Hiccup?) and HOS:119 (Why Do Mosquitoes Bite Some People More?)"
         }
       ],
-      "remaining_action": "Read HOS analytics, LEARNINGS.md, and existing HOS films/WIP to rank top/bottom 3 longs and Shorts and pick two non-overlapping discovery topics",
+      "remaining_action": "Run full public_search.py and neighbours.py evidence passes for HOS:118 (Why Do We Hiccup?) and HOS:119 (Why Do Mosquitoes Bite Some People More?)",
       "kind": "script",
       "backlog": "hos-ideas",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-17T05:51Z",
+        "at": "2026-11-17T05:56Z",
         "by": "gemini",
-        "note": "Claimed J2970; starting data analysis of HOS channel performance and existing backlog"
-      }
+        "note": "Ranked all 7 public HOS longs and 30 public HOS Shorts from 2026-11-16 snapshot + studio_ctr.json + channel_daily.json +"
+      },
+      "taskKeys": [
+        "HOS:118",
+        "HOS:119"
+      ]
     }
   ],
   "focus": [
