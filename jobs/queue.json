@@ -265802,13 +265802,13 @@
       "stage": "",
       "after": "",
       "eta_min": 75,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-17T11:20Z",
-      "eta": "2026-11-17T12:35Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T08:37Z",
-      "result": "",
+      "result": "parked for Chief: review and merge PR #986 (scripts/board_publish.py + board_site cleanup), then deploy board_site to Cloudflare Pages, run board_publish.py --force, and verify 200 on both board addresses",
       "history": [
         {
           "at": "2026-11-17T08:37Z",
@@ -265849,6 +265849,11 @@
           "at": "2026-11-17T11:40Z",
           "by": "gemini",
           "what": "step 4 of 5 done: Opened PR #986; parking for Chief merge and post-merge deploy verification"
+        },
+        {
+          "at": "2026-11-17T11:40Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: review and merge PR #986 (scripts/board_publish.py + board_site cleanup), then deploy board_site to Cloudflare Pages, run board_publish.py --force, and verify 200 on both board addresses"
         }
       ],
       "remaining_action": "Chief review & merge PR #986, then deploy board_site to Cloudflare Pages, run board_publish.py --force, and verify 200 on both addresses",
