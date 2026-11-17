@@ -265824,19 +265824,24 @@
           "at": "2026-11-17T11:24Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Completed audit of studio_app.js Agents tab, board_publish.py path scrubbing, board_site Vercel references, and old studio-kanban Vercel usage; clean worktree ready"
+        },
+        {
+          "at": "2026-11-17T11:34Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Agents tab plain London times and jargon-free status wording implemented and passing test_studio_app.cjs"
         }
       ],
-      "remaining_action": "Implement plain London times and clean agent status wording on the Agents tab with tests",
+      "remaining_action": "Scrub Mac home-folder paths (/Users/<name> -> ~) across all published strings in board_publish.py with tests",
       "due": "2026-11-19T12:00:00Z",
       "for": "gemini",
       "kind": "studio",
       "plain": "Small tidy-ups on the board: readable times, no private folder path in its data, old Vercel files gone",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-17T11:24Z",
+        "at": "2026-11-17T11:34Z",
         "by": "gemini",
-        "note": "Completed audit of studio_app.js Agents tab, board_publish.py path scrubbing, board_site Vercel references, and old stud"
+        "note": "Agents tab plain London times and jargon-free status wording implemented and passing test_studio_app.cjs"
       }
     },
     {
