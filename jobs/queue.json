@@ -265682,19 +265682,24 @@
           "at": "2026-11-17T11:15Z",
           "by": "macbook-2",
           "what": "step 1 of 5 done: Root cause traced across chief_relay.state_of, board_publish.models_status, and queue_eta.agents_up; live board before-state captured"
+        },
+        {
+          "at": "2026-11-17T11:22Z",
+          "by": "macbook-2",
+          "what": "step 3 of 5 done: Unified agent_status/agent_states across chief_relay, board_publish, and queue_eta; added usage-reset retry and overdue/urgent/Ben reroutes + tests"
         }
       ],
-      "remaining_action": "Unifying agent availability and usage-reset retry times across chief_relay, board_publish, and queue_eta",
+      "remaining_action": "Running full test suites (test_chief_relay, test_board_publish, test_jobs, test_queue_eta) and opening PR",
       "due": "2026-11-18T12:00:00Z",
       "for": "gemini",
       "kind": "studio",
       "plain": "Stop sending jobs to an agent the board already shows is out of usage, so nothing waits on it",
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-17T11:15Z",
+        "at": "2026-11-17T11:22Z",
         "by": "macbook-2",
-        "note": "Root cause traced across chief_relay.state_of, board_publish.models_status, and queue_eta.agents_up; live board before-s"
+        "note": "Unified agent_status/agent_states across chief_relay, board_publish, and queue_eta; added usage-reset retry and overdue/"
       }
     },
     {
