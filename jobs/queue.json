@@ -215628,13 +215628,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-17T14:43Z",
-      "eta": "2026-11-17T16:43Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-09T10:36Z",
-      "result": "",
+      "result": "PR #988 merged (08a597361b): assembled 034_pluto_frozen_heart_master_v02.mp4 (sha256 e5a886dfef20, 19408f = 646.933s, -14.7 LUFS, -1.0 dBTP, 5/5 gates PASS) + 034_short01_testA_opening_v02.mp4 (sha256 c9a02052ff7a, 1095f = 36.500s, 0/37 padded, 5/5 gates PASS) on studio-live; all FIRST30_PLAN.md and J2383 §5.1 finishing fixes applied and verified at £0. Unblocks J2867 (Short 2 v02) -> J2868 (5-part review).",
       "history": [
         {
           "at": "2026-11-09T10:36Z",
@@ -215775,6 +215775,11 @@
           "at": "2026-11-17T15:50Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Step 5/5 done: verified NAS SHA-256s, Frame 0..4 sub-pixel motion, 0..70s VO splice/breaths by ear, Short 1 v02 full-bleed 9:16 sheet, and gate:episode PASS"
+        },
+        {
+          "at": "2026-11-17T15:50Z",
+          "by": "gemini",
+          "what": "done: PR #988 merged (08a597361b): assembled 034_pluto_frozen_heart_master_v02.mp4 (sha256 e5a886dfef20, 19408f = 646.933s, -14.7 LUFS, -1.0 dBTP, 5/5 gates PASS) + 034_short01_testA_opening_v02.mp4 (sha256 c9a02052ff7a, 1095f = 36.500s, 0/37 padded, 5/5 gates PASS) on studio-live; all FIRST30_PLAN.md and J2383 §5.1 finishing fixes applied and verified at £0. Unblocks J2867 (Short 2 v02) -> J2868 (5-part review)."
         }
       ],
       "remaining_action": "Done: long master v02 + Short 1 v02 verified on studio-live (5/5 gates PASS, PR #988 merged as 08a597361b); J2867 unblocked",
@@ -215799,7 +215804,8 @@
         "at": "2026-11-17T15:50Z",
         "by": "gemini",
         "note": "Step 5/5 done: verified NAS SHA-256s, Frame 0..4 sub-pixel motion, 0..70s VO splice/breaths by ear, Short 1 v02 full-ble"
-      }
+      },
+      "done_ref": "08a597361b"
     },
     {
       "id": "J2439",
