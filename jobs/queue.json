@@ -264446,10 +264446,24 @@
           "at": "2026-11-17T06:10Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-17T06:12Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-17T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "HOS 119 Why Do Mosquitoes Bite Some People More?: rule-E topic go/no-go review",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
