@@ -179446,9 +179446,14 @@
           "at": "2026-11-17T07:27Z",
           "by": "relay",
           "what": "condition verification queued: J2977"
+        },
+        {
+          "at": "2026-11-17T08:32Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-17T14:32:00Z"
         }
       ],
-      "remaining_action": "Verify operator configuration and fresh-session acceptance evidence before resuming remaining allow-list work",
+      "remaining_action": "Complete step 4/4 operator confirmation and fresh-session scoped acceptance evidence for Codex allow-list, then land PR #490 (docs/CODEX_ALLOWLIST.md)",
       "kind": "assembly",
       "urgent": 2,
       "rerouted_from": {
@@ -179469,12 +179474,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Chief ruling on J2959: NOT MET. Fresh review at 2026-11-16T23:25Z (jobs/reviews/J2959/REVIEW.md) confirms J2517 (#793) and J2559 (#795) remain complete, all eight local ~/.codex approval-settings and gateway hashes match jobs/reviews/J2943/REVIEW.md and the 4-6 Nov 3/4 checkpoint unchanged (config.toml sha256 efa1987b3c..., default.rules sha256 b6d57758e2..., studio.rules sha256 e3b8c84f19..., 5 gateways in ~/.codex/bin/ unchanged since 6 Nov 15:12), draft PR #490 remains OPEN/draft at f521bcd3f1 with 0 comments, and docs/CODEX_ALLOWLIST.md is not on main. Await authorized operator confirmation of local approval configuration and fresh-session scoped acceptance evidence; keep fallback routing active and make no autonomous approval-control changes. Recheck operator evidence at 2026-11-17T05:25:00Z.",
-        "check_at": "2026-11-17T08:27:08+00:00",
-        "last_recheck": "J2959",
-        "checked_at": "2026-11-16T23:27:02+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J2977"
+        "condition": "Chief ruling on J2977: NOT MET. Fresh verification at 2026-11-17T07:31Z and Chief review at 2026-11-17T08:32Z (jobs/reviews/J2977/REVIEW.md at 078a54fca0) confirm J2517 (#793) and J2559 (#795) remain complete, all eight local ~/.codex approval-settings and gateway hashes match jobs/reviews/J2959/REVIEW.md and the 4-6 Nov 3/4 checkpoint unchanged (config.toml sha256 efa1987b3c..., default.rules sha256 b6d57758e2..., studio.rules sha256 e3b8c84f19..., 5 gateways in ~/.codex/bin/ unchanged since 6 Nov 15:12), draft PR #490 remains OPEN/draft at f521bcd3f1 with 0 comments, and docs/CODEX_ALLOWLIST.md is not on main. Await authorized operator confirmation of local approval configuration and fresh-session scoped acceptance evidence; keep fallback routing active and make no autonomous approval-control changes. Recheck operator evidence at 2026-11-17T14:32:00Z.",
+        "check_at": "2026-11-17T14:32:00Z",
+        "last_recheck": "J2977",
+        "checked_at": "2026-11-17T08:32:35+00:00",
+        "checked_by": "gemini"
       },
       "plain": "Let Codex run the studio's routine commands on the Mac mini without asking each time (needs you at the Mini)"
     },
