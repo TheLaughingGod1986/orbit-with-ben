@@ -65,7 +65,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3000 | mini | open (after J2991) | – | – | WW2:004 script · for codex · script · WW2 film 004: topic review, script and sources, "Why America's Submarine Torpedoes Failed for 21 Months in WW2" |  |
 | J3001 | mini | open (after J2991) | – | – | WW2:005 script · for claudecode · script · WW2 film 005: topic review, script and sources, "How One Old Destroyer Rammed Germany's Only Atlantic Dry Dock" |  |
 | J3002 | mini | open (after J2991) | – | – | WW2:006 script · for gemini · script · WW2 film 006: topic review, script and sources, "Why Britain Built Its Fastest WW2 Bomber Out of Plywood and Balsa" |  |
-| J3003 | mini | open | – | – | studio · First-day check at 6 h: "How Far From Earth Is Voyager 1 Right Now?" (9q_OvQ1Rd8Y) |  |
+| J3003 | mini | claimed | gemini | 2026-11-17T18:11Z | studio · First-day check at 6 h: "How Far From Earth Is Voyager 1 Right Now?" (9q_OvQ1Rd8Y) |  |
 | J3004 | mini | claimed | macbook-2 | 2026-11-17T17:55Z | studio · First-day check at 6 h: "Why Is It Called a Vaccine?" (xgx2lYHhYZM) |  |
 | J3005 | mini | open (after J2990) | – | – | for gemini · studio · WW2 channel: packaging library, which titles and thumbnails beat their channel's normal views |  |
 | J3006 | mini | open (after J2990) | – | – | for codex · studio · WW2 channel: read its own analytics from day one, and a progress-to-monetisation card |  |
