@@ -266948,13 +266948,13 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-17T19:37Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T17:20Z",
-      "result": "",
+      "result": "Done by Claude directly (17 Nov 19:37Z), on Ben's \"start committing this plan\": PR #993 merged (dbb4c802), carrying #989 unchanged plus the channel's fresh rules (channels/ww2/studio/RULES.md, with the packaging study's title and thumbnail lines), the launch playbook (00_Brand/PLAYBOOK.md), no Ben cards on the board (WW2 plan steps follow their jobs), pilots 001-003 locked on Ben's go with scored working titles, film 5's title corrected, two long slots Tue and Sat 17:00 London, and the new repo's address. CI green; channel_check: nothing left to do. The WW2 jobs waiting on this one are released.",
       "history": [
         {
           "at": "2026-11-17T17:20Z",
@@ -266980,13 +266980,23 @@
           "at": "2026-11-17T18:17Z",
           "by": "claude",
           "what": "Packaging study results added: rule 2 thumbnail and title lines corrected, pilot 2 title changed."
+        },
+        {
+          "at": "2026-11-17T19:37Z",
+          "by": "claude",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T19:37Z",
+          "by": "claude",
+          "what": "done: Done by Claude directly (17 Nov 19:37Z), on Ben's \"start committing this plan\": PR #993 merged (dbb4c802), carrying #989 unchanged plus the channel's fresh rules (channels/ww2/studio/RULES.md, with the packaging study's title and thumbnail lines), the launch playbook (00_Brand/PLAYBOOK.md), no Ben cards on the board (WW2 plan steps follow their jobs), pilots 001-003 locked on Ben's go with scored working titles, film 5's title corrected, two long slots Tue and Sat 17:00 London, and the new repo's address. CI green; channel_check: nothing left to do. The WW2 jobs waiting on this one are released."
         }
       ],
       "remaining_action": "Merge PR #989 with no Ben lock cards and no copied Orbit/HOS rules, lock pilots 001-003, write the fresh RULES.md, set two long slots",
       "due": "2026-11-18T12:00:00Z",
       "kind": "chief",
       "plain": "Accept the new WW2 channel's plan so work on its first three films can start",
-      "urgent": 5
+      "done_ref": "dbb4c802798a42f8827223fbab71afa227d88a90"
     },
     {
       "id": "J2991",
