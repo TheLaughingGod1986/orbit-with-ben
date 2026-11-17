@@ -1,5 +1,5 @@
 {
-  "next_id": 2969,
+  "next_id": 2970,
   "jobs": [
     {
       "id": "J0001",
@@ -264204,6 +264204,35 @@
         "OWB:026"
       ],
       "done_ref": "6fb1d02f78"
+    },
+    {
+      "id": "J2969",
+      "title": "Rule-E topic go/no-go review: OWB 078 (Every Space Station Explained in 10 Minutes) and 079 (Why Is Space Cold If the Sun Is Hot) from J2967",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Rule-E topic go/no-go review for the two new Orbit With Ben backlog films created in J2967 (PR #976, commit `6a3494995` on branch `macbook/J2967`, mirrored to `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/` with 18/18 SHA-256 verification on each):\n\n1. **OWB:078 (`02_Video-Projects/078_Every-Space-Station-Explained-In-10-Minutes/TOPIC.md`):** *Every Space Station Explained in 10 Minutes (Salyut to Tiangong)* (Rule 26 + `studio/plan.json` Step 3 complete-tour title `\"Every Space Station Explained in 10 Minutes (Salyut to Tiangong)\"`, exact `#1` autocomplete + number variant `\"Every Space Station Explained in 10 Minutes (All 12 Stations)\"`, and Rule 15 compact title `\"Every Space Station Explained in 10 Minutes\"`; `0` exact title collisions; `18` verified on-topic `>=1.48M` neighbours up to `121.16M` — DOCUMENTARY TUBE `121.16M`, VideoFromSpace `37.70M`, Jared Owen `12.77M`/`8.59M`, Tier-1 TED Chris Hadfield `10.19M`, SmarterEveryDay `5.74M`/`5.37M`/`5.02M`/`5.01M`/`4.09M`/`3.21M`/`2.67M`/`1.95M`/`1.75M`, Tier-1 TED-Ed `1.79M`, Real Engineering `1.62M`, REAL SPACE `1.49M` *Every Space Station Comparison: 50 Years of Evolution*, and Peekaboo Kidz `1.48M`, plus The Space Race `906.9k`, SciShow Space `588.8k` on `Mir`, Matthew Travis `392.4k`, Megaprojects `321.7k` on `Skylab`, and Classic Aerospace History `308.4k` + `neighbours.py` `PASS` with `11` strictly on-topic `>=1M` Tier-1/Tier-2 education videos; primary NASA SP-400, NASA SP-4208, NASA RP-1357 *Mir Hardware Heritage* `Portree 1995`, `Siddiqi 2000`, & NASA *ISS Reference Guide* sources; 2 E1 Short angles on Pete Conrad's `1973` `Skylab` golden sun parasol repair at `52 °C` and Dzhanibekov & Savinykh's `1985` rescue of frozen, dead `Salyut 7` at `-10 °C`).\n2. **OWB:079 (`02_Video-Projects/079_Why-Is-Space-Cold-If-The-Sun-Is-So-Hot/TOPIC.md`):** *Why Is Space Cold If the Sun Is Hot? (And 121°C in Direct Light)* (Rule 26 `#1` autocomplete search phrase `\"Why Is Space Cold If the Sun Is Hot? (And 121°C in Direct Light)\"` + `#1`/`#2` autocomplete variant `\"Why Is Space So Cold When the Sun Is So Hot? (-270°C)\"` + Rule 15 compact title `\"Why Is Space So Cold If the Sun Is Hot?\"` + `studio/plan.json` complete-tour contingency recast `\"Every Extreme Temperature in Space Explained in 10 Minutes\"`; `0` exact title collisions; `13` strictly on-topic `>=1.07M` Tier-2 education videos in `neighbours.json` up to `2.82M` — CrashCourse `2.82M`/`2.38M`/`2.27M`/`2.17M`/`2.08M`/`2.05M`/`2.03M`/`1.77M`/`1.49M`/`1.32M`, Khan Academy `1.57M`/`1.07M`, PBS Space Time `1.42M`, plus Tier-1 TED Aaswath Raman `512.2k` & Tier-1 TED-Ed Tejal Gala `261.8k`, and exact-query search breakouts SciShow Space `462.5k`, Insane Curiosity `453.0k`, Sleep On Science `414.4k`, BRIGHT SIDE `374.7k`, Calm Space `356.6k`, vlogbrothers `348.1k`, and Science ABC `199.7k` + `neighbours.py` `PASS`; primary `Kopp & Lean 2011`, `Penzias & Wilson 1965`, `Mather et al. 1994` / `Fixsen 2009`, `Sahai & Nyman 1997` / `Sahai et al. 2013`, & NASA `EMU`/`JWST` sources; 2 E1 Short angles on why outer space stays freezing cold when the Sun burns at `5,500 °C` and why an astronaut's spacesuit hits `+121 °C` and `-157 °C` at once).\n\nCheck `TOPIC.md` and `11_Upload-Package/` audit sheets in both folders (on PR #976 / `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/`) against `AGENTS.md` Rule E, `STUDIO_PLAYBOOK.md` §2, `studio/plan.json` (14 Nov 2026 long-video plan), and `LEARNINGS.md` rules 1–33 + `OWB-2026-11-E1`. Both films remain in `jobs/WIP.json` `next` under Rule G until an active OWB WIP slot frees up and `studio/plan.json` format tests read out.\n",
+      "ref": "6a3494995",
+      "film": "078",
+      "stage": "topic",
+      "after": "J2967",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-17T01:06Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T01:06Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review OWB 078 and 079 topic briefs against Rule E, write REVIEW.md, and mark topic stage done if GO",
+      "kind": "review",
+      "plain": "Review our two new Space Station Evolution and Space Temperatures topic plans before script writing"
     }
   ],
   "focus": [
