@@ -31,7 +31,9 @@ Claude's plan, 17 Nov 2026, for Ben's goals: monetised as fast as possible, then
    change the thumbnail first, then the title. With average view duration under 25%, the next script tightens its
    first two minutes.
 7. **Topic engine.** Keep ten checked topics ready at all times. After six films, choose the next topics two to one
-   from the type of film that is doing best.
+   from the type of film that is doing best. Refresh the niche packaging library (`05_Analytics/PACKAGING_LIBRARY.json`
+   and `05_Analytics/PACKAGING_FINDINGS.md`) monthly via a read-only YouTube Data API pull across the tracked WW2
+   channels so title and thumbnail choices stay grounded in current outlier evidence.
 8. **Upload time.** 17:00 London (12:00 New York), to catch the UK evening and the US midday. Move it once the channel's
    own "when your viewers are on YouTube" chart says otherwise.
 9. **Who runs it.** The Chief owns this channel's queue; it is not a side project. The next job on the critical path
