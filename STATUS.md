@@ -78,6 +78,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 034 | edit | gemini | 2026-11-17T14:43Z | 2026-11-17T16:42Z | J2438 034 Pluto: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) |
+| 034 | edit | gemini | 2026-11-17T14:44Z | 2026-11-17T15:44Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
