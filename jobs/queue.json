@@ -105044,13 +105044,13 @@
       "stage": "",
       "after": "J1129",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-17T09:26Z",
+      "status": "done",
+      "by": "gemini",
+      "since": "2026-11-17T18:49Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-28T21:12Z",
-      "result": "parked for Chief: HOS PR #634 (1c4bc42f). Verified finished T023 report in HOS Studio at 2026-11-17T09:33:24Z (ran 29 Oct 00:45 to 12 Nov 01:34, not enough impressions, Option A visible to all, already in THUMB_LEDGER.json; screenshot ~/_desk/j1130/t023_report_2026-11-17.png sha256 84449bb3ee0212b3e17da0a2078e9a67b03951dc326a17dee5ef9e20f9b8be4d). Clicking New test prompts 'Start a new experiment? This deletes your current experiment. Do you want to continue?'; selected Cancel per brief/Never list and verified clean reload with zero changes. Chief must explicitly authorize Continue on finished T023 to arm title-only B ('How Mendeleev's Periodic Table Predicted Missing Metals') or close J1130.",
+      "result": "Chief ruling (J2979 follow-through): merged HOS PR #634 (4675609a). Finished T023 on AL_-qlWko_g (002 Periodic Table) is already recorded in THUMB_LEDGER.json; per the Never list, do not click Continue on Start a new experiment? This deletes your current experiment. Live search-led title How Did We Discover the Periodic Table? (Mendeleev's Blank Spaces) and finished T023 preserved untouched. £0.",
       "history": [
         {
           "at": "2026-10-28T21:12Z",
@@ -105536,6 +105536,11 @@
           "at": "2026-11-17T12:10Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-17T18:49Z",
+          "by": "gemini",
+          "what": "done: Chief ruling (J2979 follow-through): merged HOS PR #634 (4675609a). Finished T023 on AL_-qlWko_g (002 Periodic Table) is already recorded in THUMB_LEDGER.json; per the Never list, do not click Continue on Start a new experiment? This deletes your current experiment. Live search-led title How Did We Discover the Periodic Table? (Mendeleev's Blank Spaces) and finished T023 preserved untouched. £0."
         }
       ],
       "remaining_action": "New test requires protected delete-current-experiment confirmation; Cancelled per brief/Never list, opening HOS read-back PR and parking for Chief",
@@ -266405,13 +266410,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-17T14:33Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-17T11:49Z",
-      "result": "Waiting for: Non-producer QA reviewer required (gemini/macbook assembled v07 in J2662 and brief forbids self-review): claudecode down until 2026-11-17T15:31:13Z, claude down until 2026-11-17T17:50:00Z, codex down until 2026-11-17T23:22:00Z, cursor-claude-opus-5-5 out of credit. Pre-flight verified NAS SHA-256 (v07 a3404a314a44..., v03 9f25a16de5fc...) and HOS PR #556 @ 168f8915 green.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-17T11:49Z",
@@ -266447,6 +266452,16 @@
           "at": "2026-11-17T15:36Z",
           "by": "relay",
           "what": "condition verification queued: J2988"
+        },
+        {
+          "at": "2026-11-17T18:49Z",
+          "by": "gemini",
+          "what": "reopened: Reopened via J2988 verification now that claudecode retry window (18:29:37Z) has passed and claudecode is UP on the Mini (can open NAS sheets directly per Claude desk #180 #6951245427 option 2)"
+        },
+        {
+          "at": "2026-11-17T18:49Z",
+          "by": "gemini",
+          "what": "rerouted to claudecode on mini-claude-opus-5-5: Rerouted J2984 to claudecode on Mini per Claude desk #180 #6951245427 option 2"
         }
       ],
       "remaining_action": "Non-producer QA reviewer (claudecode/claude/codex) to review PR #556 + v07 contact sheets, write REVIEW.md, and stage hos_008_short_C_v07.mp4 to HOS UAT + awaits_ben",
@@ -266459,24 +266474,11 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-17T14:38Z",
-        "by": "gemini",
-        "note": "Pre-flight verified NAS SHA-256 parity (v07 a3404a314a444a0fd987ca648c28425be8afb768f83748ee64e553951c8f06a8, v03 9f25a1"
-      },
+      "for": "claudecode",
+      "model": "mini-claude-opus-5-5",
       "taskKeys": [
         "HOS:008"
-      ],
-      "hold": {
-        "type": "credits",
-        "condition": "Non-producer QA reviewer required (gemini/macbook assembled v07 in J2662 and brief forbids self-review): claudecode down until 2026-11-17T15:31:13Z, claude down until 2026-11-17T17:50:00Z, codex down until 2026-11-17T23:22:00Z, cursor-claude-opus-5-5 out of credit. Pre-flight verified NAS SHA-256 (v07 a3404a314a44..., v03 9f25a16de5fc...) and HOS PR #556 @ 168f8915 green.",
-        "check_at": "2026-11-17T16:36:39+00:00",
-        "recheck_task": "J2988"
-      }
+      ]
     },
     {
       "id": "J2985",
@@ -266728,13 +266730,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
-      "since": "2026-11-17T17:38Z",
+      "since": "2026-11-17T18:49Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-17T15:36Z",
-      "result": "parked for Chief: J2988 condition verification complete (jobs/reviews/J2988/REVIEW.md at a40e2e612e) — J2984 waiting condition remains NOT MET (gemini/macbook assembled v07 in J2662 and J2984 brief forbids self-review; all non-producer QA lanes down: claudecode hit Fable limit at 17:23:53Z resetting 10am London / 2026-11-18T10:00:00Z with relay retry 2026-11-17T18:29:37Z, claude out until 2026-11-17T17:50:00Z, codex out until 2026-11-17T23:22:00Z, cursor-claude-opus-5-5 out of credit; HOS PR #556 @ 168f8915 OPEN/6 green and NAS v07 a3404a314a44... & v03 9f25a16de5fc... verified intact). Recording jobs.py wait J2984 --recheck J2988 and closing J2988 requires elected Chief authority (Grok Bot is currently UP).",
+      "result": "Chief ruling: verified J2988 condition report (jobs/reviews/J2988/REVIEW.md at a40e2e612e); claudecode retry window (18:29:37Z) has passed so reopened and rerouted parent J2984 to claudecode on the Mini per Claude desk #180 #6951245427 option 2. £0.",
       "history": [
         {
           "at": "2026-11-17T15:36Z",
@@ -266775,6 +266777,11 @@
           "at": "2026-11-17T17:47Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J2988 condition verification complete (jobs/reviews/J2988/REVIEW.md at a40e2e612e) — J2984 waiting condition remains NOT MET (gemini/macbook assembled v07 in J2662 and J2984 brief forbids self-review; all non-producer QA lanes down: claudecode hit Fable limit at 17:23:53Z resetting 10am London / 2026-11-18T10:00:00Z with relay retry 2026-11-17T18:29:37Z, claude out until 2026-11-17T17:50:00Z, codex out until 2026-11-17T23:22:00Z, cursor-claude-opus-5-5 out of credit; HOS PR #556 @ 168f8915 OPEN/6 green and NAS v07 a3404a314a44... & v03 9f25a16de5fc... verified intact). Recording jobs.py wait J2984 --recheck J2988 and closing J2988 requires elected Chief authority (Grok Bot is currently UP)."
+        },
+        {
+          "at": "2026-11-17T18:49Z",
+          "by": "gemini",
+          "what": "done: Chief ruling: verified J2988 condition report (jobs/reviews/J2988/REVIEW.md at a40e2e612e); claudecode retry window (18:29:37Z) has passed so reopened and rerouted parent J2984 to claudecode on the Mini per Claude desk #180 #6951245427 option 2. £0."
         }
       ],
       "remaining_action": "Elected Chief to record wait --recheck J2988 on J2984 and mark J2988 done",
