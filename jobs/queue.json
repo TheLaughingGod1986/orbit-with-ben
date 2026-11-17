@@ -267743,13 +267743,13 @@
       "stage": "upload",
       "after": "J3004",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-17T18:24Z",
-      "eta": "2026-11-17T20:24Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-17T18:22Z",
-      "result": "",
+      "result": "Waiting for: The 18 Nov 2026 morning tracker snapshot is available after the 06:40 UTC run",
       "history": [
         {
           "at": "2026-11-17T18:22Z",
@@ -267765,6 +267765,16 @@
           "at": "2026-11-17T18:24Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Follow-up queued by Chief after J3004; holding until 18 Nov 06:45Z after morning snapshot"
+        },
+        {
+          "at": "2026-11-17T18:24Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: The 18 Nov 2026 morning tracker snapshot is available after the 06:40 UTC run"
+        },
+        {
+          "at": "2026-11-17T18:24Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-18T06:45:00Z"
         }
       ],
       "remaining_action": "Wait for 2026-11-18T06:40:00Z daily snapshot, then read xgx2lYHhYZM overnight reach and views",
@@ -267780,7 +267790,12 @@
       },
       "taskKeys": [
         "HOS:007"
-      ]
+      ],
+      "hold": {
+        "type": "date",
+        "condition": "The 18 Nov 2026 morning tracker snapshot is available after the 06:40 UTC run",
+        "check_at": "2026-11-18T06:45:00Z"
+      }
     }
   ],
   "focus": [
