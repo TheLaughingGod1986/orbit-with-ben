@@ -54,20 +54,20 @@ How the cost is kept down:
 
 **The free plan of the host.** The worst case above is far below what I understand the host's free plan to include
 (about a million function requests and 100 GB of data a month). I could not read the plan's current figures in the
-session that wrote this, so check the project's Usage page in Vercel after the first week on the private repo and
+session that wrote this, so check the project's Usage page in Cloudflare Pages after the first week on the private repo and
 compare it with the table. The likely case is under one per cent of either figure.
 
 ## Ben's step at the move
 
 The server's token (`BOARD_GH_TOKEN`) can only comment today. Reading a private repo needs read access to its files.
-Do this once, when the `studio` repo exists. Never paste the token anywhere but Vercel's own field.
+Do this once, when the `studio` repo exists. Never paste the token anywhere but Cloudflare Pages' own field.
 
 1. GitHub: Settings, Developer settings, Personal access tokens, Fine-grained tokens. Open the board's token.
 2. **Repository access:** add the `studio` repo to the selected repositories.
 3. **Repository permissions:** set **Contents** to **Read-only**. Metadata is set to Read-only with it. Leave
    **Issues** on Read and write: the board posts your ticks with it.
-4. Save. If GitHub shows a new token value, put it in Vercel: project `studio-kanban`, Settings, Environment
-   Variables, `BOARD_GH_TOKEN`.
+4. Save. If GitHub shows a new token value, put it in Cloudflare Pages: project `studio-kanban`, Settings, Variables and
+   Secrets, `BOARD_GH_TOKEN`.
 5. In the same place add `BOARD_DATA_REPO` with the value `TheLaughingGod1986/studio`, then redeploy.
 
 If the token turns out to be the older "classic" kind, replace it with a fine-grained one set up as above. A classic

@@ -2,7 +2,7 @@
 // audit). The pages used to ask api.github.com themselves: unauthenticated, that is 60 requests an hour per IP, so a
 // phone with the hub, /board and /ai open ran out within the hour (403 "rate limit exceeded") and fell back to the
 // branch URL, which raw.githubusercontent serves up to 5 minutes stale. Here one authenticated read (env
-// BOARD_GH_TOKEN, as api/checks.js) serves every viewer, and Vercel's edge cache holds the answer for 20 s, so GitHub
+// BOARD_GH_TOKEN, as api/checks.js) serves every viewer, and the CDN cache holds the answer for 20 s, so GitHub
 // sees at most a few calls a minute however many pages are open. Same shape as GitHub's ref ({object: {sha}}), so the
 // pages read it unchanged and fall back to api.github.com if this fails.
 

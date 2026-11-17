@@ -1810,6 +1810,59 @@
     return ["amber", "Idle"];
   }
 
+  function londonBackTime(iso) {
+    const raw = String(iso || "").trim();
+    if (!raw) return "";
+    const norm = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(?::\d{2}(?:\.\d+)?)?$/.test(raw) ? raw + "Z" : raw;
+    const at = Date.parse(norm);
+    if (!Number.isFinite(at)) return "";
+    return new Date(at).toLocaleString("en-GB", {
+      timeZone: "Europe/London", weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit",
+    });
+  }
+  const ISO_STAMP_RE = /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(?::\d{2}(?:\.\d+)?)?(?:Z|[+-]\d{2}:?\d{2})?/g;
+  // Plain-English status line for the Agents tab: London times, no job ids or probe names (Details /ai keeps the raw text).
+  function agentReason(id, stRow, chainRow, now) {
+    stRow = stRow || {}; chainRow = chainRow || {};
+    const raw = String(stRow.why || chainRow.why || "").trim();
+    const st = stRow.status || (chainRow.agent ? (chainRow.up ? "green" : "red") : "");
+    const stampMatch = raw.match(ISO_STAMP_RE);
+    const untilRaw = stRow.until || chainRow.until || (stampMatch ? stampMatch[0] : "");
+    const untilNorm = untilRaw && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(?::\d{2}(?:\.\d+)?)?$/.test(untilRaw) ? untilRaw + "Z" : untilRaw;
+    const untilMs = Date.parse(untilNorm || "");
+    const back = Number.isFinite(untilMs) && (!Number.isFinite(now) || untilMs > now) ? londonBackTime(untilNorm) : "";
+    if (/CLI not installed/i.test(raw)) return "Not installed on this machine";
+    if (/out of (?:usage|credits?|tokens)|usage limit|rate[- ]limit|insufficient (?:credit|credits|balance|quota)|quota|blocked by \w+:.*limit/i.test(raw)) {
+      const lead = /out of credits?\b/i.test(raw) && !/usage/i.test(raw) ? "Out of credit" : "Out of usage";
+      return back ? `${lead}, back ${back}` : lead;
+    }
+    if (/signed out/i.test(raw)) return back ? `Signed out, back ${back}` : "Signed out";
+    if (/^no Grok post on the thread/i.test(raw)) {
+      const hm = raw.match(/last (\d+\s*h)/i);
+      return hm ? `Not heard from in the last ${hm[1]}` : "Not heard from recently";
+    }
+    if (st === "red" || /^marked down/i.test(raw) || (chainRow.up === false && raw)) {
+      return back ? `Unavailable, back ${back}` : "Unavailable right now";
+    }
+    if (!raw || /^ready$/i.test(raw) || /^ran\s+J\d+/i.test(raw)) {
+      return id === "macbook" ? "waits for a MacBook job, plugged in and idle" : "no job right now";
+    }
+    const agoMatch = raw.match(/^(?:heartbeat|posted on the thread|ran jobs\.py)\s+(\d+\s*(?:min|h|hours?|days?)\s*ago)$/i);
+    if (agoMatch) return `Checked in ${agoMatch[1]}`;
+    if (/^active in the last/i.test(raw)) return "Active recently · no job right now";
+    if (/^no (?:recent reading|heartbeat yet)$/i.test(raw)) return "No recent check-in";
+    if (/^named Chief by Ben/i.test(raw)) return back ? `Acting Chief until ${back}` : "Acting Chief";
+    const cleaned = raw
+      .replace(/\s*\([^)]*(?:\bJ\d{3,5}\b|\bprobe\b|\bCDP\b|\bjobs\.py\b)[^)]*\)/gi, "")
+      .replace(ISO_STAMP_RE, m => londonBackTime(m) || "")
+      .replace(/\bJ\d{3,5}\b[:\s-]*/g, "")
+      .replace(/\s*\bverified in\s+probe\b/gi, "")
+      .replace(/\s{2,}/g, " ")
+      .replace(/[\s:;,.-]+$/, "")
+      .trim();
+    return cleaned || "no job right now";
+  }
+
   // ---- Jobs in plain words (Ben, 10 Nov 2026: "when I click into the job, it's completely jargon. I don't understand
   // any of it. If I click into a job, I just want to see what it's doing. For example, building a new scene, doing a
   // voiceover, double checking the data"). Every job on the board carries `plain` (scripts/jobs.py plain_summary, or
@@ -1846,7 +1899,7 @@
     const q = (b && b.queueForecast) || {}, f = (q.jobs || {})[j.id];
     if (f) return `Number ${f.pos} in line for ${agentName(f.agent)}${f.startAt ? ` · starts about ${qWhen(f.startAt)}` : ""}`;
     const m = /^waiting for ([\w-]+)(?::\s*(.*))?$/i.exec(String((q.noAgent || {})[j.id] || ""));
-    if (m) return `Waiting for ${agentName(m[1])}${/out of credit|limit/i.test(m[2] || "") ? ", which is out of credit right now" : " to be free"}`;
+    if (m) return `Waiting for ${agentName(m[1])}${/out of (?:credit|usage)|limit/i.test(m[2] || "") ? ", which is out of credit right now" : " to be free"}`;
     return "In the queue";
   }
   // The videos a job is for, as links to their pages; "" for a job about the studio itself.
@@ -1919,9 +1972,16 @@
       const mine = jobs.filter(j => j.by === id && j.status === "claimed");
       const chain = (m.chiefChain || []).find(r => r.agent === id) || {};
       let why = mine.length ? "Working on: " + mine.map(j => lowerFirst(jobPlain(b, j))).join(" · ")
-        : (status[id] || {}).why || chain.why || (id === "macbook" ? "waits for a MacBook job, plugged in and idle" : "no job right now");
+        : agentReason(id, status[id], chain, now);
       let [st, word] = agentLight(id, mine.length, (status[id] || {}).status, c.agent === id && m.fresh !== false);
-      if (id === "macbook" && !mine.length) { const mbs = macbookState(macbook, now); st = mbs[0]; word = mbs[1]; why = mbs[2]; }
+      if (id === "macbook" && !mine.length) {
+        const mbs = macbookState(macbook, now);
+        st = mbs[0]; word = mbs[1];
+        const mj = macbook && macbook.state === "working" && macbook.job ? boardJob(b, macbook.job) : null;
+        why = macbook && macbook.state === "working"
+          ? (mj ? "Working on: " + lowerFirst(jobPlain(b, mj)) : "Working on a job")
+          : agentReason(id, { status: st, why: mbs[2] }, {}, now);
+      }
       const href = mine[0] ? jobRoute(mine[0].id) : "#agents";
       return { st, html: `<a class="row agent" href="${href}"><span class="dot ${esc(st)}"></span><div class="body"><b>${esc(name)} <span class="tag ${st}">${word}</span>${c.agent === id ? ' <span class="tag">Chief</span>' : ""}</b>
         <span class="meta">${esc(clip(why, 110))}</span></div><span class="chev">›</span></a>` };

@@ -65,3 +65,19 @@ class BoardSite(unittest.TestCase):
         self.assertTrue(any(rule["source"] == "/*" and
             {"key": "X-Robots-Tag", "value": "noindex, nofollow"} in rule["headers"]
             for rule in config["headers"]))
+
+    def test_vercel_project_link_removed_and_comments_point_to_pages(self):
+        self.assertFalse((SITE / ".vercel" / "project.json").exists())
+        self.assertTrue((SITE / "vercel.json").exists())  # still read by build.py for Pages _redirects/_headers
+        wrangler = json.loads((SITE / "wrangler.jsonc").read_text())
+        self.assertEqual(wrangler["vars"]["BOARD_OPEN_TAPS"], "0")
+        for p in sorted(SITE.rglob("*")):
+            if not p.is_file() or p.suffix not in {".js", ".py", ".json", ".jsonc"} or "dist" in p.parts:
+                continue
+            txt = p.read_text()
+            for stale in ("in Vercel", "vercel logs", "Vercel's edge", "Vercel function"):
+                self.assertNotIn(stale, txt, f"{p.relative_to(SITE)}: {stale}")
+
+
+if __name__ == "__main__":
+    unittest.main()

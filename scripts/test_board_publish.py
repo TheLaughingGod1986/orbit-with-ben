@@ -600,5 +600,43 @@ class TenMinuteChecksGuard(unittest.TestCase):
         self.assertEqual(health["checksAlertedFor"], "")
 
 
+class HomePathScrub(unittest.TestCase):
+    """J2982: no Mac home-folder path (/Users/<name>/...) is published in board.json, updates.json or tracker.json."""
+
+    def test_scrubs_home_paths_across_sections_and_preserves_urls(self):
+        sample = docs()
+        sample["owb"]["jobs"] = [{"id": "J2702", "status": "done", "result": "Wrote /Users/alice/YouTube/orbit-with-ben/00_Brand/out.jpg"}]
+        sample["owb"]["done"] = [{"id": "J2722", "result": "Saved (/Users/example.user-1/_desk/logs/j2722.json) and /Users/alice"}]
+        sample["tracker"]["videos"] = [{"key": "OWB:002", "jobs": [{"id": "J2702", "result": "file:///Users/alice/YouTube/thumb.jpg"}],
+                                        "url": "https://example.com/Users/keep-web-url"}]
+        board, _ = bp.assemble(sample, {}, {"OWB-002": {"note": "checked /Users/alice/cut.mp4"}}, T0)
+        board["workflow"] = {"states": {"J2702": {"reason": "verified /Users/alice/YouTube/orbit-with-ben/02_Video-Projects"}}}
+        cleaned = bp.scrub_home_paths(board)
+        dumped = json.dumps(cleaned)
+        self.assertNotIn("/Users/alice", dumped)
+        self.assertNotIn("/Users/example.user-1", dumped)
+        self.assertEqual(cleaned["owb"]["jobs"][0]["result"], "Wrote ~/YouTube/orbit-with-ben/00_Brand/out.jpg")
+        self.assertEqual(cleaned["owb"]["done"][0]["result"], "Saved (~/_desk/logs/j2722.json) and ~")
+        self.assertEqual(cleaned["tracker"]["videos"][0]["jobs"][0]["result"], "file://~/YouTube/thumb.jpg")
+        self.assertEqual(cleaned["tracker"]["videos"][0]["url"], "https://example.com/Users/keep-web-url")
+        self.assertEqual(cleaned["checks"]["OWB-002"]["note"], "checked ~/cut.mp4")
+        self.assertEqual(cleaned["workflow"]["states"]["J2702"]["reason"], "verified ~/YouTube/orbit-with-ben/02_Video-Projects")
+
+    def test_updates_payload_and_finish_publish_no_home_path(self):
+        old_tainted = {"owb": {"done": [{"id": "J2702", "result": "old /Users/alice/YouTube/a.jpg"}]}, "publishedAt": "2026-11-17T11:00:00Z"}
+        prior_history = bp.pack_updates({
+            "schema": 1, "revision": bp.digest(old_tainted), "publishedAt": "2026-11-17T11:00:00Z", "snapshotEtag": "x", "tracker": "",
+            "edits": [{"from": "r0", "to": bp.digest(old_tainted), "fromEtag": "e0",
+                       "ops": [["set", ["owb", "done", 0, "result"], "old /Users/alice/YouTube/a.jpg"]]}],
+        })
+        new_board = {"owb": {"done": [{"id": "J2702", "result": "old /Users/alice/YouTube/a.jpg"}]}, "publishedAt": "2026-11-17T11:01:00Z"}
+        packed = bp.updates_payload(new_board, old_tainted, prior_history, '{"note":"/Users/alice/data.json"}')
+        unpacked = bp.unpack_updates(packed)
+        self.assertNotIn("/Users/alice", json.dumps(unpacked))
+        self.assertEqual(len(unpacked["edits"]), 1)
+        self.assertEqual(unpacked["edits"][0]["ops"], [["set", ["owb", "done", 0, "result"], "old ~/YouTube/a.jpg"],
+                                                       ["set", ["publishedAt"], "2026-11-17T11:01:00Z"]])
+
+
 if __name__ == "__main__":
     unittest.main()
