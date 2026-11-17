@@ -267735,13 +267735,13 @@
       "stage": "",
       "after": "J2990",
       "eta_min": 150,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-17T19:48Z",
-      "eta": "2026-11-17T22:18Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T17:43Z",
-      "result": "",
+      "result": "PR #995 (channels/ww2/05_Analytics/PACKAGING_LIBRARY.json, PACKAGING_FINDINGS.md, and PLAYBOOK.md §7 monthly refresh across 14 channels / 1,020 long videos >8m). Quota used: 69 units (channels.list 13, playlistItems.list 28, videos.list 28; £0, 0 errors). 1) Other-side reaction titles rank #1 (1.51x median, n=51, 49.0% >=2x), followed by questions (1.27x, n=58) and How/Why openers (1.12x overall, 1.25x on 2026 breakout channels, n=220 vs 0.98x without). 2) Bright thumbnail grading leads all visual tags (1.19x median, n=113, 29.2% >=2x) paired with 1-3 words (1.01x, n=352, 29.3% >=2x) in white+yellow (1.15x, n=25) or yellow (1.04x, n=62), reversing the outlier-feed guess for 0-word thumbnails (0.88x median, n=181, 0 breakout videos). 3) Colourised real archive photos reach 1.96x median on breakout channels (1.00x overall, n=240), whereas AI/3D illustrations (n=418) give no median edge (1.00x overall, 0.92x established) and ungraded B&W lags (0.92x, n=115). 4) Series labels/pipes/'Full Documentary' (0.77x median, n=81), generic secret/mystery words (0.90x, n=38), calendar years in titles (0.96x, >=2x halved to 14.8%, n=162), and maps on thumbnails (0.98x, >=2x down to 16.3%, n=147) depress outlier odds. 5) Superlatives (1.00x median, n=110; most/only/first 0.90x median / 12.55x mean) and non-year hard numbers (1.00x median, n=393) flatten at the median (high-variance tail multipliers), while money figures (n=4) and until/then turns (n=23, 0.81x) have too few videos (<25).",
       "history": [
         {
           "at": "2026-11-17T17:43Z",
@@ -267792,6 +267792,11 @@
           "at": "2026-11-17T20:10Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Opened records PR #995 (PACKAGING_LIBRARY.json, PACKAGING_FINDINGS.md, PLAYBOOK.md §7); all ratchets and channel_check PASS; scratch cleaned"
+        },
+        {
+          "at": "2026-11-17T20:10Z",
+          "by": "gemini",
+          "what": "done: PR #995 (channels/ww2/05_Analytics/PACKAGING_LIBRARY.json, PACKAGING_FINDINGS.md, and PLAYBOOK.md §7 monthly refresh across 14 channels / 1,020 long videos >8m). Quota used: 69 units (channels.list 13, playlistItems.list 28, videos.list 28; £0, 0 errors). 1) Other-side reaction titles rank #1 (1.51x median, n=51, 49.0% >=2x), followed by questions (1.27x, n=58) and How/Why openers (1.12x overall, 1.25x on 2026 breakout channels, n=220 vs 0.98x without). 2) Bright thumbnail grading leads all visual tags (1.19x median, n=113, 29.2% >=2x) paired with 1-3 words (1.01x, n=352, 29.3% >=2x) in white+yellow (1.15x, n=25) or yellow (1.04x, n=62), reversing the outlier-feed guess for 0-word thumbnails (0.88x median, n=181, 0 breakout videos). 3) Colourised real archive photos reach 1.96x median on breakout channels (1.00x overall, n=240), whereas AI/3D illustrations (n=418) give no median edge (1.00x overall, 0.92x established) and ungraded B&W lags (0.92x, n=115). 4) Series labels/pipes/'Full Documentary' (0.77x median, n=81), generic secret/mystery words (0.90x, n=38), calendar years in titles (0.96x, >=2x halved to 14.8%, n=162), and maps on thumbnails (0.98x, >=2x down to 16.3%, n=147) depress outlier odds. 5) Superlatives (1.00x median, n=110; most/only/first 0.90x median / 12.55x mean) and non-year hard numbers (1.00x median, n=393) flatten at the median (high-variance tail multipliers), while money figures (n=4) and until/then turns (n=23, 0.81x) have too few videos (<25)."
         }
       ],
       "remaining_action": "Close J3005 with PR #995 and post studio thread report",
@@ -267805,7 +267810,8 @@
         "at": "2026-11-17T20:10Z",
         "by": "gemini",
         "note": "Opened records PR #995 (PACKAGING_LIBRARY.json, PACKAGING_FINDINGS.md, PLAYBOOK.md §7); all ratchets and channel_check P"
-      }
+      },
+      "done_ref": "#995"
     },
     {
       "id": "J3006",
