@@ -250598,9 +250598,14 @@
           "at": "2026-11-17T16:36Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Verified joined hos_009_score_joined_v02.wav (535.33s), 5 v02 stems, VO reference mix + transition artifacts, NAS studio-live SHA-256 parity, and preserved v01/VO/diagram locks"
+        },
+        {
+          "at": "2026-11-17T16:41Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Opened HOS PR #636 (bda25cec) with sanitized v02 provenance, plans, and complete-library music_gate PASS (89 comparisons, max 0.6615 < 0.80, 0 unreadable)"
         }
       ],
-      "remaining_action": "Verify unchanged music_gate CLI + CI checks on clean HOS worktree, push/PR provenance, report on HOS desk, and hand off to J2807",
+      "remaining_action": "Post HOS desk report and close J2806 to unlock J2807 audio review",
       "due": "2026-11-17T16:00:00Z",
       "kind": "assembly",
       "plain": "Make a revised opening score for the gravity film and check it against earlier music",
@@ -250615,11 +250620,11 @@
       "for": "gemini",
       "model": "gemini-agy",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-17T16:36Z",
+        "at": "2026-11-17T16:41Z",
         "by": "gemini",
-        "note": "Verified joined hos_009_score_joined_v02.wav (535.33s), 5 v02 stems, VO reference mix + transition artifacts, NAS studio"
+        "note": "Opened HOS PR #636 (bda25cec) with sanitized v02 provenance, plans, and complete-library music_gate PASS (89 comparisons"
       },
       "taskKeys": [
         "HOS:009"
