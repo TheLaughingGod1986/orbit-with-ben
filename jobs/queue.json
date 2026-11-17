@@ -215745,9 +215745,14 @@
           "at": "2026-11-17T14:44Z",
           "by": "gemini",
           "what": "step 4 of 5 done: Resumed J2438 at Step 4/5; checking completed J2438-render.done and gate results"
+        },
+        {
+          "at": "2026-11-17T14:51Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Diagnosed all 17 polish_gate/picture_qa fails (R03 lift, 6 card +10 luma, Charon_Discovery right-plate crop, R67 feathered inset & H-h-120 label y, 5 dark-disc crescent stills) + 2 tpad frame counts; testing fixes now"
         }
       ],
-      "remaining_action": "Inspect J2438-render.done/log, patch any flagged PICTURE_QA cuts using cached cuts, pass all gates on 034_pluto_frozen_heart_master_v02.mp4, and commit pack sidecars",
+      "remaining_action": "Patching 17 polish_gate/picture_qa cuts + 2 1-frame-short video cuts on cached cuts/ and re-running gates",
       "kind": "assembly",
       "plain": "Trim 034 Pluto Sentence 1 to <8 s, re-cut the first 30 s to <=4 s per cut (FIRST30_PLAN.md), and assemble master v02",
       "taskKeys": [
@@ -215766,9 +215771,9 @@
       "progress": {
         "step": 4,
         "of": 5,
-        "at": "2026-11-17T14:44Z",
+        "at": "2026-11-17T14:51Z",
         "by": "gemini",
-        "note": "Resumed J2438 at Step 4/5; checking completed J2438-render.done and gate results"
+        "note": "Diagnosed all 17 polish_gate/picture_qa fails (R03 lift, 6 card +10 luma, Charon_Discovery right-plate crop, R67 feather"
       }
     },
     {
