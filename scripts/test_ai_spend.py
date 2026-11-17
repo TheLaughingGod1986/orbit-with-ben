@@ -52,6 +52,27 @@ class BuildDoc(unittest.TestCase):
         with self.assertRaises(SystemExit):
             ai_spend.main(["record", "--pool", "flow", "--by", "t"])
 
+    def test_per_plan_cycles_past_max_and_weekly_history(self):
+        rows = [
+            {"at": "2026-10-12T09:00:00Z", "kind": "record", "pool": "flow", "left": 25000, "total": 25000, "by": "cursor"},
+            {"at": "2026-11-05T09:00:00Z", "kind": "record", "pool": "flow", "left": 5000, "by": "cursor"},
+            {"at": "2026-11-12T08:30:00Z", "kind": "record", "pool": "flow", "left": 4970, "by": "cursor"},
+            {"at": "2026-11-13T08:30:00Z", "kind": "record", "pool": "flow", "left": 25050, "total": 25050, "by": "cursor"},
+            {"at": "2026-11-17T11:00:00Z", "kind": "record", "pool": "flow", "left": 24500, "by": "gemini"},
+            {"at": "2026-11-12T08:30:00Z", "kind": "record", "pool": "vertex", "left": 69.48, "by": "cursor"},
+            {"at": "2026-11-13T08:30:00Z", "kind": "record", "pool": "vertex", "left": 144.66, "by": "cursor"},
+            {"at": "2026-11-17T11:00:00Z", "kind": "record", "pool": "vertex", "left": 144.66, "by": "gemini"},
+            {"at": "2026-11-04T08:30:00Z", "kind": "record", "pool": "codex", "left": 0, "total": 100, "note": "weekly 100% used, resets Tue 10 Nov 23:22Z", "by": "mini"},
+            {"at": "2026-11-12T08:30:00Z", "kind": "record", "pool": "codex", "left": 25, "total": 100, "note": "weekly 75% used, resets Tue 17 Nov 23:22Z", "by": "mini"},
+            {"at": "2026-11-17T08:30:00Z", "kind": "record", "pool": "codex", "left": 0, "total": 100, "note": "weekly 100% used, resets Tue 17 Nov 23:22Z", "by": "mini"},
+        ]
+        d = ai_spend.build_doc(rows, as_of="2026-11-17T12:00:00Z")
+        self.assertEqual(d["pools"]["flow"]["first"]["left"], 25050)
+        self.assertEqual(d["pools"]["flow"]["pastCycleMaxUsed"], 20030.0)
+        self.assertEqual(d["pools"]["vertex"]["first"]["left"], 144.66)
+        self.assertEqual(len(d["pools"]["codex"]["weeklyHistory"]), 2)
+        self.assertTrue(all(w["hitLimit"] for w in d["pools"]["codex"]["weeklyHistory"]))
+
 
 class FlowRefill(unittest.TestCase):
     def test_rise_is_refill_total(self):

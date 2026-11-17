@@ -1928,21 +1928,30 @@
     }).sort((a, b) => (rank[a.st] ?? 9) - (rank[b.st] ?? 9));
     const team = teamRows.map(r => r.html).join("");
     const pools = (b.credits || {}).pools || {};
-    // Every model gets a bar where a real reading exists (Ben, 29 Oct: "accurate progress for all the models").
-    // Grok Bot has no meter of its own: it runs on the same weekly pool as Cursor (the Mini reads it from
-    // grok.com/dashboard/billing), so its tile shows that reading. Claude and Gemini show one once the Mini records it.
+    // Every pool gets two left-to-right bars (Used vs Time) and a monthly plan verdict (Ben, 17 Nov 2026, J2985).
+    // Grok Bot shares Cursor's weekly allowance on grok.com/dashboard/billing, so they share one Cursor & Grok card.
     const chain = Object.fromEntries((m.chiefChain || []).map(r => [r.agent, r]));
     const tile = (name, id, alias) => {
       const pm = poolMeter(id, pools[id], (b.credits || {}), now);
       if (!pm) {
         const [tone, word, note] = meterless(chain[alias], status[alias], now);
-        return `<a class="credit" href="/ai"><span>${esc(name)}</span><b class="${tone}">${word}</b><small>${esc(note)}</small></a>`;
+        return `<a class="credit" href="/ai"><div class="credit-top"><span>${esc(name)}</span><b class="${tone}">${esc(word)}</b></div><small>${esc(note)}</small></a>`;
       }
-      return `<a class="credit" href="/ai"><span>${esc(name)}</span><b class="${pm.tone}">${pm.fig}</b>${pm.share != null
-        ? `<div class="bar"><i class="${pm.tone}" style="width:${Math.max(3, pm.share * 100).toFixed(0)}%"></i></div>` : ""}<small>${esc(pm.note)}</small></a>`;
+      const usedW = pm.usedShare != null ? Math.max(pm.usedShare > 0 ? 2 : 0, Math.round(pm.usedShare * 100)) : 0;
+      const timeW = pm.timeShare != null ? Math.max(pm.timeShare > 0 ? 2 : 0, Math.round(pm.timeShare * 100)) : 0;
+      const bars = `<div class="credit-bars">` +
+        (pm.usedShare != null ? `<div class="cbar"><div class="cbar-head"><strong>Used</strong><span>${esc(pm.usedDetail)}</span></div><div class="bar"><i class="${pm.tone}" style="width:${usedW}%"></i></div></div>` : "") +
+        (pm.timeShare != null ? `<div class="cbar"><div class="cbar-head"><strong>Time</strong><span>${esc(pm.timeDetail)}</span></div><div class="bar"><i class="time" style="width:${timeW}%"></i></div></div>`
+          : pm.windowEnd ? `<div class="cbar"><div class="cbar-head"><strong>Time</strong><span>${esc(pm.windowEnd)}</span></div></div>` : "") +
+        `</div>`;
+      return `<a class="credit" href="/ai"><div class="credit-top"><span>${esc(name)}</span><b class="${pm.tone}">${esc(pm.fig)}${pm.paceWord ? `<span class="credit-pace">· ${esc(pm.paceWord)}</span>` : ""}</b></div>` +
+        (pm.planLine ? `<div class="credit-plan">${esc(pm.planLine)}</div>` : "") +
+        bars +
+        (pm.verdict ? `<div class="credit-verdict">${esc(pm.verdict)}</div>` : "") +
+        (pm.extraNote ? `<small>${esc(pm.extraNote)}</small>` : "") + `</a>`;
     };
-    const credit = [["ElevenLabs", "elevenlabs"], ["Flow", "flow"], ["Vertex", "vertex"], ["Codex", "codex"], ["Cursor", "cursor"],
-      ["Grok", "cursor", "chief"], ["Claude", "claude", "claude"], ["Gemini", "gemini", "gemini"]]
+    const credit = [["Flow", "flow"], ["ElevenLabs", "elevenlabs"], ["Vertex", "vertex"],
+      ["Claude", "claude", "claude"], ["Codex", "codex"], ["Cursor & Grok", "cursor", "chief"], ["Gemini", "gemini", "gemini"]]
       .filter(([, id, alias]) => pools[id] || alias).map(([name, id, alias]) => tile(name, id, alias)).join("");
     return `<header class="top"><h1>Agents</h1><a class="more" href="/ai">Details ›</a></header>
       <p class="meta">AI agents, their status, and usage credits.</p>
@@ -1951,31 +1960,249 @@
         <span class="meta">${c.agent ? "Online · coordinating production" : "No Chief up: jobs wait"}</span></div></div>
       ${section("Agent team", Object.keys(AGENTS).length, team + '<p class="meta">Green: working now. Amber: online but idle, or not checked in lately. Red: out of usage or failing; its jobs go to the next agent.</p>')}
       ${agentQueue(b,now)}
-      ${section("Credits", null, `<div class="credits">${credit}</div>`, ' <a class="more" href="/ai">See all</a>')}`;
+      ${section("Credits", null, `<div class="credits">${credit}</div><p class="meta">Used vs time in the current window, plus each plan's monthly verdict. The board advises only; changing a plan is Ben's.</p>`, ' <a class="more" href="/ai">See all</a>')}`;
   }
 
-  // A pool's reading as a bar: its own total, else 100 for a %, else the current plan's allowance (credits.tiers),
-  // else for a monthly £ credit the highest reading this calendar month (the refill).
+  const CREDIT_WEEKLY = new Set(["claude", "codex", "codex-macbook", "cursor", "gemini"]);
+  const CREDIT_MONS = { jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5, jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11 };
+  const CREDIT_DAYS = { sun: 0, mon: 1, tue: 2, wed: 3, thu: 4, fri: 5, sat: 6 };
+
+  function londonShortDate(ms) {
+    return new Date(ms).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", timeZone: "Europe/London" }).replace(/,/g, "");
+  }
+  function londonClock(ms) {
+    return new Date(ms).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "Europe/London" });
+  }
+  function londonParts(ms) {
+    const p = Object.fromEntries(new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit", weekday: "short", hour: "2-digit", minute: "2-digit", hour12: false
+    }).formatToParts(new Date(ms)).map(x => [x.type, x.value]));
+    return { y: Number(p.year), m0: Number(p.month) - 1, d: Number(p.day), h: Number(p.hour) % 24, min: Number(p.minute), dow: CREDIT_DAYS[String(p.weekday || "").slice(0, 3).toLowerCase()] };
+  }
+  function londonWallToUtc(y, m0, d, h, min) {
+    const guess = Date.UTC(y, m0, d, h, min);
+    const p = londonParts(guess);
+    return guess - (Date.UTC(p.y, p.m0, p.d, p.h, p.min) - guess);
+  }
+  function parseClock24(hh, mm, ampm) {
+    let h = Number(hh), m = Number(mm || 0);
+    const ap = String(ampm || "").toLowerCase();
+    if (ap === "am" && h === 12) h = 0;
+    else if (ap === "pm" && h < 12) h += 12;
+    return [h, m];
+  }
+  function parseWeeklyReset(noteStr, refMs) {
+    const s = String(noteStr || "");
+    const mClause = s.match(/weekly[^;]*?resets?\s+(?:on\s+|at\s+)?([^;()]+)/i) || s.match(/\bresets?\s+(?:on\s+|at\s+)?([^;()]+)/i);
+    if (!mClause) return null;
+    const raw = mClause[1].trim();
+    if (/^\d+%\s*used/i.test(raw)) return null;
+    const refYear = new Date(refMs).getUTCFullYear();
+    const dm = raw.match(/^(?:(?:mon|tue|wed|thu|fri|sat|sun)[a-z]*\s+)?(\d{1,2})\s+(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*(?:\s+(\d{1,2}):(\d{2})(?:\s*([ap]m)|(\s*z))?)?/i);
+    const md = !dm && raw.match(/^(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\s+(\d{1,2})(?:\s+(\d{1,2}):(\d{2})(?:\s*([ap]m)|(\s*z))?)?/i);
+    if (dm || md) {
+      const day = Number(dm ? dm[1] : md[2]), mon0 = CREDIT_MONS[(dm ? dm[2] : md[1]).slice(0, 3).toLowerCase()];
+      const hhRaw = dm ? dm[3] : md[3], mmRaw = dm ? dm[4] : md[4], ap = dm ? dm[5] : md[5], isZ = Boolean(dm ? dm[6] : md[6]);
+      const build = yr => {
+        if (hhRaw != null) {
+          const [h, m] = parseClock24(hhRaw, mmRaw, ap);
+          return isZ ? Date.UTC(yr, mon0, day, h, m) : londonWallToUtc(yr, mon0, day, h, m);
+        }
+        return londonWallToUtc(yr, mon0, day, 0, 0);
+      };
+      let endMs = build(refYear);
+      if (endMs < refMs - 60 * 864e5) endMs = build(refYear + 1);
+      const label = hhRaw != null
+        ? `resets ${londonShortDate(endMs)}, ${londonClock(endMs)}`
+        : `resets ${londonShortDate(Date.UTC(new Date(endMs).getUTCFullYear(), mon0, day, 12, 0))}`;
+      return { endMs, hasClock: hhRaw != null, label };
+    }
+    const wd = raw.match(/^(mon|tue|wed|thu|fri|sat|sun)[a-z]*\s+(\d{1,2})(?::(\d{2}))?\s*([ap]m|z)?/i);
+    if (wd) {
+      const targetDow = CREDIT_DAYS[wd[1].slice(0, 3).toLowerCase()];
+      const isZ = String(wd[4] || "").toLowerCase() === "z";
+      const [h, m] = parseClock24(wd[2], wd[3], isZ ? "" : wd[4]);
+      const rp = londonParts(refMs);
+      for (let off = 0; off <= 7; off++) {
+        const cand = isZ ? Date.UTC(rp.y, rp.m0, rp.d + off, h, m) : londonWallToUtc(rp.y, rp.m0, rp.d + off, h, m);
+        if (londonParts(cand).dow === targetDow && cand >= refMs - 1800e3) {
+          return { endMs: cand, hasClock: true, label: `resets ${londonShortDate(cand)}, ${londonClock(cand)}` };
+        }
+      }
+    }
+    return null;
+  }
+
+  function resolvePlanMeta(id, pool, credits) {
+    const cyc = ((credits || {}).cycles || {})[id] || {};
+    const plans = (credits || {}).plans || [];
+    const matchRe = id === "flow" || id === "gemini" || id === "vertex" ? /google/i
+      : id === "cursor" ? /cursor|grok/i : id === "codex" || id === "codex-macbook" ? /chatgpt|codex/i
+      : id === "claude" ? /claude/i : id === "elevenlabs" ? /elevenlabs/i : null;
+    const sub = plans.find(p => Array.isArray(p.pools) && p.pools.includes(id)) || (matchRe ? plans.find(p => matchRe.test(p.name || "")) : null) || {};
+    const start = cyc.start || (pool && pool.since) || sub.cycleStart || "";
+    const renews = cyc.renews || (pool && pool.renews) || sub.renews || "";
+    const gbp = cyc.gbp != null ? cyc.gbp : sub.gbp;
+    const currentGbp = cyc.currentGbp != null ? cyc.currentGbp : sub.currentGbp;
+    const planName = (cyc.planName || sub.name || "").replace(/\s*\(30 TB\)|\s*\(shared plan\)|\s*\(Codex\)|\s*\(top tier\)/gi, "").trim();
+    const startMs = /^\d{4}-\d{2}-\d{2}$/.test(start) ? Date.parse(start + "T00:00:00Z") : NaN;
+    const endMs = /^\d{4}-\d{2}-\d{2}$/.test(renews) ? Date.parse(renews + "T00:00:00Z") : NaN;
+    const renewLabel = !isNaN(endMs) ? `renews ${londonShortDate(Date.parse(renews + "T12:00:00Z"))}` : "";
+    const priceBit = currentGbp && gbp && currentGbp !== gbp ? `£${currentGbp}/mo now (£${gbp} planned)`
+      : gbp != null ? `£${gbp}/mo` : "";
+    const shared = id === "gemini" || id === "vertex";
+    const planLine = [planName, priceBit ? (shared ? `${priceBit} shared` : priceBit) : "", renewLabel || (planName ? "billing renewal date unread" : "")]
+      .filter(Boolean).join(" · ");
+    return {
+      planName, gbp, currentGbp, start, renews, startMs, endMs, renewLabel, planLine, shared,
+      usageNote: cyc.usageNote || sub.usageNote || "",
+      billingNote: cyc.billingNote || sub.billingNote || "",
+      next: cyc.next || sub.next || "",
+    };
+  }
+
+  function buildPlanVerdict(id, pool, credits, pmMeta, used, total, usedShare, stale, isWeekly, now) {
+    if (stale || usedShare == null) return "";
+    if (id === "vertex") return "Included in Google AI Ultra (£75.18/mo Cloud credit; tier follows Flow)";
+    const wkAll = (pool && pool.weeklyHistory) || [];
+    if (id === "gemini") {
+      if (!wkAll.length) return "Included in Google AI Ultra (tier follows Flow)";
+      const hits = wkAll.filter(w => w.hitLimit).length;
+      const avg = Math.round(wkAll.reduce((a, w) => a + Number(w.peakUsed || 0), 0) / wkAll.length);
+      return `Included in Google AI Ultra · hit weekly limit ${hits} of ${wkAll.length} ${wkAll.length === 1 ? "week" : "weeks"} (avg ${avg}%/wk)`;
+    }
+    const tiers = ((credits || {}).tiers || {})[id] || [];
+    const cur = tiers.find(t => t.current);
+    const hasCycleBounds = !isNaN(pmMeta.startMs) && !isNaN(pmMeta.endMs) && pmMeta.endMs > pmMeta.startMs;
+    const wkSpanDays = wkAll.length && wkAll[0].firstAt ? (now - Date.parse(wkAll[0].firstAt)) / 864e5 : 0;
+    const cycleDaysElapsed = hasCycleBounds ? (now - pmMeta.startMs) / 864e5 : wkSpanDays;
+    const monthPct = hasCycleBounds ? Math.round(Math.max(0, Math.min(100, ((now - pmMeta.startMs) / (pmMeta.endMs - pmMeta.startMs)) * 100))) : null;
+    if (!hasCycleBounds && !wkAll.length) return "";
+    if (cycleDaysElapsed < 7) {
+      const dIn = Math.max(1, Math.floor(Math.max(0, cycleDaysElapsed)));
+      if (id === "flow" && pmMeta.next) {
+        const past = pool.pastCycleMaxUsed ? `; last cycle used ${Math.round(pool.pastCycleMaxUsed).toLocaleString("en-GB")}` : "";
+        return `Verdict after 1 week of cycle (${dIn}d in) · Keeping Ultra (£189.99) this month (9 Nov decision${past}), then review £90 tier (10,000)`;
+      }
+      return `Verdict after 1 week of cycle (${dIn}d into month)`;
+    }
+    if (isWeekly) {
+      const wkIn = wkAll.filter(w => w.inCycle);
+      const wks = wkIn.length ? wkIn : (wkAll.length ? wkAll : [{ peakUsed: Math.round(usedShare * 100), hitLimit: usedShare >= 0.94 }]);
+      const hits = wks.filter(w => w.hitLimit).length;
+      const avgWk = Math.round(wks.reduce((a, w) => a + Number(w.peakUsed || 0), 0) / wks.length);
+      const maxWk = Math.max(...wks.map(w => Number(w.peakUsed || 0)), Math.round(usedShare * 100));
+      const subHit = wks.some(w => w.sublimitHit) || /\bfable\s+100%\s+used\b/i.test((pool.latest || {}).note || "");
+      if (hits > 0) return `Keep: hit its weekly limit ${hits} of ${wks.length} ${wks.length === 1 ? "week" : "weeks"} (avg ${avgWk}%/wk)`;
+      if (!cur) return "";
+      const cheaper = tiers.filter(t => t.gbp < cur.gbp && t.allow >= maxWk * 1.15 && !subHit).sort((a, b) => a.gbp - b.gbp);
+      if (cheaper.length && wks.length >= 2) {
+        const b = cheaper[0];
+        return `Could drop to ${b.name} (£${b.gbp}): peak weekly use ${Math.round(maxWk)}% (avg ${avgWk}%/wk across ${wks.length} weeks${monthPct != null ? `, ${monthPct}% of the month gone` : ""})`;
+      }
+      const nextDown = tiers.filter(t => t.gbp < cur.gbp).sort((a, b) => b.gbp - a.gbp)[0];
+      const why = nextDown && maxWk > nextDown.allow
+        ? `used ${Math.round(maxWk)}% of weekly limit (above ${nextDown.name}'s ${nextDown.allow}%${subHit ? "; Fable hit 100%" : ""})`
+        : subHit ? "Fable model hit 100% weekly limit" : `avg ${avgWk}%/wk`;
+      return `Keep ${cur.name} (£${cur.gbp}): ${why}`;
+    }
+    if (!cur || used == null || !total || !monthPct) return "";
+    const projectedSafe = (monthPct > 0 ? used / (monthPct / 100) : used) * 1.15;
+    const histFloor = Math.max(used, Number(pool.pastCycleMaxUsed || 0), projectedSafe);
+    const cheaper = tiers.filter(t => t.gbp < cur.gbp && t.allow >= histFloor).sort((a, b) => a.gbp - b.gbp);
+    const uFmt = Math.round(used).toLocaleString("en-GB"), tFmt = Math.round(total).toLocaleString("en-GB");
+    if (cheaper.length) {
+      const b = cheaper[0];
+      return `Could drop to ${b.name} (£${b.gbp}): used ${uFmt} of its ${tFmt} allowance with ${monthPct}% of the month gone`;
+    }
+    const nextDown = tiers.filter(t => t.gbp < cur.gbp).sort((a, b) => b.gbp - a.gbp)[0];
+    const reason = nextDown && used > nextDown.allow
+      ? ` (${nextDown.name}'s ${Number(nextDown.allow).toLocaleString("en-GB")} would have run out)`
+      : nextDown && Number(pool.pastCycleMaxUsed || 0) > nextDown.allow
+      ? ` (last cycle used ${Math.round(pool.pastCycleMaxUsed).toLocaleString("en-GB")}, above ${nextDown.name}'s ${Number(nextDown.allow).toLocaleString("en-GB")})`
+      : "";
+    return `Keep ${cur.name} (£${cur.gbp}): used ${uFmt} of its ${tFmt} allowance with ${monthPct}% of the month gone${reason}`;
+  }
+
+  // Two bars per pool (Used vs Time, both filling left to right), London reset/renewal times, pace colour, and monthly verdict (J2985).
   function poolMeter(id, pool, credits, now) {
     if (!pool || !pool.latest) return null;
-    const lt = pool.latest, unit = pool.unit;
-    let total = lt.total || (unit === "%" ? 100 : null), of = "";
-    const tier = ((credits.tiers || {})[id] || []).find(t => t.current);
-    if (!total && tier) { total = tier.allow; of = `of ${Number(total).toLocaleString("en-GB")} (${tier.name.replace(/^Google /, "")})`; }
-    if (!total && unit === "GBP") {
+    const lt = pool.latest, unit = pool.unit, isWeekly = CREDIT_WEEKLY.has(id) || unit === "%";
+    const pmMeta = resolvePlanMeta(id, pool, credits || {});
+    const curTier = (((credits || {}).tiers || {})[id] || []).find(t => t.current);
+    let total = lt.total || (unit === "%" ? 100 : null), used = null, usedDetail = "";
+    if (unit === "%") {
+      used = lt.left != null ? Math.max(0, total - Number(lt.left)) : null;
+      usedDetail = used != null ? `${Math.round(used)}% of weekly limit` : "";
+    } else if (unit === "GBP") {
       const month = new Date(now).toISOString().slice(0, 7);
-      const vals = (pool.series || []).filter(p => String(p[0]).slice(0, 7) === month && p[1] != null).map(p => p[1]);
-      total = vals.length ? Math.max(...vals, lt.left) : null;
-      if (total) of = `of £${Number(total).toFixed(0)} this month`;
+      const vals = (pool.series || []).filter(p => p[1] != null && (pmMeta.start ? String(p[0]) >= pmMeta.start : String(p[0]).slice(0, 7) === month)).map(p => Number(p[1]));
+      const startBal = pool.first && pool.first.left != null ? Number(pool.first.left) : (vals.length ? Math.max(...vals, Number(lt.left || 0)) : null);
+      total = lt.total || (curTier ? Number(curTier.allow) : null) || startBal;
+      if (startBal != null && lt.left != null) used = Math.max(0, startBal - Number(lt.left));
+      else if (total != null && lt.left != null) used = Math.max(0, total - Number(lt.left));
+      usedDetail = used != null && total
+        ? (curTier ? `£${used.toFixed(2)} of £${Number(total).toFixed(2)}/mo (£${Number(lt.left).toFixed(2)} avail)` : `£${used.toFixed(2)} of £${Number(total).toFixed(0)} this month`)
+        : `£${Number(lt.left || 0).toFixed(2)} avail`;
+    } else {
+      if (!total && curTier) total = Number(curTier.allow);
+      if (!total && pool.first && pool.first.total) total = Number(pool.first.total);
+      used = total != null && lt.left != null ? Math.max(0, total - Number(lt.left)) : null;
+      usedDetail = used != null && total ? `${Math.round(used).toLocaleString("en-GB")} of ${Math.round(total).toLocaleString("en-GB")}` : `${Number(lt.left || 0).toLocaleString("en-GB")} left`;
     }
-    const share = total && lt.left != null ? Math.max(0, Math.min(1, lt.left / total)) : null;
-    const stale = (now - Date.parse(lt.at || "")) / 36e5 > 30;
-    const tone = share != null && share < 0.1 ? "red" : stale ? "amber" : "green";
-    const fig = share != null ? Math.round(share * 100) + "%" : unit === "GBP" ? "£" + Number(lt.left).toFixed(0) : Number(lt.left || 0).toLocaleString("en-GB");
-    const reset = (String(lt.note || "").match(/resets? (?:on )?([A-Z][a-z]{2} \d{2} [A-Z][a-z]{2} [\d:]+Z?|[A-Z][a-z]{2} \d{1,2})/) || [])[1];
-    const left = unit === "GBP" ? `£${Number(lt.left).toFixed(2)} left` : unit === "%" ? "" : `${Number(lt.left).toLocaleString("en-GB")} left`;
-    const note = stale ? "reading stale" : [left, of, reset ? "resets " + reset.trim() : ""].filter(Boolean).join(" · ");
-    return { share, fig, tone, note };
+    const usedShare = total && used != null ? Math.max(0, Math.min(1, used / total)) : null;
+    const atMs = Date.parse(lt.at || ""), ageH = isNaN(atMs) ? Infinity : (now - atMs) / 36e5;
+    const stale = ageH > 30;
+    const lastDate = !isNaN(atMs) ? new Date(atMs).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "Europe/London" }) : "";
+
+    let timeShare = null, windowEnd = "", timeDetail = "";
+    if (isWeekly) {
+      const wr = parseWeeklyReset(lt.note, !isNaN(atMs) ? atMs : now);
+      if (wr) {
+        windowEnd = wr.label;
+        const startMs = wr.endMs - 7 * 864e5;
+        timeShare = Math.max(0, Math.min(1, (now - startMs) / (7 * 864e5)));
+        timeDetail = `${Math.round(timeShare * 100)}% of week · ${wr.label}`;
+      }
+    } else if (!isNaN(pmMeta.startMs) && !isNaN(pmMeta.endMs) && pmMeta.endMs > pmMeta.startMs) {
+      windowEnd = pmMeta.renewLabel;
+      timeShare = Math.max(0, Math.min(1, (now - pmMeta.startMs) / (pmMeta.endMs - pmMeta.startMs)));
+      timeDetail = `${Math.round(timeShare * 100)}% of month · ${windowEnd}`;
+    }
+
+    let tone = "green", paceWord = "";
+    if (stale) {
+      tone = "amber";
+      paceWord = lastDate ? `read ${lastDate}` : "reading stale";
+    } else if (usedShare != null) {
+      const diff = timeShare != null ? usedShare - timeShare : 0;
+      if (usedShare >= 0.95) { tone = "red"; paceWord = "at limit"; }
+      else if (timeShare != null && diff > 0.20) { tone = "red"; paceWord = "ahead of time"; }
+      else if (timeShare != null && diff > 0.08) { tone = "amber"; paceWord = "ahead of time"; }
+      else if (timeShare != null && diff < -0.12) { tone = "blue"; paceWord = "using little"; }
+      else { tone = "green"; paceWord = timeShare != null ? "on pace" : ""; }
+    }
+
+    const baseFig = usedShare != null ? `${Math.round(usedShare * 100)}% used`
+      : unit === "GBP" ? `£${Number(lt.left).toFixed(0)} avail` : `${Number(lt.left || 0).toLocaleString("en-GB")} left`;
+    // A reading older than 30 hours always carries its date, never a bare percentage (J2985).
+    const fig = stale && lastDate ? `${baseFig} · ${lastDate}` : baseFig;
+
+    const noteStr = String(lt.note || "");
+    const splitMatch = noteStr.match(/Weekly included usage\s+\d{1,3}%\s+used\s*\(([^)]+)\)/i);
+    const fableHit = /\bfable\s+100%\s+used\b/i.test(noteStr);
+    const extras = [];
+    if (stale) extras.push(lastDate ? `last read ${lastDate}` : "reading stale");
+    if (id === "cursor") {
+      extras.push(splitMatch ? `${splitMatch[1]} (Grok Bot runs on Cursor's weekly allowance)` : "Grok Bot runs on Cursor's weekly allowance");
+      if (pmMeta.billingNote) extras.push(pmMeta.billingNote);
+    }
+    if (fableHit) extras.push("Fable model weekly limit 100% used");
+    if (id === "flow" && pmMeta.usageNote) extras.push(pmMeta.usageNote);
+    const extraNote = extras.join(" · ");
+    const verdict = buildPlanVerdict(id, pool, credits, pmMeta, used, total, usedShare, stale, isWeekly, now);
+    const note = [usedDetail, windowEnd, verdict, extraNote].filter(Boolean).join(" · ");
+    return { share: usedShare, usedShare, timeShare, fig, tone, paceWord, usedDetail, timeDetail, windowEnd, planLine: pmMeta.planLine, verdict, extraNote, note };
   }
   function meterless(row, st, now) {
     row = row || {}; st = st || {};

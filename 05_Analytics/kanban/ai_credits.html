@@ -12,6 +12,7 @@
   --ink: #f2f5f8;
   --muted: #9aa7b5;
   --line: #2c3846;
+  --blue: #3b82f6;
   --green: #3ecf8e;
   --amber: #f5b84d;
   --red: #ff6b6b;
@@ -41,7 +42,7 @@ header .sub { color: var(--muted); font-size: 0.85rem; }
 .dot.green { background: var(--green); box-shadow: 0 0 6px rgba(62,207,142,.6); }
 .dot.amber { background: var(--amber); }
 .dot.red { background: var(--red); }
-.greent { color: var(--green); } .ambert { color: var(--amber); } .redt { color: var(--red); }
+.bluet { color: var(--blue); } .greent { color: var(--green); } .ambert { color: var(--amber); } .redt { color: var(--red); }
 ul.rows, ol.chain, ul.hbars { list-style: none; margin: 0; padding: 0; }
 .rows li, .chain li { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; border-top: 1px solid var(--line); }
 .rows li:first-child, .chain li:first-child { border-top: 0; }
@@ -50,9 +51,13 @@ ul.rows, ol.chain, ul.hbars { list-style: none; margin: 0; padding: 0; }
 .rows li.pool > div { flex: 1; min-width: 0; }
 .chain li.on b { color: var(--green); }
 .figure { font-size: 1.05rem; font-weight: 600; margin-top: 2px; }
-.bar { height: 8px; background: #0b1016; border-radius: 99px; overflow: hidden; margin-top: 6px; flex: 1; }
+.bar { height: 7px; background: #0b1016; border-radius: 99px; overflow: hidden; margin-top: 3px; flex: 1; }
 .bar i { display: block; height: 100%; background: var(--green); border-radius: 99px; }
-.bar i.amber { background: var(--amber); } .bar i.red { background: var(--red); }
+.bar i.blue { background: var(--blue); } .bar i.amber { background: var(--amber); } .bar i.red { background: var(--red); } .bar i.time { background: #64748b; }
+.cbar { margin-top: 6px; }
+.cbar-head { display: flex; justify-content: space-between; gap: 8px; font-size: 0.76rem; color: var(--muted); }
+.cbar-head strong { color: var(--ink); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.03em; }
+.verdict { margin-top: 6px; padding: 6px 8px; border-radius: 8px; background: rgba(255,255,255,0.04); font-size: 0.8rem; line-height: 1.4; }
 .hbars li { display: grid; grid-template-columns: 70px 1fr 44px; gap: 8px; align-items: center; padding: 4px 0; font-size: 0.85rem; }
 .hbars li .bar { margin: 0; }
 .hbars li span { color: var(--muted); text-align: right; }

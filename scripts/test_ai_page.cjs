@@ -30,7 +30,7 @@ assert.equal(t.poolTotal('codex', {unit: '%', latest: {left: 93}}, credits), 100
 // The whole page renders from a real board.json, escapes text, and names the Chief.
 const board = JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures', 'ai_board.json'), 'utf8'));
 const html = t.renderAI(board, NOW);
-for (const want of ['Acting Chief', 'Grok', 'Agents & models', 'Credit left', 'ElevenLabs', 'almost out', 'Plans', 'Where it went'])
+for (const want of ['Acting Chief', 'Grok', 'Agents & models', 'Credit left &amp; pace', 'ElevenLabs', 'almost out', 'Cursor &amp; Grok', '<strong>Used</strong>', 'Plans', 'Where it went'])
   assert(html.includes(want), `page shows ${want}`);
 assert(!html.includes('<script>'), 'text from the data is escaped');
 assert(t.renderAI({}, NOW).includes('No data yet'));

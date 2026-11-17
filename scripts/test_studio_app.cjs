@@ -346,16 +346,41 @@ assert.deepEqual([pl.scheduled.map(x => x.key), pl.live.map(x => x.key), pl.post
 assert(t.renderTab('videos', {tracker: {videos: [sched, doneLive]}}, NOW).includes('On YouTube · waiting to go public'));
 assert(t.renderTab('videos', {tracker: {videos: [pub]}}, NOW).includes('Public · improvements still open'));
 assert(t.thumb(pub).includes('i.ytimg.com') && !t.thumb(priv).includes('i.ytimg.com'));
-// Credit bars: a plan allowance or the month's refill makes a bar; a % pool keeps its reset date.
-const flow = t.poolMeter('flow', {unit: 'credits', latest: {left: 20870, at: new Date(NOW).toISOString()}}, {tiers: {flow: [{name: 'Google AI Ultra $200 tier', allow: 25000, current: true}]}}, NOW);
-assert.equal(flow.fig, '83%'); assert(flow.note.includes('of 25,000'));
+// Credit bars (J2985): two left-to-right bars (Used vs Time), London reset/renewal times, pace colours, >30h dates, single Cursor & Grok card, and monthly verdicts.
+const flow = t.poolMeter('flow', {unit: 'credits', since: '2026-10-12', renews: '2026-11-12', latest: {left: 20870, at: new Date(NOW).toISOString()}},
+  {tiers: {flow: [{name: 'Google AI Ultra', gbp: 189.99, allow: 25000, current: true}, {name: 'Google AI £90 tier', gbp: 90, allow: 10000}]}}, NOW);
+assert.equal(flow.fig, '17% used');
+assert(flow.usedDetail.includes('4,130 of 25,000') && flow.timeDetail.includes('renews Thu 12 Nov'), flow.timeDetail);
+assert.equal(flow.tone, 'blue', '17% used with ~54% of the month gone reads well behind time (blue)');
+assert(flow.verdict.includes('Could drop to Google AI £90 tier (£90): used 4,130 of its 25,000 allowance'), flow.verdict);
+// Past-cycle usage above a cheaper tier blocks suggesting that tier ("Never suggest a tier the history says would have run out").
+const flowPast = t.poolMeter('flow', {unit: 'credits', since: '2026-10-12', renews: '2026-11-12', pastCycleMaxUsed: 25030, latest: {left: 20870, at: new Date(NOW).toISOString()}},
+  {tiers: {flow: [{name: 'Google AI Ultra', gbp: 189.99, allow: 25000, current: true}, {name: 'Google AI £90 tier', gbp: 90, allow: 10000}]}}, NOW);
+assert(flowPast.verdict.startsWith('Keep Google AI Ultra (£189.99):') && flowPast.verdict.includes('last cycle used 25,030'), flowPast.verdict);
+// Flow early in cycle (<7 days) waits for a week of data and carries the HOS picture note.
+const NOV17 = Date.parse('2026-11-17T12:21:00Z');
+const flowEarly = t.poolMeter('flow', {unit: 'credits', since: '2026-11-12', renews: '2026-12-12', pastCycleMaxUsed: 25030, latest: {left: 24500, at: '2026-11-17T11:16:50Z'}},
+  {cycles: {flow: {planName: 'Google AI Ultra (30 TB)', gbp: 189.99, start: '2026-11-12', renews: '2026-12-12', next: 'keep Ultra one more month', usageNote: 'History of Science picture work, the main use of Flow, may not have run yet this cycle.'}},
+   tiers: {flow: [{name: 'Google AI Ultra', gbp: 189.99, allow: 25000, current: true}, {name: 'Google AI £90 tier', gbp: 90, allow: 10000}]}}, NOV17);
+assert.equal(flowEarly.fig, '2% used');
+assert(flowEarly.timeDetail.includes('renews Sat 12 Dec') && flowEarly.verdict.includes('Verdict after 1 week of cycle') && flowEarly.extraNote.includes('History of Science picture work'));
 const vx = t.poolMeter('vertex', {unit: 'GBP', latest: {left: 69.48, at: new Date(NOW).toISOString()}, series: [['2026-10-02T08:00Z', 100], ['2026-10-20T08:00Z', 80]]}, {}, NOW);
-assert.equal(vx.fig, '69%'); assert(vx.note.includes('of £100 this month'));
-const cx = t.poolMeter('codex', {unit: '%', latest: {left: 40, total: 100, at: new Date(NOW).toISOString(), note: 'weekly 60% used, resets Wed 04 Nov 06:36Z'}}, {}, NOW);
-assert.equal(cx.fig, '40%'); assert(cx.note.includes('resets Wed 04 Nov 06:36Z'), cx.note);
+assert.equal(vx.fig, '31% used'); assert(vx.usedDetail.includes('of £100 this month'));
+const cx = t.poolMeter('codex', {unit: '%', latest: {left: 40, total: 100, at: new Date(NOW).toISOString(), note: 'weekly 60% used, resets Wed 04 Nov 06:36Z'},
+  weeklyHistory: [{firstAt: '2026-10-08T08:00Z', peakUsed: 89, hitLimit: false, inCycle: true}, {firstAt: '2026-10-15T08:00Z', peakUsed: 100, hitLimit: true, inCycle: true}, {firstAt: '2026-10-22T08:00Z', peakUsed: 100, hitLimit: true, inCycle: true}]}, {}, NOW);
+assert.equal(cx.fig, '60% used'); assert(cx.timeDetail.includes('resets Wed 4 Nov, 06:36'), cx.timeDetail);
+assert(cx.verdict.includes('Keep: hit its weekly limit 2 of 3 weeks'), cx.verdict);
+const cl = t.poolMeter('claude', {unit: '%', since: '2026-11-08', renews: '2026-12-08', latest: {left: 38, total: 100, at: '2026-11-17T11:14:43Z', note: 'weekly 62% used, resets Wednesday 10:00 AM; Fable 100% used'},
+  weeklyHistory: [{firstAt: '2026-11-17T11:14:43Z', peakUsed: 62, hitLimit: false, inCycle: true, sublimitHit: 'Fable 100%'}]},
+  {tiers: {claude: [{name: 'Claude Ultra (10x)', gbp: 180, allow: 100, current: true}, {name: 'Claude Max (5x)', gbp: 90, allow: 50}]}}, NOV17);
+assert(cl.timeDetail.includes('resets Wed 18 Nov, 10:00') && cl.verdict.includes('Keep Claude Ultra (10x) (£180):'), cl.timeDetail + ' / ' + cl.verdict);
+// Stale reading (>30h) always shows its date, never a bare percentage, and emits no monthly verdict.
+const stalePm = t.poolMeter('cursor', {unit: '%', since: '2026-10-24', renews: '2026-11-24', latest: {left: 20, total: 100, at: new Date(NOV17 - 36 * 36e5).toISOString(), note: 'weekly resets 19 Nov'}}, {}, NOV17);
+assert.equal(stalePm.tone, 'amber'); assert(/80% used · \d+ Nov/.test(stalePm.fig), stalePm.fig); assert.equal(stalePm.verdict, '');
 assert.equal(t.poolMeter('claude', undefined, {}, NOW), null, 'no reading, no bar');
-const ag = t.renderTab('agents', {tracker: {videos: []}, models: {chiefChain: [{agent: 'claude', up: true}]}, credits: {pools: {cursor: {unit: '%', latest: {left: 0, total: 100, at: new Date(NOW).toISOString(), note: 'weekly resets Oct 29'}}}}}, NOW);
-assert((ag.match(/<span>Grok<\/span><b class="red">0%/) || []).length === 1, 'Grok shows the shared Cursor weekly pool');
+const ag = t.renderTab('agents', {tracker: {videos: []}, models: {chiefChain: [{agent: 'claude', up: true}]}, credits: {pools: {cursor: {unit: '%', latest: {left: 0, total: 100, at: new Date(NOW).toISOString(), note: 'Weekly included usage 100% used (Grok Bot 54%, Cursor 46%); weekly resets Oct 29'}}}}}, NOW);
+assert(ag.includes('<span>Cursor &amp; Grok</span>') && ag.includes('100% used') && ag.includes('Grok Bot 54%, Cursor 46%') && !ag.includes('<span>Grok</span>'), 'Cursor and Grok share one single card');
+assert(ag.includes('<strong>Used</strong>') && ag.includes('<strong>Time</strong>'), 'both Used and Time bars render on the card');
 assert(ag.includes('class="seg"') && ag.includes('<span>Running</span>') && ag.includes('<span>Queued</span>') && ag.includes('<span>Waiting</span>'), 'Agents shows three matching job-count chips');
 assert(ag.includes('class="credits"') && ag.includes('class="credit"'), 'Agents keeps the credits grid');
 
