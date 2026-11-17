@@ -51,7 +51,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2984 | mini | blocked | gemini | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Short C v07: non-producer QA review of J2662 (PR #556) and HOS UAT staging for Ben's watch | J2662 |
 | J2985 | mini | blocked | gemini | – | for gemini · studio · Board credits: a time bar beside each usage bar, renewal dates, and a plain verdict per plan |  |
 | J2986 | mini | open | – | – | 033 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test |  |
-| J2988 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2984 |  |
+| J2988 | mini | claimed | gemini | 2026-11-17T19:38Z | for gemini · review · `gemini-argon` · Verify condition for J2984 |  |
 | J2990 | mini | open | – | – | chief · WW2 channel: merge the plan PR #989 without Ben cards, write the channel's fresh rules and posting days |  |
 | J2991 | mini | open (after J2990) | – | – | WW2:001 script · for gemini · script · WW2 pilot 001: script and sources, "How Britain Towed Two Floating Ports Across the Channel for D-Day" |  |
 | J2992 | mini | open (after J2991) | – | – | WW2:001 vo · for gemini · vo · WW2 pilot 001: narration in Ben's voice |  |
