@@ -237139,10 +237139,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-17T09:26Z",
+      "eta": "2026-11-17T11:26Z",
       "created_by": "gemini",
       "created_at": "2026-11-12T01:54Z",
       "result": "",
@@ -237201,6 +237201,11 @@
           "at": "2026-11-17T09:23Z",
           "by": "gemini",
           "what": "rerouted to cursor on cursor-grok-4-7: Chief sweep (J2979): J2687 verified all 8 HOS 008 Short C v03 source clips restored with SHA-256 parity on studio-live and Mini (6f9bb7f06c)"
+        },
+        {
+          "at": "2026-11-17T09:26Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Render hos_008_short_C_v04.mp4 from the 8 restored clips on studio-live and run gate_shorts_open.py",
@@ -237214,7 +237219,15 @@
         "by": ""
       },
       "for": "cursor",
-      "model": "cursor-grok-4-7"
+      "model": "cursor-grok-4-7",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-17T09:26Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2663",
