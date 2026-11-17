@@ -236385,10 +236385,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-17T18:52Z",
+      "eta": "2026-11-17T20:52Z",
       "created_by": "claude",
       "created_at": "2026-11-11T22:56Z",
       "result": "",
@@ -236672,6 +236672,11 @@
           "at": "2026-11-17T18:37Z",
           "by": "gemini",
           "what": "rerouted to gemini on gemini-agy: Rerouted J2652 to gemini (gemini-agy) for v03f-r4 card fixes on HOS PR #551"
+        },
+        {
+          "at": "2026-11-17T18:52Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for Chief review of HOS PR 551 (36456857) & desk #6945366409: v03f-r3 35/35 £0 free graphics + 515s rough + 390px sheets + 7 ruling checks",
@@ -236690,7 +236695,15 @@
         "status": "open",
         "by": ""
       },
-      "model": "gemini-agy"
+      "model": "gemini-agy",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-17T18:52Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2653",
