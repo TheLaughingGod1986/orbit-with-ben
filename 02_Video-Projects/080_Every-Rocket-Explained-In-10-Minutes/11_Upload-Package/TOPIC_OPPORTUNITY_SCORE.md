@@ -1,0 +1,15 @@
+# Topic Opportunity Score — `OWB:080` Every Rocket Explained in 10 Minutes (Saturn V to Starship)
+
+- **Working Title (Primary Rule 26 + `studio/plan.json`, 58 chars):** `Every Rocket Explained in 10 Minutes (Saturn V to Starship)`
+- **Exact `#1` Autocomplete + Span Variant (Rule 26, 54 chars):** `Every Rocket Explained in 10 Minutes (V-2 to Starship)`
+- **Compact Rule 15 Title (36 chars):** `Every Rocket Explained in 10 Minutes`
+- **Date:** 2026-11-17 (`J2974` brief)
+
+| Gate | Criterion | Score (`0–5`) | Evidence |
+|---|---|:---:|---|
+| 1 | Search Demand & Autocomplete (`Rule 26` + `studio/plan.json` Step 3) | **4.80 / 5** | `#1` signed-out YouTube GB autocomplete matches across all 3 core queries (`every rocket explained`, `how rockets work`, and `saturn v rocket explained`), with `765,259` views on `The Space Race`'s *Every Single Soviet and Russian Rocket Explained*, `745,662` (`Hazegrayart` on `N1`), `54,259` (`Supernova`), and `45,304` (`Primolution` *Every Generation of Rockets Explained in 6 Minutes*); built natively in `studio/plan.json`'s number-in-title complete-tour format |
+| 2 | Own-Channel Proof (Spacecraft & Engineering Cluster) | **4.80 / 5** | `RT-ec4_GcOk` (*How Did a Helicopter Fly 72 Times on Mars?*) is OWB's #1 Short by views/day (`416.33 vpd`, `1,249` public / `1,236` Studio views, `50.70%` stayed, `100.07%` `LOOP`), `B1z2dv7m7Vk` (*Why Did a 90-Day Mars Rover Last 14 Years?*) is #2 in stayed-to-watch (`52.69%`, `72.67%` AVD `PASS`), and `Js6EQJ8qDi8` holds `4.08%` CTR |
+| 3 | Curiosity Gap & `J2428` Hook | **4.80 / 5** | How humanity's rockets scaled from `14-m` `V-2` (`1944`) and `R-7 Semyorka` (`Sputnik` `1957`) to `110.6-m` `Saturn V` (`5` `F-1` engines burning `13 metric tonnes/s`) vs the `30-engine` Soviet `N1` (`0-for-4` explosions), `Soyuz` (`>1,900` flights), `Falcon 9`'s `2015` vertical booster landing, `SLS` (`39.1 MN`), and `121-m` `Starship` (`33` `Raptor` engines / `74 MN` thrust caught mid-air by `Mechazilla` chopsticks in `2024`) |
+| 4 | Visual Viability & Primary Sources | **4.80 / 5** | Real NASA `Apollo` `500-fps` `F-1` ignition camera, `Atlas`, `SLS`, `Soyuz`, `Ariane 5`, and `SpaceX Falcon 9` / `Starship` `IFT-5` footage + `Tsiolkovsky 1903`, NASA SP-4206 (*Stages to Saturn*, `Bilstein 1980`), NASA *Saturn V Flight Manual*, and `Siddiqi 2000` (*Challenge to Apollo*) primary sources |
+| 5 | Big-Neighbour Pool (`≥3` at `1M+`) | **4.80 / 5** | `14` strictly on-topic `1M+` videos in the main table (`1.07M` to `16.43M` views, combining all `10` strictly on-topic `≥1M` education videos in `neighbours.json`: `SmarterEveryDay` `13.40M`/`5.37M`/`5.02M`, `Veritasium` `13.20M`, `Real Engineering` `4.84M`/`2.11M`, `The Royal Institution` `4.27M`, `Simple History` `1.95M`, Tier-1 `TED-Ed` `1.79M`, `minutephysics` `1.07M`, with `4` on-topic `≥1M` videos in `public_search.json`: `Jared Owen` `16.43M`/`4.99M`, `Peekaboo Kidz` `1.89M`, `Science ABC` `1.28M`) verified in saved evidence JSONs |
+| **Total** | **`24.00 / 25` (`96 / 100`)** | **READY FOR RULE-E REVIEW** | Appended to `jobs/WIP.json` `next` (`J2974`; waits on `studio/plan.json` `064` format-test readout + Rule G slot) |
