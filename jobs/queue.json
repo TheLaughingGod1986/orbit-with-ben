@@ -215750,9 +215750,14 @@
           "at": "2026-11-17T14:51Z",
           "by": "gemini",
           "what": "step 4 of 5 done: Diagnosed all 17 polish_gate/picture_qa fails (R03 lift, 6 card +10 luma, Charon_Discovery right-plate crop, R67 feathered inset & H-h-120 label y, 5 dark-disc crescent stills) + 2 tpad frame counts; testing fixes now"
+        },
+        {
+          "at": "2026-11-17T14:57Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Verified 5/5 dark-disc stills pass jitter (0.008-0.017 px); re-rendering patched cuts and running full gates on master v02"
         }
       ],
-      "remaining_action": "Patching 17 polish_gate/picture_qa cuts + 2 1-frame-short video cuts on cached cuts/ and re-running gates",
+      "remaining_action": "Re-rendering patched cuts, muxing 19,408-frame master v02, and running full gate suite",
       "kind": "assembly",
       "plain": "Trim 034 Pluto Sentence 1 to <8 s, re-cut the first 30 s to <=4 s per cut (FIRST30_PLAN.md), and assemble master v02",
       "taskKeys": [
@@ -215771,9 +215776,9 @@
       "progress": {
         "step": 4,
         "of": 5,
-        "at": "2026-11-17T14:51Z",
+        "at": "2026-11-17T14:57Z",
         "by": "gemini",
-        "note": "Diagnosed all 17 polish_gate/picture_qa fails (R03 lift, 6 card +10 luma, Charon_Discovery right-plate crop, R67 feather"
+        "note": "Verified 5/5 dark-disc stills pass jitter (0.008-0.017 px); re-rendering patched cuts and running full gates on master v"
       }
     },
     {
