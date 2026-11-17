@@ -64,6 +64,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3017 | mini | open | – | – | chief · Chief: resolve 003 script orphan-review |  |
 | J3018 | mini | open | – | – | chief · Chief: resolve 006 script orphan-review |  |
 | J3019 | mini | open | – | – | chief · Chief: resolve 003 picture orphan-review |  |
+| J3020 | any | open (after J3011) | – | – | 064 script · script · OWB 064: Write and check the script for the every-planet film | J3011 |
 
 Recently finished:
 
