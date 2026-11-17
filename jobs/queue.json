@@ -267720,10 +267720,10 @@
       "stage": "",
       "after": "J2990",
       "eta_min": 150,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-17T19:48Z",
+      "eta": "2026-11-17T22:18Z",
       "created_by": "claude",
       "created_at": "2026-11-17T17:43Z",
       "result": "",
@@ -267737,13 +267737,26 @@
           "at": "2026-11-17T18:17Z",
           "by": "claude",
           "what": "Starting point from Claude's vidIQ study (outlier feed, not random): Packaging evidence (Claude's vidIQ study, 17 Nov 18:17Z: 260 long WW2/military videos from the last 12 months, 184 on channels under 50k; multiple = views against the channel's usual). Titles: a superlative 14.5x vs 6.8x without (22 videos); a question 13.0x (9); the other side's recorded reaction 11.0x (49); an 'until/then' turn 10.2x (18); a hard number that is not a year 8.6x (70); How/Why opener neutral; series names or 'Full Documentary' 5.5x and What/When openers 5.6x (avoid); titles of 50 characters or fewer 17.0x (11) vs 51-70 7.1x (61). Thumbnails (top 20 vs bottom 20): real black-and-white archive photo 10 vs 4; no text 8 vs 4; dark colour grade 2 vs 10; five or more words 2 vs 4. Correlation only, outlier feed, small groups for questions and short titles. Your API pull should test these on a fair sample (whole recent uploads of each channel) and say which hold."
+        },
+        {
+          "at": "2026-11-17T19:48Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "YouTube API pull of 12-14 WW2 channels' last 100 uploads, outlier scores, title and thumbnail tags ranked; PACKAGING_FINDINGS.md; records PR",
       "due": "2026-11-20T18:00:00Z",
       "for": "gemini",
       "kind": "studio",
-      "plain": "Study what packaging works for WW2 videos so the new channel's titles and thumbnails start from evidence"
+      "plain": "Study what packaging works for WW2 videos so the new channel's titles and thumbnails start from evidence",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-17T19:48Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3006",
