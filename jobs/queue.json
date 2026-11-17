@@ -263314,13 +263314,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-17T00:19Z",
-      "eta": "2026-11-17T01:49Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-16T21:16Z",
-      "result": "",
+      "result": "PASS & DONE: HOS 007 Short eradication v06 (How Was Smallpox Eradicated?, sha256 33696b70...935f) is Private as jkUZpyO71lU scheduled for Sun 29 Nov 2026 11:30Z (cover set, en-GB captions serving, Related video ETynHpIYLeY set & read back in Studio, Not Made for Kids, Altered content Yes, registered in social/hos/UPLOADS.json, open-gate library scheduled). Receipt PR #623 merged at dff868a5 (both PR #622 sY0PSQFxjp8 and PR #623 jkUZpyO71lU entries preserved).",
       "history": [
         {
           "at": "2026-11-16T21:16Z",
@@ -263396,6 +263396,11 @@
           "at": "2026-11-17T00:19Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T00:19Z",
+          "by": "gemini",
+          "what": "done: PASS & DONE: HOS 007 Short eradication v06 (How Was Smallpox Eradicated?, sha256 33696b70...935f) is Private as jkUZpyO71lU scheduled for Sun 29 Nov 2026 11:30Z (cover set, en-GB captions serving, Related video ETynHpIYLeY set & read back in Studio, Not Made for Kids, Altered content Yes, registered in social/hos/UPLOADS.json, open-gate library scheduled). Receipt PR #623 merged at dff868a5 (both PR #622 sY0PSQFxjp8 and PR #623 jkUZpyO71lU entries preserved)."
         }
       ],
       "remaining_action": "Chief to review and merge pull request 623",
@@ -263427,7 +263432,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "dff868a5"
     },
     {
       "id": "J2959",
