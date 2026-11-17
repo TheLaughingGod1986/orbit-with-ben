@@ -268867,7 +268867,7 @@
     {
       "id": "J3020",
       "title": "OWB 064: Write and check the script for the every-planet film",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "J3011: Ben locked OWB:064 Every Planet Explained in 10 Minutes (Mercury to Neptune), in chat on 17 Nov 2026 (\"Lock it.\"). Planned air slot Wed 16 Dec 2026 18:00 London; finished cut on Ben's board no later than Fri 11 Dec 18:00 London. Read AGENTS.md, studio/RULES.md and 02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/11_Upload-Package/TOPIC_GO_NO_GO_SHEET.md, especially section 6. This is the approved format test, not permission to restart paused single-question longs. Four sequential build packages. No upload, scheduling, privacy changes or live metadata changes in this build. No dated film moves. £0 cash, zero Flow/Vertex credits, no top-up, upgrade or paid overage. Working media belongs on studio-live, scratch on STUDIO_SCRATCH, no media/secrets/account addresses in git. Claim the film stage, report honest progress with --films OWB:064, preserve exact versions and submit evidence. Long work starts detached with log and done file. All existing channel gates remain; the concept sheet is not a waiver.\n\nBuild package 1 of 4: script + SOURCES.md + script lock. Write a fresh continuous Mercury-to-Neptune tour, all eight planets, about ten minutes, roughly 8,000 spoken characters within the channel word-count rules. Start on Mercury with the first concrete fact; no agenda, introduction or delayed answer. Use the shelf audit as an input list, not proof of facts or asset identity. Add the required DATA/SCALE, WHO, WHEN and FACT markers with exact sourced numbers, chapter teaching coverage and an outward narrative. Assemble SOURCES.md from primary references with exact quotes and URLs, cross-checking all eight planets rather than trusting old tables. Run the Gemini source/claims pass via agy and preserve its findings. The reviewer lane must directly verify every MUST QUOTE and write CLAUDE_QUOTE_CHECK plus an explicit locked script verdict; a stand-in draft alone is not locked. Run review:script >=90 and applicable gate:episode script checks. Do not finish this job or release narration until the source check, direct quote check and script lock are complete. If separate facts/review jobs are needed, queue them and hold this parent on them; narration remains dependent on this parent, not merely the facts job. Record exact locked text/hash, spoken character count, section lengths, and the no-generation picture/music plan. Music must be the film's own score and pass music_gate; reused shelf music named in the concept sheet is not automatically approved. Resolve any conflict before handing off, without spending outside this scope.\n",
       "ref": "J3011",
@@ -268887,12 +268887,26 @@
           "at": "2026-11-17T23:36Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-17T23:40Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-18T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Write and check the script for the every-planet film",
       "due": "2026-11-23T18:00:00Z",
       "kind": "script",
-      "plain": "Write and check the script for the every-planet film"
+      "plain": "Write and check the script for the every-planet film",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J3021",
