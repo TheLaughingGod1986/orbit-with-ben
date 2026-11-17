@@ -1,5 +1,5 @@
 {
-  "next_id": 2990,
+  "next_id": 3000,
   "jobs": [
     {
       "id": "J0001",
@@ -266779,6 +266779,315 @@
         "by": "macbook-2",
         "note": "Resumed; verified plan_board & channel_check rules; scaffolding channels/ww2 + 10 film folders + plan.json"
       }
+    },
+    {
+      "id": "J2990",
+      "title": "WW2 channel: merge the launch plan PR #989 and record Ben's go on the three pilot films",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Do.** Review and merge PR #989 (records only: the `channels/ww2` folder, ten topics, pilot plan, board cards). Then mark the topic stage of the three pilot films (001, 002, 003) as locked by Ben, with this note as the evidence, in their `status.json` and on the board; topics 004-010 stay as cards for Ben to lock. The production jobs queued with this one wait on it.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:20Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Merge PR #989 and record Ben's go on WW2 pilot films 001-003",
+      "due": "2026-11-18T12:00:00Z",
+      "kind": "chief",
+      "plain": "Accept the new WW2 channel's plan so work on its first three films can start"
+    },
+    {
+      "id": "J2991",
+      "title": "WW2 pilot 001: script and sources, \"How Britain Towed Two Floating Ports Across the Channel for D-Day\"",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Channel rules (from the launch plan; YouTube's inauthentic-content policy).** Own researched script with a Sources line and a clear story; narration throughout; picture matched to each sentence; archive photos from US and UK government collections, licence checked and logged per image (public domain or Crown copyright expired); maps drawn in code; Veo only where it adds something, never realistic depictions of real people or real events presented as real, and any photoreal Veo scene logged for disclosure; no graphic violence; no shock framing; narrated as Ben, no expert persona; nothing reused from Orbit With Ben or History of Science.\n\n**Do.** From the film's TOPIC.md and PILOT_PLAN.md: write the narration script for a film of about 25 minutes (about 3,300 words, at most 21,000 characters), British English, calm documentary delivery, with the hook in the first 30 seconds and chapters. Build SOURCES.md with a source for every claim and number, then run a separate claims check. Add a shot list naming, for each line, the archive photo (with its collection, ID and licence) or map it uses. Open a pull request.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
+      "ref": "",
+      "film": "WW2:001",
+      "stage": "script",
+      "after": "J2990",
+      "eta_min": 150,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:20Z",
+          "by": "claude",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "Write the ~25 min script, SOURCES.md with every claim sourced, claims check and archive shot list; open a PR",
+      "due": "2026-11-20T18:00:00Z",
+      "for": "gemini",
+      "kind": "script",
+      "plain": "Write and fact-check the first draft of the new channel's film: How Britain Towed Two Floating Ports Across the Channel for D-Day"
+    },
+    {
+      "id": "J2992",
+      "title": "WW2 pilot 001: narration in Ben's voice",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Voice budget (Ben: \"use our elevenlabs plan\").** Ben's narrator voice via the studio's usual voice tool. About 79,000 characters are left this cycle, shared with Orbit and History of Science. Each pilot film may use at most 21,000 characters (about 25 minutes). Pilot 3 is not voiced until Ben upgrades or the plan renews. Never change or top up the plan.\n\n**Do.** Voice the merged script with Ben's narrator voice and the studio's usual voice checks (transcript match, no clipped words, steady level). Record the characters used. Open a pull request.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
+      "ref": "",
+      "film": "WW2:001",
+      "stage": "vo",
+      "after": "J2991",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:20Z",
+          "by": "claude",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "Voice the merged script within 21,000 characters, run the voice checks, record characters used",
+      "due": "2026-11-22T18:00:00Z",
+      "for": "gemini",
+      "kind": "vo",
+      "plain": "Record the narration in Ben's voice for: How Britain Towed Two Floating Ports Across the Channel for D-Day"
+    },
+    {
+      "id": "J2993",
+      "title": "WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Channel rules (from the launch plan; YouTube's inauthentic-content policy).** Own researched script with a Sources line and a clear story; narration throughout; picture matched to each sentence; archive photos from US and UK government collections, licence checked and logged per image (public domain or Crown copyright expired); maps drawn in code; Veo only where it adds something, never realistic depictions of real people or real events presented as real, and any photoreal Veo scene logged for disclosure; no graphic violence; no shock framing; narrated as Ben, no expert persona; nothing reused from Orbit With Ben or History of Science.\n\n**Do.** Gather the archive photos on the shot list (licence logged per image), draw the maps in code, cut the film to the narration with slow camera moves and the studio's sound bed, 1080p. Build the thumbnail from the plan. Run the studio's QA gates and a full watch-through check, then put the cut on Ben's board for his watch, like any finished film. Prepare the title, description (subject line, chapters, sources, credits, an honest how-made line) and tags in the upload package. Do not upload.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
+      "ref": "",
+      "film": "WW2:001",
+      "stage": "edit",
+      "after": "J2992",
+      "eta_min": 240,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:20Z",
+          "by": "claude",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Archive photos with licences, code maps, edit to the narration, thumbnail, QA, then the cut to Ben's board; upload package ready, no upload",
+      "due": "2026-11-25T18:00:00Z",
+      "for": "codex",
+      "kind": "assembly",
+      "plain": "Make the finished film and send it to Ben's board to watch: How Britain Towed Two Floating Ports Across the Channel for D-Day"
+    },
+    {
+      "id": "J2994",
+      "title": "WW2 pilot 002: script and sources, \"How Long-Range Bombers Closed the Atlantic Black Pit in May 1943\"",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Channel rules (from the launch plan; YouTube's inauthentic-content policy).** Own researched script with a Sources line and a clear story; narration throughout; picture matched to each sentence; archive photos from US and UK government collections, licence checked and logged per image (public domain or Crown copyright expired); maps drawn in code; Veo only where it adds something, never realistic depictions of real people or real events presented as real, and any photoreal Veo scene logged for disclosure; no graphic violence; no shock framing; narrated as Ben, no expert persona; nothing reused from Orbit With Ben or History of Science.\n\n**Do.** From the film's TOPIC.md and PILOT_PLAN.md: write the narration script for a film of about 25 minutes (about 3,300 words, at most 21,000 characters), British English, calm documentary delivery, with the hook in the first 30 seconds and chapters. Build SOURCES.md with a source for every claim and number, then run a separate claims check. Add a shot list naming, for each line, the archive photo (with its collection, ID and licence) or map it uses. Open a pull request.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
+      "ref": "",
+      "film": "WW2:002",
+      "stage": "script",
+      "after": "J2990",
+      "eta_min": 150,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:20Z",
+          "by": "claude",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Write the ~25 min script, SOURCES.md with every claim sourced, claims check and archive shot list; open a PR",
+      "due": "2026-11-20T18:00:00Z",
+      "for": "codex",
+      "kind": "script",
+      "plain": "Write and fact-check the first draft of the new channel's film: How Long-Range Bombers Closed the Atlantic Black Pit in May 1943"
+    },
+    {
+      "id": "J2995",
+      "title": "WW2 pilot 002: narration in Ben's voice",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Voice budget (Ben: \"use our elevenlabs plan\").** Ben's narrator voice via the studio's usual voice tool. About 79,000 characters are left this cycle, shared with Orbit and History of Science. Each pilot film may use at most 21,000 characters (about 25 minutes). Pilot 3 is not voiced until Ben upgrades or the plan renews. Never change or top up the plan.\n\n**Do.** Voice the merged script with Ben's narrator voice and the studio's usual voice checks (transcript match, no clipped words, steady level). Record the characters used. Open a pull request.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
+      "ref": "",
+      "film": "WW2:002",
+      "stage": "vo",
+      "after": "J2994",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:20Z",
+          "by": "claude",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "Voice the merged script within 21,000 characters, run the voice checks, record characters used",
+      "due": "2026-11-22T18:00:00Z",
+      "for": "gemini",
+      "kind": "vo",
+      "plain": "Record the narration in Ben's voice for: How Long-Range Bombers Closed the Atlantic Black Pit in May 1943"
+    },
+    {
+      "id": "J2996",
+      "title": "WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Channel rules (from the launch plan; YouTube's inauthentic-content policy).** Own researched script with a Sources line and a clear story; narration throughout; picture matched to each sentence; archive photos from US and UK government collections, licence checked and logged per image (public domain or Crown copyright expired); maps drawn in code; Veo only where it adds something, never realistic depictions of real people or real events presented as real, and any photoreal Veo scene logged for disclosure; no graphic violence; no shock framing; narrated as Ben, no expert persona; nothing reused from Orbit With Ben or History of Science.\n\n**Do.** Gather the archive photos on the shot list (licence logged per image), draw the maps in code, cut the film to the narration with slow camera moves and the studio's sound bed, 1080p. Build the thumbnail from the plan. Run the studio's QA gates and a full watch-through check, then put the cut on Ben's board for his watch, like any finished film. Prepare the title, description (subject line, chapters, sources, credits, an honest how-made line) and tags in the upload package. Do not upload.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
+      "ref": "",
+      "film": "WW2:002",
+      "stage": "edit",
+      "after": "J2995",
+      "eta_min": 240,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:20Z",
+          "by": "claude",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Archive photos with licences, code maps, edit to the narration, thumbnail, QA, then the cut to Ben's board; upload package ready, no upload",
+      "due": "2026-11-25T18:00:00Z",
+      "for": "codex",
+      "kind": "assembly",
+      "plain": "Make the finished film and send it to Ben's board to watch: How Long-Range Bombers Closed the Atlantic Black Pit in May 1943"
+    },
+    {
+      "id": "J2997",
+      "title": "WW2 pilot 003: script and sources, \"Why the B-29 Superfortress Cost More Than the Atomic Bomb Project\"",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Channel rules (from the launch plan; YouTube's inauthentic-content policy).** Own researched script with a Sources line and a clear story; narration throughout; picture matched to each sentence; archive photos from US and UK government collections, licence checked and logged per image (public domain or Crown copyright expired); maps drawn in code; Veo only where it adds something, never realistic depictions of real people or real events presented as real, and any photoreal Veo scene logged for disclosure; no graphic violence; no shock framing; narrated as Ben, no expert persona; nothing reused from Orbit With Ben or History of Science.\n\n**Do.** From the film's TOPIC.md and PILOT_PLAN.md: write the narration script for a film of about 25 minutes (about 3,300 words, at most 21,000 characters), British English, calm documentary delivery, with the hook in the first 30 seconds and chapters. Build SOURCES.md with a source for every claim and number, then run a separate claims check. Add a shot list naming, for each line, the archive photo (with its collection, ID and licence) or map it uses. Open a pull request.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
+      "ref": "",
+      "film": "WW2:003",
+      "stage": "script",
+      "after": "J2990",
+      "eta_min": 150,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:20Z",
+          "by": "claude",
+          "what": "added for claudecode"
+        }
+      ],
+      "remaining_action": "Write the ~25 min script, SOURCES.md with every claim sourced, claims check and archive shot list; open a PR",
+      "due": "2026-11-20T18:00:00Z",
+      "for": "claudecode",
+      "kind": "script",
+      "plain": "Write and fact-check the first draft of the new channel's film: Why the B-29 Superfortress Cost More Than the Atomic Bomb Project"
+    },
+    {
+      "id": "J2998",
+      "title": "WW2 pilot 003: gather the archive photos and draw the maps",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Channel rules (from the launch plan; YouTube's inauthentic-content policy).** Own researched script with a Sources line and a clear story; narration throughout; picture matched to each sentence; archive photos from US and UK government collections, licence checked and logged per image (public domain or Crown copyright expired); maps drawn in code; Veo only where it adds something, never realistic depictions of real people or real events presented as real, and any photoreal Veo scene logged for disclosure; no graphic violence; no shock framing; narrated as Ben, no expert persona; nothing reused from Orbit With Ben or History of Science.\n\n**Do.** From the merged shot list, gather every archive photo (licence logged per image) and draw the maps in code, so the edit can start as soon as narration is possible. Do not voice this film: it waits for Ben's ElevenLabs upgrade or the plan's renewal.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
+      "ref": "",
+      "film": "WW2:003",
+      "stage": "picture",
+      "after": "J2997",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:20Z",
+          "by": "claude",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "Gather licensed archive photos and code-drawn maps for pilot 3; no narration until Ben upgrades the voice plan",
+      "due": "2026-11-25T18:00:00Z",
+      "for": "gemini",
+      "kind": "image",
+      "plain": "Get the pictures and maps ready for the third film; narration waits for the bigger voice plan"
+    },
+    {
+      "id": "J2999",
+      "title": "WW2 channel kit: profile picture, banner, description and upload template, ready for Ben",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Do.** For the recommended name in the launch plan (and the two alternatives, if cheap): a profile picture (800x800) and banner (2560x1440, text inside the safe area), both from public-domain archive material or drawn, matching the thumbnail style; a channel description whose first lines say what the channel is in search words; the About links; and a default upload template (description layout, category, tags style, when to tick the altered-content box). Add a short checklist for Ben's setup: make a Brand Account channel, pick the handle, verify by phone (one number verifies at most two channels a year), upload the art. Open a pull request.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J2990",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:20Z",
+          "by": "claude",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "Make the WW2 channel's profile picture, banner, description, upload template and Ben's setup checklist",
+      "due": "2026-11-21T18:00:00Z",
+      "for": "gemini",
+      "kind": "studio",
+      "plain": "Get the new channel's art and description ready so Ben can set it up in minutes"
     }
   ],
   "focus": [

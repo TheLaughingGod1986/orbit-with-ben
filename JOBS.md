@@ -53,6 +53,16 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2986 | mini | open | – | – | 033 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test |  |
 | J2987 | mini | claimed | gemini | 2026-11-17T18:11Z | for gemini · studio · New-channel research: check the shortlist and 53 example channels through the YouTube Data API |  |
 | J2988 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2984 |  |
+| J2990 | mini | open | – | – | chief · WW2 channel: merge the launch plan PR #989 and record Ben's go on the three pilot films |  |
+| J2991 | mini | open (after J2990) | – | – | WW2:001 script · for gemini · script · WW2 pilot 001: script and sources, "How Britain Towed Two Floating Ports Across the Channel for D-Day" |  |
+| J2992 | mini | open (after J2991) | – | – | WW2:001 vo · for gemini · vo · WW2 pilot 001: narration in Ben's voice |  |
+| J2993 | mini | open (after J2992) | – | – | WW2:001 edit · for codex · assembly · WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch |  |
+| J2994 | mini | open (after J2990) | – | – | WW2:002 script · for codex · script · WW2 pilot 002: script and sources, "How Long-Range Bombers Closed the Atlantic Black Pit in May 1943" |  |
+| J2995 | mini | open (after J2994) | – | – | WW2:002 vo · for gemini · vo · WW2 pilot 002: narration in Ben's voice |  |
+| J2996 | mini | open (after J2995) | – | – | WW2:002 edit · for codex · assembly · WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch |  |
+| J2997 | mini | open (after J2990) | – | – | WW2:003 script · for claudecode · script · WW2 pilot 003: script and sources, "Why the B-29 Superfortress Cost More Than the Atomic Bomb Project" |  |
+| J2998 | mini | open (after J2997) | – | – | WW2:003 picture · for gemini · image · WW2 pilot 003: gather the archive photos and draw the maps |  |
+| J2999 | mini | open (after J2990) | – | – | for gemini · studio · WW2 channel kit: profile picture, banner, description and upload template, ready for Ben |  |
 
 Recently finished:
 
