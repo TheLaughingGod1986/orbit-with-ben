@@ -250652,10 +250652,10 @@
       "stage": "edit",
       "after": "J2806",
       "eta_min": 20,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-17T16:45Z",
+      "eta": "2026-11-17T17:05Z",
       "created_by": "codex",
       "created_at": "2026-11-14T03:44Z",
       "result": "",
@@ -250674,6 +250674,11 @@
           "at": "2026-11-17T12:50Z",
           "by": "gemini",
           "what": "deadline: 2026-11-17T18:00:00Z"
+        },
+        {
+          "at": "2026-11-17T16:45Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Audition the complete revised score and report precise acceptance or faults",
@@ -250691,7 +250696,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-17T16:45Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2808",
