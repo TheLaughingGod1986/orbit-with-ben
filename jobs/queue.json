@@ -266435,10 +266435,10 @@
       "stage": "",
       "after": "",
       "eta_min": 75,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-17T23:46Z",
+      "eta": "2026-11-18T01:01Z",
       "created_by": "claude",
       "created_at": "2026-11-17T08:37Z",
       "result": "",
@@ -266507,6 +266507,11 @@
           "at": "2026-11-17T23:43Z",
           "by": "codex",
           "what": "remaining action: Fix the stale MacBook status wording and test it, then return the board clean-up for review before deployment."
+        },
+        {
+          "at": "2026-11-17T23:46Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Fix the stale MacBook status wording and test it, then return the board clean-up for review before deployment.",
@@ -266522,7 +266527,15 @@
         "status": "open",
         "by": ""
       },
-      "model": "gpt-6.1-sol"
+      "model": "gpt-6.1-sol",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-17T23:46Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2983",
