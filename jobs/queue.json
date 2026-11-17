@@ -237229,6 +237229,11 @@
           "at": "2026-11-17T09:27Z",
           "by": "macbook-2",
           "what": "released: MacBook worker run on cursor ended (exit 1) with the job still open; picked up again next run; cursor paused on the MacBook until 2026-11-17T11:27:00Z, so the next run uses the next agent in the chain"
+        },
+        {
+          "at": "2026-11-17T09:37Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Cursor is unavailable or lacks required input; next in its chain: gemini on its default"
         }
       ],
       "remaining_action": "Render hos_008_short_C_v04.mp4 from the 8 restored clips on studio-live and run gate_shorts_open.py",
@@ -237241,8 +237246,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "cursor",
-      "model": "cursor-grok-4-7",
+      "for": "gemini",
+      "model": "gemini-agy",
       "progress": {
         "step": 0,
         "of": 3,
