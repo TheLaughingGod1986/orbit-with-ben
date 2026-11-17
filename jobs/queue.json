@@ -267118,19 +267118,24 @@
           "at": "2026-11-17T20:39Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Started J2992: read live ElevenLabs balance (77,389/121,114 remaining, recorded in ai_spend); inspecting WW2:001 script from J2991 (PR #996, 20,431 chars across 6 chapters) before synthesis"
+        },
+        {
+          "at": "2026-11-17T20:42Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1 done: clean worktree ready; vo_take.py --dry-run verified 6 chapters, 20,431 chars (<= 21,000 cap), 3,358 words, 77,389 chars remaining on ElevenLabs"
         }
       ],
-      "remaining_action": "Verify WW2:001 script text & ElevenLabs balance (77,389 left; <=21,000 cap), synthesize 6 chapters via vo_take.py, run voice checks, and open PR",
+      "remaining_action": "Synthesizing WW2:001 6 chapters (20,431 chars) in Ben Orbit Narrator via vo_take.py under desk-lock elevenlabs, then running voice checks and opening PR",
       "due": "2026-11-22T18:00:00Z",
       "for": "gemini",
       "kind": "vo",
       "plain": "Record the narration in Ben's voice for: How Britain Towed Two Floating Ports Across the Channel for D-Day",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-17T20:39Z",
+        "at": "2026-11-17T20:42Z",
         "by": "gemini",
-        "note": "Started J2992: read live ElevenLabs balance (77,389/121,114 remaining, recorded in ai_spend); inspecting WW2:001 script "
+        "note": "Step 1 done: clean worktree ready; vo_take.py --dry-run verified 6 chapters, 20,431 chars (<= 21,000 cap), 3,358 words, "
       }
     },
     {
