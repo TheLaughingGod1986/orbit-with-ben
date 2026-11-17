@@ -267792,6 +267792,11 @@
           "at": "2026-11-17T18:25Z",
           "by": "macbook-2",
           "what": "released: Released to the Mini: MacBook CDP 9223 is signed out on Google accountchooser (never sign in unattended); updated remaining_action so the MacBook Studio-CDP lane will not re-claim J3008 and the Mini signed-in CDP 9223 browser will take it."
+        },
+        {
+          "at": "2026-11-17T19:36Z",
+          "by": "relay",
+          "what": "rerouted to claudecode on mini-claude-opus-5-5: Cursor out of usage; next in its chain: claudecode"
         }
       ],
       "remaining_action": "Read Studio Content and 48 h Analytics on the Mini signed-in CDP 9223 browser for c5AdqQsnnys (026_NearestStar_v06_cfr18.mp4), record and judge",
@@ -267805,7 +267810,16 @@
         "at": "2026-11-17T18:25Z",
         "by": "macbook-2",
         "note": "MacBook CDP 9223 signed out on Google accountchooser; handing back to Mini CDP 9223"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "claudecode",
+      "model": "mini-claude-opus-5-5"
     },
     {
       "id": "J3009",

@@ -65,7 +65,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3005 | mini | open (after J2990) | – | – | for gemini · studio · WW2 channel: packaging library, which titles and thumbnails beat their channel's normal views |  |
 | J3006 | mini | open (after J2990) | – | – | for codex · studio · WW2 channel: read its own analytics from day one, and a progress-to-monetisation card |  |
 | J3007 | mini | open (after J2990) | – | – | for codex · studio · Board: show the WW2 channel before launch, its films, its review and Ben's ticks |  |
-| J3008 | mini | open | – | – | studio · First-day check at 48 h: "How Far Is the Nearest Star? (You Can't See It, and It Has a Planet)" (c5AdqQsnnys) |  |
+| J3008 | mini | open | – | – | for claudecode · studio · `mini-claude-opus-5-5` · First-day check at 48 h: "How Far Is the Nearest Star? (You Can't See It, and It Has a Planet)" (c5AdqQsnnys) |  |
 | J3009 | mini | open (after J2990) | – | – | for gemini · studio · WW2 channel: move it into its own repo with history, register it, check it out on both Macs |  |
 | J3010 | mini | blocked | gemini | – | 007 upload · review · HOS 007 Vaccine Short (xgx2lYHhYZM): read next-morning snapshot after J3004 | f57ab150da |
 | J3011 | mini | open | – | – | chief · Orbit: Ben locked the every-planet film, book its slot and start the build |  |
