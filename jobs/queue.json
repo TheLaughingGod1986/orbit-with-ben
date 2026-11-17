@@ -265740,19 +265740,24 @@
           "at": "2026-11-17T11:14Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Fixed Vertex/Cursor/Claude readers and recorded fresh live readings to ledger.jsonl + board-data (Vertex £144.66; Cursor/Grok 0% left, resets 19 Nov; Claude 38% left, resets Wednesday 10:00 AM); implemented >48h last-read date display in studio_app.js and ai_app.js"
+        },
+        {
+          "at": "2026-11-17T11:18Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Opened OWB PR #984 and HOS PR #635 with full unit test suites green; all credit pools recorded fresh on main and published to board-data (d582102d); zero Ben sign-ins needed"
         }
       ],
-      "remaining_action": "Committing reader + board-date fixes in clean worktrees, running full CI checks, and opening PRs for the Chief",
+      "remaining_action": "Parked for Chief merge of OWB PR #984 and HOS PR #635 (and board_site deploy)",
       "due": "2026-11-18T18:00:00Z",
       "for": "gemini",
       "kind": "studio",
       "plain": "Get the four out-of-date usage readings on the Agents tab reading again, so we know when each agent is back",
       "progress": {
-        "step": 3,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-17T11:14Z",
+        "at": "2026-11-17T11:18Z",
         "by": "gemini",
-        "note": "Fixed Vertex/Cursor/Claude readers and recorded fresh live readings to ledger.jsonl + board-data (Vertex £144.66; Cursor"
+        "note": "Opened OWB PR #984 and HOS PR #635 with full unit test suites green; all credit pools recorded fresh on main and publish"
       }
     },
     {
