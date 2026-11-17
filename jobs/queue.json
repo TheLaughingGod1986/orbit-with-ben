@@ -243585,10 +243585,10 @@
       "stage": "",
       "after": "J2716",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-17T09:27Z",
+      "eta": "2026-11-17T11:27Z",
       "created_by": "codex",
       "created_at": "2026-11-12T20:11Z",
       "result": "",
@@ -243627,6 +243627,11 @@
           "at": "2026-11-17T09:23Z",
           "by": "gemini",
           "what": "rerouted to gemini on gemini-argon: Chief sweep (J2979): J2761 verified 2026-11-13 morning snapshot is on main (9a98da825c)"
+        },
+        {
+          "at": "2026-11-17T09:27Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Read 05_Analytics/owb/snapshots/2026-11-13.json and launch_check for Mars wind Short uhZSRcvngvE and write readout",
@@ -243643,7 +243648,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-17T09:27Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2733",
