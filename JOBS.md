@@ -81,7 +81,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2971 | mini | claimed | macbook | 2026-11-17T08:14Z | 118 topic · for gemini · review · `gemini-argon` · HOS 118 Why Do We Hiccup?: rule-E topic go/no-go review |  |
 | J2972 | mini | claimed | macbook-2 | 2026-11-17T08:14Z | 119 topic · for gemini · review · `gemini-argon` · HOS 119 Why Do Mosquitoes Bite Some People More?: rule-E topic go/no-go review |  |
 | J2974 | mini | open | – | – | for gemini · script · `gemini-argon` · OWB: learn from our data, add two new films to the backlog |  |
-| J2975 | any | open | – | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
+| J2975 | any | claimed | gemini | 2026-11-17T07:36Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
