@@ -1,5 +1,5 @@
 {
-  "next_id": 2987,
+  "next_id": 2988,
   "jobs": [
     {
       "id": "J0001",
@@ -266266,6 +266266,37 @@
         "job": "J2962",
         "okAt": "2026-11-17T09:39Z"
       }
+    },
+    {
+      "id": "J2987",
+      "title": "New-channel research: check the shortlist and 53 example channels through the YouTube Data API",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov):** research the best next channel to start, one that can reach monetisation fast with long videos made the studio's way (Veo 3 or stills, Ben's voice), and \"use YouTube API, try to pull in all data\". Four Claude research agents have finished, using vidIQ (Claude's cloud session has no YouTube API key). This job checks their shortlist against the YouTube Data API directly, through the API access the studio's scripts already have on the Mini (07_Content-Ops/scripts use googleapis).\n\n**Read only.** search.list, channels.list and videos.list only. No write call of any kind, no upload, no change to any channel. Stay under 5,000 quota units in total and stop cleanly on a quota error, saving what you have.\n\n**1. Channels.** channels.list (snippet, statistics, contentDetails) for these 53 channel IDs: UC0-n8t2eNsc8oyWcWyzsXjw, UC0Up62bLk6TDtOzKIlyBw2g, UC3BTP2FmssM9YAt2QIe6u4A, UC4BQemnwRy3crTK8Z0F6qjw, UC9Yv9fwZGNi77S2NDqRDgEQ, UC9eon0MV-L3JM0Wm8r7nwSg, UCBcIafZ9Vt5JUip17Duw5DA, UCE1PpvTWLx5pJ9pYmMugIBg, UCFGbFxED1ZssIePFzToxRxA, UCFZ_h_YPm3lRy_Eg4mxqMfA, UCH0fYAmg-lg8BauZAthSMrg, UCHR4lNIyBRn1sz7E3kXRTkQ, UCJBu8PlYhslPSYpovOGGK5g, UCLuqiIyjkVvjHvAZJJO0Wbw, UCNSbgDRlAHM55EXMxEKPrmg, UCP9np-UlRHt_OfQFrsfa6qQ, UCPWwAHugmuJu5oAVYW4YCXA, UCRsDdBx9JqgNVVqH0GBVzeA, UCS72RVL3pmZPUQikWApSf7Q, UCSAG9BNP2SJz1_fiwIm87tg, UCSEaZLka_GS5v9vbepw6Ajg, UCTsMCGz8-cxeMnjkT1Q0i6Q, UCWwCEHGxwFkf2Zf36mlEAug, UCX6CiGCU5Iefv7obMFnGKUw, UCYz9vNXXwBBOvTsmrMh32yg, UC_MCKNUrukBBApIg4-stGBg, UCcsQf3nDqM8o3O2BJhOTimQ, UCeVLlFyuuFlgyBiZbuusREQ, UCfTHSylhLm_1FM25AF2Tp3w, UCg_zYQXrjAwRQqiMS2Nmkgg, UChjdsX71krIrJ4WFyZYFvYA, UCisOMF5p4QxVGU_QfvcB4Xg, UCjHPxCmCmxjmZuMSbC5TEyg, UCjWK-CiFx_dxrEWxbkId5Kw, UCkPZLXcrP3Hc1J-Xd_uN-Mw, UCkZFwjrahicdn3R2EVtQ_Tw, UCl3ps8skJPWeQeYBfp2J_CQ, UCmAqofaR4vnDiGPVEjwD-9A, UCpZUhO4J_BjUCZ2dCP8kSlw, UCr0-cpaiYc5mkdzFH6-pDZQ, UCsYEZah0zh0XCIaOHrkh93Q, UCuij7G73h2G1F69VTrBrM7A, UCvFkZTrmpU7IYQmjkyTjzlw, UCvdfd4h3SPdhAlIuU0NeBpw, UCwTdAkFDrIcMdKUGDkrKDiA, UCwxjLJ5vMJ8WVXozeiYyEFg, UCx77AMr7kgZj5r81bE93-0g, UCxsLxGlOErRciZHaz2j_CWA, UCy-xKlpGW5VhnOh1GOydRNw, UCyOullfFIu9TAp74qgrZPtA, UCyVI5PMOhkwgX0j_vnC-YqA, UCzFVTm-B0CdTUyjO-KaykHg, UCzHIoLdss_1M_Iw6OxRKKEg. For each: title, created date (snippet.publishedAt), country if set, subscribers, views, video count. Then playlistItems.list on the uploads playlist (first page is enough) and videos.list for those uploads: first upload date seen, share of uploads over 8 minutes, median duration, median views, uploads in the last 30 days.\n\n**2. Searches.** For each phrase, search.list type=video, maxResults=25, order=relevance, once with regionCode=GB and once with regionCode=US: ww2 documentary; world war 2 documentary; military history documentary; geography explained; geography facts; true survival stories; natural disaster documentary; plane crash documentary; deep sea documentary; deep sea creatures documentary; how things work; science for sleep; history for sleep; dinosaur documentary; ebike explained; best electric bike. Then videos.list and channels.list for the results. Keep videos over 8 minutes. Per phrase and region report: count of long results, median views, share from channels created on or after 2025-05-01, share from channels under 50,000 subscribers, and share of videos published in the last 12 months.\n\n**3. Save** raw JSON and a short SUMMARY.md with the two tables in `05_Analytics/new_channel_research/` on a branch, and open a pull request (records only). Put the PR number in the result.\n\n**Guards.** £0. Read-only API calls. No token, key or account address printed or committed. Public channel names and IDs are fine.\n\n**Result.** The PR, quota units used, and three lines on anything that contradicts vidIQ's figures (subscribers off by more than 20%, or a channel created before May 2025).\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T14:26Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T14:26Z",
+          "by": "claude",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "Read-only YouTube Data API pull for the new-channel shortlist: channel stats and dates, and GB/US search results for 16 phrases; save to a records PR",
+      "due": "2026-11-18T18:00:00Z",
+      "for": "gemini",
+      "kind": "studio",
+      "plain": "Double-check the new-channel research with YouTube's own data before Ben picks a niche"
     }
   ],
   "focus": [
