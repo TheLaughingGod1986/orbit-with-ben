@@ -267091,13 +267091,13 @@
       "stage": "vo",
       "after": "J2991",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-17T20:34Z",
-      "eta": "2026-11-17T21:34Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T17:20Z",
-      "result": "",
+      "result": "PR #998 (6ac5525f44) & ww2-channel PR #2 (847dfed): WW2:001 narration mulberry_harbours_vo_v01 recorded in Ben Orbit Narrator (eleven_v3, 6 chapters, 20,431 spoken chars <= 21,000 cap; 9,496 ElevenLabs plan credits billed, 67,893/121,114 remaining; £0 extra). Audio on studio-live NAS (1,656.7s / 27:36.7, -19.7 LUFS, -22.9 dB mean, -3.4 dB peak, 1.1 LU chapter spread, 97.56% normalized Scribe word match, zero clipped boundary words).",
       "history": [
         {
           "at": "2026-11-17T17:20Z",
@@ -267138,6 +267138,11 @@
           "at": "2026-11-17T20:56Z",
           "by": "gemini",
           "what": "step 4 of 4 done: All 4 steps done: mulberry_harbours_vo_v01 on studio-live NAS (SHA-256 verified), voice checks passed, PR #998 & ww2-channel PR #2 open"
+        },
+        {
+          "at": "2026-11-17T20:57Z",
+          "by": "gemini",
+          "what": "done: PR #998 (6ac5525f44) & ww2-channel PR #2 (847dfed): WW2:001 narration mulberry_harbours_vo_v01 recorded in Ben Orbit Narrator (eleven_v3, 6 chapters, 20,431 spoken chars <= 21,000 cap; 9,496 ElevenLabs plan credits billed, 67,893/121,114 remaining; £0 extra). Audio on studio-live NAS (1,656.7s / 27:36.7, -19.7 LUFS, -22.9 dB mean, -3.4 dB peak, 1.1 LU chapter spread, 97.56% normalized Scribe word match, zero clipped boundary words)."
         }
       ],
       "remaining_action": "Done: PR #998 (and ww2-channel PR #2) open; closing J2992 and posting report",
@@ -267151,7 +267156,8 @@
         "at": "2026-11-17T20:56Z",
         "by": "gemini",
         "note": "All 4 steps done: mulberry_harbours_vo_v01 on studio-live NAS (SHA-256 verified), voice checks passed, PR #998 & ww2-cha"
-      }
+      },
+      "done_ref": "6ac5525f44"
     },
     {
       "id": "J2993",
