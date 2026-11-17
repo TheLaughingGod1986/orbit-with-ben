@@ -266435,13 +266435,13 @@
       "stage": "",
       "after": "",
       "eta_min": 75,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-17T23:46Z",
-      "eta": "2026-11-18T01:01Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T08:37Z",
-      "result": "",
+      "result": "PR #1006 merged (9f8e981802) and deployed to Pages. Plain London availability wording; recursive home-prefix sanitation including compressed history; unused Vercel link removed, routing retained as host_config.json, NO_DEPLOY guard kept. CI PASS; both addresses page/checks/data?f=board 200 and zero home prefixes. Production HTML and exact live data render correctly in isolated Chrome; direct browser navigation timed out. Legacy references remain only in historical records, old scratch copies and a local pairing test; old Vercel project retained. No spend or Ben blocker.",
       "history": [
         {
           "at": "2026-11-17T08:37Z",
@@ -266532,6 +266532,11 @@
           "at": "2026-11-17T23:57Z",
           "by": "codex",
           "what": "step 4 of 4 done: PR #1006 merged as 9f8e981802; Pages deployed. Both addresses return 200 for page, checks and data with f=board. Public data has zero home prefixes; production HTML/live data render plain Agents wording."
+        },
+        {
+          "at": "2026-11-17T23:57Z",
+          "by": "codex",
+          "what": "done: PR #1006 merged (9f8e981802) and deployed to Pages. Plain London availability wording; recursive home-prefix sanitation including compressed history; unused Vercel link removed, routing retained as host_config.json, NO_DEPLOY guard kept. CI PASS; both addresses page/checks/data?f=board 200 and zero home prefixes. Production HTML and exact live data render correctly in isolated Chrome; direct browser navigation timed out. Legacy references remain only in historical records, old scratch copies and a local pairing test; old Vercel project retained. No spend or Ben blocker."
         }
       ],
       "remaining_action": "Record the completed board cleanup and live checks",
