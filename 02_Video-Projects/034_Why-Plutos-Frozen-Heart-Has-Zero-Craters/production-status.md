@@ -14,9 +14,9 @@
 | VO | **DONE (`J2352` elected-Chief full VO PASS, 7 Nov 2026, PR #623)** — `02_Voiceover/pluto_frozen_heart_vo_v03.wav` (SHA-256 `2be8030b6c42b673530351014c71bca1a6c31a10af9746539bb2a1ce7dcf7685`, `616.160 s`, `-19.9 LUFS` integrated, `-23.0 dB` mean, `-3.7 dBTP` true peak) + reconciled `02_Voiceover/stt/pluto_frozen_heart_vo_v03/stt_raw.json` |
 | Shots | **DONE (`J2368` PASS, 7 Nov 2026)** — `07_Edit-Project/SHOT_LIST_v01.md` + `07_Edit-Project/shot_list_v01.csv` (`74` rows across `646.94 s`, `clip_check.py` **PASS** with 0 errors and 0 warnings; opening `R01–R07` updated in `07_Edit-Project/FIRST30_PLAN.md` `J2668`/`J2754` to 19 cuts `<= 3.93 s`) |
 | CG | **DONE (`J2370`/`J2371`/`J2372` PASS, 7 Nov 2026)** — £0 harvest (`07_Edit-Project/HARVEST_POOL_v01.json`) + `07_Edit-Project/graphics_v03/` |
-| Edit / Master Review | **Long `v02` + Short 1 `v02` ASSEMBLED (`J2438`, 17 Nov 2026, 5/5 gates PASS on both); Short 2 `v02` remaining (`J2867`), then 5-part review (`J2868`)** — `09_Final-Export/034_pluto_frozen_heart_master_v02.mp4` (`370,954,641` B, SHA-256 `e5a886dfef208774cce8ae987e658fba5d7a96cbb5c99a44aadf63516949ba62`, `19,408` frames = `646.933 s` at `30` fps, `-14.7 LUFS`, `-1.0 dBTP`, `0` black frames) executes `FIRST30_PLAN.md` (`-2.800 s` Sentence 1 splice ending at `5.900 s < 8.000 s`; Sentence 2 payoff ending at `16.240 s < 20.000 s`; `+2.800 s` restored across `R04–R07` silences so `R08–R74` stay locked at `65.760–646.933 s`; `19` opening cuts `<= 3.933 s` across `R01–R07` / `11` cuts `<= 3.533 s` across `R01–R04`; `138` total cuts) AND all `J2383` §5.1 finishing fixes (all 6 chapter-card silences inserted at `prev_word_raw_end + 0.600 s`, sub-pixel PIL BICUBIC zoom `1.000->1.045` + 2D separable `min(fx, fy)` `48 px` feather, word-boundary `row_assets()` + `off >= 2.0 s` on `ksc_011906_*.mp4`, full `WHO` card names on `R10/R11/R58`, duplicate `Credit:` pills stripped). `10_Shorts/short01_testA_opening/06_Final-Exports/034_short01_testA_opening_v02.mp4` (`53,859,275` B, SHA-256 `c9a02052ff7a33cba10adc52e440cfe793c6cca1f31e355262acf9fd9c4ba677`, `36.500 s` = `1,095` frames at `30/1` CFR, `-14.10 LUFS`, `-2.10 dBTP`) passes all 5/5 gates (`0/37` frames padded). Next: `J2867` rebuilds `034_short02_water_ice_mountains_v02.mp4` full-bleed `9:16`, then `J2868` runs the 5-part review. |
+| Edit / Master Review | **Long `v02` + Short 1 `v02` + Short 2 `v02` ASSEMBLED (`J2438` + `J2867`, 17 Nov 2026, all automated gates PASS on all three); ready for 5-part review (`J2868`)** — `09_Final-Export/034_pluto_frozen_heart_master_v02.mp4` (`370,954,641` B, SHA-256 `e5a886dfef208774cce8ae987e658fba5d7a96cbb5c99a44aadf63516949ba62`, `19,408` frames = `646.933 s` at `30` fps, `-14.7 LUFS`, `-1.0 dBTP`, `0` black frames) executes `FIRST30_PLAN.md` (`-2.800 s` Sentence 1 splice ending at `5.900 s < 8.000 s`; Sentence 2 payoff ending at `16.240 s < 20.000 s`; `+2.800 s` restored across `R04–R07` silences so `R08–R74` stay locked at `65.760–646.933 s`; `19` opening cuts `<= 3.933 s` across `R01–R07` / `11` cuts `<= 3.533 s` across `R01–R04`; `138` total cuts) AND all `J2383` §5.1 finishing fixes (all 6 chapter-card silences inserted at `prev_word_raw_end + 0.600 s`, sub-pixel PIL BICUBIC zoom `1.000->1.045` + 2D separable `min(fx, fy)` `48 px` feather, word-boundary `row_assets()` + `off >= 2.0 s` on `ksc_011906_*.mp4`, full `WHO` card names on `R10/R11/R58`, duplicate `Credit:` pills stripped). `10_Shorts/short01_testA_opening/06_Final-Exports/034_short01_testA_opening_v02.mp4` (`53,859,275` B, SHA-256 `c9a02052ff7a33cba10adc52e440cfe793c6cca1f31e355262acf9fd9c4ba677`, `36.500 s` = `1,095` frames at `30/1` CFR, `-14.10 LUFS`, `-2.10 dBTP`) passes all 5/5 gates (`0/37` frames padded). `10_Shorts/short02_water_ice_mountains/06_Final-Exports/034_short02_water_ice_mountains_v02.mp4` (`59,262,118` B, SHA-256 `f3e3d47d0c86be1d297fbf5fade3383126f9c01d94ab2b78444d60dd6a66be73`, `25.800 s` = `774` frames at `30/1` CFR, `-14.10 LUFS`, `-2.00 dBTP`, reusing locked `v01` stems byte-for-byte) passes all 6/6 gates (`0/26` frames padded, `0` edge bars, `0` loop cross-fade). Next: `J2868` runs the 5-part multimodal review. |
 | Runtime target | 7–9 min (~1,285 spoken narration words after `-2.80 s` appositive splice, `646.933 s` = `10:46.9` master) |
-| Shorts | Paired with standalone Short `gmzaCfJF1gA` (*Why Does Pluto's Giant Ice Heart Have Zero Craters?*) + 2 episode Shorts (`034_short01_testA_opening_v02.mp4` **DONE 5/5 gates PASS**; `034_short02_water_ice_mountains_v02.mp4` queued in `J2867`) |
+| Shorts | Paired with standalone Short `gmzaCfJF1gA` (*Why Does Pluto's Giant Ice Heart Have Zero Craters?*) + 2 episode Shorts (`034_short01_testA_opening_v02.mp4` **DONE 5/5 gates PASS**; `034_short02_water_ice_mountains_v02.mp4` **DONE 6/6 gates PASS** in `J2867`) |
 
 ## Marker counts (`pluto_frozen_heart_script_master_v02.md`)
 
@@ -94,7 +94,7 @@ clip_check: 74 rows — PASS
 OK: sentence/card boundaries and end-after-VO checks clear.
 ```
 
-## Pasted Long Master `v02` & Short 1 `v02` Gate Outputs (`J2438`, 17 Nov 2026)
+## Pasted Long Master `v02`, Short 1 `v02` & Short 2 `v02` Gate Outputs (`J2438` + `J2867`, 17 Nov 2026)
 
 - **Long Master `v02`:** `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/09_Final-Export/034_pluto_frozen_heart_master_v02.mp4` (`370,954,641` B, SHA-256 `e5a886dfef208774cce8ae987e658fba5d7a96cbb5c99a44aadf63516949ba62`, `1920×1080`, `19,408` frames = `646.933 s`, `-14.7 LUFS`, `-1.0 dBTP`, `black_frames=[]`)
 
@@ -120,4 +120,16 @@ picture QA PASS: 0 of 12 cuts fail, 2 to look at
 polish gate PASS: 0 of 12 rows failed, 1 to look at
 music gate PASS: pluto_score_bed_v01.mp3, 646.9 s, about 66.7 BPM, brief Pace: 64-74 BPM
 SFX level PASS: VO -16.5 LUFS, SFX -40.1 LUFS, 7 hits
+```
+
+- **Short 2 `v02` (Keeper Question: Water-Ice Mountains):** `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/10_Shorts/short02_water_ice_mountains/06_Final-Exports/034_short02_water_ice_mountains_v02.mp4` (`59,262,118` B, SHA-256 `f3e3d47d0c86be1d297fbf5fade3383126f9c01d94ab2b78444d60dd6a66be73`, `1080×1920`, `774` frames = `25.800 s` at `30/1` CFR, `-14.10 LUFS`, `-2.00 dBTP`, locked `v01` stems reused byte-for-byte: VO `d93c149a704c`, SFX `2b8739fe2fd1`, Bed `dbd43603f37f`)
+
+```text
+PASS  034_short02_water_ice_mountains_v02.mp4  dur=25.8s  audio=-16.7dB  motion=25.13  f0diff=4.72  cut1=2.4s  vo_onset=0.06s  tail_gap=0.77s  dhash=2e4f353f3b276936  visor=0.0
+   full-bleed whole Short  0/26 frames padded at one a second, 0/52 at two a second  padded stretches: none  no end card named in meta
+picture QA PASS: 0 of 10 cuts fail, 1 to look at
+polish gate PASS: 0 of 10 rows failed, 1 to look at
+music gate PASS: pluto_score_bed_v01.mp3, 646.9 s, about 66.7 BPM, brief Pace: 64-74 BPM
+SFX level PASS: VO -19.4 LUFS, SFX -39.3 LUFS, 3 hits
+thumb_preview.py short: 034_short02_water_ice_mountains_v02_cover_preview.jpg
 ```
