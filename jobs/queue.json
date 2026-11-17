@@ -266722,9 +266722,14 @@
           "at": "2026-11-17T17:38Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T17:39Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J2988 condition verification for J2984 (HOS:008 Short C v07 QA review); checking J2984 brief, worker availability, and HOS PR #556 / NAS media"
         }
       ],
-      "remaining_action": "Verify readiness: Non-producer QA reviewer (claudecode/claude/codex) to review PR #556 + v07 contact sheets, write REVIEW.md, and stage hos_008_short_C_v07.mp4 to HOS UAT + awaits_",
+      "remaining_action": "Read J2984 brief and history, verify non-producer QA reviewer availability and HOS PR #556 / NAS state",
       "kind": "review",
       "recheck_of": "J2984",
       "due": "2026-11-17T16:36:39+00:00",
@@ -266741,11 +266746,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-17T17:38Z",
+        "at": "2026-11-17T17:39Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2988 condition verification for J2984 (HOS:008 Short C v07 QA review); checking J2984 brief, worker availabilit"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J2989",
