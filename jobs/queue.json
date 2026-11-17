@@ -250350,10 +250350,10 @@
       "stage": "edit",
       "after": "J2803",
       "eta_min": 20,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-17T12:38Z",
-      "eta": "2026-11-17T12:58Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-14T03:38Z",
       "result": "",
@@ -250437,6 +250437,11 @@
           "at": "2026-11-17T12:39Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Claimed J2805; HOS PR #633 is open (6/6 CI green) and Claude review #6944276199 recommends merging after refreshing stale dates"
+        },
+        {
+          "at": "2026-11-17T12:55Z",
+          "by": "gemini",
+          "what": "released: Refreshed stale dates in PR #633 (34b4831b, 6/6 CI green), recorded real air date (2026-11-26) and spend-release line per Claude review #6944276199, and refreshed J2806-J2808/J2035 due dates. Handing back to returned elected Chief Claude (up at 12:50Z per chief_relay.py status) to merge PR #633 and mark J2805 done."
         }
       ],
       "remaining_action": "Review PR #633 and Claude review #6944276199, refresh stale dates in PR #633 and queue jobs, verify checks, and merge PR #633 as elected HOS Chief",
