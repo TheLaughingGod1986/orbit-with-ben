@@ -264803,12 +264803,26 @@
           "at": "2026-11-17T07:02Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-11-17T07:03Z",
+          "by": "relay",
+          "what": "rerouted to claudecode on mini-claude-opus-5-5: Cursor out of usage; next in its chain: claudecode"
         }
       ],
       "remaining_action": "Read the latest Studio performance figures",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
-      "urgent": 0
+      "urgent": 0,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "claudecode",
+      "model": "mini-claude-opus-5-5"
     }
   ],
   "focus": [
