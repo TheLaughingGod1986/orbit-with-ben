@@ -255728,18 +255728,22 @@
           "at": "2026-11-17T15:53Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T15:57Z",
+          "by": "macbook",
+          "what": "step 0 of 4 done: Inspecting J2438 outputs (long v02 + Short 1 v02) and Short 2 v01 inputs on studio-live"
         }
       ],
-      "remaining_action": "Wait for J2438, then rebuild Shorts 1 & 2 v02 full-bleed 1080x1920 9:16 and verify J2383 §5.1 fixes on long v02",
+      "remaining_action": "Verify J2438 long v02 & Short 1 v02 against J2383 checklist, then rebuild Short 2 v02 full-bleed 9:16 and run all gates",
       "kind": "assembly",
       "plain": "Rebuild 034 Pluto Shorts 1 & 2 v02 full-bleed 9:16 and apply J2383 finishing fixes on long master v02",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-17T15:51Z",
+        "of": 4,
+        "at": "2026-11-17T15:57Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Inspecting J2438 outputs (long v02 + Short 1 v02) and Short 2 v01 inputs on studio-live"
       }
     },
     {
