@@ -264226,13 +264226,13 @@
       "stage": "topic",
       "after": "J2967",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-17T01:19Z",
-      "eta": "2026-11-17T03:19Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-17T01:06Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-17T01:06Z",
@@ -264268,6 +264268,11 @@
           "at": "2026-11-17T01:47Z",
           "by": "gemini",
           "what": "step 4 of 4 done: All 4 steps complete: wrote jobs/reviews/J2969/REVIEW.md (e372addaaa), marked 078 and 079 topic done, and synced to studio-live NAS"
+        },
+        {
+          "at": "2026-11-17T01:48Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Post J2969 completion report to studio thread",
@@ -264283,7 +264288,8 @@
       "taskKeys": [
         "OWB:078",
         "OWB:079"
-      ]
+      ],
+      "done_ref": "e372addaaa"
     }
   ],
   "focus": [
