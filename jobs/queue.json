@@ -266016,6 +266016,11 @@
           "at": "2026-11-17T18:39Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Closed 25 superseded/cancelled OWB PRs, posted status comments on 5 protected machinery PRs (#490, #827, #832, #868, #869), merged HOS PR #634, and reopened/rerouted J2652; now merging the 57 green records-only OWB PRs"
+        },
+        {
+          "at": "2026-11-17T18:46Z",
+          "by": "claude",
+          "what": "Correction to this brief (17 Nov 18:46Z): #868 and #869 are not live machinery. The decoupling studio half they carry merged on 13 Nov 05:17Z as PR 886 (same tree; J2618 and J2621 are done). Check that main holds their changes, then close both as superseded by #886 with a one-line comment. #490, #827 and #832 stay as ruled."
         }
       ],
       "remaining_action": "Merging 57 green records-only OWB PRs after closing 25 superseded PRs and commenting on 5 protected machinery PRs",
