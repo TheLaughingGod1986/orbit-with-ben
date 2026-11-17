@@ -265088,10 +265088,10 @@
       "stage": "",
       "after": "",
       "eta_min": 150,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-17T09:00Z",
+      "eta": "2026-11-17T11:30Z",
       "created_by": "claude",
       "created_at": "2026-11-17T08:37Z",
       "result": "",
@@ -265100,12 +265100,25 @@
           "at": "2026-11-17T08:37Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-17T09:00Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Close stale board jobs J2797/J2798, rule on PRs 924 and 945, rule on 26 Chief-parked jobs, merge or close the open pull requests",
       "due": "2026-11-18T12:00:00Z",
       "kind": "chief",
-      "plain": "Tidy up after the board check: close finished board jobs, and clear the pile of jobs and pull requests waiting on the Chief"
+      "plain": "Tidy up after the board check: close finished board jobs, and clear the pile of jobs and pull requests waiting on the Chief",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-17T09:00Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2980",
