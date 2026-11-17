@@ -264915,13 +264915,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-17T08:33Z",
-      "eta": "2026-11-17T10:33Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-17T07:27Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-17T07:27Z",
@@ -264972,6 +264972,11 @@
           "at": "2026-11-17T08:33Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T08:33Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Elected Chief to record wait --recheck J2977 on J2040 and mark J2977 done",
@@ -264995,7 +265000,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "jobs/reviews/J2977/REVIEW.md"
     },
     {
       "id": "J2978",
