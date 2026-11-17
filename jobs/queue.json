@@ -265072,10 +265072,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-17T08:39Z",
+      "eta": "2026-11-17T10:09Z",
       "created_by": "claude",
       "created_at": "2026-11-17T08:37Z",
       "result": "",
@@ -265084,13 +265084,26 @@
           "at": "2026-11-17T08:37Z",
           "by": "claude",
           "what": "added for gemini"
+        },
+        {
+          "at": "2026-11-17T08:39Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Make the queue forecast and dispatcher read the same out-of-usage mark as the Agents tab, and move jobs off a down agent",
       "due": "2026-11-18T12:00:00Z",
       "for": "gemini",
       "kind": "studio",
-      "plain": "Stop sending jobs to an agent the board already shows is out of usage, so nothing waits on it"
+      "plain": "Stop sending jobs to an agent the board already shows is out of usage, so nothing waits on it",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-17T08:39Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2981",
