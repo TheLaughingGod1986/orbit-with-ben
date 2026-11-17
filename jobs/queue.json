@@ -236388,13 +236388,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-17T18:52Z",
-      "eta": "2026-11-17T20:52Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T22:56Z",
-      "result": "",
+      "result": "parked for Chief: non-producer / Chief review of v03f-r4 390px sheets on HOS PR #551 at ad52a2dc (5/5 CI green) and desk #180 #6958713817. All 3 reviewer items from Claude #6945397541 & Chief #6957443445 fixed (unclipped full-word bottom-left credits, enlarged 390px labels/badges/tags + custom vector arrows, verified & sampled P2:01 Part II title window + dual-window sheet). All 7 checks from ruling #6808560760 PASS: (1) 0 in-word cuts (6/6 tests + clip_check 104 rows PASS), (2) v03f timing PASS (#6957443445/J2979), (3) 35/35 £0 v03f-r4 free renders <=6.96s PASS polish_gate & picture_qa (0 fails), (4) J1310 WAV hash verified, (5) callback 3.56s<=4.20s direct trim, (6) 43 word-level onsets, (7) 3 COST_OPTIONS retained as already-minted Quality. 515s NAS rough (hos_013_timing_rough_J2652_v03f_r4bb.mp4, 93/104 real video, 11 J2529 P5/P6 slates) SHA-256 & decode verified. £0 spent.",
       "history": [
         {
           "at": "2026-11-11T22:56Z",
@@ -236705,6 +236705,11 @@
           "at": "2026-11-17T19:34Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Step 3/3 complete: pushed v03f-r4 (ad52a2dc, 5/5 CI green) to PR #551, check_all.sh & NAS SHA-256 PASS, posted #6958713817"
+        },
+        {
+          "at": "2026-11-17T19:34Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: non-producer / Chief review of v03f-r4 390px sheets on HOS PR #551 at ad52a2dc (5/5 CI green) and desk #180 #6958713817. All 3 reviewer items from Claude #6945397541 & Chief #6957443445 fixed (unclipped full-word bottom-left credits, enlarged 390px labels/badges/tags + custom vector arrows, verified & sampled P2:01 Part II title window + dual-window sheet). All 7 checks from ruling #6808560760 PASS: (1) 0 in-word cuts (6/6 tests + clip_check 104 rows PASS), (2) v03f timing PASS (#6957443445/J2979), (3) 35/35 £0 v03f-r4 free renders <=6.96s PASS polish_gate & picture_qa (0 fails), (4) J1310 WAV hash verified, (5) callback 3.56s<=4.20s direct trim, (6) 43 word-level onsets, (7) 3 COST_OPTIONS retained as already-minted Quality. 515s NAS rough (hos_013_timing_rough_J2652_v03f_r4bb.mp4, 93/104 real video, 11 J2529 P5/P6 slates) SHA-256 & decode verified. £0 spent."
         }
       ],
       "remaining_action": "Non-producer / Chief review of v03f-r4 390px sheets on HOS PR #551 (ad52a2dc) and desk #180 #6958713817",
