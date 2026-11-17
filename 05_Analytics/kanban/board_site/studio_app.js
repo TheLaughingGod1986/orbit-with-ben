@@ -1910,6 +1910,21 @@
       ${waiting.length?`<details class="technical job-more" data-disclosure="queue-waiting"><summary>Waiting for something first · ${waiting.length}</summary><p class="meta">These cannot start yet: a video has to go public, a test has to finish, or an earlier job comes first.</p>${rows(waiting)}</details>`:''}`;
   }
 
+  function agentReason(raw, row = {}, chain = {}) {
+    const text = String(raw || '');
+    const stamp = row.until || chain.until || (text.match(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z/) || [])[0];
+    const when = Date.parse(stamp || '');
+    const back = Number.isFinite(when) ? new Date(when).toLocaleString('en-GB', {
+      timeZone: 'Europe/London', weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit'
+    }) : '';
+    if (/usage|rate.limit|credit.*(?:out|limit)|out.*credit/i.test(text)) return 'Out of usage' + (back ? ', back ' + back : '');
+    if (/acknowledgement|inbox delivered|not progressed/i.test(text)) return 'Not responding' + (back ? ', retry ' + back : '');
+    return text.replace(/\([^)]*(?:J\d+|probe)[^)]*\)/gi, '')
+      .replace(/\bJ\d+\b/g, '').replace(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z/g,
+        value => new Date(value).toLocaleString('en-GB', {timeZone:'Europe/London', weekday:'short', day:'numeric', month:'short', hour:'2-digit', minute:'2-digit'}))
+      .replace(/\s+/g, ' ').trim();
+  }
+
   function agents(b, now) {
     const m = b.models || {}, jobs = ((b.owb || {}).jobs) || [], c = m.chief || {}, s = summary(b, now);
     const status = Object.fromEntries((m.models || []).map(x => [x.id, x]));
@@ -1922,6 +1937,7 @@
         : (status[id] || {}).why || chain.why || (id === "macbook" ? "waits for a MacBook job, plugged in and idle" : "no job right now");
       let [st, word] = agentLight(id, mine.length, (status[id] || {}).status, c.agent === id && m.fresh !== false);
       if (id === "macbook" && !mine.length) { const mbs = macbookState(macbook, now); st = mbs[0]; word = mbs[1]; why = mbs[2]; }
+      why = mine.length ? why : agentReason(why, status[id] || {}, chain);
       const href = mine[0] ? jobRoute(mine[0].id) : "#agents";
       return { st, html: `<a class="row agent" href="${href}"><span class="dot ${esc(st)}"></span><div class="body"><b>${esc(name)} <span class="tag ${st}">${word}</span>${c.agent === id ? ' <span class="tag">Chief</span>' : ""}</b>
         <span class="meta">${esc(clip(why, 110))}</span></div><span class="chev">›</span></a>` };
