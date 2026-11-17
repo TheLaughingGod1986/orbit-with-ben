@@ -265710,18 +265710,24 @@
           "at": "2026-11-17T10:55Z",
           "by": "gemini",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-17T11:00Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Read owb-ai-spend.log + cdp-browsers.log: fixed missing AbandonProcessGroup on com.hos.cdp-browsers so :9222 stays up; Vertex read £144.66; Cursor (100% used, Resets 19 Nov) and Claude (signed in, redirected to /new) need selector/route fixes"
         }
       ],
-      "remaining_action": "Inspecting daily usage reader scripts, launchd logs, and running Cursor/Claude/Vertex/Grok readers by hand",
+      "remaining_action": "Inspecting changed Cursor/Grok billing DOM and Claude settings/usage route in CDP :9222",
       "due": "2026-11-18T18:00:00Z",
       "for": "gemini",
       "kind": "studio",
       "plain": "Get the four out-of-date usage readings on the Agents tab reading again, so we know when each agent is back",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-17T10:55Z",
-        "by": "gemini"
+        "at": "2026-11-17T11:00Z",
+        "by": "gemini",
+        "note": "Read owb-ai-spend.log + cdp-browsers.log: fixed missing AbandonProcessGroup on com.hos.cdp-browsers so :9222 stays up; V"
       }
     },
     {
