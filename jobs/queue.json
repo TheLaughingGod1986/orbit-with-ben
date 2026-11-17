@@ -1,5 +1,5 @@
 {
-  "next_id": 3009,
+  "next_id": 3010,
   "jobs": [
     {
       "id": "J0001",
@@ -267561,6 +267561,11 @@
           "at": "2026-11-17T18:08Z",
           "by": "claude",
           "what": "added for codex"
+        },
+        {
+          "at": "2026-11-17T18:15Z",
+          "by": "claude",
+          "what": "Ben wants the WW2 channel fully decoupled in its own repo (TheLaughingGod1986/ww2-channel; Ben is creating it, Claude's attempt was refused by GitHub). Build the board side for a registered channel with its own repo, like History of Science; until the move job lands, read channels/ww2 here."
         }
       ],
       "remaining_action": "Register WW2 on the board in a pre-launch state from channels/ww2, films in Videos and Review, WW2 ticks in checks.js, approved cuts wait for the YouTube link",
@@ -267612,6 +267617,37 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J3009",
+      "title": "WW2 channel: move it into its own repo with history, register it, check it out on both Macs",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 18:15Z):** \"make the repo, best to separate it now and keep it fully decoupled.\" Claude tried to create `TheLaughingGod1986/ww2-channel` (private) through the GitHub connector; GitHub refused with 403 \"Resource not accessible by integration\" (the Claude app cannot create repositories on a personal account). Ben has been told how to create it himself and give the Claude app access.\n\n**Do, once `TheLaughingGod1986/ww2-channel` exists** (check daily; if it does not exist yet, park with that condition and do not post to Ben about it):\n1. Move everything in `channels/ww2/` to the root of the new repo **with its history** (for example `git subtree split --prefix channels/ww2`), push to its main branch, then remove the folder from this repo in a pull request that points to the new home.\n2. Register the channel in `channels/channels.json` the way History of Science is registered (its own repo and checkout), still pre-launch: no YouTube link yet. Run `scripts/channel_check.py --all`.\n3. Check it out on the Mac mini and the MacBook where the other channel checkouts live, and prove each machine can pull and push it. If a machine's GitHub credentials do not cover the new repo, say exactly which machine and which credential is missing, and park for Ben with that one line.\n4. Point every open or blocked WW2 job (film keys WW2:..., and J2999, J3005, J3006, J3007) at the new repo, and check that the board (J3007) and the analytics (J3006) read it.\n5. Board ticks for WW2 keep posting to the Orbit studio thread until the channel has its own; the board's GitHub token does not need the new repo for that.\n\n**Guards.** £0. Nothing deleted except the moved folder, and only after the new repo holds it with history. No token or account address in any file.\n\n**Result.** The new repo's first commit, the registry change, which machines can push, and the jobs repointed.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J2990",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T18:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T18:15Z",
+          "by": "claude",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "When TheLaughingGod1986/ww2-channel exists: move channels/ww2 there with history, register like HOS, check out and push-test on both Macs, repoint WW2 jobs",
+      "due": "2026-11-24T18:00:00Z",
+      "for": "gemini",
+      "kind": "studio",
+      "plain": "Give the new WW2 channel its own separate repository, as Ben asked, without losing any work"
     }
   ],
   "focus": [
