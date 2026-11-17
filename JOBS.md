@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2035, J2529, J2797, J2864.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2035, J2529.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -27,7 +27,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2171 | mini | blocked | gemini | – | 009 edit · assembly · HOS 009: assemble locked Shorts A/B for conditional 27 and 30 Nov | J2023 |
 | J2438 | mini | blocked | codex | – | 034 edit · assembly · 034 Pluto: assemble long master v02 with re-cut first 30 s (FIRST30_PLAN.md, J2435) | J2435 |
 | J2529 | mini | blocked | gemini | – | 013 picture · for gemini · video · HOS 013 Darwin & Wallace: mint pass 1, the 66 Quality rows of picture plan v02 (at most 6,600 Flow credits, none in cash), before the credits reset on Thu 12 Nov | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6805898066 |
-| J2532 | mini | open | – | – | for cursor · studio · `cursor-grok-4-7` · Private-ready 2: the board reads its data through its own server, for signed-in viewers only |  |
 | J2537 | cloud | blocked | claude | – | chief · HOS, then Orbit: take the email addresses out of the files and then out of the history (Ben's OK 10 Nov), in stages with planned windows | Ben 10 Nov: Ok on both |
 | J2652 | any | blocked | codex | – | 013 edit · for codex · chart · HOS 013 Darwin & Wallace: scope picture plan v03 (cuts moved to word gaps, overlay onsets, the callback at 4.20 s) | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808560760 |
 | J2656 | cloud | open | – | – | for claude · studio · Rules: write Ben's answer on replacing a finished Test & Compare into the Never list (AGENTS.md) |  |
@@ -49,15 +48,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2774 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2622 |  |
 | J2782 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2780 |  |
 | J2792 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2172 |  |
-| J2797 | mini | blocked | codex | – | for codex · studio · Board: give it its own address, board.oppti.dev, and read its request count on Cloudflare |  |
-| J2798 | mini | blocked | codex | – | for codex · studio · Board: stop an open board downloading its whole 2 MB data file every minute |  |
 | J2805 | mini | blocked | codex | – | 009 edit · chief · HOS 009: scope revised music after failed reuse-check validation | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6867889512 |
 | J2806 | mini | open (after J2805) | – | – | 009 edit · assembly · HOS 009: produce one revised opening music cue |  |
 | J2807 | mini | open (after J2806) | – | – | 009 edit · for gemini · review · `gemini-argon` · HOS 009: audition revised opening and joined score |  |
 | J2808 | mini | open (after J2807) | – | – | 009 edit · chief · HOS 009: decide revised score acceptance or bounded failure route |  |
 | J2812 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J1130 |  |
-| J2818 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2798 |  |
-| J2819 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2797 |  |
 | J2832 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2805 |  |
 | J2843 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Packaging panel decision: OWB weekly audit 3 new thumbnail Bs + separate Title Bs (m09jUdwC5hk ALL STARS FADE, Mo93x0fxB1Q ZERO SIGNALS, ziKBPJ6FY0U 300 MILLION YEARS) |  |
 | J2844 | any | open (after J2843) | – | – | chief · Chief gate: pass J2834 weekly audit thumbnail Bs (T035 m09jUdwC5hk, T036 Mo93x0fxB1Q, T037 ziKBPJ6FY0U) after J2843 panel | J2834 |
@@ -66,8 +61,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2847 | mini | open (after J2844) | – | – | studio · Studio: arm thumbnail Test & Compare on ziKBPJ6FY0U (A=live TOO EARLY? vs B=300 MILLION YEARS, T037) | J2834 |
 | J2852 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2843 |  |
 | J2857 | mini | blocked | cursor | – | J01 upload · studio · Upload OWB J01 long v03 (A Calm Journey From Venus to a Dying Star) Private + arm 3-way thumb Test & Compare | 6882810716 |
-| J2864 | cloud | open | – | – | for claude · studio · Write Ben's pause on new single-question Orbit longs into the rules, until a new format has been tested |  |
-| J2865 | mini | open (after J2864) | – | – | 062 script · for gemini · script · `gemini-argon` · 062 Phobos: write script v01 + SOURCES.md + SHORTS_SCRIPTS_v02.md from Rule-E GO brief (J2420) | 5dbd6f396e |
 | J2867 | mini | open (after J2438) | – | – | 034 edit · assembly · 034 Pluto: rebuild Shorts 1 & 2 v02 full-bleed 9:16 (gate_shorts_open PASS) + verify/apply J2383 R08-R74 finishing fixes on long master v02 | J2383,J2438 |
 | J2868 | mini | open (after J2867) | – | – | 034 edit · for gemini · review · `gemini-argon` · 034 Pluto: review long master v02 + Shorts 1 & 2 v02 (after J2438, J2867) | J2383,J2438,J2867 |
 | J2885 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2857 |  |
