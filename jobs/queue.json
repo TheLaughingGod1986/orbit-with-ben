@@ -105531,6 +105531,11 @@
           "at": "2026-11-17T09:38Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: HOS PR #634 (1c4bc42f). Verified finished T023 report in HOS Studio at 2026-11-17T09:33:24Z (ran 29 Oct 00:45 to 12 Nov 01:34, not enough impressions, Option A visible to all, already in THUMB_LEDGER.json; screenshot ~/_desk/j1130/t023_report_2026-11-17.png sha256 84449bb3ee0212b3e17da0a2078e9a67b03951dc326a17dee5ef9e20f9b8be4d). Clicking New test prompts 'Start a new experiment? This deletes your current experiment. Do you want to continue?'; selected Cancel per brief/Never list and verified clean reload with zero changes. Chief must explicitly authorize Continue on finished T023 to arm title-only B ('How Mendeleev's Periodic Table Predicted Missing Metals') or close J1130."
+        },
+        {
+          "at": "2026-11-17T12:10Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "New test requires protected delete-current-experiment confirmation; Cancelled per brief/Never list, opening HOS read-back PR and parking for Chief",
@@ -105552,7 +105557,8 @@
         "of": 3,
         "at": "2026-11-17T09:36Z",
         "by": "macbook"
-      }
+      },
+      "escalated_at": "2026-11-17T12:10Z"
     },
     {
       "id": "J1131",
