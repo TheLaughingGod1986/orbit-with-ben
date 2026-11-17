@@ -105044,10 +105044,10 @@
       "stage": "",
       "after": "J1129",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-17T09:26Z",
+      "eta": "2026-11-17T11:26Z",
       "created_by": "codex",
       "created_at": "2026-10-28T21:12Z",
       "result": "",
@@ -105511,6 +105511,11 @@
           "at": "2026-11-17T09:23Z",
           "by": "gemini",
           "what": "rerouted to cursor on cursor-grok-4-7: Chief sweep (J2979): J2812 verified T023 on HOS AL_-qlWko_g finished 12 Nov 01:34 and recorded it in THUMB_LEDGER.json (c890865242)"
+        },
+        {
+          "at": "2026-11-17T09:26Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "In HOS Studio (CDP 9222), arm the approved title-only Test & Compare on HOS 002 AL_-qlWko_g now that T023 is finished",
@@ -105526,7 +105531,15 @@
         "by": ""
       },
       "for": "cursor",
-      "model": "cursor-grok-4-7"
+      "model": "cursor-grok-4-7",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-17T09:26Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J1131",
