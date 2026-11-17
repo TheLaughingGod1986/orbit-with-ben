@@ -265615,13 +265615,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-17T11:00Z",
-      "eta": "2026-11-17T12:30Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T08:37Z",
-      "result": "",
+      "result": "PR #985 (macbook/J2980, 243ff36e7; stopped at open PR for Chief merge per AGENTS.md). Cause: models read runs.jsonl (12h, until=''), queue_eta read only mini-heartbeat chain (omitting cursor) + credit_flags, chief_relay ignored runs.jsonl/ledger resets and retried hourly, and stranded_jobs skipped non-rerouted --for jobs. Fix: unified chief_relay.agent_status/agent_states across dispatcher, models, and queueForecast; usage_reset_until reads ai_spend ledger resets (else 3h retry); addressed_jobs_to_reroute/reconcile_addressed moves --for jobs on down agents immediately when blocking Ben, past due, or >20 min urgent. Before (08:40Z): models.cursor red (last run out of usage J2976, until=''), queueForecast.cursor up=true. After (#985): both down/red with why='last run out of usage (J2976)' and matching until (2026-11-17T11:27:22Z, or ledger reset). Tests pass (test_jobs 67, test_queue_eta 9, test_chief_relay 114, test_board_publish 39).",
       "history": [
         {
           "at": "2026-11-17T08:37Z",
@@ -265697,6 +265697,11 @@
           "at": "2026-11-17T11:24Z",
           "by": "macbook-2",
           "what": "step 5 of 5 done: PR #985 opened on macbook/J2980 (243ff36e7); all test suites pass"
+        },
+        {
+          "at": "2026-11-17T11:24Z",
+          "by": "macbook-2",
+          "what": "done: PR #985 (macbook/J2980, 243ff36e7; stopped at open PR for Chief merge per AGENTS.md). Cause: models read runs.jsonl (12h, until=''), queue_eta read only mini-heartbeat chain (omitting cursor) + credit_flags, chief_relay ignored runs.jsonl/ledger resets and retried hourly, and stranded_jobs skipped non-rerouted --for jobs. Fix: unified chief_relay.agent_status/agent_states across dispatcher, models, and queueForecast; usage_reset_until reads ai_spend ledger resets (else 3h retry); addressed_jobs_to_reroute/reconcile_addressed moves --for jobs on down agents immediately when blocking Ben, past due, or >20 min urgent. Before (08:40Z): models.cursor red (last run out of usage J2976, until=''), queueForecast.cursor up=true. After (#985): both down/red with why='last run out of usage (J2976)' and matching until (2026-11-17T11:27:22Z, or ledger reset). Tests pass (test_jobs 67, test_queue_eta 9, test_chief_relay 114, test_board_publish 39)."
         }
       ],
       "remaining_action": "Finishing J2980 and posting report on the studio thread",
@@ -265710,7 +265715,8 @@
         "at": "2026-11-17T11:24Z",
         "by": "macbook-2",
         "note": "PR #985 opened on macbook/J2980 (243ff36e7); all test suites pass"
-      }
+      },
+      "done_ref": "243ff36e7"
     },
     {
       "id": "J2981",
