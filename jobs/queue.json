@@ -1,5 +1,5 @@
 {
-  "next_id": 3011,
+  "next_id": 3012,
   "jobs": [
     {
       "id": "J0001",
@@ -255540,6 +255540,11 @@
           "at": "2026-11-14T22:43Z",
           "by": "macbook-2",
           "what": "done: PR #938 open: prepared 'Every Planet Explained in 10 Minutes (Mercury to Neptune)' (OWB:064) format test go/no-go (25/25; 'every planet explained' 20,191 searches/mo at 45/100 comp; 172.8K/68K/35K/10.8K small-channel breakouts; NatGeo 12.4M, Astrum 9.28M, NASA JPL 5.81M, Secrets of the Universe 3.85M neighbours), per-planet shelf audit (6 of 8 planets already have finished OWB long masters on disk: Venus 023, Earth 027/031, Mars 025, Jupiter 020, Saturn 021, Uranus 033; all 8 have verified SOURCES.md tables including Mercury 036/044 and Neptune 035; 80-85% shelf reuse, £0 cash, 0 Flow/Vertex credits, ~8k ElevenLabs chars, ~5h build after lock), 3 search-led titles <=70 chars, 3 thumbnail concepts (ALL 8 WORLDS, 464°C TO -224°C, REAL NASA PHOTOS), proposed Wed 16 Dec or Sun 20 Dec 18:00 slot (moves zero dated films), and OWB:064 card on Ben's board."
+        },
+        {
+          "at": "2026-11-17T18:44Z",
+          "by": "claude",
+          "what": "Ben locked it in chat 17 Nov 18:44Z (\"Lock it.\"); build queued as J3011."
         }
       ],
       "remaining_action": "Shelf audit complete; writing go/no-go document and 064 project files",
@@ -267830,6 +267835,36 @@
         "condition": "The 18 Nov 2026 morning tracker snapshot is available after the 06:40 UTC run",
         "check_at": "2026-11-18T06:45:00Z"
       }
+    },
+    {
+      "id": "J3011",
+      "title": "Orbit: Ben locked the every-planet film, book its slot and start the build",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 18:44Z): \"Lock it.\"** This is Ben's topic lock on Orbit film 064, \"Every Planet Explained in 10 Minutes (Mercury to Neptune)\", the format test in the long-video plan (studio/plan.json step `planets`; go/no-go J2863 and J2875, PR #938; `02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/11_Upload-Package/TOPIC_GO_NO_GO_SHEET.md`). Claude recommended locking it (about 20,000 searches a month for \"every planet explained\", six of the eight planets already have finished Orbit films to reuse, £0).\n\n**Do.**\n1. Record the lock with this quote as evidence in the film's `status.json` and `STATUS.md`.\n2. Book the slot: Wed 16 Dec 2026 at 18:00 London, or Sun 20 Dec 18:00 if 16 Dec is taken; move no dated film.\n3. Update `studio/plan.json`: the `planets` step gets its date, `needsBen` is removed, and the card no longer says \"1 thing needs you\".\n4. Queue the build exactly as the go/no-go sheet's section 6 says (script and sources, narration, shelf picture with code graphics and three thumbnails, master edit with QA, then Ben's watch on the board), with film 064 and the right stage on each job, and due dates that land the cut on Ben's board by Fri 11 Dec.\n5. **Voice budget:** about 8,000 characters. Ben's ElevenLabs plan has about 79,000 left this cycle, and the new WW2 channel's two pilot films take up to 42,000, so this fits; do not change or top up the plan.\n\n**Guards.** £0 (no Flow or Vertex credits; the sheet's shelf-reuse plan). Orbit's own rules apply to this film. No account address in any file.\n\n**Result.** The slot booked, the build jobs' IDs, and the plan card's new line.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T18:44Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T18:44Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Record Ben's lock on film 064, book Wed 16 Dec 18:00 (or Sun 20 Dec), clear the plan card, queue the build per the go/no-go sheet",
+      "due": "2026-11-19T12:00:00Z",
+      "kind": "chief",
+      "plain": "Ben said yes to the every-planet film: book its date and start making it"
     }
   ],
   "focus": [
