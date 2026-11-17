@@ -1,0 +1,30 @@
+# Shorts brief
+
+Rules: `00_Brand/Channel-Setup/FAMILIAR_DANGER_STRATEGY.md`, `STUDIO_PLAYBOOK.md` §3 and §7, and `.cursor/rules/orbit-build-shorts.mdc`.
+
+- **Two targets (Ben, 24 Oct 2026): 60%+ stayed-to-watch and 70%+ average viewed (aim 100%+).** For % viewed: length, pacing every 2.5–4 s, payoff late, loop ending; see *70% average viewed*. For stayed-to-watch: frame 0 is moving payoff footage, the hook is said by 0.5 s, no intro or meta-promise, first cut by 3 s, and a loop ending. See `.cursor/rules/orbit-build-shorts.mdc` → *60% stayed-to-watch*.
+- **One question (Keeper score, Ben, 26 Oct 2026):** the title and the first VO line ask one question ("Could a Robot Survive Touching the Sun?", "Why Does a Day on Mercury Last Two of Its Years?"), and the Short answers it. Never a statement or teaser title ("Saturn's Rings Are on a Clock", 12 views). No off-week Saturn Shorts. Sun Shorts wait until the `h8HGfyShEHI` thumbnail test ends on 1 Nov. See `.cursor/rules/orbit-build-shorts.mdc` → *Keeper score*.
+- **Already approved ships as is (Chief, 26 Oct 2026; 12 Oct precedent):** anything Ben OK'd and scheduled before these rules keeps its cut and slot (Saturn `6dcL5rBmHPM` Fri 30 Oct, melt lead `_a66uhRDips` Thu 29 Oct, Venus size `hZH0C7fpCk4` Mon 2 Nov). The rules apply to cuts made from 26 Oct on.
+- Normal format: 22–27 s (standalone fact Shorts 22–24 s; never under 22 s; exempt: the compilation, the J0216 test Shorts until 20 Nov, and Test A opening Shorts until Test A's final readout), 55–65 spoken words (standalone at most 50); use only separately approved length exceptions.
+- **First-second rule (`0.0–1.5 s`, Ben 8 Nov 2026 / `J2429`; Chief `J0900`/`J0907`):** Frame 0 (`t = 0.00 s`) must already show the named subject in real continuous motion (`frame0_diff_0_1_5s >= 1.50`, `motion_0_1s >= 10.0`, no slow fade-in from black) at full-bleed `9:16` (`cover` mode, `>=60%` subject, `<=30%` dark sky, no `fit` letterbox bars, no `16:9` blur-pad bands, never Orbit at frame 0), with the 2–4 word hook caption (white + `#FFE000` yellow highlight word) already stamped on frame 0 (`t = 0.00 s`). VO word 1 starts at `<= 0.15 s` and names the planet/moon/star + surprise/question inside `0.0–1.5 s` (no pause `> 0.15 s`, no mid-paragraph pronoun lift, no `"Stay, and I'll show you"` meta-promise). Cut 1 lands by `<= 2.5–3.0 s` (`<= 2.8 s` under E1).
+- **No `0.5 s` pauses or static zooms in `4–8 s` (Chief, J0900/J0907, 24 Oct 2026):** Trim the sentence-1 VO pause at `4–5 s` to `<0.25 s` and cut at `2.8–4.5 s` to a fresh moving plate (`≤5 s` max hold) — never a `0.5 s` pause into a static crop-zoom hold in `4–8 s`.
+- The promoted long’s exact listing title appears at 9–14 s; captions and music cover the full Short, and the last 4 s loop to the opening picture.
+- Gate every export with `gate_shorts_open.py check <mp4> --air-date YYYY-MM-DD`; Related video and the description link point to the parent long (J0216 standalone test Shorts stay unlinked until 20 Nov).
+- One Short a day; social goes through Buffer at the YouTube go-public time.
+
+## Approved Learnings checklist — Chief, J0871 / J0874 / J0900 / J0907 (23–24 Oct 2026)
+
+Fill this in for each new Short brief. The numbers refer to the studio Learnings; #4 and #5 remain tests.
+
+- [ ] **#1 · Title:** a positive question naming the subject.
+- [ ] **#2 · First-second rule (`0.0–1.5 s`, J2429) — Frame 0 motion + hook text + spoken hook `< 1.5 s`:** open full-bleed `9:16` (`cover` mode, `>=60%` subject, `<=30%` dark sky, no `fit` bars, no `16:9` blur-pad, no slow fade-in, no Orbit at `0.0 s`) on the moving payoff object (`frame0_diff_0_1_5s >= 1.50`), with the 2–4 word hook caption already rendered on frame 0 (`t = 0.00 s`), VO word 1 at `<= 0.15 s`, and the named planet/star + surprise/question completed inside `0.0–1.5 s` (no pause `> 0.15 s`, no meta-promise).
+- [ ] **#3 · Motion (no static zoom in 4–8 s):** a visible or audible change every 3–4 s; no freeze-frame under VO and no static crop-zoom holds in `4–8 s` (`≤5 s` max plate hold). Record the beat times: ___.
+- [ ] **#6 · Payoff:** hold the answer until at least 70% of runtime. Runtime: ___ s; earliest payoff (0.70 × runtime): ___ s; actual payoff: ___ s. Never answer the title question or give a false finish during the 9–14 s promo banner or as it clears.
+- [ ] **#7 · Seam (no 0.5 s pause in 4–8 s):** bridge the 4–5 s sentence boundary (`<0.25 s` VO breath, never a `0.5 s` pause) straight into a concrete number or mechanism on a fresh moving plate at `2.8–4.5 s`, with no Orbit reaction or meta-promise (such as “Stay and I’ll show you”). Bridge line and cut time: ___.
+- [ ] **#8 · 60% stayed-to-watch (Ben, 24 Oct 2026; rule file → *60% stayed-to-watch*):** frame-0 source and zoom (moving video; a still pushed ≤1.10 fails): ___; first word ≤0.15 s: ___; surprise word ≤1.5 s: ___; first cut ≤3.0 s: ___; no meta-promise, logo or intro (y/n): ___; last word → loop ≤1.5 s: ___; last line runs into line 1 (y/n): ___.
+- [ ] **#9 · 70% average viewed, aim 100%+ (Ben, 24 Oct 2026; rule file → *70% average viewed*):** runtime ___ s (standalone 22–24, lifted toward 23); longest plate hold ≤4 s: ___; payoff ≥0.70 × runtime: ___; last word → loop ≤1.5 s: ___; last line + line 1 read as one sentence: "___"; matched-cut loop to frame 0 (y/n): ___.
+
+**Tests only — record the comparison, do not apply as general rules:**
+
+- [ ] **#4 · HOS length test:** the next two HOS Shorts from 006–007 get 12–15 s test cuts, compared with the 25 s cuts. Test Short, paired cut and readout: ___. This limited test does not change the normal 22–27 s length or authorise an OWB length change; submit its timing/gate conflicts to Chief before shipping.
+- [ ] **#5 · Test & Compare eligibility:** test only on new uploads (first two weeks) or videos with at least 1,000 impressions per fortnight. Record upload date or impressions and the 14-day window: ___. Preserve any running test. This is thumbnail-test eligibility, not a Shorts-cover test instruction.

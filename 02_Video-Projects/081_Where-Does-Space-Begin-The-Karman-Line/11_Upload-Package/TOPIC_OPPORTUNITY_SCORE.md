@@ -1,0 +1,16 @@
+# Topic Opportunity Score — `OWB:081` Where Does Space Begin? (The 100 km Kármán Line Explained)
+
+- **Working Title (Primary Rule 26, 57 chars):** `Where Does Space Begin? (The 100 km Kármán Line Explained)`
+- **Autocomplete + Geocorona Twist Variant (Rule 26, 67 chars):** `Where Does Space Begin? (And Why Earth's Air Reaches Past the Moon)`
+- **Compact Rule 15 Title (41 chars):** `Where Does Space Begin? (100 km vs 80 km)`
+- **Contingency Complete-Tour Title (`studio/plan.json`, 56 chars):** `Every Layer of Earth's Atmosphere Explained in 10 Minutes`
+- **Date:** 2026-11-17 (`J2974` brief)
+
+| Gate | Criterion | Score (`0–5`) | Evidence |
+|---|---|:---:|---|
+| 1 | Search Demand & Autocomplete (`Rule 26` + `studio/plan.json` Contingency) | **4.80 / 5** | `#1` signed-out YouTube GB autocomplete matches across all 3 core queries (`where does space begin`, `karman line explained`, and `layers of the atmosphere`), with `6,917,481` views (`Seeker` *No Human Has Ever Left Earth’s Atmosphere*), `3,857,087` (`Peekaboo Kidz`), `1,758,022` (`StarTalk`), `1,021,078` (`KINETIC SCHOOL`), `485,507` (`Seeker`), and `478,076` (`Astrum`) |
+| 2 | Own-Channel Proof (`Rule 31` Ground-to-Orbit Cluster) | **4.80 / 5** | `T9fVlG3CCzU` (*What Are Shooting Stars Really Made Of?*) is OWB's #1 video of all time by total views (`1,288` Studio views, `49.92%` stayed, `#1` in YouTube search with `89` search views), `VfDm3E2bUgU` (*Why Do Astronauts See 16 Sunrises a Day?*) earned `1,091` views (`64.18 vpd`), and `OVLv9dxTcpE` (*What If Earth Stopped Spinning?*) earned `892` views (`75.86%` AVD `PASS`) |
+| 3 | Curiosity Gap & `J2428` Hook | **4.80 / 5** | Why space officially begins just `100 km` (`1 hour at motorway speed`) overhead where `von Kármán` proved airplane wings must exceed `28,000 km/h` orbital speed to generate lift, why the US sets the boundary at `80.47 km` (`McDowell 2018`), why the `ISS` at `400 km` still orbits inside the `2,000 °C` thermosphere, and how `SOHO/SWAN` proved Earth's `630,000-km` hydrogen `Geocorona` swallows the Moon |
+| 4 | Visual Viability & Primary Sources | **4.80 / 5** | Real NASA `ISS` atmospheric-limb & aurora time-lapses, `X-15` rocket-plane wing-camera footage, `Apollo 16` far-UV Geocorona photography, and `SOHO/SWAN` maps + `von Kármán 1957`, `McDowell 2018` (*Acta Astronautica* `151`, `668`), `U.S. Standard Atmosphere 1976`, `Carruthers & Page 1972` (*Science* `177`, `788`), and `Baliukin et al. 2019` (*JGR Space Physics* `124`, `861`) |
+| 5 | Big-Neighbour Pool (`≥3` at `1M+`) | **4.80 / 5** | `15` strictly on-topic `1M+` videos in the main table (`1.02M` to `14.09M` views, combining all `11` strictly on-topic `≥1M` education videos in `neighbours.json`: `Kurzgesagt` `14.09M`, Tier-1 `TED` Chris Hadfield `10.19M`, `CrashCourse` `5.73M`/`2.82M`/`1.83M`/`1.77M`/`1.10M`, Tier-1 `TED-Ed` `2.80M`/`1.79M`/`1.38M`/`1.38M`, with `4` on-topic `≥1M` videos in `public_search.json`: `Seeker` `6.92M`, `Peekaboo Kidz` `3.86M`, `StarTalk` `1.76M`, `KINETIC SCHOOL` `1.02M`) verified in saved evidence JSONs |
+| **Total** | **`24.00 / 25` (`96 / 100`)** | **READY FOR RULE-E REVIEW** | Appended to `jobs/WIP.json` `next` (`J2974`; waits on `studio/plan.json` format-test readout + Rule G slot) |
