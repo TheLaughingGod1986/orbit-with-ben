@@ -250689,9 +250689,14 @@
           "at": "2026-11-17T16:48Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Demonstrated audio_input recorded; auditioned hos_009_wonder_v02.mp3 (180.04s) and 168-186s transition bed/mix via read_file"
+        },
+        {
+          "at": "2026-11-17T16:50Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Auditioned all 5 parts of locked-VO reference mix + tail, teach_v01, and v02 stems via read_file; verified all local and NAS SHA-256 hashes"
         }
       ],
-      "remaining_action": "Audition full joined score v02, teach_v01, and entire five-part locked-VO reference mix + tail via read_file, and verify exact SHA-256 hashes and music_gate results",
+      "remaining_action": "Write and commit EAR_REVIEW_J2807.md in clean HOS worktree with timestamped audition findings, hash checks, and complete-library music_gate verification",
       "due": "2026-11-17T18:00:00Z",
       "kind": "review",
       "required_capabilities": [
@@ -250708,11 +250713,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-17T16:48Z",
+        "at": "2026-11-17T16:50Z",
         "by": "gemini",
-        "note": "Demonstrated audio_input recorded; auditioned hos_009_wonder_v02.mp3 (180.04s) and 168-186s transition bed/mix via read_"
+        "note": "Auditioned all 5 parts of locked-VO reference mix + tail, teach_v01, and v02 stems via read_file; verified all local and"
       },
       "taskKeys": [
         "HOS:009"
