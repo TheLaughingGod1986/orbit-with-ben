@@ -200,15 +200,19 @@ def chief_work(at: dt.datetime, state: pathlib.Path, agent: str, jobs: list) -> 
 
 
 def models_status(at: dt.datetime, jobs: list | None = None, state: pathlib.Path | None = None,
-                  flags_file: pathlib.Path | None = None) -> dict:
-    """Traffic lights for the board's Models row from what the relay already records on the Mini (read-only):
-    ~/_desk/state/chief/{chain.json, current.json, down/*.json, heartbeat/*, runs.jsonl}, scripts/credit_flags.json and
-    live jobs blocked on a provider's credit. green = available, red = out of usage/credit or not running (the relay
-    routes round it), amber = no recent reading."""
+                  flags_file: pathlib.Path | None = None, studio: pathlib.Path | None = None) -> dict:
+    """Traffic lights for the board's Models row from one shared source (`chief_relay.agent_states`):
+    ~/_desk/state/chief/{chain.json, current.json, down/*.json, heartbeat/*, runs.jsonl}, scripts/credit_flags.json,
+    ai_spend usage reset readings, and live jobs blocked on a provider's credit. green = available, red = out of
+    usage/credit or not running (the relay and queueForecast route round it), amber = no recent reading."""
+    import chief_relay as relay
+    import routing
     state = state or CHIEF_STATE
-    flags_file = flags_file or (wt() / "scripts" / "credit_flags.json")
+    studio_dir = studio or wt()
+    flags_file = flags_file or (studio_dir / "scripts" / "credit_flags.json")
     chain = _read_json(state / "chain.json") or {}
     rows = {r.get("agent"): r for r in chain.get("rows") or [] if isinstance(r, dict)}
+    worker_rows = {r.get("agent"): r for r in chain.get("workers") or [] if isinstance(r, dict)}
     checked = _when(chain.get("at"))
     fresh = bool(checked and (at - checked) <= dt.timedelta(minutes=MODEL_STALE_MIN))
     flags = {}
@@ -216,18 +220,8 @@ def models_status(at: dt.datetime, jobs: list | None = None, state: pathlib.Path
         until = _when((v or {}).get("out_until"))
         if until and until > at:
             flags[k] = {"why": (v or {}).get("reason") or "out of credit", "until": iso(until)}
-    runs = {}
-    try:
-        lines = (state / "runs.jsonl").read_text().splitlines()[-400:]
-    except OSError:
-        lines = []
-    for line in lines:
-        try:
-            r = json.loads(line)
-        except ValueError:
-            continue
-        if r.get("worker"):
-            runs[r["worker"]] = r  # newest per worker wins
+    runs = relay.last_worker_runs(state)
+    states = relay.agent_states(at, state=state, studio=studio_dir, flags_file=flags_file, use_chain=True)
     out = []
     for key, label in MODEL_ROWS:
         row = {"id": key, "name": label, "status": "amber", "why": "no recent reading", "until": "", "lastSeen": ""}
@@ -237,26 +231,8 @@ def models_status(at: dt.datetime, jobs: list | None = None, state: pathlib.Path
         except OSError:
             pass
         row["lastSeen"] = iso(seen) if seen else ""
-        down = _read_json(state / "down" / f"{key}.json") or {}
-        down_until = _when(down.get("until"))
         last = runs.get(key) or {}
         last_at = _when(last.get("at"))
-        if key in flags:
-            row.update(status="red", why=flags[key]["why"], until=flags[key]["until"])
-        elif down and (down_until is None or down_until > at):
-            row.update(status="red", why=down.get("reason") or "marked down", until=iso(down_until) if down_until else "")
-        elif key in rows and not rows[key].get("up"):
-            row.update(status="red" if fresh else "amber", why=str(rows[key].get("why") or "down"))
-        elif key in rows and rows[key].get("up") and fresh:
-            row.update(status="green", why=str(rows[key].get("why") or "ready"))
-        elif last.get("out_of_usage") and last_at and at - last_at < dt.timedelta(hours=12):
-            row.update(status="red", why=f"last run out of usage ({last.get('job', '')})")
-        elif key in rows and rows[key].get("up"):
-            row.update(status="amber", why=str(rows[key].get("why") or "ready"))
-        elif last_at and at - last_at < dt.timedelta(hours=24) and last.get("exit") == 0:
-            row.update(status="green", why=f"ran {last.get('job', '')} on {last.get('model') or key}")
-        elif seen and at - seen < dt.timedelta(hours=6):
-            row.update(status="green", why="active in the last 6 h")
         if key in ("elevenlabs", "vertex"):
             pat = "eleven" if key == "elevenlabs" else ("vertex", "flow", "veo", "omni")
             hit = next((v for k, v in flags.items() if any(t in k.lower() for t in ((pat,) if isinstance(pat, str) else pat))), None)
@@ -271,6 +247,21 @@ def models_status(at: dt.datetime, jobs: list | None = None, state: pathlib.Path
                 row.update(status="red", why=f"{blocked.get('id')}: {txt.replace('blocked: ', '')[:120]}")
             else:
                 row.update(status="amber", why="not tracked yet")
+            out.append(row)
+            continue
+        st = states.get(key) or relay.agent_status(key, at, state=state, studio=studio_dir, flags_file=flags_file,
+                                                   use_chain=True, runs=runs)
+        if not st["up"]:
+            has_mark = bool(st["until"] or key in flags or (state / "down" / f"{key}.json").is_file() or fresh)
+            row.update(status="red" if has_mark else "amber", why=st["reason"], until=st["until"])
+        elif (key in rows or key in worker_rows) and fresh:
+            row.update(status="green", why=st["why"])
+        elif key in rows or key in worker_rows:
+            row.update(status="amber", why=st["why"])
+        elif last_at and at - last_at < dt.timedelta(hours=24) and last.get("exit") == 0:
+            row.update(status="green", why=f"ran {last.get('job', '')} on {last.get('model') or key}")
+        elif seen and at - seen < dt.timedelta(hours=6):
+            row.update(status="green", why="active in the last 6 h")
         out.append(row)
     cur = _read_json(state / "current.json") or {}
     agent = cur.get("agent") or ""
@@ -279,9 +270,13 @@ def models_status(at: dt.datetime, jobs: list | None = None, state: pathlib.Path
     return {"checkedAt": iso(checked) if checked else "", "fresh": fresh, "chief": chief, "models": out,
             "chiefWork": chief_work(at, state, agent, jobs or []),
             "runner": _read_json(state / "runner.json") or {},
+            "workers": [{"agent": w, "name": NAMES.get(w, w), "up": bool(states[w]["up"]),
+                         "why": str(states[w]["reason"] or "")[:120], "until": states[w]["until"]}
+                        for w in routing.MINI_WORKERS if w in states],
             "chiefChain": [{"agent": r.get("agent"), "name": NAMES.get(r.get("agent"), r.get("agent")),
-                            "up": bool(r.get("up")), "why": str(r.get("why") or "")[:120],
-                            "until": (flags.get(r.get("agent")) or {}).get("until", "")}
+                            "up": bool(states[r["agent"]]["up"]) if r.get("agent") in states else bool(r.get("up")),
+                            "why": str((states[r["agent"]]["why"] if r.get("agent") in states else r.get("why")) or "")[:120],
+                            "until": states[r["agent"]]["until"] if r.get("agent") in states else (flags.get(r.get("agent")) or {}).get("until", "")}
                            for r in chain.get("rows") or [] if isinstance(r, dict)]}
 
 
@@ -740,17 +735,19 @@ def quick_key(remote=ls_remote) -> str | None:
         parts.append((HOME / "_desk" / "state" / "chief" / "current.json").read_text())
     except OSError:
         parts.append("")
-    for name in ("active.json", "inbox.json", "execution.json", "runner.json", "capabilities.json"):
+    for name in ("active.json", "inbox.json", "execution.json", "runner.json", "capabilities.json", "chain.json", "claude_beat.json"):
         try:
             parts.append((CHIEF_STATE / name).read_text())
         except OSError:
             parts.append("")
-    # Process liveness and lease expiry can change without a queue commit.
+    # Process liveness and lease/down-mark expiry can change without a queue commit.
     parts.append(chief_work(now(), CHIEF_STATE, (_read_json(CHIEF_STATE / "current.json") or {}).get("agent", ""), [])["active"])
     import chief_relay as relay
-    parts.append(relay.current_execution(now()))  # launch, exit and expiry invalidate the quick cache
+    at_now = now()
+    parts.append(relay.current_execution(at_now))  # launch, exit and expiry invalidate the quick cache
     parts.append({a: r for a,r in relay.worker_capabilities().items()
-                  if workflow.timestamp(r.get("expiresAt")) and workflow.timestamp(r["expiresAt"]) > now()})
+                  if workflow.timestamp(r.get("expiresAt")) and workflow.timestamp(r["expiresAt"]) > at_now})
+    parts.append({a: (st["up"], st["until"]) for a, st in relay.agent_states(at_now, state=CHIEF_STATE).items()})
     return digest(parts)
 
 
@@ -767,10 +764,14 @@ def dispatch_snapshot(board: dict, at: dt.datetime, queue_path: pathlib.Path | N
     path = queue_path or wt() / "jobs" / "queue.json"
     data = _read_json(path) or {"jobs": (board.get(QUEUE) or {}).get("jobs") or []}
     rows = (board.get("models") or {}).get("chiefChain") or []
-    up = {r.get("agent") for r in rows if r.get("up") and r.get("agent") in routing.MINI_WORKERS}
-    # Cursor is a specialist, not in the Chief chain.
-    model_rows = (board.get("models") or {}).get("models") or []
-    up.update(m.get("id") for m in model_rows if m.get("status") == "green" and m.get("id") in routing.MINI_WORKERS)
+    workers = (board.get("models") or {}).get("workers")
+    if isinstance(workers, list) and workers:
+        up = {w.get("agent") for w in workers if w.get("up") and w.get("agent") in routing.MINI_WORKERS}
+    else:
+        up = {r.get("agent") for r in rows if r.get("up") and r.get("agent") in routing.MINI_WORKERS}
+        # Cursor is a specialist, not in the Chief chain.
+        model_rows = (board.get("models") or {}).get("models") or []
+        up.update(m.get("id") for m in model_rows if m.get("status") == "green" and m.get("id") in routing.MINI_WORKERS)
     chief = ((board.get("models") or {}).get("chief") or {}).get("agent") or ""
     pending = [j for j in data.get("jobs", []) if workflow.is_review(j)]
     due = relay.due_chief_reviews(pending, chief, at)
@@ -817,7 +818,9 @@ def run_once(a) -> int:
     try:  # Queue forecast: who each job waits for, its place in line, when it starts (Ben, 5 Nov 2026)
         import queue_eta
         queue = _read_json(wt() / "jobs" / "queue.json") or {"jobs": []}
-        board["queueForecast"] = queue_eta.section(queue, *heartbeats(), at)
+        board["queueForecast"] = queue_eta.section(queue, *heartbeats(), at, models=board.get("models"),
+                                                   state=CHIEF_STATE, studio=wt(),
+                                                   flags_file=wt() / "scripts" / "credit_flags.json")
     except Exception as e:  # noqa: BLE001
         log(f"queue forecast not built: {e}")
     try:  # Last 24 hours on the home page (Ben, 4 Nov 2026); never blocks the board push
