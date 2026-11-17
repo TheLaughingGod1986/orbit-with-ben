@@ -250551,13 +250551,13 @@
       "stage": "edit",
       "after": "J2805",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-17T16:05Z",
-      "eta": "2026-11-17T16:25Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-14T03:44Z",
-      "result": "",
+      "result": "Delivered HOS 009 wonder_v02 (180.04s, song RSFcaVQewwmuA3OjSPz3, sha b38ae892, 2475 subscription credits <= 3000 cap, GBP0 cash, overage 0, 77389 left), retained teach_v01 (sha 4c1f0a17, 0 new credits), built hos_009_score_joined_v02.wav (535.33s, sha 6fc8628a, 3s equal-power crossfade 175.28-178.28s), 5 v02 stems, and 4 VO audition mixes in Mini local + studio-live NAS (hashes verified; all v01/VO/diagram locks preserved). Unchanged production music_gate PASS across complete 89-bed library (>=77 min, 0 unreadable, max similarity 0.6615 < 0.80). Provenance/plans/gate in HOS PR #636 (bda25cec, unmerged); desk report #6954489223. Not accepted here; J2807 audio_input review is now unlocked, J2808 Chief disposition follows, J2035/J2171 stay held.",
       "history": [
         {
           "at": "2026-11-14T03:44Z",
@@ -250608,6 +250608,11 @@
           "at": "2026-11-17T16:42Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Posted HOS desk report #6954489223 and verified PR #636 (bda25cec); closing J2806 to hand off to J2807 audio review"
+        },
+        {
+          "at": "2026-11-17T16:42Z",
+          "by": "gemini",
+          "what": "done: Delivered HOS 009 wonder_v02 (180.04s, song RSFcaVQewwmuA3OjSPz3, sha b38ae892, 2475 subscription credits <= 3000 cap, GBP0 cash, overage 0, 77389 left), retained teach_v01 (sha 4c1f0a17, 0 new credits), built hos_009_score_joined_v02.wav (535.33s, sha 6fc8628a, 3s equal-power crossfade 175.28-178.28s), 5 v02 stems, and 4 VO audition mixes in Mini local + studio-live NAS (hashes verified; all v01/VO/diagram locks preserved). Unchanged production music_gate PASS across complete 89-bed library (>=77 min, 0 unreadable, max similarity 0.6615 < 0.80). Provenance/plans/gate in HOS PR #636 (bda25cec, unmerged); desk report #6954489223. Not accepted here; J2807 audio_input review is now unlocked, J2808 Chief disposition follows, J2035/J2171 stay held."
         }
       ],
       "remaining_action": "Close J2806 and unlock J2807 audio review",
@@ -250633,7 +250638,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/636"
     },
     {
       "id": "J2807",
