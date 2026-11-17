@@ -614,3 +614,10 @@ class PublicStrings(unittest.TestCase):
         self.assertEqual((clean["count"], clean["flag"]), (7, True))
         self.assertNotIn("/Users/", json.dumps(clean))
         self.assertIn("/Users/", json.dumps(raw))
+
+    def test_encoded_legacy_history_does_not_republish_home_paths(self):
+        history = bp.pack_updates({"edits": [{"ops": [["set", "note", "/Users/example/work"]]}]})
+        packed = bp.updates_payload({"note": "~/work"}, None, history, "")
+        decoded = bp.unpack_updates(packed)
+        self.assertEqual(decoded["edits"], [])
+        self.assertNotIn("/Users/", json.dumps(decoded))

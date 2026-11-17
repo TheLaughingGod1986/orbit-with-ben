@@ -648,7 +648,10 @@ def updates_payload(board, previous, history, tracker):
     """Keep recent edits within 14 KB on the wire, including during frequent publishes."""
     revision = digest(board)
     tracker_hash = hashlib.sha256((tracker or "").encode()).hexdigest()
-    edits = list(unpack_updates(history).get("edits") or [])
+    decoded = unpack_updates(history)
+    # Old encoded edits can contain home paths. Drop that chain rather than change
+    # its contents under existing revision hashes; clients can fetch a fresh snapshot.
+    edits = list(decoded.get("edits") or []) if public_strings(decoded) == decoded else []
     if previous is not None and digest(previous) != revision:
         previous_bytes = json.dumps(previous, ensure_ascii=False, separators=(",", ":")) + "\n"
         edits.append({"from": digest(previous), "to": revision,
