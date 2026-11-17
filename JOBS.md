@@ -78,7 +78,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2927 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J2933 | mini | blocked | claudecode | – | 010 edit · qa · `mini-claude-opus-5-5` · Review HOS 010 Short A v01 and Short C v01 (J2172, PR #611) | J2172 |
 | J2951 | cloud | open | – | – | assembly · Stop the refill tick using 3-4 GB: read the acting Chief once per scan |  |
-| J2958 | mini | blocked | claudecode | – | 007 upload · studio · Upload HOS 007 Short eradication v06 (How Was Smallpox Eradicated?) Private, Sun 29 Nov 11:30 | 6914782767 |
+| J2958 | mini | open | – | – | 007 upload · studio · Upload HOS 007 Short eradication v06 (How Was Smallpox Eradicated?) Private, Sun 29 Nov 11:30 | 6914782767 |
 | J2965 | mini | claimed | macbook | 2026-11-17T02:11Z | 116 topic · for gemini · review · `gemini-argon` · HOS 116 Why Do We Get Goosebumps?: rule-E topic go/no-go review |  |
 | J2966 | mini | claimed | macbook-2 | 2026-11-17T02:15Z | 117 topic · for gemini · review · `gemini-argon` · HOS 117 Why Don't Woodpeckers Get Concussions?: rule-E topic go/no-go review |  |
 | J2967 | any | open | – | – | script · OWB: learn from our data, add two new films to the backlog |  |
