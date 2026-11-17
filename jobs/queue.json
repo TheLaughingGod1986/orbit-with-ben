@@ -1,5 +1,5 @@
 {
-  "next_id": 3005,
+  "next_id": 3007,
   "jobs": [
     {
       "id": "J0001",
@@ -267410,6 +267410,68 @@
         "at": "2026-11-17T17:42Z",
         "by": "macbook-2"
       }
+    },
+    {
+      "id": "J3005",
+      "title": "WW2 channel: packaging library, which titles and thumbnails beat their channel's normal views",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:43Z):** \"So how we're going to do the research and understand what video packaging and everything is needed and do well. What data are we going to gather to make sure we progress well here?\" New WW2 channel (Field Order History, `channels/ww2`); rules and playbook come with J2990. Ben is asked only to watch finished films.\n\n**Goal.** A packaging library for this niche: which titles and thumbnails beat their own channel's normal views, so every WW2 film's packaging is chosen from evidence.\n\n**Do (YouTube Data API, read-only, as in J2987; under 2,000 quota units).**\n1. Channels: WW2 Dossier (UChjdsX71krIrJ4WFyZYFvYA), WW2 Combat Files (UCwxjLJ5vMJ8WVXozeiYyEFg), Military Studio (UCWwCEHGxwFkf2Zf36mlEAug), INKTROOPS (UCcsQf3nDqM8o3O2BJhOTimQ), plus 8-10 established WW2 or military-history documentary channels between 100k and 2M subscribers (resolve by handle with channels.list forHandle, 1 unit each, or one search). For each, the last 100 uploads: title, length, views, publish date, thumbnail URL.\n2. Per video: views per day since publishing, and an outlier score = its views divided by its channel's median for videos of similar age. Long videos only (over 8 minutes).\n3. Tag every title: How/Why opener, number, money figure, superlative (most, only, first), nationality framing, named machine or operation, mystery or secret word, length in characters. Tag every thumbnail by looking at it: real archive photo or AI image, colourised or not, number of words, text colour, arrows or circles, a face, a machine, a map, overall brightness.\n4. Rank each tag by the median outlier score of the videos that carry it, with sample sizes, and list the 30 biggest outliers with their packaging. Say plainly which findings rest on too few videos.\n5. Save `channels/ww2/05_Analytics/PACKAGING_LIBRARY.json` and a one-page `PACKAGING_FINDINGS.md` (what to do, what to avoid, with numbers), and open a records PR. Repeat monthly (note it in the playbook's topic engine).\n\n**Guards.** Read-only API calls. £0. No token or account address in any file.\n\n**Result.** The PR, quota used, and the five strongest findings in one line each.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J2990",
+      "eta_min": 150,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:43Z",
+          "by": "claude",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "YouTube API pull of 12-14 WW2 channels' last 100 uploads, outlier scores, title and thumbnail tags ranked; PACKAGING_FINDINGS.md; records PR",
+      "due": "2026-11-20T18:00:00Z",
+      "for": "gemini",
+      "kind": "studio",
+      "plain": "Study what packaging works for WW2 videos so the new channel's titles and thumbnails start from evidence"
+    },
+    {
+      "id": "J3006",
+      "title": "WW2 channel: read its own analytics from day one, and a progress-to-monetisation card",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 17:43Z):** \"So how we're going to do the research and understand what video packaging and everything is needed and do well. What data are we going to gather to make sure we progress well here?\" New WW2 channel (Field Order History, `channels/ww2`); rules and playbook come with J2990. Ben is asked only to watch finished films.\n\n**Goal.** From the first upload, the studio reads this channel's own numbers and acts on them (playbook items 6-8), and the board shows how far the channel is from monetisation.\n\n**Build now, switch on when the channel exists.**\n1. Extend the studio's YouTube Analytics reading (the snapshot scripts used for Orbit and History of Science) to a third channel, read-only. Per film: impressions, impressions click-through rate, views, watch hours, average view duration and percentage, the audience-retention curve (keep 0:30, 1:00, 2:00 and each chapter start), traffic sources (browse, suggested, search, external, playlists), the top suggested-from videos (whose audience we are reaching), subscribers gained, new versus returning viewers, and Test & Compare results. Channel level: total public watch hours in the last 365 days, subscribers, top countries, age groups, and when viewers are on YouTube.\n2. Write each film's 48-hour and 7-day read into `channels/ww2/05_Analytics/READS.md` automatically, and flag the playbook's triggers (over 1,000 impressions with click-through under 3%: change the thumbnail, then the title; average view duration under 25%: tighten the next script's opening).\n3. A Field Order History card on the board: subscribers against 1,000, watch hours against 4,000 and 8,000, the date each is reached at the current 7-day pace, the 1 Feb 2027 line, and each film's click-through and average view duration against the channel median.\n4. Tests with fixture data. Open a pull request. It switches on when Ben has created the channel and authorised the studio to read it; that sign-in is his, and the Chief will ask him once, then.\n\n**Guards.** Read-only. £0. No token or account address in any file.\n\n**Result.** The PR, the fields read, and what is still needed to switch it on.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J2990",
+      "eta_min": 240,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T17:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T17:43Z",
+          "by": "claude",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Extend the YouTube Analytics reader to the WW2 channel, auto 48h/7d reads with playbook triggers, board card for 1,000 subs and 4,000/8,000 hours",
+      "due": "2026-11-26T18:00:00Z",
+      "for": "codex",
+      "kind": "studio",
+      "plain": "Track the new channel's numbers from its first video, and show on the board how close it is to being paid"
     }
   ],
   "focus": [
