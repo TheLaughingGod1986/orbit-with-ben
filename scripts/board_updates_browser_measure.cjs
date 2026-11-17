@@ -24,11 +24,20 @@ const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '
   // What "GitHub" holds: a real board.json shape with one film, the real tracker snapshot, a heartbeat.
   let board = JSON.parse(fs.readFileSync(process.argv[3], 'utf8'));
   let history = null;
-  const files = {'board.json': JSON.stringify(board), 'tracker.json': fs.readFileSync(path.join(__dirname, '../05_Analytics/dashboard/data.json'), 'utf8'), 'heartbeat.json': '{}'};
+  const files = {'board.json': '', 'tracker.json': fs.readFileSync(path.join(__dirname, '../05_Analytics/dashboard/data.json'), 'utf8'), 'heartbeat.json': '{}'};
+  // Use the publisher serializer for exact snapshot ETags (including its trailing newline).
   function publish(next) {
     const input = JSON.stringify({board:next, previous:board, history});
-    history = JSON.parse(execFileSync('python3', ['-c', 'import sys,json;sys.path.insert(0,"scripts");from board_publish import updates_payload;x=json.load(sys.stdin);print(json.dumps(updates_payload(x["board"],x["previous"],x["history"],"tracker")))'], {input, cwd:path.join(__dirname,'..'), encoding:'utf8'}));
-    board=next;files['board.json']=JSON.stringify(board);files['updates.json']=JSON.stringify(history);
+    const code = [
+      'import sys,json;sys.path.insert(0,"scripts")',
+      'from board_publish import updates_payload',
+      'x=json.load(sys.stdin)',
+      'snapshot=json.dumps(x["board"],ensure_ascii=False,separators=(",",":"))+chr(10)',
+      'print(json.dumps({"history":updates_payload(x["board"],x["previous"],x["history"],"tracker"),"snapshot":snapshot}))',
+    ].join('\n');
+    const published = JSON.parse(execFileSync('python3', ['-c', code],
+      {input, cwd:path.join(__dirname,'..'), encoding:'utf8', maxBuffer:16 * 1024 * 1024}));
+    history=published.history;board=next;files['board.json']=published.snapshot;files['updates.json']=JSON.stringify(history);
   }
   publish(structuredClone(board));
   const world = { private: false, head:HEAD };

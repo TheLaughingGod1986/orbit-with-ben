@@ -46,6 +46,11 @@
         }
       } catch (e) { if (e && e.signIn) throw e; }
       if (update && raw) {
+        // The CDN may serve an older branch copy while revalidating it. Keep the
+        // newer snapshot rather than treating a backward update as missed history.
+        if (Date.parse(update.publishedAt) < Date.parse(raw.publishedAt)) {
+          return new Response(JSON.stringify(raw));
+        }
         let next = raw, at = revision;
         try {
           for (const edit of update.edits) if (edit.from === at) { next = apply(next, edit.ops); at = edit.to; }
