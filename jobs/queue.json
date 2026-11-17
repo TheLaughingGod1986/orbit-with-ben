@@ -265667,19 +265667,23 @@
           "at": "2026-11-17T11:00Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T11:03Z",
+          "by": "macbook-2",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Add unit tests in test_queue_eta.py and test_chief_relay.py, run full test suite, and open PR for Chief",
+      "remaining_action": "Inspecting live board, mini-heartbeat, credit readings, and existing tests",
       "due": "2026-11-18T12:00:00Z",
       "for": "gemini",
       "kind": "studio",
       "plain": "Stop sending jobs to an agent the board already shows is out of usage, so nothing waits on it",
       "progress": {
-        "step": 3,
+        "step": 0,
         "of": 5,
-        "at": "2026-11-17T10:53Z",
-        "by": "gemini",
-        "note": "Implemented unified agent_status/agent_states across chief_relay, board_publish, and queue_eta on branch j2980-unified-a"
+        "at": "2026-11-17T11:03Z",
+        "by": "macbook-2"
       }
     },
     {
