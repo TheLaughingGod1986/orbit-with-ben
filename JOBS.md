@@ -54,7 +54,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2979 | mini | open | – | – | chief · Chief sweep: close stale board jobs, rule on the 26 parked jobs and the 75 open pull requests |  |
 | J2980 | mini | claimed | macbook-2 | 2026-11-17T12:30Z | for gemini · studio · Dispatch: an agent marked out of usage is down in the forecast too, and its jobs move on |  |
 | J2981 | mini | blocked | gemini | – | for gemini · studio · Board credits: four usage readings stale since 8-13 Nov (Cursor, Claude, Vertex, Grok) |  |
-| J2982 | mini | open | – | – | for gemini · studio · Board clean-up: plain times on the Agents tab, no Mac folder path in public data, Vercel leftovers out |  |
+| J2982 | mini | claimed | gemini | 2026-11-17T12:35Z | for gemini · studio · Board clean-up: plain times on the Agents tab, no Mac folder path in public data, Vercel leftovers out |  |
 
 Recently finished:
 
