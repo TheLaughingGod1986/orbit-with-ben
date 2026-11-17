@@ -266616,13 +266616,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-17T17:11Z",
-      "eta": "2026-11-17T18:11Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T14:26Z",
-      "result": "",
+      "result": "PR #991 (05_Analytics/new_channel_research/: SUMMARY.md, channels_53_raw.json, searches_16x2_raw.json, run_summary.json). Quota used: 3,323 units (search.list 3,200, videos.list 62, playlistItems.list 53, channels.list 8; 0 errors). 1) Pre-May-2025 channels (3/53): Wheely Explained (UCl3ps8skJPWeQeYBfp2J_CQ, created 2019-11-07, 1,700 subs, first upload 2026-06-23), Stellar (UCNSbgDRlAHM55EXMxEKPrmg, created 2022-07-21, 29,200 subs), Dinodust (UC_MCKNUrukBBApIg4-stGBg, created 2023-07-29, 17,100 subs). 2) Format outliers: GLK (UCSEaZLka_GS5v9vbepw6Ajg) is only 10.0% (5/50) >8m (41/50 Shorts <=60s, median 0:25) and Frames Of Myth (UC9eon0MV-L3JM0Wm8r7nwSg) is 52.0% (26/50) >8m (23/50 Shorts); 46/53 channels have 0 Shorts on page 1. 3) vidIQ WW2 benchmarks in J2989 match API (0% sub drift): WW2 Dossier (UChjdsX71krIrJ4WFyZYFvYA) created 2026-04-30, 14,300 subs, 98% >8m (med 49:18); Military Studio 2026-05-06, 7,580 subs; WW2 Combat Files 2026-07-11, 3,610 subs.",
       "history": [
         {
           "at": "2026-11-17T14:26Z",
@@ -266668,6 +266668,11 @@
           "at": "2026-11-17T17:27Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Saved raw JSON and SUMMARY.md in 05_Analytics/new_channel_research/ and opened PR #991 (all repo ratchets PASS)"
+        },
+        {
+          "at": "2026-11-17T17:27Z",
+          "by": "gemini",
+          "what": "done: PR #991 (05_Analytics/new_channel_research/: SUMMARY.md, channels_53_raw.json, searches_16x2_raw.json, run_summary.json). Quota used: 3,323 units (search.list 3,200, videos.list 62, playlistItems.list 53, channels.list 8; 0 errors). 1) Pre-May-2025 channels (3/53): Wheely Explained (UCl3ps8skJPWeQeYBfp2J_CQ, created 2019-11-07, 1,700 subs, first upload 2026-06-23), Stellar (UCNSbgDRlAHM55EXMxEKPrmg, created 2022-07-21, 29,200 subs), Dinodust (UC_MCKNUrukBBApIg4-stGBg, created 2023-07-29, 17,100 subs). 2) Format outliers: GLK (UCSEaZLka_GS5v9vbepw6Ajg) is only 10.0% (5/50) >8m (41/50 Shorts <=60s, median 0:25) and Frames Of Myth (UC9eon0MV-L3JM0Wm8r7nwSg) is 52.0% (26/50) >8m (23/50 Shorts); 46/53 channels have 0 Shorts on page 1. 3) vidIQ WW2 benchmarks in J2989 match API (0% sub drift): WW2 Dossier (UChjdsX71krIrJ4WFyZYFvYA) created 2026-04-30, 14,300 subs, 98% >8m (med 49:18); Military Studio 2026-05-06, 7,580 subs; WW2 Combat Files 2026-07-11, 3,610 subs."
         }
       ],
       "remaining_action": "Record result on J2987 and post studio thread report",
@@ -266681,7 +266686,8 @@
         "at": "2026-11-17T17:27Z",
         "by": "gemini",
         "note": "Saved raw JSON and SUMMARY.md in 05_Analytics/new_channel_research/ and opened PR #991 (all repo ratchets PASS)"
-      }
+      },
+      "done_ref": "#991"
     },
     {
       "id": "J2988",
