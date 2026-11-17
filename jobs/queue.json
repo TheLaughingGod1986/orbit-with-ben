@@ -237374,9 +237374,14 @@
           "at": "2026-11-17T11:41Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T11:44Z",
+          "by": "macbook",
+          "what": "step 4 of 5 done"
         }
       ],
-      "remaining_action": "Build and verify hos_008_short_C_v07.mp4 (-14.0 LUFS, <=1.50s surprise word), run all 7 gates + check_all.sh, push PR #556",
+      "remaining_action": "Verify restored v07 master, inspect 1fps/audio & all J2485 fixes, run check_all.sh, push PR #556",
       "kind": "assembly",
       "plain": "Re-cut HOS 008 Short C v04 from existing voice and picture to fix the J2485 review items",
       "rerouted_from": {
@@ -237391,7 +237396,7 @@
       "progress": {
         "step": 4,
         "of": 5,
-        "at": "2026-11-17T11:23Z",
+        "at": "2026-11-17T11:44Z",
         "by": "macbook"
       }
     },
