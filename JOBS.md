@@ -57,7 +57,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2996 | mini | open (after J2995) | – | – | WW2:002 edit · for codex · assembly · WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch |  |
 | J2997 | mini | open (after J2990) | – | – | WW2:003 script · for claudecode · script · WW2 pilot 003: script and sources, "Why the B-29 Superfortress Cost More Than the Atomic Bomb Project" |  |
 | J2998 | mini | open (after J2997) | – | – | WW2:003 picture · for gemini · image · WW2 pilot 003: gather the archive photos and draw the maps |  |
-| J2999 | mini | open (after J2990) | – | – | for gemini · studio · WW2 channel kit: profile picture, banner, description and upload template, ready for Ben |  |
+| J2999 | mini | claimed | gemini | 2026-11-17T21:42Z | for gemini · studio · WW2 channel kit: profile picture, banner, description and upload template, ready for Ben |  |
 | J3000 | mini | open (after J2991) | – | – | WW2:004 script · for codex · script · WW2 film 004: topic review, script and sources, "Why America's Submarine Torpedoes Failed for 21 Months in WW2" |  |
 | J3001 | mini | open (after J2991) | – | – | WW2:005 script · for claudecode · script · WW2 film 005: topic review, script and sources, "How One Old Destroyer Rammed Germany's Only Atlantic Dry Dock" |  |
 | J3002 | mini | open (after J2991) | – | – | WW2:006 script · for gemini · script · WW2 film 006: topic review, script and sources, "Why Britain Built Its Fastest WW2 Bomber Out of Plywood and Balsa" |  |
