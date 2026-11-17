@@ -1,5 +1,5 @@
 {
-  "next_id": 3007,
+  "next_id": 3008,
   "jobs": [
     {
       "id": "J0001",
@@ -267526,6 +267526,37 @@
       "for": "codex",
       "kind": "studio",
       "plain": "Track the new channel's numbers from its first video, and show on the board how close it is to being paid"
+    },
+    {
+      "id": "J3007",
+      "title": "Board: show the WW2 channel before launch, its films, its review and Ben's ticks",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 18:08Z):** \"Would I see this on the dashboard, even about a GitHub repo or a new channel yet?\" New WW2 channel, Field Order History (`channels/ww2`, rules and playbook from J2990). It has no YouTube channel and no GitHub repo yet, and it is not in `channels/channels.json` (only owb and hos are). Today the board shows its jobs in the Agents queue and, once J2990 merges, its plan on the Plan page, but nothing else.\n\n**The gap, found by Claude.**\n- The Videos, Review and Schedule tabs and the Channels section list only registered channels, so the WW2 films will not appear.\n- `05_Analytics/kanban/board_site/api/checks.js` accepts ticks only for OWB and HOS (`THREADS`; unknown channel returns null), so Ben could not pass or send back the first WW2 film when it lands (its edit is due about 25 Nov).\n- `scripts/approved_deliver.py` walks `channels.slugs()`, so an approved WW2 cut would not be handled.\n\n**Do.**\n1. Show WW2 on the board now, in a pre-launch state, reading `channels/ww2` inside this repo. No GitHub repo is needed for that; decide whether one is ever needed, and prefer not. If one truly is, that is Ben's own account and is asked once, later, not now.\n2. Its films appear in Videos with their stage, its finished cuts in Review, and its Channels card says \"Getting ready: YouTube not connected yet\". Add the Field Order History progress card from J3006 when that lands.\n3. Ben's tick works for WW2 films: add WW2 to `checks.js` (verdicts post to the Orbit studio thread #954 until the channel has its own), deploy the board, and prove a test tick saves and is read by the Mini.\n4. An approved WW2 cut is recorded as approved and waits for the YouTube link: no upload and no scheduling until the channel exists.\n5. Tests for each part. Open a pull request for the Chief, then deploy.\n\n**Guards.** £0. No channel, repo or sign-in created. Board open taps stay off. No token or account address in any file.\n\n**Result.** The PR, screenshots of the WW2 card and a WW2 film in Videos, and the tick test result.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J2990",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T18:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T18:08Z",
+          "by": "claude",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Register WW2 on the board in a pre-launch state from channels/ww2, films in Videos and Review, WW2 ticks in checks.js, approved cuts wait for the YouTube link",
+      "due": "2026-11-23T18:00:00Z",
+      "for": "codex",
+      "kind": "studio",
+      "plain": "Make the new WW2 channel show up on Ben's board, so he can watch and pass its films before it is on YouTube"
     }
   ],
   "focus": [
