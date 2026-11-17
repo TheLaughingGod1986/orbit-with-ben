@@ -1938,7 +1938,7 @@
         const [tone, word, note] = meterless(chain[alias], status[alias], now);
         return `<a class="credit" href="/ai"><span>${esc(name)}</span><b class="${tone}">${word}</b><small>${esc(note)}</small></a>`;
       }
-      return `<a class="credit" href="/ai"><span>${esc(name)}</span><b class="${pm.tone}">${pm.fig}</b>${pm.share != null
+      return `<a class="credit" href="/ai"><span>${esc(name)}</span><b class="${pm.tone}">${esc(pm.fig)}</b>${pm.share != null
         ? `<div class="bar"><i class="${pm.tone}" style="width:${Math.max(3, pm.share * 100).toFixed(0)}%"></i></div>` : ""}<small>${esc(pm.note)}</small></a>`;
     };
     const credit = [["ElevenLabs", "elevenlabs"], ["Flow", "flow"], ["Vertex", "vertex"], ["Codex", "codex"], ["Cursor", "cursor"],
@@ -1968,13 +1968,20 @@
       total = vals.length ? Math.max(...vals, lt.left) : null;
       if (total) of = `of £${Number(total).toFixed(0)} this month`;
     }
+    const at = Date.parse(lt.at || ""), ageH = isNaN(at) ? Infinity : (now - at) / 36e5;
     const share = total && lt.left != null ? Math.max(0, Math.min(1, lt.left / total)) : null;
-    const stale = (now - Date.parse(lt.at || "")) / 36e5 > 30;
-    const tone = share != null && share < 0.1 ? "red" : stale ? "amber" : "green";
-    const fig = share != null ? Math.round(share * 100) + "%" : unit === "GBP" ? "£" + Number(lt.left).toFixed(0) : Number(lt.left || 0).toLocaleString("en-GB");
-    const reset = (String(lt.note || "").match(/resets? (?:on )?([A-Z][a-z]{2} \d{2} [A-Z][a-z]{2} [\d:]+Z?|[A-Z][a-z]{2} \d{1,2})/) || [])[1];
+    const stale = ageH > 30, old = ageH > 48;
+    const tone = old ? "amber" : share != null && share < 0.1 ? "red" : stale ? "amber" : "green";
+    const baseFig = share != null ? Math.round(share * 100) + "%" : unit === "GBP" ? "£" + Number(lt.left).toFixed(0) : Number(lt.left || 0).toLocaleString("en-GB");
+    const lastDate = !isNaN(at) ? new Date(at).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "Europe/London" }) : "";
+    const fig = old && lastDate ? `${baseFig} · ${lastDate}` : baseFig;
+    const MON = "(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)", DAY = "(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)[a-z]*";
+    const rPat = `(${DAY} \\d{1,2} ${MON}(?: [\\d:]+(?: [AP]M|Z)?)?|${DAY} [\\d:]+(?: [AP]M|Z)?|\\d{1,2} ${MON}|${MON} \\d{1,2})`;
+    const noteStr = String(lt.note || "");
+    const reset = ((noteStr.match(new RegExp(`[Ww]eekly[^;]*?[Rr]esets? (?:on )?${rPat}`)) || noteStr.match(new RegExp(`[Rr]esets? (?:on )?${rPat}`))) || [])[1];
     const left = unit === "GBP" ? `£${Number(lt.left).toFixed(2)} left` : unit === "%" ? "" : `${Number(lt.left).toLocaleString("en-GB")} left`;
-    const note = stale ? "reading stale" : [left, of, reset ? "resets " + reset.trim() : ""].filter(Boolean).join(" · ");
+    const note = old ? [left, lastDate ? `last read ${lastDate}` : "reading stale"].filter(Boolean).join(" · ")
+      : stale ? "reading stale" : [left, of, reset ? "resets " + reset.trim() : ""].filter(Boolean).join(" · ");
     return { share, fig, tone, note };
   }
   function meterless(row, st, now) {
