@@ -268177,13 +268177,13 @@
       "stage": "",
       "after": "J2990",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-17T20:08Z",
-      "eta": "2026-11-17T21:38Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T18:15Z",
-      "result": "",
+      "result": "PR #1001 open (macbook/J3009 -> main): moved channels/ww2/ with history to TheLaughingGod1986/ww2-channel (first commit f0d1c8051bd1, HEAD 22fa00c8ffce; in-flight PRs mirrored as #1-#6); registered ww2 in channels/channels.json (channel_check --all PASS); checked out and push-verified on both the Mini (~/YouTube/ww2) and the MacBook (~/_desk/worker[/slot2]/ww2-channel); WW2 board ticks routed to #954 in checks.js; open/blocked WW2 jobs (J2993-J2996, J2998, J3000, J3002, J3006, J3007) repointed to repo=ww2.",
       "history": [
         {
           "at": "2026-11-17T18:15Z",
@@ -268214,6 +268214,11 @@
           "at": "2026-11-17T21:15Z",
           "by": "macbook-2",
           "what": "step 3 of 5 done"
+        },
+        {
+          "at": "2026-11-17T21:25Z",
+          "by": "macbook-2",
+          "what": "done: PR #1001 open (macbook/J3009 -> main): moved channels/ww2/ with history to TheLaughingGod1986/ww2-channel (first commit f0d1c8051bd1, HEAD 22fa00c8ffce; in-flight PRs mirrored as #1-#6); registered ww2 in channels/channels.json (channel_check --all PASS); checked out and push-verified on both the Mini (~/YouTube/ww2) and the MacBook (~/_desk/worker[/slot2]/ww2-channel); WW2 board ticks routed to #954 in checks.js; open/blocked WW2 jobs (J2993-J2996, J2998, J3000, J3002, J3006, J3007) repointed to repo=ww2."
         }
       ],
       "remaining_action": "Register ww2 in channels.json, remove channels/ww2, update checks.js, repoint WW2 jobs and open PR",
