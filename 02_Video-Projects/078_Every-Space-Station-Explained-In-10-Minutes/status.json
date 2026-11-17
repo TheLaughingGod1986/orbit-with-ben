@@ -4,7 +4,7 @@
   "air": "",
   "stages": {
     "topic": {
-      "state": "todo"
+      "state": "doing"
     },
     "script": {
       "state": "todo"
@@ -31,6 +31,14 @@
       "state": "todo"
     }
   },
-  "claims": [],
+  "claims": [
+    {
+      "stage": "topic",
+      "by": "gemini",
+      "at": "2026-11-17T01:19Z",
+      "eta": "2026-11-17T03:18Z",
+      "note": "J2969 Rule-E topic go/no-go review: OWB 078 (Every Space Station Explained in 10 Minutes) and 079 (Why Is Space Cold If the Sun Is Hot) from J2967"
+    }
+  ],
   "next": "Queued in jobs/WIP.json next for Rule-E topic go/no-go review (from J2967); starts Script stage when an active OWB WIP slot opens after studio/plan.json format tests"
 }
