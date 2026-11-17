@@ -264392,10 +264392,10 @@
       "stage": "topic",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-17T06:42Z",
+      "eta": "2026-11-17T08:42Z",
       "created_by": "gemini",
       "created_at": "2026-11-17T06:10Z",
       "result": "",
@@ -264434,6 +264434,11 @@
           "at": "2026-11-17T06:39Z",
           "by": "macbook",
           "what": "released: MacBook worker run on gemini ended (exit 124) with the job still open; picked up again next run"
+        },
+        {
+          "at": "2026-11-17T06:42Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Write jobs/reviews/J2971/REVIEW.md, open OWB PR on macbook/J2971, mark J2971 done, and post studio thread report",
