@@ -264354,17 +264354,22 @@
           "at": "2026-11-17T06:09Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Passed status_board.py --check and check_all.sh on HOS:118 and HOS:119; pushed gemini/J2970-hos-topics-118-119 and opened HOS PR"
+        },
+        {
+          "at": "2026-11-17T06:11Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Opened HOS PR #629 and OWB WIP PR #977; queued Rule-E review jobs J2971 (HOS:118) and J2972 (HOS:119)"
         }
       ],
-      "remaining_action": "Append HOS:118 and HOS:119 to jobs/WIP.json next_hos in a clean OWB worktree, queue their Rule-E kind:review jobs, and mark J2970 done",
+      "remaining_action": "Mark J2970 done and post reports",
       "kind": "script",
       "backlog": "hos-ideas",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-17T06:09Z",
+        "at": "2026-11-17T06:11Z",
         "by": "gemini",
-        "note": "Passed status_board.py --check and check_all.sh on HOS:118 and HOS:119; pushed gemini/J2970-hos-topics-118-119 and opene"
+        "note": "Opened HOS PR #629 and OWB WIP PR #977; queued Rule-E review jobs J2971 (HOS:118) and J2972 (HOS:119)"
       },
       "taskKeys": [
         "HOS:118",
