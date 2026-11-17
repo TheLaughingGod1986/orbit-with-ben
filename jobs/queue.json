@@ -266132,9 +266132,14 @@
           "at": "2026-11-17T14:33Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T14:38Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Pre-flight verified NAS SHA-256 parity (v07 a3404a314a444a0fd987ca648c28425be8afb768f83748ee64e553951c8f06a8, v03 9f25a16de5fc7d454be7adbc0e301614c7b060cd28b10cd076bcd2b4a6642161), 3 v07 contact sheets present, and HOS PR #556 (macbook/J2662 @ 168f8915) OPEN with all 6 CI checks green; gemini is excluded as producer of J2662 v07"
         }
       ],
-      "remaining_action": "Review PR #556 + v07 contact sheets, write REVIEW.md, stage to HOS UAT + awaits_ben",
+      "remaining_action": "Non-producer QA reviewer (claudecode/claude/codex) to review PR #556 and v07 contact sheets, write REVIEW.md, and stage hos_008_short_C_v07.mp4 to HOS UAT + awaits_ben",
       "kind": "qa",
       "plain": "Review HOS 008 Short C v07 against the J2485 fix list and stage it for Ben's phone watch",
       "rerouted_from": {
@@ -266149,11 +266154,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-17T14:33Z",
+        "at": "2026-11-17T14:38Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Pre-flight verified NAS SHA-256 parity (v07 a3404a314a444a0fd987ca648c28425be8afb768f83748ee64e553951c8f06a8, v03 9f25a1"
+      },
+      "taskKeys": [
+        "HOS:008"
+      ]
     },
     {
       "id": "J2985",
