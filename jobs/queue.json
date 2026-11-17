@@ -267602,13 +267602,13 @@
       "stage": "script",
       "after": "J2991",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "done",
       "by": "claudecode",
       "since": "2026-11-17T20:59Z",
-      "eta": "2026-11-17T23:59Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T17:29Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-17T17:29Z",
@@ -267649,6 +267649,11 @@
           "at": "2026-11-17T21:03Z",
           "by": "claudecode",
           "what": "step 5 of 5 done: PR #1000 opened"
+        },
+        {
+          "at": "2026-11-17T21:04Z",
+          "by": "claudecode",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Chief: topic lock and independent claims check on PR #1000",
@@ -267662,7 +267667,8 @@
         "at": "2026-11-17T21:03Z",
         "by": "claudecode",
         "note": "PR #1000 opened"
-      }
+      },
+      "done_ref": "PR #1000"
     },
     {
       "id": "J3002",
