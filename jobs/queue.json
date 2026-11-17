@@ -264302,10 +264302,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
-      "by": "macbook",
-      "since": "2026-11-17T05:49Z",
-      "eta": "2026-11-17T07:19Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-17T05:48Z",
       "result": "",
@@ -264319,6 +264319,11 @@
           "at": "2026-11-17T05:49Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T05:49Z",
+          "by": "macbook",
+          "what": "released: MacBook worker run on claude ended (exit 1) with the job still open; picked up again next run; claude paused on the MacBook until 2026-11-17T07:49:42Z, so the next run uses the next agent in the chain"
         }
       ],
       "remaining_action": "Pick two data-backed History of Science topics and add them to the waiting line",
