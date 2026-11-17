@@ -265944,13 +265944,13 @@
       "stage": "",
       "after": "",
       "eta_min": 150,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-17T18:27Z",
-      "eta": "2026-11-17T20:57Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T08:37Z",
-      "result": "",
+      "result": "Chief sweep complete (£0 spent, 0 branches/files/videos deleted): (1) Stale board & pause jobs: measured board.oppti.dev from Mini (200 OK 5/5), merged PRs #924 & #945, wrote J2864 pause rule (584fed17a0), and closed 7 jobs (J2797, J2819, J2798, J2818, J2532, J2864, J2865). (2) Chief-parked jobs: 26 before -> 0 after (22 now done incl. J2438 + parents J2702 & J1130 via HOS #634; J2652 reopened for v03f-r4 card fixes on HOS #551 per #6945397541; 3 kept on dated holds with 0 Chief-parked: J0979 & J2933 on Ben UAT watch, J2529 on 18 Nov input hold; also closed J2988 and reopened J2984 for claudecode). (3) OWB open pull requests: 75 at job creation (94 peak) -> 12 after (59 OWB PRs merged: #924, #945 + 57 records-only PRs #840..#991; 2 HOS PRs #611 & #634 merged; 25 superseded/cancelled OWB PRs closed with reasons; 5 protected machinery PRs #490, #827, #832, #868, #869 commented and kept open; 7 active code/launch PRs #970, #972, #984, #985, #986, #987, #989 left open for their jobs). Left for Ben (UAT watch only): J0979 (032 Short 2 v02), J2933 (HOS 010 Shorts A & C v01), J2243 (HOS 008 master v05), J2699 (HOS 008 Short A v04), J2551 (029 Shorts v06), J1356 (AR1-AR3), and OWB 064 format-test card.",
       "history": [
         {
           "at": "2026-11-17T08:37Z",
@@ -266036,6 +266036,11 @@
           "at": "2026-11-17T18:49Z",
           "by": "gemini",
           "what": "step 4 of 4 done: All 4 steps of J2979 complete: 7 stale/pause jobs closed, 26 Chief-parked jobs resolved (0 remaining), and open OWB PRs swept from 75 (94 peak) down to 12"
+        },
+        {
+          "at": "2026-11-17T18:49Z",
+          "by": "gemini",
+          "what": "done: Chief sweep complete (£0 spent, 0 branches/files/videos deleted): (1) Stale board & pause jobs: measured board.oppti.dev from Mini (200 OK 5/5), merged PRs #924 & #945, wrote J2864 pause rule (584fed17a0), and closed 7 jobs (J2797, J2819, J2798, J2818, J2532, J2864, J2865). (2) Chief-parked jobs: 26 before -> 0 after (22 now done incl. J2438 + parents J2702 & J1130 via HOS #634; J2652 reopened for v03f-r4 card fixes on HOS #551 per #6945397541; 3 kept on dated holds with 0 Chief-parked: J0979 & J2933 on Ben UAT watch, J2529 on 18 Nov input hold; also closed J2988 and reopened J2984 for claudecode). (3) OWB open pull requests: 75 at job creation (94 peak) -> 12 after (59 OWB PRs merged: #924, #945 + 57 records-only PRs #840..#991; 2 HOS PRs #611 & #634 merged; 25 superseded/cancelled OWB PRs closed with reasons; 5 protected machinery PRs #490, #827, #832, #868, #869 commented and kept open; 7 active code/launch PRs #970, #972, #984, #985, #986, #987, #989 left open for their jobs). Left for Ben (UAT watch only): J0979 (032 Short 2 v02), J2933 (HOS 010 Shorts A & C v01), J2243 (HOS 008 master v05), J2699 (HOS 008 Short A v04), J2551 (029 Shorts v06), J1356 (AR1-AR3), and OWB 064 format-test card."
         }
       ],
       "remaining_action": "Complete: posting final Chief sweep report on the studio thread",
