@@ -78,6 +78,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 034 | edit | macbook | 2026-11-17T16:23Z | 2026-11-17T17:52Z | J2867 034 Pluto: rebuild Shorts 1 & 2 v02 full-bleed 9:16 (gate_shorts_open PASS) + verify/apply J2383 R08-R74 finishing fixes on long master v02 |
+| 034 | edit | macbook | 2026-11-17T16:27Z | 2026-11-17T17:12Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
