@@ -1,5 +1,5 @@
 {
-  "next_id": 2979,
+  "next_id": 2983,
   "jobs": [
     {
       "id": "J0001",
@@ -265030,6 +265030,129 @@
       ],
       "remaining_action": "Rule-E topic go/no-go review: OWB 080 (Every Rocket Explained in 10 Minutes) and 081 (Where Does Space Begin) from J2974",
       "kind": "review"
+    },
+    {
+      "id": "J2979",
+      "title": "Chief sweep: close stale board jobs, rule on the 26 parked jobs and the 75 open pull requests",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 08:37Z): \"Please do all\"**, after Claude's health check of the board (16 Nov 17:05-17:20Z). The board itself is healthy. This job is the clean-up around it, as one Chief sweep: stale board jobs, the jobs parked for the Chief, and the open pull requests.\n\n**Measured 16 Nov (Claude, from the cloud).** Every board route answered 200 on both addresses, five tries each. Ticks save and the Mini reads them (checksStatus ok). A board left open for four minutes downloaded the board data once (about 300 KB compressed), then only three small requests a minute (updates, version, MacBook status). The public data holds no email address, network address or key.\n\n**1. Stale board jobs.**\n- J2797 (own address): board.oppti.dev has served the board since 14 Nov, J2858 found the Mini's lookup matches the public answer, and Ben's links use it. Close J2797 and its verifier J2819 unless you find a live failure.\n- J2798 (whole data file every minute): the live board no longer does this (measured above). Rule on PR #924: merge it if it still adds something main lacks and its checks pass, otherwise close it as superseded. Then close J2798 and its verifier J2818.\n- PR #945 (send the Mini's board reads back to board.oppti.dev instead of studio-kanban.pages.dev): rule on it. Facts: the reads moved to pages.dev because Cloudflare refused Python's default User-Agent on board.oppti.dev (error 1010), and PR #936 now sends a User-Agent. From the cloud on 16 Nov, board.oppti.dev answered in about 1.3-2.9 s and pages.dev in 0.3-0.6 s, but through different Cloudflare sites: measure from the Mini before deciding.\n- J2532 (board reads its data through its own server) is open for Cursor, which is out of usage. Reroute it, or rule it done if the data routes already require sign-in.\n- J2864 (Ben's pause on new single-question Orbit longs, agreed 14 Nov) has sat open for the cloud Claude since 14 Nov 22:46Z, and J2865 waits on it. Make sure it is written this week; it is a rules change, so it is the Chief's.\n\n**2. The 26 jobs parked or escalated for the Chief** (19 of them for over two days): J0979 J2438 J2529 J2652 J2686 J2687 J2709 J2720 J2722 J2723 J2754 J2760 J2761 J2774 J2782 J2792 J2798 J2812 J2818 J2819 J2832 J2852 J2885 J2892 J2927 J2933. For each one: close it, reopen it for a named worker with the next step, or keep it with a dated condition. Close verify-condition jobs whose condition has since been met or whose parent is closed.\n\n**3. The 75 open pull requests on orbit-with-ben.** Merge the records-only ones (reviews, listing checks, audits, verify-condition reports) when their job is done and checks pass. Close those superseded by later work or whose job was cancelled, with a one-line reason. Do not close #868 (decoupling), #490 (Codex allow-list), #827, #832 or #869 (studio machinery): give each a one-line status comment instead. Same-repository branches only.\n\n**Guards.** Chief rulings only: nothing that needs Ben (watching a cut, money, his logins) is decided here; list any such item for him. £0. No branch deleted, nothing deleted on the NAS, no video deleted. No address or secret in comments.\n\n**Result.** Counts before and after (Chief-parked jobs, open pull requests), what was closed, merged and reopened, and anything left for Ben.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 150,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T08:37Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T08:37Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Close stale board jobs J2797/J2798, rule on PRs 924 and 945, rule on 26 Chief-parked jobs, merge or close the open pull requests",
+      "due": "2026-11-18T12:00:00Z",
+      "kind": "chief",
+      "plain": "Tidy up after the board check: close finished board jobs, and clear the pile of jobs and pull requests waiting on the Chief"
+    },
+    {
+      "id": "J2980",
+      "title": "Dispatch: an agent marked out of usage is down in the forecast too, and its jobs move on",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 08:37Z): \"Please do all\"**, after Claude's health check of the board (16 Nov 17:05-17:20Z). Item 1 of that check.\n\n**Problem.** The board's Agents tab marks Cursor red (\"last run out of usage\": J2932 on 16 Nov, J2976 at 08:27Z today), but the queue forecast published at the same moment showed Cursor up, free and taking jobs. Effects: J2907, which Ben was waiting on to approve anything, sat 27 minutes for Cursor on 15 Nov until Claude rerouted it by hand; and Cursor keeps being woken, claiming jobs and failing on usage. Codex is also out until 17 Nov 23:22Z, so Gemini did 40 of the Mini's 41 jobs on 16 Nov.\n\n**Do.**\n1. Find where the forecast (`queueForecast` in board.json) and the dispatcher decide an agent is up, and where `models` decides it is out. Make them read one source: an agent marked out of usage is down in the forecast, with the same reason and retry time, and is not woken before its retry time.\n2. When the out-of-usage mark has no retry time (Cursor's has none), use the reset time from the agent's usage reading if there is one (a credit-reader job is queued alongside this one); otherwise retry every few hours, not every run.\n3. A job addressed to an agent that is down past the job's due time, or for more than 20 minutes on an urgent job, moves to the next agent in its routing chain, with a history line saying why. Urgent jobs and jobs Ben is waiting on must never sit on a down agent.\n4. Tests for each rule; all tests pass (`python3 scripts/test_jobs.py` and the forecast's own tests).\n5. Open a pull request for the Chief. After it merges, check the board: Cursor shows down in both places.\n\n**Guards.** No change to which agent may merge or rule. £0. No secret or address printed.\n\n**Result.** The cause, the pull request, and the board's readings before and after.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T08:37Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T08:37Z",
+          "by": "claude",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "Make the queue forecast and dispatcher read the same out-of-usage mark as the Agents tab, and move jobs off a down agent",
+      "due": "2026-11-18T12:00:00Z",
+      "for": "gemini",
+      "kind": "studio",
+      "plain": "Stop sending jobs to an agent the board already shows is out of usage, so nothing waits on it"
+    },
+    {
+      "id": "J2981",
+      "title": "Board credits: four usage readings stale since 8-13 Nov (Cursor, Claude, Vertex, Grok)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 08:37Z): \"Please do all\"**, after Claude's health check of the board (16 Nov 17:05-17:20Z). Item 2 of that check.\n\n**Problem.** The Agents tab's credits show \"reading stale\" for four pools: Cursor (last read 9 Nov 08:30Z by the daily reader), Claude (8 Nov), Vertex (13 Nov) and Grok. ElevenLabs, Flow, Codex and Gemini were read fresh this morning. Without Cursor's reading the studio cannot say when Cursor comes back: it is marked out with no return time.\n\n**Do.**\n1. For each of the four, find why the daily reader stopped producing a reading: read its log on the Mini and run it by hand once.\n2. Fix what can be fixed without Ben (a changed page, a selector, a parse, a path). Each fixed reader must put a fresh reading on the board, with its reset time where the page shows one.\n3. If a reader needs a sign-in (the Claude reader has waited on Ben's claude.ai sign-in in the CDP Chrome, J1201), do not sign in. Park for Ben with the exact site and what to tap, one line each. Sign-ins are Ben's.\n4. A reading older than two days shows on the board with its date (\"last read 9 Nov\"), not as a bare percentage.\n5. Open a pull request for the Chief if code changed.\n\n**Guards.** Read-only on every billing and usage page: no plan change, no purchase, no top-up. £0. No account address, email or card detail in logs, results or the thread.\n\n**Result.** For each pool: the cause, fixed or parked for Ben, and its new reading.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T08:37Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T08:37Z",
+          "by": "claude",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "Find and fix why the Cursor, Claude, Vertex and Grok usage readers stopped; park any sign-in for Ben",
+      "due": "2026-11-18T18:00:00Z",
+      "for": "gemini",
+      "kind": "studio",
+      "plain": "Get the four out-of-date usage readings on the Agents tab reading again, so we know when each agent is back"
+    },
+    {
+      "id": "J2982",
+      "title": "Board clean-up: plain times on the Agents tab, no Mac folder path in public data, Vercel leftovers out",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 08:37Z): \"Please do all\"**, after Claude's health check of the board (16 Nov 17:05-17:20Z). Item 5 of that check.\n\n**Do.**\n1. **Agents tab wording.** Reasons show raw stamps and job jargon, e.g. \"Codex hit usage limit until 2026-11-17T23:22:00Z (verified in J2829 probe)\" and \"Claude said it's out of usage until 2026-11-17T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)\". Show plain London times (\"Out of usage, back Tue 17 Nov, 23:22\") and keep job ids and probe names out of the line Ben reads; they can stay under Details.\n2. **Mac folder path in public data.** board.json carries a Mac home-folder path (`/Users/<name>/...`) 7 times, inside job result text (owb.jobs, owb.done, the tracker videos' jobs, workflow.states; it comes from the J2702 and J2722 results). In `scripts/board_publish.py`, replace any `/Users/<name>` with `~` in every published string, with a test. Do not print the name.\n3. **Vercel leftovers in `05_Analytics/kanban/board_site`.** The board runs on Cloudflare Pages now. `.vercel/project.json`, `vercel.json`, and comments that say \"in Vercel\" (e.g. `benauth.js`) are left over. First check what `build.py`, `cf_adapter.js` and `wrangler.jsonc` still read; remove only what nothing reads, and correct the comments. Keep `board_publish.py`'s NO_DEPLOY `vercel.json` (it stops the separate Vercel project orbit-content-ops deploying the board-data branch) while that project is git-connected.\n4. **Old Vercel project.** Report whether anything still uses the Vercel project `studio-kanban` (its address answers 402): scripts, launchd jobs, Mini config, links in tracked docs. Do not delete it: that is Ben's call.\n5. Tests pass. Open a pull request for the Chief. After it merges, deploy the board and check both addresses: the page, /api/checks and /api/data answer 200, and the Agents tab reads in plain words.\n\n**Guards.** Board open taps stay off. £0. Nothing deleted outside the repo. No name, address or secret printed.\n\n**Result.** The pull request, what was removed and kept, and what still uses the old Vercel project.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 75,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T08:37Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T08:37Z",
+          "by": "claude",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "Plain London times on the Agents tab, scrub Mac home paths from board data, remove unused Vercel files, report what uses the old Vercel project",
+      "due": "2026-11-19T12:00:00Z",
+      "for": "gemini",
+      "kind": "studio",
+      "plain": "Small tidy-ups on the board: readable times, no private folder path in its data, old Vercel files gone"
     }
   ],
   "focus": [
