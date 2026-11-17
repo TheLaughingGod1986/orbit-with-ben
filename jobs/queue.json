@@ -266329,13 +266329,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-17T10:54Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T08:37Z",
-      "result": "parked for Chief: merge OWB PR #984 and HOS PR #635 (and deploy board_site); all four stale credit pools fixed and recorded fresh on board-data (Vertex £144.66; Cursor/Grok 0% left, resets 19 Nov; Claude 38% left, resets Wednesday 10:00 AM; Flow 24,500 credits; zero Ben sign-ins needed)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-17T08:37Z",
@@ -266381,11 +266381,16 @@
           "at": "2026-11-17T23:29Z",
           "by": "codex",
           "what": "remaining action: Chief KEEP: both fixes merged and live readers verified; deploy the board and verify its dated readings."
+        },
+        {
+          "at": "2026-11-17T23:30Z",
+          "by": "codex",
+          "what": "rerouted to codex: Chief KEEP recorded: OWB PR 984 and HOS PR 635 merged; all three live readers pass. Finish approved deployment verification and close this reviewed job."
         }
       ],
       "remaining_action": "Chief KEEP: both fixes merged and live readers verified; deploy the board and verify its dated readings.",
       "due": "2026-11-18T18:00:00Z",
-      "for": "gemini",
+      "for": "codex",
       "kind": "studio",
       "plain": "Get the four out-of-date usage readings on the Agents tab reading again, so we know when each agent is back",
       "progress": {
@@ -266395,7 +266400,14 @@
         "by": "gemini",
         "note": "Opened OWB PR #984 and HOS PR #635 with full unit test suites green; all credit pools recorded fresh on main and publish"
       },
-      "escalated_at": "2026-11-17T13:41Z"
+      "escalated_at": "2026-11-17T13:41Z",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "gemini",
+        "model": "",
+        "status": "blocked",
+        "by": "gemini"
+      }
     },
     {
       "id": "J2982",
