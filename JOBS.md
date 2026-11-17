@@ -78,7 +78,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2927 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J2933 | mini | blocked | claudecode | – | 010 edit · qa · `mini-claude-opus-5-5` · Review HOS 010 Short A v01 and Short C v01 (J2172, PR #611) | J2172 |
 | J2951 | cloud | open | – | – | assembly · Stop the refill tick using 3-4 GB: read the acting Chief once per scan |  |
-| J2957 | mini | blocked | claudecode | – | 007 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload HOS 007 Short variolation v05 (What Is Variolation?) Private, Sat 28 Nov 11:30 | 6912169020 |
+| J2957 | mini | open | – | – | 007 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload HOS 007 Short variolation v05 (What Is Variolation?) Private, Sat 28 Nov 11:30 | 6912169020 |
 | J2958 | mini | blocked | claudecode | – | 007 upload · studio · Upload HOS 007 Short eradication v06 (How Was Smallpox Eradicated?) Private, Sun 29 Nov 11:30 | 6914782767 |
 | J2963 | any | claimed | macbook-2 | 2026-11-17T01:19Z | script · HOS: learn from our data, add two new films to the backlog |  |
 | J2964 | any | claimed | macbook | 2026-11-17T00:56Z | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |

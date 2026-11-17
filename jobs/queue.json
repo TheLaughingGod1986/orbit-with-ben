@@ -263158,13 +263158,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-16T23:37Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-16T21:16Z",
-      "result": "parked for Chief: DUPLICATE UPLOAD made in error by this run. The Short was already up as sY0PSQFxjp8 (Private, publishAt 2026-11-28T11:30:00Z, PR 622). This run did not read the job history and uploaded the same file again as wkyGOKepjeQ (Private, publishAt 2026-11-28T11:30:00Z, cover set). Two Private videos now hold the Sat 28 Nov 11:30 slot. Chief to rule before 28 Nov: recommended, clear the schedule on wkyGOKepjeQ so it stays Private and unscheduled (never delete), and keep sY0PSQFxjp8 as the one that airs. This run changed nothing else on YouTube. Its social registration of wkyGOKepjeQ was added and then taken out again on OWB main, so Buffer will not mirror it. No captions were added to wkyGOKepjeQ. Still left from the earlier run: Studio Related video ETynHpIYLeY on sY0PSQFxjp8, then review PR 622. Unpushed package for the duplicate: ~/_desk/jobs/J2957/wt, log ~/_desk/logs/J2957-upload.log.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-16T21:16Z",
@@ -263240,6 +263240,11 @@
           "at": "2026-11-16T23:42Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: DUPLICATE UPLOAD made in error by this run. The Short was already up as sY0PSQFxjp8 (Private, publishAt 2026-11-28T11:30:00Z, PR 622). This run did not read the job history and uploaded the same file again as wkyGOKepjeQ (Private, publishAt 2026-11-28T11:30:00Z, cover set). Two Private videos now hold the Sat 28 Nov 11:30 slot. Chief to rule before 28 Nov: recommended, clear the schedule on wkyGOKepjeQ so it stays Private and unscheduled (never delete), and keep sY0PSQFxjp8 as the one that airs. This run changed nothing else on YouTube. Its social registration of wkyGOKepjeQ was added and then taken out again on OWB main, so Buffer will not mirror it. No captions were added to wkyGOKepjeQ. Still left from the earlier run: Studio Related video ETynHpIYLeY on sY0PSQFxjp8, then review PR 622. Unpushed package for the duplicate: ~/_desk/jobs/J2957/wt, log ~/_desk/logs/J2957-upload.log."
+        },
+        {
+          "at": "2026-11-17T00:03Z",
+          "by": "gemini",
+          "what": "reopened: Chief ruling: keep sY0PSQFxjp8 (Sat 28 Nov 11:30Z, en-GB captions serving, social registered); cleared publishAt on duplicate wkyGOKepjeQ via YouTube API so wkyGOKepjeQ is Private and unscheduled (never delete; channel:audit 67 videos, 0 errors). Finishing Studio Related video on sY0PSQFxjp8 and PR 622 review/merge."
         }
       ],
       "remaining_action": "Finish the uploaded variolation Short in Studio (Related video, captions, settings), then file the receipt",
@@ -263270,13 +263275,6 @@
       },
       "for": "claudecode",
       "model": "mini-claude-opus-5-5",
-      "progress": {
-        "step": 3,
-        "of": 6,
-        "at": "2026-11-16T23:40Z",
-        "by": "claudecode",
-        "note": "UPLOADED: new Private id wkyGOKepjeQ, publishAt 2026-11-28T11:30:00Z, cover set by the API. Do not upload again. Social "
-      },
       "taskKeys": [
         "HOS:007"
       ]
