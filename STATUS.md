@@ -80,6 +80,5 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
 | 001 | script | macbook | 2026-11-17T19:40Z | 2026-11-17T22:09Z | J2991 WW2 pilot 001: script and sources, "How Britain Towed Two Floating Ports Across the Channel for D-Day" |
-| 003 | script | claudecode | 2026-11-17T19:42Z | 2026-11-17T22:11Z | J2997 WW2 pilot 003: script and sources, "Why the B-29 Superfortress Cost More Than the Atomic Bomb Project" |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
