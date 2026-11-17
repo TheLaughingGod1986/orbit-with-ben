@@ -264535,9 +264535,14 @@
           "at": "2026-11-17T06:19Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2973; starting read-only audit of HOS live and scheduled videos"
+        },
+        {
+          "at": "2026-11-17T06:21Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1 done: lint:package PASS and channel:audit PASS (67 videos, 0 errors)"
         }
       ],
-      "remaining_action": "Run HOS channel:audit, lint:package, and inspect live/scheduled listings and PR #626 / J2957 status",
+      "remaining_action": "Verify live public watch-page end screens and Shorts Related pills, and inspect J2955-J2958 Studio readbacks",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "rerouted_from": {
@@ -264550,11 +264555,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-17T06:19Z",
+        "at": "2026-11-17T06:21Z",
         "by": "gemini",
-        "note": "Claimed J2973; starting read-only audit of HOS live and scheduled videos"
+        "note": "Step 1 done: lint:package PASS and channel:audit PASS (67 videos, 0 errors)"
       },
       "taskKeys": [
         "HOS:001",
