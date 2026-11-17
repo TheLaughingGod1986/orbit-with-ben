@@ -82,6 +82,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2958 | mini | blocked | claudecode | – | 007 upload · studio · Upload HOS 007 Short eradication v06 (How Was Smallpox Eradicated?) Private, Sun 29 Nov 11:30 | 6914782767 |
 | J2963 | any | claimed | macbook-2 | 2026-11-17T01:19Z | script · HOS: learn from our data, add two new films to the backlog |  |
 | J2965 | any | open | – | – | 116 topic · review · HOS 116 Why Do We Get Goosebumps?: rule-E topic go/no-go review |  |
+| J2966 | any | open | – | – | 117 topic · review · HOS 117 Why Don't Woodpeckers Get Concussions?: rule-E topic go/no-go review |  |
 
 Recently finished:
 
