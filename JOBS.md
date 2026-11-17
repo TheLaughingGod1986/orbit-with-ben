@@ -80,13 +80,13 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2951 | cloud | open | – | – | assembly · Stop the refill tick using 3-4 GB: read the acting Chief once per scan |  |
 | J2957 | mini | claimed | gemini | 2026-11-17T01:33Z | 007 upload · studio · Upload HOS 007 Short variolation v05 (What Is Variolation?) Private, Sat 28 Nov 11:30 | 6912169020 |
 | J2958 | mini | blocked | claudecode | – | 007 upload · studio · Upload HOS 007 Short eradication v06 (How Was Smallpox Eradicated?) Private, Sun 29 Nov 11:30 | 6914782767 |
-| J2963 | any | claimed | macbook-2 | 2026-11-17T01:19Z | script · HOS: learn from our data, add two new films to the backlog |  |
 | J2965 | any | open | – | – | 116 topic · review · HOS 116 Why Do We Get Goosebumps?: rule-E topic go/no-go review |  |
 | J2966 | any | open | – | – | 117 topic · review · HOS 117 Why Don't Woodpeckers Get Concussions?: rule-E topic go/no-go review |  |
 
 Recently finished:
 
 - J2964 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (38/38 public HOS videos (7 longs + 31 Shorts, incl. xzKoHg0E0_U) and 7/8 scheduled videos (incl. newly scheduled Sq_lV89VMUs J2955 PR #624, fgsR8yAHr5s J2956 #621, jkUZpyO71lU J2958 PR #623) pass chapters, Sources, end screens, captions and Related checks (0 live fixes needed; lint:package & check_all PASS). Sat 28 Nov 11:30Z variolation slot (sY0PSQFxjp8 Studio Related ETynHpIYLeY + unscheduling duplicate wkyGOKepjeQ) is documented with exact steps in 00_Brand/Channel-Setup/audits/live_fixes/2026-11-17.md (history-of-science PR #626, 7364f231, open for Chief merge) and remains tracked on J2957. Nothing changed in Studio.)
+- J2963 done: HOS: learn from our data, add two new films to the backlog (Ranked all 7 HOS public longs (top 3: 002 AL_-qlWko_g 2.68/d 1,160 impr 3.36% CTR, 007 ETynHpIYLeY 1.25/d 7.41% CTR, 006 VbPubYd6Fbs 1.18/d 53.96% Studio / 79% YTA avg view %; bottom 3: 003 frP_YrNShsU 0.09/d, 001 _C92tIJCk8A 0.09/d, 005 wwcjcFfC-5M 0.28/d 15 impr) and 30 public Shorts (top 3: 29bpGAI0wb8 39.58/d 1,227v, -3L6HzJ_d_4 6.45/d 77.14% stayed PASS & 75.23% avg view % PASS, oKqmnJNGiHg 7.23/d 87.02% avg view % PASS; bottom 3: LanTHJckYx8 0.07/d, zI_eD3vFWmE 0.18/d, CnHwX1L9XHg 0.28/d). Added 2 new HOS backlog proposals under Rule G (next_hos): (1) HOS:116 (116_Darwin-Cannon-Hsu-Why-Do-We-Get-Goosebumps) 'Why Do We Get Goosebumps? (The 2020 Stem-Cell Twist)' — data line: models 002 (2.68/d, 1,160 impr) & -3L6HzJ_d_4 (77.14% stayed PASS) via exact autocomplete 'why do we get goosebumps' (Peekaboo Kidz 5.78M, AsapSCIENCE 1.98M) + neighbours.py PASS (6 >=1M incl. CrashCourse 5.94M, TEDx 5.58M, TED-Ed 3.54M & 2.36M); (2) HOS:117 (117_May-Gibson-VanWassenbergh-Why-Dont-Woodpeckers-Get-Concussions) 'Why Don't Woodpeckers Get Concussions? (The Shock-Pad Myth)' — data line: models 002 (1,160 impr), 006 (53.96% avg view %) & pWySvZsneZg (112.43% LOOP) via exact autocomplete 'why don't woodpeckers get concussions' (Be Smart 1.91M, Nature Lens 667k) + neighbours.py PASS (4 >=1M incl. TED-Ed 2.56M & 2.11M, Be Smart 1.91M, TED 1.37M). Opened HOS PR #625 and OWB PR #973, queued Rule-E review jobs J2965 & J2966. £0 spent.)
 - J2962 done: Uranus long: give the opening moving picture instead of a still (v05) (PASS (KEEP) on 033 Uranus long master v05 (033_why_this_planet_has_21_year_winters_master_v05.mp4, SHA-256 1bb4a006bb0dab86cbe5a243ba42328a636bd9177b4fb421e7b19c6d8e954cbb, 629.42s, 1920x1080 24fps CFR, -14.5 LUFS, -1.5 dBTP, 0 black frames): replaced 0:00-4.35s R01 still composite with public-domain NASA Goddard SVS 20390 Shot 8 4K moving video (66fc943702) beside untouched v04; audio and cuts 2..146 bit-identical to v04; Flow balance 24,450 credits (£0 and 0 Flow credits spent); all 5 gates, first-30s check, package dry-run, and native moving_video_input/audio_input QA PASS; staged to NAS/iCloud OWB UAT & R2 owb-033-v05; awaits_ben armed with --prev OWB-033 (jobs/reviews/J2962/REVIEW.md, 9c00f1895b).)
 - J2961 done: Sleep video: read back the Private upload against the master Ben OK'd, before it airs Sat 12 Dec (Read-back posted on the thread: 13q4_EoLEN4 is Private, scheduled 2026-12-12T21:00:00Z, PT1H48M23S, title exact, FALL ASLEEP IN SPACE thumbnail, synthetic-content disclosure on, 13 chapters. Upload is master v02: NAS sha256 e6f1064d...81ec0 re-verified, YouTube fileSize 4,216,695,410 = master bytes, frame at 97:40.5 matches (SSIM 0.94). Sound not checked (no audio input). Nothing changed in Studio. Final OK left to the Chief.)
 - J2960 done: Verify condition for J2831 (Chief ruling (gemini): CONDITION MET for J2831 (jobs/reviews/J2960/REVIEW.md, commit 52888613c4). Scheduled check time 2026-11-16T21:10:00Z and 24h file cutoff 2026-11-16T21:06:07Z passed at 2026-11-16T21:24:06Z; '~/Library/Mobile Documents/com~apple~CloudDocs/Link this phone to the board.html' (0600, 865B, mtime 2026-11-15T21:06:07Z) verified present; Ben's iPhone remains paired via issue #219 pairs[0] (2026-11-14T19:13:08.165Z, e=1795269633; verdicts through 2026-11-16T20:51:28.150Z). Reopened J2831 at step 3/4 and rerouted to gemini for step 4/4 cleanup ONLY (delete iCloud file and confirm on #478; do not mint another link).)
@@ -110,19 +110,3 @@ Do now
   - Nothing to fix.
 
 PR #971 (macbook/J2953 -> main, commit f1a0bee56): 05_Analytics/hos/launch/xzKoHg0E0_U.json + jobs/reviews/J2953/REVIEW.md (0 faults in Studio; left open for Chief merge).)
-- J2952 done: First-day check at 6 h: "If You Can't See the Nearest Star, How Far Away Is It?" (aEfdxex__Bo) ("If You Can't See the Nearest Star, How Far Away Is It?" (aEfdxex__Bo) · Orbit With Ben · Short · went live Mon 16 Nov 11:30 London
-At 6 h: views 234 · Studio rank 6 of 10 · shown in feed about 613 (from 212 feed views) · stayed to watch 34.6% · average viewed 59.9%
-Usual for this channel: stayed to watch 32.5%, average viewed 66.2%
-
-Verdict: AHEAD
-  - 234 views at 6 h; the last 5 checked at the same age had 45 (median).
-  - Studio ranks it 6 of 10 against our latest videos at the same age.
-
-What is different about this one
-  - It is a second upload of the same video (it replaced HZGTovJu_TQ).
-
-Do now
-  - Nothing to fix.
-
-Carry forward
-  - A strong start is a lesson too: note what is different about this one.)
