@@ -226461,13 +226461,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claude",
+      "status": "open",
+      "by": "",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T19:53Z",
-      "result": "Waiting for: Ledger step done (PR 935). The dry run of the move read 0 on 14, 15, 16 and 17 Nov (streak 4). Still open, in the order written on this job: History of Science's own current files (374 files, about 980 places, ordinary pull requests, not touching files a working job pins by hash), the open pull requests, the mirror rehearsal, and the history-rewrite window (Ben told the day before). The move is a separate decision: seven zero days in a row, Ben told at day six (19 Nov).",
+      "result": "",
       "history": [
         {
           "at": "2026-11-10T19:53Z",
@@ -226578,20 +226578,18 @@
           "at": "2026-11-17T19:00Z",
           "by": "claude",
           "what": "Ben created TheLaughingGod1986/studio (17 Nov 19:00Z). The engine move waits on this job: J3012."
+        },
+        {
+          "at": "2026-11-17T19:12Z",
+          "by": "claude",
+          "what": "reopened: Reopened by Claude 17 Nov 19:12Z. Ben asked when the studio will be fully decoupled. This job has re-recorded the same wait every day since 12 Nov, but nothing it waits on is outside the studio: step 1 (History of Science's own current files, 374 files, about 980 places, ordinary pull requests, leaving files a working job pins by hash) can start now. Do step 1 now, then step 2 (the Chief sweep J2979 is already closing and merging the open pull requests), then step 3 (the mirror rehearsal). Step 4, the history-rewrite window, keeps its rule: Ben is told the day before, as a notice. Step 5's GitHub support request is drafted for Ben but is not needed for the move."
         }
       ],
-      "remaining_action": "Start History of Science's own files: count them and plan the first small pull requests",
+      "remaining_action": "Step 1 now: replace the addresses in History of Science's current files by ordinary PRs, then steps 2 and 3; history rewrite with a day's notice to Ben",
       "due": "2026-11-18T18:00:00Z",
       "kind": "chief",
       "plain": "Remove email addresses from both channels' repos, including their past versions",
-      "hold": {
-        "type": "dependency",
-        "condition": "Ledger step done (PR 935). The dry run of the move read 0 on 14, 15, 16 and 17 Nov (streak 4). Still open, in the order written on this job: History of Science's own current files (374 files, about 980 places, ordinary pull requests, not touching files a working job pins by hash), the open pull requests, the mirror rehearsal, and the history-rewrite window (Ben told the day before). The move is a separate decision: seven zero days in a row, Ben told at day six (19 Nov).",
-        "check_at": "2026-11-18T07:40:00Z",
-        "last_recheck": "J2723",
-        "checked_at": "2026-11-17T09:23:01+00:00",
-        "checked_by": "gemini"
-      }
+      "for": "codex"
     },
     {
       "id": "J2538",
@@ -267925,7 +267923,7 @@
       "title": "Decoupling phase 3: move the studio engine into its own repo, runbook now, move after a clean week",
       "needs": "mini",
       "repo": "owb",
-      "body": "**Ben, in chat (17 Nov 19:00Z):** created `https://github.com/TheLaughingGod1986/studio` for the studio engine (private, empty, default branch main). Claude checked that the Claude GitHub app can reach it (cloned it, empty). This is phase 3 of `docs/MULTI_CHANNEL_PLAN.md`: the engine (queue, board, relay, agents' scripts, thread) moves out of orbit-with-ben into its own repo, and Orbit With Ben, History of Science and the WW2 channel all plug in through the registry. Ben, 10 Nov: \"there should be 3 GitHub repos. One for Studio, one for Orbit with Ben, and one for History of Science\" (now four, with ww2-channel).\n\n**Do not move before all of these hold:**\n1. `scripts/studio_split.py` has read 0 on seven days in a row (it read 0 on 14, 15, 16 and 17 Nov; the earliest is 20 Nov).\n2. J2537 is done: email addresses out of both channels' current files and git history.\n3. Ben has been told the day before the move, in one message on the thread: the date, what he will notice (none, if it goes right), and any credential he must change. That message is a notice, not a question, unless a credential change is truly needed.\n\n**Do now, while waiting.** Write the move runbook in `docs/STUDIO_MOVE.md`: what the new repo holds (from the dry run's layout); how queue history and the thread carry over; every machine change (the Mac mini's and the MacBook's checkouts, launchd jobs, the relay, the board publisher, `board_site.json`, GitHub workflows); every credential that must cover the new repo (the board's GitHub token currently covers orbit-with-ben and history-of-science only; the board's tick store and thread can stay where they are if that avoids a token change, so say which is simpler); the rollback; and a rehearsal on a branch of the new repo that leaves live work untouched. Open a pull request for the runbook. When the three conditions hold, run the move by the runbook, prove one full relay cycle, one board publish and one tick, and close.\n\n**Guards.** £0. Nothing deleted from orbit-with-ben until the new repo is live and proven. No token or account address in any file. Nothing that needs Ben beyond the day-before notice and, only if unavoidable, one credential change.\n\n**Result.** The runbook PR now; at the move, the new repo's state, the checks, and anything left.\n",
+      "body": "**Ben, in chat (17 Nov 19:00Z):** created `https://github.com/TheLaughingGod1986/studio` for the studio engine (private, empty, default branch main). Claude checked that the Claude GitHub app can reach it (cloned it, empty). This is phase 3 of `docs/MULTI_CHANNEL_PLAN.md`: the engine (queue, board, relay, agents' scripts, thread) moves out of orbit-with-ben into its own repo, and Orbit With Ben, History of Science and the WW2 channel all plug in through the registry. Ben, 10 Nov: \"there should be 3 GitHub repos. One for Studio, one for Orbit with Ben, and one for History of Science\" (now four, with ww2-channel).\n\n**Do not move before all of these hold:**\n1. `scripts/studio_split.py` has read 0 on seven days in a row (it read 0 on 14, 15, 16 and 17 Nov; the earliest is 20 Nov).\n2. J2537 is done: email addresses out of both channels' current files and git history.\n3. Ben has been told the day before the move, in one message on the thread: the date, what he will notice (none, if it goes right), and any credential he must change. That message is a notice, not a question, unless a credential change is truly needed.\n\n**Do now, while waiting.** Write the move runbook in `docs/STUDIO_MOVE.md`: what the new repo holds (from the dry run's layout); how queue history and the thread carry over; every machine change (the Mac mini's and the MacBook's checkouts, launchd jobs, the relay, the board publisher, `board_site.json`, GitHub workflows); every credential that must cover the new repo (the board's GitHub token currently covers orbit-with-ben and history-of-science only; the board's tick store and thread can stay where they are if that avoids a token change, so say which is simpler); the rollback; and a rehearsal on a branch of the new repo that leaves live work untouched. Open a pull request for the runbook. When the three conditions hold, run the move by the runbook, prove one full relay cycle, one board publish and one tick, and close.\n\n**Guards.** £0. Nothing deleted from orbit-with-ben until the new repo is live and proven. No token or account address in any file. Nothing that needs Ben beyond the day-before notice and, only if unavoidable, one credential change.\n\n**Result.** The runbook PR now; at the move, the new repo's state, the checks, and anything left.\n\n\n**Changed by Claude, 17 Nov 19:12Z: the move does not wait for J2537's history rewrite.** Start the new studio repo with one clean first commit built from the split, not with orbit-with-ben's history, so no old address can travel into it; the history stays readable in orbit-with-ben. Condition 2 above becomes: the dry run's address count is 0 on the files that move (it is). Conditions 1 and 3 stand (seven zero days, so 20 Nov at the earliest; Ben told the day before). Aim: runbook and rehearsal by Sat 21 Nov, move Mon 23 or Tue 24 Nov.",
       "ref": "",
       "film": "",
       "stage": "",
@@ -267943,10 +267941,15 @@
           "at": "2026-11-17T19:00Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-17T19:12Z",
+          "by": "claude",
+          "what": "The move no longer waits for J2537's history rewrite: clean first commit in the studio repo. Aim Mon 23 or Tue 24 Nov."
         }
       ],
       "remaining_action": "Write the move runbook now; move the engine to the new studio repo once the dry run reads 0 for seven days and J2537 is done",
-      "due": "2026-11-27T18:00:00Z",
+      "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week"
     }
