@@ -80,6 +80,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2951 | cloud | open | – | – | assembly · Stop the refill tick using 3-4 GB: read the acting Chief once per scan |  |
 | J2970 | any | claimed | gemini | 2026-11-17T07:20Z | script · HOS: learn from our data, add two new films to the backlog |  |
 | J2971 | mini | open | – | – | 118 topic · review · HOS 118 Why Do We Hiccup?: rule-E topic go/no-go review |  |
+| J2972 | mini | open | – | – | 119 topic · review · HOS 119 Why Do Mosquitoes Bite Some People More?: rule-E topic go/no-go review |  |
 
 Recently finished:
 
