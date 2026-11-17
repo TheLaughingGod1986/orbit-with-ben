@@ -266632,13 +266632,13 @@
       "stage": "",
       "after": "",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-17T15:43Z",
-      "eta": "2026-11-17T18:43Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T15:39Z",
-      "result": "",
+      "result": "PR #989 open (macbook/J2989 -> main, £0 spent, no channel created/signed-in/registered): (1) 3 free YouTube handles verified live 17 Nov (@TheWarAtlas taken): Field Order History (@FieldOrderHistory, recommended), Gridline History (@GridlineHistory), Iron & Compass (@IronAndCompass); (2) 10 sourced US/UK archive topics <=70 chars with vidIQ demand and 3+ 100k+ neighbours each — make first: ★ Pilot 1 WW2:001 \"How Britain Towed Two Floating Ports Across the Channel for D-Day\" (65c), ★ Pilot 2 WW2:002 \"How Long-Range Bombers Closed the Atlantic Black Pit in May 1943\" (64c), ★ Pilot 3 WW2:003 \"Why the B-29 Superfortress Cost More Than the Atomic Bomb Project\" (65c), plus 004 Mark 14 Torpedoes (61c), 005 St Nazaire / HMS Campbeltown (61c), 006 Wooden Mosquito Bomber (65c), 007 Ulithi Floating Dry Docks (64c), 008 Operation Mincemeat (66c), 009 Tanker SS Ohio / Malta (62c), 010 Hobart Funnies Assault Tanks (67c); (3) Fixed How/Why packaging + 3 pilot thumbs (BUILT IN 12 DAYS, 600-MILE DEAD ZONE, $3 BILLION GAMBLE); (4) 3-film pilot plan (~25m / ~20,000 voice chars each; voice max 2 pilots = ~40k-42k chars from ~79k shared ElevenLabs pool, leaving ~37k-39k for OWB/HOS; Pilot 3 VO held until upgrade/renewal); (5) All 10 lockable cards + 5 Add-a-channel registration steps added to studio/plan.json (#plan) and channels/ww2 passes channel_check.py (0 must-fix).",
       "history": [
         {
           "at": "2026-11-17T15:39Z",
@@ -266669,6 +266669,11 @@
           "at": "2026-11-17T16:33Z",
           "by": "macbook-2",
           "what": "step 3 of 5 done: Resumed; verified plan_board & channel_check rules; scaffolding channels/ww2 + 10 film folders + plan.json"
+        },
+        {
+          "at": "2026-11-17T16:42Z",
+          "by": "macbook-2",
+          "what": "done: PR #989 open (macbook/J2989 -> main, £0 spent, no channel created/signed-in/registered): (1) 3 free YouTube handles verified live 17 Nov (@TheWarAtlas taken): Field Order History (@FieldOrderHistory, recommended), Gridline History (@GridlineHistory), Iron & Compass (@IronAndCompass); (2) 10 sourced US/UK archive topics <=70 chars with vidIQ demand and 3+ 100k+ neighbours each — make first: ★ Pilot 1 WW2:001 \"How Britain Towed Two Floating Ports Across the Channel for D-Day\" (65c), ★ Pilot 2 WW2:002 \"How Long-Range Bombers Closed the Atlantic Black Pit in May 1943\" (64c), ★ Pilot 3 WW2:003 \"Why the B-29 Superfortress Cost More Than the Atomic Bomb Project\" (65c), plus 004 Mark 14 Torpedoes (61c), 005 St Nazaire / HMS Campbeltown (61c), 006 Wooden Mosquito Bomber (65c), 007 Ulithi Floating Dry Docks (64c), 008 Operation Mincemeat (66c), 009 Tanker SS Ohio / Malta (62c), 010 Hobart Funnies Assault Tanks (67c); (3) Fixed How/Why packaging + 3 pilot thumbs (BUILT IN 12 DAYS, 600-MILE DEAD ZONE, $3 BILLION GAMBLE); (4) 3-film pilot plan (~25m / ~20,000 voice chars each; voice max 2 pilots = ~40k-42k chars from ~79k shared ElevenLabs pool, leaving ~37k-39k for OWB/HOS; Pilot 3 VO held until upgrade/renewal); (5) All 10 lockable cards + 5 Add-a-channel registration steps added to studio/plan.json (#plan) and channels/ww2 passes channel_check.py (0 must-fix)."
         }
       ],
       "remaining_action": "Build channels/ww2 with 10 film folders & pilot plans, add WW2 plan to studio/plan.json, run tests & open PR",
