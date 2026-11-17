@@ -56,7 +56,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2997 | mini | claimed | macbook | 2026-11-17T23:01Z | WW2:003 script · for claudecode · script · WW2 pilot 003: script and sources, "Why the B-29 Superfortress Cost More Than the Atomic Bomb Project" |  |
 | J2998 | mini | open (after J2997) | – | – | WW2:003 picture · for gemini · image · WW2 pilot 003: gather the archive photos and draw the maps |  |
 | J3000 | mini | open (after J2991) | – | – | WW2:004 script · for codex · script · WW2 film 004: topic review, script and sources, "Why America's Submarine Torpedoes Failed for 21 Months in WW2" |  |
-| J3001 | mini | open (after J2991) | – | – | WW2:005 script · for claudecode · script · WW2 film 005: topic review, script and sources, "How One Old Destroyer Rammed Germany's Only Atlantic Dry Dock" |  |
+| J3001 | mini | claimed | claudecode | 2026-11-17T23:59Z | WW2:005 script · for claudecode · script · WW2 film 005: topic review, script and sources, "How One Old Destroyer Rammed Germany's Only Atlantic Dry Dock" |  |
 | J3002 | mini | open (after J2991) | – | – | WW2:006 script · for gemini · script · WW2 film 006: topic review, script and sources, "Why Britain Built Its Fastest WW2 Bomber Out of Plywood and Balsa" |  |
 | J3006 | mini | open (after J2990) | – | – | for codex · studio · WW2 channel: read its own analytics from day one, and a progress-to-monetisation card |  |
 | J3007 | mini | open (after J2990) | – | – | for codex · studio · Board: show the WW2 channel before launch, its films, its review and Ben's ticks |  |
