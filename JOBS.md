@@ -53,7 +53,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2994 | mini | open (after J2990) | – | – | WW2:002 script · for codex · script · WW2 pilot 002: script and sources, "How Long-Range Bombers Closed the Atlantic Black Pit in May 1943" |  |
 | J2995 | mini | open (after J2994) | – | – | WW2:002 vo · for gemini · vo · WW2 pilot 002: narration in Ben's voice |  |
 | J2996 | mini | open (after J2995) | – | – | WW2:002 edit · for codex · assembly · WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch |  |
-| J2998 | mini | open (after J2997) | – | – | WW2:003 picture · for gemini · image · WW2 pilot 003: gather the archive photos and draw the maps |  |
+| J2998 | mini | claimed | gemini | 2026-11-17T23:46Z | WW2:003 picture · for gemini · image · WW2 pilot 003: gather the archive photos and draw the maps |  |
 | J3000 | mini | open (after J2991) | – | – | WW2:004 script · for codex · script · WW2 film 004: topic review, script and sources, "Why America's Submarine Torpedoes Failed for 21 Months in WW2" |  |
 | J3006 | mini | open (after J2990) | – | – | for codex · studio · WW2 channel: read its own analytics from day one, and a progress-to-monetisation card |  |
 | J3007 | mini | open (after J2990) | – | – | for codex · studio · Board: show the WW2 channel before launch, its films, its review and Ben's ticks |  |
