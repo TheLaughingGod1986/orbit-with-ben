@@ -1,0 +1,19 @@
+# Topic Go/No-Go Sheet & Opportunity Score — `OWB:078`
+
+- **Film:** `OWB:078` (`02_Video-Projects/078_Every-Space-Station-Explained-In-10-Minutes`)
+- **Source Brief Job:** `J2967` (`macbook`, `2026-11-17`) · **Rule-E Review Job:** Queued (`kind:review`)
+- **Status:** **READY FOR RULE-E REVIEW IN `jobs/WIP.json` `next` (`95 / 100` Opportunity Score; waiting on `studio/plan.json` `064` format-test readout & Rule G slot)**
+- **Primary Complete-Tour Title (`Rule 26` + `studio/plan.json`, `64 chars`):** `Every Space Station Explained in 10 Minutes (Salyut to Tiangong)`
+- **Exact `#1` Autocomplete + Number Variant (`Rule 26`, `60 chars`):** `Every Space Station Explained in 10 Minutes (All 12 Stations)`
+- **Compact Number-in-Title Variant (`Rule 15`, `43 chars`):** `Every Space Station Explained in 10 Minutes`
+- **Evidence Files:** [`evidence_2026-11-17_public_search.json`](./evidence_2026-11-17_public_search.json), [`evidence_2026-11-17_neighbours.json`](./evidence_2026-11-17_neighbours.json), [`PRE_BUILD_VIDIQ_AUDIT.md`](./PRE_BUILD_VIDIQ_AUDIT.md), [`../TOPIC.md`](../TOPIC.md)
+
+## Rule-E Gate Checklist (`J2967`)
+
+| Gate | Requirement | Status | Evidence |
+|---|---|---|---|
+| **1. Data-First Ranking** | Ranks all `17` public OWB longs + `86` Shorts (`2026-11-16.json` & refreshed `studio_ctr.json`) | **PASS** | `TOPIC.md` §1.1–§1.2 |
+| **2. Non-Overlap** | Zero overlap with `02_Video-Projects/`, PRs `#849/#853/#901/#902`, `ideas/`, `WIP.json` | **PASS** | `0` existing films or idea briefs cover a complete tour of all `12` orbital space stations (`Salyut 1`, `Salyut 2/3/5 Almaz`, `Skylab`, `Salyut 4/6/7`, `Mir`, `ISS`, `Tiangong-1/2`, and modular `Tiangong` from `1971–Present`); distinct from open PR `#853` (`065` ISS 2031 deorbit into Point Nemo) and `076` (`Every Space Shuttle Explained in 10 Minutes`) |
+| **3. Neighbour Gate (`≥3` at `1M+`)** | `≥3` education/space videos `≥1M` views in saved evidence; subject words only | **PASS** | `18` strictly on-topic `≥1M` videos in the main table (`1.48M–121.16M`), combining all `11` strictly on-topic `≥1M` education videos in `neighbours.json` (Tier-1 `TED` Chris Hadfield `10.19M`, Tier-1 `TED-Ed` `1.79M` + `706k` & `431k`, `SmarterEveryDay` `5.74M` / `5.37M` / `5.02M` / `5.01M` / `4.09M` / `3.21M` / `2.67M` / `1.95M` / `1.75M`, with off-topic rows marked `onTopic: false`) with `7` on-topic `≥1M` videos in `public_search.json` (`DOCUMENTARY TUBE` `121.16M`, `VideoFromSpace` `37.70M`, `Jared Owen` `12.77M` & `8.59M`, `Real Engineering` `1.62M`, `REAL SPACE` `1.49M`, `Peekaboo Kidz` `1.48M`) |
+| **4. Rule 26 Search + `studio/plan.json` Alignment** | Autocomplete phrase + ranking check + `studio/plan.json` tour format | **PASS** | `#1` exact autocomplete matches across 3 core queries (`every space station explained`, `space station explained`, `how the international space station works`; `1.49M` REAL SPACE *Every Space Station Comparison: 50 Years of Evolution*, `906.9k` The Space Race, `588.8k` SciShow Space on `Mir`, `321.7k` Megaprojects & `308.4k` Classic Aerospace History on `Skylab`); built natively in `studio/plan.json` Step 3's number-in-title complete-tour format |
+| **5. Two `22–27 s` Short Angles (`E1` + Rule 6 Payoff Withholding)** | `24 s` (`55w` & `57w`), `t=0.0s` hook, `≤1.5s` surprise, `<1.2s` loop tail, `≥70%` payoff withholding, `0` collisions | **PASS** | `S01` *How Did Astronauts Save NASA's Skylab With a Giant Sun Parasol?* (`63 chars`, `7-word` Sentence 1, `OVER FIFTY DEGREES CELSIUS` mid-overlay matching VO, answer starts at word `43/55 = 78.2% ≥ 70%` [`44/56 = 78.6%` hyphen-split]) & `S02` *How Did Two Cosmonauts Rescue the Frozen Salyut 7 Space Station?* (`64 chars`, `7-word` Sentence 1, `MINUS TEN DEGREES CELSIUS` mid-overlay matching VO, answer starts at word `43/57 = 75.4% ≥ 70%` [`43/57 = 75.4%` hyphen-split]) |
