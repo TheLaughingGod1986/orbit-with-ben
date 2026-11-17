@@ -265834,19 +265834,24 @@
           "at": "2026-11-17T11:36Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Implemented scrub_home_paths in board_publish.py across board.json, tracker.json and updates.json; 51/51 publish+updates tests pass"
+        },
+        {
+          "at": "2026-11-17T11:38Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Removed unused board_site/.vercel/project.json, kept vercel.json read by build.py + NO_DEPLOY vercel.json, updated stale comments; 108 Python + 3 Node test suites pass"
         }
       ],
-      "remaining_action": "Remove unused board_site/.vercel/project.json, update stale Vercel comments in board_site, and add test_board_site assertions",
+      "remaining_action": "Commit, push branch, open PR for Chief, and park J2982 for Chief merge + post-merge Cloudflare Pages deploy check",
       "due": "2026-11-19T12:00:00Z",
       "for": "gemini",
       "kind": "studio",
       "plain": "Small tidy-ups on the board: readable times, no private folder path in its data, old Vercel files gone",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-17T11:36Z",
+        "at": "2026-11-17T11:38Z",
         "by": "gemini",
-        "note": "Implemented scrub_home_paths in board_publish.py across board.json, tracker.json and updates.json; 51/51 publish+updates"
+        "note": "Removed unused board_site/.vercel/project.json, kept vercel.json read by build.py + NO_DEPLOY vercel.json, updated stale"
       }
     },
     {
