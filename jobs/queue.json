@@ -236523,9 +236523,14 @@
           "at": "2026-11-17T10:08Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Started run; checking pushed checkpoint 2ecf84b2 on codex/J2498-timing-rough"
+        },
+        {
+          "at": "2026-11-17T10:08Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Restored 2/3 progress; verifying commit 2ecf84b2, NAS diagnostic rough/sheets, check_all.sh, and PR 551 status"
         }
       ],
-      "remaining_action": "Inspecting PR 551 commit 2ecf84b2, NAS v03f-r2 rough/sheets, and all 7 ruling 6808560760 gates",
+      "remaining_action": "Verifying pushed checkpoint 2ecf84b2 (35 free graphics + v03f-r2 NAS rough + 390px sheets + tests) to complete step 3/3 and hand off to Chief",
       "due": "2026-11-16T18:00:00Z",
       "for": "gemini",
       "kind": "chart",
@@ -236543,11 +236548,11 @@
       },
       "model": "gemini-agy",
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 3,
         "at": "2026-11-17T10:08Z",
         "by": "gemini",
-        "note": "Started run; checking pushed checkpoint 2ecf84b2 on codex/J2498-timing-rough"
+        "note": "Restored 2/3 progress; verifying commit 2ecf84b2, NAS diagnostic rough/sheets, check_all.sh, and PR 551 status"
       }
     },
     {
