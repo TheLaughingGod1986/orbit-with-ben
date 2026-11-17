@@ -58,7 +58,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2986 | mini | open | – | – | 033 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test |  |
 | J2987 | mini | open | – | – | for gemini · studio · New-channel research: check the shortlist and 53 example channels through the YouTube Data API |  |
 | J2988 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2984 |  |
-| J2989 | mini | open | – | – | for gemini · studio · New WW2 documentary channel: name options, ten titles, packaging and a three-film pilot plan |  |
+| J2989 | mini | claimed | macbook-2 | 2026-11-17T18:43Z | for gemini · studio · New WW2 documentary channel: name options, ten titles, packaging and a three-film pilot plan |  |
 
 Recently finished:
 
