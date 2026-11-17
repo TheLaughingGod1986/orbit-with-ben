@@ -88394,7 +88394,7 @@
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-26T12:14Z",
-      "result": "parked for Chief: Short PASS",
+      "result": "Waiting for: HELD ON BEN'S OK: Chief KEEP v02 (jobs/reviews/J2926/REVIEW.md, 592efd8d8c; 7/7 gates PASS). 032_short_fri27_opening_testA_v02.mp4 is in OWB UAT and WATCH_FULL for Ben's final watch by Fri 20 Nov 2026 18:00 London.",
       "history": [
         {
           "at": "2026-10-26T12:14Z",
@@ -105044,13 +105044,13 @@
       "stage": "",
       "after": "J1129",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-10-29T01:00Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-28T21:12Z",
-      "result": "Waiting for: HOS AL_-qlWko_g MISSING ELEMENT v02 thumbnail test has ended in Studio and the London date is at least the day after. On 10 Nov 02:46Z it was still running, 1 day 21 hours left, so about 12 Nov 00:00Z (J2457 read-only Studio check by macbook-2, 10 Nov 02:46Z (jobs/reviews/J2457/REVIEW.md, OWB PR #701))",
+      "result": "",
       "history": [
         {
           "at": "2026-10-28T21:12Z",
@@ -105501,29 +105501,32 @@
           "at": "2026-11-14T05:15Z",
           "by": "relay",
           "what": "condition verification queued: J2812"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "reopened: Chief sweep (J2979): J2812 verified T023 on HOS AL_-qlWko_g finished 12 Nov 01:34 and recorded it in THUMB_LEDGER.json (c890865242)"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "rerouted to cursor on cursor-grok-4-7: Chief sweep (J2979): J2812 verified T023 on HOS AL_-qlWko_g finished 12 Nov 01:34 and recorded it in THUMB_LEDGER.json (c890865242)"
         }
       ],
-      "remaining_action": "Read the Periodic Table thumbnail test finish time in Studio; verify the next London day before the approved title-only test",
+      "remaining_action": "In HOS Studio (CDP 9222), arm the approved title-only Test & Compare on HOS 002 AL_-qlWko_g now that T023 is finished",
       "kind": "studio",
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-10-29T01:02Z",
-        "by": "codex",
-        "note": "Fresh HOS Studio reload shows thumbnail Running; title remains How Did We Discover the Periodic Table?. No Studio settin"
-      },
       "taskKeys": [
         "HOS:002"
       ],
-      "hold": {
-        "type": "test",
-        "condition": "T023 on HOS AL_-qlWko_g has an actual Studio finish timestamp and the London date is at least the next day. Mini read 13 Nov about 23:08Z showed Results ready and 11 views during test period, but report access and subsequent bounded CDP reads timed out; no finish timestamp verified. See PR 894 CHIEF_REVIEW.md. Next check requires a Studio-capable Mini worker or MacBook Gemini/Cursor/Codex.",
-        "check_at": "2026-11-14T06:15:31+00:00",
-        "last_recheck": "J2768",
-        "checked_at": "2026-11-13T23:12:49+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J2812"
-      }
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "cursor",
+      "model": "cursor-grok-4-7"
     },
     {
       "id": "J1131",
@@ -178669,7 +178672,7 @@
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
-      "result": "Waiting for: HOS009 own approved music bed and provenance plan exist in 05_Music and pass music_gate; J2663 owns scoped route/production handoff. Neither Mini nor studio-live has 05_Music at preflight. Both diagram KEEP approvals remain valid.",
+      "result": "Waiting for: HOS 009 revised music chain (J2805 reopened -> J2806 -> J2807 -> J2808) before long assembly.",
       "history": [
         {
           "at": "2026-11-04T16:56Z",
@@ -178855,9 +178858,14 @@
           "at": "2026-11-15T12:45Z",
           "by": "relay",
           "what": "condition verification queued: J2892"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-18T09:00:00Z"
         }
       ],
-      "remaining_action": "Await the revised score production (J2805-J2808), complete gate and final acceptance before assembling the gravity film",
+      "remaining_action": "Assemble HOS 009 long master once J2805-J2808 land an accepted revised score",
       "due": "2026-11-15T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -178872,13 +178880,12 @@
         "note": "Input inventory finished: five locked narration hashes match Mini/NAS; five-metre diagram matches; falling-Moon r4 verif"
       },
       "hold": {
-        "type": "input",
-        "condition": "J2878 Chief ruling (2026-11-15T06:51Z, jobs/reviews/J2878/REVIEW.md @ 9bfa91397a): NOT MET. J2803 validation failed (OWB PR #913 @ e3b04e94a) and OWB PR #908 stays draft and undeployed. Grok approved publishing J2805 (codex/j2805-revised-music @ 4b92c042) on HOS desk #180 (#6876651082 at 2026-11-14T11:33:39Z), and J2832 (jobs/reviews/J2832/REVIEW.md @ da14b8c9c9) is queued for Chief release/merge of J2805, but 4b92c042 is not yet pushed or merged; downstream J2806 guarded 180s opening-cue replacement, J2807 capable audio_input review, and J2808 explicit elected-Chief score acceptance (with full current-library production music_gate PASS, own-score provenance and endpoint coverage) remain open and unstarted (no v02 music on Mini or studio-live NAS). Existing 5-part narration and J2631/J2632 r4 diagram KEEP locks verified byte-identical across Mini and NAS; 09_Final-Render absent. No assembly release until accepted score; deadline stays 2026-11-15T18:00Z.",
-        "check_at": "2026-11-15T13:45:13+00:00",
-        "last_recheck": "J2878",
-        "checked_at": "2026-11-15T06:52:00+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J2892"
+        "type": "dependency",
+        "condition": "Waiting on HOS 009 revised music chain: J2805 (reopened in J2979 to push/merge 4b92c042) -> J2806 (180s opening-cue replacement) -> J2807 (ear review) -> J2808 (Chief score acceptance).",
+        "check_at": "2026-11-18T09:00:00Z",
+        "last_recheck": "J2892",
+        "checked_at": "2026-11-17T09:23:01+00:00",
+        "checked_by": "gemini"
       }
     },
     {
@@ -188638,7 +188645,7 @@
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T01:11Z",
-      "result": "Waiting for: J2033 (reopened 9 Nov after J2200 PASS) -> J2034 -> J2035.",
+      "result": "Waiting for: HOS 009 revised music chain (J2805-J2808) and J2035 long assembly before Shorts A/B assembly.",
       "history": [
         {
           "at": "2026-11-05T01:11Z",
@@ -188884,9 +188891,14 @@
           "at": "2026-11-16T03:43Z",
           "by": "relay",
           "what": "condition verification queued: J2927"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-18T12:00:00Z"
         }
       ],
-      "remaining_action": "Await accepted revised music (J2805-J2808) and the checked gravity long (J2035) before assembling its Shorts",
+      "remaining_action": "Assemble HOS 009 Shorts A/B once J2805-J2808 and J2035 long assembly pass",
       "due": "2026-11-22T18:00:00Z",
       "kind": "assembly",
       "progress": {
@@ -188900,13 +188912,12 @@
         "HOS:009"
       ],
       "hold": {
-        "type": "input",
-        "condition": "J2910 Chief ruling (gemini, 6aa205a96d): NOT MET. Grok approved publishing J2805 (codex/j2805-revised-music @ 4b92c042) on HOS desk #180 (#6876651082 at 2026-11-14T11:33:39Z) and J2832 is parked for Chief release/merge of J2805, but J2805 is still blocked pending push/PR/merge; J2806 revised wonder-cue production, J2807 capable ear review, J2808 Chief score acceptance, and J2035 long assembly + required composite/final gates (J2892 recheck verified NOT MET at 12:51Z, e5954c906e; 09_Final-Render absent on Mini and NAS) have not yet completed. J2803 failed and PR #908 remains undeployed. Shorts A/B and 5-part narration locks, SHORTS_PICTURE_PLAN_v03.json, and picture KEEP locks (J2631, J2632 r4, Short A S03) verified intact across Mini and NAS. No Shorts assembly release before accepted revised score and checked J2035 long.",
-        "check_at": "2026-11-16T04:43:24+00:00",
-        "last_recheck": "J2910",
-        "checked_at": "2026-11-15T19:12:13+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J2927"
+        "type": "dependency",
+        "condition": "Waiting on HOS 009 revised music chain (J2805-J2808) and J2035 long assembly + gates before assembling Shorts A/B.",
+        "check_at": "2026-11-18T12:00:00Z",
+        "last_recheck": "J2927",
+        "checked_at": "2026-11-17T09:23:01+00:00",
+        "checked_by": "gemini"
       }
     },
     {
@@ -215580,13 +215591,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-12T00:59Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-09T10:36Z",
-      "result": "parked for Chief: FIRST30_PLAN conflicts with locked v03 narration and actual row timings; requested silence insertions 38.68/48.80/56.20 split mystery/city-sized/one-fifth. Correct plan before assembly; evidence ff99358894 on codex/j2438-pluto-v02.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-09T10:36Z",
@@ -215627,28 +215638,34 @@
           "at": "2026-11-13T03:42Z",
           "by": "relay",
           "what": "condition verification queued: J2754"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "reopened: Chief sweep (J2979): J2754 verified corrected FIRST30_PLAN.md (0870bcdf52) on main (4e0a4c3ec7) and studio-live"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "rerouted to cursor on cursor-grok-4-7: Chief sweep (J2979): J2754 verified corrected FIRST30_PLAN.md (0870bcdf52) on main (4e0a4c3ec7) and studio-live"
         }
       ],
-      "remaining_action": "Wait for J2668 to correct and verify the Pluto opening plan, then resume assembly",
+      "remaining_action": "Execute corrected FIRST30_PLAN.md (0870bcdf52) to assemble 034 Pluto long master v02 and run picture_qa, polish_gate and music_gate",
       "kind": "assembly",
       "plain": "Trim 034 Pluto Sentence 1 to <8 s, re-cut the first 30 s to <=4 s per cut (FIRST30_PLAN.md), and assemble master v02",
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-12T01:01Z",
-        "by": "codex",
-        "note": "Input verification found all three planned silence insertions inside spoken words; evidence committed as ff99358894 on c"
-      },
       "taskKeys": [
         "OWB:034"
       ],
       "escalated_at": "2026-11-12T03:14Z",
-      "hold": {
-        "type": "dependency",
-        "condition": "Chief FIX 12 Nov: J2668 must land a corrected FIRST30_PLAN aligned to locked v03 words and actual rows, replace the three mid-word insertions, and verify unchanged R08 onward timing; reopen only with landed correction evidence. Ruling c75c73a417 / PR 842.",
-        "check_at": "2026-11-13T04:42:31+00:00",
-        "recheck_task": "J2754"
-      }
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "cursor",
+      "model": "cursor-grok-4-7"
     },
     {
       "id": "J2439",
@@ -225219,7 +225236,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T17:57Z",
-      "result": "parked for Chief: Batch 12 stopped on row 56 (P5:08a_wallace_opens_origin) after Flow failed Create with 'We noticed some unusual activity' banner (TimeoutError exit 1; live balance verified unchanged 4,990 -> 4,990, 0 credits deducted; SUBMITTING + unposted 100-credit CHARGED left untouched per stop rules; Batch 11 rulings 6831422974/6831444565/6831536663 recorded in OWB 7ceb9685b2; 55/66 generated [48 KEEP, 7 RETAKE @ 700]; desk #180 6831803895)",
+      "result": "Waiting for: reconcile-session-block on HOS:013:P05:08a_wallace_opens_origin:t1 (0 credits) and dry-run --floor 3000 before resuming Batch 12 (55/66 minted: 48 KEEP, 7 RETAKE).",
       "history": [
         {
           "at": "2026-11-10T17:57Z",
@@ -225635,9 +225652,14 @@
           "at": "2026-11-12T20:07Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-18T09:00:00Z"
         }
       ],
-      "remaining_action": "Run reconcile-session-block after Codex PR merges, then verify post-19:13Z Flow allowance, banner cleared, and dry-run --floor 3000 before resuming Batch 12 (row 56 t2 + rows 57-66)",
+      "remaining_action": "Land reconcile-session-block on history-of-science, close row 56 t1 at 0 credits, verify dry-run --floor 3000, and mint rows 56-66",
       "due": "2026-11-12T18:45:00Z",
       "kind": "video",
       "plain": "Make the 66 pictures for the Darwin and Wallace film, on credits that would otherwise expire on Thursday",
@@ -225657,8 +225679,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Codex merges reconcile-session-block PR on history-of-science (reviewed by Claude), Gemini runs reconcile-session-block once to close HOS:013:P05:08a_wallace_opens_origin:t1 as SESSION_BLOCKED at 0 credits, the new Flow allowance is live after 19:13Z with the unusual-activity banner gone, and dry-run --floor 3000 passes with 0 pending charges (Chief rulings 6831924778 & 6831945212)",
-        "check_at": "2026-11-12T20:15:00Z"
+        "condition": "Codex/worker lands reconcile-session-block on history-of-science, closes HOS:013:P05:08a_wallace_opens_origin:t1 as SESSION_BLOCKED at 0 credits, and verifies dry-run --floor 3000 before resuming Batch 12 (rows 56-66).",
+        "check_at": "2026-11-18T09:00:00Z",
+        "last_recheck": "J2720",
+        "checked_at": "2026-11-17T09:23:01+00:00",
+        "checked_by": "gemini"
       },
       "escalated_at": "2026-11-12T20:07Z"
     },
@@ -226412,7 +226437,10 @@
       "hold": {
         "type": "dependency",
         "condition": "Ledger step done (PR 935). The dry run of the move read 0 on 14, 15, 16 and 17 Nov (streak 4). Still open, in the order written on this job: History of Science's own current files (374 files, about 980 places, ordinary pull requests, not touching files a working job pins by hash), the open pull requests, the mirror rehearsal, and the history-rewrite window (Ben told the day before). The move is a separate decision: seven zero days in a row, Ben told at day six (19 Nov).",
-        "check_at": "2026-11-18T07:40:00Z"
+        "check_at": "2026-11-18T07:40:00Z",
+        "last_recheck": "J2723",
+        "checked_at": "2026-11-17T09:23:01+00:00",
+        "checked_by": "gemini"
       }
     },
     {
@@ -236204,7 +236232,7 @@
     {
       "id": "J2652",
       "title": "HOS 013 Darwin & Wallace: scope picture plan v03 (cuts moved to word gaps, overlay onsets, the callback at 4.20 s)",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Queued 11 Nov 22:56Z, queue side of the Chief's ruling https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808560760 (Grok, 11 Nov 22:26Z) on the timing rough (history-of-science 551, `11b9baf1`; read its TIMING_REPORT_v01.md and COST_OPTIONS_v01.md).\n\n**Scope v03 of the picture plan, in his words:**\n1. Never a picture cut inside a word. All 14 in-word cuts move.\n2. Prefer a sentence boundary when one falls inside the 4 to 6 s window, or within 1.0 s of it. When none fits, a cut may land inside a sentence, but only at a word gap of at least 120 ms, a comma or clause break, or a breath: snap to the nearest one to the cadence target. A shot may run to 7.0 s to reach one, but no further.\n3. Graphic and overlay rows are capped at 8 s. The five rows over that are split, or the graphic is re-timed.\n4. The J1310-locked WAV is the source of truth: update the plan's VO hash to match it. Do not change the audio.\n5. The callback gets 4.20 s, the real unused tail. Trim it to fit. Do not stretch or loop it.\n6. Add word-level onset fields to the plan from the J1310 transcript timings, so the onset audit can finish.\n7. Review the three own-code replacements in COST_OPTIONS_v01.md. Each is adopted only if it still passes the 390 px phone sheet.\n\nJ2558's v02 is not overwritten. Codex then builds the v03 rough; its pass bar is in the ruling. The five missing v02 free renders may go at 0 credits under the existing guards. £0.\n\n\nClaude, 12 Nov 12:55Z (fresh cloud session): inputs verified on the PR 551 head 11b9baf: PICTURE_PLAN_v02.json, timing_rough_J2498/ (TIMING_REPORT, COST_OPTIONS, timing_issues, overlay_audit, cuts_v01.csv) and 02_Voiceover/stt/hos_013_vo_v03a/words_fw_small_en.json. Handed to Codex instead of done in the cloud: this is a code build (a v03 plan builder that moves 100+ cuts to word gaps) and the natural place is PR 551's own branch, which Codex made. The cloud agent is limited to its one designated branch, which carries PR 548 (Grok's conditions), and must not mix this in. Open or update the PR from that branch. Keep J2558's v02 untouched. Park for Chief with the seven checks from the ruling listed PASS/FAIL. £0, no audio change.",
       "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808560760",
@@ -236212,13 +236240,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-13T01:14Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T22:56Z",
-      "result": "parked for Chief: review PR 551 at 3144c84b and REVIEW_v03f.md, including the opening 3.82-second interpretation of ruling 6808560760 and revised allocation. Three sentence conflicts resolved; six tests and clip_check pass. New 515-second NAS diagnostic and six sheets verified, render complete. Keep 2/3: remaining authorized free art, source acceptance and complete rough are unfinished; no Ben or credit blocker.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-11T22:56Z",
@@ -236419,24 +236447,35 @@
           "at": "2026-11-13T04:10Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "reopened: Chief sweep (J2979): Chief PASS on v03f timing (104 beats, 3.82s row-1 cut per ruling 6808560760, 3 sentence conflicts resolved, clip_check passed=true). Finish step 3/3."
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "rerouted to cursor on cursor-grok-4-7: Chief sweep (J2979): Chief PASS on v03f timing (104 beats, 3.82s row-1 cut per ruling 6808560760, 3 sentence conflicts resolved, clip_check passed=true). Finish step 3/3."
         }
       ],
-      "remaining_action": "Chief review of the revised Darwin and Wallace timing, followed by remaining pictures",
+      "remaining_action": "Finish step 3/3 on HOS PR #551: render remaining authorized £0 free code graphics and complete the v03f diagnostic rough",
       "due": "2026-11-16T18:00:00Z",
-      "for": "codex",
+      "for": "cursor",
       "kind": "chart",
       "plain": "Re-time the picture plan for the Darwin and Wallace film so no picture changes in the middle of a word",
       "taskKeys": [
         "HOS:013"
       ],
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-13T01:24Z",
-        "by": "codex",
-        "note": "PR 551 head 3144c84b: three sentence conflicts resolved; six tests, clip_check and decode pass. New NAS rough and six sh"
+      "escalated_at": "2026-11-13T04:10Z",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "codex",
+        "model": "",
+        "status": "open",
+        "by": ""
       },
-      "escalated_at": "2026-11-13T04:10Z"
+      "model": "cursor-grok-4-7"
     },
     {
       "id": "J2653",
@@ -237087,13 +237126,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-12T02:01Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-12T01:54Z",
-      "result": "Missing raw media on studio-live: all eight v03 source clips absent. Resume on Mini originals or restore sources with SHA-256 checks before dispatching to MacBook again. Existing HOS PR #556 refreshed at 262ea41; v04 not rendered. Recipe recovered from open PR #555.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-12T01:54Z",
@@ -237139,23 +237178,30 @@
           "at": "2026-11-12T08:21Z",
           "by": "relay",
           "what": "condition verification queued: J2687"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "reopened: Chief sweep (J2979): J2687 verified all 8 HOS 008 Short C v03 source clips restored with SHA-256 parity on studio-live and Mini (6f9bb7f06c)"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "rerouted to cursor on cursor-grok-4-7: Chief sweep (J2979): J2687 verified all 8 HOS 008 Short C v03 source clips restored with SHA-256 parity on studio-live and Mini (6f9bb7f06c)"
         }
       ],
-      "remaining_action": "Restore the eight raw clips to the shared film folder or resume the re-cut on the Mini; render and verification remain",
+      "remaining_action": "Render hos_008_short_C_v04.mp4 from the 8 restored clips on studio-live and run gate_shorts_open.py",
       "kind": "assembly",
       "plain": "Re-cut HOS 008 Short C v04 from existing voice and picture to fix the J2485 review items",
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-12T02:03Z",
-        "by": "macbook-2"
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
       },
-      "hold": {
-        "type": "input",
-        "condition": "Missing raw media on studio-live: all eight v03 source clips absent. Resume on Mini originals or restore sources with SHA-256 checks before dispatching to MacBook again. Existing HOS PR #556 refreshed at 262ea41; v04 not rendered. Recipe recovered from open PR #555.",
-        "check_at": "2026-11-12T09:21:42+00:00",
-        "recheck_task": "J2687"
-      }
+      "for": "cursor",
+      "model": "cursor-grok-4-7"
     },
     {
       "id": "J2663",
@@ -239213,13 +239259,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-12T09:43Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T08:21Z",
-      "result": "parked for Chief: J2449 waiting condition NOT yet satisfied at 2026-11-12T09:49Z — keep J2449 blocked (commit cfbc31e6be, jobs/reviews/J2686/REVIEW.md): (1) J2674 finished at 09:06Z (c638947847, verbatim v03 quotes updated in cfbc31e6be); (2) Packaging panel owb-019-andromeda-j2674-package-a is 2/4 done: J2688 (codex critique 4c97ba6c18, recommends FIX Package A) and J2689 (gemini critique bb596308a6, recommends testing dbd52af0...) are done, while J2690 (cursor critique) and J2691 (panel DECISION.md) remain open; (3) Final Chief release J2692 (after J2691) and PR #836 merge have not yet occurred. Because J2449 is held by codex and gemini is a specialist worker, jobs.py restricts wait --recheck J2686 to the holder/elected Chief. Chief (codex): please run 'python3 scripts/jobs.py wait J2449 --agent codex --condition \"J2674 finished (c638947847), and panel critiques J2688 (codex) and J2689 (gemini) are done, but packaging panel jobs J2690 (cursor critique) and J2691 (DECISION.md) and final Chief release J2692 (plus PR #836 merge) remain open; no new Andromeda test before J2691 and J2692 complete\" --check-at \"2026-11-12T20:00:00Z\" --type dependency --recheck J2686 --action \"Complete packaging panel J2690-J2691 and Chief release J2692 before starting the two-arm Andromeda test in Studio\" --git' and 'python3 scripts/jobs.py done J2686 --agent codex --result \"Condition not yet met (cfbc31e6be, jobs/reviews/J2686/REVIEW.md): J2674, J2688, J2689 done; J2690, J2691, J2692 and PR #836 merge remain open; J2449 stays blocked\" --git'. £0.",
+      "result": "Chief sweep (J2979): parent J2449 is already done; closing stale condition check.",
       "history": [
         {
           "at": "2026-11-12T08:21Z",
@@ -239265,6 +239311,11 @@
           "at": "2026-11-12T12:45Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "done: Chief sweep (J2979): parent J2449 is already done; closing stale condition check."
         }
       ],
       "remaining_action": "Elected Chief (codex): run jobs.py wait J2449 --recheck J2686 and jobs.py done J2686",
@@ -239291,7 +239342,8 @@
       "taskKeys": [
         "OWB:019"
       ],
-      "escalated_at": "2026-11-12T12:45Z"
+      "escalated_at": "2026-11-12T12:45Z",
+      "done_ref": "cfbc31e6be"
     },
     {
       "id": "J2687",
@@ -239304,13 +239356,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-13T08:46Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T08:21Z",
-      "result": "parked for Chief: J2662 waiting condition MET at 2026-11-13T08:51Z (OWB PR #895 6f9bb7f06c, jobs/reviews/J2687/REVIEW.md), ready to reopen J2662: (1) all 8 HOS 008 Short C v03 raw source clips (19_skyline_strike_t1.mp4 06caaeb6..., 01_house_rod_t1.mp4 3822f6f7..., 07_giant_spark_t1.mp4 8be031a3..., 12_steeple_fire_t1.mp4 421b96d9..., 18_rod_closeup_t1.mp4 9535c72f..., 06_rod_fitting_t1.mp4 73c43fc2..., 06_rod_fitting_c1_t1.mp4 de605071..., 14_safe_towers_t1.mp4 0c7e98c2...) were located in the Mini's hos-008-lightning picture store and restored with 3-way SHA-256 verification to both studio-live (/Volumes/data/studio-live/History Of Science/02_Video-Projects/008_Lightning-Franklin/04_Generated-Clips/) and the Mini shared HOS checkout; (2) the v03 build recipe (_build_short_c_v03.py from HOS PR #555 a0190a2f, sha256 0b59eb72...) is restored to studio-live 10_Shorts/J2255/_build_short_c_v03.py, and all VO, STT, music bed, house SFX, and v03 master files match byte-for-byte across Mini and studio-live; (3) J2485 zero-spend (£0) re-cut rules remain valid. Because jobs.py reopen on a held job requires chief_relay.elected_for, elected Chief (claude) please merge PR #895 and run: python3 scripts/jobs.py reopen J2662 --agent claude --note 'J2687 verified condition MET (OWB PR #895 6f9bb7f06c, jobs/reviews/J2687/REVIEW.md): all 8 HOS 008 Short C v03 raw source clips and the J2255 build recipe (_build_short_c_v03.py, sha256 0b59eb72...) are restored from Mini hos-008-lightning originals to both studio-live and the Mini shared HOS 008 folder with 3-way SHA-256 verification, and all VO/STT/music/SFX stems match across Mini and NAS. Ready to build and gate hos_008_short_C_v04.mp4 (£0).' --git && python3 scripts/jobs.py done J2687 --agent claude --result 'Condition MET at 2026-11-13T08:51Z (OWB PR #895 6f9bb7f06c, jobs/reviews/J2687/REVIEW.md): restored all 8 HOS 008 Short C v03 raw source clips and J2255 _build_short_c_v03.py to studio-live and Mini shared HOS 008 folder with 3-way SHA-256 verification; reopened J2662 for £0 v04 re-cut.' --git. £0.",
+      "result": "Chief sweep (J2979): condition for J2662 verified satisfied (6f9bb7f06c); J2662 reopened for cursor.",
       "history": [
         {
           "at": "2026-11-12T08:21Z",
@@ -239356,6 +239408,11 @@
           "at": "2026-11-13T11:27Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "done: Chief sweep (J2979): condition for J2662 verified satisfied (6f9bb7f06c); J2662 reopened for cursor."
         }
       ],
       "remaining_action": "Elected Chief (claude) merges PR #895, reopens J2662 with evidence, and marks J2687 done",
@@ -239382,7 +239439,8 @@
       "taskKeys": [
         "HOS:008"
       ],
-      "escalated_at": "2026-11-13T11:27Z"
+      "escalated_at": "2026-11-13T11:27Z",
+      "done_ref": "6f9bb7f06c"
     },
     {
       "id": "J2688",
@@ -240447,13 +240505,13 @@
       "stage": "thumbs",
       "after": "J2701",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
+      "status": "done",
+      "by": "gemini",
       "since": "2026-11-12T12:36Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-12T12:32Z",
-      "result": "Studio complete: T025 running; T024/T026 skipped, finished tests preserved. Local evidence commit c438d1ad65 on codex/j2702-thumbnail-tests at /Volumes/MiniWork/scratch/j2702-wt. Automatic approval review rejected pushing internal ledger and Studio evidence to GitHub as sensitive egress without exact-payload approval. Do not re-arm tests. Only evidence publication remains; read T025 on 26 Nov.",
+      "result": "Chief sweep (J2979): T025 armed in Studio (T024/T026 skipped to preserve finished tests) and local evidence c438d1ad65 published to main in J2722 (040814928d); read T025 on 26 Nov.",
       "history": [
         {
           "at": "2026-11-12T12:32Z",
@@ -240499,6 +240557,11 @@
           "at": "2026-11-12T18:49Z",
           "by": "relay",
           "what": "condition verification queued: J2722"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "done: Chief sweep (J2979): T025 armed in Studio (T024/T026 skipped to preserve finished tests) and local evidence c438d1ad65 published to main in J2722 (040814928d); read T025 on 26 Nov."
         }
       ],
       "remaining_action": "Publish the verified ledger and evidence once the blocked push is approved",
@@ -240517,12 +240580,7 @@
         "by": "codex",
         "note": "Studio complete; T025 running, T024/T026 skipped to preserve finished tests. Ledger validation passed; automatic review "
       },
-      "hold": {
-        "type": "input",
-        "condition": "Studio complete: T025 running; T024/T026 skipped, finished tests preserved. Local evidence commit c438d1ad65 on codex/j2702-thumbnail-tests at /Volumes/MiniWork/scratch/j2702-wt. Automatic approval review rejected pushing internal ledger and Studio evidence to GitHub as sensitive egress without exact-payload approval. Do not re-arm tests. Only evidence publication remains; read T025 on 26 Nov.",
-        "check_at": "2026-11-12T19:49:21+00:00",
-        "recheck_task": "J2722"
-      }
+      "done_ref": "040814928d"
     },
     {
       "id": "J2703",
@@ -240601,7 +240659,7 @@
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-12T13:55Z",
-      "result": "Dependency J2708: establish isolated hosted PostgreSQL and safe HOS Preview configuration; then complete hosted build and auth/home smoke checks. Evidence HOS PR569. Production remains HELD.",
+      "result": "Waiting for: J2708 (isolated hosted PostgreSQL for HOS Preview validation) before hosted Preview smoke checks; local Next 16.4.6 checks pass on HOS PR #569.",
       "history": [
         {
           "at": "2026-11-12T13:55Z",
@@ -240642,9 +240700,14 @@
           "at": "2026-11-12T14:30Z",
           "by": "relay",
           "what": "condition verification queued: J2709"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-24T09:00:00Z"
         }
       ],
-      "remaining_action": "Complete hosted Preview validation after the isolated database setup",
+      "remaining_action": "Run hosted Preview build and auth/home smoke checks once J2708 provides isolated hosted PostgreSQL",
       "kind": "assembly",
       "plain": "Tests the updated History of Science website safely and investigates its broken home page.",
       "mini_only": true,
@@ -240657,9 +240720,11 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "Dependency J2708: establish isolated hosted PostgreSQL and safe HOS Preview configuration; then complete hosted build and auth/home smoke checks. Evidence HOS PR569. Production remains HELD.",
-        "check_at": "2026-11-12T15:30:46+00:00",
-        "recheck_task": "J2709"
+        "condition": "Waiting on J2708 (isolated hosted PostgreSQL for HOS Preview validation) before running hosted Preview smoke checks; local Next 16.4.6 checks pass on HOS PR #569.",
+        "check_at": "2026-11-24T09:00:00Z",
+        "last_recheck": "J2709",
+        "checked_at": "2026-11-17T09:23:01+00:00",
+        "checked_by": "gemini"
       }
     },
     {
@@ -240968,13 +241033,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook-2",
+      "status": "done",
+      "by": "gemini",
       "since": "2026-11-12T14:32Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T14:30Z",
-      "result": "parked for Chief: J2704 condition NOT yet satisfied at 2026-11-12T14:38Z, keep J2704 blocked at step 2 of 3 (OWB PR #851, commit 793c883b2, jobs/reviews/J2709/REVIEW.md). Verified: (1) Chief ruling #6813294950 (2026-11-12T03:14Z) holds HOS 07_Content-Ops production deploy until full build + Vercel Preview smoke checks + home-500 diagnosis pass; (2) Open HOS PR #569 (7420a24b) verifies local Next 16.4.6 build/migration, typecheck, lint, 199/199 tests, check_all.sh, and 6 local auth/login smoke checks on merged main (2f883532) against an isolated loopback PostgreSQL 17 cluster, and proves the public home 500 is missing DATABASE_URL in Production runtime (live probe: / returns 500, /login returns 200); (3) Prerequisite J2708 (establish isolated hosted PostgreSQL and safe Preview config for history-of-science-content-ops) is still open and unclaimed (added 14:29Z), so no hosted Preview database/config or Preview deployment exists yet. Because macbook-2 is not the holder (codex) or elected Chief (codex), jobs.py restricts wait J2704 --recheck J2709 to codex. Elected Chief (codex) please run: python3 scripts/jobs.py wait J2704 --agent codex --condition 'Dependency J2708 (open): establish isolated hosted PostgreSQL and safe HOS Preview configuration; then complete hosted build and auth/home smoke checks. Local build/migration, 199 tests, check_all, local auth smoke checks, and home-500 root cause (missing DATABASE_URL in Production) are documented in HOS PR #569 (7420a24b). Production remains HELD.' --check-at '2026-11-12T20:30:00Z' --type input --recheck J2709 --action 'Complete hosted Preview validation after J2708 establishes the isolated hosted PostgreSQL database and safe Preview configuration' --git && python3 scripts/jobs.py done J2709 --agent codex --result 'Verified at 2026-11-12T14:38Z (OWB PR #851, jobs/reviews/J2709/REVIEW.md): condition not yet met. Local Next 16 validation and home-500 root cause are verified in HOS PR #569 (7420a24b), but prerequisite J2708 (isolated hosted PostgreSQL + safe Preview config) is still open/unclaimed. Production remains HELD; next check 2026-11-12T20:30:00Z.' --git. £0.",
+      "result": "Chief sweep (J2979): recorded unmet J2708 dependency hold on J2704 (next check 2026-11-24T09:00Z) and closed J2709.",
       "history": [
         {
           "at": "2026-11-12T14:30Z",
@@ -241015,6 +241080,11 @@
           "at": "2026-11-12T17:01Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "done: Chief sweep (J2979): recorded unmet J2708 dependency hold on J2704 (next check 2026-11-24T09:00Z) and closed J2709."
         }
       ],
       "remaining_action": "Elected Chief records wait --recheck J2709 on J2704 and closes J2709",
@@ -241037,7 +241107,8 @@
         "at": "2026-11-12T14:42Z",
         "by": "macbook-2"
       },
-      "escalated_at": "2026-11-12T17:01Z"
+      "escalated_at": "2026-11-12T17:01Z",
+      "done_ref": "793c883b2"
     },
     {
       "id": "J2710",
@@ -242298,13 +242369,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-12T18:08Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T18:05Z",
-      "result": "parked for Chief: Verified J2529 waiting condition (commit 62fcad36ea, jobs/reviews/J2720/REVIEW.md) — condition NOT yet satisfied, keep J2529 blocked: (1) Predecessor J2033 is done and 55/66 pass-1 Quality rows are minted and ruled (48 KEEP, 7 RETAKE @ 700 Flow credits under --floor 3000); (2) Batch 12 stopped on row 56 (P5:08a_wallace_opens_origin, HOS:013:P05:08a_wallace_opens_origin:t1) at 0 live credits deducted (4,990 -> 4,990) with Flow's 'We noticed some unusual activity' banner (runner PID 19965 dead, 0 .mp4 files on NAS, pass ledger SUBMITTING and shared ledger unposted CHARGED 100 verified untouched); (3) Per Chief rulings 6831924778 and 6831945212 (withdrawing 6831826573 in full after Claude cross-check 6831935812), neither ledger is hand-edited, no further Creates run on the expiring pre-19:13Z allowance, and J2529 awaits Codex's reconcile-session-block PR on history-of-science (reviewed by Claude), Gemini's single reconcile-session-block run on row 56 t1, and the post-19:13Z Flow allowance reset with banner cleared and dry-run --floor 3000 passing. Holder wait recorded on J2529 for 2026-11-12T20:15:00Z; because jobs.py restricts wait --recheck J2720 to the elected Chief, Chief (codex) please run: python3 scripts/jobs.py wait J2529 --agent codex --condition 'Codex merges reconcile-session-block PR on history-of-science (reviewed by Claude), Gemini runs reconcile-session-block once to close HOS:013:P05:08a_wallace_opens_origin:t1 as SESSION_BLOCKED at 0 credits, the new Flow allowance is live after 19:13Z with the unusual-activity banner gone, and dry-run --floor 3000 passes with 0 pending charges (Chief rulings 6831924778 & 6831945212)' --check-at '2026-11-12T20:15:00Z' --type input --recheck J2720 --action 'Run reconcile-session-block after Codex PR merges, then verify post-19:13Z Flow allowance, banner cleared, and dry-run --floor 3000 before resuming Batch 12 (row 56 t2 + rows 57-66)' --git && python3 scripts/jobs.py done J2720 --agent codex --result 'Verified J2529 condition (62fcad36ea, jobs/reviews/J2720/REVIEW.md): J2033 done and 55/66 pass-1 rows ruled (48 KEEP, 7 RETAKE), but per Chief rulings 6831924778 & 6831945212 (withdrawing 6831826573), J2529 stays held until 2026-11-12T20:15:00Z for Codex reconcile-session-block PR, Gemini reconciliation, and post-19:13Z Flow reset. £0.' --git. £0.",
+      "result": "Chief sweep (J2979): recorded J2720 verification on J2529 (next check 2026-11-18T09:00:00Z) and closed J2720.",
       "history": [
         {
           "at": "2026-11-12T18:05Z",
@@ -242355,6 +242426,11 @@
           "at": "2026-11-12T21:49Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "done: Chief sweep (J2979): recorded J2720 verification on J2529 (next check 2026-11-18T09:00:00Z) and closed J2720."
         }
       ],
       "remaining_action": "Elected Chief (codex) records --recheck J2720 on J2529 and closes J2720",
@@ -242381,7 +242457,8 @@
       "taskKeys": [
         "HOS:013"
       ],
-      "escalated_at": "2026-11-12T21:49Z"
+      "escalated_at": "2026-11-12T21:49Z",
+      "done_ref": "62fcad36ea"
     },
     {
       "id": "J2721",
@@ -242500,13 +242577,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-13T11:18Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T18:49Z",
-      "result": "parked for Chief: J2702 waiting condition verified SATISFIED and unpushed local evidence commit c438d1ad65 published to main at 040814928d (05_Analytics/tests/THUMB_LEDGER.json, jobs/reviews/J2702/*, and jobs/reviews/J2722/REVIEW.md). Visually verified all Studio screenshots and SHA-256 hashes in /Users/benjaminoats/_desk/j2702/ against J2701 Chief PASS: (1) OWB:007 Neutron Star Yk1tLh23rko T025 is armed and running thumbnail-only (live A CRUSHED FLAT vs approved B_v02 CRUSHED TO ATOMS 730de8b8e5, title unchanged, rollback A 557d2e882f retained, next read-back 2026-11-26); (2) OWB:013 Moon 2fsQcea-voM T024 and OWB:003 Alien Worlds b8-X_FyJnHM T026 skipped with finished 10-24 Oct tests preserved under the Never rule. Do NOT re-run Studio work on J2702. Elected Chief (codex/claude) please run: python3 scripts/jobs.py reopen J2702 --agent <chief> --note 'J2722 verified Studio evidence and published THUMB_LEDGER.json + reports to main (040814928d); no Studio work remains.' --git && python3 scripts/jobs.py done J2702 --agent <chief> --result 'Studio complete and evidence published on main (040814928d, J2722): T025 (Yk1tLh23rko) thumbnail-only test running (CRUSHED FLAT vs CRUSHED TO ATOMS, read-back 2026-11-26); T024 (2fsQcea-voM) and T026 (b8-X_FyJnHM) skipped to preserve finished tests. £0.' --git && python3 scripts/jobs.py reopen J2722 --agent <chief> --note 'Closing J2722 after J2702 completion.' --git && python3 scripts/jobs.py done J2722 --agent <chief> --result 'Verified J2702 Studio evidence and published c438d1ad65 ledger/reports + jobs/reviews/J2722/REVIEW.md to main (040814928d); J2702 closed done. £0.' --git",
+      "result": "Chief sweep (J2979): verified J2702 satisfied and published evidence to main at 040814928d; J2702 closed done.",
       "history": [
         {
           "at": "2026-11-12T18:49Z",
@@ -242552,6 +242629,11 @@
           "at": "2026-11-13T13:33Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "done: Chief sweep (J2979): verified J2702 satisfied and published evidence to main at 040814928d; J2702 closed done."
         }
       ],
       "remaining_action": "Elected Chief (codex/claude) to close J2702 and J2722 done (Studio T025 running, evidence published 040814928d)",
@@ -242580,7 +242662,8 @@
         "OWB:007",
         "OWB:003"
       ],
-      "escalated_at": "2026-11-13T13:33Z"
+      "escalated_at": "2026-11-13T13:33Z",
+      "done_ref": "040814928d"
     },
     {
       "id": "J2723",
@@ -242593,13 +242676,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-12T22:49Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-12T19:19Z",
-      "result": "parked for Chief: J2537 waiting condition NOT YET MET (1 of 2 satisfied) at 2026-11-12T22:55Z (OWB PR #872 9abc7b7bf9, jobs/reviews/J2723/REVIEW.md). (1) SATISFIED: Thu 12 Nov 19:13 London picture window is closed with 0 active picture runs, 05_Analytics/ai_spend/ledger.jsonl is quiet since 2026-11-12T18:01:16Z, and Orbit stage-1 PRs #801 (6b1fa75910) and #820 (f41442996c) are merged on main with test_email_ratchet.py 8/8 OK and 1 file left; (2) UNMET: superseding dependency hold recorded on J2537 at 21:56Z waiting behind OWB PR #868 (16b8cc514, J2618) / repair PR #869 (2312a8af2, J2738) and HOS PR #548 (55b968787, J2622) — all three remain OPEN (mergedAt: null) so two pull requests do not run at once. Because jobs.py restricts wait --recheck J2723 to the elected Chief, Chief (codex) please run: python3 scripts/jobs.py wait J2537 --agent codex --condition 'The window has closed and no picture run is going (ledger.jsonl last write 18:01Z, 1 file left in test_email_ratchet.py), but this waits its turn behind the relay rewrite (PR #868 / repair PR #869, blocked on J2738/J2618) and the History of Science settings change (HOS PR #548, J2622), so two pull requests do not run at once.' --check-at '2026-11-13T00:45:00Z' --type dependency --action 'After 868 and 548 merge, take the addresses out of the spend ledger' --recheck J2723 --git && python3 scripts/jobs.py done J2723 --agent codex --result 'Verified J2537 condition at 2026-11-12T22:55Z (OWB PR #872 9abc7b7bf9, jobs/reviews/J2723/REVIEW.md): 19:13 London window closed, 0 active picture runs, ledger.jsonl quiet since 18:01Z, and Orbit stage-1 PRs #801/#820 on main (test_email_ratchet.py 8/8 OK, 1 file left), but superseding dependencies OWB PR #868/#869 (J2618/J2738) and HOS PR #548 (J2622) remain OPEN; updated J2537 hold (--recheck J2723, check 2026-11-13T00:45:00Z). £0.' --git. £0.",
+      "result": "Chief sweep (J2979): J2537 already carries its updated 17 Nov dated hold (check_at 2026-11-18T07:40:00Z, streak 4); closing superseded 12 Nov verifier J2723.",
       "history": [
         {
           "at": "2026-11-12T19:19Z",
@@ -242645,6 +242728,11 @@
           "at": "2026-11-13T02:33Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "done: Chief sweep (J2979): J2537 already carries its updated 17 Nov dated hold (check_at 2026-11-18T07:40:00Z, streak 4); closing superseded 12 Nov verifier J2723."
         }
       ],
       "remaining_action": "Elected Chief (codex) to run jobs.py wait J2537 --recheck J2723 and jobs.py done J2723 (evidence on OWB PR #872)",
@@ -242668,7 +242756,8 @@
         "by": "gemini",
         "note": "Evidence PR #872 (9abc7b7bf9) opened; parking J2723 for elected Chief (codex) to record wait --recheck J2723 on J2537"
       },
-      "escalated_at": "2026-11-13T02:33Z"
+      "escalated_at": "2026-11-13T02:33Z",
+      "done_ref": "9abc7b7bf9"
     },
     {
       "id": "J2724",
@@ -243457,7 +243546,7 @@
     {
       "id": "J2732",
       "title": "Mars wind Short: read next-morning snapshot after J2716",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Follow up existing Chief ruling 6831935790 and J2716 on OWB:025 Short uhZSRcvngvE. Read-only, no spend or Studio changes. After the 13 Nov 2026 06:40 UTC tracker run, read the new snapshot and compare with the channel first-day baseline at comparable ages. If missing, record that and set a new observable wait. Record findings in the length-test log and launch note; if still under one tenth of the usual first day, carry the subject/title hypothesis into topic review as requested by the existing ruling. Small samples and the different duration do not establish causality. Shown-in-feed was not observed in the six-hour check; do not treat the calculated estimate as a Studio measurement. Preserve the full-week length experiment and its 48-hour/seven-day reads. No title, edit, upload, test, privacy or schedule changes. Close this follow-up after the morning read is recorded.\n",
       "ref": "6831935790",
@@ -243465,13 +243554,13 @@
       "stage": "",
       "after": "J2716",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-12T20:12Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-12T20:11Z",
-      "result": "Waiting for: The 13 Nov 2026 morning tracker snapshot is available after the 06:40 UTC run",
+      "result": "",
       "history": [
         {
           "at": "2026-11-12T20:11Z",
@@ -243497,28 +243586,33 @@
           "at": "2026-11-13T06:51Z",
           "by": "relay",
           "what": "condition verification queued: J2761"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "reopened: Chief sweep (J2979): J2761 verified 2026-11-13 morning snapshot is on main (9a98da825c)"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "rerouted to gemini on gemini-argon: Chief sweep (J2979): J2761 verified 2026-11-13 morning snapshot is on main (9a98da825c)"
         }
       ],
-      "remaining_action": "Read the morning snapshot for the Mars wind Short",
+      "remaining_action": "Read 05_Analytics/owb/snapshots/2026-11-13.json and launch_check for Mars wind Short uhZSRcvngvE and write readout",
       "kind": "review",
       "plain": "Check the Mars wind video after its first night",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-12T20:12Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      },
-      "hold": {
-        "type": "date",
-        "condition": "The 13 Nov 2026 morning tracker snapshot is available after the 06:40 UTC run",
-        "check_at": "2026-11-13T07:51:25+00:00",
-        "recheck_task": "J2761"
-      },
       "films": [
         "OWB:025"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J2733",
@@ -245269,13 +245363,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-13T11:45Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-13T03:42Z",
-      "result": "parked for Chief: J2438 waiting condition verified SATISFIED and landed on main at 4e0a4c3ec7 (02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/07_Edit-Project/FIRST30_PLAN.md sha256 0870bcdf52, matching studio-live, plus jobs/reviews/J2438/INPUT_CONFLICT.md, jobs/reviews/J2668/REVIEW.md, and jobs/reviews/J2754/REVIEW.md). Independently verified against studio-live v03 stt_raw.json, stt_timeline_offset_v01.json, shot_list_v01.csv, cuts_v01.json, and direct audio_input ear-check on spliced 0-70.5s WAV: (1) all R01-R07 spoken lines match v03 word-for-word and invented highlands/4 BILLION YEARS text removed; (2) -2.800s deletion (2.000..4.800s raw) and +2.800s inter-sentence insertions (39.300s, 54.000s, 60.550s raw, plus R08 silence at 65.760s) sit in silence (peak <=0.000519) with clean prosody; (3) 19 opening cuts sum to 1,973f (65.767s at 30fps), keeping R08-R74 (17,435f) and total 19,408f (646.933s) unchanged; (4) picture_qa (138 cuts, 0 fail) and clip_check (74 rows PASS) pass; (5) Test A Short endpoint is 36.500s (1,095f, 0.480s after w0071 'mystery.' at 36.020s edited). Because jobs.py restricts releasing a hold to the elected Chief, elected Chief please run: python3 scripts/jobs.py reopen J2438 --agent <chief> --note 'J2754 verified J2668 KEEP and landed corrected FIRST30_PLAN.md (0870bcdf52, commit 4e0a4c3ec7) + J2438/J2668/J2754 reviews on main and studio-live; ready for v02 assembly and gates.' --git && python3 scripts/jobs.py reopen J2754 --agent <chief> --note 'Closing J2754 after reopening J2438.' --git && python3 scripts/jobs.py done J2754 --agent <chief> --result 'Verified J2438 condition SATISFIED (J2668 KEEP) and landed corrected FIRST30_PLAN.md + J2438/J2668/J2754 reviews on main (4e0a4c3ec7); J2438 reopened for v02 assembly. GBP 0.' --git",
+      "result": "Chief sweep (J2979): condition for J2438 verified satisfied (4e0a4c3ec7); J2438 reopened for cursor.",
       "history": [
         {
           "at": "2026-11-13T03:42Z",
@@ -245321,6 +245415,11 @@
           "at": "2026-11-13T14:29Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "done: Chief sweep (J2979): condition for J2438 verified satisfied (4e0a4c3ec7); J2438 reopened for cursor."
         }
       ],
       "remaining_action": "Elected Chief (chief/claude/codex) to reopen J2438 for v02 assembly and close J2754 done (commit 4e0a4c3ec7)",
@@ -245347,7 +245446,8 @@
       "taskKeys": [
         "OWB:034"
       ],
-      "escalated_at": "2026-11-13T14:29Z"
+      "escalated_at": "2026-11-13T14:29Z",
+      "done_ref": "4e0a4c3ec7"
     },
     {
       "id": "J2755",
@@ -245867,13 +245967,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-13T06:13Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-13T06:11Z",
-      "result": "parked for Chief: Verified J2714 waiting condition (commit 666bbd7010, jobs/reviews/J2760/REVIEW.md) — condition NOT YET MET at 2026-11-13T06:15Z, keep J2714 blocked: (1) npx wrangler pages secret list --project-name studio-kanban lists 7 encrypted production secrets (BOARD_KEY, R2_ACCESS_KEY_ID, R2_ACCOUNT_ID, R2_PUBLIC_URL, R2_SECRET_ACCESS_KEY, WATCH_LINK_SECRET, WATCH_UPLOAD_KEY) and BOARD_GH_TOKEN is still absent; key-name check of 07_Content-Ops/.env shows BOARD_KEY and WATCH_UPLOAD_KEY only; no reply from Ben on the studio thread since comment 6839530655; (2) live probes on https://studio-kanban.pages.dev return HTTP 500 {'error':'BOARD_GH_TOKEN isn\\'t set'} on /api/checks?stamp=1 and HTTP 502 {'error':'GitHub 403'} on /api/data?f=ref; (3) Part A static routes (/, /tracker, /ai, /version.json HTTP 200), Part B fallback secrets (BOARD_KEY, WATCH_UPLOAD_KEY) and PR #858 (OPEN at 911a5c1120) remain intact. Because jobs.py restricts wait --recheck J2760 on another worker's hold to the elected Chief, elected Chief (chief / Grok Bot) please run jobs.py wait J2714 --recheck J2760 (to 2026-11-13T12:18:00Z) and jobs.py done J2760 as written in jobs/reviews/J2760/REVIEW.md.",
+      "result": "Chief sweep (J2979): parent J2714 is already done; closing stale condition check.",
       "history": [
         {
           "at": "2026-11-13T06:11Z",
@@ -245919,6 +246019,11 @@
           "at": "2026-11-13T09:46Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "done: Chief sweep (J2979): parent J2714 is already done; closing stale condition check."
         }
       ],
       "remaining_action": "Elected Chief (Grok Bot) to run jobs.py wait J2714 --recheck J2760 and jobs.py done J2760",
@@ -245942,7 +246047,8 @@
         "by": "gemini",
         "note": "Step 3/3: Committed jobs/reviews/J2760/REVIEW.md (666bbd7010); J2714 waiting condition NOT YET MET (BOARD_GH_TOKEN still"
       },
-      "escalated_at": "2026-11-13T09:46Z"
+      "escalated_at": "2026-11-13T09:46Z",
+      "done_ref": "666bbd7010"
     },
     {
       "id": "J2761",
@@ -245955,13 +246061,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook-2",
+      "status": "done",
+      "by": "gemini",
       "since": "2026-11-13T06:51Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-13T06:51Z",
-      "result": "parked for Chief: J2732 waiting condition MET at 2026-11-13T06:57Z (OWB PR #887, commit 72f3e289f, jobs/reviews/J2761/REVIEW.md), ready to reopen J2732: (1) the 13 Nov 2026 morning tracker snapshot is available on main in commit 9a98da825c039225fa6cba9783a178071cee2ade (05_Analytics/owb/snapshots/2026-11-13.json, takenAt 2026-11-13T06:40:09.513Z, 97,645 B, sha256 97318e7ad461c5d198b1bb5d42c8f2a12cbacaa8fd1f4d8e91193b809abd0146); (2) OWB:025 Short uhZSRcvngvE is present in 2026-11-13.json (public, 55 s, 30 views, 2 likes, 0 comments at ~19.17 h age; launch_check.history firstMorning=30 vs last-10 Shorts median 423.5 views and all-24 median 77.5 views); (3) prerequisite J2716 is done (done_ref 6831935790), PR #856 (019949a5) is merged, and Chief ruling 6831935790 / GBP 0 read-only / full-week length-test locks remain valid. Because jobs.py reopen on a held job requires chief_relay.elected_for, elected Chief (codex) please merge PR #887 and run: python3 scripts/jobs.py reopen J2732 --agent codex --note 'J2761 verification MET (PR #887 72f3e289f, jobs/reviews/J2761/REVIEW.md): 13 Nov 2026 morning tracker snapshot is available on main in commit 9a98da825c039225fa6cba9783a178071cee2ade (05_Analytics/owb/snapshots/2026-11-13.json, takenAt 2026-11-13T06:40:09.513Z, sha256 97318e7ad461c5d198b1bb5d42c8f2a12cbacaa8fd1f4d8e91193b809abd0146) with Short uhZSRcvngvE at 30 views, 2 likes, 0 comments (~19.17 h age; last-10 Shorts firstMorning median 423.5, all-24 median 77.5). J2716 done and Chief ruling 6831935790 / GBP 0 read-only and full-week length-test locks remain valid.' --git && python3 scripts/jobs.py done J2761 --agent codex --result 'Verified by macbook-2 (OWB PR #887 72f3e289f, jobs/reviews/J2761/REVIEW.md): J2732 waiting condition MET. 05_Analytics/owb/snapshots/2026-11-13.json (takenAt 2026-11-13T06:40:09.513Z, commit 9a98da825) is on main with uhZSRcvngvE at 30 views, 2 likes, 0 comments (~19.17 h age). J2732 reopened under Chief ruling 6831935790 (read-only, GBP 0).' --git",
+      "result": "Chief sweep (J2979): condition for J2732 verified satisfied (72f3e289f); J2732 reopened for gemini.",
       "history": [
         {
           "at": "2026-11-13T06:51Z",
@@ -246002,6 +246108,11 @@
           "at": "2026-11-13T09:46Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "done: Chief sweep (J2979): condition for J2732 verified satisfied (72f3e289f); J2732 reopened for gemini."
         }
       ],
       "remaining_action": "Evidence PR #887 (72f3e289f) opened; parking J2761 for elected Chief (codex) to reopen J2732 and close J2761",
@@ -246024,7 +246135,8 @@
         "at": "2026-11-13T06:58Z",
         "by": "macbook-2"
       },
-      "escalated_at": "2026-11-13T09:46Z"
+      "escalated_at": "2026-11-13T09:46Z",
+      "done_ref": "72f3e289f"
     },
     {
       "id": "J2762",
@@ -247142,13 +247254,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-13T12:53Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-13T12:51Z",
-      "result": "parked for Chief: J2622 condition verification complete at 2026-11-13T13:02Z (OWB PR #898 4f3cf0d255, jobs/reviews/J2774/REVIEW.md). (1) SATISFIED: Studio half merged in PR #886 (d23f286d4) and J2738, J2618, and J2621 are formally done (6da06a0467), with Mini relay 9d4727c9262cfc7e and board-data publishing active; 12:50Z window is reached with Claude UP; Thu 12 Nov 19:13 London window is closed with 0 active HOS picture runs on HOS main 3cfa10dd70; and in an isolated detached worktree on HOS main 3cfa10dd70, HOS #548's 9 hand-written commits (1c59247b..ecc8ea7a) cherry-pick with 0 conflicts (3 PIPELINE.json commits since base: #543, #557, #554) and the regenerated 10th switch commit passes film_status.py check, status_board.py --check, 333/333 HOS unit tests, and clean kanban_snapshot.py board comparison (15 HOS films, 19 film notes, 18 watch links; HOS:006 and HOS:007 gain YouTube upload links). (2) PENDING CHIEF ACTION: jobs.py restricts reopen and wait --recheck to the elected Chief (claude). Chief please run either: (A) Recommended — python3 scripts/jobs.py reopen J2622 --agent claude --note 'J2774 verified all waiting conditions met at 2026-11-13T13:02Z (OWB PR #898 4f3cf0d255, jobs/reviews/J2774/REVIEW.md): Studio half (PR #886 d23f286d4, J2738, J2618, J2621) done, 12:50Z window reached, 0 active HOS picture runs on HOS main 3cfa10dd70, and trial rebase of HOS #548 9 commits + regenerated 10th switch commit on 3cfa10dd70 passes 333/333 HOS unit tests, film_status.py check, status_board.py --check, and kanban_snapshot.py board comparison. Reopen J2622 to push the rebased/regenerated HOS #548 head, obtain Grok review/merge, and refresh channels/hos/channel.json after merge.' --git && python3 scripts/jobs.py done J2774 --agent claude --result 'Verified J2622 waiting condition MET at 2026-11-13T13:02Z (OWB PR #898 4f3cf0d255, jobs/reviews/J2774/REVIEW.md): Studio half done, 12:50Z window reached, 0 active HOS picture runs, and HOS #548 trial rebase/regeneration on 3cfa10dd70 passes 333/333 HOS tests + round-trip + board comparison; J2622 reopened. GBP 0.' --git; OR (B) if keeping J2622 held while pushing/merging HOS #548 directly, run wait J2622 --recheck J2774 and done J2774 per jobs/reviews/J2774/REVIEW.md. GBP 0.",
+      "result": "Chief sweep (J2979): parent J2622 is already done; closing stale condition check.",
       "history": [
         {
           "at": "2026-11-13T12:51Z",
@@ -247194,6 +247306,11 @@
           "at": "2026-11-13T16:33Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "done: Chief sweep (J2979): parent J2622 is already done; closing stale condition check."
         }
       ],
       "remaining_action": "Elected Chief (claude) to reopen J2622 (or record wait --recheck J2774) and close J2774 (OWB PR #898 4f3cf0d255)",
@@ -247217,7 +247334,8 @@
         "by": "gemini",
         "note": "Step 3 done: Opened OWB PR #898 (4f3cf0d255) with jobs/reviews/J2774/REVIEW.md"
       },
-      "escalated_at": "2026-11-13T16:33Z"
+      "escalated_at": "2026-11-13T16:33Z",
+      "done_ref": "4f3cf0d255"
     },
     {
       "id": "J2775",
@@ -247782,13 +247900,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-13T15:09Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-13T15:07Z",
-      "result": "parked for Chief: Verified J2780 waiting condition at 2026-11-13T15:17Z (commit bdbea70365, jobs/reviews/J2782/REVIEW.md) — condition NOT yet satisfied, keep J2780 blocked at step 1 of 3: (1) Reusing the open vercel.com tab on Mini CDP 9223 via cdp_tabs.reuse_page and navigating to https://vercel.com/account/domains still redirects to https://vercel.com/login?next=%2Faccount%2Fdomains (Title: Login – Vercel, H1: Log in to Vercel), and Mini CDP 9222 has 0 vercel.com cookies; (2) Public NS for oppti.dev remains ns1.vercel-dns.com / ns2.vercel-dns.com, and https://oppti.dev/ still answers HTTP/2 402 (x-vercel-error: DEPLOYMENT_DISABLED) from Vercel; (3) Cloudflare Free zone on autumn.ns.cloudflare.com and dean.ns.cloudflare.com (SOA serial 2420068155, 32/32 record comparisons matched in /private/tmp/j2780-dns-check.json sha d136fd09...) and prerequisite J2779 performance Worker https://oppti-dev.opptiai.workers.dev/ (HTTP/2 200) remain intact. Because jobs.py restricts wait J2780 --recheck J2782 to the holder/elected Chief (codex), Chief please run the wait J2780 --recheck J2782 (to 2026-11-13T21:15:00Z) and done J2782 commands in jobs/reviews/J2782/REVIEW.md.",
+      "result": "Chief sweep (J2979): parent J2780 is already done; closing stale condition check.",
       "history": [
         {
           "at": "2026-11-13T15:07Z",
@@ -247834,6 +247952,11 @@
           "at": "2026-11-13T18:00Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "done: Chief sweep (J2979): parent J2780 is already done; closing stale condition check."
         }
       ],
       "remaining_action": "Elected Chief records wait J2780 --recheck J2782 and closes J2782",
@@ -247857,7 +247980,8 @@
         "by": "gemini",
         "note": "Committed jobs/reviews/J2782/REVIEW.md (bdbea70365); J2780 remains blocked awaiting Ben sign-in to Vercel on Mini"
       },
-      "escalated_at": "2026-11-13T18:00Z"
+      "escalated_at": "2026-11-13T18:00Z",
+      "done_ref": "bdbea70365"
     },
     {
       "id": "J2783",
@@ -248596,13 +248720,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-13T21:55Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-13T19:37Z",
-      "result": "parked for Chief: condition for J2172 verified UNMET in jobs/reviews/J2792/REVIEW.md (8bb092d0b1): 24/24 moving-plate and 24/24 start-still working/archive hashes match ledger.jsonl, 7/7 plan/board hashes and 63/63 INVENTORY.json hashes are intact, and 13 Nov HOS snapshot (327580da) has 0 duplicates, but 2 PASS / 10 FIX and 0/12 KEEP remain under J2770 (b89565ee), Claude stills read 6853078136, and Grok desk ruling 6853110063 (936x1664 at 2.311x, no padding; 6 crop-first tests, retire P5:09_robin opening, scope 4 mapping fixes before spend). J2271 remains blocked at 1/3 and J2758 remains open because reconcile_holds (scripts/jobs.py:624,634-635) re-copies required_capabilities=['moving_video_input'] from J2271.hold.requires onto J2758 on every queue save while J2271.hold.type=='capability'. Only the elected Chief may run jobs.py wait J2172 --recheck J2792 (next check 2026-11-14T04:00:00Z), unblock the £0 repair disposition (by changing J2271 hold to --type input during repair or queuing a non-recheck £0 task), and close J2792.",
+      "result": "Chief sweep (J2979): parent J2172 is already done; closing stale condition check.",
       "history": [
         {
           "at": "2026-11-13T19:37Z",
@@ -248648,6 +248772,11 @@
           "at": "2026-11-14T00:28Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "done: Chief sweep (J2979): parent J2172 is already done; closing stale condition check."
         }
       ],
       "remaining_action": "Elected Chief: run jobs.py wait J2172 --recheck J2792 (check-at 2026-11-14T04:00:00Z), unblock J2758 from reconcile_holds capability inheritance, and close J2792",
@@ -248674,7 +248803,8 @@
       "taskKeys": [
         "HOS:010"
       ],
-      "escalated_at": "2026-11-14T00:28Z"
+      "escalated_at": "2026-11-14T00:28Z",
+      "done_ref": "8bb092d0b1"
     },
     {
       "id": "J2793",
@@ -249937,13 +250067,13 @@
       "stage": "edit",
       "after": "J2803",
       "eta_min": 20,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-14T03:40Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-14T03:38Z",
-      "result": "Automatic approval review rejected publishing the decision branch to the public HOS remote, citing missing explicit authorization to export this payload. Completed local commit 4b92c042 on codex/j2805-revised-music at /Volumes/MiniWork/scratch/j2805-hos; all repository checks passed. Explicit approval to push that branch is required before PR/merge and completion. J2806 depends on J2805 and a merged decision PR, so production cannot proceed. No generation or spend occurred.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-14T03:38Z",
@@ -249989,31 +250119,20 @@
           "at": "2026-11-14T16:16Z",
           "by": "relay",
           "what": "condition verification queued: J2832"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "reopened: Chief sweep (J2979): J2832 verified Grok desk #180 #6876651082 authorized publishing local commit 4b92c042 (codex/j2805-revised-music)"
         }
       ],
-      "remaining_action": "Obtain explicit approval to push codex/j2805-revised-music (4b92c042), open/merge the HOS decision PR, and complete J2805",
+      "remaining_action": "Push codex/j2805-revised-music (4b92c042) from /Volumes/MiniWork/scratch/j2805-hos to history-of-science, open PR and merge once checks pass",
       "due": "2026-11-14T06:00:00Z",
       "kind": "chief",
       "plain": "Decide how to revise the gravity film music so it passes the required checks",
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-14T03:45Z",
-        "by": "codex",
-        "note": "Scoped one 180s wonder cue at cap3000 credits, retain teach. Queued J2806 production, J2807 audio review, J2808 Chief di"
-      },
       "taskKeys": [
         "HOS:009"
-      ],
-      "hold": {
-        "type": "input",
-        "condition": "Chief ruling (J2820, 2026-11-14T11:31Z, jobs/reviews/J2820/REVIEW.md @ f74a257b81): NOT MET. No explicit authorization to publish codex/j2805-revised-music (local commit 4b92c0423185007b5ef68fb4c3b9682288778b89 in /Volumes/MiniWork/scratch/j2805-hos) has arrived on HOS desk #180 (through #6876498592) or OWB #478 (through #6876530884), and no remote branch or HOS PR exists. Local commit 4b92c042 remains intact, conflict-free against HOS origin/main (f57aed7c), and passes check_all.sh + status_board.py --check; retained hos_009_teach_v01.mp3 hash 4c1f0a17... verified; zero spend/generation. J2806-J2808 and J2035/J2171 remain held until 4b92c042 is authorized, pushed, and merged.",
-        "check_at": "2026-11-14T17:16:44+00:00",
-        "last_recheck": "J2820",
-        "checked_at": "2026-11-14T11:31:56+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J2832"
-      }
+      ]
     },
     {
       "id": "J2806",
@@ -250382,13 +250501,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-14T06:25Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-14T05:15Z",
-      "result": "parked for Chief: J1130 condition PROVEN SATISFIED in HOS Studio (CDP 9222, 14 Nov 06:41Z): T023 on AL_-qlWko_g finished 12 Nov 2026 at 01:34 (ran 29 Oct 00:45 to 12 Nov 01:34, 11 views, no winner, Option A visible to all) and London date is 14 Nov 2026. T023 recorded in THUMB_LEDGER.json and full report committed at c890865242 (jobs/reviews/J2812/REVIEW.md). Because jobs.py reopen on a held job requires the elected Chief, run: jobs.py reopen J1130 --agent codex --note 'J2812 verified T023 finished 12 Nov 2026 01:34 and London date is 14 Nov (c890865242)' --git && jobs.py done J2812 --agent codex --result 'Verified T023 finished 12 Nov 2026 01:34, recorded in THUMB_LEDGER.json (c890865242), and reopened J1130' --git",
+      "result": "Chief sweep (J2979): condition for J1130 verified satisfied (c890865242); J1130 reopened for cursor.",
       "history": [
         {
           "at": "2026-11-14T05:15Z",
@@ -250434,6 +250553,11 @@
           "at": "2026-11-14T09:46Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "done: Chief sweep (J2979): condition for J1130 verified satisfied (c890865242); J1130 reopened for cursor."
         }
       ],
       "remaining_action": "Elected Chief (codex) to reopen J1130 and close J2812",
@@ -250460,7 +250584,8 @@
       "taskKeys": [
         "HOS:002"
       ],
-      "escalated_at": "2026-11-14T09:46Z"
+      "escalated_at": "2026-11-14T09:46Z",
+      "done_ref": "c890865242"
     },
     {
       "id": "J2813",
@@ -252390,13 +252515,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-14T19:33Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-14T16:16Z",
-      "result": "parked for Chief: Verified at 2026-11-14T19:41Z (jobs/reviews/J2832/REVIEW.md, commit da14b8c9c9): J2805's wait --type input publication authorization condition is SATISFIED by HOS Chief Grok in HOS desk #180 comment #6876651082 (2026-11-14T11:33:39Z), which explicitly approved publishing local commit 4b92c0423185007b5ef68fb4c3b9682288778b89 (/Volumes/MiniWork/scratch/j2805-hos) as remote branch codex/j2805-revised-music, opening a HOS PR against main, and treating J2805's wait --type input as satisfied. Local commit 4b92c042 remains intact, conflict-free against HOS origin/main (db231384), and passes check_all.sh + status_board.py --check; retained hos_009_teach_v01.mp3 hash 4c1f0a17... verified; zero spend/generation. However, codex/j2805-revised-music has not yet been pushed or merged. Because releasing a verified hold (jobs.py reopen J2805) or recording set_wait --recheck J2832 requires the elected Chief, codex should run the exact reopen/push/done (Option A, recommended per #6876651082) or wait --recheck J2832 (Option B) commands in jobs/reviews/J2832/REVIEW.md.",
+      "result": "Chief sweep (J2979): condition for J2805 verified satisfied (da14b8c9c9); J2805 reopened.",
       "history": [
         {
           "at": "2026-11-14T16:16Z",
@@ -252442,6 +252567,11 @@
           "at": "2026-11-14T21:50Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "done: Chief sweep (J2979): condition for J2805 verified satisfied (da14b8c9c9); J2805 reopened."
         }
       ],
       "remaining_action": "Elected Chief codex reopens J2805 (or records wait --recheck J2832) and closes J2832",
@@ -252468,7 +252598,8 @@
       "taskKeys": [
         "HOS:009"
       ],
-      "escalated_at": "2026-11-14T21:50Z"
+      "escalated_at": "2026-11-14T21:50Z",
+      "done_ref": "da14b8c9c9"
     },
     {
       "id": "J2833",
@@ -253254,13 +253385,13 @@
       "stage": "",
       "after": "J2842",
       "eta_min": 30,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-14T17:51Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "macbook-2",
       "created_at": "2026-11-14T17:08Z",
-      "result": "Waiting for: Sibling packaging panel critiques J2840 (codex.md) and J2841 (gemini.md) in 05_Analytics/tests/panels/owb-j2834-weekly-2026-11-14/ are complete (or 24 h elapsed after 2026-11-14T17:08Z, i.e. 2026-11-15T17:08:00Z); currently only cursor.md (J2842) exists",
+      "result": "",
       "history": [
         {
           "at": "2026-11-14T17:08Z",
@@ -253296,9 +253427,19 @@
           "at": "2026-11-14T19:02Z",
           "by": "relay",
           "what": "condition verification queued: J2852"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "reopened: Chief sweep (J2979): J2852 verified all 3 Packaging Panel critiques (codex.md, gemini.md, cursor.md) are on main (0bb552ddda)"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "rerouted to gemini on gemini-argon: Chief sweep (J2979): J2852 verified all 3 Packaging Panel critiques (codex.md, gemini.md, cursor.md) are on main (0bb552ddda)"
         }
       ],
-      "remaining_action": "Wait for J2840 (codex.md) and J2841 (gemini.md) to land (or 24 h timeout), then weigh all critiques and write DECISION.md",
+      "remaining_action": "Read codex.md, gemini.md, cursor.md in 05_Analytics/tests/panels/owb-j2834-weekly-2026-11-14/ and write DECISION.md",
       "kind": "review",
       "rerouted_from": {
         "needs": "cloud",
@@ -253309,24 +253450,11 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-14T18:05Z",
-        "by": "macbook-2",
-        "note": "Step 1/3 done: verified all 8 J2834_v02 NAS SHA-256 hashes and read cursor.md (J2842); propagated 18:45Z deadline to ope"
-      },
       "taskKeys": [
         "OWB:001",
         "OWB:004",
         "OWB:005"
-      ],
-      "hold": {
-        "type": "input",
-        "condition": "Sibling packaging panel critiques J2840 (codex.md) and J2841 (gemini.md) in 05_Analytics/tests/panels/owb-j2834-weekly-2026-11-14/ are complete (or 24 h elapsed after 2026-11-14T17:08Z, i.e. 2026-11-15T17:08:00Z); currently only cursor.md (J2842) exists",
-        "check_at": "2026-11-14T20:02:27+00:00",
-        "recheck_task": "J2852"
-      }
+      ]
     },
     {
       "id": "J2844",
@@ -253806,13 +253934,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-16T04:40Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-14T19:02Z",
-      "result": "parked for Chief: Verified at 2026-11-16T04:43:37Z (jobs/reviews/J2852/REVIEW.md, commit 0bb552ddda): CONDITION PROVEN SATISFIED for J2843. All 3 Packaging Panel critiques in 05_Analytics/tests/panels/owb-j2834-weekly-2026-11-14/ are complete on main: J2840 codex.md (6f240fbd52, 12930 B), J2841 gemini.md (dd08bb322e, 16663 B), and J2842 cursor.md (7915cbebaf, 8155 B), and all 10 J2834_v02 NAS SHA-256 hashes match SHA256SUMS.txt. Because jobs.py reopen on a held job requires the elected Chief (Grok Bot / chief UP per chief_relay.py status), run: jobs.py reopen J2843 --agent chief --note 'J2852 verified J2840 codex.md (6f240fbd52), J2841 gemini.md (dd08bb322e), J2842 cursor.md (7915cbebaf) complete on main and all 10 J2834_v02 NAS SHA-256 hashes intact (0bb552ddda)' --git && jobs.py done J2852 --agent chief --result 'Condition satisfied: J2840-J2842 critiques complete on main and all 10 J2834_v02 NAS hashes verified (0bb552ddda); reopened J2843' --git",
+      "result": "Chief sweep (J2979): condition for J2843 verified satisfied (0bb552ddda); J2843 reopened for gemini.",
       "history": [
         {
           "at": "2026-11-14T19:02Z",
@@ -253858,6 +253986,11 @@
           "at": "2026-11-16T07:07Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "done: Chief sweep (J2979): condition for J2843 verified satisfied (0bb552ddda); J2843 reopened for gemini."
         }
       ],
       "remaining_action": "Elected Chief reopens J2843 and closes J2852",
@@ -253886,7 +254019,8 @@
         "OWB:004",
         "OWB:005"
       ],
-      "escalated_at": "2026-11-16T07:07Z"
+      "escalated_at": "2026-11-16T07:07Z",
+      "done_ref": "0bb552ddda"
     },
     {
       "id": "J2853",
@@ -254277,13 +254411,13 @@
       "stage": "upload",
       "after": "J2859",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-11-15T07:21Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-14T20:37Z",
-      "result": "Waiting for: YouTube processingStatus for ileYnHpLLCU is succeeded (it is processing now). Then, in Studio only, arm a thumbnail-only 3-way test with the three approved thumbs, add an end screen (Subscribe plus VBaYRPp85Sw), and pin the comment in Pinned-Comments/j01_pinned_v01.txt. Do not upload again.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-14T20:37Z",
@@ -254344,9 +254478,19 @@
           "at": "2026-11-15T08:22Z",
           "by": "relay",
           "what": "condition verification queued: J2885"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "reopened: Chief sweep (J2979): J2885 verified ileYnHpLLCU processingStatus=succeeded (HD, PT58M23S) on YouTube (676358c309)"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "rerouted to cursor on cursor-grok-4-7: Chief sweep (J2979): J2885 verified ileYnHpLLCU processingStatus=succeeded (HD, PT58M23S) on YouTube (676358c309)"
         }
       ],
-      "remaining_action": "Finish the thumbnail test, end screen and pinned comment once YouTube processing succeeds",
+      "remaining_action": "In Orbit Studio (CDP 9223), arm 3-way thumbnail Test & Compare on ileYnHpLLCU, add end screen (Subscribe + VBaYRPp85Sw), and pin j01_pinned_v01.txt (do not re-upload)",
       "kind": "studio",
       "plain": "Uploading Journey Film 01 as Private on YouTube and starting its 3-thumbnail test",
       "mini_only": true,
@@ -254362,19 +254506,15 @@
         "okAt": "2026-11-14T20:37Z",
         "okRef": "6882810716"
       },
-      "progress": {
-        "step": 2,
-        "of": 4,
-        "at": "2026-11-15T07:30Z",
-        "by": "cursor",
-        "note": "ileYnHpLLCU is Private, scheduled Tue 8 Dec 2026 18:00 London, premiere off. Comment box and end screen are still locked"
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
       },
-      "hold": {
-        "type": "input",
-        "condition": "YouTube processingStatus for ileYnHpLLCU is succeeded (it is processing now). Then, in Studio only, arm a thumbnail-only 3-way test with the three approved thumbs, add an end screen (Subscribe plus VBaYRPp85Sw), and pin the comment in Pinned-Comments/j01_pinned_v01.txt. Do not upload again.",
-        "check_at": "2026-11-15T09:22:39+00:00",
-        "recheck_task": "J2885"
-      }
+      "for": "cursor",
+      "model": "cursor-grok-4-7"
     },
     {
       "id": "J2858",
@@ -256677,13 +256817,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-16T05:31Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-15T08:22Z",
-      "result": "parked for Chief: Verified at 2026-11-16T05:35:46Z (jobs/reviews/J2885/REVIEW.md, commit 676358c309): CONDITION MET for J2857 (OWB J01 ileYnHpLLCU). YouTube Data API v3 videos.list returns processingDetails.processingStatus=succeeded, uploadStatus=processed, definition=hd, duration=PT58M23S, thumbnailsAvailability=available, privacyStatus=private, publishAt=2026-12-08T18:00:00Z, and all J2857 gates/approvals + 3 approved thumbnails (1578850020..., 8683d73456..., d9434ff33b...) + Pinned-Comments/j01_pinned_v01.txt (e98f1064f0...) match SHA-256 on disk. Because jobs.py reopen on a held job requires the elected Chief (Grok Bot / chief), Chief please run the exact reopen J2857 and done J2885 commands in jobs/reviews/J2885/REVIEW.md so J2857 finishes in Orbit Studio only (arm 3-way thumbnail test, add end screen Subscribe + VBaYRPp85Sw, pin comment; do not upload again). £0.",
+      "result": "Chief sweep (J2979): condition for J2857 verified satisfied (676358c309); J2857 reopened for cursor.",
       "history": [
         {
           "at": "2026-11-15T08:22Z",
@@ -256729,6 +256869,11 @@
           "at": "2026-11-16T08:52Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "done: Chief sweep (J2979): condition for J2857 verified satisfied (676358c309); J2857 reopened for cursor."
         }
       ],
       "remaining_action": "Elected Chief (chief / Grok Bot): run jobs.py reopen J2857 and jobs.py done J2885 per jobs/reviews/J2885/REVIEW.md",
@@ -256762,7 +256907,8 @@
         "OWB:028",
         "OWB:029"
       ],
-      "escalated_at": "2026-11-16T08:52Z"
+      "escalated_at": "2026-11-16T08:52Z",
+      "done_ref": "676358c309"
     },
     {
       "id": "J2886",
@@ -257341,13 +257487,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-15T12:47Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-15T12:45Z",
-      "result": "parked for Chief: Verified at 2026-11-15T12:51Z (jobs/reviews/J2892/REVIEW.md, commit e5954c906e): CONDITION NOT MET for J2035 (HOS:009 long assembly). (1) J2803 failed validation (OWB PR #913 @ e3b04e94a, 0.693/0.633 < 0.80) and OWB PR #908 stays draft and undeployed; (2) Grok approved publishing J2805 (codex/j2805-revised-music @ 4b92c042 in /Volumes/MiniWork/scratch/j2805-hos) on HOS desk #180 (#6876651082 at 2026-11-14T11:33:39Z), and J2832 (jobs/reviews/J2832/REVIEW.md @ da14b8c9c9) remains in Chief review to release/merge J2805, so 4b92c042 is not yet pushed or merged (latest HOS PR #597, origin/main @ 96395bfb); (3) downstream J2806 guarded 180s opening-cue replacement, J2807 capable audio_input ear review, and J2808 explicit elected-Chief score acceptance remain open/unstarted with no v02 music on Mini or studio-live NAS; (4) all 15 shared v01 music files, 5-part narration locks (VO_TAKES_KEEP sha 530743c5..., VO_RETIME sha 75a2e7af...), and diagram KEEP assets (J2631 sha e35f9a98..., J2632 r4 sha 23c832b0...) verified byte-identical across Mini and NAS, and 09_Final-Render remains absent. Because jobs.py set_wait --recheck requires the elected Chief, run the exact wait --recheck J2892 and done J2892 commands in jobs/reviews/J2892/REVIEW.md.",
+      "result": "Chief sweep (J2979): reopened upstream J2805, updated J2035 dependency hold to 2026-11-18T09:00:00Z, and closed J2892.",
       "history": [
         {
           "at": "2026-11-15T12:45Z",
@@ -257393,6 +257539,11 @@
           "at": "2026-11-15T15:19Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "done: Chief sweep (J2979): reopened upstream J2805, updated J2035 dependency hold to 2026-11-18T09:00:00Z, and closed J2892."
         }
       ],
       "remaining_action": "Elected Chief records wait --recheck J2892 on J2035 and closes J2892",
@@ -257419,7 +257570,8 @@
       "taskKeys": [
         "HOS:009"
       ],
-      "escalated_at": "2026-11-15T15:19Z"
+      "escalated_at": "2026-11-15T15:19Z",
+      "done_ref": "e5954c906e"
     },
     {
       "id": "J2893",
@@ -260573,13 +260725,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-16T04:14Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-16T03:43Z",
-      "result": "parked for Chief: Verified at 2026-11-16T04:17Z (jobs/reviews/J2927/REVIEW.md, commit fbf9a35a48): CONDITION NOT MET for J2171 (HOS:009 Shorts A/B assembly). (1) Grok approved publishing J2805 (codex/j2805-revised-music @ 4b92c042 in /Volumes/MiniWork/scratch/j2805-hos) on HOS desk #180 (#6876651082 at 2026-11-14T11:33:39Z), and J2832 (jobs/reviews/J2832/REVIEW.md @ da14b8c9c9) remains in Chief review to release/merge J2805, so 4b92c042 is not yet pushed or merged (latest HOS PR #610, origin/main @ 44b12347); (2) downstream J2806 guarded 180s opening-cue replacement, J2807 capable audio_input ear review, and J2808 explicit elected-Chief score acceptance remain open/unstarted with no v02 music on Mini or studio-live NAS; (3) J2035 HOS 009 long assembly remains blocked at step 1/3 (J2892 recheck verified NOT MET at 12:51Z, e5954c906e, parked for Chief; 09_Final-Render absent on Mini and NAS); (4) J2803 failed validation (OWB PR #913 @ e3b04e94a, 0.693/0.633 < 0.80) and OWB PR #908 stays draft and undeployed; (5) all v01 music files, 5-part and Shorts A/B narration locks, SHORTS_PICTURE_PLAN_v03.json, and picture KEEP assets (J2631, J2632 r4, Short A S03) verified byte-identical across Mini and NAS. Because jobs.py set_wait --recheck requires the elected Chief (Grok Bot / chief UP per chief_relay.py status), run the exact wait --recheck J2927 and done J2927 commands in jobs/reviews/J2927/REVIEW.md.",
+      "result": "Chief sweep (J2979): reopened upstream J2805, updated J2171 dependency hold to 2026-11-18T12:00:00Z, and closed J2927.",
       "history": [
         {
           "at": "2026-11-16T03:43Z",
@@ -260625,6 +260777,11 @@
           "at": "2026-11-16T07:07Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "done: Chief sweep (J2979): reopened upstream J2805, updated J2171 dependency hold to 2026-11-18T12:00:00Z, and closed J2927."
         }
       ],
       "remaining_action": "Elected Chief records wait --recheck J2927 on J2171 and closes J2927",
@@ -260651,7 +260808,8 @@
       "taskKeys": [
         "HOS:009"
       ],
-      "escalated_at": "2026-11-16T07:07Z"
+      "escalated_at": "2026-11-16T07:07Z",
+      "done_ref": "fbf9a35a48"
     },
     {
       "id": "J2928",
@@ -261112,7 +261270,7 @@
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-16T07:48Z",
-      "result": "parked for Chief: merge HOS PR #611 (CI green at 91cc0662; non-producer review found no blockers; SHA parity and both Play links 302 confirmed). Both Shorts wait for Ben's watch, awaits_ben J2933.1 and J2933.2, due 1 Dec 18:00",
+      "result": "Waiting for: HELD ON BEN'S OK: HOS PR #611 merged (a26ca06f); HOS 010 Short A v01 (J2933.1) and Short C v01 (J2933.2) wait in HOS UAT and WATCH_FULL for Ben's final watch by 1 Dec 18:00 London.",
       "history": [
         {
           "at": "2026-11-16T07:48Z",
@@ -261168,9 +261326,14 @@
           "at": "2026-11-16T10:25Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-12-01T18:00:00Z"
         }
       ],
-      "remaining_action": "Chief to merge HOS PR #611; Ben to watch both Shorts",
+      "remaining_action": "Wait for Ben's final UAT watch on HOS 010 Short A v01 (J2933.1) and Short C v01 (J2933.2) by 1 Dec 18:00 London",
       "due": "2026-11-30T18:00:00Z",
       "kind": "qa",
       "model": "mini-claude-opus-5-5",
@@ -261208,7 +261371,12 @@
           "type": "short"
         }
       ],
-      "escalated_at": "2026-11-16T10:25Z"
+      "escalated_at": "2026-11-16T10:25Z",
+      "hold": {
+        "type": "ben",
+        "condition": "HELD ON BEN'S OK: HOS PR #611 merged (a26ca06f); HOS 010 Short A v01 (J2933.1) and Short C v01 (J2933.2) are in HOS UAT and WATCH_FULL awaiting Ben's final watch by Tue 1 Dec 2026 18:00 London.",
+        "check_at": "2026-12-01T18:00:00Z"
+      }
     },
     {
       "id": "J2934",
@@ -265142,21 +265310,30 @@
           "at": "2026-11-17T09:14Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Step 1 done: merged PRs #924 and #945; wrote J2864 pause rule (584fed17a0); closed J2797, J2819, J2798, J2818, J2532, J2864, J2865"
+        },
+        {
+          "at": "2026-11-17T09:23Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2 done: ruled on all 26 Chief-parked jobs (closed 21 + J2702 done, reopened 8 incl. 6 parents, kept 3 on dated holds; 0 Chief-parked left); merged HOS PR #611"
         }
       ],
-      "remaining_action": "Rule on the 26 Chief-parked/escalated jobs and their verify-condition tasks",
+      "remaining_action": "Triage and resolve open pull requests on orbit-with-ben (merge green records-only, close superseded/cancelled, comment on 5 machinery PRs)",
       "due": "2026-11-18T12:00:00Z",
       "kind": "chief",
       "plain": "Tidy up after the board check: close finished board jobs, and clear the pile of jobs and pull requests waiting on the Chief",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-17T09:14Z",
+        "at": "2026-11-17T09:23Z",
         "by": "gemini",
-        "note": "Step 1 done: merged PRs #924 and #945; wrote J2864 pause rule (584fed17a0); closed J2797, J2819, J2798, J2818, J2532, J2"
+        "note": "Step 2 done: ruled on all 26 Chief-parked jobs (closed 21 + J2702 done, reopened 8 incl. 6 parents, kept 3 on dated hold"
       },
       "taskKeys": [
-        "OWB:062"
+        "OWB:062",
+        "OWB:034",
+        "OWB:032",
+        "HOS:010",
+        "HOS:013"
       ]
     },
     {
