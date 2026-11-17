@@ -264349,17 +264349,22 @@
           "at": "2026-11-17T06:06Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Wrote TOPIC.md, status.json, README.md, production-status.md, and PRE_BUILD_VIDIQ_AUDIT.md for HOS:118 (Why Do We Hiccup?) and HOS:119 (Why Do Mosquitoes Bite Some People More?)"
+        },
+        {
+          "at": "2026-11-17T06:09Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Passed status_board.py --check and check_all.sh on HOS:118 and HOS:119; pushed gemini/J2970-hos-topics-118-119 and opened HOS PR"
         }
       ],
-      "remaining_action": "Run status_board.py --check and check_all.sh on HOS:118 and HOS:119 in the clean HOS worktree, commit, push, and open HOS PR",
+      "remaining_action": "Append HOS:118 and HOS:119 to jobs/WIP.json next_hos in a clean OWB worktree, queue their Rule-E kind:review jobs, and mark J2970 done",
       "kind": "script",
       "backlog": "hos-ideas",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-17T06:06Z",
+        "at": "2026-11-17T06:09Z",
         "by": "gemini",
-        "note": "Wrote TOPIC.md, status.json, README.md, production-status.md, and PRE_BUILD_VIDIQ_AUDIT.md for HOS:118 (Why Do We Hiccup"
+        "note": "Passed status_board.py --check and check_all.sh on HOS:118 and HOS:119; pushed gemini/J2970-hos-topics-118-119 and opene"
       },
       "taskKeys": [
         "HOS:118",
