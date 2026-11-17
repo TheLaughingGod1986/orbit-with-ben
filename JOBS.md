@@ -55,7 +55,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3006 | mini | open (after J2990) | – | – | for codex · studio · WW2 channel: read its own analytics from day one, and a progress-to-monetisation card |  |
 | J3007 | mini | open (after J2990) | – | – | for codex · studio · Board: show the WW2 channel before launch, its films, its review and Ben's ticks |  |
 | J3010 | mini | blocked | gemini | – | 007 upload · review · HOS 007 Vaccine Short (xgx2lYHhYZM): read next-morning snapshot after J3004 | f57ab150da |
-| J3011 | mini | open | – | – | chief · Orbit: Ben locked the every-planet film, book its slot and start the build |  |
+| J3011 | mini | claimed | codex | 2026-11-18T00:18Z | chief · Orbit: Ben locked the every-planet film, book its slot and start the build |  |
 | J3012 | mini | open | – | – | chief · Decoupling phase 3: move the studio engine into its own repo, runbook now, move after a clean week |  |
 | J3013 | mini | open | – | – | chief · Chief: resolve 003 script orphan-doing |  |
 | J3014 | mini | open | – | – | chief · Chief: resolve 001 script orphan-review |  |
