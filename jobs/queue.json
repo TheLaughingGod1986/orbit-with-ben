@@ -1,5 +1,5 @@
 {
-  "next_id": 2984,
+  "next_id": 2985,
   "jobs": [
     {
       "id": "J0001",
@@ -265975,6 +265975,35 @@
         "at": "2026-11-17T11:06Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J2984",
+      "title": "HOS 008 Short C v07: non-producer QA review of J2662 (PR #556) and HOS UAT staging for Ben's watch",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Non-producer QA & HOS UAT staging for HOS 008 Short C `v07` assembled in `J2662` (HOS PR `#556`, commit `168f8915`, £0, 0 credits).\n\nProducers to exclude from self-review: `macbook` / `gemini` assembled `v07` (`cursor` minted the Flow Veo plates). Route to `claude`, `cursor` on `claude-opus-5-5`, or `codex` first; if `gemini` is woken while non-producers are down, wait rather than self-reviewing.\n\nDeliverables on the NAS (`/Volumes/data/studio-live/History Of Science/02_Video-Projects/008_Lightning-Franklin/`):\n- Master: `10_Shorts/hos_008_short_C_v07.mp4` (`22.083 s`, `530` frames at `24 fps`, `936×1664`, `-14.0 LUFS`, `-2.5 dBTP`, SHA-256 `a3404a314a444a0fd987ca648c28425be8afb768f83748ee64e553951c8f06a8`)\n- Stems: `10_Shorts/J2662_v07/{vo,bed,sfx}.wav` + `05_Music/hos_008_short_C_v07_bed.wav`\n- QA sheets: `10_Shorts/J2662_v07/sheets/{hos_008_short_C_v07_open_sheet.jpg,picture_qa_review_v07.jpg,v07_1fps_sheet.jpg}`\n- Prior `hos_008_short_C_v03.mp4` (`9f25a16de5fc7d454be7adbc0e301614c7b060cd28b10cd076bcd2b4a6642161`) and interim `v04`–`v06` preserved untouched on the NAS.\n\nSteps (£0, no upload, no Studio change):\n1. Review HOS PR `#556` (`macbook/J2662` @ `168f8915`, `check_all.sh` PASS) and verify all 5 `J2485` fixes on `hos_008_short_C_v07.mp4` + its contact sheets (`\"Franklin's\"` `0.980–1.489 s <= 1.50 s`, ASR `0.820–1.480 s`; 0 caption overlaps / 0 orphans; `S06` offset `4.00 s`; `S07` offset `3.10 s`; `S01`/`loop_tail` crop `[600,0,405,720]`, `S02` crop `[180,0,405,720]`).\n2. Write `jobs/reviews/<this job>/REVIEW.md` (`KEEP` or `FIX` with timecodes).\n3. On `KEEP`: copy `hos_008_short_C_v07.mp4` to the HOS UAT watch folder with SHA-256 verification, confirm a working Play 302 link, and call `jobs.py awaits` for Ben's phone watch (under the 4 Nov order). Keep scheduling conditional: HOS 008 long (planned Thu 19 Nov 2026 18:00 London) must be public before Short C airs (Tue 1 Dec or next locked Sat/Fri/Sun/Tue 11:30 London slot; note Wed 2 Dec is not a locked HOS Sat/Fri/Sun/Tue Short weekday). Merge PR `#556` only if elected Chief, else leave open for Chief merge.\n",
+      "ref": "J2662",
+      "film": "008",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-17T11:49Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T11:49Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review PR #556 + v07 contact sheets, write REVIEW.md, stage to HOS UAT + awaits_ben",
+      "kind": "qa",
+      "plain": "Review HOS 008 Short C v07 against the J2485 fix list and stage it for Ben's phone watch"
     }
   ],
   "focus": [
