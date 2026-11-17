@@ -1,5 +1,5 @@
 {
-  "next_id": 3012,
+  "next_id": 3013,
   "jobs": [
     {
       "id": "J0001",
@@ -226573,6 +226573,11 @@
           "at": "2026-11-17T07:54Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-18T07:40:00Z"
+        },
+        {
+          "at": "2026-11-17T19:00Z",
+          "by": "claude",
+          "what": "Ben created TheLaughingGod1986/studio (17 Nov 19:00Z). The engine move waits on this job: J3012."
         }
       ],
       "remaining_action": "Start History of Science's own files: count them and plan the first small pull requests",
@@ -267909,6 +267914,36 @@
       "due": "2026-11-19T12:00:00Z",
       "kind": "chief",
       "plain": "Ben said yes to the every-planet film: book its date and start making it"
+    },
+    {
+      "id": "J3012",
+      "title": "Decoupling phase 3: move the studio engine into its own repo, runbook now, move after a clean week",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 19:00Z):** created `https://github.com/TheLaughingGod1986/studio` for the studio engine (private, empty, default branch main). Claude checked that the Claude GitHub app can reach it (cloned it, empty). This is phase 3 of `docs/MULTI_CHANNEL_PLAN.md`: the engine (queue, board, relay, agents' scripts, thread) moves out of orbit-with-ben into its own repo, and Orbit With Ben, History of Science and the WW2 channel all plug in through the registry. Ben, 10 Nov: \"there should be 3 GitHub repos. One for Studio, one for Orbit with Ben, and one for History of Science\" (now four, with ww2-channel).\n\n**Do not move before all of these hold:**\n1. `scripts/studio_split.py` has read 0 on seven days in a row (it read 0 on 14, 15, 16 and 17 Nov; the earliest is 20 Nov).\n2. J2537 is done: email addresses out of both channels' current files and git history.\n3. Ben has been told the day before the move, in one message on the thread: the date, what he will notice (none, if it goes right), and any credential he must change. That message is a notice, not a question, unless a credential change is truly needed.\n\n**Do now, while waiting.** Write the move runbook in `docs/STUDIO_MOVE.md`: what the new repo holds (from the dry run's layout); how queue history and the thread carry over; every machine change (the Mac mini's and the MacBook's checkouts, launchd jobs, the relay, the board publisher, `board_site.json`, GitHub workflows); every credential that must cover the new repo (the board's GitHub token currently covers orbit-with-ben and history-of-science only; the board's tick store and thread can stay where they are if that avoids a token change, so say which is simpler); the rollback; and a rehearsal on a branch of the new repo that leaves live work untouched. Open a pull request for the runbook. When the three conditions hold, run the move by the runbook, prove one full relay cycle, one board publish and one tick, and close.\n\n**Guards.** £0. Nothing deleted from orbit-with-ben until the new repo is live and proven. No token or account address in any file. Nothing that needs Ben beyond the day-before notice and, only if unavoidable, one credential change.\n\n**Result.** The runbook PR now; at the move, the new repo's state, the checks, and anything left.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 240,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T19:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T19:00Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Write the move runbook now; move the engine to the new studio repo once the dry run reads 0 for seven days and J2537 is done",
+      "due": "2026-11-27T18:00:00Z",
+      "kind": "chief",
+      "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week"
     }
   ],
   "focus": [

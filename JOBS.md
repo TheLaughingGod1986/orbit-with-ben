@@ -69,6 +69,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3009 | mini | open (after J2990) | – | – | for gemini · studio · WW2 channel: move it into its own repo with history, register it, check it out on both Macs |  |
 | J3010 | mini | blocked | gemini | – | 007 upload · review · HOS 007 Vaccine Short (xgx2lYHhYZM): read next-morning snapshot after J3004 | f57ab150da |
 | J3011 | mini | open | – | – | chief · Orbit: Ben locked the every-planet film, book its slot and start the build |  |
+| J3012 | mini | open | – | – | chief · Decoupling phase 3: move the studio engine into its own repo, runbook now, move after a clean week |  |
 
 Recently finished:
 
