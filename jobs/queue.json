@@ -265600,10 +265600,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-17T10:29Z",
+      "eta": "2026-11-17T11:59Z",
       "created_by": "claude",
       "created_at": "2026-11-17T08:37Z",
       "result": "",
@@ -265632,6 +265632,11 @@
           "at": "2026-11-17T09:04Z",
           "by": "macbook-2",
           "what": "released: MacBook worker run on gemini ended (exit 124) with the job still open; picked up again next run"
+        },
+        {
+          "at": "2026-11-17T10:29Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Implement unified agent status + usage reset/retry window + overdue/urgent/Ben-waiting reroute in chief_relay.py, board_publish.py, and queue_eta.py",
