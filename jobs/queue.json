@@ -264878,9 +264878,14 @@
           "at": "2026-11-17T07:29Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J2977 and starting verification of J2040 waiting condition"
+        },
+        {
+          "at": "2026-11-17T07:31Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified J2517 (#793) and J2559 (#795) complete; all 8 local ~/.codex hashes match J2959 unchanged; draft PR #490 still OPEN/draft at f521bcd3f1 with 0 comments; docs/CODEX_ALLOWLIST.md not on main"
         }
       ],
-      "remaining_action": "Inspect J2040, J2959 review, local ~/.codex files, PR #490 and main branch",
+      "remaining_action": "Write jobs/reviews/J2977/REVIEW.md in a clean worktree, update J2040 wait hold with --recheck J2977, and complete J2977",
       "kind": "review",
       "recheck_of": "J2040",
       "due": "2026-11-17T08:27:08+00:00",
@@ -264895,11 +264900,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-17T07:29Z",
+        "at": "2026-11-17T07:31Z",
         "by": "gemini",
-        "note": "Claimed J2977 and starting verification of J2040 waiting condition"
+        "note": "Verified J2517 (#793) and J2559 (#795) complete; all 8 local ~/.codex hashes match J2959 unchanged; draft PR #490 still "
       }
     }
   ],
