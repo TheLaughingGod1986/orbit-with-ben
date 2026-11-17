@@ -1,5 +1,5 @@
 {
-  "next_id": 2988,
+  "next_id": 2989,
   "jobs": [
     {
       "id": "J0001",
@@ -266177,6 +266177,11 @@
           "at": "2026-11-17T14:38Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-17T15:35:00Z"
+        },
+        {
+          "at": "2026-11-17T15:36Z",
+          "by": "relay",
+          "what": "condition verification queued: J2988"
         }
       ],
       "remaining_action": "Non-producer QA reviewer (claudecode/claude/codex) to review PR #556 + v07 contact sheets, write REVIEW.md, and stage hos_008_short_C_v07.mp4 to HOS UAT + awaits_ben",
@@ -266204,7 +266209,8 @@
       "hold": {
         "type": "credits",
         "condition": "Non-producer QA reviewer required (gemini/macbook assembled v07 in J2662 and brief forbids self-review): claudecode down until 2026-11-17T15:31:13Z, claude down until 2026-11-17T17:50:00Z, codex down until 2026-11-17T23:22:00Z, cursor-claude-opus-5-5 out of credit. Pre-flight verified NAS SHA-256 (v07 a3404a314a44..., v03 9f25a16de5fc...) and HOS PR #556 @ 168f8915 green.",
-        "check_at": "2026-11-17T15:35:00Z"
+        "check_at": "2026-11-17T16:36:39+00:00",
+        "recheck_task": "J2988"
       }
     },
     {
@@ -266407,6 +266413,37 @@
         "at": "2026-11-17T14:35Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J2988",
+      "title": "Verify condition for J2984",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2984: Non-producer QA reviewer required (gemini/macbook assembled v07 in J2662 and brief forbids self-review): claudecode down until 2026-11-17T15:31:13Z, claude down until 2026-11-17T17:50:00Z, codex down until 2026-11-17T23:22:00Z, cursor-claude-opus-5-5 out of credit. Pre-flight verified NAS SHA-256 (v07 a3404a314a44..., v03 9f25a16de5fc...) and HOS PR #556 @ 168f8915 green.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2984 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-17T15:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T15:36Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Non-producer QA reviewer (claudecode/claude/codex) to review PR #556 + v07 contact sheets, write REVIEW.md, and stage hos_008_short_C_v07.mp4 to HOS UAT + awaits_",
+      "kind": "review",
+      "recheck_of": "J2984",
+      "due": "2026-11-17T16:36:39+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
