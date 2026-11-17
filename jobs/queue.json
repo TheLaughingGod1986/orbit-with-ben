@@ -266110,13 +266110,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-17T14:33Z",
-      "eta": "2026-11-17T16:33Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-17T11:49Z",
-      "result": "",
+      "result": "Waiting for: Non-producer QA reviewer required (gemini/macbook assembled v07 in J2662 and brief forbids self-review): claudecode down until 2026-11-17T15:31:13Z, claude down until 2026-11-17T17:50:00Z, codex down until 2026-11-17T23:22:00Z, cursor-claude-opus-5-5 out of credit. Pre-flight verified NAS SHA-256 (v07 a3404a314a44..., v03 9f25a16de5fc...) and HOS PR #556 @ 168f8915 green.",
       "history": [
         {
           "at": "2026-11-17T11:49Z",
@@ -266137,9 +266137,19 @@
           "at": "2026-11-17T14:38Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Pre-flight verified NAS SHA-256 parity (v07 a3404a314a444a0fd987ca648c28425be8afb768f83748ee64e553951c8f06a8, v03 9f25a16de5fc7d454be7adbc0e301614c7b060cd28b10cd076bcd2b4a6642161), 3 v07 contact sheets present, and HOS PR #556 (macbook/J2662 @ 168f8915) OPEN with all 6 CI checks green; gemini is excluded as producer of J2662 v07"
+        },
+        {
+          "at": "2026-11-17T14:38Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: Non-producer QA reviewer required (gemini/macbook assembled v07 in J2662 and brief forbids self-review): claudecode down until 2026-11-17T15:31:13Z, claude down until 2026-11-17T17:50:00Z, codex down until 2026-11-17T23:22:00Z, cursor-claude-opus-5-5 out of credit. Pre-flight verified NAS SHA-256 (v07 a3404a314a44..., v03 9f25a16de5fc...) and HOS PR #556 @ 168f8915 green."
+        },
+        {
+          "at": "2026-11-17T14:38Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-17T15:35:00Z"
         }
       ],
-      "remaining_action": "Non-producer QA reviewer (claudecode/claude/codex) to review PR #556 and v07 contact sheets, write REVIEW.md, and stage hos_008_short_C_v07.mp4 to HOS UAT + awaits_ben",
+      "remaining_action": "Non-producer QA reviewer (claudecode/claude/codex) to review PR #556 + v07 contact sheets, write REVIEW.md, and stage hos_008_short_C_v07.mp4 to HOS UAT + awaits_ben",
       "kind": "qa",
       "plain": "Review HOS 008 Short C v07 against the J2485 fix list and stage it for Ben's phone watch",
       "rerouted_from": {
@@ -266160,7 +266170,12 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "hold": {
+        "type": "credits",
+        "condition": "Non-producer QA reviewer required (gemini/macbook assembled v07 in J2662 and brief forbids self-review): claudecode down until 2026-11-17T15:31:13Z, claude down until 2026-11-17T17:50:00Z, codex down until 2026-11-17T23:22:00Z, cursor-claude-opus-5-5 out of credit. Pre-flight verified NAS SHA-256 (v07 a3404a314a44..., v03 9f25a16de5fc...) and HOS PR #556 @ 168f8915 green.",
+        "check_at": "2026-11-17T15:35:00Z"
+      }
     },
     {
       "id": "J2985",
