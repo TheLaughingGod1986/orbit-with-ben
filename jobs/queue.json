@@ -264344,17 +264344,22 @@
           "at": "2026-11-17T05:59Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Verified 0 exact title collisions across 9 public_search.py queries each and strictly on-topic neighbours.py PASS for HOS:118 (6 >=1M incl. TED-Ed 3.69M & 3.34M, MinuteEarth 2.24M, Be Smart 1.69M) and HOS:119 (5 >=1M incl. TED-Ed 12.51M & 2.20M, Veritasium 10.41M, MinuteEarth 3.09M)"
+        },
+        {
+          "at": "2026-11-17T06:06Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Wrote TOPIC.md, status.json, README.md, production-status.md, and PRE_BUILD_VIDIQ_AUDIT.md for HOS:118 (Why Do We Hiccup?) and HOS:119 (Why Do Mosquitoes Bite Some People More?)"
         }
       ],
-      "remaining_action": "Build HOS:118 and HOS:119 project folders from _template_NNN_Episode-Slug in a clean HOS worktree, run status_board.py --check and check_all.sh, and open HOS PR",
+      "remaining_action": "Run status_board.py --check and check_all.sh on HOS:118 and HOS:119 in the clean HOS worktree, commit, push, and open HOS PR",
       "kind": "script",
       "backlog": "hos-ideas",
       "progress": {
         "step": 2,
         "of": 4,
-        "at": "2026-11-17T05:59Z",
+        "at": "2026-11-17T06:06Z",
         "by": "gemini",
-        "note": "Verified 0 exact title collisions across 9 public_search.py queries each and strictly on-topic neighbours.py PASS for HO"
+        "note": "Wrote TOPIC.md, status.json, README.md, production-status.md, and PRE_BUILD_VIDIQ_AUDIT.md for HOS:118 (Why Do We Hiccup"
       },
       "taskKeys": [
         "HOS:118",
