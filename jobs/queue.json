@@ -265844,9 +265844,14 @@
           "at": "2026-11-17T11:38Z",
           "by": "gemini",
           "what": "step 4 of 5 done: Removed unused board_site/.vercel/project.json, kept vercel.json read by build.py + NO_DEPLOY vercel.json, updated stale comments; 108 Python + 3 Node test suites pass"
+        },
+        {
+          "at": "2026-11-17T11:40Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Opened PR #986; parking for Chief merge and post-merge deploy verification"
         }
       ],
-      "remaining_action": "Commit, push branch, open PR for Chief, and park J2982 for Chief merge + post-merge Cloudflare Pages deploy check",
+      "remaining_action": "Chief review & merge PR #986, then deploy board_site to Cloudflare Pages, run board_publish.py --force, and verify 200 on both addresses",
       "due": "2026-11-19T12:00:00Z",
       "for": "gemini",
       "kind": "studio",
@@ -265854,9 +265859,9 @@
       "progress": {
         "step": 4,
         "of": 5,
-        "at": "2026-11-17T11:38Z",
+        "at": "2026-11-17T11:40Z",
         "by": "gemini",
-        "note": "Removed unused board_site/.vercel/project.json, kept vercel.json read by build.py + NO_DEPLOY vercel.json, updated stale"
+        "note": "Opened PR #986; parking for Chief merge and post-merge deploy verification"
       }
     },
     {
