@@ -55,7 +55,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2980 | mini | claimed | gemini | 2026-11-17T11:59Z | for gemini · studio · Dispatch: an agent marked out of usage is down in the forecast too, and its jobs move on |  |
 | J2981 | mini | open | – | – | for gemini · studio · Board credits: four usage readings stale since 8-13 Nov (Cursor, Claude, Vertex, Grok) |  |
 | J2982 | mini | open | – | – | for gemini · studio · Board clean-up: plain times on the Agents tab, no Mac folder path in public data, Vercel leftovers out |  |
-| J2983 | any | claimed | macbook | 2026-11-17T12:30Z | thumb · Rebuild three OWB weekly audit thumbnail Bs per panel decision J2843 (m09jUdwC5hk, Mo93x0fxB1Q, ziKBPJ6FY0U) | J2843 |
+| J2983 | any | open | – | – | thumb · Rebuild three OWB weekly audit thumbnail Bs per panel decision J2843 (m09jUdwC5hk, Mo93x0fxB1Q, ziKBPJ6FY0U) | J2843 |
 
 Recently finished:
 

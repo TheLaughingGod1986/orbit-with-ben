@@ -265730,10 +265730,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "macbook",
-      "since": "2026-11-17T10:30Z",
-      "eta": "2026-11-17T12:30Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-17T10:23Z",
       "result": "",
@@ -265747,6 +265747,11 @@
           "at": "2026-11-17T10:30Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T10:31Z",
+          "by": "macbook",
+          "what": "released: MacBook worker run on codex ended (exit 1) with the job still open; picked up again next run; codex paused on the MacBook until 2026-11-17T12:31:29Z, so the next run uses the next agent in the chain"
         }
       ],
       "remaining_action": "Rebuild m09jUdwC5hk_B_v05.jpg, Mo93x0fxB1Q_B_v05.jpg, and ziKBPJ6FY0U_B_v06.jpg per DECISION.md, run thumb_preview.py --score, and update THUMB_LEDGER.json",
