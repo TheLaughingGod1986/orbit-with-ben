@@ -81,12 +81,13 @@ WHO_RE = re.compile(
 CREDIT_MARKER_RE = re.compile(r"Credit:\s*`[^`]*`\s*\([^)]*\)")
 SKIP_LAB = {"when", "who", "fact", "data", "scale", "chapter", "edit label"}
 
-# Clean crop boxes on source plates that carry bottom/corner border bars (from SHOT_LIST_v01.md)
+# Clean crop boxes on source plates that carry bottom/corner border bars or split comparison panels
 CLEAN_CROPS: dict[str, tuple[int, int, int, int]] = {
     "PIA20155.jpg": (0, 0, 879, 760),
     "PIA19934.jpg": (0, 0, 1217, 900),
     "PIA19936.jpg": (300, 0, 3400, 1744),
     "PIA20727.jpg": (0, 350, 5000, 3850),
+    "File_Charon_Discovery.jpg.jpg": (708, 0, 1416, 1072),
 }
 
 # SFX plan v02: R01-R06 updated to v02 cut/label boundaries; >= 65.76s identical to v01.
@@ -569,6 +570,19 @@ def _lift_ycbcr(im: Image.Image) -> Image.Image:
     return Image.fromarray(ycbcr.astype(np.uint8), "YCbCr").convert("RGB")
 
 
+def _apply_fine_grain(im: Image.Image) -> Image.Image:
+    """Bakes subtle 2x2 spatial film grain onto dark backgrounds (studio/RULES.md Finishing §5)
+    so dark nightside discs do not band under H.264 or confuse polish_gate's centre-patch FFT."""
+    arr = np.asarray(im, dtype=np.float32).copy()
+    rng = np.random.default_rng(34034)
+    g_small = rng.normal(0.0, 3.2, (H // 2, W // 2)).astype(np.float32)
+    grain = np.repeat(np.repeat(g_small, 2, axis=0), 2, axis=1)
+    luma = 0.299 * arr[:, :, 0] + 0.587 * arr[:, :, 1] + 0.114 * arr[:, :, 2]
+    weight = np.clip((115.0 - luma) / 55.0, 0.25, 1.0)
+    arr += (grain * weight)[:, :, None]
+    return Image.fromarray(np.clip(np.round(arr), 0, 255).astype(np.uint8), "RGB")
+
+
 def _prepare_still_base(cut: dict, stars_im: Image.Image) -> Image.Image:
     """Builds a 1920x1080 RGB base image with 2D separable min(fx, fy) 48px feather when inset."""
     src = Path(cut["path"])
@@ -594,7 +608,7 @@ def _prepare_still_base(cut: dict, stars_im: Image.Image) -> Image.Image:
         scaled = im.resize((tw, th), Image.Resampling.LANCZOS)
         x0 = (tw - W) // 2
         y0 = (th - H) // 2
-        return scaled.crop((x0, y0, x0 + W, y0 + H))
+        return _apply_fine_grain(scaled.crop((x0, y0, x0 + W, y0 + H)))
 
     # Starfield-framed inset with true 2D separable 48px edge feather (fixes J2383 48x48 corner glitch)
     fit = min(1.998 / z_max, (W - 120) / sw, (H - 120) / sh)
@@ -616,22 +630,20 @@ def _prepare_still_base(cut: dict, stars_im: Image.Image) -> Image.Image:
     oy = (H - th) // 2
     patch = bg[oy : oy + th, ox : ox + tw]
     patch[:] = patch * (1.0 - alpha) + fg * alpha
-    return Image.fromarray(np.clip(bg, 0, 255).astype(np.uint8), "RGB")
+    return _apply_fine_grain(Image.fromarray(np.clip(bg, 0, 255).astype(np.uint8), "RGB"))
 
 
 def _decorate_ffmpeg(cut: dict, inputs: list[str], base: str, n: int) -> tuple[str, str]:
-    """Overlays transparent .mov graphic, bottom-left credit, and lower-third labels (y >= 820)."""
+    """Overlays transparent .mov graphic, bottom-left credit, and lower-third labels (y >= 800)."""
     parts = []
     cur = base
-    idx = len(inputs) // 2  # count -i arguments accurately below
-    # Count actual -i inputs so far
     idx = sum(1 for tok in inputs if tok == "-i")
 
     if cut.get("overlay"):
         ss = float(cut.get("overlay_ss") or 0.0)
         ov_y = 55 if cut.get("row") == "R17" else 0
         inputs.extend(["-ss", f"{ss:.3f}", "-i", cut["overlay"]])
-        parts.append(f"[{cur}][{idx}:v]overlay=0:{ov_y}:format=auto:shortest=1[ov{idx}]")
+        parts.append(f"[{cur}][{idx}:v]overlay=0:{ov_y}:format=auto:eof_action=pass[ov{idx}]")
         cur = f"ov{idx}"
         idx += 1
 
@@ -670,10 +682,10 @@ def _decorate_ffmpeg(cut: dict, inputs: list[str], base: str, n: int) -> tuple[s
 
         inputs.extend(["-loop", "1", "-t", f"{hold + 0.05:.3f}", "-i", str(png)])
         parts.append(f"[{idx}:v]{','.join(fade_ops)}[lb{idx}]")
-        # Keep lower-third pills at H-h-72 (y >= 830, strictly outside 512x512 centre patch y=284..796)
+        # Keep lower-third pills at H-h-112 (y >= 800 > 796 centre patch, and >= 40px above H-h-28 credit)
         overlaps_prev = any(not (b <= pa + 0.05 or a >= pb - 0.05) for pa, pb in placed_intervals)
         placed_intervals.append((a, b))
-        y_expr = "H-h-165" if overlaps_prev else "H-h-72"
+        y_expr = "H-h-204" if overlaps_prev else "H-h-112"
         parts.append(f"[{cur}][lb{idx}]overlay=x=(main_w-overlay_w)/2:y={y_expr}:format=auto:eof_action=pass[lbx{idx}]")
         cur = f"lbx{idx}"
         idx += 1
@@ -721,34 +733,66 @@ def render_still(cut: dict, dest: Path, stars: Path) -> None:
         raise
 
 
+def _video_plate_fix(name: str, sw: int, sh: int, off: float = 0.0) -> tuple[str, str, int, int]:
+    """Per-clip crop and luma lift ported from verified v01 master (J2376), with offset-aware flyby curve."""
+    crop = ""
+    lift = "lutyuv=y='clip(val*0.78+58,0,255)'"
+    if name == "ksc_011906_nh_launch.mp4":
+        crop = "crop=590:448:106:0,"
+        sw, sh = 590, 448
+    elif "Approach_to_Arrokoth" in name:
+        crop = "crop=500:476:150:0,"
+        sw, sh = 500, 476
+    elif "Pluto_System_As_Seen" in name:
+        lift = "lutyuv=y='clip(val*4+32,0,255)'"
+    elif "Pluto_Flyby" in name:
+        if off >= 18.0:
+            # At 20.0-24.0s raw luma is 132..151 (p95 164..167); stretch contrast cleanly without black-crush
+            lift = "lutyuv=y='clip((val-140)*2.4+120,0,255)'"
+        else:
+            lift = "lutyuv=y='clip((val-210)*4+160,0,255)'"
+    elif "Charon_orbiting" in name:
+        lift = "lutyuv=y='clip(val*4+32,0,255)',noise=alls=12:allf=t"
+    return crop, lift, sw, sh
+
+
 def render_video(cut: dict, dest: Path, stars: Path) -> None:
     n = cut["frames"]
     src = Path(cut["path"])
     info = probe(src)
     sw, sh = info["width"], info["height"]
-    cover = max(W / sw, H / sh)
     off = float(cut["offset"] or 0.0)
-    inputs = ["-y", "-ss", f"{off:.3f}", "-i", str(src), "-loop", "1", "-i", str(stars)]
     if "51712771431" in src.name:
+        inputs = ["-y", "-ss", f"{off:.3f}", "-i", str(src), "-loop", "1", "-i", str(stars)]
         vf = (
             f"[1:v]scale={W}:{H},fps={FPS},format=gbrp[bg];"
-            f"[0:v]crop=1028:840:0:0,scale=1320:1080:flags=lanczos,"
+            f"[0:v]tpad=stop_mode=clone:stop_duration=0.25,crop=1028:840:0:0,scale=1320:1080:flags=lanczos,"
             f"pad={W}:{H}:(ow-iw)/2:(oh-ih)/2:black,fps={FPS},format=gbrp[fg];"
             f"[bg][fg]blend=all_mode=screen:shortest=1,format=yuv420p[base]"
         )
-    elif cover <= 2.0:
-        vf = (
-            f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
-            f"lutyuv=y='clip(val*0.78+58,0,255)',fps={FPS},setsar=1,format=yuv420p[base]"
-        )
     else:
-        fit = min(2.0, W / sw, H / sh)
-        tw, th = max(2, int(sw * fit) // 2 * 2), max(2, int(sh * fit) // 2 * 2)
-        vf = (
-            f"[1:v]scale={W}:{H},format=yuv420p[bg];"
-            f"[0:v]scale={tw}:{th}:flags=lanczos,fps={FPS},format=yuv420p[fg];"
-            f"[bg][fg]overlay=(main_w-overlay_w)/2:(main_h-overlay_h)/2:shortest=1,format=yuv420p[base]"
-        )
+        crop, lift, sw, sh = _video_plate_fix(src.name, sw, sh, off)
+        cover = max(W / sw, H / sh)
+        inputs = ["-y", "-ss", f"{off:.3f}", "-i", str(src)]
+        src_chain = f"[0:v]tpad=stop_mode=clone:stop_duration=0.25,{crop}"
+        if cover <= 2.0:
+            vf = (
+                f"{src_chain}scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},"
+                f"{lift},fps={FPS},setsar=1,format=yuv420p[base]"
+            )
+        else:
+            fit = min(2.0, (W - 80) / sw, (H - 80) / sh)
+            tw, th = max(2, int(sw * fit) // 2 * 2), max(2, int(sh * fit) // 2 * 2)
+            feather = max(120, int(min(tw, th) * 0.14))
+            vf = (
+                f"{src_chain}split=2[vbg][vfg];"
+                f"[vbg]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},{lift},"
+                f"gblur=sigma=28,eq=saturation=0.9,fps={FPS},format=yuv444p[bg];"
+                f"[vfg]scale={tw}:{th}:flags=lanczos,{lift},fps={FPS},format=rgba,"
+                f"geq=r='r(X,Y)':g='g(X,Y)':b='b(X,Y)':"
+                f"a='clip(min(min(X,{tw}-X),min(Y,{th}-Y))*255/{feather},0,255)'[fg];"
+                f"[bg][fg]overlay=(main_w-overlay_w)/2:(main_h-overlay_h)/2:format=auto,setsar=1,format=yuv420p[base]"
+            )
     extra_vf, out_pad = _decorate_ffmpeg(cut, inputs, "base", n)
     cmd = [
         "ffmpeg", "-hide_banner", "-loglevel", "error", *inputs,
@@ -763,7 +807,7 @@ def render_graphic(cut: dict, dest: Path, stars: Path | None = None) -> None:
     if stars is not None and cut["kind"] == "CODE":
         inputs = ["-y", "-i", cut["path"], "-loop", "1", "-i", str(stars)]
         vf = (
-            f"[0:v]scale={W}:{H},fps={FPS},setsar=1,format=gbrp[fg];"
+            f"[0:v]tpad=stop_mode=clone:stop_duration=0.25,scale={W}:{H},fps={FPS},setsar=1,format=gbrp[fg];"
             f"[1:v]scale={W}:{H},fps={FPS},format=gbrp[bg];"
             f"[fg][bg]blend=all_expr='if(gt(Y,920),max(A,B*0.85),A)':shortest=1,format=yuv420p[base]"
         )
@@ -774,10 +818,11 @@ def render_graphic(cut: dict, dest: Path, stars: Path | None = None) -> None:
         ]
         run(cmd)
         return
+    lift_card = ",lutyuv=y='clip(val+10,0,255)'" if cut["kind"] == "CARD" else ""
     cmd = [
         "ffmpeg", "-hide_banner", "-loglevel", "error", "-y",
         "-i", cut["path"],
-        "-vf", f"scale={W}:{H},fps={FPS},setsar=1,format=yuv420p",
+        "-vf", f"tpad=stop_mode=clone:stop_duration=0.25,scale={W}:{H},fps={FPS},setsar=1{lift_card},format=yuv420p",
         *ENC, "-frames:v", str(n), str(dest),
     ]
     run(cmd)
@@ -1030,7 +1075,7 @@ def mux(picture: Path, audio: Path, dest: Path) -> None:
         "-i", str(picture), "-i", str(audio),
         "-map", "0:v:0", "-map", "1:a:0",
         "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
-        "-shortest", "-movflags", "+faststart", str(dest),
+        "-movflags", "+faststart", str(dest),
     ])
 
 
@@ -1084,9 +1129,17 @@ def run_gates() -> dict:
     ], capture_output=True, text=True)
     results["polish_gate"] = {"code": pg.returncode, "out": (pg.stdout or pg.stderr)[-1000:]}
 
+    others = [
+        str(d) for d in sorted((REPO / "02_Video-Projects").glob("*/05_Music"))
+        if not d.parent.name.startswith("034")
+    ]
+    uat = Path.home() / "Library/Mobile Documents/com~apple~CloudDocs/OWB UAT"
+    if uat.is_dir():
+        others.append(str(uat))
     mg = sp.run([
         sys.executable, str(REPO / "scripts/music_gate.py"), str(FILM),
         "--bed", str(BED), "--video", str(OUT),
+        *(["--others", *others] if others else []),
         "--out", str(PACK / "music_gate_v02.json"),
     ], capture_output=True, text=True)
     results["music_gate"] = {"code": mg.returncode, "out": (mg.stdout or mg.stderr)[-1000:]}

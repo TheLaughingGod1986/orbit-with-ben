@@ -1,0 +1,34 @@
+{
+  "clip_check": {
+    "code": 0,
+    "out": "clip_check: 74 rows \u2014 PASS\nOK: sentence/card boundaries and end-after-VO checks clear.\n"
+  },
+  "picture_qa": {
+    "code": 0,
+    "out": "ix_e_Hidra.jpg.jpg: low detail: edge density 0.0011 < film p5 0.0089\nWARN   5:32 row R40 File_Jupiter_Io.jpg.jpg: low detail: edge density 0.0051 < film p5 0.0089\nWARN   7:33 row R53 File_Sputnik_Planum_floating_hills_-_unannotated.jpg.jpg: low detail: luma std 17.42 < 18.0\nWARN   9:15 row R65 PIA21590.jpg: low detail: edge density 0.0056 < film p5 0.0089\nWARN   9:37 row R68 File_Reworked_composite_image_of_Arrokoth_rotated.png.png: kind of picture: 'File:Reworked composite image of Arrokoth rotated.png' (composite), look at it full size\nWARN  10:27 row R73 PIA21590.jpg: low detail: edge density 0.0055 < film p5 0.0089\npicture QA PASS: 0 of 138 cuts fail, 10 to look at -> /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/07_Edit-Project/full_master_v02_pack/PICTURE_QA.md, /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/07_Edit-Project/full_master_v02_pack/picture_qa_review.jpg\n"
+  },
+  "polish_gate": {
+    "code": 0,
+    "out": "  559.9s PIA19964.jpg                 ok\n R67   565.3s File_New_Horizons_Approach_t ok\n R67   571.3s File_VIDEO_-_Arrokoth_Flyby_ ok\n R68   577.1s File_Reworked_composite_imag ok\n R69   585.8s code_graphic_034_r69_kuiper_ ok\n R70   594.3s PIA19946.jpg                 ok\n R71   598.9s PIA19952.jpg                 ok\n R71   603.0s PIA19952.jpg                 ok\n R71   607.1s PIA19957.jpg                 ok\n R72   611.7s PIA02215.jpg                 ok\n R72   616.8s PIA02234.jpg                 ok\n R73   621.7s PIA01536.jpg                 ok\n R73   626.5s PIA21590.jpg                 WARN low detail: edge density 0.0055 < film p5 0.0089\n R74   631.9s PIA19948.jpg                 ok\n R74   637.9s PIA19964.jpg                 ok\n R74   643.9s PIA02215.jpg                 ok\npolish gate PASS: 0 of 138 rows failed, 9 to look at -> /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/07_Edit-Project/full_master_v02_pack/polish_gate_v02.json\n"
+  },
+  "music_gate": {
+    "code": 0,
+    "out": "ss --others\nWARN reused: couldn't read andromeda_collision_vo_v03_02_the-honest-clock.mp3 to compare (OSError); download it or pass --others\nWARN reused: couldn't read andromeda_collision_vo_v03_full.wav to compare (OSError); download it or pass --others\nWARN reused: couldn't read andromeda_collision_vo_v03_00_cold-open.mp3 to compare (OSError); download it or pass --others\nWARN reused: couldn't read andromeda_collision_vo_v03_05_would-we-survive.mp3 to compare (OSError); download it or pass --others\nWARN reused: couldn't read andromeda_collision_vo_v03_04_stars-almost-never-hit.mp3 to compare (OSError); download it or pass --others\nWARN reused: couldn't read andromeda_collision_vo_v03_03_when-the-night-sky-rewrites.mp3 to compare (OSError); download it or pass --others\nWARN reused: couldn't read andromeda_collision_vo_v03_01_the-second-spiral.mp3 to compare (OSError); download it or pass --others\nmusic gate PASS: pluto_score_bed_v01.mp3, 646.9 s, about 66.7 BPM, brief Pace: 64-74 BPM\n"
+  },
+  "sfx_level": {
+    "code": 0,
+    "out": "SFX level PASS: VO -19.9 LUFS, SFX -46.8 LUFS, 8 hits\nWARN present: 8 hits in 10.8 min (fewer than 1 a minute)\n"
+  },
+  "delivery": {
+    "integrated_lufs": -14.7,
+    "true_peak_dbtp": -1.0,
+    "width": 1920,
+    "height": 1080,
+    "duration": 646.933333,
+    "nb_frames": 19408,
+    "avg_frame_rate": "11644800/388159",
+    "black_frames": [],
+    "sha256": "e5a886dfef208774cce8ae987e658fba5d7a96cbb5c99a44aadf63516949ba62",
+    "bytes": 370954641
+  }
+}
