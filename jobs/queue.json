@@ -265692,19 +265692,24 @@
           "at": "2026-11-17T11:22Z",
           "by": "macbook-2",
           "what": "step 3 of 5 done: Unified agent_status/agent_states across chief_relay, board_publish, and queue_eta; added usage-reset retry and overdue/urgent/Ben reroutes + tests"
+        },
+        {
+          "at": "2026-11-17T11:24Z",
+          "by": "macbook-2",
+          "what": "step 5 of 5 done: PR #985 opened on macbook/J2980 (243ff36e7); all test suites pass"
         }
       ],
-      "remaining_action": "Running full test suites (test_chief_relay, test_board_publish, test_jobs, test_queue_eta) and opening PR",
+      "remaining_action": "Finishing J2980 and posting report on the studio thread",
       "due": "2026-11-18T12:00:00Z",
       "for": "gemini",
       "kind": "studio",
       "plain": "Stop sending jobs to an agent the board already shows is out of usage, so nothing waits on it",
       "progress": {
-        "step": 3,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-17T11:22Z",
+        "at": "2026-11-17T11:24Z",
         "by": "macbook-2",
-        "note": "Unified agent_status/agent_states across chief_relay, board_publish, and queue_eta; added usage-reset retry and overdue/"
+        "note": "PR #985 opened on macbook/J2980 (243ff36e7); all test suites pass"
       }
     },
     {
