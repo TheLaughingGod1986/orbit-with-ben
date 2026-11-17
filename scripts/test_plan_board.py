@@ -22,6 +22,13 @@ def video(key, **youtube):
     return {"key": key, "number": key.split(":")[-1], "jobs": [], "youtube": youtube or None}
 
 
+def every_job(plans, overrides=()):
+    """A queue holding every job the plans name, with the given jobs' states."""
+    given = {item["id"]: item for item in overrides}
+    names = [job_id for plan in plans for step in plan.get("steps") or [] for job_id in step.get("jobs") or []]
+    return list(given.values()) + [job(job_id) for job_id in dict.fromkeys(names) if job_id not in given]
+
+
 class PlanBoardTest(unittest.TestCase):
     def test_real_plan_jobs_exist_and_dates_parse(self):
         plans = json.loads((ROOT / "studio" / "plan.json").read_text())
@@ -45,6 +52,8 @@ class PlanBoardTest(unittest.TestCase):
         self.assertEqual(ww2["card"]["needs"], "")
         self.assertEqual(len(ww2["steps"]), 12)
         self.assertFalse(any(s["needsYou"] for s in ww2["steps"]))
+        self.assertEqual(ww2["card"]["score"], "No film is public yet.")
+        self.assertEqual(ww2["baseline"]["best"], "No long film yet")
 
     def test_stands_from_jobs_and_the_tracker(self):
         plans = json.loads((ROOT / "studio" / "plan.json").read_text())
@@ -58,6 +67,7 @@ class PlanBoardTest(unittest.TestCase):
             job("J2864", "open", "studio"),
             job("J2989", "done", "studio"),
         ]
+        jobs = every_job(plans, jobs)
         videos = [
             {"key": "OWB:064", "jobs": [{"id": "J2863"}], "youtube": {}},
         ]
@@ -122,7 +132,7 @@ class PlanBoardTest(unittest.TestCase):
 
     def test_a_quiet_publish_keeps_the_same_block(self):
         plans = json.loads((ROOT / "studio" / "plan.json").read_text())
-        jobs = [job(job_id) for job_id in ("J2859", "J2857", "J2860", "J2861", "J2863", "J2864", "J2989")]
+        jobs = every_job(plans)
         first = plan_board.section(plans, jobs, [], None, "2026-11-14T23:00:00Z", now=NOW)
         second = plan_board.section(plans, jobs, [], None, "2026-11-14T23:05:00Z", previous=first, now=NOW)
         self.assertEqual(first, second)
@@ -148,7 +158,7 @@ class PlanBoardTest(unittest.TestCase):
         broken = json.loads(json.dumps(plans))
         broken[0]["steps"][0]["when"] = "next tuesday"
         with self.assertRaises(plan_board.PlanError):
-            plan_board.validate(broken, {"J2859", "J2857", "J2860", "J2861", "J2863", "J2864", "J2989"})
+            plan_board.validate(broken, {item["id"] for item in every_job(plans)})
 
 
 if __name__ == "__main__":
