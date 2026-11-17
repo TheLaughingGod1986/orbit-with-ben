@@ -263158,10 +263158,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-17T00:03Z",
+      "eta": "2026-11-17T01:33Z",
       "created_by": "gemini",
       "created_at": "2026-11-16T21:16Z",
       "result": "",
@@ -263250,6 +263250,11 @@
           "at": "2026-11-17T00:03Z",
           "by": "gemini",
           "what": "handed back: Acting Chief gemini taking J2957 to finish Studio Related video and PR 622 merge"
+        },
+        {
+          "at": "2026-11-17T00:03Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Finish the uploaded variolation Short in Studio (Related video, captions, settings), then file the receipt",
@@ -263273,7 +263278,15 @@
       },
       "taskKeys": [
         "HOS:007"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-17T00:03Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2958",
