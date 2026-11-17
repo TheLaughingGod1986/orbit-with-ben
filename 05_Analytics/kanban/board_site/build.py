@@ -120,7 +120,7 @@ def build_tracker(out: pathlib.Path) -> None:
 
 
 def build_host_config(out: pathlib.Path) -> None:
-    # One routing/header list serves both hosts; never hand-maintain a second copy.
+    # Routing and header rules read from vercel.json to write Cloudflare Pages _redirects and _headers.
     config = json.loads((HERE / "vercel.json").read_text())
     redirects = [f"{x['source']} {x['destination']} {301 if x['permanent'] else 302}" for x in config["redirects"]]
     # Pages resolves .html files at their clean URL itself. A 200 rewrite back to

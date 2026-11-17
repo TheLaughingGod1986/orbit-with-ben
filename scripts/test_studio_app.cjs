@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, channelsSection, channelsPage, channelCard, channelLight, channelFacts, firstDayCard, firstDaySection, firstDayPage, firstDayNext, planCard, planSection, planPage, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
+  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, agentReason, londonBackTime, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, channelsSection, channelsPage, channelCard, channelLight, channelFacts, firstDayCard, firstDaySection, firstDayPage, firstDayNext, planCard, planSection, planPage, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setMacbook: mb => { macbook = mb; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -1556,4 +1556,70 @@ console.log('Jobs running count checks OK');
   const healthyBoard = {...staleBoard, checksStatus: {ok: true, stale: false}};
   assert(!t.overview(healthyBoard, NOW).includes('ticks not read since'), 'healthy board hides the stale ticks banner');
   console.log('Ticks-not-read guard OK');
+}
+
+// J2982: Agents tab wording shows plain London times and strips job ids and probe jargon from the line Ben reads.
+{
+  const novNow = Date.parse('2026-11-17T11:20:00Z');
+  assert.equal(
+    t.agentReason('codex', {status: 'red', why: 'Codex hit usage limit until 2026-11-17T23:22:00Z (verified in J2829 probe)', until: '2026-11-17T23:22:00Z'}, {}, novNow),
+    'Out of usage, back Tue 17 Nov, 23:22',
+    'Codex out-of-usage stamp renders as plain London time with no job id or probe name'
+  );
+  assert.equal(
+    t.agentReason('claude', {status: 'red', why: "Claude said it's out of usage until 2026-11-17T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)", until: ''}, {}, novNow),
+    'Out of usage, back Tue 17 Nov, 12:50',
+    'Claude inline until stamp renders as plain London time'
+  );
+  assert.equal(
+    t.agentReason('cursor', {status: 'red', why: 'last run out of usage (J2652)', until: ''}, {}, novNow),
+    'Out of usage',
+    'Cursor out-of-usage strips job id'
+  );
+  assert.equal(
+    t.agentReason('cursor', {status: 'green', why: 'ran J2650 on cursor-grok-4-7'}, {}, novNow),
+    'no job right now',
+    'idle worker does not expose last job id or CLI model slug'
+  );
+  assert.equal(
+    t.agentReason('chief', {}, {agent: 'chief', up: true, why: 'ran jobs.py 12 min ago'}, novNow),
+    'Checked in 12 min ago',
+    'Chief check-in hides internal script name'
+  );
+  // BST summer time check (UTC+1).
+  assert.equal(
+    t.agentReason('codex', {status: 'red', why: 'usage limit until 2026-07-15T12:50:00Z (J2999 probe)'}, {}, Date.parse('2026-07-15T10:00:00Z')),
+    'Out of usage, back Wed 15 Jul, 13:50',
+    'London summer time shifts UTC+1'
+  );
+  t.setMacbook({at: new Date(novNow - 5 * 6e4).toISOString(), state: 'working', job: 'J2662'});
+  const agentsBoard = {
+    tracker: {videos: []},
+    owb: {jobs: [{id: 'J2662', status: 'claimed', by: 'macbook', title: 'HOS 008 Short C re-cut', plain: 'Re-cutting the Franklin lightning Short'}]},
+    models: {
+      checkedAt: '2026-11-17T11:15:08Z',
+      fresh: true,
+      chief: {agent: 'chief', name: 'Grok', acting: false, since: '2026-11-17T09:31:58Z'},
+      models: [
+        {id: 'claude', name: 'Claude', status: 'red', why: "Claude said it's out of usage until 2026-11-17T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)", until: ''},
+        {id: 'codex', name: 'Codex', status: 'red', why: 'Codex hit usage limit until 2026-11-17T23:22:00Z (verified in J2829 probe)', until: '2026-11-17T23:22:00Z'},
+        {id: 'cursor', name: 'Cursor', status: 'red', why: 'last run out of usage (J2652)', until: ''},
+        {id: 'gemini', name: 'Gemini', status: 'green', why: 'ready', until: ''},
+      ],
+      chiefChain: [
+        {agent: 'claude', name: 'Claude', up: false, why: "Claude said it's out of usage until 2026-11-17T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)", until: ''},
+        {agent: 'chief', name: 'Grok', up: true, why: 'posted on the thread 71 min ago', until: ''},
+        {agent: 'codex', name: 'Codex', up: false, why: 'marked down: Codex hit usage limit until 2026-11-17T23:22:00Z (verified in J2829 probe)', until: ''},
+        {agent: 'gemini', name: 'Gemini', up: true, why: 'ready', until: ''},
+      ],
+    },
+  };
+  const agentsHtml = t.renderTab('agents', agentsBoard, novNow);
+  assert(agentsHtml.includes('Out of usage, back Tue 17 Nov, 23:22'), 'Agents tab shows Codex plain London return time');
+  assert(agentsHtml.includes('Out of usage, back Tue 17 Nov, 12:50'), 'Agents tab shows Claude plain London return time');
+  assert(!agentsHtml.includes('2026-11-17T'), 'Agents tab shows no raw ISO timestamps');
+  assert(!agentsHtml.includes('J2829') && !agentsHtml.includes('J2652') && !/probe/i.test(agentsHtml), 'Agents tab hides job ids and probe jargon');
+  assert(agentsHtml.includes('href="/ai">Details ›</a>'), 'Details link remains available for raw diagnostics');
+  t.setMacbook(null);
+  console.log('Agents plain London times OK');
 }

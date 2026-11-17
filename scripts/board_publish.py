@@ -2,7 +2,7 @@
 """Publish the Studio Kanban's data so the board updates itself (Ben, 9 Oct: "the board should just update whenever a
 task is done or something progressed").
 
-The board page (05_Analytics/kanban/board_site, hosted on Vercel) reads one file at runtime and re-reads it every 60 s:
+The board page (05_Analytics/kanban/board_site, hosted on Cloudflare Pages) reads one file at runtime and re-reads it every 60 s:
   board.json on the branch `board-data` of this repo (a single parentless commit, force-pushed, like mini-heartbeat).
 
 It also carries the Channel Tracker's data (Ben, 10 Oct: the tracker as a phone web app at /tracker on the same site):
@@ -550,8 +550,24 @@ def alert_checks_stale(status_doc: dict) -> bool:
     return False
 
 
+HOME_PATH_RE = re.compile(r"(?<![A-Za-z0-9])/Users/[A-Za-z0-9._-]+")
+
+
+def scrub_home_paths(obj):
+    """Replace any Mac home-folder prefix (/Users/<name>) with ~ in every published string."""
+    if isinstance(obj, str):
+        return HOME_PATH_RE.sub("~", obj)
+    if isinstance(obj, list):
+        return [scrub_home_paths(v) for v in obj]
+    if isinstance(obj, dict):
+        return {scrub_home_paths(k) if isinstance(k, str) else k: scrub_home_paths(v) for k, v in obj.items()}
+    return obj
+
+
 def assemble(docs: dict, prev: dict, checks: dict, at: dt.datetime) -> tuple[dict, dict]:
     """board.json, plus each section's content hash. A section's updatedAt moves only when its content changed."""
+    docs = scrub_home_paths(docs)
+    checks = scrub_home_paths(checks)
     hashes, changed = {}, dict(prev.get("changedAt") or {})
     for s in SECTIONS:
         hashes[s] = digest(stable(s, docs[s]))
@@ -646,6 +662,9 @@ def pack_updates(payload):
 
 def updates_payload(board, previous, history, tracker):
     """Keep recent edits within 14 KB on the wire, including during frequent publishes."""
+    board = scrub_home_paths(board)
+    if tracker is not None:
+        tracker = scrub_home_paths(tracker)
     revision = digest(board)
     tracker_hash = hashlib.sha256((tracker or "").encode()).hexdigest()
     edits = list(unpack_updates(history).get("edits") or [])
@@ -654,6 +673,9 @@ def updates_payload(board, previous, history, tracker):
         edits.append({"from": digest(previous), "to": revision,
                       "fromEtag": hashlib.sha256(previous_bytes.encode()).hexdigest(),
                       "ops": compact_edits(board_diff(previous, board))})
+    last_tainted = max((i for i, e in enumerate(edits) if HOME_PATH_RE.search(json.dumps(e, ensure_ascii=False))), default=-1)
+    if last_tainted >= 0:
+        edits = edits[last_tainted + 1:]
     snapshot = json.dumps(board, ensure_ascii=False, separators=(",", ":")) + "\n"
     result = {"schema": 1, "revision": revision, "publishedAt": board.get("publishedAt", ""), "snapshotEtag": hashlib.sha256(snapshot.encode()).hexdigest(), "tracker": tracker_hash, "edits": edits[-120:]}
     packed = pack_updates(result)
@@ -675,6 +697,9 @@ def tree_listing(board_blob: str, nd_blob: str, sub_tree: str, tracker_blob: str
 
 
 def push(board: dict, at: dt.datetime, tracker: str | None = None, updates: dict | None = None) -> str:
+    board = scrub_home_paths(board)
+    if tracker is not None:
+        tracker = scrub_home_paths(tracker)
     body = json.dumps(board, ensure_ascii=False, separators=(",", ":")) + "\n"
     repo = STUDIO_REPO
     blob = git(repo, "hash-object", "-w", "--stdin", inp=body)
@@ -883,7 +908,10 @@ def add_channels(board: dict) -> None:
 
 def finish(a, at, prev, prev_path, key, docs, board, hashes, checks, checks_at, checks_meta) -> int:
     """The end of a run: write the state copy, then push if anything changed."""
+    board = scrub_home_paths(board)
     tracker = tracker_text()
+    if tracker:
+        tracker = scrub_home_paths(tracker)
     whole = digest(board)  # includes the heartbeat, so the page's "Mini last seen" stays current
     if tracker:  # a new tracker snapshot is a change too (board.json alone stays as it was)
         whole = digest([whole, hashlib.sha256(tracker.encode()).hexdigest()])

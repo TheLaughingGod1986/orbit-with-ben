@@ -11,7 +11,7 @@
 //     "<n>.<e>")). Each nonce works once (recorded in the #219 store) and the link expires within 7 days; or
 //   - any request that still carries the old board code (x-board-key), so a phone that has it upgrades silently.
 // The cookie is "v1.<issued unix>.<HMAC-SHA256(HMAC-SHA256(BOARD_KEY, "studio-session-v1"), "v1.<issued>")>":
-// nothing secret in it, and rotating BOARD_KEY in Vercel logs every phone out. An anonymous visitor to the public board
+// nothing secret in it, and rotating BOARD_KEY in Cloudflare Pages logs every phone out. An anonymous visitor to the public board
 // has neither, and their taps are refused (401) unless BOARD_OPEN_TAPS=1 (see the end of this file; off since 9 Nov 2026).
 import { createHmac, timingSafeEqual } from "node:crypto";
 
@@ -80,7 +80,7 @@ export function renewCookie(res, req, how, env = process.env) {
 // script can set. So anyone could record "[Ben] OK" on a film and be handed Ben's cookie, which also plays every
 // private cut (api/watch.js). Now: an unlinked browser gets 401 and links once (a pair link from the Mac mini,
 // scripts/board_pair_link.py, or the saved board link). A phone that already holds the cookie notices no change.
-// If open taps are ever turned back on (BOARD_OPEN_TAPS=1 in Vercel), an open tap still never gets the cookie.
+// If open taps are ever turned back on (BOARD_OPEN_TAPS=1 in Cloudflare Pages), an open tap still never gets the cookie.
 export const OPEN_TAPS_PER_HOUR = 20;
 export function openTaps(env = process.env) { return String(env.BOARD_OPEN_TAPS ?? "0").trim() === "1"; }
 
