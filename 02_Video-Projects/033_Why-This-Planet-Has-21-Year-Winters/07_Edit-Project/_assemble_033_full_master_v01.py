@@ -35,7 +35,7 @@ sys.path.insert(0, str(REPO / "scripts"))
 import polish_gate as pg  # noqa: E402
 
 EDIT = FILM / "07_Edit-Project"
-WORK = Path("/Users/benjaminoats/_desk/cache/J2403_work")
+WORK = Path(os.environ.get("STUDIO_SCRATCH", "/private/tmp")) / "J2437_work"
 PACK = EDIT / "full_master_v01_pack"
 OUT = FILM / "09_Final-Export" / "033_why_this_planet_has_21_year_winters_master_v01.mp4"
 
@@ -144,69 +144,69 @@ CREDITS_BY_FILE = {
     "weic2332a_hires.jpg": "NASA / ESA / CSA / STScI",
 }
 
-# Per-cut Teach-on-Screen overlays keyed by cut index (0..143) in cuts_033_j2299_v01.json:
+# Per-cut Teach-on-Screen overlays keyed by cut index (0..146) in cuts_033_j2299_v01.json:
 # Each entry is (kind, line1, line2_or_None, rel_start_s, rel_end_s)
 # Kinds: "LABEL", "FACT", "DATA", "SCALE", "WHEN", "WHO", "SUB"
 # All overlays sit in lower third (y >= 835, outside the 512x512 centre patch y:284..796)
 # and hold <= 3.70 s with 0.35 s fade-in/out.
 CUT_OVERLAYS: dict[int, tuple[str, str, str | None, float, float]] = {
-    3:   ("LABEL", "EARTH TILT: 23.44°", None, 0.50, 3.90),                                  # R04
-    6:   ("LABEL", "INFRARED VIEW", None, 0.25, 2.75),                                       # R06 c1
-    9:   ("LABEL", "21 YEARS OF DARKNESS", None, 0.35, 3.85),                                # R07 c2
-    14:  ("WHEN",  "13 MARCH 1781", None, 0.15, 2.35),                                       # R10 c1 WHEN #1
-    15:  ("WHO",   "William Herschel", "(1738–1822) — British astronomer", 0.35, 4.00),      # R10 c2 WHO #1
-    17:  ("FACT",  "FIRST TELESCOPE PLANET", None, 0.30, 3.15),                              # R11 c1 FACT #1
-    20:  ("WHEN",  "1783", None, 0.25, 2.95),                                                # R12 c1 WHEN #2
-    22:  ("WHO",   "Johann Elert Bode", "(1747–1826) — German astronomer", 1.20, 4.90),      # R12 c3 WHO #2
-    24:  ("LABEL", "GEORGIUM SIDUS", None, 0.25, 3.30),                                      # R13 c2
-    26:  ("LABEL", "URANUS", None, 0.25, 3.30),                                              # R13 c4
-    29:  ("SCALE", "NICKEL VS SOFTBALL", None, 0.45, 4.10),                                  # R15 SCALE #2
-    30:  ("LABEL", "2.9 BILLION KM", None, 0.60, 4.20),                                      # R16 c1
-    31:  ("LABEL", "19 ASTRONOMICAL UNITS", None, 0.40, 4.00),                               # R16 c2
-    37:  ("WHEN",  "10 MARCH 1977", None, 0.15, 2.15),                                       # R19 c1 WHEN #3
-    42:  ("LABEL", "INFRARED VIEW", None, 0.25, 3.05),                                       # R21 c1
-    44:  ("DATA",  "13 FAINT RINGS", None, 0.25, 2.90),                                      # R21 c3
-    47:  ("WHEN",  "22 DECEMBER 2005", None, 0.30, 3.95),                                    # R23 c1 WHEN #4
-    48:  ("WHEN",  "2006", None, 0.45, 4.05),                                                # R23 c2 WHEN #5
-    51:  ("FACT",  "28 LITERARY MOONS", None, 0.35, 4.00),                                   # R25 c2 FACT #2
-    54:  ("DATA",  "URANUS DAY: 17 HOURS", None, 0.25, 2.95),                                # R27 c1
-    55:  ("DATA",  "EARTH DAY: 24 HOURS", None, 0.30, 3.60),                                 # R27 c2
-    56:  ("LABEL", "EARTH-SIZED IMPACT", None, 0.30, 3.15),                                  # R28 c1
-    63:  ("SUB",   "SUBSCRIBE TO ORBIT WITH BEN", "NEW SPACE MYSTERIES EVERY WEEK", 0.25, 2.50), # R31 c1
-    64:  ("SUB",   "SUBSCRIBE TO ORBIT WITH BEN", "NEW SPACE MYSTERIES EVERY WEEK", 0.15, 2.95), # R31 c2
-    65:  ("WHEN",  "24 JANUARY 1986", None, 0.25, 3.25),                                     # R32 c1 WHEN #6
-    66:  ("LABEL", "OVER 3 BILLION KM", None, 0.25, 3.25),                                   # R32 c2
-    69:  ("LABEL", "81,500 KM ABOVE CLOUDS", None, 0.50, 4.10),                              # R33 c1
-    70:  ("FACT",  "SIX HOURS AT URANUS", None, 0.40, 4.10),                                 # R33 c2 FACT #3
-    71:  ("LABEL", "10 MOONS · 2 RINGS", None, 0.40, 4.00),                                  # R33 c3
-    72:  ("DATA",  "82.5% HYDROGEN", None, 0.80, 4.40),                                      # R34 c1
-    73:  ("DATA",  "15.2% HELIUM", None, 0.40, 4.00),                                        # R34 c2
-    77:  ("DATA",  "MINIMUM: 49 KELVIN", None, 0.35, 4.00),                                  # R36 c2
-    78:  ("DATA",  "-224.2 °C ATMOSPHERE", None, 0.35, 4.00),                                # R36 c3
-    80:  ("SCALE", "COLDER THAN NEPTUNE", None, 0.25, 3.25),                                 # R37 c2 SCALE #4
-    87:  ("WHEN",  "DECEMBER 2007", None, 0.45, 4.10),                                       # R40 c2 WHEN #7
-    88:  ("LABEL", "EQUINOX AWAKENING", None, 0.30, 3.25),                                   # R41 c1
-    91:  ("LABEL", "INFRARED VIEW", None, 0.35, 3.85),                                       # R42 c2
-    94:  ("SCALE", "OVER 2× EARTH WINDS", None, 0.40, 4.05),                                 # R44 c1 SCALE #5
-    95:  ("LABEL", "RETROGRADE EQUATOR", None, 0.45, 4.10),                                  # R44 c2
-    101: ("LABEL", "17-HOUR WOBBLE", None, 0.55, 4.20),                                      # R47 c1
-    102: ("LABEL", "AURORAS MISS POLES", None, 0.45, 4.10),                                  # R48 c1
-    103: ("LABEL", "CORKSCREW MAGNETOTAIL", None, 0.50, 4.15),                               # R48 c2
-    105: ("LABEL", "INFRARED VIEW", None, 0.35, 3.95),                                       # R50 c1
-    106: ("LABEL", "ICE GIANT MISCONCEPTION", None, 0.45, 4.10),                             # R50 c2
-    108: ("FACT",  "NO SOLID SURFACE", None, 0.35, 3.95),                                    # R51 c1 FACT #4
-    112: ("DATA",  "CORE: 9,000 °F", None, 0.55, 4.20),                                      # R53 c1
-    113: ("DATA",  "4,982 °C NEAR CORE", None, 0.35, 3.95),                                  # R53 c2
-    115: ("LABEL", "NO SOLID GROUND", None, 0.35, 3.65),                                     # R55 c1 (video)
-    117: ("LABEL", "EXTREME PRESSURE & HEAT", None, 0.35, 3.95),                             # R55 c3 (video)
-    120: ("WHEN",  "16 FEBRUARY 1948", None, 0.25, 2.90),                                    # R57 c1 WHEN #8
-    122: ("WHO",   "Gerard Kuiper", "(1905–1973) — Dutch-born astronomer", 0.30, 3.95),      # R58 c1 WHO #3
-    127: ("LABEL", "PATCHWORK ICE MOON", None, 0.50, 4.15),                                  # R60 c2
-    131: ("DATA",  "10-MINUTE CLIFF DROP", None, 0.45, 4.10),                                # R62 c2 DATA #7c
-    132: ("WHEN",  "19 APRIL 2022", None, 0.60, 4.25),                                       # R63 c1 WHEN #9
-    133: ("LABEL", "2023–2032 DECADAL SURVEY", None, 0.35, 3.90),                            # R63 c2
-    134: ("LABEL", "TOP PRIORITY MISSION", None, 0.25, 2.90),                                # R63 c3
-    140: ("LABEL", "NEXT: PLUTO NITROGEN HEART", None, 0.70, 4.35),                          # R66 c2
+    5:   ("LABEL", "EARTH TILT: 23.44°", None, 0.25, 2.15),                                  # R04
+    9:   ("LABEL", "INFRARED VIEW", None, 0.25, 2.75),                                       # R06 c1
+    12:   ("LABEL", "21 YEARS OF DARKNESS", None, 0.15, 3.45),                                # R07 c2
+    17:  ("WHEN",  "13 MARCH 1781", None, 0.15, 2.35),                                       # R10 c1 WHEN #1
+    18:  ("WHO",   "William Herschel", "(1738–1822) — British astronomer", 0.35, 4.00),      # R10 c2 WHO #1
+    20:  ("FACT",  "FIRST TELESCOPE PLANET", None, 0.30, 3.15),                              # R11 c1 FACT #1
+    23:  ("WHEN",  "1783", None, 0.25, 2.95),                                                # R12 c1 WHEN #2
+    25:  ("WHO",   "Johann Elert Bode", "(1747–1826) — German astronomer", 1.20, 4.90),      # R12 c3 WHO #2
+    27:  ("LABEL", "GEORGIUM SIDUS", None, 0.25, 3.30),                                      # R13 c2
+    29:  ("LABEL", "URANUS", None, 0.25, 3.30),                                              # R13 c4
+    32:  ("SCALE", "NICKEL VS SOFTBALL", None, 0.45, 4.10),                                  # R15 SCALE #2
+    33:  ("LABEL", "2.9 BILLION KM", None, 0.60, 4.20),                                      # R16 c1
+    34:  ("LABEL", "19 ASTRONOMICAL UNITS", None, 0.40, 4.00),                               # R16 c2
+    40:  ("WHEN",  "10 MARCH 1977", None, 0.15, 2.15),                                       # R19 c1 WHEN #3
+    45:  ("LABEL", "INFRARED VIEW", None, 0.25, 3.05),                                       # R21 c1
+    47:  ("DATA",  "13 FAINT RINGS", None, 0.25, 2.90),                                      # R21 c3
+    50:  ("WHEN",  "22 DECEMBER 2005", None, 0.30, 3.95),                                    # R23 c1 WHEN #4
+    51:  ("WHEN",  "2006", None, 0.45, 4.05),                                                # R23 c2 WHEN #5
+    54:  ("FACT",  "28 LITERARY MOONS", None, 0.35, 4.00),                                   # R25 c2 FACT #2
+    57:  ("DATA",  "URANUS DAY: 17 HOURS", None, 0.25, 2.95),                                # R27 c1
+    58:  ("DATA",  "EARTH DAY: 24 HOURS", None, 0.30, 3.60),                                 # R27 c2
+    59:  ("LABEL", "EARTH-SIZED IMPACT", None, 0.30, 3.15),                                  # R28 c1
+    66:  ("SUB",   "SUBSCRIBE TO ORBIT WITH BEN", "NEW SPACE MYSTERIES EVERY WEEK", 0.25, 2.50), # R31 c1
+    67:  ("SUB",   "SUBSCRIBE TO ORBIT WITH BEN", "NEW SPACE MYSTERIES EVERY WEEK", 0.15, 2.95), # R31 c2
+    68:  ("WHEN",  "24 JANUARY 1986", None, 0.25, 3.25),                                     # R32 c1 WHEN #6
+    69:  ("LABEL", "OVER 3 BILLION KM", None, 0.25, 3.25),                                   # R32 c2
+    72:  ("LABEL", "81,500 KM ABOVE CLOUDS", None, 0.50, 4.10),                              # R33 c1
+    73:  ("FACT",  "SIX HOURS AT URANUS", None, 0.40, 4.10),                                 # R33 c2 FACT #3
+    74:  ("LABEL", "10 MOONS · 2 RINGS", None, 0.40, 4.00),                                  # R33 c3
+    75:  ("DATA",  "82.5% HYDROGEN", None, 0.80, 4.40),                                      # R34 c1
+    76:  ("DATA",  "15.2% HELIUM", None, 0.40, 4.00),                                        # R34 c2
+    80:  ("DATA",  "MINIMUM: 49 KELVIN", None, 0.35, 4.00),                                  # R36 c2
+    81:  ("DATA",  "-224.2 °C ATMOSPHERE", None, 0.35, 4.00),                                # R36 c3
+    83:  ("SCALE", "COLDER THAN NEPTUNE", None, 0.25, 3.25),                                 # R37 c2 SCALE #4
+    90:  ("WHEN",  "DECEMBER 2007", None, 0.45, 4.10),                                       # R40 c2 WHEN #7
+    91:  ("LABEL", "EQUINOX AWAKENING", None, 0.30, 3.25),                                   # R41 c1
+    94:  ("LABEL", "INFRARED VIEW", None, 0.35, 3.85),                                       # R42 c2
+    97:  ("SCALE", "OVER 2× EARTH WINDS", None, 0.40, 4.05),                                 # R44 c1 SCALE #5
+    98:  ("LABEL", "RETROGRADE EQUATOR", None, 0.45, 4.10),                                  # R44 c2
+    104: ("LABEL", "17-HOUR WOBBLE", None, 0.55, 4.20),                                      # R47 c1
+    105: ("LABEL", "AURORAS MISS POLES", None, 0.45, 4.10),                                  # R48 c1
+    106: ("LABEL", "CORKSCREW MAGNETOTAIL", None, 0.50, 4.15),                               # R48 c2
+    108: ("LABEL", "INFRARED VIEW", None, 0.35, 3.95),                                       # R50 c1
+    109: ("LABEL", "ICE GIANT MISCONCEPTION", None, 0.45, 4.10),                             # R50 c2
+    111: ("FACT",  "NO SOLID SURFACE", None, 0.35, 3.95),                                    # R51 c1 FACT #4
+    115: ("DATA",  "CORE: 9,000 °F", None, 0.55, 4.20),                                      # R53 c1
+    116: ("DATA",  "4,982 °C NEAR CORE", None, 0.35, 3.95),                                  # R53 c2
+    118: ("LABEL", "NO SOLID GROUND", None, 0.35, 3.65),                                     # R55 c1 (video)
+    120: ("LABEL", "EXTREME PRESSURE & HEAT", None, 0.35, 3.95),                             # R55 c3 (video)
+    123: ("WHEN",  "16 FEBRUARY 1948", None, 0.25, 2.90),                                    # R57 c1 WHEN #8
+    125: ("WHO",   "Gerard Kuiper", "(1905–1973) — Dutch-born astronomer", 0.30, 3.95),      # R58 c1 WHO #3
+    130: ("LABEL", "PATCHWORK ICE MOON", None, 0.50, 4.15),                                  # R60 c2
+    134: ("DATA",  "10-MINUTE CLIFF DROP", None, 0.45, 4.10),                                # R62 c2 DATA #7c
+    135: ("WHEN",  "19 APRIL 2022", None, 0.60, 4.25),                                       # R63 c1 WHEN #9
+    136: ("LABEL", "2023–2032 DECADAL SURVEY", None, 0.35, 3.90),                            # R63 c2
+    137: ("LABEL", "TOP PRIORITY MISSION", None, 0.25, 2.90),                                # R63 c3
+    143: ("LABEL", "NEXT: PLUTO NITROGEN HEART", None, 0.70, 4.35),                          # R66 c2
 }
 
 
@@ -552,9 +552,16 @@ def render_single_cut(task: dict) -> str:
     if cut.get("video"):
         off = float((cut.get("framing") or {}).get("offset") or 0.0)
         dur = total_n / float(FPS)
+        crop = (cut.get("framing") or {}).get("crop")
+        crop_filter = ""
+        if crop:
+            if not re.fullmatch(r"\d+:\d+:\d+:\d+", crop):
+                raise ValueError(f"Invalid numeric video crop: {crop}")
+            crop_filter = f"crop={crop},"
+
         if ov_spec is None:
             vf = (
-                f"fps={FPS},scale={W}:{H}:flags=lanczos,setsar=1,"
+                f"{crop_filter}fps={FPS},scale={W}:{H}:flags=lanczos,setsar=1,"
                 f"tpad=stop_mode=clone:stop_duration=3.0,"
                 f"setpts=PTS-STARTPTS,format=yuv420p"
             )
@@ -568,7 +575,7 @@ def render_single_cut(task: dict) -> str:
             # R55 video cut with animated lower-third overlay
             raw = sp.check_output([
                 "ffmpeg", "-v", "error", "-ss", f"{off:.3f}", "-i", str(src_path),
-                "-vf", f"fps={FPS},scale={W}:{H}:flags=lanczos",
+                "-vf", f"{crop_filter}fps={FPS},scale={W}:{H}:flags=lanczos",
                 "-frames:v", str(total_n), "-f", "rawvideo", "-pix_fmt", "rgb24", "-",
             ])
             frames_arr = np.frombuffer(raw, np.uint8).reshape(-1, H, W, 3)
