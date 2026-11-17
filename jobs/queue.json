@@ -266205,19 +266205,24 @@
           "at": "2026-11-17T14:21Z",
           "by": "gemini",
           "what": "step 4 of 5 done: All 227 Python tests + JS board/AI page tests + core/rules/email/network checks PASS; built board_site/dist"
+        },
+        {
+          "at": "2026-11-17T14:27Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Opened PR #987 (commit 2337a2398e); all Python/JS tests pass and 390x844 phone screenshots verified in /Users/benjaminoats/_desk/reviews/J2985/"
         }
       ],
-      "remaining_action": "Capture phone screenshot of new Credits section and open PR for Chief",
+      "remaining_action": "Chief: merge PR #987, run board_publish.py --force, deploy board_site/dist to Cloudflare Pages, and verify live #agents Credits on phone",
       "due": "2026-11-19T18:00:00Z",
       "for": "gemini",
       "kind": "studio",
       "plain": "Show on each credit card how far through the month we are next to how much we've used, so Ben can see where a cheaper plan would do",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-17T14:21Z",
+        "at": "2026-11-17T14:27Z",
         "by": "gemini",
-        "note": "All 227 Python tests + JS board/AI page tests + core/rules/email/network checks PASS; built board_site/dist"
+        "note": "Opened PR #987 (commit 2337a2398e); all Python/JS tests pass and 390x844 phone screenshots verified in /Users/benjaminoa"
       }
     },
     {
