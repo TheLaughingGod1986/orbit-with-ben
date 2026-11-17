@@ -265605,10 +265605,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-17T10:29Z",
-      "eta": "2026-11-17T11:59Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T08:37Z",
       "result": "",
@@ -265657,6 +265657,11 @@
           "at": "2026-11-17T10:53Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Implemented unified agent_status/agent_states across chief_relay, board_publish, and queue_eta on branch j2980-unified-agent-dispatch"
+        },
+        {
+          "at": "2026-11-17T10:53Z",
+          "by": "gemini",
+          "what": "released: Clean 24-min checkpoint: implementation committed and pushed to branch j2980-unified-agent-dispatch (/Volumes/MiniWork/scratch/j2980-wt); step 4 tests + step 5 PR next pass"
         }
       ],
       "remaining_action": "Add unit tests in test_queue_eta.py and test_chief_relay.py, run full test suite, and open PR for Chief",
