@@ -81,6 +81,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2965 | mini | claimed | macbook | 2026-11-17T02:11Z | 116 topic · for gemini · review · `gemini-argon` · HOS 116 Why Do We Get Goosebumps?: rule-E topic go/no-go review |  |
 | J2966 | mini | claimed | macbook-2 | 2026-11-17T02:15Z | 117 topic · for gemini · review · `gemini-argon` · HOS 117 Why Don't Woodpeckers Get Concussions?: rule-E topic go/no-go review |  |
 | J2967 | mini | open | – | – | for gemini · script · `gemini-argon` · OWB: learn from our data, add two new films to the backlog |  |
+| J2968 | any | open | – | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
