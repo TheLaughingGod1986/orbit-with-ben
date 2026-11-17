@@ -66,6 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3013 | mini | open | – | – | chief · Chief: resolve 003 script orphan-doing |  |
 | J3014 | mini | open | – | – | chief · Chief: resolve 001 script orphan-review |  |
 | J3015 | mini | open | – | – | chief · Chief: resolve 001 vo orphan-review |  |
+| J3016 | mini | open | – | – | chief · Chief: resolve 005 script orphan-review |  |
 
 Recently finished:
 
