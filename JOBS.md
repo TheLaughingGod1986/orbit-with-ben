@@ -54,6 +54,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2981 | mini | blocked | gemini | – | for gemini · studio · Board credits: four usage readings stale since 8-13 Nov (Cursor, Claude, Vertex, Grok) |  |
 | J2982 | mini | blocked | gemini | – | for gemini · studio · Board clean-up: plain times on the Agents tab, no Mac folder path in public data, Vercel leftovers out |  |
 | J2984 | mini | open | – | – | 008 edit · for gemini · qa · `gemini-argon` · HOS 008 Short C v07: non-producer QA review of J2662 (PR #556) and HOS UAT staging for Ben's watch | J2662 |
+| J2985 | mini | open | – | – | for gemini · studio · Board credits: a time bar beside each usage bar, renewal dates, and a plain verdict per plan |  |
 
 Recently finished:
 

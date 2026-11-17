@@ -1,5 +1,5 @@
 {
-  "next_id": 2985,
+  "next_id": 2986,
   "jobs": [
     {
       "id": "J0001",
@@ -266044,6 +266044,37 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J2985",
+      "title": "Board credits: a time bar beside each usage bar, renewal dates, and a plain verdict per plan",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben, in chat (17 Nov 12:21Z), with a screenshot of the Credits section on the Agents tab:** \"I think we may need a second progress bar here to show the progress through the month. For example, we're 65% through the month to the subscription renews on X, but we've only used 20% of the usage, meaning we can probably go down a tier or go down the level to the cheaper subscription next month. I would like something like this. Also, can you go through and double check these are all 100% accurate?\"\n\n**Accuracy, checked by Claude at 12:20Z.** Ben's screenshot was taken before J2981's fixes landed. Every pool now has a reading from today: Claude 38% left (weekly 62% used, resets Wed 10:00; the Fable model's own weekly limit 100% used), Cursor 0% (weekly resets 19 Nov), Flow 24,500 of 25,000, Vertex £144.66, ElevenLabs 79,864 of 121,114, Codex 0% (resets 17 Nov 23:22Z, from the Codex log of 14 Nov), Gemini 51%. Keep it that way: a reading older than 30 hours shows its date, never a bare percentage.\n\n**Do.**\n1. **Two bars on every card, both filling left to right.** Used: the share of the allowance used in the current window (show \"used\", not \"left\", so it reads against time). Time: how far through that window we are, with the window's end in London time (\"resets Wed 18 Nov, 10:00\", \"renews Sat 12 Dec\"). Colour Used by pace: ahead of Time means it may run out before it resets; level is on pace; well behind means using little.\n2. **The right window for each pool.** Weekly limits (Claude, Codex, Gemini, Cursor) measure the week. Monthly allowances (Flow, ElevenLabs, the Vertex monthly credit) measure the month to renewal. Every card also shows the subscription's own renewal date and monthly price (from credits.plans), because a tier is chosen per month. Replace the single shared credits period (8 Oct to 12 Nov, now past) with each plan's own cycle.\n3. **Renewal dates.** credits.plans has no cycle start for ChatGPT Pro, Claude Max or ElevenLabs, and Ultra's and Grok's date from October. Read each from its billing page where a reader already visits (read-only); list any you cannot read for Ben, one line each.\n4. **A plain verdict per plan, for the month,** only from fresh data and only after at least a week of the cycle: \"Keep: hit its weekly limit 2 of 3 weeks\" or \"Could drop to <cheaper tier> (£X): used N of its M allowance with K% of the month gone\". Use credits.tiers (add tiers for Claude, ChatGPT and Grok if missing). For weekly limits, base it on how many weeks hit the limit and the average weekly use across the billing month (keep the weekly readings for that). Never suggest a tier the history says would have run out. The board advises only; changing a plan is Ben's.\n5. **Grok.** The board shows Grok as a copy of Cursor's meter, because Grok Bot runs on Cursor's weekly allowance (Cursor's page this week: Grok Bot 54%, Cursor 46%). Say that on one card instead of two identical meters, and find out what the separate £20 Grok plan in credits.plans still pays for, so Ben can judge whether he needs it.\n6. **Flow, the example to get right.** Ultra renews on the 12th: 2% used with about 17% of the month gone. Ben decided on 9 Nov to keep Ultra one more month, then review against the £90 tier (10,000 credits). Note on that card that History of Science picture work, the main use of Flow, may not have run yet this cycle.\n7. Tests pass. Open a pull request for the Chief. After it merges, deploy the board and check the Credits section on a phone-sized screen.\n\n**Guards.** Read-only on every billing and usage page: no plan change, purchase or top-up. £0. No account address, card or email in logs, results or the thread.\n\n**Result.** A screenshot of the new Credits section, the renewal dates found, and the verdict for each plan.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-17T12:21Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T12:21Z",
+          "by": "claude",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "Add a time-through-window bar and renewal date to each credit card, read missing renewal dates, show a keep or cheaper-tier verdict per plan",
+      "due": "2026-11-19T18:00:00Z",
+      "for": "gemini",
+      "kind": "studio",
+      "plain": "Show on each credit card how far through the month we are next to how much we've used, so Ben can see where a cheaper plan would do"
     }
   ],
   "focus": [
