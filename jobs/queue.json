@@ -267113,20 +267113,24 @@
           "at": "2026-11-17T20:34Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T20:39Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Started J2992: read live ElevenLabs balance (77,389/121,114 remaining, recorded in ai_spend); inspecting WW2:001 script from J2991 (PR #996, 20,431 chars across 6 chapters) before synthesis"
         }
       ],
-      "remaining_action": "Voice the merged script within 21,000 characters, run the voice checks, record characters used",
+      "remaining_action": "Verify WW2:001 script text & ElevenLabs balance (77,389 left; <=21,000 cap), synthesize 6 chapters via vo_take.py, run voice checks, and open PR",
       "due": "2026-11-22T18:00:00Z",
       "for": "gemini",
       "kind": "vo",
       "plain": "Record the narration in Ben's voice for: How Britain Towed Two Floating Ports Across the Channel for D-Day",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-17T20:34Z",
+        "of": 4,
+        "at": "2026-11-17T20:39Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Started J2992: read live ElevenLabs balance (77,389/121,114 remaining, recorded in ai_spend); inspecting WW2:001 script "
       }
     },
     {
