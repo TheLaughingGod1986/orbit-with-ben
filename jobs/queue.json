@@ -1,5 +1,5 @@
 {
-  "next_id": 3010,
+  "next_id": 3011,
   "jobs": [
     {
       "id": "J0001",
@@ -267706,6 +267706,36 @@
       "for": "gemini",
       "kind": "studio",
       "plain": "Give the new WW2 channel its own separate repository, as Ben asked, without losing any work"
+    },
+    {
+      "id": "J3010",
+      "title": "HOS 007 Vaccine Short (xgx2lYHhYZM): read next-morning snapshot after J3004",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Follow up acting-Chief (Gemini) ruling on J3004 for History of Science 007 Short \"Why Is It Called a Vaccine?\" (`xgx2lYHhYZM`, went live `2026-11-17T11:30:00Z`). Read-only, £0 spend, zero Studio mutations.\n\nAt the 6-hour check (`J3004`, PR #992 merged at `f57ab150da`), Studio Content & Details had 0 technical or packaging faults (`Public`, listed under `Shorts`, `Notices: —`, not Made for Kids, HD complete, `Related video` -> `ETynHpIYLeY`, `en-GB` audio/metadata/captions, `Altered content: Yes`, exact manifest description and tags), and Studio Analytics showed `0` views (`--typical 20`, rank `10 of 10`) with `Not enough data` on `How viewers found this Short`, `Shorts feed impressions`, `Viewed vs swiped away`, and `Average percentage viewed`.\n\nAfter the `2026-11-18T06:40:00Z` daily analytics snapshot runs:\n1. Read `05_Analytics/hos/snapshots/2026-11-18.json` (and Studio Analytics for `xgx2lYHhYZM` on CDP `9222` if reach/engagement cards have populated: `Shown in feed`, `Shorts feed` views, `Viewed vs swiped away`, `Average percentage viewed`).\n2. Record a note on `05_Analytics/hos/launch/xgx2lYHhYZM.json` via `python3 scripts/launch_check.py note xgx2lYHhYZM \"...\" --by <agent> --git` comparing the next-morning numbers against HOS's recent Shorts baseline (`Wvjd8g0CpzE` 214 views, `xzKoHg0E0_U` 121 views) and against the first 007 Vaccine Short (`cLKDiYP55J8`, 9 views at 6 h / 33 next morning).\n3. Check `studio/RULES.md` Lesson 5 (day-1 Shorts-feed share >= 50% means fed; stop a topic after 2 not-fed Shorts in a row): if `xgx2lYHhYZM` is a second consecutive not-fed Vaccine/Smallpox Short or stays under a tenth of the usual first day, note that finding for the Chief in the desk/thread report with respect to the two remaining scheduled 007 Shorts on 28-29 Nov (`sY0PSQFxjp8` and `jkUZpyO71lU`). Never change any live or scheduled YouTube video setting without a Chief ruling.\n4. Close this follow-up job as done once the morning read and note are recorded.\n",
+      "ref": "f57ab150da",
+      "film": "007",
+      "stage": "upload",
+      "after": "J3004",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-17T18:22Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-17T18:22Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Wait for 2026-11-18T06:40:00Z daily snapshot, then read xgx2lYHhYZM overnight reach and views",
+      "due": "2026-11-18T10:00:00Z",
+      "kind": "review",
+      "plain": "Check Why Is It Called a Vaccine? after its first night"
     }
   ],
   "focus": [

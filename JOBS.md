@@ -71,6 +71,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3007 | mini | open (after J2990) | – | – | for codex · studio · Board: show the WW2 channel before launch, its films, its review and Ben's ticks |  |
 | J3008 | mini | claimed | macbook-2 | 2026-11-17T18:34Z | studio · First-day check at 48 h: "How Far Is the Nearest Star? (You Can't See It, and It Has a Planet)" (c5AdqQsnnys) |  |
 | J3009 | mini | open (after J2990) | – | – | for gemini · studio · WW2 channel: move it into its own repo with history, register it, check it out on both Macs |  |
+| J3010 | mini | open (after J3004) | – | – | 007 upload · review · HOS 007 Vaccine Short (xgx2lYHhYZM): read next-morning snapshot after J3004 | f57ab150da |
 
 Recently finished:
 
