@@ -264392,13 +264392,13 @@
       "stage": "topic",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-17T06:42Z",
-      "eta": "2026-11-17T08:42Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-17T06:10Z",
-      "result": "",
+      "result": "Rule-E topic go/no-go review for HOS:118 (Why Do We Hiccup? (The Tadpole Gill Twist), from J2970 HOS PR #629 / OWB PR #977): GO (95.5/100 · 9.55/10 Opportunity Score) in jobs/WIP.json next_hos under Rule G (4/4 active HOS slots full). Published on HOS PR #632 (macbook/J2971, commit 44e7caf6, isolated to 118, all 7 CI checks green) and OWB PR #979 (macbook/J2971, commit 26403b365, jobs/reviews/J2971/REVIEW.md + evidence JSONs). Verified neighbours.py PASS (7 strictly on-topic education videos >=1M views, hasTed=true, 0 off-topic rows: CrashCourse 5.92M & 3.13M, Amoeba Sisters 4.02M, TED-Ed 3.69M & 3.34M, Be Smart 1.69M, Khan Academy 1.45M), public_search.py PASS (11 queries, 78 results, autocomplete=yes across 5 hiccup queries, 13 >=1M videos total, 0 exact title collisions across Title A 42c, Title B 47c, Title C 50c, Short S01 46c, Short S02 40c), 0:05-0:15 proof-first apparatus window, distinct thumb/Short captions, and strict UNVERIFIED claims guard until SOURCES.md and facts lane run when an active HOS WIP slot opens. Spend: £0.00 / 0 credits.",
       "history": [
         {
           "at": "2026-11-17T06:10Z",
@@ -264454,6 +264454,11 @@
           "at": "2026-11-17T06:51Z",
           "by": "macbook-2",
           "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-11-17T06:55Z",
+          "by": "macbook-2",
+          "what": "done: Rule-E topic go/no-go review for HOS:118 (Why Do We Hiccup? (The Tadpole Gill Twist), from J2970 HOS PR #629 / OWB PR #977): GO (95.5/100 · 9.55/10 Opportunity Score) in jobs/WIP.json next_hos under Rule G (4/4 active HOS slots full). Published on HOS PR #632 (macbook/J2971, commit 44e7caf6, isolated to 118, all 7 CI checks green) and OWB PR #979 (macbook/J2971, commit 26403b365, jobs/reviews/J2971/REVIEW.md + evidence JSONs). Verified neighbours.py PASS (7 strictly on-topic education videos >=1M views, hasTed=true, 0 off-topic rows: CrashCourse 5.92M & 3.13M, Amoeba Sisters 4.02M, TED-Ed 3.69M & 3.34M, Be Smart 1.69M, Khan Academy 1.45M), public_search.py PASS (11 queries, 78 results, autocomplete=yes across 5 hiccup queries, 13 >=1M videos total, 0 exact title collisions across Title A 42c, Title B 47c, Title C 50c, Short S01 46c, Short S02 40c), 0:05-0:15 proof-first apparatus window, distinct thumb/Short captions, and strict UNVERIFIED claims guard until SOURCES.md and facts lane run when an active HOS WIP slot opens. Spend: £0.00 / 0 credits."
         }
       ],
       "remaining_action": "Confirm UNVERIFIED claim guardrails and write jobs/reviews/J2971/REVIEW.md and evidence JSONs on branch macbook/J2971",
