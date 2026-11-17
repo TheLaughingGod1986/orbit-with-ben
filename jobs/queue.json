@@ -226608,19 +226608,24 @@
           "at": "2026-11-17T22:51Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2537; inspecting HOS and OWB email_ratchet.json, open PRs, and J3012/J2979 state"
+        },
+        {
+          "at": "2026-11-17T23:09Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1/4 done: added missing 10-credit J0886 spend line to OWB ledger (013954...), scrubbed final 15 held 008/009 files in HOS, lowered HOS email_ratchet.json to 0, and passed all 333 unit tests + check_all.sh"
         }
       ],
-      "remaining_action": "Inspect remaining email ratchet files in HOS and OWB, clean Stage 1 files, check open PRs (Stage 2), and run Stage 3 mirror rehearsal",
+      "remaining_action": "Merge HOS Stage 1 PR, sweep open HOS PRs (Stage 2), and run Stage 3 mirror history-rewrite rehearsal",
       "due": "2026-11-18T18:00:00Z",
       "kind": "chief",
       "plain": "Remove email addresses from both channels' repos, including their past versions",
       "for": "codex",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-17T22:51Z",
+        "at": "2026-11-17T23:09Z",
         "by": "gemini",
-        "note": "Claimed J2537; inspecting HOS and OWB email_ratchet.json, open PRs, and J3012/J2979 state"
+        "note": "Step 1/4 done: added missing 10-credit J0886 spend line to OWB ledger (013954...), scrubbed final 15 held 008/009 files "
       },
       "taskKeys": [
         "HOS:008",
