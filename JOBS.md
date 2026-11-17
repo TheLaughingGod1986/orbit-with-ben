@@ -33,7 +33,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2704 | mini | blocked | codex | – | assembly · HOS tooling: validate Next upgrade in preview and diagnose home page error | 6813294950 |
 | J2708 | mini | blocked | cursor | – | assembly · HOS app: establish isolated hosted PostgreSQL for Preview validation | J2704 |
 | J2744 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · Readout: 4-6 s drop, stayed-to-watch and APV on the three J2683 Shorts (Supermoon v04, 032 strike-match, 033 Short 2) | 6829905842 |
-| J2805 | mini | open (after J2803) | – | – | 009 edit · chief · HOS 009: scope revised music after failed reuse-check validation | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6867889512 |
+| J2805 | mini | claimed | gemini | 2026-11-17T12:58Z | 009 edit · chief · HOS 009: scope revised music after failed reuse-check validation | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6867889512 |
 | J2806 | mini | open (after J2805) | – | – | 009 edit · assembly · HOS 009: produce one revised opening music cue |  |
 | J2807 | mini | open (after J2806) | – | – | 009 edit · for gemini · review · `gemini-argon` · HOS 009: audition revised opening and joined score |  |
 | J2808 | mini | open (after J2807) | – | – | 009 edit · chief · HOS 009: decide revised score acceptance or bounded failure route |  |
