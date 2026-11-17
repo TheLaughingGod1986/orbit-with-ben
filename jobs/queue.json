@@ -265652,19 +265652,24 @@
           "at": "2026-11-17T10:44Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Verified all test suites (test_chief_relay, test_chief_succession, test_dispatcher_handoffs, test_routing, test_queue_eta, test_board_publish) and ledger reset formats; creating worktree"
+        },
+        {
+          "at": "2026-11-17T10:53Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Implemented unified agent_status/agent_states across chief_relay, board_publish, and queue_eta on branch j2980-unified-agent-dispatch"
         }
       ],
-      "remaining_action": "Implement unified agent status, usage reset/retry window, and overdue/urgent/Ben-waiting reroute in clean worktree",
+      "remaining_action": "Add unit tests in test_queue_eta.py and test_chief_relay.py, run full test suite, and open PR for Chief",
       "due": "2026-11-18T12:00:00Z",
       "for": "gemini",
       "kind": "studio",
       "plain": "Stop sending jobs to an agent the board already shows is out of usage, so nothing waits on it",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-17T10:44Z",
+        "at": "2026-11-17T10:53Z",
         "by": "gemini",
-        "note": "Verified all test suites (test_chief_relay, test_chief_succession, test_dispatcher_handoffs, test_routing, test_queue_et"
+        "note": "Implemented unified agent_status/agent_states across chief_relay, board_publish, and queue_eta on branch j2980-unified-a"
       }
     },
     {
