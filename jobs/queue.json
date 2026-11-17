@@ -226603,21 +226603,29 @@
           "at": "2026-11-17T22:50Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-17T22:51Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2537; inspecting HOS and OWB email_ratchet.json, open PRs, and J3012/J2979 state"
         }
       ],
-      "remaining_action": "Step 1 now: replace the addresses in History of Science's current files by ordinary PRs, then steps 2 and 3; history rewrite with a day's notice to Ben",
+      "remaining_action": "Inspect remaining email ratchet files in HOS and OWB, clean Stage 1 files, check open PRs (Stage 2), and run Stage 3 mirror rehearsal",
       "due": "2026-11-18T18:00:00Z",
       "kind": "chief",
       "plain": "Remove email addresses from both channels' repos, including their past versions",
       "for": "codex",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-17T22:50Z",
+        "of": 4,
+        "at": "2026-11-17T22:51Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J2537; inspecting HOS and OWB email_ratchet.json, open PRs, and J3012/J2979 state"
+      },
+      "taskKeys": [
+        "HOS:008",
+        "HOS:009"
+      ]
     },
     {
       "id": "J2538",
