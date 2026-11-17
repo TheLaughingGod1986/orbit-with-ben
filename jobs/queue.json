@@ -267743,10 +267743,10 @@
       "stage": "upload",
       "after": "J3004",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-17T18:24Z",
+      "eta": "2026-11-17T20:24Z",
       "created_by": "gemini",
       "created_at": "2026-11-17T18:22Z",
       "result": "",
@@ -267755,12 +267755,25 @@
           "at": "2026-11-17T18:22Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-17T18:24Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Wait for 2026-11-18T06:40:00Z daily snapshot, then read xgx2lYHhYZM overnight reach and views",
       "due": "2026-11-18T10:00:00Z",
       "kind": "review",
-      "plain": "Check Why Is It Called a Vaccine? after its first night"
+      "plain": "Check Why Is It Called a Vaccine? after its first night",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-17T18:24Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
