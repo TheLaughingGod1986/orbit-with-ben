@@ -272341,9 +272341,14 @@
           "at": "2026-11-18T14:40Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J3051; inspecting J3036/J3037 results, PR #1015 state, and 064 files on origin/main"
+        },
+        {
+          "at": "2026-11-18T14:44Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Step 1 complete: verified J3036 (4c8e91e3f5 on main) and J3037 (done, PR #1015 b7d9ba09ee) plus 064/status.json (script=review)"
         }
       ],
-      "remaining_action": "Inspect J3036, J3037, PR #1015, and origin/main state for OWB:064 script lock condition",
+      "remaining_action": "Run live gate:episode --script v02, verify all J3027 blockers/findings and PR #1015 files, and write jobs/reviews/J3051/REVIEW.md",
       "kind": "review",
       "recheck_of": "J3020",
       "due": "2026-11-18T14:15:33+00:00",
@@ -272358,11 +272363,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-18T14:40Z",
+        "at": "2026-11-18T14:44Z",
         "by": "gemini",
-        "note": "Claimed J3051; inspecting J3036/J3037 results, PR #1015 state, and 064 files on origin/main"
+        "note": "Step 1 complete: verified J3036 (4c8e91e3f5 on main) and J3037 (done, PR #1015 b7d9ba09ee) plus 064/status.json (script="
       },
       "taskKeys": [
         "OWB:064"
