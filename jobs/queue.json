@@ -266796,13 +266796,13 @@
       "stage": "",
       "after": "J3024",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-17T13:14Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T12:21Z",
-      "result": "Chief FIX (codex, 18 Nov): PR #987 at 2337a2398e not approved for merge/deploy. Reproduced unsafe cheaper-tier recommendation, false exhaustion at 94%, merged weekly windows and expired-window reading shown current. J3024 owns corrections, regression tests and sanitized billing provenance; re-review after J3024.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-17T12:21Z",
@@ -266893,6 +266893,11 @@
           "at": "2026-11-18T04:09Z",
           "by": "relay",
           "what": "condition verification queued: J3029"
+        },
+        {
+          "at": "2026-11-18T04:21Z",
+          "by": "codex",
+          "what": "reopened: J3028 completed the authorized delivery: PR987/1008 merged, deployment 9883e7bf, version e4d6d8d41f87195e; live 390px checks PASS. Administrative closure of original delivery parent only; no additional work selected."
         }
       ],
       "remaining_action": "Await J3028 integration and verified live credit cards before closing delivery",
@@ -266900,20 +266905,7 @@
       "for": "gemini",
       "kind": "studio",
       "plain": "Show on each credit card how far through the month we are next to how much we've used, so Ben can see where a cheaper plan would do",
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-17T14:27Z",
-        "by": "gemini",
-        "note": "Opened PR #987 (commit 2337a2398e); all Python/JS tests pass and 390x844 phone screenshots verified in /Users/benjaminoa"
-      },
-      "escalated_at": "2026-11-17T16:30Z",
-      "hold": {
-        "type": "dependency",
-        "condition": "Chief KEEP of J3024 at d569a115d3 recorded on PR 987. J3028 owns conflict integration, revalidation, merge, deployment and live 390px verification; J2985 stays held until that delivery evidence is recorded.",
-        "check_at": "2026-11-18T05:09:24+00:00",
-        "recheck_task": "J3029"
-      }
+      "escalated_at": "2026-11-17T16:30Z"
     },
     {
       "id": "J2986",
