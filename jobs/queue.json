@@ -274404,13 +274404,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-18T20:20Z",
-      "eta": "2026-11-18T22:20Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-18T20:11Z",
-      "result": "",
+      "result": "Waiting for: J3071 must verify responsive signed-in HistoryOfScienceYT on the MacBook local browser and load Since published Analytics for ChbsigHD5_o, with timestamped evidence. Mini renderer recovery probes failed at 20:22-20:24Z despite responsive browser control plane. J3063 stays held until verified; no video changes authorized.",
       "history": [
         {
           "at": "2026-11-18T20:11Z",
@@ -274446,9 +274446,19 @@
           "at": "2026-11-18T20:25Z",
           "by": "codex",
           "what": "step 2 of 3 done: Bounded Mini recovery failed; browser transport responds but renderer does not. J3071 queued for local MacBook read-only verification; J3063 stays held."
+        },
+        {
+          "at": "2026-11-18T20:25Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: J3071 must verify responsive signed-in HistoryOfScienceYT on the MacBook local browser and load Since published Analytics for ChbsigHD5_o, with timestamped evidence. Mini renderer recovery probes failed at 20:22-20:24Z despite responsive browser control plane. J3063 stays held until verified; no video changes authorized."
+        },
+        {
+          "at": "2026-11-18T20:25Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-18T21:00:00Z"
         }
       ],
-      "remaining_action": "Wait for the MacBook fallback evidence, then verify access and reopen the original check",
+      "remaining_action": "Verify the MacBook fallback evidence before reopening the original plants video check",
       "due": "2026-11-18T20:45:00Z",
       "kind": "assembly",
       "plain": "Restore access to the plants video statistics in YouTube Studio",
@@ -274471,7 +274481,12 @@
       },
       "taskKeys": [
         "HOS:006"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "J3071 must verify responsive signed-in HistoryOfScienceYT on the MacBook local browser and load Since published Analytics for ChbsigHD5_o, with timestamped evidence. Mini renderer recovery probes failed at 20:22-20:24Z despite responsive browser control plane. J3063 stays held until verified; no video changes authorized.",
+        "check_at": "2026-11-18T21:00:00Z"
+      }
     },
     {
       "id": "J3071",
