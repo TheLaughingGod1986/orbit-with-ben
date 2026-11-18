@@ -269763,10 +269763,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-18T16:41Z",
-      "eta": "2026-11-18T20:41Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
       "result": "",
@@ -269890,6 +269890,11 @@
           "at": "2026-11-18T16:48Z",
           "by": "codex",
           "what": "step 3 of 4 done: PR 1011 updated fa88da52dd: separate engine launcher, main-only recovery, slot 2 engine isolation. Full future layout 1357 tests exit 0, six skips. No live switch; final acceptance remains."
+        },
+        {
+          "at": "2026-11-18T16:48Z",
+          "by": "codex",
+          "what": "released: PR 1011 advanced to fa88da52dd: MacBook launcher uses independent engine path and main-only recovery; slot 2 gets its own engine clone. Full isolated future-identity suite 1357 tests exit 0, six skips; targeted/security checks pass. Next: CI adapters, Mini runner installation, deployed board credential Contents access, old-entrypoint single-writer safeguards and refreshed export. Keep step 3/4 until gated live relay/publish/tick acceptance; five daily zeros through 18 Nov and prior-day notice still required. No service switched or spend."
         }
       ],
       "remaining_action": "Finish CI and service cutover adapters, verify private board access, then execute the gated move",
