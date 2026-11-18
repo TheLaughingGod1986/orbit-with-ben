@@ -266903,11 +266903,16 @@
           "at": "2026-11-18T04:21Z",
           "by": "codex",
           "what": "step 3 of 3 done: Administrative parent closure: live verification complete in J3028, deployment 9883e7bf, version e4d6d8d41f87195e."
+        },
+        {
+          "at": "2026-11-18T04:21Z",
+          "by": "codex",
+          "what": "rerouted to codex: J3028 explicitly owns original parent closure after live delivery; transfer administrative ownership from prior Gemini worker to current elected Chief. Implementation already complete."
         }
       ],
       "remaining_action": "Delivery complete through J3028",
       "due": "2026-11-19T18:00:00Z",
-      "for": "gemini",
+      "for": "codex",
       "kind": "studio",
       "plain": "Show on each credit card how far through the month we are next to how much we've used, so Ben can see where a cheaper plan would do",
       "escalated_at": "2026-11-17T16:30Z",
@@ -266917,6 +266922,13 @@
         "at": "2026-11-18T04:21Z",
         "by": "codex",
         "note": "Administrative parent closure: live verification complete in J3028, deployment 9883e7bf, version e4d6d8d41f87195e."
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "gemini",
+        "model": "",
+        "status": "open",
+        "by": ""
       }
     },
     {
