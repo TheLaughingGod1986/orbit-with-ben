@@ -270545,13 +270545,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-18T07:14Z",
-      "eta": "2026-11-18T09:14Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-18T07:10Z",
-      "result": "",
+      "result": "Repaired OWB:064 script as every_planet_explained_script_master_v02.md & episode_script_draft_v02.md (SHA-256 0dd5ea6c3d8db1a48e46394c04737cd5c990895142aa5f5bb24642cfa8c8c11b, 1,257 spoken words / 1,300 ws tokens / 8,200 spoken chars, review:script 93.1/100 PASS, gate:episode PASS) in commit 4c8e91e3f5 while preserving v01 (c9945afa...) and SOURCES_v01.md untouched. Resolved both J3027 blockers (Neptune >2,000 km/h vs 400 km/h = >5x across narration and graphics; Earth outer-core top depth ~3,000 km beneath surface) and all remaining findings (New Horizons Kuiper Belt Pluto trajectory vs Voyager 2 only flyby of Neptune; Galileo 1610 moon discovery separated from Great Red Spot late-1800s shrinkage; Saturn 4,800-45,000 kg/s D-ring inflow answering why rings vanish and preserving Iess et al. 2019 'may have formed' uncertainty; Mercury 3 rotations per 2 orbits vs 176-day solar day; Venus hottest planetary surface scope; less number-dense narration with mechanisms; verified shelf Omni clips from 023 and 027). Fresh agy facts/claims pass preserved in GEMINI_QUOTE_PASS_v02.md (16/16 PASS). J3020 remains blocked and J3021 VO does not run; J3037 now unblocked for independent MUST QUOTE verification and narration lock.",
       "history": [
         {
           "at": "2026-11-18T07:10Z",
@@ -270622,6 +270622,11 @@
           "at": "2026-11-18T09:06Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed 064 script master v02 (SHA-256 0dd5ea6c..., 93.1/100 PASS), SOURCES.md (16 rows), SCRIPT_NOTES_v02.md, and GEMINI_QUOTE_PASS_v02.md (16/16 PASS) in 4c8e91e3f5"
+        },
+        {
+          "at": "2026-11-18T09:06Z",
+          "by": "gemini",
+          "what": "done: Repaired OWB:064 script as every_planet_explained_script_master_v02.md & episode_script_draft_v02.md (SHA-256 0dd5ea6c3d8db1a48e46394c04737cd5c990895142aa5f5bb24642cfa8c8c11b, 1,257 spoken words / 1,300 ws tokens / 8,200 spoken chars, review:script 93.1/100 PASS, gate:episode PASS) in commit 4c8e91e3f5 while preserving v01 (c9945afa...) and SOURCES_v01.md untouched. Resolved both J3027 blockers (Neptune >2,000 km/h vs 400 km/h = >5x across narration and graphics; Earth outer-core top depth ~3,000 km beneath surface) and all remaining findings (New Horizons Kuiper Belt Pluto trajectory vs Voyager 2 only flyby of Neptune; Galileo 1610 moon discovery separated from Great Red Spot late-1800s shrinkage; Saturn 4,800-45,000 kg/s D-ring inflow answering why rings vanish and preserving Iess et al. 2019 'may have formed' uncertainty; Mercury 3 rotations per 2 orbits vs 176-day solar day; Venus hottest planetary surface scope; less number-dense narration with mechanisms; verified shelf Omni clips from 023 and 027). Fresh agy facts/claims pass preserved in GEMINI_QUOTE_PASS_v02.md (16/16 PASS). J3020 remains blocked and J3021 VO does not run; J3037 now unblocked for independent MUST QUOTE verification and narration lock."
         }
       ],
       "remaining_action": "Completing J3036 and handing off to J3037 independent review",
@@ -270646,7 +270651,8 @@
       },
       "taskKeys": [
         "OWB:064"
-      ]
+      ],
+      "done_ref": "02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/01_Script/SCRIPT_NOTES_v02.md"
     },
     {
       "id": "J3037",
