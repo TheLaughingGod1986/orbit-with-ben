@@ -273586,6 +273586,11 @@
           "at": "2026-11-18T17:38Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3061 condition verification complete (jobs/reviews/J3061/REVIEW.md @ d08334a6c5) — J3044 waiting condition remains NOT MET: (1) ww2-channel#10 is MERGED (18e102e at 2026-11-18T13:50:26Z; verified in /Users/benjaminoats/YouTube/ww2/studio/channel.json with short=FOH, handle=@FieldOrderHistory, id=UCu94mInMFosxu3W0H6jlI6Q); (2) however, prerequisite OWB PR #1001 (macbook/J3009 @ 01cc861217) remains OPEN with Rules check CI FAILURE (run 44179662943: test_chief_succession.ChiefSuccession.test_a_hos_queue_job_names_grok_while_grok_is_up), and prerequisite OWB PR #1013 (codex/j3006-ww2-analytics @ ddad17ee9a) remains OPEN with Content Ops checks CI FAILURE (run 44284814502: npm run lint failed with 9 @typescript-eslint/no-explicit-any errors in field-order.ts and field-order.test.ts); (3) studio settings PR #1019 (codex/j3044-connect @ 916ca3f732, Rules check SUCCESS) remains OPEN awaiting #1001 and #1013 repair and merge; (4) OWB main remains prelaunch without --analytics ww2 installed in 07_Content-Ops/scripts/youtube-auth.ts, and no premature Ben sign-in request has been made. Recording jobs.py wait J3044 --type input --recheck J3061 (next check 2026-11-18T23:40:00Z) and closing J3061 requires elected-Chief authority (Codex is currently elected Chief). £0."
+        },
+        {
+          "at": "2026-11-18T19:42Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Elected Chief (Codex): run jobs.py wait J3044 --type input --recheck J3061 (next check 2026-11-18T23:40:00Z) and jobs.py done J3061",
@@ -273608,7 +273613,8 @@
         "at": "2026-11-18T17:38Z",
         "by": "gemini",
         "note": "All verification steps complete (d08334a6c5); parking J3061 for elected Chief (Codex)."
-      }
+      },
+      "escalated_at": "2026-11-18T19:42Z"
     },
     {
       "id": "J3062",
