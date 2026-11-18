@@ -177,7 +177,7 @@ def refresh_probes(at):
 
 # Every other channel's checkout, by slug. A channel file can list more than one folder name for it (on Ben's Mini one
 # is "History Of Science", Cursor, 7 Oct; the git-style name is the fallback): the first that exists is used.
-OTHERS = {slug: channels.repo_path(slug, HOME) for slug in channels.slugs() if slug != channels.studio_slug()}
+OTHERS = {slug: channels.repo_path(slug, HOME) for slug in channels.slugs() if slug != channels.studio_slug() and not channels.get(slug).get("local")}
 
 
 def add_dirs() -> str:
@@ -239,7 +239,7 @@ def parse(s: str) -> dt.datetime:
 def _other_slugs() -> list:
     """Channels other than the one this repo belongs to. Today that is one channel."""
     home = channels.default()
-    return [s for s in channels.slugs() if s != home]
+    return [s for s in channels.slugs() if s != home and not channels.get(s).get("local")]
 
 
 def chain(repo: str | None = None) -> list:
@@ -794,7 +794,7 @@ def brief_channels(agent: str, checkouts: dict | None = None) -> dict:
 
 def worker_only_steps() -> str:
     """What a worker that is not the Chief is told to skip and still do, in the sentence that goes into its brief."""
-    others = list(OTHERS)
+    others = [s for s in OTHERS if not channels.get(s).get("local")]
     desks = [slug for slug in others if channels.desk(slug)]
     skip = "the channel check" + (f" and the {' and '.join(channels.label(s) for s in desks)} desk inbox" if desks else "")
     if not others:

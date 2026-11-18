@@ -1492,6 +1492,7 @@
   // Red: the check says the studio cannot run it. What is left to tidy is on the card, not in the light: it is the
   // studio's housekeeping, not something wrong with the channel (and not something for Ben to do).
   function channelLight(c) {
+    if (c.prelaunch) return ["amber", "Getting ready: YouTube not connected yet"];
     if (c.ready === false) return ["red", "not ready"];
     if (c.ready === true) return c.repo === "" ? ["amber", "being set up"] : ["green", "running"];
     return ["", c.here === false ? "not checked here" : "plugged in"];
@@ -1505,7 +1506,7 @@
   const ADD_CHANNEL_STEPS = [
     ["You", "Tell Claude the channel's name and what it is about."],
     ["Claude", "Makes the channel's folder from the template and fills in its settings."],
-    ["You", "Create its GitHub repo, sign in to its YouTube Studio on the Mini, and choose its voice."],
+    ["You", "Create its YouTube channel, sign in to its YouTube Studio on the Mini, and choose its voice. Its files can stay in the studio."],
     ["Claude", "Checks that the studio can run it, then plugs it in. It then shows on this page."],
     ["Claude", "Writes the channel's own rules with you before its first script."]];
   const channelsOf = b => ((b || {}).channels || []).length ? b.channels : channelList();
@@ -1520,8 +1521,8 @@
     const [tone, text] = channelLight(c), f = channelFacts(b, c);
     const row = (k, v) => v ? `<div><dt>${esc(k)}</dt><dd>${v}</dd></div>` : "";
     const list = items => `<ul>${items.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`;
-    const handle = /^@[\w.-]+$/.test(c.handle || "") ? `<a href="https://www.youtube.com/${esc(c.handle)}" target="_blank" rel="noopener">${esc(c.handle)}</a>` : esc(c.handle || "");
-    const repo = /^[\w.-]+\/[\w.-]+$/.test(c.repo || "") ? `<a href="https://github.com/${esc(c.repo)}" target="_blank" rel="noopener">${esc(c.repo)}</a>` : (c.repo === "" ? "It has no GitHub repo yet." : "");
+    const handle = c.prelaunch ? "YouTube not connected yet" : /^@[\w.-]+$/.test(c.handle || "") ? `<a href="https://www.youtube.com/${esc(c.handle)}" target="_blank" rel="noopener">${esc(c.handle)}</a>` : esc(c.handle || "");
+    const repo = /^[\w.-]+\/[\w.-]+$/.test(c.repo || "") ? `<a href="https://github.com/${esc(c.repo)}" target="_blank" rel="noopener">${esc(c.repo)}</a>` : (c.repo === "" ? "Its files live in the studio. No separate GitHub repo is needed." : "");
     const lead = c.ready === true ? "The studio can run this channel." : c.ready === false ? "The studio cannot run this channel yet."
       : c.here === false ? "The machine that publishes this board does not hold this channel's files, so it was not checked." : "";
     const rules = c.rules === true ? "Its own rules, on top of the studio's." : c.rules === false ? "The studio's rules only. Its own rules file is still to write." : "";

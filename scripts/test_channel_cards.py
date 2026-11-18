@@ -36,7 +36,8 @@ class Cards(unittest.TestCase):
         for c, registered in zip(cards, channels.all_channels()):
             self.assertEqual({k: c[k] for k in channel_cards.KEEP}, {k: registered.get(k) for k in channel_cards.KEEP})
             self.assertTrue(c["handle"].startswith("@"))
-            self.assertRegex(c["repo"], r"^[\w.-]+/[\w.-]+$")
+            if not c.get("prelaunch"):
+                self.assertRegex(c["repo"], r"^[\w.-]+/[\w.-]+$")
             self.assertIsInstance(c["wip"], int)
         # A channel whose files are on this machine: in the studio's root while it is the home channel, in its own
         # checkout once the studio and the channels are apart.

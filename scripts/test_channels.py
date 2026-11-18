@@ -30,7 +30,7 @@ def _here(slug):
 
 class Loader(unittest.TestCase):
     def test_the_two_channels_in_order(self):
-        self.assertEqual(channels.slugs(), ["owb", "hos"])
+        self.assertEqual(channels.slugs(), ["owb", "hos", "ww2"])
         self.assertIn(channels.home(), ("owb", None))       # None once the studio has a repo of its own
         self.assertEqual(channels.default(), "owb")         # ... and a job that names no channel is still Orbit's
         self.assertEqual((channels.label("hos"), channels.name("owb")), ("HOS", "Orbit With Ben"))
@@ -152,7 +152,7 @@ class NoHomeChannel(unittest.TestCase):
     def test_every_channel_is_read_through_its_own_checkout(self):
         with tempfile.TemporaryDirectory() as t:
             where = {}
-            for slug in ("owb", "hos"):
+            for slug in channels.slugs():
                 where[slug] = pathlib.Path(t) / slug
                 (where[slug] / "studio").mkdir(parents=True)
                 (where[slug] / "studio" / "channel.json").write_text("{}")
@@ -304,7 +304,8 @@ class Films(unittest.TestCase):
         for slug in channels.slugs():
             base = channels.ROOT if channels.home() else _here(slug)
             self.assertEqual(channels.analytics_dir(slug), base / "05_Analytics" / slug)
-            self.assertTrue((channels.analytics_dir(slug) / "snapshots").is_dir(), slug)
+            if channels.get(slug).get("launch_state") != "prelaunch":
+                self.assertTrue((channels.analytics_dir(slug) / "snapshots").is_dir(), slug)
         own = channels.default()
         self.assertEqual(channels.uploads_file(own), _here(own) / "00_Brand" / "Channel-Setup" / "social" / "UPLOADS.json")
         self.assertTrue(channels.uploads_file(own).is_file())
@@ -525,8 +526,8 @@ class ThirdChannelInTheForecasts(unittest.TestCase):
                 contextlib.redirect_stdout(io.StringIO()) as out:
             self.assertEqual(cb.main(["--sky", "/tmp/sky", "--hos", "/tmp/h", "--today", "2026-10-09", "--json"]), 0)
             self.assertEqual(cb.priority([], [], T_BALANCE)["channels"].keys(), {"owb", "hos"})
-        self.assertEqual(seen, {"owb": None, "hos": pathlib.Path("/tmp/h"), "sky": pathlib.Path("/tmp/sky")})
-        self.assertEqual(set(json.loads(out.getvalue())["channels"]), {"owb", "hos", "sky"})
+        self.assertEqual(seen, {"owb": None, "hos": pathlib.Path("/tmp/h"), "ww2": None, "sky": pathlib.Path("/tmp/sky")})
+        self.assertEqual(set(json.loads(out.getvalue())["channels"]), {"owb", "hos", "ww2", "sky"})
 
 
 T_BALANCE = __import__("datetime").date(2026, 10, 9)
