@@ -273666,6 +273666,11 @@
           "at": "2026-11-18T20:31Z",
           "by": "codex",
           "what": "reopened: Chief administrative handoff of blocked verification, not reopening completed work. J3044 remains blocked; its last_recheck J3061 and J3072/J3073 follow-ups are recorded. Reopen J3061 only to claim and finish this explicitly requested Chief review."
+        },
+        {
+          "at": "2026-11-18T20:31Z",
+          "by": "codex",
+          "what": "rerouted to codex on gpt-6-astra: User assigned this exact Chief review to elected Codex; Gemini evidence preserved, transferring only decision completion ownership."
         }
       ],
       "remaining_action": "Elected Chief (Codex): run jobs.py wait J3044 --type input --recheck J3061 (next check 2026-11-18T23:40:00Z) and jobs.py done J3061",
@@ -273680,8 +273685,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon",
+      "for": "codex",
+      "model": "gpt-6-astra",
       "escalated_at": "2026-11-18T19:42Z"
     },
     {
