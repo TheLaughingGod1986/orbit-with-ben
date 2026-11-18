@@ -226482,10 +226482,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-18T03:09Z",
+      "eta": "2026-11-18T05:09Z",
       "created_by": "claude",
       "created_at": "2026-11-10T19:53Z",
       "result": "",
@@ -226624,6 +226624,11 @@
           "at": "2026-11-17T23:24Z",
           "by": "gemini",
           "what": "released: Higher-priority Chief (codex) returned at 23:22Z; handing J2537 back per Chief succession rule. Stage 1 is complete and merged on main in both repos (OWB ee8723d799, HOS PR #639 9515d89b; both scripts/email_ratchet.json at 0 files). Next: Stage 2 open HOS PR sweep and Stage 3 mirror history-rewrite rehearsal."
+        },
+        {
+          "at": "2026-11-18T03:09Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Merge HOS Stage 1 PR, sweep open HOS PRs (Stage 2), and run Stage 3 mirror history-rewrite rehearsal",
