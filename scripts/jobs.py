@@ -331,19 +331,40 @@ def shared_media_job(job: dict) -> bool:
     return bool(SHARED_MEDIA_TITLE.search(str(job.get("title") or "")))
 
 
+def job_film_identity(job: dict) -> tuple[str, str] | None:
+    """Resolve an explicit film without ever discarding a conflicting channel prefix.
+
+    A mismatched or unknown identity has no board/media target. Queue reconciliation
+    is explicit; lookups must not silently reroute an active worker's claim.
+    """
+    film = str(job.get("film") or "").strip()
+    try:
+        slug = channels.get(job.get("repo") or channels.of_job(job))["slug"]
+        if ":" in film:
+            prefix, film = film.split(":", 1)
+            if channels.get(prefix)["slug"] != slug:
+                return None
+    except KeyError:
+        return None
+    if not film or ":" in film or "/" in film or "\\" in film:
+        return None
+    return slug, film
+
+
 def job_film_number(job: dict) -> str:
     """The three-digit film number from `film`, a channel key in the text, or the title."""
     film = str(job.get("film") or "").strip()
-    if re.fullmatch(r"\d{3}", film):
-        return film
+    if film:
+        identity = job_film_identity(job)
+        return identity[1] if identity else ""
     blob = " ".join(str(job.get(k) or "") for k in ("title", "body", "remaining_action", "action"))
     keys = channels.film_keys(blob)
     if keys:
-        label = channels.label_of_job(job) + ":"
+        label = channels.label(job.get("repo") or channels.of_job(job)) + ":"
         for key in sorted(keys):
             if key.startswith(label):
                 return key.split(":", 1)[1]
-        return sorted(keys)[0].split(":", 1)[1]
+        return ""  # Text naming only another channel is not this channel's film.
     m = re.search(r"\b(\d{3})\b", str(job.get("title") or ""))
     return m.group(1) if m else ""
 
@@ -361,7 +382,10 @@ def film_folder_under(root: pathlib.Path, film: str) -> pathlib.Path | None:
 
 def media_reachable(job: dict) -> bool:
     """True when this machine can see the job's working film media on studio-live or a path the job already names."""
-    slug = channels.of_job(job)
+    identity = job_film_identity(job) if job.get("film") else None
+    if job.get("film") and identity is None:
+        return False
+    slug = identity[0] if identity else channels.of_job(job)
     live_root = studio_live_projects(slug)
     film = job_film_number(job)
     if film_folder_under(live_root, film) is not None:
@@ -1104,7 +1128,8 @@ def do_cancel(job: dict, agent: str, note: str, at: dt.datetime) -> None:
 def on_board(job: dict) -> bool:
     """Only the board channel's jobs have a film folder on the stage board (one status.json per film); a channel that
     keeps its films another way has none."""
-    return bool(job.get("film")) and job.get("repo", channels.default()) == channels.board_channel()
+    identity = job_film_identity(job)
+    return identity is not None and identity[0] == channels.board_channel()
 
 
 def board_claim(job: dict, agent: str, at: dt.datetime) -> str | None:
