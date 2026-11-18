@@ -272331,9 +272331,14 @@
           "at": "2026-11-18T14:27Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-18T14:28Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3051; starting 3-step verification of J3020 waiting condition (1: inspect J3036/J3037/PR #1015 and main branch state; 2: verify script/source/quote-check artifacts and gates; 3: update J3020 wait/reopen state and finish J3051)"
         }
       ],
-      "remaining_action": "Verify readiness: Complete J3036 corrections and J3037 source review and script lock before releasing narration",
+      "remaining_action": "Inspect J3020, J3027, J3036, J3037, PR #1015, and main branch state for OWB:064 script lock condition",
       "kind": "review",
       "recheck_of": "J3020",
       "due": "2026-11-18T14:15:33+00:00",
@@ -272350,11 +272355,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-18T14:27Z",
+        "at": "2026-11-18T14:28Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3051; starting 3-step verification of J3020 waiting condition (1: inspect J3036/J3037/PR #1015 and main branch "
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3052",
