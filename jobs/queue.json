@@ -226538,10 +226538,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-18T23:32Z",
+      "eta": "2026-11-19T01:32Z",
       "created_by": "claude",
       "created_at": "2026-11-10T19:53Z",
       "result": "",
@@ -226950,6 +226950,11 @@
           "at": "2026-11-18T21:51Z",
           "by": "codex",
           "what": "released: Stage2 complete: HOS656 merged 2bb15944, five records verified on main; 551/561/651 closed unmerged, branches retained, only desk180 open. Detached backup running in tmux j2537-backup-20261118; log ~/_desk/logs/j2537-backup-20261118.log; done ~/_desk/logs/j2537-backup-20261118.done. Check done and /Volumes/MiniWork/scratch/j2537-backup-20261118/backup.json before continuing; no duplicate while running. Backup script clones refs, verifies full bundle and NAS SHA256; no rewrite or push. Next: separate-mirror rehearsal and scans, then day-before window notice. Preserve all review/production holds."
+        },
+        {
+          "at": "2026-11-18T23:32Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Back up the old History of Science refs and rehearse the cleanup on a private mirror",
