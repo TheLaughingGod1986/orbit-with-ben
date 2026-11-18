@@ -1,5 +1,5 @@
 {
-  "next_id": 3067,
+  "next_id": 3069,
   "jobs": [
     {
       "id": "J0001",
@@ -268137,6 +268137,11 @@
           "at": "2026-11-18T18:31Z",
           "by": "codex",
           "what": "blocked: parked for Chief: repeated IWM/Navy archive routes exhausted; choose a bounded new source approach or accurate sourced code illustrations for uncleared windows. Timing work committed at 820c156807; read J2993_CONTINUATION_v06.md. Full edit and score still unfinished; no Ben watch submission."
+        },
+        {
+          "at": "2026-11-18T18:32Z",
+          "by": "relay",
+          "what": "condition verification queued: J3067"
         }
       ],
       "remaining_action": "Choose archive replacements, then finish the full edit and score",
@@ -268153,7 +268158,13 @@
       },
       "taskKeys": [
         "WW2:001"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-18T19:32:00+00:00",
+        "recheck_task": "J3067"
+      }
     },
     {
       "id": "J2994",
@@ -273931,6 +273942,71 @@
         "type": "public",
         "condition": "034 Pluto long is public (airs Sun 13 Dec 2026 18:00 London; currently awaiting Ben UAT watch on J2868; if not scheduled by Fri 18 Dec, park for the Chief)",
         "check_at": "2026-12-13T18:05:00Z"
+      }
+    },
+    {
+      "id": "J3067",
+      "title": "Verify condition for J2993",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2993: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2993 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-18T18:32Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T18:32Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Choose archive replacements, then finish the full edit and score",
+      "kind": "review",
+      "recheck_of": "J2993",
+      "due": "2026-11-18T19:32:00+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3068",
+      "title": "Chief: resolve 001 edit orphan-blocked",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Resolve recorded workflow gap: {\"film\": \"001\", \"stage\": \"edit\", \"kind\": \"orphan-blocked\", \"signature\": \"d05e9f3051f72425a3d6\"}. Read the current film status, original job results, approval history and actual evidence. Record a specific PASS/FIX or queue the missing next action with film/stage and dependencies. Unknown records are not approvals. Never mark media approved from a filename, prose lock, or job completion alone. If review needs media, verify on the Mini and perform required listening/viewing. Preserve all Chief/Ben gates, focus priority, holds and scheduling. No paid generation, upload or visibility change is authorized by this repair task. Before closing, resolve the stage state or create a linked successor/correction/review job; otherwise keep this task on a structured hold with a specific condition and next check.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-18T18:32Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T18:32Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief resolves 001 edit handoff and records the next owner/action",
+      "kind": "chief",
+      "handoff": {
+        "film": "001",
+        "stage": "edit",
+        "kind": "orphan-blocked",
+        "signature": "d05e9f3051f72425a3d6"
       }
     }
   ],
