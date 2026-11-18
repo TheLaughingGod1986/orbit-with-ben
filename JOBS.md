@@ -74,7 +74,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3064 | mini | blocked | macbook | – | studio · First-day check at 6 h: "If Voyager Needs 75,000 Years, How Far Is the Nearest Star?" (dH_yCRmzkMo) |  |
 | J3065 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Pluto Short about ice mountains (v02) Private, slot Wed 23 Dec 11:30 |  |
 | J3066 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Pluto Short about the frozen heart (v02, Test A opening) Private, slot Mon 21 Dec 11:30 |  |
-| J3067 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2993 |  |
+| J3067 | mini | claimed | gemini | 2026-11-18T20:42Z | for gemini · review · `gemini-argon` · Verify condition for J2993 |  |
 | J3068 | mini | open | – | – | chief · Chief: resolve 001 edit orphan-blocked |  |
 
 Recently finished:
