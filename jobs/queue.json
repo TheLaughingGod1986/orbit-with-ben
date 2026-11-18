@@ -270163,10 +270163,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-18T06:28Z",
+      "eta": "2026-11-18T08:28Z",
       "created_by": "relay",
       "created_at": "2026-11-18T04:53Z",
       "result": "",
@@ -270220,6 +270220,11 @@
           "at": "2026-11-18T06:28Z",
           "by": "codex",
           "what": "rerouted to codex: Elected Chief completes the protected ruling already recorded; independent Gemini review retained unchanged."
+        },
+        {
+          "at": "2026-11-18T06:28Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief locks/merges PR #1009 and reopens J2995 (or records wait --recheck J3031 on J2995) and closes J3031",
@@ -270238,7 +270243,15 @@
       "model": "gemini-argon",
       "taskKeys": [
         "WW2:002"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-18T06:28Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3032",
