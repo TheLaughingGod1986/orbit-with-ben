@@ -71,7 +71,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3061 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3044 |  |
 | J3062 | mini | open | – | – | chief · Chief: resolve 034 edit orphan-review |  |
 | J3063 | mini | claimed | codex | 2026-11-18T18:02Z | for codex · studio · `gpt-6.1-sol` · First-day check at 6 h: "How Do Plants Clean the Air?" (ChbsigHD5_o) |  |
-| J3064 | mini | open | – | – | studio · First-day check at 6 h: "If Voyager Needs 75,000 Years, How Far Is the Nearest Star?" (dH_yCRmzkMo) |  |
+| J3064 | mini | claimed | macbook | 2026-11-18T18:04Z | studio · First-day check at 6 h: "If Voyager Needs 75,000 Years, How Far Is the Nearest Star?" (dH_yCRmzkMo) |  |
 
 Recently finished:
 
