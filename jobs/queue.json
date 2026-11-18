@@ -1,5 +1,5 @@
 {
-  "next_id": 3043,
+  "next_id": 3044,
   "jobs": [
     {
       "id": "J0001",
@@ -271401,6 +271401,36 @@
       "due": "2026-11-18T15:00:00Z",
       "kind": "review",
       "plain": "Rewrite the opening music brief for the gravity film so the music stays audible"
+    },
+    {
+      "id": "J3043",
+      "title": "HOS 009: decide revised continuous opening score scope",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Follow-up to J3038: review the predecessor revised HOS 009 opening-score scope and exact prompt. Recheck elected HOS Chief authority. Validate continuous overlapping accompaniment without silent phrase gaps or a static bass-drone opening, period fit, locked teach cue/join/VO/picture, one 180s request maximum, <=3000 subscription credits, zero cash/overage/retries and every existing billing/QA guard. This job spends nothing. If the revised scope passes, merge its PR against main and explicitly release only that bounded request; immediately queue generation -> demonstrated audio_input review -> elected-Chief score acceptance using correct specialist kinds and dependencies. If it fails, give exact corrections to the existing scope job rather than another unchanged condition check. Preserve J2808 rejection of v01/v02, J2035/J2171 holds, no gate waiver or PR908 deployment, no publication changes. Record the new chain on J2035 with a concrete verification time. No Ben approval is needed for this ordinary internal decision.\n",
+      "ref": "J3038",
+      "film": "009",
+      "stage": "edit",
+      "after": "J3042",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-18T11:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T11:24Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review the revised music brief and queue guarded production and listening checks",
+      "due": "2026-11-18T15:30:00Z",
+      "kind": "chief",
+      "plain": "Approve the revised music plan for the gravity film and assign the next steps"
     }
   ],
   "focus": [
