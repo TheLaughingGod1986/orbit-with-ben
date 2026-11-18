@@ -1,5 +1,5 @@
 {
-  "next_id": 3024,
+  "next_id": 3025,
   "jobs": [
     {
       "id": "J0001",
@@ -269050,6 +269050,37 @@
       "due": "2026-12-11T18:00:00Z",
       "kind": "assembly",
       "plain": "Assemble and check the every-planet film, then put it on Ben’s watch board"
+    },
+    {
+      "id": "J3024",
+      "title": "J2985: correct credit history and downgrade advice before merge",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Chief ruling by codex, 18 Nov 2026: FIX; PR #987 at 2337a2398e is not approved to merge or deploy. This follows the J2985 review, not a new feature request. Preserve the original held job and the existing PR.\n\nRepair the existing implementation and return the updated PR for Chief review:\n1. scripts/ai_spend.py _weekly_history marks peakUsed >=94 as hitLimit. A synthetic balance with 6% left returns hitLimit=true. Count exhaustion only at 100% or explicit provider exhaustion evidence; use a distinct near-limit label if needed.\n2. Weekly grouping merges successive weeks with recurring reset text. Readings on Nov 3, 6, 10, 13 and 17, all left=6 and note='weekly resets Wednesday 10:00 AM', collapse to one history row. Derive absolute weekly boundaries from each reading timestamp and provider reset, including timezone/year; do not rely only on a usage drop or text changes. Preserve partial-week uncertainty and billing-cycle overlap.\n3. buildPlanVerdict discards history outside the current month when any in-cycle weeks exist. Reproduction: prior week peak=90, inCycle=false; two current weeks peak=20, inCycle=true; current tier allowance=100 at £180 and cheaper allowance=50 at £90. At 17 Nov within a Nov 1-Dec 1 cycle, the UI says 'Could drop to Cheaper'. This violates the explicit history guard. Keep monthly summary scoped to the cycle, but use comparable prior history to veto an unsafe downgrade; mark plan/allowance changes and unknown history rather than comparing unlike quotas. Apply the same behavior on both pages.\n4. A Codex reading at Nov 17 12:00 with weekly reset Nov 17 23:22 remains '100% used / at limit' at Nov 18 01:00 with no stale marker. Expired-window readings must be labelled historical/awaiting refreshed reading even before the 30-hour age threshold; suppress current pace and verdict. Do not invent a refill.\n5. Billing evidence: current evidence folder has three rendered board screenshots, not provider captures. Claims that no separate £20 Grok subscription exists and new tier allowance ratios need sanitized read-only provenance. Keep shared usage consolidation distinct from subscription identity; a redirect/shared usage meter alone cannot prove absence of another subscription. Re-read permitted billing readers, record timestamp, final provider page and relevant sanitized fields. Mark unread/uncertain when not verified; preserve Ben's actual recorded decision. Never log account details or change plans. Do not require Ben unless his login is actually needed. Unknown ChatGPT renewal cannot establish a monthly cycle; label any rolling history as rolling, not monthly.\n\nValidation: add meaningful regression cases for all four reproduced calculation failures on both UI paths and Python history. Existing 17 test_ai_spend tests and both JS suites pass but miss these cases. Run appropriate board checks, regenerate 390px phone screenshots with updated data, and correct CREDITS_REPORT.md. Phone layout itself was readable. Then park for Chief re-review of J2985; merge/publish and live-phone verification remain pending. No spend, purchase, subscription changes or deployment in this repair job.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-18T00:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T00:01Z",
+          "by": "codex",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Correct credit-window history and verify the evidence behind plan advice",
+      "due": "2026-11-19T18:00:00Z",
+      "for": "codex",
+      "kind": "assembly",
+      "plain": "Fix the credit calculations so the board gives reliable advice about cheaper plans"
     }
   ],
   "focus": [
