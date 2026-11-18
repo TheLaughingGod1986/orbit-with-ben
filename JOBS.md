@@ -70,7 +70,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3061 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3044 |  |
 | J3062 | mini | open | – | – | chief · Chief: resolve 034 edit orphan-review |  |
 | J3063 | mini | blocked | codex | – | for codex · studio · `gpt-6.1-sol` · First-day check at 6 h: "How Do Plants Clean the Air?" (ChbsigHD5_o) |  |
-| J3064 | mini | open | – | – | studio · First-day check at 6 h: "If Voyager Needs 75,000 Years, How Far Is the Nearest Star?" (dH_yCRmzkMo) |  |
+| J3064 | mini | claimed | codex | 2026-11-18T20:37Z | studio · First-day check at 6 h: "If Voyager Needs 75,000 Years, How Far Is the Nearest Star?" (dH_yCRmzkMo) |  |
 | J3065 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Pluto Short about ice mountains (v02) Private, slot Wed 23 Dec 11:30 |  |
 | J3066 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Pluto Short about the frozen heart (v02, Test A opening) Private, slot Mon 21 Dec 11:30 |  |
 | J3067 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2993 |  |
