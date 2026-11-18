@@ -270927,13 +270927,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-18T09:14Z",
-      "eta": "2026-11-18T09:59Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-18T09:10Z",
-      "result": "",
+      "result": "PR #1016 (macbook/J3040 -> main, commit 992b40186; left open for Chief merge) & thread #954 comment #6974609019 (https://github.com/TheLaughingGod1986/orbit-with-ben/issues/954#issuecomment-6974609019). Headline on board (film_briefs.json OWB:025, launch/B1z2dv7m7Vk.json, 025/status.json): \"Shorts Test A, first 7-day readout (Wed 18 Nov): the Mars opening Short (B1z2dv7m7Vk) trailed its two Mars siblings — 110 views (113 in Analytics) and 53.3% day-1 Shorts-feed share vs 1,074 views (95.7% feed) on Monday and 1,257 views in 4 days (97.8% feed) on Saturday, with 72.7% average viewed and 0 views sent from Shorts to the Mars long — so film 1 of 4 misses the pass bar; the test runs on to the Wed 9 Dec readout.\" Table (2026-11-18.json, YTA thru 2026-11-16): Mon 9 Nov iyvWYFP_ETA = 95.7% d1 feed (1,014/1,060), 1,074 7d views (1,073 YTA), 62.66% APV, 0 SHORTS->long; Wed 11 Nov opening Short B1z2dv7m7Vk = 53.3% d1 feed (49/92), 110 views at 6.80d/163.2h (113 YTA; 168h at 18 Nov 11:30Z), 72.67% APV, 0 SHORTS->long; Sat 14 Nov RT-ec4_GcOk (swapped from Fri 13 in J2715) = 97.8% d1 feed (1,209/1,236), 7d views n/a until after Sat 21 Nov 11:30Z (1,257 public / 1,236 YTA at 3.80d), 100.07% APV so far (7d YTA n/a until after 21 Nov), 0 SHORTS->long (Js6EQJ8qDi8 had 0 SHORTS & 0 SHORTS_CONTENT_LINKS across 8-16 Nov). Written to 05_Analytics/tests/SHORTS_TESTS.md. £0.",
       "history": [
         {
           "at": "2026-11-18T09:10Z",
@@ -270959,6 +270959,11 @@
           "at": "2026-11-18T09:33Z",
           "by": "macbook",
           "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-11-18T09:35Z",
+          "by": "macbook",
+          "what": "done: PR #1016 (macbook/J3040 -> main, commit 992b40186; left open for Chief merge) & thread #954 comment #6974609019 (https://github.com/TheLaughingGod1986/orbit-with-ben/issues/954#issuecomment-6974609019). Headline on board (film_briefs.json OWB:025, launch/B1z2dv7m7Vk.json, 025/status.json): \"Shorts Test A, first 7-day readout (Wed 18 Nov): the Mars opening Short (B1z2dv7m7Vk) trailed its two Mars siblings — 110 views (113 in Analytics) and 53.3% day-1 Shorts-feed share vs 1,074 views (95.7% feed) on Monday and 1,257 views in 4 days (97.8% feed) on Saturday, with 72.7% average viewed and 0 views sent from Shorts to the Mars long — so film 1 of 4 misses the pass bar; the test runs on to the Wed 9 Dec readout.\" Table (2026-11-18.json, YTA thru 2026-11-16): Mon 9 Nov iyvWYFP_ETA = 95.7% d1 feed (1,014/1,060), 1,074 7d views (1,073 YTA), 62.66% APV, 0 SHORTS->long; Wed 11 Nov opening Short B1z2dv7m7Vk = 53.3% d1 feed (49/92), 110 views at 6.80d/163.2h (113 YTA; 168h at 18 Nov 11:30Z), 72.67% APV, 0 SHORTS->long; Sat 14 Nov RT-ec4_GcOk (swapped from Fri 13 in J2715) = 97.8% d1 feed (1,209/1,236), 7d views n/a until after Sat 21 Nov 11:30Z (1,257 public / 1,236 YTA at 3.80d), 100.07% APV so far (7d YTA n/a until after 21 Nov), 0 SHORTS->long (Js6EQJ8qDi8 had 0 SHORTS & 0 SHORTS_CONTENT_LINKS across 8-16 Nov). Written to 05_Analytics/tests/SHORTS_TESTS.md. £0."
         }
       ],
       "remaining_action": "Post readout table on studio thread #954 and mark J3040 done",
@@ -270974,7 +270979,8 @@
       },
       "taskKeys": [
         "OWB:025"
-      ]
+      ],
+      "done_ref": "992b40186"
     }
   ],
   "focus": [
