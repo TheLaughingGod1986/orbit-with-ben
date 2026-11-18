@@ -178925,9 +178925,14 @@
           "at": "2026-11-18T11:24Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-18T15:30:00Z"
+        },
+        {
+          "at": "2026-11-18T11:46Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-18T15:30:00Z"
         }
       ],
-      "remaining_action": "Wait for revised opening music and its checks, starting with the new music brief and Chief review",
+      "remaining_action": "Wait for the revised gravity score to pass full checks, listening review and Chief acceptance",
       "due": "2026-11-15T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -178943,11 +178948,8 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "J3038 ruling: condition NOT MET. J2808 NOT_ACCEPTED_HOLD remains: v01 fails reuse gate, v02 fails continuous-bed ear review. J3042 prepares a revised continuous opening scope; J3043 reviews it and queues guarded production, capable listening review and final score acceptance. J2035 resumes only after that accepted score; J3042/J3043 completion alone is insufficient. All picture/VO/diagram locks remain.",
-        "check_at": "2026-11-18T15:30:00Z",
-        "last_recheck": "J3038",
-        "checked_at": "2026-11-18T11:24:24+00:00",
-        "checked_by": "codex"
+        "condition": "J3043 approved scope PR645 (7bf38d74); await J3045 bounded wonder_v03 generation -> J3046 fresh demonstrated-audio review -> J3047 elected-Chief score acceptance. v01/v02 remain rejected by J2808; only accepted v03 with all gates permits long assembly. J2171 remains held.",
+        "check_at": "2026-11-18T15:30:00Z"
       }
     },
     {
