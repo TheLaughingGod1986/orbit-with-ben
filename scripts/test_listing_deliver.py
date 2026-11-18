@@ -446,7 +446,7 @@ class AnyChannel(unittest.TestCase):
             film.write_text(json.dumps({"film": "041", "title": "Made up", "stages": {}}))
             # J2622: this part is about the one-file shape, so History of Science is pinned to it; its real shape (one
             # file per film, read from its own checkout) has no document on a machine without that checkout, as in CI.
-            with channel_pins.one_file("hos"), self.sky(), mock.patch.dict("os.environ", {"SKY_REPO": str(sky_root)}):
+            with channel_pins.one_file("hos"), channel_pins.one_file("ww2"), self.sky(), mock.patch.dict("os.environ", {"SKY_REPO": str(sky_root)}):
                 docs = ad.load_documents(root)
                 self.assertEqual(docs["sky"]["films"][0]["id"], "007")
                 self.assertEqual([f["film"] for f in docs[channels.default()]], ["041"])

@@ -256,6 +256,45 @@ class BoardLink(unittest.TestCase):
                 studio.FILMS = old
 
 
+    def test_foreign_qualified_identity_never_reads_or_writes_board(self):
+        job = {"repo": "owb", "film": "WW2:003", "stage": "script"}
+        with mock.patch.object(studio, "film_dir") as resolve, mock.patch.object(studio, "save") as save:
+            self.assertFalse(jobs.on_board(job))
+            self.assertIsNone(jobs.film_status_path(job))
+            self.assertIsNone(jobs.board_claim(job, "macbook", T0))
+            jobs.board_release(job, "macbook", "review")
+            jobs.check_board_completion(job, "evidence")
+            resolve.assert_not_called()
+            save.assert_not_called()
+        with mock.patch.object(jobs, "film_folder_under") as folders:
+            self.assertEqual(jobs.job_film_number(job), "")
+            self.assertFalse(jobs.media_reachable(dict(job, body="/tmp/existing.mp4")))
+            folders.assert_not_called()
+
+    def test_all_registered_channel_identities_stay_in_their_channel(self):
+        for channel in jobs.channels.all_channels():
+            slug, label = channel["slug"], channel["label"]
+            with self.subTest(channel=slug):
+                job = {"repo": slug, "film": label + ":003", "stage": "script"}
+                self.assertEqual(jobs.job_film_identity(job), (slug, "003"))
+                self.assertEqual(jobs.job_film_number(job), "003")
+                self.assertEqual(jobs.on_board(job), slug == jobs.channels.board_channel())
+                with mock.patch.object(jobs, "studio_live_projects", return_value=pathlib.Path("/unused")) as root, \
+                        mock.patch.object(jobs, "film_folder_under", return_value=pathlib.Path("/unused/003_Film")):
+                    self.assertTrue(jobs.media_reachable(job))
+                    root.assert_called_once_with(slug)
+                if slug != jobs.channels.board_channel():
+                    with mock.patch.object(studio, "save") as save:
+                        jobs.board_claim(job, "macbook", T0)
+                        jobs.board_release(job, "macbook", "review")
+                        jobs.check_board_completion(job, "evidence")
+                        save.assert_not_called()
+
+    def test_unknown_prefix_and_foreign_text_have_no_film_target(self):
+        self.assertIsNone(jobs.job_film_identity({"repo": "owb", "film": "UNKNOWN:003"}))
+        self.assertEqual(jobs.job_film_number({"repo": "owb", "title": "Work WW2:003"}), "")
+        self.assertEqual(jobs.job_film_number({"repo": "owb", "film": "OWB:J01"}), "J01")
+
     def test_follow_up_work_never_reopens_a_finished_stage(self):
         with tempfile.TemporaryDirectory() as tmp:
             films = pathlib.Path(tmp)
