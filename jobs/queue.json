@@ -269705,9 +269705,14 @@
           "at": "2026-11-18T05:07Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-18T05:09Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3027; starting 3-step verification of J3020 waiting condition on OWB:064"
         }
       ],
-      "remaining_action": "Verify readiness: Chief or Claude records explicit script lock on 064 master v01 (commit 3b9f165c43) and closes J3020 to release J3021 VO",
+      "remaining_action": "Inspect 064 script package (commit 3b9f165c43), status.json, git log, and PR #99 / queue history for Chief or Claude script lock",
       "kind": "review",
       "recheck_of": "J3020",
       "due": "2026-11-18T04:07:49+00:00",
@@ -269724,11 +269729,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-18T05:07Z",
+        "at": "2026-11-18T05:09Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3027; starting 3-step verification of J3020 waiting condition on OWB:064"
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3028",
