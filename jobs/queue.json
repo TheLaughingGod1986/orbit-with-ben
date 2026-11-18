@@ -269048,18 +269048,23 @@
           "at": "2026-11-18T05:43Z",
           "by": "codex",
           "what": "step 3 of 5 done: Published private studio rehearsal branch 534cf0f. Baseline split zero; future identity tests expose three failures. Scanned export clean; 49 existing ignored assets restored. Live untouched."
+        },
+        {
+          "at": "2026-11-18T05:43Z",
+          "by": "codex",
+          "what": "step 4 of 5 done: Runbook PR #1011 open; private rehearsal/j3012 at 534cf0f verified. Four preparation milestones complete; live move and acceptance remain. Three future-identity test failures documented; no live changes."
         }
       ],
-      "remaining_action": "Open the runbook PR, then prepare the remaining cutover adapters before the gated move",
+      "remaining_action": "Fix rehearsal identity and thread routing, verify private board access, then execute the move after its date gates",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
         "at": "2026-11-18T05:43Z",
         "by": "codex",
-        "note": "Published private studio rehearsal branch 534cf0f. Baseline split zero; future identity tests expose three failures. Sca"
+        "note": "Runbook PR #1011 open; private rehearsal/j3012 at 534cf0f verified. Four preparation milestones complete; live move and "
       }
     },
     {
