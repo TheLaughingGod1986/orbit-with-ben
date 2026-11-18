@@ -274173,9 +274173,14 @@
           "at": "2026-11-18T19:09Z",
           "by": "codex",
           "what": "step 0 of 3 done: Both channel sessions reachable; legacy get_screen replaced by browse analytics cards. Validating lifetime metric extraction."
+        },
+        {
+          "at": "2026-11-18T19:13Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Validated new Studio cards, exact cumulative counts and Shorts percentage labels. HOS read-only channel audit: 67 videos, 0 errors; Studio-only checklist was not changed."
         }
       ],
-      "remaining_action": "Read both channels using the changed Studio analytics layout, then rebuild and verify the tracker",
+      "remaining_action": "Finish lifetime figures for both catalogues, then rebuild and publish the tracker",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
@@ -274191,10 +274196,14 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-18T19:09Z",
+        "at": "2026-11-18T19:13Z",
         "by": "codex",
-        "note": "Both channel sessions reachable; legacy get_screen replaced by browse analytics cards. Validating lifetime metric extrac"
-      }
+        "note": "Validated new Studio cards, exact cumulative counts and Shorts percentage labels. HOS read-only channel audit: 67 videos"
+      },
+      "taskKeys": [
+        "OWB:026",
+        "HOS:007"
+      ]
     }
   ],
   "focus": [
