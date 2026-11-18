@@ -268468,13 +268468,13 @@
       "stage": "edit",
       "after": "J2995",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-18T19:44Z",
-      "eta": "2026-11-18T23:44Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T17:20Z",
-      "result": "",
+      "result": "Waiting for: Full 24:03.04 candidate v04 requires actual watch/listen for speech, score fit, motion and pacing. This session has only demonstrated still-image viewing and shell text output; no audio_input or moving_video_input. Final hash, full-decode/frame and unchanged-audio checks recorded in PR1018; remaining label overlap at 430/470 seconds and open voice PR1014 documented. Route to capable reviewer or Chief for decision under final-watch standing order.",
       "history": [
         {
           "at": "2026-11-17T17:20Z",
@@ -268660,9 +268660,19 @@
           "at": "2026-11-18T19:46Z",
           "by": "codex",
           "what": "step 2 of 5 done: v04 completed; hash verified, 36076 frames, unchanged audio. Four full-size stills checked; two geographic labels need attention. Evidence and capability handoff in PR1018."
+        },
+        {
+          "at": "2026-11-18T19:46Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: Full 24:03.04 candidate v04 requires actual watch/listen for speech, score fit, motion and pacing. This session has only demonstrated still-image viewing and shell text output; no audio_input or moving_video_input. Final hash, full-decode/frame and unchanged-audio checks recorded in PR1018; remaining label overlap at 430/470 seconds and open voice PR1014 documented. Route to capable reviewer or Chief for decision under final-watch standing order."
+        },
+        {
+          "at": "2026-11-18T19:46Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-18T20:45:00Z"
         }
       ],
-      "remaining_action": "Complete the full film review with audio and moving-video inputs, reconcile voice review and finish remaining labels",
+      "remaining_action": "Route the finished candidate to a capable film reviewer and resolve remaining labels and voice review",
       "due": "2026-11-25T18:00:00Z",
       "for": "codex",
       "kind": "assembly",
@@ -268676,6 +268686,19 @@
       },
       "taskKeys": [
         "WW2:002"
+      ],
+      "hold": {
+        "type": "capability",
+        "condition": "Full 24:03.04 candidate v04 requires actual watch/listen for speech, score fit, motion and pacing. This session has only demonstrated still-image viewing and shell text output; no audio_input or moving_video_input. Final hash, full-decode/frame and unchanged-audio checks recorded in PR1018; remaining label overlap at 430/470 seconds and open voice PR1014 documented. Route to capable reviewer or Chief for decision under final-watch standing order.",
+        "check_at": "2026-11-18T20:45:00Z",
+        "requires": [
+          "audio_input",
+          "moving_video_input"
+        ]
+      },
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
       ]
     },
     {
