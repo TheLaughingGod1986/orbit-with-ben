@@ -270155,13 +270155,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-18T06:28Z",
-      "eta": "2026-11-18T08:28Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-18T04:53Z",
-      "result": "",
+      "result": "KEEP: accepted independent Gemini review, locked unchanged WW2:002 v03 narration and merged PR 1009 as 77fa73e68d78d72751b0a3f6bab8d512a589a2bf (CI PASS). Decision: jobs/reviews/J3031/DECISION.md. J2995 condition satisfied and reopened with J2994 predecessor, live-credit preflight, six-chapter input, 21,000-character cap and voice checks retained. J2996 owns downstream picture/edit. No spend or publication. OWB J3030/J3032 untouched.",
       "history": [
         {
           "at": "2026-11-18T04:53Z",
@@ -270222,6 +270222,11 @@
           "at": "2026-11-18T06:29Z",
           "by": "codex",
           "what": "step 3 of 3 done: Chief review: inputs checked, independent evidence accepted, PR 1009 locked and merged, J2995 reopened with original spending and voice-check guards."
+        },
+        {
+          "at": "2026-11-18T06:29Z",
+          "by": "codex",
+          "what": "done: KEEP: accepted independent Gemini review, locked unchanged WW2:002 v03 narration and merged PR 1009 as 77fa73e68d78d72751b0a3f6bab8d512a589a2bf (CI PASS). Decision: jobs/reviews/J3031/DECISION.md. J2995 condition satisfied and reopened with J2994 predecessor, live-credit preflight, six-chapter input, 21,000-character cap and voice checks retained. J2996 owns downstream picture/edit. No spend or publication. OWB J3030/J3032 untouched."
         }
       ],
       "remaining_action": "Close the completed narration-readiness review",
@@ -270247,7 +270252,8 @@
         "at": "2026-11-18T06:29Z",
         "by": "codex",
         "note": "Chief review: inputs checked, independent evidence accepted, PR 1009 locked and merged, J2995 reopened with original spe"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1009"
     },
     {
       "id": "J3032",

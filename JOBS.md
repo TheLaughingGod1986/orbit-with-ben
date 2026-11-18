@@ -66,12 +66,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3026 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
 | J3027 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3020 |  |
 | J3030 | mini | open | – | – | chief · Chief: resolve 002 script orphan-review |  |
-| J3031 | mini | claimed | codex | 2026-11-18T08:28Z | for codex · review · `gemini-argon` · Verify condition for J2995 |  |
 | J3032 | mini | open | – | – | chief · Chief: resolve 002 vo orphan-blocked |  |
 | J3033 | mini | open | – | – | chief · Chief: resolve 001 edit orphan-doing |  |
 
 Recently finished:
 
+- J3031 done: Verify condition for J2995 (KEEP: accepted independent Gemini review, locked unchanged WW2:002 v03 narration and merged PR 1009 as 77fa73e68d78d72751b0a3f6bab8d512a589a2bf (CI PASS). Decision: jobs/reviews/J3031/DECISION.md. J2995 condition satisfied and reopened with J2994 predecessor, live-credit preflight, six-chapter input, 21,000-character cap and voice checks retained. J2996 owns downstream picture/edit. No spend or publication. OWB J3030/J3032 untouched.)
 - J3029 cancelled: Verify condition for J2985 ()
 - J3028 done: J2985: integrate reviewed credit panel and verify live board (PR987 integrated and merged d7f2b56595; phone label fix PR1008 merged ce5ef9fa09. Cloudflare 9883e7bf, live version e4d6d8d41f87195e. 107 Python tests, both JS suites, 15 security checks and CI pass. Live 390px Agents Credits and AI verified: readable Time, historical readings, preserved Ultra decision, no overflow or unsafe downgrade advice. Evidence: /Users/benjaminoats/_desk/reviews/J3028/REPORT.md)
 - J3024 done: J2985: correct credit history and downgrade advice before merge (Chief KEEP at d569a115d3, PR 987 comment 6968740645: 104 Python tests, both JS suites, 13 security tests, static build and core/rules checks pass; phone evidence inspected. J3028 owns conflict integration, revalidation, merge and live verification; J2985 remains held.)
@@ -90,22 +90,3 @@ Do now
 - J3007 done: Board: show the WW2 channel before launch, its films, its review and Ben's ticks (Merged PR #1007 (70287e1904), full CI PASS; deployed studio-kanban e4dacdcd / version 8288efc9feba5714. Board-data 7fc25e80 verified WW2 pre-launch channel plus ten film cards. Authenticated fixture Approve saves through checks handler/store and Mini reads Approved, waiting for YouTube; Request changes and unlinked refusal pass. No separate repo needed; no upload/schedule or live fabricated Ben tick. Screenshots: _desk/reviews/J3007/channels.png and videos.png. J3006 remains open for its analytics progress card.)
 - J3005 done: WW2 channel: packaging library, which titles and thumbnails beat their channel's normal views (PR #995 (channels/ww2/05_Analytics/PACKAGING_LIBRARY.json, PACKAGING_FINDINGS.md, and PLAYBOOK.md §7 monthly refresh across 14 channels / 1,020 long videos >8m). Quota used: 69 units (channels.list 13, playlistItems.list 28, videos.list 28; £0, 0 errors). 1) Other-side reaction titles rank #1 (1.51x median, n=51, 49.0% >=2x), followed by questions (1.27x, n=58) and How/Why openers (1.12x overall, 1.25x on 2026 breakout channels, n=220 vs 0.98x without). 2) Bright thumbnail grading leads all visual tags (1.19x median, n=113, 29.2% >=2x) paired with 1-3 words (1.01x, n=352, 29.3% >=2x) in white+yellow (1.15x, n=25) or yellow (1.04x, n=62), reversing the outlier-feed guess for 0-word thumbnails (0.88x median, n=181, 0 breakout videos). 3) Colourised real archive photos reach 1.96x median on breakout channels (1.00x overall, n=240), whereas AI/3D illustrations (n=418) give no median edge (1.00x overall, 0.92x established) and ungraded B&W lags (0.92x, n=115). 4) Series labels/pipes/'Full Documentary' (0.77x median, n=81), generic secret/mystery words (0.90x, n=38), calendar years in titles (0.96x, >=2x halved to 14.8%, n=162), and maps on thumbnails (0.98x, >=2x down to 16.3%, n=147) depress outlier odds. 5) Superlatives (1.00x median, n=110; most/only/first 0.90x median / 12.55x mean) and non-year hard numbers (1.00x median, n=393) flatten at the median (high-variance tail multipliers), while money figures (n=4) and until/then turns (n=23, 0.81x) have too few videos (<25).)
 - J3004 done: First-day check at 6 h: "Why Is It Called a Vaccine?" (xgx2lYHhYZM) (Ruled, acting Chief (Gemini) 17 Nov: PASS / no fault (PR #992 merged at f57ab150da; launch note at 4bd26a8b74). Public in Shorts, HD complete, no notices, not Made for Kids, Altered content Yes, language en-GB, Related set to ETynHpIYLeY, and description/tags match s05_vacca_jesty_v05/PACKAGE_MANIFEST.json. At 6 h: 0 views vs 20 usual, rank 10 of 10, and Not enough data on reach/engagement (Verdict: BEHIND; Studio gave no reach figures yet). No re-cut, no second upload, and no Studio changes today. Follow-up J3010 queued (after J3004, date hold until 2026-11-18T06:45:00Z after the 06:40Z snapshot) to read next-morning snapshot and Studio reach figures and check whether Vaccine Shorts remain unfed alongside cLKDiYP55J8 ahead of the 28-29 Nov 007 Shorts. GBP 0.)
-- J3003 done: First-day check at 6 h: "How Far From Earth Is Voyager 1 Right Now?" (9q_OvQ1Rd8Y) ("How Far From Earth Is Voyager 1 Right Now?" (9q_OvQ1Rd8Y) · Orbit With Ben · Short · went live Tue 17 Nov 11:30 London
-At 6 h: views 193 · Studio rank 6 of 10 · shown in feed about 737 (from 182 feed views) · stayed to watch 24.7% · average viewed 94.7%
-Usual for this channel: stayed to watch 32.5%, average viewed 66.2%
-
-Verdict: AHEAD
-  - 193 views at 6 h; the last 6 checked at the same age had 96 (median).
-  - Studio ranks it 6 of 10 against our latest videos at the same age.
-
-What is different about this one
-  - It is 17 s long; the last 10 Shorts were 18 to 55 s.
-  - "Earth" was in the title of 4 earlier Shorts: they had 450 views by the next morning (median), against 128 for all Shorts.
-  - The title starts with "How", like 5 earlier Shorts: they had 386 views by the next morning (median), against 128 for all Shorts.
-  - It is a second upload of the same video (it replaced kKN8Ale42sE).
-
-Do now
-  - Nothing to fix.
-
-Carry forward
-  - A strong start is a lesson too: note what is different about this one.)
