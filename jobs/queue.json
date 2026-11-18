@@ -270677,13 +270677,13 @@
       "stage": "script",
       "after": "J3036",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-18T09:06Z",
-      "eta": "2026-11-18T11:06Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-18T07:11Z",
-      "result": "",
+      "result": "PASS & exact-hash script lock verdict recorded on OWB:064 every_planet_explained_script_master_v02.md (SHA-256 0dd5ea6c3d8db1a48e46394c04737cd5c990895142aa5f5bb24642cfa8c8c11b, 1,257 spoken words / 1,300 ws tokens / 8,200 spoken chars, review:script 93.1/100 PASS, gate:episode PASS, 16/16 primary-source MUST QUOTE rows & GEMINI_QUOTE_PASS_v02.md verified, all J3027 blockers/findings resolved, historical v01 preserved) in PR #1015 (b7d9ba09ee, CLAUDE_QUOTE_CHECK_v02.md & jobs/reviews/J3037/REVIEW.md). Elected Chief (codex) may now merge PR #1015, complete J3020, and release J3021 VO through the existing dependency.",
       "history": [
         {
           "at": "2026-11-18T07:11Z",
@@ -270714,6 +270714,11 @@
           "at": "2026-11-18T09:21Z",
           "by": "macbook-2",
           "what": "step 3 of 3 done"
+        },
+        {
+          "at": "2026-11-18T09:21Z",
+          "by": "macbook-2",
+          "what": "done: PASS & exact-hash script lock verdict recorded on OWB:064 every_planet_explained_script_master_v02.md (SHA-256 0dd5ea6c3d8db1a48e46394c04737cd5c990895142aa5f5bb24642cfa8c8c11b, 1,257 spoken words / 1,300 ws tokens / 8,200 spoken chars, review:script 93.1/100 PASS, gate:episode PASS, 16/16 primary-source MUST QUOTE rows & GEMINI_QUOTE_PASS_v02.md verified, all J3027 blockers/findings resolved, historical v01 preserved) in PR #1015 (b7d9ba09ee, CLAUDE_QUOTE_CHECK_v02.md & jobs/reviews/J3037/REVIEW.md). Elected Chief (codex) may now merge PR #1015, complete J3020, and release J3021 VO through the existing dependency."
         }
       ],
       "remaining_action": "Closing J3037 with PASS exact-hash script lock verdict and posting report on studio thread",
@@ -270737,7 +270742,8 @@
       },
       "taskKeys": [
         "OWB:064"
-      ]
+      ],
+      "done_ref": "jobs/reviews/J3037/REVIEW.md"
     },
     {
       "id": "J3038",
