@@ -70,7 +70,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3082 | mini | open | – | – | chief · Chief: resolve 005 script orphan-review |  |
 | J3083 | mini | open | – | – | chief · Chief: resolve 006 script orphan-review |  |
 | J3084 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3063 |  |
-| J3085 | mini | open | – | – | review · Verify condition for J3070 |  |
+| J3085 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3070 |  |
 
 Recently finished:
 

@@ -275331,6 +275331,11 @@
           "at": "2026-11-18T21:13Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-18T21:14Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-18T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Verify the MacBook fallback evidence before reopening the original plants video check",
@@ -275338,7 +275343,16 @@
       "recheck_of": "J3070",
       "mini_only": true,
       "due": "2026-11-18T20:45:00+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
