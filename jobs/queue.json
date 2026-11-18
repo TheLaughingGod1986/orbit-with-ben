@@ -267089,13 +267089,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-18T11:13Z",
-      "eta": "2026-11-18T13:13Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T12:53Z",
-      "result": "",
+      "result": "Waiting for: oASsmqZfWU4 goes public at 2026-12-09T18:00Z; then post+pin the pinned comment and set Related video on Shorts J2895/J2896. Everything else done (upload, T&C T033, captions, language, altered content, end screen; read-back e7eac73a64). Do not re-upload or re-arm.",
       "history": [
         {
           "at": "2026-11-17T12:53Z",
@@ -267176,9 +267176,19 @@
           "at": "2026-11-18T11:19Z",
           "by": "claudecode",
           "what": "step 4 of 5 done: Studio finish done e7eac73a64: en-GB captions serving, en-GB language set, Altered content Yes, end screen Subscribe + Best for viewer saved and read back"
+        },
+        {
+          "at": "2026-11-18T11:19Z",
+          "by": "claudecode",
+          "what": "blocked: Waiting for: oASsmqZfWU4 goes public at 2026-12-09T18:00Z; then post+pin the pinned comment and set Related video on Shorts J2895/J2896. Everything else done (upload, T&C T033, captions, language, altered content, end screen; read-back e7eac73a64). Do not re-upload or re-arm."
+        },
+        {
+          "at": "2026-11-18T11:19Z",
+          "by": "claudecode",
+          "what": "condition recorded; next verification 2026-12-09T18:30:00Z"
         }
       ],
-      "remaining_action": "Once oASsmqZfWU4 is public (9 Dec 18:00Z): pinned comment, and Related video on Shorts J2895/J2896",
+      "remaining_action": "Pinned comment and Shorts Related once oASsmqZfWU4 is public",
       "due": "2026-12-07T18:00:00Z",
       "kind": "studio",
       "approved_from": {
@@ -267212,7 +267222,12 @@
       },
       "taskKeys": [
         "OWB:033"
-      ]
+      ],
+      "hold": {
+        "type": "public",
+        "condition": "oASsmqZfWU4 goes public at 2026-12-09T18:00Z; then post+pin the pinned comment and set Related video on Shorts J2895/J2896. Everything else done (upload, T&C T033, captions, language, altered content, end screen; read-back e7eac73a64). Do not re-upload or re-arm.",
+        "check_at": "2026-12-09T18:30:00Z"
+      }
     },
     {
       "id": "J2987",
