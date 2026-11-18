@@ -68,6 +68,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3023 | mini | open (after J3022) | – | – | 064 edit · assembly · OWB 064: Assemble and check the every-planet film, then put it on Ben’s watch board | J3011 |
 | J3024 | any | blocked | codex | – | for codex · assembly · J2985: correct credit history and downgrade advice before merge |  |
 | J3025 | mini | open | – | – | chief · Chief: resolve 002 script orphan-doing |  |
+| J3026 | mini | open | – | – | review · Verify condition for J2040 |  |
 
 Recently finished:
 
