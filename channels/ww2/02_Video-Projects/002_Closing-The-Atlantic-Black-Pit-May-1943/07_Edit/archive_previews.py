@@ -13,12 +13,17 @@ def main():
   if r.get('file'):
    with Image.open(r['file']) as im:tile=ImageOps.contain(im.convert('RGB'),(460,310));sheet.paste(tile,(x+(480-tile.width)//2,y+10))
   d.text((x+12,y+326),f"{r['key']} | {r['id']}",font=font,fill='black');d.text((x+12,y+354),r.get('date',''),font=font,fill='black')
- sheet.save(out/'archive_contact_v01.jpg',quality=93)
+ sheet.save(out/'archive_contact_v02.jpg',quality=93)
  r=next((r for r in records if r['key']=='P1' and r.get('file')),None)
  if r:
   with Image.open(r['file']) as im:
    thumb=ImageOps.fit(ImageOps.autocontrast(im.convert('L')), (1280,720),centering=(.5,.45)).convert('RGB')
   thumb.save(out/'thumbnail_A_candidate_v01.jpg',quality=96)
   ImageOps.contain(thumb,(168,94)).save(out/'thumbnail_A_phone_v01.jpg',quality=95)
+  variant=thumb.copy();draw=ImageDraw.Draw(variant)
+  display=ImageFont.truetype('/System/Library/Fonts/Helvetica.ttc',118)
+  draw.text((62,38),'LIBERATOR',font=display,fill=(20,20,20),stroke_width=1,stroke_fill=(20,20,20))
+  variant.save(out/'thumbnail_B_candidate_v01.jpg',quality=96)
+  ImageOps.contain(variant,(168,94)).save(out/'thumbnail_B_phone_v01.jpg',quality=95)
  print(out)
 if __name__=='__main__':main()

@@ -1,3 +1,28 @@
+# J2996 resume checkpoint — 18 November 2026, second run
+
+This checkpoint supersedes the counts and P5 status in the initial preparation note below. The film is unfinished. No full-film QA, audio/motion perception, Chief approval or Ben-watch submission.
+
+## This run delivered
+
+- **74 sentence clips across 18 paragraph briefs**: L030–L038 detection mechanisms and L040–L048 ONS 5 / SC 130 comparison. Together **437.04 seconds**, 10,926 frames at 1920×1080, 25 fps. Each row has its own video, still, exact locked narration, frame count and hash. Both narrated sequences decode fully; source WAV hash matches the EDL. `PICTURE_BUILD_v01.json` records checked media hashes, timing coverage and outstanding work.
+- Detection draft: `03_Picture/maps/detection_v01/detection_with_vo_DRAFT_v01.mp4`, source time **746.40–960.00 s**, duration **213.60 s**, SHA256 `550c345abc5dbb7ead117224b3c74e59b20228d8db436adf770ea72e038c212f`.
+- Convoy comparison draft: `03_Picture/maps/convoys_v01/convoys_v01_with_vo_DRAFT_v01.mp4`, source time **986.88–1210.32 s**, duration **223.44 s**, SHA256 `938a937f3e9a4308a1e67ae7c39f5e5fe9e5cf57b590b0e007c0cd05683d7980`.
+- Geometry is explicitly schematic. Earlier radar/Metox is separate from centimetric radar; HF/DF has no Allied transmitted pulse; bearings are directions/areas, not exact positions; sonar is below water. ONS 5 fog operations show surface radar, with air operations limited. SC 130's eight sightings appear as a boxed observation counter, not eight destroyed or unique submarines. The convoy symbols are not historical ship counts.
+- **P5 / Bainbridge recovered**, 740×565 archived Naval Historical Center distribution copy, catalogue and hash retained. Full still inspected: the embedded caption names ship, photograph ID, New York Harbor and 19 August 1943. Inset only; never an ONS 5 ship. `ARCHIVE_PROVENANCE.md` and `ARCHIVE_HARVEST.json` carry the details. **P3 remains unavailable** after bounded alternate searches; use its existing map alternatives instead of repeatedly retrying the broken Navy endpoint.
+- Built **thumbnail B: LIBERATOR**, real P1 monochrome photo, black object label in clear sky; inspected full size and at 168 pixels. On NAS: `03_Picture/previews/thumbnail_B_candidate_v01.jpg` and `thumbnail_B_phone_v01.jpg`. A remains the no-text alternative. No test armed, no upload.
+
+All media paths above are relative to `/Volumes/data/studio-live/ww2/02_Video-Projects/002_Closing-The-Atlantic-Black-Pit-May-1943/`. Maps carry their original code and the existing Natural Earth public-domain coastline basis. Both final contact sheets were inspected as still images; full-size checks caught and corrected missing arrow glyphs, overlapping symbols/text and the Newfoundland locator. No claim of watching animation or hearing narration is made. These are draft teaching states, not polished final-film approval. There is no music in either draft.
+
+## Resume without duplicating work
+
+Both batches are **complete**, no render remains running. `/Users/benjaminoats/_desk/logs/j2996/detection-v01.done` and `convoys-v01.done` are **0**; logs have matching names ending `.log`. No need to wait or re-render unchanged clips. The convoy batch's first attempt was deliberately stopped for a layout correction; the completed restart supersedes it.
+
+`detection_maps.py` and `convoy_maps.py` render each state's still and video. `render_detection_draft.py --media <root> --done <marker>` renders/muxes/checks detection; add `--renderer convoy_maps.py --batch convoys_v01` for convoy comparison. Use the documented Pillow-enabled Python 3.14. `picture_inventory.py --media <root>` checks narration/timings and all clip/sequence hashes against the EDL.
+
+Still unfinished: **39 paragraph briefs** outside these batches and the existing L001 opening; **169 sentence rows** after counting the separate four-sentence opening. Some are archive treatments rather than maps. L039 and L049 onward still need building; don't treat the two draft sequences as contiguous. Resolve all nine EDL boundary flags and chapter pauses; integrate archive insets and slow moves; select film-specific licensed music within the £0 brief; build the full edit; run technical QA and a capable watch/listen quality review; reconcile the voice review; only then send the finished cut to Ben's board. Keep job progress at **1/5** until the whole picture/map step is finished. The current partial work needs no new spend, account or publishing permission.
+
+---
+
 # J2996 — edit preparation, 18 November 2026
 
 This is an unfinished film. No full-film QA, picture PASS, audio perception, motion review, or Ben-watch submission is claimed.
