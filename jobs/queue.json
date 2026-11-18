@@ -255274,10 +255274,10 @@
       "stage": "upload",
       "after": "J2859",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-18T12:28Z",
+      "eta": "2026-11-18T14:28Z",
       "created_by": "macbook",
       "created_at": "2026-11-14T20:37Z",
       "result": "",
@@ -255356,6 +255356,11 @@
           "at": "2026-11-17T09:37Z",
           "by": "relay",
           "what": "rerouted to claudecode on mini-claude-opus-5-5: Cursor is unavailable or lacks required input; next in its chain: claudecode on its default"
+        },
+        {
+          "at": "2026-11-18T12:28Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "In Orbit Studio (CDP 9223), arm 3-way thumbnail Test & Compare on ileYnHpLLCU, add end screen (Subscribe + VBaYRPp85Sw), and pin j01_pinned_v01.txt (do not re-upload)",
@@ -255382,7 +255387,15 @@
         "by": ""
       },
       "for": "claudecode",
-      "model": "mini-claude-opus-5-5"
+      "model": "mini-claude-opus-5-5",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-18T12:28Z",
+        "by": "claudecode",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2858",
