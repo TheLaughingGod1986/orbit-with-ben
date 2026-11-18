@@ -270746,13 +270746,27 @@
           "at": "2026-11-18T09:07Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-18T09:07Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-18T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Wait for desk #180 Chief/owner HOS 009 score route decision after J2808 hold (v01 failed music_gate 0.821; v02 failed J2807 ear review on 6 silent dropouts in 18.",
       "kind": "review",
       "recheck_of": "J2035",
       "due": "2026-11-15T18:00:00+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J3039",
