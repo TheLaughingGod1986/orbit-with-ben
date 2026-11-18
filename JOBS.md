@@ -76,6 +76,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3067 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2993 |  |
 | J3068 | mini | open | – | – | chief · Chief: resolve 001 edit orphan-blocked |  |
 | J3070 | mini | claimed | codex | 2026-11-18T22:20Z | for codex · assembly · `gpt-6.1-sol` · Restore HOS Studio response for the plants Short first-day check |  |
+| J3071 | macbook | open | – | – | studio · Verify MacBook HOS Studio fallback for the plants Short |  |
 
 Recently finished:
 

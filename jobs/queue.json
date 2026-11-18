@@ -1,5 +1,5 @@
 {
-  "next_id": 3071,
+  "next_id": 3072,
   "jobs": [
     {
       "id": "J0001",
@@ -274467,6 +274467,36 @@
       "taskKeys": [
         "HOS:006"
       ]
+    },
+    {
+      "id": "J3071",
+      "title": "Verify MacBook HOS Studio fallback for the plants Short",
+      "needs": "macbook",
+      "repo": "hos",
+      "body": "Acting-Chief Codex, J3070, 18 Nov 2026: use the established MacBook local HOS Studio browser as the read-only fallback. The Mini browser process responds instantly, but the existing HOS Studio renderer does not answer Runtime.evaluate via direct target or flattened browser session (8-second timeouts); Playwright CDP attachment times out after 10 seconds. Lifecycle activation and same-target navigation did not restore it. Mini target is left at the plants Short Since published Analytics URL; no Chrome restart, process kill, profile/extension/login change or video setting change is authorized.\n\nOn the MacBook itself, use cdp_tabs.reuse_page on the local HOS CDP port (9222), check browser activity first, and verify document title/body respond promptly, signed-in channel HistoryOfScienceYT, and Since published analytics for ChbsigHD5_o loads. Save timestamped sanitized evidence and report exact observed time. No upload, scheduling, title/privacy/metadata change, money, credits, guessed host, remote connection or login change. If there is no responsive signed-in HOS browser, record the exact result and hold for a concrete browser repair plan; never claim a performance verdict without figures.\n\nIf responsive, report evidence on J3070 so that its worker can verify recovery/fallback and reopen J3063 for its original remaining setup checks and analytics. Do not claim or modify J3063 or J3064 in this job. J3063 stays held until the fallback is verified. This is a prerequisite to the existing launch check, not a second performance audit.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-18T20:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T20:24Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify the signed-in plants video statistics on the MacBook",
+      "due": "2026-11-18T20:45:00Z",
+      "kind": "studio",
+      "plain": "Restore access to the plants video statistics using the MacBook"
     }
   ],
   "focus": [
