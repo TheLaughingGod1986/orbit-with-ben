@@ -274012,9 +274012,14 @@
           "at": "2026-11-18T18:42Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-18T18:42Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3067; checking J2993 waiting condition and predecessor status"
         }
       ],
-      "remaining_action": "Verify readiness: Choose archive replacements, then finish the full edit and score",
+      "remaining_action": "Inspect J2993 predecessor jobs, VO/script/shot-list gates, and WW2:001 status",
       "kind": "review",
       "recheck_of": "J2993",
       "due": "2026-11-18T19:32:00+00:00",
@@ -274033,9 +274038,11 @@
         "of": 3,
         "at": "2026-11-18T18:42Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3067; checking J2993 waiting condition and predecessor status"
+      },
+      "taskKeys": [
+        "WW2:001"
+      ]
     },
     {
       "id": "J3068",
