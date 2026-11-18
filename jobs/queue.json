@@ -269885,18 +269885,23 @@
           "at": "2026-11-18T16:42Z",
           "by": "codex",
           "what": "step 3 of 4 done: Restored existing four-step plan after reading prior history; preparation and PR 1011 already exist. Continuing launcher and CI adapters, not repeating rehearsal."
+        },
+        {
+          "at": "2026-11-18T16:48Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: PR 1011 updated fa88da52dd: separate engine launcher, main-only recovery, slot 2 engine isolation. Full future layout 1357 tests exit 0, six skips. No live switch; final acceptance remains."
         }
       ],
-      "remaining_action": "Finish launcher and workflow compatibility before the gated studio move",
+      "remaining_action": "Finish CI and service cutover adapters, verify private board access, then execute the gated move",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-18T16:42Z",
+        "at": "2026-11-18T16:48Z",
         "by": "codex",
-        "note": "Restored existing four-step plan after reading prior history; preparation and PR 1011 already exist. Continuing launcher"
+        "note": "PR 1011 updated fa88da52dd: separate engine launcher, main-only recovery, slot 2 engine isolation. Full future layout 13"
       }
     },
     {
