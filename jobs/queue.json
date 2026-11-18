@@ -1,5 +1,5 @@
 {
-  "next_id": 3075,
+  "next_id": 3084,
   "jobs": [
     {
       "id": "J0001",
@@ -268718,6 +268718,11 @@
           "at": "2026-11-18T20:34Z",
           "by": "claude",
           "what": "repo owb -> ww2 (registered film prefix WW2), so WW2 work stops writing Orbit's film records; J3060 / PR #1021"
+        },
+        {
+          "at": "2026-11-18T20:46Z",
+          "by": "relay",
+          "what": "condition verification queued: J3075"
         }
       ],
       "remaining_action": "Route the finished candidate to a capable film reviewer and resolve remaining labels and voice review",
@@ -268738,11 +268743,12 @@
       "hold": {
         "type": "capability",
         "condition": "Full 24:03.04 candidate v04 requires actual watch/listen for speech, score fit, motion and pacing. This session has only demonstrated still-image viewing and shell text output; no audio_input or moving_video_input. Final hash, full-decode/frame and unchanged-audio checks recorded in PR1018; remaining label overlap at 430/470 seconds and open voice PR1014 documented. Route to capable reviewer or Chief for decision under final-watch standing order.",
-        "check_at": "2026-11-18T20:45:00Z",
+        "check_at": "2026-11-18T21:46:02+00:00",
         "requires": [
           "audio_input",
           "moving_video_input"
-        ]
+        ],
+        "recheck_task": "J3075"
       },
       "required_capabilities": [
         "audio_input",
@@ -274841,6 +274847,313 @@
       "kind": "studio",
       "plain": "Put back the Orbit film records that the new WW2 channel's jobs overwrote by mistake",
       "urgent": 6
+    },
+    {
+      "id": "J3075",
+      "title": "Verify condition for J2996",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2996: Full 24:03.04 candidate v04 requires actual watch/listen for speech, score fit, motion and pacing. This session has only demonstrated still-image viewing and shell text output; no audio_input or moving_video_input. Final hash, full-decode/frame and unchanged-audio checks recorded in PR1018; remaining label overlap at 430/470 seconds and open voice PR1014 documented. Route to capable reviewer or Chief for decision under final-watch standing order.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2996 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-18T20:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T20:46Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Route the finished candidate to a capable film reviewer and resolve remaining labels and voice review",
+      "kind": "review",
+      "recheck_of": "J2996",
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ],
+      "due": "2026-11-18T21:46:02+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3076",
+      "title": "Chief: resolve 001 script orphan-review",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Resolve recorded workflow gap: {\"film\": \"001\", \"stage\": \"script\", \"kind\": \"orphan-review\", \"signature\": \"adbf056ac58c7da58bb9\"}. Read the current film status, original job results, approval history and actual evidence. Record a specific PASS/FIX or queue the missing next action with film/stage and dependencies. Unknown records are not approvals. Never mark media approved from a filename, prose lock, or job completion alone. If review needs media, verify on the Mini and perform required listening/viewing. Preserve all Chief/Ben gates, focus priority, holds and scheduling. No paid generation, upload or visibility change is authorized by this repair task. Before closing, resolve the stage state or create a linked successor/correction/review job; otherwise keep this task on a structured hold with a specific condition and next check.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-18T20:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T20:46Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief resolves 001 script handoff and records the next owner/action",
+      "kind": "chief",
+      "handoff": {
+        "film": "001",
+        "stage": "script",
+        "kind": "orphan-review",
+        "signature": "adbf056ac58c7da58bb9"
+      }
+    },
+    {
+      "id": "J3077",
+      "title": "Chief: resolve 001 vo orphan-review",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Resolve recorded workflow gap: {\"film\": \"001\", \"stage\": \"vo\", \"kind\": \"orphan-review\", \"signature\": \"4900d67a4011fa0700a7\"}. Read the current film status, original job results, approval history and actual evidence. Record a specific PASS/FIX or queue the missing next action with film/stage and dependencies. Unknown records are not approvals. Never mark media approved from a filename, prose lock, or job completion alone. If review needs media, verify on the Mini and perform required listening/viewing. Preserve all Chief/Ben gates, focus priority, holds and scheduling. No paid generation, upload or visibility change is authorized by this repair task. Before closing, resolve the stage state or create a linked successor/correction/review job; otherwise keep this task on a structured hold with a specific condition and next check.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-18T20:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T20:46Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief resolves 001 vo handoff and records the next owner/action",
+      "kind": "chief",
+      "handoff": {
+        "film": "001",
+        "stage": "vo",
+        "kind": "orphan-review",
+        "signature": "4900d67a4011fa0700a7"
+      }
+    },
+    {
+      "id": "J3078",
+      "title": "Chief: resolve 001 edit orphan-blocked",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Resolve recorded workflow gap: {\"film\": \"001\", \"stage\": \"edit\", \"kind\": \"orphan-blocked\", \"signature\": \"d05e9f3051f72425a3d6\"}. Read the current film status, original job results, approval history and actual evidence. Record a specific PASS/FIX or queue the missing next action with film/stage and dependencies. Unknown records are not approvals. Never mark media approved from a filename, prose lock, or job completion alone. If review needs media, verify on the Mini and perform required listening/viewing. Preserve all Chief/Ben gates, focus priority, holds and scheduling. No paid generation, upload or visibility change is authorized by this repair task. Before closing, resolve the stage state or create a linked successor/correction/review job; otherwise keep this task on a structured hold with a specific condition and next check.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-18T20:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T20:46Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief resolves 001 edit handoff and records the next owner/action",
+      "kind": "chief",
+      "handoff": {
+        "film": "001",
+        "stage": "edit",
+        "kind": "orphan-blocked",
+        "signature": "d05e9f3051f72425a3d6"
+      }
+    },
+    {
+      "id": "J3079",
+      "title": "Chief: resolve 002 script orphan-review",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Resolve recorded workflow gap: {\"film\": \"002\", \"stage\": \"script\", \"kind\": \"orphan-review\", \"signature\": \"19232ad52a0bf266d5ea\"}. Read the current film status, original job results, approval history and actual evidence. Record a specific PASS/FIX or queue the missing next action with film/stage and dependencies. Unknown records are not approvals. Never mark media approved from a filename, prose lock, or job completion alone. If review needs media, verify on the Mini and perform required listening/viewing. Preserve all Chief/Ben gates, focus priority, holds and scheduling. No paid generation, upload or visibility change is authorized by this repair task. Before closing, resolve the stage state or create a linked successor/correction/review job; otherwise keep this task on a structured hold with a specific condition and next check.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-18T20:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T20:46Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief resolves 002 script handoff and records the next owner/action",
+      "kind": "chief",
+      "handoff": {
+        "film": "002",
+        "stage": "script",
+        "kind": "orphan-review",
+        "signature": "19232ad52a0bf266d5ea"
+      }
+    },
+    {
+      "id": "J3080",
+      "title": "Chief: resolve 002 vo orphan-review",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Resolve recorded workflow gap: {\"film\": \"002\", \"stage\": \"vo\", \"kind\": \"orphan-review\", \"signature\": \"e7f6996f7bc11c9c5434\"}. Read the current film status, original job results, approval history and actual evidence. Record a specific PASS/FIX or queue the missing next action with film/stage and dependencies. Unknown records are not approvals. Never mark media approved from a filename, prose lock, or job completion alone. If review needs media, verify on the Mini and perform required listening/viewing. Preserve all Chief/Ben gates, focus priority, holds and scheduling. No paid generation, upload or visibility change is authorized by this repair task. Before closing, resolve the stage state or create a linked successor/correction/review job; otherwise keep this task on a structured hold with a specific condition and next check.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-18T20:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T20:46Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief resolves 002 vo handoff and records the next owner/action",
+      "kind": "chief",
+      "handoff": {
+        "film": "002",
+        "stage": "vo",
+        "kind": "orphan-review",
+        "signature": "e7f6996f7bc11c9c5434"
+      }
+    },
+    {
+      "id": "J3081",
+      "title": "Chief: resolve 003 picture orphan-review",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Resolve recorded workflow gap: {\"film\": \"003\", \"stage\": \"picture\", \"kind\": \"orphan-review\", \"signature\": \"f7b56ccdda63d9815156\"}. Read the current film status, original job results, approval history and actual evidence. Record a specific PASS/FIX or queue the missing next action with film/stage and dependencies. Unknown records are not approvals. Never mark media approved from a filename, prose lock, or job completion alone. If review needs media, verify on the Mini and perform required listening/viewing. Preserve all Chief/Ben gates, focus priority, holds and scheduling. No paid generation, upload or visibility change is authorized by this repair task. Before closing, resolve the stage state or create a linked successor/correction/review job; otherwise keep this task on a structured hold with a specific condition and next check.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-18T20:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T20:46Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief resolves 003 picture handoff and records the next owner/action",
+      "kind": "chief",
+      "handoff": {
+        "film": "003",
+        "stage": "picture",
+        "kind": "orphan-review",
+        "signature": "f7b56ccdda63d9815156"
+      }
+    },
+    {
+      "id": "J3082",
+      "title": "Chief: resolve 005 script orphan-review",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Resolve recorded workflow gap: {\"film\": \"005\", \"stage\": \"script\", \"kind\": \"orphan-review\", \"signature\": \"37b49cdb792b975cc1d5\"}. Read the current film status, original job results, approval history and actual evidence. Record a specific PASS/FIX or queue the missing next action with film/stage and dependencies. Unknown records are not approvals. Never mark media approved from a filename, prose lock, or job completion alone. If review needs media, verify on the Mini and perform required listening/viewing. Preserve all Chief/Ben gates, focus priority, holds and scheduling. No paid generation, upload or visibility change is authorized by this repair task. Before closing, resolve the stage state or create a linked successor/correction/review job; otherwise keep this task on a structured hold with a specific condition and next check.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-18T20:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T20:46Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief resolves 005 script handoff and records the next owner/action",
+      "kind": "chief",
+      "handoff": {
+        "film": "005",
+        "stage": "script",
+        "kind": "orphan-review",
+        "signature": "37b49cdb792b975cc1d5"
+      }
+    },
+    {
+      "id": "J3083",
+      "title": "Chief: resolve 006 script orphan-review",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Resolve recorded workflow gap: {\"film\": \"006\", \"stage\": \"script\", \"kind\": \"orphan-review\", \"signature\": \"2fce1143db441fe345fe\"}. Read the current film status, original job results, approval history and actual evidence. Record a specific PASS/FIX or queue the missing next action with film/stage and dependencies. Unknown records are not approvals. Never mark media approved from a filename, prose lock, or job completion alone. If review needs media, verify on the Mini and perform required listening/viewing. Preserve all Chief/Ben gates, focus priority, holds and scheduling. No paid generation, upload or visibility change is authorized by this repair task. Before closing, resolve the stage state or create a linked successor/correction/review job; otherwise keep this task on a structured hold with a specific condition and next check.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-18T20:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T20:46Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief resolves 006 script handoff and records the next owner/action",
+      "kind": "chief",
+      "handoff": {
+        "film": "006",
+        "stage": "script",
+        "kind": "orphan-review",
+        "signature": "2fce1143db441fe345fe"
+      }
     }
   ],
   "focus": [

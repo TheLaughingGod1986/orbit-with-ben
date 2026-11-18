@@ -61,6 +61,15 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3070 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Restore HOS Studio response for the plants Short first-day check |  |
 | J3073 | any | open (after J3072) | – | – | chief · Integrate repaired Field Order History connection prerequisites |  |
 | J3074 | mini | open | – | – | for codex · studio · Orbit 001-006: undo the stage changes WW2 jobs wrote into Orbit's film records |  |
+| J3075 | mini | open | – | – | review · Verify condition for J2996 |  |
+| J3076 | mini | open | – | – | chief · Chief: resolve 001 script orphan-review |  |
+| J3077 | mini | open | – | – | chief · Chief: resolve 001 vo orphan-review |  |
+| J3078 | mini | open | – | – | chief · Chief: resolve 001 edit orphan-blocked |  |
+| J3079 | mini | open | – | – | chief · Chief: resolve 002 script orphan-review |  |
+| J3080 | mini | open | – | – | chief · Chief: resolve 002 vo orphan-review |  |
+| J3081 | mini | open | – | – | chief · Chief: resolve 003 picture orphan-review |  |
+| J3082 | mini | open | – | – | chief · Chief: resolve 005 script orphan-review |  |
+| J3083 | mini | open | – | – | chief · Chief: resolve 006 script orphan-review |  |
 
 Recently finished:
 
