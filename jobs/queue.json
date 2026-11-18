@@ -1,5 +1,5 @@
 {
-  "next_id": 3049,
+  "next_id": 3050,
   "jobs": [
     {
       "id": "J0001",
@@ -271851,6 +271851,37 @@
       "taskKeys": [
         "HOS:009"
       ]
+    },
+    {
+      "id": "J3049",
+      "title": "WW2: add an ad-safety packaging rule and the £2 RPM planning figure, and check the pilot thumbnails",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Why (18 Nov 12:21Z).** Ben asked what this niche pays. vidIQ's estimates for 17 English WW2 and military history channels give a median of about $2.65 (roughly £2) per 1,000 long-form views, with a range of $1.03 to $3.52. Those are vidIQ's model figures, not measured ones. Revenue can drop sharply on films YouTube marks \"limited ads\" (the yellow icon). WW2 is especially exposed: Nazi insignia, atrocity imagery and shock words in a thumbnail or title are the usual triggers. Rule 5 already bans gore; it says nothing about packaging.\n\n**Do, in TheLaughingGod1986/ww2-channel.**\n1. In `studio/RULES.md`, add one short ad-safety rule. No swastika, Nazi flag, SS runes or other Nazi insignia in a thumbnail, and none in the first 30 seconds of a film unless the story truly needs it. No bodies, executions or atrocity pictures in a thumbnail. No shock words in titles (massacre, slaughter, butchered and the like). Each film shows enough ad breaks for its length, at chapter boundaries, never in the middle of a sentence. After every upload, record the film's monetisation icon in its status file once the channel is monetised.\n2. In `00_Brand/PLAYBOOK.md`, add a revenue line. The planning figure is £2 per 1,000 long views until our own analytics replace it. So £200 a month needs about 100k views, £300 about 150k and £500 about 250k. January RPM runs about a third below November. Once YouTube reports our real RPM, replace the estimate with it.\n3. Check the three pilot thumbnails and the J3005 packaging library against the new rule. Fix any thumbnail that breaks it and list what changed.\n\n**Guards.** £0. No upload. Nothing sent to Ben.\n\n**Result.** The rule text, the playbook line, and the thumbnail check, delivered as one PR on ww2-channel.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 40,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-18T12:21Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T12:21Z",
+          "by": "claude",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Add the WW2 ad-safety rule (no Nazi insignia or atrocity images in thumbnails, no shock titles), the £2 RPM line, and check the pilot thumbnails",
+      "due": "2026-11-20T18:00:00Z",
+      "for": "codex",
+      "kind": "studio",
+      "plain": "Keep Field Order History's films fully monetised and put a realistic revenue figure in its plan"
     }
   ],
   "focus": [
