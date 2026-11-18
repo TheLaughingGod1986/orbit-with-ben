@@ -1,0 +1,17 @@
+# J2993 continuation — fourteenth checkpoint, 18 November 2026
+
+Codex covering. Existing five-step plan remains at 1/5. £0 spent. No finished film, film-quality approval or Ben-watch submission.
+
+Added 22 narration-timed construction scenes spanning film time 629.84–752.28 (122.44 seconds, 3,061 frames at 25 fps, 1920×1080). Every scene start independently matches an exact word start in the locked Scribe transcript, then rounds to the existing 25 fps clock. Source claims are inherited from J2991 S5 / S20–S23; no spoken line changed. Own explanatory schematics cover the production order, 147 assault and 65 supplementary units, A1 dimensions and equipment, dock capacity, Thames basins, initial concrete trays, breaching and towing, and completing walls afloat. Two subject-matched cleared originals, H 35379 and H 40320, are intercut with full source edges retained and fixed credits. Source hashes are checked against archive_cleared_v07.json; enlargement remains below 2.35x.
+
+Reviewed the 22-scene contact sheet and the basin diagram at full size. Corrected the flooding diagram before rendering so the breached levee opens into the basin and the tray rises with the water. Geometry and locations are conceptual; the chamber display represents the count, not the real partition layout. Several text-led cards are sparse editorial drafts and need the eventual quality decision on picture balance, alongside prior sections. No claims or film-quality PASS is implied.
+
+All clips and the narrated construction preview fully decode. Frame count, clock continuity, dimensions, frame rate and both stream durations verified; 52 NAS file hashes matched. Thirteen existing email/private-network safety tests passed. Available input tools were inspected and capabilities recorded: still-image and technical evidence only; no claim of hearing narration or perceiving moving video. No score yet.
+
+build_extended_preview_v14.py joins the previous 88.08–629.84 silent section and new construction section, then takes one continuous extract of the unchanged narration. Result: 88.08–752.28, 664.20 seconds, 16,605 contiguous frames; full decode and stream durations checked. No audio splice at the join.
+
+NAS: studio-live/ww2/02_Video-Projects/001_Mulberry-Harbours-Floating-Ports-D-Day/03_Picture/construction_sequence_v14/ and chapter_preview_v14/. Preview: chapter_preview_v14/chapter_88s_to_752s_narration_v14.mp4. Scratch matches these J2993 names on MiniWork. The renderer uses Pillow; this session's interpreter is /private/tmp/j2993-v14-env/bin/python. No background process remains after checkpoint.
+
+Next: remaining picture coverage 0–88.08 and 752.28–1656.70, with subject-matched archive intercuts, then full edit, original score, thumbnail and upload package, technical checks and Chief quality decision before Ben's watch. Keep narration continuous across S39/S40. Use the already-authorised sourced-diagram fallback; no new Chief ruling is needed for it. Do not upload.
+
+Worktree /Users/benjaminoats/_desk/ww2/J2993-wt, branch codex/J2993-continue-v04, existing draft PR #1012. This continuation remains on that pre-migration PR; no channel rules or Orbit film stages changed. Standalone WW2 checkout has no AGENTS.md. Its channel RULES and shared safety rules were read. OWB startup pull encountered divergent branches; the shared checkout was not reconciled. HOS and WW2 pulls were already current.
