@@ -22,7 +22,7 @@ The initial tmux attempt failed because the existing tmux server could not write
 
 ## Next actions in this same job
 
-1. Recover P3 / 80-G-86005 and P5 / 19-N-50553 from an authoritative alternate distribution; both supplied Navy catalogue URLs returned 404 through curl. Do not retry the unchanged links indefinitely. P5 does not occur in the current shot rows: omit from the final used-image credits unless actually used. The line-specific map alternatives may replace an unavailable contextual photograph without changing narration.
+1. Recover P3 / 80-G-86005 and P5 / 19-N-50553 from an authoritative alternate distribution; both supplied Navy catalogue URLs returned 404 through curl. Do not retry the unchanged links indefinitely. P3 occurs in two shot rows and P5 in one; all three need recovery or their line-specific map alternatives. The line-specific map alternatives may replace an unavailable contextual photograph without changing narration.
 2. Render the remaining 57 paragraph map briefs and sentence states with real geographic/tactical content. Do not reuse the opening as generic filler. Verify submarine/radar/HF-DF mechanisms and the ONS5 fog / SC130 distinctions against their exact spoken lines. Inspect all rendered states.
 3. Resolve the nine EDL boundary flags, chapter pauses and full-film edit timing; VO words stay locked. Use slow moves on archive photographs within their actual resolution.
 4. Select a properly licensed WW2-specific music bed within the £0 brief. No OWB/HOS media reuse. Do not generate music or spend credits without a separately checked authorised route and live subscription preflight.
