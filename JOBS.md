@@ -68,11 +68,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3025 | mini | open | – | – | chief · Chief: resolve 002 script orphan-doing |  |
 | J3026 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
 | J3027 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3020 |  |
-| J3028 | mini | claimed | codex | 2026-11-18T06:10Z | chief · J2985: integrate reviewed credit panel and verify live board |  |
 | J3029 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2985 |  |
 
 Recently finished:
 
+- J3028 done: J2985: integrate reviewed credit panel and verify live board (PR987 integrated and merged d7f2b56595; phone label fix PR1008 merged ce5ef9fa09. Cloudflare 9883e7bf, live version e4d6d8d41f87195e. 107 Python tests, both JS suites, 15 security checks and CI pass. Live 390px Agents Credits and AI verified: readable Time, historical readings, preserved Ultra decision, no overflow or unsafe downgrade advice. Evidence: /Users/benjaminoats/_desk/reviews/J3028/REPORT.md)
 - J3024 done: J2985: correct credit history and downgrade advice before merge (Chief KEEP at d569a115d3, PR 987 comment 6968740645: 104 Python tests, both JS suites, 13 security tests, static build and core/rules checks pass; phone evidence inspected. J3028 owns conflict integration, revalidation, merge and live verification; J2985 remains held.)
 - J3011 done: Orbit: Ben locked the every-planet film, book its slot and start the build (Ben lock recorded; Wed 16 Dec 2026 18:00 London reserved with no dated film moved. J3020 script/sources due 23 Nov, J3021 narration due 25 Nov, J3022 shelf picture/graphics/three thumbnails due 4 Dec, J3023 master QA and Ben watch due 11 Dec. Plan needs-you line cleared; stale film brief updated. PRs 1004 and 1005 merged; checks passed. No spend or YouTube change.)
 - J3009 done: WW2 channel: move it into its own repo with history, register it, check it out on both Macs (PR #1001 open (macbook/J3009 -> main): moved channels/ww2/ with history to TheLaughingGod1986/ww2-channel (first commit f0d1c8051bd1, HEAD 22fa00c8ffce; in-flight PRs mirrored as #1-#6); registered ww2 in channels/channels.json (channel_check --all PASS); checked out and push-verified on both the Mini (~/YouTube/ww2) and the MacBook (~/_desk/worker[/slot2]/ww2-channel); WW2 board ticks routed to #954 in checks.js; open/blocked WW2 jobs (J2993-J2996, J2998, J3000, J3002, J3006, J3007) repointed to repo=ww2.)
@@ -109,4 +109,3 @@ Do now
 Carry forward
   - A strong start is a lesson too: note what is different about this one.)
 - J3002 done: WW2 film 006: topic review, script and sources, "Why Britain Built Its Fastest WW2 Bomber Out of Plywood and Balsa" (Completed WW2:006 (De Havilland Mosquito) topic review (GO recommended: 3 neighbours 5.39M/3.11M/2.39M views, Crown-expired IWM/TNA/LAC & US PD archive coverage, 3 titles + 2 thumbs), 3,300-word / 20,947-char narration script across 7 sections (vo_take.py --dry-run PASS, <= 21,000 cap, £0 spent), 10-work SOURCES.md, independent CLAIMS_CHECK.md (28/28 verified), 54-shot SHOT_LIST.md + 14 code graphics (G1-G14), and 03_Picture/ARCHIVE_PROVENANCE.md. Opened orbit-with-ben PR #1002 and ww2-channel PR #7.)
-- J3001 done: WW2 film 005: topic review, script and sources, "How One Old Destroyer Rammed Germany's Only Atlantic Dry Dock" (done)
