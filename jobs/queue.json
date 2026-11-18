@@ -269763,10 +269763,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-18T16:41Z",
+      "eta": "2026-11-18T20:41Z",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
       "result": "",
@@ -269870,6 +269870,11 @@
           "at": "2026-11-18T15:25Z",
           "by": "codex",
           "what": "released: PR 1011 at 1d3d29ad9a contains tested thread/ref adapters and rehearsal findings. Next: launcher/bootstrap and CI adapters, deployed BOARD_GH_TOKEN Contents access, old-entrypoint single-writer safeguards; refresh final rehearsal. Keep step 3/4 until gated live relay/publish/tick acceptance. Five official zero days through 18 Nov; prior-day notice still required. No live migration, spend or deployment."
+        },
+        {
+          "at": "2026-11-18T16:41Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Prepare service and CI adapters, verify private board access, then execute the gated studio move",
