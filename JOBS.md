@@ -66,10 +66,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3025 | mini | open | – | – | chief · Chief: resolve 002 script orphan-doing |  |
 | J3026 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
 | J3027 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3020 |  |
-| J3029 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2985 |  |
+| J3030 | mini | open | – | – | chief · Chief: resolve 002 script orphan-review |  |
 
 Recently finished:
 
+- J3029 cancelled: Verify condition for J2985 ()
 - J3028 done: J2985: integrate reviewed credit panel and verify live board (PR987 integrated and merged d7f2b56595; phone label fix PR1008 merged ce5ef9fa09. Cloudflare 9883e7bf, live version e4d6d8d41f87195e. 107 Python tests, both JS suites, 15 security checks and CI pass. Live 390px Agents Credits and AI verified: readable Time, historical readings, preserved Ultra decision, no overflow or unsafe downgrade advice. Evidence: /Users/benjaminoats/_desk/reviews/J3028/REPORT.md)
 - J3024 done: J2985: correct credit history and downgrade advice before merge (Chief KEEP at d569a115d3, PR 987 comment 6968740645: 104 Python tests, both JS suites, 13 security tests, static build and core/rules checks pass; phone evidence inspected. J3028 owns conflict integration, revalidation, merge and live verification; J2985 remains held.)
 - J3011 done: Orbit: Ben locked the every-planet film, book its slot and start the build (Ben lock recorded; Wed 16 Dec 2026 18:00 London reserved with no dated film moved. J3020 script/sources due 23 Nov, J3021 narration due 25 Nov, J3022 shelf picture/graphics/three thumbnails due 4 Dec, J3023 master QA and Ben watch due 11 Dec. Plan needs-you line cleared; stale film brief updated. PRs 1004 and 1005 merged; checks passed. No spend or YouTube change.)
@@ -106,4 +107,3 @@ Do now
 
 Carry forward
   - A strong start is a lesson too: note what is different about this one.)
-- J3002 done: WW2 film 006: topic review, script and sources, "Why Britain Built Its Fastest WW2 Bomber Out of Plywood and Balsa" (Completed WW2:006 (De Havilland Mosquito) topic review (GO recommended: 3 neighbours 5.39M/3.11M/2.39M views, Crown-expired IWM/TNA/LAC & US PD archive coverage, 3 titles + 2 thumbs), 3,300-word / 20,947-char narration script across 7 sections (vo_take.py --dry-run PASS, <= 21,000 cap, £0 spent), 10-work SOURCES.md, independent CLAIMS_CHECK.md (28/28 verified), 54-shot SHOT_LIST.md + 14 code graphics (G1-G14), and 03_Picture/ARCHIVE_PROVENANCE.md. Opened orbit-with-ben PR #1002 and ww2-channel PR #7.)

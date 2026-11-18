@@ -1,5 +1,5 @@
 {
-  "next_id": 3030,
+  "next_id": 3031,
   "jobs": [
     {
       "id": "J0001",
@@ -269760,7 +269760,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -269777,6 +269777,11 @@
           "at": "2026-11-18T04:09Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-18T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-18T04:42Z",
+          "by": "relay",
+          "what": "cancelled: nothing left to verify, J2985 is done"
         }
       ],
       "remaining_action": "Verify readiness: Await J3028 integration and verified live credit cards before closing delivery",
@@ -269793,6 +269798,40 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J3030",
+      "title": "Chief: resolve 002 script orphan-review",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Resolve recorded workflow gap: {\"film\": \"002\", \"stage\": \"script\", \"kind\": \"orphan-review\", \"signature\": \"19232ad52a0bf266d5ea\"}. Read the current film status, original job results, approval history and actual evidence. Record a specific PASS/FIX or queue the missing next action with film/stage and dependencies. Unknown records are not approvals. Never mark media approved from a filename, prose lock, or job completion alone. If review needs media, verify on the Mini and perform required listening/viewing. Preserve all Chief/Ben gates, focus priority, holds and scheduling. No paid generation, upload or visibility change is authorized by this repair task. Before closing, resolve the stage state or create a linked successor/correction/review job; otherwise keep this task on a structured hold with a specific condition and next check.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-18T04:42Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T04:42Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief resolves 002 script handoff and records the next owner/action",
+      "kind": "chief",
+      "handoff": {
+        "film": "002",
+        "stage": "script",
+        "kind": "orphan-review",
+        "signature": "19232ad52a0bf266d5ea"
+      }
     }
   ],
   "focus": [
