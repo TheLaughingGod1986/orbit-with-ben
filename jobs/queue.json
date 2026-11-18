@@ -1,5 +1,5 @@
 {
-  "next_id": 3042,
+  "next_id": 3043,
   "jobs": [
     {
       "id": "J0001",
@@ -271371,6 +271371,36 @@
         "kind": "orphan-doing",
         "signature": "028f01f7073b6d9c3b21"
       }
+    },
+    {
+      "id": "J3042",
+      "title": "HOS 009: revise opening music scope after silent phrase gaps",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Chief ruling from J3038: J2035 condition NOT MET. J2808 NOT_ACCEPTED_HOLD remains in force; neither v01 nor v02 accepted. Read jobs/reviews/J3038/REVIEW.md, HOS 009 EAR_REVIEW_J2807.md and NAS SCORE_SCOPE_J2805.json / SCORE_DISPOSITION_J2808.json. No spending or media changes in this job.\n\nPrepare a replacement opening-cue scope and exact prompt for wonder_v03, for elected-Chief review. Route chosen: a new 180-second instrumental chamber opening with continuously overlapping instrumental parts, gently changing harmony/register and quiet audible accompaniment throughout. Remove the contradictory instruction about space between short phrases: breathing room for narration means restrained register and dynamics, not rests or fade-to-silence between phrases. Retain soft gut-string lute and viol colour, period fit, 60-66 BPM, no lead melody, no static bass-drone opening, no driving ostinato. Retain D-minor harmonic handoff and the existing 175.28-178.28s equal-power join, untouched teach_v01 hash 4c1f0a17364ad5ba96fdd2d42730b2f857d19017fab52b221701bd4e15d07bb1, all narration/picture/diagram locks and final-tail coverage.\n\nPropose at most ONE request, 180 seconds, music_v2 through existing Mini generate_music_bed.py and el_client/el_guard, 3000 subscription credits maximum, zero cash/overage/retries. This is a proposal only, not spend release. Carry forward every J2805 billing guard, complete-library unchanged music_gate, no loops/patches/filtering/padding or timing changes, original-file preservation and Mini/NAS hash verification. Add explicit timestamped silence/continuity evidence and a fresh demonstrated audio_input review of the cue, complete joined score, transition, locked-VO mix and tail. Existing v01/v02 failures remain failed. No PR908 deployment or gate changes.\n\nDeliver a HOS PR against main containing the new scope and prompt; 20-minute text-work budget. Report exact changes addressing both earlier failure modes and link the PR to the queued Chief successor. No hearing claim from text/measurements, no new generation, no YouTube/Buffer changes. J2035 and J2171 stay held until a later accepted score. Do not create duplicate successor jobs.\n",
+      "ref": "J3038",
+      "film": "009",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-18T11:23Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T11:23Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Prepare a continuous opening music brief for Chief review",
+      "due": "2026-11-18T15:00:00Z",
+      "kind": "review",
+      "plain": "Rewrite the opening music brief for the gravity film so the music stays audible"
     }
   ],
   "focus": [

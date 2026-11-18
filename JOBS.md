@@ -67,6 +67,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3038 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2035 |  |
 | J3039 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
 | J3041 | mini | open | – | – | chief · Chief: resolve 002 edit orphan-doing |  |
+| J3042 | any | open | – | – | 009 edit · review · HOS 009: revise opening music scope after silent phrase gaps | J3038 |
 
 Recently finished:
 
