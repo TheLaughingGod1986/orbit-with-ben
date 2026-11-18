@@ -269683,10 +269683,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-18T05:07Z",
+      "eta": "2026-11-18T07:07Z",
       "created_by": "relay",
       "created_at": "2026-11-18T03:07Z",
       "result": "",
@@ -269700,6 +269700,11 @@
           "at": "2026-11-18T03:07Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-18T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-18T05:07Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Chief or Claude records explicit script lock on 064 master v01 (commit 3b9f165c43) and closes J3020 to release J3021 VO",
@@ -269715,7 +269720,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-18T05:07Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3028",
