@@ -270296,9 +270296,14 @@
           "at": "2026-11-18T13:15Z",
           "by": "relay",
           "what": "condition verification queued: J3051"
+        },
+        {
+          "at": "2026-11-18T16:39Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-18T22:45:00Z"
         }
       ],
-      "remaining_action": "Complete J3036 corrections and J3037 source review and script lock before releasing narration",
+      "remaining_action": "Resolve publication permission for the completed script review, then record its follow-up",
       "due": "2026-11-23T18:00:00Z",
       "kind": "script",
       "plain": "Write and check the script for the every-planet film",
@@ -270323,12 +270328,11 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "J3027 Chief FIX: v01 is not locked. Requires J3036 corrected script and fresh Gemini facts, then J3037 independent direct-quote verification and exact-hash script lock. Neptune ratio and Earth core-depth wording failed review. J3021 remains dependent on J3020.",
-        "check_at": "2026-11-18T14:15:33+00:00",
-        "last_recheck": "J3027",
-        "checked_at": "2026-11-18T07:11:15+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3051"
+        "condition": "The J3051 ruling and follow-up remain local because automatic approval review requires explicit permission to publish them. No accepted script lock is recorded; J3021 remains dependent on J3020. Recheck publication permission and the recorded follow-up before any release.",
+        "check_at": "2026-11-18T22:45:00Z",
+        "last_recheck": "J3051",
+        "checked_at": "2026-11-18T16:39:03+00:00",
+        "checked_by": "codex"
       },
       "escalated_at": "2026-11-18T06:14Z"
     },
