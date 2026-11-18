@@ -1942,7 +1942,7 @@
       const bars = `<div class="credit-bars">` +
         (pm.usedShare != null ? `<div class="cbar"><div class="cbar-head"><strong>Used</strong><span>${esc(pm.usedDetail)}</span></div><div class="bar"><i class="${pm.tone}" style="width:${usedW}%"></i></div></div>` : "") +
         (pm.timeShare != null ? `<div class="cbar"><div class="cbar-head"><strong>Time</strong><span>${esc(pm.timeDetail)}</span></div><div class="bar"><i class="time" style="width:${timeW}%"></i></div></div>`
-          : pm.windowEnd ? `<div class="cbar"><div class="cbar-head"><strong>Time</strong><span>${esc(pm.timeDetail || pm.windowEnd)}</span></div></div>` : "") +
+          : `<div class="cbar"><div class="cbar-head"><strong>Time</strong><span>${esc(pm.timeDetail || pm.windowEnd)}</span></div></div>`) +
         `</div>`;
       return `<a class="credit" href="/ai"><div class="credit-top"><span>${esc(name)}</span><b class="${pm.tone}">${esc(pm.fig)}${pm.paceWord ? `<span class="credit-pace">· ${esc(pm.paceWord)}</span>` : ""}</b></div>` +
         (pm.planLine ? `<div class="credit-plan">${esc(pm.planLine)}</div>` : "") +
@@ -1998,34 +1998,27 @@
     const raw = mClause[1].trim();
     if (/^\d+%\s*used/i.test(raw)) return null;
     const refYear = new Date(refMs).getUTCFullYear();
-    const dm = raw.match(/^(?:(?:mon|tue|wed|thu|fri|sat|sun)[a-z]*\s+)?(\d{1,2})\s+(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*(?:\s+(\d{1,2}):(\d{2})(?:\s*([ap]m)|(\s*z))?)?/i);
-    const md = !dm && raw.match(/^(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\s+(\d{1,2})(?:\s+(\d{1,2}):(\d{2})(?:\s*([ap]m)|(\s*z))?)?/i);
+    const dm = raw.match(/^(?:(?:mon|tue|wed|thu|fri|sat|sun)[a-z]*\s+)?(\d{1,2})\s+(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*(?:\s+(\d{4}))?(?:\s+(\d{1,2}):(\d{2})\s*([ap]m)?\s*(UTC|GMT|Z)?)?/i);
+    const md = !dm && raw.match(/^(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\s+(\d{1,2})(?:,?\s+(\d{4}))?(?:\s+(\d{1,2}):(\d{2})\s*([ap]m)?\s*(UTC|GMT|Z)?)?/i);
     if (dm || md) {
-      const day = Number(dm ? dm[1] : md[2]), mon0 = CREDIT_MONS[(dm ? dm[2] : md[1]).slice(0, 3).toLowerCase()];
-      const hhRaw = dm ? dm[3] : md[3], mmRaw = dm ? dm[4] : md[4], ap = dm ? dm[5] : md[5], isZ = Boolean(dm ? dm[6] : md[6]);
-      const build = yr => {
-        if (hhRaw != null) {
-          const [h, m] = parseClock24(hhRaw, mmRaw, ap);
-          return isZ ? Date.UTC(yr, mon0, day, h, m) : londonWallToUtc(yr, mon0, day, h, m);
-        }
-        return londonWallToUtc(yr, mon0, day, 0, 0);
-      };
-      let endMs = build(refYear);
-      if (endMs < refMs - 60 * 864e5) endMs = build(refYear + 1);
-      const label = hhRaw != null
-        ? `resets ${londonShortDate(endMs)}, ${londonClock(endMs)}`
-        : `resets ${londonShortDate(Date.UTC(new Date(endMs).getUTCFullYear(), mon0, day, 12, 0))}`;
-      return { endMs, hasClock: hhRaw != null, label };
+      const match = dm || md;
+      const day = Number(dm ? match[1] : match[2]), mon0 = CREDIT_MONS[(dm ? match[2] : match[1]).slice(0, 3).toLowerCase()];
+      const year = match[3] ? Number(match[3]) : refYear;
+      const [h, m] = parseClock24(match[4] || 0, match[5], match[6]);
+      const build = yr => match[7] ? Date.UTC(yr, mon0, day, h, m) : londonWallToUtc(yr, mon0, day, h, m);
+      let endMs = build(year);
+      if (!match[3] && endMs < refMs - 60 * 864e5) endMs = build(year + 1);
+      return { endMs, hasClock: match[4] != null, label: `resets ${londonShortDate(endMs)}${match[4] != null ? ', ' + londonClock(endMs) : ''}` };
     }
-    const wd = raw.match(/^(mon|tue|wed|thu|fri|sat|sun)[a-z]*\s+(\d{1,2})(?::(\d{2}))?\s*([ap]m|z)?/i);
+    const wd = raw.match(/^(mon|tue|wed|thu|fri|sat|sun)[a-z]*\s+(\d{1,2})(?::(\d{2}))?\s*([ap]m)?\s*(UTC|GMT|Z)?/i);
     if (wd) {
       const targetDow = CREDIT_DAYS[wd[1].slice(0, 3).toLowerCase()];
-      const isZ = String(wd[4] || "").toLowerCase() === "z";
-      const [h, m] = parseClock24(wd[2], wd[3], isZ ? "" : wd[4]);
-      const rp = londonParts(refMs);
+      const isUtc = Boolean(wd[5]);
+      const [h, m] = parseClock24(wd[2], wd[3], wd[4]);
+      const rp = isUtc ? {y: new Date(refMs).getUTCFullYear(), m0: new Date(refMs).getUTCMonth(), d: new Date(refMs).getUTCDate()} : londonParts(refMs);
       for (let off = 0; off <= 7; off++) {
-        const cand = isZ ? Date.UTC(rp.y, rp.m0, rp.d + off, h, m) : londonWallToUtc(rp.y, rp.m0, rp.d + off, h, m);
-        if (londonParts(cand).dow === targetDow && cand >= refMs - 1800e3) {
+        const cand = isUtc ? Date.UTC(rp.y, rp.m0, rp.d + off, h, m) : londonWallToUtc(rp.y, rp.m0, rp.d + off, h, m);
+        if ((isUtc ? new Date(cand).getUTCDay() : londonParts(cand).dow) === targetDow && cand >= refMs - 1800e3) {
           return { endMs: cand, hasClock: true, label: `resets ${londonShortDate(cand)}, ${londonClock(cand)}` };
         }
       }
@@ -2042,6 +2035,9 @@
     const sub = plans.find(p => Array.isArray(p.pools) && p.pools.includes(id)) || (matchRe ? plans.find(p => matchRe.test(p.name || "")) : null) || {};
     const start = cyc.start || (pool && pool.since) || sub.cycleStart || "";
     const renews = sub.billingVerified === false ? "" : cyc.renews || (pool && pool.renews) || sub.renews || "";
+    const aw = (pool && pool.allowanceWindow) || (sub.allowanceWindows || {})[id] || {};
+    const allowanceStartMs = aw.verified === true ? Date.parse(aw.start || "") : NaN;
+    const allowanceEndMs = aw.verified === true ? Date.parse(aw.end || "") : NaN;
     const gbp = cyc.gbp != null ? cyc.gbp : sub.gbp;
     const currentGbp = cyc.currentGbp != null ? cyc.currentGbp : sub.currentGbp;
     const planName = (cyc.planName || sub.name || "").replace(/\s*\(30 TB\)|\s*\(shared plan\)|\s*\(Codex\)|\s*\(top tier\)/gi, "").trim();
@@ -2054,7 +2050,7 @@
     const planLine = [planName, priceBit ? (shared ? `${priceBit} shared` : priceBit) : "", renewLabel || (planName ? "billing renewal date unread · rolling history" : "")]
       .filter(Boolean).join(" · ");
     return {
-      planName, gbp, currentGbp, start, renews, startMs, endMs, renewLabel, planLine, shared,
+      planName, gbp, currentGbp, start, renews, startMs, endMs, renewLabel, planLine, allowanceStartMs, allowanceEndMs, shared,
       usageNote: cyc.usageNote || sub.usageNote || "",
       billingNote: cyc.billingNote || sub.billingNote || "",
       next: cyc.next || sub.next || "",
@@ -2162,7 +2158,7 @@
     let expiredWindow = false;
     const lastDate = !isNaN(atMs) ? new Date(atMs).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "Europe/London" }) : "";
 
-    let timeShare = null, windowEnd = "", timeDetail = "";
+    let timeShare = null, windowEnd = "", timeDetail = "Time unavailable · allowance reset/window unread";
     if (isWeekly) {
       const wr = parseWeeklyReset(lt.note, !isNaN(atMs) ? atMs : now);
       if (wr) {
@@ -2173,12 +2169,24 @@
         timeShare = Math.max(0, Math.min(1, (now - startMs) / (7 * 864e5)));
         timeDetail = `${Math.round(timeShare * 100)}% of week · ${wr.label}`;
       }
+    } else if (!isNaN(pmMeta.allowanceStartMs) && !isNaN(pmMeta.allowanceEndMs) && pmMeta.allowanceEndMs > pmMeta.allowanceStartMs) {
+      windowEnd = `allowance resets ${londonShortDate(pmMeta.allowanceEndMs)}, ${londonClock(pmMeta.allowanceEndMs)}`;
+      expiredWindow = now >= pmMeta.allowanceEndMs;
+      stale = stale || expiredWindow;
+      timeShare = Math.max(0, Math.min(1, (now - pmMeta.allowanceStartMs) / (pmMeta.allowanceEndMs - pmMeta.allowanceStartMs)));
+      timeDetail = `${Math.round(timeShare * 100)}% of allowance window · ${windowEnd}`;
     } else if (!isNaN(pmMeta.startMs) && !isNaN(pmMeta.endMs) && pmMeta.endMs > pmMeta.startMs) {
       windowEnd = pmMeta.renewLabel;
       timeShare = Math.max(0, Math.min(1, (now - pmMeta.startMs) / (pmMeta.endMs - pmMeta.startMs)));
       timeDetail = `${Math.round(timeShare * 100)}% of month · ${windowEnd}`;
     }
 
+    if (!isWeekly && timeShare == null && !isNaN(pmMeta.allowanceEndMs)) {
+      windowEnd = `allowance resets ${londonShortDate(pmMeta.allowanceEndMs)}, ${londonClock(pmMeta.allowanceEndMs)} · start unread; Time unavailable`;
+      expiredWindow = now >= pmMeta.allowanceEndMs;
+      stale = stale || expiredWindow;
+      timeDetail = windowEnd;
+    }
     if (expiredWindow) { timeShare = null; timeDetail = "Previous window ended · awaiting refreshed reading"; }
     let tone = "green", paceWord = "";
     if (stale) {
@@ -2209,6 +2217,7 @@
     }
     if (fableHit) extras.push("Fable model weekly limit 100% used");
     if (id === "flow" && pmMeta.usageNote) extras.push(pmMeta.usageNote);
+    if (pmMeta.next) extras.push(pmMeta.next);
     const extraNote = extras.join(" · ");
     const verdict = buildPlanVerdict(id, pool, credits, pmMeta, used, total, usedShare, stale, isWeekly, now);
     const note = [usedDetail, windowEnd, verdict, extraNote].filter(Boolean).join(" · ");

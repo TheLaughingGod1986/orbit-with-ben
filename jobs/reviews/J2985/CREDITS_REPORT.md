@@ -37,3 +37,14 @@ The previous screenshots were board renders, not provider billing evidence. They
 ## Handoff
 
 Chief re-review of J2985/PR #987 is next. The original J2985 hold is preserved. Merge, publish and live-phone verification remain pending. Billing uncertainty is represented in the product and does not require Ben to do anything unless he chooses to supply his actual ChatGPT login for a future billing read.
+
+
+## Follow-up to Chief review 6968024257 (18 Nov, J3024)
+
+Both browser reset parsers now retain explicit years and UTC/GMT/Z clocks. Matching regressions cover the 18 Nov 2026 10:00Z reading before and after reset, UTC/GMT in British Summer Time, London-local clocks, explicit past years and year rollover. Explicit past resets remain past; no refill is inferred.
+
+Allowance evidence is independent of billing identity. A verified allowance window with both start and end supplies Time without supplying billing bounds or enabling downgrade advice. A verified end alone displays the reset date and an explicit start-unread / Time-unavailable state. The existing sanitized ElevenLabs API reset timestamp is now retained as allowance evidence; its start/duration remain unread. Flow and Vertex have no verified allowance window in the available evidence and visibly say Time unavailable instead of silently losing the second row. No billing date has been promoted to allowance evidence. Ben's recorded keep-Ultra-one-more-month / then-review decision is visible independently of calculated verdicts on both pages, including when advice is withheld.
+
+Validation for this follow-up: 104 relevant Python tests PASS; both JS suites PASS with matching parsing and actual unverified-billing metadata fixtures, verified allowance boundaries and end-only evidence. Static board build, core sync, rules sync and diff checks PASS. Fresh 390px screenshots were generated from the rebuilt app and current local credit document in the existing J3024 evidence folder. Both full credit captures were visually inspected: Time rows, end-only ElevenLabs reset, historical Codex wording and the Ultra decision are visible. Browser horizontal overflow is false. These are local board renders, not provider captures or live deployment evidence.
+
+Updated PR #987 returns for Chief re-review. J2985 remains held after J3024. No merge, deployment, new provider read, subscription change or spend occurred in this follow-up.

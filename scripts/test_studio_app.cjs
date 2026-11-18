@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, channelsSection, channelsPage, channelCard, channelLight, channelFacts, firstDayCard, firstDaySection, firstDayPage, firstDayNext, planCard, planSection, planPage, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
+  globalThis.test = {parseWeeklyReset,normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, channelsSection, channelsPage, channelCard, channelLight, channelFacts, firstDayCard, firstDaySection, firstDayPage, firstDayNext, planCard, planSection, planPage, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -1603,4 +1603,39 @@ console.log('Jobs running count checks OK');
  assert(/historical.*awaiting refreshed/.test(expired.paceWord));
  const near = t.poolMeter('claude',{unit:'%',latest:{at:'2026-11-17T12:00Z',left:6,total:100,note:'weekly resets Wednesday 10:00 AM'}},{},now);
  assert(!near.paceWord.includes('at limit'), '94% is near limit, never exhaustion');
+}
+
+// J3024 follow-up: reset parsing agrees with explicit provider clocks and years.
+{
+ const cases = [
+  ['weekly resets 18 Nov 2026 10:00Z','2026-11-18T08:00Z','2026-11-18T10:00Z'],
+  ['weekly resets Wednesday 10:00 UTC','2026-07-07T12:00Z','2026-07-08T10:00Z'],
+  ['weekly resets Wednesday 10:00 GMT','2026-07-07T12:00Z','2026-07-08T10:00Z'],
+  ['weekly resets Wednesday 10:00 AM','2026-07-07T12:00Z','2026-07-08T09:00Z'],
+  ['weekly resets 2 Jan 2027 10:00Z','2026-12-31T12:00Z','2027-01-02T10:00Z'],
+  ['weekly resets Jan 2 2027 10:00 UTC','2026-12-31T12:00Z','2027-01-02T10:00Z'],
+  ['weekly resets 2 Jan 2026 10:00Z','2026-12-31T12:00Z','2026-01-02T10:00Z'],
+ ];
+ for (const [note,at,end] of cases) assert.equal(t.parseWeeklyReset(note,Date.parse(at)).endMs,Date.parse(end),note);
+ const p={unit:'%',latest:{at:'2026-11-18T08:00Z',left:0,total:100,note:cases[0][0]}};
+ assert(t.poolMeter('codex',p,{},Date.parse('2026-11-18T09:00Z')).timeShare>0,'before actual reset is current');
+ assert.equal(t.poolMeter('codex',p,{},Date.parse('2026-11-18T10:01Z')).timeShare,null,'after actual reset is historical');
+ // Actual unverified subscription metadata must neither hide Time nor the recorded decision.
+ const plans=JSON.parse(fs.readFileSync(path.join(__dirname,'../05_Analytics/ai_spend/plans.json'))).subscriptions;
+ const now=Date.parse('2026-11-18T09:00Z');
+ const flow={unit:'credits',latest:{at:'2026-11-18T08:00Z',left:24500,total:25000},series:[]};
+ const c={plans,pools:{flow},tiers:{flow:[{current:true,allow:25000,gbp:189.99,verified:false}]}};
+ assert.equal(t.poolMeter('flow',flow,c,now).timeShare,null,'unknown allowance start cannot borrow unverified billing');
+ let html=t.agents({credits:c,models:{models:[]},owb:{jobs:[]}},now);
+ assert(html.includes('Time unavailable'),'explicit unavailable Time row');
+ assert(html.includes('keep Ultra') && html.includes('then review'),'Ben decision visible without computed verdict');
+ const known={...flow,allowanceWindow:{verified:true,start:'2026-11-12T00:00Z',end:'2026-12-12T00:00Z'}};
+ const state=t.poolMeter('flow',known,c,now);
+ assert(state.timeShare>0 && state.timeShare<1,'verified allowance independent of unverified billing');
+ assert(!state.verdict.includes('Could drop'),'allowance evidence does not verify billing or tiers');
+ const el={unit:'credits',latest:{at:'2026-11-18T08:00Z',left:67893,total:121114},series:[]};
+ const e=t.poolMeter('elevenlabs',el,{plans},now);
+ assert.equal(e.timeShare,null,'reset end alone does not establish duration');
+ const ehtml=t.agents({credits:{plans,pools:{elevenlabs:el}},models:{models:[]},owb:{jobs:[]}},now);
+ assert(ehtml.includes('start unread'),'verified reset date survives unknown billing');
 }

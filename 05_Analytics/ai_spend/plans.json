@@ -83,7 +83,14 @@
       "billingDay": 30,
       "covers": "Ben's narrator voice and house music cues, both channels",
       "source": "18 Nov API confirms Creator and credit reset timestamp, not subscription billing renewal.",
-      "billingVerified": false
+      "billingVerified": false,
+      "allowanceWindows": {
+        "elevenlabs": {
+          "verified": true,
+          "end": "2026-11-30T10:50:31+00:00",
+          "source": "Subscription API credit-reset timestamp observed 2026-11-18T00:08:01Z; start/duration unread. Not billing renewal evidence."
+        }
+      }
     }
   ],
   "target": {

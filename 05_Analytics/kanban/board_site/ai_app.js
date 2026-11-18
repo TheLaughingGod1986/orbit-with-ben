@@ -91,35 +91,28 @@
     const raw = mClause[1].trim();
     if (/^\d+%\s*used/i.test(raw)) return null;
     const refYear = new Date(refMs).getUTCFullYear();
-    const dm = raw.match(/^(?:(?:mon|tue|wed|thu|fri|sat|sun)[a-z]*\s+)?(\d{1,2})\s+(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*(?:\s+(\d{1,2}):(\d{2})(?:\s*([ap]m)|(\s*z))?)?/i);
-    const md = !dm && raw.match(/^(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\s+(\d{1,2})(?:\s+(\d{1,2}):(\d{2})(?:\s*([ap]m)|(\s*z))?)?/i);
+    const dm = raw.match(/^(?:(?:mon|tue|wed|thu|fri|sat|sun)[a-z]*\s+)?(\d{1,2})\s+(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*(?:\s+(\d{4}))?(?:\s+(\d{1,2}):(\d{2})\s*([ap]m)?\s*(UTC|GMT|Z)?)?/i);
+    const md = !dm && raw.match(/^(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\s+(\d{1,2})(?:,?\s+(\d{4}))?(?:\s+(\d{1,2}):(\d{2})\s*([ap]m)?\s*(UTC|GMT|Z)?)?/i);
     if (dm || md) {
-      const day = Number(dm ? dm[1] : md[2]), mon0 = MONS[(dm ? dm[2] : md[1]).slice(0, 3).toLowerCase()];
-      const hhRaw = dm ? dm[3] : md[3], mmRaw = dm ? dm[4] : md[4], ap = dm ? dm[5] : md[5], isZ = Boolean(dm ? dm[6] : md[6]);
-      const build = yr => {
-        if (hhRaw != null) {
-          const [h, m] = parseClock24(hhRaw, mmRaw, ap);
-          return isZ ? Date.UTC(yr, mon0, day, h, m) : londonWallToUtc(yr, mon0, day, h, m);
-        }
-        return londonWallToUtc(yr, mon0, day, 0, 0);
-      };
-      let endMs = build(refYear);
-      if (endMs < refMs - 60 * 864e5) endMs = build(refYear + 1);
-      const label = hhRaw != null
-        ? `resets ${londonShortDate(endMs)}, ${londonClock(endMs)}`
-        : `resets ${londonShortDate(Date.UTC(new Date(endMs).getUTCFullYear(), mon0, day, 12, 0))}`;
-      return { endMs, label };
+      const match = dm || md;
+      const day = Number(dm ? match[1] : match[2]), mon0 = MONS[(dm ? match[2] : match[1]).slice(0, 3).toLowerCase()];
+      const year = match[3] ? Number(match[3]) : refYear;
+      const [h, m] = parseClock24(match[4] || 0, match[5], match[6]);
+      const build = yr => match[7] ? Date.UTC(yr, mon0, day, h, m) : londonWallToUtc(yr, mon0, day, h, m);
+      let endMs = build(year);
+      if (!match[3] && endMs < refMs - 60 * 864e5) endMs = build(year + 1);
+      return { endMs, hasClock: match[4] != null, label: `resets ${londonShortDate(endMs)}${match[4] != null ? ', ' + londonClock(endMs) : ''}` };
     }
-    const wd = raw.match(/^(mon|tue|wed|thu|fri|sat|sun)[a-z]*\s+(\d{1,2})(?::(\d{2}))?\s*([ap]m|z)?/i);
+    const wd = raw.match(/^(mon|tue|wed|thu|fri|sat|sun)[a-z]*\s+(\d{1,2})(?::(\d{2}))?\s*([ap]m)?\s*(UTC|GMT|Z)?/i);
     if (wd) {
       const targetDow = DAYS[wd[1].slice(0, 3).toLowerCase()];
-      const isZ = String(wd[4] || "").toLowerCase() === "z";
-      const [h, m] = parseClock24(wd[2], wd[3], isZ ? "" : wd[4]);
-      const rp = londonParts(refMs);
+      const isUtc = Boolean(wd[5]);
+      const [h, m] = parseClock24(wd[2], wd[3], wd[4]);
+      const rp = isUtc ? {y: new Date(refMs).getUTCFullYear(), m0: new Date(refMs).getUTCMonth(), d: new Date(refMs).getUTCDate()} : londonParts(refMs);
       for (let off = 0; off <= 7; off++) {
-        const cand = isZ ? Date.UTC(rp.y, rp.m0, rp.d + off, h, m) : londonWallToUtc(rp.y, rp.m0, rp.d + off, h, m);
-        if (londonParts(cand).dow === targetDow && cand >= refMs - 1800e3) {
-          return { endMs: cand, label: `resets ${londonShortDate(cand)}, ${londonClock(cand)}` };
+        const cand = isUtc ? Date.UTC(rp.y, rp.m0, rp.d + off, h, m) : londonWallToUtc(rp.y, rp.m0, rp.d + off, h, m);
+        if ((isUtc ? new Date(cand).getUTCDay() : londonParts(cand).dow) === targetDow && cand >= refMs - 1800e3) {
+          return { endMs: cand, hasClock: true, label: `resets ${londonShortDate(cand)}, ${londonClock(cand)}` };
         }
       }
     }
@@ -156,6 +149,9 @@
     const sub = plans.find(p => Array.isArray(p.pools) && p.pools.includes(id)) || (matchRe ? plans.find(p => matchRe.test(p.name || "")) : null) || {};
     const start = cyc.start || (pool && pool.since) || sub.cycleStart || "";
     const renews = sub.billingVerified === false ? "" : cyc.renews || (pool && pool.renews) || sub.renews || "";
+    const aw = (pool && pool.allowanceWindow) || (sub.allowanceWindows || {})[id] || {};
+    const allowanceStartMs = aw.verified === true ? Date.parse(aw.start || "") : NaN;
+    const allowanceEndMs = aw.verified === true ? Date.parse(aw.end || "") : NaN;
     const gbp = cyc.gbp != null ? cyc.gbp : sub.gbp;
     const currentGbp = cyc.currentGbp != null ? cyc.currentGbp : sub.currentGbp;
     const planName = (cyc.planName || sub.name || "").replace(/\s*\(30 TB\)|\s*\(shared plan\)|\s*\(Codex\)|\s*\(top tier\)/gi, "").trim();
@@ -165,7 +161,7 @@
     const priceBit = currentGbp && gbp && currentGbp !== gbp ? `£${currentGbp}/mo now (£${gbp} planned)` : gbp != null ? `£${gbp}/mo` : "";
     const planLine = [planName, priceBit, renewLabel || (planName ? "billing renewal date unread · rolling history" : "")].filter(Boolean).join(" · ");
     return {
-      planName, gbp, currentGbp, start, renews, startMs, endMs, renewLabel, planLine,
+      planName, gbp, currentGbp, start, renews, startMs, endMs, renewLabel, planLine, allowanceStartMs, allowanceEndMs,
       usageNote: cyc.usageNote || sub.usageNote || "",
       billingNote: cyc.billingNote || sub.billingNote || "",
       next: cyc.next || sub.next || "",
@@ -258,7 +254,7 @@
     let expiredWindow = false;
     const lastDate = !isNaN(atMs) ? new Date(atMs).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "Europe/London" }) : "";
 
-    let timeShare = null, windowEnd = "";
+    let timeShare = null, windowEnd = "Time unavailable · allowance reset/window unread";
     if (isWeekly) {
       const wr = parseWeeklyReset(lt.note, !isNaN(atMs) ? atMs : now);
       if (wr) {
@@ -267,12 +263,22 @@
         stale = stale || expiredWindow;
         timeShare = Math.max(0, Math.min(1, (now - (wr.endMs - 7 * 864e5)) / (7 * 864e5)));
       }
+    } else if (!isNaN(pmMeta.allowanceStartMs) && !isNaN(pmMeta.allowanceEndMs) && pmMeta.allowanceEndMs > pmMeta.allowanceStartMs) {
+      windowEnd = `allowance resets ${londonShortDate(pmMeta.allowanceEndMs)}, ${londonClock(pmMeta.allowanceEndMs)}`;
+      expiredWindow = now >= pmMeta.allowanceEndMs;
+      stale = stale || expiredWindow;
+      timeShare = Math.max(0, Math.min(1, (now - pmMeta.allowanceStartMs) / (pmMeta.allowanceEndMs - pmMeta.allowanceStartMs)));
     } else if (!isNaN(pmMeta.startMs) && !isNaN(pmMeta.endMs) && pmMeta.endMs > pmMeta.startMs) {
       windowEnd = pmMeta.renewLabel;
       timeShare = Math.max(0, Math.min(1, (now - pmMeta.startMs) / (pmMeta.endMs - pmMeta.startMs)));
     }
 
-    if (expiredWindow) timeShare = null;
+    if (!isWeekly && timeShare == null && !isNaN(pmMeta.allowanceEndMs)) {
+      windowEnd = `allowance resets ${londonShortDate(pmMeta.allowanceEndMs)}, ${londonClock(pmMeta.allowanceEndMs)} · start unread; Time unavailable`;
+      expiredWindow = now >= pmMeta.allowanceEndMs;
+      stale = stale || expiredWindow;
+    }
+    if (expiredWindow) { timeShare = null; windowEnd = "Previous window ended · awaiting refreshed reading"; }
     let status = "green", barTone = "green", why = "";
     if (!lt.at || isNaN(ageH)) { status = "amber"; barTone = "amber"; why = "no reading yet"; }
     else if (expiredWindow) { status = "amber"; barTone = "amber"; why = "historical · awaiting refreshed reading"; }
@@ -289,7 +295,7 @@
     const burn = stale ? null : burnPerDay(pool.series, now);
     const daysLeft = burn && lt.left != null ? lt.left / burn : null;
     const verdict = poolVerdict(id, pool, credits, pmMeta, used, total, usedShare, stale, isWeekly, now);
-    return { status, barTone, why, total, used, share, usedShare, timeShare, windowEnd, planLine: pmMeta.planLine, verdict, pmMeta, stale, lastDate, burn, daysLeft, left: lt.left, at: lt.at, note: lt.note || "" };
+    return { status, barTone, why, total, used, share, usedShare, timeShare, windowEnd, planLine: pmMeta.planLine, verdict, pmMeta, stale, lastDate, burn, daysLeft, left: lt.left, at: lt.at, decision: pmMeta.next, note: lt.note || "" };
   }
 
   function chiefHtml(models, now) {
@@ -323,16 +329,16 @@
         : s.used != null && s.total ? `${num(s.used, p.unit)} of ${num(s.total, p.unit)}${p.unit === "GBP" ? ` (${num(s.left, "GBP")} total promo left)` : ""}` : `${num(s.left, p.unit)} left`;
       const usedW = s.usedShare != null ? Math.max(s.usedShare > 0 ? 2 : 0, Math.round(s.usedShare * 100)) : 0;
       const timeW = s.timeShare != null ? Math.max(s.timeShare > 0 ? 2 : 0, Math.round(s.timeShare * 100)) : 0;
-      const usedBar = s.usedShare != null ? `<div class="cbar"><div class="cbar-head"><strong>Used</strong><span>${esc(usedDetail)}</span></div><div class="bar"><i class="${s.barTone}" style="width:${usedW}%"></i></div></div>` : "";
+      const usedBar = s.usedShare != null ? `<div class="cbar"><div class="cbar-head"><strong>Used</strong><span>${esc(usedDetail)}</span></div><div class="bar"><i class="${s.barTone}" style="width:${usedW}%"></i></div></div>` : `<div class="cbar"><div class="cbar-head"><strong>Time</strong><span>${esc(s.windowEnd)}</span></div></div>`;
       const isWeekly = WEEKLY.has(id) || p.unit === "%";
-      const timeBar = s.timeShare != null ? `<div class="cbar"><div class="cbar-head"><strong>Time</strong><span>${Math.round(s.timeShare * 100)}% of ${isWeekly ? "week" : "month"} · ${esc(s.windowEnd)}</span></div><div class="bar"><i class="time" style="width:${timeW}%"></i></div></div>` : "";
+      const timeBar = s.timeShare != null ? `<div class="cbar"><div class="cbar-head"><strong>Time</strong><span>${Math.round(s.timeShare * 100)}% of ${isWeekly ? "week" : "allowance window"} · ${esc(s.windowEnd)}</span></div><div class="bar"><i class="time" style="width:${timeW}%"></i></div></div>` : `<div class="cbar"><div class="cbar-head"><strong>Time</strong><span>${esc(s.windowEnd)}</span></div></div>`;
       const whyText = s.stale && s.lastDate ? `${s.why} (last read ${s.lastDate})` : s.why;
       const pace = s.daysLeft >= 1 ? ` · at this pace about ${Math.round(s.daysLeft)} days left` : "";
       const extras = [id === "flow" ? s.pmMeta.usageNote : "", id === "cursor" ? s.pmMeta.billingNote : ""].filter(Boolean).join(" · ");
       return `<li class="pool">${dot(s.status)}<div><b>${esc(name)}</b> <span class="muted">${esc(what)}</span>
         ${s.planLine ? `<div class="muted small">${esc(s.planLine)}</div>` : ""}
         <div class="figure">${esc(fig)}${whyText ? ` · <span class="${s.barTone}t">${esc(whyText)}</span>` : ""}</div>${usedBar}${timeBar}
-        ${s.verdict ? `<div class="verdict">${esc(s.verdict)}</div>` : ""}
+        ${s.decision ? `<div class="credit-verdict">${esc(s.decision)}</div>` : ""}${s.verdict ? `<div class="verdict">${esc(s.verdict)}</div>` : ""}
         ${extras ? `<div class="muted small">${esc(extras)}</div>` : ""}
         <div class="muted small">Read ${esc(ago(s.at, now))}${pace}${s.note ? " · " + esc(clip(s.note, 160)) : ""}</div></div></li>`;
     }).join("");
