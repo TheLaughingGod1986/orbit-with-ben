@@ -68,7 +68,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3025 | mini | open | – | – | chief · Chief: resolve 002 script orphan-doing |  |
 | J3026 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
 | J3027 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3020 |  |
-| J3028 | mini | open (after J3024) | – | – | chief · J2985: integrate reviewed credit panel and verify live board |  |
+| J3028 | mini | claimed | codex | 2026-11-18T06:10Z | chief · J2985: integrate reviewed credit panel and verify live board |  |
 | J3029 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2985 |  |
 
 Recently finished:
