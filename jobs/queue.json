@@ -270567,9 +270567,14 @@
           "at": "2026-11-18T07:14Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-18T07:15Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3036 and 064 script on board"
         }
       ],
-      "remaining_action": "Correct the planet script and verify every spoken claim",
+      "remaining_action": "Inspecting J3027 ruling, OWB 064 v01 script, sources, and shelf inventory",
       "due": "2026-11-23T18:00:00Z",
       "kind": "script",
       "plain": "Correct and check the every-planet narration before recording it",
@@ -270584,12 +270589,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-18T07:14Z",
+        "of": 5,
+        "at": "2026-11-18T07:15Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3036 and 064 script on board"
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3037",
