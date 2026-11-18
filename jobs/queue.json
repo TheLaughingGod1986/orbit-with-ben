@@ -270778,9 +270778,14 @@
           "at": "2026-11-18T09:20Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-18T09:21Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3038; starting condition verification for J2035 (HOS 009 long assembly)"
         }
       ],
-      "remaining_action": "Verify readiness: Wait for desk #180 Chief/owner HOS 009 score route decision after J2808 hold (v01 failed music_gate 0.821; v02 failed J2807 ear review on 6 silent dropouts in 18.",
+      "remaining_action": "Inspect J2035 and HOS 009 music chain (J2805, J2806, J2807, J2808) in QUEUE.json and HOS checkout",
       "kind": "review",
       "recheck_of": "J2035",
       "due": "2026-11-15T18:00:00+00:00",
@@ -270797,11 +270802,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-18T09:20Z",
+        "at": "2026-11-18T09:21Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3038; starting condition verification for J2035 (HOS 009 long assembly)"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J3039",
