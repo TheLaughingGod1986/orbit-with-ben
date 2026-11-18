@@ -226644,9 +226644,14 @@
           "at": "2026-11-18T03:15Z",
           "by": "codex",
           "what": "step 1 of 4 done: 58 PR heads audited. HOS #640 carries #521 with its single address removed plus #573/#592 unchanged; checks pass locally. Closed #484 as superseded by #536. Stage 2 remains in progress."
+        },
+        {
+          "at": "2026-11-18T03:17Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Merged HOS #640 (4720ee48), sanitized and carried #521/#573/#592, closed those and superseded #484. All local and GitHub checks pass; open PRs 58 to 54 including protected desk. Stage 2 incomplete."
         }
       ],
-      "remaining_action": "Land the sanitized records carry, then finish the remaining HOS PR sweep before the mirror rehearsal",
+      "remaining_action": "Resolve the remaining 53 ordinary HOS pull requests, then rehearse the history rewrite; preserve desk 180",
       "due": "2026-11-18T18:00:00Z",
       "kind": "chief",
       "plain": "Remove email addresses from both channels' repos, including their past versions",
@@ -226654,9 +226659,9 @@
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-18T03:15Z",
+        "at": "2026-11-18T03:17Z",
         "by": "codex",
-        "note": "58 PR heads audited. HOS #640 carries #521 with its single address removed plus #573/#592 unchanged; checks pass locally"
+        "note": "Merged HOS #640 (4720ee48), sanitized and carried #521/#573/#592, closed those and superseded #484. All local and GitHub"
       },
       "taskKeys": [
         "HOS:008",
