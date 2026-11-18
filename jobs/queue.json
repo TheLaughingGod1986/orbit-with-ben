@@ -272589,13 +272589,13 @@
       "stage": "edit",
       "after": "J3052",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-18T15:58Z",
-      "eta": "2026-11-18T17:58Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-18T13:30Z",
-      "result": "",
+      "result": "REQUEST CHANGES on HOS PR651 ff02370b: adopt J3052 three required fixes. Eight tests pass; 28 probes reproduce findings. Decision desk6983970987 and PR comment6983950157. J3057 queued for corrections then independent review and Chief decision. No merge, generation, account calls or guard change; closed allowance and holds intact.",
       "history": [
         {
           "at": "2026-11-18T13:30Z",
@@ -272626,6 +272626,11 @@
           "at": "2026-11-18T16:02Z",
           "by": "codex",
           "what": "step 3 of 3 done: Request-changes decision posted to PR651 and HOS desk6983970987; PR remains open at reviewed commit; correction job J3057 queued."
+        },
+        {
+          "at": "2026-11-18T16:02Z",
+          "by": "codex",
+          "what": "done: REQUEST CHANGES on HOS PR651 ff02370b: adopt J3052 three required fixes. Eight tests pass; 28 probes reproduce findings. Decision desk6983970987 and PR comment6983950157. J3057 queued for corrections then independent review and Chief decision. No merge, generation, account calls or guard change; closed allowance and holds intact."
         }
       ],
       "remaining_action": "Complete the recorded Chief decision",
@@ -272640,7 +272645,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6983970987"
     },
     {
       "id": "J3054",
