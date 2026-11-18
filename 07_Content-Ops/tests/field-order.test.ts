@@ -61,7 +61,7 @@ describe('Unattended Studio dispatch and merging',()=>{
   const s:any={videos:[{id:'abcdefghijk',title:'A film',format:'long',privacy:'public',publishedAt:'2026-11-01T01:00:00Z'}],channelId:'UC'+'a'.repeat(22)};
   expect(planReads(s,new Date('2026-11-03T00:59:59Z'))).toHaveLength(1);
   const jobs=planReads(s,new Date('2026-11-03T01:00:00Z'));
-  expect(jobs).toHaveLength(2);expect(jobs[0].body).toContain('2026-10-31 through 2026-11-01');
+  expect(jobs).toHaveLength(2);expect(jobs[0].due).toBe('2026-11-03T01:00:00.000Z');expect(jobs[0].body).toContain('2026-10-31 through 2026-11-01');
   expect(planReads(s,new Date('2026-11-08T01:00:00Z'))).toHaveLength(3);
   s.videos[0].privacy='private';expect(planReads(s,new Date('2026-12-01'))).toHaveLength(1);
  });

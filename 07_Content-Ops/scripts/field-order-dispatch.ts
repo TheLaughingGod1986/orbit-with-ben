@@ -6,7 +6,7 @@ import path from 'path';
 import { execFileSync } from 'child_process';
 import type { Snapshot } from '../src/lib/analytics/channel-tracker';
 
-type ReadJob = { title:string; plain:string; body:string };
+type ReadJob = { title:string; plain:string; body:string; due:string };
 export function planReads(s:Snapshot, now:Date):ReadJob[] {
   const jobs:ReadJob[]=[];
   for(const v of s.videos.filter(v=>v.privacy==='public' && v.format==='long' && v.publishedAt)) {
@@ -14,14 +14,14 @@ export function planReads(s:Snapshot, now:Date):ReadJob[] {
       if(now.getTime()<Date.parse(v.publishedAt!)+hours*3600000)continue;
       const startDate=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Los_Angeles',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(v.publishedAt!));
       const endDate=new Date(Date.parse(startDate)+86400000*(days-1)).toISOString().slice(0,10);
-      jobs.push({title:`Field Order History analytics read ${v.id} ${label}`,
+      jobs.push({title:`Field Order History analytics read ${v.id} ${label}`,due:new Date(Date.parse(v.publishedAt!)+hours*3600000).toISOString(),
         plain:`Read how ${v.title} performed in its first ${days===2?'two':'seven'} days`,
         body:`J3006 automatic read-only learning loop. Channel ${s.channelId}; video ${v.id}; ${label} read due after ${hours} elapsed hours. This is the first daily dispatch after the deadline, not a claim of an exact live 48-hour capture.\nRead this channel's own channels/ww2/studio/RULES.md and 00_Brand/PLAYBOOK.md. Use the configured Studio browser and reuse_page; verify CHANNEL_ID before reading. No saves, account switching, publishing, title or thumbnail changes, spend or sign-in.\nCollect impressions, CTR percent, new and returning viewers and Test & Compare status/variant watch-time shares. Analytics period must be ${startDate} through ${endDate}, inclusive (Pacific dates matching the API); wait for reporting lag rather than substituting lifetime. Keep API views, hours, average seconds/percentage, subscribers, sources and retention/checkpoints.\nImport a strict dated read using 07_Content-Ops/scripts/field-order-studio-import.ts, merging with earlier windows. For suppressed or unavailable fields, use null and a missing reason, never zero. Record the video/window as attempted. Do not persist raw browser responses, credentials or account identity. Commit generated analytics from a clean worktree and report collection evidence. READS.md and board.json rebuild automatically. If there are triggers, recommend thumbnail first, then title, or tightening the next opening; never change packaging in this read job.\n`});
     }
   }
   // One channel read per reporting week, including the first week before any film is public.
   const monday=new Date(now);monday.setUTCHours(0,0,0,0);monday.setUTCDate(monday.getUTCDate()-(monday.getUTCDay()+6)%7);
-  jobs.push({title:`Field Order History channel audience read ${monday.toISOString().slice(0,10)}`,
+  jobs.push({title:`Field Order History channel audience read ${monday.toISOString().slice(0,10)}`,due:now.toISOString(),
     plain:'Read Field Order History’s audience and progress towards monetisation',
     body:`J3006 automatic weekly read. Read-only, £0; channel ${s.channelId}. Reuse its configured Studio tab and verify channel identity. Never switch accounts, save settings or start a sign-in. Read qualified public watch hours (trailing 365 days) from Earn and when viewers are on YouTube from Audience (weekday, hour, relative activity and displayed timezone). Record Test & Compare results on public films if present. Never invent numbers if hidden or unavailable.\nUse the strict dated importer 07_Content-Ops/scripts/field-order-studio-import.ts; eligibleWatchHours is separate from the API estimate. whenViewers must carry its timezone. Use missing reasons for unavailable channel fields. Merge without replacing previous video windows, commit generated analytics in a clean worktree and report evidence. No public changes.\n`});
   return jobs;
@@ -36,7 +36,7 @@ export function dispatchReads(s:Snapshot, queueRepo:string, now=new Date(), run=
     const dir=fs.mkdtempSync(path.join(os.tmpdir(),'field-order-read-'));
     try {
       const file=path.join(dir,'brief.md');fs.writeFileSync(file,job.body);
-      run([path.join(queueRepo,'scripts/jobs.py'),'add','--needs','mini','--kind','studio','--repo','ww2','--title',job.title,'--plain',job.plain,'--action',job.plain,'--body-file',file,'--by','codex','--git']);
+      run([path.join(queueRepo,'scripts/jobs.py'),'add','--needs','mini','--kind','studio','--repo','ww2','--title',job.title,'--plain',job.plain,'--action',job.plain,'--due',job.due,'--body-file',file,'--by','codex','--git']);
       created.push(job.title);
     } finally {fs.rmSync(dir,{recursive:true,force:true});}
   }
