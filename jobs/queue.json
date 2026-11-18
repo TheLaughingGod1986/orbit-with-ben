@@ -267454,10 +267454,10 @@
       "stage": "script",
       "after": "J2990",
       "eta_min": 150,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-18T03:30Z",
+      "eta": "2026-11-18T06:00Z",
       "created_by": "claude",
       "created_at": "2026-11-17T17:20Z",
       "result": "",
@@ -267501,6 +267501,11 @@
           "at": "2026-11-18T00:18Z",
           "by": "codex",
           "what": "released: WW2:002 long research/script task continues detached: tmux j2994-script; branch codex/j2994-atlantic-script; worktree /Volumes/MiniWork/scratch/j2994-atlantic-script. Runner /Users/benjaminoats/_desk/logs/j2994/run.sh runs Gemini Argon draft then separate fresh claims check. Logs draft.log and check.log in that directory; overall completion run.done (exit code), per-pass draft.done and check.done. If run.done absent and tmux alive, do not start another copy. Next run inspect logs and all deliverables, verify claims/length/line-to-picture coverage, then commit only film files and open PR to main. No draft approved or locked; progress 1/3."
+        },
+        {
+          "at": "2026-11-18T03:30Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Finish the background research and draft, inspect the separate claims check, then open the review pull request",

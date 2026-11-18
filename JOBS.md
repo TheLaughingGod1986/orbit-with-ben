@@ -47,7 +47,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2985 | mini | blocked | gemini | – | for gemini · studio · Board credits: a time bar beside each usage bar, renewal dates, and a plain verdict per plan |  |
 | J2986 | mini | open | – | – | 033 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test |  |
 | J2993 | mini | open (after J2992) | – | – | WW2:001 edit · for codex · assembly · WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch |  |
-| J2994 | mini | open (after J2990) | – | – | WW2:002 script · for codex · script · WW2 pilot 002: script and sources, "How Long-Range Bombers Closed the Atlantic Black Pit in May 1943" |  |
+| J2994 | mini | claimed | codex | 2026-11-18T06:00Z | WW2:002 script · for codex · script · WW2 pilot 002: script and sources, "How Long-Range Bombers Closed the Atlantic Black Pit in May 1943" |  |
 | J2995 | mini | open (after J2994) | – | – | WW2:002 vo · for gemini · vo · WW2 pilot 002: narration in Ben's voice |  |
 | J2996 | mini | open (after J2995) | – | – | WW2:002 edit · for codex · assembly · WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch |  |
 | J3000 | mini | open (after J2991) | – | – | WW2:004 script · for codex · script · WW2 film 004: topic review, script and sources, "Why America's Submarine Torpedoes Failed for 21 Months in WW2" |  |
