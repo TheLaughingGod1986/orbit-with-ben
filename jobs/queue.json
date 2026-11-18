@@ -226920,9 +226920,14 @@
           "at": "2026-11-18T21:08Z",
           "by": "codex",
           "what": "step 1 of 4 done: HOS656 contains exact preservation inventory and Chief disposition; required local checks and 344 Python tests PASS. CI still installing ffmpeg; no source PR closed yet."
+        },
+        {
+          "at": "2026-11-18T21:13Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: HOS656 ready at 6eea98ec: three source trees and 200 hashes verified; all required local checks and 344 Python tests PASS. GitHub tests still in ffmpeg setup. Stage2 incomplete."
         }
       ],
-      "remaining_action": "Merge the verified migration record after GitHub checks finish, then close retained review PRs unmerged",
+      "remaining_action": "Finish CI and merge HOS656, close preserved review PRs unmerged, then rehearse history cleanup",
       "due": "2026-11-18T18:00:00Z",
       "kind": "chief",
       "plain": "Remove email addresses from both channels' repos, including their past versions",
@@ -226930,9 +226935,9 @@
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-18T21:08Z",
+        "at": "2026-11-18T21:13Z",
         "by": "codex",
-        "note": "HOS656 contains exact preservation inventory and Chief disposition; required local checks and 344 Python tests PASS. CI "
+        "note": "HOS656 ready at 6eea98ec: three source trees and 200 hashes verified; all required local checks and 344 Python tests PAS"
       },
       "taskKeys": [
         "HOS:005",
