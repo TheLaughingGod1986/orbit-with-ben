@@ -17,3 +17,7 @@ FAILED (failures=2, skipped=4)
 ```
 
 Zero address/credential findings on 2345 export files after isolation changes (including generated test cache files; only tracked files are published). No live services or credentials changed. Rehearsal is not a cutover PASS.
+
+Published isolated snapshot: [studio rehearsal/j3012](https://github.com/TheLaughingGod1986/studio/tree/rehearsal/j3012), commit `534cf0f70852e06414cbe39f6a01efe9024c8a91`. One parentless commit; no source Git history.
+
+The fresh export initially omitted 49 tracked images under ignore rules, including board icons. Those exact existing PNG/JPG files were explicitly restored to the rehearsal index. No new video/audio was added. Active workflow YAML lives under docs/rehearsal-workflows, so the rehearsal cannot start scheduled CI.

@@ -1,0 +1,251 @@
+# Studio repository move — J3012
+
+Prepared 18 November 2026. This is the phase 3 execution runbook, not permission to move early.
+The latest J3012 brief supersedes the original history-rewrite dependency: create a clean root commit; do not
+copy Orbit's Git history. J2537's history rewrite is not a prerequisite. The source history remains in Orbit.
+
+## Timing and acceptance
+
+Target Monday 23 or Tuesday 24 November, subject to all checks below. The earliest possible seven-day streak is
+20 November; the committed history currently records four clean days, 14–17 November. Recheck, do not infer.
+
+- `python3 scripts/studio_split.py --streak jobs/reviews/studio_split/history.jsonl` must read at least 7.
+  Each day must have `left: 0` and `tests: run`. Run the full dry run again on the frozen cutover source.
+- The moving files must have zero address and credential findings. No account addresses, credentials, filled-in
+  environment files, video/audio or source Git objects enter the new repository.
+- Post one notice on the current thread on the preceding calendar day: the actual move date, expected unchanged
+  board/film experience, brief maintenance window, and any proven credential change. Do not send a date promise
+  before rehearsing and checking access. This is notice, not a request for a second approval.
+- Re-read `chief_relay.py status` before the cutover decision. The elected Chief owns this move and its rollback.
+- £0. No live YouTube, Buffer, NAS or film changes belong to this migration. No old files are deleted.
+
+Completion means: one authoritative queue in studio, one complete relay cycle, one successful board publication,
+one harmless tick round-trip, both MacBook slots using the right engine, and recorded rollback evidence.
+A passing split test alone is not completion. Keep J3012 open until those conditions hold.
+
+## What moves
+
+`scripts/studio_split.py:ROUTES` is the executable inventory. Use its generated layout, never a recursive copy of
+the working checkout (which holds local secrets). Record source commit, file counts and content hashes.
+
+| Destination | Tracked content |
+| --- | --- |
+| Studio | `scripts/`, `jobs/`, `JOBS.md`, registry/cache/template under `channels/`, `docs/`, `.github/`, agent settings, `AGENTS.md`, `CLAUDE.md`, `HANDOVER.md`, `README.md` |
+| Studio | `07_Content-Ops/`, `04_Audio/tools/`, shared `00_Brand/Channel-Setup/tools/`, the shared playbook and Studio browser launcher |
+| Studio | Shared `05_Analytics/` (board source, tests, spend ledger and learnings), `studio/board_site.json`, `studio/plan.json`, temporary `studio-core/` compatibility lock |
+| Each channel | Its `05_Analytics/<slug>/` records; its films, brand, character, own audio, `studio/channel.json`, `studio/RULES.md`, archive and evidence |
+| Both | `.gitignore` |
+| Rebuilt only | `STATUS.md` |
+
+Do not retire copied tools/core locks until replacement channel checks work. Retain old engine copies for at least
+one green week; old entry points must forward or refuse mutation after cutover, never operate a second queue.
+The NAS path renaming mentioned in the broader plan is a separate operation, not part of this window.
+
+## Identity, queue and thread decisions
+
+The new remote is `TheLaughingGod1986/studio`, private. On 18 November the read-only repository probe found no
+populated default branch. Rehearsal goes only to `rehearsal/j3012`; production `main` is created at cutover from
+an independently scanned, fresh root commit. Never merge Orbit history into either branch.
+
+In the new `channels/channels.json`:
+
+- Remove every `home` property. Keep `default_channel: owb` for legacy queue rows.
+- Set `studio.github` to `TheLaughingGod1986/studio`, `studio.env` to `STUDIO_REPO`, and `studio.checkouts` to
+  `["studio"]`. Set each channel checkout independently; `OWB_REPO` must mean the Orbit content checkout.
+- Keep `studio.prefix: owb` during the first cutover. It is a compatibility namespace, not a home channel.
+  Renaming it now would also rename lock/state files, environment variables, thread cursors and launchd labels.
+  A later, separately tested rename can change them together; never run both prefixes at once.
+- WW2 currently has `local: channels/ww2`. Preserve that actual configuration until its real channel checkout and
+  manifest are verified with `channel_check.py`; do not fabricate a fourth remote or silently claim WW2 is external.
+
+Copy the complete frozen `jobs/` tree, including queue histories, plans, dependencies, holds, approval card IDs,
+WIP/backlog and review evidence. Compare the ordered job IDs, statuses, claims, progress, holds and `awaits_ben`
+values before/after; preserve the entire queue JSON, not just open rows. Do not renumber cards or replay done jobs.
+Git-level history is linked by the old remote and full source commit in the migration evidence; it is not imported.
+
+**Keep the existing thread and tick store for this move.** The thread is Orbit issue 954 as of this inspection
+(resolve `scripts/thread.json` again at cutover), the tick store is Orbit issue 219, and the HOS desk is HOS PR 180.
+Keep old threads readable and open; preserve the existing read cursor and board pairing/signing keys.
+This avoids migrating approvals or changing the board token's Issues repositories.
+
+There is an implementation prerequisite: `studio_thread.py` currently derives `REPO` from
+`channels.studio_github()` and ignores the `repo` field in `thread.json`. Before setting the studio identity,
+make the thread reader/writer honor the explicit thread repository with a compatible fallback. Audit other thread
+consumers (especially Chief heartbeat/election) for the same assumption and test cross-repository routing.
+`api/checks.js` already names the retained store/thread repositories explicitly; keep those synchronized with
+`thread.json` at later rollovers. Do not simply change the studio identity and post to issue 954 in the new repo.
+
+## Access and hosting
+
+| Credential or service | Required access / action |
+| --- | --- |
+| Mini and MacBook Git/`gh` credentials | Read and push branches in private studio, plus existing channel access. Probe repository metadata and branch push without printing tokens. An installed CLI is not access proof. |
+| Claude/Gemini/Cursor/Codex integrations | Studio repo visibility, read rules from studio then the selected channel. Claude app access was reported in J3012; verify the actual integration used at cutover. |
+| `BOARD_GH_TOKEN` on the active board host | Existing Issues write on Orbit/HOS remains. Private studio **Contents read** is additionally needed for `api/data.js`. Probe it using that exact server credential, not the CLI token. |
+| Board authentication | Keep `BOARD_KEY`, pairing cookie/signing configuration, watch signing and R2 credentials unchanged. Never copy values into Git, logs or this runbook. |
+| Cloudflare/board deployment login | Cloudflare Pages `studio-kanban` is the current source deployment route (`board_site/build.py`, `wrangler.jsonc`); verify the deployed project before cutover. `BOARD_PRIVATE_DATA.md` still describes the old Vercel route. |
+| Content Ops / voice / cloud credentials | Local-only credentials remain local. Link or securely copy only required ignored credential files to the new runtime location with restrictive permissions. Preserve OAuth scopes, accounts and credit ledgers. |
+| GitHub Actions | Studio's own `GITHUB_TOKEN` covers its own repository. Public channels can be checked out read-only. A public channel's token does not automatically read private studio; keep its existing checks until a read-only cross-repo mechanism is proven. |
+
+Keeping ticks and the thread on Orbit does **not** eliminate the private board-data read requirement. The simpler
+supported design is `BOARD_DATA_REPO=TheLaughingGod1986/studio`, `BOARD_PRIVATE=1`, with Contents read added to the
+existing board credential if it lacks it. First check whether that grant is already present. If Ben alone must change
+it, finish the runbook/rehearsal first and request precisely that single credential change. Do not expose private
+board data on a public branch as a workaround. No new token/account/service or paid plan is needed by design.
+
+Keep `studio/board_site.json` at `https://board.oppti.dev`; preserve any live `readUrl` and env overrides. Deploy the
+existing `05_Analytics/kanban/board_site` build from studio to the existing board project only after preview passes.
+Do not deploy or reconnect the separate `/go` affiliate project. Retain the old deployment ID for rollback.
+Update `05_Analytics/kanban/board_site/wrangler.jsonc` too: its current `BOARD_DATA_REPO` still names Orbit. Build with `python3 05_Analytics/kanban/board_site/build.py`; from that site folder use the existing Cloudflare Pages deployment procedure (`npx wrangler pages deploy dist --project-name studio-kanban`) only at the approved cutover.
+Update or retire the legacy `/api/ref` hard-coded Orbit endpoint, and remove/check stale client public fallbacks.
+Verify signed-out reads return 401, paired reads return current studio data, and private replies have private cache
+headers. Check the Tracker's embedded public snapshot policy explicitly before deploying a private-data page.
+
+## Machine changes and cutover order
+
+1. **Inventory and stage, with live work running.** Record a local, restricted backup of installed plist files,
+   executable paths, relevant non-secret environment names, runner hashes, source commits and deployment IDs.
+   Do not publish machine names, addresses, secret values or full environment dumps. Prepare clean studio and
+   channel checkouts on both machines, with no service enabled against the staged engine.
+2. **Implement and test remaining cutover adapters on branches.** Thread repository routing above; private data
+   access; installed service/bootstrap paths; CI rules below; old engine forwarding/refusal. The rehearsal export
+   is not evidence these adaptations are already implemented. Rehearse with production-shaped registry values,
+   no real credentials and no live command side effects before giving a cutover go.
+3. **Drain writers.** Set the existing `~/_desk/state/chief-relay.pause` and MacBook
+   `~/_desk/state/macbook-worker.pause`; check both slots. Stop new cloud dispatch and notify workers on the
+   thread. Let claimed work and existing renders finish or release cleanly; never kill active media writes.
+   Pause board publication, analytics, Buffer checks and any other queue/state writers during the final snapshot.
+   A relay pause alone does not pause those services. Do not delete locks or claim leases.
+4. **Freeze and export.** Fetch all source branches, record the exact clean source heads, take the final queue and
+   tick-store version snapshot, run the full split and scans. Compare the frozen queue after export. Build the
+   new production repository with a root commit and source pointer; verify parent count is zero. Use a neutral
+   non-address Git author identifier. Never copy `.git`, `.env`, live logs or untracked files. Push `main` without
+   force, only if no conflicting production branch exists. Preserve the rehearsal separately.
+5. **Switch Mini.** Runtime checkout: `~/YouTube/studio`; channel checkouts stay where they are. Install
+   `STUDIO_REPO`, `OWB_REPO` and `HOS_REPO` correctly in each service environment. Keep scratch and shared locks
+   at their existing locations. Rebuild the publisher's sparse worktrees for the new studio origin; do not point
+   an old worktree's origin at a different repository or copy an old board-data branch into the new queue.
+6. **Switch MacBook, both slots.** Engine clones are `~/_desk/worker/studio` and
+   `~/_desk/worker/slot2/studio`; retain separate channel clones beside each. Update the installed worker launcher
+   and `setup_macbook.sh` fallback clone URL/path, not just `STUDIO_REPO`: the current plist bootstraps Orbit.
+   Slot 2 must retain its own clone, lock and heartbeat. Preserve mains-power/idle policy, tool routing and NAS
+   mounting. Run `macbook_worker.py check` from the new engine, with both slots still paused.
+7. **Switch board server and workflows.** Enable the verified private-read config/deployment. Seed/publish fresh
+   board data and heartbeat branches from the correct origin, using existing publisher behavior. Do not manually
+   force-push source branches. Update the Claude/cloud entrypoint and all agent briefs to the new engine checkout.
+8. **Resume in order.** Enable one new publisher, then one relay, then the MacBook slots, then analytics/social and
+   other timers. Remove only the pause files created for this window. Every service must have one writer, never
+   an old and new pair. Watch the first complete cycle and the acceptance checks before declaring live.
+
+### Service inventory
+
+On 18 November the Mini's installed plist scan found these references. Re-enumerate at cutover; source templates
+are not a complete inventory of installed jobs. Inspect plists with `plistlib`, reporting labels/path classes only.
+
+| Service | Change / preserve |
+| --- | --- |
+| `com.owb.chief-relay` | Point to studio `scripts/chief_relay.py`; inspect `~/_desk/bin` installed runner too. Check `chief_relay.py status` reports matching working/installed hash. |
+| `com.owb.board-publish` | Point to studio `scripts/board_publish.py`; separate studio and all channel worktrees. |
+| `dev.orbit.analytics-snapshot` | Point shared wrapper to studio; keep per-channel output roots and local auth. |
+| `dev.orbit.buffer-check` | Point shared wrapper to studio; preserve both channel upload registers, R2, existing posts and local auth. |
+| `com.owb.ai-spend-daily`, `com.owb.tab-janitor` | Repoint shared tools; preserve ledger, CDP ports/profiles and one-tab policy. |
+| `com.hos.desk` | HOS-local desk stays in HOS; audit shared-engine references and keep its read markers. |
+| `com.owb.missed-runs` | Template exists; include it if installed/enabled at cutover. Avoid false alarms during the recorded window. |
+| `com.owb.macbook-worker` | Repoint worker plus fallback clone on MacBook; account for spawned slot 2. |
+| Cloud runs, shell wrappers, launch agents not listed | Search installed files for old engine paths; explicitly classify each as channel-local, retained shim or migrated. Preserve unrelated services. |
+
+Use `launchctl bootout gui/<uid>/<label>` followed by `bootstrap gui/<uid> <saved-or-updated-plist>` for a controlled
+service replacement. Keep labels/prefix during this window. Save both old and proposed plist copies outside Git.
+
+## Workflow adaptations required before production
+
+- Preserve J2531's queue/data-only exclusions and one-run-per-code-PR behavior; no paid Actions overage.
+- `rules-check.yml`: fetch the default channel beside studio for `sync_rules.py --check`, or separately move its
+  generated channel quotes. This runbook chooses a read-only checkout of Orbit pinned to the recorded channel
+  commit. Remove `studio.py status --check` only in the engine-with-no-home configuration: `STATUS.md` is generated.
+- `core-check.yml`: fix its repository-name conditional for studio and coordinate retirement of hash-locked
+  copies. Channel checks must remain working until replacements have passed; do not just delete the lock.
+- `content-ops.yml`: retain Node dependency lock, typecheck, lint and tests without production secrets.
+- `notes-check.yml`: ensure notes read each channel through the registry, with no home assumptions.
+- Validate all checks on the production-shaped branch. A first rehearsal branch in an empty private repository can
+  become the default branch: disable scheduled workflow execution for the rehearsal, or omit active workflow YAML
+  from that published snapshot while retaining byte-identical files under a non-workflow rehearsal directory.
+  Record that deliberate deviation; do not call it a full CI rehearsal. Restore adapted workflows only for cutover.
+
+## Safe rehearsal
+
+Run from the current clean Orbit source, using a new directory under `STUDIO_SCRATCH`:
+
+```sh
+python3 scripts/studio_split.py --keep "$STUDIO_SCRATCH/j3012-rehearsal" --json "$STUDIO_SCRATCH/j3012-split.json"
+```
+
+The split builds an isolated studio Git root and sibling channel views; it neither moves source files nor starts
+services. Other channel views include symlinks: never run mutations in those views. Do not run `jobs next --git`,
+`chief_relay run`, `board_publish`, uploads, deployments, desk posts or any timer in the rehearsal.
+
+After tests finish, independently inspect process exit/test summary (the split's test parser returns only named
+failures; a crash without a parsed unittest failure is not proof of PASS). Record omissions and failed tests.
+In the isolated studio copy, set the future registry identity above and local scratch paths. Preserve thread config,
+flag its adapter as unfinished, then run targeted loader/queue/board/worker/thread tests with mocked side effects.
+No live credentials or network writes are required for those checks.
+
+Before publishing the rehearsal, scan every tracked export file again, record hashes and source commit, and move
+active workflow YAML to a non-workflow rehearsal directory. Use non-address commit metadata. Publish only the
+rehearsal branch to the private studio repo. Verify the remote tree and root ancestry. No change to source main,
+production services, board host or thread routing is part of this rehearsal. A later cutover uses a fresh snapshot,
+not this now-stale queue.
+
+## Acceptance evidence and rollback
+
+Store a dated record under `jobs/reviews/J3012/` with source/new commit IDs, scan counts, test exit summaries,
+service/runner checks, queue comparison, board commit/deployment ID and timestamps (no private addresses).
+
+1. **Relay:** new engine sees all registered channels and elects Chief correctly. Observe one complete normal
+   dispatch cycle with a legitimate queue job and its persisted result; no duplicate claims. If none is eligible,
+   record a complete idle cycle and separately prove a mocked claim cycle. Do not invent production work.
+2. **Board:** publisher reports success, private `board-data` advances, paired API reads agree with that SHA and
+   display queue plus channel lanes. Signed-out private reads return 401. Check both MacBook heartbeats and watch
+   links. Reuse `board_check.py` and board-data/auth tests; record actual results.
+3. **Tick:** use a clearly labelled migration-only ID outside real film/job patterns, through the authenticated
+   checks endpoint. Read it back, confirm publication/ingestion, then remove that test entry. Never submit a real
+   Approve or impersonate a Ben watch. Preserve existing ticks/history/pairings. Test ID must not produce a Chief
+   approval message; verify this with `benLine` before the live round-trip.
+4. **Retention:** a week of green before considering retirement of old code. Cleanup is separately reviewed;
+   no deletion of channels, history, NAS assets or source branches in this job.
+
+Rollback on wrong queue origin, duplicate writers, lost/mismatched ticks, bad routing, private data exposure,
+failed relay/publish or a service that cannot resume. Pause new writers immediately and save their state first.
+If no queue writes occurred after cutover, restore the saved launchers, environments, board deployment/data repo
+and resume the old engine. If writes occurred, reconcile the latest studio queue and approval state into the old
+engine in a clean worktree before resuming it; compare IDs, histories, claims and card ordering. Never restore a
+stale queue over completed work. The retained tick store remains authoritative. Restore old code with a normal
+commit if needed, never a destructive reset or force-push. Post the outcome and new next step on the retained
+thread; preserve studio and rehearsal branches for diagnosis.
+
+## Rehearsal findings, 18 November
+
+The baseline split at source `905b34ee0b` reported `left: 0`, `clean: true`, all eight groups zero and `tests: run`;
+2220 files went to studio, 12709 to Orbit, 56 to HOS and one status page was rebuilt. This was an isolated check,
+not a new daily-history entry. The official streak remains four recorded days until the daily job records today.
+
+Changing the isolated registry to the actual future studio repository exposed a real acceptance gap:
+`test_channels.StudioOwnRepo.test_the_board_repo_and_its_github_name_come_from_the_home_channel` still expects
+Orbit's GitHub identity (69 of 70 tests passed). Adapt this test to both layouts before cutover; do not treat the
+baseline split's zero as a production-shaped rehearsal PASS. The thread repository coupling described above is
+also directly visible in the code. Neither is fixed by this documentation PR.
+
+The export was independently scanned after the registry/workflow changes: zero address or credential findings.
+Workflow YAML is retained under `docs/rehearsal-workflows/` on the rehearsal branch only, preventing scheduled
+checks from running if GitHub makes this first branch the default. The branch is evidence, not a live engine.
+
+The additional board/worker/thread/private-data suite ran 164 tests: two failures and four skips.
+Failures were the worker URL-map identity expectation and retained-thread repository expectation; see
+`jobs/reviews/J3012/REHEARSAL.md` for exact names. Combined with the loader check, this is 234 tests,
+three failures and four skips. Adapt and rerun before production; do not waive them.
+
+An export inventory comparison also found that `git add -A` in the split's fresh repository omits 49
+already tracked PNG/JPG assets because the copied ignore rules ignore them (including board icons).
+The published rehearsal explicitly preserves those exact existing assets; no video/audio is added. At cutover,
+compare the ROUTES inventory to `git ls-files` and stage the already tracked allowlisted images explicitly.
+Do not force-add arbitrary files or use the dry run's initial Git tree as a complete inventory.
