@@ -269688,10 +269688,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-18T15:16Z",
-      "eta": "2026-11-18T19:16Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
       "result": "",
@@ -269790,6 +269790,11 @@
           "at": "2026-11-18T15:25Z",
           "by": "codex",
           "what": "step 3 of 4 done: PR 1011 updated at 1d3d29ad9a: retained-thread routing, authenticated legacy board ref, registry-aware fixtures. Future targeted 170 pass; broad 1352 found three fixture failures, corrected and affected 122 pass. No live switch."
+        },
+        {
+          "at": "2026-11-18T15:25Z",
+          "by": "codex",
+          "what": "released: PR 1011 at 1d3d29ad9a contains tested thread/ref adapters and rehearsal findings. Next: launcher/bootstrap and CI adapters, deployed BOARD_GH_TOKEN Contents access, old-entrypoint single-writer safeguards; refresh final rehearsal. Keep step 3/4 until gated live relay/publish/tick acceptance. Five official zero days through 18 Nov; prior-day notice still required. No live migration, spend or deployment."
         }
       ],
       "remaining_action": "Prepare service and CI adapters, verify private board access, then execute the gated studio move",
