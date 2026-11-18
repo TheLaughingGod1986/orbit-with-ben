@@ -270874,9 +270874,14 @@
           "at": "2026-11-18T19:23Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-18T19:23Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J3026; starting verification of J2040 waiting condition"
         }
       ],
-      "remaining_action": "Verify readiness: Complete step 4/4 operator confirmation and fresh-session scoped acceptance evidence for Codex allow-list, then land PR #490 (docs/CODEX_ALLOWLIST.md)",
+      "remaining_action": "Inspect J2040 history, J2977/J2959 reviews, local ~/.codex hashes, PR #490, and main branch state",
       "kind": "review",
       "recheck_of": "J2040",
       "due": "2026-11-18T01:46:18+00:00",
@@ -270892,11 +270897,10 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-18T19:23Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Claimed J3026; starting verification of J2040 waiting condition"
       }
     },
     {
