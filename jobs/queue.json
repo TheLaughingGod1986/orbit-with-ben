@@ -270322,10 +270322,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-18T23:52Z",
-      "eta": "2026-11-19T03:52Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
       "result": "",
@@ -270474,6 +270474,11 @@
           "at": "2026-11-18T23:56Z",
           "by": "codex",
           "what": "step 3 of 4 done: PR 1011 updated 7e773c3c22: safe Mini service plist renderer, six tests pass; five MacBook launcher tests and rules/core/security checks pass. No service installed; live acceptance still pending."
+        },
+        {
+          "at": "2026-11-18T23:57Z",
+          "by": "codex",
+          "what": "released: PR 1011 advanced to 7e773c3c22: Mini relay/publisher plist renderer prepared, six tests pass; MacBook launcher five tests, rules/core, channel/security guards and changed-file scans pass. No live services changed. Next resume: CI adapters, deployed board Contents access, old-entrypoint single-writer safeguards, other timer migration and refreshed export from current main (WW2 now external). Keep step 3/4 until gated live relay/publish/tick acceptance. Five official zero days through 18 Nov; prior-day notice still required. Runbook/rehearsal already exist: do not redo them."
         }
       ],
       "remaining_action": "Finish CI, board access and single-writer safeguards before the gated studio move",
