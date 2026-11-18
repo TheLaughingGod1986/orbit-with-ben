@@ -1,5 +1,5 @@
 {
-  "next_id": 3073,
+  "next_id": 3074,
   "jobs": [
     {
       "id": "J0001",
@@ -274565,6 +274565,36 @@
       "kind": "assembly",
       "model": "gpt-6.1-sol",
       "plain": "Fix the software checks blocking the Field Order History studio connection"
+    },
+    {
+      "id": "J3073",
+      "title": "Integrate repaired Field Order History connection prerequisites",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Follow-up from J3061: after the prerequisite repair job completes, review fresh PR #1001 and #1013 heads, diffs and required CI; re-read chief_relay.py status before each protected decision. Merge only with passing gates. Reconcile PR #1019 after both prerequisites, preserving FOH short name, WW2 keys, channel ID UCu94mInMFosxu3W0H6jlI6Q and handle @FieldOrderHistory from ww2-channel#10. Review and merge #1019 with required checks. Verify main installs --analytics ww2 and channel checks succeed, then record evidence and reopen J3044 to finish board sync and its authorized one-time sign-in handoff. No premature sign-in request, public change, spend or unrelated hold release. If blocked, name the failure and concrete next repair with dependency/retry; do not merely park for an absent Chief.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J3072",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-18T20:30Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T20:30Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review passing repairs, integrate the channel settings, and release the connection work",
+      "due": "2026-11-19T18:00:00Z",
+      "kind": "chief",
+      "plain": "Review and connect the repaired Field Order History studio software"
     }
   ],
   "focus": [

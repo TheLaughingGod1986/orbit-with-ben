@@ -78,6 +78,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3070 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Restore HOS Studio response for the plants Short first-day check |  |
 | J3071 | macbook | claimed | macbook-2 | 2026-11-18T22:25Z | studio · Verify MacBook HOS Studio fallback for the plants Short |  |
 | J3072 | any | open | – | – | for codex · assembly · `gpt-6.1-sol` · Repair Field Order History prerequisite PR checks |  |
+| J3073 | any | open (after J3072) | – | – | chief · Integrate repaired Field Order History connection prerequisites |  |
 
 Recently finished:
 
