@@ -1,5 +1,5 @@
 {
-  "next_id": 3065,
+  "next_id": 3067,
   "jobs": [
     {
       "id": "J0001",
@@ -256464,6 +256464,16 @@
           "at": "2026-11-18T17:26Z",
           "by": "gemini",
           "what": "done: KEEP (5-part multimodal review PASS on 034 Pluto long master v02 + Short 1 v02 + Short 2 v02; all J2383 §5.1-5.3 fixes verified; staged in OWB UAT and armed jobs.py awaits; PR #1022 @ 495a3c323b; £0)"
+        },
+        {
+          "at": "2026-11-18T17:51Z",
+          "by": "claude",
+          "what": "no longer waits on Ben (entry 3): OK'd, delivered by J3065"
+        },
+        {
+          "at": "2026-11-18T17:51Z",
+          "by": "claude",
+          "what": "no longer waits on Ben (entry 2): OK'd, delivered by J3066"
         }
       ],
       "remaining_action": "Waiting for Ben's UAT watch of 034 Pluto long master v02 and Shorts 1 & 2 v02",
@@ -256491,39 +256501,17 @@
       "taskKeys": [
         "OWB:034"
       ],
-      "awaits_ben": [
-        {
-          "what": "Watch 034 Pluto long master v02 (10:47, all J2383 fixes verified)",
-          "file": "OWB UAT/034_pluto_frozen_heart_master_v02.mp4",
-          "version": "v02",
-          "due": "2026-12-08T18:00Z",
-          "airs": "2026-12-13T18:00Z",
-          "card": "OWB:034",
-          "title": "Why Pluto's Frozen Heart Has Zero Craters",
-          "number": "034",
-          "type": "long"
-        },
-        {
-          "what": "Watch 034 Pluto Short 1 Test A opening v02 (36.5 s, full-bleed 9:16)",
-          "file": "OWB UAT/034_short01_testA_opening_v02.mp4",
-          "version": "v02",
-          "due": "2026-12-08T18:00Z",
-          "airs": "2026-12-21T11:30Z",
-          "title": "034 Short 1 (Test A Opening): Why Pluto's Frozen Heart Has Zero Craters",
-          "number": "034 S1",
-          "type": "short"
-        },
-        {
-          "what": "Watch 034 Pluto Short 2 Keeper water-ice mountains v02 (25.8 s, full-bleed 9:16)",
-          "file": "OWB UAT/034_short02_water_ice_mountains_v02.mp4",
-          "version": "v02",
-          "due": "2026-12-08T18:00Z",
-          "airs": "2026-12-23T11:30Z",
-          "title": "034 Short 2 (Keeper): Why Can Towering Ice Mountains Stand on Pluto?",
-          "number": "034 S2",
-          "type": "short"
-        }
-      ],
+      "awaits_ben": {
+        "what": "Watch 034 Pluto long master v02 (10:47, all J2383 fixes verified)",
+        "file": "OWB UAT/034_pluto_frozen_heart_master_v02.mp4",
+        "version": "v02",
+        "due": "2026-12-08T18:00Z",
+        "airs": "2026-12-13T18:00Z",
+        "card": "OWB:034",
+        "title": "Why Pluto's Frozen Heart Has Zero Craters",
+        "number": "034",
+        "type": "long"
+      },
       "done_ref": "495a3c323b"
     },
     {
@@ -273661,6 +273649,100 @@
         "of": 4,
         "at": "2026-11-18T17:46Z",
         "by": "macbook"
+      }
+    },
+    {
+      "id": "J3065",
+      "title": "Upload the Pluto Short about ice mountains (v02) Private, slot Wed 23 Dec 11:30",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben OK'd this cut on the board (18 Nov 17:45-17:46Z, ticks OWB-J2868).** Chief evidence: jobs/reviews/J2868/REVIEW.md (five-part review, KEEP). File `034_short02_water_ice_mountains_v02.mp4` in `OWB UAT/`; read its sha256 from the review folder and check it.\n\nHold until the Pluto long is public (it airs Sun 13 Dec 18:00 London; Ben has not OK'd the long yet, so if the long is not scheduled by Fri 18 Dec, park for the Chief). Then upload as a NEW Private video, publish time Wed 23 Dec 11:30 London, title/description/tags/cover from the Short's package, Related video = the Pluto long, language en-GB, captions en-GB. Run `gate_shorts_open.py check` without `--report-only` first; it must PASS. Read back privacy and publish time, record it in `00_Brand/Channel-Setup/social/UPLOADS.json`, post the read-back on the thread.\n\nNever Public, never delete, no force-push, no Replace. £0. If anything does not match (privacy, publish time, hash), upload nothing and park for the Chief with the lines.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-18T17:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T17:51Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-18T17:51Z",
+          "by": "claude",
+          "what": "approved by Ben: Watch 034 Pluto Short 2 Keeper water-ice mountains v02 (25.8 s, full-bleed 9:16) v02 (asked in J2868)"
+        }
+      ],
+      "remaining_action": "Upload the Pluto Short about ice mountains (v02) Private, slot Wed 23 Dec 11:30",
+      "due": "2026-12-18T18:00:00Z",
+      "kind": "listing",
+      "approved_from": {
+        "what": "Watch 034 Pluto Short 2 Keeper water-ice mountains v02 (25.8 s, full-bleed 9:16)",
+        "file": "OWB UAT/034_short02_water_ice_mountains_v02.mp4",
+        "version": "v02",
+        "airs": "2026-12-23T11:30Z",
+        "title": "034 Short 2 (Keeper): Why Can Towering Ice Mountains Stand on Pluto?",
+        "number": "034 S2",
+        "type": "short",
+        "channel": "OWB",
+        "job": "J2868",
+        "askId": "J2868.3",
+        "okAt": "2026-11-18T17:45Z"
+      }
+    },
+    {
+      "id": "J3066",
+      "title": "Upload the Pluto Short about the frozen heart (v02, Test A opening) Private, slot Mon 21 Dec 11:30",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben OK'd this cut on the board (18 Nov 17:45-17:46Z, ticks OWB-J2868).** Chief evidence: jobs/reviews/J2868/REVIEW.md (five-part review, KEEP). File `034_short01_testA_opening_v02.mp4` in `OWB UAT/`; read its sha256 from the review folder and check it.\n\nHold until the Pluto long is public (it airs Sun 13 Dec 18:00 London; Ben has not OK'd the long yet, so if the long is not scheduled by Fri 18 Dec, park for the Chief). Then upload as a NEW Private video, publish time Mon 21 Dec 11:30 London, title/description/tags/cover from the Short's package, Related video = the Pluto long, language en-GB, captions en-GB. Run `gate_shorts_open.py check` without `--report-only` first; it must PASS. Read back privacy and publish time, record it in `00_Brand/Channel-Setup/social/UPLOADS.json`, post the read-back on the thread.\n\nNever Public, never delete, no force-push, no Replace. £0. If anything does not match (privacy, publish time, hash), upload nothing and park for the Chief with the lines.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-18T17:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T17:51Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-18T17:51Z",
+          "by": "claude",
+          "what": "approved by Ben: Watch 034 Pluto Short 1 Test A opening v02 (36.5 s, full-bleed 9:16) v02 (asked in J2868)"
+        }
+      ],
+      "remaining_action": "Upload the Pluto Short about the frozen heart (v02, Test A opening) Private, slot Mon 21 Dec 11:30",
+      "due": "2026-12-18T18:00:00Z",
+      "kind": "listing",
+      "approved_from": {
+        "what": "Watch 034 Pluto Short 1 Test A opening v02 (36.5 s, full-bleed 9:16)",
+        "file": "OWB UAT/034_short01_testA_opening_v02.mp4",
+        "version": "v02",
+        "airs": "2026-12-21T11:30Z",
+        "title": "034 Short 1 (Test A Opening): Why Pluto's Frozen Heart Has Zero Craters",
+        "number": "034 S1",
+        "type": "short",
+        "channel": "OWB",
+        "job": "J2868",
+        "askId": "J2868.2",
+        "okAt": "2026-11-18T17:46Z"
       }
     }
   ],
