@@ -272128,9 +272128,14 @@
           "at": "2026-11-18T13:25Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-18T13:26Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Prepare a tested billing evidence proposal for independent review",
+      "remaining_action": "Check billing evidence, prepare normalization proposal, and queue independent review",
       "due": "2026-11-19T12:00:00Z",
       "for": "codex",
       "kind": "assembly",
@@ -272139,11 +272144,12 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-18T13:25Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "at": "2026-11-18T13:26Z",
+        "by": "codex"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J3051",
