@@ -273805,9 +273805,14 @@
           "at": "2026-11-18T18:08Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-18T18:10Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting J3066: replacing default_plan with 4-step preparation and public-hold plan for 034 Short 1 Test A opening v02"
         }
       ],
-      "remaining_action": "Upload the Pluto Short about the frozen heart (v02, Test A opening) Private, slot Mon 21 Dec 11:30",
+      "remaining_action": "Verify J2868 SHA-256 across stores, run gate_shorts_open check, prepare/dry-run 07_Upload-Package for Mon 21 Dec 11:30Z, and place on public hold",
       "due": "2026-12-18T18:00:00Z",
       "kind": "listing",
       "approved_from": {
@@ -273834,12 +273839,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-18T18:08Z",
+        "of": 4,
+        "at": "2026-11-18T18:10Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Starting J3066: replacing default_plan with 4-step preparation and public-hold plan for 034 Short 1 Test A opening v02"
+      },
+      "taskKeys": [
+        "OWB:034"
+      ]
     }
   ],
   "focus": [
