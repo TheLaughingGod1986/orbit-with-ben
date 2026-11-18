@@ -269902,9 +269902,14 @@
           "at": "2026-11-18T16:21Z",
           "by": "codex",
           "what": "step 1 of 3 done: Git history proves J2997 (WW2:003) wrote the OWB:003 script state; baseline had no script entry"
+        },
+        {
+          "at": "2026-11-18T16:23Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PR1020 restores the exact pre-J2997 script absence; J3060 queued for routing fix; JSON comparison and board check pass"
         }
       ],
-      "remaining_action": "Restore the Exoplanets script record and document the channel mix-up",
+      "remaining_action": "Land and verify the Exoplanets record correction",
       "kind": "chief",
       "handoff": {
         "film": "003",
@@ -269913,11 +269918,11 @@
         "signature": "383f23bb1027e5d9fb6b"
       },
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-18T16:21Z",
+        "at": "2026-11-18T16:23Z",
         "by": "codex",
-        "note": "Git history proves J2997 (WW2:003) wrote the OWB:003 script state; baseline had no script entry"
+        "note": "PR1020 restores the exact pre-J2997 script absence; J3060 queued for routing fix; JSON comparison and board check pass"
       },
       "taskKeys": [
         "OWB:003"
