@@ -271653,13 +271653,27 @@
           "at": "2026-11-18T11:45Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-18T11:53Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "Generate one guarded opening cue and verify its files and music checks",
       "due": "2026-11-18T14:00:00Z",
       "kind": "assembly",
       "plain": "Make the revised opening music for the gravity film",
-      "mini_only": true
+      "mini_only": true,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     },
     {
       "id": "J3046",
