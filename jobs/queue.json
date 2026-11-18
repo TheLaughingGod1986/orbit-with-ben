@@ -275738,9 +275738,14 @@
           "at": "2026-11-18T22:48Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Started J3086 condition verification for J3063; reading J3063, J3070, J3071, J3084, J3085 history and evidence"
+        },
+        {
+          "at": "2026-11-18T22:49Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified J3085 is still blocked awaiting Chief reopen of J3070, J3070 is still blocked, J3063 is still needs=mini, and launch_check has no reading; no Mini probe repeated per J3084 ruling"
         }
       ],
-      "remaining_action": "Verify whether J3070 completed the MacBook handoff for J3063 (ChbsigHD5_o first-day check)",
+      "remaining_action": "Write and commit jobs/reviews/J3086/REVIEW.md documenting that J3063 hold remains unmet pending J3085/J3070 MacBook handoff",
       "kind": "review",
       "recheck_of": "J3063",
       "due": "2026-11-18T19:39:00+00:00",
@@ -275755,11 +275760,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-18T22:48Z",
+        "at": "2026-11-18T22:49Z",
         "by": "gemini",
-        "note": "Started J3086 condition verification for J3063; reading J3063, J3070, J3071, J3084, J3085 history and evidence"
+        "note": "Verified J3085 is still blocked awaiting Chief reopen of J3070, J3070 is still blocked, J3063 is still needs=mini, and l"
       },
       "taskKeys": [
         "HOS:006"
