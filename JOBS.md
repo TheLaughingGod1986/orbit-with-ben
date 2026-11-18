@@ -44,7 +44,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2951 | cloud | open | – | – | assembly · Stop the refill tick using 3-4 GB: read the acting Chief once per scan |  |
 | J2976 | mini | open | – | – | for claudecode · studio · `mini-claude-opus-5-5` · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J2986 | mini | blocked | claudecode | – | 033 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test |  |
-| J2993 | mini | claimed | codex | 2026-11-18T20:50Z | WW2:001 edit · for codex · assembly · WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch |  |
+| J2993 | mini | open (after J2992) | – | – | WW2:001 edit · for codex · assembly · WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch |  |
 | J2996 | mini | open (after J2995) | – | – | WW2:002 edit · for codex · assembly · WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch |  |
 | J3012 | mini | open | – | – | chief · Decoupling phase 3: move the studio engine into its own repo, runbook now, move after a clean week |  |
 | J3014 | mini | open | – | – | chief · Chief: resolve 001 script orphan-review |  |
