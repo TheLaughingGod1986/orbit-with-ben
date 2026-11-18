@@ -274738,9 +274738,14 @@
           "at": "2026-11-18T20:37Z",
           "by": "codex",
           "what": "step 2 of 3 done: Pushed #1001 head 9b0279f5b6 and #1013 head 909daf7066. Analytics typecheck, lint, 6 lock tests and all 215 Vitest tests pass. CI running."
+        },
+        {
+          "at": "2026-11-18T20:42Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PR #1013 required CI passes at 909daf7066. PR #1001 reconciled with main at 8ba25c0074; 139 focused tests PASS, core/rules/status checks PASS. Final Rules CI running; newer pilot files preserved."
         }
       ],
-      "remaining_action": "Read required CI results and hand off the repaired prerequisites",
+      "remaining_action": "Confirm final Rules CI and hand off both prerequisite heads",
       "due": "2026-11-19T16:00:00Z",
       "for": "codex",
       "kind": "assembly",
@@ -274749,9 +274754,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-18T20:37Z",
+        "at": "2026-11-18T20:42Z",
         "by": "codex",
-        "note": "Pushed #1001 head 9b0279f5b6 and #1013 head 909daf7066. Analytics typecheck, lint, 6 lock tests and all 215 Vitest tests"
+        "note": "PR #1013 required CI passes at 909daf7066. PR #1001 reconciled with main at 8ba25c0074; 139 focused tests PASS, core/rul"
       }
     },
     {
