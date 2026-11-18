@@ -273810,9 +273810,14 @@
           "at": "2026-11-18T18:10Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting J3066: replacing default_plan with 4-step preparation and public-hold plan for 034 Short 1 Test A opening v02"
+        },
+        {
+          "at": "2026-11-18T18:12Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1/4: Verified J2868 5-part KEEP review and 034_short01_testA_opening_v02.mp4 sha256 c9a02052ff7a33cba10adc52e440cfe793c6cca1f31e355262acf9fd9c4ba677 (53,859,275 B) across studio-live, NAS OWB UAT, and iCloud OWB UAT"
         }
       ],
-      "remaining_action": "Verify J2868 SHA-256 across stores, run gate_shorts_open check, prepare/dry-run 07_Upload-Package for Mon 21 Dec 11:30Z, and place on public hold",
+      "remaining_action": "Run gate_shorts_open.py check without --report-only on 034_short01_testA_opening_v02.mp4, build/dry-run 07_Upload-Package for Mon 21 Dec 11:30Z, and place on public hold",
       "due": "2026-12-18T18:00:00Z",
       "kind": "listing",
       "approved_from": {
@@ -273838,11 +273843,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-18T18:10Z",
+        "at": "2026-11-18T18:12Z",
         "by": "gemini",
-        "note": "Starting J3066: replacing default_plan with 4-step preparation and public-hold plan for 034 Short 1 Test A opening v02"
+        "note": "Step 1/4: Verified J2868 5-part KEEP review and 034_short01_testA_opening_v02.mp4 sha256 c9a02052ff7a33cba10adc52e440cfe"
       },
       "taskKeys": [
         "OWB:034"
