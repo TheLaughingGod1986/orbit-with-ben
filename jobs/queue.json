@@ -273505,9 +273505,14 @@
           "at": "2026-11-18T17:48Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-18T17:48Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Chief resolves 034 edit handoff and records the next owner/action",
+      "remaining_action": "Check Pluto edit evidence and approvals, then resolve its review status",
       "kind": "chief",
       "handoff": {
         "film": "034",
@@ -273519,10 +273524,11 @@
         "step": 0,
         "of": 3,
         "at": "2026-11-18T17:48Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "codex"
+      },
+      "taskKeys": [
+        "OWB:034"
+      ]
     },
     {
       "id": "J3063",
