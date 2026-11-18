@@ -267835,9 +267835,14 @@
           "at": "2026-11-18T06:42Z",
           "by": "gemini",
           "what": "step 1 of 4 done: VO synthesis halfway: 3 of 6 chapters (ch00-ch02, 9,829 of 19,756 spoken chars) rendered to WAV; ch03-ch05 + Scribe running"
+        },
+        {
+          "at": "2026-11-18T06:45Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2 done: synthesized atlantic_black_pit_vo_v01 (6 chapters, 1,441.02 s / 24:01.02, 19,756 chars spent, -20.1 LUFS, raw Scribe 97.18% PASS); running full boundary, per-chapter loudness and mismatch checks"
         }
       ],
-      "remaining_action": "Finish synthesizing ch03-ch05 + Scribe STT, then run voice checks, copy master to NAS and open PR",
+      "remaining_action": "Run transcript, boundary, per-chapter loudness and Whisper vo_check audits, stage master to studio-live NAS and open PR",
       "due": "2026-11-22T18:00:00Z",
       "for": "gemini",
       "kind": "vo",
@@ -267846,11 +267851,11 @@
         "WW2:002"
       ],
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-18T06:42Z",
+        "at": "2026-11-18T06:45Z",
         "by": "gemini",
-        "note": "VO synthesis halfway: 3 of 6 chapters (ch00-ch02, 9,829 of 19,756 spoken chars) rendered to WAV; ch03-ch05 + Scribe runn"
+        "note": "Step 2 done: synthesized atlantic_black_pit_vo_v01 (6 chapters, 1,441.02 s / 24:01.02, 19,756 chars spent, -20.1 LUFS, r"
       }
     },
     {
