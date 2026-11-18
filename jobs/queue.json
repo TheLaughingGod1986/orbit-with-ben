@@ -271807,9 +271807,14 @@
           "at": "2026-11-18T12:44Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-18T12:45Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J3046; starting scope and artifact check"
         }
       ],
-      "remaining_action": "Independently audition the new score, transition, narration mix and tail",
+      "remaining_action": "Read SCORE_SCOPE_J3042.json, J3043 ruling, and check v03 score artifact existence and producer identity",
       "due": "2026-11-18T15:00:00Z",
       "kind": "review",
       "required_capabilities": [
@@ -271827,12 +271832,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-18T12:44Z",
+        "of": 4,
+        "at": "2026-11-18T12:45Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3046; starting scope and artifact check"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J3047",
