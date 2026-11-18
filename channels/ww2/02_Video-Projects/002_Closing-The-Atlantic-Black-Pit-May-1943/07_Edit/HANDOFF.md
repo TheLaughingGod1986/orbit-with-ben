@@ -1,3 +1,36 @@
+# J2996 resume checkpoint — 18 November 2026, full editorial draft
+
+This checkpoint supersedes the incomplete picture counts below. **Unfinished editorial draft; no music, full watch/listen QA, Chief PASS or Ben-watch submission.** Progress is 2/5: picture coverage complete, full-film finishing still needed.
+
+## Delivered this run
+
+- Added **169 sentence clips** across the remaining 39 paragraph briefs. Total: **243 sentence clips plus the four-sentence opening = all 247 sentences / 58 paragraphs**. Eight sequence manifests, source clip hashes, exact locked narration and v01 timings cross-checked. No missing sentence or duplicate output path.
+- Full editorial draft: `07_Edit/full_draft_v01/atlantic_full_editorial_DRAFT_v01.mp4` under the NAS film root. **1443.04 seconds (24:03.04), 36,076 frames, 1920×1080, 25 fps, H.264/AAC.** Full ffmpeg decode and counted-frame ffprobe checks succeed. SHA256: `f060fb652acd8d26b69e092bbb1f0026cd715899a4fe7c027d043544c43a3941`. Entire original WAV muxed once, unchanged; two-second end hold. There is **no music**.
+- `FULL_DRAFT_v01.json` records full-draft hash, EDL hash, source voice hash and all final picture paths/hashes/frame counts. `PICTURE_BUILD_v01.json` checks the eight source sequences. All media remains on NAS; no media committed.
+- `EDL_v02.json` and `TIMING_CONFORM_v02.json`: all nine lexical boundary flags traced to Scribe acronym/digit formatting or US spelling (HX229, SC122, 1943, ONS5, SC130, defense/defence, organization/organisation, center/centre). Word timestamps inspected directly; cuts recomputed in inter-sentence gaps. Fifteen picture rows conformed by trimming/padding final picture frames. This is transcript/timing verification, **not hearing the take** or approving speech content. v01 retained for source clip manifests.
+- P1 / P2 archive treatments show real Aldergrove photographs at reduced size with collection, date and rights captions. P4 / Bogue is a native 800×519 inset explicitly dated Norfolk, 20 June 1943. P3 remains unavailable: its existing sentence-specific map alternatives are used, no repeated retry. Recovered P5 is retained but unused. Description credits now match actual usage.
+- Still contact sheets inspected for each new batch, plus full-size archive, command diagram and engineering panel checks. Four L010 frames were rebuilt after inspection caught a label/icon overlap; replacements are under `03_Picture/maps/early_layout_fixes_v01/`. The final assembler checks and uses them. Reused archive picture IDs now get **unique sentence-based output paths**, preventing captions from overwriting one another.
+- Nine decoded full-draft still samples inspected; retained as `07_Edit/full_draft_v01/STILL_SAMPLE_CONTACT.jpg`. This is still-image evidence only. No claim to hearing audio or perceiving motion.
+- Draft title, chapters, sources, actual archive credits, tags and honest AI-assisted narration how-made line updated in `11_Upload-Package`. It remains explicitly non-uploadable.
+
+## Resume without rerendering unchanged work
+
+NAS root: `/Volumes/data/studio-live/ww2/02_Video-Projects/002_Closing-The-Atlantic-Black-Pit-May-1943/`.
+Worktree: `/Volumes/MiniWork/scratch/j2996-atlantic-edit`, branch `codex/j2996-atlantic-edit`, draft PR #1018.
+All six new sequence jobs and the full draft are **complete**, no render remains running. Completion markers under `/Users/benjaminoats/_desk/logs/j2996/`: `early-v01.done`, `geography-v01.done`, `aircraft-v01.done`, `synthesis-v01.done`, `carrier-v01.done`, `ending-v01.done`, `full-draft-v01.done` are all **0**. Matching `.log` files retain the actual run output. Existing detection/convoy/opening batches remain complete.
+
+New renderers: `early_maps.py`, `geography_maps.py`, `aircraft_maps.py`, `bridge_maps.py` with `synthesis_maps.py` and `carrier_maps.py`, `ending_maps.py`. `assemble_full_draft.py` checks all source hashes/timings, applies the four layout overrides and v02 picture lengths, then muxes the full voice and decodes/counts the result. Python: `/opt/homebrew/opt/python@3.14/bin/python3.14`.
+
+## Remaining work in this same job
+
+1. **Polish picture/editorial treatment.** The cut is diagram-heavy by its signed shot plan. Review pacing and comprehension at full size; replace/reposition any small labels that cross coastlines, standardise the opening with the later map style, and remove sentence/file debug IDs from the final film. Camera moves and layer timing require actual motion perception; frozen end-frame conforms are draft treatments. Do not infer exact historical positions or numeric coverage from schematic geometry.
+2. **Film-specific music and sound.** Select/create a licensed score within the £0 brief. No OWB/HOS media reuse, paid API, credit top-up or unapproved generation. No music has been selected or approved by this run.
+3. **Capable quality pass.** Run applicable technical gates against the finished mix, then a real full watch/listen with a worker whose input capabilities are demonstrated. This session has no audio_input or moving_video_input. Record typed capability holds if that input blocks the next assigned step; do not turn still sampling or decode success into perceptual PASS.
+4. Reconcile actual VO review/status and finish package; do not change locked narration. Review references below are historical until checked against current records.
+5. Elected Chief decides ordinary final review under channel rules, then deliver the **finished** cut to Ben's board for watch. No upload until that watch passes; verification/account eligibility is checked only in a later authorised upload job. No money, account changes or upload performed here.
+
+---
+
 # J2996 resume checkpoint — 18 November 2026, second run
 
 This checkpoint supersedes the counts and P5 status in the initial preparation note below. The film is unfinished. No full-film QA, audio/motion perception, Chief approval or Ben-watch submission.

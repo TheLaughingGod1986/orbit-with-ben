@@ -4,7 +4,7 @@ import argparse,hashlib,json,pathlib,subprocess,sys,traceback
 
 def run(cmd):subprocess.run([str(x) for x in cmd],check=True)
 def main():
- p=argparse.ArgumentParser();p.add_argument('--media',type=pathlib.Path,required=True);p.add_argument('--done',type=pathlib.Path,required=True);p.add_argument('--renderer',default='detection_maps.py',choices=['detection_maps.py','convoy_maps.py']);p.add_argument('--batch',default='detection_v01',choices=['detection_v01','convoys_v01']);a=p.parse_args();code=1
+ p=argparse.ArgumentParser();p.add_argument('--media',type=pathlib.Path,required=True);p.add_argument('--done',type=pathlib.Path,required=True);p.add_argument('--renderer',default='detection_maps.py',choices=['detection_maps.py','convoy_maps.py','ending_maps.py','geography_maps.py','aircraft_maps.py','early_maps.py','synthesis_maps.py','carrier_maps.py']);p.add_argument('--batch',default='detection_v01',choices=['detection_v01','convoys_v01','ending_v01','geography_v01','aircraft_v01','early_v01','synthesis_v01','carrier_v01']);a=p.parse_args();code=1
  try:
   edit=pathlib.Path(__file__).resolve().parent;out=a.media/'03_Picture/maps'/a.batch;out.mkdir(parents=True,exist_ok=True)
   run([sys.executable,edit/a.renderer,'--out',out,'--video'])

@@ -146,10 +146,10 @@ def main():
  film=pathlib.Path(__file__).resolve().parents[1];edl=json.loads((film/'07_Edit/EDL_v01.json').read_text());rows=[r for r in edl['rows'] if r['line_id'] in SPECS and (not a.only or r['shot_id']==a.only)];manifest=[]
  for row in rows:
   duration=row['cut_end_s']-row['cut_start_s'];frames=round(row['cut_end_s']*FPS)-round(row['cut_start_s']*FPS)
-  still=a.out/(row['picture_id']+'.jpg');render(row,duration*.5,duration).save(still,quality=94)
+  still=a.out/(row['shot_id']+'.jpg');render(row,duration*.5,duration).save(still,quality=94)
   item={k:row[k] for k in ['shot_id','line_id','narration','picture_id','cut_start_s','cut_end_s','boundary_review']};item.update(mode=SPECS[row['line_id']][int(row['shot_id'].split('.')[1])-1][0],still=str(still),frames=frames,state='draft_requires_picture_review')
   if a.video:
-   path=a.out/(row['picture_id']+'.mp4');proc=subprocess.Popen(['ffmpeg','-hide_banner','-loglevel','error','-y','-f','rawvideo','-pixel_format','rgb24','-video_size',f'{W}x{H}','-framerate',str(FPS),'-i','-','-an','-c:v','libx264','-preset','veryfast','-crf','20','-pix_fmt','yuv420p',str(path)],stdin=subprocess.PIPE)
+   path=a.out/(row['shot_id']+'.mp4');proc=subprocess.Popen(['ffmpeg','-hide_banner','-loglevel','error','-y','-f','rawvideo','-pixel_format','rgb24','-video_size',f'{W}x{H}','-framerate',str(FPS),'-i','-','-an','-c:v','libx264','-preset','veryfast','-crf','20','-pix_fmt','yuv420p',str(path)],stdin=subprocess.PIPE)
    for n in range(frames):proc.stdin.write(render(row,n/FPS,duration).tobytes())
    proc.stdin.close()
    if proc.wait():raise RuntimeError('ffmpeg failed: '+row['shot_id'])

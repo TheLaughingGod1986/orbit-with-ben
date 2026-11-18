@@ -18,10 +18,9 @@ W. A. B. Douglas, The Creation of a National Air Force, official history of the 
 Samuel J. Cox, NHHC, H-019-4: Black May (2018), withdrawal date and warning on counting conventions — https://www.history.navy.mil/about-us/leadership/director/directors-corner/h-grams/h-gram-019/h-019-4.html
 NHHC, Battle of the Atlantic: Overview, strategic supply and combined defence — https://www.history.navy.mil/browse-by-topic/wars-conflicts-and-operations/world-war-ii/1942/atlantic/overview.html
 
-Archive picture credits (draft; final used-image list must match the cut):
+Archive picture credits:
 IWM CH 18035 and CH 18031 — H. Hensser, RAF official photographer, Air Ministry official collection; Crown copyright expired.
 US Navy 80-G-71314 — USS Bogue near Norfolk, 20 June 1943; US federal public domain.
-Two planned Navy photographs remain unresolved and are not cleared for use.
 Maps: studio code using public-domain Natural Earth coastline data.
 
-How made: Original researched narration in Ben’s licensed narrator voice, archive photographs and studio-drawn explanatory maps. Maps and symbolic routes are schematic. No reconstructed combat footage.
+How made: Original researched script, AI-assisted narration using Ben’s licensed narrator voice, archive photographs and studio-drawn explanatory maps. Maps and symbolic routes are schematic. No reconstructed combat footage.
