@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2035, J2529.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2035, J2529, J3044.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -67,7 +67,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3039 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
 | J3041 | mini | open | – | – | chief · Chief: resolve 002 edit orphan-doing |  |
 | J3043 | any | open (after J3042) | – | – | 009 edit · chief · HOS 009: decide revised continuous opening score scope | J3038 |
-| J3044 | mini | open | – | – | for codex · studio · WW2 channel is live on YouTube: record its channel ID and connect it to the studio |  |
+| J3044 | mini | open | – | – | for codex · studio · WW2 channel is live: record its channel ID, short name FOH on the board, connect it to the studio |  |
 
 Recently finished:
 
