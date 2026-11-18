@@ -273859,13 +273859,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-18T20:17Z",
-      "eta": "2026-11-18T20:37Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-18T17:39Z",
-      "result": "",
+      "result": "Waiting for: Chief ruling merged in PR #1023: leave the live Short unchanged; no technical faults, five views insufficient to diagnose editing or topic fatigue, feed impressions unknown. Await 19 Nov morning snapshot and Studio traffic-source read for dH_yCRmzkMo. Record actual age and feed share versus preceding Nearest Star/Voyager Shorts; preserve 6h reading. Missing snapshot: use Studio and state limitation. Traffic data pending: retry 19 Nov 12:00Z. Close if no action warranted; actual faults/proposed live changes need elected-Chief ruling. No YouTube changes authorised.",
       "history": [
         {
           "at": "2026-11-18T17:39Z",
@@ -273921,9 +273921,19 @@
           "at": "2026-11-18T20:17Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-18T20:17Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: Chief ruling merged in PR #1023: leave the live Short unchanged; no technical faults, five views insufficient to diagnose editing or topic fatigue, feed impressions unknown. Await 19 Nov morning snapshot and Studio traffic-source read for dH_yCRmzkMo. Record actual age and feed share versus preceding Nearest Star/Voyager Shorts; preserve 6h reading. Missing snapshot: use Studio and state limitation. Traffic data pending: retry 19 Nov 12:00Z. Close if no action warranted; actual faults/proposed live changes need elected-Chief ruling. No YouTube changes authorised."
+        },
+        {
+          "at": "2026-11-18T20:17Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-19T07:00:00Z"
         }
       ],
-      "remaining_action": "PR #1023 open; park J3064 for Chief (Verdict: BEHIND, not shown) and post studio thread report",
+      "remaining_action": "Read tomorrow morning’s figures for the Voyager and nearest-star Short and decide whether any follow-up is needed.",
       "due": "2026-11-18T19:39:00Z",
       "kind": "studio",
       "launch": "dH_yCRmzkMo@6",
@@ -273935,6 +273945,11 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "input",
+        "condition": "Chief ruling merged in PR #1023: leave the live Short unchanged; no technical faults, five views insufficient to diagnose editing or topic fatigue, feed impressions unknown. Await 19 Nov morning snapshot and Studio traffic-source read for dH_yCRmzkMo. Record actual age and feed share versus preceding Nearest Star/Voyager Shorts; preserve 6h reading. Missing snapshot: use Studio and state limitation. Traffic data pending: retry 19 Nov 12:00Z. Close if no action warranted; actual faults/proposed live changes need elected-Chief ruling. No YouTube changes authorised.",
+        "check_at": "2026-11-19T07:00:00Z"
       }
     },
     {
