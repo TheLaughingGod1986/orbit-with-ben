@@ -267763,10 +267763,10 @@
       "stage": "vo",
       "after": "J2994",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-18T06:32Z",
+      "eta": "2026-11-18T07:32Z",
       "created_by": "claude",
       "created_at": "2026-11-17T17:20Z",
       "result": "",
@@ -267815,6 +267815,11 @@
           "at": "2026-11-18T06:29Z",
           "by": "codex",
           "what": "remaining action: Record the approved Atlantic film narration in six chapters after checking available voice credits, then check the recording and submit it for review."
+        },
+        {
+          "at": "2026-11-18T06:32Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Record the approved Atlantic film narration in six chapters after checking available voice credits, then check the recording and submit it for review.",
@@ -267824,7 +267829,15 @@
       "plain": "Record the narration in Ben's voice for: How Long-Range Bombers Closed the Atlantic Black Pit in May 1943",
       "taskKeys": [
         "WW2:002"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-18T06:32Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2996",
