@@ -7,7 +7,7 @@ copy Orbit's Git history. J2537's history rewrite is not a prerequisite. The sou
 ## Timing and acceptance
 
 Target Monday 23 or Tuesday 24 November, subject to all checks below. The earliest possible seven-day streak is
-20 November; the committed history currently records four clean days, 14–17 November. Recheck, do not infer.
+20 November; the committed history records five clean days, 14–18 November (18 November 07:54Z). Recheck, do not infer.
 
 - `python3 scripts/studio_split.py --streak jobs/reviews/studio_split/history.jsonl` must read at least 7.
   Each day must have `left: 0` and `tests: run`. Run the full dry run again on the frozen cutover source.
@@ -227,7 +227,7 @@ thread; preserve studio and rehearsal branches for diagnosis.
 
 The baseline split at source `905b34ee0b` reported `left: 0`, `clean: true`, all eight groups zero and `tests: run`;
 2220 files went to studio, 12709 to Orbit, 56 to HOS and one status page was rebuilt. This was an isolated check,
-not a new daily-history entry. The official streak remains four recorded days until the daily job records today.
+not a new daily-history entry. The official daily job subsequently recorded 18 November at 07:54Z, making five consecutive zero days; this rehearsal did not add a daily entry.
 
 Changing the isolated registry to the actual future studio repository exposed a real acceptance gap:
 `test_channels.StudioOwnRepo.test_the_board_repo_and_its_github_name_come_from_the_home_channel` still expects
@@ -249,3 +249,24 @@ already tracked PNG/JPG assets because the copied ignore rules ignore them (incl
 The published rehearsal explicitly preserves those exact existing assets; no video/audio is added. At cutover,
 compare the ROUTES inventory to `git ls-files` and stage the already tracked allowlisted images explicitly.
 Do not force-add arbitrary files or use the dry run's initial Git tree as a complete inventory.
+
+
+## Resume checklist after the 18 November verification
+
+PR #1011 already holds this runbook; update that PR rather than creating a duplicate. The published rehearsal
+root was fetched independently and its 2223 tracked files rescanned: zero address/key findings, no active workflow
+YAML, no video/audio files. Its root SHA matches the evidence above. The current daily result is a different,
+newer snapshot (`58b6cf14e8`, 2247 studio files, 12711 Orbit files, 57 HOS files); never reuse the old rehearsal
+queue for production.
+
+The next work is available now, before the date gate: implement and test the retained-thread repository adapter;
+correct the two production-identity test assumptions; prepare launcher/bootstrap and workflow adaptations; verify
+private board Contents access. Keep these as J3012 work unless separately queued with explicit links. The actual
+cutover remains gated; five daily zeros do not authorize it. Do not hold ready adapter work behind 20 November.
+
+A clone of the rehearsal alone is not a complete split layout. Supply `STUDIO_REPO` and each channel's checkout
+environment explicitly; the Orbit cache is not present in that snapshot. For a full rehearsal, rebuild isolated
+sibling channel views with `studio_split.py`, including routed analytics, and retain those views with the test
+logs. Pointing the new engine at today's real channel checkouts is a useful compatibility probe, but cannot prove
+the post-move layout: HOS's routed analytics still live in Orbit today. Never move them in the live checkouts just
+to make a rehearsal test pass. The independent compatibility probe's four failures are recorded in REHEARSAL.md.
