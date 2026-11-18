@@ -274827,13 +274827,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-18T20:47Z",
-      "eta": "2026-11-18T21:47Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-18T20:34Z",
-      "result": "",
+      "result": "Delivered PR #1027 (5a6544a957): nine foreign stages restored to proven prior absence; 002 foreign claim and next removed; 003 script and 004 corrections preserved. Audit and 61-commit evidence included. Board/core/rules and focused studio checks pass. Full suite 1464 tests, 13 skips; two TMPDIR-dependent failures cleared by all 12 gate_upcoming tests passing under /private/tmp. Next: independent Chief review and merge; routing guard remains PR #1021. No media or publishing changes.",
       "history": [
         {
           "at": "2026-11-18T20:34Z",
@@ -274864,6 +274864,11 @@
           "at": "2026-11-18T20:54Z",
           "by": "codex",
           "what": "step 3 of 3 done: Records restored with evidence; 1464 suite tests run, two TMPDIR failures cleared by 12-test rerun; focused studio checks pass"
+        },
+        {
+          "at": "2026-11-18T20:54Z",
+          "by": "codex",
+          "what": "done: Delivered PR #1027 (5a6544a957): nine foreign stages restored to proven prior absence; 002 foreign claim and next removed; 003 script and 004 corrections preserved. Audit and 61-commit evidence included. Board/core/rules and focused studio checks pass. Full suite 1464 tests, 13 skips; two TMPDIR-dependent failures cleared by all 12 gate_upcoming tests passing under /private/tmp. Next: independent Chief review and merge; routing guard remains PR #1021. No media or publishing changes."
         }
       ],
       "remaining_action": "Handing the verified Orbit records repair to Chief review",
@@ -274886,7 +274891,8 @@
         "OWB:004",
         "OWB:005",
         "OWB:006"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1027"
     },
     {
       "id": "J3075",

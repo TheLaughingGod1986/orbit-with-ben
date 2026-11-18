@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2035, J2529, J3044, J3074, J2993.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2035, J2529, J3044, J2993.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -60,7 +60,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3066 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Pluto Short about the frozen heart (v02, Test A opening) Private, slot Mon 21 Dec 11:30 |  |
 | J3070 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Restore HOS Studio response for the plants Short first-day check |  |
 | J3073 | any | open (after J3072) | – | – | chief · Integrate repaired Field Order History connection prerequisites |  |
-| J3074 | mini | claimed | codex | 2026-11-18T21:47Z | for codex · studio · Orbit 001-006: undo the stage changes WW2 jobs wrote into Orbit's film records |  |
 | J3075 | mini | open | – | – | review · Verify condition for J2996 |  |
 | J3076 | mini | open | – | – | chief · Chief: resolve 001 script orphan-review |  |
 | J3077 | mini | open | – | – | chief · Chief: resolve 001 vo orphan-review |  |
@@ -73,6 +72,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 Recently finished:
 
+- J3074 done: Orbit 001-006: undo the stage changes WW2 jobs wrote into Orbit's film records (Delivered PR #1027 (5a6544a957): nine foreign stages restored to proven prior absence; 002 foreign claim and next removed; 003 script and 004 corrections preserved. Audit and 61-commit evidence included. Board/core/rules and focused studio checks pass. Full suite 1464 tests, 13 skips; two TMPDIR-dependent failures cleared by all 12 gate_upcoming tests passing under /private/tmp. Next: independent Chief review and merge; routing guard remains PR #1021. No media or publishing changes.)
 - J3072 done: Repair Field Order History prerequisite PR checks (Repaired prerequisites: #1001 8ba25c0074735313b6eb5bac6fddbbc29c4f9405 Rules CI 44393856313 PASS; #1013 909daf70667803e50bff224c9c80a420d45aff0d Content Ops 44392934605 and Rules 44392934623 PASS. Local analytics lint/typecheck/215 Vitest plus 6 lock tests PASS; final 139 focused Python tests PASS. Main reconciled into #1001 branch, concurrent pilot files preserved. Handoff report posted to studio thread, local copy /Users/benjaminoats/_desk/reports/J3072/REPORT.md. J3073 owns review/merge order and #1019 settings/cache/legacy-film reconciliation; J3044 remains held. No merge, YouTube change, sign-in, money or credits.)
 - J3071 done: Verify MacBook HOS Studio fallback for the plants Short (Verified local MacBook HOS Studio fallback on CDP 9222 via cdp_tabs.reuse_page (PR #1026, reported on J3070 PR #1024): existing ~/.hos-chrome-cdp reopened cleanly with zero login/profile/process changes; connect_over_cdp 0.030s, reuse_page 0.002s, Runtime.evaluate 0.010s on single tab EA394E247B8CE3D31BDC9C7D3C8291D6; signed-in channel verified as HistoryOfScienceYT (UCXp7HkBIl1LgaznXuZHJyRg); ChbsigHD5_o Since published Analytics loaded at 2026-11-18T20:37:02.820251+00:00 (re-confirmed 20:38:54Z: Views 0, Likes 0, retention/engagement Not enough data, dashboard rank 9 of 10). Read-only; J3063 and J3064 untouched; no launch verdict recorded.)
 - J3069 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (17 OWB + 7 HOS longs; 88 OWB + 32 HOS Shorts. CTR hits vs 4%: OWB 2/17, HOS 4/7. 144 videos read without request errors; six analytics files saved in 7d57042a43 and published tracker c5c0b8a9 verified field-for-field. Missing Studio figures omitted; no YouTube writes or spend.)
@@ -82,4 +82,3 @@ Recently finished:
 - J3060 done: Prevent channel-qualified jobs from changing another channel film record (PR #1021 open: reject inconsistent channel-qualified identities in board claim/release/completion and media lookup; reconcile 11 WW2 queue repos with all historical and production fields preserved; read-only audit links J3013/J3019 and existing repairs, flags 001 edit/002 residues for Chief. 174 tests pass plus diff check. No film status, media, schedule or active claim changed. Checkout main; Chief review/merge pending.)
 - J3059 done: HOS 009: Chief decision after corrected billing proposal review (KEEP PR651 d047b064 offline only after independent Claude review and reproduced tests/probes. Unmerged, unintegrated; all production holds and closed allowances preserved.)
 - J3058 done: HOS 009: independent Claude review of corrected offline billing evidence (done)
-- J3057 done: HOS 009: correct offline billing evidence proposal after Chief review (Corrected PR651 at d047b064; 11 tests and check_all pass; 28 reviewer probes inspected. Independent Claude review J3058 then Chief decision J3059 queued. No merge, spend, account requests or production change.)
