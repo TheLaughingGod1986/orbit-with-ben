@@ -226538,10 +226538,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-18T21:47Z",
+      "eta": "2026-11-18T23:47Z",
       "created_by": "claude",
       "created_at": "2026-11-10T19:53Z",
       "result": "",
@@ -226930,6 +226930,11 @@
           "at": "2026-11-18T21:13Z",
           "by": "codex",
           "what": "released: Clean checkpoint: HOS656 at 6eea98ec records explicit migration closure disposition for 551/561/651 with exact tree inventories and 200 verified source hashes. Required local checks and 344 tests PASS; GitHub tests still installing ffmpeg, so no merge/closure yet. Finish CI, merge656, verify main and unchanged source heads, close 551/561/651 unmerged retaining branches; preserve desk180 and every production/review hold. Then stage3 mirror/NAS bundle/rehearsal. Worktree /Volumes/MiniWork/scratch/j2537-retained-disposition. Reports posted to both threads. No backup process or history rewrite started; stage2 incomplete, no timed picture-window hold."
+        },
+        {
+          "at": "2026-11-18T21:47Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Finish CI and merge HOS656, close preserved review PRs unmerged, then rehearse history cleanup",
