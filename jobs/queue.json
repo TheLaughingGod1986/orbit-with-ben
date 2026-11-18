@@ -273609,13 +273609,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-18T20:31Z",
-      "eta": "2026-11-18T22:31Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-18T17:26Z",
-      "result": "",
+      "result": "Chief ruling: condition NOT MET, verified against fresh GitHub checks at unchanged heads and Gemini evidence in jobs/reviews/J3061/REVIEW.md. PR #1001 Rules and #1013 Content Ops checks FAIL; #1019 open; ww2-channel#10 merged. J3044 remains held with last_recheck J3061 and next check 2026-11-18T23:40:00Z. J3072 repairs code; J3073 depends on J3072 and owns gated integration and evidence-based reopening. No sign-in request, spend or YouTube change.",
       "history": [
         {
           "at": "2026-11-18T17:26Z",
@@ -273676,6 +273676,11 @@
           "at": "2026-11-18T20:31Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-18T20:32Z",
+          "by": "codex",
+          "what": "done: Chief ruling: condition NOT MET, verified against fresh GitHub checks at unchanged heads and Gemini evidence in jobs/reviews/J3061/REVIEW.md. PR #1001 Rules and #1013 Content Ops checks FAIL; #1019 open; ww2-channel#10 merged. J3044 remains held with last_recheck J3061 and next check 2026-11-18T23:40:00Z. J3072 repairs code; J3073 depends on J3072 and owns gated integration and evidence-based reopening. No sign-in request, spend or YouTube change."
         }
       ],
       "remaining_action": "Elected Chief (Codex): run jobs.py wait J3044 --type input --recheck J3061 (next check 2026-11-18T23:40:00Z) and jobs.py done J3061",
