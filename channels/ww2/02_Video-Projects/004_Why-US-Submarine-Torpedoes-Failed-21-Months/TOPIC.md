@@ -1,22 +1,11 @@
-# `WW2:004` — Why America's Submarine Torpedoes Failed for 21 Months in WW2
+# WW2:004 — Why America's Torpedoes Failed Even When They Hit
 
-- **Priority:** Film 4 (Post-pilot 32–42 min slate)
-- **Title length:** `61` characters (`<= 70` limit)
-- **Target length & voice:** `34:00` (`~4,500` words · `~27,200` spoken chars · Post-upgrade slate (~34 min, ~27,200 chars))
-- **Status:** Unlocked (`£0` spent). Waiting for Ben to pick the channel name and lock on `#plan`.
+Topic locked by Codex, acting Chief, 18 November 2026, J3000. Evidence and packaging comparison: TOPIC_REVIEW.md.
 
-## Original Angle
+Original working title: Why America's Submarine Torpedoes Failed for 21 Months in WW2. Changed before scripting because diagnosis, field remedies and fleet reliability did not share one precise endpoint.
 
-From December 1941 until September 1943, US Pacific submarine skippers fired Mark 14 torpedoes that ran 10 feet too deep, exploded prematurely on defective Mark 6 magnetic exploders, or crushed their contact firing pins on perpendicular hits while the Bureau of Ordnance blamed crews — until Admirals Lockwood and Christie ran unauthorized live tests in Hawaii and Australia.
+The film follows the Mark 14’s interacting depth, magnetic and contact faults, showing how unrealistic testing delayed diagnosis. Christie’s command retained the magnetic feature after Lockwood’s command abandoned it; the earlier brief’s suggestion that they ran the same rebellion together is superseded.
 
-## Archive Provenance Collections (Checked Per Image Before Assembly)
+Current scope: about 25 minutes; draft 3,168 words / 19,523 narration characters, below 21,000. Six chapters. Sources, separate claims self-check and shot plan in 01_Script; per-image provenance in 03_Picture. No VO in J3000. £0 spent. No channel account or publication action.
 
-- US NHHC & NARA RG 80-G / RG 74 (Bureau of Ordnance Newport, Maui net & cliff drop tests, USS Silversides / USS Tunny patrol photos & logs — US federal PD)
-
-## Demand & Verified `100k+` Neighbour Videos (`Pulled 2026-11-17`)
-
-- **Demand:** military history (236,985/mo vidIQ); YouTube GB autocomplete: 'mark 14 torpedo'
-- **Verified `100k+` neighbours:**
-1. `tPug2HYrnqo` — *The Giant Torpedo Fail that Almost Changed WW2* (**1,673,011 views**, `10:20`)
-2. `eQ5Ru7Zu_1I` — *The Mark 14 Torpedo - Failure is Like Onions* (**1,431,562 views**, `33:27`)
-3. `k7LKQBdXsHk` — *The USN Pacific Submarine Campaign - Hey, the torpedoes are working!* (**1,322,956 views**, `1:03:52`)
+Topic GO is not a film PASS. The text package goes through the PR; later work must download and inspect archive masters, render the graphics and make the film before Ben watches it.
