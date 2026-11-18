@@ -226736,9 +226736,14 @@
           "at": "2026-11-18T09:45Z",
           "by": "codex",
           "what": "step 1 of 4 done: HOS PR 643 ready; all local checks pass and 32 source hashes match. GitHub checks pending. Stage 2 remains incomplete."
+        },
+        {
+          "at": "2026-11-18T09:48Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: 643 merged and three sources closed. Second carry preserves 72 exact files from six PRs; all local checks pass."
         }
       ],
-      "remaining_action": "Merge the checked topic-record carry and close its three source pull requests; then resolve the remaining PRs",
+      "remaining_action": "Merge the six-PR film-record carry, then resolve the final eight ordinary HOS pull requests",
       "due": "2026-11-18T18:00:00Z",
       "kind": "chief",
       "plain": "Remove email addresses from both channels' repos, including their past versions",
@@ -226746,11 +226751,15 @@
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-18T09:45Z",
+        "at": "2026-11-18T09:48Z",
         "by": "codex",
-        "note": "HOS PR 643 ready; all local checks pass and 32 source hashes match. GitHub checks pending. Stage 2 remains incomplete."
+        "note": "643 merged and three sources closed. Second carry preserves 72 exact files from six PRs; all local checks pass."
       },
       "taskKeys": [
+        "HOS:008",
+        "HOS:009",
+        "HOS:010",
+        "HOS:011",
         "HOS:102",
         "HOS:103"
       ]
