@@ -273967,13 +273967,27 @@
           "at": "2026-11-18T18:32Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-18T18:32Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-18T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Choose archive replacements, then finish the full edit and score",
       "kind": "review",
       "recheck_of": "J2993",
       "due": "2026-11-18T19:32:00+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J3068",
