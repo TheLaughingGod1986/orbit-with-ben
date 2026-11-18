@@ -271815,9 +271815,14 @@
           "at": "2026-11-18T12:10Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-18T12:10Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3048; starting condition verification for HOS 009 Shorts assembly J2171"
         }
       ],
-      "remaining_action": "Verify readiness: Wait for the accepted gravity score and completed long before assembling its Shorts",
+      "remaining_action": "Inspect J2171 hold, J3045/J3046/J3047/J2035/J0862 status and local evidence",
       "kind": "review",
       "recheck_of": "J2171",
       "due": "2026-11-18T12:52:18+00:00",
@@ -271836,9 +271841,11 @@
         "of": 3,
         "at": "2026-11-18T12:10Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3048; starting condition verification for HOS 009 Shorts assembly J2171"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     }
   ],
   "focus": [
