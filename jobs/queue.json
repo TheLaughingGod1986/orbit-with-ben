@@ -273540,13 +273540,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-18T18:23Z",
-      "eta": "2026-11-18T18:43Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-18T17:39Z",
-      "result": "",
+      "result": "parked for Chief: first-day check unavailable; HOS Studio CDP lists the correct existing tab but Playwright attachment and direct Runtime.evaluate time out. Restore browser response, then rerun the same check. No figures verified, no launch verdict recorded, no video settings changed.",
       "history": [
         {
           "at": "2026-11-18T17:39Z",
@@ -273592,6 +273592,11 @@
           "at": "2026-11-18T18:25Z",
           "by": "codex",
           "what": "step 1 of 3 done: Brief and channel rules checked. Existing Studio tab found at the correct video; Playwright attachment and direct CDP Runtime.evaluate both timed out. No figures verified and no Studio settings changed."
+        },
+        {
+          "at": "2026-11-18T18:26Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: first-day check unavailable; HOS Studio CDP lists the correct existing tab but Playwright attachment and direct Runtime.evaluate time out. Restore browser response, then rerun the same check. No figures verified, no launch verdict recorded, no video settings changed."
         }
       ],
       "remaining_action": "Waiting for the HOS Studio browser to respond so the first-day figures can be read",
