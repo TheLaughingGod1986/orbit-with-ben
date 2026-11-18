@@ -50,7 +50,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2996 | mini | open (after J2995) | – | – | WW2:002 edit · for codex · assembly · WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch |  |
 | J3006 | mini | open (after J2990) | – | – | for codex · studio · WW2 channel: read its own analytics from day one, and a progress-to-monetisation card |  |
 | J3010 | mini | blocked | gemini | – | 007 upload · review · HOS 007 Vaccine Short (xgx2lYHhYZM): read next-morning snapshot after J3004 | f57ab150da |
-| J3012 | mini | claimed | codex | 2026-11-18T09:36Z | chief · Decoupling phase 3: move the studio engine into its own repo, runbook now, move after a clean week |  |
+| J3012 | mini | open | – | – | chief · Decoupling phase 3: move the studio engine into its own repo, runbook now, move after a clean week |  |
 | J3013 | mini | open | – | – | chief · Chief: resolve 003 script orphan-doing |  |
 | J3014 | mini | open | – | – | chief · Chief: resolve 001 script orphan-review |  |
 | J3015 | mini | open | – | – | chief · Chief: resolve 001 vo orphan-review |  |
