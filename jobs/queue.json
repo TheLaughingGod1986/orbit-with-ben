@@ -271886,13 +271886,13 @@
       "stage": "edit",
       "after": "J3046",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-18T13:07Z",
-      "eta": "2026-11-18T13:27Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-18T11:45Z",
-      "result": "",
+      "result": "NOT ACCEPTED / NOT GENERATED: zero v03 POSTs/spend; allowance permanently closed unused under fallback. PR647/648 evidence and PR649 decision merged (e3037e8c), local ALL CHECKS PASS and GitHub green. J2035/J2171 held; 22 Nov readiness at risk, no replacement promise or public schedule change. J3050 queued for no-spend billing mapping proposal and independent review. Desk6979643790 answers Claude6978888233; GBP0.",
       "history": [
         {
           "at": "2026-11-18T11:45Z",
@@ -271923,6 +271923,11 @@
           "at": "2026-11-18T13:14Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR647/648 evidence and PR649 decision merged; all local and GitHub checks pass; J3050 queued and assembly holds preserved"
+        },
+        {
+          "at": "2026-11-18T13:15Z",
+          "by": "codex",
+          "what": "done: NOT ACCEPTED / NOT GENERATED: zero v03 POSTs/spend; allowance permanently closed unused under fallback. PR647/648 evidence and PR649 decision merged (e3037e8c), local ALL CHECKS PASS and GitHub green. J2035/J2171 held; 22 Nov readiness at risk, no replacement promise or public schedule change. J3050 queued for no-spend billing mapping proposal and independent review. Desk6979643790 answers Claude6978888233; GBP0."
         }
       ],
       "remaining_action": "Complete: score held and revised delivery plan recorded",
@@ -271938,7 +271943,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/649"
     },
     {
       "id": "J3048",
