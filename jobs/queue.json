@@ -269077,13 +269077,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-18T00:04Z",
-      "eta": "2026-11-18T02:04Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-18T00:01Z",
-      "result": "",
+      "result": "parked for Chief: J2985 PR #987 repaired at 2283c8c986; re-review required by the brief before merge or deployment",
       "history": [
         {
           "at": "2026-11-18T00:01Z",
@@ -269119,6 +269119,11 @@
           "at": "2026-11-18T00:13Z",
           "by": "codex",
           "what": "step 4 of 4 done: Repair pushed to the original PR branch at 2283c8c986; corrected report and sanitized billing provenance included; merge and deployment remain pending"
+        },
+        {
+          "at": "2026-11-18T00:13Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: J2985 PR #987 repaired at 2283c8c986; re-review required by the brief before merge or deployment"
         }
       ],
       "remaining_action": "Awaiting Chief re-review of the repaired credit panel on pull request 987",
