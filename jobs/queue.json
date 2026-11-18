@@ -178940,9 +178940,14 @@
           "at": "2026-11-18T13:31Z",
           "by": "relay",
           "what": "condition verification queued: J3054"
+        },
+        {
+          "at": "2026-11-18T14:55Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-19T12:00:00Z"
         }
       ],
-      "remaining_action": "Wait for a compliant score; billing evidence proposal is assigned to J3050",
+      "remaining_action": "Await J3052 then J3053 billing evidence decision and a separately accepted score for the gravity film",
       "due": "2026-11-15T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -178957,10 +178962,12 @@
         "note": "Input inventory finished: five locked narration hashes match Mini/NAS; five-metre diagram matches; falling-Moon r4 verif"
       },
       "hold": {
-        "type": "dependency",
-        "condition": "J3047 NOT ACCEPTED: v03 not generated; J3043 allowance permanently closed unused. J3050 must deliver new billing evidence proposal, independent review and new Chief route decision. No repeat of unchanged score checks; reopen only on separately accepted compliant score, all original gates retained.",
-        "check_at": "2026-11-18T14:31:59+00:00",
-        "recheck_task": "J3054"
+        "type": "input",
+        "condition": "Chief review J3054: condition NOT MET. J3047 permanently closed J3043/J3045 unused; v01/v02 remain rejected and no v03 exists. J3050 PR651 ff02370b remains open; Claude desk6980094321 passes the offline evidence rule only. Existing J3052 records independent review, then J3053 decides the proposal and concrete route, including shared-meter reconciliation. Neither authorizes generation. Reopen assembly only on a separately accepted compliant score with every original gate retained; no unchanged media rechecks before the recorded retry.",
+        "check_at": "2026-11-19T12:00:00Z",
+        "last_recheck": "J3054",
+        "checked_at": "2026-11-18T14:55:50+00:00",
+        "checked_by": "codex"
       }
     },
     {
