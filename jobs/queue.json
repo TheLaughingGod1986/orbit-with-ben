@@ -272545,6 +272545,11 @@
           "at": "2026-11-18T16:35Z",
           "by": "codex",
           "what": "reopened: Taking requested Chief review of exact v02 and PR1015; J3020 remains held."
+        },
+        {
+          "at": "2026-11-18T16:35Z",
+          "by": "codex",
+          "what": "rerouted to codex on gpt-6-astra: Explicit elected-Chief review priority from Ben; take J3051 only."
         }
       ],
       "remaining_action": "Elected Chief (Codex): merge PR #1015, lock 064 script in status.json (SHA-256 0dd5ea6c...), reopen/complete J3020 (releasing J3021 VO), and close J3051",
@@ -272559,8 +272564,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon",
+      "for": "codex",
+      "model": "gpt-6-astra",
       "taskKeys": [
         "OWB:064"
       ]
