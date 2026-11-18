@@ -188971,9 +188971,14 @@
           "at": "2026-11-17T22:48Z",
           "by": "gemini",
           "what": "remaining action: Wait for HOS 009 long score route decision after J2808 hold and J2035 long assembly before assembling Shorts A/B"
+        },
+        {
+          "at": "2026-11-18T11:48Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-18T15:30:00Z"
         }
       ],
-      "remaining_action": "Wait for HOS 009 long score route decision after J2808 hold and J2035 long assembly before assembling Shorts A/B",
+      "remaining_action": "Wait for the accepted gravity score and completed long before assembling its Shorts",
       "due": "2026-11-22T18:00:00Z",
       "kind": "assembly",
       "progress": {
@@ -188988,11 +188993,8 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "Waiting on HOS 009 revised music chain (J2805-J2808) and J2035 long assembly + gates before assembling Shorts A/B.",
-        "check_at": "2026-11-18T12:00:00Z",
-        "last_recheck": "J2927",
-        "checked_at": "2026-11-17T09:23:01+00:00",
-        "checked_by": "gemini"
+        "condition": "Await J3045 generation -> J3046 demonstrated-audio review -> J3047 accepted score, then J2035 long assembly and all required gates; Shorts own VO/input requirements remain. J2808 rejection of v01/v02 remains; J3043 approves only a bounded request, not a score or film.",
+        "check_at": "2026-11-18T15:30:00Z"
       }
     },
     {
