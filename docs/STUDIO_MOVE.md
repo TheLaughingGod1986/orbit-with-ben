@@ -68,12 +68,12 @@ Git-level history is linked by the old remote and full source commit in the migr
 Keep old threads readable and open; preserve the existing read cursor and board pairing/signing keys.
 This avoids migrating approvals or changing the board token's Issues repositories.
 
-There is an implementation prerequisite: `studio_thread.py` currently derives `REPO` from
-`channels.studio_github()` and ignores the `repo` field in `thread.json`. Before setting the studio identity,
-make the thread reader/writer honor the explicit thread repository with a compatible fallback. Audit other thread
-consumers (especially Chief heartbeat/election) for the same assumption and test cross-repository routing.
-`api/checks.js` already names the retained store/thread repositories explicitly; keep those synchronized with
-`thread.json` at later rollovers. Do not simply change the studio identity and post to issue 954 in the new repo.
+The PR now makes `studio_thread.py` honor the explicit `repo` in `thread.json`, falling back to
+`channels.studio_github()` only for a legacy configuration with no repository. The existing prefix, cursor and
+thread-number override remain unchanged. Chief election's `fetch_comments` uses this same module/API;
+`board_check.py` already reads the repository from `thread.json`. Regression tests cover both reads and posts
+after changing the engine identity. `api/checks.js` names the retained store/thread repositories explicitly;
+keep those synchronized with `thread.json` at later rollovers. Do not post to issue 954 in the new repository.
 
 ## Access and hosting
 
@@ -97,7 +97,8 @@ Keep `studio/board_site.json` at `https://board.oppti.dev`; preserve any live `r
 existing `05_Analytics/kanban/board_site` build from studio to the existing board project only after preview passes.
 Do not deploy or reconnect the separate `/go` affiliate project. Retain the old deployment ID for rollback.
 Update `05_Analytics/kanban/board_site/wrangler.jsonc` too: its current `BOARD_DATA_REPO` still names Orbit. Build with `python3 05_Analytics/kanban/board_site/build.py`; from that site folder use the existing Cloudflare Pages deployment procedure (`npx wrangler pages deploy dist --project-name studio-kanban`) only at the approved cutover.
-Update or retire the legacy `/api/ref` hard-coded Orbit endpoint, and remove/check stale client public fallbacks.
+The PR routes legacy `/api/ref` through `/api/data` with `f=ref`, so it shares the configured repository,
+authentication and private cache rules. Check stale client public fallbacks before cutover.
 Verify signed-out reads return 401, paired reads return current studio data, and private replies have private cache
 headers. Check the Tracker's embedded public snapshot policy explicitly before deploying a private-data page.
 
@@ -259,9 +260,9 @@ YAML, no video/audio files. Its root SHA matches the evidence above. The current
 newer snapshot (`58b6cf14e8`, 2247 studio files, 12711 Orbit files, 57 HOS files); never reuse the old rehearsal
 queue for production.
 
-The next work is available now, before the date gate: implement and test the retained-thread repository adapter;
-correct the two production-identity test assumptions; prepare launcher/bootstrap and workflow adaptations; verify
-private board Contents access. Keep these as J3012 work unless separately queued with explicit links. The actual
+The retained-thread adapter and two production-identity test assumptions are addressed in this PR, along with
+the legacy board ref endpoint. The next work remains available before the date gate: prepare launcher/bootstrap
+and workflow adaptations; verify private board Contents access. Keep these as J3012 work unless separately queued with explicit links. The actual
 cutover remains gated; five daily zeros do not authorize it. Do not hold ready adapter work behind 20 November.
 
 A clone of the rehearsal alone is not a complete split layout. Supply `STUDIO_REPO` and each channel's checkout

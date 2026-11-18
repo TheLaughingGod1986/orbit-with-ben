@@ -41,3 +41,27 @@ was absent; no tests ran in that attempt. Neither result is a cutover PASS.
 Official daily evidence now has five consecutive zero days (14–18 November); latest source `58b6cf14e8`,
 18 November 07:54Z, tests run, all eight groups zero. The earlier rehearsal evidence remains historical and is
 not replaced with the daily snapshot. No live service, token, channel content or production branch was changed.
+
+
+## Adapter continuation, 18 November 15:20Z
+
+Updated the existing PR from `b83f93f3b7` in a clean, detached worktree. No live service, repository identity,
+thread configuration, deployment or channel file was switched.
+
+- Thread reads and posts now use `thread.json.repo` even when the engine moves to `studio`. Missing/empty repo
+  retains the legacy engine fallback. Cursor, prefix and override names are unchanged. Chief election uses
+  the same thread API; board_check already reads the explicit repository.
+- Channel-loader and MacBook URL-map tests now check the registry instead of assuming the engine is Orbit.
+  The clone-map test is outside the class that deliberately pins the legacy home-channel fixture.
+- Legacy `/api/ref` delegates to the authenticated data handler, preserving the ref response shape and applying
+  `BOARD_DATA_REPO`, sign-in and private cache rules. No deployment was made.
+- Current-layout validation: 70 loader + 85 worker + 15 thread tests pass. Relay suite: 113 pass.
+  Board-data suite: 25 run, 21 pass, four browser cases skipped. Site build passes.
+- Independent future-identity targeted validation: **170 tests, exit 0**, with routed analytics in isolated
+  sibling views, no home channel, studio GitHub identity, and explicit engine/channel checkout environments.
+  This resolves the earlier 168-test compatibility failures without moving live analytics.
+- First broad split started before the worker-test correction was copied and reported one worker-test failure.
+  It is a superseded intermediate result, not a daily streak entry. The completed targeted probe uses the correction.
+- Remaining before cutover: launcher/bootstrap and CI adaptations, exact deployed board credential access,
+  old-entrypoint single-writer safeguards, seven official clean days and prior-day notice. Live relay/publish/tick
+  acceptance is still outstanding. The published rehearsal root remains historical, not a deployable snapshot.

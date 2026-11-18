@@ -58,12 +58,41 @@ console.log(JSON.stringify(results));
 """
 
 
-def run(body: str) -> dict:
+def run(body: str, *, legacy_ref: bool = False) -> dict:
     code = HARNESS.replace("__BODY__", body).replace("__A__", SHA_A)
+    if legacy_ref:
+        code = code.replace('import handler, { forget, HOLD_S, FILES, dataRepo } from "./api/data.js";',
+                            'import { forget, HOLD_S, FILES, dataRepo } from "./api/data.js";\n'
+                            'import handler from "./api/ref.js";')
     out = subprocess.run([NODE, "--input-type=module", "-e", code], cwd=SITE, capture_output=True, text=True)
     if out.returncode:
         raise AssertionError(out.stderr[-2000:])
     return json.loads(out.stdout.strip().splitlines()[-1])
+
+
+@unittest.skipUnless(NODE, "node not installed")
+class LegacyRef(unittest.TestCase):
+    def test_private_engine_ref_keeps_auth_and_does_not_leak_through_cache(self):
+        r = run("""
+process.env.BOARD_DATA_REPO = 'example/studio';
+process.env.BOARD_PRIVATE = '1';
+results.stranger = await get({});
+results.beforeAuth = world.calls.length;
+results.ben = await get({f:'board', sha:'invalid'}, {cookie});
+results.calls = world.calls;
+""", legacy_ref=True)
+        self.assertEqual(r['stranger']['status'], 401)
+        self.assertEqual(r['beforeAuth'], 0)
+        self.assertEqual(r['ben']['status'], 200)
+        self.assertEqual(json.loads(r['ben']['body']), {'object': {'sha': SHA_A}})
+        self.assertTrue(r['ben']['headers']['cache-control'].startswith('private'))
+        self.assertEqual(r['ben']['headers']['vary'], 'Cookie, x-board-key')
+        self.assertEqual(r['calls'], ['GET api.github.com/repos/example/studio/git/ref/heads/board-data +token'])
+
+    def test_public_legacy_ref_still_returns_the_expected_shape(self):
+        r = run("results.ref = await get({});", legacy_ref=True)
+        self.assertEqual(r['ref']['status'], 200)
+        self.assertEqual(json.loads(r['ref']['body']), {'object': {'sha': SHA_A}})
 
 
 @unittest.skipUnless(NODE, "node not installed")
