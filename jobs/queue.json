@@ -1,5 +1,5 @@
 {
-  "next_id": 3060,
+  "next_id": 3061,
   "jobs": [
     {
       "id": "J0001",
@@ -273064,6 +273064,35 @@
         "HOS:009"
       ],
       "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/651#issuecomment-6984410397"
+    },
+    {
+      "id": "J3060",
+      "title": "Prevent channel-qualified jobs from changing another channel film record",
+      "needs": "any",
+      "repo": "owb",
+      "body": "J3013 proved cross-channel board contamination: J2997 has repo=owb, film=a WW2-qualified identity, stage=script; jobs.board_claim/on_board resolved it into the Orbit Exoplanets film Exoplanets. Commit 0e52d64724 introduced the script claim and b3ed58d6a3 released it to review. J2998 did the same for picture (ad280b2667, 07452a6b40). Fix channel-qualified identity handling so a foreign prefix cannot silently select an OWB status file, including claim/release/completion/media lookups as applicable. Reconcile mismatched queued WW2 repo/film identities safely with existing channel registry. Add focused regression tests for a WW2-qualified identity with repo owb and valid all registered channels records, proving no cross-channel writes. Audit affected records and link existing repair jobs rather than duplicating them (J3013 script correction; J3019 picture correction). Preserve historical approvals, media, schedules, and active worker claims. Open a code PR for Chief review; no generation or publishing. This is a linked successor to J3013, which restores only the proven script contamination.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J3013",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-18T16:23Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T16:23Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Fix channel identity checks and test that each job updates only its own channel",
+      "kind": "assembly",
+      "plain": "Fix jobs that accidentally update the wrong channel’s video progress"
     }
   ],
   "focus": [
