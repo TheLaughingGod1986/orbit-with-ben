@@ -266883,9 +266883,14 @@
           "at": "2026-11-18T03:22Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-19T18:00:00Z"
+        },
+        {
+          "at": "2026-11-18T04:08Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-19T18:00:00Z"
         }
       ],
-      "remaining_action": "Await J3024 corrections and Chief re-review before merge and deployment",
+      "remaining_action": "Await J3028 integration and verified live credit cards before closing delivery",
       "due": "2026-11-19T18:00:00Z",
       "for": "gemini",
       "kind": "studio",
@@ -266900,7 +266905,7 @@
       "escalated_at": "2026-11-17T16:30Z",
       "hold": {
         "type": "dependency",
-        "condition": "Chief FIX on repaired PR 987 at 2283c8c986, review comment 6968024257: J3024 must correct browser reset year/UTC parsing and allowance Time/decision display, pass regressions and return for Chief re-review. No merge or deploy approved.",
+        "condition": "Chief KEEP of J3024 at d569a115d3 recorded on PR 987. J3028 owns conflict integration, revalidation, merge, deployment and live 390px verification; J2985 stays held until that delivery evidence is recorded.",
         "check_at": "2026-11-19T18:00:00Z"
       }
     },
