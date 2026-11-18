@@ -70,6 +70,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3034 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3010 |  |
 | J3035 | mini | open | – | – | chief · Chief: resolve 002 vo orphan-review |  |
 | J3036 | any | open | – | – | 064 script · script · OWB 064: Correct script facts and rerun Gemini checks | J3027 |
+| J3037 | any | open (after J3036) | – | – | 064 script · review · OWB 064: Verify corrected script and decide the narration lock | J3027 |
 
 Recently finished:
 
