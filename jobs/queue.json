@@ -273968,6 +273968,11 @@
           "at": "2026-11-18T20:12Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-18T21:00:00Z"
+        },
+        {
+          "at": "2026-11-18T20:57Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Wait for browser recovery in J3070, then finish the plants Short launch check using observed figures",
@@ -273998,7 +274003,8 @@
         "type": "dependency",
         "condition": "Chief ruling 18 Nov: incomplete technical input failure, not a performance verdict. Fresh existing-tab document.title probe timed out after 8 seconds; no analytics reading exists. J3070 must restore responsive signed-in HOS Studio and verify Since published analytics for ChbsigHD5_o before J3063 resumes its original read-only setup and statistics check. No video changes authorized.",
         "check_at": "2026-11-18T21:00:00Z"
-      }
+      },
+      "escalated_at": "2026-11-18T20:57Z"
     },
     {
       "id": "J3064",
