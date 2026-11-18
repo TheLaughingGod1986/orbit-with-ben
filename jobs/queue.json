@@ -1,5 +1,5 @@
 {
-  "next_id": 3038,
+  "next_id": 3040,
   "jobs": [
     {
       "id": "J0001",
@@ -178915,6 +178915,11 @@
           "at": "2026-11-17T22:48Z",
           "by": "gemini",
           "what": "remaining action: Wait for desk #180 Chief/owner HOS 009 score route decision after J2808 hold (v01 failed music_gate 0.821; v02 failed J2807 ear review on 6 silent dropouts in 18.95-97.92s)"
+        },
+        {
+          "at": "2026-11-18T09:07Z",
+          "by": "relay",
+          "what": "condition verification queued: J3038"
         }
       ],
       "remaining_action": "Wait for desk #180 Chief/owner HOS 009 score route decision after J2808 hold (v01 failed music_gate 0.821; v02 failed J2807 ear review on 6 silent dropouts in 18.95-97.92s)",
@@ -178934,10 +178939,11 @@
       "hold": {
         "type": "dependency",
         "condition": "Waiting on HOS 009 revised music chain: J2805 (reopened in J2979 to push/merge 4b92c042) -> J2806 (180s opening-cue replacement) -> J2807 (ear review) -> J2808 (Chief score acceptance).",
-        "check_at": "2026-11-18T09:00:00Z",
+        "check_at": "2026-11-18T10:07:12+00:00",
         "last_recheck": "J2892",
         "checked_at": "2026-11-17T09:23:01+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J3038"
       }
     },
     {
@@ -225823,6 +225829,11 @@
           "at": "2026-11-17T09:23Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-18T09:00:00Z"
+        },
+        {
+          "at": "2026-11-18T09:07Z",
+          "by": "relay",
+          "what": "condition verification queued: J3039"
         }
       ],
       "remaining_action": "Land reconcile-session-block on history-of-science, close row 56 t1 at 0 credits, verify dry-run --floor 3000, and mint rows 56-66",
@@ -225846,10 +225857,11 @@
       "hold": {
         "type": "input",
         "condition": "Codex/worker lands reconcile-session-block on history-of-science, closes HOS:013:P05:08a_wallace_opens_origin:t1 as SESSION_BLOCKED at 0 credits, and verifies dry-run --floor 3000 before resuming Batch 12 (rows 56-66).",
-        "check_at": "2026-11-18T09:00:00Z",
+        "check_at": "2026-11-18T10:07:12+00:00",
         "last_recheck": "J2720",
         "checked_at": "2026-11-17T09:23:01+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J3039"
       },
       "escalated_at": "2026-11-12T20:07Z"
     },
@@ -270710,6 +270722,69 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J3038",
+      "title": "Verify condition for J2035",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2035: Waiting on HOS 009 revised music chain: J2805 (reopened in J2979 to push/merge 4b92c042) -> J2806 (180s opening-cue replacement) -> J2807 (ear review) -> J2808 (Chief score acceptance).. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2035 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-18T09:07Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T09:07Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Wait for desk #180 Chief/owner HOS 009 score route decision after J2808 hold (v01 failed music_gate 0.821; v02 failed J2807 ear review on 6 silent dropouts in 18.",
+      "kind": "review",
+      "recheck_of": "J2035",
+      "due": "2026-11-15T18:00:00+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3039",
+      "title": "Verify condition for J2529",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2529: Codex/worker lands reconcile-session-block on history-of-science, closes HOS:013:P05:08a_wallace_opens_origin:t1 as SESSION_BLOCKED at 0 credits, and verifies dry-run --floor 3000 before resuming Batch 12 (rows 56-66).. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2529 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-18T09:07Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T09:07Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Land reconcile-session-block on history-of-science, close row 56 t1 at 0 credits, verify dry-run --floor 3000, and mint rows 56-66",
+      "kind": "review",
+      "recheck_of": "J2529",
+      "mini_only": true,
+      "due": "2026-11-12T18:45:00+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
