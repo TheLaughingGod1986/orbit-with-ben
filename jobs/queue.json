@@ -256387,13 +256387,13 @@
       "stage": "edit",
       "after": "J2867",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-18T17:03Z",
-      "eta": "2026-11-18T18:03Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-14T23:03Z",
-      "result": "",
+      "result": "KEEP (5-part multimodal review PASS on 034 Pluto long master v02 + Short 1 v02 + Short 2 v02; all J2383 §5.1-5.3 fixes verified; staged in OWB UAT and armed jobs.py awaits; PR #1022 @ 495a3c323b; £0)",
       "history": [
         {
           "at": "2026-11-14T23:03Z",
@@ -256459,6 +256459,11 @@
           "at": "2026-11-18T17:26Z",
           "by": "gemini",
           "what": "step 6 of 6 done: PR #1022 (495a3c323b): 5-part review KEEP on Long v02 + Short 1 v02 + Short 2 v02; staged in iCloud & NAS OWB UAT and armed jobs.py awaits"
+        },
+        {
+          "at": "2026-11-18T17:26Z",
+          "by": "gemini",
+          "what": "done: KEEP (5-part multimodal review PASS on 034 Pluto long master v02 + Short 1 v02 + Short 2 v02; all J2383 §5.1-5.3 fixes verified; staged in OWB UAT and armed jobs.py awaits; PR #1022 @ 495a3c323b; £0)"
         }
       ],
       "remaining_action": "Waiting for Ben's UAT watch of 034 Pluto long master v02 and Shorts 1 & 2 v02",
@@ -256518,7 +256523,8 @@
           "number": "034 S2",
           "type": "short"
         }
-      ]
+      ],
+      "done_ref": "495a3c323b"
     },
     {
       "id": "J2869",
