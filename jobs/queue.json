@@ -256387,10 +256387,10 @@
       "stage": "edit",
       "after": "J2867",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-18T17:03Z",
+      "eta": "2026-11-18T18:03Z",
       "created_by": "gemini",
       "created_at": "2026-11-14T23:03Z",
       "result": "",
@@ -256404,6 +256404,11 @@
           "at": "2026-11-14T23:20Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-15T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-18T17:03Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Wait for J2867, then run 5-part multimodal review on 034 long v02 and Shorts 1 & 2 v02",
@@ -256420,7 +256425,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-18T17:03Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2869",
