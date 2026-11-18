@@ -42,6 +42,7 @@ def request(session, url, **kwargs):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--out', type=Path, required=True)
+    parser.add_argument('--ids', nargs='+', choices=IDS, help='Limit this pass to specific eligible catalogue IDs')
     args = parser.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
     session = requests.Session()
@@ -51,7 +52,7 @@ def main():
     if manifest.exists():
         records = json.loads(manifest.read_text())
     finished = {r['requested_id'] for r in records if r.get('status') != 'ERROR'}
-    for archive_id in IDS:
+    for archive_id in (args.ids or IDS):
         if archive_id in finished:
             continue
         records = [r for r in records if r['requested_id'] != archive_id]
