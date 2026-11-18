@@ -269785,18 +269785,23 @@
           "at": "2026-11-18T15:20Z",
           "by": "codex",
           "what": "step 3 of 4 done: Thread repository adapter and identity tests implemented in isolated worktree; 170 current-layout tests pass. Future-layout checks running; live move remains gated."
+        },
+        {
+          "at": "2026-11-18T15:25Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: PR 1011 updated at 1d3d29ad9a: retained-thread routing, authenticated legacy board ref, registry-aware fixtures. Future targeted 170 pass; broad 1352 found three fixture failures, corrected and affected 122 pass. No live switch."
         }
       ],
-      "remaining_action": "Finish isolated adapter checks and update the migration PR",
+      "remaining_action": "Prepare service and CI adapters, verify private board access, then execute the gated studio move",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-18T15:20Z",
+        "at": "2026-11-18T15:25Z",
         "by": "codex",
-        "note": "Thread repository adapter and identity tests implemented in isolated worktree; 170 current-layout tests pass. Future-lay"
+        "note": "PR 1011 updated at 1d3d29ad9a: retained-thread routing, authenticated legacy board ref, registry-aware fixtures. Future "
       }
     },
     {
