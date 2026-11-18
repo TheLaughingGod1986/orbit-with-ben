@@ -273609,10 +273609,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-18T20:31Z",
+      "eta": "2026-11-18T22:31Z",
       "created_by": "relay",
       "created_at": "2026-11-18T17:26Z",
       "result": "",
@@ -273671,6 +273671,11 @@
           "at": "2026-11-18T20:31Z",
           "by": "codex",
           "what": "rerouted to codex on gpt-6-astra: User assigned this exact Chief review to elected Codex; Gemini evidence preserved, transferring only decision completion ownership."
+        },
+        {
+          "at": "2026-11-18T20:31Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief (Codex): run jobs.py wait J3044 --type input --recheck J3061 (next check 2026-11-18T23:40:00Z) and jobs.py done J3061",
@@ -273687,7 +273692,15 @@
       },
       "for": "codex",
       "model": "gpt-6-astra",
-      "escalated_at": "2026-11-18T19:42Z"
+      "escalated_at": "2026-11-18T19:42Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-18T20:31Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3062",
