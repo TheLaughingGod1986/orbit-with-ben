@@ -268832,13 +268832,13 @@
       "stage": "",
       "after": "J2990",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-18T10:14Z",
-      "eta": "2026-11-18T14:14Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T17:43Z",
-      "result": "",
+      "result": "PR #1013 ready for review, ddad17ee9a. Read-only API collector, automatically dispatched 48h/7d Studio reads and weekly audience/Earn read, merged generated reports and monetisation card. 54 analytics tests + 54 board/launch + UI suite + 13 privacy tests and typecheck/core/syntax checks pass locally; CI running. Disabled until channel creation, own OAuth sign-in and Studio browser configuration; first live read validates field availability. No spend or YouTube changes.",
       "history": [
         {
           "at": "2026-11-17T17:43Z",
@@ -268894,6 +268894,11 @@
           "at": "2026-11-18T10:23Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR 1013 ready for review at ddad17ee9a; all local checks pass; GitHub checks running; own-channel activation remains disabled"
+        },
+        {
+          "at": "2026-11-18T10:23Z",
+          "by": "codex",
+          "what": "done: PR #1013 ready for review, ddad17ee9a. Read-only API collector, automatically dispatched 48h/7d Studio reads and weekly audience/Earn read, merged generated reports and monetisation card. 54 analytics tests + 54 board/launch + UI suite + 13 privacy tests and typecheck/core/syntax checks pass locally; CI running. Disabled until channel creation, own OAuth sign-in and Studio browser configuration; first live read validates field availability. No spend or YouTube changes."
         }
       ],
       "remaining_action": "Review the pull request; activate after channel creation and its read-only sign-in",
@@ -268907,7 +268912,8 @@
         "at": "2026-11-18T10:23Z",
         "by": "codex",
         "note": "PR 1013 ready for review at ddad17ee9a; all local checks pass; GitHub checks running; own-channel activation remains dis"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1013"
     },
     {
       "id": "J3007",
