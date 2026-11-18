@@ -207,12 +207,14 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [How Did a Helicopter Fly 72 Times on Mars?](https://youtu.be/RT-ec4_GcOk) | 3 d | 1236 | 50.7% | WATCH | 100.1% | LOOP |
-| [Why Does Pluto's Giant Ice Heart Have Zero Craters?](https://youtu.be/z5V6gIXXYs8) | 4 d | 368 | 38.2% | MISS | 100.0% | PASS |
-| [How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?](https://youtu.be/uhZSRcvngvE) | 5 d | 57 | 41.9% | too few to judge | 52.4% | too few to judge |
-| [Why Did a 90-Day Mars Rover Last 14 Years?](https://youtu.be/B1z2dv7m7Vk) | 6 d | 113 | 52.7% | WATCH | 72.7% | PASS |
-| [What Would Standing on Saturn's Moon Titan Feel Like?](https://youtu.be/ffYKoNVPoqg) | 7 d | 104 | 47.8% | WATCH | 52.7% | WATCH |
-| [Could a Robot Survive a Night on Mars?](https://youtu.be/iyvWYFP_ETA) | 8 d | 1073 | 38.8% | MISS | 62.7% | WATCH |
-| [What Are Shooting Stars Really Made Of?](https://youtu.be/T9fVlG3CCzU) | 10 d | 1288 | 49.9% | WATCH | 66.2% | WATCH |
+| [How Far From Earth Is Voyager 1 Right Now?](https://youtu.be/9q_OvQ1Rd8Y) | 32 h (early) | 257 | 25.3% | MISS | 110.8% | LOOP |
+| [If You Can't See the Nearest Star, How Far Away Is It?](https://youtu.be/aEfdxex__Bo) | 2 d | 467 | 36.3% | MISS | 157.9% | LOOP |
+| [How Did a Helicopter Fly 72 Times on Mars?](https://youtu.be/RT-ec4_GcOk) | 4 d | 1264 | 50.6% | WATCH | 101.7% | LOOP |
+| [Why Does Pluto's Giant Ice Heart Have Zero Craters?](https://youtu.be/z5V6gIXXYs8) | 5 d | 370 | 38.0% | MISS | 100.0% | PASS |
+| [How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?](https://youtu.be/uhZSRcvngvE) | 6 d | 57 | 41.9% | too few to judge | 52.4% | too few to judge |
+| [Why Did a 90-Day Mars Rover Last 14 Years?](https://youtu.be/B1z2dv7m7Vk) | 7 d | 113 | 52.7% | WATCH | 72.7% | PASS |
+| [What Would Standing on Saturn's Moon Titan Feel Like?](https://youtu.be/ffYKoNVPoqg) | 8 d | 106 | 47.8% | WATCH | 52.7% | WATCH |
+| [Could a Robot Survive a Night on Mars?](https://youtu.be/iyvWYFP_ETA) | 9 d | 1073 | 38.8% | MISS | 62.7% | WATCH |
+| [What Are Shooting Stars Really Made Of?](https://youtu.be/T9fVlG3CCzU) | 11 d | 1289 | 49.9% | WATCH | 66.2% | WATCH |
 
-Stayed to watch: 0 of 6 judged Shorts at 60%+. Average viewed: 3 of 6 at 70%+.
+Stayed to watch: 0 of 8 judged Shorts at 60%+. Average viewed: 5 of 8 at 70%+.
