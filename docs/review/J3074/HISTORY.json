@@ -1,0 +1,1863 @@
+[
+  {
+    "path": "02_Video-Projects/001_Will-We-Ever-Meet-Aliens/status.json",
+    "commit": "d97a6247c86520db83ac76d8a01b6c3e1f4ab6b1",
+    "subject": "jobs: next by macbook",
+    "changed": {
+      "air": {
+        "before": null,
+        "after": ""
+      },
+      "title": {
+        "before": null,
+        "after": ""
+      },
+      "film": {
+        "before": null,
+        "after": "001"
+      },
+      "next": {
+        "before": null,
+        "after": ""
+      },
+      "stages": {
+        "before": null,
+        "after": {
+          "script": {
+            "state": "doing"
+          }
+        }
+      },
+      "claims": {
+        "before": null,
+        "after": [
+          {
+            "stage": "script",
+            "by": "macbook",
+            "at": "2026-11-17T19:40Z",
+            "eta": "2026-11-17T22:09Z",
+            "note": "J2991 WW2 pilot 001: script and sources, \"How Britain Towed Two Floating Ports Across the Channel for D-Day\""
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/001_Will-We-Ever-Meet-Aliens/status.json",
+    "commit": "6dbb2a277195dea2ec769c08d5042c2942ebb839",
+    "subject": "jobs: done J2991 by macbook",
+    "changed": {
+      "stages": {
+        "before": {
+          "script": {
+            "state": "doing"
+          }
+        },
+        "after": {
+          "script": {
+            "state": "review"
+          }
+        }
+      },
+      "claims": {
+        "before": [
+          {
+            "stage": "script",
+            "by": "macbook",
+            "at": "2026-11-17T19:40Z",
+            "eta": "2026-11-17T22:09Z",
+            "note": "J2991 WW2 pilot 001: script and sources, \"How Britain Towed Two Floating Ports Across the Channel for D-Day\""
+          }
+        ],
+        "after": []
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/001_Will-We-Ever-Meet-Aliens/status.json",
+    "commit": "e2c09127bba72614007db98821470687d89543dc",
+    "subject": "jobs: next J2992 by gemini",
+    "changed": {
+      "stages": {
+        "before": {
+          "script": {
+            "state": "review"
+          }
+        },
+        "after": {
+          "script": {
+            "state": "review"
+          },
+          "vo": {
+            "state": "doing"
+          }
+        }
+      },
+      "claims": {
+        "before": [],
+        "after": [
+          {
+            "stage": "vo",
+            "by": "gemini",
+            "at": "2026-11-17T20:34Z",
+            "eta": "2026-11-17T21:33Z",
+            "note": "J2992 WW2 pilot 001: narration in Ben's voice"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/001_Will-We-Ever-Meet-Aliens/status.json",
+    "commit": "7570fd837987284cf89680cb5b223d6795dbe287",
+    "subject": "jobs: done J2992 by gemini",
+    "changed": {
+      "stages": {
+        "before": {
+          "script": {
+            "state": "review"
+          },
+          "vo": {
+            "state": "doing"
+          }
+        },
+        "after": {
+          "script": {
+            "state": "review"
+          },
+          "vo": {
+            "state": "review",
+            "ref": "6ac5525f44"
+          }
+        }
+      },
+      "claims": {
+        "before": [
+          {
+            "stage": "vo",
+            "by": "gemini",
+            "at": "2026-11-17T20:34Z",
+            "eta": "2026-11-17T21:33Z",
+            "note": "J2992 WW2 pilot 001: narration in Ben's voice"
+          }
+        ],
+        "after": []
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/001_Will-We-Ever-Meet-Aliens/status.json",
+    "commit": "9b53778e17e4edd3f165a488e0e9a2e048ba4ddc",
+    "subject": "jobs: next J2993 by codex",
+    "changed": {
+      "stages": {
+        "before": {
+          "script": {
+            "state": "review"
+          },
+          "vo": {
+            "state": "review",
+            "ref": "6ac5525f44"
+          }
+        },
+        "after": {
+          "script": {
+            "state": "review"
+          },
+          "vo": {
+            "state": "review",
+            "ref": "6ac5525f44"
+          },
+          "edit": {
+            "state": "doing"
+          }
+        }
+      },
+      "claims": {
+        "before": [],
+        "after": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T05:45Z",
+            "eta": "2026-11-18T09:44Z",
+            "note": "J2993 WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/001_Will-We-Ever-Meet-Aliens/status.json",
+    "commit": "beb10be704d081943199e92d5298b3656e521258",
+    "subject": "studio: WW2:001 edit claimed by codex",
+    "changed": {
+      "claims": {
+        "before": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T05:45Z",
+            "eta": "2026-11-18T09:44Z",
+            "note": "J2993 WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch"
+          }
+        ],
+        "after": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T05:46Z",
+            "eta": "2026-11-18T06:06Z",
+            "note": ""
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/001_Will-We-Ever-Meet-Aliens/status.json",
+    "commit": "92ae24004f9bfbf259a2ed68d971ba3b9f0ee6b4",
+    "subject": "studio: WW2:001 edit doing by codex",
+    "changed": {
+      "stages": {
+        "before": {
+          "script": {
+            "state": "review"
+          },
+          "vo": {
+            "state": "review",
+            "ref": "6ac5525f44"
+          },
+          "edit": {
+            "state": "doing"
+          }
+        },
+        "after": {
+          "script": {
+            "state": "review"
+          },
+          "vo": {
+            "state": "review",
+            "ref": "6ac5525f44"
+          },
+          "edit": {
+            "state": "doing",
+            "ref": "PR #1012; preparation only; archive harvest J2993-archive"
+          }
+        }
+      },
+      "claims": {
+        "before": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T05:46Z",
+            "eta": "2026-11-18T06:06Z",
+            "note": ""
+          }
+        ],
+        "after": []
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/001_Will-We-Ever-Meet-Aliens/status.json",
+    "commit": "b3485c1a2ac262e009156e176d378588cd51b9c8",
+    "subject": "jobs: next J2993 by codex",
+    "changed": {
+      "claims": {
+        "before": [],
+        "after": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T09:59Z",
+            "eta": "2026-11-18T13:58Z",
+            "note": "J2993 WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/001_Will-We-Ever-Meet-Aliens/status.json",
+    "commit": "b69f1411c157ed45dbc798fd1d773a8bdbf4db82",
+    "subject": "jobs: release J2993 by codex",
+    "changed": {
+      "claims": {
+        "before": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T09:59Z",
+            "eta": "2026-11-18T13:58Z",
+            "note": "J2993 WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch"
+          }
+        ],
+        "after": []
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/001_Will-We-Ever-Meet-Aliens/status.json",
+    "commit": "55451387c47450463a69976705699c5d64427384",
+    "subject": "jobs: next J2993 by codex",
+    "changed": {
+      "claims": {
+        "before": [],
+        "after": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T10:48Z",
+            "eta": "2026-11-18T14:47Z",
+            "note": "J2993 WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/001_Will-We-Ever-Meet-Aliens/status.json",
+    "commit": "f617e5ba97505be376459ef19e8a19323b522756",
+    "subject": "jobs: release J2993 by codex",
+    "changed": {
+      "claims": {
+        "before": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T10:48Z",
+            "eta": "2026-11-18T14:47Z",
+            "note": "J2993 WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch"
+          }
+        ],
+        "after": []
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/001_Will-We-Ever-Meet-Aliens/status.json",
+    "commit": "3e0ebcf4b5513e0e0721e857474e2a7338e4ae3d",
+    "subject": "jobs: next J2993 by codex",
+    "changed": {
+      "claims": {
+        "before": [],
+        "after": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T15:27Z",
+            "eta": "2026-11-18T19:26Z",
+            "note": "J2993 WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/001_Will-We-Ever-Meet-Aliens/status.json",
+    "commit": "9eb4db116a62deea6d9c30c2ee37bb0edf06a579",
+    "subject": "studio: WW2:001 edit claimed by codex",
+    "changed": {
+      "claims": {
+        "before": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T15:27Z",
+            "eta": "2026-11-18T19:26Z",
+            "note": "J2993 WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch"
+          }
+        ],
+        "after": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T15:29Z",
+            "eta": "2026-11-18T15:49Z",
+            "note": "J2993: finish remaining code graphics from existing brief; archive clearance and full film still pending"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/001_Will-We-Ever-Meet-Aliens/status.json",
+    "commit": "f187942ada00423a5eb75d092639ba2207ea960e",
+    "subject": "studio: WW2:001 edit doing by codex",
+    "changed": {
+      "stages": {
+        "before": {
+          "script": {
+            "state": "review"
+          },
+          "vo": {
+            "state": "review",
+            "ref": "6ac5525f44"
+          },
+          "edit": {
+            "state": "doing",
+            "ref": "PR #1012; preparation only; archive harvest J2993-archive"
+          }
+        },
+        "after": {
+          "script": {
+            "state": "review"
+          },
+          "vo": {
+            "state": "review",
+            "ref": "6ac5525f44"
+          },
+          "edit": {
+            "state": "doing",
+            "ref": "253aac9346"
+          }
+        }
+      },
+      "claims": {
+        "before": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T15:29Z",
+            "eta": "2026-11-18T15:49Z",
+            "note": "J2993: finish remaining code graphics from existing brief; archive clearance and full film still pending"
+          }
+        ],
+        "after": []
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/001_Will-We-Ever-Meet-Aliens/status.json",
+    "commit": "e5891dfcc4c9a91502acbd4acffd9fb5befe7b0b",
+    "subject": "jobs: next J2993 by codex",
+    "changed": {
+      "claims": {
+        "before": [],
+        "after": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T16:50Z",
+            "eta": "2026-11-18T20:49Z",
+            "note": "J2993 WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/001_Will-We-Ever-Meet-Aliens/status.json",
+    "commit": "56127f1e47aa9354b449b8f169f635f9aeb7d070",
+    "subject": "jobs: release J2993 by codex",
+    "changed": {
+      "claims": {
+        "before": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T16:50Z",
+            "eta": "2026-11-18T20:49Z",
+            "note": "J2993 WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch"
+          }
+        ],
+        "after": []
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/001_Will-We-Ever-Meet-Aliens/status.json",
+    "commit": "be9b49e62f1fc46acdc21c5386806d73b58a76b4",
+    "subject": "jobs: next J2993 by codex",
+    "changed": {
+      "claims": {
+        "before": [],
+        "after": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T18:27Z",
+            "eta": "2026-11-18T22:26Z",
+            "note": "J2993 WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/001_Will-We-Ever-Meet-Aliens/status.json",
+    "commit": "a273ddc4b3a4cec798d38e07de0ab425daa7975a",
+    "subject": "jobs: block J2993 by codex",
+    "changed": {
+      "stages": {
+        "before": {
+          "script": {
+            "state": "review"
+          },
+          "vo": {
+            "state": "review",
+            "ref": "6ac5525f44"
+          },
+          "edit": {
+            "state": "doing",
+            "ref": "253aac9346"
+          }
+        },
+        "after": {
+          "script": {
+            "state": "review"
+          },
+          "vo": {
+            "state": "review",
+            "ref": "6ac5525f44"
+          },
+          "edit": {
+            "state": "blocked",
+            "ref": "253aac9346"
+          }
+        }
+      },
+      "claims": {
+        "before": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T18:27Z",
+            "eta": "2026-11-18T22:26Z",
+            "note": "J2993 WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch"
+          }
+        ],
+        "after": []
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json",
+    "commit": "b515a6243a3a42077d442a02370f44610d43be1a",
+    "subject": "jobs: next J2994 by codex",
+    "changed": {
+      "air": {
+        "before": null,
+        "after": ""
+      },
+      "title": {
+        "before": null,
+        "after": ""
+      },
+      "film": {
+        "before": null,
+        "after": "002"
+      },
+      "next": {
+        "before": null,
+        "after": ""
+      },
+      "stages": {
+        "before": null,
+        "after": {
+          "script": {
+            "state": "doing"
+          }
+        }
+      },
+      "claims": {
+        "before": null,
+        "after": [
+          {
+            "stage": "script",
+            "by": "codex",
+            "at": "2026-11-18T00:16Z",
+            "eta": "2026-11-18T02:45Z",
+            "note": "J2994 WW2 pilot 002: script and sources, \"How Long-Range Bombers Closed the Atlantic Black Pit in May 1943\""
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json",
+    "commit": "10b3091e9012ddb30dea4c6acd1f650c869533e5",
+    "subject": "jobs: release J2994 by codex",
+    "changed": {
+      "claims": {
+        "before": [
+          {
+            "stage": "script",
+            "by": "codex",
+            "at": "2026-11-18T00:16Z",
+            "eta": "2026-11-18T02:45Z",
+            "note": "J2994 WW2 pilot 002: script and sources, \"How Long-Range Bombers Closed the Atlantic Black Pit in May 1943\""
+          }
+        ],
+        "after": []
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json",
+    "commit": "65949b08a508b61bac748fa637f7e59daaaa9174",
+    "subject": "jobs: next J2994 by codex",
+    "changed": {
+      "claims": {
+        "before": [],
+        "after": [
+          {
+            "stage": "script",
+            "by": "codex",
+            "at": "2026-11-18T03:30Z",
+            "eta": "2026-11-18T05:59Z",
+            "note": "J2994 WW2 pilot 002: script and sources, \"How Long-Range Bombers Closed the Atlantic Black Pit in May 1943\""
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json",
+    "commit": "9769dd1eb9efab99c85709ab0d2a932b1df2c2da",
+    "subject": "jobs: release J2994 by codex",
+    "changed": {
+      "claims": {
+        "before": [
+          {
+            "stage": "script",
+            "by": "codex",
+            "at": "2026-11-18T03:30Z",
+            "eta": "2026-11-18T05:59Z",
+            "note": "J2994 WW2 pilot 002: script and sources, \"How Long-Range Bombers Closed the Atlantic Black Pit in May 1943\""
+          }
+        ],
+        "after": []
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json",
+    "commit": "f6788067f13231aef19eb90599099e8b88617b05",
+    "subject": "jobs: next J2994 by codex",
+    "changed": {
+      "claims": {
+        "before": [],
+        "after": [
+          {
+            "stage": "script",
+            "by": "codex",
+            "at": "2026-11-18T04:23Z",
+            "eta": "2026-11-18T06:52Z",
+            "note": "J2994 WW2 pilot 002: script and sources, \"How Long-Range Bombers Closed the Atlantic Black Pit in May 1943\""
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json",
+    "commit": "5fde359fe6c7b28cb27d957e7d748b88913cf052",
+    "subject": "jobs: done J2994 by codex",
+    "changed": {
+      "stages": {
+        "before": {
+          "script": {
+            "state": "doing"
+          }
+        },
+        "after": {
+          "script": {
+            "state": "review",
+            "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1009"
+          }
+        }
+      },
+      "claims": {
+        "before": [
+          {
+            "stage": "script",
+            "by": "codex",
+            "at": "2026-11-18T04:23Z",
+            "eta": "2026-11-18T06:52Z",
+            "note": "J2994 WW2 pilot 002: script and sources, \"How Long-Range Bombers Closed the Atlantic Black Pit in May 1943\""
+          }
+        ],
+        "after": []
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json",
+    "commit": "d9f8c1b08d051b64c14d82e74057a870aaa1e56e",
+    "subject": "jobs: next J2995 by gemini",
+    "changed": {
+      "stages": {
+        "before": {
+          "script": {
+            "state": "review",
+            "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1009"
+          }
+        },
+        "after": {
+          "script": {
+            "state": "review",
+            "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1009"
+          },
+          "vo": {
+            "state": "doing"
+          }
+        }
+      },
+      "claims": {
+        "before": [],
+        "after": [
+          {
+            "stage": "vo",
+            "by": "gemini",
+            "at": "2026-11-18T04:44Z",
+            "eta": "2026-11-18T05:43Z",
+            "note": "J2995 WW2 pilot 002: narration in Ben's voice"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json",
+    "commit": "801e5017bea52bdf6a0e3160a6ceda4cc7308358",
+    "subject": "jobs: block J2995 by gemini",
+    "changed": {
+      "stages": {
+        "before": {
+          "script": {
+            "state": "review",
+            "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1009"
+          },
+          "vo": {
+            "state": "doing"
+          }
+        },
+        "after": {
+          "script": {
+            "state": "review",
+            "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1009"
+          },
+          "vo": {
+            "state": "blocked"
+          }
+        }
+      },
+      "claims": {
+        "before": [
+          {
+            "stage": "vo",
+            "by": "gemini",
+            "at": "2026-11-18T04:44Z",
+            "eta": "2026-11-18T05:43Z",
+            "note": "J2995 WW2 pilot 002: narration in Ben's voice"
+          }
+        ],
+        "after": []
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json",
+    "commit": "159b531bf1a96f755badec8602d5f7186ad7a9f5",
+    "subject": "jobs: next J2995 by gemini",
+    "changed": {
+      "stages": {
+        "before": {
+          "script": {
+            "state": "review",
+            "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1009"
+          },
+          "vo": {
+            "state": "blocked"
+          }
+        },
+        "after": {
+          "script": {
+            "state": "review",
+            "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1009"
+          },
+          "vo": {
+            "state": "doing"
+          }
+        }
+      },
+      "claims": {
+        "before": [],
+        "after": [
+          {
+            "stage": "vo",
+            "by": "gemini",
+            "at": "2026-11-18T06:32Z",
+            "eta": "2026-11-18T07:31Z",
+            "note": "J2995 WW2 pilot 002: narration in Ben's voice"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json",
+    "commit": "a69203e99c1410290fe10879ea8482d2febb1a9f",
+    "subject": "jobs: done J2995 by gemini",
+    "changed": {
+      "stages": {
+        "before": {
+          "script": {
+            "state": "review",
+            "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1009"
+          },
+          "vo": {
+            "state": "doing"
+          }
+        },
+        "after": {
+          "script": {
+            "state": "review",
+            "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1009"
+          },
+          "vo": {
+            "state": "review",
+            "ref": "d37657e3f0"
+          }
+        }
+      },
+      "claims": {
+        "before": [
+          {
+            "stage": "vo",
+            "by": "gemini",
+            "at": "2026-11-18T06:32Z",
+            "eta": "2026-11-18T07:31Z",
+            "note": "J2995 WW2 pilot 002: narration in Ben's voice"
+          }
+        ],
+        "after": []
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json",
+    "commit": "a87a5d195000601d5726f7fdd5950ab7110cb537",
+    "subject": "jobs: next J2996 by codex",
+    "changed": {
+      "stages": {
+        "before": {
+          "script": {
+            "state": "review",
+            "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1009"
+          },
+          "vo": {
+            "state": "review",
+            "ref": "d37657e3f0"
+          }
+        },
+        "after": {
+          "script": {
+            "state": "review",
+            "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1009"
+          },
+          "vo": {
+            "state": "review",
+            "ref": "d37657e3f0"
+          },
+          "edit": {
+            "state": "doing"
+          }
+        }
+      },
+      "claims": {
+        "before": [],
+        "after": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T10:04Z",
+            "eta": "2026-11-18T14:03Z",
+            "note": "J2996 WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json",
+    "commit": "cbc54c9a17e1c39d26dd2aa579d99fafc8e2657a",
+    "subject": "studio: WW2:002 edit claimed by codex",
+    "changed": {
+      "claims": {
+        "before": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T10:04Z",
+            "eta": "2026-11-18T14:03Z",
+            "note": "J2996 WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch"
+          }
+        ],
+        "after": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T10:10Z",
+            "eta": "2026-11-18T10:40Z",
+            "note": "J2996 archive harvest and opening draft; full film incomplete"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json",
+    "commit": "1f918a838549c49b3d99148bfeab2942f125b1d9",
+    "subject": "studio: WW2:002 edit doing by codex",
+    "changed": {
+      "stages": {
+        "before": {
+          "script": {
+            "state": "review",
+            "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1009"
+          },
+          "vo": {
+            "state": "review",
+            "ref": "d37657e3f0"
+          },
+          "edit": {
+            "state": "doing"
+          }
+        },
+        "after": {
+          "script": {
+            "state": "review",
+            "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1009"
+          },
+          "vo": {
+            "state": "review",
+            "ref": "d37657e3f0"
+          },
+          "edit": {
+            "state": "doing",
+            "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1018"
+          }
+        }
+      },
+      "claims": {
+        "before": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T10:10Z",
+            "eta": "2026-11-18T10:40Z",
+            "note": "J2996 archive harvest and opening draft; full film incomplete"
+          }
+        ],
+        "after": []
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json",
+    "commit": "fcc613300f3d8db70c61f428ea12e563c5065e2f",
+    "subject": "studio: WW2:002 edit doing",
+    "changed": {
+      "next": {
+        "before": "",
+        "after": "J2996 preparation in draft PR #1018: 247 timed shots, 3 archive downloads, opening draft and thumbnail candidate. Resume remaining maps and full edit; two archive links unresolved. Not ready for Ben watch."
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json",
+    "commit": "84e6d1500bddb93256113c19f80b7a09a99ac740",
+    "subject": "jobs: next J2996 by codex",
+    "changed": {
+      "claims": {
+        "before": [],
+        "after": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T10:59Z",
+            "eta": "2026-11-18T14:58Z",
+            "note": "J2996 WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json",
+    "commit": "85fa1dfea6b34c87b4cce2ee45fbd1a682e5f19a",
+    "subject": "studio: WW2:002 edit claimed by codex",
+    "changed": {
+      "claims": {
+        "before": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T10:59Z",
+            "eta": "2026-11-18T14:58Z",
+            "note": "J2996 WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch"
+          }
+        ],
+        "after": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T11:00Z",
+            "eta": "2026-11-18T11:45Z",
+            "note": "J2996 continuing detection chapter diagrams in existing PR1018"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json",
+    "commit": "0ba929e8bb908fdf2b650985e6159f3d74449ac6",
+    "subject": "studio: WW2:002 edit todo by codex",
+    "changed": {
+      "stages": {
+        "before": {
+          "script": {
+            "state": "review",
+            "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1009"
+          },
+          "vo": {
+            "state": "review",
+            "ref": "d37657e3f0"
+          },
+          "edit": {
+            "state": "doing",
+            "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1018"
+          }
+        },
+        "after": {
+          "script": {
+            "state": "review",
+            "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1009"
+          },
+          "vo": {
+            "state": "review",
+            "ref": "d37657e3f0"
+          },
+          "edit": {
+            "state": "todo",
+            "ref": "PR1018 checkpoint 5e034e2cb9; full edit unfinished"
+          }
+        }
+      },
+      "claims": {
+        "before": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T11:00Z",
+            "eta": "2026-11-18T11:45Z",
+            "note": "J2996 continuing detection chapter diagrams in existing PR1018"
+          }
+        ],
+        "after": []
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json",
+    "commit": "6216272667b0050dda22cca004f2a96a0bb96192",
+    "subject": "jobs: next J2996 by codex",
+    "changed": {
+      "stages": {
+        "before": {
+          "script": {
+            "state": "review",
+            "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1009"
+          },
+          "vo": {
+            "state": "review",
+            "ref": "d37657e3f0"
+          },
+          "edit": {
+            "state": "todo",
+            "ref": "PR1018 checkpoint 5e034e2cb9; full edit unfinished"
+          }
+        },
+        "after": {
+          "script": {
+            "state": "review",
+            "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1009"
+          },
+          "vo": {
+            "state": "review",
+            "ref": "d37657e3f0"
+          },
+          "edit": {
+            "state": "doing",
+            "ref": "PR1018 checkpoint 5e034e2cb9; full edit unfinished"
+          }
+        }
+      },
+      "claims": {
+        "before": [],
+        "after": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T15:35Z",
+            "eta": "2026-11-18T19:34Z",
+            "note": "J2996 WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json",
+    "commit": "113b053053fa069fbb336dfd350b805c1c1053d4",
+    "subject": "jobs: release J2996 by codex",
+    "changed": {
+      "claims": {
+        "before": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T15:35Z",
+            "eta": "2026-11-18T19:34Z",
+            "note": "J2996 WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch"
+          }
+        ],
+        "after": []
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json",
+    "commit": "d65a0a4bdb9f37017c5ade3e185183ed29982ab6",
+    "subject": "jobs: next J2996 by codex",
+    "changed": {
+      "claims": {
+        "before": [],
+        "after": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T16:56Z",
+            "eta": "2026-11-18T20:55Z",
+            "note": "J2996 WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json",
+    "commit": "a0c5f6a93aa54a31e365689ef2868921d55f1e4b",
+    "subject": "jobs: release J2996 by codex",
+    "changed": {
+      "claims": {
+        "before": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T16:56Z",
+            "eta": "2026-11-18T20:55Z",
+            "note": "J2996 WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch"
+          }
+        ],
+        "after": []
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json",
+    "commit": "e3947e4c901f4aeac1d46a3f07450a3c16b6f381",
+    "subject": "jobs: next J2996 by codex",
+    "changed": {
+      "claims": {
+        "before": [],
+        "after": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T18:33Z",
+            "eta": "2026-11-18T22:32Z",
+            "note": "J2996 WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json",
+    "commit": "272d59be49e69da682b642852a2ade9b818cbf30",
+    "subject": "jobs: release J2996 by codex",
+    "changed": {
+      "claims": {
+        "before": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T18:33Z",
+            "eta": "2026-11-18T22:32Z",
+            "note": "J2996 WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch"
+          }
+        ],
+        "after": []
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json",
+    "commit": "a6b565873a16930d9eb8636f143467fd946a0e57",
+    "subject": "jobs: next J2996 by codex",
+    "changed": {
+      "claims": {
+        "before": [],
+        "after": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T19:36Z",
+            "eta": "2026-11-18T23:35Z",
+            "note": "J2996 WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json",
+    "commit": "59400876db9e085cad091aaeeec35199b823c219",
+    "subject": "jobs: release J2996 by codex",
+    "changed": {
+      "claims": {
+        "before": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T19:36Z",
+            "eta": "2026-11-18T23:35Z",
+            "note": "J2996 WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch"
+          }
+        ],
+        "after": []
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json",
+    "commit": "a807d1b95ccdef00894b7d6613231acd537c3cbb",
+    "subject": "jobs: next J2996 by codex",
+    "changed": {
+      "claims": {
+        "before": [],
+        "after": [
+          {
+            "stage": "edit",
+            "by": "codex",
+            "at": "2026-11-18T19:44Z",
+            "eta": "2026-11-18T23:43Z",
+            "note": "J2996 WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/003_Exoplanets-Strangest-Alien-Worlds/status.json",
+    "commit": "0e52d64724e7d9f296f88ca15d3ec2d783f95771",
+    "subject": "jobs: next J2997 by claudecode",
+    "changed": {
+      "stages": {
+        "before": {
+          "thumbs": {
+            "state": "done",
+            "ref": "c438d1ad65"
+          }
+        },
+        "after": {
+          "thumbs": {
+            "state": "done",
+            "ref": "c438d1ad65"
+          },
+          "script": {
+            "state": "doing"
+          }
+        }
+      },
+      "claims": {
+        "before": [],
+        "after": [
+          {
+            "stage": "script",
+            "by": "claudecode",
+            "at": "2026-11-17T19:42Z",
+            "eta": "2026-11-17T22:11Z",
+            "note": "J2997 WW2 pilot 003: script and sources, \"Why the B-29 Superfortress Cost More Than the Atomic Bomb Project\""
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/003_Exoplanets-Strangest-Alien-Worlds/status.json",
+    "commit": "9e49095b1ce587deb86b704d153bf6942176efbb",
+    "subject": "jobs: release J2997 by claudecode",
+    "changed": {
+      "claims": {
+        "before": [
+          {
+            "stage": "script",
+            "by": "claudecode",
+            "at": "2026-11-17T19:42Z",
+            "eta": "2026-11-17T22:11Z",
+            "note": "J2997 WW2 pilot 003: script and sources, \"Why the B-29 Superfortress Cost More Than the Atomic Bomb Project\""
+          }
+        ],
+        "after": []
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/003_Exoplanets-Strangest-Alien-Worlds/status.json",
+    "commit": "f57ef3ec9f1aece90285287dadb7a80aa0bd2c3b",
+    "subject": "jobs: next by macbook",
+    "changed": {
+      "claims": {
+        "before": [],
+        "after": [
+          {
+            "stage": "script",
+            "by": "macbook",
+            "at": "2026-11-17T20:31Z",
+            "eta": "2026-11-17T23:00Z",
+            "note": "J2997 WW2 pilot 003: script and sources, \"Why the B-29 Superfortress Cost More Than the Atomic Bomb Project\""
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/003_Exoplanets-Strangest-Alien-Worlds/status.json",
+    "commit": "9293602ad23a0338fa094b91f525ccef4357e147",
+    "subject": "jobs: release J2997 by macbook",
+    "changed": {
+      "claims": {
+        "before": [
+          {
+            "stage": "script",
+            "by": "macbook",
+            "at": "2026-11-17T20:31Z",
+            "eta": "2026-11-17T23:00Z",
+            "note": "J2997 WW2 pilot 003: script and sources, \"Why the B-29 Superfortress Cost More Than the Atomic Bomb Project\""
+          }
+        ],
+        "after": []
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/003_Exoplanets-Strangest-Alien-Worlds/status.json",
+    "commit": "b613d5eccf186d4736e5f1d6af2091adeb838a26",
+    "subject": "jobs: next by macbook",
+    "changed": {
+      "claims": {
+        "before": [],
+        "after": [
+          {
+            "stage": "script",
+            "by": "macbook",
+            "at": "2026-11-17T20:31Z",
+            "eta": "2026-11-17T23:00Z",
+            "note": "J2997 WW2 pilot 003: script and sources, \"Why the B-29 Superfortress Cost More Than the Atomic Bomb Project\""
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/003_Exoplanets-Strangest-Alien-Worlds/status.json",
+    "commit": "b3ed58d6a3b51cf526cb02d19f9c798ebef3986d",
+    "subject": "jobs: done J2997 by macbook",
+    "changed": {
+      "stages": {
+        "before": {
+          "thumbs": {
+            "state": "done",
+            "ref": "c438d1ad65"
+          },
+          "script": {
+            "state": "doing"
+          }
+        },
+        "after": {
+          "thumbs": {
+            "state": "done",
+            "ref": "c438d1ad65"
+          },
+          "script": {
+            "state": "review"
+          }
+        }
+      },
+      "claims": {
+        "before": [
+          {
+            "stage": "script",
+            "by": "macbook",
+            "at": "2026-11-17T20:31Z",
+            "eta": "2026-11-17T23:00Z",
+            "note": "J2997 WW2 pilot 003: script and sources, \"Why the B-29 Superfortress Cost More Than the Atomic Bomb Project\""
+          }
+        ],
+        "after": []
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/003_Exoplanets-Strangest-Alien-Worlds/status.json",
+    "commit": "ad280b26671be1d38708762c5766b56216a88155",
+    "subject": "jobs: next J2998 by gemini",
+    "changed": {
+      "stages": {
+        "before": {
+          "thumbs": {
+            "state": "done",
+            "ref": "c438d1ad65"
+          },
+          "script": {
+            "state": "review"
+          }
+        },
+        "after": {
+          "thumbs": {
+            "state": "done",
+            "ref": "c438d1ad65"
+          },
+          "script": {
+            "state": "review"
+          },
+          "picture": {
+            "state": "doing"
+          }
+        }
+      },
+      "claims": {
+        "before": [],
+        "after": [
+          {
+            "stage": "picture",
+            "by": "gemini",
+            "at": "2026-11-17T21:46Z",
+            "eta": "2026-11-17T23:45Z",
+            "note": "J2998 WW2 pilot 003: gather the archive photos and draw the maps"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/003_Exoplanets-Strangest-Alien-Worlds/status.json",
+    "commit": "07452a6b4054034de2fcae9310f15379f6cb8a5a",
+    "subject": "jobs: done J2998 by gemini",
+    "changed": {
+      "stages": {
+        "before": {
+          "thumbs": {
+            "state": "done",
+            "ref": "c438d1ad65"
+          },
+          "script": {
+            "state": "review"
+          },
+          "picture": {
+            "state": "doing"
+          }
+        },
+        "after": {
+          "thumbs": {
+            "state": "done",
+            "ref": "c438d1ad65"
+          },
+          "script": {
+            "state": "review"
+          },
+          "picture": {
+            "state": "review",
+            "ref": "5b00529"
+          }
+        }
+      },
+      "claims": {
+        "before": [
+          {
+            "stage": "picture",
+            "by": "gemini",
+            "at": "2026-11-17T21:46Z",
+            "eta": "2026-11-17T23:45Z",
+            "note": "J2998 WW2 pilot 003: gather the archive photos and draw the maps"
+          }
+        ],
+        "after": []
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/003_Exoplanets-Strangest-Alien-Worlds/status.json",
+    "commit": "3389fd74efbf709590969d929617ee9fe077161e",
+    "subject": "studio: 003 script claimed by codex",
+    "changed": {
+      "stages": {
+        "before": {
+          "thumbs": {
+            "state": "done",
+            "ref": "c438d1ad65"
+          },
+          "script": {
+            "state": "review"
+          },
+          "picture": {
+            "state": "review",
+            "ref": "5b00529"
+          }
+        },
+        "after": {
+          "thumbs": {
+            "state": "done",
+            "ref": "c438d1ad65"
+          },
+          "script": {
+            "state": "doing"
+          },
+          "picture": {
+            "state": "review",
+            "ref": "5b00529"
+          }
+        }
+      },
+      "claims": {
+        "before": [],
+        "after": [
+          {
+            "stage": "script",
+            "by": "codex",
+            "at": "2026-11-18T16:21Z",
+            "eta": "2026-11-18T16:36Z",
+            "note": "J3013 correcting WW2 job writes on the Exoplanets script record"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/003_Exoplanets-Strangest-Alien-Worlds/status.json",
+    "commit": "4d78b309987be0cf8be570b2704331b6cb80d063",
+    "subject": "fix: remove foreign WW2 script state from Exoplanets record (#1020)",
+    "changed": {
+      "stages": {
+        "before": {
+          "thumbs": {
+            "state": "done",
+            "ref": "c438d1ad65"
+          },
+          "script": {
+            "state": "doing"
+          },
+          "picture": {
+            "state": "review",
+            "ref": "5b00529"
+          }
+        },
+        "after": {
+          "thumbs": {
+            "state": "done",
+            "ref": "c438d1ad65"
+          },
+          "picture": {
+            "state": "review",
+            "ref": "5b00529"
+          }
+        }
+      },
+      "claims": {
+        "before": [
+          {
+            "stage": "script",
+            "by": "codex",
+            "at": "2026-11-18T16:21Z",
+            "eta": "2026-11-18T16:36Z",
+            "note": "J3013 correcting WW2 job writes on the Exoplanets script record"
+          }
+        ],
+        "after": []
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/004_JWST-Discoveries-That-Change-Everything/status.json",
+    "commit": "add8dd87ef0f46a6df3aeedb0f82770abf371f17",
+    "subject": "jobs: next J3000 by codex",
+    "changed": {
+      "stages": {
+        "before": {
+          "thumbs": {
+            "state": "todo",
+            "ref": "docs/review/J1758/DECISION.md"
+          }
+        },
+        "after": {
+          "thumbs": {
+            "state": "todo",
+            "ref": "docs/review/J1758/DECISION.md"
+          },
+          "script": {
+            "state": "doing"
+          }
+        }
+      },
+      "claims": {
+        "before": [],
+        "after": [
+          {
+            "stage": "script",
+            "by": "codex",
+            "at": "2026-11-18T05:19Z",
+            "eta": "2026-11-18T08:18Z",
+            "note": "J3000 WW2 film 004: topic review, script and sources, \"Why America's Submarine Torpedoes Failed for 21 Months in WW2\""
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/004_JWST-Discoveries-That-Change-Everything/status.json",
+    "commit": "2f3dc9b2263e50f9759ec6f45a1ea6913d35b3a7",
+    "subject": "studio: WW2:004 script claimed by codex",
+    "changed": {
+      "claims": {
+        "before": [
+          {
+            "stage": "script",
+            "by": "codex",
+            "at": "2026-11-18T05:19Z",
+            "eta": "2026-11-18T08:18Z",
+            "note": "J3000 WW2 film 004: topic review, script and sources, \"Why America's Submarine Torpedoes Failed for 21 Months in WW2\""
+          }
+        ],
+        "after": [
+          {
+            "stage": "script",
+            "by": "codex",
+            "at": "2026-11-18T05:20Z",
+            "eta": "2026-11-18T05:40Z",
+            "note": "J3000 topic evidence and script preparation"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/004_JWST-Discoveries-That-Change-Everything/status.json",
+    "commit": "36850a153f4087d921dd0c214238e595352d05cb",
+    "subject": "studio: 004 script todo by codex",
+    "changed": {
+      "stages": {
+        "before": {
+          "thumbs": {
+            "state": "todo",
+            "ref": "docs/review/J1758/DECISION.md"
+          },
+          "script": {
+            "state": "doing"
+          }
+        },
+        "after": {
+          "thumbs": {
+            "state": "todo",
+            "ref": "docs/review/J1758/DECISION.md"
+          },
+          "script": {
+            "state": "todo",
+            "ref": "J3000 was a WW2 film claim; no Orbit JWST script work occurred"
+          }
+        }
+      },
+      "claims": {
+        "before": [
+          {
+            "stage": "script",
+            "by": "codex",
+            "at": "2026-11-18T05:20Z",
+            "eta": "2026-11-18T05:40Z",
+            "note": "J3000 topic evidence and script preparation"
+          }
+        ],
+        "after": []
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/005_The-Last-Star-In-The-Universe/status.json",
+    "commit": "4511f8301d09aad41ec62c1b3ddf88d1cb3bef24",
+    "subject": "jobs: next J3001 by claudecode",
+    "changed": {
+      "stages": {
+        "before": {
+          "thumbs": {
+            "state": "done",
+            "ref": "7e178dd76",
+            "approval": "https://github.com/TheLaughingGod1986/orbit-with-ben/issues/264#issuecomment-6481039465",
+            "ruling": "J1759 FIX: reconciled existing J1118 Chief PASS and J1119 delivery; not a new thumbnail approval.",
+            "note": "B v02 (10 TRILLION YEARS) approved 28 Oct; T016 armed by J1119. Archived image and phone sheet hash-verified and viewed 3 Nov. Decision: docs/review/J1759/DECISION.md."
+          }
+        },
+        "after": {
+          "thumbs": {
+            "state": "done",
+            "ref": "7e178dd76",
+            "approval": "https://github.com/TheLaughingGod1986/orbit-with-ben/issues/264#issuecomment-6481039465",
+            "ruling": "J1759 FIX: reconciled existing J1118 Chief PASS and J1119 delivery; not a new thumbnail approval.",
+            "note": "B v02 (10 TRILLION YEARS) approved 28 Oct; T016 armed by J1119. Archived image and phone sheet hash-verified and viewed 3 Nov. Decision: docs/review/J1759/DECISION.md."
+          },
+          "script": {
+            "state": "doing"
+          }
+        }
+      },
+      "claims": {
+        "before": [],
+        "after": [
+          {
+            "stage": "script",
+            "by": "claudecode",
+            "at": "2026-11-17T20:59Z",
+            "eta": "2026-11-17T23:58Z",
+            "note": "J3001 WW2 film 005: topic review, script and sources, \"How One Old Destroyer Rammed Germany's Only Atlantic Dry Dock\""
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/005_The-Last-Star-In-The-Universe/status.json",
+    "commit": "4e95dd52708b61a839445692914bcafcd7ff2cc0",
+    "subject": "jobs: done J3001 by claudecode",
+    "changed": {
+      "stages": {
+        "before": {
+          "thumbs": {
+            "state": "done",
+            "ref": "7e178dd76",
+            "approval": "https://github.com/TheLaughingGod1986/orbit-with-ben/issues/264#issuecomment-6481039465",
+            "ruling": "J1759 FIX: reconciled existing J1118 Chief PASS and J1119 delivery; not a new thumbnail approval.",
+            "note": "B v02 (10 TRILLION YEARS) approved 28 Oct; T016 armed by J1119. Archived image and phone sheet hash-verified and viewed 3 Nov. Decision: docs/review/J1759/DECISION.md."
+          },
+          "script": {
+            "state": "doing"
+          }
+        },
+        "after": {
+          "thumbs": {
+            "state": "done",
+            "ref": "7e178dd76",
+            "approval": "https://github.com/TheLaughingGod1986/orbit-with-ben/issues/264#issuecomment-6481039465",
+            "ruling": "J1759 FIX: reconciled existing J1118 Chief PASS and J1119 delivery; not a new thumbnail approval.",
+            "note": "B v02 (10 TRILLION YEARS) approved 28 Oct; T016 armed by J1119. Archived image and phone sheet hash-verified and viewed 3 Nov. Decision: docs/review/J1759/DECISION.md."
+          },
+          "script": {
+            "state": "review",
+            "ref": "PR #1000"
+          }
+        }
+      },
+      "claims": {
+        "before": [
+          {
+            "stage": "script",
+            "by": "claudecode",
+            "at": "2026-11-17T20:59Z",
+            "eta": "2026-11-17T23:58Z",
+            "note": "J3001 WW2 film 005: topic review, script and sources, \"How One Old Destroyer Rammed Germany's Only Atlantic Dry Dock\""
+          }
+        ],
+        "after": []
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/006_Could-Life-Exist-Under-The-Ice-Of-Europa/status.json",
+    "commit": "4a121ca9ad8690fce0a24b64b07dfe4659a6d647",
+    "subject": "jobs: next J3002 by gemini",
+    "changed": {
+      "stages": {
+        "before": {
+          "picture": {
+            "state": "todo",
+            "ref": "docs/review/J1760/DECISION.md"
+          }
+        },
+        "after": {
+          "picture": {
+            "state": "todo",
+            "ref": "docs/review/J1760/DECISION.md"
+          },
+          "script": {
+            "state": "doing"
+          }
+        }
+      },
+      "claims": {
+        "before": [],
+        "after": [
+          {
+            "stage": "script",
+            "by": "gemini",
+            "at": "2026-11-17T21:06Z",
+            "eta": "2026-11-18T00:05Z",
+            "note": "J3002 WW2 film 006: topic review, script and sources, \"Why Britain Built Its Fastest WW2 Bomber Out of Plywood and Balsa\""
+          }
+        ]
+      }
+    }
+  },
+  {
+    "path": "02_Video-Projects/006_Could-Life-Exist-Under-The-Ice-Of-Europa/status.json",
+    "commit": "6253812d1b88c1e97862aeb097a21d8dbd7182ef",
+    "subject": "jobs: done J3002 by gemini",
+    "changed": {
+      "stages": {
+        "before": {
+          "picture": {
+            "state": "todo",
+            "ref": "docs/review/J1760/DECISION.md"
+          },
+          "script": {
+            "state": "doing"
+          }
+        },
+        "after": {
+          "picture": {
+            "state": "todo",
+            "ref": "docs/review/J1760/DECISION.md"
+          },
+          "script": {
+            "state": "review"
+          }
+        }
+      },
+      "claims": {
+        "before": [
+          {
+            "stage": "script",
+            "by": "gemini",
+            "at": "2026-11-17T21:06Z",
+            "eta": "2026-11-18T00:05Z",
+            "note": "J3002 WW2 film 006: topic review, script and sources, \"Why Britain Built Its Fastest WW2 Bomber Out of Plywood and Balsa\""
+          }
+        ],
+        "after": []
+      }
+    }
+  }
+]
