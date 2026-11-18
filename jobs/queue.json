@@ -269875,13 +269875,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-18T16:20Z",
-      "eta": "2026-11-18T18:20Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-17T19:47Z",
-      "result": "",
+      "result": "FIX recorded and merged in PR1020: removed OWB003 script state introduced by WW2 J2997, restoring exact pre-job absence without granting approval. Main JSON and board checks PASS. J3060 follows for channel-identity routing tests and repair; existing J3019 owns picture contamination. No spend or publishing.",
       "history": [
         {
           "at": "2026-11-17T19:47Z",
@@ -269912,6 +269912,11 @@
           "at": "2026-11-18T16:24Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR1020 merged as 4d78b30998; main verified script absent, no claim, unrelated stages preserved; STATUS.md OK"
+        },
+        {
+          "at": "2026-11-18T16:24Z",
+          "by": "codex",
+          "what": "done: FIX recorded and merged in PR1020: removed OWB003 script state introduced by WW2 J2997, restoring exact pre-job absence without granting approval. Main JSON and board checks PASS. J3060 follows for channel-identity routing tests and repair; existing J3019 owns picture contamination. No spend or publishing."
         }
       ],
       "remaining_action": "Complete the repaired Exoplanets workflow record",
@@ -269931,7 +269936,8 @@
       },
       "taskKeys": [
         "OWB:003"
-      ]
+      ],
+      "done_ref": "4d78b309987be0cf8be570b2704331b6cb80d063"
     },
     {
       "id": "J3014",

@@ -47,7 +47,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2993 | mini | open (after J2992) | – | – | WW2:001 edit · for codex · assembly · WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch |  |
 | J2996 | mini | open (after J2995) | – | – | WW2:002 edit · for codex · assembly · WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch |  |
 | J3012 | mini | open | – | – | chief · Decoupling phase 3: move the studio engine into its own repo, runbook now, move after a clean week |  |
-| J3013 | mini | claimed | codex | 2026-11-18T18:20Z | chief · Chief: resolve 003 script orphan-doing |  |
 | J3014 | mini | open | – | – | chief · Chief: resolve 001 script orphan-review |  |
 | J3015 | mini | open | – | – | chief · Chief: resolve 001 vo orphan-review |  |
 | J3016 | mini | open | – | – | chief · Chief: resolve 005 script orphan-review |  |
