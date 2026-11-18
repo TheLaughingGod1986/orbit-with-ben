@@ -1,13 +1,15 @@
 import { describe,it,expect } from 'vitest';
 import { buildFieldOrder, collectFieldOrder, triggers, projection, renderReads, type Detail } from '../src/lib/analytics/field-order';
+import type { Snapshot } from '../src/lib/analytics/channel-tracker';
 import { authTarget } from '../scripts/youtube-auth';
+const snapFixture=():Snapshot=>({channel:'ww2',channelId:'fixture',date:'2026-11-17',takenAt:'2026-11-18T00:00:00Z',totals:{subscribers:0,views:0,videos:0},analytics:null,videos:[]});
 const fixture=():Detail=>({channelId:'fixture',through:'2026-11-17',subscribers:100,failures:[],channel:{publicLongHoursEstimate:200,daily:Array.from({length:7},(_,i)=>({day:`2026-11-${11+i}`,estimatedMinutesWatched:600,subscribersGained:10,subscribersLost:0}))},videos:{one:{title:'A | film',seconds:600,retention:[{at:0,watching:1,relative:null},{at:1,watching:0,relative:null}],windows:{'48h':{startDate:'2026-11-01',endDate:'2026-11-02',metrics:{views:100,estimatedMinutesWatched:200,averageViewDuration:120,averageViewPercentage:20,subscribersGained:2}}}}}});
 const studio=()=>({channelId:'fixture',readAt:'2026-11-18T00:00:00Z',videos:{one:{chapters:[180],windows:{'48h':{startDate:'2026-11-01',endDate:'2026-11-02',impressions:1001,ctr:2}}}}});
 describe('Field Order History learning loop',()=>{
  it('matches Studio date ranges, flags thresholds and retains chapter checkpoints',()=>{
   const r=buildFieldOrder(fixture(),studio());
   expect(r.films[0].flags).toHaveLength(2);
-  expect(r.films[0].checkpoints.map((x:any)=>x.seconds)).toEqual([30,60,120,180]);
+  expect(r.films[0].checkpoints.map(x=>x.seconds)).toEqual([30,60,120,180]);
   expect(r.films[0].checkpoints[0].ratio).toBeCloseTo(.95);
   expect(r.films[0].medianCtr).toBe(2);
   expect(renderReads(r)).toContain('A   film');
@@ -30,12 +32,12 @@ describe('Field Order History learning loop',()=>{
   expect(projection('2026-11-17',1000,1000,0)).toBe('2026-11-17');
  });
  it('does not compare 7-day reads with 48-hour medians',()=>{
-  const d=fixture();d.videos.two={...d.videos.one,windows:{'7d':{metrics:{averageViewPercentage:80}}}};
+  const d=fixture();d.videos.two={...d.videos.one,windows:{'7d':{startDate:'2026-11-01',endDate:'2026-11-07',metrics:{averageViewPercentage:80}}}};
   const r=buildFieldOrder(d,null);expect(r.films.map(f=>f.medianViewed)).toEqual([20,80]);
  });
  it('isolates failed optional reports and waits for complete API dates',async()=>{
-  const calls:any[]=[];
-  const snap:any={channelId:'fixture',totals:{subscribers:0},analytics:{through:'2026-11-02',retention:{}},videos:[{id:'one',privacy:'public',format:'long',publishedAt:'2026-11-01T18:00:00Z',seconds:600,title:'Film'}]};
+  const calls:Record<string,string>[]=[];
+  const snap:Snapshot={channel:'ww2',date:'2026-11-02',takenAt:'2026-11-03T00:00:00Z',channelId:'fixture',totals:{subscribers:0,views:0,videos:1},analytics:{through:'2026-11-02',retention:{},last7:{},last28:{},lifetime:{}},videos:[{id:'one',privacy:'public',format:'long',publishedAt:'2026-11-01T18:00:00Z',seconds:600,title:'Film',views:0,likes:0,comments:0}]};
   const d=await collectFieldOrder(snap,async p=>{calls.push(p);if(p.dimensions==='ageGroup')throw Error('unavailable');return {columnHeaders:[],rows:[]};});
   expect(d.failures).toContain('ageGroups');expect(d.videos.one.windows['48h']).toBeDefined();expect(d.videos.one.windows['7d']).toBeUndefined();
   expect(calls.every(p=>!p.endDate||p.endDate<='2026-11-02')).toBe(true);
@@ -58,7 +60,7 @@ describe('Studio import contract',()=>{
 describe('Unattended Studio dispatch and merging',()=>{
  it('dispatches windows only once due, including Pacific date boundary cases',async()=>{
   const {planReads}=await import('../scripts/field-order-dispatch');
-  const s:any={videos:[{id:'abcdefghijk',title:'A film',format:'long',privacy:'public',publishedAt:'2026-11-01T01:00:00Z'}],channelId:'UC'+'a'.repeat(22)};
+  const s:Snapshot={...snapFixture(),videos:[{id:'abcdefghijk',title:'A film',format:'long',privacy:'public',publishedAt:'2026-11-01T01:00:00Z',seconds:600,views:0,likes:0,comments:0}],channelId:'UC'+'a'.repeat(22)};
   expect(planReads(s,new Date('2026-11-03T00:59:59Z'))).toHaveLength(1);
   const jobs=planReads(s,new Date('2026-11-03T01:00:00Z'));
   expect(jobs).toHaveLength(2);expect(jobs[0].due).toBe('2026-11-03T01:00:00.000Z');expect(jobs[0].body).toContain('2026-10-31 through 2026-11-01');
@@ -87,7 +89,7 @@ describe('Queue and import integration with disk fixtures',()=>{
   try {
    fs.mkdirSync(path.join(root,'jobs'));
    const file=path.join(root,'jobs/queue.json');fs.writeFileSync(file,JSON.stringify({jobs:[]}));
-   const snapshot:any={channel:'ww2',channelId:'UC'+'a'.repeat(22),videos:[{id:'abcdefghijk',title:'Film',privacy:'public',format:'long',publishedAt:'2026-11-01T18:00:00Z'}]};
+   const snapshot:Snapshot={...snapFixture(),channel:'ww2',channelId:'UC'+'a'.repeat(22),videos:[{id:'abcdefghijk',title:'Film',privacy:'public',format:'long',publishedAt:'2026-11-01T18:00:00Z',seconds:600,views:0,likes:0,comments:0}]};
    const calls:string[][]=[];
    const run=(args:string[])=>{calls.push(args);const queue=JSON.parse(fs.readFileSync(file,'utf8'));queue.jobs.push({title:args[args.indexOf('--title')+1],status:'done'});fs.writeFileSync(file,JSON.stringify(queue));return Buffer.from('');};
    expect(dispatchReads(snapshot,root,new Date('2026-11-09'),run)).toHaveLength(3);
