@@ -1,5 +1,5 @@
 {
-  "next_id": 3045,
+  "next_id": 3046,
   "jobs": [
     {
       "id": "J0001",
@@ -271588,6 +271588,37 @@
       "kind": "studio",
       "plain": "Hook the new Field Order History channel up to the studio now Ben has created it",
       "urgent": 5
+    },
+    {
+      "id": "J3045",
+      "title": "HOS 009: generate continuous opening score v03 within J3043 cap",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Elected HOS Chief Codex ruling J3043, HOS PR645 scope SCORE_SCOPE_J3042.json at a4fada8382fb7f5a4a3fc61567fb6bbe8a75c0b0. Read the merged scope and J3043 desk ruling. Preserve J2808 rejection of v01/v02, J2035/J2171 holds, every VO/picture/diagram/teach hash and timing, no PR908 deployment, gate waiver or YouTube/Buffer/publication changes. No historical allowance is renewed or pooled.\nExecute only after J3043 is done and PR645 is merged. Mini-only generation using existing generate_music_bed.py through el_client/el_guard: exactly the approved wonder_v03 prompt, at most ONE 180000ms instrumental music_v2 request, one take, <=3000 subscription credits, GBP0 cash, zero overage/retries. Fresh duration tariff, active balance minus pending, extension limits zero, both extension flags false, overage zero, pause check and single-recorder lock mandatory. Unknown billing evidence means no POST. Ambiguous response consumes allowance until reconciled; never retry.\nRetain teach_v01 hash 4c1f0a17364ad5ba96fdd2d42730b2f857d19017fab52b221701bd4e15d07bb1 and equal-power join 175.28-178.28s. No replacement of teach, VO, picture, timing or failed earlier files. Deliver new v03 cue/joined bed/five stems/full locked-VO mix/168-186s transition/tail with sanitized provenance, actual source duration/endpoints, and Mini/NAS hash parity. Record complete unchanged music_gate over current full library (at least 89 comparisons, all 9 roots/15 UAT copies, zero unreadable); no favorable selection, loops, patches, gate-evasion filtering or silence padding. Only the approved crossfade is authorized by the no-splice constraint. Timestamped silencedetect -45dB at d=.25 and .50 plus one-second RMS on the opening; measurements do not prove hearing. Actual encoded duration may differ slightly from requested 180s; report measured endpoints, never extend or regenerate to match illustrative 180.04/535.33 figures.\nIf guard/gate fails, preserve exact evidence and finish this bounded attempt with FAILED/NOT GENERATED outcome (never PASS) so the linked review and Chief disposition can act. No further request. Detached run/log/.done for >20min work, never duplicate an active request. The listening reviewer must be a separate capable worker; generation alone never accepts the score or releases assembly.\n",
+      "ref": "J3043",
+      "film": "009",
+      "stage": "edit",
+      "after": "J3043",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-18T11:45Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T11:45Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Generate one guarded opening cue and verify its files and music checks",
+      "due": "2026-11-18T14:00:00Z",
+      "kind": "assembly",
+      "plain": "Make the revised opening music for the gravity film",
+      "mini_only": true
     }
   ],
   "focus": [
