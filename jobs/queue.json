@@ -271517,13 +271517,13 @@
       "stage": "edit",
       "after": "J3042",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-18T11:41Z",
-      "eta": "2026-11-18T12:01Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-18T11:24Z",
-      "result": "",
+      "result": "Approved bounded scope; PR645 merged 7bf38d74 and decision/board PR646 merged 3df5900c. Only J3045 may request one 180s music_v2 cue, <=3000 subscription credits, GBP0, zero retries/overage with every live billing guard. Queued J3045 assembly -> J3046 independent demonstrated audio_input review -> J3047 elected-Chief score acceptance. J2035/J2171 remain blocked; next verification 18 Nov 15:30Z. Failure fallback recorded, v01/v02 rejection retained, no PR908/gate/publication changes. check_all ALL CHECKS PASS and 344 local tests PASS; remote PR646 tests still pending at last read. Desk ruling6977660467; Claude review acknowledged. Zero cash/credits spent.",
       "history": [
         {
           "at": "2026-11-18T11:24Z",
@@ -271554,6 +271554,11 @@
           "at": "2026-11-18T11:51Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR645 merged; desk6977660467 posted and Claude review acknowledged; J3045->J3046->J3047 verified; J2035/J2171 held to 15:30Z. check_all PASS and 344 unit tests PASS; decision record PR646 submitted for normal merge."
+        },
+        {
+          "at": "2026-11-18T11:51Z",
+          "by": "codex",
+          "what": "done: Approved bounded scope; PR645 merged 7bf38d74 and decision/board PR646 merged 3df5900c. Only J3045 may request one 180s music_v2 cue, <=3000 subscription credits, GBP0, zero retries/overage with every live billing guard. Queued J3045 assembly -> J3046 independent demonstrated audio_input review -> J3047 elected-Chief score acceptance. J2035/J2171 remain blocked; next verification 18 Nov 15:30Z. Failure fallback recorded, v01/v02 rejection retained, no PR908/gate/publication changes. check_all ALL CHECKS PASS and 344 local tests PASS; remote PR646 tests still pending at last read. Desk ruling6977660467; Claude review acknowledged. Zero cash/credits spent."
         }
       ],
       "remaining_action": "Complete: approved scope and queued guarded production, listening review and Chief acceptance",
@@ -271569,7 +271574,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/646"
     },
     {
       "id": "J3044",
