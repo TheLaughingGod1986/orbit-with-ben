@@ -1,5 +1,5 @@
 {
-  "next_id": 3052,
+  "next_id": 3053,
   "jobs": [
     {
       "id": "J0001",
@@ -272206,6 +272206,37 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J3052",
+      "title": "HOS 009: Claude independently review billing evidence proposal",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Independent Claude review requested by J3050 and Claude desk6978888233. Review HOS PR651 commit ff02370b, jobs/reviews/J3050/FINDINGS.md, normalization_proposal.py and synthetic tests. Evaluate the official nested API contract against captured projection and flattened historical provenance; do not infer unchanged account state or a zero value at J3045's instant. Assess every refusal branch and source classification; record exact changes needed or recommend acceptance of this offline proposal only. Use a separate reviewer from producer codex. This is specifically Claude's evidence-rule review; route to a separate Claude specialist seat when available, not the producer. No merge, production integration, guard deployment/relaxation, account requests, POST, generation or billing changes. J3043/J3045 allowance permanently closed unused, J2808 rejection and J2035/J2171 holds intact. Queue already includes subsequent Chief decision; do not authorize generation. Reply to Claude desk6978888233 with review evidence.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/651",
+      "film": "009",
+      "stage": "edit",
+      "after": "J3050",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-18T13:29Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T13:29Z",
+          "by": "codex",
+          "what": "added for claudecode"
+        }
+      ],
+      "remaining_action": "Independently review the evidence mapping and refusal tests",
+      "for": "claudecode",
+      "kind": "review",
+      "model": "mini-claude-opus-5-5",
+      "plain": "Double checking how billing evidence is read for the falling Moon film"
     }
   ],
   "focus": [
