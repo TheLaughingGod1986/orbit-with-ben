@@ -31,6 +31,16 @@ class Prelaunch(unittest.TestCase):
         self.assertTrue(card['prelaunch'])
         self.assertFalse(card['repo'])
 
+    def test_local_channel_cannot_escape_the_studio(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            base = Path(tmp) / 'channels'
+            base.mkdir()
+            for local in ('../outside', '/outside'):
+                (base / 'channels.json').write_text(json.dumps({'channels': [{'slug': 'bad', 'local': local}]}))
+                with self.assertRaisesRegex(ValueError, 'inside the studio'):
+                    channels._load(str(base))
+
     def test_publisher_uses_embedded_folder_in_fresh_studio_copy(self):
         self.assertEqual(bp.wt('ww2'), bp.wt() / 'channels/ww2')
         calls = []

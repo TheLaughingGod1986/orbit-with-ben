@@ -62,6 +62,9 @@ def _load(directory: str = str(DIR)) -> tuple:
     out = []
     if reg.is_file():
         for entry in json.loads(reg.read_text())["channels"]:
+            local = entry.get("local")
+            if local and (pathlib.PurePosixPath(local).is_absolute() or ".." in pathlib.PurePosixPath(local).parts):
+                raise ValueError(f"{reg}: local channel folder must stay inside the studio")
             co = (base.parent / entry["local"]) if entry.get("local") else _checkout(entry) if base == DIR else None
             src = (co / "studio" / "channel.json") if co else base / entry["slug"] / "channel.json"
             if entry.get("home") and not co:
