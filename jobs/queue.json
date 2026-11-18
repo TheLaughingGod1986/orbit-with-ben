@@ -271569,6 +271569,11 @@
           "at": "2026-11-18T11:40Z",
           "by": "claude",
           "what": "Ben, in chat (18 Nov 11:40Z), with a screenshot of the Videos tab's channel filter: \"Maybe we can abbreviate to FOH.\" In the same channel.json change, set \"short\": \"FOH\" (the board's chips and cards read short before label, like History of Science's \"HOS\"). Keep \"label\": \"WW2\" (film keys WW2:001...) and \"name\": \"Field Order History\". Change it in both places: channels/ww2/studio/channel.json here (the registry still reads local channels/ww2 until PR #1001 merges) and studio/channel.json in TheLaughingGod1986/ww2-channel, so the move does not undo it. Deploy or republish so the chip reads FOH. Marked urgent: Ben is looking at it."
+        },
+        {
+          "at": "2026-11-18T11:43Z",
+          "by": "claude",
+          "what": "YouTube refused the kit's channel description as too long (1,008 of 1,000; the kit said 899, it is 1,007). Ben was given a 916-character version, below. Put it in Channel-Kit/channel_description_field_order_history.txt in both repos so the files match the live channel:\n\nWorld War 2 documentaries and military history — how WW2 was engineered, supplied, and fought across land, sea, and air.\n\nField Order History tells the real operational stories behind the Second World War: the machines, convoys, harbours, aircraft, radar, and logistics that decided campaigns long before the headlines were written.\n\nEvery documentary is built from verified wartime photography (US National Archives, US Navy archives, Library of Congress, and Imperial War Museums), custom maps drawn from campaign records, and primary-source war diaries and technical reports.\n\nWhat we cover:\n• Engineering & weapons programmes — from floating D-Day harbours to the B-29 Superfortress\n• Naval & air campaigns — Atlantic U-boat hunts, carrier logistics, and strategic bombing\n• Supply lines, intelligence & deception — how fuel, radar, and codebreaking won battles\n\nNew WW2 documentaries every Tuesday and Saturday."
         }
       ],
       "remaining_action": "Set channel ID, handle and short name FOH in both channel.json copies, sync, check the board chip reads FOH; analytics sign-in asked of Ben once",
