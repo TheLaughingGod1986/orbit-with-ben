@@ -273709,9 +273709,14 @@
           "at": "2026-11-18T17:59Z",
           "by": "gemini",
           "what": "step 2 of 4 done: gate_shorts_open.py check PASS without --report-only on 034_short02_water_ice_mountains_v02.mp4 (25.8s, 0/26 at 1fps and 0/52 at 2fps padded, cover sha256 2c7e98b123e3b8864c5be3d989d1c75510b99590aa647f4abded6c54cbb3d3cd)"
+        },
+        {
+          "at": "2026-11-18T18:06Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Built and committed 10_Shorts/short02_water_ice_mountains/07_Upload-Package (PACKAGE_MANIFEST.json + 12-cue en-GB.srt) at b0b57a42be and synced to NAS studio-live; youtube:package --dry-run PASS for Wed 2026-12-23T11:30:00.000Z; placing J3065 on public hold until 034 Pluto long airs Sun 2026-12-13T18:00:00Z"
         }
       ],
-      "remaining_action": "Build 10_Shorts/short02_water_ice_mountains/07_Upload-Package (PACKAGE_MANIFEST.json + en-GB.srt) and verify youtube:package --dry-run",
+      "remaining_action": "Upload 034 Short 2 v02 Private for Wed 23 Dec 11:30Z once 034 Pluto long is public, set Related = 034 long, record in UPLOADS.json, and post read-back",
       "due": "2026-12-18T18:00:00Z",
       "kind": "listing",
       "approved_from": {
@@ -273737,11 +273742,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-18T17:59Z",
+        "at": "2026-11-18T18:06Z",
         "by": "gemini",
-        "note": "gate_shorts_open.py check PASS without --report-only on 034_short02_water_ice_mountains_v02.mp4 (25.8s, 0/26 at 1fps and"
+        "note": "Built and committed 10_Shorts/short02_water_ice_mountains/07_Upload-Package (PACKAGE_MANIFEST.json + 12-cue en-GB.srt) a"
       },
       "taskKeys": [
         "OWB:034"
