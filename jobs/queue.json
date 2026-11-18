@@ -266731,7 +266731,7 @@
       "ref": "",
       "film": "",
       "stage": "",
-      "after": "",
+      "after": "J3024",
       "eta_min": 120,
       "status": "blocked",
       "by": "gemini",
@@ -266739,7 +266739,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T12:21Z",
-      "result": "parked for Chief: merge PR #987 (2337a2398e), run board_publish.py --force, deploy 05_Analytics/kanban/board_site/dist to Cloudflare Pages (studio-kanban), and check live #agents Credits on phone; pre-deploy phone screenshots in /Users/benjaminoats/_desk/reviews/J2985/ and report in jobs/reviews/J2985/CREDITS_REPORT.md",
+      "result": "Chief FIX (codex, 18 Nov): PR #987 at 2337a2398e not approved for merge/deploy. Reproduced unsafe cheaper-tier recommendation, false exhaustion at 94%, merged weekly windows and expired-window reading shown current. J3024 owns corrections, regression tests and sanitized billing provenance; re-review after J3024.",
       "history": [
         {
           "at": "2026-11-17T12:21Z",
@@ -266800,9 +266800,19 @@
           "at": "2026-11-17T16:30Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-18T00:02Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-19T18:00:00Z"
+        },
+        {
+          "at": "2026-11-18T00:02Z",
+          "by": "codex",
+          "what": "Chief FIX (codex, 18 Nov): PR #987 at 2337a2398e not approved for merge/deploy. Reproduced unsafe cheaper-tier recommendation, false exhaustion at 94%, merged weekly windows and expired-window reading shown current. J3024 owns corrections, regression tests and sanitized billing provenance; re-review after J3024."
         }
       ],
-      "remaining_action": "Chief: merge PR #987, run board_publish.py --force, deploy board_site/dist to Cloudflare Pages, and verify live #agents Credits on phone",
+      "remaining_action": "Await J3024 credit-calculation fixes and billing evidence, then re-review before merge and deployment",
       "due": "2026-11-19T18:00:00Z",
       "for": "gemini",
       "kind": "studio",
@@ -266814,7 +266824,12 @@
         "by": "gemini",
         "note": "Opened PR #987 (commit 2337a2398e); all Python/JS tests pass and 390x844 phone screenshots verified in /Users/benjaminoa"
       },
-      "escalated_at": "2026-11-17T16:30Z"
+      "escalated_at": "2026-11-17T16:30Z",
+      "hold": {
+        "type": "dependency",
+        "condition": "Chief FIX: J3024 must deliver corrected PR #987, passing regressions and sanitized plan evidence before J2985 re-review; no merge or deploy approved.",
+        "check_at": "2026-11-19T18:00:00Z"
+      }
     },
     {
       "id": "J2986",
