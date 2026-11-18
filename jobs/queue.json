@@ -1,5 +1,5 @@
 {
-  "next_id": 3048,
+  "next_id": 3049,
   "jobs": [
     {
       "id": "J0001",
@@ -188976,6 +188976,11 @@
           "at": "2026-11-18T11:48Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-18T15:30:00Z"
+        },
+        {
+          "at": "2026-11-18T11:52Z",
+          "by": "relay",
+          "what": "condition verification queued: J3048"
         }
       ],
       "remaining_action": "Wait for the accepted gravity score and completed long before assembling its Shorts",
@@ -188994,7 +188999,8 @@
       "hold": {
         "type": "dependency",
         "condition": "Await J3045 generation -> J3046 demonstrated-audio review -> J3047 accepted score, then J2035 long assembly and all required gates; Shorts own VO/input requirements remain. J2808 rejection of v01/v02 remains; J3043 approves only a bounded request, not a score or film.",
-        "check_at": "2026-11-18T15:30:00Z"
+        "check_at": "2026-11-18T12:52:18+00:00",
+        "recheck_task": "J3048"
       }
     },
     {
@@ -271717,6 +271723,37 @@
       "due": "2026-11-18T15:30:00Z",
       "kind": "chief",
       "plain": "Decide whether the gravity film music is ready for editing"
+    },
+    {
+      "id": "J3048",
+      "title": "Verify condition for J2171",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2171: Await J3045 generation -> J3046 demonstrated-audio review -> J3047 accepted score, then J2035 long assembly and all required gates; Shorts own VO/input requirements remain. J2808 rejection of v01/v02 remains; J3043 approves only a bounded request, not a score or film.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2171 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-18T11:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T11:52Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Wait for the accepted gravity score and completed long before assembling its Shorts",
+      "kind": "review",
+      "recheck_of": "J2171",
+      "due": "2026-11-18T12:52:18+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
