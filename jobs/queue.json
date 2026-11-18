@@ -269256,13 +269256,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-18T03:24Z",
-      "eta": "2026-11-18T05:24Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-18T00:01Z",
-      "result": "",
+      "result": "parked for Chief: re-review PR #987 at d569a115d3 after review 6968024257 fixes; 104 Python tests, both JS suites, 13 security tests and board/layout checks pass. J2985 remains held after J3024; no merge or deployment in this repair.",
       "history": [
         {
           "at": "2026-11-18T00:01Z",
@@ -269343,6 +269343,11 @@
           "at": "2026-11-18T03:29Z",
           "by": "codex",
           "what": "step 4 of 4 done: Pushed d569a115d3 to existing PR 987; corrected report and regenerated phone evidence ready for re-review"
+        },
+        {
+          "at": "2026-11-18T03:29Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: re-review PR #987 at d569a115d3 after review 6968024257 fixes; 104 Python tests, both JS suites, 13 security tests and board/layout checks pass. J2985 remains held after J3024; no merge or deployment in this repair."
         }
       ],
       "remaining_action": "Chief re-review of corrected credit pages before merge or deployment",
