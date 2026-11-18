@@ -226840,9 +226840,14 @@
           "at": "2026-11-18T15:01Z",
           "by": "codex",
           "what": "step 1 of 4 done: Merged HOS 579 as 1c3306b1 after Claude review and current-main checks. Testing Prisma upgrade; 551 and 561 have explicit keep-open rulings, and new 651 awaits independent review."
+        },
+        {
+          "at": "2026-11-18T15:07Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: HOS 652 carries Prisma 570 with only an additive ignore conflict resolved; local checks pass. CI is installing ffmpeg. Head scan: 551 has 15 address-bearing files, 561 has 378, 651 has zero."
         }
       ],
-      "remaining_action": "Finish the remaining pull-request decisions before the history rehearsal",
+      "remaining_action": "Finish the Prisma carry, then resolve the retained review branches before rehearsal",
       "due": "2026-11-18T18:00:00Z",
       "kind": "chief",
       "plain": "Remove email addresses from both channels' repos, including their past versions",
@@ -226850,9 +226855,9 @@
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-18T15:01Z",
+        "at": "2026-11-18T15:07Z",
         "by": "codex",
-        "note": "Merged HOS 579 as 1c3306b1 after Claude review and current-main checks. Testing Prisma upgrade; 551 and 561 have explici"
+        "note": "HOS 652 carries Prisma 570 with only an additive ignore conflict resolved; local checks pass. CI is installing ffmpeg. H"
       },
       "taskKeys": [
         "HOS:005",
