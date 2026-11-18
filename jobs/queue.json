@@ -1,5 +1,5 @@
 {
-  "next_id": 3086,
+  "next_id": 3087,
   "jobs": [
     {
       "id": "J0001",
@@ -274118,6 +274118,11 @@
           "at": "2026-11-18T21:45Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-18T22:30:00Z"
+        },
+        {
+          "at": "2026-11-18T22:46Z",
+          "by": "relay",
+          "what": "condition verification queued: J3086"
         }
       ],
       "remaining_action": "Finish the verified MacBook handoff, then check the plants Short setup and launch figures",
@@ -274147,10 +274152,11 @@
       "hold": {
         "type": "dependency",
         "condition": "J3084 Chief ruling: retain hold until J3070 completes the MacBook handoff. J3071 evidence f6fe5f717 / PR 1026 verifies responsive signed-in HistoryOfScienceYT and Since published analytics at 20:37Z; accepted as a valid fallback. Mini probe at 21:17Z still timed out after 8.003 seconds. Next: J3085 resolves J3070, whose worker must route J3063 to the verified MacBook before reopening, then finish all original setup checks and record actual observation time. Do not repeat unchanged Mini probes or infer a performance verdict. No video changes or spend authorized.",
-        "check_at": "2026-11-18T22:30:00Z",
+        "check_at": "2026-11-18T23:46:36+00:00",
         "last_recheck": "J3084",
         "checked_at": "2026-11-18T21:45:02+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J3086"
       },
       "escalated_at": "2026-11-18T20:57Z"
     },
@@ -275693,6 +275699,37 @@
       "taskKeys": [
         "HOS:006"
       ]
+    },
+    {
+      "id": "J3086",
+      "title": "Verify condition for J3063",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3063: J3084 Chief ruling: retain hold until J3070 completes the MacBook handoff. J3071 evidence f6fe5f717 / PR 1026 verifies responsive signed-in HistoryOfScienceYT and Since published analytics at 20:37Z; accepted as a valid fallback. Mini probe at 21:17Z still timed out after 8.003 seconds. Next: J3085 resolves J3070, whose worker must route J3063 to the verified MacBook before reopening, then finish all original setup checks and record actual observation time. Do not repeat unchanged Mini probes or infer a performance verdict. No video changes or spend authorized.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3063 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-18T22:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T22:46Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Finish the verified MacBook handoff, then check the plants Short setup and launch figures",
+      "kind": "review",
+      "recheck_of": "J3063",
+      "due": "2026-11-18T19:39:00+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
