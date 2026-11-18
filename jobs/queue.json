@@ -269653,18 +269653,23 @@
           "at": "2026-11-18T04:14Z",
           "by": "codex",
           "what": "step 2 of 4 done: Integration ec2c473fa0 pushed to PR 987. Review confirms no credit logic changes beyond approved d569a115d3; main agent/prelaunch work retained. 107 Python tests, both JS suites, 15 security tests, core/rules and build PASS. CI running."
+        },
+        {
+          "at": "2026-11-18T04:16Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: PR 987 merged d7f2b56595; Cloudflare deployment 69f6c5f9, site version 401e3fcef04677e7. Live pages load with no overflow at 390px. Publisher still finishing refresh; initial screenshots used older plan data, so final verification pending."
         }
       ],
-      "remaining_action": "Wait for GitHub checks, merge, publish, and verify the live credit pages",
+      "remaining_action": "Verify refreshed live credit data and phone screenshots, then close the delivery",
       "due": "2026-11-19T18:00:00Z",
       "kind": "chief",
       "plain": "Finish publishing the corrected credit cards and check them on a phone",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-18T04:14Z",
+        "at": "2026-11-18T04:16Z",
         "by": "codex",
-        "note": "Integration ec2c473fa0 pushed to PR 987. Review confirms no credit logic changes beyond approved d569a115d3; main agent/"
+        "note": "PR 987 merged d7f2b56595; Cloudflare deployment 69f6c5f9, site version 401e3fcef04677e7. Live pages load with no overflo"
       }
     },
     {
