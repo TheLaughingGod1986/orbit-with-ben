@@ -16,10 +16,11 @@
  */
 import { parseIsoDuration } from "@/lib/publishing/buffer-mirror";
 
-export type ChannelKey = "owb" | "hos";
+export type ChannelKey = "owb" | "hos" | "ww2";
 
 export const CHANNELS: Record<ChannelKey, { id: string; name: string; handle: string; tokenKey: string }> = {
   owb: { id: "UC_esArsDKd3GJvOkeO0DUog", name: "Orbit With Ben", handle: "@OrbitWithBen", tokenKey: "YT_ANALYTICS_REFRESH_TOKEN_OWB" },
+  ww2: { id: process.env.YT_CHANNEL_ID_WW2 ?? "", name: "Field Order History", handle: "@FieldOrderHistory", tokenKey: "YT_ANALYTICS_REFRESH_TOKEN_WW2" },
   hos: { id: "UCXp7HkBIl1LgaznXuZHJyRg", name: "History of Science", handle: "@HistoryOfScienceYT", tokenKey: "YT_ANALYTICS_REFRESH_TOKEN_HOS" },
 };
 
@@ -31,6 +32,7 @@ export type VideoStat = {
   title: string;
   publishedAt: string | null;
   seconds: number;
+  chapters?: number[];
   format: "short" | "long";
   privacy: string;
   /** When a private video is scheduled to go public (the gate checks every Short scheduled in the next 14 days). */
@@ -197,7 +199,7 @@ export function weekStart(day: string): string {
 // ----------------------------------------------------------------------------- API parsing
 type ApiVideo = {
   id: string;
-  snippet?: { title?: string; publishedAt?: string };
+  snippet?: { description?: string; title?: string; publishedAt?: string };
   status?: { privacyStatus?: string; publishAt?: string };
   contentDetails?: { duration?: string };
   statistics?: { viewCount?: string; likeCount?: string; commentCount?: string };
@@ -210,6 +212,7 @@ export function toVideoStat(item: ApiVideo): VideoStat {
     title: item.snippet?.title ?? "",
     publishedAt: item.snippet?.publishedAt ?? null,
     seconds,
+    ...(item.snippet?.description ? {chapters: [...item.snippet.description.matchAll(/^(\d{1,2}:\d{2}(?::\d{2})?)\s+\S/gm)].map(m=>m[1].split(':').reduce((n,x)=>n*60+Number(x),0)).filter(t=>t<=seconds)} : {}),
     format: seconds > 0 && seconds <= SHORT_MAX_SECONDS ? "short" : "long",
     privacy: item.status?.privacyStatus ?? "unknown",
     publishAt: item.status?.publishAt ?? null,

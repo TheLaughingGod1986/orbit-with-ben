@@ -28,6 +28,22 @@ T0 = dt.datetime(2026, 10, 9, 20, 0, tzinfo=dt.timezone.utc)
 T1 = T0 + dt.timedelta(minutes=5)
 
 
+class FieldOrderAnalytics(unittest.TestCase):
+    def test_pending_before_activation_and_loads_dated_read(self):
+        with tempfile.TemporaryDirectory() as tmp, unittest.mock.patch.object(bp, "wt", return_value=Path(tmp)):
+            board = {}
+            bp.add_field_order(board)
+            self.assertEqual(board["fieldOrder"]["targets"], [])
+            source = Path(tmp) / "channels/ww2/05_Analytics/board.json"
+            source.parent.mkdir(parents=True)
+            source.write_text(json.dumps({"through": "2026-11-17", "targets": [{"current": 50}]}))
+            bp.add_field_order(board)
+            self.assertEqual(board["fieldOrder"]["targets"][0]["current"], 50)
+            source.write_text("broken")
+            bp.add_field_order(board)
+            self.assertIn("unknown", board["fieldOrder"]["note"])
+
+
 class ChangeTimes(unittest.TestCase):
     def test_first_run_stamps_every_section(self):
         board, hashes = bp.assemble(docs(), {}, {}, T0)

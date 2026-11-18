@@ -1,0 +1,19 @@
+# Field Order History analytics
+
+J3006 builds the read-only API collection and board card before channel creation. It is disabled unless both `YT_CHANNEL_ID_WW2` and `YT_ANALYTICS_REFRESH_TOKEN_WW2` are set locally. There is no fallback to another channel's Analytics login. No credentials, account addresses or private network details belong here.
+
+To activate after the channel exists, configure its public channel ID locally in `07_Content-Ops/.env`, then Ben runs `npx tsx --env-file=.env scripts/youtube-auth.ts --analytics ww2` from `07_Content-Ops`. This requests only `youtube.readonly` and `yt-analytics.readonly`, verifies the selected channel and preserves the upload login. Do not start the sign-in unattended. The existing 06:40 snapshot job then includes this channel and commits this directory; an explicit `analytics:snapshot -- --channel ww2` uses the same collector. There is no new paid service.
+
+The collector reads views, minutes watched, average duration and percentage, subscribers gained, traffic sources and suggested-from IDs, the full retention curve and chapter starts parsed from the published description, countries and age groups. Each optional request fails independently. `detail.json` records failed queries rather than fabricating values. `snapshots/` keeps daily raw snapshots; `board.json` supplies the studio Overview card; `READS.md` is generated.
+
+Film reads use the first two and seven **Pacific calendar dates**, once the API reporting lag has passed. They are labelled 48h/7d for the playbook, but are not exact elapsed-hour windows. Reports retain their date ranges. A true elapsed 48-hour read requires Studio collection at that point. Comparisons use medians of the same window only. Over 1,000 impressions and under 3% CTR flags thumbnail first, then title; average percentage viewed under 25% flags the next script's opening. Collection makes no packaging changes.
+
+## Remaining collection work
+
+The targeted Analytics API does not expose Studio impressions/CTR, new versus returning viewers, Test & Compare, the viewer-activity heatmap or qualified Earn hours. These are **pending**, not zero. A dated Studio read can be ingested with `npx tsx scripts/field-order-studio-import.ts <read.json>`; its strict schema is exported as `studioSchema` in that file. Channel ID, read timestamp and reporting dates must match. It rejects extra fields, wrong channels and invalid dates, then rebuilds reads and the board card. `whenViewers` uses weekday 0–6 and hour 0–23; preserve Studio's displayed timezone with the collection evidence before acting on it.
+
+**Not yet built:** unattended Studio browser/export collection and dispatch of the 48-hour/7-day reads. Complete this before calling J3006 done. Chapter checkpoints from the API are lifetime retention; Studio window metrics must not be mistaken for lifetime reach. Test results remain available as structured data in `board.json`.
+
+Watch-hour balances from the API are estimates for currently public longs in the trailing 365 days, not qualified YPP hours. The Earn-page value is retained separately. Seven-day forecasts require seven complete daily records, use net subscribers and estimated hours, and stop forecasting at non-positive pace. Old hours can expire, so dates are projections rather than promises. The card preserves the 1 Feb 2027 planning line and 4,000/8,000 targets. Confirm current policy before applying: [YouTube YPP eligibility](https://support.google.com/youtube/answer/72851). The current official help still states 1,000 subscribers and 4,000 qualified public hours; the playbook's future 8,000 requirement has not been verified here from a primary announcement.
+
+API references: [channel reports](https://developers.google.com/youtube/analytics/channel_reports), [metrics](https://developers.google.com/youtube/analytics/metrics). Demographics and retention may be suppressed with small audiences.

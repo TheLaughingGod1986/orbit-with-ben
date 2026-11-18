@@ -833,7 +833,20 @@ def run_once(a) -> int:
     except Exception as e:  # noqa: BLE001
         log(f"progress24h not built: {e}")
     add_plan(board, at)
+    add_field_order(board)
     return finish(a, at, prev, prev_path, key, docs, board, hashes, checks, checks_at, {**checks_meta, **health})
+
+
+def add_field_order(board: dict) -> None:
+    """Field Order History's analytics card; missing data stays explicitly pending."""
+    try:
+        source = wt() / "channels/ww2/05_Analytics/board.json"
+        board["fieldOrder"] = json.loads(source.read_text()) if source.is_file() else {
+            "name": "Field Order History", "through": None, "deadline": "2027-02-01",
+            "targets": [], "films": [], "note": "Analytics will start after channel creation and the read-only sign-in."}
+    except (OSError, ValueError):
+        board["fieldOrder"] = {"name": "Field Order History", "targets": [], "films": [],
+                               "note": "Analytics could not be read; progress is unknown."}
 
 
 def add_plan(board: dict, at: dt.datetime) -> None:
