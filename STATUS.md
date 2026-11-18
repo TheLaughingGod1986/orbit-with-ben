@@ -80,6 +80,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 064 | script | gemini | 2026-11-18T00:21Z | 2026-11-18T02:20Z | J3020 OWB 064: Write and check the script for the every-planet film |
+| 064 | script | gemini | 2026-11-18T00:22Z | 2026-11-18T01:22Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
