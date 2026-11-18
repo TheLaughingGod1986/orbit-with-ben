@@ -178920,9 +178920,14 @@
           "at": "2026-11-18T09:07Z",
           "by": "relay",
           "what": "condition verification queued: J3038"
+        },
+        {
+          "at": "2026-11-18T11:24Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-18T15:30:00Z"
         }
       ],
-      "remaining_action": "Wait for desk #180 Chief/owner HOS 009 score route decision after J2808 hold (v01 failed music_gate 0.821; v02 failed J2807 ear review on 6 silent dropouts in 18.95-97.92s)",
+      "remaining_action": "Wait for revised opening music and its checks, starting with the new music brief and Chief review",
       "due": "2026-11-15T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -178938,12 +178943,11 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "Waiting on HOS 009 revised music chain: J2805 (reopened in J2979 to push/merge 4b92c042) -> J2806 (180s opening-cue replacement) -> J2807 (ear review) -> J2808 (Chief score acceptance).",
-        "check_at": "2026-11-18T10:07:12+00:00",
-        "last_recheck": "J2892",
-        "checked_at": "2026-11-17T09:23:01+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3038"
+        "condition": "J3038 ruling: condition NOT MET. J2808 NOT_ACCEPTED_HOLD remains: v01 fails reuse gate, v02 fails continuous-bed ear review. J3042 prepares a revised continuous opening scope; J3043 reviews it and queues guarded production, capable listening review and final score acceptance. J2035 resumes only after that accepted score; J3042/J3043 completion alone is insufficient. All picture/VO/diagram locks remain.",
+        "check_at": "2026-11-18T15:30:00Z",
+        "last_recheck": "J3038",
+        "checked_at": "2026-11-18T11:24:24+00:00",
+        "checked_by": "codex"
       }
     },
     {
