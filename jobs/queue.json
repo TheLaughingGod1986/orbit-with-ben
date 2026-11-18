@@ -270807,9 +270807,14 @@
           "at": "2026-11-18T09:09Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-18T09:09Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3039; starting condition verification for J2529"
         }
       ],
-      "remaining_action": "Verify readiness: Land reconcile-session-block on history-of-science, close row 56 t1 at 0 credits, verify dry-run --floor 3000, and mint rows 56-66",
+      "remaining_action": "Read J2529 history, check HOS repo/PRs/ledger for reconcile-session-block, HOS:013:P05:08a_wallace_opens_origin:t1 closure, and dry-run --floor 3000",
       "kind": "review",
       "recheck_of": "J2529",
       "mini_only": true,
@@ -270829,9 +270834,11 @@
         "of": 3,
         "at": "2026-11-18T09:09Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3039; starting condition verification for J2529"
+      },
+      "taskKeys": [
+        "HOS:013"
+      ]
     }
   ],
   "focus": [
