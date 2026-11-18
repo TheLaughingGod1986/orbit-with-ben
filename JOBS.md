@@ -68,7 +68,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3033 | mini | open | – | – | chief · Chief: resolve 001 edit orphan-doing |  |
 | J3034 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3010 |  |
 | J3035 | mini | open | – | – | chief · Chief: resolve 002 vo orphan-review |  |
-| J3038 | mini | claimed | gemini | 2026-11-18T11:20Z | for gemini · review · `gemini-argon` · Verify condition for J2035 |  |
+| J3038 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2035 |  |
 | J3039 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
 | J3040 | mini | claimed | macbook | 2026-11-18T09:59Z | for gemini · studio · Shorts Test A, first readout: the opening Short against its two siblings, 7 days |  |
 
