@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {agentReason,normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, channelsSection, channelsPage, channelCard, channelLight, channelFacts, firstDayCard, firstDaySection, firstDayPage, firstDayNext, planCard, planSection, planPage, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
+  globalThis.test = {agentReason,parseWeeklyReset,normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, channelsSection, channelsPage, channelCard, channelLight, channelFacts, firstDayCard, firstDaySection, firstDayPage, firstDayNext, planCard, planSection, planPage, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -346,26 +346,41 @@ assert.deepEqual([pl.scheduled.map(x => x.key), pl.live.map(x => x.key), pl.post
 assert(t.renderTab('videos', {tracker: {videos: [sched, doneLive]}}, NOW).includes('On YouTube · waiting to go public'));
 assert(t.renderTab('videos', {tracker: {videos: [pub]}}, NOW).includes('Public · improvements still open'));
 assert(t.thumb(pub).includes('i.ytimg.com') && !t.thumb(priv).includes('i.ytimg.com'));
-// Credit bars: a plan allowance or the month's refill makes a bar; a % pool keeps its reset date.
-const flow = t.poolMeter('flow', {unit: 'credits', latest: {left: 20870, at: new Date(NOW).toISOString()}}, {tiers: {flow: [{name: 'Google AI Ultra $200 tier', allow: 25000, current: true}]}}, NOW);
-assert.equal(flow.fig, '83%'); assert(flow.note.includes('of 25,000'));
+// Credit bars (J2985): two left-to-right bars (Used vs Time), London reset/renewal times, pace colours, >30h dates, single Cursor & Grok card, and monthly verdicts.
+const flow = t.poolMeter('flow', {unit: 'credits', since: '2026-10-12', renews: '2026-11-12', latest: {left: 20870, at: new Date(NOW).toISOString()}},
+  {tiers: {flow: [{name: 'Google AI Ultra', gbp: 189.99, allow: 25000, current: true}, {name: 'Google AI £90 tier', gbp: 90, allow: 10000}]}}, NOW);
+assert.equal(flow.fig, '17% used');
+assert(flow.usedDetail.includes('4,130 of 25,000') && flow.timeDetail.includes('renews Thu 12 Nov'), flow.timeDetail);
+assert.equal(flow.tone, 'blue', '17% used with ~54% of the month gone reads well behind time (blue)');
+assert(flow.verdict.includes('Could drop to Google AI £90 tier (£90): used 4,130 of its 25,000 allowance'), flow.verdict);
+// Past-cycle usage above a cheaper tier blocks suggesting that tier ("Never suggest a tier the history says would have run out").
+const flowPast = t.poolMeter('flow', {unit: 'credits', since: '2026-10-12', renews: '2026-11-12', pastCycleMaxUsed: 25030, latest: {left: 20870, at: new Date(NOW).toISOString()}},
+  {tiers: {flow: [{name: 'Google AI Ultra', gbp: 189.99, allow: 25000, current: true}, {name: 'Google AI £90 tier', gbp: 90, allow: 10000}]}}, NOW);
+assert(flowPast.verdict.startsWith('Keep Google AI Ultra (£189.99):') && flowPast.verdict.includes('last cycle used 25,030'), flowPast.verdict);
+// Flow early in cycle (<7 days) waits for a week of data and carries the HOS picture note.
+const NOV17 = Date.parse('2026-11-17T12:21:00Z');
+const flowEarly = t.poolMeter('flow', {unit: 'credits', since: '2026-11-12', renews: '2026-12-12', pastCycleMaxUsed: 25030, latest: {left: 24500, at: '2026-11-17T11:16:50Z'}},
+  {cycles: {flow: {planName: 'Google AI Ultra (30 TB)', gbp: 189.99, start: '2026-11-12', renews: '2026-12-12', next: 'keep Ultra one more month', usageNote: 'History of Science picture work, the main use of Flow, may not have run yet this cycle.'}},
+   tiers: {flow: [{name: 'Google AI Ultra', gbp: 189.99, allow: 25000, current: true}, {name: 'Google AI £90 tier', gbp: 90, allow: 10000}]}}, NOV17);
+assert.equal(flowEarly.fig, '2% used');
+assert(flowEarly.timeDetail.includes('renews Sat 12 Dec') && flowEarly.verdict.includes('Verdict after 1 week of cycle') && flowEarly.extraNote.includes('History of Science picture work'));
 const vx = t.poolMeter('vertex', {unit: 'GBP', latest: {left: 69.48, at: new Date(NOW).toISOString()}, series: [['2026-10-02T08:00Z', 100], ['2026-10-20T08:00Z', 80]]}, {}, NOW);
-assert.equal(vx.fig, '69%'); assert(vx.note.includes('of £100 this month'));
-const cx = t.poolMeter('codex', {unit: '%', latest: {left: 40, total: 100, at: new Date(NOW).toISOString(), note: 'weekly 60% used, resets Wed 04 Nov 06:36Z'}}, {}, NOW);
-assert.equal(cx.fig, '40%'); assert(cx.note.includes('resets Wed 04 Nov 06:36Z'), cx.note);
-const curFresh = t.poolMeter('cursor', {unit: '%', latest: {left: 0, total: 100, at: new Date(NOW).toISOString(), note: 'Weekly included usage 100% used (Grok Bot 54%, Cursor 46%); weekly resets 19 Nov; $1.06 used this month (resets 1 Dec)'}}, {}, NOW);
-assert.equal(curFresh.fig, '0%'); assert.equal(curFresh.note, 'resets 19 Nov');
-const clFresh = t.poolMeter('claude', {unit: '%', latest: {left: 38, total: 100, at: new Date(NOW).toISOString(), note: 'weekly 62% used, resets Wednesday 10:00 AM; Fable 100% used'}}, {}, NOW);
-assert.equal(clFresh.fig, '38%'); assert.equal(clFresh.note, 'resets Wednesday 10:00 AM');
-const staleOneDay = t.poolMeter('cursor', {unit: '%', latest: {left: 70, total: 100, at: new Date(NOW - 36 * 36e5).toISOString(), note: 'weekly resets 12 Nov'}}, {}, NOW);
-assert.equal(staleOneDay.fig, '70%'); assert.equal(staleOneDay.note, 'reading stale');
-const oldNineNov = t.poolMeter('cursor', {unit: '%', latest: {left: 0, total: 100, at: '2026-11-09T08:30:00Z', note: 'weekly resets 12 Nov'}}, {}, Date.parse('2026-11-17T10:00:00Z'));
-assert.equal(oldNineNov.fig, '0% · 9 Nov'); assert.equal(oldNineNov.note, 'last read 9 Nov'); assert.equal(oldNineNov.tone, 'amber');
-const oldVertex = t.poolMeter('vertex', {unit: 'GBP', latest: {left: 144.66, at: '2026-11-13T08:30:30Z'}}, {}, Date.parse('2026-11-17T10:00:00Z'));
-assert(oldVertex.fig.includes('13 Nov') && oldVertex.note.includes('last read 13 Nov'), oldVertex.note);
+assert.equal(vx.fig, '31% used'); assert(vx.usedDetail.includes('of £100 this month'));
+const cx = t.poolMeter('codex', {unit: '%', latest: {left: 40, total: 100, at: new Date(NOW).toISOString(), note: 'weekly 60% used, resets Wed 04 Nov 06:36Z'},
+  weeklyHistory: [{firstAt: '2026-10-08T08:00Z', peakUsed: 89, hitLimit: false, inCycle: true}, {firstAt: '2026-10-15T08:00Z', peakUsed: 100, hitLimit: true, inCycle: true}, {firstAt: '2026-10-22T08:00Z', peakUsed: 100, hitLimit: true, inCycle: true}]}, {}, NOW);
+assert.equal(cx.fig, '60% used'); assert(cx.timeDetail.includes('resets Wed 4 Nov, 06:36'), cx.timeDetail);
+assert(cx.verdict.includes('Keep: hit its weekly limit 2 of 3 weeks'), cx.verdict);
+const cl = t.poolMeter('claude', {unit: '%', since: '2026-11-08', renews: '2026-12-08', latest: {left: 38, total: 100, at: '2026-11-17T11:14:43Z', note: 'weekly 62% used, resets Wednesday 10:00 AM; Fable 100% used'},
+  weeklyHistory: [{firstAt: '2026-11-17T11:14:43Z', quotaId: 'Claude Ultra (10x)', peakUsed: 62, hitLimit: false, inCycle: true, sublimitHit: 'Fable 100%'}]},
+  {tiers: {claude: [{name: 'Claude Ultra (10x)', gbp: 180, allow: 100, current: true}, {name: 'Claude Max (5x)', gbp: 90, allow: 50}]}}, NOV17);
+assert(cl.timeDetail.includes('resets Wed 18 Nov, 10:00') && cl.verdict.includes('Keep Claude Ultra (10x) (£180):'), cl.timeDetail + ' / ' + cl.verdict);
+// Stale reading (>30h) always shows its date, never a bare percentage, and emits no monthly verdict.
+const stalePm = t.poolMeter('cursor', {unit: '%', since: '2026-10-24', renews: '2026-11-24', latest: {left: 20, total: 100, at: new Date(NOV17 - 36 * 36e5).toISOString(), note: 'weekly resets 19 Nov'}}, {}, NOV17);
+assert.equal(stalePm.tone, 'amber'); assert(/80% used · \d+ Nov/.test(stalePm.fig), stalePm.fig); assert.equal(stalePm.verdict, '');
 assert.equal(t.poolMeter('claude', undefined, {}, NOW), null, 'no reading, no bar');
-const ag = t.renderTab('agents', {tracker: {videos: []}, models: {chiefChain: [{agent: 'claude', up: true}]}, credits: {pools: {cursor: {unit: '%', latest: {left: 0, total: 100, at: new Date(NOW).toISOString(), note: 'weekly resets Oct 29'}}}}}, NOW);
-assert((ag.match(/<span>Grok<\/span><b class="red">0%/) || []).length === 1, 'Grok shows the shared Cursor weekly pool');
+const ag = t.renderTab('agents', {tracker: {videos: []}, models: {chiefChain: [{agent: 'claude', up: true}]}, credits: {pools: {cursor: {unit: '%', latest: {left: 0, total: 100, at: new Date(NOW).toISOString(), note: 'Weekly included usage 100% used (Grok Bot 54%, Cursor 46%); weekly resets Oct 29'}}}}}, NOW);
+assert(ag.includes('<span>Cursor &amp; Grok</span>') && ag.includes('100% used') && ag.includes('Grok Bot 54%, Cursor 46%') && !ag.includes('<span>Grok</span>'), 'Cursor and Grok share one single card');
+assert(ag.includes('<strong>Used</strong>') && ag.includes('<strong>Time</strong>'), 'both Used and Time bars render on the card');
 assert(ag.includes('class="seg"') && ag.includes('<span>Running</span>') && ag.includes('<span>Queued</span>') && ag.includes('<span>Waiting</span>'), 'Agents shows three matching job-count chips');
 assert(ag.includes('class="credits"') && ag.includes('class="credit"'), 'Agents keeps the credits grid');
 
@@ -1568,6 +1583,70 @@ console.log('Jobs running count checks OK');
   console.log('Ticks-not-read guard OK');
 }
 
+// J3028 preserves main's stale-date and weekly-reset regression coverage using the reviewed Used display.
+const curFresh = t.poolMeter('cursor', {unit: '%', latest: {left: 0, total: 100, at: new Date(NOW).toISOString(), note: 'Weekly included usage 100% used (Grok Bot 54%, Cursor 46%); weekly resets 19 Nov; $1.06 used this month (resets 1 Dec)'}}, {}, NOW);
+assert.equal(curFresh.fig, '100% used'); assert(curFresh.timeDetail.includes('19 Nov')); assert(!curFresh.timeDetail.includes('1 Dec'));
+const oldNineNov = t.poolMeter('cursor', {unit: '%', latest: {left: 0, total: 100, at: '2026-11-09T08:30:00Z', note: 'weekly resets 12 Nov'}}, {}, Date.parse('2026-11-17T10:00:00Z'));
+assert.equal(oldNineNov.fig, '100% used · 9 Nov'); assert(oldNineNov.note.includes('last read 9 Nov')); assert.equal(oldNineNov.tone, 'amber');
+const oldVertex = t.poolMeter('vertex', {unit: 'GBP', latest: {left: 144.66, at: '2026-11-13T08:30:30Z'}}, {}, Date.parse('2026-11-17T10:00:00Z'));
+assert(oldVertex.fig.includes('13 Nov') && oldVertex.note.includes('last read 13 Nov'), oldVertex.note);
+
+// J3024 regressions run against each independently rendered page.
+{
+ const now = Date.parse('2026-11-17T13:00Z');
+ const plan = {tiers: {claude: [{name:'Current', quotaId:'q1', current:true, allow:100, gbp:180}, {name:'Cheaper', allow:50, gbp:90}]}};
+ const week = (peak, inCycle) => ({firstAt:'2026-11-01T00:00Z',peakUsed:peak,hitLimit:peak>=100,inCycle,quotaId:'q1',partial:false});
+ const pool = {unit:'%',since:'2026-11-01',renews:'2026-12-01',latest:{at:'2026-11-17T12:00Z',left:80,total:100,note:'weekly resets Wednesday 10:00 AM'},weeklyHistory:[week(90,false),week(20,true),week(20,true)]};
+ const meter = p => t.poolMeter('claude', p, plan, now);
+ assert(!meter(pool).verdict.includes('Could drop'), 'prior comparable high week vetoes unsafe downgrade');
+ pool.weeklyHistory[0].peakUsed=20;
+ assert(meter(pool).verdict.includes('Could drop'), 'verified comparable low complete history can support advice');
+ pool.weeklyHistory[0].quotaId='old-plan';
+ assert(meter(pool).verdict.includes('plan/allowance changed'), 'changed quota cannot be compared as the same percentage');
+ delete pool.weeklyHistory[0].quotaId;
+ assert(meter(pool).verdict.includes('unknown'), 'unidentified quota withholds advice');
+ const expired = t.poolMeter('codex',{unit:'%',latest:{at:'2026-11-17T12:00Z',left:0,total:100,note:'weekly resets Tue 17 Nov 23:22Z'}},{},Date.parse('2026-11-18T01:00Z'));
+ assert.equal(expired.timeShare,null);
+ assert.equal(expired.verdict,'');
+ assert(/historical.*awaiting refreshed/.test(expired.paceWord));
+ const near = t.poolMeter('claude',{unit:'%',latest:{at:'2026-11-17T12:00Z',left:6,total:100,note:'weekly resets Wednesday 10:00 AM'}},{},now);
+ assert(!near.paceWord.includes('at limit'), '94% is near limit, never exhaustion');
+}
+
+// J3024 follow-up: reset parsing agrees with explicit provider clocks and years.
+{
+ const cases = [
+  ['weekly resets 18 Nov 2026 10:00Z','2026-11-18T08:00Z','2026-11-18T10:00Z'],
+  ['weekly resets Wednesday 10:00 UTC','2026-07-07T12:00Z','2026-07-08T10:00Z'],
+  ['weekly resets Wednesday 10:00 GMT','2026-07-07T12:00Z','2026-07-08T10:00Z'],
+  ['weekly resets Wednesday 10:00 AM','2026-07-07T12:00Z','2026-07-08T09:00Z'],
+  ['weekly resets 2 Jan 2027 10:00Z','2026-12-31T12:00Z','2027-01-02T10:00Z'],
+  ['weekly resets Jan 2 2027 10:00 UTC','2026-12-31T12:00Z','2027-01-02T10:00Z'],
+  ['weekly resets 2 Jan 2026 10:00Z','2026-12-31T12:00Z','2026-01-02T10:00Z'],
+ ];
+ for (const [note,at,end] of cases) assert.equal(t.parseWeeklyReset(note,Date.parse(at)).endMs,Date.parse(end),note);
+ const p={unit:'%',latest:{at:'2026-11-18T08:00Z',left:0,total:100,note:cases[0][0]}};
+ assert(t.poolMeter('codex',p,{},Date.parse('2026-11-18T09:00Z')).timeShare>0,'before actual reset is current');
+ assert.equal(t.poolMeter('codex',p,{},Date.parse('2026-11-18T10:01Z')).timeShare,null,'after actual reset is historical');
+ // Actual unverified subscription metadata must neither hide Time nor the recorded decision.
+ const plans=JSON.parse(fs.readFileSync(path.join(__dirname,'../05_Analytics/ai_spend/plans.json'))).subscriptions;
+ const now=Date.parse('2026-11-18T09:00Z');
+ const flow={unit:'credits',latest:{at:'2026-11-18T08:00Z',left:24500,total:25000},series:[]};
+ const c={plans,pools:{flow},tiers:{flow:[{current:true,allow:25000,gbp:189.99,verified:false}]}};
+ assert.equal(t.poolMeter('flow',flow,c,now).timeShare,null,'unknown allowance start cannot borrow unverified billing');
+ let html=t.agents({credits:c,models:{models:[]},owb:{jobs:[]}},now);
+ assert(html.includes('Time unavailable'),'explicit unavailable Time row');
+ assert(html.includes('keep Ultra') && html.includes('then review'),'Ben decision visible without computed verdict');
+ const known={...flow,allowanceWindow:{verified:true,start:'2026-11-12T00:00Z',end:'2026-12-12T00:00Z'}};
+ const state=t.poolMeter('flow',known,c,now);
+ assert(state.timeShare>0 && state.timeShare<1,'verified allowance independent of unverified billing');
+ assert(!state.verdict.includes('Could drop'),'allowance evidence does not verify billing or tiers');
+ const el={unit:'credits',latest:{at:'2026-11-18T08:00Z',left:67893,total:121114},series:[]};
+ const e=t.poolMeter('elevenlabs',el,{plans},now);
+ assert.equal(e.timeShare,null,'reset end alone does not establish duration');
+ const ehtml=t.agents({credits:{plans,pools:{elevenlabs:el}},models:{models:[]},owb:{jobs:[]}},now);
+ assert(ehtml.includes('start unread'),'verified reset date survives unknown billing');
+}
 assert.equal(t.agentReason("Codex hit usage limit until 2026-11-17T23:22:00Z (verified in J2829 probe)"), "Out of usage, back Tue 17 Nov, 23:22");
 assert.equal(t.agentReason("Claude said it's out of usage until 2026-11-18T07:50:00Z: four runs a day to save usage"), "Out of usage, back Wed 18 Nov, 07:50");
 assert.equal(t.agentReason("usage limit", {until:"2026-07-01T12:00:00Z"}), "Out of usage, back Wed 1 Jul, 13:00");
