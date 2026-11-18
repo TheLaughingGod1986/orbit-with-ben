@@ -33,6 +33,8 @@ REQUIRED = ("slug", "label", "name", "repo", "title_match", "wip")
 
 def _checkout(entry: dict, home_dir: pathlib.Path | None = None) -> pathlib.Path | None:
     """Where a registry entry's own repo is checked out on this machine, or None."""
+    if entry.get("local"):
+        return ROOT / entry["local"]
     if entry.get("home"):
         return ROOT
     env = os.environ.get(entry.get("env") or "")
@@ -60,7 +62,10 @@ def _load(directory: str = str(DIR)) -> tuple:
     out = []
     if reg.is_file():
         for entry in json.loads(reg.read_text())["channels"]:
-            co = _checkout(entry) if base == DIR else None
+            local = entry.get("local")
+            if local and (pathlib.PurePosixPath(local).is_absolute() or ".." in pathlib.PurePosixPath(local).parts):
+                raise ValueError(f"{reg}: local channel folder must stay inside the studio")
+            co = (base.parent / entry["local"]) if entry.get("local") else _checkout(entry) if base == DIR else None
             src = (co / "studio" / "channel.json") if co else base / entry["slug"] / "channel.json"
             if entry.get("home") and not co:
                 src = ROOT / "studio" / "channel.json"
@@ -69,7 +74,7 @@ def _load(directory: str = str(DIR)) -> tuple:
                 raise ValueError(f"{src}: slug {c['slug']!r} but the registry says {entry['slug']!r}")
             # Whether a channel's content lives in the studio's own root is the registry's to say, not the channel's:
             # a channel's settings file reads the same whichever studio it is plugged into.
-            out.append(dict(c, home=bool(entry.get("home")), _source=str(src)))
+            out.append(dict(c, home=bool(entry.get("home")), local=entry.get("local"), _source=str(src)))
     else:
         for p in sorted(base.glob("*/channel.json")):
             c = _check(json.loads(p.read_text()), p)
@@ -386,7 +391,7 @@ def checkout(slug: str) -> pathlib.Path | None:
 def of_path(path) -> str:
     """The channel whose checkout holds this file or folder (a film folder, a status.json), else the default one."""
     p = pathlib.Path(path).resolve()
-    for slug in slugs():
+    for slug in sorted(slugs(), key=lambda s: len(str(checkout(s) or "")), reverse=True):
         co = checkout(slug)
         if co and (p == co.resolve() or co.resolve() in p.parents):
             return slug

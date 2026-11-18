@@ -36,7 +36,7 @@ class AIPage(unittest.TestCase):
         self.assertNotIn("AI_APP_BOOT", html)
         self.assertIn('<a class="on" href="/ai">', html)
         self.assertIn('<a href="/#videos">Videos</a>', html)   # the old /board page is retired; Videos is a Studio tab
-        self.assertIn('"/ai"', (SITE / "vercel.json").read_text())
+        self.assertIn('"/ai"', (SITE / "host_config.json").read_text())
 
 
 if __name__ == "__main__":

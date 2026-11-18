@@ -41,6 +41,8 @@ def card(c: dict, root=None) -> dict:
     """`root`: where to read the channel's files. The board publisher passes its own fresh copy of the channel's
     main branch; without one, the channel's working checkout on this machine is read."""
     out = {k: c.get(k) for k in KEEP}
+    out["prelaunch"] = c.get("launch_state") == "prelaunch"
+    out["status"] = "Getting ready: YouTube not connected yet" if out["prelaunch"] else ""
     out["handle"] = str((c.get("youtube") or {}).get("handle") or "")
     out["repo"] = repo_name((c.get("repo") or {}).get("url"))
     limit = (c.get("wip") or {}).get("limit")
@@ -50,7 +52,7 @@ def card(c: dict, root=None) -> dict:
         out.update(here=False, ready=None, must=[], todo=[], rules=None)
         return out
     must, todo = channel_check.check(root)
-    out.update(here=True, ready=not must, must=must[:MAX_LINES], todo=todo[:MAX_LINES],
+    out.update(here=True, ready=not must, must=must[:MAX_LINES], todo=[line for line in todo if not (c.get("local") and line.startswith("repo.url"))][:MAX_LINES],
                rules=(pathlib.Path(root) / channel_check.RULES).is_file())
     return out
 

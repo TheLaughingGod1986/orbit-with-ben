@@ -311,7 +311,8 @@ class Films(unittest.TestCase):
         for slug in channels.slugs():
             base = channels.ROOT if channels.home() else _here(slug)
             self.assertEqual(channels.analytics_dir(slug), base / "05_Analytics" / slug)
-            self.assertTrue((channels.analytics_dir(slug) / "snapshots").is_dir(), slug)
+            if channels.get(slug).get("launch_state") != "prelaunch":
+                self.assertTrue((channels.analytics_dir(slug) / "snapshots").is_dir(), slug)
         own = channels.default()
         self.assertEqual(channels.uploads_file(own), _here(own) / "00_Brand" / "Channel-Setup" / "social" / "UPLOADS.json")
         self.assertTrue(channels.uploads_file(own).is_file())

@@ -9,6 +9,15 @@ import ai_spend  # noqa: E402
 
 
 class BuildDoc(unittest.TestCase):
+    def build(self, rows, **kwargs):
+        # Controlled billing evidence: live plan verification must not alter calculation tests.
+        plans = {"subscriptions": [
+            {"pools": ["flow", "vertex"], "billingDay": 12},
+            {"pools": ["claude"], "billingDay": 8},
+            {"pools": ["codex"], "billingDay": 1},
+        ]}
+        return ai_spend.build_doc(rows, plans=plans, **kwargs)
+
     def rows(self):
         return [
             {"at": "2026-10-10T09:00:00Z", "kind": "record", "pool": "flow", "left": 52, "by": "cursor"},  # before the month
@@ -20,7 +29,7 @@ class BuildDoc(unittest.TestCase):
         ]
 
     def test_month_starts_at_the_refill(self):
-        d = ai_spend.build_doc(self.rows())
+        d = self.build(self.rows())
         flow = d["pools"]["flow"]
         self.assertEqual(flow["first"]["left"], 12500)  # the 10 Oct reading is before the month
         self.assertEqual(flow["latest"]["left"], 12400)
@@ -28,7 +37,7 @@ class BuildDoc(unittest.TestCase):
         self.assertEqual(len(flow["series"]), 2)
 
     def test_spend_per_film_and_claude_notes(self):
-        d = ai_spend.build_doc(self.rows())
+        d = self.build(self.rows())
         self.assertEqual(d["byFilm"], {"HOS:006": {"flow": 100.0}, "OWB:025": {"vertex": 1.6}})
         self.assertEqual(d["pools"]["claude"]["notes"][0]["note"], "hit the weekly limit")
         self.assertNotIn("elevenlabs", d["pools"])
@@ -39,7 +48,7 @@ class BuildDoc(unittest.TestCase):
             {"at": "2026-10-15T10:00:00Z", "kind": "record", "pool": "flow", "left": 25000},
             {"at": "2026-11-01T10:00:00Z", "kind": "spend", "pool": "flow", "amount": 30},
         ]
-        d = ai_spend.build_doc(rows)
+        d = self.build(rows)
         self.assertEqual(d["monthly"]["2026-09"]["flow"]["logged"], 70)
         self.assertEqual(d["monthly"]["2026-10"]["flow"]["logged"], 100)
         self.assertEqual(d["monthly"]["2026-10"]["flow"]["entries"], 1)
@@ -51,6 +60,56 @@ class BuildDoc(unittest.TestCase):
             ai_spend.main(["spend", "--pool", "flow", "--amount", "1", "--film", "006", "--by", "t"])
         with self.assertRaises(SystemExit):
             ai_spend.main(["record", "--pool", "flow", "--by", "t"])
+
+    def test_per_plan_cycles_past_max_and_weekly_history(self):
+        rows = [
+            {"at": "2026-10-12T09:00:00Z", "kind": "record", "pool": "flow", "left": 25000, "total": 25000, "by": "cursor"},
+            {"at": "2026-11-05T09:00:00Z", "kind": "record", "pool": "flow", "left": 5000, "by": "cursor"},
+            {"at": "2026-11-12T08:30:00Z", "kind": "record", "pool": "flow", "left": 4970, "by": "cursor"},
+            {"at": "2026-11-13T08:30:00Z", "kind": "record", "pool": "flow", "left": 25050, "total": 25050, "by": "cursor"},
+            {"at": "2026-11-17T11:00:00Z", "kind": "record", "pool": "flow", "left": 24500, "by": "gemini"},
+            {"at": "2026-11-12T08:30:00Z", "kind": "record", "pool": "vertex", "left": 69.48, "by": "cursor"},
+            {"at": "2026-11-13T08:30:00Z", "kind": "record", "pool": "vertex", "left": 144.66, "by": "cursor"},
+            {"at": "2026-11-17T11:00:00Z", "kind": "record", "pool": "vertex", "left": 144.66, "by": "gemini"},
+            {"at": "2026-11-04T08:30:00Z", "kind": "record", "pool": "codex", "left": 0, "total": 100, "note": "weekly 100% used, resets Tue 10 Nov 23:22Z", "by": "mini"},
+            {"at": "2026-11-12T08:30:00Z", "kind": "record", "pool": "codex", "left": 25, "total": 100, "note": "weekly 75% used, resets Tue 17 Nov 23:22Z", "by": "mini"},
+            {"at": "2026-11-17T08:30:00Z", "kind": "record", "pool": "codex", "left": 0, "total": 100, "note": "weekly 100% used, resets Tue 17 Nov 23:22Z", "by": "mini"},
+        ]
+        d = self.build(rows, as_of="2026-11-17T12:00:00Z")
+        self.assertEqual(d["pools"]["flow"]["first"]["left"], 25050)
+        self.assertEqual(d["pools"]["flow"]["pastCycleMaxUsed"], 20030.0)
+        self.assertEqual(d["pools"]["vertex"]["first"]["left"], 144.66)
+        self.assertEqual(len(d["pools"]["codex"]["weeklyHistory"]), 2)
+        self.assertTrue(all(w["hitLimit"] for w in d["pools"]["codex"]["weeklyHistory"]))
+
+
+class WeeklyRegressions(unittest.TestCase):
+    def rows(self, days, note="weekly resets Wednesday 10:00 AM", left=6):
+        return [{"pool": "claude", "kind": "record", "at": f"2026-11-{d:02d}T12:00:00Z", "left": left, "note": note} for d in days]
+
+    def test_near_limit_is_not_exhaustion(self):
+        w = ai_spend._weekly_history("claude", self.rows([3]), "2026-11-01")[0]
+        self.assertFalse(w["hitLimit"])
+        self.assertTrue(w["nearLimit"])
+        self.assertTrue(ai_spend._weekly_history("claude", self.rows([3], left=0), "2026-11-01")[0]["hitLimit"])
+
+    def test_recurring_reset_separates_weeks_and_preserves_overlap(self):
+        w = ai_spend._weekly_history("claude", self.rows([3,6,10,13,17]), "2026-11-08")
+        self.assertEqual(len(w), 3)
+        self.assertEqual([x["windowEnd"][:10] for x in w], ["2026-11-04", "2026-11-11", "2026-11-18"])
+        self.assertTrue(w[1]["overlapsCycleStart"])
+        self.assertTrue(w[1]["inCycle"])
+        self.assertTrue(all(x["partial"] and x["historyBasis"] == "unknown" for x in w))
+
+    def test_reset_uses_year_and_london_dst(self):
+        from datetime import datetime, timezone
+        parse = ai_spend._parse_iso
+        self.assertEqual(ai_spend._weekly_reset("weekly resets Wednesday 10:00 AM", parse("2026-07-07T12:00Z")).isoformat(), "2026-07-08T09:00:00+00:00")
+        self.assertEqual(ai_spend._weekly_reset("weekly resets 2 Jan 2027 10:00Z", parse("2026-12-30T12:00Z")).year, 2027)
+
+    def test_explicit_provider_exhaustion_without_balance(self):
+        r = self.rows([3])[0]; r.pop("left"); r["note"] = "hit the weekly limit; weekly resets Wednesday 10:00 AM"
+        self.assertTrue(ai_spend._weekly_history("claude", [r], "2026-11-01")[0]["hitLimit"])
 
 
 class FlowRefill(unittest.TestCase):
@@ -194,6 +253,23 @@ class CursorSpending(unittest.TestCase):
         pool, note = ai_spend_daily.parse_billing(page)
         self.assertEqual(pool, 76.06)
         self.assertIn("£9.62 Expired", note)
+
+    def test_weekly_included_usage_resets_before_split_nov_12_layout(self):
+        # J2981. From 12 Nov 2026 grok.com/dashboard/billing puts "Resets 19 Nov" above "x" and the split lines,
+        # appends "· Set monthly limit" to the monthly reset, and renames "Credits available" to "Credit balance".
+        import ai_spend_daily
+        page = (
+            "Ultra\nOverview\nUltra\nRenews 24 Nov 2026\n100%\nused\nResets 19 Nov\nx\n"
+            "Grok Bot 54%\nCursor 46%\nWeekly included usage\nAdditional usage\nAuto top-up\nBuy credits\n"
+            "$1.06\nused this month\nResets 1 Dec · Set monthly limit\nCredit balance\n$0.00\n"
+        )
+        r = ai_spend_daily.parse_cursor(page)
+        self.assertEqual((r["left"], r["total"]), (0, 100))
+        self.assertEqual(r["used"], {"weekly included usage": 100, "grok bot": 54, "cursor": 46})
+        self.assertIn("Weekly included usage 100% used (Grok Bot 54%, Cursor 46%)", r["note"])
+        self.assertIn("weekly resets 19 Nov", r["note"])
+        self.assertIn("$1.06 used this month (resets 1 Dec)", r["note"])
+        self.assertIn("credit balance $0.00", r["note"])
 
     def test_changed_page_fails_loudly(self):
         import ai_spend_daily

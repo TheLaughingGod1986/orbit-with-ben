@@ -1281,7 +1281,8 @@ def main(argv: list[str] | None = None) -> int:
     credits = ai_spend.build_doc(ai_spend.load())
     credits["hosChecks"] = [c for slug, d in documents.items() if one_file(slug) for c in d.get("credits", [])]
     credits["miniWork"] = mini_work(alljobs, (credits.get("pools", {}).get("cursor", {}) or {}).get("since")
-                                    or json.loads(ai_spend.PLANS.read_text()).get("poolStarts", {}).get("cursor", "2026-10-08"))
+                                    or ((credits.get("cycles") or {}).get("cursor") or {}).get("start")
+                                    or "2026-10-24")
     (a.db_out / "credits.json").write_text(json.dumps(credits, ensure_ascii=False))
     briefs = load_briefs()
     links = {k: v for k, v in json.loads(BRIEFS.read_text()).items() if k in ("uatFolderUrl", "extraWatch")} if BRIEFS.exists() else {}
@@ -1300,7 +1301,7 @@ def main(argv: list[str] | None = None) -> int:
     per_channel = ", ".join(f"{a.db_out}/{slug}.json ({len(film_rows(slug, d))} {channels.label(slug)} films)"
                             for slug, d in documents.items())
     print(f"store documents: {a.db_out}/briefs.json ({len(briefs)} film notes, {len(watch)} watch links), {per_channel}, "
-          f"{a.db_out}/credits.json ({credits['lines']} spend lines since {credits['period'].get('start')}), "
+          f"{a.db_out}/credits.json ({credits['lines']} in-cycle spend/read lines across {len(credits.get('plans') or [])} plans), "
           f"{a.db_out}/tracker.json ({len(tracker.get('videos') or [])} videos)")
     return 0
 

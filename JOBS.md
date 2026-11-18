@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2035, J2529.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2035, J2529, J3044, J3074, J2993.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -31,78 +31,48 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2704 | mini | blocked | codex | – | assembly · HOS tooling: validate Next upgrade in preview and diagnose home page error | 6813294950 |
 | J2708 | mini | blocked | cursor | – | assembly · HOS app: establish isolated hosted PostgreSQL for Preview validation | J2704 |
 | J2744 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · Readout: 4-6 s drop, stayed-to-watch and APV on the three J2683 Shorts (Supermoon v04, 032 strike-match, 033 Short 2) | 6829905842 |
-| J2808 | mini | open (after J2807) | – | – | 009 edit · chief · HOS 009: decide revised score acceptance or bounded failure route |  |
 | J2844 | any | open (after J2843) | – | – | chief · Chief gate: pass J2834 weekly audit thumbnail Bs (T035 m09jUdwC5hk, T036 Mo93x0fxB1Q, T037 ziKBPJ6FY0U) after J2843 panel | J2834 |
 | J2845 | mini | open (after J2844) | – | – | studio · Studio: arm thumbnail Test & Compare on m09jUdwC5hk (A=live THE LAST LIGHT vs B=ALL STARS FADE, T035) | J2834 |
 | J2846 | mini | open (after J2844) | – | – | studio · Studio: arm thumbnail Test & Compare on Mo93x0fxB1Q (A=live SILENCE vs B=ZERO SIGNALS, T036) | J2834 |
 | J2847 | mini | open (after J2844) | – | – | studio · Studio: arm thumbnail Test & Compare on ziKBPJ6FY0U (A=live TOO EARLY? vs B=300 MILLION YEARS, T037) | J2834 |
-| J2857 | mini | open (after J2859) | – | – | J01 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload OWB J01 long v03 (A Calm Journey From Venus to a Dying Star) Private + arm 3-way thumb Test & Compare | 6882810716 |
-| J2868 | mini | open (after J2867) | – | – | 034 edit · for gemini · review · `gemini-argon` · 034 Pluto: review long master v02 + Shorts 1 & 2 v02 (after J2438, J2867) | J2383,J2438,J2867 |
+| J2857 | mini | blocked | claudecode | – | J01 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload OWB J01 long v03 (A Calm Journey From Venus to a Dying Star) Private + arm 3-way thumb Test & Compare | 6882810716 |
 | J2886 | mini | blocked | cursor | – | studio · Pin the Titan long comment once T3cBBss1F60 is public |  |
 | J2895 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about landing on an ice giant (v02) Private, slot Sat 19 Dec 11:30 |  |
 | J2896 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about the 21-year winters (v02, Test A opening) Private, slot Fri 18 Dec 11:30 |  |
 | J2933 | mini | blocked | claudecode | – | 010 edit · qa · `mini-claude-opus-5-5` · Review HOS 010 Short A v01 and Short C v01 (J2172, PR #611) | J2172 |
 | J2951 | cloud | open | – | – | assembly · Stop the refill tick using 3-4 GB: read the acting Chief once per scan |  |
-| J2976 | mini | open | – | – | for claudecode · studio · `mini-claude-opus-5-5` · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
-| J2981 | mini | blocked | gemini | – | for gemini · studio · Board credits: four usage readings stale since 8-13 Nov (Cursor, Claude, Vertex, Grok) |  |
-| J2982 | mini | blocked | gemini | – | for gemini · studio · Board clean-up: plain times on the Agents tab, no Mac folder path in public data, Vercel leftovers out |  |
-| J2984 | mini | open | – | – | 008 edit · for claudecode · qa · `mini-claude-opus-5-5` · HOS 008 Short C v07: non-producer QA review of J2662 (PR #556) and HOS UAT staging for Ben's watch | J2662 |
-| J2985 | mini | blocked | gemini | – | for gemini · studio · Board credits: a time bar beside each usage bar, renewal dates, and a plain verdict per plan |  |
-| J2986 | mini | open | – | – | 033 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test |  |
+| J2986 | mini | blocked | claudecode | – | 033 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test |  |
 | J2993 | mini | open (after J2992) | – | – | WW2:001 edit · for codex · assembly · WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch |  |
-| J2994 | mini | open (after J2990) | – | – | WW2:002 script · for codex · script · WW2 pilot 002: script and sources, "How Long-Range Bombers Closed the Atlantic Black Pit in May 1943" |  |
-| J2995 | mini | open (after J2994) | – | – | WW2:002 vo · for gemini · vo · WW2 pilot 002: narration in Ben's voice |  |
-| J2996 | mini | open (after J2995) | – | – | WW2:002 edit · for codex · assembly · WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch |  |
-| J2998 | mini | open (after J2997) | – | – | WW2:003 picture · for gemini · image · WW2 pilot 003: gather the archive photos and draw the maps |  |
-| J3000 | mini | open (after J2991) | – | – | WW2:004 script · for codex · script · WW2 film 004: topic review, script and sources, "Why America's Submarine Torpedoes Failed for 21 Months in WW2" |  |
-| J3002 | mini | claimed | gemini | 2026-11-18T00:06Z | WW2:006 script · for gemini · script · WW2 film 006: topic review, script and sources, "Why Britain Built Its Fastest WW2 Bomber Out of Plywood and Balsa" |  |
-| J3006 | mini | open (after J2990) | – | – | for codex · studio · WW2 channel: read its own analytics from day one, and a progress-to-monetisation card |  |
-| J3007 | mini | open (after J2990) | – | – | for codex · studio · Board: show the WW2 channel before launch, its films, its review and Ben's ticks |  |
-| J3009 | mini | claimed | macbook-2 | 2026-11-17T21:38Z | for gemini · studio · WW2 channel: move it into its own repo with history, register it, check it out on both Macs |  |
-| J3010 | mini | blocked | gemini | – | 007 upload · review · HOS 007 Vaccine Short (xgx2lYHhYZM): read next-morning snapshot after J3004 | f57ab150da |
-| J3011 | mini | open | – | – | chief · Orbit: Ben locked the every-planet film, book its slot and start the build |  |
+| J2996 | mini | blocked | codex | – | WW2:002 edit · for codex · assembly · WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch |  |
 | J3012 | mini | open | – | – | chief · Decoupling phase 3: move the studio engine into its own repo, runbook now, move after a clean week |  |
-| J3013 | mini | open | – | – | chief · Chief: resolve 003 script orphan-doing |  |
-| J3014 | mini | open | – | – | chief · Chief: resolve 001 script orphan-review |  |
-| J3015 | mini | open | – | – | chief · Chief: resolve 001 vo orphan-review |  |
-| J3016 | mini | open | – | – | chief · Chief: resolve 005 script orphan-review |  |
+| J3020 | mini | blocked | gemini | – | 064 script · for gemini · script · `gemini-argon` · OWB 064: Write and check the script for the every-planet film | J3011 |
+| J3021 | mini | open (after J3020) | – | – | 064 vo · vo · OWB 064: Record and check narration for the every-planet film | J3011 |
+| J3022 | mini | open (after J3021) | – | – | 064 picture · chart · OWB 064: Prepare shelf pictures, graphics and three thumbnails for the every-planet film | J3011 |
+| J3023 | mini | open (after J3022) | – | – | 064 edit · assembly · OWB 064: Assemble and check the every-planet film, then put it on Ben’s watch board | J3011 |
+| J3026 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
+| J3039 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
+| J3044 | mini | blocked | codex | – | for codex · studio · WW2 channel is live: record its channel ID, short name FOH on the board, connect it to the studio |  |
+| J3051 | mini | blocked | codex | – | for codex · review · `gpt-6-astra` · Verify condition for J3020 |  |
+| J3062 | mini | open | – | – | chief · Chief: resolve 034 edit orphan-review |  |
+| J3063 | mini | blocked | codex | – | for codex · studio · `gpt-6.1-sol` · First-day check at 6 h: "How Do Plants Clean the Air?" (ChbsigHD5_o) |  |
+| J3064 | mini | blocked | codex | – | studio · First-day check at 6 h: "If Voyager Needs 75,000 Years, How Far Is the Nearest Star?" (dH_yCRmzkMo) |  |
+| J3065 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Pluto Short about ice mountains (v02) Private, slot Wed 23 Dec 11:30 |  |
+| J3066 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Pluto Short about the frozen heart (v02, Test A opening) Private, slot Mon 21 Dec 11:30 |  |
+| J3070 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Restore HOS Studio response for the plants Short first-day check |  |
+| J3071 | macbook | claimed | macbook-2 | 2026-11-18T22:25Z | studio · Verify MacBook HOS Studio fallback for the plants Short |  |
+| J3072 | any | claimed | codex | 2026-11-18T22:34Z | for codex · assembly · `gpt-6.1-sol` · Repair Field Order History prerequisite PR checks |  |
+| J3073 | any | open (after J3072) | – | – | chief · Integrate repaired Field Order History connection prerequisites |  |
+| J3074 | mini | open | – | – | for codex · studio · Orbit 001-006: undo the stage changes WW2 jobs wrote into Orbit's film records |  |
 
 Recently finished:
 
-- J3008 done: First-day check at 48 h: "How Far Is the Nearest Star? (You Can't See It, and It Has a Planet)" (c5AdqQsnnys) ("How Far Is the Nearest Star? (You Can't See It, and It Has a Planet)" (c5AdqQsnnys) · Orbit With Ben · long · went live Sun 15 Nov 18:00 London
-At 48 h: views 8 · impressions 9 · click rate 11.1% · average viewed 1.0%
-Usual for this channel: click rate 2.2%, average viewed 19.3%
-
-Verdict: UNKNOWN
-  - Nothing to compare it with yet: no usual figure or rank from Studio, and fewer than three earlier checks at this age.
-  - By the next morning it had 4 views; the 6 before it had 1 (median).
-
-Do now
-  - Read it again from tomorrow morning's snapshot.)
-- J3005 done: WW2 channel: packaging library, which titles and thumbnails beat their channel's normal views (PR #995 (channels/ww2/05_Analytics/PACKAGING_LIBRARY.json, PACKAGING_FINDINGS.md, and PLAYBOOK.md §7 monthly refresh across 14 channels / 1,020 long videos >8m). Quota used: 69 units (channels.list 13, playlistItems.list 28, videos.list 28; £0, 0 errors). 1) Other-side reaction titles rank #1 (1.51x median, n=51, 49.0% >=2x), followed by questions (1.27x, n=58) and How/Why openers (1.12x overall, 1.25x on 2026 breakout channels, n=220 vs 0.98x without). 2) Bright thumbnail grading leads all visual tags (1.19x median, n=113, 29.2% >=2x) paired with 1-3 words (1.01x, n=352, 29.3% >=2x) in white+yellow (1.15x, n=25) or yellow (1.04x, n=62), reversing the outlier-feed guess for 0-word thumbnails (0.88x median, n=181, 0 breakout videos). 3) Colourised real archive photos reach 1.96x median on breakout channels (1.00x overall, n=240), whereas AI/3D illustrations (n=418) give no median edge (1.00x overall, 0.92x established) and ungraded B&W lags (0.92x, n=115). 4) Series labels/pipes/'Full Documentary' (0.77x median, n=81), generic secret/mystery words (0.90x, n=38), calendar years in titles (0.96x, >=2x halved to 14.8%, n=162), and maps on thumbnails (0.98x, >=2x down to 16.3%, n=147) depress outlier odds. 5) Superlatives (1.00x median, n=110; most/only/first 0.90x median / 12.55x mean) and non-year hard numbers (1.00x median, n=393) flatten at the median (high-variance tail multipliers), while money figures (n=4) and until/then turns (n=23, 0.81x) have too few videos (<25).)
-- J3004 done: First-day check at 6 h: "Why Is It Called a Vaccine?" (xgx2lYHhYZM) (Ruled, acting Chief (Gemini) 17 Nov: PASS / no fault (PR #992 merged at f57ab150da; launch note at 4bd26a8b74). Public in Shorts, HD complete, no notices, not Made for Kids, Altered content Yes, language en-GB, Related set to ETynHpIYLeY, and description/tags match s05_vacca_jesty_v05/PACKAGE_MANIFEST.json. At 6 h: 0 views vs 20 usual, rank 10 of 10, and Not enough data on reach/engagement (Verdict: BEHIND; Studio gave no reach figures yet). No re-cut, no second upload, and no Studio changes today. Follow-up J3010 queued (after J3004, date hold until 2026-11-18T06:45:00Z after the 06:40Z snapshot) to read next-morning snapshot and Studio reach figures and check whether Vaccine Shorts remain unfed alongside cLKDiYP55J8 ahead of the 28-29 Nov 007 Shorts. GBP 0.)
-- J3003 done: First-day check at 6 h: "How Far From Earth Is Voyager 1 Right Now?" (9q_OvQ1Rd8Y) ("How Far From Earth Is Voyager 1 Right Now?" (9q_OvQ1Rd8Y) · Orbit With Ben · Short · went live Tue 17 Nov 11:30 London
-At 6 h: views 193 · Studio rank 6 of 10 · shown in feed about 737 (from 182 feed views) · stayed to watch 24.7% · average viewed 94.7%
-Usual for this channel: stayed to watch 32.5%, average viewed 66.2%
-
-Verdict: AHEAD
-  - 193 views at 6 h; the last 6 checked at the same age had 96 (median).
-  - Studio ranks it 6 of 10 against our latest videos at the same age.
-
-What is different about this one
-  - It is 17 s long; the last 10 Shorts were 18 to 55 s.
-  - "Earth" was in the title of 4 earlier Shorts: they had 450 views by the next morning (median), against 128 for all Shorts.
-  - The title starts with "How", like 5 earlier Shorts: they had 386 views by the next morning (median), against 128 for all Shorts.
-  - It is a second upload of the same video (it replaced kKN8Ale42sE).
-
-Do now
-  - Nothing to fix.
-
-Carry forward
-  - A strong start is a lesson too: note what is different about this one.)
-- J3001 done: WW2 film 005: topic review, script and sources, "How One Old Destroyer Rammed Germany's Only Atlantic Dry Dock" (done)
-- J2999 done: WW2 channel kit: profile picture, banner, description and upload template, ready for Ben (PR #997 (orbit-with-ben) and PR #1 (ww2-channel): complete £0 WW2 channel kit for Field Order History (@FieldOrderHistory, recommended), Gridline History (@GridlineHistory), and Iron & Compass (@IronAndCompass). Rendered 800x800 archive-photo & drawn-emblem avatars (<4 MB) + 2560x1440 banners (<6 MB PNG & JPG, 100% inside 1546x423 safe area, bright silver-warm grade luma 148-182, near-black 3.5-12.2%) from verified US NARA (26-G-2517, 80-G-266487) and UK IWM (BU 1024) public-domain plates; saved on NAS studio-live/ww2/00_Brand/Channel-Kit/ and mirrored to iCloud WW2 UAT/00_Channel-Kit/. Tracked SVGs, builder build_channel_kit.py, ART_MANIFEST.json, search-led channel descriptions, About links, UPLOAD_TEMPLATE.md (Education, en-GB, tags hierarchy, Altered Content No/Yes rules), and Ben's Brand Account + 2-per-year phone verification checklist in CHANNEL_KIT.md. channel_check, email ratchet and private-network checks PASS.)
-- J2997 done: WW2 pilot 003: script and sources, "Why the B-29 Superfortress Cost More Than the Atomic Bomb Project" (PR #999 open on branch macbook/J2997 (merged awaits Chief): WW2:003 narration script (01_Script/SCRIPT.md & b29_superfortress_script_master_v01.md: 3,544 spoken words, 20,475 spoken chars across 6 chapters, hook in first 30s, VO held at £0), SOURCES.md (14 works cited, 42 verified claims C01-C43 + ready-to-paste YouTube Sources line), independent Gemini Argon claims check (CLAIMS_CHECK.md: 42/42 PASS, all 13 writer flags resolved), SHOT_LIST.md (all 66 paragraphs mapped to 24 verified PD-USGov NARA/NMUSAF/NASA-GRC/LoC-HAER records + 12 code maps/diagrams G1-G12), and 03_Picture/ARCHIVE_PROVENANCE.md. All tests pass.)
-- J2992 done: WW2 pilot 001: narration in Ben's voice (PR #998 (6ac5525f44) & ww2-channel PR #2 (847dfed): WW2:001 narration mulberry_harbours_vo_v01 recorded in Ben Orbit Narrator (eleven_v3, 6 chapters, 20,431 spoken chars <= 21,000 cap; 9,496 ElevenLabs plan credits billed, 67,893/121,114 remaining; £0 extra). Audio on studio-live NAS (1,656.7s / 27:36.7, -19.7 LUFS, -22.9 dB mean, -3.4 dB peak, 1.1 LU chapter spread, 97.56% normalized Scribe word match, zero clipped boundary words).)
-- J2991 done: WW2 pilot 001: script and sources, "How Britain Towed Two Floating Ports Across the Channel for D-Day" (PR #996 (macbook/J2991): WW2:001 25-min script master (3,358 words, 20,431 chars <= 21,000 cap across 6 chapters, British English), SOURCES.md (8 primary UK/US official histories, 35/35 claim rows + description Sources line), separate CLAIMS_CHECK_v01.md (35/35 PASS), SHOT_LIST.md (46 shots: 23 verified IWM/TNA/LAC Crown-expired & NARA US PD records + 15 code maps/diagrams G1-G15, 0% Veo), and 03_Picture/ARCHIVE_PROVENANCE.md. £0 spent.)
-- J2990 done: WW2 channel: merge the plan PR #989 without Ben cards, write the channel's fresh rules and posting days (Done by Claude directly (17 Nov 19:37Z), on Ben's "start committing this plan": PR #993 merged (dbb4c802), carrying #989 unchanged plus the channel's fresh rules (channels/ww2/studio/RULES.md, with the packaging study's title and thumbnail lines), the launch playbook (00_Brand/PLAYBOOK.md), no Ben cards on the board (WW2 plan steps follow their jobs), pilots 001-003 locked on Ben's go with scored working titles, film 5's title corrected, two long slots Tue and Sat 17:00 London, and the new repo's address. CI green; channel_check: nothing left to do. The WW2 jobs waiting on this one are released.)
+- J3069 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (17 OWB + 7 HOS longs; 88 OWB + 32 HOS Shorts. CTR hits vs 4%: OWB 2/17, HOS 4/7. 144 videos read without request errors; six analytics files saved in 7d57042a43 and published tracker c5c0b8a9 verified field-for-field. Missing Studio figures omitted; no YouTube writes or spend.)
+- J3068 cancelled: Chief: resolve 001 edit orphan-blocked ()
+- J3067 done: Verify condition for J2993 (Condition verified by Gemini (jobs/reviews/J3067/REVIEW.md). Chief ruled Option A and reopened J2993 for Codex with the archive and diagram scope.)
+- J3061 done: Verify condition for J3044 (Chief ruling: condition NOT MET, verified against fresh GitHub checks at unchanged heads and Gemini evidence in jobs/reviews/J3061/REVIEW.md. PR #1001 Rules and #1013 Content Ops checks FAIL; #1019 open; ww2-channel#10 merged. J3044 remains held with last_recheck J3061 and next check 2026-11-18T23:40:00Z. J3072 repairs code; J3073 depends on J3072 and owns gated integration and evidence-based reopening. No sign-in request, spend or YouTube change.)
+- J3060 done: Prevent channel-qualified jobs from changing another channel film record (PR #1021 open: reject inconsistent channel-qualified identities in board claim/release/completion and media lookup; reconcile 11 WW2 queue repos with all historical and production fields preserved; read-only audit links J3013/J3019 and existing repairs, flags 001 edit/002 residues for Chief. 174 tests pass plus diff check. No film status, media, schedule or active claim changed. Checkout main; Chief review/merge pending.)
+- J3059 done: HOS 009: Chief decision after corrected billing proposal review (KEEP PR651 d047b064 offline only after independent Claude review and reproduced tests/probes. Unmerged, unintegrated; all production holds and closed allowances preserved.)
+- J3058 done: HOS 009: independent Claude review of corrected offline billing evidence (done)
+- J3057 done: HOS 009: correct offline billing evidence proposal after Chief review (Corrected PR651 at d047b064; 11 tests and check_all pass; 28 reviewer probes inspected. Independent Claude review J3058 then Chief decision J3059 queued. No merge, spend, account requests or production change.)
+- J3056 cancelled: Chief: resolve 002 edit orphan-doing ()
+- J3055 cancelled: Chief: resolve 001 edit orphan-doing ()

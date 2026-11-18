@@ -924,6 +924,10 @@ def approved_state(e: dict, jobs_by_id: dict, now: datetime) -> tuple[str, str, 
 
 def mark_approved(card: dict, e: dict, now: datetime, jobs_by_id: dict | None = None) -> dict:
     state, status, warn = approved_state(e, jobs_by_id or {}, now)
+    prelaunch = any(c["label"] == card.get("channel") and c.get("launch_state") == "prelaunch"
+                    for c in channels.all_channels())
+    if prelaunch:
+        state, status, warn = "waiting", "Approved; waiting for YouTube connection.", ""
     ok_at = _parse_iso(e.get("okAt"))
     ok_txt = ok_at.astimezone(LONDON).strftime("%a %-d %b %H:%M") if ok_at else ""
     version = e.get("version") or card.get("version") or ""
@@ -940,6 +944,8 @@ def mark_approved(card: dict, e: dict, now: datetime, jobs_by_id: dict | None = 
                           "warn": warn, "version": version, "okAt": e.get("okAt") or "", "okAtText": ok_txt,
                           "airs": airs, "airsText": _london_short(airs), "what": e.get("what") or "",
                           "step": p.get("step") if state == "working" else None, "of": p.get("of") if state == "working" else None})
+    if prelaunch:
+        card["waitingOn"] = "YouTube connection"
     if airs and not card.get("airText"):
         card["airText"] = london_slot(airs)
         card["air"] = airs[:10]

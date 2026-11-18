@@ -38,7 +38,7 @@ export function benLine(id, doc, prev, via = "") {
   if (!THREADS[ch] || !/^(\d{3}|S\d{1,2}|J\d{3,5}(\.\d{1,2})?)$/.test(film || "")) return null;
   const d0 = doc || prev || {};
   const about = d0.what ? ` (${String(d0.what).slice(0, 200)})` : "";
-  const what = `${film}${d0.version ? " " + d0.version : ""}${about}`;
+  const what = `${ch === "WW2" ? "WW2 " : ""}${film}${d0.version ? " " + d0.version : ""}${about}`;
   const tail = `\n\n(Studio Kanban button, ${londonTime((doc && doc.at) || new Date().toISOString())} London${via ? "; " + via : ""})`;
   if (!doc) return prev && !prev.handled ? `[Ben] undo ${what}: ignore my ${prev.verdict === "ok" ? "OK" : "change request"} from the board.${tail}` : null;
   if (doc.handled) return null;
@@ -203,7 +203,7 @@ export default async function handler(req, res) {
     if (line) chief = await postToChief(b.id, saved ? `${line}\n\n(Not saved on the board: ${saved}. Act on this post.)` : line)
       .catch(e => `not posted: ${String(e && e.message || e).slice(0, 100)}`);
     if (saved) { console.log(`checks ${b.id} not stored: ${saved}; chief: ${chief}`); return res.status(200).json({ ok: true, stored: false, error: saved, checks: state.checks, chief }); }
-    if (line) console.log(`checks ${b.id} ${b.delete ? "delete" : (doc || {}).verdict} (${how}${via ? ", " + via : ""}): ${chief}`);   // shows in vercel logs
+    if (line) console.log(`checks ${b.id} ${b.delete ? "delete" : (doc || {}).verdict} (${how}${via ? ", " + via : ""}): ${chief}`);   // shows in worker logs
     return res.status(200).json({ ok: true, checks: state.checks, chief });
   } catch (e) {
     return res.status(500).json({ error: String(e && e.message || e).slice(0, 300) });
