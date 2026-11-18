@@ -269875,10 +269875,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-18T16:20Z",
+      "eta": "2026-11-18T18:20Z",
       "created_by": "relay",
       "created_at": "2026-11-17T19:47Z",
       "result": "",
@@ -269887,6 +269887,11 @@
           "at": "2026-11-17T19:47Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-18T16:20Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief resolves 003 script handoff and records the next owner/action",
@@ -269896,6 +269901,14 @@
         "stage": "script",
         "kind": "orphan-doing",
         "signature": "383f23bb1027e5d9fb6b"
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-18T16:20Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
