@@ -274004,9 +274004,14 @@
           "at": "2026-11-18T21:13Z",
           "by": "relay",
           "what": "condition verification queued: J3084"
+        },
+        {
+          "at": "2026-11-18T21:45Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-18T22:30:00Z"
         }
       ],
-      "remaining_action": "Wait for browser recovery in J3070, then finish the plants Short launch check using observed figures",
+      "remaining_action": "Finish the verified MacBook handoff, then check the plants Short setup and launch figures",
       "due": "2026-11-18T19:39:00Z",
       "kind": "studio",
       "launch": "ChbsigHD5_o@6",
@@ -274032,9 +274037,11 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "Chief ruling 18 Nov: incomplete technical input failure, not a performance verdict. Fresh existing-tab document.title probe timed out after 8 seconds; no analytics reading exists. J3070 must restore responsive signed-in HOS Studio and verify Since published analytics for ChbsigHD5_o before J3063 resumes its original read-only setup and statistics check. No video changes authorized.",
-        "check_at": "2026-11-18T22:13:50+00:00",
-        "recheck_task": "J3084"
+        "condition": "J3084 Chief ruling: retain hold until J3070 completes the MacBook handoff. J3071 evidence f6fe5f717 / PR 1026 verifies responsive signed-in HistoryOfScienceYT and Since published analytics at 20:37Z; accepted as a valid fallback. Mini probe at 21:17Z still timed out after 8.003 seconds. Next: J3085 resolves J3070, whose worker must route J3063 to the verified MacBook before reopening, then finish all original setup checks and record actual observation time. Do not repeat unchanged Mini probes or infer a performance verdict. No video changes or spend authorized.",
+        "check_at": "2026-11-18T22:30:00Z",
+        "last_recheck": "J3084",
+        "checked_at": "2026-11-18T21:45:02+00:00",
+        "checked_by": "codex"
       },
       "escalated_at": "2026-11-18T20:57Z"
     },
