@@ -1,5 +1,5 @@
 {
-  "next_id": 3070,
+  "next_id": 3071,
   "jobs": [
     {
       "id": "J0001",
@@ -274355,6 +274355,37 @@
         "OWB:026",
         "HOS:007"
       ]
+    },
+    {
+      "id": "J3070",
+      "title": "Restore HOS Studio response for the plants Short first-day check",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting-Chief ruling on J3063, Codex, 18 Nov 2026: the first-day check is incomplete because the HOS Studio renderer is unresponsive. This is not a BEHIND verdict or evidence of a video fault. Restore read-only Studio access for the original check. No spend and no video setting changes authorized.\n\nEvidence: J3063 attempts at 17:45 and 18:25Z could list the existing HOS Studio tab but Playwright attachment and direct Runtime.evaluate timed out. Chief review at 20:09Z repeated document.title on that same existing tab with an 8-second timeout: WebSocketTimeoutException. launch_check.py judge ChbsigHD5_o says no reading recorded yet. Prior Page.stopLoading and Page.reload acknowledged without restoring DOM response.\n\nUse the existing Studio tab through cdp_tabs.reuse_page; never open duplicate site tabs or close Chrome. Check browser activity/locks before any tab recovery, preserve uploads and Flow jobs. Diagnose renderer/CDP attachment and attempt bounded, non-destructive tab recovery. No profile reset, extension removal, login change, browser restart or process kill. A working signed-in MacBook HOS browser is an acceptable read-only fallback if available through established tooling; do not guess a host or expose private network details.\n\nAcceptance: document title/body reads return promptly, the signed-in channel is HistoryOfScienceYT, and Since published Analytics for ChbsigHD5_o loads. Save timestamped sanitized evidence. Then report recovery on J3063 and reopen that original job for its remaining setup checks and observed analytics; record the actual observation time, not a fabricated six-hour reading. If recovery fails, record the exact failed probe and a concrete repair proposal for Chief, not a generic request to restart Chrome. Do not touch J3064 or other jobs.\n\nJ3063 remains held until recovery is verified. Its condition check is due 18 Nov 21:00Z. No Ben action is currently needed.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-18T20:11Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T20:11Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Recover the existing HOS Studio tab and verify its analytics can be read",
+      "due": "2026-11-18T20:45:00Z",
+      "kind": "assembly",
+      "plain": "Restore access to the plants video statistics in YouTube Studio",
+      "mini_only": true
     }
   ],
   "focus": [
