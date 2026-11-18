@@ -226538,13 +226538,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-18T23:32Z",
-      "eta": "2026-11-19T01:32Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T19:53Z",
-      "result": "",
+      "result": "Ben: explicit one-time exception needed for the irreversible rewrite of protected HOS hos-desk history while keeping PR180 open. PR657 records the successful private rehearsal and exact protected-head mapping. Existing Never rule forbids pushing the desk; general cleanup approval does not name this exception. No live rewrite or window notice yet.",
       "history": [
         {
           "at": "2026-11-10T19:53Z",
@@ -226965,6 +226965,11 @@
           "at": "2026-11-18T23:38Z",
           "by": "codex",
           "what": "step 3 of 4 done: Private rehearsal passed: 2885 commits, 1171 refs, zero personal-domain matches, identical main tree and 200 preserved input blobs. Evidence HOS PR657; live hos-desk protection remains unresolved."
+        },
+        {
+          "at": "2026-11-18T23:40Z",
+          "by": "codex",
+          "what": "blocked: Ben: explicit one-time exception needed for the irreversible rewrite of protected HOS hos-desk history while keeping PR180 open. PR657 records the successful private rehearsal and exact protected-head mapping. Existing Never rule forbids pushing the desk; general cleanup approval does not name this exception. No live rewrite or window notice yet."
         }
       ],
       "remaining_action": "Resolve the protected desk branch before planning the live history rewrite",
@@ -226984,7 +226989,12 @@
         "HOS:008",
         "HOS:011",
         "HOS:013"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "Ben: explicit one-time exception needed for the irreversible rewrite of protected HOS hos-desk history while keeping PR180 open. PR657 records the successful private rehearsal and exact protected-head mapping. Existing Never rule forbids pushing the desk; general cleanup approval does not name this exception. No live rewrite or window notice yet.",
+        "check_at": "2026-11-19T05:40:12+00:00"
+      }
     },
     {
       "id": "J2538",
