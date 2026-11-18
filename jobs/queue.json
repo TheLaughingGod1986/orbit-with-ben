@@ -275129,9 +275129,14 @@
           "at": "2026-11-18T22:27Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-18T22:27Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3075 to verify J2996 waiting condition for WW2:002"
         }
       ],
-      "remaining_action": "Verify readiness: Route the finished candidate to a capable film reviewer and resolve remaining labels and voice review",
+      "remaining_action": "Inspect input capabilities, J2996 wait state, PR1018/PR1014 evidence and WW2 002 candidate v04",
       "kind": "review",
       "recheck_of": "J2996",
       "required_capabilities": [
@@ -275154,9 +275159,11 @@
         "of": 3,
         "at": "2026-11-18T22:27Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3075 to verify J2996 waiting condition for WW2:002"
+      },
+      "taskKeys": [
+        "WW2:002"
+      ]
     },
     {
       "id": "J3076",
