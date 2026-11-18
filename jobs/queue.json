@@ -266856,9 +266856,14 @@
           "at": "2026-11-18T10:31Z",
           "by": "claudecode",
           "what": "step 0 of 4 done: master hash, format, loudness, decode verified; running ASR + cut-list checks"
+        },
+        {
+          "at": "2026-11-18T10:32Z",
+          "by": "claudecode",
+          "what": "step 1 of 4 done: measured: SHA match, 530f/24fps/936x1664, -14.2 LUFS/-2.5 dBTP, decode OK; Franklin's ends 1.49 s (signal), ASR 0.90-1.52; offsets S06 4.00/S07 3.10, crops OK; 10 caption chunks, no overlap"
         }
       ],
-      "remaining_action": "Verify v07 master and the 5 fixes, write REVIEW.md, stage UAT copy, set Ben's watch",
+      "remaining_action": "Look at caption boundary frames and sheets, write REVIEW.md, stage UAT copy",
       "kind": "qa",
       "plain": "Review HOS 008 Short C v07 against the J2485 fix list and stage it for Ben's phone watch",
       "rerouted_from": {
@@ -266874,11 +266879,11 @@
         "HOS:008"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-18T10:31Z",
+        "at": "2026-11-18T10:32Z",
         "by": "claudecode",
-        "note": "master hash, format, loudness, decode verified; running ASR + cut-list checks"
+        "note": "measured: SHA match, 530f/24fps/936x1664, -14.2 LUFS/-2.5 dBTP, decode OK; Franklin's ends 1.49 s (signal), ASR 0.90-1.5"
       }
     },
     {
