@@ -1,5 +1,5 @@
 {
-  "next_id": 3059,
+  "next_id": 3060,
   "jobs": [
     {
       "id": "J0001",
@@ -272913,6 +272913,35 @@
       "kind": "review",
       "model": "mini-claude-opus-5-5",
       "plain": "Double checking the corrected billing evidence proposal for the gravity film"
+    },
+    {
+      "id": "J3059",
+      "title": "HOS 009: Chief decision after corrected billing proposal review",
+      "needs": "any",
+      "repo": "hos",
+      "body": "After the independent Claude review, decide HOS PR651 exact commit d047b06440591466d494a7377b9142cb1f4b0692 as an offline proposal only. Read the review and J3057 validation. Recheck chief_relay.py status and use your own agent id. Producer Codex must not merge this correction. If FIX, queue exact corrections. Any accepted proposal remains unintegrated and authorizes no account requests, POSTs, generation, deployment, guard relaxation, billing changes or production. Preserve all holds and closed unused allowances stated in the independent review brief. Original Claude desk6978888233 and controlling Chief desk6983820915. No automatic retry timer or allowance pooling/renewal.",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/651",
+      "film": "009",
+      "stage": "edit",
+      "after": "J3058",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-18T16:07Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T16:07Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Deciding the reviewed offline billing proposal",
+      "kind": "chief",
+      "plain": "Deciding whether the corrected billing evidence proposal is ready to keep"
     }
   ],
   "focus": [
