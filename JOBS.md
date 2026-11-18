@@ -56,7 +56,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3022 | mini | open (after J3021) | – | – | 064 picture · chart · OWB 064: Prepare shelf pictures, graphics and three thumbnails for the every-planet film | J3011 |
 | J3023 | mini | open (after J3022) | – | – | 064 edit · assembly · OWB 064: Assemble and check the every-planet film, then put it on Ben’s watch board | J3011 |
 | J3025 | mini | open | – | – | chief · Chief: resolve 002 script orphan-doing |  |
-| J3026 | mini | claimed | gemini | 2026-11-18T21:23Z | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
+| J3026 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
 | J3030 | mini | open | – | – | chief · Chief: resolve 002 script orphan-review |  |
 | J3032 | mini | open | – | – | chief · Chief: resolve 002 vo orphan-blocked |  |
 | J3033 | mini | open | – | – | chief · Chief: resolve 001 edit orphan-doing |  |
