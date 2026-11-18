@@ -272981,13 +272981,13 @@
       "stage": "edit",
       "after": "J3058",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-18T16:15Z",
-      "eta": "2026-11-18T18:15Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-18T16:07Z",
-      "result": "",
+      "result": "KEEP PR651 d047b064 offline only after independent Claude review and reproduced tests/probes. Unmerged, unintegrated; all production holds and closed allowances preserved.",
       "history": [
         {
           "at": "2026-11-18T16:07Z",
@@ -273018,6 +273018,11 @@
           "at": "2026-11-18T16:18Z",
           "by": "codex",
           "what": "step 3 of 3 done: KEEP exact d047b064 offline only; ruling posted to PR651 and HOS desk; no merge or production authorization."
+        },
+        {
+          "at": "2026-11-18T16:18Z",
+          "by": "codex",
+          "what": "done: KEEP PR651 d047b064 offline only after independent Claude review and reproduced tests/probes. Unmerged, unintegrated; all production holds and closed allowances preserved."
         }
       ],
       "remaining_action": "Decision complete; proposal retained offline with production holds unchanged",
@@ -273032,7 +273037,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/651#issuecomment-6984410397"
     }
   ],
   "focus": [
