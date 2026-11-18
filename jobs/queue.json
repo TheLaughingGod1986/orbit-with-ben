@@ -273699,9 +273699,14 @@
           "at": "2026-11-18T17:55Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-18T17:59Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Verified J2868 5-part KEEP review and 034_short02_water_ice_mountains_v02.mp4 sha256 f3e3d47d0c86be1d297fbf5fade3383126f9c01d94ab2b78444d60dd6a66be73 across studio-live, NAS OWB UAT, and iCloud OWB UAT"
         }
       ],
-      "remaining_action": "Verify 034_short02_water_ice_mountains_v02.mp4 sha256, gate_shorts_open.py check, and Pluto long status",
+      "remaining_action": "Run gate_shorts_open.py check without --report-only on 034_short02_water_ice_mountains_v02.mp4",
       "due": "2026-12-18T18:00:00Z",
       "kind": "listing",
       "approved_from": {
@@ -273727,10 +273732,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-18T17:55Z",
-        "by": "gemini"
+        "at": "2026-11-18T17:59Z",
+        "by": "gemini",
+        "note": "Verified J2868 5-part KEEP review and 034_short02_water_ice_mountains_v02.mp4 sha256 f3e3d47d0c86be1d297fbf5fade3383126f"
       },
       "taskKeys": [
         "OWB:034"
