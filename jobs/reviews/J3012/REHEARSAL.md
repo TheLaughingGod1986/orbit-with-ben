@@ -65,3 +65,20 @@ thread configuration, deployment or channel file was switched.
 - Remaining before cutover: launcher/bootstrap and CI adaptations, exact deployed board credential access,
   old-entrypoint single-writer safeguards, seven official clean days and prior-day notice. Live relay/publish/tick
   acceptance is still outstanding. The published rehearsal root remains historical, not a deployable snapshot.
+
+
+### Broader future-identity run
+
+The full isolated suite ran **1,352 tests in 137 seconds**, exit 1, with three failures and six skips.
+The failures were hard-coded identity/environment assumptions in:
+
+- `test_chief_relay.TheBriefIsBuiltFromTheChannelFiles.test_the_studios_own_names_come_from_the_registry`
+- `test_chief_relay.TheBriefOnceTheStudioHasItsOwnRepo.test_the_studios_checkout_is_found_by_its_repos_name_or_the_registrys_own`
+- `test_watch_r2.MiniPaths.test_env_falls_back_to_the_main_checkout`
+
+These fixtures are corrected in the PR: registry identity, explicit repository-name fallback, cleared checkout
+environment while testing defaults, and the configured engine folder for local credential lookup. No runtime
+credential behavior was changed. The full transcript stays in local scratch `J3012-full-tests.log`; it contains
+mocked failure-path output and is not a production execution log. The official daily history was not changed.
+
+After the fixture corrections, the affected future-layout suites pass: **113 relay tests and nine watch/R2 tests**, exit 0. The entire 1,352-test suite was not repeated after these test-only corrections.

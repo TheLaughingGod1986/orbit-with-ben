@@ -1401,7 +1401,7 @@ class TheBriefIsBuiltFromTheChannelFiles(TodaysLayout):
         self.assertIn('env[channels.studio_env("AGENT")] = agent', src)
         self.assertIn('f"https://raw.githubusercontent.com/{channels.studio_github()}/"', src)
         self.assertEqual(cr.channels.studio_env("AGENT"), "OWB_AGENT")
-        self.assertEqual(cr.channels.studio_github(), "TheLaughingGod1986/orbit-with-ben")
+        self.assertEqual(cr.channels.studio_github(), cr.channels._studio_section()["github"])
 
     def test_the_spend_ledger_and_the_film_folders_are_where_they_were(self):
         with mock.patch.object(cr, "STUDIO", pathlib.Path("/o")), mock.patch.object(cr, "HOME", pathlib.Path("/Users/x")), \
@@ -1464,9 +1464,11 @@ class TheBriefOnceTheStudioHasItsOwnRepo(unittest.TestCase):
 
     def test_the_studios_checkout_is_found_by_its_repos_name_or_the_registrys_own(self):
         home = pathlib.Path("/Users/x")
-        self.assertEqual(cr.channels.studio_checkout(home), home / "YouTube" / "orbit-with-ben")   # named after its repo
+        with mock.patch.object(cr.channels, "_studio_section", return_value={"github": "someone/engine"}):
+            self.assertEqual(cr.channels.studio_checkout(home), home / "YouTube" / "engine")
         kept = dict(cr.channels._studio_section(), github="someone/studio", checkouts=["Studio", "studio"], env="STUDIO_REPO")
-        with mock.patch.object(cr.channels, "_studio_section", lambda: kept):
+        with mock.patch.object(cr.channels, "_studio_section", lambda: kept), \
+                mock.patch.dict(os.environ, {"STUDIO_REPO": ""}):
             self.assertEqual(cr.channels.studio_checkout(home), home / "YouTube" / "Studio")
             self.assertEqual(cr.channels.studio_repo(), {"url": "https://github.com/someone/studio.git", "env": "STUDIO_REPO",
                                                          "checkouts": ["Studio", "studio"]})
