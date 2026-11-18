@@ -51,7 +51,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3023 | mini | open (after J3022) | – | – | 064 edit · assembly · OWB 064: Assemble and check the every-planet film, then put it on Ben’s watch board | J3011 |
 | J3026 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
 | J3039 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
-| J3044 | mini | open | – | – | for codex · studio · WW2 channel is live: record its channel ID, short name FOH on the board, connect it to the studio |  |
+| J3044 | mini | claimed | codex | 2026-11-18T22:41Z | for codex · studio · WW2 channel is live: record its channel ID, short name FOH on the board, connect it to the studio |  |
 | J3051 | mini | blocked | codex | – | for codex · review · `gpt-6-astra` · Verify condition for J3020 |  |
 | J3062 | mini | open | – | – | chief · Chief: resolve 034 edit orphan-review |  |
 | J3063 | mini | blocked | codex | – | for codex · studio · `gpt-6.1-sol` · First-day check at 6 h: "How Do Plants Clean the Air?" (ChbsigHD5_o) |  |
