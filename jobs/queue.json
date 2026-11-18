@@ -271168,6 +271168,11 @@
           "at": "2026-11-18T11:24Z",
           "by": "codex",
           "what": "reopened: Elected Chief taking completed verification for disposition only; original J2035 remains blocked, ruling and follow-ups J3042/J3043 already recorded."
+        },
+        {
+          "at": "2026-11-18T11:25Z",
+          "by": "codex",
+          "what": "rerouted to codex on gpt-6-astra: Elected Chief disposition of completed verification; remove specialist-only routing for closure."
         }
       ],
       "remaining_action": "Elected Chief (Codex): run jobs.py wait J2035 --recheck J3038 (next check 2026-11-18T15:30:00Z) and jobs.py done J3038",
@@ -271182,8 +271187,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon",
+      "for": "codex",
+      "model": "gpt-6-astra",
       "taskKeys": [
         "HOS:009"
       ]
