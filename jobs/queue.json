@@ -226639,9 +226639,14 @@
           "at": "2026-11-18T03:11Z",
           "by": "codex",
           "what": "step 1 of 4 done: Verified both main email ratchets pass at zero; HOS #639 merged. J2979 swept OWB, not the remaining 58 HOS pull requests. Auditing exact PR heads and changed files now."
+        },
+        {
+          "at": "2026-11-18T03:15Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: 58 PR heads audited. HOS #640 carries #521 with its single address removed plus #573/#592 unchanged; checks pass locally. Closed #484 as superseded by #536. Stage 2 remains in progress."
         }
       ],
-      "remaining_action": "Resolve the 58 open History of Science pull requests before the history rehearsal",
+      "remaining_action": "Land the sanitized records carry, then finish the remaining HOS PR sweep before the mirror rehearsal",
       "due": "2026-11-18T18:00:00Z",
       "kind": "chief",
       "plain": "Remove email addresses from both channels' repos, including their past versions",
@@ -226649,9 +226654,9 @@
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-18T03:11Z",
+        "at": "2026-11-18T03:15Z",
         "by": "codex",
-        "note": "Verified both main email ratchets pass at zero; HOS #639 merged. J2979 swept OWB, not the remaining 58 HOS pull requests"
+        "note": "58 PR heads audited. HOS #640 carries #521 with its single address removed plus #573/#592 unchanged; checks pass locally"
       },
       "taskKeys": [
         "HOS:008",
