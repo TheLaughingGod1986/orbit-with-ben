@@ -272833,13 +272833,13 @@
       "stage": "edit",
       "after": "J3053",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-18T16:03Z",
-      "eta": "2026-11-18T18:03Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-18T16:00Z",
-      "result": "",
+      "result": "Corrected PR651 at d047b064; 11 tests and check_all pass; 28 reviewer probes inspected. Independent Claude review J3058 then Chief decision J3059 queued. No merge, spend, account requests or production change.",
       "history": [
         {
           "at": "2026-11-18T16:00Z",
@@ -272870,6 +272870,11 @@
           "at": "2026-11-18T16:08Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR651 updated to d047b06440591466d494a7377b9142cb1f4b0692; J3058 independent Claude review then J3059 Chief decision; no merge or production authorization."
+        },
+        {
+          "at": "2026-11-18T16:08Z",
+          "by": "codex",
+          "what": "done: Corrected PR651 at d047b064; 11 tests and check_all pass; 28 reviewer probes inspected. Independent Claude review J3058 then Chief decision J3059 queued. No merge, spend, account requests or production change."
         }
       ],
       "remaining_action": "Corrections complete; independent review and Chief decision queued",
@@ -272886,7 +272891,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/651"
     },
     {
       "id": "J3058",
