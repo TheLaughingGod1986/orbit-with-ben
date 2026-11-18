@@ -268992,9 +268992,14 @@
           "at": "2026-11-18T00:21Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-18T00:22Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3020 and OWB:064 script stage; replacing default 3-step plan with 5-step script/sources/agy-facts/gate/handoff plan"
         }
       ],
-      "remaining_action": "Write and check the script for the every-planet film",
+      "remaining_action": "Audit 064 existing files and shelf SOURCES.md across all 8 planets",
       "due": "2026-11-23T18:00:00Z",
       "kind": "script",
       "plain": "Write and check the script for the every-planet film",
@@ -269009,12 +269014,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-18T00:21Z",
+        "of": 5,
+        "at": "2026-11-18T00:22Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3020 and OWB:064 script stage; replacing default 3-step plan with 5-step script/sources/agy-facts/gate/handoff "
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3021",
