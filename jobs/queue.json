@@ -267840,9 +267840,14 @@
           "at": "2026-11-18T06:45Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Step 2 done: synthesized atlantic_black_pit_vo_v01 (6 chapters, 1,441.02 s / 24:01.02, 19,756 chars spent, -20.1 LUFS, raw Scribe 97.18% PASS); running full boundary, per-chapter loudness and mismatch checks"
+        },
+        {
+          "at": "2026-11-18T06:50Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Step 3 done: voice checks PASS (raw Scribe 97.18%, normalized 99.88%, zero clipped words, -20.1 LUFS, 1.5 LU chapter spread; 8,691 plan credits billed, 59,202 left); copying master to studio-live NAS"
         }
       ],
-      "remaining_action": "Run transcript, boundary, per-chapter loudness and Whisper vo_check audits, stage master to studio-live NAS and open PR",
+      "remaining_action": "Finish NAS SHA-256 verification, run safety tests in clean worktree, commit and open PR",
       "due": "2026-11-22T18:00:00Z",
       "for": "gemini",
       "kind": "vo",
@@ -267851,11 +267856,11 @@
         "WW2:002"
       ],
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-18T06:45Z",
+        "at": "2026-11-18T06:50Z",
         "by": "gemini",
-        "note": "Step 2 done: synthesized atlantic_black_pit_vo_v01 (6 chapters, 1,441.02 s / 24:01.02, 19,756 chars spent, -20.1 LUFS, r"
+        "note": "Step 3 done: voice checks PASS (raw Scribe 97.18%, normalized 99.88%, zero clipped words, -20.1 LUFS, 1.5 LU chapter spr"
       }
     },
     {
