@@ -269355,10 +269355,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-18T04:08Z",
+      "eta": "2026-11-18T06:08Z",
       "created_by": "codex",
       "created_at": "2026-11-18T00:01Z",
       "result": "",
@@ -269452,6 +269452,11 @@
           "at": "2026-11-18T04:08Z",
           "by": "codex",
           "what": "reopened: Chief KEEP at d569a115d3 recorded in PR 987 comment 6968740645. Reopening only to claim and close completed repair review; J3028 owns integration and delivery, J2985 remains held."
+        },
+        {
+          "at": "2026-11-18T04:08Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief re-review of corrected credit pages before merge or deployment",
@@ -269459,7 +269464,15 @@
       "for": "codex",
       "kind": "assembly",
       "plain": "Fix the credit calculations so the board gives reliable advice about cheaper plans",
-      "escalated_at": "2026-11-18T02:43Z"
+      "escalated_at": "2026-11-18T02:43Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-18T04:08Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3025",

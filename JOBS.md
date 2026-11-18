@@ -65,7 +65,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3021 | mini | open (after J3020) | – | – | 064 vo · vo · OWB 064: Record and check narration for the every-planet film | J3011 |
 | J3022 | mini | open (after J3021) | – | – | 064 picture · chart · OWB 064: Prepare shelf pictures, graphics and three thumbnails for the every-planet film | J3011 |
 | J3023 | mini | open (after J3022) | – | – | 064 edit · assembly · OWB 064: Assemble and check the every-planet film, then put it on Ben’s watch board | J3011 |
-| J3024 | any | open | – | – | for codex · assembly · J2985: correct credit history and downgrade advice before merge |  |
+| J3024 | any | claimed | codex | 2026-11-18T06:08Z | for codex · assembly · J2985: correct credit history and downgrade advice before merge |  |
 | J3025 | mini | open | – | – | chief · Chief: resolve 002 script orphan-doing |  |
 | J3026 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
 | J3027 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3020 |  |
