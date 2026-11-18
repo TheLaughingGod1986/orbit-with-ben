@@ -270581,7 +270581,7 @@
     {
       "id": "J3037",
       "title": "OWB 064: Verify corrected script and decide the narration lock",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Follow-up to J3027 FIX ruling. After the correction job, review OWB:064 v02 independently of the producer. Read J3020 scope and J3027 ruling. Verify every MUST QUOTE directly, including Neptune ratios, Earth core depth, New Horizons trajectory, Great Red Spot chronology and Saturn age uncertainty; inspect preserved agy output, corrected SOURCES and graphics notes, counts and >=90 script gate. Record versioned direct quote check and explicit exact-hash lock verdict. If PASS, elected Chief may complete J3020 and release J3021 through the existing dependency; never release narration merely because correction is done. If FIX, keep parent held on concrete corrective work. No cash, media generation, upload, schedule or privacy changes; topic/date approval retained. Update parent hold with evidence and close the review, rather than parking for an absent Chief.\n",
       "ref": "J3027",
@@ -270601,12 +270601,26 @@
           "at": "2026-11-18T07:11Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-18T07:12Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-18T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Independently verify the corrected script and record its lock verdict",
       "due": "2026-11-23T18:00:00Z",
       "kind": "review",
-      "plain": "Check the corrected planet script before narration starts"
+      "plain": "Check the corrected planet script before narration starts",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
