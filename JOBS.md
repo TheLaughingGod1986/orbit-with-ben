@@ -69,6 +69,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3043 | any | claimed | codex | 2026-11-18T12:01Z | 009 edit · chief · HOS 009: decide revised continuous opening score scope | J3038 |
 | J3044 | mini | open | – | – | for codex · studio · WW2 channel is live: record its channel ID, short name FOH on the board, connect it to the studio |  |
 | J3045 | mini | open (after J3043) | – | – | 009 edit · assembly · HOS 009: generate continuous opening score v03 within J3043 cap | J3043 |
+| J3046 | mini | open (after J3045) | – | – | 009 edit · review · HOS 009: independently listen to continuous opening score v03 | J3043 |
 
 Recently finished:
 
