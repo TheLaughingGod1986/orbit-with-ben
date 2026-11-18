@@ -273830,9 +273830,14 @@
           "at": "2026-11-18T18:13Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Step 2/4: gate_shorts_open.py check PASS without --report-only on 034_short01_testA_opening_v02.mp4 (36.5s, 0/37 at 1fps and 0/73 at 2fps padded, cover sha256 c6fde267ffe087fc3dc70f4b58f0b203592bf010edcaa8bb541d2f98fb9a9635)"
+        },
+        {
+          "at": "2026-11-18T18:18Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Built and committed 10_Shorts/short01_testA_opening/07_Upload-Package (PACKAGE_MANIFEST.json + 13-cue en-GB.srt) at a67c7a54b7 and synced to NAS studio-live; youtube:package --dry-run PASS for Mon 2026-12-21T11:30:00.000Z; placing J3066 on public hold until 034 Pluto long airs Sun 2026-12-13T18:00:00Z"
         }
       ],
-      "remaining_action": "Build and commit 10_Shorts/short01_testA_opening/07_Upload-Package (PACKAGE_MANIFEST.json + en-GB.srt), run youtube:package --dry-run, and place on public hold",
+      "remaining_action": "Upload 034 Short 1 v02 Private for Mon 21 Dec 11:30Z once 034 Pluto long is public, set Related = 034 long, record in UPLOADS.json, and post read-back",
       "due": "2026-12-18T18:00:00Z",
       "kind": "listing",
       "approved_from": {
@@ -273858,11 +273863,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-18T18:13Z",
+        "at": "2026-11-18T18:18Z",
         "by": "gemini",
-        "note": "Step 2/4: gate_shorts_open.py check PASS without --report-only on 034_short01_testA_opening_v02.mp4 (36.5s, 0/37 at 1fps"
+        "note": "Built and committed 10_Shorts/short01_testA_opening/07_Upload-Package (PACKAGE_MANIFEST.json + 13-cue en-GB.srt) at a67c"
       },
       "taskKeys": [
         "OWB:034"
