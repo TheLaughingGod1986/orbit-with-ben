@@ -58,3 +58,38 @@
 - **Thumb A:** `ALL 8 WORLDS` (`8 WORLDS` in `#FFE000`) — All 8 real NASA planetary disks in a diagonal perspective lineup across deep space
 - **Thumb B:** `464°C TO -224°C` (`464°C` in `#FFE000`) — Rule 14 bright high-contrast split: golden-orange `464 °C` Venus/Mercury vs electric ice-blue `-224 °C` Uranus/Neptune
 - **Thumb C:** `REAL NASA PHOTOS` (`REAL` in `#FFE000`) — Rules 18 & 19 colour-graded NASA Cassini/Juno/Voyager spacecraft montage with Earth scale
+
+---
+
+## 4. Script Reviewer & 8-Planet Chapter Plan (`J3020`, 18 Nov 2026)
+
+```bash
+cd 07_Content-Ops && npm run review:script -- --file ../02_Video-Projects/064_Every-Planet-Explained-In-10-Minutes/01_Script/every_planet_explained_script_master_v01.md
+```
+
+- [x] Score ≥ **90 / 100** (**PASS 93.1 / 100**, 1,290 spoken words / 8,161 spoken characters / 1,352 reviewer words, 8 planet sections / 7 `[CHAPTER CARD]` markers)
+- **8-planet section breakdown (`~64–77 s` per planet):**
+  1. **Mercury (Cold Open):** `147 spoken words` (`939 chars`, `~65.3 s`) — 58M km, 430 °C day vs −180 °C night, Giuseppe Colombo (1965) 3:2 resonance (176-Earth-day solar day), 2,440 km radius with 85% metallic core, MESSENGER (2011–2015) water ice in 112-km Prokofiev crater
+  2. **Venus (`Venus — The Backwards Furnace`):** `152 spoken words` (`925 chars`, `~67.6 s`) — 108M km, 464 °C under 96.5% CO₂ and 92 bars (930 m underwater on Earth), 243-day retrograde spin vs 225-day year, Pioneer Venus (1978) 100× D/H, Venera 13 (1 Mar 1982) 127-min survival, Parker Solar Probe (Feb 2021) nightside glow
+  3. **Earth (`Earth — The Shielded Ocean World`):** `145 spoken words` (`921 chars`, `~64.4 s`) — 150M km (1 AU), 6,378 km radius, 23.4° tilt, 1,670 km/h equatorial spin (>4× 408 km/h wind record) & 43 km bulge, 3,000 km liquid-iron outer core (183 reversals in 83M yr, last 780,000 yr ago), Carl Friedrich Gauss (1830s, ~9% drop), atmosphere shielding like 13 feet of concrete
+  4. **Mars (`Mars — The Frozen Robot Desert`):** `162 spoken words` (`986 chars`, `~72.0 s`) — 228M km (1.5 AU), 3,390 km radius, 6.36 mbar air (<1% Earth) at −59 °C, Curiosity (Aug 2012) 0.64 mSv/day radiation (~3 months of Earth yearly background per day), Olympus Mons 21.3 km MOLA elevation (>2× Everest across an Arizona-sized base), Opportunity 5,111 sols (10 Jun 2018), Ingenuity 72 flights (18 Jan 2024)
+  5. **Jupiter (`Jupiter — The Ocean of Metallic Hydrogen`):** `174 spoken words` (`1,113 chars`, `~77.3 s`) — 778M km (5.2 AU), 318 Earth masses (>2× all other planets), 69,911 km radius (11× Earth, basketball vs grape), 9.9-h day, Galileo Galilei (1610), Great Red Spot shrinking from 41,000 km (late 1800s) to 16,500 km (2014), midpoint twist ("Case closed? Wrong — there is no solid surface"), Galileo probe (7 Dec 1995) 58-min / 153-km / 22.7-atm descent, Juno (2016) dilute core
+  6. **Saturn (`Saturn — Disappearing Rings and the Hexagon Storm`):** `166 spoken words` (`1,031 chars`, `~73.8 s`) — 1.4B km (9.5 AU), 120,500 km diameter (9× Earth, volleyball vs nickel), 10.7-h day, 687 kg/m³ density (< water), 282,000 km rings only 10 m thick, Cassini 6 dives before Sep 2017 (0.41 Mimas mass, 10–100 Myr age), 30,000 km north-pole hexagon (322 km/h jet, >2 Earths wide) and 2,000 km central eye (330 mph clouds, 27 Nov 2012), 2012-to-2016 blue-to-gold seasonal shift
+  7. **Uranus (`Uranus — Knocked Sideways Into 21-Year Winters`):** `156 spoken words` (`1,006 chars`, `~69.3 s`) — 2.9B km (19 AU), William Herschel (13 Mar 1781, first telescope planet), 51,118 km diameter (4× Earth, softball vs nickel), 84-yr orbit, 97.77° tilt (>4× Earth's 23.4° tilt), 17-h retrograde spin, 21-yr winter, Voyager 2 (24 Jan 1986), −224.2 °C (49 K) coldest planetary atmosphere, ~60° magnetic tilt, ≥80% hot fluid interior reaching 4,982 °C
+  8. **Neptune (`Neptune — Supersonic Winds at the Edge`):** `173 spoken words` (`1,157 chars`, `~76.9 s`) — 4.5B km (30 AU, sunlight 900× dimmer), 49,528 km diameter (4× Earth, baseball vs nickel), 16-h day, 165-yr orbit (completed first orbit in 2011), Urbain Le Verrier & Johann Gottfried Galle (23 Sep 1846, first planet found by maths), William Lassell (10 Oct 1846, Triton), Voyager 2 (25 Aug 1989) >2,000 km/h methane winds (3× Jupiter, 9× Earth's 400 km/h winds), Triton >8 km nitrogen geysers, hand-off to `034` Pluto (New Horizons 1,000 km nitrogen-ice heart with zero craters)
+
+---
+
+## 5. Sign-off (Pre-build audit & automated script gate)
+
+- [x] Keywords pulled and primary locked (`every planet explained`, `20,191/mo`, `45/100` comp)
+- [x] Title ≥90 locked by Ben in `J3011` (`"Lock it."`, 17 Nov 2026: `Every Planet Explained in 10 Minutes (Mercury to Neptune)`)
+- [x] Script reviewer ≥ 90 (`PASS 93.1 / 100` on `every_planet_explained_script_master_v01.md`)
+- [x] Outlier patterns and 8-planet chapter teach-points mapped into script
+- [x] Thumb concepts match title promise (`ALL 8 WORLDS`, `464°C TO -224°C`, `REAL NASA PHOTOS`)
+- [x] Cold-open clock (Mercury on screen at Frame 0, question before 0:08, −180 °C payoff hint before 0:20, zero agenda line) written
+- [x] Production checklist path noted: `11_Upload-Package/PRODUCTION_CHECKLIST_V2.md`
+
+**Signed off by:** Ben (`J3011` topic lock, 17 Nov 2026) · Gemini (`gemini`, `J3020` pre-build & `review:script` `PASS 93.1/100`; final script lock & `CLAUDE_QUOTE_CHECK` pending reviewer/Chief before VO)  
+**Date:** 2026-11-18
+
