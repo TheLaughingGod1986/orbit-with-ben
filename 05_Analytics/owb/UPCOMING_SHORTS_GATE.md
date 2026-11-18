@@ -1,10 +1,9 @@
 # Upcoming Shorts: gate check
 
-Written by `gate_upcoming.py` at 2026-11-17 06:40 London for Shorts scheduled in the next 14 days. Don't edit by hand.
+Written by `gate_upcoming.py` at 2026-11-18 06:40 London for Shorts scheduled in the next 14 days. Don't edit by hand.
 
 | Airs (London) | Short | In library | Gate |
 |---|---|---|---|
-| 2026-11-17 11:30 | [How Far From Earth Is Voyager 1 Right Now?](https://youtu.be/9q_OvQ1Rd8Y) `9q_OvQ1Rd8Y` | yes | PASS |
 | 2026-11-18 11:30 | [If Voyager Needs 75,000 Years, How Far Is the Nearest Star?](https://youtu.be/dH_yCRmzkMo) `dH_yCRmzkMo` | yes | PASS |
 | 2026-11-19 11:30 | [How Close Will the Supermoon Get on November 24?](https://youtu.be/HXacmpYkXcA) `HXacmpYkXcA` | yes | PASS |
 | 2026-11-20 11:30 | [The Nearest Star Is a Cherry Past Cairo. How Do We Know?](https://youtu.be/aAUgIGEuPwQ) `aAUgIGEuPwQ` | yes | PASS |
