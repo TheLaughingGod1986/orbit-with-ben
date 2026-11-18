@@ -270464,18 +270464,23 @@
           "at": "2026-11-18T23:53Z",
           "by": "codex",
           "what": "step 0 of 4 done: Checking current split layout and machine dependencies; no live move in this run"
+        },
+        {
+          "at": "2026-11-18T23:53Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Restored existing plan from job history; PR 1011 and rehearsal already delivered. Continuing CI adapters."
         }
       ],
-      "remaining_action": "Document and rehearse the studio move, then wait for the planned migration window",
+      "remaining_action": "Finish migration CI and service checks before the gated live move",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 4,
         "at": "2026-11-18T23:53Z",
         "by": "codex",
-        "note": "Checking current split layout and machine dependencies; no live move in this run"
+        "note": "Restored existing plan from job history; PR 1011 and rehearsal already delivered. Continuing CI adapters."
       }
     },
     {
