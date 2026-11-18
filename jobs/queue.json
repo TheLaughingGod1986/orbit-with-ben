@@ -271116,13 +271116,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-18T11:25Z",
-      "eta": "2026-11-18T13:25Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-18T09:07Z",
-      "result": "",
+      "result": "Chief review complete: condition NOT MET; uphold J2808 NOT_ACCEPTED_HOLD. Reviewed Gemini verification, original history, NAS scope/disposition and EAR_REVIEW_J2807; no later overriding desk ruling. No independent audio audition claimed. J2035 remains blocked with recheck J3038 recorded for 2026-11-18T15:30:00Z. Concrete follow-up J3042 (no-spend continuous opening music scope) -> J3043 (Chief scope decision and guarded production/review handoff); neither completion alone accepts a score. J2171 and all locks/gates/Ben-watch requirements retained. Zero cash or credits spent.",
       "history": [
         {
           "at": "2026-11-18T09:07Z",
@@ -271178,6 +271178,11 @@
           "at": "2026-11-18T11:25Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-18T11:25Z",
+          "by": "codex",
+          "what": "done: Chief review complete: condition NOT MET; uphold J2808 NOT_ACCEPTED_HOLD. Reviewed Gemini verification, original history, NAS scope/disposition and EAR_REVIEW_J2807; no later overriding desk ruling. No independent audio audition claimed. J2035 remains blocked with recheck J3038 recorded for 2026-11-18T15:30:00Z. Concrete follow-up J3042 (no-spend continuous opening music scope) -> J3043 (Chief scope decision and guarded production/review handoff); neither completion alone accepts a score. J2171 and all locks/gates/Ben-watch requirements retained. Zero cash or credits spent."
         }
       ],
       "remaining_action": "Elected Chief (Codex): run jobs.py wait J2035 --recheck J3038 (next check 2026-11-18T15:30:00Z) and jobs.py done J3038",
