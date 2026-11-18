@@ -274416,13 +274416,27 @@
           "at": "2026-11-18T20:11Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-18T20:19Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "Recover the existing HOS Studio tab and verify its analytics can be read",
       "due": "2026-11-18T20:45:00Z",
       "kind": "assembly",
       "plain": "Restore access to the plants video statistics in YouTube Studio",
-      "mini_only": true
+      "mini_only": true,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     }
   ],
   "focus": [
