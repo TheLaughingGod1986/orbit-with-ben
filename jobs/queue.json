@@ -271694,13 +271694,13 @@
       "stage": "edit",
       "after": "J3043",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-18T11:54Z",
-      "eta": "2026-11-18T13:24Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-18T11:45Z",
-      "result": "",
+      "result": "NOT GENERATED / failed mandatory billing preflight. Recorded current_overage_amount absent at 11:57:43Z under recorder lock; zero POSTs, retries, credits or cash. Resumed existing af757338 record, verified preflight assertions and scope hash, published HOS PR647 and desk6978869691. No media exists for gates or audition. J3046 then J3047 handle absent candidate and no-spend disposition; J2035/J2171 held, v01/v02 rejected, 22 Nov ready-by at risk. No further request or production acceptance.",
       "history": [
         {
           "at": "2026-11-18T11:45Z",
@@ -271741,6 +271741,11 @@
           "at": "2026-11-18T12:42Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified preserved preflight and scope hash; outcome PR647 published; desk6978869691 posted; zero POSTs or spend, no retry"
+        },
+        {
+          "at": "2026-11-18T12:42Z",
+          "by": "codex",
+          "what": "done: NOT GENERATED / failed mandatory billing preflight. Recorded current_overage_amount absent at 11:57:43Z under recorder lock; zero POSTs, retries, credits or cash. Resumed existing af757338 record, verified preflight assertions and scope hash, published HOS PR647 and desk6978869691. No media exists for gates or audition. J3046 then J3047 handle absent candidate and no-spend disposition; J2035/J2171 held, v01/v02 rejected, 22 Nov ready-by at risk. No further request or production acceptance."
         }
       ],
       "remaining_action": "Complete: failed music preflight recorded and reported",
@@ -271766,7 +271771,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/647"
     },
     {
       "id": "J3046",
