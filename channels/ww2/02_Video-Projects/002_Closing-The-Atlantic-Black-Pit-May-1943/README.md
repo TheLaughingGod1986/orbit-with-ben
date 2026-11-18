@@ -1,9 +1,9 @@
 # Atlantic pilot — current review package
 
-Current draft: **v03**. Job J2994, Field Order History film 002.
+Locked narration: **v03**, elected Chief Codex under J3031, 18 November 2026. Job J2994, Field Order History film 002.
 
 - Read `01_Script/SCRIPT_v03.md` for the six-chapter, annotated script.
-- Record only `01_Script/NARRATION_v03.txt` after review/merge; 19,767 characters including whitespace.
+- Record only `01_Script/NARRATION_v03.txt` after PR #1009 merges; 19,767 characters including whitespace.
 - Evidence: `01_Script/SOURCES.md`, independent claims check and disposition, and `VALIDATION_v03.md`.
 - Picture: `03_Picture/SHOT_LIST_v03.csv` covers every sentence. `MAP_BRIEF_v03.md` supplies paragraph-level compositions. `ARCHIVE_PROVENANCE.md` records five photo originals and their permitted contextual uses.
 - Chapters and picture timings are provisional until narration exists. Archive download and visual inspection belong to J2996.

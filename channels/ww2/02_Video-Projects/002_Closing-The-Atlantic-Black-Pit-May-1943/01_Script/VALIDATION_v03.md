@@ -15,3 +15,7 @@ Narration SHA-256: `4a46801b1b586558f7ddd8886bff8317f53084d9fc44994874bedfaab039
 ## Handoff
 
 Review and merge this PR before J2995 records NARRATION_v03.txt. Old v01/v02 material in draft_history is historical context only; do not narrate or harvest from it. J2996 replaces estimated chapter/shot timing with measured narration timing, harvests and visually checks originals, draws maps and builds the first cut. One finished-film quality pass and Ben’s watch remain downstream. No account setup, upload, publishing, paid generation or paid API request was made by this job.
+
+## Chief lock — 18 November 2026
+
+J3031 accepts the independent Gemini review and locks unchanged narration for J2995 after merge. See jobs/reviews/J3031/DECISION.md. This supersedes the draft handoff above.
