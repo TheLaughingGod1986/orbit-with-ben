@@ -43,8 +43,8 @@ The NAS path renaming mentioned in the broader plan is a separate operation, not
 
 ## Identity, queue and thread decisions
 
-The new remote is `TheLaughingGod1986/studio`, private. On 18 November the read-only repository probe found no
-populated default branch. Rehearsal goes only to `rehearsal/j3012`; production `main` is created at cutover from
+The new remote is `TheLaughingGod1986/studio`, private. The initial 18 November probe found no populated default branch; after publishing the rehearsal,
+the remote default became `rehearsal/j3012`. It is not production. Set the default to `main` only at cutover. Rehearsal goes only to `rehearsal/j3012`; production `main` is created at cutover from
 an independently scanned, fresh root commit. Never merge Orbit history into either branch.
 
 In the new `channels/channels.json`:
@@ -55,8 +55,10 @@ In the new `channels/channels.json`:
 - Keep `studio.prefix: owb` during the first cutover. It is a compatibility namespace, not a home channel.
   Renaming it now would also rename lock/state files, environment variables, thread cursors and launchd labels.
   A later, separately tested rename can change them together; never run both prefixes at once.
-- WW2 currently has `local: channels/ww2`. Preserve that actual configuration until its real channel checkout and
-  manifest are verified with `channel_check.py`; do not fabricate a fourth remote or silently claim WW2 is external.
+- The current live registry already plugs WW2 in externally through `WW2_REPO` with checkout names `ww2` /
+  `ww2-channel`; its manifest names the existing `TheLaughingGod1986/ww2-channel` repository. Earlier rehearsal
+  snapshots used `local: channels/ww2`. Refresh the export from current main before final testing; do not restore
+  that stale local entry over the live configuration.
 
 Copy the complete frozen `jobs/` tree, including queue histories, plans, dependencies, holds, approval card IDs,
 WIP/backlog and review evidence. Compare the ordered job IDs, statuses, claims, progress, holds and `awaits_ben`
@@ -164,6 +166,31 @@ are not a complete inventory of installed jobs. Inspect plists with `plistlib`, 
 
 Use `launchctl bootout gui/<uid>/<label>` followed by `bootstrap gui/<uid> <saved-or-updated-plist>` for a controlled
 service replacement. Keep labels/prefix during this window. Save both old and proposed plist copies outside Git.
+
+### Preparing Mini launchers without installing them
+
+`scripts/mini/render_service_plist.py` reads an installed relay or publisher plist and writes a new proposal.
+It preserves the label, timing, logs, priority and local environment, sets the independent engine/channel paths,
+and launches the selected Python executable directly with an argument array. No shell interprets checkout paths.
+It refuses unknown services, relative paths, missing engine scripts and an existing output file. The output is
+mode 0600 because an installed environment may contain credentials; keep source and output outside Git.
+
+For each of the two services, with the staged engine already present:
+
+```sh
+python3 scripts/mini/render_service_plist.py \
+  --source "$HOME/Library/LaunchAgents/com.owb.chief-relay.plist" \
+  --engine "$HOME/YouTube/studio" --python "$(command -v python3)" \
+  --owb "$HOME/YouTube/orbit-with-ben" --hos "$HOME/YouTube/History Of Science" \
+  --ww2 "$HOME/YouTube/ww2" --out "$STUDIO_SCRATCH/j3012-relay-proposed.plist"
+```
+
+Repeat with `com.owb.board-publish.plist` and a different output name. Validate both with `plutil -lint`.
+Inspect any installed `~/_desk/bin` wrapper before replacement: the proposed launchers invoke the full engine
+checkout, whose relay imports sibling modules, so copying only `chief_relay.py` is insufficient. Use a Python
+executable with the existing runtime dependencies. Do not install or start these files until the drain/freeze
+steps above. The renderer does not migrate other timers, remove pause files or prevent old entry points from
+writing; those remain separate cutover requirements.
 
 ## Workflow adaptations required before production
 

@@ -110,3 +110,20 @@ fixture corrections and the launcher/slot changes. The local transcript is
 `J3012-launcher-full-tests.log` under the Mini scratch root. Mocked failure-path messages in that log are test
 fixtures, not production actions. Changed-file scan: zero keys, zero addresses; email ratchet (8 tests) and
 private-network guard (5 tests) pass. No active workflow or installed launcher was changed.
+
+## Mini launcher preparation, resumed run 18–19 November
+
+Added `scripts/mini/render_service_plist.py` and six regression tests. The renderer accepts the installed relay or
+publisher plist, preserves its unrelated settings and prepares a new private file with independent engine and
+channel paths. It uses direct argv, never shell interpolation, and refuses overwriting an existing file.
+
+Both launch commands were executed against temporary fake engine scripts, including a checkout path containing
+spaces, shell substitution syntax and an ampersand. They invoked the exact script and argument without shell
+expansion. Other tests cover retained environment/scheduling, unknown services, relative paths, missing engines,
+output permissions and overwrite refusal. Six tests pass; channel ratchet 13, email guard 8 and private-network
+guard 5 also pass. No installed plist, wrapper, service or live repository identity changed.
+
+Read-only remote inspection confirms studio still defaults to `rehearsal/j3012`; current live registry has external
+WW2, unlike the earlier export. The runbook now states both facts and requires a fresh export from current main.
+CI adapters, deployed board Contents access, old-entrypoint single-writer safeguards and full live acceptance
+remain unfinished. Do not confuse this renderer with installation evidence.
