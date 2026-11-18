@@ -272466,13 +272466,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-18T14:56Z",
-      "eta": "2026-11-18T16:56Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-18T13:31Z",
-      "result": "",
+      "result": "Chief ruling: condition NOT MET; accept Gemini documentary verification dfa6f416e7. Independently confirmed PR651 OPEN at ff02370b, Claude desk6980094321 approves offline rule only, J3052 then J3053 queued, no v03 files on Mini/NAS. J2035 held: input, last_recheck J3054, retry 2026-11-19T12:00:00Z; completed J2632 no longer triggers premature recheck. Follow-up J3052 records independent review, J3053 decides proposal/route including meter reconciliation. Assembly requires separately accepted compliant score. Prior allowance permanently closed, all gates retained. No media perception claim; zero spend/publication changes.",
       "history": [
         {
           "at": "2026-11-18T13:31Z",
@@ -272528,6 +272528,11 @@
           "at": "2026-11-18T14:56Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-18T14:56Z",
+          "by": "codex",
+          "what": "done: Chief ruling: condition NOT MET; accept Gemini documentary verification dfa6f416e7. Independently confirmed PR651 OPEN at ff02370b, Claude desk6980094321 approves offline rule only, J3052 then J3053 queued, no v03 files on Mini/NAS. J2035 held: input, last_recheck J3054, retry 2026-11-19T12:00:00Z; completed J2632 no longer triggers premature recheck. Follow-up J3052 records independent review, J3053 decides proposal/route including meter reconciliation. Assembly requires separately accepted compliant score. Prior allowance permanently closed, all gates retained. No media perception claim; zero spend/publication changes."
         }
       ],
       "remaining_action": "Elected Chief (Codex): run jobs.py wait J2035 --type input --recheck J3054 (next check 2026-11-19T12:00:00Z) and jobs.py done J3054",
