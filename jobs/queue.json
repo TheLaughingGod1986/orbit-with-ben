@@ -188997,9 +188997,14 @@
           "at": "2026-11-18T13:11Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-19T12:00:00Z"
+        },
+        {
+          "at": "2026-11-18T14:03Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-19T12:00:00Z"
         }
       ],
-      "remaining_action": "Wait for an accepted score and completed long before building the gravity Shorts",
+      "remaining_action": "Wait for separately accepted music and the completed gravity film before building its Shorts",
       "due": "2026-11-22T18:00:00Z",
       "kind": "assembly",
       "progress": {
@@ -189013,9 +189018,12 @@
         "HOS:009"
       ],
       "hold": {
-        "type": "dependency",
-        "condition": "J3047 NOT ACCEPTED: no v03 candidate, allowance permanently closed unused; J3050 owns new billing evidence proposal before independent review and Chief route decision. Still requires a separately accepted score, J2035 long assembly and Shorts own inputs. Do not repeat unchanged checks or release from a date.",
-        "check_at": "2026-11-19T12:00:00Z"
+        "type": "input",
+        "condition": "J3048 Chief review upholds J3047 NOT ACCEPTED / NOT GENERATED: J3043/J3045 allowance permanently closed unused; v01/v02 remain rejected. J3050 offline proposal delivered; Claude desk6980094321 reviews proposal only. Next J3052 records independent review, then J3053 decides proposal; neither authorizes generation. Requires separately scoped and accepted compliant score, J2035 long assembly and all gates, plus Shorts own locked inputs. No release from dates or completed evidence jobs alone.",
+        "check_at": "2026-11-19T12:00:00Z",
+        "last_recheck": "J3048",
+        "checked_at": "2026-11-18T14:03:06+00:00",
+        "checked_by": "codex"
       }
     },
     {
