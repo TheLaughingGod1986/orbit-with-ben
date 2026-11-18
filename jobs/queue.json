@@ -1,5 +1,5 @@
 {
-  "next_id": 3028,
+  "next_id": 3029,
   "jobs": [
     {
       "id": "J0001",
@@ -269581,6 +269581,36 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J3028",
+      "title": "J2985: integrate reviewed credit panel and verify live board",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief review J3024: KEEP the repaired credit implementation at d569a115d3a83685801bc1d8793ba4a995b7d97a. PR 987 is owner-authored, same repository, base main, but GitHub reports mergeStateStatus DIRTY on 18 Nov. This is the remaining delivery portion of J2985, not a new feature or billing research task.\n\nElected Chief: in an isolated worktree integrate current main into the existing PR branch without force pushing. Resolve conflicts preserving current board work and reviewed credits behavior. Recheck the integration diff, 104 tests (test_ai_spend, test_ai_spend_daily, test_board_site, test_kanban_snapshot), both JavaScript suites, security guards, core/rules sync, static build, and required CI. Re-read Chief authority before merge. Review is approved for the cited implementation, not unreviewed conflict resolutions. Merge to main only after integration review and checks pass.\n\nThen complete J2985's authorized board delivery: board_publish.py --force and the existing Cloudflare Pages studio-kanban deployment procedure. Check live Agents Credits and /ai at 390px, live version, readable Time states, historical expired readings, unchanged Ultra decision, no overflow, and no unsafe downgrade advice. Record merge/deployment hashes and phone evidence. Complete this follow-up and J2985 only after live verification. J2985 remains held on this job until then. Existing deadline 19 Nov 18:00Z retained. No subscription change, spend or YouTube change. Unknown billing dates, tier ratios and subscription identity remain unknown; they do not block this guarded implementation. No Ben approval required.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J3024",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-18T04:07Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T04:07Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Resolve the existing pull request conflicts, revalidate, merge and verify the live credit cards",
+      "due": "2026-11-19T18:00:00Z",
+      "kind": "chief",
+      "plain": "Finish publishing the corrected credit cards and check them on a phone"
     }
   ],
   "focus": [
