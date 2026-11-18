@@ -71,6 +71,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3053 | any | claimed | codex | 2026-11-18T17:58Z | 009 edit · chief · HOS 009: decide reviewed billing evidence proposal | https://github.com/TheLaughingGod1986/history-of-science/pull/651 |
 | J3055 | mini | open | – | – | chief · Chief: resolve 001 edit orphan-doing |  |
 | J3056 | mini | open | – | – | chief · Chief: resolve 002 edit orphan-doing |  |
+| J3057 | any | open (after J3053) | – | – | 009 edit · for codex · assembly · `gpt-6.1-sol` · HOS 009: correct offline billing evidence proposal after Chief review | https://github.com/TheLaughingGod1986/history-of-science/pull/651 |
 
 Recently finished:
 

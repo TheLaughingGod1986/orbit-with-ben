@@ -1,5 +1,5 @@
 {
-  "next_id": 3057,
+  "next_id": 3058,
   "jobs": [
     {
       "id": "J0001",
@@ -272805,6 +272805,37 @@
         "kind": "orphan-doing",
         "signature": "7542ed4d6bd6ce3b4c25"
       }
+    },
+    {
+      "id": "J3057",
+      "title": "HOS 009: correct offline billing evidence proposal after Chief review",
+      "needs": "any",
+      "repo": "hos",
+      "body": "J3053 elected HOS Chief decision: request changes on PR651 at ff02370bdc671a270c2ee88b4c9efb3fd018ea70. Apply the three required fixes from independent J3052 REVIEW.md in HOS PR653 (80dc8fe0): (1) amount must be exact str, refuse integer 0, update fixtures and refusal tests; (2) raw_api refuses either flattened key, dual agreement applies only to historical_provenance, update tests and FINDINGS; (3) replace the unverified J2664_PROVENANCE.json citation with a verified tracked source or explicitly label local/unverified. Work only on the offline proposal in an isolated worktree/PR651 branch, no force push. Address recommendations 4-9 from that review where practical and record any deferred item as a prerequisite for future integration review. Run synthetic tests, the reviewer probes and required check_all.sh. Queue a separate independent Claude review of the updated exact commit, then an elected-Chief decision; do not merge yourself. Earlier desk6980094321 acceptance does not override the later concrete findings at desk6983820915. Reference original Claude desk6978888233. No account requests, billing changes, POSTs, live smoke test, generation, integration, deployment or guard relaxation. Unknown remains no POST. Keep extension flags/limits, active plan, pending reconciliation, live tariff, recorder lock and pause requirements. J3043/J3045 allowance permanently closed unused (0 POSTs), J2808 rejection and J2035/J2171 holds intact. No historical allowance pooling or renewal; future production requires a separate explicit scope and decision. No automatic retry timer. This is a proposal correction only, not a film-stage approval.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/651",
+      "film": "009",
+      "stage": "edit",
+      "after": "J3053",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-18T16:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T16:00Z",
+          "by": "codex",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Fix the three reviewed evidence issues and return for independent review",
+      "for": "codex",
+      "kind": "assembly",
+      "model": "gpt-6.1-sol",
+      "plain": "Correct how the gravity film proposal reads billing evidence"
     }
   ],
   "focus": [
