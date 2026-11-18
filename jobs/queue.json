@@ -266953,10 +266953,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-18T06:06Z",
+      "eta": "2026-11-18T08:06Z",
       "created_by": "claude",
       "created_at": "2026-11-17T12:53Z",
       "result": "",
@@ -266975,6 +266975,11 @@
           "at": "2026-11-17T14:30Z",
           "by": "relay",
           "what": "rerouted to claudecode on mini-claude-opus-5-5: Cursor out of usage; next in its chain: claudecode"
+        },
+        {
+          "at": "2026-11-18T06:06Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test",
@@ -267001,7 +267006,15 @@
         "by": ""
       },
       "for": "claudecode",
-      "model": "mini-claude-opus-5-5"
+      "model": "mini-claude-opus-5-5",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-18T06:06Z",
+        "by": "claudecode",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2987",
