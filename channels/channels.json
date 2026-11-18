@@ -21,7 +21,11 @@
     },
     {
       "slug": "ww2",
-      "local": "channels/ww2"
+      "env": "WW2_REPO",
+      "checkouts": [
+        "ww2",
+        "ww2-channel"
+      ]
     }
   ]
 }

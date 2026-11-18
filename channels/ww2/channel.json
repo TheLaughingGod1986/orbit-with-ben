@@ -1,0 +1,54 @@
+{
+  "slug": "ww2",
+  "label": "WW2",
+  "name": "Field Order History",
+  "short": "FOH",
+  "home": false,
+  "order": 3,
+  "youtube": {
+    "handle": "@FieldOrderHistory",
+    "id": "UCu94mInMFosxu3W0H6jlI6Q"
+  },
+  "repo": {
+    "url": "https://github.com/TheLaughingGod1986/ww2-channel",
+    "env": "WW2_REPO",
+    "checkouts": [
+      "ww2"
+    ]
+  },
+  "nas_folder": "ww2",
+  "title_match": "\\bWW2\\b|field\\ order\\ history",
+  "wip": {
+    "limit": 2,
+    "line": "next_ww2"
+  },
+  "stages": [
+    "topic",
+    "script",
+    "sources",
+    "vo",
+    "shots",
+    "picture",
+    "edit",
+    "thumbs",
+    "upload"
+  ],
+  "pipeline": {
+    "kind": "film_status",
+    "path": "02_Video-Projects/*/status.json"
+  },
+  "uat_dir": {
+    "env": "WW2_UAT_DIR",
+    "icloud": "WW2 UAT"
+  },
+  "picture_route": "flow_only",
+  "shorts": {
+    "planned_per_long": 0
+  },
+  "cadence": {
+    "long": [
+      "Tue 17:00",
+      "Sat 17:00"
+    ]
+  }
+}
