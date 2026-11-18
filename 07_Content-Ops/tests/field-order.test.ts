@@ -54,3 +54,69 @@ describe('Studio import contract',()=>{
   expect(studioSchema.safeParse({...valid,videos:{abcdefghijk:{windows:{'48h':{startDate:'2026-11-01',endDate:'2026-11-02',impressions:1,ctr:101}}}}}).success).toBe(false);
  });
 });
+
+describe('Unattended Studio dispatch and merging',()=>{
+ it('dispatches windows only once due, including Pacific date boundary cases',async()=>{
+  const {planReads}=await import('../scripts/field-order-dispatch');
+  const s:any={videos:[{id:'abcdefghijk',title:'A film',format:'long',privacy:'public',publishedAt:'2026-11-01T01:00:00Z'}],channelId:'UC'+'a'.repeat(22)};
+  expect(planReads(s,new Date('2026-11-03T00:59:59Z'))).toHaveLength(1);
+  const jobs=planReads(s,new Date('2026-11-03T01:00:00Z'));
+  expect(jobs).toHaveLength(2);expect(jobs[0].body).toContain('2026-10-31 through 2026-11-01');
+  expect(planReads(s,new Date('2026-11-08T01:00:00Z'))).toHaveLength(3);
+  s.videos[0].privacy='private';expect(planReads(s,new Date('2026-12-01'))).toHaveLength(1);
+ });
+ it('preserves earlier films and windows on import',async()=>{
+  const {mergeStudio}=await import('../scripts/field-order-studio-import');
+  const after=mergeStudio(studio(),{channelId:'fixture',readAt:'2026-11-19T00:00:00Z',videos:{two:{windows:{'7d':{startDate:'2026-11-01',endDate:'2026-11-07',impressions:null,ctr:null,missing:{reach:'Insufficient audience'}}}}}});
+  expect(after.videos.one.windows?.['48h']?.impressions).toBe(1001);
+  expect(after.videos.two.windows?.['7d']?.missing?.reach).toBe('Insufficient audience');
+ });
+ it('requires a timezone with viewer activity',async()=>{
+  const {studioSchema}=await import('../scripts/field-order-studio-import');
+  const s={channelId:'UC'+'a'.repeat(22),readAt:'2026-11-18T00:00:00Z',videos:{},whenViewers:[]};
+  expect(studioSchema.safeParse(s).success).toBe(false);
+  expect(studioSchema.safeParse({...s,whenViewersTimezone:'UTC'}).success).toBe(true);
+ });
+});
+
+describe('Queue and import integration with disk fixtures',()=>{
+ it('is idempotent across completed and claimed reads',async()=>{
+  const fs=await import('fs'),os=await import('os'),path=await import('path');
+  const {dispatchReads}=await import('../scripts/field-order-dispatch');
+  const root=fs.mkdtempSync(path.join(os.tmpdir(),'ww2-dispatch-test-'));
+  try {
+   fs.mkdirSync(path.join(root,'jobs'));
+   const file=path.join(root,'jobs/queue.json');fs.writeFileSync(file,JSON.stringify({jobs:[]}));
+   const snapshot:any={channel:'ww2',channelId:'UC'+'a'.repeat(22),videos:[{id:'abcdefghijk',title:'Film',privacy:'public',format:'long',publishedAt:'2026-11-01T18:00:00Z'}]};
+   const calls:string[][]=[];
+   const run=(args:string[])=>{calls.push(args);const queue=JSON.parse(fs.readFileSync(file,'utf8'));queue.jobs.push({title:args[args.indexOf('--title')+1],status:'done'});fs.writeFileSync(file,JSON.stringify(queue));return Buffer.from('');};
+   expect(dispatchReads(snapshot,root,new Date('2026-11-09'),run)).toHaveLength(3);
+   expect(dispatchReads(snapshot,root,new Date('2026-11-09'),run)).toEqual([]);
+   expect(calls.every(a=>a.includes('--git')&&a.includes('ww2')&&!a.includes('--body'))).toBe(true);
+  } finally {fs.rmSync(root,{recursive:true,force:true});}
+ });
+ it('validates before writing and merges earlier reads on disk',async()=>{
+  const fs=await import('fs'),os=await import('os'),path=await import('path');
+  const {importStudio}=await import('../scripts/field-order-studio-import');
+  const root=fs.mkdtempSync(path.join(os.tmpdir(),'ww2-import-test-'));
+  try {
+   const d=fixture();d.channelId='UC'+'a'.repeat(22);d.videos.abcdefghijk=d.videos.one;delete d.videos.one;
+   fs.writeFileSync(path.join(root,'detail.json'),JSON.stringify(d));
+   const file=path.join(root,'incoming.json');
+   const read={channelId:d.channelId,readAt:'2026-11-18T00:00:00Z',videos:{abcdefghijk:{windows:{'48h':{startDate:'2026-11-01',endDate:'2026-11-02',impressions:1001,ctr:2}}}}};
+   fs.writeFileSync(file,JSON.stringify(read));importStudio(file,root);
+   const before=fs.readFileSync(path.join(root,'board.json'),'utf8');
+   read.videos.abcdefghijk.windows['48h'].endDate='2026-11-03';
+   fs.writeFileSync(file,JSON.stringify(read));expect(()=>importStudio(file,root)).toThrow('does not match');
+   expect(fs.readFileSync(path.join(root,'board.json'),'utf8')).toBe(before);
+   fs.writeFileSync(file,JSON.stringify({channelId:d.channelId,readAt:'2026-11-18T01:00:00Z',videos:{},eligibleWatchHours:300}));importStudio(file,root);
+   const board=JSON.parse(fs.readFileSync(path.join(root,'board.json'),'utf8'));
+   expect(board.films[0].impressions).toBe(1001);expect(board.eligibleWatchHours).toBe(300);
+  } finally {fs.rmSync(root,{recursive:true,force:true});}
+ });
+ it('does not forecast watch hours from private or unlisted channel watch time',()=>{
+  const d=fixture();d.channel.publicLongDaily={'2026-11-17':60};
+  const r=buildFieldOrder(d,null);
+  expect(r.targets[1].eta).toBe(projection(d.through,200,4000,1/7));
+ });
+});

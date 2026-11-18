@@ -97,6 +97,13 @@ main() {
     npx tsx --env-file="$repo/07_Content-Ops/.env" scripts/analytics-snapshot.ts
   )
   local code=$?
+  # The existing unattended Studio worker gathers fields absent from the Analytics API.
+  # Keep queue commits in the shared checkout; the tracker worktree commits only analytics data.
+  (
+    cd 07_Content-Ops || exit 1
+    unset YT_CHANNEL_ID_WW2 YT_ANALYTICS_REFRESH_TOKEN_WW2
+    FIELD_ORDER_QUEUE_REPO="$repo" within 180 npx tsx --env-file="$repo/07_Content-Ops/.env" scripts/field-order-dispatch.ts
+  ) || code=1
   # Gate every Short scheduled in the next 14 days and add any missing one to the open-gate library.
   # Report only: a FAIL is for Claude to act on at 07:10; nothing here touches YouTube.
   local snap="$data/owb/snapshots/$(TZ=Europe/London date +%F).json"
