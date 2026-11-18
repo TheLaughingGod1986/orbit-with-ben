@@ -269114,19 +269114,24 @@
           "at": "2026-11-18T00:11Z",
           "by": "codex",
           "what": "step 3 of 4 done: 104 relevant Python tests, both JS suites, board build, core sync and rules checks pass; phone rendering has no horizontal overflow"
+        },
+        {
+          "at": "2026-11-18T00:13Z",
+          "by": "codex",
+          "what": "step 4 of 4 done: Repair pushed to the original PR branch at 2283c8c986; corrected report and sanitized billing provenance included; merge and deployment remain pending"
         }
       ],
-      "remaining_action": "Updating the existing pull request and handing the repair back for Chief review",
+      "remaining_action": "Awaiting Chief re-review of the repaired credit panel on pull request 987",
       "due": "2026-11-19T18:00:00Z",
       "for": "codex",
       "kind": "assembly",
       "plain": "Fix the credit calculations so the board gives reliable advice about cheaper plans",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-18T00:11Z",
+        "at": "2026-11-18T00:13Z",
         "by": "codex",
-        "note": "104 relevant Python tests, both JS suites, board build, core sync and rules checks pass; phone rendering has no horizont"
+        "note": "Repair pushed to the original PR branch at 2283c8c986; corrected report and sanitized billing provenance included; merge"
       }
     }
   ],
