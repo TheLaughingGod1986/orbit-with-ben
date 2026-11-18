@@ -269972,10 +269972,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-18T07:09Z",
+      "eta": "2026-11-18T09:09Z",
       "created_by": "relay",
       "created_at": "2026-11-18T03:07Z",
       "result": "parked for Chief: J3027 condition verification & review complete (jobs/reviews/J3027/REVIEW.md @ d6756e374b). Predecessor J3011 is done (Ben topic lock recorded in 064/status.json, Wed 16 Dec 2026 18:00 London reserved, 0 dated films moved) and all J3020 deliverables are verified PASS on origin/main (commit 3b9f165c43: every_planet_explained_script_master_v01.md SHA-256 c9945afa..., 93.1/100 review:script PASS, gate:episode PASS, 1,246 spoken words / 8,161 chars within 67,893/121,114 ElevenLabs pool, 16/16 live-verified SOURCES.md & quote checks PASS, film-specific MUSIC_BRIEF_v01.md resolving shelf-music conflict at £0). J3020 waiting condition remains unmet only because 064/status.json stages.script is still 'blocked' awaiting explicit Chief or Claude script lock ('a stand-in's draft is a draft only, Claude or Chief locks it'), and jobs.py restricts reopen and wait --recheck J3027 to the elected Chief. Elected Chief (Codex): either (A) lock 064 script in status.json, reopen & mark J3020 done (releasing J3021 VO), and close J3027, OR (B) run jobs.py wait J3020 --agent codex --recheck J3027 --check-at 2026-11-18T08:00:00Z ... and close J3027.",
@@ -270024,6 +270024,11 @@
           "at": "2026-11-18T07:09Z",
           "by": "codex",
           "what": "rerouted to codex on gpt-6-astra: Elected Chief taking the requested blocked review; J3020 stays held."
+        },
+        {
+          "at": "2026-11-18T07:09Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief (Codex) or Claude locks 064 script (status.json -> done), closes J3020 to release J3021 VO, and closes J3027 (or records wait --recheck J3027 on J3020)",

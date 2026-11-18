@@ -63,7 +63,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3023 | mini | open (after J3022) | – | – | 064 edit · assembly · OWB 064: Assemble and check the every-planet film, then put it on Ben’s watch board | J3011 |
 | J3025 | mini | open | – | – | chief · Chief: resolve 002 script orphan-doing |  |
 | J3026 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
-| J3027 | mini | open | – | – | for codex · review · `gpt-6-astra` · Verify condition for J3020 |  |
+| J3027 | mini | claimed | codex | 2026-11-18T09:09Z | for codex · review · `gpt-6-astra` · Verify condition for J3020 |  |
 | J3030 | mini | open | – | – | chief · Chief: resolve 002 script orphan-review |  |
 | J3032 | mini | open | – | – | chief · Chief: resolve 002 vo orphan-blocked |  |
 | J3033 | mini | open | – | – | chief · Chief: resolve 001 edit orphan-doing |  |
