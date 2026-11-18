@@ -1,5 +1,5 @@
 {
-  "next_id": 3036,
+  "next_id": 3037,
   "jobs": [
     {
       "id": "J0001",
@@ -270510,6 +270510,36 @@
         "kind": "orphan-review",
         "signature": "e7f6996f7bc11c9c5434"
       }
+    },
+    {
+      "id": "J3036",
+      "title": "OWB 064: Correct script facts and rerun Gemini checks",
+      "needs": "any",
+      "repo": "owb",
+      "body": "J3027 elected-Chief ruling, 18 Nov 2026: FIX. J3020 remains blocked and J3021 narration must not run. Preserve Ben topic approval and 16 Dec slot; no money, generation, upload or schedule changes. Repair script master v01 (c9945afa744db370a1601e96395e8add391cf45439c5ee16a624d342e7902aae) as v02; preserve v01 and checks as historical evidence.\nConfirmed blockers: (1) Neptune spoken text and DATA/SCALE equate >2,000 km/h to nine times Earth's 400 km/h. 2,000/400=5; NASA https://science.nasa.gov/neptune/neptune-facts/ has both a nine-times general comparison and the speed figures, but that does not validate combining them into this equation. Use an internally consistent sourced comparison or omit multiplier. (2) Earth narration says a three-thousand-kilometre liquid-iron core; BGS https://geomag.bgs.ac.uk/education/reversals.html locates the TOP of the outer core about 3,000 km beneath the surface, not its size. Match narration and graphic to depth.\nAlso resolve before fresh checks: New Horizons flies past Neptune implies an encounter; distinguish passing Neptune orbit from a Neptune flyby (NASA https://science.nasa.gov/mission/new-horizons/). Jupiter wording implies Great Red Spot observations since Galileo in 1610; substantiate chronology or separate moon discovery from storm observation. Saturn ring age is asserted as proven whereas the cited abstract says may have formed; preserve uncertainty. The transition asks why rings vanish but Saturn section does not answer it. Mercury spin resonance should explicitly distinguish three rotations per two orbits and solar day. Correct scope of Venus hottest surface to planetary surface. Check all remaining lines, not only these examples.\nDeliver coherent less number-dense narration with mechanisms explained; preserve eight-planet outward tour, roughly ten minutes and channel word/character limits. Keep visual notes consistent with zero new Flow/Vertex generation and verify shelf availability rather than promising unverified Orbit acts. Record reproducible spoken-count extraction and section timings. Run review:script >=90 and applicable episode gates. Run fresh Gemini facts/claims check via agy, preserve actual output and exact evidence; it must check units, ratios, uncertainty and whether each source supports the spoken wording, not just HTTP 200 or matching numbers. Reviewer then directly verifies every MUST QUOTE and locks exact corrected hash in dependent review. Do not self-approve or close J3020. If Gemini cannot run, hold on the specific prerequisite. No Ben decision needed.\n",
+      "ref": "J3027",
+      "film": "064",
+      "stage": "script",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-18T07:10Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T07:10Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Correct the planet script and verify every spoken claim",
+      "due": "2026-11-23T18:00:00Z",
+      "kind": "script",
+      "plain": "Correct and check the every-planet narration before recording it"
     }
   ],
   "focus": [
