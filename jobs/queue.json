@@ -273740,6 +273740,11 @@
           "at": "2026-11-18T17:51Z",
           "by": "claude",
           "what": "approved by Ben: Watch 034 Pluto Short 1 Test A opening v02 (36.5 s, full-bleed 9:16) v02 (asked in J2868)"
+        },
+        {
+          "at": "2026-11-18T17:53Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-18T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Upload the Pluto Short about the frozen heart (v02, Test A opening) Private, slot Mon 21 Dec 11:30",
@@ -273757,7 +273762,16 @@
         "job": "J2868",
         "askId": "J2868.2",
         "okAt": "2026-11-18T17:46Z"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
