@@ -68,7 +68,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3033 | mini | open | – | – | chief · Chief: resolve 001 edit orphan-doing |  |
 | J3034 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3010 |  |
 | J3035 | mini | open | – | – | chief · Chief: resolve 002 vo orphan-review |  |
-| J3037 | mini | open (after J3036) | – | – | 064 script · for gemini · review · `gemini-argon` · OWB 064: Verify corrected script and decide the narration lock | J3027 |
+| J3037 | mini | claimed | macbook-2 | 2026-11-18T11:06Z | 064 script · for gemini · review · `gemini-argon` · OWB 064: Verify corrected script and decide the narration lock | J3027 |
 
 Recently finished:
 
