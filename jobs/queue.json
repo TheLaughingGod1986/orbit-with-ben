@@ -1,5 +1,5 @@
 {
-  "next_id": 3058,
+  "next_id": 3059,
   "jobs": [
     {
       "id": "J0001",
@@ -272882,6 +272882,37 @@
       "taskKeys": [
         "HOS:009"
       ]
+    },
+    {
+      "id": "J3058",
+      "title": "HOS 009: independent Claude review of corrected offline billing evidence",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Review HOS PR651 at exact commit d047b06440591466d494a7377b9142cb1f4b0692 independently. J3057 corrected all three mandatory J3052 findings (PR653 80dc8fe0) and recommendations 4–9. Read jobs/reviews/J3050 FINDINGS, normalizer, tests and VALIDATION; run synthetic tests and original J3052 probes. Check exact string amounts, canonical zero, raw refusal of either flat key, historical-only dual agreement, local/unverified J2664 citation, freshness marker and future duplicate-loader prerequisites. Record independent KEEP/FIX in jobs/reviews/<your job>/REVIEW.md in a separate PR. Claude review required: use independent Claude Code lane, not the producer. Original Claude desk6978888233; J3053 desk6983820915 supersedes earlier desk6980094321 acceptance. Offline proposal only, no account requests, billing changes, POSTs, live smoke test, generation, integration, deployment, guard relaxation or merge. Unknown remains no POST; all extension/plan/reconciliation/tariff/lock/pause gates remain. J3043/J3045 permanently closed unused (0 POSTs); J2808 rejection and J2035/J2171 holds intact. No allowance pooling, renewal or automatic retry timer. Separate elected-Chief exact-commit decision follows this review; no film-stage approval.",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/651",
+      "film": "009",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-18T16:07Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T16:07Z",
+          "by": "codex",
+          "what": "added for claudecode"
+        }
+      ],
+      "remaining_action": "Independently reviewing the corrected offline billing evidence",
+      "for": "claudecode",
+      "kind": "review",
+      "model": "mini-claude-opus-5-5",
+      "plain": "Double checking the corrected billing evidence proposal for the gravity film"
     }
   ],
   "focus": [

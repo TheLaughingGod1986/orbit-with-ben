@@ -71,6 +71,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3055 | mini | open | – | – | chief · Chief: resolve 001 edit orphan-doing |  |
 | J3056 | mini | open | – | – | chief · Chief: resolve 002 edit orphan-doing |  |
 | J3057 | any | claimed | codex | 2026-11-18T18:03Z | 009 edit · for codex · assembly · `gpt-6.1-sol` · HOS 009: correct offline billing evidence proposal after Chief review | https://github.com/TheLaughingGod1986/history-of-science/pull/651 |
+| J3058 | any | open | – | – | 009 edit · for claudecode · review · `mini-claude-opus-5-5` · HOS 009: independent Claude review of corrected offline billing evidence | https://github.com/TheLaughingGod1986/history-of-science/pull/651 |
 
 Recently finished:
 
