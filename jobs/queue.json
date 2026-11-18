@@ -269261,10 +269261,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-18T09:52Z",
-      "eta": "2026-11-18T13:52Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
       "result": "",
@@ -269338,6 +269338,11 @@
           "at": "2026-11-18T09:57Z",
           "by": "codex",
           "what": "step 3 of 4 done: Runbook PR 1011 refreshed at b83f93f3b7; remote scan clean, 168-test compatibility probe documents four failures; final move remains step 4"
+        },
+        {
+          "at": "2026-11-18T09:57Z",
+          "by": "codex",
+          "what": "released: Runbook and rehearsal exist in PR 1011, refreshed b83f93f3b7. Next ready work: retained-thread repo adapter, identity-test fixes, launchers/CI and board-token Contents access; rerun isolated full layout. Five daily zeros through 18 Nov, earliest seven 20 Nov, target move 23/24 Nov after prior-day notice. Rehearsal 534cf0f70852e06414cbe39f6a01efe9024c8a91 independently scanned clean. Do not redo runbook/export or mark job done before live acceptance."
         }
       ],
       "remaining_action": "Implement the migration adapters and rehearse the final layout before the gated studio move",
