@@ -275107,13 +275107,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-18T22:27Z",
-      "eta": "2026-11-19T00:27Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-18T20:46Z",
-      "result": "",
+      "result": "parked for Chief: Full 24:03.04 perceptual watch/listen of WW2:002 candidate v04 (SHA256 6dbaecf3ba953596be81df223be234df127d9b3e164c38f0dc4b1636705524c5) completed by gemini with demonstrated audio_input + moving_video_input and pushed to PR #1018 (commit 5d1e4a04fc, 07_Edit/WATCH_LISTEN_REVIEW_v04.md). Audio/speech/score fit PASS across all 247 sentences and 6 chapters (PR #1014 VO verified by ear and ready for Chief stage PASS/merge); moving-picture pass documents 4 concrete v05 fixes (clipped archive credit line at 08:01/09:16-10:03 from y>=990 mask, uncovered cyan carrier labels in Ch 5-6 at 20:10-24:03, card bleed-through at 11:36-11:40, and map callout/locator overlaps including Northern Ireland 05:44-08:00). Releasing a verified hold on J2996 (jobs.py reopen J2996) or recording wait --recheck J3075 requires elected Chief authority in jobs.py.",
       "history": [
         {
           "at": "2026-11-18T20:46Z",
@@ -275149,6 +275149,11 @@
           "at": "2026-11-18T22:41Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Pushed full 24:03.04 perceptual watch/listen review WATCH_LISTEN_REVIEW_v04.md to PR1018 (5d1e4a04fc)"
+        },
+        {
+          "at": "2026-11-18T22:41Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Full 24:03.04 perceptual watch/listen of WW2:002 candidate v04 (SHA256 6dbaecf3ba953596be81df223be234df127d9b3e164c38f0dc4b1636705524c5) completed by gemini with demonstrated audio_input + moving_video_input and pushed to PR #1018 (commit 5d1e4a04fc, 07_Edit/WATCH_LISTEN_REVIEW_v04.md). Audio/speech/score fit PASS across all 247 sentences and 6 chapters (PR #1014 VO verified by ear and ready for Chief stage PASS/merge); moving-picture pass documents 4 concrete v05 fixes (clipped archive credit line at 08:01/09:16-10:03 from y>=990 mask, uncovered cyan carrier labels in Ch 5-6 at 20:10-24:03, card bleed-through at 11:36-11:40, and map callout/locator overlaps including Northern Ireland 05:44-08:00). Releasing a verified hold on J2996 (jobs.py reopen J2996) or recording wait --recheck J3075 requires elected Chief authority in jobs.py."
         }
       ],
       "remaining_action": "Elected Chief: reopen J2996 (perceptual watch/listen completed in PR1018 5d1e4a04fc), rule on PR1014 VO, and close J3075",
