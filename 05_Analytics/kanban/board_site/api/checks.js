@@ -24,7 +24,7 @@ const HANDLED_KEEP_DAYS = 30;    // handled ticks older than this are pruned
 // never in the page or the repo). Prefix: "[Ben] " then OK / changes / undo, so the Chief's thread watch takes it as
 // Ben's word. The OWB number must equal scripts/thread.json's: test_board_publish.py fails when the thread rolls over
 // and this line is not changed with it (it sat on October's #264 from 4 to 10 Nov 2026, where no one was reading).
-const THREADS = { OWB: ["TheLaughingGod1986/orbit-with-ben", 954], HOS: ["TheLaughingGod1986/history-of-science", 180] };
+const THREADS = { WW2: ["TheLaughingGod1986/orbit-with-ben", 954], OWB: ["TheLaughingGod1986/orbit-with-ben", 954], HOS: ["TheLaughingGod1986/history-of-science", 180] };
 
 function londonTime(iso) {
   try { return new Date(iso).toLocaleString("en-GB", { timeZone: "Europe/London", weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }); }
@@ -37,7 +37,7 @@ export function benLine(id, doc, prev, via = "") {
   if (!THREADS[ch] || !/^(\d{3}|S\d{1,2}|J\d{3,5}(\.\d{1,2})?)$/.test(film || "")) return null;
   const d0 = doc || prev || {};
   const about = d0.what ? ` (${String(d0.what).slice(0, 200)})` : "";
-  const what = `${film}${d0.version ? " " + d0.version : ""}${about}`;
+  const what = `${ch === "WW2" ? "WW2 " : ""}${film}${d0.version ? " " + d0.version : ""}${about}`;
   const tail = `\n\n(Studio Kanban button, ${londonTime((doc && doc.at) || new Date().toISOString())} London${via ? "; " + via : ""})`;
   if (!doc) return prev && !prev.handled ? `[Ben] undo ${what}: ignore my ${prev.verdict === "ok" ? "OK" : "change request"} from the board.${tail}` : null;
   if (doc.handled) return null;

@@ -348,6 +348,11 @@ def plan_actions(videos: list[dict], alljobs: list[dict], *, now: dt.datetime | 
         return taken_by[key]
 
     for v in passed_candidates(videos):
+        slug = slug_of(str(v.get("channel") or default_label()))
+        if slug and channels.get(slug).get("launch_state") == "prelaunch":
+            actions.append({"op": "wait", "key": v.get("key"),
+                            "reason": "Approved; waiting for YouTube connection"})
+            continue
         listing = lp.for_video(v, root)
         dest = listing.get("destination") or "youtube"
         if not listing.get("complete"):

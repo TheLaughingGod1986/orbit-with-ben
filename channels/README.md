@@ -52,3 +52,7 @@ folder is pushed there, and one line goes in `channels.json`. `python3 scripts/c
 every channel checked out on the machine, whether the studio can drive it and what is still to do.
 
 `channels/_template/` is not a channel: it has no `channel.json` of its own and is not in the registry.
+
+## Channels kept inside the studio
+
+A registry entry can name `local`, a folder relative to the studio root (for example `channels/ww2`). Its settings live at `<local>/studio/channel.json`. The publisher reads that folder in its fresh studio copy and never fetches a separate repository. Use `launch_state: "prelaunch"` while YouTube is not connected: the channel and films appear on the board, and approved cuts wait without creating delivery jobs. Remove the hold only after the YouTube connection is configured.

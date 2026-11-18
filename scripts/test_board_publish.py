@@ -16,7 +16,7 @@ import board_publish as bp  # noqa: E402
 
 
 def docs(job_status="open", heartbeat="2026-10-09T20:00:00Z"):
-    return {"hos": {"updatedAt": "x", "pipeline": {"films": [{"id": "005"}]}},
+    return {"ww2": {"updatedAt": "x", "films": []}, "hos": {"updatedAt": "x", "pipeline": {"films": [{"id": "005"}]}},
             "owb": {"updatedAt": "x", "films": [{"film": "027"}], "jobs": [{"id": "J1", "status": job_status}],
                     "lanes": {"mini": {"busy": 1, "heartbeat": {"at": heartbeat}}}},
             "briefs": {"updatedAt": "x", "films": {"027": "note"}},
@@ -393,7 +393,7 @@ class AsksTheLoader(unittest.TestCase):
 
     def test_nothing_changed_for_the_two_channels(self):
         import channels
-        self.assertEqual(bp.SECTIONS, ("hos", "owb", "briefs", "credits", "tracker"))
+        self.assertEqual(bp.SECTIONS, ("hos", "owb", "ww2", "briefs", "credits", "tracker"))
         self.assertEqual((bp.STUDIO, bp.QUEUE), ("owb", "owb"))
         self.assertEqual(bp.STUDIO_REPO, channels.repo_path("owb", bp.HOME))
         if not os.environ.get("OWB_REPO"):
@@ -421,10 +421,10 @@ class AsksTheLoader(unittest.TestCase):
         with unittest.mock.patch.object(bp, "chief_args", lambda: []):
             self.assertEqual(bp.snapshot_command(out),
                              [sys.executable, str(bp.WT / "owb" / "scripts" / "kanban_snapshot.py"),
-                              "--hos", str(bp.WT / "hos"), "--db-out", str(out)])
+                              "--hos", str(bp.WT / "hos"), "--ww2", str(bp.wt("ww2")), "--db-out", str(out)])
 
     def test_the_summary_reads_as_before(self):
-        self.assertEqual(bp.films_summary(docs()), "1 HOS films, 1 OWB films")
+        self.assertEqual(bp.films_summary(docs()), "1 HOS films, 1 OWB films, 0 WW2 films")
 
     def test_the_quick_check_asks_each_repo_as_before(self):
         asked = []
@@ -450,7 +450,7 @@ class AsksTheLoader(unittest.TestCase):
             self.assertIn("/02_Video-Projects/*/status.json", bp.sparse("owb"))
             self.assertEqual(bp.snapshot_command(Path("/tmp/out")),
                              [sys.executable, str(bp.WT / "studio" / "scripts" / "kanban_snapshot.py"),
-                              "--owb", str(bp.WT / "owb"), "--hos", str(bp.WT / "hos"), "--db-out", "/tmp/out"])
+                              "--owb", str(bp.WT / "owb"), "--hos", str(bp.WT / "hos"), "--ww2", str(bp.wt("ww2")), "--db-out", "/tmp/out"])
             bp.quick_key(lambda repo, *refs: asked.append((repo, refs)) or "x")
             with tempfile.TemporaryDirectory() as d, \
                     unittest.mock.patch.object(bp, "worktree", lambda repo, path, sparse: made.append((repo, path, sparse))), \
@@ -471,17 +471,17 @@ class AsksTheLoader(unittest.TestCase):
 
     def test_a_third_channel_is_on_the_board_with_its_own_section(self):
         with self.sky():
-            self.assertEqual(bp.sections(), ("hos", "owb", "sky", "briefs", "credits", "tracker"))
+            self.assertEqual(bp.sections(), ("hos", "owb", "sky", "ww2", "briefs", "credits", "tracker"))
             self.assertEqual(bp.sparse("sky"), ["/studio/", "/PIPELINE.json",
                                                 "/00_Brand/Channel-Setup/social/UPLOADS.json", *bp.CHANNEL_SPARSE])
             with unittest.mock.patch.object(bp, "chief_args", lambda: []):
                 cmd = bp.snapshot_command(Path("/tmp/out"))
             self.assertEqual(cmd[cmd.index("--sky") + 1], str(bp.WT / "sky"))
             d = dict(docs(), sky={"pipeline": {"films": [{"id": "001"}, {"id": "002"}]}})
-            self.assertEqual(bp.films_summary(d), "1 HOS films, 1 OWB films, 2 SKY films")
+            self.assertEqual(bp.films_summary(d), "1 HOS films, 1 OWB films, 2 SKY films, 0 WW2 films")
             board = {}
             bp.add_channels(board)
-        self.assertEqual([c["slug"] for c in board["channels"]], ["owb", "hos", "sky"])
+        self.assertEqual([c["slug"] for c in board["channels"]], ["owb", "hos", "ww2", "sky"])
         self.assertEqual(board["channels"][-1]["name"], "Night Sky")
 
 
