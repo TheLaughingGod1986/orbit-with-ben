@@ -70,7 +70,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3051 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3020 |  |
 | J3055 | mini | open | – | – | chief · Chief: resolve 001 edit orphan-doing |  |
 | J3056 | mini | open | – | – | chief · Chief: resolve 002 edit orphan-doing |  |
-| J3059 | any | open (after J3058) | – | – | 009 edit · chief · HOS 009: Chief decision after corrected billing proposal review | https://github.com/TheLaughingGod1986/history-of-science/pull/651 |
+| J3059 | any | claimed | codex | 2026-11-18T18:15Z | 009 edit · chief · HOS 009: Chief decision after corrected billing proposal review | https://github.com/TheLaughingGod1986/history-of-science/pull/651 |
 
 Recently finished:
 
