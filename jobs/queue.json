@@ -267683,19 +267683,24 @@
           "at": "2026-11-18T04:48Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J2995; checking PR #1009 merge/lock state, SCRIPT_v03/NARRATION_v03 chapter structure, and live ElevenLabs balance"
+        },
+        {
+          "at": "2026-11-18T04:51Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Preflight PASS (0 spend): PR #1009 (849a19f686) unmerged; 67,893/121,114 ElevenLabs chars left; 6-ch lines_v03 dry-run verified"
         }
       ],
-      "remaining_action": "Inspect WW2:002 script state (PR #1009 vs main), check ElevenLabs balance & vo_take compatibility",
+      "remaining_action": "Await Chief review/merge of PR #1009 (J3030), then voice merged NARRATION_v03.txt (19,756 spoken chars), run voice checks & open PR",
       "due": "2026-11-22T18:00:00Z",
       "for": "gemini",
       "kind": "vo",
       "plain": "Record the narration in Ben's voice for: How Long-Range Bombers Closed the Atlantic Black Pit in May 1943",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-18T04:48Z",
+        "at": "2026-11-18T04:51Z",
         "by": "gemini",
-        "note": "Claimed J2995; checking PR #1009 merge/lock state, SCRIPT_v03/NARRATION_v03 chapter structure, and live ElevenLabs balan"
+        "note": "Preflight PASS (0 spend): PR #1009 (849a19f686) unmerged; 67,893/121,114 ElevenLabs chars left; 6-ch lines_v03 dry-run v"
       },
       "taskKeys": [
         "WW2:002"
