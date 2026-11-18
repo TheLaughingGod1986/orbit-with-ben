@@ -269648,18 +269648,23 @@
           "at": "2026-11-18T04:12Z",
           "by": "codex",
           "what": "step 1 of 4 done: Resolved three conflicted files; approved credit logic retained, current agent wording preserved, stale-date regression coverage adapted. Both JS suites and 15 security tests pass; core/rules sync and static build pass."
+        },
+        {
+          "at": "2026-11-18T04:14Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Integration ec2c473fa0 pushed to PR 987. Review confirms no credit logic changes beyond approved d569a115d3; main agent/prelaunch work retained. 107 Python tests, both JS suites, 15 security tests, core/rules and build PASS. CI running."
         }
       ],
-      "remaining_action": "Finish integration checks, merge the credits panel, and verify the live board",
+      "remaining_action": "Wait for GitHub checks, merge, publish, and verify the live credit pages",
       "due": "2026-11-19T18:00:00Z",
       "kind": "chief",
       "plain": "Finish publishing the corrected credit cards and check them on a phone",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-18T04:12Z",
+        "at": "2026-11-18T04:14Z",
         "by": "codex",
-        "note": "Resolved three conflicted files; approved credit logic retained, current agent wording preserved, stale-date regression "
+        "note": "Integration ec2c473fa0 pushed to PR 987. Review confirms no credit logic changes beyond approved d569a115d3; main agent/"
       }
     },
     {
