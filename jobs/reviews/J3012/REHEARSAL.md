@@ -82,3 +82,31 @@ credential behavior was changed. The full transcript stays in local scratch `J30
 mocked failure-path output and is not a production execution log. The official daily history was not changed.
 
 After the fixture corrections, the affected future-layout suites pass: **113 relay tests and nine watch/R2 tests**, exit 0. The entire 1,352-test suite was not repeated after these test-only corrections.
+
+
+## MacBook launcher continuation, 18 November 16:45Z
+
+Continued PR #1011 from `1d3d29ad9a` in a new isolated worktree. Preserved the existing four-step job plan
+(step 3 complete; the final step is the gated live move). No service was installed or restarted.
+
+- Launcher recovery now uses a separate engine path and remote, explicitly clones `main`, and stops if cloning
+  fails. Channel paths remain independent. Setup retains the old engine unless explicitly given `STUDIO_REPO`.
+- Plist rendering uses `plistlib`; paths are environment values, not interpolated shell source or sed expressions.
+- Found and fixed a second migration defect: slot 2 inherited slot 1's `STUDIO_REPO`, which could select the same
+  writable engine clone. Its spawned environment now sets its own engine clone as well as channel clones.
+- Five new tests execute the actual launcher command using fake Git/Python, including legacy layout, missing
+  engine, failed clone, shell-special path characters, and separate slot 2 engine environment. All pass.
+- Existing MacBook suite: 85 tests pass. Channel ratchet: 13 tests pass. Installer shell syntax check passes.
+- The broader future-layout suite is recorded below when complete. It uses the prior isolated sibling layout
+  with the current adapters and fixture corrections; it is not a fresh export or another official daily entry.
+
+Remaining: CI adapters (default-channel rules checkout, generated STATUS check, shared core workflow handling),
+Mini installed-runner changes, exact deployed board credential Contents access, old-entrypoint single-writer
+safeguards, refreshed export and final deployment checks. The official five-day streak and prior-day notice
+still gate the move. No migration notice or credential request was sent during this continuation.
+
+The full future-identity suite completed with exit 0: **1,357 tests, six skips**. This includes the prior
+fixture corrections and the launcher/slot changes. The local transcript is
+`J3012-launcher-full-tests.log` under the Mini scratch root. Mocked failure-path messages in that log are test
+fixtures, not production actions. Changed-file scan: zero keys, zero addresses; email ratchet (8 tests) and
+private-network guard (5 tests) pass. No active workflow or installed launcher was changed.

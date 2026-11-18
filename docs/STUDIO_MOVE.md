@@ -129,6 +129,13 @@ headers. Check the Tracker's embedded public snapshot policy explicitly before d
 6. **Switch MacBook, both slots.** Engine clones are `~/_desk/worker/studio` and
    `~/_desk/worker/slot2/studio`; retain separate channel clones beside each. Update the installed worker launcher
    and `setup_macbook.sh` fallback clone URL/path, not just `STUDIO_REPO`: the current plist bootstraps Orbit.
+   The PR now separates `STUDIO_REPO`/`STUDIO_GIT_URL` from `OWB_REPO`/`HOS_REPO` in the launcher.
+   At cutover, set `STUDIO_REPO` to the new engine path and `STUDIO_GIT_URL` to its remote explicitly when
+   running the installer; without this opt-in, setup retains the existing Orbit engine. The recovery clone asks
+   for `main`, so it cannot accidentally launch the default rehearsal branch. A failed clone stops the launcher.
+   `render_worker_plist.py` can write a proposed plist to scratch for inspection without installing a service.
+   Slot 2 now overrides an inherited engine path with its own `slot2/studio` clone, alongside its own channel
+   paths. These are proposed adapters, not evidence of a live MacBook installation.
    Slot 2 must retain its own clone, lock and heartbeat. Preserve mains-power/idle policy, tool routing and NAS
    mounting. Run `macbook_worker.py check` from the new engine, with both slots still paused.
 7. **Switch board server and workflows.** Enable the verified private-read config/deployment. Seed/publish fresh

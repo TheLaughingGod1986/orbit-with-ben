@@ -886,6 +886,9 @@ def start_other_slots(popen=None, system=None) -> list:
     for n in range(2, SLOTS + 1):
         clones = {channels.get(s)["repo"]["env"]: str(slot_dir(n) / clone_name(s))
                   for s in channels.slugs() if channels.get(s)["repo"].get("env") and not channels.get(s).get("local")}
+        engine = channels.studio_repo()
+        if engine.get("env"):
+            clones[engine["env"]] = str(slot_dir(n) / (_repo_name(engine.get("url")) or channels.studio_key()))
         env = dict(os.environ, MACBOOK_SLOT=str(n), **clones)
         try:
             logs.mkdir(parents=True, exist_ok=True)
