@@ -266985,9 +266985,14 @@
           "at": "2026-11-18T06:06Z",
           "by": "claudecode",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-18T06:08Z",
+          "by": "claudecode",
+          "what": "step 1 of 5 done: v05 sha256 1bb4a006 matches; manifest already names v05 and that hash (no change); gate:episode PASS; dry run PASS private 2026-12-09T18:00Z"
         }
       ],
-      "remaining_action": "Check v05 hash and manifest, then upload Private scheduled 9 Dec 18:00Z",
+      "remaining_action": "Upload v05 Private scheduled 9 Dec 18:00Z, then Test & Compare, status, report",
       "due": "2026-12-07T18:00:00Z",
       "kind": "studio",
       "approved_from": {
@@ -267013,10 +267018,11 @@
       "for": "claudecode",
       "model": "mini-claude-opus-5-5",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-18T06:06Z",
-        "by": "claudecode"
+        "at": "2026-11-18T06:08Z",
+        "by": "claudecode",
+        "note": "v05 sha256 1bb4a006 matches; manifest already names v05 and that hash (no change); gate:episode PASS; dry run PASS priva"
       },
       "taskKeys": [
         "OWB:033"
