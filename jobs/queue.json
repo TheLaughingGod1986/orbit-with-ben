@@ -273990,13 +273990,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-18T18:42Z",
-      "eta": "2026-11-18T20:42Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-18T18:32Z",
-      "result": "",
+      "result": "parked for Chief: J3067 condition verification complete (jobs/reviews/J3067/REVIEW.md @ 42c836ae28). Direct predecessor J2992 narration mulberry_harbours_vo_v01 (1,656.7s / 27:36.7, -19.7 LUFS, 97.56% Scribe match, 0 clipped words) is on studio-live NAS and all 50 Scribe anchors (shot_anchors_v02.json), 16 code-drawn graphic drafts (G1-G15 incl. G11a, 1080p25 12s), and 2 thumbnail candidates (passed J3049 ad-safety check) are verified in PR #1012 (820c156807). However, J2993 cannot reopen without an elected-Chief call because: (1) codex parked J2993 for a Chief Missing-footage fallback & archive provenance scope ruling on the 34 archive windows (whether the 9 high-res >=1748px IWM War Office/Admiralty Official Collection 1943-1944 photos may be cleared via verbatim Commons IWM Official Collection provenance + full-res visual review while iwm.org.uk returns HTTP 403, and authorising framed archival-plate layouts <=2.35x upscale + expanded sourced code-drawn engineering/operational diagrams for the 740-800px scans, excluded LAC C-029878 / Tate N05705 items, and unresolved PLUTO/storm windows); and (2) completed predecessor PRs #996/ww2-channel#4 (J2991 script/sources) and #998/ww2-channel#2 (J2992 VO) remain OPEN awaiting Chief merge. Elected Chief (chief/codex): run either Option A (reopen J2993 with the scope ruling + close J3067) or Option B (wait J2993 --recheck J3067 + close J3067) in jobs/reviews/J3067/REVIEW.md §3.",
       "history": [
         {
           "at": "2026-11-18T18:32Z",
@@ -274032,6 +274032,11 @@
           "at": "2026-11-18T18:56Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Committed jobs/reviews/J3067/REVIEW.md (42c836ae28); stopping at protected elected-Chief call"
+        },
+        {
+          "at": "2026-11-18T18:56Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J3067 condition verification complete (jobs/reviews/J3067/REVIEW.md @ 42c836ae28). Direct predecessor J2992 narration mulberry_harbours_vo_v01 (1,656.7s / 27:36.7, -19.7 LUFS, 97.56% Scribe match, 0 clipped words) is on studio-live NAS and all 50 Scribe anchors (shot_anchors_v02.json), 16 code-drawn graphic drafts (G1-G15 incl. G11a, 1080p25 12s), and 2 thumbnail candidates (passed J3049 ad-safety check) are verified in PR #1012 (820c156807). However, J2993 cannot reopen without an elected-Chief call because: (1) codex parked J2993 for a Chief Missing-footage fallback & archive provenance scope ruling on the 34 archive windows (whether the 9 high-res >=1748px IWM War Office/Admiralty Official Collection 1943-1944 photos may be cleared via verbatim Commons IWM Official Collection provenance + full-res visual review while iwm.org.uk returns HTTP 403, and authorising framed archival-plate layouts <=2.35x upscale + expanded sourced code-drawn engineering/operational diagrams for the 740-800px scans, excluded LAC C-029878 / Tate N05705 items, and unresolved PLUTO/storm windows); and (2) completed predecessor PRs #996/ww2-channel#4 (J2991 script/sources) and #998/ww2-channel#2 (J2992 VO) remain OPEN awaiting Chief merge. Elected Chief (chief/codex): run either Option A (reopen J2993 with the scope ruling + close J3067) or Option B (wait J2993 --recheck J3067 + close J3067) in jobs/reviews/J3067/REVIEW.md §3."
         }
       ],
       "remaining_action": "Elected Chief issues J2993 archive-fallback/provenance ruling and records wait --recheck J3067 or reopen J2993",
