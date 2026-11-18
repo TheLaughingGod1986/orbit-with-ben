@@ -1952,6 +1952,8 @@ def run_locked(at: dt.datetime) -> int:
                         "If it is no longer claimable, stop; the relay will replan from the current queue.")
         guest_job = job_chain(job) if job else None
         if guest_job:
+            # Select authority for the actual job even when several guest channels are registered.
+            guest_rows, guest_who = acting(at, guest_job)
             named = NAMES.get(guest_who, guest_who) or "No agent"
             label = channels.name(guest_job)
             if who == guest_who:
