@@ -80,6 +80,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 001 | edit | codex | 2026-11-18T05:45Z | 2026-11-18T09:44Z | J2993 WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch |
+| 001 | edit | codex | 2026-11-18T05:46Z | 2026-11-18T06:06Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
