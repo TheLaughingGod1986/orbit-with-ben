@@ -2,11 +2,11 @@
 """Publish the Studio Kanban's data so the board updates itself (Ben, 9 Oct: "the board should just update whenever a
 task is done or something progressed").
 
-The board page (05_Analytics/kanban/board_site, hosted on Vercel) reads one file at runtime and re-reads it every 60 s:
+The board page (05_Analytics/kanban/board_site, hosted on Cloudflare Pages) reads one file at runtime and re-reads it every 60 s:
   board.json on the branch `board-data` of this repo (a single parentless commit, force-pushed, like mini-heartbeat).
 
 It also carries the Channel Tracker's data (Ben, 10 Oct: the tracker as a phone web app at /tracker on the same site):
-  tracker.json on the same branch is 05_Analytics/dashboard/data.json from main, byte for byte. The 06:40 snapshot job
+  tracker.json on the same branch is 05_Analytics/dashboard/data.json from main, with machine home-folder identities removed. The 06:40 snapshot job
   (07_Content-Ops/launchd/analytics-snapshot.sh) pushes that file to main and then kicks this script, so the tracker page
   has the new snapshot within a minute; the every-minute run below would pick it up anyway.
 
@@ -99,6 +99,9 @@ def sparse(slug: str) -> list[str]:
 
 def wt(slug: str | None = None) -> pathlib.Path:
     """This run's copy of a channel's main branch (the studio's own repo when no channel is given)."""
+    local = channels.get(slug).get("local") if slug else None
+    if local:
+        return wt() / local
     return WT / (slug or channels.studio_key())
 
 
@@ -329,7 +332,8 @@ def films_summary(docs: dict) -> str:
 
 def build(out: pathlib.Path) -> dict:
     for slug in channels.slugs():
-        worktree(REPOS[slug], wt(slug), sparse(slug))
+        if not channels.get(slug).get("local"):
+            worktree(REPOS[slug], wt(slug), sparse(slug))
     if not STUDIO:                    # the studio's own repo: its files only, no channel's
         worktree(STUDIO_REPO, wt(), STUDIO_SPARSE)
     out.mkdir(parents=True, exist_ok=True)
@@ -648,7 +652,10 @@ def updates_payload(board, previous, history, tracker):
     """Keep recent edits within 14 KB on the wire, including during frequent publishes."""
     revision = digest(board)
     tracker_hash = hashlib.sha256((tracker or "").encode()).hexdigest()
-    edits = list(unpack_updates(history).get("edits") or [])
+    decoded = unpack_updates(history)
+    # Old encoded edits can contain home paths. Drop that chain rather than change
+    # its contents under existing revision hashes; clients can fetch a fresh snapshot.
+    edits = list(decoded.get("edits") or []) if public_strings(decoded) == decoded else []
     if previous is not None and digest(previous) != revision:
         previous_bytes = json.dumps(previous, ensure_ascii=False, separators=(",", ":")) + "\n"
         edits.append({"from": digest(previous), "to": revision,
@@ -732,7 +739,7 @@ def quick_key(remote=ls_remote) -> str | None:
     try:
         parts = [remote(STUDIO_REPO, "refs/heads/main", "refs/heads/mini-heartbeat",
                         *(f"refs/heads/{b}" for b in MACBOOK_SLOT_REFS)),
-                 *(remote(REPOS[s], "refs/heads/main") for s in channels.slugs() if s != STUDIO)]
+                 *(remote(REPOS[s], "refs/heads/main") for s in channels.slugs() if s != STUDIO and not channels.get(s).get("local"))]
     except Exception as e:  # noqa: BLE001
         log(f"quick check failed, full rebuild: {e!r}"[:300])
         return None
@@ -874,16 +881,30 @@ def add_channels(board: dict) -> None:
         import channel_cards
         # Read each channel from this run's own fresh copy of its main branch (WT/<slug>), never from the working
         # checkout: that one can be on a job's branch or behind, and then a channel reads as "not checked".
-        fresh = {s: WT / s for s in channels.slugs() if (WT / s / "studio" / "channel.json").is_file()}
+        fresh = {s: wt(s) for s in channels.slugs() if (wt(s) / "studio" / "channel.json").is_file()}
         board["channels"] = channel_cards.cards(fresh)
         board["channelRoom"] = channel_cards.room()
     except Exception as e:  # noqa: BLE001
         log(f"channel cards not read: {e}")
 
 
+def public_strings(value):
+    """Remove machine home-folder identities from every published string, including keys."""
+    if isinstance(value, str):
+        return re.sub(r"/Users/[^/\s\\\"'<>]+", "~", value)
+    if isinstance(value, dict):
+        return {public_strings(k): public_strings(v) for k, v in value.items()}
+    if isinstance(value, list):
+        return [public_strings(v) for v in value]
+    return value
+
+
 def finish(a, at, prev, prev_path, key, docs, board, hashes, checks, checks_at, checks_meta) -> int:
     """The end of a run: write the state copy, then push if anything changed."""
+    board = public_strings(board)
     tracker = tracker_text()
+    if tracker:
+        tracker = json.dumps(public_strings(json.loads(tracker)), ensure_ascii=False)
     whole = digest(board)  # includes the heartbeat, so the page's "Mini last seen" stays current
     if tracker:  # a new tracker snapshot is a change too (board.json alone stays as it was)
         whole = digest([whole, hashlib.sha256(tracker.encode()).hexdigest()])
@@ -893,7 +914,7 @@ def finish(a, at, prev, prev_path, key, docs, board, hashes, checks, checks_at, 
         history = json.loads((STATE / "updates.json").read_text())
     except (OSError, ValueError):
         previous, history = None, None
-    updates = updates_payload(board, previous, history, tracker)
+    updates = public_strings(updates_payload(board, public_strings(previous), public_strings(history), tracker))
     (STATE / "updates.json").write_text(json.dumps(updates, ensure_ascii=False, separators=(",", ":")))
     (STATE / "board.json").write_text(json.dumps(board, ensure_ascii=False, indent=1))
     summary = (f"{films_summary(docs)}, "

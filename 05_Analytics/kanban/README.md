@@ -58,7 +58,7 @@ python3 build.py
 npx wrangler pages deploy dist --project-name studio-kanban --branch main
 ```
 
-Check `/`, `/tracker`, `/ai`, `/version.json`, and the `X-Robots-Tag: noindex, nofollow` header on `/` and `/tracker`. `build.py` writes Pages headers and redirects from `vercel.json`, plus the API worker. Keep open taps off. No billing changes or card entry.
+Check `/`, `/tracker`, `/ai`, `/version.json`, and the `X-Robots-Tag: noindex, nofollow` header on `/` and `/tracker`. `build.py` writes Pages headers and redirects from `host_config.json`, plus the API worker. Keep open taps off. No billing changes or card entry.
 
 The stable public address is https://board.oppti.dev; the original https://studio-kanban.pages.dev address remains available. Every client reads `BOARD_SITE_URL`, falling back to `studio/board_site.json`. Python uses `scripts/board_site.py`; the Node watch uploader reads the same JSON. `WATCH_OK` only validates explicitly supplied watch links; generated Play links use the same configured board address.
 

@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {parseWeeklyReset,normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, channelsSection, channelsPage, channelCard, channelLight, channelFacts, firstDayCard, firstDaySection, firstDayPage, firstDayNext, planCard, planSection, planPage, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
+  globalThis.test = {agentReason,parseWeeklyReset,normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, channelsSection, channelsPage, channelCard, channelLight, channelFacts, firstDayCard, firstDaySection, firstDayPage, firstDayNext, planCard, planSection, planPage, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -1444,7 +1444,7 @@ console.log('Jobs running count checks OK');
   assert(page.includes('<a href="https://www.youtube.com/@OrbitWithBen" target="_blank" rel="noopener">@OrbitWithBen</a>'), 'a real handle links to YouTube');
   assert(!page.includes('href="https://www.youtube.com/javascript') && page.includes('javascript:alert(1)') && !page.includes('href="javascript'), 'anything else is shown as text, never as a link');
   assert(page.includes('<a href="https://github.com/someone/orbit-with-ben"') && !page.includes('github.com/not a repo'), 'only an owner/name repo is linked');
-  assert(page.includes('It has no GitHub repo yet.'), 'a channel with no repo yet says so');
+  assert(page.includes('No separate GitHub repo is needed.'), 'a channel with no repo yet says so');
   const own = t.channelCard(cb, cb.channels[0]);
   assert(own.includes('2 films now') && own.includes('<dt>Workload</dt><dd>Up to 5 films in work at a time</dd>'), 'films in production come from the same list as the Producing number');
   assert(own.includes('Newest film') && !own.includes('Older film'), 'the last video live is the newest public one');
@@ -1454,7 +1454,7 @@ console.log('Jobs running count checks OK');
   assert(page.includes('data-disclosure="channel-night-sky-todo"') && page.includes('Housekeeping left · 2') && page.includes('&lt;i&gt;its own rules&lt;/i&gt;'), 'what is left is listed, closed, and escaped');
   assert(page.includes('Its own rules, on top of the studio&#39;s.') && page.includes('Its own rules file is still to write.'), 'whether it has its own rules');
   assert(page.includes('<h2>Add a channel</h2>') && (page.match(/<li><b>(You|Claude)<\/b>/g) || []).length === 5, 'the steps to add one, each marked with who does it');
-  assert(page.includes('Create its GitHub repo, sign in to its YouTube Studio') && page.includes('Nothing on this page changes anything'), 'creating the repo and the sign-in are Ben\'s; the page writes nothing');
+  assert(page.includes('Create its YouTube channel, sign in to its YouTube Studio') && page.includes('Nothing on this page changes anything'), 'creating the repo and the sign-in are Ben\'s; the page writes nothing');
   assert(!/<button|<form|<input/.test(page), 'no control on the page can change anything');
   assert(page.includes('Not yet. 302 places') && page.includes('(down from 367)'), 'it says how far the studio is from running another channel');
   assert(t.channelsPage(Object.assign({}, cb, {channelRoom: {left: 0, from: 367}})).includes('Yes. The studio&#39;s own code no longer assumes'), 'and when it is ready');
@@ -1583,6 +1583,14 @@ console.log('Jobs running count checks OK');
   console.log('Ticks-not-read guard OK');
 }
 
+// J3028 preserves main's stale-date and weekly-reset regression coverage using the reviewed Used display.
+const curFresh = t.poolMeter('cursor', {unit: '%', latest: {left: 0, total: 100, at: new Date(NOW).toISOString(), note: 'Weekly included usage 100% used (Grok Bot 54%, Cursor 46%); weekly resets 19 Nov; $1.06 used this month (resets 1 Dec)'}}, {}, NOW);
+assert.equal(curFresh.fig, '100% used'); assert(curFresh.timeDetail.includes('19 Nov')); assert(!curFresh.timeDetail.includes('1 Dec'));
+const oldNineNov = t.poolMeter('cursor', {unit: '%', latest: {left: 0, total: 100, at: '2026-11-09T08:30:00Z', note: 'weekly resets 12 Nov'}}, {}, Date.parse('2026-11-17T10:00:00Z'));
+assert.equal(oldNineNov.fig, '100% used · 9 Nov'); assert(oldNineNov.note.includes('last read 9 Nov')); assert.equal(oldNineNov.tone, 'amber');
+const oldVertex = t.poolMeter('vertex', {unit: 'GBP', latest: {left: 144.66, at: '2026-11-13T08:30:30Z'}}, {}, Date.parse('2026-11-17T10:00:00Z'));
+assert(oldVertex.fig.includes('13 Nov') && oldVertex.note.includes('last read 13 Nov'), oldVertex.note);
+
 // J3024 regressions run against each independently rendered page.
 {
  const now = Date.parse('2026-11-17T13:00Z');
@@ -1639,3 +1647,8 @@ console.log('Jobs running count checks OK');
  const ehtml=t.agents({credits:{plans,pools:{elevenlabs:el}},models:{models:[]},owb:{jobs:[]}},now);
  assert(ehtml.includes('start unread'),'verified reset date survives unknown billing');
 }
+assert.equal(t.agentReason("Codex hit usage limit until 2026-11-17T23:22:00Z (verified in J2829 probe)"), "Out of usage, back Tue 17 Nov, 23:22");
+assert.equal(t.agentReason("Claude said it's out of usage until 2026-11-18T07:50:00Z: four runs a day to save usage"), "Out of usage, back Wed 18 Nov, 07:50");
+assert.equal(t.agentReason("usage limit", {until:"2026-07-01T12:00:00Z"}), "Out of usage, back Wed 1 Jul, 13:00");
+assert.equal(t.agentReason("Chief inbox delivered but not progressed within the acknowledgement window", {until:"2026-11-18T02:12:31Z"}), "Not responding, retry Wed 18 Nov, 02:12");
+assert(!t.agentReason("Waiting (J2829 probe)").includes("J2829"));

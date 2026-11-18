@@ -88,13 +88,31 @@ def read_elevenlabs() -> dict:
     return {"left": c["remaining"], "total": c["limit"], "note": f"API subscription: used {c['used']} of {c['limit']}"}
 
 
-def _page_text(url: str, wait_text: str | None, settle_ms: int = 3000, then=None) -> str:
+CDP_HELPER = Path.home() / "_desk" / "bin" / "cdp_browsers.sh"
+
+
+def _ensure_cdp(cdp_url: str = CDP) -> None:
+    """Start the signed-in CDP Chrome if its port is not answering (launchd or a reboot left it closed)."""
+    if cdp_url != CDP:
+        return
+    import urllib.request
+    try:
+        with urllib.request.urlopen(f"{cdp_url.rstrip('/')}/json/version", timeout=3):
+            return
+    except Exception:  # noqa: BLE001
+        pass
+    if CDP_HELPER.is_file():
+        subprocess.run([str(CDP_HELPER), "start"], start_new_session=True, timeout=60, capture_output=True)
+
+
+def _page_text(url: str, wait_text: str | re.Pattern[str] | None, settle_ms: int = 3000, then=None) -> str:
     """Body text of `url` in the CDP Chrome. `then(page, text)` may click and return new text."""
     from playwright.sync_api import sync_playwright
     sys.path.insert(0, str(ROOT / "scripts"))
     from cdp_tabs import reuse_page, site  # noqa: E402
+    _ensure_cdp(CDP)
     with sync_playwright() as p:
-        br = p.chromium.connect_over_cdp(CDP)
+        br = p.chromium.connect_over_cdp(CDP, timeout=30000)
         page = reuse_page(br.contexts[0], site(url))
         page.goto(url, wait_until="domcontentloaded", timeout=60000)
         if wait_text:
@@ -223,8 +241,11 @@ def parse_billing(text: str) -> tuple[float, str]:
     return round(trial, 2), "; ".join(dict.fromkeys(lines))
 
 
+BILLING_WAIT_RE = re.compile(r"Free Trial|Welcome credit|Developer Program", re.I)
+
+
 def read_vertex() -> dict:
-    trial, lines = parse_billing(_page_text(BILLING_URL, "Free Trial", settle_ms=2500))
+    trial, lines = parse_billing(_page_text(BILLING_URL, BILLING_WAIT_RE, settle_ms=2500))
     return {"left": trial, "note": f"promo pool (all Available credits; jobs stop at £1 margin) · Cloud Billing > Credits: {lines}"}
 
 
@@ -253,30 +274,38 @@ def parse_cursor(text: str) -> dict:
             used[label] = int(m.group(1))
             label = None
     if "other models" not in used and "cursor models" not in used:
-        # 11 Nov 2026 (J2580): the page now lists who used the week between the figure and its label, one per line
-        # ("30%", "used", "x", "Grok Bot 29%", "Cursor 1%", "Weekly included usage"). Those lines are read, not skipped.
+        # 11 Nov 2026 (J2580): the page lists who used the week between the figure and its label, one per line.
+        # 12 Nov 2026 (J2981): "Resets 19 Nov" moved above "x" and the split lines ("100%", "used", "Resets 19 Nov",
+        # "x", "Grok Bot 54%", "Cursor 46%", "Weekly included usage"), and "Credits available" became "Credit balance".
         m_wk = re.search(
-            r"(?:(\d{1,3})%\s+used(?:\s+\S)?(" + CURSOR_SPLIT + r")\s+Weekly included usage|Weekly included usage\s+(\d{1,3})%\s+used)"
-            r"(?:\s*(?:x\s+)?[·•]?\s*Resets\s+([^\n(]+))?",
+            r"(?:"
+            r"(\d{1,3})%\s+used"
+            r"(?:\s*[·•]?\s*Resets\s+([^\n(·•]+))?"
+            r"(?:\s+\S)?"
+            r"(" + CURSOR_SPLIT + r")\s+Weekly included usage"
+            r"|Weekly included usage\s+(\d{1,3})%\s+used"
+            r")"
+            r"(?:\s*(?:x\s+)?[·•]?\s*Resets\s+([^\n(·•]+))?",
             text,
             re.I,
         )
         if not m_wk:
             raise RuntimeError("no 'Cursor Models' or 'Other Models · N% used' line on the Cursor spending page (signed out, or the page changed)")
-        pct = int(m_wk.group(1) or m_wk.group(3))
-        split = [(name.strip(), int(n)) for name, n in re.findall(r"([A-Za-z][A-Za-z .&-]*?)[ \t]+(\d{1,3})%", m_wk.group(2) or "")]
+        pct = int(m_wk.group(1) or m_wk.group(4))
+        split = [(name.strip(), int(n)) for name, n in re.findall(r"([A-Za-z][A-Za-z .&-]*?)[ \t]+(\d{1,3})%", m_wk.group(3) or "")]
+        wk_reset = (m_wk.group(2) or m_wk.group(5) or "").strip()
         used["weekly included usage"] = pct
         used.update({name.lower(): n for name, n in split})
         by = " (" + ", ".join(f"{name} {n}%" for name, n in split) + ")" if split else ""
         bits = [f"Weekly included usage {pct}% used{by}"]
-        if m_wk.group(4):
-            bits.append(f"weekly resets {m_wk.group(4).strip()}")
-        m_mo = re.search(r"(\$[\d,]+(?:\.\d\d)?)\s+used this month(?:\s+Resets\s+([^\n(]+))?", text, re.I)
+        if wk_reset:
+            bits.append(f"weekly resets {wk_reset}")
+        m_mo = re.search(r"(\$[\d,]+(?:\.\d\d)?)\s+used this month(?:\s+Resets\s+([^\n(·•]+))?", text, re.I)
         if m_mo:
             bits.append(f"{m_mo.group(1)} used this month" + (f" (resets {m_mo.group(2).strip()})" if m_mo.group(2) else ""))
-        m_cr = re.search(r"Credits available\s+(\$[\d,]+(?:\.\d\d)?)", text, re.I)
+        m_cr = re.search(r"(Credits available|Credit balance)\s+(\$[\d,]+(?:\.\d\d)?)", text, re.I)
         if m_cr:
-            bits.append(f"credits available {m_cr.group(1)}")
+            bits.append(f"{m_cr.group(1).lower()} {m_cr.group(2)}")
         return {"left": max(0, 100 - pct), "total": 100, "used": used, "note": "; ".join(bits), "of": "the weekly included usage"}
     reset = re.search(r"Usage limits reset on ([^\n(]+?)\s*(?:\(|\n|$)", text)
     weekly = re.search(r"Weekly usage\s+\d{1,3}%\s+used\s+Resets ([^\n(]+?)\s*(?:\(|\n|$)", text)
@@ -411,30 +440,44 @@ def _claude_block(text: str, start_re: str, stop_re: str) -> tuple[int, str] | N
 
 
 def parse_claude(text: str) -> dict:
-    """The claude.ai/settings/usage page: % used of the current session and the weekly limit, and their reset times."""
+    """The claude.ai usage view (/settings/usage or the user-menu Usage dialog): % used of the weekly limit
+    (plus current session and Fable sub-cap when shown) and their reset times."""
     m_sess = re.search(r"^\s*Current\s+session\b", text, re.I | re.M)
-    if not m_sess:
-        raise RuntimeError("no 'Current session' or weekly 'N% used' line on the Claude usage page (signed out, or the page changed)")
     sess = _claude_block(
         text[m_sess.start():],
         r"^\s*Current\s+session\b",
-        r"^\s*(?:This\s+week|Current\s+week|Weekly\s+limits?|All\s+models|Sonnet\s+only|Limit\s+resets|Usage\s+credits|Extra\s+usage|Monthly\s+spend\s+limit|Spend\s+limit)\b",
-    )
+        r"^\s*(?:This\s+week|Current\s+week|Weekly\s+limits?|All\s+models|Sonnet\s+only|Fable|Limit\s+resets|Usage\s+credits|Extra\s+usage|Monthly\s+spend\s+limit|Spend\s+limit)\b",
+    ) if m_sess else None
+    wk_text = text[m_sess.end():] if m_sess else text
     wk = _claude_block(
-        text[m_sess.end():],
-        r"^\s*(?:This\s+week\s*(?:\(all\s+models\))?|Current\s+week\s*(?:\(all\s+models\))?|All\s+models|Weekly\s+limits?)\b",
-        r"^\s*(?:This\s+week\s*\(Sonnet|Current\s+week\s*\(Sonnet|Sonnet\s+only|Limit\s+resets|Usage\s+credits|Claude\s+Code|Extra\s+usage|Monthly\s+spend\s+limit|Spend\s+limit|On-demand)\b",
+        wk_text,
+        r"^\s*(?:This\s+week(?:\s*\(all\s+models\))?|Current\s+week(?:\s*\(all\s+models\))?|All\s+models|Weekly\s+limits?)[ \t]*$",
+        r"^\s*(?:This\s+week\s*\(Sonnet|Current\s+week\s*\(Sonnet|Sonnet\s+only|Fable|Limit\s+resets|Usage\s+credits|Claude\s+Code|This\s+week[\u2019']s\s+usage|Extra\s+usage|Monthly\s+spend\s+limit|Spend\s+limit|On-demand)\b",
     )
-    if not sess or not wk:
+    if not wk or (m_sess and not sess):
         raise RuntimeError("no 'Current session' or weekly 'N% used' line on the Claude usage page (signed out, or the page changed)")
-    s_pct, s_res = sess
+    fable = _claude_block(
+        wk_text,
+        r"^\s*Fable[ \t]*$",
+        r"^\s*(?:Limit\s+resets|Usage\s+credits|Claude\s+Code|This\s+week[\u2019']s\s+usage|Extra\s+usage|Monthly\s+spend\s+limit|Spend\s+limit|On-demand)\b",
+    )
     w_pct, w_res = wk
-    s_part = f"{s_pct}% used" + (f" (resets {s_res})" if s_res else "")
-    note = f"{s_part} session; weekly {w_pct}% used" + (f", resets {w_res}" if w_res else "")
+    used: dict[str, int] = {"weekly": w_pct}
+    w_part = f"weekly {w_pct}% used" + (f", resets {w_res}" if w_res else "")
+    if sess:
+        s_pct, s_res = sess
+        used["session"] = s_pct
+        s_part = f"{s_pct}% used" + (f" (resets {s_res})" if s_res else "")
+        note = f"{s_part} session; {w_part}"
+    else:
+        note = w_part
+    if fable:
+        used["fable"] = fable[0]
+        note += f"; Fable {fable[0]}% used"
     return {
         "left": max(0, 100 - w_pct),
         "total": 100,
-        "used": {"session": s_pct, "weekly": w_pct},
+        "used": used,
         "note": note,
     }
 
@@ -460,10 +503,46 @@ def _links(page) -> list[str]:
         return []
 
 
+def _open_claude_usage_dialog(page) -> str:
+    """Since mid-November 2026 claude.ai redirects /settings/usage to /new and opens Usage as a dialog from the
+    user menu ([data-testid="user-menu-button"] -> [data-testid="user-menu-usage"]). Read-only: clicks only those
+    two menu triggers, reads [role="dialog"], and closes with Escape."""
+    if not hasattr(page, "locator"):
+        return ""
+    try:
+        menu = page.locator('[data-testid="user-menu-button"]').first
+        if menu.count() == 0:
+            return ""
+        menu.click(timeout=5000)
+        page.wait_for_timeout(1000)
+        item = page.locator('[data-testid="user-menu-usage"]').first
+        if item.count() == 0:
+            item = page.locator('[role="menuitem"]:has-text("Usage")').first
+        if item.count() == 0:
+            return ""
+        item.click(timeout=5000)
+        try:
+            page.locator('[role="dialog"]').get_by_text(
+                re.compile(r"This week|Weekly limits?|Current session", re.I)
+            ).first.wait_for(timeout=10000)
+        except Exception:  # noqa: BLE001
+            pass
+        page.wait_for_timeout(2000)
+        dialogs = page.eval_on_selector_all('[role="dialog"]', "els => els.map(e => e.innerText || '')") or []
+        return "\n".join(d for d in dialogs if d and d.strip())
+    except Exception:  # noqa: BLE001
+        return ""
+    finally:
+        if hasattr(page, "keyboard"):
+            with contextlib.suppress(Exception):
+                page.keyboard.press("Escape")
+
+
 def _claude_settle(page, text: str) -> str:
     """Wait for the usage figures. On 11 Nov 2026 the usage address ended on the new-chat page with no figures
     (J2566): if the browser is not on the usage page, note the links that page offers and ask for the usage address
-    once more, since the app can land on the new-chat page on a cold start."""
+    once more, since the app can land on the new-chat page on a cold start. Since mid-November 2026 /settings/usage
+    always lands on /new and Usage opens as a dialog from the user menu (J2981)."""
     for _ in range(2):
         if re.search(r"\d{1,3}%\s*used", text, re.I) or "login" in page.url:
             return text
@@ -479,6 +558,10 @@ def _claude_settle(page, text: str) -> str:
             pass
         page.wait_for_timeout(2000)
         text = page.inner_text("body")
+    if not re.search(r"\d{1,3}%\s*used", text, re.I) and "login" not in page.url:
+        dialog_text = _open_claude_usage_dialog(page)
+        if dialog_text:
+            return dialog_text
     if CLAUDE_PATH not in page.url:
         SEEN["links"] = _links(page) or SEEN.get("links") or []
     return text
@@ -569,7 +652,8 @@ READERS = {"elevenlabs": read_elevenlabs, "flow": read_flow, "vertex": read_vert
 
 SIGN_IN_RE = re.compile(r"\bsign in\b|\blog in\b|continue with google|continue with email", re.I)
 ANY_EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
-PRIVATE_LINE_RE = re.compile(r"\bcard\b|visa|mastercard|amex|billing address|invoice|payment method|[•*]{4}", re.I)
+PRIVATE_LINE_RE = re.compile(r"\bcard\b|visa|mastercard|amex|billing address|invoice|payment method|expires\s+\d{2}/\d{4}|[•*]{4}", re.I)
+PRIVATE_SECTION_RE = re.compile(r"^(?:payment details|billing information)\b", re.I)
 
 
 def likely_cause(err: str, page: str = "") -> str:
@@ -605,6 +689,8 @@ def page_excerpt(text: str, limit: int = 25) -> list[str]:
     """The first lines of a page, safe to keep in a log: no email address, no payment line."""
     out = []
     for ln in (x.strip() for x in text.splitlines()):
+        if PRIVATE_SECTION_RE.search(ln):
+            break
         if not ln or PRIVATE_LINE_RE.search(ln):
             continue
         out.append(ANY_EMAIL_RE.sub("<email>", ln)[:120])

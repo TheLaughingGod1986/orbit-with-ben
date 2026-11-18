@@ -328,8 +328,12 @@ def _result_row(step: dict, video: dict, numbers: dict, now: dt.datetime) -> dic
 
 
 def _score_line(results: list, baseline: dict) -> str:
-    best = _figure_count((baseline or {}).get("bestLongViews"))
-    tail = f"Best long so far: {best} views"
+    if (baseline or {}).get("bestLongViews") is None:
+        tail = ""
+        if not results:
+            return "No film is public yet."
+    else:
+        tail = f"Best long so far: {_figure_count((baseline or {}).get('bestLongViews'))} views"
     if not results:
         return f"No test film is public yet. {tail}"
     def views_of(row):
@@ -341,12 +345,14 @@ def _score_line(results: list, baseline: dict) -> str:
         except ValueError:
             return -1
     top = max(results, key=views_of)
-    return f"{top.get('name') or 'The test film'}: {top.get('views')} views on day {top.get('daysLive')}. {tail}"
+    return f"{top.get('name') or 'The test film'}: {top.get('views')} views on day {top.get('daysLive')}. {tail}".strip()
 
 
 def _baseline_row(baseline: dict) -> dict:
     showings = _figure_count((baseline or {}).get("longShowingsTotal"))
     longs = (baseline or {}).get("longs")
+    if not longs and (baseline or {}).get("bestLongViews") is None:
+        return {"best": "No long film yet", "showings": f"No long films yet (read {_read_label((baseline or {}).get('readAt') or '')})"}
     return {
         "best": f"Best long so far: {_figure_count((baseline or {}).get('bestLongViews'))} views",
         "showings": f"All {longs} longs: about {showings} showings (read {_read_label((baseline or {}).get('readAt') or '')})",

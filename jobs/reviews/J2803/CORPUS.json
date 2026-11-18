@@ -1,0 +1,297 @@
+{
+  "job": "J2803",
+  "measured": false,
+  "threshold": 0.8,
+  "compare_cap_seconds": 300,
+  "frame_seconds": 1,
+  "gate_sha256": "62b5159f95598eaca5256b30ba66144812bad97dc86fd0c9de4618e4a1dd5385",
+  "candidate_sha256": "7c5a915cc2e55911c7d080cc05eac418d770298e5e0d6e64b746f6087ecfba54",
+  "protocol": {
+    "positives": [
+      "trim the first 0.37 s",
+      "gain -12 dB",
+      "linear fade-in 0.8 s and fade-out 1.2 s",
+      "re-encode to 64 kbps mp3 and decode back",
+      "combined: 0.37 s trim, -12 dB, both fades, then 64 kbps mp3"
+    ],
+    "negatives": "Every pair of sources whose work ids differ, whose own prompts do not say one reuses the other, and whose style tokens matched.",
+    "not_independent": [
+      "HOS 009 wonder with HOS 009 teach: two cues of one score",
+      "J01 linking bed with OWB 026: the J01 plan says it is reused from the 026 stem"
+    ],
+    "no_listening": "Styles come from the written plan prompt. This run does not claim to hear the beds."
+  },
+  "sources": [
+    {
+      "id": "hos009-wonder",
+      "work": "HOS:009",
+      "audio": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/009_The-Falling-Moon-Gravity/05_Music/hos_009_wonder_v01.mp3",
+      "plan": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/009_The-Falling-Moon-Gravity/05_Music/hos_009_wonder_v01_plan.json",
+      "bytes": 2880618,
+      "sha256": "95dfe11d7c21c9347e9b962ef2f9ecd35116f2fce60df6f123578c11a1debaf0",
+      "plan_sha256": "de6ce229ed7c9b1982527547eaa58a027ed5e38523484c26116381f042820bf5",
+      "styles_found_in_own_prompt": [
+        "chamber",
+        "drone"
+      ],
+      "styles_expected": [
+        "chamber",
+        "drone"
+      ],
+      "label_ok": true,
+      "missing_style_tokens": [],
+      "stationary_label_ok": true,
+      "use_for_positives": true,
+      "note": "",
+      "plan_fields": {
+        "prompt": "Original instrumental underscore exclusively for HOS 009 The Falling Moon. Quiet period chamber palette, warm low bowed strings. This cue is only the opening wonder: Moon question and apple/plague-year story: warm viol drone, sparse plucks, curious rather than ominous. Leave generous space for British narration.\nPace: 60-72 BPM; wonder is spacious and sustained, with no harpsichord and no drum beat.\nNOT any earlier HOS or Orbit bed, jupiter-music.mp3, generic cosmic shimmer/piano space-documentary music, a borrowed melody, heroic trailer brass, horror, plague melodrama, loud risers, vocals, lyrics, pop drums, comedy stings or EDM. Do not imitate a named composer or recording.",
+        "source": null,
+        "job": "J2664",
+        "song_id": "gQjCsNMR40fbAMsGOlPK",
+        "model_id": "music_v2",
+        "sha256_recorded_in_plan": "95dfe11d7c21c9347e9b962ef2f9ecd35116f2fce60df6f123578c11a1debaf0",
+        "duration_s_recorded_in_plan": 180.035875,
+        "created_at": "2026-11-13T15:52:49+00:00",
+        "cue": "wonder",
+        "film": null,
+        "bed": "hos_009_wonder_v01.mp3"
+      },
+      "independence": "Separate film, separate plan prompt, and a recorded source or song id when the plan has one. A different hash is recorded and is not itself the independence claim."
+    },
+    {
+      "id": "hos006-trees",
+      "work": "HOS:006",
+      "audio": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/006_Trees-Are-Made-Of-Air/05_Music/trees006_score_bed_v01.mp3",
+      "plan": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/006_Trees-Are-Made-Of-Air/05_Music/trees006_score_bed_v01_plan.json",
+      "bytes": 12765356,
+      "sha256": "4ca1cf2df83b8cdba0bc9d709f1947b1f47f30612113a63d3dd940102c9d46e6",
+      "plan_sha256": "fb851d0483fbb4dfb200e73df78985cfff6f991da1db37cfe20d7a1368535598",
+      "styles_found_in_own_prompt": [
+        "chamber",
+        "drone"
+      ],
+      "styles_expected": [
+        "chamber"
+      ],
+      "label_ok": true,
+      "missing_style_tokens": [],
+      "stationary_label_ok": false,
+      "use_for_positives": true,
+      "note": "",
+      "plan_fields": {
+        "prompt": "Warm period chamber score for HOS 006 The Willow Tree That Was Made of Air. Original G major / E minor / C / D harmony, soft viol-like harmonic drones in wonder (0-61.67,178.67-273.5,365.42-end), gentle harp at 66 BPM in experiment/explain (61.67-178.67,273.5-365.42), 3 s mood crossfades at chapter cards. Pace: 60-72 BPM. NOT Betelgeuse, jupiter-music, saturn-rings, sun-brighter, venus, light-speed, mars-robot, nearest-star, earth-spin, or any earlier HOS bed. No modern synth pulse, drums or arpeggio above 75 BPM.",
+        "source": "own synthesis (_build_master_v04.py), \u00a30 spend, no ElevenLabs credit",
+        "job": null,
+        "song_id": null,
+        "model_id": null,
+        "sha256_recorded_in_plan": "4ca1cf2df83b8cdba0bc9d709f1947b1f47f30612113a63d3dd940102c9d46e6",
+        "duration_s_recorded_in_plan": 531.833333,
+        "created_at": null,
+        "cue": null,
+        "film": "006_Trees-Are-Made-Of-Air",
+        "bed": "trees006_score_bed_v01.mp3"
+      },
+      "independence": "Separate film, separate plan prompt, and a recorded source or song id when the plan has one. A different hash is recorded and is not itself the independence claim."
+    },
+    {
+      "id": "owb028-gliese",
+      "work": "OWB:028",
+      "audio": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/05_Music/gliese_score_bed_v03.mp3",
+      "plan": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/028_A-Star-Is-Coming-Toward-Us/05_Music/gliese_score_bed_v03_plan.json",
+      "bytes": 11949740,
+      "sha256": "380adcbf914a30b5441d3a0d32eb8c99623c07cf7a1b478ab9dc19844e4c7205",
+      "plan_sha256": "73e61e638fdd590606142c90f8211fb7db7f1dd6ccd11934b8c0383ba6988025",
+      "styles_found_in_own_prompt": [
+        "ambient"
+      ],
+      "styles_expected": [
+        "ambient"
+      ],
+      "label_ok": true,
+      "missing_style_tokens": [],
+      "stationary_label_ok": false,
+      "use_for_positives": true,
+      "note": "",
+      "plan_fields": {
+        "prompt": "Deep interstellar ambient and gentle plucked celesta/harp score for 028 A Star Is Coming Toward Us (Gliese 710) (A minor / E minor / C major / G major harmonic arc across 7 chapters: awe pads in Ch 0 Open, Ch 3 Into the Oort Cloud, Ch 5 A New Brightest Star, and Ch 6b birth-cluster payoff + closing card / end-screen resolution; explain plucked arpeggio in Ch 1 The Star Heading Our Way, Ch 2 How Close Will It Come?, Ch 4 The Comet Shower, and Ch 6a It Has Happened Before, changing mood at chapter cards). Pace: 64-74 BPM. NOT saturn-rings, sun-brighter, venus, light-speed, mars-robot, nearest-star, earth-spin, jupiter-music, or betelgeuse.",
+        "source": "own synthesis (_build_gliese_audio_v03.py), \u00a30 spend, no ElevenLabs credit",
+        "job": null,
+        "song_id": null,
+        "model_id": null,
+        "sha256_recorded_in_plan": "380adcbf914a30b5441d3a0d32eb8c99623c07cf7a1b478ab9dc19844e4c7205",
+        "duration_s_recorded_in_plan": 497.84,
+        "created_at": null,
+        "cue": null,
+        "film": "028_A-Star-Is-Coming-Toward-Us",
+        "bed": "gliese_score_bed_v03.mp3"
+      },
+      "independence": "Separate film, separate plan prompt, and a recorded source or song id when the plan has one. A different hash is recorded and is not itself the independence claim."
+    },
+    {
+      "id": "owb029-betelgeuse",
+      "work": "OWB:029",
+      "audio": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/05_Music/betelgeuse_score_bed_v01.mp3",
+      "plan": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/05_Music/betelgeuse_score_bed_v01_plan.json",
+      "bytes": 13015916,
+      "sha256": "c57755de833b12f9cccf23924958e90714654c2fbf51e5a8d1378a4b1187311b",
+      "plan_sha256": "518f1ad2d47a108d52aafc5777cc786872fbb9aef967f5b6f577e26e835a07b7",
+      "styles_found_in_own_prompt": [
+        "ambient"
+      ],
+      "styles_expected": [
+        "ambient"
+      ],
+      "label_ok": true,
+      "missing_style_tokens": [],
+      "stationary_label_ok": false,
+      "use_for_positives": true,
+      "note": "",
+      "plan_fields": {
+        "prompt": "Warm cosmic ambient and gentle plucked celesta/harp score for 029 Is Betelgeuse About to Explode? (D minor / Bb major / F major harmonic arc across 6 chapters: awe pads in Ch 0 Open, Ch 2 Great Dimming, Ch 4 The Night It Goes, and Ch 5b stardust payoff; explain plucked arpeggio in Ch 1 Star in Orion's Shoulder, Ch 3 How a Giant Star Dies, and Ch 5a So When?, changing mood at chapter cards with 3 s crossfades). Pace: 68-78 BPM. NOT saturn-rings, sun-brighter, venus, light-speed, mars-robot, nearest-star, earth-spin, or jupiter-music.",
+        "source": "own synthesis (_build_betelgeuse_audio_v01.py), \u00a30 spend, no ElevenLabs credit",
+        "job": null,
+        "song_id": null,
+        "model_id": null,
+        "sha256_recorded_in_plan": "c57755de833b12f9cccf23924958e90714654c2fbf51e5a8d1378a4b1187311b",
+        "duration_s_recorded_in_plan": 542.26,
+        "created_at": null,
+        "cue": null,
+        "film": "029_Is-Betelgeuse-About-To-Explode",
+        "bed": "betelgeuse_score_bed_v01.mp3"
+      },
+      "independence": "Separate film, separate plan prompt, and a recorded source or song id when the plan has one. A different hash is recorded and is not itself the independence claim."
+    },
+    {
+      "id": "owb031-magnetic",
+      "work": "OWB:031",
+      "audio": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/05_Music/magnetic_field_flip_score_bed_v01.mp3",
+      "plan": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/031_What-Happens-When-Earths-Magnetic-Field-Flips/05_Music/magnetic_field_flip_score_bed_v01_plan.json",
+      "bytes": 13700536,
+      "sha256": "9fe2f87876f9b0bbf1a80fb58d14f2ded4fddf4437efc3a83dfa4e321d0ec71f",
+      "plan_sha256": "8c58700cef99c569e6229794cbcfdda3f0f8f0728c8fe881c85ef5c3bbad4408",
+      "styles_found_in_own_prompt": [
+        "drone"
+      ],
+      "styles_expected": [
+        "drone"
+      ],
+      "label_ok": true,
+      "missing_style_tokens": [],
+      "stationary_label_ok": false,
+      "use_for_positives": true,
+      "note": "The plan names a geomagnetic drone in one chapter and a rhythmic pulse in others. Not a stationary-bed control.",
+      "plan_fields": {
+        "prompt": "Warm cinematic space-science score for 031 What Happens When Earth's Magnetic Field Flips. Wonder, not dread. Chapter-shaped across six sections: warm geomagnetic drone under theFrozen Record, light rhythmic outer-core dynamo pulse under Two Thousand Miles Down and The Dent Over the Atlantic, reflective ancient shimmer for Forty-Two Thousand Years Ago (Laschamp), protective steady lift for Why the Air Stays Put, and expansive auroral wonder resolution for A Sky Full of Curtains. Pace: 66-74 BPM (72 BPM steady pulse matched to Ben's calm British narration). Must NOT sound like jupiter-music.mp3, 023/024/025 beds, 026 Venus, 027 Moon, 028 Mars, 029 Speed of Light, 030 Parker Solar Probe, 032 Titan, or 034 Magnetar, and NOT horror, dread, or heavy percussion.",
+        "source": null,
+        "job": null,
+        "song_id": null,
+        "model_id": null,
+        "sha256_recorded_in_plan": null,
+        "duration_s_recorded_in_plan": 570.78,
+        "created_at": null,
+        "cue": null,
+        "film": "031_What-Happens-When-Earths-Magnetic-Field-Flips",
+        "bed": "magnetic_field_flip_score_bed_v01.mp3"
+      },
+      "independence": "Separate film, separate plan prompt, and a recorded source or song id when the plan has one. A different hash is recorded and is not itself the independence claim."
+    },
+    {
+      "id": "hos009-teach",
+      "work": "HOS:009",
+      "audio": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/009_The-Falling-Moon-Gravity/05_Music/hos_009_teach_v01.mp3",
+      "plan": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/009_The-Falling-Moon-Gravity/05_Music/hos_009_teach_v01_plan.json",
+      "bytes": 5760775,
+      "sha256": "4c1f0a17364ad5ba96fdd2d42730b2f857d19017fab52b221701bd4e15d07bb1",
+      "plan_sha256": "b2b4dbdf54698503b0ba9d67bd9b490401b8381071ab4abb8e598673f5d1950b",
+      "styles_found_in_own_prompt": [
+        "chamber"
+      ],
+      "styles_expected": [
+        "chamber"
+      ],
+      "label_ok": true,
+      "missing_style_tokens": [],
+      "stationary_label_ok": false,
+      "use_for_positives": false,
+      "note": "Second cue of the same HOS 009 score. Not an independent negative.",
+      "plan_fields": {
+        "prompt": "Original instrumental underscore exclusively for HOS 009 The Falling Moon. Quiet period chamber palette. This cue is only the teach section: Cannon and Moon test: light harpsichord arpeggio, soft low strings. At part 5 thin the pulse to a warm sense of discovery; no silent break. Leave generous space for British narration.\nPace: 68-72 BPM; gentle harpsichord arpeggio with no drum beat.\nNOT any earlier HOS or Orbit bed, jupiter-music.mp3, generic cosmic shimmer/piano space-documentary music, a borrowed melody, heroic trailer brass, horror, plague melodrama, loud risers, vocals, lyrics, pop drums, comedy stings or EDM. Do not imitate a named composer or recording.",
+        "source": null,
+        "job": "J2664",
+        "song_id": "Xl2Chc450JfbDUaU4iFE",
+        "model_id": "music_v2",
+        "sha256_recorded_in_plan": "4c1f0a17364ad5ba96fdd2d42730b2f857d19017fab52b221701bd4e15d07bb1",
+        "duration_s_recorded_in_plan": 360.045688,
+        "created_at": "2026-11-13T15:52:49+00:00",
+        "cue": "teach",
+        "film": null,
+        "bed": "hos_009_teach_v01.mp3"
+      },
+      "independence": "Separate film, separate plan prompt, and a recorded source or song id when the plan has one. A different hash is recorded and is not itself the independence claim."
+    },
+    {
+      "id": "owb026-nearest",
+      "work": "OWB:026",
+      "audio": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/05_Music/nearest-star_score_bed_v01_full.mp3",
+      "plan": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/026_How-Far-Is-The-Nearest-Star/05_Music/nearest-star_score_bed_v01_full_plan.json",
+      "bytes": 12492425,
+      "sha256": "4db6d824cff97d012af29b731e9b0ce66f4af882764b4685fc4a6161e8a23d84",
+      "plan_sha256": "0305d463a609729fca8ffb532aa832c52df9f72f2dff3a5a066127a46b1c53d1",
+      "styles_found_in_own_prompt": [],
+      "styles_expected": [],
+      "label_ok": true,
+      "missing_style_tokens": [],
+      "stationary_label_ok": false,
+      "use_for_positives": false,
+      "note": "Own plan does not have to say ambient. Kept only for the written J01 reuse note.",
+      "plan_fields": {
+        "prompt": "Instrumental cinematic space documentary underscore for Orbit with Ben, Nearest Star film. Night-sky wonder and quiet curiosity: the hush of looking up on a clear night, then the dizzying scale of the gap between the stars, then a long patient journey outward. Glassy celesta and soft bell tones, airy synth pads, gentle pulsing low strings, a slow-building warm string swell for the scale reveal, a hopeful lift near the end, closing on a long held chord. Pace: 66-80 BPM, steady and unhurried under British narration. NOT Jupiter music, NOT Saturn ring chimes, NOT Moon Leaving lunar piano, NOT Sun golden strings, NOT the Mars robot's lonely felt piano and low strings. No vocals, no choir words, no drums, no EDM, no trailer hit.\n\nTake 2 (continuation, joined after take 1): the same prompt plus \"Continuation of the same piece: same key, tempo and instrumentation.\"",
+        "source": null,
+        "job": "J0075",
+        "song_id": null,
+        "model_id": "music_v2",
+        "sha256_recorded_in_plan": null,
+        "duration_s_recorded_in_plan": null,
+        "created_at": "2026-10-09T03:50:00+00:00",
+        "cue": null,
+        "film": null,
+        "bed": "nearest-star_score_bed_v01_full.mp3"
+      },
+      "independence": "Separate film, separate plan prompt, and a recorded source or song id when the plan has one. A different hash is recorded and is not itself the independence claim."
+    },
+    {
+      "id": "owb-j01-linking",
+      "work": "OWB:J01",
+      "audio": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/J01_Journey-To-Every-World/05_Music/j01_journey_linking_bed_v01.wav",
+      "plan": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/J01_Journey-To-Every-World/05_Music/j01_journey_linking_bed_v01_plan.json",
+      "bytes": 138240102,
+      "sha256": "9b9bf9e6bf4db40c970778bc726f9345e1a853bfc3cd9015e6d464e22d715159",
+      "plan_sha256": "7f5045019e726edb0c669c41670812ccae1368dd21b034a71df9272a658acdd8",
+      "styles_found_in_own_prompt": [
+        "drone"
+      ],
+      "styles_expected": [
+        "drone"
+      ],
+      "label_ok": true,
+      "missing_style_tokens": [],
+      "stationary_label_ok": false,
+      "use_for_positives": false,
+      "note": "Plan says this drone is reused from the owned 026 nearest-star stem. Not an independent negative.",
+      "plan_fields": {
+        "prompt": "Pace: 66-70 BPM. Warm C-minor space drone reused from the owned 026 nearest-star stem for the Journey linking sections. NOT: no heavy percussion, no horror dissonance, no trailer brass, not a copy laid under a different film's title.",
+        "source": null,
+        "job": null,
+        "song_id": null,
+        "model_id": null,
+        "sha256_recorded_in_plan": null,
+        "duration_s_recorded_in_plan": null,
+        "created_at": null,
+        "cue": null,
+        "film": null,
+        "bed": null
+      },
+      "independence": "Separate film, separate plan prompt, and a recorded source or song id when the plan has one. A different hash is recorded and is not itself the independence claim."
+    }
+  ]
+}

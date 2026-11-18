@@ -1,7 +1,7 @@
 // Cloudflare R2 (S3 API) request signing for the Watch button (Ben, 23 Oct 2026: "Still not opening when click the
 // button"). The Vercel Blob store that held the phone copies was suspended on 15 Oct, so cuts now live in the R2 bucket
 // the Buffer mirror already uses, under watch/<id>/<random>-<file>.mp4 (Buffer only ever touches social/).
-// AWS Signature V4 with node:crypto, so neither the Vercel function nor the Mini needs a package for it.
+// AWS Signature V4 with node:crypto, so neither the Pages worker nor the Mini needs a package for it.
 // Shared by api/watch.js (lists a cut to redirect to it) and scripts/watch_upload.mjs (uploads from the Mini).
 import { createHash, createHmac } from "node:crypto";
 

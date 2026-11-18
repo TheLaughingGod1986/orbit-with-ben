@@ -254,6 +254,23 @@ class CursorSpending(unittest.TestCase):
         self.assertEqual(pool, 76.06)
         self.assertIn("£9.62 Expired", note)
 
+    def test_weekly_included_usage_resets_before_split_nov_12_layout(self):
+        # J2981. From 12 Nov 2026 grok.com/dashboard/billing puts "Resets 19 Nov" above "x" and the split lines,
+        # appends "· Set monthly limit" to the monthly reset, and renames "Credits available" to "Credit balance".
+        import ai_spend_daily
+        page = (
+            "Ultra\nOverview\nUltra\nRenews 24 Nov 2026\n100%\nused\nResets 19 Nov\nx\n"
+            "Grok Bot 54%\nCursor 46%\nWeekly included usage\nAdditional usage\nAuto top-up\nBuy credits\n"
+            "$1.06\nused this month\nResets 1 Dec · Set monthly limit\nCredit balance\n$0.00\n"
+        )
+        r = ai_spend_daily.parse_cursor(page)
+        self.assertEqual((r["left"], r["total"]), (0, 100))
+        self.assertEqual(r["used"], {"weekly included usage": 100, "grok bot": 54, "cursor": 46})
+        self.assertIn("Weekly included usage 100% used (Grok Bot 54%, Cursor 46%)", r["note"])
+        self.assertIn("weekly resets 19 Nov", r["note"])
+        self.assertIn("$1.06 used this month (resets 1 Dec)", r["note"])
+        self.assertIn("credit balance $0.00", r["note"])
+
     def test_changed_page_fails_loudly(self):
         import ai_spend_daily
         with self.assertRaises(RuntimeError):

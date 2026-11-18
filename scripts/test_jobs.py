@@ -583,10 +583,11 @@ class MacBookTakesTextJobs(unittest.TestCase):
         for slug in channels.slugs():
             self.assertEqual(jobs.studio_live_projects(slug),
                              jobs.STUDIO_LIVE_ROOT / channels.nas_folder(slug) / "02_Video-Projects")
-            self.assertTrue(channels.studio_port(slug).isdigit(), slug)
-        ports = [channels.studio_port(s) for s in channels.slugs()]
+            if channels.get(slug).get("launch_state") != "prelaunch":
+                self.assertTrue(channels.studio_port(slug).isdigit(), slug)
+        ports = [channels.studio_port(s) for s in channels.slugs() if channels.studio_port(s)]
         self.assertEqual(len(ports), len(set(ports)))  # two channels never share a Studio browser
-        self.assertRegex(jobs.keys_example(), r"^[A-Z]+:006 or [A-Z]+:028,[A-Z]+:029$")
+        self.assertRegex(jobs.keys_example(), r"^[A-Z0-9]+:006 or [A-Z0-9]+:028,[A-Z0-9]+:029$")
 
     def test_a_job_added_with_no_channel_goes_to_the_default_channel(self):
         import channels

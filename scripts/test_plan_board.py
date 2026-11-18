@@ -22,6 +22,13 @@ def video(key, **youtube):
     return {"key": key, "number": key.split(":")[-1], "jobs": [], "youtube": youtube or None}
 
 
+def every_job(plans, overrides=()):
+    """A queue holding every job the plans name, with the given jobs' states."""
+    given = {item["id"]: item for item in overrides}
+    names = [job_id for plan in plans for step in plan.get("steps") or [] for job_id in step.get("jobs") or []]
+    return list(given.values()) + [job(job_id) for job_id in dict.fromkeys(names) if job_id not in given]
+
+
 class PlanBoardTest(unittest.TestCase):
     def test_real_plan_jobs_exist_and_dates_parse(self):
         plans = json.loads((ROOT / "studio" / "plan.json").read_text())
@@ -31,13 +38,24 @@ class PlanBoardTest(unittest.TestCase):
         card = block["plans"][0]["card"]
         self.assertEqual(card["title"], "Plan: getting our long videos seen")
         self.assertEqual(card["next"], "Next: Journey film, Tue 8 Dec")
-        self.assertEqual(card["needs"], "1 thing needs you: lock the every-planet film")
+        # Ben locked the every-planet film on 17 Nov, so the plan asks him for nothing.
+        self.assertEqual(card["needs"], "")
         self.assertEqual(card["score"], "No test film is public yet. Best long so far: 230 views")
         self.assertEqual(block["plans"][0]["baseline"]["showings"],
                          "All 16 longs: about 4,050 showings (read 12 Nov)")
         texts = [row["text"] for row in block["plans"][0]["decisions"]]
-        self.assertTrue(texts[0].startswith("Pause"))
+        self.assertTrue(texts[0].startswith("Lock the every-planet film"))
+        self.assertTrue(texts[1].startswith("Pause"))
         self.assertTrue(texts[-1].startswith("Titles"))
+        ww2 = block["plans"][1]
+        self.assertEqual(ww2["id"], "ww2-launch-2026-11")
+        self.assertEqual(ww2["card"]["title"], "Plan: starting our WW2 documentary channel")
+        # Ben, 17 Nov 2026: on this channel he is asked only to watch finished films, so its plan asks him for nothing.
+        self.assertEqual(ww2["card"]["needs"], "")
+        self.assertEqual(len(ww2["steps"]), 12)
+        self.assertFalse(any(s["needsYou"] for s in ww2["steps"]))
+        self.assertEqual(ww2["card"]["score"], "No film is public yet.")
+        self.assertEqual(ww2["baseline"]["best"], "No long film yet")
 
     def test_stands_from_jobs_and_the_tracker(self):
         plans = json.loads((ROOT / "studio" / "plan.json").read_text())
@@ -49,7 +67,9 @@ class PlanBoardTest(unittest.TestCase):
             job("J2861", "open", "listing"),
             job("J2863", "done", "review"),
             job("J2864", "open", "studio"),
+            job("J2989", "done", "studio"),
         ]
+        jobs = every_job(plans, jobs)
         videos = [
             {"key": "OWB:064", "jobs": [{"id": "J2863"}], "youtube": {}},
         ]
@@ -57,11 +77,20 @@ class PlanBoardTest(unittest.TestCase):
         stands = {step["id"]: step["stand"] for step in block["plans"][0]["steps"]}
         self.assertEqual(stands["journey"], "Listing ready")
         self.assertEqual(stands["sleep"], "Being repaired, step 1 of 5")
-        self.assertEqual(stands["planets"], "Waiting for your lock")
+        self.assertEqual(stands["planets"], "Waiting its turn")
         self.assertEqual(stands["pause"], "Waiting its turn")
         planets = next(step for step in block["plans"][0]["steps"] if step["id"] == "planets")
-        self.assertTrue(planets["needsYou"])
+        self.assertFalse(planets["needsYou"])
         self.assertEqual(planets["videoKey"], "OWB:064")
+        # A step that still needs Ben's lock, with no date yet, says so and counts on the card.
+        waiting = json.loads(json.dumps(plans))
+        step = next(step for step in waiting[0]["steps"] if step["id"] == "planets")
+        step["needsBen"], step["when"] = "Lock or decline this film on its card", ""
+        block = plan_board.section(waiting, jobs, videos, None, "2026-11-14T23:00:00Z", now=NOW)
+        planets = next(step for step in block["plans"][0]["steps"] if step["id"] == "planets")
+        self.assertEqual(planets["stand"], "Waiting for your lock")
+        self.assertTrue(planets["needsYou"])
+        self.assertEqual(block["plans"][0]["card"]["needs"], "1 thing needs you: lock the every-planet film")
 
     def test_youtube_states_and_the_fourteen_day_verdict(self):
         step = {
@@ -114,7 +143,7 @@ class PlanBoardTest(unittest.TestCase):
 
     def test_a_quiet_publish_keeps_the_same_block(self):
         plans = json.loads((ROOT / "studio" / "plan.json").read_text())
-        jobs = [job(job_id) for job_id in ("J2859", "J2857", "J2860", "J2861", "J2863", "J2864")]
+        jobs = every_job(plans)
         first = plan_board.section(plans, jobs, [], None, "2026-11-14T23:00:00Z", now=NOW)
         second = plan_board.section(plans, jobs, [], None, "2026-11-14T23:05:00Z", previous=first, now=NOW)
         self.assertEqual(first, second)
@@ -128,8 +157,8 @@ class PlanBoardTest(unittest.TestCase):
         other = json.loads(json.dumps(plans[0]))
         other["id"] = "later"
         other["title"] = "A second plan"
-        jobs = [job(job_id) for job_id in ("J2859", "J2857", "J2860", "J2861", "J2863", "J2864")]
-        block = plan_board.section(plans + [other], jobs, [], None, "2026-11-14T23:00:00Z", now=NOW)
+        jobs = every_job([plans[0], other])
+        block = plan_board.section([plans[0], other], jobs, [], None, "2026-11-14T23:00:00Z", now=NOW)
         self.assertEqual([plan["card"]["title"] for plan in block["plans"]],
                          ["Plan: getting our long videos seen", "Plan: a second plan"])
 
@@ -140,7 +169,7 @@ class PlanBoardTest(unittest.TestCase):
         broken = json.loads(json.dumps(plans))
         broken[0]["steps"][0]["when"] = "next tuesday"
         with self.assertRaises(plan_board.PlanError):
-            plan_board.validate(broken, {"J2859", "J2857", "J2860", "J2861", "J2863", "J2864"})
+            plan_board.validate(broken, {item["id"] for item in every_job(plans)})
 
 
 if __name__ == "__main__":

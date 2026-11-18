@@ -122,6 +122,18 @@ class ClaudeUsageParser(unittest.TestCase):
         self.assertEqual(r["left"], 0)
         self.assertEqual(r["note"], "0% used session; weekly 100% used, resets Wednesday 10:00 AM")
 
+    def test_ultra_dialog_without_current_session_and_with_fable_cap(self):
+        """J2981 (17 Nov 2026): claude.ai opens Usage as a Settings dialog with This week + Fable and no Current session."""
+        dialog = (
+            "Settings\nUsage\nYour usage\nUltra\nOn track.\nThis week\nResets Wednesday 10:00 AM\n62% used\n"
+            "Fable\nUp to 50% of your weekly limit\nResets Wednesday 10:00 AM\n100% used\n"
+            "Limit resets\n2 available\nThis week\u2019s usage by product\nClaude Code\n99%\nChats\n0%\n"
+        )
+        r = ai_spend_daily.parse_claude(dialog)
+        self.assertEqual((r["left"], r["total"]), (38, 100))
+        self.assertEqual(r["used"], {"weekly": 62, "fable": 100})
+        self.assertEqual(r["note"], "weekly 62% used, resets Wednesday 10:00 AM; Fable 100% used")
+
 
 class GeminiUsageParser(unittest.TestCase):
     def test_agy_usage_tsv_output(self):
@@ -280,7 +292,8 @@ class PageExcerpt(unittest.TestCase):
 
     def test_no_address_and_no_payment_line_reaches_the_log(self):
         page = f"Usage\n\nsomeone.name{self.AT}example.org\nSigned in as a.b{self.AT}example.com on Pro\n" \
-               "Visa ending 4242\nPayment method\n•••• 4242\nYou have reached your weekly limit\n"
+               "Visa ending 4242\nPayment method\n•••• 4242\nExpires 04/2030\nYou have reached your weekly limit\n" \
+               "Payment details\nDefault\nBilling information\n1 Example Street\n"
         lines = ai_spend_daily.page_excerpt(page)
         self.assertEqual(lines, ["Usage", "<email>", "Signed in as <email> on Pro", "You have reached your weekly limit"])
         self.assertNotIn("@", "".join(lines))
@@ -407,6 +420,34 @@ class ClaudeSentElsewhere(unittest.TestCase):
         self.assertIn("UNREAD claude: RuntimeError: the Claude usage address sent the browser to claude.ai/new", text)
         self.assertIn("  page address: claude.ai/new\n", text)
         self.assertIn("  page links to: /settings/limits\n  page links to: /settings/profile\n", text)
+
+    def test_opens_user_menu_usage_dialog_when_route_lands_on_new(self):
+        dialog = "Settings\nUsage\nYour usage\nUltra\nThis week\nResets Wednesday 10:00 AM\n62% used\n"
+        clicked, keys = [], []
+
+        class Loc:
+            def __init__(self, sel):
+                self.sel = sel
+                self.first = self
+
+            def count(self):
+                return 1 if self.sel in ('[data-testid="user-menu-button"]', '[data-testid="user-menu-usage"]') else 0
+
+            def click(self, **kw):
+                clicked.append(self.sel)
+
+            def get_by_text(self, pat):
+                return mock.Mock(first=mock.Mock())
+
+        page = self.Page("https://claude.ai/new", [])
+        page.text = self.MENU
+        page.locator = lambda sel: Loc(sel)
+        page.keyboard = mock.Mock(press=lambda k: keys.append(k))
+        page.eval_on_selector_all = lambda sel, script: [dialog] if sel == '[role="dialog"]' else []
+        got = ai_spend_daily._claude_settle(page, self.MENU)
+        self.assertEqual(clicked, ['[data-testid="user-menu-button"]', '[data-testid="user-menu-usage"]'])
+        self.assertEqual(keys, ["Escape"])
+        self.assertEqual(ai_spend_daily.parse_claude(got)["left"], 38)
 
     def test_one_pools_links_never_show_under_the_next(self):
         import contextlib

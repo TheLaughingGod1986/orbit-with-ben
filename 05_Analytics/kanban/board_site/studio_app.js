@@ -1492,6 +1492,7 @@
   // Red: the check says the studio cannot run it. What is left to tidy is on the card, not in the light: it is the
   // studio's housekeeping, not something wrong with the channel (and not something for Ben to do).
   function channelLight(c) {
+    if (c.prelaunch) return ["amber", "Getting ready: YouTube not connected yet"];
     if (c.ready === false) return ["red", "not ready"];
     if (c.ready === true) return c.repo === "" ? ["amber", "being set up"] : ["green", "running"];
     return ["", c.here === false ? "not checked here" : "plugged in"];
@@ -1505,7 +1506,7 @@
   const ADD_CHANNEL_STEPS = [
     ["You", "Tell Claude the channel's name and what it is about."],
     ["Claude", "Makes the channel's folder from the template and fills in its settings."],
-    ["You", "Create its GitHub repo, sign in to its YouTube Studio on the Mini, and choose its voice."],
+    ["You", "Create its YouTube channel, sign in to its YouTube Studio on the Mini, and choose its voice. Its files can stay in the studio."],
     ["Claude", "Checks that the studio can run it, then plugs it in. It then shows on this page."],
     ["Claude", "Writes the channel's own rules with you before its first script."]];
   const channelsOf = b => ((b || {}).channels || []).length ? b.channels : channelList();
@@ -1520,8 +1521,8 @@
     const [tone, text] = channelLight(c), f = channelFacts(b, c);
     const row = (k, v) => v ? `<div><dt>${esc(k)}</dt><dd>${v}</dd></div>` : "";
     const list = items => `<ul>${items.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`;
-    const handle = /^@[\w.-]+$/.test(c.handle || "") ? `<a href="https://www.youtube.com/${esc(c.handle)}" target="_blank" rel="noopener">${esc(c.handle)}</a>` : esc(c.handle || "");
-    const repo = /^[\w.-]+\/[\w.-]+$/.test(c.repo || "") ? `<a href="https://github.com/${esc(c.repo)}" target="_blank" rel="noopener">${esc(c.repo)}</a>` : (c.repo === "" ? "It has no GitHub repo yet." : "");
+    const handle = c.prelaunch ? "YouTube not connected yet" : /^@[\w.-]+$/.test(c.handle || "") ? `<a href="https://www.youtube.com/${esc(c.handle)}" target="_blank" rel="noopener">${esc(c.handle)}</a>` : esc(c.handle || "");
+    const repo = /^[\w.-]+\/[\w.-]+$/.test(c.repo || "") ? `<a href="https://github.com/${esc(c.repo)}" target="_blank" rel="noopener">${esc(c.repo)}</a>` : (c.repo === "" ? "Its files live in the studio. No separate GitHub repo is needed." : "");
     const lead = c.ready === true ? "The studio can run this channel." : c.ready === false ? "The studio cannot run this channel yet."
       : c.here === false ? "The machine that publishes this board does not hold this channel's files, so it was not checked." : "";
     const rules = c.rules === true ? "Its own rules, on top of the studio's." : c.rules === false ? "The studio's rules only. Its own rules file is still to write." : "";
@@ -1910,6 +1911,21 @@
       ${waiting.length?`<details class="technical job-more" data-disclosure="queue-waiting"><summary>Waiting for something first · ${waiting.length}</summary><p class="meta">These cannot start yet: a video has to go public, a test has to finish, or an earlier job comes first.</p>${rows(waiting)}</details>`:''}`;
   }
 
+  function agentReason(raw, row = {}, chain = {}) {
+    const text = String(raw || '');
+    const stamp = row.until || chain.until || (text.match(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z/) || [])[0];
+    const when = Date.parse(stamp || '');
+    const back = Number.isFinite(when) ? new Date(when).toLocaleString('en-GB', {
+      timeZone: 'Europe/London', weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit'
+    }) : '';
+    if (/usage|rate.limit|credit.*(?:out|limit)|out.*credit/i.test(text)) return 'Out of usage' + (back ? ', back ' + back : '');
+    if (/acknowledgement|inbox delivered|not progressed/i.test(text)) return 'Not responding' + (back ? ', retry ' + back : '');
+    return text.replace(/\([^)]*(?:J\d+|probe)[^)]*\)/gi, '')
+      .replace(/\bJ\d+\b/g, '').replace(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z/g,
+        value => new Date(value).toLocaleString('en-GB', {timeZone:'Europe/London', weekday:'short', day:'numeric', month:'short', hour:'2-digit', minute:'2-digit'}))
+      .replace(/\s+/g, ' ').trim();
+  }
+
   function agents(b, now) {
     const m = b.models || {}, jobs = ((b.owb || {}).jobs) || [], c = m.chief || {}, s = summary(b, now);
     const status = Object.fromEntries((m.models || []).map(x => [x.id, x]));
@@ -1922,6 +1938,7 @@
         : (status[id] || {}).why || chain.why || (id === "macbook" ? "waits for a MacBook job, plugged in and idle" : "no job right now");
       let [st, word] = agentLight(id, mine.length, (status[id] || {}).status, c.agent === id && m.fresh !== false);
       if (id === "macbook" && !mine.length) { const mbs = macbookState(macbook, now); st = mbs[0]; word = mbs[1]; why = mbs[2]; }
+      why = mine.length ? why : agentReason(why, status[id] || {}, chain);
       const href = mine[0] ? jobRoute(mine[0].id) : "#agents";
       return { st, html: `<a class="row agent" href="${href}"><span class="dot ${esc(st)}"></span><div class="body"><b>${esc(name)} <span class="tag ${st}">${word}</span>${c.agent === id ? ' <span class="tag">Chief</span>' : ""}</b>
         <span class="meta">${esc(clip(why, 110))}</span></div><span class="chev">›</span></a>` };

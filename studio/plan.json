@@ -24,32 +24,60 @@
         "what": "A calm documentary from Earth to the dying star Betelgeuse, made from seven finished films.",
         "when": "2026-12-08T18:00Z",
         "film": "J01",
-        "jobs": ["J2859", "J2857"],
-        "test": {"days": 14, "keep": 500, "drop": 230}
+        "jobs": [
+          "J2859",
+          "J2857"
+        ],
+        "test": {
+          "days": 14,
+          "keep": 500,
+          "drop": 230
+        }
       },
       {
         "id": "sleep",
         "name": "Sleep film (1 hour 48 minutes)",
         "what": "A slow space documentary to fall asleep to, from the Moon to Andromeda, titled and tagged from research on channels that do this.",
         "when": "2026-12-12T21:00Z",
-        "jobs": ["J2860", "J2859", "J2861"],
-        "test": {"days": 14, "keep": 500, "drop": 230}
+        "jobs": [
+          "J2860",
+          "J2859",
+          "J2861"
+        ],
+        "test": {
+          "days": 14,
+          "keep": 500,
+          "drop": 230
+        }
       },
       {
         "id": "planets",
         "name": "Every planet explained in 10 minutes",
         "what": "A new kind of long video: a complete tour with a number in the title, the kind that gets views for channels our size.",
-        "when": "",
-        "needsBen": "Lock or decline this film on its card",
-        "jobs": ["J2863"],
-        "test": {"days": 14, "keep": 500, "drop": 230}
+        "when": "2026-12-16T18:00Z",
+        "jobs": [
+          "J2863",
+          "J3011",
+          "J3020",
+          "J3021",
+          "J3022",
+          "J3023"
+        ],
+        "test": {
+          "days": 14,
+          "keep": 500,
+          "drop": 230
+        },
+        "film": "064"
       },
       {
         "id": "pause",
         "name": "Pause on single-question long videos",
         "what": "After the Pluto film on Sun 13 Dec, no new \"What happens if\" long is made until one of the tests has its result.",
         "when": "2026-12-13",
-        "jobs": ["J2864"]
+        "jobs": [
+          "J2864"
+        ]
       }
     ],
     "decisions": [
@@ -67,6 +95,173 @@
         "at": "2026-11-14",
         "by": "Ben",
         "text": "Pause new single-question long videos after the Pluto film until a new format has been tested."
+      },
+      {
+        "at": "2026-11-17",
+        "by": "Ben",
+        "text": "Lock the every-planet film (a 10-minute tour of all eight planets), Wed 16 Dec at 18:00."
+      }
+    ]
+  },
+  {
+    "id": "ww2-launch-2026-11",
+    "channel": "ww2",
+    "title": "Starting our WW2 documentary channel",
+    "agreed": "2026-11-17",
+    "goal": "Monetised as fast as possible, then a lot of views: two films a week, about 25 minutes now and 35-45 minutes after the voice upgrade, aiming at 1,000 subscribers and 4,000 watch hours before YouTube's bar for new channels doubles to 8,000 hours on 1 Feb 2027.",
+    "why": [
+      "Why this niche (vidIQ, checked against the YouTube API, 17 Nov): WW2 Dossier, started 30 Apr 2026, passed 1,000 subscribers 13 days after its first upload and has 14,300, on 39-56 minute archive-photo films with no Shorts. 'world war 2' gets 564,442 searches a month and 'ww2 documentary' 261,896.",
+      "Its own rules (channels/ww2/studio/RULES.md) and playbook (00_Brand/PLAYBOOK.md), written fresh: Ben is asked only to watch finished films; the Chief locks topics after review.",
+      "Name: Field Order History is the recommendation (its handle was free on 17 Nov). Ben picks when he creates the channel.",
+      "Voice: at most 21,000 ElevenLabs characters a film, and two pilot films voiced, until Ben upgrades the plan.",
+      "Its own repo, TheLaughingGod1986/ww2-channel (made 17 Nov): the channel moves there with its history (J3009), and the board shows it before launch (J3007)."
+    ],
+    "baseline": {
+      "bestLongViews": null,
+      "longShowingsTotal": null,
+      "longs": 0,
+      "readAt": "2026-11-17"
+    },
+    "steps": [
+      {
+        "id": "ww2-setup",
+        "name": "Channel set-up: own repo, on the board, channel kit",
+        "what": "Move into TheLaughingGod1986/ww2-channel with its history, show the channel on the board before launch (films, review, Ben's ticks), and the profile picture, banner, description and upload template ready for Ben.",
+        "when": "",
+        "jobs": [
+          "J3009",
+          "J3007",
+          "J2999"
+        ]
+      },
+      {
+        "id": "ww2-data",
+        "name": "Packaging library and the channel's own numbers",
+        "what": "Which WW2 titles and thumbnails beat their channel's usual views (YouTube API, monthly), and from the first upload the 48-hour and 7-day reads and a card for 1,000 subscribers and 4,000/8,000 watch hours.",
+        "when": "",
+        "jobs": [
+          "J3005",
+          "J3006"
+        ]
+      },
+      {
+        "id": "ww2-001",
+        "name": "Pilot 1: How Britain Built Two Harbours in Secret and Floated Them to Normandy",
+        "what": "Mulberry A & B artificial harbours (65 chars): 212 6,000-ton concrete caissons, floating Whale roadways, the June 1944 gale and PLUTO. IWM + US NARA photos & code maps; 4.88M / 1.94M / 973K neighbours; thumb 'BUILT IN 12 DAYS'; 25 min (~20,000 voice chars, Slot 1 of 2).",
+        "when": "",
+        "film": "001",
+        "jobs": [
+          "J2991",
+          "J2992",
+          "J2993"
+        ]
+      },
+      {
+        "id": "ww2-002",
+        "name": "Pilot 2: How the Allies Closed the U-Boats' Safest Hunting Ground",
+        "what": "Closing the Mid-Atlantic air gap in 'Black May' 1943 (64 chars): VLR B-24 Liberators, escort carriers, 10 cm radar and HF/DF sinking 43 U-boats in one month. IWM Coastal Command + US Navy photos & range-ring maps; 4.13M / 1.59M / 1.30M neighbours; 25 min (~20,000 voice chars, Slot 2 of 2).",
+        "when": "",
+        "film": "002",
+        "jobs": [
+          "J2994",
+          "J2995",
+          "J2996"
+        ]
+      },
+      {
+        "id": "ww2-003",
+        "name": "Pilot 3: Why America's Most Expensive WW2 Weapon Wasn't the Atomic Bomb",
+        "what": "America's $3.0B bomber gamble vs the $1.9B Manhattan Project (65 chars): pressurised crew tunnels, GE analog gun computers, magnesium R-3350 fires, the snowy 'Battle of Kansas' and Tokyo's 200-mph jet stream. USAAF NARA + LoC colour archive; 4.02M / 1.96M / 1.20M neighbours; thumb '$3 BILLION GAMBLE'; 26 min (~20,800 chars — script & harvest £0 now, voice after ElevenLabs upgrade/renewal).",
+        "when": "",
+        "film": "003",
+        "jobs": [
+          "J2997",
+          "J2998"
+        ]
+      },
+      {
+        "id": "ww2-004",
+        "name": "Film 4: Why America's Submarine Torpedoes Failed for 21 Months in WW2",
+        "what": "The Mark 14 torpedo scandal in the Pacific, Dec 1941 to Sep 1943 (61 chars): running 10 feet too deep, faulty magnetic exploders, crushed contact pins, and unauthorized live tests at Maui and Fremantle. US NHHC + NARA submarine archive; 1.67M / 1.43M / 1.32M neighbours.",
+        "when": "",
+        "film": "004",
+        "jobs": [
+          "J3000"
+        ]
+      },
+      {
+        "id": "ww2-005",
+        "name": "Film 5: How an Old Destroyer Became a Bomb to Keep Tirpitz Out of the Atlantic",
+        "what": "Operation Chariot at St Nazaire, March 1942 (61 chars): disguising the 1919 destroyer HMS Campbeltown with 4.25 tons of delayed-fuse explosives to deny Tirpitz the Normandie dry dock. UK IWM Admiralty + TNA files; 8.19M / 4.57M / 1.30M neighbours.",
+        "when": "",
+        "film": "005",
+        "jobs": [
+          "J3001"
+        ]
+      },
+      {
+        "id": "ww2-006",
+        "name": "Film 6: Why Britain Built Its Fastest WW2 Bomber Out of Plywood and Balsa",
+        "what": "The de Havilland DH.98 Mosquito (65 chars): unarmed birch-and-balsa fuselages moulded in furniture workshops, carrying a 4,000-lb Cookie bomb to Berlin at 400 mph with a 0.7% loss rate. UK IWM Air Ministry + TNA archive; 5.39M / 3.11M / 2.39M neighbours.",
+        "when": "",
+        "film": "006",
+        "jobs": [
+          "J3002"
+        ]
+      },
+      {
+        "id": "ww2-007",
+        "name": "Film 7: How Floating Dry Docks Kept Damaged US Fleets Fighting Off Japan",
+        "what": "Service Squadron 10 and Ulithi Atoll (64 chars): towing sectional floating dry docks able to lift 90,000 tons 5,000 miles west of Pearl Harbor alongside 617 anchored ships. US NHHC + NARA RG 80-G archive; 3.69M / 3.25M / 2.41M neighbours.",
+        "when": "",
+        "film": "007",
+        "jobs": []
+      },
+      {
+        "id": "ww2-008",
+        "name": "Film 8: How One Planted Briefcase Pulled German Divisions Away From Sicily",
+        "what": "Operation Mincemeat, spring 1943 (66 chars): building a complete paper life for fictitious 'Major William Martin', drifting fake invasion plans ashore from submarine HMS Seraph, and tracking Hitler's divisions via Ultra. UK TNA CAB 154 / WO 208 + IWM archive; 3.14M / 2.03M / 1.43M neighbours.",
+        "when": "",
+        "film": "008",
+        "jobs": []
+      },
+      {
+        "id": "ww2-009",
+        "name": "Film 9: How One Wrecked Oil Tanker Saved Starving Malta in August 1942",
+        "what": "Operation Pedestal and the tanker SS Ohio (62 chars): torpedoed, bombed and broken-backed, yet brought into Valletta's Grand Harbour with 11,500 tons of fuel lashed between two Royal Navy destroyers. UK IWM Admiralty + US Merchant Marine archive; 683K / 570K / 312K neighbours.",
+        "when": "",
+        "film": "009",
+        "jobs": []
+      },
+      {
+        "id": "ww2-010",
+        "name": "Film 10: Why Britain Built Flame, Flail and Bridge Tanks After Dieppe Failed",
+        "what": "79th Armoured Division's specialist assault armour (67 chars): turning the 1942 Dieppe beach disaster into Sherman Crab mine-flails, AVRE petard bunker-busters, fascines, bridges and DD swimming tanks on D-Day. UK IWM War Office + TNA WO 205 archive; 3.33M / 1.23M / 701K neighbours.",
+        "when": "",
+        "film": "010",
+        "jobs": []
+      }
+    ],
+    "decisions": [
+      {
+        "at": "2026-11-17",
+        "by": "Ben",
+        "text": "Start a WW2 documentary channel: long films only, made with our ElevenLabs plan until the upgrade."
+      },
+      {
+        "at": "2026-11-17",
+        "by": "Ben",
+        "text": "Ask me only to watch finished films; the studio decides everything else."
+      },
+      {
+        "at": "2026-11-17",
+        "by": "Ben",
+        "text": "Its own rules and its own ideas, not Orbit's or History of Science's."
+      },
+      {
+        "at": "2026-11-17",
+        "by": "Ben",
+        "text": "Its own GitHub repo, fully decoupled."
       }
     ]
   }

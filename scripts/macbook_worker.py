@@ -72,7 +72,7 @@ def clone_name(slug: str) -> str:
 
 def other_slugs() -> list[str]:
     """Every channel but the one whose repo carries the studio, in the registry's order."""
-    return [s for s in channels.slugs() if s != channels.studio_slug()]
+    return [s for s in channels.slugs() if s != channels.studio_slug() and not channels.get(s).get("local")]
 
 
 def own_checkout(env: str, name: str) -> pathlib.Path:
@@ -98,6 +98,8 @@ def slot_name(n: int, base: str) -> str:
 
 
 def channel_clone(slug: str) -> pathlib.Path:
+    if channels.get(slug).get("local"):
+        return studio_clone() / channels.get(slug)["local"]
     return own_checkout(channels.get(slug)["repo"].get("env") or "", clone_name(slug))
 
 
@@ -883,7 +885,7 @@ def start_other_slots(popen=None, system=None) -> list:
     logs = HOME / "Library" / "Logs"
     for n in range(2, SLOTS + 1):
         clones = {channels.get(s)["repo"]["env"]: str(slot_dir(n) / clone_name(s))
-                  for s in channels.slugs() if channels.get(s)["repo"].get("env")}
+                  for s in channels.slugs() if channels.get(s)["repo"].get("env") and not channels.get(s).get("local")}
         env = dict(os.environ, MACBOOK_SLOT=str(n), **clones)
         try:
             logs.mkdir(parents=True, exist_ok=True)
