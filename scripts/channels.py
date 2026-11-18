@@ -292,6 +292,8 @@ def _reg_checkouts(slug: str) -> list[str]:
 
 def repo_path(slug: str, home_dir: pathlib.Path | None = None) -> pathlib.Path:
     """The channel's checkout: its env var, else the first ~/YouTube/<name> (or sibling folder) that exists, else the first name."""
+    if get(slug).get("local"):
+        return ROOT / get(slug)["local"]
     r = get(slug)["repo"]
     if os.environ.get(r.get("env", "")):
         return pathlib.Path(os.environ[r["env"]])
