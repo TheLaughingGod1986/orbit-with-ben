@@ -188986,9 +188986,14 @@
           "at": "2026-11-18T11:52Z",
           "by": "relay",
           "what": "condition verification queued: J3048"
+        },
+        {
+          "at": "2026-11-18T13:11Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-19T12:00:00Z"
         }
       ],
-      "remaining_action": "Wait for the accepted gravity score and completed long before assembling its Shorts",
+      "remaining_action": "Wait for an accepted score and completed long before building the gravity Shorts",
       "due": "2026-11-22T18:00:00Z",
       "kind": "assembly",
       "progress": {
@@ -189003,9 +189008,8 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "Await J3045 generation -> J3046 demonstrated-audio review -> J3047 accepted score, then J2035 long assembly and all required gates; Shorts own VO/input requirements remain. J2808 rejection of v01/v02 remains; J3043 approves only a bounded request, not a score or film.",
-        "check_at": "2026-11-18T12:52:18+00:00",
-        "recheck_task": "J3048"
+        "condition": "J3047 NOT ACCEPTED: no v03 candidate, allowance permanently closed unused; J3050 owns new billing evidence proposal before independent review and Chief route decision. Still requires a separately accepted score, J2035 long assembly and Shorts own inputs. Do not repeat unchanged checks or release from a date.",
+        "check_at": "2026-11-19T12:00:00Z"
       }
     },
     {
