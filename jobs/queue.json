@@ -1,5 +1,5 @@
 {
-  "next_id": 3074,
+  "next_id": 3075,
   "jobs": [
     {
       "id": "J0001",
@@ -267854,7 +267854,7 @@
       "id": "J2991",
       "title": "WW2 pilot 001: script and sources, \"How Britain Towed Two Floating Ports Across the Channel for D-Day\"",
       "needs": "mini",
-      "repo": "owb",
+      "repo": "ww2",
       "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Channel rules (from the launch plan; YouTube's inauthentic-content policy).** Own researched script with a Sources line and a clear story; narration throughout; picture matched to each sentence; archive photos from US and UK government collections, licence checked and logged per image (public domain or Crown copyright expired); maps drawn in code; Veo only where it adds something, never realistic depictions of real people or real events presented as real, and any photoreal Veo scene logged for disclosure; no graphic violence; no shock framing; narrated as Ben, no expert persona; nothing reused from Orbit With Ben or History of Science.\n\n**Do.** From the film's TOPIC.md and PILOT_PLAN.md: write the narration script for a film of about 25 minutes (about 3,300 words, at most 21,000 characters), British English, calm documentary delivery, with the hook in the first 30 seconds and chapters. Build SOURCES.md with a source for every claim and number, then run a separate claims check. Add a shot list naming, for each line, the archive photo (with its collection, ID and licence) or map it uses. Open a pull request.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
       "ref": "",
       "film": "WW2:001",
@@ -267918,6 +267918,11 @@
           "at": "2026-11-17T20:28Z",
           "by": "macbook",
           "what": "done: PR #996 (macbook/J2991): WW2:001 25-min script master (3,358 words, 20,431 chars <= 21,000 cap across 6 chapters, British English), SOURCES.md (8 primary UK/US official histories, 35/35 claim rows + description Sources line), separate CLAIMS_CHECK_v01.md (35/35 PASS), SHOT_LIST.md (46 shots: 23 verified IWM/TNA/LAC Crown-expired & NARA US PD records + 15 code maps/diagrams G1-G15, 0% Veo), and 03_Picture/ARCHIVE_PROVENANCE.md. £0 spent."
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "repo owb -> ww2 (registered film prefix WW2), so WW2 work stops writing Orbit's film records; J3060 / PR #1021"
         }
       ],
       "remaining_action": "Drafting WW2:001 narration script (~3,300 words, <=21,000 chars) and SOURCES.md",
@@ -267936,7 +267941,7 @@
       "id": "J2992",
       "title": "WW2 pilot 001: narration in Ben's voice",
       "needs": "mini",
-      "repo": "owb",
+      "repo": "ww2",
       "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Voice budget (Ben: \"use our elevenlabs plan\").** Ben's narrator voice via the studio's usual voice tool. About 79,000 characters are left this cycle, shared with Orbit and History of Science. Each pilot film may use at most 21,000 characters (about 25 minutes). Pilot 3 is not voiced until Ben upgrades or the plan renews. Never change or top up the plan.\n\n**Do.** Voice the merged script with Ben's narrator voice and the studio's usual voice checks (transcript match, no clipped words, steady level). Record the characters used. Open a pull request.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
       "ref": "",
       "film": "WW2:001",
@@ -267995,6 +268000,11 @@
           "at": "2026-11-17T20:57Z",
           "by": "gemini",
           "what": "done: PR #998 (6ac5525f44) & ww2-channel PR #2 (847dfed): WW2:001 narration mulberry_harbours_vo_v01 recorded in Ben Orbit Narrator (eleven_v3, 6 chapters, 20,431 spoken chars <= 21,000 cap; 9,496 ElevenLabs plan credits billed, 67,893/121,114 remaining; £0 extra). Audio on studio-live NAS (1,656.7s / 27:36.7, -19.7 LUFS, -22.9 dB mean, -3.4 dB peak, 1.1 LU chapter spread, 97.56% normalized Scribe word match, zero clipped boundary words)."
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "repo owb -> ww2 (registered film prefix WW2), so WW2 work stops writing Orbit's film records; J3060 / PR #1021"
         }
       ],
       "remaining_action": "Done: PR #998 (and ww2-channel PR #2) open; closing J2992 and posting report",
@@ -268015,20 +268025,20 @@
       "id": "J2993",
       "title": "WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch",
       "needs": "mini",
-      "repo": "owb",
+      "repo": "ww2",
       "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Channel rules (from the launch plan; YouTube's inauthentic-content policy).** Own researched script with a Sources line and a clear story; narration throughout; picture matched to each sentence; archive photos from US and UK government collections, licence checked and logged per image (public domain or Crown copyright expired); maps drawn in code; Veo only where it adds something, never realistic depictions of real people or real events presented as real, and any photoreal Veo scene logged for disclosure; no graphic violence; no shock framing; narrated as Ben, no expert persona; nothing reused from Orbit With Ben or History of Science.\n\n**Do.** Gather the archive photos on the shot list (licence logged per image), draw the maps in code, cut the film to the narration with slow camera moves and the studio's sound bed, 1080p. Build the thumbnail from the plan. Run the studio's QA gates and a full watch-through check, then put the cut on Ben's board for his watch, like any finished film. Prepare the title, description (subject line, chapters, sources, credits, an honest how-made line) and tags in the upload package. Do not upload.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
       "ref": "",
       "film": "WW2:001",
       "stage": "edit",
       "after": "J2992",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-18T18:27Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T17:20Z",
-      "result": "parked for Chief: repeated IWM/Navy archive routes exhausted; choose a bounded new source approach or accurate sourced code illustrations for uncleared windows. Timing work committed at 820c156807; read J2993_CONTINUATION_v06.md. Full edit and score still unfinished; no Ben watch submission.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-17T17:20Z",
@@ -268199,6 +268209,16 @@
           "at": "2026-11-18T18:32Z",
           "by": "relay",
           "what": "condition verification queued: J3067"
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "repo owb -> ww2 (registered film prefix WW2), so WW2 work stops writing Orbit's film records; J3060 / PR #1021"
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "reopened: Claude, acting Chief, 18 Nov 20:34Z: ruling on J3067's Option A (jobs/reviews/J3067/REVIEW.md). Reopened for Codex. (1) J2992's narration (mulberry_harbours_vo_v01, 1,656.7 s) and its 50 timing anchors are locked. Build on them. (2) Where iwm.org.uk returns 403, an IWM War Office or Admiralty Official Collection photo (1939-45, Crown copyright expired) may be cleared from Wikimedia Commons, but only when the Commons page quotes the IWM catalogue number, the collection and the official photographer word for word, and the full-resolution file passes a visual check. Log the Commons URL and the IWM number in ARCHIVE_PROVENANCE.md. Rule 5's bans on agency and wire photos and private donations still apply. (3) Use US federal public-domain photos (NARA 80-G, 26-G, SC) wherever they cover the window. (4) Do not upscale any picture more than 2.35x. Show smaller scans (740-800 px) as framed archival plates. Any window still uncovered gets an accurate, sourced code-drawn map or engineering diagram. Never use AI pictures of real events. (5) The open script and voice PRs (#996, #998 and their ww2-channel copies) do not block this; build from the files on studio-live. Finish the full edit, score, QA and the Ben-watch package by the 25 Nov due date. £0."
         }
       ],
       "remaining_action": "Choose archive replacements, then finish the full edit and score",
@@ -268206,28 +268226,16 @@
       "for": "codex",
       "kind": "assembly",
       "plain": "Make the finished film and send it to Ben's board to watch: How Britain Towed Two Floating Ports Across the Channel for D-Day",
-      "progress": {
-        "step": 1,
-        "of": 5,
-        "at": "2026-11-18T18:31Z",
-        "by": "codex",
-        "note": "50 exact transcript anchors verified; four variants resolved; archive routes exhausted and Chief fallback scope required"
-      },
       "taskKeys": [
         "WW2:001"
       ],
-      "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-18T19:32:00+00:00",
-        "recheck_task": "J3067"
-      }
+      "urgent": 7
     },
     {
       "id": "J2994",
       "title": "WW2 pilot 002: script and sources, \"How Long-Range Bombers Closed the Atlantic Black Pit in May 1943\"",
       "needs": "mini",
-      "repo": "owb",
+      "repo": "ww2",
       "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Channel rules (from the launch plan; YouTube's inauthentic-content policy).** Own researched script with a Sources line and a clear story; narration throughout; picture matched to each sentence; archive photos from US and UK government collections, licence checked and logged per image (public domain or Crown copyright expired); maps drawn in code; Veo only where it adds something, never realistic depictions of real people or real events presented as real, and any photoreal Veo scene logged for disclosure; no graphic violence; no shock framing; narrated as Ben, no expert persona; nothing reused from Orbit With Ben or History of Science.\n\n**Do.** From the film's TOPIC.md and PILOT_PLAN.md: write the narration script for a film of about 25 minutes (about 3,300 words, at most 21,000 characters), British English, calm documentary delivery, with the hook in the first 30 seconds and chapters. Build SOURCES.md with a source for every claim and number, then run a separate claims check. Add a shot list naming, for each line, the archive photo (with its collection, ID and licence) or map it uses. Open a pull request.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
       "ref": "",
       "film": "WW2:002",
@@ -268341,6 +268349,11 @@
           "at": "2026-11-18T04:42Z",
           "by": "codex",
           "what": "done: PR #1009 delivers v03 script, sources, completed independent Gemini claims check with dispositions, and 247 sentence picture instructions. 3268 words / 19767 characters; structural checks passed. Review/merge precedes J2995 narration; no film-stage approval or upload."
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "repo owb -> ww2 (registered film prefix WW2), so WW2 work stops writing Orbit's film records; J3060 / PR #1021"
         }
       ],
       "remaining_action": "Atlantic script and picture plan are ready for review",
@@ -268364,7 +268377,7 @@
       "id": "J2995",
       "title": "WW2 pilot 002: narration in Ben's voice",
       "needs": "mini",
-      "repo": "owb",
+      "repo": "ww2",
       "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Voice budget (Ben: \"use our elevenlabs plan\").** Ben's narrator voice via the studio's usual voice tool. About 79,000 characters are left this cycle, shared with Orbit and History of Science. Each pilot film may use at most 21,000 characters (about 25 minutes). Pilot 3 is not voiced until Ben upgrades or the plan renews. Never change or top up the plan.\n\n**Do.** Voice the merged script with Ben's narrator voice and the studio's usual voice checks (transcript match, no clipped words, steady level). Record the characters used. Open a pull request.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
       "ref": "",
       "film": "WW2:002",
@@ -268463,6 +268476,11 @@
           "at": "2026-11-18T06:54Z",
           "by": "gemini",
           "what": "done: PR #1014 (d37657e3f0) & ww2-channel PR #9 (3cde60a): WW2:002 narration atlantic_black_pit_vo_v01 recorded in Ben Orbit Narrator (eleven_v3, 6 chapters, 19,756 spoken chars <= 21,000 cap; 8,691 ElevenLabs plan credits billed, 59,202/121,114 remaining; £0 extra). Audio on studio-live NAS (1,441.02s / 24:01.02, -20.1 LUFS, -23.4 dB mean, -3.5 dB peak, 1.5 LU chapter spread, 97.18% raw / 99.88% normalized Scribe word match, zero clipped boundary words); submitted for review."
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "repo owb -> ww2 (registered film prefix WW2), so WW2 work stops writing Orbit's film records; J3060 / PR #1021"
         }
       ],
       "remaining_action": "Done: PR #1014 (and ww2-channel PR #9) open; closing J2995 and posting report",
@@ -268486,7 +268504,7 @@
       "id": "J2996",
       "title": "WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch",
       "needs": "mini",
-      "repo": "owb",
+      "repo": "ww2",
       "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Channel rules (from the launch plan; YouTube's inauthentic-content policy).** Own researched script with a Sources line and a clear story; narration throughout; picture matched to each sentence; archive photos from US and UK government collections, licence checked and logged per image (public domain or Crown copyright expired); maps drawn in code; Veo only where it adds something, never realistic depictions of real people or real events presented as real, and any photoreal Veo scene logged for disclosure; no graphic violence; no shock framing; narrated as Ben, no expert persona; nothing reused from Orbit With Ben or History of Science.\n\n**Do.** Gather the archive photos on the shot list (licence logged per image), draw the maps in code, cut the film to the narration with slow camera moves and the studio's sound bed, 1080p. Build the thumbnail from the plan. Run the studio's QA gates and a full watch-through check, then put the cut on Ben's board for his watch, like any finished film. Prepare the title, description (subject line, chapters, sources, credits, an honest how-made line) and tags in the upload package. Do not upload.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
       "ref": "",
       "film": "WW2:002",
@@ -268695,6 +268713,11 @@
           "at": "2026-11-18T19:46Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-18T20:45:00Z"
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "repo owb -> ww2 (registered film prefix WW2), so WW2 work stops writing Orbit's film records; J3060 / PR #1021"
         }
       ],
       "remaining_action": "Route the finished candidate to a capable film reviewer and resolve remaining labels and voice review",
@@ -268730,7 +268753,7 @@
       "id": "J2997",
       "title": "WW2 pilot 003: script and sources, \"Why the B-29 Superfortress Cost More Than the Atomic Bomb Project\"",
       "needs": "mini",
-      "repo": "owb",
+      "repo": "ww2",
       "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Channel rules (from the launch plan; YouTube's inauthentic-content policy).** Own researched script with a Sources line and a clear story; narration throughout; picture matched to each sentence; archive photos from US and UK government collections, licence checked and logged per image (public domain or Crown copyright expired); maps drawn in code; Veo only where it adds something, never realistic depictions of real people or real events presented as real, and any photoreal Veo scene logged for disclosure; no graphic violence; no shock framing; narrated as Ben, no expert persona; nothing reused from Orbit With Ben or History of Science.\n\n**Do.** From the film's TOPIC.md and PILOT_PLAN.md: write the narration script for a film of about 25 minutes (about 3,300 words, at most 21,000 characters), British English, calm documentary delivery, with the hook in the first 30 seconds and chapters. Build SOURCES.md with a source for every claim and number, then run a separate claims check. Add a shot list naming, for each line, the archive photo (with its collection, ID and licence) or map it uses. Open a pull request.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
       "ref": "",
       "film": "WW2:003",
@@ -268824,6 +268847,11 @@
           "at": "2026-11-17T21:06Z",
           "by": "macbook",
           "what": "done: PR #999 open on branch macbook/J2997 (merged awaits Chief): WW2:003 narration script (01_Script/SCRIPT.md & b29_superfortress_script_master_v01.md: 3,544 spoken words, 20,475 spoken chars across 6 chapters, hook in first 30s, VO held at £0), SOURCES.md (14 works cited, 42 verified claims C01-C43 + ready-to-paste YouTube Sources line), independent Gemini Argon claims check (CLAIMS_CHECK.md: 42/42 PASS, all 13 writer flags resolved), SHOT_LIST.md (all 66 paragraphs mapped to 24 verified PD-USGov NARA/NMUSAF/NASA-GRC/LoC-HAER records + 12 code maps/diagrams G1-G12), and 03_Picture/ARCHIVE_PROVENANCE.md. All tests pass."
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "repo owb -> ww2 (registered film prefix WW2), so WW2 work stops writing Orbit's film records; J3060 / PR #1021"
         }
       ],
       "remaining_action": "PR #999 verified; marking J2997 done",
@@ -268842,7 +268870,7 @@
       "id": "J2998",
       "title": "WW2 pilot 003: gather the archive photos and draw the maps",
       "needs": "mini",
-      "repo": "owb",
+      "repo": "ww2",
       "body": "**Ben, in chat (17 Nov 17:20Z):** \"Let's get working on the first videos and the full plan, and then once I've got the YouTube channel set up, I'll let you know ... start working on the first content, plans and everything.\" This is Ben's go on the three pilot films of the new WW2 documentary channel (plan: J2989, PR #989, `channels/ww2/00_Brand/LAUNCH_PLAN.md`). The YouTube channel does not exist yet: Ben will create it and say so. Nothing is uploaded until then.\n\n**Channel rules (from the launch plan; YouTube's inauthentic-content policy).** Own researched script with a Sources line and a clear story; narration throughout; picture matched to each sentence; archive photos from US and UK government collections, licence checked and logged per image (public domain or Crown copyright expired); maps drawn in code; Veo only where it adds something, never realistic depictions of real people or real events presented as real, and any photoreal Veo scene logged for disclosure; no graphic violence; no shock framing; narrated as Ben, no expert persona; nothing reused from Orbit With Ben or History of Science.\n\n**Do.** From the merged shot list, gather every archive photo (licence logged per image) and draw the maps in code, so the edit can start as soon as narration is possible. Do not voice this film: it waits for Ben's ElevenLabs upgrade or the plan's renewal.\n\n**Guards.** £0 beyond the existing plans. No channel created, no sign-in, no upload, no post. No account address in any file.\n",
       "ref": "",
       "film": "WW2:003",
@@ -268916,6 +268944,11 @@
           "at": "2026-11-17T22:29Z",
           "by": "gemini",
           "what": "done: 54 verified PD-USGov archive photos + 17 code-drawn maps/MP4s on studio-live (74/74 shots covered, £0); ww2-channel PR #8 & OWB PR #1003"
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "repo owb -> ww2 (registered film prefix WW2), so WW2 work stops writing Orbit's film records; J3060 / PR #1021"
         }
       ],
       "remaining_action": "None (complete)",
@@ -269025,7 +269058,7 @@
       "id": "J3000",
       "title": "WW2 film 004: topic review, script and sources, \"Why America's Submarine Torpedoes Failed for 21 Months in WW2\"",
       "needs": "mini",
-      "repo": "owb",
+      "repo": "ww2",
       "body": "**Ben, in chat (17 Nov 17:29Z):** \"Sounds like a solid plan. Please go ahead and start committing this plan. Put plan to action ... treat the rules the same as HOS and OWB.\" Then: \"Correction, when I mean rules, I mean don't reach out to me unless it's to watch a video. Use a lot of your own initiative.\" The channel needs a buffer of finished scripts so it can post two films a week once it is live, while narration waits on the voice budget.\n\n**Do.** Run the topic go/no-go review on this film's TOPIC.md (demand, three neighbours of 100k+ views, enough licensed archive pictures). If it fails, say why and propose a replacement topic instead of writing. If it passes, record the Chief's lock evidence and write the narration script for about 25 minutes (about 3,300 words, at most 21,000 characters), British English, calm documentary delivery, hook in the first 30 seconds, chapters; SOURCES.md with a source for every claim and number; a separate claims check; and the shot list. Open a pull request.\n\n**Rules:** `channels/ww2/studio/RULES.md` once J2990 writes it, and the launch plan. Own researched script with a source for every claim, narration throughout, a shot list naming each archive photo with its collection, ID and licence (public domain or Crown copyright expired), maps drawn in code, no graphic violence, nothing reused from Orbit With Ben or History of Science. Learn from the pilot 1 script review before you start. No narration in this job.\n\n**Guards.** £0. No channel, sign-in, upload or post. No account address in any file.\n",
       "ref": "",
       "film": "WW2:004",
@@ -269094,6 +269127,11 @@
           "at": "2026-11-18T05:33Z",
           "by": "codex",
           "what": "done: PR #1010: corrected topic locked; six-chapter original torpedo script (3168 words, dry-run 19513 characters), page-level sources, separate claims self-check, text quality pass, 41 paragraph source/shot mappings and ten official-photo provenance records. Narration dry run and privacy tests pass. No VO, media generation or spend. Archive downloads and final audiovisual checks remain later production work."
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "repo owb -> ww2 (registered film prefix WW2), so WW2 work stops writing Orbit's film records; J3060 / PR #1021"
         }
       ],
       "remaining_action": "Text package complete in pull request 1010; review before narration and picture production",
@@ -269117,7 +269155,7 @@
       "id": "J3001",
       "title": "WW2 film 005: topic review, script and sources, \"How One Old Destroyer Rammed Germany's Only Atlantic Dry Dock\"",
       "needs": "mini",
-      "repo": "owb",
+      "repo": "ww2",
       "body": "**Ben, in chat (17 Nov 17:29Z):** \"Sounds like a solid plan. Please go ahead and start committing this plan. Put plan to action ... treat the rules the same as HOS and OWB.\" Then: \"Correction, when I mean rules, I mean don't reach out to me unless it's to watch a video. Use a lot of your own initiative.\" The channel needs a buffer of finished scripts so it can post two films a week once it is live, while narration waits on the voice budget.\n\n**Do.** Run the topic go/no-go review on this film's TOPIC.md (demand, three neighbours of 100k+ views, enough licensed archive pictures). If it fails, say why and propose a replacement topic instead of writing. If it passes, record the Chief's lock evidence and write the narration script for about 25 minutes (about 3,300 words, at most 21,000 characters), British English, calm documentary delivery, hook in the first 30 seconds, chapters; SOURCES.md with a source for every claim and number; a separate claims check; and the shot list. Open a pull request.\n\n**Rules:** `channels/ww2/studio/RULES.md` once J2990 writes it, and the launch plan. Own researched script with a source for every claim, narration throughout, a shot list naming each archive photo with its collection, ID and licence (public domain or Crown copyright expired), maps drawn in code, no graphic violence, nothing reused from Orbit With Ben or History of Science. Learn from the pilot 1 script review before you start. No narration in this job.\n\n**Guards.** £0. No channel, sign-in, upload or post. No account address in any file.\n",
       "ref": "",
       "film": "WW2:005",
@@ -269176,6 +269214,11 @@
           "at": "2026-11-17T21:04Z",
           "by": "claudecode",
           "what": "done: done"
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "repo owb -> ww2 (registered film prefix WW2), so WW2 work stops writing Orbit's film records; J3060 / PR #1021"
         }
       ],
       "remaining_action": "Chief: topic lock and independent claims check on PR #1000",
@@ -269196,7 +269239,7 @@
       "id": "J3002",
       "title": "WW2 film 006: topic review, script and sources, \"Why Britain Built Its Fastest WW2 Bomber Out of Plywood and Balsa\"",
       "needs": "mini",
-      "repo": "owb",
+      "repo": "ww2",
       "body": "**Ben, in chat (17 Nov 17:29Z):** \"Sounds like a solid plan. Please go ahead and start committing this plan. Put plan to action ... treat the rules the same as HOS and OWB.\" Then: \"Correction, when I mean rules, I mean don't reach out to me unless it's to watch a video. Use a lot of your own initiative.\" The channel needs a buffer of finished scripts so it can post two films a week once it is live, while narration waits on the voice budget.\n\n**Do.** Run the topic go/no-go review on this film's TOPIC.md (demand, three neighbours of 100k+ views, enough licensed archive pictures). If it fails, say why and propose a replacement topic instead of writing. If it passes, record the Chief's lock evidence and write the narration script for about 25 minutes (about 3,300 words, at most 21,000 characters), British English, calm documentary delivery, hook in the first 30 seconds, chapters; SOURCES.md with a source for every claim and number; a separate claims check; and the shot list. Open a pull request.\n\n**Rules:** `channels/ww2/studio/RULES.md` once J2990 writes it, and the launch plan. Own researched script with a source for every claim, narration throughout, a shot list naming each archive photo with its collection, ID and licence (public domain or Crown copyright expired), maps drawn in code, no graphic violence, nothing reused from Orbit With Ben or History of Science. Learn from the pilot 1 script review before you start. No narration in this job.\n\n**Guards.** £0. No channel, sign-in, upload or post. No account address in any file.\n",
       "ref": "",
       "film": "WW2:006",
@@ -269270,6 +269313,11 @@
           "at": "2026-11-17T21:43Z",
           "by": "gemini",
           "what": "done: Completed WW2:006 (De Havilland Mosquito) topic review (GO recommended: 3 neighbours 5.39M/3.11M/2.39M views, Crown-expired IWM/TNA/LAC & US PD archive coverage, 3 titles + 2 thumbs), 3,300-word / 20,947-char narration script across 7 sections (vo_take.py --dry-run PASS, <= 21,000 cap, £0 spent), 10-work SOURCES.md, independent CLAIMS_CHECK.md (28/28 verified), 54-shot SHOT_LIST.md + 14 code graphics (G1-G14), and 03_Picture/ARCHIVE_PROVENANCE.md. Opened orbit-with-ben PR #1002 and ww2-channel PR #7."
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "repo owb -> ww2 (registered film prefix WW2), so WW2 work stops writing Orbit's film records; J3060 / PR #1021"
         }
       ],
       "remaining_action": "None (complete)",
@@ -270298,7 +270346,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -270310,6 +270358,11 @@
           "at": "2026-11-17T20:32Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "cancelled: Superseded by J3074: these orphans come from WW2 jobs writing into Orbit's film records (J3060). Root cause stopped (WW2 rows now repo=ww2); J3074 restores the records in one pass."
         }
       ],
       "remaining_action": "Chief resolves 001 script handoff and records the next owner/action",
@@ -270332,7 +270385,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -270344,6 +270397,11 @@
           "at": "2026-11-17T20:57Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "cancelled: Superseded by J3074: these orphans come from WW2 jobs writing into Orbit's film records (J3060). Root cause stopped (WW2 rows now repo=ww2); J3074 restores the records in one pass."
         }
       ],
       "remaining_action": "Chief resolves 001 vo handoff and records the next owner/action",
@@ -270366,7 +270424,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -270378,6 +270436,11 @@
           "at": "2026-11-17T21:04Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "cancelled: Superseded by J3074: these orphans come from WW2 jobs writing into Orbit's film records (J3060). Root cause stopped (WW2 rows now repo=ww2); J3074 restores the records in one pass."
         }
       ],
       "remaining_action": "Chief resolves 005 script handoff and records the next owner/action",
@@ -270400,7 +270463,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -270412,6 +270475,11 @@
           "at": "2026-11-17T21:30Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "cancelled: Superseded by J3074: these orphans come from WW2 jobs writing into Orbit's film records (J3060). Root cause stopped (WW2 rows now repo=ww2); J3074 restores the records in one pass."
         }
       ],
       "remaining_action": "Chief resolves 003 script handoff and records the next owner/action",
@@ -270434,7 +270502,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -270446,6 +270514,11 @@
           "at": "2026-11-17T21:44Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "cancelled: Superseded by J3074: these orphans come from WW2 jobs writing into Orbit's film records (J3060). Root cause stopped (WW2 rows now repo=ww2); J3074 restores the records in one pass."
         }
       ],
       "remaining_action": "Chief resolves 006 script handoff and records the next owner/action",
@@ -270468,7 +270541,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -270480,6 +270553,11 @@
           "at": "2026-11-17T22:30Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "cancelled: Superseded by J3074: these orphans come from WW2 jobs writing into Orbit's film records (J3060). Root cause stopped (WW2 rows now repo=ww2); J3074 restores the records in one pass."
         }
       ],
       "remaining_action": "Chief resolves 003 picture handoff and records the next owner/action",
@@ -270901,7 +270979,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -270913,6 +270991,11 @@
           "at": "2026-11-18T00:20Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "cancelled: Superseded by J3074: these orphans come from WW2 jobs writing into Orbit's film records (J3060). Root cause stopped (WW2 rows now repo=ww2); J3074 restores the records in one pass."
         }
       ],
       "remaining_action": "Chief resolves 002 script handoff and records the next owner/action",
@@ -271256,7 +271339,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -271268,6 +271351,11 @@
           "at": "2026-11-18T04:42Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "cancelled: Superseded by J3074: these orphans come from WW2 jobs writing into Orbit's film records (J3060). Root cause stopped (WW2 rows now repo=ww2); J3074 restores the records in one pass."
         }
       ],
       "remaining_action": "Chief resolves 002 script handoff and records the next owner/action",
@@ -271401,7 +271489,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -271413,6 +271501,11 @@
           "at": "2026-11-18T04:53Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "cancelled: Superseded by J3074: these orphans come from WW2 jobs writing into Orbit's film records (J3060). Root cause stopped (WW2 rows now repo=ww2); J3074 restores the records in one pass."
         }
       ],
       "remaining_action": "Chief resolves 002 vo handoff and records the next owner/action",
@@ -271435,7 +271528,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -271447,6 +271540,11 @@
           "at": "2026-11-18T05:56Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "cancelled: Superseded by J3074: these orphans come from WW2 jobs writing into Orbit's film records (J3060). Root cause stopped (WW2 rows now repo=ww2); J3074 restores the records in one pass."
         }
       ],
       "remaining_action": "Chief resolves 001 edit handoff and records the next owner/action",
@@ -271564,7 +271662,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -271576,6 +271674,11 @@
           "at": "2026-11-18T06:55Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "cancelled: Superseded by J3074: these orphans come from WW2 jobs writing into Orbit's film records (J3060). Root cause stopped (WW2 rows now repo=ww2); J3074 restores the records in one pass."
         }
       ],
       "remaining_action": "Chief resolves 002 vo handoff and records the next owner/action",
@@ -272061,7 +272164,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -272073,6 +272176,11 @@
           "at": "2026-11-18T10:13Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "cancelled: Superseded by J3074: these orphans come from WW2 jobs writing into Orbit's film records (J3060). Root cause stopped (WW2 rows now repo=ww2); J3074 restores the records in one pass."
         }
       ],
       "remaining_action": "Chief resolves 002 edit handoff and records the next owner/action",
@@ -273248,7 +273356,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -273260,6 +273368,11 @@
           "at": "2026-11-18T15:33Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "cancelled: Superseded by J3074: these orphans come from WW2 jobs writing into Orbit's film records (J3060). Root cause stopped (WW2 rows now repo=ww2); J3074 restores the records in one pass."
         }
       ],
       "remaining_action": "Chief resolves 001 edit handoff and records the next owner/action",
@@ -273282,7 +273395,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -273294,6 +273407,11 @@
           "at": "2026-11-18T15:51Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "cancelled: Superseded by J3074: these orphans come from WW2 jobs writing into Orbit's film records (J3060). Root cause stopped (WW2 rows now repo=ww2); J3074 restores the records in one pass."
         }
       ],
       "remaining_action": "Chief resolves 002 edit handoff and records the next owner/action",
@@ -274213,13 +274331,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-18T18:42Z",
+      "status": "done",
+      "by": "claude",
+      "since": "2026-11-18T20:34Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-18T18:32Z",
-      "result": "parked for Chief: J3067 condition verification complete (jobs/reviews/J3067/REVIEW.md @ 42c836ae28). Direct predecessor J2992 narration mulberry_harbours_vo_v01 (1,656.7s / 27:36.7, -19.7 LUFS, 97.56% Scribe match, 0 clipped words) is on studio-live NAS and all 50 Scribe anchors (shot_anchors_v02.json), 16 code-drawn graphic drafts (G1-G15 incl. G11a, 1080p25 12s), and 2 thumbnail candidates (passed J3049 ad-safety check) are verified in PR #1012 (820c156807). However, J2993 cannot reopen without an elected-Chief call because: (1) codex parked J2993 for a Chief Missing-footage fallback & archive provenance scope ruling on the 34 archive windows (whether the 9 high-res >=1748px IWM War Office/Admiralty Official Collection 1943-1944 photos may be cleared via verbatim Commons IWM Official Collection provenance + full-res visual review while iwm.org.uk returns HTTP 403, and authorising framed archival-plate layouts <=2.35x upscale + expanded sourced code-drawn engineering/operational diagrams for the 740-800px scans, excluded LAC C-029878 / Tate N05705 items, and unresolved PLUTO/storm windows); and (2) completed predecessor PRs #996/ww2-channel#4 (J2991 script/sources) and #998/ww2-channel#2 (J2992 VO) remain OPEN awaiting Chief merge. Elected Chief (chief/codex): run either Option A (reopen J2993 with the scope ruling + close J3067) or Option B (wait J2993 --recheck J3067 + close J3067) in jobs/reviews/J3067/REVIEW.md §3.",
+      "result": "Condition verified by Gemini (jobs/reviews/J3067/REVIEW.md). Chief ruled Option A and reopened J2993 for Codex with the archive and diagram scope.",
       "history": [
         {
           "at": "2026-11-18T18:32Z",
@@ -274260,6 +274378,11 @@
           "at": "2026-11-18T18:56Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3067 condition verification complete (jobs/reviews/J3067/REVIEW.md @ 42c836ae28). Direct predecessor J2992 narration mulberry_harbours_vo_v01 (1,656.7s / 27:36.7, -19.7 LUFS, 97.56% Scribe match, 0 clipped words) is on studio-live NAS and all 50 Scribe anchors (shot_anchors_v02.json), 16 code-drawn graphic drafts (G1-G15 incl. G11a, 1080p25 12s), and 2 thumbnail candidates (passed J3049 ad-safety check) are verified in PR #1012 (820c156807). However, J2993 cannot reopen without an elected-Chief call because: (1) codex parked J2993 for a Chief Missing-footage fallback & archive provenance scope ruling on the 34 archive windows (whether the 9 high-res >=1748px IWM War Office/Admiralty Official Collection 1943-1944 photos may be cleared via verbatim Commons IWM Official Collection provenance + full-res visual review while iwm.org.uk returns HTTP 403, and authorising framed archival-plate layouts <=2.35x upscale + expanded sourced code-drawn engineering/operational diagrams for the 740-800px scans, excluded LAC C-029878 / Tate N05705 items, and unresolved PLUTO/storm windows); and (2) completed predecessor PRs #996/ww2-channel#4 (J2991 script/sources) and #998/ww2-channel#2 (J2992 VO) remain OPEN awaiting Chief merge. Elected Chief (chief/codex): run either Option A (reopen J2993 with the scope ruling + close J3067) or Option B (wait J2993 --recheck J3067 + close J3067) in jobs/reviews/J3067/REVIEW.md §3."
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "done: Condition verified by Gemini (jobs/reviews/J3067/REVIEW.md). Chief ruled Option A and reopened J2993 for Codex with the archive and diagram scope."
         }
       ],
       "remaining_action": "Elected Chief issues J2993 archive-fallback/provenance ruling and records wait --recheck J3067 or reopen J2993",
@@ -274298,7 +274421,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -274310,6 +274433,11 @@
           "at": "2026-11-18T18:32Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "cancelled: Superseded by J3074: these orphans come from WW2 jobs writing into Orbit's film records (J3060). Root cause stopped (WW2 rows now repo=ww2); J3074 restores the records in one pass."
         }
       ],
       "remaining_action": "Chief resolves 001 edit handoff and records the next owner/action",
@@ -274639,6 +274767,38 @@
       "due": "2026-11-19T18:00:00Z",
       "kind": "chief",
       "plain": "Review and connect the repaired Field Order History studio software"
+    },
+    {
+      "id": "J3074",
+      "title": "Orbit 001-006: undo the stage changes WW2 jobs wrote into Orbit's film records",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Why (Claude, acting Chief, 18 Nov 20:34Z).** WW2 jobs were stored as `repo=owb, film=WW2:NNN`, and `studio.film_dir` dropped the `WW2:` prefix. So every claim, release and park of a WW2 job on films 001-006 changed Orbit's own film records with the same numbers (001 Aliens, 002 Black Hole, 003 Exoplanets, 005 Last Star, 006 Europa). The relay then raised 15 orphan-repair jobs for the Chief (J3014, J3015, J3016, J3017, J3018, J3019, J3025, J3030, J3032, J3033, J3035, J3041, J3055, J3056, J3068), and real work queued behind them. Fix in two parts: this run moved every WW2 row to `repo=ww2`, which stops new writes now. The code guard from J3060 (PR #1021) lands separately. The 15 repair jobs are cancelled in favour of this single job.\n\n**Do.**\n1. For each of Orbit films 001, 002, 003, 005 and 006, use git history to find every change to `02_Video-Projects/<film>_*/status.json` made by a WW2 job (J2991-J2998, J3000-J3002; the audit is `docs/review/J3060/AUDIT.md` on PR #1021's branch `macbook/J3060`). Restore each affected stage to its value just before the first WW2 write. Keep any change made since then by Orbit's own work.\n2. J3013 has already corrected 003's script stage and J3000 has corrected 004's. Check both, and leave them alone if they are right.\n3. Run `python3 scripts/studio.py status --check` and the test suite, regenerate STATUS.md, and deliver it as one PR for the Chief listing each film, the stage, the value before and after, and the commit used as evidence.\n\n**Guards.** Records only. Infer no approval, change no media, schedule, thumbnail test or Ben OK. If a stage's original state cannot be proven from history, leave it unchanged and list it.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-18T20:34Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T20:34Z",
+          "by": "claude",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Restore Orbit 001/002/003/005/006 status.json stages to their pre-WW2 values from git history; one PR with evidence per stage",
+      "due": "2026-11-19T18:00:00Z",
+      "for": "codex",
+      "kind": "studio",
+      "plain": "Put back the Orbit film records that the new WW2 channel's jobs overwrote by mistake",
+      "urgent": 6
     }
   ],
   "focus": [

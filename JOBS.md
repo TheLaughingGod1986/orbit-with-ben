@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2035, J2529, J3044.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2035, J2529, J3044, J3074, J2993.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -42,52 +42,37 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2933 | mini | blocked | claudecode | – | 010 edit · qa · `mini-claude-opus-5-5` · Review HOS 010 Short A v01 and Short C v01 (J2172, PR #611) | J2172 |
 | J2951 | cloud | open | – | – | assembly · Stop the refill tick using 3-4 GB: read the acting Chief once per scan |  |
 | J2986 | mini | blocked | claudecode | – | 033 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test |  |
-| J2993 | mini | blocked | codex | – | WW2:001 edit · for codex · assembly · WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch |  |
+| J2993 | mini | open (after J2992) | – | – | WW2:001 edit · for codex · assembly · WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch |  |
 | J2996 | mini | blocked | codex | – | WW2:002 edit · for codex · assembly · WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch |  |
 | J3012 | mini | open | – | – | chief · Decoupling phase 3: move the studio engine into its own repo, runbook now, move after a clean week |  |
-| J3014 | mini | open | – | – | chief · Chief: resolve 001 script orphan-review |  |
-| J3015 | mini | open | – | – | chief · Chief: resolve 001 vo orphan-review |  |
-| J3016 | mini | open | – | – | chief · Chief: resolve 005 script orphan-review |  |
-| J3017 | mini | open | – | – | chief · Chief: resolve 003 script orphan-review |  |
-| J3018 | mini | open | – | – | chief · Chief: resolve 006 script orphan-review |  |
-| J3019 | mini | open | – | – | chief · Chief: resolve 003 picture orphan-review |  |
 | J3020 | mini | blocked | gemini | – | 064 script · for gemini · script · `gemini-argon` · OWB 064: Write and check the script for the every-planet film | J3011 |
 | J3021 | mini | open (after J3020) | – | – | 064 vo · vo · OWB 064: Record and check narration for the every-planet film | J3011 |
 | J3022 | mini | open (after J3021) | – | – | 064 picture · chart · OWB 064: Prepare shelf pictures, graphics and three thumbnails for the every-planet film | J3011 |
 | J3023 | mini | open (after J3022) | – | – | 064 edit · assembly · OWB 064: Assemble and check the every-planet film, then put it on Ben’s watch board | J3011 |
-| J3025 | mini | open | – | – | chief · Chief: resolve 002 script orphan-doing |  |
 | J3026 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
-| J3030 | mini | open | – | – | chief · Chief: resolve 002 script orphan-review |  |
-| J3032 | mini | open | – | – | chief · Chief: resolve 002 vo orphan-blocked |  |
-| J3033 | mini | open | – | – | chief · Chief: resolve 001 edit orphan-doing |  |
-| J3035 | mini | open | – | – | chief · Chief: resolve 002 vo orphan-review |  |
 | J3039 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
-| J3041 | mini | open | – | – | chief · Chief: resolve 002 edit orphan-doing |  |
 | J3044 | mini | blocked | codex | – | for codex · studio · WW2 channel is live: record its channel ID, short name FOH on the board, connect it to the studio |  |
 | J3051 | mini | blocked | codex | – | for codex · review · `gpt-6-astra` · Verify condition for J3020 |  |
-| J3055 | mini | open | – | – | chief · Chief: resolve 001 edit orphan-doing |  |
-| J3056 | mini | open | – | – | chief · Chief: resolve 002 edit orphan-doing |  |
 | J3062 | mini | open | – | – | chief · Chief: resolve 034 edit orphan-review |  |
 | J3063 | mini | blocked | codex | – | for codex · studio · `gpt-6.1-sol` · First-day check at 6 h: "How Do Plants Clean the Air?" (ChbsigHD5_o) |  |
 | J3064 | mini | blocked | codex | – | studio · First-day check at 6 h: "If Voyager Needs 75,000 Years, How Far Is the Nearest Star?" (dH_yCRmzkMo) |  |
 | J3065 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Pluto Short about ice mountains (v02) Private, slot Wed 23 Dec 11:30 |  |
 | J3066 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Pluto Short about the frozen heart (v02, Test A opening) Private, slot Mon 21 Dec 11:30 |  |
-| J3067 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2993 |  |
-| J3068 | mini | open | – | – | chief · Chief: resolve 001 edit orphan-blocked |  |
 | J3070 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Restore HOS Studio response for the plants Short first-day check |  |
 | J3071 | macbook | claimed | macbook-2 | 2026-11-18T22:25Z | studio · Verify MacBook HOS Studio fallback for the plants Short |  |
 | J3072 | any | claimed | codex | 2026-11-18T22:34Z | for codex · assembly · `gpt-6.1-sol` · Repair Field Order History prerequisite PR checks |  |
 | J3073 | any | open (after J3072) | – | – | chief · Integrate repaired Field Order History connection prerequisites |  |
+| J3074 | mini | open | – | – | for codex · studio · Orbit 001-006: undo the stage changes WW2 jobs wrote into Orbit's film records |  |
 
 Recently finished:
 
 - J3069 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (17 OWB + 7 HOS longs; 88 OWB + 32 HOS Shorts. CTR hits vs 4%: OWB 2/17, HOS 4/7. 144 videos read without request errors; six analytics files saved in 7d57042a43 and published tracker c5c0b8a9 verified field-for-field. Missing Studio figures omitted; no YouTube writes or spend.)
+- J3068 cancelled: Chief: resolve 001 edit orphan-blocked ()
+- J3067 done: Verify condition for J2993 (Condition verified by Gemini (jobs/reviews/J3067/REVIEW.md). Chief ruled Option A and reopened J2993 for Codex with the archive and diagram scope.)
 - J3061 done: Verify condition for J3044 (Chief ruling: condition NOT MET, verified against fresh GitHub checks at unchanged heads and Gemini evidence in jobs/reviews/J3061/REVIEW.md. PR #1001 Rules and #1013 Content Ops checks FAIL; #1019 open; ww2-channel#10 merged. J3044 remains held with last_recheck J3061 and next check 2026-11-18T23:40:00Z. J3072 repairs code; J3073 depends on J3072 and owns gated integration and evidence-based reopening. No sign-in request, spend or YouTube change.)
 - J3060 done: Prevent channel-qualified jobs from changing another channel film record (PR #1021 open: reject inconsistent channel-qualified identities in board claim/release/completion and media lookup; reconcile 11 WW2 queue repos with all historical and production fields preserved; read-only audit links J3013/J3019 and existing repairs, flags 001 edit/002 residues for Chief. 174 tests pass plus diff check. No film status, media, schedule or active claim changed. Checkout main; Chief review/merge pending.)
 - J3059 done: HOS 009: Chief decision after corrected billing proposal review (KEEP PR651 d047b064 offline only after independent Claude review and reproduced tests/probes. Unmerged, unintegrated; all production holds and closed allowances preserved.)
 - J3058 done: HOS 009: independent Claude review of corrected offline billing evidence (done)
 - J3057 done: HOS 009: correct offline billing evidence proposal after Chief review (Corrected PR651 at d047b064; 11 tests and check_all pass; 28 reviewer probes inspected. Independent Claude review J3058 then Chief decision J3059 queued. No merge, spend, account requests or production change.)
-- J3054 done: Verify condition for J2035 (Chief ruling: condition NOT MET; accept Gemini documentary verification dfa6f416e7. Independently confirmed PR651 OPEN at ff02370b, Claude desk6980094321 approves offline rule only, J3052 then J3053 queued, no v03 files on Mini/NAS. J2035 held: input, last_recheck J3054, retry 2026-11-19T12:00:00Z; completed J2632 no longer triggers premature recheck. Follow-up J3052 records independent review, J3053 decides proposal/route including meter reconciliation. Assembly requires separately accepted compliant score. Prior allowance permanently closed, all gates retained. No media perception claim; zero spend/publication changes.)
-- J3053 done: HOS 009: decide reviewed billing evidence proposal (REQUEST CHANGES on HOS PR651 ff02370b: adopt J3052 three required fixes. Eight tests pass; 28 probes reproduce findings. Decision desk6983970987 and PR comment6983950157. J3057 queued for corrections then independent review and Chief decision. No merge, generation, account calls or guard change; closed allowance and holds intact.)
-- J3052 done: HOS 009: Claude independently review billing evidence proposal (Reviewer verdict FIX (recommendation, not a Chief ruling): 3 required changes to the offline proposal (string-only amount; raw_api refuses flattened keys; correct the J2664 citation), 6 recommended. HOS PR653 jobs/reviews/J3052/REVIEW.md 80dc8fe0; desk 6983820915. No merge, integration, account request or generation. J3053 decides.)
-- J3050 done: HOS 009: resolve billing evidence mapping without generation (Delivered HOS PR651 ff02370b: sanitized API/capture comparison, offline evidence-only normalizer, 8 synthetic tests PASS and check_all ALL CHECKS PASS. J3045 nested value unresolved; no account calls, POSTs, generation or guard deployment. Independent Claude J3052 then Chief J3053 queued; closed allowance and holds preserved.)
+- J3056 cancelled: Chief: resolve 002 edit orphan-doing ()
+- J3055 cancelled: Chief: resolve 001 edit orphan-doing ()
