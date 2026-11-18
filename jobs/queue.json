@@ -267656,13 +267656,13 @@
       "stage": "vo",
       "after": "J2994",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-18T04:44Z",
-      "eta": "2026-11-18T05:44Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T17:20Z",
-      "result": "",
+      "result": "parked for Chief: J2995 brief requires voicing the merged WW2:002 script, and PR #1009 (codex/j2994-atlantic @ 849a19f686) is still OPEN/unmerged with explicit 'Codex worker draft, not a VO lock — review/merge PR #1009 before J2995 voices NARRATION_v03.txt' (J3030 open). Zero credits spent. Preflight ready: live ElevenLabs pool has 67,893/121,114 chars remaining; 6-chapter [CHAPTER CARD] input built from lines_v03.json matches NARRATION_v03.txt byte-for-byte (SHA-256 4a46801b..., 19,756 spoken chars / 19,767 file chars <= 21,000 cap, 3,268 words, max chapter 3,810 chars; do not pass raw SCRIPT_v03.md or single-block --text-file to vo_take.py). Reopen J2995 once PR #1009 is reviewed/locked and merged to main.",
       "history": [
         {
           "at": "2026-11-17T17:20Z",
@@ -267688,6 +267688,11 @@
           "at": "2026-11-18T04:51Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Preflight PASS (0 spend): PR #1009 (849a19f686) unmerged; 67,893/121,114 ElevenLabs chars left; 6-ch lines_v03 dry-run verified"
+        },
+        {
+          "at": "2026-11-18T04:51Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J2995 brief requires voicing the merged WW2:002 script, and PR #1009 (codex/j2994-atlantic @ 849a19f686) is still OPEN/unmerged with explicit 'Codex worker draft, not a VO lock — review/merge PR #1009 before J2995 voices NARRATION_v03.txt' (J3030 open). Zero credits spent. Preflight ready: live ElevenLabs pool has 67,893/121,114 chars remaining; 6-chapter [CHAPTER CARD] input built from lines_v03.json matches NARRATION_v03.txt byte-for-byte (SHA-256 4a46801b..., 19,756 spoken chars / 19,767 file chars <= 21,000 cap, 3,268 words, max chapter 3,810 chars; do not pass raw SCRIPT_v03.md or single-block --text-file to vo_take.py). Reopen J2995 once PR #1009 is reviewed/locked and merged to main."
         }
       ],
       "remaining_action": "Await Chief review/merge of PR #1009 (J3030), then voice merged NARRATION_v03.txt (19,756 spoken chars), run voice checks & open PR",
