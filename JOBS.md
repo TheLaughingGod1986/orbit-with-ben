@@ -69,6 +69,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3026 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
 | J3027 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3020 |  |
 | J3028 | mini | open (after J3024) | – | – | chief · J2985: integrate reviewed credit panel and verify live board |  |
+| J3029 | mini | open | – | – | review · Verify condition for J2985 |  |
 
 Recently finished:
 
