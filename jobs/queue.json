@@ -271695,10 +271695,10 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-18T13:46Z",
+      "eta": "2026-11-18T14:31Z",
       "created_by": "claude",
       "created_at": "2026-11-18T11:37Z",
       "result": "",
@@ -271722,6 +271722,11 @@
           "at": "2026-11-18T11:51Z",
           "by": "claude",
           "what": "Channel verification pending (18 Nov 11:50Z): Field Order History is not phone-verified yet. Ben's number has hit YouTube's two-channels-a-year limit; he is arranging another number (a family member's mobile or a landline by voice call). Until it is verified the channel cannot take videos over 15 minutes or custom thumbnails. Build the films as planned; before any upload, check verification on the channel (Studio Settings, Channel, Feature eligibility), and if it is still missing, hold the upload and say so in one line on the board. Do not chase Ben about it."
+        },
+        {
+          "at": "2026-11-18T13:46Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Set channel ID, handle and short name FOH in both channel.json copies, sync, check the board chip reads FOH; analytics sign-in asked of Ben once",
@@ -271729,7 +271734,15 @@
       "for": "codex",
       "kind": "studio",
       "plain": "Hook the new Field Order History channel up to the studio now Ben has created it",
-      "urgent": 5
+      "urgent": 5,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-18T13:46Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3045",
