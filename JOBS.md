@@ -68,7 +68,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3051 | mini | blocked | codex | – | for codex · review · `gpt-6-astra` · Verify condition for J3020 |  |
 | J3055 | mini | open | – | – | chief · Chief: resolve 001 edit orphan-doing |  |
 | J3056 | mini | open | – | – | chief · Chief: resolve 002 edit orphan-doing |  |
-| J3061 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3044 |  |
+| J3061 | mini | claimed | gemini | 2026-11-18T19:28Z | for gemini · review · `gemini-argon` · Verify condition for J3044 |  |
 | J3062 | mini | open | – | – | chief · Chief: resolve 034 edit orphan-review |  |
 
 Recently finished:
