@@ -273679,6 +273679,11 @@
           "at": "2026-11-18T17:51Z",
           "by": "claude",
           "what": "approved by Ben: Watch 034 Pluto Short 2 Keeper water-ice mountains v02 (25.8 s, full-bleed 9:16) v02 (asked in J2868)"
+        },
+        {
+          "at": "2026-11-18T17:52Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-18T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Upload the Pluto Short about ice mountains (v02) Private, slot Wed 23 Dec 11:30",
@@ -273696,7 +273701,16 @@
         "job": "J2868",
         "askId": "J2868.3",
         "okAt": "2026-11-18T17:45Z"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J3066",
