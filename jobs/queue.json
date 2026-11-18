@@ -269061,13 +269061,13 @@
       "stage": "upload",
       "after": "J3004",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-17T18:24Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-17T18:22Z",
-      "result": "Waiting for: The 18 Nov 2026 morning tracker snapshot is available after the 06:40 UTC run",
+      "result": "",
       "history": [
         {
           "at": "2026-11-17T18:22Z",
@@ -269098,28 +269098,20 @@
           "at": "2026-11-18T06:55Z",
           "by": "relay",
           "what": "condition verification queued: J3034"
+        },
+        {
+          "at": "2026-11-18T09:37Z",
+          "by": "codex",
+          "what": "reopened: Chief ruling on J3034: KEEP condition verification. Independently verified 05_Analytics/hos/snapshots/2026-11-18.json takenAt 2026-11-18T06:40:27.975Z, SHA256 f82c9e92133b8e9d4fa8b74ffc7fdacda9a75bd5df7a8f3dab6d84632fc95bfd; xgx2lYHhYZM 1 view, cLKDiYP55J8 34, baselines 214 and 140. J3004 done; read-only approval intact. Release only this satisfied snapshot hold. Follow-up J3010 records launch note and desk report now. Correction to REVIEW.md: missing feed share means UNKNOWN, not proven second not-fed; 3/9 at six hours is not a complete day-one measure. Compare matched windows; 20 is a six-hour baseline. Check available day-one traffic sources before any topic-fatigue ruling; no YouTube or Buffer changes authorized."
         }
       ],
       "remaining_action": "Wait for 2026-11-18T06:40:00Z daily snapshot, then read xgx2lYHhYZM overnight reach and views",
       "due": "2026-11-18T10:00:00Z",
       "kind": "review",
       "plain": "Check Why Is It Called a Vaccine? after its first night",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-17T18:24Z",
-        "by": "gemini",
-        "note": "Follow-up queued by Chief after J3004; holding until 18 Nov 06:45Z after morning snapshot"
-      },
       "taskKeys": [
         "HOS:007"
-      ],
-      "hold": {
-        "type": "date",
-        "condition": "The 18 Nov 2026 morning tracker snapshot is available after the 06:40 UTC run",
-        "check_at": "2026-11-18T07:55:04+00:00",
-        "recheck_task": "J3034"
-      }
+      ]
     },
     {
       "id": "J3011",
