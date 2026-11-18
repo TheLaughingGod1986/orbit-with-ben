@@ -274136,10 +274136,10 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-18T23:52Z",
+      "eta": "2026-11-19T00:12Z",
       "created_by": "refill",
       "created_at": "2026-11-18T17:39Z",
       "result": "",
@@ -274233,6 +274233,11 @@
           "at": "2026-11-18T23:49Z",
           "by": "codex",
           "what": "reopened: J3070 handoff complete: J3071 f6fe5f717 / PR #1026 and J3085 verified responsive signed-in HistoryOfScienceYT and Since published Analytics at 18 Nov 20:37:02Z; J3086 accepted fallback. Routed to MacBook before reopening. Complete original read-only checks with actual observation time and elapsed hours; no fabricated six-hour reading."
+        },
+        {
+          "at": "2026-11-18T23:52Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Check the plants Short setup and current launch figures using the MacBook Studio browser",
@@ -274250,7 +274255,15 @@
       "taskKeys": [
         "HOS:006"
       ],
-      "escalated_at": "2026-11-18T20:57Z"
+      "escalated_at": "2026-11-18T20:57Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-18T23:52Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3064",
