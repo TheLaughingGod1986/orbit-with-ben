@@ -269907,9 +269907,14 @@
           "at": "2026-11-18T04:54Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-18T04:55Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3031; starting verification of J2995 wait condition (J2994 / J3030 / PR #1009)"
         }
       ],
-      "remaining_action": "Verify readiness: Await Chief review/merge of PR #1009 (J3030), then voice merged NARRATION_v03.txt (19,756 spoken chars), run voice checks & open PR",
+      "remaining_action": "Inspect J2994, J3030, PR #1009 merge/lock state, and WW2:002 VO readiness",
       "kind": "review",
       "recheck_of": "J2995",
       "due": "2026-11-18T05:53:10+00:00",
@@ -269926,11 +269931,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-18T04:54Z",
+        "at": "2026-11-18T04:55Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3031; starting verification of J2995 wait condition (J2994 / J3030 / PR #1009)"
+      },
+      "taskKeys": [
+        "WW2:002"
+      ]
     },
     {
       "id": "J3032",
