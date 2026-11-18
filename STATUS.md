@@ -80,6 +80,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 064 | script | gemini | 2026-11-18T01:49Z | 2026-11-18T02:49Z | - |
+| 064 | script | gemini | 2026-11-18T02:45Z | 2026-11-18T03:45Z | - |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
