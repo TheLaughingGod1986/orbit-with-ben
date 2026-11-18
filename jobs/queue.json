@@ -270469,18 +270469,23 @@
           "at": "2026-11-18T23:53Z",
           "by": "codex",
           "what": "step 3 of 4 done: Restored existing plan from job history; PR 1011 and rehearsal already delivered. Continuing CI adapters."
+        },
+        {
+          "at": "2026-11-18T23:56Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: PR 1011 updated 7e773c3c22: safe Mini service plist renderer, six tests pass; five MacBook launcher tests and rules/core/security checks pass. No service installed; live acceptance still pending."
         }
       ],
-      "remaining_action": "Finish migration CI and service checks before the gated live move",
+      "remaining_action": "Finish CI, board access and single-writer safeguards before the gated studio move",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-18T23:53Z",
+        "at": "2026-11-18T23:56Z",
         "by": "codex",
-        "note": "Restored existing plan from job history; PR 1011 and rehearsal already delivered. Continuing CI adapters."
+        "note": "PR 1011 updated 7e773c3c22: safe Mini service plist renderer, six tests pass; five MacBook launcher tests and rules/core"
       }
     },
     {
