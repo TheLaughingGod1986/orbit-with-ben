@@ -1,0 +1,120 @@
+{
+  "job": "J3071",
+  "for_job": "J3070",
+  "prerequisite_for": "J3063",
+  "agent": "macbook-2",
+  "machine": "the MacBook",
+  "video_id": "ChbsigHD5_o",
+  "video_title": "How Do Plants Clean the Air?",
+  "channel_name": "History of Science",
+  "channel_handle": "HistoryOfScienceYT",
+  "channel_id": "UCXp7HkBIl1LgaznXuZHJyRg",
+  "cdp_endpoint": "http://127.0.0.1:9222",
+  "tab_helper": "scripts/cdp_tabs.py:reuse_page",
+  "read_only": true,
+  "youtube_or_login_changes": false,
+  "j3063_or_j3064_modified": false,
+  "probes": [
+    {
+      "step": "1_initial_activity_check",
+      "observed_utc": "2026-11-18T20:30:31.520336+00:00",
+      "queue_claimed_jobs": ["J3071"],
+      "port_9223_orbit_studio": {
+        "reachable": true,
+        "browser": "Chrome/157.0.8103.79",
+        "page_tab_count": 1
+      },
+      "port_9222_hos_studio": {
+        "reachable": false,
+        "error": "ConnectionRefusedError ([Errno 61] Connection refused)",
+        "running_9222_processes": 0,
+        "singleton_locks_present": false,
+        "profile_dir_exists": true
+      }
+    },
+    {
+      "step": "2_reopen_existing_hos_profile",
+      "observed_utc": "2026-11-18T20:35:13.638483+00:00",
+      "method": "open -g -n -a 'Google Chrome' --args --remote-debugging-port=9222 --remote-allow-origins=* --user-data-dir=$HOME/.hos-chrome-cdp --profile-directory=Default --no-first-run --no-default-browser-check https://studio.youtube.com/",
+      "startup_elapsed_s": 0.55,
+      "browser": "Chrome/157.0.8103.79",
+      "protocol_version": "1.3",
+      "profile_or_extension_or_login_modified": false,
+      "processes_killed": 0,
+      "note": "Existing ~/.hos-chrome-cdp profile had closed cleanly earlier at 13:01 UTC with no SingletonLock; reopened in background via macOS LaunchServices per AGENTS.md ('A signed-in browser profile that isn't open is reopened by the worker itself'). Note for LaunchAgent maintenance: launchctl kickstart gui/501/com.owb.macbook-cdp exits 0 immediately and launchd terminates backgrounded nohup children because com.owb.macbook-cdp.plist lacks AbandonProcessGroup."
+    },
+    {
+      "step": "3_studio_dashboard_responsiveness_and_channel_check",
+      "observed_utc": "2026-11-18T20:35:59.286106+00:00",
+      "connect_over_cdp_s": 0.0662,
+      "reuse_page_s": 0.0079,
+      "runtime_evaluate_s": 0.0189,
+      "target_id": "EA394E247B8CE3D31BDC9C7D3C8291D6",
+      "page_tab_count": 1,
+      "url": "https://studio.youtube.com/channel/UCXp7HkBIl1LgaznXuZHJyRg",
+      "document_title": "Channel dashboard - YouTube Studio",
+      "body_text_length": 1375,
+      "signed_in_channel_name": "History of Science",
+      "has_hos_channel_id_UCXp7HkBIl1LgaznXuZHJyRg": true,
+      "has_orbit_channel_id": false,
+      "dashboard_latest_short_card": {
+        "title": "How Do Plants Clean the Air?",
+        "window_label": "First 9 hours 5 minutes",
+        "ranking_by_views": "9 of 10",
+        "views": 0,
+        "average_percentage_viewed": "0%",
+        "likes": 0
+      }
+    },
+    {
+      "step": "4_channel_handle_verification",
+      "observed_utc": "2026-11-18T20:36:57.790469+00:00",
+      "runtime_evaluate_s": 0.0095,
+      "url": "https://studio.youtube.com/channel/UCXp7HkBIl1LgaznXuZHJyRg/editing/profile",
+      "document_title": "Channel customisation - YouTube Studio",
+      "matched_profile_fields": [
+        "History of Science",
+        "HistoryOfScienceYT",
+        "https://www.youtube.com/channel/UCXp7HkBIl1LgaznXuZHJyRg"
+      ]
+    },
+    {
+      "step": "5_chbsighd5_o_since_published_analytics",
+      "observed_utc": "2026-11-18T20:37:02.820251+00:00",
+      "confirm_chip_utc": "2026-11-18T20:38:54.212534+00:00",
+      "connect_over_cdp_s": 0.0298,
+      "reuse_page_s": 0.0023,
+      "goto_domcontentloaded_s": 0.3716,
+      "runtime_evaluate_s": 0.0097,
+      "confirm_eval_s": 0.0181,
+      "requested_url": "https://studio.youtube.com/video/ChbsigHD5_o/analytics/tab-overview/period-since_publish",
+      "resolved_url": "https://studio.youtube.com/video/ChbsigHD5_o/analytics/hub_overview",
+      "target_id": "EA394E247B8CE3D31BDC9C7D3C8291D6",
+      "page_tab_count_after": 1,
+      "document_title": "Video analytics - YouTube Studio",
+      "ready_state": "complete",
+      "body_text_length": 856,
+      "selected_chips": [
+        "Insights",
+        "Since published"
+      ],
+      "observed_analytics_fields": {
+        "video_title": "How Do Plants Clean the Air?",
+        "duration_label": "0:25",
+        "period": "Since published",
+        "chart_range_labels": [
+          "18 Nov 2026, 11:30",
+          "18 Nov 2026, 20:36"
+        ],
+        "views": 0,
+        "watch_time_hours": 0.0,
+        "subscribers": 0,
+        "sixty_minute_views": 0,
+        "how_viewers_found_this_short_60m": "Not enough data",
+        "audience_retention_since_published": "Not enough data",
+        "how_viewers_engaged_since_published": "Not enough data",
+        "likes_since_published": 0
+      }
+    }
+  ]
+}
