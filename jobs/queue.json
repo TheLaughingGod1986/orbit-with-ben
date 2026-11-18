@@ -272318,9 +272318,14 @@
           "at": "2026-11-18T17:26Z",
           "by": "relay",
           "what": "condition verification queued: J3061"
+        },
+        {
+          "at": "2026-11-18T20:30Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-18T23:40:00Z"
         }
       ],
-      "remaining_action": "Complete Field Order History studio connection after prerequisite checks pass",
+      "remaining_action": "Await the assigned software repairs and integration review before completing the Field Order History connection",
       "due": "2026-11-19T18:00:00Z",
       "for": "codex",
       "kind": "studio",
@@ -272335,9 +272340,11 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "Merge repaired prerequisite PRs #1001 (channel move; Rules CI failed) and #1013 (collector; Content Ops lint failed), then reconcile and merge studio settings PR #1019. Identity ww2-channel#10 is merged. Live board remains prelaunch; do not request Ben sign-in until ww2 auth command is installed.",
-        "check_at": "2026-11-18T18:26:50+00:00",
-        "recheck_task": "J3061"
+        "condition": "J3061 Chief ruling: NOT MET. Fresh GitHub checks confirm PR #1001 at 01cc861217 still OPEN with Rules FAILURE; #1013 at ddad17ee9a still OPEN with Content Ops lint FAILURE; #1019 at 916ca3f732 still OPEN. Identity ww2-channel#10 is merged at 18e102e. Repair job J3072 must obtain passing checks, then dependent Chief job J3073 reviews and merges prerequisites and reconciled #1019, verifies installed ww2 auth and reopens J3044. Main remains prelaunch with owb/hos-only auth. No Ben sign-in request before installation.",
+        "check_at": "2026-11-18T23:40:00Z",
+        "last_recheck": "J3061",
+        "checked_at": "2026-11-18T20:30:33+00:00",
+        "checked_by": "codex"
       }
     },
     {
