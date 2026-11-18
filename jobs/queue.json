@@ -269922,9 +269922,14 @@
           "at": "2026-11-18T05:05Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Audited PR #1009 (849a19f686): 58 blocks, 247 shot rows, 0 mismatches, 0 claim flags, 5 PD/Crown-expired archive items PASS"
+        },
+        {
+          "at": "2026-11-18T05:05Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Committed jobs/reviews/J3031/REVIEW.md (d01a8c7102); stopping at protected elected-Chief call"
         }
       ],
-      "remaining_action": "Commit jobs/reviews/J3031/REVIEW.md and park protected Chief actions (PR #1009 merge + reopen J2995 or wait --recheck J3031)",
+      "remaining_action": "Elected Chief locks/merges PR #1009 and reopens J2995 (or records wait --recheck J3031 on J2995) and closes J3031",
       "kind": "review",
       "recheck_of": "J2995",
       "due": "2026-11-18T05:53:10+00:00",
@@ -269939,11 +269944,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-18T05:05Z",
         "by": "gemini",
-        "note": "Audited PR #1009 (849a19f686): 58 blocks, 247 shot rows, 0 mismatches, 0 claim flags, 5 PD/Crown-expired archive items P"
+        "note": "Committed jobs/reviews/J3031/REVIEW.md (d01a8c7102); stopping at protected elected-Chief call"
       },
       "taskKeys": [
         "WW2:002"
