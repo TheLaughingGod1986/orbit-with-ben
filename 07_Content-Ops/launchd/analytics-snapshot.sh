@@ -78,9 +78,10 @@ main() {
   ln -sfn "$repo/07_Content-Ops/node_modules" 07_Content-Ops/node_modules
 
   # Anything a failed run left behind is tracker data: keep it, then catch up with main.
+  local ww2_data="channels/ww2/05_Analytics"
   local lib=00_Brand/Channel-Setup/audits/shorts_open_library/library.json
-  git add -A -- "$data" "$lib"
-  git diff --cached --quiet || git commit -q -m "Channel tracker: data from an earlier run" -- "$data" "$lib"
+  git add -A -- "$data" "$lib" "$ww2_data"
+  git diff --cached --quiet || git commit -q -m "Channel tracker: data from an earlier run" -- "$data" "$lib" "$ww2_data"
   git fetch -q origin main
   if ! git rebase -q origin/main; then
     git rebase --abort
@@ -92,10 +93,17 @@ main() {
 
   (
     cd 07_Content-Ops || exit 1
-    unset GOOGLE_CLIENT_ID GOOGLE_CLIENT_SECRET YOUTUBE_REFRESH_TOKEN YT_ANALYTICS_REFRESH_TOKEN_OWB YT_ANALYTICS_REFRESH_TOKEN_HOS
+    unset GOOGLE_CLIENT_ID GOOGLE_CLIENT_SECRET YOUTUBE_REFRESH_TOKEN YT_ANALYTICS_REFRESH_TOKEN_OWB YT_ANALYTICS_REFRESH_TOKEN_HOS YT_ANALYTICS_REFRESH_TOKEN_WW2 YT_CHANNEL_ID_WW2
     npx tsx --env-file="$repo/07_Content-Ops/.env" scripts/analytics-snapshot.ts
   )
   local code=$?
+  # The existing unattended Studio worker gathers fields absent from the Analytics API.
+  # Keep queue commits in the shared checkout; the tracker worktree commits only analytics data.
+  (
+    cd 07_Content-Ops || exit 1
+    unset YT_CHANNEL_ID_WW2 YT_ANALYTICS_REFRESH_TOKEN_WW2
+    FIELD_ORDER_QUEUE_REPO="$repo" within 180 npx tsx --env-file="$repo/07_Content-Ops/.env" scripts/field-order-dispatch.ts
+  ) || code=1
   # Gate every Short scheduled in the next 14 days and add any missing one to the open-gate library.
   # Report only: a FAIL is for Claude to act on at 07:10; nothing here touches YouTube.
   local snap="$data/owb/snapshots/$(TZ=Europe/London date +%F).json"
@@ -116,9 +124,9 @@ main() {
   fi
   (cd 07_Content-Ops && npx tsx scripts/analytics-report.ts) || code=1
 
-  if [[ -n $(git status --porcelain -- "$data" "$lib") ]]; then
-    git add -A -- "$data" "$lib"
-    git commit -q -m "Channel tracker $(date +%F): daily snapshot, reports, dashboard, upcoming Shorts gate" -- "$data" "$lib"
+  if [[ -n $(git status --porcelain -- "$data" "$lib" "$ww2_data") ]]; then
+    git add -A -- "$data" "$lib" "$ww2_data"
+    git commit -q -m "Channel tracker $(date +%F): daily snapshot, reports, dashboard, upcoming Shorts gate" -- "$data" "$lib" "$ww2_data"
     local i
     for i in 1 2 3; do
       git push -q origin HEAD:main && break

@@ -1599,6 +1599,15 @@
   // Active jobs → Working on now → Last 24h → Totals. No Agents / Next live / feature card.
   // First day sits under Needs attention (10 Nov): it is the one card about how the videos themselves are doing.
   // The plan card sits above First day (14 Nov).
+  function fieldOrderCard(b) {
+    const d=b.fieldOrder;
+    if(!d) return '';
+    const value=x=>x==null?'pending':Number(x).toLocaleString('en-GB',{maximumFractionDigits:1});
+    const targets=(d.targets||[]).map(t=>`<li>${esc(t.name)}: <b>${value(t.current)} / ${value(t.target)}</b> · at the last 7-day pace: ${esc(t.eta||'not enough growth data')}</li>`).join('');
+    const films=(d.films||[]).map(f=>`<li>${esc(f.title)} (${esc(f.window)}): CTR ${value(f.ctr)}% (median ${value(f.medianCtr)}%); average duration ${value(f.metrics?.averageViewDuration)}s (median ${value(f.medianAvgSeconds)}s); average viewed ${value(f.viewed)}% (median ${value(f.medianViewed)}%). ${esc((f.flags||[]).join(' '))}</li>`).join('');
+    return `<section class="overview-p24" aria-label="Field Order History monetisation"><div class="ov-section-head"><h2>Field Order History · monetisation</h2></div><p>Planning line: ${esc(d.deadline||'2027-02-01')} · data through ${esc(d.through||'pending')}</p><ul>${targets||'<li>Subscribers: pending / 1,000</li><li>Watch hours: pending / 4,000 and 8,000</li>'}</ul><p>Qualified public hours from Studio Earn: ${value(d.eligibleWatchHours)} · read ${esc(d.studioReadAt||'pending')}</p><p>${esc(d.note||'')}</p><details><summary>Films against the channel median</summary><ul>${films||'<li>No film reads yet.</li>'}</ul></details></section>`;
+  }
+
   function overview(b, now) {
     const s=overviewModel(b,now);
     return `<div class="overview-home"><header class="overview-header"><div><h1>Studio</h1><p>${esc(channelList().map(c => c.name).join(" · "))}</p></div><a class="operation-status ${s.status.tone}" href="#agents" aria-label="Studio status: ${s.status.text}. Open Agents"><i aria-hidden="true"></i>${s.status.text}</a></header>
@@ -1612,6 +1621,7 @@
       ${workingOnNow(b)}
       ${last24Section(b)}
       ${p24Totals(b)}
+      ${fieldOrderCard(b)}
       ${channelsSection(b)}</div>`;
   }
 
