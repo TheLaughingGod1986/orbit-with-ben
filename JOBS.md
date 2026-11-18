@@ -59,25 +59,17 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3066 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Pluto Short about the frozen heart (v02, Test A opening) Private, slot Mon 21 Dec 11:30 |  |
 | J3070 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Restore HOS Studio response for the plants Short first-day check |  |
 | J3075 | mini | claimed | gemini | 2026-11-19T00:27Z | for gemini · review · `gemini-argon` · Verify condition for J2996 |  |
-| J3076 | mini | open | – | – | chief · Chief: resolve 001 script orphan-review |  |
-| J3077 | mini | open | – | – | chief · Chief: resolve 001 vo orphan-review |  |
-| J3078 | mini | open | – | – | chief · Chief: resolve 001 edit orphan-blocked |  |
-| J3079 | mini | open | – | – | chief · Chief: resolve 002 script orphan-review |  |
-| J3080 | mini | open | – | – | chief · Chief: resolve 002 vo orphan-review |  |
-| J3081 | mini | open | – | – | chief · Chief: resolve 003 picture orphan-review |  |
-| J3082 | mini | open | – | – | chief · Chief: resolve 005 script orphan-review |  |
-| J3083 | mini | open | – | – | chief · Chief: resolve 006 script orphan-review |  |
 | J3085 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3070 |  |
 
 Recently finished:
 
 - J3084 done: Verify condition for J3063 (Chief review complete: accepted J3071 MacBook fallback evidence f6fe5f717 / PR 1026. J3063 remains held until J3070 routes its handoff to the verified MacBook. Recorded wait --recheck J3084, next check 2026-11-18T22:30:00Z. Existing follow-up J3085 then J3070 must finish handoff; original setup checks and actual-time launch reading remain required. Mini unresponsive per 21:17Z probe. No performance verdict, video changes, spend or Ben action. Evidence jobs/reviews/J3084/REVIEW.md and J3071 evidence.json.)
+- J3083 cancelled: Chief: resolve 006 script orphan-review ()
+- J3082 cancelled: Chief: resolve 005 script orphan-review ()
+- J3081 cancelled: Chief: resolve 003 picture orphan-review ()
+- J3080 cancelled: Chief: resolve 002 vo orphan-review ()
+- J3079 cancelled: Chief: resolve 002 script orphan-review ()
+- J3078 cancelled: Chief: resolve 001 edit orphan-blocked ()
+- J3077 cancelled: Chief: resolve 001 vo orphan-review ()
+- J3076 cancelled: Chief: resolve 001 script orphan-review ()
 - J3074 done: Orbit 001-006: undo the stage changes WW2 jobs wrote into Orbit's film records (Delivered PR #1027 (5a6544a957): nine foreign stages restored to proven prior absence; 002 foreign claim and next removed; 003 script and 004 corrections preserved. Audit and 61-commit evidence included. Board/core/rules and focused studio checks pass. Full suite 1464 tests, 13 skips; two TMPDIR-dependent failures cleared by all 12 gate_upcoming tests passing under /private/tmp. Next: independent Chief review and merge; routing guard remains PR #1021. No media or publishing changes.)
-- J3073 done: Integrate repaired Field Order History connection prerequisites (Merged #1001 (1c93e71192), #1013 (77747cc0cf, fresh combined CI PASS), and reconciled #1019 (6de4f0a593, CI PASS). Mini main installed; 112 channel/board tests and all channel checks pass. WW2 own-channel read-only auth target verified without sign-in; unconfigured collector/dispatch disabled safely. FOH identity preserved. J3044 reopened for board sync and authorized sign-in handoff; legacy pilot files preserved with hash inventory. Report: _desk/reports/J3073/REPORT.md and studio thread. No spend, YouTube changes or unrelated hold release.)
-- J3072 done: Repair Field Order History prerequisite PR checks (Repaired prerequisites: #1001 8ba25c0074735313b6eb5bac6fddbbc29c4f9405 Rules CI 44393856313 PASS; #1013 909daf70667803e50bff224c9c80a420d45aff0d Content Ops 44392934605 and Rules 44392934623 PASS. Local analytics lint/typecheck/215 Vitest plus 6 lock tests PASS; final 139 focused Python tests PASS. Main reconciled into #1001 branch, concurrent pilot files preserved. Handoff report posted to studio thread, local copy /Users/benjaminoats/_desk/reports/J3072/REPORT.md. J3073 owns review/merge order and #1019 settings/cache/legacy-film reconciliation; J3044 remains held. No merge, YouTube change, sign-in, money or credits.)
-- J3071 done: Verify MacBook HOS Studio fallback for the plants Short (Verified local MacBook HOS Studio fallback on CDP 9222 via cdp_tabs.reuse_page (PR #1026, reported on J3070 PR #1024): existing ~/.hos-chrome-cdp reopened cleanly with zero login/profile/process changes; connect_over_cdp 0.030s, reuse_page 0.002s, Runtime.evaluate 0.010s on single tab EA394E247B8CE3D31BDC9C7D3C8291D6; signed-in channel verified as HistoryOfScienceYT (UCXp7HkBIl1LgaznXuZHJyRg); ChbsigHD5_o Since published Analytics loaded at 2026-11-18T20:37:02.820251+00:00 (re-confirmed 20:38:54Z: Views 0, Likes 0, retention/engagement Not enough data, dashboard rank 9 of 10). Read-only; J3063 and J3064 untouched; no launch verdict recorded.)
-- J3069 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (17 OWB + 7 HOS longs; 88 OWB + 32 HOS Shorts. CTR hits vs 4%: OWB 2/17, HOS 4/7. 144 videos read without request errors; six analytics files saved in 7d57042a43 and published tracker c5c0b8a9 verified field-for-field. Missing Studio figures omitted; no YouTube writes or spend.)
-- J3068 cancelled: Chief: resolve 001 edit orphan-blocked ()
-- J3067 done: Verify condition for J2993 (Condition verified by Gemini (jobs/reviews/J3067/REVIEW.md). Chief ruled Option A and reopened J2993 for Codex with the archive and diagram scope.)
-- J3061 done: Verify condition for J3044 (Chief ruling: condition NOT MET, verified against fresh GitHub checks at unchanged heads and Gemini evidence in jobs/reviews/J3061/REVIEW.md. PR #1001 Rules and #1013 Content Ops checks FAIL; #1019 open; ww2-channel#10 merged. J3044 remains held with last_recheck J3061 and next check 2026-11-18T23:40:00Z. J3072 repairs code; J3073 depends on J3072 and owns gated integration and evidence-based reopening. No sign-in request, spend or YouTube change.)
-- J3060 done: Prevent channel-qualified jobs from changing another channel film record (PR #1021 open: reject inconsistent channel-qualified identities in board claim/release/completion and media lookup; reconcile 11 WW2 queue repos with all historical and production fields preserved; read-only audit links J3013/J3019 and existing repairs, flags 001 edit/002 residues for Chief. 174 tests pass plus diff check. No film status, media, schedule or active claim changed. Checkout main; Chief review/merge pending.)
