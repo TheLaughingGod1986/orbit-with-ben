@@ -269261,10 +269261,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-18T09:52Z",
+      "eta": "2026-11-18T13:52Z",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
       "result": "",
@@ -269313,6 +269313,11 @@
           "at": "2026-11-18T05:44Z",
           "by": "codex",
           "what": "released: Preparation delivered: runbook PR #1011 and private studio rehearsal/j3012 at 534cf0f. Next resume fixes future-identity test assumptions and retained-thread routing, verifies board private access and CI/service adapters. Baseline split zero; future tests have three failures/four skips. Seven-day streak and prior-day notice still required before live move; no live switch. See docs/STUDIO_MOVE.md in PR."
+        },
+        {
+          "at": "2026-11-18T09:52Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Fix rehearsal identity and thread routing, verify private board access, then execute the move after its date gates",
