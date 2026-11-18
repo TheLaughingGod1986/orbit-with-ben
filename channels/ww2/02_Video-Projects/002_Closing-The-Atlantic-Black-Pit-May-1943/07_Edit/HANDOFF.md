@@ -1,3 +1,24 @@
+# J2996 sound candidate checkpoint — 18 November 2026 18:39 UTC
+
+Progress stays **2/5**. The original picture-polish job is complete (`picture-polish-v02.done = 0`); its report is copied into `PICTURE_POLISH_v02.json`. It decoded 36,076 frames at 1080p25 and preserved the narration packets. Full-size stills sampled at 30s and 500s confirm footer removal. The 30s frame still shows the low-contrast cyan “Carrier base” label crossing land: **fix before finished-film review**. Still inspection is not motion/audio perception.
+
+## New original score and mix
+
+- `07_Edit/score_candidate.py` produced a complete original 24:03.04, 48 kHz stereo score candidate. Source code synthesis only: no samples, external music or paid model service, £0. Six chapter-specific treatments follow actual delivered chapter times; restrained harmonic bed and sparse technical-chapter plucks. Candidate provenance/hash and NAS location: `05_Music/SCORE_PROVENANCE_v01.json`. Intent and listening checklist: `05_Music/SCORE_BRIEF_v01.md`. No musical quality/fit is claimed without listening.
+- `07_Edit/mix_candidate.py` creates a **separate** `07_Edit/score_mix_candidate_v03/atlantic_score_mix_CANDIDATE_v03.mp4` on the same NAS film root. Keeps v02 picture packets, mixes score 16 LU beneath original voice, raises both 2 dB under a -1 dBFS safety limiter. Source hashes checked, full decode/frame count and picture-packet hash comparison, bed/mix loudness and output hash are recorded in its `TECHNICAL_CHECK.json` when it completes.
+- Detached **tmux j2996-score-mix-v03**; log `/Users/benjaminoats/_desk/logs/j2996/score-mix-v03.log`; completion marker `/Users/benjaminoats/_desk/logs/j2996/score-mix-v03.done`. Missing marker means running: **do not duplicate**. Marker 0 means read/copy the new technical evidence; nonzero means inspect the log. New scripts compiled successfully. Original drafts, source WAV and all clips retained.
+- Original voice measured **-20.19 LUFS / -3.47 dBTP**. Raw original score **-33.26 LUFS / -23.41 dBTP**. These are measurements, not hearing. Mix checks were running at this checkpoint.
+- PR #1014 voice review is still OPEN, not inferred approved. PR #1018 remains this job's draft submission.
+
+## Next in this job
+
+1. Finish/check the detached mix (do not launch another), copy its evidence and inspect technical measurements. Listen to the candidate score; revise/reject if distracting, repetitive or unsuitable. No sound-stage completion yet.
+2. Correct remaining label contrast and review pacing, moving-map comprehension and archive treatment against the locked narration. Keep schematic caveats; no factual tracks/range claims invented.
+3. Complete **one actual full watch/listen quality pass** with demonstrated `audio_input` and `moving_video_input`. This session has neither; shell/ffmpeg, measurements and stills are not proof. If these inputs block the next step, use the required typed capability hold rather than generic retries. Do independent fixes first.
+4. Reconcile actual voice-stage review, finalise package and send only a finished reviewed cut to Ben's board. No Ben-watch submission, PASS, upload, account change, credit spend or media reuse occurred.
+
+---
+
 # J2996 picture-polish continuation — 18 November 2026 17:08 UTC
 
 Progress remains **2/5**. A separate full-film footer-cleanup render is running; no music, perceptual QA, approval or Ben-watch delivery is claimed.
