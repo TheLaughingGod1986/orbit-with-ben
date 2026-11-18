@@ -269355,13 +269355,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-18T03:24Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-18T00:01Z",
-      "result": "parked for Chief: re-review PR #987 at d569a115d3 after review 6968024257 fixes; 104 Python tests, both JS suites, 13 security tests and board/layout checks pass. J2985 remains held after J3024; no merge or deployment in this repair.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-18T00:01Z",
@@ -269447,6 +269447,11 @@
           "at": "2026-11-18T03:29Z",
           "by": "codex",
           "what": "blocked: parked for Chief: re-review PR #987 at d569a115d3 after review 6968024257 fixes; 104 Python tests, both JS suites, 13 security tests and board/layout checks pass. J2985 remains held after J3024; no merge or deployment in this repair."
+        },
+        {
+          "at": "2026-11-18T04:08Z",
+          "by": "codex",
+          "what": "reopened: Chief KEEP at d569a115d3 recorded in PR 987 comment 6968740645. Reopening only to claim and close completed repair review; J3028 owns integration and delivery, J2985 remains held."
         }
       ],
       "remaining_action": "Chief re-review of corrected credit pages before merge or deployment",
@@ -269454,14 +269459,7 @@
       "for": "codex",
       "kind": "assembly",
       "plain": "Fix the credit calculations so the board gives reliable advice about cheaper plans",
-      "escalated_at": "2026-11-18T02:43Z",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-18T03:29Z",
-        "by": "codex",
-        "note": "Pushed d569a115d3 to existing PR 987; corrected report and regenerated phone evidence ready for re-review"
-      }
+      "escalated_at": "2026-11-18T02:43Z"
     },
     {
       "id": "J3025",
