@@ -226538,10 +226538,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-18T20:58Z",
+      "eta": "2026-11-18T22:58Z",
       "created_by": "claude",
       "created_at": "2026-11-10T19:53Z",
       "result": "",
@@ -226900,6 +226900,11 @@
           "at": "2026-11-18T20:07Z",
           "by": "codex",
           "what": "released: Verified checkpoint: HOS655 merged 7d8738c7; four completed J3052/J3058 review files match original hashes on main. Required local checks, 344 Python tests and all GitHub checks PASS. Source PR653/654 closed as carried, branches retained. Stage2 remains incomplete: 551 has 15 address-bearing files and explicit diagnostic keep-open ruling; 561 has 378 and review-only keep-open ruling; 651 is clean but J3059 explicitly retains it open/unmerged/offline. Protected desk180 unchanged. Next: preserve exact source trees, review URLs and hash-pinned inputs and reconcile their migration disposition with these existing rulings before stage3. Do not repeat billing review, alter production pins or infer production approval. Evidence jobs/reviews/J2537/REVIEW_RECORDS_CARRY.md and JSON. No history rewritten; no timed picture-window hold."
+        },
+        {
+          "at": "2026-11-18T20:58Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Resolve migration handling of retained diagnostic and offline-proposal branches",
