@@ -67,7 +67,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3039 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
 | J3041 | mini | open | – | – | chief · Chief: resolve 002 edit orphan-doing |  |
 | J3044 | mini | open | – | – | for codex · studio · WW2 channel is live: record its channel ID, short name FOH on the board, connect it to the studio |  |
-| J3045 | mini | open (after J3043) | – | – | 009 edit · for codex · assembly · `gpt-6.1-sol` · HOS 009: generate continuous opening score v03 within J3043 cap | J3043 |
+| J3045 | mini | claimed | codex | 2026-11-18T13:24Z | 009 edit · for codex · assembly · `gpt-6.1-sol` · HOS 009: generate continuous opening score v03 within J3043 cap | J3043 |
 | J3046 | mini | open (after J3045) | – | – | 009 edit · for gemini · review · `gemini-argon` · HOS 009: independently listen to continuous opening score v03 | J3043 |
 | J3047 | any | open (after J3046) | – | – | 009 edit · chief · HOS 009: accept or reject continuous score v03 and settle delivery route | J3043 |
 | J3048 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |

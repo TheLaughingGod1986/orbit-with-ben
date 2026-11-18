@@ -271641,10 +271641,10 @@
       "stage": "edit",
       "after": "J3043",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-18T11:54Z",
+      "eta": "2026-11-18T13:24Z",
       "created_by": "codex",
       "created_at": "2026-11-18T11:45Z",
       "result": "",
@@ -271658,6 +271658,11 @@
           "at": "2026-11-18T11:53Z",
           "by": "relay",
           "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
+        },
+        {
+          "at": "2026-11-18T11:54Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Generate one guarded opening cue and verify its files and music checks",
@@ -271673,7 +271678,15 @@
         "by": ""
       },
       "for": "codex",
-      "model": "gpt-6.1-sol"
+      "model": "gpt-6.1-sol",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-18T11:54Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3046",
