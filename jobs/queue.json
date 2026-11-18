@@ -268976,13 +268976,13 @@
       "stage": "script",
       "after": "J3011",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-18T00:21Z",
-      "eta": "2026-11-18T04:58Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-17T23:36Z",
-      "result": "",
+      "result": "parked for Chief: 064 script master v01 (93.1/100 PASS, 1,246 spoken words / 8,161 chars, SHA-256 c9945afa...), 16-row live-verified SOURCES.md, GEMINI_QUOTE_PASS_v01.md, CLAUDE_QUOTE_CHECK_v01.md, and film-specific MUSIC_BRIEF_v01.md committed in 3b9f165c43; stand-in draft awaits Chief/Claude explicit script lock before releasing J3021 VO",
       "history": [
         {
           "at": "2026-11-17T23:36Z",
@@ -269073,6 +269073,11 @@
           "at": "2026-11-18T03:06Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Committed 064 script/sources/quote-checks/music package (3b9f165c43); parking J3020 for Chief/Claude script lock"
+        },
+        {
+          "at": "2026-11-18T03:06Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: 064 script master v01 (93.1/100 PASS, 1,246 spoken words / 8,161 chars, SHA-256 c9945afa...), 16-row live-verified SOURCES.md, GEMINI_QUOTE_PASS_v01.md, CLAUDE_QUOTE_CHECK_v01.md, and film-specific MUSIC_BRIEF_v01.md committed in 3b9f165c43; stand-in draft awaits Chief/Claude explicit script lock before releasing J3021 VO"
         }
       ],
       "remaining_action": "Chief or Claude records explicit script lock on 064 master v01 (commit 3b9f165c43) and closes J3020 to release J3021 VO",

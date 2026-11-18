@@ -62,7 +62,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3017 | mini | open | – | – | chief · Chief: resolve 003 script orphan-review |  |
 | J3018 | mini | open | – | – | chief · Chief: resolve 006 script orphan-review |  |
 | J3019 | mini | open | – | – | chief · Chief: resolve 003 picture orphan-review |  |
-| J3020 | mini | claimed | gemini | 2026-11-18T04:58Z | 064 script · for gemini · script · `gemini-argon` · OWB 064: Write and check the script for the every-planet film | J3011 |
+| J3020 | mini | blocked | gemini | – | 064 script · for gemini · script · `gemini-argon` · OWB 064: Write and check the script for the every-planet film | J3011 |
 | J3021 | mini | open (after J3020) | – | – | 064 vo · vo · OWB 064: Record and check narration for the every-planet film | J3011 |
 | J3022 | mini | open (after J3021) | – | – | 064 picture · chart · OWB 064: Prepare shelf pictures, graphics and three thumbnails for the every-planet film | J3011 |
 | J3023 | mini | open (after J3022) | – | – | 064 edit · assembly · OWB 064: Assemble and check the every-planet film, then put it on Ben’s watch board | J3011 |
