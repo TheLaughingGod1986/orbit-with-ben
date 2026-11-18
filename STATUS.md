@@ -80,6 +80,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 004 | script | codex | 2026-11-18T05:19Z | 2026-11-18T08:18Z | J3000 WW2 film 004: topic review, script and sources, "Why America's Submarine Torpedoes Failed for 21 Months in WW2" |
+| 004 | script | codex | 2026-11-18T05:20Z | 2026-11-18T05:40Z | J3000 topic evidence and script preparation |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
