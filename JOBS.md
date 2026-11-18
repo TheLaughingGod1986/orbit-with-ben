@@ -70,6 +70,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3047 | any | claimed | codex | 2026-11-18T13:27Z | 009 edit · chief · HOS 009: accept or reject continuous score v03 and settle delivery route | J3043 |
 | J3048 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J3049 | mini | open | – | – | for codex · studio · WW2: add an ad-safety packaging rule and the £2 RPM planning figure, and check the pilot thumbnails |  |
+| J3050 | any | open | – | – | 009 edit · for codex · assembly · `gpt-6.1-sol` · HOS 009: resolve billing evidence mapping without generation | J3047 |
 
 Recently finished:
 

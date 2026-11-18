@@ -1,5 +1,5 @@
 {
-  "next_id": 3050,
+  "next_id": 3051,
   "jobs": [
     {
       "id": "J0001",
@@ -272041,6 +272041,38 @@
       "for": "codex",
       "kind": "studio",
       "plain": "Keep Field Order History's films fully monetised and put a realistic revenue figure in its plan"
+    },
+    {
+      "id": "J3050",
+      "title": "HOS 009: resolve billing evidence mapping without generation",
+      "needs": "any",
+      "repo": "hos",
+      "body": "J3047 elected HOS Chief disposition, 18 Nov 2026. No spend, no generation and no billing or account changes. The J3043/J3045 allowance is permanently closed, unused (0 POSTs); this job cannot reopen it. Preserve J2808 rejection and J2035/J2171 holds.\nPrepare a bounded 30-minute code/evidence proposal for the billing preflight mismatch documented in merged HOS PR647/648 and Claude desk6978888233. Compare the raw nested current_overage.amount/currency with flattened historical provenance current_overage_amount/current_overage_currency. Establish the official API contract from primary documentation plus sanitized captured responses; distinguish a mapping error from absent billing evidence. Do not infer unchanged account state from sparse observations.\nIn an isolated PR, propose explicit normalization with refusal tests for absent/null/non-numeric/negative/nonzero amounts, contradictory dual representations, missing currency and any unknown state. No POST, no live generation smoke test, no guard deployment or relaxation. Preserve extension flags/limits, active plan, pending reconciliation, live tariff, lock and pause requirements. Tests must use synthetic fixtures, never account secrets. Unknown billing remains no POST. If evidence is insufficient record exactly what is unresolved, not a zero default.\nQueue independent Claude review of the proposed evidence rule (desk6978888233) and elected-Chief decision after that; no implementation may authorize generation. A future production scope would need a separate explicit decision; no historical allowance may be pooled or renewed. Deliver the PR and sanitized findings by 19 Nov 12:00Z; no automatic retry timer. This is a new code/evidence task, not another unchanged score verification.\n",
+      "ref": "J3047",
+      "film": "009",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-18T13:10Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T13:10Z",
+          "by": "codex",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Prepare a tested billing evidence proposal for independent review",
+      "due": "2026-11-19T12:00:00Z",
+      "for": "codex",
+      "kind": "assembly",
+      "model": "gpt-6.1-sol",
+      "plain": "Check why the gravity music billing check stopped safely"
     }
   ],
   "focus": [
