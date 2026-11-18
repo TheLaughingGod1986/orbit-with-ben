@@ -1,3 +1,17 @@
+# J2996 label-polish checkpoint — 18 November 2026, 19:45 UTC
+
+Progress remains **2/5**. The score mix v03 finished successfully; technical evidence is copied into `SCORE_MIX_v03.json`. Full decode: 36,076 frames, 1080p25, 24:03.04. Encoded picture packets unchanged. Actual measured mix is **-18.22 LUFS / -1.34 dBTP**, with the bed measured 16 LU below original VO before the shared +2 dB gain. Loudnorm output fields describe its diagnostic normalization pass, not a separately saved master. No sound quality or perceptual approval is inferred.
+
+## In progress: separate label correction
+
+`label_polish.py` adds opaque paper/ink backplates over the existing low-contrast carrier labels in exactly **11 sentence intervals** (four early-map states, seven geography states), using conformed EDL v02 frame boundaries. It preserves label wording, map geometry, original files and encoded audio. A full-size 30-second composite still was inspected: old cyan label fully covered, new label readable across coastline, adjacent ship and aircraft retained. This is still-image inspection only. Other map labels/pacing remain part of the actual quality review.
+
+Detached session: **j2996-label-polish-v04**. Log: `/Users/benjaminoats/_desk/logs/j2996/label-polish-v04.log`. Completion marker: `/Users/benjaminoats/_desk/logs/j2996/label-polish-v04.done`. **Missing marker means running: do not duplicate.** On zero, read NAS `07_Edit/label_polish_candidate_v04/TECHNICAL_CHECK.json`, copy evidence and inspect representative final stills. Output: `atlantic_label_polish_CANDIDATE_v04.mp4` in that folder. Source mix hash is verified before render; full decode/frame count and unchanged audio packets are checked after render. First attempt failed before creating video because this ffmpeg lacks `filter_complex_script`; corrected to direct `filter_complex`. Failed log/marker retained as `label-polish-v04-attempt1.*`.
+
+PR #1014 remains **OPEN**, no reviews or merge, checked this session. No voice approval inferred. Session capability record explicitly has no demonstrated audio_input or moving_video_input. After independent finishing work, use a typed capability hold if the next step is the full perceptual review; do not recycle generic input retries. Remaining: capable full watch/listen (music fit, fatigue, speech, motion, pacing and remaining label clarity), voice-stage reconciliation, final package and Chief review before Ben-watch submission. No PASS, upload, spend, account change or Ben-watch submission.
+
+---
+
 # J2996 sound candidate checkpoint — 18 November 2026 18:39 UTC
 
 Progress stays **2/5**. The original picture-polish job is complete (`picture-polish-v02.done = 0`); its report is copied into `PICTURE_POLISH_v02.json`. It decoded 36,076 frames at 1080p25 and preserved the narration packets. Full-size stills sampled at 30s and 500s confirm footer removal. The 30s frame still shows the low-contrast cyan “Carrier base” label crossing land: **fix before finished-film review**. Still inspection is not motion/audio perception.
