@@ -270699,9 +270699,14 @@
           "at": "2026-11-18T09:06Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-18T09:09Z",
+          "by": "macbook-2",
+          "what": "step 1 of 3 done"
         }
       ],
-      "remaining_action": "Independently verify the corrected script and record its lock verdict",
+      "remaining_action": "Directly verify every MUST QUOTE in v02 against primary sources, run review:script and gate:episode, and write CLAUDE_QUOTE_CHECK_v02.md and jobs/reviews/J3037/REVIEW.md",
       "due": "2026-11-23T18:00:00Z",
       "kind": "review",
       "plain": "Check the corrected planet script before narration starts",
@@ -270715,13 +270720,14 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-18T09:06Z",
-        "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "at": "2026-11-18T09:09Z",
+        "by": "macbook-2"
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3038",
