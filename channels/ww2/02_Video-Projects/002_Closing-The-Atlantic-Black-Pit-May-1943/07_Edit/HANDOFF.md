@@ -1,3 +1,16 @@
+# J3075 / J2996 full perceptual watch-and-listen review — 18 November 2026, 22:34 UTC
+
+- **Perceptual watch/listen completed by `gemini` (`gemini-argon` / Gemini 4 Argon High)** with demonstrated multimodal `audio_input` and `moving_video_input` across the full `24:03.04` (`1,443.04 s`, `36,076` frames) candidate `v04` (`atlantic_label_polish_CANDIDATE_v04.mp4`, SHA-256 `6dbaecf3ba953596be81df223be234df127d9b3e164c38f0dc4b1636705524c5`). Full timestamped report: `07_Edit/WATCH_LISTEN_REVIEW_v04.md`.
+- **Audio, speech & score fit (`00:00–24:03.04`): PASS (worker perceptual review).** Every one of the 247 sentences across all 6 chapters (`00:00–24:01.02` + `2.02 s` tail) was heard directly: clean British narration in Ben's voice, zero stumbles, zero repeated/dropped words, zero clipped boundaries, clean `0.70 s` chapter breaths (`03:43.99`, `08:01.16`, `12:26.41`, `16:26.86`, `20:59.00`). The 6-chapter synthesised score (`-18.22 LUFS / -1.34 dBTP` mix, `16 LU` under VO) sits cleanly under speech with appropriate chapter mood shifts and zero masking or fatigue. PR #1014 (`J2995` VO) is verified by ear and ready for Chief stage PASS/merge.
+- **Moving-picture & label quality pass (`00:00–24:03.04`): NEEDS `v05` visual fixes before Chief final review and Ben watch.**
+  1. **Clipped archive photo credit line (`08:01–08:03`, `09:16–10:03`):** `polish_footer.py` (`y >= 990` mask) horizontally clips the bottom half of `IWM / Air Ministry official photograph • Crown copyright expired` on `CH 18035` and `CH 18031` (and archive photo holds are static).
+  2. **Uncovered cyan carrier labels in Ch 5–6 (`20:10–20:13`, `20:23–20:32`, `20:33–24:03`):** `label_polish.py` covered Ch 1–2 (`early_maps`, `geography_maps`) but missed cyan `Moving carrier base` in `carrier_maps.py` and `Carrier: moving base` in `ending_maps.py` crossing the tan Labrador/Newfoundland coastline.
+  3. **Card bleed-through at `11:36–11:40` (`Fuel and radar`):** underlying yellow callout `Equipment: detect a contact` is not cleared under the four top cards, so `nt` pokes out between `Fuel` and `Radar`.
+  4. **Map locator and callout overlaps across coastlines and moving aircraft paths:** `Northern Ireland` (`05:44–08:00`), `Iceland`, `NewfoundlandTorpedo losses...` (`02:13–02:17`), and Greenland/Labrador/aircraft-track callouts listed with exact timestamps in `07_Edit/WATCH_LISTEN_REVIEW_v04.md`.
+- **Next step:** Elected Chief (`grok`) releases the `J2996` capability hold (`jobs.py reopen J2996`) so `codex` can render `v05` addressing the four visual items in `07_Edit/WATCH_LISTEN_REVIEW_v04.md`, and rules on PR #1014 (`J2995` VO).
+
+---
+
 # J2996 final-candidate verification — 18 November 2026, 19:46 UTC
 
 Progress remains **2/5**; no completed-film approval. Candidate v04 has finished, and no render is running. Completion marker `label-polish-v04.done` is **0**. Recomputed file SHA256 matches **6dbaecf3ba953596be81df223be234df127d9b3e164c38f0dc4b1636705524c5**. Full decode, 36,076 frames, 1080p25, 24:03.04 and unchanged encoded audio are recorded in `LABEL_POLISH_v04.json`. Retained mix measurements: -18.22 LUFS / -1.34 dBTP.
