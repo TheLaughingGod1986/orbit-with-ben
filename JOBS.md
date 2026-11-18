@@ -71,6 +71,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3037 | mini | claimed | macbook-2 | 2026-11-18T11:06Z | 064 script · for gemini · review · `gemini-argon` · OWB 064: Verify corrected script and decide the narration lock | J3027 |
 | J3038 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2035 |  |
 | J3039 | mini | claimed | gemini | 2026-11-18T11:09Z | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
+| J3040 | mini | open | – | – | for gemini · studio · Shorts Test A, first readout: the opening Short against its two siblings, 7 days |  |
 
 Recently finished:
 

@@ -1,5 +1,5 @@
 {
-  "next_id": 3040,
+  "next_id": 3041,
   "jobs": [
     {
       "id": "J0001",
@@ -270839,6 +270839,37 @@
       "taskKeys": [
         "HOS:013"
       ]
+    },
+    {
+      "id": "J3040",
+      "title": "Shorts Test A, first readout: the opening Short against its two siblings, 7 days",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Scheduled readout, due today (Wed 18 Nov).** A scheduled task set up earlier fired at 09:05Z into Claude's cloud session: \"Test A first readout (05_Analytics/tests/SHORTS_TESTS.md). Compare 025's opening Short (Wed 11 Nov) with its Mon 9 and Fri 13 Shorts from the tracker snapshots. Measures: day-1 Shorts-feed share, 7-day views, average % viewed, and the 025 long's views from the SHORTS traffic source in each Short's week. Post the table on #99, put the headline on the board, and tell Ben in one line.\" That session now stays lean, so the readout comes to the studio.\n\n**Do.**\n1. From `05_Analytics/owb/snapshots/` (and the Mini's analytics reader where a figure is missing), for film 025's three Shorts (Mon 9, Wed 11 = the opening Short, Fri 13 Nov): day-1 share of views from the Shorts feed, views at 7 days, average percentage viewed, and the 025 long's views from the SHORTS traffic source in each Short's week (Mon-Sun around each Short). Say plainly where a figure is not available and why; never estimate one.\n2. Write the readout into `05_Analytics/tests/SHORTS_TESTS.md` under the first readout (Wed 18 Nov), with the table and a one-line verdict against the test's own pass rule (the full verdict waits for the 9 Dec readout and the other films).\n3. Post the table on the current studio thread (#954; #99 is retired) and put the headline on the board where test results show.\n4. The one line for Ben is the headline on the board; do not message him separately.\n\n**Guards.** Read-only analytics. £0. No account address in any file or post.\n\n**Result.** The table, the headline, and where it was posted.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-18T09:10Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T09:10Z",
+          "by": "claude",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "Compare 025's opening Short with its Mon and Fri Shorts (feed share, 7-day views, % viewed, long's Shorts-traffic views); write it up, post on #954, headline on the board",
+      "due": "2026-11-18T18:00:00Z",
+      "for": "gemini",
+      "kind": "studio",
+      "plain": "Check whether starting a Short with the film's own opening worked better, one week in"
     }
   ],
   "focus": [
