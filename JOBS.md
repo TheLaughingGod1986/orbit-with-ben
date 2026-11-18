@@ -70,7 +70,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3045 | mini | open (after J3043) | – | – | 009 edit · assembly · HOS 009: generate continuous opening score v03 within J3043 cap | J3043 |
 | J3046 | mini | open (after J3045) | – | – | 009 edit · for gemini · review · `gemini-argon` · HOS 009: independently listen to continuous opening score v03 | J3043 |
 | J3047 | any | open (after J3046) | – | – | 009 edit · chief · HOS 009: accept or reject continuous score v03 and settle delivery route | J3043 |
-| J3048 | mini | open | – | – | review · Verify condition for J2171 |  |
+| J3048 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 
 Recently finished:
 
