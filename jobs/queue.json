@@ -270041,9 +270041,14 @@
           "at": "2026-11-18T07:10Z",
           "by": "codex",
           "what": "step 0 of 3 done: Chief review has its own three-step record in chief_relay; worker completion is not script approval."
+        },
+        {
+          "at": "2026-11-18T07:11Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Reviewed exact v01 and primary sources. FIX recorded on J3020; J3036 corrects script and reruns Gemini; J3037 follows J3036 for independent lock review."
         }
       ],
-      "remaining_action": "Record the script correction ruling and assign the follow-up checks",
+      "remaining_action": "Record the final review result and verify the held narration dependency",
       "kind": "review",
       "recheck_of": "J3020",
       "due": "2026-11-18T04:07:49+00:00",
@@ -270058,11 +270063,11 @@
       "for": "codex",
       "model": "gpt-6-astra",
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-18T07:10Z",
+        "at": "2026-11-18T07:11Z",
         "by": "codex",
-        "note": "Chief review has its own three-step record in chief_relay; worker completion is not script approval."
+        "note": "Reviewed exact v01 and primary sources. FIX recorded on J3020; J3036 corrects script and reruns Gemini; J3037 follows J3"
       },
       "taskKeys": [
         "OWB:064"
