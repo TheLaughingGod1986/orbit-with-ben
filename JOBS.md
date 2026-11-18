@@ -68,6 +68,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3041 | mini | open | – | – | chief · Chief: resolve 002 edit orphan-doing |  |
 | J3042 | mini | claimed | gemini | 2026-11-18T11:48Z | 009 edit · for gemini · review · `gemini-argon` · HOS 009: revise opening music scope after silent phrase gaps | J3038 |
 | J3043 | any | open (after J3042) | – | – | 009 edit · chief · HOS 009: decide revised continuous opening score scope | J3038 |
+| J3044 | mini | open | – | – | for codex · studio · WW2 channel is live on YouTube: record its channel ID and connect it to the studio |  |
 
 Recently finished:
 

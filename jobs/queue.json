@@ -1,5 +1,5 @@
 {
-  "next_id": 3044,
+  "next_id": 3045,
   "jobs": [
     {
       "id": "J0001",
@@ -271510,6 +271510,37 @@
       "due": "2026-11-18T15:30:00Z",
       "kind": "chief",
       "plain": "Approve the revised music plan for the gravity film and assign the next steps"
+    },
+    {
+      "id": "J3044",
+      "title": "WW2 channel is live on YouTube: record its channel ID and connect it to the studio",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben created the YouTube channel (18 Nov 11:37Z).** Field Order History, handle @FieldOrderHistory, channel ID UCu94mInMFosxu3W0H6jlI6Q (https://www.youtube.com/channel/UCu94mInMFosxu3W0H6jlI6Q), a Brand Account channel, empty. He is dressing it now from the J2999 kit in iCloud (profile photo, banner, description).\n\n**Do.**\n1. Put the channel ID and handle in the channel's `studio/channel.json` (its own repo, TheLaughingGod1986/ww2-channel, after J3009's move, PR #1001) and the studio's cached copy, then `scripts/channels.py sync` and `channel_check.py --all`.\n2. The board's Field Order History card stops saying \"YouTube not connected\" once the studio can read the channel. Reading its analytics needs Ben's own read-only sign-in for this channel: when everything else is ready, ask him once, in one line on the thread, with the exact steps (J3006's collector, PR #1013).\n3. Check the channel's public page shows the name, handle, picture and banner, and say if anything is missing; do not change anything in YouTube Studio yourself without Ben's sign-in.\n\n**Guards.** £0. No upload, no post as the channel. No account address in any file.\n\n**Result.** The settings change, the board card's state, and what is still needed for analytics.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-18T11:37Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T11:37Z",
+          "by": "claude",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Record Field Order History's channel ID and handle in channel.json, sync the registry, connect the board card; analytics sign-in asked of Ben once",
+      "due": "2026-11-19T18:00:00Z",
+      "for": "codex",
+      "kind": "studio",
+      "plain": "Hook the new Field Order History channel up to the studio now Ben has created it"
     }
   ],
   "focus": [
