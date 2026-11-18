@@ -1,5 +1,5 @@
 {
-  "next_id": 3084,
+  "next_id": 3086,
   "jobs": [
     {
       "id": "J0001",
@@ -274003,6 +274003,11 @@
           "at": "2026-11-18T20:57Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-18T21:13Z",
+          "by": "relay",
+          "what": "condition verification queued: J3084"
         }
       ],
       "remaining_action": "Wait for browser recovery in J3070, then finish the plants Short launch check using observed figures",
@@ -274032,7 +274037,8 @@
       "hold": {
         "type": "dependency",
         "condition": "Chief ruling 18 Nov: incomplete technical input failure, not a performance verdict. Fresh existing-tab document.title probe timed out after 8 seconds; no analytics reading exists. J3070 must restore responsive signed-in HOS Studio and verify Since published analytics for ChbsigHD5_o before J3063 resumes its original read-only setup and statistics check. No video changes authorized.",
-        "check_at": "2026-11-18T21:00:00Z"
+        "check_at": "2026-11-18T22:13:50+00:00",
+        "recheck_task": "J3084"
       },
       "escalated_at": "2026-11-18T20:57Z"
     },
@@ -274654,6 +274660,11 @@
           "at": "2026-11-18T20:25Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-18T21:00:00Z"
+        },
+        {
+          "at": "2026-11-18T21:13Z",
+          "by": "relay",
+          "what": "condition verification queued: J3085"
         }
       ],
       "remaining_action": "Verify the MacBook fallback evidence before reopening the original plants video check",
@@ -274683,7 +274694,8 @@
       "hold": {
         "type": "dependency",
         "condition": "J3071 must verify responsive signed-in HistoryOfScienceYT on the MacBook local browser and load Since published Analytics for ChbsigHD5_o, with timestamped evidence. Mini renderer recovery probes failed at 20:22-20:24Z despite responsive browser control plane. J3063 stays held until verified; no video changes authorized.",
-        "check_at": "2026-11-18T21:00:00Z"
+        "check_at": "2026-11-18T22:13:50+00:00",
+        "recheck_task": "J3085"
       }
     },
     {
@@ -275236,6 +275248,69 @@
         "kind": "orphan-review",
         "signature": "2fce1143db441fe345fe"
       }
+    },
+    {
+      "id": "J3084",
+      "title": "Verify condition for J3063",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3063: Chief ruling 18 Nov: incomplete technical input failure, not a performance verdict. Fresh existing-tab document.title probe timed out after 8 seconds; no analytics reading exists. J3070 must restore responsive signed-in HOS Studio and verify Since published analytics for ChbsigHD5_o before J3063 resumes its original read-only setup and statistics check. No video changes authorized.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3063 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-18T21:13Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T21:13Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Wait for browser recovery in J3070, then finish the plants Short launch check using observed figures",
+      "kind": "review",
+      "recheck_of": "J3063",
+      "due": "2026-11-18T19:39:00+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3085",
+      "title": "Verify condition for J3070",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3070: J3071 must verify responsive signed-in HistoryOfScienceYT on the MacBook local browser and load Since published Analytics for ChbsigHD5_o, with timestamped evidence. Mini renderer recovery probes failed at 20:22-20:24Z despite responsive browser control plane. J3063 stays held until verified; no video changes authorized.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3070 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-18T21:13Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T21:13Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Verify the MacBook fallback evidence before reopening the original plants video check",
+      "kind": "review",
+      "recheck_of": "J3070",
+      "mini_only": true,
+      "due": "2026-11-18T20:45:00+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
