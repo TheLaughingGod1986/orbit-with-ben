@@ -1,3 +1,19 @@
+# J2996 final-candidate verification — 18 November 2026, 19:46 UTC
+
+Progress remains **2/5**; no completed-film approval. Candidate v04 has finished, and no render is running. Completion marker `label-polish-v04.done` is **0**. Recomputed file SHA256 matches **6dbaecf3ba953596be81df223be234df127d9b3e164c38f0dc4b1636705524c5**. Full decode, 36,076 frames, 1080p25, 24:03.04 and unchanged encoded audio are recorded in `LABEL_POLISH_v04.json`. Retained mix measurements: -18.22 LUFS / -1.34 dBTP.
+
+Full-size stills extracted from the actual final candidate at 30, 430, 470 and 500 seconds were inspected. Both corrected carrier labels are readable on opaque paper backplates; ship/aircraft symbols and schematic caveats remain. Remaining visible issue: at 430/470 seconds, the Northern Ireland label crosses the yellow shore arrow and dark sea, and at 470 seconds also the aircraft. Iceland at 30 seconds is dark over sea. These need contrast/placement attention in the single quality pass. Still sampling does not verify motion, speech, music fit, pacing or fatigue.
+
+PR #1014 checked again: **OPEN**, no reviews, no merge; voice approval is unresolved. Draft edit PR #1018 remains open. Package now identifies the actual v04 candidate and technical evidence rather than an in-progress mix; still explicitly non-uploadable.
+
+## Exact next step / capability hold
+
+This session inspected its available input tools: still-image viewing and shell text output are available; **neither audio_input nor moving_video_input is demonstrated**. The next full watch-and-listen check cannot be performed honestly here. Record a typed capability hold requiring both, as the dispatch instruction requires. Chief/review lane must route the check to a capable reviewer and reconcile voice review. The older studio rule allows Chief to use technical evidence and Ben's final watch; this worker has not made that protected decision. No generic retry and no claim to having heard/watched the cut.
+
+Review exact v04 candidate at the NAS path in `LABEL_POLISH_v04.json`; do not rerender unchanged work. Address remaining label clarity, animation/pacing, music fit and voice delivery; finish package and Chief decision before Ben-watch submission. Source code, original media and prior versions retained. No spend, upload, PASS or Ben-watch submission.
+
+---
+
 # J2996 label-polish checkpoint — 18 November 2026, 19:45 UTC
 
 Progress remains **2/5**. The score mix v03 finished successfully; technical evidence is copied into `SCORE_MIX_v03.json`. Full decode: 36,076 frames, 1080p25, 24:03.04. Encoded picture packets unchanged. Actual measured mix is **-18.22 LUFS / -1.34 dBTP**, with the bed measured 16 LU below original VO before the shared +2 dB gain. Loudnorm output fields describe its diagnostic normalization pass, not a separately saved master. No sound quality or perceptual approval is inferred.
