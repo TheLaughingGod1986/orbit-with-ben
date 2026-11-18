@@ -178930,9 +178930,14 @@
           "at": "2026-11-18T11:46Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-18T15:30:00Z"
+        },
+        {
+          "at": "2026-11-18T13:11Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-19T12:00:00Z"
         }
       ],
-      "remaining_action": "Wait for the revised gravity score to pass full checks, listening review and Chief acceptance",
+      "remaining_action": "Wait for a compliant score; billing evidence proposal is assigned to J3050",
       "due": "2026-11-15T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -178948,8 +178953,8 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "J3043 approved scope PR645 (7bf38d74); await J3045 bounded wonder_v03 generation -> J3046 fresh demonstrated-audio review -> J3047 elected-Chief score acceptance. v01/v02 remain rejected by J2808; only accepted v03 with all gates permits long assembly. J2171 remains held.",
-        "check_at": "2026-11-18T15:30:00Z"
+        "condition": "J3047 NOT ACCEPTED: v03 not generated; J3043 allowance permanently closed unused. J3050 must deliver new billing evidence proposal, independent review and new Chief route decision. No repeat of unchanged score checks; reopen only on separately accepted compliant score, all original gates retained.",
+        "check_at": "2026-11-19T12:00:00Z"
       }
     },
     {
