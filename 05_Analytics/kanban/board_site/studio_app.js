@@ -1942,7 +1942,7 @@
       const bars = `<div class="credit-bars">` +
         (pm.usedShare != null ? `<div class="cbar"><div class="cbar-head"><strong>Used</strong><span>${esc(pm.usedDetail)}</span></div><div class="bar"><i class="${pm.tone}" style="width:${usedW}%"></i></div></div>` : "") +
         (pm.timeShare != null ? `<div class="cbar"><div class="cbar-head"><strong>Time</strong><span>${esc(pm.timeDetail)}</span></div><div class="bar"><i class="time" style="width:${timeW}%"></i></div></div>`
-          : pm.windowEnd ? `<div class="cbar"><div class="cbar-head"><strong>Time</strong><span>${esc(pm.windowEnd)}</span></div></div>` : "") +
+          : pm.windowEnd ? `<div class="cbar"><div class="cbar-head"><strong>Time</strong><span>${esc(pm.timeDetail || pm.windowEnd)}</span></div></div>` : "") +
         `</div>`;
       return `<a class="credit" href="/ai"><div class="credit-top"><span>${esc(name)}</span><b class="${pm.tone}">${esc(pm.fig)}${pm.paceWord ? `<span class="credit-pace">· ${esc(pm.paceWord)}</span>` : ""}</b></div>` +
         (pm.planLine ? `<div class="credit-plan">${esc(pm.planLine)}</div>` : "") +
@@ -1960,7 +1960,7 @@
         <span class="meta">${c.agent ? "Online · coordinating production" : "No Chief up: jobs wait"}</span></div></div>
       ${section("Agent team", Object.keys(AGENTS).length, team + '<p class="meta">Green: working now. Amber: online but idle, or not checked in lately. Red: out of usage or failing; its jobs go to the next agent.</p>')}
       ${agentQueue(b,now)}
-      ${section("Credits", null, `<div class="credits">${credit}</div><p class="meta">Used vs time in the current window, plus each plan's monthly verdict. The board advises only; changing a plan is Ben's.</p>`, ' <a class="more" href="/ai">See all</a>')}`;
+      ${section("Credits", null, `<div class="credits">${credit}</div><p class="meta">Used vs time in the current window, plus plan advice from verified billing cycles or labelled rolling history. The board advises only; changing a plan is Ben's.</p>`, ' <a class="more" href="/ai">See all</a>')}`;
   }
 
   const CREDIT_WEEKLY = new Set(["claude", "codex", "codex-macbook", "cursor", "gemini"]);
@@ -2041,7 +2041,7 @@
       : id === "claude" ? /claude/i : id === "elevenlabs" ? /elevenlabs/i : null;
     const sub = plans.find(p => Array.isArray(p.pools) && p.pools.includes(id)) || (matchRe ? plans.find(p => matchRe.test(p.name || "")) : null) || {};
     const start = cyc.start || (pool && pool.since) || sub.cycleStart || "";
-    const renews = cyc.renews || (pool && pool.renews) || sub.renews || "";
+    const renews = sub.billingVerified === false ? "" : cyc.renews || (pool && pool.renews) || sub.renews || "";
     const gbp = cyc.gbp != null ? cyc.gbp : sub.gbp;
     const currentGbp = cyc.currentGbp != null ? cyc.currentGbp : sub.currentGbp;
     const planName = (cyc.planName || sub.name || "").replace(/\s*\(30 TB\)|\s*\(shared plan\)|\s*\(Codex\)|\s*\(top tier\)/gi, "").trim();
@@ -2051,7 +2051,7 @@
     const priceBit = currentGbp && gbp && currentGbp !== gbp ? `£${currentGbp}/mo now (£${gbp} planned)`
       : gbp != null ? `£${gbp}/mo` : "";
     const shared = id === "gemini" || id === "vertex";
-    const planLine = [planName, priceBit ? (shared ? `${priceBit} shared` : priceBit) : "", renewLabel || (planName ? "billing renewal date unread" : "")]
+    const planLine = [planName, priceBit ? (shared ? `${priceBit} shared` : priceBit) : "", renewLabel || (planName ? "billing renewal date unread · rolling history" : "")]
       .filter(Boolean).join(" · ");
     return {
       planName, gbp, currentGbp, start, renews, startMs, endMs, renewLabel, planLine, shared,
@@ -2084,19 +2084,24 @@
         const past = pool.pastCycleMaxUsed ? `; last cycle used ${Math.round(pool.pastCycleMaxUsed).toLocaleString("en-GB")}` : "";
         return `Verdict after 1 week of cycle (${dIn}d in) · Keeping Ultra (£189.99) this month (9 Nov decision${past}), then review £90 tier (10,000)`;
       }
-      return `Verdict after 1 week of cycle (${dIn}d into month)`;
+      return `Verdict after 1 week (${dIn}d of ${monthPct == null ? "rolling history" : "billing cycle"})`;
     }
     if (isWeekly) {
       const wkIn = wkAll.filter(w => w.inCycle);
-      const wks = wkIn.length ? wkIn : (wkAll.length ? wkAll : [{ peakUsed: Math.round(usedShare * 100), hitLimit: usedShare >= 0.94 }]);
+      const wks = wkIn.length ? wkIn : (wkAll.length ? wkAll : [{ peakUsed: Math.round(usedShare * 100), hitLimit: usedShare >= 1 }]);
       const hits = wks.filter(w => w.hitLimit).length;
       const avgWk = Math.round(wks.reduce((a, w) => a + Number(w.peakUsed || 0), 0) / wks.length);
-      const maxWk = Math.max(...wks.map(w => Number(w.peakUsed || 0)), Math.round(usedShare * 100));
-      const subHit = wks.some(w => w.sublimitHit) || /\bfable\s+100%\s+used\b/i.test((pool.latest || {}).note || "");
-      if (hits > 0) return `Keep: hit its weekly limit ${hits} of ${wks.length} ${wks.length === 1 ? "week" : "weeks"} (avg ${avgWk}%/wk)`;
+      const basis = cur && (cur.quotaId || cur.name);
+      const comparable = wkAll.filter(w => !w.quotaId || w.quotaId === basis);
+      const uncertain = wkAll.some(w => !w.quotaId || w.quotaId !== basis || w.windowUnknown);
+      const maxWk = Math.max(...comparable.map(w => Number(w.peakUsed || 0)), Math.round(usedShare * 100));
+      const subHit = wkAll.some(w => w.sublimitHit) || /\bfable\s+100%\s+used\b/i.test((pool.latest || {}).note || "");
+      if (hits > 0) return `Keep: hit its weekly limit ${hits} of ${wks.length} ${wks.length === 1 ? "week" : "weeks"} (avg ${avgWk}%/wk)${wks.some(w => w.partial) ? " · partial observed windows; full-week use unknown" : ""}${hasCycleBounds ? "" : " · rolling history"}`;
       if (!cur) return "";
-      const cheaper = tiers.filter(t => t.gbp < cur.gbp && t.allow >= maxWk * 1.15 && !subHit).sort((a, b) => a.gbp - b.gbp);
-      if (cheaper.length && wks.length >= 2) {
+      if (uncertain) return `Keep: quota history unknown or plan/allowance changed; no downgrade advice (${hasCycleBounds ? "billing cycle" : "rolling history"})`;
+      if (tiers.some(t => t.verified === false)) return "Keep: tier allowances unverified; no downgrade advice";
+      const cheaper = tiers.filter(t => t.gbp < cur.gbp && t.allow >= maxWk / 100 * cur.allow * 1.15 && !subHit).sort((a, b) => a.gbp - b.gbp);
+      if (cheaper.length && comparable.filter(w => !w.partial).length >= 2) {
         const b = cheaper[0];
         return `Could drop to ${b.name} (£${b.gbp}): peak weekly use ${Math.round(maxWk)}% (avg ${avgWk}%/wk across ${wks.length} weeks${monthPct != null ? `, ${monthPct}% of the month gone` : ""})`;
       }
@@ -2106,6 +2111,7 @@
         : subHit ? "Fable model hit 100% weekly limit" : `avg ${avgWk}%/wk`;
       return `Keep ${cur.name} (£${cur.gbp}): ${why}`;
     }
+    if (tiers.some(t => t.verified === false)) return "Keep: tier allowances unverified; no downgrade advice";
     if (!cur || used == null || !total || !monthPct) return "";
     const projectedSafe = (monthPct > 0 ? used / (monthPct / 100) : used) * 1.15;
     const histFloor = Math.max(used, Number(pool.pastCycleMaxUsed || 0), projectedSafe);
@@ -2152,7 +2158,8 @@
     }
     const usedShare = total && used != null ? Math.max(0, Math.min(1, used / total)) : null;
     const atMs = Date.parse(lt.at || ""), ageH = isNaN(atMs) ? Infinity : (now - atMs) / 36e5;
-    const stale = ageH > 30;
+    let stale = ageH > 30;
+    let expiredWindow = false;
     const lastDate = !isNaN(atMs) ? new Date(atMs).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "Europe/London" }) : "";
 
     let timeShare = null, windowEnd = "", timeDetail = "";
@@ -2160,6 +2167,8 @@
       const wr = parseWeeklyReset(lt.note, !isNaN(atMs) ? atMs : now);
       if (wr) {
         windowEnd = wr.label;
+        expiredWindow = now >= wr.endMs;
+        stale = stale || expiredWindow;
         const startMs = wr.endMs - 7 * 864e5;
         timeShare = Math.max(0, Math.min(1, (now - startMs) / (7 * 864e5)));
         timeDetail = `${Math.round(timeShare * 100)}% of week · ${wr.label}`;
@@ -2170,13 +2179,14 @@
       timeDetail = `${Math.round(timeShare * 100)}% of month · ${windowEnd}`;
     }
 
+    if (expiredWindow) { timeShare = null; timeDetail = "Previous window ended · awaiting refreshed reading"; }
     let tone = "green", paceWord = "";
     if (stale) {
       tone = "amber";
-      paceWord = lastDate ? `read ${lastDate}` : "reading stale";
+      paceWord = expiredWindow ? "historical · awaiting refreshed reading" : lastDate ? `read ${lastDate}` : "reading stale";
     } else if (usedShare != null) {
       const diff = timeShare != null ? usedShare - timeShare : 0;
-      if (usedShare >= 0.95) { tone = "red"; paceWord = "at limit"; }
+      if (usedShare >= 1) { tone = "red"; paceWord = "at limit"; }
       else if (timeShare != null && diff > 0.20) { tone = "red"; paceWord = "ahead of time"; }
       else if (timeShare != null && diff > 0.08) { tone = "amber"; paceWord = "ahead of time"; }
       else if (timeShare != null && diff < -0.12) { tone = "blue"; paceWord = "using little"; }

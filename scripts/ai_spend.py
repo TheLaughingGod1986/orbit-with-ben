@@ -25,6 +25,7 @@ import sys
 from collections import defaultdict
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import channels  # noqa: E402
@@ -88,9 +89,9 @@ def plan_cycles(plans: dict, ref: date) -> dict[str, dict]:
     legacy_start = (plans.get("period") or {}).get("start") or "2026-10-08"
     for sub in subs:
         pools = sub.get("pools") or []
-        bday = sub.get("billingDay")
-        c_start = sub.get("cycleStart") or ""
-        c_renews = sub.get("renews") or ""
+        bday = sub.get("billingDay") if sub.get("billingVerified") is not False else None
+        c_start = (sub.get("cycleStart") or "") if sub.get("billingVerified") is not False else ""
+        c_renews = (sub.get("renews") or "") if sub.get("billingVerified") is not False else ""
         if bday:
             # Use explicit cycleStart/renews when `ref` sits inside them; otherwise roll cleanly by billingDay.
             try:
@@ -117,6 +118,7 @@ def plan_cycles(plans: dict, ref: date) -> dict[str, dict]:
                 "start": start_s,
                 "renews": renews_s,
                 "billingDay": bday,
+                "historyScope": "billing cycle" if renews_s else "rolling 30 days",
                 "billingNote": sub.get("billingNote") or "",
                 "usageNote": sub.get("usageNote") or "",
                 "next": sub.get("next") or "",
@@ -204,80 +206,76 @@ def _norm_reset_tag(raw: str) -> str:
     return s.lower()
 
 
+def _weekly_reset(note: str, at: datetime) -> datetime | None:
+    """Resolve provider wall time against the reading, never against today's date."""
+    m = re.search(r"(?:weekly[^;]*?resets?|resets?)\s+(?:on\s+|at\s+)?([^;()]+)", note, re.I)
+    if not m:
+        return None
+    raw = m.group(1).strip()
+    zone = timezone.utc if re.search(r"Z\b|UTC|GMT", raw) else ZoneInfo("Europe/London")
+    ref = at.astimezone(zone)
+    clock = re.search(r"(\d{1,2}):(\d{2})\s*([AP]M)?", raw, re.I)
+    h, minute = (int(clock[1]), int(clock[2])) if clock else (0, 0)
+    if clock and clock[3]:
+        h = h % 12 + (12 if clock[3].upper() == "PM" else 0)
+    dm = re.search(r"(\d{1,2})\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*(?:\s+(20\d{2}))?", raw, re.I)
+    md = re.search(r"(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+(\d{1,2})(?:\s+(20\d{2}))?", raw, re.I)
+    if dm or md:
+        day, mon, year = (int(dm[1]), MONTH_NUM[dm[2].lower()[:3]], dm[3]) if dm else (int(md[2]), MONTH_NUM[md[1].lower()[:3]], md[3])
+        years = [int(year)] if year else [ref.year - 1, ref.year, ref.year + 1]
+        candidates = [datetime(y, mon, day, h, minute, tzinfo=zone) for y in years]
+        return min(candidates, key=lambda d: abs((d-ref).total_seconds())).astimezone(timezone.utc)
+    wd = re.match(r"(Mon|Tue|Wed|Thu|Fri|Sat|Sun)[a-z]*", raw, re.I)
+    if wd and clock:
+        target = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"].index(wd[1].lower())
+        end = ref.replace(hour=h, minute=minute, second=0, microsecond=0) + timedelta(days=(target-ref.weekday()) % 7)
+        if end < ref:
+            end += timedelta(days=7)
+        return end.astimezone(timezone.utc)
+    return None
+
+
 def _weekly_history(pool: str, all_rows: list[dict], cycle_start_iso: str) -> list[dict]:
-    """Group a weekly-% pool's balance readings into weekly windows (oldest -> newest, up to 8 weeks)."""
+    """Observed weekly peaks, with absolute reset boundaries and explicitly partial coverage."""
     if pool not in WEEKLY_POOLS:
         return []
-    recs = [r for r in all_rows if r.get("pool") == pool and r.get("kind") == "record" and r.get("left") is not None]
-    if not recs:
-        return []
-    weeks: list[dict] = []
-    for r in recs:
-        at_s = r.get("at", "")
-        dt = _parse_iso(at_s)
-        used = round(max(0.0, 100.0 - float(r["left"])), 1)
+    weeks = {}
+    for r in sorted(all_rows, key=lambda r: r.get("at", "")):
+        if r.get("pool") != pool or r.get("kind") != "record":
+            continue
+        dt = _parse_iso(r.get("at", ""))
+        if not dt:
+            continue
         note = str(r.get("note") or "")
-        m_res = RESET_NOTE_RE.search(note)
-        reset_tag = re.sub(r"\s+", " ", m_res.group(1).strip()) if m_res else ""
-        reset_key = _norm_reset_tag(reset_tag) if reset_tag else ""
-        m_split = SPLIT_NOTE_RE.search(note)
-        split_s = m_split.group(1).strip() if m_split else ""
-        fable_hit = bool(re.search(r"\bfable\s+100%\s+used\b", note, re.I))
-        start_new = False
-        if not weeks:
-            start_new = True
+        exhausted = bool(re.search(r"(?:hit (?:the |its )?weekly limit|weekly (?:limit )?exhausted)", note, re.I))
+        if r.get("left") is None and not exhausted:
+            continue
+        used = 100.0 if exhausted else round(max(0.0, 100.0-float(r["left"])), 1)
+        end = _weekly_reset(note, dt)
+        # Unknown resets are separate observations, never claimed to be complete weeks.
+        key = end.isoformat() if end else dt.isoformat()
+        quota = r.get("quotaId")
+        key = (key, quota)
+        w = weeks.setdefault(key, {"firstAt": r["at"], "peakUsed": 0, "hitLimit": False,
+                                  "partial": True, "quotaId": quota, "historyBasis": "verified" if quota else "unknown"})
+        w.update(at=r["at"])
+        w["peakUsed"] = max(w["peakUsed"], used)
+        w["hitLimit"] |= used >= 100 or exhausted
+        w["nearLimit"] = 94 <= w["peakUsed"] < 100
+        if end:
+            start = end - timedelta(days=7)
+            w.update(windowStart=start.isoformat(), windowEnd=end.isoformat(), reset=key[0])
+            w["inCycle"] = end.date().isoformat() > cycle_start_iso
+            w["overlapsCycleStart"] = start.date().isoformat() < cycle_start_iso < end.date().isoformat()
         else:
-            prev = weeks[-1]
-            prev_dt = _parse_iso(prev["lastAt"])
-            gap_days = ((dt - prev_dt).total_seconds() / 86400.0) if (dt and prev_dt) else 0.0
-            if gap_days > 7.1 or used < prev["lastUsed"] - 15.0:
-                start_new = True
-            elif reset_key and prev["resetKey"] and reset_key != prev["resetKey"]:
-                start_new = True
-        if start_new:
-            weeks.append({
-                "firstAt": at_s,
-                "lastAt": at_s,
-                "lastUsed": used,
-                "peakUsed": used,
-                "resetTag": reset_tag,
-                "resetKey": reset_key,
-                "split": split_s,
-                "fableHit": fable_hit,
-            })
-        else:
-            cur = weeks[-1]
-            cur["lastAt"] = at_s
-            cur["lastUsed"] = used
-            if used > cur["peakUsed"]:
-                cur["peakUsed"] = used
-            if reset_tag:
-                cur["resetTag"] = reset_tag
-                cur["resetKey"] = reset_key
-            if split_s:
-                cur["split"] = split_s
-            if fable_hit:
-                cur["fableHit"] = True
-    cleaned = []
-    for idx, w in enumerate(weeks):
-        if idx + 1 < len(weeks) and w["firstAt"] == w["lastAt"]:
-            t0, t1 = _parse_iso(w["lastAt"]), _parse_iso(weeks[idx + 1]["firstAt"])
-            if t0 and t1 and (t1 - t0).total_seconds() < 86400 and weeks[idx + 1]["peakUsed"] >= 0:
-                continue
-        cleaned.append(w)
-    out = []
-    for w in cleaned[-8:]:
-        out.append({
-            "firstAt": w["firstAt"],
-            "at": w["lastAt"],
-            "peakUsed": w["peakUsed"],
-            "hitLimit": w["peakUsed"] >= 94.0,
-            "inCycle": w["firstAt"][:10] >= cycle_start_iso,
-            **({"reset": w["resetTag"]} if w["resetTag"] else {}),
-            **({"split": w["split"]} if w["split"] else {}),
-            **({"sublimitHit": "Fable 100%"} if w["fableHit"] else {}),
-        })
-    return out
+            w["inCycle"] = r["at"][:10] >= cycle_start_iso
+            w["windowUnknown"] = True
+        split = SPLIT_NOTE_RE.search(note)
+        if split:
+            w["split"] = split[1].strip()
+        if re.search(r"\bfable\s+100%\s+used\b", note, re.I):
+            w["sublimitHit"] = "Fable 100%"
+    return list(weeks.values())[-8:]
 
 
 def load() -> list[dict]:
@@ -325,8 +323,9 @@ def append(row: dict, git: bool) -> None:
         sys.exit("ai_spend: push failed three times; the line is committed locally")
 
 
-def build_doc(rows: list[dict], as_of: str | None = None) -> dict:
-    plans = json.loads(PLANS.read_text()) if PLANS.exists() else {}
+def build_doc(rows: list[dict], as_of: str | None = None, plans: dict | None = None) -> dict:
+    if plans is None:
+        plans = json.loads(PLANS.read_text()) if PLANS.exists() else {}
     all_sorted = sorted((r for r in rows if r.get("pool") in POOLS), key=lambda r: r.get("at", ""))
     ref_dt = _parse_iso(as_of) if as_of else (_parse_iso(all_sorted[-1].get("at", "")) if all_sorted else None)
     ref_date = (ref_dt or datetime.now(timezone.utc)).date()

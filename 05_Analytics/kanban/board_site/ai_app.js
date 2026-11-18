@@ -155,7 +155,7 @@
       : id === "claude" ? /claude/i : id === "elevenlabs" ? /elevenlabs/i : null;
     const sub = plans.find(p => Array.isArray(p.pools) && p.pools.includes(id)) || (matchRe ? plans.find(p => matchRe.test(p.name || "")) : null) || {};
     const start = cyc.start || (pool && pool.since) || sub.cycleStart || "";
-    const renews = cyc.renews || (pool && pool.renews) || sub.renews || "";
+    const renews = sub.billingVerified === false ? "" : cyc.renews || (pool && pool.renews) || sub.renews || "";
     const gbp = cyc.gbp != null ? cyc.gbp : sub.gbp;
     const currentGbp = cyc.currentGbp != null ? cyc.currentGbp : sub.currentGbp;
     const planName = (cyc.planName || sub.name || "").replace(/\s*\(30 TB\)|\s*\(shared plan\)|\s*\(Codex\)|\s*\(top tier\)/gi, "").trim();
@@ -163,7 +163,7 @@
     const endMs = /^\d{4}-\d{2}-\d{2}$/.test(renews) ? Date.parse(renews + "T00:00:00Z") : NaN;
     const renewLabel = !isNaN(endMs) ? `renews ${londonShortDate(Date.parse(renews + "T12:00:00Z"))}` : "";
     const priceBit = currentGbp && gbp && currentGbp !== gbp ? `£${currentGbp}/mo now (£${gbp} planned)` : gbp != null ? `£${gbp}/mo` : "";
-    const planLine = [planName, priceBit, renewLabel || (planName ? "billing renewal date unread" : "")].filter(Boolean).join(" · ");
+    const planLine = [planName, priceBit, renewLabel || (planName ? "billing renewal date unread · rolling history" : "")].filter(Boolean).join(" · ");
     return {
       planName, gbp, currentGbp, start, renews, startMs, endMs, renewLabel, planLine,
       usageNote: cyc.usageNote || sub.usageNote || "",
@@ -195,19 +195,24 @@
         const past = pool.pastCycleMaxUsed ? `; last cycle used ${Math.round(pool.pastCycleMaxUsed).toLocaleString("en-GB")}` : "";
         return `Verdict after 1 week of cycle (${dIn}d in) · Keeping Ultra (£189.99) this month (9 Nov decision${past}), then review £90 tier (10,000)`;
       }
-      return `Verdict after 1 week of cycle (${dIn}d into month)`;
+      return `Verdict after 1 week (${dIn}d of ${monthPct == null ? "rolling history" : "billing cycle"})`;
     }
     if (isWeekly) {
       const wkIn = wkAll.filter(w => w.inCycle);
-      const wks = wkIn.length ? wkIn : (wkAll.length ? wkAll : [{ peakUsed: Math.round(usedShare * 100), hitLimit: usedShare >= 0.94 }]);
+      const wks = wkIn.length ? wkIn : (wkAll.length ? wkAll : [{ peakUsed: Math.round(usedShare * 100), hitLimit: usedShare >= 1 }]);
       const hits = wks.filter(w => w.hitLimit).length;
       const avgWk = Math.round(wks.reduce((a, w) => a + Number(w.peakUsed || 0), 0) / wks.length);
-      const maxWk = Math.max(...wks.map(w => Number(w.peakUsed || 0)), Math.round(usedShare * 100));
-      const subHit = wks.some(w => w.sublimitHit) || /\bfable\s+100%\s+used\b/i.test((pool.latest || {}).note || "");
-      if (hits > 0) return `Keep: hit its weekly limit ${hits} of ${wks.length} ${wks.length === 1 ? "week" : "weeks"} (avg ${avgWk}%/wk)`;
+      const basis = cur && (cur.quotaId || cur.name);
+      const comparable = wkAll.filter(w => !w.quotaId || w.quotaId === basis);
+      const uncertain = wkAll.some(w => !w.quotaId || w.quotaId !== basis || w.windowUnknown);
+      const maxWk = Math.max(...comparable.map(w => Number(w.peakUsed || 0)), Math.round(usedShare * 100));
+      const subHit = wkAll.some(w => w.sublimitHit) || /\bfable\s+100%\s+used\b/i.test((pool.latest || {}).note || "");
+      if (hits > 0) return `Keep: hit its weekly limit ${hits} of ${wks.length} ${wks.length === 1 ? "week" : "weeks"} (avg ${avgWk}%/wk)${wks.some(w => w.partial) ? " · partial observed windows; full-week use unknown" : ""}${hasBounds ? "" : " · rolling history"}`;
       if (!cur) return "";
-      const cheaper = tiers.filter(t => t.gbp < cur.gbp && t.allow >= maxWk * 1.15 && !subHit).sort((a, b) => a.gbp - b.gbp);
-      if (cheaper.length && wks.length >= 2) {
+      if (uncertain) return `Keep: quota history unknown or plan/allowance changed; no downgrade advice (${hasBounds ? "billing cycle" : "rolling history"})`;
+      if (tiers.some(t => t.verified === false)) return "Keep: tier allowances unverified; no downgrade advice";
+      const cheaper = tiers.filter(t => t.gbp < cur.gbp && t.allow >= maxWk / 100 * cur.allow * 1.15 && !subHit).sort((a, b) => a.gbp - b.gbp);
+      if (cheaper.length && comparable.filter(w => !w.partial).length >= 2) {
         const b = cheaper[0];
         return `Could drop to ${b.name} (£${b.gbp}): peak weekly use ${Math.round(maxWk)}% (avg ${avgWk}%/wk across ${wks.length} weeks${monthPct != null ? `, ${monthPct}% of the month gone` : ""})`;
       }
@@ -217,6 +222,7 @@
         : subHit ? "Fable model hit 100% weekly limit" : `avg ${avgWk}%/wk`;
       return `Keep ${cur.name} (£${cur.gbp}): ${why}`;
     }
+    if (tiers.some(t => t.verified === false)) return "Keep: tier allowances unverified; no downgrade advice";
     if (!cur || used == null || !total || !monthPct) return "";
     const projectedSafe = (monthPct > 0 ? used / (monthPct / 100) : used) * 1.15;
     const histFloor = Math.max(used, Number(pool.pastCycleMaxUsed || 0), projectedSafe);
@@ -248,7 +254,8 @@
     const share = total && lt.left != null ? lt.left / total : null;
     const usedShare = total && used != null ? Math.max(0, Math.min(1, used / total)) : null;
     const atMs = Date.parse(lt.at || ""), ageH = (now - atMs) / 36e5;
-    const stale = !lt.at || isNaN(ageH) || ageH > STALE_H;
+    let stale = !lt.at || isNaN(ageH) || ageH > STALE_H;
+    let expiredWindow = false;
     const lastDate = !isNaN(atMs) ? new Date(atMs).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "Europe/London" }) : "";
 
     let timeShare = null, windowEnd = "";
@@ -256,6 +263,8 @@
       const wr = parseWeeklyReset(lt.note, !isNaN(atMs) ? atMs : now);
       if (wr) {
         windowEnd = wr.label;
+        expiredWindow = now >= wr.endMs;
+        stale = stale || expiredWindow;
         timeShare = Math.max(0, Math.min(1, (now - (wr.endMs - 7 * 864e5)) / (7 * 864e5)));
       }
     } else if (!isNaN(pmMeta.startMs) && !isNaN(pmMeta.endMs) && pmMeta.endMs > pmMeta.startMs) {
@@ -263,8 +272,10 @@
       timeShare = Math.max(0, Math.min(1, (now - pmMeta.startMs) / (pmMeta.endMs - pmMeta.startMs)));
     }
 
+    if (expiredWindow) timeShare = null;
     let status = "green", barTone = "green", why = "";
     if (!lt.at || isNaN(ageH)) { status = "amber"; barTone = "amber"; why = "no reading yet"; }
+    else if (expiredWindow) { status = "amber"; barTone = "amber"; why = "historical · awaiting refreshed reading"; }
     else if (ageH > STALE_H) { status = "amber"; barTone = "amber"; why = `no reading for ${ago(lt.at, now).replace(" ago", "")}`; }
     else if (share != null && share <= 0) { status = "red"; barTone = "red"; why = "at limit"; }
     else if (share != null && share < LOW) { status = "red"; barTone = "red"; why = "almost out"; }
@@ -275,7 +286,7 @@
       else if (diff < -0.12) { status = "green"; barTone = "blue"; why = "using little"; }
       else { status = "green"; barTone = "green"; why = "on pace"; }
     }
-    const burn = burnPerDay(pool.series, now);
+    const burn = stale ? null : burnPerDay(pool.series, now);
     const daysLeft = burn && lt.left != null ? lt.left / burn : null;
     const verdict = poolVerdict(id, pool, credits, pmMeta, used, total, usedShare, stale, isWeekly, now);
     return { status, barTone, why, total, used, share, usedShare, timeShare, windowEnd, planLine: pmMeta.planLine, verdict, pmMeta, stale, lastDate, burn, daysLeft, left: lt.left, at: lt.at, note: lt.note || "" };
@@ -334,11 +345,11 @@
     const total = plans.reduce((a, p) => a + (Number(p.gbp) || 0), 0);
     const currentTotal = plans.reduce((a, p) => a + (Number(p.currentGbp != null ? p.currentGbp : p.gbp) || 0), 0);
     const rows = plans.map(p => {
-      const ren = p.renews && /^\d{4}-\d{2}-\d{2}$/.test(p.renews) ? `renews ${londonShortDate(Date.parse(p.renews + "T12:00:00Z"))}` : "renewal date unread";
+      const ren = p.billingVerified !== false && p.renews && /^\d{4}-\d{2}-\d{2}$/.test(p.renews) ? `renews ${londonShortDate(Date.parse(p.renews + "T12:00:00Z"))}` : "renewal date unread";
       const price = p.currentGbp && p.currentGbp !== p.gbp ? `£${esc(p.currentGbp)} → £${esc(p.gbp)}` : `£${esc(p.gbp)}`;
       return `<tr><td><b>${esc(p.name)}</b><div class="muted small">${esc(ren)}</div></td><td class="r">${price}</td><td class="muted">${esc(p.covers || "")}</td></tr>`;
     }).join("");
-    const target = credits.target && credits.target.label ? `<p class="muted">Target: ${esc(credits.target.label)}, about £${esc(credits.target.gbp)} a month${currentTotal !== total ? ` (current billed total £${currentTotal.toFixed(2)} until Cursor/Grok Ultra renews 24 Nov)` : ""}.</p>` : "";
+    const target = credits.target && credits.target.label ? `<p class="muted">Target: ${esc(credits.target.label)}, about £${esc(credits.target.gbp)} a month${currentTotal !== total ? ` (current billed total £${currentTotal.toFixed(2)} where recorded; billing identity unverified)` : ""}.</p>` : "";
     return `<section class="card"><h2>Plans</h2><table><tbody>${rows}</tbody>
       <tfoot><tr><td>Planned a month</td><td class="r"><b>£${total.toFixed(2).replace(/\.00$/, "")}</b></td><td class="muted">incl. VAT, each plan on its own monthly cycle</td></tr></tfoot></table>${target}</section>`;
   }

@@ -371,7 +371,7 @@ const cx = t.poolMeter('codex', {unit: '%', latest: {left: 40, total: 100, at: n
 assert.equal(cx.fig, '60% used'); assert(cx.timeDetail.includes('resets Wed 4 Nov, 06:36'), cx.timeDetail);
 assert(cx.verdict.includes('Keep: hit its weekly limit 2 of 3 weeks'), cx.verdict);
 const cl = t.poolMeter('claude', {unit: '%', since: '2026-11-08', renews: '2026-12-08', latest: {left: 38, total: 100, at: '2026-11-17T11:14:43Z', note: 'weekly 62% used, resets Wednesday 10:00 AM; Fable 100% used'},
-  weeklyHistory: [{firstAt: '2026-11-17T11:14:43Z', peakUsed: 62, hitLimit: false, inCycle: true, sublimitHit: 'Fable 100%'}]},
+  weeklyHistory: [{firstAt: '2026-11-17T11:14:43Z', quotaId: 'Claude Ultra (10x)', peakUsed: 62, hitLimit: false, inCycle: true, sublimitHit: 'Fable 100%'}]},
   {tiers: {claude: [{name: 'Claude Ultra (10x)', gbp: 180, allow: 100, current: true}, {name: 'Claude Max (5x)', gbp: 90, allow: 50}]}}, NOV17);
 assert(cl.timeDetail.includes('resets Wed 18 Nov, 10:00') && cl.verdict.includes('Keep Claude Ultra (10x) (£180):'), cl.timeDetail + ' / ' + cl.verdict);
 // Stale reading (>30h) always shows its date, never a bare percentage, and emits no monthly verdict.
@@ -1581,4 +1581,26 @@ console.log('Jobs running count checks OK');
   const healthyBoard = {...staleBoard, checksStatus: {ok: true, stale: false}};
   assert(!t.overview(healthyBoard, NOW).includes('ticks not read since'), 'healthy board hides the stale ticks banner');
   console.log('Ticks-not-read guard OK');
+}
+
+// J3024 regressions run against each independently rendered page.
+{
+ const now = Date.parse('2026-11-17T13:00Z');
+ const plan = {tiers: {claude: [{name:'Current', quotaId:'q1', current:true, allow:100, gbp:180}, {name:'Cheaper', allow:50, gbp:90}]}};
+ const week = (peak, inCycle) => ({firstAt:'2026-11-01T00:00Z',peakUsed:peak,hitLimit:peak>=100,inCycle,quotaId:'q1',partial:false});
+ const pool = {unit:'%',since:'2026-11-01',renews:'2026-12-01',latest:{at:'2026-11-17T12:00Z',left:80,total:100,note:'weekly resets Wednesday 10:00 AM'},weeklyHistory:[week(90,false),week(20,true),week(20,true)]};
+ const meter = p => t.poolMeter('claude', p, plan, now);
+ assert(!meter(pool).verdict.includes('Could drop'), 'prior comparable high week vetoes unsafe downgrade');
+ pool.weeklyHistory[0].peakUsed=20;
+ assert(meter(pool).verdict.includes('Could drop'), 'verified comparable low complete history can support advice');
+ pool.weeklyHistory[0].quotaId='old-plan';
+ assert(meter(pool).verdict.includes('plan/allowance changed'), 'changed quota cannot be compared as the same percentage');
+ delete pool.weeklyHistory[0].quotaId;
+ assert(meter(pool).verdict.includes('unknown'), 'unidentified quota withholds advice');
+ const expired = t.poolMeter('codex',{unit:'%',latest:{at:'2026-11-17T12:00Z',left:0,total:100,note:'weekly resets Tue 17 Nov 23:22Z'}},{},Date.parse('2026-11-18T01:00Z'));
+ assert.equal(expired.timeShare,null);
+ assert.equal(expired.verdict,'');
+ assert(/historical.*awaiting refreshed/.test(expired.paceWord));
+ const near = t.poolMeter('claude',{unit:'%',latest:{at:'2026-11-17T12:00Z',left:6,total:100,note:'weekly resets Wednesday 10:00 AM'}},{},now);
+ assert(!near.paceWord.includes('at limit'), '94% is near limit, never exhaustion');
 }

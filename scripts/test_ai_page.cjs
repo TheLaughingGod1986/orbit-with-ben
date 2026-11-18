@@ -35,3 +35,25 @@ for (const want of ['Acting Chief', 'Grok', 'Agents & models', 'Credit left &amp
 assert(!html.includes('<script>'), 'text from the data is escaped');
 assert(t.renderAI({}, NOW).includes('No data yet'));
 console.log('ai page OK');
+
+// J3024 regressions run against each independently rendered page.
+{
+ const now = Date.parse('2026-11-17T13:00Z');
+ const plan = {tiers: {claude: [{name:'Current', quotaId:'q1', current:true, allow:100, gbp:180}, {name:'Cheaper', allow:50, gbp:90}]}};
+ const week = (peak, inCycle) => ({firstAt:'2026-11-01T00:00Z',peakUsed:peak,hitLimit:peak>=100,inCycle,quotaId:'q1',partial:false});
+ const pool = {unit:'%',since:'2026-11-01',renews:'2026-12-01',latest:{at:'2026-11-17T12:00Z',left:80,total:100,note:'weekly resets Wednesday 10:00 AM'},weeklyHistory:[week(90,false),week(20,true),week(20,true)]};
+ const meter = p => t.poolState('claude', p, plan, now);
+ assert(!meter(pool).verdict.includes('Could drop'), 'prior comparable high week vetoes unsafe downgrade');
+ pool.weeklyHistory[0].peakUsed=20;
+ assert(meter(pool).verdict.includes('Could drop'), 'verified comparable low complete history can support advice');
+ pool.weeklyHistory[0].quotaId='old-plan';
+ assert(meter(pool).verdict.includes('plan/allowance changed'), 'changed quota cannot be compared as the same percentage');
+ delete pool.weeklyHistory[0].quotaId;
+ assert(meter(pool).verdict.includes('unknown'), 'unidentified quota withholds advice');
+ const expired = t.poolState('codex',{unit:'%',latest:{at:'2026-11-17T12:00Z',left:0,total:100,note:'weekly resets Tue 17 Nov 23:22Z'}},{},Date.parse('2026-11-18T01:00Z'));
+ assert.equal(expired.timeShare,null);
+ assert.equal(expired.verdict,'');
+ assert(/historical.*awaiting refreshed/.test(expired.why));
+ const near = t.poolState('claude',{unit:'%',latest:{at:'2026-11-17T12:00Z',left:6,total:100,note:'weekly resets Wednesday 10:00 AM'}},{},now);
+ assert(!near.why.includes('at limit'), '94% is near limit, never exhaustion');
+}

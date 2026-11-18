@@ -1,66 +1,80 @@
 {
-  "note": "Ben is UK-based: the board shows pounds including 20% VAT, converted from each plan's published dollar price (checked 8 Oct 2026) at about £0.75 to the dollar. Bank statements are the real figure. Each plan is measured across its own billing cycle (shared 8 Oct–12 Nov test period retired 17 Nov 2026, J2985). Plans updated by Ben on 9 Nov 2026 and checked against billing pages on 17 Nov 2026.",
+  "note": "Prices and decisions are Ben\u2019s recorded plan choices, not a verified current invoice total. Billing provenance: jobs/reviews/J2985/BILLING_PROVENANCE_J3024.json. Unverified renewal dates and tier ratios do not support advice.",
   "subscriptions": [
     {
       "id": "google-ultra",
       "name": "Google AI Ultra (30 TB)",
-      "pools": ["flow", "gemini", "vertex"],
+      "pools": [
+        "flow",
+        "gemini",
+        "vertex"
+      ],
       "usd": 199.99,
       "gbp": 189.99,
-      "tier": "25,000 Flow credits · Gemini weekly quota · £75.18/mo Cloud credit · 30 TB",
+      "tier": "25,000 Flow credits \u00b7 Gemini weekly quota \u00b7 \u00a375.18/mo Cloud credit \u00b7 30 TB",
       "cycleStart": "2026-11-12",
       "renews": "2026-12-12",
       "billingDay": 12,
       "covers": "Flow credits (HOS picture), Gemini checks, monthly Cloud/Vertex credit",
-      "source": "one.google.com/about/plans, Cloud Billing > Credits & Flow refill (CDP :9222, 17 Nov 2026): Google AI Ultra 30 TB, £189.99/month billed on the 12th",
-      "next": "Ben, 9 Nov 2026: keep Ultra (25,000 Flow credits) one more month, then review against the £90 tier (10,000 credits)",
-      "usageNote": "History of Science picture work, the main use of Flow, may not have run yet this cycle."
+      "source": "Read-only recheck 18 Nov 2026: BILLING_PROVENANCE_J3024.json; renewal and allowance ratios unverified unless stated there.",
+      "next": "Ben, 9 Nov 2026: keep Ultra (25,000 Flow credits) one more month, then review against the \u00a390 tier (10,000 credits)",
+      "usageNote": "History of Science picture work, the main use of Flow, may not have run yet this cycle.",
+      "billingVerified": false
     },
     {
       "id": "claude",
-      "name": "Claude Ultra",
-      "pools": ["claude"],
+      "name": "Claude Max 20x",
+      "pools": [
+        "claude"
+      ],
       "usd": 200,
       "gbp": 180,
-      "tier": "Ultra ($200/mo, 10x Pro weekly; up from Pro £18 on 8 Nov 2026)",
+      "tier": "\u00a3180 plan, Ben 9 Nov; provider tier/allowance ratio unverified",
       "cycleStart": "2026-11-08",
       "renews": "2026-12-08",
       "billingDay": 8,
       "covers": "scripts, reviews, decisions, thread, cloud Chief runs, MacBook Claude Code",
-      "source": "claude.ai Settings > Billing (CDP :9222, 17 Nov 2026): Your Claude Ultra plan (10x Pro usage every week), started 8 Nov 2026, auto-renews 8 Dec 2026"
+      "source": "Read-only recheck 18 Nov 2026: BILLING_PROVENANCE_J3024.json; renewal and allowance ratios unverified unless stated there.",
+      "billingVerified": false
     },
     {
       "id": "chatgpt-pro",
       "name": "ChatGPT Pro (Codex)",
-      "pools": ["codex"],
+      "pools": [
+        "codex"
+      ],
       "usd": 100,
       "gbp": 90,
       "tier": "Pro (Codex); one account on the Mac mini and the MacBook, one shared weekly limit",
       "cycleStart": "",
       "renews": "",
       "covers": "Codex on the Mac mini and the MacBook; third in line as Chief",
-      "source": "Ben, 9 Nov 2026: GPT plan at £90/mo. No chatgpt.com billing reader on the Mini (CLI auth token original start was the 15th)"
+      "source": "Ben, 9 Nov: GPT \u00a390. Read-only recheck reached chatgpt.com/auth/login; renewal unread; history is rolling, not monthly.",
+      "billingVerified": false
     },
     {
       "id": "cursor-grok",
-      "name": "Cursor & Grok (shared plan)",
-      "pools": ["cursor"],
+      "name": "Grok (Grok Bot)",
+      "pools": [
+        "cursor"
+      ],
       "usd": null,
       "gbp": 20,
-      "currentGbp": 180,
-      "currentTier": "Ultra",
-      "tier": "£20 tier planned (Ben 9 Nov); billing page still reads Ultra (£180) through 24 Nov 2026",
+      "tier": "Ben, 9 Nov: Grok Bot changed to \u00a320; billing identity unverified",
       "cycleStart": "2026-10-24",
       "renews": "2026-11-24",
       "billingDay": 24,
-      "covers": "Grok Bot and Cursor share one weekly allowance on grok.com/dashboard/billing (Grok Bot 54%, Cursor 46% this week); no separate £20 Grok subscription",
-      "billingNote": "No separate £20 Grok subscription: the £20 entry was this shared Cursor/Grok plan (grok.com/dashboard/billing), which still shows Ultra (£180) renewing Tue 24 Nov",
-      "source": "grok.com/dashboard/billing (cursor.com/dashboard/spending redirects here; CDP :9222, 17 Nov 2026): Ultra, period 24 Oct–24 Nov 2026, Renews 24 Nov 2026"
+      "covers": "Grok Bot; usage meter also names Cursor. Shared meter does not establish subscription identity.",
+      "billingNote": "Ben recorded Grok Bot changed to \u00a320 on 9 Nov. Shared Cursor/Grok usage is observed; whether another subscription exists is unverified.",
+      "source": "Read-only recheck 18 Nov 2026: BILLING_PROVENANCE_J3024.json; renewal and allowance ratios unverified unless stated there.",
+      "billingVerified": false
     },
     {
       "id": "elevenlabs",
       "name": "ElevenLabs Creator",
-      "pools": ["elevenlabs"],
+      "pools": [
+        "elevenlabs"
+      ],
       "usd": 22,
       "gbp": 20,
       "tier": "121,000 credits a month (unused credits roll over)",
@@ -68,14 +82,15 @@
       "renews": "2026-11-30",
       "billingDay": 30,
       "covers": "Ben's narrator voice and house music cues, both channels",
-      "source": "api.elevenlabs.io/v1/user/subscription (17 Nov 2026): tier=creator, $22.00 subtotal ($26.40 incl. tax), resets & bills 30 Nov 2026"
+      "source": "18 Nov API confirms Creator and credit reset timestamp, not subscription billing renewal.",
+      "billingVerified": false
     }
   ],
   "target": {
-    "label": "Claude Ultra £180 + ChatGPT Pro £90 + Cursor/Grok £20 + ElevenLabs Creator £20 + Google AI Ultra (£189.99 now, maybe £90 tier)",
+    "label": "Claude Max 20x \u00a3180 + ChatGPT Pro \u00a390 + Grok \u00a320 + ElevenLabs Creator \u00a320 + Google AI Ultra (\u00a3189.99 now, maybe \u00a390 tier)",
     "gbp": 499.99,
     "gbpIfGoogle90": 400,
-    "needs": "Google £90 tier = 10,000 Flow credits a month: covers 4 HOS longs only on the lean picture mix (about 20,000 used in Oct–Nov)"
+    "needs": "Google \u00a390 tier = 10,000 Flow credits a month: covers 4 HOS longs only on the lean picture mix (about 20,000 at today's mix)"
   },
   "decisions": [
     {
@@ -86,7 +101,7 @@
     {
       "date": "2026-11-09",
       "by": "Ben",
-      "decision": "Grok Bot down to £20, GPT at £90, Claude up to £180. Considering Google down to £90. Ben, later 9 Nov: keep Google AI Ultra for one more month and review."
+      "decision": "Grok Bot down to \u00a320, GPT at \u00a390, Claude up to \u00a3180 (Max 20x). Considering Google down to \u00a390. Ben, later 9 Nov: keep Google AI Ultra for one more month and review."
     }
   ],
   "fx": {
@@ -102,18 +117,21 @@
         "name": "Google AI Ultra",
         "gbp": 189.99,
         "allow": 25000,
-        "current": true
+        "current": true,
+        "verified": false
       },
       {
-        "name": "Google AI £90 tier",
+        "name": "Google AI \u00a390 tier",
         "gbp": 90,
         "allow": 10000,
-        "target": true
+        "target": true,
+        "verified": false
       },
       {
         "name": "Google AI Pro",
         "gbp": 18,
-        "allow": 1000
+        "allow": 1000,
+        "verified": false
       }
     ],
     "vertex": [
@@ -121,7 +139,8 @@
         "name": "Included in Google AI Ultra",
         "gbp": 0,
         "allow": 75.18,
-        "current": true
+        "current": true,
+        "verified": false
       }
     ],
     "claude": [
@@ -129,53 +148,62 @@
         "name": "Claude Ultra (10x)",
         "gbp": 180,
         "allow": 100,
-        "current": true
+        "current": true,
+        "verified": false
       },
       {
         "name": "Claude Max (5x)",
         "gbp": 90,
-        "allow": 50
+        "allow": 50,
+        "verified": false
       },
       {
         "name": "Claude Pro",
         "gbp": 18,
-        "allow": 10
+        "allow": 10,
+        "verified": false
       }
     ],
     "codex": [
       {
         "name": "ChatGPT Pro ($200)",
         "gbp": 180,
-        "allow": 200
+        "allow": 200,
+        "verified": false
       },
       {
-        "name": "ChatGPT Pro (£90)",
+        "name": "ChatGPT Pro (\u00a390)",
         "gbp": 90,
         "allow": 100,
-        "current": true
+        "current": true,
+        "verified": false
       },
       {
         "name": "ChatGPT Plus",
         "gbp": 18,
-        "allow": 20
+        "allow": 20,
+        "verified": false
       }
     ],
     "chatgpt": [
       {
         "name": "ChatGPT Pro ($200)",
         "gbp": 180,
-        "allow": 200
+        "allow": 200,
+        "verified": false
       },
       {
-        "name": "ChatGPT Pro (£90)",
+        "name": "ChatGPT Pro (\u00a390)",
         "gbp": 90,
         "allow": 100,
-        "current": true
+        "current": true,
+        "verified": false
       },
       {
         "name": "ChatGPT Plus",
         "gbp": 18,
-        "allow": 20
+        "allow": 20,
+        "verified": false
       }
     ],
     "cursor": [
@@ -183,18 +211,21 @@
         "name": "Cursor & Grok Ultra",
         "gbp": 180,
         "allow": 100,
-        "current": true
+        "current": true,
+        "verified": false
       },
       {
         "name": "Cursor & Grok Super",
         "gbp": 90,
-        "allow": 50
+        "allow": 50,
+        "verified": false
       },
       {
         "name": "Cursor & Grok Pro",
         "gbp": 20,
         "allow": 10,
-        "target": true
+        "target": true,
+        "verified": false
       }
     ],
     "grok": [
@@ -202,37 +233,43 @@
         "name": "Cursor & Grok Ultra",
         "gbp": 180,
         "allow": 100,
-        "current": true
+        "current": true,
+        "verified": false
       },
       {
         "name": "Cursor & Grok Super",
         "gbp": 90,
-        "allow": 50
+        "allow": 50,
+        "verified": false
       },
       {
         "name": "Cursor & Grok Pro",
         "gbp": 20,
         "allow": 10,
-        "target": true
+        "target": true,
+        "verified": false
       }
     ],
     "elevenlabs": [
       {
         "name": "ElevenLabs Pro",
         "gbp": 89,
-        "allow": 500000
+        "allow": 500000,
+        "verified": false
       },
       {
         "name": "ElevenLabs Creator",
         "gbp": 20,
         "allow": 121000,
         "current": true,
-        "target": true
+        "target": true,
+        "verified": false
       },
       {
         "name": "ElevenLabs Starter",
         "gbp": 5,
-        "allow": 30000
+        "allow": 30000,
+        "verified": false
       }
     ]
   },
