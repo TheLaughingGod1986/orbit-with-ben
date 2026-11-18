@@ -275802,13 +275802,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-18T22:48Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-18T22:46Z",
-      "result": "parked for Chief: J3086 condition verification complete (jobs/reviews/J3086/REVIEW.md at 185090222f) — J3063 waiting condition (J3084 Chief ruling: retain hold until J3070 completes the MacBook handoff and routes J3063 to the verified MacBook) remains NOT YET MET: J3085 (92d37705ab) verified J3070's MacBook fallback condition is satisfied by J3071 (f6fe5f717 / PR #1026) and is parked for the elected Chief to reopen J3070, so J3070 remains blocked and J3063 remains needs=mini with no launch_check reading recorded. Per J3084, no unchanged Mini probe was repeated and zero video/credit changes were made. Recording jobs.py wait J3063 --recheck J3086 and closing J3086 (along with reopening J3070 via J3085) requires elected-Chief authority (see exact commands in jobs/reviews/J3086/REVIEW.md §3).",
+      "result": "",
       "history": [
         {
           "at": "2026-11-18T22:46Z",
@@ -275849,6 +275849,11 @@
           "at": "2026-11-18T22:51Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3086 condition verification complete (jobs/reviews/J3086/REVIEW.md at 185090222f) — J3063 waiting condition (J3084 Chief ruling: retain hold until J3070 completes the MacBook handoff and routes J3063 to the verified MacBook) remains NOT YET MET: J3085 (92d37705ab) verified J3070's MacBook fallback condition is satisfied by J3071 (f6fe5f717 / PR #1026) and is parked for the elected Chief to reopen J3070, so J3070 remains blocked and J3063 remains needs=mini with no launch_check reading recorded. Per J3084, no unchanged Mini probe was repeated and zero video/credit changes were made. Recording jobs.py wait J3063 --recheck J3086 and closing J3086 (along with reopening J3070 via J3085) requires elected-Chief authority (see exact commands in jobs/reviews/J3086/REVIEW.md §3)."
+        },
+        {
+          "at": "2026-11-18T23:45Z",
+          "by": "codex",
+          "what": "reopened: Taking the assigned elected-Chief review to record its completed ruling; J3063 hold already updated and J3070 follow-up reopened."
         }
       ],
       "remaining_action": "Elected Chief: reopen J3070 (per J3085), record wait --recheck J3086 on J3063, and close J3086",
@@ -275865,13 +275870,6 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-18T22:51Z",
-        "by": "gemini",
-        "note": "Verification complete in jobs/reviews/J3086/REVIEW.md (185090222f); parking J3086 for elected Chief"
-      },
       "taskKeys": [
         "HOS:006"
       ]

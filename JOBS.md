@@ -60,7 +60,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3070 | mini | open | – | – | for codex · assembly · `gpt-6.1-sol` · Restore HOS Studio response for the plants Short first-day check |  |
 | J3075 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2996 |  |
 | J3085 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3070 |  |
-| J3086 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3063 |  |
+| J3086 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3063 |  |
 
 Recently finished:
 
