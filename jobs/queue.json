@@ -1,5 +1,5 @@
 {
-  "next_id": 3054,
+  "next_id": 3055,
   "jobs": [
     {
       "id": "J0001",
@@ -178935,6 +178935,11 @@
           "at": "2026-11-18T13:11Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-19T12:00:00Z"
+        },
+        {
+          "at": "2026-11-18T13:31Z",
+          "by": "relay",
+          "what": "condition verification queued: J3054"
         }
       ],
       "remaining_action": "Wait for a compliant score; billing evidence proposal is assigned to J3050",
@@ -178954,7 +178959,8 @@
       "hold": {
         "type": "dependency",
         "condition": "J3047 NOT ACCEPTED: v03 not generated; J3043 allowance permanently closed unused. J3050 must deliver new billing evidence proposal, independent review and new Chief route decision. No repeat of unchanged score checks; reopen only on separately accepted compliant score, all original gates retained.",
-        "check_at": "2026-11-19T12:00:00Z"
+        "check_at": "2026-11-18T14:31:59+00:00",
+        "recheck_task": "J3054"
       }
     },
     {
@@ -272276,6 +272282,37 @@
       "remaining_action": "Decide the proposal after independent Claude review",
       "kind": "chief",
       "plain": "Deciding whether the falling Moon billing evidence proposal is sound"
+    },
+    {
+      "id": "J3054",
+      "title": "Verify condition for J2035",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2035: J3047 NOT ACCEPTED: v03 not generated; J3043 allowance permanently closed unused. J3050 must deliver new billing evidence proposal, independent review and new Chief route decision. No repeat of unchanged score checks; reopen only on separately accepted compliant score, all original gates retained.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2035 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-18T13:31Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T13:31Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Wait for a compliant score; billing evidence proposal is assigned to J3050",
+      "kind": "review",
+      "recheck_of": "J2035",
+      "due": "2026-11-15T18:00:00+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
