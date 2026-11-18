@@ -269043,9 +269043,14 @@
           "at": "2026-11-18T02:27Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Completed step 2: wrote 8-planet master script v01 (1,290 spoken words, 8,161 spoken chars, SHA-256 c9945afa...) passing review:script at 93.1/100"
+        },
+        {
+          "at": "2026-11-18T02:32Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Completed step 3: assembled primary-source SOURCES.md across all 8 planets (16 rows, 53/53 live HTTP 200 URLs verified)"
         }
       ],
-      "remaining_action": "Assembling primary-source SOURCES.md for all 8 planets with verbatim quotes and live HTTP 200 URLs",
+      "remaining_action": "Running Gemini source/claims verification pass via agy CLI, writing GEMINI_QUOTE_PASS_v01.md and SCRIPT_NOTES_v01.md, and running gate:episode checks",
       "due": "2026-11-23T18:00:00Z",
       "kind": "script",
       "plain": "Write and check the script for the every-planet film",
@@ -269059,11 +269064,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-18T02:27Z",
+        "at": "2026-11-18T02:32Z",
         "by": "gemini",
-        "note": "Completed step 2: wrote 8-planet master script v01 (1,290 spoken words, 8,161 spoken chars, SHA-256 c9945afa...) passing"
+        "note": "Completed step 3: assembled primary-source SOURCES.md across all 8 planets (16 rows, 53/53 live HTTP 200 URLs verified)"
       },
       "taskKeys": [
         "OWB:064"
