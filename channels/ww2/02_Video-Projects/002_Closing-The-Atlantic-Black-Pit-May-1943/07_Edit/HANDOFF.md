@@ -1,3 +1,17 @@
+# J2996 picture-polish continuation — 18 November 2026 17:08 UTC
+
+Progress remains **2/5**. A separate full-film footer-cleanup render is running; no music, perceptual QA, approval or Ben-watch delivery is claimed.
+
+- `polish_footer.py` verifies the full v01 source hash and creates **07_Edit/picture_polish_v02/atlantic_picture_polish_DRAFT_v02.mp4** on the same NAS film root. It removes internal sentence IDs/production footers below y=990 from 21.60 seconds onward using the existing paper colour. The opening, schematic caveats, diagram content and archive rights captions remain. Original draft and source clips are retained. Still sample at 30s inspected: footer removal and retained caveat confirmed; existing low-contrast carrier label remains an editorial issue for finishing.
+- Detached session **j2996-polish-v02**. Log: `/Users/benjaminoats/_desk/logs/j2996/picture-polish-v02.log`. Completion marker: same folder **picture-polish-v02.done**. Runner: **run-polish-v02.sh**. Missing marker means still running: do not start a duplicate. If marker is 0, inspect `TECHNICAL_CHECK.json` in the new output folder. If nonzero, read the log before resuming; the script refuses to overwrite any existing render.
+- Completion checks built into the runner: complete decode, 36,076 frames, 1080p25, full output hash, and unchanged encoded AAC audio-packet hash. No measurements are a watch/listen approval. Copy successful technical evidence into git next run, after inspecting still samples across archive/map sections.
+- Voice review **PR #1014 is still OPEN** as checked this session. No voice PASS inferred. Draft edit PR #1018 also remains open.
+- Session tool inspection demonstrated no audio_input or moving_video_input. Full perceptual review will need a worker with demonstrated inputs; continue independent music/package/editorial work first. No credits spent, media reused, upload or account change.
+
+Next: check this render, finish original/licensed film-specific music and sound, fix remaining label/pacing issues, reconcile the voice review, complete one capable quality pass and package, then send the finished cut to Ben. The picture-polish version remains a silent-bed editorial draft with narration only.
+
+---
+
 # J2996 resume checkpoint — 18 November 2026, full editorial draft
 
 This checkpoint supersedes the incomplete picture counts below. **Unfinished editorial draft; no music, full watch/listen QA, Chief PASS or Ben-watch submission.** Progress is 2/5: picture coverage complete, full-film finishing still needed.
