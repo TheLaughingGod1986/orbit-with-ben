@@ -274153,12 +274153,26 @@
           "at": "2026-11-18T19:03Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-11-18T19:04Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "Read the latest Studio performance figures",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
-      "urgent": 0
+      "urgent": 0,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     }
   ],
   "focus": [
