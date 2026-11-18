@@ -269880,18 +269880,23 @@
           "at": "2026-11-18T16:41Z",
           "by": "codex",
           "what": "step 0 of 3 done: Plan: inspect migration dependencies; write and rehearse runbook; verify and open PR. Live cutover remains gated."
+        },
+        {
+          "at": "2026-11-18T16:42Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Restored existing four-step plan after reading prior history; preparation and PR 1011 already exist. Continuing launcher and CI adapters, not repeating rehearsal."
         }
       ],
-      "remaining_action": "Document the studio move, rehearse it safely, and open the runbook for review",
+      "remaining_action": "Finish launcher and workflow compatibility before the gated studio move",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-18T16:41Z",
+        "step": 3,
+        "of": 4,
+        "at": "2026-11-18T16:42Z",
         "by": "codex",
-        "note": "Plan: inspect migration dependencies; write and rehearse runbook; verify and open PR. Live cutover remains gated."
+        "note": "Restored existing four-step plan after reading prior history; preparation and PR 1011 already exist. Continuing launcher"
       }
     },
     {
