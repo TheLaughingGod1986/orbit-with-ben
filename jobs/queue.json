@@ -271101,6 +271101,11 @@
           "at": "2026-11-18T19:29Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3026 condition verification complete (jobs/reviews/J3026/REVIEW.md at 86f170a903) — J2040 waiting condition remains NOT MET (J2517 in #793 and J2559 in #795 complete; all 8 local ~/.codex approval-settings and gateway hashes match J2977 and the 4-6 Nov 3/4 checkpoint unchanged; draft PR #490 still OPEN/draft at f521bcd3f1 with 1 J2979 housekeeping comment and 0 reviews; docs/CODEX_ALLOWLIST.md not on main). Recording jobs.py wait J2040 --recheck J3026 and closing J3026 requires elected Chief authority (Grok Bot is currently UP)."
+        },
+        {
+          "at": "2026-11-18T21:40Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Elected Chief to record wait --recheck J3026 on J2040 and mark J3026 done",
@@ -271123,7 +271128,8 @@
         "at": "2026-11-18T19:29Z",
         "by": "gemini",
         "note": "Verification complete in jobs/reviews/J3026/REVIEW.md (86f170a903); jobs.py wait J2040 --recheck J3026 requires holder ("
-      }
+      },
+      "escalated_at": "2026-11-18T21:40Z"
     },
     {
       "id": "J3027",
