@@ -69,7 +69,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3051 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3020 |  |
 | J3055 | mini | open | – | – | chief · Chief: resolve 001 edit orphan-doing |  |
 | J3056 | mini | open | – | – | chief · Chief: resolve 002 edit orphan-doing |  |
-| J3060 | any | claimed | macbook | 2026-11-18T18:26Z | assembly · Prevent channel-qualified jobs from changing another channel film record |  |
+| J3060 | any | open (after J3013) | – | – | assembly · Prevent channel-qualified jobs from changing another channel film record |  |
 
 Recently finished:
 
