@@ -274827,10 +274827,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-18T20:47Z",
+      "eta": "2026-11-18T21:47Z",
       "created_by": "claude",
       "created_at": "2026-11-18T20:34Z",
       "result": "",
@@ -274839,6 +274839,11 @@
           "at": "2026-11-18T20:34Z",
           "by": "claude",
           "what": "added for codex"
+        },
+        {
+          "at": "2026-11-18T20:47Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Restore Orbit 001/002/003/005/006 status.json stages to their pre-WW2 values from git history; one PR with evidence per stage",
@@ -274846,7 +274851,15 @@
       "for": "codex",
       "kind": "studio",
       "plain": "Put back the Orbit film records that the new WW2 channel's jobs overwrote by mistake",
-      "urgent": 6
+      "urgent": 6,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-18T20:47Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3075",
