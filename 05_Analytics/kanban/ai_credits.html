@@ -56,7 +56,7 @@ ul.rows, ol.chain, ul.hbars { list-style: none; margin: 0; padding: 0; }
 .bar i.blue { background: var(--blue); } .bar i.amber { background: var(--amber); } .bar i.red { background: var(--red); } .bar i.time { background: #64748b; }
 .cbar { margin-top: 6px; }
 .cbar-head { display: flex; justify-content: space-between; gap: 8px; font-size: 0.76rem; color: var(--muted); }
-.cbar-head strong { color: var(--ink); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.03em; }
+.cbar-head strong { flex-shrink: 0; white-space: nowrap; color: var(--ink); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.03em; }
 .verdict { margin-top: 6px; padding: 6px 8px; border-radius: 8px; background: rgba(255,255,255,0.04); font-size: 0.8rem; line-height: 1.4; }
 .hbars li { display: grid; grid-template-columns: 70px 1fr 44px; gap: 8px; align-items: center; padding: 4px 0; font-size: 0.85rem; }
 .hbars li .bar { margin: 0; }
