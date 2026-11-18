@@ -60,10 +60,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3070 | mini | open | – | – | for codex · assembly · `gpt-6.1-sol` · Restore HOS Studio response for the plants Short first-day check |  |
 | J3075 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2996 |  |
 | J3085 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3070 |  |
-| J3086 | mini | claimed | codex | 2026-11-19T01:45Z | for codex · review · `gpt-6.1-sol` · Verify condition for J3063 |  |
 
 Recently finished:
 
+- J3086 done: Verify condition for J3063 (Chief ruling: condition NOT MET; verification complete. Accepted J3071 f6fe5f717 evidence and J3085/J3086 reviews. J3070 reopened to finish MacBook routing handoff before releasing J3063. J3063 remains blocked with dependency hold, last_recheck J3086, next check 2026-11-19T00:30:00Z. Original setup checks and actual analytics observation time remain required. No inferred verdict, repeated Mini probes, video changes or spend. J3085 not taken as a second review.)
 - J3084 done: Verify condition for J3063 (Chief review complete: accepted J3071 MacBook fallback evidence f6fe5f717 / PR 1026. J3063 remains held until J3070 routes its handoff to the verified MacBook. Recorded wait --recheck J3084, next check 2026-11-18T22:30:00Z. Existing follow-up J3085 then J3070 must finish handoff; original setup checks and actual-time launch reading remain required. Mini unresponsive per 21:17Z probe. No performance verdict, video changes, spend or Ben action. Evidence jobs/reviews/J3084/REVIEW.md and J3071 evidence.json.)
 - J3083 cancelled: Chief: resolve 006 script orphan-review ()
 - J3082 cancelled: Chief: resolve 005 script orphan-review ()
@@ -73,4 +73,3 @@ Recently finished:
 - J3078 cancelled: Chief: resolve 001 edit orphan-blocked ()
 - J3077 cancelled: Chief: resolve 001 vo orphan-review ()
 - J3076 cancelled: Chief: resolve 001 script orphan-review ()
-- J3074 done: Orbit 001-006: undo the stage changes WW2 jobs wrote into Orbit's film records (Delivered PR #1027 (5a6544a957): nine foreign stages restored to proven prior absence; 002 foreign claim and next removed; 003 script and 004 corrections preserved. Audit and 61-commit evidence included. Board/core/rules and focused studio checks pass. Full suite 1464 tests, 13 skips; two TMPDIR-dependent failures cleared by all 12 gate_upcoming tests passing under /private/tmp. Next: independent Chief review and merge; routing guard remains PR #1021. No media or publishing changes.)
