@@ -48,7 +48,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2993 | mini | open (after J2992) | – | – | WW2:001 edit · for codex · assembly · WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch |  |
 | J2995 | mini | blocked | gemini | – | WW2:002 vo · for gemini · vo · WW2 pilot 002: narration in Ben's voice |  |
 | J2996 | mini | open (after J2995) | – | – | WW2:002 edit · for codex · assembly · WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch |  |
-| J3000 | mini | open (after J2991) | – | – | WW2:004 script · for codex · script · WW2 film 004: topic review, script and sources, "Why America's Submarine Torpedoes Failed for 21 Months in WW2" |  |
+| J3000 | mini | claimed | codex | 2026-11-18T08:19Z | WW2:004 script · for codex · script · WW2 film 004: topic review, script and sources, "Why America's Submarine Torpedoes Failed for 21 Months in WW2" |  |
 | J3006 | mini | open (after J2990) | – | – | for codex · studio · WW2 channel: read its own analytics from day one, and a progress-to-monetisation card |  |
 | J3010 | mini | blocked | gemini | – | 007 upload · review · HOS 007 Vaccine Short (xgx2lYHhYZM): read next-morning snapshot after J3004 | f57ab150da |
 | J3012 | mini | open | – | – | chief · Decoupling phase 3: move the studio engine into its own repo, runbook now, move after a clean week |  |
