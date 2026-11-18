@@ -72,6 +72,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3050 | any | claimed | codex | 2026-11-18T13:55Z | 009 edit · for codex · assembly · `gpt-6.1-sol` · HOS 009: resolve billing evidence mapping without generation | J3047 |
 | J3051 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3020 |  |
 | J3052 | any | open (after J3050) | – | – | 009 edit · for claudecode · review · `mini-claude-opus-5-5` · HOS 009: Claude independently review billing evidence proposal | https://github.com/TheLaughingGod1986/history-of-science/pull/651 |
+| J3053 | any | open (after J3052) | – | – | 009 edit · chief · HOS 009: decide reviewed billing evidence proposal | https://github.com/TheLaughingGod1986/history-of-science/pull/651 |
 
 Recently finished:
 

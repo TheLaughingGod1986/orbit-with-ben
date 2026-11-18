@@ -1,5 +1,5 @@
 {
-  "next_id": 3053,
+  "next_id": 3054,
   "jobs": [
     {
       "id": "J0001",
@@ -272237,6 +272237,35 @@
       "kind": "review",
       "model": "mini-claude-opus-5-5",
       "plain": "Double checking how billing evidence is read for the falling Moon film"
+    },
+    {
+      "id": "J3053",
+      "title": "HOS 009: decide reviewed billing evidence proposal",
+      "needs": "any",
+      "repo": "hos",
+      "body": "After independent Claude review J3052, elected Chief decides HOS PR651 (J3050 offline billing evidence proposal) with the review and sanitized findings. Recheck chief_relay.py status before protected action. Decide accept, request changes, or reject the proposal; merge only if appropriate after independent review and required checks. This is not approval to integrate a production guard or generate. The retained J3045 preflight does not prove its nested overage value, and sparse observations never establish unchanged account state. Preserve extension flags/limits, active plan, pending reconciliation, live tariff, recorder lock and pause requirements; any unknown remains no POST. No account/billing changes, live API smoke test, generation, deployment or guard relaxation. J3043/J3045 allowance permanently closed unused (0 POSTs), J2808 rejection and J2035/J2171 holds intact. Any future production needs a separate explicit scope/decision, with no pooled or renewed historical allowance. Record decision on HOS desk with reference to Claude desk6978888233. No automatic retry timer.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/651",
+      "film": "009",
+      "stage": "edit",
+      "after": "J3052",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-18T13:30Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-18T13:30Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Decide the proposal after independent Claude review",
+      "kind": "chief",
+      "plain": "Deciding whether the falling Moon billing evidence proposal is sound"
     }
   ],
   "focus": [
