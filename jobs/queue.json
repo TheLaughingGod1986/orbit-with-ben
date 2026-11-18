@@ -269917,9 +269917,14 @@
           "at": "2026-11-18T05:00Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Confirmed PR #1009 (849a19f686) is OPEN/unmerged with script stage=review; auditing PR #1009 deliverables for Chief"
+        },
+        {
+          "at": "2026-11-18T05:05Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Audited PR #1009 (849a19f686): 58 blocks, 247 shot rows, 0 mismatches, 0 claim flags, 5 PD/Crown-expired archive items PASS"
         }
       ],
-      "remaining_action": "Audit PR #1009 (WW2:002 script, sources, claims check, shot list, provenance) and ElevenLabs VO preflight",
+      "remaining_action": "Commit jobs/reviews/J3031/REVIEW.md and park protected Chief actions (PR #1009 merge + reopen J2995 or wait --recheck J3031)",
       "kind": "review",
       "recheck_of": "J2995",
       "due": "2026-11-18T05:53:10+00:00",
@@ -269934,11 +269939,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-18T05:00Z",
+        "at": "2026-11-18T05:05Z",
         "by": "gemini",
-        "note": "Confirmed PR #1009 (849a19f686) is OPEN/unmerged with script stage=review; auditing PR #1009 deliverables for Chief"
+        "note": "Audited PR #1009 (849a19f686): 58 blocks, 247 shot rows, 0 mismatches, 0 claim flags, 5 PD/Crown-expired archive items P"
       },
       "taskKeys": [
         "WW2:002"
