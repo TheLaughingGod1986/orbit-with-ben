@@ -255274,13 +255274,13 @@
       "stage": "upload",
       "after": "J2859",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-18T12:33Z",
-      "eta": "2026-11-18T14:33Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-14T20:37Z",
-      "result": "",
+      "result": "Waiting for: ileYnHpLLCU is public (scheduled Tue 8 Dec 2026 18:00Z). Then post the comment with 07_Content-Ops update-pinned-comment.ts --create --video ileYnHpLLCU --question (from Pinned-Comments/j01_pinned_v01.txt) and pin it in Studio. The API returned 403 forbidden on the Private video on 18 Nov. Thumb test T040 and end screen are already done. DO NOT UPLOAD AGAIN.",
       "history": [
         {
           "at": "2026-11-14T20:37Z",
@@ -255381,9 +255381,19 @@
           "at": "2026-11-18T12:35Z",
           "by": "claudecode",
           "what": "step 3 of 4 done: End screen saved: Subscribe + VBaYRPp85Sw (55e02b6801). 3-way thumb test set (T040). Only the pinned comment is left; the comment API returns 403 on the Private video."
+        },
+        {
+          "at": "2026-11-18T12:35Z",
+          "by": "claudecode",
+          "what": "blocked: Waiting for: ileYnHpLLCU is public (scheduled Tue 8 Dec 2026 18:00Z). Then post the comment with 07_Content-Ops update-pinned-comment.ts --create --video ileYnHpLLCU --question (from Pinned-Comments/j01_pinned_v01.txt) and pin it in Studio. The API returned 403 forbidden on the Private video on 18 Nov. Thumb test T040 and end screen are already done. DO NOT UPLOAD AGAIN."
+        },
+        {
+          "at": "2026-11-18T12:35Z",
+          "by": "claudecode",
+          "what": "condition recorded; next verification 2026-12-08T18:30:00Z"
         }
       ],
-      "remaining_action": "Once ileYnHpLLCU is public (Tue 8 Dec 18:00Z): post the j01 comment with update-pinned-comment.ts --create and pin it in Studio",
+      "remaining_action": "Post and pin the j01 comment on ileYnHpLLCU once it is public",
       "kind": "studio",
       "plain": "Uploading Journey Film 01 as Private on YouTube and starting its 3-thumbnail test",
       "mini_only": true,
@@ -255414,6 +255424,11 @@
         "at": "2026-11-18T12:35Z",
         "by": "claudecode",
         "note": "End screen saved: Subscribe + VBaYRPp85Sw (55e02b6801). 3-way thumb test set (T040). Only the pinned comment is left; th"
+      },
+      "hold": {
+        "type": "public",
+        "condition": "ileYnHpLLCU is public (scheduled Tue 8 Dec 2026 18:00Z). Then post the comment with 07_Content-Ops update-pinned-comment.ts --create --video ileYnHpLLCU --question (from Pinned-Comments/j01_pinned_v01.txt) and pin it in Studio. The API returned 403 forbidden on the Private video on 18 Nov. Thumb test T040 and end screen are already done. DO NOT UPLOAD AGAIN.",
+        "check_at": "2026-12-08T18:30:00Z"
       }
     },
     {
