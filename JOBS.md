@@ -60,7 +60,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3066 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Pluto Short about the frozen heart (v02, Test A opening) Private, slot Mon 21 Dec 11:30 |  |
 | J3070 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Restore HOS Studio response for the plants Short first-day check |  |
 | J3073 | any | open (after J3072) | – | – | chief · Integrate repaired Field Order History connection prerequisites |  |
-| J3075 | mini | open | – | – | review · Verify condition for J2996 |  |
+| J3075 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2996 |  |
 | J3076 | mini | open | – | – | chief · Chief: resolve 001 script orphan-review |  |
 | J3077 | mini | open | – | – | chief · Chief: resolve 001 vo orphan-review |  |
 | J3078 | mini | open | – | – | chief · Chief: resolve 001 edit orphan-blocked |  |
