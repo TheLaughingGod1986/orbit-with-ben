@@ -226915,9 +226915,14 @@
           "at": "2026-11-18T21:01Z",
           "by": "codex",
           "what": "step 1 of 4 done: Recorded exact trees and 200 source-file hashes; migration decision preserves branches, pending reviews, production pins and offline-only restrictions."
+        },
+        {
+          "at": "2026-11-18T21:08Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: HOS656 contains exact preservation inventory and Chief disposition; required local checks and 344 Python tests PASS. CI still installing ffmpeg; no source PR closed yet."
         }
       ],
-      "remaining_action": "Record and verify migration closure of the three retained review branches",
+      "remaining_action": "Merge the verified migration record after GitHub checks finish, then close retained review PRs unmerged",
       "due": "2026-11-18T18:00:00Z",
       "kind": "chief",
       "plain": "Remove email addresses from both channels' repos, including their past versions",
@@ -226925,9 +226930,9 @@
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-18T21:01Z",
+        "at": "2026-11-18T21:08Z",
         "by": "codex",
-        "note": "Recorded exact trees and 200 source-file hashes; migration decision preserves branches, pending reviews, production pins"
+        "note": "HOS656 contains exact preservation inventory and Chief disposition; required local checks and 344 Python tests PASS. CI "
       },
       "taskKeys": [
         "HOS:005",
