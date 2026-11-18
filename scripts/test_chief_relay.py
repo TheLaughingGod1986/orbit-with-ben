@@ -642,6 +642,29 @@ class Relay(unittest.TestCase):
         self.assertTrue((cr.STATE / "chief" / "down" / "claude.json").exists())
         self.assertIn("Claude is out of usage", self.posts.read_text())
 
+    def test_out_of_usage_worker_uses_ledger_reset_and_is_not_woken_before_it(self):
+        import json
+        q = self.claude_setup('{"jobs": [{"id": "J0980", "kind": "studio", "status": "open", "needs": "mini"}]}')
+        ledger = cr.STUDIO / "05_Analytics" / "ai_spend" / "ledger.jsonl"
+        ledger.parent.mkdir(parents=True, exist_ok=True)
+        reset_iso = cr.iso(T0 + 8 * 60 * MIN)
+        ledger.write_text(json.dumps({
+            "at": cr.iso(T0 - 10 * MIN), "kind": "record", "pool": "cursor",
+            "left": 0.0, "total": 100.0,
+            "note": f"Weekly included usage 100% used; weekly resets {reset_iso}",
+        }) + "\n")
+        self.fake("cursor", 'echo "Error: You have hit your usage limit. Upgrade your plan."; exit 1')
+        cr.seen("chief", T0 - 10 * MIN)
+        cr.cmd_run(T0)
+        st = cr.agent_status("cursor", T0 + 2 * 60 * MIN)
+        self.assertFalse(st["up"])
+        self.assertEqual(st["until"], reset_iso)
+        self.assertEqual(self.job(q, "J0980")["for"], "codex")
+        (self.tmp / "cursor.ran").unlink()
+        q.write_text('{"jobs": [{"id": "J0981", "kind": "studio", "status": "open", "needs": "mini"}]}')
+        cr.cmd_run(T0 + 2 * 60 * MIN)
+        self.assertFalse(self.ran("cursor"))
+
     def test_claude_marked_out_reroutes_only_claude_owned_jobs(self):
         q = self.claude_setup('{"jobs": ['
                               '{"id": "J0301", "kind": "review", "status": "open", "needs": "cloud"}, '

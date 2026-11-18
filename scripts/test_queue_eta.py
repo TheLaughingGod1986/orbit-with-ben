@@ -107,6 +107,90 @@ class Forecast(unittest.TestCase):
         d["jobs"] *= 6
         self.assertEqual(q.durations(d, AT)["gemini"], 30)
 
+    def test_models_forecast_and_dispatcher_share_one_out_of_usage_source_and_reset_retry(self):
+        import json
+        import tempfile
+        import board_publish as bp
+        import chief_relay as cr
+
+        now = dt.datetime(2026, 11, 17, 8, 40, tzinfo=dt.timezone.utc)
+        with tempfile.TemporaryDirectory() as tmp:
+            root = pathlib.Path(tmp)
+            state = root / "state" / "chief"
+            (state / "down").mkdir(parents=True)
+            studio_dir = root / "studio"
+            (studio_dir / "scripts").mkdir(parents=True)
+            flags_file = studio_dir / "scripts" / "credit_flags.json"
+            flags_file.write_text('{"flags": {}}')
+            ledger = studio_dir / "05_Analytics" / "ai_spend" / "ledger.jsonl"
+            ledger.parent.mkdir(parents=True)
+
+            # 1) Cursor failed out of usage in runs.jsonl with no down/cursor.json and only a stale past reset in ledger:
+            #    retries after a few hours (08:27 + 3 h = 11:27), ignoring the "$0.58 used this month (resets Dec 1)" cap.
+            (state / "runs.jsonl").write_text(
+                json.dumps({"at": "2026-11-17T08:27:22Z", "job": "J2976", "worker": "cursor",
+                            "model": "cursor-grok-4-7", "out_of_usage": True}) + "\n"
+            )
+            ledger.write_text(
+                json.dumps({"at": "2026-11-09T08:30:46Z", "kind": "record", "pool": "cursor", "left": 1.0,
+                            "total": 100.0, "note": "Weekly included usage 99% used; weekly resets 12 Nov; "
+                                                    "$0.58 used this month (resets Dec 1)"}) + "\n"
+            )
+            (state / "down" / "codex.json").write_text(
+                json.dumps({"since": "2026-11-16T10:00:00Z", "until": "2026-11-17T23:22:00Z",
+                            "reason": "Codex hit usage limit until 2026-11-17T23:22:00Z"})
+            )
+            (state / "chain.json").write_text(json.dumps({
+                "at": "2026-11-17T08:33:39Z",
+                "rows": [
+                    {"agent": "codex", "up": False, "why": "marked down: Codex hit usage limit"},
+                    {"agent": "gemini", "up": True, "why": "ready"},
+                ],
+            }))
+
+            d = {"next_id": 3, "jobs": [
+                {"id": "J2979", "title": "Sweep", "needs": "mini", "status": "open", "history": []},
+                {"id": "J2985", "title": "For Cursor", "needs": "mini", "for": "cursor", "status": "open", "history": []},
+            ]}
+            with patch.object(jobs.chief_relay, "worker_capabilities", return_value={}), \
+                    patch.object(jobs.chief_relay, "current_execution", return_value=None), \
+                    patch.object(jobs, "ordered", side_effect=lambda data, at=None: list(data["jobs"])), \
+                    patch.dict("os.environ", {"CHIEF_USAGE_RETRY_H": "3"}, clear=False):
+                models = bp.models_status(now, d["jobs"], state=state, flags_file=flags_file, studio=studio_dir)
+                forecast = q.section(d, {"chain": []}, BOOK, now, models=models, state=state,
+                                     studio=studio_dir, flags_file=flags_file)
+                disp = cr.agent_status("cursor", now, state=state, studio=studio_dir, flags_file=flags_file)
+
+            m_cursor = next(m for m in models["models"] if m["id"] == "cursor")
+            f_cursor = next(a for a in forecast["agents"] if a["agent"] == "cursor")
+            self.assertEqual(m_cursor["status"], "red")
+            self.assertFalse(f_cursor["up"])
+            self.assertFalse(disp["up"])
+            self.assertEqual(m_cursor["why"], f_cursor["why"])
+            self.assertEqual(m_cursor["until"], "2026-11-17T11:27:22Z")
+            self.assertEqual(f_cursor["until"], "2026-11-17T11:27:22Z")
+            self.assertEqual(disp["until"], "2026-11-17T11:27:22Z")
+            self.assertEqual(forecast["jobs"]["J2979"]["agent"], "gemini")
+            self.assertIn("waiting for cursor", forecast["noAgent"]["J2985"])
+
+            # 2) Once the credit reader records a fresh future reset time, all three use that reset time.
+            ledger.write_text(
+                json.dumps({"at": "2026-11-17T08:39:00Z", "kind": "record", "pool": "cursor", "left": 0.0,
+                            "total": 100.0, "note": "Weekly included usage 100% used; weekly resets Thu 19 Nov 19:30Z"}) + "\n"
+            )
+            with patch.object(jobs.chief_relay, "worker_capabilities", return_value={}), \
+                    patch.object(jobs.chief_relay, "current_execution", return_value=None), \
+                    patch.object(jobs, "ordered", side_effect=lambda data, at=None: list(data["jobs"])):
+                models2 = bp.models_status(now, d["jobs"], state=state, flags_file=flags_file, studio=studio_dir)
+                forecast2 = q.section(d, {"chain": []}, BOOK, now, models=models2, state=state,
+                                      studio=studio_dir, flags_file=flags_file)
+                disp2 = cr.agent_status("cursor", now, state=state, studio=studio_dir, flags_file=flags_file)
+            m2 = next(m for m in models2["models"] if m["id"] == "cursor")
+            f2 = next(a for a in forecast2["agents"] if a["agent"] == "cursor")
+            self.assertEqual(m2["until"], "2026-11-19T19:30:00Z")
+            self.assertEqual(f2["until"], "2026-11-19T19:30:00Z")
+            self.assertEqual(disp2["until"], "2026-11-19T19:30:00Z")
+
 
 if __name__ == "__main__":
     unittest.main()

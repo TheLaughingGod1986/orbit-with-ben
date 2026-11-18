@@ -75,33 +75,69 @@ def _flags() -> dict:
         return {}
 
 
-def agents_up(mini_hb: dict | None, macbook_hb: dict | None, at: dt.datetime) -> dict:
-    """{agent: why it is down or ''}: the Mini's own chain, the MacBook's heartbeat, and Claude's hourly run."""
-    out = {}
-    flags = _flags()
-    rows = {r.get("agent"): r for r in (mini_hb or {}).get("chain") or [] if isinstance(r, dict)}
-    for a in routing.MINI_WORKERS:
-        r = rows.get(a)
-        why = "" if r and r.get("up") else str((r or {}).get("why") or "")
-        flag = (flags.get(a) or {}) if not (r and r.get("up")) else {}
-        if not why and flag.get("out_until") and (_t(flag["out_until"]) or at) > at:
-            why = f"out of credit until {flag['out_until']}" + (f" ({flag.get('reason')})" if flag.get("reason") else "")
-        # The heartbeat's chain is the Chief chain (Claude, Grok, Codex, Gemini); a worker missing from it (Cursor) is
-        # up unless a down mark or credit flag says otherwise (5 Nov 2026: Cursor showed "not in the Mini's chain").
-        out[a] = (why or ("" if r or a not in CHIEF_CHAIN else "not in the Mini's chain"))[:120]
+def agent_details(mini_hb: dict | None, macbook_hb: dict | None, at: dt.datetime, *,
+                  models: dict | None = None, state: pathlib.Path | None = None,
+                  studio: pathlib.Path | None = None, flags_file: pathlib.Path | None = None) -> tuple[dict, dict]:
+    """({agent: why it is down or ''}, {agent: retry/reset ISO or ''}) from the shared relay source when supplied,
+    plus the MacBook's heartbeat."""
+    out, untils = {}, {}
+    if state is not None:
+        import chief_relay
+        states = chief_relay.agent_states(at, state=state, studio=studio, flags_file=flags_file, use_chain=True)
+        for a in (*routing.MINI_WORKERS, "claude"):
+            st = states.get(a) or {"up": True, "reason": "", "until": ""}
+            out[a] = "" if st["up"] else str(st.get("reason") or st.get("why") or "down")[:120]
+            untils[a] = "" if st["up"] else str(st.get("until") or "")
+    elif models is not None:
+        by_id = {m.get("id"): m for m in (models.get("models") or []) if isinstance(m, dict) and m.get("id")}
+        by_worker = {w.get("agent"): w for w in (models.get("workers") or []) if isinstance(w, dict) and w.get("agent")}
+        by_chain = {r.get("agent"): r for r in (models.get("chiefChain") or []) if isinstance(r, dict) and r.get("agent")}
+        for a in (*routing.MINI_WORKERS, "claude"):
+            w = by_worker.get(a) or by_chain.get(a)
+            m = by_id.get(a)
+            if m and m.get("status") == "red":
+                out[a] = str(m.get("why") or "down")[:120]
+                untils[a] = str(m.get("until") or (w or {}).get("until") or "")
+            elif w is not None and not w.get("up"):
+                out[a] = str(w.get("why") or "down")[:120]
+                untils[a] = str(w.get("until") or "")
+            else:
+                out[a], untils[a] = "", ""
+    else:
+        flags = _flags()
+        rows = {r.get("agent"): r for r in ((mini_hb or {}).get("chain") or []) + ((mini_hb or {}).get("workers") or [])
+                if isinstance(r, dict) and r.get("agent")}
+        for a in routing.MINI_WORKERS:
+            r = rows.get(a)
+            why = "" if r and r.get("up") else str((r or {}).get("why") or "")
+            until = "" if r and r.get("up") else str((r or {}).get("until") or "")
+            flag = (flags.get(a) or {}) if not (r and r.get("up")) else {}
+            if not why and flag.get("out_until") and (_t(flag["out_until"]) or at) > at:
+                why = f"out of credit until {flag['out_until']}" + (f" ({flag.get('reason')})" if flag.get("reason") else "")
+                until = str(flag["out_until"])
+            out[a] = (why or ("" if r or a not in CHIEF_CHAIN else "not in the Mini's chain"))[:120]
+            untils[a] = until if out[a] else ""
+        r = rows.get("claude")
+        out["claude"] = str(r.get("why") or "marked down by the relay")[:120] if r and not r.get("up") else ""
+        untils["claude"] = str((r or {}).get("until") or "") if out["claude"] else ""
+
     for a in MACBOOK_SLOTS:
         hb = macbook_slot(macbook_hb, a)
         seen = _t((hb or {}).get("at"))
         why = (hb or {}).get("why") or []
         why = "; ".join(why) if isinstance(why, list) else str(why)
-        # A MacBook waiting on its guards (in use, on battery) takes no job now: say so rather than promise a start.
-        out[a] = ((f"no heartbeat from MacBook slot {a[-1]} in 40 min" if a != "macbook" else
+        out[a] = ((f"no heartbeat from MacBook slot {a[-1]}" + " in 40 min" if a != "macbook" else
                    "no MacBook heartbeat in 40 min") if not (seen and at - seen <= MACBOOK_FRESH) else
                   why[:120] if (hb or {}).get("state") == "waiting" and why else "")
-    # Cloud Claude: down when the relay has it down (e.g. a missed Chief inbox), else up.
-    r = rows.get("claude")
-    out["claude"] = str(r.get("why") or "marked down by the relay")[:120] if r and not r.get("up") else ""
-    return out
+        untils[a] = ""
+    return out, untils
+
+
+def agents_up(mini_hb: dict | None, macbook_hb: dict | None, at: dt.datetime, *,
+              models: dict | None = None, state: pathlib.Path | None = None,
+              studio: pathlib.Path | None = None, flags_file: pathlib.Path | None = None) -> dict:
+    """{agent: why it is down or ''}: shared relay state, the MacBook's heartbeat, and Claude's hourly run."""
+    return agent_details(mini_hb, macbook_hb, at, models=models, state=state, studio=studio, flags_file=flags_file)[0]
 
 
 def _who_can(job: dict, up: dict) -> list:
@@ -117,11 +153,14 @@ def _next_cloud_run(t: dt.datetime) -> dt.datetime:
     return nxt if nxt >= t else nxt + dt.timedelta(minutes=CLOUD_EVERY)
 
 
-def section(queue: dict, mini_hb: dict | None, macbook_hb: dict | None, at: dt.datetime) -> dict:
-    up = agents_up(mini_hb, macbook_hb, at)
+def section(queue: dict, mini_hb: dict | None, macbook_hb: dict | None, at: dt.datetime, *,
+            models: dict | None = None, state: pathlib.Path | None = None,
+            studio: pathlib.Path | None = None, flags_file: pathlib.Path | None = None) -> dict:
+    up, untils = agent_details(mini_hb, macbook_hb, at, models=models, state=state, studio=studio, flags_file=flags_file)
     took = durations(queue, at)
     est = {a: dt.timedelta(minutes=took.get(a, DEFAULT_MIN)) for a in CAN}
-    lanes = {a: {"agent": a, "machine": MACHINE[a], "up": not up[a], "why": up[a], "now": "", "freeAt": _iso(at),
+    lanes = {a: {"agent": a, "machine": MACHINE[a], "up": not up[a], "why": up[a], "until": untils.get(a, ""),
+                 "now": "", "freeAt": _iso(at),
                  "queued": 0, "minutesPerJob": round(est[a].total_seconds() / 60)} for a in CAN}
     free = {a: at for a in CAN}
     for j in queue.get("jobs") or []:

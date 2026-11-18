@@ -1014,7 +1014,25 @@ def do_reroute(job: dict, agent: str, to: str, model: str, note: str, at: dt.dat
         job["result"] = ""
     if model:
         job["model"] = model
+    elif job.get("model") and routing.RUNS_ON.get(job["model"]) != to:
+        job.pop("model", None)
     log(job, at, agent, f"rerouted to {to}" + (f" on {model}" if model else "") + (": " + note if note else ""))
+
+
+def reconcile_addressed(data: dict, at: dt.datetime, up: set[str] | None = None, agent: str = "relay") -> list[str]:
+    """Move open jobs addressed to a down agent when Ben is waiting on them, when the agent is down past the job's due
+    time, or when an urgent job's agent is down for over 20 minutes."""
+    workers = chief_relay.workers_up(at) if up is None else set(up)
+    moved = []
+    for job, lane, reason in chief_relay.addressed_jobs_to_reroute(data, workers, at):
+        if not lane:
+            continue
+        to, model = lane
+        pin = chief_relay.lane_model(lane)
+        note = f"{reason}; next in its chain: {to} on {routing.cli_model(model) or 'its default'}"
+        do_reroute(job, agent, to, pin, note, at)
+        moved.append(job["id"])
+    return moved
 
 
 def do_handback(job: dict, agent: str, note: str, at: dt.datetime) -> None:
@@ -1416,7 +1434,7 @@ def main(argv=None) -> int:
                 apply_metadata(data, json.loads(args.file.read_text()), args.agent, at)
                 return {"id":"metadata","title":"Workflow metadata","needs":"any","status":"done","result":"metadata updated","history":[]},None,touched
             if args.cmd == "reconcile":
-                changes = reconcile_dependencies(data, at) + reconcile_holds(data, at)
+                changes = reconcile_dependencies(data, at) + reconcile_holds(data, at) + reconcile_addressed(data, at)
                 changes += handoffs.reconcile(data, list(handoffs.records(studio.FILMS)), at, do_add)
                 return {"id": "reconcile", "title": "Dependency reconciliation", "needs": "any", "status": "done", "result": ", ".join(changes), "history": []}, None, touched
             if args.cmd == "add":
