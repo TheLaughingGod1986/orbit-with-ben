@@ -274821,13 +274821,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-18T20:20Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-18T20:11Z",
-      "result": "Waiting for: J3071 must verify responsive signed-in HistoryOfScienceYT on the MacBook local browser and load Since published Analytics for ChbsigHD5_o, with timestamped evidence. Mini renderer recovery probes failed at 20:22-20:24Z despite responsive browser control plane. J3063 stays held until verified; no video changes authorized.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-18T20:11Z",
@@ -274878,6 +274878,11 @@
           "at": "2026-11-18T21:13Z",
           "by": "relay",
           "what": "condition verification queued: J3085"
+        },
+        {
+          "at": "2026-11-18T23:44Z",
+          "by": "codex",
+          "what": "reopened: J3086 Chief follow-up: accepted J3071 f6fe5f717 and J3085 evidence of responsive signed-in HistoryOfScienceYT and Since published Analytics at 18 Nov 20:37Z. Finish handoff: route J3063 to needs macbook before reopening it; preserve original setup checks and actual observation time. No repeated Mini probes, video changes or spend. J3063 remains held until handoff is recorded."
         }
       ],
       "remaining_action": "Verify the MacBook fallback evidence before reopening the original plants video check",
@@ -274894,22 +274899,9 @@
       },
       "for": "codex",
       "model": "gpt-6.1-sol",
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-18T20:25Z",
-        "by": "codex",
-        "note": "Bounded Mini recovery failed; browser transport responds but renderer does not. J3071 queued for local MacBook read-only"
-      },
       "taskKeys": [
         "HOS:006"
-      ],
-      "hold": {
-        "type": "dependency",
-        "condition": "J3071 must verify responsive signed-in HistoryOfScienceYT on the MacBook local browser and load Since published Analytics for ChbsigHD5_o, with timestamped evidence. Mini renderer recovery probes failed at 20:22-20:24Z despite responsive browser control plane. J3063 stays held until verified; no video changes authorized.",
-        "check_at": "2026-11-18T22:13:50+00:00",
-        "recheck_task": "J3085"
-      }
+      ]
     },
     {
       "id": "J3071",
