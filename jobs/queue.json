@@ -266980,9 +266980,14 @@
           "at": "2026-11-18T06:06Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-18T06:06Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test",
+      "remaining_action": "Check v05 hash and manifest, then upload Private scheduled 9 Dec 18:00Z",
       "due": "2026-12-07T18:00:00Z",
       "kind": "studio",
       "approved_from": {
@@ -267009,12 +267014,13 @@
       "model": "mini-claude-opus-5-5",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-18T06:06Z",
-        "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "claudecode"
+      },
+      "taskKeys": [
+        "OWB:033"
+      ]
     },
     {
       "id": "J2987",
