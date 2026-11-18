@@ -273092,10 +273092,10 @@
       "stage": "",
       "after": "J3013",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-18T16:26Z",
+      "eta": "2026-11-18T18:26Z",
       "created_by": "codex",
       "created_at": "2026-11-18T16:23Z",
       "result": "",
@@ -273104,11 +273104,24 @@
           "at": "2026-11-18T16:23Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-18T16:26Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Fix channel identity checks and test that each job updates only its own channel",
       "kind": "assembly",
-      "plain": "Fix jobs that accidentally update the wrong channel’s video progress"
+      "plain": "Fix jobs that accidentally update the wrong channel’s video progress",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-18T16:26Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
