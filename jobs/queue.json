@@ -226517,10 +226517,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-18T13:17Z",
-      "eta": "2026-11-18T15:17Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T19:53Z",
       "result": "",
@@ -226799,6 +226799,11 @@
           "at": "2026-11-18T13:23Z",
           "by": "codex",
           "what": "step 1 of 4 done: HOS PR 650 merged as f60a3f65; all local and GitHub checks pass, 300 source hashes verified on main. Stage 2 remains incomplete."
+        },
+        {
+          "at": "2026-11-18T13:23Z",
+          "by": "codex",
+          "what": "released: Clean checkpoint: HOS 650 merged f60a3f65, preserving 300 exact source files and appending only the missing cuff library entry. Closed 624,560,542 as carried and 612 as superseded; branches retained. Four ordinary PRs remain: 579 desk outcomes with requested Claude review, 570 Prisma upgrade, 561 review-only sheets, 551 diagnostic keep-open instruction. Protected desk 180 untouched. Continue stage 2 then mirror rehearsal and day-before rewrite notice. No history rewritten. Evidence jobs/reviews/J2537/FINAL_RECORDS_CARRY.md and JSON. Remaining staged migration exceeds this bounded run; ready work, no timed hold."
         }
       ],
       "remaining_action": "Resolve four remaining HOS pull requests, then rehearse the history rewrite",
