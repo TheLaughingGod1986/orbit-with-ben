@@ -274141,10 +274141,10 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-18T19:06Z",
+      "eta": "2026-11-18T19:51Z",
       "created_by": "refill",
       "created_at": "2026-11-18T19:03Z",
       "result": "",
@@ -274158,6 +274158,11 @@
           "at": "2026-11-18T19:04Z",
           "by": "relay",
           "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
+        },
+        {
+          "at": "2026-11-18T19:06Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Read the latest Studio performance figures",
@@ -274172,7 +274177,15 @@
         "by": ""
       },
       "for": "codex",
-      "model": "gpt-6.1-sol"
+      "model": "gpt-6.1-sol",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-18T19:06Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
