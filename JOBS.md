@@ -66,7 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3039 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
 | J3041 | mini | open | – | – | chief · Chief: resolve 002 edit orphan-doing |  |
 | J3044 | mini | blocked | codex | – | for codex · studio · WW2 channel is live: record its channel ID, short name FOH on the board, connect it to the studio |  |
-| J3051 | mini | open | – | – | for codex · review · `gpt-6-astra` · Verify condition for J3020 |  |
+| J3051 | mini | claimed | codex | 2026-11-18T18:35Z | for codex · review · `gpt-6-astra` · Verify condition for J3020 |  |
 | J3055 | mini | open | – | – | chief · Chief: resolve 001 edit orphan-doing |  |
 | J3056 | mini | open | – | – | chief · Chief: resolve 002 edit orphan-doing |  |
 
