@@ -266846,9 +266846,14 @@
           "at": "2026-11-18T00:02Z",
           "by": "codex",
           "what": "Chief FIX (codex, 18 Nov): PR #987 at 2337a2398e not approved for merge/deploy. Reproduced unsafe cheaper-tier recommendation, false exhaustion at 94%, merged weekly windows and expired-window reading shown current. J3024 owns corrections, regression tests and sanitized billing provenance; re-review after J3024."
+        },
+        {
+          "at": "2026-11-18T03:22Z",
+          "by": "codex",
+          "what": "remaining action: Await J3024 reset-date and allowance-window corrections, then Chief re-review before merge and deployment"
         }
       ],
-      "remaining_action": "Await J3024 credit-calculation fixes and billing evidence, then re-review before merge and deployment",
+      "remaining_action": "Await J3024 reset-date and allowance-window corrections, then Chief re-review before merge and deployment",
       "due": "2026-11-19T18:00:00Z",
       "for": "gemini",
       "kind": "studio",
@@ -269303,9 +269308,14 @@
           "at": "2026-11-18T03:21Z",
           "by": "codex",
           "what": "reopened: Chief FIX at 2283c8c986: review https://github.com/TheLaughingGod1986/orbit-with-ben/pull/987#issuecomment-6968024257. Both browser reset parsers discard explicit year and interpret UTC as London time, causing premature expiry. Separate allowance reset evidence from unverified billing; restore monthly Time row or explicit unknown state and visible Ultra decision. Same Codex repair job, existing deadline; J2985 stays held after J3024. Regressions and phone evidence required before re-review; no merge/deploy."
+        },
+        {
+          "at": "2026-11-18T03:22Z",
+          "by": "codex",
+          "what": "remaining action: Fix reset dates on both credit pages, restore allowance Time information and the Ultra decision; follow Chief review on PR 987 comment 6968024257"
         }
       ],
-      "remaining_action": "Awaiting Chief re-review of the repaired credit panel on pull request 987",
+      "remaining_action": "Fix reset dates on both credit pages, restore allowance Time information and the Ultra decision; follow Chief review on PR 987 comment 6968024257",
       "due": "2026-11-19T18:00:00Z",
       "for": "codex",
       "kind": "assembly",
