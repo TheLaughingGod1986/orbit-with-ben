@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2035, J2529, J2993, J3121.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2035, J2529, J2993, J3121, J3122.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -68,6 +68,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3119 | mini | open (after J3115) | – | – | 034 upload · studio · Upload the Pluto long master v02 Private and scheduled for Sun 13 Dec 18:00, arm the thumbnail test |  |
 | J3120 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3114 |  |
 | J3121 | mini | claimed | macbook-2 | 2026-11-19T09:14Z | studio · Orbit Shorts: move tomorrow's fourth nearest-star Short a week out and add the same-subject spacing rule |  |
+| J3122 | mini | open | – | – | studio · HOS Shorts: the Vaccine and Plants Shorts got no feed reach; read Studio Reach, rule on the 28-29 Nov vaccine Shorts, record the health-topic learning |  |
 
 Recently finished:
 
