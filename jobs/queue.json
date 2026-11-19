@@ -280531,13 +280531,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-19T14:34Z",
-      "eta": "2026-11-19T16:34Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-19T12:00Z",
-      "result": "",
+      "result": "Chief ruling: condition NOT MET. J2035 remains held; J3059 accepted PR651 d047b064 offline only, Grok desk 7005927729 opened no score scope or production guard, and v01/v02 remain rejected. J3139 will decide and queue a compliant score route; next condition check 2026-11-20 12:00Z. Original gates and closed unused allowance remain intact.",
       "history": [
         {
           "at": "2026-11-19T12:00Z",
@@ -280598,6 +280598,11 @@
           "at": "2026-11-19T14:34Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T14:34Z",
+          "by": "codex",
+          "what": "done: Chief ruling: condition NOT MET. J2035 remains held; J3059 accepted PR651 d047b064 offline only, Grok desk 7005927729 opened no score scope or production guard, and v01/v02 remain rejected. J3139 will decide and queue a compliant score route; next condition check 2026-11-20 12:00Z. Original gates and closed unused allowance remain intact."
         }
       ],
       "remaining_action": "Elected Chief (codex): record jobs.py wait J2035 --type input --recheck J3132 (next check 2026-11-20T12:00:00Z) and close J3132",
