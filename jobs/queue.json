@@ -278595,13 +278595,13 @@
       "stage": "thumbs",
       "after": "J3111",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-19T08:30Z",
-      "eta": "2026-11-19T10:30Z",
+      "eta": "",
       "created_by": "macbook-2",
       "created_at": "2026-11-19T05:12Z",
-      "result": "",
+      "result": "parked for Chief: prior automatic approval review rejected GitHub export twice; explicit export approval remains unrecorded. Build and verification complete in clean local commit a12100797f, branch codex/j3114-pluto-v02, worktree /Volumes/MiniWork/scratch/j3114-wt. All 12 NAS artifact hashes reverified. Resolve export approval before push and PR for J3115; do not rebuild or bypass.",
       "history": [
         {
           "at": "2026-11-19T05:12Z",
@@ -278652,6 +278652,11 @@
           "at": "2026-11-19T08:31Z",
           "by": "codex",
           "what": "step 2 of 3 done: Resumed clean local commit a12100797f; all 12 NAS artifact hashes still match. Prior export rejection remains unresolved; no rebuild needed."
+        },
+        {
+          "at": "2026-11-19T08:31Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: prior automatic approval review rejected GitHub export twice; explicit export approval remains unrecorded. Build and verification complete in clean local commit a12100797f, branch codex/j3114-pluto-v02, worktree /Volumes/MiniWork/scratch/j3114-wt. All 12 NAS artifact hashes reverified. Resolve export approval before push and PR for J3115; do not rebuild or bypass."
         }
       ],
       "remaining_action": "Resolve approval for exporting the verified Pluto packaging branch, then open its review PR",
