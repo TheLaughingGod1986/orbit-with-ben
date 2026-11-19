@@ -277635,9 +277635,14 @@
           "at": "2026-11-19T04:30Z",
           "by": "codex",
           "what": "step 0 of 3 done: Checking J3105 drafts, J3106 package and J3108-J3112 dependencies; no media approval in this repair"
+        },
+        {
+          "at": "2026-11-19T04:31Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Confirmed all three NAS JPEG hashes; J3112 owns upload only, leaving thumbs without a stage-linked successor"
         }
       ],
-      "remaining_action": "Check Pluto thumbnail evidence and link the existing review handoff",
+      "remaining_action": "Link a thumbnail-stage review after the existing packaging panel",
       "kind": "chief",
       "handoff": {
         "film": "034",
@@ -277646,11 +277651,11 @@
         "signature": "c72a049a4d1dd8a916ac"
       },
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-19T04:30Z",
+        "at": "2026-11-19T04:31Z",
         "by": "codex",
-        "note": "Checking J3105 drafts, J3106 package and J3108-J3112 dependencies; no media approval in this repair"
+        "note": "Confirmed all three NAS JPEG hashes; J3112 owns upload only, leaving thumbs without a stage-linked successor"
       },
       "taskKeys": [
         "OWB:034"
