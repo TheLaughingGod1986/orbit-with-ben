@@ -225919,9 +225919,14 @@
           "at": "2026-11-19T18:17Z",
           "by": "chief",
           "what": "reopened: GOVERNING NOTE, Chief Grok, 19 Nov 2026. J3156 proved the resume gate in desk 7005254471: PR 663 is on history-of-science main at 5cd6d4ff, row 56 take 1 is SESSION_BLOCKED at 0 credits (pass L112, shared L338, spend L939), and dry-run --floor 3000 passes (recorded balance 24500, headroom 22600, unposted 800, remaining 1100). Desk 7009530991 left this held only because that seat could not write the queue during the stall. The stall has cleared. Batches 12-14 (rows 56-66) may start now on the post-reset allowance. The 12 Nov 13:00 and 18:45 London stops in the body are withdrawn for these 11 rows only. Row 56 is take 2 (P05_08a_wallace_opens_origin_t2). Take 3 is refused. Cap stays 6600. The 700-credit retake hold stays: do not mint the 7 RETAKE rows (3, 10, 24, 28, 47, 49, 54). Do not remint rows 1-55. Pull a detached worktree of history-of-science origin/main. Do not run a shared checkout that is not on main. --floor 3000 --other-reservations 0. One batch at a time. Live balance and Quality 100 before each Create. No auto-retry. Stop and park on any runner STOP, a pending charge, or a balance that falls by more than the price. Explorer sha 24659dc1d761e9371de9411ca8b56cd5ad3e2587674a8cbdf66a3b84e451476d. £0 cash."
+        },
+        {
+          "at": "2026-11-19T18:17Z",
+          "by": "chief",
+          "what": "step 11 of 14 done: Rows 56-66 released. Row 56 is take 2. The 12 Nov clock is withdrawn for these rows."
         }
       ],
-      "remaining_action": "Cursor adds reconcile-session-block (J3124). Then close row 56 t1 at 0 credits, dry-run --floor 3000, and mint rows 56-66.",
+      "remaining_action": "Mint Batches 12-14 only, rows 56-66, row 56 as take 2, floor 3000, from origin/main. Do not remint rows 1-55 or the 7 retakes.",
       "due": "2026-11-12T18:45:00Z",
       "kind": "video",
       "plain": "Make the 66 pictures for the Darwin and Wallace film, on credits that would otherwise expire on Thursday",
@@ -225932,7 +225937,14 @@
       ],
       "action": "Run the 14 batches one at a time under the Chief's guards: --floor 3000 stated, live balance before each Create, release between batches",
       "urgent": 4,
-      "escalated_at": "2026-11-12T20:07Z"
+      "escalated_at": "2026-11-12T20:07Z",
+      "progress": {
+        "step": 11,
+        "of": 14,
+        "at": "2026-11-19T18:17Z",
+        "by": "chief",
+        "note": "Rows 56-66 released. Row 56 is take 2. The 12 Nov clock is withdrawn for these rows."
+      }
     },
     {
       "id": "J2530",
