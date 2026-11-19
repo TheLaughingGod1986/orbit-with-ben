@@ -281834,13 +281834,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-19T16:44Z",
-      "eta": "2026-11-19T18:44Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-19T16:43Z",
-      "result": "",
+      "result": "HOS PR 669, commit 11ed0c86d925dca5cbbbd1a2abef71326f1b6b7a. Offline repair of findings A-D: pinned paths, O_EXCL recorder held through consume, sealed receipt, same-second and unreconciled ledger lines refuse. 22 tests passed. Guard SHA-256 930d987783055d1f73e80fd9ae770f1ecde63d79b397706df74e9492b4029308. Shape unchanged from c0c1848f (ba290b64740c96c3407af17da80d043be3bf840d1863518bfb011e047f9e647e). Tariff figures stay historical, not a current guarantee. No account call, generation, integration, deployment or spend. Live tools unchanged. J3047 closed; v01/v02 rejected; J2035/J2171 held. Not merged. Thread comment 7015975426.",
       "history": [
         {
           "at": "2026-11-19T16:43Z",
@@ -281871,6 +281871,11 @@
           "at": "2026-11-19T16:56Z",
           "by": "macbook-2",
           "what": "step 3 of 4 done: Posted the repair report"
+        },
+        {
+          "at": "2026-11-19T16:57Z",
+          "by": "macbook-2",
+          "what": "done: HOS PR 669, commit 11ed0c86d925dca5cbbbd1a2abef71326f1b6b7a. Offline repair of findings A-D: pinned paths, O_EXCL recorder held through consume, sealed receipt, same-second and unreconciled ledger lines refuse. 22 tests passed. Guard SHA-256 930d987783055d1f73e80fd9ae770f1ecde63d79b397706df74e9492b4029308. Shape unchanged from c0c1848f (ba290b64740c96c3407af17da80d043be3bf840d1863518bfb011e047f9e647e). Tariff figures stay historical, not a current guarantee. No account call, generation, integration, deployment or spend. Live tools unchanged. J3047 closed; v01/v02 rejected; J2035/J2171 held. Not merged. Thread comment 7015975426."
         }
       ],
       "remaining_action": "Record the pull request and close the job",
