@@ -277897,9 +277897,14 @@
           "at": "2026-11-19T04:43Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J3111; starting review of owb-034-pluto-j3106 packaging panel critiques"
+        },
+        {
+          "at": "2026-11-19T04:50Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read cursor.md & verified NAS J3105/trailer hashes; propagated 2026-12-08T18:00:00Z deadline & OWB:034 to J3108 & J3109"
         }
       ],
-      "remaining_action": "Read panel critiques (codex.md, gemini.md, cursor.md) and Pluto 034 upload package + J3105 thumbnails",
+      "remaining_action": "After J3108 (codex.md) and J3109 (gemini.md) complete, weigh all three critiques and write DECISION.md",
       "kind": "review",
       "rerouted_from": {
         "needs": "cloud",
@@ -277911,11 +277916,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-19T04:43Z",
+        "at": "2026-11-19T04:50Z",
         "by": "gemini",
-        "note": "Claimed J3111; starting review of owb-034-pluto-j3106 packaging panel critiques"
+        "note": "Read cursor.md & verified NAS J3105/trailer hashes; propagated 2026-12-08T18:00:00Z deadline & OWB:034 to J3108 & J3109"
       },
       "taskKeys": [
         "OWB:034"
