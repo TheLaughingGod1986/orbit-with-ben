@@ -277273,10 +277273,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-19T03:17Z",
+      "eta": "2026-11-19T05:17Z",
       "created_by": "relay",
       "created_at": "2026-11-19T01:55Z",
       "result": "",
@@ -277285,6 +277285,11 @@
           "at": "2026-11-19T01:55Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-19T03:17Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief resolves 034 pipeline handoff and records the next owner/action",
@@ -277294,6 +277299,14 @@
         "stage": "pipeline",
         "kind": "missing-next-step",
         "signature": "bbbc569edfbd1a965def"
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-19T03:17Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
