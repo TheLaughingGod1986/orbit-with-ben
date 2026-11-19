@@ -271085,10 +271085,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-19T20:21Z",
+      "eta": "2026-11-20T00:21Z",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
       "result": "",
@@ -271462,6 +271462,11 @@
           "at": "2026-11-19T17:31Z",
           "by": "codex",
           "what": "released: PR 1011 now 48ee0d3952; preserve 3/4 plan. Added tested per-repository analytics record worktrees with conflict preservation and failed-push retry, plus registry-aware Field Order snapshot and shared-queue identity routing. 13 local-Git tests, eight lock pretests, 227 app tests, typecheck/lint and 13 security checks pass. Next wire helper into detached timer: registry preflight, serialization, environment and gate-library routing, fake-API acceptance. Then board Contents probe, writer inventory and refreshed rehearsal. Official 19 Nov nonzero split still resets streak; prior-day notice and live acceptance remain. No live switch or Ben action. Evidence jobs/reviews/J3012/ANALYTICS_WORKTREES_2026-11-19.md."
+        },
+        {
+          "at": "2026-11-19T20:21Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Wire the tested record worktrees into the analytics timer and finish cutover checks",
