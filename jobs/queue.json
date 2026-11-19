@@ -280794,13 +280794,13 @@
       "stage": "",
       "after": "J3104",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-19T23:09Z",
-      "eta": "2026-11-20T01:09Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-19T11:15Z",
-      "result": "",
+      "result": "Acting-Chief KEEP under J3138, ruling 41eed2565d: technical reconciliation accepted, 77 exact target/report checks and 79 HOS PR files byte-identical; HOS PR 666 merged 90bea410. 73 tool PASS including 4 prior waivers, 4 FAIL and 12 pace warnings retained. Media identities rely on prior verifier evidence; no listening/motion or film-stage approval. Existing dependent repairs J3137 due 20 Nov 09:30Z and J3136 due 21 Nov 09:30Z now released to assembly; all publishing and per-film gates remain. Zero spend.",
       "history": [
         {
           "at": "2026-11-19T11:15Z",
@@ -280906,6 +280906,11 @@
           "at": "2026-11-19T23:09Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T23:10Z",
+          "by": "codex",
+          "what": "done: Acting-Chief KEEP under J3138, ruling 41eed2565d: technical reconciliation accepted, 77 exact target/report checks and 79 HOS PR files byte-identical; HOS PR 666 merged 90bea410. 73 tool PASS including 4 prior waivers, 4 FAIL and 12 pace warnings retained. Media identities rely on prior verifier evidence; no listening/motion or film-stage approval. Existing dependent repairs J3137 due 20 Nov 09:30Z and J3136 due 21 Nov 09:30Z now released to assembly; all publishing and per-film gates remain. Zero spend."
         }
       ],
       "remaining_action": "Chief review of J3128 music comparison reconciliation (OWB 9d166bd6f9 + HOS PR #666 c77b31b1) and queued £0 repair jobs J3136/J3137",
@@ -280953,7 +280958,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "jobs/reviews/J3138/CHIEF_RULING.md"
     },
     {
       "id": "J3129",
