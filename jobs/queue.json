@@ -281672,20 +281672,26 @@
           "at": "2026-11-19T23:15Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T23:15Z",
+          "by": "cursor",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Synthesize £0 house Short beds for HOS 005 s06, s07, and s08 (<0.80 vs all 85 HOS beds), re-mux candidates, pass all gates, and park for Chief",
+      "remaining_action": "Read the music-gate failure and the existing no-spend Short bed recipe",
       "kind": "assembly",
       "plain": "Build zero-spend synthesized Short music beds for HOS 005 Shorts s06, s07, and s08 so they pass the full archived music check",
       "due": "2026-11-20T09:30:00Z",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-19T23:15Z",
-        "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "cursor"
+      },
+      "taskKeys": [
+        "HOS:005"
+      ]
     },
     {
       "id": "J3138",
