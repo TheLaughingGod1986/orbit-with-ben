@@ -110,7 +110,8 @@ BG_WARN = 0.30
 FLAT_VAR = 25.0      # a block this flat in both frames (black space, sky) proves nothing, so it isn't counted
 MIN_TEXTURED = 12    # fewer textured blocks than this: no verdict (dHash still applies)
 DUR_FAIL = 40.0
-DUR_BAND = (22.0, 27.0)
+# Ben, 19 Nov 2026 (Shorts house rules, PR #676): new masters target 16.0–19.0 s, both edges inclusive.
+DUR_BAND = (16.0, 19.0)
 # One-off Short length test (Chief OK, 11 Oct 2026, AGENTS.md "Short length test"). Only with --length-test.
 TEST_DUR_FAIL = 61.0
 TEST_DUR_BAND = (50.0, 60.0)
@@ -1339,8 +1340,9 @@ def duration_verdict(dur: float, length_test: bool = False) -> tuple[list[str], 
     fail_at, band = (TEST_DUR_FAIL, TEST_DUR_BAND) if length_test else (DUR_FAIL, DUR_BAND)
     if dur >= fail_at:
         return [f"duration {dur:.1f}s ≥ {fail_at:.0f}s"], []
-    if not (band[0] <= dur <= band[1] + 0.5):
-        return [], [f"duration {dur:.1f}s outside {band[0]:.0f}–{band[1]:.0f}s band"]
+    if not (band[0] <= dur <= band[1]):
+        lo, hi = band[0], band[1]
+        return [], [f"duration {dur:.2f}s outside {lo:.1f}–{hi:.1f}s band"]
     return [], []
 
 
