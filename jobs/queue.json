@@ -225472,10 +225472,10 @@
       "stage": "picture",
       "after": "J2033",
       "eta_min": 300,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-19T19:44Z",
-      "eta": "2026-11-20T00:44Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T17:57Z",
       "result": "",
@@ -225984,6 +225984,11 @@
           "at": "2026-11-19T19:54Z",
           "by": "gemini",
           "what": "step 13 of 14 done: Batch 13 complete (rows 61-65; posted 24,000->23,500; 0.5s sheets e7199f54; OWB d159ff8ba8; HOS #180 7020495219). Final Batch 14 (row 66: P6:08b_darwin_mendel_synthesis) launched detached in tmux hos013-pass1 (PID 25952)."
+        },
+        {
+          "at": "2026-11-19T19:54Z",
+          "by": "gemini",
+          "what": "released: Batch 14 (final row 66: P6:08b_darwin_mendel_synthesis) running detached in tmux hos013-pass1 (PID 25952); log=/Users/benjaminoats/_desk/logs/J2529-batch14-20261119T1952Z.log, done=/Users/benjaminoats/_desk/logs/J2529-batch14-20261119T1952Z.done; worktree=/Users/benjaminoats/_desk/worktrees/J2529-hos-main (origin/main ae218e8f). Batch 13 (rows 61-65) verified exit 0, posted 24,000->23,500 (live balance 23,500, headroom 22,600 >= 3,000), 0.5s sheets pushed to review/013-pass1-sheets (e7199f54), OWB recorded (d159ff8ba8), HOS #180 posted (7020495219). Next wake: check .done file (do not launch a second runner while PID 25952 is live), verify Batch 14 receipt/ledgers, build/push row 66 0.5s sheet, record OWB, post #180, and park J2529 for Chief at 14/14 (66/66 rows)."
         }
       ],
       "remaining_action": "Check Batch 14 done file (J2529-batch14-20261119T1952Z.done), verify row 66 receipt/ledgers, push final 0.5s sheet, post #180, and park pass 1 (14/14, 66/66) for Chief.",
