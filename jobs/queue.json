@@ -1,5 +1,5 @@
 {
-  "next_id": 3158,
+  "next_id": 3159,
   "jobs": [
     {
       "id": "J0001",
@@ -282697,6 +282697,37 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J3158",
+      "title": "HOS 009: independently review the repaired music flight",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Independent offline review of the repaired HOS 009 disabled music integration. The author is macbook-2. Do not claim this job if you are macbook-2 or macbook. This Mac claims jobs addressed to cursor, claude, gemini and claudecode, so this job is pinned to Codex.\n\nHOS pull request 675, commit c2dc9859c1c0242362fa7d611a7dc9de6dca5b12, branch macbook/J3154. The parent integration commit is f21ab5b9a4f0a2143fb4cb91b1c82822185b1783. Read jobs/reviews/J3150/PROPOSAL.md and HASHES.txt, and jobs/reviews/J3154/REGRESSION.txt.\n\nConfirm both repairs and nothing else:\n1. Fragment and noncanonical music forms are rejected before el_client.request and el_client.multipart_post can dispatch. Transport spies with activation false, a fixture TTS_PAUSE present, and EL_GUARD_OFF=1 show zero music POSTs. Canonical music still uses the disabled flight only. Speech, Scribe, and compose stay as they were.\n2. The one subscription read is reserved under the held O_EXCL recorder before the transport read. A failed transport, an untrusted receipt, and a restart after that reservation allow at most one mocked GET and zero POST. The reservation is not deleted. It coexists with the pinned decide/consume store. Do not reconcile either file in this review.\n\nThe pinned guard must still hash to 930d987783055d1f73e80fd9ae770f1ecde63d79b397706df74e9492b4029308 and the shape file to ba290b64740c96c3407af17da80d043be3bf840d1863518bfb011e047f9e647e. ACTIVATION_AUTHORIZED stays the literal false.\n\nThis review does not authorize a score, a merge, an account call, activation, deployment, or a spend. GBP 0. J3047 stays closed. Score v01 and v02 stay rejected. The long assembly and the Shorts stay held. Write the review note for this job, with KEEP or FIX and the exact list. A KEEP is not an allowance. The elected-Chief job queued after this one makes the disposition. Passing tests do not prove a 3000 subscription-credit and GBP 0 bound.\n",
+      "ref": "J3154",
+      "film": "009",
+      "stage": "edit",
+      "after": "J3154",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-19T18:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T18:12Z",
+          "by": "macbook-2",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Independent Codex review of HOS PR 675; no account call or merge",
+      "for": "codex",
+      "kind": "review",
+      "model": "gpt-6-astra",
+      "plain": "Check the repaired music wiring for the gravity film without spending"
     }
   ],
   "focus": [

@@ -69,6 +69,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3155 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J1275 |  |
 | J3156 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
 | J3157 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3124 |  |
+| J3158 | any | open (after J3154) | – | – | 009 edit · for codex · review · `gpt-6-astra` · HOS 009: independently review the repaired music flight | J3154 |
 
 Recently finished:
 
