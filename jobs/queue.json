@@ -282764,9 +282764,14 @@
           "at": "2026-11-19T19:37Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Inspected J1275 history, HOS 009/010 status.json, 07_Edit-Project on Mini & NAS, and queue blocks (J2035/J3159 for 009; long picture lock held on 010): no final master cut exists for either film yet"
+        },
+        {
+          "at": "2026-11-19T19:39Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Verified HOS PR #389 (7c136209) and lint:package PASS on HOS main (44b12347) for 009 and 010; confirmed neither 009 nor 010 has a locked long master cut yet"
         }
       ],
-      "remaining_action": "Verify HOS PR #389 (7c136209) on main and run lint:package for HOS 009 and HOS 010",
+      "remaining_action": "Commit jobs/reviews/J3155/REVIEW.md and park J3155 for Chief to record wait --recheck J3155 on J1275",
       "kind": "review",
       "recheck_of": "J1275",
       "due": "2026-11-19T19:01:32+00:00",
@@ -282781,11 +282786,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-19T19:37Z",
+        "at": "2026-11-19T19:39Z",
         "by": "gemini",
-        "note": "Inspected J1275 history, HOS 009/010 status.json, 07_Edit-Project on Mini & NAS, and queue blocks (J2035/J3159 for 009; "
+        "note": "Verified HOS PR #389 (7c136209) and lint:package PASS on HOS main (44b12347) for 009 and 010; confirmed neither 009 nor "
       },
       "taskKeys": [
         "HOS:009",
