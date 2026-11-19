@@ -280497,9 +280497,14 @@
           "at": "2026-11-19T12:14Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J3134 (recheck_of J2537); read J2537 approval history and J3116 review evidence"
+        },
+        {
+          "at": "2026-11-19T12:15Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Checked HOS #180 (thru 7008471063), OWB #954 (thru 7008717159), HOS PR #657, and HOS refs/PRs (#658-#661, #665; main 19a664dd; hos-desk 765f7508): no Ben exception yet"
         }
       ],
-      "remaining_action": "Check HOS #180, OWB #954, and HOS PR #657 for Ben's explicit one-time protected hos-desk history rewrite exception",
+      "remaining_action": "Write verification evidence report jobs/reviews/J3134/REVIEW.md in a clean worktree and commit to main",
       "kind": "review",
       "recheck_of": "J2537",
       "due": "2026-11-18T18:00:00+00:00",
@@ -280514,11 +280519,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-19T12:14Z",
+        "at": "2026-11-19T12:15Z",
         "by": "gemini",
-        "note": "Claimed J3134 (recheck_of J2537); read J2537 approval history and J3116 review evidence"
+        "note": "Checked HOS #180 (thru 7008471063), OWB #954 (thru 7008717159), HOS PR #657, and HOS refs/PRs (#658-#661, #665; main 19a"
       },
       "taskKeys": [
         "HOS:005",
