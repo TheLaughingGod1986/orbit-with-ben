@@ -277096,10 +277096,24 @@
           "at": "2026-11-19T01:45Z",
           "by": "macbook-2",
           "what": "added"
+        },
+        {
+          "at": "2026-11-19T01:55Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-19T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "HOS 121 Why Do Cats Purr?: rule-E topic go/no-go review",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J3103",
