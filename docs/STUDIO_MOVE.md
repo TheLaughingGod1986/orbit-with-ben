@@ -449,3 +449,31 @@ inspect and lint it locally, never commit its contents. Analytics is deliberatel
 until its per-channel output and commit handling is adapted. No timer was installed or run against live services.
 
 Verification and the next resume point are in `jobs/reviews/J3012/BUFFER_TIMER_2026-11-19.md`.
+
+## Analytics cutover hold — 19 November
+
+The official daily split recorded `left: 2` (one failure each in `test_channels.py` and `test_jobs.py`),
+so its consecutive-pass count is **0**. The 20 November earliest-date estimate above is obsolete: the first
+possible move is after seven new consecutive zero-result daily records and the preceding-day notice. A green
+pull-request check is not a replacement for that recorded streak.
+
+Do not start the analytics timer in the separate studio checkout until its full data flow is adapted and tested:
+
+- `analytics-snapshot.ts` currently resolves OWB and HOS beneath the engine's `05_Analytics`, while WW2 uses
+  `channels/ww2/05_Analytics`. These paths must resolve to the actual channel record worktrees in the detached
+  layout; verify existing histories and refuse missing or ambiguous roots before making API calls.
+- `analytics-report.ts` assumes both channel directories share one analytics root. It must read and write each
+  channel report in its own record worktree while keeping the combined dashboard in the studio worktree.
+  Preserve CTR and catalog sidecar reads and the existing no-snapshot behavior.
+- `07_Content-Ops/launchd/analytics-snapshot.sh` currently uses one Orbit worktree for source code, snapshots,
+  the Shorts gate and all Git commits. Separate the engine from each data worktree, run the gate against Orbit's
+  actual upload registry and library, and commit only each repository's own generated files. Keep field-order
+  queue writes directed to the studio queue. Preserve per-channel partial failure, lock/guard, timeout, retry,
+  credentials and board-publish behavior; never commit one channel's records into the engine or another channel.
+- Exercise the detached layout with isolated repositories and fake API/CLI calls: verify exact output and commit
+  destinations for all registered channels, combined dashboard, gate library, failed-channel isolation, retry,
+  retired-engine refusal and missing-root refusal. Also run the existing resident-layout tests. The checks must
+  not push, publish, invoke the live timer, or write to channel checkouts.
+
+This is a cutover prerequisite, not an assertion that the above adapter has already been built. The live timer
+continues in its existing configuration until the single-writer cutover and successful acceptance checks.
