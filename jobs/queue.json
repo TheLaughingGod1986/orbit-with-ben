@@ -280067,13 +280067,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-19T11:29Z",
-      "eta": "2026-11-19T13:29Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-19T11:23Z",
-      "result": "",
+      "result": "Waiting for: J3130 completes: original galaxy field, native cutout and Webb icon copied to shared J3088_v02/inputs with all three J3088 SHA-256 hashes matched, plus source/crop registration evidence. Missing inputs were checked with rg --files --hidden --no-ignore across Mini workspace, scratch and studio-live; only rendered candidates and records were found.",
       "history": [
         {
           "at": "2026-11-19T11:23Z",
@@ -280094,9 +280094,19 @@
           "at": "2026-11-19T11:33Z",
           "by": "codex",
           "what": "step 1 of 3 done: Brief and source audit complete. Original source hashes recorded; source files absent from Mini, scratch and studio-live. MacBook recovery needed before rendering or registration verification."
+        },
+        {
+          "at": "2026-11-19T11:34Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: J3130 completes: original galaxy field, native cutout and Webb icon copied to shared J3088_v02/inputs with all three J3088 SHA-256 hashes matched, plus source/crop registration evidence. Missing inputs were checked with rg --files --hidden --no-ignore across Mini workspace, scratch and studio-live; only rendered candidates and records were found."
+        },
+        {
+          "at": "2026-11-19T11:34Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-19T13:35:00Z"
         }
       ],
-      "remaining_action": "Recover the exact source plates, then build and review the revised Webb thumbnail",
+      "remaining_action": "Wait for original source images from the MacBook, then rebuild and review the Webb thumbnail",
       "kind": "thumb",
       "plain": "Improve the Webb thumbnail wording and point to the correct galaxy",
       "progress": {
@@ -280108,7 +280118,12 @@
       },
       "taskKeys": [
         "OWB:004"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "J3130 completes: original galaxy field, native cutout and Webb icon copied to shared J3088_v02/inputs with all three J3088 SHA-256 hashes matched, plus source/crop registration evidence. Missing inputs were checked with rg --files --hidden --no-ignore across Mini workspace, scratch and studio-live; only rendered candidates and records were found.",
+        "check_at": "2026-11-19T13:35:00Z"
+      }
     },
     {
       "id": "J3130",
