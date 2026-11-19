@@ -1,3 +1,5 @@
+> **Chief ruling, J3112, 19 November 2026: FIX on thumbs and upload package.** See `jobs/reviews/J3112/REVIEW.md`, which governs the rebuild. J3114 implements fixes; J3115 performs final exact-file review and Ben-gated delivery handoff. J3112 is the completed initial FIX decision, not the future approval job. Keep three distinct concepts (including bright C); no two-arm test or STILL ALIVE variant. A uses readable PLUTO / 2,377 km, with no invented glacier caliper. Preserve full globe clearance and honest source geometry. Recount the actual shortened description, qualify Charon as fixed in Pluto's sky, and retain all sources/credits. All rebuilt assets remain unapproved until reviewed. The synthesis below is retained as advice; its optional alternatives and estimated counts are not authority.
+
 # Packaging Panel Decision — OWB 034 Pluto Long Upload Package & `J3105` Thumbnail Candidates A/B/C (`J3111`)
 
 - **Date:** 2026-11-19

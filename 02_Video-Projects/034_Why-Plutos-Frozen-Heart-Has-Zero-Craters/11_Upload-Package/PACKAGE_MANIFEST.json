@@ -4,7 +4,7 @@
   "episode": "034",
   "slug": "034_Why-Plutos-Frozen-Heart-Has-Zero-Craters",
   "series": "Real Worlds",
-  "status": "review_pending_panel_and_chief_decision",
+  "status": "fix_required_J3112",
   "titleIndex": 1,
   "title": "Why Pluto's Frozen Heart Has Zero Craters",
   "titleAbc": [
@@ -113,5 +113,15 @@
       "status": "Ben OK 18 Nov 2026 (J2868/J3065); held until 034 Pluto long is public"
     }
   ],
-  "notes": "J3106 package preparation and dry-run only. Thumbnail and upload package stages remain in REVIEW pending independent Codex/Gemini/Cursor packaging panel critiques and Chief decision, and live upload remains gated on Ben's UAT watch of 034 Long Master v02 (J2868 watch-by 8 Dec 18:00 London for planned Sun 13 Dec 2026 18:00 London slot)."
+  "notes": "J3106 package preparation and dry-run only. Thumbnail and upload package stages remain in REVIEW pending independent Codex/Gemini/Cursor packaging panel critiques and Chief decision, and live upload remains gated on Ben's UAT watch of 034 Long Master v02 (J2868 watch-by 8 Dec 18:00 London for planned Sun 13 Dec 2026 18:00 London slot).",
+  "chiefDecision": {
+    "job": "J3112",
+    "agent": "codex",
+    "verdict": "FIX",
+    "record": "jobs/reviews/J3112/REVIEW.md",
+    "rebuildJob": "J3114",
+    "finalReviewJob": "J3115",
+    "deliveryRequires": "Exact-file packaging PASS and Ben UAT approval of long v02 on J2868.1",
+    "finalArmsLocked": false
+  }
 }
