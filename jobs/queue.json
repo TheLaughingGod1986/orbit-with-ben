@@ -1,5 +1,5 @@
 {
-  "next_id": 3096,
+  "next_id": 3097,
   "jobs": [
     {
       "id": "J0001",
@@ -276481,6 +276481,35 @@
       ],
       "remaining_action": "Packaging panel decision: J3088 Saturn and JWST revised candidates; verify BABY GALAXIES film and title fit",
       "kind": "review"
+    },
+    {
+      "id": "J3096",
+      "title": "Chief exact-file decision on revised Saturn and JWST thumbnail tests",
+      "needs": "any",
+      "repo": "owb",
+      "body": "J3088 follow-up: elected Chief exact-file review after independent panel J3092/J3093/J3094 and synthesis J3095. Wait for all three independent critiques and synthesis; do not treat the script's single after pointer as a waiver of missing critiques. Worker cannot issue final PASS or merge.\n\nReview macbook/J3088 PR (head commit b9bb39363), owner-authored same repository, and the full evidence on the NAS:\n/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/005_The-Last-Star-In-The-Universe/08_Thumbnails/repackage_2026-11/J3088_v01/REVIEW.md\nPanel: 05_Analytics/tests/panels/owb-j3088-saturn-jwst-2026-11-19/\n\nT037 m09jUdwC5hk candidate:\n/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/005_The-Last-Star-In-The-Universe/08_Thumbnails/repackage_2026-11/J3088_v01/m09jUdwC5hk_B_v06.jpg\nSHA-256 7b0f6c44e870820881dba0309bf73ef0cc5601fef83cf080438a06648c9eb19f\nT039 ziKBPJ6FY0U candidate:\n/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/004_JWST-Discoveries-That-Change-Everything/08_Thumbnails/repackage_2026-11/J3088_v01/ziKBPJ6FY0U_B_v07.jpg\nSHA-256 e2bd0c629610195b6fa858bd7969d7ebcb97c4a37d3420084409d0dfa828446b\n\nCheck NASA Cassini/Webb story insets are clearly readable and not scale comparisons; subject dominance and badge clearance; exact BABY GALAXIES wording against film/title; the redder JADES-GS-z14-0 component and accurate origin/loupe link. Loupe uses 64-to-440 pixels (6.875 linear resize); no claim of 4.5x.\n\nDecision must either give exact-file PASS and explicitly authorize the successor thumbnail-only test over the recorded finished report (T018 for T037; T007 for T039), conditional on fresh Studio confirmation of that exact finished report and no running test, OR return an exact fix list and queue fixes. Re-read Chief authority before a protected call. No test authorization is implied by scores or panel advice.\n\nJ2845 and J2847 stay blocked until this decision updates their briefs to these exact paths/hashes and current IDs T037/T039; only then release if all conditions hold. Keep live A, titles, privacy, schedule and all other settings unchanged. Do not touch T038. Merge the reviewable revision PR only under Chief authority and existing checks; do not approve a worker draft merely because it was built.\n",
+      "ref": "J3088",
+      "film": "",
+      "stage": "",
+      "after": "J3095",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-19T00:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T00:24Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review all three critiques, approve exact files and successor tests or queue exact fixes",
+      "kind": "chief",
+      "plain": "Deciding whether the revised Saturn and Webb thumbnails are ready to test"
     }
   ],
   "focus": [
