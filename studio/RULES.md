@@ -186,7 +186,7 @@ Chief studied two more reference channels on 11 Oct 2026. *History of the Univer
 
 **These hard rules don't change:**
 - the line-1 claim, the first concrete answer before 0:30 and the question by about 0:50;
-- the 22–27 s / under-40 s Shorts lock (plus the one *Packaging* length test);
+- the Shorts duration gate warns outside 16.0–19.0 s (Ben, 19 Nov 2026); ≥ 40 s still hard-fails (plus the one *Packaging* length test);
 - the yellow hook word;
 - every `picture_qa`, `polish_gate` and `music_gate` FAIL.
 
