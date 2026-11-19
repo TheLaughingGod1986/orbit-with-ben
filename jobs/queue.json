@@ -226975,9 +226975,14 @@
           "at": "2026-11-19T05:47Z",
           "by": "relay",
           "what": "condition verification queued: J3116"
+        },
+        {
+          "at": "2026-11-19T06:03Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-19T11:55:00Z"
         }
       ],
-      "remaining_action": "Resolve the protected desk branch before planning the live history rewrite",
+      "remaining_action": "Check for the protected desk history exception, then prepare the controlled rewrite window",
       "due": "2026-11-18T18:00:00Z",
       "kind": "chief",
       "plain": "Remove email addresses from both channels' repos, including their past versions",
@@ -226997,9 +227002,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "Ben: explicit one-time exception needed for the irreversible rewrite of protected HOS hos-desk history while keeping PR180 open. PR657 records the successful private rehearsal and exact protected-head mapping. Existing Never rule forbids pushing the desk; general cleanup approval does not name this exception. No live rewrite or window notice yet.",
-        "check_at": "2026-11-19T06:47:15+00:00",
-        "recheck_task": "J3116"
+        "condition": "Ben: explicit one-time exception for rewriting protected HOS hos-desk history while retaining open PR180 is still absent. Acting-Chief J3116 accepts Gemini evidence aa3e1e3267; fresh HOS180, OWB954 and merged HOS657 reads find no new exception. Private rehearsal passed but does not authorize a live push. After approval, elected Chief resolves new PR658/659/660, refreshes backup and rehearsal, announces the day-before window and holds writers before allowlisted cutover.",
+        "check_at": "2026-11-19T11:55:00Z",
+        "last_recheck": "J3116",
+        "checked_at": "2026-11-19T06:03:18+00:00",
+        "checked_by": "codex"
       }
     },
     {
