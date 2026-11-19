@@ -64,7 +64,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3138 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3128 |  |
 | J3155 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J1275 |  |
 | J3161 | mini | blocked | codex | – | studio · Supermoon Short: next-morning and full-day performance follow-up |  |
-| J3163 | gemini | open (after J3162) | – | – | 009 edit · for gemini · review · `gemini-argon` · HOS 009: independent review of repaired music routing types | https://github.com/TheLaughingGod1986/history-of-science/pull/675 |
+| J3163 | gemini | claimed | gemini | 2026-11-19T22:51Z | 009 edit · for gemini · review · `gemini-argon` · HOS 009: independent review of repaired music routing types | https://github.com/TheLaughingGod1986/history-of-science/pull/675 |
 | J3164 | any | open (after J3163) | – | – | 009 edit · chief · HOS 009: Chief disposition after independent routing repair review | https://github.com/TheLaughingGod1986/history-of-science/pull/675 |
 
 Recently finished:
