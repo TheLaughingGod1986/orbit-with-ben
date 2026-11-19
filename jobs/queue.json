@@ -276262,9 +276262,14 @@
           "at": "2026-11-19T01:13Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J3087; reading J3062 and J2868 review files and inspecting 034 music_gate_v02.json"
+        },
+        {
+          "at": "2026-11-19T01:26Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1/4 done: Classified all 136 iCloud OWB UAT warnings in music_gate_v02.json (120 VO/narration, 6 SFX stems, 2 full mixes, 8 music beds/stems) and mapped all 54 readable OWB music beds/stems across repo, studio-live NAS, mac-mini-archive NAS, and MiniWork uat_materialized"
         }
       ],
-      "remaining_action": "Audit earlier-film music bed inventory and run complete music_gate comparison for OWB 034 long v02",
+      "remaining_action": "Run music_gate.py on OWB 034 long v02 against all canonical readable earlier OWB music beds and bed stems",
       "kind": "review",
       "plain": "Check that the Pluto film uses its own music and finish its edit review",
       "rerouted_from": {
@@ -276277,11 +276282,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-19T01:13Z",
+        "at": "2026-11-19T01:26Z",
         "by": "gemini",
-        "note": "Claimed J3087; reading J3062 and J2868 review files and inspecting 034 music_gate_v02.json"
+        "note": "Step 1/4 done: Classified all 136 iCloud OWB UAT warnings in music_gate_v02.json (120 VO/narration, 6 SFX stems, 2 full "
       },
       "taskKeys": [
         "OWB:034"
