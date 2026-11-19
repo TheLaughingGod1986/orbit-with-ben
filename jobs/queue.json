@@ -284239,18 +284239,23 @@
           "at": "2026-11-19T22:35Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Claimed J3171. Offline only. Next: locate subscription/history allow-list and urlopen guard."
+        },
+        {
+          "at": "2026-11-19T22:39Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Subscription and history now refuse non-GET, and a GET with a body is refused before the socket. Tests are running."
         }
       ],
-      "remaining_action": "Read the merged guard and the Chief ruling before changing method checks",
+      "remaining_action": "Run the offline flight, guard, routing and package checks",
       "kind": "assembly",
       "model": "gpt-6.1-sol",
       "plain": "Tighten the remaining audio request safeguards for the gravity film",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-19T22:35Z",
+        "at": "2026-11-19T22:39Z",
         "by": "cursor",
-        "note": "Claimed J3171. Offline only. Next: locate subscription/history allow-list and urlopen guard."
+        "note": "Subscription and history now refuse non-GET, and a GET with a body is refused before the socket. Tests are running."
       },
       "taskKeys": [
         "HOS:009"
