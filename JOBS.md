@@ -66,7 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3101 | mini | open | – | – | 120 topic · for gemini · review · `gemini-argon` · HOS 120 Why Do We Cry?: rule-E topic go/no-go review | 90339622 |
 | J3102 | mini | open | – | – | 121 topic · for gemini · review · `gemini-argon` · HOS 121 Why Do Cats Purr?: rule-E topic go/no-go review | 90339622 |
 | J3103 | mini | open | – | – | chief · Chief: resolve 034 pipeline missing-next-step |  |
-| J3104 | mini | open | – | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
+| J3104 | mini | open | – | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 
 Recently finished:
 

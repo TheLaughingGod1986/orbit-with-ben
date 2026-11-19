@@ -277319,11 +277319,25 @@
           "at": "2026-11-19T02:56Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-11-19T03:15Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-19T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Check the newest video packs and record any missing checks",
       "kind": "qa",
-      "backlog": "both-qa-sweep"
+      "backlog": "both-qa-sweep",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
