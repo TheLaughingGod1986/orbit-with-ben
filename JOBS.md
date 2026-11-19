@@ -65,6 +65,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3114 | mini | open (after J3111) | – | – | 034 thumbs · thumb · 034 Pluto: rebuild J3105 thumbnails v02 and apply J3111 panel package text fixes | J3105,J3106,J3108,J3109,J3110,J3111,J3112 |
 | J3115 | mini | open (after J3114) | – | – | 034 upload · chief · 034 Pluto: final packaging review after J3114 fixes and Ben-gated delivery handoff | J3112,J3114,J2868 |
 | J3117 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3064 |  |
+| J3118 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 
 Recently finished:
 
