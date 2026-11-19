@@ -270617,18 +270617,23 @@
           "at": "2026-11-19T00:54Z",
           "by": "codex",
           "what": "step 3 of 4 done: Restored existing four-step plan from history; PR 1011 and rehearsal already exist. Continuing the remaining CI adapter work."
+        },
+        {
+          "at": "2026-11-19T00:57Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: PR 1011 advanced to fad6ad762f: CI staging renderer and pinned channel checkout; 30 tests, four workflow YAML parses, rules/core and changed-file scans pass. No live installation."
         }
       ],
-      "remaining_action": "Preparing CI workflows for the separate studio repository",
+      "remaining_action": "Validate staged CI in the fresh split, verify board access and finish cutover safeguards",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-19T00:54Z",
+        "at": "2026-11-19T00:57Z",
         "by": "codex",
-        "note": "Restored existing four-step plan from history; PR 1011 and rehearsal already exist. Continuing the remaining CI adapter "
+        "note": "PR 1011 advanced to fad6ad762f: CI staging renderer and pinned channel checkout; 30 tests, four workflow YAML parses, ru"
       }
     },
     {
