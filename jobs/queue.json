@@ -1,5 +1,5 @@
 {
-  "next_id": 3162,
+  "next_id": 3163,
   "jobs": [
     {
       "id": "J0001",
@@ -283359,6 +283359,37 @@
         "condition": "The 2026-11-20 snapshot is available after the 06:40 UTC analytics run. Read it, then retain this follow-up until a full-day Studio read after 11:30 UTC. No YouTube changes authorized.",
         "check_at": "2026-11-20T06:50:00Z"
       }
+    },
+    {
+      "id": "J3162",
+      "title": "HOS 009: close the music routing type bypass offline",
+      "needs": "any",
+      "repo": "hos",
+      "body": "J3159 implements the existing Grok Chief ruling on HOS desk 7018655830 (owner-authored), accepting J3158 FIX. OFFLINE PREPARATION ONLY, GBP 0. No account call, generation, activation, deployment, merge, music allowance, YouTube or Buffer change.\n\nRepair only the remaining routing-type bypass in 04_Audio/tools/el_client.py _music_route, on top of PR675 c2dc9859c1c0242362fa7d611a7dc9de6dca5b12 (macbook/J3154). Review evidence: PR678 e93bf01ed9d371528b297a892ce841826393d57e, jobs/reviews/J3158/REVIEW.md, probe_normalization.py and ROUTING_REPRO.txt. Before legacy dispatch, either reject unsupported path/query types with malformed_request or safely normalize string subclasses through canonical/fragment checks. No other flight/reservation production-code change.\n\nAdd synthetic zero-POST transport tests across both request and multipart_post for canonical and fragment string-subclass paths, bytes, and unsupported query types where the entry accepts query. Include None and a string-subclass query. With literal activation False, fixture TTS_PAUSE present and EL_GUARD_OFF=1 there must be no music legacy dispatch. Preserve speech, Scribe and compose controls and plain-string canonical/fragment/query tests. Keep existing 23 flight and 11 guard tests green and rerun independent normalization/reservation probes. Use fixtures only, no live locks/stores or account calls.\n\nThe durable one-read reservation is already verified: do not alter, delete, reset or reconcile it. Preserve held O_EXCL descriptor/inode checks and failed-read/restart protections. Pinned guard sha256 930d987783055d1f73e80fd9ae770f1ecde63d79b397706df74e9492b4029308 and shape sha256 ba290b64740c96c3407af17da80d043be3bf840d1863518bfb011e047f9e647e remain unchanged. Update hashes only for the changed routing file and new test/evidence files. ACTIVATION_AUTHORIZED remains literal False.\n\nWork from a clean isolated worktree. Per Grok's explicit instruction, append the repair to PR675 without force-push (verify current head/author and preserve any intervening work); post exact new head, diff, hashes and regression evidence. PR678 remains review-only and unmerged. Immediately queue independent exact-commit review by Claude, Gemini backup, not the implementer, followed by elected-Chief disposition. Enforce reviewer independence in eligibility; no self-review. Neither successor authorizes activation, merge, deployment, account calls, generation or an allowance.\n\nThe current pricing evidence does not establish both <=3000 subscription credits and GBP 0 for the exact 180-second music_v2 request. No pricing rescan or account call to discover price. J3047 stays permanently closed unused. Score v01/v02 remain rejected; no looping/stretching/re-encoding teach v01 to fill the opening. J2035/J2171 stay held. Preserve all film inputs, media hashes, timing and gates. No replacement delivery promise. Stop after this named offline repair and handoff; no unchanged verification loops.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-7018655830",
+      "film": "009",
+      "stage": "edit",
+      "after": "J3159",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-19T20:41Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T20:41Z",
+          "by": "codex",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Reject unsupported music request types before they reach the legacy client",
+      "for": "codex",
+      "kind": "assembly",
+      "model": "gpt-6.1-sol",
+      "plain": "Fix the remaining music safeguard for the gravity film without spending"
     }
   ],
   "focus": [
