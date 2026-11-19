@@ -282271,17 +282271,22 @@
           "at": "2026-11-19T17:52Z",
           "by": "codex",
           "what": "step 1 of 3 done: All eight hashes match; 20 integration tests and 11 existing guard tests pass. Checking cases beyond the submitted tests."
+        },
+        {
+          "at": "2026-11-19T17:52Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Confirmed fragment URL reaches the music POST through the old pause-bypass route; confirmed failed GET can repeat without a single-use record. Synthetic transports only."
         }
       ],
-      "remaining_action": "Probe failure and bypass cases in the disabled music integration",
+      "remaining_action": "Record the FIX verdict and hand the two defects to the decision job",
       "kind": "review",
       "plain": "Check the switched-off music wiring for the gravity film without spending",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-19T17:52Z",
         "by": "codex",
-        "note": "All eight hashes match; 20 integration tests and 11 existing guard tests pass. Checking cases beyond the submitted tests"
+        "note": "Confirmed fragment URL reaches the music POST through the old pause-bypass route; confirmed failed GET can repeat withou"
       },
       "rerouted_from": {
         "needs": "any",
