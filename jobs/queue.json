@@ -281642,10 +281642,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-19T23:08Z",
+      "eta": "2026-11-20T01:08Z",
       "created_by": "relay",
       "created_at": "2026-11-19T14:29Z",
       "result": "",
@@ -281709,6 +281709,11 @@
           "at": "2026-11-19T23:08Z",
           "by": "codex",
           "what": "rerouted to codex: Elected acting Chief taking the assigned completed verification for decision closure; worker Gemini restriction removed for this ruling."
+        },
+        {
+          "at": "2026-11-19T23:08Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief (chief): merge HOS PR #666, reopen/close J3128 KEEP, and close J3138 (Option A in jobs/reviews/J3138/REVIEW.md §3)",
@@ -281750,7 +281755,15 @@
         "HOS:008",
         "HOS:010"
       ],
-      "escalated_at": "2026-11-19T21:35Z"
+      "escalated_at": "2026-11-19T21:35Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-19T23:08Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3139",
