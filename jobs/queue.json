@@ -280251,9 +280251,14 @@
           "at": "2026-11-19T13:33Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Decoding all 115 unique deduplicated comparison beds (31 OWB, 84 HOS) across local, studio-live, archive, and materialized UAT stores"
+        },
+        {
+          "at": "2026-11-19T13:46Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J3128 and checking existing decoded music comparison caches from prior run"
         }
       ],
-      "remaining_action": "Finish decoding 115 unique beds and run reconciled music_gate across all 77 current_newest entries",
+      "remaining_action": "Inspecting previous J3128 scratch outputs and reconciling 77 partial_unreadable_comparisons entries",
       "kind": "qa",
       "plain": "Finish checking that the newest films use their own music",
       "rerouted_from": {
@@ -280266,11 +280271,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 0,
         "of": 4,
-        "at": "2026-11-19T13:33Z",
+        "at": "2026-11-19T13:46Z",
         "by": "gemini",
-        "note": "Decoding all 115 unique deduplicated comparison beds (31 OWB, 84 HOS) across local, studio-live, archive, and materializ"
+        "note": "Claimed J3128 and checking existing decoded music comparison caches from prior run"
       },
       "taskKeys": [
         "HOS:001",
