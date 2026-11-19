@@ -178950,9 +178950,14 @@
           "at": "2026-11-19T12:00Z",
           "by": "relay",
           "what": "condition verification queued: J3132"
+        },
+        {
+          "at": "2026-11-19T14:32Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-20T12:00:00Z"
         }
       ],
-      "remaining_action": "Await J3052 then J3053 billing evidence decision and a separately accepted score for the gravity film",
+      "remaining_action": "Obtain an accepted compliant score for the gravity film before assembly",
       "due": "2026-11-15T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -178968,12 +178973,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Chief review J3054: condition NOT MET. J3047 permanently closed J3043/J3045 unused; v01/v02 remain rejected and no v03 exists. J3050 PR651 ff02370b remains open; Claude desk6980094321 passes the offline evidence rule only. Existing J3052 records independent review, then J3053 decides the proposal and concrete route, including shared-meter reconciliation. Neither authorizes generation. Reopen assembly only on a separately accepted compliant score with every original gate retained; no unchanged media rechecks before the recorded retry.",
-        "check_at": "2026-11-19T13:00:44+00:00",
-        "last_recheck": "J3054",
-        "checked_at": "2026-11-18T14:55:50+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3132"
+        "condition": "J3132 Chief review: condition NOT MET. J3059 kept PR651 d047b064 offline only; Grok desk 7005927729 reconciled shared usage and opened no production guard or replacement score scope. J3043/J3045 allowance closed unused; v01/v02 rejected. Assembly requires a separately accepted compliant score and all original gates; no unchanged media rechecks.",
+        "check_at": "2026-11-20T12:00:00Z",
+        "last_recheck": "J3132",
+        "checked_at": "2026-11-19T14:32:52+00:00",
+        "checked_by": "codex"
       }
     },
     {
