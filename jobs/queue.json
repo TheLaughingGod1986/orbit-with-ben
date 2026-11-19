@@ -270491,10 +270491,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-19T02:48Z",
-      "eta": "2026-11-19T06:48Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
       "result": "",
@@ -270698,6 +270698,11 @@
           "at": "2026-11-19T02:56Z",
           "by": "codex",
           "what": "step 3 of 4 done: PR 1011 advanced to 0b0991d28b: fresh CI execution documented, former-resident cache fixed, 178 affected future-layout tests pass. Full suite remains FIX for Buffer content-root and WW2 browser-port issues; no live migration."
+        },
+        {
+          "at": "2026-11-19T02:56Z",
+          "by": "codex",
+          "what": "released: PR 1011 now 0b0991d28b. Resumed existing plan at step 3/4; fresh CI execution evidence in jobs/reviews/J3012/CI_EXECUTION_2026-11-19.md. Fixed former-resident cache and renderer fixture isolation; 178 affected future tests pass. Full workflow suite not passing: next fix Buffer engine/content-root separation and pinned channel records in Content Ops CI; resolve WW2 missing browser-port assertion (also fails source layout). Then deployed board Contents access, old-entrypoint safeguards, remaining timers and refreshed export. Five official zero days through 18 Nov; prior-day notice and live relay/publish/tick acceptance still required. Do not recreate runbook/rehearsal or mark done."
         }
       ],
       "remaining_action": "Fix Buffer content paths and remaining cutover prerequisites, then verify the gated live move",
