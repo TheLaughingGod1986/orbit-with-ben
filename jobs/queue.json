@@ -277130,10 +277130,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-19T17:05Z",
+      "eta": "2026-11-19T19:05Z",
       "created_by": "relay",
       "created_at": "2026-11-19T00:16Z",
       "result": "",
@@ -277192,6 +277192,11 @@
           "at": "2026-11-19T17:05Z",
           "by": "codex",
           "what": "rerouted to codex: User assigned this one acting-Chief closure to codex; clear the old Gemini-only routing so the exact review can be claimed."
+        },
+        {
+          "at": "2026-11-19T17:05Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Awaiting elected Chief to record jobs.py wait J2845 --recheck J3089 and close J3089 (or reopen J2845 after J3096)",
@@ -277211,7 +277216,15 @@
       "taskKeys": [
         "OWB:005"
       ],
-      "escalated_at": "2026-11-19T10:12Z"
+      "escalated_at": "2026-11-19T10:12Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-19T17:05Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3090",
