@@ -278595,10 +278595,10 @@
       "stage": "thumbs",
       "after": "J3111",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-19T08:30Z",
+      "eta": "2026-11-19T10:30Z",
       "created_by": "macbook-2",
       "created_at": "2026-11-19T05:12Z",
       "result": "",
@@ -278642,6 +278642,11 @@
           "at": "2026-11-19T06:33Z",
           "by": "codex",
           "what": "released: Build and verification complete; local commit a12100797f on codex/j3114-pluto-v02 at /Volumes/MiniWork/scratch/j3114-wt. NAS J3105_v02 and package text verified. Automatic approval review rejected git push twice, including verified owner/admin evidence; explicit export approval is needed before pushing this branch and opening PR for J3115. Do not bypass or rerender. Keep stages review, UAT/Shorts holds unchanged."
+        },
+        {
+          "at": "2026-11-19T08:30Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Push the verified Pluto packaging branch and open its review PR after export approval",
