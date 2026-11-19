@@ -274916,13 +274916,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-19T10:16Z",
-      "eta": "2026-11-19T10:36Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-18T17:39Z",
-      "result": "",
+      "result": "Closed by acting Chief after J3117 verification, merged PR 1041. Original 6h check preserved (5 views, zero feed views; read at actual age 6h50m). Morning snapshot 16 views at 19h10m; recorded Studio at 19h46m: 18.8% feed (~3), 81.2% search (~13), 85.7% stayed, 95.1% viewed. Prior Shorts had 307/213 views at comparable morning ages and substantial feed traffic. No reported technical faults; leave live Short unchanged. Small sample cannot diagnose cause or editing; feed impressions unestablished. J3121 separate spacing response done, PRs 1037/1038 merged; remaining audit proposals stay separate. Routine monitoring, no additional retry. Full original judge output and Chief corrections preserved in jobs/reviews/J3064/REVIEW.md and jobs/reviews/J3117/REVIEW.md.",
       "history": [
         {
           "at": "2026-11-18T17:39Z",
@@ -275013,6 +275013,11 @@
           "at": "2026-11-19T10:17Z",
           "by": "codex",
           "what": "step 3 of 3 done: J3117 Chief ruling merged in PR 1041; snapshot verified, original launch reading preserved, no live change warranted."
+        },
+        {
+          "at": "2026-11-19T10:17Z",
+          "by": "codex",
+          "what": "done: Closed by acting Chief after J3117 verification, merged PR 1041. Original 6h check preserved (5 views, zero feed views; read at actual age 6h50m). Morning snapshot 16 views at 19h10m; recorded Studio at 19h46m: 18.8% feed (~3), 81.2% search (~13), 85.7% stayed, 95.1% viewed. Prior Shorts had 307/213 views at comparable morning ages and substantial feed traffic. No reported technical faults; leave live Short unchanged. Small sample cannot diagnose cause or editing; feed impressions unestablished. J3121 separate spacing response done, PRs 1037/1038 merged; remaining audit proposals stay separate. Routine monitoring, no additional retry. Full original judge output and Chief corrections preserved in jobs/reviews/J3064/REVIEW.md and jobs/reviews/J3117/REVIEW.md."
         }
       ],
       "remaining_action": "Record the completed launch check and morning-data ruling.",
@@ -275029,7 +275034,8 @@
       },
       "taskKeys": [
         "OWB:026"
-      ]
+      ],
+      "done_ref": "de72b55027"
     },
     {
       "id": "J3065",
