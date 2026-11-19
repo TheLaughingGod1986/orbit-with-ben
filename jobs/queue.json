@@ -283977,10 +283977,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-19T22:21Z",
+      "eta": "2026-11-20T00:21Z",
       "created_by": "gemini",
       "created_at": "2026-11-19T21:30Z",
       "result": "",
@@ -283994,6 +283994,11 @@
           "at": "2026-11-19T21:35Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-19T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-19T22:21Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Independently review HOS PR 680 exact commit 7b87f15e (excluding implementer gemini) and post PASS/FIX recommendation",
@@ -284007,7 +284012,15 @@
         "status": "open",
         "by": ""
       },
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-19T22:21Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3169",
