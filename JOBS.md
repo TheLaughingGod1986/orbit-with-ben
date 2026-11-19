@@ -57,7 +57,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3066 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Pluto Short about the frozen heart (v02, Test A opening) Private, slot Mon 21 Dec 11:30 |  |
 | J3075 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2996 |  |
 | J3085 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3070 |  |
-| J3089 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2845 |  |
+| J3089 | mini | claimed | gemini | 2026-11-19T10:04Z | for gemini · review · `gemini-argon` · Verify condition for J2845 |  |
 | J3090 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2847 |  |
 | J3096 | any | open (after J3095) | – | – | chief · Chief exact-file decision on revised Saturn and JWST thumbnail tests | J3088 |
 | J3099 | any | blocked | macbook-2 | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
