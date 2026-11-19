@@ -65,6 +65,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3175 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2847 |  |
 | J3176 | any | open | – | – | 024 edit · chief · OWB 024 muon Short: decide whether to swap gc1hWQQJOq4 onto the v06 bed |  |
 | J3177 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3137 |  |
+| J3178 | mini | open | – | – | 013 picture · qa · HOS 013: continuous playback review of ten unresolved pass-one plates |  |
 
 Recently finished:
 
