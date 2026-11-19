@@ -66,10 +66,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3095 | mini | open (after J3094) | – | – | for gemini · review · `gemini-argon` · Packaging panel decision: J3088 Saturn and JWST revised candidates; verify BABY GALAXIES film and title fit |  |
 | J3096 | any | open (after J3095) | – | – | chief · Chief exact-file decision on revised Saturn and JWST thumbnail tests | J3088 |
 | J3097 | mini | open | – | – | for gemini · script · `gemini-argon` · HOS: learn from our data, add two new films to the backlog |  |
-| J3098 | any | claimed | gemini | 2026-11-19T01:40Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
+- J3098 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
 - J3093 done: Packaging panel (gemini): J3088 Saturn and JWST revised candidates; verify BABY GALAXIES film and title fit (done)
 - J3092 done: Packaging panel (codex): J3088 Saturn and JWST revised candidates; verify BABY GALAXIES film and title fit (Replace Webb BABY GALAXIES with GALAXIES TOO BRIGHT to sell the actual script contradiction; critique committed in 74bdc897b2.)
 - J3088 done: Revise Saturn and JWST weekly audit thumbnails after Chief review (Built Saturn v06 and JWST v07; PR #1031 open, not merged. Both NAS candidates pass colour scores and phone inspection; SHA-256 verified, prior files and T038 preserved. T037/T039 proposal updates are in PR. Independent panel J3092-J3095 and elected-Chief exact-file decision J3096 queued. J2845/J2847 remain blocked. No spend or YouTube changes. Checkout returned clean main.)
@@ -79,4 +79,3 @@ Recently finished:
 - J3082 cancelled: Chief: resolve 005 script orphan-review ()
 - J3081 cancelled: Chief: resolve 003 picture orphan-review ()
 - J3080 cancelled: Chief: resolve 002 vo orphan-review ()
-- J3079 cancelled: Chief: resolve 002 script orphan-review ()
