@@ -254626,13 +254626,13 @@
       "stage": "",
       "after": "J3096",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "open",
       "by": "",
       "since": "",
       "eta": "",
       "created_by": "macbook-2",
       "created_at": "2026-11-14T17:10Z",
-      "result": "J2844 FIX: Saturn requires a story character or scale reference under thumbnail rule 2.A.5. Revision J3088; fresh exact-file review required before reopening.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-14T17:10Z",
@@ -254653,17 +254653,16 @@
           "at": "2026-11-19T11:24Z",
           "by": "codex",
           "what": "J3096 exact-file PASS; brief replaced with T037 hash and narrowly conditional successor authorization"
+        },
+        {
+          "at": "2026-11-19T11:27Z",
+          "by": "codex",
+          "what": "reopened: J3096 fresh read-only Orbit Studio check at 11:27Z confirms exact finished T018 dates 28 Oct 21:34 to 11 Nov 22:10, inconclusive, shares unavailable and A visible; no running test. Evidence /Volumes/MiniWork/scratch/J3096-T018-readback.txt and J3096-studio-report.png. Worker must repeat check immediately before arming."
         }
       ],
       "remaining_action": "Confirm the finished Saturn test in Studio, then test the approved cover",
       "kind": "studio",
       "plain": "Test the approved Saturn thumbnail against the current cover",
-      "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-19T01:16:35+00:00",
-        "recheck_task": "J3089"
-      },
       "taskKeys": [
         "OWB:005"
       ]
