@@ -66,6 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3161 | mini | blocked | codex | – | studio · Supermoon Short: next-morning and full-day performance follow-up |  |
 | J3162 | any | claimed | codex | 2026-11-19T22:44Z | 009 edit · for codex · assembly · `gpt-6.1-sol` · HOS 009: close the music routing type bypass offline | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-7018655830 |
 | J3163 | gemini | open (after J3162) | – | – | 009 edit · for gemini · review · `gemini-argon` · HOS 009: independent review of repaired music routing types | https://github.com/TheLaughingGod1986/history-of-science/pull/675 |
+| J3164 | any | open (after J3163) | – | – | 009 edit · chief · HOS 009: Chief disposition after independent routing repair review | https://github.com/TheLaughingGod1986/history-of-science/pull/675 |
 
 Recently finished:
 
