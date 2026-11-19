@@ -270688,18 +270688,23 @@
           "at": "2026-11-19T02:49Z",
           "by": "codex",
           "what": "step 3 of 4 done: Restored the existing four-step plan from full queue history. Resume PR 1011 at fad6ad762f; runbook and published rehearsal already exist."
+        },
+        {
+          "at": "2026-11-19T02:53Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Fresh future-layout checks exposed missing former-resident cache and pre-cutover-only test fixtures; fixes under test. Buffer content-root and WW2 port assumptions remain explicit blockers; no live changes."
         }
       ],
-      "remaining_action": "Verify the prepared CI adapters in the separated studio layout before the gated live move",
+      "remaining_action": "Finish isolated CI verification and record remaining runtime migration blockers in PR 1011",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-19T02:49Z",
+        "at": "2026-11-19T02:53Z",
         "by": "codex",
-        "note": "Restored the existing four-step plan from full queue history. Resume PR 1011 at fad6ad762f; runbook and published rehear"
+        "note": "Fresh future-layout checks exposed missing former-resident cache and pre-cutover-only test fixtures; fixes under test. B"
       }
     },
     {
