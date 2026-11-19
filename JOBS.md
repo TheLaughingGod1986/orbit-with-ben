@@ -63,7 +63,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3114 | mini | blocked | codex | – | 034 thumbs · thumb · 034 Pluto: rebuild J3105 thumbnails v02 and apply J3111 panel package text fixes | J3105,J3106,J3108,J3109,J3110,J3111,J3112 |
 | J3115 | mini | open (after J3114) | – | – | 034 upload · chief · 034 Pluto: final packaging review after J3114 fixes and Ben-gated delivery handoff | J3112,J3114,J2868 |
 | J3119 | mini | open (after J3115) | – | – | 034 upload · studio · Upload the Pluto long master v02 Private and scheduled for Sun 13 Dec 18:00, arm the thumbnail test |  |
-| J3120 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3114 |  |
+| J3120 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3114 |  |
 | J3124 | mini | blocked | cursor | – | 013 picture · for cursor · assembly · `cursor-grok-4-7` · HOS 013: add reconcile-session-block to the pass-1 runner | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6974259569 |
 | J3125 | mini | blocked | codex | – | studio · HOS Vaccine test: 24 Nov feed gate and conditional 29 Nov readout |  |
 
