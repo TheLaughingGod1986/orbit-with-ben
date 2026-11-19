@@ -58,7 +58,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3125 | mini | blocked | codex | – | studio · HOS Vaccine test: 24 Nov feed gate and conditional 29 Nov readout |  |
 | J3129 | mini | blocked | codex | – | 004 thumbs · thumb · Fix Webb thumbnail hook and identify the distant galaxy | J3096 |
 | J3135 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3129 |  |
-| J3136 | mini | claimed | macbook | 2026-11-20T01:12Z | 024 edit · assembly · OWB 024 Short fri06_muons_ground: no-spend music_gate repair against archived OWB 013 bed (£0) |  |
 | J3137 | mini | claimed | cursor | 2026-11-20T01:15Z | 005 edit · assembly · HOS 005 Shorts s06/s07/s08: no-spend music_gate repair against archived HOS 002/004 beds (£0) |  |
 | J3155 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J1275 |  |
 | J3161 | mini | blocked | codex | – | studio · Supermoon Short: next-morning and full-day performance follow-up |  |
