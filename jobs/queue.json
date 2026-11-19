@@ -284309,9 +284309,14 @@
           "at": "2026-11-19T22:45Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J3172 for independent exact-commit review of HOS PR 681 at a76bfa8f57250935b7818dc126bb3d42f74fb87d"
+        },
+        {
+          "at": "2026-11-19T22:46Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Read J3171 EVIDENCE.md, HASHES.txt, J3150 HASHES.txt, and el_client.py at exact commit a76bfa8f57250935b7818dc126bb3d42f74fb87d off origin/main f13cb7aed8a596806bb7fab527b0cb9e643c362b"
         }
       ],
-      "remaining_action": "Inspect PR 681 commit a76bfa8f5725 and J3171 evidence/hashes in a clean HOS worktree",
+      "remaining_action": "Verify offline GET-only subscription/history refusal, GET body refusal, and hash/activation pins",
       "for": "gemini",
       "kind": "review",
       "model": "gemini-argon",
@@ -284324,11 +284329,11 @@
         "by": ""
       },
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-19T22:45Z",
+        "at": "2026-11-19T22:46Z",
         "by": "gemini",
-        "note": "Claimed J3172 for independent exact-commit review of HOS PR 681 at a76bfa8f57250935b7818dc126bb3d42f74fb87d"
+        "note": "Read J3171 EVIDENCE.md, HASHES.txt, J3150 HASHES.txt, and el_client.py at exact commit a76bfa8f57250935b7818dc126bb3d42f"
       },
       "taskKeys": [
         "HOS:009"
