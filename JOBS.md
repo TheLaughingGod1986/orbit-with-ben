@@ -72,6 +72,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3139 | any | claimed | codex | 2026-11-19T17:10Z | 009 edit · chief · HOS 009: decide a compliant replacement score route | J3132 |
 | J3140 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3114 |  |
 | J3141 | any | open | – | – | 009 edit · assembly · HOS 009: prepare fail-closed score billing guard | J3139 |
+| J3142 | any | open (after J3141) | – | – | 009 edit · review · HOS 009: independently review score billing guard | J3139 |
 
 Recently finished:
 

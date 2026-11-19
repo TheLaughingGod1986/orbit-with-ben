@@ -1,5 +1,5 @@
 {
-  "next_id": 3142,
+  "next_id": 3143,
   "jobs": [
     {
       "id": "J0001",
@@ -281236,6 +281236,35 @@
       "remaining_action": "Prepare and test a proposed billing guard for the gravity film",
       "kind": "assembly",
       "plain": "Build and test a safeguard for the gravity film’s replacement music"
+    },
+    {
+      "id": "J3142",
+      "title": "HOS 009: independently review score billing guard",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Independently review the exact proposed HOS 009 production billing guard from the preceding job, with an adversarial review and independently run synthetic tests, including nested amount/currency, missing/null/malformed/negative/non-zero values, freshness, concurrency/shared-meter races, insufficient credits, extensions, one-request/no-retry enforcement and £0/3,000-credit cap. Check integration cannot bypass the guard, evidence provenance and fail-closed paths. Record exact commit and findings, PASS or FIX, and precise corrections. No account calls, generation, production integration, deployment, billing change or allowance authorization. Preserve J3047 and both holds. The implementer must not independently review their own work.\n",
+      "ref": "J3139",
+      "film": "009",
+      "stage": "edit",
+      "after": "J3141",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-19T15:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T15:12Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Independently review the proposed music billing safeguard",
+      "kind": "review",
+      "plain": "Independently check the gravity film’s music safeguard"
     }
   ],
   "focus": [
