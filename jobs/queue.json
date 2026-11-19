@@ -1,5 +1,5 @@
 {
-  "next_id": 3128,
+  "next_id": 3129,
   "jobs": [
     {
       "id": "J0001",
@@ -279933,6 +279933,35 @@
       "taskKeys": [
         "HOS:013"
       ]
+    },
+    {
+      "id": "J3128",
+      "title": "J3104: reconcile unreadable music comparison inputs",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J3104 accepted a technical audit with incomplete music-comparison coverage, not proof of music uniqueness. Resolve the missing comparison inputs for the 77 current_newest entries marked partial_unreadable_comparisons in the J3104 inventory. Deduplicate by bed and comparison-library identity; use existing readable NAS equivalents with recorded identity evidence, not downloads or new generation. Do not silently omit earlier music beds. Distinguish mistakenly included narration files from actual earlier beds and explain any exclusion. Run the relevant music gates against the reconciled library into new report files; preserve original reports and media. If a comparison remains unavailable, identify the exact required input and record a typed input hold with a specific future verification time. Any actual FAIL gets a no-spend repair job. Publish an entry-to-report coverage table and route the result for review. No gate waivers, media alterations, uploads, schedule/privacy/Buffer changes, or new spend. Existing per-film holds remain in force. This is a follow-up to J3104, not a request to repeat its entire historical sweep.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J3104",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-19T11:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T11:15Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Resolve missing comparison tracks and rerun the affected music checks",
+      "kind": "qa",
+      "plain": "Finish checking that the newest films use their own music"
     }
   ],
   "focus": [
