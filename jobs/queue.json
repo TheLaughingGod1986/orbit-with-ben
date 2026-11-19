@@ -271644,18 +271644,23 @@
           "at": "2026-11-19T23:53Z",
           "by": "codex",
           "what": "step 0 of 4 done: Plan: inspect dependencies, write runbook, rehearse safely, verify and hand off remaining move."
+        },
+        {
+          "at": "2026-11-19T23:54Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Restored existing 3/4 plan after reading full history. PR 1011 and rehearsal already exist; current PR conflicts with main. Six corrected daily zeros through 19 November."
         }
       ],
-      "remaining_action": "Prepare and rehearse the studio repository move, then verify its release conditions",
+      "remaining_action": "Resolve migration branch conflicts and verify the remaining cutover work",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-19T23:53Z",
+        "at": "2026-11-19T23:54Z",
         "by": "codex",
-        "note": "Plan: inspect dependencies, write runbook, rehearse safely, verify and hand off remaining move."
+        "note": "Restored existing 3/4 plan after reading full history. PR 1011 and rehearsal already exist; current PR conflicts with ma"
       }
     },
     {
