@@ -1,5 +1,5 @@
 {
-  "next_id": 3167,
+  "next_id": 3168,
   "jobs": [
     {
       "id": "J0001",
@@ -279594,6 +279594,11 @@
           "at": "2026-11-19T16:26Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-19T21:05:00Z"
+        },
+        {
+          "at": "2026-11-19T21:05Z",
+          "by": "relay",
+          "what": "condition verification queued: J3167"
         }
       ],
       "remaining_action": "Obtain explicit approval for the rejected GitHub branch export, then open the Pluto packaging review PR without rebuilding",
@@ -279613,10 +279618,11 @@
       "hold": {
         "type": "input",
         "condition": "J3140 Chief ruling: explicit authorization for the previously rejected export of codex/j3114-pluto-v02 to TheLaughingGod1986/orbit-with-ben is still absent through thread comment 7015059512. Clean build a12100797f preserved; 12/12 NAS artifact hashes independently rechecked. Automatic approval review rejected the export twice, including owner/admin evidence. Do not retry through another worker or route. Keep J3115 dependent on J3114; after actual approval export the preserved branch and open its review PR without rebuilding. Time alone never releases this hold.",
-        "check_at": "2026-11-19T21:05:00Z",
+        "check_at": "2026-11-19T22:05:38+00:00",
         "last_recheck": "J3140",
         "checked_at": "2026-11-19T16:26:18+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J3167"
       },
       "escalated_at": "2026-11-19T11:45Z"
     },
@@ -283652,6 +283658,37 @@
       "kind": "assembly",
       "model": "gpt-6.1-sol",
       "plain": "Strengthen the remaining music request safeguards for the gravity film"
+    },
+    {
+      "id": "J3167",
+      "title": "Verify condition for J3114",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3114: J3140 Chief ruling: explicit authorization for the previously rejected export of codex/j3114-pluto-v02 to TheLaughingGod1986/orbit-with-ben is still absent through thread comment 7015059512. Clean build a12100797f preserved; 12/12 NAS artifact hashes independently rechecked. Automatic approval review rejected the export twice, including owner/admin evidence. Do not retry through another worker or route. Keep J3115 dependent on J3114; after actual approval export the preserved branch and open its review PR without rebuilding. Time alone never releases this hold.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3114 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-19T21:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T21:05Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Obtain explicit approval for the rejected GitHub branch export, then open the Pluto packaging review PR without rebuilding",
+      "kind": "review",
+      "recheck_of": "J3114",
+      "due": "2026-11-19T22:05:38+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
