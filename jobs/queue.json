@@ -283216,13 +283216,13 @@
       "stage": "",
       "after": "J3153",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-19T20:19Z",
-      "eta": "2026-11-19T22:19Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-19T20:17Z",
-      "result": "",
+      "result": "Waiting for: The 2026-11-20 snapshot is available after the 06:40 UTC analytics run. Read it, then retain this follow-up until a full-day Studio read after 11:30 UTC. No YouTube changes authorized.",
       "history": [
         {
           "at": "2026-11-19T20:17Z",
@@ -283233,9 +283233,19 @@
           "at": "2026-11-19T20:19Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T20:19Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: The 2026-11-20 snapshot is available after the 06:40 UTC analytics run. Read it, then retain this follow-up until a full-day Studio read after 11:30 UTC. No YouTube changes authorized."
+        },
+        {
+          "at": "2026-11-19T20:19Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-20T06:50:00Z"
         }
       ],
-      "remaining_action": "Read the next morning snapshot, then the full-day Studio figures",
+      "remaining_action": "Read tomorrow morning snapshot and then full-day figures for the Supermoon Short",
       "due": "2026-11-20T07:40:00Z",
       "kind": "studio",
       "plain": "Check whether the Supermoon Short gained viewers overnight",
@@ -283246,6 +283256,11 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "date",
+        "condition": "The 2026-11-20 snapshot is available after the 06:40 UTC analytics run. Read it, then retain this follow-up until a full-day Studio read after 11:30 UTC. No YouTube changes authorized.",
+        "check_at": "2026-11-20T06:50:00Z"
       }
     }
   ],
