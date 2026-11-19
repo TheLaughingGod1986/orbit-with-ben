@@ -276919,11 +276919,24 @@
           "at": "2026-11-19T00:23Z",
           "by": "macbook",
           "what": "added for cursor"
+        },
+        {
+          "at": "2026-11-19T06:49Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Cursor out of usage; next in its chain: gemini"
         }
       ],
       "remaining_action": "Packaging panel (cursor): J3088 Saturn and JWST revised candidates; verify BABY GALAXIES film and title fit",
-      "for": "cursor",
-      "kind": "review"
+      "for": "gemini",
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "cursor",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "model": "gemini-argon"
     },
     {
       "id": "J3095",
