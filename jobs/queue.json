@@ -282754,9 +282754,14 @@
           "at": "2026-11-19T19:34Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T19:34Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3155; starting verification of J1275 condition for HOS 009 and HOS 010"
         }
       ],
-      "remaining_action": "Verify readiness: Re-time HOS 009 and 010 provisional Chapters to actual chapter-card/VO times once each film's locked cut exists (PR #389 merged at 7c136209)",
+      "remaining_action": "Read J1275 history and inspect HOS 009 and HOS 010 picture/edit status and final cuts",
       "kind": "review",
       "recheck_of": "J1275",
       "due": "2026-11-19T19:01:32+00:00",
@@ -282775,9 +282780,12 @@
         "of": 3,
         "at": "2026-11-19T19:34Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3155; starting verification of J1275 condition for HOS 009 and HOS 010"
+      },
+      "taskKeys": [
+        "HOS:009",
+        "HOS:010"
+      ]
     },
     {
       "id": "J3156",
