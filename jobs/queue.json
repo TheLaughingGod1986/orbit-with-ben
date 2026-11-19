@@ -1,5 +1,5 @@
 {
-  "next_id": 3154,
+  "next_id": 3155,
   "jobs": [
     {
       "id": "J0001",
@@ -282431,6 +282431,35 @@
       "taskKeys": [
         "OWB:013"
       ]
+    },
+    {
+      "id": "J3154",
+      "title": "HOS 009: repair music endpoint dispatch and reserve failed reads durably",
+      "needs": "any",
+      "repo": "hos",
+      "body": "J3152 elected-Chief ruling: OFFLINE PREPARATION ONLY, GBP 0. Accept J3151 FIX on HOS PR672 f21ab5b9a4f0a2143fb4cb91b1c82822185b1783. Review and reproducer: HOS PR673 d61972b256968051607783a36372524190db9ac2, jobs/reviews/J3151/REVIEW.md and reproduce.py. Work on the proposed integration in a clean HOS branch; never deploy or merge it or run it against an account.\n\nRepair only these two named integration defects:\n1. Reject fragments and unsupported music query/path forms before either legacy client entry can dispatch. Canonical music must use the disabled flight exclusively. Transport-spy tests for el_client.request and multipart_post must show zero music POSTs for fragment and noncanonical variants with activation false, fixture TTS_PAUSE present and EL_GUARD_OFF=1. Preserve speech/Scribe behavior and the compose route.\n2. Durably reserve the one-read attempt under the continuously held real O_EXCL recorder before the subscription transport read. Failed transport, malformed/untrusted receipt, crash/restart after reservation and re-entry must permit at most one mocked GET total and zero POST. Do not delete or reset that reservation automatically. Document coexistence with the pinned guard decide/consume store; any reconciliation needs a separate explicit Chief scope.\n\nKeep pinned guard sha256 930d987783055d1f73e80fd9ae770f1ecde63d79b397706df74e9492b4029308 and shape sha256 ba290b64740c96c3407af17da80d043be3bf840d1863518bfb011e047f9e647e unchanged. Keep literal ACTIVATION_AUTHORIZED=False; no caller transport/path substitutions, pause bypass, retries, single-use reset or weakened pause/ledger checks. Retain successful-path one mocked GET/at-most-one mocked POST, descriptor continuity and inode checks. Run existing integration/guard suites and new regression cases using synthetic fixtures only; no real lock or account needed.\n\nNo public pricing rescan or account call to discover price in this repair. Existing J3150 pricing evidence does not prove both <=3000 subscription credits and GBP0 for the exact 180-second music_v2 request. Passing code tests cannot establish that price bound. J3043/J3045 allowance remains permanently closed by J3047. v01/v02 rejected; do not loop/stretch/re-encode teach v01 to fill the opening. J2035/J2171 stay held, media hashes/timing and all gates preserved, no replacement delivery promise, no YouTube/Buffer/schedule changes.\n\nDeliver a new exact commit, hashes, diff, regression output and PR. Immediately queue an independent review by someone other than the implementation author, followed by an elected-Chief disposition; explicitly bar the author from that review and pin a different eligible worker if needed to prevent MacBook self-claim. Neither successor authorizes account calls, generation, activation, deployment, merge or a music allowance. Stop after the named repair; no repeated pricing or unchanged condition-check loops.\n",
+      "ref": "J3152",
+      "film": "009",
+      "stage": "edit",
+      "after": "J3152",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-19T17:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T17:58Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Repair the two reviewed defects offline and submit a new commit for independent review",
+      "kind": "assembly",
+      "plain": "Fix two safeguards in the gravity film music preparation"
     }
   ],
   "focus": [
