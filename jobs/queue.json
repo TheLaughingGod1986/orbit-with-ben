@@ -254681,9 +254681,14 @@
           "at": "2026-11-19T00:20Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T00:21Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Exact-file approval and one-off successor authorization read."
         }
       ],
-      "remaining_action": "Verify the current test is finished and start the approved thumbnail comparison",
+      "remaining_action": "Checking the live thumbnail and finished test before starting the approved comparison",
       "kind": "studio",
       "plain": "Test the approved new thumbnail for the Fermi Paradox video",
       "rerouted_from": {
@@ -254698,11 +254703,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-19T00:20Z",
+        "at": "2026-11-19T00:21Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Exact-file approval and one-off successor authorization read."
+      },
+      "taskKeys": [
+        "OWB:001"
+      ]
     },
     {
       "id": "J2847",
