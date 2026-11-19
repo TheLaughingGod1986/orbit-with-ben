@@ -280906,13 +280906,27 @@
           "at": "2026-11-19T14:29Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-19T14:29Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-19T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Chief review of J3128 music comparison reconciliation (OWB 9d166bd6f9 + HOS PR #666 c77b31b1) and queued £0 repair jobs J3136/J3137",
       "kind": "review",
       "recheck_of": "J3128",
       "due": "2026-11-19T15:29:06+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
