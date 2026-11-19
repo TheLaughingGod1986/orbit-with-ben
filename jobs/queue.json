@@ -1,5 +1,5 @@
 {
-  "next_id": 3130,
+  "next_id": 3131,
   "jobs": [
     {
       "id": "J0001",
@@ -280104,6 +280104,35 @@
       "taskKeys": [
         "OWB:004"
       ]
+    },
+    {
+      "id": "J3130",
+      "title": "Recover the original Webb thumbnail source images from the MacBook",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "Restore the exact existing inputs for J3129; no new design or generation. J2983 and J3088 ran on the MacBook. Their code default was ~/_desk/j2834/plates; inspect that and the original worker caches first. The Mini searched its workspace/scratch and studio-live (including ignored files) and found only rendered candidates and manifests, not the original inputs.\n\nCopy (never move/delete) the existing originals into /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/004_JWST-Discoveries-That-Change-Everything/08_Thumbnails/repackage_2026-11/J3088_v02/inputs/. Required exact SHA-256:\n- JADES_GS_z14_0_cutout.png: e9b2342e36302c7394e754db6c3b9f0b389e3b5db0cd373e03a278683df0c886\n- JADES_GS_z14_0_field.jpg: b666562568d2777565014d3495d6c7f369ff32e4ef99aac51787adc447d7066b\n- webb_1.png: 9f520a9bf2d9b39659088b8c2fd963c128fcdd2f71dfbd4563e5466246e758a3\n\nAlso copy the original NASA annotated pullout/reference and any source-download or crop extraction recipe from J2983/J3088. Record URLs, dimensions and actual crop registration in a small source manifest on the NAS. The cutout must preserve the same native pixels and geometry; do not replace it with a crop of the rendered thumbnail or silently substitute a different-resolution NASA download. Match the three hashes after the NAS copy. No media in git. No credit or money spend. No Studio actions.\n\nWhen complete, report shared paths and hashes and reopen J3129 so its original builder can resume immediately. Do not mark J3129 done, change T039, or queue its panel before an exact v08 exists. If any original is missing, record precisely which input and the searched locations, and return a concrete recovery proposal to the acting Chief. No Ben approval needed.\n",
+      "ref": "J3129",
+      "film": "004",
+      "stage": "thumbs",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-19T11:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T11:33Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Copy and verify the original Webb thumbnail source images on the shared film store",
+      "kind": "assembly",
+      "plain": "Restore the original galaxy images needed to improve the Webb thumbnail"
     }
   ],
   "focus": [

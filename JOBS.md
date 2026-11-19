@@ -66,6 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3127 | mini | open | – | – | 013 picture · for gemini · assembly · `gemini-agy` · HOS 013: Gemini session-block reconciliation and guarded dry-run | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-7006319651 |
 | J3128 | mini | open (after J3104) | – | – | for gemini · qa · `gemini-argon` · J3104: reconcile unreadable music comparison inputs |  |
 | J3129 | mini | claimed | codex | 2026-11-19T13:29Z | 004 thumbs · thumb · Fix Webb thumbnail hook and identify the distant galaxy | J3096 |
+| J3130 | macbook | open | – | – | 004 thumbs · assembly · Recover the original Webb thumbnail source images from the MacBook | J3129 |
 
 Recently finished:
 
