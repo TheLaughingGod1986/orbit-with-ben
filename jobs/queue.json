@@ -279905,20 +279905,25 @@
           "at": "2026-11-19T11:05Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Verified origin/main at 5cd6d4ff in detached worktree; no running reconciliation process; raw and archive mp4 both absent; spotted 15 Nov Flow balance reset in shared account.jsonl — inspecting all preconditions read-only"
+        },
+        {
+          "at": "2026-11-19T11:10Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified origin/main 5cd6d4ff in detached worktree (removed); raw/archive mp4 absent and ledgers still hold open Wallace charge; live Flow CDP 9222 reads balance 24500 and banner absent on project 2d5c6f15-c48f-4a55-bf3a-89d4b5c5d49b; posted full report to HOS desk comment 7007396534; 0 ledger writes, 0 Creates, £0"
         }
       ],
-      "remaining_action": "Checking all preconditions: mp4 absence, shared/pass/spend ledgers, evidence file, and live Flow page (CDP 9222)",
+      "remaining_action": "Parking J3127 for Chief decision after live Flow preconditions failed (live balance 24500 not 4990; unusual-activity banner gone)",
       "for": "gemini",
       "kind": "assembly",
       "model": "gemini-agy",
       "plain": "Close the blocked picture attempt and check whether Darwin and Wallace can resume",
       "mini_only": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-19T11:05Z",
+        "at": "2026-11-19T11:10Z",
         "by": "gemini",
-        "note": "Verified origin/main at 5cd6d4ff in detached worktree; no running reconciliation process; raw and archive mp4 both absen"
+        "note": "Verified origin/main 5cd6d4ff in detached worktree (removed); raw/archive mp4 absent and ledgers still hold open Wallace"
       },
       "taskKeys": [
         "HOS:013"
