@@ -254671,11 +254671,25 @@
           "at": "2026-11-19T00:14Z",
           "by": "codex",
           "what": "J2844 corrected obsolete draft path and T036 to approved rebuilt v05/T038; explicit limited successor-test authorization recorded."
+        },
+        {
+          "at": "2026-11-19T00:18Z",
+          "by": "relay",
+          "what": "rerouted to codex on gpt-6.1-sol: Cursor out of usage; next in its chain: codex"
         }
       ],
       "remaining_action": "Verify the current test is finished and start the approved thumbnail comparison",
       "kind": "studio",
-      "plain": "Test the approved new thumbnail for the Fermi Paradox video"
+      "plain": "Test the approved new thumbnail for the Fermi Paradox video",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6.1-sol"
     },
     {
       "id": "J2847",
