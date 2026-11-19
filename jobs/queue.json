@@ -282043,13 +282043,13 @@
       "stage": "edit",
       "after": "J3148",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-19T17:13Z",
-      "eta": "2026-11-19T19:13Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-19T16:44Z",
-      "result": "",
+      "result": "Offline repair accepted at 11ed0c86; exact hashes verified and 22 unit plus 12 adversarial suites pass. Production integration/deployment and allowance NOT approved: current tariff/capacity and live integration unresolved. PR671 c1455b66 records ruling; desk7016515714 posted. J3150 owns disabled integration and current cost evidence followed by independent review. J3047 closure, rejected v01/v02 and J2035/J2171 holds preserved. GBP0; no account calls or generation.",
       "history": [
         {
           "at": "2026-11-19T16:44Z",
@@ -282080,6 +282080,11 @@
           "at": "2026-11-19T17:18Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR671 and desk7016515714 published; J3150 open; J2035/J2171 blocked; all checks pass"
+        },
+        {
+          "at": "2026-11-19T17:18Z",
+          "by": "codex",
+          "what": "done: Offline repair accepted at 11ed0c86; exact hashes verified and 22 unit plus 12 adversarial suites pass. Production integration/deployment and allowance NOT approved: current tariff/capacity and live integration unresolved. PR671 c1455b66 records ruling; desk7016515714 posted. J3150 owns disabled integration and current cost evidence followed by independent review. J3047 closure, rejected v01/v02 and J2035/J2171 holds preserved. GBP0; no account calls or generation."
         }
       ],
       "remaining_action": "Decision recorded; follow-up owns offline integration and current cost evidence",
@@ -282094,7 +282099,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-7016515714"
     },
     {
       "id": "J3150",
