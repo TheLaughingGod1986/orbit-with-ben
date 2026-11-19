@@ -64,12 +64,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3138 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3128 |  |
 | J3155 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J1275 |  |
 | J3161 | mini | blocked | codex | – | studio · Supermoon Short: next-morning and full-day performance follow-up |  |
-| J3164 | any | claimed | codex | 2026-11-19T23:01Z | 009 edit · chief · HOS 009: Chief disposition after independent routing repair review | https://github.com/TheLaughingGod1986/history-of-science/pull/675 |
 | J3165 | any | open (after J3164) | – | – | 009 edit · chief · HOS 009: merge exact offline routing repair under existing Chief ruling | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-7022139984 |
 | J3166 | any | open (after J3165) | – | – | 009 edit · assembly · `gpt-6.1-sol` · HOS 009: harden music path and method handling offline | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-7022139984 |
 
 Recently finished:
 
+- J3164 done: HOS 009: Chief disposition after independent routing repair review (Recorded existing Grok PASS 7022139984 on current PR675 d1f9e545 after Claude independent review 7022125897; old Gemini faa8f757 PASS superseded. J3165 separate merge lane and J3166 bounded hardening queued. Desk receipt 7022197314. No merge, activation or spend in this run.)
 - J3163 done: HOS 009: independent review of repaired music routing types (done)
 - J3162 done: HOS 009: close the music routing type bypass offline (Offline routing repair appended to PR675 at faa8f75731a91d50b9ce999a4b80c4fa4562fce9. 34 type cases, 23 flight and 11 guard tests pass; reservation probes pass. Independent Gemini backup review J3163 then Chief disposition J3164. No activation or merge.)
 - J3160 done: Verify condition for J2537 (Acting Chief accepts NOT YET MET in REVIEW.md (5ca8a45536), corroborated by Grok desk 7018109147. Fresh HOS180 through 7020824090, OWB954 through 7020891341 and HOS657 reads at 20:12 UTC found no exception. Parent J2537 remains blocked; wait --recheck J3160 recorded in 11195ed8aa, next check 2026-11-20T00:15:00Z. After authorization: resolve non-desk PRs, refresh backup/rehearsal, announce day-before window and hold writers. No live rewrite or spend.)
@@ -102,4 +102,3 @@ Carry forward
 
 Done (2026-11-19T20:18Z, codex): J3153 Chief ruling by codex: retain live Short and packaging unchanged. Six-hour 29 views, 18 feed views (62.1%), no reported setup fault; insufficient sample to diagnose retention/edit or topic fatigue. About 72 showings is inferred, not measured in Studio. J3161 follows the 20 Nov 06:40 UTC snapshot (check 06:50), then a full-day Studio read after 11:30 UTC; read-only, no spend. No Ben action.
 )
-- J3152 done: HOS 009: decide whether the disabled music flight stays closed (FIX accepted; music activation stays CLOSED. J3154 queues two offline integration repairs and requires independent re-review. PR674 6f342cbc records decision/status, unmerged; ALL CHECKS PASS. Pricing bound unproven; J3047 closure and J2035/J2171 holds retained. HOS desk posted. No account call, generation, merge, deployment or spend; GBP0.)
