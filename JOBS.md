@@ -67,7 +67,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3155 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J1275 |  |
 | J3158 | any | open (after J3154) | – | – | 009 edit · for codex · review · `gpt-6-astra` · HOS 009: independently review the repaired music flight | J3154 |
 | J3159 | any | open (after J3158) | – | – | 009 edit · chief · HOS 009: disposition of the repaired music flight | J3154 |
-| J3160 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2537 |  |
+| J3160 | mini | claimed | gemini | 2026-11-19T20:18Z | for gemini · review · `gemini-argon` · Verify condition for J2537 |  |
 
 Recently finished:
 
