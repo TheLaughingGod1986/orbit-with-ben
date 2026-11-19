@@ -459,12 +459,10 @@ pull-request check is not a replacement for that recorded streak.
 
 Do not start the analytics timer in the separate studio checkout until its full data flow is adapted and tested:
 
-- `analytics-snapshot.ts` currently resolves OWB and HOS beneath the engine's `05_Analytics`, while WW2 uses
-  `channels/ww2/05_Analytics`. These paths must resolve to the actual channel record worktrees in the detached
-  layout; verify existing histories and refuse missing or ambiguous roots before making API calls.
-- `analytics-report.ts` assumes both channel directories share one analytics root. It must read and write each
-  channel report in its own record worktree while keeping the combined dashboard in the studio worktree.
-  Preserve CTR and catalog sidecar reads and the existing no-snapshot behavior.
+- The snapshot/report record-root adapter is now prepared (see continuation below). The timer must supply
+  actual channel record worktrees through registry checkout overrides and stage their existing histories first.
+- Report generation now supports separate channel roots and keeps the combined dashboard in the engine.
+  End-to-end timer tests must still verify CTR/catalog sidecars and Git destinations in the full staged layout.
 - `07_Content-Ops/launchd/analytics-snapshot.sh` currently uses one Orbit worktree for source code, snapshots,
   the Shorts gate and all Git commits. Separate the engine from each data worktree, run the gate against Orbit's
   actual upload registry and library, and commit only each repository's own generated files. Keep field-order
@@ -475,5 +473,19 @@ Do not start the analytics timer in the separate studio checkout until its full 
   retired-engine refusal and missing-root refusal. Also run the existing resident-layout tests. The checks must
   not push, publish, invoke the live timer, or write to channel checkouts.
 
-This is a cutover prerequisite, not an assertion that the above adapter has already been built. The live timer
+The complete timer adapter remains a cutover prerequisite. The live timer
 continues in its existing configuration until the single-writer cutover and successful acceptance checks.
+
+
+### Snapshot and report adapter prepared — 19 November, 16:10 UTC
+
+`07_Content-Ops/scripts/analytics-paths.ts` now resolves detached channel record directories with the existing
+Python registry loader. It refuses missing histories, mismatched manifests and engine-local record destinations
+before snapshot API calls. Snapshot/report direct commands also obey the engine retirement guard. Resident timer
+paths remain unchanged. Reports and their sidecars use channel directories; the combined dashboard stays in the
+engine. The separate existing Field Order report behavior is preserved.
+
+Typecheck, lint, eight lock pretests and 222 application tests pass, including actual registry-loader fixtures and
+separate report/CTR/dashboard destinations. Evidence and the precise next timer step:
+`jobs/reviews/J3012/ANALYTICS_ROOTS_2026-11-19.md`. Do not activate the timer on this partial adapter: worktree,
+commit/retry, gate-library and queue routing still need their end-to-end migration checks.

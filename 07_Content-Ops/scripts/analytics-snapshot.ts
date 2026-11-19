@@ -37,8 +37,8 @@ import { collectFieldOrder, writeFieldOrder } from "../src/lib/analytics/field-o
 
 const API = "https://www.googleapis.com/youtube/v3";
 const ANALYTICS = "https://youtubeanalytics.googleapis.com/v2/reports";
-export const channelRoot = (key: ChannelKey) => key === "ww2" ? path.resolve(__dirname, "../../channels/ww2/05_Analytics") : path.join(ANALYTICS_ROOT, key);
-export const ANALYTICS_ROOT = path.resolve(__dirname, "../../05_Analytics");
+import { channelRoot, assertAnalyticsEngine } from "./analytics-paths";
+export { channelRoot, ANALYTICS_ROOT } from "./analytics-paths";
 /** YouTube Analytics is about two days behind; asking for later days returns nothing for them. */
 const ANALYTICS_LAG_DAYS = 2;
 
@@ -83,6 +83,8 @@ async function snapshot(key: ChannelKey, date: string): Promise<string> {
   const meta = CHANNELS[key];
   const own = process.env[meta.tokenKey];
   if (key === "ww2" && (!/^UC[\w-]{22}$/.test(meta.id) || !own)) return "Field Order History: disabled until channel ID and own read-only sign-in are configured";
+  // Validate the data destination before the first token exchange or API request.
+  const dir = channelRoot(key);
   const fallback = process.env.YOUTUBE_REFRESH_TOKEN;
   if (!own && !fallback) throw new Error(`no token (${meta.tokenKey} or YOUTUBE_REFRESH_TOKEN) in .env`);
   const token = (await refreshAccessToken((own ?? fallback)!)).token;
@@ -100,7 +102,7 @@ async function snapshot(key: ChannelKey, date: string): Promise<string> {
     page = pl.nextPageToken ?? "";
   } while (page);
   // The uploads playlist can list a video twice; each video is fetched and stored once.
-  const previousDir = path.join(channelRoot(key), "snapshots");
+  const previousDir = path.join(dir, "snapshots");
   const priorIds: string[] = [];
   if (fs.existsSync(previousDir)) {
     const files = fs.readdirSync(previousDir).filter(f=>/^\d{4}-\d{2}-\d{2}\.json$/.test(f) && f.slice(0,10)<=date).sort().slice(-7);
@@ -132,7 +134,6 @@ async function snapshot(key: ChannelKey, date: string): Promise<string> {
   };
 
   // Private numbers: only with this channel's own read-only Analytics sign-in.
-  const dir = channelRoot(key);
   let analyticsLine = "YouTube Analytics: not connected";
   if (!own) {
     snap.note = `YouTube Analytics isn't connected for ${meta.name} yet (run "npx tsx --env-file=.env scripts/youtube-auth.ts --analytics ${key}" once).`;
@@ -229,6 +230,7 @@ export function serialiseSnapshot(snap: Snapshot): string {
 }
 
 async function main() {
+  assertAnalyticsEngine();
   const { channels, date } = args();
   let failed = 0;
   for (const key of channels) {
@@ -242,4 +244,7 @@ async function main() {
   if (failed) process.exit(1);
 }
 
-if (require.main === module) main();
+if (require.main === module) main().catch((e) => {
+  console.error((e as Error).message);
+  process.exitCode = 1;
+});
