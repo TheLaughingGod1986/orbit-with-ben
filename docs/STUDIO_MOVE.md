@@ -489,3 +489,20 @@ Typecheck, lint, eight lock pretests and 222 application tests pass, including a
 separate report/CTR/dashboard destinations. Evidence and the precise next timer step:
 `jobs/reviews/J3012/ANALYTICS_ROOTS_2026-11-19.md`. Do not activate the timer on this partial adapter: worktree,
 commit/retry, gate-library and queue routing still need their end-to-end migration checks.
+
+### Record worktree and dispatch preparation — 19 November, 17:30 UTC
+
+`scripts/analytics_worktree.py` now supplies tested per-repository preparation, scoped record commits and bounded
+push retries. It preserves local record commits after a failed push or conflicting rebase, including retry on a
+later run with no new edits. Unrelated files/history, another repository, attached/shared checkouts and retired
+engine code are refused. Studio's scope is the combined dashboard; each channel's scope is its own analytics,
+plus Orbit's open-gate library JSON. The timer must validate source checkouts through the registry and serialize
+this helper; the helper is not yet wired into the timer and does not acquire a service lock itself.
+
+Field Order dispatch now uses the registry-aware analytics record root and validates the configured shared
+queue's engine identity. At cutover set `FIELD_ORDER_QUEUE_REPO` to the active shared studio checkout, while
+channel checkout overrides point to the analytics record worktrees. No queue belongs in a channel record tree.
+
+Evidence: `jobs/reviews/J3012/ANALYTICS_WORKTREES_2026-11-19.md` (13 real-local-Git tests; eight lock pretests and
+227 application tests; typecheck/lint). Full timer orchestration, gate-library routing and fake-API acceptance
+remain before its plist can be prepared or installed. No live service or record location changed.
