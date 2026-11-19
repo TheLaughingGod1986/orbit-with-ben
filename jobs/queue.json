@@ -1,5 +1,5 @@
 {
-  "next_id": 3169,
+  "next_id": 3170,
   "jobs": [
     {
       "id": "J0001",
@@ -283867,6 +283867,35 @@
       "for": "claude",
       "kind": "review",
       "plain": "Independent review of offline music path semicolon and method hardening PR 680"
+    },
+    {
+      "id": "J3169",
+      "title": "HOS 009: Chief disposition after J3168 review of PR 680 hardening",
+      "needs": "any",
+      "repo": "hos",
+      "body": "After J3168 independent exact-commit review of HOS PR #680 (`7b87f15ebf6b1a74e7c1eb5df1c5b26fa9e74321`), the elected HOS Chief reads the independent review findings and disposes of PR #680 (the nonblocking follow-up from HOS Chief ruling 7022139984).\n\nRe-read `chief_relay.py status` before any protected decision; use own agent id. `gemini` authored J3166 and is excluded from the independent review; this job is only elected-Chief disposition of the independently reviewed commit (no self-review substitution).\n\nVerify that the reviewed commit still equals PR #680 head (`7b87f15ebf6b1a74e7c1eb5df1c5b26fa9e74321`), verify CI is green, evaluate any reviewer recommendations on the two recorded ambiguities (clean lowercase `\"post\"` on `/v1/music`; clean `\"GET\"` on `/v1/music`), and post PASS/FIX ruling and next bounded action on HOS desk #180.\n\nScope remains OFFLINE ONLY, GBP 0: neither this job nor its predecessor authorizes activation, deployment, account calls, pricing rescan, generation, music allowance, YouTube or Buffer changes, or live lock/store edits. `ACTIVATION_AUTHORIZED` stays literal `False`; durable reservation and pinned guard/shape safeguards (`930d987783...`, `ba290b6474...`) stay unchanged. PR 678/679 remain review-only unmerged; J3047 closed unused; v01/v02 rejected; J2035/J2171 held; film/media/timing/gates unchanged; no replacement delivery promise.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/680",
+      "film": "009",
+      "stage": "edit",
+      "after": "J3168",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-19T21:30Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T21:30Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Read J3168 independent review of HOS PR 680 (7b87f15e) and post elected-Chief PASS/FIX disposition",
+      "kind": "chief",
+      "plain": "Elected Chief decision on offline music path/method hardening PR 680 after J3168 review"
     }
   ],
   "focus": [
