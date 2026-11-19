@@ -227005,9 +227005,14 @@
           "at": "2026-11-19T12:00Z",
           "by": "relay",
           "what": "condition verification queued: J3134"
+        },
+        {
+          "at": "2026-11-19T14:37Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-19T18:15:00Z"
         }
       ],
-      "remaining_action": "Check for the protected desk history exception, then prepare the controlled rewrite window",
+      "remaining_action": "Check for the protected desk exception and prepare the controlled rewrite only after approval",
       "due": "2026-11-18T18:00:00Z",
       "kind": "chief",
       "plain": "Remove email addresses from both channels' repos, including their past versions",
@@ -227027,12 +227032,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "Ben: explicit one-time exception for rewriting protected HOS hos-desk history while retaining open PR180 is still absent. Acting-Chief J3116 accepts Gemini evidence aa3e1e3267; fresh HOS180, OWB954 and merged HOS657 reads find no new exception. Private rehearsal passed but does not authorize a live push. After approval, elected Chief resolves new PR658/659/660, refreshes backup and rehearsal, announces the day-before window and holds writers before allowlisted cutover.",
-        "check_at": "2026-11-19T13:00:44+00:00",
-        "last_recheck": "J3116",
-        "checked_at": "2026-11-19T06:03:18+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3134"
+        "condition": "Explicit one-time exception for rewriting protected HOS desk history while retaining PR180 remains unestablished. J3134 evidence checks HOS 180, OWB 954 and HOS 657 through 12:16 UTC. Private rehearsal is not live authorization. After approval resolve open non-desk PRs, refresh backup and rehearsal, announce the day-before window and hold writers before cutover.",
+        "check_at": "2026-11-19T18:15:00Z",
+        "last_recheck": "J3134",
+        "checked_at": "2026-11-19T14:37:03+00:00",
+        "checked_by": "codex"
       }
     },
     {
