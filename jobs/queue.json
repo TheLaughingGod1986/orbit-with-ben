@@ -284366,13 +284366,13 @@
       "stage": "edit",
       "after": "J3172",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-19T22:55Z",
-      "eta": "2026-11-20T00:55Z",
+      "eta": "",
       "created_by": "cursor",
       "created_at": "2026-11-19T22:42Z",
-      "result": "",
+      "result": "PASS on PR681 exact head a76bfa8f57250935b7818dc126bb3d42f74fb87d, accepting independent Gemini J3172. Re-ran 47 fixture tests and 21 hashes: OK. Film009 lint PASS; full check_all only known HOS008 schedule.past failure. Five applicable CI checks successful. Ruling posted at PR681 comment 7024569119 because HOS desk rejected its 2500-comment cap. J3174 queued for separate exact-head merge under this ruling. PR681 remains unmerged; activation False; GBP0; all existing holds preserved.",
       "history": [
         {
           "at": "2026-11-19T22:42Z",
@@ -284403,6 +284403,11 @@
           "at": "2026-11-19T22:58Z",
           "by": "codex",
           "what": "step 3 of 3 done: PASS posted on PR681 comment 7024569119 after desk rejected its comment cap. J3174 holds the separate exact-head merge; no merge or activation in this run."
+        },
+        {
+          "at": "2026-11-19T22:58Z",
+          "by": "codex",
+          "what": "done: PASS on PR681 exact head a76bfa8f57250935b7818dc126bb3d42f74fb87d, accepting independent Gemini J3172. Re-ran 47 fixture tests and 21 hashes: OK. Film009 lint PASS; full check_all only known HOS008 schedule.past failure. Five applicable CI checks successful. Ruling posted at PR681 comment 7024569119 because HOS desk rejected its 2500-comment cap. J3174 queued for separate exact-head merge under this ruling. PR681 remains unmerged; activation False; GBP0; all existing holds preserved."
         }
       ],
       "remaining_action": "Chief disposition complete; separate merge queued as J3174",
@@ -284417,7 +284422,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/681#issuecomment-7024569119"
     },
     {
       "id": "J3174",
