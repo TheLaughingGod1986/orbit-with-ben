@@ -1331,8 +1331,8 @@ class TheBriefIsBuiltFromTheChannelFiles(TodaysLayout):
     def test_the_sentence_a_worker_gets_is_the_old_one(self):
         self.assertEqual(cr.worker_only_steps(),
                          "In step 3 skip the channel check and the HOS desk inbox: do only the job "
-                         "`jobs.py next` gives you, and that includes `hos` queue jobs (repo: hos), which are normal "
-                         "queue jobs, not desk tasks: do them in the HOS checkout. If it exits 10, stop without posting")
+                         "`jobs.py next` gives you, and that includes `hos` and `ww2` queue jobs (repo: hos, repo: ww2), which are normal "
+                         "queue jobs, not desk tasks: do them in the HOS or WW2 checkout. If it exits 10, stop without posting")
 
     def test_a_third_channel_gets_its_own_lines_and_changes_nobody_elses(self):
         sky = pathlib.Path("/Users/x/YouTube/Night Sky")

@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2035, J2529.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2035, J2529, J2993.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -25,86 +25,57 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2040 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Codex allow-list for unattended Mini runs (Ben's yes to F, 4 Nov): our 2 repos, R2 owb-media, Buffer, YouTube API |  |
 | J2171 | mini | blocked | gemini | – | 009 edit · assembly · HOS 009: assemble locked Shorts A/B for conditional 27 and 30 Nov | J2023 |
 | J2529 | mini | blocked | gemini | – | 013 picture · for gemini · video · HOS 013 Darwin & Wallace: mint pass 1, the 66 Quality rows of picture plan v02 (at most 6,600 Flow credits, none in cash), before the credits reset on Thu 12 Nov | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6805898066 |
-| J2537 | cloud | open | – | – | for codex · chief · HOS, then Orbit: take the email addresses out of the files and then out of the history (Ben's OK 10 Nov), in stages with planned windows | Ben 10 Nov: Ok on both |
+| J2537 | cloud | blocked | codex | – | for codex · chief · HOS, then Orbit: take the email addresses out of the files and then out of the history (Ben's OK 10 Nov), in stages with planned windows | Ben 10 Nov: Ok on both |
 | J2652 | mini | blocked | gemini | – | 013 edit · for gemini · chart · `gemini-agy` · HOS 013 Darwin & Wallace: scope picture plan v03 (cuts moved to word gaps, overlay onsets, the callback at 4.20 s) | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6808560760 |
 | J2656 | cloud | open | – | – | for claude · studio · Rules: write Ben's answer on replacing a finished Test & Compare into the Never list (AGENTS.md) |  |
 | J2704 | mini | blocked | codex | – | assembly · HOS tooling: validate Next upgrade in preview and diagnose home page error | 6813294950 |
 | J2708 | mini | blocked | cursor | – | assembly · HOS app: establish isolated hosted PostgreSQL for Preview validation | J2704 |
 | J2744 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · Readout: 4-6 s drop, stayed-to-watch and APV on the three J2683 Shorts (Supermoon v04, 032 strike-match, 033 Short 2) | 6829905842 |
-| J2844 | any | open (after J2843) | – | – | chief · Chief gate: pass J2834 weekly audit thumbnail Bs (T035 m09jUdwC5hk, T036 Mo93x0fxB1Q, T037 ziKBPJ6FY0U) after J2843 panel | J2834 |
-| J2845 | mini | open (after J2844) | – | – | studio · Studio: arm thumbnail Test & Compare on m09jUdwC5hk (A=live THE LAST LIGHT vs B=ALL STARS FADE, T035) | J2834 |
-| J2846 | mini | open (after J2844) | – | – | studio · Studio: arm thumbnail Test & Compare on Mo93x0fxB1Q (A=live SILENCE vs B=ZERO SIGNALS, T036) | J2834 |
-| J2847 | mini | open (after J2844) | – | – | studio · Studio: arm thumbnail Test & Compare on ziKBPJ6FY0U (A=live TOO EARLY? vs B=300 MILLION YEARS, T037) | J2834 |
-| J2857 | mini | open (after J2859) | – | – | J01 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload OWB J01 long v03 (A Calm Journey From Venus to a Dying Star) Private + arm 3-way thumb Test & Compare | 6882810716 |
-| J2868 | mini | open (after J2867) | – | – | 034 edit · for gemini · review · `gemini-argon` · 034 Pluto: review long master v02 + Shorts 1 & 2 v02 (after J2438, J2867) | J2383,J2438,J2867 |
+| J2845 | mini | blocked | – | – | studio · Studio: arm thumbnail Test & Compare on m09jUdwC5hk (A=live THE LAST LIGHT vs B=ALL STARS FADE, T035) | J2834 |
+| J2846 | mini | blocked | codex | – | for codex · studio · `gpt-6.1-sol` · Studio: test approved ZERO SIGNALS thumbnail for Fermi Paradox (T038) | J2834 |
+| J2847 | mini | blocked | – | – | studio · Studio: arm thumbnail Test & Compare on ziKBPJ6FY0U (A=live TOO EARLY? vs B=300 MILLION YEARS, T037) | J2834 |
+| J2857 | mini | blocked | claudecode | – | J01 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload OWB J01 long v03 (A Calm Journey From Venus to a Dying Star) Private + arm 3-way thumb Test & Compare | 6882810716 |
 | J2886 | mini | blocked | cursor | – | studio · Pin the Titan long comment once T3cBBss1F60 is public |  |
 | J2895 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about landing on an ice giant (v02) Private, slot Sat 19 Dec 11:30 |  |
 | J2896 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about the 21-year winters (v02, Test A opening) Private, slot Fri 18 Dec 11:30 |  |
 | J2933 | mini | blocked | claudecode | – | 010 edit · qa · `mini-claude-opus-5-5` · Review HOS 010 Short A v01 and Short C v01 (J2172, PR #611) | J2172 |
 | J2951 | cloud | open | – | – | assembly · Stop the refill tick using 3-4 GB: read the acting Chief once per scan |  |
-| J2976 | mini | open | – | – | for claudecode · studio · `mini-claude-opus-5-5` · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
-| J2984 | mini | open | – | – | 008 edit · for claudecode · qa · `mini-claude-opus-5-5` · HOS 008 Short C v07: non-producer QA review of J2662 (PR #556) and HOS UAT staging for Ben's watch | J2662 |
-| J2986 | mini | open | – | – | 033 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test |  |
+| J2986 | mini | blocked | claudecode | – | 033 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test |  |
 | J2993 | mini | open (after J2992) | – | – | WW2:001 edit · for codex · assembly · WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch |  |
-| J2995 | mini | blocked | gemini | – | WW2:002 vo · for gemini · vo · WW2 pilot 002: narration in Ben's voice |  |
-| J2996 | mini | open (after J2995) | – | – | WW2:002 edit · for codex · assembly · WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch |  |
-| J3006 | mini | open (after J2990) | – | – | for codex · studio · WW2 channel: read its own analytics from day one, and a progress-to-monetisation card |  |
-| J3010 | mini | blocked | gemini | – | 007 upload · review · HOS 007 Vaccine Short (xgx2lYHhYZM): read next-morning snapshot after J3004 | f57ab150da |
-| J3012 | mini | claimed | codex | 2026-11-18T09:36Z | chief · Decoupling phase 3: move the studio engine into its own repo, runbook now, move after a clean week |  |
-| J3013 | mini | open | – | – | chief · Chief: resolve 003 script orphan-doing |  |
-| J3014 | mini | open | – | – | chief · Chief: resolve 001 script orphan-review |  |
-| J3015 | mini | open | – | – | chief · Chief: resolve 001 vo orphan-review |  |
-| J3016 | mini | open | – | – | chief · Chief: resolve 005 script orphan-review |  |
-| J3017 | mini | open | – | – | chief · Chief: resolve 003 script orphan-review |  |
-| J3018 | mini | open | – | – | chief · Chief: resolve 006 script orphan-review |  |
-| J3019 | mini | open | – | – | chief · Chief: resolve 003 picture orphan-review |  |
+| J2996 | mini | blocked | codex | – | WW2:002 edit · for codex · assembly · WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch |  |
+| J3012 | mini | claimed | codex | 2026-11-19T06:48Z | chief · Decoupling phase 3: move the studio engine into its own repo, runbook now, move after a clean week |  |
 | J3020 | mini | blocked | gemini | – | 064 script · for gemini · script · `gemini-argon` · OWB 064: Write and check the script for the every-planet film | J3011 |
 | J3021 | mini | open (after J3020) | – | – | 064 vo · vo · OWB 064: Record and check narration for the every-planet film | J3011 |
 | J3022 | mini | open (after J3021) | – | – | 064 picture · chart · OWB 064: Prepare shelf pictures, graphics and three thumbnails for the every-planet film | J3011 |
 | J3023 | mini | open (after J3022) | – | – | 064 edit · assembly · OWB 064: Assemble and check the every-planet film, then put it on Ben’s watch board | J3011 |
-| J3025 | mini | open | – | – | chief · Chief: resolve 002 script orphan-doing |  |
-| J3026 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
-| J3027 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3020 |  |
-| J3030 | mini | open | – | – | chief · Chief: resolve 002 script orphan-review |  |
-| J3031 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2995 |  |
-| J3032 | mini | open | – | – | chief · Chief: resolve 002 vo orphan-blocked |  |
+| J3026 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
+| J3039 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
+| J3051 | mini | blocked | codex | – | for codex · review · `gpt-6-astra` · Verify condition for J3020 |  |
+| J3063 | macbook | blocked | macbook-2 | – | studio · First-day check at 6 h: "How Do Plants Clean the Air?" (ChbsigHD5_o) |  |
+| J3064 | mini | blocked | codex | – | studio · First-day check at 6 h: "If Voyager Needs 75,000 Years, How Far Is the Nearest Star?" (dH_yCRmzkMo) |  |
+| J3065 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Pluto Short about ice mountains (v02) Private, slot Wed 23 Dec 11:30 |  |
+| J3066 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Pluto Short about the frozen heart (v02, Test A opening) Private, slot Mon 21 Dec 11:30 |  |
+| J3075 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2996 |  |
+| J3085 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3070 |  |
+| J3089 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2845 |  |
+| J3090 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2847 |  |
+| J3094 | mini | open | – | – | for cursor · review · Packaging panel (cursor): J3088 Saturn and JWST revised candidates; verify BABY GALAXIES film and title fit |  |
+| J3095 | mini | open (after J3094) | – | – | for gemini · review · `gemini-argon` · Packaging panel decision: J3088 Saturn and JWST revised candidates; verify BABY GALAXIES film and title fit |  |
+| J3096 | any | open (after J3095) | – | – | chief · Chief exact-file decision on revised Saturn and JWST thumbnail tests | J3088 |
+| J3099 | any | blocked | macbook-2 | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J3101 | mini | open | – | – | 120 topic · for gemini · review · `gemini-argon` · HOS 120 Why Do We Cry?: rule-E topic go/no-go review | 90339622 |
+| J3102 | mini | open | – | – | 121 topic · for gemini · review · `gemini-argon` · HOS 121 Why Do Cats Purr?: rule-E topic go/no-go review | 90339622 |
+| J3103 | mini | open | – | – | chief · Chief: resolve 034 pipeline missing-next-step |  |
 
 Recently finished:
 
-- J3029 cancelled: Verify condition for J2985 ()
-- J3028 done: J2985: integrate reviewed credit panel and verify live board (PR987 integrated and merged d7f2b56595; phone label fix PR1008 merged ce5ef9fa09. Cloudflare 9883e7bf, live version e4d6d8d41f87195e. 107 Python tests, both JS suites, 15 security checks and CI pass. Live 390px Agents Credits and AI verified: readable Time, historical readings, preserved Ultra decision, no overflow or unsafe downgrade advice. Evidence: /Users/benjaminoats/_desk/reviews/J3028/REPORT.md)
-- J3024 done: J2985: correct credit history and downgrade advice before merge (Chief KEEP at d569a115d3, PR 987 comment 6968740645: 104 Python tests, both JS suites, 13 security tests, static build and core/rules checks pass; phone evidence inspected. J3028 owns conflict integration, revalidation, merge and live verification; J2985 remains held.)
-- J3011 done: Orbit: Ben locked the every-planet film, book its slot and start the build (Ben lock recorded; Wed 16 Dec 2026 18:00 London reserved with no dated film moved. J3020 script/sources due 23 Nov, J3021 narration due 25 Nov, J3022 shelf picture/graphics/three thumbnails due 4 Dec, J3023 master QA and Ben watch due 11 Dec. Plan needs-you line cleared; stale film brief updated. PRs 1004 and 1005 merged; checks passed. No spend or YouTube change.)
-- J3009 done: WW2 channel: move it into its own repo with history, register it, check it out on both Macs (PR #1001 open (macbook/J3009 -> main): moved channels/ww2/ with history to TheLaughingGod1986/ww2-channel (first commit f0d1c8051bd1, HEAD 22fa00c8ffce; in-flight PRs mirrored as #1-#6); registered ww2 in channels/channels.json (channel_check --all PASS); checked out and push-verified on both the Mini (~/YouTube/ww2) and the MacBook (~/_desk/worker[/slot2]/ww2-channel); WW2 board ticks routed to #954 in checks.js; open/blocked WW2 jobs (J2993-J2996, J2998, J3000, J3002, J3006, J3007) repointed to repo=ww2.)
-- J3008 done: First-day check at 48 h: "How Far Is the Nearest Star? (You Can't See It, and It Has a Planet)" (c5AdqQsnnys) ("How Far Is the Nearest Star? (You Can't See It, and It Has a Planet)" (c5AdqQsnnys) · Orbit With Ben · long · went live Sun 15 Nov 18:00 London
-At 48 h: views 8 · impressions 9 · click rate 11.1% · average viewed 1.0%
-Usual for this channel: click rate 2.2%, average viewed 19.3%
-
-Verdict: UNKNOWN
-  - Nothing to compare it with yet: no usual figure or rank from Studio, and fewer than three earlier checks at this age.
-  - By the next morning it had 4 views; the 6 before it had 1 (median).
-
-Do now
-  - Read it again from tomorrow morning's snapshot.)
-- J3007 done: Board: show the WW2 channel before launch, its films, its review and Ben's ticks (Merged PR #1007 (70287e1904), full CI PASS; deployed studio-kanban e4dacdcd / version 8288efc9feba5714. Board-data 7fc25e80 verified WW2 pre-launch channel plus ten film cards. Authenticated fixture Approve saves through checks handler/store and Mini reads Approved, waiting for YouTube; Request changes and unlinked refusal pass. No separate repo needed; no upload/schedule or live fabricated Ben tick. Screenshots: _desk/reviews/J3007/channels.png and videos.png. J3006 remains open for its analytics progress card.)
-- J3005 done: WW2 channel: packaging library, which titles and thumbnails beat their channel's normal views (PR #995 (channels/ww2/05_Analytics/PACKAGING_LIBRARY.json, PACKAGING_FINDINGS.md, and PLAYBOOK.md §7 monthly refresh across 14 channels / 1,020 long videos >8m). Quota used: 69 units (channels.list 13, playlistItems.list 28, videos.list 28; £0, 0 errors). 1) Other-side reaction titles rank #1 (1.51x median, n=51, 49.0% >=2x), followed by questions (1.27x, n=58) and How/Why openers (1.12x overall, 1.25x on 2026 breakout channels, n=220 vs 0.98x without). 2) Bright thumbnail grading leads all visual tags (1.19x median, n=113, 29.2% >=2x) paired with 1-3 words (1.01x, n=352, 29.3% >=2x) in white+yellow (1.15x, n=25) or yellow (1.04x, n=62), reversing the outlier-feed guess for 0-word thumbnails (0.88x median, n=181, 0 breakout videos). 3) Colourised real archive photos reach 1.96x median on breakout channels (1.00x overall, n=240), whereas AI/3D illustrations (n=418) give no median edge (1.00x overall, 0.92x established) and ungraded B&W lags (0.92x, n=115). 4) Series labels/pipes/'Full Documentary' (0.77x median, n=81), generic secret/mystery words (0.90x, n=38), calendar years in titles (0.96x, >=2x halved to 14.8%, n=162), and maps on thumbnails (0.98x, >=2x down to 16.3%, n=147) depress outlier odds. 5) Superlatives (1.00x median, n=110; most/only/first 0.90x median / 12.55x mean) and non-year hard numbers (1.00x median, n=393) flatten at the median (high-variance tail multipliers), while money figures (n=4) and until/then turns (n=23, 0.81x) have too few videos (<25).)
-- J3004 done: First-day check at 6 h: "Why Is It Called a Vaccine?" (xgx2lYHhYZM) (Ruled, acting Chief (Gemini) 17 Nov: PASS / no fault (PR #992 merged at f57ab150da; launch note at 4bd26a8b74). Public in Shorts, HD complete, no notices, not Made for Kids, Altered content Yes, language en-GB, Related set to ETynHpIYLeY, and description/tags match s05_vacca_jesty_v05/PACKAGE_MANIFEST.json. At 6 h: 0 views vs 20 usual, rank 10 of 10, and Not enough data on reach/engagement (Verdict: BEHIND; Studio gave no reach figures yet). No re-cut, no second upload, and no Studio changes today. Follow-up J3010 queued (after J3004, date hold until 2026-11-18T06:45:00Z after the 06:40Z snapshot) to read next-morning snapshot and Studio reach figures and check whether Vaccine Shorts remain unfed alongside cLKDiYP55J8 ahead of the 28-29 Nov 007 Shorts. GBP 0.)
-- J3003 done: First-day check at 6 h: "How Far From Earth Is Voyager 1 Right Now?" (9q_OvQ1Rd8Y) ("How Far From Earth Is Voyager 1 Right Now?" (9q_OvQ1Rd8Y) · Orbit With Ben · Short · went live Tue 17 Nov 11:30 London
-At 6 h: views 193 · Studio rank 6 of 10 · shown in feed about 737 (from 182 feed views) · stayed to watch 24.7% · average viewed 94.7%
-Usual for this channel: stayed to watch 32.5%, average viewed 66.2%
-
-Verdict: AHEAD
-  - 193 views at 6 h; the last 6 checked at the same age had 96 (median).
-  - Studio ranks it 6 of 10 against our latest videos at the same age.
-
-What is different about this one
-  - It is 17 s long; the last 10 Shorts were 18 to 55 s.
-  - "Earth" was in the title of 4 earlier Shorts: they had 450 views by the next morning (median), against 128 for all Shorts.
-  - The title starts with "How", like 5 earlier Shorts: they had 386 views by the next morning (median), against 128 for all Shorts.
-  - It is a second upload of the same video (it replaced kKN8Ale42sE).
-
-Do now
-  - Nothing to fix.
-
-Carry forward
-  - A strong start is a lesson too: note what is different about this one.)
+- J3100 done: Rule-E topic go/no-go review: OWB 082 (Every Type of Star Explained in 10 Minutes) and 083 (How Was the Moon Formed) from J3091 (done)
+- J3098 done: Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) (done)
+- J3097 done: HOS: learn from our data, add two new films to the backlog (Ranked all 39 public HOS videos (7 longs + 32 Shorts, 2026-11-18 snapshot + studio_ctr.json + LEARNINGS.md rules 1-34) and added 2 new HOS backlog films on HOS PR #659 (commit 90339622, mirrored 15/15 SHA-256 to studio-live) and OWB PR #1033 (commit 9ecd3dbdf, jobs/WIP.json next_hos), with Rule-E review jobs J3101 and J3102 queued: (1) HOS:120 Why Do We Cry? (The Chemical Tear Signal) (41c <= 50, 0 collisions; follows 002 Periodic Table 2.61/d & 1,139 imp, 006 Willow Tree 53.0% Studio AVD, and -3L6HzJ_d_4 78.4% stayed / 93% search under Rules 1, 10, 15, 23, 24, 26, 28, 30, 32; neighbours.py PASS with 3 education videos >=1M led by TED-Ed 6.91M Why do we cry?, CrashCourse 4.59M Vision, & TED-Ed 2.03M Third Eyelid + Peekaboo Kidz 8.70M & AsapSCIENCE 5.54M; 'why do we cry' autocomplete yes); (2) HOS:121 Why Do Cats Purr? (The 2023 Vocal Cord Twist) (45c <= 50, 0 collisions; follows 002 2.61/d & 1,139 imp, 006 53.0% Studio AVD, and -3L6HzJ_d_4 78.4% stayed / 74.0% AVD under Rules 1, 10, 15, 23, 24, 26, 28, 30, 32; neighbours.py PASS with 6 strictly on-topic education videos >=1M and 0 off-topic rows led by TED-Ed 13.42M, 10.54M, 4.61M, 2.03M & SciShow 2.31M, 1.90M Why Do Cats Purr?; 'why do cats purr' autocomplete yes). Both checkouts on main; £0 spent.)
+- J3093 done: Packaging panel (gemini): J3088 Saturn and JWST revised candidates; verify BABY GALAXIES film and title fit (done)
+- J3092 done: Packaging panel (codex): J3088 Saturn and JWST revised candidates; verify BABY GALAXIES film and title fit (Replace Webb BABY GALAXIES with GALAXIES TOO BRIGHT to sell the actual script contradiction; critique committed in 74bdc897b2.)
+- J3091 done: OWB: learn from our data, add two new films to the backlog (PR #1032 (commit 6eee2c8c3 on macbook/J3091; 18/18 SHA-256 verified on NAS studio-live; Rule-E review queued as J3100 kind:review; £0 spend): (1) OWB:082 Every Type of Star Explained in 10 Minutes (Red Dwarfs to Pulsars) — backed by y-SPHQ0-VjQ (57.3% stayed #1 >=100v, 81.71% AVD PASS, 79 search views), n_4XskX0yZk (891 views), REXYxuLOBoI (47 long views, 23.34% AVD, 623 & 414 Short views), Bluntly Explained 1.06M-view 10-min tour proof, #1 exact autocomplete on every type of star explained / types of stars explained / life cycle of a star, and 15 strictly on-topic >=1M neighbours (1.06M-35.85M); (2) OWB:083 How Was the Moon Formed? (When a Mars-Sized Planet Hit Earth) (plus studio/plan.json tour recast Every Stage of the Moon's History Explained in 10 Minutes) — backed by VBaYRPp85Sw (230 views, 9.58 vpd, 1,327 impr, 25.24% AVD #1 long), OVLv9dxTcpE (892 views, 75.86% AVD PASS), NASA Ames 12.52M-view 2022 supercomputer Moon-origin simulation, #1 exact autocomplete on how was the moon formed / theia collision / origin of the moon, and 12 strictly on-topic >=1M neighbours (1.06M-22.64M).)
+- J3088 done: Revise Saturn and JWST weekly audit thumbnails after Chief review (Built Saturn v06 and JWST v07; PR #1031 open, not merged. Both NAS candidates pass colour scores and phone inspection; SHA-256 verified, prior files and T038 preserved. T037/T039 proposal updates are in PR. Independent panel J3092-J3095 and elected-Chief exact-file decision J3096 queued. J2845/J2847 remain blocked. No spend or YouTube changes. Checkout returned clean main.)
+- J3087 done: 034 Pluto: resolve incomplete music-library comparison before closing edit review (KEEP (complete 41-bed OWB music-library comparison PASS with 0 fails, 0 warnings, max similarity 0.3179 < 0.80 including jupiter-music.mp3 0.1764 and saturn-rings_score_bed_v01.mp3 0.1592; native audio_input listening verified; 034 edit reconciled to internal-QA done citing J2868 + J3087 @ 8af406dc9c; J2868 long Ben UAT watch-by 8 Dec / 13 Dec slot and J3065/J3066 Shorts public holds preserved; £0))
+- J3086 done: Verify condition for J3063 (Chief ruling: condition NOT MET; verification complete. Accepted J3071 f6fe5f717 evidence and J3085/J3086 reviews. J3070 reopened to finish MacBook routing handoff before releasing J3063. J3063 remains blocked with dependency hold, last_recheck J3086, next check 2026-11-19T00:30:00Z. Original setup checks and actual analytics observation time remain required. No inferred verdict, repeated Mini probes, video changes or spend. J3085 not taken as a second review.)
+- J3084 done: Verify condition for J3063 (Chief review complete: accepted J3071 MacBook fallback evidence f6fe5f717 / PR 1026. J3063 remains held until J3070 routes its handoff to the verified MacBook. Recorded wait --recheck J3084, next check 2026-11-18T22:30:00Z. Existing follow-up J3085 then J3070 must finish handoff; original setup checks and actual-time launch reading remain required. Mini unresponsive per 21:17Z probe. No performance verdict, video changes, spend or Ben action. Evidence jobs/reviews/J3084/REVIEW.md and J3071 evidence.json.)

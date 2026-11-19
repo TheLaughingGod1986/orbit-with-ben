@@ -140,6 +140,7 @@ export function run(root = ANALYTICS_ROOT): string[] {
   const out: string[] = [];
   const reports: ChannelReport[] = [];
   for (const key of Object.keys(CHANNELS) as ChannelKey[]) {
+    if (key === "ww2") continue;
     const { snaps, daily } = loadChannel(root, key);
     if (!snaps.length) {
       out.push(`${key}: no snapshots yet`);

@@ -33,8 +33,9 @@ export function authTarget(argv: string[]): { scopes: string[]; envKey: string; 
   const i = argv.indexOf("--analytics");
   if (i < 0) return { scopes: YOUTUBE_SCOPES, envKey: "YOUTUBE_REFRESH_TOKEN", channelId: CHANNELS.owb.id, channelName: CHANNELS.owb.name };
   const key = argv[i + 1] as ChannelKey;
-  if (!(key in CHANNELS)) throw new Error("--analytics needs owb or hos");
+  if (!(key in CHANNELS)) throw new Error("--analytics needs owb, hos or ww2");
   const ch = CHANNELS[key];
+  if (!ch.id) throw new Error("Set YT_CHANNEL_ID_WW2 locally before the read-only sign-in");
   return { scopes: [YT_READONLY, YT_ANALYTICS_READONLY], envKey: ch.tokenKey, channelId: ch.id, channelName: ch.name };
 }
 

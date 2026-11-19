@@ -72,7 +72,16 @@ def parse(s):
 
 def film_dir(films, key):
     # A job may name its film as "OWB:026" as well as "026" (8 Nov 2026: three such jobs stopped every MacBook claim).
-    key = str(key).split(":")[-1]
+    key = str(key)
+    if ":" in key:
+        channels = _channels()
+        prefix, key = key.split(":", 1)
+        try:
+            slug = channels.get(prefix)["slug"]
+        except KeyError:
+            sys.exit(f"studio: unknown film channel '{prefix}'")
+        if slug != channels.board_channel():
+            sys.exit(f"studio: film channel '{prefix}' does not belong to this stage board")
     hits = [d for d in sorted(films.iterdir()) if d.is_dir() and d.name.split("_")[0] == key]
     if len(hits) != 1:
         sys.exit(f"studio: no single film folder for '{key}' under {films}")

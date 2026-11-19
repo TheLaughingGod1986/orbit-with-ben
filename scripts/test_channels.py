@@ -33,7 +33,8 @@ class Loader(unittest.TestCase):
         self.assertEqual(channels.slugs(), ["owb", "hos", "ww2"])
         self.assertIn(channels.home(), ("owb", None))       # None once the studio has a repo of its own
         self.assertEqual(channels.default(), "owb")         # ... and a job that names no channel is still Orbit's
-        self.assertEqual((channels.label("hos"), channels.name("owb")), ("HOS", "Orbit With Ben"))
+        self.assertEqual((channels.label("hos"), channels.label("ww2"), channels.name("owb")),
+                         ("HOS", "WW2", "Orbit With Ben"))
 
     def test_a_jobs_channel_comes_from_repo_then_title_then_home(self):
         self.assertEqual(channels.of_job({"repo": "hos", "title": "x"}), "hos")
@@ -157,7 +158,7 @@ class NoHomeChannel(unittest.TestCase):
                 (where[slug] / "studio").mkdir(parents=True)
                 (where[slug] / "studio" / "channel.json").write_text("{}")
             with self.apart(), mock.patch.object(channels, "repo_path", lambda slug, home_dir=None: where[slug]):
-                for slug in ("owb", "hos"):
+                for slug in channels.slugs():
                     self.assertEqual(channels.checkout(slug), where[slug])            # never the studio's root
                     self.assertEqual(channels.analytics_dir(slug), where[slug] / "05_Analytics" / slug)
                     self.assertEqual(channels.uploads_file(slug),
@@ -235,12 +236,18 @@ class OwnRepos(unittest.TestCase):
         self.assertEqual(channels.name("hos"), "History of Science")  # cached copy again without the checkout
 
     def test_the_cached_copy_matches_the_channel_repo_when_it_is_here(self):
-        entry = next(e for e in json.loads((channels.DIR / "channels.json").read_text())["channels"] if e["slug"] == "hos")
-        co = channels._checkout(entry)
-        if not co:
-            self.skipTest("history-of-science is not checked out on this machine")
-        self.assertEqual((co / "studio" / "channel.json").read_text(), (channels.DIR / "hos" / "channel.json").read_text(),
-                         "run: python3 scripts/channels.py sync")
+        checked = 0
+        for entry in json.loads((channels.DIR / "channels.json").read_text())["channels"]:
+            if entry.get("home"):
+                continue
+            co = channels._checkout(entry)
+            if co:
+                checked += 1
+                self.assertEqual((co / "studio" / "channel.json").read_text(),
+                                 (channels.DIR / entry["slug"] / "channel.json").read_text(),
+                                 "run: python3 scripts/channels.py sync")
+        if not checked:
+            self.skipTest("non-home channel repos are not checked out on this machine")
 
 
 class Films(unittest.TestCase):

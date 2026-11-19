@@ -886,7 +886,7 @@ class AsksTheChannelLoader(unittest.TestCase):
         import channels
         base = channels._load()
         home = next(c for c in base if c["slug"] == channels.default())
-        sky = dict(home, slug="sky", label="SKY", name="Night Sky", short="Sky", home=False, order=3,
+        sky = dict(home, slug="sky", label="SKY", name="Night Sky", short="Sky", home=False, order=4,
                    title_match=r"\bSKY\b", youtube={"studio_port": "9300"},
                    repo={"url": "https://github.com/example/night-sky.git", "env": "SKY_REPO", "checkouts": ["Night Sky"]})
         return mock.patch.object(channels, "_load", lambda directory=None: base + (sky,))
@@ -910,33 +910,36 @@ class AsksTheChannelLoader(unittest.TestCase):
 
     def test_a_third_channel_gets_its_own_clone_its_line_in_the_brief_and_its_port(self):
         with self.sky():
-            self.assertEqual(mw.other_slugs(), ["hos", "sky"])
+            self.assertEqual(mw.other_slugs(), ["hos", "ww2", "sky"])
             self.assertEqual(mw.clone_name("sky"), "night-sky")
             with mock.patch.dict(os.environ, {"SKY_REPO": str(mw.HOME / "YouTube" / "Night Sky")}):
                 self.assertEqual(mw.channel_clone("sky"), mw.slot_dir(mw.SLOT) / "night-sky")   # never Ben's folder
-            with mock.patch.object(mw, "STUDIO", "/o"), mock.patch.object(mw, "OTHERS", ["/h", "/s"]):
+            with mock.patch.object(mw, "STUDIO", "/o"), mock.patch.object(mw, "OTHERS", ["/h", "/w", "/s"]):
                 p = mw.brief("J1", "m", 25)
             self.assertIn("   For a HOS job, work in the HOS checkout (/h) and follow its AGENTS.md.\n"
+                          "   For a WW2 job, work in the WW2 checkout (/w) and follow its AGENTS.md.\n"
                           "   For a SKY job, work in the SKY checkout (/s) and follow its AGENTS.md.\n", p)
-            self.assertIn("History of Science and Night Sky folders must always be left on main", p)
+            self.assertIn("History of Science and Field Order History and Night Sky folders must always be left on main", p)
             self.assertIn("9223 (Orbit With Ben) or 9222 (History of Science) or 9300 (Night Sky)", p)
-            self.assertIn("inside the three checkouts", p)
+            self.assertIn("inside the four checkouts", p)
 
     def test_the_brief_names_each_checkouts_rule_files(self):
         # J2577: the rule book is two files since J2527. A checkout with studio/RULES.md is told both, in order; one
         # that has not split its rules yet is told AGENTS.md alone, as before; a made-up third channel needs no edit.
         with tempfile.TemporaryDirectory() as d:
             root = pathlib.Path(d)
-            for name, split in (("o", True), ("h", False), ("s", True)):
+            for name, split in (("o", True), ("h", False), ("w", True), ("s", True)):
                 (root / name / "studio").mkdir(parents=True)
                 if split:
                     (root / name / "studio" / "RULES.md").write_text("# rules\n")
-            o, h, sk = str(root / "o"), str(root / "h"), str(root / "s")
-            with self.sky(), mock.patch.object(mw, "STUDIO", o), mock.patch.object(mw, "OTHERS", [h, sk]):
+            o, h, w, sk = str(root / "o"), str(root / "h"), str(root / "w"), str(root / "s")
+            with self.sky(), mock.patch.object(mw, "STUDIO", o), mock.patch.object(mw, "OTHERS", [h, w, sk]):
                 p = mw.brief("J1", "m", 25)
             self.assertIn(f'1. Orbit With Ben ({o}) is pulled. Read AGENTS.md and then studio/RULES.md '
                           '(the rules, the Never list, "Stop and ask Ben") and then\n', p)
             self.assertIn(f"   For a HOS job, work in the HOS checkout ({h}) and follow its AGENTS.md.\n"
+                          f"   For a WW2 job, work in the WW2 checkout ({w}) and follow its AGENTS.md and then "
+                          "studio/RULES.md.\n"
                           f"   For a SKY job, work in the SKY checkout ({sk}) and follow its AGENTS.md and then "
                           "studio/RULES.md.\n", p)
             self.assertNotIn("{", p)
@@ -975,16 +978,18 @@ class AsksTheChannelLoader(unittest.TestCase):
         with mock.patch.object(channels, "_load", lambda directory=None: apart), \
                 mock.patch.object(channels, "_studio_section", lambda: kept):
             self.assertIsNone(channels.studio_slug())
-            self.assertEqual(mw.other_slugs(), ["owb", "hos"])
+            self.assertEqual(mw.other_slugs(), ["owb", "hos", "ww2"])
             self.assertEqual(mw.studio_clone(), mw.slot_dir(mw.SLOT) / "studio")
-            self.assertEqual([mw.channel_clone(s).name for s in mw.other_slugs()], ["orbit-with-ben", "history-of-science"])
-            with mock.patch.object(mw, "STUDIO", "/s"), mock.patch.object(mw, "OTHERS", ["/o", "/h"]):
+            self.assertEqual([mw.channel_clone(s).name for s in mw.other_slugs()],
+                             ["orbit-with-ben", "history-of-science", "ww2-channel"])
+            with mock.patch.object(mw, "STUDIO", "/s"), mock.patch.object(mw, "OTHERS", ["/o", "/h", "/w"]):
                 p = mw.brief("J1", "m", 25)
         self.assertIn('1. the studio (/s) is pulled. Read AGENTS.md (the rules, the Never list, "Stop and ask Ben") and then\n', p)
         self.assertIn("   For a OWB job, work in the OWB checkout (/o) and follow its AGENTS.md.\n"
-                      "   For a HOS job, work in the HOS checkout (/h) and follow its AGENTS.md.\n", p)
-        self.assertIn("Orbit With Ben and History of Science folders must always be left on main", p)
-        self.assertIn("inside the three checkouts", p)
+                      "   For a HOS job, work in the HOS checkout (/h) and follow its AGENTS.md.\n"
+                      "   For a WW2 job, work in the WW2 checkout (/w) and follow its AGENTS.md.\n", p)
+        self.assertIn("Orbit With Ben and History of Science and Field Order History folders must always be left on main", p)
+        self.assertIn("inside the four checkouts", p)
         self.assertNotIn("{", p)
         # The constants are set when the module loads, so the line that sets them is held here; the dry run of the
         # move loads the module with no home channel every day.
