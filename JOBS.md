@@ -41,7 +41,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2933 | mini | blocked | claudecode | – | 010 edit · qa · `mini-claude-opus-5-5` · Review HOS 010 Short A v01 and Short C v01 (J2172, PR #611) | J2172 |
 | J2951 | cloud | open | – | – | assembly · Stop the refill tick using 3-4 GB: read the acting Chief once per scan |  |
 | J2986 | mini | blocked | claudecode | – | 033 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test |  |
-| J2993 | mini | claimed | codex | 2026-11-19T14:50Z | WW2:001 edit · for codex · assembly · WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch |  |
+| J2993 | mini | claimed | codex | 2026-11-19T11:13Z | WW2:001 edit · for codex · assembly · WW2 pilot 001: picture, maps, edit and thumbnail, to Ben's watch |  |
 | J2996 | mini | blocked | codex | – | WW2:002 edit · for codex · assembly · WW2 pilot 002: picture, maps, edit and thumbnail, to Ben's watch |  |
 | J3012 | mini | open | – | – | chief · Decoupling phase 3: move the studio engine into its own repo, runbook now, move after a clean week |  |
 | J3020 | mini | blocked | gemini | – | 064 script · for gemini · script · `gemini-argon` · OWB 064: Write and check the script for the every-planet film | J3011 |
