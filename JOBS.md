@@ -66,6 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3120 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3114 |  |
 | J3122 | mini | blocked | macbook | – | studio · HOS Shorts: the Vaccine and Plants Shorts got no feed reach; read Studio Reach, rule on the 28-29 Nov vaccine Shorts, record the health-topic learning |  |
 | J3124 | mini | blocked | cursor | – | 013 picture · for cursor · assembly · `cursor-grok-4-7` · HOS 013: add reconcile-session-block to the pass-1 runner | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6974259569 |
+| J3125 | mini | open | – | – | studio · HOS Vaccine test: 24 Nov feed gate and conditional 29 Nov readout |  |
 
 Recently finished:
 

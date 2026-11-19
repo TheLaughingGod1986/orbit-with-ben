@@ -1,5 +1,5 @@
 {
-  "next_id": 3125,
+  "next_id": 3126,
   "jobs": [
     {
       "id": "J0001",
@@ -279618,6 +279618,36 @@
       "taskKeys": [
         "HOS:013"
       ]
+    },
+    {
+      "id": "J3125",
+      "title": "HOS Vaccine test: 24 Nov feed gate and conditional 29 Nov readout",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "J3122 Chief follow-up. Standing HOS Chief rulings: desk 7004764743 and 7005625193; implementation receipt 7006171315; OWB PR 1039 merged. Codex reviewed and retains this ruling. GBP 0.\n\nAt Tue 24 Nov 2026 12:00 UTC read exact first-24-hour Shorts-feed views and total views/share for Sq_lV89VMUs (20 Nov), Bks_JLId1ew (21 Nov), fgsR8yAHr5s (22 Nov), and the first-48-hour result for ChbsigHD5_o. Preserve date windows, absolute counts and unavailable data. Zero feed views do not establish zero feed impressions. Blood controls are non-vaccine, not non-health; this cannot prove a general health-topic penalty.\n\nIf at least one control reaches 50% day-1 feed share, keep sY0PSQFxjp8 Private scheduled 2026-11-28T11:30:00Z. If none does, elected HOS Chief authorizes clearing publishAt on that id only by 2026-11-26T18:00:00Z, leaving it Private. If data remain missing, retry 25 Nov 12:00 UTC; unresolved by 26 Nov 12:00 UTC means the test is not cleared and should be unscheduled by 18:00. Recheck Chief authority before execution. Never change a public upload or upload again. jkUZpyO71lU and duplicate wkyGOKepjeQ stay Private and unscheduled. Every schedule change updates UPLOADS, Buffer cancellation/status and HOS open-gate library in the same job, with API read-back, cropped Studio receipt, applicable checks and a desk report.\n\nIf the test airs, queue its 24-hour read for 29 Nov after 11:30 UTC before closing this gate job (structured test wait). Prediction: under 50% feed share, likely under 10%, and fewer than 50 feed views while at least one control is fed. Readout not fed: retain vaccine stop and jkUZpyO71lU unscheduled; fed: elected Chief may authorize its next free HOS slot after existing approvals/gates and spacing check. An association is not proof of algorithmic suppression. Update LEARNINGS row 36, not row 35.\n\nCheck 008 readiness for the 29 Nov gap: fill only with an approved Franklin Short and only after the approved parent long is public on 26 Nov; otherwise leave empty. Do not reopen Ben holds or commission new cuts. Keep no-third-consecutive-subject spacing and existing stronger HOS R2 topic stop.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-19T10:22Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T10:22Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Read the comparison Shorts on 24 November and decide whether the vaccine test can air",
+      "due": "2026-11-24T12:00:00Z",
+      "kind": "studio",
+      "plain": "Check whether other Shorts are reaching viewers before the vaccine test airs"
     }
   ],
   "focus": [
