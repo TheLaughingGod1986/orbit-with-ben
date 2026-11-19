@@ -67,7 +67,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3117 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3064 |  |
 | J3119 | mini | open (after J3115) | – | – | 034 upload · studio · Upload the Pluto long master v02 Private and scheduled for Sun 13 Dec 18:00, arm the thumbnail test |  |
 | J3120 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3114 |  |
-| J3122 | mini | claimed | macbook | 2026-11-19T09:32Z | studio · HOS Shorts: the Vaccine and Plants Shorts got no feed reach; read Studio Reach, rule on the 28-29 Nov vaccine Shorts, record the health-topic learning |  |
+| J3122 | mini | blocked | macbook | – | studio · HOS Shorts: the Vaccine and Plants Shorts got no feed reach; read Studio Reach, rule on the 28-29 Nov vaccine Shorts, record the health-topic learning |  |
 | J3123 | mini | claimed | cursor | 2026-11-19T09:54Z | studio · Orbit Shorts: change the schedule of three December Shorts so no subject runs back to back (spacing rule 35, Option B) |  |
 
 Recently finished:
