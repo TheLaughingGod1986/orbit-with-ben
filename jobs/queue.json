@@ -278174,9 +278174,14 @@
           "at": "2026-11-19T05:39Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Read J3112 FIX ruling (jobs/reviews/J3112/REVIEW.md), J3111 DECISION.md, J3108/J3109/J3110 panel critiques, REVIEW_J3105_v01.md, MANIFEST_J3105_v01.json, and PACKAGE_MANIFEST.json"
+        },
+        {
+          "at": "2026-11-19T05:42Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified NAS SHA-256 hashes for A/B/C v01 thumbs, phone sheet, master v02, trailer, and open 034 thumbs rebuild successor J3114 -> J3115"
         }
       ],
-      "remaining_action": "Verify durable NAS file hashes, J3114/J3115 successor links, and 034 thumbs stage state",
+      "remaining_action": "Write and commit jobs/reviews/J3113/REVIEW.md recording FIX verdict and exact hash/successor verification",
       "due": "2026-12-08T18:00:00Z",
       "kind": "review",
       "plain": "Record the Pluto thumbnail approval after the packaging review",
@@ -278190,11 +278195,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-19T05:39Z",
+        "at": "2026-11-19T05:42Z",
         "by": "gemini",
-        "note": "Read J3112 FIX ruling (jobs/reviews/J3112/REVIEW.md), J3111 DECISION.md, J3108/J3109/J3110 panel critiques, REVIEW_J3105"
+        "note": "Verified NAS SHA-256 hashes for A/B/C v01 thumbs, phone sheet, master v02, trailer, and open 034 thumbs rebuild successo"
       },
       "taskKeys": [
         "OWB:034"
