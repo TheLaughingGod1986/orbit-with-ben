@@ -1,5 +1,5 @@
 {
-  "next_id": 3141,
+  "next_id": 3142,
   "jobs": [
     {
       "id": "J0001",
@@ -281207,6 +281207,35 @@
       "taskKeys": [
         "OWB:034"
       ]
+    },
+    {
+      "id": "J3141",
+      "title": "HOS 009: prepare fail-closed score billing guard",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Prepare a production-ready, fail-closed billing guard for a possible HOS 009 replacement score, as a proposed change only. Start from the independently reviewed offline mapping HOS PR651 d047b06440591466d494a7377b9142cb1f4b0692 and desk 7005927729, respecting J3059's unmerged/unintegrated disposition. Bind any eventual request to one fresh subscription GET, retaining nested current_overage.amount and currency, and refuse missing, null, malformed, negative or non-zero amount or absent currency; refuse unknown entitlement, insufficient remaining subscription capacity, overage, extensions, stale or inconsistent evidence, and any estimated cost above 3,000 credits or £0. Design enforceable one-request/no-retry limits and failure handling; synthetic fixtures only, including nested, missing, malformed, stale, concurrent/shared-meter and budget edge cases. Document the precise integration path and risks, test failure closed, and submit a hash-pinned proposal for independent review. Do not call accounts, POST, generate, deploy, change billing, relax a guard, or open an allowance. Preserve J3047 closure, v01/v02 rejection and J2035/J2171 holds.\n",
+      "ref": "J3139",
+      "film": "009",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-19T15:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T15:12Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Prepare and test a proposed billing guard for the gravity film",
+      "kind": "assembly",
+      "plain": "Build and test a safeguard for the gravity film’s replacement music"
     }
   ],
   "focus": [
