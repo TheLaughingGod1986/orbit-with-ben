@@ -271580,18 +271580,23 @@
           "at": "2026-11-19T22:06Z",
           "by": "codex",
           "what": "step 3 of 4 done: Restored existing 3/4 plan from prior handoff; runbook PR 1011 and rehearsal already exist."
+        },
+        {
+          "at": "2026-11-19T22:10Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Collection layer verified: nine new tests, 45-test analytics run, 13 ratchet and 13 security checks. PR 1011 updated; no live switch."
         }
       ],
-      "remaining_action": "Finish detached analytics timer integration, writer checks and rehearsal before the gated studio move",
+      "remaining_action": "Wire analytics gates and dispatch into the prepared collector, then finish migration acceptance",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-19T22:06Z",
+        "at": "2026-11-19T22:10Z",
         "by": "codex",
-        "note": "Restored existing 3/4 plan from prior handoff; runbook PR 1011 and rehearsal already exist."
+        "note": "Collection layer verified: nine new tests, 45-test analytics run, 13 ratchet and 13 security checks. PR 1011 updated; no"
       }
     },
     {
