@@ -61,7 +61,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3087 | mini | open (after J3062) | – | – | 034 edit · for gemini · review · `gemini-argon` · 034 Pluto: resolve incomplete music-library comparison before closing edit review | J2868,J3062 |
 | J3089 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2845 |  |
 | J3090 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2847 |  |
-| J3091 | mini | open | – | – | for gemini · script · `gemini-argon` · OWB: learn from our data, add two new films to the backlog |  |
+| J3091 | mini | claimed | macbook | 2026-11-19T01:55Z | for gemini · script · `gemini-argon` · OWB: learn from our data, add two new films to the backlog |  |
 | J3092 | mini | open | – | – | for codex · review · Packaging panel (codex): J3088 Saturn and JWST revised candidates; verify BABY GALAXIES film and title fit |  |
 | J3093 | mini | open | – | – | for gemini · review · Packaging panel (gemini): J3088 Saturn and JWST revised candidates; verify BABY GALAXIES film and title fit |  |
 | J3094 | mini | open | – | – | for cursor · review · Packaging panel (cursor): J3088 Saturn and JWST revised candidates; verify BABY GALAXIES film and title fit |  |
