@@ -1,5 +1,5 @@
 {
-  "next_id": 3131,
+  "next_id": 3132,
   "jobs": [
     {
       "id": "J0001",
@@ -274976,6 +274976,11 @@
           "at": "2026-11-19T08:49Z",
           "by": "claude",
           "what": "Context for this check: the Vaccine Short the day before also had zero feed seeding (2 views at about 43 h). Read the Shorts-feed impressions for both. Follow-up: J3122."
+        },
+        {
+          "at": "2026-11-19T11:45Z",
+          "by": "relay",
+          "what": "condition verification queued: J3131"
         }
       ],
       "remaining_action": "Check the plant Short again after its first full day, when fresh viewing figures may be available",
@@ -275003,7 +275008,8 @@
       "hold": {
         "type": "input",
         "condition": "Chief ruling: KEEP video unchanged; PR #1028 measurements accepted, no setup faults, BEHIND at 12 h 26 m. Feed exposure unknown. At 19 Nov 11:35Z verify 24-hour Studio readback is available and resume J3063 on MacBook CDP 9222 using reuse_page. Record current Since published views, rank, usual, feed views/shown, stayed, average viewed and likes only where available, with actual time/elapsed age. Return persistent BEHIND or faults for Chief ruling; no video changes. If metrics remain unavailable, record evidence and recheck 20 Nov 11:35Z. Ruling: jobs/reviews/J3063/CHIEF_DECISION.md, commit 6fb2e54f05.",
-        "check_at": "2026-11-19T11:35:00Z"
+        "check_at": "2026-11-19T12:45:47+00:00",
+        "recheck_task": "J3131"
       }
     },
     {
@@ -280208,6 +280214,37 @@
       "remaining_action": "Copy and verify the original Webb thumbnail source images on the shared film store",
       "kind": "assembly",
       "plain": "Restore the original galaxy images needed to improve the Webb thumbnail"
+    },
+    {
+      "id": "J3131",
+      "title": "Verify condition for J3063",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3063: Chief ruling: KEEP video unchanged; PR #1028 measurements accepted, no setup faults, BEHIND at 12 h 26 m. Feed exposure unknown. At 19 Nov 11:35Z verify 24-hour Studio readback is available and resume J3063 on MacBook CDP 9222 using reuse_page. Record current Since published views, rank, usual, feed views/shown, stayed, average viewed and likes only where available, with actual time/elapsed age. Return persistent BEHIND or faults for Chief ruling; no video changes. If metrics remain unavailable, record evidence and recheck 20 Nov 11:35Z. Ruling: jobs/reviews/J3063/CHIEF_DECISION.md, commit 6fb2e54f05.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3063 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-19T11:45Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T11:45Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Check the plant Short again after its first full day, when fresh viewing figures may be available",
+      "kind": "review",
+      "recheck_of": "J3063",
+      "due": "2026-11-18T19:39:00+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
