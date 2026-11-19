@@ -622,8 +622,11 @@ class MacBookTakesTextJobs(unittest.TestCase):
         for slug in channels.slugs():
             self.assertEqual(jobs.studio_live_projects(slug),
                              jobs.STUDIO_LIVE_ROOT / channels.nas_folder(slug) / "02_Video-Projects")
-            if channels.get(slug).get("launch_state") != "prelaunch":
-                self.assertTrue(channels.studio_port(slug).isdigit(), slug)
+            # studio_port is optional: a channel with none has no Studio browser
+            # (#735; ww2). Only assert the digit when a port is set.
+            port = channels.studio_port(slug)
+            if port:
+                self.assertTrue(port.isdigit(), slug)
         ports = [channels.studio_port(s) for s in channels.slugs() if channels.studio_port(s)]
         self.assertEqual(len(ports), len(set(ports)))  # two channels never share a Studio browser
         self.assertRegex(jobs.keys_example(), r"^[A-Z0-9]+:006 or [A-Z0-9]+:028,[A-Z0-9]+:029$")
