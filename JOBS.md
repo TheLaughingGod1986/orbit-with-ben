@@ -64,7 +64,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3091 | mini | claimed | macbook | 2026-11-19T01:55Z | for gemini · script · `gemini-argon` · OWB: learn from our data, add two new films to the backlog |  |
 | J3093 | mini | open | – | – | for gemini · review · Packaging panel (gemini): J3088 Saturn and JWST revised candidates; verify BABY GALAXIES film and title fit |  |
 | J3094 | mini | open | – | – | for cursor · review · Packaging panel (cursor): J3088 Saturn and JWST revised candidates; verify BABY GALAXIES film and title fit |  |
-| J3095 | cloud | open (after J3094) | – | – | review · Packaging panel decision: J3088 Saturn and JWST revised candidates; verify BABY GALAXIES film and title fit |  |
+| J3095 | mini | open (after J3094) | – | – | for gemini · review · `gemini-argon` · Packaging panel decision: J3088 Saturn and JWST revised candidates; verify BABY GALAXIES film and title fit |  |
 | J3096 | any | open (after J3095) | – | – | chief · Chief exact-file decision on revised Saturn and JWST thumbnail tests | J3088 |
 
 Recently finished:
