@@ -283877,13 +283877,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-19T22:18Z",
-      "eta": "2026-11-20T00:18Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-19T21:05Z",
-      "result": "parked for Chief: J3167 condition verification complete (jobs/reviews/J3167/REVIEW.md @ 46697da7e3) — J3114 waiting condition remains NOT YET MET at 2026-11-19T21:11Z. Checked OWB #954 (thru 7022218561), remote branches and GitHub PRs (thru #1048): explicit authorization to export branch codex/j3114-pluto-v02 to TheLaughingGod1986/orbit-with-ben remains absent since J3140 (16:27Z). Clean local commit a12100797f680d2bae5d9c517efea751d04785f8 in /Volumes/MiniWork/scratch/j3114-wt, all 12 durable NAS J3105_v02 + 11_Upload-Package artifacts (12/12 SHA-256 match), and all 4 NAS video master/trailer/Shorts SHA-256 hashes are verified intact, with J3115 dependency and UAT/Shorts holds preserved. Because scripts/jobs.py restricts jobs.py wait J3114 --recheck J3167 to the job holder or elected Chief (codex), exact Chief commands to record the 6-hour retry hold (2026-11-20T03:10:00Z) and close J3167 are in jobs/reviews/J3167/REVIEW.md §3.",
+      "result": "Chief ruling: condition NOT satisfied. Reviewed body, history, Gemini evidence jobs/reviews/J3167/REVIEW.md at 46697da7e3, prior J3140 decision and trusted thread comments through 7023704252. No explicit authorization for the rejected GitHub export. Independently verified clean preserved a12100797f and 12/12 NAS artifact hashes. J3114 remains blocked with recheck J3167 and next approval check 2026-11-20T03:10:00Z. After actual approval export preserved codex/j3114-pluto-v02 and open its review PR without rebuilding; J3115 remains dependent on J3114. No packaging PASS, export retry, spend, YouTube writes or changes to UAT/Shorts holds. Chief review milestones recorded separately from worker progress.",
       "history": [
         {
           "at": "2026-11-19T21:05Z",
@@ -283934,6 +283934,11 @@
           "at": "2026-11-19T22:18Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T22:19Z",
+          "by": "codex",
+          "what": "done: Chief ruling: condition NOT satisfied. Reviewed body, history, Gemini evidence jobs/reviews/J3167/REVIEW.md at 46697da7e3, prior J3140 decision and trusted thread comments through 7023704252. No explicit authorization for the rejected GitHub export. Independently verified clean preserved a12100797f and 12/12 NAS artifact hashes. J3114 remains blocked with recheck J3167 and next approval check 2026-11-20T03:10:00Z. After actual approval export preserved codex/j3114-pluto-v02 and open its review PR without rebuilding; J3115 remains dependent on J3114. No packaging PASS, export retry, spend, YouTube writes or changes to UAT/Shorts holds. Chief review milestones recorded separately from worker progress."
         }
       ],
       "remaining_action": "Elected Chief records J3114 wait --recheck J3167 (2026-11-20T03:10:00Z) and closes J3167",
