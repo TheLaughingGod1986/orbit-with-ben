@@ -225472,13 +225472,13 @@
       "stage": "picture",
       "after": "J2033",
       "eta_min": 300,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-19T21:37Z",
-      "eta": "2026-11-20T02:37Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-10T17:57Z",
-      "result": "",
+      "result": "parked for Chief: HOS 013 pass 1 minting 14/14 batches (66/66 Quality rows, 0 Fast, 0 marked KEEP) complete. Takes per part: P1=12, P2=11, P3=14, P4=12, P5=9, P6=8. Credits spent: 6,600/6,600 included Flow credits (£0 cash). Balance: pre-reset 10,440 (+50)->4,990 (5,500 spent); post-reset 24,500->23,400 (1,100 spent; live 23,400 verified 21:41Z, 0 pending, 0 remaining HOS013_PASS1 reservation, headroom 22,600>=3,000). Receipts: jobs/reviews/J2529/ (a43357eec8) & NAS archive_v01_pass1/; 66/66 0.5s sheets on review/013-pass1-sheets (44cbd78a); HOS #180 comment 7023072870. Ready for Claude sheet review (rows 56-66) and Chief KEEP ruling/closure.",
       "history": [
         {
           "at": "2026-11-10T17:57Z",
@@ -226004,6 +226004,11 @@
           "at": "2026-11-19T21:45Z",
           "by": "gemini",
           "what": "step 14 of 14 done: Batch 14 (row 66: P6:08b_darwin_mendel_synthesis) verified exit 0, posted 23,500->23,400 (live balance 23,400 re-verified 21:41Z, 0 pending charges, 0 remaining HOS013_PASS1 reservation, headroom 22,600 >= 3,000); 0.5s sheet pushed to review/013-pass1-sheets (44cbd78a); OWB recorded (a43357eec8); HOS #180 posted (7023072870). All 14/14 batches (66/66 rows, 6,600/6,600 credits, £0 cash) GENERATED/PENDING_REVIEW."
+        },
+        {
+          "at": "2026-11-19T21:45Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: HOS 013 pass 1 minting 14/14 batches (66/66 Quality rows, 0 Fast, 0 marked KEEP) complete. Takes per part: P1=12, P2=11, P3=14, P4=12, P5=9, P6=8. Credits spent: 6,600/6,600 included Flow credits (£0 cash). Balance: pre-reset 10,440 (+50)->4,990 (5,500 spent); post-reset 24,500->23,400 (1,100 spent; live 23,400 verified 21:41Z, 0 pending, 0 remaining HOS013_PASS1 reservation, headroom 22,600>=3,000). Receipts: jobs/reviews/J2529/ (a43357eec8) & NAS archive_v01_pass1/; 66/66 0.5s sheets on review/013-pass1-sheets (44cbd78a); HOS #180 comment 7023072870. Ready for Claude sheet review (rows 56-66) and Chief KEEP ruling/closure."
         }
       ],
       "remaining_action": "Parked for Chief: review/KEEP ruling on Batches 12-14 (rows 56-66) and close J2529 (14/14 batches, 66/66 rows complete)",
