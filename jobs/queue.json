@@ -270521,10 +270521,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-19T04:13Z",
+      "eta": "2026-11-19T08:13Z",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
       "result": "",
@@ -270733,6 +270733,11 @@
           "at": "2026-11-19T02:56Z",
           "by": "codex",
           "what": "released: PR 1011 now 0b0991d28b. Resumed existing plan at step 3/4; fresh CI execution evidence in jobs/reviews/J3012/CI_EXECUTION_2026-11-19.md. Fixed former-resident cache and renderer fixture isolation; 178 affected future tests pass. Full workflow suite not passing: next fix Buffer engine/content-root separation and pinned channel records in Content Ops CI; resolve WW2 missing browser-port assertion (also fails source layout). Then deployed board Contents access, old-entrypoint safeguards, remaining timers and refreshed export. Five official zero days through 18 Nov; prior-day notice and live relay/publish/tick acceptance still required. Do not recreate runbook/rehearsal or mark done."
+        },
+        {
+          "at": "2026-11-19T04:13Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Fix Buffer content paths and remaining cutover prerequisites, then verify the gated live move",
