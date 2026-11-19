@@ -67,7 +67,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3102 | mini | open | – | – | 121 topic · for gemini · review · `gemini-argon` · HOS 121 Why Do Cats Purr?: rule-E topic go/no-go review | 90339622 |
 | J3104 | mini | open | – | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J3105 | mini | open (after J3087) | – | – | 034 thumbs · thumb · 034 Pluto: build three long thumbnail candidates | J3103 |
-| J3106 | mini | open (after J3105) | – | – | 034 upload · listing · 034 Pluto: finish long package and queue packaging review | J3103,J3087,J2868 |
+| J3106 | mini | open (after J3105) | – | – | 034 upload · for gemini · listing · `gemini-argon` · 034 Pluto: finish long package and queue packaging review | J3103,J3087,J2868 |
 
 Recently finished:
 

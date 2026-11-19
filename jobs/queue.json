@@ -277433,12 +277433,26 @@
           "at": "2026-11-19T03:19Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-19T03:20Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-19T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Complete the Pluto long package, run dry-run checks and queue the packaging panel",
       "due": "2026-12-08T18:00:00Z",
       "kind": "listing",
-      "plain": "Prepare the Pluto film’s title, description and release package for review"
+      "plain": "Prepare the Pluto film’s title, description and release package for review",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
