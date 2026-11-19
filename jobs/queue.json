@@ -282624,10 +282624,10 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-19T20:18Z",
+      "eta": "2026-11-19T20:38Z",
       "created_by": "refill",
       "created_at": "2026-11-19T17:32Z",
       "result": "",
@@ -282671,6 +282671,11 @@
           "at": "2026-11-19T20:18Z",
           "by": "codex",
           "what": "reopened: Chief ruling recorded in launch record: leave live Short unchanged; no setup fault, 29-view sample insufficient for retention diagnosis. J3161 queued after J3153 for 20 Nov morning snapshot and full-day read. Reopen solely to record completed Chief disposition."
+        },
+        {
+          "at": "2026-11-19T20:18Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Park the slow-start reading for the Chief",
@@ -282681,7 +282686,15 @@
       "taskKeys": [
         "OWB:013"
       ],
-      "escalated_at": "2026-11-19T19:42Z"
+      "escalated_at": "2026-11-19T19:42Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-19T20:18Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3154",
