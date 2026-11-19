@@ -281414,9 +281414,14 @@
           "at": "2026-11-19T18:58Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T18:59Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting J3138 condition verification for J3128"
         }
       ],
-      "remaining_action": "Verify readiness: Chief review of J3128 music comparison reconciliation (OWB 9d166bd6f9 + HOS PR #666 c77b31b1) and queued £0 repair jobs J3136/J3137",
+      "remaining_action": "Inspect J3128 history, evidence artifacts, HOS PR #666, and repair jobs J3136/J3137",
       "kind": "review",
       "recheck_of": "J3128",
       "due": "2026-11-19T15:29:06+00:00",
@@ -281432,12 +281437,36 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-19T18:58Z",
+        "of": 4,
+        "at": "2026-11-19T18:59Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Starting J3138 condition verification for J3128"
+      },
+      "taskKeys": [
+        "OWB:020",
+        "OWB:021",
+        "OWB:022",
+        "OWB:023",
+        "OWB:024",
+        "OWB:025",
+        "OWB:026",
+        "OWB:027",
+        "OWB:028",
+        "OWB:029",
+        "OWB:030",
+        "OWB:031",
+        "OWB:032",
+        "OWB:033",
+        "OWB:034",
+        "HOS:001",
+        "HOS:002",
+        "HOS:004",
+        "HOS:005",
+        "HOS:006",
+        "HOS:007",
+        "HOS:008",
+        "HOS:010"
+      ]
     },
     {
       "id": "J3139",
