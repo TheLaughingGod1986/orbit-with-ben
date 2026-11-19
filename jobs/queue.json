@@ -280362,9 +280362,14 @@
           "at": "2026-11-19T12:02Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T12:03Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3132; reading J2035 history, subsequent HOS 009 billing evidence chain, and HOS 009 05_Music directory"
         }
       ],
-      "remaining_action": "Verify readiness: Await J3052 then J3053 billing evidence decision and a separately accepted score for the gravity film",
+      "remaining_action": "Inspect J2035 waiting condition, HOS 009 billing evidence proposal chain (J3052/J3053/J3057+), and HOS 009 score status",
       "kind": "review",
       "recheck_of": "J2035",
       "due": "2026-11-15T18:00:00+00:00",
@@ -280381,11 +280386,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-19T12:02Z",
+        "at": "2026-11-19T12:03Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3132; reading J2035 history, subsequent HOS 009 billing evidence chain, and HOS 009 05_Music directory"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J3133",
