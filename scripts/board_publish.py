@@ -1007,6 +1007,8 @@ def kick_approved_deliver(at: dt.datetime | None = None) -> bool:
 
 
 def main(argv: list[str] | None = None) -> int:
+    from engine_guard import require_active
+    require_active()
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--force", action="store_true")

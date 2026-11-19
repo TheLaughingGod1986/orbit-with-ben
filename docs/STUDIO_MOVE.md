@@ -360,7 +360,40 @@ before a register can be written. The resident layout continues using its own ro
 Buffer timer and any upload wrapper, not only the relay. The staged Content Ops workflow now checks out pinned
 channel records and sets that variable; no live workflow or timer was changed.
 
-Content Ops passes in both tested layouts. The source-layout WW2 browser-port assertion remains unresolved;
-no browser port or prelaunch state was invented. Full Python workflow checks, deployed board access,
-old-entrypoint protection and remaining timers still gate migration. Earlier full-suite failures are not erased
-by this targeted continuation.
+Content Ops passes in both tested layouts. The subsequent 06:15Z continuation below resolves the optional
+browser-port assertion and passes the complete 1,495-test Python workflow suite (seven skips). See
+`jobs/reviews/J3012/GUARDS_2026-11-19.md` for exact execution and limits. Deployed board access, complete
+old-entrypoint protection and remaining timer adapters still gate migration.
+
+## Retired-engine refusal and browser dispatch, 19 November 06:15Z
+
+The optional Studio browser port is now tested as optional, matching `channel_check.py` and the loader contract.
+A channel without `youtube.studio_port` must not take a MacBook browser job even when other channel browsers
+answer. No port, sign-in or launch state was added to Field Order History.
+
+`scripts/engine_guard.py` prepares a **local activation marker**, not a service switch. With no marker, existing
+behavior is unchanged. During cutover, after draining writers and installing these adapters in every retained
+engine checkout, atomically write `~/_desk/state/active-studio.json` on the Mini and MacBook with exactly:
+
+```json
+{"version": 1, "github": "TheLaughingGod1986/studio"}
+```
+
+Keep it outside Git, mode 0600. Write to a temporary sibling, flush it, and atomically replace the marker; never
+leave a partly written activation file. The guard compares this identity with the executing code's own registry,
+not `STUDIO_REPO`, so setting a new environment path cannot make old queue code authoritative. Malformed or
+unreadable markers/registries refuse work. It does not print their contents. Copies/worktrees of the active
+repository remain usable under the existing metadata locks.
+
+The guard runs before the jobs, studio, relay, publisher and MacBook worker command parsers, and again before
+`studio.git_transaction` reaches Git or its write callback. A retired invocation refuses even read-only commands;
+use the active checkout for diagnostics. The marker does **not** forward commands, transfer queue state, stop
+already running processes, or prevent independently written shell/Node timers from running. Thus the drain and
+installed-service inventory remain mandatory. Old copies without this adapter cannot obey it: update them first
+or disable their launchers. The Buffer/analytics timers and any direct writer outside these Python entry points
+still need their own migration/guard verification before activation. This is not yet full single-writer acceptance.
+
+Rollback restores the saved activation marker together with the saved services and reconciled queue. If this
+window created the first marker, remove only that marker after all new writers are drained; otherwise restore its
+previous bytes atomically. Never remove it while old and new writers may run concurrently. No marker was installed
+by this preparation run.

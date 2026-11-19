@@ -942,6 +942,8 @@ def _take_jobs() -> int:
 
 
 def main(argv=None) -> int:
+    from engine_guard import require_active
+    require_active()
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("cmd", choices=["run", "check"])
     a = ap.parse_args(argv)
