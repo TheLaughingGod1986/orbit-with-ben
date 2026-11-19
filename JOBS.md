@@ -60,7 +60,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3135 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3129 |  |
 | J3136 | mini | open (after J3128) | – | – | 024 edit · assembly · OWB 024 Short fri06_muons_ground: no-spend music_gate repair against archived OWB 013 bed (£0) |  |
 | J3137 | mini | open (after J3128) | – | – | 005 edit · assembly · HOS 005 Shorts s06/s07/s08: no-spend music_gate repair against archived HOS 002/004 beds (£0) |  |
-| J3138 | mini | claimed | codex | 2026-11-20T01:10Z | for codex · review · `gemini-argon` · Verify condition for J3128 |  |
 | J3155 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J1275 |  |
 | J3161 | mini | blocked | codex | – | studio · Supermoon Short: next-morning and full-day performance follow-up |  |
 | J3170 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
