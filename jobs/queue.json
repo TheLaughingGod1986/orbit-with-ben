@@ -281717,13 +281717,13 @@
       "stage": "edit",
       "after": "J3145",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-19T16:41Z",
-      "eta": "2026-11-19T18:41Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-19T15:46Z",
-      "result": "",
+      "result": "NOT YET: exact c0c1848f guard remains offline; J3145 FIX reproduced (17 unit tests and 11 adversarial suites). No merge of PR667 or review-only PR668, integration, deployment, account calls or allowance. Desk 7015685170 reconciles Chief 7015532256. J3147 repairs A-D, J3148 reviews new hashes independently, J3149 decides any later scope. J3047 closure and J2035/J2171 holds retained; readiness at risk. GBP0.",
       "history": [
         {
           "at": "2026-11-19T15:46Z",
@@ -281754,6 +281754,11 @@
           "at": "2026-11-19T16:45Z",
           "by": "codex",
           "what": "step 3 of 3 done: Desk 7015685170 records NOT YET and reconciles Chief 7015532256; J3147-J3149 queued; both assembly holds verified"
+        },
+        {
+          "at": "2026-11-19T16:45Z",
+          "by": "codex",
+          "what": "done: NOT YET: exact c0c1848f guard remains offline; J3145 FIX reproduced (17 unit tests and 11 adversarial suites). No merge of PR667 or review-only PR668, integration, deployment, account calls or allowance. Desk 7015685170 reconciles Chief 7015532256. J3147 repairs A-D, J3148 reviews new hashes independently, J3149 decides any later scope. J3047 closure and J2035/J2171 holds retained; readiness at risk. GBP0."
         }
       ],
       "remaining_action": "Decision complete; repairs and independent review queued",
@@ -281768,7 +281773,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-7015685170"
     },
     {
       "id": "J3147",
