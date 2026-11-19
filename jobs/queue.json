@@ -1,5 +1,5 @@
 {
-  "next_id": 3163,
+  "next_id": 3164,
   "jobs": [
     {
       "id": "J0001",
@@ -283436,6 +283436,37 @@
       "taskKeys": [
         "HOS:009"
       ]
+    },
+    {
+      "id": "J3163",
+      "title": "HOS 009: independent review of repaired music routing types",
+      "needs": "gemini",
+      "repo": "hos",
+      "body": "Independent exact-commit review of HOS PR675 faa8f75731a91d50b9ce999a4b80c4fa4562fce9, appended by J3162 to macbook/J3154. Claude is the primary reviewer, but chief_relay.py status at handoff reports Claude down for usage and Cursor-on-Claude down; Gemini is the explicitly named backup. This job is pinned to gemini to enforce reviewer independence: Codex implemented this commit and must not claim or review it. Run through agy, record actual reviewer/model, verify exact commit and all evidence, no self-review. If Claude returns before claim, an authorized dispatcher may repin to claude; never repin to codex.\n\nRead jobs/reviews/J3162/REPAIR.md and HASHES.txt, J3158 review at PR678 e93bf01ed9d371528b297a892ce841826393d57e, and ruling HOS desk 7018655830. Independently check unsupported path/query rejection before legacy dispatch across both entry points; string subclasses, bytes, None and query matrix. Re-run 23 flight, 11 guard, new type tests, normalization and reservation probes offline using fixtures only. Original exploit probe is expected to stop on malformed_request; verification variant checks all six zero-POST refusals. Check unrelated baseline HOS008 schedule.past lint failure is unchanged, HOS009 lint passes. Verify flight/reservation unchanged from c2dc9859 and pinned guard/shape hashes unchanged, activation literal False. Commit review evidence in an isolated review-only PR with exact tested head and PASS/FIX recommendation; elected-Chief disposition follows separately.\n\nGBP 0. No account calls, pricing rescan, generation, activation, deployment, merge, music allowance, YouTube or Buffer change. No live locks/stores. J3047 permanently closed unused; v01/v02 rejected, J2035/J2171 held; preserve film inputs/media/timing/gates. PR678 stays unmerged. A review PASS is not activation or merge authority. Do not substitute another production task or repeat unchanged loops.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/675",
+      "film": "009",
+      "stage": "edit",
+      "after": "J3162",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-19T20:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T20:48Z",
+          "by": "codex",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "Independently review the exact offline repair using Gemini as the available backup to Claude",
+      "for": "gemini",
+      "kind": "review",
+      "model": "gemini-argon",
+      "plain": "Independently checking that unusual music requests cannot bypass the safety checks"
     }
   ],
   "focus": [
