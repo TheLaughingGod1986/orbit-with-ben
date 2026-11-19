@@ -283670,13 +283670,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-19T21:07Z",
-      "eta": "2026-11-19T23:07Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-19T21:05Z",
-      "result": "",
+      "result": "parked for Chief: J3167 condition verification complete (jobs/reviews/J3167/REVIEW.md @ 46697da7e3) — J3114 waiting condition remains NOT YET MET at 2026-11-19T21:11Z. Checked OWB #954 (thru 7022218561), remote branches and GitHub PRs (thru #1048): explicit authorization to export branch codex/j3114-pluto-v02 to TheLaughingGod1986/orbit-with-ben remains absent since J3140 (16:27Z). Clean local commit a12100797f680d2bae5d9c517efea751d04785f8 in /Volumes/MiniWork/scratch/j3114-wt, all 12 durable NAS J3105_v02 + 11_Upload-Package artifacts (12/12 SHA-256 match), and all 4 NAS video master/trailer/Shorts SHA-256 hashes are verified intact, with J3115 dependency and UAT/Shorts holds preserved. Because scripts/jobs.py restricts jobs.py wait J3114 --recheck J3167 to the job holder or elected Chief (codex), exact Chief commands to record the 6-hour retry hold (2026-11-20T03:10:00Z) and close J3167 are in jobs/reviews/J3167/REVIEW.md §3.",
       "history": [
         {
           "at": "2026-11-19T21:05Z",
@@ -283712,6 +283712,11 @@
           "at": "2026-11-19T21:12Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Committed jobs/reviews/J3167/REVIEW.md at 46697da7e3 on main; parking J3167 for elected Chief"
+        },
+        {
+          "at": "2026-11-19T21:12Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J3167 condition verification complete (jobs/reviews/J3167/REVIEW.md @ 46697da7e3) — J3114 waiting condition remains NOT YET MET at 2026-11-19T21:11Z. Checked OWB #954 (thru 7022218561), remote branches and GitHub PRs (thru #1048): explicit authorization to export branch codex/j3114-pluto-v02 to TheLaughingGod1986/orbit-with-ben remains absent since J3140 (16:27Z). Clean local commit a12100797f680d2bae5d9c517efea751d04785f8 in /Volumes/MiniWork/scratch/j3114-wt, all 12 durable NAS J3105_v02 + 11_Upload-Package artifacts (12/12 SHA-256 match), and all 4 NAS video master/trailer/Shorts SHA-256 hashes are verified intact, with J3115 dependency and UAT/Shorts holds preserved. Because scripts/jobs.py restricts jobs.py wait J3114 --recheck J3167 to the job holder or elected Chief (codex), exact Chief commands to record the 6-hour retry hold (2026-11-20T03:10:00Z) and close J3167 are in jobs/reviews/J3167/REVIEW.md §3."
         }
       ],
       "remaining_action": "Elected Chief records J3114 wait --recheck J3167 (2026-11-20T03:10:00Z) and closes J3167",
