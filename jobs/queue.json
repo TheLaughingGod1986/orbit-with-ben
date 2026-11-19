@@ -284393,17 +284393,22 @@
           "at": "2026-11-19T22:56Z",
           "by": "codex",
           "what": "step 1 of 3 done: Independent review and governing rulings checked. All 47 fixture tests and 21 hash entries pass locally; current PR head matches. Existing ruling authorizes merging PR 680 only, not PR 681."
+        },
+        {
+          "at": "2026-11-19T22:57Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PASS for offline hardening at a76bfa8f; 47 tests, all hashes and film 009 lint pass. Only known HOS008 schedule baseline fails. Desk post hit GitHub 2500-comment cap; posting on task PR."
         }
       ],
-      "remaining_action": "Finish verification and record the exact-commit Chief ruling",
+      "remaining_action": "Record the ruling and queue the separate exact-commit merge",
       "kind": "chief",
       "plain": "Chief decision on the gravity film's offline audio request safeguards",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-19T22:56Z",
+        "at": "2026-11-19T22:57Z",
         "by": "codex",
-        "note": "Independent review and governing rulings checked. All 47 fixture tests and 21 hash entries pass locally; current PR head"
+        "note": "PASS for offline hardening at a76bfa8f; 47 tests, all hashes and film 009 lint pass. Only known HOS008 schedule baseline"
       },
       "taskKeys": [
         "HOS:009"
