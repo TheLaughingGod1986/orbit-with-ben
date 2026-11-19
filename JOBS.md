@@ -66,6 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3161 | mini | blocked | codex | – | studio · Supermoon Short: next-morning and full-day performance follow-up |  |
 | J3164 | any | claimed | codex | 2026-11-19T23:01Z | 009 edit · chief · HOS 009: Chief disposition after independent routing repair review | https://github.com/TheLaughingGod1986/history-of-science/pull/675 |
 | J3165 | any | open (after J3164) | – | – | 009 edit · chief · HOS 009: merge exact offline routing repair under existing Chief ruling | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-7022139984 |
+| J3166 | any | open (after J3165) | – | – | 009 edit · assembly · `gpt-6.1-sol` · HOS 009: harden music path and method handling offline | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-7022139984 |
 
 Recently finished:
 
