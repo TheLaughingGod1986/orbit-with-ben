@@ -279290,10 +279290,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-19T10:47Z",
+      "eta": "2026-11-19T12:47Z",
       "created_by": "relay",
       "created_at": "2026-11-19T08:31Z",
       "result": "",
@@ -279347,6 +279347,11 @@
           "at": "2026-11-19T10:47Z",
           "by": "codex",
           "what": "rerouted to codex on gpt-6-astra: Assigned elected-Chief review: specialist evidence already complete; codex records and closes the ruling, parent J3114 stays held."
+        },
+        {
+          "at": "2026-11-19T10:47Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief (chief / Grok Bot): record wait --recheck J3120 on J3114 (or export codex/j3114-pluto-v02 and reopen J3114) and close J3120",
@@ -279365,7 +279370,15 @@
       "model": "gpt-6-astra",
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-19T10:47Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3121",
