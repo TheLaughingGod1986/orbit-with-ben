@@ -70,7 +70,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3137 | mini | open (after J3128) | – | – | 005 edit · assembly · HOS 005 Shorts s06/s07/s08: no-spend music_gate repair against archived HOS 002/004 beds (£0) |  |
 | J3138 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3128 |  |
 | J3140 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3114 |  |
-| J3144 | any | open | – | – | 009 edit · assembly · HOS 009: fix the proposed music billing guard | J3143 |
+| J3144 | any | claimed | cursor | 2026-11-19T17:49Z | 009 edit · assembly · HOS 009: fix the proposed music billing guard | J3143 |
 | J3145 | mini | open (after J3144) | – | – | 009 edit · for gemini · review · `gemini-argon` · HOS 009: independently review the repaired music guard | J3143 |
 | J3146 | any | open (after J3145) | – | – | 009 edit · chief · HOS 009: decide the reviewed music guard and score scope | J3143 |
 
