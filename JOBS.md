@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2035, J2529, J2993, J3121, J3122.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2035, J2529, J2993, J3122.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -67,11 +67,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3117 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3064 |  |
 | J3119 | mini | open (after J3115) | – | – | 034 upload · studio · Upload the Pluto long master v02 Private and scheduled for Sun 13 Dec 18:00, arm the thumbnail test |  |
 | J3120 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3114 |  |
-| J3121 | mini | claimed | cursor | 2026-11-19T09:27Z | studio · Orbit Shorts: move tomorrow's fourth nearest-star Short a week out and add the same-subject spacing rule |  |
 | J3122 | mini | claimed | macbook | 2026-11-19T09:32Z | studio · HOS Shorts: the Vaccine and Plants Shorts got no feed reach; read Studio Reach, rule on the 28-29 Nov vaccine Shorts, record the health-topic learning |  |
 
 Recently finished:
 
+- J3121 done: Orbit Shorts: move tomorrow's fourth nearest-star Short a week out and add the same-subject spacing rule (Swapped two private Shorts. aAUgIGEuPwQ 2026-11-20T11:30:00Z -> 2026-11-27T11:30:00Z. 93JL_IK57EM 2026-11-27T11:30:00Z -> 2026-11-20T11:30:00Z (Sunday hold in between). Both still private; titles and Related unchanged. Studio dialogs show 27 Nov and 20 Nov. Buffer matches. Records in PR 1038. LEARNINGS and the spacing audit are in open PR 1037. Nothing else moved. GBP 0.)
 - J3118 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (17 OWB + 7 HOS longs; CTR hits vs 4%: OWB 2/17, HOS 4/7. Also 88 OWB + 31 HOS Shorts; 3 recent Shorts omitted pending processed figures. Commit ab054edf13; published board-data 64ceef84 verified all 24 long read timestamps. Studio Lifetime CSV exports replaced unavailable legacy reader; no YouTube changes or spend.)
 - J3116 done: Verify condition for J2537 (Acting-Chief ruling: condition NOT MET. Accepted Gemini REVIEW.md aa3e1e3267 after checking parent approval history, HOS657 rehearsal and fresh desk/thread/PR657 comments. No explicit protected-desk rewrite exception. J2537 remains blocked with last_recheck J3116 and next check 2026-11-19T11:55:00Z. Follow-up owner: elected Chief checks approval, resolves new PR658/659/660 and refreshes backup/rehearsal before day-before notice and frozen-writer cutover. No live rewrite, force-push, production approval or spend.)
 - J3113 done: 034 Pluto: reconcile thumbnail stage to final packaging ruling (FIX (reconciled 034 thumbs to J3112 Chief FIX ruling in jobs/reviews/J3113/REVIEW.md @ a1d3976297; verified NAS SHA-256 hashes for A/B/C v01 thumbs, phone sheet, master v02, and trailer; 034 thumbs kept in review with open rebuild successor J3114 -> final review J3115; J2868.1 UAT watch and J3066/J3065 public-parent holds preserved; £0))
@@ -81,4 +81,3 @@ Recently finished:
 - J3109 done: Packaging panel (gemini): Pluto 034 long upload package and J3105 thumbnail candidates A/B/C (done)
 - J3108 done: Packaging panel (codex): Pluto 034 long upload package and J3105 thumbnail candidates A/B/C (Enlarge the whole Pluto globe and visible heart in thumbnail A so the mystery reads immediately at 168x94; independent critique committed in 8c285cf894.)
 - J3107 done: Chief: resolve 034 thumbs orphan-review (Workflow repaired: J3113 now owns 034 thumbs reconciliation after existing Chief decision J3112; panel J3108-J3111 unchanged. NAS A/B/C hashes match. Thumbs/upload remain review; J2868 UAT and J3065/J3066 public-parent holds preserved. Read-only handoff and dependency checks pass. No spend or Studio changes.)
-- J3106 done: 034 Pluto: finish long package and queue packaging review (Prepared 034 Pluto long release package (commit de93b3f4be + NAS studio-live 11_Upload-Package): verified exact v02 master SHA-256 e5a886dfef208774cce8ae987e658fba5d7a96cbb5c99a44aadf63516949ba62 (646.933 s, J2868/J3087 KEEP), replaced all ?:?? chapters from cuts_v02.json (0:00, 1:06, 2:41, 4:26, 6:15, 7:41, 9:05), verified YouTube search autocomplete and zero title collisions, removed obsolete 035 Triton promise per J2864, assembled PACKAGE_MANIFEST.json with J3105 thumbnails A/B/C, 6-entry Sources line, 67-asset Image credits, 189-cue en-GB.srt captions, and 52.500 s vertical trailer (SHA-256 01701660d2fcc3a1340fa8d6ffef2f8d1a96b87e049facf1d28905c4a05392fd); review:script 95.8/100 PASS, gate:episode PASS, youtube:package --dry-run PASS. Queued packaging panel J3108 (codex), J3109 (gemini), J3110 (cursor), J3111 (decision) and Chief packaging/delivery handoff J3112; left 034 thumbs and 034 upload in review and preserved J2868 Ben UAT watch (8 Dec watch-by, 13 Dec 18:00 slot) and J3065/J3066 public-parent holds.)
