@@ -1,0 +1,49 @@
+{
+  "verdict": "PASS",
+  "bed": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/05_Music/jupiter_no_crust_short_bed_v01.mp3",
+  "bed_sha256": "5c5327f5466a001324abe1108d5289e2129d88396663d24463666f565e6ed222",
+  "plan_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/05_Music/jupiter_no_crust_short_bed_v01_plan.json",
+  "seconds": 30.0,
+  "bpm": 66.7,
+  "brief_pace": "Pace: 60-80 BPM",
+  "fail": [],
+  "warn": [],
+  "waived": [],
+  "matches": [],
+  "waiver": null,
+  "rules": {
+    "similarity_fail": 0.8,
+    "compared_seconds": 300
+  },
+  "reconciled_comparison_summary": {
+    "job": "J3128",
+    "channel": "OWB",
+    "film": "OWB:020",
+    "export_id": "jupiter_no_crust_v01",
+    "original_sidecar_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/10_Shorts/lift_no_crust/06_Final-Exports/jupiter_no_crust_v01_music.json",
+    "original_unreadable_warn_count": 13,
+    "reconciled_unreadable_warn_count": 0,
+    "uniqueness_coverage_status": "full_readable_comparisons",
+    "deduplicated_comparison_beds_count": 30,
+    "excluded_same_film_or_self_count": 1,
+    "excluded_uat_narration_vo_files_count": 14,
+    "included_uat_music_bed": {
+      "uat_stub": "OWB UAT/jupiter-music.mp3",
+      "resolved_nas_equivalent": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/05_Music/moon-leaving-part03_score_bed_v01.mp3",
+      "sha256": "38ab6e3e876860e72c49c547df6cbe1d05a82e021e6d517e4e64478db6f8de2b",
+      "bytes": 2560462
+    },
+    "max_similarity": 0.2725,
+    "max_similarity_bed": "sun-brighter_score_bed_v01.mp3",
+    "max_similarity_sha256": "12d234e3113c4f9010d576ca73603d269cde46ee544bbc3f0a844f56add7df1b",
+    "excluded_same_film_or_self": [
+      {
+        "file": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/020_What-Would-You-See-If-You-Fell-Into-Jupiter/05_Music/jupiter_no_crust_short_bed_v01.mp3",
+        "name": "jupiter_no_crust_short_bed_v01.mp3",
+        "sha256": "5c5327f5466a001324abe1108d5289e2129d88396663d24463666f565e6ed222",
+        "reason": "identical_bed_sha256_self"
+      }
+    ],
+    "repair_job": null
+  }
+}

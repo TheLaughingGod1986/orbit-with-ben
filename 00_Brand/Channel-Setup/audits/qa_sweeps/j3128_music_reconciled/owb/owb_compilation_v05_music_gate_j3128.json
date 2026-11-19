@@ -1,0 +1,49 @@
+{
+  "verdict": "PASS",
+  "bed": "/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-13/owb_comp/final_v05/compilation_new_sections_bed_v05.wav",
+  "bed_sha256": "ecc85dec2d4e619bc10033904918387c614b9f360c2fef427edc6dbf04db0eb9",
+  "plan_path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/05_Music/compilation_new_sections_bed_v05_plan.json",
+  "seconds": 155.0,
+  "bpm": null,
+  "brief_pace": "Pace: 60-80 BPM",
+  "fail": [],
+  "warn": [],
+  "waived": [],
+  "matches": [],
+  "waiver": null,
+  "rules": {
+    "similarity_fail": 0.8,
+    "compared_seconds": 300
+  },
+  "reconciled_comparison_summary": {
+    "job": "J3128",
+    "channel": "OWB",
+    "film": "OWB:COMP",
+    "export_id": "owb_compilation_v05",
+    "original_sidecar_path": "/Users/benjaminoats/YouTube/orbit-with-ben/00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/qa_compilation_v05/music_gate.json",
+    "original_unreadable_warn_count": 9,
+    "reconciled_unreadable_warn_count": 0,
+    "uniqueness_coverage_status": "full_readable_comparisons",
+    "deduplicated_comparison_beds_count": 30,
+    "excluded_same_film_or_self_count": 1,
+    "excluded_uat_narration_vo_files_count": 14,
+    "included_uat_music_bed": {
+      "uat_stub": "OWB UAT/jupiter-music.mp3",
+      "resolved_nas_equivalent": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/05_Music/moon-leaving-part03_score_bed_v01.mp3",
+      "sha256": "38ab6e3e876860e72c49c547df6cbe1d05a82e021e6d517e4e64478db6f8de2b",
+      "bytes": 2560462
+    },
+    "max_similarity": 0.2953,
+    "max_similarity_bed": "earth-spin_score_bed_v02.mp3",
+    "max_similarity_sha256": "8181f7370425aec2bfd2807073e5a543d9a41a2052e5320733107f5739bec562",
+    "excluded_same_film_or_self": [
+      {
+        "file": "/Volumes/data/mac-mini-archive/mini-tmp-scratch/2026-10-13/owb_comp/final_v05/compilation_new_sections_bed_v05.wav",
+        "name": "compilation_new_sections_bed_v05.wav",
+        "sha256": "ecc85dec2d4e619bc10033904918387c614b9f360c2fef427edc6dbf04db0eb9",
+        "reason": "identical_bed_sha256_self"
+      }
+    ],
+    "repair_job": null
+  }
+}

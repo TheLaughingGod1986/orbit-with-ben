@@ -1,0 +1,61 @@
+{
+  "verdict": "PASS",
+  "bed": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/05_Music/venus_score_bed_v01_full.mp3",
+  "bed_sha256": "e2f7204e8cd1dc9d337e5ad34ebc6ecc87bea7e0aa259d034bb6970ab1bc3d35",
+  "plan_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/05_Music/venus_score_bed_v01_full_plan.json",
+  "seconds": 530.0,
+  "bpm": 52.2,
+  "brief_pace": "Pace: 60-72 BPM",
+  "fail": [],
+  "warn": [],
+  "waived": [],
+  "matches": [],
+  "waiver": null,
+  "rules": {
+    "similarity_fail": 0.8,
+    "compared_seconds": 300
+  },
+  "reconciled_comparison_summary": {
+    "job": "J3128",
+    "channel": "OWB",
+    "film": "OWB:023",
+    "export_id": "023_Venus_full_rough_v05e",
+    "original_sidecar_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/07_Edit-Project/full_rough_v05e_pack/music_gate_v05e.json",
+    "original_unreadable_warn_count": 13,
+    "reconciled_unreadable_warn_count": 0,
+    "uniqueness_coverage_status": "full_readable_comparisons",
+    "deduplicated_comparison_beds_count": 28,
+    "excluded_same_film_or_self_count": 3,
+    "excluded_uat_narration_vo_files_count": 14,
+    "included_uat_music_bed": {
+      "uat_stub": "OWB UAT/jupiter-music.mp3",
+      "resolved_nas_equivalent": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/05_Music/moon-leaving-part03_score_bed_v01.mp3",
+      "sha256": "38ab6e3e876860e72c49c547df6cbe1d05a82e021e6d517e4e64478db6f8de2b",
+      "bytes": 2560462
+    },
+    "max_similarity": 0.5898,
+    "max_similarity_bed": "earth-spin_score_bed_v02_fit.wav",
+    "max_similarity_sha256": "4d72982bad4641fd0661b7006bc52d4f95846626f2b3cbe6dcf06a3340b40545",
+    "excluded_same_film_or_self": [
+      {
+        "file": "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/05_Music/venus_score_bed_v01b.mp3",
+        "name": "venus_score_bed_v01b.mp3",
+        "sha256": "1558e0544c13dce655994cbdaa28aa49a36e80a5d3f1a018bb045c83ff2cf8df",
+        "reason": "same_film_05_music (OWB:023)"
+      },
+      {
+        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/05_Music/venus_score_bed_v01.mp3",
+        "name": "venus_score_bed_v01.mp3",
+        "sha256": "9d8467e3b69486a6138eb54c2a7955f7bb009d29209bc33270ea53548adb37f8",
+        "reason": "same_film_05_music (OWB:023)"
+      },
+      {
+        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/023_What-Happened-To-Venus/05_Music/venus_score_bed_v01_full.mp3",
+        "name": "venus_score_bed_v01_full.mp3",
+        "sha256": "e2f7204e8cd1dc9d337e5ad34ebc6ecc87bea7e0aa259d034bb6970ab1bc3d35",
+        "reason": "identical_bed_sha256_self"
+      }
+    ],
+    "repair_job": null
+  }
+}
