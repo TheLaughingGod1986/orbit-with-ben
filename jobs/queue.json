@@ -284274,7 +284274,7 @@
     {
       "id": "J3172",
       "title": "HOS 009: independent exact-commit review of PR 681 non-spend GET-only",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Independent exact-commit review of HOS PR #681 at `a76bfa8f57250935b7818dc126bb3d42f74fb87d` (branch `cursor/J3171-nonspend-get-only`, off `origin/main` `f13cb7aed8a596806bb7fab527b0cb9e643c362b` after PR 680).\n\nReviewer independence: `cursor` implemented J3171 and is strictly excluded (no self-review). This job is pinned to `claude`, the primary reviewer named in HOS Chief ruling 7022847995. An authorized dispatcher may repin to `gemini` (the named backup) if Claude is down. NEVER repin to `cursor`, including the Cursor-on-Claude lane.\n\nRead `jobs/reviews/J3171/EVIDENCE.md`, `jobs/reviews/J3171/HASHES.txt`, `jobs/reviews/J3150/HASHES.txt` and `04_Audio/tools/el_client.py` against ruling 7022847995 and confirmation 7022947212.\n\nVerify offline, fixture desks only, zero transport:\n1. `/v1/user/subscription` and `/v1/history` refuse PATCH, PUT, POST, DELETE and every other non-GET method with `malformed_request` before `urlopen`, on both `request` and `multipart_post`.\n2. A GET that carries a body is refused on every path before `urlopen`.\n3. A bodyless GET of subscription and history still proceeds. Guarded speech still raises `SpendRefused` when the pause file exists and does not open a socket. Canonical `POST /v1/music` still ends `activation_closed` with no socket.\n4. Re-run the 4 J3171 groups, 23 flight, 11 guard, 5 routing and 4 J3166 groups, plus `check_all.sh`. The only expected package-lint failure is the existing HOS 008 `[schedule.past]` baseline. `package-lint --film 009` must pass.\n5. Confirm `ACTIVATION_AUTHORIZED` stays literal False and the pinned hashes `930d987783055d1f73e80fd9ae770f1ecde63d79b397706df74e9492b4029308` and `ba290b64740c96c3407af17da80d043be3bf840d1863518bfb011e047f9e647e` are unchanged.\n\nWrite KEEP or FIX in `jobs/reviews/<this job>/REVIEW.md`. Do not merge PR 681. GBP 0. No account call, generation, activation, deployment, allowance, YouTube or Buffer change.\n\nThis review waits until J3171 is done. Elected-Chief disposition is queued after this review and does not start until the review is done.\n",
       "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/681",
@@ -284294,13 +284294,25 @@
           "at": "2026-11-19T22:42Z",
           "by": "cursor",
           "what": "added for claude"
+        },
+        {
+          "at": "2026-11-19T22:43Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-20T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Review the exact commit on the open pull request. Do not merge.",
-      "for": "claude",
+      "for": "gemini",
       "kind": "review",
-      "model": "claude-opus-5-5",
-      "plain": "Independent check of the gravity film's offline audio request safeguards"
+      "model": "gemini-argon",
+      "plain": "Independent check of the gravity film's offline audio request safeguards",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "claude",
+        "model": "claude-opus-5-5",
+        "status": "open",
+        "by": ""
+      }
     },
     {
       "id": "J3173",
