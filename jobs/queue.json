@@ -279479,9 +279479,14 @@
           "at": "2026-11-19T09:37Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T09:37Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed J3124. Reading reconcile-policy-refusal and the HOS 013 ledgers."
         }
       ],
-      "remaining_action": "Add reconcile-session-block and tests, open the PR, and do not merge, Create, or edit a ledger",
+      "remaining_action": "Reading the pass-1 runner and the session-block ruling before writing the command",
       "for": "cursor",
       "kind": "assembly",
       "model": "cursor-grok-4-7",
@@ -279490,12 +279495,14 @@
       "urgent": 26,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-19T09:37Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3124. Reading reconcile-policy-refusal and the HOS 013 ledgers."
+      },
+      "taskKeys": [
+        "HOS:013"
+      ]
     }
   ],
   "focus": [
