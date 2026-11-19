@@ -276609,13 +276609,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-19T08:04Z",
-      "eta": "2026-11-19T10:04Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-19T00:16Z",
-      "result": "",
+      "result": "parked for Chief: J3089 condition verification complete (jobs/reviews/J3089/REVIEW.md at 7dd2ce15a2) — J2845 waiting condition remains NOT MET: predecessor J2844 completed with FIX on T037 (m09jUdwC5hk_B_v05.jpg lacked 2.A.5 character/scale reference) and blocked J2845; revision J3088 built m09jUdwC5hk_B_v06.jpg (sha256=7b0f6c44e870820881dba0309bf73ef0cc5601fef83cf080438a06648c9eb19f, 285,269 bytes, saturation=171.9, near_black=14.5%, PR #1031 open) and panel J3092-J3095 recommended KEEP (2/3 score 8/10 at 168x94, 3/3 click choice), but dependent Chief exact-file decision J3096 remains open (no Chief exact-file PASS, no brief update to v06/T037, and no T018 successor-test authorization yet). Recording jobs.py wait J2845 --recheck J3089 (next check 2026-11-19T14:10:00Z) and closing J3089 requires elected-Chief authority (Grok Bot is currently UP; see exact commands in jobs/reviews/J3089/REVIEW.md §3).",
       "history": [
         {
           "at": "2026-11-19T00:16Z",
@@ -276651,6 +276651,11 @@
           "at": "2026-11-19T08:11Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Completed J3089 condition verification (7dd2ce15a2); parking for elected Chief to record wait --recheck J3089 on J2845"
+        },
+        {
+          "at": "2026-11-19T08:11Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J3089 condition verification complete (jobs/reviews/J3089/REVIEW.md at 7dd2ce15a2) — J2845 waiting condition remains NOT MET: predecessor J2844 completed with FIX on T037 (m09jUdwC5hk_B_v05.jpg lacked 2.A.5 character/scale reference) and blocked J2845; revision J3088 built m09jUdwC5hk_B_v06.jpg (sha256=7b0f6c44e870820881dba0309bf73ef0cc5601fef83cf080438a06648c9eb19f, 285,269 bytes, saturation=171.9, near_black=14.5%, PR #1031 open) and panel J3092-J3095 recommended KEEP (2/3 score 8/10 at 168x94, 3/3 click choice), but dependent Chief exact-file decision J3096 remains open (no Chief exact-file PASS, no brief update to v06/T037, and no T018 successor-test authorization yet). Recording jobs.py wait J2845 --recheck J3089 (next check 2026-11-19T14:10:00Z) and closing J3089 requires elected-Chief authority (Grok Bot is currently UP; see exact commands in jobs/reviews/J3089/REVIEW.md §3)."
         }
       ],
       "remaining_action": "Awaiting elected Chief to record jobs.py wait J2845 --recheck J3089 and close J3089 (or reopen J2845 after J3096)",
