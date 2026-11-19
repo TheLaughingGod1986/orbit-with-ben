@@ -278310,13 +278310,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-19T05:50Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-19T05:47Z",
-      "result": "parked for Chief: J3116 condition verification complete (jobs/reviews/J3116/REVIEW.md at aa3e1e3267) — J2537 waiting condition remains NOT YET MET: checked HOS PR #180 (last comment 7000642991 at 2026-11-19T05:28:13Z), OWB studio thread #954 (last [Ben] comment 6993227499 at 2026-11-18T22:16:39Z for 034 Pluto v02), and HOS PR #657 (merged ae6ad0c1, 0 comments) at 2026-11-19T05:54Z; no explicit one-time exception from Ben for the irreversible rewrite of protected HOS hos-desk history (e7cc01c9 -> rehearsed 46796572) while keeping PR #180 open has arrived yet. Stage 3 rehearsal artifacts (REHEARSAL.md, REHEARSAL_RESULT.json at ae6ad0c1) remain intact on HOS origin/main; note 3 new open HOS PRs (#658, #659, #660) since snapshot 2bb15944 will need merge/closure and pre-window re-rehearsal once Ben's disposition arrives. Because scripts/jobs.py restricts jobs.py wait J2537 --recheck J3116 to the job holder or elected Chief (codex), exact 2-line Chief commands are in jobs/reviews/J3116/REVIEW.md §3 (next check 2026-11-19T11:55:00Z).",
+      "result": "",
       "history": [
         {
           "at": "2026-11-19T05:47Z",
@@ -278357,6 +278357,11 @@
           "at": "2026-11-19T05:55Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3116 condition verification complete (jobs/reviews/J3116/REVIEW.md at aa3e1e3267) — J2537 waiting condition remains NOT YET MET: checked HOS PR #180 (last comment 7000642991 at 2026-11-19T05:28:13Z), OWB studio thread #954 (last [Ben] comment 6993227499 at 2026-11-18T22:16:39Z for 034 Pluto v02), and HOS PR #657 (merged ae6ad0c1, 0 comments) at 2026-11-19T05:54Z; no explicit one-time exception from Ben for the irreversible rewrite of protected HOS hos-desk history (e7cc01c9 -> rehearsed 46796572) while keeping PR #180 open has arrived yet. Stage 3 rehearsal artifacts (REHEARSAL.md, REHEARSAL_RESULT.json at ae6ad0c1) remain intact on HOS origin/main; note 3 new open HOS PRs (#658, #659, #660) since snapshot 2bb15944 will need merge/closure and pre-window re-rehearsal once Ben's disposition arrives. Because scripts/jobs.py restricts jobs.py wait J2537 --recheck J3116 to the job holder or elected Chief (codex), exact 2-line Chief commands are in jobs/reviews/J3116/REVIEW.md §3 (next check 2026-11-19T11:55:00Z)."
+        },
+        {
+          "at": "2026-11-19T06:03Z",
+          "by": "codex",
+          "what": "reopened"
         }
       ],
       "remaining_action": "Elected Chief (codex): record jobs.py wait J2537 --recheck J3116 for 2026-11-19T11:55:00Z and close J3116",
@@ -278373,13 +278378,6 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-19T05:55Z",
-        "by": "gemini",
-        "note": "Committed jobs/reviews/J3116/REVIEW.md at aa3e1e3267 on main; parking J3116 for elected Chief (codex) to record wait --r"
-      },
       "taskKeys": [
         "HOS:005",
         "HOS:008",
