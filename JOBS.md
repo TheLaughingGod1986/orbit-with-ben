@@ -59,7 +59,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3066 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Pluto Short about the frozen heart (v02, Test A opening) Private, slot Mon 21 Dec 11:30 |  |
 | J3075 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2996 |  |
 | J3085 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3070 |  |
-| J3087 | mini | open (after J3062) | – | – | 034 edit · review · 034 Pluto: resolve incomplete music-library comparison before closing edit review | J2868,J3062 |
+| J3087 | mini | open (after J3062) | – | – | 034 edit · for gemini · review · `gemini-argon` · 034 Pluto: resolve incomplete music-library comparison before closing edit review | J2868,J3062 |
 
 Recently finished:
 
