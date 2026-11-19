@@ -281271,9 +281271,14 @@
           "at": "2026-11-19T18:49Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T18:49Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Wait for original source images from the MacBook, then rebuild and review the Webb thumbnail",
+      "remaining_action": "Inspect J3129, J3130 result, and J3088_v02/inputs on NAS",
       "kind": "review",
       "recheck_of": "J3129",
       "due": "2026-11-19T14:40:40+00:00",
@@ -281291,10 +281296,11 @@
         "step": 0,
         "of": 3,
         "at": "2026-11-19T18:49Z",
-        "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "gemini"
+      },
+      "taskKeys": [
+        "OWB:004"
+      ]
     },
     {
       "id": "J3136",
