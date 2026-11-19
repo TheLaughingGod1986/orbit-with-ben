@@ -278310,13 +278310,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-19T06:04Z",
-      "eta": "2026-11-19T08:04Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-19T05:47Z",
-      "result": "",
+      "result": "Acting-Chief ruling: condition NOT MET. Accepted Gemini REVIEW.md aa3e1e3267 after checking parent approval history, HOS657 rehearsal and fresh desk/thread/PR657 comments. No explicit protected-desk rewrite exception. J2537 remains blocked with last_recheck J3116 and next check 2026-11-19T11:55:00Z. Follow-up owner: elected Chief checks approval, resolves new PR658/659/660 and refreshes backup/rehearsal before day-before notice and frozen-writer cutover. No live rewrite, force-push, production approval or spend.",
       "history": [
         {
           "at": "2026-11-19T05:47Z",
@@ -278372,6 +278372,11 @@
           "at": "2026-11-19T06:04Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T06:04Z",
+          "by": "codex",
+          "what": "done: Acting-Chief ruling: condition NOT MET. Accepted Gemini REVIEW.md aa3e1e3267 after checking parent approval history, HOS657 rehearsal and fresh desk/thread/PR657 comments. No explicit protected-desk rewrite exception. J2537 remains blocked with last_recheck J3116 and next check 2026-11-19T11:55:00Z. Follow-up owner: elected Chief checks approval, resolves new PR658/659/660 and refreshes backup/rehearsal before day-before notice and frozen-writer cutover. No live rewrite, force-push, production approval or spend."
         }
       ],
       "remaining_action": "Elected Chief (codex): record jobs.py wait J2537 --recheck J3116 for 2026-11-19T11:55:00Z and close J3116",
