@@ -264448,10 +264448,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-19T20:33Z",
+      "eta": "2026-11-19T22:33Z",
       "created_by": "claude",
       "created_at": "2026-11-16T17:18Z",
       "result": "",
@@ -264465,12 +264465,25 @@
           "at": "2026-11-19T20:31Z",
           "by": "claude",
           "what": "Brief updated: the fix exists (commit fc3c4fc0); cherry-pick it onto a fresh branch, test, measure on the Mini, PR. needs cloud -> any, so a MacBook or Codex can take it."
+        },
+        {
+          "at": "2026-11-19T20:33Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Merge the fix and confirm the relay's refill runs small",
       "kind": "assembly",
       "plain": "Stop a background check on the Mac mini using several gigabytes of memory every minute",
-      "urgent": 6
+      "urgent": 6,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-19T20:33Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2952",
