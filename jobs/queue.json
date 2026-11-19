@@ -277391,13 +277391,13 @@
       "stage": "thumbs",
       "after": "J3087",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-19T03:22Z",
-      "eta": "2026-11-19T05:22Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-19T03:19Z",
-      "result": "",
+      "result": "Built A/B/C Pluto thumbnail drafts from verified NASA plates; phone review and thumb_preview score pass; nine files SHA-256 verified on NAS. Builder, source/output hashes and review in PR 1034 (da42c04997). Thumbnail stage REVIEW, not approved; J3106 owns final title/package, independent packaging panel and Chief decision. No spend or Studio changes; UAT and Shorts holds preserved.",
       "history": [
         {
           "at": "2026-11-19T03:19Z",
@@ -277428,6 +277428,11 @@
           "at": "2026-11-19T03:27Z",
           "by": "codex",
           "what": "step 3 of 3 done: Three drafts verified at phone size; numeric checks pass; nine NAS files hash-matched; review evidence in PR 1034"
+        },
+        {
+          "at": "2026-11-19T03:28Z",
+          "by": "codex",
+          "what": "done: Built A/B/C Pluto thumbnail drafts from verified NASA plates; phone review and thumb_preview score pass; nine files SHA-256 verified on NAS. Builder, source/output hashes and review in PR 1034 (da42c04997). Thumbnail stage REVIEW, not approved; J3106 owns final title/package, independent packaging panel and Chief decision. No spend or Studio changes; UAT and Shorts holds preserved."
         }
       ],
       "remaining_action": "J3106 prepares the final package and queues independent thumbnail critiques",
@@ -277443,7 +277448,8 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1034"
     },
     {
       "id": "J3106",
