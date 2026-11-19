@@ -279680,6 +279680,11 @@
           "at": "2026-11-19T21:05Z",
           "by": "relay",
           "what": "condition verification queued: J3167"
+        },
+        {
+          "at": "2026-11-19T22:18Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-20T03:10:00Z"
         }
       ],
       "remaining_action": "Obtain explicit approval for the rejected GitHub branch export, then open the Pluto packaging review PR without rebuilding",
@@ -279698,12 +279703,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J3140 Chief ruling: explicit authorization for the previously rejected export of codex/j3114-pluto-v02 to TheLaughingGod1986/orbit-with-ben is still absent through thread comment 7015059512. Clean build a12100797f preserved; 12/12 NAS artifact hashes independently rechecked. Automatic approval review rejected the export twice, including owner/admin evidence. Do not retry through another worker or route. Keep J3115 dependent on J3114; after actual approval export the preserved branch and open its review PR without rebuilding. Time alone never releases this hold.",
-        "check_at": "2026-11-19T22:05:38+00:00",
-        "last_recheck": "J3140",
-        "checked_at": "2026-11-19T16:26:18+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3167"
+        "condition": "J3167 Chief ruling: explicit authorization for the previously rejected export of codex/j3114-pluto-v02 to TheLaughingGod1986/orbit-with-ben remains absent through thread comment 7023704252. Reviewed Gemini evidence at 46697da7e3; independently confirmed clean a12100797f and 12/12 NAS artifact hashes. Automatic approval review rejected export twice; ownership/admin evidence was insufficient. Do not retry via another worker or route. Preserve J3115 dependency. After actual export approval, push the preserved branch and open its review PR without rebuilding. Time alone never releases the hold.",
+        "check_at": "2026-11-20T03:10:00Z",
+        "last_recheck": "J3167",
+        "checked_at": "2026-11-19T22:18:53+00:00",
+        "checked_by": "codex"
       },
       "escalated_at": "2026-11-19T11:45Z"
     },
