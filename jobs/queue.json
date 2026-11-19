@@ -283673,7 +283673,7 @@
     {
       "id": "J3166",
       "title": "HOS 009: harden music path and method handling offline",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Implement only the nonblocking follow-up from owner-authored HOS Chief ruling 7022139984, after PR675 exact d1f9e54549cef037c6551ec26b2990622a8742c3 lands. Clean isolated worktree, new small PR off main; Codex primary, Cursor backup. Add semicolon to unsafe path checks: /v1/text-to-speech/..;/music rejects. Address method normalization and noncanonical music methods as specified in the ruling: strip().upper(), reject PUT/PATCH/DELETE and spaced POST before urlopen with zero transport. Preserve canonical POST /v1/music on the disabled guarded flight (the ruling also preserves canonical music behavior; do not enable it or route it to legacy). Record exact behavior for each method and any ambiguity for independent reviewer/Chief. Add fixture zero-transport tests; rerun 23 flight, 11 guard, routing tests and check_all.sh; distinguish existing HOS008 schedule.past baseline. Update evidence hashes. Queue independent exact-commit Claude review (Gemini backup), excluding implementer, then elected-Chief disposition. No self-review. GBP 0: no account call, pricing rescan, generation, activation, deployment, merge, allowance, YouTube/Buffer changes, live lock/store changes. Activation literal False; durable reservation and pinned guard/shape safeguards preserved; PR678/679 review-only unmerged. J3047 closed unused, v01/v02 rejected, J2035/J2171 held; film/media/timing/gates unchanged. No replacement delivery promise.",
       "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-7022139984",
@@ -283693,12 +283693,25 @@
           "at": "2026-11-19T21:04Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-19T21:19Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Codex out of usage; next in its chain: gemini"
         }
       ],
       "remaining_action": "Make the bounded follow-up repair after the approved change lands",
       "kind": "assembly",
-      "model": "gpt-6.1-sol",
-      "plain": "Strengthen the remaining music request safeguards for the gravity film"
+      "model": "gemini-agy",
+      "plain": "Strengthen the remaining music request safeguards for the gravity film",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "gpt-6.1-sol",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini"
     },
     {
       "id": "J3167",
