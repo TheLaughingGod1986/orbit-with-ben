@@ -1,5 +1,5 @@
 {
-  "next_id": 3105,
+  "next_id": 3106,
   "jobs": [
     {
       "id": "J0001",
@@ -277363,6 +277363,36 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J3105",
+      "title": "034 Pluto: build three long thumbnail candidates",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J3103 workflow repair for OWB:034. Build three distinct Pluto long thumbnail candidates using existing verified NASA/New Horizons plates and code composition only; no paid generation or other credit spend. Read current studio/RULES.md, THUMBNAIL_AND_TITLE_RULES.md and LEARNINGS first. 08_Thumbnail currently contains only README; metadata_DRAFT_v01.json contains unapproved concepts, not locked designs. Do not follow its generic README tool suggestions. Check source IDs and scientific geometry; do not carry forward the imagined Charon-over-Sputnik scene without evidence. Preserve a single-real-image concept and the current required bright concept; no Orbit. Choose complementary hook text with the package title, respecting current search-led title rules. Verify phone readability at 168px and run thumb_preview --score for each. Keep provenance, exact hashes, builder and review sheets; media stays outside git with a durable NAS copy. Record drafts as review, not approved. No upload or Studio changes. Package preparation follows this job and must queue the independent packaging panel and Chief decision before approval. Preserve J2868 long UAT (8 Dec watch-by, 13 Dec slot) and J3065/J3066 public-parent holds.\n",
+      "ref": "J3103",
+      "film": "034",
+      "stage": "thumbs",
+      "after": "J3087",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-19T03:19Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T03:19Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build and check three Pluto thumbnail candidates from existing spacecraft images",
+      "due": "2026-12-08T18:00:00Z",
+      "kind": "thumb",
+      "plain": "Design three thumbnails for the Pluto film"
     }
   ],
   "focus": [
