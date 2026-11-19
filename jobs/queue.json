@@ -278142,13 +278142,13 @@
       "stage": "thumbs",
       "after": "J3112",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-19T05:37Z",
-      "eta": "2026-11-19T07:37Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-19T04:32Z",
-      "result": "",
+      "result": "FIX (reconciled 034 thumbs to J3112 Chief FIX ruling in jobs/reviews/J3113/REVIEW.md @ a1d3976297; verified NAS SHA-256 hashes for A/B/C v01 thumbs, phone sheet, master v02, and trailer; 034 thumbs kept in review with open rebuild successor J3114 -> final review J3115; J2868.1 UAT watch and J3066/J3065 public-parent holds preserved; £0)",
       "history": [
         {
           "at": "2026-11-19T04:32Z",
@@ -278189,6 +278189,11 @@
           "at": "2026-11-19T05:45Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Verified J3112 FIX ruling, exact NAS hashes, J3114/J3115 successors, and preserved UAT/Shorts holds (a1d3976297)"
+        },
+        {
+          "at": "2026-11-19T05:46Z",
+          "by": "gemini",
+          "what": "done: FIX (reconciled 034 thumbs to J3112 Chief FIX ruling in jobs/reviews/J3113/REVIEW.md @ a1d3976297; verified NAS SHA-256 hashes for A/B/C v01 thumbs, phone sheet, master v02, and trailer; 034 thumbs kept in review with open rebuild successor J3114 -> final review J3115; J2868.1 UAT watch and J3066/J3065 public-parent holds preserved; £0)"
         }
       ],
       "remaining_action": "Close J3113 with FIX reconciliation and post #99 report",
@@ -278213,7 +278218,8 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "done_ref": "a1d3976297"
     },
     {
       "id": "J3114",
