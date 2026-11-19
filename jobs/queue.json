@@ -277273,13 +277273,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-19T03:17Z",
-      "eta": "2026-11-19T05:17Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-19T01:55Z",
-      "result": "",
+      "result": "FIX recorded and handoff resolved: J3105 thumbnails after J3087, then J3106 long package and panel/Chief review. Workflow reconciliation reports no remaining 034 gap; existing edit QA, long UAT and Shorts public holds preserved. No spend or publishing changes.",
       "history": [
         {
           "at": "2026-11-19T01:55Z",
@@ -277310,6 +277310,11 @@
           "at": "2026-11-19T03:20Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified no remaining 034 handoff findings; successors and existing UAT/public holds read back; ruling committed at 0a2c06f859."
+        },
+        {
+          "at": "2026-11-19T03:20Z",
+          "by": "codex",
+          "what": "done: FIX recorded and handoff resolved: J3105 thumbnails after J3087, then J3106 long package and panel/Chief review. Workflow reconciliation reports no remaining 034 gap; existing edit QA, long UAT and Shorts public holds preserved. No spend or publishing changes."
         }
       ],
       "remaining_action": "Workflow repair complete; thumbnail and package successors own remaining work",
@@ -277329,7 +277334,8 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "done_ref": "0a2c06f859"
     },
     {
       "id": "J3104",
