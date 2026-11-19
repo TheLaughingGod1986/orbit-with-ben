@@ -277187,6 +277187,11 @@
           "at": "2026-11-19T17:05Z",
           "by": "codex",
           "what": "reopened: Acting-Chief review: J3096 already resolved the approval condition and J2845 is done; reopen only this stale verification for closure, preserving parent and running T037."
+        },
+        {
+          "at": "2026-11-19T17:05Z",
+          "by": "codex",
+          "what": "rerouted to codex: User assigned this one acting-Chief closure to codex; clear the old Gemini-only routing so the exact review can be claimed."
         }
       ],
       "remaining_action": "Awaiting elected Chief to record jobs.py wait J2845 --recheck J3089 and close J3089 (or reopen J2845 after J3096)",
@@ -277201,7 +277206,7 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
+      "for": "codex",
       "model": "gemini-argon",
       "taskKeys": [
         "OWB:005"
