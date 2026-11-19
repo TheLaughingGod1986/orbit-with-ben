@@ -1,5 +1,5 @@
 {
-  "next_id": 3176,
+  "next_id": 3177,
   "jobs": [
     {
       "id": "J0001",
@@ -284650,6 +284650,35 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J3176",
+      "title": "OWB 024 muon Short: decide whether to swap gc1hWQQJOq4 onto the v06 bed",
+      "needs": "any",
+      "repo": "owb",
+      "body": "J3136 built a £0 candidate for the muon Short. Review it and decide the swap. Do not upload or change privacy from this note alone if you want a separate publish job; the candidate is ready.\n\nScheduled video is gc1hWQQJOq4, Private, Sat 21 Nov 2026 11:30Z, still on v05 (sha256 1232cb5041f9aae09e51cbf3895136142e19af379331e2b93a8607d593b331b8). rvug71d7Dqk is the earlier id, already Private and unscheduled. Neither was touched.\n\nCandidate: fri06_muons_ground_v06.mp4 sha256 5c85e4430ccd035adb35532291cf5626a5b1d6a8684d8acda213b24c4c378eee\nBed: fri06_muons_ground_score_bed_v01.mp3 sha256 9c67eb4593e3800459af44b914a9344d07e8c1f569194bfe20b12312e7ba242a\nMax similarity vs 31 Orbit beds: 0.099 (v05 failed at 0.830 vs moon-leaving-part02).\nPicture frame CRC matches v05. Locked VO kept. Gates PASS. PR #1049. Evidence: jobs/reviews/J3136/REPORT.md on that branch. Media is on the shared working-film store for film 024.\nSpend: £0.\n",
+      "ref": "",
+      "film": "024",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-19T23:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T23:27Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review the v06 muon Short and decide the swap. The scheduled video stays as it is until you do.",
+      "kind": "chief",
+      "plain": "Decide whether the scheduled muon Short should use the new music"
     }
   ],
   "focus": [

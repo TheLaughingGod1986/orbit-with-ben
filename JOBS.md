@@ -64,6 +64,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3161 | mini | blocked | codex | – | studio · Supermoon Short: next-morning and full-day performance follow-up |  |
 | J3170 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
 | J3175 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2847 |  |
+| J3176 | any | open | – | – | 024 edit · chief · OWB 024 muon Short: decide whether to swap gc1hWQQJOq4 onto the v06 bed |  |
 
 Recently finished:
 
