@@ -65,7 +65,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3119 | mini | open (after J3115) | – | – | 034 upload · studio · Upload the Pluto long master v02 Private and scheduled for Sun 13 Dec 18:00, arm the thumbnail test |  |
 | J3124 | mini | blocked | cursor | – | 013 picture · for cursor · assembly · `cursor-grok-4-7` · HOS 013: add reconcile-session-block to the pass-1 runner | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6974259569 |
 | J3125 | mini | blocked | codex | – | studio · HOS Vaccine test: 24 Nov feed gate and conditional 29 Nov readout |  |
-| J3127 | mini | claimed | gemini | 2026-11-19T13:03Z | 013 picture · for gemini · assembly · `gemini-agy` · HOS 013: Gemini session-block reconciliation and guarded dry-run | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-7006319651 |
+| J3127 | mini | blocked | gemini | – | 013 picture · for gemini · assembly · `gemini-agy` · HOS 013: Gemini session-block reconciliation and guarded dry-run | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-7006319651 |
 
 Recently finished:
 
