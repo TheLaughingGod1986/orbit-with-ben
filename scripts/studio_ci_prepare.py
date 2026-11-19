@@ -43,7 +43,7 @@ def render(root, channel_sha, studio_repo):
     files = {}
     for name in WORKFLOWS:
         text = (root / '.github/workflows' / name).read_text()
-        if name in ('rules-check.yml', 'notes-check.yml'):
+        if name in ('rules-check.yml', 'notes-check.yml', 'content-ops.yml'):
             text = once(text, '\njobs:\n', '\nenv:\n  ' + env + ': ${{ github.workspace }}/.ci-channels/default\n\njobs:\n')
             checkout = ('      - name: Read pinned default-channel rules and records\n'
                         '        uses: actions/checkout@v4\n'
@@ -52,7 +52,8 @@ def render(root, channel_sha, studio_repo):
                         f'          ref: {channel_sha}\n'
                         '          path: .ci-channels/default\n'
                         '          persist-credentials: false\n')
-            text = once(text, '      - uses: actions/setup-python@v5\n', checkout + '      - uses: actions/setup-python@v5\n')
+            anchor = '      - uses: actions/setup-node@v4\n' if name == 'content-ops.yml' else '      - uses: actions/setup-python@v5\n'
+            text = once(text, anchor, checkout + anchor)
         if name == 'rules-check.yml':
             text = once(text, '      - if: steps.scope.outputs.rules == \'true\'\n        run: python3 scripts/studio.py status --check\n',
                         '      # No resident channel: STATUS.md is generated, not tracked.\n')

@@ -30,7 +30,7 @@ class Prepare(unittest.TestCase):
             "      - run: python3 scripts/sync_rules.py --check\n")
         put('.github/workflows/notes-check.yml', common)
         put('.github/workflows/core-check.yml', "if: github.repository == 'owner/channel'\n")
-        put('.github/workflows/content-ops.yml', 'steps: [npm ci, npm run typecheck, npm run lint, npm test]\n')
+        put('.github/workflows/content-ops.yml', common.replace('actions/setup-python@v5', 'actions/setup-node@v4') + '      - run: npm test\n')
         put('studio-core/CORE_FILES.json', json.dumps({'files': {
             '.github/workflows/core-check.yml': 'old-hash', 'unchanged.py': 'retained-hash'}}))
         self.sha = 'a' * 40
@@ -40,7 +40,7 @@ class Prepare(unittest.TestCase):
         before = [p.read_bytes() for p in paths]
         self.assertEqual(ci.prepare(self.root, self.out, self.sha, 'owner/engine'), 5)
         self.assertEqual([p.read_bytes() for p in paths], before)
-        for name in ('rules-check.yml', 'notes-check.yml'):
+        for name in ('rules-check.yml', 'notes-check.yml', 'content-ops.yml'):
             text = (self.out / '.github/workflows' / name).read_text()
             self.assertIn('ref: ' + self.sha, text)
             self.assertIn('persist-credentials: false', text)
@@ -50,7 +50,7 @@ class Prepare(unittest.TestCase):
         self.assertIn('run: python3 scripts/sync_rules.py --check', rules)
         self.assertIn('!jobs/**', rules)
         self.assertIn("github.repository == 'owner/engine'", (self.out / '.github/workflows/core-check.yml').read_text())
-        self.assertEqual((self.out / '.github/workflows/content-ops.yml').read_bytes(), before[3])
+        self.assertIn('run: npm test', (self.out / '.github/workflows/content-ops.yml').read_text())
         lock = json.loads((self.out / 'studio-core/CORE_FILES.json').read_text())
         old = json.loads((self.root / 'studio-core/CORE_FILES.json').read_text())
         for path, digest in lock['files'].items():
