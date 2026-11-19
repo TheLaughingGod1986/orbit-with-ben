@@ -284848,6 +284848,11 @@
           "at": "2026-11-19T23:49Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-19T23:51Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-20T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Review ten scenes in continuous playback and record recommendations for the Chief",
@@ -284855,7 +284860,16 @@
       "required_capabilities": [
         "moving_video_input"
       ],
-      "plain": "Watch the ten remaining Darwin and Wallace scenes for picture faults"
+      "plain": "Watch the ten remaining Darwin and Wallace scenes for picture faults",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
