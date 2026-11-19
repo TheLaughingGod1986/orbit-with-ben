@@ -58,3 +58,18 @@ python3 scripts/jobs.py done J3089 --agent chief \
   --result "Verified J2845 condition (jobs/reviews/J3089/REVIEW.md): NOT MET — predecessor J2844 completed with FIX on T037 (m09jUdwC5hk_B_v05.jpg lacked 2.A.5 character/scale reference) and blocked J2845; revision J3088 built m09jUdwC5hk_B_v06.jpg (sha256=7b0f6c44e870820881dba0309bf73ef0cc5601fef83cf080438a06648c9eb19f, PR #1031 open) and panel J3092-J3095 recommended KEEP (2/3 score 8/10 at 168x94, 3/3 click choice), but dependent Chief exact-file decision J3096 remains open. J2845 stays blocked with --type input --recheck J3089 (next check 2026-11-19T14:10:00Z) until J3096 issues exact-file PASS, updates J2845 to v06/T037, and authorizes the T018 successor test. £0." \
   --git
 ```
+
+
+## Acting-Chief closure — 19 November 2026
+
+Codex, elected acting Chief; authority rechecked in this session. The 08:10Z verification above was correct at the time but its proposed hold is now superseded by the recorded J3096 decision. Do not run its historical wait commands.
+
+Evidence checked: the full J3089/J2845/J3096 queue histories; J3096/REVIEW.md and T018_READBACK.txt; J2845/READBACK.md; T018 and T037 ledger entries; owner-authored studio-thread comments [J3096 ruling](https://github.com/TheLaughingGod1986/orbit-with-ben/issues/954#issuecomment-7007783273) and [J2845 completion](https://github.com/TheLaughingGod1986/orbit-with-ben/issues/954#issuecomment-7008089524).
+
+J3096 completed at 11:27Z with exact-file PASS for Saturn B_v06, SHA-256 7b0f6c44e870820881dba0309bf73ef0cc5601fef83cf080438a06648c9eb19f, merged PR #1031, updated the parent brief and explicitly authorized the thumbnail-only successor after a fresh matching finished-T018 read. J2845 subsequently completed at 11:42Z: the worker recorded that fresh read, matching hash and save/reload showing Test running. The ledger records T037 running from 19 November, unchanged live A and title. The worker noted no separate view-count line in the dialog; the earlier one-view figure remains historical evidence, not a newly observed number.
+
+Ruling: close J3089 as resolved by the later approval and completed execution. Preserve J2845 as done; do not reopen it or reattach its obsolete hold. This reconciles the existing decision rather than issuing another thumbnail approval. No Studio action or fresh live-state claim is made in this review.
+
+Follow-up: the existing recurring owb-weekly-thumb-audit owns read-only monitoring of T037, already in the running-test ledger. Leave it running until Studio reports completion, then record the actual watch-time shares (or unavailable), CTR/impressions where shown and maker verdict. Do not infer completion from its estimated two-week duration. No new external wait is needed for the completed parent or this verification, and no duplicate production task is warranted. Webb remains under its separate correction chain.
+
+No spend, media changes, YouTube changes or unrelated hold changes. This session demonstrated no audio or moving-video perception.
