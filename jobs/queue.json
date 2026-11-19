@@ -1,5 +1,5 @@
 {
-  "next_id": 3168,
+  "next_id": 3169,
   "jobs": [
     {
       "id": "J0001",
@@ -283837,6 +283837,36 @@
       "taskKeys": [
         "OWB:034"
       ]
+    },
+    {
+      "id": "J3168",
+      "title": "HOS 009: independent exact-commit review of PR 680 path/method hardening",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Independent exact-commit review of HOS PR #680 at `7b87f15ebf6b1a74e7c1eb5df1c5b26fa9e74321` (branch `gemini/J3166-harden-music-path-method`, off `origin/main` `327c220d306632f79e6d7d9c15b6618415df9601` after PR 675 `d1f9e54549cef037c6551ec26b2990622a8742c3` merged).\n\nReviewer independence: `gemini` implemented J3166 and is strictly excluded from reviewing PR #680 (no self-review). This job is pinned to `claude` (primary reviewer per HOS Chief ruling 7022139984; `chief_relay.py status` reports Claude resets at 2026-11-19T21:50:00Z). An authorized dispatcher may repin to `claudecode` (`mini-claude-opus-5-5`) or `codex` if needed, but NEVER to `gemini`.\n\nRead `jobs/reviews/J3166/HARDENING_EVIDENCE.md`, `jobs/reviews/J3166/HASHES.txt`, `jobs/reviews/J3150/HASHES.txt`, `04_Audio/tools/el_guard.py`, `04_Audio/tools/el_client.py`, `04_Audio/tools/test_el_guard.py`, and `jobs/reviews/J3166/test_path_method_hardening.py` against HOS Chief ruling 7022139984 and Claude review 7022125897.\n\nVerify offline using fixture desks only (zero transport):\n1. Semicolon added to `el_guard.path_is_unsafe`: `/v1/text-to-speech/..;/music` and other semicolon paths return `reject` on both `request` and `multipart_post` and fail closed (`True`) in `el_guard.is_spend` for non-GET methods.\n2. Method normalization (`strip().upper()`) and noncanonical music method rejection: `PUT`, `PATCH`, `DELETE`, `HEAD`, `OPTIONS`, spaced `\" POST\"`, `\"POST \"`, `\"\\tPOST\"`, `\" GET\"`, empty, non-`str`, and `str` subclasses raise `GuardRefused(\"malformed_request\")` before `from_client`, before `el_guard.before_spend`, and before `urllib.request.urlopen` (zero transport, no flight, no guard bypass) and return `True` in `el_guard.is_spend`.\n3. Canonical `POST /v1/music` (empty query or `output_format=mp3_44100_128`) stays on the disabled guarded flight (`ACTIVATION_AUTHORIZED = False`, raises `activation_closed`, zero transport, not enabled and not routed to legacy).\n4. Evaluate the two explicitly recorded ambiguities in `HARDENING_EVIDENCE.md`: (a) clean lowercase `\"post\"` on `/v1/music` routed to disabled flight via `strip().upper()`, and (b) clean `\"GET\"` on `/v1/music` not refused per ruling wording (\"other than GET\"). Recommend PASS or FIX (with exact tightening if desired).\n5. Rerun 23 flight tests (`jobs/reviews/J3150/test_score_flight.py`), 11 guard tests (`04_Audio/tools/test_el_guard.py`), 5 J3162 routing tests (`jobs/reviews/J3162/test_routing_types.py`), 4 J3166 hardening test groups (`jobs/reviews/J3166/test_path_method_hardening.py`), and `check_all.sh` (distinguishing pre-existing HOS 008 `schedule.past` baseline; `package-lint --film 009` PASS). Verify SHA-256 hashes match `7b87f15e`, `ACTIVATION_AUTHORIZED` is literal `False`, and durable reservation + pinned guard/shape hashes (`930d987783...`, `ba290b6474...`) are unchanged.\n\nPost exact-commit PASS/FIX recommendation on HOS desk #180 (reviewer recommendation only; not a Chief ruling, not a merge). Elected-Chief disposition follows in the chained Chief job.\n\nGBP 0: no account call, no pricing rescan, no generation, no activation, no deployment, no merge, no allowance, no YouTube/Buffer changes, no live lock/store changes. PR 678/679 stay review-only unmerged; J3047 closed unused; v01/v02 rejected; J2035/J2171 held; film/media/timing/gates unchanged.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/680",
+      "film": "009",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-19T21:30Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T21:30Z",
+          "by": "gemini",
+          "what": "added for claude"
+        }
+      ],
+      "remaining_action": "Independently review HOS PR 680 exact commit 7b87f15e (excluding implementer gemini) and post PASS/FIX recommendation",
+      "for": "claude",
+      "kind": "review",
+      "plain": "Independent review of offline music path semicolon and method hardening PR 680"
     }
   ],
   "focus": [
