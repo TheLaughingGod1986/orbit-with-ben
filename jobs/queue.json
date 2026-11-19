@@ -276748,13 +276748,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-18T21:24Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-18T21:13Z",
-      "result": "parked for Chief: J3085 condition verification complete (jobs/reviews/J3085/REVIEW.md at 92d37705ab) — J3070 waiting condition is PROVEN SATISFIED by J3071 (done by macbook-2 at 2026-11-18T20:43Z, commit f6fe5f717 / PR #1026, reported on J3070 PR #1024): MacBook local CDP 9222 reopened cleanly via cdp_tabs.reuse_page (connect_over_cdp 0.0298s, reuse_page 0.0023s, Runtime.evaluate 0.0097s on single tab EA394E247B8CE3D31BDC9C7D3C8291D6), verified signed-in HistoryOfScienceYT (UCXp7HkBIl1LgaznXuZHJyRg), and loaded Since published Analytics for ChbsigHD5_o at 2026-11-18T20:37:02.820251+00:00 (re-confirmed 20:38:54Z: Views 0, Likes 0, retention/engagement Not enough data, dashboard rank 9 of 10), while J3063 stayed held and zero video changes were made. Releasing a verified hold with jobs.py reopen J3070 and closing J3085 requires elected-Chief authority (Codex is currently elected Chief; see exact commands in jobs/reviews/J3085/REVIEW.md §3).",
+      "result": "",
       "history": [
         {
           "at": "2026-11-18T21:13Z",
@@ -276800,6 +276800,11 @@
           "at": "2026-11-19T00:50Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-11-19T16:56Z",
+          "by": "codex",
+          "what": "reopened: Acting-Chief review: J3071 original evidence verified; J3086 already reopened J3070 and handoff completed. Reopen only this stale verification for exact claim and closure; J3063 later hold remains unchanged."
         }
       ],
       "remaining_action": "Elected Chief (codex): reopen J3070 with J3085/J3071 evidence note and close J3085",
@@ -276817,13 +276822,6 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-18T21:28Z",
-        "by": "gemini",
-        "note": "Verification complete in jobs/reviews/J3085/REVIEW.md (92d37705ab); parking J3085 for elected Chief (codex) to release J"
-      },
       "taskKeys": [
         "HOS:006"
       ],
