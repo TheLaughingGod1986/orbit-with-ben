@@ -280732,13 +280732,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-19T12:13Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-19T12:00Z",
-      "result": "parked for Chief: J3134 condition verification complete (jobs/reviews/J3134/REVIEW.md @ 8d80952655) — J2537 waiting condition remains NOT MET: checked all comments on HOS desk PR #180 (51 comments since 18 Nov 23:00Z thru 7008471063 at 2026-11-19T12:00:34Z), OWB studio thread #954 (139 comments since 18 Nov 23:00Z thru 7008717159 at 2026-11-19T12:11:31Z; last Ben comment 6993227499 at 2026-11-18T22:16:39Z on OWB 034 Pluto), and merged HOS PR #657 (0 comments/reviews); no explicit one-time exception from Ben for rewriting protected hos-desk history while keeping PR #180 open has been posted. Stage 3 private rehearsal artifacts (jobs/reviews/J2537/* at ae6ad0c1 on HOS origin/main 19a664dd) and pre-rewrite backup bundles on NAS (/Volumes/data/mac-mini-archive/repo-backups/J2537-20261118/hos-before-rewrite.bundle, SHA-256 d88b84f26218eb4b2c7a667380c14d495ee169de5401543eb5b64f2d882a1914) and Mini (/Volumes/MiniWork/scratch/j2537-backup-20261118/ and j2537-rehearsal-20261118/) remain verified intact. Recorded ref/PR delta since rehearsal and J3116: HOS origin/main is now 19a664dd, origin/hos-desk is 765f7508 (+4 desk image commits), and 5 non-desk HOS PRs are open (#658, #659, #660, #661, #665) for pre-window resolution and rehearsal refresh once Ben's disposition arrives. Because scripts/jobs.py restricts jobs.py wait J2537 --recheck J3134 and closing J3134 to the job holder or elected Chief (codex), exact 2-line Chief commands are in jobs/reviews/J3134/REVIEW.md §3 (next check 2026-11-19T18:15:00Z). £0.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-19T12:00Z",
@@ -280779,6 +280779,11 @@
           "at": "2026-11-19T12:17Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3134 condition verification complete (jobs/reviews/J3134/REVIEW.md @ 8d80952655) — J2537 waiting condition remains NOT MET: checked all comments on HOS desk PR #180 (51 comments since 18 Nov 23:00Z thru 7008471063 at 2026-11-19T12:00:34Z), OWB studio thread #954 (139 comments since 18 Nov 23:00Z thru 7008717159 at 2026-11-19T12:11:31Z; last Ben comment 6993227499 at 2026-11-18T22:16:39Z on OWB 034 Pluto), and merged HOS PR #657 (0 comments/reviews); no explicit one-time exception from Ben for rewriting protected hos-desk history while keeping PR #180 open has been posted. Stage 3 private rehearsal artifacts (jobs/reviews/J2537/* at ae6ad0c1 on HOS origin/main 19a664dd) and pre-rewrite backup bundles on NAS (/Volumes/data/mac-mini-archive/repo-backups/J2537-20261118/hos-before-rewrite.bundle, SHA-256 d88b84f26218eb4b2c7a667380c14d495ee169de5401543eb5b64f2d882a1914) and Mini (/Volumes/MiniWork/scratch/j2537-backup-20261118/ and j2537-rehearsal-20261118/) remain verified intact. Recorded ref/PR delta since rehearsal and J3116: HOS origin/main is now 19a664dd, origin/hos-desk is 765f7508 (+4 desk image commits), and 5 non-desk HOS PRs are open (#658, #659, #660, #661, #665) for pre-window resolution and rehearsal refresh once Ben's disposition arrives. Because scripts/jobs.py restricts jobs.py wait J2537 --recheck J3134 and closing J3134 to the job holder or elected Chief (codex), exact 2-line Chief commands are in jobs/reviews/J3134/REVIEW.md §3 (next check 2026-11-19T18:15:00Z). £0."
+        },
+        {
+          "at": "2026-11-19T14:37Z",
+          "by": "codex",
+          "what": "reopened: Acting Chief reviewed evidence and recorded J2537 hold; reopening verification solely to close with ruling."
         }
       ],
       "remaining_action": "Elected Chief (codex): record jobs.py wait J2537 --recheck J3134 for 2026-11-19T18:15:00Z and close J3134",
@@ -280795,13 +280800,6 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-19T12:17Z",
-        "by": "gemini",
-        "note": "All verification steps complete (8d80952655); parking J3134 for elected Chief"
-      },
       "taskKeys": [
         "HOS:005",
         "HOS:008",
