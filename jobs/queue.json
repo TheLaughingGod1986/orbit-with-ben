@@ -278005,10 +278005,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-19T11:16Z",
+      "eta": "2026-11-19T12:16Z",
       "created_by": "refill",
       "created_at": "2026-11-19T02:56Z",
       "result": "parked for Chief: J3104 QA sweep complete across OWB (53a692b5cb) and HOS PR #662 (403883d1) with byte-identical J3104_QA_SWEEP_INVENTORY_2026-11-19.json (sha256 080b5279cafc7ebef16a8b82e4de5515fa54360f7bd67922445c872bea014ebd) and J3104_QA_SWEEP_REPORT_2026-11-19.md (sha256 33d1bfc4f3c968d068adbe91b9d5d75d1ef7877b4f5a940b108441fff06a511d). 266 entries inventoried (167 OWB + 99 HOS; 445 enumerated media files = 403 directly hashed unwrapped + 41 NAS tar + 1 manifest-backed iCloud stub; 11 net new post-J2921 exports/packs across OWB:033, OWB:034, HOS:008, HOS:010, HOS:013). All 776/776 applicable picture_qa/polish_gate/music_gate sidecars (749 JSON + 27 .txt) present, fresh vs media, and reconciled 1-to-1 against raw sidecars on disk with 0 mismatches; 0 unaddressed current_newest FAILs across all 157 newest candidates (all 27 gate_failure_indicators belong strictly to 8 historical_superseded cuts whose current_newest replacements pass all 3 gates with 0 FAIL); 0 new repair jobs required. Spend: £0.",
@@ -278067,6 +278067,11 @@
           "at": "2026-11-19T11:16Z",
           "by": "codex",
           "what": "rerouted to codex on gpt-6-astra: Acting-Chief ruling recorded in 34ba377a09; administrative closure only, worker QA complete. J3128 owns music coverage follow-up."
+        },
+        {
+          "at": "2026-11-19T11:16Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for Chief review and HOS PR #662 merge",
