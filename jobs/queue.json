@@ -282767,13 +282767,13 @@
       "stage": "edit",
       "after": "J3154",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-19T18:41Z",
-      "eta": "2026-11-19T20:41Z",
+      "eta": "",
       "created_by": "macbook-2",
       "created_at": "2026-11-19T18:12Z",
-      "result": "",
+      "result": "FIX: independent review recorded in HOS PR 678, commit e93bf01e. Routing still bypasses disabled flight for string subclasses or unsupported query types (six mocked POSTs). Reservation repair verified. Elected-Chief follow-up owns disposition; all production holds remain.",
       "history": [
         {
           "at": "2026-11-19T18:12Z",
@@ -282804,6 +282804,11 @@
           "at": "2026-11-19T18:46Z",
           "by": "codex",
           "what": "step 3 of 3 done: Review and six-call offline bypass reproduction committed in HOS PR 678; reservation repair verified; no activation or spend"
+        },
+        {
+          "at": "2026-11-19T18:46Z",
+          "by": "codex",
+          "what": "done: FIX: independent review recorded in HOS PR 678, commit e93bf01e. Routing still bypasses disabled flight for string subclasses or unsupported query types (six mocked POSTs). Reservation repair verified. Elected-Chief follow-up owns disposition; all production holds remain."
         }
       ],
       "remaining_action": "Chief to decide the recorded FIX review and route the remaining repair",
@@ -282820,7 +282825,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/678"
     },
     {
       "id": "J3159",
