@@ -66,7 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3101 | mini | open | – | – | 120 topic · for gemini · review · `gemini-argon` · HOS 120 Why Do We Cry?: rule-E topic go/no-go review | 90339622 |
 | J3102 | mini | open | – | – | 121 topic · for gemini · review · `gemini-argon` · HOS 121 Why Do Cats Purr?: rule-E topic go/no-go review | 90339622 |
 | J3104 | mini | open | – | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J3109 | mini | open | – | – | for gemini · review · Packaging panel (gemini): Pluto 034 long upload package and J3105 thumbnail candidates A/B/C |  |
+| J3109 | mini | claimed | gemini | 2026-11-19T05:28Z | for gemini · review · Packaging panel (gemini): Pluto 034 long upload package and J3105 thumbnail candidates A/B/C |  |
 | J3111 | mini | open (after J3110) | – | – | for gemini · review · `gemini-argon` · Packaging panel decision: Pluto 034 long upload package and J3105 thumbnail candidates A/B/C |  |
 | J3112 | mini | open (after J3111) | – | – | 034 upload · chief · 034 Pluto: Chief packaging decision and delivery handoff (after J3108-J3111) | J3103,J3105,J3106,J3107,J3108,J3109,J3110,J3111,J2868,J3087 |
 | J3113 | mini | open (after J3112) | – | – | 034 thumbs · for gemini · review · `gemini-argon` · 034 Pluto: reconcile thumbnail stage to final packaging ruling | J3107,J3105,J3106,J3108,J3109,J3110,J3111,J3112 |
