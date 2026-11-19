@@ -1,5 +1,5 @@
 {
-  "next_id": 3112,
+  "next_id": 3113,
   "jobs": [
     {
       "id": "J0001",
@@ -277684,6 +277684,35 @@
       ],
       "remaining_action": "Packaging panel decision: Pluto 034 long upload package and J3105 thumbnail candidates A/B/C",
       "kind": "review"
+    },
+    {
+      "id": "J3112",
+      "title": "034 Pluto: Chief packaging decision and delivery handoff (after J3108-J3111)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief packaging decision and stage ruling for `OWB:034` (*Why Pluto's Frozen Heart Has Zero Craters*) after `J3105` thumbnail candidates, `J3106` upload package (`de93b3f4be`), and the `owb-034-pluto-j3106` packaging panel (`J3108` Codex, `J3109` Gemini, `J3110` Cursor, and `J3111` synthesis `DECISION.md`).\n\n1. Read `05_Analytics/tests/panels/owb-034-pluto-j3106/{codex.md,gemini.md,cursor.md,DECISION.md}`, `02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/08_Thumbnail/{REVIEW_J3105_v01.md,MANIFEST_J3105_v01.json}`, `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/08_Thumbnail/J3105_v01/{034_pluto_A_j3105_v01.jpg,034_pluto_B_j3105_v01.jpg,034_pluto_C_j3105_v01.jpg,phone_review.jpg}`, and `02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/11_Upload-Package/{PACKAGE_MANIFEST.json,metadata_DRAFT_v01.json,Descriptions/pluto_frozen_heart_long_description_v01.txt,Titles/pluto_frozen_heart_titles_v01.txt,Chapters/pluto_frozen_heart_chapters_v02.txt}`.\n2. Verify the exact reviewed Long Master `v02` SHA-256 (`e5a886dfef208774cce8ae987e658fba5d7a96cbb5c99a44aadf63516949ba62`, `646.933 s`, `J2868`/`J3087` `KEEP`) and Trailer SHA-256 (`01701660d2fcc3a1340fa8d6ffef2f8d1a96b87e049facf1d28905c4a05392fd`, `52.500 s`).\n3. Rule `PASS` or `FIX` on both `034 thumbs` (`J3105` / `J3107`) and `034 upload` (`J3106`):\n   - Lock the final primary title and Test & Compare title/thumbnail arms in `11_Upload-Package/PACKAGE_MANIFEST.json` (or queue a specific rebuild if `FIX`).\n   - Do NOT treat `J3106` package preparation or `J2868`/`J3087` internal edit QA as Ben approval.\n   - Arrange the later YouTube Private delivery handoff only under the existing Ben UAT approval gate on `J2868` (`J2868.1`, watch-by `8 Dec 2026 18:00 London` for the planned `Sun 13 Dec 2026 18:00 London` air slot, `2026-12-13T18:00:00.000Z`).\n   - Preserve `J3066` (Short 1 `v02`, Mon 21 Dec 11:30 London) and `J3065` (Short 2 `v02`, Wed 23 Dec 11:30 London) public-parent holds until the `034` Pluto long is public.\n   - £0 spend; no live upload or visibility change without Ben's `J2868` UAT OK.\n",
+      "ref": "J3103,J3105,J3106,J3107,J3108,J3109,J3110,J3111,J2868,J3087",
+      "film": "034",
+      "stage": "upload",
+      "after": "J3111",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-19T04:09Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T04:09Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief rules on 034 thumbs and upload package after packaging panel J3108-J3111 and sets Ben-gated delivery handoff",
+      "kind": "chief",
+      "plain": "Chief decides final Pluto title, thumbnails, and upload package after the 3-model critique panel"
     }
   ],
   "focus": [
