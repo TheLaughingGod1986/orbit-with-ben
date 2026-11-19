@@ -66,6 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3097 | mini | claimed | macbook-2 | 2026-11-19T02:55Z | for gemini · script · `gemini-argon` · HOS: learn from our data, add two new films to the backlog |  |
 | J3099 | any | blocked | macbook-2 | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J3100 | mini | open | – | – | 082 topic · review · Rule-E topic go/no-go review: OWB 082 (Every Type of Star Explained in 10 Minutes) and 083 (How Was the Moon Formed) from J3091 | 6eee2c8c3 |
+| J3101 | mini | open | – | – | 120 topic · review · HOS 120 Why Do We Cry?: rule-E topic go/no-go review | 90339622 |
 
 Recently finished:
 
