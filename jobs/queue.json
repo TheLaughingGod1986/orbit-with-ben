@@ -271649,18 +271649,23 @@
           "at": "2026-11-19T23:54Z",
           "by": "codex",
           "what": "step 3 of 4 done: Restored existing 3/4 plan after reading full history. PR 1011 and rehearsal already exist; current PR conflicts with main. Six corrected daily zeros through 19 November."
+        },
+        {
+          "at": "2026-11-19T23:59Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Resolved PR 1011 conflicts with current main; added fail-closed test-process checks. Targeted split/queue/analytics/ratchet/security tests pass. Isolated split has zero counts; explicit subprocess verification is running."
         }
       ],
-      "remaining_action": "Resolve migration branch conflicts and verify the remaining cutover work",
+      "remaining_action": "Verify and publish the migration integration, then finish remaining timer and cutover checks",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-19T23:54Z",
+        "at": "2026-11-19T23:59Z",
         "by": "codex",
-        "note": "Restored existing 3/4 plan after reading full history. PR 1011 and rehearsal already exist; current PR conflicts with ma"
+        "note": "Resolved PR 1011 conflicts with current main; added fail-closed test-process checks. Targeted split/queue/analytics/ratc"
       }
     },
     {
