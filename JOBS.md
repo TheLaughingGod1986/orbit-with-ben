@@ -66,6 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3161 | mini | blocked | codex | – | studio · Supermoon Short: next-morning and full-day performance follow-up |  |
 | J3170 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
 | J3171 | any | claimed | cursor | 2026-11-20T00:35Z | 009 edit · assembly · `gpt-6.1-sol` · HOS 009: restrict non-spend methods and reject GET bodies offline | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-7022847995 |
+| J3172 | any | open (after J3171) | – | – | 009 edit · for claude · review · `claude-opus-5-5` · HOS 009: independent exact-commit review of PR 681 non-spend GET-only | https://github.com/TheLaughingGod1986/history-of-science/pull/681 |
 
 Recently finished:
 
