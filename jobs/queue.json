@@ -1,5 +1,5 @@
 {
-  "next_id": 3171,
+  "next_id": 3172,
   "jobs": [
     {
       "id": "J0001",
@@ -284194,6 +284194,36 @@
       "taskKeys": [
         "HOS:013"
       ]
+    },
+    {
+      "id": "J3171",
+      "title": "HOS 009: restrict non-spend methods and reject GET bodies offline",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Implement the nonblocking follow-up authorized by owner-authored HOS Chief ruling 7022847995 and confirmed in 7022947212, now reconciled by acting Chief codex in J3169. PR 680 exact head 7b87f15ebf6b1a74e7c1eb5df1c5b26fa9e74321 merged at f13cb7aed8a596806bb7fab527b0cb9e643c362b. Create one small PR from current main in an isolated clean worktree. Codex primary, Cursor backup; no self-review.\n\n1. Make allow-listed non-spend paths (/v1/user/subscription and history) GET-only. Refuse PATCH/PUT/POST/DELETE (and other non-GET methods) with malformed_request before urlopen.\n2. Refuse GET carrying a body on any path before urlopen.\n3. Add fixture zero-socket regression tests for both, retain legitimate bodyless GET and guarded speech behavior, rerun 23 flight, 11 guard, 5 routing and J3166 hardening tests plus check_all.sh. Distinguish the existing HOS008 schedule.past baseline; package-lint --film 009 must pass. Update evidence hashes.\n4. Queue independent exact-commit Claude review (Gemini backup, excluding whoever implements), followed by elected-Chief disposition. No self-merge.\n\nThe original ruling called this follow-up J3170, but that ID actually belongs to an unrelated J2529 condition verification. This newly allocated job is the authoritative follow-up; do not alter J3170.\n\nOFFLINE ONLY, GBP 0. No account call, pricing rescan, generation, activation, deployment, allowance, YouTube/Buffer changes or live lock/store edits. ACTIVATION_AUTHORIZED stays literal False; durable reservation and pinned guard/shape hashes 930d987783... and ba290b6474... stay unchanged. PR678/679 remain review-only unmerged. J3047 closed unused; v01/v02 rejected; J2035/J2171 held; film/media/timing/gates unchanged. No replacement delivery promise.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-7022847995",
+      "film": "009",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-19T22:32Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T22:32Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Implement and independently review the remaining offline request safeguards",
+      "kind": "assembly",
+      "model": "gpt-6.1-sol",
+      "plain": "Tighten the remaining audio request safeguards for the gravity film"
     }
   ],
   "focus": [
