@@ -280186,8 +280186,8 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-11-19T09:37Z",
       "eta": "",
       "created_by": "chief",
@@ -280243,6 +280243,11 @@
           "at": "2026-11-19T18:01Z",
           "by": "relay",
           "what": "condition verification queued: J3157"
+        },
+        {
+          "at": "2026-11-19T18:18Z",
+          "by": "chief",
+          "what": "cancelled: Work is finished, not abandoned. PR 663 is on history-of-science main at 5cd6d4ff and J3127 posted the three ledger lines. Nothing left to build. Do not add the command again."
         }
       ],
       "remaining_action": "Await J3127: Gemini closes the one blocked charge and posts the guarded dry-run; code review is settled",
