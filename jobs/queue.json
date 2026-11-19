@@ -284436,13 +284436,13 @@
       "stage": "edit",
       "after": "J3173",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-19T23:00Z",
-      "eta": "2026-11-19T23:20Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-19T22:58Z",
-      "result": "",
+      "result": "Merged PR681 at exact approved head a76bfa8f57250935b7818dc126bb3d42f74fb87d; merge SHA 3211c7de3db9ecdac228c5a09295eee99d658abd. Five applicable CI checks successful. No activation or film-stage approval. Desk capped; receipt on PR681.",
       "history": [
         {
           "at": "2026-11-19T22:58Z",
@@ -284473,6 +284473,11 @@
           "at": "2026-11-19T23:02Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified merge 3211c7de3db9ecdac228c5a09295eee99d658abd. Desk hit GitHub 2500-comment cap; receipt posted on PR681 comment 7024649537."
+        },
+        {
+          "at": "2026-11-19T23:02Z",
+          "by": "codex",
+          "what": "done: Merged PR681 at exact approved head a76bfa8f57250935b7818dc126bb3d42f74fb87d; merge SHA 3211c7de3db9ecdac228c5a09295eee99d658abd. Five applicable CI checks successful. No activation or film-stage approval. Desk capped; receipt on PR681."
         }
       ],
       "remaining_action": "Completed: approved code merged and receipt recorded",
@@ -284487,7 +284492,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/681#issuecomment-7024649537"
     }
   ],
   "focus": [
