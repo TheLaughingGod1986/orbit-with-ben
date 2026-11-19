@@ -280549,6 +280549,11 @@
           "at": "2026-11-19T14:29Z",
           "by": "relay",
           "what": "condition verification queued: J3138"
+        },
+        {
+          "at": "2026-11-19T17:21Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Chief review of J3128 music comparison reconciliation (OWB 9d166bd6f9 + HOS PR #666 c77b31b1) and queued £0 repair jobs J3136/J3137",
@@ -280600,7 +280605,8 @@
         "condition": "Required predecessor is complete; verify remaining gates and approvals",
         "check_at": "2026-11-19T15:29:06+00:00",
         "recheck_task": "J3138"
-      }
+      },
+      "escalated_at": "2026-11-19T17:21Z"
     },
     {
       "id": "J3129",
