@@ -59,7 +59,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3075 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2996 |  |
 | J3085 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3070 |  |
 | J3087 | mini | open (after J3062) | – | – | 034 edit · for gemini · review · `gemini-argon` · 034 Pluto: resolve incomplete music-library comparison before closing edit review | J2868,J3062 |
-| J3088 | any | open | – | – | thumb · Revise Saturn and JWST weekly audit thumbnails after Chief review | J2844 |
+| J3088 | any | claimed | macbook | 2026-11-19T02:15Z | thumb · Revise Saturn and JWST weekly audit thumbnails after Chief review | J2844 |
 | J3089 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2845 |  |
 | J3090 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2847 |  |
 
