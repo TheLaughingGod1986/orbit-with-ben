@@ -56,7 +56,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3115 | mini | open (after J3114) | – | – | 034 upload · chief · 034 Pluto: final packaging review after J3114 fixes and Ben-gated delivery handoff | J3112,J3114,J2868 |
 | J3119 | mini | open (after J3115) | – | – | 034 upload · studio · Upload the Pluto long master v02 Private and scheduled for Sun 13 Dec 18:00, arm the thumbnail test |  |
 | J3125 | mini | blocked | codex | – | studio · HOS Vaccine test: 24 Nov feed gate and conditional 29 Nov readout |  |
-| J3128 | mini | open (after J3104) | – | – | for gemini · qa · `gemini-argon` · J3104: reconcile unreadable music comparison inputs |  |
+| J3128 | mini | open (after J3104) | – | – | for codex · qa · `gemini-argon` · J3104: reconcile unreadable music comparison inputs |  |
 | J3129 | mini | blocked | codex | – | 004 thumbs · thumb · Fix Webb thumbnail hook and identify the distant galaxy | J3096 |
 | J3135 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3129 |  |
 | J3136 | mini | open (after J3128) | – | – | 024 edit · assembly · OWB 024 Short fri06_muons_ground: no-spend music_gate repair against archived OWB 013 bed (£0) |  |
