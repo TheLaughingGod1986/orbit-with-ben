@@ -283091,13 +283091,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-19T20:13Z",
-      "eta": "2026-11-19T22:13Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-19T18:16Z",
-      "result": "",
+      "result": "Acting Chief accepts NOT YET MET in REVIEW.md (5ca8a45536), corroborated by Grok desk 7018109147. Fresh HOS180 through 7020824090, OWB954 through 7020891341 and HOS657 reads at 20:12 UTC found no exception. Parent J2537 remains blocked; wait --recheck J3160 recorded in 11195ed8aa, next check 2026-11-20T00:15:00Z. After authorization: resolve non-desk PRs, refresh backup/rehearsal, announce day-before window and hold writers. No live rewrite or spend.",
       "history": [
         {
           "at": "2026-11-19T18:16Z",
@@ -283153,6 +283153,11 @@
           "at": "2026-11-19T20:13Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T20:13Z",
+          "by": "codex",
+          "what": "done: Acting Chief accepts NOT YET MET in REVIEW.md (5ca8a45536), corroborated by Grok desk 7018109147. Fresh HOS180 through 7020824090, OWB954 through 7020891341 and HOS657 reads at 20:12 UTC found no exception. Parent J2537 remains blocked; wait --recheck J3160 recorded in 11195ed8aa, next check 2026-11-20T00:15:00Z. After authorization: resolve non-desk PRs, refresh backup/rehearsal, announce day-before window and hold writers. No live rewrite or spend."
         }
       ],
       "remaining_action": "Elected Chief (chief): record jobs.py wait J2537 --recheck J3160 for 2026-11-20T00:15:00Z and close J3160",
