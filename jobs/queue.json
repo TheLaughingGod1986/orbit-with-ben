@@ -276716,9 +276716,14 @@
           "at": "2026-11-19T08:14Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T08:15Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3090; starting verification of J2847 waiting condition"
         }
       ],
-      "remaining_action": "Verify readiness: Wait for revised thumbnail and exact-file approval from the J3088 review",
+      "remaining_action": "Inspect J2847 waiting condition, J2844 ruling, and J3088 status",
       "kind": "review",
       "recheck_of": "J2847",
       "due": "2026-11-19T01:16:35+00:00",
@@ -276735,11 +276740,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-19T08:14Z",
+        "at": "2026-11-19T08:15Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3090; starting verification of J2847 waiting condition"
+      },
+      "taskKeys": [
+        "OWB:004"
+      ]
     },
     {
       "id": "J3091",
