@@ -58,7 +58,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3075 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2996 |  |
 | J3085 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3070 |  |
 | J3089 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2845 |  |
-| J3090 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2847 |  |
+| J3090 | mini | claimed | gemini | 2026-11-19T10:14Z | for gemini · review · `gemini-argon` · Verify condition for J2847 |  |
 | J3096 | any | open (after J3095) | – | – | chief · Chief exact-file decision on revised Saturn and JWST thumbnail tests | J3088 |
 | J3099 | any | blocked | macbook-2 | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J3104 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
