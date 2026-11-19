@@ -284282,13 +284282,13 @@
       "stage": "edit",
       "after": "J3171",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-19T22:44Z",
-      "eta": "2026-11-20T00:44Z",
+      "eta": "",
       "created_by": "cursor",
       "created_at": "2026-11-19T22:42Z",
-      "result": "",
+      "result": "KEEP: independent exact-commit review of HOS PR #681 at a76bfa8f57250935b7818dc126bb3d42f74fb87d (off main f13cb7ae) by named backup reviewer gemini (zero self-review; implementer cursor excluded) recorded in jobs/reviews/J3172/REVIEW.md (OWB main + HOS branch gemini/J3172-review b6e4c0dd) and posted on HOS PR #681 (HOS desk PR #180 reached GitHub's 2500-comment GraphQL addComment cap). Verified offline with fixture desks and zero transport: (1) /v1/user/subscription and /v1/history refuse PATCH/PUT/POST/DELETE and all non-GET methods with malformed_request before urlopen on request and multipart_post; (2) GET carrying any body is refused on every path before urlopen; (3) bodyless GET subscription/history proceeds, paused speech raises SpendRefused with no socket, and canonical POST /v1/music ends activation_closed with no socket; (4) 4 J3171, 23 flight, 11 guard, 5 routing, 4 J3166 test groups + 377 extra edge assertions, check_all.sh (only baseline HOS 008 schedule.past fail), package-lint --film 009, and 5/5 GitHub CI checks PASS; (5) ACTIVATION_AUTHORIZED stays literal False and all 12 J3171 / 9 J3150 SHA-256 hashes (including pinned guard 930d987783... and shape ba290b6474...) match 100%. PR #681 left unmerged for chained elected-Chief disposition J3173. GBP 0.",
       "history": [
         {
           "at": "2026-11-19T22:42Z",
@@ -284324,6 +284324,11 @@
           "at": "2026-11-19T22:52Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Recorded KEEP in jobs/reviews/J3172/REVIEW.md (OWB + HOS branch gemini/J3172-review b6e4c0dd) and posted review comment on HOS PR #681 (PR #180 at GitHub 2500-comment cap)"
+        },
+        {
+          "at": "2026-11-19T22:52Z",
+          "by": "gemini",
+          "what": "done: KEEP: independent exact-commit review of HOS PR #681 at a76bfa8f57250935b7818dc126bb3d42f74fb87d (off main f13cb7ae) by named backup reviewer gemini (zero self-review; implementer cursor excluded) recorded in jobs/reviews/J3172/REVIEW.md (OWB main + HOS branch gemini/J3172-review b6e4c0dd) and posted on HOS PR #681 (HOS desk PR #180 reached GitHub's 2500-comment GraphQL addComment cap). Verified offline with fixture desks and zero transport: (1) /v1/user/subscription and /v1/history refuse PATCH/PUT/POST/DELETE and all non-GET methods with malformed_request before urlopen on request and multipart_post; (2) GET carrying any body is refused on every path before urlopen; (3) bodyless GET subscription/history proceeds, paused speech raises SpendRefused with no socket, and canonical POST /v1/music ends activation_closed with no socket; (4) 4 J3171, 23 flight, 11 guard, 5 routing, 4 J3166 test groups + 377 extra edge assertions, check_all.sh (only baseline HOS 008 schedule.past fail), package-lint --film 009, and 5/5 GitHub CI checks PASS; (5) ACTIVATION_AUTHORIZED stays literal False and all 12 J3171 / 9 J3150 SHA-256 hashes (including pinned guard 930d987783... and shape ba290b6474...) match 100%. PR #681 left unmerged for chained elected-Chief disposition J3173. GBP 0."
         }
       ],
       "remaining_action": "Complete J3172 independent exact-commit review and hand off to J3173 Chief disposition",
@@ -284347,7 +284352,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/681"
     },
     {
       "id": "J3173",
