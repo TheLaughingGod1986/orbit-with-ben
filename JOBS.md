@@ -65,6 +65,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3137 | mini | open (after J3128) | – | – | 005 edit · assembly · HOS 005 Shorts s06/s07/s08: no-spend music_gate repair against archived HOS 002/004 beds (£0) |  |
 | J3138 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3128 |  |
 | J3150 | any | claimed | macbook | 2026-11-19T19:16Z | 009 edit · assembly · HOS 009: prepare disabled music integration and establish the current credit bound | J3149 |
+| J3151 | any | open (after J3150) | – | – | 009 edit · review · HOS 009: independently review the disabled music integration | J3150 |
 
 Recently finished:
 

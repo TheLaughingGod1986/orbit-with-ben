@@ -1,5 +1,5 @@
 {
-  "next_id": 3151,
+  "next_id": 3152,
   "jobs": [
     {
       "id": "J0001",
@@ -282167,6 +282167,35 @@
         "at": "2026-11-19T17:25Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J3151",
+      "title": "HOS 009: independently review the disabled music integration",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Independent offline review of the HOS 009 disabled music integration. The author is macbook. Do not claim this job if you are macbook.\n\nHOS pull request 672, commit f21ab5b9a4f0a2143fb4cb91b1c82822185b1783, branch macbook/J3150. Read jobs/reviews/J3150/PROPOSAL.md, PRICING_EVIDENCE.md and HASHES.txt. The pinned guard must still hash to 930d987783055d1f73e80fd9ae770f1ecde63d79b397706df74e9492b4029308 and the shape file to ba290b64740c96c3407af17da80d043be3bf840d1863518bfb011e047f9e647e. Those bytes are the J3147 repair and are not to be rewritten.\n\nConfirm the music POST in el_client.request, el_client.multipart_post and generate_music_bed.compose shares one flight: one mocked GET and at most one mocked POST, no nested subscription GET, and no generator path around the flight. Confirm the production entry rejects a caller transport or path, holds the O_EXCL recorder through decide, consume and the mocked POST, and covers inode and restart. Confirm there is no pause bypass switch, no single-use reset, no retry, and no weaker pause or ledger check. Confirm ACTIVATION_AUTHORIZED is the literal false.\n\nThis review does not authorize a score, a merge, an account call, or a spend. GBP 0. J3047 stays closed, score v01 and v02 stay rejected, and the long assembly and the Shorts stay held. Write the review note for this job, with KEEP or FIX and the exact list. A KEEP is not an allowance. The elected-Chief job queued after this one makes the activation decision.\n",
+      "ref": "J3150",
+      "film": "009",
+      "stage": "edit",
+      "after": "J3150",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-19T17:26Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T17:26Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review the disabled music flight and write KEEP or FIX",
+      "kind": "review",
+      "plain": "Check the switched-off music wiring for the gravity film without spending"
     }
   ],
   "focus": [
