@@ -67,7 +67,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3167 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3114 |  |
 | J3168 | mini | open | – | – | 009 edit · for gemini · review · `gemini-argon` · HOS 009: independent exact-commit review of PR 680 path/method hardening | https://github.com/TheLaughingGod1986/history-of-science/pull/680 |
 | J3169 | any | open (after J3168) | – | – | 009 edit · chief · HOS 009: Chief disposition after J3168 review of PR 680 hardening | https://github.com/TheLaughingGod1986/history-of-science/pull/680 |
-| J3170 | mini | claimed | gemini | 2026-11-19T23:47Z | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
+| J3170 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
 
 Recently finished:
 
