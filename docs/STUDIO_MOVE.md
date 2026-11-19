@@ -305,3 +305,37 @@ sibling channel views with `studio_split.py`, including routed analytics, and re
 logs. Pointing the new engine at today's real channel checkouts is a useful compatibility probe, but cannot prove
 the post-move layout: HOS's routed analytics still live in Orbit today. Never move them in the live checkouts just
 to make a rehearsal test pass. The independent compatibility probe's four failures are recorded in REHEARSAL.md.
+
+## CI preparation, 19 November
+
+`scripts/studio_ci_prepare.py` now renders the four workflow files and their matching core hash lock into a
+**new staging directory**. It changes no installed workflow, channel checkout or service. Run it from the source
+checkout containing this PR, before the split; it needs that checkout's default-channel manifest. Supply the full
+40-character commit of the default channel that will be present at cutover, not a moving branch:
+
+```sh
+python3 scripts/studio_ci_prepare.py --channel-sha <full-channel-commit> \
+  --studio-repo TheLaughingGod1986/studio --out <new-staging-directory>
+```
+
+Review and apply those five files only to the isolated future-identity studio export. The renderer:
+
+- checks out the default channel at the supplied immutable commit for Rules and Notes checks, with no persisted
+  channel checkout credential, and sets its manifest's checkout environment variable;
+- retains the rules-copy check, but removes the tracked `STATUS.md` check from the studio workflow;
+- makes the separate core PR job skip the new studio repository, where Rules already runs its checks;
+- leaves Content Ops byte-for-byte unchanged, including its lockfile install and tests;
+- preserves queue/data-only exclusions, schedules and existing merge-skip conditions;
+- updates only workflow members already present in the staged core lock. Existing channel locks remain unchanged.
+
+It refuses an existing output directory, a non-SHA channel ref, invalid repository identifiers or a changed
+workflow adaptation target. It deliberately does not install files or enable Actions. Keep active workflow YAML
+out of the published rehearsal as above. Before production, run the generated Rules/Notes/Core/Content Ops
+commands in the fresh split with the pinned channel available; inspect their actual exit codes. Passing renderer
+and YAML checks alone is **not** a full GitHub Actions run or live cutover acceptance. Verify private repository
+Actions remain within the free allowance before enabling schedules.
+
+The pinned default-channel snapshot must match the exported rule copies. When those channel rules change later,
+update the pin and regenerate the copies together in a reviewed studio change; otherwise Rules should fail.
+The source channel's existing workflows and hash lock remain supported during the retention week. Do not copy
+this studio-only workflow adaptation back into either channel via `core_sync.py push`.
