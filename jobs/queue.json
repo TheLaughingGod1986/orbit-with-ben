@@ -280148,9 +280148,14 @@
           "at": "2026-11-19T12:40Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Preconditions verified from detached worktree 19a664dd (blob 0f368fba matches d793d8f4): no raw/archive mp4, shared L316-317 unposted CHARGED 100, pass L111 SUBMITTING, ai_spend L875 unreversed 100, no active runner"
+        },
+        {
+          "at": "2026-11-19T12:40Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Wrote and validated ~/_desk/state/flow/hos013-pass1/evidence/session_block_P05_08a_t1.json; all three ledgers untouched (pass=111, shared=337, spend=938)"
         }
       ],
-      "remaining_action": "Write and validate session_block_P05_08a_t1.json evidence file",
+      "remaining_action": "Run reconcile-session-block once from detached worktree with live defaults",
       "for": "gemini",
       "kind": "assembly",
       "model": "gemini-agy",
@@ -280160,11 +280165,11 @@
         "HOS:013"
       ],
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
         "at": "2026-11-19T12:40Z",
         "by": "gemini",
-        "note": "Preconditions verified from detached worktree 19a664dd (blob 0f368fba matches d793d8f4): no raw/archive mp4, shared L316"
+        "note": "Wrote and validated ~/_desk/state/flow/hos013-pass1/evidence/session_block_P05_08a_t1.json; all three ledgers untouched "
       }
     },
     {
