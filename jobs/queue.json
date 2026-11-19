@@ -282829,9 +282829,14 @@
           "at": "2026-11-19T18:18Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T18:19Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Started J3160 condition verification for J2537; read parent J2537 and prior J3134 verification"
         }
       ],
-      "remaining_action": "Verify readiness: Check for the protected desk exception and prepare the controlled rewrite only after approval",
+      "remaining_action": "Check HOS desk PR #180, OWB studio thread #954, and HOS PR #657 for Ben's explicit one-time exception for protected hos-desk history rewrite",
       "kind": "review",
       "recheck_of": "J2537",
       "due": "2026-11-18T18:00:00+00:00",
@@ -282848,11 +282853,16 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-19T18:18Z",
+        "at": "2026-11-19T18:19Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Started J3160 condition verification for J2537; read parent J2537 and prior J3134 verification"
+      },
+      "taskKeys": [
+        "HOS:005",
+        "HOS:008",
+        "HOS:011",
+        "HOS:013"
+      ]
     }
   ],
   "focus": [
