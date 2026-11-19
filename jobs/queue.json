@@ -281443,6 +281443,11 @@
           "at": "2026-11-19T18:55Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3129 waiting condition PROVEN SATISFIED in jobs/reviews/J3135/REVIEW.md (c9d0fa8e6e). J3130 completed (2026-11-19T16:36Z, #7015447942) and all three required J3088 inputs are verified in shared NAS /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/004_JWST-Discoveries-That-Change-Everything/08_Thumbnails/repackage_2026-11/J3088_v02/inputs/ with exact SHA-256 matches: JADES_GS_z14_0_cutout.png (e9b2342e36302c7394e754db6c3b9f0b389e3b5db0cd373e03a278683df0c886, 220x220 RGB), JADES_GS_z14_0_field.jpg (b666562568d2777565014d3495d6c7f369ff32e4ef99aac51787adc447d7066b, 3200x3126 RGB), webb_1.png (9f520a9bf2d9b39659088b8c2fd963c128fcdd2f71dfbd4563e5466246e758a3, 2564x1922 RGBA), plus JADES_GS_z14_0_NASA.png (50e2ab4d6d848ad08c16b8097d0b6d84beb84bf254b7179becd786820f26d5a7, 2000x1954 RGB) and SOURCE_MANIFEST.json (126fabee0ef79b90a6ace8b5369cf85573700538458aa4c5e57fef260d127c73, 6333 bytes) with verified field/cutout registration and redder lower component coordinates. Because scripts/jobs.py restricts jobs.py reopen J3129 on a held job to the elected Chief (chief), exact 2-line Chief release commands are in jobs/reviews/J3135/REVIEW.md §3. £0."
+        },
+        {
+          "at": "2026-11-19T21:35Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Elected Chief (chief): reopen J3129 with J3135 evidence note and close J3135",
@@ -281468,7 +281473,8 @@
       },
       "taskKeys": [
         "OWB:004"
-      ]
+      ],
+      "escalated_at": "2026-11-19T21:35Z"
     },
     {
       "id": "J3136",
@@ -281591,6 +281597,11 @@
           "at": "2026-11-19T19:09Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3128 condition verification complete in jobs/reviews/J3138/REVIEW.md (a7bb38e2c5). Predecessor J3104 is complete (done, 34ba377a09) and all 4/4 worker steps of J3128 are verified complete on disk: 79/79 files byte-identical across OWB (9d166bd6f9) and HOS PR #666 (c77b31b1, 5/5 CI green); all 77 current_newest partial_unreadable_comparisons entries from J3104 (48 OWB + 29 HOS) reconciled against 115 deduplicated canonical 05_Music beds (31 OWB + 84 HOS) and 15 resolved iCloud UAT items (1 music bed jupiter-music.mp3 included via byte-identical NAS archive equivalent OWB:013 moon-leaving-part03_score_bed_v01.mp3, sha256 38ab6e3e8768; 14 spoken 02_Voiceover narration files excluded with SHA-256 identity evidence and cross-checked at max similarity 0.3161 < 0.80) with 0 unreadable warnings and 0 remaining unavailable comparisons; 73 PASS (including 4 pre-existing Chief waivers), 4 archival reused FAILs routed to open £0 repair jobs J3136 (OWB:024 fri06_muons_ground_v05) and J3137 (HOS:005 s06/s07/s08); 77/77 original sidecars preserved byte-identical. Because scripts/jobs.py restricts jobs.py reopen/wait --recheck on held J3128 and closing J3138 to the elected Chief (chief), exact Chief commands are in jobs/reviews/J3138/REVIEW.md §3 (Option A: merge HOS PR #666 and close J3128 + J3138 KEEP). £0."
+        },
+        {
+          "at": "2026-11-19T21:35Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Elected Chief (chief): merge HOS PR #666, reopen/close J3128 KEEP, and close J3138 (Option A in jobs/reviews/J3138/REVIEW.md §3)",
@@ -281638,7 +281649,8 @@
         "HOS:007",
         "HOS:008",
         "HOS:010"
-      ]
+      ],
+      "escalated_at": "2026-11-19T21:35Z"
     },
     {
       "id": "J3139",
