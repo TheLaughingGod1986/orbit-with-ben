@@ -280567,13 +280567,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-19T16:28Z",
-      "eta": "2026-11-19T18:28Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-19T11:33Z",
-      "result": "",
+      "result": "Recovered the three original Webb inputs and copied them, without moving the originals, to /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/004_JWST-Discoveries-That-Change-Everything/08_Thumbnails/repackage_2026-11/J3088_v02/inputs/. SHA-256 after the copy: JADES_GS_z14_0_cutout.png e9b2342e36302c7394e754db6c3b9f0b389e3b5db0cd373e03a278683df0c886 (220x220); JADES_GS_z14_0_field.jpg b666562568d2777565014d3495d6c7f369ff32e4ef99aac51787adc447d7066b (3200x3126); webb_1.png 9f520a9bf2d9b39659088b8c2fd963c128fcdd2f71dfbd4563e5466246e758a3 (2564x1922). Also copied the NASA annotated pullout JADES_GS_z14_0_NASA.png 50e2ab4d6d848ad08c16b8097d0b6d84beb84bf254b7179becd786820f26d5a7 (2000x1954) and SOURCE_MANIFEST.json 126fabee0ef79b90a6ace8b5369cf85573700538458aa4c5e57fef260d127c73 with the measured crop registration. The 220px cutout is the original plate, not a crop of the annotated pullout or of a rendered thumbnail. No separate download script was found; the J2983/J3088 build_jwst geometry is the recipe. jobs.py reopen J3129 was refused because only the elected Chief may release the verified hold. J3129 is still blocked. J3135 is already open to verify this and reopen it. T039 was not changed and no panel was queued. No pull request: the brief keeps this media out of git. Thread: issues/954#issuecomment-7015447942.",
       "history": [
         {
           "at": "2026-11-19T11:33Z",
@@ -280599,6 +280599,11 @@
           "at": "2026-11-19T16:36Z",
           "by": "macbook",
           "what": "step 4 of 4 done"
+        },
+        {
+          "at": "2026-11-19T16:36Z",
+          "by": "macbook",
+          "what": "done: Recovered the three original Webb inputs and copied them, without moving the originals, to /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/004_JWST-Discoveries-That-Change-Everything/08_Thumbnails/repackage_2026-11/J3088_v02/inputs/. SHA-256 after the copy: JADES_GS_z14_0_cutout.png e9b2342e36302c7394e754db6c3b9f0b389e3b5db0cd373e03a278683df0c886 (220x220); JADES_GS_z14_0_field.jpg b666562568d2777565014d3495d6c7f369ff32e4ef99aac51787adc447d7066b (3200x3126); webb_1.png 9f520a9bf2d9b39659088b8c2fd963c128fcdd2f71dfbd4563e5466246e758a3 (2564x1922). Also copied the NASA annotated pullout JADES_GS_z14_0_NASA.png 50e2ab4d6d848ad08c16b8097d0b6d84beb84bf254b7179becd786820f26d5a7 (2000x1954) and SOURCE_MANIFEST.json 126fabee0ef79b90a6ace8b5369cf85573700538458aa4c5e57fef260d127c73 with the measured crop registration. The 220px cutout is the original plate, not a crop of the annotated pullout or of a rendered thumbnail. No separate download script was found; the J2983/J3088 build_jwst geometry is the recipe. jobs.py reopen J3129 was refused because only the elected Chief may release the verified hold. J3129 is still blocked. J3135 is already open to verify this and reopen it. T039 was not changed and no panel was queued. No pull request: the brief keeps this media out of git. Thread: issues/954#issuecomment-7015447942."
         }
       ],
       "remaining_action": "Report the recovered paths and the hold that still blocks J3129",
