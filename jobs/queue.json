@@ -227097,9 +227097,14 @@
           "at": "2026-11-19T18:16Z",
           "by": "relay",
           "what": "condition verification queued: J3160"
+        },
+        {
+          "at": "2026-11-19T20:12Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-20T00:15:00Z"
         }
       ],
-      "remaining_action": "Check for the protected desk exception and prepare the controlled rewrite only after approval",
+      "remaining_action": "Check for the protected desk history exception; after approval prepare the controlled rewrite window",
       "due": "2026-11-18T18:00:00Z",
       "kind": "chief",
       "plain": "Remove email addresses from both channels' repos, including their past versions",
@@ -227119,12 +227124,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "Explicit one-time exception for rewriting protected HOS desk history while retaining PR180 remains unestablished. J3134 evidence checks HOS 180, OWB 954 and HOS 657 through 12:16 UTC. Private rehearsal is not live authorization. After approval resolve open non-desk PRs, refresh backup and rehearsal, announce the day-before window and hold writers before cutover.",
-        "check_at": "2026-11-19T19:16:34+00:00",
-        "last_recheck": "J3134",
-        "checked_at": "2026-11-19T14:37:03+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3160"
+        "condition": "Explicit one-time authorization for irreversible rewrite of protected HOS hos-desk history while retaining PR180 is still absent. Acting Chief accepts J3160 REVIEW.md (5ca8a45536) and Grok desk ruling 7018109147. Fresh checks at 20:12 UTC: HOS180 through 7020824090, OWB954 through 7020891341, HOS657 no new comments; no exception found. After authorization, resolve non-desk PRs, refresh backup and rehearsal against current heads, give day-before window notice and hold writers before cutover. No live rewrite authorized.",
+        "check_at": "2026-11-20T00:15:00Z",
+        "last_recheck": "J3160",
+        "checked_at": "2026-11-19T20:12:21+00:00",
+        "checked_by": "codex"
       }
     },
     {
