@@ -68,7 +68,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3130 | macbook | open | – | – | 004 thumbs · assembly · Recover the original Webb thumbnail source images from the MacBook | J3129 |
 | J3132 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2035 |  |
 | J3133 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
-| J3134 | any | open | – | – | review · Verify condition for J2537 |  |
+| J3134 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2537 |  |
 
 Recently finished:
 
