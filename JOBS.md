@@ -71,6 +71,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3138 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3128 |  |
 | J3140 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3114 |  |
 | J3143 | any | claimed | codex | 2026-11-19T17:44Z | 009 edit · chief · HOS 009: decide reviewed guard and separate score scope | J3139 |
+| J3144 | any | open | – | – | 009 edit · assembly · HOS 009: fix the proposed music billing guard | J3143 |
 
 Recently finished:
 

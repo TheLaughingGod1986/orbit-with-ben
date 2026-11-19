@@ -1,5 +1,5 @@
 {
-  "next_id": 3144,
+  "next_id": 3145,
   "jobs": [
     {
       "id": "J0001",
@@ -281438,6 +281438,35 @@
       "taskKeys": [
         "HOS:009"
       ]
+    },
+    {
+      "id": "J3144",
+      "title": "HOS 009: fix the proposed music billing guard",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Revise HOS PR 667 c9ef1e0aa51a363971f5de1f5648ece6826eec12 as an offline proposal only, addressing every finding in independent J3142 review HOS PR 668 commit 18c281b046f74c94aa2ebb101ecfaeec5ee10a5f and Chief desk 7013542642. Use synthetic or existing redacted shape evidence only; no account call. Address actual response shape and scheduled renewal, immutable receipt binding, independently evidenced duration tariff and capacity mapping (refuse unknown; do not assume 1:1), durable single use across restarts, real exclusive lock and trustworthy freshness, TTS pause and pending charges, double GET and production bypass, parser and provenance. Never falsify timestamps or weaken existing checks. Add adversarial tests and document exact proposed integration and unresolved risks. Submit exact commit and hashes for independent review. No account requests, generation, integration, deployment, allowance, spend or billing changes. Keep J3047 closure, v01/v02 rejection and J2035/J2171 holds.\n",
+      "ref": "J3143",
+      "film": "009",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-19T15:45Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T15:45Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Revise and test the offline guard proposal",
+      "kind": "assembly",
+      "plain": "Fix the safeguards for the gravity film’s replacement music"
     }
   ],
   "focus": [
