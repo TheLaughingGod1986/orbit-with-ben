@@ -277828,10 +277828,10 @@
       "stage": "",
       "after": "J3110",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-19T04:42Z",
+      "eta": "2026-11-19T05:12Z",
       "created_by": "gemini",
       "created_at": "2026-11-19T04:09Z",
       "result": "",
@@ -277845,6 +277845,11 @@
           "at": "2026-11-19T04:11Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-19T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-19T04:42Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Packaging panel decision: Pluto 034 long upload package and J3105 thumbnail candidates A/B/C",
@@ -277857,7 +277862,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-19T04:42Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3112",
