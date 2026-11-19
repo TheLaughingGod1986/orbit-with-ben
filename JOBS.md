@@ -68,6 +68,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3103 | mini | claimed | codex | 2026-11-19T05:17Z | chief · Chief: resolve 034 pipeline missing-next-step |  |
 | J3104 | mini | open | – | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J3105 | mini | open (after J3087) | – | – | 034 thumbs · thumb · 034 Pluto: build three long thumbnail candidates | J3103 |
+| J3106 | mini | open (after J3105) | – | – | 034 upload · listing · 034 Pluto: finish long package and queue packaging review | J3103,J3087,J2868 |
 
 Recently finished:
 

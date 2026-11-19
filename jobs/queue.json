@@ -1,5 +1,5 @@
 {
-  "next_id": 3106,
+  "next_id": 3107,
   "jobs": [
     {
       "id": "J0001",
@@ -277393,6 +277393,36 @@
       "due": "2026-12-08T18:00:00Z",
       "kind": "thumb",
       "plain": "Design three thumbnails for the Pluto film"
+    },
+    {
+      "id": "J3106",
+      "title": "034 Pluto: finish long package and queue packaging review",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J3103 workflow repair for OWB:034. After the thumbnail successor completes, prepare the long release package for the existing v02 master reviewed in J2868 and J3087. This is preparation and dry-run only, not upload authorisation. Read the current title/thumbnail rules and LEARNINGS, source script and exact reviewed master evidence. metadata_DRAFT_v01.json is only a draft: replace ?:?? chapters from the actual final cut, verify current search-led title and collision evidence, remove obsolete future-film promises, and prepare description, sourced Sources line, final image credits, disclosure, tags, captions, social copy and required trailer using existing material only. Verify the exact master hash against J2868/J3087; retain the existing master unchanged. Assemble manifest with durable media paths and run the required package/episode checks and youtube:package --dry-run. No spend, generation, upload, scheduling, visibility change or live metadata changes.\nQueue packaging_panel.py independent Codex/Gemini/Cursor critiques for title, all finished thumbnail candidates, hook and description, followed by the Chief decision; carry dependencies forward and leave package/thumbnail stages in review until that decision. The final review must arrange the later delivery handoff only under the existing Ben approval and publication gates; do not treat this preparation job or completed edit as Ben approval. Preserve J2868 long UAT watch-by 8 Dec 18:00 London / planned 13 Dec 18:00 slot, and J3065/J3066 approved Shorts/public-parent holds. Record exact files, hashes, checks and the linked panel/decision successor before closing.\n",
+      "ref": "J3103,J3087,J2868",
+      "film": "034",
+      "stage": "upload",
+      "after": "J3105",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-19T03:19Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T03:19Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Complete the Pluto long package, run dry-run checks and queue the packaging panel",
+      "due": "2026-12-08T18:00:00Z",
+      "kind": "listing",
+      "plain": "Prepare the Pluto film’s title, description and release package for review"
     }
   ],
   "focus": [
