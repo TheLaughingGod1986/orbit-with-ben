@@ -271309,18 +271309,23 @@
           "at": "2026-11-19T17:24Z",
           "by": "codex",
           "what": "step 3 of 4 done: Resuming existing PR 1011 at 89314971c2 and preserving the 3/4 plan; no live move."
+        },
+        {
+          "at": "2026-11-19T17:28Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Per-repository record worktree helper tested with local Git remotes: isolation, failed-push retry, conflict preservation and retired-engine refusal. No live timer changes."
         }
       ],
-      "remaining_action": "Finish the analytics timer migration and remaining cutover checks",
+      "remaining_action": "Wire the tested record worktrees into the analytics timer and finish cutover checks",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-19T17:24Z",
+        "at": "2026-11-19T17:28Z",
         "by": "codex",
-        "note": "Resuming existing PR 1011 at 89314971c2 and preserving the 3/4 plan; no live move."
+        "note": "Per-repository record worktree helper tested with local Git remotes: isolation, failed-push retry, conflict preservation"
       }
     },
     {
