@@ -277640,9 +277640,14 @@
           "at": "2026-11-19T04:31Z",
           "by": "codex",
           "what": "step 1 of 3 done: Confirmed all three NAS JPEG hashes; J3112 owns upload only, leaving thumbs without a stage-linked successor"
+        },
+        {
+          "at": "2026-11-19T04:32Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Queued J3113 for 034 thumbs after J3112; retained review state and all Ben/public-parent holds"
         }
       ],
-      "remaining_action": "Link a thumbnail-stage review after the existing packaging panel",
+      "remaining_action": "Verify the repaired thumbnail handoff and record the outcome",
       "kind": "chief",
       "handoff": {
         "film": "034",
@@ -277651,11 +277656,11 @@
         "signature": "c72a049a4d1dd8a916ac"
       },
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-19T04:31Z",
+        "at": "2026-11-19T04:32Z",
         "by": "codex",
-        "note": "Confirmed all three NAS JPEG hashes; J3112 owns upload only, leaving thumbs without a stage-linked successor"
+        "note": "Queued J3113 for 034 thumbs after J3112; retained review state and all Ben/public-parent holds"
       },
       "taskKeys": [
         "OWB:034"
