@@ -278005,9 +278005,9 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-19T07:27Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-19T02:56Z",
@@ -278062,6 +278062,11 @@
           "at": "2026-11-19T09:48Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-19T11:16Z",
+          "by": "codex",
+          "what": "rerouted to codex on gpt-6-astra: Acting-Chief ruling recorded in 34ba377a09; administrative closure only, worker QA complete. J3128 owns music coverage follow-up."
         }
       ],
       "remaining_action": "Parked for Chief review and HOS PR #662 merge",
@@ -278074,8 +278079,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon",
+      "for": "codex",
+      "model": "gpt-6-astra",
       "progress": {
         "step": 4,
         "of": 4,
