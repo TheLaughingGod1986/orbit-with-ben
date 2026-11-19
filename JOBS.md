@@ -62,6 +62,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3088 | any | claimed | macbook | 2026-11-19T02:15Z | thumb · Revise Saturn and JWST weekly audit thumbnails after Chief review | J2844 |
 | J3089 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2845 |  |
 | J3090 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2847 |  |
+| J3091 | any | open | – | – | script · OWB: learn from our data, add two new films to the backlog |  |
 
 Recently finished:
 
