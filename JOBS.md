@@ -72,6 +72,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3136 | mini | open (after J3128) | – | – | 024 edit · assembly · OWB 024 Short fri06_muons_ground: no-spend music_gate repair against archived OWB 013 bed (£0) |  |
 | J3137 | mini | open (after J3128) | – | – | 005 edit · assembly · HOS 005 Shorts s06/s07/s08: no-spend music_gate repair against archived HOS 002/004 beds (£0) |  |
 | J3138 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3128 |  |
+| J3139 | any | open | – | – | 009 edit · chief · HOS 009: decide a compliant replacement score route | J3132 |
 
 Recently finished:
 
