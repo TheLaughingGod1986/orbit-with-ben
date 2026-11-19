@@ -283611,13 +283611,13 @@
       "stage": "edit",
       "after": "J3164",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-19T21:15Z",
-      "eta": "2026-11-19T23:15Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-19T21:04Z",
-      "result": "",
+      "result": "Merged PR675 exact head d1f9e54549cef037c6551ec26b2990622a8742c3 into main as 327c220d306632f79e6d7d9c15b6618415df9601 under existing Chief ruling; five CI checks pass. Desk receipt 7022481877 records accepted sound-generation rejection and J3166 hardening handoff. PR678/679 unmerged; activation False; GBP 0.",
       "history": [
         {
           "at": "2026-11-19T21:04Z",
@@ -283648,6 +283648,11 @@
           "at": "2026-11-19T21:18Z",
           "by": "codex",
           "what": "step 3 of 3 done: Merged state verified; PR678/679 remain open; receipt 7022481877 posted; J3166 is the existing hardening successor."
+        },
+        {
+          "at": "2026-11-19T21:18Z",
+          "by": "codex",
+          "what": "done: Merged PR675 exact head d1f9e54549cef037c6551ec26b2990622a8742c3 into main as 327c220d306632f79e6d7d9c15b6618415df9601 under existing Chief ruling; five CI checks pass. Desk receipt 7022481877 records accepted sound-generation rejection and J3166 hardening handoff. PR678/679 unmerged; activation False; GBP 0."
         }
       ],
       "remaining_action": "Merge verified and hardening handed to the existing follow-up job",
@@ -283662,7 +283667,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-7022481877"
     },
     {
       "id": "J3166",
