@@ -277468,13 +277468,13 @@
       "stage": "upload",
       "after": "J3105",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-19T03:30Z",
-      "eta": "2026-11-19T05:30Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-19T03:19Z",
-      "result": "",
+      "result": "Prepared 034 Pluto long release package (commit de93b3f4be + NAS studio-live 11_Upload-Package): verified exact v02 master SHA-256 e5a886dfef208774cce8ae987e658fba5d7a96cbb5c99a44aadf63516949ba62 (646.933 s, J2868/J3087 KEEP), replaced all ?:?? chapters from cuts_v02.json (0:00, 1:06, 2:41, 4:26, 6:15, 7:41, 9:05), verified YouTube search autocomplete and zero title collisions, removed obsolete 035 Triton promise per J2864, assembled PACKAGE_MANIFEST.json with J3105 thumbnails A/B/C, 6-entry Sources line, 67-asset Image credits, 189-cue en-GB.srt captions, and 52.500 s vertical trailer (SHA-256 01701660d2fcc3a1340fa8d6ffef2f8d1a96b87e049facf1d28905c4a05392fd); review:script 95.8/100 PASS, gate:episode PASS, youtube:package --dry-run PASS. Queued packaging panel J3108 (codex), J3109 (gemini), J3110 (cursor), J3111 (decision) and Chief packaging/delivery handoff J3112; left 034 thumbs and 034 upload in review and preserved J2868 Ben UAT watch (8 Dec watch-by, 13 Dec 18:00 slot) and J3065/J3066 public-parent holds.",
       "history": [
         {
           "at": "2026-11-19T03:19Z",
@@ -277515,6 +277515,11 @@
           "at": "2026-11-19T04:10Z",
           "by": "gemini",
           "what": "step 6 of 6 done: Queued owb-034-pluto-j3106 packaging panel critiques (J3108 codex, J3109 gemini, J3110 cursor, J3111 synthesis) and Chief packaging/handoff decision J3112"
+        },
+        {
+          "at": "2026-11-19T04:10Z",
+          "by": "gemini",
+          "what": "done: Prepared 034 Pluto long release package (commit de93b3f4be + NAS studio-live 11_Upload-Package): verified exact v02 master SHA-256 e5a886dfef208774cce8ae987e658fba5d7a96cbb5c99a44aadf63516949ba62 (646.933 s, J2868/J3087 KEEP), replaced all ?:?? chapters from cuts_v02.json (0:00, 1:06, 2:41, 4:26, 6:15, 7:41, 9:05), verified YouTube search autocomplete and zero title collisions, removed obsolete 035 Triton promise per J2864, assembled PACKAGE_MANIFEST.json with J3105 thumbnails A/B/C, 6-entry Sources line, 67-asset Image credits, 189-cue en-GB.srt captions, and 52.500 s vertical trailer (SHA-256 01701660d2fcc3a1340fa8d6ffef2f8d1a96b87e049facf1d28905c4a05392fd); review:script 95.8/100 PASS, gate:episode PASS, youtube:package --dry-run PASS. Queued packaging panel J3108 (codex), J3109 (gemini), J3110 (cursor), J3111 (decision) and Chief packaging/delivery handoff J3112; left 034 thumbs and 034 upload in review and preserved J2868 Ben UAT watch (8 Dec watch-by, 13 Dec 18:00 slot) and J3065/J3066 public-parent holds."
         }
       ],
       "remaining_action": "Completing J3106 and handing off to packaging panel J3108-J3111 and Chief decision J3112",
@@ -277539,7 +277544,8 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "done_ref": "de93b3f4be"
     },
     {
       "id": "J3107",
