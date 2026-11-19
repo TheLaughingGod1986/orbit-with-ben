@@ -283992,6 +283992,11 @@
           "at": "2026-11-19T21:45Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-19T21:45Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-19T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Parked for Chief: review/KEEP ruling on Batches 12-14 (rows 56-66) and close J2529 (14/14 batches, 66/66 rows complete)",
@@ -283999,7 +284004,16 @@
       "recheck_of": "J2529",
       "mini_only": true,
       "due": "2026-11-19T22:45:49+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
