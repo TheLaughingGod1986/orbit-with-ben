@@ -65,7 +65,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3128 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · J3104: reconcile unreadable music comparison inputs |  |
 | J3129 | mini | blocked | codex | – | 004 thumbs · thumb · Fix Webb thumbnail hook and identify the distant galaxy | J3096 |
 | J3130 | macbook | open | – | – | 004 thumbs · assembly · Recover the original Webb thumbnail source images from the MacBook | J3129 |
-| J3132 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2035 |  |
+| J3132 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2035 |  |
 | J3133 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J3134 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2537 |  |
 | J3135 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3129 |  |
