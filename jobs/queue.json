@@ -282261,18 +282261,22 @@
           "at": "2026-11-19T17:50Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T17:51Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Checking the pinned proposal, then code and tests, then recording the independent verdict."
         }
       ],
-      "remaining_action": "Review the disabled music flight and write KEEP or FIX",
+      "remaining_action": "Check the disabled music integration and its offline safety tests",
       "kind": "review",
       "plain": "Check the switched-off music wiring for the gravity film without spending",
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-19T17:28Z",
-        "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "at": "2026-11-19T17:51Z",
+        "by": "codex",
+        "note": "Checking the pinned proposal, then code and tests, then recording the independent verdict."
       },
       "rerouted_from": {
         "needs": "any",
@@ -282282,7 +282286,10 @@
         "by": "macbook"
       },
       "for": "codex",
-      "model": "gpt-6-astra"
+      "model": "gpt-6-astra",
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J3152",
