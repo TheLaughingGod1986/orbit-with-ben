@@ -281255,7 +281255,7 @@
     {
       "id": "J3142",
       "title": "HOS 009: independently review score billing guard",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Independently review the exact proposed HOS 009 production billing guard from the preceding job, with an adversarial review and independently run synthetic tests, including nested amount/currency, missing/null/malformed/negative/non-zero values, freshness, concurrency/shared-meter races, insufficient credits, extensions, one-request/no-retry enforcement and £0/3,000-credit cap. Check integration cannot bypass the guard, evidence provenance and fail-closed paths. Record exact commit and findings, PASS or FIX, and precise corrections. No account calls, generation, production integration, deployment, billing change or allowance authorization. Preserve J3047 and both holds. The implementer must not independently review their own work.\n",
       "ref": "J3139",
@@ -281275,11 +281275,25 @@
           "at": "2026-11-19T15:12Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-19T15:13Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-19T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Independently review the proposed music billing safeguard",
       "kind": "review",
-      "plain": "Independently check the gravity film’s music safeguard"
+      "plain": "Independently check the gravity film’s music safeguard",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J3143",

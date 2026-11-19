@@ -71,7 +71,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3138 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3128 |  |
 | J3140 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3114 |  |
 | J3141 | any | open | – | – | 009 edit · assembly · HOS 009: prepare fail-closed score billing guard | J3139 |
-| J3142 | any | open (after J3141) | – | – | 009 edit · review · HOS 009: independently review score billing guard | J3139 |
+| J3142 | mini | open (after J3141) | – | – | 009 edit · for gemini · review · `gemini-argon` · HOS 009: independently review score billing guard | J3139 |
 | J3143 | any | open (after J3142) | – | – | 009 edit · chief · HOS 009: decide reviewed guard and separate score scope | J3139 |
 
 Recently finished:
