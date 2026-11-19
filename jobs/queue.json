@@ -271246,18 +271246,23 @@
           "at": "2026-11-19T16:07Z",
           "by": "codex",
           "what": "step 3 of 4 done: Resuming existing PR 1011 at 6ec6a1f4ad; preserve prior 3/4 plan. Official 19 November split failed two tests; live move remains gated."
+        },
+        {
+          "at": "2026-11-19T16:12Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: PR 1011 advanced to 89314971c2: registry-based analytics record roots and separate report/dashboard destinations; typecheck/lint, eight lock tests, 222 application tests and 13 security checks pass. No live switch."
         }
       ],
-      "remaining_action": "Prepare the remaining analytics migration adapter and verify it before the live move",
+      "remaining_action": "Finish the analytics timer migration and remaining cutover checks",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-19T16:07Z",
+        "at": "2026-11-19T16:12Z",
         "by": "codex",
-        "note": "Resuming existing PR 1011 at 6ec6a1f4ad; preserve prior 3/4 plan. Official 19 November split failed two tests; live move"
+        "note": "PR 1011 advanced to 89314971c2: registry-based analytics record roots and separate report/dashboard destinations; typech"
       }
     },
     {
