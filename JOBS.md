@@ -68,11 +68,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3136 | mini | open (after J3128) | – | – | 024 edit · assembly · OWB 024 Short fri06_muons_ground: no-spend music_gate repair against archived OWB 013 bed (£0) |  |
 | J3137 | mini | open (after J3128) | – | – | 005 edit · assembly · HOS 005 Shorts s06/s07/s08: no-spend music_gate repair against archived HOS 002/004 beds (£0) |  |
 | J3138 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3128 |  |
-| J3145 | mini | claimed | gemini | 2026-11-19T18:29Z | 009 edit · for gemini · review · `gemini-argon` · HOS 009: independently review the repaired music guard | J3143 |
 | J3146 | any | open (after J3145) | – | – | 009 edit · chief · HOS 009: decide the reviewed music guard and score scope | J3143 |
 
 Recently finished:
 
+- J3145 done: HOS 009: independently review the repaired music guard (done)
 - J3144 done: HOS 009: fix the proposed music billing guard (Proposal only: HOS PR 667 commit c0c1848f89d99bcc656d1aa862428b605bd678c9. score_billing_guard.py sha256 7361cef3fb0742bb55477146a4faf6734d87201012760547ab53ac791e3350fa. 17 synthetic tests passed. No account call, generation, deployment, billing change, or guard relaxation. J3047 closed, v01/v02 rejected, J2035/J2171 held. J3145 reviews this commit.)
 - J3143 done: HOS 009: decide reviewed guard and separate score scope (NOT YET: J3142 FIX on PR 667 c9ef1e0a; guard remains offline and no score scope opened. J3144 repairs, J3145 independently reviews, J3146 decides integration and any bounded scope. HOS desk 7014134135. J2035/J2171 holds and J3047 closure retained; 22 Nov readiness at risk. No account calls, generation, deployment, credits or spend.)
 - J3142 done: HOS 009: independently review score billing guard (done)
@@ -82,4 +82,3 @@ Recently finished:
 - J3134 done: Verify condition for J2537 (Acting Chief ruling: condition not met on Gemini evidence in jobs/reviews/J3134/REVIEW.md; protected desk rewrite exception remains unestablished. J2537 remains held, recheck J3134 recorded for 2026-11-19 18:15 UTC. After approval resolve open PRs, refresh backup and rehearsal, announce the day-before window and hold writers before cutover. No live rewrite.)
 - J3133 done: Verify condition for J2171 (Chief ruling: condition NOT MET. J2171 remains held: J3059 accepted PR651 d047b064 offline only, Grok desk 7005927729 opened no production guard or new score scope, and v01/v02 remain rejected. J2035 remains blocked; J3139 owns the compliant score route decision. Recorded J2171 wait with recheck J3133 for 2026-11-20 12:00Z. Review evidence jobs/reviews/J3133/REVIEW.md; existing gates and closed unused allowance remain intact.)
 - J3132 done: Verify condition for J2035 (Chief ruling: condition NOT MET. J2035 remains held; J3059 accepted PR651 d047b064 offline only, Grok desk 7005927729 opened no score scope or production guard, and v01/v02 remain rejected. J3139 will decide and queue a compliant score route; next condition check 2026-11-20 12:00Z. Original gates and closed unused allowance remain intact.)
-- J3131 done: Verify condition for J3063 (KEEP / NOT VERIFIED. PR 1043 merged; J3063 remains held until 2026-11-20T11:35:00Z, next verification pinned to Mini. MacBook Claude did not reach Studio. Snapshot time corrected to 06:40:29Z; J3122 audit predates 24 h. No video change or spend. Ruling: jobs/reviews/J3131/CHIEF_DECISION.md)
