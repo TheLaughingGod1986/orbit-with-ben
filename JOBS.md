@@ -66,6 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3138 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3128 |  |
 | J3150 | any | claimed | macbook | 2026-11-19T19:16Z | 009 edit · assembly · HOS 009: prepare disabled music integration and establish the current credit bound | J3149 |
 | J3151 | any | open (after J3150) | – | – | 009 edit · review · HOS 009: independently review the disabled music integration | J3150 |
+| J3152 | any | open (after J3151) | – | – | 009 edit · chief · HOS 009: decide whether the disabled music flight stays closed | J3150 |
 
 Recently finished:
 
