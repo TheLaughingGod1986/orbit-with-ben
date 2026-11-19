@@ -284012,9 +284012,14 @@
           "at": "2026-11-19T21:53Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Read HOS #180 thru 7023130641 and verified 11/11 NAS archive SHA256 hashes for Batches 12-14; Chief ruled row 63 RETAKE and awaits rows 56/58 every-2nd-frame pull + 8-row hold list"
+        },
+        {
+          "at": "2026-11-19T22:00Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Extracted every-2nd-frame sheets for rows 56 (f000..f082) & 58 (f080..f110) and committed REVIEW_STATE.json (row 63 RETAKE, 8-row hold) & J3170/REVIEW.md @ f8ea88f872"
         }
       ],
-      "remaining_action": "Extract every-2nd-frame motion sheets for Batch 12 rows 56 and 58 per 7019983519 and update J2529 REVIEW_STATE.json with row 63 RETAKE per 7020824090/7023130641",
+      "remaining_action": "Post rows 56/58 every-2nd-frame motion sheets and 8-row hold list on HOS #180, post J3170 verification on OWB thread, and park J3170 for elected Chief",
       "kind": "review",
       "recheck_of": "J2529",
       "mini_only": true,
@@ -284030,11 +284035,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-19T21:53Z",
+        "at": "2026-11-19T22:00Z",
         "by": "gemini",
-        "note": "Read HOS #180 thru 7023130641 and verified 11/11 NAS archive SHA256 hashes for Batches 12-14; Chief ruled row 63 RETAKE "
+        "note": "Extracted every-2nd-frame sheets for rows 56 (f000..f082) & 58 (f080..f110) and committed REVIEW_STATE.json (row 63 RETA"
       },
       "taskKeys": [
         "HOS:013"
