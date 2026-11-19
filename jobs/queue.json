@@ -270445,10 +270445,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-19T00:52Z",
-      "eta": "2026-11-19T04:52Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
       "result": "",
@@ -270622,6 +270622,11 @@
           "at": "2026-11-19T00:57Z",
           "by": "codex",
           "what": "step 3 of 4 done: PR 1011 advanced to fad6ad762f: CI staging renderer and pinned channel checkout; 30 tests, four workflow YAML parses, rules/core and changed-file scans pass. No live installation."
+        },
+        {
+          "at": "2026-11-19T00:57Z",
+          "by": "codex",
+          "what": "released: PR 1011 now fad6ad762f: CI staging renderer prepared and tested, 30 targeted tests pass; four generated workflows parse and source rules/core checks pass. Runbook/evidence updated. Next: execute adapted workflow commands in fresh future-identity split; verify deployed board Contents access; old-entrypoint single-writer safeguards, other timers and fresh export. Keep step 3/4 until gated live relay/publish/tick acceptance. Five official clean days through 18 Nov; prior-day notice remains required. No live services/workflows changed. Existing PR and rehearsal must be resumed, not recreated."
         }
       ],
       "remaining_action": "Validate staged CI in the fresh split, verify board access and finish cutover safeguards",
