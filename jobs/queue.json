@@ -1,5 +1,5 @@
 {
-  "next_id": 3137,
+  "next_id": 3138,
   "jobs": [
     {
       "id": "J0001",
@@ -280827,6 +280827,35 @@
       "remaining_action": "Build £0 non-colliding 05_Music bed for fri06_muons_ground (<0.80 vs archived OWB 013 bed), re-mux v06, pass all gates, and park for Chief",
       "kind": "assembly",
       "plain": "Replace or re-slice the Muons Short music bed without spend so it passes the full archived music check"
+    },
+    {
+      "id": "J3137",
+      "title": "HOS 005 Shorts s06/s07/s08: no-spend music_gate repair against archived HOS 002/004 beds (£0)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "J3128 reconciled music_gate across the full 85-bed HOS comparison library (84 HOS beds across local/studio-live/archive + OWB UAT/jupiter-music.mp3 NAS equivalent). Entries #27 (hos_005_s08_capillaries_v01), #67 (hos_005_s06_blood_pressure_cuff_v04), and #68 (hos_005_s07_heart_pulse_v04) all use hos005-part05-temp_score_bed_v01.mp3 (sha256 73c3ff63468e), which fails reused against archived HOS 002 hos_002_part01_curious_workshop_v01_norm.wav (0.843), hos_002_part01_curious_workshop_v02_norm.wav (0.837), and HOS 004 hos004-full-sect2_score_bed_v02.mp3 (0.823). Meanwhile HOS 005 Shorts s01..s05 pass with max_sim 0.1936-0.3280 using £0 own-synthesis Short beds built in J0934. Synthesize distinct £0 house Short beds + plan JSONs in 005_How-Harvey-Proved-Blood-Circulates/05_Music for s06, s07, and s08 (<0.80 similarity against all 85 comparison beds), re-mux candidate cuts (s06_v05, s07_v05, s08_v02) without altering locked VO or picture, run picture_qa, polish_gate, music_gate (against full reconciled library), and gate_shorts_open.py, and route to Chief before any swap of scheduled Private Sq_lV89VMUs (Fri 20 Nov 11:30Z) or fgsR8yAHr5s (Sun 22 Nov 11:30Z). Zero spend.",
+      "ref": "",
+      "film": "005",
+      "stage": "edit",
+      "after": "J3128",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-19T14:23Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T14:23Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Synthesize £0 house Short beds for HOS 005 s06, s07, and s08 (<0.80 vs all 85 HOS beds), re-mux candidates, pass all gates, and park for Chief",
+      "kind": "assembly",
+      "plain": "Build zero-spend synthesized Short music beds for HOS 005 Shorts s06, s07, and s08 so they pass the full archived music check"
     }
   ],
   "focus": [
