@@ -1,5 +1,5 @@
 {
-  "next_id": 3147,
+  "next_id": 3148,
   "jobs": [
     {
       "id": "J0001",
@@ -281759,6 +281759,35 @@
       "taskKeys": [
         "HOS:009"
       ]
+    },
+    {
+      "id": "J3147",
+      "title": "HOS 009: repair four remaining music guard enforcement gaps",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Repair only the offline HOS PR667 proposal at c0c1848f89d99bcc656d1aa862428b605bd678c9. J3145 independent FIX at HOS PR668 commit 8ee5ae73b2fce1300ea009422577f8e877b7d36c is confirmed by J3146. Close findings A-D: internally pin recorder/store/pause/ledger paths; enforce durable single-use across restarts and alternate-path attempts; use the real recorder ownership semantics, with exclusivity continuously held through decision, consumption and mocked POST and verified again at consumption; bind status, Date and raw bytes to one trusted transport receipt, not merely a caller-constructible frozen container; reject same-second pending spend and failed/ambiguous ledger status unless explicitly reconciled. Keep test injection isolated from the production-facing entry point. Do not replace the old caller assertions with differently named assertions. Demonstrate two-process exclusion, crash/restart, receipt substitution, freshness at consumption, pause/ledger changes and exactly one mocked GET/at most one mocked POST across all proposed entry points. Document an offline integration diff/adapter design closing el_client double GET and generator bypass without changing live tools. Preserve fail-closed real response shape, immutable receipt, tariff floor and evidenced meter mapping; report uncertainty rather than treating one historical take as a current tariff guarantee. Use existing redacted evidence and synthetic fixtures only. No account call, generation, live integration, deployment, billing change, allowance, spend or guard relaxation. Do not clear any live single-use state. Submit exact commit/hashes for an independent reviewer. J3047 stays permanently closed; v01/v02 remain rejected; J2035/J2171 remain held. This is the concrete repair handoff from J3146, not authorization to produce music.\n",
+      "ref": "J3146",
+      "film": "009",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-19T16:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T16:43Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Repair the four independently reproduced guard defects offline",
+      "kind": "assembly",
+      "plain": "Fix the remaining safeguards for the gravity film music"
     }
   ],
   "focus": [
