@@ -283486,19 +283486,24 @@
           "at": "2026-11-19T20:53Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Step 1 complete: read J3162 REPAIR.md/HASHES.txt, J3158 REVIEW.md at e93bf01e (PR678), desk ruling 7018655830, and created detached test worktree at faa8f75731a91d50b9ce999a4b80c4fa4562fce9"
+        },
+        {
+          "at": "2026-11-19T20:54Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2 complete: verified el_client._music_route rejects non-built-in str path/query before legacy dispatch across request and multipart_post; verified flight/reservation unchanged from c2dc9859, pinned guard/shape hashes unchanged, and ACTIVATION_AUTHORIZED literal False"
         }
       ],
-      "remaining_action": "Independently auditing el_client.py, hos009_score_flight.py, routing type rejection, and pinned hashes at faa8f75731a91d50b9ce999a4b80c4fa4562fce9",
+      "remaining_action": "Re-running 23 flight tests, 11 guard tests, new routing type tests, normalization and reservation probes offline, and lint:package for HOS009 and HOS008",
       "for": "gemini",
       "kind": "review",
       "model": "gemini-argon",
       "plain": "Independently checking that unusual music requests cannot bypass the safety checks",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-19T20:53Z",
+        "at": "2026-11-19T20:54Z",
         "by": "gemini",
-        "note": "Step 1 complete: read J3162 REPAIR.md/HASHES.txt, J3158 REVIEW.md at e93bf01e (PR678), desk ruling 7018655830, and creat"
+        "note": "Step 2 complete: verified el_client._music_route rejects non-built-in str path/query before legacy dispatch across reque"
       },
       "taskKeys": [
         "HOS:009"
