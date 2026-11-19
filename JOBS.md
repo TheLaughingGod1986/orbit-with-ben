@@ -68,6 +68,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3104 | mini | open | – | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J3106 | mini | claimed | gemini | 2026-11-19T05:30Z | 034 upload · for gemini · listing · `gemini-argon` · 034 Pluto: finish long package and queue packaging review | J3103,J3087,J2868 |
 | J3107 | mini | open | – | – | chief · Chief: resolve 034 thumbs orphan-review |  |
+| J3108 | mini | open | – | – | for codex · review · Packaging panel (codex): Pluto 034 long upload package and J3105 thumbnail candidates A/B/C |  |
+| J3109 | mini | open | – | – | for gemini · review · Packaging panel (gemini): Pluto 034 long upload package and J3105 thumbnail candidates A/B/C |  |
+| J3110 | mini | open | – | – | for cursor · review · Packaging panel (cursor): Pluto 034 long upload package and J3105 thumbnail candidates A/B/C |  |
+| J3111 | cloud | open (after J3110) | – | – | review · Packaging panel decision: Pluto 034 long upload package and J3105 thumbnail candidates A/B/C |  |
 
 Recently finished:
 
