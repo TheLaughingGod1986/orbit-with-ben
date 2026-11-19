@@ -276748,10 +276748,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-19T16:56Z",
+      "eta": "2026-11-19T18:56Z",
       "created_by": "relay",
       "created_at": "2026-11-18T21:13Z",
       "result": "",
@@ -276810,6 +276810,11 @@
           "at": "2026-11-19T16:56Z",
           "by": "codex",
           "what": "rerouted to codex on gpt-6-astra: Elected Chief exact review requested; specialist verification complete, remaining work is recording the ruling."
+        },
+        {
+          "at": "2026-11-19T16:56Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief (codex): reopen J3070 with J3085/J3071 evidence note and close J3085",
@@ -276830,7 +276835,15 @@
       "taskKeys": [
         "HOS:006"
       ],
-      "escalated_at": "2026-11-19T00:50Z"
+      "escalated_at": "2026-11-19T00:50Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-19T16:56Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3086",
