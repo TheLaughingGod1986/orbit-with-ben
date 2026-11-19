@@ -254617,14 +254617,14 @@
     },
     {
       "id": "J2845",
-      "title": "Studio: arm thumbnail Test & Compare on m09jUdwC5hk (A=live THE LAST LIGHT vs B=ALL STARS FADE, T035)",
+      "title": "Studio: test approved Saturn thumbnail against live A (T037)",
       "needs": "mini",
       "repo": "owb",
-      "body": "J2844 ruling supersedes the original draft brief. BLOCKED: Saturn requires a story character or scale reference under thumbnail rule 2.A.5. J3088 owns the revision, panel and follow-up review. Do not touch Studio until that review gives an exact-file PASS, updates this brief to the new path/hash and authorizes starting a successor test over the finished report. Current proposed ledger ID: T037.\n\nOriginal historical brief (not authorization):\nConditional Studio Test & Compare arming for `m09jUdwC5hk` (*How Long Will Anything in Space Last?*, ledger `T035`), gated on Chief PASS in `J2844`:\n\n1. **Check Chief decision first (`J2844` & `05_Analytics/tests/panels/owb-j2834-weekly-2026-11-14/DECISION.md`):** Act ONLY if Chief gave an explicit exact-file **PASS** for `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/005_The-Last-Star-In-The-Universe/08_Thumbnails/repackage_2026-11/J2834_v02/m09jUdwC5hk_B_v04.jpg` (`sha256=647a2b6f6704d7a1c0f3c02b7a855f7a90e33246871973b426806eee5585dc18`). If Chief requested a revision instead, block or close per Chief's ruling without touching Studio.\n2. **Verify Orbit With Ben Studio browser (`CDP 9223`, `from cdp_tabs import reuse_page`):** Confirm channel name is `Orbit With Ben` before opening `https://studio.youtube.com/video/m09jUdwC5hk/edit`.\n3. **Fresh read-only check of current Test & Compare state:**\n   - If any test is currently **Running**, STOP and do NOT replace or edit it (Never list).\n   - Prior finished test `T018` (`Not enough impressions to declare a winner`) was already read back and recorded in `05_Analytics/tests/THUMB_LEDGER.json` on `2026-11-14`. Press `New test` -> `Continue` ONLY if Chief's PASS in `J2844` explicitly authorized starting the successor test over `T018` (otherwise record skipped per `J2702`).\n4. **Arm Thumbnail-Only Test & Compare (one variable only — keep baseline title `How Long Will Anything in Space Last?`, description, and Public privacy unchanged):**\n   - Option 1 (A): current live thumbnail (kept in place — never straight-replace live A).\n   - Option 2 (B): `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/005_The-Last-Star-In-The-Universe/08_Thumbnails/repackage_2026-11/J2834_v02/m09jUdwC5hk_B_v04.jpg` (`ALL STARS FADE`, verify `sha256=647a2b6f6704d7a1c0f3c02b7a855f7a90e33246871973b426806eee5585dc18` before upload).\n5. **Save, reload, verify `Test running`, and record in `05_Analytics/tests/THUMB_LEDGER.json` (`python3 scripts/thumb_ledger.py start T035`).**\n",
+      "body": "J3096 Chief exact-file PASS; supersedes all historical candidate briefs. Decision: jobs/reviews/J3096/REVIEW.md.\nVideo m09jUdwC5hk, T037, thumbnail-only. B: /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/005_The-Last-Star-In-The-Universe/08_Thumbnails/repackage_2026-11/J3088_v01/m09jUdwC5hk_B_v06.jpg\nSHA-256 7b0f6c44e870820881dba0309bf73ef0cc5601fef83cf080438a06648c9eb19f. Keep live A THE LAST LIGHT and title How Long Will Anything in Space Last? unchanged.\nUse Orbit Studio CDP 9223 and cdp_tabs.reuse_page; confirm channel Orbit With Ben. Fresh read must show the exact recorded finished T018 report: 28 Oct 2026 21:34 to 11 Nov 2026 22:10, inconclusive, one view, shares unavailable, A visible to all. Preserve evidence. Only then J3096 explicitly permits New test/Continue to start this successor over that finished report. Any running test or different report: STOP, no replacement.\nRehash exact B before upload; preserve live A, title, description, privacy, schedule and other settings. Save/reload, verify Test running, record T037 with thumb_ledger.py start T037 and evidence. Do not touch T038 or JWST. No straight replacement of live A.",
       "ref": "J2834",
       "film": "",
       "stage": "",
-      "after": "J2844",
+      "after": "J3096",
       "eta_min": 120,
       "status": "blocked",
       "by": "",
@@ -254648,17 +254648,25 @@
           "at": "2026-11-19T00:16Z",
           "by": "relay",
           "what": "condition verification queued: J3089"
+        },
+        {
+          "at": "2026-11-19T11:24Z",
+          "by": "codex",
+          "what": "J3096 exact-file PASS; brief replaced with T037 hash and narrowly conditional successor authorization"
         }
       ],
-      "remaining_action": "Wait for revised thumbnail and exact-file approval from the J3088 review",
+      "remaining_action": "Confirm the finished Saturn test in Studio, then test the approved cover",
       "kind": "studio",
-      "plain": "Arm thumbnail-only Test & Compare on How Long Will Anything in Space Last? (m09jUdwC5hk) after Chief PASS in J2844",
+      "plain": "Test the approved Saturn thumbnail against the current cover",
       "hold": {
         "type": "dependency",
         "condition": "Required predecessor is complete; verify remaining gates and approvals",
         "check_at": "2026-11-19T01:16:35+00:00",
         "recheck_task": "J3089"
-      }
+      },
+      "taskKeys": [
+        "OWB:005"
+      ]
     },
     {
       "id": "J2846",
@@ -254746,14 +254754,14 @@
     },
     {
       "id": "J2847",
-      "title": "Studio: arm thumbnail Test & Compare on ziKBPJ6FY0U (A=live TOO EARLY? vs B=300 MILLION YEARS, T037)",
+      "title": "Studio: Webb thumbnail test T039 held for corrected candidate",
       "needs": "mini",
       "repo": "owb",
-      "body": "J2844 ruling supersedes the original draft brief. BLOCKED: JWST needs a subject-naming hook, a dominant loupe and a story character under thumbnail rules 2.B.1 and 2.A.4-5. J3088 owns the revision, panel and follow-up review. Do not touch Studio until that review gives an exact-file PASS, updates this brief to the new path/hash and authorizes starting a successor test over the finished report. Current proposed ledger ID: T039.\n\nOriginal historical brief (not authorization):\nConditional Studio Test & Compare arming for `ziKBPJ6FY0U` (*JWST Found Galaxies That Shouldn't Exist Yet*, ledger `T037`), gated on Chief PASS in `J2844`:\n\n1. **Check Chief decision first (`J2844` & `05_Analytics/tests/panels/owb-j2834-weekly-2026-11-14/DECISION.md`):** Act ONLY if Chief gave an explicit exact-file **PASS** for `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/004_JWST-Discoveries-That-Change-Everything/08_Thumbnails/repackage_2026-11/J2834_v02/ziKBPJ6FY0U_B_v05.jpg` (`sha256=bb8d3132b7a556ce2ec2208825c79a3d4ca2fc7643951f05d7459e014036ea51`). If Chief requested a revision instead, block or close per Chief's ruling without touching Studio.\n2. **Verify Orbit With Ben Studio browser (`CDP 9223`, `from cdp_tabs import reuse_page`):** Confirm channel name is `Orbit With Ben` before opening `https://studio.youtube.com/video/ziKBPJ6FY0U/edit`.\n3. **Fresh read-only check of current Test & Compare state:**\n   - If any test is currently **Running**, STOP and do NOT replace or edit it (Never list).\n   - Prior finished test `T007` (`Not enough impressions to declare a winner`) was already read back and recorded in `05_Analytics/tests/THUMB_LEDGER.json` on `2026-11-14`. Press `New test` -> `Continue` ONLY if Chief's PASS in `J2844` explicitly authorized starting the successor test over `T007` (otherwise record skipped per `J2702`).\n4. **Arm Thumbnail-Only Test & Compare (one variable only — keep baseline title `JWST Found Galaxies That Shouldn't Exist Yet`, description, and Public privacy unchanged):**\n   - Option 1 (A): current live thumbnail (kept in place — never straight-replace live A).\n   - Option 2 (B): `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/004_JWST-Discoveries-That-Change-Everything/08_Thumbnails/repackage_2026-11/J2834_v02/ziKBPJ6FY0U_B_v05.jpg` (`300 MILLION YEARS`, verify `sha256=bb8d3132b7a556ce2ec2208825c79a3d4ca2fc7643951f05d7459e014036ea51` before upload).\n5. **Save, reload, verify `Test running`, and record in `05_Analytics/tests/THUMB_LEDGER.json` (`python3 scripts/thumb_ledger.py start T037`).**\n",
+      "body": "J3096 FIX supersedes all historical authorization. T039 for ziKBPJ6FY0U remains blocked. Rejected /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/004_JWST-Discoveries-That-Change-Everything/08_Thumbnails/repackage_2026-11/J3088_v01/ziKBPJ6FY0U_B_v07.jpg, SHA-256 e2bd0c629610195b6fa858bd7969d7ebcb97c4a37d3420084409d0dfa828446b; do not upload it. J3129 builds the corrected candidate, then independent panel, synthesis and elected-Chief exact-file review. No test authorized over T007 here. Future Chief must update this brief with approved path/hash and explicit permission conditional on fresh matching finished T007 report and no running test. Keep live A, title, privacy, schedule, T038 and all other settings unchanged. See jobs/reviews/J3096/REVIEW.md.",
       "ref": "J2834",
       "film": "",
       "stage": "",
-      "after": "J2844",
+      "after": "J3129",
       "eta_min": 120,
       "status": "blocked",
       "by": "",
@@ -254761,7 +254769,7 @@
       "eta": "",
       "created_by": "macbook-2",
       "created_at": "2026-11-14T17:11Z",
-      "result": "J2844 FIX: JWST needs a subject-naming hook, a dominant loupe and a story character under thumbnail rules 2.B.1 and 2.A.4-5. Revision J3088; fresh exact-file review required before reopening.",
+      "result": "J3096 FIX: J3129 rebuild, panel and exact-file review required; no Studio authorization.",
       "history": [
         {
           "at": "2026-11-14T17:11Z",
@@ -254777,17 +254785,19 @@
           "at": "2026-11-19T00:16Z",
           "by": "relay",
           "what": "condition verification queued: J3090"
+        },
+        {
+          "at": "2026-11-19T11:24Z",
+          "by": "codex",
+          "what": "J3096 FIX: linked J3129; old candidate authorization removed; remains blocked"
         }
       ],
-      "remaining_action": "Wait for revised thumbnail and exact-file approval from the J3088 review",
+      "remaining_action": "Wait for corrected Webb thumbnail and fresh exact-file approval",
       "kind": "studio",
-      "plain": "Arm thumbnail-only Test & Compare on JWST Found Galaxies That Shouldn't Exist Yet (ziKBPJ6FY0U) after Chief PASS in J2844",
-      "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-19T01:16:35+00:00",
-        "recheck_task": "J3090"
-      }
+      "plain": "Wait for the corrected Webb thumbnail to pass review before testing it",
+      "taskKeys": [
+        "OWB:004"
+      ]
     },
     {
       "id": "J2848",
