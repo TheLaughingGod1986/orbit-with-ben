@@ -283150,13 +283150,13 @@
       "stage": "edit",
       "after": "J3158",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-19T20:39Z",
-      "eta": "2026-11-19T22:39Z",
+      "eta": "",
       "created_by": "macbook-2",
       "created_at": "2026-11-19T18:12Z",
-      "result": "",
+      "result": "Implemented existing Grok ruling 7018655830: J3158 FIX accepted, PR675 not ready and unmerged. Reservation repair verified; only routing type bypass sent to offline repair J3162 with independent review then Chief disposition. Activation False, no allowance, J3047 closed, J2035/J2171 held, v01/v02 rejected. GBP0, no account calls, generation, deployment, merge or public changes. Desk report 7021680314.",
       "history": [
         {
           "at": "2026-11-19T18:12Z",
@@ -283187,6 +283187,11 @@
           "at": "2026-11-19T20:43Z",
           "by": "codex",
           "what": "step 3 of 3 done: Desk 7021680314 posted; J3162 linked, J2035/J2171 blocked, J3047 closed; no spend or activation"
+        },
+        {
+          "at": "2026-11-19T20:43Z",
+          "by": "codex",
+          "what": "done: Implemented existing Grok ruling 7018655830: J3158 FIX accepted, PR675 not ready and unmerged. Reservation repair verified; only routing type bypass sent to offline repair J3162 with independent review then Chief disposition. Activation False, no allowance, J3047 closed, J2035/J2171 held, v01/v02 rejected. GBP0, no account calls, generation, deployment, merge or public changes. Desk report 7021680314."
         }
       ],
       "remaining_action": "Complete: existing FIX ruling recorded and offline repair queued",
@@ -283201,7 +283206,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-7021680314"
     },
     {
       "id": "J3160",
