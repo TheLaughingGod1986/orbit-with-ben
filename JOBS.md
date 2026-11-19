@@ -63,7 +63,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3095 | mini | open (after J3094) | – | – | for gemini · review · `gemini-argon` · Packaging panel decision: J3088 Saturn and JWST revised candidates; verify BABY GALAXIES film and title fit |  |
 | J3096 | any | open (after J3095) | – | – | chief · Chief exact-file decision on revised Saturn and JWST thumbnail tests | J3088 |
 | J3099 | any | blocked | macbook-2 | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J3100 | mini | open | – | – | 082 topic · review · Rule-E topic go/no-go review: OWB 082 (Every Type of Star Explained in 10 Minutes) and 083 (How Was the Moon Formed) from J3091 | 6eee2c8c3 |
+| J3100 | mini | claimed | gemini | 2026-11-19T04:11Z | 082 topic · review · Rule-E topic go/no-go review: OWB 082 (Every Type of Star Explained in 10 Minutes) and 083 (How Was the Moon Formed) from J3091 | 6eee2c8c3 |
 | J3101 | mini | open | – | – | 120 topic · for gemini · review · `gemini-argon` · HOS 120 Why Do We Cry?: rule-E topic go/no-go review | 90339622 |
 | J3102 | mini | open | – | – | 121 topic · for gemini · review · `gemini-argon` · HOS 121 Why Do Cats Purr?: rule-E topic go/no-go review | 90339622 |
 | J3103 | mini | open | – | – | chief · Chief: resolve 034 pipeline missing-next-step |  |

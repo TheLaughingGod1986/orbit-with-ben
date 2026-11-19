@@ -277034,10 +277034,10 @@
       "stage": "topic",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-19T02:11Z",
+      "eta": "2026-11-19T04:11Z",
       "created_by": "macbook",
       "created_at": "2026-11-19T01:01Z",
       "result": "",
@@ -277046,10 +277046,23 @@
           "at": "2026-11-19T01:01Z",
           "by": "macbook",
           "what": "added"
+        },
+        {
+          "at": "2026-11-19T02:11Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Rule-E topic go/no-go review: OWB 082 (Every Type of Star Explained in 10 Minutes) and 083 (How Was the Moon Formed) from J3091",
-      "kind": "review"
+      "kind": "review",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-19T02:11Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3101",
