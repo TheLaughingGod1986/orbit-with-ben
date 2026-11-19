@@ -44,3 +44,7 @@ def require_active(root=None, marker=None):
     if why:
         # No untrusted marker contents or local paths are printed.
         raise SystemExit(why)
+
+
+if __name__ == "__main__":
+    require_active()

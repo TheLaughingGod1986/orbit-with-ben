@@ -112,7 +112,10 @@ class WholeRun(unittest.TestCase):
         import os
         with tempfile.TemporaryDirectory() as t:
             t = pathlib.Path(t)
-            (t / "not_a_repo").mkdir()
+            (t / "not_a_repo/scripts").mkdir(parents=True)
+            # Reach the existing Git-failure/watchdog path through the unarmed guard.
+            shutil.copy2(SCRIPT.parents[2] / "scripts/engine_guard.py",
+                         t / "not_a_repo/scripts/engine_guard.py")
             env = dict(os.environ, HOME=str(t / "home"), ORBIT_REPO=str(t / "not_a_repo"),
                        ANALYTICS_WORKTREE=str(t / "worktrees" / "analytics"), ANALYTICS_SAFE_DIR=str(t / "safe"),
                        BOARD_PUBLISH="0")

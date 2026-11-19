@@ -397,3 +397,25 @@ Rollback restores the saved activation marker together with the saved services a
 window created the first marker, remove only that marker after all new writers are drained; otherwise restore its
 previous bytes atomically. Never remove it while old and new writers may run concurrently. No marker was installed
 by this preparation run.
+
+
+## Daily timer entrypoint refusal, 19 November continuation
+
+The daily Buffer and analytics shell entrypoints now invoke `engine_guard.py` before their first operation.
+They check the wrapper's own engine location, independently of checkout environment overrides. They also
+check the selected runtime repository; analytics checks its worktree before modifying it and after rebase,
+and Buffer rechecks after its pull. The analytics entrypoint refuses a retired engine before starting its
+watchdog. A missing guard fails closed. Install these updated copies before arming the cutover marker;
+unmodified historical wrappers cannot observe it. No live wrapper was installed by this change.
+
+These checks prevent a retired timer from starting. They do not drain a running timer, adapt the analytics
+output/commit roots to separate channel repositories, or guard direct Node invocations. Those are still
+prerequisites, alongside the installed timer inventory and the private board credential probe. Do not enable
+these legacy wrappers in the detached production layout merely because their refusal tests pass.
+
+The official source history on 19 November now records `left: 2` (`test_channels.py` and `test_jobs.py`),
+so the current recorded streak is zero. The previous estimate of 20 November is no longer established.
+The PR's passing future-layout tests do not replace an official daily result; never manufacture missing days.
+A same-day corrected full run may replace today's row through the existing daily recorder, but only actual
+recorded consecutive passes and the prior-day notice can authorize a move. Do not promise a new date yet.
+See `jobs/reviews/J3012/TIMER_GUARDS_2026-11-19.md` for this continuation's scope and verification.

@@ -8,7 +8,12 @@
 #   4. If the check failed, shows a notification. The details are in the log.
 # Wrapped in a function so a pull that changes this file can't change it mid-run.
 main() {
+  # Guard the code being invoked, not a caller-supplied checkout environment.
+  local engine
+  engine="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)" || return 1
+  python3 "$engine/scripts/engine_guard.py" || return 1
   local repo="${ORBIT_REPO:-$HOME/YouTube/orbit-with-ben}"
+  python3 "$repo/scripts/engine_guard.py" || return 1
   local social=00_Brand/Channel-Setup/social
   cd "$repo" || return 1
   echo "--- $(date)"
@@ -19,6 +24,8 @@ main() {
   else
     echo "git pull skipped (on $branch, or local code changes); running the code as it is"
   fi
+  # A pull or ORBIT_REPO override can select a different runtime: check that too.
+  python3 "$repo/scripts/engine_guard.py" || return 1
   echo "code: $(git log --oneline -1)"
 
   (
@@ -61,4 +68,6 @@ main() {
   fi
   return $code
 }
-main "$@"
+if [[ "${BASH_SOURCE[0]}" == "$0" ]]; then
+  main "$@"
+fi
