@@ -277260,13 +277260,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-19T17:10Z",
-      "eta": "2026-11-19T19:10Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-19T00:16Z",
-      "result": "parked for Chief: J3090 condition verification complete (jobs/reviews/J3090/REVIEW.md at af79210db6) — J2847 waiting condition remains NOT MET: predecessor J2844 completed with FIX on T039 (ziKBPJ6FY0U_B_v06.jpg 300 MILLION YEARS failed 2.B.1 and 2.A.4-5) and blocked J2847; revision J3088 built ziKBPJ6FY0U_B_v07.jpg (sha256=e2bd0c629610195b6fa858bd7969d7ebcb97c4a37d3420084409d0dfa828446b, 429,754 bytes, saturation=175.8, near_black=15.0%, BABY GALAXIES, PR #1031 open), independent panel J3092-J3095 unanimously (3/3) recommended CHANGE/FIX on BABY GALAXIES (Scene 04 maturity mismatch, title word repetition, and two-component JADES loupe ambiguity), and dependent Chief exact-file decision J3096 remains open (no Chief exact-file PASS, no brief update to T039, and no T007 successor-test authorization). Recording jobs.py wait J2847 --recheck J3090 (next check 2026-11-19T14:20:00Z) and closing J3090 requires elected-Chief authority (Grok Bot is currently UP; see exact commands in jobs/reviews/J3090/REVIEW.md §3).",
+      "result": "Chief ruling 2026-11-19: KEEP HOLD / condition NOT MET. Reviewed original body, result, history and jobs/reviews/J3090/REVIEW.md against newer jobs/reviews/J3096/REVIEW.md. J3096 is now done with FIX on Webb v07, not pending as the morning review states. J2847 remains blocked after J3129; wait --recheck J3090 recorded, next check 2026-11-19T23:10:00Z. Concrete follow-up: existing J3135 verifies completed J3130 source recovery; J3129 then rebuilds v08 and queues independent panel, synthesis and elected-Chief exact-file review. Before J2847 resumes, its brief must name approved path/hash and explicit T039 successor permission conditional on fresh matching finished T007 and no running test. No duplicate jobs, no Studio actions, no spend. This closes verification only, not thumbnail approval.",
       "history": [
         {
           "at": "2026-11-19T00:16Z",
@@ -277322,6 +277322,11 @@
           "at": "2026-11-19T17:10Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T17:10Z",
+          "by": "codex",
+          "what": "done: Chief ruling 2026-11-19: KEEP HOLD / condition NOT MET. Reviewed original body, result, history and jobs/reviews/J3090/REVIEW.md against newer jobs/reviews/J3096/REVIEW.md. J3096 is now done with FIX on Webb v07, not pending as the morning review states. J2847 remains blocked after J3129; wait --recheck J3090 recorded, next check 2026-11-19T23:10:00Z. Concrete follow-up: existing J3135 verifies completed J3130 source recovery; J3129 then rebuilds v08 and queues independent panel, synthesis and elected-Chief exact-file review. Before J2847 resumes, its brief must name approved path/hash and explicit T039 successor permission conditional on fresh matching finished T007 and no running test. No duplicate jobs, no Studio actions, no spend. This closes verification only, not thumbnail approval."
         }
       ],
       "remaining_action": "Awaiting elected Chief to record jobs.py wait J2847 --recheck J3090 and close J3090",
