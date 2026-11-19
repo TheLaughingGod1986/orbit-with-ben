@@ -1,5 +1,5 @@
 {
-  "next_id": 3148,
+  "next_id": 3149,
   "jobs": [
     {
       "id": "J0001",
@@ -281788,6 +281788,35 @@
       "remaining_action": "Repair the four independently reproduced guard defects offline",
       "kind": "assembly",
       "plain": "Fix the remaining safeguards for the gravity film music"
+    },
+    {
+      "id": "J3148",
+      "title": "HOS 009: independently review the remaining guard repairs",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Independently review the preceding offline repair, by someone other than its author. Read J3145 at HOS PR668 8ee5ae73b2fce1300ea009422577f8e877b7d36c and J3146 ruling. Rerun/adapt its probes so each of A-D now refuses the unsafe case; do not mistake tests proving vulnerabilities for acceptance. Test internally pinned paths, process-held recorder exclusivity through mocked POST, two-process exclusion, durable/crash-safe single use, trusted single-response binding, freshness at consumption, pending/same-second/ambiguous charges, pause, tariff/capacity evidence and proposed one-GET/no-bypass integration. Review exact hashes and transport trust boundary, not merely a dataclass or PID file. Synthetic/offline only. PASS or FIX with precise residual risks and evidence. No account call, generation, production change, deployment, allowance or spend. Preserve J3047 closure, rejected v01/v02 and J2035/J2171 holds. PASS is not authorization to generate.\n",
+      "ref": "J3146",
+      "film": "009",
+      "stage": "edit",
+      "after": "J3147",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-19T16:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T16:43Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify all four repairs and the proposed integration with synthetic tests",
+      "kind": "review",
+      "plain": "Independently check the gravity film music safeguards"
     }
   ],
   "focus": [
