@@ -282323,13 +282323,13 @@
       "stage": "edit",
       "after": "J3151",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-19T17:56Z",
-      "eta": "2026-11-19T19:56Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-19T17:27Z",
-      "result": "",
+      "result": "FIX accepted; music activation stays CLOSED. J3154 queues two offline integration repairs and requires independent re-review. PR674 6f342cbc records decision/status, unmerged; ALL CHECKS PASS. Pricing bound unproven; J3047 closure and J2035/J2171 holds retained. HOS desk posted. No account call, generation, merge, deployment or spend; GBP0.",
       "history": [
         {
           "at": "2026-11-19T17:27Z",
@@ -282360,6 +282360,11 @@
           "at": "2026-11-19T18:01Z",
           "by": "codex",
           "what": "step 3 of 3 done: Record-only HOS PR674 at 6f342cbc; ALL CHECKS PASS; J3154 queued; desk disposition posted; no merge or spend."
+        },
+        {
+          "at": "2026-11-19T18:01Z",
+          "by": "codex",
+          "what": "done: FIX accepted; music activation stays CLOSED. J3154 queues two offline integration repairs and requires independent re-review. PR674 6f342cbc records decision/status, unmerged; ALL CHECKS PASS. Pricing bound unproven; J3047 closure and J2035/J2171 holds retained. HOS desk posted. No account call, generation, merge, deployment or spend; GBP0."
         }
       ],
       "remaining_action": "Complete: music activation closed and offline repair handed off",
@@ -282374,7 +282379,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/674"
     },
     {
       "id": "J3153",
