@@ -282477,10 +282477,10 @@
       "stage": "edit",
       "after": "J3152",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-19T18:04Z",
+      "eta": "2026-11-19T20:04Z",
       "created_by": "codex",
       "created_at": "2026-11-19T17:58Z",
       "result": "",
@@ -282489,11 +282489,24 @@
           "at": "2026-11-19T17:58Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-19T18:04Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Repair the two reviewed defects offline and submit a new commit for independent review",
       "kind": "assembly",
-      "plain": "Fix two safeguards in the gravity film music preparation"
+      "plain": "Fix two safeguards in the gravity film music preparation",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-19T18:04Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3155",
