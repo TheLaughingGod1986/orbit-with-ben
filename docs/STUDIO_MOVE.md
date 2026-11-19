@@ -506,3 +506,25 @@ channel checkout overrides point to the analytics record worktrees. No queue bel
 Evidence: `jobs/reviews/J3012/ANALYTICS_WORKTREES_2026-11-19.md` (13 real-local-Git tests; eight lock pretests and
 227 application tests; typecheck/lint). Full timer orchestration, gate-library routing and fake-API acceptance
 remain before its plist can be prepared or installed. No live service or record location changed.
+
+### Serialized analytics session prepared — 19 November
+
+`scripts/analytics_session.py` supplies the next orchestration layer, without an installed entrypoint.
+`locked_session` holds one machine-wide advisory lock across preparation, collection and publication (the caller
+must keep its work inside the context). Its preflight validates the executing engine, shared queue and every
+channel against the registry and credential-free GitHub remote identities, before creating record worktrees.
+It refuses resident/retired engines, aliased checkout environment names, overlapping source/scratch roots,
+wrong channel manifests and missing staged snapshot histories. Actual detached worktree manifests and histories
+are checked again after preparation. Channel environment overrides target record worktrees; the Field Order
+queue override targets the active shared studio checkout. Source paths remain available separately for media
+and credentials, and the parent process environment is not changed. Publication attempts every repository,
+returning failed owners while retaining the worktree helper's pending commits for retry.
+
+Record ownership now follows registered slugs. The channel setting `analytics.open_gate_library` names the
+owner of the open-gate library JSON; Orbit enables it. This replaces hard-coded channel-name rules in the helper.
+Carry that setting into the channel checkout and its cached manifest during the split.
+
+This is still preparation, not full timer acceptance. Next wire the session into the timer's collector/report,
+credential loading, gate library/frame paths, timeouts and board-publish calls; test the complete invocation with
+fake APIs before adding its staged plist. No timer, service, active marker or live records changed.
+Evidence: `jobs/reviews/J3012/ANALYTICS_SESSION_2026-11-19.md`.

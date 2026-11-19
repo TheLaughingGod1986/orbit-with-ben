@@ -10,6 +10,7 @@ from __future__ import annotations
 import pathlib
 import subprocess
 
+import channels
 from engine_guard import refusal
 
 
@@ -20,10 +21,10 @@ class RecordError(RuntimeError):
 def scopes(channel: str) -> tuple[str, ...]:
     if channel == 'studio':
         return ('05_Analytics/dashboard',)
-    if channel not in ('owb', 'hos', 'ww2'):
+    if channel not in channels.slugs():
         raise RecordError('Unknown analytics record owner')
     paths = (f'05_Analytics/{channel}',)
-    if channel == 'owb':
+    if channels.get(channel).get('analytics', {}).get('open_gate_library'):
         paths += ('00_Brand/Channel-Setup/audits/shorts_open_library/library.json',)
     return paths
 
