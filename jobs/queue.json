@@ -281677,17 +281677,23 @@
           "at": "2026-11-19T23:15Z",
           "by": "cursor",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-19T23:20Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: s06 and s07 still have their trimmed voice stems; s08 voice will be lifted again from the locked Part 05 take"
         }
       ],
-      "remaining_action": "Read the music-gate failure and the existing no-spend Short bed recipe",
+      "remaining_action": "Synthesize three distinct no-spend Short beds and check them against the comparison library",
       "kind": "assembly",
       "plain": "Build zero-spend synthesized Short music beds for HOS 005 Shorts s06, s07, and s08 so they pass the full archived music check",
       "due": "2026-11-20T09:30:00Z",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-19T23:15Z",
-        "by": "cursor"
+        "at": "2026-11-19T23:20Z",
+        "by": "cursor",
+        "note": "s06 and s07 still have their trimmed voice stems; s08 voice will be lifted again from the locked Part 05 take"
       },
       "taskKeys": [
         "HOS:005"
