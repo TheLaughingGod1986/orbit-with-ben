@@ -2,11 +2,11 @@
   "job_id": "J2529",
   "film": "HOS:013",
   "reservation": "HOS013_PASS1",
-  "updated_at": "2026-11-12T18:02:30Z",
+  "updated_at": "2026-11-19T21:55:00Z",
   "runner_ledger_note": "Raw pass-1 runner ledger (~/_desk/state/flow/hos013-pass1/ledger.jsonl) and raw BATCH_NN_RECEIPT.json stay PENDING_REVIEW / keep:false per runner guard contract; Chief rulings are recorded here.",
   "summary": {
-    "minted_rows": 55,
-    "ruled_rows": 55,
+    "minted_rows": 66,
+    "ruled_rows": 56,
     "keep_count": 48,
     "keep_rows": [
       1,
@@ -58,7 +58,7 @@
       53,
       55
     ],
-    "retake_count": 7,
+    "retake_count": 8,
     "retake_rows": [
       3,
       10,
@@ -66,7 +66,8 @@
       28,
       47,
       49,
-      54
+      54,
+      63
     ],
     "retake_row_ids": [
       "P1:03a_unlabelled_birds",
@@ -75,11 +76,23 @@
       "P3:05a_chicks_deep_beaks",
       "P4:10_fairness_25_june",
       "P4:12_lyell_hooker_bundle",
-      "P5:05a_darwin_writes_origin"
+      "P5:05a_darwin_writes_origin",
+      "P6:06a_origin_fifth_edition"
     ],
     "retake_reservation_credits": 700,
-    "retake_timing": "Held until after pass 1 (Batches 01-14) under runner guards and >=3,000 Flow credit headroom floor; \u00a30 cash.",
-    "pending_review_rows": []
+    "retake_timing": "8 RETAKE rows on hold (3, 10, 24, 28, 47, 49, 54, 63); 700-credit retake hold is not raised by 7020824090/7023130641 and no retake pass is authorised until a separate Chief allowance post names the remint under >=3,000 Flow credit headroom floor (\u00a30 cash).",
+    "pending_review_rows": [
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      64,
+      65,
+      66
+    ]
   },
   "rulings": [
     {
@@ -221,6 +234,38 @@
         54
       ],
       "note": "Confirms 6831422974 (also confirmed by 6831536663; withdraws row 54 from 6831390300): KEEP 51, 52, 53, 55 as cut; RETAKE 54 P5:05a_darwin_writes_origin (page in hand turns from written sheet to blank tan curl at 2.80-2.90 s inside 0-6.90 s window). Retake reservation raised 600 -> 700 credits (rows 3, 10, 24, 28, 47, 49, 54)."
+    },
+    {
+      "comment_id": 7019983519,
+      "batches": [
+        12
+      ],
+      "rows": "56-60",
+      "keep": [],
+      "retake": [],
+      "note": "Supersedes 7019806730: preliminary KEEP marks on rows 56-60 withdrawn because plate UAT is continuous playback. Stills stand on 56 (take 2), 57, 58, 59, 60 with keep unset pending every-2nd-frame motion pull on rows 56 (0.00-3.42 s) and 58 (3.40-4.60 s)."
+    },
+    {
+      "comment_id": 7020824090,
+      "batches": [
+        13
+      ],
+      "rows": "61-65",
+      "keep": [],
+      "retake": [
+        63
+      ],
+      "note": "Supersedes 7020556581 after Chief archive motion inspection of rows 61-65: row 63 P6:06a_origin_fifth_edition written RETAKE (warm gold light in the gutter at ~2.0-4.5 s inside 0.00-4.96 s window, forbidden by prompt; cover hinges and stays on book; folded letter stays on desk) and added to held retake list (rows 3, 10, 24, 28, 47, 49, 54, 63). Rows 61, 62, 64, 65 stand on motion with keep unset. 700-credit retake hold is not raised by this note and no retake pass is authorised."
+    },
+    {
+      "comment_id": 7023130641,
+      "batches": [
+        14
+      ],
+      "rows": "66",
+      "keep": [],
+      "retake": [],
+      "note": "Chief archive motion inspection of row 66 P6:08b_darwin_mendel_synthesis (0.00-4.00 s): stands (one slow push-in, objects-only prompt satisfied, scribble-only pages, no reversal), keep stays unset. All 66 Pass 1 rows have now had a reviewer read and a Chief call; confirms 8-row hold list (3, 10, 24, 28, 47, 49, 54, 63). J2529 stays open until the marks pass."
     }
   ],
   "rows": [
@@ -1233,6 +1278,215 @@
         419.0
       ],
       "note": "KEEP as cut (6831390300 / 6831422974 / 6831444565 / 6831536663): shop porter walks from door to cart; four carters and cart book stack hold."
+    },
+    {
+      "n": 56,
+      "batch": 12,
+      "row_id": "P5:08a_wallace_opens_origin",
+      "take": 2,
+      "clip_sha256": "4f831312a32c9d8f8a6b2520842af608f7c8ccddafb10906d2ed52b48137aa5c",
+      "keep": null,
+      "status": "STANDS_KEEP_UNSET",
+      "ruling_comment": 7019983519,
+      "clip_window_s": [
+        0.0,
+        3.42
+      ],
+      "film_window_s": [
+        424.58,
+        428.0
+      ],
+      "note": "Stands on stills (7019983519); every-2nd-frame pull f000..f082 (0.000-3.417 s) verified clean one-way motion (hands untie centre knot 0.00-2.58 s and lift freed twine loop upward 2.67-3.42 s, no reversal). keep stays unset for Chief mark pass."
+    },
+    {
+      "n": 57,
+      "batch": 12,
+      "row_id": "P5:08b_wallace_reads_origin",
+      "take": 1,
+      "clip_sha256": "641b40ba5cf30290bda56b64b401422e801a7800d79d1327376dc44357edfffa",
+      "keep": null,
+      "status": "STANDS_KEEP_UNSET",
+      "ruling_comment": 7019983519,
+      "clip_window_s": [
+        0.0,
+        6.24
+      ],
+      "film_window_s": [
+        428.0,
+        434.24
+      ],
+      "note": "Stands on stills (7019983519: Wallace reading open green book); keep stays unset for Chief mark pass."
+    },
+    {
+      "n": 58,
+      "batch": 12,
+      "row_id": "P5:10_darwin_worried_shelf",
+      "take": 1,
+      "clip_sha256": "1bb721296dba13e0f98a187c0bc40b0cac456452ea6db3b3e6babc13de820862",
+      "keep": null,
+      "status": "STANDS_KEEP_UNSET",
+      "ruling_comment": 7019983519,
+      "clip_window_s": [
+        0.0,
+        7.66
+      ],
+      "film_window_s": [
+        440.5,
+        448.16
+      ],
+      "note": "Stands on stills (7019983519); every-2nd-frame pull f080..f110 (3.333-4.583 s) verified continuous passing exit (~0.42 s from f092 3.833 s to f102 4.250 s, completely out of frame by f104 4.333 s; face stays whole up to 3.750 s and never holds or changes shape during exit). keep stays unset for Chief mark pass."
+    },
+    {
+      "n": 59,
+      "batch": 12,
+      "row_id": "P6:02a_jenkin_study",
+      "take": 1,
+      "clip_sha256": "9337659ea233b9343f26bf5b7a3a61febd6c407ea5247459486bb3a70ea9b141",
+      "keep": null,
+      "status": "STANDS_KEEP_UNSET",
+      "ruling_comment": 7019983519,
+      "clip_window_s": [
+        0.0,
+        3.84
+      ],
+      "film_window_s": [
+        449.66,
+        453.5
+      ],
+      "note": "Stands on stills (7019983519: red drip matches red jar); keep stays unset for Chief mark pass."
+    },
+    {
+      "n": 60,
+      "batch": 12,
+      "row_id": "P6:02b_paint_pots_mix",
+      "take": 1,
+      "clip_sha256": "8a0efce2f9faac951dc4da36e0ff74757b37ce46624436cd21aa7dfca2a19ab9",
+      "keep": null,
+      "status": "STANDS_KEEP_UNSET",
+      "ruling_comment": 7019983519,
+      "clip_window_s": [
+        0.0,
+        5.28
+      ],
+      "film_window_s": [
+        453.5,
+        458.78
+      ],
+      "note": "Stands on stills (7019983519: grey-white mix is after the 5.28 s window); keep stays unset for Chief mark pass."
+    },
+    {
+      "n": 61,
+      "batch": 13,
+      "row_id": "P6:04a_mendel_pea_garden",
+      "take": 1,
+      "clip_sha256": "ce83b71a50ffb743e48cfd2b4b92059f211240b4a96b271206a1aa20896a38f0",
+      "keep": null,
+      "status": "STANDS_KEEP_UNSET",
+      "ruling_comment": 7020824090,
+      "clip_window_s": [
+        0.0,
+        5.5
+      ],
+      "film_window_s": [
+        471.06,
+        476.56
+      ],
+      "note": "Stands on Chief archive motion inspection (7020824090: one friar, round glasses, habit, pea blossom, one push-in); keep stays unset."
+    },
+    {
+      "n": 62,
+      "batch": 13,
+      "row_id": "P6:05_beads_not_paint",
+      "take": 1,
+      "clip_sha256": "727f49def4209db9634955f4a669bc972c4b85e331f35d1878078d99c04e95be",
+      "keep": null,
+      "status": "STANDS_KEEP_UNSET",
+      "ruling_comment": 7020824090,
+      "clip_window_s": [
+        0.0,
+        5.72
+      ],
+      "film_window_s": [
+        479.92,
+        485.64
+      ],
+      "note": "Stands on Chief archive motion inspection (7020824090: beads move toward jar across whole 0.00-5.72 s window, green and yellow separate); keep stays unset."
+    },
+    {
+      "n": 63,
+      "batch": 13,
+      "row_id": "P6:06a_origin_fifth_edition",
+      "take": 1,
+      "clip_sha256": "dd2f82440c4512c5c2f114be9022c82861e8477120b90a55d56513b20019cc4b",
+      "keep": false,
+      "status": "RETAKE",
+      "ruling_comment": 7020824090,
+      "clip_window_s": [
+        0.0,
+        4.96
+      ],
+      "film_window_s": [
+        485.64,
+        490.6
+      ],
+      "note": "RETAKE (7020824090, confirmed by 7023130641; supersedes 7020556581): warm gold light in the gutter of the open book from ~2.0 s through 4.5 s inside 0.00-4.96 s window, forbidden by prompt ('No candle, flame, glow, spark, fireball or lightning'). Green cover hinges open and stays on book; folded letter stays on desk. Added as 8th row on held retake list (rows 3, 10, 24, 28, 47, 49, 54, 63); prompt fix for a later allowance is no glow."
+    },
+    {
+      "n": 64,
+      "batch": 13,
+      "row_id": "P6:06b_spencer_coined",
+      "take": 1,
+      "clip_sha256": "2f725db7cd3cfb50a90a7c009513f22c6bfdac4dbed04ff640757f65a7d7af5c",
+      "keep": null,
+      "status": "STANDS_KEEP_UNSET",
+      "ruling_comment": 7020824090,
+      "clip_window_s": [
+        0.0,
+        5.94
+      ],
+      "film_window_s": [
+        490.6,
+        496.54
+      ],
+      "note": "Stands on Chief archive motion inspection (7020824090: quill changes hands and does not vanish; scribble only); keep stays unset."
+    },
+    {
+      "n": 65,
+      "batch": 13,
+      "row_id": "P6:07_key_in_lock",
+      "take": 1,
+      "clip_sha256": "96f01dfb0f802512cce411f14eb2b79e6c4d3c8be8f6d576f1dbc55ac264f996",
+      "keep": null,
+      "status": "STANDS_KEEP_UNSET",
+      "ruling_comment": 7020824090,
+      "clip_window_s": [
+        0.0,
+        7.54
+      ],
+      "film_window_s": [
+        496.54,
+        504.08
+      ],
+      "note": "Stands on Chief archive motion inspection (7020824090, withdrawing stills fail in 7020556581: key bit stays in keyhole across 0.00-7.00 s while bow turns and lid lifts; not RETAKE and not on hold list); keep stays unset."
+    },
+    {
+      "n": 66,
+      "batch": 14,
+      "row_id": "P6:08b_darwin_mendel_synthesis",
+      "take": 1,
+      "clip_sha256": "45c388088bcb4fb561967df348232f38d6fc4377c23d0c6efcbffbc9ea06531c",
+      "keep": null,
+      "status": "STANDS_KEEP_UNSET",
+      "ruling_comment": 7023130641,
+      "clip_window_s": [
+        0.0,
+        4.0
+      ],
+      "film_window_s": [
+        508.48,
+        512.48
+      ],
+      "note": "Stands on Chief archive motion inspection (7023130641: one slow push-in across 0.00-4.00 s; objects-only prompt satisfied; book, bowl, peas, jars and window stay put; scribble only); keep stays unset."
     }
   ]
 }

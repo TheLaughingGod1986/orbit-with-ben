@@ -331,4 +331,16 @@ Any spend row in this window that reads a different reservation, or no reservati
 - **Rows 41–45 (`6830257530`, closing `6830137619`):** `keep: true` on `41, 42, 43, 44, 45` as cut (`2.25–3.75 s` strip skipped; row `45` off retake batch).
 - **Rows 46–50 (`6830884885` / `6830918005`, withdrawing `6830830084` on rows `49–50`):** `keep: true` on `46, 48, 50` as cut; `RETAKE` on `47` (`P4:10_fairness_25_june`) and `49` (`P4:12_lyell_hooker_bundle`).
 - **Rows 51–55 (`6831422974` / `6831444565` / `6831536663`, withdrawing `6831390300` on row `54`):** `keep: true` on `51, 52, 53, 55` as cut; `RETAKE` on `54` (`P5:05a_darwin_writes_origin`).
-- **Held retake batch after pass 1 (`48 KEEP` / `7 RETAKE` across rows `1–55`):** rows `3, 10, 24, 28, 47, 49, 54`, reservation `700` Flow credits under `--floor 3000` (`£0` cash).
+- **Rows 56–60 (`7019983519`, superseding `7019806730`):** preliminary KEEP marks in `7019806730` withdrawn (`plate UAT is continuous playback`); stills stand on `56` (take 2), `57, 58, 59, 60` with `keep` unset (`null`) pending every-2nd-frame motion pull on `56` (`0.00–3.42 s`, verified clean one-way untying/lifting across `f000..f082`) and `58` (`3.40–4.60 s`, verified clean passing exit `f092..f102` `3.833–4.250 s`, completely gone by `f104` `4.333 s` with no held slice or face morph).
+- **Rows 61–65 (`7020824090`, superseding `7020556581` after Chief archive motion inspection):** `RETAKE` (`keep: false`) on `63` (`P6:06a_origin_fifth_edition` — warm gold light in the gutter at `~2.0–4.5 s` inside `0.00–4.96 s` window, forbidden by prompt; cover hinges and stays on book; folded letter stays on desk), added as the 8th row on the held retake list. Rows `61, 62, 64, 65` stand on motion with `keep` unset (`null`; stills fail on row `65` in `7020556581` withdrawn).
+- **Row 66 (`7023130641`, after Claude sheet pass `7023092408` and Chief archive motion inspection):** stands on motion (`0.00–4.00 s` slow push-in, objects-only prompt satisfied, scribble-only pages, no reversal) with `keep` unset (`null`).
+- **Held retake list after pass 1 (`48 KEEP` / `8 RETAKE` / `10 STANDS_KEEP_UNSET` across rows `1–66`, per `7020824090` & `7023130641`):**
+  1. Row `3` (`P1:03a_unlabelled_birds`) — `6815870258`
+  2. Row `10` (`P1:07_darwin_1837_desk`) — `6815870258`
+  3. Row `24` (`P3:02a_malthus_lamplight`) — `6822411223`
+  4. Row `28` (`P3:05a_chicks_deep_beaks`) — `6829662956`
+  5. Row `47` (`P4:10_fairness_25_june`) — `6830884885` / `6830918005`
+  6. Row `49` (`P4:12_lyell_hooker_bundle`) — `6830884885` / `6830918005`
+  7. Row `54` (`P5:05a_darwin_writes_origin`) — `6831422974` / `6831444565` / `6831536663`
+  8. Row `63` (`P6:06a_origin_fifth_edition`) — `7020824090` / `7023130641` (prompt fix for later allowance: no glow)
+  - Existing retake hold remains `700` Flow credits under `--floor 3000` (`£0` cash); not raised by `7020824090`/`7023130641`, and no retake pass or remint is authorised until a separate Chief allowance post names it.
