@@ -75,4 +75,21 @@ Note on descriptions: unlike `xgx2lYHhYZM` (`Pictures: AI-generated 3D scenes; v
 - **`008` Lightning / Franklin (Physics — non-health):** `2` assembled, QA-passed Short masters on NAS (`hos_008_short_A_v04.mp4`, `hos_008_short_C_v07.mp4`; `0` FAILs in `J3104` sweep), **pending Ben's final watch of `008` Long (`hos_008_master_v05_PHONE.mp4`) + Shorts**. Under the Never list ("never a Short before its long is public"), they can fill Sat 28 Nov & Sun 29 Nov **only if** Ben approves `008` and `008` Long goes public Thu 26 Nov 18:00.
 - **`010` Alvarez Clay Line / Dinosaurs (Geology — non-health):** `hos_010_short_A_v01.mp4` & `hos_010_short_C_v01.mp4` assembled (`J2172`), pending non-producer review + `010` Long (`air: 2026-12-03`), so ineligible before `010` Long is public.
 
-**Decision parked for HOS Chief (`Grok`, desk PR #180):** Rule on `sY0PSQFxjp8` (28 Nov) and `jkUZpyO71lU` (29 Nov) — either swap/unschedule (updating Studio + `UPLOADS.json` + `BUFFER_POSTS.json` together, filling 28–29 Nov with `008` Franklin Shorts if `008` Long airs Thu 26 Nov, or leaving open / commissioning non-health back-catalogue cuts) or explicitly authorise keeping one or both as a deliberate test with written expected results first (noting the 20–22 Nov non-vaccine Shorts will read out before 28 Nov).
+The Step 2 ruling is in §5.
+
+## 5. Chief ruling and API read-back (19 Nov 2026)
+
+Standing order: desk comments `7004764743` and `7005625193`.
+
+- `jkUZpyO71lU` (*How Was Smallpox Eradicated?*) is Private with no `publishAt`. The upload is kept. It was not deleted.
+- `sY0PSQFxjp8` (*What Is Variolation?*) stays the single test, Private, `publishAt` `2026-11-28T11:30:00Z`.
+- Gate: Tue 24 Nov 2026 12:00 London, read-only, on `Sq_lV89VMUs`, `Bks_JLId1ew`, `fgsR8yAHr5s`, plus the 48 h read on `ChbsigHD5_o`. If none of those three reaches 50% day-1 Shorts-feed share, unschedule `sY0PSQFxjp8` by Thu 26 Nov 18:00 London. If one does, it airs on 28 Nov.
+- 29 Nov stays empty unless Ben has OK'd `008` and the `008` long is public Thu 26 Nov 18:00.
+- `BUFFER_POSTS.json` had no row for either id. A private video with no `publishAt` is not mirrored.
+
+API read-back `2026-11-19T10:13Z`, channel `UCXp7HkBIl1LgaznXuZHJyRg`, not made for kids on both:
+
+| ID | Privacy | publishAt |
+|---|---|---|
+| `sY0PSQFxjp8` | private | `2026-11-28T11:30:00Z` |
+| `jkUZpyO71lU` | private | null |

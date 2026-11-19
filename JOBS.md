@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2035, J2529, J2993, J3122.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2035, J2529, J2993, J3122, J3124.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -49,7 +49,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3022 | mini | open (after J3021) | – | – | 064 picture · chart · OWB 064: Prepare shelf pictures, graphics and three thumbnails for the every-planet film | J3011 |
 | J3023 | mini | open (after J3022) | – | – | 064 edit · assembly · OWB 064: Assemble and check the every-planet film, then put it on Ben’s watch board | J3011 |
 | J3026 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
-| J3039 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
 | J3051 | mini | blocked | codex | – | for codex · review · `gpt-6-astra` · Verify condition for J3020 |  |
 | J3063 | macbook | blocked | macbook-2 | – | studio · First-day check at 6 h: "How Do Plants Clean the Air?" (ChbsigHD5_o) |  |
 | J3064 | mini | blocked | codex | – | studio · First-day check at 6 h: "If Voyager Needs 75,000 Years, How Far Is the Nearest Star?" (dH_yCRmzkMo) |  |
@@ -67,10 +66,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3117 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3064 |  |
 | J3119 | mini | open (after J3115) | – | – | 034 upload · studio · Upload the Pluto long master v02 Private and scheduled for Sun 13 Dec 18:00, arm the thumbnail test |  |
 | J3120 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3114 |  |
-| J3122 | mini | claimed | macbook | 2026-11-19T09:32Z | studio · HOS Shorts: the Vaccine and Plants Shorts got no feed reach; read Studio Reach, rule on the 28-29 Nov vaccine Shorts, record the health-topic learning |  |
+| J3122 | mini | blocked | macbook | – | studio · HOS Shorts: the Vaccine and Plants Shorts got no feed reach; read Studio Reach, rule on the 28-29 Nov vaccine Shorts, record the health-topic learning |  |
+| J3124 | mini | blocked | cursor | – | 013 picture · for cursor · assembly · `cursor-grok-4-7` · HOS 013: add reconcile-session-block to the pass-1 runner | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6974259569 |
 
 Recently finished:
 
+- J3123 done: Orbit Shorts: change the schedule of three December Shorts so no subject runs back to back (spacing rule 35, Option B) (Five private Shorts rescheduled. BTuL_QBbEgY 4 Dec to 5 Dec, 5qw8oW5Pwpc 5 Dec to 4 Dec, lsOCcIYCud0 7 Dec to 9 Dec, rXKIOUoZSGg 9 Dec to 7 Dec, v6euXX2omz4 2 Dec to 19 Dec. All still private. Studio dates match. Wed 2 Dec empty. No Buffer posts. Records in PR 1040. GBP 0.)
 - J3121 done: Orbit Shorts: move tomorrow's fourth nearest-star Short a week out and add the same-subject spacing rule (Swapped two private Shorts. aAUgIGEuPwQ 2026-11-20T11:30:00Z -> 2026-11-27T11:30:00Z. 93JL_IK57EM 2026-11-27T11:30:00Z -> 2026-11-20T11:30:00Z (Sunday hold in between). Both still private; titles and Related unchanged. Studio dialogs show 27 Nov and 20 Nov. Buffer matches. Records in PR 1038. LEARNINGS and the spacing audit are in open PR 1037. Nothing else moved. GBP 0.)
 - J3118 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (17 OWB + 7 HOS longs; CTR hits vs 4%: OWB 2/17, HOS 4/7. Also 88 OWB + 31 HOS Shorts; 3 recent Shorts omitted pending processed figures. Commit ab054edf13; published board-data 64ceef84 verified all 24 long read timestamps. Studio Lifetime CSV exports replaced unavailable legacy reader; no YouTube changes or spend.)
 - J3116 done: Verify condition for J2537 (Acting-Chief ruling: condition NOT MET. Accepted Gemini REVIEW.md aa3e1e3267 after checking parent approval history, HOS657 rehearsal and fresh desk/thread/PR657 comments. No explicit protected-desk rewrite exception. J2537 remains blocked with last_recheck J3116 and next check 2026-11-19T11:55:00Z. Follow-up owner: elected Chief checks approval, resolves new PR658/659/660 and refreshes backup/rehearsal before day-before notice and frozen-writer cutover. No live rewrite, force-push, production approval or spend.)
@@ -80,4 +81,3 @@ Recently finished:
 - J3110 done: Packaging panel (cursor): Pluto 034 long upload package and J3105 thumbnail candidates A/B/C (done)
 - J3109 done: Packaging panel (gemini): Pluto 034 long upload package and J3105 thumbnail candidates A/B/C (done)
 - J3108 done: Packaging panel (codex): Pluto 034 long upload package and J3105 thumbnail candidates A/B/C (Enlarge the whole Pluto globe and visible heart in thumbnail A so the mystery reads immediately at 168x94; independent critique committed in 8c285cf894.)
-- J3107 done: Chief: resolve 034 thumbs orphan-review (Workflow repaired: J3113 now owns 034 thumbs reconciliation after existing Chief decision J3112; panel J3108-J3111 unchanged. NAS A/B/C hashes match. Thumbs/upload remain review; J2868 UAT and J3065/J3066 public-parent holds preserved. Read-only handoff and dependency checks pass. No spend or Studio changes.)

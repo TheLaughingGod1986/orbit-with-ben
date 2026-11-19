@@ -1,5 +1,5 @@
 {
-  "next_id": 3123,
+  "next_id": 3125,
   "jobs": [
     {
       "id": "J0001",
@@ -225878,9 +225878,14 @@
           "at": "2026-11-18T09:07Z",
           "by": "relay",
           "what": "condition verification queued: J3039"
+        },
+        {
+          "at": "2026-11-19T09:33Z",
+          "by": "chief",
+          "what": "condition recorded; next verification 2026-11-19T18:00:00Z"
         }
       ],
-      "remaining_action": "Land reconcile-session-block on history-of-science, close row 56 t1 at 0 credits, verify dry-run --floor 3000, and mint rows 56-66",
+      "remaining_action": "Cursor adds reconcile-session-block (J3124). Then close row 56 t1 at 0 credits, dry-run --floor 3000, and mint rows 56-66.",
       "due": "2026-11-12T18:45:00Z",
       "kind": "video",
       "plain": "Make the 66 pictures for the Darwin and Wallace film, on credits that would otherwise expire on Thursday",
@@ -225900,12 +225905,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Codex/worker lands reconcile-session-block on history-of-science, closes HOS:013:P05:08a_wallace_opens_origin:t1 as SESSION_BLOCKED at 0 credits, and verifies dry-run --floor 3000 before resuming Batch 12 (rows 56-66).",
-        "check_at": "2026-11-18T10:07:12+00:00",
-        "last_recheck": "J2720",
-        "checked_at": "2026-11-17T09:23:01+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3039"
+        "condition": "Cursor lands reconcile-session-block on history-of-science, Gemini closes HOS:013:P05:08a_wallace_opens_origin:t1 as SESSION_BLOCKED at 0 credits, and dry-run --floor 3000 passes before resuming Batch 12 (rows 56-66).",
+        "check_at": "2026-11-19T18:00:00Z",
+        "last_recheck": "J3039",
+        "checked_at": "2026-11-19T09:33:11+00:00",
+        "checked_by": "chief"
       },
       "escalated_at": "2026-11-12T20:07Z"
     },
@@ -259239,6 +259243,11 @@
           "at": "2026-11-15T13:45Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-12-09T18:05:00Z"
+        },
+        {
+          "at": "2026-11-19T09:06Z",
+          "by": "claude",
+          "what": "Spacing ruling (Claude, acting Chief, 19 Nov 09:06Z, LEARNINGS rule 35): Uranus Short 2 goes to Wed 23 Dec 11:30, not Sat 19 Dec, so the two Uranus Shorts are not back to back. Upload for that slot."
         }
       ],
       "remaining_action": "Upload 033 Short 2 v02 Private for Sat 19 Dec 11:30Z from 033_short02_ice_giant_surface/07_Upload-Package, set Related video = 033 Uranus long, read back privacy/publishAt, record in UPLOADS.json, and post read-back",
@@ -259355,6 +259364,11 @@
           "at": "2026-11-15T13:56Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-12-09T18:05:00Z"
+        },
+        {
+          "at": "2026-11-19T09:06Z",
+          "by": "claude",
+          "what": "Spacing ruling (Claude, acting Chief, 19 Nov 09:06Z, LEARNINGS rule 35): Uranus Short 1 keeps Fri 18 Dec 11:30. Uranus Short 2 moves to Wed 23 Dec."
         }
       ],
       "remaining_action": "Upload 033 Short 1 v02 Private for Fri 18 Dec 11:30Z, set Related video = 033 Uranus long, record in UPLOADS.json, and post read-back",
@@ -268726,9 +268740,104 @@
           "at": "2026-11-19T08:55Z",
           "by": "codex",
           "what": "released: Clean checkpoint WW2 PR #12 / 06a9c53; read J2993_CONTINUATION_v24.md in /Volumes/MiniWork/scratch/J2993-ww2-v15. New sourced IWM B 7210 storm-damage intercut, 11 seconds/275 frames, full decode and five NAS hashes verified. Not integrated into the full draft. Existing plan 2/5; remaining archive acquisition, integration, mix/package and actual audio/motion quality review exceed one run. No background process, approval or Ben submission."
+        },
+        {
+          "at": "2026-11-19T09:20Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T09:20Z",
+          "by": "codex",
+          "what": "step 2 of 5 done: Resumed continuation v24; preserving existing five-step plan."
+        },
+        {
+          "at": "2026-11-19T09:23Z",
+          "by": "codex",
+          "what": "step 2 of 5 done: Local checkpoint 6e1d607: storm archive integrated; 41418-frame full draft decodes; two NAS hashes verified; archive now 7.93%; encoded peak -1.62 dBTP. Push rejected by automatic approval review for WW2 remote."
+        },
+        {
+          "at": "2026-11-19T09:24Z",
+          "by": "codex",
+          "what": "released: Local checkpoint 6e1d607, worktree /Volumes/MiniWork/scratch/J2993-ww2-v15; read J2993_CONTINUATION_v25.md. Storm archive integrated in full 27m36.72s draft, full decode/41418 frames and two NAS hash matches verified. Archive 7.93%, longest diagram run 420s; picture coverage and actual audio/motion QA remain. No background process or Ben submission. Automatic approval review rejected pushing to WW2 remote because unattended allow-list covers OWB/HOS only; Chief must obtain destination approval before push. Commit is local only, not on PR #12."
+        },
+        {
+          "at": "2026-11-19T09:30Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T09:30Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Claimed assigned pilot assembly; checking available inputs and prior work."
+        },
+        {
+          "at": "2026-11-19T09:31Z",
+          "by": "codex",
+          "what": "step 2 of 5 done: Restored existing five-step plan from continuation v25; full draft exists and remains FIX."
+        },
+        {
+          "at": "2026-11-19T09:34Z",
+          "by": "codex",
+          "what": "step 2 of 5 done: Three matched archive shots integrated at 9:52–10:19; full 41418-frame draft decodes, archive coverage now 9.57%. Film remains FIX."
+        },
+        {
+          "at": "2026-11-19T09:35Z",
+          "by": "codex",
+          "what": "released: Local checkpoint 89ea461; continuation v26 in /Volumes/MiniWork/scratch/J2993-ww2-v15. Three dated archive shots integrated; full 41418-frame 27m36.72s draft decodes; seven NAS hashes verified; archive now 9.57%. Existing plan 2/5; remaining picture balance and actual audio/motion QA exceed this run. No background process or Ben submission. Prior automatic approval review rejected WW2 push destination; not retried; Chief must resolve destination approval. Local commits not on PR #12."
+        },
+        {
+          "at": "2026-11-19T09:50Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T09:51Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Checking script, narration, shot list and media availability"
+        },
+        {
+          "at": "2026-11-19T09:51Z",
+          "by": "codex",
+          "what": "step 2 of 5 done: Restored existing five-step plan from continuation v26; full draft exists, picture balance unfinished"
+        },
+        {
+          "at": "2026-11-19T09:57Z",
+          "by": "codex",
+          "what": "step 2 of 5 done: Six archive inserts integrated; full 41418-frame draft decodes, archive 11.74%, longest diagram run reduced to 224 seconds; picture step remains unfinished"
+        },
+        {
+          "at": "2026-11-19T09:58Z",
+          "by": "codex",
+          "what": "released: Local checkpoint 85e92fe; read 03_Picture/J2993_CONTINUATION_v27.md in /Volumes/MiniWork/scratch/J2993-ww2-v15. Six archive inserts integrated: full 41418-frame 27m36.72s draft decodes, unchanged v26 audio packet hash, 17 NAS hashes verified. Archive 11.74%; longest diagram run 224.36 seconds. Existing plan 2/5; additional matched archive acquisition, final picture and actual audio/motion review remain beyond this checkpoint. No background process or Ben submission. Prior WW2 remote push rejection not retried; Chief must resolve destination approval. Commit remains local."
+        },
+        {
+          "at": "2026-11-19T10:03Z",
+          "by": "codex",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T10:03Z",
+          "by": "codex",
+          "what": "step 2 of 5 done: Resumed continuation v27; preserving existing five-step plan and checking archive coverage"
+        },
+        {
+          "at": "2026-11-19T10:06Z",
+          "by": "codex",
+          "what": "step 2 of 5 done: Two new licensed Dieppe originals integrated as three shots; full draft decodes; package credits updated"
+        },
+        {
+          "at": "2026-11-19T10:08Z",
+          "by": "codex",
+          "what": "step 2 of 5 done: Local checkpoint 46a47e6: three Dieppe inserts, full 41418-frame decode, unchanged audio, 20 NAS hashes verified; archive 12.61%"
+        },
+        {
+          "at": "2026-11-19T10:09Z",
+          "by": "codex",
+          "what": "released: Local checkpoint 46a47e6; read 03_Picture/J2993_CONTINUATION_v28.md in /Volumes/MiniWork/scratch/J2993-ww2-v15. Two new licensed Dieppe originals integrated as three shots; full 41418-frame 27m36.72s draft decodes, unchanged audio packet hash, 20 NAS hashes verified. Archive now 12.61%; longest diagram run 182.60 seconds. Existing plan 2/5; remaining picture finish and actual audio/motion review exceed this run. No background process or Ben submission. Prior automatic approval rejection of WW2 push destination not retried; Chief must resolve destination authorization; commits remain local."
         }
       ],
-      "remaining_action": "Integrating new storm archive and gathering remaining matched picture before final quality review",
+      "remaining_action": "Finish archive picture coverage and arrange audio and motion quality review",
       "due": "2026-11-25T18:00:00Z",
       "for": "codex",
       "kind": "assembly",
@@ -268740,9 +268849,9 @@
       "progress": {
         "step": 2,
         "of": 5,
-        "at": "2026-11-19T08:55Z",
+        "at": "2026-11-19T10:08Z",
         "by": "codex",
-        "note": "WW2 PR #12 / 06a9c53: new IWM B 7210 storm-damage intercut, 275 decoded 1080p frames, original and encoded still inspect"
+        "note": "Local checkpoint 46a47e6: three Dieppe inserts, full 41418-frame decode, unchanged audio, 20 NAS hashes verified; archiv"
       }
     },
     {
@@ -272662,13 +272771,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-18T09:09Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-11-19T09:33Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-18T09:07Z",
-      "result": "parked for Chief: J3039 condition verification complete (jobs/reviews/J3039/REVIEW.md & DRY_RUN_2026-11-18T0910Z.json @ 8c4be78e4a) — J2529 waiting condition remains NOT MET: (1) dry-run --floor 3000 --other-reservations 0 passes at recorded Flow balance 24,500 (headroom 22,600, would_allow_reserve_at_recorded_balance: true), J2033 is done, 46/46 runner tests pass, and all 55/66 Batches 01-11 pass-1 clips (48 KEEP, 7 RETAKE) + 5 Batch 12 0-credit start stills are intact on NAS; (2) however, reconcile-session-block has not yet landed on history-of-science main (44b12347, no open PR adds it; HOS desk items 6832148201 & 6832242517 remain pending for codex), and HOS:013:P05:08a_wallace_opens_origin:t1 remains unclosed (SUBMITTING in hos013-pass1/ledger.jsonl line 111, unposted CHARGED 100 in shared/account.jsonl lines 316-317, unreversed 100 in ai_spend/ledger.jsonl line 875). Recording jobs.py wait J2529 --recheck J3039 (next check 2026-11-18T15:15:00Z) and closing J3039 requires elected-Chief authority (Codex is currently elected Chief).",
+      "result": "Verified J2529 on 19 Nov 2026 from J3039 (jobs/reviews/J3039/REVIEW.md) plus a fresh read: NOT MET. history-of-science origin/main ae6ad0c1 has no reconcile-session-block and no open PR adds it. Pass ledger line 111 is still SUBMITTING on P5:08a_wallace_opens_origin take 1. Shared ledger lines 316-317 are still unposted charged 100. ai_spend line 875 has no -100 reversal. No mp4, runner pid 19965 is dead, locks unheld. The 18 Nov dry-run passed at recorded balance 24500 (headroom 22600); it was not re-run because the command and the ledger close are still unmet. J2529 stays blocked; next check 2026-11-19T18:00:00Z. The 15:15Z stamp had already passed. £0.",
       "history": [
         {
           "at": "2026-11-18T09:07Z",
@@ -272714,6 +272823,16 @@
           "at": "2026-11-18T12:38Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-11-19T09:33Z",
+          "by": "chief",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T09:33Z",
+          "by": "chief",
+          "what": "done: Verified J2529 on 19 Nov 2026 from J3039 (jobs/reviews/J3039/REVIEW.md) plus a fresh read: NOT MET. history-of-science origin/main ae6ad0c1 has no reconcile-session-block and no open PR adds it. Pass ledger line 111 is still SUBMITTING on P5:08a_wallace_opens_origin take 1. Shared ledger lines 316-317 are still unposted charged 100. ai_spend line 875 has no -100 reversal. No mp4, runner pid 19965 is dead, locks unheld. The 18 Nov dry-run passed at recorded balance 24500 (headroom 22600); it was not re-run because the command and the ledger close are still unmet. J2529 stays blocked; next check 2026-11-19T18:00:00Z. The 15:15Z stamp had already passed. £0."
         }
       ],
       "remaining_action": "Elected Chief (codex) records wait --recheck J3039 on J2529 and closes J3039",
@@ -274969,6 +275088,11 @@
           "at": "2026-11-18T18:06Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-12-13T18:05:00Z"
+        },
+        {
+          "at": "2026-11-19T09:06Z",
+          "by": "claude",
+          "what": "Spacing ruling (Claude, acting Chief, 19 Nov 09:06Z, LEARNINGS rule 35): Pluto Short 2 goes to Sat 26 Dec 11:30, not Wed 23 Dec (Uranus Short 2 takes 23 Dec). Upload for that slot."
         }
       ],
       "remaining_action": "Upload 034 Short 2 v02 Private for Wed 23 Dec 11:30Z once 034 Pluto long is public, set Related = 034 long, record in UPLOADS.json, and post read-back",
@@ -275080,6 +275204,11 @@
           "at": "2026-11-18T18:18Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-12-13T18:05:00Z"
+        },
+        {
+          "at": "2026-11-19T09:06Z",
+          "by": "claude",
+          "what": "Spacing ruling (Claude, acting Chief, 19 Nov 09:06Z, LEARNINGS rule 35): Pluto Short 1 keeps Mon 21 Dec 11:30. Pluto Short 2 moves to Sat 26 Dec."
         }
       ],
       "remaining_action": "Upload 034 Short 1 v02 Private for Mon 21 Dec 11:30Z once 034 Pluto long is public, set Related = 034 long, record in UPLOADS.json, and post read-back",
@@ -276706,6 +276835,11 @@
           "at": "2026-11-19T08:11Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3089 condition verification complete (jobs/reviews/J3089/REVIEW.md at 7dd2ce15a2) — J2845 waiting condition remains NOT MET: predecessor J2844 completed with FIX on T037 (m09jUdwC5hk_B_v05.jpg lacked 2.A.5 character/scale reference) and blocked J2845; revision J3088 built m09jUdwC5hk_B_v06.jpg (sha256=7b0f6c44e870820881dba0309bf73ef0cc5601fef83cf080438a06648c9eb19f, 285,269 bytes, saturation=171.9, near_black=14.5%, PR #1031 open) and panel J3092-J3095 recommended KEEP (2/3 score 8/10 at 168x94, 3/3 click choice), but dependent Chief exact-file decision J3096 remains open (no Chief exact-file PASS, no brief update to v06/T037, and no T018 successor-test authorization yet). Recording jobs.py wait J2845 --recheck J3089 (next check 2026-11-19T14:10:00Z) and closing J3089 requires elected-Chief authority (Grok Bot is currently UP; see exact commands in jobs/reviews/J3089/REVIEW.md §3)."
+        },
+        {
+          "at": "2026-11-19T10:12Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Awaiting elected Chief to record jobs.py wait J2845 --recheck J3089 and close J3089 (or reopen J2845 after J3096)",
@@ -276731,7 +276865,8 @@
       },
       "taskKeys": [
         "OWB:005"
-      ]
+      ],
+      "escalated_at": "2026-11-19T10:12Z"
     },
     {
       "id": "J3090",
@@ -277850,6 +277985,11 @@
           "at": "2026-11-19T07:48Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3104 QA sweep complete across OWB (53a692b5cb) and HOS PR #662 (403883d1) with byte-identical J3104_QA_SWEEP_INVENTORY_2026-11-19.json (sha256 080b5279cafc7ebef16a8b82e4de5515fa54360f7bd67922445c872bea014ebd) and J3104_QA_SWEEP_REPORT_2026-11-19.md (sha256 33d1bfc4f3c968d068adbe91b9d5d75d1ef7877b4f5a940b108441fff06a511d). 266 entries inventoried (167 OWB + 99 HOS; 445 enumerated media files = 403 directly hashed unwrapped + 41 NAS tar + 1 manifest-backed iCloud stub; 11 net new post-J2921 exports/packs across OWB:033, OWB:034, HOS:008, HOS:010, HOS:013). All 776/776 applicable picture_qa/polish_gate/music_gate sidecars (749 JSON + 27 .txt) present, fresh vs media, and reconciled 1-to-1 against raw sidecars on disk with 0 mismatches; 0 unaddressed current_newest FAILs across all 157 newest candidates (all 27 gate_failure_indicators belong strictly to 8 historical_superseded cuts whose current_newest replacements pass all 3 gates with 0 FAIL); 0 new repair jobs required. Spend: £0."
+        },
+        {
+          "at": "2026-11-19T09:48Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Parked for Chief review and HOS PR #662 merge",
@@ -277877,7 +278017,8 @@
         "HOS:008",
         "HOS:010",
         "HOS:013"
-      ]
+      ],
+      "escalated_at": "2026-11-19T09:48Z"
     },
     {
       "id": "J3105",
@@ -278922,6 +279063,11 @@
           "at": "2026-11-19T08:43Z",
           "by": "claude",
           "what": "Finding for this check: third Short in a row on one subject, barely shown in the feed (3 feed views). Views at 19 Nov snapshot. Mars rover run: 'Could a Robot Survive a Night on Mars?' 9 Nov 1,074; 'Why Did a 90-Day Mars Rover Last 14 Years?' 11 Nov 110; 'How Did Martian Wind Keep a 90-Day Rover Alive' 12 Nov 57; then a new angle, 'How Did a Helicopter Fly 72 Times on Mars?' 14 Nov, 1,263. Nearest-star run: 'If You Can't See the Nearest Star' 16 Nov 469; 'How Far From Earth Is Voyager 1' 17 Nov 268 (182 of 193 views from the feed at 6 h, ~737 feed showings, 24.7% stayed against the usual 32.5%); 'If Voyager Needs 75,000 Years, How Far Is the Nearest Star?' 18 Nov 16 at ~21 h (Studio: 13 search Follow-up: J3121."
+        },
+        {
+          "at": "2026-11-19T09:28Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Elected Chief: reopen and close J3064 with 19 Nov morning verification evidence (79dbddb588) and close J3117",
@@ -278947,7 +279093,8 @@
       },
       "taskKeys": [
         "OWB:026"
-      ]
+      ],
+      "escalated_at": "2026-11-19T09:28Z"
     },
     {
       "id": "J3118",
@@ -279245,13 +279392,13 @@
       "stage": "",
       "after": "",
       "eta_min": 40,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-19T08:52Z",
-      "eta": "2026-11-19T09:32Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-19T08:49Z",
-      "result": "",
+      "result": "parked for Chief: Step 1 Studio Reach audit & Step 3 LEARNINGS row 35 open in OWB PR #1039 (ca327bf7e); Step 2 ruling on 28-29 Nov vaccine Shorts (sY0PSQFxjp8, jkUZpyO71lU) posted to HOS desk PR #180 for HOS Chief (Grok)",
       "history": [
         {
           "at": "2026-11-19T08:49Z",
@@ -279272,6 +279419,11 @@
           "at": "2026-11-19T09:05Z",
           "by": "macbook",
           "what": "step 2 of 4 done"
+        },
+        {
+          "at": "2026-11-19T09:09Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: Step 1 Studio Reach audit & Step 3 LEARNINGS row 35 open in OWB PR #1039 (ca327bf7e); Step 2 ruling on 28-29 Nov vaccine Shorts (sY0PSQFxjp8, jkUZpyO71lU) posted to HOS desk PR #180 for HOS Chief (Grok)"
         }
       ],
       "remaining_action": "Writing Studio Reach evidence report and LEARNINGS.md row 35 on branch macbook/J3122; preparing Step 2 HOS Chief brief",
@@ -279285,6 +279437,154 @@
         "at": "2026-11-19T09:05Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J3123",
+      "title": "Orbit Shorts: change the schedule of three December Shorts so no subject runs back to back (spacing rule 35, Option B)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ruling (Claude, acting Chief, 19 Nov 09:06Z): Option B of jobs/reviews/J3121/SCHEDULE_SPACING_AUDIT.md, so that Orbit's December Shorts obey LEARNINGS rule 35 (no two Shorts on the same subject back to back).** As scheduled, Gliese 710 runs three in a row (30 Nov, 2 Dec, 4 Dec), and Betelgeuse (9 and 11 Dec), Uranus (18 and 19 Dec) and Pluto (21 and 23 Dec) run as back-to-back pairs. Our numbers show the second Short in a row on one subject loses most of its feed (Mars 1,074 then 110; nearest star 469 then 268, then 16 for the third).\n\n**Do, on the Mini (change the schedule of private scheduled Shorts only; keep Buffer matching).**\n1. Swap BTuL_QBbEgY (Fri 4 Dec, Gliese 710) with 5qw8oW5Pwpc (Sat 5 Dec, magnetic field; its long is public from Wed 2 Dec 18:00).\n2. Swap lsOCcIYCud0 (Mon 7 Dec, Gliese 710) with rXKIOUoZSGg (Wed 9 Dec, Betelgeuse; its long is public from Sun 6 Dec 18:00).\n3. Move v6euXX2omz4 (Wed 2 Dec, Gliese 710, Test A opening) to Sat 19 Dec 11:30. Leave Wed 2 Dec empty unless the Titan Test A Short (J0979) has Ben's OK by then; if it does, it takes 2 Dec. Never fill a slot with an unapproved cut.\nThe result from 30 Nov: 30 Nov Gliese, 4 Dec magnetic, 5 Dec Gliese, 7 Dec Betelgeuse, 9 Dec Gliese, 11 Dec Betelgeuse, 12 Dec magnetic, 14 Dec Betelgeuse, 16 Dec Gliese, 18 Dec Uranus 1, 19 Dec Gliese (v6eu), 21 Dec Pluto 1, 23 Dec Uranus 2, Sat 26 Dec Pluto 2.\n4. For each moved Short: old and new publishAt in UPLOADS.json, its film's status.json and a schedule note beside the package (never touch an uploaded PACKAGE_MANIFEST or its hash). Reschedule each Buffer post to the new time, or re-mirror it inside the 7-day window. Check every moved Short in Studio afterwards. Regenerate STATUS.md. Deliver one PR with the records.\n\n**Guards.** Never two Shorts on one day. Never a Short before its long is public. Dated-event Shorts and the rule-31 readout Shorts stay put. No live video changes, no re-upload, no title or thumbnail change. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "done",
+      "by": "cursor",
+      "since": "2026-11-19T09:09Z",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-19T09:06Z",
+      "result": "Five private Shorts rescheduled. BTuL_QBbEgY 4 Dec to 5 Dec, 5qw8oW5Pwpc 5 Dec to 4 Dec, lsOCcIYCud0 7 Dec to 9 Dec, rXKIOUoZSGg 9 Dec to 7 Dec, v6euXX2omz4 2 Dec to 19 Dec. All still private. Studio dates match. Wed 2 Dec empty. No Buffer posts. Records in PR 1040. GBP 0.",
+      "history": [
+        {
+          "at": "2026-11-19T09:06Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-19T09:09Z",
+          "by": "cursor",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T09:10Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed J3123. Option B: swap 4 Dec Gliese with 5 Dec magnetic, swap 7 Dec Gliese with 9 Dec Betelgeuse, move 2 Dec Gliese to 19 Dec."
+        },
+        {
+          "at": "2026-11-19T09:11Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Live times match the audit. J0979 is still waiting on Ben, so Wed 2 Dec stays empty. No Buffer posts exist for these five."
+        },
+        {
+          "at": "2026-11-19T09:13Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: YouTube now reads 4 Dec magnetic, 5 Dec Gliese, 7 Dec Betelgeuse, 9 Dec Gliese, 19 Dec Gliese. All five stayed private. Titles unchanged. Wed 2 Dec left empty."
+        },
+        {
+          "at": "2026-11-19T09:17Z",
+          "by": "cursor",
+          "what": "step 4 of 4 done: Studio shows 4 Dec, 5 Dec, 7 Dec, 9 Dec and 19 Dec at 11:30. Records are in PR 1040. Wed 2 Dec left empty. No Buffer posts to move."
+        },
+        {
+          "at": "2026-11-19T09:17Z",
+          "by": "cursor",
+          "what": "done: Five private Shorts rescheduled. BTuL_QBbEgY 4 Dec to 5 Dec, 5qw8oW5Pwpc 5 Dec to 4 Dec, lsOCcIYCud0 7 Dec to 9 Dec, rXKIOUoZSGg 9 Dec to 7 Dec, v6euXX2omz4 2 Dec to 19 Dec. All still private. Studio dates match. Wed 2 Dec empty. No Buffer posts. Records in PR 1040. GBP 0."
+        }
+      ],
+      "remaining_action": "Chief merges the schedule records",
+      "due": "2026-11-22T18:00:00Z",
+      "kind": "studio",
+      "plain": "Reorder three of December's Orbit Shorts so two Shorts on the same subject never go out one after the other",
+      "progress": {
+        "step": 4,
+        "of": 4,
+        "at": "2026-11-19T09:17Z",
+        "by": "cursor",
+        "note": "Studio shows 4 Dec, 5 Dec, 7 Dec, 9 Dec and 19 Dec at 11:30. Records are in PR 1040. Wed 2 Dec left empty. No Buffer pos"
+      },
+      "taskKeys": [
+        "OWB:028",
+        "OWB:029",
+        "OWB:031",
+        "OWB:033",
+        "OWB:034"
+      ],
+      "done_ref": "b0777a5ba5"
+    },
+    {
+      "id": "J3124",
+      "title": "HOS 013: add reconcile-session-block to the pass-1 runner",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief ruling, 19 Nov 2026, on desk comment 6974259569 (and Claude's note 6974276811). J3039 re-checked the J2529 hold and it is still unmet. This job is only the missing command. Codex has not opened the pull request in the day Claude allowed, so Cursor writes it.\n\nAdd one append-only subcommand, reconcile-session-block, to history-of-science 02_Video-Projects/013_Darwin-Wallace-Evolution/07_Edit-Project/_mint_flow_v01_pass1.py, with unit tests, and open a pull request. Do not merge. Claude reviews it as a spend-and-ledger change. Chief merges.\n\nThe command submits nothing and opens no Flow page. It runs only for this identity:\n\n- charge HOS:013:P05:08a_wallace_opens_origin:t1\n- row P5:08a_wallace_opens_origin, part 5, plate 08a_wallace_opens_origin, take 1\n\nIt refuses unless the latest pass line is SUBMITTING for that charge, the shared line is unposted CHARGED for 100, no mp4 exists at the raw path or the archive path, and the evidence quotes the unusual-activity banner with a balance of 4990. A second run is a no-op. Any other charge is refused. Do not run reconcile-policy-refusal. Do not hand-edit either ledger. Do not run the command in this job. Do not click Create. Do not mint rows 56-66. The 700-credit retake hold stays a hold.\n\nOn the first run the command appends:\n\n- Shared ledger: kind session_blocked, status SESSION_BLOCKED, amount 0. This is not policy_refused and not posted. The same charge id cannot be intent'd again.\n- Pass ledger: status SESSION_BLOCKED, credits_used 0, generated false, keep false, reason the banner sentence. It counts toward neither spent nor pending, and it does not count toward MAX_TAKES_PER_ROW.\n- ai_spend: one reversal, id flow:reversal:HOS:013:P05:08a_wallace_opens_origin:t1, amount -100, what \"Flow session block, 0 credits deducted, take not a policy refusal\". If a negative spend line already names the charge, write nothing.\n\ntakes_recorded still remembers take 1, so the next file is t2. A session-blocked take does not count as the pass-1 attempt, so this row may have that one later take. Take 3 is refused. The 6,600 cap is unchanged.\n\nSpec source: Chief ruling 6831924778. Park the open pull request for Claude's review. £0. Nothing for Ben.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6974259569",
+      "film": "013",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "blocked",
+      "by": "cursor",
+      "since": "2026-11-19T09:37Z",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-11-19T09:33Z",
+      "result": "parked for Chief: PR 664 is open for Claude's spend-and-ledger review; Chief merges. Desk 7005508865. Command not run. https://github.com/TheLaughingGod1986/history-of-science/pull/664",
+      "history": [
+        {
+          "at": "2026-11-19T09:33Z",
+          "by": "chief",
+          "what": "added for cursor"
+        },
+        {
+          "at": "2026-11-19T09:37Z",
+          "by": "cursor",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T09:37Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed J3124. Reading reconcile-policy-refusal and the HOS 013 ledgers."
+        },
+        {
+          "at": "2026-11-19T09:41Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Read the pass-1 runner and Chief ruling 6831924778. The command closes only the Wallace origin take."
+        },
+        {
+          "at": "2026-11-19T09:45Z",
+          "by": "cursor",
+          "what": "step 3 of 4 done: Pull request 664 is open at head a4bd0515. 55 pass-1 tests passed. The command was not run."
+        },
+        {
+          "at": "2026-11-19T09:45Z",
+          "by": "cursor",
+          "what": "step 4 of 4 done: Desk note 7005508865. PR 664 left open. Command not run. Nothing spent."
+        },
+        {
+          "at": "2026-11-19T09:45Z",
+          "by": "cursor",
+          "what": "blocked: parked for Chief: PR 664 is open for Claude's spend-and-ledger review; Chief merges. Desk 7005508865. Command not run. https://github.com/TheLaughingGod1986/history-of-science/pull/664"
+        }
+      ],
+      "remaining_action": "Pull request 664 is open for Claude's review",
+      "for": "cursor",
+      "kind": "assembly",
+      "model": "cursor-grok-4-7",
+      "plain": "Add the session-block close to the Darwin and Wallace picture runner",
+      "mini_only": true,
+      "urgent": 26,
+      "progress": {
+        "step": 4,
+        "of": 4,
+        "at": "2026-11-19T09:45Z",
+        "by": "cursor",
+        "note": "Desk note 7005508865. PR 664 left open. Command not run. Nothing spent."
+      },
+      "taskKeys": [
+        "HOS:013"
+      ]
     }
   ],
   "focus": [
