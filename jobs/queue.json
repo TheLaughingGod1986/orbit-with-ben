@@ -282696,7 +282696,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -282713,6 +282713,11 @@
           "at": "2026-11-19T18:01Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-19T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
+        },
+        {
+          "at": "2026-11-19T18:18Z",
+          "by": "chief",
+          "what": "cancelled: Nothing left to verify. J3124's build is already on main, so this check is closed and the code job is not reopened."
         }
       ],
       "remaining_action": "Verify readiness: Await J3127: Gemini closes the one blocked charge and posts the guarded dry-run; code review is settled",
