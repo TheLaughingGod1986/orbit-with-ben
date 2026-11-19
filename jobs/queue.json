@@ -1,5 +1,5 @@
 {
-  "next_id": 3123,
+  "next_id": 3124,
   "jobs": [
     {
       "id": "J0001",
@@ -259239,6 +259239,11 @@
           "at": "2026-11-15T13:45Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-12-09T18:05:00Z"
+        },
+        {
+          "at": "2026-11-19T09:06Z",
+          "by": "claude",
+          "what": "Spacing ruling (Claude, acting Chief, 19 Nov 09:06Z, LEARNINGS rule 35): Uranus Short 2 goes to Wed 23 Dec 11:30, not Sat 19 Dec, so the two Uranus Shorts are not back to back. Upload for that slot."
         }
       ],
       "remaining_action": "Upload 033 Short 2 v02 Private for Sat 19 Dec 11:30Z from 033_short02_ice_giant_surface/07_Upload-Package, set Related video = 033 Uranus long, read back privacy/publishAt, record in UPLOADS.json, and post read-back",
@@ -259355,6 +259360,11 @@
           "at": "2026-11-15T13:56Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-12-09T18:05:00Z"
+        },
+        {
+          "at": "2026-11-19T09:06Z",
+          "by": "claude",
+          "what": "Spacing ruling (Claude, acting Chief, 19 Nov 09:06Z, LEARNINGS rule 35): Uranus Short 1 keeps Fri 18 Dec 11:30. Uranus Short 2 moves to Wed 23 Dec."
         }
       ],
       "remaining_action": "Upload 033 Short 1 v02 Private for Fri 18 Dec 11:30Z, set Related video = 033 Uranus long, record in UPLOADS.json, and post read-back",
@@ -274969,6 +274979,11 @@
           "at": "2026-11-18T18:06Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-12-13T18:05:00Z"
+        },
+        {
+          "at": "2026-11-19T09:06Z",
+          "by": "claude",
+          "what": "Spacing ruling (Claude, acting Chief, 19 Nov 09:06Z, LEARNINGS rule 35): Pluto Short 2 goes to Sat 26 Dec 11:30, not Wed 23 Dec (Uranus Short 2 takes 23 Dec). Upload for that slot."
         }
       ],
       "remaining_action": "Upload 034 Short 2 v02 Private for Wed 23 Dec 11:30Z once 034 Pluto long is public, set Related = 034 long, record in UPLOADS.json, and post read-back",
@@ -275080,6 +275095,11 @@
           "at": "2026-11-18T18:18Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-12-13T18:05:00Z"
+        },
+        {
+          "at": "2026-11-19T09:06Z",
+          "by": "claude",
+          "what": "Spacing ruling (Claude, acting Chief, 19 Nov 09:06Z, LEARNINGS rule 35): Pluto Short 1 keeps Mon 21 Dec 11:30. Pluto Short 2 moves to Sat 26 Dec."
         }
       ],
       "remaining_action": "Upload 034 Short 1 v02 Private for Mon 21 Dec 11:30Z once 034 Pluto long is public, set Related = 034 long, record in UPLOADS.json, and post read-back",
@@ -279285,6 +279305,36 @@
         "at": "2026-11-19T09:05Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J3123",
+      "title": "Orbit Shorts: change the schedule of three December Shorts so no subject runs back to back (spacing rule 35, Option B)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ruling (Claude, acting Chief, 19 Nov 09:06Z): Option B of jobs/reviews/J3121/SCHEDULE_SPACING_AUDIT.md, so that Orbit's December Shorts obey LEARNINGS rule 35 (no two Shorts on the same subject back to back).** As scheduled, Gliese 710 runs three in a row (30 Nov, 2 Dec, 4 Dec), and Betelgeuse (9 and 11 Dec), Uranus (18 and 19 Dec) and Pluto (21 and 23 Dec) run as back-to-back pairs. Our numbers show the second Short in a row on one subject loses most of its feed (Mars 1,074 then 110; nearest star 469 then 268, then 16 for the third).\n\n**Do, on the Mini (change the schedule of private scheduled Shorts only; keep Buffer matching).**\n1. Swap BTuL_QBbEgY (Fri 4 Dec, Gliese 710) with 5qw8oW5Pwpc (Sat 5 Dec, magnetic field; its long is public from Wed 2 Dec 18:00).\n2. Swap lsOCcIYCud0 (Mon 7 Dec, Gliese 710) with rXKIOUoZSGg (Wed 9 Dec, Betelgeuse; its long is public from Sun 6 Dec 18:00).\n3. Move v6euXX2omz4 (Wed 2 Dec, Gliese 710, Test A opening) to Sat 19 Dec 11:30. Leave Wed 2 Dec empty unless the Titan Test A Short (J0979) has Ben's OK by then; if it does, it takes 2 Dec. Never fill a slot with an unapproved cut.\nThe result from 30 Nov: 30 Nov Gliese, 4 Dec magnetic, 5 Dec Gliese, 7 Dec Betelgeuse, 9 Dec Gliese, 11 Dec Betelgeuse, 12 Dec magnetic, 14 Dec Betelgeuse, 16 Dec Gliese, 18 Dec Uranus 1, 19 Dec Gliese (v6eu), 21 Dec Pluto 1, 23 Dec Uranus 2, Sat 26 Dec Pluto 2.\n4. For each moved Short: old and new publishAt in UPLOADS.json, its film's status.json and a schedule note beside the package (never touch an uploaded PACKAGE_MANIFEST or its hash). Reschedule each Buffer post to the new time, or re-mirror it inside the 7-day window. Check every moved Short in Studio afterwards. Regenerate STATUS.md. Deliver one PR with the records.\n\n**Guards.** Never two Shorts on one day. Never a Short before its long is public. Dated-event Shorts and the rule-31 readout Shorts stay put. No live video changes, no re-upload, no title or thumbnail change. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-19T09:06Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T09:06Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Swap 4 Dec and 5 Dec, swap 7 Dec and 9 Dec, move the 2 Dec Gliese Short to 19 Dec in Studio and Buffer; one PR with records",
+      "due": "2026-11-22T18:00:00Z",
+      "kind": "studio",
+      "plain": "Reorder three of December's Orbit Shorts so two Shorts on the same subject never go out one after the other"
     }
   ],
   "focus": [
