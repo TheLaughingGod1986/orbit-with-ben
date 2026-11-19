@@ -292,6 +292,36 @@ Any spend row in this window that reads a different reservation, or no reservati
 | `P6:06b_spencer_coined` | `P06_06b_spencer_coined_t1.mp4` | `2f725db7cd3cfb50a90a7c009513f22c6bfdac4dbed04ff640757f65a7d7af5c` | `e3cb96754dd2f1d55bdb233b34e99c8f6a4accfdf59c08f4d10e0ac69924833c` | `ff1f829d963c8a0b9215619be7ec66995b29df8b5771e380c110a5c13a8809bf` | `23,700 → 23,600` | `PENDING_REVIEW` (`keep: false`) |
 | `P6:07_key_in_lock` | `P06_07_key_in_lock_t1.mp4` | `96f01dfb0f802512cce411f14eb2b79e6c4d3c8be8f6d576f1dbc55ac264f996` | `f43eeaf1d56cf5e39a403d95f3e8f5bec70ba34aa6ca04210f2b1c11d5f6a339` | `ab46405be230be871e9f4055c28fa19e41553c791ef4f349f0ebe2e01687506b` | `23,600 → 23,500` | `PENDING_REVIEW` (`keep: false`) |
 
+### Batch 14 of 14 (Final) — `GENERATED` / `PENDING_REVIEW` (`2026-11-19T19:52Z` – `19:57Z`)
+
+- **Authorization:** Chief 19 Nov governing note (desk `7005254471` / `7017831888` reply; J2529 reopened `2026-11-19T18:17Z`; Batches 12–14 rows 56–66 on post-reset allowance).
+- **Log / done:** `/Users/benjaminoats/_desk/logs/J2529-batch14-20261119T1952Z.log`, `/Users/benjaminoats/_desk/logs/J2529-batch14-20261119T1952Z.done` (`exit 0`, runner PID `25952` exited)
+- **Batch receipt:** `BATCH_14_RECEIPT.json` (`archive_v01_pass1/batch-bddd8c07cf31.receipt.json`)
+- **Full-clip `0.5s` contact sheet:** `BATCH_14_SHEETS.json` (`archive_v01_pass1/sheets/P06_08b_darwin_mendel_synthesis_t1_sheet.jpg`, review branch `review/013-pass1-sheets` `44cbd78a`)
+- **Post-batch dry-run:** `DRY_RUN_2026-11-19T2140Z_POST_BATCH14.json` (`has_pending_charge: false`, `unposted_charges: 800`, `remaining_reservations: 0`, `total_liability: 800`, `would_allow_reserve_at_recorded_balance: true`)
+- **Reservation / floor:** `HOS013_PASS1` (`--floor 3000 --other-reservations 0`)
+- **Credits spent:** `100` (`1 × 100` Quality; 1 start still generated at `0` credits via `Nano Banana 2.1`; cumulative `6,600 / 6,600`; `£0` cash)
+- **Live balance chain (posted in `~/_desk/state/flow/shared/account.jsonl` at `19:57:16Z`, post-batch `23,400` re-verified live on CDP `:9222` at `21:41:28Z`):** `23,500 → 23,400` (`delta: 100`, `0` pending charges, `0` remaining on `HOS013_PASS1`, `0` subsequent Flow charges; live headroom `23,400 - 800 = 22,600 >= 3,000`)
+
+| Row | Clip | Clip SHA-256 | Start Still SHA-256 | Sheet SHA-256 | Before → After | Status |
+|---|---|---|---|---|---|---|
+| `P6:08b_darwin_mendel_synthesis` | `P06_08b_darwin_mendel_synthesis_t1.mp4` | `45c388088bcb4fb561967df348232f38d6fc4377c23d0c6efcbffbc9ea06531c` | `9cd894331a580684c06fbb9827ce4b387d8b70804dc6fd7261f3736a3b7dc04e` | `10fa396805078768ce3b4932b332303e37f53493b66d1a24fd3fdeb7635f8d02` | `23,500 → 23,400` | `PENDING_REVIEW` (`keep: false`) |
+
+### Pass-1 Mint Completion Summary (`14/14` batches, `66/66` rows — parked for Chief)
+
+- **Takes per part (`66 / 66` Quality clips `GENERATED` / `PENDING_REVIEW`, `0` Fast, `0` marked `KEEP` by runner):**
+  - `part_01`: `12 / 12` (`1,200` credits)
+  - `part_02`: `11 / 11` (`1,100` credits)
+  - `part_03`: `14 / 14` (`1,400` credits)
+  - `part_04`: `12 / 12` (`1,200` credits)
+  - `part_05`: `9 / 9` (`900` credits posted; `P5:08a_wallace_opens_origin` take 1 closed `SESSION_BLOCKED` at `0` credits on 12 Nov, take 2 generated and posted in Batch 12)
+  - `part_06`: `8 / 8` (`800` credits)
+- **Credits spent:** `6,600 / 6,600` included Flow credits (`66 × 100` `Veo 3.1 - Quality`, `£0` cash). All `66` clips verified `1280×720`, `audio_streams: 0`, `decode_ok: true`, NAS archive `verified: true`, with full-clip `0.5s` contact sheets pushed to `review/013-pass1-sheets` @ `44cbd78a`.
+- **Balances:**
+  - Pre-reset cycle (Batches 01–11, rows 1–55): `10,440` (`+50` account grant before Batch 08) `→ 4,990` (`5,500` credits spent).
+  - Post-reset cycle (Batches 12–14, rows 56–66): `24,500 → 23,400` (`1,100` credits spent; live balance `23,400` verified on CDP `:9222` at `2026-11-19T21:41:28Z`, `0` pending charges, `0` remaining `HOS013_PASS1` reservation, headroom `22,600 >= 3,000`).
+- **Receipts & archive:** `orbit-with-ben` `jobs/reviews/J2529/` (`BATCH_01_RECEIPT.json`–`BATCH_14_RECEIPT.json`, `BATCH_01_SHEETS.json`–`BATCH_14_SHEETS.json`), NAS `/Volumes/data/studio-live/History Of Science/02_Video-Projects/013_Darwin-Wallace-Evolution/04_Generated-Clips/archive_v01_pass1/`, review sheets branch `review/013-pass1-sheets` (`44cbd78a`).
+
 ## Chief Review State (`REVIEW_STATE.json`)
 
 - **Rows 1–15 (`6815870258`):** `keep: true` on `1, 2, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15`; `RETAKE` on `3, 10`.
