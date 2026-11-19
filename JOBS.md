@@ -66,7 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3138 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3128 |  |
 | J3151 | mini | open (after J3150) | – | – | 009 edit · for codex · review · `gpt-6-astra` · HOS 009: independently review the disabled music integration | J3150 |
 | J3152 | any | open (after J3151) | – | – | 009 edit · chief · HOS 009: decide whether the disabled music flight stays closed | J3150 |
-| J3153 | mini | claimed | cursor | 2026-11-19T17:53Z | studio · First-day check at 6 h: "How Close Will the Supermoon Get on November 24?" (HXacmpYkXcA) |  |
+| J3153 | mini | blocked | cursor | – | studio · First-day check at 6 h: "How Close Will the Supermoon Get on November 24?" (HXacmpYkXcA) |  |
 
 Recently finished:
 
