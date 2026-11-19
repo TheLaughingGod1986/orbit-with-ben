@@ -49,3 +49,11 @@ J3129 owns the bounded zero-spend correction:
 Reviewed owner-authored same-repository PR #1031 at b9bb39363b2b4b0e1c3fc0d3c57658a8082514a7: builder is local-only and refuses candidate overwrites; records preserve proposal status. Parsed ledger diff changes only T037 and T039 semantically; other changes are JSON escaping. Rules CI succeeded, core check was skipped, mergeable CLEAN. Merged under current Chief authority as build/provenance records; the merge does not approve the Webb draft. T038 unchanged.
 
 J2845 brief now names exact approved B, T037 and the fresh Studio conditions. J2847 remains blocked on J3129 and its ensuing exact-file decision. Titles, live A, privacy and schedules remain unchanged. No money or generation credits spent.
+
+## Fresh Studio read-back and release
+
+After automatic review rejected reopening before a current Studio read, the missing condition was checked read-only in the existing Orbit Studio tab (CDP 9223). T018_READBACK.txt records the exact finished report dates, inconclusive result, unavailable shares and A visible to all; no running test was shown. The UI also confirmed the current compilation description and Public state. No New test, Continue, Set this option or Save was clicked. The report was closed with Done. Screenshot remains in /Volumes/MiniWork/scratch/J3096-studio-report.png (media not committed).
+
+Automatic review accepted reopening after this evidence. J2845 is open, still dependent on J3096 completing, and must freshly verify the same report immediately before arming. J2847 remains blocked; J3129 is open. No user approval is needed for the resolved rejection.
+
+Validation: candidate hashes matched, Saturn colour gate PASS, five queue privacy tests PASS, five private-network tests PASS, eight email-ratchet tests PASS, diff whitespace check PASS. Semantic checks confirmed only J2845/J2847 briefs and T037/T039 notes changed; T038 untouched.
