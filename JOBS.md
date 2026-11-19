@@ -65,7 +65,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3128 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · J3104: reconcile unreadable music comparison inputs |  |
 | J3129 | mini | blocked | codex | – | 004 thumbs · thumb · Fix Webb thumbnail hook and identify the distant galaxy | J3096 |
 | J3130 | macbook | open | – | – | 004 thumbs · assembly · Recover the original Webb thumbnail source images from the MacBook | J3129 |
-| J3133 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
+| J3133 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J3135 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3129 |  |
 | J3136 | mini | open (after J3128) | – | – | 024 edit · assembly · OWB 024 Short fri06_muons_ground: no-spend music_gate repair against archived OWB 013 bed (£0) |  |
 | J3137 | mini | open (after J3128) | – | – | 005 edit · assembly · HOS 005 Shorts s06/s07/s08: no-spend music_gate repair against archived HOS 002/004 beds (£0) |  |
