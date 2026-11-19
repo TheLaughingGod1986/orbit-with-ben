@@ -49,6 +49,18 @@ class MiniServicePlist(unittest.TestCase):
                 self.assertNotIn('Program', doc)
                 self.assertEqual(source['Program'], '/old/runner')
 
+    def test_buffer_timer_proposal_preserves_schedule_and_uses_exact_shell_path(self):
+        target = self.engine / '07_Content-Ops/launchd/buffer-check.sh'
+        target.parent.mkdir(parents=True)
+        target.write_text('exit 0\n')
+        source = dict(self.source, Label='dev.orbit.buffer-check',
+                      StartCalendarInterval={'Hour': 7, 'Minute': 5})
+        doc = self.render(source)
+        self.assertEqual(doc['ProgramArguments'], ['/bin/bash', str(target)])
+        self.assertEqual(doc['StartCalendarInterval'], source['StartCalendarInterval'])
+        self.assertEqual(doc['EnvironmentVariables']['OWB_REPO'], self.channels['OWB_REPO'])
+        self.assertEqual(doc['EnvironmentVariables']['STUDIO_REPO'], str(self.engine))
+
     def test_preserves_service_settings_and_channel_paths(self):
         doc = self.render()
         for key in ('StartInterval', 'RunAtLoad', 'StandardOutPath', 'Nice'):

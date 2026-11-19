@@ -14,6 +14,10 @@ SERVICES = {
     'com.owb.board-publish': ('board_publish.py', '--quiet'),
 }
 
+SHELL_SERVICES = {
+    'dev.orbit.buffer-check': '07_Content-Ops/launchd/buffer-check.sh',
+}
+
 
 def absolute(value):
     path = pathlib.Path(value)
@@ -24,17 +28,23 @@ def absolute(value):
 
 def render(source, engine, python, channel_paths):
     doc = copy.deepcopy(source)
-    if doc.get('Label') not in SERVICES:
-        raise ValueError('only the relay and board publisher are supported')
+    if doc.get('Label') not in SERVICES and doc.get('Label') not in SHELL_SERVICES:
+        raise ValueError('only the relay, board publisher and Buffer timer are supported')
     engine, python = absolute(engine), absolute(python)
-    script, argument = SERVICES[doc['Label']]
-    if not (pathlib.Path(engine) / 'scripts' / script).is_file():
+    if doc['Label'] in SHELL_SERVICES:
+        target = pathlib.Path(engine) / SHELL_SERVICES[doc['Label']]
+        argv = ['/bin/bash', str(target)]
+    else:
+        script, argument = SERVICES[doc['Label']]
+        target = pathlib.Path(engine) / 'scripts' / script
+        argv = [python, str(target), argument]
+    if not target.is_file():
         raise ValueError('the staged engine lacks the service script')
     if not pathlib.Path(python).is_file():
         raise ValueError('the Python executable is missing')
     # An argv array avoids shell expansion and login-profile path overrides.
     doc.pop('Program', None)
-    doc['ProgramArguments'] = [python, str(pathlib.Path(engine) / 'scripts' / script), argument]
+    doc['ProgramArguments'] = argv
     doc['WorkingDirectory'] = engine
     env = doc.setdefault('EnvironmentVariables', {})
     env['STUDIO_REPO'] = engine

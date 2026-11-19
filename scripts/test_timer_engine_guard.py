@@ -32,7 +32,7 @@ class TimerGuard(unittest.TestCase):
             executable.chmod(0o755)
         (self.bin / 'python3').symlink_to(sys.executable)
         self.env = dict(os.environ, HOME=str(self.home), PATH=f'{self.bin}:/usr/bin:/bin',
-                        TRACE=str(self.trace), STUDIO_REPO='/a/new/checkout', ORBIT_REPO=str(self.root))
+                        TRACE=str(self.trace), STUDIO_REPO=str(self.root), ORBIT_REPO=str(self.root))
 
     def run_timer(self, name, sourced=False):
         script = self.root / '07_Content-Ops/launchd' / name
@@ -69,6 +69,7 @@ class TimerGuard(unittest.TestCase):
         shutil.copy2(SOURCE / 'scripts/engine_guard.py', retired / 'scripts/engine_guard.py')
         (retired / 'channels/channels.json').write_text(json.dumps({'studio': {'github': 'test/retired'}}))
         self.env['ORBIT_REPO'] = str(retired)
+        self.env['STUDIO_REPO'] = str(retired)
         for name in ('buffer-check.sh', 'analytics-snapshot.sh'):
             result = self.run_timer(name, sourced=True)
             self.assertNotEqual(result.returncode, 0)

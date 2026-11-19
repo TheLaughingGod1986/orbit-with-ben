@@ -6,8 +6,9 @@ copy Orbit's Git history. J2537's history rewrite is not a prerequisite. The sou
 
 ## Timing and acceptance
 
-Target Monday 23 or Tuesday 24 November, subject to all checks below. The earliest possible seven-day streak is
-20 November; the committed history records five clean days, 14–18 November (18 November 07:54Z). Recheck, do not infer.
+The original target was Monday 23 or Tuesday 24 November. The official 19 November result is nonzero,
+so neither that target nor the earlier 20 November earliest date is established. Five clean days were recorded
+14–18 November; require the actual current seven-day streak and prior-day notice. Recheck, do not infer.
 
 - `python3 scripts/studio_split.py --streak jobs/reviews/studio_split/history.jsonl` must read at least 7.
   Each day must have `left: 0` and `tests: run`. Run the full dry run again on the frozen cutover source.
@@ -419,3 +420,32 @@ The PR's passing future-layout tests do not replace an official daily result; ne
 A same-day corrected full run may replace today's row through the existing daily recorder, but only actual
 recorded consecutive passes and the prior-day notice can authorize a move. Do not promise a new date yet.
 See `jobs/reviews/J3012/TIMER_GUARDS_2026-11-19.md` for this continuation's scope and verification.
+
+## Detached Buffer timer, 19 November continuation
+
+The Buffer timer now separates executable, records and credentials. `STUDIO_REPO` selects the engine;
+`ORBIT_REPO` remains only the legacy engine fallback when that variable is unset. In the detached engine,
+set the record checkout variable from the registry (`OWB_REPO` today). The CLI's new local `record-root`
+command uses the same validated resolver as actual Buffer operations, without acquiring the desk lock or
+calling an API. The timer uses that result for both channel registers and all record Git commands, while
+running both checks from the engine's Content Ops directory. It does not run the old channel engine guard
+against the content checkout: a retired engine can still hold authoritative channel records.
+
+Credentials default to the record checkout's ignored `07_Content-Ops/.env`. `BUFFER_ENV_FILE` may select
+another existing absolute local path. Preserve the installed credential location; never copy values into Git.
+Both actual checks still own their operation lock; a 75 from the first check prevents the second and every
+record commit. Missing record roots or credential files stop before API work. Record pushes still follow the
+existing main-branch-only policy; this adapter does not promise atomicity across Git repositories.
+
+Direct `buffer-mirror.ts` commands also run the Python identity guard from their own code root before their
+operation lock. `record-root` obeys the same guard. This closes that direct Node entrypoint; it does not claim
+coverage for other Node upload/metadata writers. Install Python on the service PATH, as already required by
+the shell timer. No guard is armed by installing the code alone.
+
+The Mini plist renderer additionally supports `dev.orbit.buffer-check`, proposing `/bin/bash` plus the exact
+staged wrapper path and independent engine/channel environment. Its schedule, logs and credential environment
+are preserved. Use the same staging command as above with that installed source plist and a fresh output path;
+inspect and lint it locally, never commit its contents. Analytics is deliberately unsupported by the renderer
+until its per-channel output and commit handling is adapted. No timer was installed or run against live services.
+
+Verification and the next resume point are in `jobs/reviews/J3012/BUFFER_TIMER_2026-11-19.md`.
