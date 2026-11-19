@@ -270748,18 +270748,23 @@
           "at": "2026-11-19T04:14Z",
           "by": "codex",
           "what": "step 3 of 4 done: Restored prior 3/4 progress after reading resume history; runbook and rehearsal already exist in PR 1011. Continuing Buffer content-root and CI adapters."
+        },
+        {
+          "at": "2026-11-19T04:18Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: PR 1011 advanced to f0836c2e51. Buffer record root and pinned Content Ops CI fixed; typecheck/lint, six pretests and 217 tests pass in source and detached layout. Full Python suite and live migration remain incomplete."
         }
       ],
-      "remaining_action": "Fix the remaining rehearsal failures and update the existing move pull request",
+      "remaining_action": "Resolve remaining migration checks, verify board access and finish service adapters before the move",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-19T04:14Z",
+        "at": "2026-11-19T04:18Z",
         "by": "codex",
-        "note": "Restored prior 3/4 progress after reading resume history; runbook and rehearsal already exist in PR 1011. Continuing Buf"
+        "note": "PR 1011 advanced to f0836c2e51. Buffer record root and pinned Content Ops CI fixed; typecheck/lint, six pretests and 217"
       }
     },
     {
