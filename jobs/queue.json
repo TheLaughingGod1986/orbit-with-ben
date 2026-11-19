@@ -283638,17 +283638,22 @@
           "at": "2026-11-19T21:16Z",
           "by": "codex",
           "what": "step 1 of 3 done: Owner and main base verified; exact d1f9e545 head unchanged; five CI checks pass, none required; latest ruling 7022266788 confirms merge."
+        },
+        {
+          "at": "2026-11-19T21:17Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PR675 merged at exact approved head d1f9e545; merge commit 327c220d306632f79e6d7d9c15b6618415df9601."
         }
       ],
-      "remaining_action": "Merge the exact approved repair commit",
+      "remaining_action": "Record the verified merge and hand off the queued hardening work",
       "kind": "chief",
       "plain": "Land the approved offline music safety repair for the gravity film",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-19T21:16Z",
+        "at": "2026-11-19T21:17Z",
         "by": "codex",
-        "note": "Owner and main base verified; exact d1f9e545 head unchanged; five CI checks pass, none required; latest ruling 702226678"
+        "note": "PR675 merged at exact approved head d1f9e545; merge commit 327c220d306632f79e6d7d9c15b6618415df9601."
       },
       "taskKeys": [
         "HOS:009"
