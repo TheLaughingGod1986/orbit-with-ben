@@ -225939,9 +225939,14 @@
           "at": "2026-11-19T18:27Z",
           "by": "gemini",
           "what": "step 11 of 14 done: Claimed J2529 under Chief 19 Nov governing note; detached origin/main worktree at 6f023260, 55/55 runner tests pass, NAS live (0.03s), CDP 9222 up."
+        },
+        {
+          "at": "2026-11-19T18:38Z",
+          "by": "gemini",
+          "what": "step 11 of 14 done: Preflight passed (6f023260, 55/55 tests, NAS 0.03s, Explorer sha 24659dc1, dry-run headroom 22,600, live balance 24,500 after closing wedged 35h analytics tab on :9222). Batch 12 launched detached in tmux hos013-pass1 (PID 79886). Row 56 take 2 (P05_08a_wallace_opens_origin_t2.mp4) verified GENERATED/PENDING_REVIEW, sha256 4f831312, posted 24,500->24,400; row 57 in flight."
         }
       ],
-      "remaining_action": "Run Batch 12 preflight (55 tests, NAS, Explorer sha, dry-run --floor 3000, live balance) and launch Batch 12 (rows 56-60, row 56 take 2) detached.",
+      "remaining_action": "Check Batch 12 done file (J2529-batch12-20261119T1834Z.done), verify receipt, build 0.5s sheets, post on #180, then launch Batch 13 from origin/main worktree.",
       "due": "2026-11-21T18:00:00Z",
       "kind": "video",
       "plain": "Make the 66 pictures for the Darwin and Wallace film, on credits that would otherwise expire on Thursday",
@@ -225956,9 +225961,9 @@
       "progress": {
         "step": 11,
         "of": 14,
-        "at": "2026-11-19T18:27Z",
+        "at": "2026-11-19T18:38Z",
         "by": "gemini",
-        "note": "Claimed J2529 under Chief 19 Nov governing note; detached origin/main worktree at 6f023260, 55/55 runner tests pass, NAS"
+        "note": "Preflight passed (6f023260, 55/55 tests, NAS 0.03s, Explorer sha 24659dc1, dry-run headroom 22,600, live balance 24,500 "
       }
     },
     {
