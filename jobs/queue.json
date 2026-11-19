@@ -284217,13 +284217,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-11-19T22:35Z",
-      "eta": "2026-11-20T00:35Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-19T22:32Z",
-      "result": "",
+      "result": "Opened HOS PR 681 at a76bfa8f57250935b7818dc126bb3d42f74fb87d off main f13cb7ae. Subscription and history are GET-only. A GET with a body is refused before the socket. Offline tests passed: 4 J3171 groups, 23 flight, 11 guard, 5 routing, 4 J3166 groups. check_all failed only on the existing HOS 008 schedule.past baseline. package-lint --film 009 exit 0. Activation stays False. Pinned hashes unchanged. Queued J3172 Claude review, Gemini backup only, cursor excluded, and J3173 elected-Chief disposition after it. No merge.",
       "history": [
         {
           "at": "2026-11-19T22:32Z",
@@ -284249,6 +284249,11 @@
           "at": "2026-11-19T22:42Z",
           "by": "cursor",
           "what": "step 3 of 4 done: PR 681 is open at a76bfa8f. J3172 is the Claude review. J3173 is the Chief decision after that review. No merge."
+        },
+        {
+          "at": "2026-11-19T22:43Z",
+          "by": "cursor",
+          "what": "done: Opened HOS PR 681 at a76bfa8f57250935b7818dc126bb3d42f74fb87d off main f13cb7ae. Subscription and history are GET-only. A GET with a body is refused before the socket. Offline tests passed: 4 J3171 groups, 23 flight, 11 guard, 5 routing, 4 J3166 groups. check_all failed only on the existing HOS 008 schedule.past baseline. package-lint --film 009 exit 0. Activation stays False. Pinned hashes unchanged. Queued J3172 Claude review, Gemini backup only, cursor excluded, and J3173 elected-Chief disposition after it. No merge."
         }
       ],
       "remaining_action": "Post the desk receipt and close this job",
