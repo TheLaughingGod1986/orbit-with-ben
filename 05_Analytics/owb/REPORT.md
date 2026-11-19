@@ -212,14 +212,14 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [How Far From Earth Is Voyager 1 Right Now?](https://youtu.be/9q_OvQ1Rd8Y) | 43 h (early) | 256 | 25.3% | MISS | - | no read |
-| [If You Can't See the Nearest Star, How Far Away Is It?](https://youtu.be/aEfdxex__Bo) | 2 d | 467 | 36.3% | MISS | 159.0% | LOOP |
-| [How Did a Helicopter Fly 72 Times on Mars?](https://youtu.be/RT-ec4_GcOk) | 4 d | 1264 | 50.6% | WATCH | 101.0% | LOOP |
-| [Why Does Pluto's Giant Ice Heart Have Zero Craters?](https://youtu.be/z5V6gIXXYs8) | 5 d | 370 | 38.0% | MISS | 99.0% | PASS |
-| [How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?](https://youtu.be/uhZSRcvngvE) | 6 d | 57 | 41.9% | too few to judge | 52.0% | too few to judge |
-| [Why Did a 90-Day Mars Rover Last 14 Years?](https://youtu.be/B1z2dv7m7Vk) | 7 d | 113 | 52.7% | WATCH | 72.0% | PASS |
-| [What Would Standing on Saturn's Moon Titan Feel Like?](https://youtu.be/ffYKoNVPoqg) | 8 d | 106 | 47.8% | WATCH | 52.0% | WATCH |
-| [Could a Robot Survive a Night on Mars?](https://youtu.be/iyvWYFP_ETA) | 9 d | 1073 | 38.8% | MISS | 62.0% | WATCH |
-| [What Are Shooting Stars Really Made Of?](https://youtu.be/T9fVlG3CCzU) | 11 d | 1289 | 49.9% | WATCH | 66.0% | WATCH |
+| [How Far From Earth Is Voyager 1 Right Now?](https://youtu.be/9q_OvQ1Rd8Y) | 44 h (early) | 229 | 24.6% | MISS | 95.2% | PASS |
+| [If You Can't See the Nearest Star, How Far Away Is It?](https://youtu.be/aEfdxex__Bo) | 2 d | 460 | 36.5% | MISS | 159.2% | LOOP |
+| [How Did a Helicopter Fly 72 Times on Mars?](https://youtu.be/RT-ec4_GcOk) | 4 d | 1255 | 50.6% | WATCH | 101.7% | LOOP |
+| [Why Does Pluto's Giant Ice Heart Have Zero Craters?](https://youtu.be/z5V6gIXXYs8) | 5 d | 368 | 38.3% | MISS | 100.0% | PASS |
+| [How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?](https://youtu.be/uhZSRcvngvE) | 6 d | 57 | 41.9% | too few to judge | 52.4% | too few to judge |
+| [Why Did a 90-Day Mars Rover Last 14 Years?](https://youtu.be/B1z2dv7m7Vk) | 7 d | 110 | 52.7% | WATCH | 72.7% | PASS |
+| [What Would Standing on Saturn's Moon Titan Feel Like?](https://youtu.be/ffYKoNVPoqg) | 8 d | 106 | 47.8% | WATCH | 52.7% | WATCH |
+| [Could a Robot Survive a Night on Mars?](https://youtu.be/iyvWYFP_ETA) | 9 d | 1074 | 38.8% | MISS | 62.7% | WATCH |
+| [What Are Shooting Stars Really Made Of?](https://youtu.be/T9fVlG3CCzU) | 11 d | 1285 | 49.8% | WATCH | 66.2% | WATCH |
 
-Stayed to watch: 0 of 8 judged Shorts at 60%+. Average viewed: 4 of 7 at 70%+.
+Stayed to watch: 0 of 8 judged Shorts at 60%+. Average viewed: 5 of 8 at 70%+.
