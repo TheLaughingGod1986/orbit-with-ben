@@ -280081,13 +280081,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-19T12:37Z",
-      "eta": "2026-11-19T14:37Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-19T11:01Z",
-      "result": "",
+      "result": "Reconciled HOS:013:P05:08a_wallace_opens_origin:t1 from detached origin/main worktree 19a664dd (blob 0f368fba = d793d8f4) using ~/_desk/state/flow/hos013-pass1/evidence/session_block_P05_08a_t1.json. reconcile-session-block printed {pass_appended: true, shared_appended: true, spend_appended: true}: pass ledger L112 (P5:08a_wallace_opens_origin t1 SESSION_BLOCKED), shared ledger L338 (HOS:013:P05:08a_wallace_opens_origin:t1 session_blocked), ai_spend L939 (flow:reversal:HOS:013:P05:08a_wallace_opens_origin:t1 -100, committed ef245627fa). Guarded dry-run --floor 3000 passed (unposted_charges=800, remaining_reservations=1100, total_liability=1900, has_pending_charge=false, latest_recorded_flow_balance=24500, projected_headroom=22600, would_allow_reserve_at_recorded_balance=true). Posted to HOS desk #180 comment 7009455062; requesting Chief/relay closure of J3124. J2529, Batch 12, 6600 cap, take 2, take-3 refusal and 700-credit retake hold preserved. No Create; £0.",
       "history": [
         {
           "at": "2026-11-19T11:01Z",
@@ -280168,6 +280168,11 @@
           "at": "2026-11-19T12:43Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Posted reconciliation line ids (pass L112, shared L338, ai_spend L939) and dry-run --floor 3000 output to HOS desk #180 comment 7009455062; requested J3124 closure"
+        },
+        {
+          "at": "2026-11-19T12:43Z",
+          "by": "gemini",
+          "what": "done: Reconciled HOS:013:P05:08a_wallace_opens_origin:t1 from detached origin/main worktree 19a664dd (blob 0f368fba = d793d8f4) using ~/_desk/state/flow/hos013-pass1/evidence/session_block_P05_08a_t1.json. reconcile-session-block printed {pass_appended: true, shared_appended: true, spend_appended: true}: pass ledger L112 (P5:08a_wallace_opens_origin t1 SESSION_BLOCKED), shared ledger L338 (HOS:013:P05:08a_wallace_opens_origin:t1 session_blocked), ai_spend L939 (flow:reversal:HOS:013:P05:08a_wallace_opens_origin:t1 -100, committed ef245627fa). Guarded dry-run --floor 3000 passed (unposted_charges=800, remaining_reservations=1100, total_liability=1900, has_pending_charge=false, latest_recorded_flow_balance=24500, projected_headroom=22600, would_allow_reserve_at_recorded_balance=true). Posted to HOS desk #180 comment 7009455062; requesting Chief/relay closure of J3124. J2529, Batch 12, 6600 cap, take 2, take-3 refusal and 700-credit retake hold preserved. No Create; £0."
         }
       ],
       "remaining_action": "Complete J3127 in queue",
@@ -280185,7 +280190,8 @@
         "at": "2026-11-19T12:43Z",
         "by": "gemini",
         "note": "Posted reconciliation line ids (pass L112, shared L338, ai_spend L939) and dry-run --floor 3000 output to HOS desk #180 "
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-7009455062"
     },
     {
       "id": "J3128",
