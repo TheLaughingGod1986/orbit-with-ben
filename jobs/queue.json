@@ -278875,9 +278875,14 @@
           "at": "2026-11-19T08:31Z",
           "by": "relay",
           "what": "condition verification queued: J3120"
+        },
+        {
+          "at": "2026-11-19T10:46Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-19T14:42:00Z"
         }
       ],
-      "remaining_action": "Resolve approval for exporting the verified Pluto packaging branch, then open its review PR",
+      "remaining_action": "Obtain explicit approval for the rejected GitHub branch export, then open the Pluto packaging review PR without rebuilding",
       "due": "2026-12-08T18:00:00Z",
       "kind": "thumb",
       "plain": "Rebuild Pluto 034 long thumbnails A/B/C v02 and apply the 3-model packaging panel title and <5,000-char description fixes before Chief ruling J3112",
@@ -278892,10 +278897,12 @@
         "OWB:034"
       ],
       "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-19T09:31:48+00:00",
-        "recheck_task": "J3120"
+        "type": "input",
+        "condition": "J3120 Chief ruling: build verified at clean commit a12100797f and all 12 NAS hashes match. Explicit authorization to export branch codex/j3114-pluto-v02 to TheLaughingGod1986/orbit-with-ben remains absent after two automatic approval-review rejections. Ownership/admin checks were rejected as insufficient authorization. Do not retry the export through another worker or route; preserve completed artifacts and J3115 dependency. Recheck for actual export approval at the recorded time, never release from elapsed time alone.",
+        "check_at": "2026-11-19T14:42:00Z",
+        "last_recheck": "J3120",
+        "checked_at": "2026-11-19T10:46:25+00:00",
+        "checked_by": "codex"
       }
     },
     {
