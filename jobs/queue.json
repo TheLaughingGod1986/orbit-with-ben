@@ -271212,10 +271212,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-19T23:53Z",
+      "eta": "2026-11-20T03:53Z",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
       "result": "",
@@ -271634,6 +271634,11 @@
           "at": "2026-11-19T22:10Z",
           "by": "codex",
           "what": "released: PR 1011 now 72a231829c; preserve 3/4 plan. Added serialized collector/report/publication layer with per-channel failure isolation, credential-source separation, process-group timeouts and source-root board refresh. Nine new tests pass; analytics suite 45 before final added test, 13 ratchet and 13 security checks pass. Evidence jobs/reviews/J3012/ANALYTICS_COLLECTION_2026-11-19.md. Next wire required gate/dispatch callback (library and frames, media/cache, bounded calls), then shell entrypoint/plist and isolated full timer acceptance; board Contents probe, writer inventory and refreshed rehearsal remain. Official corrected 19 Nov 21:54Z split is zero: six consecutive full passes 14-19 Nov, superseding older nonzero handoffs. Seven days, prior-day notice and live acceptance still required. No live switch or Ben action."
+        },
+        {
+          "at": "2026-11-19T23:53Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Wire analytics gates and dispatch into the prepared collector, then finish migration acceptance",
