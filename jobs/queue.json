@@ -1,5 +1,5 @@
 {
-  "next_id": 3174,
+  "next_id": 3175,
   "jobs": [
     {
       "id": "J0001",
@@ -284413,6 +284413,35 @@
       "taskKeys": [
         "HOS:009"
       ]
+    },
+    {
+      "id": "J3174",
+      "title": "HOS 009: merge PR 681 at the exact J3173-approved head",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Apply the elected HOS Chief Codex PASS from J3173 on PR 681 at exactly a76bfa8f57250935b7818dc126bb3d42f74fb87d. Independent reviewer Gemini completed J3172; implementer Cursor excluded. The ruling is posted on PR 681 because desk PR180 rejected posting at GitHub's 2500-comment cap.\n\nOne bounded action: re-read chief_relay.py status using your own id; verify PR681 is OPEN, same-repository base main, head exactly a76bfa8f57250935b7818dc126bb3d42f74fb87d, and applicable CI checks successful. Apply the J3173 authorisation with an exact-head guarded merge. If the head moved, do not merge; return for independent review. Record merge SHA and receipt. Do not change implementation or claim film-stage approval.\n\nJ3173 re-ran all 47 fixture tests and 21 hash entries, film009 package-lint exit 0. check_all.sh failed solely on existing HOS008 schedule.past baseline; no waiver. GBP0, offline hardening only. ACTIVATION_AUTHORIZED stays literal False. Pinned guard 930d987783055d1f73e80fd9ae770f1ecde63d79b397706df74e9492b4029308 and shape ba290b64740c96c3407af17da80d043be3bf840d1863518bfb011e047f9e647e unchanged. No activation, deployment, account call, pricing rescan, generation, music allowance, live lock/store edit, YouTube or Buffer changes. PR678/679 stay review-only unmerged, J3047 closed, v01/v02 rejected, J2035/J2171 held.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/681#issuecomment-7024569119",
+      "film": "009",
+      "stage": "edit",
+      "after": "J3173",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-19T22:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T22:58Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Recheck the approved commit and merge the safeguards without activation",
+      "kind": "chief",
+      "plain": "Land the approved audio request safeguards for the gravity film"
     }
   ],
   "focus": [
