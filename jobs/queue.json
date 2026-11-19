@@ -1,5 +1,5 @@
 {
-  "next_id": 3161,
+  "next_id": 3162,
   "jobs": [
     {
       "id": "J0001",
@@ -283188,6 +283188,36 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J3161",
+      "title": "Supermoon Short: next-morning and full-day performance follow-up",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Follow-up ordered by elected acting Chief codex for J3153. OWB:013, Supermoon Short HXacmpYkXcA. Read-only, no spend, no Studio changes.\n\nThe six-hour check at 2026-11-19T17:37Z found 29 views, typical lower bound 110, rank 7/10, 18 feed views (62.1%), stayed 25.0%, average viewed 40.5%, likes 0, no setup faults. Chief ruling: leave the live Short and its packaging unchanged. Under 50 views, retention is insufficient to diagnose the edit. The tool's about 72 showings is inferred, not Studio's Shown in feed. Its not-shown label means small absolute exposure, not zero feed traffic or proof of topic fatigue.\n\nAfter the 2026-11-20 daily 06:40 UTC snapshot arrives, read 05_Analytics/owb/snapshots/2026-11-20.json and the launch record. Compare the new views with the matched next-morning Short baseline, name the sample and its median, and record the exact snapshot timestamp and age of this Short. Do not mislabel the roughly 19-hour snapshot as a full 24-hour reading, and do not invent feed/retention numbers from a snapshot that lacks them. Record the outcome with launch_check.py note, not a replacement of the six-hour reading.\n\nThe automatic launch checker currently schedules only the six-hour check for Shorts. After recording the morning snapshot, retain this same follow-up as a typed date hold until 2026-11-20T11:40:00Z for a full-day read-only Studio reading. At that time read Since published views, Shorts-feed views/share, stayed-to-watch and average percentage viewed, omitting unavailable figures. Store the full-day figures with launch_check.py record --hours 24, then judge and record the result. Day-one feed share >=50% is fed under the channel rule. Judge retention only with adequate views. Do not infer a topic failure or change the schedule from one small six-hour sample; any topic-fatigue recommendation must cite the required consecutive day-one not-fed evidence.\n\nIf the snapshot job has not produced the file, retain a typed input hold with an observable condition and a one-hour retry. If a setup fault or materially weak day-one result appears, return that concrete evidence to the elected Chief. Otherwise close this follow-up with the snapshot findings and the identified full-day check. No title, cover, description, Related, visibility, schedule, Buffer, re-upload or edit changes are authorized.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J3153",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-19T20:17Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T20:17Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Read the next morning snapshot, then the full-day Studio figures",
+      "due": "2026-11-20T07:40:00Z",
+      "kind": "studio",
+      "plain": "Check whether the Supermoon Short gained viewers overnight"
     }
   ],
   "focus": [
