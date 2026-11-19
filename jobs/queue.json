@@ -276636,9 +276636,14 @@
           "at": "2026-11-19T08:06Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J3089; inspecting J2845 predecessor and review status"
+        },
+        {
+          "at": "2026-11-19T08:06Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified J2844 issued FIX on T037 m09jUdwC5hk_B_v05.jpg; J3088 built v06 (PR #1031 open) and J3092-J3095 panel completed KEEP, but Chief exact-file decision J3096 is still open"
         }
       ],
-      "remaining_action": "Inspect J2845, J2844, J3088, J3095 and J3096 evidence to verify J2845 waiting condition",
+      "remaining_action": "Check jobs.py wait options and keep J2845 blocked on open Chief review job J3096",
       "kind": "review",
       "recheck_of": "J2845",
       "due": "2026-11-19T01:16:35+00:00",
@@ -276653,11 +276658,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-19T08:06Z",
         "by": "gemini",
-        "note": "Claimed J3089; inspecting J2845 predecessor and review status"
+        "note": "Verified J2844 issued FIX on T037 m09jUdwC5hk_B_v05.jpg; J3088 built v06 (PR #1031 open) and J3092-J3095 panel completed"
       },
       "taskKeys": [
         "OWB:005"
