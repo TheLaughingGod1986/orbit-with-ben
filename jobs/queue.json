@@ -279484,9 +279484,14 @@
           "at": "2026-11-19T09:37Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Claimed J3124. Reading reconcile-policy-refusal and the HOS 013 ledgers."
+        },
+        {
+          "at": "2026-11-19T09:41Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Read the pass-1 runner and Chief ruling 6831924778. The command closes only the Wallace origin take."
         }
       ],
-      "remaining_action": "Reading the pass-1 runner and the session-block ruling before writing the command",
+      "remaining_action": "Adding the session-block command and its tests",
       "for": "cursor",
       "kind": "assembly",
       "model": "cursor-grok-4-7",
@@ -279494,11 +279499,11 @@
       "mini_only": true,
       "urgent": 26,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-19T09:37Z",
+        "at": "2026-11-19T09:41Z",
         "by": "cursor",
-        "note": "Claimed J3124. Reading reconcile-policy-refusal and the HOS 013 ledgers."
+        "note": "Read the pass-1 runner and Chief ruling 6831924778. The command closes only the Wallace origin take."
       },
       "taskKeys": [
         "HOS:013"
