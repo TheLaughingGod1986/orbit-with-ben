@@ -278799,13 +278799,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-19T07:51Z",
-      "eta": "2026-11-19T08:36Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-19T07:10Z",
-      "result": "",
+      "result": "17 OWB + 7 HOS longs; CTR hits vs 4%: OWB 2/17, HOS 4/7. Also 88 OWB + 31 HOS Shorts; 3 recent Shorts omitted pending processed figures. Commit ab054edf13; published board-data 64ceef84 verified all 24 long read timestamps. Studio Lifetime CSV exports replaced unavailable legacy reader; no YouTube changes or spend.",
       "history": [
         {
           "at": "2026-11-19T07:10Z",
@@ -278836,6 +278836,11 @@
           "at": "2026-11-19T08:00Z",
           "by": "codex",
           "what": "step 3 of 3 done: Committed ab054edf13: all 24 longs and 119 Shorts verified. Corrected HOS count to 31 complete Shorts; HOS xgx2lYHhYZM has no processed watch figures. Three omissions total. Publishing tracker data now."
+        },
+        {
+          "at": "2026-11-19T08:02Z",
+          "by": "codex",
+          "what": "done: 17 OWB + 7 HOS longs; CTR hits vs 4%: OWB 2/17, HOS 4/7. Also 88 OWB + 31 HOS Shorts; 3 recent Shorts omitted pending processed figures. Commit ab054edf13; published board-data 64ceef84 verified all 24 long read timestamps. Studio Lifetime CSV exports replaced unavailable legacy reader; no YouTube changes or spend."
         }
       ],
       "remaining_action": "Verify the published tracker and close this Studio read",
