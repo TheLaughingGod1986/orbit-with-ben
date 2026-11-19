@@ -281061,13 +281061,27 @@
           "at": "2026-11-19T14:42Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-19T14:42Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-19T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Obtain explicit approval for the rejected GitHub branch export, then open the Pluto packaging review PR without rebuilding",
       "kind": "review",
       "recheck_of": "J3114",
       "due": "2026-11-19T15:42:22+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
