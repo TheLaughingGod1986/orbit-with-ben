@@ -1,5 +1,5 @@
 {
-  "next_id": 3119,
+  "next_id": 3120,
   "jobs": [
     {
       "id": "J0001",
@@ -256716,6 +256716,11 @@
           "at": "2026-11-18T17:51Z",
           "by": "claude",
           "what": "no longer waits on Ben (entry 2): OK'd, delivered by J3066"
+        },
+        {
+          "at": "2026-11-19T07:58Z",
+          "by": "claude",
+          "what": "no longer waits on Ben: OK'd, delivered by J3119"
         }
       ],
       "remaining_action": "Waiting for Ben's UAT watch of 034 Pluto long master v02 and Shorts 1 & 2 v02",
@@ -256743,7 +256748,8 @@
       "taskKeys": [
         "OWB:034"
       ],
-      "awaits_ben": {
+      "done_ref": "495a3c323b",
+      "awaits_was": {
         "what": "Watch 034 Pluto long master v02 (10:47, all J2383 fixes verified)",
         "file": "OWB UAT/034_pluto_frozen_heart_master_v02.mp4",
         "version": "v02",
@@ -256753,8 +256759,7 @@
         "title": "Why Pluto's Frozen Heart Has Zero Craters",
         "number": "034",
         "type": "long"
-      },
-      "done_ref": "495a3c323b"
+      }
     },
     {
       "id": "J2869",
@@ -278838,6 +278843,53 @@
         "OWB:026",
         "HOS:007"
       ]
+    },
+    {
+      "id": "J3119",
+      "title": "Upload the Pluto long master v02 Private and scheduled for Sun 13 Dec 18:00, arm the thumbnail test",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben OK'd the Pluto long master v02 on the board (18 Nov 22:16Z, tick OWB-034, from J2868).** Chief evidence: jobs/reviews/J2868/REVIEW.md (KEEP, five-part review). Master `034_pluto_frozen_heart_master_v02.mp4` in `09_Final-Export/` of the film folder; read its sha256 from the review and check it.\n\nBen's OK covers the master only. Title, description and thumbnails are still in packaging review (J3114, J3115): do not start until J3115 is done, and use only the title and thumbnails it passes. If Ben has not OK'd the thumbnails the review hands over, park for the Chief.\n\n1. Check the master's sha256 and that `11_Upload-Package` names v02 and that hash; fix the manifest only if it names an older cut, and say what changed.\n2. Upload as a NEW Private video via `npm run youtube:package`. Publish time Sun 13 Dec 2026 18:00 London (18:00Z). Language en-GB, captions en-GB, end screen, playlist, not made for kids, synthetic-content disclosure as the package says.\n3. Arm the Studio thumbnail Test & Compare only with thumbnails Ben OK'd, title set first, only where no test is set; record in `thumb_ledger.py`. Pinned comment once public.\n4. Record the new videoId in the film's status and on the thread. The two Pluto Shorts (J3065, J3066) wait for this long; set their Related video to it.\n\nNever Public, never delete, no force-push, no Replace. £0. If anything does not match (privacy, publish time, hash), upload nothing and park for the Chief with the lines.",
+      "ref": "",
+      "film": "034",
+      "stage": "upload",
+      "after": "J3115",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-19T07:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T07:58Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-19T07:58Z",
+          "by": "claude",
+          "what": "approved by Ben: Watch 034 Pluto long master v02 (10:47, all J2383 fixes verified) v02 (asked in J2868)"
+        }
+      ],
+      "remaining_action": "Upload the Pluto long master v02 Private and scheduled for Sun 13 Dec 18:00, arm the thumbnail test",
+      "due": "2026-12-11T18:00:00Z",
+      "kind": "studio",
+      "approved_from": {
+        "what": "Watch 034 Pluto long master v02 (10:47, all J2383 fixes verified)",
+        "file": "OWB UAT/034_pluto_frozen_heart_master_v02.mp4",
+        "version": "v02",
+        "airs": "2026-12-13T18:00Z",
+        "card": "OWB:034",
+        "title": "Why Pluto's Frozen Heart Has Zero Craters",
+        "number": "034",
+        "type": "long",
+        "channel": "OWB",
+        "job": "J2868",
+        "okAt": "2026-11-18T22:16Z"
+      }
     }
   ],
   "focus": [
