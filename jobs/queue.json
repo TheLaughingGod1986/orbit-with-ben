@@ -1,5 +1,5 @@
 {
-  "next_id": 3150,
+  "next_id": 3151,
   "jobs": [
     {
       "id": "J0001",
@@ -282085,6 +282085,35 @@
       "taskKeys": [
         "HOS:009"
       ]
+    },
+    {
+      "id": "J3150",
+      "title": "HOS 009: prepare disabled music integration and establish the current credit bound",
+      "needs": "any",
+      "repo": "hos",
+      "body": "J3149 acting-Chief decision: offline preparation only, GBP0. The repair at HOS PR669 11ed0c86d925dca5cbbbd1a2abef71326f1b6b7a and independent PR670 aada28a66e9b378d37bb24bdedfa321005e43410 pass 22 unit tests and 12 adversarial suites, but production is NOT approved. Do not repeat the same A-D repair loop.\n\nDeliver one reviewable, disabled-by-default integration proposal in a clean HOS worktree, never deploy or run it against an account. Bind the real transport internally to a single HTTP response (status, Date, raw bytes); prohibit caller-provided transport/path substitutions in the production entry point while isolating fixtures. Demonstrate one mocked GET and at most one mocked POST through every music entry point, including el_client and multipart; close the nested-GET and generator bypass paths. Hold the actual O_EXCL recorder ownership continuously through decision, durable consumption and mocked POST, with inode/restart tests. No EL_GUARD_OFF, no single-use reset, no retry, no weakened pause or ledger checks.\n\nBefore proposing activation, collect current public official pricing/API evidence for the exact 180-second music_v2 request, its subscription-credit maximum and how the subscription capacity meter maps to that charge. Save URL, retrieval date and exact supporting excerpt; distinguish published tariff from enforceable bound. Use existing redacted account evidence only: no account GET, login, generation or spend. One historical 2475-credit take, 2700 published estimate or 2970 margin is not a guarantee. If a <=3000 subscription-credit / GBP0 bound cannot be established, keep activation fail-closed, report the exact missing evidence and propose a concrete no-spend existing-score route for Chief; do not request a fresh account call just to discover price. Do not change the account or billing settings. Handle unknown promo structures by refusal; clock skew may refuse but cannot auto-reset the allowance.\n\nReturn exact commit/hashes, integration diff and offline adversarial evidence for an independent reviewer other than the implementation author. Queue that independent review and then an elected-Chief activation/score decision immediately upon delivery; no deployment or account activity before that separate decision. Historical J3043/J3045 allowance remains permanently closed by J3047, score v01/v02 rejected, J2035 and J2171 held. No schedule, YouTube or Buffer changes. This scope authorizes preparation, not a new music allowance.\n",
+      "ref": "J3149",
+      "film": "009",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-19T17:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T17:15Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build the offline integration proposal and establish the current price and credit accounting",
+      "kind": "assembly",
+      "plain": "Prepare safe music generation for the gravity film and verify its credit cost"
     }
   ],
   "focus": [
