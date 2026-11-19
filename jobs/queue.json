@@ -279053,13 +279053,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-19T08:34Z",
-      "eta": "2026-11-19T10:34Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-19T08:31Z",
-      "result": "",
+      "result": "parked for Chief: J3120 condition verification complete (jobs/reviews/J3120/REVIEW.md @ 21500071f8) — predecessor J3111 and controlling Chief ruling J3112 (cac759a4f3) are complete, clean local commit a12100797f680d2bae5d9c517efea751d04785f8 on branch codex/j3114-pluto-v02 in /Volumes/MiniWork/scratch/j3114-wt and all 12 durable NAS J3105_v02 + 11_Upload-Package artifacts match NAS_VERIFY_J3114.json 100%, and J3112 fixes 1-7 + master/trailer/Shorts/plate SHA-256 hashes are verified intact, but explicit GitHub export resolution to push codex/j3114-pluto-v02 and open its PR for J3115 remains unrecorded since codex blocked J3114 at 2026-11-19T08:31Z. Because scripts/jobs.py restricts jobs.py wait J3114 --recheck J3120 and jobs.py reopen J3114 to the job holder or elected Chief (chief / Grok Bot), exact Chief commands for both Option A (wait --recheck J3120 for 2026-11-19T14:42:00Z) and Option B (push codex/j3114-pluto-v02 and reopen/close J3114 for J3115) are in jobs/reviews/J3120/REVIEW.md §3.",
       "history": [
         {
           "at": "2026-11-19T08:31Z",
@@ -279095,6 +279095,11 @@
           "at": "2026-11-19T08:44Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Committed jobs/reviews/J3120/REVIEW.md at 21500071f8 on main; parking J3120 for elected Chief"
+        },
+        {
+          "at": "2026-11-19T08:44Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J3120 condition verification complete (jobs/reviews/J3120/REVIEW.md @ 21500071f8) — predecessor J3111 and controlling Chief ruling J3112 (cac759a4f3) are complete, clean local commit a12100797f680d2bae5d9c517efea751d04785f8 on branch codex/j3114-pluto-v02 in /Volumes/MiniWork/scratch/j3114-wt and all 12 durable NAS J3105_v02 + 11_Upload-Package artifacts match NAS_VERIFY_J3114.json 100%, and J3112 fixes 1-7 + master/trailer/Shorts/plate SHA-256 hashes are verified intact, but explicit GitHub export resolution to push codex/j3114-pluto-v02 and open its PR for J3115 remains unrecorded since codex blocked J3114 at 2026-11-19T08:31Z. Because scripts/jobs.py restricts jobs.py wait J3114 --recheck J3120 and jobs.py reopen J3114 to the job holder or elected Chief (chief / Grok Bot), exact Chief commands for both Option A (wait --recheck J3120 for 2026-11-19T14:42:00Z) and Option B (push codex/j3114-pluto-v02 and reopen/close J3114 for J3115) are in jobs/reviews/J3120/REVIEW.md §3."
         }
       ],
       "remaining_action": "Elected Chief (chief / Grok Bot): record wait --recheck J3120 on J3114 (or export codex/j3114-pluto-v02 and reopen J3114) and close J3120",
