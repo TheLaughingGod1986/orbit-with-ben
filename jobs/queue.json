@@ -225472,10 +225472,10 @@
       "stage": "picture",
       "after": "J2033",
       "eta_min": 300,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-19T19:44Z",
+      "eta": "2026-11-20T00:44Z",
       "created_by": "claude",
       "created_at": "2026-11-10T17:57Z",
       "result": "",
@@ -225969,6 +225969,11 @@
           "at": "2026-11-19T19:23Z",
           "by": "gemini",
           "what": "released: Batch 13 (rows 61-65) running detached in tmux hos013-pass1 (PID 65844); log=/Users/benjaminoats/_desk/logs/J2529-batch13-20261119T1922Z.log, done=/Users/benjaminoats/_desk/logs/J2529-batch13-20261119T1922Z.done; worktree=/Users/benjaminoats/_desk/worktrees/J2529-hos-main (origin/main ae218e8f). Batch 12 (rows 56-60, row 56 take 2) verified exit 0, posted 24,500->24,000 (live balance 24,000, headroom 22,600 >= 3,000), 0.5s sheets pushed to review/013-pass1-sheets (d63cc62f), OWB recorded (9187af2931), HOS #180 posted (7019743624). Next wake: check .done file (do not launch a second runner while PID 65844 is live), verify Batch 13 receipt/ledgers, build/push 0.5s sheets, post #180, then launch final Batch 14 (row 66)."
+        },
+        {
+          "at": "2026-11-19T19:44Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Check Batch 13 done file (J2529-batch13-20261119T1922Z.done), verify receipt, push 0.5s sheets, post #180, then launch Batch 14 (row 66).",
