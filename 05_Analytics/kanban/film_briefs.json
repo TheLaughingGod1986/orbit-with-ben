@@ -1388,36 +1388,45 @@
           "job": "J2376",
           "kind": "assembly",
           "done": true,
-          "doneText": "master v01"
-        },
-        {
-          "who": "Mac mini",
-          "what": "re-cut the first 30 seconds (master v02)",
-          "job": "J2438",
-          "kind": "assembly"
+          "doneText": "master built"
         },
         {
           "who": "Reviewer",
           "what": "review the long and Shorts 1 and 2",
-          "job": "J2383",
-          "kind": "review"
+          "job": "J2868",
+          "kind": "review",
+          "done": true,
+          "doneText": "keep \u00b7 five checks passed"
         },
         {
           "who": "Ben",
           "what": "final watch",
-          "afterJob": "J2383",
-          "whenText": "after the review"
+          "done": true,
+          "doneText": "OK'd 18 Nov"
+        },
+        {
+          "who": "Reviewer",
+          "what": "packaging: thumbnails and title",
+          "job": "J3115",
+          "kind": "review"
+        },
+        {
+          "who": "Studio",
+          "what": "upload Private, schedule Sun 13 Dec 18:00, arm the thumbnail test",
+          "job": "J3119",
+          "kind": "studio",
+          "afterJob": "J3115"
         }
       ],
       "mood": "good",
-      "done": "Script, voice, shot list, graphics, master v01.",
-      "holdup": "Nothing is stuck.",
-      "you": "",
+      "done": "Script, voice, graphics, master v02 (10 min 47 s, five checks passed), and your OK on master v02 and Shorts 1 and 2 (18 Nov).",
+      "holdup": "Nothing is stuck. Title and thumbnails are in packaging review (J3114, J3115) before the Private upload (J3119).",
+      "you": "Nothing now. You OK'd the film.",
       "youShort": "",
       "youWhen": "",
       "timing": "Airs Sun 13 Dec 18:00 London. Two Shorts on Mon/Wed/Fri/Sat 11:30 around it (J-shorts slots job).",
-      "updated": "2026-11-10T03:05Z",
-      "line": "Pluto, airs Sun 13 Dec 18:00. The full film is built (master v01) and its voice-over records are filed. Next: the opening is re-cut to the new first-30-seconds rule (J2438), then the long and its two Shorts are reviewed by watching and listening before they come to you (J2383)."
+      "updated": "2026-11-19T07:59Z",
+      "line": "Pluto, airs Sun 13 Dec 18:00. You OK'd master v02 (10 min 47 s) and its two Shorts on 18 Nov. Title and thumbnails are being reviewed, then the Private upload (J3119)."
     },
     "HOS:013": {
       "updated": "2026-11-11T22:58Z",
