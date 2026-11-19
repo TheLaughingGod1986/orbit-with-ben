@@ -225472,10 +225472,10 @@
       "stage": "picture",
       "after": "J2033",
       "eta_min": 300,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-19T19:14Z",
+      "eta": "2026-11-20T00:14Z",
       "created_by": "claude",
       "created_at": "2026-11-10T17:57Z",
       "result": "",
@@ -225949,6 +225949,11 @@
           "at": "2026-11-19T18:38Z",
           "by": "gemini",
           "what": "released: Batch 12 (rows 56-60, row 56 take 2) running detached in tmux hos013-pass1 (PID 79886); log=/Users/benjaminoats/_desk/logs/J2529-batch12-20261119T1834Z.log, done=/Users/benjaminoats/_desk/logs/J2529-batch12-20261119T1834Z.done; worktree=/Users/benjaminoats/_desk/worktrees/J2529-hos-main (origin/main 6f023260). Row 56 take 2 (P05_08a_wallace_opens_origin_t2.mp4, sha256 4f831312) already GENERATED/PENDING_REVIEW and posted 24,500->24,400; row 57 in flight. Next wake: check .done file, verify receipt/ledgers, build 0.5s sheets, post #180, then launch Batch 13."
+        },
+        {
+          "at": "2026-11-19T19:14Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Check Batch 12 done file (J2529-batch12-20261119T1834Z.done), verify receipt, build 0.5s sheets, post on #180, then launch Batch 13 from origin/main worktree.",
