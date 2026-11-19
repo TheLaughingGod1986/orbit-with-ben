@@ -279317,10 +279317,10 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-19T09:09Z",
+      "eta": "2026-11-19T09:54Z",
       "created_by": "claude",
       "created_at": "2026-11-19T09:06Z",
       "result": "",
@@ -279329,12 +279329,25 @@
           "at": "2026-11-19T09:06Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-19T09:09Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Swap 4 Dec and 5 Dec, swap 7 Dec and 9 Dec, move the 2 Dec Gliese Short to 19 Dec in Studio and Buffer; one PR with records",
       "due": "2026-11-22T18:00:00Z",
       "kind": "studio",
-      "plain": "Reorder three of December's Orbit Shorts so two Shorts on the same subject never go out one after the other"
+      "plain": "Reorder three of December's Orbit Shorts so two Shorts on the same subject never go out one after the other",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-19T09:09Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
