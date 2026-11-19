@@ -221,6 +221,9 @@ def build(scratch: pathlib.Path, root: pathlib.Path, placed: dict, home: str, ot
     folders = {home: scratch / channels.get(home)["repo"]["checkouts"][0]}
     for f in placed[home]:
         _place(root / f, folders[home] / f)
+    # The former resident also needs a cache after it becomes an external channel.
+    # CI and machines without that checkout must be able to load its settings.
+    _place(root / "studio" / "channel.json", studio / "channels" / home / "channel.json")
     for slug, checkout in others.items():
         folder = scratch / (channels.get(slug)["repo"].get("checkouts") or [slug])[-1]
         if checkout:

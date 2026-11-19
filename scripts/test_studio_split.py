@@ -67,6 +67,26 @@ class Routes(unittest.TestCase):
         self.assertEqual(ratchet.home_counts().get("studio_split.py", 0), 0)
 
 
+class FormerResidentCache(unittest.TestCase):
+    def test_build_copies_former_resident_manifest_without_mutating_source(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source, scratch = root / "source", root / "scratch"
+            manifest = source / "studio/channel.json"
+            manifest.parent.mkdir(parents=True)
+            original = '{"slug": "sample", "name": "Sample"}\n'
+            manifest.write_text(original)
+            placed = {split.STUDIO: [], "sample": ["studio/channel.json"]}
+            with mock.patch.object(channels, "get", return_value={"repo": {"checkouts": ["sample"]}}):
+                split.build(scratch, source, placed, "sample", {})
+            cached = scratch / "studio/channels/sample/channel.json"
+            self.assertEqual(cached.read_text(), original)
+            self.assertFalse(cached.is_symlink())
+            cached.write_text("changed in scratch")
+            self.assertEqual(manifest.read_text(), original)
+            self.assertEqual((scratch / "sample/studio/channel.json").read_text(), original)
+
+
 class Gates(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
