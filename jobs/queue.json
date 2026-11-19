@@ -1,5 +1,5 @@
 {
-  "next_id": 3113,
+  "next_id": 3114,
   "jobs": [
     {
       "id": "J0001",
@@ -277818,6 +277818,36 @@
       "remaining_action": "Chief rules on 034 thumbs and upload package after packaging panel J3108-J3111 and sets Ben-gated delivery handoff",
       "kind": "chief",
       "plain": "Chief decides final Pluto title, thumbnails, and upload package after the 3-model critique panel"
+    },
+    {
+      "id": "J3113",
+      "title": "034 Pluto: reconcile thumbnail stage to final packaging ruling",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J3107 repairs the missing OWB:034 thumbs stage handoff. This job records and verifies the thumbnail outcome of the existing J3112 Chief packaging decision; it does not repeat the independent panel or grant approval from job completion alone.\n\nAfter J3112, read its actual ruling and exact file hashes, J3111 DECISION.md and the independent J3108/J3109/J3110 critiques in 05_Analytics/tests/panels/owb-034-pluto-j3106/. Read the current 034 status and 08_Thumbnail/REVIEW_J3105_v01.md and MANIFEST_J3105_v01.json. Match approved final thumbnails and title arms to PACKAGE_MANIFEST.json and the durable NAS files. The initial J3105 A/B/C drafts remain unapproved unless the final ruling explicitly approves those exact hashes.\n\nIf J3112 has a valid PASS for the exact deliverable thumbnails, record the approval evidence and reconcile the thumbs stage to done. If J3112 already set that exact stage correctly, verify it and close without another creative decision. If its result is FIX or evidence is incomplete, keep thumbs review/blocked, link or create the specific thumbnail correction/review successor with film 034 and stage thumbs, and do not close leaving an orphan. Report in jobs/reviews/<this job>/REVIEW.md with explicit KEEP/FIX and exact evidence. Never let jobs.py done auto-promote a FIX to done: restore review/blocked in the same handoff.\n\nJ3112 remains the packaging/delivery decision owner. No generation, spend, upload, scheduling, visibility, title-test or live metadata changes. Preserve J2868 long Ben UAT watch-by 8 Dec 18:00 London / planned 13 Dec slot, and J3065/J3066 public-parent holds. This administrative verification does not replace Ben's watch or any failed gate.\n",
+      "ref": "J3107,J3105,J3106,J3108,J3109,J3110,J3111,J3112",
+      "film": "034",
+      "stage": "thumbs",
+      "after": "J3112",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-19T04:32Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T04:32Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify final thumbnail files against the packaging ruling and update their stage",
+      "due": "2026-12-08T18:00:00Z",
+      "kind": "review",
+      "plain": "Record the Pluto thumbnail approval after the packaging review"
     }
   ],
   "focus": [
