@@ -68,7 +68,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3132 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2035 |  |
 | J3133 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J3134 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2537 |  |
-| J3135 | mini | open | – | – | review · Verify condition for J3129 |  |
+| J3135 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3129 |  |
 
 Recently finished:
 
