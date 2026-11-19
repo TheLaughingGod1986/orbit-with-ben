@@ -1,5 +1,5 @@
 {
-  "next_id": 3121,
+  "next_id": 3122,
   "jobs": [
     {
       "id": "J0001",
@@ -268716,7 +268716,7 @@
       "taskKeys": [
         "WW2:001"
       ],
-      "urgent": 7,
+      "urgent": 5,
       "progress": {
         "step": 2,
         "of": 5,
@@ -274849,6 +274849,11 @@
           "at": "2026-11-19T07:10Z",
           "by": "relay",
           "what": "condition verification queued: J3117"
+        },
+        {
+          "at": "2026-11-19T08:43Z",
+          "by": "claude",
+          "what": "Finding for this check: third Short in a row on one subject, barely shown in the feed (3 feed views). Views at 19 Nov snapshot. Mars rover run: 'Could a Robot Survive a Night on Mars?' 9 Nov 1,074; 'Why Did a 90-Day Mars Rover Last 14 Years?' 11 Nov 110; 'How Did Martian Wind Keep a 90-Day Rover Alive' 12 Nov 57; then a new angle, 'How Did a Helicopter Fly 72 Times on Mars?' 14 Nov, 1,263. Nearest-star run: 'If You Can't See the Nearest Star' 16 Nov 469; 'How Far From Earth Is Voyager 1' 17 Nov 268 (182 of 193 views from the feed at 6 h, ~737 feed showings, 24.7% stayed against the usual 32.5%); 'If Voyager Needs 75,000 Years, How Far Is the Nearest Star?' 18 Nov 16 at ~21 h (Studio: 13 search Follow-up: J3121."
         }
       ],
       "remaining_action": "Read tomorrow morning’s figures for the Voyager and nearest-star Short and decide whether any follow-up is needed.",
@@ -278887,6 +278892,11 @@
           "at": "2026-11-19T07:24Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3117 condition verification complete (jobs/reviews/J3117/REVIEW.md at 79dbddb588) — J3064 waiting condition is PROVEN SATISFIED (no action or YouTube change warranted). Both the 2026-11-19 morning snapshot (takenAt 2026-11-19T06:40:09.822Z, 19h 10m age: dH_yCRmzkMo has 16 views, 0 likes, 0 comments) and Studio Since published traffic-source & engagement readback on CDP 9223 (2026-11-19T07:16:17Z-07:17:51Z, 19h 46m age: 16 views, 134 below usual 150-1.1k, rank 10/10, 7 engaged views; traffic sources YouTube search 81.2% ~13 views, Shorts feed 18.8% ~3 views, Other YouTube features 0.0%; Engagement 85.7% Stayed to watch / 14.3% Swiped away, 95.1% average percentage viewed / 0:22 of 0:24) are populated while preserving the 6h reading in 05_Analytics/owb/launch/dH_yCRmzkMo.json (5 views, 0 feed, 100% search, 23.7% avg viewed). Compared against preceding Nearest Star/Voyager Shorts: aEfdxex__Bo (234 views / 90.6% feed at 6h 04m; 307 views at 19h 10m; 471 views / 91.5% feed at 67h 46m) and 9q_OvQ1Rd8Y (193 views / 94.3% feed at 6h 40m; 213 views at 19h 10m; 269 views / 93.7% feed at 43h 46m). Zero technical faults, strong retention/stay-to-watch on the cut (85.7% stayed, 95.1% avg viewed), and only 1 not-fed Short after two strongly fed Shorts (>90% feed share). Releasing the verified hold on J3064 (jobs.py reopen J3064) and closing J3064/J3117 requires elected-Chief authority (see exact commands in jobs/reviews/J3117/REVIEW.md §4)."
+        },
+        {
+          "at": "2026-11-19T08:43Z",
+          "by": "claude",
+          "what": "Finding for this check: third Short in a row on one subject, barely shown in the feed (3 feed views). Views at 19 Nov snapshot. Mars rover run: 'Could a Robot Survive a Night on Mars?' 9 Nov 1,074; 'Why Did a 90-Day Mars Rover Last 14 Years?' 11 Nov 110; 'How Did Martian Wind Keep a 90-Day Rover Alive' 12 Nov 57; then a new angle, 'How Did a Helicopter Fly 72 Times on Mars?' 14 Nov, 1,263. Nearest-star run: 'If You Can't See the Nearest Star' 16 Nov 469; 'How Far From Earth Is Voyager 1' 17 Nov 268 (182 of 193 views from the feed at 6 h, ~737 feed showings, 24.7% stayed against the usual 32.5%); 'If Voyager Needs 75,000 Years, How Far Is the Nearest Star?' 18 Nov 16 at ~21 h (Studio: 13 search Follow-up: J3121."
         }
       ],
       "remaining_action": "Elected Chief: reopen and close J3064 with 19 Nov morning verification evidence (79dbddb588) and close J3117",
@@ -279106,6 +279116,37 @@
       "taskKeys": [
         "OWB:034"
       ]
+    },
+    {
+      "id": "J3121",
+      "title": "Orbit Shorts: move tomorrow's fourth nearest-star Short a week out and add the same-subject spacing rule",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Why (Claude, 19 Nov 08:43Z, from Ben's question on dH_yCRmzkMo).** Views at 19 Nov snapshot. Mars rover run: 'Could a Robot Survive a Night on Mars?' 9 Nov 1,074; 'Why Did a 90-Day Mars Rover Last 14 Years?' 11 Nov 110; 'How Did Martian Wind Keep a 90-Day Rover Alive' 12 Nov 57; then a new angle, 'How Did a Helicopter Fly 72 Times on Mars?' 14 Nov, 1,263. Nearest-star run: 'If You Can't See the Nearest Star' 16 Nov 469; 'How Far From Earth Is Voyager 1' 17 Nov 268 (182 of 193 views from the feed at 6 h, ~737 feed showings, 24.7% stayed against the usual 32.5%); 'If Voyager Needs 75,000 Years, How Far Is the Nearest Star?' 18 Nov 16 at ~21 h (Studio: 13 search, 3 Shorts feed; 'stayed 85.7%' is 6 of 7 viewers). The third Short running on one subject is barely shown in the feed. Tomorrow's Short, 'The Nearest Star Is a Cherry Past Cairo. How Do We Know?' (Fri 20 Nov 11:30 London), would be the fourth nearest-star Short in five days.\n\n**Do, today, before 20 Nov 10:30 London.**\n1. Swap its slot with 'Will Asteroid 2024 YR4 Hit the Moon in 2032?' (Fri 27 Nov 11:30). Both are evergreen and keep their Related video links. If YR4 cannot move, use another Short with a different subject that is not tied to a date. Never two Shorts on one day. The Supermoon (19 Nov) and Jupiter (26 Nov) Shorts stay on their dates. Record the old and new publishAt for both in their status and package files, and check both in Studio afterwards.\n2. Add a LEARNINGS entry with the evidence above: no third Short in a row on the same subject (same long or the same object). Same-subject Shorts need at least one Short on another subject between them, and two or more between when the earlier one stayed below the channel's usual rate.\n3. Check the rest of the scheduled Shorts against it (the Gliese 710 run on 30 Nov and 2, 4 and 7 Dec; Betelgeuse on 9 and 11 Dec). List any that break it, with a proposed swap for the Chief. Move nothing in this step.\n\n**Guards.** Moves only private scheduled Shorts. No live video changes; no re-upload, delete, title or thumbnail change. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-19T08:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T08:43Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Swap the 20 Nov nearest-star Short with the 27 Nov YR4 Short in Studio; add the no-three-in-a-row learning; list later clashes",
+      "due": "2026-11-20T10:30:00Z",
+      "kind": "studio",
+      "plain": "Move tomorrow's Short about the nearest star a week later, because three Shorts in a row on that subject already ran",
+      "urgent": 6
     }
   ],
   "focus": [
