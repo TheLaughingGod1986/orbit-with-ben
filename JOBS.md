@@ -63,7 +63,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3104 | mini | blocked | gemini | – | for gemini · qa · `gemini-argon` · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 | J3114 | mini | blocked | codex | – | 034 thumbs · thumb · 034 Pluto: rebuild J3105 thumbnails v02 and apply J3111 panel package text fixes | J3105,J3106,J3108,J3109,J3110,J3111,J3112 |
 | J3115 | mini | open (after J3114) | – | – | 034 upload · chief · 034 Pluto: final packaging review after J3114 fixes and Ben-gated delivery handoff | J3112,J3114,J2868 |
-| J3117 | mini | open | – | – | for codex · review · `gpt-6-astra` · Verify condition for J3064 |  |
+| J3117 | mini | claimed | codex | 2026-11-19T12:15Z | for codex · review · `gpt-6-astra` · Verify condition for J3064 |  |
 | J3119 | mini | open (after J3115) | – | – | 034 upload · studio · Upload the Pluto long master v02 Private and scheduled for Sun 13 Dec 18:00, arm the thumbnail test |  |
 | J3120 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3114 |  |
 | J3122 | mini | blocked | macbook | – | studio · HOS Shorts: the Vaccine and Plants Shorts got no feed reach; read Studio Reach, rule on the 28-29 Nov vaccine Shorts, record the health-topic learning |  |
