@@ -1,5 +1,5 @@
 {
-  "next_id": 3124,
+  "next_id": 3125,
   "jobs": [
     {
       "id": "J0001",
@@ -225878,9 +225878,14 @@
           "at": "2026-11-18T09:07Z",
           "by": "relay",
           "what": "condition verification queued: J3039"
+        },
+        {
+          "at": "2026-11-19T09:33Z",
+          "by": "chief",
+          "what": "condition recorded; next verification 2026-11-19T18:00:00Z"
         }
       ],
-      "remaining_action": "Land reconcile-session-block on history-of-science, close row 56 t1 at 0 credits, verify dry-run --floor 3000, and mint rows 56-66",
+      "remaining_action": "Cursor adds reconcile-session-block (J3124). Then close row 56 t1 at 0 credits, dry-run --floor 3000, and mint rows 56-66.",
       "due": "2026-11-12T18:45:00Z",
       "kind": "video",
       "plain": "Make the 66 pictures for the Darwin and Wallace film, on credits that would otherwise expire on Thursday",
@@ -225900,12 +225905,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Codex/worker lands reconcile-session-block on history-of-science, closes HOS:013:P05:08a_wallace_opens_origin:t1 as SESSION_BLOCKED at 0 credits, and verifies dry-run --floor 3000 before resuming Batch 12 (rows 56-66).",
-        "check_at": "2026-11-18T10:07:12+00:00",
-        "last_recheck": "J2720",
-        "checked_at": "2026-11-17T09:23:01+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3039"
+        "condition": "Cursor lands reconcile-session-block on history-of-science, Gemini closes HOS:013:P05:08a_wallace_opens_origin:t1 as SESSION_BLOCKED at 0 credits, and dry-run --floor 3000 passes before resuming Batch 12 (rows 56-66).",
+        "check_at": "2026-11-19T18:00:00Z",
+        "last_recheck": "J3039",
+        "checked_at": "2026-11-19T09:33:11+00:00",
+        "checked_by": "chief"
       },
       "escalated_at": "2026-11-12T20:07Z"
     },
@@ -272707,13 +272711,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-18T09:09Z",
+      "status": "done",
+      "by": "chief",
+      "since": "2026-11-19T09:33Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-18T09:07Z",
-      "result": "parked for Chief: J3039 condition verification complete (jobs/reviews/J3039/REVIEW.md & DRY_RUN_2026-11-18T0910Z.json @ 8c4be78e4a) — J2529 waiting condition remains NOT MET: (1) dry-run --floor 3000 --other-reservations 0 passes at recorded Flow balance 24,500 (headroom 22,600, would_allow_reserve_at_recorded_balance: true), J2033 is done, 46/46 runner tests pass, and all 55/66 Batches 01-11 pass-1 clips (48 KEEP, 7 RETAKE) + 5 Batch 12 0-credit start stills are intact on NAS; (2) however, reconcile-session-block has not yet landed on history-of-science main (44b12347, no open PR adds it; HOS desk items 6832148201 & 6832242517 remain pending for codex), and HOS:013:P05:08a_wallace_opens_origin:t1 remains unclosed (SUBMITTING in hos013-pass1/ledger.jsonl line 111, unposted CHARGED 100 in shared/account.jsonl lines 316-317, unreversed 100 in ai_spend/ledger.jsonl line 875). Recording jobs.py wait J2529 --recheck J3039 (next check 2026-11-18T15:15:00Z) and closing J3039 requires elected-Chief authority (Codex is currently elected Chief).",
+      "result": "Verified J2529 on 19 Nov 2026 from J3039 (jobs/reviews/J3039/REVIEW.md) plus a fresh read: NOT MET. history-of-science origin/main ae6ad0c1 has no reconcile-session-block and no open PR adds it. Pass ledger line 111 is still SUBMITTING on P5:08a_wallace_opens_origin take 1. Shared ledger lines 316-317 are still unposted charged 100. ai_spend line 875 has no -100 reversal. No mp4, runner pid 19965 is dead, locks unheld. The 18 Nov dry-run passed at recorded balance 24500 (headroom 22600); it was not re-run because the command and the ledger close are still unmet. J2529 stays blocked; next check 2026-11-19T18:00:00Z. The 15:15Z stamp had already passed. £0.",
       "history": [
         {
           "at": "2026-11-18T09:07Z",
@@ -272759,6 +272763,16 @@
           "at": "2026-11-18T12:38Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-11-19T09:33Z",
+          "by": "chief",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T09:33Z",
+          "by": "chief",
+          "what": "done: Verified J2529 on 19 Nov 2026 from J3039 (jobs/reviews/J3039/REVIEW.md) plus a fresh read: NOT MET. history-of-science origin/main ae6ad0c1 has no reconcile-session-block and no open PR adds it. Pass ledger line 111 is still SUBMITTING on P5:08a_wallace_opens_origin take 1. Shared ledger lines 316-317 are still unposted charged 100. ai_spend line 875 has no -100 reversal. No mp4, runner pid 19965 is dead, locks unheld. The 18 Nov dry-run passed at recorded balance 24500 (headroom 22600); it was not re-run because the command and the ledger close are still unmet. J2529 stays blocked; next check 2026-11-19T18:00:00Z. The 15:15Z stamp had already passed. £0."
         }
       ],
       "remaining_action": "Elected Chief (codex) records wait --recheck J3039 on J2529 and closes J3039",
@@ -279426,6 +279440,39 @@
         "OWB:034"
       ],
       "done_ref": "b0777a5ba5"
+    },
+    {
+      "id": "J3124",
+      "title": "HOS 013: add reconcile-session-block to the pass-1 runner",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief ruling, 19 Nov 2026, on desk comment 6974259569 (and Claude's note 6974276811). J3039 re-checked the J2529 hold and it is still unmet. This job is only the missing command. Codex has not opened the pull request in the day Claude allowed, so Cursor writes it.\n\nAdd one append-only subcommand, reconcile-session-block, to history-of-science 02_Video-Projects/013_Darwin-Wallace-Evolution/07_Edit-Project/_mint_flow_v01_pass1.py, with unit tests, and open a pull request. Do not merge. Claude reviews it as a spend-and-ledger change. Chief merges.\n\nThe command submits nothing and opens no Flow page. It runs only for this identity:\n\n- charge HOS:013:P05:08a_wallace_opens_origin:t1\n- row P5:08a_wallace_opens_origin, part 5, plate 08a_wallace_opens_origin, take 1\n\nIt refuses unless the latest pass line is SUBMITTING for that charge, the shared line is unposted CHARGED for 100, no mp4 exists at the raw path or the archive path, and the evidence quotes the unusual-activity banner with a balance of 4990. A second run is a no-op. Any other charge is refused. Do not run reconcile-policy-refusal. Do not hand-edit either ledger. Do not run the command in this job. Do not click Create. Do not mint rows 56-66. The 700-credit retake hold stays a hold.\n\nOn the first run the command appends:\n\n- Shared ledger: kind session_blocked, status SESSION_BLOCKED, amount 0. This is not policy_refused and not posted. The same charge id cannot be intent'd again.\n- Pass ledger: status SESSION_BLOCKED, credits_used 0, generated false, keep false, reason the banner sentence. It counts toward neither spent nor pending, and it does not count toward MAX_TAKES_PER_ROW.\n- ai_spend: one reversal, id flow:reversal:HOS:013:P05:08a_wallace_opens_origin:t1, amount -100, what \"Flow session block, 0 credits deducted, take not a policy refusal\". If a negative spend line already names the charge, write nothing.\n\ntakes_recorded still remembers take 1, so the next file is t2. A session-blocked take does not count as the pass-1 attempt, so this row may have that one later take. Take 3 is refused. The 6,600 cap is unchanged.\n\nSpec source: Chief ruling 6831924778. Park the open pull request for Claude's review. £0. Nothing for Ben.\n",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6974259569",
+      "film": "013",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "chief",
+      "created_at": "2026-11-19T09:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T09:33Z",
+          "by": "chief",
+          "what": "added for cursor"
+        }
+      ],
+      "remaining_action": "Add reconcile-session-block and tests, open the PR, and do not merge, Create, or edit a ledger",
+      "for": "cursor",
+      "kind": "assembly",
+      "model": "cursor-grok-4-7",
+      "plain": "Add the session-block close to the Darwin and Wallace picture runner",
+      "mini_only": true,
+      "urgent": 26
     }
   ],
   "focus": [
