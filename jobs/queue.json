@@ -1,5 +1,5 @@
 {
-  "next_id": 3126,
+  "next_id": 3127,
   "jobs": [
     {
       "id": "J0001",
@@ -279676,6 +279676,36 @@
         "condition": "The 20-22 November comparison Shorts have aired and their day-1 traffic sources are available for the standing 24 November gate; Plants first-48-hour data must also be read.",
         "check_at": "2026-11-24T12:00:00Z"
       }
+    },
+    {
+      "id": "J3126",
+      "title": "HOS J3122: finish unscheduled Smallpox receipt and gate-library records",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "J3122 delegated receipt reconciliation, GBP 0. Do not repeat the completed unschedule: owner desk receipt 7006171315 and merged OWB PR 1039 record jkUZpyO71lU Private/no publishAt at 19 Nov 10:13 UTC, sY0PSQFxjp8 Private scheduled 28 Nov 11:30 UTC, no Buffer rows for either. Read current HOS state and take the missing cropped Studio screenshot of Eradication Private/no date, excluding personal account details. Reconcile HOS open-gate library and release registry for these IDs (they were not updated in PR 1039); preserve uploaded manifests and media. Check current Buffer records and UPLOADS agree; no new mirror posts for the unscheduled id. Run applicable HOS checks and record API read-back and screenshot on desk #180. No YouTube mutations authorized by this receipt-only task. If actual schedule differs, report to elected Chief before changing it. Parent review J3122 is complete; this is only completion of receipt bookkeeping requested in the standing ruling.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J3122",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-19T10:23Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T10:23Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Read back the private Smallpox schedule and reconcile the release records",
+      "due": "2026-11-20T12:00:00Z",
+      "kind": "studio",
+      "plain": "Verify the Smallpox Short is unscheduled and finish its records"
     }
   ],
   "focus": [
