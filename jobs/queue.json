@@ -278831,18 +278831,23 @@
           "at": "2026-11-19T07:59Z",
           "by": "codex",
           "what": "step 2 of 3 done: Validated 17 OWB and 7 HOS longs, plus 88 OWB and 32 HOS Shorts. Two newest Shorts absent from processed Lifetime exports; no values invented. Tracker rebuilt and metric merges verified."
+        },
+        {
+          "at": "2026-11-19T08:00Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Committed ab054edf13: all 24 longs and 119 Shorts verified. Corrected HOS count to 31 complete Shorts; HOS xgx2lYHhYZM has no processed watch figures. Three omissions total. Publishing tracker data now."
         }
       ],
-      "remaining_action": "Commit the verified tracker update and publish its data",
+      "remaining_action": "Verify the published tracker and close this Studio read",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-19T07:59Z",
+        "at": "2026-11-19T08:00Z",
         "by": "codex",
-        "note": "Validated 17 OWB and 7 HOS longs, plus 88 OWB and 32 HOS Shorts. Two newest Shorts absent from processed Lifetime export"
+        "note": "Committed ab054edf13: all 24 longs and 119 Shorts verified. Corrected HOS count to 31 complete Shorts; HOS xgx2lYHhYZM h"
       },
       "taskKeys": [
         "OWB:026",
