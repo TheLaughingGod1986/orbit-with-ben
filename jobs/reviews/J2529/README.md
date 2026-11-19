@@ -254,6 +254,25 @@ Any spend row in this window that reads a different reservation, or no reservati
   - **Credits spent:** `5,500` Flow credits actually deducted across 55 generated Quality clips (`55 × 100` Quality; `60 × 0` start stills; `£0` cash; plus `1 × 100` unposted ledger `CHARGED` entry on `HOS:013:P05:08a_wallace_opens_origin:t1` with `0` live credits deducted)
   - **Balance before → after:** `10,440` (`+50` account grant before Batch 08) `→ 4,990` live (`1,000` remaining on `HOS013_PASS1`, `900` unposted in shared ledger including the `0`-deducted row 56 `CHARGED` entry, live headroom `3,090 >= 3,000`)
 
+### Batch 12 of 14 (Resumed) — `GENERATED` / `PENDING_REVIEW` (`2026-11-19T18:34Z` – `18:47Z`)
+
+- **Authorization:** Chief 19 Nov governing note (desk `7005254471` / `7017831888` reply; J2529 reopened `2026-11-19T18:17Z`; Row 56 take 1 closed `SESSION_BLOCKED` at `0` credits in PR #663 / J3156; Row 56 runs as take 2; Batches 12–14 rows 56–66 on post-reset allowance).
+- **Log / done:** `/Users/benjaminoats/_desk/logs/J2529-batch12-20261119T1834Z.log`, `/Users/benjaminoats/_desk/logs/J2529-batch12-20261119T1834Z.done` (`exit 0`)
+- **Batch receipt:** `BATCH_12_RECEIPT.json` (`archive_v01_pass1/batch-cc5c89ca3a0d.receipt.json`)
+- **Full-clip `0.5s` contact sheets:** `BATCH_12_SHEETS.json` (`archive_v01_pass1/sheets/*_sheet.jpg`, review branch `review/013-pass1-sheets` `d63cc62f`)
+- **Post-batch dry-run:** `DRY_RUN_2026-11-19T1917Z_POST_BATCH12.json` (`has_pending_charge: false`, `unposted_charges: 800`, `remaining_reservations: 600`, `total_liability: 1400`, `would_allow_reserve_at_recorded_balance: true`)
+- **Reservation / floor:** `HOS013_PASS1` (`--floor 3000 --other-reservations 0`)
+- **Credits spent:** `500` (`5 × 100` Quality; 5 start stills from 12 Nov reused at `0` credits; cumulative `6,000 / 6,600`; `£0` cash)
+- **Live balance chain (all 5 posted in `~/_desk/state/flow/shared/account.jsonl`, post-batch `24,000` re-verified live on CDP `:9222` at `19:19Z`):** `24,500 → 24,400 → 24,300 → 24,200 → 24,100 → 24,000` (`0` pending charges; remaining `HOS013_PASS1` reservation `600`; live headroom `24,000 - 600 - 800 = 22,600 >= 3,000`)
+
+| Row | Clip | Clip SHA-256 | Start Still SHA-256 | Sheet SHA-256 | Before → After | Status |
+|---|---|---|---|---|---|---|
+| `P5:08a_wallace_opens_origin` | `P05_08a_wallace_opens_origin_t2.mp4` | `4f831312a32c9d8f8a6b2520842af608f7c8ccddafb10906d2ed52b48137aa5c` | `b9e9a40a4d70553e5ef4cdf5d38ee9c86fbc291f7304fec5b3060d3b44563c2b` | `e9edef39bb2e42ab542925d49280bff9e8e6e7359fb94db28bbdf9db860bdfee` | `24,500 → 24,400` | `PENDING_REVIEW` (`keep: false`) |
+| `P5:08b_wallace_reads_origin` | `P05_08b_wallace_reads_origin_t1.mp4` | `641b40ba5cf30290bda56b64b401422e801a7800d79d1327376dc44357edfffa` | `3c043cb33b84fba37c69b549b11ca40e38ff93847ff8ef8ba02fe557e158604a` | `c77cf16244478a8c67ceb130eefb603ef0488f17009d101eab5f9f5a19a1775b` | `24,400 → 24,300` | `PENDING_REVIEW` (`keep: false`) |
+| `P5:10_darwin_worried_shelf` | `P05_10_darwin_worried_shelf_t1.mp4` | `1bb721296dba13e0f98a187c0bc40b0cac456452ea6db3b3e6babc13de820862` | `5b07893a3c6475089120d1e6abc4ec238ab7a26a5ce3cbbaaf9bd46ec333ed0a` | `efd114f661c530eee0bcbf0dfa3dbbfd7287f7a965b52cd228ca46a04970c3a2` | `24,300 → 24,200` | `PENDING_REVIEW` (`keep: false`) |
+| `P6:02a_jenkin_study` | `P06_02a_jenkin_study_t1.mp4` | `9337659ea233b9343f26bf5b7a3a61febd6c407ea5247459486bb3a70ea9b141` | `a507c30430af964de394864e0b0bbcdae09e466178ec453440e7d9f7871bbc83` | `14d2293691eb8eb4348d0c9113f53d06ec95ab38132b01a6c14b83ab4fc36785` | `24,200 → 24,100` | `PENDING_REVIEW` (`keep: false`) |
+| `P6:02b_paint_pots_mix` | `P06_02b_paint_pots_mix_t1.mp4` | `8a0efce2f9faac951dc4da36e0ff74757b37ce46624436cd21aa7dfca2a19ab9` | `eaabf948be98fe879a42808138cebf74b629286eccba8c3913fec92e07bd8971` | `4803ff22bbeb944a76602c7018085a826ee62999bcd4b8ca3b6c0252e4c00037` | `24,100 → 24,000` | `PENDING_REVIEW` (`keep: false`) |
+
 ## Chief Review State (`REVIEW_STATE.json`)
 
 - **Rows 1–15 (`6815870258`):** `keep: true` on `1, 2, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15`; `RETAKE` on `3, 10`.
