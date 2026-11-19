@@ -277758,11 +277758,24 @@
           "at": "2026-11-19T04:09Z",
           "by": "gemini",
           "what": "added for cursor"
+        },
+        {
+          "at": "2026-11-19T04:34Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Cursor out of usage; next in its chain: gemini"
         }
       ],
       "remaining_action": "Packaging panel (cursor): Pluto 034 long upload package and J3105 thumbnail candidates A/B/C",
-      "for": "cursor",
-      "kind": "review"
+      "for": "gemini",
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "cursor",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "model": "gemini-argon"
     },
     {
       "id": "J3111",
