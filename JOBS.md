@@ -59,7 +59,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3075 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2996 |  |
 | J3085 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3070 |  |
 | J3087 | mini | open (after J3062) | – | – | 034 edit · for gemini · review · `gemini-argon` · 034 Pluto: resolve incomplete music-library comparison before closing edit review | J2868,J3062 |
-| J3088 | any | claimed | macbook | 2026-11-19T02:15Z | thumb · Revise Saturn and JWST weekly audit thumbnails after Chief review | J2844 |
 | J3089 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2845 |  |
 | J3090 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2847 |  |
 | J3091 | mini | open | – | – | for gemini · script · `gemini-argon` · OWB: learn from our data, add two new films to the backlog |  |
@@ -71,6 +70,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 Recently finished:
 
+- J3088 done: Revise Saturn and JWST weekly audit thumbnails after Chief review (Built Saturn v06 and JWST v07; PR #1031 open, not merged. Both NAS candidates pass colour scores and phone inspection; SHA-256 verified, prior files and T038 preserved. T037/T039 proposal updates are in PR. Independent panel J3092-J3095 and elected-Chief exact-file decision J3096 queued. J2845/J2847 remain blocked. No spend or YouTube changes. Checkout returned clean main.)
 - J3086 done: Verify condition for J3063 (Chief ruling: condition NOT MET; verification complete. Accepted J3071 f6fe5f717 evidence and J3085/J3086 reviews. J3070 reopened to finish MacBook routing handoff before releasing J3063. J3063 remains blocked with dependency hold, last_recheck J3086, next check 2026-11-19T00:30:00Z. Original setup checks and actual analytics observation time remain required. No inferred verdict, repeated Mini probes, video changes or spend. J3085 not taken as a second review.)
 - J3084 done: Verify condition for J3063 (Chief review complete: accepted J3071 MacBook fallback evidence f6fe5f717 / PR 1026. J3063 remains held until J3070 routes its handoff to the verified MacBook. Recorded wait --recheck J3084, next check 2026-11-18T22:30:00Z. Existing follow-up J3085 then J3070 must finish handoff; original setup checks and actual-time launch reading remain required. Mini unresponsive per 21:17Z probe. No performance verdict, video changes, spend or Ben action. Evidence jobs/reviews/J3084/REVIEW.md and J3071 evidence.json.)
 - J3083 cancelled: Chief: resolve 006 script orphan-review ()
@@ -80,4 +80,3 @@ Recently finished:
 - J3079 cancelled: Chief: resolve 002 script orphan-review ()
 - J3078 cancelled: Chief: resolve 001 edit orphan-blocked ()
 - J3077 cancelled: Chief: resolve 001 vo orphan-review ()
-- J3076 cancelled: Chief: resolve 001 script orphan-review ()
