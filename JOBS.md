@@ -66,7 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3120 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3114 |  |
 | J3124 | mini | blocked | cursor | – | 013 picture · for cursor · assembly · `cursor-grok-4-7` · HOS 013: add reconcile-session-block to the pass-1 runner | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6974259569 |
 | J3125 | mini | blocked | codex | – | studio · HOS Vaccine test: 24 Nov feed gate and conditional 29 Nov readout |  |
-| J3126 | mini | open (after J3122) | – | – | studio · HOS J3122: finish unscheduled Smallpox receipt and gate-library records |  |
+| J3126 | mini | claimed | cursor | 2026-11-19T12:26Z | studio · HOS J3122: finish unscheduled Smallpox receipt and gate-library records |  |
 
 Recently finished:
 

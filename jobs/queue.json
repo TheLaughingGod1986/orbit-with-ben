@@ -279706,10 +279706,10 @@
       "stage": "",
       "after": "J3122",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-19T10:26Z",
+      "eta": "2026-11-19T12:26Z",
       "created_by": "codex",
       "created_at": "2026-11-19T10:23Z",
       "result": "",
@@ -279718,12 +279718,25 @@
           "at": "2026-11-19T10:23Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-19T10:26Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Read back the private Smallpox schedule and reconcile the release records",
       "due": "2026-11-20T12:00:00Z",
       "kind": "studio",
-      "plain": "Verify the Smallpox Short is unscheduled and finish its records"
+      "plain": "Verify the Smallpox Short is unscheduled and finish its records",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-19T10:26Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
