@@ -282477,13 +282477,13 @@
       "stage": "edit",
       "after": "J3152",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-19T18:04Z",
-      "eta": "2026-11-19T20:04Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-19T17:58Z",
-      "result": "",
+      "result": "Offline repair only. HOS PR 675, commit c2dc9859c1c0242362fa7d611a7dc9de6dca5b12, on top of f21ab5b9. Not merged. Canonical music stays on the disabled flight. Fragments and other music forms are rejected before either legacy entry. The one subscription read is reserved in hos009-score-read-once.json under the held O_EXCL recorder before the GET, and that file is not deleted. Pinned guard sha256 930d987783055d1f73e80fd9ae770f1ecde63d79b397706df74e9492b4029308 and shape sha256 ba290b64740c96c3407af17da80d043be3bf840d1863518bfb011e047f9e647e unchanged. ACTIVATION_AUTHORIZED remains false. 23 flight tests and 11 guard tests passed. Review J3158 is pinned to Codex. Chief disposition J3159 follows it. Neither authorizes an account call, generation, activation, deployment, merge, or a music allowance. GBP 0.",
       "history": [
         {
           "at": "2026-11-19T17:58Z",
@@ -282514,6 +282514,11 @@
           "at": "2026-11-19T18:13Z",
           "by": "macbook-2",
           "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-11-19T18:13Z",
+          "by": "macbook-2",
+          "what": "done: Offline repair only. HOS PR 675, commit c2dc9859c1c0242362fa7d611a7dc9de6dca5b12, on top of f21ab5b9. Not merged. Canonical music stays on the disabled flight. Fragments and other music forms are rejected before either legacy entry. The one subscription read is reserved in hos009-score-read-once.json under the held O_EXCL recorder before the GET, and that file is not deleted. Pinned guard sha256 930d987783055d1f73e80fd9ae770f1ecde63d79b397706df74e9492b4029308 and shape sha256 ba290b64740c96c3407af17da80d043be3bf840d1863518bfb011e047f9e647e unchanged. ACTIVATION_AUTHORIZED remains false. 23 flight tests and 11 guard tests passed. Review J3158 is pinned to Codex. Chief disposition J3159 follows it. Neither authorizes an account call, generation, activation, deployment, merge, or a music allowance. GBP 0."
         }
       ],
       "remaining_action": "Close the job and post the studio report",
@@ -282524,7 +282529,8 @@
         "of": 4,
         "at": "2026-11-19T18:13Z",
         "by": "macbook-2"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/675"
     },
     {
       "id": "J3155",
