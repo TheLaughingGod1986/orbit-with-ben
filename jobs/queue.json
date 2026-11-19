@@ -274265,13 +274265,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-19T01:09Z",
-      "eta": "2026-11-19T03:09Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-18T17:26Z",
-      "result": "",
+      "result": "Handoff repaired using existing successor J3087. Local report: ~/_desk/reports/J3062/REVIEW.md; J3087 remaining action points there instead of its unpublished repo path. Edit stays review; long UAT and Shorts holds preserved. Detailed report remains local after earlier automatic publication rejection. No new media PASS.",
       "history": [
         {
           "at": "2026-11-18T17:26Z",
@@ -274337,6 +274337,11 @@
           "at": "2026-11-19T01:10Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified existing decision and successor; preserved report locally with byte-identical copy and recorded J3087 pointer. Detailed report remains unpublished."
+        },
+        {
+          "at": "2026-11-19T01:10Z",
+          "by": "codex",
+          "what": "done: Handoff repaired using existing successor J3087. Local report: ~/_desk/reports/J3062/REVIEW.md; J3087 remaining action points there instead of its unpublished repo path. Edit stays review; long UAT and Shorts holds preserved. Detailed report remains local after earlier automatic publication rejection. No new media PASS."
         }
       ],
       "remaining_action": "Close the repaired handoff so the linked music check can proceed",
@@ -274356,7 +274361,8 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "done_ref": "J3087"
     },
     {
       "id": "J3063",
