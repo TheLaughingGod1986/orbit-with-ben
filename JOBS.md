@@ -67,7 +67,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3136 | mini | open (after J3128) | – | – | 024 edit · assembly · OWB 024 Short fri06_muons_ground: no-spend music_gate repair against archived OWB 013 bed (£0) |  |
 | J3137 | mini | open (after J3128) | – | – | 005 edit · assembly · HOS 005 Shorts s06/s07/s08: no-spend music_gate repair against archived HOS 002/004 beds (£0) |  |
 | J3138 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3128 |  |
-| J3148 | mini | open (after J3147) | – | – | 009 edit · for gemini · review · `gemini-argon` · HOS 009: independently review the remaining guard repairs | J3146 |
+| J3148 | mini | claimed | macbook-2 | 2026-11-19T18:57Z | 009 edit · for gemini · review · `gemini-argon` · HOS 009: independently review the remaining guard repairs | J3146 |
 | J3149 | any | open (after J3148) | – | – | 009 edit · chief · HOS 009: decide repaired guard integration and any new score scope | J3146 |
 
 Recently finished:
