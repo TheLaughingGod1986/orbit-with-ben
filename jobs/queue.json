@@ -279233,6 +279233,11 @@
           "at": "2026-11-19T14:42Z",
           "by": "relay",
           "what": "condition verification queued: J3140"
+        },
+        {
+          "at": "2026-11-19T16:26Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-19T21:05:00Z"
         }
       ],
       "remaining_action": "Obtain explicit approval for the rejected GitHub branch export, then open the Pluto packaging review PR without rebuilding",
@@ -279251,12 +279256,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J3120 Chief ruling: build verified at clean commit a12100797f and all 12 NAS hashes match. Explicit authorization to export branch codex/j3114-pluto-v02 to TheLaughingGod1986/orbit-with-ben remains absent after two automatic approval-review rejections. Ownership/admin checks were rejected as insufficient authorization. Do not retry the export through another worker or route; preserve completed artifacts and J3115 dependency. Recheck for actual export approval at the recorded time, never release from elapsed time alone.",
-        "check_at": "2026-11-19T15:42:22+00:00",
-        "last_recheck": "J3120",
-        "checked_at": "2026-11-19T10:46:25+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3140"
+        "condition": "J3140 Chief ruling: explicit authorization for the previously rejected export of codex/j3114-pluto-v02 to TheLaughingGod1986/orbit-with-ben is still absent through thread comment 7015059512. Clean build a12100797f preserved; 12/12 NAS artifact hashes independently rechecked. Automatic approval review rejected the export twice, including owner/admin evidence. Do not retry through another worker or route. Keep J3115 dependent on J3114; after actual approval export the preserved branch and open its review PR without rebuilding. Time alone never releases this hold.",
+        "check_at": "2026-11-19T21:05:00Z",
+        "last_recheck": "J3140",
+        "checked_at": "2026-11-19T16:26:18+00:00",
+        "checked_by": "codex"
       },
       "escalated_at": "2026-11-19T11:45Z"
     },
