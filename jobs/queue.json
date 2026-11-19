@@ -270869,10 +270869,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-19T14:44Z",
-      "eta": "2026-11-19T18:44Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
       "result": "",
@@ -271196,6 +271196,11 @@
           "at": "2026-11-19T14:46Z",
           "by": "codex",
           "what": "step 3 of 4 done: PR 1011 updated at 6ec6a1f4ad: documented actual analytics data and commit-root gaps and the reset seven-day streak; no live switch."
+        },
+        {
+          "at": "2026-11-19T14:46Z",
+          "by": "codex",
+          "what": "released: PR 1011 at 6ec6a1f4ad documents detached analytics gaps and official streak reset; implement and test analytics adapter, verify board credential, refresh rehearsal; no live switch. Existing plan 3/4."
         }
       ],
       "remaining_action": "Implement and test detached analytics, verify access, and refresh the rehearsal before the gated move",
