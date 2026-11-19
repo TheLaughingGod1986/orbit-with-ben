@@ -282224,13 +282224,13 @@
       "stage": "edit",
       "after": "J3150",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-19T17:50Z",
-      "eta": "2026-11-19T19:50Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-19T17:26Z",
-      "result": "",
+      "result": "FIX. Independent review of HOS PR672 f21ab5b9: fragment music URLs bypass the disabled flight and restore the legacy pause bypass; failed subscription reads leave no durable attempt record and can repeat. Reproductions and exact repair list in HOS PR673 d61972b2. Eight hashes match; 20 integration and 11 guard tests pass; review-only check_all.sh ALL CHECKS PASS. J3152 owns repair scope. No activation, merge, account call or spend; existing score and production holds unchanged.",
       "history": [
         {
           "at": "2026-11-19T17:26Z",
@@ -282281,6 +282281,11 @@
           "at": "2026-11-19T17:54Z",
           "by": "codex",
           "what": "step 3 of 3 done: Review and offline reproducer committed as HOS d61972b2; all review-branch repository checks pass. J3152 must scope the two named integration fixes."
+        },
+        {
+          "at": "2026-11-19T17:55Z",
+          "by": "codex",
+          "what": "done: FIX. Independent review of HOS PR672 f21ab5b9: fragment music URLs bypass the disabled flight and restore the legacy pause bypass; failed subscription reads leave no durable attempt record and can repeat. Reproductions and exact repair list in HOS PR673 d61972b2. Eight hashes match; 20 integration and 11 guard tests pass; review-only check_all.sh ALL CHECKS PASS. J3152 owns repair scope. No activation, merge, account call or spend; existing score and production holds unchanged."
         }
       ],
       "remaining_action": "Hand the completed FIX review to the queued Chief decision",
@@ -282304,7 +282309,8 @@
       "model": "gpt-6-astra",
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/673"
     },
     {
       "id": "J3152",
