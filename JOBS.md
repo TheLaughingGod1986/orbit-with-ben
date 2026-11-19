@@ -57,7 +57,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3085 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3070 |  |
 | J3089 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2845 |  |
 | J3090 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2847 |  |
-| J3096 | any | claimed | codex | 2026-11-19T13:20Z | chief · Chief exact-file decision on revised Saturn and JWST thumbnail tests | J3088 |
 | J3099 | any | blocked | macbook-2 | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J3114 | mini | blocked | codex | – | 034 thumbs · thumb · 034 Pluto: rebuild J3105 thumbnails v02 and apply J3111 panel package text fixes | J3105,J3106,J3108,J3109,J3110,J3111,J3112 |
 | J3115 | mini | open (after J3114) | – | – | 034 upload · chief · 034 Pluto: final packaging review after J3114 fixes and Ben-gated delivery handoff | J3112,J3114,J2868 |
