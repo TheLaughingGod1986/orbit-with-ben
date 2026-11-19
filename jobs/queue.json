@@ -277130,13 +277130,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-19T17:05Z",
-      "eta": "2026-11-19T19:05Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-19T00:16Z",
-      "result": "",
+      "result": "RESOLVED by later J3096 exact-file PASS and completed J2845; see jobs/reviews/J3089/REVIEW.md Chief closure, PR #1045. Checked parent histories, exact hash, T018/T037 ledger, read-back and owner-authored thread rulings. J2845 remains done; obsolete hold must not be restored. T037 remains running in the ledger; existing owb-weekly-thumb-audit owns read-only monitoring and records result only after Studio reports completion. No new wait or duplicate job needed, no YouTube changes or spend.",
       "history": [
         {
           "at": "2026-11-19T00:16Z",
@@ -277202,6 +277202,11 @@
           "at": "2026-11-19T17:06Z",
           "by": "codex",
           "what": "step 3 of 3 done: Chief review complete: later approval and completed test verified; closure merged as PR 1045. Parent stays done; weekly audit monitors T037."
+        },
+        {
+          "at": "2026-11-19T17:06Z",
+          "by": "codex",
+          "what": "done: RESOLVED by later J3096 exact-file PASS and completed J2845; see jobs/reviews/J3089/REVIEW.md Chief closure, PR #1045. Checked parent histories, exact hash, T018/T037 ledger, read-back and owner-authored thread rulings. J2845 remains done; obsolete hold must not be restored. T037 remains running in the ledger; existing owb-weekly-thumb-audit owns read-only monitoring and records result only after Studio reports completion. No new wait or duplicate job needed, no YouTube changes or spend."
         }
       ],
       "remaining_action": "Close the resolved verification; weekly thumbnail audit monitors the running test",
@@ -277228,7 +277233,8 @@
         "at": "2026-11-19T17:06Z",
         "by": "codex",
         "note": "Chief review complete: later approval and completed test verified; closure merged as PR 1045. Parent stays done; weekly "
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1045"
     },
     {
       "id": "J3090",
