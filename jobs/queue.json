@@ -225959,9 +225959,14 @@
           "at": "2026-11-19T19:21Z",
           "by": "gemini",
           "what": "step 12 of 14 done: Batch 12 (rows 56-60, row 56 take 2) exited 0; all 5 clips GENERATED/PENDING_REVIEW and posted 24,500->24,000 (live balance re-verified 24,000, 0 pending charges, headroom 22,600 >= 3,000). 5 full-clip 0.5s sheets pushed to review/013-pass1-sheets (d63cc62f) and recorded in OWB jobs/reviews/J2529/ (9187af2931)."
+        },
+        {
+          "at": "2026-11-19T19:23Z",
+          "by": "gemini",
+          "what": "step 12 of 14 done: Batch 12 complete (rows 56-60, row 56 take 2; posted 24,500->24,000; 0.5s sheets d63cc62f; OWB 9187af2931; HOS #180 7019743624). Batch 13 (rows 61-65) launched detached in tmux hos013-pass1 (PID 65844)."
         }
       ],
-      "remaining_action": "Launch Batch 13 (rows 61-65) detached, post Batch 12 sheets on #180, then release cleanly while Batch 13 renders.",
+      "remaining_action": "Check Batch 13 done file (J2529-batch13-20261119T1922Z.done), verify receipt, push 0.5s sheets, post #180, then launch Batch 14 (row 66).",
       "due": "2026-11-21T18:00:00Z",
       "kind": "video",
       "plain": "Make the 66 pictures for the Darwin and Wallace film, on credits that would otherwise expire on Thursday",
@@ -225976,9 +225981,9 @@
       "progress": {
         "step": 12,
         "of": 14,
-        "at": "2026-11-19T19:21Z",
+        "at": "2026-11-19T19:23Z",
         "by": "gemini",
-        "note": "Batch 12 (rows 56-60, row 56 take 2) exited 0; all 5 clips GENERATED/PENDING_REVIEW and posted 24,500->24,000 (live bala"
+        "note": "Batch 12 complete (rows 56-60, row 56 take 2; posted 24,500->24,000; 0.5s sheets d63cc62f; OWB 9187af2931; HOS #180 7019"
       }
     },
     {
