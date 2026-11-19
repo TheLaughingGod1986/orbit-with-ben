@@ -277260,9 +277260,9 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-19T08:14Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-19T00:16Z",
@@ -277312,6 +277312,11 @@
           "at": "2026-11-19T11:45Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-11-19T17:10Z",
+          "by": "codex",
+          "what": "rerouted to codex: Elected Chief completing requested review; J2847 condition already recorded with recheck J3090. Parent remains blocked; only verification closure follows."
         }
       ],
       "remaining_action": "Awaiting elected Chief to record jobs.py wait J2847 --recheck J3090 and close J3090",
@@ -277326,7 +277331,7 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
+      "for": "codex",
       "model": "gemini-argon",
       "progress": {
         "step": 3,
