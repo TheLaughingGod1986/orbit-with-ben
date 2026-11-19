@@ -278330,9 +278330,14 @@
           "at": "2026-11-19T05:50Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J3116; starting verification of waiting condition for J2537."
+        },
+        {
+          "at": "2026-11-19T05:52Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read J2537 record and HOS PR #657 merged rehearsal artifacts (REHEARSAL.md, REHEARSAL_RESULT.json) at ae6ad0c1."
         }
       ],
-      "remaining_action": "Check J2537 record, HOS PR #180, HOS PR #657, and OWB thread #99 for Ben's explicit one-time exception to rewrite protected hos-desk history",
+      "remaining_action": "Check HOS #180, OWB #954, and git logs for any post-23:40Z Ben approval or one-time exception for protected hos-desk history rewrite",
       "kind": "review",
       "recheck_of": "J2537",
       "due": "2026-11-18T18:00:00+00:00",
@@ -278347,12 +278352,18 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-19T05:50Z",
+        "at": "2026-11-19T05:52Z",
         "by": "gemini",
-        "note": "Claimed J3116; starting verification of waiting condition for J2537."
-      }
+        "note": "Read J2537 record and HOS PR #657 merged rehearsal artifacts (REHEARSAL.md, REHEARSAL_RESULT.json) at ae6ad0c1."
+      },
+      "taskKeys": [
+        "HOS:005",
+        "HOS:008",
+        "HOS:011",
+        "HOS:013"
+      ]
     }
   ],
   "focus": [
