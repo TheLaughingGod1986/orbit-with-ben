@@ -1,5 +1,5 @@
 {
-  "next_id": 3087,
+  "next_id": 3088,
   "jobs": [
     {
       "id": "J0001",
@@ -275997,6 +275997,35 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J3087",
+      "title": "034 Pluto: resolve incomplete music-library comparison before closing edit review",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J3062 evidence repair, after completed J2868 five-part review. Film OWB:034, edit. Read jobs/reviews/J3062/REVIEW.md and jobs/reviews/J2868/REVIEW.md. Exact long v02 SHA-256 e5a886dfef208774cce8ae987e658fba5d7a96cbb5c99a44aadf63516949ba62, on studio-live 034/09_Final-Export.\n\nResolve the music-comparison evidence gap in 07_Edit-Project/full_master_v02_pack/music_gate_v02.json: its PASS contains unreadable earlier-library warnings, including jupiter-music.mp3 and saturn-rings_score_bed_v01.mp3. Check whether a newer complete comparison already exists. Otherwise map relevant previous music beds to readable canonical NAS copies, record what is music versus narration/duplicate, and run the current music gate with explicit documented comparison coverage. Do not treat omitted or unreadable music as proof of uniqueness. No broad narration-file comparison is required. Record exact bed/master hashes, command, comparison inventory and results. If a similarity flag needs an ear decision, use demonstrated audio_input via Gemini, never infer listening from spectra. No generation, recut, spend, upload, schedule, privacy or Buffer changes. Preserve all files and existing approvals.\n\nReturn KEEP or a precise FIX. When evidence is complete, reconcile 034 edit to internal-QA done citing J2868 plus this evidence; retain the long Ben UAT entry on J2868 and its 8 December watch-by / 13 December slot. If a genuine problem remains, queue the exact correction with dependencies and keep the stage in review. Do not repeat the already completed full-film review absent a new defect. Shorts delivery jobs J3065/J3066 and their public-parent holds remain unchanged. This is an agent evidence check, not another Ben approval request.\n",
+      "ref": "J2868,J3062",
+      "film": "034",
+      "stage": "edit",
+      "after": "J3062",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-19T00:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T00:01Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify the missing earlier music comparisons and record the edit verdict",
+      "kind": "review",
+      "plain": "Check that the Pluto film uses its own music and finish its edit review"
     }
   ],
   "focus": [
