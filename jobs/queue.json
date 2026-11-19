@@ -282759,9 +282759,14 @@
           "at": "2026-11-19T19:34Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J3155; starting verification of J1275 condition for HOS 009 and HOS 010"
+        },
+        {
+          "at": "2026-11-19T19:37Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Inspected J1275 history, HOS 009/010 status.json, 07_Edit-Project on Mini & NAS, and queue blocks (J2035/J3159 for 009; long picture lock held on 010): no final master cut exists for either film yet"
         }
       ],
-      "remaining_action": "Read J1275 history and inspect HOS 009 and HOS 010 picture/edit status and final cuts",
+      "remaining_action": "Verify HOS PR #389 (7c136209) on main and run lint:package for HOS 009 and HOS 010",
       "kind": "review",
       "recheck_of": "J1275",
       "due": "2026-11-19T19:01:32+00:00",
@@ -282776,11 +282781,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-19T19:34Z",
+        "at": "2026-11-19T19:37Z",
         "by": "gemini",
-        "note": "Claimed J3155; starting verification of J1275 condition for HOS 009 and HOS 010"
+        "note": "Inspected J1275 history, HOS 009/010 status.json, 07_Edit-Project on Mini & NAS, and queue blocks (J2035/J3159 for 009; "
       },
       "taskKeys": [
         "HOS:009",
