@@ -61,7 +61,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3137 | mini | blocked | cursor | – | 005 edit · assembly · HOS 005 Shorts s06/s07/s08: no-spend music_gate repair against archived HOS 002/004 beds (£0) |  |
 | J3155 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J1275 |  |
 | J3161 | mini | blocked | codex | – | studio · Supermoon Short: next-morning and full-day performance follow-up |  |
-| J3170 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
+| J3170 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
 | J3175 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2847 |  |
 | J3176 | any | open | – | – | 024 edit · chief · OWB 024 muon Short: decide whether to swap gc1hWQQJOq4 onto the v06 bed |  |
 | J3177 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3137 |  |
