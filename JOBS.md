@@ -65,7 +65,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3155 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J1275 |  |
 | J3161 | mini | blocked | codex | – | studio · Supermoon Short: next-morning and full-day performance follow-up |  |
 | J3170 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
-| J3174 | any | open (after J3173) | – | – | 009 edit · chief · HOS 009: merge PR 681 at the exact J3173-approved head | https://github.com/TheLaughingGod1986/history-of-science/pull/681#issuecomment-7024569119 |
+| J3174 | any | claimed | codex | 2026-11-19T23:20Z | 009 edit · chief · HOS 009: merge PR 681 at the exact J3173-approved head | https://github.com/TheLaughingGod1986/history-of-science/pull/681#issuecomment-7024569119 |
 
 Recently finished:
 
