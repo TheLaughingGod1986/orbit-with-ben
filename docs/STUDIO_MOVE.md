@@ -6,9 +6,11 @@ copy Orbit's Git history. J2537's history rewrite is not a prerequisite. The sou
 
 ## Timing and acceptance
 
-The original target was Monday 23 or Tuesday 24 November. The official 19 November result is nonzero,
-so neither that target nor the earlier 20 November earliest date is established. Five clean days were recorded
-14–18 November; require the actual current seven-day streak and prior-day notice. Recheck, do not infer.
+The original target was Monday 23 or Tuesday 24 November. The current official history inspected on
+19 November at 22:05 UTC records six consecutive full zero-result days, 14–19 November. The corrected
+19 November row is source `fa47f48872`, recorded at 21:54 UTC. Earlier continuation notes below describe a
+superseded same-day nonzero result; they are historical evidence, not the current streak. Seven days and
+preceding-day notice are still required. No cutover date is established by this preparation run.
 
 - `python3 scripts/studio_split.py --streak jobs/reviews/studio_split/history.jsonl` must read at least 7.
   Each day must have `left: 0` and `tests: run`. Run the full dry run again on the frozen cutover source.
@@ -528,3 +530,28 @@ This is still preparation, not full timer acceptance. Next wire the session into
 credential loading, gate library/frame paths, timeouts and board-publish calls; test the complete invocation with
 fake APIs before adding its staged plist. No timer, service, active marker or live records changed.
 Evidence: `jobs/reviews/J3012/ANALYTICS_SESSION_2026-11-19.md`.
+
+
+### Collection and publication layer prepared — 19 November, 22:15 UTC
+
+`scripts/analytics_collection.py` now runs each registered channel's snapshot independently, then the required
+auxiliary phase, combined report, per-owner publication/retries and optional board refresh, all inside
+`analytics_session.locked_session`. Child processes receive record checkout overrides while the publisher gets
+source checkout paths. The queue override stays on the shared active studio checkout. Commands execute from
+the detached studio record worktree so the combined dashboard belongs to that repository.
+
+The caller must supply an existing absolute local credential file outside all record worktrees. Inherited
+analytics OAuth and channel-ID variables are cleared before Node loads that file, preventing stale launchd
+values from overriding it. Dependencies are reused through an ignored worktree-local link; an unexpected
+existing directory is refused. Each subprocess has a timeout that kills its process group, including Node's
+children. Only step names and exit statuses are returned, never credential-bearing child diagnostics.
+
+A failed collector does not skip other channels, reports or publication. Publication runs even with no new
+changes, to retry pending commits. The required auxiliary callback must implement the gate and dispatch phase;
+there is deliberately no default callback or installed command that silently omits it. A callback exception
+releases the lock and leaves generated records for the existing next-run recovery. The next continuation must
+wire that callback, stage the gate library and frames correctly, provide bounded gate/dispatch commands, then
+connect the shell entrypoint and staged plist. This is not full timer acceptance or cutover approval.
+
+Evidence: `jobs/reviews/J3012/ANALYTICS_COLLECTION_2026-11-19.md`. No live timer, credential, channel record,
+activation marker, board deployment or service was changed.
