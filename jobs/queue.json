@@ -1,5 +1,5 @@
 {
-  "next_id": 3155,
+  "next_id": 3158,
   "jobs": [
     {
       "id": "J0001",
@@ -119382,6 +119382,11 @@
           "at": "2026-10-30T20:09Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-19T18:00:00Z"
+        },
+        {
+          "at": "2026-11-19T18:01Z",
+          "by": "relay",
+          "what": "condition verification queued: J3155"
         }
       ],
       "remaining_action": "Re-time HOS 009 and 010 provisional Chapters to actual chapter-card/VO times once each film's locked cut exists (PR #389 merged at 7c136209)",
@@ -119409,7 +119414,8 @@
       "hold": {
         "type": "dependency",
         "condition": "HOS PR #389 squash-merged at 7c136209 (check_all.sh and lint:package PASS on main). Wait until HOS 009 (edit due 2026-11-19) and HOS 010 (edit due 2026-11-26) picture/edit are locked and the final cuts exist; then re-time each film's provisional Chapters to the actual chapter-card/VO times in the locked cut (0:00 first, >=3 stamps, >=10 s apart), keep Sources intact, run lint:package, and open a small PR for Chief before upload.",
-        "check_at": "2026-11-19T18:00:00Z"
+        "check_at": "2026-11-19T19:01:32+00:00",
+        "recheck_task": "J3155"
       }
     },
     {
@@ -225903,6 +225909,11 @@
           "at": "2026-11-19T09:33Z",
           "by": "chief",
           "what": "condition recorded; next verification 2026-11-19T18:00:00Z"
+        },
+        {
+          "at": "2026-11-19T18:01Z",
+          "by": "relay",
+          "what": "condition verification queued: J3156"
         }
       ],
       "remaining_action": "Cursor adds reconcile-session-block (J3124). Then close row 56 t1 at 0 credits, dry-run --floor 3000, and mint rows 56-66.",
@@ -225926,10 +225937,11 @@
       "hold": {
         "type": "input",
         "condition": "Cursor lands reconcile-session-block on history-of-science, Gemini closes HOS:013:P05:08a_wallace_opens_origin:t1 as SESSION_BLOCKED at 0 credits, and dry-run --floor 3000 passes before resuming Batch 12 (rows 56-66).",
-        "check_at": "2026-11-19T18:00:00Z",
+        "check_at": "2026-11-19T19:01:32+00:00",
         "last_recheck": "J3039",
         "checked_at": "2026-11-19T09:33:11+00:00",
-        "checked_by": "chief"
+        "checked_by": "chief",
+        "recheck_task": "J3156"
       },
       "escalated_at": "2026-11-12T20:07Z"
     },
@@ -280214,6 +280226,11 @@
           "at": "2026-11-19T11:45Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-19T18:01Z",
+          "by": "relay",
+          "what": "condition verification queued: J3157"
         }
       ],
       "remaining_action": "Await J3127: Gemini closes the one blocked charge and posts the guarded dry-run; code review is settled",
@@ -280236,7 +280253,8 @@
       "hold": {
         "type": "dependency",
         "condition": "Chief review: PR663 merged at 5cd6d4ff after Claude review 7005461672; PR664 closed unmerged. Await J3127 Gemini reconciliation line ids and fresh floor-3000 dry-run under desk 7006319651. J2529 and 700-credit retake hold unchanged.",
-        "check_at": "2026-11-19T18:00:00Z"
+        "check_at": "2026-11-19T19:01:32+00:00",
+        "recheck_task": "J3157"
       },
       "escalated_at": "2026-11-19T11:45Z"
     },
@@ -282476,6 +282494,101 @@
       "remaining_action": "Repair the two reviewed defects offline and submit a new commit for independent review",
       "kind": "assembly",
       "plain": "Fix two safeguards in the gravity film music preparation"
+    },
+    {
+      "id": "J3155",
+      "title": "Verify condition for J1275",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1275: HOS PR #389 squash-merged at 7c136209 (check_all.sh and lint:package PASS on main). Wait until HOS 009 (edit due 2026-11-19) and HOS 010 (edit due 2026-11-26) picture/edit are locked and the final cuts exist; then re-time each film's provisional Chapters to the actual chapter-card/VO times in the locked cut (0:00 first, >=3 stamps, >=10 s apart), keep Sources intact, run lint:package, and open a small PR for Chief before upload.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1275 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-19T18:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T18:01Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Re-time HOS 009 and 010 provisional Chapters to actual chapter-card/VO times once each film's locked cut exists (PR #389 merged at 7c136209)",
+      "kind": "review",
+      "recheck_of": "J1275",
+      "due": "2026-11-19T19:01:32+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3156",
+      "title": "Verify condition for J2529",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2529: Cursor lands reconcile-session-block on history-of-science, Gemini closes HOS:013:P05:08a_wallace_opens_origin:t1 as SESSION_BLOCKED at 0 credits, and dry-run --floor 3000 passes before resuming Batch 12 (rows 56-66).. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2529 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-19T18:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T18:01Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Cursor adds reconcile-session-block (J3124). Then close row 56 t1 at 0 credits, dry-run --floor 3000, and mint rows 56-66.",
+      "kind": "review",
+      "recheck_of": "J2529",
+      "mini_only": true,
+      "due": "2026-11-12T18:45:00+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3157",
+      "title": "Verify condition for J3124",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3124: Chief review: PR663 merged at 5cd6d4ff after Claude review 7005461672; PR664 closed unmerged. Await J3127 Gemini reconciliation line ids and fresh floor-3000 dry-run under desk 7006319651. J2529 and 700-credit retake hold unchanged.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3124 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-19T18:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T18:01Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await J3127: Gemini closes the one blocked charge and posts the guarded dry-run; code review is settled",
+      "kind": "review",
+      "recheck_of": "J3124",
+      "mini_only": true,
+      "due": "2026-11-19T19:01:32+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
