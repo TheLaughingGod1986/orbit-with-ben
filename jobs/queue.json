@@ -1,5 +1,5 @@
 {
-  "next_id": 3115,
+  "next_id": 3116,
   "jobs": [
     {
       "id": "J0001",
@@ -278188,6 +278188,36 @@
       "due": "2026-12-08T18:00:00Z",
       "kind": "thumb",
       "plain": "Rebuild Pluto 034 long thumbnails A/B/C v02 and apply the 3-model packaging panel title and <5,000-char description fixes before Chief ruling J3112"
+    },
+    {
+      "id": "J3115",
+      "title": "034 Pluto: final packaging review after J3114 fixes and Ben-gated delivery handoff",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "After J3114, review rebuilt OWB:034 thumbnails and upload package against jobs/reviews/J3112/REVIEW.md and the Chief addendum at the top of 05_Analytics/tests/panels/owb-034-pluto-j3106/DECISION.md. J3112 ruled FIX on v01; it did not approve future files. Verify exact NAS hashes and phone readability for three distinct concepts; no STILL ALIVE hook, no two-arm substitution, no fabricated scale geometry. Verify updated search-first title, description <=5000 characters with credits and sources intact, episode gate and package dry-run. Record exact-file PASS/FIX and final title/thumbnail arms; keep failed stages review/blocked and queue any precise correction immediately. Recheck elected Chief authority for the final publishing handoff.\n\nOnly after packaging PASS arrange the Mini Private scheduled upload handoff, explicitly requiring Ben approval of the exact long v02 on J2868.1. J2868 status=done/internal KEEP is not Ben approval. If approval is absent, preserve the existing UAT card/watch-by 8 Dec 18:00 London; do not upload or create duplicate watch cards. Planned slot 13 Dec 18:00 London, subject to approval and all release gates. Preserve Shorts J3066/J3065 public-parent holds and their 21/23 Dec 11:30 slots. No spend or live YouTube changes in this review. J3113 is administrative reconciliation of the initial FIX, not approval of the rebuilt files.\n",
+      "ref": "J3112,J3114,J2868",
+      "film": "034",
+      "stage": "upload",
+      "after": "J3114",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-19T05:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T05:33Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review rebuilt Pluto packaging and arrange delivery only after the existing watch approval",
+      "due": "2026-12-08T18:00:00Z",
+      "kind": "chief",
+      "plain": "Check the corrected Pluto thumbnails and description before arranging delivery"
     }
   ],
   "focus": [
