@@ -264440,9 +264440,9 @@
     {
       "id": "J2951",
       "title": "Stop the refill tick using 3-4 GB: read the acting Chief once per scan",
-      "needs": "cloud",
+      "needs": "any",
       "repo": "owb",
-      "body": "The Mini ran out of application memory on 16 Nov 2026 (macOS Force Quit dialog). Cause found in this session:\n`scripts/refill.py refill --git`, started by the relay every minute, grew to 2.7-4 GB and took ~50 s.\n\n`refill.ready()` calls `jobs.can_any_mini_claim()` for each of the 2,950 queue jobs. For every Chief-role job that\ncalled `chief_relay.acting()`, which re-reads every Chief's state, including the whole 15 MB `jobs/queue.json`\n(`state_of(\"claude\")` -> `claude_out`). One scan parsed that file ~1,500 times (13,188 json.loads in a profile).\n\nFix: `can_any_mini_claim` takes a per-scan `memo`; `refill.ready` and `do_watch` pass one, so the acting Chief (per\nchain), the execution lease and the capability reports are read once per scan at one `at`. Same answer, since none\ncan change within one instant. Measured on the live queue: 49 s / 3.7 GB -> 1.7 s / 301 MB, same result (0 ready).\nRegression test in test_refill.py; full scripts suite 1329 passed.\n",
+      "body": "**Supersedes the brief above (Claude, 19 Nov 20:31Z).** The fix has existed since 16 Nov but was never merged. Commit fc3c4fc0b55c762a0489fcf3db5e2f5535f8d6ad has it applied to main as of 19 Nov 20:20Z (scripts/jobs.py, scripts/refill.py, scripts/test_refill.py). Fetch it by id (`git fetch origin fc3c4fc0b55c762a0489fcf3db5e2f5535f8d6ad`); the older version is on branch `claude/J2951-refill-memory`.\n\n**Do.** Put that commit on your own fresh branch from current main (cherry-pick it). Run test_refill.py, test_jobs.py, test_studio.py, test_channels.py, core_sync.py check and sync_rules.py --check, and open a PR for the Chief. On the Mac mini, also time `refill.ready()` on the live queue before and after, using the relay's real state files: peak memory and seconds. The 16 Nov measurement was 49 s / 3.7 GB before and 1.7 s / 301 MB after. Report both. Do not push to `claude/youtube-channel-audit-pa4n3b`: it belongs to a Claude session's open PR (#1036).\n\n**Why it matters.** The refill tick runs every minute on the Mini. On 16 Nov it ran the Mini out of memory, and it slows every agent working there.\n\nThe Mini ran out of application memory on 16 Nov 2026 (macOS Force Quit dialog). Cause found in this session:\n`scripts/refill.py refill --git`, started by the relay every minute, grew to 2.7-4 GB and took ~50 s.\n\n`refill.ready()` calls `jobs.can_any_mini_claim()` for each of the 2,950 queue jobs. For every Chief-role job that\ncalled `chief_relay.acting()`, which re-reads every Chief's state, including the whole 15 MB `jobs/queue.json`\n(`state_of(\"claude\")` -> `claude_out`). One scan parsed that file ~1,500 times (13,188 json.loads in a profile).\n\nFix: `can_any_mini_claim` takes a per-scan `memo`; `refill.ready` and `do_watch` pass one, so the acting Chief (per\nchain), the execution lease and the capability reports are read once per scan at one `at`. Same answer, since none\ncan change within one instant. Measured on the live queue: 49 s / 3.7 GB -> 1.7 s / 301 MB, same result (0 ready).\nRegression test in test_refill.py; full scripts suite 1329 passed.\n",
       "ref": "",
       "film": "",
       "stage": "",
@@ -264460,11 +264460,17 @@
           "at": "2026-11-16T17:18Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-19T20:31Z",
+          "by": "claude",
+          "what": "Brief updated: the fix exists (commit fc3c4fc0); cherry-pick it onto a fresh branch, test, measure on the Mini, PR. needs cloud -> any, so a MacBook or Codex can take it."
         }
       ],
       "remaining_action": "Merge the fix and confirm the relay's refill runs small",
       "kind": "assembly",
-      "plain": "Fixing a background check that used up the Mac mini's memory every minute"
+      "plain": "Stop a background check on the Mac mini using several gigabytes of memory every minute",
+      "urgent": 6
     },
     {
       "id": "J2952",
