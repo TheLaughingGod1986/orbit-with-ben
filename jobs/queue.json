@@ -279630,13 +279630,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-19T10:22Z",
-      "eta": "2026-11-19T12:22Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-19T10:22Z",
-      "result": "",
+      "result": "Waiting for: The 20-22 November comparison Shorts have aired and their day-1 traffic sources are available for the standing 24 November gate; Plants first-48-hour data must also be read.",
       "history": [
         {
           "at": "2026-11-19T10:22Z",
@@ -279647,9 +279647,19 @@
           "at": "2026-11-19T10:22Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T10:23Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: The 20-22 November comparison Shorts have aired and their day-1 traffic sources are available for the standing 24 November gate; Plants first-48-hour data must also be read."
+        },
+        {
+          "at": "2026-11-19T10:23Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-24T12:00:00Z"
         }
       ],
-      "remaining_action": "Read the comparison Shorts on 24 November and decide whether the vaccine test can air",
+      "remaining_action": "Check the comparison Shorts on 24 November before allowing the vaccine test to air",
       "due": "2026-11-24T12:00:00Z",
       "kind": "studio",
       "plain": "Check whether other Shorts are reaching viewers before the vaccine test airs",
@@ -279660,6 +279670,11 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "test",
+        "condition": "The 20-22 November comparison Shorts have aired and their day-1 traffic sources are available for the standing 24 November gate; Plants first-48-hour data must also be read.",
+        "check_at": "2026-11-24T12:00:00Z"
       }
     }
   ],
