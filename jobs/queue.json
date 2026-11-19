@@ -271467,18 +271467,23 @@
           "at": "2026-11-19T20:21Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-19T20:22Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Preserving existing 3/4 plan; continuing PR 1011 after 48ee0d3952. No live move."
         }
       ],
-      "remaining_action": "Wire the tested record worktrees into the analytics timer and finish cutover checks",
+      "remaining_action": "Connect the analytics timer to separate record repositories and verify it without live writes",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-19T17:31Z",
+        "at": "2026-11-19T20:22Z",
         "by": "codex",
-        "note": "PR 1011 advanced to 48ee0d3952: 13 local-Git integration tests, eight lock pretests, 227 application tests, typecheck/li"
+        "note": "Preserving existing 3/4 plan; continuing PR 1011 after 48ee0d3952. No live move."
       }
     },
     {
