@@ -277613,13 +277613,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-19T04:30Z",
-      "eta": "2026-11-19T06:30Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-19T03:28Z",
-      "result": "",
+      "result": "Workflow repaired: J3113 now owns 034 thumbs reconciliation after existing Chief decision J3112; panel J3108-J3111 unchanged. NAS A/B/C hashes match. Thumbs/upload remain review; J2868 UAT and J3065/J3066 public-parent holds preserved. Read-only handoff and dependency checks pass. No spend or Studio changes.",
       "history": [
         {
           "at": "2026-11-19T03:28Z",
@@ -277650,6 +277650,11 @@
           "at": "2026-11-19T04:33Z",
           "by": "codex",
           "what": "step 3 of 3 done: Verified no orphan for 034 thumbs, valid J3113 dependency, review states and holds preserved; evidence committed 5c5f8e5f73"
+        },
+        {
+          "at": "2026-11-19T04:33Z",
+          "by": "codex",
+          "what": "done: Workflow repaired: J3113 now owns 034 thumbs reconciliation after existing Chief decision J3112; panel J3108-J3111 unchanged. NAS A/B/C hashes match. Thumbs/upload remain review; J2868 UAT and J3065/J3066 public-parent holds preserved. Read-only handoff and dependency checks pass. No spend or Studio changes."
         }
       ],
       "remaining_action": "Close the verified thumbnail handoff repair and report",
@@ -277669,7 +277674,8 @@
       },
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "done_ref": "jobs/reviews/J3107/REVIEW.md"
     },
     {
       "id": "J3108",
