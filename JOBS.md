@@ -64,7 +64,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3137 | mini | open (after J3128) | – | – | 005 edit · assembly · HOS 005 Shorts s06/s07/s08: no-spend music_gate repair against archived HOS 002/004 beds (£0) |  |
 | J3138 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3128 |  |
 | J3155 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J1275 |  |
-| J3159 | any | open (after J3158) | – | – | 009 edit · chief · HOS 009: disposition of the repaired music flight | J3154 |
+| J3159 | any | claimed | codex | 2026-11-19T22:39Z | 009 edit · chief · HOS 009: disposition of the repaired music flight | J3154 |
 | J3161 | mini | blocked | codex | – | studio · Supermoon Short: next-morning and full-day performance follow-up |  |
 
 Recently finished:
