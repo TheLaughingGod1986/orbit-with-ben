@@ -221,6 +221,11 @@ def build(scratch: pathlib.Path, root: pathlib.Path, placed: dict, home: str, ot
     folders = {home: scratch / channels.get(home)["repo"]["checkouts"][0]}
     for f in placed[home]:
         _place(root / f, folders[home] / f)
+    # Once the home channel is a repo beside the studio, the studio keeps a cached copy of its settings like it does
+    # for every other channel (channels/<slug>/channel.json; `channels.py sync` refreshes it).
+    home_settings = root / "studio" / "channel.json"
+    if home_settings.is_file():
+        _place(home_settings, studio / "channels" / home / "channel.json")
     for slug, checkout in others.items():
         folder = scratch / (channels.get(slug)["repo"].get("checkouts") or [slug])[-1]
         if checkout:
