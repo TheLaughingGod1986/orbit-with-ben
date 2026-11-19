@@ -280271,9 +280271,14 @@
           "at": "2026-11-19T14:15Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Resumed J3128 and inspecting cached reconciled music_gate outputs in /tmp/j3128_out"
+        },
+        {
+          "at": "2026-11-19T14:22Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified 77 reconciled music_gate reports against 115 deduplicated comparison beds and 15 resolved UAT items (1 music bed jupiter-music.mp3 + 14 narration VO files; max VO sim 0.3161): 73 PASS, 4 FAIL"
         }
       ],
-      "remaining_action": "Verify cached J3128 reconciled music_gate reports, add no-spend repair jobs for actual FAILs, and commit J3128 inventory/report/sidecars",
+      "remaining_action": "Add no-spend repair jobs for the 4 actual music_gate FAILs and commit the J3128 reconciled reports, inventory, and entry-to-report coverage table",
       "kind": "qa",
       "plain": "Finish checking that the newest films use their own music",
       "rerouted_from": {
@@ -280286,11 +280291,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-19T14:15Z",
+        "at": "2026-11-19T14:22Z",
         "by": "gemini",
-        "note": "Resumed J3128 and inspecting cached reconciled music_gate outputs in /tmp/j3128_out"
+        "note": "Verified 77 reconciled music_gate reports against 115 deduplicated comparison beds and 15 resolved UAT items (1 music be"
       },
       "taskKeys": [
         "OWB:020",
