@@ -1,5 +1,5 @@
 {
-  "next_id": 3165,
+  "next_id": 3166,
   "jobs": [
     {
       "id": "J0001",
@@ -283577,6 +283577,35 @@
       "taskKeys": [
         "HOS:009"
       ]
+    },
+    {
+      "id": "J3165",
+      "title": "HOS 009: merge exact offline routing repair under existing Chief ruling",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Carry out existing owner-authored HOS Chief ruling 7022139984, not a new disposition. Re-read chief_relay.py status before protected call. Merge HOS PR675 only at exact head d1f9e54549cef037c6551ec26b2990622a8742c3 after verifying owner, base main, required checks green and current ruling. If head moved, stop and return to desk. Claude independent exact-commit review is 7022125897; Gemini review of faa8f757 is superseded. Preserve PR678 and PR679 review-only unmerged. Record accepted fail-closed sound-generation behaviour. This separate merge lane is authorized by ruling 7022139984; J3164 itself performs no merge. GBP 0: no activation, deployment, account call, pricing rescan, generation, allowance, YouTube or Buffer action; activation literal False. Preserve live locks/stores, reservation safeguards, pinned hashes, film/media/timing/gates. J3047 closed unused, v01/v02 rejected, J2035/J2171 held. Report exact merged commit and hand off the separately queued hardening job. J3162 already done: no duplicate close or repair.",
+      "ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-7022139984",
+      "film": "009",
+      "stage": "edit",
+      "after": "J3164",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-19T21:04Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T21:04Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify the approved version and merge through the separate merge lane",
+      "kind": "chief",
+      "plain": "Land the approved offline music safety repair for the gravity film"
     }
   ],
   "focus": [
