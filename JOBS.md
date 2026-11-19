@@ -53,7 +53,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3065 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Pluto Short about ice mountains (v02) Private, slot Wed 23 Dec 11:30 |  |
 | J3066 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Pluto Short about the frozen heart (v02, Test A opening) Private, slot Mon 21 Dec 11:30 |  |
 | J3075 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2996 |  |
-| J3085 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3070 |  |
+| J3085 | mini | open | – | – | for codex · review · `gpt-6-astra` · Verify condition for J3070 |  |
 | J3089 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2845 |  |
 | J3090 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2847 |  |
 | J3099 | mini | claimed | macbook | 2026-11-19T17:49Z | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
