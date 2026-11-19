@@ -226014,9 +226014,14 @@
           "at": "2026-11-19T21:45Z",
           "by": "relay",
           "what": "condition verification queued: J3170"
+        },
+        {
+          "at": "2026-11-19T23:49Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-20T03:55:00Z"
         }
       ],
-      "remaining_action": "Parked for Chief: review/KEEP ruling on Batches 12-14 (rows 56-66) and close J2529 (14/14 batches, 66/66 rows complete)",
+      "remaining_action": "Await J3178 continuous playback evidence for ten unresolved scenes, then Chief marks and closure",
       "due": "2026-11-21T18:00:00Z",
       "kind": "video",
       "plain": "Make the 66 pictures for the Darwin and Wallace film, on credits that would otherwise expire on Thursday",
@@ -226036,11 +226041,19 @@
         "note": "Batch 14 (row 66: P6:08b_darwin_mendel_synthesis) verified exit 0, posted 23,500->23,400 (live balance 23,400 re-verifie"
       },
       "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-19T22:45:49+00:00",
-        "recheck_task": "J3170"
-      }
+        "type": "capability",
+        "condition": "J3170 Chief ruling: generation verified (66 distinct rows, 6600 credits; 11/11 latest NAS hashes match), but ten rows 56-62,64-66 lack continuous playback approval. Session tools provide static images/text only; reviewed vidIQ watch tool accepts public YouTube and returns text, not local playback perception. HOS playbook section 5 and desk 7019983519 require continuous playback. Follow-up J3178 is open now with moving_video_input required; await its evidence and elected-Chief marks. Preserve 48 KEEP and eight RETAKE; no minting or assembly authorised.",
+        "check_at": "2026-11-20T03:55:00Z",
+        "requires": [
+          "moving_video_input"
+        ],
+        "last_recheck": "J3170",
+        "checked_at": "2026-11-19T23:49:47+00:00",
+        "checked_by": "codex"
+      },
+      "required_capabilities": [
+        "moving_video_input"
+      ]
     },
     {
       "id": "J2530",
