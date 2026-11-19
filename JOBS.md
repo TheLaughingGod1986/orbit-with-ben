@@ -69,6 +69,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3133 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J3134 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2537 |  |
 | J3135 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3129 |  |
+| J3136 | mini | open (after J3128) | – | – | 024 edit · assembly · OWB 024 Short fri06_muons_ground: no-spend music_gate repair against archived OWB 013 bed (£0) |  |
 
 Recently finished:
 

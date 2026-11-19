@@ -1,5 +1,5 @@
 {
-  "next_id": 3136,
+  "next_id": 3137,
   "jobs": [
     {
       "id": "J0001",
@@ -280798,6 +280798,35 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J3136",
+      "title": "OWB 024 Short fri06_muons_ground: no-spend music_gate repair against archived OWB 013 bed (£0)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J3128 reconciled music_gate across the full 31-bed OWB comparison library (including archived /Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/05_Music/moon-leaving-part02_score_bed_v01.mp3, sha256 5093a4c23253). Entry #56 (OWB:024 fri06_muons_ground_v05, bed light-speed_score_bed_v01_full.mp3, sha256 7859c2294b05) fails reused at 0.830 (>=0.80) against moon-leaving-part02_score_bed_v01.mp3. Build a £0 no-spend replacement Short bed in 02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/05_Music (own synthesis or non-colliding slice with plan JSON) that scores <0.80 against all 31 OWB comparison beds, re-mux candidate fri06_muons_ground_v06 preserving locked VO and picture, pass picture_qa, polish_gate, music_gate (with --others including archived 05_Music), and gate_shorts_open.py, and route to Chief for review/swap decision before touching scheduled Private rvug71d7Dqk (Sat 21 Nov 11:30Z). Zero spend.",
+      "ref": "",
+      "film": "024",
+      "stage": "edit",
+      "after": "J3128",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-19T14:22Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-19T14:22Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build £0 non-colliding 05_Music bed for fri06_muons_ground (<0.80 vs archived OWB 013 bed), re-mux v06, pass all gates, and park for Chief",
+      "kind": "assembly",
+      "plain": "Replace or re-slice the Muons Short music bed without spend so it passes the full archived music check"
     }
   ],
   "focus": [
