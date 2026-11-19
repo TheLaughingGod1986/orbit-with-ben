@@ -64,7 +64,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3138 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3128 |  |
 | J3155 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J1275 |  |
 | J3161 | mini | blocked | codex | – | studio · Supermoon Short: next-morning and full-day performance follow-up |  |
-| J3162 | any | open (after J3159) | – | – | 009 edit · for codex · assembly · `gpt-6.1-sol` · HOS 009: close the music routing type bypass offline | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-7018655830 |
+| J3162 | any | claimed | codex | 2026-11-19T22:44Z | 009 edit · for codex · assembly · `gpt-6.1-sol` · HOS 009: close the music routing type bypass offline | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-7018655830 |
 
 Recently finished:
 
