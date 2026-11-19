@@ -254856,14 +254856,27 @@
           "at": "2026-11-19T11:24Z",
           "by": "codex",
           "what": "J3096 FIX: linked J3129; old candidate authorization removed; remains blocked"
+        },
+        {
+          "at": "2026-11-19T17:10Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-19T23:10:00Z"
         }
       ],
-      "remaining_action": "Wait for corrected Webb thumbnail and fresh exact-file approval",
+      "remaining_action": "Wait for the corrected Webb thumbnail, independent reviews and exact-file approval before testing it",
       "kind": "studio",
       "plain": "Wait for the corrected Webb thumbnail to pass review before testing it",
       "taskKeys": [
         "OWB:004"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "J3090 Chief ruling: NOT MET. J3096 rejected v07; J3129 must complete corrected v08, independent panel and synthesis, then elected-Chief exact-file PASS and brief update with approved path/hash and explicit T039 successor authorization conditional on a fresh matching finished T007 report and no running test. J3130 source recovery is done; existing J3135 verifies that recovery before J3129 resumes. No duplicate handoff.",
+        "check_at": "2026-11-19T23:10:00Z",
+        "last_recheck": "J3090",
+        "checked_at": "2026-11-19T17:10:10+00:00",
+        "checked_by": "codex"
+      }
     },
     {
       "id": "J2848",
