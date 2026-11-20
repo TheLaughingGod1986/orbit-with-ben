@@ -1,5 +1,5 @@
 {
-  "next_id": 3187,
+  "next_id": 3188,
   "jobs": [
     {
       "id": "J0001",
@@ -285813,6 +285813,40 @@
       "taskKeys": [
         "HOS:123"
       ]
+    },
+    {
+      "id": "J3187",
+      "title": "HOS 005: perceptual QA and exact-cut watch handoff for repaired cuff and pulse Shorts",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting-Chief Codex ruling: jobs/reviews/J3177/CHIEF_RULING.md. GBP0. Review only exact HOS005 J3137 s06_v05 and s07_v05 candidates in /Volumes/data/studio-live/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/J3137. Requires demonstrated audio_input and moving_video_input; no model-name, ffmpeg, ASR or player-window substitution. Verify hashes against J3137_REMUX.json. Actually listen to both whole changed mixes and review motion; inspect s06 0:22 and s07 0:10 low-detail warnings, speech intelligibility, music fit, transitions/loop, relevant SFX levels and finishing gates. Assess s06 measured 41.4 BPM versus brief 72–96 BPM without claiming tool FAIL (tool PASS). Record actual observations and tool identity. No capability: typed capability hold, never pretend listening. Review and publish HOS local branch cursor/j3137-music-beds commit b64ed784 through the normal exact-commit PR process; preserve worker findings and media. With all gates and Chief review satisfied, prepare unique playable exact-cut Ben-watch entries (v04 approval cannot transfer to changed v05). No spend, generation, upload, swap or scheduling. s08 remains excluded for overlap and open-gate FAIL; no rebuild or revival. Update held J3137 with evidence and route final disposition to elected Chief; do not depend on J3137 being done (it waits for this job).",
+      "ref": "",
+      "film": "005",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-20T02:44Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T02:44Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Listen to the changed mixes and inspect the two repaired Shorts",
+      "due": "2026-11-20T09:30:00Z",
+      "kind": "qa",
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ],
+      "plain": "Check the new music in the blood pressure and pulse Shorts before their final watch"
     }
   ],
   "focus": [
