@@ -288575,10 +288575,10 @@
       "stage": "vo",
       "after": "J3208",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-20T19:34Z",
+      "eta": "2026-11-20T20:34Z",
       "created_by": "claude",
       "created_at": "2026-11-20T10:21Z",
       "result": "",
@@ -288587,13 +288587,26 @@
           "at": "2026-11-20T10:21Z",
           "by": "claude",
           "what": "added for gemini"
+        },
+        {
+          "at": "2026-11-20T19:34Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Narrate WW2 film 006 from its locked script, checks, budget guard; narration only; after the previous film's narration",
       "due": "2026-11-29T18:00:00Z",
       "for": "gemini",
       "kind": "vo",
-      "plain": "Record the narration for WW2 film 006, about the wooden bomber"
+      "plain": "Record the narration for WW2 film 006, about the wooden bomber",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T19:34Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3211",
