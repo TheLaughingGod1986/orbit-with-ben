@@ -291605,18 +291605,23 @@
           "at": "2026-11-20T20:25Z",
           "by": "cursor",
           "what": "step 0 of 3 done: Claimed. MiniWork was reported at 179 MiB free. Inspecting before any move."
+        },
+        {
+          "at": "2026-11-20T20:27Z",
+          "by": "cursor",
+          "what": "step 1 of 3 done: Inspected. J2221 copy finished 20:06Z and dest hash is still running. No SHA256SUMS yet. MiniWork still 168 MiB free. Did not start a second copy."
         }
       ],
-      "remaining_action": "Inspect MiniWork scratch and desk for old completed folders that are safe to archive",
+      "remaining_action": "Leave the detached MiniWork offload running until its done file appears, then read the log",
       "due": "2026-11-21T07:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-20T20:25Z",
+        "at": "2026-11-20T20:27Z",
         "by": "cursor",
-        "note": "Claimed. MiniWork was reported at 179 MiB free. Inspecting before any move."
+        "note": "Inspected. J2221 copy finished 20:06Z and dest hash is still running. No SHA256SUMS yet. MiniWork still 168 MiB free. Di"
       }
     },
     {
