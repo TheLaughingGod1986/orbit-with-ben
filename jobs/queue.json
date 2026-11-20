@@ -119387,9 +119387,14 @@
           "at": "2026-11-19T18:01Z",
           "by": "relay",
           "what": "condition verification queued: J3155"
+        },
+        {
+          "at": "2026-11-20T01:37Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-20T18:00:00Z"
         }
       ],
-      "remaining_action": "Re-time HOS 009 and 010 provisional Chapters to actual chapter-card/VO times once each film's locked cut exists (PR #389 merged at 7c136209)",
+      "remaining_action": "Retiming chapter timestamps for the Gravity and Dinosaurs films once their final long cuts are locked",
       "kind": "listing",
       "rerouted_from": {
         "needs": "mini",
@@ -119413,9 +119418,11 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "HOS PR #389 squash-merged at 7c136209 (check_all.sh and lint:package PASS on main). Wait until HOS 009 (edit due 2026-11-19) and HOS 010 (edit due 2026-11-26) picture/edit are locked and the final cuts exist; then re-time each film's provisional Chapters to the actual chapter-card/VO times in the locked cut (0:00 first, >=3 stamps, >=10 s apart), keep Sources intact, run lint:package, and open a small PR for Chief before upload.",
-        "check_at": "2026-11-19T19:01:32+00:00",
-        "recheck_task": "J3155"
+        "condition": "Chief review J3155: condition NOT MET. HOS main 44b12347 contains merged PR389 (7c136209); existing package lint evidence retained. Both 009 and 010 edit stages remain todo with no recorded locked long cut. J2035 remains blocked pending a compliant accepted score; J3159 disposition is done and delegates offline repair to J3162, not score approval. Correction to worker evidence: J2632 is done with KEEP and PR543 merged, not an outstanding ruling. HOS010 picture remains blocked. Resume chapter retiming for each film only against its locked final long cut, preserving Sources and requiring lint:package plus review before upload. Recheck after the existing J2035 noon check; do not alter score, credit or Ben holds.",
+        "check_at": "2026-11-20T18:00:00Z",
+        "last_recheck": "J3155",
+        "checked_at": "2026-11-20T01:37:29+00:00",
+        "checked_by": "codex"
       }
     },
     {
