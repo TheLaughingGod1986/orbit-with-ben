@@ -287992,20 +287992,25 @@
           "at": "2026-11-20T13:15Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J3204; inspecting script, pilot 1/2 VO reports, and live ElevenLabs credits"
+        },
+        {
+          "at": "2026-11-20T13:17Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Step 1 done: locked script verified (PR #5 macbook/J2997, 6 chapters, 3,544 words, 20,475 chars <= 21,000 cap); live ElevenLabs balance 51,337 remaining (69,777/121,114 used), well above 11,000 post-take reserve; identified ch01=5,271 chars exceeds eleven_v3 5,000-char request cap"
         }
       ],
-      "remaining_action": "Inspect locked 003 script master, live ElevenLabs balance, and pilot 1/2 VO convention before running vo_take.py",
+      "remaining_action": "Run ElevenLabs eleven_v3 chapter narration (handling ch01 5,271-char split under 5,000-char API limit) and Scribe v2 check under desk-lock elevenlabs",
       "due": "2026-11-22T18:00:00Z",
       "for": "gemini",
       "kind": "vo",
       "plain": "Record the narration for the third WW2 film, about the B-29 bomber",
       "urgent": 6,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-20T13:15Z",
+        "at": "2026-11-20T13:17Z",
         "by": "gemini",
-        "note": "Claimed J3204; inspecting script, pilot 1/2 VO reports, and live ElevenLabs credits"
+        "note": "Step 1 done: locked script verified (PR #5 macbook/J2997, 6 chapters, 3,544 words, 20,475 chars <= 21,000 cap); live Ele"
       },
       "taskKeys": [
         "WW2:003"
