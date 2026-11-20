@@ -292654,10 +292654,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-20T23:57Z",
+      "eta": "2026-11-21T01:57Z",
       "created_by": "relay",
       "created_at": "2026-11-20T23:41Z",
       "result": "",
@@ -292696,6 +292696,11 @@
           "at": "2026-11-20T23:57Z",
           "by": "gemini",
           "what": "reopened: Acting Chief (Gemini) closing completed J3260 verification after merging PR #1093, ruling Option A (J3261 + J3262), and recording J2036 dependency wait --recheck J3260."
+        },
+        {
+          "at": "2026-11-20T23:57Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "PR #1093 open with J3260 REVIEW.md; parking J3260 for elected HOS Chief to record J2036 wait --recheck and rule on E2/Teach findings",
@@ -292711,7 +292716,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T23:57Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3261",
