@@ -288053,7 +288053,7 @@
     {
       "id": "J3213",
       "title": "HOS 124 Why Is the Ocean Salty?: rule-E topic go/no-go review",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Rule-E topic go/no-go review for HOS:124 (`02_Video-Projects/124_Halley-Joly-Why-Is-The-Ocean-Salty`), queued by J3203.\n\nWhere: history-of-science pull request 689 (branch `claudecode/J3203`, commit `300c972e`); the waiting-line entry is orbit-with-ben pull request 1059. The folder is not mirrored to studio-live.\n\nWorking title: Why Is the Ocean Salty? (The Clock That Got Earth's Age Wrong)\nRead `TOPIC.md` in the folder (data ranking from the 20 Nov 2026 snapshot, story, neighbour pass, two Short angles) and the two evidence files in `11_Upload-Package/`.\n\nCheck the AGENTS.md rule-E rubric and write the verdict in one go to `jobs/reviews/<this job id>/REVIEW.md`: (1) no near-duplicate of a live, scheduled, in-production or backlog HOS film or idea; (2) audience evidence (search demand, neighbour views); (3) the facts in the brief can be sourced. Every historical fact in the brief is marked UNVERIFIED and was written from general knowledge: do not treat it as checked.\n\nPoints the writer flags: the tool's neighbour gate passes with 6 videos at 1M+, but most are about the ocean in general; the three on-topic videos above 1M come from the public search pull and two are children's channels. Also check overlap with 101 (deep-sea vents) and the age-of-the-Earth idea.\n\nGo leaves it in next_hos under rule G. No-go drops it back to ideas. Spend nothing; no Studio or publish change.\n",
       "ref": "300c972e",
@@ -288073,11 +288073,25 @@
           "at": "2026-11-20T10:23Z",
           "by": "claudecode",
           "what": "added"
+        },
+        {
+          "at": "2026-11-20T10:24Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-20T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Review the ocean salt topic brief and give a go or no-go",
       "kind": "review",
-      "plain": "Deciding whether a History of Science film on why the ocean is salty is worth making"
+      "plain": "Deciding whether a History of Science film on why the ocean is salty is worth making",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J3214",
