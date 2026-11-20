@@ -290241,10 +290241,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-20T15:17Z",
+      "eta": "2026-11-20T19:17Z",
       "created_by": "claude",
       "created_at": "2026-11-20T15:17Z",
       "result": "",
@@ -290253,13 +290253,26 @@
           "at": "2026-11-20T15:17Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-20T15:17Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parallel Mini slots (CHIEF_PARALLEL=2) with per-slot state, desk-lock and memory guards; open reroutes; MacBook-eligible needs=mini jobs; tests; PR + runbook",
       "due": "2026-11-22T18:00:00Z",
       "kind": "assembly",
       "plain": "Let the Mac mini run two or three AI agents at once instead of one, and let the MacBooks pick up more of the waiting work",
-      "urgent": 7
+      "urgent": 7,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T15:17Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
