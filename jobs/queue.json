@@ -289965,6 +289965,11 @@
           "at": "2026-11-20T14:16Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-20T14:23Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-20T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Audition hos_009_wonder_v03_synth.wav, hos_009_score_joined_v03.wav, 168-186s join, 5-part VO mix, and tail via demonstrated audio_input and commit EAR_REVIEW_v03_synth.md",
@@ -289973,7 +289978,16 @@
       "required_capabilities": [
         "audio_input"
       ],
-      "plain": "Listen to the HOS 009 GBP0 own-score opening, join, narration mix, and tail with demonstrated audio input and record an independent pass/fail review"
+      "plain": "Listen to the HOS 009 GBP0 own-score opening, join, narration mix, and tail with demonstrated audio input and record an independent pass/fail review",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J3236",
