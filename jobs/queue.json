@@ -226026,6 +226026,11 @@
           "at": "2026-11-19T23:49Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-20T03:55:00Z"
+        },
+        {
+          "at": "2026-11-20T01:42Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 3 h"
         }
       ],
       "remaining_action": "Await J3178 continuous playback evidence for ten unresolved scenes, then Chief marks and closure",
@@ -226039,7 +226044,7 @@
       ],
       "action": "Run the 14 batches one at a time under the Chief's guards: --floor 3000 stated, live balance before each Create, release between batches",
       "urgent": 4,
-      "escalated_at": "2026-11-12T20:07Z",
+      "escalated_at": "2026-11-20T01:42Z",
       "progress": {
         "step": 14,
         "of": 14,
@@ -281783,6 +281788,11 @@
           "at": "2026-11-19T23:32Z",
           "by": "relay",
           "what": "condition verification queued: J3177"
+        },
+        {
+          "at": "2026-11-20T01:42Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Parked for the Chief: s06 and s07 candidates pass; s08 still fails the inherited first-cut check",
@@ -281804,7 +281814,8 @@
         "condition": "Required predecessor is complete; verify remaining gates and approvals",
         "check_at": "2026-11-20T00:32:07+00:00",
         "recheck_task": "J3177"
-      }
+      },
+      "escalated_at": "2026-11-20T01:42Z"
     },
     {
       "id": "J3138",
