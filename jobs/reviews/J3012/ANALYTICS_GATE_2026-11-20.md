@@ -25,3 +25,10 @@ the shell entrypoint/plist and bounded cache readability fallback, then test col
 and retries with fake APIs and local Git remotes. Board credential access, writer inventory and refreshed
 private rehearsal remain. Seven daily clean records, previous-day notice and live acceptance still gate the
 move. No money spent and no Ben action needed for this preparation.
+
+Final local split verification at source 134b6f878c, 20 November 03:08 UTC: all eight groups zero, left 0,
+tests run, exit 0. Layout: 2,355 studio files, 12,857 Orbit files, 60 History of Science files, one Field Order
+History file and one generated file. This is the baseline split identity, not refreshed future-identity remote
+rehearsal or live acceptance. Official daily history was not modified. The changed-file address/credential
+scan found zero; 42 split, channel-ratchet and private-network tests passed. Local result and log remain at
+Mini scratch J3012-0300-split.json and J3012-0300-split.log.
