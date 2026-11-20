@@ -75,6 +75,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3223 | mini | claimed | macbook | 2026-11-20T13:03Z | for gemini · review · `gemini-argon` · History of Science: full audit (views trend and drop, every video by topic and source, audience countries and ages, search terms) |  |
 | J3224 | mini | open (after J3223) | – | – | for gemini · script · `gemini-argon` · History of Science: search-led research and a new plan for the board (Anglosphere, adult, low competition), waiting for Ben's OK |  |
 | J3225 | any | blocked | claudecode | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
+| J3226 | mini | open | – | – | review · Verify condition for J3063 |  |
 
 Recently finished:
 

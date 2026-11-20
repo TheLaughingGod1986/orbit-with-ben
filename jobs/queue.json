@@ -1,5 +1,5 @@
 {
-  "next_id": 3226,
+  "next_id": 3227,
   "jobs": [
     {
       "id": "J0001",
@@ -276278,6 +276278,11 @@
           "at": "2026-11-19T11:58Z",
           "by": "codex",
           "what": "J3131 Chief ruling: KEEP held until 20 Nov 11:35Z; pin next verification to Mini to avoid MacBook Claude browser refusal; decision jobs/reviews/J3131/CHIEF_DECISION.md"
+        },
+        {
+          "at": "2026-11-20T11:36Z",
+          "by": "relay",
+          "what": "condition verification queued: J3226"
         }
       ],
       "remaining_action": "Read the plant Short viewing figures after two days using a worker that can access Studio",
@@ -276305,10 +276310,11 @@
       "hold": {
         "type": "input",
         "condition": "J3131 Chief ruling: NOT VERIFIED, KEEP live video unchanged. PR 1043 merged. MacBook Claude could not access Studio. At 20 Nov 11:35Z use Mini HOS CDP 9222 with reuse_page for current Since published views, rank, usual, feed views/shown, stayed, average viewed and likes where shown; record actual time and elapsed age. If Mini browser fails, record failure and use MacBook Gemini/Cursor/Codex, never MacBook Claude. No video changes. Do not infer zero feed impressions from zero views.",
-        "check_at": "2026-11-20T11:35:00Z",
+        "check_at": "2026-11-20T12:36:29+00:00",
         "last_recheck": "J3131",
         "checked_at": "2026-11-19T11:58:53+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J3226"
       },
       "mini_only": true
     },
@@ -288998,6 +289004,38 @@
         "OWB:030",
         "OWB:026"
       ]
+    },
+    {
+      "id": "J3226",
+      "title": "Verify condition for J3063",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3063: J3131 Chief ruling: NOT VERIFIED, KEEP live video unchanged. PR 1043 merged. MacBook Claude could not access Studio. At 20 Nov 11:35Z use Mini HOS CDP 9222 with reuse_page for current Since published views, rank, usual, feed views/shown, stayed, average viewed and likes where shown; record actual time and elapsed age. If Mini browser fails, record failure and use MacBook Gemini/Cursor/Codex, never MacBook Claude. No video changes. Do not infer zero feed impressions from zero views.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3063 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-20T11:36Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T11:36Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Read the plant Short viewing figures after two days using a worker that can access Studio",
+      "kind": "review",
+      "recheck_of": "J3063",
+      "mini_only": true,
+      "due": "2026-11-18T19:39:00+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
