@@ -12,6 +12,7 @@ import plistlib
 SERVICES = {
     'com.owb.chief-relay': ('chief_relay.py', 'run'),
     'com.owb.board-publish': ('board_publish.py', '--quiet'),
+    'com.owb.ai-spend-daily': ('ai_spend_daily.py', '--git'),
 }
 
 SHELL_SERVICES = {
@@ -30,7 +31,7 @@ def absolute(value):
 def render(source, engine, python, channel_paths):
     doc = copy.deepcopy(source)
     if doc.get('Label') not in SERVICES and doc.get('Label') not in SHELL_SERVICES:
-        raise ValueError('only the relay, board publisher and supported daily timers are supported')
+        raise ValueError('only the relay, board publisher and supported daily services are supported')
     engine, python = absolute(engine), absolute(python)
     if doc['Label'] in SHELL_SERVICES:
         target = pathlib.Path(engine) / SHELL_SERVICES[doc['Label']]

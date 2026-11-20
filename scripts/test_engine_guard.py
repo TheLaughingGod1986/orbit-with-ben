@@ -43,8 +43,8 @@ class EngineGuard(unittest.TestCase):
         self.assertIsNotNone(engine_guard.refusal(self.root, self.marker))
 
     def test_cli_entrypoints_refuse_before_parsing_or_service_work(self):
-        import jobs, studio, chief_relay, board_publish, macbook_worker
-        for module in (jobs, studio, chief_relay, board_publish, macbook_worker):
+        import jobs, studio, chief_relay, board_publish, macbook_worker, ai_spend, ai_spend_daily
+        for module in (jobs, studio, chief_relay, board_publish, macbook_worker, ai_spend, ai_spend_daily):
             with self.subTest(module=module.__name__), \
                     patch.object(engine_guard, 'refusal', return_value='retired'):
                 with self.assertRaisesRegex(SystemExit, 'retired'):
@@ -59,6 +59,17 @@ class EngineGuard(unittest.TestCase):
                 studio.git_transaction(callback, 'must not commit')
             git.assert_not_called()
             callback.assert_not_called()
+
+    def test_direct_ledger_writer_refuses_before_creating_files_or_running_git(self):
+        import ai_spend
+        target = self.root / 'absent' / 'ledger.jsonl'
+        with patch.object(engine_guard, 'refusal', return_value='retired'), \
+                patch.object(ai_spend, 'LEDGER', target), \
+                patch.object(ai_spend.subprocess, 'run') as run:
+            with self.assertRaisesRegex(SystemExit, 'retired'):
+                ai_spend.append({'kind': 'record'}, True)
+            self.assertFalse(target.parent.exists())
+            run.assert_not_called()
 
 
 if __name__ == '__main__':

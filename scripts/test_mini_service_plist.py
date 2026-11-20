@@ -36,7 +36,7 @@ class MiniServicePlist(unittest.TestCase):
     def render(self, source=None):
         return plistlib.loads(renderer.render(source or self.source, self.engine, sys.executable, self.channels))
 
-    def test_both_launchers_execute_exact_staged_engine_without_shell_expansion(self):
+    def test_python_launchers_execute_exact_staged_engine_without_shell_expansion(self):
         for label, (_, arg) in renderer.SERVICES.items():
             with self.subTest(label=label):
                 source = dict(self.source, Label=label)
@@ -48,6 +48,15 @@ class MiniServicePlist(unittest.TestCase):
                 self.assertFalse((self.engine / 'INJECTED').exists())
                 self.assertNotIn('Program', doc)
                 self.assertEqual(source['Program'], '/old/runner')
+
+    def test_spend_reader_preserves_its_schedule_and_local_environment(self):
+        source = dict(self.source, Label='com.owb.ai-spend-daily',
+                      StartCalendarInterval={'Hour': 8, 'Minute': 15})
+        doc = self.render(source)
+        self.assertEqual(doc['ProgramArguments'], [sys.executable,
+            str(self.engine / 'scripts/ai_spend_daily.py'), '--git'])
+        self.assertEqual(doc['StartCalendarInterval'], source['StartCalendarInterval'])
+        self.assertEqual(doc['EnvironmentVariables']['DESK_STATE'], '/shared/state')
 
     def test_buffer_timer_proposal_preserves_schedule_and_uses_exact_shell_path(self):
         target = self.engine / '07_Content-Ops/launchd/buffer-check.sh'
