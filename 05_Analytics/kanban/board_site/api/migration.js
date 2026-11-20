@@ -18,8 +18,10 @@ export default async function handler(req, res, env = process.env) {
   let stage = "repository";
   try {
     const read = async path => {
+      // Cloudflare Workers fetch() supports "follow"|"manual" only ("error" throws TypeError);
+      // "manual" never follows redirects and !r.ok below refuses any 3xx status.
       const r = await fetch(`https://api.github.com/repos/${REPO}${path}`, {
-        method: "GET", redirect: "error", signal: AbortSignal.timeout(8000),
+        method: "GET", redirect: "manual", signal: AbortSignal.timeout(8000),
         headers: { accept: "application/vnd.github+json", "user-agent": "studio-migration-probe",
           authorization: `Bearer ${env.BOARD_GH_TOKEN}` },
       });
