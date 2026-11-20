@@ -66,6 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3258 | mini | open (after J3254) | – | – | studio · History of Science: take the two shared upload files from #1089 and add the uploadFor hook, so HOS uploads keep working |  |
 | J3260 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Verify condition for J2036 |  |
 | J3261 | mini | open | – | – | 009 edit · assembly · HOS 009: Assemble v02 long master (E2 first 30 s, Teach cards/timeline, separate back-to-back graphics) | J2036 |
+| J3262 | mini | open | – | – | 009 thumbs · thumb · HOS 009: Build long thumbnails A+B (house look, style_sheet + thumb_preview, £0 paid spend) | J2036 |
 
 Recently finished:
 

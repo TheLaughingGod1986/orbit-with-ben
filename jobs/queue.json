@@ -1,5 +1,5 @@
 {
-  "next_id": 3262,
+  "next_id": 3263,
   "jobs": [
     {
       "id": "J0001",
@@ -292735,6 +292735,35 @@
       "remaining_action": "Build HOS 009 v02 master with E2 opening, Teach overlays/timeline, separated graphics, and passing gates",
       "kind": "assembly",
       "plain": "Re-edit the Gravity long master v02 at zero cost to add the faster opening, early graphic, teaching cards and timeline"
+    },
+    {
+      "id": "J3262",
+      "title": "HOS 009: Build long thumbnails A+B (house look, style_sheet + thumb_preview, £0 paid spend)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting Chief (Gemini) ruling on J3260 / J2036 (20 Nov 2026): HOS 009 (Why Doesn't the Moon Fall to Earth?) has an empty 08_Thumbnail/ folder in both git and NAS and PACKAGE_MANIFEST.json has thumbnail: null.\n\nBuild HOS 009 long thumbnail variants A and B at £0 paid spend (0 cash; prefer existing approved KEEP 3D plates/frames from 009 or 0-credit Flow Nano Banana 2 key art — never Vertex paid spend or paid APIs) following HOS studio/RULES.md Packaging and THUMBNAIL_AND_TITLE_RULES.md §2.B / §2.5:\n- House look wins: painted 3D cartoon key art, warm period palette (no Orbit saturation push), Explorer small at lower left (on model, per 01_Character/CHARACTER_BIBLE.md).\n- Cover lettering: 2-3 words in serif cream + one gold hook word, in a clear band (top or left edge), never over the hero object (Moon/apple/falling curve). Name the subject or dare; NEVER repeat the title (\"Why Doesn't the Moon Fall to Earth?\" / \"The Moon Is Falling Right Now\").\n- Save final A/B candidates and source art to 02_Video-Projects/009_The-Falling-Moon-Gravity/08_Thumbnail/ (and NAS working store; follow repo media rules: check what goes in git vs _desk/).\n- Run both required checks and attach outputs:\n  1. python3 00_Brand/Channel-Setup/tools/style_sheet.py long <thumb.jpg> --out <sheet.jpg>\n  2. python3 00_Brand/Channel-Setup/tools/thumb_preview.py long <thumb.jpg> --out <preview.jpg>\n- Post images to HOS desk (hos_desk.py post) and park for elected Chief HOOK / BAND / PHONE review before J2036 final package and Ben's final watch.\n- Update 02_Video-Projects/009_The-Falling-Moon-Gravity/status.json thumbnails stage. £0 paid spend; no YouTube, Studio, Buffer, or schedule changes.\n",
+      "ref": "J2036",
+      "film": "009",
+      "stage": "thumbs",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-20T23:56Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T23:56Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Create HOS 009 long thumbnails A and B in house style, run style_sheet and thumb_preview, and park for Chief review",
+      "kind": "thumb",
+      "plain": "Build two house-style thumbnail options for the Gravity film and run the preview and style checks"
     }
   ],
   "focus": [
