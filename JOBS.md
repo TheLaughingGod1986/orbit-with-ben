@@ -69,7 +69,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3206 | mini | open (after J3204) | – | – | WW2:004 vo · for gemini · vo · WW2 film 004: narration in Ben's voice (submarine torpedoes) |  |
 | J3208 | mini | open (after J3206) | – | – | WW2:005 vo · for gemini · vo · WW2 film 005: narration in Ben's voice (the old destroyer) |  |
 | J3210 | mini | open (after J3208) | – | – | WW2:006 vo · for gemini · vo · WW2 film 006: narration in Ben's voice (the wooden bomber) |  |
-| J3211 | mini | open (after J3002) | – | – | WW2:006 picture · image · WW2 film 006: gather the archive photos and draw the maps |  |
+| J3211 | mini | claimed | cursor | 2026-11-20T13:09Z | WW2:006 picture · image · WW2 film 006: gather the archive photos and draw the maps |  |
 | J3214 | mini | open | – | – | 125 topic · for gemini · review · `gemini-argon` · HOS 125 What Causes the Tides?: rule-E topic go/no-go review | 300c972e |
 | J3215 | mini | open | – | – | for gemini · chief · `gemini-argon` · HOS desk #180 is full (2,500 comments): open HOS desk 2, repoint the board and tools, repost Ben's two lost taps |  |
 | J3219 | any | blocked | macbook-2 | – | script · Orbit after 16 Dec: prepare the next film in each format test (every-X script, journey and sleep outlines) and the 22/26/30 Dec readout sheet; January style test (July illustrated look, Ben OK 20 Nov) |  |
