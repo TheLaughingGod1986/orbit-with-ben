@@ -291354,13 +291354,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-20T18:53Z",
-      "eta": "2026-11-20T20:53Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-20T18:52Z",
-      "result": "",
+      "result": "PR #1081. Grok's duty window is 180 minutes (CHIEF_DUTY_ACK_MIN_CHIEF; set it on the Mini only if that should differ). A plain [Chief] post that names a delivered duty counts as progress and clears a stall; a post with no job id does not. Duty lists post when the job ids change, at most every 2 hours, and once a day if they stay the same. A ruling on a job still blocked or parked for the Chief queues Apply Grok's ruling <comment id> to <job> (records only, no inferred approval). The board counts Grok's last-day jobs.py records plus those rulings and shows Working (rulings on the thread) after a post in the last 3 hours. Merge is the Chief's. Tests: test_chief_relay, test_machines, test_chief_succession (156) and test_studio_app.cjs.",
       "history": [
         {
           "at": "2026-11-20T18:52Z",
@@ -291376,6 +291376,11 @@
           "at": "2026-11-20T18:57Z",
           "by": "macbook",
           "what": "step 1 of 4 done"
+        },
+        {
+          "at": "2026-11-20T19:02Z",
+          "by": "macbook",
+          "what": "done: PR #1081. Grok's duty window is 180 minutes (CHIEF_DUTY_ACK_MIN_CHIEF; set it on the Mini only if that should differ). A plain [Chief] post that names a delivered duty counts as progress and clears a stall; a post with no job id does not. Duty lists post when the job ids change, at most every 2 hours, and once a day if they stay the same. A ruling on a job still blocked or parked for the Chief queues Apply Grok's ruling <comment id> to <job> (records only, no inferred approval). The board counts Grok's last-day jobs.py records plus those rulings and shows Working (rulings on the thread) after a post in the last 3 hours. Merge is the Chief's. Tests: test_chief_relay, test_machines, test_chief_succession (156) and test_studio_app.cjs."
         }
       ],
       "remaining_action": "Change the relay ack window, ruling progress, and duty posts",

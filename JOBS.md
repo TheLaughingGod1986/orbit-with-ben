@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2035, J2529, J2993, J3248.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2035, J2529, J2993.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -70,11 +70,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3232 | any | blocked | macbook | – | review · `gemini-argon` · Verify condition for J3114 |  |
 | J3245 | any | blocked | macbook | – | script · HOS: learn from our data, add two new films to the backlog |  |
 | J3246 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J1275 |  |
-| J3248 | any | claimed | macbook | 2026-11-20T20:53Z | assembly · Relay: Grok Bot is working but counted as down: longer ack window, rulings count as progress, stop the 15-minute duty posts, record its rulings, show it on the board |  |
 | J3249 | mini | open | – | – | assembly · MiniWork scratch SSD cleanup: safely offload old completed-job scratch to NAS to restore >=40 GB free before J3012 daily split and cutover |  |
 
 Recently finished:
 
+- J3248 done: Relay: Grok Bot is working but counted as down: longer ack window, rulings count as progress, stop the 15-minute duty posts, record its rulings, show it on the board (PR #1081. Grok's duty window is 180 minutes (CHIEF_DUTY_ACK_MIN_CHIEF; set it on the Mini only if that should differ). A plain [Chief] post that names a delivered duty counts as progress and clears a stall; a post with no job id does not. Duty lists post when the job ids change, at most every 2 hours, and once a day if they stay the same. A ruling on a job still blocked or parked for the Chief queues Apply Grok's ruling <comment id> to <job> (records only, no inferred approval). The board counts Grok's last-day jobs.py records plus those rulings and shows Working (rulings on the thread) after a post in the last 3 hours. Merge is the Chief's. Tests: test_chief_relay, test_machines, test_chief_succession (156) and test_studio_app.cjs.)
 - J3247 done: OWB Short 93JL_IK57EM (2024 YR4): set Related video to VBaYRPp85Sw in Studio (J3243 fault fix) (Studio Related video set to VBaYRPp85Sw (What Happened to Venus?) + en-GB languages on OWB Short 93JL_IK57EM; live reload verified (Public, Notices —, Not Made for Kids); UPLOADS.json updated in PR #1080; launch_check note recorded.)
 - J3244 done: Verify condition for J2035 (Chief verification complete (jobs/reviews/J3244/REVIEW.md). Condition satisfied after desk ruling 7046684862. The elected Chief rechecked the master hash 802b5c7e on the scratch copy and the film-folder copy, then reopened J2035 to apply the split-panel reviewed_ok entry and re-run picture_qa and polish_gate on that same master. GBP0. No upload or schedule change.)
 - J3243 done: First-day check at 6 h: "Will Asteroid 2024 YR4 Hit the Moon in 2032?" (93JL_IK57EM) (Ruled, acting Chief (gemini) 20 Nov: PR #1077 merged (9031f5819a). Verdict FAULT solely for missing Related video (None vs VBaYRPp85Sw in J2228 manifest/UPLOADS.json); queued Studio fix J3247 (due 2026-11-20T22:00Z, £0) to set Related -> VBaYRPp85Sw (+ optional en-GB language) and update UPLOADS.json. Strong 6 h start (179 views, rank 4/10 vs 45 median, 156 feed views / 87.2% fed, 43.8% stayed vs 32.5% usual, 88.6% avg viewed vs 66.0% usual on 19.4 s AR1 cut); leave live cut, title, description, cover, visibility and schedule untouched. Launch note recorded (298d201ddf); read tomorrow morning's snapshot for day-1 confirmation.)
@@ -84,4 +84,3 @@ Recently finished:
 - J3239 done: HOS 009: synthesize final bounded GBP0 full-runtime warm own-score v04_synth and run full music_gate (done)
 - J3238 done: Relay: run 2-3 agents at once on the Mac mini, reroute to any capable worker, let MacBooks take non-Mini jobs (PR 1073 is open for the Chief to merge. Two relay slots (CHIEF_PARALLEL default 2), open chain reroutes, and MacBook condition checks. Tests green. Not merged.)
 - J3237 done: Model review: list every CLI's current models, probe the newer ones, propose best-model-per-job routing that saves Claude usage (PR 1074 is open for the Chief. QA, listing and facts start on Gemini Neon. Script, review, chief, Astra thumbnails and the picture models are unchanged. Codex is usage-capped until 24 Nov 23:26 GMT.)
-- J3236 done: HOS 009: Chief score disposition for own-score v03_synth (done)
