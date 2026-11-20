@@ -268545,10 +268545,10 @@
       "stage": "edit",
       "after": "J2992",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-20T02:01Z",
-      "eta": "2026-11-20T06:01Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T17:20Z",
       "result": "",
@@ -269372,11 +269372,16 @@
           "at": "2026-11-20T02:02Z",
           "by": "codex",
           "what": "step 2 of 5 done: Resumed continuation v40 and preserved the existing five-step plan; inspecting remaining picture gaps."
+        },
+        {
+          "at": "2026-11-20T02:03Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-agy: Codex out of usage; next in its chain: gemini"
         }
       ],
       "remaining_action": "Finish picture coverage and editorial polish, then obtain full watch and listen",
       "due": "2026-11-25T18:00:00Z",
-      "for": "codex",
+      "for": "gemini",
       "kind": "assembly",
       "plain": "Make the finished film and send it to Ben's board to watch: How Britain Towed Two Floating Ports Across the Channel for D-Day",
       "taskKeys": [
@@ -269389,7 +269394,15 @@
         "at": "2026-11-20T02:02Z",
         "by": "codex",
         "note": "Resumed continuation v40 and preserved the existing five-step plan; inspecting remaining picture gaps."
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "codex",
+        "model": "",
+        "status": "claimed",
+        "by": "codex"
+      },
+      "model": "gemini-agy"
     },
     {
       "id": "J2994",
