@@ -179568,9 +179568,14 @@
           "at": "2026-11-18T00:46Z",
           "by": "relay",
           "what": "condition verification queued: J3026"
+        },
+        {
+          "at": "2026-11-20T05:54Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-20T12:00:00Z"
         }
       ],
-      "remaining_action": "Complete step 4/4 operator confirmation and fresh-session scoped acceptance evidence for Codex allow-list, then land PR #490 (docs/CODEX_ALLOWLIST.md)",
+      "remaining_action": "Await operator confirmation and fresh-session acceptance evidence for the scoped command permissions; recheck at noon UTC on 20 November.",
       "kind": "assembly",
       "urgent": 2,
       "rerouted_from": {
@@ -179591,12 +179596,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Chief ruling on J2977: NOT MET. Fresh verification at 2026-11-17T07:31Z and Chief review at 2026-11-17T08:32Z (jobs/reviews/J2977/REVIEW.md at 078a54fca0) confirm J2517 (#793) and J2559 (#795) remain complete, all eight local ~/.codex approval-settings and gateway hashes match jobs/reviews/J2959/REVIEW.md and the 4-6 Nov 3/4 checkpoint unchanged (config.toml sha256 efa1987b3c..., default.rules sha256 b6d57758e2..., studio.rules sha256 e3b8c84f19..., 5 gateways in ~/.codex/bin/ unchanged since 6 Nov 15:12), draft PR #490 remains OPEN/draft at f521bcd3f1 with 0 comments, and docs/CODEX_ALLOWLIST.md is not on main. Await authorized operator confirmation of local approval configuration and fresh-session scoped acceptance evidence; keep fallback routing active and make no autonomous approval-control changes. Recheck operator evidence at 2026-11-17T14:32:00Z.",
-        "check_at": "2026-11-18T01:46:18+00:00",
-        "last_recheck": "J2977",
-        "checked_at": "2026-11-17T08:32:35+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3026"
+        "condition": "Chief ruling J3026: NOT MET. Fresh 20 Nov checks confirm all eight local approval/gateway hashes match jobs/reviews/J3026/REVIEW.md; J2517 and J2559 done; PR490 remains OPEN draft at f521bcd3f1 with one housekeeping comment and zero reviews; allow-list documentation absent from main. Thread through 7031680450 contains no superseding ruling or operator confirmation. Await authorized operator confirmation and fresh-session scoped acceptance evidence. Unchanged hashes alone do not prove acceptance. Retain fallback routing and existing approval controls. Retry evidence check at 2026-11-20T12:00:00Z; do not retry cancelled J2007.",
+        "check_at": "2026-11-20T12:00:00Z",
+        "last_recheck": "J3026",
+        "checked_at": "2026-11-20T05:54:32+00:00",
+        "checked_by": "codex"
       },
       "plain": "Let Codex run the studio's routine commands on the Mac mini without asking each time (needs you at the Mini)"
     },
