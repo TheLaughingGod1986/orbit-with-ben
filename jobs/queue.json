@@ -290330,13 +290330,13 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-20T15:17Z",
-      "eta": "2026-11-20T19:17Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-20T15:17Z",
-      "result": "",
+      "result": "PR 1073 is open for the Chief to merge. Two relay slots (CHIEF_PARALLEL default 2), open chain reroutes, and MacBook condition checks. Tests green. Not merged.",
       "history": [
         {
           "at": "2026-11-20T15:17Z",
@@ -290357,6 +290357,11 @@
           "at": "2026-11-20T15:36Z",
           "by": "macbook-2",
           "what": "step 2 of 4 done"
+        },
+        {
+          "at": "2026-11-20T15:36Z",
+          "by": "macbook-2",
+          "what": "done: PR 1073 is open for the Chief to merge. Two relay slots (CHIEF_PARALLEL default 2), open chain reroutes, and MacBook condition checks. Tests green. Not merged."
         }
       ],
       "remaining_action": "Open the pull request for the parallel relay slots",
