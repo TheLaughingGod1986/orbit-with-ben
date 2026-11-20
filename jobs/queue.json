@@ -291892,18 +291892,23 @@
           "at": "2026-11-20T23:43Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T23:45Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Verify still running in tmux j3249-verify. MiniWork 39.1 GiB free of 233 GiB, up from 3.4 GiB at 21:58Z. Now copying J2242-safe-path-measure. Done file not written yet."
         }
       ],
-      "remaining_action": "Wait for the scratch verify to finish, then free more space if MiniWork is still under 40 GiB",
+      "remaining_action": "Leave the scratch verify running. When its done file appears, confirm the scratch drive has at least 40 GiB free and record the checksum summary.",
       "due": "2026-11-21T07:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-20T22:01Z",
+        "at": "2026-11-20T23:45Z",
         "by": "cursor",
-        "note": "Corrected verify is in tmux j3249-verify. Log /Users/benjaminoats/_desk/logs/j3249-verify.log. Done file is not written "
+        "note": "Verify still running in tmux j3249-verify. MiniWork 39.1 GiB free of 233 GiB, up from 3.4 GiB at 21:58Z. Now copying J22"
       }
     },
     {
