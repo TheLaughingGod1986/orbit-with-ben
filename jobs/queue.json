@@ -271395,10 +271395,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-20T07:25Z",
-      "eta": "2026-11-20T11:25Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
       "result": "",
@@ -272097,6 +272097,11 @@
           "at": "2026-11-20T07:31Z",
           "by": "codex",
           "what": "step 3 of 4 done: PR 1011 updated a575594b0d: authenticated runtime access probe prepared; seven probe, 21 data, 13 auth, four build and 13 security tests pass. Four browser checks skipped. Production deployment unchanged."
+        },
+        {
+          "at": "2026-11-20T07:31Z",
+          "by": "codex",
+          "what": "released: Preserve 3/4 plan. PR 1011 now a575594b0db8c5110f829d36447894acbbbeff78. Cloudflare session refreshed; actual project confirms production GitHub binding is an unreadable secret and preview has none. Prepared disabled-by-default authenticated runtime probe, seven tests pass; existing board/security tests pass with four browser skips. Runbook gives additive production deployment, access test and disable procedure; no deployment or permission change performed. Next deploy only reviewed probe on current board build, record actual private Contents result, disable; then safe HOS guard propagation, wrappers/MacBook inventory and refreshed rehearsal. Six official clean days; prior-day notice and live acceptance still required. No spend or live migration. Clean worktree /private/tmp/j3012-0620; evidence BOARD_ACCESS_2026-11-20.md."
         }
       ],
       "remaining_action": "Run the prepared production board access check, safely install guards, and finish migration rehearsal",
