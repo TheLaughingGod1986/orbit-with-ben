@@ -283217,6 +283217,11 @@
           "at": "2026-11-20T01:38Z",
           "by": "codex",
           "what": "reopened: Elected Chief accepted condition review and recorded J1275 dependency retry with --recheck J3155. Reopening this verification only to claim and close the reviewed work; parent stays blocked."
+        },
+        {
+          "at": "2026-11-20T01:38Z",
+          "by": "codex",
+          "what": "rerouted to codex: Exact Chief review assigned to Codex by current dispatch; specialist verification already complete, transfer for ruling closure only."
         }
       ],
       "remaining_action": "Elected Chief: run jobs.py wait J1275 --recheck J3155 (check-at 2026-11-20T18:00:00Z) and jobs.py done J3155 per jobs/reviews/J3155/REVIEW.md §3",
@@ -283231,7 +283236,7 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
+      "for": "codex",
       "model": "gemini-argon",
       "taskKeys": [
         "HOS:009",
