@@ -289899,10 +289899,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-20T22:19Z",
+      "eta": "2026-11-20T23:19Z",
       "created_by": "refill",
       "created_at": "2026-11-20T11:30Z",
       "result": "",
@@ -289946,6 +289946,11 @@
           "at": "2026-11-20T22:19Z",
           "by": "gemini",
           "what": "reopened: Acting Chief (gemini) ruling recorded: PR #1080 merged (b4a2b62fbb) and follow-up J3253 queued; reopening solely to claim and close."
+        },
+        {
+          "at": "2026-11-20T22:19Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Park the two live fixes for the Chief and report",
@@ -289955,7 +289960,15 @@
         "OWB:030",
         "OWB:026"
       ],
-      "escalated_at": "2026-11-20T13:42Z"
+      "escalated_at": "2026-11-20T13:42Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T22:19Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3226",
