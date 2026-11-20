@@ -288269,19 +288269,24 @@
           "at": "2026-11-20T18:39Z",
           "by": "gemini",
           "what": "step 2 of 6 done: vo_take PASS: submarine_torpedoes_vo_v01 1,367.9s, -19.8 LUFS, 98.96% raw Scribe match (29 mismatch runs); running full QA checks"
+        },
+        {
+          "at": "2026-11-20T18:43Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: QA complete: 98.96% raw Scribe / 99.84% true spoken-word match, faster-whisper verified (zero dropped/repeated lines), -19.8 LUFS (-3.4 dB peak), ch05 trailing end-click removed at £0, copying & verifying masters on studio-live NAS"
         }
       ],
-      "remaining_action": "Run full voice QA: audit all 29 Scribe mismatches, faster-whisper vo_check, 20 ms boundary check, and per-chapter loudness",
+      "remaining_action": "Log exact settled ElevenLabs credit spend in ai_spend ledger against WW2:004",
       "due": "2026-11-29T18:00:00Z",
       "for": "gemini",
       "kind": "vo",
       "plain": "Record the narration for WW2 film 004, about submarine torpedoes",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 6,
-        "at": "2026-11-20T18:39Z",
+        "at": "2026-11-20T18:43Z",
         "by": "gemini",
-        "note": "vo_take PASS: submarine_torpedoes_vo_v01 1,367.9s, -19.8 LUFS, 98.96% raw Scribe match (29 mismatch runs); running full "
+        "note": "QA complete: 98.96% raw Scribe / 99.84% true spoken-word match, faster-whisper verified (zero dropped/repeated lines), -"
       },
       "taskKeys": [
         "WW2:004"
