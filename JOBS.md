@@ -74,7 +74,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3214 | mini | open | – | – | 125 topic · for gemini · review · `gemini-argon` · HOS 125 What Causes the Tides?: rule-E topic go/no-go review | 300c972e |
 | J3215 | mini | open | – | – | chief · HOS desk #180 is full (2,500 comments): open HOS desk 2, repoint the board and tools, repost Ben's two lost taps |  |
 | J3217 | any | claimed | macbook | 2026-11-20T11:21Z | studio · Field Order History: give films 001-006 their air dates so the channel shows on the board's Schedule |  |
-| J3218 | mini | open | – | – | studio · Try Gemini 4 Neon (released 18 Nov) for Gemini's hard lane: probe in agy, switch from Argon High if audio/video pass |  |
+| J3218 | mini | claimed | macbook-2 | 2026-11-20T11:36Z | studio · Try Gemini 4 Neon (released 18 Nov) for Gemini's hard lane: probe in agy, switch from Argon High if audio/video pass |  |
 | J3219 | any | open | – | – | script · Orbit after 16 Dec: prepare the next film in each format test (every-X script, journey and sleep outlines) and the 22/26/30 Dec readout sheet |  |
 
 Recently finished:
