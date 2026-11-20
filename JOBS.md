@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2035, J2529, J2993, J3204, J3215, J3216.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2035, J2529, J2993, J3204, J3215, J3216, J3217.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -77,6 +77,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3214 | mini | open | – | – | 125 topic · for gemini · review · `gemini-argon` · HOS 125 What Causes the Tides?: rule-E topic go/no-go review | 300c972e |
 | J3215 | mini | open | – | – | chief · HOS desk #180 is full (2,500 comments): open HOS desk 2, repoint the board and tools, repost Ben's two lost taps |  |
 | J3216 | mini | open | – | – | 005 upload · studio · HOS 005: upload the two Harvey Shorts v05 Ben approved and set the schedule (cuff today 11:30, heart Sun 22 Nov 11:30) |  |
+| J3217 | any | open | – | – | studio · Field Order History: give films 001-006 their air dates so the channel shows on the board's Schedule |  |
 
 Recently finished:
 

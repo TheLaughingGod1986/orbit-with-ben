@@ -1,5 +1,5 @@
 {
-  "next_id": 3217,
+  "next_id": 3218,
   "jobs": [
     {
       "id": "J0001",
@@ -288243,6 +288243,37 @@
       "kind": "studio",
       "plain": "Put out the two History of Science heart Shorts Ben just approved: the blood-pressure cuff one today at 11:30, the heart one on Sunday",
       "urgent": 8
+    },
+    {
+      "id": "J3217",
+      "title": "Field Order History: give films 001-006 their air dates so the channel shows on the board's Schedule",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "**Why (Claude, acting Chief, 20 Nov 10:28Z).** Ben can't see Field Order History on the board's Schedule tab. The tab lists films with a YouTube publishAt or a planned `air` date, and all ten WW2 films on board.json have neither (tracker: WW2:001-010, air empty). Neither do the ww2-launch-2026-11 plan steps in studio/plan.json.\n\n**Air dates (studio's call; the channel's cadence is Tue and Sat 17:00 London; scripted films only):**\n\n| Film | air | Slot |\n|---|---|---|\n| WW2:001 | 2026-12-01 | Tue 1 Dec, 17:00 London |\n| WW2:002 | 2026-12-05 | Sat 5 Dec, 17:00 London |\n| WW2:003 | 2026-12-08 | Tue 8 Dec, 17:00 London |\n| WW2:004 | 2026-12-12 | Sat 12 Dec, 17:00 London |\n| WW2:005 | 2026-12-15 | Tue 15 Dec, 17:00 London |\n| WW2:006 | 2026-12-19 | Sat 19 Dec, 17:00 London |\n\nFilms 007-010 stay undated until their scripts are done. The Chief dates them then, at three a week if the December voice plan allows.\n\n**Do.**\n1. In TheLaughingGod1986/ww2-channel, set `\"air\"` in each of those six films' `status.json` to the date above. Run its checks, then open a PR and merge it once green (records only).\n2. In orbit-with-ben `studio/plan.json`, give the six matching ww2-launch-2026-11 steps the same date as `when` (ISO, 17:00Z). Run `scripts/test_plan_board.py` and `studio.py status --check`, then PR.\n3. The board's schedule assumes 18:00Z for a bare air date. If the tracker supports a per-channel air time, use it so WW2 shows 17:00. If it does not, leave it and say so.\n4. After the Mini publishes, check that the Schedule tab lists FOH's six films.\n\n**Guards.** Plans only: no upload, no YouTube schedule. Each film still needs Ben's watch and OK before it goes up, and the channel's phone verification before any film over 15 minutes can be uploaded. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-20T10:28Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T10:28Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Set air dates 1/5/8/12/15/19 Dec on WW2 films 001-006 in ww2-channel and plan.json; check the Schedule tab shows them",
+      "due": "2026-11-20T15:00:00Z",
+      "kind": "studio",
+      "plain": "Put the WW2 channel's first six films on the board's schedule, two a week from 1 December",
+      "urgent": 9
     }
   ],
   "focus": [
