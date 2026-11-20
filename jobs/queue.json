@@ -1,5 +1,5 @@
 {
-  "next_id": 3239,
+  "next_id": 3240,
   "jobs": [
     {
       "id": "J0001",
@@ -290318,6 +290318,36 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J3239",
+      "title": "HOS 009: synthesize final bounded GBP0 full-runtime warm own-score v04_synth and run full music_gate",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "J3236 elected-Chief FINAL bounded £0 own-synthesis revision scope (HOS 009: Why Doesn't the Moon Fall to Earth?).\n\nContext: `v03_synth` (`J3234`, HOS PR #697) passed all numeric gates (`music_gate.py` PASS: 94 beds, 0 unreadable, 0.3961/0.3868; 0 silencedetect dropouts; 18/18 Mini/NAS parity) but FAILED independent `audio_input` ear review (`J3235`, `EAR_REVIEW_v03_synth.md`, HOS PR #698) on harsh/buzzy electronic reed-organ pads, metallic MIDI/chiptune Karplus-Strong plucks, a sharper/louder Part 2 octave jump, and a jarring timbral cliff at `175.28-178.28 s` against studio-acoustic `hos_009_teach_v01.mp3`. Acting Chief (`gemini`, `J3236`) refused acceptance of `v03_synth` and authorized this **ONE AND FINAL £0 own-synthesis attempt (`v04_synth`)** under `SCORE_SCOPE_J3233.json`'s bounded fallback.\n\nFull spec: `02_Video-Projects/009_The-Falling-Moon-Gravity/05_Music/SCORE_SCOPE_v04_synth.json` and `SCORE_DISPOSITION_v03_synth.md`.\n\nHard guardrails (unconditional):\n- £0.00 cash, 0 ElevenLabs credits, 0 network/API calls, no account GET, no ElevenLabs POST.\n- `ACTIVATION_AUTHORIZED` in `04_Audio/tools/hos009_score_flight.py` stays literal `False`. Do not touch `04_Audio/tools/`.\n- `J3043`/`J3045` stays permanently closed unused (`J3047`); `v01`/`v02` remain rejected (`J2808`); `v03_synth` remains rejected (`J3236`).\n- Pure Python/NumPy deterministic DSP only: NO third-party samples, NO GPL soundfonts (`TimGM6mb.sf2`), NO macOS `gs_instruments.dls`.\n- Preserve ALL existing locks byte-for-byte on Mini and NAS (`hos_009_teach_v01.mp3`, `v01`, `v02`, `v03`, `VO_TAKES_KEEP.json`, `VO_RETIME_v01.json`, `J2631`, `J2632_r4`). Do NOT loop/stretch/modify `teach_v01`.\n- Keep all audio media out of git; mirror all `v04` deliverables to `/Volumes/data/studio-live/History Of Science/02_Video-Projects/009_The-Falling-Moon-Gravity/05_Music/` with exact SHA-256 parity.\n- Do NOT claim an ear-review PASS or score acceptance; keep `J2035` and `J2171` held; no YouTube/Buffer/schedule changes.\n\nBuild requirements (`05_Music/_build_hos009_score_v04_synth.py` -> `hos_009_score_v04_synth.wav`, full `535.33 s`, 48 kHz 16-bit stereo PCM):\n1. **Unified full-runtime `0.00-535.33 s` warm chamber score** (eliminates the `175.28-178.28 s` synth-to-recording cliff completely, modeled on shipped HOS 006 `_build_trees006_audio_v01.py` and HOS 007 `vaccine_score_bed_v01.mp3`).\n2. **Mandatory anti-regression DSP design:**\n   - Warm low-harmonic chamber pads (`sin + <=0.14*sin2 + <=0.035*sin3`, NO 4th-harmonic reed-organ buzz, NO flat broadband hiss, NO harsh mechanical 4.6-5.2 Hz vibrato, gentle low-pass body warmth `<=1200 Hz`, overlapping `>=2.5 s` chord envelopes).\n   - Warm wooden harp / soft gut-string plucked voice (clean exponential-decay soft-harmonic tones with `12-18 ms` smooth attack, low-pass shaped `<=2200 Hz`, subtle deterministic timing `+/-10 ms` & velocity `+/-10%` humanization — NO bright metallic Karplus-Strong chiptune pings, NO `+24` semitone piercing octave jumps).\n   - Original D-minor (`A4=440 Hz`) modal progressions changing every 2-4 bars (NO static bass drone, distinct from HOS 006 G/D major and HOS 007 G major/E minor).\n   - Balanced loudness across all 5 parts (`<=1.0 dB` RMS variation between Parts 1-5; NO `+2.2 dB` Part 2 step-up).\n3. **Polish pass §2 chapter-card mood arc (smooth 3.0 s transitions at every chapter card):**\n   - Part 1 (`0.00-84.44 s`, *The Falling Moon*): calm warm wonder (`awe`, ~62 BPM).\n   - Part 2 (`84.44-176.78 s`, *An Apple in a Plague Year*): warmer Woolsthorpe orchard wonder (`awe`, ~62 BPM, mid-register harmonic warmth, NOT higher/sharper).\n   - Part 3 (`176.78-260.16 s`, *The Cannon on the Mountain*): light rhythmic wooden-harp pulse (`explain`, ~66-68 BPM, 3.0 s transition at `176.78 s`).\n   - Part 4 (`260.16-393.86 s`, *The Moon Test*): measured rhythmic `explain` (~66-68 BPM), gentle natural thinning around `363-393 s` for Halley's visit.\n   - Part 5 (`393.86-535.33 s`, *Falling Around the World*): warm discovery `awe` (3.0 s transition at `393.86 s`), spacious `395-427 s`, gentle warm return `428-518.40 s`, then smooth natural thinning and warm decay past `518.40 s` VO end and `526.00 s` reference endpoint to silence by `~533-535.33 s`.\n4. **Deliverables & mandatory gates (zero waivers):**\n   - `hos_009_score_v04_synth.wav` + `hos_009_score_v04_synth_plan.json` (`Pace: 60-68 BPM`, explicit `NOT ...` list) + 5 part stems `hos_009_stem_part01..05_*_v04.wav`.\n   - Audition files in `05_Music/audio_review_v04_synth/`: `hos_009_transition_078_092_part2_mix_v04.wav`, `hos_009_transition_168_186_bed_v04.wav`, `hos_009_transition_168_186_mix_v04.wav`, `hos_009_transition_386_402_part5_mix_v04.wav`, `hos_009_reference_mix_0_518s40_v04.wav` (at >=10 LU under locked VO), `hos_009_tail_518s40_v04.wav`, `hos_009_reference_endpoint_526s_v04.wav`.\n   - Continuity telemetry (`CONTINUITY_v04_synth.json`): `ffmpeg silencedetect=noise=-45dB:d=0.25` and `d=0.50` across `0.00-526.00 s` (`0` interior dropouts), 1-second RMS floor table, per-part RMS/LUFS parity.\n   - Unchanged production `orbit-with-ben/scripts/music_gate.py` (`music_gate_v04_synth.json`): PASS over complete current library (`>= 89` comparisons across all 9 roots including all 15 hash-verified materialized UAT tracks, `0` unreadable, `< 0.80` max similarity, `0` fails, no waiver).\n   - `PROVENANCE_v04_synth.json` with exact Mini and NAS SHA-256 parity and preserved lock hashes.\n   - Commit script + JSON plans/provenance/telemetry/gate files (no media) on a clean worktree PR to HOS `main`, pass `check_all.sh 02_Video-Projects/009_The-Falling-Moon-Gravity`, and post factual report on HOS desk `#694`.\n",
+      "ref": "J3236",
+      "film": "009",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-20T15:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T15:20Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 009: synthesize final bounded GBP0 full-runtime warm own-score v04_synth and run full music_gate",
+      "due": "2026-11-21T06:00:00Z",
+      "kind": "assembly",
+      "plain": "Synthesize HOS 009 final bounded GBP0 full-runtime warm chamber score v04_synth (0-535.33s) and verify complete-library music_gate and Mini/NAS parity."
     }
   ],
   "focus": [
