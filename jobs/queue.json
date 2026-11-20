@@ -281890,9 +281890,14 @@
           "at": "2026-11-20T01:42Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-20T02:45Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-20T08:30:00Z"
         }
       ],
-      "remaining_action": "Parked for the Chief: s06 and s07 candidates pass; s08 still fails the inherited first-cut check",
+      "remaining_action": "Complete J3187 perceptual review and exact-cut final watch handoff; keep s08 excluded",
       "kind": "assembly",
       "plain": "Build zero-spend synthesized Short music beds for HOS 005 Shorts s06, s07, and s08 so they pass the full archived music check",
       "due": "2026-11-20T09:30:00Z",
@@ -281907,12 +281912,22 @@
         "HOS:005"
       ],
       "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-20T00:32:07+00:00",
-        "recheck_task": "J3177"
+        "type": "capability",
+        "condition": "J3177 ruling PR1055 at 92e6fd0bff accepts technical evidence only. J3187 must provide demonstrated whole-mix listening and moving-video review of exact s06/s07 v05, then applicable exact-cut final watch; this session has no demonstrated audio or moving-video input. s08 remains excluded and failed, no rework. Parent assembly must not restart.",
+        "check_at": "2026-11-20T08:30:00Z",
+        "requires": [
+          "audio_input",
+          "moving_video_input"
+        ],
+        "last_recheck": "J3177",
+        "checked_at": "2026-11-20T02:45:03+00:00",
+        "checked_by": "codex"
       },
-      "escalated_at": "2026-11-20T01:42Z"
+      "escalated_at": "2026-11-20T01:42Z",
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ]
     },
     {
       "id": "J3138",
