@@ -292168,10 +292168,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-20T22:39Z",
+      "eta": "2026-11-20T23:39Z",
       "created_by": "claude",
       "created_at": "2026-11-20T22:30Z",
       "result": "",
@@ -292190,13 +292190,26 @@
           "at": "2026-11-20T22:38Z",
           "by": "claude",
           "what": "Ben, 20 Nov 22:38Z, in chat: \"Verified.\" Field Order History is phone-verified, so the 18 Nov 'not verified' hold is lifted for WW2 uploads. Confirm 'Intermediate features' in Feature eligibility during step 4 (it can take up to a day). EARLY LAUNCH (Claude, agreed with Ben in chat): once Ben has OK'd pilot 1 and pilot 2 on the board AND the dry-run package passes, move WW2:001 to Tue 24 Nov 17:00 London and WW2:002 to Sat 28 Nov 17:00. Shift 003 to Tue 1 Dec, 004 to Sat 5 Dec, 005 to Tue 8 Dec and 006 to Sat 12 Dec, or later if a film is not ready. Update ww2-channel status.json `air` and studio/plan.json `when` to match. If Ben's OK or the sign-in comes later, start from the next Tue or Sat after both. Never two films on one day."
+        },
+        {
+          "at": "2026-11-20T22:39Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "FOH Studio profile + CDP port in channel.json; youtube:package handles ww2; one sign-in message to Ben; dry-run package for 001; report eligibility",
       "due": "2026-11-22T18:00:00Z",
       "kind": "studio",
       "plain": "Connect the WW2 channel so finished films can actually be uploaded, ready for Ben's one-time sign-in",
-      "urgent": 4
+      "urgent": 4,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T22:39Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
