@@ -291667,9 +291667,14 @@
           "at": "2026-11-20T20:29Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J3250; starting fresh condition verification for J2529"
+        },
+        {
+          "at": "2026-11-20T20:29Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Recorded session capabilities (audio_input only; read_file on video/mp4 returns 1-fps frames) and checked J3178 (blocked on moving_video_input) and J3198 (open)"
         }
       ],
-      "remaining_action": "Verify J2529 waiting condition, J3178/J3198 status, desk/thread history, NAS hashes, and session capabilities",
+      "remaining_action": "Verify NAS Batch 12-14 SHA-256 hashes, REVIEW_STATE.json ledger, and OWB #954 / HOS #694 / #180 history",
       "kind": "review",
       "recheck_of": "J2529",
       "mini_only": true,
@@ -291688,11 +291693,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
         "at": "2026-11-20T20:29Z",
         "by": "gemini",
-        "note": "Claimed J3250; starting fresh condition verification for J2529"
+        "note": "Recorded session capabilities (audio_input only; read_file on video/mp4 returns 1-fps frames) and checked J3178 (blocked"
       },
       "taskKeys": [
         "HOS:013"
