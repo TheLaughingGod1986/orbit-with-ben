@@ -289551,13 +289551,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-20T12:54Z",
-      "eta": "2026-11-20T14:54Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-20T12:48Z",
-      "result": "",
+      "result": "parked for Chief: needs Claude cloud lane (vidIQ only works in a Claude lane). Relay rerouted J3231 from needs:cloud to needs:mini (for:gemini) at 12:52Z while Claude was marked out of usage, and macbook-2 claimed it at 12:54Z. Neither macbook-2 nor Gemini has the vidIQ connector (keyword volume/competition/countries, RPM proxy, youtube_search, small-channel outliers) or 07_Content-Ops/.env for YouTube Analytics Step 8. 0/100 Orbit + 0/50 WW2 credits used; no files changed. Reopen and hand back to needs:cloud once Claude cloud is up (first run due by 7 Dec 2026), and guard search-research against non-vidIQ rerouting.",
       "history": [
         {
           "at": "2026-11-20T12:48Z",
@@ -289573,6 +289573,11 @@
           "at": "2026-11-20T12:54Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T12:56Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: needs Claude cloud lane (vidIQ only works in a Claude lane). Relay rerouted J3231 from needs:cloud to needs:mini (for:gemini) at 12:52Z while Claude was marked out of usage, and macbook-2 claimed it at 12:54Z. Neither macbook-2 nor Gemini has the vidIQ connector (keyword volume/competition/countries, RPM proxy, youtube_search, small-channel outliers) or 07_Content-Ops/.env for YouTube Analytics Step 8. 0/100 Orbit + 0/50 WW2 credits used; no files changed. Reopen and hand back to needs:cloud once Claude cloud is up (first run due by 7 Dec 2026), and guard search-research against non-vidIQ rerouting."
         }
       ],
       "remaining_action": "Run weekly vidIQ search research for Orbit and Field Order History",
