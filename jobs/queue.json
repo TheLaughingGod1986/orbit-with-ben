@@ -287382,9 +287382,14 @@
           "at": "2026-11-20T12:17Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J3196; inspecting 2026-11-20 analytics snapshot and J3153/J3161 evidence"
+        },
+        {
+          "at": "2026-11-20T12:19Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified 2026-11-20.json (06:40:10Z, 34 views at 19h 10m), J3153/J2883/launch record, UPLOADS/BUFFER, and thread #954"
         }
       ],
-      "remaining_action": "Verify 2026-11-20 OWB snapshot, J3153/J3161 history, and current launch record for HXacmpYkXcA",
+      "remaining_action": "Compute exact next-morning Short baseline sample and write jobs/reviews/J3196/REVIEW.md",
       "kind": "review",
       "recheck_of": "J3161",
       "due": "2026-11-20T07:40:00+00:00",
@@ -287399,11 +287404,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-20T12:17Z",
+        "at": "2026-11-20T12:19Z",
         "by": "gemini",
-        "note": "Claimed J3196; inspecting 2026-11-20 analytics snapshot and J3153/J3161 evidence"
+        "note": "Verified 2026-11-20.json (06:40:10Z, 34 views at 19h 10m), J3153/J2883/launch record, UPLOADS/BUFFER, and thread #954"
       },
       "taskKeys": [
         "OWB:013"
