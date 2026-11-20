@@ -68,7 +68,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3205 | mini | open (after J3204) | – | – | WW2:003 edit · for codex · assembly · WW2 pilot 003: picture, maps, edit and thumbnail, to Ben's watch |  |
 | J3206 | mini | open (after J3204) | – | – | WW2:004 vo · for gemini · vo · WW2 film 004: narration in Ben's voice (submarine torpedoes) |  |
 | J3208 | mini | open (after J3206) | – | – | WW2:005 vo · for gemini · vo · WW2 film 005: narration in Ben's voice (the old destroyer) |  |
-| J3209 | mini | open (after J3001) | – | – | WW2:005 picture · image · WW2 film 005: gather the archive photos and draw the maps |  |
+| J3209 | mini | claimed | cursor | 2026-11-20T12:55Z | WW2:005 picture · image · WW2 film 005: gather the archive photos and draw the maps |  |
 | J3210 | mini | open (after J3208) | – | – | WW2:006 vo · for gemini · vo · WW2 film 006: narration in Ben's voice (the wooden bomber) |  |
 | J3211 | mini | open (after J3002) | – | – | WW2:006 picture · image · WW2 film 006: gather the archive photos and draw the maps |  |
 | J3214 | mini | open | – | – | 125 topic · for gemini · review · `gemini-argon` · HOS 125 What Causes the Tides?: rule-E topic go/no-go review | 300c972e |
