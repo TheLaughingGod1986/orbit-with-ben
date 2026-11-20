@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2035, J2529, J2993, J3204, J3215, J3222.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2035, J2529, J2993, J3204, J3215, J3222, J3223.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -74,6 +74,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3219 | mini | blocked | macbook | – | script · Orbit after 16 Dec: prepare the next film in each format test (every-X script, journey and sleep outlines) and the 22/26/30 Dec readout sheet; January style test (July illustrated look, Ben OK 20 Nov) |  |
 | J3221 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2537 |  |
 | J3222 | any | claimed | macbook | 2026-11-20T12:23Z | studio · Search-led topics from January (Ben OK 20 Nov): playbook and rules, weekly research for Orbit and WW2, second Orbit plan on the board |  |
+| J3223 | mini | open | – | – | review · History of Science: full audit (views trend and drop, every video by topic and source, audience countries and ages, search terms) |  |
+| J3224 | cloud | open (after J3223) | – | – | script · History of Science: search-led research and a new plan for the board (Anglosphere, adult, low competition), waiting for Ben's OK |  |
 
 Recently finished:
 
