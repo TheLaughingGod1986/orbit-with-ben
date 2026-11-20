@@ -1,5 +1,5 @@
 {
-  "next_id": 3249,
+  "next_id": 3250,
   "jobs": [
     {
       "id": "J0001",
@@ -291374,6 +291374,36 @@
         "at": "2026-11-20T18:57Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J3249",
+      "title": "MiniWork scratch SSD cleanup: safely offload old completed-job scratch to NAS to restore >=40 GB free before J3012 daily split and cutover",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "/Volumes/MiniWork is down to 179 MiB free of 233 GiB (~177 GiB in /Volumes/MiniWork/scratch across ~8,200 entries; 49 GiB in desk, 5.9 GiB in archive), which causes default $TMPDIR=$STUDIO_SCRATCH runs of studio_split.py and builds to fail with ENOSPC. Safely restore at least 40 GiB free on /Volumes/MiniWork before the 07:54Z daily split and J3012 cutover: (1) inspect /Volumes/MiniWork/scratch and /Volumes/MiniWork/desk for old completed-job folders untouched >=24 h and not referenced by any open/claimed job or active process; (2) archive any needed build/evidence artifacts to /Volumes/data/mac-mini-archive/miniwork-scratch/<date>/ via rsync + SHA256SUMS.txt verified on both sides (or run nas_offload.py with SCRATCH_ROOT=/Volumes/MiniWork/scratch respecting the NAS 01:00-06:00 window / /Volumes/nas-staging), and remove only verified-archived or clearly disposable temp git worktrees (clean + pushed) / caches; (3) never delete anything on the NAS, never touch active job scratch, and never remove unverified masters. Record df -h before/after and SHA-256 verification summary. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-20T19:02Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T19:02Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "MiniWork scratch SSD cleanup: safely offload old completed-job scratch to NAS to restore >=40 GB free before J3012 daily split and cutover",
+      "due": "2026-11-21T07:00:00Z",
+      "kind": "assembly",
+      "mini_only": true
     }
   ],
   "focus": [

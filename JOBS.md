@@ -71,6 +71,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3245 | any | blocked | macbook | – | script · HOS: learn from our data, add two new films to the backlog |  |
 | J3246 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J1275 |  |
 | J3248 | any | claimed | macbook | 2026-11-20T20:53Z | assembly · Relay: Grok Bot is working but counted as down: longer ack window, rulings count as progress, stop the 15-minute duty posts, record its rulings, show it on the board |  |
+| J3249 | mini | open | – | – | assembly · MiniWork scratch SSD cleanup: safely offload old completed-job scratch to NAS to restore >=40 GB free before J3012 daily split and cutover |  |
 
 Recently finished:
 
