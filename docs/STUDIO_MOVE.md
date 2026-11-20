@@ -4,7 +4,7 @@ Prepared 18 November 2026. This is the phase 3 execution runbook, not permission
 The latest J3012 brief supersedes the original history-rewrite dependency: create a clean root commit; do not
 copy Orbit's Git history. J2537's history rewrite is not a prerequisite. The source history remains in Orbit.
 
-## Resume here (20 November, monitor launcher prepared)
+## Resume here (20 November, per-owner monitor prepared)
 
 PR 1011 is the existing delivery branch; do not recreate the runbook or reset J3012's **3/4** progress.
 Its queue history and the newest `jobs/reviews/J3012/` evidence describe completed preparation.
@@ -31,7 +31,7 @@ propagating reviewed code. The three canonical NAS working paths were absent, no
 The Cloudflare session was refreshed and the production project inspected read-only. Its GitHub token exists as
 an unreadable secret; preview has no token. A disabled-by-default authenticated runtime probe is now prepared,
 not deployed. Its worker route now passes the current request bindings explicitly, so removal of the enable flag, board key or GitHub token cannot reuse values retained in process.env. See **Board credential probe** below and `jobs/reviews/J3012/BOARD_ACCESS_2026-11-20.md`.
-The missed-run monitor template now parses, and its proposed service and retirement guard are tested; nothing is installed. Its analytics commit-subject and record-owner checks still need migration before enabling it (see the monitor continuation below).
+The missed-run monitor now accepts the detached collector subject and checks dashboard and each registered channel snapshot history independently. Failed fetches cannot reuse stale refs; missing channel checkouts cannot fall back to the engine. These checks are offline-tested, not installed (see the monitor continuation below).
 Next: propagate the merged guard patch after draining affected writers; deploy and run the prepared board credential probe; remaining wrapper replacements; MacBook inventory;
 refreshed private rehearsal. Do not equate installed-service inventory with loaded-service or guard verification.
 Keep the live switch gated on the timing and acceptance below. This run does not change the official daily
@@ -798,12 +798,22 @@ installed bytes before installation. Never silently replace a loaded service's s
 `missed_runs.main` now checks retirement before argument parsing, Git reads/fetches or posting. Offline tests
 prove a retired monitor performs no reads or subprocess work; the standard engine guard remains fail-closed.
 
-**Do not enable this monitor at cutover yet.** Its tracker check currently matches `^Channel tracker 20`, while
-the prepared analytics collector publishes `Channel tracker: daily analytics records`. The monitor also reads
-only engine history; moved channel records need explicit owner coverage so a fresh engine record cannot mask
-a channel collection failure. Adapt and test both subject matching and per-owner checks before using this alarm
-as acceptance evidence. Existing monitoring is unchanged during preparation. This finding is separate from the
-XML/launcher repair and is not waived by the passing tests.
+The detached monitor now accepts both the dated legacy tracker subject and the prepared collector's exact
+`Channel tracker: daily analytics records` subject. It checks engine dashboard history separately from each
+registered channel's snapshot history, using that channel's checkout and a path-limited Git log. A report-only
+commit cannot count as a snapshot update; one fresh channel cannot hide another stale channel. Each channel
+has its own deduplicated alarm marker. Resident-engine monitoring keeps its existing four checks.
 
-Validation: 33 monitor/launcher/retirement tests and 26 channel/address/private-network checks passed. No service,
+Git reads and fetches have a 30-second bound and suppress diagnostics. A failed fetch is unavailable evidence,
+not permission to use a stale remote-tracking ref. A missing channel checkout produces an alarm without falling
+back to engine history. No check restarts services. Snapshot commits remain activity evidence, not proof that
+all Analytics API dimensions are complete; collection failures must also be inspected in the timer result.
+
+Before enabling the staged monitor, reconcile its loaded versus installed settings, validate all registered
+channel checkouts, complete the detached collector acceptance and run the monitor without posting against the
+newly published records. No installed monitoring changed during preparation. See
+`jobs/reviews/J3012/MONITOR_RECORDS_2026-11-20.md` for offline coverage.
+
+Launcher preparation: 33 monitor/launcher/retirement tests and 26 channel/address/private-network checks passed.
+Per-owner continuation: 53 focused tests and 26 channel/address/private-network checks passed. No service,
 activation marker, credential, board deployment, film or spend changed. See the matching evidence note.
