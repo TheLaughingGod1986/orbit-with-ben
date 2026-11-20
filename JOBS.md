@@ -58,7 +58,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3125 | mini | blocked | codex | – | studio · HOS Vaccine test: 24 Nov feed gate and conditional 29 Nov readout |  |
 | J3137 | mini | blocked | cursor | – | 005 edit · assembly · HOS 005 Shorts s06/s07/s08: no-spend music_gate repair against archived HOS 002/004 beds (£0) |  |
 | J3161 | mini | blocked | codex | – | studio · Supermoon Short: next-morning and full-day performance follow-up |  |
-| J3175 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2847 |  |
+| J3175 | mini | open | – | – | for codex · review · `gpt-6-astra` · Verify condition for J2847 |  |
 | J3176 | any | blocked | codex | – | 024 edit · chief · OWB 024 muon Short: decide whether to swap gc1hWQQJOq4 onto the v06 bed |  |
 | J3178 | mini | blocked | gemini | – | 013 picture · for gemini · qa · `gemini-argon` · HOS 013: continuous playback review of ten unresolved pass-one plates |  |
 | J3187 | mini | claimed | gemini | 2026-11-20T06:34Z | 005 edit · for gemini · qa · `gemini-argon` · HOS 005: perceptual QA and exact-cut watch handoff for repaired cuff and pulse Shorts |  |
