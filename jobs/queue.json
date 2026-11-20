@@ -179185,9 +179185,14 @@
           "at": "2026-11-20T23:41Z",
           "by": "relay",
           "what": "condition verification queued: J3260"
+        },
+        {
+          "at": "2026-11-20T23:57Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-21T12:00:00Z"
         }
       ],
-      "remaining_action": "Chief decides on the slow opening and the missing cards; then a full card count, thumbnail evidence and the pack",
+      "remaining_action": "Wait for J3261 (HOS 009 v02 re-edit) and J3262 (HOS 009 thumbnails A+B) before finishing J2036 QA and chapters",
       "due": "2026-11-15T18:00:00Z",
       "kind": "qa",
       "taskKeys": [
@@ -179211,9 +179216,11 @@
       "model": "mini-claude-opus-5-5",
       "hold": {
         "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-21T00:41:46+00:00",
-        "recheck_task": "J3260"
+        "condition": "Acting Chief (Gemini) accepted J3260 NOT MET (PR #1093 merged 139e2ef885, jobs/reviews/J3260/REVIEW.md) and ruled Option A (v02 re-edit + thumbnails): master v01 (802b5c7e...) fails HOS-2026-11-E2 (0:00-0:30 shots 4.90/6.04/7.00/7.00/7.00 s; first DATA graphic at 2:28.91) and Teach on screen (0/90 layout cards vs 26 v05 side_labels, no timeline, back-to-back graphics p4_03_sixty_earths -> p4_04_dots_square), and 08_Thumbnail is empty. Wait for J3261 (bounded £0 v02 re-edit) and J3262 (£0 HOS 009 long thumbnails A+B + Chief review) to complete before reopening J2036 for final v02 QA, chapters re-time, and Ben watch pack.",
+        "check_at": "2026-11-21T12:00:00Z",
+        "last_recheck": "J3260",
+        "checked_at": "2026-11-20T23:57:44+00:00",
+        "checked_by": "gemini"
       }
     },
     {
