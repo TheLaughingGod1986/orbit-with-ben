@@ -292522,18 +292522,24 @@
           "at": "2026-11-20T23:12Z",
           "by": "cursor",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-20T23:13Z",
+          "by": "cursor",
+          "what": "step 1 of 5 done: Approved heart file hash matches. Frame 0 is YOUR PULSE with no Explorer. Preview and style sheet wrote. Cuff file hash matches 23.1s."
         }
       ],
-      "remaining_action": "Verify the approved heart Short file, then extract its frame-0 cover",
+      "remaining_action": "Set the frame-0 cover on the scheduled heart Short and read it back",
       "due": "2026-11-22T10:00:00Z",
       "kind": "studio",
       "plain": "Set the frame-0 cover on the scheduled Sunday heart Short el30-mHiH-0 and update HOS 005 SHORTS_RELEASE.json to the live v05 IDs",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-20T23:12Z",
-        "by": "cursor"
+        "at": "2026-11-20T23:13Z",
+        "by": "cursor",
+        "note": "Approved heart file hash matches. Frame 0 is YOUR PULSE with no Explorer. Preview and style sheet wrote. Cuff file hash "
       },
       "taskKeys": [
         "HOS:005"
