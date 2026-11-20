@@ -63,7 +63,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3178 | mini | blocked | gemini | – | 013 picture · for gemini · qa · `gemini-argon` · HOS 013: continuous playback review of ten unresolved pass-one plates |  |
 | J3187 | mini | open | – | – | 005 edit · qa · HOS 005: perceptual QA and exact-cut watch handoff for repaired cuff and pulse Shorts |  |
 | J3189 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3114 |  |
-| J3193 | mini | open (after J3192) | – | – | 004 thumbs · for gemini · review · `gemini-argon` · Packaging panel decision: Webb v08 thumbnail, exact SHA-256 781435d9c557b1a18fbd3dba42d513f647d2a65fff2d5063b3829c7d2b522c68 | J3129 |
+| J3193 | mini | claimed | gemini | 2026-11-20T04:23Z | 004 thumbs · for gemini · review · `gemini-argon` · Packaging panel decision: Webb v08 thumbnail, exact SHA-256 781435d9c557b1a18fbd3dba42d513f647d2a65fff2d5063b3829c7d2b522c68 | J3129 |
 | J3194 | any | open (after J3193) | – | – | 004 thumbs · chief · Chief exact-file decision on corrected Webb thumbnail | J3129 |
 
 Recently finished:
