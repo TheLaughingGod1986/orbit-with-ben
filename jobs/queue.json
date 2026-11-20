@@ -271937,17 +271937,23 @@
           "at": "2026-11-20T06:02Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-20T06:03Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Restored existing 3/4 plan after reading resume history; PR 1011 already holds runbook and rehearsal. No live switch."
         }
       ],
-      "remaining_action": "Check the studio move conditions, write the runbook and rehearse without touching live services",
+      "remaining_action": "Continue the existing studio migration PR and verify the next remaining adapter",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-20T06:02Z",
-        "by": "codex"
+        "step": 3,
+        "of": 4,
+        "at": "2026-11-20T06:03Z",
+        "by": "codex",
+        "note": "Restored existing 3/4 plan after reading resume history; PR 1011 already holds runbook and rehearsal. No live switch."
       }
     },
     {
