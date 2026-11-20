@@ -14,8 +14,9 @@ the Vertex and ElevenLabs tools). Never add a name that isn't installed.
 
 Fallback chains (Ben, 11 Oct 2026 23:40 and 23:47): "if Claude Code is out of usage you can use a Claude model in
 Cursor" and "remember we also have Gemini and Codex". Each kind has a CHAIN: the primary, then every stand-in in
-order. A Claude-owned job goes 1) Claude Code, 2) Cursor CLI on the same Claude model (CURSOR_CLAUDE_MODEL), 3) Gemini
-via `agy` for reasoning, scripts, listings and review notes, 4) Codex gpt-6-astra as the last resort. Code and
+order. A Claude-owned job (script, review) goes 1) Claude Code, 2) Cursor CLI on the same Claude model
+(CURSOR_CLAUDE_MODEL), 3) Gemini via `agy`, 4) Codex gpt-6-astra as the last resort. QA, listing and facts start on
+Gemini 4 Neon (J3237, 20 Nov 2026) so Claude's scarce allowance stays on script, review and chief. Code and
 graphics go to Codex first. When a worker is out of usage or rate-limited, chief_relay.py walks the chain to the next
 worker that is up (`jobs.py reroute` for a job already addressed to the worker that ran out), instead of parking the
 job; the next job of that kind goes back to the primary once it's up again. Which worker ran each job is logged
@@ -105,9 +106,13 @@ MINI_CLAUDE = ("claudecode", "mini-claude-opus-5-5")
 PROTECTED = ("final OK / PASS", "merge", "AGENTS.md and the Never list", "spend past the written rules",
              "anything irreversible")
 
-# Reasoning, scripts, listings and review notes: Claude Code -> Cursor on Claude -> Gemini -> Codex (last resort).
-# Gemini stands in on Argon here: these are the hard reasoning jobs (Ben, 15 Oct 2026).
+# Script and review: Claude Code -> Cursor on Claude -> Gemini -> Codex (last resort).
+# Gemini stands in on the hard lane here (Ben, 15 Oct 2026; the CLI id is Neon High since J3218).
 _CLAUDE_CHAIN = [("claude", "claude-opus-5-5"), CLAUDE_FALLBACK, ARGON, ASTRA, MINI_CLAUDE]
+
+# QA, listing and the facts primary: Gemini 4 Neon first (J3237, 20 Nov 2026). Neon passed audio and moving-video
+# probes the same day, and Claude's allowance is the scarce one. Script, review and chief stay on Claude.
+_NEON_CHAIN = [ARGON, ("claude", "claude-opus-5-5"), CLAUDE_FALLBACK, ASTRA, MINI_CLAUDE]
 
 # kind: (job type, chain [(agent, model), ...] primary first, how the job runs). Code and graphics: Codex first.
 # Tool jobs (vo, image, video): the same tool, run by whichever worker is up.
@@ -115,10 +120,10 @@ CHAINS = {
     "script":   ("Script writing and fact research", _CLAUDE_CHAIN,
                  "Claude writes; Gemini (agy) drafts SOURCES.md and checks every claim (kind facts). A Gemini or Codex "
                  "draft is a draft only; Claude or Chief locks it"),
-    "facts":    ("Sources and claims check", [("cursor", "gemini-agy"), ARGON, ("claude", "claude-opus-5-5"),
+    "facts":    ("Sources and claims check", [ARGON, ("cursor", "gemini-agy"), ("claude", "claude-opus-5-5"),
                                                CLAUDE_FALLBACK, ASTRA, MINI_CLAUDE],
-                 "the worker runs `agy` (claims as <driver>/gemini), or the relay wakes agy itself; Claude's quote "
-                 "check backs it"),
+                 "Gemini 4 Neon first (J3237). The relay wakes agy on Neon; Cursor driving agy's default is the next "
+                 "lane. Claude's quote check still backs it"),
     "review":   ("Script review, reasoning, shot lists, music prompts", _CLAUDE_CHAIN,
                  "a stand-in's review is advisory; Chief makes the call"),
     "vo":       ("Voice-over", [("cursor", "eleven_v3"), ("codex", "eleven_v3"), ("gemini", "eleven_v3"),
@@ -145,10 +150,11 @@ CHAINS = {
                  "only for a hero); Omni gemini-omni-flash-preview at global for Orbit only when a job names it"),
     "assembly": ("Picture assembly, ffmpeg, code and tools", [CURSOR_GROK, CURSOR_AUTO, SOL, GEMINI, MINI_CLAUDE],
                  "on the Mini; long renders in detached tmux"),
-    "qa":       ("Frame review and QA", _CLAUDE_CHAIN,
-                 "picture_qa / polish_gate / music_gate must PASS first; Chief gives the PASS"),
-    "listing":  ("Titles, descriptions, tags, SEO", _CLAUDE_CHAIN,
-                 "Gemini checks any fact in it; Chief OKs; applied by the upload or Studio job"),
+    "qa":       ("Frame review and QA", _NEON_CHAIN,
+                 "Gemini 4 Neon first (J3237): it passed the audio and moving-video probes, so Claude's allowance stays "
+                 "on script and review. picture_qa / polish_gate / music_gate must PASS first; Chief gives the PASS"),
+    "listing":  ("Titles, descriptions, tags, SEO", _NEON_CHAIN,
+                 "Gemini 4 Neon first (J3237). Gemini checks any fact in it; Chief OKs; applied by the upload or Studio job"),
     "studio":   ("Studio browser tasks", [("chief", "grok"), CURSOR_GROK, CURSOR_AUTO, SOL, MINI_CLAUDE],
                  "each channel's Studio browser on its own CDP port (its channel file); never Replace, never delete"),
     "chief":    ("Merges, final OK, PASS, AGENTS.md", [("claude", "claude-opus-5-5"), ("chief", "grok"), ASTRA, ARGON],
