@@ -290886,13 +290886,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-20T17:47Z",
-      "eta": "2026-11-20T19:47Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-20T17:46Z",
-      "result": "",
+      "result": "parked for Chief: J3244 condition verification complete (jobs/reviews/J3244/REVIEW.md @ 4a5ab19283) -- CONDITION SATISFIED for J2035: all predecessors/locks verified intact (J2631 e35f9a98, J2632 r4 23c832b0, J3241 v04_synth 151ba46a, VO_TAKES_KEEP 530743c5), master hos009_long_master_v01.mp4 (519.000s, 802b5c7eb0dd64a77b938e5f26c2f63104c3b851979dabe61e39e70eaf33a833) verified on Mini and NAS, audio gates pass, and elected HOS Chief Grok issued ruling #7046684862 (20 Nov 17:52Z) keeping 05_minute_second_t1.mp4@0 (7f56f059) via reviewed_ok.json (kinds: split panel only). Reopening J2035 and closing J3244 require elected HOS Chief authority (scripts/jobs.py:1006-1007, 1486-1489; chief_relay.elected_for elects chief/Grok Bot). Once reopened, worker applies #7046684862 to reviewed_ok.json, re-runs picture_qa/polish_gate on unchanged master, backs up vo/bed/sfx stems and full QA outputs to NAS, and clears the 2 missing-file warnings in music_gate_cut.json. Not a film PASS or Ben-watch waiver; GBP0; no upload/schedule change.",
       "history": [
         {
           "at": "2026-11-20T17:46Z",
@@ -290928,6 +290928,11 @@
           "at": "2026-11-20T17:56Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Step 3/3: Verification complete (4a5ab19283); parking J3244 for elected HOS Chief (chief/Grok Bot)."
+        },
+        {
+          "at": "2026-11-20T17:56Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J3244 condition verification complete (jobs/reviews/J3244/REVIEW.md @ 4a5ab19283) -- CONDITION SATISFIED for J2035: all predecessors/locks verified intact (J2631 e35f9a98, J2632 r4 23c832b0, J3241 v04_synth 151ba46a, VO_TAKES_KEEP 530743c5), master hos009_long_master_v01.mp4 (519.000s, 802b5c7eb0dd64a77b938e5f26c2f63104c3b851979dabe61e39e70eaf33a833) verified on Mini and NAS, audio gates pass, and elected HOS Chief Grok issued ruling #7046684862 (20 Nov 17:52Z) keeping 05_minute_second_t1.mp4@0 (7f56f059) via reviewed_ok.json (kinds: split panel only). Reopening J2035 and closing J3244 require elected HOS Chief authority (scripts/jobs.py:1006-1007, 1486-1489; chief_relay.elected_for elects chief/Grok Bot). Once reopened, worker applies #7046684862 to reviewed_ok.json, re-runs picture_qa/polish_gate on unchanged master, backs up vo/bed/sfx stems and full QA outputs to NAS, and clears the 2 missing-file warnings in music_gate_cut.json. Not a film PASS or Ben-watch waiver; GBP0; no upload/schedule change."
         }
       ],
       "remaining_action": "Elected HOS Chief (chief/Grok Bot): reopen J2035 with J3244 evidence (4a5ab19283) and close J3244",
