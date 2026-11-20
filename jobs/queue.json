@@ -292742,10 +292742,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-20T23:59Z",
+      "eta": "2026-11-21T01:59Z",
       "created_by": "gemini",
       "created_at": "2026-11-20T23:56Z",
       "result": "",
@@ -292754,11 +292754,24 @@
           "at": "2026-11-20T23:56Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-20T23:59Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Build HOS 009 v02 master with E2 opening, Teach overlays/timeline, separated graphics, and passing gates",
       "kind": "assembly",
-      "plain": "Re-edit the Gravity long master v02 at zero cost to add the faster opening, early graphic, teaching cards and timeline"
+      "plain": "Re-edit the Gravity long master v02 at zero cost to add the faster opening, early graphic, teaching cards and timeline",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T23:59Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3262",
