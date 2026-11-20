@@ -66,7 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3177 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3137 |  |
 | J3178 | mini | blocked | gemini | – | 013 picture · for gemini · qa · `gemini-argon` · HOS 013: continuous playback review of ten unresolved pass-one plates |  |
 | J3179 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2537 |  |
-| J3184 | mini | open | – | – | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J3184 | mini | claimed | macbook-2 | 2026-11-20T02:34Z | for gemini · listing · `gemini-argon` · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
