@@ -587,6 +587,13 @@ def apply_metadata(data, entries, agent, at):
             log(j,at,agent,"remaining action: " + action)
         if "required_capabilities" in entry:
             j["required_capabilities"] = workflow.capability_names(entry["required_capabilities"])
+        if "cloud_only" in entry:
+            if entry["cloud_only"]:
+                if j.get("needs") != "cloud" and (j.get("rerouted_from") or {}).get("needs") != "cloud":
+                    raise ValueError("cloud_only requires needs=cloud (or rerouted_from.needs=cloud)")
+                j["cloud_only"] = True
+            else:
+                j.pop("cloud_only", None)
         if entry.get("hold") and j["status"] == "blocked" and not j.get("hold"):
             set_wait(j,agent,at,entry["hold"])
     data.clear(); data.update(planned)
@@ -1026,6 +1033,8 @@ def do_reroute(job: dict, agent: str, to: str, model: str, note: str, at: dt.dat
         raise ValueError(f"{model} doesn't run on {to}")
     if job.get("kind") == "chief" and not chief_relay.elected_for(to, at, job):
         raise ValueError(f"{job['id']} is a Chief call; only the elected Chief may take it")
+    if job.get("cloud_only"):
+        raise ValueError(f"{job['id']} is pinned to Claude cloud (cloud_only); it cannot be rerouted to a Mini worker")
     job.setdefault("rerouted_from", {"needs": job["needs"], "for": job.get("for", ""), "model": job.get("model", ""),
                                      "status": job["status"], "by": job.get("by", "")})
     job.update(status="open", by="", since="", eta="", needs="mini", **{"for": to})
@@ -1315,6 +1324,8 @@ def main(argv=None) -> int:
     a.add_argument("--due", default="", help="deadline, ISO or YYYY-MM-DD HH:MM London; does not defer start")
     a.add_argument("--mini-only", dest="mini_only", action="store_true",
                    help="pin a `needs mini` job to the Mini: the MacBook never takes it (e.g. a change that can't be undone)")
+    a.add_argument("--cloud-only", dest="cloud_only", action="store_true",
+                   help="pin a `needs cloud` job to Claude cloud: the relay never reroutes it to Mini/MacBook (e.g. vidIQ)")
     a.add_argument("--not-before", default="", help="deprecated: use a structured wait condition and check-at")
     a.add_argument("--reset", default="", help="deprecated compatibility argument")
     a.add_argument("--approved-from", dest="approved_from", default="",
@@ -1449,6 +1460,10 @@ def main(argv=None) -> int:
                     job["plain"] = args.plain.strip()
                 if getattr(args, "mini_only", False):
                     job["mini_only"] = True
+                if getattr(args, "cloud_only", False):
+                    if args.needs != "cloud":
+                        raise ValueError("--cloud-only requires --needs cloud")
+                    job["cloud_only"] = True
                 if args.approved_from:
                     src = find(data, args.approved_from)
                     if not src:

@@ -85,6 +85,10 @@ def do_refill(data: dict, items: list, at: dt.datetime, min_ready: int = MIN_REA
         nonlocal have
         j = jobs.do_add(data, title=it["title"], needs=it["needs"], body=it["body"], by="refill", at=at,
                         repo=it.get("repo") or channels.default(), eta_min=it.get("eta", jobs.DEFAULT_ETA), kind=it.get("kind", ""), action=it.get("remaining_action") or it["title"][:180])
+        if it.get("cloud_only"):
+            j["cloud_only"] = True
+        if it.get("mini_only"):
+            j["mini_only"] = True
         j["backlog"] = it["key"]
         last[it["key"]] = studio.iso(at)
         added.append(j["id"])

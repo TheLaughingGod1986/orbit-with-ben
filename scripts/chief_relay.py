@@ -1414,7 +1414,8 @@ def claude_jobs_to_reroute(data: dict, at: dt.datetime, out: bool) -> list:
     for j in data.get("jobs", []):
         # A MacBook job stays on the MacBook (29 Oct 2026: J1194/J1195 were handed to Gemini on the Mini while
         # Claude was marked down, though they were never Claude's to run).
-        if not routing.claude_owned(j) or j.get("kind") == "chief" or j.get("needs") in ("ben", "macbook"):
+        # A cloud_only job (e.g. vidIQ connector, J3231, 20 Nov 2026) stays in Claude cloud and waits for its next run.
+        if not routing.claude_owned(j) or j.get("kind") == "chief" or j.get("needs") in ("ben", "macbook") or j.get("cloud_only"):
             continue
         if j.get("rerouted_from") or (j.get("for") and j["for"] != "claude"):
             continue
