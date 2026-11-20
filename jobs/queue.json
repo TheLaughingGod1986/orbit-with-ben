@@ -291776,18 +291776,23 @@
           "at": "2026-11-20T21:59Z",
           "by": "cursor",
           "what": "step 1 of 4 done: Byte compare of the staged Journey scratch (21.41 GiB, 349 files) is running. The local copy stays until every file matches and the checksum file is written."
+        },
+        {
+          "at": "2026-11-20T22:01Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Corrected verify is in tmux j3249-verify. Log /Users/benjaminoats/_desk/logs/j3249-verify.log. Done file is not written yet. First Journey file compared equal. MiniWork still 3.4 GiB free."
         }
       ],
-      "remaining_action": "Verify staged scratch copies and clear them only after every file matches",
+      "remaining_action": "Wait for the scratch verify to finish, then free more space if MiniWork is still under 40 GiB",
       "due": "2026-11-21T07:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-20T21:59Z",
+        "at": "2026-11-20T22:01Z",
         "by": "cursor",
-        "note": "Byte compare of the staged Journey scratch (21.41 GiB, 349 files) is running. The local copy stays until every file matc"
+        "note": "Corrected verify is in tmux j3249-verify. Log /Users/benjaminoats/_desk/logs/j3249-verify.log. Done file is not written "
       }
     },
     {
