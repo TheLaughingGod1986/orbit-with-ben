@@ -291761,18 +291761,23 @@
           "at": "2026-11-20T21:52Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T21:53Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed. MiniWork 3.4 GiB free of 233 GiB. NAS staging share is mounted. Outside the overnight archive window, so daytime copies go to the staging share."
         }
       ],
-      "remaining_action": "Leave the detached MiniWork offload running until its done file appears, then read the log",
+      "remaining_action": "Inspect old MiniWork scratch and desk folders that are safe to archive",
       "due": "2026-11-21T07:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-20T20:27Z",
+        "step": 0,
+        "of": 4,
+        "at": "2026-11-20T21:53Z",
         "by": "cursor",
-        "note": "Inspected. J2221 copy finished 20:06Z and dest hash is still running. No SHA256SUMS yet. MiniWork still 168 MiB free. Di"
+        "note": "Claimed. MiniWork 3.4 GiB free of 233 GiB. NAS staging share is mounted. Outside the overnight archive window, so daytim"
       }
     },
     {
