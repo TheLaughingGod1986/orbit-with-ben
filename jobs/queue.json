@@ -271395,10 +271395,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-20T06:11Z",
+      "eta": "2026-11-20T10:11Z",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
       "result": "",
@@ -271952,6 +271952,11 @@
           "at": "2026-11-20T06:06Z",
           "by": "codex",
           "what": "released: PR 1011 now 4b1c62cc4e; preserve existing 3/4. Added retired-engine guards to thumbnail and launch CLI/imported writers; 84 focused tests and 26 ratchet/security tests pass. Evidence RECORD_WRITERS_2026-11-20.md. Mini Grok watchdog still refers to old engine without marker/pause guard; Cursor target unresolved in static inspection. Next deployed board Contents probe, remaining wrappers/exporters and both-machine inventory, refreshed private rehearsal. Official history inspected: six zeros through 19 Nov; no new daily row. Seven passes, preceding-day notice and live acceptance remain. Sparse worktree /private/tmp/j3012-0620 avoids full scratch. No live switch or spend."
+        },
+        {
+          "at": "2026-11-20T06:11Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify remaining service wrappers, deployed board access and refreshed migration rehearsal",
