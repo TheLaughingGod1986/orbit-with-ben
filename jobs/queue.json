@@ -271395,10 +271395,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-20T06:55Z",
-      "eta": "2026-11-20T10:55Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
       "result": "",
@@ -272072,6 +272072,11 @@
           "at": "2026-11-20T07:00Z",
           "by": "codex",
           "what": "step 3 of 4 done: HOS PR 688 merged at f3188f03 after green CI and five independent boundary tests. PR 1011 updated fabda2b4da; shared HOS branch still needs safe guard propagation."
+        },
+        {
+          "at": "2026-11-20T07:00Z",
+          "by": "codex",
+          "what": "released: Preserve 3/4. HOS PR 688 merged f3188f03b9e5a727d5cdf57bc19da760b6746ac6 after all CI passed and five independent migration boundary tests passed. OWB PR 1011 now fabda2b4da. Shared HOS checkout is another worker branch with edits; pull fetched main but three runners still lack guards. Exact canonical NAS paths absent; other runnable copies unverified. Drain writers and propagate patch without disturbing local work before activation. Next board server Contents probe, wrapper review, MacBook inventory and refreshed private rehearsal. Streak still six; prior-day notice and live acceptance remain. No service, marker, ledger, film or spend changes. Evidence COMPANION_REVIEW_2026-11-20.md."
         }
       ],
       "remaining_action": "Install merged guards after draining writers, verify board access and MacBook inventory, then refresh rehearsal",
