@@ -292759,19 +292759,25 @@
           "at": "2026-11-20T23:59Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T23:59Z",
+          "by": "cursor",
+          "what": "step 0 of 6 done"
         }
       ],
-      "remaining_action": "Build HOS 009 v02 master with E2 opening, Teach overlays/timeline, separated graphics, and passing gates",
+      "remaining_action": "Map the locked v01 master, plates and overlay plan before any re-cut",
       "kind": "assembly",
       "plain": "Re-edit the Gravity long master v02 at zero cost to add the faster opening, early graphic, teaching cards and timeline",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 6,
         "at": "2026-11-20T23:59Z",
-        "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "cursor"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J3262",
