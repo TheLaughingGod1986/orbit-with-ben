@@ -254983,7 +254983,7 @@
       "title": "Studio: Webb thumbnail test T039 held for corrected candidate",
       "needs": "mini",
       "repo": "owb",
-      "body": "J3096 FIX supersedes all historical authorization. T039 for ziKBPJ6FY0U remains blocked. Rejected /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/004_JWST-Discoveries-That-Change-Everything/08_Thumbnails/repackage_2026-11/J3088_v01/ziKBPJ6FY0U_B_v07.jpg, SHA-256 e2bd0c629610195b6fa858bd7969d7ebcb97c4a37d3420084409d0dfa828446b; do not upload it. J3129 builds the corrected candidate, then independent panel, synthesis and elected-Chief exact-file review. No test authorized over T007 here. Future Chief must update this brief with approved path/hash and explicit permission conditional on fresh matching finished T007 report and no running test. Keep live A, title, privacy, schedule, T038 and all other settings unchanged. See jobs/reviews/J3096/REVIEW.md.",
+      "body": "J3194 exact-file PASS supersedes J3096 FIX for v08 only. Approved B: /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/004_JWST-Discoveries-That-Change-Everything/08_Thumbnails/repackage_2026-11/J3088_v02/ziKBPJ6FY0U_B_v08.jpg; SHA-256 781435d9c557b1a18fbd3dba42d513f647d2a65fff2d5063b3829c7d2b522c68. I explicitly authorize existing J2847 to start thumbnail-only successor T039 over finished T007 ONLY after a fresh Studio read again confirms the same finished report: 15 October 2026 11:22 to 29 October 2026 10:24, insufficient impressions, both watch-time shares unavailable, A visible to all, and no running test. Preserve the report evidence. This one-test reversible exception permits New test/Continue only over that matching finished report. If the report differs or any test runs, stop without replacement. Keep live A, title, description, privacy, schedule, T038 and every other setting unchanged. Recheck B hash before upload and save/reload Test running before recording T039 started. Read jobs/reviews/J3194/REVIEW.md and T007_READBACK.txt. Existing condition verifier J3175 reopens this job after verifying the completed review; no duplicate handoff. Old v07 remains rejected.",
       "ref": "J2834",
       "film": "",
       "stage": "",
@@ -255026,9 +255026,14 @@
           "at": "2026-11-19T23:14Z",
           "by": "relay",
           "what": "condition verification queued: J3175"
+        },
+        {
+          "at": "2026-11-20T05:32Z",
+          "by": "codex",
+          "what": "J3194 exact-file PASS; approved path/hash and conditional T039 permission recorded; existing J3175 verifies before reopening"
         }
       ],
-      "remaining_action": "Wait for the corrected Webb thumbnail, independent reviews and exact-file approval before testing it",
+      "remaining_action": "Verify the Webb approval and finished report, then test the approved thumbnail",
       "kind": "studio",
       "plain": "Wait for the corrected Webb thumbnail to pass review before testing it",
       "taskKeys": [
@@ -255036,7 +255041,7 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "J3090 Chief ruling: NOT MET. J3096 rejected v07; J3129 must complete corrected v08, independent panel and synthesis, then elected-Chief exact-file PASS and brief update with approved path/hash and explicit T039 successor authorization conditional on a fresh matching finished T007 report and no running test. J3130 source recovery is done; existing J3135 verifies that recovery before J3129 resumes. No duplicate handoff.",
+        "condition": "J3194 exact-file PASS and conditional permission recorded in jobs/reviews/J3194/REVIEW.md; J3175 verifies J3194 completion and exact J2847 brief, then may reopen. Execution still requires fresh matching T007 finished report and no running test.",
         "check_at": "2026-11-20T00:14:23+00:00",
         "last_recheck": "J3090",
         "checked_at": "2026-11-19T17:10:10+00:00",
