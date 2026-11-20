@@ -288002,20 +288002,25 @@
           "at": "2026-11-20T13:23Z",
           "by": "gemini",
           "what": "step 1 of 5 done: ch00 (93.36s) and ch01 (370.70s, split cleanly at S12/S13 under 5,000-char limit) complete; MiniWork hit 100% full during ch01 WAV decode so moved scratch to /tmp (34 GB free) and resumed vo_take.py reusing ch00/ch01 with zero duplicate TTS spend"
+        },
+        {
+          "at": "2026-11-20T13:31Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Step 2 done: all 6 chapters voiced (1,533.64s / 25:33.64, -20.6 LUFS, 9,478 net ElevenLabs credits billed, 41,859 remaining); running deep Scribe audit, faster-whisper vo_check, and boundary check"
         }
       ],
-      "remaining_action": "Complete ElevenLabs eleven_v3 chapters ch02-ch05, concatenate 0.7s gaps, and run Scribe v2 transcript check",
+      "remaining_action": "Audit Scribe transcript diffs, faster-whisper cross-check, 20ms waveform boundaries, and per-chapter loudness",
       "due": "2026-11-22T18:00:00Z",
       "for": "gemini",
       "kind": "vo",
       "plain": "Record the narration for the third WW2 film, about the B-29 bomber",
       "urgent": 6,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-20T13:23Z",
+        "at": "2026-11-20T13:31Z",
         "by": "gemini",
-        "note": "ch00 (93.36s) and ch01 (370.70s, split cleanly at S12/S13 under 5,000-char limit) complete; MiniWork hit 100% full durin"
+        "note": "Step 2 done: all 6 chapters voiced (1,533.64s / 25:33.64, -20.6 LUFS, 9,478 net ElevenLabs credits billed, 41,859 remain"
       },
       "taskKeys": [
         "WW2:003"
