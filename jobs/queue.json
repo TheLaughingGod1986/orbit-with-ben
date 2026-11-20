@@ -288450,19 +288450,24 @@
           "at": "2026-11-20T19:21Z",
           "by": "gemini",
           "what": "step 1 of 5 done: vo_take.py running under desk-lock elevenlabs: 6/9 chapters (ch00-ch05) rendered; ch06-ch08, concat, and Scribe scribe_v2 in progress."
+        },
+        {
+          "at": "2026-11-20T19:23Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: vo_take.py PASS: st_nazaire_campbeltown_vo_v01 1,263.04s (21:03.04), -19.9 LUFS, Scribe 97.47% raw (51 mismatch runs). Running exhaustive QA and settled credit audit."
         }
       ],
-      "remaining_action": "Generate 9-chapter narration (Ben Orbit Narrator, eleven_v3, speed 1.04) and Scribe transcript via vo_take.py under desk-lock elevenlabs",
+      "remaining_action": "Audit all 51 Scribe mismatch runs, run faster-whisper vo_check, 20ms boundary/clipped-word check, and per-chapter loudness check",
       "due": "2026-11-29T18:00:00Z",
       "for": "gemini",
       "kind": "vo",
       "plain": "Record the narration for WW2 film 005, about the old destroyer",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-20T19:21Z",
+        "at": "2026-11-20T19:23Z",
         "by": "gemini",
-        "note": "vo_take.py running under desk-lock elevenlabs: 6/9 chapters (ch00-ch05) rendered; ch06-ch08, concat, and Scribe scribe_v"
+        "note": "vo_take.py PASS: st_nazaire_campbeltown_vo_v01 1,263.04s (21:03.04), -19.9 LUFS, Scribe 97.47% raw (51 mismatch runs). R"
       },
       "taskKeys": [
         "WW2:005"
