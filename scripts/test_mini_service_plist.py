@@ -61,6 +61,22 @@ class MiniServicePlist(unittest.TestCase):
         self.assertEqual(doc['EnvironmentVariables']['OWB_REPO'], self.channels['OWB_REPO'])
         self.assertEqual(doc['EnvironmentVariables']['STUDIO_REPO'], str(self.engine))
 
+    def test_analytics_proposal_needs_explicit_credentials_and_preserves_schedule(self):
+        target = self.engine / '07_Content-Ops/launchd/analytics-detached.sh'
+        target.parent.mkdir(parents=True)
+        target.write_text('exit 0\n')
+        source = dict(self.source, Label='dev.orbit.analytics-snapshot',
+                      StartCalendarInterval={'Hour': 6, 'Minute': 40})
+        with self.assertRaises(ValueError):
+            self.render(source)
+        source['EnvironmentVariables'] = dict(source['EnvironmentVariables'],
+            ANALYTICS_CREDENTIAL_FILE=str(self.root / 'local.env'))
+        doc = self.render(source)
+        self.assertEqual(doc['ProgramArguments'], ['/bin/bash', str(target)])
+        self.assertEqual(doc['StartCalendarInterval'], source['StartCalendarInterval'])
+        self.assertEqual(doc['EnvironmentVariables']['STUDIO_PYTHON'], sys.executable)
+        self.assertNotIn('STUDIO_PYTHON', source['EnvironmentVariables'])
+
     def test_preserves_service_settings_and_channel_paths(self):
         doc = self.render()
         for key in ('StartInterval', 'RunAtLoad', 'StandardOutPath', 'Nice'):

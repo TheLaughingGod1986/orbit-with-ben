@@ -16,6 +16,7 @@ SERVICES = {
 
 SHELL_SERVICES = {
     'dev.orbit.buffer-check': '07_Content-Ops/launchd/buffer-check.sh',
+    'dev.orbit.analytics-snapshot': '07_Content-Ops/launchd/analytics-detached.sh',
 }
 
 
@@ -29,7 +30,7 @@ def absolute(value):
 def render(source, engine, python, channel_paths):
     doc = copy.deepcopy(source)
     if doc.get('Label') not in SERVICES and doc.get('Label') not in SHELL_SERVICES:
-        raise ValueError('only the relay, board publisher and Buffer timer are supported')
+        raise ValueError('only the relay, board publisher and supported daily timers are supported')
     engine, python = absolute(engine), absolute(python)
     if doc['Label'] in SHELL_SERVICES:
         target = pathlib.Path(engine) / SHELL_SERVICES[doc['Label']]
@@ -48,6 +49,12 @@ def render(source, engine, python, channel_paths):
     doc['WorkingDirectory'] = engine
     env = doc.setdefault('EnvironmentVariables', {})
     env['STUDIO_REPO'] = engine
+    if doc['Label'] == 'dev.orbit.analytics-snapshot':
+        env['STUDIO_PYTHON'] = python
+        credential = env.get('ANALYTICS_CREDENTIAL_FILE')
+        if not credential:
+            raise ValueError('analytics proposal requires ANALYTICS_CREDENTIAL_FILE in the source environment')
+        absolute(credential)
     for name, path in channel_paths.items():
         if name not in ('OWB_REPO', 'HOS_REPO', 'WW2_REPO'):
             raise ValueError('unsupported channel environment name')

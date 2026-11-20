@@ -4,7 +4,7 @@ Prepared 18 November 2026. This is the phase 3 execution runbook, not permission
 The latest J3012 brief supersedes the original history-rewrite dependency: create a clean root commit; do not
 copy Orbit's Git history. J2537's history rewrite is not a prerequisite. The source history remains in Orbit.
 
-## Resume here (20 November, analytics auxiliary phase)
+## Resume here (20 November, analytics timer wiring)
 
 PR 1011 is the existing delivery branch; do not recreate the runbook or reset J3012's **3/4** progress.
 Its queue history and the newest `jobs/reviews/J3012/` evidence describe completed preparation.
@@ -12,9 +12,9 @@ The current integration retains main's guarded former-resident manifest cache an
 missing-browser-port refusal test. The split checker now rejects failed, interrupted, missing-summary and
 empty test runs rather than counting an unrecognized process failure as a zero day.
 
-The bounded analytics auxiliary callback and isolated gate adapter are now prepared; see
-`jobs/reviews/J3012/ANALYTICS_GATE_2026-11-20.md`. Next wire the timer entrypoint/plist, including cache
-availability probing, and run full fake-API acceptance with real local record remotes. Also outstanding:
+The detached timer shell, bounded supervisor, cache fallback and proposed analytics plist are now prepared; see
+`jobs/reviews/J3012/ANALYTICS_TIMER_2026-11-20.md`. Local-Git orchestration tests pass with fake collectors.
+Next exercise the actual TypeScript collectors against fake APIs in the refreshed full layout. Also outstanding:
 the deployed board credential probe, complete writer inventory/guards and refreshed private rehearsal.
 Keep the live switch gated on the timing and acceptance below. This run does not change the official daily
 history or send the day-before notice.
@@ -591,3 +591,42 @@ the channel, with a temporary engine copy for legacy callers; the analytics adap
 This is preparation only. Timer shell/plist wiring, cache readability fallback and complete fake-API timer
 acceptance with real record commits still remain; the installed timer is unchanged. No live gate, API,
 queue dispatch, board publication or source-media mutation was run by these tests.
+
+
+## Detached analytics timer wiring, 20 November continuation
+
+`07_Content-Ops/launchd/analytics-detached.sh` is the proposed detached-engine entrypoint. It is separate from
+the installed resident timer, which remains unchanged. The shell calls `scripts/analytics_timer.py`; its parent
+bounds the entire worker process group to 45 minutes. The worker rejects resident/retired engines, probes the
+media cache with a five-second child process, then runs the required dispatch/gate callback and collection under
+the existing fixed record-session lock. Collection, per-owner commits/retries and board refresh retain their
+individual time limits. Diagnostics containing API responses are suppressed; the launcher reports success or a
+nonzero failure/timeout. Inspect record worktrees and pending commits before retrying a failure.
+
+Configuration is local to the proposed plist, never a credential value in Git:
+
+- `ANALYTICS_CREDENTIAL_FILE`: required absolute path to the existing local credential file outside record
+  worktrees. Keeping it in its existing source checkout avoids a credential copy or permission change.
+- `STUDIO_PYTHON`: the renderer sets the supplied absolute Python executable.
+- `ANALYTICS_RECORDS_DIR`: persistent detached records; default is `records` under the internal safe directory.
+  This deliberately does not reuse the old single resident worktree. Before first cutover, reconcile any pending
+  old tracker commits and stage the channel histories. Never silently fall back or discard these record worktrees.
+- `ANALYTICS_SAFE_DIR`: defaults to the internal Application Support tracker directory.
+- `ANALYTICS_GATE_CACHE`: defaults to the existing staged gate-media cache. A failed five-second write/read probe
+  chooses the internal safe directory's gate-media cache. If both probes fail, collection refuses. A missing cached
+  NAS clip remains NOT CHECKED; no gate waiver is implied.
+- `GATE_LIMIT_S`: defaults to 600, accepted range 1–1800; `BOARD_PUBLISH=0` disables board publication only for
+  controlled tests. Normal cutover acceptance must publish.
+
+To prepare the service, make a private scratch copy of the installed `dev.orbit.analytics-snapshot` plist and add
+`ANALYTICS_CREDENTIAL_FILE` to that copy's EnvironmentVariables (path only). Run the existing
+`render_service_plist.py` command with that copy as `--source` and a fresh private `--out`; it selects the detached
+shell, preserves the 06:40 schedule/logs, and sets engine/channel roots. A missing credential path is refused.
+Inspect and `plutil -lint` the proposal; do not install it before the drained cutover and complete acceptance.
+
+Verification uses the real timer worker, collection/session and Git record helpers with fake command results and
+three temporary bare remotes. It checks dispatch queue routing, source-media routing, channel-owned gate/report
+records, dashboard ownership, publication despite a rejected channel push, retry on the next identical run, and
+untouched source checkouts. Separate tests cover actual cache probes, bounded failures, literal shell arguments,
+retired/resident refusal, supervisor time limit and service schedule preservation. These prove orchestration;
+they do not claim actual TypeScript/API contract acceptance, deployed board access or a live relay/publish/tick.
