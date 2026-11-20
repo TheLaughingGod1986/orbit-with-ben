@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "measured_at": "2026-11-20T23:03Z",
+  "metrics": {
+    "window_days": 7,
+    "done_7d_total": 441,
+    "done_7d_by_machine": {
+      "mini": 329,
+      "macbook": 83,
+      "cloud": 6,
+      "grok": 5
+    },
+    "jobs_per_day_by_machine": {
+      "mini": 47.0,
+      "macbook": 11.86,
+      "cloud": 0.86,
+      "grok": 0.71
+    },
+    "jobs_per_day_total": 63.0,
+    "idle_agent_hours_with_ready_work": 0,
+    "ready_work_hours": 168,
+    "stalls_7d": 26,
+    "parks_7d": 172,
+    "chief_parks_7d": 137,
+    "currently_parked_for_chief": 10,
+    "chief_fix_rate_pct": 61.7,
+    "chief_passes_7d": 103,
+    "chief_fixes_7d": 166,
+    "median_job_to_ben_watch_h": 362.8,
+    "ben_watch_films_30d": 23,
+    "credit_spend_per_finished_film": {
+      "elevenlabs": 7845.2,
+      "flow": 2578.6,
+      "vertex": 3.4
+    },
+    "films_with_spend": 26
+  },
+  "bottleneck": {
+    "key": "chief_park_backlog",
+    "title": "Jobs piling up waiting for Chief review",
+    "metric_key": "currently_parked_for_chief",
+    "metric_value": 10,
+    "lower_is_better": true,
+    "summary": "10 jobs are parked for Chief right now (137 parked in the last 7 days).",
+    "proposed_fix": "Tune Chief review batching, escalation cadence, and pre-flight self-checks so fewer routine jobs park.",
+    "fix_kind": "review"
+  },
+  "metrics_line": "63.0 jobs/day (Mini 47.0, MacBook 11.9) \u00b7 0 idle h with ready work \u00b7 26 stalls, 172 parks \u00b7 Chief FIX rate 62%",
+  "previous_comparison": {
+    "verdict": "first_measurement",
+    "plain": "First weekly ops baseline recorded; next week will verify whether this fix helped."
+  }
+}

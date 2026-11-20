@@ -833,8 +833,33 @@ def run_once(a) -> int:
     except Exception as e:  # noqa: BLE001
         log(f"progress24h not built: {e}")
     add_plan(board, at)
+    add_learning(board, at)
     add_field_order(board)
     return finish(a, at, prev, prev_path, key, docs, board, hashes, checks, checks_at, {**checks_meta, **health})
+
+
+def add_learning(board: dict, at: dt.datetime) -> None:
+    """board.learning ('What the studio is learning') from 05_Analytics/EXPERIMENTS.json and ops_loop/latest.json.
+
+    Driven by scripts/channels.py so every registered channel gets a row automatically. Never blocks the board push.
+    """
+    try:
+        import rsi
+        exp_path = wt() / "05_Analytics" / "EXPERIMENTS.json"
+        ops_path = wt() / "05_Analytics" / "ops_loop" / "latest.json"
+        exp_doc = _read_json(exp_path) if exp_path.is_file() else None
+        ops_doc = _read_json(ops_path) if ops_path.is_file() else None
+        if exp_doc is None and ops_doc is None:
+            return
+        try:
+            previous = json.loads((STATE / "board.json").read_text()).get("learning") or {}
+        except (OSError, ValueError):
+            previous = {}
+        if not isinstance(previous, dict):
+            previous = {}
+        board["learning"] = rsi.board_section(exp_doc, ops_doc, iso(at), previous=previous, now=at)
+    except Exception as e:  # noqa: BLE001
+        log(f"learning not built: {e}")
 
 
 def add_field_order(board: dict) -> None:

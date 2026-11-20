@@ -52,8 +52,39 @@ FALLBACK_MIN_H = 6.0
 LIVE = ("open", "claimed", "blocked")
 
 
+def _repo_name(ch: dict) -> str:
+    url = str((ch.get("repo") or {}).get("url") or "").rstrip("/")
+    if url:
+        return url.rsplit("/", 1)[-1].removesuffix(".git")
+    return str(ch.get("slug") or "")
+
+
+def expand_backlog(items: list, channel_list: list[dict] | None = None) -> list:
+    """Expand any `per_channel: true` backlog template into one item per registered channel (scripts/channels.py)."""
+    out = []
+    chs = channel_list if channel_list is not None else channels.all_channels()
+    for it in items:
+        if not it.get("per_channel"):
+            out.append(dict(it))
+            continue
+        for ch in chs:
+            fmt = {
+                "slug": ch["slug"],
+                "label": ch["label"],
+                "name": ch["name"],
+                "repo_name": _repo_name(ch),
+            }
+            expanded = {k: v for k, v in it.items() if k != "per_channel"}
+            for field in ("key", "repo", "title", "body", "remaining_action"):
+                if isinstance(expanded.get(field), str):
+                    expanded[field] = expanded[field].format(**fmt)
+            expanded["repo"] = ch["slug"]
+            out.append(expanded)
+    return out
+
+
 def load_backlog(path: pathlib.Path = BACKLOG) -> list:
-    return json.loads(path.read_text())["items"]
+    return expand_backlog(json.loads(path.read_text())["items"])
 
 
 def ready(data: dict, at: dt.datetime) -> list:
@@ -79,7 +110,21 @@ def do_refill(data: dict, items: list, at: dt.datetime, min_ready: int = MIN_REA
     def busy(key):
         return any(j.get("backlog") == key and j["status"] in LIVE for j in data["jobs"])
 
-    items = [it for it in items if not it.get("paused")]
+    items = expand_backlog([it for it in items if not it.get("paused")])
+
+    _reg_cache = None
+
+    def analytics_ready(it) -> bool:
+        if not it.get("requires_analytics_ready"):
+            return True
+        nonlocal _reg_cache
+        try:
+            import rsi
+            if _reg_cache is None:
+                _reg_cache = rsi.load_register()
+            return rsi.channel_cycle_ready(it.get("repo") or channels.default(), _reg_cache)
+        except Exception:  # noqa: BLE001
+            return False
 
     def add(it):
         nonlocal have
@@ -111,10 +156,21 @@ def do_refill(data: dict, items: list, at: dt.datetime, min_ready: int = MIN_REA
         add(monthly)
         data["jobs"][-1].update(report_month=period, due=studio.iso(due + dt.timedelta(days=2)), due_kind="monthly-audit")
 
+    # Guaranteed weekly RSI & ops loops (J3257): due every every_h (168 h) even when production fills the ready queue.
+    for it in items:
+        if not it.get("guaranteed_weekly") or it.get("monthly_on") or it.get("daily_at"):
+            continue
+        key = it["key"]
+        if busy(key) or not analytics_ready(it):
+            continue
+        if key in last and at - studio.parse(last[key]) < dt.timedelta(hours=it.get("every_h", 168)):
+            continue
+        add(it)
+
     # Daily items (Ben, 12 Oct 22:19): an item with "daily_at": "HH:MM" (London) is added once per London day as soon
     # as that time has passed, whatever the ready count, and put first in line (urgent), so it runs before 09:00.
     for it in items:
-        if it.get("monthly_on") or not it.get("daily_at") or busy(it["key"]):
+        if it.get("monthly_on") or it.get("guaranteed_weekly") or not it.get("daily_at") or busy(it["key"]):
             continue
         ln = at.astimezone(jobs.LONDON)
         hh, mm = (int(x) for x in it["daily_at"].split(":"))
@@ -124,12 +180,12 @@ def do_refill(data: dict, items: list, at: dt.datetime, min_ready: int = MIN_REA
         add(it)
         data["jobs"][-1]["urgent"] = 0
     for it in items:
-        if it.get("daily_at") or it.get("monthly_on"):
+        if it.get("daily_at") or it.get("monthly_on") or it.get("guaranteed_weekly"):
             continue
         if have >= min_ready:
             break
         key = it["key"]
-        if busy(key):
+        if busy(key) or not analytics_ready(it):
             continue
         if key in last and at - studio.parse(last[key]) < dt.timedelta(hours=it.get("every_h", 24)):
             continue
@@ -140,6 +196,7 @@ def do_refill(data: dict, items: list, at: dt.datetime, min_ready: int = MIN_REA
             floor = min(FALLBACK_MIN_H, it.get("every_h", 24) / 4)
             return not prev or at - studio.parse(prev) >= dt.timedelta(hours=floor)
         free = [it for it in items if not busy(it["key"]) and not it.get("daily_at") and not it.get("monthly_on")
+                and not it.get("guaranteed_weekly") and analytics_ready(it)
                 and it.get("every_h", 24) < STRICT_EVERY_H and rested(it)]
         if free:
             add(min(free, key=lambda it: last.get(it["key"], "")))
