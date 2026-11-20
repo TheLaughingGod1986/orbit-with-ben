@@ -290025,10 +290025,10 @@
       "stage": "edit",
       "after": "J3234",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-20T15:00Z",
+      "eta": "2026-11-20T17:00Z",
       "created_by": "gemini",
       "created_at": "2026-11-20T14:16Z",
       "result": "",
@@ -290042,6 +290042,11 @@
           "at": "2026-11-20T14:23Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-20T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
+        },
+        {
+          "at": "2026-11-20T15:00Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Audition hos_009_wonder_v03_synth.wav, hos_009_score_joined_v03.wav, 168-186s join, 5-part VO mix, and tail via demonstrated audio_input and commit EAR_REVIEW_v03_synth.md",
@@ -290059,7 +290064,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T15:00Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3236",
