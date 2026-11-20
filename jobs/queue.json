@@ -282541,13 +282541,13 @@
       "stage": "edit",
       "after": "J3128",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-11-19T23:15Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-19T14:23Z",
-      "result": "parked for Chief: s06 v05 and s07 v05 pass picture, polish, music and the Shorts open gate on new no-spend beds (highest similarity 0.289). s08 v02 passes picture, polish and music; the open gate still fails because the locked picture's first cut is at 4.50s, the same fail as v01. No YouTube swap. Zero spend. Candidates are in the film folder 10_Shorts/J3137. Local commit b64ed784.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-19T14:23Z",
@@ -282608,35 +282608,20 @@
           "at": "2026-11-20T08:36Z",
           "by": "relay",
           "what": "condition verification queued: J3200"
+        },
+        {
+          "at": "2026-11-20T14:07Z",
+          "by": "gemini",
+          "what": "reopened: Acting-Chief (gemini) ruling on J3200: waiting condition satisfied. J3188 containment done (v04 Sq_lV89VMUs/fgsR8yAHr5s Private/unscheduled and retired in library.json via merged HOS PR #691 bc4e8b7f; superseded PR #686 closed), HOS PR #687 (b64ed784) merged to HOS main (26f9f40c), direct whole-mix audio+video perceptual QA committed in jobs/reviews/J3200/REVIEW.md (30c1e960ed), Ben approved exact s06_v05 & s07_v05 (HOS-J3187.1/2), and J3216 published/scheduled replacements; s08_v02 remains excluded/failed. Reopening solely to close done without restarting assembly."
         }
       ],
       "remaining_action": "Complete J3187 perceptual review and exact-cut final watch handoff; keep s08 excluded",
       "kind": "assembly",
       "plain": "Build zero-spend synthesized Short music beds for HOS 005 Shorts s06, s07, and s08 so they pass the full archived music check",
       "due": "2026-11-20T09:30:00Z",
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-19T23:31Z",
-        "by": "cursor",
-        "note": "s06 v05 and s07 v05 pass every gate. s08 v02 picture matches v01 and still fails the open gate at a 4.50s first cut. No "
-      },
       "taskKeys": [
         "HOS:005"
       ],
-      "hold": {
-        "type": "capability",
-        "condition": "J3177 ruling PR1055 at 92e6fd0bff accepts technical evidence only. J3187 must provide demonstrated whole-mix listening and moving-video review of exact s06/s07 v05, then applicable exact-cut final watch; this session has no demonstrated audio or moving-video input. s08 remains excluded and failed, no rework. Parent assembly must not restart.",
-        "check_at": "2026-11-20T09:36:40+00:00",
-        "requires": [
-          "audio_input",
-          "moving_video_input"
-        ],
-        "last_recheck": "J3177",
-        "checked_at": "2026-11-20T02:45:03+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3200"
-      },
       "escalated_at": "2026-11-20T01:42Z",
       "required_capabilities": [
         "audio_input",
