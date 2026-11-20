@@ -291003,13 +291003,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-20T18:02Z",
-      "eta": "2026-11-20T19:32Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-20T17:56Z",
-      "result": "",
+      "result": "parked for Chief: needs a worker with web. The MacBook Claude lane has no web (WebSearch refused again on this run), so the neighbour pass with real view counts cannot be done here. Released at 18:01Z and handed straight back to the same lane at 18:02Z. Route to Gemini or Codex on the Mini or the MacBook Gemini slot, or rule on using vidIQ search credits. Nothing started: no branch, PR, folders, WIP line or review job.",
       "history": [
         {
           "at": "2026-11-20T17:56Z",
@@ -291030,6 +291030,11 @@
           "at": "2026-11-20T18:02Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T18:03Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: needs a worker with web. The MacBook Claude lane has no web (WebSearch refused again on this run), so the neighbour pass with real view counts cannot be done here. Released at 18:01Z and handed straight back to the same lane at 18:02Z. Route to Gemini or Codex on the Mini or the MacBook Gemini slot, or rule on using vidIQ search credits. Nothing started: no branch, PR, folders, WIP line or review job."
         }
       ],
       "remaining_action": "Pick two data-backed History of Science topics and add them to the waiting line",
