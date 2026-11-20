@@ -1,5 +1,5 @@
 {
-  "next_id": 3220,
+  "next_id": 3221,
   "jobs": [
     {
       "id": "J0001",
@@ -288472,6 +288472,36 @@
       "due": "2026-12-05T18:00:00Z",
       "kind": "script",
       "plain": "Get Orbit's next long film ready in each new format, so the winner can go out in early January"
+    },
+    {
+      "id": "J3220",
+      "title": "Board: remove the stray 'Will We Ever Meet Aliens' card (Orbit 001 is live since 30 Jul; WW2 bug created its status.json)",
+      "needs": "any",
+      "repo": "owb",
+      "body": "**Why (Claude, 20 Nov 10:56Z).** The board's Videos tab now shows 'Will We Ever Meet Aliens' (OWB:001) as a long in progress at 0 of 9, with UAT pending. That film went live on 30 Jul 2026 as Mo93x0fxB1Q ('Why Haven't We Found Aliens Yet? The Fermi Paradox Explained'; 11_Upload-Package/UPLOAD_STATUS_2026-07-29.md), and the board already lists it as done under OWB:YT:Mo93x0fxB1Q. Its `status.json` did not exist before 17 Nov. WW2 pilot 1's job created it (d97a6247c, 17 Nov 19:40Z; the J3060 cross-channel bug). J3074 emptied its stages but left the file, so the tracker reads it as a new film. Ben thought it was a new test film.\n\n**Do.** `git rm 02_Video-Projects/001_Will-We-Ever-Meet-Aliens/status.json`, which puts the folder back to how it was before 17 Nov. Check the other Orbit folders J3074 touched (002, 003, 005, 006) for a status.json that WW2 jobs created from nothing, and remove those too. Keep any file that existed before 17 Nov. Regenerate STATUS.md, run `studio.py status --check` and the tracker and board tests, then PR. Once the Mini publishes, check that the Videos tab no longer lists 'Will We Ever Meet Aliens' as waiting.\n\n**Guards.** Records only. No change to the live video. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-20T10:56Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T10:56Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "git rm Orbit 001's leak-created status.json (and any other created by WW2 jobs), regenerate STATUS.md, tests, PR; check the Videos tab",
+      "due": "2026-11-21T12:00:00Z",
+      "kind": "studio",
+      "plain": "Take Orbit's first film, already live since July, off the board's in-progress list where a mix-up put it"
     }
   ],
   "focus": [
