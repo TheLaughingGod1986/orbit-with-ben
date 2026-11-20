@@ -58,7 +58,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3161 | mini | blocked | codex | – | studio · Supermoon Short: next-morning and full-day performance follow-up |  |
 | J3176 | any | blocked | codex | – | 024 edit · chief · OWB 024 muon Short: decide whether to swap gc1hWQQJOq4 onto the v06 bed |  |
 | J3178 | mini | blocked | gemini | – | 013 picture · for gemini · qa · `gemini-argon` · HOS 013: continuous playback review of ten unresolved pass-one plates |  |
-| J3187 | mini | **stalled** | gemini | 2026-11-20T06:34Z | 005 edit · for gemini · qa · `gemini-argon` · HOS 005: perceptual QA and exact-cut watch handoff for repaired cuff and pulse Shorts |  |
+| J3187 | mini | open | – | – | 005 edit · for gemini · qa · `gemini-argon` · HOS 005: perceptual QA and exact-cut watch handoff for repaired cuff and pulse Shorts |  |
 | J3195 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
 | J3196 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3161 |  |
 | J3198 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3178 |  |
@@ -71,7 +71,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3210 | mini | open (after J3208) | – | – | WW2:006 vo · for gemini · vo · WW2 film 006: narration in Ben's voice (the wooden bomber) |  |
 | J3215 | mini | open | – | – | for gemini · chief · `gemini-argon` · HOS desk #180 is full (2,500 comments): open HOS desk 2, repoint the board and tools, repost Ben's two lost taps |  |
 | J3219 | mini | blocked | macbook | – | script · Orbit after 16 Dec: prepare the next film in each format test (every-X script, journey and sleep outlines) and the 22/26/30 Dec readout sheet; January style test (July illustrated look, Ben OK 20 Nov) |  |
-| J3221 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2537 |  |
+| J3221 | mini | claimed | gemini | 2026-11-20T13:52Z | for gemini · review · `gemini-argon` · Verify condition for J2537 |  |
 | J3223 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · History of Science: full audit (views trend and drop, every video by topic and source, audience countries and ages, search terms) |  |
 | J3224 | mini | open (after J3223) | – | – | for gemini · script · `gemini-argon` · History of Science: search-led research and a new plan for the board (Anglosphere, adult, low competition), waiting for Ben's OK |  |
 | J3225 | any | blocked | claudecode | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
