@@ -292414,13 +292414,13 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-20T22:53Z",
-      "eta": "2026-11-21T02:53Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-20T22:51Z",
-      "result": "",
+      "result": "PR #1090 (branch macbook/J3257, commit 0253bfb44): built registry-driven Recursive Self-Improvement (RSI) loop for all channels via scripts/channels.py — 05_Analytics/EXPERIMENTS.json + scripts/rsi.py (16 seeded experiments, max 3 live/channel, guardrails, min_sample, autopsy-to-hypothesis ingestion), per-channel weekly-improvement-{slug} + studio-ops-loop replacing monthly-improvement items in jobs/backlog.json & scripts/refill.py, scripts/ops_loop.py + 2026-11-20 baseline in 05_Analytics/ops_loop/, dashboard 'What the studio is learning' card & #learning page (board_publish.py + studio_app.js/html), docs/RSI_LOOP.md, and tests incl. dummy-channel cycle test (160 Python tests + test_studio_app.cjs + board_site/build.py + channel ratchet 0/0 + core/rules/status checks PASS). Left open for Chief merge; all checkouts on main.",
       "history": [
         {
           "at": "2026-11-20T22:51Z",
@@ -292441,6 +292441,11 @@
           "at": "2026-11-20T22:56Z",
           "by": "macbook-2",
           "what": "step 1 of 5 done"
+        },
+        {
+          "at": "2026-11-20T23:13Z",
+          "by": "macbook-2",
+          "what": "done: PR #1090 (branch macbook/J3257, commit 0253bfb44): built registry-driven Recursive Self-Improvement (RSI) loop for all channels via scripts/channels.py — 05_Analytics/EXPERIMENTS.json + scripts/rsi.py (16 seeded experiments, max 3 live/channel, guardrails, min_sample, autopsy-to-hypothesis ingestion), per-channel weekly-improvement-{slug} + studio-ops-loop replacing monthly-improvement items in jobs/backlog.json & scripts/refill.py, scripts/ops_loop.py + 2026-11-20 baseline in 05_Analytics/ops_loop/, dashboard 'What the studio is learning' card & #learning page (board_publish.py + studio_app.js/html), docs/RSI_LOOP.md, and tests incl. dummy-channel cycle test (160 Python tests + test_studio_app.cjs + board_site/build.py + channel ratchet 0/0 + core/rules/status checks PASS). Left open for Chief merge; all checkouts on main."
         }
       ],
       "remaining_action": "Build experiment register, autopsy-to-hypothesis pipeline, registry-driven weekly cycle, ops loop, dashboard card, and tests",
