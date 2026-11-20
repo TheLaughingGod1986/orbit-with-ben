@@ -292512,21 +292512,27 @@
           "at": "2026-11-20T23:12Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T23:12Z",
+          "by": "cursor",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Extract frame-0 cover from approved hos_005_s07_heart_pulse_v05.mp4, set on el30-mHiH-0 with Studio/API readback, and PR SHORTS_RELEASE.json v05 IDs",
+      "remaining_action": "Verify the approved heart Short file, then extract its frame-0 cover",
       "due": "2026-11-22T10:00:00Z",
       "kind": "studio",
       "plain": "Set the frame-0 cover on the scheduled Sunday heart Short el30-mHiH-0 and update HOS 005 SHORTS_RELEASE.json to the live v05 IDs",
       "mini_only": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-20T23:12Z",
-        "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "cursor"
+      },
+      "taskKeys": [
+        "HOS:005"
+      ]
     }
   ],
   "focus": [
