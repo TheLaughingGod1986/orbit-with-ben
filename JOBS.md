@@ -61,6 +61,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3187 | mini | claimed | gemini | 2026-11-20T06:34Z | 005 edit · for gemini · qa · `gemini-argon` · HOS 005: perceptual QA and exact-cut watch handoff for repaired cuff and pulse Shorts |  |
 | J3195 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
 | J3196 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3161 |  |
+| J3197 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 
 Recently finished:
 
