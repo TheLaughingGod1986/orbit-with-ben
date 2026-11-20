@@ -286026,6 +286026,11 @@
           "at": "2026-11-20T04:49Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Step 2 complete: finished whole-mix audio and moving-video perceptual review of s06_v05 and s07_v05, BPM/level analysis, and 0:22 / 0:10 low-detail warning checks"
+        },
+        {
+          "at": "2026-11-20T04:57Z",
+          "by": "gemini",
+          "what": "waits on Ben: Watch the Harvey cuff Short v05 (new own-synthesis woodblock music bed replacing the shared Part 05 bed). Ready to schedule for Friday 20 November at 11:30 London if you pass it. (by 2026-11-20 10:30 London)"
         }
       ],
       "remaining_action": "Verifying and publishing HOS branch cursor/j3137-music-beds (commit b64ed784) as an exact-commit PR",
@@ -286054,7 +286059,24 @@
       },
       "taskKeys": [
         "HOS:005"
-      ]
+      ],
+      "awaits_ben": {
+        "what": "Watch the Harvey cuff Short v05 (new own-synthesis woodblock music bed replacing the shared Part 05 bed). Ready to schedule for Friday 20 November at 11:30 London if you pass it.",
+        "file": "HOS UAT/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s06_blood_pressure_cuff_v05.mp4",
+        "version": "v05",
+        "due": "2026-11-20T10:30Z",
+        "airs": "2026-11-20T11:30Z",
+        "ifNot": "Sq_lV89VMUs (v04) stays Private and unscheduled after J3188 containment; the Friday 20 November 11:30 slot stays empty until you approve v05.",
+        "title": "How Does a Blood Pressure Cuff Work?",
+        "number": "005",
+        "type": "short",
+        "prev": [
+          "HOS-J2230.1"
+        ],
+        "fixed": [
+          "Replaced reused Part 05 music bed (0.843 similarity to HOS 002) with distinct own-synthesis dry woodblock bed (max similarity 0.2885); locked v04 picture and VO unchanged"
+        ]
+      }
     },
     {
       "id": "J3188",
