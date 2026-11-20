@@ -285922,20 +285922,25 @@
           "at": "2026-11-20T02:51Z",
           "by": "cursor",
           "what": "step 1 of 5 done: Both Shorts are still Private on the recorded v04 files: cuff 20 Nov 11:30Z, pulse 22 Nov 11:30Z. File sizes match."
+        },
+        {
+          "at": "2026-11-20T02:52Z",
+          "by": "cursor",
+          "what": "step 2 of 5 done: Both Shorts read back Private with no publish time. Same titles and file sizes."
         }
       ],
-      "remaining_action": "Clear the publish time on the two Private Shorts and read them back",
+      "remaining_action": "Cancel the matching Buffer posts and update the upload records",
       "due": "2026-11-20T09:30:00Z",
       "kind": "studio",
       "plain": "Keep the blood pressure and pulse Shorts private while their failed music is resolved",
       "mini_only": true,
       "urgent": 6,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-20T02:51Z",
+        "at": "2026-11-20T02:52Z",
         "by": "cursor",
-        "note": "Both Shorts are still Private on the recorded v04 files: cuff 20 Nov 11:30Z, pulse 22 Nov 11:30Z. File sizes match."
+        "note": "Both Shorts read back Private with no publish time. Same titles and file sizes."
       },
       "taskKeys": [
         "HOS:005"
