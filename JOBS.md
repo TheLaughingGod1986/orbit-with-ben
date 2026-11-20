@@ -75,7 +75,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3225 | any | blocked | claudecode | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J3227 | any | blocked | claudecode | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J3228 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2035 |  |
-| J3229 | mini | open | – | – | review · Verify condition for J2040 |  |
+| J3229 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
 | J3230 | mini | open | – | – | review · Verify condition for J2171 |  |
 
 Recently finished:

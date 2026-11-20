@@ -289336,13 +289336,27 @@
           "at": "2026-11-20T12:06Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-20T12:07Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-20T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Verify readiness: Await operator confirmation and fresh-session acceptance evidence for the scoped command permissions; recheck at noon UTC on 20 November.",
       "kind": "review",
       "recheck_of": "J2040",
       "due": "2026-11-20T13:06:58+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J3230",
