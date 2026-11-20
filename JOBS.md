@@ -64,7 +64,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3254 | mini | open | – | – | studio · Field Order History: set up its upload path (Studio browser profile + port, upload tooling for ww2, Ben's one sign-in), so finished pilots can go out |  |
 | J3255 | mini | open (after J3254) | – | – | studio · YouTube and Studio settings audit for growth: every channel setting, upload default, layout, playlist and eligibility; fix the safe ones, ask Ben the rest |  |
 | J3258 | mini | open (after J3254) | – | – | studio · History of Science: take the two shared upload files from #1089 and add the uploadFor hook, so HOS uploads keep working |  |
-| J3260 | mini | open | – | – | review · Verify condition for J2036 |  |
+| J3260 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2036 |  |
 
 Recently finished:
 
