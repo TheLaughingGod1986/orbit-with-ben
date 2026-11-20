@@ -4,7 +4,7 @@ Prepared 18 November 2026. This is the phase 3 execution runbook, not permission
 The latest J3012 brief supersedes the original history-rewrite dependency: create a clean root commit; do not
 copy Orbit's Git history. J2537's history rewrite is not a prerequisite. The source history remains in Orbit.
 
-## Resume here (20 November, companion guard review complete)
+## Resume here (20 November, board credential probe prepared)
 
 PR 1011 is the existing delivery branch; do not recreate the runbook or reset J3012's **3/4** progress.
 Its queue history and the newest `jobs/reviews/J3012/` evidence describe completed preparation.
@@ -28,7 +28,10 @@ The Mini shared checkout is on another worker branch with local edits; its three
 A successful pull on that branch does not install the main-branch patch. Preserve its edits and drain writers before
 propagating reviewed code. The three canonical NAS working paths were absent, not verified safe. See
 `jobs/reviews/J3012/COMPANION_REVIEW_2026-11-20.md` for the review and installation boundary.
-Next: propagate the merged guard patch after draining affected writers; deployed board credential Contents probe; remaining wrapper replacements; MacBook inventory;
+The Cloudflare session was refreshed and the production project inspected read-only. Its GitHub token exists as
+an unreadable secret; preview has no token. A disabled-by-default authenticated runtime probe is now prepared,
+not deployed. See **Board credential probe** below and `jobs/reviews/J3012/BOARD_ACCESS_2026-11-20.md`.
+Next: propagate the merged guard patch after draining affected writers; deploy and run the prepared board credential probe; remaining wrapper replacements; MacBook inventory;
 refreshed private rehearsal. Do not equate installed-service inventory with loaded-service or guard verification.
 Keep the live switch gated on the timing and acceptance below. This run does not change the official daily
 history or send the day-before notice.
@@ -135,6 +138,35 @@ The PR routes legacy `/api/ref` through `/api/data` with `f=ref`, so it shares t
 authentication and private cache rules. Check stale client public fallbacks before cutover.
 Verify signed-out reads return 401, paired reads return current studio data, and private replies have private cache
 headers. Check the Tracker's embedded public snapshot policy explicitly before deploying a private-data page.
+
+### Board credential probe (prepared, not deployed)
+
+The 20 November read-only Cloudflare project inspection confirmed that production has `BOARD_GH_TOKEN` as
+`secret_text`, with no readable value; preview has no such binding. The existing Wrangler login refreshed normally.
+This proves neither private Studio Contents access nor a missing permission. Do not substitute a CLI GitHub token,
+copy the production secret into preview, rotate a token, or ask Ben to change permissions on that evidence.
+
+`api/migration.js`, routed at `/api/migration`, checks inside the actual server runtime. It is off unless
+`BOARD_MIGRATION_PROBE=1`. It requires the existing board key or paired cookie even when the board is public or open
+taps are enabled. It only makes authenticated GET requests to the fixed private Studio repository, then reads
+`rehearsal/j3012` and `channels/channels.json` at that exact commit. It never falls back to anonymous reads, follows
+redirects, accepts a caller-selected target, writes GitHub state, or returns the file or token. Responses are no-store;
+upstream failures return only a stage and status. Each upstream read has an eight-second timeout.
+
+To finish this gate, the elected Chief should review and deploy this small additive handler and worker route from
+an otherwise current production board build, retaining the existing production configuration and deployment for
+rollback. Do not deploy this whole unmerged migration branch just to run the probe. Add only the temporary enable
+flag, without replacing existing secrets or changing `BOARD_DATA_REPO`, private mode, ticks, cookies or the board key.
+Read the endpoint through the paired board session (or the existing key in a header, never in a URL or printed shell
+argument). Verify anonymous requests return 401, and authenticated requests return `ok: true`, `private: true`,
+`contentsRead: true` and the rehearsal commit. Record deployment ID, UTC time and sanitized response, not credentials.
+A 403/404 is an unresolved access/ref result: check the rehearsal ref exists independently before concluding a grant
+is missing. A missing binding is configuration, not a reason to create another token. Only a proven access change
+that the existing tools cannot make goes to Ben.
+
+Disable the flag immediately after the observation and verify 404. Remove the temporary handler in the final
+cleanup once live acceptance is recorded. Its passing mocked tests are not a deployed credential test. No production
+build, binding or deployment changed during preparation, and the move still waits on all other timing/acceptance gates.
 
 ## Machine changes and cutover order
 

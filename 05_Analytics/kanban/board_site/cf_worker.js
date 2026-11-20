@@ -4,7 +4,8 @@ import data from "./api/data.js";
 import pair from "./api/pair.js";
 import ref from "./api/ref.js";
 import watch from "./api/watch.js";
-const routes = { checks, data, pair, ref, watch };
+import migration from "./api/migration.js";
+const routes = { checks, data, pair, ref, watch, migration };
 export default {
   async fetch(request, env) {
     const name = new URL(request.url).pathname.match(/^\/api\/([a-z]+)\/?$/)?.[1];
