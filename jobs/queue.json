@@ -287328,9 +287328,14 @@
           "at": "2026-11-20T13:05Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T13:06Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Await J3178 continuous playback evidence for ten unresolved scenes, then Chief marks and closure",
+      "remaining_action": "Inspect J2529 wait condition, J3178 playback follow-up status, HOS desk evidence, and session capabilities",
       "kind": "review",
       "recheck_of": "J2529",
       "mini_only": true,
@@ -287351,11 +287356,12 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-20T13:05Z",
-        "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "at": "2026-11-20T13:06Z",
+        "by": "gemini"
+      },
+      "taskKeys": [
+        "HOS:013"
+      ]
     },
     {
       "id": "J3196",
