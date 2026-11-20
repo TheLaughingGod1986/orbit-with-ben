@@ -292290,13 +292290,13 @@
       "stage": "",
       "after": "",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-20T22:49Z",
-      "eta": "2026-11-21T01:49Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-20T22:47Z",
-      "result": "",
+      "result": "Pushed 617ae7ba8c: added scripts/retention_autopsy.py (0-100 RSI vs channel median + niche <50k outliers, strict 5-step funnel diagnosis, steepest 3 drop-point 40s clip extractor), wired 48h/7d auto-queueing for OWB/HOS/WW2 into scripts/launch_check.py (chained after 48h/7d reads, requiring audio_input+moving_video_input, 124 tests PASS), watched 11 cut clips with video+audio and wrote 05_Analytics/owb/autopsy/c5AdqQsnnys_48h.md, 05_Analytics/owb/autopsy/Js6EQJ8qDi8_7d.md, and 05_Analytics/hos/autopsy/ETynHpIYLeY_7d.md, logged Rule 38 in 05_Analytics/LEARNINGS.md, and posted studio thread report. Read-only on live videos; £0.",
       "history": [
         {
           "at": "2026-11-20T22:47Z",
@@ -292352,6 +292352,11 @@
           "at": "2026-11-20T23:04Z",
           "by": "gemini",
           "what": "step 6 of 6 done: Pushed 617ae7ba8c (124 unit tests passing); posted studio thread report"
+        },
+        {
+          "at": "2026-11-20T23:05Z",
+          "by": "gemini",
+          "what": "done: Pushed 617ae7ba8c: added scripts/retention_autopsy.py (0-100 RSI vs channel median + niche <50k outliers, strict 5-step funnel diagnosis, steepest 3 drop-point 40s clip extractor), wired 48h/7d auto-queueing for OWB/HOS/WW2 into scripts/launch_check.py (chained after 48h/7d reads, requiring audio_input+moving_video_input, 124 tests PASS), watched 11 cut clips with video+audio and wrote 05_Analytics/owb/autopsy/c5AdqQsnnys_48h.md, 05_Analytics/owb/autopsy/Js6EQJ8qDi8_7d.md, and 05_Analytics/hos/autopsy/ETynHpIYLeY_7d.md, logged Rule 38 in 05_Analytics/LEARNINGS.md, and posted studio thread report. Read-only on live videos; £0."
         }
       ],
       "remaining_action": "Completed J3256 retention autopsy system, 3 watched test reports, and LEARNINGS Rule 38",
