@@ -288499,10 +288499,10 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-20T10:58Z",
+      "eta": "2026-11-20T11:18Z",
       "created_by": "claude",
       "created_at": "2026-11-20T10:56Z",
       "result": "",
@@ -288516,12 +288516,25 @@
           "at": "2026-11-20T10:57Z",
           "by": "claude",
           "what": "Widen this job (Claude, 20 Nov 10:57Z): four more early Orbit films show on the Videos tab as 'Planned' although they went live in Aug-Sep, and the board also lists each one as done under OWB:YT. They are 003 Exoplanets Strangest Alien Worlds (live 13 Aug as 'Alien Worlds: The Strangest Planets We've Ever Found'), 005 The Last Star In The Universe (27 Aug, 'The Last Star: What Happens When a Red D"
+        },
+        {
+          "at": "2026-11-20T10:58Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "git rm Orbit 001's leak-created status.json (and any other created by WW2 jobs), regenerate STATUS.md, tests, PR; check the Videos tab",
       "due": "2026-11-21T12:00:00Z",
       "kind": "studio",
-      "plain": "Stop Orbit's early films, already live since the summer, showing on the board as if they were still to be made"
+      "plain": "Stop Orbit's early films, already live since the summer, showing on the board as if they were still to be made",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T10:58Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
