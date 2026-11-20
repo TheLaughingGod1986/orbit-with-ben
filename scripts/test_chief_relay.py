@@ -649,7 +649,7 @@ class Relay(unittest.TestCase):
                               '{"id": "J0302", "kind": "assembly", "status": "open", "needs": "mini"}, '
                               '{"id": "J0303", "kind": "chief", "status": "open", "needs": "cloud"}, '
                               '{"id": "J0304", "model": "claude-opus-5-5", "status": "open", "needs": "ben"}, '
-                              '{"id": "J0305", "kind": "listing", "status": "open", "needs": "macbook"}]}')
+                              '{"id": "J0305", "kind": "script", "status": "open", "needs": "macbook"}]}')
         cr.mark_down("claude", "usage limit", T0 + 120 * MIN, T0)
         cr.seen("chief", T0 - 10 * MIN)
         cr.cmd_run(T0)
@@ -664,7 +664,7 @@ class Relay(unittest.TestCase):
 
     def test_with_cursor_down_the_claude_job_goes_to_gemini_before_codex(self):
         os.environ["AGY_BIN"] = str(self.fake("agy", f'echo "$@" > {self.tmp}/agy.args; echo "gemini did it"'))
-        q = self.claude_setup('{"jobs": [{"id": "J0308", "kind": "listing", "status": "open", "needs": "cloud"}]}')
+        q = self.claude_setup('{"jobs": [{"id": "J0308", "kind": "script", "status": "open", "needs": "cloud"}]}')
         cr.mark_down("claude", "usage limit", None, T0)
         cr.mark_down("cursor", "out of credit", T0 + 60 * MIN, T0)
         cr.seen("chief", T0 - 10 * MIN)
@@ -709,7 +709,7 @@ class Relay(unittest.TestCase):
         self.assertEqual(self.job(q, "J0310")["for"], "cursor")
 
     def test_with_cursor_and_gemini_down_the_claude_job_goes_to_codex_on_astra(self):
-        q = self.claude_setup('{"jobs": [{"id": "J0305", "kind": "listing", "status": "open", "needs": "cloud"}]}')
+        q = self.claude_setup('{"jobs": [{"id": "J0305", "kind": "script", "status": "open", "needs": "cloud"}]}')
         cr.mark_down("claude", "usage limit", None, T0)
         cr.mark_down("cursor", "out of credit", T0 + 60 * MIN, T0)
         cr.mark_down("gemini", "quota exhausted", T0 + 60 * MIN, T0)

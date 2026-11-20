@@ -53,14 +53,24 @@ class Routing(unittest.TestCase):
 
     def test_claude_jobs_walk_claude_cursor_on_claude_gemini_then_codex(self):
         """Ben, 11 Oct 2026 23:40 ("a Claude model in Cursor") and 23:47 ("we also have Gemini and Codex")."""
-        for kind in ("script", "review", "qa", "listing"):
-            self.assertEqual(routing.chain(kind), [("claude", "claude-opus-5-5"), ("cursor", "cursor-claude-opus-5-5"),
-                                                   ("gemini", "gemini-argon"), ("codex", "gpt-6-astra"),
-                                                   routing.MINI_CLAUDE], kind)
+        claude_chain = [("claude", "claude-opus-5-5"), ("cursor", "cursor-claude-opus-5-5"),
+                        ("gemini", "gemini-argon"), ("codex", "gpt-6-astra"), routing.MINI_CLAUDE]
+        for kind in ("script", "review"):
+            self.assertEqual(routing.chain(kind), claude_chain, kind)
             self.assertEqual(routing.model_for({"kind": kind}, "cursor"), "cursor-claude-opus-5-5")
             self.assertEqual(routing.model_for({"kind": kind}, "gemini"), "gemini-argon")
             self.assertEqual(routing.model_for({"kind": kind}, "codex"), "gpt-6-astra")
-        self.assertEqual(routing.model_for({"kind": "facts"}, "cursor"), "")  # Cursor drives agy there, not Claude
+        # J3237: QA and listing start on Neon so Claude's scarce allowance stays on script and review.
+        neon_chain = [("gemini", "gemini-argon"), ("claude", "claude-opus-5-5"),
+                      ("cursor", "cursor-claude-opus-5-5"), ("codex", "gpt-6-astra"), routing.MINI_CLAUDE]
+        for kind in ("qa", "listing"):
+            self.assertEqual(routing.chain(kind), neon_chain, kind)
+            self.assertFalse(routing.claude_owned({"kind": kind}))
+            self.assertEqual(routing.model_for({"kind": kind}, "gemini"), "gemini-argon")
+            self.assertEqual(routing.model_for({"kind": kind}, "cursor"), "cursor-claude-opus-5-5")
+            self.assertEqual(routing.model_for({"kind": kind}, "codex"), "gpt-6-astra")
+        self.assertEqual(routing.chain("facts")[0], ("gemini", "gemini-argon"))
+        self.assertEqual(routing.model_for({"kind": "facts"}, "cursor"), "")  # Cursor still drives default agy as the next lane
         self.assertEqual(routing.chain("chart")[0], ("codex", "gpt-6-astra"))  # code and graphics: Codex first
         self.assertEqual(routing.cli_model("cursor-claude-opus-5-5"), routing.CURSOR_CLAUDE_MODEL)
         self.assertEqual(routing.CURSOR_CLAUDE_MODEL, "claude-opus-5-5")  # Cursor's Opus 5.5 id on the Mini
@@ -69,6 +79,10 @@ class Routing(unittest.TestCase):
         self.assertEqual(routing.AGY_ARGON_MODEL, "gemini-4-neon-high")
         self.assertEqual(routing.AGY_ARGON_FALLBACK, "gemini-4-argon-high")
         self.assertTrue(routing.claude_owned({"kind": "script"}))
+        self.assertTrue(routing.claude_owned({"kind": "review"}))
+        self.assertFalse(routing.claude_owned({"kind": "qa"}))
+        self.assertFalse(routing.claude_owned({"kind": "listing"}))
+        self.assertFalse(routing.claude_owned({"kind": "facts"}))
         self.assertFalse(routing.claude_owned({"kind": "script", "model": "gpt-6-astra"}))
         self.assertFalse(routing.claude_owned({"kind": "chart"}))
 
