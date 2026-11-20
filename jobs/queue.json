@@ -269572,9 +269572,14 @@
           "at": "2026-11-20T18:14Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Resumed J2993 from clean v42 checkpoint 36edd03 (38.04% archive, 82 scenes, 59 unique sources, max run 49.80s); auditing Runs #1-10 and MiniWork disk space (179Mi free)."
+        },
+        {
+          "at": "2026-11-20T18:21Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Individually inspected 25 Commons/IWM/NARA originals (rejected 3 watermarked IWM T 30/T 54/D 20392 and light-leaked H 39106; verified T 31 & T 36 live on iwm.org.uk); rendering 20 clean official US/UK inserts for v43."
         }
       ],
-      "remaining_action": "Break remaining 30-50s diagram runs with verified US/UK archive photos, render v43, verify, and check remaining polish/QA",
+      "remaining_action": "Render 20 verified US/UK archive inserts into v43, verify 41418-frame decode and audio hash, copy to NAS, and commit checkpoint",
       "due": "2026-11-25T18:00:00Z",
       "for": "gemini",
       "kind": "assembly",
@@ -269586,9 +269591,9 @@
       "progress": {
         "step": 2,
         "of": 5,
-        "at": "2026-11-20T18:14Z",
+        "at": "2026-11-20T18:21Z",
         "by": "gemini",
-        "note": "Resumed J2993 from clean v42 checkpoint 36edd03 (38.04% archive, 82 scenes, 59 unique sources, max run 49.80s); auditing"
+        "note": "Individually inspected 25 Commons/IWM/NARA originals (rejected 3 watermarked IWM T 30/T 54/D 20392 and light-leaked H 39"
       },
       "rerouted_from": {
         "needs": "mini",
