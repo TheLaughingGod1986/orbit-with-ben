@@ -69,7 +69,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3245 | any | blocked | macbook | – | script · HOS: learn from our data, add two new films to the backlog |  |
 | J3246 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J1275 |  |
 | J3249 | mini | open | – | – | assembly · MiniWork scratch SSD cleanup: safely offload old completed-job scratch to NAS to restore >=40 GB free before J3012 daily split and cutover |  |
-| J3250 | mini | open | – | – | review · Verify condition for J2529 |  |
+| J3250 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
 
 Recently finished:
 
