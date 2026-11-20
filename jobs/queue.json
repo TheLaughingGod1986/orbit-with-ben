@@ -272092,18 +272092,23 @@
           "at": "2026-11-20T07:29Z",
           "by": "codex",
           "what": "step 3 of 4 done: Cloudflare session refreshed; production token is write-only secret and preview has none. Prepared authenticated opt-in runtime probe; six probe tests and 21 data API tests pass, four browser checks skipped."
+        },
+        {
+          "at": "2026-11-20T07:31Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: PR 1011 updated a575594b0d: authenticated runtime access probe prepared; seven probe, 21 data, 13 auth, four build and 13 security tests pass. Four browser checks skipped. Production deployment unchanged."
         }
       ],
-      "remaining_action": "Verify runtime board access, install guards safely and finish migration rehearsal",
+      "remaining_action": "Run the prepared production board access check, safely install guards, and finish migration rehearsal",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-20T07:29Z",
+        "at": "2026-11-20T07:31Z",
         "by": "codex",
-        "note": "Cloudflare session refreshed; production token is write-only secret and preview has none. Prepared authenticated opt-in "
+        "note": "PR 1011 updated a575594b0d: authenticated runtime access probe prepared; seven probe, 21 data, 13 auth, four build and 1"
       },
       "taskKeys": [
         "HOS:009",
