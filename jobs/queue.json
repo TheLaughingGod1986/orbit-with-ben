@@ -287064,20 +287064,28 @@
           "at": "2026-11-20T07:03Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T07:05Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed the daily Studio read. Next: read-only lifetime figures from the signed-in Studio browsers."
         }
       ],
-      "remaining_action": "Read the latest Studio performance figures",
+      "remaining_action": "Read lifetime Studio figures for Orbit and History of Science",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-20T07:03Z",
+        "of": 4,
+        "at": "2026-11-20T07:05Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed the daily Studio read. Next: read-only lifetime figures from the signed-in Studio browsers."
+      },
+      "taskKeys": [
+        "OWB:026",
+        "HOS:002"
+      ]
     }
   ],
   "focus": [
