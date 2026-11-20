@@ -288418,10 +288418,10 @@
       "stage": "vo",
       "after": "J3206",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-20T19:13Z",
+      "eta": "2026-11-20T20:13Z",
       "created_by": "claude",
       "created_at": "2026-11-20T10:21Z",
       "result": "",
@@ -288430,13 +288430,26 @@
           "at": "2026-11-20T10:21Z",
           "by": "claude",
           "what": "added for gemini"
+        },
+        {
+          "at": "2026-11-20T19:13Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Narrate WW2 film 005 from its locked script, checks, budget guard; narration only; after the previous film's narration",
       "due": "2026-11-29T18:00:00Z",
       "for": "gemini",
       "kind": "vo",
-      "plain": "Record the narration for WW2 film 005, about the old destroyer"
+      "plain": "Record the narration for WW2 film 005, about the old destroyer",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T19:13Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3209",
