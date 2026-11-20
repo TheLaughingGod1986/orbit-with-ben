@@ -271395,10 +271395,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-20T07:46Z",
+      "eta": "2026-11-20T11:46Z",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
       "result": "",
@@ -272127,6 +272127,11 @@
           "at": "2026-11-20T07:40Z",
           "by": "codex",
           "what": "released: Preserve 3/4. PR 1011 now 30fa30a8ba; probe route receives current request bindings so removed enable/auth/token cannot leak from process.env. Regression demonstrated failing before fix; eight probe and 51 board/security tests pass, four browser skips. Evidence PROBE_ISOLATION_2026-11-20.md. Next establish existing authenticated board session, deploy additive probe on current production build, record real Contents access and disable. Then guard propagation, wrappers/MacBook inventory, refreshed rehearsal. Official history inspected six days; notice and live acceptance remain. No production changes or spend. Clean worktree /private/tmp/j3012-0620."
+        },
+        {
+          "at": "2026-11-20T07:46Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify deployed board access, finish machine preparation and refresh the private rehearsal",
