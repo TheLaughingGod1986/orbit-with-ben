@@ -289721,13 +289721,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-20T15:17Z",
-      "eta": "2026-11-20T17:17Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-20T12:06Z",
-      "result": "",
+      "result": "parked for Chief: condition for J2171 NOT met (checked 20 Nov 15:20Z); J2171 left blocked, nothing reopened. Evidence: score route moved on from J3139 to J3233 (own-synthesis v03_synth, GBP0); J3234 built it (music gate PASS, 94 comparisons), J3235 ear review done, but Chief score disposition J3236 is still claimed by gemini with no acceptance recorded; J2035 long assembly is still blocked by codex. jobs.py wait J2171 --recheck J3230 was refused for macbook (Only the holder or elected Chief may update this hold). Holder or Chief to run: jobs.py wait J2171 --agent <id> --condition 'Require J3236 formal acceptance of own-score v03_synth, then completed J2035 long assembly with all required gates, and Shorts locked inputs before release; J3043/J3045 closed unused, v01/v02 rejected' --check-at '2026-11-20T21:20:00Z' --type input --recheck J3230 --git",
       "history": [
         {
           "at": "2026-11-20T12:06Z",
@@ -289758,6 +289758,11 @@
           "at": "2026-11-20T15:19Z",
           "by": "macbook",
           "what": "step 2 of 3 done: Not met: score disposition J3236 still running, J2035 still blocked"
+        },
+        {
+          "at": "2026-11-20T15:19Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: condition for J2171 NOT met (checked 20 Nov 15:20Z); J2171 left blocked, nothing reopened. Evidence: score route moved on from J3139 to J3233 (own-synthesis v03_synth, GBP0); J3234 built it (music gate PASS, 94 comparisons), J3235 ear review done, but Chief score disposition J3236 is still claimed by gemini with no acceptance recorded; J2035 long assembly is still blocked by codex. jobs.py wait J2171 --recheck J3230 was refused for macbook (Only the holder or elected Chief may update this hold). Holder or Chief to run: jobs.py wait J2171 --agent <id> --condition 'Require J3236 formal acceptance of own-score v03_synth, then completed J2035 long assembly with all required gates, and Shorts locked inputs before release; J3043/J3045 closed unused, v01/v02 rejected' --check-at '2026-11-20T21:20:00Z' --type input --recheck J3230 --git"
         }
       ],
       "remaining_action": "Record the unmet condition on J2171 and close this check",
