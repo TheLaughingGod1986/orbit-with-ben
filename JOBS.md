@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2035, J2529, J2993, J3204, J3223.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2035, J2529, J2993, J3223.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -62,7 +62,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3198 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3178 |  |
 | J3199 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3176 |  |
 | J3200 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3137 |  |
-| J3204 | mini | claimed | gemini | 2026-11-20T14:14Z | WW2:003 vo · for gemini · vo · WW2 pilot 003: narration in Ben's voice (B-29) |  |
 | J3205 | mini | open (after J3204) | – | – | WW2:003 edit · for codex · assembly · WW2 pilot 003: picture, maps, edit and thumbnail, to Ben's watch |  |
 | J3206 | mini | open (after J3204) | – | – | WW2:004 vo · for gemini · vo · WW2 film 004: narration in Ben's voice (submarine torpedoes) |  |
 | J3208 | mini | open (after J3206) | – | – | WW2:005 vo · for gemini · vo · WW2 film 005: narration in Ben's voice (the old destroyer) |  |
