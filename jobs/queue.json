@@ -288597,19 +288597,24 @@
           "at": "2026-11-20T19:35Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J3210; inspecting script master, J3208 precedent, and live ElevenLabs subscription"
+        },
+        {
+          "at": "2026-11-20T19:37Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Verified locked script master J3002 (SHA-256 bfb85fdb..., 7 chapters, 3,300 words, 20,947 chars, max ch05=4,319 < 5,000 limit) and live ElevenLabs balance: 25,039 remaining (est. ~9,700 net v3+Scribe credits -> ~15,339 left >= 11,000 reserve floor)"
         }
       ],
-      "remaining_action": "Verify locked script master (J3002), live ElevenLabs balance, and dry-run character estimate before spending",
+      "remaining_action": "Generate 7-chapter narration in Ben's voice (eleven_v3, speed 1.04) via vo_take.py under desk-lock elevenlabs and run Scribe",
       "due": "2026-11-29T18:00:00Z",
       "for": "gemini",
       "kind": "vo",
       "plain": "Record the narration for WW2 film 006, about the wooden bomber",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-20T19:35Z",
+        "at": "2026-11-20T19:37Z",
         "by": "gemini",
-        "note": "Claimed J3210; inspecting script master, J3208 precedent, and live ElevenLabs subscription"
+        "note": "Verified locked script master J3002 (SHA-256 bfb85fdb..., 7 chapters, 3,300 words, 20,947 chars, max ch05=4,319 < 5,000 "
       },
       "taskKeys": [
         "WW2:006"
