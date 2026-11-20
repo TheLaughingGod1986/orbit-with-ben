@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2035, J2529, J2993, J3223.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2035, J2529, J2993.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -64,7 +64,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3208 | mini | open (after J3206) | – | – | WW2:005 vo · for gemini · vo · WW2 film 005: narration in Ben's voice (the old destroyer) |  |
 | J3210 | mini | open (after J3208) | – | – | WW2:006 vo · for gemini · vo · WW2 film 006: narration in Ben's voice (the wooden bomber) |  |
 | J3219 | mini | blocked | macbook | – | script · Orbit after 16 Dec: prepare the next film in each format test (every-X script, journey and sleep outlines) and the 22/26/30 Dec readout sheet; January style test (July illustrated look, Ben OK 20 Nov) |  |
-| J3223 | mini | claimed | gemini | 2026-11-20T19:27Z | for gemini · review · `gemini-argon` · History of Science: full audit (views trend and drop, every video by topic and source, audience countries and ages, search terms) |  |
 | J3224 | mini | open (after J3223) | – | – | for gemini · script · `gemini-argon` · History of Science: search-led research and a new plan for the board (Anglosphere, adult, low competition), waiting for Ben's OK |  |
 | J3225 | any | blocked | claudecode | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J3227 | any | blocked | claudecode | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
