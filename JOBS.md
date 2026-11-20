@@ -67,6 +67,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3178 | mini | open | – | – | 013 picture · for gemini · qa · `gemini-argon` · HOS 013: continuous playback review of ten unresolved pass-one plates |  |
 | J3179 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2537 |  |
 | J3180 | any | claimed | gemini | 2026-11-20T01:53Z | script · OWB: learn from our data, add two new films to the backlog |  |
+| J3181 | mini | open | – | – | 084 topic · review · Rule-E topic go/no-go review: OWB 084 (Every Type of Galaxy Explained in 10 Minutes) and 085 (How Did the Solar System Form) from J3180 | 09f4abf6a7 |
 
 Recently finished:
 

@@ -1,5 +1,5 @@
 {
-  "next_id": 3181,
+  "next_id": 3182,
   "jobs": [
     {
       "id": "J0001",
@@ -285125,6 +285125,34 @@
         "OWB:084",
         "OWB:085"
       ]
+    },
+    {
+      "id": "J3181",
+      "title": "Rule-E topic go/no-go review: OWB 084 (Every Type of Galaxy Explained in 10 Minutes) and 085 (How Did the Solar System Form) from J3180",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Rule-E topic go/no-go review for the two new Orbit With Ben backlog films created in J3180 (PR #1050, commit `09f4abf6a7` on branch `gemini/J3180`, mirrored to `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/` with 18/18 SHA-256 verification on each):\n\n1. **OWB:084 (`02_Video-Projects/084_Every-Type-Of-Galaxy-Explained-In-10-Minutes/TOPIC.md`):** *Every Type of Galaxy Explained in 10 Minutes (Spirals to Quasars)* (Rule 26 + `studio/plan.json` Step 3 complete-tour title `\"Every Type of Galaxy Explained in 10 Minutes (Spirals to Quasars)\"`, exact `#1` autocomplete + full size span variant `\"Every Type of Galaxy Explained in 10 Minutes (Dwarfs to Supergiants)\"`, and Rule 15 compact search title `\"Every Type of Galaxy and Quasar Explained\"`; `0` exact title collisions; `8` strictly on-topic `>=1.01M` education/space videos up to `11.37M` — Kurzgesagt `11.37M` *The Black Hole That Kills Galaxies - Quasars*, Deep Astronomy `4.55M` *The Largest Galaxy in the Universe: IC 1101*, PBS Space Time `2.00M` *Why Quasars are so Awesome* & `1.01M` *Was the Milky Way a Quasar?*, CrashCourse `1.75M` *Galaxies, part 1 #38*, `1.52M` *The Milky Way #37*, & `1.45M` *Galaxies, part 2 #39*, and SEA `1.33M` *Alcyoneus: The NEW Largest Galaxy*, plus Tier-1 TED Burçin Mutlu-Pakdil `666.1k`, SciShow Kids `600.3k` & `546.6k`, PBS Space Time `585.3k`, Cosmic Drift `446.3k`, Tier-1 TED Juna Kollmeier `403.4k`, Bluntly Explained `381.0k` *Every Type Of Galaxy Explained in 10 Minutes*, Lets Explore Space `280.4k`, Professor Dave Explains `278.8k`, Khan Academy `266.5k` & `261.3k`, Tier-1 TED-Ed `262.4k` & `259.0k` + `neighbours.py` `PASS` with `6` strictly on-topic `>=1M` Tier-1/Tier-2 education videos; primary `Hubble 1926, 1936`, `Seyfert 1943`, `Hoag 1950`, `de Vaucouleurs 1959`, `Schmidt 1963`, `Lin & Shu 1964`, `Rubin & Ford 1970`, `Toomre & Toomre 1972`, `Uson, Boughn & Kuhn 1990`, `Urry & Padovani 1995`, `Geha et al. 2009`, `Conselice et al. 2016`, `Oei et al. 2022`, & `Wolf et al. 2024` sources; 2 E1 `60-word` Short angles with `75.0% >= 70%` Rule-6 payoff timing on how the largest known giant radio galaxy `Alcyoneus` spans `16.3 million light-years` / `160 Milky Ways` wide and how `Arthur Hoag`'s `1950` `Hoag's Object` grew a `120,000-light-year` detached ring of blue stars).\n2. **OWB:085 (`02_Video-Projects/085_How-Did-The-Solar-System-Form/TOPIC.md`):** *How Did the Solar System Form? (4.6 Billion Years Ago)* (Rule 26 `#1` autocomplete search phrase `\"How Did the Solar System Form? (4.6 Billion Years Ago)\"` + `#1` autocomplete + `2011` Grand Tack twist variant `\"How Did the Solar System Form? (And How Jupiter Almost Wrecked It)\"` + Rule 15 compact title `\"How Did the Solar System Form From Dust and Gas?\"` + `studio/plan.json` complete-tour contingency recast `\"Every Stage of the Solar System's Birth Explained in 10 Minutes\"`; `0` exact title collisions; `12` strictly on-topic `>=1.01M` education/space videos up to `14.09M` — Kurzgesagt `14.09M`, `6.67M`, & `4.33M`, TDC `3.82M` *The Formation of the Solar System in 6 minutes!*, Peekaboo Kidz `2.59M`, CrashCourse `2.38M` *Introduction to the Solar System #9*, `1.77M` *The Earth #11*, & `1.32M` *The Sun & The Earth #3*, Tier-1 TED-Ed `1.84M` *Where did Earth's water come from?*, SEA `1.32M` *The Birth of the Solar System*, Binocs Ki Duniya `1.04M`, and Royal Observatory Greenwich `1.01M` *How did the Solar System form?*, plus Lincoln Learning Solutions `901.6k`, NASA Space Place `744.8k`, Professor Dave Explains `540.6k`, Astrum `430.0k`, Tier-1 TED Mike Brown `426.7k`, Khan Academy `401.8k`, and Tier-1 TED-Ed Lorin Swint Matthews `266.2k` *The dust bunnies that built our planet* + `neighbours.py` `PASS` with `7` strictly on-topic `>=1M` Tier-1/Tier-2 education videos; primary `Kant 1755`, `Laplace 1796`, `Safronov 1969`, `Lee, Papanastassiou & Wasserburg 1976`, `Cameron & Truran 1977`, `Weidenschilling 1977`, `Hayashi 1981`, `Pollack et al. 1996`, `Amelin et al. 2002`, `Tsiganis, Gomes, Morbidelli & Levison 2005`, `Youdin & Goodman 2005`, `Johansen et al. 2007`, `Walsh et al. 2011`, `Connelly et al. 2012`, `Lambrechts & Johansen 2012`, & `ALMA Partnership 2015` sources; 2 E1 `60-word` Short angles with `75.0% >= 70%` Rule-6 payoff timing on how a supernova shockwave `4.57 billion years ago` compressed space dust so `99.86%` formed the Sun and how `Walsh & Morbidelli`'s `2011` `Grand Tack` saw Jupiter spiral in to `1.5 AU` before Saturn pulled it back out).\n\nCheck `TOPIC.md` and `11_Upload-Package/` audit sheets in both folders (on PR #1050 / `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/`) against `AGENTS.md` Rule E, `STUDIO_PLAYBOOK.md` §2, `studio/plan.json` (14 Nov 2026 long-video plan), and `LEARNINGS.md` rules 1–36 + `OWB-2026-11-E1`. Both films remain in `jobs/WIP.json` `next` under Rule G until an active OWB WIP slot frees up and `studio/plan.json` format tests read out.\n",
+      "ref": "09f4abf6a7",
+      "film": "084",
+      "stage": "topic",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-20T00:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T00:46Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Rule-E topic go/no-go review: OWB 084 (Every Type of Galaxy Explained in 10 Minutes) and 085 (How Did the Solar System Form) from J3180",
+      "kind": "review"
     }
   ],
   "focus": [
