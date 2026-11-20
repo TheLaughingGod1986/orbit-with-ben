@@ -612,10 +612,10 @@ class Relay(unittest.TestCase):
         self.old_reroute, self.old_q = cr.reroute, cr.queue_has_work
         q = cr.STUDIO / "jobs" / "queue.json"
 
-        def fake_reroute(job, to, model, note):  # jobs.py reroute, on the test queue (never the live one)
+        def fake_reroute(job, to, model, note, open_claim=False):  # jobs.py reroute, on the test queue (never the live one)
             data = json.loads(q.read_text())
             j = next(x for x in data["jobs"] if x["id"] == job["id"])
-            jobs.do_reroute(j, "relay", to, model, note, cr.now())
+            jobs.do_reroute(j, "relay", to, model, note, cr.now(), open_claim=open_claim)
             q.write_text(json.dumps(data))
             return True
         cr.reroute, cr.queue_has_work = fake_reroute, (lambda agent: True)
@@ -634,7 +634,9 @@ class Relay(unittest.TestCase):
         cr.seen("chief", T0 - 10 * MIN)  # Grok is Chief: Cursor is the worker
         cr.cmd_run(T0)
         j = self.job(q, "J0300")
-        self.assertEqual((j["status"], j["for"], j["needs"], j["model"]), ("open", "cursor", "mini", "cursor-claude-opus-5-5"))
+        self.assertEqual((j["status"], j.get("for"), j["needs"]), ("open", None, "mini"))
+        self.assertNotIn("model", j)
+        self.assertTrue(j.get("open_claim"))
         self.assertEqual(j["rerouted_from"]["needs"], "cloud")
         self.assertTrue(self.ran("cursor"))  # woken in the same run, not left parked
         self.assertFalse(self.ran("codex"))
@@ -653,7 +655,8 @@ class Relay(unittest.TestCase):
         cr.mark_down("claude", "usage limit", T0 + 120 * MIN, T0)
         cr.seen("chief", T0 - 10 * MIN)
         cr.cmd_run(T0)
-        self.assertEqual(self.job(q, "J0301").get("for"), "cursor")
+        self.assertTrue(self.job(q, "J0301").get("open_claim"))
+        self.assertNotIn("for", self.job(q, "J0301"))
         for jid in ("J0302", "J0303", "J0304", "J0305"):  # J0305: a MacBook job stays on the MacBook
             self.assertNotIn("rerouted_from", self.job(q, jid), jid)
         self.assertIn("--model claude-opus-5-5", (self.tmp / "cursor.args").read_text())
@@ -670,7 +673,9 @@ class Relay(unittest.TestCase):
         cr.seen("chief", T0 - 10 * MIN)
         cr.cmd_run(T0)
         j = self.job(q, "J0308")
-        self.assertEqual((j["for"], j["model"]), ("gemini", "gemini-argon"))
+        self.assertTrue(j.get("open_claim"))
+        self.assertNotIn("for", j)
+        self.assertNotIn("model", j)
         self.assertTrue(self.ran("agy"))
         self.assertFalse(self.ran("codex"))
         agy = (self.tmp / "agy.args").read_text()
@@ -689,7 +694,8 @@ class Relay(unittest.TestCase):
         self.assertTrue(self.ran("agy"))  # 3) Gemini took it in the same run, not parked
         self.assertFalse(self.ran("codex"))
         j = self.job(q, "J0309")
-        self.assertEqual((j["for"], j["model"]), ("gemini", "gemini-argon"))
+        self.assertTrue(j.get("open_claim"))
+        self.assertNotIn("for", j)
         # Ben, 14 Oct: only Claude-in-Cursor's pool is empty; Cursor stays up for its own models (Auto)
         self.assertEqual(cr.state_of("cursor", cr.now())[1], "ready")
         self.assertIn("cursor-claude-opus-5-5", cr.load_out(cr.now()))
@@ -706,7 +712,8 @@ class Relay(unittest.TestCase):
         self.assertIn("exec -m gpt-6-astra", (self.tmp / "codex.args").read_text())  # code and graphics: Codex first
         self.assertTrue(self.ran("cursor"))  # then the next in the chart chain
         self.assertIn("--model grok-4.7", (self.tmp / "cursor.args").read_text())  # Cursor on Grok 4.7 for a chart
-        self.assertEqual(self.job(q, "J0310")["for"], "cursor")
+        self.assertTrue(self.job(q, "J0310").get("open_claim"))
+        self.assertNotIn("for", self.job(q, "J0310"))
 
     def test_with_cursor_and_gemini_down_the_claude_job_goes_to_codex_on_astra(self):
         q = self.claude_setup('{"jobs": [{"id": "J0305", "kind": "listing", "status": "open", "needs": "cloud"}]}')
@@ -716,7 +723,9 @@ class Relay(unittest.TestCase):
         cr.seen("chief", T0 - 10 * MIN)
         cr.cmd_run(T0)
         j = self.job(q, "J0305")
-        self.assertEqual((j["for"], j["model"]), ("codex", "gpt-6-astra"))
+        self.assertTrue(j.get("open_claim"))
+        self.assertNotIn("for", j)
+        self.assertNotIn("model", j)
         self.assertTrue(self.ran("codex"))
         self.assertIn("exec -m gpt-6-astra", (self.tmp / "codex.args").read_text())
 
@@ -798,7 +807,8 @@ class Relay(unittest.TestCase):
         cr.mark_down("claude", "usage limit", None, T0)
         cr.seen("chief", T0 - 10 * MIN)
         cr.cmd_run(T0)
-        self.assertEqual(self.job(q, "J0401")["for"], "gemini")  # straight past Claude-in-Cursor to Gemini
+        self.assertTrue(self.job(q, "J0401").get("open_claim"))  # straight past Claude-in-Cursor; not pinned to Gemini
+        self.assertNotIn("for", self.job(q, "J0401"))
         self.assertTrue(self.ran("agy"))
         self.assertEqual(cr.state_of("cursor", T0)[1], "ready")  # Cursor itself is fine for Auto jobs
         self.assertEqual(cr.routing.model_for({"kind": "assembly"}, "cursor"), "cursor-grok-4-7")
@@ -1184,6 +1194,63 @@ class Relay(unittest.TestCase):
         cr.cmd_run(T0)
         self.assertEqual(self.job(q, "J0400")["status"], "open")
         self.assertTrue(self.ran("codex"))
+
+    def _live_lease(self, slot, worker, job="Jbusy"):
+        import os
+        cr.write_json(cr.d(f"execution-{slot}.json"), {
+            "job": job, "worker": worker, "slot": slot, "pid": os.getpid(),
+            "startedAt": cr.iso(T0 - MIN), "expiresAt": cr.iso(T0 + 20 * MIN), "kind": "assembly"})
+
+    def test_two_slots_run_different_agents(self):
+        # Slot 0 is already Cursor. The next launch takes slot 1 and must not start Cursor again.
+        self.codex = self.fake("codex", f'echo "$@" > {self.tmp}/codex.args')
+        self.routed_queue('{"jobs": [{"id": "J0501", "kind": "assembly", "status": "open", "needs": "mini", '
+                          '"title": "Assemble the cut"}]}')
+        self._live_lease(0, "cursor")
+        os.environ["CHIEF_PARALLEL"] = "2"
+        os.environ["CHIEF_FREE_MEM_BYTES"] = str(8 << 30)  # the guard must not depend on this laptop
+        cr.seen("chief", T0 - 10 * MIN)
+        cr.cmd_run(T0)
+        self.assertTrue(self.ran("codex"))
+        self.assertFalse(self.ran("cursor"))
+        self.assertIn("claim only J0501", (self.tmp / "codex.args").read_text())
+
+    def test_a_held_desk_lock_blocks_a_second_tool_job(self):
+        root = self.tmp / "locks"
+        folder = root / "elevenlabs.lock"
+        folder.mkdir(parents=True)
+        (folder / "owner.txt").write_text(f"pid={os.getpid()}\n")
+        os.environ["DESK_LOCK_ROOT"] = str(root)
+        self.cursor = self.fake("cursor", f'echo "$@" > {self.tmp}/cursor.args')
+        self.routed_queue('{"jobs": ['
+                          '{"id": "J0502", "kind": "vo", "status": "open", "needs": "mini", "title": "Record the line"},'
+                          '{"id": "J0503", "kind": "assembly", "status": "open", "needs": "mini", "title": "Assemble the cut"}]}')
+        cr.seen("chief", T0 - 10 * MIN)
+        cr.cmd_run(T0)
+        text = (self.tmp / "cursor.args").read_text() if (self.tmp / "cursor.args").exists() else ""
+        self.assertIn("claim only J0503", text)
+        self.assertNotIn("claim only J0502", text)
+
+    def test_low_memory_does_not_open_a_second_slot(self):
+        self.routed_queue('{"jobs": [{"id": "J0504", "kind": "assembly", "status": "open", "needs": "mini", '
+                          '"title": "Assemble the cut"}]}')
+        self._live_lease(0, "cursor")
+        os.environ["CHIEF_PARALLEL"] = "2"
+        os.environ["CHIEF_FREE_MEM_BYTES"] = str(1 << 30)  # 1 GB, under the 3 GB guard
+        os.environ["CHIEF_SLOT_MIN_GB"] = "3"
+        cr.seen("chief", T0 - 10 * MIN)
+        self.assertEqual(cr.cmd_run(T0), 0)
+        self.assertFalse(self.ran("codex"))
+        self.assertFalse(self.ran("cursor"))
+
+    def test_the_first_slot_still_starts_when_memory_is_low(self):
+        self.routed_queue('{"jobs": [{"id": "J0505", "kind": "assembly", "status": "open", "needs": "mini", '
+                          '"title": "Assemble the cut"}]}')
+        os.environ["CHIEF_FREE_MEM_BYTES"] = str(1 << 30)
+        os.environ["CHIEF_SLOT_MIN_GB"] = "3"
+        cr.seen("chief", T0 - 10 * MIN)
+        cr.cmd_run(T0)
+        self.assertTrue(self.ran("cursor"))
 
 
 class PromptNamesTheRuleFiles(TodaysLayout):

@@ -96,8 +96,9 @@ def code_version():
 LOADED_VERSION = code_version()
 
 
-def current_execution(at):
-    value = read_json(d("execution.json")) or {}
+def _live_lease(value, at):
+    if not isinstance(value, dict):
+        return None
     expires = workflow.timestamp(value.get("expiresAt"))
     if not expires or expires <= at:
         return None
@@ -105,10 +106,198 @@ def current_execution(at):
         pid = int(value.get("pid") or 0)
         if pid <= 0:
             return None
-        os.kill(pid,0)
+        os.kill(pid, 0)
     except (ValueError, TypeError, OSError):
         return None
     return value
+
+
+def parallel_limit() -> int:
+    """How many Mini agents may run at once. Default 2; 3 is the cap; 1 is the old single lock."""
+    try:
+        n = int(os.environ.get("CHIEF_PARALLEL", "2"))
+    except ValueError:
+        n = 2
+    return min(3, max(1, n))
+
+
+def free_memory_bytes() -> int:
+    """Bytes free. CHIEF_FREE_MEM_BYTES overrides this for tests."""
+    raw = os.environ.get("CHIEF_FREE_MEM_BYTES")
+    if raw:
+        try:
+            return int(raw)
+        except ValueError:
+            pass
+    if sys.platform == "darwin":
+        try:
+            out = subprocess.run(["vm_stat"], capture_output=True, text=True, timeout=2).stdout
+            page = 4096
+            sized = re.search(r"page size of (\d+)", out)
+            if sized:
+                page = int(sized.group(1))
+            free = 0
+            for label in ("Pages free", "Pages speculative"):
+                row = re.search(rf"{label}:\s+(\d+)", out)
+                if row:
+                    free += int(row.group(1)) * page
+            if free:
+                return free
+        except (OSError, subprocess.SubprocessError):
+            pass
+    try:
+        return int(os.sysconf("SC_AVPHYS_PAGES")) * int(os.sysconf("SC_PAGE_SIZE"))
+    except (OSError, ValueError, AttributeError, TypeError):
+        return 8 << 30
+
+
+def memory_for_new_slot() -> bool:
+    """False when free memory is under CHIEF_SLOT_MIN_GB (default 3). The first slot still starts."""
+    try:
+        gb = float(os.environ.get("CHIEF_SLOT_MIN_GB", "3"))
+    except ValueError:
+        gb = 3.0
+    return free_memory_bytes() >= int(gb * (1024 ** 3))
+
+
+def current_executions(at):
+    """Every live slot lease. Slot files win; execution.json is the single-slot fallback."""
+    paths = []
+    try:
+        if d().exists():
+            paths = sorted(d().glob("execution-*.json"))
+    except OSError:
+        paths = []
+    if not paths:
+        paths = [d("execution.json")]
+    out = []
+    for path in paths:
+        live = _live_lease(read_json(path) or {}, at)
+        if live:
+            out.append(live)
+    return out
+
+
+def current_execution(at):
+    """One live lease, a list when several slots are running, or None.
+
+    Claim and stall checks accept either shape and read every slot."""
+    rows = current_executions(at)
+    if not rows:
+        return None
+    if len(rows) == 1:
+        return rows[0]
+    return rows
+
+
+def other_slot_workers(at, slot) -> set:
+    """Agents already running in a different slot."""
+    out = set()
+    for e in current_executions(at):
+        if e.get("slot", 0) == slot:
+            continue
+        if e.get("worker"):
+            out.add(e["worker"])
+    return out
+
+
+def chief_review_elsewhere(at, slot) -> bool:
+    """Chief-review work stays in one slot."""
+    for e in current_executions(at):
+        if e.get("slot", 0) == slot:
+            continue
+        if e.get("kind") == "chief-review":
+            return True
+    return False
+
+
+def _slot_path(slot: int, name: str) -> pathlib.Path:
+    return d(f"{name}-{slot}.json")
+
+
+def write_slot_json(slot: int, name: str, payload) -> None:
+    """Per-slot state, plus the unsuffixed file for slot 0 so older readers keep working."""
+    write_json(_slot_path(slot, name), payload)
+    if slot == 0:
+        write_json(d(f"{name}.json"), payload)
+
+
+def clear_slot_json(slot: int, name: str) -> None:
+    _slot_path(slot, name).unlink(missing_ok=True)
+    if slot == 0:
+        d(f"{name}.json").unlink(missing_ok=True)
+
+
+def desk_resource(job) -> str:
+    """The shared desk-lock a job needs, or "" when it needs none."""
+    if not isinstance(job, dict):
+        return ""
+    kind = job.get("kind") or ""
+    if kind == "vo":
+        return "elevenlabs"
+    if kind in ("video", "image"):
+        return "flow"
+    if kind == "studio":
+        return "studio"
+    text = " ".join(str(job.get(k) or "") for k in ("title", "body", "remaining_action", "action"))
+    if re.search(r"elevenlabs|\bvo_take\b|\beleven_v3\b", text, re.I):
+        return "elevenlabs"
+    if re.search(r"\bveo\b|nano banana|(?-i:\bFlow\b)", text):
+        return "flow"
+    if re.search(r"youtube studio|\b9222\b|\b9223\b", text, re.I):
+        return "studio"
+    return ""
+
+
+def desk_lock_held(name: str) -> bool:
+    """True when ~/_desk/locks/<name>.lock is held by a live pid (desk-lock.sh)."""
+    if not name:
+        return False
+    root = pathlib.Path(os.environ.get("DESK_LOCK_ROOT", HOME / "_desk" / "locks"))
+    folder = root / f"{name}.lock"
+    if not folder.is_dir():
+        return False
+    try:
+        text = (folder / "owner.txt").read_text()
+    except OSError:
+        return True
+    found = re.search(r"^pid=(\d+)", text, re.M)
+    if not found:
+        return True
+    try:
+        os.kill(int(found.group(1)), 0)
+        return True
+    except OSError:
+        return False
+
+
+def desk_blocked(job, at, slot) -> bool:
+    """True when this job's shared tool is already locked or in use on another slot."""
+    name = desk_resource(job)
+    if not name:
+        return False
+    if desk_lock_held(name):
+        return True
+    for e in current_executions(at):
+        if e.get("slot", 0) == slot:
+            continue
+        if e.get("desk") == name:
+            return True
+    return False
+
+
+def _select_lock():
+    d().mkdir(parents=True, exist_ok=True)
+    handle = open(d("select.lock"), "a+")
+    fcntl.flock(handle, fcntl.LOCK_EX)
+    return handle
+
+
+def _select_unlock(handle) -> None:
+    try:
+        fcntl.flock(handle, fcntl.LOCK_UN)
+    finally:
+        handle.close()
 
 
 def worker_capabilities():
@@ -1225,14 +1414,49 @@ def cmd_run(at: dt.datetime) -> int:
         log(f"skip: outside {lo}-{hi}")
         return 0
     d().mkdir(parents=True, exist_ok=True)
-    with open(d("run.lock"), "w") as lock:
+    # Up to CHIEF_PARALLEL slots (default 2, cap 3). Each holds its own lock and runs one agent.
+    # A second slot waits when free memory is under CHIEF_SLOT_MIN_GB (default 3). CHIEF_PARALLEL=1 is the old single run.
+    n = parallel_limit()
+    busy = set()
+    for e in current_executions(at):
+        busy.add(int(e.get("slot", 0)))
+    for i in range(n):
+        path = d(f"run-{i}.lock")
+        if not path.exists():
+            continue
+        probe = open(path, "a+")
+        try:
+            fcntl.flock(probe, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            fcntl.flock(probe, fcntl.LOCK_UN)
+        except OSError:
+            busy.add(i)
+        finally:
+            probe.close()
+    if len(busy) >= n:
+        log("skip: all parallel slots are working")
+        push_heartbeat(at, "busy", note="every parallel slot is still working")
+        return 0
+    if busy and not memory_for_new_slot():
+        log("skip: free memory below the slot threshold; not opening another slot")
+        push_heartbeat(at, "busy", note="free memory is too low for another slot")
+        return 0
+    for i in range(n):
+        if i in busy:
+            continue
+        lock = open(d(f"run-{i}.lock"), "a+")
         try:
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         except OSError:
-            log("skip: previous run still working")
-            push_heartbeat(at, "busy", note="the previous run is still working")
-            return 0
-        return run_locked(at)
+            lock.close()
+            continue
+        try:
+            return run_locked(at, slot=i)
+        finally:
+            fcntl.flock(lock, fcntl.LOCK_UN)
+            lock.close()
+    log("skip: no free slot")
+    push_heartbeat(at, "busy", note="no free parallel slot")
+    return 0
 
 
 def queue_has_work(agent: str) -> bool:
@@ -1458,10 +1682,14 @@ def jobs_py(*args):
         return None
 
 
-def reroute(job: dict, to: str, model: str, note: str) -> bool:
-    """`jobs.py reroute <id> --to <to> --model <model> --git` in the engine checkout. True when it went through."""
+def reroute(job: dict, to: str, model: str, note: str, open_claim: bool = False) -> bool:
+    """`jobs.py reroute` in the engine checkout. True when it went through.
+
+    `open_claim` (20 Nov 2026) does not pin `for=` to `to`. `to` is only the preferred next lane, recorded in the note.
+    The chain's model order is left on the job kind, not written as one model."""
     r = jobs_py("reroute", job["id"], "--agent", "relay", "--to", to, "--note", note,
-                *(["--model", model] if model and model in routing.MODELS else []))
+                *(["--open"] if open_claim else []),
+                *(["--model", model] if model and model in routing.MODELS and not open_claim else []))
     if r is None:
         return False
     if r.returncode != 0:
@@ -1527,7 +1755,8 @@ def reroute_work(at: dt.datetime) -> list:
             log(f"chain: {j['id']} waits: no worker left in its chain is up")
             continue
         to, model = lane
-        if reroute(j, to, lane_model(lane), f"{reason}; next in its chain: {to} on {routing.cli_model(model) or 'its default'}"):
+        if reroute(j, to, lane_model(lane), f"{reason}; next in its chain: {to} on {routing.cli_model(model) or 'its default'}",
+                   open_claim=True):
             log(f"chain: {j['id']} rerouted to {to} on {model} ({reason})")
             moved.append(f"{j['id']} -> {NAMES.get(to, to)}" + (f" on {routing.cli_model(model)}" if routing.cli_model(model) else ""))
     if moved:
@@ -1875,7 +2104,7 @@ def recorded_task_outcome(job, who, started):
     return ""
 
 
-def run_locked(at: dt.datetime) -> int:
+def run_locked(at: dt.datetime, slot: int = 0) -> int:
     note_grok_posts(at)
     fetch_claude_beat(at)
     flags = load_out(at)
@@ -1904,8 +2133,8 @@ def run_locked(at: dt.datetime) -> int:
     reviewed = set()
     while True:
         desired = code_version()
-        write_json(d("runner.json"), {"pid":os.getpid(),"version":LOADED_VERSION,"desiredVersion":desired,"at":iso(now()),
-                                     "state":"restarting" if desired != LOADED_VERSION else "ready"})
+        write_slot_json(slot, "runner", {"pid":os.getpid(),"version":LOADED_VERSION,"desiredVersion":desired,"at":iso(now()),
+                                     "state":"restarting" if desired != LOADED_VERSION else "ready","slot":slot})
         if desired != LOADED_VERSION:
             log("runner update: safe boundary reached; yielding to a fresh launchd run")
             return 0
@@ -1979,9 +2208,22 @@ def run_locked(at: dt.datetime) -> int:
         data = read_json(STUDIO / "jobs" / "queue.json") or {}
         from workflow_board import load_tracker
         data["tracker"] = load_tracker()
-        selection = workflow.select_dispatch(data, at, leader, up, lambda j, workers: routing.preferred_worker(j, workers) or next(iter(sorted(workers)), ""),
+        busy_agents = other_slot_workers(at, slot)
+        if leader in busy_agents or chief_review_elsewhere(at, slot):
+            chief_reviews = []  # one slot holds Chief-review work; a busy agent is not started twice
+        up_slot = set(up) - busy_agents
+        if busy_agents and not up_slot:
+            log(f"slot {slot}: every up agent is already running")
+            push_heartbeat(at, "busy", note="every up agent is already in a slot")
+            return 0
+        selection = workflow.select_dispatch(data, at, leader, up_slot, lambda j, workers: routing.preferred_worker(j, workers) or next(iter(sorted(workers)), ""),
                                              review_ids={j["id"] for j in chief_reviews}, execution=current_execution(at),
                                              exclude=attempted, capabilities=worker_capabilities())
+        if selection and selection.get("job") and desk_blocked(selection["job"], at, slot):
+            log(f"desk-lock: {selection['job']['id']} needs {desk_resource(selection['job'])}, already held; leaving it")
+            attempted.add(selection["job"]["id"])
+            at = now()
+            continue
         # An open/released job that already ran must not be rediscovered by the
         # legacy fallback below. Continue other eligible jobs in this same run.
         if not selection and attempted and data.get("jobs"):
@@ -2096,21 +2338,38 @@ def run_locked(at: dt.datetime) -> int:
         seen(who, at)
         started = now()
         if review_work:
-            write_json(d("active.json"), {"job": reviews[0]["id"], "title": reviews[0].get("title", ""),
+            write_slot_json(slot, "active", {"job": reviews[0]["id"], "title": reviews[0].get("title", ""),
                        "agent": who, "startedAt": iso(started), "expiresAt": iso(started + dt.timedelta(seconds=cap + 60)),
-                       "pid": os.getpid(), "kind": "chief-review", "chain": job_chain(reviews[0]),
+                       "pid": os.getpid(), "kind": "chief-review", "chain": job_chain(reviews[0]), "slot": slot,
                        "progress": {"step": 0, "of": 3, "at": iso(started), "note": "Review started"}})
         execution = {"job":reviews[0]["id"] if review_work else job.get("id") if job else "", "worker":who, "model":model,
-                     "pid":os.getpid(),"host":"mini","machine_name":platform.node(),
+                     "pid":os.getpid(),"host":"mini","machine_name":platform.node(),"slot":slot,
+                     "kind":"chief-review" if review_work else (job or {}).get("kind") or "",
+                     "desk":desk_resource(reviews[0] if review_work else job),
                      "startedAt":iso(started),"expiresAt":iso(started + dt.timedelta(seconds=cap+60)),"version":LOADED_VERSION}
-        write_json(d("execution.json"),execution)
-        write_json(d("runner.json"),{"pid":os.getpid(),"version":LOADED_VERSION,"desiredVersion":code_version(),"at":iso(started),"state":"working","job":execution["job"]})
+        # Hold the selection lock across the lease write so a second slot cannot pick the same agent.
+        held = _select_lock()
+        try:
+            if who in other_slot_workers(at, slot) or (review_work and chief_review_elsewhere(at, slot)):
+                log(f"slot {slot}: {who} is already running in another slot")
+                attempted.add(execution["job"] or who)
+                at = now()
+                continue
+            if not review_work and job and desk_blocked(job, at, slot):
+                log(f"desk-lock: {job['id']} needs {desk_resource(job)}, already held; leaving it")
+                attempted.add(job["id"])
+                at = now()
+                continue
+            write_slot_json(slot, "execution", execution)
+        finally:
+            _select_unlock(held)
+        write_slot_json(slot, "runner", {"pid":os.getpid(),"version":LOADED_VERSION,"desiredVersion":code_version(),"at":iso(started),"state":"working","job":execution["job"],"slot":slot})
         try:
             code, tail = run_cli(who, prompt, cap, model)
         finally:
-            d("execution.json").unlink(missing_ok=True)
+            clear_slot_json(slot, "execution")
             if review_work:
-                d("active.json").unlink(missing_ok=True)
+                clear_slot_json(slot, "active")
         said = credit_phrase(code, tail)
         usage = bool(said)
         log_run(at, reviews[0] if review_work else job, who, model, code, usage)
@@ -2219,7 +2478,8 @@ def walk_on(job: dict, who: str, model: str, at: dt.datetime, reason="out of usa
     if not lane:
         log(f"chain: {cur['id']} waits: nobody after {who} in its chain is up")
         return
-    if reroute(cur, lane[0], lane_model(lane), f"{NAMES.get(who, who)} {reason}; next in its chain: {lane[0]}"):
+    if reroute(cur, lane[0], lane_model(lane), f"{NAMES.get(who, who)} {reason}; next in its chain: {lane[0]}",
+               open_claim=True):
         log(f"chain: {cur['id']} rerouted from {who} to {lane[0]} on {lane[1]}")
 
 

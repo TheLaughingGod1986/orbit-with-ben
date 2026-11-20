@@ -553,10 +553,51 @@ class MacBookTakesTextJobs(unittest.TestCase):
         self.assertEqual(jobs.do_next(d, "macbook", {"macbook", "any"}, T0)["id"], j["id"])
         self.assertEqual((j["needs"], j["for"]), ("mini", "gemini"))  # the job itself is unchanged
 
-    def test_a_review_of_media_work_stays_on_the_mini(self):
-        d = queue(("mini", "031 picture: build stills", {"kind": "assembly", "film": "031", "stage": "picture"}), ("mini", "verify condition for J0001", {"kind": "review"}))
+    def test_a_picture_review_stays_on_the_mini(self):
+        d = queue(("mini", "031 picture: build stills", {"kind": "assembly", "film": "031", "stage": "picture"}),
+                  ("mini", "Watch the 031 stills before the cut", {"kind": "review"}))
         d["jobs"][1]["recheck_of"] = "J0001"
         self.assertFalse(jobs.macbook_portable(d["jobs"][1], d))
+
+    def test_condition_checks_and_records_reviews_are_portable(self):
+        # 20 Nov 2026: a needs=mini job that needs nothing Mini-only is the MacBook's.
+        # A condition check is records work even when the job it checks is picture or Studio.
+        d = queue(("mini", "031 picture: build stills", {"kind": "assembly", "film": "031", "stage": "picture"}),
+                  ("mini", "Verify condition for J0001", {"kind": "review"}),
+                  ("mini", "Records-only review of the ledger", {"kind": "review"}))
+        d["jobs"][1]["recheck_of"] = "J0001"
+        self.assertTrue(jobs.macbook_portable(d["jobs"][1], d))
+        self.assertTrue(jobs.claimable(d, d["jobs"][1], {"macbook", "any"}, T0, "macbook"))
+        self.assertTrue(jobs.macbook_portable(d["jobs"][2], d))
+
+    def test_mini_only_tools_keep_a_condition_check_on_the_mini(self):
+        for body in ("Mint the next Veo take if the condition holds.",
+                     "Call ElevenLabs under the desk-lock if the stem is missing.",
+                     "The Mini worktree is still in progress.",
+                     "Read the Mini-only token and upload the package."):
+            d = queue(("mini", "Verify condition for J0001", {"kind": "review"}))
+            d["jobs"][0]["body"] = body
+            d["jobs"][0]["recheck_of"] = "J0001"
+            self.assertFalse(jobs.macbook_portable(d["jobs"][0], d), body)
+
+    def test_an_open_reroute_is_claimable_by_cursor_or_a_macbook(self):
+        # 20 Nov 2026: a chain walk does not pin for= to the next agent.
+        script = {"id": "J0902", "needs": "cloud", "status": "open", "by": "", "kind": "script", "history": []}
+        jobs.do_reroute(script, "relay", "gemini", "gemini-argon", "Claude out", T0, open_claim=True)
+        self.assertNotIn("for", script)
+        self.assertNotIn("model", script)
+        self.assertTrue(script.get("open_claim"))
+        self.assertEqual(script["needs"], "mini")
+        d = {"jobs": [script]}
+        self.assertTrue(jobs.claimable(d, script, {"mini", "any"}, T0, "cursor"))
+        self.assertTrue(jobs.claimable(d, script, {"macbook", "any"}, T0, "macbook"))
+        chart = {"id": "J0903", "needs": "mini", "status": "open", "by": "", "kind": "chart", "history": []}
+        jobs.do_reroute(chart, "relay", "cursor", "", "Codex out", T0, open_claim=True)
+        d2 = {"jobs": [chart]}
+        self.assertTrue(jobs.claimable(d2, chart, {"mini", "any"}, T0, "cursor"))
+        self.assertFalse(jobs.claimable(d2, chart, {"macbook", "any"}, T0, "macbook-2"))
+        with mock.patch.object(jobs.routing, "OUT", {"claude", "claudecode"}):
+            self.assertFalse(jobs.claimable(d, script, {"mini", "any"}, T0, "claudecode"))
 
     def test_false_mini_only_hits_do_not_block_portable_text(self):
         # Observed 6 Nov 2026: English "flow", "cut-over", do-not-touch Buffer/NAS, and BUFFER_POSTS.json
