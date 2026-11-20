@@ -75,6 +75,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3210 | mini | open (after J3208) | – | – | WW2:006 vo · for gemini · vo · WW2 film 006: narration in Ben's voice (the wooden bomber) |  |
 | J3211 | mini | open (after J3002) | – | – | WW2:006 picture · image · WW2 film 006: gather the archive photos and draw the maps |  |
 | J3212 | mini | open | – | – | 005 edit · assembly · HOS 005 heart-pulse Short: make the on-screen text at 0:38 match the narration (Ben's change on v05) |  |
+| J3213 | any | open | – | – | 124 topic · review · HOS 124 Why Is the Ocean Salty?: rule-E topic go/no-go review | 300c972e |
 
 Recently finished:
 
