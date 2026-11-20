@@ -64,7 +64,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3245 | any | blocked | macbook | – | script · HOS: learn from our data, add two new films to the backlog |  |
 | J3246 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J1275 |  |
 | J3249 | mini | open | – | – | assembly · MiniWork scratch SSD cleanup: safely offload old completed-job scratch to NAS to restore >=40 GB free before J3012 daily split and cutover |  |
-| J3252 | any | open | – | – | studio · Board: WW2 and HOS films show no progress as their jobs finish (only Orbit stage records advance since J3060); per-channel stage updates + backfill |  |
+| J3252 | any | claimed | macbook-2 | 2026-11-20T23:15Z | studio · Board: WW2 and HOS films show no progress as their jobs finish (only Orbit stage records advance since J3060); per-channel stage updates + backfill |  |
 
 Recently finished:
 
