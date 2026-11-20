@@ -292322,9 +292322,14 @@
           "at": "2026-11-20T22:53Z",
           "by": "claude",
           "what": "Ben, 20 Nov: the self-improvement system covers every channel, so the autopsy runs on all registered channels (Orbit, HOS, FOH, and any channel added later) from the registry."
+        },
+        {
+          "at": "2026-11-20T22:54Z",
+          "by": "gemini",
+          "what": "step 2 of 6 done: Recorded demonstrated audio_input+moving_video_input capability; watched OWB 026 (3 windows), OWB 025 (all 3 steepest API drop windows), and HOS 007 opening (found VACCA tofu glyph box + 13s meta-promise)"
         }
       ],
-      "remaining_action": "Verify moving-video+audio capability on extracted drop-point clips, inspect Studio retention if available, then build retention autopsy tool and wire launch_check",
+      "remaining_action": "Watch remaining HOS 007 clips, design and build scripts/retention_autopsy.py + wire 48h/7d autopsy queueing into scripts/launch_check.py",
       "due": "2026-11-26T18:00:00Z",
       "kind": "review",
       "plain": "When a film underperforms, find out exactly where viewers leave and why, and fix the next film",
@@ -292338,11 +292343,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 6,
-        "at": "2026-11-20T22:52Z",
+        "at": "2026-11-20T22:54Z",
         "by": "gemini",
-        "note": "Located OWB 026 (c5AdqQsnnys), OWB 025 (Js6EQJ8qDi8, 100-pt curve), HOS 007 (ETynHpIYLeY), and verified snapshots/search"
+        "note": "Recorded demonstrated audio_input+moving_video_input capability; watched OWB 026 (3 windows), OWB 025 (all 3 steepest AP"
       },
       "taskKeys": [
         "OWB:026",
