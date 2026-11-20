@@ -271395,10 +271395,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-20T06:55Z",
+      "eta": "2026-11-20T10:55Z",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
       "result": "",
@@ -272057,6 +272057,11 @@
           "at": "2026-11-20T06:49Z",
           "by": "codex",
           "what": "released: Preserve 3/4 plan. OWB PR 1011 now 34ef7c6a78; companion HOS PR 688 at 9c0c6b5e guards direct exporters for films 009/010/013 and validates post-cutover canonical ledger. 29 focused tests pass; broad 3 failures/12 errors identical on unchanged baseline. HOS CI tests pending at last read; other checks pass. Next finish companion checks/review and propagate runnable copies; deployed board Contents probe, wrappers, MacBook inventory, refreshed private rehearsal. Official streak 6; seven days, preceding-day notice and live acceptance remain. No marker/service/film/ledger changes or spend. Clean worktrees /private/tmp/j3012-hos-exporters and /private/tmp/j3012-0620; MiniWork only 311 MiB free. Evidence DIRECT_SPEND_EXPORTERS_2026-11-20.md; thread report 7032616827."
+        },
+        {
+          "at": "2026-11-20T06:55Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Finish companion PR checks, board access, machine inventory and final rehearsal before the gated live move",
