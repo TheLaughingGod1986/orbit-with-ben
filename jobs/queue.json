@@ -283160,13 +283160,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-19T19:34Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-19T18:01Z",
-      "result": "parked for Chief: condition verification complete in jobs/reviews/J3155/REVIEW.md (841496505d). HOS PR #389 (7c136209) and lint:package PASS remain intact on HOS origin/main (44b12347) for 009 and 010, but J1275's waiting condition is NOT MET: neither HOS 009 (picture 70/90 doing awaiting J2632 PR #543 ruling; long assembly J2035 blocked on compliant score scope/acceptance with J3159 open and J2035 check_at 2026-11-20T12:00:00Z; 0 long master mp4s on Mini/NAS) nor HOS 010 (long picture blocked due 2026-11-22, edit todo due 2026-11-26; 0 long master mp4s on Mini/NAS) has a locked long master cut yet. Because scripts/jobs.py restricts jobs.py wait J1275 --recheck J3155 and closing J3155 to the elected Chief (chief), exact 2-line Chief commands are in jobs/reviews/J3155/REVIEW.md §3 (next check 2026-11-20T18:00:00Z). £0.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-19T18:01Z",
@@ -283212,6 +283212,11 @@
           "at": "2026-11-19T23:14Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-11-20T01:38Z",
+          "by": "codex",
+          "what": "reopened: Elected Chief accepted condition review and recorded J1275 dependency retry with --recheck J3155. Reopening this verification only to claim and close the reviewed work; parent stays blocked."
         }
       ],
       "remaining_action": "Elected Chief: run jobs.py wait J1275 --recheck J3155 (check-at 2026-11-20T18:00:00Z) and jobs.py done J3155 per jobs/reviews/J3155/REVIEW.md §3",
@@ -283228,13 +283233,6 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-19T19:39Z",
-        "by": "gemini",
-        "note": "Committed jobs/reviews/J3155/REVIEW.md (841496505d) with full condition verification evidence and exact 2-line Chief com"
-      },
       "taskKeys": [
         "HOS:009",
         "HOS:010"
