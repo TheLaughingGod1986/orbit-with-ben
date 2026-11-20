@@ -272207,18 +272207,23 @@
           "at": "2026-11-20T08:33Z",
           "by": "codex",
           "what": "step 3 of 4 done: Exact production-source probe built and eight boundary tests pass; live deployment rejected by automatic approval review. No production change. Both MacBook heartbeat slots read; installed-code checks remain."
+        },
+        {
+          "at": "2026-11-20T08:35Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: PR 1011 updated to 0eac93ae87. Exact production-source probe and five byte-identical live asset checks recorded; 38 focused tests pass. Deployment rejected before execution; explicit approval requested. Both MacBook heartbeat slots read; actual inventory remains."
         }
       ],
-      "remaining_action": "Resolve board probe deployment authorization and complete machine readiness checks",
+      "remaining_action": "Resolve board probe approval, then complete machine readiness and migration notice",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-20T08:33Z",
+        "at": "2026-11-20T08:35Z",
         "by": "codex",
-        "note": "Exact production-source probe built and eight boundary tests pass; live deployment rejected by automatic approval review"
+        "note": "PR 1011 updated to 0eac93ae87. Exact production-source probe and five byte-identical live asset checks recorded; 38 focu"
       },
       "taskKeys": [
         "HOS:009",
