@@ -291972,13 +291972,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-20T21:45Z",
-      "eta": "2026-11-20T23:15Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-20T21:42Z",
-      "result": "",
+      "result": "Opened orbit-with-ben PR #1086 (macbook/J3252, fc00c016c) and ww2-channel PR #24 (macbook/J3252, 231d1d9) for Chief merge. Per-channel status.json updates now write through each registered film_status channel repo checkout (what board_publish/kanban_snapshot/video_tracker already read), keeping J3060 isolation and HOS status_board contract; WW2:003-006 backfilled to review from done jobs (001-002 already current via PRs #22/#23). 360/360 tests PASS, channel_check PASS, Videos tab tracker verified. £0 spent.",
       "history": [
         {
           "at": "2026-11-20T21:42Z",
@@ -291999,6 +291999,11 @@
           "at": "2026-11-20T21:52Z",
           "by": "macbook-2",
           "what": "step 2 of 4 done"
+        },
+        {
+          "at": "2026-11-20T22:00Z",
+          "by": "macbook-2",
+          "what": "done: Opened orbit-with-ben PR #1086 (macbook/J3252, fc00c016c) and ww2-channel PR #24 (macbook/J3252, 231d1d9) for Chief merge. Per-channel status.json updates now write through each registered film_status channel repo checkout (what board_publish/kanban_snapshot/video_tracker already read), keeping J3060 isolation and HOS status_board contract; WW2:003-006 backfilled to review from done jobs (001-002 already current via PRs #22/#23). 360/360 tests PASS, channel_check PASS, Videos tab tracker verified. £0 spent."
         }
       ],
       "remaining_action": "Implement per-channel stage updates in studio.py/jobs.py, add tests, backfill WW2:001-006",
@@ -292010,7 +292015,8 @@
         "of": 4,
         "at": "2026-11-20T21:52Z",
         "by": "macbook-2"
-      }
+      },
+      "done_ref": "PR #1086, ww2-channel PR #24"
     }
   ],
   "focus": [
