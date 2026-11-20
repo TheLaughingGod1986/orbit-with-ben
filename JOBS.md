@@ -72,7 +72,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3230 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J3231 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Weekly search research (Orbit + Field Order History): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
 | J3232 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3114 |  |
-| J3234 | mini | open (after J3233) | – | – | 009 edit · assembly · HOS 009: synthesize GBP0 own-score opening v03_synth, join to teach_v01, and run full music_gate | J3233 |
+| J3234 | mini | claimed | cursor | 2026-11-20T16:24Z | 009 edit · assembly · HOS 009: synthesize GBP0 own-score opening v03_synth, join to teach_v01, and run full music_gate | J3233 |
 | J3235 | mini | open (after J3234) | – | – | 009 edit · for gemini · review · `gemini-argon` · HOS 009: independent audio_input ear review of own-score v03_synth and joined v03 | J3233 |
 | J3236 | any | open (after J3235) | – | – | 009 edit · chief · HOS 009: Chief score disposition for own-score v03_synth | J3233 |
 
