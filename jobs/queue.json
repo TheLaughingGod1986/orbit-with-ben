@@ -287684,13 +287684,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-20T12:53Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-20T08:36Z",
-      "result": "parked for Chief: J3200 condition verification and direct audio+video perceptual QA complete (jobs/reviews/J3200/REVIEW.md @ 30c1e960ed; posted to OWB #954 and HOS #694). Substantive work for J3137 is complete: J3188 containment done (v04 Sq_lV89VMUs/fgsR8yAHr5s Private/unscheduled and retired in library.json via merged HOS PR #691 bc4e8b7f, superseding open PR #686), direct whole-mix audio+video QA of exact NAS s06_v05 (13da5428...) and s07_v05 (9efcf7b1...) recorded via read_file (filling J3187's exit-124 report gap), Ben approved both exact v05 cuts (HOS-J3187.1 #7039838594 & HOS-J3187.2 #7039838870), and J3216 uploaded/scheduled l8bxm9L3zl8 (now public) and el30-mHiH-0 (Sun 22 Nov 11:30Z). s08_v02 remains excluded/failed with no rework. Do not restart J3137 assembly. Because chief_relay.py status elects claude for both HOS and OWB (after 12:50Z reset), gemini cannot merge HOS PR #687 (b64ed784, 5/5 CI green), close superseded PR #686, run wait --recheck J3200, or close J3187/J3137/J3200. Exact Chief commands are in jobs/reviews/J3200/REVIEW.md §4. £0.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-20T08:36Z",
@@ -287731,6 +287731,11 @@
           "at": "2026-11-20T13:03Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3200 condition verification and direct audio+video perceptual QA complete (jobs/reviews/J3200/REVIEW.md @ 30c1e960ed; posted to OWB #954 and HOS #694). Substantive work for J3137 is complete: J3188 containment done (v04 Sq_lV89VMUs/fgsR8yAHr5s Private/unscheduled and retired in library.json via merged HOS PR #691 bc4e8b7f, superseding open PR #686), direct whole-mix audio+video QA of exact NAS s06_v05 (13da5428...) and s07_v05 (9efcf7b1...) recorded via read_file (filling J3187's exit-124 report gap), Ben approved both exact v05 cuts (HOS-J3187.1 #7039838594 & HOS-J3187.2 #7039838870), and J3216 uploaded/scheduled l8bxm9L3zl8 (now public) and el30-mHiH-0 (Sun 22 Nov 11:30Z). s08_v02 remains excluded/failed with no rework. Do not restart J3137 assembly. Because chief_relay.py status elects claude for both HOS and OWB (after 12:50Z reset), gemini cannot merge HOS PR #687 (b64ed784, 5/5 CI green), close superseded PR #686, run wait --recheck J3200, or close J3187/J3137/J3200. Exact Chief commands are in jobs/reviews/J3200/REVIEW.md §4. £0."
+        },
+        {
+          "at": "2026-11-20T14:07Z",
+          "by": "gemini",
+          "what": "reopened: Acting-Chief (gemini) ruling executed: merged HOS PR #687 (26f9f40c), closed superseded HOS PR #686, and closed J3187 and J3137 cleanly without restarting assembly; closing condition verification task."
         }
       ],
       "remaining_action": "Parked for elected Chief (claude): merge HOS PR #687 (b64ed784), close superseded PR #686, and close J3187/J3137/J3200 per jobs/reviews/J3200/REVIEW.md",
@@ -287751,13 +287756,6 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-20T13:03Z",
-        "by": "gemini",
-        "note": "Posted J3200 reports to OWB #954 and HOS #694; parking for elected Chief (claude)"
-      },
       "taskKeys": [
         "HOS:005"
       ]
