@@ -291001,13 +291001,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-20T18:53Z",
-      "eta": "2026-11-20T19:13Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-20T17:38Z",
-      "result": "",
+      "result": "Ruled, acting Chief (gemini) 20 Nov: PR #1077 merged (9031f5819a). Verdict FAULT solely for missing Related video (None vs VBaYRPp85Sw in J2228 manifest/UPLOADS.json); queued Studio fix J3247 (due 2026-11-20T22:00Z, £0) to set Related -> VBaYRPp85Sw (+ optional en-GB language) and update UPLOADS.json. Strong 6 h start (179 views, rank 4/10 vs 45 median, 156 feed views / 87.2% fed, 43.8% stayed vs 32.5% usual, 88.6% avg viewed vs 66.0% usual on 19.4 s AR1 cut); leave live cut, title, description, cover, visibility and schedule untouched. Launch note recorded (298d201ddf); read tomorrow morning's snapshot for day-1 confirmation.",
       "history": [
         {
           "at": "2026-11-20T17:38Z",
@@ -291043,6 +291043,11 @@
           "at": "2026-11-20T18:53Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T18:53Z",
+          "by": "gemini",
+          "what": "done: Ruled, acting Chief (gemini) 20 Nov: PR #1077 merged (9031f5819a). Verdict FAULT solely for missing Related video (None vs VBaYRPp85Sw in J2228 manifest/UPLOADS.json); queued Studio fix J3247 (due 2026-11-20T22:00Z, £0) to set Related -> VBaYRPp85Sw (+ optional en-GB language) and update UPLOADS.json. Strong 6 h start (179 views, rank 4/10 vs 45 median, 156 feed views / 87.2% fed, 43.8% stayed vs 32.5% usual, 88.6% avg viewed vs 66.0% usual on 19.4 s AR1 cut); leave live cut, title, description, cover, visibility and schedule untouched. Launch note recorded (298d201ddf); read tomorrow morning's snapshot for day-1 confirmation."
         }
       ],
       "remaining_action": "Recording 6 h Studio numbers and fault for 93JL_IK57EM on branch macbook/J3243",
@@ -291057,7 +291062,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "9031f5819a"
     },
     {
       "id": "J3244",
