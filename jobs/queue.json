@@ -276135,13 +276135,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "blocked",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-18T23:52Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-18T17:39Z",
-      "result": "parked for Chief: first-day check, Verdict: BEHIND (PR #1028, macbook/J3063 e022f1c88; read-only CDP 9222 at 2026-11-18T23:56Z, actual elapsed 12 h 26 m -> --hours 12; 0 faults)\n\n\"How Do Plants Clean the Air?\" (ChbsigHD5_o) · History of Science · Short · went live Wed 18 Nov 11:30 London\nAt 12 h: views 0 · Studio rank 9 of 10 · shown in feed no figure yet · stayed to watch no figure yet · average viewed no figure yet\nUsual for this channel: stayed to watch 29.6%, average viewed 74%\n\nVerdict: BEHIND\n  - 0 views at 12 h; Studio says the usual for us at this age is 20.\n  - Studio ranks it 9 of 10 against our latest videos at the same age.\n\nDo now\n  - Studio gave no reach figures at this check, so the step that lost the viewers is not known. Read them again before deciding anything.",
+      "result": "J3226 Acting Chief ruling (gemini, PR #1071 / 73fed1a675, jobs/reviews/J3226/CHIEF_DECISION.md): VERIFIED & RESOLVED — KEEP live video ChbsigHD5_o unchanged; close J3063 as done. Mini HOS CDP 9222 reuse_page readback at 2026-11-20T11:59Z (48 h 29 m): 3 views (57 less than usual 60-150), 0 likes, 0.0 watch hours, 2 engaged views, 0:02 AVD, Direct/unknown 66.7% (2) + YouTube search 33.3% (1), no Shorts feed row; Shorts feed impressions, Stayed to watch, and Audience retention still Not enough data (zero feed impressions NOT inferred); 0 setup faults (PR #1028); today's Short already at 15 views in 29 min. No video/listing/schedule/privacy/Buffer change; £0 spend.",
       "history": [
         {
           "at": "2026-11-18T17:39Z",
@@ -276287,9 +276287,19 @@
           "at": "2026-11-20T11:36Z",
           "by": "relay",
           "what": "condition verification queued: J3226"
+        },
+        {
+          "at": "2026-11-20T12:06Z",
+          "by": "gemini",
+          "what": "J3226 Acting Chief ruling: VERIFIED & RESOLVED — KEEP live video unchanged; close J3063 done (PR #1071 / 73fed1a675)"
+        },
+        {
+          "at": "2026-11-20T12:06Z",
+          "by": "gemini",
+          "what": "done: J3226 Acting Chief ruling (gemini, PR #1071 / 73fed1a675, jobs/reviews/J3226/CHIEF_DECISION.md): VERIFIED & RESOLVED — KEEP live video ChbsigHD5_o unchanged; close J3063 as done. Mini HOS CDP 9222 reuse_page readback at 2026-11-20T11:59Z (48 h 29 m): 3 views (57 less than usual 60-150), 0 likes, 0.0 watch hours, 2 engaged views, 0:02 AVD, Direct/unknown 66.7% (2) + YouTube search 33.3% (1), no Shorts feed row; Shorts feed impressions, Stayed to watch, and Audience retention still Not enough data (zero feed impressions NOT inferred); 0 setup faults (PR #1028); today's Short already at 15 views in 29 min. No video/listing/schedule/privacy/Buffer change; £0 spend."
         }
       ],
-      "remaining_action": "Read the plant Short viewing figures after two days using a worker that can access Studio",
+      "remaining_action": "Done: 48 h Studio readback verified (73fed1a675); KEEP live video unchanged",
       "due": "2026-11-18T19:39:00Z",
       "kind": "studio",
       "launch": "ChbsigHD5_o@6",
@@ -276311,16 +276321,8 @@
         "at": "2026-11-18T23:56Z",
         "by": "macbook-2"
       },
-      "hold": {
-        "type": "input",
-        "condition": "J3131 Chief ruling: NOT VERIFIED, KEEP live video unchanged. PR 1043 merged. MacBook Claude could not access Studio. At 20 Nov 11:35Z use Mini HOS CDP 9222 with reuse_page for current Since published views, rank, usual, feed views/shown, stayed, average viewed and likes where shown; record actual time and elapsed age. If Mini browser fails, record failure and use MacBook Gemini/Cursor/Codex, never MacBook Claude. No video changes. Do not infer zero feed impressions from zero views.",
-        "check_at": "2026-11-20T12:36:29+00:00",
-        "last_recheck": "J3131",
-        "checked_at": "2026-11-19T11:58:53+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3226"
-      },
-      "mini_only": true
+      "mini_only": true,
+      "done_ref": "73fed1a675"
     },
     {
       "id": "J3064",
@@ -289093,13 +289095,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-20T11:57Z",
-      "eta": "2026-11-20T13:57Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-20T11:36Z",
-      "result": "",
+      "result": "VERIFIED & RESOLVED (PR #1071 / 73fed1a675, jobs/reviews/J3226/REVIEW.md & CHIEF_DECISION.md): KEEP live video ChbsigHD5_o unchanged; closed J3063 and J3226 as done. Mini HOS CDP 9222 reuse_page readback at 2026-11-20T11:59Z (48 h 29 m, UCXp7HkBIl1LgaznXuZHJyRg): 3 views (57 less than usual 60-150), 0 likes, 0.0 watch hours, 2 engaged views, 0:02 AVD, Direct/unknown 66.7% (2) + YouTube search 33.3% (1), Ranking superseded by today's Short (15 views in 29 min); Shorts feed impressions, Stayed to watch, and Audience retention still Not enough data (zero feed impressions NOT inferred). 17 Nov xgx2lYHhYZM at 72 h 29 m: 4 views (Search 3, Direct 1). Recorded in 05_Analytics/hos/launch/ChbsigHD5_o.json. No video changes; £0 spend.",
       "history": [
         {
           "at": "2026-11-20T11:36Z",
@@ -289140,9 +289142,14 @@
           "at": "2026-11-20T12:06Z",
           "by": "gemini",
           "what": "step 4 of 4 done: PR #1071 merged (73fed1a675): 48 h Studio readback and Acting Chief KEEP ruling landed on main"
+        },
+        {
+          "at": "2026-11-20T12:06Z",
+          "by": "gemini",
+          "what": "done: VERIFIED & RESOLVED (PR #1071 / 73fed1a675, jobs/reviews/J3226/REVIEW.md & CHIEF_DECISION.md): KEEP live video ChbsigHD5_o unchanged; closed J3063 and J3226 as done. Mini HOS CDP 9222 reuse_page readback at 2026-11-20T11:59Z (48 h 29 m, UCXp7HkBIl1LgaznXuZHJyRg): 3 views (57 less than usual 60-150), 0 likes, 0.0 watch hours, 2 engaged views, 0:02 AVD, Direct/unknown 66.7% (2) + YouTube search 33.3% (1), Ranking superseded by today's Short (15 views in 29 min); Shorts feed impressions, Stayed to watch, and Audience retention still Not enough data (zero feed impressions NOT inferred). 17 Nov xgx2lYHhYZM at 72 h 29 m: 4 views (Search 3, Direct 1). Recorded in 05_Analytics/hos/launch/ChbsigHD5_o.json. No video changes; £0 spend."
         }
       ],
-      "remaining_action": "Close J3063 and J3226 as done after merged PR #1071 (73fed1a675)",
+      "remaining_action": "Done: J3063 verified at 48 h 29 m and closed KEEP (PR #1071 / 73fed1a675)",
       "kind": "review",
       "recheck_of": "J3063",
       "mini_only": true,
@@ -289166,7 +289173,8 @@
       },
       "taskKeys": [
         "HOS:006"
-      ]
+      ],
+      "done_ref": "73fed1a675"
     },
     {
       "id": "J3227",
