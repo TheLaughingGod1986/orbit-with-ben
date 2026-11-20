@@ -292231,10 +292231,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-20T23:46Z",
+      "eta": "2026-11-21T00:46Z",
       "created_by": "claude",
       "created_at": "2026-11-20T22:30Z",
       "result": "",
@@ -292293,6 +292293,11 @@
           "at": "2026-11-20T23:34Z",
           "by": "claude",
           "what": "reopened: Ben, 20 Nov ~23:10Z, in chat: \"Done\". He ran the upload sign-in (youtube-auth.ts --upload ww2) on the Mini after #1089 merged (main 6945e743), plus the analytics one if it was not already done, with YT_CHANNEL_ID_WW2 added to 07_Content-Ops/.env. Released for step 4. Do, in order: (a) git pull on the Mini; confirm the key names YOUTUBE_REFRESH_TOKEN_WW2 and YT_ANALYTICS_REFRESH_TOKEN_WW2 exist in 07_Content-Ops/.env (names only, never print or log values); if the upload key is missing, block again for Ben with the one command. (b) In the 9224 Studio window read Settings > Channel > Feature eligibility and save a screenshot to the job folder. If Intermediate features are not on yet, block with the screenshot and check again in 6 hours; nothing else changes. (c) If on: upload WW2:001 v43 as Private, scheduled Tue 24 Nov 2026 17:00 London (17:00Z), and WW2:002 v05 as Private, scheduled Sat 28 Nov 17:00Z, from the exact files Ben OK'd (check sha256 against the board record), with their approved title, description, chapters and thumbnail. The FOH path skips Orbit's duplicate check, so look in Studio for an existing upload before any retry and never upload a film twice. (d) Record each video id and the scheduled time in ww2-channel status.json and studio/plan.json, and post the two Studio links on the thread. If 001 cannot be scheduled by Mon 23 Nov 20:00 London, it takes the next Tue/Sat slot and the others shift; never two films on one day. Guards: no public visibility now, no change to Orbit or HOS uploads, £0."
+        },
+        {
+          "at": "2026-11-20T23:46Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Check token names, read Feature eligibility, upload 001 (24 Nov) and 002 (28 Nov) Private + scheduled, record ids",
@@ -292303,7 +292308,15 @@
       "taskKeys": [
         "WW2:001",
         "WW2:002"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T23:46Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3255",
