@@ -289327,9 +289327,14 @@
           "at": "2026-11-20T17:57Z",
           "by": "gemini",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-20T17:58Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Sections 1, 2, 5 already in AUDIT_2026-11.md (commit 93663e2e); Sections 3 & 4 pending Mini YTA token"
         }
       ],
-      "remaining_action": "Inspecting existing HOS analytics snapshots, J3122 findings, and YT Analytics collector",
+      "remaining_action": "Querying live HOS YouTube Analytics API on the Mini for Sections 3 (countries, ages, gender: Shorts vs longs) and 4 (exact search terms: lifetime & 28d)",
       "due": "2026-11-24T18:00:00Z",
       "kind": "review",
       "plain": "Find out exactly why History of Science's views have dropped, and who is actually watching",
@@ -289345,10 +289350,11 @@
       "model": "gemini-argon",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-20T17:57Z",
-        "by": "gemini"
+        "at": "2026-11-20T17:58Z",
+        "by": "gemini",
+        "note": "Sections 1, 2, 5 already in AUDIT_2026-11.md (commit 93663e2e); Sections 3 & 4 pending Mini YTA token"
       }
     },
     {
