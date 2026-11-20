@@ -8,7 +8,7 @@ record worktrees never silently change location, preserving failed-push recovery
 stages the analytics service with its original schedule and explicit local credential-file path.
 
 Validation:
-- 65 analytics tests passed before the added local-Git orchestration test; that integration test then passed.
+- All 66 analytics tests pass together, including the added local-Git orchestration test.
 - Eight Mini plist tests pass; shell syntax and whitespace checks pass.
 - 13 channel-ratchet, eight email-ratchet and five private-network tests pass.
 - The integration test invokes the real worker/session/collection/record helpers with fake collector results and
