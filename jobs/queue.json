@@ -189067,9 +189067,14 @@
           "at": "2026-11-20T12:06Z",
           "by": "relay",
           "what": "condition verification queued: J3230"
+        },
+        {
+          "at": "2026-11-20T16:34Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-21T12:00:00Z"
         }
       ],
-      "remaining_action": "Wait for separately accepted music and the completed gravity film before building its Shorts",
+      "remaining_action": "Wait for J3241 Chief score disposition on v04_synth and completed J2035 long assembly before Shorts A/B assembly",
       "due": "2026-11-22T18:00:00Z",
       "kind": "assembly",
       "progress": {
@@ -189084,12 +189089,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J3059 keeps PR651 d047b064 offline only; Grok desk 7005927729 opened no production guard or score scope. J3043/J3045 allowance remains closed unused and v01/v02 rejected. J3139 owns the compliant score-route decision; require separately scoped and accepted compliant score, completed J2035 long assembly and all required gates, and Shorts locked inputs before release.",
-        "check_at": "2026-11-20T13:06:58+00:00",
-        "last_recheck": "J3133",
-        "checked_at": "2026-11-19T14:41:00+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3230"
+        "condition": "J3230 Acting Chief ruling (2026-11-20T16:34Z, jobs/reviews/J3230/REVIEW.md @ bd5a98a425): condition NOT MET. v03_synth refused (J3236/PR #699); final bounded GBP0 v04_synth built (J3239/PR #700) and ear-reviewed 7/7 PASS (J3240/PR #701), but Chief final score disposition J3241 is still open and PR #700/#701 remain unmerged (no compliant score accepted). ACTIVATION_AUTHORIZED=False, ElevenLabs ledger untouched, J3043/J3045 closed unused (J3047), v01/v02/v03_synth rejected, and J2035 long assembly still blocked. Require J3241 formal score acceptance, completed J2035 long assembly with all required gates, and preserved Shorts locked inputs before release.",
+        "check_at": "2026-11-21T12:00:00Z",
+        "last_recheck": "J3230",
+        "checked_at": "2026-11-20T16:34:45+00:00",
+        "checked_by": "gemini"
       }
     },
     {
