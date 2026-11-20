@@ -45,7 +45,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3021 | mini | open (after J3020) | – | – | 064 vo · vo · OWB 064: Record and check narration for the every-planet film | J3011 |
 | J3022 | mini | open (after J3021) | – | – | 064 picture · chart · OWB 064: Prepare shelf pictures, graphics and three thumbnails for the every-planet film | J3011 |
 | J3023 | mini | open (after J3022) | – | – | 064 edit · assembly · OWB 064: Assemble and check the every-planet film, then put it on Ben’s watch board | J3011 |
-| J3026 | mini | open | – | – | for codex · review · `gemini-argon` · Verify condition for J2040 |  |
+| J3026 | mini | claimed | codex | 2026-11-20T07:55Z | for codex · review · `gemini-argon` · Verify condition for J2040 |  |
 | J3051 | mini | blocked | codex | – | for codex · review · `gpt-6-astra` · Verify condition for J3020 |  |
 | J3063 | mini | blocked | macbook-2 | – | studio · First-day check at 6 h: "How Do Plants Clean the Air?" (ChbsigHD5_o) |  |
 | J3065 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Pluto Short about ice mountains (v02) Private, slot Wed 23 Dec 11:30 |  |
