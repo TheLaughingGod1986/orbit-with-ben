@@ -4,7 +4,7 @@ Prepared 18 November 2026. This is the phase 3 execution runbook, not permission
 The latest J3012 brief supersedes the original history-rewrite dependency: create a clean root commit; do not
 copy Orbit's Git history. J2537's history rewrite is not a prerequisite. The source history remains in Orbit.
 
-## Resume here (20 November, heartbeat and board writer guards)
+## Resume here (20 November, snapshot exporter guard)
 
 PR 1011 is the existing delivery branch; do not recreate the runbook or reset J3012's **3/4** progress.
 Its queue history and the newest `jobs/reviews/J3012/` evidence describe completed preparation.
@@ -22,6 +22,7 @@ The Mini inventory now resolves the legacy Cursor launcher and watchdog, and ide
 plist. The repeatable, value-free inventory tool and cutover handling are documented below. No service was changed.
 Claude heartbeat publication, board-health reports and board-note publishing now also refuse a retired engine,
 including imported writer calls. See `jobs/reviews/J3012/BOARD_WRITERS_2026-11-20.md`.
+The snapshot CLI and its imported watch-copy uploader now also refuse a retired engine before output or credential access. See `jobs/reviews/J3012/SNAPSHOT_EXPORTER_2026-11-20.md`.
 Next: deployed board credential Contents probe; remaining writer guards and wrapper replacements; MacBook inventory;
 refreshed private rehearsal. Do not equate installed-service inventory with loaded-service or guard verification.
 Keep the live switch gated on the timing and acceptance below. This run does not change the official daily

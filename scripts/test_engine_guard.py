@@ -43,8 +43,8 @@ class EngineGuard(unittest.TestCase):
         self.assertIsNotNone(engine_guard.refusal(self.root, self.marker))
 
     def test_cli_entrypoints_refuse_before_parsing_or_service_work(self):
-        import jobs, studio, chief_relay, board_publish, macbook_worker, ai_spend, ai_spend_daily, thumb_ledger, launch_check, claude_beat, board_check, notes_push
-        for module in (jobs, studio, chief_relay, board_publish, macbook_worker, ai_spend, ai_spend_daily, thumb_ledger, launch_check, claude_beat, board_check, notes_push):
+        import jobs, studio, chief_relay, board_publish, macbook_worker, ai_spend, ai_spend_daily, thumb_ledger, launch_check, claude_beat, board_check, notes_push, kanban_snapshot
+        for module in (jobs, studio, chief_relay, board_publish, macbook_worker, ai_spend, ai_spend_daily, thumb_ledger, launch_check, claude_beat, board_check, notes_push, kanban_snapshot):
             with self.subTest(module=module.__name__), \
                     patch.object(engine_guard, 'refusal', return_value='retired'):
                 with self.assertRaisesRegex(SystemExit, 'retired'):
@@ -144,3 +144,39 @@ class EngineGuard(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class SnapshotRetirement(unittest.TestCase):
+    setUp = EngineGuard.setUp
+    arm = EngineGuard.arm
+    def test_snapshot_refuses_before_reading_channels_or_creating_output(self):
+        import kanban_snapshot as ks
+        self.arm()
+        real_refusal = engine_guard.refusal
+        output = self.root / 'output'
+        with patch.object(engine_guard, 'refusal',
+                          side_effect=lambda *a, **k: real_refusal(self.root, self.marker)), \
+                patch.object(ks, 'read_documents') as read:
+            with self.assertRaisesRegex(SystemExit, 'retired'):
+                ks.main(['--db-out', str(output)])
+            read.assert_not_called()
+        self.assertFalse(output.exists())
+
+    def test_imported_upload_refuses_before_credentials_materialisation_or_transport(self):
+        import kanban_snapshot as ks
+        self.arm()
+        real_refusal = engine_guard.refusal
+        target = self.root / 'register.json'
+        target.write_text('original register')
+        with patch.object(engine_guard, 'refusal',
+                          side_effect=lambda *a, **k: real_refusal(self.root, self.marker)), \
+                patch.object(ks, 'r2_ready') as ready, \
+                patch.object(ks, 'materialise') as materialise, \
+                patch.object(ks, 'WATCH_LOCAL_REGISTER', target), \
+                patch('subprocess.run') as run:
+            with self.assertRaisesRegex(SystemExit, 'retired'):
+                ks.auto_upload('fixture', self.root / 'absent.mp4', 'fixture')
+            ready.assert_not_called()
+            materialise.assert_not_called()
+            run.assert_not_called()
+        self.assertEqual(target.read_text(), 'original register')
