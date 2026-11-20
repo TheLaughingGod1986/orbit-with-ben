@@ -272402,18 +272402,23 @@
           "at": "2026-11-20T16:42Z",
           "by": "gemini",
           "what": "step 3 of 4 done: PR #1011 merges cleanly onto origin/main; studio_split --no-tests PASS, 78 J3012 unit tests PASS, 232 Content-Ops tests PASS; HOS live checkout verified on main with PR #688 guards (5/5 tests PASS); full Python suite running"
+        },
+        {
+          "at": "2026-11-20T16:53Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Merged PR #1011 (24058503f8); verified live HOS checkout on main (9f3acbae, 5/5 guard tests PASS); ran live board probe proving BOARD_GH_TOKEN returns 404 on studio (restored fa4baa50, deleted probes); opened PR #1075 (5fe73b23d3); queued MacBook inventory J3242"
         }
       ],
-      "remaining_action": "Finish independent review of PR #1011 (121 files), verify HOS exporter guard live checkout, queue MacBook inventory, and resolve BOARD_GH_TOKEN Contents probe",
+      "remaining_action": "Await MacBook inventory (J3242), Ben's one-time BOARD_GH_TOKEN grant for studio (Contents: Read-only), and PR #1075 review; then post preceding-day notice and execute cutover",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-20T16:42Z",
+        "at": "2026-11-20T16:53Z",
         "by": "gemini",
-        "note": "PR #1011 merges cleanly onto origin/main; studio_split --no-tests PASS, 78 J3012 unit tests PASS, 232 Content-Ops tests "
+        "note": "Merged PR #1011 (24058503f8); verified live HOS checkout on main (9f3acbae, 5/5 guard tests PASS); ran live board probe "
       },
       "taskKeys": [
         "HOS:009",
