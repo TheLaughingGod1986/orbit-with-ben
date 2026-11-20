@@ -71,6 +71,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3243 | mini | blocked | macbook | – | studio · First-day check at 6 h: "Will Asteroid 2024 YR4 Hit the Moon in 2032?" (93JL_IK57EM) |  |
 | J3245 | any | blocked | macbook | – | script · HOS: learn from our data, add two new films to the backlog |  |
 | J3246 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J1275 |  |
+| J3247 | mini | open | – | – | studio · OWB Short 93JL_IK57EM (2024 YR4): set Related video to VBaYRPp85Sw in Studio (J3243 fault fix) |  |
 
 Recently finished:
 

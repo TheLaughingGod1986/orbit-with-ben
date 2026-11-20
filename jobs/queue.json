@@ -1,5 +1,5 @@
 {
-  "next_id": 3247,
+  "next_id": 3248,
   "jobs": [
     {
       "id": "J0001",
@@ -291234,6 +291234,36 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J3247",
+      "title": "OWB Short 93JL_IK57EM (2024 YR4): set Related video to VBaYRPp85Sw in Studio (J3243 fault fix)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief follow-up from J3243 (6 h first-day Studio check on Orbit With Ben Short 93JL_IK57EM, \"Will Asteroid 2024 YR4 Hit the Moon in 2032?\", went live Fri 20 Nov 2026 11:30 London; PR #1077). £0 spend. About 10 minutes.\n\nFault to fix today:\n- In Studio (CDP 9223, Orbit With Ben `UC_esArsDKd3GJvOkeO0DUog`, reusing the existing `studio.youtube.com` tab via `cdp_tabs.reuse_page`), open Video details for `93JL_IK57EM` (`https://studio.youtube.com/video/93JL_IK57EM/edit`).\n- Set **Related video** to **`VBaYRPp85Sw`** (*What Happened to Venus?*, public since 25 Oct 2026), matching `jobs/reviews/J2228/PACKAGE_MANIFEST.json` (`relatedVideoId: \"VBaYRPp85Sw\"`) and `00_Brand/Channel-Setup/social/UPLOADS.json` (`long: \"VBaYRPp85Sw\"`, `relatedStatus: \"pending_studio\"`).\n- While in Video details (optional if clean and visible in the same save): set Video language and Title & description language to `English (United Kingdom)` (`en-GB`).\n- Save, reload `https://studio.youtube.com/video/93JL_IK57EM/edit` and verify live readback:\n  1. Related video shows `What Happened to Venus?` (`VBaYRPp85Sw`).\n  2. Visibility remains Public, Restrictions remain empty (`—`), and Audience remains **Not Made for Kids** (re-check after save per `STUDIO_PLAYBOOK.md` §9).\n- Update `00_Brand/Channel-Setup/social/UPLOADS.json` for `93JL_IK57EM` (`relatedStatus` -> `\"set\"`, appending a concise note with the verification date/job id) from a clean detached worktree/branch and open a PR (or commit per repo rules), then record the fix via `python3 scripts/launch_check.py note 93JL_IK57EM \"...\" --by <your agent id> --git`.\n\nNever: edit the title, description, tags, cover/thumbnail, visibility, schedule, or video file; never add a pinned comment to a Short; never delete anything; no spend.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-20T18:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T18:52Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Set Related video on live Short 93JL_IK57EM to VBaYRPp85Sw (What Happened to Venus?) in Studio, verify readback, and update UPLOADS.json",
+      "due": "2026-11-20T22:00:00Z",
+      "kind": "studio",
+      "plain": "Set missing Related video on 2024 YR4 Short (93JL_IK57EM) to VBaYRPp85Sw"
     }
   ],
   "focus": [
