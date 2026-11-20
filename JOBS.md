@@ -70,6 +70,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3183 | any | open | – | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J3184 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J3185 | any | open | – | – | 122 topic · review · HOS 122 Why Do We Sneeze?: rule-E topic go/no-go review | 5dfb7504 |
+| J3186 | any | open | – | – | 123 topic · review · HOS 123 Why Does Hair Turn Grey?: rule-E topic go/no-go review | 5dfb7504 |
 
 Recently finished:
 
