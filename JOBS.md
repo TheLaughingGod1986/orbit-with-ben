@@ -32,7 +32,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2708 | mini | blocked | cursor | – | assembly · HOS app: establish isolated hosted PostgreSQL for Preview validation | J2704 |
 | J2744 | mini | blocked | macbook | – | for gemini · review · `gemini-argon` · Readout: 4-6 s drop, stayed-to-watch and APV on the three J2683 Shorts (Supermoon v04, 032 strike-match, 033 Short 2) | 6829905842 |
 | J2846 | mini | blocked | codex | – | for codex · studio · `gpt-6.1-sol` · Studio: test approved ZERO SIGNALS thumbnail for Fermi Paradox (T038) | J2834 |
-| J2847 | mini | claimed | cursor | 2026-11-20T07:42Z | studio · Studio: Webb thumbnail test T039 held for corrected candidate | J2834 |
 | J2857 | mini | blocked | claudecode | – | J01 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload OWB J01 long v03 (A Calm Journey From Venus to a Dying Star) Private + arm 3-way thumb Test & Compare | 6882810716 |
 | J2886 | mini | blocked | cursor | – | studio · Pin the Titan long comment once T3cBBss1F60 is public |  |
 | J2895 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about landing on an ice giant (v02) Private, slot Sat 19 Dec 11:30 |  |
