@@ -72,7 +72,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3231 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Weekly search research (Orbit + Field Order History): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
 | J3232 | any | blocked | macbook | – | review · `gemini-argon` · Verify condition for J3114 |  |
 | J3241 | mini | open (after J3240) | – | – | 009 edit · chief · HOS 009: Chief final score disposition for own-score v04_synth (accept or escalate to Ben) | J3236 |
-| J3242 | macbook | open | – | – | assembly · J3012: MacBook read-only installed/loaded service inventory and studio repo access check |  |
+| J3242 | macbook | claimed | macbook | 2026-11-20T17:26Z | assembly · J3012: MacBook read-only installed/loaded service inventory and studio repo access check |  |
 
 Recently finished:
 
