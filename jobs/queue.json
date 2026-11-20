@@ -289945,18 +289945,23 @@
           "at": "2026-11-20T14:25Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Claimed J3234. Scope is a 180s D-minor lute and viol opening joined to the locked teach cue."
+        },
+        {
+          "at": "2026-11-20T14:30Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Scope read. Writing the deterministic NumPy script and starting the 180 second render."
         }
       ],
-      "remaining_action": "Read the score scope and write the own-synthesis script",
+      "remaining_action": "Synthesize the D-minor lute and viol opening",
       "due": "2026-11-21T06:00:00Z",
       "kind": "assembly",
       "plain": "Synthesize a GBP0 17th-century D-minor chamber opening for HOS 009 in Python/NumPy, join it to the retained teach cue, and verify full-library music_gate and continuity",
       "progress": {
         "step": 0,
         "of": 4,
-        "at": "2026-11-20T14:25Z",
+        "at": "2026-11-20T14:30Z",
         "by": "cursor",
-        "note": "Claimed J3234. Scope is a 180s D-minor lute and viol opening joined to the locked teach cue."
+        "note": "Scope read. Writing the deterministic NumPy script and starting the 180 second render."
       },
       "taskKeys": [
         "HOS:009"
