@@ -292495,10 +292495,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 45,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-20T23:12Z",
+      "eta": "2026-11-20T23:57Z",
       "created_by": "gemini",
       "created_at": "2026-11-20T23:10Z",
       "result": "",
@@ -292507,13 +292507,26 @@
           "at": "2026-11-20T23:10Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-20T23:12Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Extract frame-0 cover from approved hos_005_s07_heart_pulse_v05.mp4, set on el30-mHiH-0 with Studio/API readback, and PR SHORTS_RELEASE.json v05 IDs",
       "due": "2026-11-22T10:00:00Z",
       "kind": "studio",
       "plain": "Set the frame-0 cover on the scheduled Sunday heart Short el30-mHiH-0 and update HOS 005 SHORTS_RELEASE.json to the live v05 IDs",
-      "mini_only": true
+      "mini_only": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T23:12Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [

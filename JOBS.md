@@ -65,7 +65,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3255 | mini | open (after J3254) | – | – | studio · YouTube and Studio settings audit for growth: every channel setting, upload default, layout, playlist and eligibility; fix the safe ones, ask Ben the rest |  |
 | J3257 | any | claimed | macbook-2 | 2026-11-21T02:53Z | studio · Recursive self-improvement for every channel we manage (registry-driven): experiment register, autopsy-to-hypothesis, weekly cycle, ops loop, dashboard |  |
 | J3258 | mini | open (after J3254) | – | – | studio · History of Science: take the two shared upload files from #1089 and add the uploadFor hook, so HOS uploads keep working |  |
-| J3259 | mini | open | – | – | 005 upload · studio · HOS 005: set el30-mHiH-0 cover before Sun 22 Nov 11:30 and update SHORTS_RELEASE.json to v05 IDs | J3227/HOS-PR-693 |
+| J3259 | mini | claimed | cursor | 2026-11-20T23:57Z | 005 upload · studio · HOS 005: set el30-mHiH-0 cover before Sun 22 Nov 11:30 and update SHORTS_RELEASE.json to v05 IDs | J3227/HOS-PR-693 |
 
 Recently finished:
 
