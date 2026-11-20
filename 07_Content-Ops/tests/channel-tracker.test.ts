@@ -363,6 +363,18 @@ describe("sign-in target", () => {
     expect(t).toMatchObject({ envKey: "YT_ANALYTICS_REFRESH_TOKEN_HOS", channelId: "UCXp7HkBIl1LgaznXuZHJyRg" });
     expect(t.scopes).toEqual(["https://www.googleapis.com/auth/youtube.readonly", "https://www.googleapis.com/auth/yt-analytics.readonly"]);
     expect(() => authTarget(["--analytics", "x"])).toThrow();
+    expect(() => authTarget(["--upload", "owb"])).toThrow("--upload needs ww2");
+    const prev = process.env.YT_CHANNEL_ID_WW2;
+    delete process.env.YT_CHANNEL_ID_WW2;
+    expect(() => authTarget(["--upload", "ww2"])).toThrow("Set YT_CHANNEL_ID_WW2");
+    process.env.YT_CHANNEL_ID_WW2 = "UCu94mInMFosxu3W0H6jlI6Q";
+    const up = authTarget(["--upload", "ww2"]);
+    expect(up.envKey).toBe("YOUTUBE_REFRESH_TOKEN_WW2");
+    expect(up.channelId).toBe("UCu94mInMFosxu3W0H6jlI6Q");
+    expect(up.scopes).toContain("https://www.googleapis.com/auth/youtube.upload");
+    expect(authTarget([]).envKey).toBe("YOUTUBE_REFRESH_TOKEN");
+    if (prev === undefined) delete process.env.YT_CHANNEL_ID_WW2;
+    else process.env.YT_CHANNEL_ID_WW2 = prev;
   });
 });
 

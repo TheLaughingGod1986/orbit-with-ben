@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # Start the two Chrome windows the studio agents drive on the MacBook (Ben, 9 Nov 2026: signed into YouTube Studio
 # for both channels on the MacBook). Same ports and profile folders as the Mac mini:
-#   9223  Orbit With Ben Studio   ~/.orbit-chrome-youtube-studio
-#   9222  History of Science      ~/.hos-chrome-cdp
+#   9223  Orbit With Ben Studio      ~/.orbit-chrome-youtube-studio
+#   9222  History of Science         ~/.hos-chrome-cdp
+#   9224  Field Order History Studio ~/.ww2-chrome-youtube-studio
 # Chrome refuses remote debugging on your everyday profile, so each port gets its own profile folder. The first run
 # copies your everyday Chrome profile into each, so your Google sign-in comes with it (switch each window to the right
 # channel once: Studio > your avatar > Switch account). If macOS refuses the copy, the window starts on a fresh profile
@@ -45,6 +46,7 @@ start() {  # port profile-dir url
 
 start 9223 "${HOME}/.orbit-chrome-youtube-studio" "https://studio.youtube.com/"
 start 9222 "${HOME}/.hos-chrome-cdp" "https://studio.youtube.com/"
+start 9224 "${HOME}/.ww2-chrome-youtube-studio" "https://studio.youtube.com/"
 
 if [[ "${1:-}" == "--install" ]]; then
   plist="${HOME}/Library/LaunchAgents/com.owb.macbook-cdp.plist"
@@ -64,4 +66,4 @@ PLIST
   launchctl bootstrap "gui/$(id -u)" "$plist"
   echo "Installed: both Studio windows start at every login"
 fi
-echo "In each new window: check Studio shows the right channel (9223 = Orbit With Ben, 9222 = History of Science)."
+echo "In each new window: check Studio shows the right channel (9223 = Orbit With Ben, 9222 = History of Science, 9224 = Field Order History)."

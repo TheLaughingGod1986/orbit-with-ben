@@ -4,11 +4,87 @@
  * these hooks; each repo keeps its own copy of this file, so how a channel signs in, guards its desk, files its uploads
  * and mirrors to social stays the channel's own.
  */
+import fs from "fs";
+import path from "path";
 import type { ResolvedYouTubePackage } from "../src/lib/publishing/youtube-package";
 import type { ChannelUpload } from "../src/lib/youtube/upload";
 
 export { ensureDeskLock as beforeRun } from "./with-desk-lock";
-export { getYouTubeAccessToken as youtubeAccessToken } from "../src/lib/youtube/data-api";
+
+const FOH_ID = "UCu94mInMFosxu3W0H6jlI6Q";
+
+/** The channel whose checkout holds this package, from the nearest studio/channel.json above it. */
+export function packageOwner(packageDir: string): { slug: string; id: string } | null {
+  let dir = path.resolve(packageDir);
+  for (let i = 0; i < 8; i++) {
+    const file = path.join(dir, "studio", "channel.json");
+    if (fs.existsSync(file)) {
+      try {
+        const c = JSON.parse(fs.readFileSync(file, "utf8")) as { slug?: string; youtube?: { id?: string } };
+        if (c.slug) return { slug: c.slug, id: c.youtube?.id || "" };
+      } catch {
+        return null;
+      }
+    }
+    const parent = path.dirname(dir);
+    if (parent === dir) break;
+    dir = parent;
+  }
+  return null;
+}
+
+function fieldOrderUploadHold(packageDir: string): string | null {
+  let names: string[] = [];
+  try {
+    names = fs.readdirSync(packageDir).filter((n) => /^metadata_v\d+\.json$/i.test(n));
+  } catch {
+    return null;
+  }
+  names.sort((a, b) => Number(a.match(/\d+/)?.[0] || 0) - Number(b.match(/\d+/)?.[0] || 0));
+  const file = names.length ? path.join(packageDir, names[names.length - 1]) : "";
+  if (!file) return null;
+  try {
+    const meta = JSON.parse(fs.readFileSync(file, "utf8")) as { upload_authorized?: boolean; hold_reason?: string };
+    if (meta.upload_authorized === false) {
+      return meta.hold_reason || "Field Order History package is not authorised for upload";
+    }
+  } catch {
+    return null;
+  }
+  return null;
+}
+
+function isFieldOrder(packageDir: string): { slug: string; id: string } | null {
+  const owner = packageOwner(packageDir);
+  return owner?.slug === "ww2" ? owner : null;
+}
+
+/** Orbit's upload login, or Field Order History's own token when the package lives in that checkout. */
+export async function youtubeAccessToken(packageDir?: string): Promise<string> {
+  const foh = packageDir ? isFieldOrder(packageDir) : null;
+  if (foh) {
+    if (foh.id !== FOH_ID) {
+      throw new Error(`Refusing a Field Order History upload: studio/channel.json id is ${foh.id || "(none)"}, not ${FOH_ID}`);
+    }
+    const { getChannelAccessToken } = await import("../src/lib/youtube/data-api");
+    try {
+      return await getChannelAccessToken("YOUTUBE_REFRESH_TOKEN_WW2", FOH_ID);
+    } catch (e) {
+      const msg = (e as Error).message;
+      if (msg.includes("missing from .env")) {
+        throw new Error("YOUTUBE_REFRESH_TOKEN_WW2 missing from .env: run `npx tsx --env-file=.env scripts/youtube-auth.ts --upload ww2` and choose the Field Order History Brand Account");
+      }
+      throw e;
+    }
+  }
+  const { getYouTubeAccessToken } = await import("../src/lib/youtube/data-api");
+  return getYouTubeAccessToken();
+}
+
+/** Education, British English, for a Field Order History package. Orbit stays Science & Technology. */
+export function uploadFor(packageDir: string): ChannelUpload {
+  return isFieldOrder(packageDir) ? { categoryId: "27", defaultLanguage: "en-GB" } : UPLOAD;
+}
 
 export async function afterRun(): Promise<void> {}
 
@@ -22,6 +98,20 @@ type UploadHookInput = { resolved: ResolvedYouTubePackage; flag: (name: string) 
 
 /** Refuses a second upload of the same film (uploads.json + earlier results); `--force-new` skips it. */
 export async function beforeUpload(input: UploadHookInput): Promise<Record<string, unknown>> {
+  const foh = isFieldOrder(input.resolved.packageDir);
+  if (foh) {
+    if (foh.id !== FOH_ID) {
+      throw new Error(`Refusing a Field Order History upload: studio/channel.json id is ${foh.id || "(none)"}, not ${FOH_ID}`);
+    }
+    if (!input.flag("dry-run")) {
+      const { isDryRun } = await import("../src/lib/env");
+      if (!isDryRun()) {
+        const hold = fieldOrderUploadHold(input.resolved.packageDir);
+        if (hold) throw new Error(hold);
+      }
+    }
+    return { channel: "ww2", channelId: FOH_ID };
+  }
   const { checkPackageDuplicate } = await import("../src/lib/publishing/package-duplicate");
   const { UPLOADS_FILE, REPO_ROOT } = await import("../src/lib/publishing/buffer-deps");
   return checkPackageDuplicate({
@@ -38,6 +128,9 @@ export async function beforeUpload(input: UploadHookInput): Promise<Record<strin
 export async function afterUpload(
   input: UploadHookInput & { videoId: string; identity: Record<string, unknown> },
 ): Promise<{ buffer: Record<string, unknown> | null }> {
+  if (isFieldOrder(input.resolved.packageDir)) {
+    return { buffer: { skipped: true, reason: "Field Order History has no Buffer mirror" } };
+  }
   const { resolved, flag, videoId } = input;
   const { UPLOADS_FILE, REPO_ROOT, createMirrorDeps } = await import("../src/lib/publishing/buffer-deps");
   const { registerUpload } = await import("../src/lib/publishing/media-finder");

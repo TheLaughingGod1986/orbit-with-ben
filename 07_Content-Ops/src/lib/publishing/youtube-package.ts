@@ -322,6 +322,24 @@ export function definedOnly<T extends object>(obj: T): Partial<T> {
   return Object.fromEntries(Object.entries(obj).filter(([, v]) => v !== undefined)) as Partial<T>;
 }
 
+function thumbnailRel(value: unknown): string | null {
+  if (typeof value === "string" && value.trim()) return value;
+  if (value && typeof value === "object" && typeof (value as { file?: unknown }).file === "string") {
+    return (value as { file: string }).file;
+  }
+  return null;
+}
+
+function resolvePackageAsset(packageDir: string, rel: string): string {
+  const inPackage = path.resolve(packageDir, rel);
+  if (fs.existsSync(inPackage)) return inPackage;
+  const inFilm = path.resolve(packageDir, "..", rel);
+  if (fs.existsSync(inFilm)) return inFilm;
+  const onNas = path.join("/Volumes/data/studio-live/ww2/02_Video-Projects", path.basename(path.dirname(packageDir)), rel);
+  if (fs.existsSync(onNas)) return onNas;
+  return inPackage;
+}
+
 export function loadYouTubePackage(input: {
   packageDir: string;
   videoPath?: string;
@@ -345,13 +363,34 @@ export function loadYouTubePackage(input: {
   const sources: Record<string, string> = {};
   let manifest: YouTubePackageManifest = {};
   const defaultManifest = path.join(packageDir, "PACKAGE_MANIFEST.json");
+  const metadataFallback = (): string | null => {
+    let names: string[] = [];
+    try {
+      names = fs.readdirSync(packageDir).filter((n) => /^metadata_v\d+\.json$/i.test(n));
+    } catch {
+      return null;
+    }
+    names.sort((a, b) => Number(a.match(/\d+/)?.[0] || 0) - Number(b.match(/\d+/)?.[0] || 0));
+    return names.length ? path.join(packageDir, names[names.length - 1]) : null;
+  };
   const manifestPath = input.manifestPath
     ? path.resolve(input.manifestPath)
     : fs.existsSync(defaultManifest)
       ? defaultManifest
-      : null;
+      : metadataFallback();
   if (manifestPath) {
     manifest = JSON.parse(readText(manifestPath)) as YouTubePackageManifest;
+    const rawChapters = (manifest as { chapters?: unknown }).chapters;
+    if (Array.isArray(rawChapters)) {
+      const lines = rawChapters
+        .map((row) => {
+          const item = row as { time?: string; title?: string };
+          return `${item.time ?? ""} ${item.title ?? ""}`.trim();
+        })
+        .filter(Boolean);
+      const description = manifest.description || "";
+      manifest = { ...manifest, chapters: /\d:\d{2}/.test(description) ? undefined : lines.join("\n") };
+    }
     sources.manifest = manifestPath;
   }
   const merged: YouTubePackageManifest = { ...manifest, ...definedOnly(input.overrides ?? {}) };
@@ -449,10 +488,9 @@ export function loadYouTubePackage(input: {
   sources.video = videoPath;
 
   let thumbnailPath: string | null = null;
-  if (merged.thumbnail) {
-    thumbnailPath = path.isAbsolute(merged.thumbnail)
-      ? merged.thumbnail
-      : path.resolve(packageDir, merged.thumbnail);
+  const thumbRel = thumbnailRel(merged.thumbnail);
+  if (thumbRel) {
+    thumbnailPath = path.isAbsolute(thumbRel) ? thumbRel : resolvePackageAsset(packageDir, thumbRel);
   }
   if (thumbnailPath && !fs.existsSync(thumbnailPath)) {
     throw new Error(`Thumbnail not found: ${thumbnailPath}`);

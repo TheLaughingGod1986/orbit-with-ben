@@ -14,6 +14,9 @@
  * Read-only sign-in for the channel tracker (scripts/analytics-snapshot.ts), one per channel:
  *   npx tsx --env-file=.env scripts/youtube-auth.ts --analytics owb   # sign in as Orbit With Ben
  *   npx tsx --env-file=.env scripts/youtube-auth.ts --analytics hos   # sign in as History of Science
+ *   npx tsx --env-file=.env scripts/youtube-auth.ts --analytics ww2   # sign in as Field Order History
+ *   npx tsx --env-file=.env scripts/youtube-auth.ts --upload ww2      # upload login for Field Order History
+ * The upload login is saved as YOUTUBE_REFRESH_TOKEN_WW2. It never replaces Orbit's YOUTUBE_REFRESH_TOKEN.
  * It asks only for youtube.readonly + yt-analytics.readonly (it can't upload or change anything)
  * and saves YT_ANALYTICS_REFRESH_TOKEN_OWB / _HOS, leaving the upload login alone.
  */
@@ -30,6 +33,13 @@ const YT_ANALYTICS_READONLY = "https://www.googleapis.com/auth/yt-analytics.read
 
 /** What this run signs in for: the upload login (default) or one channel's read-only tracker login. */
 export function authTarget(argv: string[]): { scopes: string[]; envKey: string; channelId: string; channelName: string } {
+  const upload = argv.indexOf("--upload");
+  if (upload >= 0) {
+    if (argv[upload + 1] !== "ww2") throw new Error("--upload needs ww2 (Orbit's upload login is the default run, with no flag)");
+    const id = process.env.YT_CHANNEL_ID_WW2 ?? "";
+    if (!id) throw new Error("Set YT_CHANNEL_ID_WW2 locally before the upload sign-in");
+    return { scopes: YOUTUBE_SCOPES, envKey: "YOUTUBE_REFRESH_TOKEN_WW2", channelId: id, channelName: CHANNELS.ww2.name || "Field Order History" };
+  }
   const i = argv.indexOf("--analytics");
   if (i < 0) return { scopes: YOUTUBE_SCOPES, envKey: "YOUTUBE_REFRESH_TOKEN", channelId: CHANNELS.owb.id, channelName: CHANNELS.owb.name };
   const key = argv[i + 1] as ChannelKey;
