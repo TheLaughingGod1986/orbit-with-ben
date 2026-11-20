@@ -68,7 +68,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3229 | any | blocked | macbook | – | review · `gemini-argon` · Verify condition for J2040 |  |
 | J3231 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Weekly search research (Orbit + Field Order History): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
 | J3232 | any | blocked | macbook | – | review · `gemini-argon` · Verify condition for J3114 |  |
-| J3243 | mini | open | – | – | studio · First-day check at 6 h: "Will Asteroid 2024 YR4 Hit the Moon in 2032?" (93JL_IK57EM) |  |
+| J3243 | mini | claimed | gemini | 2026-11-20T19:13Z | studio · First-day check at 6 h: "Will Asteroid 2024 YR4 Hit the Moon in 2032?" (93JL_IK57EM) |  |
 | J3245 | any | blocked | macbook | – | script · HOS: learn from our data, add two new films to the backlog |  |
 | J3246 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J1275 |  |
 | J3247 | mini | claimed | macbook-2 | 2026-11-20T19:13Z | studio · OWB Short 93JL_IK57EM (2024 YR4): set Related video to VBaYRPp85Sw in Studio (J3243 fault fix) |  |
