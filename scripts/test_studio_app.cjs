@@ -776,6 +776,14 @@ assert(t.unconfirmedCut({...exactCut,watch:{...exactCut.watch,version:'v12'}}),'
   const ov = t.overview({tracker:{videos:[]}, ...qb}, now);
   assert(ov.includes('class="seg"') && ov.includes('To review') && ov.includes('Producing') && ov.includes('This week'), 'Overview uses matching KPI chips');
   assert(ov.includes('4 total') && ov.includes('1 on · 45 done'), 'Machines header shows total and chip captions');
+  const grokBoard = {machines: {machines: [
+    {id: 'grok', name: 'Grok box', done24: 4, now: [], state: 'rulings', why: 'Working (rulings on the thread)'}]}};
+  const grokCard = t.machinesCard(grokBoard, now);
+  assert(grokCard.includes('Working (rulings on the thread) · 4 done'), grokCard);
+  assert(!/Grok[\s\S]{0,80}Idle/.test(grokCard), 'a recent Grok ruling is not Idle');
+  const grokAgents = t.agents({models: {chief: {}, models: []}, owb: {jobs: []}, machines: grokBoard.machines}, now);
+  assert(grokAgents.includes('Working (rulings on the thread)'), grokAgents);
+  assert(!/Grok <span class="tag amber">Idle/.test(grokAgents), 'the Agents row for Grok is not Idle while rulings are fresh');
   // 8 Nov 2026: an open studio job after a finished one, titled "... stage for Ben UAT watch", is not Needs attention.
   const ovStage = t.overview({tracker: {videos: []}, machines: {machines: []}, progress24h: {hours: 24, films: [
     {film: 'OWB:033', title: 'Uranus', jobs: 1, items: [{id: 'J2404', title: '033 Uranus: review long master v01 (J2403) + stage for Ben UAT watch',

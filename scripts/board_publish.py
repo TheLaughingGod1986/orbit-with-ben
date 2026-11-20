@@ -818,7 +818,9 @@ def run_once(a) -> int:
         queue = _read_json(wt() / "jobs" / "queue.json") or {"jobs": []}
         import chief_relay as relay
         ex = relay.current_execution(at)
-        board["machines"] = machines.section(queue, *heartbeats(), at, [ex] if isinstance(ex, dict) else ex)
+        posts = (relay.read_json(relay.d("grok_thread.json")) or {}).get("posts") or []
+        board["machines"] = machines.section(queue, *heartbeats(), at, [ex] if isinstance(ex, dict) else ex,
+                                            posts if isinstance(posts, list) else [])
     except Exception as e:  # noqa: BLE001
         log(f"machines not built: {e}")
     try:  # Queue forecast: who each job waits for, its place in line, when it starts (Ben, 5 Nov 2026)
