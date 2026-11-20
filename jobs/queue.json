@@ -271654,18 +271654,23 @@
           "at": "2026-11-19T23:59Z",
           "by": "codex",
           "what": "step 3 of 4 done: Resolved PR 1011 conflicts with current main; added fail-closed test-process checks. Targeted split/queue/analytics/ratchet/security tests pass. Isolated split has zero counts; explicit subprocess verification is running."
+        },
+        {
+          "at": "2026-11-20T00:05Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: PR 1011 updated 56d1bc6cbe and mergeable. Conflicts resolved; split process checks fail closed. Baseline split zero; explicit full suite 1425 tests, 13 skips, exit 0. Live services unchanged."
         }
       ],
-      "remaining_action": "Verify and publish the migration integration, then finish remaining timer and cutover checks",
+      "remaining_action": "Finish analytics timer integration, verify access and writers, then rehearse and perform the gated studio move",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-19T23:59Z",
+        "at": "2026-11-20T00:05Z",
         "by": "codex",
-        "note": "Resolved PR 1011 conflicts with current main; added fail-closed test-process checks. Targeted split/queue/analytics/ratc"
+        "note": "PR 1011 updated 56d1bc6cbe and mergeable. Conflicts resolved; split process checks fail closed. Baseline split zero; exp"
       }
     },
     {
