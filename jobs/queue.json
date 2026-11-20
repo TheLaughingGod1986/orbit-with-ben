@@ -1,5 +1,5 @@
 {
-  "next_id": 3237,
+  "next_id": 3238,
   "jobs": [
     {
       "id": "J0001",
@@ -290048,6 +290048,36 @@
       "due": "2026-11-21T12:00:00Z",
       "kind": "chief",
       "plain": "Decide whether to accept HOS 009 own-score v03_synth after complete music_gate and independent audio review, or trigger the bounded fallback"
+    },
+    {
+      "id": "J3237",
+      "title": "Model review: list every CLI's current models, probe the newer ones, propose best-model-per-job routing that saves Claude usage",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Why (Ben, 20 Nov, in chat: \"are we using latest and best models and selecting the best models for the job\"; Claude, 20 Nov 14:37Z).** The last full model check was 15 Oct (05_Analytics/ai_spend/MODELS_2026-10-15.md). Only Gemini was re-checked on 20 Nov (MODELS_2026-11-20.md: Neon High now runs the hard lane, and Gemini 4 Carbon is also listed). Since 15 Oct: Google's Neon model card compares Neon with 'GPT-6.2 Sol', which suggests a newer OpenAI model than our Codex default (gpt-6.1-sol); a newer Claude family may exist alongside Opus 5.5; and the image lane still names Vertex gemini-2.5-flash-image. Grok Bot has not responded for days but still heads the 'studio' chain.\n\n**Do, on the Mini (read-only probes, £0).**\n1. List what each CLI offers today: `codex` model list, `agent models` (Cursor), `agy models` (done 20 Nov), Claude Code's model list, and the image and video models available in Flow and Vertex (Nano Banana, Veo versions). Write a dated `05_Analytics/ai_spend/MODELS_<date>.md`.\n2. For any newer model, run a reply test plus the job-type probe it would serve (capability_probe.py audio/video for QA lanes; a short script or code task for script and assembly lanes). Record the results.\n3. Propose routing changes in scripts/routing.py, with each model's lane and fallback, on two goals: the best model for each job, and spending the scarcest allowance least. Today Claude is the tight one: about 30% of the week left on 18 Nov, and Ben's Max plan pays for the cloud sessions. Gemini is barely used: 85% left on Google AI Ultra. Specifically assess: (a) QA, listing and facts with Gemini 4 Neon (High) first, since it passed the audio and moving-video probes, keeping Claude first for script, review and chief; (b) Gemini 4 Carbon for the heaviest Gemini stand-in work (scripts) versus Neon; (c) the Codex default versus any newer Sol, and Astra for chart and thumb; (d) the image and video lanes against whatever is newest; (e) taking Grok Bot out of first place in 'studio' while it stays down.\n4. Deliver one PR with the model file, the routing change and test_routing.py, marked for the Chief. A change that moves a lane Ben set himself (15 Oct: Argon for really complex tasks, and Codex designs thumbnails) goes to Ben in one line first.\n\n**Guards.** No paid generation beyond the probes' short tests. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-20T14:37Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T14:37Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "List models in codex/cursor/agy/claude/Flow/Vertex; probe newer ones; propose routing (Neon first for QA/listing/facts, Carbon for heavy, newest Codex, image/video); PR",
+      "due": "2026-11-22T18:00:00Z",
+      "kind": "studio",
+      "plain": "Check every AI tool for newer models and make sure each kind of job uses the best one, while saving Claude's limited allowance"
     }
   ],
   "focus": [
