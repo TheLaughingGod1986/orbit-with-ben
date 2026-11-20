@@ -292109,20 +292109,27 @@
           "at": "2026-11-20T22:21Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T22:22Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed. Film 030 AR1-AR3. Reading Studio first."
         }
       ],
-      "remaining_action": "Update the stale Venus link line on 93JL_IK57EM, _dVWVUnbDzA and MScK2CK2ZFg, set Related video to VBaYRPp85Sw on MScK2CK2ZFg in Studio, verify readback, and update UPLOADS.json",
+      "remaining_action": "Read the three Shorts in Studio before changing the Venus line or Related video",
       "due": "2026-11-24T18:00:00Z",
       "kind": "studio",
       "plain": "Update the outdated Venus film link wording on three Orbit space Shorts and add the missing Related video on the 2027 eclipse Short",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-20T22:21Z",
+        "of": 4,
+        "at": "2026-11-20T22:22Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed. Film 030 AR1-AR3. Reading Studio first."
+      },
+      "taskKeys": [
+        "OWB:030"
+      ]
     }
   ],
   "focus": [
