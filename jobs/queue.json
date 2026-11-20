@@ -285147,10 +285147,10 @@
       "stage": "topic",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-20T00:54Z",
+      "eta": "2026-11-20T02:54Z",
       "created_by": "gemini",
       "created_at": "2026-11-20T00:46Z",
       "result": "",
@@ -285159,10 +285159,23 @@
           "at": "2026-11-20T00:46Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-20T00:54Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Rule-E topic go/no-go review: OWB 084 (Every Type of Galaxy Explained in 10 Minutes) and 085 (How Did the Solar System Form) from J3180",
-      "kind": "review"
+      "kind": "review",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T00:54Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3182",
