@@ -288587,13 +288587,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-20T10:58Z",
-      "eta": "2026-11-20T11:18Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-20T10:56Z",
-      "result": "",
+      "result": "PR #1066 (7193756d0, ready for Chief merge): removed WW2-created 001 and 002 status.json shells (kept pre-17 Nov 003/004/005/006/007/013/019/020), linked early live Orbit films OWB:001/002/003/005/006/007/013/019 to their public YouTube IDs in 05_Analytics/kanban/video_overrides.json (no invented publishAt), swept all 78 Orbit folders (no other live mismatches), regenerated STATUS.md, added EarlyOrbitLiveVideos tests. Verified studio.py status --check, core_sync, sync_rules, 244 Python board/tracker tests, and test_studio_app.cjs PASS; 0 early Orbit longs in waiting/planned, 1 card per live film, 0 bogus planned Shorts. After Chief merges PR #1066 and Mini publishes, confirm live Videos tab.",
       "history": [
         {
           "at": "2026-11-20T10:56Z",
@@ -288614,6 +288614,11 @@
           "at": "2026-11-20T11:01Z",
           "by": "macbook",
           "what": "step 1 of 4 done"
+        },
+        {
+          "at": "2026-11-20T11:11Z",
+          "by": "macbook",
+          "what": "done: PR #1066 (7193756d0, ready for Chief merge): removed WW2-created 001 and 002 status.json shells (kept pre-17 Nov 003/004/005/006/007/013/019/020), linked early live Orbit films OWB:001/002/003/005/006/007/013/019 to their public YouTube IDs in 05_Analytics/kanban/video_overrides.json (no invented publishAt), swept all 78 Orbit folders (no other live mismatches), regenerated STATUS.md, added EarlyOrbitLiveVideos tests. Verified studio.py status --check, core_sync, sync_rules, 244 Python board/tracker tests, and test_studio_app.cjs PASS; 0 early Orbit longs in waiting/planned, 1 card per live film, 0 bogus planned Shorts. After Chief merges PR #1066 and Mini publishes, confirm live Videos tab."
         }
       ],
       "remaining_action": "sweep Orbit folders, link live videos, run tests, open PR",
