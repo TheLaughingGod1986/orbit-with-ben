@@ -289523,7 +289523,7 @@
     {
       "id": "J3231",
       "title": "Weekly search research (Orbit + Field Order History): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers",
-      "needs": "cloud",
+      "needs": "mini",
       "repo": "owb",
       "body": "Weekly search-led topic research for Orbit With Ben and Field Order History (Ben OK, 20 Nov 2026; J3222; STUDIO_PLAYBOOK.md §2, LEARNINGS.md rule 37, ww2-channel 00_Brand/PLAYBOOK.md §7). Runs in a Claude cloud lane (`needs: cloud`) because vidIQ only works in a Claude lane. Budget: up to 100 vidIQ credits for Orbit and up to 50 vidIQ credits for Field Order History per run (£0 beyond existing subscriptions; never buy credits, top up, or exceed the budget). First run by 7 Dec 2026 so January's ranked list is ready before the 30 Dec format-test readout.\n\n1) ORBIT WITH BEN (up to 100 vidIQ credits; effective for topics locked from 1 Jan 2027). Run steps 1-4 weekly and step 8 monthly (first run of each month):\n- Step 1 DEMAND: ~50 Orbit space subjects (planets, moons, missions, telescopes, sky events, mysteries, calm/sleep documentaries). For each: vidIQ keyword research (monthly searches, competition, growth, top countries); signed-out YouTube autocomplete with the US locale for exact phrasing; Google Trends for seasonality. Keep 10k-150k searches/month at competition 45 or under.\n- Step 2 VALUE: Anglosphere (US, UK, Canada, Australia among top markets; not dominated by low-paying markets), adult intent (no kids or made-for-kids queries), evergreen, able to carry a 10-20 minute long and a series, plus an earnings/RPM proxy from vidIQ estimates for sub-niche channels.\n- Step 3 RESULTS-PAGE GAP: signed-out top 10 (vidIQ youtube_search or signed-out YouTube) — video age, views, channel size, and whether each actually answers the query. Score the gap as the count of old (3+ years), weak, off-target or small-channel results.\n- Step 4 SMALL-CHANNEL PROOF: vidIQ outliers — last-12-month videos on the subject from channels under 50k subscribers at 5x or more of their channel's usual views. None found means no real opening.\n- Step 8 OUR OWN SEARCH TERMS (monthly): read YouTube Analytics' search terms for Orbit With Ben. Double down on clusters whose search views grow, and flag any cluster to drop after about three films below the bar.\nWrite `05_Analytics/owb/search_research/<YYYY-MM-DD>.md`: the ranked table (query, volume, competition, top countries, adult, RPM proxy, top-10 gap, small-channel outliers, cluster) plus the top three film ideas with search-led titles (query words + one hook, 3 title candidates + 2 thumb ideas sketched against outliers), each tagged with its cluster and the format it fits.\n\n2) FIELD ORDER HISTORY / WW2 (up to 50 vidIQ credits; for the next topics after film 010). Run steps 1-4 for candidate WW2 topics beyond film 010: search demand for the topic's own phrasing, English-speaking (US/UK/CA/AU) adult audience, signed-out top-10 results-page gap, and small-channel (<50k subs, 5x+) outliers. Write `05_Analytics/ww2/search_research/<YYYY-MM-DD>.md`: the ranked table plus the top candidate topics for film 011+.\n\nGuards: no change to December's films, schedule or format tests; do not lock, script or build any new Orbit long before December's readouts (Rule 34); no TTS, picture generation, or Studio/publish changes. Finish with `jobs.py done <id> --result \"wrote owb + ww2 search_research/<date>.md; Orbit top 3: ...; WW2 top 3: ...; credits used: <owb>/100 + <ww2>/50\" --git`.",
       "ref": "",
@@ -289543,11 +289543,25 @@
           "at": "2026-11-20T12:48Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-11-20T12:52Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-20T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Run weekly vidIQ search research for Orbit and Field Order History",
       "kind": "review",
-      "backlog": "search-research"
+      "backlog": "search-research",
+      "rerouted_from": {
+        "needs": "cloud",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
