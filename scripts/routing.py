@@ -38,8 +38,9 @@ MODELS = {
     "cursor-auto": "Cursor agent CLI, model Auto",
     "cursor-grok-4-7": "Grok 4.7 inside the Cursor agent CLI (`agent --model grok-4.7`; Ben, 15 Oct 2026: plenty of "
                        "usage left). Cursor's own default for code, assembly and Studio work",
-    "gemini-argon": "Gemini Argon via Antigravity `agy --model gemini-argon` (Ben, 15 Oct 2026: for really complex "
-                    "tasks): Gemini's lane for reasoning, review, QA, listings and claim checks",
+    "gemini-argon": "Gemini hard lane via Antigravity `agy` (routing key `gemini-argon`; switched 20 Nov 2026 in J3218 "
+                    "to Gemini 4 Neon High `gemini-4-neon-high` with `gemini-4-argon-high` as documented fallback): "
+                    "Gemini's lane for reasoning, review, QA, listings and claim checks",
     "cursor-claude-opus-5-5": "Claude Opus 5.5 inside the Cursor agent CLI on the Mini (`agent --model claude-opus-5-5`); "
                               "Claude's first fallback when Claude Code is out of usage",
     "gemini-agy": "Gemini via Antigravity `agy` (its default model)",
@@ -80,8 +81,13 @@ CURSOR_CLAUDE_MODEL = os.environ.get("CURSOR_CLAUDE_MODEL", "claude-opus-5-5")
 # Read on the Mini 15 Oct 2026 (J0270, 05_Analytics/ai_spend/MODELS_2026-10-15.md): `agent` takes the bare "grok-4.7"
 # (its list shows only grok-4.7-low…xhigh, but the bare id ran); `agy` has no "gemini-argon" (it exits "not recognized")
 # and lists gemini-4-argon-low/-medium/-high, so the hard lanes take High.
+# Updated 20 Nov 2026 (J3218, 05_Analytics/ai_spend/MODELS_2026-11-20.md): Gemini 4 Neon (High) passed reply,
+# audio_input (0.99-1.00) and moving_video_input (3/3, left_to_right + right_to_left) on agy 1.5.13. Routing key stays
+# "gemini-argon" so CHAINS and tests don't change. Documented fallback if Neon errors or hits quota: set
+# AGY_ARGON_MODEL=gemini-4-argon-high (AGY_ARGON_FALLBACK).
 CURSOR_GROK_MODEL = os.environ.get("CURSOR_GROK_MODEL", "grok-4.7")
-AGY_ARGON_MODEL = os.environ.get("AGY_ARGON_MODEL", "gemini-4-argon-high")
+AGY_ARGON_FALLBACK = "gemini-4-argon-high"
+AGY_ARGON_MODEL = os.environ.get("AGY_ARGON_MODEL", "gemini-4-neon-high")
 CLI_MODEL = {"cursor-auto": "", "cursor-claude-opus-5-5": CURSOR_CLAUDE_MODEL, "cursor-grok-4-7": CURSOR_GROK_MODEL,
              "gemini-agy": "", "gemini-argon": AGY_ARGON_MODEL, "mini-claude-opus-5-5": ""}
 
