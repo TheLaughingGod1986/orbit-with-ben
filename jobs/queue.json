@@ -288840,10 +288840,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-20T11:33Z",
+      "eta": "2026-11-20T13:03Z",
       "created_by": "claude",
       "created_at": "2026-11-20T11:28Z",
       "result": "",
@@ -288857,6 +288857,11 @@
           "at": "2026-11-20T11:30Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-20T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
+        },
+        {
+          "at": "2026-11-20T11:33Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Write 05_Analytics/hos/AUDIT_2026-11.md: trend and the drop, per-video table by cluster and source, audience geography and age, search terms; read-only",
@@ -288872,7 +288877,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T11:33Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3224",
