@@ -288264,19 +288264,24 @@
           "at": "2026-11-20T18:31Z",
           "by": "gemini",
           "what": "step 1 of 6 done: Verified J3000 SCRIPT.md (SHA-256 98fa932e..., 6 chapters, 3,168 words, 19,513 chars, all chapters <=3,716 chars); live ElevenLabs balance 41,859 / 121,114 remaining (41,859 - 19,513 = 22,346 >= 11,000 reserve floor PASS)"
+        },
+        {
+          "at": "2026-11-20T18:39Z",
+          "by": "gemini",
+          "what": "step 2 of 6 done: vo_take PASS: submarine_torpedoes_vo_v01 1,367.9s, -19.8 LUFS, 98.96% raw Scribe match (29 mismatch runs); running full QA checks"
         }
       ],
-      "remaining_action": "Generate 6-chapter narration via vo_take.py under desk-lock elevenlabs and run Scribe v2",
+      "remaining_action": "Run full voice QA: audit all 29 Scribe mismatches, faster-whisper vo_check, 20 ms boundary check, and per-chapter loudness",
       "due": "2026-11-29T18:00:00Z",
       "for": "gemini",
       "kind": "vo",
       "plain": "Record the narration for WW2 film 004, about submarine torpedoes",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 6,
-        "at": "2026-11-20T18:31Z",
+        "at": "2026-11-20T18:39Z",
         "by": "gemini",
-        "note": "Verified J3000 SCRIPT.md (SHA-256 98fa932e..., 6 chapters, 3,168 words, 19,513 chars, all chapters <=3,716 chars); live "
+        "note": "vo_take PASS: submarine_torpedoes_vo_v01 1,367.9s, -19.8 LUFS, 98.96% raw Scribe match (29 mismatch runs); running full "
       },
       "taskKeys": [
         "WW2:004"
