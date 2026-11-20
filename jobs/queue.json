@@ -291699,10 +291699,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-11-20T21:52Z",
-      "eta": "2026-11-20T23:52Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-20T19:02Z",
       "result": "",
@@ -291781,6 +291781,11 @@
           "at": "2026-11-20T22:01Z",
           "by": "cursor",
           "what": "step 1 of 4 done: Corrected verify is in tmux j3249-verify. Log /Users/benjaminoats/_desk/logs/j3249-verify.log. Done file is not written yet. First Journey file compared equal. MiniWork still 3.4 GiB free."
+        },
+        {
+          "at": "2026-11-20T22:01Z",
+          "by": "cursor",
+          "what": "released: Corrected verify is running. Do not start a second copy. tmux j3249-verify. Log /Users/benjaminoats/_desk/logs/j3249-verify.log. Done file /Users/benjaminoats/_desk/logs/j3249-verify.done is missing while it runs. The earlier offload kept J2221 (21.41 GiB) and desk/renders (5.35 GiB) after copying them because NAS directory sidecar files failed its compare. J2854 (3.65 GiB, 17 files) is already cleared. MiniWork is 3.4 GiB free of 233 GiB. When the done file exists, read the log for target_40GiB_met and df -h /Volumes/MiniWork. If still under 40 GiB, continue with the next old finished-job folder that is not a live job and not a worktree. Nothing on the NAS was deleted. £0."
         }
       ],
       "remaining_action": "Wait for the scratch verify to finish, then free more space if MiniWork is still under 40 GiB",
