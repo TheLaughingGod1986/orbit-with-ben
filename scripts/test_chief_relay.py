@@ -43,6 +43,7 @@ class Relay(unittest.TestCase):
         cr.STATE.mkdir()
         cr.write_json(cr.d("caches.json"), {"at": cr.iso(T0)})
         cr.write_json(cr.d("claude_beat.json"), {"fetched": cr.iso(T0), "beat": None})
+        cr.write_json(cr.d("thread_caps.json"), {"checked": cr.iso(T0), "counts": {}, "warned": {}})
         self.posts = self.tmp / "posts.txt"
         notify = self.tmp / "notify.sh"
         notify.write_text(f'#!/bin/sh\necho "$1" >> "{self.posts}"\n')
@@ -1326,7 +1327,8 @@ class TheBriefIsBuiltFromTheChannelFiles(TodaysLayout):
                 now = cr.PROMPT.format(**self.COMMON, **cr.brief_channels("codex", {"owb": self.O, "hos": self.H}))
                 was = BRIEF_BEFORE_J2618.format(**self.COMMON, owb=self.O, hos=self.H, owb_rules=studio, hos_rules=other)
                 self.assertEqual(was.count("scripts/owb_thread.py"), 2)
-                self.assertEqual(now, was.replace("scripts/owb_thread.py", "scripts/studio_thread.py"))
+                self.assertEqual(now, was.replace("scripts/owb_thread.py", "scripts/studio_thread.py")
+                                         .replace("desk #180", f"desk #{cr.channels.desk('hos')['number']}"))
 
     def test_the_sentence_a_worker_gets_is_the_old_one(self):
         self.assertEqual(cr.worker_only_steps(),
@@ -1472,6 +1474,54 @@ class TheBriefOnceTheStudioHasItsOwnRepo(unittest.TestCase):
                                                          "checkouts": ["Studio", "studio"]})
             with mock.patch.dict(os.environ, {"STUDIO_REPO": "/elsewhere/s"}):
                 self.assertEqual(cr.channels.studio_checkout(home), pathlib.Path("/elsewhere/s"))
+
+
+class ThreadCapWarnings(unittest.TestCase):
+    """J3215: warn on the studio thread when any active thread or channel desk passes 2,300 comments."""
+
+    def test_warns_at_2300_with_rollover_steps_and_dedups_for_24h(self):
+        with tempfile.TemporaryDirectory() as td:
+            posted = []
+            counts = {("TheLaughingGod1986/orbit-with-ben", 954): 1200,
+                      ("TheLaughingGod1986/history-of-science", 694): 2310}
+            with mock.patch.object(cr, "STATE", pathlib.Path(td)), \
+                 mock.patch.object(cr, "monitored_threads", return_value=[
+                     {"kind": "studio", "name": "Studio thread", "repo": "TheLaughingGod1986/orbit-with-ben", "number": 954},
+                     {"kind": "desk", "slug": "hos", "name": "HOS desk", "repo": "TheLaughingGod1986/history-of-science", "number": 694},
+                 ]):
+                alerts = cr.check_thread_caps(T0, fetch=lambda r, n: counts[(r, n)],
+                                              post=lambda m: (posted.append(m), True)[1])
+                self.assertEqual(len(alerts), 1)
+                self.assertIn("2,310 / 2,500", posted[0])
+                self.assertIn("history-of-science #694", posted[0])
+                self.assertIn("scripts/channels.py sync", posted[0])
+                self.assertIn("scripts/thread.json", posted[0])
+                # Inside check interval: no second fetch/post
+                self.assertEqual(cr.check_thread_caps(T0 + dt.timedelta(minutes=30),
+                                                      fetch=lambda r, n: 2499,
+                                                      post=lambda m: (posted.append(m), True)[1]), [])
+                # After 7h check interval, still inside 24h repeat window: no duplicate warning
+                self.assertEqual(cr.check_thread_caps(T0 + dt.timedelta(hours=7),
+                                                      fetch=lambda r, n: 2400 if n == 694 else 1300,
+                                                      post=lambda m: (posted.append(m), True)[1]), [])
+                self.assertEqual(len(posted), 1)
+                # After 25h: warns again, and studio thread crossing 2300 also warns
+                alerts2 = cr.check_thread_caps(T0 + dt.timedelta(hours=25),
+                                               fetch=lambda r, n: 2350,
+                                               post=lambda m: (posted.append(m), True)[1])
+                self.assertEqual(len(alerts2), 2)
+                self.assertTrue(any("Studio thread: <Month YYYY>" in m for m in posted))
+
+    def test_monitored_threads_finds_studio_thread_and_channel_desks_and_fails_open(self):
+        import json
+        items = cr.monitored_threads()
+        repos = {(i["repo"], i["number"]) for i in items}
+        thread = json.loads((cr.STUDIO / "scripts" / "thread.json").read_text())
+        self.assertIn((thread["repo"], int(thread["number"])), repos)
+        self.assertIn(("TheLaughingGod1986/history-of-science", cr.channels.desk("hos")["number"]), repos)
+        with tempfile.TemporaryDirectory() as td:
+            with mock.patch.object(cr, "STATE", pathlib.Path(td)):
+                self.assertEqual(cr.check_thread_caps(T0, fetch=lambda r, n: None, post=lambda m: True), [])
 
 
 if __name__ == "__main__":

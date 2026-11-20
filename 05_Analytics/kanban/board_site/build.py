@@ -14,7 +14,7 @@ Outputs:
   dist/version.json, updater.js, static/, tracker.webmanifest
 
 Data still comes from board.json on the `board-data` branch (scripts/board_publish.py). Page changes need a
-direct upload to Cloudflare Pages: build, then `npx wrangler pages deploy` in this folder; data changes do not. api/checks.js (Ben's ticks → the studio thread / HOS #180)
+direct upload to Cloudflare Pages: build, then `npx wrangler pages deploy` in this folder; data changes do not. api/checks.js (Ben's ticks → the studio thread / HOS #694)
 and host_config.json sit next to this file.
 """
 from __future__ import annotations

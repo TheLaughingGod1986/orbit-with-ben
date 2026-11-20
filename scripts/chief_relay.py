@@ -1056,6 +1056,122 @@ def alert_no_chief(who, rows, at: dt.datetime) -> None:
         write_json(p, dict(spell, alerted=iso(at)))
 
 
+THREAD_WARN_AT = 2300          # GitHub caps issue/PR comments at 2,500; warn early so rollover never fails silently
+THREAD_CHECK_MIN = 360         # check counts at most once every 6 hours
+THREAD_WARN_REPEAT_H = 24      # repeat warning at most once per 24 hours per thread
+
+
+def _github_repo_slug(url: str) -> str:
+    m = re.search(r"github\.com[:/]([^/\s]+/[^/\s]+?)(?:\.git)?/?$", str(url or "").strip())
+    return m.group(1) if m else ""
+
+
+def monitored_threads() -> list[dict]:
+    """Every active studio thread and channel desk whose comment count can hit GitHub's 2,500-comment cap."""
+    out, seen = [], set()
+    thread_file = STUDIO / "scripts" / "thread.json"
+    t = read_json(thread_file) or {}
+    if t.get("repo") and isinstance(t.get("number"), int) and t["number"] > 0:
+        key = (str(t["repo"]), int(t["number"]))
+        seen.add(key)
+        out.append({"kind": "studio", "name": "Studio thread", "repo": key[0], "number": key[1]})
+    for c in channels.all_channels():
+        slug = c["slug"]
+        desk = channels.desk(slug)
+        num = desk.get("number") if isinstance(desk, dict) else None
+        repo = _github_repo_slug((c.get("repo") or {}).get("url", ""))
+        if repo and isinstance(num, int) and not isinstance(num, bool) and num > 0 and (repo, num) not in seen:
+            seen.add((repo, num))
+            out.append({"kind": "desk", "slug": slug, "name": f"{c['label']} desk", "repo": repo, "number": num})
+    return out
+
+
+def issue_comment_count(repo: str, number: int) -> int | None:
+    """Read an issue/PR's total comment count from GitHub (returns None on any network/API error)."""
+    try:
+        import urllib.request
+        import studio_thread
+        headers = {"Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28",
+                   "User-Agent": f"{channels.studio_prefix()}-relay"}
+        try:
+            tok = studio_thread.token()
+            if tok:
+                headers["Authorization"] = f"Bearer {tok}"
+        except SystemExit:
+            pass
+        req = urllib.request.Request(f"https://api.github.com/repos/{repo}/issues/{number}", headers=headers)
+        with urllib.request.urlopen(req, timeout=20, context=studio_thread.SSL_CONTEXT) as r:
+            doc = json.loads(r.read().decode())
+        n = doc.get("comments")
+        return int(n) if isinstance(n, int) and not isinstance(n, bool) else None
+    except Exception as e:
+        log(f"thread cap check: could not read {repo}#{number}: {e.__class__.__name__}")
+        return None
+
+
+def thread_cap_warning(item: dict, count: int) -> str:
+    """Plain rollover warning naming the thread, its comment count and the exact steps (scripts/thread.json model)."""
+    where = f"{item['repo']} #{item['number']}"
+    if item.get("kind") == "studio":
+        steps = ("1. Open a new issue 'Studio thread: <Month YYYY>' (model: scripts/thread.json) with a first comment "
+                 "listing open items and links to the old thread; leave the old thread untouched (never close or merge). "
+                 "2. Update scripts/thread.json ('number' and 'previous') and 05_Analytics/kanban/board_site/api/checks.js "
+                 "(THREADS), run tests, and merge. "
+                 "3. Redeploy studio-kanban from main and verify POST /api/checks dryRun with checkThreads.")
+    else:
+        slug = item.get("slug", "<channel>")
+        steps = (f"1. Open a new desk issue on {item['repo']} with a first comment listing open items and links to "
+                 f"#{item['number']}; leave #{item['number']} untouched (never edit, close or merge). "
+                 f"2. Update desk.number in that channel's studio/channel.json, refresh channels/{slug}/channel.json "
+                 f"with `python3 scripts/channels.py sync`, update 05_Analytics/kanban/board_site/api/checks.js (THREADS) "
+                 f"and tests, run each repo's tests, and merge one PR per repo. "
+                 f"3. Redeploy studio-kanban from main and verify POST /api/checks dryRun with checkThreads.")
+    return (f"Chief relay: **{item['name']} ({where}) is at {count:,} / 2,500 comments** (warn threshold "
+            f"{int(os.environ.get('CHIEF_THREAD_WARN_AT', str(THREAD_WARN_AT))):,}). Roll it over before GitHub "
+            f"rejects comments at 2,500. Rollover steps (scripts/thread.json model): {steps}")
+
+
+def check_thread_caps(at: dt.datetime, fetch=issue_comment_count, post=notify) -> list[dict]:
+    """Warn on the studio thread when any active studio thread or channel desk passes 2,300 comments."""
+    p = d("thread_caps.json")
+    state = read_json(p) or {}
+    check_min = int(os.environ.get("CHIEF_THREAD_CHECK_MIN", str(THREAD_CHECK_MIN)))
+    last_checked = state.get("checked")
+    if last_checked:
+        try:
+            if (at - parse(last_checked)) < dt.timedelta(minutes=check_min):
+                return []
+        except ValueError:
+            pass
+    warn_at = int(os.environ.get("CHIEF_THREAD_WARN_AT", str(THREAD_WARN_AT)))
+    repeat_h = float(os.environ.get("CHIEF_THREAD_WARN_REPEAT_H", str(THREAD_WARN_REPEAT_H)))
+    warned_map = dict(state.get("warned") or {})
+    counts = dict(state.get("counts") or {})
+    alerts = []
+    for item in monitored_threads():
+        key = f"{item['repo']}#{item['number']}"
+        count = fetch(item["repo"], item["number"])
+        if count is None:
+            continue
+        counts[key] = count
+        if count < warn_at:
+            continue
+        prev = warned_map.get(key)
+        due = True
+        if prev:
+            try:
+                due = (at - parse(prev)) >= dt.timedelta(hours=repeat_h)
+            except ValueError:
+                due = True
+        if due:
+            msg = thread_cap_warning(item, count)
+            if post(msg):
+                warned_map[key] = iso(at)
+                alerts.append({**item, "comments": count, "message": msg})
+    write_json(p, {"checked": iso(at), "counts": counts, "warned": warned_map})
+    return alerts
+
+
 def push_heartbeat(at: dt.datetime, state: str, agent: str = "", note: str = "") -> None:
     """One parentless commit holding heartbeat.json, force-pushed to refs/heads/mini-heartbeat. Never raises."""
     if os.environ.get("CHIEF_HEARTBEAT", "1") == "0" or not (STUDIO / ".git").exists():
@@ -1812,6 +1928,7 @@ def run_locked(at: dt.datetime) -> int:
         guest_rows, guest_who = acting(at, guest) if guest else ([], None)
         handover(who, rows, at)
         alert_no_chief(who, rows, at)
+        check_thread_caps(at)
         # The board shows who is Chief and who is out, and why (Ben, 21 Oct 2026).
         # `rows` stays the home chain. The other channel is stored under its slug.
         chain_state = {"at": iso(at), "rows": [{"agent": a, "up": up, "why": why[:120]} for a, up, why in rows]}

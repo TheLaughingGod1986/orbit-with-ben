@@ -806,7 +806,7 @@ class DeliveryAsksTheLoader(unittest.TestCase):
     def test_a_channels_desk_comes_from_its_file_and_from_the_cached_copy_when_its_checkout_is_behind(self):
         # J2618: the relay's brief sends an agent to a channel's desk. On the Mini that channel's checkout can sit on
         # an old branch, with no `desk` in its file yet; the brief must not lose the desk for that.
-        want = {"tool": "00_Brand/Channel-Setup/tools/hos_desk.py", "number": 180}
+        want = {"tool": "00_Brand/Channel-Setup/tools/hos_desk.py", "number": 694}
         self.assertEqual(channels.desk("hos"), want)
         self.assertEqual(channels.desk("owb"), {})
         stale = tuple({k: v for k, v in c.items() if k != "desk"} if c["slug"] == "hos" else c for c in channels._load())

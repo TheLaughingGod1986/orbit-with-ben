@@ -319,7 +319,10 @@ class ButtonStamp(unittest.TestCase):
         self.assertIn(f'OWB: ["{thread["repo"]}", {thread["number"]}]', js)
         self.assertIn(f'WW2: ["{thread["repo"]}", {thread["number"]}]', js)
         self.assertNotIn(', 264]', js)
-        self.assertIn('HOS: ["TheLaughingGod1986/history-of-science", 180]', js)
+        hos_desk = json.loads((HERE.parent / "channels/hos/channel.json").read_text())["desk"]["number"]
+        self.assertEqual(hos_desk, 694)
+        self.assertIn(f'HOS: ["TheLaughingGod1986/history-of-science", {hos_desk}]', js)
+        self.assertNotIn(', 180]', js)
         self.assertNotIn(', 99]', js)
         # one post per real change, exactly as before, and only after the tick is saved
         # 25 Oct 2026: `via` adds "new device: …" to the tail for open taps (test_board_benauth.py); the prefix is unchanged
