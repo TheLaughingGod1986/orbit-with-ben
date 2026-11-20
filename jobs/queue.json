@@ -289672,13 +289672,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-20T15:21Z",
-      "eta": "2026-11-20T17:21Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-20T12:06Z",
-      "result": "",
+      "result": "parked for Chief: condition for J2040 NOT MET at 2026-11-20T15:25Z. PR 490 still OPEN draft at f521bcd3f1 (base main), 1 housekeeping comment, 0 reviews; docs/CODEX_ALLOWLIST.md absent from main; J2517 and J2559 done; thread through 7043255168 has no operator confirmation or superseding ruling (owner-account comments are alarm lines only). The eight Mini-local approval/gateway hashes were NOT checked (not readable from the MacBook). J2040 left blocked, nothing reopened. wait --recheck was refused for macbook (Only the holder or elected Chief may update this hold); Chief to run: jobs.py wait J2040 --agent <chief id> --condition 'Authorized operator confirmation of the Mini local Codex approval configuration plus fresh-session scoped acceptance evidence' --check-at '2026-11-20T21:30:00Z' --type input --recheck J3229 --git",
       "history": [
         {
           "at": "2026-11-20T12:06Z",
@@ -289699,6 +289699,11 @@
           "at": "2026-11-20T15:21Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T15:23Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: condition for J2040 NOT MET at 2026-11-20T15:25Z. PR 490 still OPEN draft at f521bcd3f1 (base main), 1 housekeeping comment, 0 reviews; docs/CODEX_ALLOWLIST.md absent from main; J2517 and J2559 done; thread through 7043255168 has no operator confirmation or superseding ruling (owner-account comments are alarm lines only). The eight Mini-local approval/gateway hashes were NOT checked (not readable from the MacBook). J2040 left blocked, nothing reopened. wait --recheck was refused for macbook (Only the holder or elected Chief may update this hold); Chief to run: jobs.py wait J2040 --agent <chief id> --condition 'Authorized operator confirmation of the Mini local Codex approval configuration plus fresh-session scoped acceptance evidence' --check-at '2026-11-20T21:30:00Z' --type input --recheck J3229 --git"
         }
       ],
       "remaining_action": "Verify readiness: Await operator confirmation and fresh-session acceptance evidence for the scoped command permissions; recheck at noon UTC on 20 November.",
