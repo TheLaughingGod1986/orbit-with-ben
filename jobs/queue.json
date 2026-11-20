@@ -284975,9 +284975,14 @@
           "at": "2026-11-20T01:17Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Completed per-row hash, prompt, and 1-fps read_file inspection across all 10 unresolved HOS 013 pass-1 clips (rows 56-62, 64-66); confirmed read_file on video/mp4 returns 1-fps stills 00:00..00:07 rather than continuous 24-fps playback"
+        },
+        {
+          "at": "2026-11-20T01:19Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Committed jobs/reviews/J3178/REVIEW.md with 11/11 Batch 12-14 hash verification, prompt audit, and read_file 1-fps video probe evidence"
         }
       ],
-      "remaining_action": "Write jobs/reviews/J3178/REVIEW.md in clean worktree and commit",
+      "remaining_action": "Place typed capability hold (moving_video_input) on J3178 and post report",
       "kind": "qa",
       "required_capabilities": [
         "moving_video_input"
@@ -284993,11 +284998,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-20T01:17Z",
+        "at": "2026-11-20T01:19Z",
         "by": "gemini",
-        "note": "Completed per-row hash, prompt, and 1-fps read_file inspection across all 10 unresolved HOS 013 pass-1 clips (rows 56-62"
+        "note": "Committed jobs/reviews/J3178/REVIEW.md with 11/11 Batch 12-14 hash verification, prompt audit, and read_file 1-fps video"
       },
       "taskKeys": [
         "HOS:013"
