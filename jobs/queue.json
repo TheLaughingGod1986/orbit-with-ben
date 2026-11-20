@@ -279930,6 +279930,11 @@
           "at": "2026-11-20T03:10Z",
           "by": "relay",
           "what": "condition verification queued: J3189"
+        },
+        {
+          "at": "2026-11-20T05:04Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-20T09:10:00Z"
         }
       ],
       "remaining_action": "Obtain explicit approval for the rejected GitHub branch export, then open the Pluto packaging review PR without rebuilding",
@@ -279948,12 +279953,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J3167 Chief ruling: explicit authorization for the previously rejected export of codex/j3114-pluto-v02 to TheLaughingGod1986/orbit-with-ben remains absent through thread comment 7023704252. Reviewed Gemini evidence at 46697da7e3; independently confirmed clean a12100797f and 12/12 NAS artifact hashes. Automatic approval review rejected export twice; ownership/admin evidence was insufficient. Do not retry via another worker or route. Preserve J3115 dependency. After actual export approval, push the preserved branch and open its review PR without rebuilding. Time alone never releases the hold.",
-        "check_at": "2026-11-20T04:10:00+00:00",
-        "last_recheck": "J3167",
-        "checked_at": "2026-11-19T22:18:53+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3189"
+        "condition": "J3189 Chief ruling: condition NOT MET. Accepted Gemini evidence jobs/reviews/J3189/REVIEW.md at 415ca8a0bc; independently confirmed clean a12100797f and 12/12 NAS hashes. No subsequent export authorization through thread 7030916575; remote branch and PR absent. Prior automatic approval review rejected exporting codex/j3114-pluto-v02 to TheLaughingGod1986/orbit-with-ben twice; owner/admin evidence was insufficient. Preserve artifacts and J3115 dependency. At the retry check for actual explicit export authorization; if granted, push the preserved branch and open its review PR without rebuilding. Do not bypass through another worker or route; elapsed time is not approval.",
+        "check_at": "2026-11-20T09:10:00Z",
+        "last_recheck": "J3189",
+        "checked_at": "2026-11-20T05:04:02+00:00",
+        "checked_by": "codex"
       },
       "escalated_at": "2026-11-19T11:45Z"
     },
