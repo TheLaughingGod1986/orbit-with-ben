@@ -4,7 +4,7 @@ Prepared 18 November 2026. This is the phase 3 execution runbook, not permission
 The latest J3012 brief supersedes the original history-rewrite dependency: create a clean root commit; do not
 copy Orbit's Git history. J2537's history rewrite is not a prerequisite. The source history remains in Orbit.
 
-## Resume here (20 November, collector acceptance and spend-writer guard)
+## Resume here (20 November, installed-service inventory)
 
 PR 1011 is the existing delivery branch; do not recreate the runbook or reset J3012's **3/4** progress.
 Its queue history and the newest `jobs/reviews/J3012/` evidence describe completed preparation.
@@ -18,8 +18,10 @@ record path against four temporary bare remotes. These tests also pass inside th
 `jobs/reviews/J3012/COLLECTOR_ACCEPTANCE_2026-11-20.md` for exact coverage and limits.
 The installed AI-spend daily reader was found outside the prepared service list; its CLI and direct ledger writer
 now refuse a retired engine, and its service can be staged with the same renderer. Nothing was installed.
-Next: deployed board credential Contents probe; remaining writer inventory/guards (including local worker/watchdog
-wrappers and non-CLI ledger exporters); refreshed private rehearsal and both-machine service inventory.
+The Mini inventory now resolves the legacy Cursor launcher and watchdog, and identifies a malformed missed-runs
+plist. The repeatable, value-free inventory tool and cutover handling are documented below. No service was changed.
+Next: deployed board credential Contents probe; remaining writer guards and wrapper replacements; MacBook inventory;
+refreshed private rehearsal. Do not equate installed-service inventory with loaded-service or guard verification.
 Keep the live switch gated on the timing and acceptance below. This run does not change the official daily
 history or send the day-before notice.
 
@@ -680,3 +682,50 @@ audit. None of these observations constitutes MacBook acceptance; both slots sti
 See `jobs/reviews/J3012/RECORD_WRITERS_2026-11-20.md` for the bounded change and checks. Resume the existing PR;
 deployed board Contents access, remaining wrappers/exporters, both-machine inventory and refreshed private
 rehearsal are still required before giving the day-before notice and proceeding to live acceptance.
+
+
+## Installed-service inventory and legacy launcher handling (20 November)
+
+Run `scripts/mini/inventory_services.py` on **each machine** before the window. It only reads bounded plist/script
+files: it never runs the configured program, shell, command substitution or a discovered worker. JSON contains
+labels, source hashes and booleans, not command lines, environment names/values, paths or source text. A malformed
+plist produces an unreadable row and a nonzero exit without suppressing the remaining rows. No matching files also
+returns nonzero. Keep raw output local; the reviewed evidence belongs in the runbook.
+
+```sh
+python3 scripts/mini/inventory_services.py \
+  --old-engine "$OWB_REPO" \
+  --prefix com.owb. --prefix com.hos. --prefix dev.orbit. \
+  --prefix com.cursor.mac-mini- --prefix com.ben.grok
+```
+
+Use the actual prior engine path and appropriate worker filename prefixes on the MacBook. Resolve every unknown
+command manually; this deliberately bounded scanner does not follow scripts recursively or infer a service is
+safe from its name. `guard_mentioned` and `pause_mentioned` are lexical observations (including comments), **not**
+proof that any execution path checks them. Every row remains `needs_review: true`. Pair the inventory with
+`launchctl` loaded-state inspection during cutover: an installed plist is not proof of an enabled/running job.
+
+The Mini scan found **18 definitions: 17 parseable, one malformed**. Actual wrapper reads settle the previously
+unresolved Cursor target. Handle the following before changing the active-engine marker:
+
+| Installed service | Window handling and resumption condition |
+| --- | --- |
+| `com.owb.cursor-worker` | Its local wrapper still tells Cursor it is Chief and chooses old inbox work. It has a pause-file check but no retirement guard. Drain it, save its installed definition, and keep it booted out at cutover. Do not restart this obsolete prompt; the routed specialist worker supplied by the current relay replaces this legacy path. Retain files for rollback. |
+| `com.owb.grokbot-watchdog` | Its wrapper can restart the desktop app through independent relaunch and updater modes as well as disconnect recovery. No pause/retirement check was found. Boot it out **before** draining the app/relay; retain its definition. Resume only after all restart paths obey the cutover pause and the app's engine context and notification route are verified. Changing the notification command alone does not migrate the app. |
+| `com.ben.grok-bot` | The app's own launch agent can also start it. Include its loaded state and app processes in the drain so disabling the watchdog alone cannot reopen an old worker. Keep app state and login unchanged; restore only after the engine context is verified. |
+| `com.cursor.mac-mini-worker` | The separate worker wrapper contains an old-engine reference; it is not the legacy scheduled Cursor wrapper above. Drain and inspect its working directory/prompt and child worker state before resuming it. |
+| `com.cursor.mac-mini-hos-worker`, `com.cursor.mac-mini-repo-workers` | Direct worker wrappers resolved; absence of the old literal root proves nothing about remote prompts or children. Drain studio-capable work and verify channel versus engine roots. Do not change unrelated project workers. |
+| `com.hos.desk`, `com.hos.local-wan-ltx-queue-reminder` | Channel-local programs resolved. Preserve channel roots; inspect subprocess/queue references before resumption. Keep their read markers. |
+| `com.hos.cdp-browsers` | Preserve signed-in profiles and existing ports. This is not an engine writer; do not close Chrome as part of the move. |
+| `com.owb.missed-runs` | The installed plist fails XML parsing. Establish loaded state separately (launchd may hold an earlier valid definition). Keep its old bytes for rollback and prepare a valid replacement before relying on it for post-move monitoring. Do not overwrite it during preparation. |
+| `com.owb.ai-spend-daily`, `com.owb.tab-janitor` | Old-root references found; shell resolution remains incomplete in this bounded scan. Use the prepared spend service adapter; manually resolve the janitor and preserve the one-tab policy. |
+
+The remaining inventory rows include the prepared relay, board, analytics and Buffer services and unrelated
+Cursor project workers. Their configured script hashes are local evidence, not proof the staged adapters have
+been installed. Preparation does not boot out any service or alter a marker. At cutover the operator records each
+saved definition, loaded state, decision and replacement hash locally, drains children, then installs only the
+reviewed replacements. Rollback restores those definitions and loaded states after draining the new writers.
+
+Validation: seven inventory tests cover non-execution, value suppression, binary plists, direct and home-expanded
+wrappers, unresolved dynamic shell, invalid labels, missing scripts, malformed XML and bounded input size. Nine
+existing service-renderer tests pass. No live service, queue behavior, browser, credential or film was changed.
