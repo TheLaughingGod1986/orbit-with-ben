@@ -151,6 +151,31 @@ else:
         time.sleep(1.1)
         self.assertFalse(marker.exists())
 
+    def test_collection_runs_production_auxiliary_before_reports_and_publication(self):
+        from analytics_auxiliary import auxiliary
+        from unittest.mock import patch
+        data = self.session.records['space'].worktree / '05_Analytics/space'
+        (data / 'snapshots').mkdir(parents=True)
+        (data / 'snapshots/2026-11-20.json').write_text('{"videos": []}')
+        uploads = self.session.records['space'].worktree / '00_Brand/Channel-Setup/social/UPLOADS.json'
+        uploads.parent.mkdir(parents=True)
+        uploads.write_text('{"videos": {}}')
+        def runner(command):
+            self.commands.append(command)
+            return 124 if command.name == 'gate:space' else 0
+        with patch.object(module.channels, 'get', side_effect=lambda s: {
+                'repo': {'env': s.upper() + '_REPO'},
+                'analytics': {'open_gate_library': s == 'space'}}):
+            phase = auxiliary(self.credentials, self.root / 'cache', 'field-order-dispatch.ts',
+                              runner, day='2026-11-20')
+            self.assertEqual(module.collect(self.session, self.credentials, phase, runner), ['gate:space'])
+        self.assertEqual([c.name for c in self.commands],
+            ['snapshot:space', 'snapshot:science', 'dispatch', 'gate:space', 'report', 'board'])
+        self.session.publish.assert_called_once()
+        gate = self.commands[3]
+        self.assertEqual(gate.env['FIELD_ORDER_QUEUE_REPO'], str(self.session.sources['studio']))
+        self.assertEqual(gate.args[gate.args.index('--media-root') + 1], str(self.session.sources['space']))
+
     def test_runner_preserves_exit_code_and_handles_missing_executable(self):
         command = module.Command('exit', (sys.executable, '-c', 'raise SystemExit(7)'), self.root, dict(os.environ), 5)
         self.assertEqual(module.execute(command), 7)

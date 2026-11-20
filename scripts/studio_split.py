@@ -59,6 +59,7 @@ ROUTES = (
     (r"studio-core/", STUDIO, "the lock on shared tools (retires with the copies)"),
     (r"07_Content-Ops/", STUDIO, "the upload and social tools, shared by every channel"),
     (r"04_Audio/tools/", STUDIO, "the voice and sound tools, shared by every channel"),
+    (r"00_Brand/Channel-Setup/tools/channel_profile\.py$", BOTH, "channel-owned gate settings; temporary engine copy for legacy shared tools"),
     (r"00_Brand/Channel-Setup/tools/", STUDIO, "the gates and audits, shared by every channel"),
     (r"00_Brand/Channel-Setup/audits/start_studio_chrome_cdp\.sh$", STUDIO, "starts the Studio browsers, shared by every channel"),
     (r"00_Brand/Channel-Setup/STUDIO_PLAYBOOK\.md$", STUDIO, "the playbook, generated from the rule book"),

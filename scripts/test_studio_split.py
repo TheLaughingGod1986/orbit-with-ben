@@ -23,6 +23,12 @@ ROOT = split.ROOT
 
 
 class Routes(unittest.TestCase):
+    def test_gate_profile_stays_with_channel_and_legacy_engine_copy(self):
+        path = "00_Brand/Channel-Setup/tools/channel_profile.py"
+        placed = split.plan([path], ["sample"], "sample")
+        self.assertIn(path, placed["sample"])
+        self.assertIn(path, placed[split.STUDIO])
+
     def test_every_tracked_file_has_a_place(self):
         placed = split.plan(split.tracked(ROOT), channels.slugs(), split.resident(ROOT))
         self.assertEqual(placed["unrouted"], [])

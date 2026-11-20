@@ -4,7 +4,7 @@ Prepared 18 November 2026. This is the phase 3 execution runbook, not permission
 The latest J3012 brief supersedes the original history-rewrite dependency: create a clean root commit; do not
 copy Orbit's Git history. J2537's history rewrite is not a prerequisite. The source history remains in Orbit.
 
-## Resume here (19 November, latest integration)
+## Resume here (20 November, analytics auxiliary phase)
 
 PR 1011 is the existing delivery branch; do not recreate the runbook or reset J3012's **3/4** progress.
 Its queue history and the newest `jobs/reviews/J3012/` evidence describe completed preparation.
@@ -12,11 +12,12 @@ The current integration retains main's guarded former-resident manifest cache an
 missing-browser-port refusal test. The split checker now rejects failed, interrupted, missing-summary and
 empty test runs rather than counting an unrecognized process failure as a zero day.
 
-Next ready implementation is the analytics auxiliary gate/dispatch callback described in
-`ANALYTICS_COLLECTION_2026-11-19.md`: isolated library/frame output, source media/cache, bounded commands,
-then timer/plist wiring and full fake-API acceptance. Also outstanding: the deployed board credential probe,
-complete writer inventory/guards and refreshed private rehearsal. Keep the live switch gated on the timing
-and acceptance below. This integration does not change the official daily history or send the day-before notice.
+The bounded analytics auxiliary callback and isolated gate adapter are now prepared; see
+`jobs/reviews/J3012/ANALYTICS_GATE_2026-11-20.md`. Next wire the timer entrypoint/plist, including cache
+availability probing, and run full fake-API acceptance with real local record remotes. Also outstanding:
+the deployed board credential probe, complete writer inventory/guards and refreshed private rehearsal.
+Keep the live switch gated on the timing and acceptance below. This run does not change the official daily
+history or send the day-before notice.
 
 ## Timing and acceptance
 
@@ -569,3 +570,24 @@ connect the shell entrypoint and staged plist. This is not full timer acceptance
 
 Evidence: `jobs/reviews/J3012/ANALYTICS_COLLECTION_2026-11-19.md`. No live timer, credential, channel record,
 activation marker, board deployment or service was changed.
+
+### Gate and dispatch adapter prepared — 20 November
+
+`scripts/analytics_auxiliary.py` supplies the collection callback: bounded Studio-read dispatch against the
+session's shared queue, then gates for registry-selected library owners. Each gate reads today's snapshot and
+upload registry from its channel record worktree, media and channel profile from the source channel, and an
+explicit cache. Missing current inputs are a named failure; yesterday's snapshot is not silently substituted.
+A dispatch or gate failure still allows reports and publication of other collected records.
+
+`scripts/analytics_gate.py` wraps the existing gate modules without changing their shared implementations or
+core hashes. The adapter selects the source channel's profile, isolates library JSON and new frame files in
+the persistent record worktree, preserves source-relative VO lookup and channel-relative frame links, and
+refuses mismatched channel owners, symlink record targets and retired engines. Its subprocesses expose only
+the add/check operations needed by the upcoming gate; the outer collection runner bounds the process group.
+Frames remain ignored, disposable local comparison aids; thumbnail arrays and hashes in library JSON are the
+durable comparison record. Existing source frames remain untouched. The split retains channel_profile.py in
+the channel, with a temporary engine copy for legacy callers; the analytics adapter never uses that default.
+
+This is preparation only. Timer shell/plist wiring, cache readability fallback and complete fake-API timer
+acceptance with real record commits still remain; the installed timer is unchanged. No live gate, API,
+queue dispatch, board publication or source-media mutation was run by these tests.
