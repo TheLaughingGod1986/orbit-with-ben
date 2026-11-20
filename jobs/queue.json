@@ -272490,18 +272490,23 @@
           "at": "2026-11-20T18:57Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Claimed J3012 as acting Chief; checking PR #1076 (J3242), MiniWork scratch rules, and pre-cutover state"
+        },
+        {
+          "at": "2026-11-20T19:02Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Merged PR #1076 (J3242 MacBook inventory -> 8441d1ae5e); full detached studio_split.py PASS (left:0) on main; parking on Ben token grant"
         }
       ],
-      "remaining_action": "Review/merge MacBook inventory PR #1076, verify current main split & pre-cutover readiness, and set typed wait for Ben BOARD_GH_TOKEN grant + PR #1075 independent review",
+      "remaining_action": "Verify Ben's BOARD_GH_TOKEN studio grant (re-probe 200 contentsRead:true) and PR #1075 merge, then post preceding-day notice for Mon 23/Tue 24 Nov cutover",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-20T18:57Z",
+        "at": "2026-11-20T19:02Z",
         "by": "gemini",
-        "note": "Claimed J3012 as acting Chief; checking PR #1076 (J3242), MiniWork scratch rules, and pre-cutover state"
+        "note": "Merged PR #1076 (J3242 MacBook inventory -> 8441d1ae5e); full detached studio_split.py PASS (left:0) on main; parking on"
       },
       "taskKeys": [
         "HOS:009",
