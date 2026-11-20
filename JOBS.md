@@ -64,7 +64,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3249 | mini | open | – | – | assembly · MiniWork scratch SSD cleanup: safely offload old completed-job scratch to NAS to restore >=40 GB free before J3012 daily split and cutover |  |
 | J3254 | mini | blocked | cursor | – | studio · Field Order History: set up its upload path (Studio browser profile + port, upload tooling for ww2, Ben's one sign-in), so finished pilots can go out |  |
 | J3255 | mini | open (after J3254) | – | – | studio · YouTube and Studio settings audit for growth: every channel setting, upload default, layout, playlist and eligibility; fix the safe ones, ask Ben the rest |  |
-| J3256 | mini | open | – | – | review · Retention autopsy for every long at 48 h and 7 days: relative-strength score, funnel diagnosis, Gemini watches the drop points, fixes and lessons |  |
+| J3256 | mini | open | – | – | for gemini · review · `gemini-argon` · Retention autopsy for every long at 48 h and 7 days: relative-strength score, funnel diagnosis, Gemini watches the drop points, fixes and lessons |  |
 
 Recently finished:
 
