@@ -254989,13 +254989,13 @@
       "stage": "",
       "after": "J3129",
       "eta_min": 120,
-      "status": "blocked",
+      "status": "open",
       "by": "",
       "since": "",
       "eta": "",
       "created_by": "macbook-2",
       "created_at": "2026-11-14T17:11Z",
-      "result": "J3096 FIX: J3129 rebuild, panel and exact-file review required; no Studio authorization.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-14T17:11Z",
@@ -255031,6 +255031,11 @@
           "at": "2026-11-20T05:32Z",
           "by": "codex",
           "what": "J3194 exact-file PASS; approved path/hash and conditional T039 permission recorded; existing J3175 verifies before reopening"
+        },
+        {
+          "at": "2026-11-20T05:38Z",
+          "by": "codex",
+          "what": "reopened: J3175 acting-Chief ruling: approval dependency SATISFIED. Fresh NAS hash matches v08 SHA-256 781435d9c557b1a18fbd3dba42d513f647d2a65fff2d5063b3829c7d2b522c68 (430024 bytes). J3129, three independent critiques J3190-J3192, synthesis J3193 and exact-file decision J3194 are done. Read J3194 REVIEW.md and T007_READBACK.txt, panel DECISION.md, full job histories and thread through 7031424535; existing J3194 ruling stands. J2847 brief contains approved path/hash and bounded T039 successor permission. Resume existing J2847 only: freshly match T007 finished dates 15 Oct 11:22 to 29 Oct 10:24, insufficient impressions, unavailable shares, A visible to all and no running test immediately before execution. Preserve report, recheck hash, save/reload Test running before ledger start. Stop for different report or running test; preserve other settings and T038. No test started or Studio writes, spend or film approval in this review. v07 remains rejected."
         }
       ],
       "remaining_action": "Verify the Webb approval and finished report, then test the approved thumbnail",
@@ -255038,16 +255043,7 @@
       "plain": "Wait for the corrected Webb thumbnail to pass review before testing it",
       "taskKeys": [
         "OWB:004"
-      ],
-      "hold": {
-        "type": "dependency",
-        "condition": "J3194 exact-file PASS and conditional permission recorded in jobs/reviews/J3194/REVIEW.md; J3175 verifies J3194 completion and exact J2847 brief, then may reopen. Execution still requires fresh matching T007 finished report and no running test.",
-        "check_at": "2026-11-20T00:14:23+00:00",
-        "last_recheck": "J3090",
-        "checked_at": "2026-11-19T17:10:10+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3175"
-      }
+      ]
     },
     {
       "id": "J2848",
