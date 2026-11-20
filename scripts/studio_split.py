@@ -376,6 +376,9 @@ def check(root: pathlib.Path = ROOT, scratch: pathlib.Path | None = None, tests:
     if home is None:
         raise SystemExit("no channel's content lives in this repo: the studio has already moved, there is nothing to rehearse")
     files = tracked(root)
+    missing = [f for f in files if not (root / f).is_file() and not (root / f).is_symlink()]
+    if missing:
+        raise SystemExit(f"not run: {len(missing)} tracked source files are absent; materialize the complete checkout before rehearsing")
     placed = plan(files, slugs, home)
     groups: dict = {key: [] for key, _ in GROUPS}
     groups["unrouted"] = placed["unrouted"]

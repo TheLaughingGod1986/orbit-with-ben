@@ -73,6 +73,23 @@ class Routes(unittest.TestCase):
         self.assertEqual(ratchet.home_counts().get("studio_split.py", 0), 0)
 
 
+class CompleteSource(unittest.TestCase):
+    def test_sparse_or_deleted_tracked_source_refuses_before_build_or_scan(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "present.py").write_text("# present\n")
+            with mock.patch.object(split.channels, "slugs", return_value=["sample"]), \
+                 mock.patch.object(split, "resident", return_value="sample"), \
+                 mock.patch.object(split, "tracked", return_value=["present.py", "absent.py"]), \
+                 mock.patch.object(split, "build") as build, \
+                 mock.patch.object(split, "key_findings") as scan:
+                with self.assertRaisesRegex(SystemExit, "1 tracked source files are absent"):
+                    split.check(root, root / "export")
+                build.assert_not_called()
+                scan.assert_not_called()
+                self.assertFalse((root / "export").exists())
+
+
 class FormerResidentCache(unittest.TestCase):
     def test_build_copies_former_resident_manifest_without_mutating_source(self):
         with tempfile.TemporaryDirectory() as tmp:
