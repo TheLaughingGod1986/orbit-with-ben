@@ -9,7 +9,9 @@ const routes = { checks, data, pair, ref, watch, migration };
 export default {
   async fetch(request, env) {
     const name = new URL(request.url).pathname.match(/^\/api\/([a-z]+)\/?$/)?.[1];
-    const response = routes[name] ? await adapt(routes[name], request, env) : new Response("Not found", { status: 404 });
+    // The temporary probe must not inherit bindings from an earlier request.
+    const handler = name === "migration" ? (req, res) => migration(req, res, env) : routes[name];
+    const response = handler ? await adapt(handler, request, env) : new Response("Not found", { status: 404 });
     response.headers.set("X-Robots-Tag", "noindex, nofollow");
     return response;
   },

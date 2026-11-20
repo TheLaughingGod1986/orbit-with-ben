@@ -6,8 +6,7 @@ const REPO = "TheLaughingGod1986/studio";
 const REF = "rehearsal/j3012";
 const SHA = /^[0-9a-f]{40}$/;
 
-export default async function handler(req, res) {
-  const env = process.env;
+export default async function handler(req, res, env = process.env) {
   res.setHeader("Cache-Control", "no-store");
   res.setHeader("Vary", "Cookie, x-board-key");
   if (env.BOARD_MIGRATION_PROBE !== "1") return res.status(404).json({ error: "not enabled" });

@@ -108,6 +108,27 @@ console.log(JSON.stringify({disabled, anonymous:r.status, cache:r.headers.get('c
         self.assertEqual(p.returncode, 0, p.stderr)
         self.assertEqual(json.loads(p.stdout), {"disabled": 404, "anonymous": 401, "cache": "no-store"})
 
+    def test_cloudflare_probe_does_not_reuse_removed_bindings(self):
+        code = r'''
+import worker from './cf_worker.js';
+let calls = 0;
+globalThis.fetch = async () => { calls++; return {ok:false,status:403}; };
+const request = () => new Request('https://board.example/api/migration',
+  {headers:{'x-board-key':'test-key'}});
+const enabled = {BOARD_MIGRATION_PROBE:'1', BOARD_KEY:'test-key', BOARD_GH_TOKEN:'test-token'};
+const statuses = [];
+statuses.push((await worker.fetch(request(), enabled)).status);
+// The adapter still holds prior process.env strings, but these requests must not use them.
+statuses.push((await worker.fetch(request(), {BOARD_KEY:'test-key',BOARD_GH_TOKEN:'test-token'})).status);
+statuses.push((await worker.fetch(request(), {BOARD_MIGRATION_PROBE:'1',BOARD_GH_TOKEN:'test-token'})).status);
+statuses.push((await worker.fetch(request(), {BOARD_MIGRATION_PROBE:'1',BOARD_KEY:'test-key'})).status);
+console.log(JSON.stringify({statuses,calls}));
+'''
+        p = subprocess.run(["node", "--input-type=module", "-e", code], cwd=SITE,
+                           capture_output=True, text=True, timeout=20)
+        self.assertEqual(p.returncode, 0, p.stderr)
+        self.assertEqual(json.loads(p.stdout), {"statuses": [502, 404, 401, 503], "calls": 1})
+
 
 if __name__ == "__main__":
     unittest.main()

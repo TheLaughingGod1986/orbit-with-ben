@@ -4,7 +4,7 @@ Prepared 18 November 2026. This is the phase 3 execution runbook, not permission
 The latest J3012 brief supersedes the original history-rewrite dependency: create a clean root commit; do not
 copy Orbit's Git history. J2537's history rewrite is not a prerequisite. The source history remains in Orbit.
 
-## Resume here (20 November, board credential probe prepared)
+## Resume here (20 November, probe request isolation verified)
 
 PR 1011 is the existing delivery branch; do not recreate the runbook or reset J3012's **3/4** progress.
 Its queue history and the newest `jobs/reviews/J3012/` evidence describe completed preparation.
@@ -30,7 +30,7 @@ propagating reviewed code. The three canonical NAS working paths were absent, no
 `jobs/reviews/J3012/COMPANION_REVIEW_2026-11-20.md` for the review and installation boundary.
 The Cloudflare session was refreshed and the production project inspected read-only. Its GitHub token exists as
 an unreadable secret; preview has no token. A disabled-by-default authenticated runtime probe is now prepared,
-not deployed. See **Board credential probe** below and `jobs/reviews/J3012/BOARD_ACCESS_2026-11-20.md`.
+not deployed. Its worker route now passes the current request bindings explicitly, so removal of the enable flag, board key or GitHub token cannot reuse values retained in process.env. See **Board credential probe** below and `jobs/reviews/J3012/BOARD_ACCESS_2026-11-20.md`.
 Next: propagate the merged guard patch after draining affected writers; deploy and run the prepared board credential probe; remaining wrapper replacements; MacBook inventory;
 refreshed private rehearsal. Do not equate installed-service inventory with loaded-service or guard verification.
 Keep the live switch gated on the timing and acceptance below. This run does not change the official daily
