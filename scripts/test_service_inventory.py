@@ -5,6 +5,8 @@ import pathlib
 import plistlib
 import tempfile
 import unittest
+from unittest import mock
+from types import SimpleNamespace
 
 spec = importlib.util.spec_from_file_location('inventory', pathlib.Path(__file__).parent / 'mini/inventory_services.py')
 module = importlib.util.module_from_spec(spec)
@@ -72,6 +74,48 @@ class Inventory(unittest.TestCase):
     def test_oversized_input_is_not_read_or_disclosed(self):
         self.path.write_bytes(b'x' * (module.MAX_BYTES + 1))
         self.assertEqual(module.inspect_service(self.path, self.old, self.home)['status'], 'unreadable')
+
+
+class LoadedState(unittest.TestCase):
+    def probe(self, code=0, out='', err=''):
+        with mock.patch.object(module.platform, 'system', return_value='Darwin'), \
+             mock.patch.object(module.os, 'getuid', return_value=501), \
+             mock.patch.object(module.subprocess, 'run', return_value=SimpleNamespace(
+                 returncode=code, stdout=out, stderr=err)) as run:
+            row = module.loaded_state('com.test.worker')
+        run.assert_called_once_with(['/bin/launchctl', 'print', 'gui/501/com.test.worker'],
+                                    capture_output=True, text=True, timeout=5)
+        return row
+
+    def test_reads_only_top_level_state_without_disclosing_environment(self):
+        row = self.probe(out='gui/501/com.test.worker = {\n\tstate = running\n'
+                         '\tenvironment = {\n\t\tTOKEN = hidden\n\t\tstate = waiting\n\t}\n}')
+        self.assertEqual(row, {'status': 'loaded', 'state': 'running'})
+        self.assertNotIn('hidden', json.dumps(row))
+
+    def test_missing_service_requires_exact_label_and_diagnostic(self):
+        self.assertEqual(self.probe(code=113, err='Could not find service "com.test.worker" in domain for user gui: 501'),
+                         {'status': 'not_loaded'})
+        for error in ('Could not find domain for', 'Operation not permitted',
+                      'Could not find service "another" in domain for user gui: 501'):
+            self.assertEqual(self.probe(code=1, err=error), {'status': 'unavailable'})
+
+    def test_unknown_or_nested_state_is_not_echoed(self):
+        for output in ('\tstate = secret value\n', '\t\tstate = running\n', ''):
+            self.assertEqual(self.probe(out=output), {'status': 'loaded', 'state': 'unknown'})
+
+    def test_invalid_label_and_non_mac_do_not_spawn(self):
+        with mock.patch.object(module.subprocess, 'run') as run:
+            self.assertEqual(module.loaded_state('bad/secret'), {'status': 'invalid_label'})
+            with mock.patch.object(module.platform, 'system', return_value='Linux'):
+                self.assertEqual(module.loaded_state('com.test.worker'), {'status': 'unavailable'})
+            run.assert_not_called()
+
+    def test_timeout_and_launch_errors_do_not_disclose_diagnostics(self):
+        with mock.patch.object(module.platform, 'system', return_value='Darwin'):
+            for error in (OSError('hidden'), module.subprocess.TimeoutExpired('hidden', 5)):
+                with mock.patch.object(module.subprocess, 'run', side_effect=error):
+                    self.assertEqual(module.loaded_state('com.test.worker'), {'status': 'unavailable'})
 
 
 if __name__ == '__main__':

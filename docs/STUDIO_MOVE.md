@@ -752,7 +752,7 @@ returns nonzero. Keep raw output local; the reviewed evidence belongs in the run
 python3 scripts/mini/inventory_services.py \
   --old-engine "$OWB_REPO" \
   --prefix com.owb. --prefix com.hos. --prefix dev.orbit. \
-  --prefix com.cursor.mac-mini- --prefix com.ben.grok
+  --prefix com.cursor.mac-mini- --prefix com.ben.grok --loaded
 ```
 
 Use the actual prior engine path and appropriate worker filename prefixes on the MacBook. Resolve every unknown
@@ -832,3 +832,29 @@ newly published records. No installed monitoring changed during preparation. See
 Launcher preparation: 33 monitor/launcher/retirement tests and 26 channel/address/private-network checks passed.
 Per-owner continuation: 53 focused tests and 26 channel/address/private-network checks passed. No service,
 activation marker, credential, board deployment, film or spend changed. See the matching evidence note.
+
+
+## Loaded-service observations (20 November, J3012 continuation)
+
+The inventory now accepts `--loaded`. It runs only `/bin/launchctl print` for each validated
+service label in the current user's GUI domain, with a five-second timeout. Output contains
+only loaded/not-loaded/unavailable and an allowlisted top-level state. Launchctl environment,
+arguments and diagnostics are never emitted. A denied read, missing domain or timeout is
+unavailable, never evidence that a worker is stopped. A malformed installed plist still gets
+a lookup by its filename, because launchd can retain an earlier valid definition.
+
+The Mini read at about 08:44 UTC found 18 installed definitions: 17 loaded and one explicitly
+not loaded (`com.cursor.mac-mini-repo-workers`). Seven loaded services reported running;
+ten reported not running. In particular, the malformed installed `com.owb.missed-runs.plist`
+has a loaded job, currently not running. Do not replace it using template defaults until its
+loaded settings are reconciled in the cutover window. The legacy Cursor and Grok watchdog
+jobs are also loaded although not running at this instant; they still belong in the drain.
+These are point-in-time observations, not proof of drained children, disabled schedules,
+installed/loaded definition equality or guard coverage. No service was changed.
+
+The MacBook was online in the local connection inventory, but a bounded, non-interactive SSH
+probe was refused. No remote command ran and no sign-in, host-key or network setting changed.
+Its installed and loaded service inventory remains unverified. Run the same tool from an
+existing MacBook worker session and return only sanitized output; no new remote-access setup
+is needed for that route. Both slots still need the runbook's live acceptance after cutover.
+See `jobs/reviews/J3012/LOADED_SERVICES_2026-11-20.md` for validation and remaining work.

@@ -7,13 +7,45 @@ comments or dead code. Keep the raw report local; review selected rows for the r
 import argparse
 import hashlib
 import json
+import os
 import pathlib
+import platform
 import plistlib
 import re
 import shlex
+import subprocess
 from xml.parsers.expat import ExpatError
 
 MAX_BYTES = 2_000_000
+
+
+def loaded_state(label):
+    """Read only this user's loaded job; never expose launchctl's environment dump.
+
+    A successful read proves a definition is loaded, not that its program is the
+    installed file or that its children are drained. Unknown errors fail closed.
+    """
+    if not isinstance(label, str) or not re.fullmatch(r'[A-Za-z0-9_.-]{1,160}', label):
+        return {'status': 'invalid_label'}
+    if platform.system() != 'Darwin':
+        return {'status': 'unavailable'}
+    try:
+        result = subprocess.run(
+            ['/bin/launchctl', 'print', f'gui/{os.getuid()}/{label}'],
+            capture_output=True, text=True, timeout=5)
+    except (OSError, subprocess.TimeoutExpired):
+        return {'status': 'unavailable'}
+    if result.returncode:
+        # Do not mistake a missing GUI domain, denied read or other error for a
+        # safely stopped worker. Only launchctl's explicit missing-service reply.
+        missing = re.search(r'^Could not find service "' + re.escape(label) + r'" in domain ',
+                            result.stderr, re.M)
+        return {'status': 'not_loaded' if missing else 'unavailable'}
+    # Top-level fields only: nested environments may contain arbitrary values.
+    state = re.search(r'^\tstate = ([a-z -]+)$', result.stdout, re.M)
+    allowed = {'running', 'waiting', 'not running', 'spawn scheduled', 'exited'}
+    return {'status': 'loaded',
+            'state': state[1] if state and state[1] in allowed else 'unknown'}
 
 
 def read_small(path):
@@ -109,13 +141,21 @@ def main():
     ap.add_argument('--directory', type=pathlib.Path, default=pathlib.Path.home() / 'Library/LaunchAgents')
     ap.add_argument('--old-engine', type=pathlib.Path, required=True)
     ap.add_argument('--prefix', action='append', required=True, help='installed plist filename prefix; repeat as needed')
+    ap.add_argument('--loaded', action='store_true', help='also read current-user launchd loaded state (macOS only)')
     args = ap.parse_args()
     if not args.old_engine.is_absolute() or not args.directory.is_dir():
         ap.error('existing service directory and absolute old engine path required')
     paths = sorted(p for p in args.directory.glob('*.plist') if any(p.name.startswith(s) for s in args.prefix))
     rows = [inspect_service(p, args.old_engine, pathlib.Path.home()) for p in paths]
+    if args.loaded:
+        for row in rows:
+            # A broken installed plist may still have an earlier loaded version.
+            label = row.get('label') or pathlib.Path(row.get('source_name', '')).stem
+            row['loaded'] = loaded_state(label)
     print(json.dumps({'inventory_only': True, 'services': rows}, indent=2))
-    return 0 if rows and all(r['status'] == 'read' for r in rows) else 1
+    return 0 if rows and all(r['status'] == 'read' and
+                            (not args.loaded or r['loaded']['status'] in ('loaded', 'not_loaded'))
+                            for r in rows) else 1
 
 
 if __name__ == '__main__':
