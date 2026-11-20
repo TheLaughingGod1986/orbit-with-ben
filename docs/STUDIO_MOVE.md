@@ -4,7 +4,7 @@ Prepared 18 November 2026. This is the phase 3 execution runbook, not permission
 The latest J3012 brief supersedes the original history-rewrite dependency: create a clean root commit; do not
 copy Orbit's Git history. J2537's history rewrite is not a prerequisite. The source history remains in Orbit.
 
-## Resume here (20 November, per-owner monitor prepared)
+## Resume here (20 November, complete-source rehearsal)
 
 PR 1011 is the existing delivery branch; do not recreate the runbook or reset J3012's **3/4** progress.
 Its queue history and the newest `jobs/reviews/J3012/` evidence describe completed preparation.
@@ -32,18 +32,22 @@ The Cloudflare session was refreshed and the production project inspected read-o
 an unreadable secret; preview has no token. A disabled-by-default authenticated runtime probe is now prepared,
 not deployed. Its worker route now passes the current request bindings explicitly, so removal of the enable flag, board key or GitHub token cannot reuse values retained in process.env. See **Board credential probe** below and `jobs/reviews/J3012/BOARD_ACCESS_2026-11-20.md`.
 The missed-run monitor now accepts the detached collector subject and checks dashboard and each registered channel snapshot history independently. Failed fetches cannot reuse stale refs; missing channel checkouts cannot fall back to the engine. These checks are offline-tested, not installed (see the monitor continuation below).
+Fresh complete-source export and private-identity suite now pass (1,482 tests, six skips). The refreshed private
+snapshot is `rehearsal/j3012-20261120` at `a5759dc95f0bf8c02f9bd6050defb6c5bb5a41d9`, independently read back as
+a parentless, 2,397-file tree with no active workflows. The sparse-source omission guard and full provenance are
+in `jobs/reviews/J3012/REFRESHED_REHEARSAL_2026-11-20.md`. Original rehearsal/default branch unchanged.
 Next: propagate the merged guard patch after draining affected writers; deploy and run the prepared board credential probe; remaining wrapper replacements; MacBook inventory;
-refreshed private rehearsal. Do not equate installed-service inventory with loaded-service or guard verification.
+refresh again from the final frozen source at cutover. Do not equate installed-service inventory with loaded-service or guard verification.
 Keep the live switch gated on the timing and acceptance below. This run does not change the official daily
 history or send the day-before notice.
 
 ## Timing and acceptance
 
 The original target was Monday 23 or Tuesday 24 November. The current official history inspected on
-19 November at 22:05 UTC records six consecutive full zero-result days, 14–19 November. The corrected
-19 November row is source `fa47f48872`, recorded at 21:54 UTC. Earlier continuation notes below describe a
-superseded same-day nonzero result; they are historical evidence, not the current streak. Seven days and
-preceding-day notice are still required. No cutover date is established by this preparation run.
+20 November records seven consecutive full zero-result days, 14–20 November. The latest official row is
+source `9f583d0a2b`, recorded at 07:54 UTC, with all groups zero and tests run. This fulfills the daily-streak
+condition only; the unmerged migration branch still needs its own complete rehearsal. Earlier six-day notes
+are historical. Preceding-day notice and live acceptance are still required; no cutover date is established.
 
 - `python3 scripts/studio_split.py --streak jobs/reviews/studio_split/history.jsonl` must read at least 7.
   Each day must have `left: 0` and `tests: run`. Run the full dry run again on the frozen cutover source.
@@ -80,7 +84,7 @@ The NAS path renaming mentioned in the broader plan is a separate operation, not
 ## Identity, queue and thread decisions
 
 The new remote is `TheLaughingGod1986/studio`, private. The initial 18 November probe found no populated default branch; after publishing the rehearsal,
-the remote default became `rehearsal/j3012`. It is not production. Set the default to `main` only at cutover. Rehearsal goes only to `rehearsal/j3012`; production `main` is created at cutover from
+the remote default became `rehearsal/j3012`. It is not production. Set the default to `main` only at cutover. The original rehearsal is `rehearsal/j3012`; the 20 November refresh is `rehearsal/j3012-20261120`. Both are isolated rehearsal branches; production `main` is created at cutover from
 an independently scanned, fresh root commit. Never merge Orbit history into either branch.
 
 In the new `channels/channels.json`:
@@ -280,14 +284,18 @@ Run from the current clean Orbit source, using a new directory under `STUDIO_SCR
 python3 scripts/studio_split.py --keep "$STUDIO_SCRATCH/j3012-rehearsal" --json "$STUDIO_SCRATCH/j3012-split.json"
 ```
 
+Use a fully materialized source checkout. A sparse worktree can list tracked files that are absent on disk;
+the split now refuses that input before scanning or building. In the isolated job worktree, materialize its
+tracked files with `git sparse-checkout disable` and confirm adequate free space first. Never change the shared
+worker checkout merely to prepare this export.
+
 The split builds an isolated studio Git root and sibling channel views; it neither moves source files nor starts
 services. Other channel views include symlinks: never run mutations in those views. Do not run `jobs next --git`,
 `chief_relay run`, `board_publish`, uploads, deployments, desk posts or any timer in the rehearsal.
 
-After tests finish, independently inspect process exit/test summary (the split's test parser returns only named
-failures; a crash without a parsed unittest failure is not proof of PASS). Record omissions and failed tests.
-In the isolated studio copy, set the future registry identity above and local scratch paths. Preserve thread config,
-flag its adapter as unfinished, then run targeted loader/queue/board/worker/thread tests with mocked side effects.
+After tests finish, independently retain the process exit and test summary. The split now rejects nonzero
+process exits, interrupted tests and missing/empty success summaries, as well as named failures. Record omissions and failed tests.
+In the isolated studio copy, set the future registry identity above and local scratch paths. Preserve the retained thread configuration and verify its prepared adapter, then run targeted loader/queue/board/worker/thread tests with mocked side effects.
 No live credentials or network writes are required for those checks.
 
 Before publishing the rehearsal, scan every tracked export file again, record hashes and source commit, and move
