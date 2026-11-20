@@ -269970,10 +269970,10 @@
       "stage": "edit",
       "after": "J2995",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-20T21:00Z",
+      "eta": "2026-11-21T01:00Z",
       "created_by": "claude",
       "created_at": "2026-11-17T17:20Z",
       "result": "",
@@ -270202,6 +270202,11 @@
           "at": "2026-11-20T20:59Z",
           "by": "gemini",
           "what": "rerouted to cursor on cursor-grok-4-7: J3075 Acting-Chief routing: codex down until 2026-11-24T23:26Z; hand reopened assembly J2996 (due 25 Nov, air 5 Dec) to primary assembly worker cursor on cursor-grok-4-7."
+        },
+        {
+          "at": "2026-11-20T21:00Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Build v05 fixing 4 WATCH_LISTEN_REVIEW_v04.md items (keep zero-spend score), finish thumbs + WW2 upload package, run QA gates, deliver to Ben's watch",
@@ -270220,7 +270225,15 @@
         "status": "open",
         "by": ""
       },
-      "model": "cursor-grok-4-7"
+      "model": "cursor-grok-4-7",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T21:00Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2997",
