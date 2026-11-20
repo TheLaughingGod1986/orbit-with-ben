@@ -286994,13 +286994,27 @@
           "at": "2026-11-20T06:52Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-20T06:53Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-20T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Verify readiness: Read tomorrow morning snapshot and then full-day figures for the Supermoon Short",
       "kind": "review",
       "recheck_of": "J3161",
       "due": "2026-11-20T07:40:00+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
