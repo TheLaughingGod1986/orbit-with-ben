@@ -289977,18 +289977,23 @@
           "at": "2026-11-20T14:55Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Claimed J3234. Local v03 synth, join, stems and gate JSON already on disk from an earlier run. Verifying hashes, duration and NAS parity before the PR."
+        },
+        {
+          "at": "2026-11-20T14:56Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Hashes match on the Mini and the NAS for 18 v03 files. Teach bed is unchanged. Wonder is 180.00 s, joined bed is 535.33 s, and the opening has no silence under -45 dB. Music gate PASS, 94 comparisons, max similarity 0.396 and 0.387."
         }
       ],
-      "remaining_action": "Check the finished HOS 009 score files against the scope",
+      "remaining_action": "Open the History of Science pull request with the score script and gate records",
       "due": "2026-11-21T06:00:00Z",
       "kind": "assembly",
       "plain": "Synthesize a GBP0 17th-century D-minor chamber opening for HOS 009 in Python/NumPy, join it to the retained teach cue, and verify full-library music_gate and continuity",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-20T14:55Z",
+        "at": "2026-11-20T14:56Z",
         "by": "cursor",
-        "note": "Claimed J3234. Local v03 synth, join, stems and gate JSON already on disk from an earlier run. Verifying hashes, duratio"
+        "note": "Hashes match on the Mini and the NAS for 18 v03 files. Teach bed is unchanged. Wonder is 180.00 s, joined bed is 535.33 "
       },
       "taskKeys": [
         "HOS:009"
