@@ -61,7 +61,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3187 | mini | **stalled** | gemini | 2026-11-20T06:34Z | 005 edit · for gemini · qa · `gemini-argon` · HOS 005: perceptual QA and exact-cut watch handoff for repaired cuff and pulse Shorts |  |
 | J3195 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2529 |  |
 | J3196 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3161 |  |
-| J3198 | mini | open | – | – | review · Verify condition for J3178 |  |
+| J3198 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3178 |  |
 
 Recently finished:
 
