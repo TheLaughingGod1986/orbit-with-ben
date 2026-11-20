@@ -1,5 +1,5 @@
 {
-  "next_id": 3255,
+  "next_id": 3257,
   "jobs": [
     {
       "id": "J0001",
@@ -292223,6 +292223,66 @@
         "WW2:001",
         "WW2:002"
       ]
+    },
+    {
+      "id": "J3255",
+      "title": "YouTube and Studio settings audit for growth: every channel setting, upload default, layout, playlist and eligibility; fix the safe ones, ask Ben the rest",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why (Ben, 20 Nov, in chat: \"Can we have a model go through all settings in YouTube and YT Studio and check all settings are correct and set for growth\"; Claude, 20 Nov 22:47Z).** Field Order History first, after J3254's sign-in; then Orbit With Ben and History of Science through their existing Studio browsers.\n\n**Do: read every setting, record it, fix the safe ones, ask about the rest.** Write `05_Analytics/<slug>/STUDIO_SETTINGS_AUDIT_<date>.md` per channel, as a table: setting, current value, recommended value for growth, why, changed (yes/no).\nCheck at least:\n- Channel basics: country (the one that suits the target audience: Anglosphere adults), keywords, default language English, handle, links, contact email (business).\n- Upload defaults: category (Education for HOS and Orbit, Education or Film for WW2: say which), licence, comments on, 'Publish to subscriptions feed and notify subscribers' on, embedding allowed, title/description templates (sources, chapters, honest how-it's-made line), tags, video language, caption certification.\n- Audience: not made for kids (channel and defaults); age restriction off; altered/synthetic content disclosure set correctly by our own rule.\n- Advanced: automatic chapters on, automatic concepts/places, remixing.\n- Automatic dubbing: report what it is set to. It adds non-English views, which help watch hours but earn less: Ben's call.\n- Branding: watermark (subscribe button) on, profile picture and banner sizes correct.\n- Layout: a trailer for non-subscribers, a featured video for returning viewers, home-page sections (popular uploads, playlists by cluster or series).\n- Playlists: one per cluster or series, public, with good titles and descriptions.\n- Feature eligibility: standard, intermediate and advanced, and what advanced would unlock.\n- Community and comments: moderation level, blocked words, held-for-review settings.\n- Subtitles: auto captions; uploaded en-GB/en-US where we have them.\n- Monetisation tab: eligibility progress (no applying, no money).\n- Per video, spot-check the last 5 public videos: end screens, cards, chapters, playlist membership, captions, description first line, Test & Compare.\nChange ONLY reversible listing and upload-default settings that our rules already require. Anything about money, identity verification, country, auto-dubbing, or deleting something goes to Ben in one line with a recommendation. Never change a live video's visibility or schedule.\n\n**Guards.** Ben's own sign-ins only, through the channel's Studio browser. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J3254",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-20T22:47Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T22:47Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Audit all Studio settings per channel (FOH first after sign-in, then Orbit and HOS); fix reversible ones our rules require; money/identity/country/dubbing to Ben",
+      "due": "2026-11-24T18:00:00Z",
+      "kind": "studio",
+      "plain": "Have an AI go through every YouTube and Studio setting on our channels and set them up for growth"
+    },
+    {
+      "id": "J3256",
+      "title": "Retention autopsy for every long at 48 h and 7 days: relative-strength score, funnel diagnosis, Gemini watches the drop points, fixes and lessons",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Why (Ben, 20 Nov, in chat: \"if these films do bad how are we analysing the videos to improve them going forward, like RSI\"; Claude, 20 Nov 22:47Z).** Today the first-day checks (6 h, 48 h) give a verdict (AHEAD/BEHIND, Studio's rank against our last 10 at the same age), and FOH's playbook has the 48-hour read (click-through under 3% means change the thumbnail then the title; average view under 25% means the next script tightens its first two minutes). Nobody watches the video at the moments viewers leave.\n\n**Do: add a RETENTION AUTOPSY to every long film on all three channels, at 48 hours and again at 7 days.**\n1. A relative-strength score, as Ben suggests (like RSI in trading). For each metric (showings, click-through, views, average % viewed, 0:30 retention, subscribers per 1,000 views), score the film against the channel's own median at the same age, and against the niche's small-channel outliers from the search research. Show it as one line with arrows.\n2. The funnel diagnosis, in this order. Few showings means a topic or search problem (check the search terms and the results-page position). Low click-through means the packaging (title and thumbnail). A steep drop in the first 30 seconds means the hook. Mid-film cliffs mean pacing or picture. A weak end means the end screen and next-video handoff.\n3. Watch the film at every drop: pull the audience-retention curve (Analytics API or Studio). Gemini 4 Neon, which passed the moving-video and audio probes, watches 20 seconds either side of the three steepest drops and says what happens on screen and in the voice at that moment.\n4. Write `05_Analytics/<slug>/autopsy/<video id>_<48h|7d>.md`: the scores, the diagnosis, and at most three concrete fixes. Each fix is marked either for this video (title or thumbnail Test & Compare, description, end screen) or for the next film (hook, pacing, picture, length). Add each repeatable lesson to the channel's LEARNINGS with its evidence.\n5. Wire it into scripts/launch_check.py, or the refill backlog, so it queues itself after every long's 48-hour and 7-day reads. Run it first on Orbit's newest long and HOS's newest long as tests, then on WW2 001 from its 48-hour point.\n\n**Guards.** Read-only on live videos except the listing fixes our rules already allow (Test & Compare only where none is running). £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-20T22:47Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T22:47Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Relative-strength scores vs channel median and niche outliers; funnel diagnosis; Gemini watches the 3 steepest drops; autopsy file + LEARNINGS; wire into launch_check",
+      "due": "2026-11-26T18:00:00Z",
+      "kind": "review",
+      "plain": "When a film underperforms, find out exactly where viewers leave and why, and fix the next film"
     }
   ],
   "focus": [
