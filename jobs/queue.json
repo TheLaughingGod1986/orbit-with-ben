@@ -272327,18 +272327,23 @@
           "at": "2026-11-20T09:54Z",
           "by": "codex",
           "what": "step 3 of 4 done: Preserving existing 3/4 plan and PR 1011; resuming remote-worker preparation only, no live migration."
+        },
+        {
+          "at": "2026-11-20T09:56Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: PR 1011 at 055ed1509f: remote-worker proposals preserve first-root assignment identity and local auth; both actual sources staged unchanged; 31 checks pass. No live switch."
         }
       ],
-      "remaining_action": "Prepare remote-worker migration proposals and verify remaining prerequisites",
+      "remaining_action": "Verify MacBook and HOS readiness, board access, then announce and execute the studio move",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-20T09:54Z",
+        "at": "2026-11-20T09:56Z",
         "by": "codex",
-        "note": "Preserving existing 3/4 plan and PR 1011; resuming remote-worker preparation only, no live migration."
+        "note": "PR 1011 at 055ed1509f: remote-worker proposals preserve first-root assignment identity and local auth; both actual sourc"
       },
       "taskKeys": [
         "HOS:009",
