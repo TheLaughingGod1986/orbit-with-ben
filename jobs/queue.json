@@ -289332,9 +289332,14 @@
           "at": "2026-11-20T17:58Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Sections 1, 2, 5 already in AUDIT_2026-11.md (commit 93663e2e); Sections 3 & 4 pending Mini YTA token"
+        },
+        {
+          "at": "2026-11-20T18:00Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: First YTA pass confirmed GB/IN/US/PH/ID/MY/ZA/NL/UZ/AU countries and lifetime age/gender (78.8% aged 25-54); re-querying search terms with maxResults=25 and full country list"
         }
       ],
-      "remaining_action": "Querying live HOS YouTube Analytics API on the Mini for Sections 3 (countries, ages, gender: Shorts vs longs) and 4 (exact search terms: lifetime & 28d)",
+      "remaining_action": "Running fixed YouTube Analytics API queries (maxResults=25 search terms, country totals, daily Shorts/longs split, demographics)",
       "due": "2026-11-24T18:00:00Z",
       "kind": "review",
       "plain": "Find out exactly why History of Science's views have dropped, and who is actually watching",
@@ -289350,11 +289355,11 @@
       "model": "gemini-argon",
       "mini_only": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-20T17:58Z",
+        "at": "2026-11-20T18:00Z",
         "by": "gemini",
-        "note": "Sections 1, 2, 5 already in AUDIT_2026-11.md (commit 93663e2e); Sections 3 & 4 pending Mini YTA token"
+        "note": "First YTA pass confirmed GB/IN/US/PH/ID/MY/ZA/NL/UZ/AU countries and lifetime age/gender (78.8% aged 25-54); re-querying"
       }
     },
     {
