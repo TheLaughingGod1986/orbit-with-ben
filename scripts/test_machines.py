@@ -80,6 +80,27 @@ class Machines(unittest.TestCase):
         s = {r["id"]: r for r in m.section(q, None, None, AT)["machines"]}
         self.assertEqual((s["cloud"]["seen"], s["grok"]["seen"]), ("2026-11-04T22:30Z", "2026-11-04T21:00Z"))
 
+    def test_grok_counts_records_and_ruling_posts_and_a_recent_post_is_working(self):
+        q = {"jobs": [done("J1", "chief", "2026-11-04T21:00Z"),
+                      {"id": "J2", "status": "blocked", "title": "parked", "history": [
+                          {"at": "2026-11-04T22:00Z", "by": "chief", "what": "progress: ruling noted"}]}]}
+        posts = [{"id": "9", "at": "2026-11-04T22:30Z", "jobs": ["J3201", "J1"]}]
+        row = next(r for r in m.section(q, None, None, AT, None, posts)["machines"] if r["id"] == "grok")
+        self.assertEqual(row["done24"], 3)  # J1, J2, and the job named only on the thread
+        self.assertEqual(row["state"], "rulings")
+        self.assertEqual(row["why"], "Working (rulings on the thread)")
+
+    def test_an_older_grok_post_counts_the_job_without_showing_working(self):
+        posts = [{"id": "9", "at": "2026-11-04T10:00Z", "jobs": ["J9"]}]
+        row = next(r for r in m.section({"jobs": []}, None, None, AT, None, posts)["machines"] if r["id"] == "grok")
+        self.assertEqual((row["done24"], row["state"]), (1, ""))
+
+    def test_a_recent_grok_post_with_no_job_is_working_and_adds_nothing(self):
+        posts = [{"id": "9", "at": "2026-11-04T22:00Z", "jobs": []}]
+        row = next(r for r in m.section({"jobs": []}, None, None, AT, None, posts)["machines"] if r["id"] == "grok")
+        self.assertEqual(row["done24"], 0)
+        self.assertEqual(row["state"], "rulings")
+
     def test_unknown_agents_are_ignored(self):
         q = {"jobs": [{"id": "J1", "status": "claimed", "by": "someone", "title": "x"}]}
         self.assertTrue(all(not r["now"] for r in m.section(q, None, None, AT)["machines"]))

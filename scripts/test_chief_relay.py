@@ -272,18 +272,115 @@ class Relay(unittest.TestCase):
         cr.seen("chief", T0 + 15 * MIN)  # Grok actually ran jobs.py: it's back
         self.assertEqual(self.chief(T0 + 16 * MIN), "chief")
 
+    def test_a_ruling_that_names_a_delivered_duty_clears_a_grok_stall(self):
+        cr.write_json(cr.d("inbox.json"), {"agent": "chief", "waiting": {"J3201": {"since": cr.iso(T0)}},
+                                          "jobs": [{"id": "J3201"}]})
+        cr.mark_down("chief", "Chief inbox delivered but not progressed", T0 + 180 * MIN, T0, kind="stalled")
+        self.post(T0 + 10 * MIN, "[Chief] looking at it")
+        cr.note_grok_posts(T0 + 12 * MIN)
+        self.assertEqual(self.chief(T0 + 12 * MIN), "cursor")  # no job id: still talk
+        self.post(T0 + 20 * MIN, "[Chief] J9999 is unrelated")
+        cr.note_grok_posts(T0 + 21 * MIN)
+        self.assertEqual(self.chief(T0 + 21 * MIN), "cursor")
+        self.post(T0 + 30 * MIN, "[Chief] J3201: leave the cut as it is")
+        cr.note_grok_posts(T0 + 31 * MIN)
+        self.assertEqual(self.chief(T0 + 32 * MIN), "chief")
+
+    def test_a_named_duty_ruling_counts_as_inbox_progress(self):
+        cr.STUDIO = self.tmp / "owb"
+        (cr.STUDIO / "jobs").mkdir(parents=True, exist_ok=True)
+        (cr.STUDIO / "jobs" / "queue.json").write_text('{"jobs": []}')
+        cr.write_json(cr.d("inbox.json"), {"agent": "chief", "notified_at": cr.iso(T0),
+                                          "progress_at": cr.iso(T0), "since": cr.iso(T0),
+                                          "waiting": {"J3201": {"since": cr.iso(T0)}}})
+        self.assertTrue(cr.chief_delivery_overdue("chief", T0 + 181 * MIN))
+        cr.write_json(cr.d("grok_thread.json"), {"posts": [{"id": "1", "at": cr.iso(T0 + 100 * MIN), "jobs": []}]})
+        self.assertTrue(cr.chief_delivery_overdue("chief", T0 + 181 * MIN))  # talk does not move the inbox
+        cr.write_json(cr.d("grok_thread.json"), {"posts": [
+            {"id": "2", "at": cr.iso(T0 + 100 * MIN), "jobs": ["J3201"]}]})
+        self.assertFalse(cr.chief_delivery_overdue("chief", T0 + 181 * MIN))
+        self.assertTrue(cr.chief_delivery_overdue("chief", T0 + 100 * MIN + 181 * MIN))
+
+    def test_duty_posts_follow_id_changes_and_a_daily_cap(self):
+        first = {"id": "J1", "status": "blocked", "result": "parked for Chief: review"}
+        second = {"id": "J2", "status": "blocked", "result": "parked for Chief: review"}
+        with mock.patch.object(cr, "notify", return_value=True) as send:
+            cr.publish_chief_inbox([first], "chief", T0)
+            cr.publish_chief_inbox([first], "chief", T0 + 11 * MIN)
+            cr.publish_chief_inbox([first], "chief", T0 + 3 * 60 * MIN)
+            self.assertEqual(send.call_count, 1)  # unchanged list: not the old 10-minute repeat
+            cr.publish_chief_inbox([first, second], "chief", T0 + 30 * MIN)
+            self.assertEqual(send.call_count, 1)  # new id, still inside 2 hours of the last post
+            cr.publish_chief_inbox([first, second], "chief", T0 + 121 * MIN)
+            self.assertEqual(send.call_count, 2)
+            cr.publish_chief_inbox([first], "chief", T0 + 130 * MIN)
+            self.assertEqual(send.call_count, 2)  # an id left, still inside 2 hours of that post
+            cr.publish_chief_inbox([first], "chief", T0 + 121 * MIN + 121 * MIN)
+            self.assertEqual(send.call_count, 3)
+            cr.publish_chief_inbox([first], "chief", T0 + 121 * MIN + 121 * MIN + 24 * 60 * MIN)
+            self.assertEqual(send.call_count, 4)  # same ids again, once a day
+
+    def test_note_grok_posts_keeps_a_ruling_and_drops_a_covering_post(self):
+        cr.fetch_comments = lambda since: [
+            {"id": 555, "created_at": cr.iso(T0 - 5 * MIN), "body": "[Chief] J3201 stays parked. No merge."},
+            {"id": 556, "created_at": cr.iso(T0 - 5 * MIN), "body": "[Chief] [Cursor] covering J3201"},
+            {"id": 557, "created_at": cr.iso(T0 - 4 * MIN), "body": "[Chief] looking"},
+        ]
+        cr.note_grok_posts(T0)
+        posts = cr.read_json(cr.d("grok_thread.json"))["posts"]
+        self.assertEqual(sorted(p["id"] for p in posts), ["555", "557"])
+        self.assertEqual(next(p for p in posts if p["id"] == "555")["jobs"], ["J3201"])
+        self.assertEqual(next(p for p in posts if p["id"] == "557")["jobs"], [])
+
+    def test_a_grok_ruling_on_a_parked_job_queues_one_records_job(self):
+        parked = {"id": "J3201", "status": "blocked", "result": "parked for Chief: review the cut", "history": []}
+        other = {"id": "J3202", "status": "blocked", "result": "waiting for credits", "history": []}
+        finished = {"id": "J3203", "status": "done", "result": "parked for Chief: old", "history": []}
+        posts = [
+            {"id": "555", "at": cr.iso(T0), "jobs": ["J3201", "J3202", "J3203"]},
+            {"id": "", "at": cr.iso(T0), "jobs": ["J3201"]},
+            {"id": "556", "at": cr.iso(T0), "jobs": []},
+        ]
+        specs = cr.grok_record_specs(posts, [parked, other, finished])
+        self.assertEqual([s["title"] for s in specs], ["Apply Grok's ruling 555 to J3201"])
+        self.assertEqual(specs[0]["needs"], "any")
+        self.assertIn("comment 555", specs[0]["body"])
+        self.assertIn("Do not infer an approval", specs[0]["body"])
+        self.assertEqual(cr.grok_record_specs(posts, [parked, {"id": "J9", "status": "open", "title": specs[0]["title"],
+                                                             "history": []}]), [])
+
+    def test_queue_grok_rulings_calls_jobs_py_with_the_comment_id(self):
+        cr.STUDIO = self.tmp / "owb"
+        (cr.STUDIO / "scripts").mkdir(parents=True)
+        (cr.STUDIO / "jobs").mkdir(parents=True)
+        (cr.STUDIO / "scripts" / "jobs.py").write_text("print('ok')\n")
+        (cr.STUDIO / "jobs" / "queue.json").write_text(
+            '{"jobs": [{"id": "J3201", "status": "blocked", "result": "parked for Chief: review", "history": []}]}')
+        cr.write_json(cr.d("grok_thread.json"), {"posts": [{"id": "555", "at": cr.iso(T0), "jobs": ["J3201"]}]})
+        with mock.patch.object(cr.subprocess, "run", return_value=mock.Mock(returncode=0, stdout="ok\n", stderr="")) as run:
+            self.assertEqual(cr.queue_grok_rulings(T0), ["Apply Grok's ruling 555 to J3201"])
+        argv = run.call_args.args[0]
+        self.assertIn("Apply Grok's ruling 555 to J3201", argv)
+        self.assertEqual(argv[argv.index("--needs") + 1], "any")
+        self.assertIn("--git", argv)
+        body = pathlib.Path(argv[argv.index("--body-file") + 1]).read_text()
+        self.assertIn("Do not infer an approval", body)
+        self.assertNotIn("approved", body.lower())
+
     def test_hourly_cloud_claude_gets_a_full_run_to_take_its_inbox(self):
         # 5 Nov 2026: a 30-min window benched Claude (runs hourly at :50) every hour, up to 12 h.
         cr.STUDIO = self.tmp / "owb"
         (cr.STUDIO / "jobs").mkdir(parents=True, exist_ok=True)
         (cr.STUDIO / "jobs" / "queue.json").write_text('{"jobs": []}')
-        for agent in ("claude", "chief"):
+        for agent, late in (("claude", 151), ("chief", 181)):
             cr.write_json(cr.d("inbox.json"), {"agent": agent, "notified_at": cr.iso(T0),
                                                "waiting": {"J1": {"since": cr.iso(T0)}}})
-            self.assertEqual(cr.chief_delivery_overdue(agent, T0 + 45 * MIN), agent == "chief")
-            # 10 Nov 2026: 75 min still benched Claude nightly; it now gets two full runs (150 min).
-            self.assertEqual(cr.chief_delivery_overdue(agent, T0 + 76 * MIN), agent == "chief")
-            self.assertTrue(cr.chief_delivery_overdue(agent, T0 + 151 * MIN))
+            self.assertFalse(cr.chief_delivery_overdue(agent, T0 + 45 * MIN))
+            # 10 Nov 2026: 75 min still benched Claude nightly; it gets two full runs (150 min).
+            # Grok Bot gets 180 (CHIEF_DUTY_ACK_MIN_CHIEF): a desktop app, not the 30-minute window.
+            self.assertFalse(cr.chief_delivery_overdue(agent, T0 + 76 * MIN))
+            self.assertFalse(cr.chief_delivery_overdue(agent, T0 + (late - 2) * MIN))
+            self.assertTrue(cr.chief_delivery_overdue(agent, T0 + late * MIN))
 
     def test_repeat_stalls_keep_grok_down_longer(self):
         windows = [cr.stall_window("chief", T0 + i * MIN) for i in range(6)]

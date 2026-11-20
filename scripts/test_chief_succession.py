@@ -264,10 +264,11 @@ class AutomaticChiefDuties(ChiefTestCase):
             cr.publish_chief_inbox([j],'chief',T0+MIN)
             self.assertEqual(send.call_count,1)
             cr.publish_chief_inbox([j],'chief',T0+11*MIN)
-            self.assertEqual(send.call_count,2)
-        self.assertTrue(cr.chief_delivery_overdue('chief',T0+31*MIN))
-        self.queue([{'id':'J2','status':'claimed','needs':'cloud','by':'chief','eta':cr.iso(T0+60*MIN)}])
+            self.assertEqual(send.call_count,1)  # same ids: not again for a day (J3248)
         self.assertFalse(cr.chief_delivery_overdue('chief',T0+31*MIN))
+        self.assertTrue(cr.chief_delivery_overdue('chief',T0+181*MIN))
+        self.queue([{'id':'J2','status':'claimed','needs':'cloud','by':'chief','eta':cr.iso(T0+200*MIN)}])
+        self.assertFalse(cr.chief_delivery_overdue('chief',T0+181*MIN))  # a live claim is not a stall
         changed={**j,'result':'parked for Chief: new evidence'}
         with mock.patch.object(cr,'notify',return_value=True):cr.publish_chief_inbox([changed],'chief',T0+32*MIN)
         self.assertFalse(cr.chief_delivery_overdue('chief',T0+33*MIN))
@@ -297,7 +298,7 @@ class AutomaticChiefDuties(ChiefTestCase):
     def test_cloud_chief_with_ignored_inbox_yields_to_available_successor(self):
         j={'id':'J1','status':'blocked','needs':'any','result':'parked for Chief: decision'}
         self.queue([j]);cr.seen('chief',T0)
-        with mock.patch.object(cr,'notify',return_value=True):cr.publish_chief_inbox([j],'chief',T0-31*MIN)
+        with mock.patch.object(cr,'notify',return_value=True):cr.publish_chief_inbox([j],'chief',T0-181*MIN)
         calls=[]
         with mock.patch.object(cr,'run_cli',side_effect=lambda a,p,c,m:(calls.append((a,p)) or (0,'done'))), mock.patch.object(cr,'reroute_work',return_value=[]):
             cr.cmd_run(T0)
