@@ -57,7 +57,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3119 | mini | open (after J3115) | – | – | 034 upload · studio · Upload the Pluto long master v02 Private and scheduled for Sun 13 Dec 18:00, arm the thumbnail test |  |
 | J3125 | mini | blocked | codex | – | studio · HOS Vaccine test: 24 Nov feed gate and conditional 29 Nov readout |  |
 | J3129 | mini | open | – | – | 004 thumbs · thumb · Fix Webb thumbnail hook and identify the distant galaxy | J3096 |
-| J3135 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3129 |  |
+| J3135 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3129 |  |
 | J3137 | mini | blocked | cursor | – | 005 edit · assembly · HOS 005 Shorts s06/s07/s08: no-spend music_gate repair against archived HOS 002/004 beds (£0) |  |
 | J3161 | mini | blocked | codex | – | studio · Supermoon Short: next-morning and full-day performance follow-up |  |
 | J3175 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2847 |  |

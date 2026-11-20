@@ -281714,13 +281714,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-19T18:49Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-19T13:40Z",
-      "result": "parked for Chief: J3129 waiting condition PROVEN SATISFIED in jobs/reviews/J3135/REVIEW.md (c9d0fa8e6e). J3130 completed (2026-11-19T16:36Z, #7015447942) and all three required J3088 inputs are verified in shared NAS /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/004_JWST-Discoveries-That-Change-Everything/08_Thumbnails/repackage_2026-11/J3088_v02/inputs/ with exact SHA-256 matches: JADES_GS_z14_0_cutout.png (e9b2342e36302c7394e754db6c3b9f0b389e3b5db0cd373e03a278683df0c886, 220x220 RGB), JADES_GS_z14_0_field.jpg (b666562568d2777565014d3495d6c7f369ff32e4ef99aac51787adc447d7066b, 3200x3126 RGB), webb_1.png (9f520a9bf2d9b39659088b8c2fd963c128fcdd2f71dfbd4563e5466246e758a3, 2564x1922 RGBA), plus JADES_GS_z14_0_NASA.png (50e2ab4d6d848ad08c16b8097d0b6d84beb84bf254b7179becd786820f26d5a7, 2000x1954 RGB) and SOURCE_MANIFEST.json (126fabee0ef79b90a6ace8b5369cf85573700538458aa4c5e57fef260d127c73, 6333 bytes) with verified field/cutout registration and redder lower component coordinates. Because scripts/jobs.py restricts jobs.py reopen J3129 on a held job to the elected Chief (chief), exact 2-line Chief release commands are in jobs/reviews/J3135/REVIEW.md §3. £0.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-19T13:40Z",
@@ -281766,6 +281766,11 @@
           "at": "2026-11-19T21:35Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-20T03:21Z",
+          "by": "codex",
+          "what": "reopened: Taking the assigned Chief review to completion: J3129 source hold has been verified and released; claim this exact review to record closure under codex."
         }
       ],
       "remaining_action": "Elected Chief (chief): reopen J3129 with J3135 evidence note and close J3135",
@@ -281782,13 +281787,6 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-19T18:55Z",
-        "by": "gemini",
-        "note": "Verification complete (c9d0fa8e6e): J3129 waiting condition proven satisfied; parking J3135 for elected Chief to reopen "
-      },
       "taskKeys": [
         "OWB:004"
       ],
