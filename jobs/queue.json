@@ -272117,18 +272117,23 @@
           "at": "2026-11-20T07:38Z",
           "by": "codex",
           "what": "step 3 of 4 done: Restored existing 3/4 plan after reading resume history; continuing PR 1011. No live switch."
+        },
+        {
+          "at": "2026-11-20T07:40Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: PR 1011 at 30fa30a8ba: probe request isolation fixed; failing-before regression and 59 passing tests, four browser skips. No live switch."
         }
       ],
-      "remaining_action": "Verify the existing migration rehearsal and remaining cutover prerequisites",
+      "remaining_action": "Verify deployed board access, finish machine preparation and refresh the private rehearsal",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-20T07:38Z",
+        "at": "2026-11-20T07:40Z",
         "by": "codex",
-        "note": "Restored existing 3/4 plan after reading resume history; continuing PR 1011. No live switch."
+        "note": "PR 1011 at 30fa30a8ba: probe request isolation fixed; failing-before regression and 59 passing tests, four browser skips"
       },
       "taskKeys": [
         "HOS:009",
