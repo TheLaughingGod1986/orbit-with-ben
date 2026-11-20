@@ -291662,9 +291662,14 @@
           "at": "2026-11-20T20:28Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T20:29Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J3250; starting fresh condition verification for J2529"
         }
       ],
-      "remaining_action": "Verify readiness: Await J3178 continuous-playback evidence (moving_video_input) for ten unresolved rows (56-62, 64-66), then elected-Chief marks and J2529 closure",
+      "remaining_action": "Verify J2529 waiting condition, J3178/J3198 status, desk/thread history, NAS hashes, and session capabilities",
       "kind": "review",
       "recheck_of": "J2529",
       "mini_only": true,
@@ -291684,12 +291689,14 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-20T20:28Z",
+        "of": 4,
+        "at": "2026-11-20T20:29Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3250; starting fresh condition verification for J2529"
+      },
+      "taskKeys": [
+        "HOS:013"
+      ]
     }
   ],
   "focus": [
