@@ -271508,13 +271508,13 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-20T18:54Z",
-      "eta": "2026-11-20T22:54Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
-      "result": "",
+      "result": "Waiting for: Ben's one-time BOARD_GH_TOKEN grant via his own account adding TheLaughingGod1986/studio (Contents: Read-only), plus independent review/merge of PR #1075 (5fe73b23d3) and quick re-probe confirming 200 contentsRead:true before posting preceding-day cutover notice",
       "history": [
         {
           "at": "2026-11-17T19:00Z",
@@ -272495,6 +272495,16 @@
           "at": "2026-11-20T19:02Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Merged PR #1076 (J3242 MacBook inventory -> 8441d1ae5e); full detached studio_split.py PASS (left:0) on main; parking on Ben token grant"
+        },
+        {
+          "at": "2026-11-20T19:02Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: Ben's one-time BOARD_GH_TOKEN grant via his own account adding TheLaughingGod1986/studio (Contents: Read-only), plus independent review/merge of PR #1075 (5fe73b23d3) and quick re-probe confirming 200 contentsRead:true before posting preceding-day cutover notice"
+        },
+        {
+          "at": "2026-11-20T19:02Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-21T12:00:00Z"
         }
       ],
       "remaining_action": "Verify Ben's BOARD_GH_TOKEN studio grant (re-probe 200 contentsRead:true) and PR #1075 merge, then post preceding-day notice for Mon 23/Tue 24 Nov cutover",
@@ -272521,7 +272531,12 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "hold": {
+        "type": "ben",
+        "condition": "Ben's one-time BOARD_GH_TOKEN grant via his own account adding TheLaughingGod1986/studio (Contents: Read-only), plus independent review/merge of PR #1075 (5fe73b23d3) and quick re-probe confirming 200 contentsRead:true before posting preceding-day cutover notice",
+        "check_at": "2026-11-21T12:00:00Z"
+      }
     },
     {
       "id": "J3013",
