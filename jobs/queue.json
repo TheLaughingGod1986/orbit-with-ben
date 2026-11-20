@@ -289290,13 +289290,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-20T21:21Z",
-      "eta": "2026-11-20T23:21Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-20T10:46Z",
-      "result": "",
+      "result": "Resolved by acting Chief (gemini): PR #1065 (700fea2bc9) & PR #1067 (24e60e9599, Dec title query check) merged; PR #1084 (a59d5fb944) synced FORMAT_TESTS_READOUT_2026-12.md (Jan style test, all-under-230 branch, IDs ileYnHpLLCU/13q4_EoLEN4, search-led pick) and recorded jobs/reviews/J3219/CHIEF_REVIEW.md. Web-only part 1 (top-10 gap + draft script/SOURCES.md/packaging) split to J3251 (--needs cloud --mini-only) so MacBook cannot re-claim. £0 spend.",
       "history": [
         {
           "at": "2026-11-20T10:46Z",
@@ -289382,6 +289382,11 @@
           "at": "2026-11-20T21:21Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T21:21Z",
+          "by": "gemini",
+          "what": "done: Resolved by acting Chief (gemini): PR #1065 (700fea2bc9) & PR #1067 (24e60e9599, Dec title query check) merged; PR #1084 (a59d5fb944) synced FORMAT_TESTS_READOUT_2026-12.md (Jan style test, all-under-230 branch, IDs ileYnHpLLCU/13q4_EoLEN4, search-led pick) and recorded jobs/reviews/J3219/CHIEF_REVIEW.md. Web-only part 1 (top-10 gap + draft script/SOURCES.md/packaging) split to J3251 (--needs cloud --mini-only) so MacBook cannot re-claim. £0 spend."
         }
       ],
       "remaining_action": "Title check of the three December films against the search queries (this run); then the top-10 gap check, script, SOURCES.md and packaging brief, which need a lane with web access",
@@ -289396,7 +289401,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "24e60e9599,a59d5fb944,J3251"
     },
     {
       "id": "J3220",
