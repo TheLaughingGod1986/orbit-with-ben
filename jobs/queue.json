@@ -288592,21 +288592,28 @@
           "at": "2026-11-20T19:34Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T19:35Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J3210; inspecting script master, J3208 precedent, and live ElevenLabs subscription"
         }
       ],
-      "remaining_action": "Narrate WW2 film 006 from its locked script, checks, budget guard; narration only; after the previous film's narration",
+      "remaining_action": "Verify locked script master (J3002), live ElevenLabs balance, and dry-run character estimate before spending",
       "due": "2026-11-29T18:00:00Z",
       "for": "gemini",
       "kind": "vo",
       "plain": "Record the narration for WW2 film 006, about the wooden bomber",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-20T19:34Z",
+        "of": 4,
+        "at": "2026-11-20T19:35Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3210; inspecting script master, J3208 precedent, and live ElevenLabs subscription"
+      },
+      "taskKeys": [
+        "WW2:006"
+      ]
     },
     {
       "id": "J3211",
