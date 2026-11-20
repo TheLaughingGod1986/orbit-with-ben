@@ -12,7 +12,7 @@ The 3×3 chips are **computed** from tracker / job / YouTube state (`scripts/vid
 
 Channel and Longs/Shorts filters sit above the models and live work panel. One card represents each video, with play links and the existing approval controls. Live data comes from `board.json` (`tracker` section from `scripts/video_tracker.py`; the UI remaps tracker lanes to the nine Videos lanes in `board_site/studio_app.js`).
 
-Approve / Request changes still post `[Ben] OK/changes …` via `/api/checks` (OWB desk issue **#264**, HOS **#180**).
+Approve / Request changes still post `[Ben] OK/changes …` via `/api/checks` (OWB desk issue **#954**, HOS **#694**).
 
 **One tap, no code (25 Oct 2026, Ben: "Just need to approve no need for code"):** the page never asks for a code. Ben's
 phone is recognised by an HttpOnly cookie `studio_ben` (400 days, renewed on every board load; `board_site/benauth.js`).
@@ -43,7 +43,7 @@ until the updates file exists, the page uses the complete file.
 A card sits in Videos → **UAT** for every job that sets `awaits_ben` (`python3 scripts/jobs.py awaits <id> --what ... --file
 "<OWB UAT/...mp4>" --version vNN --due "YYYY-MM-DD HH:MM" [--card HOS:007] [--add] --agent chief --git`). Shorts that aren't
 uploaded get their own card; `--card` moves an existing long's card. Each card has a signed Play link and its deadline.
-**Approve** moves the film to **Passed** and posts `[Ben] OK <id> vNN (...)` plus "Release held job <id>" on #264 / HOS #180.
+**Approve** moves the film to **Passed** and posts `[Ben] OK <id> vNN (...)` plus "Release held job <id>" on #954 / HOS #694.
 **Request changes** / notes send it back to **In progress**. `scripts/board_check.py` runs every 5 min, started by
 board_publish.py. It writes `~/_desk/state/board/board_check.json` (`ok`, `problems`, `cards`) and
 `~/_desk/state/board/BOARD_CHECK_FLAG` (`OK <time>` / `FAIL <time>: ...`). A repeat failure posts one
