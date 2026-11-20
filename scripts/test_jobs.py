@@ -457,6 +457,25 @@ class HandBack(unittest.TestCase):
         with self.assertRaises(ValueError):
             jobs.do_handback(job, "relay", "", at)
 
+    def test_cloud_only_job_refuses_reroute_and_accepts_metadata_pin(self):
+        import datetime as _dt
+        at = _dt.datetime(2026, 11, 20, 23, 0, tzinfo=_dt.timezone.utc)
+        pinned = {"id": "J3231", "needs": "cloud", "cloud_only": True, "status": "open", "by": "", "kind": "review", "history": []}
+        with self.assertRaises(ValueError):
+            jobs.do_reroute(pinned, "relay", "gemini", "gemini-argon", "Claude out", at)
+        d = {"jobs": [{"id": "J3231", "needs": "mini", "for": "gemini", "status": "blocked", "by": "macbook-2",
+                       "kind": "review", "rerouted_from": {"needs": "cloud", "for": "", "model": ""}, "history": []}]}
+        with mock.patch.object(jobs.chief_relay, "is_elected_chief", return_value=True):
+            jobs.apply_metadata(d, [{"id": "J3231", "cloud_only": True}], "gemini", at)
+        self.assertTrue(d["jobs"][0]["cloud_only"])
+        with mock.patch.object(jobs.chief_relay, "elected_for", return_value=True):
+            jobs.do_reopen(d["jobs"][0], "gemini", "hand back to Claude cloud", at)
+        jobs.do_handback(d["jobs"][0], "gemini", "vidIQ requires Claude cloud", at)
+        self.assertEqual(d["jobs"][0]["needs"], "cloud")
+        self.assertTrue(d["jobs"][0]["cloud_only"])
+        self.assertNotIn("for", d["jobs"][0])
+        self.assertNotIn("rerouted_from", d["jobs"][0])
+
 
 class MiniOnlyPin(unittest.TestCase):
     """The Chief can pin a Studio job to the Mini (10 Nov 2026: removing playlists cannot be undone)."""

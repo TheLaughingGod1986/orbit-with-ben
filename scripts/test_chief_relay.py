@@ -663,6 +663,20 @@ class Relay(unittest.TestCase):
         self.assertIn("--model grok-4.7", (self.tmp / "cursor.args").read_text())
         self.assertIn("DISPATCH PRIORITY: claim only J0302", (self.tmp / "cursor.args").read_text())
 
+    def test_cloud_only_job_is_not_rerouted_when_claude_is_out(self):
+        # J3231 (20 Nov 2026): vidIQ search-research needs Claude cloud and must not walk to Mini/MacBook workers.
+        q = self.claude_setup('{"jobs": ['
+                              '{"id": "J0301", "kind": "review", "status": "open", "needs": "cloud"}, '
+                              '{"id": "J0306", "kind": "review", "status": "open", "needs": "cloud", "cloud_only": true}]}')
+        cr.mark_down("claude", "usage limit", T0 + 120 * MIN, T0)
+        cr.seen("chief", T0 - 10 * MIN)
+        cr.cmd_run(T0)
+        self.assertEqual(self.job(q, "J0301").get("for"), "cursor")
+        j = self.job(q, "J0306")
+        self.assertEqual(j["needs"], "cloud")
+        self.assertNotIn("for", j)
+        self.assertNotIn("rerouted_from", j)
+
     def test_with_cursor_down_the_claude_job_goes_to_gemini_before_codex(self):
         os.environ["AGY_BIN"] = str(self.fake("agy", f'echo "$@" > {self.tmp}/agy.args; echo "gemini did it"'))
         q = self.claude_setup('{"jobs": [{"id": "J0308", "kind": "listing", "status": "open", "needs": "cloud"}]}')
