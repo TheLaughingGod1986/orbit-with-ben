@@ -73,7 +73,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3232 | any | blocked | macbook | – | review · `gemini-argon` · Verify condition for J3114 |  |
 | J3243 | mini | blocked | macbook | – | studio · First-day check at 6 h: "Will Asteroid 2024 YR4 Hit the Moon in 2032?" (93JL_IK57EM) |  |
 | J3244 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2035 |  |
-| J3245 | any | open | – | – | script · HOS: learn from our data, add two new films to the backlog |  |
+| J3245 | any | claimed | macbook | 2026-11-20T19:30Z | script · HOS: learn from our data, add two new films to the backlog |  |
 
 Recently finished:
 
