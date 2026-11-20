@@ -288350,13 +288350,13 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-20T10:51Z",
-      "eta": "2026-11-20T11:21Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-20T10:28Z",
-      "result": "",
+      "result": "Opened ww2-channel PR #14 (macbook/J3217, e708a03) setting air dates 2026-12-01..2026-12-19 on WW2:001-006 status.json (007-010 left undated) and orbit-with-ben PR #1063 (macbook/J3217, f2feedb85, Rules check green) setting 17:00Z ISO when dates on ww2-001..ww2-006 in studio/plan.json. Stopped at open PRs for Chief merge per AGENTS.md (merges are the Chief's). Step 3: neither scripts/video_tracker.py (bare YYYY-MM-DD date-only airText) nor 05_Analytics/kanban/board_site/studio_app.js (line 383 hardcodes +T18:00:00Z) supports a per-channel air time, so left untouched. Checks passed: channel_check.py, test_plan_board.py (6/6), studio.py status --check (STATUS.md OK), test_video_tracker.py + test_prelaunch_board.py (40 OK, 1 skipped), and local tracker build confirmed WW2:001-006 dated (Tue 1 Dec-Sat 19 Dec) and WW2:007-010 undated. Step 4 (live Schedule tab check after Mini publishes board.json) awaits Chief merging PR #14 and PR #1063. Plans only; no upload or YouTube schedule; £0.",
       "history": [
         {
           "at": "2026-11-20T10:28Z",
@@ -288372,6 +288372,11 @@
           "at": "2026-11-20T10:53Z",
           "by": "macbook",
           "what": "step 1 of 4 done"
+        },
+        {
+          "at": "2026-11-20T10:58Z",
+          "by": "macbook",
+          "what": "done: Opened ww2-channel PR #14 (macbook/J3217, e708a03) setting air dates 2026-12-01..2026-12-19 on WW2:001-006 status.json (007-010 left undated) and orbit-with-ben PR #1063 (macbook/J3217, f2feedb85, Rules check green) setting 17:00Z ISO when dates on ww2-001..ww2-006 in studio/plan.json. Stopped at open PRs for Chief merge per AGENTS.md (merges are the Chief's). Step 3: neither scripts/video_tracker.py (bare YYYY-MM-DD date-only airText) nor 05_Analytics/kanban/board_site/studio_app.js (line 383 hardcodes +T18:00:00Z) supports a per-channel air time, so left untouched. Checks passed: channel_check.py, test_plan_board.py (6/6), studio.py status --check (STATUS.md OK), test_video_tracker.py + test_prelaunch_board.py (40 OK, 1 skipped), and local tracker build confirmed WW2:001-006 dated (Tue 1 Dec-Sat 19 Dec) and WW2:007-010 undated. Step 4 (live Schedule tab check after Mini publishes board.json) awaits Chief merging PR #14 and PR #1063. Plans only; no upload or YouTube schedule; £0."
         }
       ],
       "remaining_action": "Set air dates in ww2-channel status.json, update studio/plan.json, check per-channel air time support, open PRs",
