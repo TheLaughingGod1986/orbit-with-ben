@@ -61,7 +61,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3227 | any | blocked | claudecode | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J3229 | any | blocked | macbook | – | review · `gemini-argon` · Verify condition for J2040 |  |
 | J3231 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Weekly search research (Orbit + Field Order History): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
-| J3232 | any | blocked | macbook | – | review · `gemini-argon` · Verify condition for J3114 |  |
+| J3232 | any | open | – | – | review · `gemini-argon` · Verify condition for J3114 |  |
 | J3245 | any | blocked | macbook | – | script · HOS: learn from our data, add two new films to the backlog |  |
 | J3246 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J1275 |  |
 | J3249 | mini | open | – | – | assembly · MiniWork scratch SSD cleanup: safely offload old completed-job scratch to NAS to restore >=40 GB free before J3012 daily split and cutover |  |
