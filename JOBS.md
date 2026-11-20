@@ -64,7 +64,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3208 | mini | open (after J3206) | – | – | WW2:005 vo · for gemini · vo · WW2 film 005: narration in Ben's voice (the old destroyer) |  |
 | J3210 | mini | open (after J3208) | – | – | WW2:006 vo · for gemini · vo · WW2 film 006: narration in Ben's voice (the wooden bomber) |  |
 | J3219 | mini | blocked | macbook | – | script · Orbit after 16 Dec: prepare the next film in each format test (every-X script, journey and sleep outlines) and the 22/26/30 Dec readout sheet; January style test (July illustrated look, Ben OK 20 Nov) |  |
-| J3224 | mini | open (after J3223) | – | – | for gemini · script · `gemini-argon` · History of Science: search-led research and a new plan for the board (Anglosphere, adult, low competition), waiting for Ben's OK |  |
+| J3224 | mini | claimed | macbook | 2026-11-20T20:12Z | for gemini · script · `gemini-argon` · History of Science: search-led research and a new plan for the board (Anglosphere, adult, low competition), waiting for Ben's OK |  |
 | J3225 | any | blocked | claudecode | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J3227 | any | blocked | claudecode | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J3229 | any | blocked | macbook | – | review · `gemini-argon` · Verify condition for J2040 |  |
