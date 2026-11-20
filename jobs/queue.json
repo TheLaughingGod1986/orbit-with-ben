@@ -288586,7 +288586,7 @@
     {
       "id": "J3221",
       "title": "Verify condition for J2537",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2537: Acting Chief accepts J3179 REVIEW.md at 126972708e: explicit one-time authorization for irreversible rewrite of protected HOS hos-desk while retaining PR180 remains absent. Fresh check 2026-11-20T02:36Z: no new HOS180 or HOS657 comments since worker verification; OWB954 through 7028530248 contains no new Ben exception. Grok ruling 7018109147 retains this hold and says the question is already open; do not ask again. After authorization, resolve non-desk PRs, refresh backup and rehearsal against current heads, give day-before window notice and hold writers before allowlisted cutover. No live rewrite authorized.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2537 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -288606,13 +288606,27 @@
           "at": "2026-11-20T11:06Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-20T11:07Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-20T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Verify readiness: Check for the protected desk history exception, then prepare the controlled rewrite window",
       "kind": "review",
       "recheck_of": "J2537",
       "due": "2026-11-18T18:00:00+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
