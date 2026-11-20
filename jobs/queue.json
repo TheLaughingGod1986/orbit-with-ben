@@ -287310,13 +287310,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-20T13:05Z",
-      "eta": "2026-11-20T15:05Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-20T04:21Z",
-      "result": "",
+      "result": "Acting-Chief verification complete (jobs/reviews/J3195/REVIEW.md): J2529 waiting condition NOT met — J3178 remains blocked on moving_video_input (J3198 open) and rows 56-62, 64-66 still lack continuous-playback review and elected-Chief marks across HOS #180/#694 and OWB #954. Freshly verified 11/11 Batch 12-14 NAS SHA-256 hashes match receipts; preserved 48 KEEP and 8 RETAKE (3,10,24,28,47,49,54,63). Direct read_file probe confirmed audio_input only (1-fps static stills on .mp4, not continuous 24-fps playback). Updated J2529 typed capability hold (--type capability --requires moving_video_input --recheck J3195, next check 2026-11-20T19:15:00Z). £0, no minting or assembly authorised.",
       "history": [
         {
           "at": "2026-11-20T04:21Z",
@@ -287352,6 +287352,11 @@
           "at": "2026-11-20T13:12Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Recorded acting-Chief typed capability hold on J2529 (--recheck J3195, next check 2026-11-20T19:15:00Z); closing J3195 and posting reports"
+        },
+        {
+          "at": "2026-11-20T13:12Z",
+          "by": "gemini",
+          "what": "done: Acting-Chief verification complete (jobs/reviews/J3195/REVIEW.md): J2529 waiting condition NOT met — J3178 remains blocked on moving_video_input (J3198 open) and rows 56-62, 64-66 still lack continuous-playback review and elected-Chief marks across HOS #180/#694 and OWB #954. Freshly verified 11/11 Batch 12-14 NAS SHA-256 hashes match receipts; preserved 48 KEEP and 8 RETAKE (3,10,24,28,47,49,54,63). Direct read_file probe confirmed audio_input only (1-fps static stills on .mp4, not continuous 24-fps playback). Updated J2529 typed capability hold (--type capability --requires moving_video_input --recheck J3195, next check 2026-11-20T19:15:00Z). £0, no minting or assembly authorised."
         }
       ],
       "remaining_action": "Close J3195 and post OWB #954 and HOS #694 reports",
