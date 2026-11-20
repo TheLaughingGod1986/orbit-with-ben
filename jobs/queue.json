@@ -287333,9 +287333,14 @@
           "at": "2026-11-20T13:06Z",
           "by": "gemini",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-20T13:09Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified J3178 still blocked on moving_video_input (J3198 open), checked HOS #180/#694 and OWB #954 (no continuous playback evidence or marks for rows 56-62,64-66), verified 11/11 Batch 12-14 NAS hashes, and confirmed agy read_file returns 1-fps static images on .mp4 (audio_input only)"
         }
       ],
-      "remaining_action": "Inspect J2529 wait condition, J3178 playback follow-up status, HOS desk evidence, and session capabilities",
+      "remaining_action": "Write jobs/reviews/J3195/REVIEW.md, re-check chief_relay.py status, record updated typed wait on J2529 (--recheck J3195), close J3195, and post reports",
       "kind": "review",
       "recheck_of": "J2529",
       "mini_only": true,
@@ -287354,10 +287359,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-20T13:06Z",
-        "by": "gemini"
+        "at": "2026-11-20T13:09Z",
+        "by": "gemini",
+        "note": "Verified J3178 still blocked on moving_video_input (J3198 open), checked HOS #180/#694 and OWB #954 (no continuous playb"
       },
       "taskKeys": [
         "HOS:013"
