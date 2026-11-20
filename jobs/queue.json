@@ -288274,19 +288274,24 @@
           "at": "2026-11-20T18:43Z",
           "by": "gemini",
           "what": "step 3 of 6 done: QA complete: 98.96% raw Scribe / 99.84% true spoken-word match, faster-whisper verified (zero dropped/repeated lines), -19.8 LUFS (-3.4 dB peak), ch05 trailing end-click removed at £0, copying & verifying masters on studio-live NAS"
+        },
+        {
+          "at": "2026-11-20T18:45Z",
+          "by": "gemini",
+          "what": "step 4 of 6 done: Logged settled ElevenLabs spend (9,003 credits -> 32,856 / 121,114 remaining, 21,856 above 11,000 reserve) against WW2:004 and verified WAV/MP3 SHA-256 on studio-live NAS"
         }
       ],
-      "remaining_action": "Log exact settled ElevenLabs credit spend in ai_spend ledger against WW2:004",
+      "remaining_action": "Write VO_REPORT.md, commit metadata and status.json (vo: review) on clean ww2 worktree, run channel_check, and open PR on ww2-channel",
       "due": "2026-11-29T18:00:00Z",
       "for": "gemini",
       "kind": "vo",
       "plain": "Record the narration for WW2 film 004, about submarine torpedoes",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 6,
-        "at": "2026-11-20T18:43Z",
+        "at": "2026-11-20T18:45Z",
         "by": "gemini",
-        "note": "QA complete: 98.96% raw Scribe / 99.84% true spoken-word match, faster-whisper verified (zero dropped/repeated lines), -"
+        "note": "Logged settled ElevenLabs spend (9,003 credits -> 32,856 / 121,114 remaining, 21,856 above 11,000 reserve) against WW2:0"
       },
       "taskKeys": [
         "WW2:004"
