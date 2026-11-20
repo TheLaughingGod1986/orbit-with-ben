@@ -272,23 +272,167 @@ class BoardLink(unittest.TestCase):
             folders.assert_not_called()
 
     def test_all_registered_channel_identities_stay_in_their_channel(self):
-        for channel in jobs.channels.all_channels():
-            slug, label = channel["slug"], channel["label"]
-            with self.subTest(channel=slug):
-                job = {"repo": slug, "film": label + ":003", "stage": "script"}
-                self.assertEqual(jobs.job_film_identity(job), (slug, "003"))
-                self.assertEqual(jobs.job_film_number(job), "003")
-                self.assertEqual(jobs.on_board(job), slug == jobs.channels.board_channel())
-                with mock.patch.object(jobs, "studio_live_projects", return_value=pathlib.Path("/unused")) as root, \
-                        mock.patch.object(jobs, "film_folder_under", return_value=pathlib.Path("/unused/003_Film")):
-                    self.assertTrue(jobs.media_reachable(job))
-                    root.assert_called_once_with(slug)
-                if slug != jobs.channels.board_channel():
-                    with mock.patch.object(studio, "save") as save:
-                        jobs.board_claim(job, "macbook", T0)
-                        jobs.board_release(job, "macbook", "review")
-                        jobs.check_board_completion(job, "evidence")
-                        save.assert_not_called()
+        with tempfile.TemporaryDirectory() as tmp:
+            roots = {}
+            for channel in jobs.channels.all_channels():
+                slug = channel["slug"]
+                co = pathlib.Path(tmp) / slug
+                film = co / "02_Video-Projects" / "003_Film"
+                film.mkdir(parents=True)
+                (film / "status.json").write_text(json.dumps({"film": "003", "title": slug, "stages": {}, "claims": []}))
+                roots[slug] = co
+            with mock.patch.object(studio, "FILMS", roots[jobs.channels.board_channel()] / "02_Video-Projects"), \
+                    mock.patch.object(jobs.channels, "checkout", side_effect=lambda s: roots.get(s)):
+                for channel in jobs.channels.all_channels():
+                    slug, label = channel["slug"], channel["label"]
+                    with self.subTest(channel=slug):
+                        job = {"id": "J1", "repo": slug, "film": label + ":003", "stage": "script",
+                               "title": f"{label} script", "eta": "2026-10-07T14:00Z"}
+                        self.assertEqual(jobs.job_film_identity(job), (slug, "003"))
+                        self.assertEqual(jobs.job_film_number(job), "003")
+                        self.assertTrue(jobs.on_board(job))
+                        self.assertEqual(jobs.film_status_path(job), roots[slug] / "02_Video-Projects" / "003_Film" / "status.json")
+                        with mock.patch.object(jobs, "studio_live_projects", return_value=pathlib.Path("/unused")) as root, \
+                                mock.patch.object(jobs, "film_folder_under", return_value=pathlib.Path("/unused/003_Film")):
+                            self.assertTrue(jobs.media_reachable(job))
+                            root.assert_called_once_with(slug)
+                        if slug != jobs.channels.board_channel():
+                            owb_path = roots[jobs.channels.board_channel()] / "02_Video-Projects" / "003_Film" / "status.json"
+                            owb_before = owb_path.read_text()
+                            self.assertIsNone(jobs.board_claim(job, "macbook", T0))
+                            jobs.board_release(job, "macbook", "review", "PR #1")
+                            self.assertEqual(owb_path.read_text(), owb_before)
+                            own_st = json.loads((roots[slug] / "02_Video-Projects" / "003_Film" / "status.json").read_text())
+                            self.assertEqual(own_st["stages"]["script"]["state"], "review")
+                            self.assertEqual(own_st["claims"], [])
+
+    def test_ww2_job_advances_ww2_stage_and_never_touches_orbit(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            owb_root = pathlib.Path(tmp) / "owb"
+            ww2_root = pathlib.Path(tmp) / "ww2"
+            owb_film = owb_root / "02_Video-Projects" / "001_Aliens"
+            ww2_film = ww2_root / "02_Video-Projects" / "001_Mulberry"
+            owb_film.mkdir(parents=True)
+            ww2_film.mkdir(parents=True)
+            owb_initial = {"film": "001", "title": "Aliens", "stages": {"topic": {"state": "done"}}, "claims": [], "next": ""}
+            ww2_initial = {"film": "001", "title": "Mulberry", "stages": {"topic": {"state": "done"}}, "claims": [], "next": ""}
+            (owb_film / "status.json").write_text(json.dumps(owb_initial))
+            (ww2_film / "status.json").write_text(json.dumps(ww2_initial))
+            with mock.patch.object(studio, "FILMS", owb_root / "02_Video-Projects"), \
+                    mock.patch.object(jobs.channels, "checkout", side_effect=lambda s: {"owb": owb_root, "ww2": ww2_root}.get(s)):
+                d = queue(("any", "WW2 pilot 001: script", {"repo": "ww2", "film": "WW2:001", "stage": "script"}))
+                j = jobs.do_next(d, "macbook-2", {"any"}, T0)
+                self.assertTrue(jobs.on_board(j))
+                self.assertEqual(jobs.film_status_path(j), ww2_film / "status.json")
+                # Claim moves WW2:001 script -> doing; Orbit 001 stays untouched.
+                self.assertIsNone(jobs.board_claim(j, "macbook-2", T0))
+                ww2_st = json.loads((ww2_film / "status.json").read_text())
+                self.assertEqual(ww2_st["stages"]["script"]["state"], "doing")
+                self.assertEqual(ww2_st["claims"][0]["by"], "macbook-2")
+                self.assertEqual(json.loads((owb_film / "status.json").read_text()), owb_initial)
+                # Release (pause) clears claim, keeps stage doing.
+                jobs.do_release(j, "macbook-2", "checkpoint", T0 + MIN)
+                jobs.board_release(j, "macbook-2", "doing")
+                ww2_st = json.loads((ww2_film / "status.json").read_text())
+                self.assertEqual((ww2_st["claims"], ww2_st["stages"]["script"]["state"]), ([], "doing"))
+                # Re-claim and finish moves WW2:001 script -> review with ref; Orbit 001 still untouched.
+                j = jobs.do_next(d, "macbook-2", {"any"}, T0 + 2 * MIN)
+                self.assertIsNone(jobs.board_claim(j, "macbook-2", T0 + 2 * MIN))
+                jobs.do_done(j, "macbook-2", "PR #996", T0 + 3 * MIN, ref="PR #996")
+                jobs.board_release(j, "macbook-2", "review", "PR #996")
+                ww2_st = json.loads((ww2_film / "status.json").read_text())
+                self.assertEqual(ww2_st["claims"], [])
+                self.assertEqual(ww2_st["stages"]["script"], {"state": "review", "ref": "PR #996"})
+                self.assertEqual(json.loads((owb_film / "status.json").read_text()), owb_initial)
+
+    def test_hos_job_maps_stage_aliases_and_preserves_status_board_contract(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            hos_root = pathlib.Path(tmp) / "hos"
+            (hos_root / "00_Brand" / "Channel-Setup" / "tools").mkdir(parents=True)
+            (hos_root / "00_Brand" / "Channel-Setup" / "tools" / "status_board.py").write_text("# validator\n")
+            hos_film = hos_root / "02_Video-Projects" / "012_Mendel"
+            hos_film.mkdir(parents=True)
+            (hos_film / "status.json").write_text(json.dumps({
+                "film": "012", "title": "Mendel",
+                "stages": {"thumbnails": {"state": "todo"}, "edit": {"state": "todo"}}, "claims": []
+            }))
+            with mock.patch.object(jobs.channels, "checkout", side_effect=lambda s: hos_root if s == "hos" else None):
+                # Alias thumbs -> thumbnails; strict status_board keeps state in doing/blocked/done/todo/skip
+                d = queue(("any", "HOS 012: thumbnails", {"repo": "hos", "film": "HOS:012", "stage": "thumbs"}))
+                j = jobs.do_next(d, "macbook-2", {"any"}, T0)
+                self.assertTrue(jobs.on_board(j))
+                self.assertEqual(jobs.board_stage_key(j), "thumbnails")
+                self.assertIsNone(jobs.board_claim(j, "macbook-2", T0))
+                st = json.loads((hos_film / "status.json").read_text())
+                self.assertEqual(st["stages"]["thumbnails"]["state"], "doing")
+                self.assertTrue(st["stages"]["thumbnails"]["underway"])
+                jobs.do_done(j, "macbook-2", "thumbs ready", T0 + MIN, ref="PR #500")
+                jobs.board_release(j, "macbook-2", "review", "PR #500")
+                st = json.loads((hos_film / "status.json").read_text())
+                self.assertEqual(st["stages"]["thumbnails"]["state"], "doing")
+                self.assertFalse(st["stages"]["thumbnails"]["underway"])
+                self.assertEqual(st["stages"]["thumbnails"]["approval"], {"status": "pending"})
+                self.assertEqual(st["stages"]["thumbnails"]["ref"], "PR #500")
+                self.assertNotIn("thumbs", st["stages"])
+                # Unknown HOS stage ('shots') and missing film folder ('122') safely no-op.
+                self.assertFalse(jobs.on_board({"repo": "hos", "film": "HOS:012", "stage": "shots"}))
+                self.assertFalse(jobs.on_board({"repo": "hos", "film": "HOS:122", "stage": "topic"}))
+
+    def test_external_channel_git_transaction_pushes_only_to_channel_repo(self):
+        import subprocess
+        with tempfile.TemporaryDirectory() as tmp:
+            root = pathlib.Path(tmp)
+            def init_repo(name):
+                bare = root / f"{name}.git"
+                work = root / name
+                subprocess.run(["git", "init", "--bare", "-q", str(bare)], check=True)
+                subprocess.run(["git", "init", "-q", "-b", "main", str(work)], check=True)
+                subprocess.run(["git", "-C", str(work), "config", "user.email", "t@example.invalid"], check=True)
+                subprocess.run(["git", "-C", str(work), "config", "user.name", "T"], check=True)
+                return bare, work
+            owb_bare, owb = init_repo("owb")
+            ww2_bare, ww2 = init_repo("ww2")
+            (owb / "02_Video-Projects" / "003_Exoplanets").mkdir(parents=True)
+            studio.save(owb / "02_Video-Projects" / "003_Exoplanets" / "status.json",
+                        {"film": "003", "title": "Exoplanets", "stages": {}, "claims": [], "next": ""})
+            studio.write_status(owb / "02_Video-Projects")
+            qpath = owb / "jobs" / "queue.json"
+            d = queue(("any", "WW2 003 script", {"repo": "ww2", "film": "WW2:003", "stage": "script"}))
+            jobs.save(d, qpath)
+            (owb / "JOBS.md").write_text("queue\n")
+            subprocess.run(["git", "-C", str(owb), "add", "."], check=True)
+            subprocess.run(["git", "-C", str(owb), "commit", "-qm", "init"], check=True)
+            subprocess.run(["git", "-C", str(owb), "remote", "add", "origin", str(owb_bare)], check=True)
+            subprocess.run(["git", "-C", str(owb), "push", "-q", "origin", "main"], check=True)
+            (ww2 / "02_Video-Projects" / "003_B29").mkdir(parents=True)
+            studio.save(ww2 / "02_Video-Projects" / "003_B29" / "status.json",
+                        {"film": "003", "title": "B29", "stages": {"topic": {"state": "done"}}, "claims": [], "next": ""})
+            subprocess.run(["git", "-C", str(ww2), "add", "."], check=True)
+            subprocess.run(["git", "-C", str(ww2), "commit", "-qm", "init"], check=True)
+            subprocess.run(["git", "-C", str(ww2), "remote", "add", "origin", str(ww2_bare)], check=True)
+            subprocess.run(["git", "-C", str(ww2), "push", "-q", "origin", "main"], check=True)
+            with mock.patch.object(studio, "ROOT", owb), \
+                    mock.patch.object(studio, "FILMS", owb / "02_Video-Projects"), \
+                    mock.patch.object(jobs, "ROOT", owb), \
+                    mock.patch.object(jobs, "QUEUE", qpath), \
+                    mock.patch.object(jobs, "JOBS_MD", owb / "JOBS.md"), \
+                    mock.patch.object(jobs, "publish_board", lambda: None), \
+                    mock.patch.object(jobs, "heartbeat", lambda a: None), \
+                    mock.patch.object(jobs.channels, "checkout", side_effect=lambda s: {"owb": owb, "ww2": ww2}.get(s)):
+                self.assertEqual(jobs.main(["next", "--agent", "macbook-2", "--can", "any", "--git"]), 0)
+                ww2_remote = json.loads(subprocess.check_output(
+                    ["git", "-C", str(ww2_bare), "show", "main:02_Video-Projects/003_B29/status.json"], text=True))
+                self.assertEqual(ww2_remote["stages"]["script"]["state"], "doing")
+                self.assertEqual(ww2_remote["claims"][0]["by"], "macbook-2")
+                self.assertFalse((ww2 / "STATUS.md").exists())
+                self.assertEqual(jobs.main(["done", "J0001", "--agent", "macbook-2", "--result", "PR #5", "--ref", "PR #5", "--git"]), 0)
+                ww2_remote = json.loads(subprocess.check_output(
+                    ["git", "-C", str(ww2_bare), "show", "main:02_Video-Projects/003_B29/status.json"], text=True))
+                self.assertEqual(ww2_remote["claims"], [])
+                self.assertEqual(ww2_remote["stages"]["script"], {"state": "review", "ref": "PR #5"})
+                owb_remote = json.loads(subprocess.check_output(
+                    ["git", "-C", str(owb_bare), "show", "main:02_Video-Projects/003_Exoplanets/status.json"], text=True))
+                self.assertEqual(owb_remote["stages"], {})
 
     def test_unknown_prefix_and_foreign_text_have_no_film_target(self):
         self.assertIsNone(jobs.job_film_identity({"repo": "owb", "film": "UNKNOWN:003"}))
