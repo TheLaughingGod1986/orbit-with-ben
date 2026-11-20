@@ -272397,18 +272397,23 @@
           "at": "2026-11-20T16:37Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Gemini covering as acting Chief; auditing PR #1011 (055ed1509f) and remaining J3012 blockers"
+        },
+        {
+          "at": "2026-11-20T16:42Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: PR #1011 merges cleanly onto origin/main; studio_split --no-tests PASS, 78 J3012 unit tests PASS, 232 Content-Ops tests PASS; HOS live checkout verified on main with PR #688 guards (5/5 tests PASS); full Python suite running"
         }
       ],
-      "remaining_action": "Review PR #1011, verify remaining J3012 readiness items (HOS exporter guard, board access/probe, MacBook inventory), and advance migration prep",
+      "remaining_action": "Finish independent review of PR #1011 (121 files), verify HOS exporter guard live checkout, queue MacBook inventory, and resolve BOARD_GH_TOKEN Contents probe",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-20T16:37Z",
+        "at": "2026-11-20T16:42Z",
         "by": "gemini",
-        "note": "Gemini covering as acting Chief; auditing PR #1011 (055ed1509f) and remaining J3012 blockers"
+        "note": "PR #1011 merges cleanly onto origin/main; studio_split --no-tests PASS, 78 J3012 unit tests PASS, 232 Content-Ops tests "
       },
       "taskKeys": [
         "HOS:009",
