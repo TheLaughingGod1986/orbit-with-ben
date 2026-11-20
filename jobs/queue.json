@@ -291771,6 +291771,11 @@
           "at": "2026-11-20T21:58Z",
           "by": "cursor",
           "what": "step 1 of 4 done: Inspection done. Stopped the first offload: J2221 (21.41 GiB) and desk/renders (5.35 GiB) were already on the NAS SSD share but kept locally because directory AppleDouble sidecars failed the compare. J2854 (3.65 GiB) had cleared. MiniWork is 3.4 GiB free. A corrected check is running in tmux j3249-verify."
+        },
+        {
+          "at": "2026-11-20T21:59Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Byte compare of the staged Journey scratch (21.41 GiB, 349 files) is running. The local copy stays until every file matches and the checksum file is written."
         }
       ],
       "remaining_action": "Verify staged scratch copies and clear them only after every file matches",
@@ -291780,9 +291785,9 @@
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-20T21:58Z",
+        "at": "2026-11-20T21:59Z",
         "by": "cursor",
-        "note": "Inspection done. Stopped the first offload: J2221 (21.41 GiB) and desk/renders (5.35 GiB) were already on the NAS SSD sh"
+        "note": "Byte compare of the staged Journey scratch (21.41 GiB, 349 files) is running. The local copy stays until every file matc"
       }
     },
     {
