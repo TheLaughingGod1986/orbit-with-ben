@@ -291677,9 +291677,14 @@
           "at": "2026-11-20T20:31Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Freshly verified 11/11 NAS Batch 12-14 SHA-256 matches, REVIEW_STATE.json (48 KEEP, 8 RETAKE, 10 unset), and no new 013 marks on HOS #180/#694 or OWB #954"
+        },
+        {
+          "at": "2026-11-20T20:32Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Committed and pushed jobs/reviews/J3250/REVIEW.md from clean sparse worktree and confirmed gemini remains elected acting Chief"
         }
       ],
-      "remaining_action": "Write and commit J3250 REVIEW.md from clean worktree, update J2529 typed capability hold, close J3250, and post reports",
+      "remaining_action": "Record J2529 typed capability hold (--recheck J3250), close J3250, and post reports on OWB #954 and HOS #694",
       "kind": "review",
       "recheck_of": "J2529",
       "mini_only": true,
@@ -291698,11 +291703,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-20T20:31Z",
+        "at": "2026-11-20T20:32Z",
         "by": "gemini",
-        "note": "Freshly verified 11/11 NAS Batch 12-14 SHA-256 matches, REVIEW_STATE.json (48 KEEP, 8 RETAKE, 10 unset), and no new 013 "
+        "note": "Committed and pushed jobs/reviews/J3250/REVIEW.md from clean sparse worktree and confirmed gemini remains elected acting"
       },
       "taskKeys": [
         "HOS:013"
