@@ -115,10 +115,16 @@ def _parse_json_object(text):
 
 def agy_runner(prompt, schema, cwd, timeout=180):
     """Run `agy -p` in the clip folder; return (structured answer or None, tools it used)."""
+    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+    import routing
     agy = _find_cli("AGY_BIN", "agy")
-    out = subprocess.run([agy, "-p", prompt, "--sandbox", "--output-format", "stream-json",
-                          "--print-timeout", f"{timeout}s", "--json-schema", json.dumps(schema)],
-                         cwd=cwd, capture_output=True, text=True, timeout=timeout + 30)
+    model = os.environ.get("AGY_PROBE_MODEL") or routing.cli_model("gemini-argon")
+    cmd = [agy, "--sandbox", "--output-format", "stream-json",
+           "--print-timeout", f"{timeout}s", "--json-schema", json.dumps(schema)]
+    if model:
+        cmd += ["--model", model]
+    cmd += ["-p", prompt]
+    out = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, timeout=timeout + 30)
     answer, tools = None, set()
     for line in out.stdout.splitlines():
         try:

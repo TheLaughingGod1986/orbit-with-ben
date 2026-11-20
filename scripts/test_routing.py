@@ -65,6 +65,9 @@ class Routing(unittest.TestCase):
         self.assertEqual(routing.cli_model("cursor-claude-opus-5-5"), routing.CURSOR_CLAUDE_MODEL)
         self.assertEqual(routing.CURSOR_CLAUDE_MODEL, "claude-opus-5-5")  # Cursor's Opus 5.5 id on the Mini
         self.assertEqual(routing.cli_model("cursor-auto"), "")
+        self.assertEqual(routing.cli_model("gemini-argon"), routing.AGY_ARGON_MODEL)
+        self.assertEqual(routing.AGY_ARGON_MODEL, "gemini-4-neon-high")
+        self.assertEqual(routing.AGY_ARGON_FALLBACK, "gemini-4-argon-high")
         self.assertTrue(routing.claude_owned({"kind": "script"}))
         self.assertFalse(routing.claude_owned({"kind": "script", "model": "gpt-6-astra"}))
         self.assertFalse(routing.claude_owned({"kind": "chart"}))
