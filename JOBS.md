@@ -59,7 +59,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3129 | mini | blocked | codex | – | 004 thumbs · thumb · Fix Webb thumbnail hook and identify the distant galaxy | J3096 |
 | J3135 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3129 |  |
 | J3137 | mini | blocked | cursor | – | 005 edit · assembly · HOS 005 Shorts s06/s07/s08: no-spend music_gate repair against archived HOS 002/004 beds (£0) |  |
-| J3155 | mini | open | – | – | for codex · review · `gemini-argon` · Verify condition for J1275 |  |
+| J3155 | mini | claimed | codex | 2026-11-20T03:38Z | for codex · review · `gemini-argon` · Verify condition for J1275 |  |
 | J3161 | mini | blocked | codex | – | studio · Supermoon Short: next-morning and full-day performance follow-up |  |
 | J3175 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2847 |  |
 | J3176 | any | blocked | codex | – | 024 edit · chief · OWB 024 muon Short: decide whether to swap gc1hWQQJOq4 onto the v06 bed |  |
