@@ -34,6 +34,16 @@ class FilmDir(unittest.TestCase):
                 with self.subTest(key=key), self.assertRaises(SystemExit):
                     studio.film_dir(films, key)
 
+    def test_explicit_channel_allows_own_prefix_and_rejects_others(self):
+        with tempfile.TemporaryDirectory() as t:
+            films = pathlib.Path(t)
+            (films / "003_B29").mkdir()
+            self.assertEqual(studio.film_dir(films, "WW2:003", channel="ww2").name, "003_B29")
+            self.assertEqual(studio.film_dir(films, "003", channel="ww2").name, "003_B29")
+            for key in ("OWB:003", "HOS:003", "UNKNOWN:003"):
+                with self.subTest(key=key), self.assertRaises(SystemExit):
+                    studio.film_dir(films, key, channel="ww2")
+
 
 class Claims(unittest.TestCase):
     def test_claim_marks_doing(self):

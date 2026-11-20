@@ -708,8 +708,9 @@ class StudioRootHoldsNoChannelContent(unittest.TestCase):
         import routing
         import workflow_handoffs as handoffs
         self.assertTrue(jobs.on_board({"film": "033"}))                      # an old row with no repo
-        self.assertFalse(jobs.on_board({"film": "013", "repo": "hos"}))      # keeps its films another way
         self.assertFalse(jobs.on_board({"film": "", "repo": "owb"}))
+        with mock.patch.object(channels, "pipeline", return_value={"kind": "pipeline_json", "path": "PIPELINE.json"}):
+            self.assertFalse(jobs.on_board({"film": "013", "repo": "hos"}))  # keeps its films another way
         self.assertEqual(routing._picture_route({}), routing._picture_route({"repo": channels.default()}))
         with tempfile.TemporaryDirectory() as t:
             wip = pathlib.Path(t) / "WIP.json"
