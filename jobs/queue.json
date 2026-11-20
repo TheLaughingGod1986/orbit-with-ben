@@ -270192,9 +270192,14 @@
           "at": "2026-11-20T20:59Z",
           "by": "gemini",
           "what": "reopened: J3075 Acting-Chief ruling (jobs/reviews/J3075/DECISION.md, OWB PR #1083, ww2-channel PR #23): full 24:03.04 perceptual watch/listen completed in PR #1018 (5d1e4a04fc); VO stage PASS (vo: done); keep zero-spend score; fix 4 visual defects in WATCH_LISTEN_REVIEW_v04.md for v05, finish thumbs + WW2 upload package, QA gates, and deliver to Ben's watch (final-watch standing order covers human UAT). £0 spend; no upload."
+        },
+        {
+          "at": "2026-11-20T20:59Z",
+          "by": "gemini",
+          "what": "remaining action: Build v05 fixing 4 WATCH_LISTEN_REVIEW_v04.md items (keep zero-spend score), finish thumbs + WW2 upload package, run QA gates, deliver to Ben's watch"
         }
       ],
-      "remaining_action": "Route the finished candidate to a capable film reviewer and resolve remaining labels and voice review",
+      "remaining_action": "Build v05 fixing 4 WATCH_LISTEN_REVIEW_v04.md items (keep zero-spend score), finish thumbs + WW2 upload package, run QA gates, deliver to Ben's watch",
       "due": "2026-11-25T18:00:00Z",
       "for": "codex",
       "kind": "assembly",
@@ -270202,10 +270207,7 @@
       "taskKeys": [
         "WW2:002"
       ],
-      "required_capabilities": [
-        "audio_input",
-        "moving_video_input"
-      ]
+      "required_capabilities": []
     },
     {
       "id": "J2997",
@@ -277623,10 +277625,7 @@
       "remaining_action": "Elected Chief: reopen J2996 (perceptual watch/listen completed in PR1018 5d1e4a04fc), rule on PR1014 VO, and close J3075",
       "kind": "review",
       "recheck_of": "J2996",
-      "required_capabilities": [
-        "audio_input",
-        "moving_video_input"
-      ],
+      "required_capabilities": [],
       "due": "2026-11-18T21:46:02+00:00",
       "due_kind": "condition-verification",
       "rerouted_from": {
