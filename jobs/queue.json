@@ -284938,13 +284938,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-20T01:11Z",
-      "eta": "2026-11-20T03:11Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-19T23:49Z",
-      "result": "",
+      "result": "Waiting for: Tested read_file on all 10 unresolved HOS 013 pass-1 .mp4 clips (rows 56-62, 64-66) in agy: read_file on video/mp4 returns only 8 discrete 1-fps static JPEG frames at integer seconds 00:00..00:07 (1 frame per 24 frames @ 24 fps; e.g. row 58 3.833-4.250s face exit falls unseen between 00:03 and 00:04), not continuous 24-fps moving-video playback. Freshly verified 11/11 Batch 12-14 NAS archive SHA256 hashes match receipts and recorded full per-row prompt and supplementary strip audit in jobs/reviews/J3178/REVIEW.md; updated capabilities.json to audio_input only. No playback PASS claimed.",
       "history": [
         {
           "at": "2026-11-19T23:49Z",
@@ -284980,9 +284980,19 @@
           "at": "2026-11-20T01:19Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Committed jobs/reviews/J3178/REVIEW.md with 11/11 Batch 12-14 hash verification, prompt audit, and read_file 1-fps video probe evidence"
+        },
+        {
+          "at": "2026-11-20T01:19Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: Tested read_file on all 10 unresolved HOS 013 pass-1 .mp4 clips (rows 56-62, 64-66) in agy: read_file on video/mp4 returns only 8 discrete 1-fps static JPEG frames at integer seconds 00:00..00:07 (1 frame per 24 frames @ 24 fps; e.g. row 58 3.833-4.250s face exit falls unseen between 00:03 and 00:04), not continuous 24-fps moving-video playback. Freshly verified 11/11 Batch 12-14 NAS archive SHA256 hashes match receipts and recorded full per-row prompt and supplementary strip audit in jobs/reviews/J3178/REVIEW.md; updated capabilities.json to audio_input only. No playback PASS claimed."
+        },
+        {
+          "at": "2026-11-20T01:19Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-20T07:55:00Z"
         }
       ],
-      "remaining_action": "Place typed capability hold (moving_video_input) on J3178 and post report",
+      "remaining_action": "Review ten unresolved HOS 013 pass-1 plates (rows 56-62, 64-66) in a session with demonstrated continuous moving_video_input playback and return to elected Chief for per-row marks",
       "kind": "qa",
       "required_capabilities": [
         "moving_video_input"
@@ -285006,7 +285016,15 @@
       },
       "taskKeys": [
         "HOS:013"
-      ]
+      ],
+      "hold": {
+        "type": "capability",
+        "condition": "Tested read_file on all 10 unresolved HOS 013 pass-1 .mp4 clips (rows 56-62, 64-66) in agy: read_file on video/mp4 returns only 8 discrete 1-fps static JPEG frames at integer seconds 00:00..00:07 (1 frame per 24 frames @ 24 fps; e.g. row 58 3.833-4.250s face exit falls unseen between 00:03 and 00:04), not continuous 24-fps moving-video playback. Freshly verified 11/11 Batch 12-14 NAS archive SHA256 hashes match receipts and recorded full per-row prompt and supplementary strip audit in jobs/reviews/J3178/REVIEW.md; updated capabilities.json to audio_input only. No playback PASS claimed.",
+        "check_at": "2026-11-20T07:55:00Z",
+        "requires": [
+          "moving_video_input"
+        ]
+      }
     },
     {
       "id": "J3179",
