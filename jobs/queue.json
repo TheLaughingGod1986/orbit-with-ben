@@ -290414,10 +290414,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-20T21:44Z",
+      "eta": "2026-11-20T23:44Z",
       "created_by": "relay",
       "created_at": "2026-11-20T13:12Z",
       "result": "",
@@ -290456,6 +290456,11 @@
           "at": "2026-11-20T21:44Z",
           "by": "gemini",
           "what": "reopened: Acting Chief (gemini) recorded J3114 wait --recheck J3232 (jobs/reviews/J3232/REVIEW.md @ 2b1405d76d); reopening verification task only to claim and close completed ruling. Parent J3114 remains blocked."
+        },
+        {
+          "at": "2026-11-20T21:44Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Obtain explicit approval for the rejected GitHub branch export, then open the Pluto packaging review PR without rebuilding",
@@ -290471,7 +290476,15 @@
         "by": ""
       },
       "model": "gemini-argon",
-      "escalated_at": "2026-11-20T17:40Z"
+      "escalated_at": "2026-11-20T17:40Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T21:44Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3233",
