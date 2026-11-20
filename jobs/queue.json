@@ -1,5 +1,5 @@
 {
-  "next_id": 3233,
+  "next_id": 3234,
   "jobs": [
     {
       "id": "J0001",
@@ -289782,6 +289782,36 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J3233",
+      "title": "HOS 009: decide post-J3174 compliant replacement score route",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Elected-Chief no-spend decision for HOS 009 (*Why Doesn't the Moon Fall to Earth?*) after completion of the offline billing-guard and disabled-flight hardening chain (`J3139`–`J3174`: HOS PR #675 `327c220d`, PR #680 `f13cb7ae`, PR #681 `3211c7de` at approved head `a76bfa8f`).\n\nCurrent verified state (`J3228`, 20 Nov 2026):\n- `ACTIVATION_AUTHORIZED` remains literal `False` in HOS `origin/main:04_Audio/tools/hos009_score_flight.py:34` because `jobs/reviews/J3150/PRICING_EVIDENCE.md` (19 Nov 2026) shows public ElevenLabs pages do not establish both a `<= 3,000` subscription-credit bound and `£0` cash for one 180 s `music_v2` request (`elevenlabs.io/pricing` ~900 credits/min approximate with no numeric single-request max; `elevenlabs.io/pricing/api` `$0.15/min` USD).\n- Zero follow-on HOS 009 music-route or score-generation jobs were queued after `J3174`, leaving `J2035` (long assembly) and `J2171` (Shorts A/B) blocked with no active work unblocking them.\n- `02_Video-Projects/009_The-Falling-Moon-Gravity/status.json` still cites completed `J3050` in `edit.owner`/`next` and should be reconciled in a clean PR.\n\nDecide and queue the concrete compliant score route for HOS 009:\n1. Evaluate and select either (a) a compliant £0 non-ElevenLabs own-score route meeting HOS house rules (full runtime covering opening 0–175.28 s + join to retained `teach_v01` or full own bed, `music_gate` PASS against complete library, independent demonstrated-audio review, separate Chief score disposition), OR (b) an explicitly documented, compliant path to establish a proven credit/cash bound without an unauthorized account call or real-money spend (escalate to Ben only if real money or his login/billing confirmation is genuinely required), OR (c) an explicit hold/schedule disposition if HOS 009 waits on a billing/policy change.\n2. Queue the concrete next job(s) and update `02_Video-Projects/009_The-Falling-Moon-Gravity/status.json` via PR so the board matches reality.\n\nHard guardrails (preserved unconditionally): £0 cash, 0 credits, no account GET, no ElevenLabs POST, no activation (`ACTIVATION_AUTHORIZED` stays `False`), `J3043`/`J3045` allowance stays permanently closed unused (`J3047`), `v01`/`v02` remain rejected (`J2808`), do not loop or stretch `hos_009_teach_v01.mp3`, keep `J2035` and `J2171` held, preserve all locked picture/VO/diagram/music hashes, and make no YouTube/Buffer/schedule changes.\n",
+      "ref": "J3228",
+      "film": "009",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-20T14:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T14:00Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Decide and queue a compliant HOS 009 replacement score route after PR 681 merge (ACTIVATION_AUTHORIZED remains False) and reconcile film 009 status.json",
+      "due": "2026-11-21T12:00:00Z",
+      "kind": "chief",
+      "plain": "Decide the next compliant music route for History of Science 009 now that the offline billing guard is merged."
     }
   ],
   "focus": [
