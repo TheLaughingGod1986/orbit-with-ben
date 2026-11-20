@@ -64,7 +64,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3176 | any | blocked | codex | – | 024 edit · chief · OWB 024 muon Short: decide whether to swap gc1hWQQJOq4 onto the v06 bed |  |
 | J3178 | mini | blocked | gemini | – | 013 picture · for gemini · qa · `gemini-argon` · HOS 013: continuous playback review of ten unresolved pass-one plates |  |
 | J3187 | mini | open | – | – | 005 edit · qa · HOS 005: perceptual QA and exact-cut watch handoff for repaired cuff and pulse Shorts |  |
-| J3188 | mini | open | – | – | 005 upload · studio · HOS 005: contain scheduled originals with failed reused music |  |
+| J3188 | mini | claimed | cursor | 2026-11-20T04:49Z | 005 upload · studio · HOS 005: contain scheduled originals with failed reused music |  |
 
 Recently finished:
 

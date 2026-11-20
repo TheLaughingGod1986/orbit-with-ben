@@ -285895,10 +285895,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-20T02:49Z",
+      "eta": "2026-11-20T04:49Z",
       "created_by": "codex",
       "created_at": "2026-11-20T02:44Z",
       "result": "",
@@ -285907,6 +285907,11 @@
           "at": "2026-11-20T02:44Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-20T02:49Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify the scheduled originals and clear their schedules if the music failure remains unresolved",
@@ -285914,7 +285919,15 @@
       "kind": "studio",
       "plain": "Keep the blood pressure and pulse Shorts private while their failed music is resolved",
       "mini_only": true,
-      "urgent": 6
+      "urgent": 6,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T02:49Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
