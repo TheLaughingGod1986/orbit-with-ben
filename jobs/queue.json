@@ -179125,20 +179125,25 @@
           "at": "2026-11-20T20:20Z",
           "by": "claudecode",
           "what": "step 1 of 6 done: Read rules, scope file and the assembly record; master v01 found on the NAS"
+        },
+        {
+          "at": "2026-11-20T20:24Z",
+          "by": "claudecode",
+          "what": "step 2 of 6 done: Master hash matches on Mini and NAS; format, loudness and 18 stills checked; chapter times read from the cut"
         }
       ],
-      "remaining_action": "Checking the master file's hash, format and gate records",
+      "remaining_action": "Writing re-timed chapters into the description, running the package lint and the remaining caption, scale and teach checks",
       "due": "2026-11-15T18:00:00Z",
       "kind": "qa",
       "taskKeys": [
         "HOS:009"
       ],
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 6,
-        "at": "2026-11-20T20:20Z",
+        "at": "2026-11-20T20:24Z",
         "by": "claudecode",
-        "note": "Read rules, scope file and the assembly record; master v01 found on the NAS"
+        "note": "Master hash matches on Mini and NAS; format, loudness and 18 stills checked; chapter times read from the cut"
       },
       "rerouted_from": {
         "needs": "mini",
