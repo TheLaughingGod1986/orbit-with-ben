@@ -773,9 +773,11 @@ unresolved Cursor target. Handle the following before changing the active-engine
 | `com.owb.cursor-worker` | Its local wrapper still tells Cursor it is Chief and chooses old inbox work. It has a pause-file check but no retirement guard. Drain it, save its installed definition, and keep it booted out at cutover. Do not restart this obsolete prompt; the routed specialist worker supplied by the current relay replaces this legacy path. Retain files for rollback. |
 | `com.owb.grokbot-watchdog` | Its wrapper can restart the desktop app through independent relaunch and updater modes as well as disconnect recovery. No pause/retirement check was found. Boot it out **before** draining the app/relay; retain its definition. Resume only after all restart paths obey the cutover pause and the app's engine context and notification route are verified. Changing the notification command alone does not migrate the app. |
 | `com.ben.grok-bot` | The app's own launch agent can also start it. Include its loaded state and app processes in the drain so disabling the watchdog alone cannot reopen an old worker. Keep app state and login unchanged; restore only after the engine context is verified. |
-| `com.cursor.mac-mini-worker` | The separate worker wrapper contains an old-engine reference; it is not the legacy scheduled Cursor wrapper above. Drain and inspect its working directory/prompt and child worker state before resuming it. |
-| `com.cursor.mac-mini-hos-worker`, `com.cursor.mac-mini-repo-workers` | Direct worker wrappers resolved; absence of the old literal root proves nothing about remote prompts or children. Drain studio-capable work and verify channel versus engine roots. Do not change unrelated project workers. |
-| `com.hos.desk`, `com.hos.local-wan-ltx-queue-reminder` | Channel-local programs resolved. Preserve channel roots; inspect subprocess/queue references before resumption. Keep their read markers. |
+| `com.cursor.mac-mini-worker` | Inspected remote Cursor worker, not the scheduled Chief prompt. Its permitted directories include OWB and an unrelated project. Drain studio sessions, preserve both directories and local worker identity; add the new studio checkout and explicit engine/channel environment in a reviewed proposal. Remote instructions and child state still require cutover verification. |
+| `com.cursor.mac-mini-hos-worker` | Inspected remote Cursor worker permits the HOS checkout only. Keep that channel directory and worker identity; prepare access to the new engine and explicit engine/channel environment. Drain studio sessions and verify remote instructions before resumption. |
+| `com.cursor.mac-mini-repo-workers` | Inspected supervisor permits seven unrelated project directories, no studio/channel checkout. Leave its installed definition and loaded state unchanged; it is outside this migration. |
+| `com.hos.desk` | Use the prepared channel-local adapter; preserve read markers and channel root. |
+| `com.hos.local-wan-ltx-queue-reminder` | Inspected shell script only creates a local handoff directory and appends reminder text. It neither dispatches work nor downloads or generates media. Leave it unchanged; it is not a queue writer. |
 | `com.hos.cdp-browsers` | Preserve signed-in profiles and existing ports. This is not an engine writer; do not close Chrome as part of the move. |
 | `com.owb.missed-runs` | The installed plist fails XML parsing. Establish loaded state separately (launchd may hold an earlier valid definition). Keep its old bytes for rollback and prepare a valid replacement before relying on it for post-move monitoring. Do not overwrite it during preparation. |
 | `com.owb.ai-spend-daily`, `com.owb.tab-janitor` | Use the prepared spend service adapter. The janitor installed argv is now verified as the legacy shell entrypoint; use its prepared direct-Python adapter, retaining the 300-second interval, cache namespace and browser policy. Drain the old timer before switching, and keep exactly one loaded janitor. Neither adapter is installed. |
@@ -891,3 +893,29 @@ then install the reviewed proposal with the real production roots. Check the loa
 path without starting a second inbox worker. Preserve the existing HOS Chief precedence and role routing;
 path migration is not authority to change either. Rollback restores the saved definition after draining new
 children and preserves any newly acknowledged messages. No refresh or restart was performed in preparation.
+
+
+## Remote Cursor wrapper boundary, 20 November continuation
+
+Direct inspection resolves the three remaining Cursor wrapper classifications; evidence and source hashes are
+in `jobs/reviews/J3012/REMOTE_WORKERS_2026-11-20.md`. Both studio-capable remote workers were loaded and running.
+A running remote worker is not evidence that a task is active or drained. Neither inspected wrapper provides a
+studio pause/retirement check. Do not rely on the relay pause to stop them accepting remote work.
+
+At cutover, drain existing studio sessions before booting out these two service labels. Preserve their worker
+names, data directories, login/auth setup and existing permitted directories. The OWB path remains a valid
+channel checkout: replacing every occurrence with the engine path would wrongly remove channel access.
+Prepare a separate proposal that adds the new engine directory to each studio-capable worker and binds
+STUDIO_REPO plus the three channel roots explicitly, while preserving unrelated directory access. Review the
+remote client's permitted-root semantics and current instructions before installation; these wrappers contain
+no task prompt, so their file contents cannot prove that a remote session will choose the correct engine.
+
+Resume only after checking the loaded definition and effective worker roots, proving that an old engine queue
+write refuses, and verifying one controlled new-engine task without duplicate dispatch. This is in addition to
+the relay/board/tick acceptance, not a replacement. If a safe proposal or session drain cannot be verified,
+leave the two remote services stopped during the announced window and use the routed relay; restore their
+saved definitions and original loaded state on rollback after draining new sessions. Do not stop the separate
+unrelated-project supervisor or alter the log-only HOS reminder as part of this move.
+
+This inspection did not execute a worker, restart a service, alter a wrapper, inspect credential values or
+change any remote prompt. The installed/loaded MacBook inventory is still required separately.
