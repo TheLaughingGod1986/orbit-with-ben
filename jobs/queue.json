@@ -285041,10 +285041,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-20T05:39Z",
+      "eta": "2026-11-20T07:39Z",
       "created_by": "relay",
       "created_at": "2026-11-19T23:14Z",
       "result": "",
@@ -285103,6 +285103,11 @@
           "at": "2026-11-20T05:39Z",
           "by": "codex",
           "what": "rerouted to codex on gpt-6-astra: Elected acting Chief taking the explicitly assigned J3175 review to closure; worker findings reviewed and parent reopened with evidence."
+        },
+        {
+          "at": "2026-11-20T05:39Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief (chief): record jobs.py wait J2847 --recheck J3175 (next check 2026-11-20T08:00:00Z) and close J3175",
@@ -285122,7 +285127,15 @@
       "taskKeys": [
         "OWB:004"
       ],
-      "escalated_at": "2026-11-20T04:21Z"
+      "escalated_at": "2026-11-20T04:21Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T05:39Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3176",
