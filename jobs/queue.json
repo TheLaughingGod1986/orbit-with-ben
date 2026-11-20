@@ -292168,13 +292168,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-11-20T22:39Z",
-      "eta": "2026-11-20T23:39Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-20T22:30Z",
-      "result": "",
+      "result": "needs Ben: sign in to the Field Order History Studio window already open on the Mini, then approve the analytics sign-in and, once pull request 1089 is on main, the upload sign-in. About five minutes. Nothing else.",
       "history": [
         {
           "at": "2026-11-20T22:30Z",
@@ -292210,6 +292210,11 @@
           "at": "2026-11-20T22:48Z",
           "by": "cursor",
           "what": "step 3 of 4 done: Browser is open on port 9224, signed out. Pilot 1 dry-run passed with no upload. PRs 1089 and ww2-channel 26. YouTube is not scheduled."
+        },
+        {
+          "at": "2026-11-20T22:48Z",
+          "by": "cursor",
+          "what": "blocked: needs Ben: sign in to the Field Order History Studio window already open on the Mini, then approve the analytics sign-in and, once pull request 1089 is on main, the upload sign-in. About five minutes. Nothing else."
         }
       ],
       "remaining_action": "Ben signs in to the Field Order History Studio window and the two API prompts",
@@ -292227,7 +292232,12 @@
       "taskKeys": [
         "WW2:001",
         "WW2:002"
-      ]
+      ],
+      "hold": {
+        "type": "ben",
+        "condition": "needs Ben: sign in to the Field Order History Studio window already open on the Mini, then approve the analytics sign-in and, once pull request 1089 is on main, the upload sign-in. About five minutes. Nothing else.",
+        "check_at": "2026-11-21T04:48:18+00:00"
+      }
     },
     {
       "id": "J3255",
