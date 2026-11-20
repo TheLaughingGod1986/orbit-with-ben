@@ -56,7 +56,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3198 | any | open | – | – | review · `gemini-argon` · Verify condition for J3178 |  |
 | J3199 | any | open | – | – | review · `gemini-argon` · Verify condition for J3176 |  |
 | J3205 | mini | open (after J3204) | – | – | WW2:003 edit · for codex · assembly · WW2 pilot 003: picture, maps, edit and thumbnail, to Ben's watch |  |
-| J3227 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J3227 | any | claimed | gemini | 2026-11-21T00:10Z | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J3229 | any | blocked | macbook | – | review · `gemini-argon` · Verify condition for J2040 |  |
 | J3231 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Weekly search research (Orbit + Field Order History): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
 | J3245 | any | blocked | macbook | – | script · HOS: learn from our data, add two new films to the backlog |  |

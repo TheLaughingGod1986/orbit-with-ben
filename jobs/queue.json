@@ -290079,10 +290079,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-20T23:10Z",
+      "eta": "2026-11-21T00:10Z",
       "created_by": "refill",
       "created_at": "2026-11-20T11:36Z",
       "result": "",
@@ -290136,6 +290136,11 @@
           "at": "2026-11-20T23:10Z",
           "by": "gemini",
           "what": "reopened: Acting Chief (gemini) PASS: HOS PR #693 merged (c199174fe39e); follow-up Mini Studio/records job J3259 queued; closing J3227"
+        },
+        {
+          "at": "2026-11-20T23:10Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Write up the History of Science listing check and hand the two fixes to the Chief",
@@ -290144,7 +290149,15 @@
       "taskKeys": [
         "HOS:005"
       ],
-      "escalated_at": "2026-11-20T14:53Z"
+      "escalated_at": "2026-11-20T14:53Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T23:10Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3228",
