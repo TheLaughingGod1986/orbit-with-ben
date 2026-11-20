@@ -1,5 +1,5 @@
 {
-  "next_id": 3248,
+  "next_id": 3249,
   "jobs": [
     {
       "id": "J0001",
@@ -289447,13 +289447,17 @@
           "at": "2026-11-20T18:11Z",
           "by": "gemini",
           "what": "done: Completed full History of Science November 2026 audit (05_Analytics/hos/AUDIT_2026-11.md) in PR #1078 (branch gemini/J3223-complete, commit cbf9c0cdcc). Populated Section 3 (countries, ages, gender: Shorts vs Longs) and Section 4 (exact lifetime & 28d search terms + long-form search terms + per-video mapping) from live Mini YouTube Analytics API v2 (settled 26 Aug-17 Nov) cross-verified with Studio Advanced Mode (26 Aug-19 Nov), and upgraded Sections 1-2 to exact lifetime daily Shorts/longs and per-video traffic splits. Key new findings: 78.8% aged 25-54 (70.2% M / 29.8% F; 68.9% M Shorts; 98% new viewers); Anglosphere US+GB+CA+AU = 940 reported views (21.6% of 4,352 total / 67.5% of 1,392 attributed; 86.3% UK at 811, US only 109 / 2.5%, AU 20 / 0.5%, CA <20 suppressed; only GB 347 and IN 77 cleared threshold in last 28d; Longs n=233 suppressed); search led by curriculum queries (swan neck flask 13, edward jenner 10, Dalton/CBSE queries, history of the periodic table 8v/10m) plus unrelated two halves of gold (40v). Read-only, GBP0, zero video/schedule changes; ready for Chief merge and J3224 handoff."
+        },
+        {
+          "at": "2026-11-20T18:52Z",
+          "by": "claude",
+          "what": "No longer urgent: Ben approved the HOS 2027 plan with Grok at 18:44 (OWB #1079). Sections 3 and 4C are still worth finishing: they feed the plan's six-week review."
         }
       ],
       "remaining_action": "PR #1078 opened for Chief merge; closing J3223 and posting report",
       "due": "2026-11-24T18:00:00Z",
       "kind": "review",
       "plain": "Find out exactly why History of Science's views have dropped, and who is actually watching",
-      "urgent": 6,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -291264,6 +291268,37 @@
       "due": "2026-11-20T22:00:00Z",
       "kind": "studio",
       "plain": "Set missing Related video on 2024 YR4 Short (93JL_IK57EM) to VBaYRPp85Sw"
+    },
+    {
+      "id": "J3248",
+      "title": "Relay: Grok Bot is working but counted as down: longer ack window, rulings count as progress, stop the 15-minute duty posts, record its rulings, show it on the board",
+      "needs": "any",
+      "repo": "owb",
+      "body": "**Why (Ben, 20 Nov, in chat: \"it's not doing work, but it's messaging me about this all the time. I think there might be a connection wrong, so Grok Bot is definitely working\"; Claude, 20 Nov 18:52Z).** Grok Bot IS working. On 20 Nov it posted rulings on #954 for J3201/J3202 (10:17Z), J3202 (10:39Z) and J3216/J3213 (10:53Z); merged ww2-channel #14 and OWB #1063/#1064 (11:03Z); recorded J3244 with jobs.py (18:04Z); and built the History of Science 2027 plan Ben approved in chat (OWB #1079, 18:45Z). Even so, the relay marks it down ('Chief inbox delivered but not progressed within the acknowledgement window': CHIEF_DUTY_ACK_MIN is 30 minutes, and a stall clears only on a jobs.py run, never on a ruling post). It re-posts '[Chief] Chief duties for Grok Bot: ...' to #954 every 10-20 minutes (more than 20 such posts on 19-20 Nov), which is the stream of messages Ben sees. The board then shows Grok as Idle with 0 done.\n\n**Do (scripts/chief_relay.py and the board; tests; one PR).**\n1. ACK WINDOW: give Grok Bot (agent 'chief') its own window, CHIEF_DUTY_ACK_MIN_CHIEF, default 180 minutes, as Claude has 150. Grok is a desktop app working at its own pace.\n2. RULINGS COUNT AS PROGRESS: a plain '[Chief]' post by Grok (passing NOT_GROK) that names a delivered duty job id counts as progress on that duty and clears a stall mark. A post with no job id stays talk.\n3. NO SPAM: post the duties list only when it changes (new or removed ids), at most once every 2 hours, and at most once a day for an unchanged list. Grok reads the queue anyway.\n4. RECORD GROK'S RULINGS: when a Grok ruling names a job that is still blocked or parked for the Chief, queue a small records-only job ('Apply Grok's ruling <comment id> to <job>', needs any) so the queue matches the thread. Grok said on 20 Nov 18:45Z: 'I am not updating it here'. Use the exact comment id as evidence, and never infer an approval the post does not state.\n5. BOARD: the Agents/Machines card for Grok counts its last-24-hour work: jobs.py records by 'chief' plus ruling posts naming jobs. It shows 'Working (rulings on the thread)' when it posted in the last 3 hours, not 'Idle'.\n6. Tests: test_chief_relay.py (ack window, ruling-as-progress, duty de-dup) and the board tests. Runbook line: set CHIEF_DUTY_ACK_MIN_CHIEF on the Mini if needed.\n\n**Guards.** No change to Chief authority or Ben gates. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-20T18:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T18:52Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Grok ack window 180 min; ruling posts naming a duty job clear the stall; duties posted only on change; record Grok rulings; board credits Grok; tests; PR",
+      "due": "2026-11-21T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Fix the system so it sees Grok's work, and stop it posting the same duty list every few minutes",
+      "urgent": 6
     }
   ],
   "focus": [

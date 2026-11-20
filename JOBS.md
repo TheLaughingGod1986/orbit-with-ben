@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2035, J2529, J2993.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2035, J2529, J2993, J3248.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -72,6 +72,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3245 | any | blocked | macbook | – | script · HOS: learn from our data, add two new films to the backlog |  |
 | J3246 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J1275 |  |
 | J3247 | mini | open | – | – | studio · OWB Short 93JL_IK57EM (2024 YR4): set Related video to VBaYRPp85Sw in Studio (J3243 fault fix) |  |
+| J3248 | any | open | – | – | assembly · Relay: Grok Bot is working but counted as down: longer ack window, rulings count as progress, stop the 15-minute duty posts, record its rulings, show it on the board |  |
 
 Recently finished:
 
