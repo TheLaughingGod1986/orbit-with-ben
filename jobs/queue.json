@@ -1,5 +1,5 @@
 {
-  "next_id": 3261,
+  "next_id": 3262,
   "jobs": [
     {
       "id": "J0001",
@@ -292706,6 +292706,35 @@
         "at": "2026-11-20T23:50Z",
         "by": "macbook-2"
       }
+    },
+    {
+      "id": "J3261",
+      "title": "HOS 009: Assemble v02 long master (E2 first 30 s, Teach cards/timeline, separate back-to-back graphics)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting Chief (Gemini) ruling on J3260 / J2036 (HOS 009 long master v01, 20 Nov 2026): Option A — bounded £0 v02 re-edit to bring HOS 009 into full compliance with HOS-2026-11-E2 and Teach on screen before Ben's final watch.\n\nScope & locks (HOS 009 only; £0 / 0 credits — ZERO new Flow, Vertex, or ElevenLabs spend):\n- Preserve prior master v01 (09_Assembly/j2035_v01/hos009_long_master_v01.mp4, sha256 802b5c7e...) untouched on NAS; write v02 to a fresh versioned folder 09_Assembly/j2035_v02/hos009_long_master_v02.mp4 with full SOURCE_MAP.json, stems/, gates/, and SHA256SUMS.txt.\n- Preserve locked 5-part VO (VO_TAKES_KEEP.json, 530743c5...) word for word, accepted £0 score hos_009_score_v04_synth.wav (151ba46a...), and all 90 settled picture rows including J2631 (e35f9a98...) and J2632 r4 KEEP (23c832b0...).\n\nRequired v02 fixes (all in studio/RULES.md):\n1. HOS-2026-11-E2 first 30 seconds (studio/RULES.md lines 90-106):\n   - CUTS (0:00-0:30): every visual cut under 4.5 s, at least 7 distinct moving plates, no hold over 4.5 s (re-cut 01_moon_falling, 02_apple_and_moon, 03_table_three + c1/c2 tighter and interleave existing KEEP moving plates within picture_qa reuse/10 s separation rules; no new Flow mints). Keep first-minute milestones intact and keep Explorer out of the first minute.\n   - PROOF (0:05-0:15): physical proof / apparatus already moving (apple + Moon, table with apple/brass cannon/sums; no exterior establishing shot). Save 0:05-0:15 proof stills for J2036.\n   - EARLY DATA+SCALE (0:25-0:40): render one house-style animated inked DATA+SCALE graphic/overlay between 0:25 and 0:40 riding the locked VO spoken at 26.02-31.94 s (\"For thousands of years, people believed the sky followed different rules from the Earth\") — e.g. inked span contrasting ancient sky-circles to 1665 / two sets of rules, strictly sourced in 01_Script/FACT_NOTES_v01.md, <= 4 words per label, no invented numbers, over/alternating with moving plates.\n2. Teach on screen (studio/RULES.md lines 55-88):\n   - Render animated house-style edit overlays (white Didot italic or cream-on-brown inked teach card, fade/ink in 0.3-0.6 s, <= 4 s hold, never Ken-Burned, one label at a time, off hero and Explorer) covering the script's sourced WHO (Isaac Newton 1642-1727 — Cambridge student; Edmond Halley 1656-1742 — English astronomer), WHEN (all 8 dates/eras), FACT (all 4 facts: Fitted in quart pot, Never hit his head, Halley paid for printing, Returned on Christmas night), and the 26 planned side_label beats from 07_Edit-Project/parts/part-0*_plates_v05.json & 01_Script/FACT_NOTES_v01.md. Record every overlay/card in SOURCE_MAP.json.\n   - Build and lay the animated timeline graphic (1642 · 1665-1667 · 1684 · 1687 · 1758; scale: twenty years from the plague orchard 1666 to the Principia 1687, FACT_NOTES_v01.md line 118) at its Part 4 beat (~6:10) in house inked/cream style, counting as a DATA moment.\n   - Separate back-to-back full-frame teach graphics: insert an existing KEEP moving plate between p4_03_sixty_earths and p4_04_dots_square so no two full-frame teach graphics run back to back anywhere in the film (and keep p4_05_minute_second within picture_qa/polish_gate rules; retain Grok #7046684862 split-panel reviewed_ok only for 05_minute_second if applicable).\n3. Gates & handoff to J2036:\n   - Run picture_qa (PASS, 0 fail), polish_gate (PASS, 0 fail), music_gate on cut (PASS), sfx_kit.py level (PASS) on hos009_long_master_v02.mp4.\n   - Generate 1 s still sheet for card verification and 0:05-0:15 PROOF stills on NAS so J2036 can finish QA cleanly.\n   - Update 02_Video-Projects/009_The-Falling-Moon-Gravity/status.json via PR. Do not claim audio or moving-video watch (stays with Ben's final watch). No YouTube, Buffer, schedule, privacy, or upload changes.\n",
+      "ref": "J2036",
+      "film": "009",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-20T23:56Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T23:56Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build HOS 009 v02 master with E2 opening, Teach overlays/timeline, separated graphics, and passing gates",
+      "kind": "assembly",
+      "plain": "Re-edit the Gravity long master v02 at zero cost to add the faster opening, early graphic, teaching cards and timeline"
     }
   ],
   "focus": [

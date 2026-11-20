@@ -65,6 +65,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3255 | mini | open (after J3254) | – | – | studio · YouTube and Studio settings audit for growth: every channel setting, upload default, layout, playlist and eligibility; fix the safe ones, ask Ben the rest |  |
 | J3258 | mini | open (after J3254) | – | – | studio · History of Science: take the two shared upload files from #1089 and add the uploadFor hook, so HOS uploads keep working |  |
 | J3260 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Verify condition for J2036 |  |
+| J3261 | mini | open | – | – | 009 edit · assembly · HOS 009: Assemble v02 long master (E2 first 30 s, Teach cards/timeline, separate back-to-back graphics) | J2036 |
 
 Recently finished:
 
