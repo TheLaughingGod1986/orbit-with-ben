@@ -1,5 +1,5 @@
 {
-  "next_id": 3204,
+  "next_id": 3212,
   "jobs": [
     {
       "id": "J0001",
@@ -269998,6 +269998,11 @@
           "at": "2026-11-18T20:46Z",
           "by": "relay",
           "what": "condition verification queued: J3075"
+        },
+        {
+          "at": "2026-11-20T10:21Z",
+          "by": "claude",
+          "what": "Ben, 20 Nov: no ElevenLabs music for WW2 until the 30 Nov reset. If pilot 2's score is not already in, use a zero-spend music bed."
         }
       ],
       "remaining_action": "Route the finished candidate to a capable film reviewer and resolve remaining labels and voice review",
@@ -287734,6 +287739,252 @@
         "HOS:124",
         "HOS:125"
       ]
+    },
+    {
+      "id": "J3204",
+      "title": "WW2 pilot 003: narration in Ben's voice (B-29)",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Ben's call, 20 Nov 2026 (in chat, 'Option 1 for November'):** stay on ElevenLabs Creator until the 30 Nov 10:50Z reset. ElevenLabs is for narration only: no ElevenLabs music for WW2 films this cycle. Score with the studio's zero-spend music beds (synthesised or public-domain, licence logged), as the J3136/J3137 beds do. Budget left this cycle: 51,337 credits (live read, 19 Nov). Planned: pilot 3 then films 004, 005 and 006 (~9,500 each, measured on pilot 1: 20,431 characters on eleven_v3 plus the Scribe check), then Orbit's every-planet narration (~8,000) and a 3,000 reserve for History of Science fixes.\n\n**Do.** Narrate WW2 film 003 from its locked script master (J2997), exactly as J2992 and J2995 did for pilots 1 and 2: same voice (Ben Orbit Narrator), eleven_v3 at speed 1.04, `04_Audio/tools/vo_take.py` under desk-lock elevenlabs, 0.7 s gaps between chapters. Then the Scribe transcript match, the clipped-word boundary check and loudness (-19 to -21 LUFS, peak under -1 dB). Masters on studio-live under the film's 02_Voiceover. Report in a PR on ww2-channel.\n\n**Budget guard.** Read the live ElevenLabs subscription immediately before the take. Go ahead only if what is left after this film's estimate is still at least 11,000 (Orbit's every-planet narration plus the History of Science reserve). Otherwise park for the Chief with the balance, and spend nothing. Voice at chapter level; re-take a chapter, never the whole film. Log the spend in the ai_spend ledger against the film.\n\n**Guards.** Narration only; no music generation. £0 beyond the plan.\n",
+      "ref": "",
+      "film": "WW2:003",
+      "stage": "vo",
+      "after": "J2997",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-20T10:21Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T10:21Z",
+          "by": "claude",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "Narrate pilot 3 from its locked script with vo_take.py (eleven_v3, Ben Orbit Narrator), checks, budget guard; narration only",
+      "due": "2026-11-22T18:00:00Z",
+      "for": "gemini",
+      "kind": "vo",
+      "plain": "Record the narration for the third WW2 film, about the B-29 bomber",
+      "urgent": 6
+    },
+    {
+      "id": "J3205",
+      "title": "WW2 pilot 003: picture, maps, edit and thumbnail, to Ben's watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Ben's call, 20 Nov 2026 (in chat, 'Option 1 for November'):** stay on ElevenLabs Creator until the 30 Nov 10:50Z reset. ElevenLabs is for narration only: no ElevenLabs music for WW2 films this cycle. Score with the studio's zero-spend music beds (synthesised or public-domain, licence logged), as the J3136/J3137 beds do. Budget left this cycle: 51,337 credits (live read, 19 Nov). Planned: pilot 3 then films 004, 005 and 006 (~9,500 each, measured on pilot 1: 20,431 characters on eleven_v3 plus the Scribe check), then Orbit's every-planet narration (~8,000) and a 3,000 reserve for History of Science fixes.\n\n**Do.** Picture, maps, edit and thumbnail for WW2 pilot 003 to Ben's watch, exactly as J2993 does for pilot 1: build on the narration from the pilot-3 voice job and on J2998's pictures and maps; follow J2993's archive ruling; score with a zero-spend music bed (no ElevenLabs music this cycle); QA; Ben-watch package on his board. £0.\n",
+      "ref": "",
+      "film": "WW2:003",
+      "stage": "edit",
+      "after": "J3204",
+      "eta_min": 240,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-20T10:21Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T10:21Z",
+          "by": "claude",
+          "what": "added for codex"
+        }
+      ],
+      "remaining_action": "Edit pilot 3 on its narration and J2998's pictures, zero-spend music bed, QA, then to Ben's board",
+      "due": "2026-11-30T18:00:00Z",
+      "for": "codex",
+      "kind": "assembly",
+      "plain": "Edit the third WW2 film and put it on Ben's board to watch"
+    },
+    {
+      "id": "J3206",
+      "title": "WW2 film 004: narration in Ben's voice (submarine torpedoes)",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Ben's call, 20 Nov 2026 (in chat, 'Option 1 for November'):** stay on ElevenLabs Creator until the 30 Nov 10:50Z reset. ElevenLabs is for narration only: no ElevenLabs music for WW2 films this cycle. Score with the studio's zero-spend music beds (synthesised or public-domain, licence logged), as the J3136/J3137 beds do. Budget left this cycle: 51,337 credits (live read, 19 Nov). Planned: pilot 3 then films 004, 005 and 006 (~9,500 each, measured on pilot 1: 20,431 characters on eleven_v3 plus the Scribe check), then Orbit's every-planet narration (~8,000) and a 3,000 reserve for History of Science fixes.\n\n**Do.** Narrate WW2 film 004 from its locked script master (J3000), exactly as J2992 and J2995 did for pilots 1 and 2: same voice (Ben Orbit Narrator), eleven_v3 at speed 1.04, `04_Audio/tools/vo_take.py` under desk-lock elevenlabs, 0.7 s gaps between chapters. Then the Scribe transcript match, the clipped-word boundary check and loudness (-19 to -21 LUFS, peak under -1 dB). Masters on studio-live under the film's 02_Voiceover. Report in a PR on ww2-channel.\n\n**Budget guard.** Read the live ElevenLabs subscription immediately before the take. Go ahead only if what is left after this film's estimate is still at least 11,000 (Orbit's every-planet narration plus the History of Science reserve). Otherwise park for the Chief with the balance, and spend nothing. Voice at chapter level; re-take a chapter, never the whole film. Log the spend in the ai_spend ledger against the film.\n\n**Guards.** Narration only; no music generation. £0 beyond the plan.\n",
+      "ref": "",
+      "film": "WW2:004",
+      "stage": "vo",
+      "after": "J3204",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-20T10:21Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T10:21Z",
+          "by": "claude",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "Narrate WW2 film 004 from its locked script, checks, budget guard; narration only; after the previous film's narration",
+      "due": "2026-11-29T18:00:00Z",
+      "for": "gemini",
+      "kind": "vo",
+      "plain": "Record the narration for WW2 film 004, about submarine torpedoes"
+    },
+    {
+      "id": "J3207",
+      "title": "WW2 film 004: gather the archive photos and draw the maps",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Ben's call, 20 Nov 2026 (in chat, 'Option 1 for November'):** stay on ElevenLabs Creator until the 30 Nov 10:50Z reset. ElevenLabs is for narration only: no ElevenLabs music for WW2 films this cycle. Score with the studio's zero-spend music beds (synthesised or public-domain, licence logged), as the J3136/J3137 beds do. Budget left this cycle: 51,337 credits (live read, 19 Nov). Planned: pilot 3 then films 004, 005 and 006 (~9,500 each, measured on pilot 1: 20,431 characters on eleven_v3 plus the Scribe check), then Orbit's every-planet narration (~8,000) and a 3,000 reserve for History of Science fixes.\n\n**Do.** Gather the archive photos and draw the maps for WW2 film 004 from its script and shot list (J3000), exactly as J2998 did for pilot 3. Only US federal public-domain or IWM Official Collection photos, with provenance logged (the J2993 ruling covers IWM via Commons when iwm.org.uk returns 403), and code-drawn maps and diagrams. £0. Report in a PR on ww2-channel. No AI pictures of real events.\n",
+      "ref": "",
+      "film": "WW2:004",
+      "stage": "picture",
+      "after": "J3000",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-20T10:21Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T10:21Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Archive photos with provenance and code-drawn maps for WW2 film 004; £0",
+      "due": "2026-11-29T18:00:00Z",
+      "kind": "image",
+      "plain": "Find the archive photos and draw the maps for WW2 film 004, about submarine torpedoes"
+    },
+    {
+      "id": "J3208",
+      "title": "WW2 film 005: narration in Ben's voice (the old destroyer)",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Ben's call, 20 Nov 2026 (in chat, 'Option 1 for November'):** stay on ElevenLabs Creator until the 30 Nov 10:50Z reset. ElevenLabs is for narration only: no ElevenLabs music for WW2 films this cycle. Score with the studio's zero-spend music beds (synthesised or public-domain, licence logged), as the J3136/J3137 beds do. Budget left this cycle: 51,337 credits (live read, 19 Nov). Planned: pilot 3 then films 004, 005 and 006 (~9,500 each, measured on pilot 1: 20,431 characters on eleven_v3 plus the Scribe check), then Orbit's every-planet narration (~8,000) and a 3,000 reserve for History of Science fixes.\n\n**Do.** Narrate WW2 film 005 from its locked script master (J3001), exactly as J2992 and J2995 did for pilots 1 and 2: same voice (Ben Orbit Narrator), eleven_v3 at speed 1.04, `04_Audio/tools/vo_take.py` under desk-lock elevenlabs, 0.7 s gaps between chapters. Then the Scribe transcript match, the clipped-word boundary check and loudness (-19 to -21 LUFS, peak under -1 dB). Masters on studio-live under the film's 02_Voiceover. Report in a PR on ww2-channel.\n\n**Budget guard.** Read the live ElevenLabs subscription immediately before the take. Go ahead only if what is left after this film's estimate is still at least 11,000 (Orbit's every-planet narration plus the History of Science reserve). Otherwise park for the Chief with the balance, and spend nothing. Voice at chapter level; re-take a chapter, never the whole film. Log the spend in the ai_spend ledger against the film.\n\n**Guards.** Narration only; no music generation. £0 beyond the plan.\n",
+      "ref": "",
+      "film": "WW2:005",
+      "stage": "vo",
+      "after": "J3206",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-20T10:21Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T10:21Z",
+          "by": "claude",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "Narrate WW2 film 005 from its locked script, checks, budget guard; narration only; after the previous film's narration",
+      "due": "2026-11-29T18:00:00Z",
+      "for": "gemini",
+      "kind": "vo",
+      "plain": "Record the narration for WW2 film 005, about the old destroyer"
+    },
+    {
+      "id": "J3209",
+      "title": "WW2 film 005: gather the archive photos and draw the maps",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Ben's call, 20 Nov 2026 (in chat, 'Option 1 for November'):** stay on ElevenLabs Creator until the 30 Nov 10:50Z reset. ElevenLabs is for narration only: no ElevenLabs music for WW2 films this cycle. Score with the studio's zero-spend music beds (synthesised or public-domain, licence logged), as the J3136/J3137 beds do. Budget left this cycle: 51,337 credits (live read, 19 Nov). Planned: pilot 3 then films 004, 005 and 006 (~9,500 each, measured on pilot 1: 20,431 characters on eleven_v3 plus the Scribe check), then Orbit's every-planet narration (~8,000) and a 3,000 reserve for History of Science fixes.\n\n**Do.** Gather the archive photos and draw the maps for WW2 film 005 from its script and shot list (J3001), exactly as J2998 did for pilot 3. Only US federal public-domain or IWM Official Collection photos, with provenance logged (the J2993 ruling covers IWM via Commons when iwm.org.uk returns 403), and code-drawn maps and diagrams. £0. Report in a PR on ww2-channel. No AI pictures of real events.\n",
+      "ref": "",
+      "film": "WW2:005",
+      "stage": "picture",
+      "after": "J3001",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-20T10:21Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T10:21Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Archive photos with provenance and code-drawn maps for WW2 film 005; £0",
+      "due": "2026-11-29T18:00:00Z",
+      "kind": "image",
+      "plain": "Find the archive photos and draw the maps for WW2 film 005, about the old destroyer"
+    },
+    {
+      "id": "J3210",
+      "title": "WW2 film 006: narration in Ben's voice (the wooden bomber)",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Ben's call, 20 Nov 2026 (in chat, 'Option 1 for November'):** stay on ElevenLabs Creator until the 30 Nov 10:50Z reset. ElevenLabs is for narration only: no ElevenLabs music for WW2 films this cycle. Score with the studio's zero-spend music beds (synthesised or public-domain, licence logged), as the J3136/J3137 beds do. Budget left this cycle: 51,337 credits (live read, 19 Nov). Planned: pilot 3 then films 004, 005 and 006 (~9,500 each, measured on pilot 1: 20,431 characters on eleven_v3 plus the Scribe check), then Orbit's every-planet narration (~8,000) and a 3,000 reserve for History of Science fixes.\n\n**Do.** Narrate WW2 film 006 from its locked script master (J3002), exactly as J2992 and J2995 did for pilots 1 and 2: same voice (Ben Orbit Narrator), eleven_v3 at speed 1.04, `04_Audio/tools/vo_take.py` under desk-lock elevenlabs, 0.7 s gaps between chapters. Then the Scribe transcript match, the clipped-word boundary check and loudness (-19 to -21 LUFS, peak under -1 dB). Masters on studio-live under the film's 02_Voiceover. Report in a PR on ww2-channel.\n\n**Budget guard.** Read the live ElevenLabs subscription immediately before the take. Go ahead only if what is left after this film's estimate is still at least 11,000 (Orbit's every-planet narration plus the History of Science reserve). Otherwise park for the Chief with the balance, and spend nothing. Voice at chapter level; re-take a chapter, never the whole film. Log the spend in the ai_spend ledger against the film.\n\n**Guards.** Narration only; no music generation. £0 beyond the plan.\n",
+      "ref": "",
+      "film": "WW2:006",
+      "stage": "vo",
+      "after": "J3208",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-20T10:21Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T10:21Z",
+          "by": "claude",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "Narrate WW2 film 006 from its locked script, checks, budget guard; narration only; after the previous film's narration",
+      "due": "2026-11-29T18:00:00Z",
+      "for": "gemini",
+      "kind": "vo",
+      "plain": "Record the narration for WW2 film 006, about the wooden bomber"
+    },
+    {
+      "id": "J3211",
+      "title": "WW2 film 006: gather the archive photos and draw the maps",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Ben's call, 20 Nov 2026 (in chat, 'Option 1 for November'):** stay on ElevenLabs Creator until the 30 Nov 10:50Z reset. ElevenLabs is for narration only: no ElevenLabs music for WW2 films this cycle. Score with the studio's zero-spend music beds (synthesised or public-domain, licence logged), as the J3136/J3137 beds do. Budget left this cycle: 51,337 credits (live read, 19 Nov). Planned: pilot 3 then films 004, 005 and 006 (~9,500 each, measured on pilot 1: 20,431 characters on eleven_v3 plus the Scribe check), then Orbit's every-planet narration (~8,000) and a 3,000 reserve for History of Science fixes.\n\n**Do.** Gather the archive photos and draw the maps for WW2 film 006 from its script and shot list (J3002), exactly as J2998 did for pilot 3. Only US federal public-domain or IWM Official Collection photos, with provenance logged (the J2993 ruling covers IWM via Commons when iwm.org.uk returns 403), and code-drawn maps and diagrams. £0. Report in a PR on ww2-channel. No AI pictures of real events.\n",
+      "ref": "",
+      "film": "WW2:006",
+      "stage": "picture",
+      "after": "J3002",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-20T10:21Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T10:21Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Archive photos with provenance and code-drawn maps for WW2 film 006; £0",
+      "due": "2026-11-29T18:00:00Z",
+      "kind": "image",
+      "plain": "Find the archive photos and draw the maps for WW2 film 006, about the wooden bomber"
     }
   ],
   "focus": [

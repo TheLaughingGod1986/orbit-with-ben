@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2035, J2529, J2993.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2035, J2529, J2993, J3204.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -66,6 +66,14 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3200 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3137 |  |
 | J3202 | mini | claimed | macbook-2 | 2026-11-20T12:20Z | 086 topic · for gemini · review · `gemini-argon` · Rule-E topic go/no-go review: OWB 086 (Why Is Mars Red) and 087 (Every Meteor Shower Explained in 10 Minutes) from J3201 |  |
 | J3203 | any | claimed | claudecode | 2026-11-20T11:49Z | script · HOS: learn from our data, add two new films to the backlog |  |
+| J3204 | mini | open (after J2997) | – | – | WW2:003 vo · for gemini · vo · WW2 pilot 003: narration in Ben's voice (B-29) |  |
+| J3205 | mini | open (after J3204) | – | – | WW2:003 edit · for codex · assembly · WW2 pilot 003: picture, maps, edit and thumbnail, to Ben's watch |  |
+| J3206 | mini | open (after J3204) | – | – | WW2:004 vo · for gemini · vo · WW2 film 004: narration in Ben's voice (submarine torpedoes) |  |
+| J3207 | mini | open (after J3000) | – | – | WW2:004 picture · image · WW2 film 004: gather the archive photos and draw the maps |  |
+| J3208 | mini | open (after J3206) | – | – | WW2:005 vo · for gemini · vo · WW2 film 005: narration in Ben's voice (the old destroyer) |  |
+| J3209 | mini | open (after J3001) | – | – | WW2:005 picture · image · WW2 film 005: gather the archive photos and draw the maps |  |
+| J3210 | mini | open (after J3208) | – | – | WW2:006 vo · for gemini · vo · WW2 film 006: narration in Ben's voice (the wooden bomber) |  |
+| J3211 | mini | open (after J3002) | – | – | WW2:006 picture · image · WW2 film 006: gather the archive photos and draw the maps |  |
 
 Recently finished:
 
