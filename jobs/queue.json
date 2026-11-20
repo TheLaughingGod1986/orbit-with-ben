@@ -292327,9 +292327,14 @@
           "at": "2026-11-20T22:54Z",
           "by": "gemini",
           "what": "step 2 of 6 done: Recorded demonstrated audio_input+moving_video_input capability; watched OWB 026 (3 windows), OWB 025 (all 3 steepest API drop windows), and HOS 007 opening (found VACCA tofu glyph box + 13s meta-promise)"
+        },
+        {
+          "at": "2026-11-20T22:56Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: Finished watching all 10 extracted clips across OWB 026, OWB 025, and HOS 007; created clean worktree /Users/benjaminoats/_desk/worktrees/J3256"
         }
       ],
-      "remaining_action": "Watch remaining HOS 007 clips, design and build scripts/retention_autopsy.py + wire 48h/7d autopsy queueing into scripts/launch_check.py",
+      "remaining_action": "Write scripts/retention_autopsy.py, wire 48h/7d autopsies into scripts/launch_check.py, generate OWB/HOS test autopsies, update LEARNINGS, and run full test suite",
       "due": "2026-11-26T18:00:00Z",
       "kind": "review",
       "plain": "When a film underperforms, find out exactly where viewers leave and why, and fix the next film",
@@ -292343,11 +292348,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 6,
-        "at": "2026-11-20T22:54Z",
+        "at": "2026-11-20T22:56Z",
         "by": "gemini",
-        "note": "Recorded demonstrated audio_input+moving_video_input capability; watched OWB 026 (3 windows), OWB 025 (all 3 steepest AP"
+        "note": "Finished watching all 10 extracted clips across OWB 026, OWB 025, and HOS 007; created clean worktree /Users/benjaminoat"
       },
       "taskKeys": [
         "OWB:026",
