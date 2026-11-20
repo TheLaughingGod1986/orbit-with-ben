@@ -288847,13 +288847,27 @@
           "at": "2026-11-20T11:28Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-20T11:30Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-20T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Write 05_Analytics/hos/AUDIT_2026-11.md: trend and the drop, per-video table by cluster and source, audience geography and age, search terms; read-only",
       "due": "2026-11-24T18:00:00Z",
       "kind": "review",
       "plain": "Find out exactly why History of Science's views have dropped, and who is actually watching",
-      "urgent": 9
+      "urgent": 9,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J3224",
