@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2035, J2529, J2993, J3223.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2035, J2529, J2993, J3223, J3238.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -57,8 +57,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3176 | any | blocked | codex | – | 024 edit · chief · OWB 024 muon Short: decide whether to swap gc1hWQQJOq4 onto the v06 bed |  |
 | J3178 | mini | blocked | gemini | – | 013 picture · for gemini · qa · `gemini-argon` · HOS 013: continuous playback review of ten unresolved pass-one plates |  |
 | J3196 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3161 |  |
-| J3198 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3178 |  |
-| J3199 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3176 |  |
+| J3198 | any | open | – | – | review · `gemini-argon` · Verify condition for J3178 |  |
+| J3199 | any | open | – | – | review · `gemini-argon` · Verify condition for J3176 |  |
 | J3205 | mini | open (after J3204) | – | – | WW2:003 edit · for codex · assembly · WW2 pilot 003: picture, maps, edit and thumbnail, to Ben's watch |  |
 | J3206 | mini | open (after J3204) | – | – | WW2:004 vo · for gemini · vo · WW2 film 004: narration in Ben's voice (submarine torpedoes) |  |
 | J3208 | mini | open (after J3206) | – | – | WW2:005 vo · for gemini · vo · WW2 film 005: narration in Ben's voice (the old destroyer) |  |
@@ -68,12 +68,13 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3224 | mini | open (after J3223) | – | – | for gemini · script · `gemini-argon` · History of Science: search-led research and a new plan for the board (Anglosphere, adult, low competition), waiting for Ben's OK |  |
 | J3225 | any | blocked | claudecode | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J3227 | any | blocked | claudecode | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
-| J3229 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
-| J3230 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
+| J3229 | any | open | – | – | review · `gemini-argon` · Verify condition for J2040 |  |
+| J3230 | any | open | – | – | review · `gemini-argon` · Verify condition for J2171 |  |
 | J3231 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Weekly search research (Orbit + Field Order History): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
-| J3232 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3114 |  |
+| J3232 | any | open | – | – | review · `gemini-argon` · Verify condition for J3114 |  |
 | J3236 | mini | claimed | gemini | 2026-11-20T17:13Z | 009 edit · for gemini · chief · `gemini-argon` · HOS 009: Chief score disposition for own-score v03_synth | J3233 |
 | J3237 | mini | open | – | – | studio · Model review: list every CLI's current models, probe the newer ones, propose best-model-per-job routing that saves Claude usage |  |
+| J3238 | any | open | – | – | assembly · Relay: run 2-3 agents at once on the Mac mini, reroute to any capable worker, let MacBooks take non-Mini jobs |  |
 
 Recently finished:
 
