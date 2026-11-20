@@ -292362,10 +292362,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-20T22:53Z",
+      "eta": "2026-11-21T02:53Z",
       "created_by": "claude",
       "created_at": "2026-11-20T22:51Z",
       "result": "",
@@ -292379,13 +292379,26 @@
           "at": "2026-11-20T22:53Z",
           "by": "claude",
           "what": "ALL CHANNELS (Ben, 20 Nov, in chat: \"I think we need to bring a RSI system to all channels we manage\"; Claude, 20 Nov 22:53Z). The loop is studio-wide and driven by the channel registry (scripts/channels.py), not written per channel. Every registered channel gets its own experiment entries, weekly improvement cycle, autopsies and dashboard row automatically: today Orbit With Ben, History of Science and Field Order History, and any channel added l"
+        },
+        {
+          "at": "2026-11-20T22:53Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "EXPERIMENTS.json register; autopsy fixes become experiments; weekly cycle promotes/reverts into rules and generators; weekly ops bottleneck loop; dashboard card; guardrails",
       "due": "2026-11-28T18:00:00Z",
       "kind": "studio",
       "plain": "Make the studio improve itself every week: test changes, keep what works, drop what doesn't, and fix its own bottlenecks",
-      "urgent": 5
+      "urgent": 5,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T22:53Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
