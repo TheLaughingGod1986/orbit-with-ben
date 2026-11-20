@@ -66,6 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3255 | mini | open (after J3254) | – | – | studio · YouTube and Studio settings audit for growth: every channel setting, upload default, layout, playlist and eligibility; fix the safe ones, ask Ben the rest |  |
 | J3256 | mini | claimed | gemini | 2026-11-21T01:49Z | for gemini · review · `gemini-argon` · Retention autopsy for every long at 48 h and 7 days: relative-strength score, funnel diagnosis, Gemini watches the drop points, fixes and lessons |  |
 | J3257 | any | claimed | macbook-2 | 2026-11-21T02:53Z | studio · Recursive self-improvement for every channel we manage (registry-driven): experiment register, autopsy-to-hypothesis, weekly cycle, ops loop, dashboard |  |
+| J3258 | mini | open (after J3254) | – | – | studio · History of Science: take the two shared upload files from #1089 and add the uploadFor hook, so HOS uploads keep working |  |
 
 Recently finished:
 

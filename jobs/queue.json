@@ -1,5 +1,5 @@
 {
-  "next_id": 3258,
+  "next_id": 3259,
   "jobs": [
     {
       "id": "J0001",
@@ -292162,7 +292162,7 @@
       "title": "Field Order History: set up its upload path (Studio browser profile + port, upload tooling for ww2, Ben's one sign-in), so finished pilots can go out",
       "needs": "mini",
       "repo": "ww2",
-      "body": "**Why (Ben, 20 Nov: \"As we have 2 FOH ready, what's stopping it going out early to test these work?\"; Claude, 20 Nov 22:30Z).** WW2 pilots 001 (J2993, v43) and 002 (J2996) are finished. Apart from Ben's watch and the channel's phone verification (both Ben's), Field Order History has no upload path yet. channel.json has no Studio browser port or launch_state (the failing port test noted on PR #1036), and J3044 found only read-only API scopes and no Analytics token. So even after Ben says OK, nothing can upload.\n\n**Do, on the Mini (prepare everything that needs no sign-in).**\n1. Create the FOH Studio browser profile the same way as Orbit's and History of Science's: its own CDP port and user-data dir. Record the port and launch_state in ww2-channel `studio/channel.json` and the studio's cached copy, so the port test passes and the MacBook lane can use it too.\n2. Check that the upload tooling (`youtube:package`, approved_deliver.py, the Buffer mirror if used) handles the ww2 channel: channel id UCu94mInMFosxu3W0H6jlI6Q, its NAS folder, and Tue/Sat 17:00 slots. Fix what is channel-hard-coded.\n3. Write Ben ONE message on the thread (his own sign-in, allowed by AGENTS.md) with the exact steps. Step one: on the Mac mini, open the FOH Studio browser and sign in to the Google account that owns Field Order History. Step two: approve the API sign-in for upload and analytics (the J3044 steps). Say how long it takes. Ask nothing else.\n4. After his sign-in: a dry-run package for WW2:001 (no upload), proving the path end to end. Then report.\n\n**Guards.** No upload, no visibility change. YouTube rejects films over 15 minutes and custom thumbnails until the channel is phone-verified, so check Feature eligibility and report it. £0.\n\n\n**Ben, 20 Nov 22:38Z, in chat: \"Verified.\" Field Order History is phone-verified, so the 18 Nov 'not verified' hold is lifted for WW2 uploads. Confirm 'Intermediate features' in Feature eligibility during step 4 (it can take up to a day). EARLY LAUNCH (Claude, agreed with Ben in chat): once Ben has OK'd pilot 1 and pilot 2 on the board AND the dry-run package passes, move WW2:001 to Tue 24 Nov 17:00 London and WW2:002 to Sat 28 Nov 17:00. Shift 003 to Tue 1 Dec, 004 to Sat 5 Dec, 005 to Tue 8 Dec and 006 to Sat 12 Dec, or later if a film is not ready. Update ww2-channel status.json `air` and studio/plan.json `when` to match. If Ben's OK or the sign-in comes later, start from the next Tue or Sat after both. Never two films on one day.**\n\n\n**Ben's OKs are in (board /api/checks): WW2-001 v43 ok at 21:37Z and WW2-002 v05 ok at 22:24Z, 20 Nov. With the channel verified, the only remaining gate for the early launch is this job: Ben's one sign-in, then the dry run. When the dry run passes, package and schedule 001 for Tue 24 Nov 17:00 London and 002 for Sat 28 Nov 17:00 (Private and scheduled, exact approved files and hashes), and update the air dates as in the note above. Claude, 20 Nov 22:41Z.**\n",
+      "body": "**Why (Ben, 20 Nov: \"As we have 2 FOH ready, what's stopping it going out early to test these work?\"; Claude, 20 Nov 22:30Z).** WW2 pilots 001 (J2993, v43) and 002 (J2996) are finished. Apart from Ben's watch and the channel's phone verification (both Ben's), Field Order History has no upload path yet. channel.json has no Studio browser port or launch_state (the failing port test noted on PR #1036), and J3044 found only read-only API scopes and no Analytics token. So even after Ben says OK, nothing can upload.\n\n**Do, on the Mini (prepare everything that needs no sign-in).**\n1. Create the FOH Studio browser profile the same way as Orbit's and History of Science's: its own CDP port and user-data dir. Record the port and launch_state in ww2-channel `studio/channel.json` and the studio's cached copy, so the port test passes and the MacBook lane can use it too.\n2. Check that the upload tooling (`youtube:package`, approved_deliver.py, the Buffer mirror if used) handles the ww2 channel: channel id UCu94mInMFosxu3W0H6jlI6Q, its NAS folder, and Tue/Sat 17:00 slots. Fix what is channel-hard-coded.\n3. Write Ben ONE message on the thread (his own sign-in, allowed by AGENTS.md) with the exact steps. Step one: on the Mac mini, open the FOH Studio browser and sign in to the Google account that owns Field Order History. Step two: approve the API sign-in for upload and analytics (the J3044 steps). Say how long it takes. Ask nothing else.\n4. After his sign-in: a dry-run package for WW2:001 (no upload), proving the path end to end. Then report.\n\n**Guards.** No upload, no visibility change. YouTube rejects films over 15 minutes and custom thumbnails until the channel is phone-verified, so check Feature eligibility and report it. £0.\n\n\n**Ben, 20 Nov 22:38Z, in chat: \"Verified.\" Field Order History is phone-verified, so the 18 Nov 'not verified' hold is lifted for WW2 uploads. Confirm 'Intermediate features' in Feature eligibility during step 4 (it can take up to a day). EARLY LAUNCH (Claude, agreed with Ben in chat): once Ben has OK'd pilot 1 and pilot 2 on the board AND the dry-run package passes, move WW2:001 to Tue 24 Nov 17:00 London and WW2:002 to Sat 28 Nov 17:00. Shift 003 to Tue 1 Dec, 004 to Sat 5 Dec, 005 to Tue 8 Dec and 006 to Sat 12 Dec, or later if a film is not ready. Update ww2-channel status.json `air` and studio/plan.json `when` to match. If Ben's OK or the sign-in comes later, start from the next Tue or Sat after both. Never two films on one day.**\n\n\n**Ben's OKs are in (board /api/checks): WW2-001 v43 ok at 21:37Z and WW2-002 v05 ok at 22:24Z, 20 Nov. With the channel verified, the only remaining gate for the early launch is this job: Ben's one sign-in, then the dry run. When the dry run passes, package and schedule 001 for Tue 24 Nov 17:00 London and 002 for Sat 28 Nov 17:00 (Private and scheduled, exact approved files and hashes), and update the air dates as in the note above. Claude, 20 Nov 22:41Z.**\n\n\n**Ben, 20 Nov 23:00Z, in chat: \"Signed in on Mac mini\" (step 1, the FOH Studio window on port 9224). Claude fixed #1089's red core check (core_sync lock, commit 96409056 on cursor/J3254-foh-upload). Ben's early dates stand (his chat request, recorded here at 22:38Z/22:41Z, before Chief ruling 7052635580; see thread 7052742149): keep 24 Nov / 28 Nov / 1, 5, 8, 12 Dec in #1089 and ww2-channel #26. Next: merge #1089 when green, check YT_CHANNEL_ID_WW2 is in the Mini's 07_Content-Ops/.env, then hand Ben step 3 (--upload ww2) in one line, read Feature eligibility, then upload 001 and 002 Private and scheduled.**\n",
       "ref": "",
       "film": "",
       "stage": "",
@@ -292215,6 +292215,11 @@
           "at": "2026-11-20T22:48Z",
           "by": "cursor",
           "what": "blocked: needs Ben: sign in to the Field Order History Studio window already open on the Mini, then approve the analytics sign-in and, once pull request 1089 is on main, the upload sign-in. About five minutes. Nothing else."
+        },
+        {
+          "at": "2026-11-20T23:03Z",
+          "by": "claude",
+          "what": "Ben, 20 Nov 23:00Z, in chat: \"Signed in on Mac mini\" (step 1, the FOH Studio window on port 9224). Claude fixed #1089's red core check (core_sync lock, commit 96409056 on cursor/J3254-foh-upload). Ben's early dates stand (his chat request, recorded here at 22:38Z/22:41Z, before Chief ruling 7052635580; see thread 7052742149): keep 24 Nov / 28 Nov / 1, 5, 8, 12 Dec in #1089 and ww2-channel #26. Next: merge #1089 when green, check YT_CHANNEL_ID_WW2 is in the Mini's 07_Content-Ops/.env, then hand Ben step 3 (--upload ww2) in one line, read Feature eligibility, then upload 001 and 002 Private and scheduled."
         }
       ],
       "remaining_action": "Ben signs in to the Field Order History Studio window and the two API prompts",
@@ -292417,6 +292422,35 @@
         "at": "2026-11-20T22:56Z",
         "by": "macbook-2"
       }
+    },
+    {
+      "id": "J3258",
+      "title": "History of Science: take the two shared upload files from #1089 and add the uploadFor hook, so HOS uploads keep working",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**Why.** OWB #1089 (J3254) changed two shared upload files (07_Content-Ops/scripts/youtube-package-upload.ts and src/lib/publishing/youtube-package.ts) and re-locked them in orbit-with-ben, which is canonical. History of Science still has the old copies. Its CI stays green until someone syncs, but the next core push will fail there unless HOS has the matching hook.\n\n**Do.** Once #1089 is on OWB main: in a history-of-science branch run `python3 scripts/core_sync.py push --to <hos checkout>` from OWB. Add to HOS `07_Content-Ops/scripts/channel-youtube.ts` an `export function uploadFor(_packageDir: string) { return UPLOAD; }`, and let `youtubeAccessToken` accept an optional packageDir it ignores. Run HOS `core_sync.py check`, its typecheck and its vitest suite. Open one HOS PR for the HOS desk (Grok merges).\n\n**Guards.** No change to HOS uploads' category, language or login. No upload. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J3254",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-20T23:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T23:03Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "After OWB #1089 merges: core_sync push to HOS, add uploadFor/optional packageDir to HOS channel-youtube.ts, tests, one HOS PR for Grok",
+      "due": "2026-11-24T18:00:00Z",
+      "kind": "studio"
     }
   ],
   "focus": [
