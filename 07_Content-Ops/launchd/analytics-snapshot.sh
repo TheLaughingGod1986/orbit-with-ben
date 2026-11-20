@@ -61,10 +61,14 @@ gate_with_limit() {
 }
 
 main() {
+  local engine
+  engine="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)" || return 1
+  python3 "$engine/scripts/engine_guard.py" || return 1
   # launchd's login shell has no Homebrew on PATH: without it gate_upcoming.py can't find ffprobe/ffmpeg and every
   # scheduled Short reads FAIL (8 Oct 2026).
   export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
   local repo="${ORBIT_REPO:-$HOME/YouTube/orbit-with-ben}"
+  python3 "$repo/scripts/engine_guard.py" || return 1
   local data=05_Analytics
   echo "--- $(date)"
   local wt; wt="$(pick_worktree)"
@@ -75,6 +79,7 @@ main() {
       || { echo "could not make the tracker worktree at $wt; nothing run"; return 1; }
   fi
   cd "$wt" || return 1
+  python3 "$wt/scripts/engine_guard.py" || return 1
   ln -sfn "$repo/07_Content-Ops/node_modules" 07_Content-Ops/node_modules
 
   # Anything a failed run left behind is tracker data: keep it, then catch up with main.
@@ -89,6 +94,7 @@ main() {
     osascript -e 'display notification "The channel tracker could not catch up with main. See ~/Library/Logs/orbit-analytics.log" with title "Orbit With Ben"' 2>/dev/null
     return 1
   fi
+  python3 "$wt/scripts/engine_guard.py" || return 1
   echo "code: $(git log --oneline -1)"
 
   (
@@ -147,6 +153,9 @@ main() {
 }
 # Not run when the file is sourced (the tests source it for the helpers above).
 if [[ "${BASH_SOURCE[0]}" == "$0" ]]; then
+  # Refuse retired entrypoints before even starting the watchdog.
+  engine="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)" || exit 1
+  python3 "$engine/scripts/engine_guard.py" || exit 1
   # A run that hangs must not block tomorrow's: launchd will not start a new run while this one is alive.
   # One process, so stopping it when the run ends first leaves nothing behind and runs nothing more.
   perl -e 'sleep 2700; print "tracker run still going after 45 minutes; stopping it\n"; kill "TERM", $ARGV[0]' $$ &

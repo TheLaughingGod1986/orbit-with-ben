@@ -113,6 +113,8 @@ def load_state():
 
 
 def save_state(s):
+    from engine_guard import require_active
+    require_active()
     os.makedirs(os.path.dirname(state_file()), exist_ok=True)
     json.dump(s, open(state_file(), "w"))
 
@@ -126,6 +128,10 @@ def studio_job_running(queue=os.path.join(os.path.dirname(os.path.dirname(os.pat
 
 
 def tidy(ports=PORTS, dry=False):
+    # Import lazily: channel picture tools use reuse_page without an engine dependency.
+    # Even dry runs must not consult a retired queue and report misleading closure plans.
+    from engine_guard import require_active
+    require_active()
     state, now, report = load_state(), time.time(), []
     min_age_s = BUSY_MIN_AGE_MIN * 60 if studio_job_running() else MIN_AGE_MIN * 60
     for port in ports:

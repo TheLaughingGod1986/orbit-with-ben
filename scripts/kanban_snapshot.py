@@ -926,6 +926,8 @@ def r2_ready(env_file: Path | None = None) -> bool:
 
 
 def auto_upload(wid: str, path: Path, rel: str) -> bool:
+    from engine_guard import require_active
+    require_active(ROOT)
     # R2 only (29 Oct 2026): WATCH_UPLOAD_KEY no longer enables an upload, because the Vercel Blob fallback is gone.
     try:
         if not r2_ready() or path.stat().st_size > WATCH_AUTO_MAX:
@@ -1201,6 +1203,8 @@ def read_documents(roots: dict) -> dict:
 
 
 def main(argv: list[str] | None = None) -> int:
+    from engine_guard import require_active
+    require_active(ROOT)
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     for slug in channels.slugs():
         here = channels.checkout(slug) == ROOT  # the channel this checkout belongs to is read from it

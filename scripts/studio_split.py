@@ -59,6 +59,7 @@ ROUTES = (
     (r"studio-core/", STUDIO, "the lock on shared tools (retires with the copies)"),
     (r"07_Content-Ops/", STUDIO, "the upload and social tools, shared by every channel"),
     (r"04_Audio/tools/", STUDIO, "the voice and sound tools, shared by every channel"),
+    (r"00_Brand/Channel-Setup/tools/channel_profile\.py$", BOTH, "channel-owned gate settings; temporary engine copy for legacy shared tools"),
     (r"00_Brand/Channel-Setup/tools/", STUDIO, "the gates and audits, shared by every channel"),
     (r"00_Brand/Channel-Setup/audits/start_studio_chrome_cdp\.sh$", STUDIO, "starts the Studio browsers, shared by every channel"),
     (r"00_Brand/Channel-Setup/STUDIO_PLAYBOOK\.md$", STUDIO, "the playbook, generated from the rule book"),
@@ -352,9 +353,22 @@ def failing_tests(output: str) -> dict:
 
 
 def run_tests(studio: pathlib.Path, env: dict, timeout: int = 1500) -> dict:
-    r = subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", "scripts", "-p", "test_*.py"],
-                       cwd=str(studio), env=env, capture_output=True, text=True, timeout=timeout)
-    return failing_tests(r.stderr + r.stdout)
+    try:
+        r = subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", "scripts", "-p", "test_*.py"],
+                           cwd=str(studio), env=env, capture_output=True, text=True, timeout=timeout)
+    except (OSError, subprocess.TimeoutExpired):
+        # Never echo process output or exception details: they can contain secrets.
+        return {"test_process": ["test process could not start or finish"]}
+    output = r.stderr + r.stdout
+    failed = failing_tests(output)
+    if r.returncode != 0 and not failed:
+        failed["test_process"] = [f"test process exited {r.returncode} without a parsed failure"]
+    # A successful interpreter that discovered nothing is not a tested layout.
+    count = re.search(r"^Ran ([0-9]+) tests? in ", output, re.M)
+    if not failed and (not count or int(count.group(1)) == 0
+                       or not re.search(r"^OK(?: \(.*\))?$", output, re.M)):
+        failed["test_process"] = ["no successful nonempty unittest summary"]
+    return failed
 
 
 def check(root: pathlib.Path = ROOT, scratch: pathlib.Path | None = None, tests: bool = True) -> dict:
@@ -362,6 +376,9 @@ def check(root: pathlib.Path = ROOT, scratch: pathlib.Path | None = None, tests:
     if home is None:
         raise SystemExit("no channel's content lives in this repo: the studio has already moved, there is nothing to rehearse")
     files = tracked(root)
+    missing = [f for f in files if not (root / f).is_file() and not (root / f).is_symlink()]
+    if missing:
+        raise SystemExit(f"not run: {len(missing)} tracked source files are absent; materialize the complete checkout before rehearsing")
     placed = plan(files, slugs, home)
     groups: dict = {key: [] for key, _ in GROUPS}
     groups["unrouted"] = placed["unrouted"]

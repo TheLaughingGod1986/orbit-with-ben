@@ -12,7 +12,7 @@
  */
 import fs from "fs";
 import path from "path";
-import { ANALYTICS_ROOT } from "./analytics-snapshot";
+import { ANALYTICS_ROOT, channelRoot, assertAnalyticsEngine } from "./analytics-paths";
 import { CHANNELS, buildReport, renderMarkdown, type ChannelDaily, type ChannelKey, type ChannelReport, type Snapshot } from "../src/lib/analytics/channel-tracker";
 
 /** Impressions, impressions CTR, views and average % viewed come from a daily read-only Studio read (the Analytics API has no CTR), written to
@@ -136,20 +136,24 @@ export function loadChannel(root: string, key: ChannelKey): { snaps: Snapshot[];
   return { snaps, daily };
 }
 
-export function run(root = ANALYTICS_ROOT): string[] {
+export function run(root = ANALYTICS_ROOT, resolveChannel: (key: ChannelKey) => string =
+  root === ANALYTICS_ROOT ? channelRoot : (key) => path.join(root, key)): string[] {
   const out: string[] = [];
   const reports: ChannelReport[] = [];
   for (const key of Object.keys(CHANNELS) as ChannelKey[]) {
     if (key === "ww2") continue;
-    const { snaps, daily } = loadChannel(root, key);
+    const dir = resolveChannel(key);
+    if (path.basename(dir) !== key) throw new Error(`Unexpected analytics directory for ${key}`);
+    const channelBase = path.dirname(dir);
+    const { snaps, daily } = loadChannel(channelBase, key);
     if (!snaps.length) {
       out.push(`${key}: no snapshots yet`);
       continue;
     }
     const r = buildReport(key, snaps, daily);
-    mergeStudioCtr(root, key, r);
+    mergeStudioCtr(channelBase, key, r);
     reports.push(r);
-    fs.writeFileSync(path.join(root, key, "REPORT.md"), renderMarkdown(r) + renderStayedCheck(r));
+    fs.writeFileSync(path.join(dir, "REPORT.md"), renderMarkdown(r) + renderStayedCheck(r));
     out.push(`${key}: REPORT.md from ${snaps.length} snapshot(s), latest ${r.date}`);
   }
   if (!reports.length) return out;
@@ -167,6 +171,7 @@ export function run(root = ANALYTICS_ROOT): string[] {
 
 if (require.main === module) {
   try {
+    assertAnalyticsEngine();
     for (const line of run()) console.log(line);
   } catch (e) {
     console.error((e as Error).message);

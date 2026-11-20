@@ -622,14 +622,30 @@ class MacBookTakesTextJobs(unittest.TestCase):
         for slug in channels.slugs():
             self.assertEqual(jobs.studio_live_projects(slug),
                              jobs.STUDIO_LIVE_ROOT / channels.nas_folder(slug) / "02_Video-Projects")
-            # studio_port is optional: a channel with none has no Studio browser
-            # (#735; ww2). Only assert the digit when a port is set.
+            # A channel may exist without a signed-in Studio browser. The manifest
+            # contract makes this optional; absence must deny browser dispatch.
             port = channels.studio_port(slug)
+            self.assertEqual(port, str((channels.get(slug).get("youtube") or {}).get("studio_port") or ""))
             if port:
                 self.assertTrue(port.isdigit(), slug)
+            else:
+                with mock.patch.dict(os.environ, {"MACBOOK_CDP": "9222,9223,9224"}):
+                    self.assertFalse(jobs.macbook_studio_ok(
+                        {"repo": slug, "kind": "studio", "title": "Read YouTube Studio"},
+                        "Read YouTube Studio"), slug)
         ports = [channels.studio_port(s) for s in channels.slugs() if channels.studio_port(s)]
         self.assertEqual(len(ports), len(set(ports)))  # two channels never share a Studio browser
         self.assertRegex(jobs.keys_example(), r"^[A-Z0-9]+:006 or [A-Z0-9]+:028,[A-Z0-9]+:029$")
+
+    def test_missing_studio_port_never_borrows_another_channels_browser(self):
+        import channels
+        channel = {"slug": "test-channel", "youtube": {"id": "test-id"}}
+        with mock.patch.object(channels, "get", return_value=channel), \
+                mock.patch.object(channels, "of_job", return_value="test-channel"), \
+                mock.patch.dict(os.environ, {"MACBOOK_CDP": "9222,9223,9224"}):
+            self.assertEqual(channels.studio_port("test-channel"), "")
+            self.assertFalse(jobs.macbook_studio_ok(
+                {"repo": "test-channel", "kind": "studio"}, "Read YouTube Studio"))
 
     def test_a_job_added_with_no_channel_goes_to_the_default_channel(self):
         import channels

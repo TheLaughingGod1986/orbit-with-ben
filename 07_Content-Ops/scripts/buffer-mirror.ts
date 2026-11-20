@@ -40,9 +40,10 @@
  */
 import { ensureDeskLock } from "./with-desk-lock";
 import fs from "fs";
+import { execFileSync } from "node:child_process";
 import path from "path";
 import { ALL_BUFFER_CHANNELS, type BufferChannel, type Plan } from "../src/lib/publishing/buffer-mirror";
-import { REPO_ROOT, createMirrorDeps } from "../src/lib/publishing/buffer-deps";
+import { ENGINE_ROOT, REPO_ROOT, createMirrorDeps } from "../src/lib/publishing/buffer-deps";
 import { PROFILES, getProfile, profileFiles } from "../src/lib/publishing/buffer-profile";
 import { loadRegistry, registerUpload } from "../src/lib/publishing/media-finder";
 import type { SocialCopy } from "../src/lib/publishing/buffer-mirror";
@@ -192,6 +193,7 @@ async function record() {
 
 async function main() {
   const cmd = process.argv[2];
+  if (cmd === "record-root") { console.log(REPO_ROOT); return; }
   if (cmd === "mirror") await mirror(flag("dry-run"));
   else if (cmd === "plan") await mirror(true);
   else if (cmd === "check") await check();
@@ -203,7 +205,16 @@ async function main() {
   }
 }
 
-ensureDeskLock();
+// Direct Node invocations must obey the same retirement marker as timer wrappers.
+// Never trust STUDIO_REPO to identify the code actually being executed.
+try {
+  execFileSync("python3", [path.join(ENGINE_ROOT, "scripts/engine_guard.py")], { stdio: ["ignore", "ignore", "pipe"] });
+} catch {
+  console.error("Buffer refused: engine identity guard failed");
+  process.exit(1);
+}
+// A local path probe has no API, ledger or lock side effects.
+if (process.argv[2] !== "record-root") ensureDeskLock();
 
 main().catch((e) => {
   console.error(e instanceof Error ? e.message : e);

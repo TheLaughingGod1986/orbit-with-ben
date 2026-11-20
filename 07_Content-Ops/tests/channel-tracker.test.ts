@@ -436,3 +436,27 @@ describe("one-glance viewing and monetization evidence", () => {
     expect(buildReport("owb",[now],null).overview?.longHoursEstimate).toBeNull();
   });
 });
+
+describe("detached report destinations", () => {
+  it("keeps reports and CTR sidecars in channel trees and the dashboard in the engine", () => {
+    const base = fs.mkdtempSync(path.join(os.tmpdir(), "tracker-detached-"));
+    try {
+      const engine = path.join(base, "engine/05_Analytics");
+      const roots = { owb: path.join(base, "orbit/05_Analytics/owb"), hos: path.join(base, "history/05_Analytics/hos"), ww2: path.join(base, "war/05_Analytics/ww2") };
+      for (const key of ["owb", "hos"] as const) {
+        fs.mkdirSync(path.join(roots[key], "snapshots"), { recursive: true });
+        const s = { ...snap("2026-10-05", 10, 1, [video("fixture0001", 10)]), channel: key };
+        fs.writeFileSync(path.join(roots[key], "snapshots/2026-10-05.json"), serialiseSnapshot(s));
+        fs.writeFileSync(path.join(roots[key], "studio_ctr.json"), JSON.stringify({ videos: { fixture0001: { views: 123, impressions: 456 } } }));
+      }
+      run(engine, key => roots[key]);
+      const data = JSON.parse(fs.readFileSync(path.join(engine, "dashboard/data.json"), "utf8"));
+      expect(data.channels).toHaveLength(2);
+      for (const key of ["owb", "hos"] as const) {
+        expect(fs.existsSync(path.join(roots[key], "REPORT.md"))).toBe(true);
+        expect(fs.existsSync(path.join(engine, key))).toBe(false);
+        expect(data.channels.find((r: { channel: string }) => r.channel === key).videos[0]).toMatchObject({ studioViews: 123, impressions: 456 });
+      }
+    } finally { fs.rmSync(base, { recursive: true, force: true }); }
+  });
+});

@@ -543,15 +543,15 @@ T_BALANCE = __import__("datetime").date(2026, 10, 9)
 class StudioOwnRepo(unittest.TestCase):
     """What board_check.py asks instead of naming the repo that carries the board (J2522)."""
 
-    def test_the_board_repo_and_its_github_name_come_from_the_home_channel(self):
-        self.assertEqual(channels.studio_github(), "TheLaughingGod1986/orbit-with-ben")
-        self.assertEqual(channels.home_label(), "OWB")
+    def test_the_board_repo_and_checkout_follow_the_registry(self):
+        registry = json.loads((channels.DIR / "channels.json").read_text())["studio"]
+        self.assertEqual(channels.studio_github(), registry["github"])
         repo = channels.studio_repo()             # the home channel's repo today, the studio's own after the move
         if repo["env"]:
             with mock.patch.dict("os.environ", {repo["env"]: "/somewhere/else"}):
                 self.assertEqual(channels.studio_checkout(), pathlib.Path("/somewhere/else"))
         with tempfile.TemporaryDirectory() as tmp, mock.patch.dict("os.environ", {repo["env"] or "NO_SUCH_VARIABLE": ""}):
-            self.assertEqual(channels.studio_checkout(pathlib.Path(tmp)), pathlib.Path(tmp) / "YouTube" / "orbit-with-ben")
+            self.assertEqual(channels.studio_checkout(pathlib.Path(tmp)), pathlib.Path(tmp) / "YouTube" / repo["checkouts"][0])
 
 
 class ThirdChannelInTheBoardCheck(unittest.TestCase):

@@ -23,10 +23,10 @@ type UploadHookInput = { resolved: ResolvedYouTubePackage; flag: (name: string) 
 /** Refuses a second upload of the same film (uploads.json + earlier results); `--force-new` skips it. */
 export async function beforeUpload(input: UploadHookInput): Promise<Record<string, unknown>> {
   const { checkPackageDuplicate } = await import("../src/lib/publishing/package-duplicate");
-  const { UPLOADS_FILE } = await import("../src/lib/publishing/buffer-deps");
+  const { UPLOADS_FILE, REPO_ROOT } = await import("../src/lib/publishing/buffer-deps");
   return checkPackageDuplicate({
     packageDir: input.resolved.packageDir, videoPath: input.resolved.videoPath,
-    uploadsFile: UPLOADS_FILE, repoRoot: input.repoRoot, forceNew: input.flag("force-new"),
+    uploadsFile: UPLOADS_FILE, repoRoot: REPO_ROOT, forceNew: input.flag("force-new"),
   });
 }
 
@@ -39,12 +39,12 @@ export async function afterUpload(
   input: UploadHookInput & { videoId: string; identity: Record<string, unknown> },
 ): Promise<{ buffer: Record<string, unknown> | null }> {
   const { resolved, flag, videoId } = input;
-  const { UPLOADS_FILE, createMirrorDeps } = await import("../src/lib/publishing/buffer-deps");
+  const { UPLOADS_FILE, REPO_ROOT, createMirrorDeps } = await import("../src/lib/publishing/buffer-deps");
   const { registerUpload } = await import("../src/lib/publishing/media-finder");
   const { mirrorVideo } = await import("../src/lib/publishing/buffer-runner");
   const isShort = resolved.format === "shorts";
 
-  registerUpload(UPLOADS_FILE, input.repoRoot, videoId, {
+  registerUpload(UPLOADS_FILE, REPO_ROOT, videoId, {
     ...input.identity,
     kind: isShort ? "short" : "long",
     file: resolved.videoPath,

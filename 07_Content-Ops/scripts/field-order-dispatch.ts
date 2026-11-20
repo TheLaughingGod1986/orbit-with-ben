@@ -5,6 +5,7 @@ import os from 'os';
 import path from 'path';
 import { execFileSync } from 'child_process';
 import type { Snapshot } from '../src/lib/analytics/channel-tracker';
+import { channelRoot, ENGINE_ROOT, assertAnalyticsEngine } from './analytics-paths';
 
 type ReadJob = { title:string; plain:string; body:string; due:string };
 export function planReads(s:Snapshot, now:Date):ReadJob[] {
@@ -42,15 +43,38 @@ export function dispatchReads(s:Snapshot, queueRepo:string, now=new Date(), run=
   }
   return created;
 }
+/** The shared active engine owns queue writes; channel records never do. */
+export function queueRoot(engine=ENGINE_ROOT, configured=process.env.FIELD_ORDER_QUEUE_REPO):string {
+  const repo=configured ?? engine;
+  if(!path.isAbsolute(repo))throw Error('Field Order queue checkout must be absolute');
+  try {
+    const identity=(root:string)=>JSON.parse(fs.readFileSync(path.join(root,'channels/channels.json'),'utf8')).studio.github;
+    const expected=identity(engine);
+    if(typeof expected!=='string' || !expected || identity(repo)!==expected ||
+       !fs.statSync(path.join(repo,'scripts/jobs.py')).isFile() ||
+       !Array.isArray(JSON.parse(fs.readFileSync(path.join(repo,'jobs/queue.json'),'utf8')).jobs)) {
+      throw Error('wrong queue');
+    }
+  } catch {
+    throw Error('Field Order queue checkout is missing or belongs to a different engine');
+  }
+  return path.resolve(repo);
+}
+
+export function latestSnapshot(dir=path.join(channelRoot('ww2'),'snapshots')):Snapshot {
+  const files=fs.readdirSync(dir).filter(f=>/^\d{4}-\d{2}-\d{2}\.json$/.test(f)).sort();
+  if(!files.length)throw Error('No Field Order History snapshot; no Studio jobs dispatched');
+  return JSON.parse(fs.readFileSync(path.join(dir,files.at(-1)!), 'utf8')) as Snapshot;
+}
+
 if(require.main===module) {
+  assertAnalyticsEngine();
   if(!process.env.YT_CHANNEL_ID_WW2 || !process.env.YT_ANALYTICS_REFRESH_TOKEN_WW2) {
     console.log('Field Order History Studio dispatch disabled until own read-only sign-in');
   } else {
-    const dir=path.resolve(__dirname,'../../channels/ww2/05_Analytics/snapshots');
-    const files=fs.readdirSync(dir).filter(f=>/^\d{4}-\d{2}-\d{2}\.json$/.test(f)).sort();
-    const s=JSON.parse(fs.readFileSync(path.join(dir,files.at(-1)!), 'utf8')) as Snapshot;
+    const s=latestSnapshot();
     if(s.channelId!==process.env.YT_CHANNEL_ID_WW2 || Date.now()-Date.parse(s.takenAt)>86400000)throw Error('Missing fresh own-channel snapshot; no Studio jobs dispatched');
-    const repo=process.env.FIELD_ORDER_QUEUE_REPO ?? path.resolve(__dirname,'../..');
+    const repo=queueRoot();
     console.log(`Field Order History: ${dispatchReads(s,repo).length} Studio read jobs queued`);
   }
 }
