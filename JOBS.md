@@ -73,7 +73,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3211 | mini | open (after J3002) | – | – | WW2:006 picture · image · WW2 film 006: gather the archive photos and draw the maps |  |
 | J3214 | mini | open | – | – | 125 topic · for gemini · review · `gemini-argon` · HOS 125 What Causes the Tides?: rule-E topic go/no-go review | 300c972e |
 | J3215 | mini | open | – | – | chief · HOS desk #180 is full (2,500 comments): open HOS desk 2, repoint the board and tools, repost Ben's two lost taps |  |
-| J3219 | any | open | – | – | script · Orbit after 16 Dec: prepare the next film in each format test (every-X script, journey and sleep outlines) and the 22/26/30 Dec readout sheet |  |
+| J3219 | any | claimed | macbook-2 | 2026-11-20T13:00Z | script · Orbit after 16 Dec: prepare the next film in each format test (every-X script, journey and sleep outlines) and the 22/26/30 Dec readout sheet |  |
 | J3220 | any | claimed | macbook | 2026-11-20T11:18Z | studio · Board: early Orbit films that are already live show as waiting or planned (001, 003, 005, 007, 019): link them to their live videos |  |
 
 Recently finished:
