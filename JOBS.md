@@ -74,7 +74,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3210 | mini | open (after J3208) | – | – | WW2:006 vo · for gemini · vo · WW2 film 006: narration in Ben's voice (the wooden bomber) |  |
 | J3211 | mini | open (after J3002) | – | – | WW2:006 picture · image · WW2 film 006: gather the archive photos and draw the maps |  |
 | J3213 | mini | open | – | – | 124 topic · for gemini · review · `gemini-argon` · HOS 124 Why Is the Ocean Salty?: rule-E topic go/no-go review | 300c972e |
-| J3214 | any | open | – | – | 125 topic · review · HOS 125 What Causes the Tides?: rule-E topic go/no-go review | 300c972e |
+| J3214 | mini | open | – | – | 125 topic · for gemini · review · `gemini-argon` · HOS 125 What Causes the Tides?: rule-E topic go/no-go review | 300c972e |
 
 Recently finished:
 
