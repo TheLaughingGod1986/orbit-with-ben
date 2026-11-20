@@ -47,7 +47,17 @@ class PlanBoardTest(unittest.TestCase):
         self.assertTrue(texts[0].startswith("Lock the every-planet film"))
         self.assertTrue(texts[1].startswith("Pause"))
         self.assertTrue(texts[-1].startswith("Titles"))
-        ww2 = block["plans"][1]
+        jan = block["plans"][1]
+        self.assertEqual(jan["id"], "orbit-search-2027-01")
+        self.assertEqual(jan["channel"], "owb")
+        self.assertEqual(jan["card"]["title"], "Plan: orbit from January: films people search for")
+        self.assertEqual(jan["card"]["next"], "Next: First weekly search research, Mon 7 Dec")
+        self.assertEqual(jan["card"]["needs"], "")
+        self.assertEqual(jan["card"]["score"], "No test film is public yet. Best long so far: 230 views")
+        self.assertEqual(len(jan["steps"]), 6)
+        self.assertEqual(jan["baseline"]["showings"],
+                         "All 16 longs: about 4,050 showings (read 12 Nov)")
+        ww2 = block["plans"][2]
         self.assertEqual(ww2["id"], "ww2-launch-2026-11")
         self.assertEqual(ww2["card"]["title"], "Plan: starting our WW2 documentary channel")
         # Ben, 17 Nov 2026: on this channel he is asked only to watch finished films, so its plan asks him for nothing.
