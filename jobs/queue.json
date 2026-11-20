@@ -291428,18 +291428,23 @@
           "at": "2026-11-20T19:05Z",
           "by": "cursor",
           "what": "step 0 of 4 done: MiniWork 168 MiB free of 233 GiB; nas-staging mounted with 1.3 TiB free; outside the 01:00-06:00 window so copies stage on the SSD share"
+        },
+        {
+          "at": "2026-11-20T19:09Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Chose finished-job media untouched for at least 24 hours. Skipped live jobs, registered git worktrees, desk/cache touched 12.5 hours ago, and desk/worker. No local snapshots on MiniWork. Staging on the SSD share because it is outside 01:00-06:00."
         }
       ],
-      "remaining_action": "Inspect old MiniWork scratch and skip anything a live job still uses",
+      "remaining_action": "Archive old finished-job scratch onto the NAS staging share and verify every hash",
       "due": "2026-11-21T07:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-20T19:05Z",
+        "at": "2026-11-20T19:09Z",
         "by": "cursor",
-        "note": "MiniWork 168 MiB free of 233 GiB; nas-staging mounted with 1.3 TiB free; outside the 01:00-06:00 window so copies stage "
+        "note": "Chose finished-job media untouched for at least 24 hours. Skipped live jobs, registered git worktrees, desk/cache touche"
       }
     }
   ],
