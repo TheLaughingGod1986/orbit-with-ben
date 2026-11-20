@@ -286633,13 +286633,13 @@
       "stage": "thumbs",
       "after": "J3193",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-20T05:27Z",
-      "eta": "2026-11-20T07:27Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-20T03:30Z",
-      "result": "",
+      "result": "Exact Webb v08 PASS; matching finished T007 report preserved; conditional T039 permission recorded in ledger and J2847 brief. PR1056/1057 merged. Existing J3175 verifies before J2847 resumes. No Studio writes or spend.",
       "history": [
         {
           "at": "2026-11-20T03:30Z",
@@ -286670,6 +286670,11 @@
           "at": "2026-11-20T05:33Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR1056 and PR1057 merged; main readback confirms exact approval, J2847 blocked pending J3175, T039 proposed and T007/T038 unchanged. 13 privacy checks pass."
+        },
+        {
+          "at": "2026-11-20T05:34Z",
+          "by": "codex",
+          "what": "done: Exact Webb v08 PASS; matching finished T007 report preserved; conditional T039 permission recorded in ledger and J2847 brief. PR1056/1057 merged. Existing J3175 verifies before J2847 resumes. No Studio writes or spend."
         }
       ],
       "remaining_action": "Review complete; existing verifier will release the conditional Webb test",
@@ -286684,7 +286689,8 @@
         "at": "2026-11-20T05:33Z",
         "by": "codex",
         "note": "PR1056 and PR1057 merged; main readback confirms exact approval, J2847 blocked pending J3175, T039 proposed and T007/T03"
-      }
+      },
+      "done_ref": "jobs/reviews/J3194/REVIEW.md"
     },
     {
       "id": "J3195",
