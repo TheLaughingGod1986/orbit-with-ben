@@ -285044,13 +285044,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-19T23:33Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-19T23:32Z",
-      "result": "parked for Chief: J3177 condition verification complete (jobs/reviews/J3177/REVIEW.md @ 074a31497a; OWB #954 7025432432) — predecessor J3128 is done (90bea410) and J3137 assembly (5/5 steps, local HOS commit b64ed784 on cursor/j3137-music-beds) is verified across all 12/12 NAS SHA-256 hashes, 3/3 stream-copied video packet MD5s, and 85-bed music_gate similarities (s06_v05=0.2885, s07_v05=0.1883, s08_v02=0.1996, all <0.80). s06_v05 and s07_v05 pass all 4 tool gates (music_gate, picture_qa, polish_gate, gate_shorts_open.py); s08_v02 passes music/picture/polish but retains its inherited gate_shorts_open.py FAIL (first cut 4.50s > 3.0s) and J2168 overlap exclusion. Do not reopen J3137 to worker assembly; awaiting Chief review/disposition regarding scheduled Private Sq_lV89VMUs (20 Nov 11:30Z) and fgsR8yAHr5s (22 Nov 11:30Z). Because scripts/jobs.py restricts jobs.py wait J3137 --recheck J3177 to the job holder or elected Chief (codex), exact 2-line Chief commands (next check 2026-11-20T05:30:00Z) are in jobs/reviews/J3177/REVIEW.md §3. (Note: HOS desk #180 hit GitHub's 2500-comment limit and needs rolling.) £0.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-19T23:32Z",
@@ -285096,6 +285096,11 @@
           "at": "2026-11-20T01:59Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-20T02:46Z",
+          "by": "codex",
+          "what": "reopened: Elected-Chief ruling recorded in merged PR1055; parent remains held with last_recheck J3177. Reopen verification only to record its completion, not parent assembly."
         }
       ],
       "remaining_action": "Parked for Chief (codex): record wait J3137 --recheck J3177 or rule on and close J3137 and J3177",
@@ -285112,13 +285117,6 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-19T23:45Z",
-        "by": "gemini",
-        "note": "Posted J3177 verification report to OWB thread #954 (7025432432; HOS #180 at GitHub 2500-comment cap); ready for Chief r"
-      },
       "taskKeys": [
         "HOS:005"
       ],
