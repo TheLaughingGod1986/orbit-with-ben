@@ -1516,7 +1516,7 @@ class ThreadCapWarnings(unittest.TestCase):
         import json
         items = cr.monitored_threads()
         repos = {(i["repo"], i["number"]) for i in items}
-        thread = json.loads((cr.STUDIO / "scripts" / "thread.json").read_text())
+        thread = json.loads((pathlib.Path(__file__).resolve().parent / "thread.json").read_text())
         self.assertIn((thread["repo"], int(thread["number"])), repos)
         self.assertIn(("TheLaughingGod1986/history-of-science", cr.channels.desk("hos")["number"]), repos)
         with tempfile.TemporaryDirectory() as td:

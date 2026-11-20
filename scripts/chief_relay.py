@@ -1070,6 +1070,8 @@ def monitored_threads() -> list[dict]:
     """Every active studio thread and channel desk whose comment count can hit GitHub's 2,500-comment cap."""
     out, seen = [], set()
     thread_file = STUDIO / "scripts" / "thread.json"
+    if not thread_file.is_file():
+        thread_file = pathlib.Path(__file__).resolve().parent / "thread.json"
     t = read_json(thread_file) or {}
     if t.get("repo") and isinstance(t.get("number"), int) and t["number"] > 0:
         key = (str(t["repo"]), int(t["number"]))
