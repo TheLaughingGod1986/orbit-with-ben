@@ -281192,13 +281192,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-19T11:29Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-19T11:23Z",
-      "result": "Waiting for: J3130 completes: original galaxy field, native cutout and Webb icon copied to shared J3088_v02/inputs with all three J3088 SHA-256 hashes matched, plus source/crop registration evidence. Missing inputs were checked with rg --files --hidden --no-ignore across Mini workspace, scratch and studio-live; only rendered candidates and records were found.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-19T11:23Z",
@@ -281234,27 +281234,19 @@
           "at": "2026-11-19T13:40Z",
           "by": "relay",
           "what": "condition verification queued: J3135"
+        },
+        {
+          "at": "2026-11-20T03:20Z",
+          "by": "codex",
+          "what": "reopened: J3135 acting-Chief ruling: source-recovery condition satisfied. Fresh Mini read on 20 Nov confirms J3130 done and exact SHA-256 matches for all three original J3088 plates, NASA pullout and SOURCE_MANIFEST.json in shared J3088_v02/inputs; matches jobs/reviews/J3135/REVIEW.md. Registration manifest is present; preserve its warning that the cutout is not an exact rectangle of the annotated pullout. Resume existing J3129 zero-spend v08 build, source alignment and phone checks, then independent panel, synthesis and exact-file Chief review. J3096 FIX remains binding; J2847 stays blocked. No thumbnail/test approval or Studio writes authorized."
         }
       ],
       "remaining_action": "Wait for original source images from the MacBook, then rebuild and review the Webb thumbnail",
       "kind": "thumb",
       "plain": "Improve the Webb thumbnail wording and point to the correct galaxy",
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-19T11:33Z",
-        "by": "codex",
-        "note": "Brief and source audit complete. Original source hashes recorded; source files absent from Mini, scratch and studio-live"
-      },
       "taskKeys": [
         "OWB:004"
-      ],
-      "hold": {
-        "type": "dependency",
-        "condition": "J3130 completes: original galaxy field, native cutout and Webb icon copied to shared J3088_v02/inputs with all three J3088 SHA-256 hashes matched, plus source/crop registration evidence. Missing inputs were checked with rg --files --hidden --no-ignore across Mini workspace, scratch and studio-live; only rendered candidates and records were found.",
-        "check_at": "2026-11-19T14:40:40+00:00",
-        "recheck_task": "J3135"
-      }
+      ]
     },
     {
       "id": "J3130",
