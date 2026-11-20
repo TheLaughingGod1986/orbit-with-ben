@@ -76,7 +76,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3228 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J2035 |  |
 | J3229 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2040 |  |
 | J3230 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
-| J3231 | mini | open | – | – | for gemini · review · `gemini-argon` · Weekly search research (Orbit + Field Order History): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
+| J3231 | mini | claimed | macbook-2 | 2026-11-20T14:54Z | for gemini · review · `gemini-argon` · Weekly search research (Orbit + Field Order History): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
 
 Recently finished:
 
