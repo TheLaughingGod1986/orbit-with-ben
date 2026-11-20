@@ -1,5 +1,5 @@
 {
-  "next_id": 3240,
+  "next_id": 3241,
   "jobs": [
     {
       "id": "J0001",
@@ -290348,6 +290348,39 @@
       "due": "2026-11-21T06:00:00Z",
       "kind": "assembly",
       "plain": "Synthesize HOS 009 final bounded GBP0 full-runtime warm chamber score v04_synth (0-535.33s) and verify complete-library music_gate and Mini/NAS parity."
+    },
+    {
+      "id": "J3240",
+      "title": "HOS 009: independent audio_input ear review of final bounded own-score v04_synth",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Independent demonstrated-audio (`audio_input`) ear review of HOS 009 final bounded £0 full-runtime own-synthesis score `v04_synth` (`hos_009_score_v04_synth.wav`), produced under `J3236` (`SCORE_SCOPE_v04_synth.json`).\n\nMandatory requirements:\n1. **Reviewer independence**: Must be executed by a distinct worker seat from the `v04_synth` production author (never self-review). Do NOT accept the score, merge the production PR, or release `J2035`/`J2171` — leave disposition to the separate Chief job.\n2. **Demonstrated `audio_input` capability**: Must genuinely audition the actual audio files via a native `audio_input` tool in this session and record `chief_relay.py capabilities` with concrete evidence (never judge from waveforms, spectrograms, or text measurements). If this session lacks `audio_input`, park with `jobs.py wait --type capability --requires audio_input`.\n3. **Verify parity & gates independently**:\n   - Exact Mini and NAS (`/Volumes/data/studio-live/.../05_Music/`) SHA-256 parity for all `v04` deliverables and all preserved locks (`teach_v01`, `v01`, `v02`, `v03`, VO, picture, diagrams).\n   - Unchanged production `music_gate.py` PASS over complete library (`>= 89` comparisons across all 9 roots including 15 materialized UAT tracks, `0` unreadable, `< 0.80`, `0` fails, no waiver).\n   - Continuity telemetry (`0` `< -45 dB` dropouts across `0.00-526.00 s`) and per-part loudness parity.\n4. **Full ear-review rubric (explicit timestamped PASS/FAIL for each item):**\n   - (1) Warmth & organic chamber suitability (`0.00-535.33 s`): warm unobtrusive period-appropriate underscore comparable to shipped HOS 006/007 — ZERO harsh buzzy reed-organ pads, ZERO metallic MIDI/chiptune pings, ZERO piercing upper-mid artifacts.\n   - (2) Continuity (`0.00-526.00 s`): ZERO inter-phrase silent dropouts anywhere in the film.\n   - (3) Chapter transitions (`84.44 s` Part 2 orchard, `176.78 s` Part 3 cannon `awe->explain`, `260.16 s` Part 4 Moon test, `393.86 s` Part 5 discovery `explain->awe`): smooth, cohesive 3.0 s transitions with NO timbral cliff, NO click/pop, and NO harsh octave or RMS jump.\n   - (4) Polish pass §2 mood contrast (`awe` in Parts 1, 2, 5 vs rhythmic `explain` in Parts 3, 4): clearly audible cohesive mood shifts within one unified score.\n   - (5) Narration clarity under Ben's locked 5-part VO (`hos_009_reference_mix_0_518s40_v04.wav`, `0.00-518.40 s`): 100% intelligible with zero masking or 1-3.5 kHz distraction across all 5 parts.\n   - (6) Tempo fit (`~60-68 BPM`, unhurried beneath narration).\n   - (7) Final tail (`518.40-535.33 s` & `526.00 s` reference endpoint): smooth natural warm decay past last spoken word (*\"...in a thin layer of clay\"*) through `526.00 s` and `535.33 s`.\n5. Commit `02_Video-Projects/009_The-Falling-Moon-Gravity/05_Music/EAR_REVIEW_v04_synth.md` via clean HOS PR (`check_all.sh` PASS, zero media in git), post review on HOS desk `#694`, and hand off to the final Chief disposition job.\n6. Hard guardrails: `£0`, `0` credits, `0` API calls, `ACTIVATION_AUTHORIZED = False`, no score acceptance, `J2035`/`J2171` remain held.\n",
+      "ref": "J3236",
+      "film": "009",
+      "stage": "edit",
+      "after": "J3239",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-20T15:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T15:20Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 009: independent audio_input ear review of final bounded own-score v04_synth",
+      "due": "2026-11-21T10:00:00Z",
+      "kind": "review",
+      "required_capabilities": [
+        "audio_input"
+      ],
+      "plain": "Independently audition HOS 009 final bounded own-score v04_synth across all 5 parts, chapter transitions, VO mix, and tail via demonstrated audio_input."
     }
   ],
   "focus": [
