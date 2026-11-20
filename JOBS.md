@@ -73,6 +73,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3231 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Weekly search research (Orbit + Field Order History): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
 | J3232 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3114 |  |
 | J3233 | any | claimed | gemini | 2026-11-20T16:10Z | 009 edit · chief · HOS 009: decide post-J3174 compliant replacement score route | J3228 |
+| J3234 | mini | open (after J3233) | – | – | 009 edit · assembly · HOS 009: synthesize GBP0 own-score opening v03_synth, join to teach_v01, and run full music_gate | J3233 |
 
 Recently finished:
 

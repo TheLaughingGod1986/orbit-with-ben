@@ -1,5 +1,5 @@
 {
-  "next_id": 3234,
+  "next_id": 3235,
   "jobs": [
     {
       "id": "J0001",
@@ -289891,6 +289891,36 @@
       "taskKeys": [
         "HOS:009"
       ]
+    },
+    {
+      "id": "J3234",
+      "title": "HOS 009: synthesize GBP0 own-score opening v03_synth, join to teach_v01, and run full music_gate",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "J3233 elected-Chief £0 own-score production scope (HOS 009: Why Doesn't the Moon Fall to Earth?).\n\nSelected route: Option (a) — compliant £0 non-ElevenLabs pure Python/NumPy own-synthesis opening wonder cue (`0.00–178.28 s`) joined via exact 3.0 s equal-power crossfade (`175.28–178.28 s`) into retained byte-unchanged `hos_009_teach_v01.mp3` (`sha256: 4c1f0a17364ad5ba96fdd2d42730b2f857d19017fab52b221701bd4e15d07bb1`, `360.045688 s`, D-minor harpsichord + low strings). Follows shipped HOS 006 (`trees006_score_bed_v01.mp3`) and HOS 007 (`vaccine_score_bed_v01.mp3`) £0 own-synthesis precedent. Full scope: `02_Video-Projects/009_The-Falling-Moon-Gravity/05_Music/SCORE_SCOPE_J3233.json` and `SCORE_DECISION_J3233.md`.\n\nHard guardrails (unconditional):\n- £0.00 cash, 0 ElevenLabs credits, 0 network/API calls, no account GET, no ElevenLabs POST.\n- `ACTIVATION_AUTHORIZED` in `04_Audio/tools/hos009_score_flight.py` stays literal `False`. Do not touch `04_Audio/tools/`.\n- `J3043`/`J3045` allowance stays permanently closed unused (`J3047`); `v01`/`v02` remain rejected (`J2808`).\n- Do NOT loop, stretch, or re-encode `hos_009_teach_v01.mp3` to cover the opening.\n- Pure Python/NumPy DSP synthesis only — NO third-party copyrighted samples, NO GPL soundfonts (`TimGM6mb.sf2`), NO macOS system `gs_instruments.dls`.\n- Preserve all existing `v01`/`v02`/`teach_v01`, VO (`VO_TAKES_KEEP.json`, `VO_RETIME_v01.json`), picture, and diagram locks byte-for-byte on Mini and NAS. Keep `J2035`/`J2171` held. No YouTube/Buffer/schedule changes.\n\nDeliverables (in `02_Video-Projects/009_The-Falling-Moon-Gravity/05_Music/` on Mini and copied to `/Volumes/data/studio-live/History Of Science/02_Video-Projects/009_The-Falling-Moon-Gravity/05_Music/` with verified SHA-256 parity):\n1. Deterministic pure-Python/NumPy synthesis script `_build_hos009_wonder_v03_synth.py` generating `hos_009_wonder_v03_synth.wav` (48 kHz 16-bit stereo PCM, `180.00 s` raw, clean `0.00–178.28 s` source window):\n   - 17th-century D-minor (`A4 = 440 Hz`) chamber texture matching `teach_v01`'s tonal centre: Karplus-Strong plucked gut-string lute arpeggios + warm multi-voice bowed viols (subtle pitch/amplitude vibrato, warm wooden body low-pass/formant filtering, gentle stereo chamber room reverb).\n   - `60–66 BPM`, evolving modal chord progressions every 2–4 bars (NO static bass-drone opening, preventing `v01`'s `0.821` reuse match), continuously overlapping instrumental parts from `0.00 s` to `178.28 s` with ZERO silent rests/dropouts (preventing `v02`'s six `< -45 dB` dropouts), warming into Woolsthorpe orchard colour at `84.44 s` (Part 2 card), and ending on a quiet sustained `D4/A4` D-minor open-fifth/triad handoff across `175.28–178.28 s`, loudness-matched to `teach_v01`.\n2. Joined continuous score `hos_009_score_joined_v03.wav` (`~535.33 s`): exact 3.0 s equal-power crossfade (`acrossfade=d=3:c1=qsin:c2=qsin`) across `175.28–178.28 s` (centred on `176.78 s` cannon chapter card) from `hos_009_wonder_v03_synth.wav[0:178.28]` into byte-unchanged `hos_009_teach_v01.mp3[0:end]`. No loop, no silence padding, no timing alteration.\n3. Five part stems (`hos_009_stem_part01_the_falling_moon_v03.wav` `0–84.44`, `part02_an_apple_in_a_plague_year_v03.wav` `84.44–176.78`, `part03_the_cannon_on_the_mountain_v03.wav` `176.78–260.16`, `part04_the_moon_test_v03.wav` `260.16–393.86`, `part05_falling_around_the_world_v03.wav` `393.86–535.28`) plus audition files under `05_Music/audio_review_v03_synth/` (`168.00–186.00 s` bed & VO+bed transition clips, full 5-part locked-VO reference mix `0.00–518.40 s` at HOS bed parity, and `518.40–535.33 s` tail / `526.00 s` endpoint reference).\n4. Plans & provenance: `hos_009_wonder_v03_synth_plan.json` and `hos_009_score_joined_v03_plan.json` (each with explicit `Pace:` and `NOT ...` lines), plus `PROVENANCE_v03_synth.json` recording all Mini & NAS SHA-256 hashes (new `v03` + all preserved locks).\n5. Gates & telemetry (zero waivers, unchanged production scripts):\n   - Unchanged `orbit-with-ben/scripts/music_gate.py` over the complete current library (`>= 89` comparisons across all 9 roots including all 77+ historical HOS/OWB beds and all 15 hash-verified iCloud UAT tracks, `0` unreadable, `< 0.80` max similarity, `0` fails) on BOTH `hos_009_wonder_v03_synth.wav` (`music_gate_v03_wonder.json`) and `hos_009_score_joined_v03.wav` (`music_gate_v03_joined.json`).\n   - Explicit continuity telemetry (`ffmpeg silencedetect=noise=-45dB:d=0.25` and `d=0.50` + 1-second RMS floor table across `0.00–178.28 s` proving 0 interior dropouts) and EBU R128 loudness parity against locked VO.\n6. Keep media files out of git; open a clean HOS PR containing the synthesis script, JSON plans, provenance, gate JSONs, and continuity telemetry, verified with `check_all.sh 02_Video-Projects/009_The-Falling-Moon-Gravity`. Do not claim ear-review PASS or score acceptance.\n",
+      "ref": "J3233",
+      "film": "009",
+      "stage": "edit",
+      "after": "J3233",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-20T14:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T14:16Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Synthesize hos_009_wonder_v03_synth.wav in Python/NumPy, join to retained teach_v01 at 175.28-178.28s, verify complete-library music_gate and continuity telemetry, and open PR",
+      "due": "2026-11-21T06:00:00Z",
+      "kind": "assembly",
+      "plain": "Synthesize a GBP0 17th-century D-minor chamber opening for HOS 009 in Python/NumPy, join it to the retained teach cue, and verify full-library music_gate and continuity"
     }
   ],
   "focus": [
