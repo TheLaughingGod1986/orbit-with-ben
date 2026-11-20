@@ -290394,20 +290394,26 @@
           "at": "2026-11-20T15:29Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T15:30Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "HOS 009: synthesize final bounded GBP0 full-runtime warm own-score v04_synth and run full music_gate",
+      "remaining_action": "Read the v04 score scope and the earlier builders before synthesizing",
       "due": "2026-11-21T06:00:00Z",
       "kind": "assembly",
       "plain": "Synthesize HOS 009 final bounded GBP0 full-runtime warm chamber score v04_synth (0-535.33s) and verify complete-library music_gate and Mini/NAS parity.",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-20T15:29Z",
-        "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "of": 4,
+        "at": "2026-11-20T15:30Z",
+        "by": "cursor"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J3240",
