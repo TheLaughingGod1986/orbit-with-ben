@@ -179120,19 +179120,25 @@
           "at": "2026-11-20T20:20Z",
           "by": "claudecode",
           "what": "step 0 of 6 done"
+        },
+        {
+          "at": "2026-11-20T20:20Z",
+          "by": "claudecode",
+          "what": "step 1 of 6 done: Read rules, scope file and the assembly record; master v01 found on the NAS"
         }
       ],
-      "remaining_action": "Reading the film's rules, scope file and prior notes before checking the master",
+      "remaining_action": "Checking the master file's hash, format and gate records",
       "due": "2026-11-15T18:00:00Z",
       "kind": "qa",
       "taskKeys": [
         "HOS:009"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
         "at": "2026-11-20T20:20Z",
-        "by": "claudecode"
+        "by": "claudecode",
+        "note": "Read rules, scope file and the assembly record; master v01 found on the NAS"
       },
       "rerouted_from": {
         "needs": "mini",
