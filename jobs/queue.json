@@ -288602,19 +288602,24 @@
           "at": "2026-11-20T19:37Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Verified locked script master J3002 (SHA-256 bfb85fdb..., 7 chapters, 3,300 words, 20,947 chars, max ch05=4,319 < 5,000 limit) and live ElevenLabs balance: 25,039 remaining (est. ~9,700 net v3+Scribe credits -> ~15,339 left >= 11,000 reserve floor)"
+        },
+        {
+          "at": "2026-11-20T19:51Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: vo_take.py finished mosquito_plywood_bomber_vo_v01 (1542.84s, -19.6 LUFS, 20,947 chars, 9,687 net credits billed, 15,352 remaining >= 11,000 reserve); logged settled spend in ai_spend ledger"
         }
       ],
-      "remaining_action": "Generate 7-chapter narration in Ben's voice (eleven_v3, speed 1.04) via vo_take.py under desk-lock elevenlabs and run Scribe",
+      "remaining_action": "Audit all 150 Scribe mismatch runs, faster-whisper cross-check, chapter loudness and waveform boundaries",
       "due": "2026-11-29T18:00:00Z",
       "for": "gemini",
       "kind": "vo",
       "plain": "Record the narration for WW2 film 006, about the wooden bomber",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-20T19:37Z",
+        "at": "2026-11-20T19:51Z",
         "by": "gemini",
-        "note": "Verified locked script master J3002 (SHA-256 bfb85fdb..., 7 chapters, 3,300 words, 20,947 chars, max ch05=4,319 < 5,000 "
+        "note": "vo_take.py finished mosquito_plywood_bomber_vo_v01 (1542.84s, -19.6 LUFS, 20,947 chars, 9,687 net credits billed, 15,352"
       },
       "taskKeys": [
         "WW2:006"
