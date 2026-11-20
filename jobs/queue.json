@@ -288007,20 +288007,25 @@
           "at": "2026-11-20T13:31Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Step 2 done: all 6 chapters voiced (1,533.64s / 25:33.64, -20.6 LUFS, 9,478 net ElevenLabs credits billed, 41,859 remaining); running deep Scribe audit, faster-whisper vo_check, and boundary check"
+        },
+        {
+          "at": "2026-11-20T13:36Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Step 3 done: caught and fixed -3dB stereo->mono pan-law drop on ch01 at £0 (now -20.1 LUFS, 1.9 LU spread across all 6 chapters, -3.6 dB peak); Scribe v2 + faster-whisper cross-check verified zero dropped/repeated sentences across all 3,544 spoken words; 9,478 net ElevenLabs credits billed (41,859 remaining)"
         }
       ],
-      "remaining_action": "Audit Scribe transcript diffs, faster-whisper cross-check, 20ms waveform boundaries, and per-chapter loudness",
+      "remaining_action": "Copy verified masters to studio-live NAS, write VO_REPORT.md, log spend in ai_spend ledger, and open WW2 PR",
       "due": "2026-11-22T18:00:00Z",
       "for": "gemini",
       "kind": "vo",
       "plain": "Record the narration for the third WW2 film, about the B-29 bomber",
       "urgent": 6,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-20T13:31Z",
+        "at": "2026-11-20T13:36Z",
         "by": "gemini",
-        "note": "Step 2 done: all 6 chapters voiced (1,533.64s / 25:33.64, -20.6 LUFS, 9,478 net ElevenLabs credits billed, 41,859 remain"
+        "note": "Step 3 done: caught and fixed -3dB stereo->mono pan-law drop on ch01 at £0 (now -20.1 LUFS, 1.9 LU spread across all 6 c"
       },
       "taskKeys": [
         "WW2:003"
