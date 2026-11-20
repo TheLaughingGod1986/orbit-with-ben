@@ -287970,10 +287970,10 @@
       "stage": "vo",
       "after": "J2997",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-20T13:14Z",
+      "eta": "2026-11-20T14:14Z",
       "created_by": "claude",
       "created_at": "2026-11-20T10:21Z",
       "result": "",
@@ -287982,6 +287982,11 @@
           "at": "2026-11-20T10:21Z",
           "by": "claude",
           "what": "added for gemini"
+        },
+        {
+          "at": "2026-11-20T13:14Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Narrate pilot 3 from its locked script with vo_take.py (eleven_v3, Ben Orbit Narrator), checks, budget guard; narration only",
@@ -287989,7 +287994,15 @@
       "for": "gemini",
       "kind": "vo",
       "plain": "Record the narration for the third WW2 film, about the B-29 bomber",
-      "urgent": 6
+      "urgent": 6,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T13:14Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3205",
