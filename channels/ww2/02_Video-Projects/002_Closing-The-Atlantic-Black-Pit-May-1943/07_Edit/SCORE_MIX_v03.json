@@ -1,0 +1,38 @@
+{
+  "state": "technical_checks_complete_perceptual_review_required",
+  "video": "/Volumes/data/studio-live/ww2/02_Video-Projects/002_Closing-The-Atlantic-Black-Pit-May-1943/07_Edit/score_mix_candidate_v03/atlantic_score_mix_CANDIDATE_v03.mp4",
+  "sha256": "69635004997744429eb8634d6197558247ddf0563d2d4604d6dad46b576cd11e",
+  "picture_source_sha256": "b948647a8de66d18de93b1dbf205bbb75dbe72f270a22babea623e652f68709e",
+  "score_source_sha256": "a6c547e4c104315c4227c5017993db407f03c30d46090f4b776c13fa55af612e",
+  "duration_s": 1443.04,
+  "frames": 36076,
+  "fps": 25,
+  "picture_packets_unchanged": true,
+  "decode": "success",
+  "source_voice_lufs": -20.19,
+  "bed_lufs": -36.19,
+  "bed_below_voice_lu": 15.999999999999996,
+  "voice_gain_db": 2,
+  "bed_gain_db": -2.9299999999999997,
+  "mix_loudness": {
+    "input_i": "-18.22",
+    "input_tp": "-1.34",
+    "input_lra": "4.60",
+    "input_thresh": "-29.03",
+    "output_i": "-23.80",
+    "output_tp": "-6.82",
+    "output_lra": "4.50",
+    "output_thresh": "-34.59",
+    "normalization_type": "dynamic",
+    "target_offset": "-0.20"
+  },
+  "audio_perception": false,
+  "moving_video_perception": false,
+  "approval": false,
+  "pending": [
+    "Listen to original score and mix for fit, fatigue, transitions and speech clarity",
+    "Watch all motion, pacing and labels; fix low-contrast carrier label",
+    "Reconcile voice review PR1014",
+    "Complete channel quality review before Ben watch"
+  ]
+}
