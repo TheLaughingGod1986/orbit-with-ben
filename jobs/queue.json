@@ -288254,21 +288254,28 @@
           "at": "2026-11-20T18:28Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T18:30Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Claimed J3206; checking J3000 locked script and live ElevenLabs credits before any spend"
         }
       ],
-      "remaining_action": "Narrate WW2 film 004 from its locked script, checks, budget guard; narration only; after the previous film's narration",
+      "remaining_action": "Inspect J3000 locked script, check live ElevenLabs credit balance, and verify chapter split",
       "due": "2026-11-29T18:00:00Z",
       "for": "gemini",
       "kind": "vo",
       "plain": "Record the narration for WW2 film 004, about submarine torpedoes",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-20T18:28Z",
+        "of": 6,
+        "at": "2026-11-20T18:30Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3206; checking J3000 locked script and live ElevenLabs credits before any spend"
+      },
+      "taskKeys": [
+        "WW2:004"
+      ]
     },
     {
       "id": "J3207",
