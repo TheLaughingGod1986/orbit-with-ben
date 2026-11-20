@@ -289972,18 +289972,23 @@
           "at": "2026-11-20T14:39Z",
           "by": "cursor",
           "what": "step 1 of 4 done: Library has 94 readable beds. The gate is comparing the opening and the joined score now."
+        },
+        {
+          "at": "2026-11-20T14:55Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed J3234. Local v03 synth, join, stems and gate JSON already on disk from an earlier run. Verifying hashes, duration and NAS parity before the PR."
         }
       ],
-      "remaining_action": "Run the full music gate on the opening and the joined score",
+      "remaining_action": "Check the finished HOS 009 score files against the scope",
       "due": "2026-11-21T06:00:00Z",
       "kind": "assembly",
       "plain": "Synthesize a GBP0 17th-century D-minor chamber opening for HOS 009 in Python/NumPy, join it to the retained teach cue, and verify full-library music_gate and continuity",
       "progress": {
-        "step": 1,
+        "step": 0,
         "of": 4,
-        "at": "2026-11-20T14:39Z",
+        "at": "2026-11-20T14:55Z",
         "by": "cursor",
-        "note": "Library has 94 readable beds. The gate is comparing the opening and the joined score now."
+        "note": "Claimed J3234. Local v03 synth, join, stems and gate JSON already on disk from an earlier run. Verifying hashes, duratio"
       },
       "taskKeys": [
         "HOS:009"
