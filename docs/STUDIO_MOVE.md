@@ -919,3 +919,27 @@ unrelated-project supervisor or alter the log-only HOS reminder as part of this 
 
 This inspection did not execute a worker, restart a service, alter a wrapper, inspect credential values or
 change any remote prompt. The installed/loaded MacBook inventory is still required separately.
+
+### Prepared remote-worker proposals (20 November)
+
+`scripts/mini/prepare_remote_worker.py` now stages a wrapper from its inspected source and expected SHA-256.
+It appends engine access, binds `STUDIO_REPO`, `OWB_REPO`, `HOS_REPO`, and `WW2_REPO`, and leaves the local
+credential setup, worker name, data directory and original permitted-root order untouched. The installed
+Cursor CLI's `worker --help` explicitly says the first `--worker-dir` is the assignment identity: never prepend
+the engine or replace the original first channel root. Multiple roots are supported. Personal workers allow
+multiple concurrent sessions, so check all sessions at drain, not just one apparent claim.
+
+Use `--source <installed-wrapper> --expected-sha256 <inspected-hash> --engine <future-engine-root>
+--owb <owb-root> --hos <hos-root> --ww2 <ww2-root> --out <new-private-file>`.
+The output is created exclusively with mode 0600. It can include copied local authentication setup; keep it
+outside Git and never print it. Source hash mismatches and unreviewed invocation shapes fail closed. The helper
+runs only `bash -n`; it neither starts a worker nor installs anything. Environment root bindings do not grant
+additional permitted roots beyond the appended engine; existing channel access is preserved as inspected.
+
+Both actual wrappers were staged and syntax-checked, with unchanged source hashes, under
+`/private/tmp/j3012-remote-proposals-0953`. These temporary files are preparation only. Rebuild from a freshly
+verified installed source at cutover, save the originals privately, and install through the existing service
+path only after all sessions have drained. Retain rollback hashes and original executable mode; the staged
+0600 mode deliberately is not runnable. Verify loaded roots, remote instructions and controlled dispatch as
+required above before declaring acceptance. These proposals do not add a runtime pause guard or prove session
+drain. Live installation remains prohibited until the move prerequisites hold.
