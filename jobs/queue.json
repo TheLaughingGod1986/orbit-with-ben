@@ -287997,9 +287997,14 @@
           "at": "2026-11-20T13:17Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Step 1 done: locked script verified (PR #5 macbook/J2997, 6 chapters, 3,544 words, 20,475 chars <= 21,000 cap); live ElevenLabs balance 51,337 remaining (69,777/121,114 used), well above 11,000 post-take reserve; identified ch01=5,271 chars exceeds eleven_v3 5,000-char request cap"
+        },
+        {
+          "at": "2026-11-20T13:23Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: ch00 (93.36s) and ch01 (370.70s, split cleanly at S12/S13 under 5,000-char limit) complete; MiniWork hit 100% full during ch01 WAV decode so moved scratch to /tmp (34 GB free) and resumed vo_take.py reusing ch00/ch01 with zero duplicate TTS spend"
         }
       ],
-      "remaining_action": "Run ElevenLabs eleven_v3 chapter narration (handling ch01 5,271-char split under 5,000-char API limit) and Scribe v2 check under desk-lock elevenlabs",
+      "remaining_action": "Complete ElevenLabs eleven_v3 chapters ch02-ch05, concatenate 0.7s gaps, and run Scribe v2 transcript check",
       "due": "2026-11-22T18:00:00Z",
       "for": "gemini",
       "kind": "vo",
@@ -288008,9 +288013,9 @@
       "progress": {
         "step": 1,
         "of": 5,
-        "at": "2026-11-20T13:17Z",
+        "at": "2026-11-20T13:23Z",
         "by": "gemini",
-        "note": "Step 1 done: locked script verified (PR #5 macbook/J2997, 6 chapters, 3,544 words, 20,475 chars <= 21,000 cap); live Ele"
+        "note": "ch00 (93.36s) and ch01 (370.70s, split cleanly at S12/S13 under 5,000-char limit) complete; MiniWork hit 100% full durin"
       },
       "taskKeys": [
         "WW2:003"
