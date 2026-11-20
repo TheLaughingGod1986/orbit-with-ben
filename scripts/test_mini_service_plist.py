@@ -109,6 +109,20 @@ class MiniServicePlist(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.render(dict(self.source, Label='unrelated'))
 
+    def test_janitor_preserves_interval_and_uses_new_engine_queue(self):
+        template = TOOL.parents[2] / '07_Content-Ops/launchd/com.owb.tab-janitor.plist'
+        original = template.read_bytes()
+        source = plistlib.loads(original)
+        doc = self.render(source)
+        self.assertEqual(doc['ProgramArguments'], [sys.executable,
+            str(self.engine / 'scripts/cdp_tabs.py'), 'tidy'])
+        self.assertEqual(doc['StartInterval'], 300)
+        self.assertTrue(doc['RunAtLoad'])
+        self.assertEqual(doc['StandardOutPath'], source['StandardOutPath'])
+        self.assertEqual(doc['StandardErrorPath'], source['StandardErrorPath'])
+        self.assertEqual(doc['EnvironmentVariables']['STUDIO_REPO'], str(self.engine))
+        self.assertEqual(template.read_bytes(), original)
+
     def test_rejects_relative_paths(self):
         with self.assertRaises(ValueError):
             renderer.render(self.source, 'relative', sys.executable, self.channels)

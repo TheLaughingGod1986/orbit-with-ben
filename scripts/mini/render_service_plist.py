@@ -14,6 +14,7 @@ SERVICES = {
     'com.owb.board-publish': ('board_publish.py', '--quiet'),
     'com.owb.ai-spend-daily': ('ai_spend_daily.py', '--git'),
     'com.owb.missed-runs': ('missed_runs.py', '--post'),
+    'com.owb.tab-janitor': ('cdp_tabs.py', 'tidy'),
 }
 
 SHELL_SERVICES = {

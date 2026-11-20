@@ -111,6 +111,44 @@ class TheJanitorsStateFile(unittest.TestCase):
         self.assertEqual(run.stdout.strip(), "False", run.stderr)
 
 
+class RetiredJanitor(unittest.TestCase):
+    def test_retired_tidy_refuses_before_state_queue_or_browser_reads(self):
+        from unittest.mock import patch
+        for dry in (False, True):
+            with self.subTest(dry=dry), \
+                    patch('engine_guard.require_active', side_effect=SystemExit('retired')), \
+                    patch.object(c, 'load_state') as load, \
+                    patch.object(c, 'studio_job_running') as queue, \
+                    patch.object(c, 'http') as http, \
+                    patch.object(c, 'save_state') as save:
+                with self.assertRaises(SystemExit):
+                    c.tidy(dry=dry)
+                for operation in (load, queue, http, save):
+                    operation.assert_not_called()
+
+    def test_imported_state_writer_refuses_before_resolving_or_creating_path(self):
+        from unittest.mock import patch
+        with patch('engine_guard.require_active', side_effect=SystemExit('retired')), \
+                patch.object(c, 'state_file') as path, patch.object(c.os, 'makedirs') as mkdir:
+            with self.assertRaises(SystemExit):
+                c.save_state({'untrusted': {}})
+            path.assert_not_called()
+            mkdir.assert_not_called()
+
+    def test_active_tidy_keeps_three_hour_protection_for_claimed_studio_work(self):
+        from unittest.mock import patch
+        with patch('engine_guard.require_active'), patch.object(c, 'time') as clock, \
+                patch.object(c, 'load_state', return_value={'9223': {'a': OLD - 1, 'b': OLD}}), \
+                patch.object(c, 'studio_job_running', return_value=True), \
+                patch.object(c, 'page_tabs', return_value=[tab('a', S), tab('b', S)]), \
+                patch.object(c, 'http') as http, patch.object(c, 'save_state') as save:
+            clock.time.return_value = NOW
+            report = c.tidy(ports=(9223,))
+            http.assert_not_called()
+            self.assertIn('closed 0', report[0])
+            self.assertEqual(set(save.call_args.args[0]['9223']), {'a', 'b'})
+
+
 
 if __name__ == "__main__":
     unittest.main(verbosity=1)

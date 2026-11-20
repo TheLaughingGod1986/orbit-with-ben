@@ -42,6 +42,9 @@ production deployment before execution; explicit approval was requested. Do not 
 the gate as passed. The live probe still returns 404. Both MacBook heartbeat slots were read, but they carry no
 worker version and do not replace installed/loaded-service inventory. See
 `jobs/reviews/J3012/PRODUCTION_PROBE_STAGE_2026-11-20.md` for candidate hashes, rollback ID and remaining checks.
+The tab janitor now has a staged launcher and a retirement check before queue/cache/browser reads and direct cache
+writes. Its installed legacy argv and five-minute interval were verified read-only; no service was changed. See
+`jobs/reviews/J3012/JANITOR_PREPARATION_2026-11-20.md`. The existing page-reuse helper remains independent of the engine.
 Next: resolve the probe deployment approval; propagate the merged guard patch after draining affected writers;
 remaining wrapper replacements; actual MacBook inventory;
 refresh again from the final frozen source at cutover. Do not equate installed-service inventory with loaded-service or guard verification.
@@ -774,7 +777,7 @@ unresolved Cursor target. Handle the following before changing the active-engine
 | `com.hos.desk`, `com.hos.local-wan-ltx-queue-reminder` | Channel-local programs resolved. Preserve channel roots; inspect subprocess/queue references before resumption. Keep their read markers. |
 | `com.hos.cdp-browsers` | Preserve signed-in profiles and existing ports. This is not an engine writer; do not close Chrome as part of the move. |
 | `com.owb.missed-runs` | The installed plist fails XML parsing. Establish loaded state separately (launchd may hold an earlier valid definition). Keep its old bytes for rollback and prepare a valid replacement before relying on it for post-move monitoring. Do not overwrite it during preparation. |
-| `com.owb.ai-spend-daily`, `com.owb.tab-janitor` | Old-root references found; shell resolution remains incomplete in this bounded scan. Use the prepared spend service adapter; manually resolve the janitor and preserve the one-tab policy. |
+| `com.owb.ai-spend-daily`, `com.owb.tab-janitor` | Use the prepared spend service adapter. The janitor installed argv is now verified as the legacy shell entrypoint; use its prepared direct-Python adapter, retaining the 300-second interval, cache namespace and browser policy. Drain the old timer before switching, and keep exactly one loaded janitor. Neither adapter is installed. |
 
 The remaining inventory rows include the prepared relay, board, analytics and Buffer services and unrelated
 Cursor project workers. Their configured script hashes are local evidence, not proof the staged adapters have
