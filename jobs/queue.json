@@ -1,5 +1,5 @@
 {
-  "next_id": 3254,
+  "next_id": 3255,
   "jobs": [
     {
       "id": "J0001",
@@ -226207,7 +226207,7 @@
         "HOS:013"
       ],
       "action": "Run the 14 batches one at a time under the Chief's guards: --floor 3000 stated, live balance before each Create, release between batches",
-      "urgent": 4,
+      "urgent": 3,
       "escalated_at": "2026-11-20T01:42Z",
       "progress": {
         "step": 14,
@@ -292135,6 +292135,37 @@
       "taskKeys": [
         "OWB:030"
       ]
+    },
+    {
+      "id": "J3254",
+      "title": "Field Order History: set up its upload path (Studio browser profile + port, upload tooling for ww2, Ben's one sign-in), so finished pilots can go out",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why (Ben, 20 Nov: \"As we have 2 FOH ready, what's stopping it going out early to test these work?\"; Claude, 20 Nov 22:30Z).** WW2 pilots 001 (J2993, v43) and 002 (J2996) are finished. Apart from Ben's watch and the channel's phone verification (both Ben's), Field Order History has no upload path yet. channel.json has no Studio browser port or launch_state (the failing port test noted on PR #1036), and J3044 found only read-only API scopes and no Analytics token. So even after Ben says OK, nothing can upload.\n\n**Do, on the Mini (prepare everything that needs no sign-in).**\n1. Create the FOH Studio browser profile the same way as Orbit's and History of Science's: its own CDP port and user-data dir. Record the port and launch_state in ww2-channel `studio/channel.json` and the studio's cached copy, so the port test passes and the MacBook lane can use it too.\n2. Check that the upload tooling (`youtube:package`, approved_deliver.py, the Buffer mirror if used) handles the ww2 channel: channel id UCu94mInMFosxu3W0H6jlI6Q, its NAS folder, and Tue/Sat 17:00 slots. Fix what is channel-hard-coded.\n3. Write Ben ONE message on the thread (his own sign-in, allowed by AGENTS.md) with the exact steps. Step one: on the Mac mini, open the FOH Studio browser and sign in to the Google account that owns Field Order History. Step two: approve the API sign-in for upload and analytics (the J3044 steps). Say how long it takes. Ask nothing else.\n4. After his sign-in: a dry-run package for WW2:001 (no upload), proving the path end to end. Then report.\n\n**Guards.** No upload, no visibility change. YouTube rejects films over 15 minutes and custom thumbnails until the channel is phone-verified, so check Feature eligibility and report it. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-20T22:30Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T22:30Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "FOH Studio profile + CDP port in channel.json; youtube:package handles ww2; one sign-in message to Ben; dry-run package for 001; report eligibility",
+      "due": "2026-11-22T18:00:00Z",
+      "kind": "studio",
+      "plain": "Connect the WW2 channel so finished films can actually be uploaded, ready for Ben's one-time sign-in",
+      "urgent": 4
     }
   ],
   "focus": [

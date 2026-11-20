@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2529.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2529, J3254.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -63,6 +63,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3246 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J1275 |  |
 | J3249 | mini | open | – | – | assembly · MiniWork scratch SSD cleanup: safely offload old completed-job scratch to NAS to restore >=40 GB free before J3012 daily split and cutover |  |
 | J3253 | mini | claimed | cursor | 2026-11-20T22:46Z | studio · OWB AR1-AR3 Shorts (93JL_IK57EM, _dVWVUnbDzA, MScK2CK2ZFg): fix stale 'latest full film' description line + set AR3 Related video to VBaYRPp85Sw |  |
+| J3254 | mini | open | – | – | studio · Field Order History: set up its upload path (Studio browser profile + port, upload tooling for ww2, Ben's one sign-in), so finished pilots can go out |  |
 
 Recently finished:
 
