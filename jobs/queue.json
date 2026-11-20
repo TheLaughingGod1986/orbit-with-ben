@@ -271395,10 +271395,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-20T08:42Z",
-      "eta": "2026-11-20T12:42Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
       "result": "",
@@ -272232,6 +272232,11 @@
           "at": "2026-11-20T08:45Z",
           "by": "codex",
           "what": "step 3 of 4 done: PR 1011 edb436379a adds sanitized loaded-state inventory; 35 focused checks pass. Mini has 17 loaded definitions including malformed missed-runs. MacBook SSH refused; installed inventory remains unverified."
+        },
+        {
+          "at": "2026-11-20T08:46Z",
+          "by": "codex",
+          "what": "released: Preserve 3/4. PR 1011 now edb436379a: optional read-only loaded-service inventory, 12 inventory and 23 launcher/security checks pass; zero changed-file key/address findings. Mini 17 of 18 definitions loaded, including malformed missed-runs; no services changed. MacBook online but strict non-interactive SSH refused, so actual remote inventory remains unverified; obtain through existing worker session without enabling remote login. Prior production-probe automatic-review rejection remains unresolved and was not retried. Next approved runtime Contents probe, drained HOS guard propagation, MacBook inventory/wrappers, preceding-day notice and live acceptance. Evidence LOADED_SERVICES_2026-11-20.md; clean worktree /private/tmp/j3012-0620. No deployment, marker, films or spend changed."
         }
       ],
       "remaining_action": "Complete board access probe and MacBook readiness before migration notice",
