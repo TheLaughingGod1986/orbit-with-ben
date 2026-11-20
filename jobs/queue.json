@@ -287878,10 +287878,10 @@
       "stage": "picture",
       "after": "J3000",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-20T10:26Z",
+      "eta": "2026-11-20T12:26Z",
       "created_by": "claude",
       "created_at": "2026-11-20T10:21Z",
       "result": "",
@@ -287890,12 +287890,25 @@
           "at": "2026-11-20T10:21Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-20T10:26Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Archive photos with provenance and code-drawn maps for WW2 film 004; £0",
       "due": "2026-11-29T18:00:00Z",
       "kind": "image",
-      "plain": "Find the archive photos and draw the maps for WW2 film 004, about submarine torpedoes"
+      "plain": "Find the archive photos and draw the maps for WW2 film 004, about submarine torpedoes",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T10:26Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3208",
