@@ -255046,20 +255046,25 @@
           "at": "2026-11-20T05:42Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Claimed J2847. Next: read J3194 review and T007 readback, then a fresh Studio read of ziKBPJ6FY0U."
+        },
+        {
+          "at": "2026-11-20T05:44Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Fresh Studio read matches finished T007: 15 Oct 2026 11:22 to 29 Oct 2026 10:24, not enough impressions, both watch-time shares unavailable, A visible to all, no running test. Title unchanged. B hash matches."
         }
       ],
-      "remaining_action": "Read the Webb approval and the finished thumbnail report before any Studio change",
+      "remaining_action": "Start the approved Webb thumbnail comparison over the finished report",
       "kind": "studio",
       "plain": "Wait for the corrected Webb thumbnail to pass review before testing it",
       "taskKeys": [
         "OWB:004"
       ],
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-20T05:42Z",
+        "at": "2026-11-20T05:44Z",
         "by": "cursor",
-        "note": "Claimed J2847. Next: read J3194 review and T007 readback, then a fresh Studio read of ziKBPJ6FY0U."
+        "note": "Fresh Studio read matches finished T007: 15 Oct 2026 11:22 to 29 Oct 2026 10:24, not enough impressions, both watch-time"
       }
     },
     {
