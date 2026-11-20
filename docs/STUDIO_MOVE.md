@@ -36,7 +36,14 @@ Fresh complete-source export and private-identity suite now pass (1,482 tests, s
 snapshot is `rehearsal/j3012-20261120` at `a5759dc95f0bf8c02f9bd6050defb6c5bb5a41d9`, independently read back as
 a parentless, 2,397-file tree with no active workflows. The sparse-source omission guard and full provenance are
 in `jobs/reviews/J3012/REFRESHED_REHEARSAL_2026-11-20.md`. Original rehearsal/default branch unchanged.
-Next: propagate the merged guard patch after draining affected writers; deploy and run the prepared board credential probe; remaining wrapper replacements; MacBook inventory;
+A narrow probe candidate now exists from the exact current production source, with all five checked static
+assets byte-identical to live and eight probe boundary tests passing. Automatic approval review rejected its
+production deployment before execution; explicit approval was requested. Do not bypass that rejection or treat
+the gate as passed. The live probe still returns 404. Both MacBook heartbeat slots were read, but they carry no
+worker version and do not replace installed/loaded-service inventory. See
+`jobs/reviews/J3012/PRODUCTION_PROBE_STAGE_2026-11-20.md` for candidate hashes, rollback ID and remaining checks.
+Next: resolve the probe deployment approval; propagate the merged guard patch after draining affected writers;
+remaining wrapper replacements; actual MacBook inventory;
 refresh again from the final frozen source at cutover. Do not equate installed-service inventory with loaded-service or guard verification.
 Keep the live switch gated on the timing and acceptance below. This run does not change the official daily
 history or send the day-before notice.
