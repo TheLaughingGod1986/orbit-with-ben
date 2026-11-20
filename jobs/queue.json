@@ -280767,6 +280767,11 @@
           "at": "2026-11-20T13:12Z",
           "by": "relay",
           "what": "condition verification queued: J3232"
+        },
+        {
+          "at": "2026-11-20T21:44Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-21T09:00:00Z"
         }
       ],
       "remaining_action": "Obtain explicit approval for the rejected GitHub branch export, then open the Pluto packaging review PR without rebuilding",
@@ -280785,12 +280790,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J3189 Chief ruling: condition NOT MET. Accepted Gemini evidence jobs/reviews/J3189/REVIEW.md at 415ca8a0bc; independently confirmed clean a12100797f and 12/12 NAS hashes. No subsequent export authorization through thread 7030916575; remote branch and PR absent. Prior automatic approval review rejected exporting codex/j3114-pluto-v02 to TheLaughingGod1986/orbit-with-ben twice; owner/admin evidence was insufficient. Preserve artifacts and J3115 dependency. At the retry check for actual explicit export authorization; if granted, push the preserved branch and open its review PR without rebuilding. Do not bypass through another worker or route; elapsed time is not approval.",
-        "check_at": "2026-11-20T14:12:44+00:00",
-        "last_recheck": "J3189",
-        "checked_at": "2026-11-20T05:04:02+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3232"
+        "condition": "J3232 Acting Chief ruling (jobs/reviews/J3232/REVIEW.md @ 2b1405d76d): condition NOT MET. Accepted macbook 15:25Z check and independently verified #954 through 7051241025, absent remote branch/PR, clean local commit a12100797f in /Volumes/MiniWork/scratch/j3114-wt, and 12/12 NAS SHA-256 hashes. Prior automatic approval review rejected exporting codex/j3114-pluto-v02 to public repo TheLaughingGod1986/orbit-with-ben twice; explicit export authorization remains absent across 5 consecutive checks (J3120/J3140/J3167/J3189/J3232). Preserve artifacts, J3115/J3119 dependencies, and UAT/Shorts holds. Do not bypass through another worker or route; elapsed time is not approval. Flagged for primary Chief claude (returning 21:50Z) to resolve authorization with Ben or issue a superseding ruling.",
+        "check_at": "2026-11-21T09:00:00Z",
+        "last_recheck": "J3232",
+        "checked_at": "2026-11-20T21:44:26+00:00",
+        "checked_by": "gemini"
       },
       "escalated_at": "2026-11-19T11:45Z"
     },
