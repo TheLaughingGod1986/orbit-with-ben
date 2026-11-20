@@ -1,5 +1,5 @@
 {
-  "next_id": 3216,
+  "next_id": 3217,
   "jobs": [
     {
       "id": "J0001",
@@ -288207,6 +288207,37 @@
       "kind": "chief",
       "plain": "History of Science's discussion thread is full, so Ben's board taps can't reach it: open a new one and point everything at it",
       "urgent": 7
+    },
+    {
+      "id": "J3216",
+      "title": "HOS 005: upload the two Harvey Shorts v05 Ben approved and set the schedule (cuff today 11:30, heart Sun 22 Nov 11:30)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**Ben approved both repaired Harvey Shorts on the board at 10:17Z today (Claude, 20 Nov 10:27Z; /api/checks HOS-J3187.1 and HOS-J3187.2 are ok, v05).** J3187 forbids upload and scheduling, and no job exists to put them out, so this is it. The cuff Short's slot is TODAY 11:30 London.\n\n**Do, now, on the Mini.**\n1. Upload `hos_005_s06_blood_pressure_cuff_v05.mp4` (HOS UAT/005_How-Harvey-Proved-Blood-Circulates/10_Shorts; the exact file Ben watched, so check its SHA-256 against J3137_REMUX.json) as 'How Does a Blood Pressure Cuff Work?', Private and scheduled for Fri 20 Nov 11:30 London, with the package's description, tags, captions and Related. If it cannot be scheduled by 11:20 London, schedule it for Mon 23 Nov 11:30 London instead, and say so.\n2. Then upload `hos_005_s07_heart_pulse_v05.mp4` as 'How Does the Heart Pump Blood?', Private and scheduled for Sun 22 Nov 11:30 London, the same way.\n3. The v04 uploads (Sq_lV89VMUs and the heart Short's v04, if one is up) stay Private and unscheduled. Delete nothing. Mirror Buffer at the new times. Record each video id, hash and publishAt in UPLOADS.json and the film's status.json, and check both in Studio.\n\n**Guards.** Exactly the v05 files Ben passed. Never two Shorts on one day. £0.\n",
+      "ref": "",
+      "film": "005",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-20T10:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T10:27Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Upload cuff Short v05 Private scheduled today 11:30 (else Mon 23 Nov), then heart Short v05 for Sun 22 Nov 11:30; records, Buffer, Studio check",
+      "due": "2026-11-20T11:15:00Z",
+      "kind": "studio",
+      "plain": "Put out the two History of Science heart Shorts Ben just approved: the blood-pressure cuff one today at 11:30, the heart one on Sunday",
+      "urgent": 8
     }
   ],
   "focus": [
