@@ -53,7 +53,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3115 | mini | open (after J3114) | – | – | 034 upload · chief · 034 Pluto: final packaging review after J3114 fixes and Ben-gated delivery handoff | J3112,J3114,J2868 |
 | J3119 | mini | open (after J3115) | – | – | 034 upload · studio · Upload the Pluto long master v02 Private and scheduled for Sun 13 Dec 18:00, arm the thumbnail test |  |
 | J3125 | mini | blocked | codex | – | studio · HOS Vaccine test: 24 Nov feed gate and conditional 29 Nov readout |  |
-| J3137 | mini | claimed | gemini | 2026-11-20T16:07Z | 005 edit · assembly · HOS 005 Shorts s06/s07/s08: no-spend music_gate repair against archived HOS 002/004 beds (£0) |  |
 | J3161 | mini | blocked | codex | – | studio · Supermoon Short: next-morning and full-day performance follow-up |  |
 | J3176 | any | blocked | codex | – | 024 edit · chief · OWB 024 muon Short: decide whether to swap gc1hWQQJOq4 onto the v06 bed |  |
 | J3178 | mini | blocked | gemini | – | 013 picture · for gemini · qa · `gemini-argon` · HOS 013: continuous playback review of ten unresolved pass-one plates |  |
