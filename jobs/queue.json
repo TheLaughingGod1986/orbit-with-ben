@@ -271508,10 +271508,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-20T18:54Z",
+      "eta": "2026-11-20T22:54Z",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
       "result": "",
@@ -272480,6 +272480,11 @@
           "at": "2026-11-20T16:53Z",
           "by": "gemini",
           "what": "released: Preserved 3/4. Independent Chief PASS & merge of PR #1011 (055ed1509f -> 24058503f8; 1,502 Python tests PASS/6 skipped, 232 Content-Ops tests PASS, studio_split --no-tests PASS 0 left). Verified live HOS checkout on main (9f3acbae, includes HOS PR #688; all 3 direct spend exporters guarded, 5/5 tests PASS, 0 other direct writers on Mini/NAS, 0 active Flow processes). Ran live narrow Cloudflare Pages studio-kanban probe: caught Cloudflare Workers redirect:'error' TypeError (fixed to redirect:'manual' + 302 test in PR #1075 @ 5fe73b23d3) and proved production BOARD_GH_TOKEN returns HTTP 404 on TheLaughingGod1986/studio (repo/ref exist -> Ben must add studio with Contents: Read-only to BOARD_GH_TOKEN before cutover). Production restored to fa4baa50 (version 23884765ba0e03bf; /api/migration=404; /,/tracker,/ai,/api/checks=200) and both probe deployments deleted. Queued read-only MacBook inventory job J3242. Next: merge PR #1075 (independent review), finish J3242, Ben updates BOARD_GH_TOKEN + quick re-probe confirming 200 contentsRead:true, clear /Volumes/MiniWork scratch space (264 MiB free), post preceding-day notice (Sun 22 Nov for Mon 23 Nov or Mon 23 for Tue 24), then drained cutover and live acceptance. £0, no live cutover."
+        },
+        {
+          "at": "2026-11-20T18:54Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Await MacBook inventory (J3242), Ben's one-time BOARD_GH_TOKEN grant for studio (Contents: Read-only), and PR #1075 review; then post preceding-day notice and execute cutover",
