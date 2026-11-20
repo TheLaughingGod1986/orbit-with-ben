@@ -288846,13 +288846,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-20T11:33Z",
-      "eta": "2026-11-20T13:03Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-20T11:28Z",
-      "result": "",
+      "result": "PR #1070 open with sections 1, 2, 4A-4B & 5 complete (05_Analytics/hos/AUDIT_2026-11.md). Sections 3 (countries, ages, gender for Shorts vs longs) and 4C (fresh lifetime + 28d exact YouTube search terms) require Mini-only YT_ANALYTICS_REFRESH_TOKEN_HOS; MacBook has no .env and CDP 9222 is signed out (accounts.google.com). Complete sections 3 & 4C on the Mini on top of PR #1070, then hand off to J3224.",
       "history": [
         {
           "at": "2026-11-20T11:28Z",
@@ -288888,6 +288888,11 @@
           "at": "2026-11-20T11:45Z",
           "by": "macbook",
           "what": "step 4 of 5 done"
+        },
+        {
+          "at": "2026-11-20T11:45Z",
+          "by": "macbook",
+          "what": "blocked: PR #1070 open with sections 1, 2, 4A-4B & 5 complete (05_Analytics/hos/AUDIT_2026-11.md). Sections 3 (countries, ages, gender for Shorts vs longs) and 4C (fresh lifetime + 28d exact YouTube search terms) require Mini-only YT_ANALYTICS_REFRESH_TOKEN_HOS; MacBook has no .env and CDP 9222 is signed out (accounts.google.com). Complete sections 3 & 4C on the Mini on top of PR #1070, then hand off to J3224."
         }
       ],
       "remaining_action": "PR #1070 open for sections 1, 2, 4A-4B, 5; blocking for Mini YTA token to complete sections 3 & 4C",
@@ -288909,6 +288914,11 @@
         "of": 5,
         "at": "2026-11-20T11:45Z",
         "by": "macbook"
+      },
+      "hold": {
+        "type": "input",
+        "condition": "PR #1070 open with sections 1, 2, 4A-4B & 5 complete (05_Analytics/hos/AUDIT_2026-11.md). Sections 3 (countries, ages, gender for Shorts vs longs) and 4C (fresh lifetime + 28d exact YouTube search terms) require Mini-only YT_ANALYTICS_REFRESH_TOKEN_HOS; MacBook has no .env and CDP 9222 is signed out (accounts.google.com). Complete sections 3 & 4C on the Mini on top of PR #1070, then hand off to J3224.",
+        "check_at": "2026-11-20T17:45:54+00:00"
       }
     },
     {
