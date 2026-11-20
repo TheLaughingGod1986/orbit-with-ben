@@ -179078,10 +179078,10 @@
       "stage": "edit",
       "after": "J2035",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "claudecode",
-      "since": "2026-11-20T20:19Z",
-      "eta": "2026-11-20T22:19Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
       "result": "",
@@ -179130,6 +179130,11 @@
           "at": "2026-11-20T20:24Z",
           "by": "claudecode",
           "what": "step 2 of 6 done: Master hash matches on Mini and NAS; format, loudness and 18 stills checked; chapter times read from the cut"
+        },
+        {
+          "at": "2026-11-20T20:24Z",
+          "by": "claudecode",
+          "what": "released: Partial: master 802b5c7e hash verified on Mini and NAS (519.000 s, 15567 frames, -20.8 LUFS, peak -3.5 dBFS, no silences); 18 stills clean. Real chapter times: 0:00, 1:24, 2:56, 4:20, 6:33 (description still provisional, not edited). Owed: description edit + lint:package + PR, caption/timing/scale/teach gates, 4:54 frame, thumbnail evidence (08_Thumbnail empty in checkout), loudness vs target. No moving or audio review claimed."
         }
       ],
       "remaining_action": "Writing re-timed chapters into the description, running the package lint and the remaining caption, scale and teach checks",
