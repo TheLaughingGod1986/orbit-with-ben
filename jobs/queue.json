@@ -290549,10 +290549,10 @@
       "stage": "edit",
       "after": "J3240",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-20T16:07Z",
+      "eta": "2026-11-20T18:07Z",
       "created_by": "gemini",
       "created_at": "2026-11-20T15:20Z",
       "result": "",
@@ -290561,12 +290561,25 @@
           "at": "2026-11-20T15:20Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-20T16:07Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "HOS 009: Chief final score disposition for own-score v04_synth (accept or escalate to Ben)",
       "due": "2026-11-21T12:00:00Z",
       "kind": "chief",
-      "plain": "Elected-Chief final disposition on HOS 009 v04_synth: accept if all gates and independent ear review pass, else escalate single ElevenLabs billing/pricing question to Ben."
+      "plain": "Elected-Chief final disposition on HOS 009 v04_synth: accept if all gates and independent ear review pass, else escalate single ElevenLabs billing/pricing question to Ben.",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T16:07Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
