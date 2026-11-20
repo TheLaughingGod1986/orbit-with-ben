@@ -74,7 +74,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3221 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2537 |  |
 | J3222 | any | claimed | macbook | 2026-11-20T12:23Z | studio · Search-led topics from January (Ben OK 20 Nov): playbook and rules, weekly research for Orbit and WW2, second Orbit plan on the board |  |
 | J3223 | mini | open | – | – | for gemini · review · `gemini-argon` · History of Science: full audit (views trend and drop, every video by topic and source, audience countries and ages, search terms) |  |
-| J3224 | cloud | open (after J3223) | – | – | script · History of Science: search-led research and a new plan for the board (Anglosphere, adult, low competition), waiting for Ben's OK |  |
+| J3224 | mini | open (after J3223) | – | – | for gemini · script · `gemini-argon` · History of Science: search-led research and a new plan for the board (Anglosphere, adult, low competition), waiting for Ben's OK |  |
 
 Recently finished:
 

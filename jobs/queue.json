@@ -288872,7 +288872,7 @@
     {
       "id": "J3224",
       "title": "History of Science: search-led research and a new plan for the board (Anglosphere, adult, low competition), waiting for Ben's OK",
-      "needs": "cloud",
+      "needs": "mini",
       "repo": "hos",
       "body": "**Do: search-led research and a new History of Science plan (after the audit).** Use the Orbit method Ben approved on 20 Nov (J3222): demand from vidIQ keyword research (up to 100 credits); value (US, UK, Canada and Australia among top markets, adult audience, evergreen); the results-page gap (top 10: age, views, channel size, on-target or not); small-channel outliers (history-of-science and science-history channels under 50k at 5x their usual). Ignore volume that sits in low-paying markets only. For example, 'ancient humans' gets 1.8M searches a month and 'early humans' 165k (competition 37), but Pakistan, India and Vietnam lead both. Seed figures from Claude's pull on 20 Nov: 'science history' 33k/50 (US 25%), 'thomas edison' 29k/55 (US 30%), 'the wright brothers' 7.7k/51 (up 75%), 'history of science' 23k/63 (down 37%).\nDeliver: (1) the ranked table and 3-4 clusters with a gap; (2) a proposed plan for `studio/plan.json` (id hos-search-2027-01, channel hos) in the same shape as orbit-search-2027-01. It carries the goal, the why (from the audit), the cadence (longs and Shorts a week, with slots), the first films with titles, test bars and a six-week review. (3) A one-page summary for Ben. LEARNINGS rule 34 item 7 says History of Science changes go to Ben, so the plan goes on the board marked as waiting for his OK (needsBen on its first step), and nothing changes until he says yes. Due 27 Nov.\n",
       "ref": "",
@@ -288892,12 +288892,26 @@
           "at": "2026-11-20T11:28Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-20T11:30Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-20T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "vidIQ research by the approved method; clusters with a gap; hos-search-2027-01 plan on the board (needsBen); one-page summary for Ben",
       "due": "2026-11-27T18:00:00Z",
       "kind": "script",
-      "plain": "Use search data to find History of Science topics English-speaking adults look for, and propose a new plan for Ben"
+      "plain": "Use search data to find History of Science topics English-speaking adults look for, and propose a new plan for Ben",
+      "rerouted_from": {
+        "needs": "cloud",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
