@@ -271992,18 +271992,23 @@
           "at": "2026-11-20T06:26Z",
           "by": "codex",
           "what": "step 3 of 4 done: Added heartbeat, board-health and board-note writer retirement guards; 28 focused tests pass. Broader regression checks running; live move remains gated."
+        },
+        {
+          "at": "2026-11-20T06:27Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: PR 1011 at 3ab890ae0c adds heartbeat, board-health and board-note retirement guards; 94 regression and final 28 focused tests pass. No live switch."
         }
       ],
-      "remaining_action": "Finish migration access and remaining service safeguards, then refresh the rehearsal",
+      "remaining_action": "Verify deployed board access, remaining service safeguards and the refreshed rehearsal before cutover",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-20T06:26Z",
+        "at": "2026-11-20T06:27Z",
         "by": "codex",
-        "note": "Added heartbeat, board-health and board-note writer retirement guards; 28 focused tests pass. Broader regression checks "
+        "note": "PR 1011 at 3ab890ae0c adds heartbeat, board-health and board-note retirement guards; 94 regression and final 28 focused "
       }
     },
     {
