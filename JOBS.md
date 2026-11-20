@@ -64,6 +64,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3198 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3178 |  |
 | J3199 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3176 |  |
 | J3200 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3137 |  |
+| J3201 | any | open | – | – | script · OWB: learn from our data, add two new films to the backlog |  |
 
 Recently finished:
 
