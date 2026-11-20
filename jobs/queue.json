@@ -272042,19 +272042,29 @@
           "at": "2026-11-20T06:42Z",
           "by": "codex",
           "what": "step 3 of 4 done: Restored existing 3/4 plan from job history; continuing PR 1011 at af5250ed94. Runbook and rehearsal already exist."
+        },
+        {
+          "at": "2026-11-20T06:45Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Three direct exporters now validate the active ledger destination; 10 offline boundary/replay tests pass. Full runner regression checks running; no live marker or spend."
         }
       ],
-      "remaining_action": "Finish remaining migration safeguards and verify the existing rehearsal before the gated live move",
+      "remaining_action": "Verify direct Flow spend exporters and add their migration safeguard PR to the runbook",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-20T06:42Z",
+        "at": "2026-11-20T06:45Z",
         "by": "codex",
-        "note": "Restored existing 3/4 plan from job history; continuing PR 1011 at af5250ed94. Runbook and rehearsal already exist."
-      }
+        "note": "Three direct exporters now validate the active ledger destination; 10 offline boundary/replay tests pass. Full runner re"
+      },
+      "taskKeys": [
+        "HOS:009",
+        "HOS:010",
+        "HOS:013"
+      ]
     },
     {
       "id": "J3013",
