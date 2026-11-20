@@ -49,7 +49,8 @@ class Relay(unittest.TestCase):
         notify.chmod(notify.stat().st_mode | stat.S_IEXEC)
         self.env = dict(os.environ)
         os.environ.update({"CHIEF_CLAUDE_BEAT_URL": "", "CHIEF_CLAUDE_BEAT_FETCH_MIN": "999999", "CHIEF_NOTIFY": str(notify), "CHIEF_HOURS": "0-24", "CHIEF_SWEEP_HOURS": "0-24", "CHIEF_CHAIN": "chief,cursor,codex",
-                           "CHIEF_HEARTBEAT": "0", "CHIEF_MIN_FREE_MB": "0"})  # never push a heartbeat from a test run on the Mini
+                           "CHIEF_HEARTBEAT": "0", "CHIEF_MIN_FREE_MB": "0",
+                           "CHIEF_OFFLOAD_GB": "0"})  # no live heartbeat or scratch offload from unit tests
         self.cursor = self.fake("cursor", 'echo "cursor did J0001"')
         self.codex = self.fake("codex", 'echo "codex did J0001"')
         os.environ["CURSOR_AGENT_BIN"], os.environ["CODEX_BIN"] = str(self.cursor), str(self.codex)
@@ -1000,8 +1001,14 @@ class Relay(unittest.TestCase):
             "            'checkouts': [{'repo': '/x/orbit-with-ben', 'ok': True, 'actions': ['moved 7 untracked file(s)']}],\n"
             "            'biggest': []}\n")
         os.environ["CHIEF_MIN_FREE_MB"] = str(10 ** 9)  # the disk counts as low
-        self.assertTrue(cr.self_heal(T0))
-        self.assertTrue(cr.self_heal(T0 + 5 * MIN))  # throttled: no second repair within 30 min
+        # The fake repair cannot change the host disk. Model both readings so a
+        # crowded test volume does not turn the throttle check into a disk-full test.
+        os.environ["CHIEF_HARD_MIN_FREE_MB"] = "300"
+        os.environ["CHIEF_HEAL_MIN"] = "30"
+        with mock.patch.object(cr.shutil, "disk_usage", side_effect=[
+                mock.Mock(free=110 * 1024 * 1024), mock.Mock(free=25000 * 1024 * 1024)]):
+            self.assertTrue(cr.self_heal(T0))
+            self.assertTrue(cr.self_heal(T0 + 5 * MIN))  # throttled: no second repair within 30 min
         self.assertEqual(calls.read_text(), "x")
         post = self.posts.read_text()
         self.assertIn("repaired the Mini", post)

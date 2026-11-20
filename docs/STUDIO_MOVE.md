@@ -4,7 +4,7 @@ Prepared 18 November 2026. This is the phase 3 execution runbook, not permission
 The latest J3012 brief supersedes the original history-rewrite dependency: create a clean root commit; do not
 copy Orbit's Git history. J2537's history rewrite is not a prerequisite. The source history remains in Orbit.
 
-## Resume here (20 November, analytics timer wiring)
+## Resume here (20 November, collector acceptance and spend-writer guard)
 
 PR 1011 is the existing delivery branch; do not recreate the runbook or reset J3012's **3/4** progress.
 Its queue history and the newest `jobs/reviews/J3012/` evidence describe completed preparation.
@@ -12,10 +12,14 @@ The current integration retains main's guarded former-resident manifest cache an
 missing-browser-port refusal test. The split checker now rejects failed, interrupted, missing-summary and
 empty test runs rather than counting an unrecognized process failure as a zero day.
 
-The detached timer shell, bounded supervisor, cache fallback and proposed analytics plist are now prepared; see
-`jobs/reviews/J3012/ANALYTICS_TIMER_2026-11-20.md`. Local-Git orchestration tests pass with fake collectors.
-Next exercise the actual TypeScript collectors against fake APIs in the refreshed full layout. Also outstanding:
-the deployed board credential probe, complete writer inventory/guards and refreshed private rehearsal.
+The detached timer shell, bounded supervisor, cache fallback and proposed analytics plist are prepared.
+The actual TypeScript collectors and report builder now pass offline CLI checks and the real timer/session/Git
+record path against four temporary bare remotes. These tests also pass inside the full split export. See
+`jobs/reviews/J3012/COLLECTOR_ACCEPTANCE_2026-11-20.md` for exact coverage and limits.
+The installed AI-spend daily reader was found outside the prepared service list; its CLI and direct ledger writer
+now refuse a retired engine, and its service can be staged with the same renderer. Nothing was installed.
+Next: deployed board credential Contents probe; remaining writer inventory/guards (including local worker/watchdog
+wrappers and non-CLI ledger exporters); refreshed private rehearsal and both-machine service inventory.
 Keep the live switch gated on the timing and acceptance below. This run does not change the official daily
 history or send the day-before notice.
 
@@ -630,3 +634,27 @@ records, dashboard ownership, publication despite a rejected channel push, retry
 untouched source checkouts. Separate tests cover actual cache probes, bounded failures, literal shell arguments,
 retired/resident refusal, supervisor time limit and service schedule preservation. These prove orchestration;
 they do not claim actual TypeScript/API contract acceptance, deployed board access or a live relay/publish/tick.
+
+## Collector acceptance and AI-spend service, 20 November continuation
+
+The newer checks run the actual Node/TypeScript entrypoints, not replacement collector commands. A strict fake
+fetch layer answers only known YouTube/OAuth endpoints; raw Node network connections are refused. Fake credentials
+live outside the four temporary source repositories. The real timer worker, registry, record-session lock and Git
+helpers publish the resulting records to temporary bare remotes. Every source checkout remains unchanged.
+
+The gate/dispatch callback and board publication are deliberately excluded from that transport acceptance test;
+their existing isolated tests remain separate. This does not prove deployed APIs, credentials or live scheduling.
+See the evidence file above for baseline split and future-layout results, rather than treating mocked transport
+as permission to activate the timer.
+
+The read-only Mini service inventory found `com.owb.ai-spend-daily` calling `ai_spend_daily.py --git`. The plist
+renderer now supports that service and preserves its schedule, logs and environment. Both `ai_spend.main` and
+`ai_spend_daily.main` check the executing engine before parsing or pool reads; `ai_spend.append` checks again
+before making a directory, taking a ledger lock or running Git, covering imported calls too. With no activation
+marker, existing behavior is unchanged. The marker was not installed. Non-CLI exporters that write the ledger
+directly still require inventory and guards; do not treat this addition as complete writer coverage.
+
+The same inventory identified the local Cursor worker and Grok watchdog wrappers outside this checkout. Inspect
+their installed commands and retirement behavior before cutover. The HOS desk, browser launcher, tab janitor and
+local reminder/worker services also need explicit retain-or-adapt decisions. The MacBook inventory remains a
+separate mandatory check. Keep secret-bearing plist backups local and restricted; publish names and decisions only.
