@@ -270217,9 +270217,14 @@
           "at": "2026-11-20T21:05Z",
           "by": "cursor",
           "what": "step 0 of 4 done: v04 hash matches. Defects confirmed on stills: clipped credit, Fuel/Radar bleed, cyan carrier labels, place-name contrast. Building an overlay fix that keeps the zero-spend score."
+        },
+        {
+          "at": "2026-11-20T21:12Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Render is running. Stills for the credit, the Fuel/Radar gap, the carrier labels and the place names were checked before it started. The zero-spend score is copied, not rebuilt."
         }
       ],
-      "remaining_action": "Write the v05 picture fix and check stills before the full render",
+      "remaining_action": "Wait for the v05 picture render to finish, then check the file",
       "due": "2026-11-25T18:00:00Z",
       "for": "cursor",
       "kind": "assembly",
@@ -270237,11 +270242,11 @@
       },
       "model": "cursor-grok-4-7",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-20T21:05Z",
+        "at": "2026-11-20T21:12Z",
         "by": "cursor",
-        "note": "v04 hash matches. Defects confirmed on stills: clipped credit, Fuel/Radar bleed, cyan carrier labels, place-name contras"
+        "note": "Render is running. Stills for the credit, the Fuel/Radar gap, the carrier labels and the place names were checked before"
       }
     },
     {
