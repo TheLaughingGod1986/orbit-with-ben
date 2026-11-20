@@ -94,4 +94,15 @@ describe("detached analytics CLI contracts", () => {
     expect(result.stdout).toContain("disabled");
     expect(f.requests()).toEqual([]);
   });
+
+  it("refuses a channel identity mismatch before token exchange", () => {
+    const f = fixture();
+    const file = path.join(f.root, "fixture-hos/studio/channel.json");
+    const manifest = JSON.parse(fs.readFileSync(file, "utf8")); manifest.slug = "owb";
+    fs.writeFileSync(file, JSON.stringify(manifest));
+    const result = f.run("analytics-snapshot.ts", "--channel", "hos");
+    expect(result.status).toBe(1);
+    expect(result.stderr).toContain("record root unavailable");
+    expect(f.requests()).toEqual([]);
+  });
 });
