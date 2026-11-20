@@ -64,7 +64,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3176 | any | blocked | codex | – | 024 edit · chief · OWB 024 muon Short: decide whether to swap gc1hWQQJOq4 onto the v06 bed |  |
 | J3177 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3137 |  |
 | J3178 | mini | blocked | gemini | – | 013 picture · for gemini · qa · `gemini-argon` · HOS 013: continuous playback review of ten unresolved pass-one plates |  |
-| J3179 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2537 |  |
+| J3179 | mini | open | – | – | for codex · review · `gemini-argon` · Verify condition for J2537 |  |
 
 Recently finished:
 
