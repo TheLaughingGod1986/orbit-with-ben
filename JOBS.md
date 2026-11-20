@@ -62,7 +62,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3155 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J1275 |  |
 | J3161 | mini | blocked | codex | – | studio · Supermoon Short: next-morning and full-day performance follow-up |  |
 | J3175 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2847 |  |
-| J3176 | any | claimed | codex | 2026-11-20T02:13Z | 024 edit · chief · OWB 024 muon Short: decide whether to swap gc1hWQQJOq4 onto the v06 bed |  |
+| J3176 | any | blocked | codex | – | 024 edit · chief · OWB 024 muon Short: decide whether to swap gc1hWQQJOq4 onto the v06 bed |  |
 | J3177 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3137 |  |
 | J3178 | mini | open | – | – | 013 picture · for gemini · qa · `gemini-argon` · HOS 013: continuous playback review of ten unresolved pass-one plates |  |
 

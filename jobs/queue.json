@@ -284772,13 +284772,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-20T00:13Z",
-      "eta": "2026-11-20T02:13Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-19T23:27Z",
-      "result": "",
+      "result": "Waiting for: PR 1049 explicitly requires Chief listening to v06. This session inspected its tools and has no demonstrated audio input; text, still images and shell measurements cannot establish listening. NAS candidate SHA-256 5c85e4430ccd035adb35532291cf5626a5b1d6a8684d8acda213b24c4c378eee and bed 9c67eb4593e3800459af44b914a9344d07e8c1f569194bfe20b12312e7ba242a verified; submitted music, Shorts and SFX reports PASS. Need capable reviewer to listen to exact mix, then Chief swap decision before 21 Nov 11:30Z. No swap approval or publishing changes made.",
       "history": [
         {
           "at": "2026-11-19T23:27Z",
@@ -284799,9 +284799,19 @@
           "at": "2026-11-20T00:14Z",
           "by": "codex",
           "what": "step 1 of 3 done: Verified NAS candidate and bed SHA-256 match the brief; PR 1049 music, Shorts and SFX reports PASS. Listening not performed: no demonstrated audio input."
+        },
+        {
+          "at": "2026-11-20T00:15Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: PR 1049 explicitly requires Chief listening to v06. This session inspected its tools and has no demonstrated audio input; text, still images and shell measurements cannot establish listening. NAS candidate SHA-256 5c85e4430ccd035adb35532291cf5626a5b1d6a8684d8acda213b24c4c378eee and bed 9c67eb4593e3800459af44b914a9344d07e8c1f569194bfe20b12312e7ba242a verified; submitted music, Shorts and SFX reports PASS. Need capable reviewer to listen to exact mix, then Chief swap decision before 21 Nov 11:30Z. No swap approval or publishing changes made."
+        },
+        {
+          "at": "2026-11-20T00:15Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-20T08:00:00Z"
         }
       ],
-      "remaining_action": "Listen to the exact v06 mix before deciding the muon Short swap",
+      "remaining_action": "Listen to the rebuilt muon Short and decide the swap before its Saturday slot",
       "kind": "chief",
       "plain": "Decide whether the scheduled muon Short should use the new music",
       "progress": {
@@ -284813,6 +284823,17 @@
       },
       "taskKeys": [
         "OWB:024"
+      ],
+      "hold": {
+        "type": "capability",
+        "condition": "PR 1049 explicitly requires Chief listening to v06. This session inspected its tools and has no demonstrated audio input; text, still images and shell measurements cannot establish listening. NAS candidate SHA-256 5c85e4430ccd035adb35532291cf5626a5b1d6a8684d8acda213b24c4c378eee and bed 9c67eb4593e3800459af44b914a9344d07e8c1f569194bfe20b12312e7ba242a verified; submitted music, Shorts and SFX reports PASS. Need capable reviewer to listen to exact mix, then Chief swap decision before 21 Nov 11:30Z. No swap approval or publishing changes made.",
+        "check_at": "2026-11-20T08:00:00Z",
+        "requires": [
+          "audio_input"
+        ]
+      },
+      "required_capabilities": [
+        "audio_input"
       ]
     },
     {
