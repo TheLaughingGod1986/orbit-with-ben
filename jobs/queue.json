@@ -178973,9 +178973,14 @@
           "at": "2026-11-20T12:06Z",
           "by": "relay",
           "what": "condition verification queued: J3228"
+        },
+        {
+          "at": "2026-11-20T14:00Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-21T12:00:00Z"
         }
       ],
-      "remaining_action": "Obtain an accepted compliant score for the gravity film before assembly",
+      "remaining_action": "Execute J3233 post-J3174 compliant score-route decision and obtain an accepted compliant HOS 009 score before long assembly",
       "due": "2026-11-15T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -178991,12 +178996,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "J3132 Chief review: condition NOT MET. J3059 kept PR651 d047b064 offline only; Grok desk 7005927729 reconciled shared usage and opened no production guard or replacement score scope. J3043/J3045 allowance closed unused; v01/v02 rejected. Assembly requires a separately accepted compliant score and all original gates; no unchanged media rechecks.",
-        "check_at": "2026-11-20T13:06:58+00:00",
-        "last_recheck": "J3132",
-        "checked_at": "2026-11-19T14:32:52+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3228"
+        "condition": "J3228 Acting Chief ruling: condition NOT MET. Offline music guard/flight hardening merged through PR 681 (3211c7de, J3174), but ACTIVATION_AUTHORIZED remains literal False (hos009_score_flight.py:34) because J3150 PRICING_EVIDENCE.md did not prove <=3,000 subscription credits and GBP 0 cash. J3043/J3045 remains permanently closed unused (J3047); v01/v02 remain rejected (J2808); 0 v03 files on Mini/NAS; ElevenLabs ledger untouched since 2026-11-17T16:19Z. Follow-up Chief decision J3233 queued for post-J3174 compliant replacement score route. Assembly requires a separately scoped, generated/sourced, and accepted compliant HOS 009 score with all original gates retained; no unchanged media rechecks.",
+        "check_at": "2026-11-21T12:00:00Z",
+        "last_recheck": "J3228",
+        "checked_at": "2026-11-20T14:00:50+00:00",
+        "checked_by": "gemini"
       }
     },
     {
