@@ -271212,10 +271212,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-19T23:53Z",
-      "eta": "2026-11-20T03:53Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
       "result": "",
@@ -271659,6 +271659,11 @@
           "at": "2026-11-20T00:05Z",
           "by": "codex",
           "what": "step 3 of 4 done: PR 1011 updated 56d1bc6cbe and mergeable. Conflicts resolved; split process checks fail closed. Baseline split zero; explicit full suite 1425 tests, 13 skips, exit 0. Live services unchanged."
+        },
+        {
+          "at": "2026-11-20T00:05Z",
+          "by": "codex",
+          "what": "released: PR 1011 now 56d1bc6cbe, mergeable. Preserve existing 3/4 plan. Integrated current main; retained manifest cache and browser refusal coverage; split rejects failed/empty/incomplete test processes. 1425 baseline split tests pass, 13 skips, exit 0; 23 split, 67 queue, 46 analytics and security checks pass. Evidence jobs/reviews/J3012/INTEGRATION_2026-11-19.md. Next: analytics gate/dispatch callback and timer/plist/fake-API acceptance; deployed board Contents probe; writer inventory/guards; refreshed private rehearsal. Six official zeros through 19 Nov; require seventh daily pass and prior-day notice, then live relay/publish/tick/both-worker acceptance. No live switch or spend. Resume existing PR, do not recreate runbook."
         }
       ],
       "remaining_action": "Finish analytics timer integration, verify access and writers, then rehearse and perform the gated studio move",
