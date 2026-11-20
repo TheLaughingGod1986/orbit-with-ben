@@ -289301,9 +289301,14 @@
           "at": "2026-11-20T12:08Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T12:09Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Started J3228 verification for J2035 (HOS 009)"
         }
       ],
-      "remaining_action": "Verify readiness: Obtain an accepted compliant score for the gravity film before assembly",
+      "remaining_action": "Verify J2035 waiting condition against latest HOS 009 rulings, PRs, queue state, and audio/score artifacts",
       "kind": "review",
       "recheck_of": "J2035",
       "due": "2026-11-15T18:00:00+00:00",
@@ -289320,11 +289325,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-20T12:08Z",
+        "at": "2026-11-20T12:09Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Started J3228 verification for J2035 (HOS 009)"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J3229",
