@@ -288550,13 +288550,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-20T11:18Z",
-      "eta": "2026-11-20T13:18Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-20T10:46Z",
-      "result": "",
+      "result": "parked for Chief: needs a worker with web. Second time on the MacBook's Claude Code slot: WebSearch is still refused here, so the part that is left (top-10 results check on 'space mysteries', 'milky way' and 'andromeda galaxy', then the script, SOURCES.md with quoted sources and the packaging brief for the winner) cannot be done. The title check (LEFT 2) is already in PR #1067. No vidIQ credits spent this run (the brief's 15-credit limit is already passed at 25). Please pin the rest to the Mini or a cloud Claude session.",
       "history": [
         {
           "at": "2026-11-20T10:46Z",
@@ -288617,6 +288617,11 @@
           "at": "2026-11-20T11:18Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T11:19Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: needs a worker with web. Second time on the MacBook's Claude Code slot: WebSearch is still refused here, so the part that is left (top-10 results check on 'space mysteries', 'milky way' and 'andromeda galaxy', then the script, SOURCES.md with quoted sources and the packaging brief for the winner) cannot be done. The title check (LEFT 2) is already in PR #1067. No vidIQ credits spent this run (the brief's 15-credit limit is already passed at 25). Please pin the rest to the Mini or a cloud Claude session."
         }
       ],
       "remaining_action": "Title check of the three December films against the search queries (this run); then the top-10 gap check, script, SOURCES.md and packaging brief, which need a lane with web access",
