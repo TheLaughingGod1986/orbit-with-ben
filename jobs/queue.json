@@ -272067,18 +272067,23 @@
           "at": "2026-11-20T06:56Z",
           "by": "codex",
           "what": "step 3 of 4 done: Resuming existing PR 1011 and HOS PR 688; preserving 3/4 plan. No live move."
+        },
+        {
+          "at": "2026-11-20T07:00Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: HOS PR 688 merged at f3188f03 after green CI and five independent boundary tests. PR 1011 updated fabda2b4da; shared HOS branch still needs safe guard propagation."
         }
       ],
-      "remaining_action": "Review companion exporter changes and finish migration readiness checks",
+      "remaining_action": "Install merged guards after draining writers, verify board access and MacBook inventory, then refresh rehearsal",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-20T06:56Z",
+        "at": "2026-11-20T07:00Z",
         "by": "codex",
-        "note": "Resuming existing PR 1011 and HOS PR 688; preserving 3/4 plan. No live move."
+        "note": "HOS PR 688 merged at f3188f03 after green CI and five independent boundary tests. PR 1011 updated fabda2b4da; shared HOS"
       },
       "taskKeys": [
         "HOS:009",
