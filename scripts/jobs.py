@@ -719,10 +719,27 @@ def reconcile_dependencies(data: dict, at: dt.datetime) -> list:
 MINI_NEEDS = {"mini", "gemini", "any"}
 
 
-def can_any_mini_claim(data, job, at):
-    chief = chief_relay.acting(at, chief_relay.job_chain(job))[1] if workflow.role_job(job) else ""
-    actors = [chief] if workflow.role_job(job) else [job["for"]] if job.get("for") else routing.MINI_WORKERS
-    return any(actor and workflow.claimable(job,data["jobs"],at,actor,chief,MINI_NEEDS,chief_relay.current_execution(at),chief_relay.worker_capabilities()) for actor in actors)
+def can_any_mini_claim(data, job, at, memo: dict | None = None):
+    """True when a Mini worker could claim `job` at `at`. A caller checking many jobs at one `at` passes one `memo`
+    dict for the whole scan, so the acting Chief, the execution lease and the capability reports are read once.
+    acting() re-reads every Chief's state, the whole queue.json among it (15 MB), so asked once per job a single
+    refill scan parsed that file ~1,500 times: ~50 s and a 2.7-4 GB process on every relay tick, which ran the Mini
+    out of memory (Claude, 16 Nov 2026). None of them can change within one instant."""
+    memo = {} if memo is None else memo
+
+    def once(key, read):
+        if key not in memo:
+            memo[key] = read()
+        return memo[key]
+
+    role = workflow.role_job(job)
+    chain = chief_relay.job_chain(job) if role else None
+    chief = once(("chief", chain), lambda: chief_relay.acting(at, chain)[1]) if role else ""
+    actors = [chief] if role else [job["for"]] if job.get("for") else routing.MINI_WORKERS
+    execution = once("execution", lambda: chief_relay.current_execution(at))
+    capabilities = once("capabilities", chief_relay.worker_capabilities)
+    return any(actor and workflow.claimable(job, data["jobs"], at, actor, chief, MINI_NEEDS, execution, capabilities)
+               for actor in actors)
 
 
 def do_watch(data: dict, at: dt.datetime, quiet_h: float = 3) -> dict:
@@ -730,8 +747,10 @@ def do_watch(data: dict, at: dt.datetime, quiet_h: float = 3) -> dict:
     quiet  Mini work is waiting or stalled, nothing holds a live Mini claim, and no agent but Claude has touched the
            queue for quiet_h hours: the Mini, the relay or every Chief in the chain is down.
     ben    jobs only Ben can do (needs ben, open) and jobs blocked on him, with when each started waiting."""
+    memo = {}  # one scan at one `at`: the Chief and leases are read once, not per job
+
     def mini_able(j):
-        return can_any_mini_claim(data,j,at)
+        return can_any_mini_claim(data, j, at, memo)
     waiting = [j["id"] for j in data["jobs"] if j["needs"] in MINI_NEEDS and mini_able(j)]
     live = [j["id"] for j in data["jobs"] if j["status"] == "claimed" and not stalled(j, at) and j["needs"] in MINI_NEEDS]
     stamps = [studio.parse(h["at"]) for j in data["jobs"] for h in j.get("history", []) if h.get("by") not in ("claude", "")]
