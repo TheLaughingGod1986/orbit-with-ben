@@ -290566,20 +290566,26 @@
           "at": "2026-11-20T16:07Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T16:07Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "HOS 009: Chief final score disposition for own-score v04_synth (accept or escalate to Ben)",
+      "remaining_action": "Inspect J3236-J3241 artifacts, HOS PRs, music_gate evidence, SHA-256 parity, and independent audio_input EAR_REVIEW_v04_synth.md",
       "due": "2026-11-21T12:00:00Z",
       "kind": "chief",
       "plain": "Elected-Chief final disposition on HOS 009 v04_synth: accept if all gates and independent ear review pass, else escalate single ElevenLabs billing/pricing question to Ben.",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-20T16:07Z",
-        "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "gemini"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     }
   ],
   "focus": [
