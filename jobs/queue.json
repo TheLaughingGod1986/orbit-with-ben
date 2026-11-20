@@ -292220,9 +292220,14 @@
           "at": "2026-11-20T23:03Z",
           "by": "claude",
           "what": "Ben, 20 Nov 23:00Z, in chat: \"Signed in on Mac mini\" (step 1, the FOH Studio window on port 9224). Claude fixed #1089's red core check (core_sync lock, commit 96409056 on cursor/J3254-foh-upload). Ben's early dates stand (his chat request, recorded here at 22:38Z/22:41Z, before Chief ruling 7052635580; see thread 7052742149): keep 24 Nov / 28 Nov / 1, 5, 8, 12 Dec in #1089 and ww2-channel #26. Next: merge #1089 when green, check YT_CHANNEL_ID_WW2 is in the Mini's 07_Content-Ops/.env, then hand Ben step 3 (--upload ww2) in one line, read Feature eligibility, then upload 001 and 002 Private and scheduled."
+        },
+        {
+          "at": "2026-11-20T23:04Z",
+          "by": "claude",
+          "what": "#1089 merged 23:0xZ (main 6945e743, green). Claude sent Ben step 3 in chat: on the Mini, git pull, add YT_CHANNEL_ID_WW2 to 07_Content-Ops/.env if missing, then youtube-auth.ts --upload ww2 (and --analytics ww2 if not done). When Ben confirms, Claude reopens this job. The next worker checks the keys YOUTUBE_REFRESH_TOKEN_WW2 and YT_ANALYTICS_REFRESH_TOKEN_WW2 exist in .env (never print values), reads Feature eligibility in the 9224 window, then uploads 001 (Tue 24 Nov 17:00) and 002 (Sat 28 Nov 17:00) Private and scheduled from the exact approved files."
         }
       ],
-      "remaining_action": "Ben signs in to the Field Order History Studio window and the two API prompts",
+      "remaining_action": "Ben runs the upload sign-in (--upload ww2) on the Mini; then check tokens, Feature eligibility, upload 001 and 002 Private + scheduled",
       "due": "2026-11-22T18:00:00Z",
       "kind": "studio",
       "plain": "Connect the WW2 channel so finished films can actually be uploaded, ready for Ben's one-time sign-in",
