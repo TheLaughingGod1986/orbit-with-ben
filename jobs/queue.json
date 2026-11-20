@@ -271967,18 +271967,23 @@
           "at": "2026-11-20T06:12Z",
           "by": "codex",
           "what": "step 3 of 4 done: Restored existing 3/4 plan from full history; continuing PR 1011 at 4b1c62cc4e. No live switch."
+        },
+        {
+          "at": "2026-11-20T06:16Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: PR 1011 updated with read-only service inventory: 18 installed definitions, one malformed; legacy Cursor/watchdog cutover handling documented. Seven inventory, nine plist and 26 ratchet/security tests pass. No live switch."
         }
       ],
-      "remaining_action": "Finish remaining service safeguards and verify the studio migration rehearsal",
+      "remaining_action": "Verify remaining migration access, service safeguards and refreshed rehearsal before cutover",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-20T06:12Z",
+        "at": "2026-11-20T06:16Z",
         "by": "codex",
-        "note": "Restored existing 3/4 plan from full history; continuing PR 1011 at 4b1c62cc4e. No live switch."
+        "note": "PR 1011 updated with read-only service inventory: 18 installed definitions, one malformed; legacy Cursor/watchdog cutove"
       }
     },
     {
