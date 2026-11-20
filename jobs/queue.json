@@ -292312,9 +292312,14 @@
           "at": "2026-11-20T22:51Z",
           "by": "claude",
           "what": "Ben meant RSI as recursive self-improvement. Write each autopsy's fixes as candidate experiments (hypothesis, metric, expected effect, readout) for J3257's register."
+        },
+        {
+          "at": "2026-11-20T22:52Z",
+          "by": "gemini",
+          "what": "step 1 of 6 done: Located OWB 026 (c5AdqQsnnys), OWB 025 (Js6EQJ8qDi8, 100-pt curve), HOS 007 (ETynHpIYLeY), and verified snapshots/search research/launch_check tests (104 passing)"
         }
       ],
-      "remaining_action": "Inspect analytics, retention API/Studio data, and existing launch_check.py; probe video+audio capability",
+      "remaining_action": "Verify moving-video+audio capability on extracted drop-point clips, inspect Studio retention if available, then build retention autopsy tool and wire launch_check",
       "due": "2026-11-26T18:00:00Z",
       "kind": "review",
       "plain": "When a film underperforms, find out exactly where viewers leave and why, and fix the next film",
@@ -292328,12 +292333,18 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-11-20T22:49Z",
+        "at": "2026-11-20T22:52Z",
         "by": "gemini",
-        "note": "Claimed J3256; beginning discovery across OWB, HOS, and WW2"
-      }
+        "note": "Located OWB 026 (c5AdqQsnnys), OWB 025 (Js6EQJ8qDi8, 100-pt curve), HOS 007 (ETynHpIYLeY), and verified snapshots/search"
+      },
+      "taskKeys": [
+        "OWB:026",
+        "OWB:025",
+        "HOS:007",
+        "WW2:001"
+      ]
     },
     {
       "id": "J3257",
