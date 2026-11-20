@@ -1,9 +1,10 @@
 # OWB topic brief: 087 · Every Meteor Shower Explained in 10 Minutes
 
 - **Film:** `OWB:087` · folder `02_Video-Projects/087_Every-Meteor-Shower-Explained-In-10-Minutes`
-- **Job:** J3201 (claudecode, 20 Nov 2026). Topic review (rule E) queued; this brief is not a GO.
-- **WIP (rule G):** appended to `jobs/WIP.json` `next`. It starts only when an OWB place frees up. It is an every-X tour, the format under test with 064, so it is not a single-question long; it still waits its turn in the line.
+- **Job:** J3201 (claudecode, 20 Nov 2026) · **Rule-E Topic Review:** **GO (`95 / 100`)** in `J3202` (`macbook-2`, 20 Nov 2026, `jobs/reviews/J3202/REVIEW.md`; `11_Upload-Package/TOPIC_GO_NO_GO_SHEET.md`, `11_Upload-Package/TOPIC_OPPORTUNITY_SCORE.md`).
+- **WIP (rule G):** appended to `jobs/WIP.json` `next` (place 49). It starts only when an OWB place frees up. It is an every-X tour, the format under test with 064, so it is not a single-question long; it still waits its turn in the line.
 - **Spend:** none. Evidence is the free signed-out YouTube search (`public_search.py`), not vidIQ.
+- **Science claim guard (`J3202`):** All scientific and historical facts in §2 are from working memory, unsourced, and **NOT treated as checked**; every claim must be sourced with an exact primary quote in `SOURCES.md` and verified by the `facts` lane before script lock.
 
 ## 1. What our own data says (20 Nov 2026)
 
@@ -53,17 +54,18 @@ Best stayed among Shorts with 100+ views: `y-SPHQ0-VjQ` Sun getting brighter 57.
 
 **Not a repeat.** Checked `02_Video-Projects/` (001 to 085), `00_Brand/Channel-Setup/ideas/`, `VIDEO_BACKLOG.json`, `jobs/WIP.json` and the open pull requests for "meteor shower", "shooting star" and "meteor": no long or idea on meteor showers. The shooting-stars Short `T9fVlG3CCzU` is a dated Short with no long behind it. Nearby films: 069 (Rosetta, one comet), 077 (Shoemaker-Levy 9), 049 (Bennu). None tours the showers.
 
-**Working titles**
+**Working titles (`0` exact YouTube collisions verified across all 4 variants in `J3202`)**
 
 | Use | Title | Characters |
 |---|---|---|
-| Main (the every-X shape of 064, 070, 072) | Every Meteor Shower Explained in 10 Minutes | 43 |
-| Search phrase first (LEARNINGS rule 26) | Meteor Showers Explained: Every Major Shower of the Year | 56 |
-| Question form | What Causes a Meteor Shower? (Every Major One Explained) | 55 |
+| Search phrase first — **Side A (`J3202` Rule 26 choice while `<1,000` subscribers)** | Meteor Showers Explained: Every Major Shower of the Year | 56 |
+| Search-first + 10-minute tour hybrid (`Rule 26` + `studio/plan.json` Step 3) | Meteor Showers Explained in 10 Minutes (Every Major Shower) | 59 |
+| Every-X series shape — **Side B (`studio/plan.json` Step 3 & `Rule 15` `≤50c`; promotes to Side A if `064` passes `≥500v` readout)** | Every Meteor Shower Explained in 10 Minutes | 43 |
+| Question form — **Side C (`Rule 26` exact `#1` autocomplete question)** | What Causes a Meteor Shower? (Every Major One Explained) | 56 |
 
-Search phrases: `meteor showers explained` and `what causes a meteor shower` are both suggested exactly by YouTube autocomplete, along with "perseid meteor shower explained"; "every meteor shower" is suggested as "all meteor showers". Two videos that rank now: CrashCourse *Meteors* (`TuDfZ2Md5x8`, 1,099,091 views) and StarTalk *Neil deGrasse Tyson Explains Meteor Showers* (`UaE_niRk5RM`, 444,780 views). The reviewer should pick between the main title and the search-first one under rule 26.
+Search phrases: `meteor showers explained` and `what causes a meteor shower` are both suggested exactly by YouTube autocomplete, along with "perseid meteor shower explained"; "every meteor shower" is suggested as "all meteor showers". Two videos that rank now: CrashCourse *Meteors* (`TuDfZ2Md5x8`, 1,099,091 views) and StarTalk *Neil deGrasse Tyson Explains Meteor Showers* (`UaE_niRk5RM`, 444,780 views). **J3202 reviewer title decision:** while OWB has under 1,000 subscribers, lead with the Rule 26 search-first title (`Meteor Showers Explained: Every Major Shower of the Year`, `56 chars`, or the 10-minute hybrid `Meteor Showers Explained in 10 Minutes (Every Major Shower)`, `59 chars`) as Side A so the exact `#1` autocomplete phrase `"Meteor Showers Explained"` comes first (`studio/RULES.md` *Title first, test second*), and pair `Every Meteor Shower Explained in 10 Minutes` (`43 chars ≤ 50`, `Rule 15` + `studio/plan.json` Step 3) as Test & Compare Side B (promoting `Every Meteor Shower Explained in 10 Minutes` to Side A if `064` *Every Planet Explained in 10 Minutes* passes its `≥500-view` 14-day test readout).
 
-**One-line hook (first words, before 0:08):** "Every shooting star in a meteor shower is a grain of dust from one comet, and Earth runs into the same trails on the same nights every year."
+**One-line hook (first words, before 0:08; refined in `J3202` S2 to `25 words` / `<0:08` and consistent with the Geminids asteroid midpoint twist):** "Almost every shooting star in a meteor shower is a grain of dust from a comet, and Earth runs into the same trails every year."
 
 **The tour** (facts below are from memory and must each be sourced with an exact quote in `SOURCES.md` before any script lock): what a shower is in 40 seconds, then the year in order, one parent body and one number each: Quadrantids (January), Lyrids (April, the oldest on record), Eta Aquariids and Orionids (both from Halley's Comet), Perseids (August, Comet Swift-Tuttle), Leonids (November, the 1833 storm), Geminids (December, from an asteroid, 3200 Phaethon), Ursids. The count builds as one timeline of the year, which is the film's main data graphic. Midpoint turn: the best shower of the year comes from a rock, not a comet.
 
@@ -86,11 +88,11 @@ Search phrases: `meteor showers explained` and `what causes a meteor shower` are
 | *The Science of Shooting Stars* (`xGQ_UjAsJPg`) | WatchMojo.com | 997,394 | 2:40 |
 | *The Meteor Explainer* (`Eq5a6L7c_UY`) | StarTalk | 649,593 | 12:02 |
 
-Four are over 1M and all four are on meteors. None is a shower-by-shower tour, which is the gap.
+Four are over 1M (plus a fifth at 997K) and all are on meteors. None is a shower-by-shower tour, which is the gap. *(Internal note `J3202`: never copy threat/death framing from `P5ceMnvgfRA` per `studio/RULES.md` "Wonder, not dread".)*
 
-**Two Short angles** (one question each, in the title and line 1; lengths by the Shorts rules in force at build time)
-1. **Why Does the Best Meteor Shower Come From an Asteroid?** The Geminids and 3200 Phaethon. Frame 0: a real Geminid long exposure. Dated to the December peak.
-2. **Why Do Two Meteor Showers Come From Halley's Comet?** Eta Aquariids and Orionids. Frame 0: the real Giotto image of Halley's nucleus. Same shape as the shooting-stars Short (1,286 views).
+**Two Short angles** (one question each, in the title and line 1; lengths by the Shorts rules in force at build time; `0` exact YouTube title collisions verified in `J3202`)
+1. **Why Does the Best Meteor Shower Come From an Asteroid?** (`54 chars`) The Geminids and 3200 Phaethon. Frame 0: moving full-bleed `9:16` Geminid meteor streak video cutting at `≤2.8 s` to the graded long-exposure / `3200 Phaethon` plate (`never a static pushed still at Frame 0`, per `LEARNINGS.md` Rules 2, 8, 24 & `OWB-2026-11-E1`), with `t = 0.0 s` hook text (`FROM AN ASTEROID`), `≤1.5 s` spoken noun + surprise, and `≥70%` payoff start (`Rule 6`). Dated to the December peak.
+2. **Why Do Two Meteor Showers Come From Halley's Comet?** (`51 chars`) Eta Aquariids and Orionids. Frame 0: moving full-bleed `9:16` comet/meteor clip cutting at `≤2.8 s` to the real graded Giotto image of Halley's nucleus (`t = 0.0 s` hook text `TWO HALLEY SHOWERS`, `≤1.5 s` spoken noun + surprise, `≥70%` orbital double-crossing payoff start). Same shape as the shooting-stars Short (1,286 views), with zero overlap in angle, and on go-public day both new Shorts plus `T9fVlG3CCzU` point their `Related video` link to `087` (`LEARNINGS.md` Rule 17).
 
 ## 3. Next
-Rule-E topic review (queued by J3201). If GO and a place frees up: pre-build audit, sources, script.
+Rule-E topic review **GO (`95 / 100`)** in `J3202` (`jobs/reviews/J3202/REVIEW.md`). Remains in `jobs/WIP.json` `next` (place 49) under Rule G until an active OWB slot opens after `064`'s format-test readout; then pre-build audit, `SOURCES.md` exact primary quotes (all science claims currently unsourced working memory), and script.

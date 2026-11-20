@@ -1,9 +1,10 @@
 # OWB topic brief: 086 · Why Is Mars Red? (The Rock Underneath Is Grey)
 
 - **Film:** `OWB:086` · folder `02_Video-Projects/086_Why-Is-Mars-Red`
-- **Job:** J3201 (claudecode, 20 Nov 2026). Topic review (rule E) queued; this brief is not a GO.
-- **WIP (rule G):** appended to `jobs/WIP.json` `next`. It starts only when an OWB place frees up, and `studio/plan.json` pauses new single-question longs after 034 until a format test reads out. It stays unlocked in the backlog until then.
+- **Job:** J3201 (claudecode, 20 Nov 2026) · **Rule-E Topic Review:** **GO (`93 / 100`)** in `J3202` (`macbook-2`, 20 Nov 2026, `jobs/reviews/J3202/REVIEW.md`; `11_Upload-Package/TOPIC_GO_NO_GO_SHEET.md`, `11_Upload-Package/TOPIC_OPPORTUNITY_SCORE.md`).
+- **WIP (rule G):** appended to `jobs/WIP.json` `next` (place 48). It starts only when an OWB place frees up, and `studio/plan.json` pauses new single-question longs after 034 until a format test reads out. It stays unlocked in the backlog until then.
 - **Spend:** none. Evidence is the free signed-out YouTube search (`public_search.py`), not vidIQ.
+- **Science claim guard (`J3202`):** All scientific and historical facts in §2 are from working memory, unsourced, and **NOT treated as checked**; every claim must be sourced with an exact primary quote in `SOURCES.md` and verified by the `facts` lane before script lock.
 
 ## 1. What our own data says (20 Nov 2026)
 
@@ -68,7 +69,7 @@ Search phrase: `why is mars red`. YouTube autocomplete suggests it exactly, plus
 **The story in four beats** (facts below are from memory and must each be sourced with an exact quote in `SOURCES.md` before any script lock):
 1. The red is iron oxide dust, fine as talc, coating almost everything. Curiosity's drill holes show grey rock just under it.
 2. Rust needs iron, oxygen and (on Earth) water. So the colour is a record of a wetter Mars. A 2025 study (Valantinas and others, *Nature Communications*) argued the dust matches ferrihydrite, an iron mineral that forms in cool water, better than dry haematite. To verify.
-3. The dust does not stay on the ground. It makes the daytime sky butterscotch and the sunsets blue, and in 2018 a planet-wide dust storm ended the Opportunity rover's mission after more than 14 years.
+3. The dust does not stay on the ground. It makes the daytime sky butterscotch and the sunsets blue, and in 2018 a planet-wide dust storm ended the Opportunity rover's mission after more than 14 years. *(Script scope guardrail `J3202` M1: because `025` `Js6EQJ8qDi8` and Shorts `B1z2dv7m7Vk` / `uhZSRcvngvE` already covered Opportunity's 14-year survival story, keep the 2018 storm to 1–2 sentences on how planet-encircling iron-oxide dust lifts into the atmosphere and scatters sunlight; do not rehash `025`'s rover-survival narrative.)*
 4. Seen from Earth with the naked eye it is the same dust that made it "the red planet" to every culture that named it. Hand-off to the next film.
 
 **Why it should work**
@@ -83,17 +84,22 @@ Search phrase: `why is mars red`. YouTube autocomplete suggests it exactly, plus
 | Video | Channel | Views | Length |
 |---|---|---|---|
 | *Mars Has a Fatal Flaw - And No-one Has the Solution* (`b7mjp7MDx_w`) | Astrum and Veritasium | 4,574,742 | 50:29 |
+| *What China Found on Mars* (`OtLvAly7lD8`) | The Space Race | 1,990,290 | 13:16 |
 | *Is Mars really Red?* (`hw4AqFFPpK8`) | It's AumSum Time | 1,616,630 | 6:46 |
 | *Mars 101* (`DYwLsvyYLoU`) | Peekaboo Kidz | 1,366,389 | 6:01 |
 | *MARS: Secrets of the Red Planet* (`7Kh_WURcWAE`) | SEA | 769,170 | 33:39 |
+| *The Death Of Mars \| The Planets \| Earth Science* (`5B8lm61KoYo`) | BBC Earth Science | 700,258 | 6:32 |
 | *Why is Mars red?* (`eAj_f6JjOUo`) | Mystery Science | 683,094 | 4:53 |
 | *Why Is Mars Red?* (`CCnpU8EbH28`) | AumSum's What-If | 578,857 | 8:37 |
+| *Mars: All About The Red Planet* (`Z7AECr2EeYg`) | BBC Earth Science | 567,114 | 36:42 |
+| *Mars in a Minute: Is Mars Really Red?* (`Q7UL8hvlk7k`) | NASA Jet Propulsion Laboratory | 481,086 | 1:00 |
+| *New study explains why Mars is RED* (`4_DsX-1-q1E`) | Dr. Becky | 138,574 | 12:40 |
 
-Three are over 1M. Only one of those three (AumSum) is on the exact question; the other two are Mars in general. The topic reviewer should weigh that.
+Four on-brand videos are over 1M (`Astrum and Veritasium` `4.57M`, `The Space Race` `1.99M`, `It's AumSum Time` `1.62M`, `Peekaboo Kidz` `1.37M`). Only one of those four (`AumSum` `1.62M`) is on the exact colour question; the other three are Mars in general, while the exact query has a deep `481K–683K` explainer tier plus Dr. Becky's `138.6K` adult astrophysics video on the recent ferrihydrite water-rust study. **J3202 review weighing:** passes the `≥3` at `1M+` neighbour gate (`93 / 100`), while the kids-channel concentration on the bare question confirms why `086` stays unlocked under the `studio/plan.json` single-question pause and leads on the grey drill-hole rock + ferrihydrite water-rust twist.
 
-**Two Short angles** (one question each, in the title and line 1; lengths by the Shorts rules in force at build time)
-1. **Why Is Mars Red If the Rock Underneath Is Grey?** Frame 0: a real Curiosity drill hole, grey powder on red ground. Resembles the Mars machine Shorts (1,269 and 1,074 views).
-2. **Why Are Sunsets on Mars Blue?** Frame 0: the real rover sunset image. A sky-from-the-ground question like shooting stars `T9fVlG3CCzU` (1,286 views, 49.8% stayed).
+**Two Short angles** (one question each, in the title and line 1; lengths by the Shorts rules in force at build time; `0` exact YouTube title collisions verified in `J3202`)
+1. **Why Is Mars Red If the Rock Underneath Is Grey?** (`47 chars`) Frame 0: moving full-bleed `9:16` rover drill / grey-tailings motion cutting at `≤2.8 s` to a real graded Curiosity drill-hole photograph (`never a static pushed still at Frame 0`, per `LEARNINGS.md` Rules 2, 8, 24 & `OWB-2026-11-E1`), with `t = 0.0 s` hook text (`GREY UNDERNEATH`), `≤1.5 s` spoken noun + surprise, and `≥70%` payoff start (`Rule 6`). Resembles the Mars machine Shorts (1,269 and 1,074 views).
+2. **Why Are Sunsets on Mars Blue?** (`29 chars`; optional fuller variant *Why Does Mars Have Blue Sunsets and a Red Sky?*, `46 chars`) Frame 0: moving full-bleed `9:16` blue Martian sunset sequence (`t = 0.0 s` hook text `BLUE MARS SUNSET`, `≤1.5 s` spoken noun + surprise, `≥70%` Rayleigh/Mie dust-scattering payoff start). A sky-from-the-ground question like shooting stars `T9fVlG3CCzU` (1,286 views, 49.8% stayed; `Rule 31`). *(Schedule with `≥1–2` non-Mars Shorts between `S01` and `S02` per `LEARNINGS.md` Rule 35.)*
 
 ## 3. Next
-Rule-E topic review (queued by J3201). If GO and a place frees up after the format-test readout: pre-build audit, sources, script.
+Rule-E topic review **GO (`93 / 100`)** in `J3202` (`jobs/reviews/J3202/REVIEW.md`). Remains in `jobs/WIP.json` `next` (place 48) under Rule G and stays unlocked under the `studio/plan.json` single-question pause until a format test reads out and an active OWB slot opens; then pre-build audit, `SOURCES.md` exact primary quotes (all science claims currently unsourced working memory), and script.
