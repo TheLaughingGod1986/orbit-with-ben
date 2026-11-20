@@ -269577,9 +269577,14 @@
           "at": "2026-11-20T18:21Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Individually inspected 25 Commons/IWM/NARA originals (rejected 3 watermarked IWM T 30/T 54/D 20392 and light-leaked H 39106; verified T 31 & T 36 live on iwm.org.uk); rendering 20 clean official US/UK inserts for v43."
+        },
+        {
+          "at": "2026-11-20T18:27Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Checkpoint aeb2066 (v43): 20 verified official US/UK archive inserts integrated (C 4663, A 11234, C 3082, A 11228, A 24310, 26-G-2520, 80-G-253138, 26-G-3423, H 39295, H 30925, 80-G-285141, H 38675, B 5689, C 4846, B 7240, A 28808, T 31, T 36, B 7218, 80-G-285210); full 41418-frame NAS master decode passed, locked cuts & audio hash unchanged, 63 NAS copies SHA-256 verified, metadata reconciled to 79 IDs (2955 chars). Archive now 47.66% (102 scenes, 79 unique sources; max non-archive run 26.92s)."
         }
       ],
-      "remaining_action": "Render 20 verified US/UK archive inserts into v43, verify 41418-frame decode and audio hash, copy to NAS, and commit checkpoint",
+      "remaining_action": "Finish editorial polish and upload package check, then obtain genuine audio/moving-video QA and Chief decision before Ben watch",
       "due": "2026-11-25T18:00:00Z",
       "for": "gemini",
       "kind": "assembly",
@@ -269589,11 +269594,11 @@
       ],
       "urgent": 5,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-20T18:21Z",
+        "at": "2026-11-20T18:27Z",
         "by": "gemini",
-        "note": "Individually inspected 25 Commons/IWM/NARA originals (rejected 3 watermarked IWM T 30/T 54/D 20392 and light-leaked H 39"
+        "note": "Checkpoint aeb2066 (v43): 20 verified official US/UK archive inserts integrated (C 4663, A 11234, C 3082, A 11228, A 243"
       },
       "rerouted_from": {
         "needs": "mini",
