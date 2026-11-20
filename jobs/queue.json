@@ -227163,9 +227163,14 @@
           "at": "2026-11-20T00:15Z",
           "by": "relay",
           "what": "condition verification queued: J3179"
+        },
+        {
+          "at": "2026-11-20T02:38Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-20T06:15:00Z"
         }
       ],
-      "remaining_action": "Check for the protected desk history exception; after approval prepare the controlled rewrite window",
+      "remaining_action": "Check for the protected desk history exception, then prepare the controlled rewrite window",
       "due": "2026-11-18T18:00:00Z",
       "kind": "chief",
       "plain": "Remove email addresses from both channels' repos, including their past versions",
@@ -227185,12 +227190,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "Explicit one-time authorization for irreversible rewrite of protected HOS hos-desk history while retaining PR180 is still absent. Acting Chief accepts J3160 REVIEW.md (5ca8a45536) and Grok desk ruling 7018109147. Fresh checks at 20:12 UTC: HOS180 through 7020824090, OWB954 through 7020891341, HOS657 no new comments; no exception found. After authorization, resolve non-desk PRs, refresh backup and rehearsal against current heads, give day-before window notice and hold writers before cutover. No live rewrite authorized.",
-        "check_at": "2026-11-20T01:15:36+00:00",
-        "last_recheck": "J3160",
-        "checked_at": "2026-11-19T20:12:21+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3179"
+        "condition": "Acting Chief accepts J3179 REVIEW.md at 126972708e: explicit one-time authorization for irreversible rewrite of protected HOS hos-desk while retaining PR180 remains absent. Fresh check 2026-11-20T02:36Z: no new HOS180 or HOS657 comments since worker verification; OWB954 through 7028530248 contains no new Ben exception. Grok ruling 7018109147 retains this hold and says the question is already open; do not ask again. After authorization, resolve non-desk PRs, refresh backup and rehearsal against current heads, give day-before window notice and hold writers before allowlisted cutover. No live rewrite authorized.",
+        "check_at": "2026-11-20T06:15:00Z",
+        "last_recheck": "J3179",
+        "checked_at": "2026-11-20T02:38:48+00:00",
+        "checked_by": "codex"
       }
     },
     {
