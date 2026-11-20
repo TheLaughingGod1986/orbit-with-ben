@@ -1,0 +1,67 @@
+{
+  "verdict": "PASS",
+  "bed": "/Users/benjaminoats/YouTube/History Of Science/docs/STANDALONE_SHORTS_TEST_2026-10/05_Music/hos_sa_s4_curie_notebooks_v07_bed.wav",
+  "bed_sha256": "a3b28433d470f7f11de467e5070fac2ebcbebcaff86b2b9616a64ab475a4a960",
+  "plan_path": "/Users/benjaminoats/YouTube/History Of Science/docs/STANDALONE_SHORTS_TEST_2026-10/05_Music/hos_sa_s4_curie_notebooks_v07_bed_plan.json",
+  "seconds": 21.4,
+  "bpm": 60.0,
+  "brief_pace": "Pace: 58-66 BPM",
+  "fail": [],
+  "warn": [],
+  "waived": [],
+  "matches": [],
+  "waiver": null,
+  "rules": {
+    "similarity_fail": 0.8,
+    "compared_seconds": 300
+  },
+  "reconciled_comparison_summary": {
+    "job": "J3128",
+    "channel": "HOS",
+    "film": "HOS:SA",
+    "export_id": "hos_sa_s4_curie_notebooks_v07",
+    "original_sidecar_path": "/Users/benjaminoats/YouTube/History Of Science/docs/STANDALONE_SHORTS_TEST_2026-10/qa_shorts_v01/hos_sa_s4_curie_notebooks_v07/music_gate_s4_curie_notebooks_v07.json",
+    "original_unreadable_warn_count": 13,
+    "reconciled_unreadable_warn_count": 0,
+    "uniqueness_coverage_status": "full_readable_comparisons",
+    "deduplicated_comparison_beds_count": 81,
+    "excluded_same_film_or_self_count": 4,
+    "excluded_uat_narration_vo_files_count": 14,
+    "included_uat_music_bed": {
+      "uat_stub": "OWB UAT/jupiter-music.mp3",
+      "resolved_nas_equivalent": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/05_Music/moon-leaving-part03_score_bed_v01.mp3",
+      "sha256": "38ab6e3e876860e72c49c547df6cbe1d05a82e021e6d517e4e64478db6f8de2b",
+      "bytes": 2560462
+    },
+    "max_similarity": 0.6321,
+    "max_similarity_bed": "hos_005_s01_the_sum_v03_bed.wav",
+    "max_similarity_sha256": "f727969acedf9063fc91749fb3cd392ab60c94c9eedd155a19c460e70b5190d4",
+    "excluded_same_film_or_self": [
+      {
+        "file": "/Users/benjaminoats/YouTube/History Of Science/docs/STANDALONE_SHORTS_TEST_2026-10/05_Music/hos_sa_s4_curie_notebooks_v05_bed.wav",
+        "name": "hos_sa_s4_curie_notebooks_v05_bed.wav",
+        "sha256": "394bf255af08cf9f106e217a4db6018b2b1dbe0bc8db224528dea0c051cb6859",
+        "reason": "same_film_05_music (HOS:SA)"
+      },
+      {
+        "file": "/Users/benjaminoats/YouTube/History Of Science/docs/STANDALONE_SHORTS_TEST_2026-10/05_Music/hos_sa_s4_curie_notebooks_v06_bed.wav",
+        "name": "hos_sa_s4_curie_notebooks_v06_bed.wav",
+        "sha256": "7305720628e07a2af3bf515979ca4b22a0d87c8ae59d5cd2d80624779ea4eb35",
+        "reason": "same_film_05_music (HOS:SA)"
+      },
+      {
+        "file": "/Users/benjaminoats/YouTube/History Of Science/docs/STANDALONE_SHORTS_TEST_2026-10/05_Music/hos_sa_s4_curie_notebooks_v07_bed.wav",
+        "name": "hos_sa_s4_curie_notebooks_v07_bed.wav",
+        "sha256": "a3b28433d470f7f11de467e5070fac2ebcbebcaff86b2b9616a64ab475a4a960",
+        "reason": "identical_bed_sha256_self"
+      },
+      {
+        "file": "/Users/benjaminoats/YouTube/History Of Science/docs/STANDALONE_SHORTS_TEST_2026-10/05_Music/hos-standalone-shorts_score_bed_v01.mp3",
+        "name": "hos-standalone-shorts_score_bed_v01.mp3",
+        "sha256": "d16de8717621721177e8b7c572f7caaadafcdd59537dc484fa6f256311eb1e73",
+        "reason": "same_film_05_music (HOS:SA)"
+      }
+    ],
+    "repair_job": null
+  }
+}

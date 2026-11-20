@@ -1,10 +1,9 @@
 # Upcoming Shorts: gate check
 
-Written by `gate_upcoming.py` at 2026-11-18 06:40 London for Shorts scheduled in the next 14 days. Don't edit by hand.
+Written by `gate_upcoming.py` at 2026-11-19 06:40 London for Shorts scheduled in the next 14 days. Don't edit by hand.
 
 | Airs (London) | Short | In library | Gate |
 |---|---|---|---|
-| 2026-11-18 11:30 | [If Voyager Needs 75,000 Years, How Far Is the Nearest Star?](https://youtu.be/dH_yCRmzkMo) `dH_yCRmzkMo` | yes | PASS |
 | 2026-11-19 11:30 | [How Close Will the Supermoon Get on November 24?](https://youtu.be/HXacmpYkXcA) `HXacmpYkXcA` | yes | PASS |
 | 2026-11-20 11:30 | [The Nearest Star Is a Cherry Past Cairo. How Do We Know?](https://youtu.be/aAUgIGEuPwQ) `aAUgIGEuPwQ` | yes | PASS |
 | 2026-11-21 11:30 | [Muons Shouldn't Reach the Ground. They Do.](https://youtu.be/gc1hWQQJOq4) `gc1hWQQJOq4` | yes | PASS |
@@ -14,4 +13,5 @@ Written by `gate_upcoming.py` at 2026-11-18 06:40 London for Shorts scheduled in
 | 2026-11-27 11:30 | [Will Asteroid 2024 YR4 Hit the Moon in 2032?](https://youtu.be/93JL_IK57EM) `93JL_IK57EM` | yes | PASS |
 | 2026-11-28 11:30 | [Where Will the 2027 Total Solar Eclipse Last Over Six Minutes?](https://youtu.be/MScK2CK2ZFg) `MScK2CK2ZFg` | yes | PASS |
 | 2026-11-30 11:30 | [Why Will Gliese 710's Comets Arrive After It Has Gone?](https://youtu.be/xvarZP2aYyE) `xvarZP2aYyE` | yes | PASS |
+| 2026-12-02 11:30 | [Is a Star Really Coming Towards Us?](https://youtu.be/v6euXX2omz4) `v6euXX2omz4` | yes | PASS |
 

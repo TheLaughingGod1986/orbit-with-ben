@@ -1,0 +1,61 @@
+{
+  "verdict": "PASS",
+  "bed": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/J01_Journey-To-Every-World/05_Music/j01_journey_laid_score_v02.wav",
+  "bed_sha256": "0fd2c87674d99cb462f02eb3f3773bae297dd2c8a6c525fa9b6c4d79f9136ad4",
+  "plan_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/J01_Journey-To-Every-World/05_Music/j01_journey_laid_score_v02_plan.json",
+  "seconds": 3502.4,
+  "bpm": 80.0,
+  "brief_pace": "Pace: 66-70 BPM",
+  "fail": [],
+  "warn": [],
+  "waived": [
+    "reused: sounds like j01_journey_laid_score_v02.wav (1.0), moon-leaving-part02_score_bed_v01.mp3 (0.821) (Chief waiver music_gate_J01_chief_waiver.json)"
+  ],
+  "matches": [
+    {
+      "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/J01_Journey-To-Every-World/05_Music/j01_journey_laid_score_v02.wav",
+      "similarity": 1.0,
+      "sha256": "0fd2c87674d99cb462f02eb3f3773bae297dd2c8a6c525fa9b6c4d79f9136ad4"
+    },
+    {
+      "file": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/05_Music/moon-leaving-part02_score_bed_v01.mp3",
+      "similarity": 0.821
+    }
+  ],
+  "waiver": "music_gate_J01_chief_waiver.json",
+  "rules": {
+    "similarity_fail": 0.8,
+    "compared_seconds": 300
+  },
+  "reconciled_comparison_summary": {
+    "job": "J3128",
+    "channel": "OWB",
+    "film": "OWB:J01",
+    "export_id": "J01_Journey_v03",
+    "original_sidecar_path": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/J01_Journey-To-Every-World/07_Edit-Project/j01_v03_pack/music_gate.json",
+    "original_unreadable_warn_count": 13,
+    "reconciled_unreadable_warn_count": 0,
+    "uniqueness_coverage_status": "full_readable_comparisons",
+    "deduplicated_comparison_beds_count": 30,
+    "excluded_same_film_or_self_count": 1,
+    "excluded_uat_narration_vo_files_count": 14,
+    "included_uat_music_bed": {
+      "uat_stub": "OWB UAT/jupiter-music.mp3",
+      "resolved_nas_equivalent": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/05_Music/moon-leaving-part03_score_bed_v01.mp3",
+      "sha256": "38ab6e3e876860e72c49c547df6cbe1d05a82e021e6d517e4e64478db6f8de2b",
+      "bytes": 2560462
+    },
+    "max_similarity": 1.0,
+    "max_similarity_bed": "j01_journey_laid_score_v02.wav",
+    "max_similarity_sha256": "0fd2c87674d99cb462f02eb3f3773bae297dd2c8a6c525fa9b6c4d79f9136ad4",
+    "excluded_same_film_or_self": [
+      {
+        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/J01_Journey-To-Every-World/05_Music/j01_journey_linking_bed_v01.wav",
+        "name": "j01_journey_linking_bed_v01.wav",
+        "sha256": "9b9bf9e6bf4db40c970778bc726f9345e1a853bfc3cd9015e6d464e22d715159",
+        "reason": "same_film_05_music (OWB:J01)"
+      }
+    ],
+    "repair_job": null
+  }
+}

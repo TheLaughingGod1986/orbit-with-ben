@@ -1,0 +1,51 @@
+{
+  "verdict": "PASS",
+  "bed": "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/022_Is-the-Sun-Getting-Brighter/05_Music/sun-brighter_score_bed_v01.mp3",
+  "bed_sha256": "12d234e3113c4f9010d576ca73603d269cde46ee544bbc3f0a844f56add7df1b",
+  "plan_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/022_Is-the-Sun-Getting-Brighter/05_Music/sun-brighter_score_bed_v01_plan.json",
+  "seconds": 525.0,
+  "bpm": 100.0,
+  "brief_pace": "Pace: 60-80 BPM",
+  "fail": [],
+  "warn": [
+    "pace: measured about 100.0 BPM against the brief's 60-80; Claude listens"
+  ],
+  "waived": [],
+  "matches": [],
+  "waiver": null,
+  "rules": {
+    "similarity_fail": 0.8,
+    "compared_seconds": 300
+  },
+  "reconciled_comparison_summary": {
+    "job": "J3128",
+    "channel": "OWB",
+    "film": "OWB:022",
+    "export_id": "sun_moist_greenhouse_v01",
+    "original_sidecar_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/022_Is-the-Sun-Getting-Brighter/10_Shorts/lift_moist_greenhouse/06_Final-Exports/sun_moist_greenhouse_v01_music.json",
+    "original_unreadable_warn_count": 13,
+    "reconciled_unreadable_warn_count": 0,
+    "uniqueness_coverage_status": "full_readable_comparisons",
+    "deduplicated_comparison_beds_count": 30,
+    "excluded_same_film_or_self_count": 1,
+    "excluded_uat_narration_vo_files_count": 14,
+    "included_uat_music_bed": {
+      "uat_stub": "OWB UAT/jupiter-music.mp3",
+      "resolved_nas_equivalent": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/05_Music/moon-leaving-part03_score_bed_v01.mp3",
+      "sha256": "38ab6e3e876860e72c49c547df6cbe1d05a82e021e6d517e4e64478db6f8de2b",
+      "bytes": 2560462
+    },
+    "max_similarity": 0.5207,
+    "max_similarity_bed": "moon-leaving-part02_score_bed_v01.mp3",
+    "max_similarity_sha256": "5093a4c23253748eb2cd4e1cbbb216ecf896350aea15760ff69e137988b6ccb1",
+    "excluded_same_film_or_self": [
+      {
+        "file": "/Volumes/data/mac-mini-archive/2026-10-24/YouTube/orbit-with-ben/02_Video-Projects/022_Is-the-Sun-Getting-Brighter/05_Music/sun-brighter_score_bed_v01.mp3",
+        "name": "sun-brighter_score_bed_v01.mp3",
+        "sha256": "12d234e3113c4f9010d576ca73603d269cde46ee544bbc3f0a844f56add7df1b",
+        "reason": "identical_bed_sha256_self"
+      }
+    ],
+    "repair_job": null
+  }
+}

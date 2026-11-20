@@ -221,9 +221,11 @@ def build(scratch: pathlib.Path, root: pathlib.Path, placed: dict, home: str, ot
     folders = {home: scratch / channels.get(home)["repo"]["checkouts"][0]}
     for f in placed[home]:
         _place(root / f, folders[home] / f)
-    # The former resident also needs a cache after it becomes an external channel.
-    # CI and machines without that checkout must be able to load its settings.
-    _place(root / "studio" / "channel.json", studio / "channels" / home / "channel.json")
+    # Once the home channel is a repo beside the studio, the studio keeps a cached copy of its settings like it does
+    # for every other channel (channels/<slug>/channel.json; `channels.py sync` refreshes it).
+    home_settings = root / "studio" / "channel.json"
+    if home_settings.is_file():
+        _place(home_settings, studio / "channels" / home / "channel.json")
     for slug, checkout in others.items():
         folder = scratch / (channels.get(slug)["repo"].get("checkouts") or [slug])[-1]
         if checkout:
@@ -350,9 +352,22 @@ def failing_tests(output: str) -> dict:
 
 
 def run_tests(studio: pathlib.Path, env: dict, timeout: int = 1500) -> dict:
-    r = subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", "scripts", "-p", "test_*.py"],
-                       cwd=str(studio), env=env, capture_output=True, text=True, timeout=timeout)
-    return failing_tests(r.stderr + r.stdout)
+    try:
+        r = subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", "scripts", "-p", "test_*.py"],
+                           cwd=str(studio), env=env, capture_output=True, text=True, timeout=timeout)
+    except (OSError, subprocess.TimeoutExpired):
+        # Never echo process output or exception details: they can contain secrets.
+        return {"test_process": ["test process could not start or finish"]}
+    output = r.stderr + r.stdout
+    failed = failing_tests(output)
+    if r.returncode != 0 and not failed:
+        failed["test_process"] = [f"test process exited {r.returncode} without a parsed failure"]
+    # A successful interpreter that discovered nothing is not a tested layout.
+    count = re.search(r"^Ran ([0-9]+) tests? in ", output, re.M)
+    if not failed and (not count or int(count.group(1)) == 0
+                       or not re.search(r"^OK(?: \(.*\))?$", output, re.M)):
+        failed["test_process"] = ["no successful nonempty unittest summary"]
+    return failed
 
 
 def check(root: pathlib.Path = ROOT, scratch: pathlib.Path | None = None, tests: bool = True) -> dict:

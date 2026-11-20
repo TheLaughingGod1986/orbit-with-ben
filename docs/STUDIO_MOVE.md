@@ -4,6 +4,20 @@ Prepared 18 November 2026. This is the phase 3 execution runbook, not permission
 The latest J3012 brief supersedes the original history-rewrite dependency: create a clean root commit; do not
 copy Orbit's Git history. J2537's history rewrite is not a prerequisite. The source history remains in Orbit.
 
+## Resume here (19 November, latest integration)
+
+PR 1011 is the existing delivery branch; do not recreate the runbook or reset J3012's **3/4** progress.
+Its queue history and the newest `jobs/reviews/J3012/` evidence describe completed preparation.
+The current integration retains main's guarded former-resident manifest cache and the PR's stronger
+missing-browser-port refusal test. The split checker now rejects failed, interrupted, missing-summary and
+empty test runs rather than counting an unrecognized process failure as a zero day.
+
+Next ready implementation is the analytics auxiliary gate/dispatch callback described in
+`ANALYTICS_COLLECTION_2026-11-19.md`: isolated library/frame output, source media/cache, bounded commands,
+then timer/plist wiring and full fake-API acceptance. Also outstanding: the deployed board credential probe,
+complete writer inventory/guards and refreshed private rehearsal. Keep the live switch gated on the timing
+and acceptance below. This integration does not change the official daily history or send the day-before notice.
+
 ## Timing and acceptance
 
 The original target was Monday 23 or Tuesday 24 November. The current official history inspected on

@@ -87,6 +87,48 @@ class FormerResidentCache(unittest.TestCase):
             self.assertEqual((scratch / "sample/studio/channel.json").read_text(), original)
 
 
+class TestProcessOutcome(unittest.TestCase):
+    def test_only_a_successful_nonempty_suite_passes(self):
+        for code, output, passes in (
+            (0, "Ran 2 tests in 0.01s\n\nOK\n", True),
+            (0, "Ran 2 tests in 0.01s\n\nOK (skipped=1)\n", True),
+            (0, "Ran 0 tests in 0.01s\n\nOK\n", False),
+            (0, "", False),
+            (1, "unexpected process failure", False),
+            (-9, "Ran 2 tests in 0.01s\n\nOK\n", False),
+            (0, "Ran 2 tests in 0.01s\nFAILED\n", False),
+        ):
+            with self.subTest(code=code, output=output), mock.patch.object(
+                    split.subprocess, "run", return_value=subprocess.CompletedProcess([], code, "", output)):
+                result = split.run_tests(Path("unused"), {})
+                self.assertEqual(result == {}, passes)
+                if not passes:
+                    self.assertIn("test_process", result)
+
+    def test_real_discovery_rejects_empty_directory_and_accepts_a_test(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "scripts").mkdir()
+            self.assertIn("test_process", split.run_tests(root, dict(os.environ)))
+            (root / "scripts/test_sample.py").write_text(
+                "import unittest\nclass Sample(unittest.TestCase):\n"
+                "    def test_truth(self): self.assertTrue(True)\n")
+            self.assertEqual(split.run_tests(root, dict(os.environ)), {})
+
+    def test_parsed_failure_keeps_its_test_name(self):
+        output = "FAIL: test_one (test_alpha.Alpha.test_one)\nRan 1 test in 0.01s\nFAILED (failures=1)\n"
+        with mock.patch.object(split.subprocess, "run",
+                               return_value=subprocess.CompletedProcess([], 1, "", output)):
+            self.assertEqual(split.run_tests(Path("unused"), {}), {"test_alpha.py": ["test_one"]})
+
+    def test_timeout_and_start_failure_are_counted_without_details(self):
+        for error in (OSError("private detail"), subprocess.TimeoutExpired("private detail", 1)):
+            with self.subTest(error=type(error)), mock.patch.object(split.subprocess, "run", side_effect=error):
+                result = split.run_tests(Path("unused"), {})
+                self.assertIn("test_process", result)
+                self.assertNotIn("private detail", str(result))
+
+
 class Gates(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()

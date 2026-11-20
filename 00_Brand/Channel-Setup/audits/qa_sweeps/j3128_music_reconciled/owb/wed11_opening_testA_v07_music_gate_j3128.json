@@ -1,0 +1,49 @@
+{
+  "verdict": "PASS",
+  "bed": "/Volumes/data/mac-mini-archive/2026-11-05/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/05_Music/mars-robot_score_bed_v02_full.mp3",
+  "bed_sha256": "12bb9a2fc53fb4397af74ace10c2f10a3d2fb656d7058965457865980f5148e5",
+  "plan_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/05_Music/mars-robot_score_bed_v02_full_plan.json",
+  "seconds": 492.0,
+  "bpm": 120.0,
+  "brief_pace": "Pace: 60-72 BPM",
+  "fail": [],
+  "warn": [],
+  "waived": [],
+  "matches": [],
+  "waiver": null,
+  "rules": {
+    "similarity_fail": 0.8,
+    "compared_seconds": 300
+  },
+  "reconciled_comparison_summary": {
+    "job": "J3128",
+    "channel": "OWB",
+    "film": "OWB:025",
+    "export_id": "wed11_opening_testA_v07",
+    "original_sidecar_path": "/Users/benjaminoats/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/10_Shorts/wed11_opening_testA/06_Final-Exports/wed11_opening_testA_v07_music.txt",
+    "original_unreadable_warn_count": 13,
+    "reconciled_unreadable_warn_count": 0,
+    "uniqueness_coverage_status": "full_readable_comparisons",
+    "deduplicated_comparison_beds_count": 30,
+    "excluded_same_film_or_self_count": 1,
+    "excluded_uat_narration_vo_files_count": 14,
+    "included_uat_music_bed": {
+      "uat_stub": "OWB UAT/jupiter-music.mp3",
+      "resolved_nas_equivalent": "/Volumes/data/mac-mini-archive/YouTube/orbit-with-ben/02_Video-Projects/013_Why-The-Moon-Is-Slowly-Leaving-Us/05_Music/moon-leaving-part03_score_bed_v01.mp3",
+      "sha256": "38ab6e3e876860e72c49c547df6cbe1d05a82e021e6d517e4e64478db6f8de2b",
+      "bytes": 2560462
+    },
+    "max_similarity": 0.7957,
+    "max_similarity_bed": "moon-leaving-part02_score_bed_v01.mp3",
+    "max_similarity_sha256": "5093a4c23253748eb2cd4e1cbbb216ecf896350aea15760ff69e137988b6ccb1",
+    "excluded_same_film_or_self": [
+      {
+        "file": "/Volumes/data/mac-mini-archive/2026-11-05/YouTube/orbit-with-ben/02_Video-Projects/025_Could-A-Robot-Survive-On-Mars/05_Music/mars-robot_score_bed_v02_full.mp3",
+        "name": "mars-robot_score_bed_v02_full.mp3",
+        "sha256": "12bb9a2fc53fb4397af74ace10c2f10a3d2fb656d7058965457865980f5148e5",
+        "reason": "identical_bed_sha256_self"
+      }
+    ],
+    "repair_job": null
+  }
+}

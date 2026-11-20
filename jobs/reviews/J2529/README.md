@@ -254,6 +254,74 @@ Any spend row in this window that reads a different reservation, or no reservati
   - **Credits spent:** `5,500` Flow credits actually deducted across 55 generated Quality clips (`55 × 100` Quality; `60 × 0` start stills; `£0` cash; plus `1 × 100` unposted ledger `CHARGED` entry on `HOS:013:P05:08a_wallace_opens_origin:t1` with `0` live credits deducted)
   - **Balance before → after:** `10,440` (`+50` account grant before Batch 08) `→ 4,990` live (`1,000` remaining on `HOS013_PASS1`, `900` unposted in shared ledger including the `0`-deducted row 56 `CHARGED` entry, live headroom `3,090 >= 3,000`)
 
+### Batch 12 of 14 (Resumed) — `GENERATED` / `PENDING_REVIEW` (`2026-11-19T18:34Z` – `18:47Z`)
+
+- **Authorization:** Chief 19 Nov governing note (desk `7005254471` / `7017831888` reply; J2529 reopened `2026-11-19T18:17Z`; Row 56 take 1 closed `SESSION_BLOCKED` at `0` credits in PR #663 / J3156; Row 56 runs as take 2; Batches 12–14 rows 56–66 on post-reset allowance).
+- **Log / done:** `/Users/benjaminoats/_desk/logs/J2529-batch12-20261119T1834Z.log`, `/Users/benjaminoats/_desk/logs/J2529-batch12-20261119T1834Z.done` (`exit 0`)
+- **Batch receipt:** `BATCH_12_RECEIPT.json` (`archive_v01_pass1/batch-cc5c89ca3a0d.receipt.json`)
+- **Full-clip `0.5s` contact sheets:** `BATCH_12_SHEETS.json` (`archive_v01_pass1/sheets/*_sheet.jpg`, review branch `review/013-pass1-sheets` `d63cc62f`)
+- **Post-batch dry-run:** `DRY_RUN_2026-11-19T1917Z_POST_BATCH12.json` (`has_pending_charge: false`, `unposted_charges: 800`, `remaining_reservations: 600`, `total_liability: 1400`, `would_allow_reserve_at_recorded_balance: true`)
+- **Reservation / floor:** `HOS013_PASS1` (`--floor 3000 --other-reservations 0`)
+- **Credits spent:** `500` (`5 × 100` Quality; 5 start stills from 12 Nov reused at `0` credits; cumulative `6,000 / 6,600`; `£0` cash)
+- **Live balance chain (all 5 posted in `~/_desk/state/flow/shared/account.jsonl`, post-batch `24,000` re-verified live on CDP `:9222` at `19:19Z`):** `24,500 → 24,400 → 24,300 → 24,200 → 24,100 → 24,000` (`0` pending charges; remaining `HOS013_PASS1` reservation `600`; live headroom `24,000 - 600 - 800 = 22,600 >= 3,000`)
+
+| Row | Clip | Clip SHA-256 | Start Still SHA-256 | Sheet SHA-256 | Before → After | Status |
+|---|---|---|---|---|---|---|
+| `P5:08a_wallace_opens_origin` | `P05_08a_wallace_opens_origin_t2.mp4` | `4f831312a32c9d8f8a6b2520842af608f7c8ccddafb10906d2ed52b48137aa5c` | `b9e9a40a4d70553e5ef4cdf5d38ee9c86fbc291f7304fec5b3060d3b44563c2b` | `e9edef39bb2e42ab542925d49280bff9e8e6e7359fb94db28bbdf9db860bdfee` | `24,500 → 24,400` | `PENDING_REVIEW` (`keep: false`) |
+| `P5:08b_wallace_reads_origin` | `P05_08b_wallace_reads_origin_t1.mp4` | `641b40ba5cf30290bda56b64b401422e801a7800d79d1327376dc44357edfffa` | `3c043cb33b84fba37c69b549b11ca40e38ff93847ff8ef8ba02fe557e158604a` | `c77cf16244478a8c67ceb130eefb603ef0488f17009d101eab5f9f5a19a1775b` | `24,400 → 24,300` | `PENDING_REVIEW` (`keep: false`) |
+| `P5:10_darwin_worried_shelf` | `P05_10_darwin_worried_shelf_t1.mp4` | `1bb721296dba13e0f98a187c0bc40b0cac456452ea6db3b3e6babc13de820862` | `5b07893a3c6475089120d1e6abc4ec238ab7a26a5ce3cbbaaf9bd46ec333ed0a` | `efd114f661c530eee0bcbf0dfa3dbbfd7287f7a965b52cd228ca46a04970c3a2` | `24,300 → 24,200` | `PENDING_REVIEW` (`keep: false`) |
+| `P6:02a_jenkin_study` | `P06_02a_jenkin_study_t1.mp4` | `9337659ea233b9343f26bf5b7a3a61febd6c407ea5247459486bb3a70ea9b141` | `a507c30430af964de394864e0b0bbcdae09e466178ec453440e7d9f7871bbc83` | `14d2293691eb8eb4348d0c9113f53d06ec95ab38132b01a6c14b83ab4fc36785` | `24,200 → 24,100` | `PENDING_REVIEW` (`keep: false`) |
+| `P6:02b_paint_pots_mix` | `P06_02b_paint_pots_mix_t1.mp4` | `8a0efce2f9faac951dc4da36e0ff74757b37ce46624436cd21aa7dfca2a19ab9` | `eaabf948be98fe879a42808138cebf74b629286eccba8c3913fec92e07bd8971` | `4803ff22bbeb944a76602c7018085a826ee62999bcd4b8ca3b6c0252e4c00037` | `24,100 → 24,000` | `PENDING_REVIEW` (`keep: false`) |
+
+### Batch 13 of 14 — `GENERATED` / `PENDING_REVIEW` (`2026-11-19T19:22Z` – `19:39Z`)
+
+- **Authorization:** Chief 19 Nov governing note (desk `7005254471` / `7017831888` reply; J2529 reopened `2026-11-19T18:17Z`; Batches 12–14 rows 56–66 on post-reset allowance).
+- **Log / done:** `/Users/benjaminoats/_desk/logs/J2529-batch13-20261119T1922Z.log`, `/Users/benjaminoats/_desk/logs/J2529-batch13-20261119T1922Z.done` (`exit 0`)
+- **Batch receipt:** `BATCH_13_RECEIPT.json` (`archive_v01_pass1/batch-44409ce48dab.receipt.json`)
+- **Full-clip `0.5s` contact sheets:** `BATCH_13_SHEETS.json` (`archive_v01_pass1/sheets/*_sheet.jpg`, review branch `review/013-pass1-sheets` `e7199f54`)
+- **Post-batch dry-run:** `DRY_RUN_2026-11-19T1951Z_POST_BATCH13.json` (`has_pending_charge: false`, `unposted_charges: 800`, `remaining_reservations: 100`, `total_liability: 900`, `would_allow_reserve_at_recorded_balance: true`)
+- **Reservation / floor:** `HOS013_PASS1` (`--floor 3000 --other-reservations 0`)
+- **Credits spent:** `500` (`5 × 100` Quality; 5 start stills generated at `0` credits via `Nano Banana 2.1`; cumulative `6,500 / 6,600`; `£0` cash)
+- **Live balance chain (all 5 posted in `~/_desk/state/flow/shared/account.jsonl`, post-batch `23,500` re-verified live on CDP `:9222` at `19:49Z`):** `24,000 → 23,900 → 23,800 → 23,700 → 23,600 → 23,500` (`0` pending charges; remaining `HOS013_PASS1` reservation `100`; live headroom `23,500 - 100 - 800 = 22,600 >= 3,000`)
+
+| Row | Clip | Clip SHA-256 | Start Still SHA-256 | Sheet SHA-256 | Before → After | Status |
+|---|---|---|---|---|---|---|
+| `P6:04a_mendel_pea_garden` | `P06_04a_mendel_pea_garden_t1.mp4` | `ce83b71a50ffb743e48cfd2b4b92059f211240b4a96b271206a1aa20896a38f0` | `7e7cd47c1afbdb8a811971d53f0949dd7d578c7658d189d8bd7542f839204920` | `ed0fc1c2d74ee6ec3eb8314aa2442840aae2c4eeb35d1a0bf1739c855bee055c` | `24,000 → 23,900` | `PENDING_REVIEW` (`keep: false`) |
+| `P6:05_beads_not_paint` | `P06_05_beads_not_paint_t1.mp4` | `727f49def4209db9634955f4a669bc972c4b85e331f35d1878078d99c04e95be` | `29747530169129d1ab4b068c7022bd2a1398b19ae93f0dfc434349bd81eecfa7` | `d75fb3634caa1841893862f7b4f92c752ec46fa3747504692863c4f9e9a167c3` | `23,900 → 23,800` | `PENDING_REVIEW` (`keep: false`) |
+| `P6:06a_origin_fifth_edition` | `P06_06a_origin_fifth_edition_t1.mp4` | `dd2f82440c4512c5c2f114be9022c82861e8477120b90a55d56513b20019cc4b` | `53c7c7a697aa850218f50232e70d0e5def938bc09b87b2d13e8a7e8badd12589` | `2b1170a61fff6a1c1061c0aa5b4b1d1e9a718b92b96fd0c5abc348c9c4d5ea23` | `23,800 → 23,700` | `PENDING_REVIEW` (`keep: false`) |
+| `P6:06b_spencer_coined` | `P06_06b_spencer_coined_t1.mp4` | `2f725db7cd3cfb50a90a7c009513f22c6bfdac4dbed04ff640757f65a7d7af5c` | `e3cb96754dd2f1d55bdb233b34e99c8f6a4accfdf59c08f4d10e0ac69924833c` | `ff1f829d963c8a0b9215619be7ec66995b29df8b5771e380c110a5c13a8809bf` | `23,700 → 23,600` | `PENDING_REVIEW` (`keep: false`) |
+| `P6:07_key_in_lock` | `P06_07_key_in_lock_t1.mp4` | `96f01dfb0f802512cce411f14eb2b79e6c4d3c8be8f6d576f1dbc55ac264f996` | `f43eeaf1d56cf5e39a403d95f3e8f5bec70ba34aa6ca04210f2b1c11d5f6a339` | `ab46405be230be871e9f4055c28fa19e41553c791ef4f349f0ebe2e01687506b` | `23,600 → 23,500` | `PENDING_REVIEW` (`keep: false`) |
+
+### Batch 14 of 14 (Final) — `GENERATED` / `PENDING_REVIEW` (`2026-11-19T19:52Z` – `19:57Z`)
+
+- **Authorization:** Chief 19 Nov governing note (desk `7005254471` / `7017831888` reply; J2529 reopened `2026-11-19T18:17Z`; Batches 12–14 rows 56–66 on post-reset allowance).
+- **Log / done:** `/Users/benjaminoats/_desk/logs/J2529-batch14-20261119T1952Z.log`, `/Users/benjaminoats/_desk/logs/J2529-batch14-20261119T1952Z.done` (`exit 0`, runner PID `25952` exited)
+- **Batch receipt:** `BATCH_14_RECEIPT.json` (`archive_v01_pass1/batch-bddd8c07cf31.receipt.json`)
+- **Full-clip `0.5s` contact sheet:** `BATCH_14_SHEETS.json` (`archive_v01_pass1/sheets/P06_08b_darwin_mendel_synthesis_t1_sheet.jpg`, review branch `review/013-pass1-sheets` `44cbd78a`)
+- **Post-batch dry-run:** `DRY_RUN_2026-11-19T2140Z_POST_BATCH14.json` (`has_pending_charge: false`, `unposted_charges: 800`, `remaining_reservations: 0`, `total_liability: 800`, `would_allow_reserve_at_recorded_balance: true`)
+- **Reservation / floor:** `HOS013_PASS1` (`--floor 3000 --other-reservations 0`)
+- **Credits spent:** `100` (`1 × 100` Quality; 1 start still generated at `0` credits via `Nano Banana 2.1`; cumulative `6,600 / 6,600`; `£0` cash)
+- **Live balance chain (posted in `~/_desk/state/flow/shared/account.jsonl` at `19:57:16Z`, post-batch `23,400` re-verified live on CDP `:9222` at `21:41:28Z`):** `23,500 → 23,400` (`delta: 100`, `0` pending charges, `0` remaining on `HOS013_PASS1`, `0` subsequent Flow charges; live headroom `23,400 - 800 = 22,600 >= 3,000`)
+
+| Row | Clip | Clip SHA-256 | Start Still SHA-256 | Sheet SHA-256 | Before → After | Status |
+|---|---|---|---|---|---|---|
+| `P6:08b_darwin_mendel_synthesis` | `P06_08b_darwin_mendel_synthesis_t1.mp4` | `45c388088bcb4fb561967df348232f38d6fc4377c23d0c6efcbffbc9ea06531c` | `9cd894331a580684c06fbb9827ce4b387d8b70804dc6fd7261f3736a3b7dc04e` | `10fa396805078768ce3b4932b332303e37f53493b66d1a24fd3fdeb7635f8d02` | `23,500 → 23,400` | `PENDING_REVIEW` (`keep: false`) |
+
+### Pass-1 Mint Completion Summary (`14/14` batches, `66/66` rows — parked for Chief)
+
+- **Takes per part (`66 / 66` Quality clips `GENERATED` / `PENDING_REVIEW`, `0` Fast, `0` marked `KEEP` by runner):**
+  - `part_01`: `12 / 12` (`1,200` credits)
+  - `part_02`: `11 / 11` (`1,100` credits)
+  - `part_03`: `14 / 14` (`1,400` credits)
+  - `part_04`: `12 / 12` (`1,200` credits)
+  - `part_05`: `9 / 9` (`900` credits posted; `P5:08a_wallace_opens_origin` take 1 closed `SESSION_BLOCKED` at `0` credits on 12 Nov, take 2 generated and posted in Batch 12)
+  - `part_06`: `8 / 8` (`800` credits)
+- **Credits spent:** `6,600 / 6,600` included Flow credits (`66 × 100` `Veo 3.1 - Quality`, `£0` cash). All `66` clips verified `1280×720`, `audio_streams: 0`, `decode_ok: true`, NAS archive `verified: true`, with full-clip `0.5s` contact sheets pushed to `review/013-pass1-sheets` @ `44cbd78a`.
+- **Balances:**
+  - Pre-reset cycle (Batches 01–11, rows 1–55): `10,440` (`+50` account grant before Batch 08) `→ 4,990` (`5,500` credits spent).
+  - Post-reset cycle (Batches 12–14, rows 56–66): `24,500 → 23,400` (`1,100` credits spent; live balance `23,400` verified on CDP `:9222` at `2026-11-19T21:41:28Z`, `0` pending charges, `0` remaining `HOS013_PASS1` reservation, headroom `22,600 >= 3,000`).
+- **Receipts & archive:** `orbit-with-ben` `jobs/reviews/J2529/` (`BATCH_01_RECEIPT.json`–`BATCH_14_RECEIPT.json`, `BATCH_01_SHEETS.json`–`BATCH_14_SHEETS.json`), NAS `/Volumes/data/studio-live/History Of Science/02_Video-Projects/013_Darwin-Wallace-Evolution/04_Generated-Clips/archive_v01_pass1/`, review sheets branch `review/013-pass1-sheets` (`44cbd78a`).
+
 ## Chief Review State (`REVIEW_STATE.json`)
 
 - **Rows 1–15 (`6815870258`):** `keep: true` on `1, 2, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15`; `RETAKE` on `3, 10`.
@@ -263,4 +331,16 @@ Any spend row in this window that reads a different reservation, or no reservati
 - **Rows 41–45 (`6830257530`, closing `6830137619`):** `keep: true` on `41, 42, 43, 44, 45` as cut (`2.25–3.75 s` strip skipped; row `45` off retake batch).
 - **Rows 46–50 (`6830884885` / `6830918005`, withdrawing `6830830084` on rows `49–50`):** `keep: true` on `46, 48, 50` as cut; `RETAKE` on `47` (`P4:10_fairness_25_june`) and `49` (`P4:12_lyell_hooker_bundle`).
 - **Rows 51–55 (`6831422974` / `6831444565` / `6831536663`, withdrawing `6831390300` on row `54`):** `keep: true` on `51, 52, 53, 55` as cut; `RETAKE` on `54` (`P5:05a_darwin_writes_origin`).
-- **Held retake batch after pass 1 (`48 KEEP` / `7 RETAKE` across rows `1–55`):** rows `3, 10, 24, 28, 47, 49, 54`, reservation `700` Flow credits under `--floor 3000` (`£0` cash).
+- **Rows 56–60 (`7019983519`, superseding `7019806730`):** preliminary KEEP marks in `7019806730` withdrawn (`plate UAT is continuous playback`); stills stand on `56` (take 2), `57, 58, 59, 60` with `keep` unset (`null`) pending every-2nd-frame motion pull on `56` (`0.00–3.42 s`, verified clean one-way untying/lifting across `f000..f082`) and `58` (`3.40–4.60 s`, verified clean passing exit `f092..f102` `3.833–4.250 s`, completely gone by `f104` `4.333 s` with no held slice or face morph).
+- **Rows 61–65 (`7020824090`, superseding `7020556581` after Chief archive motion inspection):** `RETAKE` (`keep: false`) on `63` (`P6:06a_origin_fifth_edition` — warm gold light in the gutter at `~2.0–4.5 s` inside `0.00–4.96 s` window, forbidden by prompt; cover hinges and stays on book; folded letter stays on desk), added as the 8th row on the held retake list. Rows `61, 62, 64, 65` stand on motion with `keep` unset (`null`; stills fail on row `65` in `7020556581` withdrawn).
+- **Row 66 (`7023130641`, after Claude sheet pass `7023092408` and Chief archive motion inspection):** stands on motion (`0.00–4.00 s` slow push-in, objects-only prompt satisfied, scribble-only pages, no reversal) with `keep` unset (`null`).
+- **Held retake list after pass 1 (`48 KEEP` / `8 RETAKE` / `10 STANDS_KEEP_UNSET` across rows `1–66`, per `7020824090` & `7023130641`):**
+  1. Row `3` (`P1:03a_unlabelled_birds`) — `6815870258`
+  2. Row `10` (`P1:07_darwin_1837_desk`) — `6815870258`
+  3. Row `24` (`P3:02a_malthus_lamplight`) — `6822411223`
+  4. Row `28` (`P3:05a_chicks_deep_beaks`) — `6829662956`
+  5. Row `47` (`P4:10_fairness_25_june`) — `6830884885` / `6830918005`
+  6. Row `49` (`P4:12_lyell_hooker_bundle`) — `6830884885` / `6830918005`
+  7. Row `54` (`P5:05a_darwin_writes_origin`) — `6831422974` / `6831444565` / `6831536663`
+  8. Row `63` (`P6:06a_origin_fifth_edition`) — `7020824090` / `7023130641` (prompt fix for later allowance: no glow)
+  - Existing retake hold remains `700` Flow credits under `--floor 3000` (`£0` cash); not raised by `7020824090`/`7023130641`, and no retake pass or remint is authorised until a separate Chief allowance post names it.
