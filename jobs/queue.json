@@ -272287,18 +272287,23 @@
           "at": "2026-11-20T09:36Z",
           "by": "codex",
           "what": "step 3 of 4 done: Restored existing 3/4 plan after reading prior handoffs. Runbook PR 1011 and rehearsal already exist; continuing readiness work only."
+        },
+        {
+          "at": "2026-11-20T09:39Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: PR 1011 now 0db7e2aa43: channel-local HOS desk adapter prepared; 39 focused and 26 safety tests pass. Actual installed plist proposal linted, original unchanged. No installation or live switch."
         }
       ],
-      "remaining_action": "Finish migration readiness checks before the announced cutover and live acceptance",
+      "remaining_action": "Verify deployed board access, finish both-machine readiness, then announce and perform the gated move",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-20T09:36Z",
+        "at": "2026-11-20T09:39Z",
         "by": "codex",
-        "note": "Restored existing 3/4 plan after reading prior handoffs. Runbook PR 1011 and rehearsal already exist; continuing readine"
+        "note": "PR 1011 now 0db7e2aa43: channel-local HOS desk adapter prepared; 39 focused and 26 safety tests pass. Actual installed p"
       },
       "taskKeys": [
         "HOS:009",
