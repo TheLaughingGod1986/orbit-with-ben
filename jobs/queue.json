@@ -269970,10 +269970,10 @@
       "stage": "edit",
       "after": "J2995",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-11-20T21:00Z",
-      "eta": "2026-11-21T01:00Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T17:20Z",
       "result": "",
@@ -270222,6 +270222,11 @@
           "at": "2026-11-20T21:12Z",
           "by": "cursor",
           "what": "step 1 of 4 done: Render is running. Stills for the credit, the Fuel/Radar gap, the carrier labels and the place names were checked before it started. The zero-spend score is copied, not rebuilt."
+        },
+        {
+          "at": "2026-11-20T21:12Z",
+          "by": "cursor",
+          "what": "released: v05 picture render is running in tmux j2996-visual-v05. Log /Users/benjaminoats/_desk/logs/j2996/visual-fix-v05.log. Marker /Users/benjaminoats/_desk/logs/j2996/visual-fix-v05.done. Missing marker means still running: do not start a second render. Script is commit 54b352c547 on branch cursor/j2996-atlantic-v05. On marker 0, read TECHNICAL_CHECK.json in the v05 folder, then finish thumbnails, the upload package, QA gates and Ben's watch. No upload. Zero-spend score is copied."
         }
       ],
       "remaining_action": "Wait for the v05 picture render to finish, then check the file",
