@@ -290706,13 +290706,13 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-20T16:56Z",
-      "eta": "2026-11-20T17:26Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-20T16:53Z",
-      "result": "",
+      "result": "MacBook inventory is in PR #1076 (344155a62). Three installed services all parsed; com.owb.macbook-worker is the one shared LaunchAgent and is loaded running; both slots have distinct checkouts. Private studio repo is readable, default branch rehearsal/j3012 at 534cf0f70852e06414cbe39f6a01efe9024c8a91. No service, credential, or marker was changed.",
       "history": [
         {
           "at": "2026-11-20T16:53Z",
@@ -290733,6 +290733,11 @@
           "at": "2026-11-20T17:00Z",
           "by": "macbook",
           "what": "step 3 of 4 done: inventory, studio access, and slot check recorded locally"
+        },
+        {
+          "at": "2026-11-20T17:01Z",
+          "by": "macbook",
+          "what": "done: MacBook inventory is in PR #1076 (344155a62). Three installed services all parsed; com.owb.macbook-worker is the one shared LaunchAgent and is loaded running; both slots have distinct checkouts. Private studio repo is readable, default branch rehearsal/j3012 at 534cf0f70852e06414cbe39f6a01efe9024c8a91. No service, credential, or marker was changed."
         }
       ],
       "remaining_action": "Commit the sanitized MacBook inventory and open the pull request",
