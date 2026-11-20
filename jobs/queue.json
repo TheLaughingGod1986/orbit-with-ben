@@ -1,5 +1,5 @@
 {
-  "next_id": 3198,
+  "next_id": 3199,
   "jobs": [
     {
       "id": "J0001",
@@ -285695,6 +285695,11 @@
           "at": "2026-11-20T01:19Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-20T07:55:00Z"
+        },
+        {
+          "at": "2026-11-20T07:55Z",
+          "by": "relay",
+          "what": "condition verification queued: J3198"
         }
       ],
       "remaining_action": "Review ten unresolved HOS 013 pass-1 plates (rows 56-62, 64-66) in a session with demonstrated continuous moving_video_input playback and return to elected Chief for per-row marks",
@@ -285725,10 +285730,11 @@
       "hold": {
         "type": "capability",
         "condition": "Tested read_file on all 10 unresolved HOS 013 pass-1 .mp4 clips (rows 56-62, 64-66) in agy: read_file on video/mp4 returns only 8 discrete 1-fps static JPEG frames at integer seconds 00:00..00:07 (1 frame per 24 frames @ 24 fps; e.g. row 58 3.833-4.250s face exit falls unseen between 00:03 and 00:04), not continuous 24-fps moving-video playback. Freshly verified 11/11 Batch 12-14 NAS archive SHA256 hashes match receipts and recorded full per-row prompt and supplementary strip audit in jobs/reviews/J3178/REVIEW.md; updated capabilities.json to audio_input only. No playback PASS claimed.",
-        "check_at": "2026-11-20T07:55:00Z",
+        "check_at": "2026-11-20T08:55:38+00:00",
         "requires": [
           "moving_video_input"
-        ]
+        ],
+        "recheck_task": "J3198"
       }
     },
     {
@@ -287181,6 +287187,40 @@
         "OWB:026",
         "HOS:002"
       ]
+    },
+    {
+      "id": "J3198",
+      "title": "Verify condition for J3178",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3178: Tested read_file on all 10 unresolved HOS 013 pass-1 .mp4 clips (rows 56-62, 64-66) in agy: read_file on video/mp4 returns only 8 discrete 1-fps static JPEG frames at integer seconds 00:00..00:07 (1 frame per 24 frames @ 24 fps; e.g. row 58 3.833-4.250s face exit falls unseen between 00:03 and 00:04), not continuous 24-fps moving-video playback. Freshly verified 11/11 Batch 12-14 NAS archive SHA256 hashes match receipts and recorded full per-row prompt and supplementary strip audit in jobs/reviews/J3178/REVIEW.md; updated capabilities.json to audio_input only. No playback PASS claimed.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3178 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-20T07:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T07:55Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Review ten unresolved HOS 013 pass-1 plates (rows 56-62, 64-66) in a session with demonstrated continuous moving_video_input playback and return to elected Chief ",
+      "kind": "review",
+      "recheck_of": "J3178",
+      "required_capabilities": [
+        "moving_video_input"
+      ],
+      "due": "2026-11-20T08:55:38+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
