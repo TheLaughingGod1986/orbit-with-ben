@@ -291558,10 +291558,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-20T20:25Z",
+      "eta": "2026-11-20T22:25Z",
       "created_by": "gemini",
       "created_at": "2026-11-20T19:02Z",
       "result": "",
@@ -291595,6 +291595,11 @@
           "at": "2026-11-20T19:12Z",
           "by": "cursor",
           "what": "released: Offload is running detached in tmux session j3249-offload. Log /Users/benjaminoats/_desk/logs/j3249-offload.log. Done file /Users/benjaminoats/_desk/logs/j3249-offload.done. If that done file is missing, leave the session running and do not start a second copy. Session j3249-offload-donefix rewrites the done file from the log because the shell expanded the exit code too early. When the done file exists, trust the log line target_40GiB_met and df -h /Volumes/MiniWork. If at least 40 GiB is free, record the SHA-256 summary and mark the job done. Copies are staged on /Volumes/nas-staging/mac-mini-archive/miniwork-scratch/2026-11-20 because it is outside the 01:00-06:00 window. Local folders are removed only after a full hash match."
+        },
+        {
+          "at": "2026-11-20T20:25Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Wait for the detached NAS staging copy to finish, then confirm at least 40 GiB free",
