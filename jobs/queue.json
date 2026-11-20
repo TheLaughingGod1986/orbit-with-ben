@@ -291558,10 +291558,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-11-20T20:25Z",
-      "eta": "2026-11-20T22:25Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-20T19:02Z",
       "result": "",
@@ -291610,6 +291610,11 @@
           "at": "2026-11-20T20:27Z",
           "by": "cursor",
           "what": "step 1 of 3 done: Inspected. J2221 copy finished 20:06Z and dest hash is still running. No SHA256SUMS yet. MiniWork still 168 MiB free. Did not start a second copy."
+        },
+        {
+          "at": "2026-11-20T20:28Z",
+          "by": "cursor",
+          "what": "released: Offload still running in tmux j3249-offload. Log /Users/benjaminoats/_desk/logs/j3249-offload.log. Done file /Users/benjaminoats/_desk/logs/j3249-offload.done is missing, so do not start a second copy. J2221 is hashing on the NAS SSD share. The done file will say 1 even on success; trust the log line target_40GiB_met and df -h /Volumes/MiniWork."
         }
       ],
       "remaining_action": "Leave the detached MiniWork offload running until its done file appears, then read the log",
