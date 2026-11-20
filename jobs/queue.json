@@ -271395,10 +271395,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-20T06:11Z",
-      "eta": "2026-11-20T10:11Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
       "result": "",
@@ -271972,6 +271972,11 @@
           "at": "2026-11-20T06:16Z",
           "by": "codex",
           "what": "step 3 of 4 done: PR 1011 updated with read-only service inventory: 18 installed definitions, one malformed; legacy Cursor/watchdog cutover handling documented. Seven inventory, nine plist and 26 ratchet/security tests pass. No live switch."
+        },
+        {
+          "at": "2026-11-20T06:16Z",
+          "by": "codex",
+          "what": "released: PR 1011 advanced to fd135f13d6. Preserve 3/4 plan. Added bounded read-only installed-service inventory with value suppression and non-execution tests; Mini scan: 18 definitions, 17 parseable, missed-runs malformed. Resolved legacy Cursor wrapper and documented watchdog/app drain and resumption conditions. Seven inventory, nine plist and 26 ratchet/security tests pass; changed-file key/address findings zero; clean worktree. Evidence SERVICE_INVENTORY_2026-11-20.md. Next deployed board Contents probe, remaining wrapper/exporter guards, MacBook inventory and refreshed private rehearsal. Official streak not modified; seven daily passes, preceding-day notice and live relay/board/tick/both-worker acceptance remain. No live switch or spend."
         }
       ],
       "remaining_action": "Verify remaining migration access, service safeguards and refreshed rehearsal before cutover",
