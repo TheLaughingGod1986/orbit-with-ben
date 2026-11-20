@@ -288279,19 +288279,24 @@
           "at": "2026-11-20T18:45Z",
           "by": "gemini",
           "what": "step 4 of 6 done: Logged settled ElevenLabs spend (9,003 credits -> 32,856 / 121,114 remaining, 21,856 above 11,000 reserve) against WW2:004 and verified WAV/MP3 SHA-256 on studio-live NAS"
+        },
+        {
+          "at": "2026-11-20T18:47Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: VO_REPORT.md, metadata, and status.json (vo: review) validated with channel_check.py, committed, and pushed to gemini/J3206-ww2-004-vo"
         }
       ],
-      "remaining_action": "Write VO_REPORT.md, commit metadata and status.json (vo: review) on clean ww2 worktree, run channel_check, and open PR on ww2-channel",
+      "remaining_action": "Open PR on ww2-channel, post studio report on OWB thread, clean up temporary worktree, and mark J3206 done",
       "due": "2026-11-29T18:00:00Z",
       "for": "gemini",
       "kind": "vo",
       "plain": "Record the narration for WW2 film 004, about submarine torpedoes",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 6,
-        "at": "2026-11-20T18:45Z",
+        "at": "2026-11-20T18:47Z",
         "by": "gemini",
-        "note": "Logged settled ElevenLabs spend (9,003 credits -> 32,856 / 121,114 remaining, 21,856 above 11,000 reserve) against WW2:0"
+        "note": "VO_REPORT.md, metadata, and status.json (vo: review) validated with channel_check.py, committed, and pushed to gemini/J3"
       },
       "taskKeys": [
         "WW2:004"
