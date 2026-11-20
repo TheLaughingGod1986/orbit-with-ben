@@ -43,8 +43,8 @@ class EngineGuard(unittest.TestCase):
         self.assertIsNotNone(engine_guard.refusal(self.root, self.marker))
 
     def test_cli_entrypoints_refuse_before_parsing_or_service_work(self):
-        import jobs, studio, chief_relay, board_publish, macbook_worker, ai_spend, ai_spend_daily
-        for module in (jobs, studio, chief_relay, board_publish, macbook_worker, ai_spend, ai_spend_daily):
+        import jobs, studio, chief_relay, board_publish, macbook_worker, ai_spend, ai_spend_daily, thumb_ledger, launch_check
+        for module in (jobs, studio, chief_relay, board_publish, macbook_worker, ai_spend, ai_spend_daily, thumb_ledger, launch_check):
             with self.subTest(module=module.__name__), \
                     patch.object(engine_guard, 'refusal', return_value='retired'):
                 with self.assertRaisesRegex(SystemExit, 'retired'):
@@ -70,6 +70,35 @@ class EngineGuard(unittest.TestCase):
                 ai_spend.append({'kind': 'record'}, True)
             self.assertFalse(target.parent.exists())
             run.assert_not_called()
+
+    def test_retired_thumbnail_writer_preserves_existing_ledger(self):
+        import thumb_ledger
+        target = self.root / 'thumb.json'
+        target.write_text('{"tests": []}\n')
+        original = target.read_bytes()
+        with patch.object(engine_guard, 'refusal', return_value='retired'):
+            with self.assertRaisesRegex(SystemExit, 'retired'):
+                thumb_ledger.save({'tests': [{'id': 'changed'}]}, target)
+        self.assertEqual(target.read_bytes(), original)
+
+    def test_retired_launch_writer_never_resolves_or_creates_record(self):
+        import launch_check
+        with patch.object(engine_guard, 'refusal', return_value='retired'), \
+                patch.object(launch_check, 'record_path') as path:
+            with self.assertRaisesRegex(SystemExit, 'retired'):
+                launch_check.save_record('fixture', {'id': 'example'})
+            path.assert_not_called()
+
+    def test_unarmed_imported_writers_keep_existing_behavior(self):
+        import thumb_ledger, launch_check
+        target = self.root / 'thumb.json'
+        record = self.root / 'new' / 'launch.json'
+        with patch.object(engine_guard, 'refusal', return_value=None), \
+                patch.object(launch_check, 'record_path', return_value=record):
+            thumb_ledger.save({'tests': []}, target)
+            self.assertEqual(launch_check.save_record('fixture', {'id': 'example'}), record)
+        self.assertEqual(json.loads(target.read_text()), {'tests': []})
+        self.assertEqual(json.loads(record.read_text()), {'id': 'example'})
 
 
 if __name__ == '__main__':

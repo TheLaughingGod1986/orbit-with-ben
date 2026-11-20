@@ -658,3 +658,25 @@ The same inventory identified the local Cursor worker and Grok watchdog wrappers
 their installed commands and retirement behavior before cutover. The HOS desk, browser launcher, tab janitor and
 local reminder/worker services also need explicit retain-or-adapt decisions. The MacBook inventory remains a
 separate mandatory check. Keep secret-bearing plist backups local and restricted; publish names and decisions only.
+
+
+## Additional record-writer guards, 20 November continuation
+
+The thumbnail test ledger and first-day launch record tools also bypass the shared Git transaction when called
+without `--git` or imported directly. Their command-line entrypoints and final save functions now call the same
+retired-engine guard. Refusal happens before loading CLI records or resolving/creating a launch record path;
+an existing thumbnail ledger remains byte-identical. With the activation marker absent, behavior is unchanged.
+This is additional writer coverage, not proof that every old entrypoint is covered. No marker was installed.
+
+The Mini installed-service inspection still finds the local Grok watchdog referring to the old engine and lacking
+an active-engine marker or pause check. Audit its restart command before the drained window: pausing the relay
+alone must not allow a watchdog to restart the retired engine. Keep its existing live configuration until that
+replacement is tested. The Cursor worker launcher could not be resolved by the limited static plist inspection;
+resolve its actual shell environment and target before cutover. The tab janitor and HOS browser launcher manage
+browsers, not the shared queue: retain one instance, preserving ports and profiles. The HOS desk remains in its
+channel checkout; review its dispatch behavior separately. The local HOS reminder is also retained pending that
+audit. None of these observations constitutes MacBook acceptance; both slots still need actual machine checks.
+
+See `jobs/reviews/J3012/RECORD_WRITERS_2026-11-20.md` for the bounded change and checks. Resume the existing PR;
+deployed board Contents access, remaining wrappers/exporters, both-machine inventory and refreshed private
+rehearsal are still required before giving the day-before notice and proceeding to live acceptance.

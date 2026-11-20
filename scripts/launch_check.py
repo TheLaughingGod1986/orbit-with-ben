@@ -188,6 +188,8 @@ def with_reading(rec: dict | None, slug: str, video: dict, reading: dict, faults
 
 
 def save_record(slug: str, rec: dict) -> pathlib.Path:
+    from engine_guard import require_active
+    require_active()
     path = record_path(slug, rec["id"])
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(rec, indent=2) + "\n")
@@ -688,6 +690,8 @@ def _commit(change, message: str, git: bool) -> str | None:
 
 
 def main(argv=None) -> int:
+    from engine_guard import require_active
+    require_active()
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("due", help="which videos are due a check now")
