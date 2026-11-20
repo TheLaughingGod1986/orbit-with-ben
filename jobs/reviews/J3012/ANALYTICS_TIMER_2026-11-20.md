@@ -24,3 +24,9 @@ The official streak read six; official daily history was not modified. No preced
 Next: actual collector fake-API acceptance in a refreshed full split; deployed board Contents access; remaining
 writer inventory/guards; refreshed private rehearsal. Then seven official clean days, preceding-day notice and
 live relay/board/tick/both-worker acceptance. Do not recreate the runbook or mark J3012 done early.
+
+Full baseline split finished at 04:31 UTC on 20 November, source a87cb68bf5: clean true, tests run,
+left 0, all eight groups zero (including addresses, credentials and tests), process exit 0. Layout: 2,360
+studio files, 12,857 Orbit files, 60 History of Science files, one Field Order History file and one generated
+file. This is local baseline verification, not refreshed future-identity or live acceptance. Result and log:
+local scratch `/tmp/J3012-0428-split.json` and `/tmp/J3012-0428-split.log`. Official daily history unchanged.
