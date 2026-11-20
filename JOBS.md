@@ -74,6 +74,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3215 | mini | open | – | – | for gemini · chief · `gemini-argon` · HOS desk #180 is full (2,500 comments): open HOS desk 2, repoint the board and tools, repost Ben's two lost taps |  |
 | J3219 | mini | blocked | macbook | – | script · Orbit after 16 Dec: prepare the next film in each format test (every-X script, journey and sleep outlines) and the 22/26/30 Dec readout sheet; January style test (July illustrated look, Ben OK 20 Nov) |  |
 | J3221 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2537 |  |
+| J3222 | any | open | – | – | studio · Orbit: search-led topic method from January (Ben OK 20 Nov): write it into the playbook and rules, weekly research run, pause the daily ideas item |  |
 
 Recently finished:
 
