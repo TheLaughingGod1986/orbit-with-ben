@@ -290462,10 +290462,10 @@
       "stage": "edit",
       "after": "J3239",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-20T15:46Z",
+      "eta": "2026-11-20T17:46Z",
       "created_by": "gemini",
       "created_at": "2026-11-20T15:20Z",
       "result": "",
@@ -290479,6 +290479,11 @@
           "at": "2026-11-20T15:29Z",
           "by": "relay",
           "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-20T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
+        },
+        {
+          "at": "2026-11-20T15:46Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "HOS 009: independent audio_input ear review of final bounded own-score v04_synth",
@@ -290496,7 +290501,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T15:46Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3241",

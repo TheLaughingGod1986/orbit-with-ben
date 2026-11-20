@@ -73,7 +73,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3231 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Weekly search research (Orbit + Field Order History): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
 | J3232 | any | blocked | macbook | – | review · `gemini-argon` · Verify condition for J3114 |  |
 | J3237 | mini | open | – | – | studio · Model review: list every CLI's current models, probe the newer ones, propose best-model-per-job routing that saves Claude usage |  |
-| J3240 | mini | open (after J3239) | – | – | 009 edit · for gemini · review · `gemini-argon` · HOS 009: independent audio_input ear review of final bounded own-score v04_synth | J3236 |
+| J3240 | mini | claimed | gemini | 2026-11-20T17:46Z | 009 edit · for gemini · review · `gemini-argon` · HOS 009: independent audio_input ear review of final bounded own-score v04_synth | J3236 |
 | J3241 | mini | open (after J3240) | – | – | 009 edit · chief · HOS 009: Chief final score disposition for own-score v04_synth (accept or escalate to Ben) | J3236 |
 
 Recently finished:
