@@ -291672,9 +291672,14 @@
           "at": "2026-11-20T20:29Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Recorded session capabilities (audio_input only; read_file on video/mp4 returns 1-fps frames) and checked J3178 (blocked on moving_video_input) and J3198 (open)"
+        },
+        {
+          "at": "2026-11-20T20:31Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Freshly verified 11/11 NAS Batch 12-14 SHA-256 matches, REVIEW_STATE.json (48 KEEP, 8 RETAKE, 10 unset), and no new 013 marks on HOS #180/#694 or OWB #954"
         }
       ],
-      "remaining_action": "Verify NAS Batch 12-14 SHA-256 hashes, REVIEW_STATE.json ledger, and OWB #954 / HOS #694 / #180 history",
+      "remaining_action": "Write and commit J3250 REVIEW.md from clean worktree, update J2529 typed capability hold, close J3250, and post reports",
       "kind": "review",
       "recheck_of": "J2529",
       "mini_only": true,
@@ -291693,11 +291698,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-20T20:29Z",
+        "at": "2026-11-20T20:31Z",
         "by": "gemini",
-        "note": "Recorded session capabilities (audio_input only; read_file on video/mp4 returns 1-fps frames) and checked J3178 (blocked"
+        "note": "Freshly verified 11/11 NAS Batch 12-14 SHA-256 matches, REVIEW_STATE.json (48 KEEP, 8 RETAKE, 10 unset), and no new 013 "
       },
       "taskKeys": [
         "HOS:013"
