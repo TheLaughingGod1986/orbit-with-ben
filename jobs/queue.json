@@ -1,5 +1,5 @@
 {
-  "next_id": 3195,
+  "next_id": 3196,
   "jobs": [
     {
       "id": "J0001",
@@ -226031,6 +226031,11 @@
           "at": "2026-11-20T01:42Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-11-20T04:21Z",
+          "by": "relay",
+          "what": "condition verification queued: J3195"
         }
       ],
       "remaining_action": "Await J3178 continuous playback evidence for ten unresolved scenes, then Chief marks and closure",
@@ -226055,13 +226060,14 @@
       "hold": {
         "type": "capability",
         "condition": "J3170 Chief ruling: generation verified (66 distinct rows, 6600 credits; 11/11 latest NAS hashes match), but ten rows 56-62,64-66 lack continuous playback approval. Session tools provide static images/text only; reviewed vidIQ watch tool accepts public YouTube and returns text, not local playback perception. HOS playbook section 5 and desk 7019983519 require continuous playback. Follow-up J3178 is open now with moving_video_input required; await its evidence and elected-Chief marks. Preserve 48 KEEP and eight RETAKE; no minting or assembly authorised.",
-        "check_at": "2026-11-20T03:55:00Z",
+        "check_at": "2026-11-20T05:21:13+00:00",
         "requires": [
           "moving_video_input"
         ],
         "last_recheck": "J3170",
         "checked_at": "2026-11-19T23:49:47+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J3195"
       },
       "required_capabilities": [
         "moving_video_input"
@@ -286463,6 +286469,41 @@
       "taskKeys": [
         "OWB:004"
       ]
+    },
+    {
+      "id": "J3195",
+      "title": "Verify condition for J2529",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2529: J3170 Chief ruling: generation verified (66 distinct rows, 6600 credits; 11/11 latest NAS hashes match), but ten rows 56-62,64-66 lack continuous playback approval. Session tools provide static images/text only; reviewed vidIQ watch tool accepts public YouTube and returns text, not local playback perception. HOS playbook section 5 and desk 7019983519 require continuous playback. Follow-up J3178 is open now with moving_video_input required; await its evidence and elected-Chief marks. Preserve 48 KEEP and eight RETAKE; no minting or assembly authorised.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2529 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-20T04:21Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T04:21Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await J3178 continuous playback evidence for ten unresolved scenes, then Chief marks and closure",
+      "kind": "review",
+      "recheck_of": "J2529",
+      "mini_only": true,
+      "required_capabilities": [
+        "moving_video_input"
+      ],
+      "due": "2026-11-20T05:21:13+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
