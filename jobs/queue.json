@@ -289337,9 +289337,14 @@
           "at": "2026-11-20T18:00Z",
           "by": "gemini",
           "what": "step 2 of 5 done: First YTA pass confirmed GB/IN/US/PH/ID/MY/ZA/NL/UZ/AU countries and lifetime age/gender (78.8% aged 25-54); re-querying search terms with maxResults=25 and full country list"
+        },
+        {
+          "at": "2026-11-20T18:03Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Pulled full YTA API + Studio Advanced Mode data: GB 811 (18.6% total / 58.3% reported), IN 177, US 109, PH 108, AU 20; 78.8% aged 25-54; top 25 lifetime & 28d search terms + per-video queries"
         }
       ],
-      "remaining_action": "Running fixed YouTube Analytics API queries (maxResults=25 search terms, country totals, daily Shorts/longs split, demographics)",
+      "remaining_action": "Reconciling exact lifetime per-video traffic sources, country/age/gender splits, and search terms across all 40 videos",
       "due": "2026-11-24T18:00:00Z",
       "kind": "review",
       "plain": "Find out exactly why History of Science's views have dropped, and who is actually watching",
@@ -289355,11 +289360,11 @@
       "model": "gemini-argon",
       "mini_only": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-20T18:00Z",
+        "at": "2026-11-20T18:03Z",
         "by": "gemini",
-        "note": "First YTA pass confirmed GB/IN/US/PH/ID/MY/ZA/NL/UZ/AU countries and lifetime age/gender (78.8% aged 25-54); re-querying"
+        "note": "Pulled full YTA API + Studio Advanced Mode data: GB 811 (18.6% total / 58.3% reported), IN 177, US 109, PH 108, AU 20; 7"
       }
     },
     {
