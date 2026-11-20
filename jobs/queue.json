@@ -1,5 +1,5 @@
 {
-  "next_id": 3236,
+  "next_id": 3237,
   "jobs": [
     {
       "id": "J0001",
@@ -289954,6 +289954,36 @@
         "audio_input"
       ],
       "plain": "Listen to the HOS 009 GBP0 own-score opening, join, narration mix, and tail with demonstrated audio input and record an independent pass/fail review"
+    },
+    {
+      "id": "J3236",
+      "title": "HOS 009: Chief score disposition for own-score v03_synth",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Elected-Chief no-spend score disposition for HOS 009 £0 own-synthesis replacement score `v03_synth` (`hos_009_wonder_v03_synth.wav` and `hos_009_score_joined_v03.wav`), following `J3233` scope, production job, and independent demonstrated-audio ear review.\n\nProcedure:\n1. Re-read `chief_relay.py status` immediately before any protected decision; use own agent id, never impersonate `chief`. If a higher-priority HOS Chief (`Grok -> Claude -> Codex -> Gemini`) has returned, hand the decision back.\n2. Verify all gates independently without waiver:\n   - Production PR merged/reviewed with deterministic pure-Python/NumPy script (zero third-party/GPL samples or soundfonts, `£0`, `0` credits, `0` API calls).\n   - Exact SHA-256 parity verified across Mini and `/Volumes/data/studio-live/` for all `v03` deliverables and all preserved `v01`/`v02`/`teach_v01`/VO/picture/diagram locks.\n   - Unchanged production `music_gate.py` PASS over complete current library (`>= 89` comparisons across all 9 roots including all 15 hash-verified iCloud UAT tracks, `0` unreadable, `< 0.80` similarity, `0` fails, no waiver) on both `hos_009_wonder_v03_synth.wav` and `hos_009_score_joined_v03.wav`.\n   - Continuity telemetry confirms 0 interior `< -45 dB` dropouts across `0.00–178.28 s`.\n   - Independent demonstrated-audio (`audio_input`) `EAR_REVIEW_v03_synth.md` explicitly PASSes all musical, continuity, join-blend, narration-clarity, and tail criteria.\n3. Disposition:\n   - **If ALL gates + independent `audio_input` ear review PASS:** record formal score acceptance (`SCORE_DISPOSITION_v03_synth.md` + `.json`), update `02_Video-Projects/009_The-Falling-Moon-Gravity/status.json` via PR, and verify whether all other `J2035` prerequisites (picture/J2631/J2632 KEEP locks) are satisfied before releasing `J2035` (`J2171` remains held pending long assembly & its own inputs). Score acceptance is NOT a final film PASS or Ben-watch waiver.\n   - **If ANY gate or the ear review FAILS (pre-decided bounded fallback):** refuse acceptance, keep `J2035` and `J2171` held, and decide between (i) at most ONE bounded £0 DSP/timbre revision (`v04_synth`, or a full-runtime `0–535.33 s` own-synthesis bed if timbre mismatch at the `175.28–178.28 s` join is the sole blocker) OR (ii) escalating one single explicit billing/pricing confirmation question to Ben for ElevenLabs `music_v2` if pure synthesis cannot satisfy ear-review quality.\n4. Hard guardrails preserved unconditionally: `£0` cash, `0` credits, no account GET, no ElevenLabs POST, `ACTIVATION_AUTHORIZED` stays literal `False`, `J3043`/`J3045` stays permanently closed unused (`J3047`), `v01`/`v02` remain rejected (`J2808`), do not loop or stretch `hos_009_teach_v01.mp3`, no YouTube/Buffer/schedule changes.\n",
+      "ref": "J3233",
+      "film": "009",
+      "stage": "edit",
+      "after": "J3235",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-20T14:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T14:16Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review J3234 gate/provenance and J3235 independent audio_input ear review to issue formal Chief score disposition for HOS 009",
+      "due": "2026-11-21T12:00:00Z",
+      "kind": "chief",
+      "plain": "Decide whether to accept HOS 009 own-score v03_synth after complete music_gate and independent audio review, or trigger the bounded fallback"
     }
   ],
   "focus": [
