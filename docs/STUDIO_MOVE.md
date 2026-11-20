@@ -4,7 +4,7 @@ Prepared 18 November 2026. This is the phase 3 execution runbook, not permission
 The latest J3012 brief supersedes the original history-rewrite dependency: create a clean root commit; do not
 copy Orbit's Git history. J2537's history rewrite is not a prerequisite. The source history remains in Orbit.
 
-## Resume here (20 November, probe request isolation verified)
+## Resume here (20 November, monitor launcher prepared)
 
 PR 1011 is the existing delivery branch; do not recreate the runbook or reset J3012's **3/4** progress.
 Its queue history and the newest `jobs/reviews/J3012/` evidence describe completed preparation.
@@ -31,6 +31,7 @@ propagating reviewed code. The three canonical NAS working paths were absent, no
 The Cloudflare session was refreshed and the production project inspected read-only. Its GitHub token exists as
 an unreadable secret; preview has no token. A disabled-by-default authenticated runtime probe is now prepared,
 not deployed. Its worker route now passes the current request bindings explicitly, so removal of the enable flag, board key or GitHub token cannot reuse values retained in process.env. See **Board credential probe** below and `jobs/reviews/J3012/BOARD_ACCESS_2026-11-20.md`.
+The missed-run monitor template now parses, and its proposed service and retirement guard are tested; nothing is installed. Its analytics commit-subject and record-owner checks still need migration before enabling it (see the monitor continuation below).
 Next: propagate the merged guard patch after draining affected writers; deploy and run the prepared board credential probe; remaining wrapper replacements; MacBook inventory;
 refreshed private rehearsal. Do not equate installed-service inventory with loaded-service or guard verification.
 Keep the live switch gated on the timing and acceptance below. This run does not change the official daily
@@ -782,3 +783,27 @@ Pure heartbeat construction and board inspection helpers remain usable. No activ
 The process used for this continuation did not have `BOARD_GH_TOKEN`. This is not a test of the Cloudflare
 runtime's credential, and does not show that its grant is missing. The deployed Contents probe remains unverified;
 do not substitute the CLI's GitHub credential or ask Ben to change a grant on this evidence alone.
+
+
+## Missed-run monitor preparation (20 November)
+
+The tracked missed-runs plist has the same XML defect as the installed inventory: its comment contains a
+literal double hyphen in the command example. The template now describes post mode without that invalid
+comment text. The previous Git version fails parsing; the corrected template parses. No installed file changed.
+The service renderer now accepts `com.owb.missed-runs`, preserves its 1800-second interval, RunAtLoad and logs,
+and supplies the exact staged Python/script argv and engine/channel environment. Stage from the corrected
+tracked template when the installed source cannot parse; separately reconcile loaded settings with the saved
+installed bytes before installation. Never silently replace a loaded service's settings with template defaults.
+
+`missed_runs.main` now checks retirement before argument parsing, Git reads/fetches or posting. Offline tests
+prove a retired monitor performs no reads or subprocess work; the standard engine guard remains fail-closed.
+
+**Do not enable this monitor at cutover yet.** Its tracker check currently matches `^Channel tracker 20`, while
+the prepared analytics collector publishes `Channel tracker: daily analytics records`. The monitor also reads
+only engine history; moved channel records need explicit owner coverage so a fresh engine record cannot mask
+a channel collection failure. Adapt and test both subject matching and per-owner checks before using this alarm
+as acceptance evidence. Existing monitoring is unchanged during preparation. This finding is separate from the
+XML/launcher repair and is not waived by the passing tests.
+
+Validation: 33 monitor/launcher/retirement tests and 26 channel/address/private-network checks passed. No service,
+activation marker, credential, board deployment, film or spend changed. See the matching evidence note.

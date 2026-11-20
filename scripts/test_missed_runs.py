@@ -4,6 +4,8 @@ import datetime as dt, os, sys, unittest
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import missed_runs as m
+from unittest.mock import patch
+import engine_guard
 
 UTC = dt.timezone.utc
 NOW = dt.datetime(2026, 11, 4, 12, 0, tzinfo=UTC)
@@ -12,6 +14,17 @@ NOW = dt.datetime(2026, 11, 4, 12, 0, tzinfo=UTC)
 def fresh():
     return {"tracker": NOW - dt.timedelta(hours=5), "buffer": NOW - dt.timedelta(hours=5),
             "claude": NOW - dt.timedelta(minutes=20), "mini": NOW - dt.timedelta(minutes=2)}
+
+
+class Retirement(unittest.TestCase):
+    def test_retired_monitor_refuses_before_fetch_read_or_post(self):
+        with patch.object(engine_guard, 'refusal', return_value='retired'), \
+                patch.object(m, 'last_seen') as seen, \
+                patch.object(m.subprocess, 'run') as run:
+            with self.assertRaisesRegex(SystemExit, 'retired'):
+                m.main(['--post'])
+            seen.assert_not_called()
+            run.assert_not_called()
 
 
 class Misses(unittest.TestCase):

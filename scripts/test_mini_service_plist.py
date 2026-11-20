@@ -93,6 +93,18 @@ class MiniServicePlist(unittest.TestCase):
         for key, value in {**self.source['EnvironmentVariables'], **self.channels}.items():
             self.assertEqual(doc['EnvironmentVariables'][key], value)
 
+    def test_missed_runs_template_parses_and_stages_without_changing_source(self):
+        template = TOOL.parents[2] / '07_Content-Ops/launchd/com.owb.missed-runs.plist'
+        original = template.read_bytes()
+        source = plistlib.loads(original)
+        doc = self.render(source)
+        self.assertEqual(doc['ProgramArguments'], [sys.executable,
+            str(self.engine / 'scripts/missed_runs.py'), '--post'])
+        self.assertEqual(doc['StartInterval'], 1800)
+        self.assertTrue(doc['RunAtLoad'])
+        self.assertEqual(doc['StandardErrorPath'], source['StandardErrorPath'])
+        self.assertEqual(template.read_bytes(), original)
+
     def test_rejects_unrelated_service(self):
         with self.assertRaises(ValueError):
             self.render(dict(self.source, Label='unrelated'))

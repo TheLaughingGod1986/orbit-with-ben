@@ -81,11 +81,13 @@ def already_posted(key, now, recent_bodies):
     return any(tag in b for b in recent_bodies)
 
 
-def main():
+def main(argv=None):
+    from engine_guard import require_active
+    require_active(ROOT)
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--post", action="store_true")
     ap.add_argument("--no-fetch", action="store_true")
-    a = ap.parse_args()
+    a = ap.parse_args(argv)
     now = dt.datetime.now(UTC)
     seen = {k: last_seen(c, fetch=not a.no_fetch) for k, c in CHECKS.items()}
     found = misses(now, seen)

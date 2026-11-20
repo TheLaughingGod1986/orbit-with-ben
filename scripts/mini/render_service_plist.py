@@ -13,6 +13,7 @@ SERVICES = {
     'com.owb.chief-relay': ('chief_relay.py', 'run'),
     'com.owb.board-publish': ('board_publish.py', '--quiet'),
     'com.owb.ai-spend-daily': ('ai_spend_daily.py', '--git'),
+    'com.owb.missed-runs': ('missed_runs.py', '--post'),
 }
 
 SHELL_SERVICES = {
