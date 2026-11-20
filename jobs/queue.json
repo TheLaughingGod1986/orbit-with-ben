@@ -289858,13 +289858,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-20T15:20Z",
-      "eta": "2026-11-20T17:20Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-20T13:12Z",
-      "result": "",
+      "result": "parked for Chief: condition for J3114 NOT MET, checked 20 Nov 15:25Z. Thread read from 7030916575 through 7043217848: no explicit authorization to export codex/j3114-pluto-v02 to TheLaughingGod1986/orbit-with-ben; the only owner-account comments (7042048549, 7042724755) are automatic Claude alarms. gh pr list for head codex/j3114-pluto-v02 and for J3114 in title: empty; no origin ref for j3114. Not re-checked here: the Mini worktree a12100797f and the 12 NAS hashes (not needed to rule on authorization). J3114 left blocked, J3115 still open behind it; no export, rebuild, spend or YouTube change. jobs.py wait was refused for macbook (Only the holder or elected Chief may update this hold). Chief to run: jobs.py wait J3114 --agent <chief> --condition 'No explicit export authorization for codex/j3114-pluto-v02 through thread 7043217848; remote branch and PR absent; if granted push the preserved branch a12100797f and open its review PR without rebuilding; do not bypass; elapsed time is not approval' --check-at 2026-11-20T21:20:00Z --type input --recheck J3232 --git ; then jobs.py done J3232.",
       "history": [
         {
           "at": "2026-11-20T13:12Z",
@@ -289885,6 +289885,11 @@
           "at": "2026-11-20T15:20Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T15:21Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: condition for J3114 NOT MET, checked 20 Nov 15:25Z. Thread read from 7030916575 through 7043217848: no explicit authorization to export codex/j3114-pluto-v02 to TheLaughingGod1986/orbit-with-ben; the only owner-account comments (7042048549, 7042724755) are automatic Claude alarms. gh pr list for head codex/j3114-pluto-v02 and for J3114 in title: empty; no origin ref for j3114. Not re-checked here: the Mini worktree a12100797f and the 12 NAS hashes (not needed to rule on authorization). J3114 left blocked, J3115 still open behind it; no export, rebuild, spend or YouTube change. jobs.py wait was refused for macbook (Only the holder or elected Chief may update this hold). Chief to run: jobs.py wait J3114 --agent <chief> --condition 'No explicit export authorization for codex/j3114-pluto-v02 through thread 7043217848; remote branch and PR absent; if granted push the preserved branch a12100797f and open its review PR without rebuilding; do not bypass; elapsed time is not approval' --check-at 2026-11-20T21:20:00Z --type input --recheck J3232 --git ; then jobs.py done J3232."
         }
       ],
       "remaining_action": "Verify readiness: Obtain explicit approval for the rejected GitHub branch export, then open the Pluto packaging review PR without rebuilding",
