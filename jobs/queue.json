@@ -286194,13 +286194,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-20T05:05Z",
-      "eta": "2026-11-20T07:05Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-20T03:10Z",
-      "result": "",
+      "result": "Chief ruling: condition NOT MET. Recorded J3114 input hold with --recheck J3189; next check 2026-11-20T09:10:00Z. Accepted Gemini evidence at 415ca8a0bc; independently verified clean a12100797f, 12/12 NAS hashes, absent remote branch/PR and no authorization through 7030916575. Explicit authorization for previously rejected export remains required. Once approved, export preserved branch and open J3115 review PR without rebuilding. J3115 dependency and UAT/Shorts holds preserved. No spend or YouTube writes.",
       "history": [
         {
           "at": "2026-11-20T03:10Z",
@@ -286261,6 +286261,11 @@
           "at": "2026-11-20T05:05Z",
           "by": "codex",
           "what": "step 3 of 3 done: Reviewed evidence, independently checked clean commit and 12 NAS hashes, recorded parent hold and 09:10 UTC retry."
+        },
+        {
+          "at": "2026-11-20T05:05Z",
+          "by": "codex",
+          "what": "done: Chief ruling: condition NOT MET. Recorded J3114 input hold with --recheck J3189; next check 2026-11-20T09:10:00Z. Accepted Gemini evidence at 415ca8a0bc; independently verified clean a12100797f, 12/12 NAS hashes, absent remote branch/PR and no authorization through 7030916575. Explicit authorization for previously rejected export remains required. Once approved, export preserved branch and open J3115 review PR without rebuilding. J3115 dependency and UAT/Shorts holds preserved. No spend or YouTube writes."
         }
       ],
       "remaining_action": "Close the recorded Pluto export-condition ruling and report the remaining authorization hold",
