@@ -291600,18 +291600,23 @@
           "at": "2026-11-20T20:25Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T20:25Z",
+          "by": "cursor",
+          "what": "step 0 of 3 done: Claimed. MiniWork was reported at 179 MiB free. Inspecting before any move."
         }
       ],
-      "remaining_action": "Wait for the detached NAS staging copy to finish, then confirm at least 40 GiB free",
+      "remaining_action": "Inspect MiniWork scratch and desk for old completed folders that are safe to archive",
       "due": "2026-11-21T07:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "progress": {
-        "step": 1,
-        "of": 4,
-        "at": "2026-11-20T19:12Z",
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T20:25Z",
         "by": "cursor",
-        "note": "J2221 (349 files, about 21 GiB) is rsyncing to the NAS SSD share. Local files stay until the SHA-256 match. tmux j3249-o"
+        "note": "Claimed. MiniWork was reported at 179 MiB free. Inspecting before any move."
       }
     },
     {
