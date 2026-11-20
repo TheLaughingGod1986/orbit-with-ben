@@ -288455,19 +288455,24 @@
           "at": "2026-11-20T19:23Z",
           "by": "gemini",
           "what": "step 2 of 5 done: vo_take.py PASS: st_nazaire_campbeltown_vo_v01 1,263.04s (21:03.04), -19.9 LUFS, Scribe 97.47% raw (51 mismatch runs). Running exhaustive QA and settled credit audit."
+        },
+        {
+          "at": "2026-11-20T19:29Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: QA passed: 1,263.04s, -19.9 LUFS, -3.6 dB peak; Scribe 97.47% raw / 99.93% true word match (3,016/3,018; 99.97% corroborated with Whisper); ch03/ch04/ch08 boundary clicks cleaned at £0; 7,817 ElevenLabs credits logged in ai_spend (25,039 left, 14,039 above reserve)."
         }
       ],
-      "remaining_action": "Audit all 51 Scribe mismatch runs, run faster-whisper vo_check, 20ms boundary/clipped-word check, and per-chapter loudness check",
+      "remaining_action": "Copy verified audio masters to studio-live NAS and open ww2-channel PR with VO_REPORT.md, check artifacts, and status.json",
       "due": "2026-11-29T18:00:00Z",
       "for": "gemini",
       "kind": "vo",
       "plain": "Record the narration for WW2 film 005, about the old destroyer",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-20T19:23Z",
+        "at": "2026-11-20T19:29Z",
         "by": "gemini",
-        "note": "vo_take.py PASS: st_nazaire_campbeltown_vo_v01 1,263.04s (21:03.04), -19.9 LUFS, Scribe 97.47% raw (51 mismatch runs). R"
+        "note": "QA passed: 1,263.04s, -19.9 LUFS, -3.6 dB peak; Scribe 97.47% raw / 99.93% true word match (3,016/3,018; 99.97% corrobor"
       },
       "taskKeys": [
         "WW2:005"
