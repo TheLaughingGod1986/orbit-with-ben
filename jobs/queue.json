@@ -277581,10 +277581,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-20T20:59Z",
+      "eta": "2026-11-20T22:59Z",
       "created_by": "relay",
       "created_at": "2026-11-18T20:46Z",
       "result": "",
@@ -277638,6 +277638,11 @@
           "at": "2026-11-20T20:59Z",
           "by": "gemini",
           "what": "reopened: Acting-Chief ruling merged (OWB PR #1083, ww2-channel PR #23) and J2996 reopened + rerouted; claim to close J3075."
+        },
+        {
+          "at": "2026-11-20T20:59Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief: reopen J2996 (perceptual watch/listen completed in PR1018 5d1e4a04fc), rule on PR1014 VO, and close J3075",
@@ -277658,7 +277663,15 @@
       "taskKeys": [
         "WW2:002"
       ],
-      "escalated_at": "2026-11-19T00:50Z"
+      "escalated_at": "2026-11-19T00:50Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T20:59Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3076",

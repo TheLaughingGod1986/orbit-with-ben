@@ -46,7 +46,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3051 | mini | blocked | codex | – | for codex · review · `gpt-6-astra` · Verify condition for J3020 |  |
 | J3065 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Pluto Short about ice mountains (v02) Private, slot Wed 23 Dec 11:30 |  |
 | J3066 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Pluto Short about the frozen heart (v02, Test A opening) Private, slot Mon 21 Dec 11:30 |  |
-| J3075 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2996 |  |
+| J3075 | mini | claimed | gemini | 2026-11-20T22:59Z | for gemini · review · `gemini-argon` · Verify condition for J2996 |  |
 | J3114 | mini | blocked | codex | – | 034 thumbs · thumb · 034 Pluto: rebuild J3105 thumbnails v02 and apply J3111 panel package text fixes | J3105,J3106,J3108,J3109,J3110,J3111,J3112 |
 | J3115 | mini | open (after J3114) | – | – | 034 upload · chief · 034 Pluto: final packaging review after J3114 fixes and Ben-gated delivery handoff | J3112,J3114,J2868 |
 | J3119 | mini | open (after J3115) | – | – | 034 upload · studio · Upload the Pluto long master v02 Private and scheduled for Sun 13 Dec 18:00, arm the thumbnail test |  |
