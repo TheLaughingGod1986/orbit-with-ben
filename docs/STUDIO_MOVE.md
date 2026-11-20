@@ -45,6 +45,7 @@ worker version and do not replace installed/loaded-service inventory. See
 The tab janitor now has a staged launcher and a retirement check before queue/cache/browser reads and direct cache
 writes. Its installed legacy argv and five-minute interval were verified read-only; no service was changed. See
 `jobs/reviews/J3012/JANITOR_PREPARATION_2026-11-20.md`. The existing page-reuse helper remains independent of the engine.
+The channel-local HOS desk now has a staged service adapter preserving its polling/run policy and local wrapper; the actual installed definition was rendered and linted without installation. See `jobs/reviews/J3012/HOS_DESK_PREPARATION_2026-11-20.md`.
 Next: resolve the probe deployment approval; propagate the merged guard patch after draining affected writers;
 remaining wrapper replacements; actual MacBook inventory;
 refresh again from the final frozen source at cutover. Do not equate installed-service inventory with loaded-service or guard verification.
@@ -861,3 +862,32 @@ Its installed and loaded service inventory remains unverified. Run the same tool
 existing MacBook worker session and return only sanitized output; no new remote-access setup
 is needed for that route. Both slots still need the runbook's live acceptance after cutover.
 See `jobs/reviews/J3012/LOADED_SERVICES_2026-11-20.md` for validation and remaining work.
+
+
+## HOS desk service preparation (20 November)
+
+The installed `com.hos.desk` calls the channel-local `hos_desk.py inbox --watch 120 --run`.
+Its worker command resolves to the existing local HOS wrapper, which starts Cursor in the HOS checkout.
+The wrapper itself has no shared-engine path. The desk reads the retained Chief state file and preserves
+its own inbox, pending assignments, acknowledgement records and dispatch locks. No queue lives in this service.
+These source observations do not prove the child agent uses the new engine: its environment and channel
+instructions still need the cutover acceptance check.
+
+`render_service_plist.py` now accepts this service. It points Python at the selected HOS checkout's desk,
+keeps that checkout as WorkingDirectory and HOS_REPO_DIR, and supplies independent STUDIO_REPO and channel
+paths. It preserves the existing local worker command, state/election overrides, logging and launchd policy.
+Only the inspected `inbox --watch <positive interval>` shape with optional `--run` is accepted; unexpected
+arguments refuse preparation. A delivery-only watcher never gains execution permission from this adapter.
+The renderer does not run the desk, execute its command template or alter any read marker.
+
+Prepare it using the same service-renderer command as the relay, but with the installed `com.hos.desk.plist`
+as source and a fresh private output path. Use the future engine and actual HOS roots. Keep the worker wrapper
+and all secret-bearing plist copies local. The tested proposal points at the isolated preparation worktree;
+it is lint evidence only and must not be installed as a production launcher.
+
+During cutover, drain the watcher and its child workers using the existing desk dispatch-lock/idle procedure;
+if dispatch is busy, wait for the actual owner rather than removing locks. Save installed and loaded definitions,
+then install the reviewed proposal with the real production roots. Check the loaded code and inherited engine
+path without starting a second inbox worker. Preserve the existing HOS Chief precedence and role routing;
+path migration is not authority to change either. Rollback restores the saved definition after draining new
+children and preserves any newly acknowledged messages. No refresh or restart was performed in preparation.

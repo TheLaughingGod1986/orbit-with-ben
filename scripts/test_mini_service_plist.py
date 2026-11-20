@@ -105,6 +105,39 @@ class MiniServicePlist(unittest.TestCase):
         self.assertEqual(doc['StandardErrorPath'], source['StandardErrorPath'])
         self.assertEqual(template.read_bytes(), original)
 
+    def test_desk_stays_channel_local_and_preserves_delivery_policy(self):
+        target = pathlib.Path(self.channels['HOS_REPO']) / '00_Brand/Channel-Setup/tools/hos_desk.py'
+        target.parent.mkdir(parents=True)
+        target.write_text('raise RuntimeError("must not execute while rendering")\n')
+        for policy in ([], ['--run']):
+            source = dict(self.source, Label='com.hos.desk',
+                          ProgramArguments=['old-python', '/old/desk.py', 'inbox', '--watch', '120', *policy])
+            source['EnvironmentVariables'] = dict(self.source['EnvironmentVariables'],
+                HOS_DESK_AGENT_CMD='retained-wrapper {file}', HOS_DESK_HOME='/retained/markers',
+                CHIEF_CURRENT='/retained/election', HOS_REPO_DIR='/old/channel')
+            doc = self.render(source)
+            self.assertEqual(doc['ProgramArguments'], [sys.executable, str(target), 'inbox', '--watch', '120', *policy])
+            self.assertEqual(doc['WorkingDirectory'], self.channels['HOS_REPO'])
+            self.assertEqual(doc['EnvironmentVariables']['HOS_REPO_DIR'], self.channels['HOS_REPO'])
+            self.assertEqual(doc['EnvironmentVariables']['STUDIO_REPO'], str(self.engine))
+            for key in ('HOS_DESK_AGENT_CMD', 'HOS_DESK_HOME', 'CHIEF_CURRENT'):
+                self.assertEqual(doc['EnvironmentVariables'][key], source['EnvironmentVariables'][key])
+            self.assertEqual(source['EnvironmentVariables']['HOS_REPO_DIR'], '/old/channel')
+
+    def test_desk_refuses_unreviewed_policy_or_missing_channel_tool(self):
+        source = dict(self.source, Label='com.hos.desk',
+                      ProgramArguments=['python', '/old/desk.py', 'inbox', '--watch', '120', '--run'])
+        with self.assertRaises(ValueError):
+            self.render(source)
+        target = pathlib.Path(self.channels['HOS_REPO']) / '00_Brand/Channel-Setup/tools/hos_desk.py'
+        target.parent.mkdir(parents=True)
+        target.write_text('')
+        for tail in (['post'], ['inbox', '--watch', '0'], ['inbox', '--watch', '86401'],
+                     ['inbox', '--watch', '120', '--recover-id', '42'],
+                     ['inbox', '--watch', '120; command'], ['inbox', '--watch', 120]):
+            with self.subTest(tail=tail), self.assertRaises(ValueError):
+                self.render(dict(source, ProgramArguments=['python', '/old/desk.py', *tail]))
+
     def test_rejects_unrelated_service(self):
         with self.assertRaises(ValueError):
             self.render(dict(self.source, Label='unrelated'))

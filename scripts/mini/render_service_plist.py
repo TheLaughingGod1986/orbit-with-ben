@@ -8,6 +8,7 @@ import argparse
 import copy
 import pathlib
 import plistlib
+import re
 
 SERVICES = {
     'com.owb.chief-relay': ('chief_relay.py', 'run'),
@@ -32,10 +33,25 @@ def absolute(value):
 
 def render(source, engine, python, channel_paths):
     doc = copy.deepcopy(source)
-    if doc.get('Label') not in SERVICES and doc.get('Label') not in SHELL_SERVICES:
+    desk = doc.get('Label') == 'com.hos.desk'
+    if not desk and doc.get('Label') not in SERVICES and doc.get('Label') not in SHELL_SERVICES:
         raise ValueError('only the relay, board publisher and supported daily services are supported')
     engine, python = absolute(engine), absolute(python)
-    if doc['Label'] in SHELL_SERVICES:
+    if desk:
+        # The desk belongs to its channel; only its shared-engine environment moves.
+        # Preserve the inspected poll/run policy, never turn delivery into execution.
+        old = doc.get('ProgramArguments')
+        if (not isinstance(old, list) or len(old) not in (5, 6)
+                or not all(isinstance(a, str) for a in old)
+                or old[2:4] != ['inbox', '--watch']
+                or not re.fullmatch(r'[0-9]{1,5}', old[4])
+                or not 1 <= int(old[4]) <= 86400
+                or (len(old) == 6 and old[5] != '--run')):
+            raise ValueError('desk proposal requires the reviewed inbox polling argument shape')
+        hos = absolute(channel_paths.get('HOS_REPO', ''))
+        target = pathlib.Path(hos) / '00_Brand/Channel-Setup/tools/hos_desk.py'
+        argv = [python, str(target), *old[2:]]
+    elif doc['Label'] in SHELL_SERVICES:
         target = pathlib.Path(engine) / SHELL_SERVICES[doc['Label']]
         argv = ['/bin/bash', str(target)]
     else:
@@ -49,9 +65,11 @@ def render(source, engine, python, channel_paths):
     # An argv array avoids shell expansion and login-profile path overrides.
     doc.pop('Program', None)
     doc['ProgramArguments'] = argv
-    doc['WorkingDirectory'] = engine
+    doc['WorkingDirectory'] = hos if desk else engine
     env = doc.setdefault('EnvironmentVariables', {})
     env['STUDIO_REPO'] = engine
+    if desk:
+        env['HOS_REPO_DIR'] = hos
     if doc['Label'] == 'dev.orbit.analytics-snapshot':
         env['STUDIO_PYTHON'] = python
         credential = env.get('ANALYTICS_CREDENTIAL_FILE')
