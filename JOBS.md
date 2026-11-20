@@ -75,7 +75,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3237 | mini | open | – | – | studio · Model review: list every CLI's current models, probe the newer ones, propose best-model-per-job routing that saves Claude usage |  |
 | J3238 | any | claimed | macbook-2 | 2026-11-20T19:17Z | assembly · Relay: run 2-3 agents at once on the Mac mini, reroute to any capable worker, let MacBooks take non-Mini jobs |  |
 | J3239 | mini | open | – | – | 009 edit · assembly · HOS 009: synthesize final bounded GBP0 full-runtime warm own-score v04_synth and run full music_gate | J3236 |
-| J3240 | mini | open (after J3239) | – | – | 009 edit · review · HOS 009: independent audio_input ear review of final bounded own-score v04_synth | J3236 |
+| J3240 | mini | open (after J3239) | – | – | 009 edit · for gemini · review · `gemini-argon` · HOS 009: independent audio_input ear review of final bounded own-score v04_synth | J3236 |
 | J3241 | mini | open (after J3240) | – | – | 009 edit · chief · HOS 009: Chief final score disposition for own-score v04_synth (accept or escalate to Ben) | J3236 |
 
 Recently finished:

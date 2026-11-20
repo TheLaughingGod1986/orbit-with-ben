@@ -290419,6 +290419,11 @@
           "at": "2026-11-20T15:20Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-20T15:29Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-20T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "HOS 009: independent audio_input ear review of final bounded own-score v04_synth",
@@ -290427,7 +290432,16 @@
       "required_capabilities": [
         "audio_input"
       ],
-      "plain": "Independently audition HOS 009 final bounded own-score v04_synth across all 5 parts, chapter transitions, VO mix, and tail via demonstrated audio_input."
+      "plain": "Independently audition HOS 009 final bounded own-score v04_synth across all 5 parts, chapter transitions, VO mix, and tail via demonstrated audio_input.",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J3241",
