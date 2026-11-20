@@ -1,5 +1,5 @@
 {
-  "next_id": 3202,
+  "next_id": 3203,
   "jobs": [
     {
       "id": "J0001",
@@ -287608,6 +287608,35 @@
         "OWB:086",
         "OWB:087"
       ]
+    },
+    {
+      "id": "J3202",
+      "title": "Rule-E topic go/no-go review: OWB 086 (Why Is Mars Red) and 087 (Every Meteor Shower Explained in 10 Minutes) from J3201",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Rule-E topic go/no-go review for two new OWB backlog films added by J3201 (pull request #1058, branch j3201-owb-086-087).\n\nRead each TOPIC.md and score it on the topic go/no-go sheet (GO, NO-GO or fix list), as J3181 did for 084 and 085:\n- 02_Video-Projects/086_Why-Is-Mars-Red/TOPIC.md : Why Is Mars Red? (The Rock Underneath Is Grey)\n- 02_Video-Projects/087_Every-Meteor-Shower-Explained-In-10-Minutes/TOPIC.md : Every Meteor Shower Explained in 10 Minutes\n\nCheck: not a repeat of any film, idea or WIP entry; the title against LEARNINGS rules 15 and 26 (086 names its search phrase and two ranking videos; for 087 choose between the every-X title and the search-first one); the neighbour pass (086 has three videos over 1M but only one on the exact question, so weigh that; 087 has four over 1M on meteors); the two Short angles; and that 086 is a single-question long, so it stays unlocked under the studio/plan.json pause. The science facts in both briefs are from memory and unsourced: confirm they are flagged for SOURCES, do not treat them as checked.\n\nWrite jobs/reviews/<this job>/REVIEW.md, update each film's status.json topic stage, and merge or request fixes on #1058. No spend, no Studio or publish change.\n",
+      "ref": "",
+      "film": "086",
+      "stage": "topic",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claudecode",
+      "created_at": "2026-11-20T10:07Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T10:07Z",
+          "by": "claudecode",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review the two new topic briefs and rule go or no-go",
+      "kind": "review",
+      "plain": "Checking whether two new Orbit film ideas, why Mars is red and a tour of every meteor shower, are worth making"
     }
   ],
   "focus": [
