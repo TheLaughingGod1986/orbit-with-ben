@@ -4,7 +4,7 @@ Prepared 18 November 2026. This is the phase 3 execution runbook, not permission
 The latest J3012 brief supersedes the original history-rewrite dependency: create a clean root commit; do not
 copy Orbit's Git history. J2537's history rewrite is not a prerequisite. The source history remains in Orbit.
 
-## Resume here (20 November, installed-service inventory)
+## Resume here (20 November, heartbeat and board writer guards)
 
 PR 1011 is the existing delivery branch; do not recreate the runbook or reset J3012's **3/4** progress.
 Its queue history and the newest `jobs/reviews/J3012/` evidence describe completed preparation.
@@ -20,6 +20,8 @@ The installed AI-spend daily reader was found outside the prepared service list;
 now refuse a retired engine, and its service can be staged with the same renderer. Nothing was installed.
 The Mini inventory now resolves the legacy Cursor launcher and watchdog, and identifies a malformed missed-runs
 plist. The repeatable, value-free inventory tool and cutover handling are documented below. No service was changed.
+Claude heartbeat publication, board-health reports and board-note publishing now also refuse a retired engine,
+including imported writer calls. See `jobs/reviews/J3012/BOARD_WRITERS_2026-11-20.md`.
 Next: deployed board credential Contents probe; remaining writer guards and wrapper replacements; MacBook inventory;
 refreshed private rehearsal. Do not equate installed-service inventory with loaded-service or guard verification.
 Keep the live switch gated on the timing and acceptance below. This run does not change the official daily
@@ -729,3 +731,16 @@ reviewed replacements. Rollback restores those definitions and loaded states aft
 Validation: seven inventory tests cover non-execution, value suppression, binary plists, direct and home-expanded
 wrappers, unresolved dynamic shell, invalid labels, missing scripts, malformed XML and bounded input size. Nine
 existing service-renderer tests pass. No live service, queue behavior, browser, credential or film was changed.
+
+
+## Heartbeat and board writer guards, 20 November continuation
+
+`claude_beat.py`, `board_check.py` and `notes_push.py` check engine retirement before CLI parsing.
+Their imported `push` / `post` entrypoints check again before Git, network calls or moving an uncommitted
+notes edit aside. This prevents a stale engine from publishing a Chief heartbeat, changing the board-health
+state or posting its report, or checking out notes before the existing transaction guard can refuse the write.
+Pure heartbeat construction and board inspection helpers remain usable. No activation marker was installed.
+
+The process used for this continuation did not have `BOARD_GH_TOKEN`. This is not a test of the Cloudflare
+runtime's credential, and does not show that its grant is missing. The deployed Contents probe remains unverified;
+do not substitute the CLI's GitHub credential or ask Ben to change a grant on this evidence alone.

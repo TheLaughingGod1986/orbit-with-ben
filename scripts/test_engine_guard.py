@@ -43,8 +43,8 @@ class EngineGuard(unittest.TestCase):
         self.assertIsNotNone(engine_guard.refusal(self.root, self.marker))
 
     def test_cli_entrypoints_refuse_before_parsing_or_service_work(self):
-        import jobs, studio, chief_relay, board_publish, macbook_worker, ai_spend, ai_spend_daily, thumb_ledger, launch_check
-        for module in (jobs, studio, chief_relay, board_publish, macbook_worker, ai_spend, ai_spend_daily, thumb_ledger, launch_check):
+        import jobs, studio, chief_relay, board_publish, macbook_worker, ai_spend, ai_spend_daily, thumb_ledger, launch_check, claude_beat, board_check, notes_push
+        for module in (jobs, studio, chief_relay, board_publish, macbook_worker, ai_spend, ai_spend_daily, thumb_ledger, launch_check, claude_beat, board_check, notes_push):
             with self.subTest(module=module.__name__), \
                     patch.object(engine_guard, 'refusal', return_value='retired'):
                 with self.assertRaisesRegex(SystemExit, 'retired'):
@@ -88,6 +88,47 @@ class EngineGuard(unittest.TestCase):
             with self.assertRaisesRegex(SystemExit, 'retired'):
                 launch_check.save_record('fixture', {'id': 'example'})
             path.assert_not_called()
+
+    def test_retired_heartbeat_and_board_post_do_no_git_or_network_work(self):
+        import claude_beat, board_check
+        self.arm()
+        real_refusal = engine_guard.refusal
+        with patch.object(engine_guard, 'refusal',
+                          side_effect=lambda *a, **k: real_refusal(self.root, self.marker)), \
+                patch.object(claude_beat, 'git') as git, \
+                patch.object(claude_beat.subprocess, 'run') as run:
+            for action in (lambda: claude_beat.push({'at': 'fixture'}),
+                           lambda: board_check.post('fixture health report')):
+                with self.assertRaisesRegex(SystemExit, 'retired'):
+                    action()
+            git.assert_not_called()
+            run.assert_not_called()
+
+    def test_retired_notes_push_preserves_uncommitted_notes_before_git_checkout(self):
+        import notes_push
+        target = self.root / 'notes.json'
+        target.write_text('uncommitted notes')
+        studio = unittest.mock.Mock()
+        self.arm()
+        real_refusal = engine_guard.refusal
+        with patch.object(engine_guard, 'refusal',
+                          side_effect=lambda *a, **k: real_refusal(self.root, self.marker)):
+            with self.assertRaisesRegex(SystemExit, 'retired'):
+                notes_push.push('fixture', studio=studio, notes=target)
+        self.assertEqual(target.read_text(), 'uncommitted notes')
+        self.assertEqual(studio.mock_calls, [])
+
+    def test_unarmed_heartbeat_and_board_report_keep_existing_behavior(self):
+        import claude_beat, board_check
+        with patch.object(engine_guard, 'refusal', return_value=None), \
+                patch.object(claude_beat, 'git', side_effect=['blob', 'tree', 'commit']) as git, \
+                patch.object(claude_beat.subprocess, 'run',
+                             return_value=unittest.mock.Mock(returncode=0)) as run:
+            self.assertEqual(claude_beat.push({'at': 'fixture'}), 'commit')
+            self.assertEqual(git.call_count, 3)
+            self.assertEqual(run.call_count, 1)
+            self.assertEqual(board_check.post('fixture health report'), 'posted')
+            self.assertEqual(run.call_count, 2)
 
     def test_unarmed_imported_writers_keep_existing_behavior(self):
         import thumb_ledger, launch_check
