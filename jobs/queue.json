@@ -1,5 +1,5 @@
 {
-  "next_id": 3241,
+  "next_id": 3242,
   "jobs": [
     {
       "id": "J0001",
@@ -290381,6 +290381,36 @@
         "audio_input"
       ],
       "plain": "Independently audition HOS 009 final bounded own-score v04_synth across all 5 parts, chapter transitions, VO mix, and tail via demonstrated audio_input."
+    },
+    {
+      "id": "J3241",
+      "title": "HOS 009: Chief final score disposition for own-score v04_synth (accept or escalate to Ben)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Elected-Chief FINAL no-spend score disposition for HOS 009 final bounded £0 full-runtime own-synthesis score `v04_synth` (`hos_009_score_v04_synth.wav`), following `J3236` (`SCORE_SCOPE_v04_synth.json`), production PR, and independent `audio_input` ear review (`EAR_REVIEW_v04_synth.md`).\n\nProcedure:\n1. Re-read `chief_relay.py status` immediately before any protected decision; use own agent id, never impersonate `chief`. If a higher-priority HOS Chief (`Grok -> Claude -> Codex -> Gemini`) has returned, hand the decision back.\n2. Independently verify ALL gates without waiver:\n   - Production PR reviewed with deterministic pure-Python/NumPy script (zero third-party/GPL samples or soundfonts, `£0`, `0` credits, `0` API calls).\n   - Exact SHA-256 parity across Mini and `/Volumes/data/studio-live/` for all `v04` deliverables and all preserved locks (`teach_v01`, `v01`, `v02`, `v03`, VO, picture, diagrams).\n   - Unchanged production `music_gate.py` PASS over complete library (`>= 89` comparisons across all 9 roots including all 15 hash-verified materialized UAT tracks, `0` unreadable, `< 0.80` max similarity, `0` fails, no waiver).\n   - Continuity telemetry confirms `0` interior `< -45 dB` dropouts across `0.00-526.00 s` and balanced per-part loudness.\n   - Independent demonstrated-audio (`audio_input`) `EAR_REVIEW_v04_synth.md` (from a distinct worker seat) explicitly PASSes all 7 criteria (warmth/musicality, continuity, all 4 chapter transitions, Polish pass §2 mood contrast, narration clarity across all 5 parts, tempo fit, and `518.40-535.33 s` / `526.00 s` tail).\n3. Disposition:\n   - **If ALL gates + independent `audio_input` ear review PASS:** merge audit/evidence PRs as appropriate, record formal score acceptance (`SCORE_DISPOSITION_v04_synth.md` + `.json`), update `02_Video-Projects/009_The-Falling-Moon-Gravity/status.json` via PR, and verify whether ALL other `J2035` prerequisites (specifically `J2632` r4 falling-Moon diagram KEEP lock on PR #543 and all 90 picture rows) are satisfied before releasing `J2035` (`J2171` remains held pending long assembly & its own inputs). Score acceptance is NOT a final film PASS or Ben-watch waiver.\n   - **If ANY gate or the ear review FAILS (FINAL BOUNDED CAP EXHAUSTED — NO `v05_synth` ALLOWED):** refuse acceptance, keep `J2035` and `J2171` held, record `SCORE_DISPOSITION_v04_synth.md` + `.json`, update `status.json` via PR, and **immediately escalate ONE single explicit billing/pricing confirmation question to Ben** for ElevenLabs `music_v2` (confirming single-request subscription credit max `<= 3,000` and `£0` cash under his Creator plan so an acoustic studio opening can match retained `hos_009_teach_v01.mp3`), because both spliced (`v03_synth`) and full-runtime (`v04_synth`) pure-Python/NumPy synthesis attempts have failed ear review. Do NOT authorize `v05_synth`, do NOT activate `hos009_score_flight.py`, and do NOT make any account GET or ElevenLabs POST.\n4. Hard guardrails preserved unconditionally: `£0` cash, `0` credits, no account GET, no ElevenLabs POST, `ACTIVATION_AUTHORIZED` stays literal `False`, `J3043`/`J3045` stays permanently closed unused (`J3047`), `v01`/`v02`/`v03` remain rejected, do not loop/stretch `hos_009_teach_v01.mp3`, no YouTube/Buffer/schedule changes.\n",
+      "ref": "J3236",
+      "film": "009",
+      "stage": "edit",
+      "after": "J3240",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-20T15:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T15:20Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 009: Chief final score disposition for own-score v04_synth (accept or escalate to Ben)",
+      "due": "2026-11-21T12:00:00Z",
+      "kind": "chief",
+      "plain": "Elected-Chief final disposition on HOS 009 v04_synth: accept if all gates and independent ear review pass, else escalate single ElevenLabs billing/pricing question to Ben."
     }
   ],
   "focus": [
