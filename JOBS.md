@@ -72,7 +72,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3230 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2171 |  |
 | J3231 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Weekly search research (Orbit + Field Order History): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
 | J3232 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J3114 |  |
-| J3236 | mini | open (after J3235) | – | – | 009 edit · for gemini · chief · `gemini-argon` · HOS 009: Chief score disposition for own-score v03_synth | J3233 |
+| J3236 | mini | claimed | gemini | 2026-11-20T17:13Z | 009 edit · for gemini · chief · `gemini-argon` · HOS 009: Chief score disposition for own-score v03_synth | J3233 |
 | J3237 | mini | open | – | – | studio · Model review: list every CLI's current models, probe the newer ones, propose best-model-per-job routing that saves Claude usage |  |
 
 Recently finished:
