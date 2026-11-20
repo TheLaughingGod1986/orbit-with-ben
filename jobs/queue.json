@@ -1,5 +1,5 @@
 {
-  "next_id": 3228,
+  "next_id": 3231,
   "jobs": [
     {
       "id": "J0001",
@@ -178968,6 +178968,11 @@
           "at": "2026-11-19T14:32Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-20T12:00:00Z"
+        },
+        {
+          "at": "2026-11-20T12:06Z",
+          "by": "relay",
+          "what": "condition verification queued: J3228"
         }
       ],
       "remaining_action": "Obtain an accepted compliant score for the gravity film before assembly",
@@ -178987,10 +178992,11 @@
       "hold": {
         "type": "input",
         "condition": "J3132 Chief review: condition NOT MET. J3059 kept PR651 d047b064 offline only; Grok desk 7005927729 reconciled shared usage and opened no production guard or replacement score scope. J3043/J3045 allowance closed unused; v01/v02 rejected. Assembly requires a separately accepted compliant score and all original gates; no unchanged media rechecks.",
-        "check_at": "2026-11-20T12:00:00Z",
+        "check_at": "2026-11-20T13:06:58+00:00",
         "last_recheck": "J3132",
         "checked_at": "2026-11-19T14:32:52+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J3228"
       }
     },
     {
@@ -179573,6 +179579,11 @@
           "at": "2026-11-20T05:54Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-20T12:00:00Z"
+        },
+        {
+          "at": "2026-11-20T12:06Z",
+          "by": "relay",
+          "what": "condition verification queued: J3229"
         }
       ],
       "remaining_action": "Await operator confirmation and fresh-session acceptance evidence for the scoped command permissions; recheck at noon UTC on 20 November.",
@@ -179597,10 +179608,11 @@
       "hold": {
         "type": "input",
         "condition": "Chief ruling J3026: NOT MET. Fresh 20 Nov checks confirm all eight local approval/gateway hashes match jobs/reviews/J3026/REVIEW.md; J2517 and J2559 done; PR490 remains OPEN draft at f521bcd3f1 with one housekeeping comment and zero reviews; allow-list documentation absent from main. Thread through 7031680450 contains no superseding ruling or operator confirmation. Await authorized operator confirmation and fresh-session scoped acceptance evidence. Unchanged hashes alone do not prove acceptance. Retain fallback routing and existing approval controls. Retry evidence check at 2026-11-20T12:00:00Z; do not retry cancelled J2007.",
-        "check_at": "2026-11-20T12:00:00Z",
+        "check_at": "2026-11-20T13:06:58+00:00",
         "last_recheck": "J3026",
         "checked_at": "2026-11-20T05:54:32+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J3229"
       },
       "plain": "Let Codex run the studio's routine commands on the Mac mini without asking each time (needs you at the Mini)"
     },
@@ -189046,6 +189058,11 @@
           "at": "2026-11-19T14:41Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-20T12:00:00Z"
+        },
+        {
+          "at": "2026-11-20T12:06Z",
+          "by": "relay",
+          "what": "condition verification queued: J3230"
         }
       ],
       "remaining_action": "Wait for separately accepted music and the completed gravity film before building its Shorts",
@@ -189064,10 +189081,11 @@
       "hold": {
         "type": "input",
         "condition": "J3059 keeps PR651 d047b064 offline only; Grok desk 7005927729 opened no production guard or score scope. J3043/J3045 allowance remains closed unused and v01/v02 rejected. J3139 owns the compliant score-route decision; require separately scoped and accepted compliant score, completed J2035 long assembly and all required gates, and Shorts locked inputs before release.",
-        "check_at": "2026-11-20T12:00:00Z",
+        "check_at": "2026-11-20T13:06:58+00:00",
         "last_recheck": "J3133",
         "checked_at": "2026-11-19T14:41:00+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J3230"
       }
     },
     {
@@ -289249,6 +289267,99 @@
       "taskKeys": [
         "HOS:005"
       ]
+    },
+    {
+      "id": "J3228",
+      "title": "Verify condition for J2035",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2035: J3132 Chief review: condition NOT MET. J3059 kept PR651 d047b064 offline only; Grok desk 7005927729 reconciled shared usage and opened no production guard or replacement score scope. J3043/J3045 allowance closed unused; v01/v02 rejected. Assembly requires a separately accepted compliant score and all original gates; no unchanged media rechecks.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2035 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-20T12:06Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T12:06Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Obtain an accepted compliant score for the gravity film before assembly",
+      "kind": "review",
+      "recheck_of": "J2035",
+      "due": "2026-11-15T18:00:00+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3229",
+      "title": "Verify condition for J2040",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2040: Chief ruling J3026: NOT MET. Fresh 20 Nov checks confirm all eight local approval/gateway hashes match jobs/reviews/J3026/REVIEW.md; J2517 and J2559 done; PR490 remains OPEN draft at f521bcd3f1 with one housekeeping comment and zero reviews; allow-list documentation absent from main. Thread through 7031680450 contains no superseding ruling or operator confirmation. Await authorized operator confirmation and fresh-session scoped acceptance evidence. Unchanged hashes alone do not prove acceptance. Retain fallback routing and existing approval controls. Retry evidence check at 2026-11-20T12:00:00Z; do not retry cancelled J2007.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2040 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-20T12:06Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T12:06Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await operator confirmation and fresh-session acceptance evidence for the scoped command permissions; recheck at noon UTC on 20 November.",
+      "kind": "review",
+      "recheck_of": "J2040",
+      "due": "2026-11-20T13:06:58+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3230",
+      "title": "Verify condition for J2171",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2171: J3059 keeps PR651 d047b064 offline only; Grok desk 7005927729 opened no production guard or score scope. J3043/J3045 allowance remains closed unused and v01/v02 rejected. J3139 owns the compliant score-route decision; require separately scoped and accepted compliant score, completed J2035 long assembly and all required gates, and Shorts locked inputs before release.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2171 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-20T12:06Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T12:06Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Wait for separately accepted music and the completed gravity film before building its Shorts",
+      "kind": "review",
+      "recheck_of": "J2171",
+      "due": "2026-11-20T13:06:58+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
