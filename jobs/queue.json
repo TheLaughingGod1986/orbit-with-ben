@@ -291433,18 +291433,23 @@
           "at": "2026-11-20T19:09Z",
           "by": "cursor",
           "what": "step 1 of 4 done: Chose finished-job media untouched for at least 24 hours. Skipped live jobs, registered git worktrees, desk/cache touched 12.5 hours ago, and desk/worker. No local snapshots on MiniWork. Staging on the SSD share because it is outside 01:00-06:00."
+        },
+        {
+          "at": "2026-11-20T19:12Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: J2221 (349 files, about 21 GiB) is rsyncing to the NAS SSD share. Local files stay until the SHA-256 match. tmux j3249-offload."
         }
       ],
-      "remaining_action": "Archive old finished-job scratch onto the NAS staging share and verify every hash",
+      "remaining_action": "Wait for the detached NAS staging copy to finish, then confirm at least 40 GiB free",
       "due": "2026-11-21T07:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-20T19:09Z",
+        "at": "2026-11-20T19:12Z",
         "by": "cursor",
-        "note": "Chose finished-job media untouched for at least 24 hours. Skipped live jobs, registered git worktrees, desk/cache touche"
+        "note": "J2221 (349 files, about 21 GiB) is rsyncing to the NAS SSD share. Local files stay until the SHA-256 match. tmux j3249-o"
       }
     }
   ],
