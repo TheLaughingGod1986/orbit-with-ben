@@ -84,7 +84,7 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 004 | thumbs | codex | 2026-11-20T03:33Z | 2026-11-20T04:02Z | J3190 Packaging panel (codex): Webb v08 thumbnail, exact SHA-256 781435d9c557b1a18fbd3dba42d513f647d2a65fff2d5063b3829c7d2b522c68 |
+| 004 | thumbs | codex | 2026-11-20T03:34Z | 2026-11-20T03:49Z | - |
 | 033 | upload | claudecode | 2026-11-18T11:13Z | 2026-11-18T13:12Z | J2986 Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test |
 | J01 | upload | claudecode | 2026-11-18T12:33Z | 2026-11-18T14:32Z | J2857 Upload OWB J01 long v03 (A Calm Journey From Venus to a Dying Star) Private + arm 3-way thumb Test & Compare |
 
