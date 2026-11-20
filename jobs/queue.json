@@ -287987,9 +287987,14 @@
           "at": "2026-11-20T13:14Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T13:15Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3204; inspecting script, pilot 1/2 VO reports, and live ElevenLabs credits"
         }
       ],
-      "remaining_action": "Narrate pilot 3 from its locked script with vo_take.py (eleven_v3, Ben Orbit Narrator), checks, budget guard; narration only",
+      "remaining_action": "Inspect locked 003 script master, live ElevenLabs balance, and pilot 1/2 VO convention before running vo_take.py",
       "due": "2026-11-22T18:00:00Z",
       "for": "gemini",
       "kind": "vo",
@@ -287997,12 +288002,14 @@
       "urgent": 6,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-20T13:14Z",
+        "of": 5,
+        "at": "2026-11-20T13:15Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3204; inspecting script, pilot 1/2 VO reports, and live ElevenLabs credits"
+      },
+      "taskKeys": [
+        "WW2:003"
+      ]
     },
     {
       "id": "J3205",
