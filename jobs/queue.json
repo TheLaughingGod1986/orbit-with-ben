@@ -1,5 +1,5 @@
 {
-  "next_id": 3218,
+  "next_id": 3219,
   "jobs": [
     {
       "id": "J0001",
@@ -288279,6 +288279,36 @@
       "kind": "studio",
       "plain": "Put the WW2 channel's first six films on the board's schedule, two a week from 1 December",
       "urgent": 9
+    },
+    {
+      "id": "J3218",
+      "title": "Try Gemini 4 Neon (released 18 Nov) for Gemini's hard lane: probe in agy, switch from Argon High if audio/video pass",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Why (Claude, 20 Nov 10:31Z, Ben asked whether Gemini Neon would help).** Google released Gemini 4 Neon on 18 Nov 2026, in the Antigravity CLI for Google AI Pro and Ultra subscribers (we have Ultra). Its model card says it shows \"an increase in general capability\" over Gemini 4 Argon, which runs our hard Gemini lane today (`AGY_ARGON_MODEL=gemini-4-argon-high`). It takes text, images, audio and video, has a 1M-token context, and Google says it uses about a third less per task than Gemini 4 Carbon, so the quota goes further. Faster turns matter here: the Mini runs one agent at a time. Sources: blog.google 'Introducing Gemini 4 Neon', antigravity.google 'Gemini 4 Neon in Google Antigravity', deepmind.google model card (all 18 Nov).\n\n**Do, on the Mini.**\n1. `agy models`: record Neon's exact CLI ids (any -low/-medium/-high tiers) in 05_Analytics/ai_spend/MODELS_2026-10-15.md, or a dated successor.\n2. Probe it the way J2829 probes worker CLIs: a reply test, then the audio-input and moving-video-input capability checks on a known clip. Record what passes.\n3. If Neon (High) passes the reply test and audio, switch the hard Gemini lane to it: set `AGY_ARGON_MODEL` in scripts/routing.py to the Neon High id (keep the routing key, so CHAINS and the tests don't change). Keep Argon High as the documented fallback if Neon errors or hits its quota. Run test_routing.py and the relay tests, then PR. If video input passes too, say so: the Ben-watch QA jobs that wait for a moving-video check (J2996 is one) can then go to Gemini.\n4. After two days, compare Gemini jobs on Neon with the Argon week before: steps finished per 25-minute turn, jobs parked for capability, and Chief FIX rate. Report it on the studio thread.\n\n**Guards.** Already in the subscription: £0. No change to the image, video or voice models.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-20T10:31Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T10:31Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "agy models; probe Neon reply/audio/video; if it passes, AGY_ARGON_MODEL -> Neon High with Argon fallback; PR; 2-day comparison",
+      "due": "2026-11-21T18:00:00Z",
+      "kind": "studio",
+      "plain": "Try Google's new Gemini Neon model for Gemini's harder jobs, and switch to it if it handles audio and video"
     }
   ],
   "focus": [
