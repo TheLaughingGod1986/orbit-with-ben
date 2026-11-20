@@ -271809,18 +271809,23 @@
           "at": "2026-11-20T02:59Z",
           "by": "codex",
           "what": "step 3 of 4 done: Resuming PR 1011 and existing 3/4 plan; live migration remains gated."
+        },
+        {
+          "at": "2026-11-20T03:04Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Added isolated gate/profile adapter and bounded auxiliary callback; targeted tests pass, broader analytics checks running. No live switch."
         }
       ],
-      "remaining_action": "Finish analytics timer integration and rehearse the studio move",
+      "remaining_action": "Wire the isolated analytics gate into the timer and finish migration rehearsal",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-20T02:59Z",
+        "at": "2026-11-20T03:04Z",
         "by": "codex",
-        "note": "Resuming PR 1011 and existing 3/4 plan; live migration remains gated."
+        "note": "Added isolated gate/profile adapter and bounded auxiliary callback; targeted tests pass, broader analytics checks runnin"
       }
     },
     {
