@@ -289743,10 +289743,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-20T16:34Z",
+      "eta": "2026-11-20T18:34Z",
       "created_by": "relay",
       "created_at": "2026-11-20T12:06Z",
       "result": "",
@@ -289790,6 +289790,11 @@
           "at": "2026-11-20T16:34Z",
           "by": "gemini",
           "what": "reopened: Acting Chief closing completed condition verification J3230 after independent reverification (jobs/reviews/J3230/REVIEW.md @ bd5a98a425) and recording J2171 wait --recheck J3230"
+        },
+        {
+          "at": "2026-11-20T16:34Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Record the unmet condition on J2171 and close this check",
@@ -289804,7 +289809,15 @@
         "status": "open",
         "by": ""
       },
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T16:34Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3231",
