@@ -1,5 +1,5 @@
 {
-  "next_id": 3259,
+  "next_id": 3260,
   "jobs": [
     {
       "id": "J0001",
@@ -292466,6 +292466,37 @@
       "remaining_action": "After OWB #1089 merges: core_sync push to HOS, add uploadFor/optional packageDir to HOS channel-youtube.ts, tests, one HOS PR for Grok",
       "due": "2026-11-24T18:00:00Z",
       "kind": "studio"
+    },
+    {
+      "id": "J3259",
+      "title": "HOS 005: set el30-mHiH-0 cover before Sun 22 Nov 11:30 and update SHORTS_RELEASE.json to v05 IDs",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "# HOS 005 follow-up from J3227: set cover on `el30-mHiH-0` before Sun 22 Nov 11:30 London and update `SHORTS_RELEASE.json` to v05 IDs\n\nActing Chief (`gemini`) ruling on `J3227` (HOS PR #693 merged). Both items come from the `J3216` Harvey v05 Shorts upload (Ben approved both v05 cuts on the board 20 Nov 10:17Z: `HOS-J3187.1` cuff and `HOS-J3187.2` heart). **£0 spend, zero new image or video generation, never Replace, never delete any video.**\n\n## Item 1 — Set cover on `el30-mHiH-0` (*How Does the Heart Pump Blood?*, 005 s07 v05) before Sun 22 Nov 2026 11:30 London (`2026-11-22T11:30:00Z`)\n\n`J3216` left `el30-mHiH-0` without a custom thumbnail because `cover.jpg` was not in the git tree for `s07_heart_pulse_v04` (media excluded by `no-media`). Follow the exact `J2956` (`fgsR8yAHr5s`) precedent:\n\n1. Verify the exact Ben-approved v05 master on disk:\n   - File: `/Users/benjaminoats/Library/Mobile Documents/com~apple~CloudDocs/HOS UAT/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s07_heart_pulse_v05.mp4`\n   - Expected SHA-256: `9efcf7b1d91ede4ef9f8d25783e358c92debde3c453f3d30211b9b09936c8fc1` (`25.100 s`, `1080x1920`).\n2. Extract `cover.jpg` cleanly from **frame 0** of `hos_005_s07_heart_pulse_v05.mp4` (`YOUR PULSE`, no Explorer at frame 0) into a temp/non-git path (never commit `.jpg` media to git).\n3. Run the two cover preview checks (output to temp/non-git path, inspect or record PASS):\n   - `python3 00_Brand/Channel-Setup/tools/thumb_preview.py short <cover.jpg> --out <tmp_preview.jpg>`\n   - `python3 00_Brand/Channel-Setup/tools/style_sheet.py short <cover.jpg> --out <tmp_style.jpg>`\n4. Set `<cover.jpg>` as the custom thumbnail on `el30-mHiH-0` via the HOS YouTube API (`thumbnails.set`) or HOS Studio (reusing one tab via `cdp_tabs.reuse_page`, never opening extra tabs and never closing Chrome).\n5. Read back `el30-mHiH-0` via YouTube API and Studio:\n   - `hasCustomThumbnail: true`\n   - **Audience = Not Made for Kids** (`madeForKids: false`) — mandatory re-check after any Studio save (`STUDIO_PLAYBOOK.md` §9)\n   - **Altered content = Yes**\n   - **Related video = `wwcjcFfC-5M`** (*The Tied Arm That Proved Your Blood Circulates*)\n   - **Visibility = Private, Scheduled `2026-11-22T11:30:00Z`** (do NOT change publish time or publish early)\n   - **en-GB captions serving**\n6. Also do a read-only check on `l8bxm9L3zl8` (already public) to confirm its thumbnail state; do NOT modify live `l8bxm9L3zl8`.\n\n## Item 2 — Update `02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/SHORTS_RELEASE.json`\n\nIn a clean HOS worktree (`git worktree add -b <branch> <dir> origin/main`, never touching shared `main`), update `02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/SHORTS_RELEASE.json`:\n\n- `shorts[1]` (*How Does a Blood Pressure Cuff Work?*):\n  - `id`: `\"Sq_lV89VMUs\"` -> `\"l8bxm9L3zl8\"`\n  - `durationSeconds`: `23.1` (verified via `ffprobe` on `hos_005_s06_blood_pressure_cuff_v05.mp4`: `23.100000 s`, sha256 `13da54281f378d54f221135a67208b38a91673e9f655a2175403535b150b9733`)\n  - `note`: `\"J3216. s06 v05, Ben approved. Public since Fri 20 Nov 2026 11:30 London. Supersedes v04 Sq_lV89VMUs (Private, unscheduled).\"`\n- `shorts[2]` (*How Does the Heart Pump Blood?*):\n  - `id`: `\"fgsR8yAHr5s\"` -> `\"el30-mHiH-0\"`\n  - `durationSeconds`: `25.1` (verified via `ffprobe` on `hos_005_s07_heart_pulse_v05.mp4`: `25.100000 s`, sha256 `9efcf7b1d91ede4ef9f8d25783e358c92debde3c453f3d30211b9b09936c8fc1`)\n  - `note`: `\"J3216. s07 v05, Ben approved. Private + publishAt Sun 22 Nov 2026 11:30 London; frame-0 cover set and read back. Supersedes v04 fgsR8yAHr5s (Private, unscheduled).\"`\n\nSave a small JSON readback receipt (no media) for `el30-mHiH-0` in the PR, and update OWB `00_Brand/Channel-Setup/social/hos/UPLOADS.json` note for `el30-mHiH-0` if appropriate to record thumbnail set.\n\n## Verification gates (paste PASS outputs in report)\n1. `cd 07_Content-Ops && npm run lint:package -- --film 005` -> PASS (0 errors)\n2. `cd 07_Content-Ops && npm run channel:audit` -> 0 errors\n3. `00_Brand/Channel-Setup/tools/check_all.sh` -> PASS\n4. Open a PR in `history-of-science` (never push directly to `main`), post receipt on HOS desk `#694`, and close this job.\n\n**Guards:** £0 spend. No video deletion. No changes to v04 private videos (`Sq_lV89VMUs`, `fgsR8yAHr5s`). No changes to live `l8bxm9L3zl8`. No media committed to git.\n",
+      "ref": "J3227/HOS-PR-693",
+      "film": "005",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-20T23:10Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T23:10Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Extract frame-0 cover from approved hos_005_s07_heart_pulse_v05.mp4, set on el30-mHiH-0 with Studio/API readback, and PR SHORTS_RELEASE.json v05 IDs",
+      "due": "2026-11-22T10:00:00Z",
+      "kind": "studio",
+      "plain": "Set the frame-0 cover on the scheduled Sunday heart Short el30-mHiH-0 and update HOS 005 SHORTS_RELEASE.json to the live v05 IDs",
+      "mini_only": true
     }
   ],
   "focus": [
