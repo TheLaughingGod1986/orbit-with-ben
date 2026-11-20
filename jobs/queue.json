@@ -289721,10 +289721,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-20T15:17Z",
+      "eta": "2026-11-20T17:17Z",
       "created_by": "relay",
       "created_at": "2026-11-20T12:06Z",
       "result": "",
@@ -289743,6 +289743,11 @@
           "at": "2026-11-20T15:17Z",
           "by": "claude",
           "what": "Opened to any worker (Ben, 20 Nov: agents idle while Gemini queued alone). Condition checks read the queue, repo and NAS evidence; both Macs mount the NAS."
+        },
+        {
+          "at": "2026-11-20T15:17Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Wait for separately accepted music and the completed gravity film before building its Shorts",
@@ -289757,7 +289762,15 @@
         "status": "open",
         "by": ""
       },
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T15:17Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3231",

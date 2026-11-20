@@ -69,7 +69,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3225 | any | blocked | claudecode | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J3227 | any | blocked | claudecode | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J3229 | any | open | – | – | review · `gemini-argon` · Verify condition for J2040 |  |
-| J3230 | any | open | – | – | review · `gemini-argon` · Verify condition for J2171 |  |
+| J3230 | any | claimed | macbook | 2026-11-20T17:17Z | review · `gemini-argon` · Verify condition for J2171 |  |
 | J3231 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Weekly search research (Orbit + Field Order History): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
 | J3232 | any | open | – | – | review · `gemini-argon` · Verify condition for J3114 |  |
 | J3236 | mini | claimed | gemini | 2026-11-20T17:13Z | 009 edit · for gemini · chief · `gemini-argon` · HOS 009: Chief score disposition for own-score v03_synth | J3233 |
