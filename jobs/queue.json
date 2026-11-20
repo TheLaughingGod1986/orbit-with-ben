@@ -286628,10 +286628,10 @@
       "stage": "thumbs",
       "after": "J3193",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-20T05:27Z",
+      "eta": "2026-11-20T07:27Z",
       "created_by": "codex",
       "created_at": "2026-11-20T03:30Z",
       "result": "",
@@ -286640,6 +286640,11 @@
           "at": "2026-11-20T03:30Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-20T05:27Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Decide whether the corrected Webb thumbnail is ready for a test",
@@ -286647,7 +286652,15 @@
       "plain": "Deciding whether the corrected Webb thumbnail is ready for a test",
       "taskKeys": [
         "OWB:004"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T05:27Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3195",
