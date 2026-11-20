@@ -1,5 +1,5 @@
 {
-  "next_id": 3212,
+  "next_id": 3213,
   "jobs": [
     {
       "id": "J0001",
@@ -286569,7 +286569,7 @@
       "title": "HOS 005: perceptual QA and exact-cut watch handoff for repaired cuff and pulse Shorts",
       "needs": "mini",
       "repo": "hos",
-      "body": "Acting-Chief Codex ruling: jobs/reviews/J3177/CHIEF_RULING.md. GBP0. Review only exact HOS005 J3137 s06_v05 and s07_v05 candidates in /Volumes/data/studio-live/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/J3137. Requires demonstrated audio_input and moving_video_input; no model-name, ffmpeg, ASR or player-window substitution. Verify hashes against J3137_REMUX.json. Actually listen to both whole changed mixes and review motion; inspect s06 0:22 and s07 0:10 low-detail warnings, speech intelligibility, music fit, transitions/loop, relevant SFX levels and finishing gates. Assess s06 measured 41.4 BPM versus brief 72–96 BPM without claiming tool FAIL (tool PASS). Record actual observations and tool identity. No capability: typed capability hold, never pretend listening. Review and publish HOS local branch cursor/j3137-music-beds commit b64ed784 through the normal exact-commit PR process; preserve worker findings and media. With all gates and Chief review satisfied, prepare unique playable exact-cut Ben-watch entries (v04 approval cannot transfer to changed v05). No spend, generation, upload, swap or scheduling. s08 remains excluded for overlap and open-gate FAIL; no rebuild or revival. Update held J3137 with evidence and route final disposition to elected Chief; do not depend on J3137 being done (it waits for this job).",
+      "body": "**BEN'S VERDICT ON J3187.2 IS CHANGE, NOT OK (Claude, 20 Nov 10:23Z). Ben watched the Harvey heart-pulse Short v05 on the board at 10:17Z and wrote: \"0:38 text doesn't match the voice\". The board failed to post to the HOS thread and saved the tick as ok with an empty note (/api/checks HOS-J3187.2 at 10:17:45Z): that record is wrong. Do not schedule hos_005_s07_heart_pulse_v05 for Sun 22 Nov. The fix is queued separately; J3187.1 (cuff Short, ok 10:17:03Z, Fri 20 Nov 11:30) stands.**\n\nActing-Chief Codex ruling: jobs/reviews/J3177/CHIEF_RULING.md. GBP0. Review only exact HOS005 J3137 s06_v05 and s07_v05 candidates in /Volumes/data/studio-live/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/J3137. Requires demonstrated audio_input and moving_video_input; no model-name, ffmpeg, ASR or player-window substitution. Verify hashes against J3137_REMUX.json. Actually listen to both whole changed mixes and review motion; inspect s06 0:22 and s07 0:10 low-detail warnings, speech intelligibility, music fit, transitions/loop, relevant SFX levels and finishing gates. Assess s06 measured 41.4 BPM versus brief 72–96 BPM without claiming tool FAIL (tool PASS). Record actual observations and tool identity. No capability: typed capability hold, never pretend listening. Review and publish HOS local branch cursor/j3137-music-beds commit b64ed784 through the normal exact-commit PR process; preserve worker findings and media. With all gates and Chief review satisfied, prepare unique playable exact-cut Ben-watch entries (v04 approval cannot transfer to changed v05). No spend, generation, upload, swap or scheduling. s08 remains excluded for overlap and open-gate FAIL; no rebuild or revival. Update held J3137 with evidence and route final disposition to elected Chief; do not depend on J3137 being done (it waits for this job).",
       "ref": "",
       "film": "005",
       "stage": "edit",
@@ -286627,6 +286627,11 @@
           "at": "2026-11-20T04:57Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Step 3 complete: published HOS PR #687 (b64ed784), copied s06_v05 and s07_v05 to HOS UAT (SHA-256 verified), and armed J3187.1 and J3187.2 awaits_ben entries"
+        },
+        {
+          "at": "2026-11-20T10:23Z",
+          "by": "claude",
+          "what": "BEN'S VERDICT ON J3187.2 IS CHANGE, NOT OK (Claude, 20 Nov 10:23Z). Ben watched the Harvey heart-pulse Short v05 on the board at 10:17Z and wrote: \"0:38 text doesn't match the voice\". The board failed to post to the HOS thread and saved the tick as ok with an empty note (/api/checks HOS-J3187.2 at 10:17:45Z): that record is wrong. Do not schedule hos_005_s07_heart_pulse_v05 for Sun 22 Nov. The fix is queued separately; J3187.1 (cuff Short, ok 10:17:03Z, Fri 20 Nov 11:30) stands."
         }
       ],
       "remaining_action": "Publishing board watch links for J3187.1 and J3187.2 and verifying Play 302 responses",
@@ -287993,6 +287998,37 @@
       "due": "2026-11-29T18:00:00Z",
       "kind": "image",
       "plain": "Find the archive photos and draw the maps for WW2 film 006, about the wooden bomber"
+    },
+    {
+      "id": "J3212",
+      "title": "HOS 005 heart-pulse Short: make the on-screen text at 0:38 match the narration (Ben's change on v05)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**Ben's change (20 Nov 10:23Z, relayed by Claude because the board dropped his note).** On the Harvey heart-pulse Short v05 (`HOS UAT/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/hos_005_s07_heart_pulse_v05.mp4`, J3187.2) Ben wrote: \"0:38 text doesn't match the voice\".\n\n**Do.**\n1. At and around 0:38, compare the on-screen text with the narration word for word (the Scribe word timings of the locked VO). Correct the text so it says exactly what the voice says, and appears with those words. Check every other on-screen line in the Short the same way and fix any other mismatch.\n2. Keep the locked picture, VO and the new v05 pulse music bed unchanged.\n3. Render v06, run the Shorts gates, and send it back to Ben's watch with `awaits` (what changed: the 0:38 text now matches the voice). The slot is Sun 22 Nov 11:30 London, so Ben needs it by Sat 21 Nov 18:00 London. If that can't be met, the Short moves to the next free HOS Shorts slot. Never two Shorts on one day.\n\n**Guards.** No upload or schedule change before Ben's OK on v06. £0.\n",
+      "ref": "",
+      "film": "005",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-20T10:23Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T10:23Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Fix the 0:38 on-screen text to match the voice word for word, check every line, render v06, back to Ben's watch",
+      "due": "2026-11-21T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Fix the words on screen at 0:38 in the History of Science heart Short so they match what the voice says",
+      "urgent": 7
     }
   ],
   "focus": [

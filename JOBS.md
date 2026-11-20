@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2035, J2529, J2993, J3204.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2035, J2529, J2993, J3204, J3212.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -74,6 +74,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3209 | mini | open (after J3001) | – | – | WW2:005 picture · image · WW2 film 005: gather the archive photos and draw the maps |  |
 | J3210 | mini | open (after J3208) | – | – | WW2:006 vo · for gemini · vo · WW2 film 006: narration in Ben's voice (the wooden bomber) |  |
 | J3211 | mini | open (after J3002) | – | – | WW2:006 picture · image · WW2 film 006: gather the archive photos and draw the maps |  |
+| J3212 | mini | open | – | – | 005 edit · assembly · HOS 005 heart-pulse Short: make the on-screen text at 0:38 match the narration (Ben's change on v05) |  |
 
 Recently finished:
 
