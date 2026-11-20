@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2035, J2529, J2993, J3204.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2035, J2529, J2993, J3204, J3215.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -75,6 +75,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3211 | mini | open (after J3002) | – | – | WW2:006 picture · image · WW2 film 006: gather the archive photos and draw the maps |  |
 | J3213 | mini | claimed | macbook | 2026-11-20T12:25Z | 124 topic · for gemini · review · `gemini-argon` · HOS 124 Why Is the Ocean Salty?: rule-E topic go/no-go review | 300c972e |
 | J3214 | mini | open | – | – | 125 topic · for gemini · review · `gemini-argon` · HOS 125 What Causes the Tides?: rule-E topic go/no-go review | 300c972e |
+| J3215 | mini | open | – | – | chief · HOS desk #180 is full (2,500 comments): open HOS desk 2, repoint the board and tools, repost Ben's two lost taps |  |
 
 Recently finished:
 

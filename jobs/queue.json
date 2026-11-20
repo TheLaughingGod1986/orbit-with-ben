@@ -1,5 +1,5 @@
 {
-  "next_id": 3215,
+  "next_id": 3216,
   "jobs": [
     {
       "id": "J0001",
@@ -286637,6 +286637,11 @@
           "at": "2026-11-20T10:24Z",
           "by": "claude",
           "what": "RETRACTED (Claude, 20 Nov 10:24Z): ignore Claude's note above. \"0:38 text doesn't match the voice\" is the board's placeholder example text in the empty notes box, not Ben's words. Ben APPROVED both J3187.1 and J3187.2 (board ticks ok at 10:17:03Z and 10:17:45Z). The heart-pulse Short v05 is approved for Sun 22 Nov 11:30 London as planned. The only fault was the board failing to post the ticks to the HOS thread."
+        },
+        {
+          "at": "2026-11-20T10:25Z",
+          "by": "claude",
+          "what": "Ben approved both J3187.1 and J3187.2 on the board at 10:17Z (stored ok). The posts to the HOS desk failed only because #180 is full; fix in J3215. Act on the stored ticks."
         }
       ],
       "remaining_action": "Publishing board watch links for J3187.1 and J3187.2 and verifying Play 302 responses",
@@ -288148,6 +288153,37 @@
       },
       "for": "gemini",
       "model": "gemini-argon"
+    },
+    {
+      "id": "J3215",
+      "title": "HOS desk #180 is full (2,500 comments): open HOS desk 2, repoint the board and tools, repost Ben's two lost taps",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**Why (Claude, 20 Nov 10:25Z).** history-of-science #180 (the HOS desk) has hit GitHub's 2,500-comment cap. Its last comment landed 19 Nov 22:33Z (public API: comments 2500). Since then every post to it fails: the board's HOS Approve and Request-changes posts (Ben saw \"Saved, but it didn't reach the Chief's thread\" on the Harvey Shorts at 10:17Z today), hos_desk.py posts, and the agents' batch notes. Ben's two ticks themselves were stored on the board (/api/checks HOS-J3187.1 and HOS-J3187.2, both ok).\n\n**Do, today.**\n1. Open a new HOS desk thread on history-of-science: an issue titled 'HOS desk 2 (from 20 Nov 2026; #180 is full)'. Its first comment lists every open HOS item with a link to its latest comment on #180. Leave #180 as it is: no edit, close or merge.\n2. Put the new number everywhere the desk number lives: `desk.number` in history-of-science `studio/channel.json`; the studio's cached `channels/hos/channel.json` (then `scripts/channels.py sync`); `scripts/test_channels.py` and `scripts/test_channel_check.py` where they expect 180; `hos_desk.py` if it hard-codes 180; and in orbit-with-ben `05_Analytics/kanban/board_site/api/checks.js` (THREADS.HOS, plus its comment) and `scripts/test_board_publish.py`. Run each repo's tests, then one PR per repo.\n3. Redeploy the board (studio-kanban) from main the usual way. Then run a dryRun POST with checkThreads to /api/checks and confirm HOS shows canPostComment true.\n4. On the new desk, re-post Ben's two lost board taps word for word in the board's format: '[Ben] OK J3187.1 v05 (Harvey cuff Short): watched it, looks good. Release held job J3187.' and the same for J3187.2 (heart-pulse Short). Say they are reposted from the 10:17Z board taps that #180 refused.\n5. So it can't happen silently again: make the relay, or the morning run, warn on the studio thread when any desk or thread passes 2,300 comments, naming the rollover steps above. OWB's monthly rollover rule in scripts/thread.json is the model.\n\n**Guards.** No change to any video. No token change (the board's token already writes issues on history-of-science). £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-20T10:25Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T10:25Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Open HOS desk 2, update the desk number in channel.json, tools and board THREADS, redeploy the board, repost Ben's 2 taps, add a 2,300-comment warning",
+      "due": "2026-11-20T18:00:00Z",
+      "kind": "chief",
+      "plain": "History of Science's discussion thread is full, so Ben's board taps can't reach it: open a new one and point everything at it",
+      "urgent": 7
     }
   ],
   "focus": [
