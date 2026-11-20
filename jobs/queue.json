@@ -284984,13 +284984,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-20T00:17Z",
-      "eta": "2026-11-20T02:17Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-20T00:15Z",
-      "result": "",
+      "result": "parked for Chief: J2537 waiting condition verified NOT YET MET at 2026-11-20T00:20Z in jobs/reviews/J3179/REVIEW.md (126972708e). Checked HOS #180 (112 comments since 18 Nov 23:00Z thru 7024089854: 0 non-header Ben comments), OWB #954 (252 comments since 18 Nov 22:00Z thru 7026051234: last Ben comment 6993227499 at 18 Nov 22:16:39Z before Stage 3 block), and merged HOS PR #657 (0 comments/reviews). Pre-rewrite backup bundles (NAS hos-before-rewrite.bundle + Mini scratch) and rehearsal artifacts remain intact; HOS origin/main is 90bea410, origin/hos-desk is 521c9586, and 14 non-desk HOS PRs (#658-#661, #665, #667-#671, #673, #674, #678, #679) are open. Keep J2537 blocked until Ben's explicit one-time hos-desk disposition arrives. Because scripts/jobs.py restricts jobs.py wait J2537 --recheck J3179 and closing J3179 to the elected Chief, exact 2-line Chief commands are in jobs/reviews/J3179/REVIEW.md §3 (next check 2026-11-20T06:15:00Z). £0.",
       "history": [
         {
           "at": "2026-11-20T00:15Z",
@@ -285026,6 +285026,11 @@
           "at": "2026-11-20T00:20Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Verification complete (NOT YET MET); parking J3179 for elected Chief per jobs.py set_wait rule"
+        },
+        {
+          "at": "2026-11-20T00:20Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J2537 waiting condition verified NOT YET MET at 2026-11-20T00:20Z in jobs/reviews/J3179/REVIEW.md (126972708e). Checked HOS #180 (112 comments since 18 Nov 23:00Z thru 7024089854: 0 non-header Ben comments), OWB #954 (252 comments since 18 Nov 22:00Z thru 7026051234: last Ben comment 6993227499 at 18 Nov 22:16:39Z before Stage 3 block), and merged HOS PR #657 (0 comments/reviews). Pre-rewrite backup bundles (NAS hos-before-rewrite.bundle + Mini scratch) and rehearsal artifacts remain intact; HOS origin/main is 90bea410, origin/hos-desk is 521c9586, and 14 non-desk HOS PRs (#658-#661, #665, #667-#671, #673, #674, #678, #679) are open. Keep J2537 blocked until Ben's explicit one-time hos-desk disposition arrives. Because scripts/jobs.py restricts jobs.py wait J2537 --recheck J3179 and closing J3179 to the elected Chief, exact 2-line Chief commands are in jobs/reviews/J3179/REVIEW.md §3 (next check 2026-11-20T06:15:00Z). £0."
         }
       ],
       "remaining_action": "Elected Chief (codex/chief): record jobs.py wait J2537 --recheck J3179 for 2026-11-20T06:15:00Z and close J3179",
