@@ -288607,19 +288607,24 @@
           "at": "2026-11-20T19:51Z",
           "by": "gemini",
           "what": "step 2 of 4 done: vo_take.py finished mosquito_plywood_bomber_vo_v01 (1542.84s, -19.6 LUFS, 20,947 chars, 9,687 net credits billed, 15,352 remaining >= 11,000 reserve); logged settled spend in ai_spend ledger"
+        },
+        {
+          "at": "2026-11-20T20:06Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Verified NAS masters (1,542.84s, -19.6 LUFS, -3.6 dB peak, SHA-256 matched), chapter boundaries, Scribe 93.67% raw / 99.91% true word match, and ai_spend ledger (9,687 credits, 15,352 left >= 11,000 reserve); synced full telemetry to ww2 worktree"
         }
       ],
-      "remaining_action": "Audit all 150 Scribe mismatch runs, faster-whisper cross-check, chapter loudness and waveform boundaries",
+      "remaining_action": "Commit VO report and telemetry in ww2-channel PR, post studio thread report, and close J3210",
       "due": "2026-11-29T18:00:00Z",
       "for": "gemini",
       "kind": "vo",
       "plain": "Record the narration for WW2 film 006, about the wooden bomber",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-20T19:51Z",
+        "at": "2026-11-20T20:06Z",
         "by": "gemini",
-        "note": "vo_take.py finished mosquito_plywood_bomber_vo_v01 (1542.84s, -19.6 LUFS, 20,947 chars, 9,687 net credits billed, 15,352"
+        "note": "Verified NAS masters (1,542.84s, -19.6 LUFS, -3.6 dB peak, SHA-256 matched), chapter boundaries, Scribe 93.67% raw / 99."
       },
       "taskKeys": [
         "WW2:006"
