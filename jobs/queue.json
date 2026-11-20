@@ -290079,13 +290079,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-20T23:10Z",
-      "eta": "2026-11-21T00:10Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-20T11:36Z",
-      "result": "",
+      "result": "Acting Chief (gemini) PASS on J3227 read-only audit (41 public + 4 scheduled, 0 live faults). Squash-merged HOS PR #693 (c199174fe39ef85e678db9978c89b7e777e70c41). Queued Mini follow-up J3259 (due 2026-11-22 10:00 London) to set frame-0 cover on el30-mHiH-0 before Sun 22 Nov 11:30 London and update HOS 005 SHORTS_RELEASE.json to v05 IDs l8bxm9L3zl8 (23.1s) and el30-mHiH-0 (25.1s). MiniWork SSD cleanup already active in J3249 (29 GiB free). GBP 0; nothing for Ben.",
       "history": [
         {
           "at": "2026-11-20T11:36Z",
@@ -290141,6 +290141,11 @@
           "at": "2026-11-20T23:10Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T23:10Z",
+          "by": "gemini",
+          "what": "done: Acting Chief (gemini) PASS on J3227 read-only audit (41 public + 4 scheduled, 0 live faults). Squash-merged HOS PR #693 (c199174fe39ef85e678db9978c89b7e777e70c41). Queued Mini follow-up J3259 (due 2026-11-22 10:00 London) to set frame-0 cover on el30-mHiH-0 before Sun 22 Nov 11:30 London and update HOS 005 SHORTS_RELEASE.json to v05 IDs l8bxm9L3zl8 (23.1s) and el30-mHiH-0 (25.1s). MiniWork SSD cleanup already active in J3249 (29 GiB free). GBP 0; nothing for Ben."
         }
       ],
       "remaining_action": "Write up the History of Science listing check and hand the two fixes to the Chief",
@@ -290157,7 +290162,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "HOS-PR-693:c199174fe39e"
     },
     {
       "id": "J3228",
