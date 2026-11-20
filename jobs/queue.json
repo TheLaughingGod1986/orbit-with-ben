@@ -285242,13 +285242,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-20T00:51Z",
-      "eta": "2026-11-20T02:21Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-20T00:48Z",
-      "result": "",
+      "result": "Ranked all 7 public HOS longs (top 3: 002 Periodic Table 2.57/d 1163 impr 3.35% CTR, 004 Atom 1.00/d 840 impr, 006 Willow Tree 1.00/d 5.56% CTR 53.96% avg view %; bottom 3: 003 X-rays 0.09/d, 001 Germs 0.09/d, 005 Blood 0.24/d 17 impr) and 33 public Shorts (top 3: xzKoHg0E0_U Dalton 63.00/d 50.48% stayed 85.7% search, -3L6HzJ_d_4 Swan Neck Flask 5.96/d 77.78% stayed PASS 74.55% avg view % PASS at 19s, 29bpGAI0wb8 Cut Gold 36.09/d 1227v & oKqmnJNGiHg Phosphorus 6.55/d 87.80% avg view % PASS; bottom 3: LanTHJckYx8 0.07/d, zI_eD3vFWmE 0.17/d, CnHwX1L9XHg 0.27/d) from the 2026-11-19 snapshot. Added two zero-overlap backlog films in HOS PR #682 (commit 5dfb7504, mirrored to studio-live with 15/15 SHA-256 match) and appended HOS:122 and HOS:123 to jobs/WIP.json next_hos in OWB PR #1051 (commit e2f61a1ff): (1) HOS:122 Why Do We Sneeze? (The 8-Metre Gas Cloud Twist) — models 002/004 search demand + 006/007 single-apparatus twist; neighbours.py PASS (7 strictly on-topic education videos >=1M views incl. CrashCourse 5.93M, TED-Ed 5.23M/3.51M/1.04M & Veritasium 2.38M The Sun Sneeze Gene; SciShow 895k/452k), public_search.py PASS (0 collisions), Rule-E review queued as J3185; (2) HOS:123 Why Does Hair Turn Grey? (The Stem-Cell Trap) — models 002/004 search demand + 006/007 apparatus twist; neighbours.py PASS (3 strictly on-topic education videos >=1M views: TED-Ed 5.44M Nina Jablonski hair, SciShow 1.13M, Be Smart 1.07M, plus Peekaboo Kidz 2.68M & SciShow 635k/413k), public_search.py PASS (0 collisions), Rule-E review queued as J3186. £0 spend.",
       "history": [
         {
           "at": "2026-11-20T00:48Z",
@@ -285284,6 +285284,11 @@
           "at": "2026-11-20T01:09Z",
           "by": "macbook-2",
           "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-11-20T01:13Z",
+          "by": "macbook-2",
+          "what": "done: Ranked all 7 public HOS longs (top 3: 002 Periodic Table 2.57/d 1163 impr 3.35% CTR, 004 Atom 1.00/d 840 impr, 006 Willow Tree 1.00/d 5.56% CTR 53.96% avg view %; bottom 3: 003 X-rays 0.09/d, 001 Germs 0.09/d, 005 Blood 0.24/d 17 impr) and 33 public Shorts (top 3: xzKoHg0E0_U Dalton 63.00/d 50.48% stayed 85.7% search, -3L6HzJ_d_4 Swan Neck Flask 5.96/d 77.78% stayed PASS 74.55% avg view % PASS at 19s, 29bpGAI0wb8 Cut Gold 36.09/d 1227v & oKqmnJNGiHg Phosphorus 6.55/d 87.80% avg view % PASS; bottom 3: LanTHJckYx8 0.07/d, zI_eD3vFWmE 0.17/d, CnHwX1L9XHg 0.27/d) from the 2026-11-19 snapshot. Added two zero-overlap backlog films in HOS PR #682 (commit 5dfb7504, mirrored to studio-live with 15/15 SHA-256 match) and appended HOS:122 and HOS:123 to jobs/WIP.json next_hos in OWB PR #1051 (commit e2f61a1ff): (1) HOS:122 Why Do We Sneeze? (The 8-Metre Gas Cloud Twist) — models 002/004 search demand + 006/007 single-apparatus twist; neighbours.py PASS (7 strictly on-topic education videos >=1M views incl. CrashCourse 5.93M, TED-Ed 5.23M/3.51M/1.04M & Veritasium 2.38M The Sun Sneeze Gene; SciShow 895k/452k), public_search.py PASS (0 collisions), Rule-E review queued as J3185; (2) HOS:123 Why Does Hair Turn Grey? (The Stem-Cell Trap) — models 002/004 search demand + 006/007 apparatus twist; neighbours.py PASS (3 strictly on-topic education videos >=1M views: TED-Ed 5.44M Nina Jablonski hair, SciShow 1.13M, Be Smart 1.07M, plus Peekaboo Kidz 2.68M & SciShow 635k/413k), public_search.py PASS (0 collisions), Rule-E review queued as J3186. £0 spend."
         }
       ],
       "remaining_action": "Running HOS checks, mirroring 122 & 123 to studio-live, and opening PRs",
@@ -285294,7 +285299,8 @@
         "of": 4,
         "at": "2026-11-20T01:09Z",
         "by": "macbook-2"
-      }
+      },
+      "done_ref": "5dfb7504"
     },
     {
       "id": "J3183",
