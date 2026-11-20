@@ -290728,18 +290728,23 @@
           "at": "2026-11-20T16:58Z",
           "by": "macbook",
           "what": "step 1 of 4 done: read-only inventory starting"
+        },
+        {
+          "at": "2026-11-20T17:00Z",
+          "by": "macbook",
+          "what": "step 3 of 4 done: inventory, studio access, and slot check recorded locally"
         }
       ],
-      "remaining_action": "Run the sanitized service inventory, then check studio repo access and worker slots",
+      "remaining_action": "Commit the sanitized MacBook inventory and open the pull request",
       "due": "2026-11-21T18:00:00Z",
       "kind": "assembly",
       "plain": "Check installed launchd services and private studio repo access on the MacBook before the studio repo move",
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-20T16:58Z",
+        "at": "2026-11-20T17:00Z",
         "by": "macbook",
-        "note": "read-only inventory starting"
+        "note": "inventory, studio access, and slot check recorded locally"
       }
     }
   ],
