@@ -272087,18 +272087,23 @@
           "at": "2026-11-20T07:25Z",
           "by": "codex",
           "what": "step 3 of 4 done: Preserving existing 3/4 plan and PR 1011; inspecting deployed board access and remaining migration checks."
+        },
+        {
+          "at": "2026-11-20T07:29Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Cloudflare session refreshed; production token is write-only secret and preview has none. Prepared authenticated opt-in runtime probe; six probe tests and 21 data API tests pass, four browser checks skipped."
         }
       ],
-      "remaining_action": "Verify remaining migration prerequisites and update the existing runbook",
+      "remaining_action": "Verify runtime board access, install guards safely and finish migration rehearsal",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-20T07:25Z",
+        "at": "2026-11-20T07:29Z",
         "by": "codex",
-        "note": "Preserving existing 3/4 plan and PR 1011; inspecting deployed board access and remaining migration checks."
+        "note": "Cloudflare session refreshed; production token is write-only secret and preview has none. Prepared authenticated opt-in "
       },
       "taskKeys": [
         "HOS:009",
