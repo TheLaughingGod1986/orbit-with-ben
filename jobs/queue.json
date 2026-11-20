@@ -1,5 +1,5 @@
 {
-  "next_id": 3242,
+  "next_id": 3243,
   "jobs": [
     {
       "id": "J0001",
@@ -290669,6 +290669,36 @@
       "taskKeys": [
         "HOS:009"
       ]
+    },
+    {
+      "id": "J3242",
+      "title": "J3012: MacBook read-only installed/loaded service inventory and studio repo access check",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "Read-only MacBook readiness check for J3012 (studio repository migration). £0 spend; do not install, restart, pause, or modify any LaunchAgent, service, credential, or active-studio marker.\n\n1. Run the sanitized installed/loaded service inventory now on `main` (merged via PR #1011):\n   `python3 scripts/mini/inventory_services.py --loaded --old-engine \"$HOME/YouTube/orbit-with-ben\" --prefix com.owb. --prefix dev.orbit. --prefix com.hos. --prefix com.cursor.`\n   Record ONLY the sanitized JSON output (labels, source hashes, statuses, booleans, loaded states). Never print or commit paths, command lines, environment names/values, or wrapper contents.\n2. Verify read-only Git/`gh` access from the MacBook to the private `TheLaughingGod1986/studio` repo without printing any token:\n   `gh repo view TheLaughingGod1986/studio --json name,isPrivate,defaultBranchRef`\n   `gh api repos/TheLaughingGod1986/studio/git/ref/heads/rehearsal/j3012 --jq '{ref: .ref, sha: .object.sha}'`\n3. Note whether both MacBook worker slots (`macbook` and `macbook-2`) share the same LaunchAgent or separate wrappers/checkouts, and whether `scripts/macbook/render_worker_plist.py` can stage a clean proposal (syntax/lint only, into a local `0600` temp file outside git — never install it).\n4. Commit the sanitized evidence to `jobs/reviews/J3012/MACBOOK_INVENTORY_2026-11-20.md` on a clean worktree branch, open a PR (or commit directly per MacBook rules if docs-only), and mark this job done with the PR/commit ref.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-20T16:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T16:53Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Run inventory_services.py --loaded and read-only studio repo access check on MacBook and commit sanitized evidence",
+      "due": "2026-11-21T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Check installed launchd services and private studio repo access on the MacBook before the studio repo move"
     }
   ],
   "focus": [
