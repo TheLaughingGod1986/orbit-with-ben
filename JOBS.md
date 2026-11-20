@@ -72,7 +72,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3231 | mini | blocked | macbook-2 | – | for gemini · review · `gemini-argon` · Weekly search research (Orbit + Field Order History): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
 | J3232 | any | blocked | macbook | – | review · `gemini-argon` · Verify condition for J3114 |  |
 | J3243 | mini | claimed | macbook | 2026-11-20T18:02Z | studio · First-day check at 6 h: "Will Asteroid 2024 YR4 Hit the Moon in 2032?" (93JL_IK57EM) |  |
-| J3244 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2035 |  |
+| J3244 | mini | claimed | gemini | 2026-11-20T19:47Z | for gemini · review · `gemini-argon` · Verify condition for J2035 |  |
 
 Recently finished:
 
