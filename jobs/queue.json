@@ -284965,9 +284965,14 @@
           "at": "2026-11-20T01:11Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J3178; starting review of 10 unresolved HOS 013 pass-1 plates (rows 56-62, 64-66)"
+        },
+        {
+          "at": "2026-11-20T01:15Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Verified 11/11 Batch 12-14 NAS archive SHA256 hashes match receipts and tested read_file on all 10 unresolved .mp4 clips (returns 1-fps integer-second stills 00:00..00:07, not continuous 24-fps playback); updated capabilities.json to audio_input only"
         }
       ],
-      "remaining_action": "Inspect REVIEW_STATE.json, verify Batch 12-14 archive hashes, and test native moving_video_input via read_file",
+      "remaining_action": "Inspect all 10 clips against locked part-05/06 plate boards and prompts, document 1-fps read_file vs continuous playback gap, and record REVIEW.md",
       "kind": "qa",
       "required_capabilities": [
         "moving_video_input"
@@ -284983,11 +284988,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-20T01:11Z",
+        "at": "2026-11-20T01:15Z",
         "by": "gemini",
-        "note": "Claimed J3178; starting review of 10 unresolved HOS 013 pass-1 plates (rows 56-62, 64-66)"
+        "note": "Verified 11/11 Batch 12-14 NAS archive SHA256 hashes match receipts and tested read_file on all 10 unresolved .mp4 clips"
       },
       "taskKeys": [
         "HOS:013"
