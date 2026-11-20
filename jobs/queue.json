@@ -290718,19 +290718,23 @@
           "at": "2026-11-20T16:56Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T16:58Z",
+          "by": "macbook",
+          "what": "step 1 of 4 done: read-only inventory starting"
         }
       ],
-      "remaining_action": "Run inventory_services.py --loaded and read-only studio repo access check on MacBook and commit sanitized evidence",
+      "remaining_action": "Run the sanitized service inventory, then check studio repo access and worker slots",
       "due": "2026-11-21T18:00:00Z",
       "kind": "assembly",
       "plain": "Check installed launchd services and private studio repo access on the MacBook before the studio repo move",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-20T16:56Z",
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-20T16:58Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "read-only inventory starting"
       }
     }
   ],
