@@ -55,6 +55,9 @@ LONDON = ZoneInfo("Europe/London")
 # Hours after going live at which a video is checked. A long is looked at twice: at 6 h for faults, at 48 h for its
 # title and thumbnail, which need impressions before they can be judged.
 CHECKS = {"short": (6,), "long": (6, 48)}
+AUTOPSY_WINDOWS = ((48, "48h"), (168, "7d"))   # retention autopsies for every long on all three channels (Ben, 20 Nov, J3256)
+AUTOPSY_LATE_H = 72                            # still queue an overdue autopsy up to 72 h after its 48 h / 7 d mark
+AUTOPSY_LOOKBACK_DAYS = 14
 LATE_H = 18          # a check that could not run on time is still worth making this late; after that the daily read has it
 LOOK_BACK = 10       # "our recent videos": the ten before this one, same channel and format
 MIN_TO_COMPARE = 3   # fewer earlier figures than this is not a baseline
@@ -263,7 +266,8 @@ Never: edit the video, its title, cover, description, visibility, schedule or an
 
 
 def queue_due(data: dict, at: dt.datetime) -> list[str]:
-    """Add one job to the queue for each check that is due. Returns the new job ids."""
+    """Add one job to the queue for each check that is due, plus any 48 h / 7 d long retention autopsies.
+    Returns the new job ids."""
     import jobs
 
     added = []
@@ -273,6 +277,113 @@ def queue_due(data: dict, at: dt.datetime) -> list[str]:
                           repo=item["channel"], eta_min=20, kind="studio", action=spec["action"],
                           due=studio.iso(at + dt.timedelta(hours=2)))
         job["launch"] = f"{item['id']}@{item['hours']}"
+        job["plain"] = spec["plain"]
+        added.append(job["id"])
+    added += queue_autopsies(data, at)
+    return added
+
+
+# ---- retention autopsies for longs at 48 h and 7 d (Ben, 20 Nov 2026; J3256) -------------------------------------
+
+def autopsy_path(slug: str, vid: str, label: str) -> pathlib.Path:
+    return channels.analytics_dir(slug) / "autopsy" / f"{vid}_{label}.md"
+
+
+def _matching_read_job(queue: dict | None, vid: str, hours: int, label: str) -> str:
+    """If the video's 48 h or 7 d read job is in the queue and not finished yet, return its job id so the autopsy
+    queues strictly after it."""
+    if not queue:
+        return ""
+    for j in queue.get("jobs") or []:
+        if j.get("status") in ("done", "cancelled"):
+            continue
+        if j.get("launch") == f"{vid}@{hours}":
+            return str(j["id"])
+        title = str(j.get("title") or "")
+        if f" {vid} {label}" in title and "analytics read" in title.lower():
+            return str(j["id"])
+    return ""
+
+
+def autopsy_due(now: dt.datetime, queue: dict | None = None) -> list[dict]:
+    """Every (long, 48h|7d) on any plugged-in channel whose retention autopsy is due and has neither a saved report
+    nor a queue job yet."""
+    asked = {j.get("autopsy") for j in (queue or {}).get("jobs", []) if j.get("autopsy")}
+    out = []
+    for slug in channels.slugs():
+        for v in went_live(slug, now, days=AUTOPSY_LOOKBACK_DAYS):
+            if v.get("format") != "long":
+                continue
+            for hours, label in AUTOPSY_WINDOWS:
+                start = v["at"] + dt.timedelta(hours=hours)
+                if not (start <= now <= start + dt.timedelta(hours=AUTOPSY_LATE_H)):
+                    continue
+                key = f"{v['id']}@{label}"
+                if key in asked or autopsy_path(slug, v["id"], label).is_file():
+                    continue
+                after = _matching_read_job(queue, v["id"], hours, label)
+                out.append({**v, "channel": slug, "hours": hours, "label": label, "after": after})
+    return sorted(out, key=lambda d: (d["at"], d["id"], d["hours"]))
+
+
+def autopsy_job_spec(item: dict) -> dict:
+    """Title, body and board line for one long retention autopsy job (Gemini 4 Neon moving-video + audio watch)."""
+    name = item["title"] or item["id"]
+    slug = item["channel"]
+    vid = item["id"]
+    label = item["label"]
+    out_rel = f"05_Analytics/{slug}/autopsy/{vid}_{label}.md"
+    body = f"""Retention autopsy at {label} ({item['hours']} h after publish; Ben, 20 Nov 2026; J3256). Read-only on YouTube except listing fixes our rules already allow (Test & Compare only where none is running). £0.
+
+Video: "{name}" (`{vid}`), {channels.name(slug)}, long. Went live {_when(item['at'])} London.
+
+1. Run the RSI & funnel inspector:
+   `python3 scripts/retention_autopsy.py inspect {vid} --window {label} --channel {slug}`
+   Verify all six metrics (showings, CTR, views, average % viewed, 0:30 retention, subscribers per 1,000 views) against both the channel's own same-age median and the niche's small-channel outliers from search research. Show the one-line RSI summary with arrows.
+
+2. Diagnose the funnel in strict order:
+   (1) Showings (topic/search) -> (2) Click-through (title & thumbnail) -> (3) First 30 seconds (hook) -> (4) Mid-film cliffs (pacing/picture) -> (5) End (end screen & next-video handoff).
+
+3. Watch the film at the three steepest retention drops (20 s either side of each drop):
+   Locate the uploaded master MP4 (from UPLOADS.json or NAS archive), cut the three 40 s watch clips with:
+   `python3 scripts/retention_autopsy.py clips {vid} --video <master.mp4> --out-dir <scratch> --window {label} --channel {slug}`
+   Gemini 4 Neon (moving video + audio input demonstrated) watches every clip with audio on and records what happens on screen and in the voice at each drop. If YouTube suppressed the curve at low views, say so honestly and watch the three proxy windows (0:00-0:40, typical exit, final 40 s). Never claim to watch or hear from stills or text alone.
+
+4. Write `{out_rel}` from a clean worktree: RSI one-liner + table, funnel diagnosis, watched drop-point findings, and at most three concrete fixes each marked `this video` (title/thumbnail Test & Compare only if none is running, description, end screen) or `next film` (hook, pacing, picture, length). Add any repeatable lesson with evidence to `05_Analytics/LEARNINGS.md` (or the channel's own LEARNINGS).
+
+Guards: Never replace a running Test & Compare, never edit privacy/schedule/video, never delete anything, £0."""
+    return {
+        "title": f"Retention autopsy ({label}): \"{name[:64]}\" ({vid})",
+        "body": body,
+        "action": f"Run {label} RSI retention autopsy on {vid}, watch 3 steepest drop windows with video+audio, write {out_rel}"[:180],
+        "plain": f"Analyse why viewers stayed or left on \"{name[:56]}\" ({label}) and write up to 3 fixes",
+    }
+
+
+def queue_autopsies(data: dict, at: dt.datetime) -> list[str]:
+    """Queue one Gemini 4 Neon retention autopsy job per due (long, 48h|7d). Returns the new job ids."""
+    import jobs
+
+    added = []
+    for item in autopsy_due(at, data):
+        spec = autopsy_job_spec(item)
+        job = jobs.do_add(
+            data,
+            title=spec["title"],
+            needs="mini",
+            body=spec["body"],
+            by="refill",
+            at=at,
+            after=item.get("after", ""),
+            repo=item["channel"],
+            eta_min=25,
+            kind="review",
+            model="gemini-argon",
+            requires=["audio_input", "moving_video_input"],
+            action=spec["action"],
+            due=studio.iso(at + dt.timedelta(hours=12)),
+        )
+        job["autopsy"] = f"{item['id']}@{item['label']}"
         job["plain"] = spec["plain"]
         added.append(job["id"])
     return added
@@ -695,6 +806,7 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("due", help="which videos are due a check now")
+    sub.add_parser("autopsy-due", help="which longs are due a 48 h or 7 d retention autopsy now")
     rec = sub.add_parser("record", help="store one reading")
     rec.add_argument("id")
     rec.add_argument("--hours", type=int, required=True, help="the age the check is for (6, or 48 for a long)")
@@ -732,6 +844,15 @@ def main(argv=None) -> int:
             print(f"{item['channel']}  {item['id']}  {item['hours']} h  went live {_when(item['at'])}  {item['title'][:60]}")
         if not items:
             print("nothing is due a first-day check")
+        return 0
+    if args.cmd == "autopsy-due":
+        import jobs
+        items = autopsy_due(now, jobs.load())
+        for item in items:
+            aft = f" (after {item['after']})" if item.get("after") else ""
+            print(f"{item['channel']}  {item['id']}  {item['label']}  went live {_when(item['at'])}{aft}  {item['title'][:55]}")
+        if not items:
+            print("nothing is due a retention autopsy")
         return 0
     if args.cmd == "report":
         print(report_text())
