@@ -178716,13 +178716,13 @@
       "stage": "edit",
       "after": "J2632",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-12T02:42Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
-      "result": "Waiting for: HOS 009 revised music chain (J2805 reopened -> J2806 -> J2807 -> J2808) before long assembly.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-04T16:56Z",
@@ -178978,6 +178978,11 @@
           "at": "2026-11-20T14:00Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-21T12:00:00Z"
+        },
+        {
+          "at": "2026-11-20T17:12Z",
+          "by": "gemini",
+          "what": "reopened: J3241 elected HOS Chief verified all prerequisites and formally ACCEPTED £0 full-runtime warm own-synthesis score hos_009_score_v04_synth.wav (151ba46acdf7d4395b34e105530bd077c26f6eb92832f9a1f00e1551ca88f58d; PR #700 9b512c8f, J3240 independent audio_input ear review PR #701 67ed9fb2 7/7 PASS, disposition PR #702 932fd522; unchanged complete-library music_gate.py PASS 94 beds / 0 unreadable / max 0.2835 / 0 fails / no waiver; 0 silencedetect dropouts 0-526s; 18/18 Mini/NAS parity). All 90 picture rows incl. J2631 (e35f9a98...) & J2632 r4 KEEP (Grok 6809363448, PR #543 merged 90711687, 23c832b0... verified on Mini scratch & NAS) and locked 5-part VO verified unchanged. Assemble HOS 009 long master with accepted hos_009_score_v04_synth.wav + v04 part stems, Grok 6809363448 P03:01 splice rules (splice_authorized=true strictly for 23c832b0..., 0.200s fade f0-f5, parent f104 last visible, exclude f105+, cannon f0 hard cut 189.20), moving-plate composite picture_qa/polish_gate, house SFX kit + sfx_kit level, and music_gate against actual cut. J2171 remains held."
         }
       ],
       "remaining_action": "Execute J3233 post-J3174 compliant score-route decision and obtain an accepted compliant HOS 009 score before long assembly",
@@ -178986,22 +178991,7 @@
       "taskKeys": [
         "HOS:009"
       ],
-      "urgent": 3,
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-12T02:44Z",
-        "by": "codex",
-        "note": "Input inventory finished: five locked narration hashes match Mini/NAS; five-metre diagram matches; falling-Moon r4 verif"
-      },
-      "hold": {
-        "type": "input",
-        "condition": "J3228 Acting Chief ruling: condition NOT MET. Offline music guard/flight hardening merged through PR 681 (3211c7de, J3174), but ACTIVATION_AUTHORIZED remains literal False (hos009_score_flight.py:34) because J3150 PRICING_EVIDENCE.md did not prove <=3,000 subscription credits and GBP 0 cash. J3043/J3045 remains permanently closed unused (J3047); v01/v02 remain rejected (J2808); 0 v03 files on Mini/NAS; ElevenLabs ledger untouched since 2026-11-17T16:19Z. Follow-up Chief decision J3233 queued for post-J3174 compliant replacement score route. Assembly requires a separately scoped, generated/sourced, and accepted compliant HOS 009 score with all original gates retained; no unchanged media rechecks.",
-        "check_at": "2026-11-21T12:00:00Z",
-        "last_recheck": "J3228",
-        "checked_at": "2026-11-20T14:00:50+00:00",
-        "checked_by": "gemini"
-      }
+      "urgent": 3
     },
     {
       "id": "J2036",
