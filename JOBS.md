@@ -63,6 +63,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3245 | any | blocked | macbook | – | script · HOS: learn from our data, add two new films to the backlog |  |
 | J3246 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J1275 |  |
 | J3249 | mini | open | – | – | assembly · MiniWork scratch SSD cleanup: safely offload old completed-job scratch to NAS to restore >=40 GB free before J3012 daily split and cutover |  |
+| J3253 | mini | open | – | – | studio · OWB AR1-AR3 Shorts (93JL_IK57EM, _dVWVUnbDzA, MScK2CK2ZFg): fix stale 'latest full film' description line + set AR3 Related video to VBaYRPp85Sw |  |
 
 Recently finished:
 

@@ -1,5 +1,5 @@
 {
-  "next_id": 3253,
+  "next_id": 3254,
   "jobs": [
     {
       "id": "J0001",
@@ -292063,6 +292063,36 @@
         "by": "macbook-2"
       },
       "done_ref": "PR #1086, ww2-channel PR #24"
+    },
+    {
+      "id": "J3253",
+      "title": "OWB AR1-AR3 Shorts (93JL_IK57EM, _dVWVUnbDzA, MScK2CK2ZFg): fix stale 'latest full film' description line + set AR3 Related video to VBaYRPp85Sw",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief follow-up from J3225 (20 Nov live listing check, `05_Analytics/live_fixes/2026-11-20.md`) and acting-Chief Gemini's review ruling. £0 spend. About 15–20 minutes.\n\nContext:\n- Fix 1 from `2026-11-20.md` (`93JL_IK57EM` missing Related video) is already fixed live by J3247 and recorded in `UPLOADS.json` (PR #1080 merged).\n- Fix 2 from `2026-11-20.md` flagged the stale description line `Our latest full film, What Happened to Venus?: https://www.youtube.com/watch?v=VBaYRPp85Sw` (Venus aired 25 Oct; three longs have aired since).\n- Both upcoming private Shorts in the same AR set carry the exact same stale line in their upload manifests, and AR3 (`MScK2CK2ZFg`, airs Sat 28 Nov 11:30 London) also still has `relatedStatus: \"pending_studio\"` in `UPLOADS.json`.\n\nChanges to apply in Studio (CDP 9223, Orbit With Ben `UC_esArsDKd3GJvOkeO0DUog`, reusing the existing `studio.youtube.com` tab via `cdp_tabs.reuse_page`):\n\n1. **`93JL_IK57EM`** (*Will Asteroid 2024 YR4 Hit the Moon in 2032?*, Public, AR1):\n   - In Description, replace ONLY the exact line:\n     - Old: `Our latest full film, What Happened to Venus?: https://www.youtube.com/watch?v=VBaYRPp85Sw`\n     - New: `Watch the full film, What Happened to Venus?: https://www.youtube.com/watch?v=VBaYRPp85Sw`\n   - Leave the rest of the description, Related video (`VBaYRPp85Sw`), title, tags, cover, visibility, and video file untouched.\n   - Save, reload, and verify: Description has the updated line, Related video still shows `What Happened to Venus?` (`VBaYRPp85Sw`), Visibility remains Public, Restrictions remain empty (`—`), and Audience remains **Not Made for Kids** (re-check after save per `STUDIO_PLAYBOOK.md` §9).\n\n2. **`_dVWVUnbDzA`** (*Where Will the International Space Station Crash?*, Private scheduled `2026-11-25T11:30:00Z`, AR2):\n   - In Description, replace ONLY the exact line (if present):\n     - Old: `Our latest full film, What Happened to Venus?: https://www.youtube.com/watch?v=VBaYRPp85Sw`\n     - New: `Watch the full film, What Happened to Venus?: https://www.youtube.com/watch?v=VBaYRPp85Sw`\n   - Verify Related video remains `VBaYRPp85Sw` (*What Happened to Venus?*, set by J2880).\n   - Save, reload, and verify: Description updated, Related video = `VBaYRPp85Sw`, Visibility remains **Private / Scheduled `2026-11-25T11:30:00Z`** (do NOT make public or change publishAt), Restrictions empty (`—`), Audience **Not Made for Kids**.\n\n3. **`MScK2CK2ZFg`** (*Where Will the 2027 Total Solar Eclipse Last Over Six Minutes?*, Private scheduled `2026-11-28T11:30:00Z`, AR3):\n   - Set **Related video** to **`VBaYRPp85Sw`** (*What Happened to Venus?*, public since 25 Oct 2026), matching `00_Brand/Channel-Setup/audits/APOPHIS_REPLICATION_TEST_2026-10/11_Upload-Package/owb_ar3_2027_eclipse/PACKAGE_MANIFEST.json` and `UPLOADS.json`.\n   - In Description, replace ONLY the exact line (if present):\n     - Old: `Our latest full film, What Happened to Venus?: https://www.youtube.com/watch?v=VBaYRPp85Sw`\n     - New: `Watch the full film, What Happened to Venus?: https://www.youtube.com/watch?v=VBaYRPp85Sw`\n   - If Video language and Title & description language are unset, set both to `English (United Kingdom)` (`en-GB`) in the same save.\n   - Save, reload, and verify: Related video = `VBaYRPp85Sw` (*What Happened to Venus?*), Description updated, Visibility remains **Private / Scheduled `2026-11-28T11:30:00Z`** (do NOT make public or change publishAt), Restrictions empty (`—`), Audience **Not Made for Kids**.\n\n4. **Records (clean detached worktree/branch → PR to `main`):**\n   - Update `00_Brand/Channel-Setup/social/UPLOADS.json` for `MScK2CK2ZFg`: set `\"relatedStatus\": \"set\"`, `\"relatedVideoId\": \"VBaYRPp85Sw\"`, `\"relatedJob\": \"<this job id>\"`, and append a concise verification note (and optionally note the description wording fix on `93JL_IK57EM` and `_dVWVUnbDzA`).\n   - Run `python3 scripts/test_email_ratchet.py`, `python3 scripts/test_no_private_network.py`, and `python3 scripts/test_video_tracker.py`.\n\nNever: edit any title, tags, cover/thumbnail, visibility, schedule (`publishAt`), Buffer post, or video file; never add a pinned comment to a Short; never delete anything; £0 spend.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 25,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-20T22:18Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T22:18Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Update the stale Venus link line on 93JL_IK57EM, _dVWVUnbDzA and MScK2CK2ZFg, set Related video to VBaYRPp85Sw on MScK2CK2ZFg in Studio, verify readback, and update UPLOADS.json",
+      "due": "2026-11-24T18:00:00Z",
+      "kind": "studio",
+      "plain": "Update the outdated Venus film link wording on three Orbit space Shorts and add the missing Related video on the 2027 eclipse Short"
     }
   ],
   "focus": [
