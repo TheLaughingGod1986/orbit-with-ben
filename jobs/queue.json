@@ -1,5 +1,5 @@
 {
-  "next_id": 3246,
+  "next_id": 3247,
   "jobs": [
     {
       "id": "J0001",
@@ -119392,6 +119392,11 @@
           "at": "2026-11-20T01:37Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-20T18:00:00Z"
+        },
+        {
+          "at": "2026-11-20T18:11Z",
+          "by": "relay",
+          "what": "condition verification queued: J3246"
         }
       ],
       "remaining_action": "Retiming chapter timestamps for the Gravity and Dinosaurs films once their final long cuts are locked",
@@ -119419,10 +119424,11 @@
       "hold": {
         "type": "dependency",
         "condition": "Chief review J3155: condition NOT MET. HOS main 44b12347 contains merged PR389 (7c136209); existing package lint evidence retained. Both 009 and 010 edit stages remain todo with no recorded locked long cut. J2035 remains blocked pending a compliant accepted score; J3159 disposition is done and delegates offline repair to J3162, not score approval. Correction to worker evidence: J2632 is done with KEEP and PR543 merged, not an outstanding ruling. HOS010 picture remains blocked. Resume chapter retiming for each film only against its locked final long cut, preserving Sources and requiring lint:package plus review before upload. Recheck after the existing J2035 noon check; do not alter score, credit or Ben holds.",
-        "check_at": "2026-11-20T18:00:00Z",
+        "check_at": "2026-11-20T19:11:26+00:00",
         "last_recheck": "J3155",
         "checked_at": "2026-11-20T01:37:29+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J3246"
       }
     },
     {
@@ -291072,6 +291078,37 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J3246",
+      "title": "Verify condition for J1275",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1275: Chief review J3155: condition NOT MET. HOS main 44b12347 contains merged PR389 (7c136209); existing package lint evidence retained. Both 009 and 010 edit stages remain todo with no recorded locked long cut. J2035 remains blocked pending a compliant accepted score; J3159 disposition is done and delegates offline repair to J3162, not score approval. Correction to worker evidence: J2632 is done with KEEP and PR543 merged, not an outstanding ruling. HOS010 picture remains blocked. Resume chapter retiming for each film only against its locked final long cut, preserving Sources and requiring lint:package plus review before upload. Recheck after the existing J2035 noon check; do not alter score, credit or Ben holds.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1275 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-20T18:11Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-20T18:11Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Retiming chapter timestamps for the Gravity and Dinosaurs films once their final long cuts are locked",
+      "kind": "review",
+      "recheck_of": "J1275",
+      "due": "2026-11-20T19:11:26+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
