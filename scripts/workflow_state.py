@@ -319,8 +319,9 @@ def claimable(j, rows, at, agent, chief, can=MINI, execution=None, capabilities=
     return not j.get("after") or by_id.get(j["after"], {}).get("status") == "done"
 
 def yieldable_monthly_claim(j):
+    backlog = str(j.get("backlog", ""))
     return (j.get("status") == "claimed" and j.get("needs") == "mini" and j.get("kind") == "review"
-            and str(j.get("backlog", "")).startswith("monthly-improvement-") and not j.get("film") and not j.get("stage")
+            and backlog.startswith(("monthly-improvement-", "weekly-improvement-")) and not j.get("film") and not j.get("stage")
             and not j.get("hold") and not j.get("awaits_ben"))
 
 def immediate_dispatch(rows, at, chief, workers, actors, choose_worker, exclude=(), execution=None, focus=(), capabilities=None):

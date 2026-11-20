@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {fieldOrderCard,agentReason,parseWeeklyReset,normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, channelsSection, channelsPage, channelCard, channelLight, channelFacts, firstDayCard, firstDaySection, firstDayPage, firstDayNext, planCard, planSection, planPage, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
+  globalThis.test = {fieldOrderCard,learningCard,learningSection,learningPage,agentReason,parseWeeklyReset,normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, channelsSection, channelsPage, channelCard, channelLight, channelFacts, firstDayCard, firstDaySection, firstDayPage, firstDayNext, planCard, planSection, planPage, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -1659,3 +1659,53 @@ const fieldHtml=t.fieldOrderCard({fieldOrder:{through:'2026-11-17',targets:[{nam
 assert(fieldHtml.includes('&lt;unsafe&gt;'));
 assert(fieldHtml.includes('median 3'));
 assert(fieldHtml.includes('not enough growth data'));
+
+// J3257: 'What the studio is learning' card renders running experiments, readout dates, last week's results, ops bottleneck, and any registered channel.
+{
+  const learningBoard = {
+    tracker: {videos: []},
+    owb: {jobs: []},
+    models: {checkedAt: '2026-11-20T22:55:00Z', fresh: true, models: []},
+    learning: {
+      title: 'What the studio is learning',
+      cap: 3,
+      updatedAt: '2026-11-20T23:00:00Z',
+      channels: [
+        {
+          slug: 'owb', label: 'OWB', name: 'Orbit With Ben', runningCount: 1, cap: 3, candidateCount: 2, autopsyCount: 1, cycleReady: true, cycleNote: '',
+          running: [{id: 'EXP-OWB-001', summary: 'Fast opening cuts <= 2.8s', metric: 'stayed-to-watch', readoutDate: '2026-12-03', readoutLabel: 'Thu 3 Dec', extended: false}],
+        },
+        {
+          slug: 'astro', label: 'AST', name: 'Astro Chronicles', runningCount: 0, cap: 3, candidateCount: 0, autopsyCount: 0, cycleReady: false, cycleNote: 'Starts after analytics sign-in and first 48-hour read',
+          running: [],
+        },
+      ],
+      recentResults: [
+        {id: 'EXP-OWB-010', channel: 'owb', channelName: 'Orbit With Ben', outcome: 'Kept', summary: 'No third Short in a row on the same subject', decidedLabel: '19 Nov', evidence: 'Nearest-star run proved suppression'},
+      ],
+      ops: {
+        bottleneck: 'Agents sitting idle while ready jobs wait',
+        summary: 'Workers were idle for 14 hours while ready work waited.',
+        proposedFix: 'Audit relay dispatch concurrency.',
+        previousVerdict: 'Last week: 22 -> 14 (down, helped).',
+        metricsLine: '18.2 jobs/day',
+      },
+    },
+  };
+  const cardHtml = t.learningCard(learningBoard);
+  assert(cardHtml.includes('What the studio is learning'));
+  assert(cardHtml.includes('Orbit With Ben'));
+  assert(cardHtml.includes('Thu 3 Dec'));
+  assert(cardHtml.includes('Astro Chronicles'));
+  assert(cardHtml.includes('Starts after analytics sign-in and first 48-hour read'));
+  assert(cardHtml.includes('Kept'));
+  assert(cardHtml.includes('No third Short in a row on the same subject'));
+  assert(cardHtml.includes('Agents sitting idle while ready jobs wait'));
+  assert(t.overview(learningBoard, NOW).includes('What the studio is learning'));
+  const pageHtml = t.learningPage(learningBoard);
+  assert(pageHtml.includes('EXP-OWB-001'));
+  assert(pageHtml.includes('Ops bottleneck of the week'));
+  assert(pageHtml.includes('Audit relay dispatch concurrency.'));
+  assert.equal(t.learningCard({}), '');
+  console.log('What the studio is learning card OK');
+}

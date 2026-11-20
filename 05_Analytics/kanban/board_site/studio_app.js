@@ -1608,6 +1608,76 @@
     return `<section class="overview-p24" aria-label="Field Order History monetisation"><div class="ov-section-head"><h2>Field Order History · monetisation</h2></div><p>Planning line: ${esc(d.deadline||'2027-02-01')} · data through ${esc(d.through||'pending')}</p><ul>${targets||'<li>Subscribers: pending / 1,000</li><li>Watch hours: pending / 4,000 and 8,000</li>'}</ul><p>Qualified public hours from Studio Earn: ${value(d.eligibleWatchHours)} · read ${esc(d.studioReadAt||'pending')}</p><p>${esc(d.note||'')}</p><details><summary>Films against the channel median</summary><ul>${films||'<li>No film reads yet.</li>'}</ul></details></section>`;
   }
 
+  // What the studio is learning (Ben, 20 Nov 2026; J3257): one card on Overview + full page at #learning.
+  // Registry-driven: every channel in board.learning.channels renders automatically.
+  function learningCard(b) {
+    const l = (b || {}).learning;
+    if (!l || typeof l !== "object") return "";
+    const chRows = (l.channels || []).map(ch => {
+      const running = ch.running || [];
+      if (!running.length) {
+        const note = ch.cycleNote || "No live experiments right now";
+        return `<li><b>${esc(ch.name || ch.label || ch.slug)}</b>: ${esc(note)}</li>`;
+      }
+      const items = running.map(e => `${esc(e.summary)} <em>(readout ${esc(e.readoutLabel || e.readoutDate || "TBD")})</em>`).join("; ");
+      return `<li><b>${esc(ch.name || ch.label || ch.slug)}</b> (${running.length}/${ch.cap || l.cap || 3} live): ${items}</li>`;
+    }).join("");
+    const recent = (l.recentResults || []).slice(0, 4).map(r => {
+      const cls = r.outcome === "Kept" ? "green" : r.outcome === "Reverted" ? "red" : "amber";
+      return `<li><span class="tag ${cls}">${esc(r.outcome || "")}</span> <b>${esc(r.channelName || r.channel || "")}</b>: ${esc(r.summary || "")}${r.decidedLabel ? ` <span class="muted">(${esc(r.decidedLabel)})</span>` : ""}</li>`;
+    }).join("");
+    const ops = l.ops || {};
+    const opsLine = ops.bottleneck
+      ? `<p class="learning-ops"><b>Ops bottleneck this week:</b> ${esc(ops.bottleneck)}${ops.summary ? ` — ${esc(ops.summary)}` : ""}${ops.previousVerdict ? ` <span>${esc(ops.previousVerdict)}</span>` : ""}</p>`
+      : "";
+    return `<section class="overview-learning" aria-label="What the studio is learning">
+      <a class="ov-card learning-card" href="#learning">
+        <b>${esc(l.title || "What the studio is learning")}</b>
+        <div class="learning-sub">Running experiments</div>
+        <ul class="learning-list">${chRows || "<li>No experiments registered yet.</li>"}</ul>
+        <div class="learning-sub">Last week's results</div>
+        <ul class="learning-list">${recent || "<li>No readouts settled in the last 7 days.</li>"}</ul>
+        ${opsLine}
+      </a></section>`;
+  }
+  function learningSection(b) {
+    return learningCard(b);
+  }
+  function learningPage(b) {
+    const l = (b || {}).learning;
+    const back = `<header class="top"><a class="more back" href="#overview">‹ Back to Overview</a></header>`;
+    if (!l || typeof l !== "object") return back + empty("The self-improvement loop has no data on the board yet.");
+    const updated = londonWhen(l.updatedAt);
+    const chCards = (l.channels || []).map(ch => {
+      const running = (ch.running || []).map(e =>
+        `<li class="learning-item"><b>${esc(e.id)}</b> · ${esc(e.summary)}<span class="meta">Metric: ${esc(e.metric || "")} · Readout: ${esc(e.readoutLabel || e.readoutDate || "No date yet")}${e.extended ? " · extended once" : ""}</span></li>`
+      ).join("");
+      const emptyNote = ch.cycleNote || "No live experiments running.";
+      return `<article class="ov-card learning-ch">
+        <header class="ch-head"><h2>${esc(ch.name || ch.label || ch.slug)}</h2><span class="tag">${(ch.running || []).length}/${ch.cap || l.cap || 3} live</span></header>
+        <p class="meta">${ch.candidateCount || 0} candidate(s) queued · ${ch.autopsyCount || 0} retention autops${(ch.autopsyCount || 0) === 1 ? "y" : "ies"}</p>
+        ${running ? `<ul class="learning-list">${running}</ul>` : `<p>${esc(emptyNote)}</p>`}
+      </article>`;
+    }).join("");
+    const results = (l.recentResults || []).map(r => {
+      const cls = r.outcome === "Kept" ? "green" : r.outcome === "Reverted" ? "red" : "amber";
+      return `<article class="ov-card learning-result"><p><span class="tag ${cls}">${esc(r.outcome || "")}</span> <b>${esc(r.channelName || r.channel || "")}</b> · ${esc(r.decidedLabel || "")}</p><p>${esc(r.summary || "")}</p>${r.evidence ? `<p class="meta">${esc(r.evidence)}</p>` : ""}</article>`;
+    }).join("");
+    const ops = l.ops || {};
+    const opsCard = `<article class="ov-card learning-ops-card">
+      <b>${esc(ops.bottleneck || "No weekly ops measurement yet")}</b>
+      <p>${esc(ops.summary || "")}</p>
+      ${ops.metricsLine ? `<p class="meta">${esc(ops.metricsLine)}</p>` : ""}
+      ${ops.proposedFix ? `<p><b>Fix queued:</b> ${esc(ops.proposedFix)}</p>` : ""}
+      ${ops.previousVerdict ? `<p class="meta">${esc(ops.previousVerdict)}</p>` : ""}
+    </article>`;
+    return `${back}<div class="overview-home"><header class="overview-header"><div><h1>${esc(l.title || "What the studio is learning")}</h1><p>Every registered channel runs up to ${l.cap || 3} live experiments at once; proven rules move straight into the channel's rules and generators.</p></div></header>
+      <section aria-label="Experiments by channel"><h2>Experiments running</h2><div class="ov-stack">${chCards || empty("No channels registered.")}</div></section>
+      <section aria-label="Last week's results"><h2>Last week's results</h2><div class="ov-stack">${results || empty("No readouts settled in the last 7 days.")}</div></section>
+      <section aria-label="Ops bottleneck"><h2>Ops bottleneck of the week</h2><div class="ov-stack">${opsCard}</div></section>
+      ${updated ? `<p class="meta">Last updated ${esc(updated)}</p>` : ""}</div>`;
+  }
+
   function overview(b, now) {
     const s=overviewModel(b,now);
     return `<div class="overview-home"><header class="overview-header"><div><h1>Studio</h1><p>${esc(channelList().map(c => c.name).join(" · "))}</p></div><a class="operation-status ${s.status.tone}" href="#agents" aria-label="Studio status: ${s.status.text}. Open Agents"><i aria-hidden="true"></i>${s.status.text}</a></header>
@@ -1615,6 +1685,7 @@
       ${checksStaleBanner(b)}
       ${needsAttentionBanner(b)}
       ${planSection(b)}
+      ${learningSection(b)}
       ${firstDaySection(b,now)}
       ${machinesCard(b,now)}
       ${activityCard(b,now)}
@@ -2321,7 +2392,7 @@
     const tab = current(), now = Date.now();
     const key = uatKey();
     const vk = videoKey(), ready = board && board.tracker;
-    const nextView=key && ready ? uat(board,key) : vk && ready ? detail(board,vk) : location.hash==='#plan' && ready ? planPage(board) : location.hash==='#firstday' && ready ? firstDayPage(board) : location.hash==='#channels' && ready ? channelsPage(board) : tab==='agents' && selectedJob() && ready ? jobPage(board,selectedJob(),now) : renderTab(tab,board,now);
+    const nextView=key && ready ? uat(board,key) : vk && ready ? detail(board,vk) : location.hash==='#plan' && ready ? planPage(board) : location.hash==='#learning' && ready ? learningPage(board) : location.hash==='#firstday' && ready ? firstDayPage(board) : location.hash==='#channels' && ready ? channelsPage(board) : tab==='agents' && selectedJob() && ready ? jobPage(board,selectedJob(),now) : renderTab(tab,board,now);
     const view=document.getElementById("view");
     if (renderedView!==nextView) { view.innerHTML=nextView; renderedView=nextView; }
     const waiting = board ? forBen(((board.tracker || {}).videos) || []).length : 0;
