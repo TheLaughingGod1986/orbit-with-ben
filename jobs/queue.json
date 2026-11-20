@@ -286234,7 +286234,7 @@
     {
       "id": "J3193",
       "title": "Packaging panel decision: Webb v08 thumbnail, exact SHA-256 781435d9c557b1a18fbd3dba42d513f647d2a65fff2d5063b3829c7d2b522c68",
-      "needs": "cloud",
+      "needs": "mini",
       "repo": "owb",
       "body": "**Packaging panel decision: Webb v08 thumbnail, exact SHA-256 781435d9c557b1a18fbd3dba42d513f647d2a65fff2d5063b3829c7d2b522c68.** Read the three critiques in `05_Analytics/tests/panels/owb-webb-j3129-v08/` (codex.md, gemini.md, cursor.md). If one is missing after 24 h, decide with what's there.\nWeigh them; where two or more agree, act on it. Write `DECISION.md` in the same folder:\n- keep / change: each change with its exact new text;\n- for the thumbnail, either 'keep' or the best alternative to build as Test & Compare B (a `thumb` job for Codex, logged in THUMB_LEDGER.json).\nPost a 3-line summary on #99 and queue any build or Studio job it needs. The Chief's PASS stands on DECISION.md.\n\nJ3129 scope: thumbnail only. Existing title is unchanged. Inspect the exact NAS file hash 781435d9c557b1a18fbd3dba42d513f647d2a65fff2d5063b3829c7d2b522c68. The original builder must not supply their own independent critique; use a fresh session. Prior critics are not to be read by later critics. No Studio writes, no test permission, no title changes. J2847 remains blocked pending the ensuing elected-Chief exact-file decision. The NASA inset uses different framing/filter colours from the native cutout; do not claim they are byte-identical.\n\nSynthesis is advice, not successor authorization. Do not create another Chief or Studio handoff; the existing linked Chief decision follows this job.\n",
       "ref": "J3129",
@@ -286254,6 +286254,11 @@
           "at": "2026-11-20T03:30Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-20T03:31Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-20T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-argon-high"
         }
       ],
       "remaining_action": "Comparing the independent reviews of the Webb thumbnail",
@@ -286261,7 +286266,16 @@
       "taskKeys": [
         "OWB:004"
       ],
-      "plain": "Comparing the independent reviews of the Webb thumbnail"
+      "plain": "Comparing the independent reviews of the Webb thumbnail",
+      "rerouted_from": {
+        "needs": "cloud",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J3194",
