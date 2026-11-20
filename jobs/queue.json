@@ -285147,13 +285147,13 @@
       "stage": "topic",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-20T00:54Z",
-      "eta": "2026-11-20T02:54Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-20T00:46Z",
-      "result": "",
+      "result": "GO for OWB:084 Every Type of Galaxy Explained in 10 Minutes (96/100) and OWB:085 How Did the Solar System Form? (97/100) after applying all 12 Rule-E fixes in commit bb3fb19a36 (jobs/reviews/J3181/REVIEW.md; 18/18 SHA-256 verified on studio-live; £0 spend). Both films remain pre-cleared in jobs/WIP.json next under Rule G and studio/plan.json until an active OWB WIP slot opens and format tests read out.",
       "history": [
         {
           "at": "2026-11-20T00:46Z",
@@ -285189,6 +285189,11 @@
           "at": "2026-11-20T01:08Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed and pushed J3181 Rule-E GO review (bb3fb19a36) for OWB:084 (96/100) and OWB:085 (97/100) with all 12 fixes applied and 18/18 SHA-256 sync on studio-live"
+        },
+        {
+          "at": "2026-11-20T01:08Z",
+          "by": "gemini",
+          "what": "done: GO for OWB:084 Every Type of Galaxy Explained in 10 Minutes (96/100) and OWB:085 How Did the Solar System Form? (97/100) after applying all 12 Rule-E fixes in commit bb3fb19a36 (jobs/reviews/J3181/REVIEW.md; 18/18 SHA-256 verified on studio-live; £0 spend). Both films remain pre-cleared in jobs/WIP.json next under Rule G and studio/plan.json until an active OWB WIP slot opens and format tests read out."
         }
       ],
       "remaining_action": "Close J3181 as done",
@@ -285203,7 +285208,8 @@
       "taskKeys": [
         "OWB:084",
         "OWB:085"
-      ]
+      ],
+      "done_ref": "bb3fb19a36"
     },
     {
       "id": "J3182",
