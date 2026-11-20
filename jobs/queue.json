@@ -289743,13 +289743,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-20T16:34Z",
-      "eta": "2026-11-20T18:34Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-20T12:06Z",
-      "result": "",
+      "result": "Acting Chief ruling (gemini): condition NOT MET (jobs/reviews/J3230/REVIEW.md @ bd5a98a425, independently verified 2026-11-20T16:34Z). Score chain progressed past macbook's 15:20Z check (J3236 refused v03_synth via PR #697/#699; J3239 built GBP0 v04_synth with music_gate PASS in open PR #700 05253071; J3240 passed independent audio_input ear review 7/7 in open PR #701 1c4c2ac1), but Chief final score disposition J3241 is still open and no compliant HOS 009 score is formally accepted yet. Offline guardrails intact (ACTIVATION_AUTHORIZED=False, ElevenLabs ledger untouched since 2026-11-17T16:19Z, J3043/J3045 closed unused, v01/v02/v03_synth rejected). J2035 long assembly remains blocked; J0862 Shorts VO and 10_Shorts/J2171 inventory intact on Mini/NAS. Recorded J2171 wait (--type input --recheck J3230, next check 2026-11-21T12:00:00Z); no duplicate follow-up queued since J3241 (open) and J2035 already own the next steps. GBP 0.",
       "history": [
         {
           "at": "2026-11-20T12:06Z",
@@ -289795,6 +289795,11 @@
           "at": "2026-11-20T16:34Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T16:35Z",
+          "by": "gemini",
+          "what": "done: Acting Chief ruling (gemini): condition NOT MET (jobs/reviews/J3230/REVIEW.md @ bd5a98a425, independently verified 2026-11-20T16:34Z). Score chain progressed past macbook's 15:20Z check (J3236 refused v03_synth via PR #697/#699; J3239 built GBP0 v04_synth with music_gate PASS in open PR #700 05253071; J3240 passed independent audio_input ear review 7/7 in open PR #701 1c4c2ac1), but Chief final score disposition J3241 is still open and no compliant HOS 009 score is formally accepted yet. Offline guardrails intact (ACTIVATION_AUTHORIZED=False, ElevenLabs ledger untouched since 2026-11-17T16:19Z, J3043/J3045 closed unused, v01/v02/v03_synth rejected). J2035 long assembly remains blocked; J0862 Shorts VO and 10_Shorts/J2171 inventory intact on Mini/NAS. Recorded J2171 wait (--type input --recheck J3230, next check 2026-11-21T12:00:00Z); no duplicate follow-up queued since J3241 (open) and J2035 already own the next steps. GBP 0."
         }
       ],
       "remaining_action": "Record the unmet condition on J2171 and close this check",
