@@ -292632,13 +292632,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-20T23:42Z",
-      "eta": "2026-11-21T01:42Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-20T23:41Z",
-      "result": "",
+      "result": "parked for Chief: J3260 condition verification complete (PR #1093, jobs/reviews/J3260/REVIEW.md @ e351b8102) -- CONDITION NOT MET; J2036 left blocked, nothing reopened. J2035 is done (NAS master 802b5c7e... shasum + picture_qa/polish_gate/music_gate/sfx_level PASS verified directly), but J2036 step 5/6 already ran and parked for an elected HOS Chief ruling on HOS-2026-11-E2 failures (0:00-0:31.94 shots 4.90/6.04/7.00/7.00/7.00 s; first DATA graphic at 2:28.91 vs 0:25-0:40) and Teach-on-screen failures (0/90 layout cards in SOURCE_MAP vs 26 v05 side_label entries, 0 timeline graphic, p4_03_sixty_earths back-to-back with p4_04_dots_square); 08_Thumbnail is also empty and HOS PR #703 is open with 0 comments. Zero Chief rulings posted since 23:41Z on desk #694, thread #954, or PR #703. macbook-2 is not elected Chief, so jobs.py wait J2036 --recheck J3260 and jobs.py done J3260 require the elected HOS Chief (scripts/jobs.py:557-558, 1501-1504). Chief to rule v02 re-edit vs v01 exception, queue 009 thumbnail job, dispose of PR #703, run: jobs.py wait J2036 --agent <chief> --condition 'Awaiting elected HOS Chief ruling on v01 E2/Teach findings (PR #703 / PR #1093) and missing 009 thumbnail job' --check-at '2026-11-21T06:00:00Z' --type input --recheck J3260 --git (or reopen J2036 if accepting v01), then close J3260. GBP 0; no upload/schedule change; no moving-video/audio review claimed.",
       "history": [
         {
           "at": "2026-11-20T23:41Z",
@@ -292664,6 +292664,11 @@
           "at": "2026-11-20T23:50Z",
           "by": "macbook-2",
           "what": "step 2 of 3 done"
+        },
+        {
+          "at": "2026-11-20T23:50Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: J3260 condition verification complete (PR #1093, jobs/reviews/J3260/REVIEW.md @ e351b8102) -- CONDITION NOT MET; J2036 left blocked, nothing reopened. J2035 is done (NAS master 802b5c7e... shasum + picture_qa/polish_gate/music_gate/sfx_level PASS verified directly), but J2036 step 5/6 already ran and parked for an elected HOS Chief ruling on HOS-2026-11-E2 failures (0:00-0:31.94 shots 4.90/6.04/7.00/7.00/7.00 s; first DATA graphic at 2:28.91 vs 0:25-0:40) and Teach-on-screen failures (0/90 layout cards in SOURCE_MAP vs 26 v05 side_label entries, 0 timeline graphic, p4_03_sixty_earths back-to-back with p4_04_dots_square); 08_Thumbnail is also empty and HOS PR #703 is open with 0 comments. Zero Chief rulings posted since 23:41Z on desk #694, thread #954, or PR #703. macbook-2 is not elected Chief, so jobs.py wait J2036 --recheck J3260 and jobs.py done J3260 require the elected HOS Chief (scripts/jobs.py:557-558, 1501-1504). Chief to rule v02 re-edit vs v01 exception, queue 009 thumbnail job, dispose of PR #703, run: jobs.py wait J2036 --agent <chief> --condition 'Awaiting elected HOS Chief ruling on v01 E2/Teach findings (PR #703 / PR #1093) and missing 009 thumbnail job' --check-at '2026-11-21T06:00:00Z' --type input --recheck J3260 --git (or reopen J2036 if accepting v01), then close J3260. GBP 0; no upload/schedule change; no moving-video/audio review claimed."
         }
       ],
       "remaining_action": "PR #1093 open with J3260 REVIEW.md; parking J3260 for elected HOS Chief to record J2036 wait --recheck and rule on E2/Teach findings",
