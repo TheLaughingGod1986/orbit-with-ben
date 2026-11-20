@@ -290414,13 +290414,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-20T21:44Z",
-      "eta": "2026-11-20T23:44Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-20T13:12Z",
-      "result": "",
+      "result": "Acting Chief ruling (gemini): condition NOT MET (jobs/reviews/J3232/REVIEW.md @ 2b1405d76d, verified 2026-11-20T21:41Z). Accepted macbook 15:25Z check (#7043255168) and independently verified #954 through 7051241025, absent remote branch/PR, clean a12100797f worktree, and 12/12 NAS SHA-256 hashes. Explicit authorization to export codex/j3114-pluto-v02 to public repo TheLaughingGod1986/orbit-with-ben remains absent (5th consecutive NOT MET check). Recorded J3114 wait (--type input --recheck J3232, next check 2026-11-21T09:00:00Z) and flagged primary Chief claude to settle authorization/policy with Ben. Preserved J3115/J3119 dependencies and UAT/Shorts holds. No bypass, push, rebuild, spend (GBP 0) or YouTube write.",
       "history": [
         {
           "at": "2026-11-20T13:12Z",
@@ -290461,6 +290461,11 @@
           "at": "2026-11-20T21:44Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T21:44Z",
+          "by": "gemini",
+          "what": "done: Acting Chief ruling (gemini): condition NOT MET (jobs/reviews/J3232/REVIEW.md @ 2b1405d76d, verified 2026-11-20T21:41Z). Accepted macbook 15:25Z check (#7043255168) and independently verified #954 through 7051241025, absent remote branch/PR, clean a12100797f worktree, and 12/12 NAS SHA-256 hashes. Explicit authorization to export codex/j3114-pluto-v02 to public repo TheLaughingGod1986/orbit-with-ben remains absent (5th consecutive NOT MET check). Recorded J3114 wait (--type input --recheck J3232, next check 2026-11-21T09:00:00Z) and flagged primary Chief claude to settle authorization/policy with Ben. Preserved J3115/J3119 dependencies and UAT/Shorts holds. No bypass, push, rebuild, spend (GBP 0) or YouTube write."
         }
       ],
       "remaining_action": "Verify readiness: Obtain explicit approval for the rejected GitHub branch export, then open the Pluto packaging review PR without rebuilding",
@@ -290484,7 +290489,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "2b1405d76d"
     },
     {
       "id": "J3233",
