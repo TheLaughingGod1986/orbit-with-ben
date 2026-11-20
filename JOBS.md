@@ -74,7 +74,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3221 | mini | open | – | – | for gemini · review · `gemini-argon` · Verify condition for J2537 |  |
 | J3223 | mini | open | – | – | for gemini · review · `gemini-argon` · History of Science: full audit (views trend and drop, every video by topic and source, audience countries and ages, search terms) |  |
 | J3224 | mini | open (after J3223) | – | – | for gemini · script · `gemini-argon` · History of Science: search-led research and a new plan for the board (Anglosphere, adult, low competition), waiting for Ben's OK |  |
-| J3225 | any | open | – | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
+| J3225 | any | claimed | claudecode | 2026-11-20T12:32Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
