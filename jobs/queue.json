@@ -270197,17 +270197,30 @@
           "at": "2026-11-20T20:59Z",
           "by": "gemini",
           "what": "remaining action: Build v05 fixing 4 WATCH_LISTEN_REVIEW_v04.md items (keep zero-spend score), finish thumbs + WW2 upload package, run QA gates, deliver to Ben's watch"
+        },
+        {
+          "at": "2026-11-20T20:59Z",
+          "by": "gemini",
+          "what": "rerouted to cursor on cursor-grok-4-7: J3075 Acting-Chief routing: codex down until 2026-11-24T23:26Z; hand reopened assembly J2996 (due 25 Nov, air 5 Dec) to primary assembly worker cursor on cursor-grok-4-7."
         }
       ],
       "remaining_action": "Build v05 fixing 4 WATCH_LISTEN_REVIEW_v04.md items (keep zero-spend score), finish thumbs + WW2 upload package, run QA gates, deliver to Ben's watch",
       "due": "2026-11-25T18:00:00Z",
-      "for": "codex",
+      "for": "cursor",
       "kind": "assembly",
       "plain": "Make the finished film and send it to Ben's board to watch: How Long-Range Bombers Closed the Atlantic Black Pit in May 1943",
       "taskKeys": [
         "WW2:002"
       ],
-      "required_capabilities": []
+      "required_capabilities": [],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "codex",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "model": "cursor-grok-4-7"
     },
     {
       "id": "J2997",
