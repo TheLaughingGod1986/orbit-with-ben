@@ -104,6 +104,94 @@
     ]
   },
   {
+    "id": "orbit-search-2027-01",
+    "channel": "owb",
+    "title": "Orbit from January: films people search for",
+    "agreed": "2026-11-20",
+    "goal": "Long videos found through search by adults in English-speaking countries, building to thousands of views each.",
+    "why": [
+      "Our topics came from subjects big channels already own, and YouTube rarely shows a 19-subscriber channel beside them.",
+      "Space searches with real demand and weak results exist: 'space mysteries' 134,000 a month (competition 43), 'milky way' 96,000 (38), 'documentary for sleep' 123,000 (44).",
+      "Orbit's Shorts get 100 to 1,300 views each, so they keep running and test topics before a long is made."
+    ],
+    "baseline": {
+      "bestLongViews": 230,
+      "longShowingsTotal": 4050,
+      "longs": 16,
+      "readAt": "2026-11-12"
+    },
+    "steps": [
+      {
+        "id": "research",
+        "name": "First weekly search research",
+        "what": "The searches, countries, results-page gaps and small-channel breakouts for about 50 space subjects, ranked into clusters. Then every Monday.",
+        "when": "2026-12-07T09:00Z",
+        "jobs": [
+          "J3222"
+        ]
+      },
+      {
+        "id": "pick",
+        "name": "Pick January's films",
+        "what": "After the last December result: the winning kind of film plus the top search topics. One line to Ben.",
+        "when": "2026-12-30T18:00Z",
+        "jobs": [
+          "J3219"
+        ]
+      },
+      {
+        "id": "first",
+        "name": "First search-led long, in the illustrated style",
+        "what": "Sunday 10 Jan, 18:00 London. Scored on the same bar: 500 views in 14 days keeps it, under 230 drops it.",
+        "when": "2027-01-10T18:00Z",
+        "jobs": [],
+        "test": {
+          "days": 14,
+          "keep": 500,
+          "drop": 230
+        }
+      },
+      {
+        "id": "weekly",
+        "name": "Two search-led longs a week, four Shorts a week",
+        "what": "Longs on Wed 13, Sun 17, Wed 20, Sun 24, Wed 27 and Sun 31 Jan at 18:00 London, each in a cluster. Shorts four times a week at 11:30 London, from the same clusters.",
+        "when": "2027-01-13T18:00Z",
+        "jobs": []
+      },
+      {
+        "id": "terms",
+        "name": "Our own search terms",
+        "what": "Monthly read of the searches that bring viewers to Orbit; more films in the clusters that grow.",
+        "when": "2027-02-01T09:00Z",
+        "jobs": []
+      },
+      {
+        "id": "review",
+        "name": "Six-week review",
+        "what": "Keep two a week if search views are growing; if not, options to Ben.",
+        "when": "2027-02-14T18:00Z",
+        "jobs": []
+      }
+    ],
+    "decisions": [
+      {
+        "at": "2026-11-20",
+        "by": "Ben",
+        "text": "From January, choose Orbit films by search demand: English-speaking countries, adult viewers, little competition, weak current results."
+      },
+      {
+        "at": "2026-11-20",
+        "by": "Ben",
+        "text": "The first January long uses the July illustrated style with the Orbit mascot, as a style test."
+      },
+      {
+        "at": "2026-11-20",
+        "by": "Ben",
+        "text": "Run two search-led longs a week from January (Wednesday and Sunday at 18:00 London) plus four Shorts a week."
+      }
+    ]
+  },
+  {
     "id": "ww2-launch-2026-11",
     "channel": "ww2",
     "title": "Starting our WW2 documentary channel",

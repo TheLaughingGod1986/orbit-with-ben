@@ -6,18 +6,16 @@ Linked from `AGENTS.md`. When this conflicts with older notes in `_archive/` or 
 
 ---
 
-## 1. Neighbour rule (topic lock)
+## 1. Search-led topic method from 1 Jan 2027 (replaces 1 Oct 2026 neighbour gate · Ben, 20 Nov 2026)
 
-Every film needs **at least three** big education or space videos (**≈1M+ views**) on its topic **before topic lock**.
+Effective for Orbit topics locked from **1 Jan 2027** (Ben, 20 Nov 2026 · `J3222`: *"It sounds like a very strong, sensible idea. I think we should go ahead and implement this from after the test in December. ... starting from January, have this new method of researching films, find if they fit in the Anglosphere, the demands on the field, if they're adult films, and if they've got high view rates."*), the 8-step **search-led topic method** (`STUDIO_PLAYBOOK.md` §2, `05_Analytics/LEARNINGS.md` rule 37) replaces the 1 Oct 2026 neighbour pass as the blocking gate: demand (10k–150k/mo, comp ≤45), Anglosphere adult value + RPM proxy, signed-out top-10 gap, small-channel (<50k subs, ≥5×) outlier proof, package first (query words + hook; 3 titles + 2 thumb ideas before script), 3–4 clusters × 5–10 films, Shorts as tests, and monthly own search-terms review.
 
-- Log them in `00_Brand/Channel-Setup/templates/TOPIC_OPPORTUNITY_SCORE.md` and the project's `PRE_BUILD_VIDIQ_AUDIT.md`.
-- Reuse their **subject words** in title, description and tags.
-- **Never** put their channel names in the public listing.
-- A strong neighbour pool is evidence for Ben. It does **not** pick the topic.
+- The 1 Oct 2026 **neighbour list** (≥3 ≈1M+ education/space videos on the topic) becomes a **tie-breaker only**.
+- Log all search-led fields (and optional neighbour tie-breaker rows) in `00_Brand/Channel-Setup/templates/TOPIC_OPPORTUNITY_SCORE.md` and the project's `PRE_BUILD_VIDIQ_AUDIT.md`.
+- Reuse neighbour **subject words** in description and tags where helpful; **never** put channel names in the public listing.
+- December's three format tests (readouts 22/26/30 Dec) and Rule 34's pause on new single-question longs remain unchanged.
 
-**Evidence:** HOS 002 gets **55.6%** of its views Suggested from TED-Ed's Mendeleev video. Orbit should chase the same Suggested / related neighbourhood pattern with education peers (Kurzgesagt, TED-Ed, Veritasium, SciShow Space, PBS Space Time, NASA, Crash Course, BBC Earth Science, and peers).
-
-Full step: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` §2. Audit example: `00_Brand/Channel-Setup/audits/neighbour_pass_2026-10-01/REPORT.md`.
+Full steps: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` §2. Historical neighbour audit: `00_Brand/Channel-Setup/audits/neighbour_pass_2026-10-01/REPORT.md`.
 
 ---
 
