@@ -290419,18 +290419,23 @@
           "at": "2026-11-20T15:37Z",
           "by": "cursor",
           "what": "step 1 of 4 done: Score is 535.33 s. Part loudness spread is 0.00 dB. Bed sits 12 LU under the narration. Music-library comparison is running."
+        },
+        {
+          "at": "2026-11-20T15:42Z",
+          "by": "cursor",
+          "what": "step 3 of 4 done: Music gate passed: 94 comparisons, max similarity 0.2835, no unreadable files. Mini and NAS hashes match on 18 files."
         }
       ],
-      "remaining_action": "Run the full music library comparison on the new score",
+      "remaining_action": "Commit the score record and open the pull request",
       "due": "2026-11-21T06:00:00Z",
       "kind": "assembly",
       "plain": "Synthesize HOS 009 final bounded GBP0 full-runtime warm chamber score v04_synth (0-535.33s) and verify complete-library music_gate and Mini/NAS parity.",
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-20T15:37Z",
+        "at": "2026-11-20T15:42Z",
         "by": "cursor",
-        "note": "Score is 535.33 s. Part loudness spread is 0.00 dB. Bed sits 12 LU under the narration. Music-library comparison is runn"
+        "note": "Music gate passed: 94 comparisons, max similarity 0.2835, no unreadable files. Mini and NAS hashes match on 18 files."
       },
       "taskKeys": [
         "HOS:009"
