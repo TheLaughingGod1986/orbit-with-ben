@@ -289517,13 +289517,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-20T14:00Z",
-      "eta": "2026-11-20T16:00Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-20T12:06Z",
-      "result": "",
+      "result": "Acting Chief ruling (gemini): condition NOT MET (jobs/reviews/J3228/REVIEW.md @ fc66d51c23, independently reverified 2026-11-20T13:58Z). J3139-J3174 merged offline music billing-guard and disabled-flight hardening on HOS origin/main through PR 681 (3211c7de), but ACTIVATION_AUTHORIZED remains literal False under unproven J3150 pricing bound, J3043/J3045 remains closed unused (J3047), v01/v02 remain rejected (J2808), 0 v03 files exist on Mini/NAS, and ElevenLabs ledger is untouched (0 POSTs, 0 credits, GBP 0). Recorded wait on J2035 (--type input --recheck J3228, next check 2026-11-21T12:00:00Z), queued concrete follow-up Chief decision J3233 for post-J3174 compliant replacement score route, and verified all preserved picture/VO/diagram/music lock hashes byte-for-byte intact across Mini and NAS. GBP 0.",
       "history": [
         {
           "at": "2026-11-20T12:06Z",
@@ -289574,6 +289574,11 @@
           "at": "2026-11-20T14:00Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-20T14:01Z",
+          "by": "gemini",
+          "what": "done: Acting Chief ruling (gemini): condition NOT MET (jobs/reviews/J3228/REVIEW.md @ fc66d51c23, independently reverified 2026-11-20T13:58Z). J3139-J3174 merged offline music billing-guard and disabled-flight hardening on HOS origin/main through PR 681 (3211c7de), but ACTIVATION_AUTHORIZED remains literal False under unproven J3150 pricing bound, J3043/J3045 remains closed unused (J3047), v01/v02 remain rejected (J2808), 0 v03 files exist on Mini/NAS, and ElevenLabs ledger is untouched (0 POSTs, 0 credits, GBP 0). Recorded wait on J2035 (--type input --recheck J3228, next check 2026-11-21T12:00:00Z), queued concrete follow-up Chief decision J3233 for post-J3174 compliant replacement score route, and verified all preserved picture/VO/diagram/music lock hashes byte-for-byte intact across Mini and NAS. GBP 0."
         }
       ],
       "remaining_action": "Elected Chief (codex): record jobs.py wait J2035 --type input --recheck J3228 (next check 2026-11-21T12:00:00Z) and close J3228",
