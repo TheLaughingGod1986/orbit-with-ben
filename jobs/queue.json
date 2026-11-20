@@ -291816,7 +291816,7 @@
     {
       "id": "J3251",
       "title": "Orbit Jan search-led pick: top-10 results gap (space mysteries / milky way / andromeda), draft script, SOURCES.md and packaging brief",
-      "needs": "cloud",
+      "needs": "mini",
       "repo": "owb",
       "body": "**Carry-over from J3219 (Gemini, elected acting Chief, 20 Nov 2026).** PR #1065 (Journey 2 and Sleep 2 outlines, readout sheet, provisional ranking) and PR #1067 (December title query check, `jobs/reviews/J3219/TITLE_QUERY_CHECK.md`) are merged, and `05_Analytics/tests/FORMAT_TESTS_READOUT_2026-12.md` is synced with Ben's 20 Nov style test and the all-three-under-230 branch. J3219 was blocked twice on the MacBook because WebSearch is refused there; this job is pinned `--needs cloud --mini-only` so only a web-capable lane (Claude cloud or Mini Gemini) takes it.\n\n**Budget and guards (£0 cash; 0 additional vidIQ credits).**\n- Do **not** spend any more vidIQ credits: Claude's 20 Nov vidIQ pass already spent 25 credits (past J3219's 15-credit cap). Use those saved vidIQ numbers below and free web/signed-out YouTube checks only.\n- **Draft only:** nothing is voiced, locked, uploaded, or scheduled before the 22/26/30 Dec format readouts (LEARNINGS rule 34). No paused single-question long is locked, scripted or built.\n\n**Saved vidIQ pass (Claude, 20 Nov 2026, monthly searches / competition 0-100, lower is easier):**\n- Leading January candidates: `'space mysteries'` 134k/43; `'milky way'` 96k/38; `'andromeda galaxy'` 55k/37.\n- Other noted low-comp queries: `'documentary for sleep'` 123k/44; `'space sounds'` 48k/40; `'fall asleep documentary'` 35k/35; `'universe size'` 23k/43 (+94%); `'pluto planet'` 20k/43 (+76%); `'laniakea supercluster'` 17k/32; `'mars rover footage'` 16k/41.\n- Dropped: the star-types candidate (`'every type of star'` 6.7k/34, `'types of stars'` 3.7k/35).\n- Crowded: `'space'` 2.0M/75; `'nasa'` 640k/69; `'universe'` 585k/72; `'solar system'` 333k/68; `'how big is the universe'` 66k/66; `'mars rover'` 31k/60.\n\n**Do (steps 1-3):**\n1. **Top-10 results gap + J3222 steps 2-4 check** on the three leading candidates (`'space mysteries'`, `'milky way'`, `'andromeda galaxy'`):\n   - Read the signed-out top 10 YouTube results for each query (age, views, channel size; count old 3+ yr, weak, off-target, or small-channel results).\n   - Check Anglosphere (US/UK/CA/AU) adult intent (skip kids/made-for-kids queries) and small-channel (<50k subs, >=5x usual views in last 12 months) breakout proof using web evidence (0 extra vidIQ credits).\n   - Write `jobs/reviews/J3219/SEARCH_LED_PICK_2027-01.md`: table ranked by `volume x (100 - competition) x gap`, stating which format under test each fits, the winning topic with the weakest top-10 results, and the top three search-led film ideas with query-first titles (query's own words at the front).\n2. **Draft script, `SOURCES.md`, and packaging brief for the winner:**\n   - Draft script at the every-planet explainer's length and style (~10 min / ~1,200-1,300 spoken words, `npm run review:script` >= 90, proof-first hook under 0:30, DATA+SCALE >= 3, WHO cards, WHEN call-outs/timeline, FACT 2-4). Save as a draft under `jobs/reviews/J3219/` (do not lock or open a production folder stage until its format passes on 30 Dec).\n   - `SOURCES.md` with primary URLs and exact verified quotes copied from live web pages for every spoken number, date, WHO lifespan, DATA/SCALE and FACT claim.\n   - Packaging brief: 3 query-first titles (<=70 chars, query words at front) and 2 thumbnail ideas, explicitly noting that the **first January long (Sun 10 Jan 2027, 18:00 London)** is also Ben's **July illustrated style test** (the bold explainer look of Orbit's first alien-meeting film: illustrated animated art, Orbit mascot on screen in-film — still never on a thumbnail — and on-screen timestamp; exact path in `jobs/reviews/J3219/CHIEF_REVIEW.md`).\n3. **Sync readout sheet:** update the January prepared-film pick line in `05_Analytics/tests/FORMAT_TESTS_READOUT_2026-12.md` with the winning search-led draft path and title.\n\nOpen a PR with all deliverables and paste the `review:script` score and exact verification outputs in the job result.\n",
       "ref": "J3219",
@@ -291836,13 +291836,27 @@
           "at": "2026-11-20T21:18Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-20T21:21Z",
+          "by": "relay",
+          "what": "rerouted to gemini on gemini-argon: Claude out of usage (Claude said it's out of usage until 2026-11-20T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Top-10 results gap + J3222 steps 2-4 check on space mysteries, milky way and andromeda (£0, 0 extra vidIQ credits), then draft script, SOURCES.md and packaging brief",
       "due": "2026-12-05T18:00:00Z",
       "kind": "script",
       "plain": "Pick Orbit's top January search topic and draft its script, sources and packaging",
-      "mini_only": true
+      "mini_only": true,
+      "rerouted_from": {
+        "needs": "cloud",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
