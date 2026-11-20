@@ -291293,10 +291293,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-20T18:53Z",
+      "eta": "2026-11-20T20:53Z",
       "created_by": "claude",
       "created_at": "2026-11-20T18:52Z",
       "result": "",
@@ -291305,13 +291305,26 @@
           "at": "2026-11-20T18:52Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-20T18:53Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Grok ack window 180 min; ruling posts naming a duty job clear the stall; duties posted only on change; record Grok rulings; board credits Grok; tests; PR",
       "due": "2026-11-21T18:00:00Z",
       "kind": "assembly",
       "plain": "Fix the system so it sees Grok's work, and stop it posting the same duty list every few minutes",
-      "urgent": 6
+      "urgent": 6,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-20T18:53Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
