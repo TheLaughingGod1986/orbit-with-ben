@@ -1,37 +1,44 @@
 # History of Science: channel tracker
 
-Generated from the 2026-11-19 snapshot by `npm run analytics:report`. Don't edit by hand.
+Generated from the 2026-11-20 snapshot by `npm run analytics:report`. Don't edit by hand.
 
-**6 subscribers · 4,284 views · 40 videos**
+**6 subscribers · 4,387 views · 40 videos**
 
 | Growth | Views | Subscribers |
 |---|---:|---:|
-| Last 24 hours | +66 | 0 |
-| Last 7 days | +503 | 0 |
-| Last 30 days | +2,281 | +5 |
+| Last 24 hours | +103 | 0 |
+| Last 7 days | +528 | 0 |
+| Last 30 days | +2,361 | +4 |
 
 ## Top videos, last 24 hours
 
-Public view-count change, snapshot 2026-11-18 to 2026-11-19.
+Public view-count change, snapshot 2026-11-19 to 2026-11-20.
 
 | Video | Format | Views | Share |
 |---|---|---:|---:|
-| [What Is Dalton's Atomic Theory?](https://www.youtube.com/shorts/xzKoHg0E0_U) | short | +49 | 74.2% |
-| [What Was the Edward Jenner Experiment?](https://www.youtube.com/shorts/cLKDiYP55J8) | short | +9 | 13.6% |
-| [What Is the Pasteur Swan Neck Flask Experiment?](https://www.youtube.com/shorts/-3L6HzJ_d_4) | short | +5 | 7.6% |
-| [Why Is It Called a Vaccine?](https://www.youtube.com/shorts/xgx2lYHhYZM) | short | +1 | 1.5% |
-| [The Blood Vessels Finer Than a Hair](https://www.youtube.com/shorts/Wvjd8g0CpzE) | short | +1 | 1.5% |
-| [Microbes in a drop of pond water](https://www.youtube.com/shorts/iqToagXnjX0) | short | +1 | 1.5% |
-| Other videos (34) | | 0 | 0.0% |
-| **Channel total, last 24 hours** | | **+66** | **100.0%** |
+| [What Is Dalton's Atomic Theory?](https://www.youtube.com/shorts/xzKoHg0E0_U) | short | +19 | 18.4% |
+| [Germs hitch a ride on you](https://www.youtube.com/shorts/8_Edn_HCi1s) | short | +4 | 3.9% |
+| [How Do Plants Clean the Air?](https://www.youtube.com/shorts/ChbsigHD5_o) | short | +3 | 2.9% |
+| [How Was Phosphorus Discovered?](https://www.youtube.com/shorts/oKqmnJNGiHg) | short | +3 | 2.9% |
+| [Why Is It Called a Vaccine?](https://www.youtube.com/shorts/xgx2lYHhYZM) | short | +2 | 1.9% |
+| [How Was the First Vaccine Made? (And Why It's Named After a Cow)](https://www.youtube.com/watch?v=ETynHpIYLeY) | long | +2 | 1.9% |
+| [Why Do Veins Have Valves?](https://www.youtube.com/shorts/xHnIi9GqOsM) | short | +1 | 1.0% |
+| [The Tied Arm That Proved Your Blood Circulates](https://www.youtube.com/watch?v=wwcjcFfC-5M) | long | +1 | 1.0% |
+| [What Is the Pasteur Swan Neck Flask Experiment?](https://www.youtube.com/shorts/-3L6HzJ_d_4) | short | +1 | 1.0% |
+| [What happens if you keep cutting gold in half?](https://www.youtube.com/shorts/29bpGAI0wb8) | short | +1 | 1.0% |
+| Other videos (30) | | 0 | 0.0% |
+| Not matched to a listed video | | +66 | 64.1% |
+| **Channel total, last 24 hours** | | **+103** | **100.0%** |
+
+YouTube's channel view total and its per-video counts refresh at different times, and a video made private or removed since keeps its views in the channel total. That difference is the unmatched row; nothing here is estimated.
 
 ## Week on week (weeks start Monday)
 
 | Week of | Views | vs previous | Watch hours | vs previous | Subscribers | Uploads |
 |---|---:|---:|---:|---:|---:|---:|
-| 2026-11-16 (so far, to 11-16) | 106 | – | 0.2 | – | 0 | 3 |
-| 2026-11-09 | 306 | -22% | 1.2 | -13% | 0 | 3 |
-| 2026-11-02 | 394 | -55% | 1.4 | -17% | 0 | 4 |
+| 2026-11-16 (so far, to 11-17) | 176 | +487% | 0.3 | – | 0 | 3 |
+| 2026-11-09 | 305 | -22% | 1.2 | -13% | 0 | 3 |
+| 2026-11-02 | 390 | -55% | 1.4 | -17% | 0 | 4 |
 | 2026-10-26 | 872 | +59% | 1.7 | +48% | +3 | 7 |
 | 2026-10-19 | 549 | -62% | 1.1 | -57% | +2 | 4 |
 | 2026-10-12 | 1,448 | – | 2.6 | – | 0 | 4 |
@@ -46,7 +53,7 @@ Public view-count change, snapshot 2026-11-18 to 2026-11-19.
 
 | Month | Views | vs previous | Watch hours | vs previous | Subscribers | Uploads |
 |---|---:|---:|---:|---:|---:|---:|
-| 2026-11 (so far, to 11-16) | 931 | -32% | 3 | +2% | +2 | 11 |
+| 2026-11 (so far, to 11-17) | 996 | -30% | 3.1 | +3% | +2 | 11 |
 | 2026-10 | 2,769 | +372% | 5.7 | +277% | +3 | 14 |
 | 2026-09 | 587 | – | 1.5 | – | +1 | 15 |
 | 2026-08 (part) | 0 | – | 0 | – | 0 | 0 |
@@ -55,8 +62,8 @@ A period still running is compared with the same number of days at the start of 
 
 ## Where views come from (last 28 days)
 
-- **Shorts:** Shorts feed 64% · YouTube search 34% · Other YouTube pages 1% · Direct / unknown 0% (1,889 views)
-- **Longs:** YouTube search 34% · Suggested 34% · Direct / unknown 17% · Other sites 6% (53 views)
+- **Shorts:** Shorts feed 62% · YouTube search 37% · Other YouTube pages 1% · Direct / unknown 0% (1,834 views)
+- **Longs:** YouTube search 36% · Suggested 30% · Direct / unknown 17% · Other sites 6% (53 views)
 
 ## Where viewers leave (longs, lifetime)
 
@@ -64,43 +71,43 @@ A period still running is compared with the same number of days at the start of 
 
 | Long | Views | 0:15 | 0:30 | 1:00 | 2:00 | Halfway | End | First 30 s vs similar videos |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
-| [How Was the First Vaccine Made? (And Why It's Named After a Cow)](https://youtu.be/ETynHpIYLeY) | 5 | – | – | – | – | – | – | too few views |
+| [How Was the First Vaccine Made? (And Why It's Named After a Cow)](https://youtu.be/ETynHpIYLeY) | 7 | – | – | – | – | – | – | too few views |
 | [The Willow Tree That Was Made of Air](https://youtu.be/VbPubYd6Fbs) | 14 | – | – | – | – | – | – | too few views |
-| [The Tied Arm That Proved Your Blood Circulates](https://youtu.be/wwcjcFfC-5M) | 5 | – | – | – | – | – | – | too few views |
-| [What's Inside an Atom? Mostly Empty Space](https://youtu.be/GHZDsiH7L7A) | 35 | 60% | 47% | 39% | 32% | 21% | 16% | lower |
+| [The Tied Arm That Proved Your Blood Circulates](https://youtu.be/wwcjcFfC-5M) | 6 | – | – | – | – | – | – | too few views |
+| [What's Inside an Atom? Mostly Empty Space](https://youtu.be/GHZDsiH7L7A) | 35 | 62% | 45% | 37% | 30% | 20% | 15% | lower |
 | [How Did We Discover X-rays?](https://youtu.be/frP_YrNShsU) | 5 | – | – | – | – | – | – | too few views |
-| [How Did We Discover the Periodic Table?](https://youtu.be/AL_-qlWko_g) | 162 | 71% | 51% | 43% | 24% | 18% | 13% | lower |
+| [How Did We Discover the Periodic Table?](https://youtu.be/AL_-qlWko_g) | 162 | 70% | 50% | 44% | 23% | 18% | 12% | lower |
 | [How Did We Discover Germs?](https://youtu.be/_C92tIJCk8A) | 7 | – | – | – | – | – | – | too few views |
 
 ## Every video (newest first)
 
 | Published | Title | Format | Views | +1 day | +7 days | +30 days | Views/day | Avg % viewed (28 d) | Feed share, day 1 | Top source (28 d) |
 |---|---|---|---:|---:|---:|---:|---:|---:|---:|---|
-| 2026-11-18 | [How Do Plants Clean the Air?](https://youtu.be/ChbsigHD5_o) | short | 0 | 0 | 0 | 0 | 0 | – | – | – |
-| 2026-11-17 | [Why Is It Called a Vaccine?](https://youtu.be/xgx2lYHhYZM) | short | 2 | +1 | +2 | +2 | 1 | – | – | – |
-| 2026-11-16 | [What Is Dalton's Atomic Theory?](https://youtu.be/xzKoHg0E0_U) | short | 189 | +49 | +189 | +189 | 63 | 56% | 14% | YouTube search |
-| 2026-11-15 | [The Blood Vessels Finer Than a Hair](https://youtu.be/Wvjd8g0CpzE) | short | 215 | +1 | +215 | +215 | 53.8 | 77% | 93% | Shorts feed |
-| 2026-11-13 | [What Was the Edward Jenner Experiment?](https://youtu.be/cLKDiYP55J8) | short | 43 | +9 | +43 | +43 | 7.2 | 63% | 19% | YouTube search |
-| 2026-11-12 | [How Was the First Vaccine Made? (And Why It's Named After a Cow)](https://youtu.be/ETynHpIYLeY) | long | 5 | 0 | +5 | +5 | 0.7 | 28% | – | YouTube search |
-| 2026-11-08 | [One Tight Band Proved Your Blood Goes Round](https://youtu.be/PFj6172YU4Q) | short | 221 | 0 | +6 | +221 | 20.1 | 62% | 89% | Shorts feed |
-| 2026-11-05 | [The Willow Tree That Was Made of Air](https://youtu.be/VbPubYd6Fbs) | long | 14 | 0 | +10 | +14 | 1 | 54% | – | YouTube search |
-| 2026-11-05 | [Why Do Veins Have Valves?](https://youtu.be/xHnIi9GqOsM) | short | 41 | 0 | 0 | +41 | 2.9 | 62% | 87% | Shorts feed |
-| 2026-11-03 | [The Four Elements Were Wrong](https://youtu.be/qW2OsD4mujc) | short | 34 | 0 | 0 | +34 | 2.1 | 193% | 9% | YouTube search |
-| 2026-11-01 | [Why Gold Foil Bounced Rutherford's Particles Back](https://youtu.be/pWySvZsneZg) | short | 137 | 0 | 0 | +137 | 7.6 | 112% | 45% | YouTube search |
-| 2026-10-31 | [Is the Heart a Pump?](https://youtu.be/BW_CFAX-mxc) | short | 89 | 0 | 0 | +89 | 4.7 | 82% | 75% | Shorts feed |
-| 2026-10-30 | [Your Heart Pumps More Blood Than You Have](https://youtu.be/Rl2uZ-KOTl8) | short | 78 | 0 | 0 | +78 | 3.9 | 54% | 85% | Shorts feed |
-| 2026-10-29 | [The Tied Arm That Proved Your Blood Circulates](https://youtu.be/wwcjcFfC-5M) | long | 5 | 0 | 0 | +5 | 0.2 | 9% | – | Suggested |
-| 2026-10-28 | [Are Marie Curie's Notebooks Still Radioactive?](https://youtu.be/AMSriTQ-lcQ) | short | 274 | 0 | 0 | +274 | 12.5 | 77% | 86% | Shorts feed |
-| 2026-10-27 | [What Is the Pasteur Swan Neck Flask Experiment?](https://youtu.be/-3L6HzJ_d_4) | short | 137 | +5 | +14 | +137 | 6 | 75% | 13% | YouTube search |
-| 2026-10-26 | [How Did John Snow Stop Cholera?](https://youtu.be/OnJ8MFu0Mi0) | short | 231 | 0 | 0 | +231 | 9.6 | 66% | 95% | Shorts feed |
+| 2026-11-18 | [How Do Plants Clean the Air?](https://youtu.be/ChbsigHD5_o) | short | 3 | +3 | +3 | +3 | 1.5 | – | – | – |
+| 2026-11-17 | [Why Is It Called a Vaccine?](https://youtu.be/xgx2lYHhYZM) | short | 4 | +2 | +4 | +4 | 1.3 | – | – | – |
+| 2026-11-16 | [What Is Dalton's Atomic Theory?](https://youtu.be/xzKoHg0E0_U) | short | 208 | +19 | +208 | +208 | 52 | 55% | 12% | YouTube search |
+| 2026-11-15 | [The Blood Vessels Finer Than a Hair](https://youtu.be/Wvjd8g0CpzE) | short | 215 | 0 | +215 | +215 | 43 | 77% | 93% | Shorts feed |
+| 2026-11-13 | [What Was the Edward Jenner Experiment?](https://youtu.be/cLKDiYP55J8) | short | 43 | 0 | +43 | +43 | 6.1 | 61% | 19% | YouTube search |
+| 2026-11-12 | [How Was the First Vaccine Made? (And Why It's Named After a Cow)](https://youtu.be/ETynHpIYLeY) | long | 7 | +2 | +7 | +7 | 0.9 | 28% | – | YouTube search |
+| 2026-11-08 | [One Tight Band Proved Your Blood Goes Round](https://youtu.be/PFj6172YU4Q) | short | 221 | 0 | +5 | +221 | 18.4 | 62% | 89% | Shorts feed |
+| 2026-11-05 | [The Willow Tree That Was Made of Air](https://youtu.be/VbPubYd6Fbs) | long | 14 | 0 | +4 | +14 | 0.9 | 54% | – | YouTube search |
+| 2026-11-05 | [Why Do Veins Have Valves?](https://youtu.be/xHnIi9GqOsM) | short | 42 | +1 | +1 | +42 | 2.8 | 62% | 87% | Shorts feed |
+| 2026-11-03 | [The Four Elements Were Wrong](https://youtu.be/qW2OsD4mujc) | short | 34 | 0 | 0 | +34 | 2 | 193% | 9% | YouTube search |
+| 2026-11-01 | [Why Gold Foil Bounced Rutherford's Particles Back](https://youtu.be/pWySvZsneZg) | short | 137 | 0 | 0 | +137 | 7.2 | 112% | 45% | YouTube search |
+| 2026-10-31 | [Is the Heart a Pump?](https://youtu.be/BW_CFAX-mxc) | short | 89 | 0 | 0 | +89 | 4.5 | 82% | 75% | Shorts feed |
+| 2026-10-30 | [Your Heart Pumps More Blood Than You Have](https://youtu.be/Rl2uZ-KOTl8) | short | 78 | 0 | 0 | +78 | 3.7 | 54% | 85% | Shorts feed |
+| 2026-10-29 | [The Tied Arm That Proved Your Blood Circulates](https://youtu.be/wwcjcFfC-5M) | long | 6 | +1 | +1 | +6 | 0.3 | 9% | – | Suggested |
+| 2026-10-28 | [Are Marie Curie's Notebooks Still Radioactive?](https://youtu.be/AMSriTQ-lcQ) | short | 274 | 0 | 0 | +274 | 11.9 | 77% | 86% | Shorts feed |
+| 2026-10-27 | [What Is the Pasteur Swan Neck Flask Experiment?](https://youtu.be/-3L6HzJ_d_4) | short | 138 | +1 | +11 | +138 | 5.8 | 75% | 13% | YouTube search |
+| 2026-10-26 | [How Did John Snow Stop Cholera?](https://youtu.be/OnJ8MFu0Mi0) | short | 231 | 0 | 0 | +231 | 9.2 | 66% | 95% | Shorts feed |
 | 2026-10-23 | [What Are Cathode Rays?](https://youtu.be/LCZRHUyTiq0) | short | 49 | 0 | 0 | +49 | 1.8 | 50% | 67% | Shorts feed |
-| 2026-10-21 | [How Was Phosphorus Discovered?](https://youtu.be/oKqmnJNGiHg) | short | 190 | 0 | +7 | +190 | 6.6 | 87% | 77% | Shorts feed |
-| 2026-10-20 | [The spray that stopped surgery killing patients](https://youtu.be/clV6E10NLPw) | short | 155 | 0 | +2 | +155 | 5.2 | 59% | 86% | YouTube search |
-| 2026-10-19 | [Who Discovered Infrared Light?](https://youtu.be/c2q7w0pgcn8) | short | 138 | 0 | 0 | +55 | 4.5 | 95% | 82% | YouTube search |
-| 2026-10-18 | [He said every eighth element repeats](https://youtu.be/TbMMJSRKC3U) | short | 62 | 0 | 0 | +13 | 1.9 | 196% | 46% | YouTube search |
-| 2026-10-16 | [What happens if you keep cutting gold in half?](https://youtu.be/29bpGAI0wb8) | short | 1,227 | 0 | +1 | +10 | 36.1 | 57% | 93% | YouTube search |
-| 2026-10-15 | [What's Inside an Atom? Mostly Empty Space](https://youtu.be/GHZDsiH7L7A) | long | 35 | 0 | +3 | +14 | 1 | 50% | – | Suggested |
-| 2026-10-13 | [Invisible life is still everywhere](https://youtu.be/qOZgess30h0) | short | 169 | 0 | 0 | +1 | 4.6 | 0% | 91% | YouTube search |
+| 2026-10-21 | [How Was Phosphorus Discovered?](https://youtu.be/oKqmnJNGiHg) | short | 193 | +3 | +10 | +193 | 6.4 | 78% | 77% | Shorts feed |
+| 2026-10-20 | [The spray that stopped surgery killing patients](https://youtu.be/clV6E10NLPw) | short | 155 | 0 | +2 | +29 | 5 | 67% | 86% | YouTube search |
+| 2026-10-19 | [Who Discovered Infrared Light?](https://youtu.be/c2q7w0pgcn8) | short | 138 | 0 | -1 | +23 | 4.3 | 93% | 82% | YouTube search |
+| 2026-10-18 | [He said every eighth element repeats](https://youtu.be/TbMMJSRKC3U) | short | 62 | 0 | 0 | +7 | 1.9 | 196% | 46% | YouTube search |
+| 2026-10-16 | [What happens if you keep cutting gold in half?](https://youtu.be/29bpGAI0wb8) | short | 1,228 | +1 | +2 | +11 | 35.1 | 57% | 93% | YouTube search |
+| 2026-10-15 | [What's Inside an Atom? Mostly Empty Space](https://youtu.be/GHZDsiH7L7A) | long | 35 | 0 | +2 | +14 | 1 | 49% | – | Suggested |
+| 2026-10-13 | [Invisible life is still everywhere](https://youtu.be/qOZgess30h0) | short | 169 | 0 | 0 | +1 | 4.4 | 0% | 91% | YouTube search |
 | 2026-09-27 | [The first X-ray showed a wedding ring](https://youtu.be/zI_eD3vFWmE) | short | 9 | 0 | 0 | +1 | 0.2 | 96% | 0% | Channel page |
 | 2026-09-26 | [How did Röntgen see bones without cutting](https://youtu.be/xvanpsLeADE) | short | 40 | 0 | 0 | +1 | 0.7 | 36% | 23% | YouTube search |
 | 2026-09-25 | [How X-rays Were Discovered by Accident](https://youtu.be/oowAOWTBoq0) | short | 32 | 0 | 0 | +5 | 0.6 | 2706% | 50% | YouTube search |
@@ -108,12 +115,12 @@ A period still running is compared with the same number of days at the start of 
 | 2026-09-22 | [What other table has empty chairs?](https://youtu.be/LanTHJckYx8) | short | 4 | 0 | 0 | 0 | 0.1 | – | 33% | – |
 | 2026-09-21 | [Why tellurium sat before iodine](https://youtu.be/nba0-f7PPeU) | short | 34 | 0 | +2 | +4 | 0.6 | 16% | 38% | YouTube search |
 | 2026-09-20 | [Gallium sat where the table said](https://youtu.be/CnHwX1L9XHg) | short | 16 | 0 | 0 | 0 | 0.3 | – | 53% | – |
-| 2026-09-19 | [He predicted a metal before it was found](https://youtu.be/nFQRWmpulTQ) | short | 34 | 0 | 0 | +1 | 0.6 | 97% | 10% | Channel page |
-| 2026-09-18 | [The periodic table's empty chairs](https://youtu.be/uU12JA5rMWg) | short | 30 | 0 | 0 | +1 | 0.5 | – | 8% | – |
-| 2026-09-17 | [How Did We Discover the Periodic Table?](https://youtu.be/AL_-qlWko_g) | long | 162 | 0 | +1 | +14 | 2.6 | 23% | – | Suggested |
+| 2026-09-19 | [He predicted a metal before it was found](https://youtu.be/nFQRWmpulTQ) | short | 34 | 0 | 0 | +1 | 0.5 | 97% | 10% | Channel page |
+| 2026-09-18 | [The periodic table's empty chairs](https://youtu.be/uU12JA5rMWg) | short | 30 | 0 | 0 | 0 | 0.5 | – | – | – |
+| 2026-09-17 | [How Did We Discover the Periodic Table?](https://youtu.be/AL_-qlWko_g) | long | 162 | 0 | +1 | +14 | 2.5 | 23% | – | YouTube search |
 | 2026-09-06 | [A flask that proved germs come from outside](https://youtu.be/sILtQxgYQk8) | short | 24 | 0 | 0 | 0 | 0.3 | – | – | – |
-| 2026-09-06 | [Germs hitch a ride on you](https://youtu.be/8_Edn_HCi1s) | short | 32 | 0 | +2 | +3 | 0.4 | 18% | – | YouTube search |
-| 2026-09-06 | [Microbes in a drop of pond water](https://youtu.be/iqToagXnjX0) | short | 113 | +1 | +1 | +3 | 1.5 | 0% | – | YouTube search |
+| 2026-09-06 | [Germs hitch a ride on you](https://youtu.be/8_Edn_HCi1s) | short | 36 | +4 | +6 | +7 | 0.5 | 62% | – | Shorts feed |
+| 2026-09-06 | [Microbes in a drop of pond water](https://youtu.be/iqToagXnjX0) | short | 113 | 0 | +1 | +3 | 1.5 | 0% | – | YouTube search |
 | 2026-09-06 | [Germs don't cast a shadow](https://youtu.be/H1y0DXFVmw8) | short | 80 | 0 | 0 | +2 | 1.1 | 48% | – | YouTube search |
 | 2026-09-03 | [How Did We Discover Germs?](https://youtu.be/_C92tIJCk8A) | long | 7 | 0 | 0 | 0 | 0.1 | – | – | – |
 
@@ -127,10 +134,11 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [What Is Dalton's Atomic Theory?](https://youtu.be/xzKoHg0E0_U) | 2 d | 146 | 50.5% | WATCH | 54.8% | WATCH |
-| [The Blood Vessels Finer Than a Hair](https://youtu.be/Wvjd8g0CpzE) | 3 d | 215 | 14.6% | MISS | 76.6% | PASS |
-| [What Was the Edward Jenner Experiment?](https://youtu.be/cLKDiYP55J8) | 5 d | 35 | 38.1% | too few to judge | 60.8% | too few to judge |
-| [One Tight Band Proved Your Blood Goes Round](https://youtu.be/PFj6172YU4Q) | 10 d | 221 | 16.7% | MISS | 61.5% | WATCH |
-| [Why Do Veins Have Valves?](https://youtu.be/xHnIi9GqOsM) | 13 d | 41 | 20.6% | too few to judge | 61.5% | too few to judge |
+| [How Do Plants Clean the Air?](https://youtu.be/ChbsigHD5_o) | 44 h (early) | 3 | - | no read | 8.0% | too few to judge |
+| [Why Is It Called a Vaccine?](https://youtu.be/xgx2lYHhYZM) | 2 d | 4 | 100.0% | too few to judge | 60.0% | too few to judge |
+| [What Is Dalton's Atomic Theory?](https://youtu.be/xzKoHg0E0_U) | 3 d | 208 | 52.0% | WATCH | 60.0% | WATCH |
+| [The Blood Vessels Finer Than a Hair](https://youtu.be/Wvjd8g0CpzE) | 4 d | 216 | 14.6% | MISS | 76.0% | PASS |
+| [What Was the Edward Jenner Experiment?](https://youtu.be/cLKDiYP55J8) | 6 d | 43 | 40.9% | too few to judge | 64.0% | too few to judge |
+| [One Tight Band Proved Your Blood Goes Round](https://youtu.be/PFj6172YU4Q) | 11 d | 225 | 16.7% | MISS | 61.0% | WATCH |
 
 Stayed to watch: 0 of 3 judged Shorts at 60%+. Average viewed: 1 of 3 at 70%+.
