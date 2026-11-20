@@ -272047,18 +272047,23 @@
           "at": "2026-11-20T06:45Z",
           "by": "codex",
           "what": "step 3 of 4 done: Three direct exporters now validate the active ledger destination; 10 offline boundary/replay tests pass. Full runner regression checks running; no live marker or spend."
+        },
+        {
+          "at": "2026-11-20T06:49Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: HOS PR 688 at 9c0c6b5e guards all three standalone spend exporters; 29 focused tests pass, broad failures identical to baseline. OWB PR 1011 now 34ef7c6a78; no live changes."
         }
       ],
-      "remaining_action": "Verify direct Flow spend exporters and add their migration safeguard PR to the runbook",
+      "remaining_action": "Finish companion PR checks, board access, machine inventory and final rehearsal before the gated live move",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-20T06:45Z",
+        "at": "2026-11-20T06:49Z",
         "by": "codex",
-        "note": "Three direct exporters now validate the active ledger destination; 10 offline boundary/replay tests pass. Full runner re"
+        "note": "HOS PR 688 at 9c0c6b5e guards all three standalone spend exporters; 29 focused tests pass, broad failures identical to b"
       },
       "taskKeys": [
         "HOS:009",
