@@ -1,5 +1,5 @@
 {
-  "next_id": 3288,
+  "next_id": 3289,
   "jobs": [
     {
       "id": "J0001",
@@ -295473,6 +295473,36 @@
       "taskKeys": [
         "HOS:009"
       ]
+    },
+    {
+      "id": "J3288",
+      "title": "Post Ben's OK'd reply to the viewer comment on the 2024 YR4 Short",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben OK'd this reply (21 Nov 2026, in chat: he asked for the draft, asked for hyphens only, then said \"Ok\").** Post it, exactly as written, as the channel's reply to one viewer comment.\n\nVideo: `93JL_IK57EM` (\"Will Asteroid 2024 YR4 Hit the Moon in 2032?\"). Comment id `UgwcoD7pwv-FGfpHnRJ4AaABAg` by @TheDudeGuy-5o: \"I don't think if it impact the moon it will cause much damage to the moon\".\n\nReply text (nothing added, nothing changed, only the short hyphen, no long dash):\n\n> Fair point - NASA said an impact wouldn't alter the Moon's orbit. A 60-metre rock would still blast out a fresh crater, though Webb observations now show it'll miss by 21,200 km on 22 December 2032.\n\n1. In YouTube Studio (CDP 9223, `reuse_page`, Orbit With Ben), find that comment and check it has no reply from the channel yet. If it has, post nothing and say so.\n2. Post the reply above as a reply to that comment, as Orbit With Ben. Do not like, heart or pin anything. Do not post anything else.\n3. Read it back: the reply shows under the comment with this exact text. Check there is no long dash in it.\n4. Update the line for this comment in `05_Analytics/owb/COMMENT_REPLIES.jsonl` (the J3281 line, action held) by adding a new line with action replied, the reply text and the time. Commit through the usual jobs path (PR #1104 carries the J3281 log; if it has merged, use main).\n5. Post one short note on the studio thread with the read-back. £0. Nothing else public.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-21T13:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T13:00Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Post Ben's OK'd reply to the viewer comment on the 2024 YR4 Short",
+      "due": "2026-11-21T20:00:00Z",
+      "kind": "studio",
+      "plain": "Post the reply Ben approved to a viewer's comment on the asteroid and Moon Short."
     }
   ],
   "focus": [
