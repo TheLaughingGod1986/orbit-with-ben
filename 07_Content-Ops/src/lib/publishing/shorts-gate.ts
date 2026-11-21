@@ -1,4 +1,5 @@
 import { spawnSync } from "child_process";
+import fs from "fs";
 import path from "path";
 
 /**
@@ -20,6 +21,22 @@ export function airDateFor(scheduledAt: Date | null | undefined, now = new Date(
 }
 
 /**
+ * Resolve the channel checkout that owns `packageDir` (the nearest parent holding `studio/channel.json`),
+ * falling back to `fallbackRoot` when the package lives outside a channel checkout or in tests.
+ */
+export function resolveChannelRepo(packageDir: string | undefined, fallbackRoot: string): string {
+  if (!packageDir) return fallbackRoot;
+  let dir = path.resolve(packageDir);
+  for (let i = 0; i < 8; i++) {
+    if (fs.existsSync(path.join(dir, "studio", "channel.json"))) return dir;
+    const parent = path.dirname(dir);
+    if (parent === dir) break;
+    dir = parent;
+  }
+  return fallbackRoot;
+}
+
+/**
  * `lengthTest` is the one Chief-OK'd 50–60 s length-test Short (AGENTS.md → Packaging 5, 11 Oct 2026): the gate's own
  * `--length-test` band (50–60 s, FAIL at 61 s). Every other check still runs.
  */
@@ -32,6 +49,35 @@ export function runShortsGate(
   const args = [
     gate, "check", opts.videoPath, "--air-date", airDate,
     ...(opts.videoId ? ["--id", opts.videoId] : []),
+    ...(opts.lengthTest ? ["--length-test"] : []),
+  ];
+  const r = run("python3", args);
+  return { ok: r.status === 0, exitCode: r.status, airDate, output: `${r.stdout}${r.stderr}`.trim() };
+}
+
+/** Shared current blocking gates for both formats across every registered channel, before credentials or an upload. */
+export function runPublishingGates(
+  opts: {
+    videoPath: string;
+    repoRoot: string;
+    format: "shorts" | "longform";
+    scheduledAt?: Date | null;
+    lengthTest?: boolean;
+    packageDir?: string;
+  },
+  run: GateRunner = defaultRunner,
+): GateResult {
+  const airDate = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit",
+  }).format(opts.scheduledAt ?? new Date());
+  const channelRepo = resolveChannelRepo(opts.packageDir, opts.repoRoot);
+  const args = [
+    path.join(opts.repoRoot, "scripts/publishing_gates.py"),
+    "--video", opts.videoPath,
+    "--repo", channelRepo,
+    "--format", opts.format === "shorts" ? "short" : "long",
+    "--air-date", airDate,
+    ...(opts.packageDir ? ["--package-dir", opts.packageDir] : []),
     ...(opts.lengthTest ? ["--length-test"] : []),
   ];
   const r = run("python3", args);
