@@ -297396,10 +297396,10 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-21T19:17Z",
+      "eta": "2026-11-21T19:47Z",
       "created_by": "claude",
       "created_at": "2026-11-21T17:37Z",
       "result": "",
@@ -297418,6 +297418,11 @@
           "at": "2026-11-21T19:03Z",
           "by": "claude",
           "what": "rerouted to gemini on gemini-argon: Claude, 21 Nov ~19:05Z: stuck since queued. Kind studio has no Gemini lane, and the other Mini lanes are out (Cursor and Codex out of usage, Claude Code paused while Claude is flagged), so only Gemini is working. Rerouted to Gemini on gemini-argon: the steps are Data API reads and updates with the channel's own login plus records; Studio is not needed."
+        },
+        {
+          "at": "2026-11-21T19:17Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Read back el30-mHiH-0 (expect Private, 22 Nov 11:30Z); if fine clear the banner, else reschedule it; fix ben_alerts first-run, replaced-in-slot and wording",
@@ -297435,7 +297440,15 @@
       },
       "open_claim": true,
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T19:17Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3314",
