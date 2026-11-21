@@ -188980,13 +188980,13 @@
       "stage": "edit",
       "after": "J0862",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-21T16:38Z",
-      "eta": "2026-11-21T18:38Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T01:11Z",
-      "result": "",
+      "result": "Assembled HOS 009 locked Shorts A v01 (43dbeb3a, 25.4s, -14.0 LUFS) and B v01 (e6e5ae3f, 25.5s, -14.3 LUFS) at 936x1664 at GBP0 / 0 credits from verified locked VO/plates/J3241 score + 4 portrait code graphics; 12/12 ship gates PASS (0 waivers, 0 decode errors, pairwise Frame-0 PASS); staged SHA-256-verified copies on NAS + HOS UAT; opened HOS PR #718 (7248b872, check_all.sh ALL PASS); queued non-producer QA successor J3311. No upload/schedule/privacy/Buffer writes.",
       "history": [
         {
           "at": "2026-11-05T01:11Z",
@@ -189327,6 +189327,11 @@
           "at": "2026-11-21T16:55Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Opened HOS PR #718 (7248b872, check_all.sh ALL PASS), queued non-producer QA successor J3311, verified NAS + HOS UAT SHA-256 parity."
+        },
+        {
+          "at": "2026-11-21T16:55Z",
+          "by": "gemini",
+          "what": "done: Assembled HOS 009 locked Shorts A v01 (43dbeb3a, 25.4s, -14.0 LUFS) and B v01 (e6e5ae3f, 25.5s, -14.3 LUFS) at 936x1664 at GBP0 / 0 credits from verified locked VO/plates/J3241 score + 4 portrait code graphics; 12/12 ship gates PASS (0 waivers, 0 decode errors, pairwise Frame-0 PASS); staged SHA-256-verified copies on NAS + HOS UAT; opened HOS PR #718 (7248b872, check_all.sh ALL PASS); queued non-producer QA successor J3311. No upload/schedule/privacy/Buffer writes."
         }
       ],
       "remaining_action": "Complete J2171 handoff",
