@@ -1,5 +1,5 @@
 {
-  "next_id": 3331,
+  "next_id": 3332,
   "jobs": [
     {
       "id": "J0001",
@@ -299103,6 +299103,37 @@
         "OWB:033",
         "OWB:034"
       ]
+    },
+    {
+      "id": "J3331",
+      "title": "Roman Telescope 7 Dec dated-event Short (airs Thu 3 Dec): voice-over, build from free NASA footage, all Shorts gates, park for review",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Approved dated-event Short plan: 02_Video-Projects/_dated_shorts/2026-12-07_roman-telescope-first-images.md (PR #1117 merged at 45336c4a4e; Chief Script PASS in jobs/reviews/J3299/REVIEW.md, 21 Nov 2026). Target slot: Thu 3 Dec 2026 11:30 London (4.4 days before 2026-12-07 20:30 UTC NASA Nancy Grace Roman Space Telescope First Images unveiling; Related video ziKBPJ6FY0U).\n\n1) Record VO via 04_Audio/tools/vo_take.py (eleven_v3, Ben Orbit Narrator, at most 2 takes on existing plan credits — Chief approved) and pass vo_check.py. Natural recorded speed (1.00x, zero atempo). Do NOT insert the draft table's 3.65 s silent instrumental bridge at s05: let all 5 lines flow continuously with room-tone tightening only (<0.4 s between sentences; zero >0.4 s silence in 0-6 s per Rule 39). Apply the pre-approved C7 trim order in §4 (45w Trim 1 -> 39w Trim 2) if VO + ~1.0 s loop tail exceeds 19.0 s (Ben's 19 Nov 16.0-19.0 s band; 20.0 s Rule 16 hard cap) or Line 4 starts past 13.5 s.\n\n2) Stage large NASA downloads and render scratch on the NAS (/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_dated_shorts/2026-12-07_roman-telescope-first-images/) to protect Mini SSD space (~12.4 GB free). Build full-bleed 9:16 (mode: cover, zero blur-pad/bars per J2545) 1080x1920 30fps CFR cut using public-domain caption-free NASA SVS #15121 (15121_HUBROM_VERT_MP4.mp4) / #15081 (15081-_Trailer_Long_Vertical.mp4), local SSD SVS #5587 plain Moon (phases_2026_plain_v_1920p30.mp4 / 2160p30.mp4), NASA/ESA Hubble Ultra Deep Field (GSFC_20171208_Archive_e001061), own unlabelled code_graphics.py 10x10 real-image mosaic, and NASA KSC 4K Falcon Heavy launch footage (KSC-20260830-MH-CSH01-0001 / SPX01-0001) (£0 image/video spend). Cut plates to actual spoken word timestamps: Cut 1 <=2.8 s to a distinct visual scene (Rule 40), Cut 2 <=4.8 s, max shot hold <=4.0 s. Include frame-0 hook \"**100X** MORE SKY\" (0-2 s), title banner inside 9.0-14.0 s clear of the sole animated DATA overlay (HUBBLE: 1 FRAME -> ROMAN: 100X MORE SKY · SCALE: Bigger than full Moon, inside 16:9 centre band at 11.5% height), ~1.0 s forward-loop tail (<=0.3 s crossfade), house SFX kit (sfx_kit.py make), and the NAS music bed named in §5 of the plan (nearest-star_score_bed_v01.mp3) under a Chief reuse waiver JSON (music_gate_<job>_chief_waiver.json, per J2916 precedent). Also build custom cover (**100** HUBBLES).\n\n3) Pass gate_shorts_open.py (--air-date 2026-12-03), picture_qa.py, polish_gate.py, music_gate.py, sfx_kit.py level, and thumb_preview.py short on cover. Save SHA-256 manifest + delivery on NAS.\n\n4) Do NOT upload or schedule; block with \"parked for Chief: dated-event Short v01 ready for review\" so Chief/Claude reviews media before Ben's watch (needs Ben's OK on the board by Wed 2 Dec 2026 18:00 London; if missed, do not upload).\n",
+      "ref": "02_Video-Projects/_dated_shorts/2026-12-07_roman-telescope-first-images.md",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-21T22:26Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T22:26Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Record VO (up to 2 takes, continuous natural speed), build full-bleed 9:16 v01 + cover from free NASA footage on NAS, pass all Shorts gates, and park for Chief review",
+      "due": "2026-12-02T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Record the voice-over and build the 7 Dec NASA Roman Telescope First Images dated-event Short from free NASA footage for Thursday 3 Dec",
+      "mini_only": true
     }
   ],
   "focus": [
