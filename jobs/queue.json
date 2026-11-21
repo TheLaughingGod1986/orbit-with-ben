@@ -1,5 +1,5 @@
 {
-  "next_id": 3265,
+  "next_id": 3267,
   "jobs": [
     {
       "id": "J0001",
@@ -292045,18 +292045,33 @@
           "at": "2026-11-21T01:08Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Claimed. Recording disk before any move."
+        },
+        {
+          "at": "2026-11-21T01:14Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Inspected MiniWork. Container free about 45 GB. 127 clean pushed worktrees are 59 GB and safe to remove. 28 non-git folders (12.5 GB) will be archived and hash-checked first. Dirty and unpushed folders stay."
+        },
+        {
+          "at": "2026-11-21T01:18Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Removed 81 clean pushed worktrees and empty caches. MiniWork free space is 85 GB, up from 42 GB. Protected voice, live-job and dirty folders are still in place. NAS archive of the remaining evidence folders is running."
+        },
+        {
+          "at": "2026-11-21T01:24Z",
+          "by": "cursor",
+          "what": "step 2 of 4 done: MiniWork is 85 GB free after 81 clean worktrees were removed. Two evidence folders are on the NAS with SHA256SUMS.txt. The rest is still copying in tmux J3249-offload. Log ~/_desk/logs/J3249-offload.log. Exit file ~/_desk/logs/J3249-offload.done. Do not start a second copy."
         }
       ],
-      "remaining_action": "Inspect MiniWork scratch and desk for old completed folders",
+      "remaining_action": "Wait for the NAS evidence copy to finish, then record the hash check",
       "due": "2026-11-21T07:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-21T01:08Z",
+        "at": "2026-11-21T01:24Z",
         "by": "cursor",
-        "note": "Claimed. Recording disk before any move."
+        "note": "MiniWork is 85 GB free after 81 clean worktrees were removed. Two evidence folders are on the NAS with SHA256SUMS.txt. T"
       }
     },
     {
@@ -293158,6 +293173,92 @@
         "of": 4,
         "at": "2026-11-21T00:55Z",
         "by": "macbook-2"
+      }
+    },
+    {
+      "id": "J3265",
+      "title": "Agents run themselves: each agent on its own timer, picks by skill, sets up the next stage, fixes its own failures (after #1073)",
+      "needs": "any",
+      "repo": "owb",
+      "body": "**Why (Ben, 21 Nov, in chat, after Claude explained more autonomy for the agents: \"Please\").** Today one relay on the Mac mini wakes agents and hands out jobs in 25-minute turns; agents only work when woken, so when the relay or the Chief stalls, everything stalls (Ben, 20 Nov: \"always seems to stop\"). J3238 / PR #1073 (two to three slots, open reroutes, MacBooks take any job they can) is the first step and is merged first. This job is the second step: each agent runs itself.\n\n**Do (code, tests, one PR).**\n1. OWN TIMER PER AGENT. Each worker (cursor, gemini, claudecode, codex on the Mini; each MacBook slot) gets its own launchd heartbeat, every 10-15 minutes, staggered. On waking it checks its own usage flag, takes the best ready job its lanes fit through the existing atomic claim (`jobs.py next --agent <id>`), works it, reports and sleeps. No central dispatcher needed to start work; the relay keeps the chain walk, stall checks and Chief duties, and stays the fallback. One agent never runs twice at once (keep the per-agent lease from #1073). Keep the memory floor and a total cap on the Mini (env, default 3 at once).\n2. PICK BY SKILL. The claim order prefers jobs whose kind lists that agent first in routing.py (Gemini: watching video and pictures; Cursor/Grok: edits and code; Claude: scripts and reviews), then urgent and due-soon work.\n3. SET UP THE NEXT JOB. When a worker finishes a pipeline stage (script, VO, pictures, edit, QA), it queues the next stage's job from the film's pipeline with film/stage set, unless one exists. No Chief step in between; the Chief still reviews merges and Ben's gates.\n4. FIX ITS OWN FAILURES FIRST. On a failed run: one retry on the next model in the kind's chain; if that fails, queue a repair job with the error tail and the failing command, then release. Feed the failure into the J3257 self-improvement register.\n5. SHARED TOOLS ONE AT A TIME, PER WINDOW. Split the relay's single 'studio' desk into one per Studio window: 9223 Orbit, 9224 Field Order History, 9460 History of Science on the Mini (9222 is the Flow browser on the Mini, not Studio; on the MacBook 9222 is HOS Studio). ElevenLabs and Flow stay one at a time. Code and tooling jobs use kind `assembly`, not `studio` (studio = Studio browser tasks), so they never wait on a Studio desk.\n6. Board: the Machines panel shows every agent's timer, last wake and current job.\n\n**Guards (unchanged, never automated away).** Ben's sign-offs (watch before publish, money, channel direction, the never-list), desk-locks on shared tools, the Mini memory floor, Chief review and merge of code. Roll back with one env switch to relay-only dispatch. Tests: two agents never claim the same job; an agent never runs twice; a held desk blocks only its own window; a stage handoff queues exactly one next job; a failed run retries once then files one repair job. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J3238",
+      "eta_min": 120,
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-21T01:24Z",
+      "eta": "2026-11-21T03:24Z",
+      "created_by": "claude",
+      "created_at": "2026-11-21T01:22Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T01:22Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-21T01:24Z",
+          "by": "macbook",
+          "what": "claimed"
+        }
+      ],
+      "remaining_action": "Own launchd timer per agent with atomic claims, skill-first pick, stage handoff, retry-then-repair, per-window Studio desks; tests; one PR",
+      "due": "2026-11-28T18:00:00Z",
+      "kind": "assembly",
+      "urgent": 5,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T01:24Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
+    },
+    {
+      "id": "J3266",
+      "title": "Use-it-all pacing for flat plans (land near 100% at each reset); hard caps only on pay-per-use; ElevenLabs first before 30 Nov",
+      "needs": "any",
+      "repo": "owb",
+      "body": "**Why (Ben, 21 Nov, in chat: \"Not sure I like the 80% limit means we're paying for 100% but only using 80%\"; then \"Please\").** Flat monthly plans cost the same used or not, so the goal is to land close to 100% of each one at its reset, not to stop early. Hard caps belong only on pay-per-use charges.\n\n**Do (code, tests, one PR; first run straight away).**\n1. PACE EVERY FLAT PLAN. For each plan with a reset date (Claude, Cursor, Codex/ChatGPT, Google AI/Gemini, ElevenLabs credits, vidIQ credits), read used and remaining from the existing readers (credit_flags.json, the Codex usage reader, the ElevenLabs usage API, the AI & credits tab data) and project usage at the reset from the last 7 days' rate.\n2. HEADING FOR LEFTOVERS (projected under 90% at the reset): raise the priority of ready work that uses that plan and is already approved or scheduled within the next four weeks (voice-overs for upcoming films, extra Shorts tests, research), so it runs before the reset. Never invent work, never pass a Ben gate, and keep Ben's rules for that service (for example, November Option 1: ElevenLabs stays on Creator and makes no music for WW2).\n3. RUNNING OUT EARLY (projected to hit zero more than 3 days before the reset): hold low-priority jobs on that plan, keep it for urgent and due-soon work, and route to the next model in each kind's chain where routing allows.\n4. PAY-PER-USE (Google video/image API calls, Veo, Vercel usage, any overage billing): a hard monthly cap per service. Money is Ben's call: propose a cap for each in ONE line to Ben in chat via Claude, and until he sets them keep today's behaviour (no new pay-per-use spend). A warning at the cap's halfway point and a stop at the cap.\n5. Board: the AI & credits tab shows one pace line per plan (\"on track to use 96% by 30 Nov\") and each cap with spend so far. Run daily from refill.\n6. FIRST RUN NOW: ElevenLabs resets 30 Nov. Report credits left, what approved VO work could use them before then (WW2 films 4-6 narration, J3206/J3208/J3210, about 9.5k credits each, plus HOS and Orbit VO), and raise those jobs if the budget guard allows.\n\n**Guards.** No plan upgrades or purchases (Ben's), no change to Ben's gates, no music for WW2 in November. Tests: an under-pace plan raises only approved ready work; an over-pace plan holds only low-priority work; a pay-per-use cap stops further calls.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-21T01:24Z",
+      "eta": "2026-11-21T02:54Z",
+      "created_by": "claude",
+      "created_at": "2026-11-21T01:22Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T01:22Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-21T01:24Z",
+          "by": "macbook-2",
+          "what": "claimed"
+        }
+      ],
+      "remaining_action": "Project each plan's use at reset; pull approved work forward when under 90%; hold low-priority when over; caps on pay-per-use; first ElevenLabs run",
+      "due": "2026-11-25T18:00:00Z",
+      "kind": "assembly",
+      "urgent": 6,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T01:24Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     }
   ],
