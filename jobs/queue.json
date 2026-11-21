@@ -1,5 +1,5 @@
 {
-  "next_id": 3327,
+  "next_id": 3328,
   "jobs": [
     {
       "id": "J0001",
@@ -298742,6 +298742,35 @@
       "remaining_action": "Complete the J0216 standalone Shorts readout in TEST_LOG.md and recommend Related-video policy for S1–S8",
       "kind": "review",
       "plain": "Read out the 4-week standalone Shorts test (24 Oct–20 Nov) and decide whether to link S1–S8 to longs"
+    },
+    {
+      "id": "J3327",
+      "title": "Sync UPLOADS.json live status and Related readback for OWB 026 Shorts dH_yCRmzkMo and aEfdxex__Bo",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Follow-up from J3297 (05_Analytics/live_fixes/2026-11-21.md and 2026-11-21_recheck.md). Repo-only record sync: dH_yCRmzkMo (live 2026-11-18T11:30:26Z) and aEfdxex__Bo (live 2026-11-16T11:30:32Z) still show privacyStatus='private' and relatedStatus='pending_studio' in 00_Brand/Channel-Setup/social/UPLOADS.json even though both are Public on YouTube and verified live with Related video c5AdqQsnnys (J0861; re-verified 2026-11-21T09:00Z). Update those two entries in 00_Brand/Channel-Setup/social/UPLOADS.json to privacyStatus='public', relatedStatus='set', and relatedReadbackAt='2026-11-21T09:00Z' in a clean worktree, run scripts/test_email_ratchet.py and scripts/test_no_private_network.py, and open a PR for Chief merge. Change nothing in YouTube Studio or Buffer. Spend: £0.",
+      "ref": "",
+      "film": "026",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-21T21:31Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T21:31Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Update dH_yCRmzkMo and aEfdxex__Bo in UPLOADS.json from private/pending_studio to public/set",
+      "kind": "assembly",
+      "plain": "Update repo UPLOADS.json records for two live 026 Shorts already verified on YouTube"
     }
   ],
   "focus": [
