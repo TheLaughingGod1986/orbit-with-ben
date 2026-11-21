@@ -296908,9 +296908,14 @@
           "at": "2026-11-21T20:39Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T20:41Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Starting J3300 condition verification for J3178 (HOS 013)"
         }
       ],
-      "remaining_action": "Verify readiness: Review ten unresolved HOS 013 pass-1 plates (rows 56-62, 64-66) in a session with demonstrated continuous 24-fps moving_video_input playback and return to elected",
+      "remaining_action": "Inspect J3178, relay status, desk/PR history, and run direct media probes",
       "kind": "review",
       "recheck_of": "J3178",
       "required_capabilities": [
@@ -296928,12 +296933,14 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-21T20:39Z",
+        "of": 4,
+        "at": "2026-11-21T20:41Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Starting J3300 condition verification for J3178 (HOS 013)"
+      },
+      "taskKeys": [
+        "HOS:013"
+      ]
     },
     {
       "id": "J3301",
