@@ -297062,13 +297062,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-21T23:28Z",
-      "eta": "2026-11-22T01:28Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-21T16:16Z",
-      "result": "",
+      "result": "Chief ruling (gemini acting Chief, 21 Nov 2026): (1) Merged HOS PR #717 (3c9685c9: HOS_2026-11-21.md draft) and HOS PR #721 (b85740e7: Section 8 Chief ruling + completed live read-only YTA through 19 Nov, 28d search terms, 0 SHORTS_CONTENT_LINKS across 5 longs, 100-pt curves & cut-list timings, 6-channel 30d competitor feeds, launch_check count fix: 7 HOS checked, 2 behind); (2) Merged OWB PR #1140 (800a9550f1: LEARNINGS.md Rule 29 readout recorded — 0/5 long conversions, 4 Shorts/week cadence kept per Ben 7 Nov; Rule #41 approved as active test, readout 12 Dec 2026, renumbered from 39 to avoid collision with OWB J3294; 5 new 48h+ HOS Shorts lab rows + settled curves for -3L6HzJ_d_4 and PFj6172YU4Q; ETynHpIYLeY.json J3256 autopsy note); (3) Diagnosed failed 06:40 2026-11-21 snapshot (fallback worktree lacked scripts/engine_guard.py before rebase + Thu/Fri push rejections) and queued bounded Mini assembly job J3333 (due 2026-11-22 06:00). Summary posted on HOS desk #180 and OWB studio thread. Unrelated holds (Rule 36 24 Nov gate) untouched; £0 spend; zero Studio/YouTube/Buffer writes.",
       "history": [
         {
           "at": "2026-11-21T16:16Z",
@@ -297099,6 +297099,11 @@
           "at": "2026-11-21T23:28Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T23:29Z",
+          "by": "gemini",
+          "what": "done: Chief ruling (gemini acting Chief, 21 Nov 2026): (1) Merged HOS PR #717 (3c9685c9: HOS_2026-11-21.md draft) and HOS PR #721 (b85740e7: Section 8 Chief ruling + completed live read-only YTA through 19 Nov, 28d search terms, 0 SHORTS_CONTENT_LINKS across 5 longs, 100-pt curves & cut-list timings, 6-channel 30d competitor feeds, launch_check count fix: 7 HOS checked, 2 behind); (2) Merged OWB PR #1140 (800a9550f1: LEARNINGS.md Rule 29 readout recorded — 0/5 long conversions, 4 Shorts/week cadence kept per Ben 7 Nov; Rule #41 approved as active test, readout 12 Dec 2026, renumbered from 39 to avoid collision with OWB J3294; 5 new 48h+ HOS Shorts lab rows + settled curves for -3L6HzJ_d_4 and PFj6172YU4Q; ETynHpIYLeY.json J3256 autopsy note); (3) Diagnosed failed 06:40 2026-11-21 snapshot (fallback worktree lacked scripts/engine_guard.py before rebase + Thu/Fri push rejections) and queued bounded Mini assembly job J3333 (due 2026-11-22 06:00). Summary posted on HOS desk #180 and OWB studio thread. Unrelated holds (Rule 36 24 Nov gate) untouched; £0 spend; zero Studio/YouTube/Buffer writes."
         }
       ],
       "remaining_action": "Review HOS performance and identify improvements",
@@ -297112,7 +297117,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "b85740e7"
     },
     {
       "id": "J3302",
