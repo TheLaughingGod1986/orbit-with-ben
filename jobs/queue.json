@@ -292536,13 +292536,13 @@
       "stage": "",
       "after": "J3254",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-11-21T01:38Z",
-      "eta": "2026-11-21T03:38Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-20T22:47Z",
-      "result": "",
+      "result": "Waiting for: Ben's Studio sign-in for Field Order History is done: the channel window shows studio.youtube.com rather than Google's sign-in page, so the remaining settings can be read.",
       "history": [
         {
           "at": "2026-11-20T22:47Z",
@@ -292568,23 +292568,43 @@
           "at": "2026-11-21T01:43Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Field Order History Studio on port 9224 is still the Google sign-in page. Orbit and History of Science windows are signed in. API reads are in. Reading the remaining Studio panes."
+        },
+        {
+          "at": "2026-11-21T01:50Z",
+          "by": "cursor",
+          "what": "step 3 of 4 done: Orbit and History of Science settings were read and left unchanged. Field Order History Studio is still on the Google sign-in page. Audits are on PR 1099. No visibility, schedule or monetisation change. GBP 0."
+        },
+        {
+          "at": "2026-11-21T01:50Z",
+          "by": "cursor",
+          "what": "blocked: Waiting for: Ben's Studio sign-in for Field Order History is done: the channel window shows studio.youtube.com rather than Google's sign-in page, so the remaining settings can be read."
+        },
+        {
+          "at": "2026-11-21T01:50Z",
+          "by": "cursor",
+          "what": "condition recorded; next verification 2026-11-21T08:00:00Z"
         }
       ],
-      "remaining_action": "Read the rest of the Studio settings panes, then write each channel audit",
+      "remaining_action": "After the Field Order History Studio sign-in, read the settings the upload login cannot see",
       "due": "2026-11-24T18:00:00Z",
       "kind": "studio",
       "plain": "Have an AI go through every YouTube and Studio setting on our channels and set them up for growth",
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-21T01:43Z",
+        "at": "2026-11-21T01:50Z",
         "by": "cursor",
-        "note": "Field Order History Studio on port 9224 is still the Google sign-in page. Orbit and History of Science windows are signe"
+        "note": "Orbit and History of Science settings were read and left unchanged. Field Order History Studio is still on the Google si"
       },
       "taskKeys": [
         "WW2:001",
         "WW2:002"
-      ]
+      ],
+      "hold": {
+        "type": "ben",
+        "condition": "Ben's Studio sign-in for Field Order History is done: the channel window shows studio.youtube.com rather than Google's sign-in page, so the remaining settings can be read.",
+        "check_at": "2026-11-21T08:00:00Z"
+      }
     },
     {
       "id": "J3256",
@@ -293279,19 +293299,19 @@
       "title": "Agents run themselves: each agent on its own timer, picks by skill, sets up the next stage, fixes its own failures (after #1073)",
       "needs": "any",
       "repo": "owb",
-      "body": "**Why (Ben, 21 Nov, in chat, after Claude explained more autonomy for the agents: \"Please\").** Today one relay on the Mac mini wakes agents and hands out jobs in 25-minute turns; agents only work when woken, so when the relay or the Chief stalls, everything stalls (Ben, 20 Nov: \"always seems to stop\"). J3238 / PR #1073 (two to three slots, open reroutes, MacBooks take any job they can) is the first step and is merged first. This job is the second step: each agent runs itself.\n\n**Do (code, tests, one PR).**\n1. OWN TIMER PER AGENT. Each worker (cursor, gemini, claudecode, codex on the Mini; each MacBook slot) gets its own launchd heartbeat, every 10-15 minutes, staggered. On waking it checks its own usage flag, takes the best ready job its lanes fit through the existing atomic claim (`jobs.py next --agent <id>`), works it, reports and sleeps. No central dispatcher needed to start work; the relay keeps the chain walk, stall checks and Chief duties, and stays the fallback. One agent never runs twice at once (keep the per-agent lease from #1073). Keep the memory floor and a total cap on the Mini (env, default 3 at once).\n2. PICK BY SKILL. The claim order prefers jobs whose kind lists that agent first in routing.py (Gemini: watching video and pictures; Cursor/Grok: edits and code; Claude: scripts and reviews), then urgent and due-soon work.\n3. SET UP THE NEXT JOB. When a worker finishes a pipeline stage (script, VO, pictures, edit, QA), it queues the next stage's job from the film's pipeline with film/stage set, unless one exists. No Chief step in between; the Chief still reviews merges and Ben's gates.\n4. FIX ITS OWN FAILURES FIRST. On a failed run: one retry on the next model in the kind's chain; if that fails, queue a repair job with the error tail and the failing command, then release. Feed the failure into the J3257 self-improvement register.\n5. SHARED TOOLS ONE AT A TIME, PER WINDOW. Split the relay's single 'studio' desk into one per Studio window: 9223 Orbit, 9224 Field Order History, 9460 History of Science on the Mini (9222 is the Flow browser on the Mini, not Studio; on the MacBook 9222 is HOS Studio). ElevenLabs and Flow stay one at a time. Code and tooling jobs use kind `assembly`, not `studio` (studio = Studio browser tasks), so they never wait on a Studio desk.\n6. Board: the Machines panel shows every agent's timer, last wake and current job.\n\n**Guards (unchanged, never automated away).** Ben's sign-offs (watch before publish, money, channel direction, the never-list), desk-locks on shared tools, the Mini memory floor, Chief review and merge of code. Roll back with one env switch to relay-only dispatch. Tests: two agents never claim the same job; an agent never runs twice; a held desk blocks only its own window; a stage handoff queues exactly one next job; a failed run retries once then files one repair job. £0.",
+      "body": "**Why (Ben, 21 Nov, in chat, after Claude explained more autonomy for the agents: \"Please\").** Today one relay on the Mac mini wakes agents and hands out jobs in 25-minute turns; agents only work when woken, so when the relay or the Chief stalls, everything stalls (Ben, 20 Nov: \"always seems to stop\"). J3238 / PR #1073 (two to three slots, open reroutes, MacBooks take any job they can) is the first step and is merged first. This job is the second step: each agent runs itself.\n\n**Do (code, tests, one PR).**\n1. OWN TIMER PER AGENT. Each worker (cursor, gemini, claudecode, codex on the Mini; each MacBook slot) gets its own launchd heartbeat, every 10-15 minutes, staggered. On waking it checks its own usage flag, takes the best ready job its lanes fit through the existing atomic claim (`jobs.py next --agent <id>`), works it, reports and sleeps. No central dispatcher needed to start work; the relay keeps the chain walk, stall checks and Chief duties, and stays the fallback. One agent never runs twice at once (keep the per-agent lease from #1073). Keep the memory floor and a total cap on the Mini (env, default 3 at once).\n2. PICK BY SKILL. The claim order prefers jobs whose kind lists that agent first in routing.py (Gemini: watching video and pictures; Cursor/Grok: edits and code; Claude: scripts and reviews), then urgent and due-soon work.\n3. SET UP THE NEXT JOB. When a worker finishes a pipeline stage (script, VO, pictures, edit, QA), it queues the next stage's job from the film's pipeline with film/stage set, unless one exists. No Chief step in between; the Chief still reviews merges and Ben's gates.\n4. FIX ITS OWN FAILURES FIRST. On a failed run: one retry on the next model in the kind's chain; if that fails, queue a repair job with the error tail and the failing command, then release. Feed the failure into the J3257 self-improvement register.\n5. SHARED TOOLS ONE AT A TIME, PER WINDOW. Split the relay's single 'studio' desk into one per Studio window: 9223 Orbit, 9224 Field Order History, 9460 History of Science on the Mini (9222 is the Flow browser on the Mini, not Studio; on the MacBook 9222 is HOS Studio). ElevenLabs and Flow stay one at a time. Code and tooling jobs use kind `assembly`, not `studio` (studio = Studio browser tasks), so they never wait on a Studio desk.\n6. Board: the Machines panel shows every agent's timer, last wake and current job.\n\n**Guards (unchanged, never automated away).** Ben's sign-offs (watch before publish, money, channel direction, the never-list), desk-locks on shared tools, the Mini memory floor, Chief review and merge of code. Roll back with one env switch to relay-only dispatch. Tests: two agents never claim the same job; an agent never runs twice; a held desk blocks only its own window; a stage handoff queues exactly one next job; a failed run retries once then files one repair job. £0.\n\n**Reopened by Claude, 21 Nov, after review of PR #1097 (review comment 7055449396 lists the fixes). Not merged: two changes act the moment it merges (skill-first order in every jobs.py next breaks Ben's 8 Nov oldest-film-first rule; stage handoff runs on every done from a fixed map, not each channel's pipeline) and test_channel_ratchet fails (agent_autonomy.py names a channel on 8 lines). Do, on branch macbook/J3265 (PR #1097), after merging main (#1073 is in; #1098 adds a `rows` argument to workflow_state.order, so use keyword args): (1) skill rank only breaks ties after deadline/air/nearest/urgent; (2) stage handoff reads the channel's own stage order, is behind AGENT_STAGE_HANDOFF=1 (default off), never blocks done (try/except), dedupes on film+stage+channel; (3) desk names from the registry, no channel names in code; (4) may_start refuses an agent the relay is running in any slot, and the relay skips (not returns) when a timer holds that agent; (5) one Mini cap across relay slots and timers (default 3) and the memory floor from chief_relay.free_memory_bytes(); (6) relay desks and timer desks see each other; (7) retry in place only on the same agent, otherwise release with self_retry so the next lane claims it, second failure files the repair; (8) tests for each and the full suite incl. test_channel_ratchet and test_chief_relay. Push to the same PR. Plists stay uninstalled.**\n",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "J3238",
       "eta_min": 120,
-      "status": "done",
-      "by": "macbook",
-      "since": "2026-11-21T01:24Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-21T01:22Z",
-      "result": "PR 1097 is open for the Chief: each agent has its own 10-15 minute timer, picks by skill, queues the next stage, and retries a failure once. Launchd plists are in the repo and were not installed. AGENT_SELF_DISPATCH=0 returns to relay-only dispatch. Not merged.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-21T01:22Z",
@@ -293307,20 +293327,17 @@
           "at": "2026-11-21T01:36Z",
           "by": "macbook",
           "what": "done: PR 1097 is open for the Chief: each agent has its own 10-15 minute timer, picks by skill, queues the next stage, and retries a failure once. Launchd plists are in the repo and were not installed. AGENT_SELF_DISPATCH=0 returns to relay-only dispatch. Not merged."
+        },
+        {
+          "at": "2026-11-21T01:52Z",
+          "by": "claude",
+          "what": "reopened: Reopened by Claude, 21 Nov, after review of PR #1097 (review comment 7055449396 lists the fixes). Not merged: two changes act the moment it merges (skill-first order in every jobs.py next breaks Ben's 8 Nov oldest-film-first rule; stage handoff runs on every done from a fixed map, not each channel's pipeline) and test_channel_ratchet fails (agent_autonomy.py names a channel on 8 lines). Do, on branch macbook/J3265 (PR #1097), after merging main (#1073 is in; #1098 adds a `rows` argument to workflow_state.order, so use keyword args): (1) skill rank only breaks ties after deadline/air/nearest/urgent; (2) stage handoff reads the channel's own stage order, is behind AGENT_STAGE_HANDOFF=1 (default off), never blocks done (try/except), dedupes on film+stage+channel; (3) desk names from the registry, no channel names in code; (4) may_start refuses an agent the relay is running in any slot, and the relay skips (not returns) when a timer holds that agent; (5) one Mini cap across relay slots and timers (default 3) and the memory floor from chief_relay.free_memory_bytes(); (6) relay desks and timer desks see each other; (7) retry in place only on the same agent, otherwise release with self_retry so the next lane claims it, second failure files the repair; (8) tests for each and the full suite incl. test_channel_ratchet and test_chief_relay. Push to the same PR. Plists stay uninstalled."
         }
       ],
-      "remaining_action": "Own launchd timer per agent with atomic claims, skill-first pick, stage handoff, retry-then-repair, per-window Studio desks; tests; one PR",
+      "remaining_action": "Fix PR #1097 per review 7055449396 (order, gated handoff, registry desks, one cap, shared desks, retry), tests, push",
       "due": "2026-11-28T18:00:00Z",
       "kind": "assembly",
-      "urgent": 5,
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-21T01:24Z",
-        "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      "urgent": 4
     },
     {
       "id": "J3266",
