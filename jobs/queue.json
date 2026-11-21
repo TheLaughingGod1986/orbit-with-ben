@@ -292076,18 +292076,23 @@
           "at": "2026-11-21T02:09Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T02:09Z",
+          "by": "cursor",
+          "what": "step 0 of 3 done: Claimed. Free space before cleanup next."
         }
       ],
-      "remaining_action": "Wait for the NAS evidence copy to finish, then record the hash check",
+      "remaining_action": "Inspect MiniWork scratch and desk for old completed folders",
       "due": "2026-11-21T07:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "progress": {
-        "step": 2,
-        "of": 4,
-        "at": "2026-11-21T01:24Z",
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T02:09Z",
         "by": "cursor",
-        "note": "MiniWork is 85 GB free after 81 clean worktrees were removed. Two evidence folders are on the NAS with SHA256SUMS.txt. T"
+        "note": "Claimed. Free space before cleanup next."
       }
     },
     {
