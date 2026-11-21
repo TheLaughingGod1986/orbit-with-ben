@@ -297386,13 +297386,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-21T17:47Z",
-      "eta": "2026-11-21T19:47Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-21T17:42Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-21T17:42Z",
@@ -297438,6 +297438,11 @@
           "at": "2026-11-21T18:21Z",
           "by": "gemini",
           "what": "step 5 of 5 done: v03 (744f32b7) NAS+Mini SHA-256 verified, 4/4 gates PASS, 21 stills inspected, HOS PR #719 5/5 CI green, HOS desk #7067194875 + OWB thread posted"
+        },
+        {
+          "at": "2026-11-21T18:21Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Complete J3314 handoff to J3315/J2036",
@@ -297453,7 +297458,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/issues/694#issuecomment-7067194875"
     },
     {
       "id": "J3315",
