@@ -136,27 +136,67 @@ def _stamp(value) -> datetime | None:
 
 
 def live() -> dict | None:
-    """The judgment the queue should apply. Tests and a missing file change nothing."""
+    """The judgment the queue should apply: the stored pace file, re-read at most every 10 minutes.
+
+    Queue sorting and claim checks call this for every job, so it never recomputes the pace or reads ElevenLabs:
+    refill's `refresh_if_stale` keeps the file current. A missing, unreadable or stale (36 h) file, and every test
+    process, change nothing."""
     if _override_on:
         return _override
     if _testing():
         return None
     global _cache, _cache_at
     now = datetime.now(timezone.utc)
-    if _cache is not None and _cache_at and (now - _cache_at).total_seconds() < 600:
+    if _cache_at and (now - _cache_at).total_seconds() < 600:
         return _cache
     try:
         state = json.loads(STATE_FILE.read_text())
     except (OSError, ValueError):
         state = None
-    written = _parse((state or {}).get("at"))
+    written = _parse((state or {}).get("at")) if isinstance(state, dict) else None
     if not state or not written or (now - written).total_seconds() > 36 * 3600:
-        try:
-            state = refresh(now)
-        except Exception:
-            return _cache
+        state = None
     _cache, _cache_at = state, now
     return state
+
+
+_index: tuple | None = None
+
+
+def index(rows: list | None) -> dict | None:
+    """Jobs by id, built once per queue list rather than once per job that is sorted."""
+    global _index
+    if not rows:
+        return None
+    if _index and _index[0] is rows and _index[1] == len(rows):
+        return _index[2]
+    built = {r["id"]: r for r in rows if isinstance(r, dict) and "id" in r}
+    _index = (rows, len(rows), built)
+    return built
+
+
+_dates: tuple | None = None
+
+
+def _deadlines_and_air(rows: list | None) -> tuple[dict, dict]:
+    """Deadlines and air dates for `blocks`, worked out once a minute per queue list instead of on every claim check
+    (the air dates read the tracker files)."""
+    global _dates
+    now = datetime.now(timezone.utc)
+    if _dates and _dates[0] is rows and _dates[1] == len(rows or ()) and (now - _dates[2]).total_seconds() < 60:
+        return _dates[3], _dates[4]
+    due, air = {}, {}
+    try:
+        import workflow_state
+        if rows:
+            due = workflow_state.deadlines(rows)
+        if not _testing():
+            from workflow_board import load_tracker
+            air = workflow_state.air_dates(load_tracker())
+    except Exception:
+        pass
+    _dates = (rows, len(rows or ()), now, due, air)
+    return due, air
 
 
 def load_caps() -> dict:
@@ -553,20 +593,7 @@ def blocks(job: dict, agent: str, at: datetime, rows: list | None = None, state:
         return False
     if job.get("status") not in ("open", "claimed"):
         return False
-    due, air = {}, {}
-    if rows:
-        try:
-            import workflow_state
-            due = workflow_state.deadlines(rows)
-        except Exception:
-            due = {}
-    if not _testing():
-        try:
-            import workflow_state
-            from workflow_board import load_tracker
-            air = workflow_state.air_dates(load_tracker())
-        except Exception:
-            air = {}
+    due, air = _deadlines_and_air(rows)
     if not low_priority(job, at, due, air):
         return False
     # Reaching here means this agent's own pool is the one running out early.
@@ -599,12 +626,24 @@ def refresh(at: datetime | None = None) -> dict:
     return state
 
 
+def refresh_if_stale(at: datetime | None = None, max_age_h: float = 1.0) -> dict | None:
+    """Refill's call: recompute only when the stored pace file is missing or older than `max_age_h`."""
+    at = at or datetime.now(timezone.utc)
+    try:
+        written = _parse(json.loads(STATE_FILE.read_text()).get("at"))
+    except (OSError, ValueError, AttributeError):
+        written = None
+    if written and (at - written).total_seconds() < max_age_h * 3600:
+        return None
+    return refresh(at)
+
+
 def _live_elevenlabs(at: datetime) -> list[dict]:
     """The shared ElevenLabs account, read now. A Codex log on this machine is a different seat, so it is not mixed in."""
     try:
         import ai_spend_daily
         el = ai_spend_daily.read_elevenlabs()
-    except Exception:
+    except (Exception, SystemExit):  # el_auth exits when this machine has no ElevenLabs key
         return []
     if el.get("left") is None or el.get("total") is None:
         return []

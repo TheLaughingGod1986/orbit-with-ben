@@ -276,7 +276,7 @@ def order(j, due, focus=(), at=None, nearest=(), air=None, rows=None):
     pace = 1
     try:
         import plan_pace
-        by_id = {r["id"]: r for r in rows} if rows else None
+        by_id = plan_pace.index(rows)
         if plan_pace.is_raised(j, at, due, air, by_id):
             pace = 0
     except Exception:
