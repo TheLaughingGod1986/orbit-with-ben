@@ -70,6 +70,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3298 | any | blocked | gemini | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 | J3299 | mini | blocked | gemini | – | script · Backlog OWB: this week's dated-event Short (LEARNINGS rule 16 test), script + packaging, park for Chief |  |
 | J3300 | mini | open | – | – | review · Verify condition for J3178 |  |
+| J3301 | any | open | – | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
+| J3302 | mini | open | – | – | thumb · Weekly OWB thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 
 Recently finished:
 
