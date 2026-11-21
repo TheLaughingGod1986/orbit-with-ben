@@ -297083,9 +297083,14 @@
           "at": "2026-11-21T16:56Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T16:59Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Gemini produced J2171 (PR #718 @ 7248b872, 6/6 CI green, MERGEABLE) and is excluded from self-review; parking via jobs.py wait until claude/claudecode return at 2026-11-21T17:50:00Z."
         }
       ],
-      "remaining_action": "Verify HOS PR #718, NAS/UAT SHA-256 parity, contact sheets, and unique Play links, then set awaits_ben",
+      "remaining_action": "Non-producer QA review of HOS 009 Shorts A/B (PR #718): verify PR/CI, NAS/UAT hashes, sheets/gates, unique Play links, merge PR #718, set awaits_ben",
       "due": "2026-11-24T18:00:00Z",
       "kind": "qa",
       "plain": "Non-producer QA review and Ben UAT handoff for HOS 009 Shorts A and B (PR #718)",
@@ -297099,12 +297104,14 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-21T16:56Z",
+        "of": 4,
+        "at": "2026-11-21T16:59Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Gemini produced J2171 (PR #718 @ 7248b872, 6/6 CI green, MERGEABLE) and is excluded from self-review; parking via jobs.p"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     }
   ],
   "focus": [
