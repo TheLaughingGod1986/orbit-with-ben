@@ -299000,10 +299000,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-21T23:15Z",
+      "eta": "2026-11-22T01:15Z",
       "created_by": "relay",
       "created_at": "2026-11-21T21:56Z",
       "result": "",
@@ -299042,6 +299042,11 @@
           "at": "2026-11-21T23:15Z",
           "by": "gemini",
           "what": "reopened: Elected Acting Chief (gemini) closing completed J3329 condition verification after merging PR #1138 and recording J3311 wait --recheck J3329"
+        },
+        {
+          "at": "2026-11-21T23:15Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for Chief (claude): merge PR #1133, reopen J3311 + handback open_claim, and close J3329",
@@ -299051,7 +299056,15 @@
       "due_kind": "condition-verification",
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T23:15Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3330",
