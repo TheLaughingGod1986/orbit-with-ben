@@ -293787,17 +293787,22 @@
           "at": "2026-11-21T03:07Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J3269; starting HOS live and scheduled listing audit"
+        },
+        {
+          "at": "2026-11-21T03:10Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Fetched 68 HOS videos via YouTube Data API v3 (0 errors on channel-audit.ts) and scraped live watch/Shorts pages at 2026-11-21T03:09Z; inspected HOS PR #704 and OWB PR #1091"
         }
       ],
-      "remaining_action": "Inspect prior HOS live_fixes reports and fetch current read-only HOS live/scheduled YouTube metadata",
+      "remaining_action": "Audit all 7 public longs, 34 public Shorts, and 4 scheduled HOS videos (chapters, Sources, end screens, Related, captions, thumbnails, links, repo parity)",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-21T03:07Z",
+        "at": "2026-11-21T03:10Z",
         "by": "gemini",
-        "note": "Claimed J3269; starting HOS live and scheduled listing audit"
+        "note": "Fetched 68 HOS videos via YouTube Data API v3 (0 errors on channel-audit.ts) and scraped live watch/Shorts pages at 2026"
       }
     }
   ],
