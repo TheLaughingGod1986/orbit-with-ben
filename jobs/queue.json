@@ -1,5 +1,5 @@
 {
-  "next_id": 3286,
+  "next_id": 3288,
   "jobs": [
     {
       "id": "J0001",
@@ -179199,6 +179199,11 @@
           "at": "2026-11-21T01:52Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-21T12:01Z",
+          "by": "relay",
+          "what": "condition verification queued: J3286"
         }
       ],
       "remaining_action": "Wait for J3261 (HOS 009 v02 re-edit) and J3262 (HOS 009 thumbnails A+B) before finishing J2036 QA and chapters",
@@ -179226,10 +179231,11 @@
       "hold": {
         "type": "dependency",
         "condition": "Acting Chief (Gemini) accepted J3260 NOT MET (PR #1093 merged 139e2ef885, jobs/reviews/J3260/REVIEW.md) and ruled Option A (v02 re-edit + thumbnails): master v01 (802b5c7e...) fails HOS-2026-11-E2 (0:00-0:30 shots 4.90/6.04/7.00/7.00/7.00 s; first DATA graphic at 2:28.91) and Teach on screen (0/90 layout cards vs 26 v05 side_labels, no timeline, back-to-back graphics p4_03_sixty_earths -> p4_04_dots_square), and 08_Thumbnail is empty. Wait for J3261 (bounded £0 v02 re-edit) and J3262 (£0 HOS 009 long thumbnails A+B + Chief review) to complete before reopening J2036 for final v02 QA, chapters re-time, and Ben watch pack.",
-        "check_at": "2026-11-21T12:00:00Z",
+        "check_at": "2026-11-21T13:01:20+00:00",
         "last_recheck": "J3260",
         "checked_at": "2026-11-20T23:57:44+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J3286"
       },
       "escalated_at": "2026-11-21T01:52Z"
     },
@@ -189238,6 +189244,11 @@
           "at": "2026-11-20T16:34Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-21T12:00:00Z"
+        },
+        {
+          "at": "2026-11-21T12:01Z",
+          "by": "relay",
+          "what": "condition verification queued: J3287"
         }
       ],
       "remaining_action": "Wait for J3241 Chief score disposition on v04_synth and completed J2035 long assembly before Shorts A/B assembly",
@@ -189256,10 +189267,11 @@
       "hold": {
         "type": "input",
         "condition": "J3230 Acting Chief ruling (2026-11-20T16:34Z, jobs/reviews/J3230/REVIEW.md @ bd5a98a425): condition NOT MET. v03_synth refused (J3236/PR #699); final bounded GBP0 v04_synth built (J3239/PR #700) and ear-reviewed 7/7 PASS (J3240/PR #701), but Chief final score disposition J3241 is still open and PR #700/#701 remain unmerged (no compliant score accepted). ACTIVATION_AUTHORIZED=False, ElevenLabs ledger untouched, J3043/J3045 closed unused (J3047), v01/v02/v03_synth rejected, and J2035 long assembly still blocked. Require J3241 formal score acceptance, completed J2035 long assembly with all required gates, and preserved Shorts locked inputs before release.",
-        "check_at": "2026-11-21T12:00:00Z",
+        "check_at": "2026-11-21T13:01:20+00:00",
         "last_recheck": "J3230",
         "checked_at": "2026-11-20T16:34:45+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J3287"
       }
     },
     {
@@ -295246,6 +295258,68 @@
       "taskKeys": [
         "HOS:006"
       ]
+    },
+    {
+      "id": "J3286",
+      "title": "Verify condition for J2036",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2036: Acting Chief (Gemini) accepted J3260 NOT MET (PR #1093 merged 139e2ef885, jobs/reviews/J3260/REVIEW.md) and ruled Option A (v02 re-edit + thumbnails): master v01 (802b5c7e...) fails HOS-2026-11-E2 (0:00-0:30 shots 4.90/6.04/7.00/7.00/7.00 s; first DATA graphic at 2:28.91) and Teach on screen (0/90 layout cards vs 26 v05 side_labels, no timeline, back-to-back graphics p4_03_sixty_earths -> p4_04_dots_square), and 08_Thumbnail is empty. Wait for J3261 (bounded £0 v02 re-edit) and J3262 (£0 HOS 009 long thumbnails A+B + Chief review) to complete before reopening J2036 for final v02 QA, chapters re-time, and Ben watch pack.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2036 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-21T12:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T12:01Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Wait for J3261 (HOS 009 v02 re-edit) and J3262 (HOS 009 thumbnails A+B) before finishing J2036 QA and chapters",
+      "kind": "review",
+      "recheck_of": "J2036",
+      "due": "2026-11-15T18:00:00+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3287",
+      "title": "Verify condition for J2171",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2171: J3230 Acting Chief ruling (2026-11-20T16:34Z, jobs/reviews/J3230/REVIEW.md @ bd5a98a425): condition NOT MET. v03_synth refused (J3236/PR #699); final bounded GBP0 v04_synth built (J3239/PR #700) and ear-reviewed 7/7 PASS (J3240/PR #701), but Chief final score disposition J3241 is still open and PR #700/#701 remain unmerged (no compliant score accepted). ACTIVATION_AUTHORIZED=False, ElevenLabs ledger untouched, J3043/J3045 closed unused (J3047), v01/v02/v03_synth rejected, and J2035 long assembly still blocked. Require J3241 formal score acceptance, completed J2035 long assembly with all required gates, and preserved Shorts locked inputs before release.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2171 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-21T12:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T12:01Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Wait for J3241 Chief score disposition on v04_synth and completed J2035 long assembly before Shorts A/B assembly",
+      "kind": "review",
+      "recheck_of": "J2171",
+      "due": "2026-11-21T13:01:20+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
