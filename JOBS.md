@@ -65,7 +65,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3291 | any | blocked | gemini | – | assembly · Gates at upload and a daily 14-day re-check of everything scheduled (music_gate included, Shorts and longs, every channel) |  |
 | J3292 | any | blocked | macbook-2 | – | assembly · Direct alert to Ben when a same-day video is pulled or his watch is needed within 12 hours |  |
 | J3294 | any | blocked | gemini | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
-| J3295 | mini | open | – | – | review · Verify condition for J1275 |  |
+| J3295 | mini | claimed | gemini | 2026-11-21T16:07Z | review · Verify condition for J1275 |  |
 
 Recently finished:
 
