@@ -1,5 +1,5 @@
 {
-  "next_id": 3329,
+  "next_id": 3330,
   "jobs": [
     {
       "id": "J0001",
@@ -297562,6 +297562,11 @@
           "at": "2026-11-21T18:48Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-21T21:55:00Z"
+        },
+        {
+          "at": "2026-11-21T21:56Z",
+          "by": "relay",
+          "what": "condition verification queued: J3329"
         }
       ],
       "remaining_action": "Non-producer reviewer (claude/chief/codex/claudecode) to QA HOS PR #718, NAS/UAT SHA-256, sheets & Play links, merge PR #718 (or hand to Chief), and set awaits_ben",
@@ -297589,10 +297594,11 @@
       "hold": {
         "type": "input",
         "condition": "Non-producer reviewer available (claude out of usage until 2026-11-21T21:50:00Z; chief retry 2026-11-21T19:57:35Z; claudecode down on Fable limit until Nov 25 10:00 London, retry 19:45:41Z; Mini codex 100% used and down until 2026-11-24T23:26:00Z — macbook-2 95% left is a separate 27 Nov cycle; cursor Claude lanes out of credit until 2026-12-09). Gemini produced J2171 (HOS PR #718 @ 7248b872, 6/6 CI green, MERGEABLE; NAS & iCloud UAT SHA-256 verified on Mini) and is excluded from self-review.",
-        "check_at": "2026-11-21T21:55:00Z",
+        "check_at": "2026-11-21T22:56:01+00:00",
         "last_recheck": "J3316",
         "checked_at": "2026-11-21T18:48:57+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J3329"
       }
     },
     {
@@ -298932,6 +298938,37 @@
         "at": "2026-11-21T21:46Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J3329",
+      "title": "Verify condition for J3311",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3311: Non-producer reviewer available (claude out of usage until 2026-11-21T21:50:00Z; chief retry 2026-11-21T19:57:35Z; claudecode down on Fable limit until Nov 25 10:00 London, retry 19:45:41Z; Mini codex 100% used and down until 2026-11-24T23:26:00Z — macbook-2 95% left is a separate 27 Nov cycle; cursor Claude lanes out of credit until 2026-12-09). Gemini produced J2171 (HOS PR #718 @ 7248b872, 6/6 CI green, MERGEABLE; NAS & iCloud UAT SHA-256 verified on Mini) and is excluded from self-review.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3311 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-21T21:56Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T21:56Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Non-producer reviewer (claude/chief/codex/claudecode) to QA HOS PR #718, NAS/UAT SHA-256, sheets & Play links, merge PR #718 (or hand to Chief), and set awaits_be",
+      "kind": "review",
+      "recheck_of": "J3311",
+      "due": "2026-11-21T22:56:01+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
