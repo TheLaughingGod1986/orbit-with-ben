@@ -296203,10 +296203,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-21T14:39Z",
+      "eta": "2026-11-21T16:39Z",
       "created_by": "relay",
       "created_at": "2026-11-21T14:38Z",
       "result": "",
@@ -296220,6 +296220,11 @@
           "at": "2026-11-21T14:38Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-21T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
+        },
+        {
+          "at": "2026-11-21T14:39Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Wait for Ben explicit one-time authorization for irreversible protected HOS hos-desk history rewrite (do not re-ask per Grok ruling 7018109147); then resolve open",
@@ -296234,7 +296239,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T14:39Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
