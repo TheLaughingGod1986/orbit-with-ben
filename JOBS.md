@@ -76,6 +76,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3307 | cloud | open (after J3306) | – | – | chief · Chief review: J3302 PR #1118 + exact-file PASS & successor auth for T041-T043 (Europa, Light Speed, Last Star) |  |
 | J3308 | mini | open (after J3307) | – | – | studio · Studio: arm T041 thumbnail Test & Compare on NbW5G1BpPY0 (006 — 2× EARTH'S WATER) after J3307 PASS |  |
 | J3309 | mini | open (after J3307) | – | – | studio · Studio: arm T042 thumbnail Test & Compare on rVqgtkBV3jc (024 — YOU AGE SLOWER) after J3307 PASS |  |
+| J3310 | mini | open (after J3307) | – | – | studio · Studio: arm T043 thumbnail Test & Compare on REXYxuLOBoI (005 — OUTLIVES OUR SUN) after J3307 PASS |  |
 
 Recently finished:
 
