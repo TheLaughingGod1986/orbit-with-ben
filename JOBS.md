@@ -73,6 +73,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3304 | mini | open | – | – | for gemini · review · Packaging panel (gemini): J3302 weekly OWB Challenger Bs (T041 Europa 2x EARTH'S WATER, T042 Light Speed YOU AGE SLOWER, T043 Last Star OUTLIVES OUR SUN + Round 2 Title Bs; PR #1118) |  |
 | J3305 | mini | open | – | – | for cursor · review · Packaging panel (cursor): J3302 weekly OWB Challenger Bs (T041 Europa 2x EARTH'S WATER, T042 Light Speed YOU AGE SLOWER, T043 Last Star OUTLIVES OUR SUN + Round 2 Title Bs; PR #1118) |  |
 | J3306 | cloud | open (after J3305) | – | – | review · Packaging panel decision: J3302 weekly OWB Challenger Bs (T041 Europa 2x EARTH'S WATER, T042 Light Speed YOU AGE SLOWER, T043 Last Star OUTLIVES OUR SUN + Round 2 Title Bs; PR #1118) |  |
+| J3307 | cloud | open (after J3306) | – | – | chief · Chief review: J3302 PR #1118 + exact-file PASS & successor auth for T041-T043 (Europa, Light Speed, Last Star) |  |
 
 Recently finished:
 

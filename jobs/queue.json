@@ -1,5 +1,5 @@
 {
-  "next_id": 3307,
+  "next_id": 3308,
   "jobs": [
     {
       "id": "J0001",
@@ -296865,6 +296865,35 @@
       ],
       "remaining_action": "Packaging panel decision: J3302 weekly OWB Challenger Bs (T041 Europa 2x EARTH'S WATER, T042 Light Speed YOU AGE SLOWER, T043 Last Star OUTLIVES OUR SUN + Round 2 Title Bs; PR #111",
       "kind": "review"
+    },
+    {
+      "id": "J3307",
+      "title": "Chief review: J3302 PR #1118 + exact-file PASS & successor auth for T041-T043 (Europa, Light Speed, Last Star)",
+      "needs": "cloud",
+      "repo": "owb",
+      "body": "Review J3302 weekly OWB thumbnail audit (PR #1118, branch macbook/J3302) and Packaging Panel decision J3306 (05_Analytics/tests/panels/owb-j3302-weekly-2026-11-21/DECISION.md). 1) Review & merge PR #1118 (contains 2026-11-21.md, COMPETITORS.md, DESIGN_REVIEW.md, evidence JSONs, PATTERNS.md, and THUMB_LEDGER.json closing T004/T019 + proposing T041-T043). 2) Issue exact-file PASS (or FIX rebuild instructions) on T041 (NbW5G1BpPY0_B_v01.jpg), T042 (rVqgtkBV3jc_B_v01.jpg), and T043 (REXYxuLOBoI_B_v01.jpg). 3) Decide explicit one-test reversible successor-test authorization over the finished inconclusive Studio reports (T006 on NbW5G1BpPY0, T004 on rVqgtkBV3jc, T016 on REXYxuLOBoI) before any Studio arming job runs.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J3306",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-21T16:37Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T16:37Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief review: J3302 PR #1118 + exact-file PASS & successor auth for T041-T043 (Europa, Light Speed, Last Star)",
+      "kind": "chief",
+      "plain": "Review J3302 weekly OWB thumbnail audit PR #1118 and approve or revise T041-T043 before Studio testing"
     }
   ],
   "focus": [
