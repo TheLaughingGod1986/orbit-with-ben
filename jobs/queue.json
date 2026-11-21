@@ -291933,10 +291933,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-21T01:07Z",
+      "eta": "2026-11-21T03:07Z",
       "created_by": "gemini",
       "created_at": "2026-11-20T19:02Z",
       "result": "",
@@ -292035,6 +292035,11 @@
           "at": "2026-11-20T23:45Z",
           "by": "cursor",
           "what": "released: Verify still running in tmux j3249-verify. Do not start a second copy. Log /Users/benjaminoats/_desk/logs/j3249-verify.log. Done file /Users/benjaminoats/_desk/logs/j3249-verify.done is missing. MiniWork is 39 GiB free of 233 GiB, up from 3.4 GiB at 21:58Z. Cleared after byte compare and source checksum: J2221 21.41 GiB, desk/renders 5.34 GiB, J2242-assemble-v02 2.65, J2242-encode-v01 2.01, J2242-ambiguous-fullres-v01 1.56, J2242-three-rows-fullres-v01 1.35, J2437_work 1.14, J2242-caption-composites-v01 1.03, J2889_work 0.97. Now copying J2242-safe-path-measure. Copies are on the NAS SSD share at /Volumes/nas-staging/mac-mini-archive/miniwork-scratch/2026-11-20 because it is outside 01:00-06:00. Nothing on the NAS was deleted. The script stops at 42 GiB free and writes the done file. When that file exists, read target_40GiB_met and df -h /Volumes/MiniWork. If at least 40 GiB is free, record the checksum summary and mark the job done. £0."
+        },
+        {
+          "at": "2026-11-21T01:07Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Leave the scratch verify running. When its done file appears, confirm the scratch drive has at least 40 GiB free and record the checksum summary.",
