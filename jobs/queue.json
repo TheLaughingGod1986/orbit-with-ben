@@ -291653,17 +291653,22 @@
           "at": "2026-11-21T00:31Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Ranked all 7 public HOS longs and 33 public Shorts from 2026-11-20 snapshot + studio_ctr.json + channel_daily.json; confirmed 120-125 taken in open PRs so new films are HOS:126 and HOS:127"
+        },
+        {
+          "at": "2026-11-21T00:36Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Evidence collected & PASS: HOS:126 Higgs Boson (11 strictly on-topic >=1M edu neighbours incl. 2 TED-Ed, 0 off-topic) & HOS:127 Wright Brothers/How Do Airplanes Fly (clean >=1M edu neighbours incl. TED-Ed, Veritasium, minutephysics, Simple History)"
         }
       ],
-      "remaining_action": "Check J3203 format, verify zero duplication across ideas/PRs, and run neighbours.py + public_search.py for HOS:126 & HOS:127",
+      "remaining_action": "Write TOPIC.md, status.json, README.md, production-status.md, and PRE_BUILD_VIDIQ_AUDIT.md for HOS:126 and HOS:127, verify with status_board.py and check_all.sh",
       "kind": "script",
       "backlog": "hos-ideas",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-21T00:31Z",
+        "at": "2026-11-21T00:36Z",
         "by": "gemini",
-        "note": "Ranked all 7 public HOS longs and 33 public Shorts from 2026-11-20 snapshot + studio_ctr.json + channel_daily.json; conf"
+        "note": "Evidence collected & PASS: HOS:126 Higgs Boson (11 strictly on-topic >=1M edu neighbours incl. 2 TED-Ed, 0 off-topic) & "
       },
       "escalated_at": "2026-11-20T21:48Z",
       "rerouted_from": {
