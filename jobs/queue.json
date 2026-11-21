@@ -292954,9 +292954,14 @@
           "at": "2026-11-21T00:45Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T00:46Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Review HOS:126 TOPIC.md, PRE_BUILD_VIDIQ_AUDIT.md, and neighbours/public_search JSON on HOS PR #706 and record Rule-E GO/NO-GO verdict",
+      "remaining_action": "Inspect HOS PR #706 files, Rule-E rubric, raw JSON evidence, and catalogue uniqueness for HOS:126",
       "kind": "review",
       "plain": "Rule-E topic go/no-go review for HOS 126 What Is the Higgs Boson? (The 48-Year Hunt)",
       "rerouted_from": {
@@ -292970,12 +292975,13 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-21T00:45Z",
-        "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "of": 4,
+        "at": "2026-11-21T00:46Z",
+        "by": "gemini"
+      },
+      "taskKeys": [
+        "HOS:126"
+      ]
     },
     {
       "id": "J3264",
