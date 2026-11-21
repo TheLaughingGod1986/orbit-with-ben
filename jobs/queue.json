@@ -295157,9 +295157,14 @@
           "at": "2026-11-21T11:39Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J3285; starting read-only verification of J3282 waiting condition."
+        },
+        {
+          "at": "2026-11-21T11:40Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read-only signed-out live check confirmed Bks_JLId1ew is public (HTTP 200, playabilityStatus=OK, isPrivate=False, publishDate=2026-11-21T03:30:11-08:00 / 11:30:11Z, Related=VbPubYd6Fbs, AI disclosure + en-GB captions present)."
         }
       ],
-      "remaining_action": "Read J3282 record, HOS 006 approval/gate history, and run read-only live check on YouTube Short Bks_JLId1ew",
+      "remaining_action": "Verify J3282 history, gates, approvals, and library.json status before reopening J3282",
       "kind": "review",
       "recheck_of": "J3282",
       "due": "2026-11-21T12:37:03+00:00",
@@ -295173,11 +295178,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-21T11:39Z",
+        "at": "2026-11-21T11:40Z",
         "by": "gemini",
-        "note": "Claimed J3285; starting read-only verification of J3282 waiting condition."
+        "note": "Read-only signed-out live check confirmed Bks_JLId1ew is public (HTTP 200, playabilityStatus=OK, isPrivate=False, publis"
       },
       "taskKeys": [
         "HOS:006"
