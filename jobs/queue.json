@@ -179088,10 +179088,10 @@
       "stage": "edit",
       "after": "J2035",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-21T16:08Z",
+      "eta": "2026-11-21T18:08Z",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
       "result": "",
@@ -179215,6 +179215,11 @@
           "at": "2026-11-21T16:05Z",
           "by": "gemini",
           "what": "reopened: Acting Chief (Gemini) accepted J3286 CONDITION MET (OWB PR #1105 merged 2cba791942, jobs/reviews/J3286/REVIEW.md; direct NAS SHA-256 parity re-verified): J3261 v02 master 9d8731cb (v01 untouched 802b5c7e) PASS on picture_qa (0/92 fail, 5 low-detail warn), polish_gate (0/92 fail), music_gate, sfx_kit level, E2 opening (8 cuts <4.5s, proof stills, early DATA), 42 Teach cards + timeline + separated Part 4 graphics; J3262 thumbnails A+B Acting Chief PASS (desk #IC_kwDOUEPCF88AAAABpJHP9A, HOS PR #705 merged 614b507d, 7/7 Mini-NAS SHA-256 parity). Reopened for v02 final QA: inspect 5 low-detail warnings + early DATA 26.15-29.75s legibility + 42 Teach cards + proof stills, verify/re-time chapters to v02 (updating/superseding unmerged HOS PR #703), wire thumbnails A+B into PACKAGE_MANIFEST.json, reconcile FACT_NOTES UNSIGNED without inventing sign-off, run lint:package, and deliver technical pack for Ben final watch (ben_ok remains todo; £0 spend; no upload/schedule/privacy change)."
+        },
+        {
+          "at": "2026-11-21T16:08Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Wait for J3261 (HOS 009 v02 re-edit) and J3262 (HOS 009 thumbnails A+B) before finishing J2036 QA and chapters",
@@ -179232,7 +179237,15 @@
       },
       "for": "claudecode",
       "model": "mini-claude-opus-5-5",
-      "escalated_at": "2026-11-21T01:52Z"
+      "escalated_at": "2026-11-21T01:52Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T16:08Z",
+        "by": "claudecode",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2037",
