@@ -295769,20 +295769,23 @@
           "at": "2026-11-21T13:13Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T13:15Z",
+          "by": "macbook",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Add music_gate and the channel's blocking gates to the upload hard-stop; extend gate_upcoming to all gates, Shorts and longs, 14 days, daily; tests",
+      "remaining_action": "Map required gates, add shared upload and schedule checks, test and open a PR",
       "due": "2026-11-24T18:00:00Z",
       "kind": "assembly",
       "urgent": 4,
       "plain": "Stops a video with a failed check from being uploaded, and re-checks everything already scheduled every day",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-21T13:13Z",
-        "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "of": 4,
+        "at": "2026-11-21T13:15Z",
+        "by": "macbook"
       }
     },
     {
