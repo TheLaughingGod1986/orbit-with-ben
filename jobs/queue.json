@@ -295948,13 +295948,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-21T13:28Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-21T13:09Z",
-      "result": "parked for Chief: PR #1112 ready for review and merge (J3291 upload hard-stop + daily 14-day multi-channel gate sweep; commit bba2ccbde8)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-21T13:09Z",
@@ -296035,6 +296035,11 @@
           "at": "2026-11-21T15:45Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-21T17:05Z",
+          "by": "gemini",
+          "what": "reopened: Chief review of PR #1112 (bba2ccbde8): CHANGES REQUESTED (comment 7066197478). Fix 4 defects on macbook/J3291: (1) Rules check CI failure — fault-isolate scheduled_gates.queue_daily in refill.py and mock it in test_launch_check.TheRefillTick + add fault-isolation test; (2) gate_upcoming.py passes OWB GATE/LIB_JSON unconditionally — use target channel gate_shorts_open.py and library.json unless overridden by analytics_gate.py + add test; (3) publishing_gates._find_bed sorts .mp3=0/.wav=1 ascending then picks [-1] (inverted) — prefer .mp3 then .wav, add test, re-lock core_sync.py; (4) scheduled_gates.raise_ben_alert_if_needed marks eid in sent_map when urgent_now=False, suppressing later <24h delivery — deduplicate only after actual delivery + add test. Verify all PR checks green before re-parking for Chief merge."
         }
       ],
       "remaining_action": "Await Chief review and merge of PR #1112",
@@ -296042,13 +296047,6 @@
       "kind": "assembly",
       "urgent": 4,
       "plain": "Stops a video with a failed check from being uploaded, and re-checks everything already scheduled every day",
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-21T13:44Z",
-        "by": "gemini",
-        "note": "Worktree cleaned; PR #1112 (bba2ccbde8) ready for Chief review and merge; 193 Python tests + 34 TS tests + tsc + core_sy"
-      },
       "escalated_at": "2026-11-21T15:45Z"
     },
     {
