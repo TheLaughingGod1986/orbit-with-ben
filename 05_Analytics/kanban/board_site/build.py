@@ -49,8 +49,16 @@ TRACKER_HEAD = """<!doctype html><html lang="en" data-theme="dark"><head><meta c
 <style>body{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}.eyebrow a{color:inherit}
 .studio-back{display:inline-flex;align-items:center;min-height:44px;margin:-10px 0 2px;font:600 .95rem var(--f-display);color:var(--accent);text-decoration:none}
 #tracker-refresh{justify-self:start;min-height:44px}
-html[data-theme="dark"]:root{--bg:#0B111B;--panel:#172433;--line:#243244;--grid:#1F2D3F;--chip:#1B2A3B;--ink:#F1F5F9;--ink-2:#B6C2D2;--ink-3:#94A3B8}</style>
+html[data-theme="dark"]:root{--bg:#0B111B;--panel:#172433;--line:#243244;--grid:#1F2D3F;--chip:#1B2A3B;--ink:#F1F5F9;--ink-2:#B6C2D2;--ink-3:#94A3B8}
+.urgent-banner{background:#3d1217;border:1.5px solid #f87171;border-radius:14px;padding:12px 14px;margin:12px auto;max-width:1100px;display:flex;flex-direction:column;gap:10px;color:#fff5f5}
+.urgent-banner-item{display:flex;flex-direction:column;gap:6px}
+.urgent-banner-item+.urgent-banner-item{padding-top:10px;border-top:1px solid rgba(248,113,113,.35)}
+.urgent-banner-head{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#fecaca}
+.urgent-banner-dot{width:8px;height:8px;border-radius:50%;background:#f87171;flex:0 0 8px}
+.urgent-banner-text{margin:0;font-size:14px;line-height:1.45;font-weight:600;color:#fff}
+.urgent-banner-link{display:inline-flex;align-items:center;justify-content:center;align-self:flex-start;min-height:44px;padding:8px 14px;border-radius:10px;background:#dc2626;color:#fff;font-size:14px;font-weight:700;text-decoration:none}</style>
 </head><body>
+<div id="urgent-banner"></div>
 """
 
 TRACKER_PATCHES = [

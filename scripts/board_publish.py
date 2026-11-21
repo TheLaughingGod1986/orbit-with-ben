@@ -758,6 +758,13 @@ def quick_key(remote=ls_remote) -> str | None:
     parts.append(relay.current_execution(now()))  # launch, exit and expiry invalidate the quick cache
     parts.append({a: r for a,r in relay.worker_capabilities().items()
                   if workflow.timestamp(r.get("expiresAt")) and workflow.timestamp(r["expiresAt"]) > now()})
+    try:
+        import ben_alerts
+        ap = ben_alerts.state_path()
+        parts.append(ap.read_text() if ap.exists() else "")
+        parts.append(ben_alerts.has_due_work(now()))
+    except Exception:  # noqa: BLE001
+        parts.append("")
     return digest(parts)
 
 
@@ -834,7 +841,26 @@ def run_once(a) -> int:
         log(f"progress24h not built: {e}")
     add_plan(board, at)
     add_field_order(board)
+    add_alerts(board, at, dry_run=a.dry_run)
     return finish(a, at, prev, prev_path, key, docs, board, hashes, checks, checks_at, {**checks_meta, **health})
+
+
+def add_alerts(board: dict, at: dt.datetime, dry_run: bool = False) -> None:
+    """Urgent alerts to Ben (same-day pull/unschedule/replace within 24 h or awaits_ben watch within 12 h; J3292)."""
+    try:
+        import ben_alerts
+        queue = _read_json(wt() / "jobs" / "queue.json") or {}
+        jobs = queue.get("jobs") or []
+        videos = ((board.get("tracker") or {}).get("videos")) or []
+        checks = board.get("checks") or {}
+        roots = {s: wt(s) for s in channels.slugs()}
+        uploads = ben_alerts.load_channel_uploads(roots, studio_root=wt())
+        res = ben_alerts.evaluate(
+            at=at, jobs=jobs, checks=checks, videos=videos, uploads=uploads, deliver=not dry_run,
+        )
+        board["alerts"] = res["board"]
+    except Exception as e:  # noqa: BLE001
+        log(f"ben alerts not built: {e}")
 
 
 def add_field_order(board: dict) -> None:

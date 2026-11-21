@@ -67,9 +67,17 @@ tr:first-child td { border-top: 0; }
 td.r { text-align: right; white-space: nowrap; }
 tfoot td { border-top: 1px solid var(--muted); }
 footer { margin-top: 16px; color: var(--muted); font-size: 0.8rem; }
+.urgent-banner { background: #3d1217; border: 1.5px solid var(--red); border-radius: 14px; padding: 12px 14px; margin: 0 0 14px; display: flex; flex-direction: column; gap: 10px; color: #fff5f5; }
+.urgent-banner-item { display: flex; flex-direction: column; gap: 6px; }
+.urgent-banner-item + .urgent-banner-item { padding-top: 10px; border-top: 1px solid rgba(255, 107, 107, 0.35); }
+.urgent-banner-head { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: #fecaca; }
+.urgent-banner-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--red); flex: 0 0 8px; }
+.urgent-banner-text { margin: 0; font-size: 14px; line-height: 1.45; font-weight: 600; color: #fff; }
+.urgent-banner-link { display: inline-flex; align-items: center; justify-content: center; align-self: flex-start; min-height: 44px; padding: 8px 14px; border-radius: 10px; background: #dc2626; color: #fff; font-size: 14px; font-weight: 700; text-decoration: none; }
 </style>
 </head>
 <body>
+<div id="urgent-banner"></div>
 <header>
   <h1>AI & credits</h1>
   <div class="sub" id="asof">Loading…</div>

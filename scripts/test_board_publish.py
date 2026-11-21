@@ -134,6 +134,8 @@ class SiteBuild(unittest.TestCase):
             self.assertTrue((Path(d)/"dist/updater.js").exists())
             tracker=(Path(d)/"dist/tracker.html").read_text()
             self.assertIn(f'<meta name="studio-version" content="{version}">',tracker)
+            for page_html in (home, ai, tracker):
+                self.assertIn("urgent-banner", page_html)
 
     def test_retired_addresses_go_to_the_studio_app(self):
         site = json.loads((HERE.parent / "05_Analytics/kanban/board_site/host_config.json").read_text())

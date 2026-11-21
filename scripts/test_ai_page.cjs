@@ -6,7 +6,7 @@ assert(source.includes(hook), 'ai_app.js keeps its test hook');
 const context = {Date, console, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {parseWeeklyReset,renderAI, poolState, burnPerDay, poolTotal};
+  globalThis.test = {urgentBannerHtml,parseWeeklyReset,renderAI, poolState, burnPerDay, poolTotal};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -91,4 +91,10 @@ console.log('ai page OK');
  assert.equal(e.timeShare,null,'reset end alone does not establish duration');
  const ehtml=t.renderAI({credits:{plans,pools:{elevenlabs:el}},models:{models:[]},owb:{jobs:[]}},now);
  assert(ehtml.includes('start unread'),'verified reset date survives unknown billing');
+}
+// J3292: AI page red urgent banner renders active alerts with root link and escapes text.
+{
+ const b = t.urgentBannerHtml({alerts: {active: [{kind: 'watch', message: 'Muons <v06> needs watch by 10:45', href: '#review'}]}});
+ assert(b.includes('class="urgent-banner"') && b.includes('Muons &lt;v06&gt;') && b.includes('href="/#review"'), b);
+ assert.equal(t.urgentBannerHtml({alerts: {active: []}}), '');
 }

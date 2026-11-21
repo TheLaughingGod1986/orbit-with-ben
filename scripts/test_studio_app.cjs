@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {fieldOrderCard,agentReason,parseWeeklyReset,normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, channelsSection, channelsPage, channelCard, channelLight, channelFacts, firstDayCard, firstDaySection, firstDayPage, firstDayNext, planCard, planSection, planPage, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
+  globalThis.test = {urgentBannerHtml,renderView,fieldOrderCard,agentReason,parseWeeklyReset,normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, channelsSection, channelsPage, channelCard, channelLight, channelFacts, firstDayCard, firstDaySection, firstDayPage, firstDayNext, planCard, planSection, planPage, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -1659,3 +1659,32 @@ const fieldHtml=t.fieldOrderCard({fieldOrder:{through:'2026-11-17',targets:[{nam
 assert(fieldHtml.includes('&lt;unsafe&gt;'));
 assert(fieldHtml.includes('median 3'));
 assert(fieldHtml.includes('not enough growth data'));
+
+// J3292: urgent red banner sits at the top of every page and hides cleanly when empty.
+{
+  const alertBoard = {
+    ...board,
+    alerts: {
+      active: [{
+        id: 'pull:OWB:gc1:2026-11-21T11:30',
+        kind: 'pulled',
+        message: 'Muons Short pulled (<music>). Needs your watch by 10:45 to keep today\'s 11:30 slot',
+        href: '#review',
+      }],
+    },
+  };
+  for (const tab of ['overview', 'videos', 'review', 'agents', 'schedule']) {
+    const out = t.renderView(alertBoard, tab, NOW);
+    assert(out.startsWith('<div class="urgent-banner" role="alert"'), `${tab} leads with red urgent banner`);
+    assert(out.includes('Muons Short pulled (&lt;music&gt;)'), `${tab} escapes banner text`);
+    assert(out.includes('href="#review"'), `${tab} links to watch card`);
+  }
+  for (const opts of [{uatKey: 'OWB:019'}, {videoKey: 'OWB:019'}, {hash: '#plan'}, {hash: '#firstday'}, {hash: '#channels'}]) {
+    const out = t.renderView(alertBoard, 'overview', NOW, opts);
+    assert(out.startsWith('<div class="urgent-banner" role="alert"'), `subpage ${JSON.stringify(opts)} leads with red urgent banner`);
+  }
+  const quietBoard = {...board, alerts: {active: []}};
+  assert.equal(t.urgentBannerHtml(quietBoard), '', 'no banner when alerts are empty');
+  assert(!t.renderView(quietBoard, 'overview', NOW).includes('urgent-banner'), 'overview clean with no active alerts');
+  console.log('Urgent alert banner OK');
+}
