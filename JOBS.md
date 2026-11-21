@@ -78,7 +78,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3313 | mini | open | – | – | studio · HOS: confirm tomorrow's 11:30 Short el30-mHiH-0 is still scheduled, clear the false 'video pulled' banner, and fix the alert |  |
 | J3314 | mini | claimed | gemini | 2026-11-21T19:47Z | 009 edit · assembly · HOS 009: Assemble v03 long master (fix card drift, stacked Part 4 captions, E2 early card, phone readability) | J2036 |
 | J3315 | mini | open | – | – | review · Verify condition for J2036 |  |
-| J3316 | mini | open | – | – | review · Verify condition for J3311 |  |
+| J3316 | mini | claimed | macbook-2 | 2026-11-21T20:13Z | review · Verify condition for J3311 |  |
 
 Recently finished:
 
