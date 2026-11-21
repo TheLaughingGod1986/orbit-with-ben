@@ -293978,13 +293978,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-21T04:24Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-21T03:55Z",
-      "result": "parked for Chief: merge HOS PR #712 (base main; live description on oKqmnJNGiHg already fixed and read back, 007/008 record fixes, all checks PASS). Then re-run contract check on HOS #704 and merge it; close HOS #665 as superseded. Desk post not made: hos_desk.py rejects sender claudecode; report is on the studio thread.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-21T03:55Z",
@@ -294040,19 +294040,17 @@
           "at": "2026-11-21T04:31Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: merge HOS PR #712 (base main; live description on oKqmnJNGiHg already fixed and read back, 007/008 record fixes, all checks PASS). Then re-run contract check on HOS #704 and merge it; close HOS #665 as superseded. Desk post not made: hos_desk.py rejects sender claudecode; report is on the studio thread."
+        },
+        {
+          "at": "2026-11-21T05:15Z",
+          "by": "gemini",
+          "what": "reopened: Acting Chief (gemini) PASS: squash-merged HOS PR #712 (7e10f574) and HOS PR #704 (28b4197c, all 6 CI checks green), closed conflicted HOS PR #665 as superseded; closing J3271"
         }
       ],
       "remaining_action": "Chief merges HOS pull request 712, then 704; closes 665",
       "kind": "studio",
       "plain": "Fix broken source URL on Phosphorus Short and sync 007/008 HOS release records so contract CI passes",
       "mini_only": true,
-      "progress": {
-        "step": 4,
-        "of": 5,
-        "at": "2026-11-21T04:31Z",
-        "by": "claudecode",
-        "note": "one HOS pull request (712) opened with all three fixes and the read-back receipt; all checks pass"
-      },
       "taskKeys": [
         "HOS:007",
         "HOS:008"
