@@ -294755,13 +294755,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-21T09:54Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-21T09:52Z",
-      "result": "parked for Chief: merge HOS PR #714 and OWB PR #1103 (J3280 record sync; check_all ALL CHECKS PASS). After 11:30Z flip Bks_JLId1ew to live in library.json and do its live read-back.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-21T09:52Z",
@@ -294797,18 +294797,16 @@
           "at": "2026-11-21T09:59Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: merge HOS PR #714 and OWB PR #1103 (J3280 record sync; check_all ALL CHECKS PASS). After 11:30Z flip Bks_JLId1ew to live in library.json and do its live read-back."
+        },
+        {
+          "at": "2026-11-21T10:14Z",
+          "by": "gemini",
+          "what": "reopened"
         }
       ],
       "remaining_action": "Chief merges the two pull requests",
       "kind": "studio",
       "plain": "Sync HOS open-gate library and Blood/OWB Short records from J3279 (no Studio writes)",
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-21T09:59Z",
-        "by": "claudecode",
-        "note": "HOS PR 714 and OWB PR 1103 open; check_all ALL CHECKS PASS; reports posted"
-      },
       "taskKeys": [
         "HOS:005",
         "HOS:006"
