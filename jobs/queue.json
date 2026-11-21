@@ -1,5 +1,5 @@
 {
-  "next_id": 3300,
+  "next_id": 3301,
   "jobs": [
     {
       "id": "J0001",
@@ -286450,6 +286450,11 @@
           "at": "2026-11-21T10:05Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-21T16:05:00Z"
+        },
+        {
+          "at": "2026-11-21T16:08Z",
+          "by": "relay",
+          "what": "condition verification queued: J3300"
         }
       ],
       "remaining_action": "Review ten unresolved HOS 013 pass-1 plates (rows 56-62, 64-66) in a session with demonstrated continuous 24-fps moving_video_input playback and return to elected Chief for per-row marks",
@@ -286480,13 +286485,14 @@
       "hold": {
         "type": "capability",
         "condition": "J3277 acting-Chief verification (jobs/reviews/J3277/REVIEW.md, commits 0a70ba2bce/ea7e46e6f9): condition unmet. Direct read_file probe on NAS row 58 (P05_10_darwin_worried_shelf_t1.mp4) in agy 1.5.14 on Gemini 4 Neon (High) still returns 8 discrete 1-fps static JPEG frames (00:00..00:07; Darwin whole at 00:03 and absent at 00:04, missing 3.833-4.250s exit), not continuous 24-fps moving-video playback (audio_input demonstrated on pickup WAV). Relay capability_probe.py 2-second colour-block test (09:46:29Z) remains solvable from 1-fps stills and does not prove 24-fps playback. Cursor (weekly usage limit) and Claude Code have no verified moving_video_input; Codex is down until 2026-11-24T23:26:00Z; Grok Bot retry 2026-11-21T11:45:53Z; Claude returns 2026-11-21T12:50:00Z. Freshly verified 11/11 Batch 12-14 NAS SHA-256 hashes match receipts, REVIEW_STATE.json preserves 48 KEEP / 8 RETAKE (3,10,24,28,47,49,54,63) / 10 unset, and no new 013 marks exist on HOS #180/#694, OWB #954, or open PRs. Keep J3178 held pending continuous 24-fps moving_video_input review of rows 56-62, 64-66; no playback PASS claimed, no minting or assembly authorised.",
-        "check_at": "2026-11-21T16:05:00Z",
+        "check_at": "2026-11-21T17:08:09+00:00",
         "requires": [
           "moving_video_input"
         ],
         "last_recheck": "J3277",
         "checked_at": "2026-11-21T10:05:16+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J3300"
       }
     },
     {
@@ -296506,6 +296512,40 @@
         "by": "gemini",
         "note": "PR #1117 opened and studio thread report posted; parking J3299 for Chief"
       }
+    },
+    {
+      "id": "J3300",
+      "title": "Verify condition for J3178",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3178: J3277 acting-Chief verification (jobs/reviews/J3277/REVIEW.md, commits 0a70ba2bce/ea7e46e6f9): condition unmet. Direct read_file probe on NAS row 58 (P05_10_darwin_worried_shelf_t1.mp4) in agy 1.5.14 on Gemini 4 Neon (High) still returns 8 discrete 1-fps static JPEG frames (00:00..00:07; Darwin whole at 00:03 and absent at 00:04, missing 3.833-4.250s exit), not continuous 24-fps moving-video playback (audio_input demonstrated on pickup WAV). Relay capability_probe.py 2-second colour-block test (09:46:29Z) remains solvable from 1-fps stills and does not prove 24-fps playback. Cursor (weekly usage limit) and Claude Code have no verified moving_video_input; Codex is down until 2026-11-24T23:26:00Z; Grok Bot retry 2026-11-21T11:45:53Z; Claude returns 2026-11-21T12:50:00Z. Freshly verified 11/11 Batch 12-14 NAS SHA-256 hashes match receipts, REVIEW_STATE.json preserves 48 KEEP / 8 RETAKE (3,10,24,28,47,49,54,63) / 10 unset, and no new 013 marks exist on HOS #180/#694, OWB #954, or open PRs. Keep J3178 held pending continuous 24-fps moving_video_input review of rows 56-62, 64-66; no playback PASS claimed, no minting or assembly authorised.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3178 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-21T16:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T16:08Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Review ten unresolved HOS 013 pass-1 plates (rows 56-62, 64-66) in a session with demonstrated continuous 24-fps moving_video_input playback and return to elected",
+      "kind": "review",
+      "recheck_of": "J3178",
+      "required_capabilities": [
+        "moving_video_input"
+      ],
+      "due": "2026-11-21T17:08:09+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
