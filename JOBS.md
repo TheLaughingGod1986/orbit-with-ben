@@ -59,7 +59,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3270 | any | blocked | macbook | – | script · HOS: learn from our data, add two new films to the backlog |  |
 | J3274 | mini | open | – | – | 024 upload · studio · OWB 024 muon Short v06: upload and schedule after Ben's UAT watch approval |  |
 | J3280 | mini | blocked | claudecode | – | studio · HOS repo-record & open-gate library sync (J3279): library.json, Blood SHORTS_RELEASE, OWB UPLOADS |  |
-| J3282 | any | open | – | – | 006 upload · listing · HOS 006 Short Bks_JLId1ew post-public read-back & library.json live flip |  |
+| J3282 | any | claimed | gemini | 2026-11-21T12:13Z | 006 upload · listing · HOS 006 Short Bks_JLId1ew post-public read-back & library.json live flip |  |
 | J3283 | mini | blocked | macbook-2 | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 
 Recently finished:
