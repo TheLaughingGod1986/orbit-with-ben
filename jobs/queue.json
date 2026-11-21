@@ -1,5 +1,5 @@
 {
-  "next_id": 3264,
+  "next_id": 3265,
   "jobs": [
     {
       "id": "J0001",
@@ -292934,6 +292934,35 @@
       "remaining_action": "Review HOS:126 TOPIC.md, PRE_BUILD_VIDIQ_AUDIT.md, and neighbours/public_search JSON on HOS PR #706 and record Rule-E GO/NO-GO verdict",
       "kind": "review",
       "plain": "Rule-E topic go/no-go review for HOS 126 What Is the Higgs Boson? (The 48-Year Hunt)"
+    },
+    {
+      "id": "J3264",
+      "title": "HOS 127 How Do Airplanes Fly?: rule-E topic go/no-go review",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Rule-E topic go/no-go review for **HOS:127 (`02_Video-Projects/127_Wright-Brothers-How-Do-Airplanes-Fly-Wind-Tunnel`)** on HOS PR `#706` (`https://github.com/TheLaughingGod1986/history-of-science/pull/706`, branch `gemini/J3245-hos-topics-126-127`) and OWB PR `#1094` (`https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1094`), queued by `J3245`.\n\n### Topic Summary\n- **2027 Search Plan Fit (`J3224`, approved 20 Nov 2026):** Cluster 4 Lead Film (Thu 28 Jan 2027, *Breakthrough & Lost Engineering*): `wright brothers first flight` `19,018`/mo, comp `45`, `the wright brothers` `+74.8%` growth, `10/10` US SERP gap, sub-50k breakouts (`History Dude` 1.1K US → `51.9K` 13×; `Acta Historia` 1.2K CA → `1.4K` 12×).\n- **Title A (Primary Proposal, Rules 1, 15, 23, 26 — 44 chars ≤ 50, 0 collisions):** `How Do Airplanes Fly? (The 1901 Wind Tunnel)`\n- **Title B (T&C, J3224 Lead Film 4 Exact Query — 50 chars ≤ 50, 0 collisions):** `Wright Brothers First Flight: The 1901 Wind Tunnel`\n- **Title C (Rules 1, 15, 23 — 48 chars ≤ 50, 0 collisions):** `How Did the Wright Brothers Solve Flight? (1901)`\n- **Short S01 (16–19 s, 48 chars, 0 collisions):** `Why Did the Wright Brothers Build a Wind Tunnel?`\n- **Short S02 (16–19 s, 50 chars, 0 collisions):** `How Did the Wright Brothers Steer the First Plane?`\n- **Saved Evidence (`2026-11-21`):**\n  - `11_Upload-Package/evidence_2026-11-21_neighbours.json` (`PASS`: `8` raw / `6` strictly on-topic education videos `≥1,000,000` views after transparently excluding `2` airplane-keyword false positives `dzrwnwOx0fw` riddle & `iKYHf22qVdM` airplane mode; `TED-Ed/TED: yes`, led by `TED-Ed` ★ `2,568,211` *How do airplanes actually fly?*, `TED-Ed` ★ `2,519,461`, `minutephysics` `2,481,276`, `SciShow Kids` `1,754,830`, `Veritasium` `1,662,146` *How Does A Wing Actually Work?*, and `Simple History` `1,410,350` *The Wright Brothers, First Successful Airplane (1903)*, plus `Real Engineering` `384,058` & `SciShow` `293,525`).\n  - `11_Upload-Package/evidence_2026-11-21_public_search.json` (`\"how do airplanes fly\"`, `\"wright brothers first flight\"`, `\"wright brothers wind tunnel\"`, and `\"how does an airplane wing work\"` autocomplete `yes`; ranking videos `Sabin Civil Engineering` `4,461,586`, `TED-Ed` `2,568,211`, `minutephysics` `2,481,276`, `Math and Science` `2,044,514`, `Veritasium` `1,662,162`, `Naked Science` `1,583,808`, `Simple History` `1,410,350`; `0` exact title collisions).\n\n### Reviewer Checklist (AGENTS.md Rule E)\n1. Verify `TOPIC.md`, `status.json`, `production-status.md`, `11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md`, and the two raw JSON evidence files on HOS PR `#706`.\n2. Score the Rule-E topic rubric (neighbour demand `≥3` at `1M+` views with TED/TED-Ed presence, signed-out YouTube autocomplete demand, title collision check, non-duplication across `02_Video-Projects/`, `ideas/`, open PRs `120–125`, and `WIP.json`, and visual proof-first hook).\n3. Confirm that all historical and scientific claims remain marked **UNVERIFIED** until `SOURCES.md` exact quotes and the `facts` lane run when an active HOS WIP slot opens under Rule G (`jobs/WIP.json` `next_hos`).\n4. Record the Rule-E go/no-go verdict.\n",
+      "ref": "",
+      "film": "127",
+      "stage": "topic",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-21T00:44Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T00:44Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review HOS:127 TOPIC.md, PRE_BUILD_VIDIQ_AUDIT.md, and neighbours/public_search JSON on HOS PR #706 and record Rule-E GO/NO-GO verdict",
+      "kind": "review",
+      "plain": "Rule-E topic go/no-go review for HOS 127 How Do Airplanes Fly? (The 1901 Wind Tunnel)"
     }
   ],
   "focus": [
