@@ -298593,13 +298593,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-21T21:09Z",
-      "eta": "2026-11-21T22:09Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-21T21:07Z",
-      "result": "",
+      "result": "HOS PR #720 (macbook/J3324, 4620a147, open for Chief merge): read-only live listing check in 00_Brand/Channel-Setup/audits/live_fixes/2026-11-21_J3324.md at 2026-11-21T21:13Z-21:14Z. 0 live YouTube/Studio fixes and 0 repo-record deltas on main (Bks_JLId1ew already live via merged PR #715 / J3282). Verified signed-out channel tabs (7 public longs + 35 public Shorts), 7/7 public longs (5/5 chapter parity vs live/desc/repo, Sources on 004-007, live end screens, AI badges, captions, Education), 35/35 public Shorts (playability OK, 19-27s, Education, 35/35 live Related pills, AI badges, captions, 8/8 external source URLs HTTP 200), 3/3 scheduled videos (el30-mHiH-0, sY0PSQFxjp8, uAomPaOBrM8 LOGIN_REQUIRED signed-out; 099 7/7 chapters match readback; J3323 already queued for el30-mHiH-0), and HOS check_all.sh ALL CHECKS PASS (lint:package PASS, status_board PASS, 28/28 contract tests PASS). Data API channel:audit (68 videos, 0 errors) verified by Chief at 21:04Z (#7069251210; MacBook has no .env). Nothing changed in Studio, API, or Buffer; £0.",
       "history": [
         {
           "at": "2026-11-21T21:07Z",
@@ -298625,6 +298625,11 @@
           "at": "2026-11-21T21:16Z",
           "by": "macbook",
           "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-11-21T21:17Z",
+          "by": "macbook",
+          "what": "done: HOS PR #720 (macbook/J3324, 4620a147, open for Chief merge): read-only live listing check in 00_Brand/Channel-Setup/audits/live_fixes/2026-11-21_J3324.md at 2026-11-21T21:13Z-21:14Z. 0 live YouTube/Studio fixes and 0 repo-record deltas on main (Bks_JLId1ew already live via merged PR #715 / J3282). Verified signed-out channel tabs (7 public longs + 35 public Shorts), 7/7 public longs (5/5 chapter parity vs live/desc/repo, Sources on 004-007, live end screens, AI badges, captions, Education), 35/35 public Shorts (playability OK, 19-27s, Education, 35/35 live Related pills, AI badges, captions, 8/8 external source URLs HTTP 200), 3/3 scheduled videos (el30-mHiH-0, sY0PSQFxjp8, uAomPaOBrM8 LOGIN_REQUIRED signed-out; 099 7/7 chapters match readback; J3323 already queued for el30-mHiH-0), and HOS check_all.sh ALL CHECKS PASS (lint:package PASS, status_board PASS, 28/28 contract tests PASS). Data API channel:audit (68 videos, 0 errors) verified by Chief at 21:04Z (#7069251210; MacBook has no .env). Nothing changed in Studio, API, or Buffer; £0."
         }
       ],
       "remaining_action": "Commit and push macbook/J3324, open PR in history-of-science, return to main, and post report",
