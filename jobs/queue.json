@@ -295829,19 +295829,24 @@
           "at": "2026-11-21T13:34Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Audited WIP PR #1112, J3292 PR #1111, and real OWB/HOS/WW2 layouts; identified real-export input resolution, multi-channel repo routing, dual HOS UPLOADS merge, AppleDouble filter, analytics_gate compatibility, per-channel sweep fault isolation, and J3292 alert hook"
+        },
+        {
+          "at": "2026-11-21T13:39Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Implemented channel-aware publishing_gates.py (OWB/HOS/WW2 + real-export derivation + waivers), multi-channel repo routing in shorts-gate.ts/youtube-package-upload.ts, dual-UPLOADS merge + analytics_gate compatibility in gate_upcoming.py, per-channel fault isolation + J3292 alert hook in scheduled_gates.py, and expanded tests"
         }
       ],
-      "remaining_action": "Implement channel-aware publishing_gates.py, upload hard-stop, and gate_upcoming.py improvements",
+      "remaining_action": "Run full Python, TypeScript, core-sync, and real-media verification suite",
       "due": "2026-11-24T18:00:00Z",
       "kind": "assembly",
       "urgent": 4,
       "plain": "Stops a video with a failed check from being uploaded, and re-checks everything already scheduled every day",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-21T13:34Z",
+        "at": "2026-11-21T13:39Z",
         "by": "gemini",
-        "note": "Audited WIP PR #1112, J3292 PR #1111, and real OWB/HOS/WW2 layouts; identified real-export input resolution, multi-chann"
+        "note": "Implemented channel-aware publishing_gates.py (OWB/HOS/WW2 + real-export derivation + waivers), multi-channel repo routi"
       }
     },
     {
