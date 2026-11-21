@@ -59,7 +59,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3231 | cloud | open | – | – | review · Weekly search research (Orbit + Field Order History): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
 | J3249 | mini | open | – | – | assembly · MiniWork scratch SSD cleanup: safely offload old completed-job scratch to NAS to restore >=40 GB free before J3012 daily split and cutover |  |
 | J3255 | mini | blocked | cursor | – | studio · YouTube and Studio settings audit for growth: every channel setting, upload default, layout, playlist and eligibility; fix the safe ones, ask Ben the rest |  |
-| J3261 | mini | open | – | – | 009 edit · assembly · HOS 009: Assemble v02 long master (E2 first 30 s, Teach cards/timeline, separate back-to-back graphics) | J2036 |
+| J3261 | mini | claimed | cursor | 2026-11-21T03:54Z | 009 edit · assembly · HOS 009: Assemble v02 long master (E2 first 30 s, Teach cards/timeline, separate back-to-back graphics) | J2036 |
 | J3262 | mini | blocked | cursor | – | 009 thumbs · thumb · HOS 009: Build long thumbnails A+B (house look, style_sheet + thumb_preview, £0 paid spend) | J2036 |
 | J3265 | any | claimed | macbook-2 | 2026-11-21T03:53Z | assembly · Agents run themselves: each agent on its own timer, picks by skill, sets up the next stage, fixes its own failures (after #1073) |  |
 | J3267 | mini | open | – | – | assembly · Comment replies for every channel: read new comments, reply in each channel's voice, escalate the sensitive ones, log ideas (Ben's one voice check first) |  |

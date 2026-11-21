@@ -293016,10 +293016,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-21T01:54Z",
+      "eta": "2026-11-21T03:54Z",
       "created_by": "gemini",
       "created_at": "2026-11-20T23:56Z",
       "result": "",
@@ -293048,6 +293048,11 @@
           "at": "2026-11-21T00:10Z",
           "by": "cursor",
           "what": "released: v02 render is running in tmux session J3261-render. Log is ~/_desk/logs/J3261-render.log and the exit code lands in ~/_desk/logs/J3261-render.done. v01 was not rewritten. Next run: if the done file is missing, leave the render; if it is present, read the exit code, the gates and the stills, then update the film status. Do not start a second render."
+        },
+        {
+          "at": "2026-11-21T01:54Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "The v02 picture render is running on its own. The next pass reads the finished log, then checks the gates.",
