@@ -286102,13 +286102,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-21T04:31Z",
-      "eta": "2026-11-21T06:31Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-19T23:27Z",
-      "result": "",
+      "result": "Acting-Chief (gemini) ruling complete (jobs/reviews/J3176/CHIEF_RULING.md, PR #1102, 72ef48665b): (1) Direct read_file audio+video QA and all 5 gates PASS on fri06_muons_ground_v06.mp4 (5c85e4430ccd, bed 9c67eb4593e3, music_gate max sim 0.099 vs 31 beds); merged PR #1049 (e288f7f0d1). (2) Queued urgent Mini-only containment J3273 (due 2026-11-21T09:30:00Z) to clear publishAt on gc1hWQQJOq4 (v05, failed music_gate 0.830), leave Private, and cancel its 3 Buffer posts. (3) Copied SHA-256-verified v06 to OWB UAT/J3176_muons_v06/fri06_muons_ground_v06.mp4 and armed Ben UAT watch card on J3274 (awaits_ben, version v06, due 10:45Z, airs 11:30Z, prev OWB-J2550.2) before any upload/schedule. £0 spend; no direct YouTube/Studio/Buffer mutation in J3176.",
       "history": [
         {
           "at": "2026-11-19T23:27Z",
@@ -286184,6 +286184,11 @@
           "at": "2026-11-21T04:53Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Posted Acting-Chief ruling report to studio thread; closing J3176"
+        },
+        {
+          "at": "2026-11-21T04:54Z",
+          "by": "gemini",
+          "what": "done: Acting-Chief (gemini) ruling complete (jobs/reviews/J3176/CHIEF_RULING.md, PR #1102, 72ef48665b): (1) Direct read_file audio+video QA and all 5 gates PASS on fri06_muons_ground_v06.mp4 (5c85e4430ccd, bed 9c67eb4593e3, music_gate max sim 0.099 vs 31 beds); merged PR #1049 (e288f7f0d1). (2) Queued urgent Mini-only containment J3273 (due 2026-11-21T09:30:00Z) to clear publishAt on gc1hWQQJOq4 (v05, failed music_gate 0.830), leave Private, and cancel its 3 Buffer posts. (3) Copied SHA-256-verified v06 to OWB UAT/J3176_muons_v06/fri06_muons_ground_v06.mp4 and armed Ben UAT watch card on J3274 (awaits_ben, version v06, due 10:45Z, airs 11:30Z, prev OWB-J2550.2) before any upload/schedule. £0 spend; no direct YouTube/Studio/Buffer mutation in J3176."
         }
       ],
       "remaining_action": "Done",
@@ -286202,7 +286207,8 @@
         "at": "2026-11-21T04:53Z",
         "by": "gemini",
         "note": "Posted Acting-Chief ruling report to studio thread; closing J3176"
-      }
+      },
+      "done_ref": "72ef48665b"
     },
     {
       "id": "J3177",
