@@ -293311,10 +293311,10 @@
       "stage": "",
       "after": "J3238",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-21T01:53Z",
+      "eta": "2026-11-21T03:53Z",
       "created_by": "claude",
       "created_at": "2026-11-21T01:22Z",
       "result": "",
@@ -293338,12 +293338,25 @@
           "at": "2026-11-21T01:52Z",
           "by": "claude",
           "what": "reopened: Reopened by Claude, 21 Nov, after review of PR #1097 (review comment 7055449396 lists the fixes). Not merged: two changes act the moment it merges (skill-first order in every jobs.py next breaks Ben's 8 Nov oldest-film-first rule; stage handoff runs on every done from a fixed map, not each channel's pipeline) and test_channel_ratchet fails (agent_autonomy.py names a channel on 8 lines). Do, on branch macbook/J3265 (PR #1097), after merging main (#1073 is in; #1098 adds a `rows` argument to workflow_state.order, so use keyword args): (1) skill rank only breaks ties after deadline/air/nearest/urgent; (2) stage handoff reads the channel's own stage order, is behind AGENT_STAGE_HANDOFF=1 (default off), never blocks done (try/except), dedupes on film+stage+channel; (3) desk names from the registry, no channel names in code; (4) may_start refuses an agent the relay is running in any slot, and the relay skips (not returns) when a timer holds that agent; (5) one Mini cap across relay slots and timers (default 3) and the memory floor from chief_relay.free_memory_bytes(); (6) relay desks and timer desks see each other; (7) retry in place only on the same agent, otherwise release with self_retry so the next lane claims it, second failure files the repair; (8) tests for each and the full suite incl. test_channel_ratchet and test_chief_relay. Push to the same PR. Plists stay uninstalled."
+        },
+        {
+          "at": "2026-11-21T01:53Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Fix PR #1097 per review 7055449396 (order, gated handoff, registry desks, one cap, shared desks, retry), tests, push",
       "due": "2026-11-28T18:00:00Z",
       "kind": "assembly",
-      "urgent": 4
+      "urgent": 4,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T01:53Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3266",
