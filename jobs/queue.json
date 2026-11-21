@@ -297428,9 +297428,14 @@
           "at": "2026-11-21T19:18Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-21T19:19Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Read back el30-mHiH-0 via HOS Data API: confirmed History of Science (UCXp7HkBIl1LgaznXuZHJyRg), Private, publishAt 2026-11-22T11:30:00Z, title 'How Does the Heart Pump Blood?', processed, hasCustomThumbnail true, caption true, not Made for Kids. fgsR8yAHr5s confirmed Private/unscheduled. Found exact root cause of false banner in board_publish sparse-checkout + ben_alerts.py."
         }
       ],
-      "remaining_action": "Read back HOS Short el30-mHiH-0 via HOS YouTube Data API and inspect live ben_alerts state",
+      "remaining_action": "Clear the false pull alert on Mini so the red banner clears, then fix ben_alerts.py (+ board_publish sparse-checkout) with tests in a clean worktree PR",
       "due": "2026-11-21T19:30:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -297447,10 +297452,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-21T19:18Z",
-        "by": "gemini"
+        "at": "2026-11-21T19:19Z",
+        "by": "gemini",
+        "note": "Read back el30-mHiH-0 via HOS Data API: confirmed History of Science (UCXp7HkBIl1LgaznXuZHJyRg), Private, publishAt 2026"
       },
       "taskKeys": [
         "HOS:005"
