@@ -296875,13 +296875,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-21T22:27Z",
-      "eta": "2026-11-22T00:27Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-21T15:14Z",
-      "result": "",
+      "result": "Script PASS (acting Chief Gemini, 21 Nov; jobs/reviews/J3299/REVIEW.md, commit 259ed62598; plan PR #1117 merged at 45336c4a4e). Picked Mon 7 Dec 2026 20:30 UTC NASA Nancy Grace Roman Space Telescope First Images unveiling (+16 days ahead; S1-S5 NASA sources & 6 public-domain assets verified live). Locked slot Thu 3 Dec 2026 11:30 London (4.4 days before event, empty OWB Thursday slot, Related ziKBPJ6FY0U). Approved up to 2 VO takes on plan credits + NAS bed reuse waiver (nearest-star_score_bed_v01.mp3) with binding continuous-VO pacing guard (no 3.65 s silence). Build queued as J3331 (--mini-only); needs Ben's OK on the board by Wed 2 Dec 18:00 London or it does not go out. £0 spent.",
       "history": [
         {
           "at": "2026-11-21T15:14Z",
@@ -296937,6 +296937,11 @@
           "at": "2026-11-21T22:27Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T22:27Z",
+          "by": "gemini",
+          "what": "done: Script PASS (acting Chief Gemini, 21 Nov; jobs/reviews/J3299/REVIEW.md, commit 259ed62598; plan PR #1117 merged at 45336c4a4e). Picked Mon 7 Dec 2026 20:30 UTC NASA Nancy Grace Roman Space Telescope First Images unveiling (+16 days ahead; S1-S5 NASA sources & 6 public-domain assets verified live). Locked slot Thu 3 Dec 2026 11:30 London (4.4 days before event, empty OWB Thursday slot, Related ziKBPJ6FY0U). Approved up to 2 VO takes on plan credits + NAS bed reuse waiver (nearest-star_score_bed_v01.mp3) with binding continuous-VO pacing guard (no 3.65 s silence). Build queued as J3331 (--mini-only); needs Ben's OK on the board by Wed 2 Dec 18:00 London or it does not go out. £0 spent."
         }
       ],
       "remaining_action": "Parked for Chief review, script PASS, PR #1117 merge, and Thu 3 Dec 11:30 UTC slot lock",
@@ -296950,7 +296955,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "259ed62598"
     },
     {
       "id": "J3300",
