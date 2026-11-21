@@ -291767,9 +291767,14 @@
           "at": "2026-11-21T01:02Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Verified HOS main c199174f keeps PR #389 (7c136209); J3241 accepted v04_synth and reopened J2035; J2035 finished v01 (802b5c7e), J3260 ordered v02 re-edit (J3261); checking J3261/J2036/PR #703 and HOS 010 long state"
+        },
+        {
+          "at": "2026-11-21T01:03Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Verified CONDITION NOT MET: HOS main c199174f keeps PR #389 (7c136209) with lint:package PASS on 009 & 010; HOS 009 has no locked final long cut (J3261 open step 1/6, v02 9d8731cb rendered with polish_gate FAIL on 05_minute_second awaiting J3261/J2036/J2037; J3262 thumbs parked; PR #703 unmerged); HOS 010 long picture 12/65 (Shorts only) and long edit pending picture"
         }
       ],
-      "remaining_action": "Check J3261 render completion, J2036/J3260/PR #703 status, and HOS 010 long picture/edit status to determine if J1275 waiting condition is met",
+      "remaining_action": "Record J1275 dependency wait (--recheck J3246), close J3246, and post studio thread + HOS desk verification reports",
       "kind": "review",
       "recheck_of": "J1275",
       "due": "2026-11-20T19:11:26+00:00",
@@ -291784,11 +291789,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-21T01:02Z",
+        "at": "2026-11-21T01:03Z",
         "by": "gemini",
-        "note": "Verified HOS main c199174f keeps PR #389 (7c136209); J3241 accepted v04_synth and reopened J2035; J2035 finished v01 (80"
+        "note": "Verified CONDITION NOT MET: HOS main c199174f keeps PR #389 (7c136209) with lint:package PASS on 009 & 010; HOS 009 has "
       },
       "taskKeys": [
         "HOS:009",
