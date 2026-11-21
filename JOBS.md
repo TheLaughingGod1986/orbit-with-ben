@@ -67,7 +67,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3294 | any | blocked | gemini | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J3295 | mini | blocked | gemini | – | review · Verify condition for J1275 |  |
 | J3296 | mini | blocked | gemini | – | review · Verify condition for J2537 |  |
-| J3297 | any | open | – | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
+| J3297 | any | claimed | macbook-2 | 2026-11-21T15:58Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
