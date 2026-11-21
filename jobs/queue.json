@@ -298514,13 +298514,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-21T21:06Z",
-      "eta": "2026-11-21T23:06Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-21T21:06Z",
-      "result": "",
+      "result": "Waiting for: HOS 005 Short el30-mHiH-0 (How Does the Heart Pump Blood?) is scheduled to go public at 2026-11-22T11:30:00Z; wait until after publishAt before read-only public verification (Related=wwcjcFfC-5M, YOUR PULSE cover, AI badge, captions) and flipping library.json scheduled -> live",
       "history": [
         {
           "at": "2026-11-21T21:06Z",
@@ -298531,9 +298531,19 @@
           "at": "2026-11-21T21:06Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T21:06Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: HOS 005 Short el30-mHiH-0 (How Does the Heart Pump Blood?) is scheduled to go public at 2026-11-22T11:30:00Z; wait until after publishAt before read-only public verification (Related=wwcjcFfC-5M, YOUR PULSE cover, AI badge, captions) and flipping library.json scheduled -> live"
+        },
+        {
+          "at": "2026-11-21T21:06Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-22T11:35:00Z"
         }
       ],
-      "remaining_action": "Wait until after Sun 22 Nov 2026 11:30Z go-public, then verify el30-mHiH-0 live and flip library.json scheduled -> live",
+      "remaining_action": "Verify el30-mHiH-0 live after 2026-11-22T11:30Z and flip library.json scheduled -> live",
       "kind": "listing",
       "plain": "Verify HOS Short el30-mHiH-0 live after Sun 22 Nov 11:30Z and flip its library.json status to live",
       "progress": {
@@ -298543,6 +298553,11 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "public",
+        "condition": "HOS 005 Short el30-mHiH-0 (How Does the Heart Pump Blood?) is scheduled to go public at 2026-11-22T11:30:00Z; wait until after publishAt before read-only public verification (Related=wwcjcFfC-5M, YOUR PULSE cover, AI badge, captions) and flipping library.json scheduled -> live",
+        "check_at": "2026-11-22T11:35:00Z"
       }
     }
   ],
