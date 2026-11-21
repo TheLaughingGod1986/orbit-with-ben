@@ -298370,10 +298370,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-21T21:00Z",
+      "eta": "2026-11-21T23:00Z",
       "created_by": "relay",
       "created_at": "2026-11-21T20:15Z",
       "result": "",
@@ -298422,6 +298422,11 @@
           "at": "2026-11-21T21:00Z",
           "by": "gemini",
           "what": "reopened: Elected acting Chief (Gemini) closing J3321 after merging PR #1127, resolving and closing parent J3255, and queuing HOS Studio polish follow-on J3322."
+        },
+        {
+          "at": "2026-11-21T21:00Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for Chief: merge PR #1126 & PR #1127, close PR #1099, close J3255 then J3321",
@@ -298436,7 +298441,15 @@
         "status": "claimed",
         "by": "macbook-2"
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T21:00Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3322",
