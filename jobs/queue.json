@@ -179088,13 +179088,13 @@
       "stage": "edit",
       "after": "J2035",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-20T23:38Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
-      "result": "parked for Chief: HOS 009 master 802b5c7e measured against the 009 first-30-seconds rule and Teach on screen (record: HOS PR #703, 07_Edit-Project/J2036_TEACH_E2_CHECK_2026-11-20.md, commit 10eb54bf). Opening shots to 0:30 are 4.90/6.03/7.00/7.00/7.00 s (rule: all under 4.5 s, 7 plates); first DATA graphic is at 2:28.91 (rule: 0:25-0:40); no WHO/WHEN/FACT cards seen on sampled stills and none in SOURCE_MAP (26 planned on v05 boards); sixty_earths runs straight into dots_square (two graphics back to back). Chief: rule re-edit (a v02 assembly job for opening, early DATA, cards) or accept as is. Still owed after that: 1 s card count, 0:05-0:15 proof stills, thumbnail job (08_Thumbnail empty), manifest date/video, PR #703 merge. No moving or audio review claimed; Ben's final watch. Step 5 of 6.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-04T16:56Z",
@@ -179210,6 +179210,11 @@
           "at": "2026-11-21T12:01Z",
           "by": "relay",
           "what": "condition verification queued: J3286"
+        },
+        {
+          "at": "2026-11-21T16:05Z",
+          "by": "gemini",
+          "what": "reopened: Acting Chief (Gemini) accepted J3286 CONDITION MET (OWB PR #1105 merged 2cba791942, jobs/reviews/J3286/REVIEW.md; direct NAS SHA-256 parity re-verified): J3261 v02 master 9d8731cb (v01 untouched 802b5c7e) PASS on picture_qa (0/92 fail, 5 low-detail warn), polish_gate (0/92 fail), music_gate, sfx_kit level, E2 opening (8 cuts <4.5s, proof stills, early DATA), 42 Teach cards + timeline + separated Part 4 graphics; J3262 thumbnails A+B Acting Chief PASS (desk #IC_kwDOUEPCF88AAAABpJHP9A, HOS PR #705 merged 614b507d, 7/7 Mini-NAS SHA-256 parity). Reopened for v02 final QA: inspect 5 low-detail warnings + early DATA 26.15-29.75s legibility + 42 Teach cards + proof stills, verify/re-time chapters to v02 (updating/superseding unmerged HOS PR #703), wire thumbnails A+B into PACKAGE_MANIFEST.json, reconcile FACT_NOTES UNSIGNED without inventing sign-off, run lint:package, and deliver technical pack for Ben final watch (ben_ok remains todo; £0 spend; no upload/schedule/privacy change)."
         }
       ],
       "remaining_action": "Wait for J3261 (HOS 009 v02 re-edit) and J3262 (HOS 009 thumbnails A+B) before finishing J2036 QA and chapters",
@@ -179218,13 +179223,6 @@
       "taskKeys": [
         "HOS:009"
       ],
-      "progress": {
-        "step": 5,
-        "of": 6,
-        "at": "2026-11-20T23:41Z",
-        "by": "claudecode",
-        "note": "Teach check recorded in pull request 703: script markers are all there, but the cut's opening has 5 slow shots and no ea"
-      },
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -179234,15 +179232,6 @@
       },
       "for": "claudecode",
       "model": "mini-claude-opus-5-5",
-      "hold": {
-        "type": "dependency",
-        "condition": "Acting Chief (Gemini) accepted J3260 NOT MET (PR #1093 merged 139e2ef885, jobs/reviews/J3260/REVIEW.md) and ruled Option A (v02 re-edit + thumbnails): master v01 (802b5c7e...) fails HOS-2026-11-E2 (0:00-0:30 shots 4.90/6.04/7.00/7.00/7.00 s; first DATA graphic at 2:28.91) and Teach on screen (0/90 layout cards vs 26 v05 side_labels, no timeline, back-to-back graphics p4_03_sixty_earths -> p4_04_dots_square), and 08_Thumbnail is empty. Wait for J3261 (bounded £0 v02 re-edit) and J3262 (£0 HOS 009 long thumbnails A+B + Chief review) to complete before reopening J2036 for final v02 QA, chapters re-time, and Ben watch pack.",
-        "check_at": "2026-11-21T13:01:20+00:00",
-        "last_recheck": "J3260",
-        "checked_at": "2026-11-20T23:57:44+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3286"
-      },
       "escalated_at": "2026-11-21T01:52Z"
     },
     {
