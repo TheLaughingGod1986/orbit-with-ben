@@ -298733,7 +298733,7 @@
     {
       "id": "J3326",
       "title": "J0216 standalone Shorts test readout (24 Oct–20 Nov 2026) and S1–S8 Related-link decision",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Follow-up from J3297 (2026-11-21.md / 2026-11-21_recheck.md). The four-week J0216 standalone Shorts test window (24 Oct–20 Nov 2026) closed on 20 Nov with readout due from 21 Nov 2026 (00_Brand/Channel-Setup/audits/STANDALONE_SHORTS_TEST_2026-10/TEST_LOG.md), and the compilation film m09jUdwC5hk readout was due from 19 Nov. Read-only analytics pass using 05_Analytics/owb/ snapshots and studio_ctr.json: compare S1–S8 (verify exact live S8 id 9q_OvQ1Rd8Y vs superseded kKN8Ale42sE in UPLOADS.json) against cut-from-long Shorts and longs over 24 Oct–20 Nov (views, day-1 Shorts-feed share, stayed %, APV, AVD, subscribers gained), update TEST_LOG.md via PR, and recommend for Chief ruling whether S1–S8 (including 9q_OvQ1Rd8Y and z5V6gIXXYs8) should now receive Related videos pointing to matching longs. Spend: £0. Change nothing in Studio.",
       "ref": "",
@@ -298753,11 +298753,24 @@
           "at": "2026-11-21T21:31Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-21T21:33Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-21T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Complete the J0216 standalone Shorts readout in TEST_LOG.md and recommend Related-video policy for S1–S8",
       "kind": "review",
-      "plain": "Read out the 4-week standalone Shorts test (24 Oct–20 Nov) and decide whether to link S1–S8 to longs"
+      "plain": "Read out the 4-week standalone Shorts test (24 Oct–20 Nov) and decide whether to link S1–S8 to longs",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3327",
