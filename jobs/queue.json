@@ -296854,7 +296854,7 @@
     {
       "id": "J3306",
       "title": "Packaging panel decision: J3302 weekly OWB Challenger Bs (T041 Europa 2x EARTH'S WATER, T042 Light Speed YOU AGE SLOWER, T043 Last Star OUTLIVES OUR SUN + Round 2 Title Bs; PR #1118)",
-      "needs": "cloud",
+      "needs": "mini",
       "repo": "owb",
       "body": "**Packaging panel decision: J3302 weekly OWB Challenger Bs (T041 Europa 2x EARTH'S WATER, T042 Light Speed YOU AGE SLOWER, T043 Last Star OUTLIVES OUR SUN + Round 2 Title Bs; PR #1118).** Read the three critiques in `05_Analytics/tests/panels/owb-j3302-weekly-2026-11-21/` (codex.md, gemini.md, cursor.md). If one is missing after 24 h, decide with what's there.\nWeigh them; where two or more agree, act on it. Write `DECISION.md` in the same folder:\n- keep / change: each change with its exact new text;\n- for the thumbnail, either 'keep' or the best alternative to build as Test & Compare B (a `thumb` job for Codex, logged in THUMB_LEDGER.json).\nPost a 3-line summary on #99 and queue any build or Studio job it needs. The Chief's PASS stands on DECISION.md.",
       "ref": "",
@@ -296874,10 +296874,23 @@
           "at": "2026-11-21T16:37Z",
           "by": "macbook",
           "what": "added"
+        },
+        {
+          "at": "2026-11-21T16:37Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-21T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Packaging panel decision: J3302 weekly OWB Challenger Bs (T041 Europa 2x EARTH'S WATER, T042 Light Speed YOU AGE SLOWER, T043 Last Star OUTLIVES OUR SUN + Round 2 Title Bs; PR #111",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "cloud",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3307",
