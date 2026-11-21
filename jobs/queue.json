@@ -294501,9 +294501,14 @@
           "at": "2026-11-21T08:36Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Verified 11/11 Batch 12-14 NAS SHA-256 hashes match receipts, REVIEW_STATE.json unchanged (48 KEEP / 8 RETAKE / 10 unset), and no new 013 playback marks on HOS #694 or OWB #954."
+        },
+        {
+          "at": "2026-11-21T08:37Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Committed jobs/reviews/J3277/REVIEW.md (e267cb5f8a) from clean worktree and synced main."
         }
       ],
-      "remaining_action": "Write J3277 verification record, update J3178 typed capability hold, close J3277, and post reports",
+      "remaining_action": "Update J3178 typed capability hold, close J3277, and post reports on OWB #954 and HOS #694",
       "kind": "review",
       "recheck_of": "J3178",
       "required_capabilities": [
@@ -294520,11 +294525,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-21T08:36Z",
+        "at": "2026-11-21T08:37Z",
         "by": "gemini",
-        "note": "Verified 11/11 Batch 12-14 NAS SHA-256 hashes match receipts, REVIEW_STATE.json unchanged (48 KEEP / 8 RETAKE / 10 unset"
+        "note": "Committed jobs/reviews/J3277/REVIEW.md (e267cb5f8a) from clean worktree and synced main."
       },
       "taskKeys": [
         "HOS:013"
