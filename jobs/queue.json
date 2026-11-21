@@ -298950,10 +298950,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-21T21:56Z",
+      "eta": "2026-11-21T23:56Z",
       "created_by": "relay",
       "created_at": "2026-11-21T21:56Z",
       "result": "",
@@ -298962,13 +298962,26 @@
           "at": "2026-11-21T21:56Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-21T21:56Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Non-producer reviewer (claude/chief/codex/claudecode) to QA HOS PR #718, NAS/UAT SHA-256, sheets & Play links, merge PR #718 (or hand to Chief), and set awaits_be",
       "kind": "review",
       "recheck_of": "J3311",
       "due": "2026-11-21T22:56:01+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T21:56Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
