@@ -286102,10 +286102,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-21T04:31Z",
+      "eta": "2026-11-21T06:31Z",
       "created_by": "macbook",
       "created_at": "2026-11-19T23:27Z",
       "result": "",
@@ -286154,6 +286154,11 @@
           "at": "2026-11-21T04:19Z",
           "by": "gemini",
           "what": "deadline: 2026-11-21T09:30:00Z"
+        },
+        {
+          "at": "2026-11-21T04:31Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Listen to the rebuilt muon Short and decide the swap before its Saturday slot",
@@ -286165,7 +286170,15 @@
       "required_capabilities": [
         "audio_input"
       ],
-      "due": "2026-11-21T09:30:00Z"
+      "due": "2026-11-21T09:30:00Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T04:31Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3177",
