@@ -58,7 +58,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3270 | any | blocked | macbook | – | script · HOS: learn from our data, add two new films to the backlog |  |
 | J3282 | mini | blocked | gemini | – | 006 upload · listing · HOS 006 Short Bks_JLId1ew post-public read-back & library.json live flip |  |
 | J3283 | mini | blocked | macbook-2 | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
-| J3287 | mini | open | – | – | review · Verify condition for J2171 |  |
+| J3287 | mini | claimed | gemini | 2026-11-21T18:35Z | review · Verify condition for J2171 |  |
 | J3289 | mini | blocked | gemini | – | review · Verify condition for J2040 |  |
 | J3291 | any | blocked | gemini | – | assembly · Gates at upload and a daily 14-day re-check of everything scheduled (music_gate included, Shorts and longs, every channel) |  |
 | J3292 | any | blocked | macbook-2 | – | assembly · Direct alert to Ben when a same-day video is pulled or his watch is needed within 12 hours |  |
