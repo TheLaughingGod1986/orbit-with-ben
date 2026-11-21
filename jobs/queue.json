@@ -294169,9 +294169,14 @@
           "at": "2026-11-21T04:56Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T04:57Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed J3273. Ruling J3176 authorizes clearing publishAt on gc1hWQQJOq4 only if it is still Private and scheduled on v05."
         }
       ],
-      "remaining_action": "Verify gc1hWQQJOq4 is still Private/scheduled on v05, clear publishAt only (keep Private), cancel its 3 Buffer posts, update UPLOADS.json and library.json, and post receipt",
+      "remaining_action": "Read the muon Short's current YouTube state before clearing its publish time",
       "due": "2026-11-21T09:30:00Z",
       "kind": "studio",
       "plain": "Keep the scheduled muon Short private while its replacement music waits for your watch",
@@ -294179,12 +294184,14 @@
       "urgent": 5,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-21T04:56Z",
+        "of": 4,
+        "at": "2026-11-21T04:57Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3273. Ruling J3176 authorizes clearing publishAt on gc1hWQQJOq4 only if it is still Private and scheduled on v0"
+      },
+      "taskKeys": [
+        "OWB:024"
+      ]
     },
     {
       "id": "J3274",
