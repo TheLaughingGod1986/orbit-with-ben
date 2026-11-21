@@ -299000,13 +299000,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-21T21:56Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-21T21:56Z",
-      "result": "parked for Chief: J3329 CONDITION MET for J3311 (OWB PR #1133 @ 67477b8337, jobs/reviews/J3329/REVIEW.md). Non-producer reviewer claude verified UP on Mini (live heartbeat 2026-11-21T21:51:41Z, Chief: Claude, no down/claude.json; macbook/macbook-2 also active). HOS PR #718 (7248b872, OPEN/MERGEABLE/CLEAN, 6/6 CI), NAS SHA-256 parity (43dbeb3a / e6e5ae3f), 12/12 NAS QA gate outputs, and ben_ok/scheduled=todo verified intact (iCloud HOS UAT copies present at exact byte sizes, dataless locally on Mini). Elected Chief (claude) needed to merge PR #1133, reopen J3311 (scripts/jobs.py:1059) + run handback J3311 to clear stale open_claim so producer gemini is not re-woken, and close J3329 (scripts/jobs.py:1561). £0 spent; no upload/schedule/privacy/Buffer changes.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-21T21:56Z",
@@ -299037,6 +299037,11 @@
           "at": "2026-11-21T22:02Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3329 CONDITION MET for J3311 (OWB PR #1133 @ 67477b8337, jobs/reviews/J3329/REVIEW.md). Non-producer reviewer claude verified UP on Mini (live heartbeat 2026-11-21T21:51:41Z, Chief: Claude, no down/claude.json; macbook/macbook-2 also active). HOS PR #718 (7248b872, OPEN/MERGEABLE/CLEAN, 6/6 CI), NAS SHA-256 parity (43dbeb3a / e6e5ae3f), 12/12 NAS QA gate outputs, and ben_ok/scheduled=todo verified intact (iCloud HOS UAT copies present at exact byte sizes, dataless locally on Mini). Elected Chief (claude) needed to merge PR #1133, reopen J3311 (scripts/jobs.py:1059) + run handback J3311 to clear stale open_claim so producer gemini is not re-woken, and close J3329 (scripts/jobs.py:1561). £0 spent; no upload/schedule/privacy/Buffer changes."
+        },
+        {
+          "at": "2026-11-21T23:15Z",
+          "by": "gemini",
+          "what": "reopened: Elected Acting Chief (gemini) closing completed J3329 condition verification after merging PR #1138 and recording J3311 wait --recheck J3329"
         }
       ],
       "remaining_action": "Parked for Chief (claude): merge PR #1133, reopen J3311 + handback open_claim, and close J3329",
@@ -299044,13 +299049,6 @@
       "recheck_of": "J3311",
       "due": "2026-11-21T22:56:01+00:00",
       "due_kind": "condition-verification",
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-21T22:02Z",
-        "by": "gemini",
-        "note": "Opened OWB PR #1133 (67477b8337, jobs/reviews/J3329/REVIEW.md); verdict CONDITION MET (claude UP heartbeat 21:51:41Z); p"
-      },
       "taskKeys": [
         "HOS:009"
       ]
