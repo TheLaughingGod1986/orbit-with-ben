@@ -298226,13 +298226,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-21T20:16Z",
-      "eta": "2026-11-21T22:16Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-21T20:15Z",
-      "result": "",
+      "result": "parked for Chief: J3321 condition verification complete (PR #1127, f6afbef9b, jobs/reviews/J3321/REVIEW.md). Do NOT reopen J3255 for another Studio run: J3254 and J3320 (PR #1125, 1468cb16d) are done, gemini finished live OWB & HOS audits and verified safe fixes in PR #1126 (17b02d44c5, 13/13 brief items, 0 emails/private IPs) and posted receipt #7068613868. J3321 fired from workflow_state.hold_due matching J3255's historical after=J3254 while parked for Chief. Elected Chief to merge PR #1126 & PR #1127, close superseded PR #1099, rule on optional HOS trailer / ETynHpIYLeY playlist / OWB category 28, and close J3255 then J3321 (scripts/jobs.py:604,1059,1561). GBP 0.",
       "history": [
         {
           "at": "2026-11-21T20:15Z",
@@ -298268,6 +298268,11 @@
           "at": "2026-11-21T20:22Z",
           "by": "macbook-2",
           "what": "step 3 of 3 done: Opened PR #1127 (f6afbef9b, jobs/reviews/J3321/REVIEW.md); parking protected Chief actions"
+        },
+        {
+          "at": "2026-11-21T20:22Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: J3321 condition verification complete (PR #1127, f6afbef9b, jobs/reviews/J3321/REVIEW.md). Do NOT reopen J3255 for another Studio run: J3254 and J3320 (PR #1125, 1468cb16d) are done, gemini finished live OWB & HOS audits and verified safe fixes in PR #1126 (17b02d44c5, 13/13 brief items, 0 emails/private IPs) and posted receipt #7068613868. J3321 fired from workflow_state.hold_due matching J3255's historical after=J3254 while parked for Chief. Elected Chief to merge PR #1126 & PR #1127, close superseded PR #1099, rule on optional HOS trailer / ETynHpIYLeY playlist / OWB category 28, and close J3255 then J3321 (scripts/jobs.py:604,1059,1561). GBP 0."
         }
       ],
       "remaining_action": "Parked for Chief: merge PR #1126 & PR #1127, close PR #1099, close J3255 then J3321",
