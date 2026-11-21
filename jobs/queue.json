@@ -297507,13 +297507,26 @@
           "at": "2026-11-21T18:11Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-21T18:12Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-21T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Verify readiness: Non-producer reviewer (claude/claudecode/chief/codex) to verify HOS PR #718, NAS/UAT SHA-256 parity, contact sheets, and unique Play links, merge PR #718 (or hand",
       "kind": "review",
       "recheck_of": "J3311",
       "due": "2026-11-21T19:11:56+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
