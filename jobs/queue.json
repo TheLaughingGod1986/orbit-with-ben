@@ -297707,13 +297707,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-21T18:56Z",
-      "eta": "2026-11-21T20:56Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-21T18:55Z",
-      "result": "",
+      "result": "Acting Chief condition verification complete (jobs/reviews/J3317/REVIEW.md @ 81ae04405e, PR #1121): condition NOT MET (7th consecutive check). Independently scanned all 104 #954 comments after #7061468727 through #7067622773, absent remote branch/PR, clean local commit a12100797f in /Volumes/MiniWork/scratch/j3114-wt, THUMB_LEDGER tail T040, 12/12 NAS_VERIFY_J3114 SHA-256 hashes, and 4/4 NAS video hashes. Updated J3114 wait --type input --recheck J3317 for 2026-11-22T09:00:00Z; preserved J3115/J3119 dependencies and UAT/Shorts holds. £0.",
       "history": [
         {
           "at": "2026-11-21T18:55Z",
@@ -297749,6 +297749,11 @@
           "at": "2026-11-21T19:02Z",
           "by": "gemini",
           "what": "step 3 of 4 done: PR #1121 merged at 81ae04405e; recorded J3114 wait --type input --recheck J3317 for 2026-11-22T09:00:00Z."
+        },
+        {
+          "at": "2026-11-21T19:02Z",
+          "by": "gemini",
+          "what": "done: Acting Chief condition verification complete (jobs/reviews/J3317/REVIEW.md @ 81ae04405e, PR #1121): condition NOT MET (7th consecutive check). Independently scanned all 104 #954 comments after #7061468727 through #7067622773, absent remote branch/PR, clean local commit a12100797f in /Volumes/MiniWork/scratch/j3114-wt, THUMB_LEDGER tail T040, 12/12 NAS_VERIFY_J3114 SHA-256 hashes, and 4/4 NAS video hashes. Updated J3114 wait --type input --recheck J3317 for 2026-11-22T09:00:00Z; preserved J3115/J3119 dependencies and UAT/Shorts holds. £0."
         }
       ],
       "remaining_action": "Close J3317 as done and post Acting Chief verification report to studio thread #954",
