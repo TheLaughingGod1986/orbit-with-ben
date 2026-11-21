@@ -431,7 +431,8 @@ class AsksTheLoader(unittest.TestCase):
             "/scripts/", "/channels/", "/studio/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_spend/",
             "/02_Video-Projects/*/status.json", "/02_Video-Projects/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",
             "/02_Video-Projects/*/10_Shorts/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",
-            "/00_Brand/Channel-Setup/social/UPLOADS.json", "/05_Analytics/dashboard/data.json", *shared]))
+            "/00_Brand/Channel-Setup/social/UPLOADS.json", "/00_Brand/Channel-Setup/social/*/UPLOADS.json",
+            "/05_Analytics/dashboard/data.json", *shared]))
         import channel_pins
         with channel_pins.one_file("hos"):       # a channel that keeps every film in one file
             self.assertEqual(sorted(bp.sparse("hos")), sorted([
@@ -650,3 +651,8 @@ class PublicStrings(unittest.TestCase):
         decoded = bp.unpack_updates(packed)
         self.assertEqual(decoded["edits"], [])
         self.assertNotIn("/Users/", json.dumps(decoded))
+
+    def test_studio_sparse_includes_per_channel_social_uploads(self):
+        """J3313: board_publish sparse checkout must include social/*/UPLOADS.json so HOS schedules stay visible to ben_alerts."""
+        self.assertIn("/00_Brand/Channel-Setup/social/*/UPLOADS.json", bp.STUDIO_SPARSE)
+        self.assertIn("/00_Brand/Channel-Setup/social/*/UPLOADS.json", bp.sparse(bp.STUDIO))
