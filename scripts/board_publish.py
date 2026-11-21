@@ -818,7 +818,13 @@ def run_once(a) -> int:
         queue = _read_json(wt() / "jobs" / "queue.json") or {"jobs": []}
         import chief_relay as relay
         ex = relay.current_execution(at)
-        board["machines"] = machines.section(queue, *heartbeats(), at, [ex] if isinstance(ex, dict) else ex)
+        timers = []
+        try:
+            import agent_autonomy
+            timers = agent_autonomy.timer_rows(at)
+        except Exception:  # noqa: BLE001 - the machine chips still publish without the timer rows
+            timers = []
+        board["machines"] = machines.section(queue, *heartbeats(), at, [ex] if isinstance(ex, dict) else ex, timers)
     except Exception as e:  # noqa: BLE001
         log(f"machines not built: {e}")
     try:  # Queue forecast: who each job waits for, its place in line, when it starts (Ben, 5 Nov 2026)

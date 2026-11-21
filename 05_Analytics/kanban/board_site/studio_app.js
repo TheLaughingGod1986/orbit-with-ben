@@ -1422,7 +1422,14 @@
         <span class="mc-chip-state">${esc(caption)}</span>
       </a>`;
     }).join('');
-    return `<section class="overview-machines" aria-label="Machines"><div class="ov-section-head"><h2>Machines</h2><span class="ov-count">${MACHINE_ORDER.length} total</span></div><div class="mc-row">${chips}</div></section>`;
+    const timers=((m&&m.timers)||[]).map(row=>{
+      const who=row.label||AGENT_NAMES[row.agent]||row.agent;
+      const wake=row.at?` · woke ${qWhen(row.at)}`:' · not woken yet';
+      const job=row.job?` · ${row.job}`:'';
+      return `<li>${esc(who)} · every ${row.everyMin} min${wake}${esc(job)}</li>`;
+    }).join('');
+    const timerList=timers?`<ul class="mc-timers">${timers}</ul>`:'';
+    return `<section class="overview-machines" aria-label="Machines"><div class="ov-section-head"><h2>Machines</h2><span class="ov-count">${MACHINE_ORDER.length} total</span></div><div class="mc-row">${chips}</div>${timerList}</section>`;
   }
   function last24Section(b) {
     const p=b.progress24h; if(!p) return '';
