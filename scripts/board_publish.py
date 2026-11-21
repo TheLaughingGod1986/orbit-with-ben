@@ -78,7 +78,7 @@ FULL_EVERY_S = 2 * 60     # a full rebuild at least this often even when no ref 
 CHANNEL_SPARSE = ["/STATUS.md", "/00_Brand/Channel-Setup/kanban/index.html", "/studio-core/CORE_FILES.json"]
 # STUDIO_SPARSE: the studio's own files, read from the repo that carries them.
 STUDIO_SPARSE = ["/scripts/", "/channels/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_spend/",
-                 "/05_Analytics/dashboard/data.json"]  # the Channel Tracker's data, published as tracker.json
+                 "/05_Analytics/dashboard/data.json", "/00_Brand/Channel-Setup/social/*/UPLOADS.json"]  # tracker + per-channel social uploads registries
 # A channel that keeps one status file per film also has its upload results beside them (actual schedules,
 # excluding dry runs).
 FILM_STATUS_SPARSE = ["/02_Video-Projects/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",

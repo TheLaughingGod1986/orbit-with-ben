@@ -125,7 +125,7 @@ def _state_lock(path: pathlib.Path):
 
 
 def _empty_state() -> dict:
-    return {"version": 1, "known_scheduled": {}, "pulls": {}, "events": {}}
+    return {"version": 1, "seededAt": "", "known_scheduled": {}, "pulls": {}, "events": {}}
 
 
 def load_state(path: pathlib.Path | None = None) -> dict:
@@ -135,6 +135,7 @@ def load_state(path: pathlib.Path | None = None) -> dict:
         return _empty_state()
     return {
         "version": 1,
+        "seededAt": str(raw.get("seededAt") or ""),
         "known_scheduled": dict(raw.get("known_scheduled") or {}),
         "pulls": dict(raw.get("pulls") or {}),
         "events": dict(raw.get("events") or {}),
@@ -195,12 +196,78 @@ def short_reason(raw: str) -> str:
     return first
 
 
-def video_label(title: str, vtype: str, channel: str = "", number: str = "") -> str:
+def _title_from_file(file_path: str) -> str:
+    """Derive a readable video name from an upload filename like hos_005_s07_heart_pulse_v05.mp4."""
+    raw = pathlib.Path(str(file_path or "").strip()).stem
+    if not raw:
+        return ""
+    s = re.sub(r"^(?:hos|owb|ww2)[_-]+", "", raw, flags=re.I)
+    s = re.sub(r"^(?:\d{3}|sa|j\d+|sleep\d+)[_-]+", "", s, flags=re.I)
+    s = re.sub(r"^(?:s\d+|short[_-]?[a-z0-9]+|backcat)[_-]+", "", s, flags=re.I)
+    parts = [p for p in re.split(r"[_-]+", s) if p]
+    if not parts:
+        return ""
+    out: list[str] = []
+    for p in parts:
+        if re.fullmatch(r"v\d+[a-z]?", p, flags=re.I):
+            out.append(p.lower())
+        else:
+            out.append(p.capitalize())
+    return " ".join(out)
+
+
+def _resolve_title(explicit: str, *, meta: dict | None = None, videos: list[dict] | None = None,
+                   channel: str = "", vtype: str = "short", video_id: str = "",
+                   slot_dt: dt.datetime | None = None) -> str:
+    """Find a real video name (never just the channel) from explicit title, tracker videos, social copy or filename."""
+    t = str(explicit or "").strip()
+    if t:
+        return t
+    meta = meta if isinstance(meta, dict) else {}
+    mt = str(meta.get("title") or "").strip()
+    if mt:
+        return mt
+    ch = str(channel or "").upper()
+    vid = str(video_id or "").strip()
+    vt = "short" if str(vtype or "").lower() == "short" else "long"
+    if videos:
+        for v in videos:
+            if not isinstance(v, dict):
+                continue
+            yt = v.get("youtube") or {}
+            if vid and str(yt.get("videoId") or "").strip() == vid:
+                if str(v.get("title") or "").strip():
+                    return str(v["title"]).strip()
+        if slot_dt and ch:
+            for v in videos:
+                if not isinstance(v, dict):
+                    continue
+                if str(v.get("channel") or "").upper() != ch:
+                    continue
+                v_kind = "short" if str(v.get("type") or "").lower() == "short" else "long"
+                if v_kind != vt:
+                    continue
+                v_pub = parse_iso((v.get("youtube") or {}).get("publishAt"))
+                if v_pub and abs((v_pub - slot_dt).total_seconds()) <= 300 and str(v.get("title") or "").strip():
+                    return str(v["title"]).strip()
+    social = meta.get("social") if isinstance(meta.get("social"), dict) else {}
+    q = str(social.get("question") or "").strip()
+    if q:
+        return q
+    from_file = _title_from_file(str(meta.get("file") or ""))
+    if from_file:
+        return from_file
+    return ""
+
+
+def video_label(title: str, vtype: str, channel: str = "", number: str = "", video_id: str = "") -> str:
     t = str(title or "").strip()
     fmt = "Short" if str(vtype or "").lower() == "short" else "Long"
     if not t:
         bits = [b for b in (channel, number, fmt) if b]
-        return " ".join(bits) or f"Video {fmt}"
+        base = " ".join(bits) or f"Video {fmt}"
+        vid = str(video_id or "").strip()
+        return f"{base} ({vid})" if vid else base
     if len(t) > 58:
         t = t[:57].rstrip() + "…"
     if fmt.lower() not in t.lower():
@@ -221,31 +288,55 @@ def format_message(event: dict, at: dt.datetime, *, is_repeat: bool = False, sit
     if not href.startswith("#"):
         href = "#" + href.lstrip("/")
     display_link = f"{display_base}/{href}"
-    name = video_label(event.get("title", ""), event.get("type", ""), event.get("channel", ""), event.get("number", ""))
+    name = video_label(
+        event.get("title", ""), event.get("type", ""), event.get("channel", ""),
+        event.get("number", ""), event.get("videoId", ""),
+    )
     prefix = "Reminder: " if is_repeat else ""
     deadline_dt = parse_iso(event.get("deadlineAt"))
     slot_dt = parse_iso(event.get("slotAt"))
     by_text = format_london_time(deadline_dt, at) if deadline_dt else ""
     slot_text = format_slot_phrase(slot_dt, at) if slot_dt else ""
+    slot_when = format_london_time(slot_dt, at) if slot_dt else ""
     still = "still " if is_repeat else ""
 
     if event.get("kind") == "pulled":
         verb = str(event.get("change") or "pulled")
         why = short_reason(event.get("reason", ""))
-        head = f"{name} {verb}" + (f" ({why})" if why else "") + "."
+        why_part = f" ({why})" if why else ""
         if event.get("hasWatch") and by_text:
+            head = f"{name} {verb}{why_part}."
             keep = f" to keep {slot_text}" if slot_text else ""
             tail = f"The fixed version {still}needs your watch by {by_text}{keep}"
         elif event.get("action"):
+            head = f"{name} {verb}{why_part}."
             act = str(event["action"]).strip().rstrip(".")
             tail = f"{act}" + (f" by {by_text}" if by_text and by_text not in act else "")
-        elif slot_text:
-            if verb == "replaced":
-                tail = f"Check the replacement for {slot_text}"
+        elif event.get("nothingNeeded") or verb == "replaced":
+            rep = str(event.get("replacementName") or event.get("supersededBy") or "").strip()
+            det_dt = parse_iso(event.get("detectedAt"))
+            on_day = ""
+            if det_dt and det_dt.astimezone(LONDON).date() < at.astimezone(LONDON).date():
+                on_day = f" on {det_dt.astimezone(LONDON).strftime('%A')}"
+            if rep:
+                head = f"{name} was replaced{on_day}{why_part};"
+                tail = f"{rep} airs {slot_when}. Nothing needed." if slot_when else f"{rep} takes the slot. Nothing needed."
             else:
-                tail = f"{slot_text[0].upper() + slot_text[1:]} is unscheduled"
+                head = f"{name} was replaced{on_day}{why_part}."
+                tail = f"Replacement airs {slot_when}. Nothing needed." if slot_when else "Nothing needed."
+        elif verb == "unscheduled":
+            if slot_text:
+                head = f"{name} was taken off {slot_text}{why_part}."
+                tail = "Open the schedule to pick a replacement or leave the slot open"
+            else:
+                head = f"{name} was unscheduled{why_part}."
+                tail = "Open the schedule to pick a replacement or leave the slot open"
         else:
-            tail = f"Action {still}needed" + (f" by {by_text}" if by_text else "")
+            head = f"{name} {verb}{why_part}."
+            if slot_text:
+                tail = f"Open the schedule to pick a replacement for {slot_text} or leave it open"
+            else:
+                tail = "Open the schedule to check the slot or pick a replacement"
         body = f"{prefix}{head} {tail}"
     else:
         keep = f" to keep {slot_text}" if slot_text else ""
@@ -255,7 +346,7 @@ def format_message(event: dict, at: dt.datetime, *, is_repeat: bool = False, sit
         else:
             body = f"{prefix}{name}{ver} {still}needs your watch{keep}"
     body = re.sub(r"\s+", " ", body).strip()
-    return f"{body}: {display_link}", body
+    return f"{body.rstrip('.')}: {display_link}", body
 
 
 def _ask_answered(entry: dict, checks: dict) -> bool:
@@ -343,10 +434,13 @@ def _collect_current_schedule(videos: list[dict], uploads: dict[str, dict]) -> t
                 scheduled.pop((ch, vid), None)
                 continue
             if pub_dt:
+                resolved_title = _resolve_title(
+                    "", meta=meta, videos=videos, channel=ch, vtype=vtype, video_id=vid, slot_dt=pub_dt,
+                )
                 rec = scheduled.get((ch, vid)) or {
                     "channel": ch,
                     "videoId": vid,
-                    "title": str(meta.get("title") or ""),
+                    "title": resolved_title,
                     "type": vtype,
                     "publishAt": iso(pub_dt),
                     "film": "",
@@ -355,6 +449,8 @@ def _collect_current_schedule(videos: list[dict], uploads: dict[str, dict]) -> t
                 rec["publishAt"] = iso(pub_dt)
                 if meta.get("title"):
                     rec["title"] = str(meta["title"])
+                elif resolved_title and not rec.get("title"):
+                    rec["title"] = resolved_title
                 scheduled[(ch, vid)] = rec
                 slots.setdefault(_slot_key(ch, vtype, pub_dt), set()).add(vid)
 
@@ -386,10 +482,59 @@ def _pull_id(channel: str, video_id: str, slot_dt: dt.datetime) -> str:
 
 
 def _detect_pulls(at: dt.datetime, state: dict, scheduled: dict, public_ids: set, slots: dict,
-                  uploads: dict[str, dict]) -> None:
+                  uploads: dict[str, dict], videos: list[dict] | None = None) -> None:
     """Detect newly pulled, unscheduled or replaced videos airing within 24 h and update state['pulls'] & known_scheduled."""
     known = state.setdefault("known_scheduled", {})
     pulls = state.setdefault("pulls", {})
+    events = state.setdefault("events", {})
+    is_first_run = not state.get("seededAt") and not known and not pulls and not events
+
+    if is_first_run:
+        # First run seeds what is scheduled without alerting, and marks pre-existing pull entries as seen
+        # so old pulls are not announced as new on this run or the next one.
+        state["seededAt"] = iso(at)
+        for ch_label, vid_map in (uploads or {}).items():
+            ch = str(ch_label or "").upper()
+            if not isinstance(vid_map, dict):
+                continue
+            for vid, meta in vid_map.items():
+                if not isinstance(meta, dict):
+                    continue
+                prev_pub = parse_iso(meta.get("previousPublishAt") or meta.get("wasScheduledFor"))
+                unsched_at = parse_iso(meta.get("unscheduledAt") or meta.get("pulledAt"))
+                if not prev_pub or not unsched_at:
+                    continue
+                vtype = "short" if str(meta.get("kind") or "").lower() == "short" else "long"
+                pid = _pull_id(ch, str(vid), prev_pub)
+                if pid not in pulls:
+                    slot_holders = slots.get(_slot_key(ch, vtype, prev_pub), set()) - {str(vid)}
+                    superseded_by = str(meta.get("supersededBy") or "")
+                    pulls[pid] = {
+                        "id": pid,
+                        "channel": ch,
+                        "videoId": str(vid),
+                        "title": _resolve_title(str(meta.get("title") or ""), meta=meta, videos=videos,
+                                                channel=ch, vtype=vtype, video_id=str(vid), slot_dt=prev_pub),
+                        "type": vtype,
+                        "film": "",
+                        "slotAt": iso(prev_pub),
+                        "change": "replaced" if (superseded_by or slot_holders) else "pulled",
+                        "reason": str(meta.get("pullReason") or meta.get("containment") or ""),
+                        "detectedAt": iso(unsched_at),
+                        "supersededBy": superseded_by or (sorted(slot_holders)[0] if slot_holders else ""),
+                        "job": "",
+                        "resolvedAt": iso(at),
+                        "resolution": "replaced in the same slot" if slot_holders else "seeded on initial run",
+                    }
+        for (ch, vid), rec in scheduled.items():
+            pub_dt = parse_iso(rec.get("publishAt"))
+            if pub_dt and pub_dt > at:
+                known[f"{ch}:{vid}"] = rec
+        return
+
+    if not state.get("seededAt"):
+        state["seededAt"] = iso(at)
+    seeded_dt = parse_iso(state.get("seededAt"))
 
     # 1. Compare previously known scheduled videos against current state.
     for key_str, prev in list(known.items()):
@@ -424,11 +569,12 @@ def _detect_pulls(at: dt.datetime, state: dict, scheduled: dict, public_ids: set
                 change = "unscheduled"
             pid = _pull_id(ch, vid, prev_pub)
             if pid not in pulls:
-                pulls[pid] = {
+                rec = {
                     "id": pid,
                     "channel": ch,
                     "videoId": vid,
-                    "title": str(meta.get("title") or prev.get("title") or ""),
+                    "title": _resolve_title(str(meta.get("title") or prev.get("title") or ""), meta=meta,
+                                            videos=videos, channel=ch, vtype=vtype, video_id=vid, slot_dt=prev_pub),
                     "type": vtype,
                     "film": str(prev.get("film") or ""),
                     "slotAt": iso(prev_pub),
@@ -438,9 +584,15 @@ def _detect_pulls(at: dt.datetime, state: dict, scheduled: dict, public_ids: set
                     "supersededBy": superseded_by or (sorted(slot_holders)[0] if slot_holders else ""),
                     "job": "",
                 }
+                # A pulled video whose slot already holds another scheduled video of the same channel and kind
+                # is "replaced" and raises no banner.
+                if slot_holders:
+                    rec["resolvedAt"] = iso(at)
+                    rec["resolution"] = "replaced in the same slot"
+                pulls[pid] = rec
         known.pop(key_str, None)
 
-    # 2. Explicit pull metadata in UPLOADS.json (catches pulls that happened before the first snapshot).
+    # 2. Explicit pull metadata in UPLOADS.json for new pulls recorded after seeding.
     for ch_label, vid_map in (uploads or {}).items():
         ch = str(ch_label or "").upper()
         if not isinstance(vid_map, dict):
@@ -459,20 +611,30 @@ def _detect_pulls(at: dt.datetime, state: dict, scheduled: dict, public_ids: set
             vtype = "short" if str(meta.get("kind") or "").lower() == "short" else "long"
             pid = _pull_id(ch, str(vid), prev_pub)
             if pid not in pulls:
-                pulls[pid] = {
+                slot_holders = slots.get(_slot_key(ch, vtype, prev_pub), set()) - {str(vid)}
+                superseded_by = str(meta.get("supersededBy") or "")
+                rec = {
                     "id": pid,
                     "channel": ch,
                     "videoId": str(vid),
-                    "title": str(meta.get("title") or ""),
+                    "title": _resolve_title(str(meta.get("title") or ""), meta=meta, videos=videos,
+                                            channel=ch, vtype=vtype, video_id=str(vid), slot_dt=prev_pub),
                     "type": vtype,
                     "film": "",
                     "slotAt": iso(prev_pub),
-                    "change": "replaced" if meta.get("supersededBy") else "pulled",
+                    "change": "replaced" if (superseded_by or slot_holders) else "pulled",
                     "reason": str(meta.get("pullReason") or meta.get("containment") or ""),
                     "detectedAt": iso(unsched_at),
-                    "supersededBy": str(meta.get("supersededBy") or ""),
+                    "supersededBy": superseded_by or (sorted(slot_holders)[0] if slot_holders else ""),
                     "job": "",
                 }
+                if slot_holders:
+                    rec["resolvedAt"] = iso(at)
+                    rec["resolution"] = "replaced in the same slot"
+                elif seeded_dt and unsched_at < seeded_dt:
+                    rec["resolvedAt"] = iso(at)
+                    rec["resolution"] = "pre-existing pull before seed"
+                pulls[pid] = rec
 
     # 3. Record all currently scheduled future videos for future transition detection.
     for (ch, vid), rec in scheduled.items():
@@ -584,7 +746,7 @@ def evaluate(*, at: dt.datetime | None = None, jobs: list[dict] | None = None, c
     with _state_lock(p):
         state = load_state(p)
         scheduled, public_ids, slots = _collect_current_schedule(videos, uploads)
-        _detect_pulls(at, state, scheduled, public_ids, slots, uploads)
+        _detect_pulls(at, state, scheduled, public_ids, slots, uploads, videos=videos)
 
         # Collect active watch candidates (trigger b: awaits_ben UAT with deadline within 12 h).
         watch_candidates: list[dict] = []
@@ -643,8 +805,12 @@ def evaluate(*, at: dt.datetime | None = None, jobs: list[dict] | None = None, c
                 pull["resolvedAt"] = iso(at)
                 continue
             other_in_slot = slots.get(_slot_key(ch, vtype, slot_dt), set()) - {vid}
-            if pull.get("change") != "replaced" and other_in_slot and not p_job_id:
+            if other_in_slot:
+                pull["change"] = "replaced"
+                if not pull.get("supersededBy"):
+                    pull["supersededBy"] = sorted(other_in_slot)[0]
                 pull["resolvedAt"] = iso(at)
+                pull["resolution"] = "replaced in the same slot"
                 continue
 
             matched_watch = _match_watch_for_pull(pull, watch_candidates)
@@ -659,13 +825,18 @@ def evaluate(*, at: dt.datetime | None = None, jobs: list[dict] | None = None, c
                 href = str(pull.get("href") or ("#review" if pull.get("watchDueAt") else "#schedule"))
                 has_watch = bool(pull.get("watchDueAt"))
 
+            pull_meta = ((uploads or {}).get(ch) or {}).get(vid) or {}
+            resolved_title = _resolve_title(
+                str(pull.get("title") or (matched_watch or {}).get("title") or ""),
+                meta=pull_meta, videos=videos, channel=ch, vtype=vtype, video_id=vid, slot_dt=slot_dt,
+            )
             active_events.append({
                 "id": pid,
                 "kind": "pulled",
                 "change": str(pull.get("change") or "pulled"),
                 "channel": ch,
                 "videoId": vid,
-                "title": str(pull.get("title") or (matched_watch or {}).get("title") or ""),
+                "title": resolved_title,
                 "type": vtype,
                 "number": str(pull.get("film") or (matched_watch or {}).get("number") or ""),
                 "reason": str(pull.get("reason") or ""),
@@ -674,10 +845,11 @@ def evaluate(*, at: dt.datetime | None = None, jobs: list[dict] | None = None, c
                 "job": p_job_id or (matched_watch or {}).get("job") or "",
                 "deadlineAt": iso(deadline_dt),
                 "slotAt": iso(slot_dt),
+                "detectedAt": str(pull.get("detectedAt") or ""),
+                "supersededBy": str(pull.get("supersededBy") or ""),
                 "href": href,
                 "url": f"{full_base}/{href}",
-                "shortTitle": video_label(pull.get("title") or (matched_watch or {}).get("title") or "", vtype, ch,
-                                          pull.get("film") or ""),
+                "shortTitle": video_label(resolved_title, vtype, ch, pull.get("film") or "", video_id=vid),
             })
 
         for w in watch_candidates:
@@ -819,12 +991,15 @@ def record_pull(*, channel: str, video_id: str, title: str, slot_at: str, reason
     p = state_path(state_file)
     with _state_lock(p):
         state = load_state(p)
+        if not state.get("seededAt"):
+            state["seededAt"] = iso(at)
         state.setdefault("pulls", {})[pid] = rec
         _write_json_atomic(p, state)
     return rec
 
 
-def resolve_event(event_id: str, *, at: dt.datetime | None = None, state_file: pathlib.Path | None = None) -> bool:
+def resolve_event(event_id: str, *, at: dt.datetime | None = None, state_file: pathlib.Path | None = None,
+                  resolution: str = "") -> bool:
     """Mark a pull or alert event resolved so repeats stop and the red board banner clears."""
     at = at or now_utc()
     p = state_path(state_file)
@@ -835,6 +1010,8 @@ def resolve_event(event_id: str, *, at: dt.datetime | None = None, state_file: p
             rec = (state.get(bucket) or {}).get(event_id)
             if isinstance(rec, dict) and not rec.get("resolvedAt"):
                 rec["resolvedAt"] = iso(at)
+                if resolution:
+                    rec["resolution"] = resolution
                 changed = True
         if changed:
             _write_json_atomic(p, state)

@@ -261,25 +261,181 @@ class PullTriggerTests(unittest.TestCase):
             self.assertEqual(r2["sent"], [])
             self.assertEqual(r2["board"]["active"], [])
 
-    def test_explicit_uploads_unscheduled_metadata_detected_on_first_run(self):
+    def test_first_run_seeds_without_alerting_and_ignores_old_pulls(self):
+        """J3313 (a): first run seeds scheduled videos without alerting so old pulls are not announced as new."""
         with tempfile.TemporaryDirectory() as tmp:
             st = Path(tmp) / "state.json"
             cfg = Path(tmp) / "config.json"
+            sent = []
             uploads = {
                 "HOS": {
-                    "vidX": {
+                    "oldPulled": {
                         "kind": "short", "title": "Franklin Kite", "privacyStatus": "private",
                         "publishAt": None,
-                        "previousPublishAt": "2026-11-21T11:30:00Z",
-                        "unscheduledAt": "2026-11-21T05:00:00Z",
+                        "previousPublishAt": "2026-11-22T11:30:00Z",
+                        "unscheduledAt": "2026-11-21T16:00:00Z",
                         "pullReason": "gate_shorts_open failed",
+                    },
+                    "liveSched": {
+                        "kind": "short",
+                        "file": "02_Video-Projects/005/10_Shorts/hos_005_s07_heart_pulse_v05.mp4",
+                        "privacyStatus": "private",
+                        "publishAt": "2026-11-22T11:30:00Z",
+                    },
+                }
+            }
+            # Run 1 (seed): zero alerts, even with pre-existing unscheduled metadata in UPLOADS.json.
+            r1 = ba.evaluate(at=utc(2026, 11, 21, 17, 30), uploads=uploads, state_file=st, config_file=cfg,
+                             notify_fn=lambda m: sent.append(m) or True, site_url="https://board.oppti.dev")
+            self.assertEqual(r1["sent"], [])
+            self.assertEqual(r1["board"]["active"], [])
+
+            # Run 2 (next minute): still zero alerts for the pre-existing pull.
+            r2 = ba.evaluate(at=utc(2026, 11, 21, 17, 35), uploads=uploads, state_file=st, config_file=cfg,
+                             notify_fn=lambda m: sent.append(m) or True, site_url="https://board.oppti.dev")
+            self.assertEqual(r2["sent"], [])
+            self.assertEqual(r2["board"]["active"], [])
+
+            # Run 3: a brand-new pull recorded AFTER seeding DOES alert.
+            uploads["HOS"]["freshPulled"] = {
+                "kind": "short", "title": "Jenner Cowpox", "privacyStatus": "private",
+                "publishAt": None,
+                "previousPublishAt": "2026-11-22T15:30:00Z",
+                "unscheduledAt": "2026-11-21T17:40:00Z",
+                "pullReason": "gate_shorts_open failed",
+            }
+            r3 = ba.evaluate(at=utc(2026, 11, 21, 17, 45), uploads=uploads, state_file=st, config_file=cfg,
+                             notify_fn=lambda m: sent.append(m) or True, site_url="https://board.oppti.dev")
+            self.assertEqual(len(r3["sent"]), 1)
+            self.assertIn("Jenner Cowpox Short pulled (video failed a check)", r3["sent"][0]["message"])
+            self.assertIn("Open the schedule", r3["sent"][0]["message"])
+
+    def test_pulled_video_replaced_in_same_slot_raises_no_banner(self):
+        """J3313 (b): pulled video whose slot already holds another scheduled video of same channel+kind is 'replaced' with no banner."""
+        with tempfile.TemporaryDirectory() as tmp:
+            st = Path(tmp) / "state.json"
+            cfg = Path(tmp) / "config.json"
+            sent = []
+            # Seed with v04 scheduled.
+            uploads_before = {
+                "HOS": {
+                    "fgsR8yAHr5s": {
+                        "kind": "short", "title": "How Does the Heart Pump Blood?",
+                        "privacyStatus": "private", "publishAt": "2026-11-22T11:30:00Z",
                     }
                 }
             }
-            res = ba.evaluate(at=utc(2026, 11, 21, 5, 5), uploads=uploads, state_file=st, config_file=cfg,
+            ba.evaluate(at=utc(2026, 11, 21, 16, 0), uploads=uploads_before, state_file=st, config_file=cfg,
+                        notify_fn=lambda m: sent.append(m) or True)
+
+            # v04 pulled AND v05 already scheduled in the same HOS Short slot -> marked replaced, zero banners.
+            uploads_replaced = {
+                "HOS": {
+                    "fgsR8yAHr5s": {
+                        "kind": "short", "title": "How Does the Heart Pump Blood?",
+                        "privacyStatus": "private", "publishAt": None,
+                        "previousPublishAt": "2026-11-22T11:30:00Z",
+                        "unscheduledAt": "2026-11-21T16:30:00Z",
+                        "pullReason": "music_gate failed",
+                    },
+                    "el30-mHiH-0": {
+                        "kind": "short", "title": "How Does the Heart Pump Blood?",
+                        "privacyStatus": "private", "publishAt": "2026-11-22T11:30:00Z",
+                    },
+                }
+            }
+            r1 = ba.evaluate(at=utc(2026, 11, 21, 17, 0), uploads=uploads_replaced, state_file=st, config_file=cfg,
+                             notify_fn=lambda m: sent.append(m) or True)
+            self.assertEqual(r1["sent"], [])
+            self.assertEqual(r1["board"]["active"], [])
+            saved = json.loads(st.read_text())
+            pull_rec = saved["pulls"]["pull:HOS:fgsR8yAHr5s:2026-11-22T11:30"]
+            self.assertEqual(pull_rec["change"], "replaced")
+            self.assertEqual(pull_rec["supersededBy"], "el30-mHiH-0")
+            self.assertTrue(pull_rec.get("resolvedAt"))
+
+            # A video of a DIFFERENT kind (long) or DIFFERENT channel (OWB) in the same slot does NOT suppress a HOS Short pull.
+            uploads_diff_kind = {
+                "HOS": {
+                    "el30-mHiH-0": {
+                        "kind": "short", "title": "How Does the Heart Pump Blood?",
+                        "privacyStatus": "private", "publishAt": None,
+                    },
+                    "longSameSlot": {
+                        "kind": "long", "title": "Harvey Blood",
+                        "privacyStatus": "private", "publishAt": "2026-11-22T11:30:00Z",
+                    },
+                },
+                "OWB": {
+                    "owbSameSlot": {
+                        "kind": "short", "title": "Other Channel Short",
+                        "privacyStatus": "private", "publishAt": "2026-11-22T11:30:00Z",
+                    }
+                },
+            }
+            r2 = ba.evaluate(at=utc(2026, 11, 21, 17, 30), uploads=uploads_diff_kind, state_file=st, config_file=cfg,
+                             notify_fn=lambda m: sent.append(m) or True, site_url="https://board.oppti.dev")
+            self.assertEqual(len(r2["sent"]), 1)
+            self.assertEqual(len(r2["board"]["active"]), 1)
+
+    def test_banner_names_video_gives_clear_action_and_never_repeats(self):
+        """J3313 (c)+(d): banner names the video (not only channel), says what to do or nothing needed, never repeats itself."""
+        at = utc(2026, 11, 21, 17, 30)
+
+        # 1. Unscheduled event must not repeat "unscheduled" and must tell Ben what to do, naming the video.
+        ev_unsched = {
+            "kind": "pulled", "change": "unscheduled", "channel": "HOS", "type": "short",
+            "videoId": "el30-mHiH-0", "title": "How Does the Heart Pump Blood?",
+            "slotAt": "2026-11-22T11:30:00Z", "deadlineAt": "2026-11-22T11:30:00Z", "href": "#schedule",
+        }
+        full_u, banner_u = ba.format_message(ev_unsched, at, site_url="https://board.oppti.dev")
+        self.assertIn("How Does the Heart Pump Blood?", banner_u)
+        self.assertNotIn("unscheduled", banner_u.lower().replace("unscheduled", "", 1))
+        self.assertIn("Open the schedule", banner_u)
+        self.assertIn("board.oppti.dev/#schedule", full_u)
+
+        # 2. Replaced event says "Nothing needed." and matches plain-English summary form.
+        ev_rep = {
+            "kind": "pulled", "change": "replaced", "channel": "HOS", "type": "short",
+            "videoId": "fgsR8yAHr5s", "title": "Heart Short v04",
+            "detectedAt": "2026-11-20T02:53:31Z", "replacementName": "v05",
+            "slotAt": "2026-11-22T11:30:00Z", "deadlineAt": "2026-11-22T11:30:00Z", "href": "#schedule",
+        }
+        _, banner_r = ba.format_message(ev_rep, at, site_url="https://board.oppti.dev")
+        self.assertEqual(banner_r, "Heart Short v04 was replaced on Friday; v05 airs tomorrow 11:30. Nothing needed.")
+
+        # 3. Missing title in UPLOADS.json resolves from social.question, filename, or videoId (never only "HOS Short").
+        with tempfile.TemporaryDirectory() as tmp:
+            st = Path(tmp) / "state.json"
+            cfg = Path(tmp) / "config.json"
+            uploads_seed = {
+                "HOS": {
+                    "vidSocial": {
+                        "kind": "short", "privacyStatus": "private", "publishAt": "2026-11-22T11:30:00Z",
+                        "social": {"question": "How does the heart pump blood?"},
+                    },
+                    "vidFile": {
+                        "kind": "short", "privacyStatus": "private", "publishAt": "2026-11-22T12:30:00Z",
+                        "file": "/tmp/hos_005_s07_heart_pulse_v05.mp4",
+                    },
+                    "vidBare": {
+                        "kind": "short", "privacyStatus": "private", "publishAt": "2026-11-22T13:30:00Z",
+                    },
+                }
+            }
+            ba.evaluate(at=utc(2026, 11, 21, 16, 0), uploads=uploads_seed, state_file=st, config_file=cfg,
+                        notify_fn=lambda m: True)
+            # All three lose their publishAt -> each banner must name its video, never just "HOS Short".
+            res = ba.evaluate(at=utc(2026, 11, 21, 17, 0), uploads={}, state_file=st, config_file=cfg,
                               notify_fn=lambda m: True, site_url="https://board.oppti.dev")
-            self.assertEqual(len(res["sent"]), 1)
-            self.assertIn("Franklin Kite Short pulled (video failed a check)", res["sent"][0]["message"])
+            msgs = {a["id"]: a["message"] for a in res["board"]["active"]}
+            self.assertEqual(len(msgs), 3)
+            self.assertIn("How does the heart pump blood?", msgs["pull:HOS:vidSocial:2026-11-22T11:30"])
+            self.assertIn("Heart Pulse v05 Short", msgs["pull:HOS:vidFile:2026-11-22T12:30"])
+            self.assertIn("vidBare", msgs["pull:HOS:vidBare:2026-11-22T13:30"])
+            for m in msgs.values():
+                self.assertNotIn("HOS Short unscheduled", m)
+                self.assertIn("Open the schedule", m)
 
 
 class DeliveryAndTimezoneTests(unittest.TestCase):
