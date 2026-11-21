@@ -297499,9 +297499,14 @@
           "at": "2026-11-21T18:23Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J3315; beginning condition verification for J2036"
+        },
+        {
+          "at": "2026-11-21T18:25Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified J3314 done (#7067194875), PR #719 5/5 CI green, v03 ffprobe 519.000s, 33 cards 0 overlaps, 4/4 gates PASS, 21/21 stills present"
         }
       ],
-      "remaining_action": "Verify J3314 completion, open HOS PRs, and NAS v03 artifacts/gates/stills",
+      "remaining_action": "Verify NAS v01/v02/v03 live SHA-256 completion and original J2036 gates/approvals, then reopen J2036",
       "kind": "review",
       "recheck_of": "J2036",
       "due": "2026-11-15T18:00:00+00:00",
@@ -297515,11 +297520,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-21T18:23Z",
+        "at": "2026-11-21T18:25Z",
         "by": "gemini",
-        "note": "Claimed J3315; beginning condition verification for J2036"
+        "note": "Verified J3314 done (#7067194875), PR #719 5/5 CI green, v03 ffprobe 519.000s, 33 cards 0 overlaps, 4/4 gates PASS, 21/2"
       },
       "taskKeys": [
         "HOS:009"
