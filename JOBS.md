@@ -58,7 +58,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3289 | mini | blocked | gemini | – | review · Verify condition for J2040 |  |
 | J3294 | any | blocked | gemini | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J3295 | mini | blocked | gemini | – | review · Verify condition for J1275 |  |
-| J3297 | any | blocked | macbook-2 | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
+| J3297 | any | open | – | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 | J3299 | mini | blocked | gemini | – | script · Backlog OWB: this week's dated-event Short (LEARNINGS rule 16 test), script + packaging, park for Chief |  |
 | J3300 | mini | blocked | gemini | – | review · Verify condition for J3178 |  |
 | J3301 | any | blocked | macbook-2 | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
