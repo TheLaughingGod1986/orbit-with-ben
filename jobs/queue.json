@@ -292752,19 +292752,26 @@
           "at": "2026-11-21T01:33Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T01:33Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed. Checking that pull request 1089 is on main before any History of Science edit."
         }
       ],
-      "remaining_action": "After OWB #1089 merges: core_sync push to HOS, add uploadFor/optional packageDir to HOS channel-youtube.ts, tests, one HOS PR for Grok",
+      "remaining_action": "Confirm the shared upload change is on main, then sync it into History of Science",
       "due": "2026-11-24T18:00:00Z",
       "kind": "studio",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-21T01:33Z",
         "by": "cursor",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed. Checking that pull request 1089 is on main before any History of Science edit."
+      },
+      "taskKeys": [
+        "HOS:000"
+      ]
     },
     {
       "id": "J3259",
