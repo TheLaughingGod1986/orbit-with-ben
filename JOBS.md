@@ -74,7 +74,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3310 | mini | open (after J3307) | – | – | studio · Studio: arm T043 thumbnail Test & Compare on REXYxuLOBoI (005 — OUTLIVES OUR SUN) after J3307 PASS |  |
 | J3311 | mini | blocked | gemini | – | HOS:009 edit · qa · Review HOS 009 Short A v01 and Short B v01 (J2171, PR #718) | J2171 |
 | J3313 | mini | open | – | – | for gemini · studio · `gemini-argon` · HOS: confirm tomorrow's 11:30 Short el30-mHiH-0 is still scheduled, clear the false 'video pulled' banner, and fix the alert |  |
-| J3318 | mini | open | – | – | for gemini · studio · `gemini-argon` · Field Order History: bring pilots forward (Ben: "Go"): 001 to Sun 22 Nov 17:00, 002 to Wed 25 Nov 17:00 |  |
+| J3318 | mini | claimed | gemini | 2026-11-21T19:23Z | for gemini · studio · `gemini-argon` · Field Order History: bring pilots forward (Ben: "Go"): 001 to Sun 22 Nov 17:00, 002 to Wed 25 Nov 17:00 |  |
 
 Recently finished:
 

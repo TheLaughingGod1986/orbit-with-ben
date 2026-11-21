@@ -297798,10 +297798,10 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-21T19:03Z",
+      "eta": "2026-11-21T19:23Z",
       "created_by": "claude",
       "created_at": "2026-11-21T18:58Z",
       "result": "",
@@ -297815,6 +297815,11 @@
           "at": "2026-11-21T19:03Z",
           "by": "claude",
           "what": "rerouted to gemini on gemini-argon: Claude, 21 Nov ~19:05Z: stuck since queued. Kind studio has no Gemini lane, and the other Mini lanes are out (Cursor and Codex out of usage, Claude Code paused while Claude is flagged), so only Gemini is working. Rerouted to Gemini on gemini-argon: the steps are Data API reads and updates with the channel's own login plus records; Studio is not needed."
+        },
+        {
+          "at": "2026-11-21T19:03Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Change publishAt only: ek9F61FVYqY to 2026-11-22T17:00Z, J9WGu8aPnHI to 2026-11-25T17:00Z; read back; update plan, register, ww2 status; receipt",
@@ -297831,7 +297836,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T19:03Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
