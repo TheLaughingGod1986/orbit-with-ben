@@ -115,7 +115,7 @@ class Publishing(unittest.TestCase):
         with patch.object(g, "run", side_effect=fake_run):
             res = g.evaluate(vid, self.root, "short", "2026-12-01", short_run=lambda c: (0, "PASS"))
         self.assertTrue(res["ok"], res)
-        self.assertTrue(any("music_gate.py" in c[1] and str(bed) in c for c in calls))
+        self.assertTrue(any("music_gate.py" in c[1] and any(Path(arg).resolve() == bed.resolve() for arg in c[2:] if arg.startswith("/")) for c in calls))
         self.assertTrue(any("sfx_kit.py" in c[1] for c in calls))
 
     def test_channel_specific_gates_for_hos_and_ww2(self):
