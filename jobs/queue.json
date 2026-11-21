@@ -294491,9 +294491,14 @@
           "at": "2026-11-21T08:33Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Starting J3277 verification for J3178 (HOS:013)"
+        },
+        {
+          "at": "2026-11-21T08:35Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Live read_file probe in agy 1.5.14 confirmed audio_input only; P05_10_darwin_worried_shelf_t1.mp4 still returns 8 discrete 1-fps JPEGs (00:00..00:07), not continuous 24-fps playback. Recorded honest capabilities."
         }
       ],
-      "remaining_action": "Verify J3178 waiting condition: agent moving_video_input availability, live capability probe, NAS Batch 12-14 integrity, and desk/thread marks for HOS:013",
+      "remaining_action": "Verify Batch 12-14 NAS SHA-256 hashes, REVIEW_STATE.json, and HOS #694 / OWB #954 history",
       "kind": "review",
       "recheck_of": "J3178",
       "required_capabilities": [
@@ -294510,11 +294515,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-21T08:33Z",
+        "at": "2026-11-21T08:35Z",
         "by": "gemini",
-        "note": "Starting J3277 verification for J3178 (HOS:013)"
+        "note": "Live read_file probe in agy 1.5.14 confirmed audio_input only; P05_10_darwin_worried_shelf_t1.mp4 still returns 8 discre"
       },
       "taskKeys": [
         "HOS:013"
