@@ -293922,7 +293922,7 @@
     {
       "id": "J3272",
       "title": "Verify condition for J2537",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J2537: Acting Chief (gemini) accepts J3221 REVIEW.md (9ce0d95feb): explicit one-time authorization for irreversible rewrite of protected HOS hos-desk while retaining PR180 remains absent. Fresh check 2026-11-20T11:54Z: OWB #954 through 7038725203 has no new Ben exception; HOS #180 remains capped at 2500 comments (last 7024089854 at 2026-11-19T22:33:32Z, rollover in J3215) and HOS #657 has 0 comments. Grok ruling 7018109147 retains this hold and says the question is already open; do not ask again. Pre-rewrite NAS/Mini backups and rehearsal remain intact; HOS origin/main is bc4e8b7f92, origin/hos-desk is 521c9586e0, with 24 open non-desk PRs. After authorization, resolve non-desk PRs, refresh backup and rehearsal against current heads, give day-before window notice and hold writers before allowlisted cutover. No live rewrite authorized.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2537 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -293942,13 +293942,26 @@
           "at": "2026-11-21T03:56Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-21T03:57Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-21T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Verify readiness: Check for the protected desk history exception, then prepare the controlled rewrite window",
       "kind": "review",
       "recheck_of": "J2537",
       "due": "2026-11-18T18:00:00+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
