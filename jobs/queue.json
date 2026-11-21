@@ -299144,13 +299144,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-21T22:28Z",
-      "eta": "2026-11-22T00:28Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-21T22:26Z",
-      "result": "",
+      "result": "parked for Chief: parked for Chief: dated-event Short v01 ready for review (PR #1137 merged; 6/6 gates PASS; 18.20s, 0/19 padded; NAS video SHA ff52475588e5ecee, cover SHA c17ac08de15dac4a; needs Ben's OK by Wed 2 Dec 18:00 London) (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)",
       "history": [
         {
           "at": "2026-11-21T22:26Z",
@@ -299196,6 +299196,11 @@
           "at": "2026-11-21T23:07Z",
           "by": "gemini",
           "what": "step 5 of 6 done: Rebuilt v01 clean (removed 0:17 loop-tail NASA Animation clip), 6/6 gates PASS (18.20s, 0/19 padded), SHA-256 manifest + handoff merged in PR #1137 (video ff52475588e5ecee, cover c17ac08de15dac4a)"
+        },
+        {
+          "at": "2026-11-21T23:07Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: parked for Chief: dated-event Short v01 ready for review (PR #1137 merged; 6/6 gates PASS; 18.20s, 0/19 padded; NAS video SHA ff52475588e5ecee, cover SHA c17ac08de15dac4a; needs Ben's OK by Wed 2 Dec 18:00 London) (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)"
         }
       ],
       "remaining_action": "Chief/Claude reviews v01 media before Ben's watch (due Wed 2 Dec 18:00 London)",
