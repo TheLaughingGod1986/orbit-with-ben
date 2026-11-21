@@ -1,5 +1,5 @@
 {
-  "next_id": 3314,
+  "next_id": 3315,
   "jobs": [
     {
       "id": "J0001",
@@ -297324,6 +297324,36 @@
       "mini_only": true,
       "plain": "Check tomorrow's History of Science Short is still booked, remove the false alarm, and stop the alert repeating old news",
       "urgent": 4
+    },
+    {
+      "id": "J3314",
+      "title": "HOS 009: Assemble v03 long master (fix card drift, stacked Part 4 captions, E2 early card, phone readability)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting Chief (Gemini) ruling on J2036 (HOS 009 long master v02 `9d8731cb`, 21 Nov 2026): **FAIL on v02 overlay/card defects — bounded £0 v03 re-edit required before Ben's final watch.**\n\nIndependent Chief inspection of 20 full-resolution v02 stills and `09_Assembly/j2035_v02/SOURCE_MAP.json` confirmed all 4 findings in `07_Edit-Project/J2036_V02_QA_2026-11-21.md` plus 2 additional card-drift defects (`1665` at 0:31; `PRINCIPIA · 1687` bleeding past Part 4 end 393.86 s onto Part 5).\n\n## Scope & locks (HOS 009 only; £0 / 0 credits)\n- ZERO new Flow, Vertex, or ElevenLabs spend; ZERO YouTube, Studio, Buffer, schedule, privacy, or upload changes.\n- Preserve `09_Assembly/j2035_v01/hos009_long_master_v01.mp4` (`802b5c7e...`) and `09_Assembly/j2035_v02/hos009_long_master_v02.mp4` (`9d8731cb...`) byte-untouched on NAS.\n- Write v03 to fresh versioned folder `09_Assembly/j2035_v03/hos009_long_master_v03.mp4` with full `SOURCE_MAP.json`, `cuts.json`, `reviewed_ok.json`, `stems/`, `gates/`, `stills/`, and `SHA256SUMS.txt`.\n- Preserve the exact v02 `519.000 s` cut/row timeline, exact part boundaries (`84.44, 176.78, 260.16, 393.86, 519.00 s` so re-timed chapters `0:00, 1:24, 2:56, 4:20, 6:33` remain exact), E2 opening (`8` cuts `3.99 s` each `< 4.5 s`), `0:05–0:15` PROOF window, separated Part 4 graphics (`p4_03_sixty_earths` -> moving drawer plate -> `p4_04_dots_square`), locked 5-part VO (`VO_TAKES_KEEP.json`), accepted £0 `v04_synth` score (`151ba46a...`), and the exact two Grok rulings (`6792271903` table callback `0.30 s`; `7046684862` `05_minute_second` split panel — never widen `reviewed_ok`).\n\n## Four mandatory v03 fixes\n1. **Eliminate card-drift mismatches & duplicate cards (never push a card into another shot or chapter card):**\n   - Drop the 6 redundant `side_label` cards where a `WHO`/`WHEN`/`FACT` card already covers the same row/beat:\n     - `label-07_night_field` (`1665`, drifted to `29.80–33.41 s`; `when-1665` `ENGLAND, 1665` at `50.20 s` covers it),\n     - `label-02_newton_arrives` (`ISAAC NEWTON · WOOLSTHORPE`, drifted to `104.77–108.37 s`; `who-newton` at `95.12 s` covers it),\n     - `label-03_christmas_birth` (`25 DECEMBER 1642`, drifted to `114.85–118.45 s` over quart pot, duplicating `when-birth` at `101.20 s`),\n     - `label-08_halley_visit` (`EDMOND HALLEY · 1684`, redundant between `who-halley` `349.44 s` and `when-1684` `357.24 s`),\n     - `label-11_principia_press` (`PRINCIPIA · 1687`, drifted to `391.87–395.47 s` across Part 4 end `393.86 s` onto Part 5 chapter card; `when-1687` + `fact-print` cover it),\n     - `label-04_comet_1758` (`HALLEY'S COMET · 1758`, drifted to `431.21–434.81 s` directly over ISS plate `05_iss_orbit` and overlapped `label-05_iss_orbit` by 20 ms; `when-1758` + `fact-return` cover comet shots).\n   - Keep `label-05_iss_orbit` (`FALLING, TOGETHER`) strictly inside `P05:05_iss_orbit` (`432.2–435.8 s`), zero overlap with any other card.\n   - Verify programmatically in `SOURCE_MAP.json` that EVERY retained card's `[t0, t1]` sits strictly inside its own matching row/beat (zero cross-shot drift, zero chapter-card bleed, zero overlap).\n2. **Remove stacked text on Part 4 code graphics (\"one label at a time\", `studio/RULES.md` lines 70 & 79):**\n   - Suppress the redundant edit-layer `side_label` overlay on `p4_03_sixty_earths` (`60 TIMES FURTHER` stacked on `SIXTY EARTHS` at `4:59`), `p4_04_dots_square` (`3,600 TIMES WEAKER` stacked on `SIXTY TIMES SIXTY` at `5:06`), and `p4_05_minute_second` (`1 MINUTE = 1 SECOND` stacked on `1 SECOND` at `5:22`). Those code graphics already carry baked Didot italic captions.\n3. **Fix HOS-2026-11-E2 Early DATA+SCALE card (`0:25–0:40`) & remove duplicate `TWO SETS OF RULES`:**\n   - Replace the bare dark-brown rings + `TWO SETS OF RULES` at `26.15–29.75 s` with a clean **house-style soft warm-brown/cream inked teach card** (high contrast over the dark night sky, animated draw-on `0.3–0.6 s`, total `<= 4 s`, never Ken-Burned) riding the locked VO at `26.02–31.94 s` (*\"For thousands of years, people believed the sky followed different rules from the Earth\"*, sourced `FACT_NOTES_v01.md` line 20): display the exact spoken scale **`THOUSANDS OF YEARS`** (`<= 4 words`, zero invented numbers) with a clean inked Earth-fall arrow vs. celestial-circle visual comparison.\n   - Keep `TWO SETS OF RULES` **only once**, at `40.17–43.77 s` on `P01:05_heavens_map`.\n4. **Fix phone-size readability of cards & timeline on bright/busy grounds (`studio/RULES.md` lines 70 & 79):**\n   - Place all edit-layer `WHO`, `WHEN`, `FACT`, `DATA`, and `timeline` cards on a **soft translucent warm-brown/dark-sepia house teach-card backing** (~70% opacity, subtle feathered/rounded edges matching the HOS chapter/end-card brown palette — never a flat modern UI box) with crisp cream/white Didot italic text and clean drop shadow so bright daylight grounds (`1:32`, `1:37`, `2:21`, `3:18`, `3:25`, `6:11`) read cleanly at phone width.\n   - Render the animated `timeline` (`369.15–372.95 s`, `1642 · 1665–1667 · 1684 · 1687 · 1758`, scale `TWENTY YEARS`, `FACT_NOTES_v01.md` line 118) on a warm-brown parchment ribbon at lower third so all 5 years draw on cleanly and read clearly over the sunlit desk.\n   - Add a subtle dark-sepia feathered shadow band behind remaining `side_label` cards so thin Didot italic never washes out on bright daylight shots (`CAMBRIDGE CLOSES`, `SLOW`, `FASTER`).\n\n## Gates, verification stills & handoff to J2036\n- Run unmodified `picture_qa` (PASS, 0 fail), `polish_gate` (PASS, 0 fail), `music_gate` on cut (PASS), and `sfx_kit.py level` (PASS) on `hos009_long_master_v03.mp4`.\n- Save full-res verification stills at `6s, 10s, 14s, 28s, 31s, 42s, 92s, 97s, 103s, 106s, 117s, 141s, 198s, 205s, 299s, 306s, 322s, 371s, 394s, 433s, 435s` in `09_Assembly/j2035_v03/stills/`.\n- Update `02_Video-Projects/009_The-Falling-Moon-Gravity/status.json` via PR (keep `edit` `doing`, owner `qa (J2036)`). Do not claim audio or moving-video watch (stays with Ben's final watch). Note: if the render takes >20 min, start detached in `tmux` per AGENTS.md and release with session/log/`.done` paths.\n",
+      "ref": "J2036",
+      "film": "009",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-21T17:42Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T17:42Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Assemble v03 long master fixing all 4 J2036 card/overlay defects, run gates, save verification stills, and hand back to J2036",
+      "due": "2026-11-22T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Re-render Gravity long master v03 at zero cost to fix card drift, stacked Part 4 labels, E2 early card, and phone readability"
     }
   ],
   "focus": [

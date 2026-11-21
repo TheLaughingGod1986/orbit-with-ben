@@ -76,6 +76,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3311 | mini | blocked | gemini | – | HOS:009 edit · qa · Review HOS 009 Short A v01 and Short B v01 (J2171, PR #718) | J2171 |
 | J3312 | mini | claimed | macbook-2 | 2026-11-21T17:58Z | studio · First-day check at 6 h: "How Do Plants Make Oxygen?" (Bks_JLId1ew) |  |
 | J3313 | mini | open | – | – | studio · HOS: confirm tomorrow's 11:30 Short el30-mHiH-0 is still scheduled, clear the false 'video pulled' banner, and fix the alert |  |
+| J3314 | mini | open | – | – | 009 edit · assembly · HOS 009: Assemble v03 long master (fix card drift, stacked Part 4 captions, E2 early card, phone readability) | J2036 |
 
 Recently finished:
 
