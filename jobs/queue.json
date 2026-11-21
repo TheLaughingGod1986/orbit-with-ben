@@ -292193,18 +292193,23 @@
           "at": "2026-11-21T02:51Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Claimed. MiniWork nearly full; inspecting scratch and desk before any move."
+        },
+        {
+          "at": "2026-11-21T02:56Z",
+          "by": "cursor",
+          "what": "step 4 of 4 done: 93 GiB free (was 168 MiB). Removed 873 clean worktrees (~38 GB) and archived 53 folders (~9.7 GB) with SHA-256. J2494 spot-check 3/3. tmux J3249-offload still copying J2230; no second copy."
         }
       ],
-      "remaining_action": "Inspect MiniWork scratch and desk for old completed folders safe to archive",
+      "remaining_action": "MiniWork is above 40 GB free. The detached offload is finishing old folders on its own.",
       "due": "2026-11-21T07:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-21T02:51Z",
+        "at": "2026-11-21T02:56Z",
         "by": "cursor",
-        "note": "Claimed. MiniWork nearly full; inspecting scratch and desk before any move."
+        "note": "93 GiB free (was 168 MiB). Removed 873 clean worktrees (~38 GB) and archived 53 folders (~9.7 GB) with SHA-256. J2494 sp"
       },
       "taskKeys": [
         "OWB:064"
