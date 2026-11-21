@@ -293831,13 +293831,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-21T03:16Z",
-      "eta": "2026-11-21T04:46Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-21T03:15Z",
-      "result": "",
+      "result": "parked for Chief: needs a worker with web. The MacBook Claude lane has no web search (WebSearch refused again, 21 Nov 03:2xZ), so the neighbour pass (three big videos with real view counts) cannot be done here and no views will be invented. Same as J3245 on 20 Nov, which Gemini then finished. Please reroute to Gemini or Codex on the Mini (jobs.py reroute J3270 --to gemini --model gemini-argon). No work started: no branch, no PR, no files changed.",
       "history": [
         {
           "at": "2026-11-21T03:15Z",
@@ -293848,6 +293848,11 @@
           "at": "2026-11-21T03:16Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T03:17Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: needs a worker with web. The MacBook Claude lane has no web search (WebSearch refused again, 21 Nov 03:2xZ), so the neighbour pass (three big videos with real view counts) cannot be done here and no views will be invented. Same as J3245 on 20 Nov, which Gemini then finished. Please reroute to Gemini or Codex on the Mini (jobs.py reroute J3270 --to gemini --model gemini-argon). No work started: no branch, no PR, no files changed."
         }
       ],
       "remaining_action": "Pick two data-backed History of Science topics and add them to the waiting line",
