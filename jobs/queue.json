@@ -295834,19 +295834,24 @@
           "at": "2026-11-21T13:39Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Implemented channel-aware publishing_gates.py (OWB/HOS/WW2 + real-export derivation + waivers), multi-channel repo routing in shorts-gate.ts/youtube-package-upload.ts, dual-UPLOADS merge + analytics_gate compatibility in gate_upcoming.py, per-channel fault isolation + J3292 alert hook in scheduled_gates.py, and expanded tests"
+        },
+        {
+          "at": "2026-11-21T13:41Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Fixed nas_blocked EPERM vs ENOENT in gate_upcoming.py and removed all hardcoded channel names/home paths to satisfy test_channel_ratchet.py; re-running full Python + TS verification"
         }
       ],
-      "remaining_action": "Run full Python, TypeScript, core-sync, and real-media verification suite",
+      "remaining_action": "Verify complete test suite, channel ratchet, and core lock, then commit and update PR #1112",
       "due": "2026-11-24T18:00:00Z",
       "kind": "assembly",
       "urgent": 4,
       "plain": "Stops a video with a failed check from being uploaded, and re-checks everything already scheduled every day",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-21T13:39Z",
+        "at": "2026-11-21T13:41Z",
         "by": "gemini",
-        "note": "Implemented channel-aware publishing_gates.py (OWB/HOS/WW2 + real-export derivation + waivers), multi-channel repo routi"
+        "note": "Fixed nas_blocked EPERM vs ENOENT in gate_upcoming.py and removed all hardcoded channel names/home paths to satisfy test"
       }
     },
     {
