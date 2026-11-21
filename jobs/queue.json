@@ -296153,20 +296153,25 @@
           "at": "2026-11-21T17:20Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Design complete: ben_alerts.py triggers (24h pull/unschedule/replace + 12h awaits_ben watch), 1x alert + 1x half-remaining-time repeat, stop on done, ntfy 1-step £0 phone proposal, red banner on /, /ai, /tracker"
+        },
+        {
+          "at": "2026-11-21T17:25Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Implemented scripts/ben_alerts.py, wired board_publish.py & chief_relay.py, added red urgent banner to studio_app.js/ai_app.js/tracker_loader.js, and wrote Python+JS tests"
         }
       ],
-      "remaining_action": "Implement scripts/ben_alerts.py, wire into board_publish/chief_relay, add red banner across board pages, and write tests",
+      "remaining_action": "Finish studio_app.html CSS edit, run full unit + ratchet + JS tests, open PR",
       "due": "2026-11-24T18:00:00Z",
       "kind": "assembly",
       "urgent": 5,
       "plain": "Sends Ben one direct message when a video due today is pulled or his watch is needed soon",
       "escalated_at": "2026-11-21T15:30Z",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-21T17:20Z",
+        "at": "2026-11-21T17:25Z",
         "by": "gemini",
-        "note": "Design complete: ben_alerts.py triggers (24h pull/unschedule/replace + 12h awaits_ben watch), 1x alert + 1x half-remaini"
+        "note": "Implemented scripts/ben_alerts.py, wired board_publish.py & chief_relay.py, added red urgent banner to studio_app.js/ai_"
       }
     },
     {
