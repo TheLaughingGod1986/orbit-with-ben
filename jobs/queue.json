@@ -1,5 +1,5 @@
 {
-  "next_id": 3333,
+  "next_id": 3334,
   "jobs": [
     {
       "id": "J0001",
@@ -299316,6 +299316,37 @@
         "by": "macbook",
         "note": "Opened PR #1136 (macbook/J3332, 5c31e4d4e, jobs/reviews/J3332/REVIEW.md); email & private-network tests passed; checkout"
       }
+    },
+    {
+      "id": "J3333",
+      "title": "Fix 06:40 analytics-snapshot.sh fallback worktree engine_guard failure and push-rebase retry",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Fix the daily 06:40 channel tracker launchd job (dev.orbit.analytics-snapshot) on the Mac mini after it exited 1 on Sat 21 Nov 2026 06:40:06 GMT (J3301 diagnosis from ~/Library/Logs/orbit-analytics.log).\n\nObserved failures in ~/Library/Logs/orbit-analytics.log:\n1) Sat 21 Nov 06:40:06 GMT: fallback worktree ~/Library/Application Support/owb-analytics/worktree lacked scripts/engine_guard.py, causing line 82 of 07_Content-Ops/launchd/analytics-snapshot.sh (`python3 \"$wt/scripts/engine_guard.py\"`) to exit 1 BEFORE lines 90-91 (`git fetch -q origin main && git rebase -q origin/main`) could update the worktree. No 2026-11-21 snapshot was created for OWB or HOS.\n2) Thu 19 Nov and Fri 20 Nov: `git push` failed with `! [rejected] HEAD -> main (non-fast-forward)` because main moved during the run.\n\nWhat to do (read-only API / code fix only, £0 spend, no YouTube/Studio/Buffer writes):\n1) In a clean worktree branched from origin/main, update 07_Content-Ops/launchd/analytics-snapshot.sh so that:\n   - it updates/fetches/rebases the tracker worktree onto origin/main (or recreates a corrupted/stale worktree cleanly) BEFORE checking `$wt/scripts/engine_guard.py`;\n   - on `git push` non-fast-forward rejection, it fetches and rebases onto origin/main (bounded retries, e.g. 3 attempts) before failing.\n2) Add or update a regression test for the script/worktree logic if appropriate, open a PR in orbit-with-ben, and verify the fallback worktree on the Mini is healthy.\n3) After the fix is ready (or via read-only test run), confirm a clean read-only snapshot run produces today's missing OWB/HOS snapshots without error. Park PR for Chief review/merge.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-21T23:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T23:27Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Fix analytics-snapshot.sh worktree update before engine_guard and push-rebase retry",
+      "due": "2026-11-22T06:00:00Z",
+      "kind": "assembly",
+      "plain": "Fix the daily 06:40 analytics tracker script so it updates its worktree before checking engine_guard and retries pushes cleanly.",
+      "mini_only": true
     }
   ],
   "focus": [
