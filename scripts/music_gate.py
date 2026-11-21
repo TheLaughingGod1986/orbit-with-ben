@@ -25,6 +25,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
 import subprocess as sp
 import sys
@@ -32,7 +33,27 @@ from pathlib import Path
 
 import numpy as np
 
-import channels
+try:
+    import channels
+except ImportError:  # standalone non-home channel checkout (e.g. after core_sync push)
+    channels = None
+    _here = Path(__file__).resolve().parent.parent
+    _canonical = ""
+    try:
+        _canonical = str(json.loads((_here / "studio-core" / "CORE_FILES.json").read_text()).get("canonical") or "")
+    except (OSError, ValueError):
+        _canonical = ""
+    _cands = [Path(os.environ[k]) for k in ("STUDIO_REPO", "ORBIT_REPO") if os.environ.get(k)]
+    if _canonical:
+        _cands += [_here.parent / _canonical, Path.home() / "YouTube" / _canonical]
+    for _cand in _cands:
+        if (_cand / "scripts" / "channels.py").is_file():
+            sys.path.insert(0, str(_cand / "scripts"))
+            try:
+                import channels  # type: ignore[no-redef]
+            except ImportError:
+                channels = None
+            break
 
 SR = 8000
 BANDS = 24
@@ -117,17 +138,20 @@ def tempo(x: np.ndarray) -> float | None:
 
 def others_default(film_dir: Path) -> list[Path]:
     """The beds to compare against: the other films of this film's own channel, plus that channel's UAT folder."""
-    slug = channels.of_path(film_dir)
-    base = channels.checkout(slug)
     # Working beds may be on studio-live rather than in the checkout.
     libraries = {film_dir.resolve().parent}
-    if base:
-        libraries.add((base / "02_Video-Projects").resolve())
+    uat = ICLOUD
+    if channels is not None:
+        slug = channels.of_path(film_dir)
+        base = channels.checkout(slug)
+        if base:
+            libraries.add((base / "02_Video-Projects").resolve())
+        uat = ICLOUD / ((channels.get(slug).get("uat_dir") or {}).get("icloud") or "")
     out = [p for library in libraries for p in library.glob("*/05_Music/*")
-           if p.suffix.lower() in AUDIO and film_dir.resolve() not in p.resolve().parents]
-    uat = ICLOUD / ((channels.get(slug).get("uat_dir") or {}).get("icloud") or "")
+           if not p.name.startswith("._") and p.suffix.lower() in AUDIO
+           and film_dir.resolve() not in p.resolve().parents]
     if uat != ICLOUD and uat.is_dir():
-        out += [p for p in uat.glob("*") if p.suffix.lower() in AUDIO]
+        out += [p for p in uat.glob("*") if not p.name.startswith("._") and p.suffix.lower() in AUDIO]
     return out
 
 
@@ -231,7 +255,8 @@ def main(argv=None) -> int:
     if a.others is not None:
         others = []
         for o in a.others:
-            others += [p for p in o.rglob("*") if p.suffix.lower() in AUDIO] if o.is_dir() else [o]
+            others += ([p for p in o.rglob("*") if not p.name.startswith("._") and p.suffix.lower() in AUDIO]
+                       if o.is_dir() else [o])
     res = judge(a.film_dir, a.bed, a.video, others)
     if a.out:
         a.out.write_text(json.dumps(res, indent=2))

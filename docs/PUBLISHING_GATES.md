@@ -1,15 +1,43 @@
 # Publishing gates (J3291)
 
-The upload preflight and upcoming-video report now call `scripts/publishing_gates.py`.
-They recompute Shorts opening, music, picture QA (including polish) and SFX level checks.
-Missing inputs, changed export hashes, unknown channel-required gates and tool errors
-block upload. Dry runs enforce the same checks. `approved_deliver.py` only queues work.
+The upload preflight (`07_Content-Ops/scripts/youtube-package-upload.ts` via
+`07_Content-Ops/src/lib/publishing/shorts-gate.ts`) and the 14-day scheduled-video
+sweep (`00_Brand/Channel-Setup/tools/gate_upcoming.py` via `scripts/scheduled_gates.py`)
+both call `scripts/publishing_gates.py`.
 
-Export metadata needs `sha256` for the exact export, plus these `publishing_gates`
-inputs (paths relative to the metadata, or absolute paths):
+They recompute every blocking gate the film's channel requires for Shorts and longs
+before anything is sent to YouTube — never trusting recorded PASS strings. Dry runs
+enforce the exact same gates. `scripts/approved_deliver.py` queues `youtube:package`
+jobs rather than uploading directly.
+
+## Blocking gates per channel
+
+Each channel's `studio/channel.json` may declare `publishing_gates.by_format`
+(`short` / `long`) and additive `publishing_gates.required`. Defaults when unset:
+
+- **Orbit With Ben (`owb`)**:
+  - Shorts: `shorts_open` (`gate_shorts_open.py`), `music` (`music_gate.py`), `sfx` (`sfx_kit.py level`), plus `picture` (`picture_qa.py`) when a cut list is supplied.
+  - Longs: `music`, `picture` (`picture_qa.py`, which runs `polish_gate.py`), `sfx`.
+- **History of Science (`hos`)**:
+  - Shorts: `shorts_open`, `music`, `sfx`, `lint_package` (`07_Content-Ops/scripts/package-lint.ts`).
+  - Longs: `music`, `sfx`, `lint_package`.
+- **Field Order History (`ww2`)**:
+  - Shorts: `shorts_open`, `music`.
+  - Longs: `music`, `archive_provenance` (`03_Picture/ARCHIVE_PROVENANCE.md`).
+
+Any unknown gate name added to `studio/channel.json` fails closed until its runner is wired.
+`youtube-package-upload.ts` resolves the owning channel checkout from `--package` so
+multi-channel uploads (e.g. WW2 packages uploaded from the studio ops CLI) run that
+channel's own gate set.
+
+## Input resolution and waivers
+
+Explicit inputs in `<export>_meta.json` under `publishing_gates` take priority, with
+export SHA-256 verification whenever a hash is recorded in metadata or `UPLOADS.json`:
 
 ```json
 {
+  "sha256": "<export sha256>",
   "publishing_gates": {
     "film": "../../..",
     "bed": "../../../05_Music/score.mp3",
@@ -22,30 +50,38 @@ inputs (paths relative to the metadata, or absolute paths):
 }
 ```
 
-`pool`, `reviewed_ok` and `terminal_loop` are optional picture-QA inputs; all other
-listed inputs are required. The cut-list schema is picture_qa's existing schema.
-Previously recorded gate PASS strings do not substitute for source inputs.
-Music waivers retain the existing named-bed `music_gate_*_chief_waiver.json`
-format. Picture review rulings retain the existing `reviewed_ok` format. Shorts
-waivers use exact findings in the export's `_gate.json`, with a Chief attribution.
-Tool errors cannot be waived. No gate failure creates an automatic waiver.
+For existing exports whose sidecars predate `publishing_gates`, `publishing_gates.py`
+deterministically derives the film folder (`02_Video-Projects/<film>` or NAS `studio-live`),
+`05_Music` bed, adjacent `_vo`/`_sfx`/`_bed` stems, and `_cuts`/`_pool`/`_reviewed_ok` files.
+If a required input cannot be resolved, the gate fails closed.
 
-Refill queues one daily `scheduled_gates.py --apply --git` job. It checks every
-registered channel's private scheduled Shorts and longs in the next fourteen days,
-using a snapshot taken within 36 hours. No success cache skips videos when a gate
-changes. A prelaunch channel with no snapshots is skipped. Incomplete sweeps must
-stay open for retry; workers must not mark them complete. The sweep never calls
-YouTube. Failures within seven days produce one live Chief fix job per video.
-Chief determines whether a repair requires a new finished-cut watch and then uses
-the existing `awaits_ben` flow; coverage/metadata findings alone never alert Ben.
+Waivers use each gate's existing format and never waive tool errors (exit 2):
 
-## Rollout still required
+- **Music**: `05_Music/music_gate_*_chief_waiver.json` (`accept: true`, exact `bed` filename, `waive: ["reused"]`).
+- **Shorts opening**: `<export>_gate.json` (`waivers: [{"fail": "<exact line>", "waived_by": "Chief ..."}]`).
+- **Picture QA**: `--reviewed-ok` JSON.
 
-This PR changes the canonical Orbit engine only. Shared upload files are hash
-locked by `studio-core/CORE_FILES.json`; Chief must arrange the matching HOS core
-rollout before calling this an all-channel upload guard. Channel-specific required
-gates beyond the standard three currently fail closed until a runner is supplied.
-Existing export sidecars need explicit input paths before uploads can resume.
-The new daily sweep does not stage the full music library for a launchd sandbox;
-it runs as a worker job and needs readable media. No production sweep was run by
-J3291 on the MacBook. The dedicated deadline-alert integration remains outstanding.
+## Daily 14-day scheduled sweep and alerts
+
+`scripts/refill.py` queues one daily `python3 scripts/scheduled_gates.py --apply --git` job
+per London day. It checks every registered channel's scheduled Shorts and longs in the next
+14 days (merging studio `social/<slug>/UPLOADS.json` with the channel's own `UPLOADS.json`
+so HOS Shorts registered for Buffer are always found), with no PASS cache so tightened or
+newly added gates re-check everything already scheduled.
+
+- **Per-channel fault isolation**: a prelaunch channel with no snapshots or upload register
+  is skipped cleanly; a stale (>36 h) or missing snapshot on a live channel is reported as an
+  explicit coverage error without blocking the remaining channels from being checked and queued.
+- **Urgent Chief fixes (< 7 days)**: any unwaived FAIL airing within 7 days queues one
+  deduplicated urgent `kind: chief` fix job.
+- **Ben's alert (J3292 integration)**: `raise_ben_alert_if_needed` arms Ben's alert ONLY when
+  a cut-level gate (`shorts_open`, `music`, `picture`, `sfx`) failed (`needs_watch: true`),
+  delegating to `scripts/urgent_alerts.py` when present and deduplicating via board state.
+  Metadata, missing-input, coverage or package-lint findings never alert Ben.
+
+## Post-merge rollout
+
+`studio-core/CORE_FILES.json` locks the shared upload and gate files (`youtube-package-upload.ts`,
+`shorts-gate.ts`, `shorts-gate.test.ts`, `music_gate.py`, `publishing_gates.py`). Once this PR
+merges to `orbit-with-ben` `main`, run `python3 scripts/core_sync.py push --to "../History Of Science"`
+to land the matching core files in History of Science.

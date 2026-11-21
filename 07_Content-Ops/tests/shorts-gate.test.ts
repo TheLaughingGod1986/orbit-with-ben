@@ -1,5 +1,14 @@
+import fs from "fs";
+import os from "os";
+import path from "path";
 import { describe, expect, it } from "vitest";
-import { airDateFor, runShortsGate, type GateRunner } from "../src/lib/publishing/shorts-gate";
+import {
+  airDateFor,
+  resolveChannelRepo,
+  runPublishingGates,
+  runShortsGate,
+  type GateRunner,
+} from "../src/lib/publishing/shorts-gate";
 
 function runner(status: number, stdout = ""): GateRunner & { calls: string[][] } {
   const calls: string[][] = [];
@@ -45,8 +54,6 @@ describe("Shorts ship gate in the upload path", () => {
   });
 });
 
-import { runPublishingGates } from "../src/lib/publishing/shorts-gate";
-
 describe("all-format publishing hard stop", () => {
   it("refuses a reused-bed failure for Shorts and longs", () => {
     for (const format of ["shorts", "longform"] as const) {
@@ -57,11 +64,33 @@ describe("all-format publishing hard stop", () => {
       expect(r.calls[0]).toContain("/repo/scripts/publishing_gates.py");
     }
   });
+
   it("accepts the shared gate's applied waiver and uses London's air date", () => {
     const r = runner(0, "WAIVED reused: Chief waiver\nPASS");
-    const result = runPublishingGates({ videoPath: "/cut.mp4", repoRoot: "/repo", format: "shorts",
-      scheduledAt: new Date("2026-06-01T23:30:00Z") }, r);
+    const result = runPublishingGates({
+      videoPath: "/cut.mp4", repoRoot: "/repo", format: "shorts",
+      scheduledAt: new Date("2026-06-01T23:30:00Z"),
+    }, r);
     expect(result.ok).toBe(true);
     expect(result.airDate).toBe("2026-06-02");
+  });
+
+  it("routes --repo to the package's owning channel checkout (e.g. WW2)", () => {
+    const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "pub-gates-ch-"));
+    try {
+      const ww2 = path.join(tmp, "ww2");
+      const pkg = path.join(ww2, "02_Video-Projects", "001_Mulberry", "11_Upload-Package");
+      fs.mkdirSync(path.join(ww2, "studio"), { recursive: true });
+      fs.mkdirSync(pkg, { recursive: true });
+      fs.writeFileSync(path.join(ww2, "studio", "channel.json"), JSON.stringify({ slug: "ww2" }));
+      expect(resolveChannelRepo(pkg, "/repo")).toBe(ww2);
+      const r = runner(0, "PASS");
+      runPublishingGates({ videoPath: "/cut.mp4", repoRoot: "/repo", format: "longform", packageDir: pkg }, r);
+      const args = r.calls[0];
+      expect(args[args.indexOf("--repo") + 1]).toBe(ww2);
+      expect(args[args.indexOf("--package-dir") + 1]).toBe(pkg);
+    } finally {
+      fs.rmSync(tmp, { recursive: true, force: true });
+    }
   });
 });

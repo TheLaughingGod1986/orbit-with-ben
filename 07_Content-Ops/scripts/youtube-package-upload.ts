@@ -82,10 +82,11 @@ async function main() {
   // The channel's own check before anything is sent (Orbit: refuses a second upload of the same film).
   const identity = await channel.beforeUpload({ resolved, flag, repoRoot: REPO_ROOT });
 
-  // All current blocking gates run for both formats, including dry runs.
+  // All current blocking gates run for both formats on every registered channel, including dry runs.
   const gate = runPublishingGates({
     videoPath: resolved.videoPath, repoRoot: REPO_ROOT, format: resolved.format,
     scheduledAt: resolved.scheduledAt, lengthTest: resolved.lengthTest,
+    packageDir: resolved.packageDir,
   });
   console.log(gate.output);
   if (!gate.ok) {

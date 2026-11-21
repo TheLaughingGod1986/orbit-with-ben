@@ -411,7 +411,8 @@ def plan_actions(videos: list[dict], alljobs: list[dict], *, now: dt.datetime | 
             when = f", {slot}" if slot else ""
             title = f"Upload {channel} {num} {vtype} {ver} ({title_bit}) Private{when}".strip()
             body = ("Upload to YouTube Studio as Private and set publishAt in the locked cadence. "
-                    "Use youtube:package on the Mini. Do not swap a file onto an existing id. "
+                    "Use youtube:package on the Mini (runs publishing_gates.py including music_gate and all channel blocking gates; a FAIL stops upload unless a recorded Chief waiver applies). "
+                    "Do not swap a file onto an existing id. "
                     f"Do not reuse {' or '.join(sorted(BANNED_REUSE_IDS))} as destinations. "
                     "Listing package is complete (title, thumbnail, description, tags).")
             kind = "studio"

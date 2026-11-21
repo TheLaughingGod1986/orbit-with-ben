@@ -25,31 +25,93 @@ LIB_JSON = HERE.parents[0] / "audits" / "shorts_open_library" / "library.json"
 LONDON = ZoneInfo("Europe/London")
 CACHE = Path("~/_desk/cache/gate-media").expanduser()
 NAS = "/Volumes/"
+GONE_KEYS = ("retired", "supersededBy", "replacedBy", "unscheduledAt")
 
 
 def london_date(iso: str) -> str:
     return datetime.fromisoformat(iso.replace("Z", "+00:00")).astimezone(LONDON).date().isoformat()
 
 
+def merge_uploads(*paths: Path) -> dict:
+    """Merge one or more UPLOADS.json files (later files fill missing ids/fields)."""
+    merged: dict[str, dict] = {}
+    for p in paths:
+        if not p or not p.is_file():
+            continue
+        try:
+            vids = json.loads(p.read_text()).get("videos") or {}
+        except (OSError, ValueError):
+            continue
+        for vid, entry in vids.items():
+            if not isinstance(entry, dict):
+                continue
+            cur = dict(merged.get(vid) or {})
+            for k, v in entry.items():
+                if v not in (None, "") or k not in cur:
+                    cur[k] = v
+            merged[vid] = cur
+    return {"videos": merged}
+
+
 def upcoming(snapshot: dict, uploads: dict, now: datetime, days: int) -> list[dict]:
-    """Scheduled videos airing within `days`, soonest first. publishAt comes from the snapshot, else UPLOADS.json."""
+    """Scheduled Shorts and longs airing within `days`, soonest first.
+
+    publishAt comes from the snapshot, else UPLOADS.json. Also picks up newly scheduled
+    entries in UPLOADS.json not yet in the snapshot (unless retired/superseded/unscheduled
+    or already public in the snapshot).
+    """
     reg = uploads.get("videos", {})
-    out = []
+    seen_ids: set[str] = set()
+    public_ids: set[str] = set()
+    out: list[dict] = []
     for v in snapshot.get("videos", []):
+        vid = v.get("id")
+        if not vid:
+            continue
+        seen_ids.add(vid)
+        if v.get("privacy") == "public":
+            public_ids.add(vid)
+            continue
         if v.get("privacy") != "private":
             continue
-        entry = reg.get(v["id"], {})
-        if entry.get("retired"):
+        entry = reg.get(vid, {})
+        if any(entry.get(k) for k in GONE_KEYS):
             continue
         at = v.get("publishAt") or entry.get("publishAt")
         if not at:
             continue
         when = datetime.fromisoformat(at.replace("Z", "+00:00"))
         if now <= when <= now + timedelta(days=days):
-            out.append({"id": v["id"], "title": v.get("title", ""), "publishAt": at, "air": london_date(at), "file": entry.get("file"),
-                        "length_test": bool(entry.get("lengthTest")), "format": v.get("format", "long"),
-                        "known_no_file": entry.get("knownNoFile") or ""})
-    return sorted(out, key=lambda r: r["publishAt"])
+            fmt = v.get("format") or entry.get("kind") or "long"
+            out.append({
+                "id": vid, "title": v.get("title") or entry.get("title") or "",
+                "publishAt": at, "air": london_date(at), "file": entry.get("file"),
+                "length_test": bool(entry.get("lengthTest")),
+                "format": "short" if fmt == "short" else "long",
+                "known_no_file": entry.get("knownNoFile") or "",
+            })
+    for vid, entry in reg.items():
+        if vid in seen_ids or vid in public_ids or not isinstance(entry, dict):
+            continue
+        if any(entry.get(k) for k in GONE_KEYS):
+            continue
+        at = entry.get("publishAt")
+        if not at:
+            continue
+        try:
+            when = datetime.fromisoformat(str(at).replace("Z", "+00:00"))
+        except ValueError:
+            continue
+        if now <= when <= now + timedelta(days=days):
+            fmt = entry.get("kind") or "long"
+            out.append({
+                "id": vid, "title": entry.get("title") or "",
+                "publishAt": str(at), "air": london_date(str(at)), "file": entry.get("file"),
+                "length_test": bool(entry.get("lengthTest")),
+                "format": "short" if fmt == "short" else "long",
+                "known_no_file": entry.get("knownNoFile") or "",
+            })
+    return sorted(out, key=lambda r: (r["publishAt"], r["id"]))
 
 
 def in_library(vid: str) -> bool:
@@ -93,6 +155,22 @@ def readable(p: Path) -> bool:
         return True
     except OSError:
         return False
+
+
+def nas_blocked(p: Path) -> bool:
+    """True only when macOS privacy denies reading a NAS path (EPERM/EACCES), not when the file is absent."""
+    if not str(p).startswith(NAS):
+        return False
+    try:
+        with open(p, "rb") as fh:
+            fh.read(1)
+        return False
+    except FileNotFoundError:
+        return False
+    except PermissionError:
+        return True
+    except OSError:
+        return p.exists()
 
 
 def export_path(media_root: Path, rel: str | None) -> Path | None:
@@ -141,7 +219,7 @@ def sha256(p: Path) -> str:
 
 
 def stage_one(vid: str, export: Path, cache: Path) -> str:
-    """Copy a Short's NAS files into cache/<vid>/ and write stage.json. Returns a one-line result."""
+    """Copy a video's NAS files into cache/<vid>/ and write stage.json. Returns a one-line result."""
     meta_p = sidecar(export)
     meta = json.loads(meta_p.read_text()) if meta_p else {}
     refs = sorted({r for r in nas_refs(meta) if Path(r).is_file()})
@@ -194,19 +272,24 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--snapshot", type=Path, required=True)
     ap.add_argument("--uploads", type=Path, required=True)
+    ap.add_argument("--extra-uploads", type=Path, action="append", default=[],
+                    help="additional UPLOADS.json registers to merge (e.g. studio social/<channel>/UPLOADS.json)")
     ap.add_argument("--media-root", type=Path, required=True, help="checkout that holds the export files (media is not in git)")
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--days", type=int, default=14)
     ap.add_argument("--add", action="store_true", help="register Shorts missing from the open-gate library as scheduled")
     ap.add_argument("--cache", type=Path, default=CACHE, help="local copies of NAS files (default ~/_desk/cache/gate-media)")
-    ap.add_argument("--stage", action="store_true", help="copy upcoming Shorts' NAS files into --cache, then exit (run from an agent session)")
+    ap.add_argument("--stage", action="store_true", help="copy upcoming videos' NAS files into --cache, then exit (run from an agent session)")
     a = ap.parse_args(argv)
 
-    sys.path.insert(0, str(HERE.parents[2] / "scripts"))
+    scripts_dir = str(HERE.parents[2] / "scripts")
+    if scripts_dir not in sys.path:
+        sys.path.insert(0, scripts_dir)
     from publishing_gates import evaluate
+
     findings = []
     now = datetime.now(timezone.utc)
-    uploads = json.loads(a.uploads.read_text())
+    uploads = merge_uploads(a.uploads, *a.extra_uploads)
     rows = upcoming(json.loads(a.snapshot.read_text()), uploads, now, a.days)
     if a.stage:
         for r in rows:
@@ -225,21 +308,21 @@ def main(argv: list[str] | None = None) -> int:
     if not rows:
         lines += ["No scheduled Shorts or longs in the window.", ""]
     else:
-        lines += ["| Airs (London) | Video | In Shorts library | Gate |", "|---|---|---|---|"]
+        lines += ["| Airs (London) | Format | Video | In Shorts library | Gate |", "|---|---|---|---|---|"]
         details = []
         missing = [t for t in ("ffprobe", "ffmpeg") if not shutil.which(t)]
-        if missing:   # a tool problem on this machine, not a fault in any Short: say so instead of FAIL (8 Oct 2026)
-            details.append(f"### Not checked: {', '.join(missing)} not on PATH\n\nFix the job's PATH and re-run; no Short was judged.\n")
+        if missing:   # a tool problem on this machine, not a fault in any video: say so instead of FAIL (8 Oct 2026)
+            details.append(f"### Not checked: {', '.join(missing)} not on PATH\n\nFix the job's PATH and re-run; no video was judged.\n")
         for r in rows:
             f = export_path(a.media_root, r["file"])
-            lib = in_library(r["id"])
+            lib = in_library(r["id"]) if r["format"] == "short" else True
             want = uploads.get("videos", {}).get(r["id"], {}).get("sha256")
             hit = staged(r["id"], f, a.cache, want) if f else None
             if hit:
                 f = hit[0]
             blocked = []
             if f and not hit:
-                if str(f).startswith(NAS) and not readable(f):
+                if nas_blocked(f):
                     blocked = [str(f)]
                 elif readable(f):
                     m = sidecar(f)
@@ -247,17 +330,22 @@ def main(argv: list[str] | None = None) -> int:
                         refs = nas_refs(json.loads(m.read_text())) if m else []
                     except ValueError:
                         refs = []
-                    blocked = [x for x in refs if Path(x).is_file() and not readable(Path(x))]
+                    blocked = [x for x in refs if nas_blocked(Path(x))]
+            needs_watch = False
+            failed_gates: list[str] = []
+            waived_flag = False
+            fingerprint = ""
             if blocked:
                 verdict = "NOT CHECKED"
                 details.append(f"### {r['id']}: NOT CHECKED (NAS not readable from this job)\n\nmacOS privacy blocks this job from: `{blocked[0]}`"
                                f"{' and ' + str(len(blocked) - 1) + ' more' if len(blocked) > 1 else ''}. From an agent session run "
-                               "`gate_upcoming.py --stage` (same arguments), then re-run. No Short was judged.\n")
+                               "`gate_upcoming.py --stage` (same arguments), then re-run. No video was judged.\n")
             elif r["file"] and not f.exists() and r.get("known_no_file"):
                 verdict = "KNOWN"
                 details.append(f"### {r['id']}: KNOWN, no local export\n\nExport not found: `{r['file']}`. Already ruled on: {r['known_no_file']}\n")
             elif not f or not f.exists():
                 verdict = "NO FILE" if r["file"] else "NOT REGISTERED"
+                failed_gates = ["inputs"]
                 details.append(f"### {r['id']}: {verdict}\n\n{'Export not found: `' + r['file'] + '`' if r['file'] else 'Not in social/UPLOADS.json, so its export file is unknown.'}\n")
             elif missing:
                 verdict = "NOT CHECKED"
@@ -268,21 +356,44 @@ def main(argv: list[str] | None = None) -> int:
                     lib = code == 0 and in_library(r["id"])
                     if code:
                         details.append(f"### {r['id']}: library add failed\n\n```\n{out[-1500:]}\n```\n")
-                result = evaluate(f, a.media_root, r["format"], r["air"], video_id=r["id"],
-                                  length_test=r.get("length_test", False),
-                                  meta_path=hit[1] if hit else None, short_run=run)
-                verdict = "PASS" if result["ok"] else "**FAIL**"
-                output = "\n".join(f"{c['gate']}: {c['output']}" for c in result['checks'])
+                result = evaluate(
+                    f, a.media_root, r["format"], r["air"],
+                    video_id=r["id"], length_test=r.get("length_test", False),
+                    meta_path=hit[1] if hit else None,
+                    expected_sha256=want,
+                    shorts_gate_script=GATE,
+                    short_run=run,
+                )
+                waived_flag = bool(result.get("waived"))
+                needs_watch = bool(result.get("needs_watch"))
+                failed_gates = list(result.get("failed_gates") or [])
+                fingerprint = str(result.get("gates_fingerprint") or "")
+                verdict = ("PASS (waived)" if waived_flag else "PASS") if result["ok"] else "**FAIL**"
+                output = "\n".join(f"{c['gate']}: {c['output']}" for c in result["checks"])
                 details.append(f"### {r['id']}: {verdict}\n\n```\n{output}\n```\n")
-            findings.append(dict(id=r['id'], publishAt=r['publishAt'], ok=verdict == 'PASS',
-                                 output=details[-1] if verdict != 'PASS' and details else verdict))
-            lines.append(f"| {r['air']} {london_time(r['publishAt'])} | [{r['title']}](https://youtu.be/{r['id']}) `{r['id']}` | {'yes' if lib else '**no**'} | {verdict} |")
+            ok = verdict in ("PASS", "PASS (waived)", "KNOWN")
+            findings.append({
+                "id": r["id"],
+                "title": r["title"],
+                "format": r["format"],
+                "publishAt": r["publishAt"],
+                "air": r["air"],
+                "ok": ok,
+                "verdict": verdict,
+                "waived": waived_flag,
+                "needs_watch": needs_watch,
+                "failed_gates": failed_gates,
+                "gates_fingerprint": fingerprint,
+                "output": details[-1] if not ok and details else verdict,
+            })
+            lib_cell = ("yes" if lib else "**no**") if r["format"] == "short" else "—"
+            lines.append(f"| {r['air']} {london_time(r['publishAt'])} | {r['format']} | [{r['title']}](https://youtu.be/{r['id']}) `{r['id']}` | {lib_cell} | {verdict} |")
         lines.append("")
         if details:
             lines += ["## Details", ""] + details
     a.out.parent.mkdir(parents=True, exist_ok=True)
     a.out.write_text("\n".join(lines) + "\n")
-    a.out.with_suffix(".json").write_text(json.dumps(findings, indent=2))
+    a.out.with_suffix(".json").write_text(json.dumps(findings, indent=2) + "\n")
     print(f"gate_upcoming: {len(rows)} scheduled video(s) checked -> {a.out}")
     return 0
 
