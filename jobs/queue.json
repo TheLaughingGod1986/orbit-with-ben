@@ -293489,10 +293489,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-21T02:13Z",
+      "eta": "2026-11-21T04:13Z",
       "created_by": "claude",
       "created_at": "2026-11-21T01:54Z",
       "result": "",
@@ -293501,13 +293501,26 @@
           "at": "2026-11-21T01:54Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-21T02:13Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Build comment fetch/triage/reply tool per registered channel, rules and limits, board card, 2-hourly backlog run; 5 sample replies per channel for Ben's one check",
       "due": "2026-11-24T18:00:00Z",
       "kind": "assembly",
       "plain": "An agent reads new comments on every channel and replies in the channel's own voice, after Ben checks a few samples once",
-      "urgent": 5
+      "urgent": 5,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T02:13Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
