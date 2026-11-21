@@ -295671,9 +295671,14 @@
           "at": "2026-11-21T13:08Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T13:08Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J3290; starting verification for J2529 (HOS 013)."
         }
       ],
-      "remaining_action": "Verify readiness: Complete continuous 24-fps moving-video playback review of HOS 013 pass-1 rows 56-62 and 64-66 via J3178 and record elected-Chief KEEP/RETAKE marks before closing",
+      "remaining_action": "Inspect J2529, J3178, desk/PR history, NAS hashes, and test capabilities",
       "kind": "review",
       "recheck_of": "J2529",
       "mini_only": true,
@@ -295692,12 +295697,14 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-21T13:08Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3290; starting verification for J2529 (HOS 013)."
+      },
+      "taskKeys": [
+        "HOS:013"
+      ]
     }
   ],
   "focus": [
