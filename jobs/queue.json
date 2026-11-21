@@ -188980,13 +188980,13 @@
       "stage": "edit",
       "after": "J0862",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-07T18:27Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-05T01:11Z",
-      "result": "Waiting for: HOS 009 revised music chain (J2805-J2808) and J2035 long assembly before Shorts A/B assembly.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-05T01:11Z",
@@ -189287,30 +189287,19 @@
           "at": "2026-11-21T12:01Z",
           "by": "relay",
           "what": "condition verification queued: J3287"
+        },
+        {
+          "at": "2026-11-21T16:35Z",
+          "by": "gemini",
+          "what": "reopened: Acting Chief (gemini) accepted J3287 CONDITION MET verification (OWB PR #1106 merged, jobs/reviews/J3287/REVIEW.md) after independent re-verification: J3241 formally accepted GBP0 score hos_009_score_v04_synth.wav (151ba46a..., Mini==NAS; HOS PR #698/#700/#701/#702 merged); J2035 v01 (802b5c7e, untouched) & J3261 v02 (9d8731cb, PR #710 merged) long assemblies done with picture_qa/polish_gate/music_gate/sfx_level PASS; J0862/J2281 4/4 Shorts VO Mini/NAS parity verified; J2034 done with Short A S03 07_ball_to_moon_t1.mp4 (fba484bb...) & 18/18 rows intact; 0 duplicates in 2026-11-20 HOS snapshot; ACTIVATION_AUTHORIZED=False, ElevenLabs ledger untouched since 2026-11-17T16:19Z, GBP0. Reopened for GBP0 Shorts A/B assembly (VO-locked grandfather clause under 19 Nov rules; full-bleed 9:16 required; refresh NAS SHORTS_SCRIPTS_v02.md from git; no upload/schedule/Buffer; ben_ok stays todo)."
         }
       ],
       "remaining_action": "Wait for J3241 Chief score disposition on v04_synth and completed J2035 long assembly before Shorts A/B assembly",
       "due": "2026-11-22T18:00:00Z",
       "kind": "assembly",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-07T19:14Z",
-        "by": "gemini",
-        "note": "Step 4/4 complete: GBP0 SHA-256 inventory, SHORTS_PICTURE_PLAN_v03.json, and READINESS_REPORT.md committed on HOS PR #45"
-      },
       "taskKeys": [
         "HOS:009"
-      ],
-      "hold": {
-        "type": "input",
-        "condition": "J3230 Acting Chief ruling (2026-11-20T16:34Z, jobs/reviews/J3230/REVIEW.md @ bd5a98a425): condition NOT MET. v03_synth refused (J3236/PR #699); final bounded GBP0 v04_synth built (J3239/PR #700) and ear-reviewed 7/7 PASS (J3240/PR #701), but Chief final score disposition J3241 is still open and PR #700/#701 remain unmerged (no compliant score accepted). ACTIVATION_AUTHORIZED=False, ElevenLabs ledger untouched, J3043/J3045 closed unused (J3047), v01/v02/v03_synth rejected, and J2035 long assembly still blocked. Require J3241 formal score acceptance, completed J2035 long assembly with all required gates, and preserved Shorts locked inputs before release.",
-        "check_at": "2026-11-21T13:01:20+00:00",
-        "last_recheck": "J3230",
-        "checked_at": "2026-11-20T16:34:45+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3287"
-      }
+      ]
     },
     {
       "id": "J2172",
