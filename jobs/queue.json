@@ -294468,13 +294468,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-21T10:06Z",
-      "eta": "2026-11-21T12:06Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-21T08:31Z",
-      "result": "",
+      "result": "Acting-Chief ruling (jobs/reviews/J3277/REVIEW.md, commits 0a70ba2bce/ea7e46e6f9): accepted worker verification; J3178 condition UNMET. Freshly verified agy 1.5.14 read_file on NAS row 58 still returns 8 discrete 1-fps static JPEGs (00:00..00:07), not continuous 24-fps playback (audio_input demonstrated on pickup WAV); 11/11 Batch 12-14 NAS SHA-256 hashes match receipts; REVIEW_STATE.json unchanged (48 KEEP / 8 RETAKE / 10 unset); no new 013 marks on HOS #180/#694, OWB #954, or PRs. Recorded typed capability hold on J3178 (--type capability --requires moving_video_input --recheck J3277 --check-at 2026-11-21T16:05:00Z). GBP 0 / 0 credits spent; no playback PASS, no minting, no assembly; nothing for Ben.",
       "history": [
         {
           "at": "2026-11-21T08:31Z",
@@ -294530,6 +294530,11 @@
           "at": "2026-11-21T10:06Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T10:06Z",
+          "by": "gemini",
+          "what": "done: Acting-Chief ruling (jobs/reviews/J3277/REVIEW.md, commits 0a70ba2bce/ea7e46e6f9): accepted worker verification; J3178 condition UNMET. Freshly verified agy 1.5.14 read_file on NAS row 58 still returns 8 discrete 1-fps static JPEGs (00:00..00:07), not continuous 24-fps playback (audio_input demonstrated on pickup WAV); 11/11 Batch 12-14 NAS SHA-256 hashes match receipts; REVIEW_STATE.json unchanged (48 KEEP / 8 RETAKE / 10 unset); no new 013 marks on HOS #180/#694, OWB #954, or PRs. Recorded typed capability hold on J3178 (--type capability --requires moving_video_input --recheck J3277 --check-at 2026-11-21T16:05:00Z). GBP 0 / 0 credits spent; no playback PASS, no minting, no assembly; nothing for Ben."
         }
       ],
       "remaining_action": "Elected Chief (Grok Bot) to record --recheck J3277 typed capability hold on J3178 (next check 2026-11-21T14:30:00Z) and close J3277",
@@ -294558,7 +294563,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "ea7e46e6f9"
     },
     {
       "id": "J3278",
