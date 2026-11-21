@@ -294276,7 +294276,7 @@
       "title": "OWB 024 muon Short v06: upload and schedule after Ben's UAT watch approval",
       "needs": "mini",
       "repo": "owb",
-      "body": "Held on Ben's UAT watch approval of `fri06_muons_ground_v06.mp4` (`awaits_ben` on this job; UAT watch file `OWB UAT/J3176_muons_v06/fri06_muons_ground_v06.mp4`, exact copy of NAS `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/10_Shorts/fri06_muons_ground/06_Final-Exports/fri06_muons_ground_v06.mp4`, sha256 `5c85e4430ccd035adb35532291cf5626a5b1d6a8684d8acda213b24c4c378eee`).\n\nPR #1049 is merged and Acting Chief (`gemini`) passed direct perceptual audio+video QA and all 5 tool gates (`music_gate` PASS max sim 0.099 vs 31 beds, `gate_shorts_open` PASS, `sfx_kit level` PASS, `picture_qa` PASS, `polish_gate` PASS; video bit-for-bit identical to `v05`, locked Ben VO verbatim unchanged). Evidence: `jobs/reviews/J3176/CHIEF_RULING.md`.\n\n**Do NOT start until Ben approves `v06` on the board (`awaits_ben` cleared with `--ok`).**\n\nOnce Ben approves `v06`:\n0. Verify `fri06_muons_ground_v06.mp4` sha256 equals `5c85e4430ccd035adb35532291cf5626a5b1d6a8684d8acda213b24c4c378eee` (exact file Ben watched) and run `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <file> --air-date <chosen air date> --id fri06_muons_ground_v06` without `--report-only` (must PASS).\n1. Confirm `gc1hWQQJOq4` (`v05`) and `rvug71d7Dqk` (`v04`) are both Private and unscheduled (if `gc1hWQQJOq4` still has a `publishAt`, clear it only after step 2 reads back cleanly, or confirm containment job already cleared it). Copy metadata from `gc1hWQQJOq4` (title `\"Muons Shouldn't Reach the Ground. They Do.\"`, description, tags, cover `fri06_muons_ground_v05_cover.jpg`, language `en-GB`, `en-GB` captions, Related video `rVqgtkBV3jc`).\n2. **Slot selection (never two Orbit Shorts on the same day):**\n   - If uploaded and scheduled before **Sat 21 Nov 2026 11:20Z**, schedule Private for **Sat 21 Nov 2026 11:30:00Z**.\n   - Otherwise, schedule Private at **11:30 London** on the **next free Orbit Short slot** (check `UPLOADS.json` and YouTube Studio live schedule first; never collide with an existing Short on the same day).\n3. Upload `fri06_muons_ground_v06.mp4` as a **NEW Private video** (never Replace/swap file on `gc1hWQQJOq4`), set cover, `en-GB` language/captions, and Studio Related video `rVqgtkBV3jc`. Leave `gc1hWQQJOq4` and `rvug71d7Dqk` Private and unscheduled (never delete).\n4. Verify with `verify-swap.ts` / API read-back, update `00_Brand/Channel-Setup/social/UPLOADS.json` (`supersedes: \"gc1hWQQJOq4\"`, `v06` sha256), `library.json`, and run Buffer mirror (`buffer-mirror.ts check`) for the new go-public time, plus `gate_upcoming.py --stage` if media is on NAS.\n5. Post the read-back (new video id, `publishAt`, cover/Related/captions status, Buffer post IDs) on the studio thread.\n\nGuards: Never Public outside `publishAt`, never delete, never swap file in place, never two Shorts on one day, £0 spend.\n",
+      "body": "Held on Ben's UAT watch approval of `fri06_muons_ground_v06.mp4` (`awaits_ben` on this job; UAT watch file `OWB UAT/J3176_muons_v06/fri06_muons_ground_v06.mp4`, exact copy of NAS `/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/10_Shorts/fri06_muons_ground/06_Final-Exports/fri06_muons_ground_v06.mp4`, sha256 `5c85e4430ccd035adb35532291cf5626a5b1d6a8684d8acda213b24c4c378eee`).\n\nPR #1049 is merged and Acting Chief (`gemini`) passed direct perceptual audio+video QA and all 5 tool gates (`music_gate` PASS max sim 0.099 vs 31 beds, `gate_shorts_open` PASS, `sfx_kit level` PASS, `picture_qa` PASS, `polish_gate` PASS; video bit-for-bit identical to `v05`, locked Ben VO verbatim unchanged). Evidence: `jobs/reviews/J3176/CHIEF_RULING.md`.\n\n**Do NOT start until Ben approves `v06` on the board (`awaits_ben` cleared with `--ok`).**\n\nOnce Ben approves `v06`:\n0. Verify `fri06_muons_ground_v06.mp4` sha256 equals `5c85e4430ccd035adb35532291cf5626a5b1d6a8684d8acda213b24c4c378eee` (exact file Ben watched) and run `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <file> --air-date <chosen air date> --id fri06_muons_ground_v06` without `--report-only` (must PASS).\n1. Confirm `gc1hWQQJOq4` (`v05`) and `rvug71d7Dqk` (`v04`) are both Private and unscheduled (if `gc1hWQQJOq4` still has a `publishAt`, clear it only after step 2 reads back cleanly, or confirm containment job already cleared it). Copy metadata from `gc1hWQQJOq4` (title `\"Muons Shouldn't Reach the Ground. They Do.\"`, description, tags, cover `fri06_muons_ground_v05_cover.jpg`, language `en-GB`, `en-GB` captions, Related video `rVqgtkBV3jc`).\n2. **Slot selection (never two Orbit Shorts on the same day):**\n   - If uploaded and scheduled before **Sat 21 Nov 2026 11:20Z**, schedule Private for **Sat 21 Nov 2026 11:30:00Z**.\n   - Otherwise, schedule Private at **11:30 London** on the **next free Orbit Short slot** (check `UPLOADS.json` and YouTube Studio live schedule first; never collide with an existing Short on the same day).\n3. Upload `fri06_muons_ground_v06.mp4` as a **NEW Private video** (never Replace/swap file on `gc1hWQQJOq4`), set cover, `en-GB` language/captions, and Studio Related video `rVqgtkBV3jc`. Leave `gc1hWQQJOq4` and `rvug71d7Dqk` Private and unscheduled (never delete).\n4. Verify with `verify-swap.ts` / API read-back, update `00_Brand/Channel-Setup/social/UPLOADS.json` (`supersedes: \"gc1hWQQJOq4\"`, `v06` sha256), `library.json`, and run Buffer mirror (`buffer-mirror.ts check`) for the new go-public time, plus `gate_upcoming.py --stage` if media is on NAS.\n5. Post the read-back (new video id, `publishAt`, cover/Related/captions status, Buffer post IDs) on the studio thread.\n\nGuards: Never Public outside `publishAt`, never delete, never swap file in place, never two Shorts on one day, £0 spend.\n\n\n**Ben OK'd Muons v06 on the board at 21 Nov 09:53Z (tick OWB-J3274).** The 11:30 slot today has passed: upload as a NEW Private video into the next free Orbit Short slot (check the schedule so no two Shorts share a slot and none breaks the Mon/Wed/Fri/Sat 11:30 pattern), copy title, description, tags, cover and Related from the v05 listing, en-GB, captions en-GB. Run the Shorts opening gate without `--report-only` first. Read back privacy and publish time, record it in UPLOADS.json, post the read-back on the thread. v05 (`gc1hWQQJOq4`) stays Private and unscheduled. Never Public, never delete, £0.\n",
       "ref": "",
       "film": "024",
       "stage": "upload",
@@ -294299,6 +294299,16 @@
           "at": "2026-11-21T04:45Z",
           "by": "gemini",
           "what": "waits on Ben: Watch the Muons Short v06 (same full-screen picture and Ben narration as v05, with a new £0 own-synthesis minimalist clock-pulse music bed replacing the bed that collided with Moon Leaving). Approve to upload and schedule for Saturday 21 November 11:30 London (or next free Orbit Short slot if approved after 11:15). (by 2026-11-21 10:45 London)"
+        },
+        {
+          "at": "2026-11-21T12:52Z",
+          "by": "claude",
+          "what": "no longer waits on Ben: OK'd, delivered by J3274"
+        },
+        {
+          "at": "2026-11-21T12:52Z",
+          "by": "claude",
+          "what": "approved by Ben: Watch the Muons Short v06 (same full-screen picture and Ben narration as v05, with a new £0 own-synthesis minimalist clock-pulse music bed replacing the bed that collided with Moon Leaving). Approve to upload and schedule for Saturday 21 November 11:30 London (or next free Orbit Short slot if approved after 11:15). v06"
         }
       ],
       "remaining_action": "Wait for Ben's UAT approval of v06 on the board, then upload as a new Private Short and schedule for Sat 21 Nov 11:30Z or next free slot",
@@ -294306,7 +294316,19 @@
       "kind": "studio",
       "plain": "Watch the muon Short with its new music bed, then publish once approved",
       "mini_only": true,
-      "awaits_ben": {
+      "approved_from": {
+        "what": "Watch the Muons Short v06 (same full-screen picture and Ben narration as v05, with a new £0 own-synthesis minimalist clock-pulse music bed replacing the bed that collided with Moon Leaving). Approve to upload and schedule for Saturday 21 November 11:30 London (or next free Orbit Short slot if approved after 11:15).",
+        "file": "OWB UAT/J3176_muons_v06/fri06_muons_ground_v06.mp4",
+        "version": "v06",
+        "airs": "2026-11-21T11:30Z",
+        "title": "Muons Shouldn't Reach the Ground. They Do.",
+        "number": "024",
+        "type": "short",
+        "channel": "OWB",
+        "job": "J3274",
+        "okAt": "2026-11-21T09:53Z"
+      },
+      "awaits_was": {
         "what": "Watch the Muons Short v06 (same full-screen picture and Ben narration as v05, with a new £0 own-synthesis minimalist clock-pulse music bed replacing the bed that collided with Moon Leaving). Approve to upload and schedule for Saturday 21 November 11:30 London (or next free Orbit Short slot if approved after 11:15).",
         "file": "OWB UAT/J3176_muons_v06/fri06_muons_ground_v06.mp4",
         "version": "v06",
