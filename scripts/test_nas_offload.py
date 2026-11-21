@@ -8,6 +8,7 @@ import datetime
 import fcntl
 import os
 import pathlib
+import subprocess
 import sys
 import tempfile
 import time
@@ -276,6 +277,113 @@ class Offload(unittest.TestCase):
         keep = no.scheduled_short_keep_paths()
         for rel in no.SCHEDULED_SHORT_KEEP_PATHS:
             self.assertIn(rel, keep)
+
+
+class FinishedWorktrees(unittest.TestCase):
+    """The SSD sweep (Ben, 16 Nov 2026): a finished worktree is removed with git, anything else stays."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        t = pathlib.Path(self.tmp.name).resolve()
+        self.scratch, self.origin, self.main = t / "scratch", t / "origin.git", t / "main"
+        self.scratch.mkdir()
+        self.git(t, "init", "-q", "--bare", str(self.origin))
+        self.git(t, "init", "-q", "-b", "main", str(self.main))
+        (self.main / ".gitignore").write_text("renders/\n__pycache__/\n")
+        (self.main / "a.txt").write_text("a")
+        self.git(self.main, "add", "-A")
+        self.git(self.main, "commit", "-q", "-m", "one")
+        self.git(self.main, "remote", "add", "origin", str(self.origin))
+        self.git(self.main, "push", "-q", "-u", "origin", "main")
+
+    def tearDown(self):
+        self.tmp.cleanup()
+
+    def git(self, where, *args):
+        env = dict(os.environ, GIT_AUTHOR_NAME="t", GIT_AUTHOR_EMAIL="t@example.com", GIT_COMMITTER_NAME="t",
+                   GIT_COMMITTER_EMAIL="t@example.com")
+        subprocess.run(["git", "-C", str(where), *args], check=True, capture_output=True, env=env)
+
+    def worktree(self, name, age_h=72):
+        w = self.scratch / name
+        self.git(self.main, "worktree", "add", "-q", "--detach", str(w), "origin/main")
+        self.age(w, age_h)
+        return w
+
+    def age(self, w, age_h):
+        t = time.time() - age_h * 3600
+        for p in [w] + no.tree_files(w):
+            os.utime(p, (t, t))
+
+    def sweep(self, apply=True, min_age_h=48):
+        return no.drop_finished_worktrees(self.scratch, min_age_h, time.time(), apply)
+
+    def test_a_clean_pushed_old_worktree_is_removed(self):
+        w = self.worktree("J1-wt")
+        (w / "__pycache__").mkdir()
+        (w / "__pycache__" / "x.pyc").write_bytes(b"x")  # a tool cache does not hold it back
+        self.age(w, 72)
+        out = self.sweep()
+        self.assertEqual([r["path"] for r in out["removed"]], [str(w)])
+        self.assertFalse(w.exists())
+
+    def test_a_dry_run_removes_nothing(self):
+        w = self.worktree("J1-wt")
+        out = self.sweep(apply=False)
+        self.assertEqual(len(out["would"]), 1)
+        self.assertTrue(w.exists())
+
+    def test_a_recent_worktree_stays(self):
+        w = self.worktree("J2-wt", age_h=1)
+        self.assertEqual(self.sweep()["removed"], [])
+        self.assertTrue(w.exists())
+
+    def test_uncommitted_work_stays(self):
+        w = self.worktree("J3-wt")
+        (w / "new.txt").write_text("unsaved")
+        self.age(w, 72)
+        out = self.sweep()
+        self.assertEqual((out["removed"], out["kept"]), ([], 1))
+        self.assertTrue((w / "new.txt").exists())
+
+    def test_an_ignored_render_stays(self):
+        w = self.worktree("J4-wt")
+        (w / "renders").mkdir()
+        (w / "renders" / "cut.mp4").write_bytes(b"video")
+        self.age(w, 72)
+        out = self.sweep()
+        self.assertEqual((out["removed"], out["kept"]), ([], 1))
+        self.assertTrue((w / "renders" / "cut.mp4").exists())
+
+    def test_an_unpushed_commit_stays(self):
+        w = self.worktree("J5-wt")
+        (w / "b.txt").write_text("b")
+        self.git(w, "add", "-A")
+        self.git(w, "commit", "-q", "-m", "local only")
+        self.age(w, 72)
+        out = self.sweep()
+        self.assertEqual((out["removed"], out["kept"]), ([], 1))
+        self.assertTrue(w.exists())
+
+    def test_a_plain_folder_and_a_full_clone_are_not_touched(self):
+        make(self.scratch / "frames", {"f.png": 10}, age_h=72)
+        clone = self.scratch / "clone"
+        self.git(self.scratch, "clone", "-q", str(self.origin), str(clone))
+        self.age(clone, 72)
+        out = self.sweep()
+        self.assertEqual((out["removed"], out["kept"]), ([], 0))
+        self.assertTrue((self.scratch / "frames" / "f.png").exists() and clone.exists())
+
+    def test_offload_removes_worktrees_first_and_skips_the_nas_once_there_is_room(self):
+        w = self.worktree("J6-wt")
+        nas = pathlib.Path(self.tmp.name) / "nas"
+        free = iter([5 * 1024, 200 * 1024])  # under target, then over it once the worktree has gone
+        rep = no.offload(True, target_gb=100, root=self.scratch, nas=nas, check_mount=False, free=lambda: next(free),
+                         min_age_h=48, lock=pathlib.Path(self.tmp.name) / "l", stage=None, worktrees=True)
+        self.assertEqual(len(rep["worktrees"]["removed"]), 1)
+        self.assertFalse(w.exists())
+        self.assertFalse(nas.exists())  # the NAS was never touched
+        self.assertIn("Removed 1 finished worktree(s)", no.summary(rep))
 
 
 class RegistersOfUploads(unittest.TestCase):

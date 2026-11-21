@@ -1080,6 +1080,59 @@ class Relay(unittest.TestCase):
         self.assertIn("moved 1 scratch folder(s)", self.posts.read_text())
         self.assertEqual(json.loads((cr.STATE / "chief" / "offload.json").read_text())["moved"], 1)
 
+    def test_a_full_ssd_is_swept_when_the_internal_disk_is_fine(self):
+        """Ben, 16 Nov 2026: scratch moved to the SSD on 9 Nov and nothing cleared it (140 GiB in a week)."""
+        import json
+        import time
+        (cr.STUDIO / "scripts").mkdir(parents=True, exist_ok=True)
+        calls = self.tmp / "offload.argv"
+        (cr.STUDIO / "scripts" / "nas_offload.py").write_text(
+            "import json, sys\n"
+            "def summary(rep):\n"
+            "    return 'NAS offload not needed after the worktrees went. Removed 1 finished worktree(s), 550 MB.'\n"
+            "if __name__ == '__main__':\n"
+            f"    open({str(calls)!r}, 'w').write(json.dumps(sys.argv[1:]))\n"
+            "    print(json.dumps({'before_mb': 1, 'after_mb': 2, 'target_mb': 3, 'nas': 'ok', 'would': [], 'kept': [],\n"
+            "                      'moved': [], 'worktrees': {'removed': [{'path': 'x', 'mb': 550}], 'would': [], 'kept': 0}}))\n")
+        ssd = self.tmp / "MiniWork" / "scratch"
+        ssd.mkdir(parents=True)
+        real = cr.scratch_dir
+        cr.scratch_dir = lambda: ssd
+        os.environ.update(CHIEF_OFFLOAD_ANY_OS="1", CHIEF_OFFLOAD_GB="0", CHIEF_SSD_OFFLOAD_GB=str(10 ** 9))
+        try:
+            cr.offload_scratch(T0)
+            st = json.loads((cr.STATE / "chief" / "offload.json").read_text())
+            for _ in range(200):
+                if not cr._pid_alive(st["pid"]):
+                    break
+                try:
+                    os.waitpid(st["pid"], os.WNOHANG)
+                except ChildProcessError:
+                    pass
+                time.sleep(0.05)
+            cr.offload_scratch(T0 + 30 * MIN)
+        finally:
+            cr.scratch_dir = real
+            for k in ("CHIEF_OFFLOAD_ANY_OS", "CHIEF_OFFLOAD_GB", "CHIEF_SSD_OFFLOAD_GB"):
+                os.environ.pop(k)
+        argv = json.loads(calls.read_text())
+        self.assertEqual(argv[argv.index("--root") + 1], str(ssd))
+        self.assertIn("--worktrees", argv)
+        self.assertEqual(argv[argv.index("--min-age-h") + 1], "48")
+        self.assertIn("Removed 1 finished worktree(s)", self.posts.read_text())
+
+    def test_no_ssd_and_a_roomy_disk_starts_nothing(self):
+        real = cr.scratch_dir
+        cr.scratch_dir = lambda: None
+        os.environ.update(CHIEF_OFFLOAD_ANY_OS="1", CHIEF_OFFLOAD_GB="0")
+        try:
+            cr.offload_scratch(T0)
+        finally:
+            cr.scratch_dir = real
+            for k in ("CHIEF_OFFLOAD_ANY_OS", "CHIEF_OFFLOAD_GB"):
+                os.environ.pop(k)
+        self.assertFalse((cr.STATE / "chief" / "offload.json").exists())
+
     def test_weekly_cache_clean_starts_in_the_background_once_a_week(self):
         import json
         cr.d("caches.json").unlink(missing_ok=True)
