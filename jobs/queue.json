@@ -1,5 +1,5 @@
 {
-  "next_id": 3313,
+  "next_id": 3314,
   "jobs": [
     {
       "id": "J0001",
@@ -297276,6 +297276,38 @@
       "kind": "studio",
       "launch": "Bks_JLId1ew@6",
       "plain": "Check how \"How Do Plants Make Oxygen?\" is doing 6 hours after it went live"
+    },
+    {
+      "id": "J3313",
+      "title": "HOS: confirm tomorrow's 11:30 Short el30-mHiH-0 is still scheduled, clear the false 'video pulled' banner, and fix the alert",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**Why (Ben, 21 Nov 17:32 London, screenshot of the board's new red banner: \"URGENT - VIDEO PULLED. HOS Short unscheduled. Tomorrow's 11:30 slot is unscheduled\").** The banner (J3292, live since 17:33Z) most likely fires on the OLD heart Short v04 `fgsR8yAHr5s`, deliberately pulled on 20 Nov for its music (J3188) and replaced by Ben's approved v05 `el30-mHiH-0` in the same slot (J3216; cover set and read back by J3259 at 20 Nov 23:23Z: Private, publishAt 2026-11-22T11:30:00Z). The studio's HOS registry (00_Brand/Channel-Setup/social/hos/UPLOADS.json) still shows el30 scheduled for that time.\n\n**Do, on the Mini, now:**\n1. READ BACK `el30-mHiH-0` with History of Science's own login (Data API videos.list status,snippet), plus Studio (HOS window) if the API is unavailable: channel History of Science, Private, publishAt 2026-11-22T11:30:00Z, title \"How Does the Heart Pump Blood?\" family, cover set. Read only.\n2a. IF SCHEDULED AS ABOVE: nothing changes on YouTube. Clear this alert (mark the pull entry resolved as \"replaced in the same slot\") so the banner goes, and post the read-back on the thread.\n2b. IF NOT SCHEDULED: schedule `el30-mHiH-0` (Ben approved this exact v05 cut, HOS-J3187.2) Private for 2026-11-22T11:30:00Z, read it back, check its Buffer posts exist for that time, and record it. Touch no other video.\n3. FIX scripts/ben_alerts.py (one PR, tests): (a) the first run seeds what is scheduled without alerting, so old pulls are not announced as new; (b) a pulled video whose slot already holds another scheduled video of the same channel and kind is \"replaced\" and raises no banner; (c) every banner says what Ben needs to do, or \"nothing needed\" (for example: \"Heart Short v04 was replaced on Friday; v05 airs tomorrow 11:30. Nothing needed.\"), and never repeats itself (\"Short unscheduled. ... slot is unscheduled\"); (d) the banner names the video, not only the channel. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-21T17:37Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T17:37Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Read back el30-mHiH-0 (expect Private, 22 Nov 11:30Z); if fine clear the banner, else reschedule it; fix ben_alerts first-run, replaced-in-slot and wording",
+      "due": "2026-11-21T19:30:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "plain": "Check tomorrow's History of Science Short is still booked, remove the false alarm, and stop the alert repeating old news",
+      "urgent": 4
     }
   ],
   "focus": [
