@@ -33,48 +33,32 @@ MIN_BASELINE_N = 3
 DROP_WINDOW_HALF_S = 20.0
 DROP_MIN_GAP_S = 40.0
 
-# Niche small-channel (<50k subs) outlier benchmarks grounded in repo search research:
-# - owb: 05_Analytics/new_channel_research/SUMMARY.md (Stellar 29.2k median 4,964v, Simple Science 3.9k 1,631v,
-#   Science Into Sleep 1.4k 1,323v, Orbitra 21k-38k) + LEARNINGS.md rules 10, 23, 34, 37.
-# - hos: 05_Analytics/hos/search_research/2026-11-20.md (<50k outliers 1.5k-61.9k, Industrial Case Files 138 subs
-#   4.7k, Counter Facts Lab 1.4k subs 1.5k) + HOS-2026-11-E2 (60% 0:30 retention bar).
-# - ww2: ww2/00_Brand/PLAYBOOK.md (260-video vidIQ outlier study; 48h thresholds 1,000 impr / 3% CTR / 25% AVD) +
-#   05_Analytics/new_channel_research/SUMMARY.md (WW2 Dossier 14.3k median 1,058v, WW2 Combat Files 3.6k 736v).
-NICHE_BENCHMARKS: dict[str, dict[str, float | str]] = {
-    "owb": {
-        "impressions_48h": 25000.0,
-        "impressions_7d": 80000.0,
-        "ctr": 4.0,
-        "views_48h": 1500.0,
-        "views_7d": 5000.0,
-        "avg_pct": 35.0,
-        "r30": 60.0,
-        "subs_per_1k": 10.0,
-        "source": "05_Analytics/new_channel_research/SUMMARY.md & LEARNINGS.md rules 10/23/34/37 (<50k space/science outliers)",
-    },
-    "hos": {
-        "impressions_48h": 25000.0,
-        "impressions_7d": 80000.0,
-        "ctr": 4.0,
-        "views_48h": 1500.0,
-        "views_7d": 4700.0,
-        "avg_pct": 35.0,
-        "r30": 60.0,
-        "subs_per_1k": 10.0,
-        "source": "05_Analytics/hos/search_research/2026-11-20.md (<50k discovery/history outliers 1.5k-61.9k) & HOS-2026-11-E2",
-    },
-    "ww2": {
-        "impressions_48h": 20000.0,
-        "impressions_7d": 70000.0,
-        "ctr": 4.5,
-        "views_48h": 1000.0,
-        "views_7d": 3500.0,
-        "avg_pct": 35.0,
-        "r30": 60.0,
-        "subs_per_1k": 10.0,
-        "source": "ww2/00_Brand/PLAYBOOK.md (260-video outlier study) & 05_Analytics/new_channel_research/SUMMARY.md (WW2 <50k peers)",
-    },
+# Niche small-channel (<50k subs) outlier benchmarks live in each channel's own analytics folder,
+# <analytics_dir>/niche_benchmarks.json, with the research each number comes from in its "source" field. A channel
+# with no file yet is scored against STUDIO_DEFAULT_BENCHMARK until its own search research writes one, so a channel
+# added to the registry gets autopsies with no code change (J3257).
+BENCHMARK_FILE = "niche_benchmarks.json"
+STUDIO_DEFAULT_BENCHMARK: dict[str, float | str] = {
+    "impressions_48h": 25000.0,
+    "impressions_7d": 80000.0,
+    "ctr": 4.0,
+    "views_48h": 1500.0,
+    "views_7d": 5000.0,
+    "avg_pct": 35.0,
+    "r30": 60.0,
+    "subs_per_1k": 10.0,
+    "source": "studio default (this channel has no niche_benchmarks.json yet)",
 }
+
+
+def channel_benchmarks(slug: str) -> dict[str, float | str]:
+    """The channel's own benchmark file, or the studio default when it has none or it cannot be read."""
+    try:
+        own = json.loads((channels.analytics_dir(slug) / BENCHMARK_FILE).read_text())
+    except (OSError, ValueError, KeyError):
+        return dict(STUDIO_DEFAULT_BENCHMARK)
+    return {**STUDIO_DEFAULT_BENCHMARK, **own} if isinstance(own, dict) else dict(STUDIO_DEFAULT_BENCHMARK)
+
 
 METRIC_ORDER = (
     ("impressions", "Showings", ""),
@@ -182,7 +166,7 @@ def _views_at_window(snapshots: list[tuple[dt.datetime, dict]], vid: str, pub: d
 
 
 def niche_benchmark(slug: str, window: str) -> dict[str, float | str]:
-    raw = NICHE_BENCHMARKS.get(slug) or NICHE_BENCHMARKS["owb"]
+    raw = channel_benchmarks(slug)
     return {
         "impressions": float(raw[f"impressions_{window}"]),
         "ctr": float(raw["ctr"]),

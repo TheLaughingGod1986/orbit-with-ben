@@ -1,5 +1,5 @@
 {
-  "next_id": 3265,
+  "next_id": 3267,
   "jobs": [
     {
       "id": "J0001",
@@ -292035,18 +292035,48 @@
           "at": "2026-11-20T23:45Z",
           "by": "cursor",
           "what": "released: Verify still running in tmux j3249-verify. Do not start a second copy. Log /Users/benjaminoats/_desk/logs/j3249-verify.log. Done file /Users/benjaminoats/_desk/logs/j3249-verify.done is missing. MiniWork is 39 GiB free of 233 GiB, up from 3.4 GiB at 21:58Z. Cleared after byte compare and source checksum: J2221 21.41 GiB, desk/renders 5.34 GiB, J2242-assemble-v02 2.65, J2242-encode-v01 2.01, J2242-ambiguous-fullres-v01 1.56, J2242-three-rows-fullres-v01 1.35, J2437_work 1.14, J2242-caption-composites-v01 1.03, J2889_work 0.97. Now copying J2242-safe-path-measure. Copies are on the NAS SSD share at /Volumes/nas-staging/mac-mini-archive/miniwork-scratch/2026-11-20 because it is outside 01:00-06:00. Nothing on the NAS was deleted. The script stops at 42 GiB free and writes the done file. When that file exists, read target_40GiB_met and df -h /Volumes/MiniWork. If at least 40 GiB is free, record the checksum summary and mark the job done. £0."
+        },
+        {
+          "at": "2026-11-21T01:07Z",
+          "by": "cursor",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T01:08Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed. Recording disk before any move."
+        },
+        {
+          "at": "2026-11-21T01:14Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Inspected MiniWork. Container free about 45 GB. 127 clean pushed worktrees are 59 GB and safe to remove. 28 non-git folders (12.5 GB) will be archived and hash-checked first. Dirty and unpushed folders stay."
+        },
+        {
+          "at": "2026-11-21T01:18Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Removed 81 clean pushed worktrees and empty caches. MiniWork free space is 85 GB, up from 42 GB. Protected voice, live-job and dirty folders are still in place. NAS archive of the remaining evidence folders is running."
+        },
+        {
+          "at": "2026-11-21T01:24Z",
+          "by": "cursor",
+          "what": "step 2 of 4 done: MiniWork is 85 GB free after 81 clean worktrees were removed. Two evidence folders are on the NAS with SHA256SUMS.txt. The rest is still copying in tmux J3249-offload. Log ~/_desk/logs/J3249-offload.log. Exit file ~/_desk/logs/J3249-offload.done. Do not start a second copy."
+        },
+        {
+          "at": "2026-11-21T01:25Z",
+          "by": "cursor",
+          "what": "released: Offload still running. Do not start a second copy. tmux J3249-offload, log ~/_desk/logs/J3249-offload.log, exit ~/_desk/logs/J3249-offload.done (missing means running), result ~/_desk/logs/J3249-offload-report.json. MiniWork 42 GB to 85 GB free after 81 clean pushed worktrees. Two evidence folders hash-checked on the NAS. When the exit file is 0, read the result and close the job."
         }
       ],
-      "remaining_action": "Leave the scratch verify running. When its done file appears, confirm the scratch drive has at least 40 GiB free and record the checksum summary.",
+      "remaining_action": "Wait for the NAS evidence copy to finish, then record the hash check",
       "due": "2026-11-21T07:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-20T23:45Z",
+        "at": "2026-11-21T01:24Z",
         "by": "cursor",
-        "note": "Verify still running in tmux j3249-verify. MiniWork 39.1 GiB free of 233 GiB, up from 3.4 GiB at 21:58Z. Now copying J22"
+        "note": "MiniWork is 85 GB free after 81 clean worktrees were removed. Two evidence folders are on the NAS with SHA256SUMS.txt. T"
       }
     },
     {
@@ -292364,13 +292394,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "cursor",
+      "since": "2026-11-21T01:25Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-20T22:30Z",
-      "result": "",
+      "result": "WW2:001 ek9F61FVYqY private, scheduled 2026-11-24T17:00:00Z, thumbnail set, hash 879b53e8 matches the approved v43 master. WW2:002 J9WGu8aPnHI private, scheduled 2026-11-28T17:00:00Z, thumbnail set, hash 6bdf78c3 matches the approved v05 master. Channel upload list was empty before either upload. Records: ww2-channel PR 27 and orbit-with-ben PR 1096, not merged. Studio links posted on the thread. No public visibility. GBP 0.",
       "history": [
         {
           "at": "2026-11-20T22:30Z",
@@ -292456,9 +292486,29 @@
           "at": "2026-11-21T01:01Z",
           "by": "claude",
           "what": "reopened: Released by Claude, 21 Nov. Evidence from Cursor's own step 1 (23:49Z): the upload token matches Field Order History and the YouTube Data API reports longUploadsStatus = allowed. That is the same switch as Studio's 'Intermediate features' for videos over 15 minutes, so Chief ruling 7052635580 point 3 is met without the Studio window. The uploads use the Data API, not the 9224 window, so its sign-in page does not block them. Do step 4 now: upload WW2:001 v43 Private, scheduled Tue 24 Nov 17:00Z, and WW2:002 v05 Private, scheduled Sat 28 Nov 17:00Z, from the exact approved files (sha256 against the board record), with their approved title, description, chapters and thumbnail. If thumbnails.set is refused, keep the video Private and scheduled, record the refusal, and leave the thumbnail for J3255. Check the channel's uploads list before any retry and never upload a film twice. Record video ids and times in ww2-channel status.json and studio/plan.json, and post both Studio links on the thread. The 9224 Studio window sign-in moves to J3255 (Studio settings audit), which needs it; Claude asks Ben for it there, once."
+        },
+        {
+          "at": "2026-11-21T01:25Z",
+          "by": "cursor",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T01:26Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed. Step 4: upload 001 v43 and 002 v05 private and scheduled."
+        },
+        {
+          "at": "2026-11-21T01:32Z",
+          "by": "cursor",
+          "what": "step 4 of 4 done: Both films are private and scheduled. 001 ek9F61FVYqY at 24 Nov 17:00Z. 002 J9WGu8aPnHI at 28 Nov 17:00Z. Thumbnails set. Records are in ww2 PR 27 and orbit PR 1096."
+        },
+        {
+          "at": "2026-11-21T01:32Z",
+          "by": "cursor",
+          "what": "done: WW2:001 ek9F61FVYqY private, scheduled 2026-11-24T17:00:00Z, thumbnail set, hash 879b53e8 matches the approved v43 master. WW2:002 J9WGu8aPnHI private, scheduled 2026-11-28T17:00:00Z, thumbnail set, hash 6bdf78c3 matches the approved v05 master. Channel upload list was empty before either upload. Records: ww2-channel PR 27 and orbit-with-ben PR 1096, not merged. Studio links posted on the thread. No public visibility. GBP 0."
         }
       ],
-      "remaining_action": "Upload 001 (24 Nov) and 002 (28 Nov) via the Data API, Private + scheduled; record ids; post links",
+      "remaining_action": "Post the Studio links and finish the job",
       "due": "2026-11-22T18:00:00Z",
       "kind": "studio",
       "plain": "Connect the WW2 channel so finished films can actually be uploaded, ready for Ben's one-time sign-in",
@@ -292466,7 +292516,14 @@
       "taskKeys": [
         "WW2:001",
         "WW2:002"
-      ]
+      ],
+      "progress": {
+        "step": 4,
+        "of": 4,
+        "at": "2026-11-21T01:32Z",
+        "by": "cursor",
+        "note": "Both films are private and scheduled. 001 ek9F61FVYqY at 24 Nov 17:00Z. 002 J9WGu8aPnHI at 28 Nov 17:00Z. Thumbnails set"
+      }
     },
     {
       "id": "J3255",
@@ -292479,10 +292536,10 @@
       "stage": "",
       "after": "J3254",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-21T01:38Z",
+      "eta": "2026-11-21T03:38Z",
       "created_by": "claude",
       "created_at": "2026-11-20T22:47Z",
       "result": "",
@@ -292496,12 +292553,38 @@
           "at": "2026-11-21T01:01Z",
           "by": "claude",
           "what": "Needs the Field Order History Studio window (port 9224 on the Mini) signed in; at 23:49Z on 20 Nov it was still on Google's sign-in page. Claude asks Ben for that sign-in once, in chat. Orbit and HOS parts can start without it."
+        },
+        {
+          "at": "2026-11-21T01:38Z",
+          "by": "cursor",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T01:39Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed. J3254 is done. Ports 9222, 9223 and 9224 are listening. Next: confirm sign-in, then read Field Order History settings."
+        },
+        {
+          "at": "2026-11-21T01:43Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Field Order History Studio on port 9224 is still the Google sign-in page. Orbit and History of Science windows are signed in. API reads are in. Reading the remaining Studio panes."
         }
       ],
-      "remaining_action": "Audit all Studio settings per channel (FOH first after sign-in, then Orbit and HOS); fix reversible ones our rules require; money/identity/country/dubbing to Ben",
+      "remaining_action": "Read the rest of the Studio settings panes, then write each channel audit",
       "due": "2026-11-24T18:00:00Z",
       "kind": "studio",
-      "plain": "Have an AI go through every YouTube and Studio setting on our channels and set them up for growth"
+      "plain": "Have an AI go through every YouTube and Studio setting on our channels and set them up for growth",
+      "progress": {
+        "step": 0,
+        "of": 4,
+        "at": "2026-11-21T01:43Z",
+        "by": "cursor",
+        "note": "Field Order History Studio on port 9224 is still the Google sign-in page. Orbit and History of Science windows are signe"
+      },
+      "taskKeys": [
+        "WW2:001",
+        "WW2:002"
+      ]
     },
     {
       "id": "J3256",
@@ -292678,23 +292761,64 @@
       "stage": "",
       "after": "J3254",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "cursor",
+      "since": "2026-11-21T01:33Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-20T23:03Z",
-      "result": "",
+      "result": "HOS PR 709 open: shared upload files synced and uploadFor added. Core check, typecheck and 204 vitest tests passed. Not merged. No upload.",
       "history": [
         {
           "at": "2026-11-20T23:03Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-21T01:33Z",
+          "by": "cursor",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T01:33Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed. Checking that pull request 1089 is on main before any History of Science edit."
+        },
+        {
+          "at": "2026-11-21T01:34Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Synced the two shared upload files and the lock into a History of Science branch. Added uploadFor, which returns the existing Education upload settings, and an optional package dir argument that the login ignores."
+        },
+        {
+          "at": "2026-11-21T01:35Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Core check passed, 56 shared files. Typecheck passed after generating the Prisma client. Vitest is running."
+        },
+        {
+          "at": "2026-11-21T01:38Z",
+          "by": "cursor",
+          "what": "step 4 of 4 done: Pull request 709 is open. Core check, typecheck and 204 tests passed. Not merged."
+        },
+        {
+          "at": "2026-11-21T01:38Z",
+          "by": "cursor",
+          "what": "done: HOS PR 709 open: shared upload files synced and uploadFor added. Core check, typecheck and 204 vitest tests passed. Not merged. No upload."
         }
       ],
-      "remaining_action": "After OWB #1089 merges: core_sync push to HOS, add uploadFor/optional packageDir to HOS channel-youtube.ts, tests, one HOS PR for Grok",
+      "remaining_action": "History of Science pull request is open for the Chief to merge",
       "due": "2026-11-24T18:00:00Z",
-      "kind": "studio"
+      "kind": "studio",
+      "progress": {
+        "step": 4,
+        "of": 4,
+        "at": "2026-11-21T01:38Z",
+        "by": "cursor",
+        "note": "Pull request 709 is open. Core check, typecheck and 204 tests passed. Not merged."
+      },
+      "taskKeys": [
+        "HOS:000"
+      ],
+      "done_ref": "7055265316"
     },
     {
       "id": "J3259",
@@ -293147,6 +293271,110 @@
         "step": 4,
         "of": 4,
         "at": "2026-11-21T00:55Z",
+        "by": "macbook-2"
+      }
+    },
+    {
+      "id": "J3265",
+      "title": "Agents run themselves: each agent on its own timer, picks by skill, sets up the next stage, fixes its own failures (after #1073)",
+      "needs": "any",
+      "repo": "owb",
+      "body": "**Why (Ben, 21 Nov, in chat, after Claude explained more autonomy for the agents: \"Please\").** Today one relay on the Mac mini wakes agents and hands out jobs in 25-minute turns; agents only work when woken, so when the relay or the Chief stalls, everything stalls (Ben, 20 Nov: \"always seems to stop\"). J3238 / PR #1073 (two to three slots, open reroutes, MacBooks take any job they can) is the first step and is merged first. This job is the second step: each agent runs itself.\n\n**Do (code, tests, one PR).**\n1. OWN TIMER PER AGENT. Each worker (cursor, gemini, claudecode, codex on the Mini; each MacBook slot) gets its own launchd heartbeat, every 10-15 minutes, staggered. On waking it checks its own usage flag, takes the best ready job its lanes fit through the existing atomic claim (`jobs.py next --agent <id>`), works it, reports and sleeps. No central dispatcher needed to start work; the relay keeps the chain walk, stall checks and Chief duties, and stays the fallback. One agent never runs twice at once (keep the per-agent lease from #1073). Keep the memory floor and a total cap on the Mini (env, default 3 at once).\n2. PICK BY SKILL. The claim order prefers jobs whose kind lists that agent first in routing.py (Gemini: watching video and pictures; Cursor/Grok: edits and code; Claude: scripts and reviews), then urgent and due-soon work.\n3. SET UP THE NEXT JOB. When a worker finishes a pipeline stage (script, VO, pictures, edit, QA), it queues the next stage's job from the film's pipeline with film/stage set, unless one exists. No Chief step in between; the Chief still reviews merges and Ben's gates.\n4. FIX ITS OWN FAILURES FIRST. On a failed run: one retry on the next model in the kind's chain; if that fails, queue a repair job with the error tail and the failing command, then release. Feed the failure into the J3257 self-improvement register.\n5. SHARED TOOLS ONE AT A TIME, PER WINDOW. Split the relay's single 'studio' desk into one per Studio window: 9223 Orbit, 9224 Field Order History, 9460 History of Science on the Mini (9222 is the Flow browser on the Mini, not Studio; on the MacBook 9222 is HOS Studio). ElevenLabs and Flow stay one at a time. Code and tooling jobs use kind `assembly`, not `studio` (studio = Studio browser tasks), so they never wait on a Studio desk.\n6. Board: the Machines panel shows every agent's timer, last wake and current job.\n\n**Guards (unchanged, never automated away).** Ben's sign-offs (watch before publish, money, channel direction, the never-list), desk-locks on shared tools, the Mini memory floor, Chief review and merge of code. Roll back with one env switch to relay-only dispatch. Tests: two agents never claim the same job; an agent never runs twice; a held desk blocks only its own window; a stage handoff queues exactly one next job; a failed run retries once then files one repair job. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J3238",
+      "eta_min": 120,
+      "status": "done",
+      "by": "macbook",
+      "since": "2026-11-21T01:24Z",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-21T01:22Z",
+      "result": "PR 1097 is open for the Chief: each agent has its own 10-15 minute timer, picks by skill, queues the next stage, and retries a failure once. Launchd plists are in the repo and were not installed. AGENT_SELF_DISPATCH=0 returns to relay-only dispatch. Not merged.",
+      "history": [
+        {
+          "at": "2026-11-21T01:22Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-21T01:24Z",
+          "by": "macbook",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T01:36Z",
+          "by": "macbook",
+          "what": "done: PR 1097 is open for the Chief: each agent has its own 10-15 minute timer, picks by skill, queues the next stage, and retries a failure once. Launchd plists are in the repo and were not installed. AGENT_SELF_DISPATCH=0 returns to relay-only dispatch. Not merged."
+        }
+      ],
+      "remaining_action": "Own launchd timer per agent with atomic claims, skill-first pick, stage handoff, retry-then-repair, per-window Studio desks; tests; one PR",
+      "due": "2026-11-28T18:00:00Z",
+      "kind": "assembly",
+      "urgent": 5,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T01:24Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
+    },
+    {
+      "id": "J3266",
+      "title": "Use-it-all pacing for flat plans (land near 100% at each reset); hard caps only on pay-per-use; ElevenLabs first before 30 Nov",
+      "needs": "any",
+      "repo": "owb",
+      "body": "**Why (Ben, 21 Nov, in chat: \"Not sure I like the 80% limit means we're paying for 100% but only using 80%\"; then \"Please\").** Flat monthly plans cost the same used or not, so the goal is to land close to 100% of each one at its reset, not to stop early. Hard caps belong only on pay-per-use charges.\n\n**Do (code, tests, one PR; first run straight away).**\n1. PACE EVERY FLAT PLAN. For each plan with a reset date (Claude, Cursor, Codex/ChatGPT, Google AI/Gemini, ElevenLabs credits, vidIQ credits), read used and remaining from the existing readers (credit_flags.json, the Codex usage reader, the ElevenLabs usage API, the AI & credits tab data) and project usage at the reset from the last 7 days' rate.\n2. HEADING FOR LEFTOVERS (projected under 90% at the reset): raise the priority of ready work that uses that plan and is already approved or scheduled within the next four weeks (voice-overs for upcoming films, extra Shorts tests, research), so it runs before the reset. Never invent work, never pass a Ben gate, and keep Ben's rules for that service (for example, November Option 1: ElevenLabs stays on Creator and makes no music for WW2).\n3. RUNNING OUT EARLY (projected to hit zero more than 3 days before the reset): hold low-priority jobs on that plan, keep it for urgent and due-soon work, and route to the next model in each kind's chain where routing allows.\n4. PAY-PER-USE (Google video/image API calls, Veo, Vercel usage, any overage billing): a hard monthly cap per service. Money is Ben's call: propose a cap for each in ONE line to Ben in chat via Claude, and until he sets them keep today's behaviour (no new pay-per-use spend). A warning at the cap's halfway point and a stop at the cap.\n5. Board: the AI & credits tab shows one pace line per plan (\"on track to use 96% by 30 Nov\") and each cap with spend so far. Run daily from refill.\n6. FIRST RUN NOW: ElevenLabs resets 30 Nov. Report credits left, what approved VO work could use them before then (WW2 films 4-6 narration, J3206/J3208/J3210, about 9.5k credits each, plus HOS and Orbit VO), and raise those jobs if the budget guard allows.\n\n**Guards.** No plan upgrades or purchases (Ben's), no change to Ben's gates, no music for WW2 in November. Tests: an under-pace plan raises only approved ready work; an over-pace plan holds only low-priority work; a pay-per-use cap stops further calls.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "done",
+      "by": "macbook-2",
+      "since": "2026-11-21T01:24Z",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-21T01:22Z",
+      "result": "PR 1098 opened, not merged. ElevenLabs 15352 left of 121114, reserve 11000, spare 4352, on track to use 100% by 22 Nov. WW2 narration J3206, J3208 and J3210 already done, so nothing raised. Cursor and Codex run out early; 7 low-priority jobs stay off those plans. Pay-per-use caps unset until Ben names them.",
+      "history": [
+        {
+          "at": "2026-11-21T01:22Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-21T01:24Z",
+          "by": "macbook-2",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T01:29Z",
+          "by": "macbook-2",
+          "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-21T01:40Z",
+          "by": "macbook-2",
+          "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-11-21T01:40Z",
+          "by": "macbook-2",
+          "what": "done: PR 1098 opened, not merged. ElevenLabs 15352 left of 121114, reserve 11000, spare 4352, on track to use 100% by 22 Nov. WW2 narration J3206, J3208 and J3210 already done, so nothing raised. Cursor and Codex run out early; 7 low-priority jobs stay off those plans. Pay-per-use caps unset until Ben names them."
+        }
+      ],
+      "remaining_action": "Mark the pacing job done",
+      "due": "2026-11-25T18:00:00Z",
+      "kind": "assembly",
+      "urgent": 6,
+      "progress": {
+        "step": 3,
+        "of": 4,
+        "at": "2026-11-21T01:40Z",
         "by": "macbook-2"
       }
     }
