@@ -292394,13 +292394,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "cursor",
       "since": "2026-11-21T01:25Z",
-      "eta": "2026-11-21T02:25Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-20T22:30Z",
-      "result": "",
+      "result": "WW2:001 ek9F61FVYqY private, scheduled 2026-11-24T17:00:00Z, thumbnail set, hash 879b53e8 matches the approved v43 master. WW2:002 J9WGu8aPnHI private, scheduled 2026-11-28T17:00:00Z, thumbnail set, hash 6bdf78c3 matches the approved v05 master. Channel upload list was empty before either upload. Records: ww2-channel PR 27 and orbit-with-ben PR 1096, not merged. Studio links posted on the thread. No public visibility. GBP 0.",
       "history": [
         {
           "at": "2026-11-20T22:30Z",
@@ -292496,9 +292496,19 @@
           "at": "2026-11-21T01:26Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Claimed. Step 4: upload 001 v43 and 002 v05 private and scheduled."
+        },
+        {
+          "at": "2026-11-21T01:32Z",
+          "by": "cursor",
+          "what": "step 4 of 4 done: Both films are private and scheduled. 001 ek9F61FVYqY at 24 Nov 17:00Z. 002 J9WGu8aPnHI at 28 Nov 17:00Z. Thumbnails set. Records are in ww2 PR 27 and orbit PR 1096."
+        },
+        {
+          "at": "2026-11-21T01:32Z",
+          "by": "cursor",
+          "what": "done: WW2:001 ek9F61FVYqY private, scheduled 2026-11-24T17:00:00Z, thumbnail set, hash 879b53e8 matches the approved v43 master. WW2:002 J9WGu8aPnHI private, scheduled 2026-11-28T17:00:00Z, thumbnail set, hash 6bdf78c3 matches the approved v05 master. Channel upload list was empty before either upload. Records: ww2-channel PR 27 and orbit-with-ben PR 1096, not merged. Studio links posted on the thread. No public visibility. GBP 0."
         }
       ],
-      "remaining_action": "Confirm tokens, approved files and existing uploads",
+      "remaining_action": "Post the Studio links and finish the job",
       "due": "2026-11-22T18:00:00Z",
       "kind": "studio",
       "plain": "Connect the WW2 channel so finished films can actually be uploaded, ready for Ben's one-time sign-in",
@@ -292508,11 +292518,11 @@
         "WW2:002"
       ],
       "progress": {
-        "step": 0,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-21T01:26Z",
+        "at": "2026-11-21T01:32Z",
         "by": "cursor",
-        "note": "Claimed. Step 4: upload 001 v43 and 002 v05 private and scheduled."
+        "note": "Both films are private and scheduled. 001 ek9F61FVYqY at 24 Nov 17:00Z. 002 J9WGu8aPnHI at 28 Nov 17:00Z. Thumbnails set"
       }
     },
     {
@@ -292526,10 +292536,10 @@
       "stage": "",
       "after": "J3254",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-21T01:38Z",
+      "eta": "2026-11-21T03:38Z",
       "created_by": "claude",
       "created_at": "2026-11-20T22:47Z",
       "result": "",
@@ -292543,12 +292553,38 @@
           "at": "2026-11-21T01:01Z",
           "by": "claude",
           "what": "Needs the Field Order History Studio window (port 9224 on the Mini) signed in; at 23:49Z on 20 Nov it was still on Google's sign-in page. Claude asks Ben for that sign-in once, in chat. Orbit and HOS parts can start without it."
+        },
+        {
+          "at": "2026-11-21T01:38Z",
+          "by": "cursor",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T01:39Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed. J3254 is done. Ports 9222, 9223 and 9224 are listening. Next: confirm sign-in, then read Field Order History settings."
+        },
+        {
+          "at": "2026-11-21T01:43Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Field Order History Studio on port 9224 is still the Google sign-in page. Orbit and History of Science windows are signed in. API reads are in. Reading the remaining Studio panes."
         }
       ],
-      "remaining_action": "Audit all Studio settings per channel (FOH first after sign-in, then Orbit and HOS); fix reversible ones our rules require; money/identity/country/dubbing to Ben",
+      "remaining_action": "Read the rest of the Studio settings panes, then write each channel audit",
       "due": "2026-11-24T18:00:00Z",
       "kind": "studio",
-      "plain": "Have an AI go through every YouTube and Studio setting on our channels and set them up for growth"
+      "plain": "Have an AI go through every YouTube and Studio setting on our channels and set them up for growth",
+      "progress": {
+        "step": 0,
+        "of": 4,
+        "at": "2026-11-21T01:43Z",
+        "by": "cursor",
+        "note": "Field Order History Studio on port 9224 is still the Google sign-in page. Orbit and History of Science windows are signe"
+      },
+      "taskKeys": [
+        "WW2:001",
+        "WW2:002"
+      ]
     },
     {
       "id": "J3256",
@@ -292725,23 +292761,64 @@
       "stage": "",
       "after": "J3254",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
+      "status": "done",
+      "by": "cursor",
+      "since": "2026-11-21T01:33Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-20T23:03Z",
-      "result": "",
+      "result": "HOS PR 709 open: shared upload files synced and uploadFor added. Core check, typecheck and 204 vitest tests passed. Not merged. No upload.",
       "history": [
         {
           "at": "2026-11-20T23:03Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-21T01:33Z",
+          "by": "cursor",
+          "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T01:33Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed. Checking that pull request 1089 is on main before any History of Science edit."
+        },
+        {
+          "at": "2026-11-21T01:34Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Synced the two shared upload files and the lock into a History of Science branch. Added uploadFor, which returns the existing Education upload settings, and an optional package dir argument that the login ignores."
+        },
+        {
+          "at": "2026-11-21T01:35Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Core check passed, 56 shared files. Typecheck passed after generating the Prisma client. Vitest is running."
+        },
+        {
+          "at": "2026-11-21T01:38Z",
+          "by": "cursor",
+          "what": "step 4 of 4 done: Pull request 709 is open. Core check, typecheck and 204 tests passed. Not merged."
+        },
+        {
+          "at": "2026-11-21T01:38Z",
+          "by": "cursor",
+          "what": "done: HOS PR 709 open: shared upload files synced and uploadFor added. Core check, typecheck and 204 vitest tests passed. Not merged. No upload."
         }
       ],
-      "remaining_action": "After OWB #1089 merges: core_sync push to HOS, add uploadFor/optional packageDir to HOS channel-youtube.ts, tests, one HOS PR for Grok",
+      "remaining_action": "History of Science pull request is open for the Chief to merge",
       "due": "2026-11-24T18:00:00Z",
-      "kind": "studio"
+      "kind": "studio",
+      "progress": {
+        "step": 4,
+        "of": 4,
+        "at": "2026-11-21T01:38Z",
+        "by": "cursor",
+        "note": "Pull request 709 is open. Core check, typecheck and 204 tests passed. Not merged."
+      },
+      "taskKeys": [
+        "HOS:000"
+      ],
+      "done_ref": "7055265316"
     },
     {
       "id": "J3259",
@@ -293208,13 +293285,13 @@
       "stage": "",
       "after": "J3238",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-21T01:24Z",
-      "eta": "2026-11-21T03:24Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-21T01:22Z",
-      "result": "",
+      "result": "PR 1097 is open for the Chief: each agent has its own 10-15 minute timer, picks by skill, queues the next stage, and retries a failure once. Launchd plists are in the repo and were not installed. AGENT_SELF_DISPATCH=0 returns to relay-only dispatch. Not merged.",
       "history": [
         {
           "at": "2026-11-21T01:22Z",
@@ -293225,6 +293302,11 @@
           "at": "2026-11-21T01:24Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T01:36Z",
+          "by": "macbook",
+          "what": "done: PR 1097 is open for the Chief: each agent has its own 10-15 minute timer, picks by skill, queues the next stage, and retries a failure once. Launchd plists are in the repo and were not installed. AGENT_SELF_DISPATCH=0 returns to relay-only dispatch. Not merged."
         }
       ],
       "remaining_action": "Own launchd timer per agent with atomic claims, skill-first pick, stage handoff, retry-then-repair, per-window Studio desks; tests; one PR",
@@ -293251,13 +293333,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-21T01:24Z",
-      "eta": "2026-11-21T02:54Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-21T01:22Z",
-      "result": "",
+      "result": "PR 1098 opened, not merged. ElevenLabs 15352 left of 121114, reserve 11000, spare 4352, on track to use 100% by 22 Nov. WW2 narration J3206, J3208 and J3210 already done, so nothing raised. Cursor and Codex run out early; 7 low-priority jobs stay off those plans. Pay-per-use caps unset until Ben names them.",
       "history": [
         {
           "at": "2026-11-21T01:22Z",
@@ -293273,16 +293355,26 @@
           "at": "2026-11-21T01:29Z",
           "by": "macbook-2",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-21T01:40Z",
+          "by": "macbook-2",
+          "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-11-21T01:40Z",
+          "by": "macbook-2",
+          "what": "done: PR 1098 opened, not merged. ElevenLabs 15352 left of 121114, reserve 11000, spare 4352, on track to use 100% by 22 Nov. WW2 narration J3206, J3208 and J3210 already done, so nothing raised. Cursor and Codex run out early; 7 low-priority jobs stay off those plans. Pay-per-use caps unset until Ben names them."
         }
       ],
-      "remaining_action": "Read the credit readers and the queue, then add pacing",
+      "remaining_action": "Mark the pacing job done",
       "due": "2026-11-25T18:00:00Z",
       "kind": "assembly",
       "urgent": 6,
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-21T01:29Z",
+        "at": "2026-11-21T01:40Z",
         "by": "macbook-2"
       }
     }
