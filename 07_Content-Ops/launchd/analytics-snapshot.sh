@@ -60,6 +60,127 @@ gate_with_limit() {
   return $rc
 }
 
+# True when wt is a valid git worktree belonging to repo (same resolved git-common-dir).
+same_repo_worktree() {
+  local repo="$1" wt="$2"
+  local repo_common wt_common
+  repo_common="$(within 60 git -C "$repo" rev-parse --git-common-dir 2>/dev/null)" || return 1
+  wt_common="$(within 60 git -C "$wt" rev-parse --git-common-dir 2>/dev/null)" || return 1
+  repo_common="$(cd "$repo" && cd "$repo_common" && pwd -P)" || return 1
+  wt_common="$(cd "$wt" && cd "$wt_common" && pwd -P)" || return 1
+  [[ "$repo_common" == "$wt_common" ]]
+}
+
+# Remove a missing/corrupted worktree directory (never repo itself) and recreate it detached at origin/main.
+recreate_tracker_worktree() {
+  local repo="$1" wt="$2"
+  local repo_real wt_real
+  repo_real="$(cd "$repo" 2>/dev/null && pwd -P)" || return 1
+  [[ -z "$wt" || "$wt" == "/" ]] && return 1
+  if [[ -e "$wt" ]]; then
+    wt_real="$(cd "$wt" 2>/dev/null && pwd -P || true)"
+    [[ -n "$wt_real" && "$wt_real" == "$repo_real" ]] && return 1
+    within 60 git -C "$repo" worktree remove --force "$wt" >/dev/null 2>&1 || true
+    rm -rf "$wt" || return 1
+  fi
+  mkdir -p "$(dirname "$wt")" || return 1
+  within 60 git -C "$repo" worktree prune >/dev/null 2>&1 || true
+  git -C "$repo" fetch -q origin main && within 300 git -C "$repo" worktree add -q --detach "$wt" origin/main
+}
+
+# Ensure the tracker worktree exists, belongs to repo, preserves any leftover tracker data, and is updated
+# onto origin/main before engine_guard.py or snapshot scripts run inside it.
+prepare_tracker_worktree() {
+  local repo="$1" wt="$2"
+  local data="05_Analytics"
+  local ww2_data="channels/ww2/05_Analytics"
+  local lib="00_Brand/Channel-Setup/audits/shorts_open_library/library.json"
+
+  if ! within 60 git -C "$wt" rev-parse --git-dir >/dev/null 2>&1; then
+    recreate_tracker_worktree "$repo" "$wt" \
+      || { echo "could not make the tracker worktree at $wt; nothing run"; return 1; }
+    return 0
+  fi
+
+  if ! same_repo_worktree "$repo" "$wt"; then
+    echo "tracker worktree at $wt does not belong to $repo; nothing run" >&2
+    return 1
+  fi
+
+  local gitdir
+  gitdir="$(git -C "$wt" rev-parse --git-dir 2>/dev/null)" || {
+    recreate_tracker_worktree "$repo" "$wt" \
+      || { echo "could not make the tracker worktree at $wt; nothing run"; return 1; }
+    return 0
+  }
+  [[ "$gitdir" == /* ]] || gitdir="$wt/$gitdir"
+  if [[ -d "$gitdir/rebase-merge" || -d "$gitdir/rebase-apply" ]]; then
+    git -C "$wt" rebase --abort >/dev/null 2>&1 || true
+  fi
+
+  # Anything a failed run left behind is tracker data: keep it, then catch up with main.
+  local p
+  local stage_paths=()
+  for p in "$data" "$lib" "$ww2_data"; do
+    if [[ -e "$wt/$p" ]] || git -C "$wt" ls-files --error-unmatch -- "$p" >/dev/null 2>&1; then
+      stage_paths+=("$p")
+    fi
+  done
+  if (( ${#stage_paths[@]} > 0 )); then
+    git -C "$wt" add -A -- "${stage_paths[@]}"
+    git -C "$wt" diff --cached --quiet \
+      || git -C "$wt" commit -q -m "Channel tracker: data from an earlier run" -- "${stage_paths[@]}"
+  fi
+
+  if ! git -C "$wt" fetch -q origin main; then
+    echo "git fetch origin main failed in $wt; nothing run" >&2
+    return 1
+  fi
+
+  if ! git -C "$wt" rebase -q origin/main; then
+    git -C "$wt" rebase --abort >/dev/null 2>&1 || true
+    # If there are no unpushed local commits and no dirty tracker files, recreate a stale/corrupted worktree cleanly.
+    if [[ -z "$(git -C "$wt" log origin/main..HEAD --oneline 2>/dev/null)" ]] \
+      && [[ -z "$(git -C "$wt" status --porcelain -- "${stage_paths[@]}" 2>/dev/null)" ]]; then
+      echo "worktree at $wt could not rebase with no local commits; recreating cleanly" >&2
+      recreate_tracker_worktree "$repo" "$wt" \
+        || { echo "could not make the tracker worktree at $wt; nothing run"; return 1; }
+      return 0
+    fi
+    echo "rebase onto main failed; nothing run"
+    osascript -e 'display notification "The channel tracker could not catch up with main. See ~/Library/Logs/orbit-analytics.log" with title "Orbit With Ben"' 2>/dev/null
+    return 1
+  fi
+  return 0
+}
+
+# Push detached HEAD to origin/main; on non-fast-forward rejection, fetch and rebase onto origin/main
+# with bounded retries (default 3 attempts) before failing.
+push_with_rebase_retry() {
+  local max_attempts="${PUSH_RETRIES:-3}"
+  local delay_base="${PUSH_RETRY_DELAY_S:-5}"
+  local attempt=1
+  while (( attempt <= max_attempts )); do
+    if git push -q origin HEAD:main; then
+      return 0
+    fi
+    if (( attempt == max_attempts )); then
+      echo "git push to origin/main failed after ${max_attempts} attempts" >&2
+      return 1
+    fi
+    if (( delay_base > 0 )); then
+      sleep $((attempt * delay_base))
+    fi
+    if ! git fetch -q origin main || ! git rebase -q origin/main; then
+      git rebase --abort 2>/dev/null || true
+      echo "rebase onto origin/main failed during push retry (attempt ${attempt}/${max_attempts})" >&2
+      return 1
+    fi
+    attempt=$((attempt + 1))
+  done
+  return 1
+}
+
 main() {
   local engine
   engine="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)" || return 1
@@ -70,31 +191,16 @@ main() {
   local repo="${ORBIT_REPO:-$HOME/YouTube/orbit-with-ben}"
   python3 "$repo/scripts/engine_guard.py" || return 1
   local data=05_Analytics
+  local ww2_data="channels/ww2/05_Analytics"
+  local lib=00_Brand/Channel-Setup/audits/shorts_open_library/library.json
   echo "--- $(date)"
   local wt; wt="$(pick_worktree)"
-  if ! within 60 git -C "$wt" rev-parse --git-dir >/dev/null 2>&1; then
-    mkdir -p "$(dirname "$wt")"
-    # Time-limited too: git looks at every worktree it knows, and some of those may sit on the volume that hangs.
-    git -C "$repo" fetch -q origin main && within 300 git -C "$repo" worktree add -q --detach "$wt" origin/main \
-      || { echo "could not make the tracker worktree at $wt; nothing run"; return 1; }
-  fi
+  # Update/fetch/rebase (or recreate) the tracker worktree onto origin/main BEFORE running $wt/scripts/engine_guard.py,
+  # so a stale worktree predating engine_guard.py updates first instead of failing with ENOENT.
+  prepare_tracker_worktree "$repo" "$wt" || return 1
   cd "$wt" || return 1
   python3 "$wt/scripts/engine_guard.py" || return 1
   ln -sfn "$repo/07_Content-Ops/node_modules" 07_Content-Ops/node_modules
-
-  # Anything a failed run left behind is tracker data: keep it, then catch up with main.
-  local ww2_data="channels/ww2/05_Analytics"
-  local lib=00_Brand/Channel-Setup/audits/shorts_open_library/library.json
-  git add -A -- "$data" "$lib" "$ww2_data"
-  git diff --cached --quiet || git commit -q -m "Channel tracker: data from an earlier run" -- "$data" "$lib" "$ww2_data"
-  git fetch -q origin main
-  if ! git rebase -q origin/main; then
-    git rebase --abort
-    echo "rebase onto main failed; nothing run"
-    osascript -e 'display notification "The channel tracker could not catch up with main. See ~/Library/Logs/orbit-analytics.log" with title "Orbit With Ben"' 2>/dev/null
-    return 1
-  fi
-  python3 "$wt/scripts/engine_guard.py" || return 1
   echo "code: $(git log --oneline -1)"
 
   (
@@ -130,19 +236,26 @@ main() {
   fi
   (cd 07_Content-Ops && npx tsx scripts/analytics-report.ts) || code=1
 
-  if [[ -n $(git status --porcelain -- "$data" "$lib" "$ww2_data") ]]; then
-    git add -A -- "$data" "$lib" "$ww2_data"
-    git commit -q -m "Channel tracker $(date +%F): daily snapshot, reports, dashboard, upcoming Shorts gate" -- "$data" "$lib" "$ww2_data"
-    local i
-    for i in 1 2 3; do
-      git push -q origin HEAD:main && break
-      sleep $((i * 5))
-      git pull -q --rebase origin main || { git rebase --abort 2>/dev/null; break; }
-    done
-    # Put the new data on the board-data branch now: studio-kanban.pages.dev/tracker reads tracker.json from there.
-    # board_publish.py never fails and is a no-op when nothing changed; its 5-minute launchd run would catch it anyway.
-    if [[ ${BOARD_PUBLISH:-1} != 0 && -f $repo/scripts/board_publish.py ]]; then
-      HOS_REPO="${HOS_REPO:-$HOME/YouTube/History Of Science}" python3 "$repo/scripts/board_publish.py" --quiet
+  local p
+  local commit_paths=()
+  for p in "$data" "$lib" "$ww2_data"; do
+    if [[ -e "$p" ]] || git ls-files --error-unmatch -- "$p" >/dev/null 2>&1; then
+      commit_paths+=("$p")
+    fi
+  done
+  if (( ${#commit_paths[@]} > 0 )) && [[ -n $(git status --porcelain -- "${commit_paths[@]}") ]]; then
+    git add -A -- "${commit_paths[@]}"
+    git commit -q -m "Channel tracker $(date +%F): daily snapshot, reports, dashboard, upcoming Shorts gate" -- "${commit_paths[@]}"
+  fi
+  if [[ "$(git rev-parse HEAD)" != "$(git rev-parse origin/main)" ]]; then
+    if push_with_rebase_retry; then
+      # Put the new data on the board-data branch now: studio-kanban.pages.dev/tracker reads tracker.json from there.
+      # board_publish.py never fails and is a no-op when nothing changed; its 5-minute launchd run would catch it anyway.
+      if [[ ${BOARD_PUBLISH:-1} != 0 && -f $repo/scripts/board_publish.py ]]; then
+        HOS_REPO="${HOS_REPO:-$HOME/YouTube/History Of Science}" python3 "$repo/scripts/board_publish.py" --quiet
+      fi
+    else
+      code=1
     fi
   fi
 
