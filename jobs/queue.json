@@ -292801,10 +292801,10 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-21T00:12Z",
+      "eta": "2026-11-21T02:12Z",
       "created_by": "gemini",
       "created_at": "2026-11-20T23:56Z",
       "result": "",
@@ -292813,11 +292813,24 @@
           "at": "2026-11-20T23:56Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-21T00:12Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Create HOS 009 long thumbnails A and B in house style, run style_sheet and thumb_preview, and park for Chief review",
       "kind": "thumb",
-      "plain": "Build two house-style thumbnail options for the Gravity film and run the preview and style checks"
+      "plain": "Build two house-style thumbnail options for the Gravity film and run the preview and style checks",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T00:12Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
