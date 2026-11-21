@@ -294977,9 +294977,14 @@
           "at": "2026-11-21T11:43Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J3282; starting read-only live verification of Bks_JLId1ew after 11:30Z go-public"
+        },
+        {
+          "at": "2026-11-21T11:44Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Signed-out read-back PASS at 11:43Z: public (publishDate 2026-11-21T03:30:11-08:00), Related=VbPubYd6Fbs (The Willow Tree That Was Made of Air), AI badge (Made with AI), captions en-GB + a.en"
         }
       ],
-      "remaining_action": "Verify Bks_JLId1ew live signed-out on YouTube (public, Related=VbPubYd6Fbs, AI badge, captions)",
+      "remaining_action": "Flip Bks_JLId1ew to live in HOS library.json, run check_all.sh, and open HOS PR",
       "kind": "listing",
       "plain": "Verify HOS Short Bks_JLId1ew live after 11:30Z and flip its library.json status to live",
       "rerouted_from": {
@@ -294991,11 +294996,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-21T11:43Z",
+        "at": "2026-11-21T11:44Z",
         "by": "gemini",
-        "note": "Claimed J3282; starting read-only live verification of Bks_JLId1ew after 11:30Z go-public"
+        "note": "Signed-out read-back PASS at 11:43Z: public (publishDate 2026-11-21T03:30:11-08:00), Related=VbPubYd6Fbs (The Willow Tre"
       },
       "taskKeys": [
         "HOS:006"
