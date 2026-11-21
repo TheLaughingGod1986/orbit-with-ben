@@ -296359,18 +296359,33 @@
           "at": "2026-11-21T15:07Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J3298; starting fresh read-only HOS live/scheduled listing audit (chapters, sources, end screens, Related)"
+        },
+        {
+          "at": "2026-11-21T15:10Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Live Data API + signed-out public page + external URL audit completed at 15:09Z (68 videos: 7 public longs, 35 public Shorts including newly aired Bks_JLId1ew, 3 scheduled, 23 private unscheduled)"
         }
       ],
-      "remaining_action": "Inspect prior HOS live_fixes (J3279) and run fresh read-only YouTube/Studio audit of HOS live and scheduled videos",
+      "remaining_action": "Verify chapter timestamps against repo files, review all findings, and draft 2026-11-21_J3298.md in a clean HOS worktree",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-21T15:07Z",
+        "at": "2026-11-21T15:10Z",
         "by": "gemini",
-        "note": "Claimed J3298; starting fresh read-only HOS live/scheduled listing audit (chapters, sources, end screens, Related)"
-      }
+        "note": "Live Data API + signed-out public page + external URL audit completed at 15:09Z (68 videos: 7 public longs, 35 public Sh"
+      },
+      "taskKeys": [
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
+        "HOS:005",
+        "HOS:006",
+        "HOS:007",
+        "HOS:099"
+      ]
     }
   ],
   "focus": [
