@@ -1,5 +1,5 @@
 {
-  "next_id": 3280,
+  "next_id": 3281,
   "jobs": [
     {
       "id": "J0001",
@@ -294706,6 +294706,35 @@
         "HOS:007",
         "HOS:099"
       ]
+    },
+    {
+      "id": "J3280",
+      "title": "HOS repo-record & open-gate library sync (J3279): library.json, Blood SHORTS_RELEASE, OWB UPLOADS",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting Chief (`gemini`) follow-up from `J3279` (HOS PR `#713` merged; `00_Brand/Channel-Setup/audits/live_fixes/2026-11-21_J3279.md`). **Repo records & open-gate library sync only — ZERO YouTube Studio or YouTube Data API writes. Spend: £0 cash, 0 credits.**\n\n### 1. HOS repo (`00_Brand/Channel-Setup/audits/shorts_open_library/library.json` + `005` `SHORTS_RELEASE.json`)\nIn a clean HOS worktree (`git worktree add -b <agent>/<job-id>-hos-record-sync origin/main`):\n1. Retire Private unscheduled `5n7xFQRBUvI` and mark the 12 already-public Shorts as `live` via `gate_shorts_open.py`:\n   - `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py status --id 5n7xFQRBUvI --status retired`\n   - For each of `29bpGAI0wb8`, `TbMMJSRKC3U`, `clV6E10NLPw`, `-3L6HzJ_d_4`, `pWySvZsneZg`, `qW2OsD4mujc`, `xHnIi9GqOsM`, `PFj6172YU4Q`, `cLKDiYP55J8`, `Wvjd8g0CpzE`, `xzKoHg0E0_U`, `xgx2lYHhYZM`:\n     `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py status --id \"$id\" --status live`\n2. Register the 2 missing active ±14-day window Shorts in `library.json`:\n   - **Important path note:** `/Users/benjaminoats/_desk/renders/J2169/...` was moved to the NAS archive by `J3249` (`/Volumes/data/mac-mini-archive/miniwork-scratch/2026-11-20/renders/J2169/...`), and copies also sit in iCloud `HOS UAT/006_Trees-Are-Made-Of-Air/10_Shorts/J2169/` (verify non-zero sha256 if using a local/iCloud/NAS file; never use a 0-byte iCloud stub).\n   - **`ChbsigHD5_o`** (`2026-11-18`, *\"How Do Plants Clean the Air?\"*, already public): use `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py fetch --id ChbsigHD5_o --date 2026-11-18 --title \"How Do Plants Clean the Air?\"` (or `add --file <verified file matching sha256 f4b046d41d0d6fcfbd14258abe472d57db5c9d53c1ed535141aa3281e1f3915b> --source \"J2272 v02\" --status live`).\n   - **`Bks_JLId1ew`** (`2026-11-21`, *\"How Do Plants Make Oxygen?\"*, scheduled `2026-11-21T11:30:00Z`):\n     - If an exact local/iCloud/NAS copy matching sha256 `e1e3ff0ce3b5622b4a43d010a0df827bcd34e25ccd76a87338b286b0632c40c5` is readable now, run `gate_shorts_open.py add --id Bks_JLId1ew --date 2026-11-21 --title \"How Do Plants Make Oxygen?\" --file <path> --source \"J2273 v03\" --status scheduled` (or `--status live` if after `11:30Z`).\n     - If run after `2026-11-21T11:30Z` (once public), use `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py fetch --id Bks_JLId1ew --date 2026-11-21 --title \"How Do Plants Make Oxygen?\"` (and note the live public watch/Shorts read-back of `Related = VbPubYd6Fbs`, AI badge, and captions).\n     - If neither a verified local/iCloud/NAS file is accessible before `11:30Z` (e.g., NAS offline and iCloud file dataless), park with a typed external wait until `2026-11-21T11:35:00Z` so `Bks_JLId1ew` can be registered via `fetch` once public.\n3. Update `02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/SHORTS_RELEASE.json` `shorts[0]` from retired Private `5n7xFQRBUvI` to public `BW_CFAX-mxc` (`Is the Heart a Pump?`, `airDate: \"2026-10-31T11:30:00Z\"`, `relatedVideoId: \"wwcjcFfC-5M\"`, `durationSeconds: 22`, `replaces: \"5n7xFQRBUvI\"`, exact block in `00_Brand/Channel-Setup/audits/live_fixes/2026-11-21_J3279.md`).\n4. Run `00_Brand/Channel-Setup/tools/check_all.sh` (must print `ALL CHECKS PASS`, including `npm run lint:package` and `status_board.py --check`) and open ONE clean HOS PR. Do not merge your own PR.\n\n### 2. OWB repo (`00_Brand/Channel-Setup/social/hos/UPLOADS.json`)\nIn a clean OWB worktree (`git worktree add -b <agent>/<job-id>-hos-uploads-sync origin/main`):\n1. Add the retired/superseded markers to `videos[\"5n7xFQRBUvI\"]` in `00_Brand/Channel-Setup/social/hos/UPLOADS.json` (exact fields from `2026-11-21_J3279.md`):\n   - `\"supersededBy\": \"BW_CFAX-mxc\"`\n   - `\"privacyStatus\": \"private\"`\n   - `\"publishAt\": null`\n   - `\"note\": \"Superseded by v04 BW_CFAX-mxc (public 2026-10-31T11:30:32Z). Private and unscheduled; do not Buffer.\"`\n2. Validate JSON parses cleanly (`python3 -m json.tool 00_Brand/Channel-Setup/social/hos/UPLOADS.json >/dev/null`), run any applicable OWB tests, and open ONE clean OWB PR. Do not merge your own PR.\n\n### 3. Hand off\nPost both PR URLs and pasted PASS outputs on HOS desk `#694` and the OWB studio thread, and park for Chief merge. Never touch YouTube Studio, YouTube API, Buffer, or NAS deletion. Spend: £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-21T09:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T09:52Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Sync HOS library.json (1 retired, 12 live, add ChbsigHD5_o & Bks_JLId1ew) and reconcile 5n7xFQRBUvI->BW_CFAX-mxc in HOS 005 SHORTS_RELEASE + OWB UPLOADS; open PRs",
+      "kind": "studio",
+      "plain": "Sync HOS open-gate library and Blood/OWB Short records from J3279 (no Studio writes)"
     }
   ],
   "focus": [
