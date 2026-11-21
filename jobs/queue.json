@@ -298066,9 +298066,14 @@
           "at": "2026-11-21T19:44Z",
           "by": "gemini",
           "what": "step 2 of 6 done: API done: channel keywords (14 terms, 237/500) and defaultLanguage en-GB set and read back (country GB unchanged); private playlist PLPPi-oWEDYtA created with ek9F61FVYqY (pos 0) and J9WGu8aPnHI (pos 1)."
+        },
+        {
+          "at": "2026-11-21T19:51Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: Studio audit complete on port 9224. Upload defaults saved and verified after reload (Visibility Private, Category Education, Video language en-GB, Title/description language en-GB, Comments On / Basic). Confirmed both pilots have Altered content Yes, en-GB language, Education category, and playlist membership."
         }
       ],
-      "remaining_action": "Read Studio-only settings on port 9224, update safe Studio defaults, add Subscribe end screens to both pilots, update records",
+      "remaining_action": "Add Subscribe end screens and Basic comment moderation on pilots 1 and 2, then update repo records and post receipt",
       "due": "2026-11-22T12:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -298084,11 +298089,11 @@
       "model": "gemini-argon",
       "urgent": 4,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 6,
-        "at": "2026-11-21T19:44Z",
+        "at": "2026-11-21T19:51Z",
         "by": "gemini",
-        "note": "API done: channel keywords (14 terms, 237/500) and defaultLanguage en-GB set and read back (country GB unchanged); priva"
+        "note": "Studio audit complete on port 9224. Upload defaults saved and verified after reload (Visibility Private, Category Educat"
       },
       "taskKeys": [
         "WW2:001",
