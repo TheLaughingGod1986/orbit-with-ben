@@ -298741,13 +298741,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-21T21:34Z",
-      "eta": "2026-11-21T22:19Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-21T21:31Z",
-      "result": "",
+      "result": "PR #1130 (macbook/J3326 -> main) updates TEST_LOG.md with final J0216 standalone Shorts readout (24 Oct-20 Nov) and compilation m09jUdwC5hk readout (21 Oct-18 Nov). Verified live S6=ffYKoNVPoqg (supersedes RLSJm59OSzI) and live S8=9q_OvQ1Rd8Y (J2882, supersedes kKN8Ale42sE). S1-S8 (n=8): 4,980 Studio views (mean 622.5, med 489.0), 7/8 FED (med 93.9%), 37.8% v-wtd stayed (0/8 >=60%), 96.7% v-wtd APV (med 75.7%, S4 306.8% outlier), 20.6s mean / 15.0s med AVD, +2 subs (0.40/1k) vs standard cut-from-long Shorts (n=8): 4,871 views (mean 608.9, med 542.5), 7/7 settled FED, 38.9% v-wtd stayed, 87.5% v-wtd APV (med 78.2%), +5 subs (1.03/1k); all cut-from-long (n=10): 5,041 views, 8/9 FED, 39.2% stayed, +5 subs; regular longs (n=4): 267 views, 0 subs. Compilation m09jUdwC5hk: 6 views (flat since 1 Nov), 94 imp, 0.0% CTR, 33.8% APV / 965s AVD (inconclusive n=6), 0 subs -> discovery FAIL. Chief ruling recommendation: staged exact-match Related linking (set S8 9q_OvQ1Rd8Y -> c5AdqQsnnys now; optional interim NbW5G1BpPY0 on S7 z5V6gIXXYs8 then re-point to 034 Pluto on 13 Dec; bundle S6 -> T3cBBss1F60 on 25 Nov and S4 -> oASsmqZfWU4 on 9 Dec; skip dedicated Studio trips for plateaued S1/S2/S3/S5). Spend £0; nothing changed in Studio.",
       "history": [
         {
           "at": "2026-11-21T21:31Z",
@@ -298778,6 +298778,11 @@
           "at": "2026-11-21T21:40Z",
           "by": "macbook-2",
           "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-11-21T21:43Z",
+          "by": "macbook-2",
+          "what": "done: PR #1130 (macbook/J3326 -> main) updates TEST_LOG.md with final J0216 standalone Shorts readout (24 Oct-20 Nov) and compilation m09jUdwC5hk readout (21 Oct-18 Nov). Verified live S6=ffYKoNVPoqg (supersedes RLSJm59OSzI) and live S8=9q_OvQ1Rd8Y (J2882, supersedes kKN8Ale42sE). S1-S8 (n=8): 4,980 Studio views (mean 622.5, med 489.0), 7/8 FED (med 93.9%), 37.8% v-wtd stayed (0/8 >=60%), 96.7% v-wtd APV (med 75.7%, S4 306.8% outlier), 20.6s mean / 15.0s med AVD, +2 subs (0.40/1k) vs standard cut-from-long Shorts (n=8): 4,871 views (mean 608.9, med 542.5), 7/7 settled FED, 38.9% v-wtd stayed, 87.5% v-wtd APV (med 78.2%), +5 subs (1.03/1k); all cut-from-long (n=10): 5,041 views, 8/9 FED, 39.2% stayed, +5 subs; regular longs (n=4): 267 views, 0 subs. Compilation m09jUdwC5hk: 6 views (flat since 1 Nov), 94 imp, 0.0% CTR, 33.8% APV / 965s AVD (inconclusive n=6), 0 subs -> discovery FAIL. Chief ruling recommendation: staged exact-match Related linking (set S8 9q_OvQ1Rd8Y -> c5AdqQsnnys now; optional interim NbW5G1BpPY0 on S7 z5V6gIXXYs8 then re-point to 034 Pluto on 13 Dec; bundle S6 -> T3cBBss1F60 on 25 Nov and S4 -> oASsmqZfWU4 on 9 Dec; skip dedicated Studio trips for plateaued S1/S2/S3/S5). Spend £0; nothing changed in Studio."
         }
       ],
       "remaining_action": "writing final J0216 + compilation readout and Related-link recommendation to TEST_LOG.md on branch macbook/J3326",
