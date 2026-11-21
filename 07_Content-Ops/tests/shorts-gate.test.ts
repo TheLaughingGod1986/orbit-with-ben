@@ -44,3 +44,24 @@ describe("Shorts ship gate in the upload path", () => {
     expect(airDateFor(null, new Date("2026-10-06T08:00:00Z"))).toBe("2026-10-06");
   });
 });
+
+import { runPublishingGates } from "../src/lib/publishing/shorts-gate";
+
+describe("all-format publishing hard stop", () => {
+  it("refuses a reused-bed failure for Shorts and longs", () => {
+    for (const format of ["shorts", "longform"] as const) {
+      const r = runner(1, "music FAIL reused: 0.830");
+      const result = runPublishingGates({ videoPath: "/cut.mp4", repoRoot: "/repo", format }, r);
+      expect(result.ok).toBe(false);
+      expect(result.output).toContain("0.830");
+      expect(r.calls[0]).toContain("/repo/scripts/publishing_gates.py");
+    }
+  });
+  it("accepts the shared gate's applied waiver and uses London's air date", () => {
+    const r = runner(0, "WAIVED reused: Chief waiver\nPASS");
+    const result = runPublishingGates({ videoPath: "/cut.mp4", repoRoot: "/repo", format: "shorts",
+      scheduledAt: new Date("2026-06-01T23:30:00Z") }, r);
+    expect(result.ok).toBe(true);
+    expect(result.airDate).toBe("2026-06-02");
+  });
+});

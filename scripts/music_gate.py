@@ -119,8 +119,12 @@ def others_default(film_dir: Path) -> list[Path]:
     """The beds to compare against: the other films of this film's own channel, plus that channel's UAT folder."""
     slug = channels.of_path(film_dir)
     base = channels.checkout(slug)
-    out = [p for p in base.joinpath("02_Video-Projects").glob("*/05_Music/*") if p.suffix.lower() in AUDIO
-           and film_dir.resolve() not in p.resolve().parents] if base else []
+    # Working beds may be on studio-live rather than in the checkout.
+    libraries = {film_dir.resolve().parent}
+    if base:
+        libraries.add((base / "02_Video-Projects").resolve())
+    out = [p for library in libraries for p in library.glob("*/05_Music/*")
+           if p.suffix.lower() in AUDIO and film_dir.resolve() not in p.resolve().parents]
     uat = ICLOUD / ((channels.get(slug).get("uat_dir") or {}).get("icloud") or "")
     if uat != ICLOUD and uat.is_dir():
         out += [p for p in uat.glob("*") if p.suffix.lower() in AUDIO]

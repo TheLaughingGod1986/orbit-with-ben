@@ -267,7 +267,8 @@ def top_up(data: dict, items: list, at: dt.datetime, min_ready: int = MIN_READY)
         plan_pace.refresh_if_stale(at)
     except Exception as exc:  # noqa: BLE001 — a pace miss must not stop the refill
         print(f"plan pace not refreshed: {exc}", file=sys.stderr)
-    return first_day_checks(data, at) + do_refill(data, items, at, min_ready)
+    import scheduled_gates
+    return scheduled_gates.queue_daily(data, at) + first_day_checks(data, at) + do_refill(data, items, at, min_ready)
 
 
 def run(cmd: str, git: bool, min_ready: int = MIN_READY, hours: float = STALE_H) -> list:

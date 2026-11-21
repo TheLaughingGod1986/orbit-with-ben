@@ -1,28 +1,10 @@
 #!/usr/bin/env python3
-"""Gate every scheduled Short before it airs (7 Oct 2026).
+"""Recompute current blocking gates for scheduled Shorts and longs in the next 14 days.
 
-`youtube:package` hard-stops a Short that fails gate_shorts_open.py, but Shorts uploaded before that rule,
-or by hand in Studio, never went through it, and the open-gate library didn't know about them, so new Shorts
-weren't compared against them. The Mini's 06:40 tracker job runs this after its snapshot:
-
-  - every Short in the snapshot that is private with a publishAt in the next --days days
-  - its export file from social/UPLOADS.json (repo-relative, resolved under --media-root)
-  - `gate_shorts_open.py check <file> --air-date <London date> --id <id>`
-  - with --add, a Short missing from the library is registered as `scheduled` (so later Shorts are compared to it)
-  - a FAIL that a recorded waiver covers exactly (<export stem>_gate.json beside the file) reads "PASS (waived)"
-  - a missing export the Chief has already ruled on (UPLOADS.json "knownNoFile": "<why, with the ruling>") reads
-    "KNOWN", not NO FILE, so a settled case stops raising the alarm every morning (J1320, 31 Oct 2026)
-  - NAS files (26 Oct 2026): macOS privacy stops the launchd job reading /Volumes (EPERM, "Operation not permitted"),
-    while agent sessions can. `--stage` (run from an agent session) copies each upcoming Short's NAS export, its
-    sidecar meta and every NAS file the meta names into --cache, with the meta rewritten to the local copies; the
-    06:40 run then checks the staged copy. A NAS file with no staged copy reads "NOT CHECKED", never FAIL.
-
-It writes a Markdown report (--out) and always exits 0: it reports, it never blocks the tracker. Claude reads the
-report at 07:10 and decides on any FAIL (reschedule or replace a scheduled Short; nothing here touches YouTube).
-
-  python3 gate_upcoming.py --snapshot 05_Analytics/owb/snapshots/2026-10-08.json \\
-      --uploads 00_Brand/Channel-Setup/social/UPLOADS.json --media-root ~/YouTube/orbit-with-ben \\
-      --out 05_Analytics/owb/UPCOMING_SHORTS_GATE.md --add
+The upload path uses the same publishing_gates.evaluate function. Findings are written
+as Markdown plus a JSON sidecar for scheduled_gates.py, which queues Chief fixes.
+No YouTube writes. Missing media/tools remain explicit coverage failures.
+Legacy --stage and --add remain available for the Shorts library/analytics adapter.
 """
 from __future__ import annotations
 
@@ -50,11 +32,11 @@ def london_date(iso: str) -> str:
 
 
 def upcoming(snapshot: dict, uploads: dict, now: datetime, days: int) -> list[dict]:
-    """Scheduled Shorts airing within `days`, soonest first. publishAt comes from the snapshot, else UPLOADS.json."""
+    """Scheduled videos airing within `days`, soonest first. publishAt comes from the snapshot, else UPLOADS.json."""
     reg = uploads.get("videos", {})
     out = []
     for v in snapshot.get("videos", []):
-        if v.get("format") != "short" or v.get("privacy") != "private":
+        if v.get("privacy") != "private":
             continue
         entry = reg.get(v["id"], {})
         if entry.get("retired"):
@@ -65,7 +47,7 @@ def upcoming(snapshot: dict, uploads: dict, now: datetime, days: int) -> list[di
         when = datetime.fromisoformat(at.replace("Z", "+00:00"))
         if now <= when <= now + timedelta(days=days):
             out.append({"id": v["id"], "title": v.get("title", ""), "publishAt": at, "air": london_date(at), "file": entry.get("file"),
-                        "length_test": bool(entry.get("lengthTest")),
+                        "length_test": bool(entry.get("lengthTest")), "format": v.get("format", "long"),
                         "known_no_file": entry.get("knownNoFile") or ""})
     return sorted(out, key=lambda r: r["publishAt"])
 
@@ -220,6 +202,9 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--stage", action="store_true", help="copy upcoming Shorts' NAS files into --cache, then exit (run from an agent session)")
     a = ap.parse_args(argv)
 
+    sys.path.insert(0, str(HERE.parents[2] / "scripts"))
+    from publishing_gates import evaluate
+    findings = []
     now = datetime.now(timezone.utc)
     uploads = json.loads(a.uploads.read_text())
     rows = upcoming(json.loads(a.snapshot.read_text()), uploads, now, a.days)
@@ -232,15 +217,15 @@ def main(argv: list[str] | None = None) -> int:
             print(stage_one(r["id"], f, a.cache))
         return 0
     lines = [
-        "# Upcoming Shorts: gate check",
+        "# Upcoming videos: blocking gate check",
         "",
-        f"Written by `gate_upcoming.py` at {now.astimezone(LONDON):%Y-%m-%d %H:%M} London for Shorts scheduled in the next {a.days} days. Don't edit by hand.",
+        f"Written by `gate_upcoming.py` at {now.astimezone(LONDON):%Y-%m-%d %H:%M} London for videos scheduled in the next {a.days} days. Don't edit by hand.",
         "",
     ]
     if not rows:
-        lines += ["No scheduled Shorts in the window.", ""]
+        lines += ["No scheduled Shorts or longs in the window.", ""]
     else:
-        lines += ["| Airs (London) | Short | In library | Gate |", "|---|---|---|---|"]
+        lines += ["| Airs (London) | Video | In Shorts library | Gate |", "|---|---|---|---|"]
         details = []
         missing = [t for t in ("ffprobe", "ffmpeg") if not shutil.which(t)]
         if missing:   # a tool problem on this machine, not a fault in any Short: say so instead of FAIL (8 Oct 2026)
@@ -250,9 +235,8 @@ def main(argv: list[str] | None = None) -> int:
             lib = in_library(r["id"])
             want = uploads.get("videos", {}).get(r["id"], {}).get("sha256")
             hit = staged(r["id"], f, a.cache, want) if f else None
-            meta_arg: list[str] = []
             if hit:
-                f, meta_arg = hit[0], ["--meta", str(hit[1])]
+                f = hit[0]
             blocked = []
             if f and not hit:
                 if str(f).startswith(NAS) and not readable(f):
@@ -278,33 +262,28 @@ def main(argv: list[str] | None = None) -> int:
             elif missing:
                 verdict = "NOT CHECKED"
             else:
-                if a.add and not lib:
+                if a.add and r["format"] == "short" and not lib:
                     code, out = run([sys.executable, str(GATE), "add", "--id", r["id"], "--date", r["air"], "--title", r["title"],
                                      "--file", str(f), "--status", "scheduled", "--source", "gate_upcoming"])
                     lib = code == 0 and in_library(r["id"])
                     if code:
                         details.append(f"### {r['id']}: library add failed\n\n```\n{out[-1500:]}\n```\n")
-                # The one Chief-OK'd 50-60 s length-test Short (UPLOADS.json "lengthTest": true; AGENTS.md Packaging, 11 Oct 2026)
-                # Run with --report-only so already-uploaded scheduled Shorts keep their existing PASS verdict while
-                # listing any new 60% stayed-to-watch rules they would fail under Details (J0918, 24 Oct 2026).
-                code, out = run([sys.executable, str(GATE), "check", str(f), "--air-date", r["air"], "--id", r["id"], "--report-only"]
-                                + meta_arg + (["--length-test"] if r.get("length_test") else []))
-                used = waived(f, fail_lines(out)) if code else None
-                stayed_notes = report_only_lines(out)
-                verdict = "PASS" if code == 0 else ("PASS (waived)" if used else "**FAIL**")
-                if used:
-                    details.append(f"### {r['id']}: FAIL waived\n\n" + "\n".join(f"- {w['fail']}: waived by {w.get('waived_by', '?')}" for w in used) + "\n")
-                elif code:
-                    details.append(f"### {r['id']}: FAIL\n\n```\n{out[-3000:]}\n```\n")
-                if stayed_notes:
-                    details.append(f"### {r['id']}: report-only (would fail 60% stayed gate)\n\n" + "\n".join(f"- {n}" for n in stayed_notes) + "\n")
+                result = evaluate(f, a.media_root, r["format"], r["air"], video_id=r["id"],
+                                  length_test=r.get("length_test", False),
+                                  meta_path=hit[1] if hit else None, short_run=run)
+                verdict = "PASS" if result["ok"] else "**FAIL**"
+                output = "\n".join(f"{c['gate']}: {c['output']}" for c in result['checks'])
+                details.append(f"### {r['id']}: {verdict}\n\n```\n{output}\n```\n")
+            findings.append(dict(id=r['id'], publishAt=r['publishAt'], ok=verdict == 'PASS',
+                                 output=details[-1] if verdict != 'PASS' and details else verdict))
             lines.append(f"| {r['air']} {london_time(r['publishAt'])} | [{r['title']}](https://youtu.be/{r['id']}) `{r['id']}` | {'yes' if lib else '**no**'} | {verdict} |")
         lines.append("")
         if details:
             lines += ["## Details", ""] + details
     a.out.parent.mkdir(parents=True, exist_ok=True)
     a.out.write_text("\n".join(lines) + "\n")
-    print(f"gate_upcoming: {len(rows)} scheduled Short(s) checked -> {a.out}")
+    a.out.with_suffix(".json").write_text(json.dumps(findings, indent=2))
+    print(f"gate_upcoming: {len(rows)} scheduled video(s) checked -> {a.out}")
     return 0
 
 

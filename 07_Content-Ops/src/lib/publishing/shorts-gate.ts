@@ -37,3 +37,17 @@ export function runShortsGate(
   const r = run("python3", args);
   return { ok: r.status === 0, exitCode: r.status, airDate, output: `${r.stdout}${r.stderr}`.trim() };
 }
+
+/** Shared current blocking gates for both formats, before credentials or an upload. */
+export function runPublishingGates(
+  opts: { videoPath: string; repoRoot: string; format: "shorts" | "longform"; scheduledAt?: Date | null; lengthTest?: boolean },
+  run: GateRunner = defaultRunner,
+): GateResult {
+  const airDate = new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit" }).format(opts.scheduledAt ?? new Date());
+  const args = [path.join(opts.repoRoot, "scripts/publishing_gates.py"),
+    "--video", opts.videoPath, "--repo", opts.repoRoot,
+    "--format", opts.format === "shorts" ? "short" : "long", "--air-date", airDate,
+    ...(opts.lengthTest ? ["--length-test"] : [])];
+  const r = run("python3", args);
+  return { ok: r.status === 0, exitCode: r.status, airDate, output: `${r.stdout}${r.stderr}`.trim() };
+}
