@@ -293125,10 +293125,10 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-21T02:32Z",
+      "eta": "2026-11-21T04:32Z",
       "created_by": "gemini",
       "created_at": "2026-11-20T23:56Z",
       "result": "",
@@ -293172,6 +293172,11 @@
           "at": "2026-11-21T02:32Z",
           "by": "gemini",
           "what": "reopened: Acting Chief (Gemini) closing J3262 with PASS ruling after inspecting A+B, style_sheet, 168x94 previews, Flow 0-credit logs, and merging HOS PR #705 (614b507d)."
+        },
+        {
+          "at": "2026-11-21T02:32Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Waiting for the Chief to score the two Gravity thumbnail options",
@@ -293179,7 +293184,15 @@
       "plain": "Build two house-style thumbnail options for the Gravity film and run the preview and style checks",
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T02:32Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3263",
