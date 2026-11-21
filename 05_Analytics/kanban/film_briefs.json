@@ -1631,6 +1631,96 @@
           "whenText": "Due 2026-12-11 18:00 London"
         }
       ]
+    },
+    "WW2:001": {
+      "updated": "2026-11-20T20:47Z",
+      "mood": "ready",
+      "done": "Script and 6 primary sources (J2991), Ben's voiceover (J2992, 27m36s, 99.88% Scribe match), 79 official US/UK archive photos with full provenance, code-drawn maps and diagrams, 3-cue custom score, thumbnail B (FLOATING PORT, IWM BU 1024; A retained for Test & Compare), reconciled upload package, and acting-Chief QA pass on v43 (Gemini, 20 Nov: -15.2 LUFS, -1.6 dBFS peak, 0 black/silence, 14-clip audio+visual check across all 6 chapters).",
+      "holdup": "Nothing is stuck. Ready for your watch on v43 (720p stream on this card, 1080p master + package in WW2 UAT). No YouTube upload until you tick OK.",
+      "steps": [
+        {
+          "who": "Studio",
+          "what": "script and sources",
+          "job": "J2991",
+          "kind": "script",
+          "done": true,
+          "doneText": "done (PR #996)"
+        },
+        {
+          "who": "Gemini",
+          "what": "narration in Ben's voice",
+          "job": "J2992",
+          "kind": "vo",
+          "done": true,
+          "doneText": "27m36s, 99.88% match"
+        },
+        {
+          "who": "Gemini",
+          "what": "picture, maps, edit, thumbnail and QA pass (v43)",
+          "job": "J2993",
+          "kind": "assembly",
+          "done": true,
+          "doneText": "acting-Chief PASS 20 Nov"
+        },
+        {
+          "who": "Ben",
+          "what": "watch v43 (27m36s) and tick OK or note changes",
+          "when": "2026-11-28",
+          "whenText": "before Tue 1 Dec"
+        },
+        {
+          "who": "Studio",
+          "what": "Private upload and schedule for Tue 1 Dec 17:00 London after Ben's OK",
+          "when": "2026-12-01",
+          "whenText": "Tue 1 Dec 17:00"
+        }
+      ],
+      "you": "Watch v43 (27m36s) and tick OK or note changes before Tue 1 Dec.",
+      "youWhen": "2026-11-28",
+      "youShort": "watch v43 before Tue 1 Dec",
+      "timing": "Planned air date Tue 1 Dec 17:00 London (Pilot 1).",
+      "line": "Finished v43 master (27m36s, 1080p25, 79 verified US/UK archive photos, code-drawn maps, custom 3-cue score, Thumbnail B: FLOATING PORT) passed acting-Chief QA on 20 Nov and is ready on your watch button and in WW2 UAT. Held from YouTube until your OK."
+    },
+    "WW2:002": {
+      "updated": "2026-11-20T22:12Z",
+      "mood": "ready",
+      "done": "Locked script and narration are already done. The v05 picture cut is 24m03s at 1080p. The four picture problems from the earlier watch are fixed on the finished frames. Thumbnail B says LIBERATOR. The upload package is written and held.",
+      "holdup": "Ready for your watch. The play button is the 720p copy. The full file is in WW2 UAT. Nothing goes to YouTube until you tick OK.",
+      "steps": [
+        {
+          "who": "Studio",
+          "what": "script and narration",
+          "job": "J2995",
+          "kind": "vo",
+          "done": true,
+          "doneText": "narration locked"
+        },
+        {
+          "who": "Cursor",
+          "what": "picture fixes, thumbnail and technical checks",
+          "job": "J2996",
+          "kind": "assembly",
+          "done": true,
+          "doneText": "v05 ready for your watch"
+        },
+        {
+          "who": "Ben",
+          "what": "watch the Atlantic film and tick OK or note changes",
+          "when": "2026-11-27",
+          "whenText": "before 5 Dec"
+        },
+        {
+          "who": "Studio",
+          "what": "upload only after your OK",
+          "when": "2026-12-05",
+          "whenText": "planned 5 Dec"
+        }
+      ],
+      "you": "Watch the Atlantic film (24 minutes) and tick OK or note changes.",
+      "youWhen": "2026-11-27",
+      "youShort": "watch the Atlantic film",
+      "timing": "Planned air date 5 December 2026. No YouTube time is set.",
+      "line": "The 24-minute Atlantic cut is ready for your watch, with the LIBERATOR thumbnail and the upload package held. Nothing is uploaded."
     }
   }
 }

@@ -318,6 +318,8 @@ def git_transaction(write, message, tries=3):
     times; even the last loss rolls back the verified commit. Other
     unpublished commits are never replayed or dropped.
     """
+    from engine_guard import require_active
+    require_active(ROOT)
     common = git("rev-parse", "--git-common-dir")
     if common.returncode:
         return None, "not a Git checkout"
@@ -422,6 +424,8 @@ def with_git(path, change, message, films, tries=3):
 
 
 def main(argv=None):
+    from engine_guard import require_active
+    require_active()
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--films", default=str(FILMS), help=argparse.SUPPRESS)
     sub = ap.add_subparsers(dest="cmd", required=True)

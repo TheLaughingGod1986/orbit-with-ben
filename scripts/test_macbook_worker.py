@@ -908,18 +908,6 @@ class AsksTheChannelLoader(unittest.TestCase):
             self.assertIn(line + ("\n" if not line.endswith(":") else ""), p)
         self.assertNotIn("{", p)                                   # every placeholder was filled
 
-    def test_clones_urls_and_ports_come_from_the_channel_files(self):
-        self.assertEqual(mw.URLS, {"orbit-with-ben": "https://github.com/TheLaughingGod1986/orbit-with-ben.git",
-                                   "history-of-science": "https://github.com/TheLaughingGod1986/history-of-science.git",
-                                   "ww2-channel": "https://github.com/TheLaughingGod1986/ww2-channel"})
-        self.assertEqual(mw.studio_clone().name, "orbit-with-ben")
-        self.assertEqual([mw.channel_clone(s).name for s in mw.other_slugs()], ["history-of-science", "ww2-channel"])
-        self.assertEqual(mw.STUDIO, mw.studio_clone().parent / mw.STUDIO.name)       # the constants are built the same way
-        self.assertEqual(mw.CDP_PORTS, ("9223", "9222"))
-        # the clone's folder is the repo's name on GitHub, not the name of Ben's own folder for it
-        self.assertEqual(mw.clone_name("hos"), "history-of-science")
-        self.assertEqual(mw.clone_name("ww2"), "ww2-channel")
-
     def test_a_third_channel_gets_its_own_clone_its_line_in_the_brief_and_its_port(self):
         with self.sky():
             self.assertEqual(mw.other_slugs(), ["hos", "ww2", "sky"])
@@ -1011,6 +999,22 @@ class AsksTheChannelLoader(unittest.TestCase):
         # the list an unattended Claude may use without asking, as it stood before this change
         self.assertEqual(len(mw.CLAUDE_ALLOWED_TOOLS), ALLOWED_BEFORE_J2526)
         self.assertFalse(any("merge" in r or "pull" in r for r in mw.CLAUDE_ALLOWED_TOOLS))
+
+
+class CurrentRegistryClones(unittest.TestCase):
+    def test_clones_urls_and_ports_come_from_the_channel_files(self):
+        import channels
+        studio_name = channels.studio_github().split("/")[-1]
+        expected = {studio_name: "https://github.com/" + channels.studio_github() + ".git"}
+        expected.update({mw.clone_name(s): channels.get(s)["repo"]["url"] for s in mw.other_slugs()})
+        self.assertEqual(mw.URLS, expected)
+        self.assertEqual(mw.studio_clone().name, studio_name)
+        self.assertEqual([mw.channel_clone(s).name for s in mw.other_slugs()],
+                         [mw.clone_name(s) for s in mw.other_slugs()])
+        self.assertEqual(mw.STUDIO, mw.studio_clone().parent / mw.STUDIO.name)       # the constants are built the same way
+        self.assertEqual(mw.CDP_PORTS, ("9223", "9222"))
+        # the clone's folder is the repo's name on GitHub, not the name of Ben's own folder for it
+        self.assertEqual(mw.clone_name("hos"), "history-of-science")
 
 
 class FilmStoreOnTheNas(unittest.TestCase):

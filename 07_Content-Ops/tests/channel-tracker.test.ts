@@ -363,6 +363,18 @@ describe("sign-in target", () => {
     expect(t).toMatchObject({ envKey: "YT_ANALYTICS_REFRESH_TOKEN_HOS", channelId: "UCXp7HkBIl1LgaznXuZHJyRg" });
     expect(t.scopes).toEqual(["https://www.googleapis.com/auth/youtube.readonly", "https://www.googleapis.com/auth/yt-analytics.readonly"]);
     expect(() => authTarget(["--analytics", "x"])).toThrow();
+    expect(() => authTarget(["--upload", "owb"])).toThrow("--upload needs ww2");
+    const prev = process.env.YT_CHANNEL_ID_WW2;
+    delete process.env.YT_CHANNEL_ID_WW2;
+    expect(() => authTarget(["--upload", "ww2"])).toThrow("Set YT_CHANNEL_ID_WW2");
+    process.env.YT_CHANNEL_ID_WW2 = "UCu94mInMFosxu3W0H6jlI6Q";
+    const up = authTarget(["--upload", "ww2"]);
+    expect(up.envKey).toBe("YOUTUBE_REFRESH_TOKEN_WW2");
+    expect(up.channelId).toBe("UCu94mInMFosxu3W0H6jlI6Q");
+    expect(up.scopes).toContain("https://www.googleapis.com/auth/youtube.upload");
+    expect(authTarget([]).envKey).toBe("YOUTUBE_REFRESH_TOKEN");
+    if (prev === undefined) delete process.env.YT_CHANNEL_ID_WW2;
+    else process.env.YT_CHANNEL_ID_WW2 = prev;
   });
 });
 
@@ -434,5 +446,29 @@ describe("one-glance viewing and monetization evidence", () => {
     const now=snap("2026-10-19",100,13,[video("oldlong",100,"2024-01-01T10:00:00Z","long")]);
     now.analytics={through:"2026-10-17",last7:{},last28:{},lifetime:{oldlong:{views:100,minutes:60000,subs:0,avgViewSeconds:10,avgViewPct:10}}};
     expect(buildReport("owb",[now],null).overview?.longHoursEstimate).toBeNull();
+  });
+});
+
+describe("detached report destinations", () => {
+  it("keeps reports and CTR sidecars in channel trees and the dashboard in the engine", () => {
+    const base = fs.mkdtempSync(path.join(os.tmpdir(), "tracker-detached-"));
+    try {
+      const engine = path.join(base, "engine/05_Analytics");
+      const roots = { owb: path.join(base, "orbit/05_Analytics/owb"), hos: path.join(base, "history/05_Analytics/hos"), ww2: path.join(base, "war/05_Analytics/ww2") };
+      for (const key of ["owb", "hos"] as const) {
+        fs.mkdirSync(path.join(roots[key], "snapshots"), { recursive: true });
+        const s = { ...snap("2026-10-05", 10, 1, [video("fixture0001", 10)]), channel: key };
+        fs.writeFileSync(path.join(roots[key], "snapshots/2026-10-05.json"), serialiseSnapshot(s));
+        fs.writeFileSync(path.join(roots[key], "studio_ctr.json"), JSON.stringify({ videos: { fixture0001: { views: 123, impressions: 456 } } }));
+      }
+      run(engine, key => roots[key]);
+      const data = JSON.parse(fs.readFileSync(path.join(engine, "dashboard/data.json"), "utf8"));
+      expect(data.channels).toHaveLength(2);
+      for (const key of ["owb", "hos"] as const) {
+        expect(fs.existsSync(path.join(roots[key], "REPORT.md"))).toBe(true);
+        expect(fs.existsSync(path.join(engine, key))).toBe(false);
+        expect(data.channels.find((r: { channel: string }) => r.channel === key).videos[0]).toMatchObject({ studioViews: 123, impressions: 456 });
+      }
+    } finally { fs.rmSync(base, { recursive: true, force: true }); }
   });
 });

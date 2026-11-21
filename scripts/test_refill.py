@@ -50,10 +50,25 @@ class Refill(unittest.TestCase):
         self.assertEqual(caps.call_count, 1)
 
     def test_backlog_file_is_valid(self):
-        for it in refill.load_backlog():
+        items = refill.load_backlog()
+        for it in items:
             self.assertIn(it["needs"], jobs.NEEDS)
             self.assertIn(it["kind"], jobs.routing.KINDS)
             self.assertNotEqual(it["kind"], "video")  # backlog never spends on generation
+        sr = next(it for it in items if it["key"] == "search-research")
+        self.assertEqual(sr["needs"], "cloud")
+        self.assertTrue(sr.get("cloud_only"))
+
+    def test_refill_copies_cloud_only_and_mini_only_pins(self):
+        d = empty()
+        items = [
+            {"key": "sr", "title": "search research", "needs": "cloud", "cloud_only": True, "body": "", "kind": "review", "every_h": 168},
+            {"key": "mo", "title": "mini pinned", "needs": "mini", "mini_only": True, "body": "", "kind": "studio", "every_h": 24},
+        ]
+        refill.do_refill(d, items, T0)
+        by_key = {j["backlog"]: j for j in d["jobs"]}
+        self.assertTrue(by_key["sr"].get("cloud_only"))
+        self.assertTrue(by_key["mo"].get("mini_only"))
 
 
 class Escalate(unittest.TestCase):

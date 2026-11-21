@@ -66,6 +66,16 @@ class PlanBoardTest(unittest.TestCase):
         self.assertFalse(any(s["needsYou"] for s in ww2["steps"]))
         self.assertEqual(ww2["card"]["score"], "No film is public yet.")
         self.assertEqual(ww2["baseline"]["best"], "No long film yet")
+        hos = block["plans"][3]
+        self.assertEqual(hos["id"], "hos-search-2027-01")
+        self.assertEqual(hos["channel"], "hos")
+        self.assertEqual(hos["steps"][0]["stand"], "Waiting for your lock")
+        self.assertTrue(hos["steps"][0]["needsYou"])
+        self.assertIn("1 thing needs you:", hos["card"]["needs"])
+        self.assertEqual(hos["baseline"]["best"], "Best long so far: 162 views")
+        self.assertEqual(hos["baseline"]["showings"],
+                         "All 7 longs: about 2,185 showings (read 20 Nov)")
+        self.assertEqual(len(hos["steps"]), 9)
 
     def test_stands_from_jobs_and_the_tracker(self):
         plans = json.loads((ROOT / "studio" / "plan.json").read_text())

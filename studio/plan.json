@@ -136,7 +136,8 @@
         "what": "After the last December result: the winning kind of film plus the top search topics. One line to Ben.",
         "when": "2026-12-30T18:00Z",
         "jobs": [
-          "J3219"
+          "J3219",
+          "J3251"
         ]
       },
       {
@@ -236,7 +237,7 @@
         "id": "ww2-001",
         "name": "Pilot 1: How Britain Built Two Harbours in Secret and Floated Them to Normandy",
         "what": "Mulberry A & B artificial harbours (65 chars): 212 6,000-ton concrete caissons, floating Whale roadways, the June 1944 gale and PLUTO. IWM + US NARA photos & code maps; 4.88M / 1.94M / 973K neighbours; thumb 'BUILT IN 12 DAYS'; 25 min (~20,000 voice chars, Slot 1 of 2).",
-        "when": "2026-12-01T17:00Z",
+        "when": "2026-11-24T17:00Z",
         "film": "001",
         "jobs": [
           "J2991",
@@ -248,7 +249,7 @@
         "id": "ww2-002",
         "name": "Pilot 2: How the Allies Closed the U-Boats' Safest Hunting Ground",
         "what": "Closing the Mid-Atlantic air gap in 'Black May' 1943 (64 chars): VLR B-24 Liberators, escort carriers, 10 cm radar and HF/DF sinking 43 U-boats in one month. IWM Coastal Command + US Navy photos & range-ring maps; 4.13M / 1.59M / 1.30M neighbours; 25 min (~20,000 voice chars, Slot 2 of 2).",
-        "when": "2026-12-05T17:00Z",
+        "when": "2026-11-28T17:00Z",
         "film": "002",
         "jobs": [
           "J2994",
@@ -260,7 +261,7 @@
         "id": "ww2-003",
         "name": "Pilot 3: Why America's Most Expensive WW2 Weapon Wasn't the Atomic Bomb",
         "what": "America's $3.0B bomber gamble vs the $1.9B Manhattan Project (65 chars): pressurised crew tunnels, GE analog gun computers, magnesium R-3350 fires, the snowy 'Battle of Kansas' and Tokyo's 200-mph jet stream. USAAF NARA + LoC colour archive; 4.02M / 1.96M / 1.20M neighbours; thumb '$3 BILLION GAMBLE'; 26 min (~20,800 chars — script & harvest £0 now, voice after ElevenLabs upgrade/renewal).",
-        "when": "2026-12-08T17:00Z",
+        "when": "2026-12-01T17:00Z",
         "film": "003",
         "jobs": [
           "J2997",
@@ -271,7 +272,7 @@
         "id": "ww2-004",
         "name": "Film 4: Why America's Submarine Torpedoes Failed for 21 Months in WW2",
         "what": "The Mark 14 torpedo scandal in the Pacific, Dec 1941 to Sep 1943 (61 chars): running 10 feet too deep, faulty magnetic exploders, crushed contact pins, and unauthorized live tests at Maui and Fremantle. US NHHC + NARA submarine archive; 1.67M / 1.43M / 1.32M neighbours.",
-        "when": "2026-12-12T17:00Z",
+        "when": "2026-12-05T17:00Z",
         "film": "004",
         "jobs": [
           "J3000"
@@ -281,7 +282,7 @@
         "id": "ww2-005",
         "name": "Film 5: How an Old Destroyer Became a Bomb to Keep Tirpitz Out of the Atlantic",
         "what": "Operation Chariot at St Nazaire, March 1942 (61 chars): disguising the 1919 destroyer HMS Campbeltown with 4.25 tons of delayed-fuse explosives to deny Tirpitz the Normandie dry dock. UK IWM Admiralty + TNA files; 8.19M / 4.57M / 1.30M neighbours.",
-        "when": "2026-12-15T17:00Z",
+        "when": "2026-12-08T17:00Z",
         "film": "005",
         "jobs": [
           "J3001"
@@ -291,7 +292,7 @@
         "id": "ww2-006",
         "name": "Film 6: Why Britain Built Its Fastest WW2 Bomber Out of Plywood and Balsa",
         "what": "The de Havilland DH.98 Mosquito (65 chars): unarmed birch-and-balsa fuselages moulded in furniture workshops, carrying a 4,000-lb Cookie bomb to Berlin at 400 mph with a 0.7% loss rate. UK IWM Air Ministry + TNA archive; 5.39M / 3.11M / 2.39M neighbours.",
-        "when": "2026-12-19T17:00Z",
+        "when": "2026-12-12T17:00Z",
         "film": "006",
         "jobs": [
           "J3002"
@@ -350,6 +351,126 @@
         "at": "2026-11-17",
         "by": "Ben",
         "text": "Its own GitHub repo, fully decoupled."
+      }
+    ]
+  },
+  {
+    "id": "hos-search-2027-01",
+    "channel": "hos",
+    "title": "History of Science from January: films English-speaking adults search for",
+    "agreed": "2026-11-20",
+    "goal": "Long videos found through search by adults in the US, UK, Canada and Australia, building to thousands of views each.",
+    "why": [
+      "Full HOS audit (J3223, 20 Nov): all 7 longs together got 2,185 showings and 233 settled views (best long 162 on Periodic Table; the other 6 averaged 12 views).",
+      "Audience is already adult (78.8% aged 25-54, 70.2% male), but reported Anglosphere views are 86% UK (811) with US at only 2.5% (109 lifetime; below threshold in the last 28 days) while school-cram traffic in India and SE Asia outnumbers US+CA+AU by 3.3x.",
+      "Story-first titles and health/vaccine topics failed reach, while US Education long-form pays about $3.42 mid RPM ($2.05-$5.47, vidIQ).",
+      "vidIQ + signed-out US top-10 research (J3224) found 4 clusters with 7/10-10/10 results-page gaps and sub-50k US breakouts (5x-77x): Electricity & Rivalries, Nuclear & Modern Physics, Accidental Inventions, and Breakthrough & Lost Engineering."
+    ],
+    "baseline": {
+      "bestLongViews": 162,
+      "longShowingsTotal": 2185,
+      "longs": 7,
+      "readAt": "2026-11-20"
+    },
+    "steps": [
+      {
+        "id": "ben-ok",
+        "name": "the History of Science 2027 search-led plan",
+        "what": "Ben's OK required (LEARNINGS rule 34 item 7) before any HOS rule, backlog or schedule change takes effect. One-page summary: 05_Analytics/hos/search_research/2026-11-20_SUMMARY_FOR_BEN.md; full table and 4 clusters: 05_Analytics/hos/search_research/2026-11-20.md. Films 008-011 and 013 stay untouched through December.",
+        "when": "",
+        "needsBen": "Approve the 2027 History of Science search-led plan (4 Anglosphere adult clusters, cadence, first 4 films, and 14-day test bar) before anything changes on HOS",
+        "jobs": [
+          "J3223",
+          "J3224"
+        ]
+      },
+      {
+        "id": "research",
+        "name": "Weekly HOS search research (after Ben's OK)",
+        "what": "Run the 8-step Anglosphere adult search method weekly (up to 50-100 vidIQ credits, US/UK/CA/AU top markets, signed-out top-10 gap, <50k subs 5x+ outliers) to keep the 4 clusters ranked and stocked.",
+        "when": "2026-12-14T09:00Z",
+        "jobs": []
+      },
+      {
+        "id": "first",
+        "name": "Film 1: Thomas Edison vs Nikola Tesla: How AC Won the War of Currents",
+        "what": "Cluster 1 (Electricity & Rivalries) · Thu 7 Jan 2027, 18:00 London (7-9 min, normal publish). Targets 'thomas edison vs nikola tesla' (comp 44, 9/10 gap) + 'thomas edison' (28.7k, US 30%) + 'nikola tesla documentary' (29.2k, comp 37). 14-day bar: 500+ keep, 162-499 one more, under 162 drop/change.",
+        "when": "2027-01-07T18:00Z",
+        "jobs": [],
+        "test": {
+          "days": 14,
+          "keep": 500,
+          "drop": 162
+        }
+      },
+      {
+        "id": "film-2",
+        "name": "Film 2: Trinity Test Explained: The Calculation That Nearly Stopped the Bomb",
+        "what": "Cluster 2 (Nuclear & Modern Physics) · Thu 14 Jan 2027, 18:00 London. Targets 'trinity test' (21.5k, comp 38, 9/10 gap) + 'manhattan project' (35.2k, US 18% + GB 9%). Strictly lab physics discovery story, no WW2 military overlap. Same 14-day bar (500 keep / 162 drop).",
+        "when": "2027-01-14T18:00Z",
+        "jobs": [],
+        "test": {
+          "days": 14,
+          "keep": 500,
+          "drop": 162
+        }
+      },
+      {
+        "id": "film-3",
+        "name": "Film 3: Accidental Inventions That Changed the World (5 Mistakes That Worked)",
+        "what": "Cluster 3 (Accidental Inventions) · Thu 21 Jan 2027, 18:00 London. Targets 'inventions that changed the world' (35.9k, US 23%, 10/10 gap) + 'accidental discoveries' (9.4k, comp 39, +93%, 9/10 gap). Same 14-day bar (500 keep / 162 drop).",
+        "when": "2027-01-21T18:00Z",
+        "jobs": [],
+        "test": {
+          "days": 14,
+          "keep": 500,
+          "drop": 162
+        }
+      },
+      {
+        "id": "film-4",
+        "name": "Film 4: Wright Brothers First Flight: The 1901 Wind Tunnel That Solved Lift",
+        "what": "Cluster 4 (Breakthrough & Lost Engineering) · Thu 28 Jan 2027, 18:00 London. Targets 'wright brothers first flight' (19.0k, comp 45, 10/10 gap) + 'the wright brothers' (7.7k, +75%). Same 14-day bar (500 keep / 162 drop).",
+        "when": "2027-01-28T18:00Z",
+        "jobs": [],
+        "test": {
+          "days": 14,
+          "keep": 500,
+          "drop": 162
+        }
+      },
+      {
+        "id": "cadence",
+        "name": "Weekly cadence: 1 search-led long + 4 Shorts a week",
+        "what": "Long every Thursday 18:00 London (7-9 min, normal publish). Four 16-19 s 3D cartoon question Shorts a week at 11:30 London (Fri, Sat, Sun, Tue): Sat & Fri promote the week's long; Sun & Tue rotate cluster winners or test next month's candidate topics before scripting.",
+        "when": "2027-01-08T11:30Z",
+        "jobs": []
+      },
+      {
+        "id": "terms",
+        "name": "Our own search terms and Anglosphere read",
+        "what": "Monthly YouTube Analytics read of HOS search terms and US+UK+CA+AU share; double down on growing adult Anglosphere clusters and drop any cluster after ~3 films below the 162-view bar.",
+        "when": "2027-02-01T09:00Z",
+        "jobs": []
+      },
+      {
+        "id": "review",
+        "name": "Six-week review",
+        "what": "Read 14-day views, impressions, CTR and US+UK+CA+AU share across the first 6 search-led longs (7 Jan to 11 Feb). Keep winning clusters, cut weak ones, and decide whether to raise cadence or test one 45-60 min calm science-history compilation (after Orbit's Dec tests).",
+        "when": "2027-02-18T18:00Z",
+        "jobs": []
+      }
+    ],
+    "decisions": [
+      {
+        "at": "2026-11-20",
+        "by": "Audit (J3223)",
+        "text": "Full HOS audit completed: 4,352 settled views (94.5% Shorts, 5.4% longs), best long 162 views, 78.8% aged 25-54, US only 2.5% of lifetime views."
+      },
+      {
+        "at": "2026-11-20",
+        "by": "Proposed (J3224)",
+        "text": "Search-led research and proposed 2027 HOS plan added to the board waiting for Ben's OK (LEARNINGS rule 34 item 7). Nothing changes on HOS until Ben says yes."
       }
     ]
   }

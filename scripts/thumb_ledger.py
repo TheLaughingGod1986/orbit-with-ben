@@ -34,6 +34,8 @@ def load(path=LEDGER) -> dict:
 
 
 def save(d: dict, path=LEDGER) -> None:
+    from engine_guard import require_active
+    require_active()
     path.write_text(json.dumps(d, indent=2, ensure_ascii=False) + "\n")
 
 
@@ -104,6 +106,8 @@ def verdict(d: dict) -> tuple:
 
 
 def main(argv=None) -> int:
+    from engine_guard import require_active
+    require_active()
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="cmd", required=True)
     a = sub.add_parser("add")

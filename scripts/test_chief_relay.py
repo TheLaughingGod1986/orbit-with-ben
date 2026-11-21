@@ -50,7 +50,8 @@ class Relay(unittest.TestCase):
         notify.chmod(notify.stat().st_mode | stat.S_IEXEC)
         self.env = dict(os.environ)
         os.environ.update({"CHIEF_CLAUDE_BEAT_URL": "", "CHIEF_CLAUDE_BEAT_FETCH_MIN": "999999", "CHIEF_NOTIFY": str(notify), "CHIEF_HOURS": "0-24", "CHIEF_SWEEP_HOURS": "0-24", "CHIEF_CHAIN": "chief,cursor,codex",
-                           "CHIEF_HEARTBEAT": "0", "CHIEF_MIN_FREE_MB": "0"})  # never push a heartbeat from a test run on the Mini
+                           "CHIEF_HEARTBEAT": "0", "CHIEF_MIN_FREE_MB": "0",
+                           "CHIEF_OFFLOAD_GB": "0"})  # no live heartbeat or scratch offload from unit tests
         self.cursor = self.fake("cursor", 'echo "cursor did J0001"')
         self.codex = self.fake("codex", 'echo "codex did J0001"')
         os.environ["CURSOR_AGENT_BIN"], os.environ["CODEX_BIN"] = str(self.cursor), str(self.codex)
@@ -665,6 +666,20 @@ class Relay(unittest.TestCase):
         self.assertIn("--model grok-4.7", (self.tmp / "cursor.args").read_text())
         self.assertIn("DISPATCH PRIORITY: claim only J0302", (self.tmp / "cursor.args").read_text())
 
+    def test_cloud_only_job_is_not_rerouted_when_claude_is_out(self):
+        # J3231 (20 Nov 2026): vidIQ search-research needs Claude cloud and must not walk to Mini/MacBook workers.
+        q = self.claude_setup('{"jobs": ['
+                              '{"id": "J0301", "kind": "review", "status": "open", "needs": "cloud"}, '
+                              '{"id": "J0306", "kind": "review", "status": "open", "needs": "cloud", "cloud_only": true}]}')
+        cr.mark_down("claude", "usage limit", T0 + 120 * MIN, T0)
+        cr.seen("chief", T0 - 10 * MIN)
+        cr.cmd_run(T0)
+        self.assertEqual(self.job(q, "J0301").get("for"), "cursor")
+        j = self.job(q, "J0306")
+        self.assertEqual(j["needs"], "cloud")
+        self.assertNotIn("for", j)
+        self.assertNotIn("rerouted_from", j)
+
     def test_with_cursor_down_the_claude_job_goes_to_gemini_before_codex(self):
         os.environ["AGY_BIN"] = str(self.fake("agy", f'echo "$@" > {self.tmp}/agy.args; echo "gemini did it"'))
         q = self.claude_setup('{"jobs": [{"id": "J0308", "kind": "listing", "status": "open", "needs": "cloud"}]}')
@@ -1011,8 +1026,14 @@ class Relay(unittest.TestCase):
             "            'checkouts': [{'repo': '/x/orbit-with-ben', 'ok': True, 'actions': ['moved 7 untracked file(s)']}],\n"
             "            'biggest': []}\n")
         os.environ["CHIEF_MIN_FREE_MB"] = str(10 ** 9)  # the disk counts as low
-        self.assertTrue(cr.self_heal(T0))
-        self.assertTrue(cr.self_heal(T0 + 5 * MIN))  # throttled: no second repair within 30 min
+        # The fake repair cannot change the host disk. Model both readings so a
+        # crowded test volume does not turn the throttle check into a disk-full test.
+        os.environ["CHIEF_HARD_MIN_FREE_MB"] = "300"
+        os.environ["CHIEF_HEAL_MIN"] = "30"
+        with mock.patch.object(cr.shutil, "disk_usage", side_effect=[
+                mock.Mock(free=110 * 1024 * 1024), mock.Mock(free=25000 * 1024 * 1024)]):
+            self.assertTrue(cr.self_heal(T0))
+            self.assertTrue(cr.self_heal(T0 + 5 * MIN))  # throttled: no second repair within 30 min
         self.assertEqual(calls.read_text(), "x")
         post = self.posts.read_text()
         self.assertIn("repaired the Mini", post)
@@ -1470,7 +1491,7 @@ class TheBriefIsBuiltFromTheChannelFiles(TodaysLayout):
         self.assertIn('env[channels.studio_env("AGENT")] = agent', src)
         self.assertIn('f"https://raw.githubusercontent.com/{channels.studio_github()}/"', src)
         self.assertEqual(cr.channels.studio_env("AGENT"), "OWB_AGENT")
-        self.assertEqual(cr.channels.studio_github(), "TheLaughingGod1986/orbit-with-ben")
+        self.assertEqual(cr.channels.studio_github(), cr.channels._studio_section()["github"])
 
     def test_the_spend_ledger_and_the_film_folders_are_where_they_were(self):
         with mock.patch.object(cr, "STUDIO", pathlib.Path("/o")), mock.patch.object(cr, "HOME", pathlib.Path("/Users/x")), \
@@ -1533,9 +1554,11 @@ class TheBriefOnceTheStudioHasItsOwnRepo(unittest.TestCase):
 
     def test_the_studios_checkout_is_found_by_its_repos_name_or_the_registrys_own(self):
         home = pathlib.Path("/Users/x")
-        self.assertEqual(cr.channels.studio_checkout(home), home / "YouTube" / "orbit-with-ben")   # named after its repo
+        with mock.patch.object(cr.channels, "_studio_section", return_value={"github": "someone/engine"}):
+            self.assertEqual(cr.channels.studio_checkout(home), home / "YouTube" / "engine")
         kept = dict(cr.channels._studio_section(), github="someone/studio", checkouts=["Studio", "studio"], env="STUDIO_REPO")
-        with mock.patch.object(cr.channels, "_studio_section", lambda: kept):
+        with mock.patch.object(cr.channels, "_studio_section", lambda: kept), \
+                mock.patch.dict(os.environ, {"STUDIO_REPO": ""}):
             self.assertEqual(cr.channels.studio_checkout(home), home / "YouTube" / "Studio")
             self.assertEqual(cr.channels.studio_repo(), {"url": "https://github.com/someone/studio.git", "env": "STUDIO_REPO",
                                                          "checkouts": ["Studio", "studio"]})
