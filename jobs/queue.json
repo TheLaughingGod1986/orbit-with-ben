@@ -295282,13 +295282,26 @@
           "at": "2026-11-21T12:01Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-21T12:01Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-21T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Verify readiness: Wait for J3261 (HOS 009 v02 re-edit) and J3262 (HOS 009 thumbnails A+B) before finishing J2036 QA and chapters",
       "kind": "review",
       "recheck_of": "J2036",
       "due": "2026-11-15T18:00:00+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3287",
