@@ -297267,13 +297267,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-21T17:42Z",
-      "eta": "2026-11-21T18:02Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-21T17:36Z",
-      "result": "",
+      "result": "parked for Chief: MacBook HOS Studio browser (CDP 9222, ~/.hos-chrome-cdp) is signed out of YouTube Studio (UCXp7HkBIl1LgaznXuZHJyRg redirects to accounts.google.com/v3/signin/identifier). macbook-2 released J3312 at 17:42Z for the Mini and macbook immediately re-claimed it because MACBOOK_CDP includes 9222; blocked to stop the MacBook claim loop. Pin J3312 mini_only and reopen for the Mac Mini (signed-in HOS CDP 9222) to run this read-only 6 h check of Bks_JLId1ew; Ben also needs to re-sign-in on MacBook CDP 9222 for future HOS Studio jobs. No Studio edits, no launch record written, £0.",
       "history": [
         {
           "at": "2026-11-21T17:36Z",
@@ -297299,6 +297299,11 @@
           "at": "2026-11-21T17:42Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T17:48Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: MacBook HOS Studio browser (CDP 9222, ~/.hos-chrome-cdp) is signed out of YouTube Studio (UCXp7HkBIl1LgaznXuZHJyRg redirects to accounts.google.com/v3/signin/identifier). macbook-2 released J3312 at 17:42Z for the Mini and macbook immediately re-claimed it because MACBOOK_CDP includes 9222; blocked to stop the MacBook claim loop. Pin J3312 mini_only and reopen for the Mac Mini (signed-in HOS CDP 9222) to run this read-only 6 h check of Bks_JLId1ew; Ben also needs to re-sign-in on MacBook CDP 9222 for future HOS Studio jobs. No Studio edits, no launch record written, £0."
         }
       ],
       "remaining_action": "Checking CDP 9222 and upload package for Bks_JLId1ew",
