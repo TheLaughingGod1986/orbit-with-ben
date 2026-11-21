@@ -295152,9 +295152,14 @@
           "at": "2026-11-21T11:38Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T11:39Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3285; starting read-only verification of J3282 waiting condition."
         }
       ],
-      "remaining_action": "Verify readiness: Verify Bks_JLId1ew live Related (VbPubYd6Fbs), AI badge, captions and flip library.json to live after 2026-11-21T11:30Z",
+      "remaining_action": "Read J3282 record, HOS 006 approval/gate history, and run read-only live check on YouTube Short Bks_JLId1ew",
       "kind": "review",
       "recheck_of": "J3282",
       "due": "2026-11-21T12:37:03+00:00",
@@ -295170,11 +295175,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-21T11:38Z",
+        "at": "2026-11-21T11:39Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3285; starting read-only verification of J3282 waiting condition."
+      },
+      "taskKeys": [
+        "HOS:006"
+      ]
     }
   ],
   "focus": [
