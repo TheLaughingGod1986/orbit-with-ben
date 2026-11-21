@@ -1,5 +1,5 @@
 {
-  "next_id": 3308,
+  "next_id": 3309,
   "jobs": [
     {
       "id": "J0001",
@@ -296933,6 +296933,35 @@
       "remaining_action": "Chief review: J3302 PR #1118 + exact-file PASS & successor auth for T041-T043 (Europa, Light Speed, Last Star)",
       "kind": "chief",
       "plain": "Review J3302 weekly OWB thumbnail audit PR #1118 and approve or revise T041-T043 before Studio testing"
+    },
+    {
+      "id": "J3308",
+      "title": "Studio: arm T041 thumbnail Test & Compare on NbW5G1BpPY0 (006 — 2× EARTH'S WATER) after J3307 PASS",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Arm thumbnail-only Test & Compare T041 on Orbit With Ben video NbW5G1BpPY0 (film 006) in YouTube Studio CDP 9223 (A = unchanged live thumbnail, B = Chief-approved /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/006_Could-Life-Exist-Under-The-Ice-Of-Europa/08_Thumbnails/repackage_2026-11/J3302_v01/NbW5G1BpPY0_B_v01.jpg, SHA-256 51e663ec95756665c0497bff0fdee0beff0b557ced3ec218e5915bb27708f51a, hook '2× EARTH'S WATER'). HARD GUARD: Run ONLY after J3307 records BOTH exact-file Chief PASS on the final B hash AND explicit one-test reversible successor-test authorization over finished inconclusive T006 (2026-10-15 to 2026-10-29). Before any Continue/New test click, perform a fresh read-only Studio check confirming the matching finished report, no running test, and channel = Orbit With Ben. Keep live A, title, description, privacy, schedule and every other video untouched. Never Replace live A. Verify reload shows Test running, then update THUMB_LEDGER.json (T041 -> running).",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J3307",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-21T16:38Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T16:38Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Studio: arm T041 thumbnail Test & Compare on NbW5G1BpPY0 (006 — 2× EARTH'S WATER) after J3307 PASS",
+      "kind": "studio",
+      "plain": "Start T041 thumbnail A/B test on OWB 006 (NbW5G1BpPY0) after Chief approval"
     }
   ],
   "focus": [
