@@ -297613,9 +297613,14 @@
           "at": "2026-11-21T21:56Z",
           "by": "relay",
           "what": "condition verification queued: J3329"
+        },
+        {
+          "at": "2026-11-21T23:15Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-22T07:50:00Z"
         }
       ],
-      "remaining_action": "Non-producer reviewer (claude/chief/codex/claudecode) to QA HOS PR #718, NAS/UAT SHA-256, sheets & Play links, merge PR #718 (or hand to Chief), and set awaits_ben",
+      "remaining_action": "Non-producer reviewer (claude/chief/codex/claudecode) to reopen+handback J3311, QA HOS PR #718, NAS/UAT SHA-256 & Play links, merge #718, set awaits_ben",
       "due": "2026-11-24T18:00:00Z",
       "kind": "qa",
       "plain": "Non-producer QA review and Ben UAT handoff for HOS 009 Shorts A and B (PR #718)",
@@ -297639,12 +297644,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "Non-producer reviewer available (claude out of usage until 2026-11-21T21:50:00Z; chief retry 2026-11-21T19:57:35Z; claudecode down on Fable limit until Nov 25 10:00 London, retry 19:45:41Z; Mini codex 100% used and down until 2026-11-24T23:26:00Z — macbook-2 95% left is a separate 27 Nov cycle; cursor Claude lanes out of credit until 2026-12-09). Gemini produced J2171 (HOS PR #718 @ 7248b872, 6/6 CI green, MERGEABLE; NAS & iCloud UAT SHA-256 verified on Mini) and is excluded from self-review.",
-        "check_at": "2026-11-21T22:56:01+00:00",
-        "last_recheck": "J3316",
-        "checked_at": "2026-11-21T18:48:57+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3329"
+        "condition": "Non-producer reviewer available on Mini (claude out until 2026-11-22T07:50:00Z; chief stalled retry 2026-11-22T00:55:22Z, last beat 20 Nov 18:04Z; claudecode Fable limit resets Nov 25 10:00 London; Mini codex down until 2026-11-24T23:26:00Z; cursor Claude lanes out of credit until 2026-12-09 & weekly limit hit). Gemini produced J2171 (HOS PR #718 @ 7248b872, 6/6 CI, MERGEABLE; NAS SHA-256 verified) and is excluded from self-review. Note: on next reopen, also run jobs.py handback J3311 to clear stale open_claim.",
+        "check_at": "2026-11-22T07:50:00Z",
+        "last_recheck": "J3329",
+        "checked_at": "2026-11-21T23:15:06+00:00",
+        "checked_by": "gemini"
       }
     },
     {
