@@ -62,7 +62,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3287 | mini | blocked | gemini | – | review · Verify condition for J2171 |  |
 | J3289 | mini | blocked | gemini | – | review · Verify condition for J2040 |  |
 | J3290 | mini | blocked | gemini | – | review · Verify condition for J2529 |  |
-| J3291 | any | claimed | gemini | 2026-11-21T14:58Z | assembly · Gates at upload and a daily 14-day re-check of everything scheduled (music_gate included, Shorts and longs, every channel) |  |
+| J3291 | any | blocked | gemini | – | assembly · Gates at upload and a daily 14-day re-check of everything scheduled (music_gate included, Shorts and longs, every channel) |  |
 | J3292 | any | blocked | macbook-2 | – | assembly · Direct alert to Ben when a same-day video is pulled or his watch is needed within 12 hours |  |
 
 Recently finished:

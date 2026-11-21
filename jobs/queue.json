@@ -295772,13 +295772,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-21T13:28Z",
-      "eta": "2026-11-21T14:58Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-21T13:09Z",
-      "result": "",
+      "result": "parked for Chief: PR #1112 ready for review and merge (J3291 upload hard-stop + daily 14-day multi-channel gate sweep; commit bba2ccbde8)",
       "history": [
         {
           "at": "2026-11-21T13:09Z",
@@ -295849,6 +295849,11 @@
           "at": "2026-11-21T13:44Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Worktree cleaned; PR #1112 (bba2ccbde8) ready for Chief review and merge; 193 Python tests + 34 TS tests + tsc + core_sync + channel ratchet passed"
+        },
+        {
+          "at": "2026-11-21T13:44Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: PR #1112 ready for review and merge (J3291 upload hard-stop + daily 14-day multi-channel gate sweep; commit bba2ccbde8)"
         }
       ],
       "remaining_action": "Await Chief review and merge of PR #1112",
