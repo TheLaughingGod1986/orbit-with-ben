@@ -298813,9 +298813,14 @@
           "at": "2026-11-21T21:34Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T21:34Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3327 and verified live_fixes/2026-11-21.md evidence"
         }
       ],
-      "remaining_action": "Update dH_yCRmzkMo and aEfdxex__Bo in UPLOADS.json from private/pending_studio to public/set",
+      "remaining_action": "Create clean worktree, update UPLOADS.json for dH_yCRmzkMo and aEfdxex__Bo, run tests, and open PR",
       "kind": "assembly",
       "plain": "Update repo UPLOADS.json records for two live 026 Shorts already verified on YouTube",
       "progress": {
@@ -298823,9 +298828,11 @@
         "of": 3,
         "at": "2026-11-21T21:34Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3327 and verified live_fixes/2026-11-21.md evidence"
+      },
+      "taskKeys": [
+        "OWB:026"
+      ]
     }
   ],
   "focus": [
