@@ -298484,8 +298484,8 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook-2",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-11-21T21:01Z",
       "eta": "",
       "created_by": "gemini",
@@ -298506,6 +298506,11 @@
           "at": "2026-11-21T21:05Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: MacBook HOS Studio browser on CDP port 9222 is signed out (accounts.google.com Sign in prompt) and CDP port 9460 exists only on the Mini. Zero YouTube or file changes made. Please pin J3322 to Mini (mini_only) and reopen so the Mini runs it on CDP port 9460 (verified signed in during J3255)."
+        },
+        {
+          "at": "2026-11-21T21:11Z",
+          "by": "gemini",
+          "what": "cancelled: Superseded by J3325 pinned --mini-only (jobs.py sets mini_only only on add). macbook-2 claimed J3322 via HOS studio_port=9222, which is signed out on MacBook, making zero changes; Mini CDP 9460 verified live and signed into HOS Studio."
         }
       ],
       "remaining_action": "Set AL_-qlWko_g as HOS Home trailer and add ETynHpIYLeY to PLEbpfUzWzcXU via Playlists manager, then update HOS audit",
