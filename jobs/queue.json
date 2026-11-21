@@ -1,5 +1,5 @@
 {
-  "next_id": 3291,
+  "next_id": 3293,
   "jobs": [
     {
       "id": "J0001",
@@ -295705,6 +295705,68 @@
       "taskKeys": [
         "HOS:013"
       ]
+    },
+    {
+      "id": "J3291",
+      "title": "Gates at upload and a daily 14-day re-check of everything scheduled (music_gate included, Shorts and longs, every channel)",
+      "needs": "any",
+      "repo": "owb",
+      "body": "**Why (Ben, 21 Nov, in chat: \"Was no video set for 11:30 today on OWB\", then \"Sure\" to both fixes).** The Muons Short gc1hWQQJOq4 (v05) was scheduled for Sat 21 Nov 11:30. Its reused music bed failed music_gate (0.830) and was only caught overnight: Gemini pulled it at 04:54Z (J3176/J3273) and armed Ben's watch of v06 for 10:45Z on the board. Ben saw it at about 12:50Z, so v06 (2YiV_zDgLJg) went to Wed 2 Dec 11:30 and today's slot aired nothing.\n\n**Do (code, tests, one PR).**\n1. UPLOAD HARD-STOP. `youtube:package` / `youtube-package-upload.ts` (and approved_deliver.py if it uploads) already stop a Short that fails gate_shorts_open.py. Add music_gate.py, and every other blocking gate the film's channel requires, for Shorts and longs on every registered channel, before anything is sent. A FAIL stops the upload with the reason; a recorded Chief waiver (the existing waiver format) lets it through.\n2. RE-CHECK WHAT IS ALREADY SCHEDULED. Extend gate_upcoming.py (today: gate_shorts_open only, Shorts only) to run the same blocking gates, music_gate included, on every scheduled Short and long in the next 14 days, every channel, once a day from refill. When a gate is added or tightened, its first daily run re-checks everything already scheduled, so a fault is found days ahead, not hours. A FAIL on anything airing within 7 days queues an urgent fix job for the Chief and raises Ben's alert (J-next, the alert job) only if his watch will be needed.\n3. Tests: a reused-bed Short is refused at upload; a scheduled Short with a failing bed is flagged by the daily sweep 7+ days ahead; a waived FAIL passes. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-21T13:09Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T13:09Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Add music_gate and the channel's blocking gates to the upload hard-stop; extend gate_upcoming to all gates, Shorts and longs, 14 days, daily; tests",
+      "due": "2026-11-24T18:00:00Z",
+      "kind": "assembly",
+      "urgent": 4,
+      "plain": "Stops a video with a failed check from being uploaded, and re-checks everything already scheduled every day"
+    },
+    {
+      "id": "J3292",
+      "title": "Direct alert to Ben when a same-day video is pulled or his watch is needed within 12 hours",
+      "needs": "any",
+      "repo": "owb",
+      "body": "**Why (Ben, 21 Nov, in chat: \"Was no video set for 11:30 today on OWB\", then \"Sure\" to both fixes).** The Muons Short gc1hWQQJOq4 (v05) was scheduled for Sat 21 Nov 11:30. Its reused music bed failed music_gate (0.830) and was only caught overnight: Gemini pulled it at 04:54Z (J3176/J3273) and armed Ben's watch of v06 for 10:45Z on the board. Ben saw it at about 12:50Z, so v06 (2YiV_zDgLJg) went to Wed 2 Dec 11:30 and today's slot aired nothing.\n\n**Do (one PR).**\n1. WHEN. Send Ben ONE direct alert when (a) a video airing within 24 hours is pulled, unscheduled or replaced, or (b) a job needs his watch (awaits_ben UAT) and its deadline is within 12 hours, on any channel. One alert per event; repeat once at half the remaining time if still not done; never more.\n2. WHAT. Plain English, one or two lines: which video, what happened, what he needs to do, by when (London time), and the board link to the watch card. Example: \"Muons Short pulled (music failed a check). The fixed version needs your watch by 10:45 to keep today's 11:30 slot: board.oppti.dev/#review\".\n3. HOW IT REACHES HIS PHONE. The thread (chief_relay.notify) is not read by Ben. Pick the simplest route that reaches his phone with £0 and at most one setup step for him: for example a push from a cloud Claude routine, an ntfy subscription, or an email to his own inbox. Propose the choice to Ben in one line via Claude in chat before any setup; never store a secret in the repo. Until it is set up, the alert goes on the board as a red banner at the top of every page plus the thread.\n4. Tests: each trigger fires once, repeats once, and stops when the job is done. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-21T13:09Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T13:09Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Detect pulled same-day videos and near-deadline watch cards; one plain alert (one repeat) to Ben's phone; board banner until set up",
+      "due": "2026-11-24T18:00:00Z",
+      "kind": "assembly",
+      "urgent": 5,
+      "plain": "Sends Ben one direct message when a video due today is pulled or his watch is needed soon"
     }
   ],
   "focus": [

@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2529.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2529, J3291, J3292.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -63,6 +63,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3287 | mini | blocked | gemini | – | review · Verify condition for J2171 |  |
 | J3289 | mini | blocked | gemini | – | review · Verify condition for J2040 |  |
 | J3290 | mini | claimed | gemini | 2026-11-21T15:08Z | review · Verify condition for J2529 |  |
+| J3291 | any | open | – | – | assembly · Gates at upload and a daily 14-day re-check of everything scheduled (music_gate included, Shorts and longs, every channel) |  |
+| J3292 | any | open | – | – | assembly · Direct alert to Ben when a same-day video is pulled or his watch is needed within 12 hours |  |
 
 Recently finished:
 
