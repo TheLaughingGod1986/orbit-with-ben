@@ -71,7 +71,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3311 | mini | blocked | gemini | – | HOS:009 edit · qa · Review HOS 009 Short A v01 and Short B v01 (J2171, PR #718) | J2171 |
 | J3322 | mini | blocked | macbook-2 | – | studio · HOS Studio polish from J3255 audit: set Home trailer (AL_-qlWko_g) and add ETynHpIYLeY to PLEbpfUzWzcXU via Playlists manager |  |
 | J3323 | mini | blocked | gemini | – | 005 upload · listing · HOS 005 Short el30-mHiH-0 post-public read-back & library.json live flip | 7064710774 |
-| J3324 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J3324 | any | claimed | macbook | 2026-11-21T22:09Z | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
