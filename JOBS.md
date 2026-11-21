@@ -58,7 +58,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3289 | mini | blocked | gemini | – | review · Verify condition for J2040 |  |
 | J3295 | mini | blocked | gemini | – | review · Verify condition for J1275 |  |
 | J3300 | mini | blocked | gemini | – | review · Verify condition for J3178 |  |
-| J3301 | any | open | – | – | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
+| J3301 | any | claimed | gemini | 2026-11-22T01:28Z | review · Weekly HOS audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J3303 | mini | open | – | – | for codex · review · Packaging panel (codex): J3302 weekly OWB Challenger Bs (T041 Europa 2x EARTH'S WATER, T042 Light Speed YOU AGE SLOWER, T043 Last Star OUTLIVES OUR SUN + Round 2 Title Bs; PR #1118) |  |
 | J3306 | mini | blocked | macbook-2 | – | review · Packaging panel decision: J3302 weekly OWB Challenger Bs (T041 Europa 2x EARTH'S WATER, T042 Light Speed YOU AGE SLOWER, T043 Last Star OUTLIVES OUR SUN + Round 2 Title Bs; PR #1118) |  |
 | J3307 | cloud | open (after J3306) | – | – | chief · Chief review: J3302 PR #1118 + exact-file PASS & successor auth for T041-T043 (Europa, Light Speed, Last Star) |  |

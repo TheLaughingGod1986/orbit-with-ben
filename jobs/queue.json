@@ -297062,10 +297062,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-21T23:28Z",
+      "eta": "2026-11-22T01:28Z",
       "created_by": "refill",
       "created_at": "2026-11-21T16:16Z",
       "result": "",
@@ -297094,12 +297094,25 @@
           "at": "2026-11-21T23:28Z",
           "by": "gemini",
           "what": "reopened"
+        },
+        {
+          "at": "2026-11-21T23:28Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review HOS performance and identify improvements",
       "kind": "review",
       "backlog": "hos-weekly-audit",
-      "escalated_at": "2026-11-21T19:16Z"
+      "escalated_at": "2026-11-21T19:16Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T23:28Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3302",
