@@ -297504,9 +297504,14 @@
           "at": "2026-11-21T18:25Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Verified J3314 done (#7067194875), PR #719 5/5 CI green, v03 ffprobe 519.000s, 33 cards 0 overlaps, 4/4 gates PASS, 21/21 stills present"
+        },
+        {
+          "at": "2026-11-21T18:29Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Live NAS SHA-256 verified for v01/v02/v03 + Mini parity; approved thumbs/VO/score intact; condition proven satisfied"
         }
       ],
-      "remaining_action": "Verify NAS v01/v02/v03 live SHA-256 completion and original J2036 gates/approvals, then reopen J2036",
+      "remaining_action": "Reopen J2036 with verified evidence, close J3315, and post reports",
       "kind": "review",
       "recheck_of": "J2036",
       "due": "2026-11-15T18:00:00+00:00",
@@ -297520,11 +297525,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-21T18:25Z",
+        "at": "2026-11-21T18:29Z",
         "by": "gemini",
-        "note": "Verified J3314 done (#7067194875), PR #719 5/5 CI green, v03 ffprobe 519.000s, 33 cards 0 overlaps, 4/4 gates PASS, 21/2"
+        "note": "Live NAS SHA-256 verified for v01/v02/v03 + Mini parity; approved thumbs/VO/score intact; condition proven satisfied"
       },
       "taskKeys": [
         "HOS:009"
