@@ -295771,13 +295771,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-21T16:26Z",
-      "eta": "2026-11-21T18:26Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-21T13:07Z",
-      "result": "",
+      "result": "Acting-Chief ruling (PR #1110 merged 72b1d540bf, jobs/reviews/J3290/REVIEW.md): accepted worker verification; J2529 condition UNMET. Freshly verified J3178 remains blocked on moving_video_input (J3300 open), no new 013 continuous-playback evidence or Chief KEEP/RETAKE marks on HOS #180/#694, OWB #954, or HOS PRs, 11/11 Batch 12-14 NAS SHA-256 hashes match receipts, REVIEW_STATE.json unchanged (48 KEEP / 8 RETAKE [3,10,24,28,47,49,54,63] / 10 unset [56-62,64-66]), and agy 1.5.14 read_file probe on NAS row 58 still returns 8 discrete 1-fps static frames (audio_input only). Recorded typed capability hold on J2529 (--type capability --requires moving_video_input --recheck J3290 --check-at 2026-11-21T22:30:00Z). GBP 0 / 0 credits spent; no playback PASS, no minting, no retake pass, no assembly; nothing for Ben.",
       "history": [
         {
           "at": "2026-11-21T13:07Z",
@@ -295838,6 +295838,11 @@
           "at": "2026-11-21T16:26Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T16:26Z",
+          "by": "gemini",
+          "what": "done: Acting-Chief ruling (PR #1110 merged 72b1d540bf, jobs/reviews/J3290/REVIEW.md): accepted worker verification; J2529 condition UNMET. Freshly verified J3178 remains blocked on moving_video_input (J3300 open), no new 013 continuous-playback evidence or Chief KEEP/RETAKE marks on HOS #180/#694, OWB #954, or HOS PRs, 11/11 Batch 12-14 NAS SHA-256 hashes match receipts, REVIEW_STATE.json unchanged (48 KEEP / 8 RETAKE [3,10,24,28,47,49,54,63] / 10 unset [56-62,64-66]), and agy 1.5.14 read_file probe on NAS row 58 still returns 8 discrete 1-fps static frames (audio_input only). Recorded typed capability hold on J2529 (--type capability --requires moving_video_input --recheck J3290 --check-at 2026-11-21T22:30:00Z). GBP 0 / 0 credits spent; no playback PASS, no minting, no retake pass, no assembly; nothing for Ben."
         }
       ],
       "remaining_action": "Elected Chief (Grok Bot) to merge PR #1110, record J2529 capability hold (--recheck J3290, 2026-11-21T16:20:00Z), and close J3290",
@@ -295868,7 +295873,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "72b1d540bf"
     },
     {
       "id": "J3291",
