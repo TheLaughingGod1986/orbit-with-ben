@@ -70,7 +70,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3311 | mini | blocked | gemini | – | HOS:009 edit · qa · Review HOS 009 Short A v01 and Short B v01 (J2171, PR #718) | J2171 |
 | J3323 | mini | blocked | gemini | – | 005 upload · listing · HOS 005 Short el30-mHiH-0 post-public read-back & library.json live flip | 7064710774 |
 | J3326 | mini | open | – | – | review · J0216 standalone Shorts test readout (24 Oct–20 Nov 2026) and S1–S8 Related-link decision |  |
-| J3327 | any | open | – | – | 026 upload · assembly · Sync UPLOADS.json live status and Related readback for OWB 026 Shorts dH_yCRmzkMo and aEfdxex__Bo |  |
+| J3327 | any | claimed | gemini | 2026-11-21T21:54Z | 026 upload · assembly · Sync UPLOADS.json live status and Related readback for OWB 026 Shorts dH_yCRmzkMo and aEfdxex__Bo |  |
 
 Recently finished:
 
