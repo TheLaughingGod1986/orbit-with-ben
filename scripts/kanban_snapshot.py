@@ -1282,7 +1282,13 @@ def main(argv: list[str] | None = None) -> int:
     # channel keeps in its PIPELINE.json (the page reads them under the key it has always had)
     sys.path.insert(0, str(ROOT / "scripts"))
     import ai_spend
-    credits = ai_spend.build_doc(ai_spend.load())
+    spend_rows = ai_spend.load()
+    credits = ai_spend.build_doc(spend_rows)
+    try:
+        import plan_pace
+        credits["pace"] = plan_pace.for_board(spend_rows)
+    except Exception:
+        credits["pace"] = {"plans": {}, "caps": [], "proposal": ""}
     credits["hosChecks"] = [c for slug, d in documents.items() if one_file(slug) for c in d.get("credits", [])]
     credits["miniWork"] = mini_work(alljobs, (credits.get("pools", {}).get("cursor", {}) or {}).get("since")
                                     or ((credits.get("cycles") or {}).get("cursor") or {}).get("start")

@@ -801,7 +801,7 @@ def pending_chief_reviews(at: dt.datetime) -> list:
                    and (j.get("capability_escalated") or not workflow.capability_problem(
                        j, guest_leader if job_chain(j) else home_leader, at, capabilities))
                    and (workflow.state(j, by_id, at) == "review" or (workflow.role_job(j) and workflow.state(j, by_id, at) == "queued"))),
-                  key=lambda j: workflow.order(j, due, data.get("focus") or (), at, nearest, air))
+                  key=lambda j: workflow.order(j, due, data.get("focus") or (), at, nearest, air, data.get("jobs") or []))
 
 
 def due_chief_reviews(items: list, agent: str, at: dt.datetime) -> list:

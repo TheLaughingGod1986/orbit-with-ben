@@ -333,12 +333,14 @@
       const isWeekly = WEEKLY.has(id) || p.unit === "%";
       const timeBar = s.timeShare != null ? `<div class="cbar"><div class="cbar-head"><strong>Time</strong><span>${Math.round(s.timeShare * 100)}% of ${isWeekly ? "week" : "allowance window"} · ${esc(s.windowEnd)}</span></div><div class="bar"><i class="time" style="width:${timeW}%"></i></div></div>` : `<div class="cbar"><div class="cbar-head"><strong>Time</strong><span>${esc(s.windowEnd)}</span></div></div>`;
       const whyText = s.stale && s.lastDate ? `${s.why} (last read ${s.lastDate})` : s.why;
+      const pacePlan = (((credits || {}).pace || {}).plans || {})[id] || {};
+      const paceLine = pacePlan.line ? `<div class="verdict">${esc(pacePlan.line)}</div>` : "";
       const pace = s.daysLeft >= 1 ? ` · at this pace about ${Math.round(s.daysLeft)} days left` : "";
       const extras = [id === "flow" ? s.pmMeta.usageNote : "", id === "cursor" ? s.pmMeta.billingNote : ""].filter(Boolean).join(" · ");
       return `<li class="pool">${dot(s.status)}<div><b>${esc(name)}</b> <span class="muted">${esc(what)}</span>
         ${s.planLine ? `<div class="muted small">${esc(s.planLine)}</div>` : ""}
         <div class="figure">${esc(fig)}${whyText ? ` · <span class="${s.barTone}t">${esc(whyText)}</span>` : ""}</div>${usedBar}${timeBar}
-        ${s.decision ? `<div class="credit-verdict">${esc(s.decision)}</div>` : ""}${s.verdict ? `<div class="verdict">${esc(s.verdict)}</div>` : ""}
+        ${paceLine}${s.decision ? `<div class="credit-verdict">${esc(s.decision)}</div>` : ""}${s.verdict ? `<div class="verdict">${esc(s.verdict)}</div>` : ""}
         ${extras ? `<div class="muted small">${esc(extras)}</div>` : ""}
         <div class="muted small">Read ${esc(ago(s.at, now))}${pace}${s.note ? " · " + esc(clip(s.note, 160)) : ""}</div></div></li>`;
     }).join("");
@@ -376,9 +378,23 @@
       <h3>Credit by film (top 10)</h3><table><tbody>${films}</tbody></table></section>`;
   }
 
+  function paceHtml(credits) {
+    const pace = (credits || {}).pace || {};
+    const plans = pace.plans || {};
+    const rows = Object.keys(plans).map(id => {
+      const plan = plans[id] || {};
+      return `<li>${esc(plan.name || id)}: ${esc(plan.line || "no reading yet")}</li>`;
+    }).join("");
+    const caps = (pace.caps || []).map(cap => `<li>${esc(cap.line || cap.label || cap.service)}</li>`).join("");
+    if (!rows && !caps) return "";
+    return `<section class="card"><h2>Use-it-all pace</h2><ul class="rows">${rows}</ul>
+      ${caps ? `<h3>Pay-per-use caps</h3><ul class="rows">${caps}</ul>` : ""}
+      ${pace.proposal ? `<p class="muted">${esc(pace.proposal)}</p>` : ""}</section>`;
+  }
+
   function renderAI(b, now) {
     if (!b || !b.models || !b.credits) return '<p class="muted">No data yet. The Mac mini publishes it on the next board update.</p>';
-    return chiefHtml(b.models, now) + modelsHtml(b.models, now) + poolsHtml(b.credits, now) + plansHtml(b.credits) + usageHtml(b.credits);
+    return chiefHtml(b.models, now) + modelsHtml(b.models, now) + poolsHtml(b.credits, now) + paceHtml(b.credits) + plansHtml(b.credits) + usageHtml(b.credits);
   }
 
   function render() {

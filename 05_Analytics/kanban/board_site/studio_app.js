@@ -1964,6 +1964,7 @@
         const [tone, word, note] = meterless(chain[alias], status[alias], now);
         return `<a class="credit" href="/ai"><div class="credit-top"><span>${esc(name)}</span><b class="${tone}">${esc(word)}</b></div><small>${esc(note)}</small></a>`;
       }
+      const paceLine = ((((b.credits || {}).pace || {}).plans || {})[id] || {}).line || "";
       const usedW = pm.usedShare != null ? Math.max(pm.usedShare > 0 ? 2 : 0, Math.round(pm.usedShare * 100)) : 0;
       const timeW = pm.timeShare != null ? Math.max(pm.timeShare > 0 ? 2 : 0, Math.round(pm.timeShare * 100)) : 0;
       const bars = `<div class="credit-bars">` +
@@ -1975,6 +1976,7 @@
         (pm.planLine ? `<div class="credit-plan">${esc(pm.planLine)}</div>` : "") +
         bars +
         (pm.verdict ? `<div class="credit-verdict">${esc(pm.verdict)}</div>` : "") +
+        (paceLine ? `<div class="credit-verdict">${esc(paceLine)}</div>` : "") +
         (pm.extraNote ? `<small>${esc(pm.extraNote)}</small>` : "") + `</a>`;
     };
     const credit = [["Flow", "flow"], ["ElevenLabs", "elevenlabs"], ["Vertex", "vertex"],

@@ -261,7 +261,12 @@ def first_day_checks(data: dict, at: dt.datetime) -> list:
 
 
 def top_up(data: dict, items: list, at: dt.datetime, min_ready: int = MIN_READY) -> list:
-    """One refill tick: the first-day checks that are due, then the standing backlog."""
+    """One refill tick: refresh flat-plan pace (once the file is stale), the first-day checks, then the backlog."""
+    try:
+        import plan_pace
+        plan_pace.refresh_if_stale(at)
+    except Exception as exc:  # noqa: BLE001 — a pace miss must not stop the refill
+        print(f"plan pace not refreshed: {exc}", file=sys.stderr)
     return first_day_checks(data, at) + do_refill(data, items, at, min_ready)
 
 
