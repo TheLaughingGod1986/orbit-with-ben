@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2529, J3267.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2529.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -55,7 +55,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3205 | mini | open (after J3204) | – | – | WW2:003 edit · for codex · assembly · WW2 pilot 003: picture, maps, edit and thumbnail, to Ben's watch |  |
 | J3231 | cloud | open | – | – | review · Weekly search research (Orbit + Field Order History): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
 | J3255 | mini | blocked | cursor | – | studio · YouTube and Studio settings audit for growth: every channel setting, upload default, layout, playlist and eligibility; fix the safe ones, ask Ben the rest |  |
-| J3267 | mini | blocked | cursor | – | assembly · Comment replies for every channel: read new comments, reply in each channel's voice, escalate the sensitive ones, log ideas (Ben's one voice check first) |  |
 | J3270 | any | blocked | macbook | – | script · HOS: learn from our data, add two new films to the backlog |  |
 | J3274 | mini | open | – | – | 024 upload · studio · OWB 024 muon Short v06: upload and schedule after Ben's UAT watch approval |  |
 | J3282 | mini | blocked | gemini | – | 006 upload · listing · HOS 006 Short Bks_JLId1ew post-public read-back & library.json live flip |  |

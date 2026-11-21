@@ -293733,8 +293733,8 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-11-21T02:13Z",
       "eta": "",
       "created_by": "claude",
@@ -293775,6 +293775,11 @@
           "at": "2026-11-21T02:24Z",
           "by": "cursor",
           "what": "condition recorded; next verification 2026-11-22T12:00:00Z"
+        },
+        {
+          "at": "2026-11-21T13:04Z",
+          "by": "claude",
+          "what": "cancelled: Cancelled by Claude, 21 Nov ~13:05Z. Superseded by Ben's later decision in chat (21 Nov ~10:00Z, option \"2\"): the studio replies to plain questions and thanks itself, and drafts anything critical, factual or tricky for Ben, Orbit first and other channels only when Ben says (J3281, daily J3283; his OK'd YR4 reply is J3288). PR #1101's sample replies were template sentences that quote the comment back (\"You wrote about ...\"), not usable as a voice check, so they were never put to Ben and #1101 is closed unmerged. Useful parts to carry into J3283 later if wanted: the registry-driven channel list and the board card."
         }
       ],
       "remaining_action": "Wait for his voice check before any comment is posted",
