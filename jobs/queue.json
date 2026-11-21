@@ -294282,10 +294282,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-21T12:53Z",
+      "eta": "2026-11-21T14:53Z",
       "created_by": "gemini",
       "created_at": "2026-11-21T04:45Z",
       "result": "",
@@ -294309,6 +294309,11 @@
           "at": "2026-11-21T12:52Z",
           "by": "claude",
           "what": "approved by Ben: Watch the Muons Short v06 (same full-screen picture and Ben narration as v05, with a new £0 own-synthesis minimalist clock-pulse music bed replacing the bed that collided with Moon Leaving). Approve to upload and schedule for Saturday 21 November 11:30 London (or next free Orbit Short slot if approved after 11:15). v06"
+        },
+        {
+          "at": "2026-11-21T12:53Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Wait for Ben's UAT approval of v06 on the board, then upload as a new Private Short and schedule for Sat 21 Nov 11:30Z or next free slot",
@@ -294344,6 +294349,14 @@
         "fixed": [
           "Replaced reused music bed (0.830 similarity to Moon Leaving part 2) with a distinct £0 own-synthesis clock-pulse bed (max similarity 0.099 across all 31 Orbit beds); locked v05 full-screen picture (identical frame CRC) and Ben narration unchanged."
         ]
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T12:53Z",
+        "by": "claudecode",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {

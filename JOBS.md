@@ -57,7 +57,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3255 | mini | blocked | cursor | – | studio · YouTube and Studio settings audit for growth: every channel setting, upload default, layout, playlist and eligibility; fix the safe ones, ask Ben the rest |  |
 | J3267 | mini | blocked | cursor | – | assembly · Comment replies for every channel: read new comments, reply in each channel's voice, escalate the sensitive ones, log ideas (Ben's one voice check first) |  |
 | J3270 | any | blocked | macbook | – | script · HOS: learn from our data, add two new films to the backlog |  |
-| J3274 | mini | open | – | – | 024 upload · studio · OWB 024 muon Short v06: upload and schedule after Ben's UAT watch approval |  |
+| J3274 | mini | claimed | claudecode | 2026-11-21T14:53Z | 024 upload · studio · OWB 024 muon Short v06: upload and schedule after Ben's UAT watch approval |  |
 | J3282 | mini | blocked | gemini | – | 006 upload · listing · HOS 006 Short Bks_JLId1ew post-public read-back & library.json live flip |  |
 | J3283 | mini | blocked | macbook-2 | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3286 | mini | blocked | gemini | – | review · Verify condition for J2036 |  |
