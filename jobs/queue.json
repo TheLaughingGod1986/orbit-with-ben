@@ -292055,18 +292055,23 @@
           "at": "2026-11-21T01:18Z",
           "by": "cursor",
           "what": "step 1 of 4 done: Removed 81 clean pushed worktrees and empty caches. MiniWork free space is 85 GB, up from 42 GB. Protected voice, live-job and dirty folders are still in place. NAS archive of the remaining evidence folders is running."
+        },
+        {
+          "at": "2026-11-21T01:24Z",
+          "by": "cursor",
+          "what": "step 2 of 4 done: MiniWork is 85 GB free after 81 clean worktrees were removed. Two evidence folders are on the NAS with SHA256SUMS.txt. The rest is still copying in tmux J3249-offload. Log ~/_desk/logs/J3249-offload.log. Exit file ~/_desk/logs/J3249-offload.done. Do not start a second copy."
         }
       ],
-      "remaining_action": "Copy old evidence onto the NAS and finish the MiniWork cleanup",
+      "remaining_action": "Wait for the NAS evidence copy to finish, then record the hash check",
       "due": "2026-11-21T07:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-21T01:18Z",
+        "at": "2026-11-21T01:24Z",
         "by": "cursor",
-        "note": "Removed 81 clean pushed worktrees and empty caches. MiniWork free space is 85 GB, up from 42 GB. Protected voice, live-j"
+        "note": "MiniWork is 85 GB free after 81 clean worktrees were removed. Two evidence folders are on the NAS with SHA256SUMS.txt. T"
       }
     },
     {
