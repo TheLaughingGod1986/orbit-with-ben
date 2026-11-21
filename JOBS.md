@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2529.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2529, J3320.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -74,6 +74,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3310 | mini | open (after J3307) | – | – | studio · Studio: arm T043 thumbnail Test & Compare on REXYxuLOBoI (005 — OUTLIVES OUR SUN) after J3307 PASS |  |
 | J3311 | mini | blocked | gemini | – | HOS:009 edit · qa · Review HOS 009 Short A v01 and Short B v01 (J2171, PR #718) | J2171 |
 | J3319 | mini | claimed | gemini | 2026-11-21T19:53Z | studio · First-day check at 6 h: "Muons Shouldn't Reach the Ground. They Do." (2YiV_zDgLJg) |  |
+| J3320 | mini | open | – | – | for gemini · studio · `gemini-argon` · Field Order History launch settings tonight: keywords, channel language, series playlist (API); end screens once Studio is signed in |  |
 
 Recently finished:
 

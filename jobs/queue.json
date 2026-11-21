@@ -1,5 +1,5 @@
 {
-  "next_id": 3320,
+  "next_id": 3321,
   "jobs": [
     {
       "id": "J0001",
@@ -292961,6 +292961,11 @@
           "at": "2026-11-21T01:50Z",
           "by": "cursor",
           "what": "condition recorded; next verification 2026-11-21T08:00:00Z"
+        },
+        {
+          "at": "2026-11-21T19:34Z",
+          "by": "claude",
+          "what": "Field Order History launch settings that need no Studio window moved to J3320 (tonight). The Studio-only rows still wait for Ben's 9224 sign-in."
         }
       ],
       "remaining_action": "After the Field Order History Studio sign-in, read the settings the upload login cannot see",
@@ -297980,6 +297985,52 @@
       "taskKeys": [
         "OWB:024"
       ]
+    },
+    {
+      "id": "J3320",
+      "title": "Field Order History launch settings tonight: keywords, channel language, series playlist (API); end screens once Studio is signed in",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why (Ben, 21 Nov ~19:35 London, in chat: \"The end screen keywords, channel language and the rest that are needed, are they set to work on the Mac Mini tonight to get updated?\").** They were not: J3255 (settings audit) is parked waiting for Ben's sign-in to the Field Order History Studio window (port 9224), and no job covered pilot 1's launch settings. Pilot 1 `ek9F61FVYqY` goes public Sun 22 Nov 17:00 London (J3318). The settings audit (PR #1099, 05_Analytics/ww2/STUDIO_SETTINGS_AUDIT_2026-11-21.md) lists what is missing.\n\n**Do TONIGHT with Field Order History's own login (YOUTUBE_REFRESH_TOKEN_WW2, channel UCu94mInMFosxu3W0H6jlI6Q); no Studio window needed:**\n1. Channel keywords (channels.update brandingSettings.channel.keywords): 10-15 plain search terms for what the channel covers, drawn from ww2-channel studio/RULES.md and the two pilots' approved titles and descriptions (for example World War 2, WW2 documentary, D-Day, Normandy, Battle of the Atlantic, U-boats, Mulberry harbours, military engineering, WW2 logistics, history documentary). No other channel's name, no misleading terms, under 500 characters. Read back.\n2. Channel default language English (United Kingdom) (brandingSettings.channel.defaultLanguage) so titles and descriptions are labelled en-GB. Read back. Leave country (United Kingdom) and everything else unchanged.\n3. Playlist prepared: create ONE playlist titled for the series (for example \"How WW2 Was Engineered, Supplied and Fought\") with a two-line description, add pilot 1 then pilot 2, and leave it Private until pilot 1 is public; the Sunday first-day check (or this job, if still running at 17:00) makes it Public right after pilot 1 goes live. Record its id.\n\n**Studio-only, only once the 9224 window is signed in (Ben's own sign-in, AGENTS.md; nobody types a password):** 4. a subscribe end screen on both pilots (on pilot 1 before 17:00 Sunday if the sign-in lands in time; the only element is Subscribe, since no other public FOH video exists yet; add a best-for-viewer video element to pilot 1 once pilot 2 is public); 5. title and description language field, comment settings as on Orbit (on, Basic moderation), and the rest of J3255's FOH rows. If the window is still on Google's sign-in page, skip 4-5, say so in one line, and leave J3255 parked.\n\n6. Records: ww2-channel studio/channel.json (keywords, language, playlist id) and the audit file; one thread receipt.\n\n**Guards.** Do not change either pilot's schedule, privacy, title, description, thumbnail or file. No visibility change to the pilots. No monetisation, country or identity change. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-21T19:34Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T19:34Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-21T19:34Z",
+          "by": "claude",
+          "what": "rerouted to gemini on gemini-argon: Gemini is the free Mini lane tonight; API steps need no Studio window."
+        }
+      ],
+      "remaining_action": "API: set channel keywords and en-GB default language, create private series playlist with pilots 1-2; Studio end screens only if 9224 is signed in",
+      "due": "2026-11-22T12:00:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "plain": "Get Field Order History ready for tomorrow's launch: keywords, language and a playlist tonight, end screens once Ben signs in",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon",
+      "urgent": 4
     }
   ],
   "focus": [
