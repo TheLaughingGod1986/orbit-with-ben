@@ -294496,9 +294496,14 @@
           "at": "2026-11-21T08:35Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Live read_file probe in agy 1.5.14 confirmed audio_input only; P05_10_darwin_worried_shelf_t1.mp4 still returns 8 discrete 1-fps JPEGs (00:00..00:07), not continuous 24-fps playback. Recorded honest capabilities."
+        },
+        {
+          "at": "2026-11-21T08:36Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified 11/11 Batch 12-14 NAS SHA-256 hashes match receipts, REVIEW_STATE.json unchanged (48 KEEP / 8 RETAKE / 10 unset), and no new 013 playback marks on HOS #694 or OWB #954."
         }
       ],
-      "remaining_action": "Verify Batch 12-14 NAS SHA-256 hashes, REVIEW_STATE.json, and HOS #694 / OWB #954 history",
+      "remaining_action": "Write J3277 verification record, update J3178 typed capability hold, close J3277, and post reports",
       "kind": "review",
       "recheck_of": "J3178",
       "required_capabilities": [
@@ -294515,11 +294520,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-21T08:35Z",
+        "at": "2026-11-21T08:36Z",
         "by": "gemini",
-        "note": "Live read_file probe in agy 1.5.14 confirmed audio_input only; P05_10_darwin_worried_shelf_t1.mp4 still returns 8 discre"
+        "note": "Verified 11/11 Batch 12-14 NAS SHA-256 hashes match receipts, REVIEW_STATE.json unchanged (48 KEEP / 8 RETAKE / 10 unset"
       },
       "taskKeys": [
         "HOS:013"
