@@ -1,5 +1,5 @@
 {
-  "next_id": 3275,
+  "next_id": 3276,
   "jobs": [
     {
       "id": "J0001",
@@ -226247,6 +226247,11 @@
           "at": "2026-11-20T20:33Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-21T03:00:00Z"
+        },
+        {
+          "at": "2026-11-21T04:55Z",
+          "by": "relay",
+          "what": "condition verification queued: J3275"
         }
       ],
       "remaining_action": "Await continuous 24-fps moving_video_input review of HOS 013 pass-1 rows 56-62,64-66 (J3178) and elected-Chief KEEP/RETAKE marks before J2529 closure",
@@ -226271,13 +226276,14 @@
       "hold": {
         "type": "capability",
         "condition": "J3250 acting-Chief verification (jobs/reviews/J3250/REVIEW.md, commit 9ed1e15c28): condition unmet. Follow-up J3178 remains blocked on moving_video_input (jobs/reviews/J3178/REVIEW.md; J3198 open) and no continuous-playback evidence or elected-Chief KEEP/RETAKE marks exist for the 10 unresolved pass-1 rows (56-62, 64-66) on HOS #180 (capped at 2,500), HOS desk 2 #694, or OWB #954. Re-verified 11/11 Batch 12-14 NAS SHA-256 hashes match receipts and REVIEW_STATE.json preserves 48 KEEP and 8 RETAKE (3,10,24,28,47,49,54,63). Direct read_file probe on NAS row 58 (P05_10_darwin_worried_shelf_t1.mp4) confirmed agy returns 8 discrete 1-fps static frames (00:00..00:07; Darwin whole at 00:03 and absent at 00:04, missing 3.833-4.250s exit), not continuous 24-fps playback (audio_input demonstrated on pickup WAV). Keep J2529 held pending continuous-playback review via J3178 and elected-Chief marks; no minting or assembly authorised.",
-        "check_at": "2026-11-21T03:00:00Z",
+        "check_at": "2026-11-21T05:55:06+00:00",
         "requires": [
           "moving_video_input"
         ],
         "last_recheck": "J3250",
         "checked_at": "2026-11-20T20:33:24+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J3275"
       },
       "required_capabilities": [
         "moving_video_input"
@@ -294219,6 +294225,41 @@
           "Replaced reused music bed (0.830 similarity to Moon Leaving part 2) with a distinct £0 own-synthesis clock-pulse bed (max similarity 0.099 across all 31 Orbit beds); locked v05 full-screen picture (identical frame CRC) and Ben narration unchanged."
         ]
       }
+    },
+    {
+      "id": "J3275",
+      "title": "Verify condition for J2529",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2529: J3250 acting-Chief verification (jobs/reviews/J3250/REVIEW.md, commit 9ed1e15c28): condition unmet. Follow-up J3178 remains blocked on moving_video_input (jobs/reviews/J3178/REVIEW.md; J3198 open) and no continuous-playback evidence or elected-Chief KEEP/RETAKE marks exist for the 10 unresolved pass-1 rows (56-62, 64-66) on HOS #180 (capped at 2,500), HOS desk 2 #694, or OWB #954. Re-verified 11/11 Batch 12-14 NAS SHA-256 hashes match receipts and REVIEW_STATE.json preserves 48 KEEP and 8 RETAKE (3,10,24,28,47,49,54,63). Direct read_file probe on NAS row 58 (P05_10_darwin_worried_shelf_t1.mp4) confirmed agy returns 8 discrete 1-fps static frames (00:00..00:07; Darwin whole at 00:03 and absent at 00:04, missing 3.833-4.250s exit), not continuous 24-fps playback (audio_input demonstrated on pickup WAV). Keep J2529 held pending continuous-playback review via J3178 and elected-Chief marks; no minting or assembly authorised.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2529 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-21T04:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T04:55Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await continuous 24-fps moving_video_input review of HOS 013 pass-1 rows 56-62,64-66 (J3178) and elected-Chief KEEP/RETAKE marks before J2529 closure",
+      "kind": "review",
+      "recheck_of": "J2529",
+      "mini_only": true,
+      "required_capabilities": [
+        "moving_video_input"
+      ],
+      "due": "2026-11-21T05:55:06+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
