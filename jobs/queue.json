@@ -1,5 +1,5 @@
 {
-  "next_id": 3311,
+  "next_id": 3312,
   "jobs": [
     {
       "id": "J0001",
@@ -297039,6 +297039,36 @@
       "remaining_action": "Studio: arm T043 thumbnail Test & Compare on REXYxuLOBoI (005 — OUTLIVES OUR SUN) after J3307 PASS",
       "kind": "studio",
       "plain": "Start T043 thumbnail A/B test on OWB 005 (REXYxuLOBoI) after Chief approval"
+    },
+    {
+      "id": "J3311",
+      "title": "Review HOS 009 Short A v01 and Short B v01 (J2171, PR #718)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Non-producer QA & private final-watch handoff for HOS 009 Shorts A and B assembled in J2171 (HOS PR #718, commit `7248b87299bf150bde2a0462c712043c3441e75f`, £0, 0 credits).\n\nProducers to exclude from self-review: `gemini` assembled both Shorts and rendered the four £0 `9:16` code graphics (including moving-plate composite `dots_square` over `P4:02_spray_paint_c2`). `claude` / `claudecode` / `codex` / `chief` may review; if `gemini` is woken while non-producers are temporarily down, park with `jobs.py wait` until a non-producer reviewer is available rather than self-reviewing.\n\nDeliverables to verify (£0, no upload/schedule/privacy/retitle/Buffer):\n1. HOS PR #718 (`j2171-hos-009-shorts-assembly` @ `7248b872`, https://github.com/TheLaughingGod1986/history-of-science/pull/718): inspect `10_Shorts/J2171/INVENTORY_AND_ASSEMBLY_REPORT.md`, `DELIVERY_MANIFEST.json`, and the QA outputs + contact sheets synced on NAS under `/Volumes/data/studio-live/History Of Science/02_Video-Projects/009_The-Falling-Moon-Gravity/10_Shorts/qa_short_A_v01/` and `qa_short_B_v01/` (`sheets/*_open_sheet.jpg`, `*_rows_sheet.jpg`, `picture_qa/picture_qa_review.jpg`, `cg_s02_km_a_second_9x16.jpg`, `cg_s07_orbit_teach_9x16.jpg`, `cg_s04_sixty_earths_9x16.jpg`, `cg_s06_dots_square_9x16.jpg`), and merge PR #718 once CI is green (if elected Chief, or hand merge to Chief).\n2. Verify SHA-256 parity across NAS (`10_Shorts/J2171/short_A/` & `short_B/`) and `HOS UAT/009_The-Falling-Moon-Gravity/10_Shorts/`:\n   - `hos_009_short_A_v01.mp4` (*What Would Happen If the Moon Stopped Moving?*, `25.4 s`, `936x1664`, `-14.0 LUFS / -1.9 dBTP`, SHA-256 `43dbeb3ae42ed682814af56cec2bde0a3626a758c949174145af2db243278332`, `11,851,675` bytes)\n   - `hos_009_short_B_v01.mp4` (*How Did Newton Discover Gravity?*, `25.5 s`, `936x1664`, `-14.3 LUFS / -1.8 dBTP`, SHA-256 `e6e5ae3ff3be4856cc0a45af78f17f6b410974784a67fd3e6bba8222bc48037a`, `10,725,616` bytes)\n3. Verify all 12/12 ship gates exit 0 (`polish_gate`, `picture_qa`, `music_gate`, `sfx_kit level`, `vo_check_py312`, `gate_shorts_open`), pairwise Frame-0 uniqueness (28 dHash bits, 0.069 bg SSIM), and note that Short B's single 2-3 s no-edge soft-sky warning (1/51 frames) is full-bleed sky/Earth framing.\n4. Confirm working unique Play 302 links for both `HOS UAT/009_The-Falling-Moon-Gravity/10_Shorts/*.mp4` files and set `awaits_ben` (`due: 2026-11-24T18:00Z`) for Ben's UAT watch under the 4 Nov order (`watched`/`heard` remain false until Ben watches).\n5. Keep scheduling conditional: HOS 009 long (planned Thu 26 Nov 2026 18:00Z, not yet uploaded/public) MUST be Public before either Short airs; also note Mon 30 Nov is the brief's conditional target while the 7 Nov HOS week uses Sat/Fri/Sun/Tue 11:30 slots.\n",
+      "ref": "J2171",
+      "film": "HOS:009",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-21T16:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T16:55Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify HOS PR #718, NAS/UAT SHA-256 parity, contact sheets, and unique Play links, then set awaits_ben",
+      "due": "2026-11-24T18:00:00Z",
+      "kind": "qa",
+      "plain": "Non-producer QA review and Ben UAT handoff for HOS 009 Shorts A and B (PR #718)"
     }
   ],
   "focus": [
