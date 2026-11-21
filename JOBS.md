@@ -59,7 +59,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3283 | mini | blocked | macbook-2 | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3289 | mini | blocked | gemini | – | review · Verify condition for J2040 |  |
 | J3291 | any | claimed | macbook-2 | 2026-11-21T18:36Z | assembly · Gates at upload and a daily 14-day re-check of everything scheduled (music_gate included, Shorts and longs, every channel) |  |
-| J3292 | any | blocked | macbook-2 | – | assembly · Direct alert to Ben when a same-day video is pulled or his watch is needed within 12 hours |  |
+| J3292 | any | open | – | – | assembly · Direct alert to Ben when a same-day video is pulled or his watch is needed within 12 hours |  |
 | J3294 | any | blocked | gemini | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J3295 | mini | blocked | gemini | – | review · Verify condition for J1275 |  |
 | J3297 | any | blocked | macbook-2 | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |

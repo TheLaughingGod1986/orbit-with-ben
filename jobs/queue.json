@@ -296096,13 +296096,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-21T13:13Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-21T13:09Z",
-      "result": "parked for Chief: the MacBook run on codex ended (exit 0) with its work pushed and the job still open. Branch macbook/J3292 in orbit-with-ben is 3 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1111. Review and merge it and close the job, or reopen the job with a note.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-21T13:09Z",
@@ -296123,6 +296123,11 @@
           "at": "2026-11-21T15:30Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-21T17:15Z",
+          "by": "gemini",
+          "what": "reopened: Acting-Chief review (gemini): CHANGES REQUESTED on PR #1111 (do not merge as-is). Fix 5 items on a clean rebased branch without jobs/queue.json or JOBS.md: (1) CRITICAL false watch alerts on already-approved/change-requested cards (video_tracker keeps v['ask'] when lane='approved'/'changes'; live OWB:ASK:J0979 would fire immediately) — require lane=='ready' and readyFor=='Ben' with unanswered check + regression tests; (2) CRITICAL wrap urgent_alerts.update() in try/except in board_publish.py, catch (OSError,ValueError), mkdir parent; (3) HIGH detect Short replacement/retirement when a previously scheduled <24h card disappears from a healthy non-empty channel tracker (supersededBy/retired omits key) + test; (4) MEDIUM rebase cleanly onto origin/main without queue.json/JOBS.md (PR is DIRTY); (5) LOW/MEDIUM use [Studio alert], write temp post file outside wt()/jobs, pause urgent_banner.js when document.hidden and avoid duplicate full board.json polls on pages using board_updates.js. Keep ntfy proposal #7063129917 as-is; re-run all tests and park for Chief merge. See full review: https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1111#issuecomment-7066333742"
         }
       ],
       "remaining_action": "Detect pulled same-day videos and near-deadline watch cards; one plain alert (one repeat) to Ben's phone; board banner until set up",
@@ -296130,14 +296135,6 @@
       "kind": "assembly",
       "urgent": 5,
       "plain": "Sends Ben one direct message when a video due today is pulled or his watch is needed soon",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-21T13:13Z",
-        "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      },
       "escalated_at": "2026-11-21T15:30Z"
     },
     {
