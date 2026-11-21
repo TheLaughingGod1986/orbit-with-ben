@@ -1,5 +1,5 @@
 {
-  "next_id": 3335,
+  "next_id": 3336,
   "jobs": [
     {
       "id": "J0001",
@@ -299465,6 +299465,51 @@
         "by": "gemini",
         "note": "Verified port 9224 has open studio.youtube.com tab on UCu94mInMFosxu3W0H6jlI6Q and detail.json has videos:{}"
       }
+    },
+    {
+      "id": "J3335",
+      "title": "Ben's settings decisions: automatic dubbing OFF and third-party AI training OFF on every channel (Orbit changes; HOS and FOH already off)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben's decisions (21 Nov 2026 ~23:30 London, in chat: \"1, 2 your recommendation\").** From the Studio settings audits (05_Analytics/*/STUDIO_SETTINGS_AUDIT_2026-11-21.md):\n1. Automatic dubbing OFF on every channel. Orbit With Ben has it on, with \"manually review automatic dubs before publishing\" off; History of Science and Field Order History are already off. Reason: the January plan targets English-speaking adults, dubbed views earn less, and unreviewed dubs are a quality risk. Revisit after monetisation.\n2. Third-party AI training OFF on every channel. Orbit With Ben has it on for all third-party companies; HOS and FOH are already off. One policy for all three; it has no growth effect.\n\n**Do, on the Mini, in Orbit With Ben's Studio window (CDP 9223; check the channel name first):**\na. Settings > automatic dubbing: turn it off for future uploads. Save, reload, read back. Leave dub tracks already on published videos as they are (removing them is a separate decision).\nb. Settings > Channel > Advanced settings > third-party training: turn it off. Save, reload, read back.\nc. Read back that History of Science (its Studio window) and Field Order History (CDP 9224) still show both OFF. Change nothing there.\nd. Record both as channel policy in the three audit files (\"Ben, 21 Nov 2026: off on every channel\") and in each channel's studio/RULES.md settings line if one exists, so later audits keep them off. One receipt on the thread.\n\n**Guards.** Touch only these two switches. No video, schedule, monetisation, country, Google Ads link or identity change. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-21T23:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T23:48Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-21T23:48Z",
+          "by": "claude",
+          "what": "rerouted to gemini on gemini-argon: Gemini is the free Mini lane and now covers Studio jobs (#1122)."
+        }
+      ],
+      "remaining_action": "Orbit Studio: turn off automatic dubbing and third-party AI training, read back; confirm HOS and FOH still off; record as policy",
+      "due": "2026-11-22T18:00:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "plain": "Turn off automatic dubbing and AI-training sharing on Orbit, matching the other two channels (Ben's decision)",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [
