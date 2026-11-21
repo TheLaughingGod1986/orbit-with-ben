@@ -293921,20 +293921,27 @@
           "at": "2026-11-21T04:02Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T04:02Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Update oKqmnJNGiHg source URL + readback, sync 007 SHORTS_RELEASE/library, set 008 placeholder schedule to 2026-11-26, open HOS PR to unblock PR #704",
+      "remaining_action": "Fix the dead source link on the live Phosphorus Short, sync the Vaccine Shorts records, move the Lightning placeholder date, then open one HOS pull request",
       "kind": "studio",
       "plain": "Fix broken source URL on Phosphorus Short and sync 007/008 HOS release records so contract CI passes",
       "mini_only": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-21T04:02Z",
-        "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "by": "claudecode"
+      },
+      "taskKeys": [
+        "HOS:007",
+        "HOS:008"
+      ]
     },
     {
       "id": "J3272",
