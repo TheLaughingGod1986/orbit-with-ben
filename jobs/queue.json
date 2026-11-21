@@ -294588,18 +294588,28 @@
           "at": "2026-11-21T09:01Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Live YouTube Data API and public watch/Shorts pages fetched at 2026-11-21T09:00Z for all 10 newest public videos"
+        },
+        {
+          "at": "2026-11-21T09:01Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: All 10 live public videos checked: chapters, sources/URLs (all HTTP 200), end screen, pinned comment, and Related pills all pass (0 fixes needed)"
         }
       ],
-      "remaining_action": "Cross-check live descriptions, chapters, source URLs, end screen and Related pills against manifests and cuts",
+      "remaining_action": "Verify gc1hWQQJOq4 status, RT-ec4_GcOk v08 manifest, and 026 chapter cut timestamps",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
         "at": "2026-11-21T09:01Z",
         "by": "gemini",
-        "note": "Live YouTube Data API and public watch/Shorts pages fetched at 2026-11-21T09:00Z for all 10 newest public videos"
-      }
+        "note": "All 10 live public videos checked: chapters, sources/URLs (all HTTP 200), end screen, pinned comment, and Related pills "
+      },
+      "taskKeys": [
+        "OWB:026",
+        "OWB:025",
+        "OWB:030"
+      ]
     }
   ],
   "focus": [
