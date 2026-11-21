@@ -292536,10 +292536,10 @@
       "stage": "",
       "after": "J3254",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-21T01:38Z",
+      "eta": "2026-11-21T03:38Z",
       "created_by": "claude",
       "created_at": "2026-11-20T22:47Z",
       "result": "",
@@ -292553,12 +292553,25 @@
           "at": "2026-11-21T01:01Z",
           "by": "claude",
           "what": "Needs the Field Order History Studio window (port 9224 on the Mini) signed in; at 23:49Z on 20 Nov it was still on Google's sign-in page. Claude asks Ben for that sign-in once, in chat. Orbit and HOS parts can start without it."
+        },
+        {
+          "at": "2026-11-21T01:38Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Audit all Studio settings per channel (FOH first after sign-in, then Orbit and HOS); fix reversible ones our rules require; money/identity/country/dubbing to Ben",
       "due": "2026-11-24T18:00:00Z",
       "kind": "studio",
-      "plain": "Have an AI go through every YouTube and Studio setting on our channels and set them up for growth"
+      "plain": "Have an AI go through every YouTube and Studio setting on our channels and set them up for growth",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T01:38Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3256",
