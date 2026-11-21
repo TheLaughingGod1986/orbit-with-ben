@@ -296679,13 +296679,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-21T21:32Z",
-      "eta": "2026-11-21T22:32Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-21T14:58Z",
-      "result": "",
+      "result": "Acting Chief (gemini) PASS on J3297. Merged PR #1116 (d41a034422, 05_Analytics/live_fixes/2026-11-21_recheck.md, base=main, CLEAN, 0 email/network findings) and independently completed both owed live reads on new Short 2YiV_zDgLJg at 2026-11-21T21:29Z: (1) public /shorts/2YiV_zDgLJg (HTTP 200) serves reelCarouselButtonViewModel Related pill to rVqgtkBV3jc; (2) YouTube Data API v3 confirms privacyStatus=public, publishAt=None, madeForKids=False, PT23S, 9 tags, en-GB, live description (1325 chars) matches PACKAGE_MANIFEST_v06.json byte-for-byte, watch link rVqgtkBV3jc HTTP 200, DOI 10.1119/1.1969508 HTTP 302->AIP Frisch & Smith 1963. Top 10 public videos unchanged since 13:23:46Z; J3319 6h check already completed (236 views, rank 2/10, no title change). 10/10 PASS, 0 live Studio/YouTube fixes needed. Queued follow-ups: J3326 (due J0216 standalone Shorts readout + S1-S8 Related-link recommendation) and J3327 (UPLOADS.json repo sync for dH_yCRmzkMo and aEfdxex__Bo). £0 spend.",
       "history": [
         {
           "at": "2026-11-21T14:58Z",
@@ -296716,6 +296716,11 @@
           "at": "2026-11-21T21:32Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T21:32Z",
+          "by": "gemini",
+          "what": "done: Acting Chief (gemini) PASS on J3297. Merged PR #1116 (d41a034422, 05_Analytics/live_fixes/2026-11-21_recheck.md, base=main, CLEAN, 0 email/network findings) and independently completed both owed live reads on new Short 2YiV_zDgLJg at 2026-11-21T21:29Z: (1) public /shorts/2YiV_zDgLJg (HTTP 200) serves reelCarouselButtonViewModel Related pill to rVqgtkBV3jc; (2) YouTube Data API v3 confirms privacyStatus=public, publishAt=None, madeForKids=False, PT23S, 9 tags, en-GB, live description (1325 chars) matches PACKAGE_MANIFEST_v06.json byte-for-byte, watch link rVqgtkBV3jc HTTP 200, DOI 10.1119/1.1969508 HTTP 302->AIP Frisch & Smith 1963. Top 10 public videos unchanged since 13:23:46Z; J3319 6h check already completed (236 views, rank 2/10, no title change). 10/10 PASS, 0 live Studio/YouTube fixes needed. Queued follow-ups: J3326 (due J0216 standalone Shorts readout + S1-S8 Related-link recommendation) and J3327 (UPLOADS.json repo sync for dH_yCRmzkMo and aEfdxex__Bo). £0 spend."
         }
       ],
       "remaining_action": "Check the chapters, sources and links on recent Orbit videos",
@@ -296729,7 +296734,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "d41a034422"
     },
     {
       "id": "J3298",
