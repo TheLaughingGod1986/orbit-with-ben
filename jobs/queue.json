@@ -298977,19 +298977,24 @@
           "at": "2026-11-21T22:00Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Verified Claude UP (heartbeat 21:51:41Z, Chief: Claude, no down file); PR #718 6/6 CI MERGEABLE/CLEAN; NAS SHA-256 exact match"
+        },
+        {
+          "at": "2026-11-21T22:02Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Opened OWB PR #1133 (67477b8337, jobs/reviews/J3329/REVIEW.md); verdict CONDITION MET (claude UP heartbeat 21:51:41Z); parking protected hold release for Chief"
         }
       ],
-      "remaining_action": "Write J3329 verification review in clean worktree PR and park protected Chief reopen for Claude",
+      "remaining_action": "Parked for Chief (claude): merge PR #1133, reopen J3311 + handback open_claim, and close J3329",
       "kind": "review",
       "recheck_of": "J3311",
       "due": "2026-11-21T22:56:01+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-21T22:00Z",
+        "at": "2026-11-21T22:02Z",
         "by": "gemini",
-        "note": "Verified Claude UP (heartbeat 21:51:41Z, Chief: Claude, no down file); PR #718 6/6 CI MERGEABLE/CLEAN; NAS SHA-256 exact"
+        "note": "Opened OWB PR #1133 (67477b8337, jobs/reviews/J3329/REVIEW.md); verdict CONDITION MET (claude UP heartbeat 21:51:41Z); p"
       },
       "taskKeys": [
         "HOS:009"
