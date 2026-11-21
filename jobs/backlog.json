@@ -241,6 +241,18 @@
       "remaining_action": "Prepare the next HOS picture plan for review"
     },
     {
+      "key": "comment-replies",
+      "repo": "owb",
+      "needs": "mini",
+      "kind": "listing",
+      "eta": 25,
+      "every_h": 2,
+      "punctual": true,
+      "title": "Comment replies: read new comments on every channel, draft in that channel's voice, escalate the sensitive ones",
+      "body": "Run python3 scripts/comment_replies.py run from the studio checkout. It reads new comments on every registered channel and drafts replies in that channel's Comment voice. It posts only when 05_Analytics/comments/VOICE_APPROVED contains a yes from Ben's one voice check. Until that file exists the run writes 05_Analytics/comments/VOICE_SAMPLES.md and posts nothing. No deletes, no hides, no links, no pinning, no visibility changes, no subscribe ask, and no fresh number that is not already in the comment. At most 20 replies per channel. Stay under 3,000 API units a day per project. Log topic requests on each channel's ideas list. Append one batched line for anything escalated. GBP0. For the first two days after the voice check, the Chief reads ten replies a day on each channel. Then jobs.py done.",
+      "remaining_action": "Read new comments and draft replies, posting only after the voice check"
+    },
+    {
       "key": "both-qa-sweep",
       "repo": "owb",
       "needs": "mini",

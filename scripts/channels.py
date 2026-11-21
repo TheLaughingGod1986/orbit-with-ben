@@ -74,7 +74,12 @@ def _load(directory: str = str(DIR)) -> tuple:
                 raise ValueError(f"{src}: slug {c['slug']!r} but the registry says {entry['slug']!r}")
             # Whether a channel's content lives in the studio's own root is the registry's to say, not the channel's:
             # a channel's settings file reads the same whichever studio it is plugged into.
-            out.append(dict(c, home=bool(entry.get("home")), local=entry.get("local"), _source=str(src)))
+            merged = dict(c, home=bool(entry.get("home")), local=entry.get("local"), _source=str(src))
+            # Comment login and voice bans are studio plug-in settings. They live on the registry
+            # line so the reply tool never names a channel, and they override a copy in channel.json.
+            if entry.get("comments"):
+                merged["comments"] = dict(c.get("comments") or {}, **entry["comments"])
+            out.append(merged)
     else:
         for p in sorted(base.glob("*/channel.json")):
             c = _check(json.loads(p.read_text()), p)

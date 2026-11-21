@@ -1661,6 +1661,7 @@ def build_from_docs(docs: dict, checks: dict | None = None, overrides: dict | No
         alljobs=all_jobs,
     )
     doc["firstDay"] = first_day(all_jobs)
+    doc["comments"] = comments_board()
     return doc
 
 
@@ -1673,6 +1674,16 @@ def first_day(all_jobs: list[dict], now: datetime | None = None) -> list[dict]:
         return launch_check.panel(now or datetime.now(timezone.utc), {"jobs": all_jobs})
     except Exception as e:  # noqa: BLE001
         print(f"first-day panel not built: {e}", file=sys.stderr)
+        return []
+
+
+def comments_board() -> list:
+    """Comments cards for the board (new, replied, escalated, themes). A bad file never drops the videos."""
+    try:
+        import comment_replies
+        return comment_replies.board_cards()
+    except Exception as e:  # noqa: BLE001
+        print(f"comments panel not built: {e}", file=sys.stderr)
         return []
 
 

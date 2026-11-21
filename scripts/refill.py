@@ -127,8 +127,17 @@ def do_refill(data: dict, items: list, at: dt.datetime, min_ready: int = MIN_REA
             continue
         add(it)
         data["jobs"][-1]["urgent"] = 0
+    # Punctual items run on their own clock (comment replies, every 2 hours) even when the
+    # ready queue is already full. One live copy, and never sooner than every_h.
     for it in items:
-        if it.get("daily_at") or it.get("monthly_on"):
+        if not it.get("punctual") or it.get("daily_at") or it.get("monthly_on") or busy(it["key"]):
+            continue
+        prev = last.get(it["key"])
+        if prev and at - studio.parse(prev) < dt.timedelta(hours=it.get("every_h", 24)):
+            continue
+        add(it)
+    for it in items:
+        if it.get("daily_at") or it.get("monthly_on") or it.get("punctual"):
             continue
         if have >= min_ready:
             break
@@ -144,7 +153,7 @@ def do_refill(data: dict, items: list, at: dt.datetime, min_ready: int = MIN_REA
             floor = min(FALLBACK_MIN_H, it.get("every_h", 24) / 4)
             return not prev or at - studio.parse(prev) >= dt.timedelta(hours=floor)
         free = [it for it in items if not busy(it["key"]) and not it.get("daily_at") and not it.get("monthly_on")
-                and it.get("every_h", 24) < STRICT_EVERY_H and rested(it)]
+                and not it.get("punctual") and it.get("every_h", 24) < STRICT_EVERY_H and rested(it)]
         if free:
             add(min(free, key=lambda it: last.get(it["key"], "")))
     return added

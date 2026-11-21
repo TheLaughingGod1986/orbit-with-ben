@@ -7,8 +7,8 @@
     "default_channel": "owb"
   },
   "channels": [
-    {"slug": "owb", "home": true},
-    {"slug": "hos", "env": "HOS_REPO", "checkouts": ["History Of Science", "history-of-science"]},
-    {"slug": "ww2", "env": "WW2_REPO", "checkouts": ["ww2", "ww2-channel"]}
+    {"slug": "owb", "home": true, "comments": {"token_env": "YOUTUBE_REFRESH_TOKEN", "env_from": "studio", "ai_reads": false, "ai_line": "The channel uses AI tools to help reply.", "never_re": [], "voice": "Friendly British, warm and plain, a little wonder, never dread. Specific to what they wrote. No stock opener, no emoji, no link, no subscribe ask."}},
+    {"slug": "hos", "env": "HOS_REPO", "checkouts": ["History Of Science", "history-of-science"], "comments": {"token_env": "YOUTUBE_REFRESH_TOKEN", "env_from": "checkout", "ai_reads": false, "ai_line": "The channel uses AI tools to help reply.", "never_re": ["\\b(medical advice|diagnos\\w*|dosage|prescription|symptom|should I take)\\b"], "voice": "Warm British, curious about how a discovery was made. Plain words. Never give medical advice. No subscribe ask."}},
+    {"slug": "ww2", "env": "WW2_REPO", "checkouts": ["ww2", "ww2-channel"], "comments": {"token_env": "YOUTUBE_REFRESH_TOKEN_WW2", "env_from": "studio", "ai_reads": false, "ai_line": "The channel uses AI tools to help reply.", "never_re": ["\\b(vote for|election|politician|glorious victory|slaughter|gore)\\b"], "voice": "Calm British documentary voice. Machines, supply and what the records show. Never politics, never glory in the fighting, never gore. No subscribe ask."}}
   ]
 }

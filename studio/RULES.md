@@ -291,6 +291,10 @@ Any FAIL goes back to the builder before the thumb is set. Live thumbs aren't re
 
 **Effective for topics locked from 1 Jan 2027** (Ben, 20 Nov 2026 · `J3222`: *"It sounds like a very strong, sensible idea. I think we should go ahead and implement this from after the test in December. ... starting from January, have this new method of researching films, find if they fit in the Anglosphere, the demands on the field, if they're adult films, and if they've got high view rates."*), every new Orbit topic must pass the **search-led topic method** in `STUDIO_PLAYBOOK.md` §2 (`05_Analytics/LEARNINGS.md` rule 37): demand (10k–150k/mo, competition ≤45), Anglosphere adult value + RPM proxy, signed-out top-10 gap, small-channel (<50k subs, ≥5×) outlier proof, package first (3 titles + 2 thumb ideas before any script), cluster fit, Shorts-as-test signal, and monthly own search-terms review. Log all fields in `templates/TOPIC_OPPORTUNITY_SCORE.md` and `PRE_BUILD_VIDIQ_AUDIT.md`. The 1 Oct 2026 **neighbour pass** (at least three ≈1M+ education/space videos) becomes a **tie-breaker only** — still harvest subject words for description first lines and tags, and **never** put channel names in the listing. December's three format tests (22/26/30 Dec readouts) and Rule 34's pause on new single-question longs remain unchanged. Orbit only — do not apply HOS packaging habits here.
 
+## Comment voice
+
+Replies under the videos use a friendly British voice: warm, plain, and specific to what the viewer wrote, with a little wonder and never dread. One to three sentences. British spelling. No stock opener, no emoji, no link, and no subscribe ask. Do not promise a future film. If someone asks whether a reply is automated, say that the channel uses AI tools to help reply. Do not claim to be Ben, and do not claim a person typed the reply by hand.
+
 ## Never (this channel's additions)
 
 These add to the Never list in `AGENTS.md`. They remove nothing from it.

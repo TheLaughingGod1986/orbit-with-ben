@@ -1477,6 +1477,15 @@
     return `<section class="overview-first" aria-label="First day"><div class="ov-section-head"><h2>First day</h2>${more || `<span class="ov-count">how each new video started</span>`}</div>
       <div class="ov-stack">${recent.map(r => firstDayCard(r, b)).join("")}</div></section>`;
   }
+  function commentsSection(b) {
+    const rows = (((b || {}).tracker || {}).comments || []).filter(r => r && r.slug);
+    if (!rows.length) return "";
+    const cards = rows.map(r => {
+      const themes = (r.themes || []).slice(0, 3).join(", ");
+      return `<article class="ov-card"><b>${esc(r.name || r.slug)}</b><p>${Number(r.new) || 0} new · ${Number(r.replied) || 0} replied · ${Number(r.escalated) || 0} escalated</p>${themes ? `<p>${esc(themes)}</p>` : ""}</article>`;
+    }).join("");
+    return `<section class="overview-first" aria-label="Comments"><div class="ov-section-head"><h2>Comments</h2><span class="ov-count">new, replied, escalated</span></div><div class="ov-stack">${cards}</div></section>`;
+  }
   function firstDayPage(b) {
     const rows = firstDayRows(b);
     return `<header class="top"><a class="more back" href="#overview">‹ Back to Overview</a></header>
@@ -1616,6 +1625,7 @@
       ${needsAttentionBanner(b)}
       ${planSection(b)}
       ${firstDaySection(b,now)}
+      ${commentsSection(b)}
       ${machinesCard(b,now)}
       ${activityCard(b,now)}
       ${workingOnNow(b)}
