@@ -292188,19 +292188,27 @@
           "at": "2026-11-21T02:51Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T02:51Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed. MiniWork nearly full; inspecting scratch and desk before any move."
         }
       ],
-      "remaining_action": "Leave the existing MiniWork offload running, then read its exit file and confirm at least 40 GB free",
+      "remaining_action": "Inspect MiniWork scratch and desk for old completed folders safe to archive",
       "due": "2026-11-21T07:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-21T02:12Z",
+        "step": 0,
+        "of": 4,
+        "at": "2026-11-21T02:51Z",
         "by": "cursor",
-        "note": "Offload still running in tmux J3249-offload (pid 52498, started 01:15). No second copy. MiniWork 89 GiB free. Spot-check"
-      }
+        "note": "Claimed. MiniWork nearly full; inspecting scratch and desk before any move."
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3250",
