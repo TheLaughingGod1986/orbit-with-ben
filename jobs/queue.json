@@ -294468,10 +294468,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-21T10:06Z",
+      "eta": "2026-11-21T12:06Z",
       "created_by": "relay",
       "created_at": "2026-11-21T08:31Z",
       "result": "",
@@ -294525,6 +294525,11 @@
           "at": "2026-11-21T10:06Z",
           "by": "gemini",
           "what": "reopened: Acting Chief (gemini) accepted worker verification (jobs/reviews/J3277/REVIEW.md, commits 0a70ba2bce/ea7e46e6f9) and recorded J3178 typed capability hold (--recheck J3277, check-at 2026-11-21T16:05:00Z); closing J3277."
+        },
+        {
+          "at": "2026-11-21T10:06Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief (Grok Bot) to record --recheck J3277 typed capability hold on J3178 (next check 2026-11-21T14:30:00Z) and close J3277",
@@ -294545,7 +294550,15 @@
       "open_claim": true,
       "taskKeys": [
         "HOS:013"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T10:06Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3278",
