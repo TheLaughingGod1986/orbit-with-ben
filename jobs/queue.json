@@ -1,5 +1,5 @@
 {
-  "next_id": 3293,
+  "next_id": 3294,
   "jobs": [
     {
       "id": "J0001",
@@ -294366,6 +294366,11 @@
           "at": "2026-11-21T13:17Z",
           "by": "claudecode",
           "what": "step 4 of 5 done: Already uploaded earlier today as 2YiV_zDgLJg (Private, scheduled Wed 2 Dec 11:30Z). Not uploading again; resuming at the Related video."
+        },
+        {
+          "at": "2026-11-21T13:18Z",
+          "by": "claude",
+          "what": "Ben said Go to publishing 2YiV_zDgLJg today; the Related video, going public and Buffer moved to J3293. Records PR #1107 merged by Claude."
         }
       ],
       "remaining_action": "Set the Related video on the already-uploaded muons Short in Studio; Chief to merge the records",
@@ -295846,6 +295851,38 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J3293",
+      "title": "Publish the Muons Short v06 2YiV_zDgLJg today (Ben: \"Go\"): set Related first while Private, then public, Buffer, records",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben's decision (21 Nov 2026, in chat: asked \"What's your recommendation\", Claude recommended publishing today at about 14:00 London with the Related video set first while still Private; Ben: \"Go\").** Publish the Muons Short v06 `2YiV_zDgLJg` (\"Muons Shouldn't Reach the Ground. They Do.\", Ben OK'd v06 ~12:52Z, sha256 5c85e443...8eee) today instead of Wed 2 Dec. Today's 11:30 slot aired nothing after v05 was pulled for its music (J3273).\n\n**Do, in this order, on the Mini (Studio 9223 and the Orbit upload login):**\n1. Read back `2YiV_zDgLJg`: Orbit channel UC_esArsDKd3GJvOkeO0DUog, Private, publishAt 2026-12-02T11:30Z, title as above. Check no other Orbit video went public today. If anything differs, stop and report.\n2. WHILE STILL PRIVATE: in YouTube Studio set its Related video to `rVqgtkBV3jc` (What Happens If You Travel Near Light Speed?). Reload and read it back.\n3. Make it public now: Data API videos.update with status.privacyStatus=public AND publishAt explicitly null (J3273 found that omitting publishAt keeps the old schedule). Read back: public, no publishAt. Change nothing else on it.\n4. Social: run the Buffer mirror for it now (the daily check had deferred it as beyond 7 days).\n5. Records: UPLOADS.json row (actual public time, \"Ben 21 Nov: published early, Go\", relatedStatus set), library.json date 2026-11-21, and note that Wed 2 Dec 11:30 is free again. Confirm the first-day check queues 6 hours after it went public.\n6. One short receipt on the studio thread with the read-backs.\n\n**Guards.** Touch only `2YiV_zDgLJg`. v05 `gc1hWQQJOq4` and v04 `rvug71d7Dqk` stay Private and unscheduled; delete nothing. £0. If it cannot go public by 15:00 London, finish steps 2 and 5 and report rather than publish late into the evening.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-21T13:18Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T13:18Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Set Related rVqgtkBV3jc while Private, then make 2YiV_zDgLJg public now (publishAt null), Buffer mirror, records, thread receipt",
+      "due": "2026-11-21T14:00:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "plain": "Publish today's Muons Short now, with its link to the full film set first",
+      "urgent": 6
     }
   ],
   "focus": [
