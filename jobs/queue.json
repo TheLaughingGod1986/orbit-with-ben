@@ -297573,13 +297573,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-21T18:49Z",
-      "eta": "2026-11-21T20:49Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-21T18:11Z",
-      "result": "",
+      "result": "Elected acting Chief (gemini) accepted J3316 CONDITION NOT MET verification (OWB PR #1120 merged, jobs/reviews/J3316/REVIEW.md) and verified Mini state directly: no non-producer reviewer available (claude out until 2026-11-21T21:50:00Z, chief retry 19:57:35Z, claudecode Fable limit until Nov 25, Mini codex 0% left until 24 Nov 23:26Z — macbook-2 95% left is a separate 27 Nov cycle, cursor Claude lanes out until Dec 9; gemini excluded as J2171 producer). NAS + iCloud UAT SHA-256 parity and HOS PR #718 (OPEN/MERGEABLE/CLEAN, 6/6 CI) verified intact. Recorded J3311 wait --type input --recheck J3316 --check-at 2026-11-21T21:55:00Z. £0 spent; no upload/schedule/privacy/Buffer changes.",
       "history": [
         {
           "at": "2026-11-21T18:11Z",
@@ -297635,6 +297635,11 @@
           "at": "2026-11-21T18:49Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T18:49Z",
+          "by": "gemini",
+          "what": "done: Elected acting Chief (gemini) accepted J3316 CONDITION NOT MET verification (OWB PR #1120 merged, jobs/reviews/J3316/REVIEW.md) and verified Mini state directly: no non-producer reviewer available (claude out until 2026-11-21T21:50:00Z, chief retry 19:57:35Z, claudecode Fable limit until Nov 25, Mini codex 0% left until 24 Nov 23:26Z — macbook-2 95% left is a separate 27 Nov cycle, cursor Claude lanes out until Dec 9; gemini excluded as J2171 producer). NAS + iCloud UAT SHA-256 parity and HOS PR #718 (OPEN/MERGEABLE/CLEAN, 6/6 CI) verified intact. Recorded J3311 wait --type input --recheck J3316 --check-at 2026-11-21T21:55:00Z. £0 spent; no upload/schedule/privacy/Buffer changes."
         }
       ],
       "remaining_action": "Parked for Chief: merge OWB PR #1120, record J3311 wait --recheck J3316, and close J3316",
