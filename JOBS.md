@@ -59,7 +59,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3231 | cloud | open | – | – | review · Weekly search research (Orbit + Field Order History): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
 | J3246 | mini | claimed | gemini | 2026-11-21T03:00Z | for gemini · review · `gemini-argon` · Verify condition for J1275 |  |
 | J3249 | mini | open | – | – | assembly · MiniWork scratch SSD cleanup: safely offload old completed-job scratch to NAS to restore >=40 GB free before J3012 daily split and cutover |  |
-| J3254 | mini | blocked | cursor | – | studio · Field Order History: set up its upload path (Studio browser profile + port, upload tooling for ww2, Ben's one sign-in), so finished pilots can go out |  |
+| J3254 | mini | open | – | – | studio · Field Order History: set up its upload path (Studio browser profile + port, upload tooling for ww2, Ben's one sign-in), so finished pilots can go out |  |
 | J3255 | mini | open (after J3254) | – | – | studio · YouTube and Studio settings audit for growth: every channel setting, upload default, layout, playlist and eligibility; fix the safe ones, ask Ben the rest |  |
 | J3258 | mini | open (after J3254) | – | – | studio · History of Science: take the two shared upload files from #1089 and add the uploadFor hook, so HOS uploads keep working |  |
 | J3261 | mini | open | – | – | 009 edit · assembly · HOS 009: Assemble v02 long master (E2 first 30 s, Teach cards/timeline, separate back-to-back graphics) | J2036 |
