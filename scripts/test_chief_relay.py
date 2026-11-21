@@ -674,7 +674,9 @@ class Relay(unittest.TestCase):
         cr.mark_down("claude", "usage limit", T0 + 120 * MIN, T0)
         cr.seen("chief", T0 - 10 * MIN)
         cr.cmd_run(T0)
-        self.assertEqual(self.job(q, "J0301").get("for"), "cursor")
+        first = self.job(q, "J0301")
+        self.assertTrue(first.get("open_claim"))   # J3238: a chain reroute stays open to any capable worker, no pin
+        self.assertNotIn("for", first)
         j = self.job(q, "J0306")
         self.assertEqual(j["needs"], "cloud")
         self.assertNotIn("for", j)
