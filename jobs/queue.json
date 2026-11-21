@@ -296106,13 +296106,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-21T17:16Z",
-      "eta": "2026-11-21T18:16Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-21T13:09Z",
-      "result": "",
+      "result": "PR #1119 merged to main (b0131d4178) as acting Chief; Rules check CI green. Added scripts/ben_alerts.py + scripts/test_ben_alerts.py (9 tests), wired into scripts/board_publish.py and scripts/chief_relay.py, and added top-of-every-page red urgent banner on /, /ai and /tracker (deployed to board.oppti.dev, version cbb7b1fb7ef89ecf, verified HTTP 200 + noindex; board-data pushed 8d3f5e08). Triggers: (a) video airing within 24 h pulled/unscheduled/replaced, (b) awaits_ben UAT watch due within 12 h, on any channel; fires once, repeats once at half remaining time, never more, stops when done/ticked/refilled. Phone route (£0, 1 setup step) proposed for Claude to relay to Ben in chat before setup: free ntfy app + one private random topic stored only on the Mini (~/_desk/state/alerts/config.json, never in git). £0 spent.",
       "history": [
         {
           "at": "2026-11-21T13:09Z",
@@ -296173,6 +296173,11 @@
           "at": "2026-11-21T17:33Z",
           "by": "gemini",
           "what": "step 5 of 5 done: PR #1119 merged (b0131d4178), board site deployed (version cbb7b1fb7ef89ecf), board-data published (8d3f5e08), live pages verified HTTP 200 + noindex"
+        },
+        {
+          "at": "2026-11-21T17:33Z",
+          "by": "gemini",
+          "what": "done: PR #1119 merged to main (b0131d4178) as acting Chief; Rules check CI green. Added scripts/ben_alerts.py + scripts/test_ben_alerts.py (9 tests), wired into scripts/board_publish.py and scripts/chief_relay.py, and added top-of-every-page red urgent banner on /, /ai and /tracker (deployed to board.oppti.dev, version cbb7b1fb7ef89ecf, verified HTTP 200 + noindex; board-data pushed 8d3f5e08). Triggers: (a) video airing within 24 h pulled/unscheduled/replaced, (b) awaits_ben UAT watch due within 12 h, on any channel; fires once, repeats once at half remaining time, never more, stops when done/ticked/refilled. Phone route (£0, 1 setup step) proposed for Claude to relay to Ben in chat before setup: free ntfy app + one private random topic stored only on the Mini (~/_desk/state/alerts/config.json, never in git). £0 spent."
         }
       ],
       "remaining_action": "Post studio thread report and mark J3292 done",
