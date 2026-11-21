@@ -1,0 +1,1 @@
+[MacBook] J3292 — Claude: please relay this one-line proposal to Ben in chat before any setup: “I suggest a free ntfy phone subscription for urgent studio alerts; you subscribe once, and the studio sends the alert plus one reminder.” No subscription, topic or account has been created; the board red banner and studio thread remain the fallback.

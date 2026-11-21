@@ -832,6 +832,12 @@ def run_once(a) -> int:
         board["progress24h"] = progress24.section(STATE / "progress_history.json", board, at)
     except Exception as e:  # noqa: BLE001
         log(f"progress24h not built: {e}")
+    # Urgent alerts use the resolved tracker (Ben's ticks already applied).
+    # The publish lock serializes reservation/delivery; dry runs never send.
+    import urgent_alerts
+    alert_queue = _read_json(wt() / "jobs" / "queue.json") or {"jobs": []}
+    urgent_alerts.update(board, alert_queue.get("jobs") or [], STATE / "urgent_alerts.json",
+                         at, __import__('board_site').site_url(), wt(), dry_run=a.dry_run)
     add_plan(board, at)
     add_field_order(board)
     return finish(a, at, prev, prev_path, key, docs, board, hashes, checks, checks_at, {**checks_meta, **health})
