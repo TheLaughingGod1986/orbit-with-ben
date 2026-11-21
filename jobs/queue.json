@@ -299502,10 +299502,10 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-21T23:57Z",
+      "eta": "2026-11-22T00:17Z",
       "created_by": "claude",
       "created_at": "2026-11-21T23:48Z",
       "result": "",
@@ -299519,6 +299519,11 @@
           "at": "2026-11-21T23:48Z",
           "by": "claude",
           "what": "rerouted to gemini on gemini-argon: Gemini is the free Mini lane and now covers Studio jobs (#1122)."
+        },
+        {
+          "at": "2026-11-21T23:57Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Orbit Studio: turn off automatic dubbing and third-party AI training, read back; confirm HOS and FOH still off; record as policy",
@@ -299534,7 +299539,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T23:57Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
