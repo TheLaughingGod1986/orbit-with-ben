@@ -72,6 +72,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3310 | mini | open (after J3307) | – | – | studio · Studio: arm T043 thumbnail Test & Compare on REXYxuLOBoI (005 — OUTLIVES OUR SUN) after J3307 PASS |  |
 | J3311 | mini | blocked | gemini | – | HOS:009 edit · qa · Review HOS 009 Short A v01 and Short B v01 (J2171, PR #718) | J2171 |
 | J3321 | mini | blocked | macbook-2 | – | review · Verify condition for J3255 |  |
+| J3322 | mini | open | – | – | studio · HOS Studio polish from J3255 audit: set Home trailer (AL_-qlWko_g) and add ETynHpIYLeY to PLEbpfUzWzcXU via Playlists manager |  |
 
 Recently finished:
 
