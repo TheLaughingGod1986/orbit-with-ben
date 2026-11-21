@@ -295145,13 +295145,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-21T18:55Z",
-      "eta": "2026-11-21T20:55Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-21T10:13Z",
-      "result": "",
+      "result": "Acting Chief (gemini) PASS on J3282. Independently verified signed-out live Bks_JLId1ew at 2026-11-21T18:53Z (playabilityStatus=OK, isPrivate=false, publishDate 11:30:11Z, Related=VbPubYd6Fbs, AI disclosure Made with AI, en-GB + en captions, 0 live defects) and exact 2-line library.json diff in HOS PR #715 (2f35da3d, CLEAN, 4/4 active CI green, owner non-fork). Squash-merged HOS PR #715 to main (a57dc33a3a86cab7d01935a440915304d5f6eae9); post-merge library.json confirmed Bks_JLId1ew status=live and check_all.sh ALL CHECKS PASS. Ruling posted to HOS desk #694 and OWB thread #954. No further follow-up needed for J3282 (J3312 6 h check done USUAL; 24 h readout tracked by 24 Nov 12:00Z date-gate job). Zero YouTube Studio/API writes, zero Buffer changes, GBP 0 cash / 0 credits; nothing for Ben.",
       "history": [
         {
           "at": "2026-11-21T10:13Z",
@@ -295232,6 +295232,11 @@
           "at": "2026-11-21T18:55Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T18:55Z",
+          "by": "gemini",
+          "what": "done: Acting Chief (gemini) PASS on J3282. Independently verified signed-out live Bks_JLId1ew at 2026-11-21T18:53Z (playabilityStatus=OK, isPrivate=false, publishDate 11:30:11Z, Related=VbPubYd6Fbs, AI disclosure Made with AI, en-GB + en captions, 0 live defects) and exact 2-line library.json diff in HOS PR #715 (2f35da3d, CLEAN, 4/4 active CI green, owner non-fork). Squash-merged HOS PR #715 to main (a57dc33a3a86cab7d01935a440915304d5f6eae9); post-merge library.json confirmed Bks_JLId1ew status=live and check_all.sh ALL CHECKS PASS. Ruling posted to HOS desk #694 and OWB thread #954. No further follow-up needed for J3282 (J3312 6 h check done USUAL; 24 h readout tracked by 24 Nov 12:00Z date-gate job). Zero YouTube Studio/API writes, zero Buffer changes, GBP 0 cash / 0 credits; nothing for Ben."
         }
       ],
       "remaining_action": "Parked for Chief merge of HOS PR #715",
@@ -295256,7 +295261,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "a57dc33a"
     },
     {
       "id": "J3283",
