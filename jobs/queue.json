@@ -296148,20 +296148,25 @@
           "at": "2026-11-21T17:17Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Started J3292; planning alert engine, relay/board wiring, red banner, and tests"
+        },
+        {
+          "at": "2026-11-21T17:20Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Design complete: ben_alerts.py triggers (24h pull/unschedule/replace + 12h awaits_ben watch), 1x alert + 1x half-remaining-time repeat, stop on done, ntfy 1-step £0 phone proposal, red banner on /, /ai, /tracker"
         }
       ],
-      "remaining_action": "Inspect board_site, board_publish, chief_relay, and UPLOADS/schedule sources to implement Ben urgent alerts",
+      "remaining_action": "Implement scripts/ben_alerts.py, wire into board_publish/chief_relay, add red banner across board pages, and write tests",
       "due": "2026-11-24T18:00:00Z",
       "kind": "assembly",
       "urgent": 5,
       "plain": "Sends Ben one direct message when a video due today is pulled or his watch is needed soon",
       "escalated_at": "2026-11-21T15:30Z",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-21T17:17Z",
+        "at": "2026-11-21T17:20Z",
         "by": "gemini",
-        "note": "Started J3292; planning alert engine, relay/board wiring, red banner, and tests"
+        "note": "Design complete: ben_alerts.py triggers (24h pull/unschedule/replace + 12h awaits_ben watch), 1x alert + 1x half-remaini"
       }
     },
     {
