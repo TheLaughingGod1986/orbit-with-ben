@@ -296364,17 +296364,22 @@
           "at": "2026-11-21T15:10Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Live Data API + signed-out public page + external URL audit completed at 15:09Z (68 videos: 7 public longs, 35 public Shorts including newly aired Bks_JLId1ew, 3 scheduled, 23 private unscheduled)"
+        },
+        {
+          "at": "2026-11-21T15:11Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Verified channel-audit.ts (68 videos, 0 errors), 7/7 public longs + 099 exact chapter match vs repo, 35/35 public Shorts Related (including newly public Bks_JLId1ew -> VbPubYd6Fbs), 8/8 external URLs HTTP 200, 3/3 scheduled Private with verified thumbs"
         }
       ],
-      "remaining_action": "Verify chapter timestamps against repo files, review all findings, and draft 2026-11-21_J3298.md in a clean HOS worktree",
+      "remaining_action": "Write 2026-11-21_J3298.md in clean HOS worktree, run check_all.sh, and open HOS PR",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-21T15:10Z",
+        "at": "2026-11-21T15:11Z",
         "by": "gemini",
-        "note": "Live Data API + signed-out public page + external URL audit completed at 15:09Z (68 videos: 7 public longs, 35 public Sh"
+        "note": "Verified channel-audit.ts (68 videos, 0 errors), 7/7 public longs + 099 exact chapter match vs repo, 35/35 public Shorts"
       },
       "taskKeys": [
         "HOS:001",
