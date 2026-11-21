@@ -297331,6 +297331,11 @@
           "at": "2026-11-21T17:37Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-21T17:44Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred claudecode): Cursor out of usage; next in its chain: claudecode"
         }
       ],
       "remaining_action": "Read back el30-mHiH-0 (expect Private, 22 Nov 11:30Z); if fine clear the banner, else reschedule it; fix ben_alerts first-run, replaced-in-slot and wording",
@@ -297338,7 +297343,15 @@
       "kind": "studio",
       "mini_only": true,
       "plain": "Check tomorrow's History of Science Short is still booked, remove the false alarm, and stop the alert repeating old news",
-      "urgent": 4
+      "urgent": 4,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3314",
