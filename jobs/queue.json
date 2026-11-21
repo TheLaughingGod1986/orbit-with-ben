@@ -296279,13 +296279,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-21T14:39Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-21T14:38Z",
-      "result": "parked for Chief: J3296 condition verification for J2537 is NOT YET MET (OWB PR #1115, jobs/reviews/J3296/REVIEW.md @ 84b539e959). Fresh check 2026-11-21T14:41Z across OWB #954 (thru 7064246341), HOS #694 (thru 7063111649), HOS #180 (capped at 2500 comments, last 7024089854), and HOS #657 (0 comments) found no new Ben exception for rewriting protected HOS hos-desk history while retaining PR180 (Grok 7018109147: do not ask again). Pre-rewrite NAS/MiniWork backups and HOS jobs/reviews/J2537/ rehearsal files verified intact; HOS origin/main is 1ee77b6deb, origin/hos-desk is a4ce692535, with 27 open non-desk PRs. Elected Chief (Grok Bot) needed to merge OWB PR #1115, run jobs.py wait J2537 --agent chief --type input --recheck J3296 --check-at 2026-11-21T20:45:00Z (scripts/jobs.py:604-605), and close J3296 (scripts/jobs.py:1559-1562). £0 spend, no live rewrite, no YouTube/Studio/Buffer changes.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-21T14:38Z",
@@ -296326,6 +296326,11 @@
           "at": "2026-11-21T14:44Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3296 condition verification for J2537 is NOT YET MET (OWB PR #1115, jobs/reviews/J3296/REVIEW.md @ 84b539e959). Fresh check 2026-11-21T14:41Z across OWB #954 (thru 7064246341), HOS #694 (thru 7063111649), HOS #180 (capped at 2500 comments, last 7024089854), and HOS #657 (0 comments) found no new Ben exception for rewriting protected HOS hos-desk history while retaining PR180 (Grok 7018109147: do not ask again). Pre-rewrite NAS/MiniWork backups and HOS jobs/reviews/J2537/ rehearsal files verified intact; HOS origin/main is 1ee77b6deb, origin/hos-desk is a4ce692535, with 27 open non-desk PRs. Elected Chief (Grok Bot) needed to merge OWB PR #1115, run jobs.py wait J2537 --agent chief --type input --recheck J3296 --check-at 2026-11-21T20:45:00Z (scripts/jobs.py:604-605), and close J3296 (scripts/jobs.py:1559-1562). £0 spend, no live rewrite, no YouTube/Studio/Buffer changes."
+        },
+        {
+          "at": "2026-11-21T16:20Z",
+          "by": "gemini",
+          "what": "reopened: Acting Chief (gemini) taking J3296 out of parked-for-Chief to close after merging OWB PR #1115 (2ae2fd297e) and recording J2537 wait --recheck J3296 for 2026-11-21T22:20:00Z"
         }
       ],
       "remaining_action": "Parked for Chief Grok Bot to merge OWB PR #1115, record J2537 wait --recheck J3296, and close J3296",
@@ -296341,13 +296346,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-21T14:44Z",
-        "by": "gemini",
-        "note": "OWB PR #1115 (84b539e959) open; condition NOT YET MET; parking J3296 for elected Chief Grok Bot"
-      },
       "taskKeys": [
         "HOS:005",
         "HOS:008",
