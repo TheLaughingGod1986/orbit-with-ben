@@ -130,5 +130,150 @@ class WholeRun(unittest.TestCase):
             self.assertEqual(left, [], "the watchdog was left running")
 
 
+@unittest.skipUnless(shutil.which("bash") and shutil.which("perl") and shutil.which("git"), "needs bash, perl and git")
+class WorktreeAndPushRetry(unittest.TestCase):
+    def setUp(self):
+        import os
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.root = pathlib.Path(self.tmp.name)
+        self.git_env = dict(
+            os.environ,
+            GIT_AUTHOR_NAME="Studio tests",
+            GIT_COMMITTER_NAME="Studio tests",
+            GIT_AUTHOR_EMAIL="studio-test@example.invalid",
+            GIT_COMMITTER_EMAIL="studio-test@example.invalid",
+            GIT_CONFIG_GLOBAL=os.devnull,
+            GIT_CONFIG_NOSYSTEM="1",
+            HOME=str(self.root / "home"),
+        )
+        (self.root / "home").mkdir()
+        self.remote = self.root / "remote.git"
+        self.git(self.root, "init", "--bare", str(self.remote))
+        self.repo = self.root / "repo"
+        self.git(self.root, "clone", str(self.remote), str(self.repo))
+        self.git(self.repo, "checkout", "-b", "main")
+        self.write(self.repo, "05_Analytics/owb/snapshots/seed.json", "{}\n")
+        self.git(self.repo, "add", ".")
+        self.git(self.repo, "commit", "-m", "seed without engine_guard")
+        self.git(self.repo, "push", "origin", "main")
+
+    def git(self, repo: pathlib.Path, *args: str) -> str:
+        r = subprocess.run(["git", "-C", str(repo), *args], capture_output=True, text=True, env=self.git_env)
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        return r.stdout.strip()
+
+    def write(self, repo: pathlib.Path, rel: str, text: str) -> None:
+        p = repo / rel
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_text(text)
+
+    def test_stale_worktree_missing_engine_guard_is_rebased_before_guard_check(self):
+        """Sat 21 Nov 2026 failure: fallback worktree predated scripts/engine_guard.py and failed before rebase."""
+        wt = self.root / "safe" / "worktree"
+        self.git(self.repo, "worktree", "add", "--detach", str(wt), "origin/main")
+        self.assertFalse((wt / "scripts" / "engine_guard.py").exists())
+
+        # Advance origin/main to add scripts/engine_guard.py (like commit 19a110d1dd).
+        (self.repo / "scripts").mkdir(parents=True, exist_ok=True)
+        shutil.copy2(SCRIPT.parents[2] / "scripts" / "engine_guard.py", self.repo / "scripts" / "engine_guard.py")
+        self.write(self.repo, "channels/channels.json", '{"studio": {"github": "test/studio"}}\n')
+        self.git(self.repo, "add", ".")
+        self.git(self.repo, "commit", "-m", "add engine_guard")
+        self.git(self.repo, "push", "origin", "main")
+
+        r = sh(
+            f'prepare_tracker_worktree "{self.repo}" "{wt}" && python3 "{wt}/scripts/engine_guard.py"',
+            env=self.git_env,
+        )
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertTrue((wt / "scripts" / "engine_guard.py").is_file())
+        self.assertEqual(self.git(wt, "rev-parse", "HEAD"), self.git(self.remote, "rev-parse", "main"))
+
+    def test_corrupted_worktree_directory_is_recreated_cleanly(self):
+        wt = self.root / "safe" / "worktree"
+        wt.mkdir(parents=True)
+        (wt / ".git").write_text("gitdir: /nonexistent/broken/worktree\n")
+        (wt / "stale.txt").write_text("junk\n")
+
+        r = sh(f'prepare_tracker_worktree "{self.repo}" "{wt}"', env=self.git_env)
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertFalse((wt / "stale.txt").exists())
+        self.assertEqual(self.git(wt, "rev-parse", "HEAD"), self.git(self.remote, "rev-parse", "main"))
+
+    def test_worktree_from_foreign_repo_is_refused_without_deleting_it(self):
+        foreign = self.root / "foreign"
+        self.git(self.root, "init", str(foreign))
+        self.write(foreign, "keep.txt", "precious\n")
+        self.git(foreign, "add", ".")
+        self.git(foreign, "commit", "-m", "foreign")
+
+        r = sh(f'prepare_tracker_worktree "{self.repo}" "{foreign}"', env=self.git_env)
+        self.assertNotEqual(r.returncode, 0)
+        self.assertIn("does not belong", r.stderr)
+        self.assertEqual((foreign / "keep.txt").read_text(), "precious\n")
+
+    def test_push_with_rebase_retry_recovers_from_non_fast_forward(self):
+        """Thu 19 Nov & Fri 20 Nov failure: main moved while the snapshot ran; retry must fetch, rebase, and push."""
+        wt = self.root / "safe" / "worktree"
+        self.git(self.repo, "worktree", "add", "--detach", str(wt), "origin/main")
+
+        # Tracker commits today's snapshot in the detached worktree.
+        self.write(wt, "05_Analytics/owb/snapshots/2026-11-21.json", '{"views": 100}\n')
+        self.git(wt, "add", "05_Analytics")
+        self.git(wt, "commit", "-m", "Channel tracker 2026-11-21")
+
+        # Meanwhile origin/main moves ahead on an unrelated file.
+        self.write(self.repo, "other.txt", "concurrent job commit\n")
+        self.git(self.repo, "add", "other.txt")
+        self.git(self.repo, "commit", "-m", "concurrent commit on main")
+        self.git(self.repo, "push", "origin", "main")
+
+        env = dict(self.git_env, PUSH_RETRIES="3", PUSH_RETRY_DELAY_S="0")
+        r = sh(f'cd "{wt}" && push_with_rebase_retry', env=env)
+        self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
+        self.assertEqual(self.git(self.remote, "show", "main:05_Analytics/owb/snapshots/2026-11-21.json"), '{"views": 100}')
+        self.assertEqual(self.git(self.remote, "show", "main:other.txt"), "concurrent job commit")
+
+    def test_push_with_rebase_retry_fails_after_bounded_attempts_when_remote_rejects(self):
+        wt = self.root / "safe" / "worktree"
+        self.git(self.repo, "worktree", "add", "--detach", str(wt), "origin/main")
+        self.write(wt, "05_Analytics/owb/snapshots/2026-11-21.json", '{"views": 100}\n')
+        self.git(wt, "add", "05_Analytics")
+        self.git(wt, "commit", "-m", "Channel tracker 2026-11-21")
+
+        counter = self.root / "attempts.log"
+        hook = self.remote / "hooks" / "pre-receive"
+        hook.write_text(f'#!/bin/sh\necho x >> "{counter}"\nexit 1\n')
+        hook.chmod(0o755)
+
+        env = dict(self.git_env, PUSH_RETRIES="3", PUSH_RETRY_DELAY_S="0")
+        r = sh(f'cd "{wt}" && push_with_rebase_retry', env=env)
+        self.assertNotEqual(r.returncode, 0)
+        self.assertIn("failed after 3 attempts", r.stderr)
+        self.assertEqual(len(counter.read_text().splitlines()), 3)
+
+    def test_push_with_rebase_retry_aborts_rebase_cleanly_on_conflict(self):
+        wt = self.root / "safe" / "worktree"
+        self.git(self.repo, "worktree", "add", "--detach", str(wt), "origin/main")
+        self.write(wt, "05_Analytics/owb/snapshots/seed.json", '{"side": "tracker"}\n')
+        self.git(wt, "add", "05_Analytics")
+        self.git(wt, "commit", "-m", "tracker edit")
+        local_head = self.git(wt, "rev-parse", "HEAD")
+
+        self.write(self.repo, "05_Analytics/owb/snapshots/seed.json", '{"side": "main"}\n')
+        self.git(self.repo, "add", "05_Analytics")
+        self.git(self.repo, "commit", "-m", "conflicting main edit")
+        self.git(self.repo, "push", "origin", "main")
+
+        env = dict(self.git_env, PUSH_RETRIES="3", PUSH_RETRY_DELAY_S="0")
+        r = sh(f'cd "{wt}" && push_with_rebase_retry', env=env)
+        self.assertNotEqual(r.returncode, 0)
+        self.assertIn("rebase onto origin/main failed", r.stderr)
+        self.assertEqual(self.git(wt, "rev-parse", "HEAD"), local_head)
+        gitdir = pathlib.Path(self.git(wt, "rev-parse", "--git-dir"))
+        self.assertFalse((gitdir / "rebase-merge").exists())
+
+
 if __name__ == "__main__":
     unittest.main()
