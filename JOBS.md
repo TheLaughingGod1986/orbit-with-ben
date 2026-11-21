@@ -61,6 +61,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3280 | mini | blocked | claudecode | – | studio · HOS repo-record & open-gate library sync (J3279): library.json, Blood SHORTS_RELEASE, OWB UPLOADS |  |
 | J3281 | mini | claimed | macbook-2 | 2026-11-21T12:04Z | studio · Reply to new viewer comments on Orbit With Ben (daily; first run: the 2024 YR4 Short) |  |
 | J3282 | any | open | – | – | 006 upload · listing · HOS 006 Short Bks_JLId1ew post-public read-back & library.json live flip |  |
+| J3283 | mini | open | – | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 
 Recently finished:
 
