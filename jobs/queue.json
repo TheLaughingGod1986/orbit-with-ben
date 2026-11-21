@@ -293926,17 +293926,23 @@
           "at": "2026-11-21T04:02Z",
           "by": "claudecode",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-21T04:07Z",
+          "by": "claudecode",
+          "what": "step 2 of 5 done: 007/008 record fixes pushed on HOS branch claudecode/J3271-live-fixes (86955ea4); live description not changed yet"
         }
       ],
-      "remaining_action": "Fix the dead source link on the live Phosphorus Short, sync the Vaccine Shorts records, move the Lightning placeholder date, then open one HOS pull request",
+      "remaining_action": "Change the dead source link on the live Phosphorus Short, read it back, then open the HOS pull request for Chief merge",
       "kind": "studio",
       "plain": "Fix broken source URL on Phosphorus Short and sync 007/008 HOS release records so contract CI passes",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-21T04:02Z",
-        "by": "claudecode"
+        "at": "2026-11-21T04:07Z",
+        "by": "claudecode",
+        "note": "007/008 record fixes pushed on HOS branch claudecode/J3271-live-fixes (86955ea4); live description not changed yet"
       },
       "taskKeys": [
         "HOS:007",
