@@ -295675,6 +295675,11 @@
           "at": "2026-11-21T13:07Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J2040 waiting condition verified NOT MET on Mac mini at 2026-11-21T13:04Z (PR #1109, commit 5883b2ee43, jobs/reviews/J3289/REVIEW.md). All 8 ~/.codex approval/gateway hashes match J3026/J3229 unchanged; J2517 (#793) and J2559 (#795) done; J2007 cancelled; PR #490 OPEN draft at f521bcd3f1 (1 comment, 0 reviews); docs/CODEX_ALLOWLIST.md absent from main; thread #954 through 7062986150 has no operator confirmation or fresh-session scoped acceptance evidence. Elected Chief (Grok Bot) to merge PR #1109, record jobs.py wait J2040 --recheck J3289 (suggested 2026-11-22T13:00:00Z; Codex down until 2026-11-24T23:26:00Z), and close J3289."
+        },
+        {
+          "at": "2026-11-21T15:30Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Parked for elected Chief (Grok Bot): merge PR #1109, run jobs.py wait J2040 --recheck J3289, and close J3289",
@@ -295696,7 +295701,8 @@
         "at": "2026-11-21T13:07Z",
         "by": "gemini",
         "note": "Opened PR #1109 (5883b2ee43, jobs/reviews/J3289/REVIEW.md) documenting NOT MET on all J2040 criteria; worktree removed; "
-      }
+      },
+      "escalated_at": "2026-11-21T15:30Z"
     },
     {
       "id": "J3290",
@@ -295761,6 +295767,11 @@
           "at": "2026-11-21T13:13Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J2529 condition NOT MET (PR #1110, commit 2ee8d9233e, jobs/reviews/J3290/REVIEW.md). Follow-up J3178 remains blocked on moving_video_input after J3277 (next check 2026-11-21T16:05:00Z); no continuous 24-fps playback evidence or Chief KEEP/RETAKE marks on HOS #180/#694, OWB #954, or PRs; 11/11 Batch 12-14 NAS hashes match receipts; REVIEW_STATE.json unchanged (48 KEEP / 8 RETAKE [3,10,24,28,47,49,54,63] / 10 unset [56-62,64-66]); direct read_file probe in agy 1.5.14 confirmed audio_input only (video/mp4 returns 8 1-fps static frames). Elected Chief (Grok Bot) to merge PR #1110, record jobs.py wait J2529 --type capability --requires moving_video_input --recheck J3290 --check-at 2026-11-21T16:20:00Z, and close J3290."
+        },
+        {
+          "at": "2026-11-21T15:30Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Elected Chief (Grok Bot) to merge PR #1110, record J2529 capability hold (--recheck J3290, 2026-11-21T16:20:00Z), and close J3290",
@@ -295789,7 +295800,8 @@
       },
       "taskKeys": [
         "HOS:013"
-      ]
+      ],
+      "escalated_at": "2026-11-21T15:30Z"
     },
     {
       "id": "J3291",
@@ -295932,6 +295944,11 @@
           "at": "2026-11-21T13:20Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: the MacBook run on codex ended (exit 0) with its work pushed and the job still open. Branch macbook/J3292 in orbit-with-ben is 3 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1111. Review and merge it and close the job, or reopen the job with a note."
+        },
+        {
+          "at": "2026-11-21T15:30Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Detect pulled same-day videos and near-deadline watch cards; one plain alert (one repeat) to Ben's phone; board banner until set up",
@@ -295946,7 +295963,8 @@
         "by": "macbook-2",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "escalated_at": "2026-11-21T15:30Z"
     },
     {
       "id": "J3293",
