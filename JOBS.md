@@ -58,7 +58,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3270 | any | blocked | macbook | – | script · HOS: learn from our data, add two new films to the backlog |  |
 | J3282 | mini | blocked | gemini | – | 006 upload · listing · HOS 006 Short Bks_JLId1ew post-public read-back & library.json live flip |  |
 | J3283 | mini | blocked | macbook-2 | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
-| J3286 | mini | blocked | gemini | – | review · Verify condition for J2036 |  |
+| J3286 | mini | open | – | – | review · Verify condition for J2036 |  |
 | J3287 | mini | blocked | gemini | – | review · Verify condition for J2171 |  |
 | J3289 | mini | blocked | gemini | – | review · Verify condition for J2040 |  |
 | J3290 | mini | blocked | gemini | – | review · Verify condition for J2529 |  |

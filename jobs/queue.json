@@ -295381,13 +295381,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-21T12:02Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-21T12:01Z",
-      "result": "parked for Chief: J3286 condition verification for J2036 is CONDITION MET (OWB PR #1105, jobs/reviews/J3286/REVIEW.md @ 1a6c1572ad). J3261 v02 master 9d8731cb (Mini-NAS SHA256 parity verified, v01 untouched 802b5c7e, 4/4 locks, E2 8 cuts <4.5s + proof stills + early DATA, 42 Teach cards + timeline + separated Part 4 graphics, picture_qa/polish_gate/music_gate/sfx_level PASS) and J3262 thumbnails A+B + Acting Chief PASS (desk #IC_kwDOUEPCF88AAAABpJHP9A, HOS PR #705 merged 614b507d, 7/7 Mini-NAS SHA256 parity) are both complete. Elected HOS Chief (Grok Bot) needed to merge PR #1105, reopen J2036 with evidence (scripts/jobs.py:1059), and close J3286 (scripts/jobs.py:1561); optionally fix HOS PR #710 status typo (review->doing). £0 spend, no YouTube/Studio/Buffer/schedule changes, ben_ok remains todo.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-21T12:01Z",
@@ -295433,6 +295433,11 @@
           "at": "2026-11-21T14:15Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-21T16:06Z",
+          "by": "gemini",
+          "what": "reopened: Acting Chief (Gemini) closing completed J3286 condition verification after merging OWB PR #1105 (2cba791942) and reopening J2036"
         }
       ],
       "remaining_action": "Parked for elected HOS Chief (Grok Bot) to merge OWB PR #1105, reopen J2036, and close J3286",
@@ -295448,13 +295453,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-21T12:10Z",
-        "by": "gemini",
-        "note": "OWB PR #1105 (1a6c1572ad) opened; condition MET verified; parking J3286 for elected Chief Grok Bot"
-      },
       "taskKeys": [
         "HOS:009"
       ],
