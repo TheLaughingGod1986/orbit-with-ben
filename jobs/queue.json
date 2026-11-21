@@ -292536,13 +292536,13 @@
       "stage": "",
       "after": "J3254",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-11-21T01:38Z",
-      "eta": "2026-11-21T03:38Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-20T22:47Z",
-      "result": "",
+      "result": "Waiting for: Ben's Studio sign-in for Field Order History is done: the channel window shows studio.youtube.com rather than Google's sign-in page, so the remaining settings can be read.",
       "history": [
         {
           "at": "2026-11-20T22:47Z",
@@ -292573,6 +292573,16 @@
           "at": "2026-11-21T01:50Z",
           "by": "cursor",
           "what": "step 3 of 4 done: Orbit and History of Science settings were read and left unchanged. Field Order History Studio is still on the Google sign-in page. Audits are on PR 1099. No visibility, schedule or monetisation change. GBP 0."
+        },
+        {
+          "at": "2026-11-21T01:50Z",
+          "by": "cursor",
+          "what": "blocked: Waiting for: Ben's Studio sign-in for Field Order History is done: the channel window shows studio.youtube.com rather than Google's sign-in page, so the remaining settings can be read."
+        },
+        {
+          "at": "2026-11-21T01:50Z",
+          "by": "cursor",
+          "what": "condition recorded; next verification 2026-11-21T08:00:00Z"
         }
       ],
       "remaining_action": "After the Field Order History Studio sign-in, read the settings the upload login cannot see",
@@ -292589,7 +292599,12 @@
       "taskKeys": [
         "WW2:001",
         "WW2:002"
-      ]
+      ],
+      "hold": {
+        "type": "ben",
+        "condition": "Ben's Studio sign-in for Field Order History is done: the channel window shows studio.youtube.com rather than Google's sign-in page, so the remaining settings can be read.",
+        "check_at": "2026-11-21T08:00:00Z"
+      }
     },
     {
       "id": "J3256",
