@@ -8,7 +8,7 @@
   <array>
     <string>/bin/zsh</string>
     <string>-lc</string>
-    <string>cd "$HOME/_desk/worker/orbit-with-ben" &amp;&amp; python3 scripts/agent_timer.py tick --agent macbook >> "$HOME/Library/Logs/agent-timer-macbook.log" 2>&gt;&amp;1</string>
+    <string>cd "$STUDIO_CHECKOUT" &amp;&amp; python3 scripts/agent_timer.py tick --agent macbook >> "$HOME/Library/Logs/agent-timer-macbook.log" 2>&gt;&amp;1</string>
   </array>
   <key>StartInterval</key>
   <integer>840</integer>

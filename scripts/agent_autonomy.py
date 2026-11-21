@@ -9,17 +9,23 @@ takes the best ready job through the existing claim, works it, and sleeps. One a
 runs twice (a per-agent lease). The Mini also keeps a memory floor and a cap (AGENT_MINI_CAP,
 default 3) on how many of its agents run at once.
 
-Claim order, when the agent is named: jobs whose kind lists that agent first in routing.py,
-then the existing urgent and due-soon order. Gemini also prefers picture and video watches.
+Claim order stays deadline, then the film that airs soonest, then nearest, then urgent.
+Skill (the kind that lists this agent first, plus Gemini's picture and video watches) only
+breaks a remaining tie. With no agent named, every job shares one skill rank.
 
 Finishing a pipeline stage queues the next stage's job (film and stage set) unless that job
 already exists. A failed run retries once on the next model in the kind's chain; the second
 failure files one repair job, releases the claim, and appends a line to the self-improvement
 feed (J3257) for rsi.ingest_failure when that module is present.
 
-Studio windows are one desk each: 9223 Orbit, 9224 Field Order History, 9460 History of
-Science on the Mini. 9222 is the Flow browser on the Mini and History of Science Studio on
-the MacBook. ElevenLabs and Flow stay one at a time. Kind assembly never takes a Studio desk.
+Studio is one desk per channel window. The desk name is studio-<slug> from the channel
+registry, the same name on every machine (each machine's locks are its own). ElevenLabs and
+Flow stay one at a time. Kind assembly never takes a Studio desk.
+
+Stage handoff is off until AGENT_STAGE_HANDOFF=1. It reads the channel's own stage list and
+never queues a publishing stage or a stage whose owner is Ben. A handoff error cannot undo done.
+
+Plists are not installed by this change. Each one cds to $STUDIO_CHECKOUT.
 """
 import datetime as dt
 import json
@@ -45,15 +51,15 @@ MINI_AGENTS = ("cursor", "gemini", "claudecode", "codex")
 GEMINI_WATCH = {"image", "video"}
 OPEN = ("open", "claimed", "blocked", "done")
 _LOCK = threading.Lock()
-# stage finished → (next stage, kind, needs, title). QA is a kind on the thumbs stage
-# because the board stages have no separate QA column. Upload is never queued here.
-HANDOFF = {
-    "script": ("sources", "facts", "any", "Check the spoken facts for {film}"),
-    "vo": ("shots", "review", "any", "Write the shot list for {film}"),
-    "picture": ("edit", "assembly", "mini", "Cut the pictures for {film}"),
-    "edit": ("thumbs", "qa", "any", "Review the cut of {film}"),
+# Kind for a stage whose channel file does not name one. Keys are stage names, not channels.
+STAGE_KIND = {
+    "topic": "review", "script": "script", "sources": "facts", "facts": "facts",
+    "vo": "vo", "shots": "review", "picture": "video", "edit": "assembly",
+    "thumbs": "thumb", "thumbnails": "thumb", "package": "listing", "listing": "listing",
+    "shorts_scripts": "script", "shorts_vo": "vo", "qa": "qa",
 }
-QA_NEXT = ("thumbs", "thumb", "mini", "Design the thumbnail for {film}")
+# Publishing, and the watch that stays Ben's. Never queued from a finished stage.
+SKIP_STAGES = {"upload", "ben_ok", "scheduled"}
 
 
 def enabled() -> bool:
@@ -163,23 +169,58 @@ def release_lease(agent: str, state=None) -> None:
         path.unlink(missing_ok=True)
 
 
+def _live_state(state) -> bool:
+    import chief_relay
+    if state is None:
+        return True
+    try:
+        return pathlib.Path(state).resolve() == pathlib.Path(chief_relay.STATE).resolve()
+    except OSError:
+        return False
+
+
+def relay_rows(at: dt.datetime, state=None) -> list:
+    """Live relay slot leases. A test state is read from its own chief folder, not the machine's."""
+    import chief_relay
+    if _live_state(state):
+        return list(chief_relay.current_executions(at))
+    folder = pathlib.Path(state) / "chief"
+    if not folder.is_dir():
+        return []
+    paths = sorted(folder.glob("execution-*.json"))
+    if not paths and (folder / "execution.json").is_file():
+        paths = [folder / "execution.json"]
+    out = []
+    for path in paths:
+        try:
+            row = json.loads(path.read_text())
+        except (OSError, ValueError):
+            continue
+        exp = _stamp(row.get("expiresAt")) if isinstance(row, dict) else None
+        if not exp or exp <= at or not _alive(row.get("pid")):
+            continue
+        out.append(row)
+    return out
+
+
+def relay_workers(at: dt.datetime, state=None) -> set:
+    return {str(row.get("worker")) for row in relay_rows(at, state) if row.get("worker")}
+
+
 def mini_running(at: dt.datetime, state=None) -> int:
-    return sum(1 for agent in MINI_AGENTS if lease_held(agent, at, state))
+    """Mini agents already running, whether a timer lease or a relay slot holds them. One agent counts once."""
+    held = {agent for agent in MINI_AGENTS if lease_held(agent, at, state)}
+    held |= {agent for agent in relay_workers(at, state) if agent in MINI_AGENTS}
+    return len(held)
 
 
 def memory_ok(free_mb=None) -> bool:
-    """True when free memory is at or above AGENT_MEM_FLOOR_MB. Unknown memory does not block."""
+    """True when free memory is at or above AGENT_MEM_FLOOR_MB. The figure is the relay's own reading."""
     floor = int(os.environ.get("AGENT_MEM_FLOOR_MB", "1536"))
     if free_mb is None:
-        raw = os.environ.get("AGENT_FREE_MB")
-        if raw:
-            try:
-                free_mb = int(raw)
-            except ValueError:
-                return True
-        else:
-            return True
-    return free_mb >= floor
+        import chief_relay
+        free_mb = chief_relay.free_memory_bytes() // (1024 * 1024)
+    return int(free_mb) >= floor
 
 
 def usage_blocked(agent: str, at: dt.datetime | None = None) -> bool:
@@ -196,6 +237,8 @@ def may_start(agent: str, at: dt.datetime, state=None, free_mb=None) -> tuple:
         return False, "usage"
     if lease_held(agent, at, state):
         return False, "already running"
+    if agent in relay_workers(at, state):
+        return False, "relay"
     if agent in MINI_AGENTS:
         cap = int(os.environ.get("AGENT_MINI_CAP", "3"))
         if mini_running(at, state) >= cap:
@@ -206,14 +249,21 @@ def may_start(agent: str, at: dt.datetime, state=None, free_mb=None) -> tuple:
 
 
 def channel_of(job: dict) -> str:
+    """The job's channel slug, from its repo or the registry. No channel is named here."""
+    import channels
     repo = str(job.get("repo") or "").lower()
-    if repo in ("hos", "ww2", "owb"):
+    if repo in channels.slugs():
         return repo
-    return "owb"
+    return channels.of_job(job)
 
 
 def desk_name(job: dict, host: str = "mini") -> str:
-    """The one desk this job needs, or '' when it needs none (code and tooling included)."""
+    """The one desk this job needs, or '' when it needs none (code and tooling included).
+
+    Studio is one name per channel, studio-<slug>, taken from the registry. `host` does not
+    change it: each machine keeps its own lock files, and the browser port stays in the channel file.
+    """
+    del host
     kind = job.get("kind") or ""
     if kind == "vo":
         return "elevenlabs"
@@ -221,20 +271,32 @@ def desk_name(job: dict, host: str = "mini") -> str:
         return "flow"
     if kind != "studio":
         return ""
-    channel = channel_of(job)
-    if channel == "ww2":
-        return "studio-ww2"          # 9224 Field Order History
-    if channel == "hos":
-        return "studio-hos-macbook" if host == "macbook" else "studio-hos-mini"  # 9222 / 9460
-    return "studio-owb"              # 9223 Orbit
+    return "studio-" + channel_of(job)
 
 
-def desk_blocks(job: dict, agent: str, state, at: dt.datetime, host: str = "mini") -> bool:
-    name = desk_name(job, host)
+def timer_desk_held(name: str, agent: str, at: dt.datetime, state=None) -> bool:
+    """True when an agent timer holds this desk for someone else."""
     if not name:
         return False
     row = _read_holder(state_root(state) / "desks" / f"{name}.json", at)
     return bool(row and row.get("agent") != agent)
+
+
+def desk_blocks(job: dict, agent: str, state, at: dt.datetime, host: str = "mini") -> bool:
+    """True when this desk is held by a timer, a relay lock, or another relay slot."""
+    name = desk_name(job, host)
+    if not name:
+        return False
+    if timer_desk_held(name, agent, at, state):
+        return True
+    if _live_state(state):
+        import chief_relay
+        if chief_relay.desk_lock_held(name):
+            return True
+    for row in relay_rows(at, state):
+        if row.get("desk") == name and row.get("worker") != agent:
+            return True
+    return False
 
 
 def acquire_desk(name: str, agent: str, at: dt.datetime, state=None, minutes: int = 25) -> bool:
@@ -317,34 +379,64 @@ def claim_next(data: dict, agent: str, at: dt.datetime, state=None) -> dict | No
         return None
 
 
-def next_spec(job: dict):
-    if (job.get("kind") or "") == "qa":
-        return QA_NEXT
-    return HANDOFF.get(job.get("stage") or "")
+def handoff_on() -> bool:
+    """Off until the Chief has checked one film per channel (AGENT_STAGE_HANDOFF=1)."""
+    return os.environ.get("AGENT_STAGE_HANDOFF", "0") == "1"
+
+
+def next_stage(job: dict):
+    """(stage, kind, needs, title) from this channel's own stage list, or None.
+
+    The next key is the one after the job's stage. A publishing stage, a stage with no
+    successor, and a stage owned by Ben are not queued.
+    """
+    if not job.get("film") or not job.get("stage"):
+        return None
+    import channels
+    slug = channel_of(job)
+    keys = channels.stage_keys(slug)
+    stage = str(job.get("stage") or "")
+    if stage not in keys:
+        return None
+    idx = keys.index(stage) + 1
+    if idx >= len(keys):
+        return None
+    nxt = keys[idx]
+    defs = {row["key"]: row for row in channels.stage_defs(slug)}
+    row = defs.get(nxt) or {}
+    if nxt in SKIP_STAGES or str(row.get("owner") or "").lower() == "ben":
+        return None
+    kind = str(row.get("kind") or STAGE_KIND.get(nxt) or "")
+    if not kind or kind in ("studio", "chief"):
+        return None
+    label = str(row.get("label") or nxt)
+    title = f"{label} for {job['film']}"
+    return nxt, kind, "any", title
 
 
 def queue_next(data: dict, job: dict, agent: str, at: dt.datetime):
-    """Queue the next pipeline stage once. None when there is nothing to queue or one already exists."""
-    if not enabled() or not job.get("film") or job.get("kind") == "chief" or job.get("needs") == "ben" or job.get("awaits_ben"):
+    """Queue the channel's next stage once. None when the switch is off, or one already exists.
+
+    Dedupe is film + stage + channel, whatever the kind. Default off: AGENT_STAGE_HANDOFF=1 to arm it.
+    """
+    if not handoff_on() or not job.get("film") or job.get("kind") == "chief" or job.get("needs") == "ben" or job.get("awaits_ben"):
         return None
-    spec = next_spec(job)
+    spec = next_stage(job)
     if not spec:
         return None
     stage, kind, needs, title = spec
-    if stage == "upload":
-        return None
-    title = title.format(film=job["film"])
     import channels
-    repo = job.get("repo") or channels.default()
-    if any(j.get("film") == job["film"] and j.get("stage") == stage and j.get("kind") == kind
-           and (j.get("repo") or channels.default()) == repo and j.get("status") in OPEN and j.get("id") != job.get("id")
+    slug = channel_of(job)
+    if any(j.get("film") == job["film"] and j.get("stage") == stage and channel_of(j) == slug
+           and j.get("status") in OPEN and j.get("id") != job.get("id")
            for j in data["jobs"]):
         return None
     import jobs
     body = (f"Queued when {job['id']} finished its stage. Film {job['film']}. "
             "£0. Ben's watch, money and publishing stay gated.")
     new = jobs.do_add(data, title=title, needs=needs, body=body, by=agent or "relay", at=at,
-                      film=str(job["film"]), stage=stage, kind=kind, repo=repo, action=title[:180])
+                      film=str(job["film"]), stage=stage, kind=kind, repo=slug or channels.default(),
+                      action=title[:180])
     new["handoff_from"] = job["id"]
     jobs.log(job, at, agent or "relay", f"queued {new['id']} for {stage}")
     return new
@@ -375,8 +467,15 @@ def fail_run(data: dict, job: dict, agent: str, model: str, command: str, tail: 
     if count < 1 and nxt:
         job["self_retry"] = {"count": 1, "from": agent, "model": model or "", "to": nxt[0], "to_model": nxt[1],
                              "command": command, "tail": tail[-400:]}
-        jobs.log(job, at, agent, f"retry once on {nxt[0]} {nxt[1]}")
-        return {"action": "retry", "agent": nxt[0], "model": nxt[1]}
+        if nxt[0] == agent:
+            jobs.log(job, at, agent, f"retry once in place on {nxt[1]}")
+            return {"action": "retry", "agent": agent, "model": nxt[1]}
+        # A different agent must claim the job itself. Running it inside this lease breaks its own jobs.py calls.
+        if job.get("status") == "claimed" and job.get("by") == agent:
+            jobs.do_release(job, agent, f"self_retry on {nxt[0]} {nxt[1]}", at)
+        else:
+            jobs.log(job, at, agent, f"self_retry on {nxt[0]} {nxt[1]}")
+        return {"action": "released", "agent": nxt[0], "model": nxt[1]}
     existing = next((j for j in data["jobs"] if j.get("repair_of") == job.get("id") and j.get("status") in ("open", "claimed", "blocked")), None)
     if existing:
         return {"action": "repair", "job": existing["id"], "duplicate": True}
@@ -422,8 +521,8 @@ def tick(agent: str, at: dt.datetime, state, data: dict, run, free_mb=None, feed
         if code == 0:
             return {"started": True, "ok": True, "job": job["id"]}
         outcome = fail_run(data, job, agent, model, command, tail, at, feed)
-        if outcome.get("action") == "retry":
-            code2, tail2, command2 = run(outcome["agent"], job, outcome["model"])
+        if outcome.get("action") == "retry" and outcome.get("agent") == agent:
+            code2, tail2, command2 = run(agent, job, outcome["model"])
             if code2 == 0:
                 return {"started": True, "ok": True, "job": job["id"], "retried": True}
             outcome = fail_run(data, job, agent, outcome["model"], command2, tail2, at, feed)
@@ -434,10 +533,15 @@ def tick(agent: str, at: dt.datetime, state, data: dict, run, free_mb=None, feed
         release_lease(agent, state)
 
 
+def plist_label(agent: str) -> str:
+    """Launchd label. The channel slug comes from the registry, not from a name written here."""
+    import channels
+    return "com." + channels.default() + ".agent." + agent
+
+
 def plist_body(agent: str, minutes: int) -> str:
-    label = f"com.owb.agent.{agent}"
-    repo = '"$HOME/_desk/worker/orbit-with-ben"' if agent.startswith("macbook") else '"$HOME/YouTube/orbit-with-ben"'
-    command = (f'cd {repo} &amp;&amp; python3 scripts/agent_timer.py tick --agent {agent} '
+    label = plist_label(agent)
+    command = (f'cd "$STUDIO_CHECKOUT" &amp;&amp; python3 scripts/agent_timer.py tick --agent {agent} '
                f'>> "$HOME/Library/Logs/agent-timer-{agent}.log" 2>&gt;&amp;1')
     return f"""<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -464,7 +568,7 @@ def write_plists(folder: pathlib.Path) -> list:
     folder.mkdir(parents=True, exist_ok=True)
     paths = []
     for agent, minutes, _label in TIMERS:
-        path = folder / f"com.owb.agent.{agent}.plist"
+        path = folder / (plist_label(agent) + ".plist")
         path.write_text(plist_body(agent, minutes))
         paths.append(path)
     return paths
@@ -559,9 +663,9 @@ def live_tick(agent: str, run=None, root: pathlib.Path | None = None) -> int:
             return fail_run(data, job, agent, model, command, tail, jobs.now(), state_root(state) / "rsi" / "failure_feed.jsonl"), None, []
 
         outcome, err = jobs.with_git(apply, f"jobs: {agent} timer failure {claimed['id']}")
-        if err or not outcome or outcome.get("action") != "retry":
-            return 1
-        code2, tail2, command2 = run(outcome["agent"], claimed, outcome["model"])
+        if err or not outcome or outcome.get("action") != "retry" or outcome.get("agent") != agent:
+            return 0 if outcome and outcome.get("action") == "released" else 1
+        code2, tail2, command2 = run(agent, claimed, outcome["model"])
         if code2 == 0:
             return 0
 

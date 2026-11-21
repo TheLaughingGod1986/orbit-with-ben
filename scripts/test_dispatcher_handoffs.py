@@ -155,9 +155,9 @@ class RelayContinuation(unittest.TestCase):
             available={'codex','gemini'}
             stack.enter_context(patch.object(cr,'workers_up',side_effect=lambda at:set(available)))
             stack.enter_context(patch.object(cr,'mark_down',side_effect=lambda who,*a,**kw:available.discard(who)))
-            def reroute(job,to,model,note):
+            def reroute(job,to,model,note,open_claim=False):
                 d=json.loads(q.read_text());j=next(j for j in d['jobs'] if j['id']==job['id'])
-                jobs.do_reroute(j,'relay',to,model,note,AT)
+                jobs.do_reroute(j,'relay',to,model,note,AT,open_claim=open_claim)
                 q.write_text(json.dumps(d));return True
             stack.enter_context(patch.object(cr,'reroute',side_effect=reroute))
             def run(who,prompt,cap,model):

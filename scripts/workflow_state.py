@@ -103,13 +103,22 @@ def external_hold(j, at):
         return j.get("result") or "Waiting for external input"
     return ""
 
+def leases(execution):
+    """One lease dict, a list of them (one per relay slot), or nothing."""
+    if not execution:
+        return []
+    if isinstance(execution, list):
+        return [e for e in execution if isinstance(e, dict)]
+    return [execution]
+
 def claim_is_stalled(j, at, execution=None):
     if j.get("status") != "claimed":
         return False
-    if execution and execution.get("job") == j.get("id"):
-        until = timestamp(execution.get("expiresAt"))
-        if until and until > at:
-            return False
+    for e in leases(execution):
+        if e.get("job") == j.get("id"):
+            until = timestamp(e.get("expiresAt"))
+            if until and until > at:
+                return False
     stamps = [timestamp(j.get("eta")), timestamp((j.get("progress") or {}).get("at"))]
     latest = max((t for t in stamps if t), default=None)
     return bool(latest and at > latest + STALL_GRACE)
@@ -130,11 +139,18 @@ def hold_due(j, by_id, at):
     return bool(j.get("after") and by_id.get(j["after"], {}).get("status") == "done" and not external_hold(j, at))
 
 def starting_execution(j, at, execution=None):
-    """Caller supplies a process-validated execution lease, not a heartbeat."""
-    if not execution or j.get("status") != "open" or execution.get("job") != j.get("id"):
+    """Caller supplies a process-validated execution lease, not a heartbeat.
+
+    A list is every live slot. The job is starting when any slot's lease names it."""
+    if j.get("status") != "open":
         return False
-    start, end = timestamp(execution.get("startedAt")), timestamp(execution.get("expiresAt"))
-    return bool(execution.get("worker") and start and end and start <= at < end)
+    for e in leases(execution):
+        if e.get("job") != j.get("id"):
+            continue
+        start, end = timestamp(e.get("startedAt")), timestamp(e.get("expiresAt"))
+        if e.get("worker") and start and end and start <= at < end:
+            return True
+    return False
 
 def state(j, by_id, at, active_review=None, execution=None):
     if j.get("status") not in LIVE:
@@ -246,7 +262,7 @@ def near_watch(tracker):
     return tuple(sorted(candidates, key=lambda key: (-candidates[key], key))[:3])
 
 
-def order(j, due, focus=(), at=None, nearest=(), air=None, agent=""):
+def order(j, due, focus=(), at=None, nearest=(), air=None, rows=None, *, agent=""):
     at = at or dt.datetime.now(dt.timezone.utc)
     film = j.get("film") or (j.get("handoff") or {}).get("film")
     # Shared/cohort jobs use recorded taskKeys instead of a single film/stage
@@ -270,22 +286,23 @@ def order(j, due, focus=(), at=None, nearest=(), air=None, agent=""):
     backlog = bool(j.get("backlog") or re.search(r"^Backlog|weekly .*audit|QA sweep|listing check.*live", j.get("title", ""), re.I))
     # Oldest film first: the film that airs soonest gets every free agent before a newer film's work (Ben, 8 Nov 2026).
     airs = [air[k] for k in production_keys if air and k in air] if not backlog else []
-    # Skill is the agent's own claim order (J3265): jobs whose kind lists that agent first come
-    # before urgent and due-soon work. The relay's dispatch does not pass an agent, so it stays
-    # deadline-first and remains the fallback. Unkinded jobs share one rank, so their order is unchanged.
-    ranked = (1 if recently_released(j, at) else 0, 1 if background else 0,
+    # Skill breaks ties only after deadline, air date, nearest film and urgent (J3265 review).
+    # With no agent every job shares one rank, so the relay's order is unchanged. `rows` is the
+    # queue list J3266's pacing reads; it stays the positional argument ahead of keyword `agent`.
+    skill = 1
+    if agent:
+        import agent_autonomy
+        skill = agent_autonomy.skill_rank(j, agent)
+    _ = rows  # the queue; flat-plan pacing (J3266) reads it once that change is merged
+    return (1 if recently_released(j, at) else 0, 1 if background else 0,
             deadline.timestamp() if deadline else inf,
             min(airs).timestamp() if airs else inf,
             0 if production_keys.intersection(nearest) else 1,
-            0 if urgent else 1, rank if urgent else 0,
+            0 if urgent else 1, rank if urgent else 0, skill,
             1 if backlog else 0,
             0 if production_keys.intersection(focus) else 1,
             0 if production_keys else 1, 0 if (j.get("eta_min") or 120) <= 60 else 1,
             created.timestamp() if created else inf, j["id"])
-    if not agent:
-        return ranked
-    import agent_autonomy
-    return (agent_autonomy.skill_rank(j, agent),) + ranked
 
 def claimable(j, rows, at, agent, chief, can=MINI, execution=None, capabilities=None):
     if not str(agent or "").strip():
@@ -319,7 +336,8 @@ def claimable(j, rows, at, agent, chief, can=MINI, execution=None, capabilities=
         return False
     if j.get("status") not in ("open", "claimed"):
         return False
-    if starting_execution(j, at, execution) and execution.get("worker") != agent:
+    if starting_execution(j, at, execution) and not any(
+            e.get("job") == j.get("id") and e.get("worker") == agent for e in leases(execution)):
         return False
     if j.get("status") == "claimed" and state(j, by_id, at, execution=execution) != "stalled":
         return False
@@ -340,9 +358,13 @@ def immediate_dispatch(rows, at, chief, workers, actors, choose_worker, exclude=
     Never interrupt an execution lease or give a worker a second claimed job.
     A green worker is eligible here only through the existing routing/claim gates.
     """
-    if execution and timestamp(execution.get("expiresAt")) and timestamp(execution["expiresAt"]) > at:
-        return None
+    # A live lease blocks yielding the job it is actually running. Another slot's lease
+    # does not freeze every other worker (parallel slots, 20 Nov 2026).
+    live_jobs = {e.get("job") for e in leases(execution)
+                 if e.get("job") and timestamp(e.get("expiresAt")) and timestamp(e["expiresAt"]) > at}
     owned = [j for j in rows if j.get("status") == "claimed" and j.get("by") in actors]
+    if any(j["id"] in live_jobs for j in owned):
+        return None
     # Only unmapped monthly analysis can yield automatically; media/stage claims keep ownership.
     if any(not yieldable_monthly_claim(j) for j in owned):
         return None
@@ -419,10 +441,13 @@ def snapshot(data, at, chief, workers, choose_worker, active_review=None, review
     active = [{"id": j["id"], "title": j.get("title", ""), "worker": j.get("by"), "mode": "job", "progress": j.get("progress")} for j in rows if j.get("status") == "claimed" and states.get(j["id"], {}).get("state") == "running"]
     for j in rows:
         if states.get(j["id"], {}).get("state") == "starting":
+            e = next((x for x in leases(execution) if x.get("job") == j.get("id")), None)
+            if not e:
+                continue
             states[j["id"]]["reason"] = "Worker launched; task claim pending"
-            active.append({"id":j["id"], "title":j.get("title", ""), "worker":execution["worker"],
-                           "mode":"starting", "phase":"starting", "startedAt":execution["startedAt"],
-                           "expiresAt":execution["expiresAt"]})
+            active.append({"id":j["id"], "title":j.get("title", ""), "worker":e.get("worker"),
+                           "mode":"starting", "phase":"starting", "startedAt":e.get("startedAt"),
+                           "expiresAt":e.get("expiresAt")})
     if active_review and states.get(active_review.get("job"), {}).get("state") == "running":
         active = [a for a in active if a["id"] != active_review["job"]]
         active.append({**active_review, "id": active_review["job"], "worker": active_review.get("agent"), "mode": "review"})

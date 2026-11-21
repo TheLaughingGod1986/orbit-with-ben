@@ -173,7 +173,7 @@ def do_add(data: dict, *, title: str, needs: str, body: str, by: str, at: dt.dat
     exempt = by in {"relay", "backlog", "refill"} or bool(re.match(r"backlog\b", title, re.I))
     if not exempt and (film_named(title) or (production and (film or film_named(body) or re.search(r"\b\d{3}_[A-Za-z]", body)))) and not (film and stage):
         raise ValueError("Film production jobs require --film and --stage")
-    if stage and stage not in studio.STAGES:
+    if stage and not stage_allowed(stage, repo):
         raise ValueError(f"stage must be one of {', '.join(studio.STAGES)}")
     if after and not find(data, after):
         raise ValueError(f"--after {after}: no such job")
@@ -205,6 +205,16 @@ def do_add(data: dict, *, title: str, needs: str, body: str, by: str, at: dt.dat
     data["next_id"] += 1
     data["jobs"].append(job)
     return job
+
+
+def stage_allowed(stage: str, repo: str = "") -> bool:
+    """A stage the queue can store: the studio board's list, or one this channel names in its own file."""
+    if stage in studio.STAGES:
+        return True
+    slug = str(repo or "").lower()
+    if slug not in channels.slugs():
+        slug = channels.default()
+    return stage in channels.stage_keys(slug)
 
 
 def film_named(title: str) -> bool:
@@ -255,6 +265,14 @@ PUBLISH_HARD = re.compile(
     r"\bupload(?:ed|s|ing)? (?:to|the|a)\b|youtube:package|\bupload packages?\b|"
     r"(?-i:\bFlow\b)|\bflow (?:veo|nano|credits?|browser)\b|\bchrome\b|\bmint\b", re.I)
 NOT_PORTABLE_KINDS = {"studio", "video", "vo", "image", "thumb", "chart", "chief"}
+# A needs=mini job the MacBook can take because it needs none of the Mini's tools (20 Nov 2026):
+# no upload, no Flow/Veo/Nano Banana, no ElevenLabs desk, no Mini-only token, no Mini worktree in progress.
+# The verification template says "not permission to upload"; that sentence is not the work.
+EXCLUSIVE_MINI = re.compile(
+    r"youtube:package|\bupload(?:ed|s|ing)?\b|(?-i:\bFlow\b)|\bveo\b|\bnano ?banana\b|"
+    r"\belevenlabs\b|\beleven_v3\b|\bvo_take\b|\bdesk-lock\b|"
+    r"\bmini-only token\b|\brefresh token\b|\bworktree\b", re.I)
+VERIFY_BOILER = re.compile(r"not permission to upload, spend or change a schedule\.?", re.I)
 # YouTube Studio on the MacBook (Ben, 9 Nov 2026: signed into Studio for both channels there). macbook_worker passes
 # MACBOOK_CDP = the CDP ports whose browser is up (the Mini's ports, same profiles). Each channel names its own port
 # in studio/channel.json (youtube.studio_port).
@@ -314,6 +332,21 @@ def mini_only_hit(text: str) -> bool:
     if MINI_HARD.search(raw):
         return True
     return bool(MINI_SOFT.search(MINI_PROHIBITION.sub(" ", raw)))
+
+
+def exclusive_mini(text: str) -> bool:
+    """True when the work itself needs a Mini-only tool (upload, Flow/Veo/Nano Banana, ElevenLabs, a Mini token, a worktree)."""
+    raw = VERIFY_BOILER.sub(" ", str(text or ""))
+    raw = MINI_PROHIBITION.sub(" ", raw)
+    return bool(EXCLUSIVE_MINI.search(raw)) or bool(MINI_HARD.search(raw))
+
+
+def records_only_job(job: dict) -> bool:
+    """A condition check or a records-only review: it reads the queue, it does not run the parent's tools."""
+    title = str(job.get("title") or "")
+    if re.search(r"\bverify condition for\b", title, re.I):
+        return True
+    return job.get("kind") == "review" and bool(re.search(r"\brecords[- ]only\b", title, re.I))
 
 
 def publish_mini_hit(text: str) -> bool:
@@ -428,6 +461,12 @@ def macbook_portable(job: dict, data: dict | None = None) -> bool:
     text = " ".join(str(x.get(k) or "") for x in (job, parent or {}) for k in fields)
     if macbook_studio_ok(job, text):
         return True
+    own = " ".join(str(job.get(k) or "") for k in fields)
+    # Condition checks and records-only reviews are the MacBook's first non-Mini case (20 Nov 2026).
+    # The parent's picture or Studio work does not make the check itself Mini-only. A check whose own
+    # text needs a Mini tool (upload, Flow, ElevenLabs, a worktree) stays on the Mini.
+    if records_only_job(job):
+        return not job.get("mini_only") and not exclusive_mini(own)
     if job.get("kind") in NOT_PORTABLE_KINDS:
         return False
     if job.get("recheck_of") and parent and parent.get("needs") == "mini" and STUDIO_WORK.search(str(parent.get("title") or "")):
@@ -505,7 +544,24 @@ def claimable(data: dict, job: dict, can: set[str], at: dt.datetime, agent: str 
     if is_macbook(agent) and "macbook" in can and macbook_portable(job, data):
         # Same checks as any claim, with the job seen as a MacBook job; an addressed job runs that agent's CLI there.
         job = {k: v for k, v in job.items() if k != "for"} | {"needs": "macbook"}
+    elif job.get("open_claim") and not is_macbook(agent):
+        # An open reroute is claimable by any up worker with a live lane, not by one pinned `for`.
+        if agent == "claudecode" and _claude_flagged_out(at):
+            return False
+        if not routing.lane_fits(job, agent):
+            return False
     return workflow.claimable(job, data["jobs"], at, agent, chief, can, chief_relay.current_execution(at), chief_relay.worker_capabilities())
+
+
+def _claude_flagged_out(at: dt.datetime) -> bool:
+    """Claude is flagged, so Claude Code on the Mini does not take an open reroute."""
+    if routing.claude_flagged():
+        return True
+    down = chief_relay.read_json(chief_relay.d("down", "claude.json")) or {}
+    if not down:
+        return False
+    until = workflow.timestamp(down.get("until"))
+    return until is None or until > at
 
 
 def ordered(data: dict, at: dt.datetime | None = None, agent: str = "") -> list:
@@ -513,7 +569,9 @@ def ordered(data: dict, at: dt.datetime | None = None, agent: str = "") -> list:
     from workflow_board import load_tracker
     tracker = load_tracker()
     nearest, air = workflow.near_watch(tracker), workflow.air_dates(tracker)
-    return sorted(data["jobs"], key=lambda j: workflow.order(j, due, data.get("focus") or (), at, nearest, air, agent))
+    # `rows` stays positional (J3266). Skill is keyword-only and only breaks ties.
+    return sorted(data["jobs"], key=lambda j: workflow.order(
+        j, due, data.get("focus") or (), at, nearest, air, data["jobs"], agent=agent))
 
 
 # What only Ben does (AGENTS.md "Ben only watches finished videos"; enforced 5 Nov 2026 after J1755 parked a private
@@ -927,6 +985,16 @@ def swap_readback_problem(job: dict, at: dt.datetime, folder: pathlib.Path | Non
     return ""
 
 
+def after_done(data: dict, job: dict, agent: str, at: dt.datetime):
+    """Queue the channel's next stage. A failure here must not undo a job that is already done."""
+    try:
+        import agent_autonomy
+        return agent_autonomy.queue_next(data, job, agent, at)
+    except Exception as exc:
+        log(job, at, agent, "stage handoff failed; the job stays done: " + str(exc)[:160])
+        return None
+
+
 def do_done(job: dict, agent: str, result: str, at: dt.datetime, ref: str = "") -> None:
     _mine(job, agent)
     require_chief(job, agent, at)
@@ -1021,15 +1089,17 @@ def do_reopen(job: dict, agent: str, note: str, at: dt.datetime) -> None:
     log(job, at, agent, "reopened" + (": " + note if note else ""))
 
 
-def do_reroute(job: dict, agent: str, to: str, model: str, note: str, at: dt.datetime) -> None:
-    """Hand a job to another worker on a given model (Ben, 11 Oct 2026 23:40: "if Claude Code is out of usage you can
-    use a Claude model in Cursor"). The job becomes an open Mini job only `to` may claim, carrying `model`; what it was
-    before is kept in rerouted_from. An open, blocked, or claimed job (the holder's claim ends) can be rerouted."""
+def do_reroute(job: dict, agent: str, to: str, model: str, note: str, at: dt.datetime, open_claim: bool = False) -> None:
+    """Hand a job on (Ben, 11 Oct 2026 23:40). An explicit reroute becomes an open Mini job only `to` may claim.
+
+    An automatic chain walk (`open_claim`, 20 Nov 2026) does not pin `for` or a single model. It stays claimable by
+    any up worker whose lane fits the kind. The chain order is unchanged, so the relay still wakes the preferred
+    worker first. What the job was before is kept in rerouted_from."""
     if job["status"] in ("done", "cancelled"):
         raise ValueError(f"{job['id']} is {job['status']}; nothing to reroute")
     if model and model not in routing.MODELS:
         raise ValueError(f"model must be a configured one: {', '.join(routing.MODELS)}")
-    if model and routing.RUNS_ON.get(model) != to:
+    if model and not open_claim and routing.RUNS_ON.get(model) != to:
         raise ValueError(f"{model} doesn't run on {to}")
     if job.get("kind") == "chief" and not chief_relay.elected_for(to, at, job):
         raise ValueError(f"{job['id']} is a Chief call; only the elected Chief may take it")
@@ -1037,9 +1107,17 @@ def do_reroute(job: dict, agent: str, to: str, model: str, note: str, at: dt.dat
         raise ValueError(f"{job['id']} is pinned to Claude cloud (cloud_only); it cannot be rerouted to a Mini worker")
     job.setdefault("rerouted_from", {"needs": job["needs"], "for": job.get("for", ""), "model": job.get("model", ""),
                                      "status": job["status"], "by": job.get("by", "")})
-    job.update(status="open", by="", since="", eta="", needs="mini", **{"for": to})
     if job.get("result") and job["rerouted_from"].get("status") == "blocked":
         job["result"] = ""
+    if open_claim:
+        job.update(status="open", by="", since="", eta="", needs="mini", open_claim=True)
+        job.pop("for", None)
+        job.pop("model", None)
+        log(job, at, agent, "opened to any worker in its chain"
+            + (f" (preferred {to}" + (f" on {model}" if model else "") + ")")
+            + (": " + note if note else ""))
+        return
+    job.update(status="open", by="", since="", eta="", needs="mini", **{"for": to})
     if model:
         job["model"] = model
     log(job, at, agent, f"rerouted to {to}" + (f" on {model}" if model else "") + (": " + note if note else ""))
@@ -1060,6 +1138,7 @@ def do_handback(job: dict, agent: str, note: str, at: dt.datetime) -> None:
         else:
             job.pop(k, None)
     job.pop("rerouted_from", None)
+    job.pop("open_claim", None)
     log(job, at, agent, "handed back" + (": " + note if note else ""))
 
 
@@ -1374,6 +1453,7 @@ def main(argv=None) -> int:
         if name == "reroute":
             p.add_argument("--to", required=True, choices=list(routing.MINI_WORKERS), help="the Mini worker that takes it")
             p.add_argument("--model", default="", choices=[""] + list(routing.MODELS), help="model it runs on there")
+            p.add_argument("--open", action="store_true", help="do not pin for=: any worker whose lane fits may claim")
     aw = sub.add_parser("awaits", help="mark a job as waiting on Ben's OK/watch: a Ready for OK card with Play + deadline")
     aw.add_argument("id")
     aw.add_argument("--agent", default="")
@@ -1506,8 +1586,7 @@ def main(argv=None) -> int:
                 handoffs.check_completion(job, data, list(handoffs.records(studio.FILMS)), at)
                 do_done(job, args.agent, args.result or "done", at, args.ref)
                 board_release(job, args.agent, "review", args.ref)
-                import agent_autonomy
-                agent_autonomy.queue_next(data, job, args.agent, at)
+                after_done(data, job, args.agent, at)
             elif args.cmd == "block":
                 do_block(job, args.agent, args.reason or args.result, at)
                 board_release(job, args.agent, "blocked")
@@ -1558,7 +1637,8 @@ def main(argv=None) -> int:
                     board_release(job, held, "blocked")
             elif args.cmd == "reroute":
                 held = job.get("by") if job["status"] == "claimed" else ""
-                do_reroute(job, args.agent or "relay", args.to, args.model, args.note, at)
+                do_reroute(job, args.agent or "relay", args.to, args.model, args.note, at,
+                           open_claim=bool(getattr(args, "open", False)))
                 if held:
                     board_release(job, held, "doing")
             if on_board(job):

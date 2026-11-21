@@ -217,6 +217,27 @@ def lane_ok(agent: str, model: str) -> bool:
     return model not in OUT and agent not in OUT
 
 
+def claude_flagged() -> bool:
+    """Claude (and therefore Claude Code on the Mini) is flagged out of credit."""
+    if "claude" in OUT or "claudecode" in OUT or "mini-claude-opus-5-5" in OUT:
+        return True
+    flags = read_flags()
+    return any(k in flags for k in ("claude", "claudecode", "mini-claude-opus-5-5"))
+
+
+def lane_fits(job: dict, agent: str) -> bool:
+    """True when `agent` has a live lane on this job's chain.
+
+    No chain means the job was never pinned to one (any worker, as before). Claude Code on the
+    Mini fits only while Claude itself is not flagged out."""
+    if agent == "claudecode" and claude_flagged():
+        return False
+    ch = job_chain(job)
+    if not ch:
+        return True
+    return any(a == agent and lane_ok(a, m) for a, m in ch)
+
+
 def chain(kind: str) -> list:
     """Primary, then every fallback in order."""
     return list(CHAINS[kind][1])
