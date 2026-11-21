@@ -295948,10 +295948,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
-      "by": "macbook-2",
-      "since": "2026-11-21T17:06Z",
-      "eta": "2026-11-21T18:36Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-21T13:09Z",
       "result": "",
@@ -296050,6 +296050,11 @@
           "at": "2026-11-21T17:06Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T17:06Z",
+          "by": "macbook-2",
+          "what": "released: MacBook worker run on cursor ended (exit 1) with the job still open; picked up again next run; cursor paused on the MacBook until 2026-11-21T19:06:31Z, so the next run uses the next agent in the chain"
         }
       ],
       "remaining_action": "Fix 4 PR #1112 review defects (refill/test_launch_check CI, gate_upcoming channel routing, _find_bed .mp3 sort, scheduled_gates alert dedup) and pass all PR checks",
