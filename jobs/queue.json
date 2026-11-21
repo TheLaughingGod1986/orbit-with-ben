@@ -297464,13 +297464,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-21T18:22Z",
-      "eta": "2026-11-21T20:22Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-21T18:11Z",
-      "result": "",
+      "result": "Condition proven satisfied: J3314 completed v03 master (744f32b7..., NAS+Mini parity verified, v01/v02 untouched), 4/4 unmodified gates PASS, 33 cards 0 overlaps/bleeds/drifts, 21/21 verification stills present, original approvals/VO/score/thumbs intact, HOS PR #719 5/5 CI green (left open, not self-merged). Reopened J2036 for independent non-producer QA and J2037 handoff. No audio/moving watch claimed; £0; no upload/schedule/privacy changes.",
       "history": [
         {
           "at": "2026-11-21T18:11Z",
@@ -297506,6 +297506,11 @@
           "at": "2026-11-21T18:30Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Reopened J2036 with verified J3314 v03 evidence; closing J3315"
+        },
+        {
+          "at": "2026-11-21T18:30Z",
+          "by": "gemini",
+          "what": "done: Condition proven satisfied: J3314 completed v03 master (744f32b7..., NAS+Mini parity verified, v01/v02 untouched), 4/4 unmodified gates PASS, 33 cards 0 overlaps/bleeds/drifts, 21/21 verification stills present, original approvals/VO/score/thumbs intact, HOS PR #719 5/5 CI green (left open, not self-merged). Reopened J2036 for independent non-producer QA and J2037 handoff. No audio/moving watch claimed; £0; no upload/schedule/privacy changes."
         }
       ],
       "remaining_action": "Post J3315 completion reports",
