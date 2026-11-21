@@ -1,5 +1,5 @@
 {
-  "next_id": 3321,
+  "next_id": 3322,
   "jobs": [
     {
       "id": "J0001",
@@ -293011,6 +293011,11 @@
           "at": "2026-11-21T20:15Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: review/merge PR #1126 (05_Analytics/{owb,hos}/STUDIO_SETTINGS_AUDIT_2026-11-21.md with verified safe fixes; supersedes conflicting PR #1099; WW2 already merged via PR #1125) and handle HOS trailer/ETynHpIYLeY playlist + Ben-only items"
+        },
+        {
+          "at": "2026-11-21T20:15Z",
+          "by": "relay",
+          "what": "condition verification queued: J3321"
         }
       ],
       "remaining_action": "Post thread receipt and close J3255",
@@ -293036,6 +293041,12 @@
         "at": "2026-11-21T20:14Z",
         "by": "gemini",
         "note": "Opened PR for OWB and HOS Studio settings audits (05_Analytics/{owb,hos}/STUDIO_SETTINGS_AUDIT_2026-11-21.md); WW2 alrea"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-21T21:15:30+00:00",
+        "recheck_task": "J3321"
       }
     },
     {
@@ -298161,6 +298172,37 @@
         "WW2:001",
         "WW2:002"
       ]
+    },
+    {
+      "id": "J3321",
+      "title": "Verify condition for J3255",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3255: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3255 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-21T20:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T20:15Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Post thread receipt and close J3255",
+      "kind": "review",
+      "recheck_of": "J3255",
+      "due": "2026-11-21T21:15:30+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
