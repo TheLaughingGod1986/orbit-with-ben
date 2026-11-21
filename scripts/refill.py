@@ -260,6 +260,16 @@ def first_day_checks(data: dict, at: dt.datetime) -> list:
         return []
 
 
+def scheduled_video_checks(data: dict, at: dt.datetime) -> list:
+    """A sweep scheduling fault must not prevent first-day checks or backlog refill."""
+    try:
+        import scheduled_gates
+        return scheduled_gates.queue_daily(data, at)
+    except Exception as exc:  # noqa: BLE001 — keep independent refill duties running
+        print(f"scheduled-video sweep not queued: {exc}", file=sys.stderr)
+        return []
+
+
 def top_up(data: dict, items: list, at: dt.datetime, min_ready: int = MIN_READY) -> list:
     """One refill tick: refresh flat-plan pace (once the file is stale), the first-day checks, then the backlog."""
     try:
@@ -267,7 +277,7 @@ def top_up(data: dict, items: list, at: dt.datetime, min_ready: int = MIN_READY)
         plan_pace.refresh_if_stale(at)
     except Exception as exc:  # noqa: BLE001 — a pace miss must not stop the refill
         print(f"plan pace not refreshed: {exc}", file=sys.stderr)
-    return first_day_checks(data, at) + do_refill(data, items, at, min_ready)
+    return scheduled_video_checks(data, at) + first_day_checks(data, at) + do_refill(data, items, at, min_ready)
 
 
 def run(cmd: str, git: bool, min_ready: int = MIN_READY, hours: float = STALE_H) -> list:

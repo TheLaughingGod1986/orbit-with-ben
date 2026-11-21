@@ -25,10 +25,10 @@ class Upcoming(unittest.TestCase):
             vid("noschedule"),
         ]}
         rows = g.upcoming(snap, {"videos": {"mon": {"file": "m.mp4"}}}, NOW, 14)
-        self.assertEqual([r["id"] for r in rows], ["mon", "fri"])
-        self.assertEqual(rows[0]["air"], "2026-10-12")
-        self.assertEqual(rows[0]["file"], "m.mp4")
-        self.assertIsNone(rows[1]["file"])
+        self.assertEqual([r["id"] for r in rows], ["long", "mon", "fri"])
+        self.assertEqual(rows[1]["air"], "2026-10-12")
+        self.assertEqual(rows[1]["file"], "m.mp4")
+        self.assertIsNone(rows[2]["file"])
 
     def test_falls_back_to_uploads_publish_time_and_skips_retired(self):
         snap = {"videos": [vid("a"), vid("b")]}

@@ -190,17 +190,28 @@ class TheJob(Fixture):
 
 class TheRefillTick(unittest.TestCase):
     def test_due_checks_ride_on_the_refill(self):
-        with mock.patch.object(lc, "queue_due", return_value=["J0007"]) as queue, \
+        with mock.patch.object(refill, "scheduled_video_checks", return_value=[]), \
+                mock.patch.object(lc, "queue_due", return_value=["J0007"]) as queue, \
                 mock.patch.object(refill, "do_refill", return_value=["J0008"]):
             self.assertEqual(refill.top_up({"jobs": []}, [], LIVE), ["J0007", "J0008"])
         queue.assert_called_once()
 
     def test_a_fault_in_the_check_never_stops_the_refill(self):
-        with mock.patch.object(lc, "queue_due", side_effect=RuntimeError("snapshot unreadable")), \
+        with mock.patch.object(refill, "scheduled_video_checks", return_value=[]), \
+                mock.patch.object(lc, "queue_due", side_effect=RuntimeError("snapshot unreadable")), \
                 mock.patch.object(refill, "do_refill", return_value=["J0008"]), \
                 contextlib.redirect_stderr(io.StringIO()) as said:
             self.assertEqual(refill.top_up({"jobs": []}, [], LIVE), ["J0008"])
         self.assertIn("first-day checks not queued: snapshot unreadable", said.getvalue())
+
+    def test_sweep_scheduling_fault_does_not_stop_other_refill_duties(self):
+        import scheduled_gates
+        with mock.patch.object(scheduled_gates, "queue_daily", side_effect=RuntimeError("queue unavailable")), \
+                mock.patch.object(lc, "queue_due", return_value=["J0007"]), \
+                mock.patch.object(refill, "do_refill", return_value=["J0008"]), \
+                contextlib.redirect_stderr(io.StringIO()) as said:
+            self.assertEqual(refill.top_up({"jobs": []}, [], LIVE), ["J0007", "J0008"])
+        self.assertIn("scheduled-video sweep not queued: queue unavailable", said.getvalue())
 
 
 class TheRecord(Fixture):

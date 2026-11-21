@@ -28,7 +28,7 @@ import {
   loadYouTubePackage,
   postYouTubeTopLevelComment,
 } from "../src/lib/publishing/youtube-package";
-import { runShortsGate } from "../src/lib/publishing/shorts-gate";
+import { runPublishingGates } from "../src/lib/publishing/shorts-gate";
 
 const REPO_ROOT = path.resolve(__dirname, "..", "..");
 
@@ -82,17 +82,15 @@ async function main() {
   // The channel's own check before anything is sent (Orbit: refuses a second upload of the same film).
   const identity = await channel.beforeUpload({ resolved, flag, repoRoot: REPO_ROOT });
 
-  // Shorts ship gate: a hard stop, dry run included, so the dry run shows the verdict. No override (Never list).
-  if (resolved.format === "shorts") {
-    const gate = runShortsGate({
-      videoPath: resolved.videoPath, repoRoot: REPO_ROOT, scheduledAt: resolved.scheduledAt,
-      lengthTest: resolved.lengthTest,
-    });
-    console.log(gate.output);
-    if (!gate.ok) {
-      console.error(`gate_shorts_open FAILED (exit ${gate.exitCode}, air date ${gate.airDate}): not uploading. Fix the cut.`);
-      process.exit(1);
-    }
+  // All current blocking gates run for both formats on every registered channel, including dry runs.
+  const gate = runPublishingGates({
+    videoPath: resolved.videoPath, repoRoot: REPO_ROOT, format: resolved.format,
+    scheduledAt: resolved.scheduledAt, lengthTest: resolved.lengthTest,
+    packageDir: resolved.packageDir,
+  });
+  console.log(gate.output);
+  if (!gate.ok) {
+    throw new Error(`Publishing gates FAILED (exit ${gate.exitCode}): not uploading. Fix the findings above.`);
   }
 
   // Dry runs never need the YouTube login.
