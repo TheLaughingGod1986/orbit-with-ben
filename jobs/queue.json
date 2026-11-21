@@ -1,5 +1,5 @@
 {
-  "next_id": 3295,
+  "next_id": 3296,
   "jobs": [
     {
       "id": "J0001",
@@ -119402,6 +119402,11 @@
           "at": "2026-11-21T01:04Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-21T14:00:00Z"
+        },
+        {
+          "at": "2026-11-21T14:06Z",
+          "by": "relay",
+          "what": "condition verification queued: J3295"
         }
       ],
       "remaining_action": "Re-time HOS 009 and HOS 010 long Chapters once each locked final long cut exists (preserve Sources, run lint:package, open PR for Chief)",
@@ -119429,10 +119434,11 @@
       "hold": {
         "type": "dependency",
         "condition": "Acting Chief review J3246: condition NOT MET (verified 2026-11-21T01:00Z). HOS main c199174f retains merged PR #389 (7c136209) and read-only lint:package PASS on both 009 and 010. HOS 009 has progressed (J3241 accepted v04_synth score; J2035 finished v01 802b5c7e; J3260 ruled bounded GBP0 v02 re-edit J3261 + thumbnails J3262, leaving PR #703 unmerged), but has NO locked final long cut yet: J3261 is still open at step 1/6 (detached render exited 0 producing NAS v02 9d8731cb, but polish_gate FAIL on 05_minute_second at 316.2s awaits reconciliation and stills), J3262 is parked for Chief on PR #705, J2036 is blocked until 2026-11-21T12:00:00Z, and J2037 is open. HOS 010 has NO locked long cut: picture is 12/65 plates (Shorts only; Long Parts 01-05 pending) and long edit awaits picture (no 09_Assembly on NAS). Resume chapter retiming for each film only against its locked final long cut, preserving Sources and requiring lint:package plus Chief review before upload. Recheck after J2036 noon check.",
-        "check_at": "2026-11-21T14:00:00Z",
+        "check_at": "2026-11-21T15:06:18+00:00",
         "last_recheck": "J3246",
         "checked_at": "2026-11-21T01:04:12+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J3295"
       }
     },
     {
@@ -296082,6 +296088,37 @@
         "by": "gemini",
         "note": "Opened PR #1113 (91cc66671e) with OWB_2026-11-21.md and LEARNINGS.md Shorts lab + Learnings 39-40"
       }
+    },
+    {
+      "id": "J3295",
+      "title": "Verify condition for J1275",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1275: Acting Chief review J3246: condition NOT MET (verified 2026-11-21T01:00Z). HOS main c199174f retains merged PR #389 (7c136209) and read-only lint:package PASS on both 009 and 010. HOS 009 has progressed (J3241 accepted v04_synth score; J2035 finished v01 802b5c7e; J3260 ruled bounded GBP0 v02 re-edit J3261 + thumbnails J3262, leaving PR #703 unmerged), but has NO locked final long cut yet: J3261 is still open at step 1/6 (detached render exited 0 producing NAS v02 9d8731cb, but polish_gate FAIL on 05_minute_second at 316.2s awaits reconciliation and stills), J3262 is parked for Chief on PR #705, J2036 is blocked until 2026-11-21T12:00:00Z, and J2037 is open. HOS 010 has NO locked long cut: picture is 12/65 plates (Shorts only; Long Parts 01-05 pending) and long edit awaits picture (no 09_Assembly on NAS). Resume chapter retiming for each film only against its locked final long cut, preserving Sources and requiring lint:package plus Chief review before upload. Recheck after J2036 noon check.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1275 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-21T14:06Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T14:06Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Re-time HOS 009 and HOS 010 long Chapters once each locked final long cut exists (preserve Sources, run lint:package, open PR for Chief)",
+      "kind": "review",
+      "recheck_of": "J1275",
+      "due": "2026-11-21T15:06:18+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
