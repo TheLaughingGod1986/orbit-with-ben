@@ -297407,6 +297407,11 @@
           "at": "2026-11-21T17:44Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred claudecode): Cursor out of usage; next in its chain: claudecode"
+        },
+        {
+          "at": "2026-11-21T19:03Z",
+          "by": "claude",
+          "what": "rerouted to gemini on gemini-argon: Claude, 21 Nov ~19:05Z: stuck since queued. Kind studio has no Gemini lane, and the other Mini lanes are out (Cursor and Codex out of usage, Claude Code paused while Claude is flagged), so only Gemini is working. Rerouted to Gemini on gemini-argon: the steps are Data API reads and updates with the channel's own login plus records; Studio is not needed."
         }
       ],
       "remaining_action": "Read back el30-mHiH-0 (expect Private, 22 Nov 11:30Z); if fine clear the banner, else reschedule it; fix ben_alerts first-run, replaced-in-slot and wording",
@@ -297414,7 +297419,7 @@
       "kind": "studio",
       "mini_only": true,
       "plain": "Check tomorrow's History of Science Short is still booked, remove the false alarm, and stop the alert repeating old news",
-      "urgent": 4,
+      "urgent": 5,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -297422,7 +297427,9 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J3314",
@@ -297803,6 +297810,11 @@
           "at": "2026-11-21T18:58Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-21T19:03Z",
+          "by": "claude",
+          "what": "rerouted to gemini on gemini-argon: Claude, 21 Nov ~19:05Z: stuck since queued. Kind studio has no Gemini lane, and the other Mini lanes are out (Cursor and Codex out of usage, Claude Code paused while Claude is flagged), so only Gemini is working. Rerouted to Gemini on gemini-argon: the steps are Data API reads and updates with the channel's own login plus records; Studio is not needed."
         }
       ],
       "remaining_action": "Change publishAt only: ek9F61FVYqY to 2026-11-22T17:00Z, J9WGu8aPnHI to 2026-11-25T17:00Z; read back; update plan, register, ww2 status; receipt",
@@ -297810,7 +297822,16 @@
       "kind": "studio",
       "mini_only": true,
       "plain": "Move the two Field Order History pilots earlier: first one tomorrow 17:00, second Wednesday 17:00",
-      "urgent": 5
+      "urgent": 4,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     }
   ],
   "focus": [

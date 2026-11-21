@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2529, J3313, J3318.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2529, J3318, J3313.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -73,8 +73,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3309 | mini | open (after J3307) | – | – | studio · Studio: arm T042 thumbnail Test & Compare on rVqgtkBV3jc (024 — YOU AGE SLOWER) after J3307 PASS |  |
 | J3310 | mini | open (after J3307) | – | – | studio · Studio: arm T043 thumbnail Test & Compare on REXYxuLOBoI (005 — OUTLIVES OUR SUN) after J3307 PASS |  |
 | J3311 | mini | blocked | gemini | – | HOS:009 edit · qa · Review HOS 009 Short A v01 and Short B v01 (J2171, PR #718) | J2171 |
-| J3313 | mini | open | – | – | studio · HOS: confirm tomorrow's 11:30 Short el30-mHiH-0 is still scheduled, clear the false 'video pulled' banner, and fix the alert |  |
-| J3318 | mini | open | – | – | studio · Field Order History: bring pilots forward (Ben: "Go"): 001 to Sun 22 Nov 17:00, 002 to Wed 25 Nov 17:00 |  |
+| J3313 | mini | open | – | – | for gemini · studio · `gemini-argon` · HOS: confirm tomorrow's 11:30 Short el30-mHiH-0 is still scheduled, clear the false 'video pulled' banner, and fix the alert |  |
+| J3318 | mini | open | – | – | for gemini · studio · `gemini-argon` · Field Order History: bring pilots forward (Ben: "Go"): 001 to Sun 22 Nov 17:00, 002 to Wed 25 Nov 17:00 |  |
 
 Recently finished:
 
