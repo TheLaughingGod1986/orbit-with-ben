@@ -297229,9 +297229,14 @@
           "at": "2026-11-21T18:11Z",
           "by": "relay",
           "what": "condition verification queued: J3316"
+        },
+        {
+          "at": "2026-11-21T18:48Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-21T21:55:00Z"
         }
       ],
-      "remaining_action": "Non-producer reviewer (claude/claudecode/chief/codex) to verify HOS PR #718, NAS/UAT SHA-256 parity, contact sheets, and unique Play links, merge PR #718 (or hand to Chief), and set awaits_ben",
+      "remaining_action": "Non-producer reviewer (claude/chief/codex/claudecode) to QA HOS PR #718, NAS/UAT SHA-256, sheets & Play links, merge PR #718 (or hand to Chief), and set awaits_ben",
       "due": "2026-11-24T18:00:00Z",
       "kind": "qa",
       "plain": "Non-producer QA review and Ben UAT handoff for HOS 009 Shorts A and B (PR #718)",
@@ -297254,10 +297259,12 @@
         "HOS:009"
       ],
       "hold": {
-        "type": "dependency",
-        "condition": "Non-producer reviewer available (claude returns 2026-11-21T17:50:00Z; claudecode blocked on open_claim while claude is flagged down until 17:50Z; chief retry 2026-11-21T19:57:35Z; codex down until 2026-11-24T23:26:00Z). Gemini produced J2171 (HOS PR #718 @ 7248b872, 6/6 CI green, MERGEABLE) and is excluded from self-review.",
-        "check_at": "2026-11-21T19:11:56+00:00",
-        "recheck_task": "J3316"
+        "type": "input",
+        "condition": "Non-producer reviewer available (claude out of usage until 2026-11-21T21:50:00Z; chief retry 2026-11-21T19:57:35Z; claudecode down on Fable limit until Nov 25 10:00 London, retry 19:45:41Z; Mini codex 100% used and down until 2026-11-24T23:26:00Z — macbook-2 95% left is a separate 27 Nov cycle; cursor Claude lanes out of credit until 2026-12-09). Gemini produced J2171 (HOS PR #718 @ 7248b872, 6/6 CI green, MERGEABLE; NAS & iCloud UAT SHA-256 verified on Mini) and is excluded from self-review.",
+        "check_at": "2026-11-21T21:55:00Z",
+        "last_recheck": "J3316",
+        "checked_at": "2026-11-21T18:48:57+00:00",
+        "checked_by": "gemini"
       }
     },
     {
