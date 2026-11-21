@@ -293058,17 +293058,22 @@
           "at": "2026-11-21T01:54Z",
           "by": "cursor",
           "what": "step 1 of 6 done: Render finished exit 0. Picture QA failed 6 of 92: chapter cards reuse one stretch, falling row points at the card, minute-second split panel, table reused at the end. Polish failed the split panel. Music and sound-effects levels passed. v01 untouched."
+        },
+        {
+          "at": "2026-11-21T01:56Z",
+          "by": "cursor",
+          "what": "step 2 of 6 done: The master file is unchanged. Chapter cards and the falling splice now point at their own renders. The split-panel and table-callback rulings stay the ones already on the first master."
         }
       ],
-      "remaining_action": "Fix the six picture failures and the one polish failure, then rebuild the Gravity v02 master",
+      "remaining_action": "Rerun the picture and polish checks on the Gravity v02 master with the corrected cut list",
       "kind": "assembly",
       "plain": "Re-edit the Gravity long master v02 at zero cost to add the faster opening, early graphic, teaching cards and timeline",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 6,
-        "at": "2026-11-21T01:54Z",
+        "at": "2026-11-21T01:56Z",
         "by": "cursor",
-        "note": "Render finished exit 0. Picture QA failed 6 of 92: chapter cards reuse one stretch, falling row points at the card, minu"
+        "note": "The master file is unchanged. Chapter cards and the falling splice now point at their own renders. The split-panel and t"
       },
       "taskKeys": [
         "HOS:009"
