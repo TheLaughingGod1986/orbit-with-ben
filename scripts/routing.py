@@ -43,7 +43,7 @@ MODELS = {
                     "Gemini's lane for reasoning, review, QA, listings and claim checks",
     "cursor-claude-opus-5-5": "Claude Opus 5.5 inside the Cursor agent CLI on the Mini (`agent --model claude-opus-5-5`); "
                               "Claude's first fallback when Claude Code is out of usage",
-    "gemini-agy": "Gemini via Antigravity `agy` (its default model)",
+    "gemini-agy": "Gemini via Antigravity `agy` on Gemini 4 Neon High, the same model as gemini-argon (Ben, 21 Nov 2026)",
     "mini-claude-opus-5-5": "Claude Code CLI on the Mac mini, woken by the relay as worker `claudecode` (Ben's Max 20x "
                             "plan, 9 Nov 2026: Codex and Cursor out of credit, Claude has the biggest pool)",
     "eleven_v3": "ElevenLabs eleven_v3, voice Ben Orbit Narrator (API only)",
@@ -85,11 +85,13 @@ CURSOR_CLAUDE_MODEL = os.environ.get("CURSOR_CLAUDE_MODEL", "claude-opus-5-5")
 # audio_input (0.99-1.00) and moving_video_input (3/3, left_to_right + right_to_left) on agy 1.5.13. Routing key stays
 # "gemini-argon" so CHAINS and tests don't change. Documented fallback if Neon errors or hits quota: set
 # AGY_ARGON_MODEL=gemini-4-argon-high (AGY_ARGON_FALLBACK).
+# 21 Nov 2026 (Ben, in chat: "Sure" to Neon on every Gemini lane): `gemini-agy` (charts, thumbnails, assembly and the facts
+# first lane) runs the same model as `gemini-argon` instead of agy's default, so every Gemini run is Neon High.
 CURSOR_GROK_MODEL = os.environ.get("CURSOR_GROK_MODEL", "grok-4.7")
 AGY_ARGON_FALLBACK = "gemini-4-argon-high"
 AGY_ARGON_MODEL = os.environ.get("AGY_ARGON_MODEL", "gemini-4-neon-high")
 CLI_MODEL = {"cursor-auto": "", "cursor-claude-opus-5-5": CURSOR_CLAUDE_MODEL, "cursor-grok-4-7": CURSOR_GROK_MODEL,
-             "gemini-agy": "", "gemini-argon": AGY_ARGON_MODEL, "mini-claude-opus-5-5": ""}
+             "gemini-agy": AGY_ARGON_MODEL, "gemini-argon": AGY_ARGON_MODEL, "mini-claude-opus-5-5": ""}
 
 # Claude's first fallback when Claude Code is out of usage or rate-limited (Ben, 11 Oct 2026 23:40).
 CLAUDE_FALLBACK = ("cursor", "cursor-claude-opus-5-5")
