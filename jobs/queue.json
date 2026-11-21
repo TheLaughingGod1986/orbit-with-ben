@@ -296628,13 +296628,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-21T16:17Z",
-      "eta": "2026-11-21T18:17Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-21T16:16Z",
-      "result": "",
+      "result": "parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J3301 in history-of-science is 1 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/history-of-science/pull/717. Review and merge it and close the job, or reopen the job with a note.",
       "history": [
         {
           "at": "2026-11-21T16:16Z",
@@ -296645,6 +296645,11 @@
           "at": "2026-11-21T16:17Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T16:21Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J3301 in history-of-science is 1 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/history-of-science/pull/717. Review and merge it and close the job, or reopen the job with a note."
         }
       ],
       "remaining_action": "Review HOS performance and identify improvements",
