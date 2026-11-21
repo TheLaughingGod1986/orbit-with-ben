@@ -293934,13 +293934,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-21T03:57Z",
-      "eta": "2026-11-21T05:57Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-21T03:56Z",
-      "result": "",
+      "result": "Acting Chief (gemini) condition verification complete (jobs/reviews/J3272/REVIEW.md @ 6668c24142): checked OWB #954 (thru 7056935527), HOS desk #694 (thru 7056930324), HOS #180 (capped at 2500 comments, last 7024089854), HOS #657 (0 comments), and NAS/MiniWork backup/rehearsal bundles at 2026-11-21T03:59Z; explicit one-time Ben exception for rewriting protected hos-desk history remains absent (Grok ruling 7018109147: do not re-ask). HOS refs updated (origin/main=6774fd3e9e, origin/hos-desk=a4ce692535, 28 open non-desk PRs). J2537 kept blocked (767a0d4d6b) with wait --recheck J3272 for 2026-11-21T10:00:00Z. £0, no live rewrite.",
       "history": [
         {
           "at": "2026-11-21T03:56Z",
@@ -293976,6 +293976,11 @@
           "at": "2026-11-21T04:01Z",
           "by": "gemini",
           "what": "step 3 of 3 done: All verification checks complete, REVIEW.md pushed (6668c24142), and J2537 wait recorded (767a0d4d6b) for 2026-11-21T10:00:00Z."
+        },
+        {
+          "at": "2026-11-21T04:01Z",
+          "by": "gemini",
+          "what": "done: Acting Chief (gemini) condition verification complete (jobs/reviews/J3272/REVIEW.md @ 6668c24142): checked OWB #954 (thru 7056935527), HOS desk #694 (thru 7056930324), HOS #180 (capped at 2500 comments, last 7024089854), HOS #657 (0 comments), and NAS/MiniWork backup/rehearsal bundles at 2026-11-21T03:59Z; explicit one-time Ben exception for rewriting protected hos-desk history remains absent (Grok ruling 7018109147: do not re-ask). HOS refs updated (origin/main=6774fd3e9e, origin/hos-desk=a4ce692535, 28 open non-desk PRs). J2537 kept blocked (767a0d4d6b) with wait --recheck J3272 for 2026-11-21T10:00:00Z. £0, no live rewrite."
         }
       ],
       "remaining_action": "Close J3272 and post verification reports on OWB #954 and HOS desk #694",
