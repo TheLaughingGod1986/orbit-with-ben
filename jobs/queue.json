@@ -295063,9 +295063,14 @@
           "at": "2026-11-21T10:48Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Started J3284 condition verification for J3114 (OWB:034)."
+        },
+        {
+          "at": "2026-11-21T10:50Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified #954 through #7061468727 (107 comments since #7051241025), absent remote branch/PR, clean a12100797f worktree, THUMB_LEDGER tail T040, and 12/12 NAS SHA-256 matches; explicit export authorization remains absent."
         }
       ],
-      "remaining_action": "Check #954 thread, PRs, remote branches, and J3114 export-authorization history since J3232 (#7051241025)",
+      "remaining_action": "Commit J3284 verification review, update J3114 hold via wait --recheck J3284, and report on #954",
       "kind": "review",
       "recheck_of": "J3114",
       "due": "2026-11-21T11:47:12+00:00",
@@ -295079,11 +295084,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-21T10:48Z",
+        "at": "2026-11-21T10:50Z",
         "by": "gemini",
-        "note": "Started J3284 condition verification for J3114 (OWB:034)."
+        "note": "Verified #954 through #7061468727 (107 comments since #7051241025), absent remote branch/PR, clean a12100797f worktree, "
       },
       "taskKeys": [
         "OWB:034"
