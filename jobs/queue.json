@@ -299000,13 +299000,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-21T23:15Z",
-      "eta": "2026-11-22T01:15Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-21T21:56Z",
-      "result": "",
+      "result": "Elected Acting Chief (gemini) verified CONDITION NOT MET at 23:09Z-23:14Z (closed stale PR #1133, merged PR #1138 jobs/reviews/J3329/REVIEW.md): claude went out:true at 21:51:50Z until 2026-11-22T07:50:00Z; chief stalled (retry 00:55:22Z, last beat 20 Nov 18:04Z); claudecode Fable limit until Nov 25 10:00 London; Mini codex down until 2026-11-24T23:26:00Z; cursor Claude lanes out until 2026-12-09 & weekly limit hit; gemini excluded as J2171 producer. HOS PR #718 (7248b872, 6/6 CI, MERGEABLE), NAS SHA-256 parity (43dbeb3a/e6e5ae3f), 12/12 NAS QA outputs, and ben_ok/scheduled=todo verified intact. Recorded J3311 wait --type input --recheck J3329 --check-at 2026-11-22T07:50:00Z (with handback reminder). GBP0; no upload/schedule/privacy/Buffer writes.",
       "history": [
         {
           "at": "2026-11-21T21:56Z",
@@ -299047,6 +299047,11 @@
           "at": "2026-11-21T23:15Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T23:15Z",
+          "by": "gemini",
+          "what": "done: Elected Acting Chief (gemini) verified CONDITION NOT MET at 23:09Z-23:14Z (closed stale PR #1133, merged PR #1138 jobs/reviews/J3329/REVIEW.md): claude went out:true at 21:51:50Z until 2026-11-22T07:50:00Z; chief stalled (retry 00:55:22Z, last beat 20 Nov 18:04Z); claudecode Fable limit until Nov 25 10:00 London; Mini codex down until 2026-11-24T23:26:00Z; cursor Claude lanes out until 2026-12-09 & weekly limit hit; gemini excluded as J2171 producer. HOS PR #718 (7248b872, 6/6 CI, MERGEABLE), NAS SHA-256 parity (43dbeb3a/e6e5ae3f), 12/12 NAS QA outputs, and ben_ok/scheduled=todo verified intact. Recorded J3311 wait --type input --recheck J3329 --check-at 2026-11-22T07:50:00Z (with handback reminder). GBP0; no upload/schedule/privacy/Buffer writes."
         }
       ],
       "remaining_action": "Parked for Chief (claude): merge PR #1133, reopen J3311 + handback open_claim, and close J3329",
