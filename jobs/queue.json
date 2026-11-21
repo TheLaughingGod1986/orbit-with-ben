@@ -295681,9 +295681,14 @@
           "at": "2026-11-21T13:10Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Checked HOS #694, OWB #954, HOS PRs, chief_relay status (Chief: Grok Bot), and ran direct read_file probes (audio_input OK, moving_video_input returns 1-fps static frames only)."
+        },
+        {
+          "at": "2026-11-21T13:10Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified 11/11 Batch 12-14 NAS hashes match receipts, REVIEW_STATE.json unchanged (48 KEEP / 8 RETAKE / 10 unset), J3178 still blocked (next check 2026-11-21T16:05:00Z after J3277), and recorded audio_input-only capability probe."
         }
       ],
-      "remaining_action": "Cross-check J3277/J3178 hold state, NAS hashes, and write J3290 review record",
+      "remaining_action": "Commit J3290 review record on clean branch PR, park J3290 for Chief, and post reports",
       "kind": "review",
       "recheck_of": "J2529",
       "mini_only": true,
@@ -295701,11 +295706,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
         "at": "2026-11-21T13:10Z",
         "by": "gemini",
-        "note": "Checked HOS #694, OWB #954, HOS PRs, chief_relay status (Chief: Grok Bot), and ran direct read_file probes (audio_input "
+        "note": "Verified 11/11 Batch 12-14 NAS hashes match receipts, REVIEW_STATE.json unchanged (48 KEEP / 8 RETAKE / 10 unset), J3178"
       },
       "taskKeys": [
         "HOS:013"
