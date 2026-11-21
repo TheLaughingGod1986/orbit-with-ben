@@ -1,5 +1,5 @@
 {
-  "next_id": 3273,
+  "next_id": 3274,
   "jobs": [
     {
       "id": "J0001",
@@ -294113,6 +294113,37 @@
         "HOS:011",
         "HOS:013"
       ]
+    },
+    {
+      "id": "J3273",
+      "title": "OWB 024 muon Short: contain scheduled gc1hWQQJOq4 (v05) with failed reused music before Sat 21 Nov 11:30Z",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting-Chief Gemini explicit scope under J3176 (matching HOS 005 precedent J3177/J3188): £0 urgent containment, deadline Sat 21 Nov 2026 09:30 UTC (two hours before the scheduled 11:30 UTC publish). Read jobs/reviews/J3176/CHIEF_RULING.md, J3128/J3138, and J3136/PR #1049.\n\n1. Read current YouTube state and upload provenance for `gc1hWQQJOq4` (OWB 024 muon Short `fri06_muons_ground_v05.mp4`, sha256 `1232cb5041f9aae09e51cbf3895136142e19af379331e2b93a8607d593b331b8`, recorded Private and scheduled `2026-11-21T11:30:00Z`). Confirm earlier id `rvug71d7Dqk` stays Private and unscheduled.\n2. Old bed `light-speed_score_bed_v01_full.mp3` (`7859c2294b05`) failed the reconciled 31-bed OWB `music_gate.py` comparison at `0.830` (`>= 0.80`) against archived OWB 013 `moon-leaving-part02_score_bed_v01.mp3` (`5093a4c23253`). Ben's 14 Nov approval of `v05` does not waive a failed gate, and does not transfer to the rebuilt `v06` mix.\n3. If `gc1hWQQJOq4` is still Private and scheduled on `v05` (with no later valid gate resolution), Acting Chief authorizes **clearing `publishAt` only and leaving `gc1hWQQJOq4` Private**. Do not delete any video, do not upload `v06` here, do not set anything Public.\n4. In the same job, cancel/update the 3 matching Buffer posts for `gc1hWQQJOq4` (`6af974aee86a5789a6fcd4f6` Instagram, `6af974af918fe79d2ed15394` Facebook, `6af974b0e86a5789a6fcd90d` Threads) in Buffer and `00_Brand/Channel-Setup/social/BUFFER_POSTS.json`, update `00_Brand/Channel-Setup/social/UPLOADS.json` (`publishAt: null`, containment note, preserving `v05` sha256 and provenance), and update `00_Brand/Channel-Setup/audits/shorts_open_library/library.json` (`gate_shorts_open.py status ...`) in the same commit.\n5. Read back `gc1hWQQJOq4` via API (`privacyStatus: private`, `publishAt: null`) and post the full receipt (old/new state, video id, Buffer cancellation IDs, authorizing J3176 ruling) on the studio thread.\n6. If `gc1hWQQJOq4` is already Public or materially different from `v05`, do not alter it; read exact state and park for elected Chief.\n\nGuards: £0 spend. No replacement upload, no delete, no public state change, preserve `v05` file and hash untouched. Do not wait on Ben's watch of `v06` to contain `gc1hWQQJOq4`.\n",
+      "ref": "",
+      "film": "024",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-21T04:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T04:43Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify gc1hWQQJOq4 is still Private/scheduled on v05, clear publishAt only (keep Private), cancel its 3 Buffer posts, update UPLOADS.json and library.json, and post receipt",
+      "due": "2026-11-21T09:30:00Z",
+      "kind": "studio",
+      "plain": "Keep the scheduled muon Short private while its replacement music waits for your watch",
+      "mini_only": true
     }
   ],
   "focus": [
