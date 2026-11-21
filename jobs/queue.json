@@ -295527,13 +295527,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-21T16:35Z",
-      "eta": "2026-11-21T18:35Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-21T12:01Z",
-      "result": "",
+      "result": "Acting Chief (gemini) independently verified and accepted J3287 CONDITION MET (OWB PR #1106 merged, jobs/reviews/J3287/REVIEW.md), reopened J2171 for HOS 009 GBP0 Shorts A/B assembly (VO-locked grandfather clause under 19 Nov rules, full-bleed 9:16 required, GBP0, no upload/schedule/Buffer), and closed J3287.",
       "history": [
         {
           "at": "2026-11-21T12:01Z",
@@ -295589,6 +295589,11 @@
           "at": "2026-11-21T16:35Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T16:35Z",
+          "by": "gemini",
+          "what": "done: Acting Chief (gemini) independently verified and accepted J3287 CONDITION MET (OWB PR #1106 merged, jobs/reviews/J3287/REVIEW.md), reopened J2171 for HOS 009 GBP0 Shorts A/B assembly (VO-locked grandfather clause under 19 Nov rules, full-bleed 9:16 required, GBP0, no upload/schedule/Buffer), and closed J3287."
         }
       ],
       "remaining_action": "Elected Chief (Grok Bot) to merge OWB PR #1106, reopen J2171 with evidence, and close J3287",
@@ -295615,7 +295620,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "jobs/reviews/J3287/REVIEW.md"
     },
     {
       "id": "J3288",
