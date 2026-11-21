@@ -53,7 +53,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3176 | any | blocked | codex | – | 024 edit · chief · OWB 024 muon Short: decide whether to swap gc1hWQQJOq4 onto the v06 bed |  |
 | J3178 | mini | blocked | gemini | – | 013 picture · for gemini · qa · `gemini-argon` · HOS 013: continuous playback review of ten unresolved pass-one plates |  |
 | J3196 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3161 |  |
-| J3198 | any | claimed | gemini | 2026-11-21T04:34Z | review · `gemini-argon` · Verify condition for J3178 |  |
 | J3199 | any | open | – | – | review · `gemini-argon` · Verify condition for J3176 |  |
 | J3205 | mini | open (after J3204) | – | – | WW2:003 edit · for codex · assembly · WW2 pilot 003: picture, maps, edit and thumbnail, to Ben's watch |  |
 | J3231 | cloud | open | – | – | review · Weekly search research (Orbit + Field Order History): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |

@@ -287969,13 +287969,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-21T02:34Z",
-      "eta": "2026-11-21T04:34Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-20T07:55Z",
-      "result": "",
+      "result": "Acting-Chief verification complete (jobs/reviews/J3198/REVIEW.md, commit 6ae02a0ab5): J3178 waiting condition unmet. Direct read_file probe on NAS row 58 (P05_10_darwin_worried_shelf_t1.mp4) in agy 1.5.13 confirmed video/mp4 still returns 8 discrete 1-fps static JPEG frames (00:00..00:07; 3.833-4.250s exit unseen between 00:03 and 00:04), not continuous 24-fps playback (audio_input demonstrated on pickup WAV; relay 2s colour-block probe does not distinguish 1-fps extraction from 24-fps playback). No other available worker has verified moving_video_input; freshly verified 11/11 Batch 12-14 NAS hashes match receipts and REVIEW_STATE.json preserves 48 KEEP / 8 RETAKE / 10 unset; no new 013 marks on HOS #180/#694 or OWB #954. Updated J3178 typed capability hold (--requires moving_video_input --recheck J3198, next check 2026-11-21T08:30:00Z). £0 spend; nothing for Ben.",
       "history": [
         {
           "at": "2026-11-20T07:55Z",
@@ -288021,6 +288021,11 @@
           "at": "2026-11-21T02:39Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Recorded J3178 typed capability hold (--type capability --requires moving_video_input --recheck J3198, check-at 2026-11-21T08:30:00Z)."
+        },
+        {
+          "at": "2026-11-21T02:39Z",
+          "by": "gemini",
+          "what": "done: Acting-Chief verification complete (jobs/reviews/J3198/REVIEW.md, commit 6ae02a0ab5): J3178 waiting condition unmet. Direct read_file probe on NAS row 58 (P05_10_darwin_worried_shelf_t1.mp4) in agy 1.5.13 confirmed video/mp4 still returns 8 discrete 1-fps static JPEG frames (00:00..00:07; 3.833-4.250s exit unseen between 00:03 and 00:04), not continuous 24-fps playback (audio_input demonstrated on pickup WAV; relay 2s colour-block probe does not distinguish 1-fps extraction from 24-fps playback). No other available worker has verified moving_video_input; freshly verified 11/11 Batch 12-14 NAS hashes match receipts and REVIEW_STATE.json preserves 48 KEEP / 8 RETAKE / 10 unset; no new 013 marks on HOS #180/#694 or OWB #954. Updated J3178 typed capability hold (--requires moving_video_input --recheck J3198, next check 2026-11-21T08:30:00Z). £0 spend; nothing for Ben."
         }
       ],
       "remaining_action": "Close J3198 and post reports to OWB #954 and HOS #694",
