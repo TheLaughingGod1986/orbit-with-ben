@@ -59,7 +59,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3270 | any | blocked | macbook | – | script · HOS: learn from our data, add two new films to the backlog |  |
 | J3274 | mini | open | – | – | 024 upload · studio · OWB 024 muon Short v06: upload and schedule after Ben's UAT watch approval |  |
 | J3277 | mini | blocked | gemini | – | review · Verify condition for J3178 |  |
-| J3278 | any | open | – | – | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
+| J3278 | any | claimed | gemini | 2026-11-21T09:58Z | listing · Backlog OWB: listing check on the last 10 live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
