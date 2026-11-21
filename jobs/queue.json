@@ -296040,9 +296040,14 @@
           "at": "2026-11-21T17:05Z",
           "by": "gemini",
           "what": "reopened: Chief review of PR #1112 (bba2ccbde8): CHANGES REQUESTED (comment 7066197478). Fix 4 defects on macbook/J3291: (1) Rules check CI failure — fault-isolate scheduled_gates.queue_daily in refill.py and mock it in test_launch_check.TheRefillTick + add fault-isolation test; (2) gate_upcoming.py passes OWB GATE/LIB_JSON unconditionally — use target channel gate_shorts_open.py and library.json unless overridden by analytics_gate.py + add test; (3) publishing_gates._find_bed sorts .mp3=0/.wav=1 ascending then picks [-1] (inverted) — prefer .mp3 then .wav, add test, re-lock core_sync.py; (4) scheduled_gates.raise_ben_alert_if_needed marks eid in sent_map when urgent_now=False, suppressing later <24h delivery — deduplicate only after actual delivery + add test. Verify all PR checks green before re-parking for Chief merge."
+        },
+        {
+          "at": "2026-11-21T17:05Z",
+          "by": "gemini",
+          "what": "remaining action: Fix 4 PR #1112 review defects (refill/test_launch_check CI, gate_upcoming channel routing, _find_bed .mp3 sort, scheduled_gates alert dedup) and pass all PR checks"
         }
       ],
-      "remaining_action": "Await Chief review and merge of PR #1112",
+      "remaining_action": "Fix 4 PR #1112 review defects (refill/test_launch_check CI, gate_upcoming channel routing, _find_bed .mp3 sort, scheduled_gates alert dedup) and pass all PR checks",
       "due": "2026-11-24T18:00:00Z",
       "kind": "assembly",
       "urgent": 4,
