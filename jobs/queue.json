@@ -297494,9 +297494,14 @@
           "at": "2026-11-21T18:22Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T18:23Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3315; beginning condition verification for J2036"
         }
       ],
-      "remaining_action": "Verify readiness: After J3314 completes v03 long master and gates, verify v03 hash/gates/repaired stills, add honest making-of line and reconcile production-status.md header, then ",
+      "remaining_action": "Verify J3314 completion, open HOS PRs, and NAS v03 artifacts/gates/stills",
       "kind": "review",
       "recheck_of": "J2036",
       "due": "2026-11-15T18:00:00+00:00",
@@ -297512,11 +297517,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-21T18:22Z",
+        "at": "2026-11-21T18:23Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3315; beginning condition verification for J2036"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J3316",
