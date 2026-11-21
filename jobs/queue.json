@@ -189297,6 +189297,11 @@
           "at": "2026-11-21T16:36Z",
           "by": "gemini",
           "what": "remaining action: Assemble HOS 009 locked Shorts A/B at £0 (VO-locked grandfather, full-bleed 9:16), run all gates, and queue QA review"
+        },
+        {
+          "at": "2026-11-21T16:37Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Cursor out of usage; next in its chain: gemini"
         }
       ],
       "remaining_action": "Assemble HOS 009 locked Shorts A/B at £0 (VO-locked grandfather, full-bleed 9:16), run all gates, and queue QA review",
@@ -189304,7 +189309,15 @@
       "kind": "assembly",
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J2172",
