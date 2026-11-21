@@ -77,7 +77,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3312 | mini | blocked | macbook | – | studio · First-day check at 6 h: "How Do Plants Make Oxygen?" (Bks_JLId1ew) |  |
 | J3313 | mini | open | – | – | studio · HOS: confirm tomorrow's 11:30 Short el30-mHiH-0 is still scheduled, clear the false 'video pulled' banner, and fix the alert |  |
 | J3315 | mini | open | – | – | review · Verify condition for J2036 |  |
-| J3316 | mini | claimed | macbook-2 | 2026-11-21T20:14Z | review · Verify condition for J3311 |  |
+| J3316 | mini | blocked | macbook-2 | – | review · Verify condition for J3311 |  |
 
 Recently finished:
 
