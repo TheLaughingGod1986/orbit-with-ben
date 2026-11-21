@@ -280910,6 +280910,11 @@
           "at": "2026-11-21T10:47Z",
           "by": "relay",
           "what": "condition verification queued: J3284"
+        },
+        {
+          "at": "2026-11-21T10:52Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-21T17:55:00Z"
         }
       ],
       "remaining_action": "Obtain explicit approval for the rejected GitHub branch export, then open the Pluto packaging review PR without rebuilding",
@@ -280928,12 +280933,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J3232 Acting Chief ruling (jobs/reviews/J3232/REVIEW.md @ 2b1405d76d): condition NOT MET. Accepted macbook 15:25Z check and independently verified #954 through 7051241025, absent remote branch/PR, clean local commit a12100797f in /Volumes/MiniWork/scratch/j3114-wt, and 12/12 NAS SHA-256 hashes. Prior automatic approval review rejected exporting codex/j3114-pluto-v02 to public repo TheLaughingGod1986/orbit-with-ben twice; explicit export authorization remains absent across 5 consecutive checks (J3120/J3140/J3167/J3189/J3232). Preserve artifacts, J3115/J3119 dependencies, and UAT/Shorts holds. Do not bypass through another worker or route; elapsed time is not approval. Flagged for primary Chief claude (returning 21:50Z) to resolve authorization with Ben or issue a superseding ruling.",
-        "check_at": "2026-11-21T11:47:12+00:00",
-        "last_recheck": "J3232",
-        "checked_at": "2026-11-20T21:44:26+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3284"
+        "condition": "J3284 Acting Chief ruling (jobs/reviews/J3284/REVIEW.md @ 39b89c4767): condition NOT MET. Independently scanned all 107 #954 comments after #7051241025 through #7061468727, absent remote branch/PR, clean local commit a12100797f in /Volumes/MiniWork/scratch/j3114-wt, THUMB_LEDGER tail T040, 12/12 NAS_VERIFY_J3114 SHA-256 hashes, and 4/4 NAS video hashes. Prior automatic approval review rejected exporting codex/j3114-pluto-v02 to public repo TheLaughingGod1986/orbit-with-ben twice; explicit export authorization remains absent across 6 consecutive checks (J3120/J3140/J3167/J3189/J3232/J3284). Preserve artifacts, J3115/J3119 dependencies, and UAT/Shorts holds. Do not bypass through another worker or route; elapsed time is not approval. Flagged for primary Chief claude (returning 12:50Z and 17:50Z) to resolve authorization with Ben or issue a superseding ruling.",
+        "check_at": "2026-11-21T17:55:00Z",
+        "last_recheck": "J3284",
+        "checked_at": "2026-11-21T10:52:29+00:00",
+        "checked_by": "gemini"
       },
       "escalated_at": "2026-11-19T11:45Z"
     },
