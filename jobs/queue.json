@@ -299191,19 +299191,24 @@
           "at": "2026-11-21T22:58Z",
           "by": "gemini",
           "what": "step 4 of 6 done: Watched v01 video and caught clipped bottom-right 'Anim' credit in 0:17 loop tail; tightened open/loop crop to x<=908 y<=1645 (1.68x max upscale) and updated PACKAGE_MANIFEST credits; re-running assemble_j3331.py"
+        },
+        {
+          "at": "2026-11-21T23:07Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: Rebuilt v01 clean (removed 0:17 loop-tail NASA Animation clip), 6/6 gates PASS (18.20s, 0/19 padded), SHA-256 manifest + handoff merged in PR #1137 (video ff52475588e5ecee, cover c17ac08de15dac4a)"
         }
       ],
-      "remaining_action": "Re-encode v01 with cleaned loop pre-roll crop (removing clipped bottom-right NASA Animation text) and verify all 6 gates PASS",
+      "remaining_action": "Chief/Claude reviews v01 media before Ben's watch (due Wed 2 Dec 18:00 London)",
       "due": "2026-12-02T18:00:00Z",
       "kind": "assembly",
       "plain": "Record the voice-over and build the 7 Dec NASA Roman Telescope First Images dated-event Short from free NASA footage for Thursday 3 Dec",
       "mini_only": true,
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 6,
-        "at": "2026-11-21T22:58Z",
+        "at": "2026-11-21T23:07Z",
         "by": "gemini",
-        "note": "Watched v01 video and caught clipped bottom-right 'Anim' credit in 0:17 loop tail; tightened open/loop crop to x<=908 y<"
+        "note": "Rebuilt v01 clean (removed 0:17 loop-tail NASA Animation clip), 6/6 gates PASS (18.20s, 0/19 padded), SHA-256 manifest +"
       }
     },
     {
