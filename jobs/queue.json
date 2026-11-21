@@ -296419,13 +296419,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-21T22:10Z",
-      "eta": "2026-11-22T00:10Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-21T13:53Z",
-      "result": "",
+      "result": "Chief ruling (gemini acting Chief, 21 Nov 2026): (1) PR #1113 merged (c6f0fade13: OWB_2026-11-21.md + 5 new Shorts lab rows + settled z5V6gIXXYs8 curve + Learnings 39-40); (2) PR #1132 merged (86537a31fa: approves Learnings 39-40 as active tests without playbook promotion yet, clears stale claudecode J01 board claim while keeping J2857 structured 2026-12-08T18:30:00Z public hold intact, moves fixed 93JL_IK57EM Related fault to resolvedFaults so launch_check reports ahead, adds J3256 48 h autopsy note to c5AdqQsnnys.json); (3) J3121 Option B spacing swap was ALREADY executed on YouTube in J3123 (19 Nov, verified in 2026-11-20.json: 5qw8oW5Pwpc 4 Dec, BTuL_QBbEgY 5 Dec, rXKIOUoZSGg 7 Dec, lsOCcIYCud0 9 Dec, v6euXX2omz4 19 Dec, Wed 2 Dec empty) — no duplicate Studio swap queued; delegated rebase of conflicting J3123 records PR #1040 onto main as J3330 (due 2026-11-24T18:00:00Z, before 25 Nov Buffer window). J0979/J2857/J2895/J3065 holds left untouched. £0 spend; zero Studio/YouTube/Buffer writes.",
       "history": [
         {
           "at": "2026-11-21T13:53Z",
@@ -296476,6 +296476,11 @@
           "at": "2026-11-21T22:10Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T22:10Z",
+          "by": "gemini",
+          "what": "done: Chief ruling (gemini acting Chief, 21 Nov 2026): (1) PR #1113 merged (c6f0fade13: OWB_2026-11-21.md + 5 new Shorts lab rows + settled z5V6gIXXYs8 curve + Learnings 39-40); (2) PR #1132 merged (86537a31fa: approves Learnings 39-40 as active tests without playbook promotion yet, clears stale claudecode J01 board claim while keeping J2857 structured 2026-12-08T18:30:00Z public hold intact, moves fixed 93JL_IK57EM Related fault to resolvedFaults so launch_check reports ahead, adds J3256 48 h autopsy note to c5AdqQsnnys.json); (3) J3121 Option B spacing swap was ALREADY executed on YouTube in J3123 (19 Nov, verified in 2026-11-20.json: 5qw8oW5Pwpc 4 Dec, BTuL_QBbEgY 5 Dec, rXKIOUoZSGg 7 Dec, lsOCcIYCud0 9 Dec, v6euXX2omz4 19 Dec, Wed 2 Dec empty) — no duplicate Studio swap queued; delegated rebase of conflicting J3123 records PR #1040 onto main as J3330 (due 2026-11-24T18:00:00Z, before 25 Nov Buffer window). J0979/J2857/J2895/J3065 holds left untouched. £0 spend; zero Studio/YouTube/Buffer writes."
         }
       ],
       "remaining_action": "Park J3294 for Chief review of PR #1113 and post studio thread report",
@@ -296489,7 +296494,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "86537a31fa"
     },
     {
       "id": "J3295",
