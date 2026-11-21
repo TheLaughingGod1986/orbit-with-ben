@@ -19,9 +19,7 @@
       "likes": 1
     }
   ],
-  "faults": [
-    "Related video is None in Studio; upload package specifies VBaYRPp85Sw (What Happened to Venus?)"
-  ],
+  "faults": [],
   "notes": [
     {
       "at": "2026-11-20T18:53Z",
@@ -32,6 +30,14 @@
       "at": "2026-11-20T19:00Z",
       "by": "macbook-2",
       "text": "J3247 (macbook-2): Studio Related video set to VBaYRPp85Sw (What Happened to Venus?) + en-GB Video and Title/desc languages on 2026-11-20; live reload verified (Public, Notices \u2014, Not Made for Kids); UPLOADS.json updated in PR #1080."
+    },
+    {
+      "at": "2026-11-21T21:49Z",
+      "by": "gemini",
+      "text": "Acting Chief (gemini, J3294): cleared stale fault flag after live verification in J3247 (2026-11-20T19:00Z) and 05_Analytics/live_fixes/2026-11-21.md (09:00Z): Related = VBaYRPp85Sw (What Happened to Venus?), en-GB, Public, MFK = false. Original fault preserved in resolvedFaults."
     }
+  ],
+  "resolvedFaults": [
+    "Related video is None in Studio; upload package specifies VBaYRPp85Sw (What Happened to Venus?)"
   ]
 }
