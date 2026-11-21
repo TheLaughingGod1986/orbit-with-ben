@@ -297573,13 +297573,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-21T18:14Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-21T18:11Z",
-      "result": "parked for Chief: J3316 condition verification for J3311 is CONDITION NOT MET (OWB PR #1120, jobs/reviews/J3316/REVIEW.md @ a4b5f63d7). No non-producer reviewer is verified available on the Mini: claude is out of usage until 2026-11-21T21:50:00Z per relay #7067079092 (and MacBook claude paused until 20:14:22Z); claudecode shares claude's down-window and sits behind gemini in qa's chain; chief (Grok Bot) retry is 2026-11-21T19:57:35Z; cursor Claude lanes out of credit until 2026-12-09; codex marked down on Mini until 2026-11-24T23:26:00Z (with macbook-2 ledger left=95% discrepancy flagged for Mini Chief to verify). Gemini produced J2171 (HOS PR #718 @ 7248b872, OPEN/MERGEABLE/CLEAN, 6/6 CI green; NAS SHA-256 verified) and is excluded from self-review. Elected Chief needed to merge PR #1120, record jobs.py wait J3311 --type input --recheck J3316 --check-at 2026-11-21T20:05:00Z (or 21:55:00Z for claude, or reopen if Mini codex is verified clear on Mini; scripts/jobs.py:604), and close J3316 (scripts/jobs.py:1561). £0 spent; no upload/schedule/privacy/Buffer changes; ben_ok remains todo.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-21T18:11Z",
@@ -297625,6 +297625,11 @@
           "at": "2026-11-21T18:22Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: J3316 condition verification for J3311 is CONDITION NOT MET (OWB PR #1120, jobs/reviews/J3316/REVIEW.md @ a4b5f63d7). No non-producer reviewer is verified available on the Mini: claude is out of usage until 2026-11-21T21:50:00Z per relay #7067079092 (and MacBook claude paused until 20:14:22Z); claudecode shares claude's down-window and sits behind gemini in qa's chain; chief (Grok Bot) retry is 2026-11-21T19:57:35Z; cursor Claude lanes out of credit until 2026-12-09; codex marked down on Mini until 2026-11-24T23:26:00Z (with macbook-2 ledger left=95% discrepancy flagged for Mini Chief to verify). Gemini produced J2171 (HOS PR #718 @ 7248b872, OPEN/MERGEABLE/CLEAN, 6/6 CI green; NAS SHA-256 verified) and is excluded from self-review. Elected Chief needed to merge PR #1120, record jobs.py wait J3311 --type input --recheck J3316 --check-at 2026-11-21T20:05:00Z (or 21:55:00Z for claude, or reopen if Mini codex is verified clear on Mini; scripts/jobs.py:604), and close J3316 (scripts/jobs.py:1561). £0 spent; no upload/schedule/privacy/Buffer changes; ben_ok remains todo."
+        },
+        {
+          "at": "2026-11-21T18:49Z",
+          "by": "gemini",
+          "what": "reopened: Elected acting Chief closing completed J3316 condition verification after merging PR #1120 and updating J3311 hold"
         }
       ],
       "remaining_action": "Parked for Chief: merge OWB PR #1120, record J3311 wait --recheck J3316, and close J3316",
@@ -297639,13 +297644,7 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-21T18:22Z",
-        "by": "macbook-2"
-      }
+      "open_claim": true
     }
   ],
   "focus": [
