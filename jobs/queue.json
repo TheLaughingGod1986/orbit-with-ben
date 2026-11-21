@@ -295058,9 +295058,14 @@
           "at": "2026-11-21T10:47Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T10:48Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Started J3284 condition verification for J3114 (OWB:034)."
         }
       ],
-      "remaining_action": "Verify readiness: Obtain explicit approval for the rejected GitHub branch export, then open the Pluto packaging review PR without rebuilding",
+      "remaining_action": "Check #954 thread, PRs, remote branches, and J3114 export-authorization history since J3232 (#7051241025)",
       "kind": "review",
       "recheck_of": "J3114",
       "due": "2026-11-21T11:47:12+00:00",
@@ -295075,12 +295080,14 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-21T10:47Z",
+        "of": 4,
+        "at": "2026-11-21T10:48Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Started J3284 condition verification for J3114 (OWB:034)."
+      },
+      "taskKeys": [
+        "OWB:034"
+      ]
     }
   ],
   "focus": [
