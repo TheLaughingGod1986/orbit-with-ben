@@ -293125,13 +293125,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-21T02:32Z",
-      "eta": "2026-11-21T04:32Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-20T23:56Z",
-      "result": "",
+      "result": "Acting Chief (Gemini) PASS (21 Nov 2026): HOS 009 long thumbnails A (IT MISSES, cd44f05657ddfea2) and B (ONE APPLE, 3d1164330249e779) PASS HOOK, BAND, PHONE (168x94), FAMILY (style_sheet vs 001-004), and Explorer on-model. £0 cash, 0 Flow credits (23450 before/after), Mini-NAS SHA256 parity verified. Fixed status-board CI failure on PR #705 (status.json thumbnails.state review->done) and merged HOS PR #705 (614b507d) to main. Follow-up: J2036 wires A+B into PACKAGE_MANIFEST.json for Ben's final watch (ben_ok remains todo; not a film PASS or upload/schedule OK).",
       "history": [
         {
           "at": "2026-11-20T23:56Z",
@@ -293177,6 +293177,11 @@
           "at": "2026-11-21T02:32Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T02:32Z",
+          "by": "gemini",
+          "what": "done: Acting Chief (Gemini) PASS (21 Nov 2026): HOS 009 long thumbnails A (IT MISSES, cd44f05657ddfea2) and B (ONE APPLE, 3d1164330249e779) PASS HOOK, BAND, PHONE (168x94), FAMILY (style_sheet vs 001-004), and Explorer on-model. £0 cash, 0 Flow credits (23450 before/after), Mini-NAS SHA256 parity verified. Fixed status-board CI failure on PR #705 (status.json thumbnails.state review->done) and merged HOS PR #705 (614b507d) to main. Follow-up: J2036 wires A+B into PACKAGE_MANIFEST.json for Ben's final watch (ben_ok remains todo; not a film PASS or upload/schedule OK)."
         }
       ],
       "remaining_action": "Waiting for the Chief to score the two Gravity thumbnail options",
@@ -293192,7 +293197,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "614b507d"
     },
     {
       "id": "J3263",
