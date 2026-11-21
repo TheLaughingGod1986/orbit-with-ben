@@ -290319,10 +290319,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-21T00:59Z",
+      "eta": "2026-11-21T02:59Z",
       "created_by": "relay",
       "created_at": "2026-11-20T12:06Z",
       "result": "",
@@ -290361,6 +290361,11 @@
           "at": "2026-11-21T00:59Z",
           "by": "gemini",
           "what": "reopened: Acting Chief (gemini) closing completed condition verification J3229 after independent Mac mini verification (jobs/reviews/J3229/REVIEW.md @ 0c03a9cc62) and recording J2040 wait --recheck J3229."
+        },
+        {
+          "at": "2026-11-21T00:59Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Await operator confirmation and fresh-session acceptance evidence for the scoped command permissions; recheck at noon UTC on 20 November.",
@@ -290376,7 +290381,15 @@
         "by": ""
       },
       "model": "gemini-argon",
-      "escalated_at": "2026-11-20T17:40Z"
+      "escalated_at": "2026-11-20T17:40Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T00:59Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3230",
