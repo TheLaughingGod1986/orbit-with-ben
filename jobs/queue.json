@@ -292914,13 +292914,13 @@
       "stage": "",
       "after": "J3254",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-11-21T01:38Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-20T22:47Z",
-      "result": "Waiting for: Ben's Studio sign-in for Field Order History is done: the channel window shows studio.youtube.com rather than Google's sign-in page, so the remaining settings can be read.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-20T22:47Z",
@@ -292966,28 +292966,35 @@
           "at": "2026-11-21T19:34Z",
           "by": "claude",
           "what": "Field Order History launch settings that need no Studio window moved to J3320 (tonight). The Studio-only rows still wait for Ben's 9224 sign-in."
+        },
+        {
+          "at": "2026-11-21T19:35Z",
+          "by": "claude",
+          "what": "reopened: Ben, 21 Nov ~19:35 London, in chat with a photo of the Mac mini: \"The Mac Mini is signed in.\" The photo shows a Chrome window on the Mini at studio.youtube.com/channel/UCu94mInMFosxu3W0H6jlI6Q, Field Order History's Channel dashboard. First confirm it is the CDP 9224 window (list targets on port 9224 and check the page URL shows that channel id); if 9224 is still on Google's sign-in page, Ben signed in in a different window: say so in one line and do the API-only steps. Release: read the Field Order History Studio-only rows now (upload defaults, comments, home layout, watermark, dubbing, monetisation progress). Launch settings (keywords, language, playlist, end screens) are J3320's; do not duplicate them."
+        },
+        {
+          "at": "2026-11-21T19:35Z",
+          "by": "claude",
+          "what": "rerouted to gemini on gemini-argon: Gemini is the free Mini lane tonight."
         }
       ],
       "remaining_action": "After the Field Order History Studio sign-in, read the settings the upload login cannot see",
       "due": "2026-11-24T18:00:00Z",
       "kind": "studio",
       "plain": "Have an AI go through every YouTube and Studio setting on our channels and set them up for growth",
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-21T01:50Z",
-        "by": "cursor",
-        "note": "Orbit and History of Science settings were read and left unchanged. Field Order History Studio is still on the Google si"
-      },
       "taskKeys": [
         "WW2:001",
         "WW2:002"
       ],
-      "hold": {
-        "type": "ben",
-        "condition": "Ben's Studio sign-in for Field Order History is done: the channel window shows studio.youtube.com rather than Google's sign-in page, so the remaining settings can be read.",
-        "check_at": "2026-11-21T08:00:00Z"
-      }
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J3256",
@@ -297991,7 +297998,7 @@
       "title": "Field Order History launch settings tonight: keywords, channel language, series playlist (API); end screens once Studio is signed in",
       "needs": "mini",
       "repo": "ww2",
-      "body": "**Why (Ben, 21 Nov ~19:35 London, in chat: \"The end screen keywords, channel language and the rest that are needed, are they set to work on the Mac Mini tonight to get updated?\").** They were not: J3255 (settings audit) is parked waiting for Ben's sign-in to the Field Order History Studio window (port 9224), and no job covered pilot 1's launch settings. Pilot 1 `ek9F61FVYqY` goes public Sun 22 Nov 17:00 London (J3318). The settings audit (PR #1099, 05_Analytics/ww2/STUDIO_SETTINGS_AUDIT_2026-11-21.md) lists what is missing.\n\n**Do TONIGHT with Field Order History's own login (YOUTUBE_REFRESH_TOKEN_WW2, channel UCu94mInMFosxu3W0H6jlI6Q); no Studio window needed:**\n1. Channel keywords (channels.update brandingSettings.channel.keywords): 10-15 plain search terms for what the channel covers, drawn from ww2-channel studio/RULES.md and the two pilots' approved titles and descriptions (for example World War 2, WW2 documentary, D-Day, Normandy, Battle of the Atlantic, U-boats, Mulberry harbours, military engineering, WW2 logistics, history documentary). No other channel's name, no misleading terms, under 500 characters. Read back.\n2. Channel default language English (United Kingdom) (brandingSettings.channel.defaultLanguage) so titles and descriptions are labelled en-GB. Read back. Leave country (United Kingdom) and everything else unchanged.\n3. Playlist prepared: create ONE playlist titled for the series (for example \"How WW2 Was Engineered, Supplied and Fought\") with a two-line description, add pilot 1 then pilot 2, and leave it Private until pilot 1 is public; the Sunday first-day check (or this job, if still running at 17:00) makes it Public right after pilot 1 goes live. Record its id.\n\n**Studio-only, only once the 9224 window is signed in (Ben's own sign-in, AGENTS.md; nobody types a password):** 4. a subscribe end screen on both pilots (on pilot 1 before 17:00 Sunday if the sign-in lands in time; the only element is Subscribe, since no other public FOH video exists yet; add a best-for-viewer video element to pilot 1 once pilot 2 is public); 5. title and description language field, comment settings as on Orbit (on, Basic moderation), and the rest of J3255's FOH rows. If the window is still on Google's sign-in page, skip 4-5, say so in one line, and leave J3255 parked.\n\n6. Records: ww2-channel studio/channel.json (keywords, language, playlist id) and the audit file; one thread receipt.\n\n**Guards.** Do not change either pilot's schedule, privacy, title, description, thumbnail or file. No visibility change to the pilots. No monetisation, country or identity change. £0.",
+      "body": "**Why (Ben, 21 Nov ~19:35 London, in chat: \"The end screen keywords, channel language and the rest that are needed, are they set to work on the Mac Mini tonight to get updated?\").** They were not: J3255 (settings audit) is parked waiting for Ben's sign-in to the Field Order History Studio window (port 9224), and no job covered pilot 1's launch settings. Pilot 1 `ek9F61FVYqY` goes public Sun 22 Nov 17:00 London (J3318). The settings audit (PR #1099, 05_Analytics/ww2/STUDIO_SETTINGS_AUDIT_2026-11-21.md) lists what is missing.\n\n**Do TONIGHT with Field Order History's own login (YOUTUBE_REFRESH_TOKEN_WW2, channel UCu94mInMFosxu3W0H6jlI6Q); no Studio window needed:**\n1. Channel keywords (channels.update brandingSettings.channel.keywords): 10-15 plain search terms for what the channel covers, drawn from ww2-channel studio/RULES.md and the two pilots' approved titles and descriptions (for example World War 2, WW2 documentary, D-Day, Normandy, Battle of the Atlantic, U-boats, Mulberry harbours, military engineering, WW2 logistics, history documentary). No other channel's name, no misleading terms, under 500 characters. Read back.\n2. Channel default language English (United Kingdom) (brandingSettings.channel.defaultLanguage) so titles and descriptions are labelled en-GB. Read back. Leave country (United Kingdom) and everything else unchanged.\n3. Playlist prepared: create ONE playlist titled for the series (for example \"How WW2 Was Engineered, Supplied and Fought\") with a two-line description, add pilot 1 then pilot 2, and leave it Private until pilot 1 is public; the Sunday first-day check (or this job, if still running at 17:00) makes it Public right after pilot 1 goes live. Record its id.\n\n**Studio-only, only once the 9224 window is signed in (Ben's own sign-in, AGENTS.md; nobody types a password):** 4. a subscribe end screen on both pilots (on pilot 1 before 17:00 Sunday if the sign-in lands in time; the only element is Subscribe, since no other public FOH video exists yet; add a best-for-viewer video element to pilot 1 once pilot 2 is public); 5. title and description language field, comment settings as on Orbit (on, Basic moderation), and the rest of J3255's FOH rows. If the window is still on Google's sign-in page, skip 4-5, say so in one line, and leave J3255 parked.\n\n6. Records: ww2-channel studio/channel.json (keywords, language, playlist id) and the audit file; one thread receipt.\n\n**Guards.** Do not change either pilot's schedule, privacy, title, description, thumbnail or file. No visibility change to the pilots. No monetisation, country or identity change. £0.\n\n**Ben, 21 Nov ~19:35 London, in chat with a photo of the Mac mini: \"The Mac Mini is signed in.\" The photo shows a Chrome window on the Mini at studio.youtube.com/channel/UCu94mInMFosxu3W0H6jlI6Q, Field Order History's Channel dashboard. First confirm it is the CDP 9224 window (list targets on port 9224 and check the page URL shows that channel id); if 9224 is still on Google's sign-in page, Ben signed in in a different window: say so in one line and do the API-only steps. Steps 4-5 are now in scope.**\n",
       "ref": "",
       "film": "",
       "stage": "",
@@ -298014,6 +298021,11 @@
           "at": "2026-11-21T19:34Z",
           "by": "claude",
           "what": "rerouted to gemini on gemini-argon: Gemini is the free Mini lane tonight; API steps need no Studio window."
+        },
+        {
+          "at": "2026-11-21T19:35Z",
+          "by": "claude",
+          "what": "Ben, 21 Nov ~19:35 London, in chat with a photo of the Mac mini: \"The Mac Mini is signed in.\" The photo shows a Chrome window on the Mini at studio.youtube.com/channel/UCu94mInMFosxu3W0H6jlI6Q, Field Order History's Channel dashboard. First confirm it is the CDP 9224 window (list targets on port 9224 and check the page URL shows that channel id); if 9224 is still on Google's sign-in page, Ben signed in in a different window: say so in one line and do the API-only steps. Do steps 4-5 (end screens, Studio-only settings) as well, pilot 1's end screen before Sun 17:00."
         }
       ],
       "remaining_action": "API: set channel keywords and en-GB default language, create private series playlist with pilots 1-2; Studio end screens only if 9224 is signed in",
