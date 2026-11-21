@@ -294659,18 +294659,33 @@
           "at": "2026-11-21T09:07Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J3279; reading prior J3269/J3271 baselines and running live HOS checks"
+        },
+        {
+          "at": "2026-11-21T09:10Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Live YouTube Data API (68 videos, channel-audit exit 0), public watch/Shorts pages, and external URL checks completed"
         }
       ],
-      "remaining_action": "Run read-only YouTube API audit, package lint, public URL/Related/end-screen checks on all HOS live and scheduled videos",
+      "remaining_action": "Verify chapter/source/end-screen/Related details and check for any live or repo discrepancies",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-21T09:07Z",
+        "at": "2026-11-21T09:10Z",
         "by": "gemini",
-        "note": "Claimed J3279; reading prior J3269/J3271 baselines and running live HOS checks"
-      }
+        "note": "Live YouTube Data API (68 videos, channel-audit exit 0), public watch/Shorts pages, and external URL checks completed"
+      },
+      "taskKeys": [
+        "HOS:001",
+        "HOS:002",
+        "HOS:003",
+        "HOS:004",
+        "HOS:005",
+        "HOS:006",
+        "HOS:007",
+        "HOS:099"
+      ]
     }
   ],
   "focus": [
