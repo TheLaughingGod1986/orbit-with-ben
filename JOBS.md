@@ -64,7 +64,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3261 | mini | open | – | – | 009 edit · assembly · HOS 009: Assemble v02 long master (E2 first 30 s, Teach cards/timeline, separate back-to-back graphics) | J2036 |
 | J3262 | mini | blocked | cursor | – | 009 thumbs · thumb · HOS 009: Build long thumbnails A+B (house look, style_sheet + thumb_preview, £0 paid spend) | J2036 |
 | J3265 | any | open (after J3238) | – | – | assembly · Agents run themselves: each agent on its own timer, picks by skill, sets up the next stage, fixes its own failures (after #1073) |  |
-| J3266 | any | open | – | – | assembly · Use-it-all pacing for flat plans (land near 100% at each reset); hard caps only on pay-per-use; ElevenLabs first before 30 Nov |  |
+| J3266 | any | claimed | macbook-2 | 2026-11-21T02:54Z | assembly · Use-it-all pacing for flat plans (land near 100% at each reset); hard caps only on pay-per-use; ElevenLabs first before 30 Nov |  |
 
 Recently finished:
 

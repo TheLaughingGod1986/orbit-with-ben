@@ -293211,10 +293211,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-21T01:24Z",
+      "eta": "2026-11-21T02:54Z",
       "created_by": "claude",
       "created_at": "2026-11-21T01:22Z",
       "result": "",
@@ -293223,12 +293223,25 @@
           "at": "2026-11-21T01:22Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-21T01:24Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Project each plan's use at reset; pull approved work forward when under 90%; hold low-priority when over; caps on pay-per-use; first ElevenLabs run",
       "due": "2026-11-25T18:00:00Z",
       "kind": "assembly",
-      "urgent": 6
+      "urgent": 6,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T01:24Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
