@@ -1,5 +1,5 @@
 {
-  "next_id": 3285,
+  "next_id": 3286,
   "jobs": [
     {
       "id": "J0001",
@@ -294952,6 +294952,11 @@
           "at": "2026-11-21T10:14Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-21T11:35:00Z"
+        },
+        {
+          "at": "2026-11-21T11:37Z",
+          "by": "relay",
+          "what": "condition verification queued: J3285"
         }
       ],
       "remaining_action": "Verify Bks_JLId1ew live Related (VbPubYd6Fbs), AI badge, captions and flip library.json to live after 2026-11-21T11:30Z",
@@ -294968,7 +294973,8 @@
       "hold": {
         "type": "public",
         "condition": "HOS 006 Short Bks_JLId1ew (How Do Plants Make Oxygen?) is scheduled to go public at 2026-11-21T11:30:00Z; wait until after publishAt before read-only public verification and flipping library.json scheduled -> live",
-        "check_at": "2026-11-21T11:35:00Z"
+        "check_at": "2026-11-21T12:37:03+00:00",
+        "recheck_task": "J3285"
       }
     },
     {
@@ -295112,6 +295118,37 @@
       "taskKeys": [
         "OWB:034"
       ]
+    },
+    {
+      "id": "J3285",
+      "title": "Verify condition for J3282",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3282: HOS 006 Short Bks_JLId1ew (How Do Plants Make Oxygen?) is scheduled to go public at 2026-11-21T11:30:00Z; wait until after publishAt before read-only public verification and flipping library.json scheduled -> live. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3282 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-21T11:37Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T11:37Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Verify Bks_JLId1ew live Related (VbPubYd6Fbs), AI badge, captions and flip library.json to live after 2026-11-21T11:30Z",
+      "kind": "review",
+      "recheck_of": "J3282",
+      "due": "2026-11-21T12:37:03+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
