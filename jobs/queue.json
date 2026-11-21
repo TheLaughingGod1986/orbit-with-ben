@@ -292031,10 +292031,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-21T02:51Z",
+      "eta": "2026-11-21T04:51Z",
       "created_by": "gemini",
       "created_at": "2026-11-20T19:02Z",
       "result": "",
@@ -292183,6 +292183,11 @@
           "at": "2026-11-21T02:12Z",
           "by": "cursor",
           "what": "released: Offload still running; do not start a second copy. tmux J3249-offload (python pid 52498, since 01:15). Log ~/_desk/logs/J3249-offload.log. Exit file ~/_desk/logs/J3249-offload.done is missing, so it is still running. Result file ~/_desk/logs/J3249-offload-report.json is written when it finishes. MiniWork is at 89 GiB free (past 40 GB). Spot-check: J2242-salon-patch-v03 SHA256SUMS.txt, 3 files, all match; local folder holds only MOVED_TO_NAS.txt. Next run: if the exit file exists, read it and close the job when free space is still at least 40 GB."
+        },
+        {
+          "at": "2026-11-21T02:51Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Leave the existing MiniWork offload running, then read its exit file and confirm at least 40 GB free",
