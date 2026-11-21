@@ -288066,10 +288066,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-21T02:41Z",
+      "eta": "2026-11-21T04:41Z",
       "created_by": "relay",
       "created_at": "2026-11-20T08:03Z",
       "result": "",
@@ -288088,6 +288088,11 @@
           "at": "2026-11-20T15:17Z",
           "by": "claude",
           "what": "Opened to any worker (Ben, 20 Nov: agents idle while Gemini queued alone). Condition checks read the queue, repo and NAS evidence; both Macs mount the NAS."
+        },
+        {
+          "at": "2026-11-21T02:41Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Listen to the rebuilt muon Short and decide the swap before its Saturday slot",
@@ -288105,7 +288110,15 @@
         "status": "open",
         "by": ""
       },
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T02:41Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3200",
