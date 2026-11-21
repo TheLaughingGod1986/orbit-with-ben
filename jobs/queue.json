@@ -292045,18 +292045,23 @@
           "at": "2026-11-21T01:08Z",
           "by": "cursor",
           "what": "step 0 of 4 done: Claimed. Recording disk before any move."
+        },
+        {
+          "at": "2026-11-21T01:14Z",
+          "by": "cursor",
+          "what": "step 1 of 4 done: Inspected MiniWork. Container free about 45 GB. 127 clean pushed worktrees are 59 GB and safe to remove. 28 non-git folders (12.5 GB) will be archived and hash-checked first. Dirty and unpushed folders stay."
         }
       ],
-      "remaining_action": "Inspect MiniWork scratch and desk for old completed folders",
+      "remaining_action": "Archive old evidence and remove clean pushed worktrees on MiniWork",
       "due": "2026-11-21T07:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-21T01:08Z",
+        "at": "2026-11-21T01:14Z",
         "by": "cursor",
-        "note": "Claimed. Recording disk before any move."
+        "note": "Inspected MiniWork. Container free about 45 GB. 127 clean pushed worktrees are 59 GB and safe to remove. 28 non-git fold"
       }
     },
     {
