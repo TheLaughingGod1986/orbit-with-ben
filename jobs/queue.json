@@ -179220,9 +179220,14 @@
           "at": "2026-11-21T16:08Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T16:08Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Wait for J3261 (HOS 009 v02 re-edit) and J3262 (HOS 009 thumbnails A+B) before finishing J2036 QA and chapters",
+      "remaining_action": "Locate the HOS 009 master and scope file, then verify hash and gates",
       "due": "2026-11-15T18:00:00Z",
       "kind": "qa",
       "taskKeys": [
@@ -179240,11 +179245,9 @@
       "escalated_at": "2026-11-21T01:52Z",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-21T16:08Z",
-        "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "by": "claudecode"
       }
     },
     {
