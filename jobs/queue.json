@@ -1,5 +1,5 @@
 {
-  "next_id": 3330,
+  "next_id": 3331,
   "jobs": [
     {
       "id": "J0001",
@@ -299004,6 +299004,36 @@
       "taskKeys": [
         "HOS:009"
       ]
+    },
+    {
+      "id": "J3330",
+      "title": "Rebase J3123 December Shorts schedule records PR (#1040) onto main before 25 Nov Buffer window",
+      "needs": "any",
+      "repo": "owb",
+      "body": "**Why (Acting Chief `gemini`, 21 Nov 2026, from `J3294` Chief review):**\n`J3123` (Claude acting Chief ruling 19 Nov, executed by Cursor 19 Nov 09:17Z) already executed Option B of `jobs/reviews/J3121/SCHEDULE_SPACING_AUDIT.md` in YouTube Studio, moving 5 private scheduled December Shorts so no subject runs back to back (live-verified in `05_Analytics/owb/snapshots/2026-11-20.json`):\n- `5qw8oW5Pwpc` (031 Magnetic Field) -> `2026-12-04T11:30:00Z` (was 5 Dec)\n- `BTuL_QBbEgY` (028 Gliese 710) -> `2026-12-05T11:30:00Z` (was 4 Dec)\n- `rXKIOUoZSGg` (029 Betelgeuse) -> `2026-12-07T11:30:00Z` (was 9 Dec)\n- `lsOCcIYCud0` (028 Gliese 710) -> `2026-12-09T11:30:00Z` (was 7 Dec)\n- `v6euXX2omz4` (028 Gliese 710 Test A) -> `2026-12-19T11:30:00Z` (was 2 Dec; Wed 2 Dec is empty pending Ben's UAT on `J0979`)\n\nHowever, the records PR for `J3123` (**PR #1040**, branch `cursor/j3123-december-spacing`, commit `b0777a5ba5`) was never merged and is now `CONFLICTING` with `main`. As a result, `00_Brand/Channel-Setup/social/UPLOADS.json`, `00_Brand/Channel-Setup/audits/shorts_open_library/library.json`, and the film `status.json` files on `main` still show the stale pre-swap dates (including `v6euXX2omz4` on `2026-12-02T11:30:00Z`, whose 7-day Buffer mirror window opens **Wed 25 Nov 07:05Z**).\n\n**Do (before Tue 24 Nov 2026 18:00Z — repo records only, £0):**\n1. From a clean worktree branched from `origin/main`, apply/rebase PR #1040 (`cursor/j3123-december-spacing`, `b0777a5ba5`) onto `main` and resolve all conflicts cleanly (keeping all newer `main` edits to `UPLOADS.json`, `library.json`, `status.json`, and `STATUS.md`).\n2. Verify every one of the 5 rescheduled Shorts' `publishAt` dates in `UPLOADS.json`, `library.json`, film `status.json` files (`028`, `029`, `031`), `J3123_SCHEDULE.md` notes, and `jobs/readbacks/J3123.json` matches `05_Analytics/owb/snapshots/2026-11-20.json` verbatim.\n3. Preserve PR #1040's slot updates on the two **unuploaded** Short 2 packages (`033` Short 2 `033_short02_ice_giant_surface` -> `Wed 23 Dec 11:30Z`, `034` Short 2 `short02_water_ice_mountains` -> `Sat 26 Dec 11:30Z`) so they do not collide with `v6euXX2omz4` on `Sat 19 Dec`. Never modify any already-uploaded `PACKAGE_MANIFEST.json` or its sha256.\n4. Regenerate `STATUS.md` (`python3 scripts/studio.py status`), run the repo test checks (`python3 scripts/studio.py check`, `test_email_ratchet.py`, `test_no_private_network.py`, `test_board_uploaded_ok.py`, `python3 -m json.tool` on all edited JSON), push to a clean PR (or update PR #1040 if pushing to its branch), and park for Chief merge.\n\n**Guards:** Repo records only. **Zero YouTube Studio, YouTube API, or Buffer writes.** Do not re-run the Studio schedule swap (`J3123` already did it). Do not reopen `J0979`, `J2895`, `J3065`, or `J2857`. £0 spend.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-21T22:09Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T22:09Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Rebase PR #1040 onto main, verify all 5 December Short publishAt dates match 2026-11-20.json, run tests, and park for Chief merge",
+      "due": "2026-11-24T18:00:00Z",
+      "kind": "studio",
+      "plain": "Update the conflicting J3123 December Shorts schedule records PR (#1040) onto main so UPLOADS.json, library.json, status.json and unuploaded 033/034 Short 2 manifests match YouTube"
     }
   ],
   "focus": [
