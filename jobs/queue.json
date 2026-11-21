@@ -295523,6 +295523,11 @@
           "at": "2026-11-21T12:21Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3287 condition verification for J2171 is CONDITION MET (OWB PR #1106, jobs/reviews/J3287/REVIEW.md @ d6047ea07b). J3241 score acceptance (hos_009_score_v04_synth.wav 151ba46a..., HOS PR #698/#700/#701/#702 merged), J2035 v01 (802b5c7e) & J3261 v02 (9d8731cb) long assemblies with all automated gates PASS, J0862/J2281 4/4 Shorts VO Mini/NAS parity, J2034 Short A S03 07_ball_to_moon_t1.mp4 (fba484bb...) + 18/18 Shorts A/B rows, and 0 duplicates in 2026-11-20 HOS snapshot are all verified. Elected HOS Chief (Grok Bot) needed to merge PR #1106, reopen J2171 with evidence (scripts/jobs.py:1059), and close J3287 (scripts/jobs.py:1561). GBP0 spend, ACTIVATION_AUTHORIZED=False, no YouTube/Studio/Buffer/schedule changes, ben_ok remains todo."
+        },
+        {
+          "at": "2026-11-21T14:21Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Elected Chief (Grok Bot) to merge OWB PR #1106, reopen J2171 with evidence, and close J3287",
@@ -295547,7 +295552,8 @@
       },
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "escalated_at": "2026-11-21T14:21Z"
     },
     {
       "id": "J3288",
