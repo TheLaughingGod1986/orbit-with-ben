@@ -6,7 +6,7 @@
 - **Reviewer:** `gemini` (`Gemini 4 Neon (High)`, `agy 1.5.14`, **specialist worker** — per fresh `chief_relay.py status`, **`Chief: Grok Bot`** is UP and elected Chief; `claude` down until `2026-11-21T12:50:00Z`; `codex` down until `2026-11-24T23:26:00Z`; `gemini`/`cursor`/`claudecode` UP as workers). No Chief ruling, no playback PASS, no merge.
 - **Checked At:** `2026-11-21T08:33Z–08:36Z`
 - **Spend:** `£0` (`0` Flow credits, `0` takes minted, raw runner ledger/receipts untouched, no YouTube/Buffer/schedule changes)
-- **Verdict:** **CONDITION NOT SATISFIED — KEEP `J3178` BLOCKED WITH TYPED CAPABILITY HOLD (`--type capability --requires moving_video_input --recheck J3277`, Next Check `2026-11-21T14:30:00Z`) AND CLOSE `J3277`**
+- **Verdict:** **CONDITION NOT SATISFIED — RECOMMEND KEEPING `J3178` BLOCKED WITH TYPED CAPABILITY HOLD (`--type capability --requires moving_video_input --recheck J3277`, Next Check `2026-11-21T14:30:00Z`); PARKED `J3277` FOR ELECTED CHIEF (`Grok Bot`)**
 
 ---
 
@@ -28,10 +28,13 @@
 
 ---
 
-## 3. Worker Disposition (`J3277` -> `J3178`)
+## 3. Worker Disposition (`J3277` -> `J3178`, Parked for Elected Chief `Grok Bot`)
 
-1. **Keep `J3178` blocked** and record the updated typed capability hold via:
-   `jobs.py wait J3178 --agent gemini --type capability --requires moving_video_input --recheck J3277 --check-at 2026-11-21T14:30:00Z --git`
-   (next check ~6 hours out and cleanly after Claude's `2026-11-21T12:50:00Z` usage-window return; flags for elected Chief `Grok Bot` that `scripts/capability_probe.py`'s 2-second colour-block test continues to false-positive `moving_video_input` on `agy 1.5.14`'s 1-fps JPEG extraction).
-2. **Close `J3277`** via `jobs.py done J3277 --agent gemini --git`.
-3. **Preserved guardrails:** `48` `KEEP` and `8` `RETAKE` (`3, 10, 24, 28, 47, 49, 54, 63`) preserved unchanged; `£0` / `0` Flow credits spent; no minting, no retake allowance, no assembly, no final plate approval; raw runner ledger and receipts untouched; nothing for Ben.
+1. **Protected Chief call parked (`jobs.py` guard enforced):** Per `scripts/jobs.py` line 603–604 (`Only the elected Chief may record a condition check`), recording `--recheck J3277` on `J3178` requires the elected Chief (`Grok Bot`, currently UP). As a specialist worker (`gemini`), I did **not** bypass the guard or claim Chief authority.
+2. **Recommended Chief actions:**
+   - Keep `J3178` blocked with the updated typed capability hold:
+     `python3 scripts/jobs.py wait J3178 --agent chief --type capability --requires moving_video_input --recheck J3277 --check-at 2026-11-21T14:30:00Z --condition "J3277 verification (jobs/reviews/J3277/REVIEW.md): condition unmet; agy 1.5.14 read_file on NAS row 58 still returns 8 discrete 1-fps JPEGs (00:00..00:07), not continuous 24-fps playback; audio_input only; no worker has verified 24-fps moving_video_input; 11/11 Batch 12-14 NAS hashes match receipts; REVIEW_STATE.json unchanged (48 KEEP / 8 RETAKE / 10 unset); no new 013 marks on HOS #180/#694 or OWB #954." --git`
+   - Close `J3277` (`python3 scripts/jobs.py done J3277 --agent chief --git`).
+   - Tooling flag for Chief: `scripts/capability_probe.py`'s 2-second colour-block video test continues to false-positive `moving_video_input` for `gemini` from 1-fps integer-second stills (`08:02:38Z` probe).
+3. **Parked `J3277`** via `jobs.py block J3277 --agent gemini --reason "parked for Chief: ..." --git`.
+4. **Preserved guardrails:** `48` `KEEP` and `8` `RETAKE` (`3, 10, 24, 28, 47, 49, 54, 63`) preserved unchanged; `£0` / `0` Flow credits spent; no minting, no retake allowance, no assembly, no final plate approval; raw runner ledger and receipts untouched; nothing for Ben.
