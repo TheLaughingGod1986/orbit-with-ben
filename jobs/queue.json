@@ -293489,13 +293489,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "cursor",
       "since": "2026-11-21T02:13Z",
-      "eta": "2026-11-21T04:13Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-21T01:54Z",
-      "result": "",
+      "result": "Waiting for: His voice check: Ben reads the five sample replies per channel and says yes before any comment reply is posted",
       "history": [
         {
           "at": "2026-11-21T01:54Z",
@@ -293521,6 +293521,16 @@
           "at": "2026-11-21T02:23Z",
           "by": "cursor",
           "what": "step 4 of 4 done: PR 1101 opened. Dry-run posted 0. Five samples per channel are in the voice file. One Orbit comment was escalated and not replied to. History of Science has no upload login, so those samples are examples."
+        },
+        {
+          "at": "2026-11-21T02:24Z",
+          "by": "cursor",
+          "what": "blocked: Waiting for: His voice check: Ben reads the five sample replies per channel and says yes before any comment reply is posted"
+        },
+        {
+          "at": "2026-11-21T02:24Z",
+          "by": "cursor",
+          "what": "condition recorded; next verification 2026-11-22T12:00:00Z"
         }
       ],
       "remaining_action": "Wait for his voice check before any comment is posted",
@@ -293534,6 +293544,11 @@
         "at": "2026-11-21T02:23Z",
         "by": "cursor",
         "note": "PR 1101 opened. Dry-run posted 0. Five samples per channel are in the voice file. One Orbit comment was escalated and no"
+      },
+      "hold": {
+        "type": "ben",
+        "condition": "His voice check: Ben reads the five sample replies per channel and says yes before any comment reply is posted",
+        "check_at": "2026-11-22T12:00:00Z"
       }
     }
   ],
