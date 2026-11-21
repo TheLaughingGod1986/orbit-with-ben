@@ -227475,6 +227475,11 @@
           "at": "2026-11-21T14:38Z",
           "by": "relay",
           "what": "condition verification queued: J3296"
+        },
+        {
+          "at": "2026-11-21T16:19Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-21T22:20:00Z"
         }
       ],
       "remaining_action": "Wait for Ben explicit one-time authorization for irreversible protected HOS hos-desk history rewrite (do not re-ask per Grok ruling 7018109147); then resolve open non-desk HOS PRs, refresh pre-rewrite backup/rehearsal against current heads, give day-before notice, and hold writers before cutover.",
@@ -227497,12 +227502,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "Acting Chief (gemini) accepts J3272 REVIEW.md (6668c24142): explicit one-time authorization for irreversible rewrite of protected HOS hos-desk while retaining PR180 remains absent. Fresh check 2026-11-21T03:59Z: OWB #954 through 7056935527 and HOS desk #694 through 7056930324 have no new Ben exception; HOS #180 remains capped at 2500 comments (last 7024089854, rollover done in #694) and HOS #657 has 0 comments. Grok ruling 7018109147 retains this hold and says the question is already open; do not ask again. Pre-rewrite NAS/MiniWork backups and rehearsal remain intact; HOS origin/main is 6774fd3e9e, origin/hos-desk is a4ce692535, with 28 open non-desk PRs. After authorization, resolve non-desk PRs, refresh backup and rehearsal against current heads, give day-before window notice and hold writers before allowlisted cutover. No live rewrite authorized.",
-        "check_at": "2026-11-21T15:38:45+00:00",
-        "last_recheck": "J3272",
-        "checked_at": "2026-11-21T04:01:05+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3296"
+        "condition": "Acting Chief (gemini) accepts J3296 REVIEW.md (OWB PR #1115 merged as 2ae2fd297e, file 84b539e959): explicit one-time authorization for irreversible rewrite of protected HOS hos-desk while retaining PR180 remains absent. Fresh check 2026-11-21T16:18Z: OWB #954 through 7065515209 and HOS desk #694 through 7065405204 have no new Ben exception; HOS #180 remains capped at 2500 comments (last 7024089854, rollover done in #694) and HOS #657 has 0 comments. Grok ruling 7018109147 retains this hold and says the question is already open; do not ask again. Pre-rewrite NAS/MiniWork backups and HOS jobs/reviews/J2537/ rehearsal remain intact; HOS origin/main is 7cf83455f4, origin/hos-desk is a4ce692535, with 27 open non-desk PRs. After authorization, resolve non-desk PRs, refresh backup and rehearsal against current heads, give day-before window notice and hold writers before allowlisted cutover. No live rewrite authorized.",
+        "check_at": "2026-11-21T22:20:00Z",
+        "last_recheck": "J3296",
+        "checked_at": "2026-11-21T16:19:40+00:00",
+        "checked_by": "gemini"
       }
     },
     {
