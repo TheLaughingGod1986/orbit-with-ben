@@ -2161,6 +2161,11 @@ def run_locked(at: dt.datetime, slot: int = 0) -> int:
         handover(who, rows, at)
         alert_no_chief(who, rows, at)
         check_thread_caps(at)
+        try:
+            import ben_alerts
+            ben_alerts.check_from_disk(at)
+        except Exception as e:  # noqa: BLE001
+            log(f"ben alerts failed: {e}")
         # The board shows who is Chief and who is out, and why (Ben, 21 Oct 2026).
         # `rows` stays the home chain. The other channel is stored under its slug.
         chain_state = {"at": iso(at), "rows": [{"agent": a, "up": up, "why": why[:120]} for a, up, why in rows]}

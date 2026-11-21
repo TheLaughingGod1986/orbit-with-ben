@@ -650,6 +650,22 @@ p.meta + .seg { margin-top: 12px; }
 .job-more .row { margin-top: 8px; }
 .overview-activity a.active-job-card .aj-what { color: var(--ink); }
 .thumb.job { font-size: 1.2rem; }
+.urgent-banner {
+  background: #3d1217; border: 1.5px solid var(--red); border-radius: 14px;
+  padding: 12px 14px; margin: 0 0 14px; display: flex; flex-direction: column; gap: 10px;
+  color: #fff5f5;
+}
+.urgent-banner-item { display: flex; flex-direction: column; gap: 6px; }
+.urgent-banner-item + .urgent-banner-item { padding-top: 10px; border-top: 1px solid rgba(248, 113, 113, 0.35); }
+.urgent-banner-head { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; color: #fecaca; }
+.urgent-banner-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--red); flex: 0 0 8px; box-shadow: 0 0 8px rgba(248, 113, 113, 0.8); }
+.urgent-banner-text { margin: 0; font-size: 14px; line-height: 1.45; font-weight: 600; color: #fff; }
+.urgent-banner-link {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px; align-self: flex-start;
+  min-height: 44px; padding: 8px 14px; border-radius: 10px; background: #dc2626; color: #fff;
+  font-size: 14px; font-weight: 700; text-decoration: none;
+}
+.urgent-banner-link:hover, .urgent-banner-link:focus-visible { background: #ef4444; }
 </style>
 </head>
 <body>

@@ -14,7 +14,32 @@
   const REF = `https://api.github.com/repos/${REPO}/git/ref/heads/board-data`;
   const AT = (sha) => `https://raw.githubusercontent.com/${REPO}/${sha}/tracker.json`;
   const BRANCH = `https://raw.githubusercontent.com/${REPO}/board-data/tracker.json`;
+  const BOARD_AT = (sha) => `https://raw.githubusercontent.com/${REPO}/${sha}/board.json`;
+  const BOARD_BRANCH = `https://raw.githubusercontent.com/${REPO}/board-data/board.json`;
   const KEY = "tracker.data.v1";
+  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  function renderUrgentBanner(b) {
+    const host = document.getElementById("urgent-banner");
+    if (!host) return;
+    const items = (((b || {}).alerts || {}).active) || [];
+    if (!items.length) { host.innerHTML = ""; return; }
+    const rows = items.map(a => {
+      const href = a && a.href && /^#[A-Za-z0-9_=%:&./-]+$/.test(a.href) ? "/" + a.href : "/#review";
+      const label = a && a.kind === "pulled" ? "Urgent · Video pulled" : "Urgent · Watch needed";
+      const cta = href.includes("#uat=") || href.endsWith("#review") ? "Open watch card ›" : "Open schedule ›";
+      return `<div class="urgent-banner-item"><div class="urgent-banner-head"><i class="urgent-banner-dot" aria-hidden="true"></i><span>${esc(label)}</span></div>`
+        + `<p class="urgent-banner-text">${esc((a && (a.message || a.text)) || "")}</p>`
+        + `<a class="urgent-banner-link" href="${esc(href)}">${esc(cta)}</a></div>`;
+    }).join("");
+    host.innerHTML = `<div class="urgent-banner" role="alert" aria-live="assertive">${rows}</div>`;
+  }
+  async function checkAlerts(sha) {
+    try {
+      const r = await elsewhere(own("f=board" + (sha ? "&sha=" + sha : ""), sha ? "force-cache" : "no-store"),
+        () => fetch(sha ? BOARD_AT(sha) : BOARD_BRANCH + "?t=" + Date.now(), { cache: sha ? "force-cache" : "no-store" }));
+      if (r && r.ok) renderUrgentBanner(await r.json());
+    } catch (e) {}
+  }
   // The site's own server first (api/data.js, J2532): it reads with the server's token, so this page works when the
   // data's repo is private. A 401 from it means "sign in" and stops the read; GitHub's public addresses above are only
   // the fallback when that server cannot be reached.
@@ -46,6 +71,7 @@
         () => fetch("/api/ref", { cache: "no-cache" }).then(r => r.ok ? r : fetch(REF, { cache: "no-cache" })).catch(() => fetch(REF, { cache: "no-cache" })));
       if (g.ok) sha = ((await g.json()).object || {}).sha || "";
     } catch (e) { if (e && e.signIn) { signIn = true; return null; } }
+    checkAlerts(sha);
     try {
       const r = await elsewhere(own("f=tracker", "no-cache"),
         () => fetch(sha ? AT(sha) : BRANCH + "?t=" + Date.now(), { cache: sha ? "force-cache" : "no-store" }));

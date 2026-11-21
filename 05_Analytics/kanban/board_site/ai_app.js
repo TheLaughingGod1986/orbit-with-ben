@@ -392,12 +392,28 @@
       ${pace.proposal ? `<p class="muted">${esc(pace.proposal)}</p>` : ""}</section>`;
   }
 
+  function urgentBannerHtml(b) {
+    const items = (((b || {}).alerts || {}).active) || [];
+    if (!items.length) return "";
+    const rows = items.map(a => {
+      const href = a && a.href && /^#[A-Za-z0-9_=%:&./-]+$/.test(a.href) ? "/" + a.href : "/#review";
+      const label = a && a.kind === "pulled" ? "Urgent · Video pulled" : "Urgent · Watch needed";
+      const cta = href.includes("#uat=") || href.endsWith("#review") ? "Open watch card ›" : "Open schedule ›";
+      return `<div class="urgent-banner-item"><div class="urgent-banner-head"><i class="urgent-banner-dot" aria-hidden="true"></i><span>${esc(label)}</span></div>`
+        + `<p class="urgent-banner-text">${esc((a && (a.message || a.text)) || "")}</p>`
+        + `<a class="urgent-banner-link" href="${esc(href)}">${esc(cta)}</a></div>`;
+    }).join("");
+    return `<div class="urgent-banner" role="alert" aria-live="assertive">${rows}</div>`;
+  }
+
   function renderAI(b, now) {
     if (!b || !b.models || !b.credits) return '<p class="muted">No data yet. The Mac mini publishes it on the next board update.</p>';
     return chiefHtml(b.models, now) + modelsHtml(b.models, now) + poolsHtml(b.credits, now) + paceHtml(b.credits) + plansHtml(b.credits) + usageHtml(b.credits);
   }
 
   function render() {
+    const banner = document.getElementById("urgent-banner");
+    if (banner) banner.innerHTML = urgentBannerHtml(board);
     document.getElementById("ai").innerHTML = renderAI(board, Date.now());
     const at = (board && (board.models || {}).checkedAt) || (board || {}).publishedAt;
     document.getElementById("asof").textContent = at ? `Updated ${ago(at, Date.now())} · checks every minute` : "Loading…";

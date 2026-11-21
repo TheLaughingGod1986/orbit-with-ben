@@ -2299,9 +2299,38 @@
       ${section("Later",later.length,byDay(later)||empty("Nothing yet."))}`;
   }
 
+  // Urgent alerts red banner at the top of every page (Ben, 21 Nov 2026, J3292).
+  function urgentBannerHtml(b) {
+    const items = (((b || {}).alerts || {}).active) || [];
+    if (!items.length) return "";
+    const rows = items.map(a => {
+      const href = a && a.href && /^#[A-Za-z0-9_=%:&./-]+$/.test(a.href) ? a.href : "#review";
+      const label = a && a.kind === "pulled" ? "Urgent · Video pulled" : "Urgent · Watch needed";
+      const cta = href.startsWith("#uat=") || href === "#review" ? "Open watch card ›" : "Open schedule ›";
+      const msg = (a && (a.message || a.text)) || "";
+      return `<div class="urgent-banner-item"><div class="urgent-banner-head"><i class="urgent-banner-dot" aria-hidden="true"></i><span>${esc(label)}</span></div>`
+        + `<p class="urgent-banner-text">${esc(msg)}</p>`
+        + `<a class="urgent-banner-link" href="${esc(href)}">${esc(cta)}</a></div>`;
+    }).join("");
+    return `<div class="urgent-banner" role="alert" aria-live="assertive">${rows}</div>`;
+  }
+
   function renderTab(tab, b, now) {
     if (!b || !b.tracker) return '<p class="empty">Loading the studio…</p>';
     return ({ overview, videos, review, agents, schedule: scheduleTab }[tab] || overview)(b, now);
+  }
+
+  function renderView(b, tab, now, opts) {
+    opts = opts || {};
+    const ready = b && b.tracker;
+    const body = opts.uatKey && ready ? uat(b, opts.uatKey)
+      : opts.videoKey && ready ? detail(b, opts.videoKey)
+      : opts.hash === "#plan" && ready ? planPage(b)
+      : opts.hash === "#firstday" && ready ? firstDayPage(b)
+      : opts.hash === "#channels" && ready ? channelsPage(b)
+      : tab === "agents" && opts.jobId && ready ? jobPage(b, opts.jobId, now)
+      : renderTab(tab, b, now);
+    return urgentBannerHtml(b) + body;
   }
 
   function current() {
@@ -2322,8 +2351,8 @@
     if (board) ensureVideosLanding(board);
     const tab = current(), now = Date.now();
     const key = uatKey();
-    const vk = videoKey(), ready = board && board.tracker;
-    const nextView=key && ready ? uat(board,key) : vk && ready ? detail(board,vk) : location.hash==='#plan' && ready ? planPage(board) : location.hash==='#firstday' && ready ? firstDayPage(board) : location.hash==='#channels' && ready ? channelsPage(board) : tab==='agents' && selectedJob() && ready ? jobPage(board,selectedJob(),now) : renderTab(tab,board,now);
+    const vk = videoKey();
+    const nextView = renderView(board, tab, now, { uatKey: key, videoKey: vk, hash: location.hash, jobId: selectedJob() });
     const view=document.getElementById("view");
     if (renderedView!==nextView) { view.innerHTML=nextView; renderedView=nextView; }
     const waiting = board ? forBen(((board.tracker || {}).videos) || []).length : 0;
