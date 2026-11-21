@@ -293716,18 +293716,28 @@
           "at": "2026-11-21T02:58Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J3268; inspecting latest snapshot, live_fixes precedent, and available read-only API/Studio tools"
+        },
+        {
+          "at": "2026-11-21T03:00Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Audited all 10 live OWB videos via YouTube Data API and live watch/Shorts pages: verified chapters, Sources lines, end screen, Related pills, and package manifests; confirmed J3247 and J3253 fixes on 93JL_IK57EM are live"
         }
       ],
-      "remaining_action": "Identify last 10 live OWB videos and pull live descriptions, chapters, sources, end screens and Related status",
+      "remaining_action": "Verify Studio read-only state if needed, check J0216 readout status, and write 05_Analytics/live_fixes/2026-11-21.md",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-21T02:58Z",
+        "at": "2026-11-21T03:00Z",
         "by": "gemini",
-        "note": "Claimed J3268; inspecting latest snapshot, live_fixes precedent, and available read-only API/Studio tools"
-      }
+        "note": "Audited all 10 live OWB videos via YouTube Data API and live watch/Shorts pages: verified chapters, Sources lines, end s"
+      },
+      "taskKeys": [
+        "OWB:025",
+        "OWB:026",
+        "OWB:030"
+      ]
     }
   ],
   "focus": [
