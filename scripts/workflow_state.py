@@ -246,7 +246,7 @@ def near_watch(tracker):
     return tuple(sorted(candidates, key=lambda key: (-candidates[key], key))[:3])
 
 
-def order(j, due, focus=(), at=None, nearest=(), air=None):
+def order(j, due, focus=(), at=None, nearest=(), air=None, rows=None):
     at = at or dt.datetime.now(dt.timezone.utc)
     film = j.get("film") or (j.get("handoff") or {}).get("film")
     # Shared/cohort jobs use recorded taskKeys instead of a single film/stage
@@ -270,11 +270,22 @@ def order(j, due, focus=(), at=None, nearest=(), air=None):
     backlog = bool(j.get("backlog") or re.search(r"^Backlog|weekly .*audit|QA sweep|listing check.*live", j.get("title", ""), re.I))
     # Oldest film first: the film that airs soonest gets every free agent before a newer film's work (Ben, 8 Nov 2026).
     airs = [air[k] for k in production_keys if air and k in air] if not backlog else []
+    # Flat-plan pacing (J3266): approved ready work on a plan heading under 90% moves up
+    # within this band. Deadlines, air dates and urgent work stay ahead of it. No pace
+    # file (and every test process) leaves the key at 1, so existing order is unchanged.
+    pace = 1
+    try:
+        import plan_pace
+        by_id = {r["id"]: r for r in rows} if rows else None
+        if plan_pace.is_raised(j, at, due, air, by_id):
+            pace = 0
+    except Exception:
+        pace = 1
     return (1 if recently_released(j, at) else 0, 1 if background else 0,
             deadline.timestamp() if deadline else inf,
             min(airs).timestamp() if airs else inf,
             0 if production_keys.intersection(nearest) else 1,
-            0 if urgent else 1, rank if urgent else 0,
+            0 if urgent else 1, rank if urgent else 0, pace,
             1 if backlog else 0,
             0 if production_keys.intersection(focus) else 1,
             0 if production_keys else 1, 0 if (j.get("eta_min") or 120) <= 60 else 1,
@@ -316,6 +327,12 @@ def claimable(j, rows, at, agent, chief, can=MINI, execution=None, capabilities=
         return False
     if j.get("status") == "claimed" and state(j, by_id, at, execution=execution) != "stalled":
         return False
+    try:
+        import plan_pace
+        if plan_pace.blocks(j, agent, at, rows):
+            return False
+    except Exception:
+        pass
     return not j.get("after") or by_id.get(j["after"], {}).get("status") == "done"
 
 def yieldable_monthly_claim(j):
@@ -355,7 +372,7 @@ def immediate_dispatch(rows, at, chief, workers, actors, choose_worker, exclude=
                 worker = None
         if worker:
             mode = "chief-inbox" if worker == chief and chief not in workers else "job"
-            picks.append((order(j, due, focus, at), {"job":j, "worker":worker, "mode":mode,
+            picks.append((order(j, due, focus, at, rows=rows), {"job":j, "worker":worker, "mode":mode,
                 "yield_monthly":[{"id":old["id"], "by":old.get("by")} for old in owned]}))
     return min(picks, key=lambda x:x[0])[1] if picks else None
 
@@ -397,7 +414,7 @@ def select_dispatch(data, at, chief, workers, choose_worker, review_ids=None, ex
                     worker = None
             if not worker or not claimable(j, rows, at, worker, chief, execution=execution, capabilities=capabilities):
                 continue
-        candidates.append((order(j, due, data.get("focus") or (), at, near_watch(data.get("tracker")), air_dates(data.get("tracker"))), {"job": j, "worker": worker, "mode": "chief-inbox" if worker == chief and chief not in workers else "review" if review else "job"}))
+        candidates.append((order(j, due, data.get("focus") or (), at, near_watch(data.get("tracker")), air_dates(data.get("tracker")), rows), {"job": j, "worker": worker, "mode": "chief-inbox" if worker == chief and chief not in workers else "review" if review else "job"}))
     return min(candidates, key=lambda p: p[0])[1] if candidates else None
 
 def snapshot(data, at, chief, workers, choose_worker, active_review=None, review_ids=None, execution=None, include_chief=False, capabilities=None):

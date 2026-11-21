@@ -513,7 +513,7 @@ def ordered(data: dict, at: dt.datetime | None = None) -> list:
     from workflow_board import load_tracker
     tracker = load_tracker()
     nearest, air = workflow.near_watch(tracker), workflow.air_dates(tracker)
-    return sorted(data["jobs"], key=lambda j: workflow.order(j, due, data.get("focus") or (), at, nearest, air))
+    return sorted(data["jobs"], key=lambda j: workflow.order(j, due, data.get("focus") or (), at, nearest, air, data["jobs"]))
 
 
 # What only Ben does (AGENTS.md "Ben only watches finished videos"; enforced 5 Nov 2026 after J1755 parked a private
