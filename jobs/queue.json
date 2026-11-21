@@ -297820,9 +297820,14 @@
           "at": "2026-11-21T19:03Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T19:04Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Inspecting WW2 upload register, open PRs, field-order-dispatch, and board Schedule"
         }
       ],
-      "remaining_action": "Change publishAt only: ek9F61FVYqY to 2026-11-22T17:00Z, J9WGu8aPnHI to 2026-11-25T17:00Z; read back; update plan, register, ww2 status; receipt",
+      "remaining_action": "Verify ek9F61FVYqY & J9WGu8aPnHI via WW2 API, update publishAt only, sync OWB/WW2 records, check analytics & launch_check, post receipt",
       "due": "2026-11-21T21:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -297839,12 +297844,15 @@
       "model": "gemini-argon",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-21T19:03Z",
+        "of": 5,
+        "at": "2026-11-21T19:04Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Inspecting WW2 upload register, open PRs, field-order-dispatch, and board Schedule"
+      },
+      "taskKeys": [
+        "WW2:001",
+        "WW2:002"
+      ]
     }
   ],
   "focus": [
