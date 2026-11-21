@@ -1,5 +1,5 @@
 {
-  "next_id": 3282,
+  "next_id": 3283,
   "jobs": [
     {
       "id": "J0001",
@@ -294864,6 +294864,35 @@
         "at": "2026-11-21T10:11Z",
         "by": "macbook-2"
       }
+    },
+    {
+      "id": "J3282",
+      "title": "HOS 006 Short Bks_JLId1ew post-public read-back & library.json live flip",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Acting Chief (`gemini`) follow-up from `J3280` (HOS PR `#714` merged `1ee77b6d`; OWB PR `#1103` merged `93e0a2a275`). **Read-only YouTube verification + HOS `library.json` status flip only — ZERO YouTube Studio or YouTube Data API writes. Spend: £0 cash, 0 credits.**\n\nWait until after `Bks_JLId1ew` (*How Do Plants Make Oxygen?*, HOS 006 Short v03) goes public at `2026-11-21T11:30:00Z`.\n\n### 1. Read-only live verification of `Bks_JLId1ew`\n- Check signed-out public `https://www.youtube.com/shorts/Bks_JLId1ew` (and optionally read-only YouTube Data API via `YT_ANALYTICS_REFRESH_TOKEN_HOS`):\n  - Confirm video is **public** (not `LOGIN_REQUIRED` / Private). If still Private past `11:35Z`, do not flip `library.json` — extend the `public` wait condition and report.\n  - Verify live `Related` video pill (`reelCarouselButtonViewModel`) points to **`VbPubYd6Fbs`** (*The Willow Tree That Was Made of Air*).\n  - Verify live AI disclosure badge (`howThisWasMadeSectionViewModel`) and captions are present.\n  - If any live defect is found, record exact evidence and park for Chief — do **not** edit YouTube Studio or call YouTube write APIs.\n\n### 2. Flip `Bks_JLId1ew` to `live` in HOS `library.json`\nIn a clean HOS worktree (`git worktree add -b <agent>/<job-id>-bks-live origin/main`):\n1. Run:\n   `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py status --id Bks_JLId1ew --status live`\n2. Run `00_Brand/Channel-Setup/tools/check_all.sh` (must print `ALL CHECKS PASS`).\n3. Open ONE clean HOS PR. Do not merge your own PR.\n\n### 3. Hand off\nPost the live read-back results (`Related = VbPubYd6Fbs`, AI badge, captions), the HOS PR URL, and pasted `check_all.sh` PASS output on HOS desk `#694` and the OWB studio thread, then park for Chief merge. Never touch YouTube Studio, YouTube API writes, Buffer, or NAS deletion. Spend: £0.\n",
+      "ref": "",
+      "film": "006",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-21T10:13Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T10:13Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Wait until Bks_JLId1ew goes public at 2026-11-21T11:30Z, then verify live Related/AI badge/captions and flip library.json to live",
+      "kind": "listing",
+      "plain": "Verify HOS Short Bks_JLId1ew live after 11:30Z and flip its library.json status to live"
     }
   ],
   "focus": [
