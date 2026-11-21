@@ -188980,10 +188980,10 @@
       "stage": "edit",
       "after": "J0862",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-21T16:38Z",
+      "eta": "2026-11-21T18:38Z",
       "created_by": "codex",
       "created_at": "2026-11-05T01:11Z",
       "result": "",
@@ -189302,6 +189302,11 @@
           "at": "2026-11-21T16:37Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred gemini): Cursor out of usage; next in its chain: gemini"
+        },
+        {
+          "at": "2026-11-21T16:38Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Assemble HOS 009 locked Shorts A/B at £0 (VO-locked grandfather, full-bleed 9:16), run all gates, and queue QA review",
@@ -189317,7 +189322,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T16:38Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2172",
