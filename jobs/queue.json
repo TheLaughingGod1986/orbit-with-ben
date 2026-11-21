@@ -286410,6 +286410,11 @@
           "at": "2026-11-21T08:31Z",
           "by": "relay",
           "what": "condition verification queued: J3277"
+        },
+        {
+          "at": "2026-11-21T10:05Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-21T16:05:00Z"
         }
       ],
       "remaining_action": "Review ten unresolved HOS 013 pass-1 plates (rows 56-62, 64-66) in a session with demonstrated continuous 24-fps moving_video_input playback and return to elected Chief for per-row marks",
@@ -286439,15 +286444,14 @@
       ],
       "hold": {
         "type": "capability",
-        "condition": "J3198 acting-Chief verification (jobs/reviews/J3198/REVIEW.md, commit 6ae02a0ab5): condition unmet. Direct read_file probe on NAS row 58 (P05_10_darwin_worried_shelf_t1.mp4) in agy 1.5.13 on gemini-4-neon-high still returns 8 discrete 1-fps static JPEG frames (00:00..00:07; Darwin whole at 00:03 and absent at 00:04, missing 3.833-4.250s exit), not continuous 24-fps moving-video playback (audio_input demonstrated on pickup WAV). Note: relay capability_probe.py 2-second colour-block test is solvable from 1-fps stills and does not prove 24-fps continuous playback. Cursor and Claude Code have no verified moving_video_input; Codex is down until 2026-11-24T23:26:00Z; Grok retry 2026-11-21T02:47:06Z; Claude returns 2026-11-21T07:50:00Z. Freshly verified 11/11 Batch 12-14 NAS SHA-256 hashes match receipts, REVIEW_STATE.json preserves 48 KEEP / 8 RETAKE (3,10,24,28,47,49,54,63) / 10 unset, and no new 013 marks exist on HOS #180/#694 or OWB #954. Keep J3178 held pending continuous 24-fps moving_video_input review of rows 56-62, 64-66; no playback PASS claimed, no minting or assembly authorised.",
-        "check_at": "2026-11-21T09:31:58+00:00",
+        "condition": "J3277 acting-Chief verification (jobs/reviews/J3277/REVIEW.md, commits 0a70ba2bce/ea7e46e6f9): condition unmet. Direct read_file probe on NAS row 58 (P05_10_darwin_worried_shelf_t1.mp4) in agy 1.5.14 on Gemini 4 Neon (High) still returns 8 discrete 1-fps static JPEG frames (00:00..00:07; Darwin whole at 00:03 and absent at 00:04, missing 3.833-4.250s exit), not continuous 24-fps moving-video playback (audio_input demonstrated on pickup WAV). Relay capability_probe.py 2-second colour-block test (09:46:29Z) remains solvable from 1-fps stills and does not prove 24-fps playback. Cursor (weekly usage limit) and Claude Code have no verified moving_video_input; Codex is down until 2026-11-24T23:26:00Z; Grok Bot retry 2026-11-21T11:45:53Z; Claude returns 2026-11-21T12:50:00Z. Freshly verified 11/11 Batch 12-14 NAS SHA-256 hashes match receipts, REVIEW_STATE.json preserves 48 KEEP / 8 RETAKE (3,10,24,28,47,49,54,63) / 10 unset, and no new 013 marks exist on HOS #180/#694, OWB #954, or open PRs. Keep J3178 held pending continuous 24-fps moving_video_input review of rows 56-62, 64-66; no playback PASS claimed, no minting or assembly authorised.",
+        "check_at": "2026-11-21T16:05:00Z",
         "requires": [
           "moving_video_input"
         ],
-        "last_recheck": "J3198",
-        "checked_at": "2026-11-21T02:39:08+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3277"
+        "last_recheck": "J3277",
+        "checked_at": "2026-11-21T10:05:16+00:00",
+        "checked_by": "gemini"
       }
     },
     {
