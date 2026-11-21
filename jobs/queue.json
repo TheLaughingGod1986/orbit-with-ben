@@ -297463,13 +297463,26 @@
           "at": "2026-11-21T18:11Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-21T18:12Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-21T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Verify readiness: After J3314 completes v03 long master and gates, verify v03 hash/gates/repaired stills, add honest making-of line and reconcile production-status.md header, then ",
       "kind": "review",
       "recheck_of": "J2036",
       "due": "2026-11-15T18:00:00+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3316",
