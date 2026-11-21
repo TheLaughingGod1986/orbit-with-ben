@@ -1,5 +1,5 @@
 {
-  "next_id": 3318,
+  "next_id": 3319,
   "jobs": [
     {
       "id": "J0001",
@@ -292875,6 +292875,11 @@
           "at": "2026-11-21T01:32Z",
           "by": "cursor",
           "what": "done: WW2:001 ek9F61FVYqY private, scheduled 2026-11-24T17:00:00Z, thumbnail set, hash 879b53e8 matches the approved v43 master. WW2:002 J9WGu8aPnHI private, scheduled 2026-11-28T17:00:00Z, thumbnail set, hash 6bdf78c3 matches the approved v05 master. Channel upload list was empty before either upload. Records: ww2-channel PR 27 and orbit-with-ben PR 1096, not merged. Studio links posted on the thread. No public visibility. GBP 0."
+        },
+        {
+          "at": "2026-11-21T18:58Z",
+          "by": "claude",
+          "what": "Ben said Go to bringing the pilots forward: 001 Sun 22 Nov 17:00, 002 Wed 25 Nov 17:00 (J3318)."
         }
       ],
       "remaining_action": "Post the Studio links and finish the job",
@@ -297750,6 +297755,38 @@
       "taskKeys": [
         "OWB:034"
       ]
+    },
+    {
+      "id": "J3318",
+      "title": "Field Order History: bring pilots forward (Ben: \"Go\"): 001 to Sun 22 Nov 17:00, 002 to Wed 25 Nov 17:00",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Ben's decision (21 Nov 2026 ~19:00 London, in chat: asked whether to bring the two Field Order History pilots forward to start testing earlier; Claude recommended pilot 1 Sun 22 Nov 17:00 and pilot 2 Wed 25 Nov 17:00, three days apart so pilot 1 gets a clean 48-hour read first; Ben: \"Go\").**\n\n**Do, on the Mini, with Field Order History's own upload login (YOUTUBE_REFRESH_TOKEN_WW2, channel UCu94mInMFosxu3W0H6jlI6Q):**\n1. Read back both: `ek9F61FVYqY` (001 Mulberry harbours, Private, publishAt 2026-11-24T17:00:00Z) and `J9WGu8aPnHI` (002 U-boats, Private, publishAt 2026-11-28T17:00:00Z). If either differs, stop and report.\n2. Change ONLY publishAt (keep privacyStatus private): `ek9F61FVYqY` -> 2026-11-22T17:00:00Z (Sun 22 Nov 17:00 London); `J9WGu8aPnHI` -> 2026-11-25T17:00:00Z (Wed 25 Nov 17:00 London). Data API videos.update part=status, sending the full status object so nothing else resets. Read both back.\n3. Records: OWB studio/plan.json `when` and `youtube.publishAt` for ww2-001 and ww2-002; the channel's upload register; ww2-channel status.json `air` for 001 and 002 (one PR there); films 003-006 unchanged (Tue 1, Sat 5, Tue 8, Sat 12 Dec). Check the board's Schedule shows the new dates after the next board push.\n4. Confirm the first-day check (6 h) and the 48 h / 7 d analytics reads and autopsies key off the new publish times for both (launch_check covers ww2).\n5. One short receipt on the studio thread with both read-backs.\n\n**Guards.** Titles, descriptions, thumbnails, files and privacy unchanged. No other video touched. £0. If 001 cannot be moved by Sun 22 Nov 12:00 London, leave it on Tue 24 Nov and report.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-21T18:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T18:58Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Change publishAt only: ek9F61FVYqY to 2026-11-22T17:00Z, J9WGu8aPnHI to 2026-11-25T17:00Z; read back; update plan, register, ww2 status; receipt",
+      "due": "2026-11-21T21:00:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "plain": "Move the two Field Order History pilots earlier: first one tomorrow 17:00, second Wednesday 17:00",
+      "urgent": 5
     }
   ],
   "focus": [
