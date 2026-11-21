@@ -298184,10 +298184,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-21T20:15Z",
+      "eta": "2026-11-21T22:15Z",
       "created_by": "relay",
       "created_at": "2026-11-21T20:15Z",
       "result": "",
@@ -298196,13 +298196,26 @@
           "at": "2026-11-21T20:15Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-21T20:15Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Post thread receipt and close J3255",
       "kind": "review",
       "recheck_of": "J3255",
       "due": "2026-11-21T21:15:30+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T20:15Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
