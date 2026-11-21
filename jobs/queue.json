@@ -298061,9 +298061,14 @@
           "at": "2026-11-21T19:43Z",
           "by": "gemini",
           "what": "step 0 of 6 done: Confirmed port 9224 is signed in to Field Order History (UCu94mInMFosxu3W0H6jlI6Q). Starting API snapshot and updates."
+        },
+        {
+          "at": "2026-11-21T19:44Z",
+          "by": "gemini",
+          "what": "step 2 of 6 done: API done: channel keywords (14 terms, 237/500) and defaultLanguage en-GB set and read back (country GB unchanged); private playlist PLPPi-oWEDYtA created with ek9F61FVYqY (pos 0) and J9WGu8aPnHI (pos 1)."
         }
       ],
-      "remaining_action": "Read Field Order History API state, update keywords/language, create private series playlist, then update Studio settings and end screens on port 9224",
+      "remaining_action": "Read Studio-only settings on port 9224, update safe Studio defaults, add Subscribe end screens to both pilots, update records",
       "due": "2026-11-22T12:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -298079,11 +298084,11 @@
       "model": "gemini-argon",
       "urgent": 4,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 6,
-        "at": "2026-11-21T19:43Z",
+        "at": "2026-11-21T19:44Z",
         "by": "gemini",
-        "note": "Confirmed port 9224 is signed in to Field Order History (UCu94mInMFosxu3W0H6jlI6Q). Starting API snapshot and updates."
+        "note": "API done: channel keywords (14 terms, 237/500) and defaultLanguage en-GB set and read back (country GB unchanged); priva"
       },
       "taskKeys": [
         "WW2:001",
