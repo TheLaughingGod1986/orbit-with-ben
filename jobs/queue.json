@@ -299356,13 +299356,26 @@
           "at": "2026-11-21T23:27Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-21T23:31Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Cursor out of usage; next in its chain: gemini"
         }
       ],
       "remaining_action": "Fix analytics-snapshot.sh worktree update before engine_guard and push-rebase retry",
       "due": "2026-11-22T06:00:00Z",
       "kind": "assembly",
       "plain": "Fix the daily 06:40 analytics tracker script so it updates its worktree before checking engine_guard and retries pushes cleanly.",
-      "mini_only": true
+      "mini_only": true,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
