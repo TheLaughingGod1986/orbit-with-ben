@@ -292735,10 +292735,10 @@
       "stage": "",
       "after": "J3254",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "cursor",
+      "since": "2026-11-21T01:33Z",
+      "eta": "2026-11-21T02:03Z",
       "created_by": "claude",
       "created_at": "2026-11-20T23:03Z",
       "result": "",
@@ -292747,11 +292747,24 @@
           "at": "2026-11-20T23:03Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-21T01:33Z",
+          "by": "cursor",
+          "what": "claimed"
         }
       ],
       "remaining_action": "After OWB #1089 merges: core_sync push to HOS, add uploadFor/optional packageDir to HOS channel-youtube.ts, tests, one HOS PR for Grok",
       "due": "2026-11-24T18:00:00Z",
-      "kind": "studio"
+      "kind": "studio",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T01:33Z",
+        "by": "cursor",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3259",
