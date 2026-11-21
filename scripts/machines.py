@@ -50,7 +50,7 @@ def _add(row: dict, job: str, agent: str, since: str, queue: dict) -> None:
         row["now"].append({"id": job, "title": title, "agent": agent, "since": since})
 
 
-def section(queue: dict, mini_hb: dict | None, macbook_hb: dict | None, at: dt.datetime, executions=None) -> dict:
+def section(queue: dict, mini_hb: dict | None, macbook_hb: dict | None, at: dt.datetime, executions=None, agent_timers=None) -> dict:
     """`executions`: the relay's live runs on the Mini ({job, worker, startedAt}, from chief_relay.current_execution),
     which show a job the moment a worker is woken, before its claim reaches the queue."""
     rows = {m: {"id": m, "name": name, "now": [], "done24": 0, "byAgent": {}, "state": "", "why": "", "seen": ""}
@@ -98,5 +98,8 @@ def section(queue: dict, mini_hb: dict | None, macbook_hb: dict | None, at: dt.d
             rows[m]["seen"] = last
     out = [rows[m] for m, _, _ in MACHINES]
     # The Grok box only shows when it did something: it has no heartbeat of its own here.
-    return {"machines": [r for r in out if r["id"] != "grok" or r["now"] or r["done24"]],
-            "doneTotal": sum(r["done24"] for r in out), "at": at.strftime("%Y-%m-%dT%H:%MZ")}
+    shown = {"machines": [r for r in out if r["id"] != "grok" or r["now"] or r["done24"]],
+             "doneTotal": sum(r["done24"] for r in out), "at": at.strftime("%Y-%m-%dT%H:%MZ")}
+    if agent_timers:
+        shown["timers"] = list(agent_timers)
+    return shown

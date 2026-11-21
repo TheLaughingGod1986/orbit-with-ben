@@ -789,6 +789,13 @@ assert(t.unconfirmedCut({...exactCut,watch:{...exactCut.watch,version:'v12'}}),'
   assert(!ov.includes('overview-feature') && !ov.includes('Next in production') && !ov.includes('Ready for your review'),
     'Overview home drops Ready for review / Next in production');
 }
+{
+  const card = t.machinesCard({machines: {machines: [{id: 'mini', name: 'Mac mini', done24: 1, now: []}],
+    timers: [{agent: 'cursor', label: 'Cursor', everyMin: 10, at: '2026-11-21T01:00:00Z', job: 'J3265'},
+             {agent: 'gemini', label: 'Gemini', everyMin: 11, at: '', job: ''}]}}, Date.parse('2026-11-21T01:10:00Z'));
+  assert(card.includes('mc-timers') && card.includes('Cursor') && card.includes('every 10 min') && card.includes('J3265'), card);
+  assert(card.includes('Gemini') && card.includes('not woken yet'), card);
+}
 console.log('Queue forecast checks OK');
 
 // Last 24 hours: quiet film cards with remaining-to-go-live checklist behind a disclosure (Ben, 6 Nov 2026).

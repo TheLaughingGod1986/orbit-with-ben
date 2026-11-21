@@ -508,12 +508,12 @@ def claimable(data: dict, job: dict, can: set[str], at: dt.datetime, agent: str 
     return workflow.claimable(job, data["jobs"], at, agent, chief, can, chief_relay.current_execution(at), chief_relay.worker_capabilities())
 
 
-def ordered(data: dict, at: dt.datetime | None = None) -> list:
+def ordered(data: dict, at: dt.datetime | None = None, agent: str = "") -> list:
     due = workflow.deadlines(data["jobs"])
     from workflow_board import load_tracker
     tracker = load_tracker()
     nearest, air = workflow.near_watch(tracker), workflow.air_dates(tracker)
-    return sorted(data["jobs"], key=lambda j: workflow.order(j, due, data.get("focus") or (), at, nearest, air))
+    return sorted(data["jobs"], key=lambda j: workflow.order(j, due, data.get("focus") or (), at, nearest, air, agent))
 
 
 # What only Ben does (AGENTS.md "Ben only watches finished videos"; enforced 5 Nov 2026 after J1755 parked a private
@@ -831,7 +831,7 @@ def choose_next(data, agent, can, at, job_id=""):
             return None
         held.update(status="open", by="", since="", eta="")
         log(held, at, agent, f"released: {agent} can't resume it ({str(stuck)[:120]}); progress kept")
-    return next((j for j in ordered(data, at) if (not job_id or j["id"] == job_id) and claimable(data,j,can,at,agent)), None)
+    return next((j for j in ordered(data, at, agent) if (not job_id or j["id"] == job_id) and claimable(data,j,can,at,agent)), None)
 
 
 def yield_monthly_for_request(data, request_id, owned, at):
@@ -1506,6 +1506,8 @@ def main(argv=None) -> int:
                 handoffs.check_completion(job, data, list(handoffs.records(studio.FILMS)), at)
                 do_done(job, args.agent, args.result or "done", at, args.ref)
                 board_release(job, args.agent, "review", args.ref)
+                import agent_autonomy
+                agent_autonomy.queue_next(data, job, args.agent, at)
             elif args.cmd == "block":
                 do_block(job, args.agent, args.reason or args.result, at)
                 board_release(job, args.agent, "blocked")

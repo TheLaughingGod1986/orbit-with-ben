@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.owb.agent.gemini</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>-lc</string>
+    <string>cd "$HOME/YouTube/orbit-with-ben" &amp;&amp; python3 scripts/agent_timer.py tick --agent gemini >> "$HOME/Library/Logs/agent-timer-gemini.log" 2>&gt;&amp;1</string>
+  </array>
+  <key>StartInterval</key>
+  <integer>660</integer>
+  <key>RunAtLoad</key>
+  <true/>
+</dict>
+</plist>

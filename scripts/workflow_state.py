@@ -246,7 +246,7 @@ def near_watch(tracker):
     return tuple(sorted(candidates, key=lambda key: (-candidates[key], key))[:3])
 
 
-def order(j, due, focus=(), at=None, nearest=(), air=None):
+def order(j, due, focus=(), at=None, nearest=(), air=None, agent=""):
     at = at or dt.datetime.now(dt.timezone.utc)
     film = j.get("film") or (j.get("handoff") or {}).get("film")
     # Shared/cohort jobs use recorded taskKeys instead of a single film/stage
@@ -270,7 +270,10 @@ def order(j, due, focus=(), at=None, nearest=(), air=None):
     backlog = bool(j.get("backlog") or re.search(r"^Backlog|weekly .*audit|QA sweep|listing check.*live", j.get("title", ""), re.I))
     # Oldest film first: the film that airs soonest gets every free agent before a newer film's work (Ben, 8 Nov 2026).
     airs = [air[k] for k in production_keys if air and k in air] if not backlog else []
-    return (1 if recently_released(j, at) else 0, 1 if background else 0,
+    # Skill is the agent's own claim order (J3265): jobs whose kind lists that agent first come
+    # before urgent and due-soon work. The relay's dispatch does not pass an agent, so it stays
+    # deadline-first and remains the fallback. Unkinded jobs share one rank, so their order is unchanged.
+    ranked = (1 if recently_released(j, at) else 0, 1 if background else 0,
             deadline.timestamp() if deadline else inf,
             min(airs).timestamp() if airs else inf,
             0 if production_keys.intersection(nearest) else 1,
@@ -279,6 +282,10 @@ def order(j, due, focus=(), at=None, nearest=(), air=None):
             0 if production_keys.intersection(focus) else 1,
             0 if production_keys else 1, 0 if (j.get("eta_min") or 120) <= 60 else 1,
             created.timestamp() if created else inf, j["id"])
+    if not agent:
+        return ranked
+    import agent_autonomy
+    return (agent_autonomy.skill_rank(j, agent),) + ranked
 
 def claimable(j, rows, at, agent, chief, can=MINI, execution=None, capabilities=None):
     if not str(agent or "").strip():
@@ -316,7 +323,11 @@ def claimable(j, rows, at, agent, chief, can=MINI, execution=None, capabilities=
         return False
     if j.get("status") == "claimed" and state(j, by_id, at, execution=execution) != "stalled":
         return False
-    return not j.get("after") or by_id.get(j["after"], {}).get("status") == "done"
+    if j.get("after") and by_id.get(j["after"], {}).get("status") != "done":
+        return False
+    # A held Studio window, ElevenLabs or Flow blocks only that desk (J3265).
+    import agent_autonomy
+    return not agent_autonomy.desk_blocks(j, agent, None, at, agent_autonomy.host_of(agent))
 
 def yieldable_monthly_claim(j):
     return (j.get("status") == "claimed" and j.get("needs") == "mini" and j.get("kind") == "review"

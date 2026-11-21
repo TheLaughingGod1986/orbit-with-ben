@@ -2092,6 +2092,10 @@ def run_locked(at: dt.datetime) -> int:
                                priority=priority,
                                role="the elected acting Chief" if who == auth_leader else "a specialist worker",
                                **brief_channels(who))
+        import agent_autonomy
+        if who and agent_autonomy.lease_held(who, now()):
+            log(f"{who} already running on its own timer: relay leaves this wake")
+            return 0
         log(f"run: {who}{' on ' + model if model else ''}{' for ' + job['id'] if job else ''} (cap {cap}s)")
         push_heartbeat(at, "running", who, f"woke {NAMES.get(who, who)} for {job['id'] if job else 'one job'} (cap {cap // 60} min)")
         seen(who, at)

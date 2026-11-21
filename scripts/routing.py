@@ -150,7 +150,8 @@ CHAINS = {
     "listing":  ("Titles, descriptions, tags, SEO", _CLAUDE_CHAIN,
                  "Gemini checks any fact in it; Chief OKs; applied by the upload or Studio job"),
     "studio":   ("Studio browser tasks", [("chief", "grok"), CURSOR_GROK, CURSOR_AUTO, SOL, MINI_CLAUDE],
-                 "each channel's Studio browser on its own CDP port (its channel file); never Replace, never delete"),
+                 "each channel's Studio browser on its own CDP port (its channel file); never Replace, never delete. "
+                 "Code and tooling stay kind assembly, so they never wait on a Studio window"),
     "chief":    ("Merges, final OK, PASS, AGENTS.md", [("claude", "claude-opus-5-5"), ("chief", "grok"), ASTRA, ARGON],
                  "only the elected Chief may claim; Claude -> Grok -> Codex -> Gemini (Ben, 9 Nov 2026); money and the irreversible stay with Ben"),
 }
