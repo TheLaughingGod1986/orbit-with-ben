@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2529, J3265.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2529, J3265, J3267.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -62,6 +62,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3261 | mini | open | – | – | 009 edit · assembly · HOS 009: Assemble v02 long master (E2 first 30 s, Teach cards/timeline, separate back-to-back graphics) | J2036 |
 | J3262 | mini | blocked | cursor | – | 009 thumbs · thumb · HOS 009: Build long thumbnails A+B (house look, style_sheet + thumb_preview, £0 paid spend) | J2036 |
 | J3265 | any | claimed | macbook-2 | 2026-11-21T03:53Z | assembly · Agents run themselves: each agent on its own timer, picks by skill, sets up the next stage, fixes its own failures (after #1073) |  |
+| J3267 | mini | open | – | – | assembly · Comment replies for every channel: read new comments, reply in each channel's voice, escalate the sensitive ones, log ideas (Ben's one voice check first) |  |
 
 Recently finished:
 

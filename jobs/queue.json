@@ -1,5 +1,5 @@
 {
-  "next_id": 3267,
+  "next_id": 3268,
   "jobs": [
     {
       "id": "J0001",
@@ -293416,6 +293416,37 @@
         "at": "2026-11-21T01:40Z",
         "by": "macbook-2"
       }
+    },
+    {
+      "id": "J3267",
+      "title": "Comment replies for every channel: read new comments, reply in each channel's voice, escalate the sensitive ones, log ideas (Ben's one voice check first)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Why (Ben, 21 Nov, in chat: \"Can we also have a agent monitoring channel and replying to comments ... in a human style\").** Early, specific replies lift engagement in a video's first 48 hours, and viewer comments are free research (questions, confusion points, topic requests). Today nobody reads or answers comments on any channel.\n\n**Do (tool + tests + one PR, then the recurring run).**\n1. FETCH, every registered channel (registry-driven, no channel names in code). Read new top-level comments and replies to the channel on its videos (Data API commentThreads.list, the channel's own upload login: YOUTUBE_REFRESH_TOKEN for Orbit, YOUTUBE_REFRESH_TOKEN_WW2 for Field Order History, History of Science's own login in its checkout; all carry youtube.force-ssl). Keep seen ids and replies in <analytics_dir>/comments/ (replies.jsonl: video, comment id, text, reply id, time).\n2. TRIAGE each new comment: reply / log only / escalate / ignore (spam, abuse, bait). Newest videos' first 48 hours and genuine questions first.\n3. WRITE in the channel's own voice (its studio/RULES.md voice section; Orbit is Ben's friendly British voice). 1-3 sentences, specific to what they said, British English, varied wording (no two replies alike in a week), no stock openers (\"Great question!\"), no emoji strings, no links, no subscribe asks, no promise of a future film unless it is in the plan. Facts are checked against that film's script and sources before posting.\n4. HONEST. Replies go out under the channel's name. Never claim to be human, and never say Ben personally did something he did not. If someone asks whether replies are AI or automated, answer truthfully in one friendly line (default: \"Ben uses AI tools to help keep up with comments, but he reads them\" only if that is true, else \"the channel uses AI tools to help reply\").\n5. ESCALATE, never auto-reply: business, sponsor or press enquiries; copyright or legal complaints; a factual error that needs a correction in the film; threats or harassment; anything about Ben personally or his family. One batched line a day to Ben via Claude in chat.\n6. NEVER: argue with critics; politics, or anything that glorifies war (Field Order History); medical advice (History of Science); personal information; links or promotion; delete, hide or report a comment; change pinning, visibility or anything else on the video.\n7. CORRECTIONS: if a viewer's correction checks out, thank them and confirm it, add a line to that video's pinned comment through the existing update-pinned-comment tool if it matters, and log it on the channel's fact-check list and 05_Analytics/LEARNINGS.md. If it does not check out, reply once, politely, with the source.\n8. IDEAS: topic requests and repeated questions go to each channel's ideas list with a count, feeding search-led research (J3222) and the self-improvement loop (J3257).\n9. LIMITS: one reply per thread unless they ask a follow-up; at most 20 replies per channel per run; stay under 3,000 API units a day per project (comments.insert costs 50).\n10. SCHEDULE: add a jobs/backlog.json entry `comment-replies`, every 2 hours, kind listing (Claude first), needs mini.\n11. BOARD: a Comments card per channel (new, replied, escalated, top themes) and the reply log.\n12. VOICE CHECK FIRST (replies speak in Ben's name, so this is his voice: AGENTS.md Ben gate). Do one --dry-run per channel and put 5 sample replies per channel in a short file; Claude shows them to Ben once in chat. After his yes the run goes live with no further gate; the Chief samples 10 replies per channel a day for the first 2 days and tightens the voice rules.\n\n**Guards.** £0. Nothing posted before Ben's one voice check. No deletes, hides, links, visibility or pinning changes.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-21T01:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T01:54Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build comment fetch/triage/reply tool per registered channel, rules and limits, board card, 2-hourly backlog run; 5 sample replies per channel for Ben's one check",
+      "due": "2026-11-24T18:00:00Z",
+      "kind": "assembly",
+      "plain": "An agent reads new comments on every channel and replies in the channel's own voice, after Ben checks a few samples once",
+      "urgent": 5
     }
   ],
   "focus": [
