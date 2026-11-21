@@ -66,7 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3292 | any | blocked | macbook-2 | – | assembly · Direct alert to Ben when a same-day video is pulled or his watch is needed within 12 hours |  |
 | J3294 | any | blocked | gemini | – | review · Weekly OWB audit: our YouTube numbers + competitors -> next-video improvements |  |
 | J3295 | mini | blocked | gemini | – | review · Verify condition for J1275 |  |
-| J3296 | mini | claimed | gemini | 2026-11-21T16:39Z | review · Verify condition for J2537 |  |
+| J3296 | mini | blocked | gemini | – | review · Verify condition for J2537 |  |
 
 Recently finished:
 
