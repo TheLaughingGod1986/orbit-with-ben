@@ -297386,20 +297386,27 @@
           "at": "2026-11-21T17:47Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T17:47Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3314; inspecting j2035_v02 build artifacts and NAS disk space"
         }
       ],
-      "remaining_action": "Assemble v03 long master fixing all 4 J2036 card/overlay defects, run gates, save verification stills, and hand back to J2036",
+      "remaining_action": "Inspect v02 assembly script, SOURCE_MAP.json, and render timings to plan v03 fixes",
       "due": "2026-11-22T18:00:00Z",
       "kind": "assembly",
       "plain": "Re-render Gravity long master v03 at zero cost to fix card drift, stacked Part 4 labels, E2 early card, and phone readability",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-21T17:47Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3314; inspecting j2035_v02 build artifacts and NAS disk space"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     }
   ],
   "focus": [
