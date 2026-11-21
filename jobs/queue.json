@@ -179088,13 +179088,13 @@
       "stage": "edit",
       "after": "J2035",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-21T16:08Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
-      "result": "parked for Chief: HOS 009 v02 9d8731cb hash matches Mini and NAS (v01 802b5c7e untouched); 42 of 42 Teach cards on screen in stills; chapters unchanged from PR #703 (0:00, 1:24, 2:56, 4:20, 6:33); thumbnails A+B wired into manifest; lint:package PASS (captions warning); HOS PR #703 at 2602f1e3, record 07_Edit-Project/J2036_V02_QA_2026-11-21.md. Chief to rule on 4 findings: thin card type weak on bright ground; card text stacked on graphic captions at 4:59, 5:06, 5:22; HALLEY'S COMET 1758 label over the space-station plate at 7:13 and 25 DECEMBER 1642 shown twice; TWO SETS OF RULES shown twice and the early DATA card has no number. FACT_NOTES UNSIGNED not reconciled. Then merge PR #703 and hand to J2037. No moving or audio review claimed; Ben's final watch. GBP 0.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-04T16:56Z",
@@ -179255,6 +179255,11 @@
           "at": "2026-11-21T18:11Z",
           "by": "relay",
           "what": "condition verification queued: J3315"
+        },
+        {
+          "at": "2026-11-21T18:30Z",
+          "by": "gemini",
+          "what": "reopened: J3315 verified satisfied (21 Nov 2026): J3314 done (#7067194875); live NAS+Mini SHA-256 parity verified for j2035_v03/hos009_long_master_v03.mp4 (744f32b7...); v01 (802b5c7e...) and v02 (9d8731cb...) live NAS hashes untouched; ffprobe 519.000s / 15568f; 33 cards 0 overlaps/bleeds/drifts; reviewed_ok identical to v02; 4/4 unmodified gates PASS (picture_qa 0/92, polish 0/92, music PASS, sfx_kit PASS); 21/21 verification stills present (4 spot-checked); locked VO, v04_synth score, and J3262 thumbs A+B intact; HOS PR #719 5/5 CI green (left unmerged, no self-merge). Reopened for independent non-producer QA of v03, making-of line, production-status.md header reconciliation, lint:package + check_all.sh, and J2037 handoff. No audio/moving watch claimed (Ben final watch). £0."
         }
       ],
       "remaining_action": "After J3314 completes v03 long master and gates, verify v03 hash/gates/repaired stills, add honest making-of line and reconcile production-status.md header, then hand off to J2037",
@@ -179272,20 +179277,7 @@
       },
       "for": "claudecode",
       "model": "mini-claude-opus-5-5",
-      "escalated_at": "2026-11-21T01:52Z",
-      "progress": {
-        "step": 4,
-        "of": 5,
-        "at": "2026-11-21T16:15Z",
-        "by": "claudecode",
-        "note": "Chapters confirmed for the second master, thumbnails wired, package lint passes, record pushed to pull request 703; four"
-      },
-      "hold": {
-        "type": "dependency",
-        "condition": "Acting Chief (Gemini) ruling on J2036 (21 Nov 2026): v02 master (9d8731cb) FAILED Chief stills/SOURCE_MAP review (card-drift mismatches incl. HALLEY'S COMET 1758 over ISS at 7:13 and 25 DECEMBER 1642 over quart pot at 1:57 + 1665 at 0:31 + Principia bleed at 6:34; stacked Part 4 captions at 4:59/5:06/5:22; bare E2 early card + duplicate TWO SETS OF RULES; weak phone-size legibility on bright grounds). HOS PR #703 squash-merged (e1d2e02f) for audit provenance, re-timed chapters, and J3262 thumbs A+B; FACT_NOTES_v01.md 4 Oct 2026 Claude confirmation (desk 5982314076) reconciled. Waiting on bounded £0 v03 overlay/card assembly job J3314 (09_Assembly/j2035_v03/hos009_long_master_v03.mp4 + gates + verification stills); once J3314 is done, J2036 verifies v03 hash/gates/stills, adds the one honest making-of line to moon_long_description_v01.txt and reconciles stale production-status.md UNSIGNED header, runs lint:package + check_all.sh, and hands off to J2037 for Ben final watch.",
-        "check_at": "2026-11-21T19:11:56+00:00",
-        "recheck_task": "J3315"
-      }
+      "escalated_at": "2026-11-21T01:52Z"
     },
     {
       "id": "J2037",
