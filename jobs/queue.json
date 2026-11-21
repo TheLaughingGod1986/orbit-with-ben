@@ -296100,13 +296100,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-21T14:07Z",
-      "eta": "2026-11-21T16:07Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-21T14:06Z",
-      "result": "",
+      "result": "parked for Chief: J3295 condition verification for J1275 is CONDITION NOT MET (OWB PR #1114, jobs/reviews/J3295/REVIEW.md @ 4a97fb41e5). HOS main 1ee77b6d retains merged PR #389 (7c136209) with provisional Chapters + Sources intact and lint:package PASS on 009 and 010. Neither film has a locked final long cut: HOS 009 progressed through J3261 (NAS v02 master 9d8731cb, v01 untouched 802b5c7e, PR #710 open), J3262 (thumbnails A+B PASS, PR #705 merged 614b507d), and J3286 (OWB PR #1105 open, parked for Chief), but J2036 remains blocked, J2037 remains open, HOS PR #703/#710 remain unmerged, and 009/status.json still has picture/edit doing and ben_ok todo; HOS 010 still has picture 12/65 (Shorts only; Long Parts 01-05 pending due 2026-11-22), edit awaiting long picture (due 2026-11-26), and no 09_Assembly on NAS or git. Elected HOS Chief (Grok Bot) needed to merge PR #1114, record jobs.py wait J1275 --agent chief --type dependency --recheck J3295 --check-at 2026-11-22T06:00:00Z (scripts/jobs.py:604), and close J3295 (scripts/jobs.py:1561). £0 spend, no YouTube/Studio/Buffer/schedule changes, ben_ok remains todo.",
       "history": [
         {
           "at": "2026-11-21T14:06Z",
@@ -296142,6 +296142,11 @@
           "at": "2026-11-21T14:13Z",
           "by": "gemini",
           "what": "step 3 of 3 done: OWB PR #1114 (4a97fb41e5) opened with J3295 NOT MET evidence; parking J3295 for elected Chief (Grok Bot)"
+        },
+        {
+          "at": "2026-11-21T14:13Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J3295 condition verification for J1275 is CONDITION NOT MET (OWB PR #1114, jobs/reviews/J3295/REVIEW.md @ 4a97fb41e5). HOS main 1ee77b6d retains merged PR #389 (7c136209) with provisional Chapters + Sources intact and lint:package PASS on 009 and 010. Neither film has a locked final long cut: HOS 009 progressed through J3261 (NAS v02 master 9d8731cb, v01 untouched 802b5c7e, PR #710 open), J3262 (thumbnails A+B PASS, PR #705 merged 614b507d), and J3286 (OWB PR #1105 open, parked for Chief), but J2036 remains blocked, J2037 remains open, HOS PR #703/#710 remain unmerged, and 009/status.json still has picture/edit doing and ben_ok todo; HOS 010 still has picture 12/65 (Shorts only; Long Parts 01-05 pending due 2026-11-22), edit awaiting long picture (due 2026-11-26), and no 09_Assembly on NAS or git. Elected HOS Chief (Grok Bot) needed to merge PR #1114, record jobs.py wait J1275 --agent chief --type dependency --recheck J3295 --check-at 2026-11-22T06:00:00Z (scripts/jobs.py:604), and close J3295 (scripts/jobs.py:1561). £0 spend, no YouTube/Studio/Buffer/schedule changes, ben_ok remains todo."
         }
       ],
       "remaining_action": "Elected Chief (Grok Bot) to review/merge OWB PR #1114, run jobs.py wait J1275 --recheck J3295 (check-at 2026-11-22T06:00:00Z), and close J3295",
