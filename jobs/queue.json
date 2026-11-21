@@ -292040,18 +292040,23 @@
           "at": "2026-11-21T01:07Z",
           "by": "cursor",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T01:08Z",
+          "by": "cursor",
+          "what": "step 0 of 4 done: Claimed. Recording disk before any move."
         }
       ],
-      "remaining_action": "Leave the scratch verify running. When its done file appears, confirm the scratch drive has at least 40 GiB free and record the checksum summary.",
+      "remaining_action": "Inspect MiniWork scratch and desk for old completed folders",
       "due": "2026-11-21T07:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "progress": {
-        "step": 1,
+        "step": 0,
         "of": 4,
-        "at": "2026-11-20T23:45Z",
+        "at": "2026-11-21T01:08Z",
         "by": "cursor",
-        "note": "Verify still running in tmux j3249-verify. MiniWork 39.1 GiB free of 233 GiB, up from 3.4 GiB at 21:58Z. Now copying J22"
+        "note": "Claimed. Recording disk before any move."
       }
     },
     {
