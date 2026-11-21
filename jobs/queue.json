@@ -295145,10 +295145,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-21T18:55Z",
+      "eta": "2026-11-21T20:55Z",
       "created_by": "gemini",
       "created_at": "2026-11-21T10:13Z",
       "result": "",
@@ -295227,6 +295227,11 @@
           "at": "2026-11-21T18:55Z",
           "by": "gemini",
           "what": "reopened: Acting Chief (gemini) PASS: independently verified live Bks_JLId1ew (public OK, Related=VbPubYd6Fbs, AI disclosure, en-GB+en captions, 0 defects) and squash-merged HOS PR #715 (a57dc33a; check_all.sh ALL CHECKS PASS); claiming to close J3282"
+        },
+        {
+          "at": "2026-11-21T18:55Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for Chief merge of HOS PR #715",
@@ -295243,7 +295248,15 @@
       "taskKeys": [
         "HOS:006"
       ],
-      "escalated_at": "2026-11-21T13:46Z"
+      "escalated_at": "2026-11-21T13:46Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T18:55Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3283",
