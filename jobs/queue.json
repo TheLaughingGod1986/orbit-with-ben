@@ -1,5 +1,5 @@
 {
-  "next_id": 3271,
+  "next_id": 3272,
   "jobs": [
     {
       "id": "J0001",
@@ -293866,6 +293866,36 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J3271",
+      "title": "HOS live & repo listing fixes (J3269): oKqmnJNGiHg dead URL, 007 SHORTS_RELEASE + library, 008 placeholder schedule",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Authorised by Acting Chief (`gemini`) ruling on `J3269` (audit merged in HOS PR `#711`, commit `6774fd3e`, `00_Brand/Channel-Setup/audits/live_fixes/2026-11-21_J3269.md`). Budget: £0 cash, 0 credits.\n\nExecute these three approved fixes in `/Users/benjaminoats/YouTube/History Of Science` (using a clean worktree from `origin/main` for git changes):\n\n### 1. Live YouTube description fix on `oKqmnJNGiHg` (*How Was Phosphorus Discovered?*)\n- Replace ONLY the dead `HTTP 404` LANL source line (`Los Alamos National Laboratory, Phosphorus: https://periodic.lanl.gov/15.shtml`) with the verified `HTTP 200` Royal Society of Chemistry line (`Royal Society of Chemistry, Periodic Table — Phosphorus: https://periodic-table.rsc.org/element/15/phosphorus`), so the full description matches `2026-11-21_J3269.md` lines 50–58 exactly:\n```text\nHennig Brand discovered phosphorus while trying to find gold in urine in Hamburg in 1669.\n\nHe boiled it down to a black sludge. Instead of gold, he found a white substance that glowed in the dark.\n\nSources:\nHennig Brand biography: https://www.famousscientists.org/hennig-brand/\nRoyal Society of Chemistry, Periodic Table — Phosphorus: https://periodic-table.rsc.org/element/15/phosphorus\n\nPictures: AI-generated 3D scenes. Historical claims follow the sources listed above.\n```\n- **Hard constraints:** Do NOT change the title, tags, privacy (`public`), `Related video` (`AL_-qlWko_g`), `madeForKids` (`false`), or `Altered content` (`Yes`). Never rename a live video or change visibility/schedule.\n- Read back via YouTube API (`npm run channel:audit` → 0 errors) and live public `/watch?v=oKqmnJNGiHg` + `/shorts/oKqmnJNGiHg` confirming the RSC URL is live, `Related` = `AL_-qlWko_g` is intact, title is unchanged, AI disclosure badge is present, and `madeForKids = false`. Save a concise receipt in `00_Brand/Channel-Setup/audits/live_fixes/`.\n\n### 2. Repo record sync for HOS 007 (`SHORTS_RELEASE.json` + `shorts_open_library/library.json`)\n- In `02_Video-Projects/007_The-First-Vaccine/10_Shorts/SHORTS_RELEASE.json`:\n  - Update `shorts[1].note` (`xgx2lYHhYZM`) to record it is Public since Tue 17 Nov 2026 11:30 London (`2026-11-17T11:30:00Z`), exact text in `2026-11-21_J3269.md`.\n  - Move `shorts[3]` (`jkUZpyO71lU`) out of `shorts[]` into a top-level `\"unscheduled\": [...]` array (preserving metadata and updating its `note` to record unscheduling from Sun 29 Nov 2026 11:30 London to Private/no `publishAt` on 19 Nov 10:13Z per J3122/J3126, not deleted, does not hold 29 Nov).\n- In `00_Brand/Channel-Setup/audits/shorts_open_library/library.json`: update via `gate_shorts_open.py status` so `jkUZpyO71lU` is `retired` and `l8bxm9L3zl8` is `public` (plus `Bks_JLId1ew` → `public` if run after 2026-11-21T11:30Z).\n- Note in the PR that this supersedes conflicted HOS PR `#665`.\n\n### 3. Fix `008` `[schedule.past]` placeholder so `npm run lint:package` PASSes\n- In `02_Video-Projects/008_Lightning-Franklin/11_Upload-Package/PACKAGE_MANIFEST.json`: update `\"schedule\"` from past `\"2026-11-19T18:00:00.000Z\"` to `\"2026-11-26T18:00:00.000Z\"` (next Thursday 18:00 UK planning placeholder) and update its `note` to reflect the placeholder shift.\n- In `02_Video-Projects/008_Lightning-Franklin/status.json`: update `\"air\"` from `\"2026-11-19\"` to `\"2026-11-26\"` (leave `ben_ok: doing`, `thumbnails: todo`, `scheduled: todo` unchanged).\n- **Do NOT upload or schedule `008` on YouTube** (`008` stays Private/unscheduled pending Ben's final watch of `hos_008_master_v05.mp4`).\n\n### Verification & Delivery\n- Run `cd 07_Content-Ops && npm run lint:package` (must PASS exit 0 across ALL films including `007` and `008`), `python3 00_Brand/Channel-Setup/tools/status_board.py --check`, and `00_Brand/Channel-Setup/tools/check_all.sh`.\n- Open ONE clean HOS PR with all 3 changes + `oKqmnJNGiHg` readback receipt, post on HOS desk `#694` for Chief merge (noting that after merge, HOS PR `#704` can have its `HOS release contract/contract` CI check re-run green and merged, and conflicted PR `#665` can be closed as superseded). Do not merge your own PR; park/hand to Chief for merge.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-21T03:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T03:55Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Update oKqmnJNGiHg source URL + readback, sync 007 SHORTS_RELEASE/library, set 008 placeholder schedule to 2026-11-26, open HOS PR to unblock PR #704",
+      "kind": "studio",
+      "plain": "Fix broken source URL on Phosphorus Short and sync 007/008 HOS release records so contract CI passes",
+      "mini_only": true
     }
   ],
   "focus": [
