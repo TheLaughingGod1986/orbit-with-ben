@@ -293879,9 +293879,14 @@
           "at": "2026-11-21T03:17Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: needs a worker with web. The MacBook Claude lane has no web search (WebSearch refused again, 21 Nov 03:2xZ), so the neighbour pass (three big videos with real view counts) cannot be done here and no views will be invented. Same as J3245 on 20 Nov, which Gemini then finished. Please reroute to Gemini or Codex on the Mini (jobs.py reroute J3270 --to gemini --model gemini-argon). No work started: no branch, no PR, no files changed."
+        },
+        {
+          "at": "2026-11-21T04:12Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-22T00:05:00Z"
         }
       ],
-      "remaining_action": "Pick two data-backed History of Science topics and add them to the waiting line",
+      "remaining_action": "At 2026-11-22T00:05Z verification, reroute J3270 to gemini on gemini-argon (free neighbours.py/public_search.py) for 22 Nov daily HOS topic run after checking open PRs 120-127",
       "kind": "script",
       "backlog": "hos-ideas",
       "progress": {
@@ -293891,6 +293896,11 @@
         "by": "macbook",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "date",
+        "condition": "Next daily HOS topic window (22 Nov 2026): J3245 already completed the 21 Nov daily HOS topic run at 00:44Z (HOS:126/127 in HOS PR #706 & OWB PR #1094, both Rule-E GO in J3263/J3264; 33 topics queued across main + 4 open PR pairs). Hold LIVE until 22 Nov 00:05Z to prevent refill 6h same-day duplicate, then reroute to gemini on gemini-argon using free neighbours.py + public_search.py (£0, 0 vidIQ credits; avoids MacBook Claude WebSearch refusal)",
+        "check_at": "2026-11-22T00:05:00Z"
       }
     },
     {
