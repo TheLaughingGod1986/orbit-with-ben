@@ -295376,9 +295376,14 @@
           "at": "2026-11-21T12:12Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T12:13Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Starting J3287 condition verification for J2171 (HOS 009 Shorts A/B)."
         }
       ],
-      "remaining_action": "Verify readiness: Wait for J3241 Chief score disposition on v04_synth and completed J2035 long assembly before Shorts A/B assembly",
+      "remaining_action": "Inspect J2171 condition, J3241 score disposition, J2035/J3261/J2036 long assembly status, and Shorts locked inputs",
       "kind": "review",
       "recheck_of": "J2171",
       "due": "2026-11-21T13:01:20+00:00",
@@ -295394,11 +295399,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-21T12:12Z",
+        "at": "2026-11-21T12:13Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Starting J3287 condition verification for J2171 (HOS 009 Shorts A/B)."
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     }
   ],
   "focus": [
