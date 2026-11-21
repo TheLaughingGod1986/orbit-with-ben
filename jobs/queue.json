@@ -294169,13 +294169,35 @@
           "at": "2026-11-21T04:45Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-21T04:45Z",
+          "by": "gemini",
+          "what": "waits on Ben: Watch the Muons Short v06 (same full-screen picture and Ben narration as v05, with a new £0 own-synthesis minimalist clock-pulse music bed replacing the bed that collided with Moon Leaving). Approve to upload and schedule for Saturday 21 November 11:30 London (or next free Orbit Short slot if approved after 11:15). (by 2026-11-21 10:45 London)"
         }
       ],
       "remaining_action": "Wait for Ben's UAT approval of v06 on the board, then upload as a new Private Short and schedule for Sat 21 Nov 11:30Z or next free slot",
       "due": "2026-11-21T11:15:00Z",
       "kind": "studio",
       "plain": "Watch the muon Short with its new music bed, then publish once approved",
-      "mini_only": true
+      "mini_only": true,
+      "awaits_ben": {
+        "what": "Watch the Muons Short v06 (same full-screen picture and Ben narration as v05, with a new £0 own-synthesis minimalist clock-pulse music bed replacing the bed that collided with Moon Leaving). Approve to upload and schedule for Saturday 21 November 11:30 London (or next free Orbit Short slot if approved after 11:15).",
+        "file": "OWB UAT/J3176_muons_v06/fri06_muons_ground_v06.mp4",
+        "version": "v06",
+        "due": "2026-11-21T10:45Z",
+        "airs": "2026-11-21T11:30Z",
+        "ifNot": "gc1hWQQJOq4 (v05) stays Private and unscheduled after containment; today's Saturday 21 November 11:30 slot stays empty until you approve v06, after which it takes the next free Orbit Short slot.",
+        "title": "Muons Shouldn't Reach the Ground. They Do.",
+        "number": "024",
+        "type": "short",
+        "prev": [
+          "OWB-J2550.2"
+        ],
+        "fixed": [
+          "Replaced reused music bed (0.830 similarity to Moon Leaving part 2) with a distinct £0 own-synthesis clock-pulse bed (max similarity 0.099 across all 31 Orbit beds); locked v05 full-screen picture (identical frame CRC) and Ben narration unchanged."
+        ]
+      }
     }
   ],
   "focus": [
