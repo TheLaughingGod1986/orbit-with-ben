@@ -297573,10 +297573,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-21T18:49Z",
+      "eta": "2026-11-21T20:49Z",
       "created_by": "relay",
       "created_at": "2026-11-21T18:11Z",
       "result": "",
@@ -297630,6 +297630,11 @@
           "at": "2026-11-21T18:49Z",
           "by": "gemini",
           "what": "reopened: Elected acting Chief closing completed J3316 condition verification after merging PR #1120 and updating J3311 hold"
+        },
+        {
+          "at": "2026-11-21T18:49Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for Chief: merge OWB PR #1120, record J3311 wait --recheck J3316, and close J3316",
@@ -297644,7 +297649,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T18:49Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
