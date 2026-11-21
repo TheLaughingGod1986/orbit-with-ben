@@ -58,7 +58,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3267 | mini | blocked | cursor | – | assembly · Comment replies for every channel: read new comments, reply in each channel's voice, escalate the sensitive ones, log ideas (Ben's one voice check first) |  |
 | J3270 | any | blocked | macbook | – | script · HOS: learn from our data, add two new films to the backlog |  |
 | J3274 | mini | open | – | – | 024 upload · studio · OWB 024 muon Short v06: upload and schedule after Ben's UAT watch approval |  |
-| J3277 | mini | claimed | gemini | 2026-11-21T10:33Z | review · Verify condition for J3178 |  |
+| J3277 | mini | blocked | gemini | – | review · Verify condition for J3178 |  |
 
 Recently finished:
 
