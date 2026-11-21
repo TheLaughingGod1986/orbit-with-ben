@@ -294886,13 +294886,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-21T10:13Z",
-      "eta": "2026-11-21T12:13Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-21T10:13Z",
-      "result": "",
+      "result": "Waiting for: HOS 006 Short Bks_JLId1ew (How Do Plants Make Oxygen?) is scheduled to go public at 2026-11-21T11:30:00Z; wait until after publishAt before read-only public verification and flipping library.json scheduled -> live",
       "history": [
         {
           "at": "2026-11-21T10:13Z",
@@ -294903,9 +294903,19 @@
           "at": "2026-11-21T10:13Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T10:14Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: HOS 006 Short Bks_JLId1ew (How Do Plants Make Oxygen?) is scheduled to go public at 2026-11-21T11:30:00Z; wait until after publishAt before read-only public verification and flipping library.json scheduled -> live"
+        },
+        {
+          "at": "2026-11-21T10:14Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-21T11:35:00Z"
         }
       ],
-      "remaining_action": "Wait until Bks_JLId1ew goes public at 2026-11-21T11:30Z, then verify live Related/AI badge/captions and flip library.json to live",
+      "remaining_action": "Verify Bks_JLId1ew live Related (VbPubYd6Fbs), AI badge, captions and flip library.json to live after 2026-11-21T11:30Z",
       "kind": "listing",
       "plain": "Verify HOS Short Bks_JLId1ew live after 11:30Z and flip its library.json status to live",
       "progress": {
@@ -294915,6 +294925,11 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "public",
+        "condition": "HOS 006 Short Bks_JLId1ew (How Do Plants Make Oxygen?) is scheduled to go public at 2026-11-21T11:30:00Z; wait until after publishAt before read-only public verification and flipping library.json scheduled -> live",
+        "check_at": "2026-11-21T11:35:00Z"
       }
     },
     {
