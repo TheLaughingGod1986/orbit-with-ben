@@ -60,7 +60,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3274 | mini | open | – | – | 024 upload · studio · OWB 024 muon Short v06: upload and schedule after Ben's UAT watch approval |  |
 | J3282 | mini | blocked | gemini | – | 006 upload · listing · HOS 006 Short Bks_JLId1ew post-public read-back & library.json live flip |  |
 | J3283 | mini | blocked | macbook-2 | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
-| J3286 | mini | claimed | gemini | 2026-11-21T14:02Z | review · Verify condition for J2036 |  |
+| J3286 | mini | blocked | gemini | – | review · Verify condition for J2036 |  |
 | J3287 | mini | open | – | – | review · Verify condition for J2171 |  |
 
 Recently finished:
