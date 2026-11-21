@@ -189322,9 +189322,14 @@
           "at": "2026-11-21T16:52Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Assembled hos_009_short_A_v01 (43dbeb3a, 25.4s, -14.0 LUFS) and hos_009_short_B_v01 (e6e5ae3f, 25.5s, -14.3 LUFS); 12/12 ship gates PASS with 0 waivers; staged SHA-256-verified copies on NAS + HOS UAT."
+        },
+        {
+          "at": "2026-11-21T16:55Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Opened HOS PR #718 (7248b872, check_all.sh ALL PASS), queued non-producer QA successor J3311, verified NAS + HOS UAT SHA-256 parity."
         }
       ],
-      "remaining_action": "Visually inspect all contact sheets, verify pair frame-0 uniqueness, and write J2171 report/PR",
+      "remaining_action": "Complete J2171 handoff",
       "due": "2026-11-22T18:00:00Z",
       "kind": "assembly",
       "taskKeys": [
@@ -189339,11 +189344,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-21T16:52Z",
+        "at": "2026-11-21T16:55Z",
         "by": "gemini",
-        "note": "Assembled hos_009_short_A_v01 (43dbeb3a, 25.4s, -14.0 LUFS) and hos_009_short_B_v01 (e6e5ae3f, 25.5s, -14.3 LUFS); 12/12"
+        "note": "Opened HOS PR #718 (7248b872, check_all.sh ALL PASS), queued non-producer QA successor J3311, verified NAS + HOS UAT SHA"
       }
     },
     {
