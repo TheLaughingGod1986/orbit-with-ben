@@ -295742,10 +295742,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-21T13:13Z",
+      "eta": "2026-11-21T14:43Z",
       "created_by": "claude",
       "created_at": "2026-11-21T13:09Z",
       "result": "",
@@ -295764,6 +295764,11 @@
           "at": "2026-11-21T13:13Z",
           "by": "macbook",
           "what": "released: MacBook worker run on cursor ended (exit 1) with the job still open; picked up again next run; cursor paused on the MacBook until 2026-11-21T15:13:32Z, so the next run uses the next agent in the chain"
+        },
+        {
+          "at": "2026-11-21T13:13Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Add music_gate and the channel's blocking gates to the upload hard-stop; extend gate_upcoming to all gates, Shorts and longs, 14 days, daily; tests",
