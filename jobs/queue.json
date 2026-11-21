@@ -299055,9 +299055,14 @@
           "at": "2026-11-21T22:11Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-21T22:12Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J3330; replacing default plan with 4 concrete steps"
         }
       ],
-      "remaining_action": "Rebase PR #1040 onto main, verify all 5 December Short publishAt dates match 2026-11-20.json, run tests, and park for Chief merge",
+      "remaining_action": "Inspect PR #1040 diff and 2026-11-20 snapshot, create clean worktree from origin/main, and rebase/apply changes",
       "due": "2026-11-24T18:00:00Z",
       "kind": "studio",
       "plain": "Update the conflicting J3123 December Shorts schedule records PR (#1040) onto main so UPLOADS.json, library.json, status.json and unuploaded 033/034 Short 2 manifests match YouTube",
@@ -299071,12 +299076,18 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-21T22:11Z",
+        "of": 4,
+        "at": "2026-11-21T22:12Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3330; replacing default plan with 4 concrete steps"
+      },
+      "taskKeys": [
+        "OWB:028",
+        "OWB:029",
+        "OWB:031",
+        "OWB:033",
+        "OWB:034"
+      ]
     }
   ],
   "focus": [
