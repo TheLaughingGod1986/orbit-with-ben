@@ -294756,17 +294756,27 @@
           "at": "2026-11-21T09:54Z",
           "by": "claudecode",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-21T09:56Z",
+          "by": "claudecode",
+          "what": "step 1 of 5 done: 13 library statuses set (1 retired, 12 live)"
         }
       ],
-      "remaining_action": "Sync HOS library.json and Blood SHORTS_RELEASE in a clean worktree",
+      "remaining_action": "Register the two missing Trees Shorts, fix the Blood release record, run checks",
       "kind": "studio",
       "plain": "Sync HOS open-gate library and Blood/OWB Short records from J3279 (no Studio writes)",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-21T09:54Z",
-        "by": "claudecode"
-      }
+        "at": "2026-11-21T09:56Z",
+        "by": "claudecode",
+        "note": "13 library statuses set (1 retired, 12 live)"
+      },
+      "taskKeys": [
+        "HOS:005",
+        "HOS:006"
+      ]
     }
   ],
   "focus": [
