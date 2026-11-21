@@ -119397,9 +119397,14 @@
           "at": "2026-11-20T18:11Z",
           "by": "relay",
           "what": "condition verification queued: J3246"
+        },
+        {
+          "at": "2026-11-21T01:04Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-21T14:00:00Z"
         }
       ],
-      "remaining_action": "Retiming chapter timestamps for the Gravity and Dinosaurs films once their final long cuts are locked",
+      "remaining_action": "Re-time HOS 009 and HOS 010 long Chapters once each locked final long cut exists (preserve Sources, run lint:package, open PR for Chief)",
       "kind": "listing",
       "rerouted_from": {
         "needs": "mini",
@@ -119423,12 +119428,11 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "Chief review J3155: condition NOT MET. HOS main 44b12347 contains merged PR389 (7c136209); existing package lint evidence retained. Both 009 and 010 edit stages remain todo with no recorded locked long cut. J2035 remains blocked pending a compliant accepted score; J3159 disposition is done and delegates offline repair to J3162, not score approval. Correction to worker evidence: J2632 is done with KEEP and PR543 merged, not an outstanding ruling. HOS010 picture remains blocked. Resume chapter retiming for each film only against its locked final long cut, preserving Sources and requiring lint:package plus review before upload. Recheck after the existing J2035 noon check; do not alter score, credit or Ben holds.",
-        "check_at": "2026-11-20T19:11:26+00:00",
-        "last_recheck": "J3155",
-        "checked_at": "2026-11-20T01:37:29+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3246"
+        "condition": "Acting Chief review J3246: condition NOT MET (verified 2026-11-21T01:00Z). HOS main c199174f retains merged PR #389 (7c136209) and read-only lint:package PASS on both 009 and 010. HOS 009 has progressed (J3241 accepted v04_synth score; J2035 finished v01 802b5c7e; J3260 ruled bounded GBP0 v02 re-edit J3261 + thumbnails J3262, leaving PR #703 unmerged), but has NO locked final long cut yet: J3261 is still open at step 1/6 (detached render exited 0 producing NAS v02 9d8731cb, but polish_gate FAIL on 05_minute_second at 316.2s awaits reconciliation and stills), J3262 is parked for Chief on PR #705, J2036 is blocked until 2026-11-21T12:00:00Z, and J2037 is open. HOS 010 has NO locked long cut: picture is 12/65 plates (Shorts only; Long Parts 01-05 pending) and long edit awaits picture (no 09_Assembly on NAS). Resume chapter retiming for each film only against its locked final long cut, preserving Sources and requiring lint:package plus Chief review before upload. Recheck after J2036 noon check.",
+        "check_at": "2026-11-21T14:00:00Z",
+        "last_recheck": "J3246",
+        "checked_at": "2026-11-21T01:04:12+00:00",
+        "checked_by": "gemini"
       }
     },
     {
