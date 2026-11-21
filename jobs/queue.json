@@ -291583,7 +291583,7 @@
     {
       "id": "J3245",
       "title": "HOS: learn from our data, add two new films to the backlog",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "History of Science daily topic job: discovery stories with a person, a date and a twist.\n\nLEARN FROM OUR DATA FIRST (Ben, 5 Nov 2026: 'learn off past data what works well and build the videos around the data'). Read 05_Analytics/hos/channel_daily.json, 05_Analytics/hos/studio_ctr.json, 05_Analytics/hos/REPORT.md, the newest 05_Analytics/hos/snapshots/ and 05_Analytics/LEARNINGS.md (rules 1-22). Rank our own longs and Shorts by views per day since publish, CTR, average % viewed and Shorts 'stayed'. Write down the 3 best and 3 worst with the numbers and what they share (subject, title shape, opening, thumbnail concept, length).\nTHEN ADD TWO NEW FILMS TO THE BACKLOG (every day; Ben: 'one or two new a day ... a healthy big full backlog so we're never short'). For each: a working title in the shape that wins for us, one-line hook, why it should work (name the past winners it resembles, with their numbers, and the LEARNINGS rules it follows), a neighbour pass (three big videos on the subject with views), and two Short angles from it. Never repeat a topic already in 02_Video-Projects, the ideas folder or WIP. Create its project folder from the template with this as TOPIC.md, and append it to jobs/WIP.json `next_hos` (rule G: it starts only when a place frees up). Queue its rule-E topic review as a kind:review job. Spend nothing: existing subscriptions and free tools only, no paid API, TTS or picture generation; no Studio or publish change. Finish with jobs.py done <id> --result listing the two topics and the data line behind each. HOS films are written in the history-of-science repo; the WIP line and the review job live in orbit-with-ben.",
       "ref": "",
@@ -291591,13 +291591,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-20T18:02Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-20T17:56Z",
-      "result": "parked for Chief: needs a worker with web. The MacBook Claude lane has no web (WebSearch refused again on this run), so the neighbour pass with real view counts cannot be done here. Released at 18:01Z and handed straight back to the same lane at 18:02Z. Route to Gemini or Codex on the Mini or the MacBook Gemini slot, or rule on using vidIQ search credits. Nothing started: no branch, PR, folders, WIP line or review job.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-20T17:56Z",
@@ -291628,6 +291628,11 @@
           "at": "2026-11-20T21:48Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-11-21T00:27Z",
+          "by": "gemini",
+          "what": "rerouted to gemini on gemini-argon: Acting-Chief ruling (gemini): reroute J3245 from blocked MacBook Claude WebSearch refusal to gemini on gemini-argon (lane 3 of script chain; prevents MacBook Claude bounce). Use HOS local neighbours.py + public_search.py (signed-out YouTube GB via Python HTTP, verified live 2026-11-21T00:25Z; £0 and 0 vidIQ credits; no vidIQ credits authorised for HOS daily backlog). Serves as 21 Nov 2026 daily HOS topic run: check open HOS PRs #659/#682/#689 and OWB PRs #1033/#1051/#1059 (HOS:120-125) and assign HOS:126 and HOS:127 with zero overlap."
         }
       ],
       "remaining_action": "Pick two data-backed History of Science topics and add them to the waiting line",
@@ -291641,7 +291646,16 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       },
-      "escalated_at": "2026-11-20T21:48Z"
+      "escalated_at": "2026-11-20T21:48Z",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "blocked",
+        "by": "macbook"
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J3246",
