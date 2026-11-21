@@ -297830,9 +297830,14 @@
           "at": "2026-11-21T19:06Z",
           "by": "gemini",
           "what": "step 2 of 5 done: YouTube Data API read-back verified: ek9F61FVYqY Private publishAt=2026-11-22T17:00:00Z, J9WGu8aPnHI Private publishAt=2026-11-25T17:00:00Z; title/desc/thumb/status flags unchanged"
+        },
+        {
+          "at": "2026-11-21T19:12Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Merged OWB PR #1123 (studio/plan.json) and ww2-channel PR #27 + #28 (status.json, metadata_v43.json, UPLOADS.json, channel.json)"
         }
       ],
-      "remaining_action": "Update OWB studio/plan.json, WW2 upload register & status.json, confirm 6h/48h/7d analytics & launch_check, verify board Schedule, post receipt",
+      "remaining_action": "Confirm launch_check 6h/48h and 48h/7d analytics/autopsies key off new dates, push board & verify Schedule, post receipt",
       "due": "2026-11-21T21:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -297848,11 +297853,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-21T19:06Z",
+        "at": "2026-11-21T19:12Z",
         "by": "gemini",
-        "note": "YouTube Data API read-back verified: ek9F61FVYqY Private publishAt=2026-11-22T17:00:00Z, J9WGu8aPnHI Private publishAt=2"
+        "note": "Merged OWB PR #1123 (studio/plan.json) and ww2-channel PR #27 + #28 (status.json, metadata_v43.json, UPLOADS.json, chann"
       },
       "taskKeys": [
         "WW2:001",
