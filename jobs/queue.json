@@ -295772,10 +295772,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
-      "by": "macbook",
-      "since": "2026-11-21T13:13Z",
-      "eta": "2026-11-21T14:43Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-21T13:09Z",
       "result": "",
@@ -295809,6 +295809,11 @@
           "at": "2026-11-21T13:22Z",
           "by": "macbook",
           "what": "step 2 of 4 done"
+        },
+        {
+          "at": "2026-11-21T13:22Z",
+          "by": "macbook",
+          "what": "released: Partial implementation committed as 0f85f6098 and pushed; draft PR #1112 targets main. Tests passed: publishing/sweep 8, upcoming 12, synthetic music 7, analytics auxiliary 5, refill 30, TypeScript gate 7; typecheck/core/diff checks passed. Remaining: all-channel core rollout/dependency verification, migration of export gate inputs, dedicated watch-deadline alerts, per-channel coverage-error continuation, detached/staged compatibility and bounded/resumable production sweep. Do not treat as complete or merge yet. Checkout returned to main; no YouTube/NAS writes. Continue from draft PR within another run."
         }
       ],
       "remaining_action": "Finish channel rollout, existing metadata migration, deadline alerts and production sweep verification; draft implementation and tests are committed",
