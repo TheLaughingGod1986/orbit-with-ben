@@ -226252,9 +226252,14 @@
           "at": "2026-11-21T04:55Z",
           "by": "relay",
           "what": "condition verification queued: J3275"
+        },
+        {
+          "at": "2026-11-21T05:05Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-21T08:45:00Z"
         }
       ],
-      "remaining_action": "Await continuous 24-fps moving_video_input review of HOS 013 pass-1 rows 56-62,64-66 (J3178) and elected-Chief KEEP/RETAKE marks before J2529 closure",
+      "remaining_action": "Complete continuous 24-fps moving-video playback review of HOS 013 pass-1 rows 56-62 and 64-66 via J3178 and record elected-Chief KEEP/RETAKE marks before closing J2529",
       "due": "2026-11-21T18:00:00Z",
       "kind": "video",
       "plain": "Make the 66 pictures for the Darwin and Wallace film, on credits that would otherwise expire on Thursday",
@@ -226275,15 +226280,14 @@
       },
       "hold": {
         "type": "capability",
-        "condition": "J3250 acting-Chief verification (jobs/reviews/J3250/REVIEW.md, commit 9ed1e15c28): condition unmet. Follow-up J3178 remains blocked on moving_video_input (jobs/reviews/J3178/REVIEW.md; J3198 open) and no continuous-playback evidence or elected-Chief KEEP/RETAKE marks exist for the 10 unresolved pass-1 rows (56-62, 64-66) on HOS #180 (capped at 2,500), HOS desk 2 #694, or OWB #954. Re-verified 11/11 Batch 12-14 NAS SHA-256 hashes match receipts and REVIEW_STATE.json preserves 48 KEEP and 8 RETAKE (3,10,24,28,47,49,54,63). Direct read_file probe on NAS row 58 (P05_10_darwin_worried_shelf_t1.mp4) confirmed agy returns 8 discrete 1-fps static frames (00:00..00:07; Darwin whole at 00:03 and absent at 00:04, missing 3.833-4.250s exit), not continuous 24-fps playback (audio_input demonstrated on pickup WAV). Keep J2529 held pending continuous-playback review via J3178 and elected-Chief marks; no minting or assembly authorised.",
-        "check_at": "2026-11-21T05:55:06+00:00",
+        "condition": "J3275 acting-Chief verification (jobs/reviews/J3275/REVIEW.md, commit 07f483a7b1): condition unmet. Follow-up J3178 remains blocked on moving_video_input (rechecked by J3198 at 2026-11-21T02:39Z, commit 6ae02a0ab5, next check 2026-11-21T08:30:00Z) and no continuous 24-fps playback evidence or elected-Chief KEEP/RETAKE marks exist for the 10 unresolved pass-1 rows (56-62, 64-66) on HOS #180 (capped at 2,500), HOS desk 2 #694 (last 013 post #7056077057), OWB #954, or HOS PRs. Re-verified 11/11 Batch 12-14 NAS SHA-256 hashes match receipts and REVIEW_STATE.json preserves 48 KEEP and 8 RETAKE (3,10,24,28,47,49,54,63). Direct read_file probe in agy 1.5.13 on NAS row 58 (P05_10_darwin_worried_shelf_t1.mp4) still returned 8 discrete 1-fps static JPEG frames (00:00..00:07; Darwin whole at 00:03 and absent at 00:04, missing 3.833-4.250s exit), not continuous 24-fps playback (audio_input demonstrated on pickup WAV). Keep J2529 held pending continuous-playback review via J3178 and elected-Chief marks; no minting or assembly authorised.",
+        "check_at": "2026-11-21T08:45:00Z",
         "requires": [
           "moving_video_input"
         ],
-        "last_recheck": "J3250",
-        "checked_at": "2026-11-20T20:33:24+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3275"
+        "last_recheck": "J3275",
+        "checked_at": "2026-11-21T05:05:44+00:00",
+        "checked_by": "gemini"
       },
       "required_capabilities": [
         "moving_video_input"
