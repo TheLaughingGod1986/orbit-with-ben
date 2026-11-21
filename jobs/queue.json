@@ -292081,18 +292081,23 @@
           "at": "2026-11-21T02:09Z",
           "by": "cursor",
           "what": "step 0 of 3 done: Claimed. Free space before cleanup next."
+        },
+        {
+          "at": "2026-11-21T02:12Z",
+          "by": "cursor",
+          "what": "step 1 of 3 done: Offload still running in tmux J3249-offload (pid 52498, started 01:15). No second copy. MiniWork 89 GiB free. Spot-check J2242-salon-patch-v03: 3 SHA-256 hashes match, local folder is only MOVED_TO_NAS.txt. Exit file not written yet."
         }
       ],
-      "remaining_action": "Inspect MiniWork scratch and desk for old completed folders",
+      "remaining_action": "Leave the existing MiniWork offload running, then read its exit file and confirm at least 40 GB free",
       "due": "2026-11-21T07:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-21T02:09Z",
+        "at": "2026-11-21T02:12Z",
         "by": "cursor",
-        "note": "Claimed. Free space before cleanup next."
+        "note": "Offload still running in tmux J3249-offload (pid 52498, started 01:15). No second copy. MiniWork 89 GiB free. Spot-check"
       }
     },
     {
