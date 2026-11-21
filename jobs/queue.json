@@ -291933,10 +291933,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "cursor",
-      "since": "2026-11-21T01:07Z",
-      "eta": "2026-11-21T03:07Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-20T19:02Z",
       "result": "",
@@ -292060,6 +292060,11 @@
           "at": "2026-11-21T01:24Z",
           "by": "cursor",
           "what": "step 2 of 4 done: MiniWork is 85 GB free after 81 clean worktrees were removed. Two evidence folders are on the NAS with SHA256SUMS.txt. The rest is still copying in tmux J3249-offload. Log ~/_desk/logs/J3249-offload.log. Exit file ~/_desk/logs/J3249-offload.done. Do not start a second copy."
+        },
+        {
+          "at": "2026-11-21T01:25Z",
+          "by": "cursor",
+          "what": "released: Offload still running. Do not start a second copy. tmux J3249-offload, log ~/_desk/logs/J3249-offload.log, exit ~/_desk/logs/J3249-offload.done (missing means running), result ~/_desk/logs/J3249-offload-report.json. MiniWork 42 GB to 85 GB free after 81 clean pushed worktrees. Two evidence folders hash-checked on the NAS. When the exit file is 0, read the result and close the job."
         }
       ],
       "remaining_action": "Wait for the NAS evidence copy to finish, then record the hash check",
