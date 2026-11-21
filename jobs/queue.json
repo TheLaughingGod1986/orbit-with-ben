@@ -299452,18 +299452,23 @@
           "at": "2026-11-21T23:47Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Verified port 9224 has open studio.youtube.com tab on UCu94mInMFosxu3W0H6jlI6Q and detail.json has videos:{}"
+        },
+        {
+          "at": "2026-11-21T23:51Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Playwright connect_over_cdp timed out after WS connect; checking raw CDP tab websocket on port 9224"
         }
       ],
-      "remaining_action": "Read Earn, Audience, and Content pages on port 9224 Studio tab (read-only)",
+      "remaining_action": "Connect to port 9224 Studio tab via direct CDP websocket to read Earn, Audience, and Content pages",
       "due": "2026-11-21T23:39:06Z",
       "kind": "studio",
       "plain": "Read Field Order History’s audience and progress towards monetisation",
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-21T23:47Z",
+        "at": "2026-11-21T23:51Z",
         "by": "gemini",
-        "note": "Verified port 9224 has open studio.youtube.com tab on UCu94mInMFosxu3W0H6jlI6Q and detail.json has videos:{}"
+        "note": "Playwright connect_over_cdp timed out after WS connect; checking raw CDP tab websocket on port 9224"
       }
     },
     {
