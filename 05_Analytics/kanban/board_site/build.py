@@ -65,13 +65,13 @@ TRACKER_PATCHES = [
 def app_version() -> str:
     files = [TRACKER, AI_PAGE, STUDIO, HERE / "studio_app.js", HERE / "build.py",
              HERE / "ai_app.js", HERE / "tracker_loader.js", HERE / "updater.js", HERE / "api" / "checks.js",
-             HERE / "api" / "data.js", HERE / "board_updates.js"]
+             HERE / "api" / "data.js", HERE / "board_updates.js", HERE / "urgent_banner.js"]
     return hashlib.sha256(b"\0".join(f.read_bytes() for f in files if f.exists())).hexdigest()[:16]
 
 
 def versioned_page(html: str) -> str:
     marker = f'<meta name="studio-version" content="{app_version()}"><script src="/updater.js" defer></script>'
-    return html.replace("</head>", marker + "</head>", 1)
+    return html.replace("</head>", marker + "<script>" + (HERE / "urgent_banner.js").read_text() + "</script></head>", 1)
 
 
 def build_studio(out: pathlib.Path) -> None:
