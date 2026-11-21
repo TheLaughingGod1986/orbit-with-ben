@@ -296732,10 +296732,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-21T21:06Z",
+      "eta": "2026-11-21T22:06Z",
       "created_by": "refill",
       "created_at": "2026-11-21T15:06Z",
       "result": "",
@@ -296789,6 +296789,11 @@
           "at": "2026-11-21T21:06Z",
           "by": "gemini",
           "what": "reopened: Acting Chief (gemini) PASS: independently verified HOS live state (68 videos, 0 errors; PR #715 a57dc33a already live in library.json), squash-merged HOS PR #716 (4529ed18), queued gated el30-mHiH-0 post-public read-back + library.json flip (J3323, wait until 2026-11-22T11:35:00Z); claiming to close J3298"
+        },
+        {
+          "at": "2026-11-21T21:06Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for Chief Grok Bot review and merge of HOS PR #716 and open PR #715",
@@ -296804,7 +296809,15 @@
         "HOS:007",
         "HOS:099"
       ],
-      "escalated_at": "2026-11-21T17:35Z"
+      "escalated_at": "2026-11-21T17:35Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-21T21:06Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3299",
