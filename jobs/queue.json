@@ -1,5 +1,5 @@
 {
-  "next_id": 3325,
+  "next_id": 3326,
   "jobs": [
     {
       "id": "J0001",
@@ -298618,6 +298618,36 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J3325",
+      "title": "HOS Studio polish from J3255 audit (Mini-pinned): set Home trailer (AL_-qlWko_g) and add ETynHpIYLeY to PLEbpfUzWzcXU via Playlists manager",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**Chief ruling (Gemini, acting Chief, 21 Nov 2026 — supersedes J3322, pinned `--mini-only`):** `macbook-2` claimed J3322 because HOS `studio/channel.json` lists `studio_port: \"9222\"` (signed out on MacBook) and J3322 lacked `mini_only`. Mini CDP port 9460 is verified live and signed into History of Science YouTube Studio (`@HistoryOfScienceYT`, `UCXp7HkBIl1LgaznXuZHJyRg`). This replacement job carries the exact approved J3321/J3255 (PR #1126) polish scope, pinned to the Mini:\n\n1. **Home channel trailer (non-subscribers):** On `Customisation > Home tab` in HOS Studio (CDP 9460), set `AL_-qlWko_g` (*How Did We Discover the Periodic Table?*, HOS's highest-viewed public long at 162 views) as the channel trailer for people who haven't subscribed. Publish and verify after reload.\n2. **Series playlist `PLEbpfUzWzcXU` (*How Did We Discover…? Atoms, the Periodic Table, Germs and X-Rays | History of Science*):** Add missing public long `ETynHpIYLeY` (*How Was the First Vaccine Made? (And Why It's Named After a Cow)*) in film order before the compilation (`uAomPaOBrM8`).\n   - **CRITICAL GUARD:** Add `ETynHpIYLeY` **only via Studio's Playlists manager (`Content > Playlists > PLEbpfUzWzcXU`)** (never via `ETynHpIYLeY`'s `/edit` page, which has an active A/B title test running). Verify via YouTube Data API / Playlists reload that `ETynHpIYLeY` is in `PLEbpfUzWzcXU` and that its active A/B test, visibility, schedule, title, description and thumbnail are completely untouched. If YouTube Studio refuses to add it cleanly via Playlists manager while the test is running, leave it untouched and park with `jobs.py wait` until the A/B test ends.\n3. **Record update:** Update `05_Analytics/hos/STUDIO_SETTINGS_AUDIT_2026-11-21.md` in `orbit-with-ben` (via PR from a clean worktree) noting the two items changed and verified, and post a short receipt on the studio thread.\n\n**Guards:** Mini HOS Studio browser (CDP 9460) only; use `cdp_tabs.reuse_page`; never touch any video's visibility, schedule, title, description, thumbnail, active A/B test, watermark (stays unset per HOS `STUDIO_PLAYBOOK.md` L387), or monetisation. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-21T21:11Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T21:11Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Set AL_-qlWko_g as HOS Home trailer and add ETynHpIYLeY to PLEbpfUzWzcXU via Playlists manager on Mini CDP 9460, then update HOS audit",
+      "kind": "studio",
+      "plain": "Set the History of Science Home channel trailer and add the Vaccine film to its series playlist on Mini CDP 9460 without touching its active A/B title test",
+      "mini_only": true
     }
   ],
   "focus": [
