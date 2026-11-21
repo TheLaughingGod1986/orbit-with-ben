@@ -60,6 +60,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3270 | any | blocked | macbook | – | script · HOS: learn from our data, add two new films to the backlog |  |
 | J3271 | mini | blocked | claudecode | – | studio · HOS live & repo listing fixes (J3269): oKqmnJNGiHg dead URL, 007 SHORTS_RELEASE + library, 008 placeholder schedule |  |
 | J3273 | mini | open | – | – | 024 upload · studio · OWB 024 muon Short: contain scheduled gc1hWQQJOq4 (v05) with failed reused music before Sat 21 Nov 11:30Z |  |
+| J3274 | mini | open | – | – | 024 upload · studio · OWB 024 muon Short v06: upload and schedule after Ben's UAT watch approval |  |
 
 Recently finished:
 
