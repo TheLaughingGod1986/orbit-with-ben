@@ -291762,9 +291762,14 @@
           "at": "2026-11-21T01:01Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J3246; starting verification of HOS 009 and HOS 010 locked-cut prerequisites for J1275"
+        },
+        {
+          "at": "2026-11-21T01:02Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified HOS main c199174f keeps PR #389 (7c136209); J3241 accepted v04_synth and reopened J2035; J2035 finished v01 (802b5c7e), J3260 ordered v02 re-edit (J3261); checking J3261/J2036/PR #703 and HOS 010 long state"
         }
       ],
-      "remaining_action": "Verify J1275 waiting condition against current HOS 009/010 status, J2035/J3241/edit state, and NAS/git evidence",
+      "remaining_action": "Check J3261 render completion, J2036/J3260/PR #703 status, and HOS 010 long picture/edit status to determine if J1275 waiting condition is met",
       "kind": "review",
       "recheck_of": "J1275",
       "due": "2026-11-20T19:11:26+00:00",
@@ -291779,11 +291784,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-21T01:01Z",
+        "at": "2026-11-21T01:02Z",
         "by": "gemini",
-        "note": "Claimed J3246; starting verification of HOS 009 and HOS 010 locked-cut prerequisites for J1275"
+        "note": "Verified HOS main c199174f keeps PR #389 (7c136209); J3241 accepted v04_synth and reopened J2035; J2035 finished v01 (80"
       },
       "taskKeys": [
         "HOS:009",
