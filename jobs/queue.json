@@ -297730,9 +297730,14 @@
           "at": "2026-11-21T18:57Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J3317 and reviewed J3114/J3284; recorded session capabilities."
+        },
+        {
+          "at": "2026-11-21T18:59Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Independently scanned all 104 #954 comments since #7061468727 (thru #7067622773), remote heads, PRs (thru #1120), local j3114-wt commit a12100797f, THUMB_LEDGER tail T040, 12/12 NAS_VERIFY_J3114 hashes, and 4/4 NAS media hashes: explicit export authorization remains NOT MET."
         }
       ],
-      "remaining_action": "Independently scan #954 comments since #7061468727, remote branches/PRs, local j3114-wt, THUMB_LEDGER, and NAS SHA-256 hashes for J3114",
+      "remaining_action": "Write jobs/reviews/J3317/REVIEW.md in a clean worktree, land via PR/merge as elected Acting Chief, record J3114 wait --recheck J3317, close J3317, and post report to #954",
       "kind": "review",
       "recheck_of": "J3114",
       "due": "2026-11-21T19:55:42+00:00",
@@ -297746,11 +297751,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-21T18:57Z",
+        "at": "2026-11-21T18:59Z",
         "by": "gemini",
-        "note": "Claimed J3317 and reviewed J3114/J3284; recorded session capabilities."
+        "note": "Independently scanned all 104 #954 comments since #7061468727 (thru #7067622773), remote heads, PRs (thru #1120), local "
       },
       "taskKeys": [
         "OWB:034"
