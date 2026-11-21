@@ -1,5 +1,5 @@
 {
-  "next_id": 3284,
+  "next_id": 3285,
   "jobs": [
     {
       "id": "J0001",
@@ -280905,6 +280905,11 @@
           "at": "2026-11-20T21:44Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-21T09:00:00Z"
+        },
+        {
+          "at": "2026-11-21T10:47Z",
+          "by": "relay",
+          "what": "condition verification queued: J3284"
         }
       ],
       "remaining_action": "Obtain explicit approval for the rejected GitHub branch export, then open the Pluto packaging review PR without rebuilding",
@@ -280924,10 +280929,11 @@
       "hold": {
         "type": "input",
         "condition": "J3232 Acting Chief ruling (jobs/reviews/J3232/REVIEW.md @ 2b1405d76d): condition NOT MET. Accepted macbook 15:25Z check and independently verified #954 through 7051241025, absent remote branch/PR, clean local commit a12100797f in /Volumes/MiniWork/scratch/j3114-wt, and 12/12 NAS SHA-256 hashes. Prior automatic approval review rejected exporting codex/j3114-pluto-v02 to public repo TheLaughingGod1986/orbit-with-ben twice; explicit export authorization remains absent across 5 consecutive checks (J3120/J3140/J3167/J3189/J3232). Preserve artifacts, J3115/J3119 dependencies, and UAT/Shorts holds. Do not bypass through another worker or route; elapsed time is not approval. Flagged for primary Chief claude (returning 21:50Z) to resolve authorization with Ben or issue a superseding ruling.",
-        "check_at": "2026-11-21T09:00:00Z",
+        "check_at": "2026-11-21T11:47:12+00:00",
         "last_recheck": "J3232",
         "checked_at": "2026-11-20T21:44:26+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J3284"
       },
       "escalated_at": "2026-11-19T11:45Z"
     },
@@ -295018,6 +295024,37 @@
         "condition": "Next daily Orbit With Ben comment check window (22 Nov 2026 09:00 London)",
         "check_at": "2026-11-22T09:00:00Z"
       }
+    },
+    {
+      "id": "J3284",
+      "title": "Verify condition for J3114",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3114: J3232 Acting Chief ruling (jobs/reviews/J3232/REVIEW.md @ 2b1405d76d): condition NOT MET. Accepted macbook 15:25Z check and independently verified #954 through 7051241025, absent remote branch/PR, clean local commit a12100797f in /Volumes/MiniWork/scratch/j3114-wt, and 12/12 NAS SHA-256 hashes. Prior automatic approval review rejected exporting codex/j3114-pluto-v02 to public repo TheLaughingGod1986/orbit-with-ben twice; explicit export authorization remains absent across 5 consecutive checks (J3120/J3140/J3167/J3189/J3232). Preserve artifacts, J3115/J3119 dependencies, and UAT/Shorts holds. Do not bypass through another worker or route; elapsed time is not approval. Flagged for primary Chief claude (returning 21:50Z) to resolve authorization with Ben or issue a superseding ruling.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3114 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-21T10:47Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-21T10:47Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Obtain explicit approval for the rejected GitHub branch export, then open the Pluto packaging review PR without rebuilding",
+      "kind": "review",
+      "recheck_of": "J3114",
+      "due": "2026-11-21T11:47:12+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
