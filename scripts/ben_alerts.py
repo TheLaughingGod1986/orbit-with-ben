@@ -197,11 +197,12 @@ def short_reason(raw: str) -> str:
 
 
 def _title_from_file(file_path: str) -> str:
-    """Derive a readable video name from an upload filename like hos_005_s07_heart_pulse_v05.mp4."""
+    """Derive a readable video name from an upload filename like ep_005_s07_heart_pulse_v05.mp4."""
     raw = pathlib.Path(str(file_path or "").strip()).stem
     if not raw:
         return ""
-    s = re.sub(r"^(?:hos|owb|ww2)[_-]+", "", raw, flags=re.I)
+    slugs = [re.escape(slug) for slug in channels.slugs() if slug]
+    s = re.sub(rf"^(?:{'|'.join(slugs)})[_-]+", "", raw, flags=re.I) if slugs else raw
     s = re.sub(r"^(?:\d{3}|sa|j\d+|sleep\d+)[_-]+", "", s, flags=re.I)
     s = re.sub(r"^(?:s\d+|short[_-]?[a-z0-9]+|backcat)[_-]+", "", s, flags=re.I)
     parts = [p for p in re.split(r"[_-]+", s) if p]
