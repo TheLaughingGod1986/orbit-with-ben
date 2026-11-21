@@ -295676,9 +295676,14 @@
           "at": "2026-11-21T13:08Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J3290; starting verification for J2529 (HOS 013)."
+        },
+        {
+          "at": "2026-11-21T13:10Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Checked HOS #694, OWB #954, HOS PRs, chief_relay status (Chief: Grok Bot), and ran direct read_file probes (audio_input OK, moving_video_input returns 1-fps static frames only)."
         }
       ],
-      "remaining_action": "Inspect J2529, J3178, desk/PR history, NAS hashes, and test capabilities",
+      "remaining_action": "Cross-check J3277/J3178 hold state, NAS hashes, and write J3290 review record",
       "kind": "review",
       "recheck_of": "J2529",
       "mini_only": true,
@@ -295696,11 +295701,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-21T13:08Z",
+        "at": "2026-11-21T13:10Z",
         "by": "gemini",
-        "note": "Claimed J3290; starting verification for J2529 (HOS 013)."
+        "note": "Checked HOS #694, OWB #954, HOS PRs, chief_relay status (Chief: Grok Bot), and ran direct read_file probes (audio_input "
       },
       "taskKeys": [
         "HOS:013"
