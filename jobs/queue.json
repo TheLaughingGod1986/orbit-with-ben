@@ -293694,13 +293694,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-21T02:57Z",
-      "eta": "2026-11-21T03:57Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-21T02:56Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-21T02:56Z",
@@ -293731,6 +293731,11 @@
           "at": "2026-11-21T03:05Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Committed 05_Analytics/live_fixes/2026-11-21.md (1f1bbe1c73, 10/10 pass, 0 fixes); repo tests passed (53 OK)"
+        },
+        {
+          "at": "2026-11-21T03:05Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Post thread report and close J3268",
