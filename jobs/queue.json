@@ -300837,9 +300837,14 @@
           "at": "2026-11-22T08:40Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J3347; starting Rule-E topic go/no-go review for HOS:129"
+        },
+        {
+          "at": "2026-11-22T08:45Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Verified all 15 HOS:129 files on PR #724 and OWB PR #1156, raw JSON evidence (neighbours PASS 3/3 >=1M incl. TED-Ed, public_search 10 queries 5 autocomplete=yes 0 collisions), zero duplication; found 2 thumbnail rule fixes (Thumb A RADAR ACCIDENT repeats Title A/B -> MELTED CANDY BAR; Thumb C IT EXPLODED pronoun teaser -> THE EGG EXPLODED), 2.45 GHz cycles-vs-reversals & non-resonance physics guardrails, and 10_Shorts/README.md 19 Nov 16-19s precedence header"
         }
       ],
-      "remaining_action": "Inspect HOS PR #724, OWB PR #1156, raw evidence JSONs, non-duplication, and Rule-E/Rule-G precedent",
+      "remaining_action": "Apply Rule-E review fixes to isolated HOS:129 worktree, write GO/NO-GO & Opportunity Score sheets, and run HOS CI checks",
       "kind": "review",
       "plain": "Review HOS 129 Percy Spencer Microwave Oven topic brief and evidence on HOS PR #724",
       "rerouted_from": {
@@ -300851,11 +300856,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-22T08:40Z",
+        "at": "2026-11-22T08:45Z",
         "by": "gemini",
-        "note": "Claimed J3347; starting Rule-E topic go/no-go review for HOS:129"
+        "note": "Verified all 15 HOS:129 files on PR #724 and OWB PR #1156, raw JSON evidence (neighbours PASS 3/3 >=1M incl. TED-Ed, pub"
       },
       "taskKeys": [
         "HOS:129"
