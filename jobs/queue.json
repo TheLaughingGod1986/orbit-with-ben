@@ -303713,13 +303713,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-22T16:03Z",
-      "eta": "2026-11-22T18:03Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-22T16:02Z",
-      "result": "",
+      "result": "parked for Chief: J3365 dependency condition NOT satisfied at 2026-11-22T16:07Z. J3372 remains blocked on Mini CDP 9222 HOS Studio renderer timeout (PR #1175 at 96fddf7d99 has all 45 reach rows null/unknown; J3373 Chief ruling PR #1176 at 9963fd5a79 retained J3372 input hold until 2026-11-22T17:45:00Z; THUMB_LEDGER.json has no VbPubYd6Fbs row). PR #1170 remains open at bf6f0fa491 with compilation shelf image still unresolved. Recording wait --recheck J3374 on J3365 requires elected Chief (Codex); please run jobs.py wait J3365 --agent codex --type dependency --recheck J3374 --check-at 2026-11-22T18:30:00Z and close J3374.",
       "history": [
         {
           "at": "2026-11-22T16:02Z",
@@ -303750,6 +303750,11 @@
           "at": "2026-11-22T16:07Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Condition UNMET: J3372 still blocked on Studio renderer timeout until 17:45Z (J3373/PR #1176); wait --recheck is Chief-only"
+        },
+        {
+          "at": "2026-11-22T16:07Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J3365 dependency condition NOT satisfied at 2026-11-22T16:07Z. J3372 remains blocked on Mini CDP 9222 HOS Studio renderer timeout (PR #1175 at 96fddf7d99 has all 45 reach rows null/unknown; J3373 Chief ruling PR #1176 at 9963fd5a79 retained J3372 input hold until 2026-11-22T17:45:00Z; THUMB_LEDGER.json has no VbPubYd6Fbs row). PR #1170 remains open at bf6f0fa491 with compilation shelf image still unresolved. Recording wait --recheck J3374 on J3365 requires elected Chief (Codex); please run jobs.py wait J3365 --agent codex --type dependency --recheck J3374 --check-at 2026-11-22T18:30:00Z and close J3374."
         }
       ],
       "remaining_action": "Park J3374 for elected Chief (Codex) to record wait --recheck J3374 on J3365 and close J3374",
