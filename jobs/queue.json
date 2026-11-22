@@ -305115,9 +305115,14 @@
           "at": "2026-11-22T18:27Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-22T18:29Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Ran 7d RSI/funnel inspect, extracted and watched all 3 40s proxy clips (0:00-0:40, 1:16-1:56, 7:35-8:15) with moving video+audio"
         }
       ],
-      "remaining_action": "Inspect RSI/funnel metrics, check Studio/snapshot data, and locate 026 master MP4",
+      "remaining_action": "Verify snapshot/studio_ctr/Shorts-funnel numbers and write 05_Analytics/owb/autopsy/c5AdqQsnnys_7d.md in a clean worktree",
       "due": "2026-11-23T06:02:00Z",
       "kind": "review",
       "model": "gemini-argon",
@@ -305128,10 +305133,11 @@
       "autopsy": "c5AdqQsnnys@7d",
       "plain": "Analyse why viewers stayed or left on \"How Far Is the Nearest Star? (You Can't See It, and It H\" (7d) and write up to 3 fixes",
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-22T18:27Z",
-        "by": "gemini"
+        "at": "2026-11-22T18:29Z",
+        "by": "gemini",
+        "note": "Ran 7d RSI/funnel inspect, extracted and watched all 3 40s proxy clips (0:00-0:40, 1:16-1:56, 7:35-8:15) with moving vid"
       },
       "taskKeys": [
         "OWB:026"
