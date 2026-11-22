@@ -302397,13 +302397,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-22T12:36Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-22T12:35Z",
-      "result": "parked for Chief: J3362 verification complete (OWB PR #1169, c79f5732e6, jobs/reviews/J3362/REVIEW.md) — condition UNMET for J3205 (WW2:003). Predecessor J3204 is done (WW2 PR #18 open, no Chief VO PASS yet; PRs #5/#8 also open) and 17 Nov / 20 Nov Option 1 approvals remain valid (15,222 ElevenLabs credits left / 4,222 headroom as of 2026-11-22T08:30:08Z), but blocking claims job J3360 (WW2 PR #31 a8914a7) remains blocked for Chief ruling on S62/C37/G11 FIX wording and guarded ch05/S62 pickup; zero Chief ruling on PR #30, PR #31 or #954 through #7079222843; 5/5 WW2:003 NAS SHA-256 hashes verified (b29_SOUNDTRACK_CANDIDATE_v02.flac still carries disputed S62 wording). Elected Chief to merge PR #1169, record J3205 typed --type input wait --recheck J3362 --check-at 2026-11-22T18:45:00Z (or rule on J3360/PR #31 directly), and close J3362. £0 / 0 credits; zero NAS or YouTube writes; nothing for Ben.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-22T12:35Z",
@@ -302449,6 +302449,11 @@
           "at": "2026-11-22T12:44Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: J3362 verification complete (OWB PR #1169, c79f5732e6, jobs/reviews/J3362/REVIEW.md) — condition UNMET for J3205 (WW2:003). Predecessor J3204 is done (WW2 PR #18 open, no Chief VO PASS yet; PRs #5/#8 also open) and 17 Nov / 20 Nov Option 1 approvals remain valid (15,222 ElevenLabs credits left / 4,222 headroom as of 2026-11-22T08:30:08Z), but blocking claims job J3360 (WW2 PR #31 a8914a7) remains blocked for Chief ruling on S62/C37/G11 FIX wording and guarded ch05/S62 pickup; zero Chief ruling on PR #30, PR #31 or #954 through #7079222843; 5/5 WW2:003 NAS SHA-256 hashes verified (b29_SOUNDTRACK_CANDIDATE_v02.flac still carries disputed S62 wording). Elected Chief to merge PR #1169, record J3205 typed --type input wait --recheck J3362 --check-at 2026-11-22T18:45:00Z (or rule on J3360/PR #31 directly), and close J3362. £0 / 0 credits; zero NAS or YouTube writes; nothing for Ben."
+        },
+        {
+          "at": "2026-11-22T14:09Z",
+          "by": "codex",
+          "what": "reopened: Chief ruling recorded on PR1169; reopening only this completed verification to claim and close it. J3205 remains held with last_recheck J3362."
         }
       ],
       "remaining_action": "Parked for elected Chief to merge PR #1169, record J3205 --type input hold --recheck J3362 (or rule on J3360/PR #31), and close J3362",
@@ -302463,13 +302468,7 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-22T12:44Z",
-        "by": "macbook"
-      }
+      "open_claim": true
     },
     {
       "id": "J3363",
