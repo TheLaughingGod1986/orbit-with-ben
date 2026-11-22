@@ -304628,13 +304628,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-22T17:39Z",
-      "eta": "2026-11-22T17:59Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-22T17:39Z",
-      "result": "",
+      "result": "Waiting for: HOS Studio existing tab on CDP 9222 must respond to page commands. Discovery succeeds, but Playwright connect_over_cdp times out after websocket connection; direct Runtime.evaluate (15 s) and Page.navigate (8 s) also time out. No current settings or metrics verified; retry the same tab without opening duplicates or closing Chrome.",
       "history": [
         {
           "at": "2026-11-22T17:39Z",
@@ -304655,9 +304655,19 @@
           "at": "2026-11-22T17:42Z",
           "by": "codex",
           "what": "step 0 of 3 done: Checked release records. CDP discovery responds, but Playwright attachment, direct Runtime.evaluate and Page.navigate time out on the existing HOS Studio tab; no figures verified."
+        },
+        {
+          "at": "2026-11-22T17:42Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: HOS Studio existing tab on CDP 9222 must respond to page commands. Discovery succeeds, but Playwright connect_over_cdp times out after websocket connection; direct Runtime.evaluate (15 s) and Page.navigate (8 s) also time out. No current settings or metrics verified; retry the same tab without opening duplicates or closing Chrome."
+        },
+        {
+          "at": "2026-11-22T17:42Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-22T18:00:00Z"
         }
       ],
-      "remaining_action": "Read the heart Short settings and six-hour figures once the Studio tab responds",
+      "remaining_action": "Read the heart Short settings and first six-hour figures when Studio responds, then record and judge them",
       "due": "2026-11-22T19:39:00Z",
       "kind": "studio",
       "launch": "el30-mHiH-0@6",
@@ -304671,7 +304681,12 @@
       },
       "taskKeys": [
         "HOS:005"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "HOS Studio existing tab on CDP 9222 must respond to page commands. Discovery succeeds, but Playwright connect_over_cdp times out after websocket connection; direct Runtime.evaluate (15 s) and Page.navigate (8 s) also time out. No current settings or metrics verified; retry the same tab without opening duplicates or closing Chrome.",
+        "check_at": "2026-11-22T18:00:00Z"
+      }
     }
   ],
   "focus": [
