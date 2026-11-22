@@ -1769,6 +1769,49 @@
         "evidence": "jobs/reviews/J3382/REVIEW.md",
         "conditions": "J3307 completed; fresh matching finished report and no running test; unchanged live A and title"
       }
+    },
+    {
+      "id": "T044",
+      "status": "done",
+      "started": "2026-11-05",
+      "ended": "2026-11-19",
+      "readBack": "2026-11-22",
+      "channel": "hos",
+      "video": "VbPubYd6Fbs",
+      "title": "The Willow Tree That Was Made of Air",
+      "job": "J0958 / J3372",
+      "test_type": "title_and_thumbnail",
+      "experiment_identity": {
+        "started_at_local": "2026-11-05T18:00:00",
+        "finished_at_local": "2026-11-19T18:58:00",
+        "timezone": "Europe/London (UTC on both dates)",
+        "opaque_id": null
+      },
+      "maker_source": "HOS 006 08_Thumbnail/THUMBS_INDEX_v01.json (J0869): maker gemini; both existing assets, not newly generated.",
+      "a": {
+        "maker": "gemini",
+        "file": "Selected/hos_006_thumb_A_wood_from_sky_v01.jpg",
+        "sha256": "904d2f58be22be993fb36e9c86997d00e239649e9f4b576ccebe4703c83dd0f0",
+        "title": "The Willow Tree That Was Made of Air",
+        "hook": "WOOD FROM SKY?"
+      },
+      "b": {
+        "maker": "gemini",
+        "file": "Selected/hos_006_thumb_B_do_plants_eat_soil_v01.jpg",
+        "sha256": "ee5f2605520a0155f146d26700d41c99d47b45596457f84d9692415fe15360c4",
+        "title": "Where Does a Tree's Weight Come From?",
+        "hook": "DO PLANTS EAT SOIL?"
+      },
+      "result": {
+        "winner": "draw",
+        "status": "NOT_ENOUGH_DATA",
+        "wt_a": null,
+        "wt_b": null,
+        "read": "2026-11-22",
+        "impressions": null,
+        "note": "Studio: Not enough impressions to declare a winner. Both watch-time shares displayed as em dashes; no experiment CTR or impressions shown. A remains visible to all viewers. Finished report preserved. Exact 28-day reach is separate and cannot establish a test winner.",
+        "evidence": "05_Analytics/weekly_thumb_audit/HOS/2026-11-22_evidence/J3372_studio_readback.json"
+      }
     }
   ]
 }
