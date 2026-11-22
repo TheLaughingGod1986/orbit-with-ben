@@ -306270,10 +306270,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-22T21:45Z",
-      "eta": "2026-11-22T23:45Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-22T21:14Z",
       "result": "",
@@ -306307,6 +306307,11 @@
           "at": "2026-11-22T21:49Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR 1193 merged; main readback confirms corrected stage, no stale claim, J1272 done and J0317 dependency hold unchanged."
+        },
+        {
+          "at": "2026-11-22T21:50Z",
+          "by": "codex",
+          "what": "released: Chief returned to Claude at 21:50Z. PR 1193 merged (94c7d295d4): J1272 receipt/registry and blocked stage reconciled. Completion guard exposed J0317 empty film/stage despite OWB:027 tag; minimal correction PR 1194 sets 027/upload, preserving J3394 dependency and hold. 26 handoff tests plus explicit completion check pass. Claude: review/merge PR 1194 against main, verify handoff, then close J3393. No new media approval or YouTube changes."
         }
       ],
       "remaining_action": "Earth upload records reconciled; Related links remain with their existing held job",

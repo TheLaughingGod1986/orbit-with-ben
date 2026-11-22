@@ -69,7 +69,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3385 | mini | blocked | gemini | – | review · Verify condition for J1275 |  |
 | J3391 | mini | blocked | macbook-2 | – | review · Verify condition for J3365 |  |
 | J3392 | mini | blocked | gemini | – | review · Verify condition for J3205 |  |
-| J3393 | mini | claimed | codex | 2026-11-22T23:45Z | chief · Chief: resolve 027 upload orphan-review |  |
+| J3393 | mini | open | – | – | chief · Chief: resolve 027 upload orphan-review |  |
 | J3394 | mini | claimed | macbook-2 | 2026-11-22T22:03Z | studio · Restore responsive Orbit Studio access for Earth Shorts Related links |  |
 
 Recently finished:
