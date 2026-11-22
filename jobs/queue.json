@@ -299254,10 +299254,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-22T01:45Z",
+      "eta": "2026-11-22T03:45Z",
       "created_by": "gemini",
       "created_at": "2026-11-21T22:26Z",
       "result": "",
@@ -299326,6 +299326,11 @@
           "at": "2026-11-22T01:44Z",
           "by": "gemini",
           "what": "reopened: J3337 COVER v02 KEEP (PR #1147 merged 2a9d453f9f; jobs/reviews/J3337/REVIEW.md PR #1149 f09be0e386); locked v01 video + cover_v02 staged to OWB UAT and WATCH_FULL (SHA-256 verified); arming Ben's watch"
+        },
+        {
+          "at": "2026-11-22T01:45Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Wait for J3337 opaque cover_v02.jpg, then Chief checks cover_v02 and stages locked v01 video + cover_v02 to OWB UAT / WATCH_FULL + jobs.py awaits J3331 for Ben's watch",
@@ -299333,7 +299338,15 @@
       "kind": "assembly",
       "plain": "Record the voice-over and build the 7 Dec NASA Roman Telescope First Images dated-event Short from free NASA footage for Thursday 3 Dec",
       "mini_only": true,
-      "escalated_at": "2026-11-22T01:08Z"
+      "escalated_at": "2026-11-22T01:08Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-22T01:45Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3332",
