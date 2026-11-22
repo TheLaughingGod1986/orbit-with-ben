@@ -306634,9 +306634,14 @@
           "at": "2026-11-22T22:20Z",
           "by": "codex",
           "what": "step 1 of 3 done: Root cause confirmed: J0317 has OWB:027 display tag but empty film/stage. Existing PR 1194 fixes exactly this while preserving its hold."
+        },
+        {
+          "at": "2026-11-22T22:22Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: PR 1194 merged: J0317 now has film 027 and stage upload; 39 handoff and hygiene tests pass; hold unchanged."
         }
       ],
-      "remaining_action": "Validate and merge the existing correction linking the Earth Shorts job to its film",
+      "remaining_action": "Verify the merged Earth upload handoff and close this repair",
       "kind": "chief",
       "handoff": {
         "film": "027",
@@ -306645,11 +306650,11 @@
         "signature": "630f7b04ffe23172b607"
       },
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-22T22:20Z",
+        "at": "2026-11-22T22:22Z",
         "by": "codex",
-        "note": "Root cause confirmed: J0317 has OWB:027 display tag but empty film/stage. Existing PR 1194 fixes exactly this while pres"
+        "note": "PR 1194 merged: J0317 now has film 027 and stage upload; 39 handoff and hygiene tests pass; hold unchanged."
       },
       "taskKeys": [
         "OWB:027"
