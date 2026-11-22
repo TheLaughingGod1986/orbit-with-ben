@@ -306639,9 +306639,14 @@
           "at": "2026-11-22T22:22Z",
           "by": "codex",
           "what": "step 2 of 3 done: PR 1194 merged: J0317 now has film 027 and stage upload; 39 handoff and hygiene tests pass; hold unchanged."
+        },
+        {
+          "at": "2026-11-22T22:23Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Main completion guard passes, no 027/upload orphan remains, J0317 stays blocked behind J3394 with J3395 review, and upload is not marked done."
         }
       ],
-      "remaining_action": "Verify the merged Earth upload handoff and close this repair",
+      "remaining_action": "Repair verified; existing review owns the remaining Earth Shorts links",
       "kind": "chief",
       "handoff": {
         "film": "027",
@@ -306650,11 +306655,11 @@
         "signature": "630f7b04ffe23172b607"
       },
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-22T22:22Z",
+        "at": "2026-11-22T22:23Z",
         "by": "codex",
-        "note": "PR 1194 merged: J0317 now has film 027 and stage upload; 39 handoff and hygiene tests pass; hold unchanged."
+        "note": "Main completion guard passes, no 027/upload orphan remains, J0317 stays blocked behind J3394 with J3395 review, and uplo"
       },
       "taskKeys": [
         "OWB:027"
