@@ -300100,13 +300100,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-22T03:50Z",
-      "eta": "2026-11-22T04:50Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-22T02:57Z",
-      "result": "",
+      "result": "Acting-Chief KEEP by gemini (technical audit only; ruling 10819a677a): 277 entries (169 OWB, 108 HOS; 11 net new post-J3104) and 808 raw sidecars reconciled 1-to-1 with 0 mismatches; 10/10 new media SHA-256 and live mtime freshness verified; 0 current_newest FAILs (all 27 fail indicators on 8 superseded cuts); 73/73 surviving baseline partial-music newest entries verified reconciled in J3128; 0 missed studio-live exports; 0 repair jobs needed. HOS PR #722 merged as 19bd5503070f; OWB/HOS main copies byte-identical (inventory 21601432961a, report 0fbf65d1fa06). All 3,505 warnings and independent film/date/credit/Ben-watch holds preserved. No film-stage or publishing approval; no audio/motion perception; spend £0.",
       "history": [
         {
           "at": "2026-11-22T02:57Z",
@@ -300167,6 +300167,11 @@
           "at": "2026-11-22T03:50Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-22T03:50Z",
+          "by": "gemini",
+          "what": "done: Acting-Chief KEEP by gemini (technical audit only; ruling 10819a677a): 277 entries (169 OWB, 108 HOS; 11 net new post-J3104) and 808 raw sidecars reconciled 1-to-1 with 0 mismatches; 10/10 new media SHA-256 and live mtime freshness verified; 0 current_newest FAILs (all 27 fail indicators on 8 superseded cuts); 73/73 surviving baseline partial-music newest entries verified reconciled in J3128; 0 missed studio-live exports; 0 repair jobs needed. HOS PR #722 merged as 19bd5503070f; OWB/HOS main copies byte-identical (inventory 21601432961a, report 0fbf65d1fa06). All 3,505 warnings and independent film/date/credit/Ben-watch holds preserved. No film-stage or publishing approval; no audio/motion perception; spend £0."
         }
       ],
       "remaining_action": "Parked for independent Chief review of OWB commit 89a6ef5b2c and HOS PR #722",
@@ -300184,7 +300189,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "jobs/reviews/J3340/REVIEW.md"
     },
     {
       "id": "J3341",
