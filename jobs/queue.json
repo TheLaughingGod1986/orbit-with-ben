@@ -302211,13 +302211,13 @@
       "stage": "sources",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-22T14:22Z",
-      "eta": "2026-11-22T16:22Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-22T12:05Z",
-      "result": "",
+      "result": "Chief FIX: WW2 PR35 merged; exact Other Causes wording locked, S51a unsupported causal clause removed. J3370 guarded narration/source correction -> J3371 G11/timing -> J3205 assembly; parent held until both done, verify 2026-11-22T18:45Z. PR31 superseded without overwriting assembly handoffs. No media changes, spend or film PASS.",
       "history": [
         {
           "at": "2026-11-22T12:05Z",
@@ -302278,6 +302278,11 @@
           "at": "2026-11-22T14:22Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-22T14:23Z",
+          "by": "codex",
+          "what": "done: Chief FIX: WW2 PR35 merged; exact Other Causes wording locked, S51a unsupported causal clause removed. J3370 guarded narration/source correction -> J3371 G11/timing -> J3205 assembly; parent held until both done, verify 2026-11-22T18:45Z. PR31 superseded without overwriting assembly handoffs. No media changes, spend or film PASS."
         }
       ],
       "remaining_action": "J3362 follow-up: rule on exact sourced S62/G11 wording; fix PR31 base to main safely; queue guarded pickup and link J3205 dependency. No new generic review.",
@@ -302301,7 +302306,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/35"
     },
     {
       "id": "J3361",
