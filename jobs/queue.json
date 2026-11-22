@@ -301517,18 +301517,28 @@
           "at": "2026-11-22T09:52Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J3356; starting read-only listing check on last 10 live OWB videos"
+        },
+        {
+          "at": "2026-11-22T09:54Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Live YouTube Data API v3 confirmed exact last 10 public videos (2YiV_zDgLJg through uhZSRcvngvE; 6bbbvfCx6zY still Private for 18:00Z today)"
         }
       ],
-      "remaining_action": "Identify last 10 live OWB videos and gather API/Studio/cut metadata",
+      "remaining_action": "Verify live descriptions, URLs, chapters, end screen, and Shorts Related pills across all 10 public videos",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-22T09:52Z",
+        "at": "2026-11-22T09:54Z",
         "by": "gemini",
-        "note": "Claimed J3356; starting read-only listing check on last 10 live OWB videos"
-      }
+        "note": "Live YouTube Data API v3 confirmed exact last 10 public videos (2YiV_zDgLJg through uhZSRcvngvE; 6bbbvfCx6zY still Priva"
+      },
+      "taskKeys": [
+        "OWB:024",
+        "OWB:025",
+        "OWB:026"
+      ]
     }
   ],
   "focus": [
