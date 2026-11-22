@@ -1,5 +1,5 @@
 {
-  "next_id": 3371,
+  "next_id": 3372,
   "jobs": [
     {
       "id": "J0001",
@@ -303154,6 +303154,35 @@
       "kind": "vo",
       "plain": "Correct the bomber loss narration in the third WW2 film",
       "mini_only": true
+    },
+    {
+      "id": "J3371",
+      "title": "WW2 003: rebuild loss graphic and cues for corrected narration",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "J3360 acting-Chief FIX ruling: WW2 main 07_Edit/C37_CHIEF_RULING_v01.md and J3205_HANDOFF_v10.md, PR35. After J3370's corrected voice/alignment is verified, rebuild G11 as a new version with exact Table165 categories: 414 combat-mission B-29 losses Jun1944-Aug1945, 267 Other Causes (64.5%), 147 Enemy Action (35.5%). Enemy subtotals 74 aircraft, 54 anti-aircraft, 19 both may be shown. No engine-fire/accident/mechanical/weather/unknown enumeration or cause icons for 267; table does not subdivide it. Footer AAF Statistical Digest (Dec1945), Table165 p261. Preserve old graphic/source files and original Gemini findings.\n\nUse the corrected Scribe timings, regenerate affected graphic cues, validate new graphic duration/readability and caption-to-voice consistency, and record output hashes in the manifest and a new J3205 handoff. Reconcile source/footer/description records with the exact ruling. Merge main into the PR30-derived assembly branch without losing handoffs v07-v09. No paid generation or voice spend, no film PASS or upload. Record concrete completion evidence; J3205 remains blocked until J3370 and this graphic/cue correction are both done, then Chief condition verification may release it for remaining archive/assembly/QA work.\n",
+      "ref": "",
+      "film": "WW2:003",
+      "stage": "edit",
+      "after": "J3370",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-22T14:21Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-22T14:21Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Rebuild the loss graphic and its timing after the corrected narration",
+      "kind": "chart",
+      "plain": "Correct the bomber loss graphic to match the verified narration"
     }
   ],
   "focus": [
