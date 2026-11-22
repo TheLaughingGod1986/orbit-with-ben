@@ -51,3 +51,23 @@ python3 scripts/jobs.py done J3295 --agent chief \
   --result "Elected HOS Chief accepted J3295 CONDITION NOT MET verification (jobs/reviews/J3295/REVIEW.md), updated J1275 wait (--type dependency, --recheck J3295, check-at 2026-11-22T06:00:00Z), and closed J3295." \
   --git
 ```
+
+---
+
+## 4. Acting Chief Ruling & Fresh Verification (`2026-11-22T00:38Z`–`00:41Z`)
+
+- **Acting Chief:** `gemini` (`chief_relay.py status` verified `Chief: Gemini` UP; `claude` down until `2026-11-22T07:50:00Z`, `chief` / Grok Bot down until `2026-11-22T00:55:22Z`, `codex` down until `2026-11-24T23:26:00Z`).
+- **Fresh State Verified on HOS `main` (`b85740e7`) & NAS:**
+  1. **HOS PR `#389` & `lint:package`:** Still intact. Read-only `npm run lint:package -- --film 009` and `--film 010` both **PASS** (`0` errors; non-blocking captions/title-length warnings only). Both descriptions retain all 8 Sources.
+  2. **HOS 009 (`009_The-Falling-Moon-Gravity`) — progressed, still NOT LOCKED:**
+     - Since `2026-11-21T14:11Z`, HOS PR `#703` (`e1d2e02f`, merged `2026-11-21T17:42:28Z`) re-timed `moon_long_description_v01.txt` Chapters to `0:00 / 1:24 / 2:56 / 4:20 / 6:33` (matching `part_end` `84.44 s`, `176.78 s`, `260.16 s`, `393.86 s`) and wired thumbnails A+B into `PACKAGE_MANIFEST.json`, preserving all 8 Sources. HOS PR `#710` (`7cf83455`) also merged.
+     - `J3314` (`done` `2026-11-21T18:21Z`) produced NAS v03 master `09_Assembly/j2035_v03/hos009_long_master_v03.mp4` (`744f32b7f2f95e75fabf039a345aee6c7c01ab6f304a932ebe7172bd3b3ede55`, leaving v01 `802b5c7e` and v02 `9d8731cb` untouched) with identical `SOURCE_MAP.json` part boundaries (`84.44 / 176.78 / 260.16 / 393.86 s`); HOS PR `#719` (`status.json` update, 5/5 CI green) remains **OPEN**.
+     - `J3315` reopened `J2036` at `2026-11-21T18:30Z`. **`J2036` (v03 master QA & chapter confirmation) and `J2037` (finished pack review & Ben watch card) remain `open`**, and `009/status.json` on `main` still shows `picture: doing`, `edit: doing`, `ben_ok: todo`, `scheduled: todo`.
+  3. **HOS 010 (`010_Alvarez-Clay-Line-Dinosaurs`) — unchanged, NOT LOCKED:**
+     - `010/status.json` remains `picture: doing` (`12/65 plates`, Shorts only; Long Parts 01–05 pending, due `2026-11-22`), `edit: doing` (Shorts A/C only, held on Ben watch in `J2933`; Long Parts 01–05 edit pending picture, due `2026-11-26`), `thumbnails: todo`, `ben_ok: todo`, `scheduled: todo`.
+     - No `09_Assembly/` directory exists on NAS or in git. `clay_long_description_v01.txt` retains provisional Chapters (`0:00 / 1:29 / 2:49 / 4:10 / 5:54`) and 8 Sources.
+- **Ruling (`gemini`, Acting Chief):** **CONDITION NOT MET.**
+  - Keep `J1275` blocked (`--type dependency --recheck J3295`) with next check **`2026-11-22T18:00:00Z`** (gives `J2036`/`J2037` time to lock HOS 009 v03 and aligns with HOS 010's `2026-11-22` picture due date without churning short-interval rechecks).
+  - Merge OWB PR `#1114`, record the wait on `J1275`, and close `J3295`.
+  - Guardrails preserved: `£0` spend, `0` credits, no YouTube/Studio/Buffer/privacy/upload/schedule changes, no audio or moving-video review claimed, `ben_ok` stays `todo` on both films.
+
