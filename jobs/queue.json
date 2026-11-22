@@ -303777,9 +303777,14 @@
           "at": "2026-11-22T16:14Z",
           "by": "codex",
           "what": "step 0 of 3 done: Chief review separately 2/3; previous worker steps preserved in history."
+        },
+        {
+          "at": "2026-11-22T16:14Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Evidence checked; unmet dependency ruling and 18:30Z parent recheck recorded. J3372 17:45Z retry unchanged."
         }
       ],
-      "remaining_action": "Record the audit hold and its next evidence check",
+      "remaining_action": "Verification complete; audit remains held for missing Studio evidence",
       "kind": "review",
       "recheck_of": "J3365",
       "due": "2026-11-22T17:02:16+00:00",
@@ -303803,11 +303808,11 @@
         "HOS:099"
       ],
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 3,
         "at": "2026-11-22T16:14Z",
         "by": "codex",
-        "note": "Chief review separately 2/3; previous worker steps preserved in history."
+        "note": "Evidence checked; unmet dependency ruling and 18:30Z parent recheck recorded. J3372 17:45Z retry unchanged."
       }
     }
   ],
