@@ -25657,10 +25657,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-22T18:54Z",
+      "eta": "2026-11-22T20:54Z",
       "created_by": "cursor",
       "created_at": "2026-10-15T18:18Z",
       "result": "",
@@ -25729,6 +25729,11 @@
           "at": "2026-10-28T23:53Z",
           "by": "claude",
           "what": "reopened: acting Chief (Claude): Studio will not take a private long as Related, as the job already says. Waits until the long is public: not before Sun 22 Nov 18:05 London."
+        },
+        {
+          "at": "2026-11-22T18:54Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "kind": "studio",
@@ -25737,7 +25742,15 @@
       ],
       "escalated_at": "2026-10-22T15:13Z",
       "remaining_action": "Add the Related links to the Earth long video",
-      "not_before": "2026-11-22T18:05Z"
+      "not_before": "2026-11-22T18:05Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-22T18:54Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J0318",
