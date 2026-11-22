@@ -204,15 +204,16 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [How Close Will the Supermoon Get on November 24?](https://youtu.be/HXacmpYkXcA) | 2 d | 43 | 32.4% | too few to judge | 50.7% | too few to judge |
-| [If Voyager Needs 75,000 Years, How Far Is the Nearest Star?](https://youtu.be/dH_yCRmzkMo) | 3 d | 26 | 91.7% | too few to judge | 80.6% | too few to judge |
+| [Will Asteroid 2024 YR4 Hit the Moon in 2032?](https://youtu.be/93JL_IK57EM) | 44 h (early) | 975 | 41.8% | MISS | 81.5% | PASS |
+| [How Close Will the Supermoon Get on November 24?](https://youtu.be/HXacmpYkXcA) | 2 d | 61 | 35.9% | too few to judge | 57.7% | too few to judge |
+| [If Voyager Needs 75,000 Years, How Far Is the Nearest Star?](https://youtu.be/dH_yCRmzkMo) | 3 d | 27 | 92.3% | too few to judge | 79.5% | too few to judge |
 | [How Far From Earth Is Voyager 1 Right Now?](https://youtu.be/9q_OvQ1Rd8Y) | 4 d | 280 | 27.7% | MISS | 104.3% | LOOP |
-| [If You Can't See the Nearest Star, How Far Away Is It?](https://youtu.be/aEfdxex__Bo) | 5 d | 480 | 36.8% | MISS | 151.7% | LOOP |
-| [How Did a Helicopter Fly 72 Times on Mars?](https://youtu.be/RT-ec4_GcOk) | 7 d | 1269 | 50.7% | WATCH | 100.9% | LOOP |
-| [Why Does Pluto's Giant Ice Heart Have Zero Craters?](https://youtu.be/z5V6gIXXYs8) | 8 d | 380 | 39.6% | MISS | 98.7% | PASS |
+| [If You Can't See the Nearest Star, How Far Away Is It?](https://youtu.be/aEfdxex__Bo) | 5 d | 475 | 37.1% | MISS | 151.7% | LOOP |
+| [How Did a Helicopter Fly 72 Times on Mars?](https://youtu.be/RT-ec4_GcOk) | 7 d | 1270 | 50.7% | WATCH | 100.8% | LOOP |
+| [Why Does Pluto's Giant Ice Heart Have Zero Craters?](https://youtu.be/z5V6gIXXYs8) | 8 d | 382 | 39.8% | MISS | 99.0% | PASS |
 | [How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?](https://youtu.be/uhZSRcvngvE) | 9 d | 60 | 43.2% | too few to judge | 59.0% | too few to judge |
 | [Why Did a 90-Day Mars Rover Last 14 Years?](https://youtu.be/B1z2dv7m7Vk) | 10 d | 110 | 52.7% | WATCH | 72.7% | PASS |
 | [What Would Standing on Saturn's Moon Titan Feel Like?](https://youtu.be/ffYKoNVPoqg) | 11 d | 110 | 46.9% | WATCH | 52.0% | WATCH |
 | [Could a Robot Survive a Night on Mars?](https://youtu.be/iyvWYFP_ETA) | 12 d | 1074 | 38.8% | MISS | 62.7% | WATCH |
 
-Stayed to watch: 0 of 7 judged Shorts at 60%+. Average viewed: 5 of 7 at 70%+.
+Stayed to watch: 0 of 8 judged Shorts at 60%+. Average viewed: 6 of 8 at 70%+.

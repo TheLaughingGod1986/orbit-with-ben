@@ -125,11 +125,12 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [How Do Plants Clean the Air?](https://youtu.be/ChbsigHD5_o) | 3 d | 3 | - | no read | 11.4% | too few to judge |
+| [How Does a Blood Pressure Cuff Work?](https://youtu.be/l8bxm9L3zl8) | 44 h (early) | 25 | 36.0% | too few to judge | 67.8% | too few to judge |
+| [How Do Plants Clean the Air?](https://youtu.be/ChbsigHD5_o) | 3 d | 3 | - | no read | 11.3% | too few to judge |
 | [Why Is It Called a Vaccine?](https://youtu.be/xgx2lYHhYZM) | 4 d | 4 | 100.0% | too few to judge | 62.4% | too few to judge |
-| [What Is Dalton's Atomic Theory?](https://youtu.be/xzKoHg0E0_U) | 5 d | 208 | 52.0% | WATCH | 60.3% | WATCH |
+| [What Is Dalton's Atomic Theory?](https://youtu.be/xzKoHg0E0_U) | 5 d | 223 | 51.9% | WATCH | 61.0% | WATCH |
 | [The Blood Vessels Finer Than a Hair](https://youtu.be/Wvjd8g0CpzE) | 6 d | 215 | 14.6% | MISS | 76.6% | PASS |
-| [What Was the Edward Jenner Experiment?](https://youtu.be/cLKDiYP55J8) | 8 d | 43 | 40.9% | too few to judge | 64.9% | too few to judge |
+| [What Was the Edward Jenner Experiment?](https://youtu.be/cLKDiYP55J8) | 8 d | 46 | 43.5% | too few to judge | 67.7% | too few to judge |
 | [One Tight Band Proved Your Blood Goes Round](https://youtu.be/PFj6172YU4Q) | 13 d | 221 | 16.7% | MISS | 61.5% | WATCH |
 
 Stayed to watch: 0 of 3 judged Shorts at 60%+. Average viewed: 1 of 3 at 70%+.
