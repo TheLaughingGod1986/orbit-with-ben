@@ -1,5 +1,5 @@
 {
-  "next_id": 3395,
+  "next_id": 3397,
   "jobs": [
     {
       "id": "J0001",
@@ -25824,6 +25824,11 @@
           "at": "2026-11-22T21:43Z",
           "by": "codex",
           "what": "Chief ruling 22 Nov: INCOMPLETE. J3394 owns bounded Studio browser recovery. Keep J0317 held until responsive DOM/channel evidence is verified; then reopen for fresh long-Public verification and saved/reloaded Related links on OVLv9dxTcpE and emwQsPxnRGM to 6bbbvfCx6zY. Dependency recheck 2026-11-22T23:00:00Z. No unchanged retries. Evidence: job history and thread 7085022021. No YouTube changes this review."
+        },
+        {
+          "at": "2026-11-22T21:53Z",
+          "by": "relay",
+          "what": "condition verification queued: J3395"
         }
       ],
       "kind": "studio",
@@ -25843,7 +25848,8 @@
       "hold": {
         "type": "dependency",
         "condition": "Chief ruling 22 Nov: NOT COMPLETE. J3394 must establish responsive Orbit Studio access and record timestamped DOM/channel evidence. Four connection failures and no saved Related link are verified in history/thread 7085022021. After J3394 completes, Chief verifies evidence and reopens J0317 for fresh Public check and save/reload readback on OVLv9dxTcpE and emwQsPxnRGM to 6bbbvfCx6zY only. No unchanged browser retries.",
-        "check_at": "2026-11-22T23:00:00Z"
+        "check_at": "2026-11-22T22:53:19+00:00",
+        "recheck_task": "J3395"
       }
     },
     {
@@ -306411,6 +306417,71 @@
         "of": 3,
         "at": "2026-11-22T21:48Z",
         "by": "macbook-2"
+      }
+    },
+    {
+      "id": "J3395",
+      "title": "Verify condition for J0317",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0317: Chief ruling 22 Nov: NOT COMPLETE. J3394 must establish responsive Orbit Studio access and record timestamped DOM/channel evidence. Four connection failures and no saved Related link are verified in history/thread 7085022021. After J3394 completes, Chief verifies evidence and reopens J0317 for fresh Public check and save/reload readback on OVLv9dxTcpE and emwQsPxnRGM to 6bbbvfCx6zY only. No unchanged browser retries.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0317 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-22T21:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-22T21:53Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Wait for Studio recovery J3394, then verify and save both Earth Shorts links",
+      "kind": "review",
+      "recheck_of": "J0317",
+      "due": "2026-11-22T22:53:19+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3396",
+      "title": "Chief: resolve 027 upload orphan-blocked",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Resolve recorded workflow gap: {\"film\": \"027\", \"stage\": \"upload\", \"kind\": \"orphan-blocked\", \"signature\": \"630f7b04ffe23172b607\"}. Read the current film status, original job results, approval history and actual evidence. Record a specific PASS/FIX or queue the missing next action with film/stage and dependencies. Unknown records are not approvals. Never mark media approved from a filename, prose lock, or job completion alone. If review needs media, verify on the Mini and perform required listening/viewing. Preserve all Chief/Ben gates, focus priority, holds and scheduling. No paid generation, upload or visibility change is authorized by this repair task. Before closing, resolve the stage state or create a linked successor/correction/review job; otherwise keep this task on a structured hold with a specific condition and next check.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-22T21:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-22T21:53Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief resolves 027 upload handoff and records the next owner/action",
+      "kind": "chief",
+      "handoff": {
+        "film": "027",
+        "stage": "upload",
+        "kind": "orphan-blocked",
+        "signature": "630f7b04ffe23172b607"
       }
     }
   ],
