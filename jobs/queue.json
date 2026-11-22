@@ -299254,13 +299254,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-22T01:45Z",
-      "eta": "2026-11-22T03:45Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-21T22:26Z",
-      "result": "",
+      "result": "Waiting for: HELD ON BEN'S OK (Ben's watch): Chief VIDEO v01 KEEP (jobs/reviews/J3331/REVIEW.md, PR #1145) + COVER v02 KEEP (jobs/reviews/J3337/REVIEW.md, PR #1149 f09be0e386; PR #1147 merged 2a9d453f9f). Locked owb_dated_2026_12_07_roman_first_images_v01.mp4 (SHA ff52475588e5ecee) and roman_2026_12_07_cover_v02.jpg (SHA fecf983184783f57) are staged in OWB UAT and OWB UAT/WATCH_FULL (SHA-256 verified) and the watch card is on the board. Needs Ben's OK by Wed 2 Dec 2026 18:00 London for Thu 3 Dec 2026 11:30 London publish (Related ziKBPJ6FY0U); if missed, do not upload.",
       "history": [
         {
           "at": "2026-11-21T22:26Z",
@@ -299336,9 +299336,19 @@
           "at": "2026-11-22T01:45Z",
           "by": "gemini",
           "what": "waits on Ben: Watch the 7 Dec NASA Roman Telescope First Images dated-event Short v01 (18.2 s) and its rebuilt opaque cover v02 (by 2026-12-02 18:00 London)"
+        },
+        {
+          "at": "2026-11-22T01:45Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: HELD ON BEN'S OK (Ben's watch): Chief VIDEO v01 KEEP (jobs/reviews/J3331/REVIEW.md, PR #1145) + COVER v02 KEEP (jobs/reviews/J3337/REVIEW.md, PR #1149 f09be0e386; PR #1147 merged 2a9d453f9f). Locked owb_dated_2026_12_07_roman_first_images_v01.mp4 (SHA ff52475588e5ecee) and roman_2026_12_07_cover_v02.jpg (SHA fecf983184783f57) are staged in OWB UAT and OWB UAT/WATCH_FULL (SHA-256 verified) and the watch card is on the board. Needs Ben's OK by Wed 2 Dec 2026 18:00 London for Thu 3 Dec 2026 11:30 London publish (Related ziKBPJ6FY0U); if missed, do not upload."
+        },
+        {
+          "at": "2026-11-22T01:45Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-12-02T18:00:00Z"
         }
       ],
-      "remaining_action": "Wait for J3337 opaque cover_v02.jpg, then Chief checks cover_v02 and stages locked v01 video + cover_v02 to OWB UAT / WATCH_FULL + jobs.py awaits J3331 for Ben's watch",
+      "remaining_action": "Wait for Ben's OK on the board by Wed 2 Dec 2026 18:00 London, then upload Private for Thu 3 Dec 2026 11:30 London (Related ziKBPJ6FY0U)",
       "due": "2026-12-02T18:00:00Z",
       "kind": "assembly",
       "plain": "Record the voice-over and build the 7 Dec NASA Roman Telescope First Images dated-event Short from free NASA footage for Thursday 3 Dec",
@@ -299361,6 +299371,11 @@
         "ifNot": "Do not upload or schedule this dated-event Short if approval misses the deadline",
         "title": "What Will NASA's Roman Telescope Reveal on Dec 7?",
         "type": "short"
+      },
+      "hold": {
+        "type": "ben",
+        "condition": "HELD ON BEN'S OK (Ben's watch): Chief VIDEO v01 KEEP (jobs/reviews/J3331/REVIEW.md, PR #1145) + COVER v02 KEEP (jobs/reviews/J3337/REVIEW.md, PR #1149 f09be0e386; PR #1147 merged 2a9d453f9f). Locked owb_dated_2026_12_07_roman_first_images_v01.mp4 (SHA ff52475588e5ecee) and roman_2026_12_07_cover_v02.jpg (SHA fecf983184783f57) are staged in OWB UAT and OWB UAT/WATCH_FULL (SHA-256 verified) and the watch card is on the board. Needs Ben's OK by Wed 2 Dec 2026 18:00 London for Thu 3 Dec 2026 11:30 London publish (Related ziKBPJ6FY0U); if missed, do not upload.",
+        "check_at": "2026-12-02T18:00:00Z"
       }
     },
     {
