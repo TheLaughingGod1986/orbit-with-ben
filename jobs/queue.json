@@ -304319,9 +304319,14 @@
           "at": "2026-11-22T17:11Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Starting J3379: reading J3361 history, approval records, and preparing read-only live YouTube check"
+        },
+        {
+          "at": "2026-11-22T17:13Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Live read-only proof PASS: ek9F61FVYqY is Public since 2026-11-22T17:00:31Z (API + signed-out watch + oEmbed HTTP 200), commentThreads.list HTTP 200 (no longer 403), PLPPi-oWEDYtA still Private with ek9F61FVYqY at pos 0, en-GB captions serving, J3363 thumb B v02 live"
         }
       ],
-      "remaining_action": "Verify whether ek9F61FVYqY is Public and ready for J3361 completion (first comment + playlist PLPPi-oWEDYtA Public)",
+      "remaining_action": "Write verification review jobs/reviews/J3379/REVIEW.md, open OWB PR, report on #954, and park J3379 for elected Chief Codex",
       "kind": "review",
       "recheck_of": "J3361",
       "mini_only": true,
@@ -304336,11 +304341,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-22T17:11Z",
+        "at": "2026-11-22T17:13Z",
         "by": "gemini",
-        "note": "Starting J3379: reading J3361 history, approval records, and preparing read-only live YouTube check"
+        "note": "Live read-only proof PASS: ek9F61FVYqY is Public since 2026-11-22T17:00:31Z (API + signed-out watch + oEmbed HTTP 200), "
       },
       "taskKeys": [
         "WW2:001"
