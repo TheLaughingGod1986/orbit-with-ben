@@ -302001,9 +302001,14 @@
           "at": "2026-11-22T11:58Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Step 2: codex marked up and gpt-6.1-sol test exited 0 (OK). Step 3: claudecode has real Fable limit until Nov 25 10am London, so its down mark stays."
+        },
+        {
+          "at": "2026-11-22T12:01Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Captured before/after chief_relay status, cleared codex and verified gpt-6.1-sol (exit 0, OK), kept claudecode down on real Fable limit until Nov 25 10am London; PR #1168 still OPEN"
         }
       ],
-      "remaining_action": "Check PR #1168 merge state, pull if merged, and capture final chief_relay status",
+      "remaining_action": "Waiting for Chief merge of PR #1168 so Step 4 git pull gets the named-model Codex code onto main",
       "due": "2026-11-22T13:00:00Z",
       "kind": "assembly",
       "mini_only": true,
@@ -302019,11 +302024,11 @@
       "model": "gemini-argon",
       "urgent": 5,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-22T11:58Z",
+        "at": "2026-11-22T12:01Z",
         "by": "gemini",
-        "note": "Step 2: codex marked up and gpt-6.1-sol test exited 0 (OK). Step 3: claudecode has real Fable limit until Nov 25 10am Lo"
+        "note": "Captured before/after chief_relay status, cleared codex and verified gpt-6.1-sol (exit 0, OK), kept claudecode down on r"
       }
     }
   ],
