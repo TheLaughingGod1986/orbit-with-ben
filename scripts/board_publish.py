@@ -90,7 +90,8 @@ def sparse(slug: str) -> list[str]:
     """What this run's read-only copy of a channel's main branch holds: its settings, its film state (where its
     studio/channel.json `pipeline` says that is kept), its uploads register and what channel_check.py reads; plus
     the studio's own files for the channel whose repo carries them."""
-    kept = channels.pipeline(slug)
+    # The studio's own repo (no channel) has no film state of its own: only a channel has a pipeline setting.
+    kept = channels.pipeline(slug) if slug else {}
     films = ["/" + kept["path"]] if kept.get("path") else []
     if kept.get("kind") == "film_status":
         films += FILM_STATUS_SPARSE
