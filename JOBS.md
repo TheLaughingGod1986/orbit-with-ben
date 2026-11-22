@@ -48,7 +48,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3115 | mini | open (after J3114) | – | – | 034 upload · chief · 034 Pluto: final packaging review after J3114 fixes and Ben-gated delivery handoff | J3112,J3114,J2868 |
 | J3119 | mini | open (after J3115) | – | – | 034 upload · studio · Upload the Pluto long master v02 Private and scheduled for Sun 13 Dec 18:00, arm the thumbnail test |  |
 | J3125 | mini | blocked | codex | – | studio · HOS Vaccine test: 24 Nov feed gate and conditional 29 Nov readout |  |
-| J3161 | mini | open (after J3153) | – | – | studio · Supermoon Short: next-morning and full-day performance follow-up |  |
+| J3161 | mini | claimed | macbook-2 | 2026-11-22T10:04Z | studio · Supermoon Short: next-morning and full-day performance follow-up |  |
 | J3178 | mini | blocked | gemini | – | 013 picture · for gemini · qa · `gemini-argon` · HOS 013: continuous playback review of ten unresolved pass-one plates |  |
 | J3205 | mini | open (after J3204) | – | – | WW2:003 edit · for codex · assembly · WW2 pilot 003: picture, maps, edit and thumbnail, to Ben's watch |  |
 | J3231 | cloud | open | – | – | review · Weekly search research (Orbit + Field Order History): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
