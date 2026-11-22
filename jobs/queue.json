@@ -302088,9 +302088,9 @@
       "stage": "",
       "after": "",
       "eta_min": 15,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-22T11:57Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-22T11:56Z",
@@ -302135,6 +302135,11 @@
           "at": "2026-11-22T12:01Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: Steps 1-3 done on Mini (codex UP and gpt-6.1-sol test exited 0 OK; claudecode left down on real Fable limit until Nov 25 10am London). Step 4 awaits Chief merge of PR #1168 (Codex always runs on a named model, checks green), then git pull + status on the Mini."
+        },
+        {
+          "at": "2026-11-22T13:55Z",
+          "by": "codex",
+          "what": "rerouted to codex on gpt-6.1-sol: Chief ruling KEEP recorded in PR 1174: PR 1168 already merged and installed; 86 tests pass; Codex UP. Preserve Claude Code real Fable hold to 2026-11-25T10:00Z. Take only J3359 to record completion."
         }
       ],
       "remaining_action": "Waiting for Chief merge of PR #1168 so Step 4 git pull gets the named-model Codex code onto main",
@@ -302149,8 +302154,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "gemini",
-      "model": "gemini-argon",
+      "for": "codex",
+      "model": "gpt-6.1-sol",
       "urgent": 5,
       "progress": {
         "step": 4,
