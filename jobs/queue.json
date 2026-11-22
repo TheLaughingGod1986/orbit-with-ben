@@ -303525,9 +303525,14 @@
           "at": "2026-11-22T15:32Z",
           "by": "relay",
           "what": "condition verification queued: J3373"
+        },
+        {
+          "at": "2026-11-22T15:50Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-22T17:45:00Z"
         }
       ],
-      "remaining_action": "Read HOS reach and test results after the existing Studio tab responds",
+      "remaining_action": "Verify HOS Studio responds, then collect the missing reach and test results",
       "kind": "studio",
       "plain": "Reading the missing thumbnail results for the History of Science audit",
       "mini_only": true,
@@ -303543,9 +303548,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "Mini existing HOS Studio renderer must answer a bounded text or DOM read. On 22 Nov 14:46Z browser endpoint and target attach worked, but text, DOM, screenshot and navigation timed out. PR #1175 records unknown values; no credential prompt observed. Finish exact-window reach, Willow and three title/test reads before J3365 final pass.",
-        "check_at": "2026-11-22T16:32:47+00:00",
-        "recheck_task": "J3373"
+        "condition": "Existing Mini HOS Studio renderer must answer a bounded text or DOM read. Gemini 15:43Z confirmed browser attach succeeds but renderer reads time out; PR1175 leaves required figures unknown. Next verification may try one bounded reload of the existing Studio tab after checking no active writer; never close Chrome, create duplicate tabs, alter tests or save changes. If still unresponsive retain hold and report exact failure.",
+        "check_at": "2026-11-22T17:45:00Z",
+        "last_recheck": "J3373",
+        "checked_at": "2026-11-22T15:50:16+00:00",
+        "checked_by": "codex"
       }
     },
     {
