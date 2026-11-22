@@ -590,5 +590,55 @@ class PastNotes(unittest.TestCase):
         self.assertEqual(card["fixedNotes"], ["Rebuilt full-screen 1080x1920"])
 
 
+class EarlyOrbitLiveVideos(unittest.TestCase):
+    """J3220 (20 Nov 2026): early live Orbit films (001-019) must link to their public videos, one card per film."""
+
+    EARLY = {
+        "001": "Mo93x0fxB1Q",
+        "002": "3xrxdmaOwJI",
+        "003": "b8-X_FyJnHM",
+        "004": "ziKBPJ6FY0U",
+        "005": "REXYxuLOBoI",
+        "006": "NbW5G1BpPY0",
+        "007": "Yk1tLh23rko",
+        "013": "2fsQcea-voM",
+        "019": "ojk-dfOpAmw",
+        "020": "-jmMROGoZCM",
+    }
+
+    def test_ww2_created_orbit_status_shells_are_removed(self):
+        self.assertFalse((ROOT / "02_Video-Projects/001_Will-We-Ever-Meet-Aliens/status.json").exists())
+        self.assertFalse((ROOT / "02_Video-Projects/002_What-Happens-If-You-Fall-Into-A-Black-Hole/status.json").exists())
+
+    def test_early_live_orbit_films_have_one_live_card_and_no_planned_shorts(self):
+        from kanban_snapshot import release_record
+        owb = [json.loads(p.read_text()) for p in sorted((ROOT / "02_Video-Projects").glob("*/status.json"))]
+        for film in owb:
+            rec = release_record(str(film.get("film", "")))
+            if rec:
+                film["release"] = rec
+        public, _ = vt.public_index(ROOT)
+        blocked_001 = {"id": "J2846", "status": "blocked", "repo": "owb", "taskKeys": ["OWB:001"],
+                       "title": "Studio: test approved ZERO SIGNALS thumbnail for Fermi Paradox (T038)"}
+        out = vt.build_videos(
+            hos={"films": []}, owb=owb, briefs={}, jobs=[blocked_001], checks={},
+            now=datetime(2026, 11, 20, 11, 0, tzinfo=timezone.utc),
+        )
+        videos = out["videos"]
+        for num, vid in self.EARLY.items():
+            key = f"OWB:{num}"
+            by_vid = [v for v in videos if v["type"] == "long" and (v.get("youtube") or {}).get("videoId") == vid]
+            by_key = [v for v in videos if v["key"] == key]
+            self.assertEqual([v["key"] for v in by_vid], [key], msg=f"{key} should be the sole card for {vid}")
+            self.assertEqual(len(by_key), 1, msg=key)
+            card = by_key[0]
+            self.assertEqual((card["lane"], card["youtube"]["state"]), ("done", "live"), msg=key)
+            self.assertEqual(card["youtube"]["publishAt"], public[vid]["publishedAt"], msg=key)
+            self.assertEqual(card["title"], public[vid]["title"], msg=key)
+            self.assertNotIn(f"OWB:YT:{vid}", {v["key"] for v in videos})
+            planned = [v for v in videos if vt.is_planned_short_key(v["key"]) and v.get("parent") == key]
+            self.assertEqual(planned, [], msg=f"live film {key} must not sprout planned Shorts")
+
+
 if __name__ == "__main__":
     unittest.main()
