@@ -179092,13 +179092,13 @@
       "stage": "edit",
       "after": "J2035",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-22T11:17Z",
-      "eta": "2026-11-22T13:17Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
-      "result": "",
+      "result": "Worker technical QA pack complete for HOS 009 long master v03 (744f32b7f2f95e75fabf039a345aee6c7c01ab6f304a932ebe7172bd3b3ede55, 519.000 s, 15568 frames; live Mini+NAS SHA-256 parity verified; v01 802b5c7e and v02 9d8731cb untouched on NAS; 5/5 locked VO MP3s, v04_synth score 151ba46a, J2631/J2632 r4 code graphics, J3262 thumbs A+B 7/7 parity verified). 4/4 unmodified gates independently re-run PASS (picture_qa 0/92 fail, polish_gate 0/92 fail / 5 inspected low-detail warns, music_gate PASS, sfx_kit level PASS VO -20.8 / SFX -41.4 LUFS, 14 hits; ebur128 -20.8 LUFS, Peak -4.0 dBFS, 0 silences >=1.5 s; reviewed_ok unchanged 2 Grok entries). E2 opening (8x 3.9925 s cuts, 0:05-0:15 proof, 26.15-29.75 s THOUSANDS OF YEARS early DATA+SCALE) and 33 Teach cards (0 overlaps/bleeds/drifts, all 4 v02 findings fixed) verified across 29 inspected stills + thumbs A/B. HOS PR #731 (a06e42d3, 7/7 CI green, left unmerged for Chief/J2037; supersedes PR #719 status.json) adds honest making-of line to moon_long_description_v01.txt (exact v03 chapters 0:00/1:24/2:56/4:20/6:33 and 8 Sources intact; 010 untouched for J1275), delivers 07_Edit-Project/J2036_V03_QA_2026-11-22.md, reconciles production-status.md header without inventing sign-off, and updates status.json (ben_ok/scheduled remain todo); lint:package PASS and check_all.sh ALL CHECKS PASS. HOS desk #7078486262 and OWB thread posted. Separate Shorts J0862/J2171 untouched (PR #718 open, J3311 held). Not a film PASS; full moving-video/audio review assigned to Ben final watch (J2037). £0 / 0 credits; no upload/schedule/privacy/Buffer changes.",
       "history": [
         {
           "at": "2026-11-04T16:56Z",
@@ -179299,6 +179299,11 @@
           "at": "2026-11-22T11:30Z",
           "by": "gemini",
           "what": "step 5 of 5 done: HOS PR #731 (a06e42d3) 7/7 CI green (left unmerged); HOS desk #7078486262 and OWB studio thread posted; closing J2036 to unblock J2037"
+        },
+        {
+          "at": "2026-11-22T11:30Z",
+          "by": "gemini",
+          "what": "done: Worker technical QA pack complete for HOS 009 long master v03 (744f32b7f2f95e75fabf039a345aee6c7c01ab6f304a932ebe7172bd3b3ede55, 519.000 s, 15568 frames; live Mini+NAS SHA-256 parity verified; v01 802b5c7e and v02 9d8731cb untouched on NAS; 5/5 locked VO MP3s, v04_synth score 151ba46a, J2631/J2632 r4 code graphics, J3262 thumbs A+B 7/7 parity verified). 4/4 unmodified gates independently re-run PASS (picture_qa 0/92 fail, polish_gate 0/92 fail / 5 inspected low-detail warns, music_gate PASS, sfx_kit level PASS VO -20.8 / SFX -41.4 LUFS, 14 hits; ebur128 -20.8 LUFS, Peak -4.0 dBFS, 0 silences >=1.5 s; reviewed_ok unchanged 2 Grok entries). E2 opening (8x 3.9925 s cuts, 0:05-0:15 proof, 26.15-29.75 s THOUSANDS OF YEARS early DATA+SCALE) and 33 Teach cards (0 overlaps/bleeds/drifts, all 4 v02 findings fixed) verified across 29 inspected stills + thumbs A/B. HOS PR #731 (a06e42d3, 7/7 CI green, left unmerged for Chief/J2037; supersedes PR #719 status.json) adds honest making-of line to moon_long_description_v01.txt (exact v03 chapters 0:00/1:24/2:56/4:20/6:33 and 8 Sources intact; 010 untouched for J1275), delivers 07_Edit-Project/J2036_V03_QA_2026-11-22.md, reconciles production-status.md header without inventing sign-off, and updates status.json (ben_ok/scheduled remain todo); lint:package PASS and check_all.sh ALL CHECKS PASS. HOS desk #7078486262 and OWB thread posted. Separate Shorts J0862/J2171 untouched (PR #718 open, J3311 held). Not a film PASS; full moving-video/audio review assigned to Ben final watch (J2037). £0 / 0 credits; no upload/schedule/privacy/Buffer changes."
         }
       ],
       "remaining_action": "Hand off J2036 v03 technical pack and HOS PR #731 to J2037",
@@ -179322,7 +179327,8 @@
         "at": "2026-11-22T11:30Z",
         "by": "gemini",
         "note": "HOS PR #731 (a06e42d3) 7/7 CI green (left unmerged); HOS desk #7078486262 and OWB studio thread posted; closing J2036 to"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/731"
     },
     {
       "id": "J2037",
