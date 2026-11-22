@@ -1,0 +1,68 @@
+{
+  "job": "J3394",
+  "for_job": "J0317",
+  "by": "macbook-2",
+  "verified_at": "2026-11-22T21:47:56Z",
+  "machine": "MacBook",
+  "cdp_port": 9223,
+  "films": [
+    "OWB:027"
+  ],
+  "result": "Responsive Orbit Studio access verified on MacBook (CDP 9223) via cdp_tabs.reuse_page; no YouTube mutations performed.",
+  "browser": {
+    "version": "Chrome/157.0.8103.79",
+    "left_running": true,
+    "profiles_altered": false,
+    "tabs_before_count": 3,
+    "tabs_after_count": 3,
+    "same_tab_ids": true,
+    "existing_studio_tab_id": "8A9E2F211C963F35D4B2E8AFFD33B157"
+  },
+  "competing_writers_check": {
+    "claimed_studio_jobs": [
+      "J3394"
+    ],
+    "port_9223_clients_before": "LISTEN only (no competing CDP client connected)",
+    "other_macbook_slots_active": false
+  },
+  "probe": {
+    "method": "Playwright 1.60.0 connect_over_cdp -> cdp_tabs.reuse_page(ctx, 'studio.youtube.com') -> read-only page.evaluate",
+    "timings_s": {
+      "connect": 0.575,
+      "reuse_page": 0.617,
+      "settled_dom_evaluate": 2.633
+    },
+    "tab_wake_finding": "Initial immediate page.evaluate after reuse_page raised Execution context was destroyed because Chrome woke/reloaded the sleeping Studio tab on bring_to_front (edit?sttick=0 -> edit -> load). Waiting ~2 s after reuse_page for the wake navigation to settle returned the full live DOM cleanly in 2.633 s total with no navigation initiated by this worker."
+  },
+  "studio_dom_read": {
+    "url": "https://studio.youtube.com/video/6bbbvfCx6zY/edit",
+    "document_title": "Video details - YouTube Studio",
+    "ready_state": "complete",
+    "channel_name": "Orbit With Ben",
+    "channel_id": "UC_esArsDKd3GJvOkeO0DUog",
+    "channel_link": "/channel/UC_esArsDKd3GJvOkeO0DUog",
+    "video_id": "6bbbvfCx6zY",
+    "video_title": "What If Earth Stopped Spinning? (It's Already Slowing Down)",
+    "video_urls": [
+      "https://www.youtube.com/watch?v=6bbbvfCx6zY",
+      "https://youtu.be/6bbbvfCx6zY"
+    ],
+    "visibility_text_observed": "Public",
+    "ab_title_test_observed": "Running (What If Earth Stopped Spinning? (It's Already Slowing Down) vs Earth's Day Used to Be 22 Hours (And It's Still Getting Longer)); untouched",
+    "unsaved_edits_check": {
+      "save_disabled": true,
+      "undo_disabled": true,
+      "has_unsaved_edits": false
+    }
+  },
+  "youtube_mutations_sent": false,
+  "excluded_video_untouched": "dM1OgGPAYvw",
+  "spend_gbp": 0,
+  "j0317_macbook_queue_routing": {
+    "ready_for_chief_verification_and_reopen": true,
+    "j0317_current_needs": "mini",
+    "macbook_studio_ok_with_9223": false,
+    "studio_block_false_positive": "Passive sentence 'Buffer still waits until each Short is public, then points at the full film.' in J0317 body matches STUDIO_BLOCK (\\bbuffer\\b) in scripts/jobs.py.",
+    "recommendation_for_chief": "To execute J0317 on this verified MacBook Orbit Studio session through the normal queue (avoiding the Mini's stalled CDP 9223 and the STUDIO_BLOCK false positive), route J0317 with needs=macbook (or create/reopen with needs=macbook and no un-negated Buffer mention). Note for the J0317 runner: wait briefly (~2 s / load settle) after cdp_tabs.reuse_page() in case the Studio tab slept. J0317 still owns fresh long-Public verification plus Related -> 6bbbvfCx6zY on OVLv9dxTcpE and emwQsPxnRGM with save/reload readback; never touch dM1OgGPAYvw."
+  }
+}
