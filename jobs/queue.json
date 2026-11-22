@@ -307139,9 +307139,14 @@
           "at": "2026-11-22T23:29Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J3400; starting verification of J0996 waiting condition"
+        },
+        {
+          "at": "2026-11-22T23:33Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified J0317 done (PR #1199), fresh Mini YouTube API readback confirms 6bbbvfCx6zY Public and OVLv9dxTcpE untouched (560 B, sha256 016c8427), and confirmed macbook_portable(J0996)=True under MACBOOK_CDP=9223 (needs mini_only on reopen)"
         }
       ],
-      "remaining_action": "Inspect J0996, J0317, J3394, and live YouTube/Studio evidence to verify whether J0996 waiting condition is satisfied",
+      "remaining_action": "Write jobs/reviews/J3400/REVIEW.md in clean worktree, run hygiene/handoff tests, open PR, and park J3400 for elected Chief Codex",
       "kind": "review",
       "recheck_of": "J0996",
       "due": "2026-11-23T00:27:57+00:00",
@@ -307155,11 +307160,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-22T23:29Z",
+        "at": "2026-11-22T23:33Z",
         "by": "gemini",
-        "note": "Claimed J3400; starting verification of J0996 waiting condition"
+        "note": "Verified J0317 done (PR #1199), fresh Mini YouTube API readback confirms 6bbbvfCx6zY Public and OVLv9dxTcpE untouched (5"
       },
       "taskKeys": [
         "OWB:027"
