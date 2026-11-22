@@ -302862,17 +302862,22 @@
           "at": "2026-11-22T14:55Z",
           "by": "codex",
           "what": "step 1 of 5 done: Report and pattern corrections drafted. All 43 public JPEG hashes match; 43 thumb_preview renders passed. Within-channel cohorts now flag incomplete samples."
+        },
+        {
+          "at": "2026-11-22T14:58Z",
+          "by": "codex",
+          "what": "step 1 of 5 done: PR1170 corrected at bf6f0fa491: 43 matching public JPEGs, 46 preview renders, three delivered-master frame-0 hash checks, per-channel cohorts with insufficiency flags, preserved J1130 closure. JSON/diff and 13 security tests pass. Original progress kept; full audit not complete."
         }
       ],
-      "remaining_action": "Verify master-frame evidence and finish the corrected audit; exact Studio metrics still await J3372",
+      "remaining_action": "Incorporate J3372 Studio evidence and resolve the exact compilation shelf image before final audit review",
       "kind": "thumb",
       "backlog": "hos-weekly-thumb-audit",
       "progress": {
         "step": 1,
         "of": 5,
-        "at": "2026-11-22T14:55Z",
+        "at": "2026-11-22T14:58Z",
         "by": "codex",
-        "note": "Report and pattern corrections drafted. All 43 public JPEG hashes match; 43 thumb_preview renders passed. Within-channel"
+        "note": "PR1170 corrected at bf6f0fa491: 43 matching public JPEGs, 46 preview renders, three delivered-master frame-0 hash checks"
       },
       "taskKeys": [
         "HOS:001",
