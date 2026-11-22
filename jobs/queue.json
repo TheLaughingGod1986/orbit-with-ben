@@ -177339,13 +177339,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claude",
+      "status": "open",
+      "by": "",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-04T11:48Z",
-      "result": "Waiting for: Sun 22 Nov 2026 18:00Z reached (14 days after 025 long public)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-04T11:48Z",
@@ -177366,6 +177366,11 @@
           "at": "2026-11-22T18:02Z",
           "by": "relay",
           "what": "condition verification queued: J3386"
+        },
+        {
+          "at": "2026-11-22T20:54Z",
+          "by": "codex",
+          "what": "reopened: Chief ruling via J3386: date condition SATISFIED. Accepted merged PR 1185, jobs/reviews/J3386/REVIEW.md, including 18:06:31Z live API public readback and 2026-11-08T18:00:15Z publication; independently matched both analytics hashes and Related receipts. Ben Rule 17 approval remains valid. Resume read-only analysis now. Report the actual analytics cutoff (currently 2026-11-20), use matched views/subscriber periods, disclose the late iyvWYFP_ETA Related link, and do not attribute all RELATED_VIDEO views to Shorts. J0861 concerns 026; use J0124/J0135/J2504/J2519/J2520 for 025. This releases only the date hold, not a test success verdict. If a complete 14-day YTA result is unavailable, label the readout provisional and record an input hold for analytics.through >= 2026-11-22 with next check 2026-11-25T07:00:00Z."
         }
       ],
       "remaining_action": "resume J2020",
@@ -177377,13 +177382,7 @@
           "by": "claude",
           "what": "claimed to record a date/dependency hold"
         }
-      ],
-      "hold": {
-        "type": "date",
-        "condition": "Sun 22 Nov 2026 18:00Z reached (14 days after 025 long public)",
-        "check_at": "2026-11-22T19:02:37+00:00",
-        "recheck_task": "J3386"
-      }
+      ]
     },
     {
       "id": "J2021",
