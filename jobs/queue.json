@@ -303104,13 +303104,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-22T13:08Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-22T13:04Z",
-      "result": "parked for Chief: J3367 verification complete (OWB PR #1171, 8ffe80c0c, jobs/reviews/J3367/REVIEW.md) — condition NOT MET for J2040. J2517 (#793) and J2559 (#795) done; J2007 cancelled; PR #490 remains OPEN draft at f521bcd3f1 (1 comment, 0 reviews); docs/CODEX_ALLOWLIST.md absent from main; thread #954 through #7079558166 and HOS #180 show no operator confirmation or fresh-session scoped acceptance evidence (J3359 restored Codex on gpt-6.1-sol only). MacBook worker could not directly read Mini-local ~/.codex files. Elected Chief to merge PR #1171, optionally re-hash Mini ~/.codex, record jobs.py wait J2040 --type input --recheck J3367 --check-at 2026-11-22T19:15:00Z (or 2026-11-23T13:00:00Z), and close J3367. £0 / 0 credits; nothing new for Ben.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-22T13:04Z",
@@ -303146,6 +303146,11 @@
           "at": "2026-11-22T13:14Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: J3367 verification complete (OWB PR #1171, 8ffe80c0c, jobs/reviews/J3367/REVIEW.md) — condition NOT MET for J2040. J2517 (#793) and J2559 (#795) done; J2007 cancelled; PR #490 remains OPEN draft at f521bcd3f1 (1 comment, 0 reviews); docs/CODEX_ALLOWLIST.md absent from main; thread #954 through #7079558166 and HOS #180 show no operator confirmation or fresh-session scoped acceptance evidence (J3359 restored Codex on gpt-6.1-sol only). MacBook worker could not directly read Mini-local ~/.codex files. Elected Chief to merge PR #1171, optionally re-hash Mini ~/.codex, record jobs.py wait J2040 --type input --recheck J3367 --check-at 2026-11-22T19:15:00Z (or 2026-11-23T13:00:00Z), and close J3367. £0 / 0 credits; nothing new for Ben."
+        },
+        {
+          "at": "2026-11-22T15:14Z",
+          "by": "codex",
+          "what": "reopened: Acting-Chief review only: evidence PR1171 merged; J2040 remains blocked pending recorded condition ruling."
         }
       ],
       "remaining_action": "Parked for elected Chief to merge PR #1171, record J2040 --type input wait --recheck J3367 (and optionally re-verify Mini ~/.codex hashes), and close J3367",
@@ -303160,13 +303165,7 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true,
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-22T13:14Z",
-        "by": "macbook-2"
-      }
+      "open_claim": true
     },
     {
       "id": "J3368",
