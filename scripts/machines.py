@@ -71,6 +71,8 @@ def section(queue: dict, mini_hb: dict | None, macbook_hb: dict | None, at: dt.d
         m = machine_of(ex.get("worker")) or "mini"
         _add(rows[m], str(ex.get("job") or ""), str(ex.get("worker") or ""), str(ex.get("startedAt") or ""), queue)
     if mini_hb:
+        rows["mini"]["idleAlarm"] = mini_hb.get("idleAlarm") or {}
+        rows["mini"]["hardPins"] = mini_hb.get("hardPins") or []
         seen = _t(mini_hb.get("at"))
         note = str(mini_hb.get("note") or "")
         import re

@@ -1954,6 +1954,10 @@
         <span class="meta">${esc(clip(why, 110))}</span></div><span class="chev">›</span></a>` };
     }).sort((a, b) => (rank[a.st] ?? 9) - (rank[b.st] ?? 9));
     const team = teamRows.map(r => r.html).join("");
+    const mini = (((b.machines || {}).machines) || []).find(x => x.id === "mini") || {};
+    const idleAlarm = (mini.idleAlarm || {}).message;
+    const relayWarnings = (idleAlarm ? `<p class="meta" role="alert">${esc(idleAlarm)}</p>` : "") +
+      (mini.hardPins || []).map(line => `<p class="meta">${esc(line)}</p>`).join("");
     const pools = (b.credits || {}).pools || {};
     // Every pool gets two left-to-right bars (Used vs Time) and a monthly plan verdict (Ben, 17 Nov 2026, J2985).
     // Grok Bot shares Cursor's weekly allowance on grok.com/dashboard/billing, so they share one Cursor & Grok card.
@@ -1983,7 +1987,7 @@
       ["Claude", "claude", "claude"], ["Codex", "codex"], ["Cursor & Grok", "cursor", "chief"], ["Gemini", "gemini", "gemini"]]
       .filter(([, id, alias]) => pools[id] || alias).map(([name, id, alias]) => tile(name, id, alias)).join("");
     return `<header class="top"><h1>Agents</h1><a class="more" href="/ai">Details ›</a></header>
-      <p class="meta">AI agents, their status, and usage credits.</p>
+      <p class="meta">AI agents, their status, and usage credits.</p>${relayWarnings}
       ${jobTiles(s.jobs)}
       <div class="chief-card"><span class="dot ${c.agent ? "green" : "red"}"></span><div class="body"><b>Chief: ${esc(c.name || "nobody")} <span class="tag ${c.agent ? "green" : "red"}">${c.agent ? "Coordinating" : "Down"}</span></b>
         <span class="meta">${c.agent ? "Online · coordinating production" : "No Chief up: jobs wait"}</span></div></div>
