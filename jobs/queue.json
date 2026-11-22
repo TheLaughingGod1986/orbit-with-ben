@@ -306629,10 +306629,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-22T22:54Z",
+      "eta": "2026-11-23T00:54Z",
       "created_by": "relay",
       "created_at": "2026-11-22T21:53Z",
       "result": "",
@@ -306681,6 +306681,11 @@
           "at": "2026-11-22T22:54Z",
           "by": "codex",
           "what": "reopened: Elected Chief reviewing completed condition evidence; parent J0317 stays held until ruling recorded."
+        },
+        {
+          "at": "2026-11-22T22:54Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Opened PR #1196 (a7c5f01e90, jobs/reviews/J3395/REVIEW.md, 13/13 hygiene tests PASS); parking Chief decision to merge PR #1195/#1196 and reopen J0317 routed to MacBook",
@@ -306695,7 +306700,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-22T22:54Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3396",
