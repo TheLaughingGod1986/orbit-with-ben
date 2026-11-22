@@ -298088,14 +298088,14 @@
     },
     {
       "id": "J3307",
-      "title": "Chief review: J3302 PR #1118 + exact-file PASS & successor auth for T041-T043 (Europa, Light Speed, Last Star)",
+      "title": "Chief review: rebuilt v02 T041-T043 thumbnails, packaging verification and successor authorization",
       "needs": "cloud",
       "repo": "owb",
-      "body": "Review J3302 weekly OWB thumbnail audit (PR #1118, branch macbook/J3302) and Packaging Panel decision J3306 (05_Analytics/tests/panels/owb-j3302-weekly-2026-11-21/DECISION.md). 1) Review & merge PR #1118 (contains 2026-11-21.md, COMPETITORS.md, DESIGN_REVIEW.md, evidence JSONs, PATTERNS.md, and THUMB_LEDGER.json closing T004/T019 + proposing T041-T043). 2) Issue exact-file PASS (or FIX rebuild instructions) on T041 (NbW5G1BpPY0_B_v01.jpg), T042 (rVqgtkBV3jc_B_v01.jpg), and T043 (REXYxuLOBoI_B_v01.jpg). 3) Decide explicit one-test reversible successor-test authorization over the finished inconclusive Studio reports (T006 on NbW5G1BpPY0, T004 on rVqgtkBV3jc, T016 on REXYxuLOBoI) before any Studio arming job runs.",
+      "body": "J3380 handoff correction, 22 Nov 2026. This replaces the stale v01 review brief; no approval is granted.\nReview the owner-authored PRs #1118 (original audit), #1180 (J3306 panel decision) and #1182 (J3378 rebuilt v02 candidates). J3306 is already done; the executable dependency now names completed rebuild J3378. Resolve overlapping ledger rows by retaining v02 and full v01 history. Do not restore rejected v01 candidates.\nVerify the packaging fixes against all three original critiques and DECISION.md, inspect actual v02 JPEGs at 168x94 with duration badges, verify source/provenance, hashes and required thumbnail gates. Record exact-file PASS or concrete FIX separately for each. Builder completion and colour scores are not creative approval. The manifest and review are in PR #1182 at c44d27c22ace78bf63e4e550e1446412d0555174, under 05_Analytics/weekly_thumb_audit/OWB/2026-11-22_J3378/.\nThis review owns OWB:006 thumbs and also T042/OWB:024 and T043/OWB:005. Preserve the independent existing film-stage states for 024 and 005.\nOnly after a fresh Chief authority check, decide explicit one-test reversible successor-test authorization over the matching finished inconclusive reports T006, T004 and T016. Keep all current gates. J3308-J3310 must retain their dependency on this job and may run only with BOTH exact-file PASS and explicit successor-test authorization. Each Studio job still requires a fresh matching finished report and no running test. Any FIX must have a linked rebuild/review successor before closing; do not release Studio work on a partial decision. No spending, generation, upload, scheduling or visibility change in this review.\n\nT041: /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/006_Could-Life-Exist-Under-The-Ice-Of-Europa/08_Thumbnails/repackage_2026-11/J3302_v02/NbW5G1BpPY0_B_v02.jpg\nSHA-256 901b210f7636309dcff97453f54a08326c12405e12fb7cfd548b0b6792cab9dd; hook 2× EARTH'S WATER\n\nT042: /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/08_Thumbnails/repackage_2026-11/J3302_v02/rVqgtkBV3jc_B_v02.jpg\nSHA-256 7a66560e03fb7959d416db47cdd70aa3a8a76cafe4de5b9e04eee83d3d17aee8; hook EARTH AGES 7×\n\nT043: /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/005_The-Last-Star-In-The-Universe/08_Thumbnails/repackage_2026-11/J3302_v02/REXYxuLOBoI_B_v02.jpg\nSHA-256 c90e92072dccadbb01530ab6e1b4e603722eef57639ab3d035a435e096115ff7; hook OUTLIVES OUR SUN\n",
       "ref": "",
-      "film": "",
-      "stage": "",
-      "after": "J3306",
+      "film": "006",
+      "stage": "thumbs",
+      "after": "J3378",
       "eta_min": 120,
       "status": "open",
       "by": "",
@@ -298109,18 +298109,28 @@
           "at": "2026-11-21T16:37Z",
           "by": "macbook",
           "what": "added"
+        },
+        {
+          "at": "2026-11-22T17:28Z",
+          "by": "codex",
+          "what": "J3380: linked existing review to Europa thumbs, completed J3378 rebuild and v02 evidence; no approval"
         }
       ],
-      "remaining_action": "Chief review: J3302 PR #1118 + exact-file PASS & successor auth for T041-T043 (Europa, Light Speed, Last Star)",
+      "remaining_action": "Review the rebuilt Europa, Light Speed and Last Star thumbnails and decide whether each can enter a test",
       "kind": "chief",
-      "plain": "Review J3302 weekly OWB thumbnail audit PR #1118 and approve or revise T041-T043 before Studio testing"
+      "plain": "Review J3302 weekly OWB thumbnail audit PR #1118 and approve or revise T041-T043 before Studio testing",
+      "taskKeys": [
+        "OWB:006",
+        "OWB:024",
+        "OWB:005"
+      ]
     },
     {
       "id": "J3308",
       "title": "Studio: arm T041 thumbnail Test & Compare on NbW5G1BpPY0 (006 — 2× EARTH'S WATER) after J3307 PASS",
       "needs": "mini",
       "repo": "owb",
-      "body": "Arm thumbnail-only Test & Compare T041 on Orbit With Ben video NbW5G1BpPY0 (film 006) in YouTube Studio CDP 9223 (A = unchanged live thumbnail, B = Chief-approved /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/006_Could-Life-Exist-Under-The-Ice-Of-Europa/08_Thumbnails/repackage_2026-11/J3302_v01/NbW5G1BpPY0_B_v01.jpg, SHA-256 51e663ec95756665c0497bff0fdee0beff0b557ced3ec218e5915bb27708f51a, hook '2× EARTH'S WATER'). HARD GUARD: Run ONLY after J3307 records BOTH exact-file Chief PASS on the final B hash AND explicit one-test reversible successor-test authorization over finished inconclusive T006 (2026-10-15 to 2026-10-29). Before any Continue/New test click, perform a fresh read-only Studio check confirming the matching finished report, no running test, and channel = Orbit With Ben. Keep live A, title, description, privacy, schedule and every other video untouched. Never Replace live A. Verify reload shows Test running, then update THUMB_LEDGER.json (T041 -> running).",
+      "body": "J3380 correction: v02 is an UNAPPROVED proposal. Do not use the rejected v01. Arm thumbnail-only Test & Compare T041 on Orbit With Ben video NbW5G1BpPY0 (film 006) in YouTube Studio CDP 9223 (A = unchanged live thumbnail, B = candidate pending exact-file Chief approval /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/006_Could-Life-Exist-Under-The-Ice-Of-Europa/08_Thumbnails/repackage_2026-11/J3302_v02/NbW5G1BpPY0_B_v02.jpg, SHA-256 901b210f7636309dcff97453f54a08326c12405e12fb7cfd548b0b6792cab9dd, hook '2× EARTH'S WATER'). HARD GUARD: Run ONLY after J3307 records BOTH exact-file Chief PASS on the final B hash AND explicit one-test reversible successor-test authorization over finished inconclusive T006 (2026-10-15 to 2026-10-29). Before any Continue/New test click, perform a fresh read-only Studio check confirming the matching finished report, no running test, and channel = Orbit With Ben. Keep live A, title, description, privacy, schedule and every other video untouched. Never Replace live A. Verify reload shows Test running, then update THUMB_LEDGER.json (T041 -> running).",
       "ref": "",
       "film": "",
       "stage": "",
@@ -298138,6 +298148,11 @@
           "at": "2026-11-21T16:38Z",
           "by": "macbook",
           "what": "added"
+        },
+        {
+          "at": "2026-11-22T17:28Z",
+          "by": "codex",
+          "what": "J3380: corrected candidate pointer to v02; J3307 dependency and all approval guards retained"
         }
       ],
       "remaining_action": "Studio: arm T041 thumbnail Test & Compare on NbW5G1BpPY0 (006 — 2× EARTH'S WATER) after J3307 PASS",
@@ -298146,10 +298161,10 @@
     },
     {
       "id": "J3309",
-      "title": "Studio: arm T042 thumbnail Test & Compare on rVqgtkBV3jc (024 — YOU AGE SLOWER) after J3307 PASS",
+      "title": "Studio: arm T042 thumbnail Test & Compare on rVqgtkBV3jc (024 — EARTH AGES 7×) after J3307 PASS",
       "needs": "mini",
       "repo": "owb",
-      "body": "Arm thumbnail-only Test & Compare T042 on Orbit With Ben video rVqgtkBV3jc (film 024) in YouTube Studio CDP 9223 (A = unchanged live thumbnail, B = Chief-approved /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/08_Thumbnails/repackage_2026-11/J3302_v01/rVqgtkBV3jc_B_v01.jpg, SHA-256 1e9ea0b691e8f2306c3c28b52307a96166e0b48549c71edb2fc397445814a912, hook 'YOU AGE SLOWER'). HARD GUARD: Run ONLY after J3307 records BOTH exact-file Chief PASS on the final B hash AND explicit one-test reversible successor-test authorization over finished inconclusive T004 (2026-11-01 to 2026-11-15). Before any Continue/New test click, perform a fresh read-only Studio check confirming the matching finished report, no running test, and channel = Orbit With Ben. Keep live A, title, description, privacy, schedule and every other video untouched. Never Replace live A. Verify reload shows Test running, then update THUMB_LEDGER.json (T042 -> running).",
+      "body": "J3380 correction: v02 is an UNAPPROVED proposal. Do not use the rejected v01. Arm thumbnail-only Test & Compare T042 on Orbit With Ben video rVqgtkBV3jc (film 024) in YouTube Studio CDP 9223 (A = unchanged live thumbnail, B = candidate pending exact-file Chief approval /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/024_What-Happens-If-You-Travel-Near-Light-Speed/08_Thumbnails/repackage_2026-11/J3302_v02/rVqgtkBV3jc_B_v02.jpg, SHA-256 7a66560e03fb7959d416db47cdd70aa3a8a76cafe4de5b9e04eee83d3d17aee8, hook 'EARTH AGES 7×'). HARD GUARD: Run ONLY after J3307 records BOTH exact-file Chief PASS on the final B hash AND explicit one-test reversible successor-test authorization over finished inconclusive T004 (2026-11-01 to 2026-11-15). Before any Continue/New test click, perform a fresh read-only Studio check confirming the matching finished report, no running test, and channel = Orbit With Ben. Keep live A, title, description, privacy, schedule and every other video untouched. Never Replace live A. Verify reload shows Test running, then update THUMB_LEDGER.json (T042 -> running).",
       "ref": "",
       "film": "",
       "stage": "",
@@ -298167,6 +298182,11 @@
           "at": "2026-11-21T16:38Z",
           "by": "macbook",
           "what": "added"
+        },
+        {
+          "at": "2026-11-22T17:28Z",
+          "by": "codex",
+          "what": "J3380: corrected candidate pointer to v02; J3307 dependency and all approval guards retained"
         }
       ],
       "remaining_action": "Studio: arm T042 thumbnail Test & Compare on rVqgtkBV3jc (024 — YOU AGE SLOWER) after J3307 PASS",
@@ -298178,7 +298198,7 @@
       "title": "Studio: arm T043 thumbnail Test & Compare on REXYxuLOBoI (005 — OUTLIVES OUR SUN) after J3307 PASS",
       "needs": "mini",
       "repo": "owb",
-      "body": "Arm thumbnail-only Test & Compare T043 on Orbit With Ben video REXYxuLOBoI (film 005) in YouTube Studio CDP 9223 (A = unchanged live thumbnail, B = Chief-approved /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/005_The-Last-Star-In-The-Universe/08_Thumbnails/repackage_2026-11/J3302_v01/REXYxuLOBoI_B_v01.jpg, SHA-256 c30654b9003c8e622ac5151276d59e65fa0aca9920685d8b90e3b3051593141f, hook 'OUTLIVES OUR SUN'). HARD GUARD: Run ONLY after J3307 records BOTH exact-file Chief PASS on the final B hash AND explicit one-test reversible successor-test authorization over finished inconclusive T016 (2026-10-28 to 2026-11-11). Before any Continue/New test click, perform a fresh read-only Studio check confirming the matching finished report, no running test, and channel = Orbit With Ben. Keep live A, title, description, privacy, schedule and every other video untouched. Never Replace live A. Verify reload shows Test running, then update THUMB_LEDGER.json (T043 -> running).",
+      "body": "J3380 correction: v02 is an UNAPPROVED proposal. Do not use the rejected v01. Arm thumbnail-only Test & Compare T043 on Orbit With Ben video REXYxuLOBoI (film 005) in YouTube Studio CDP 9223 (A = unchanged live thumbnail, B = candidate pending exact-file Chief approval /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/005_The-Last-Star-In-The-Universe/08_Thumbnails/repackage_2026-11/J3302_v02/REXYxuLOBoI_B_v02.jpg, SHA-256 c90e92072dccadbb01530ab6e1b4e603722eef57639ab3d035a435e096115ff7, hook 'OUTLIVES OUR SUN'). HARD GUARD: Run ONLY after J3307 records BOTH exact-file Chief PASS on the final B hash AND explicit one-test reversible successor-test authorization over finished inconclusive T016 (2026-10-28 to 2026-11-11). Before any Continue/New test click, perform a fresh read-only Studio check confirming the matching finished report, no running test, and channel = Orbit With Ben. Keep live A, title, description, privacy, schedule and every other video untouched. Never Replace live A. Verify reload shows Test running, then update THUMB_LEDGER.json (T043 -> running).",
       "ref": "",
       "film": "",
       "stage": "",
@@ -298196,6 +298216,11 @@
           "at": "2026-11-21T16:38Z",
           "by": "macbook",
           "what": "added"
+        },
+        {
+          "at": "2026-11-22T17:28Z",
+          "by": "codex",
+          "what": "J3380: corrected candidate pointer to v02; J3307 dependency and all approval guards retained"
         }
       ],
       "remaining_action": "Studio: arm T043 thumbnail Test & Compare on REXYxuLOBoI (005 — OUTLIVES OUR SUN) after J3307 PASS",
