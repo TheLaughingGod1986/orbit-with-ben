@@ -296534,13 +296534,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-22T00:42Z",
-      "eta": "2026-11-22T02:42Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-21T14:06Z",
-      "result": "",
+      "result": "Acting Chief (gemini) ruled J3295 CONDITION NOT MET (OWB PR #1114 merged a52ac93c3a, jobs/reviews/J3295/REVIEW.md), updated J1275 wait (--type dependency, --recheck J3295, check-at 2026-11-22T18:00:00Z), and closed J3295. HOS 009 chapters (0:00/1:24/2:56/4:20/6:33) already merged via PR #703 matching v03 744f32b7 but 009 still awaits open J2036/J2037 lock; HOS 010 still 12/65 Shorts-only plates with no 09_Assembly. £0 spend, no YouTube/Buffer/schedule changes.",
       "history": [
         {
           "at": "2026-11-21T14:06Z",
@@ -296596,6 +296596,11 @@
           "at": "2026-11-22T00:42Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-22T00:42Z",
+          "by": "gemini",
+          "what": "done: Acting Chief (gemini) ruled J3295 CONDITION NOT MET (OWB PR #1114 merged a52ac93c3a, jobs/reviews/J3295/REVIEW.md), updated J1275 wait (--type dependency, --recheck J3295, check-at 2026-11-22T18:00:00Z), and closed J3295. HOS 009 chapters (0:00/1:24/2:56/4:20/6:33) already merged via PR #703 matching v03 744f32b7 but 009 still awaits open J2036/J2037 lock; HOS 010 still 12/65 Shorts-only plates with no 09_Assembly. £0 spend, no YouTube/Buffer/schedule changes."
         }
       ],
       "remaining_action": "Elected Chief (Grok Bot) to review/merge OWB PR #1114, run jobs.py wait J1275 --recheck J3295 (check-at 2026-11-22T06:00:00Z), and close J3295",
@@ -296623,7 +296628,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1114"
     },
     {
       "id": "J3296",
