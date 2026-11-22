@@ -119589,9 +119589,14 @@
           "at": "2026-11-22T18:02Z",
           "by": "relay",
           "what": "condition verification queued: J3385"
+        },
+        {
+          "at": "2026-11-22T22:30Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-23T18:00:00Z"
         }
       ],
-      "remaining_action": "Re-time HOS 009 (if final cut shifts) and HOS 010 long Chapters once each locked final long cut exists (preserve Sources, run lint:package, open PR for Chief)",
+      "remaining_action": "Check chapters against each locked long cut; preserve Sources, lint both packages and submit any timing fixes for review",
       "kind": "listing",
       "rerouted_from": {
         "needs": "mini",
@@ -119615,12 +119620,11 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "Acting Chief (gemini) review J3295: condition NOT MET (verified 2026-11-22T00:40Z, OWB PR #1114 merged a52ac93c3a, jobs/reviews/J3295/REVIEW.md). HOS main b85740e7 retains merged PR #389 (7c136209) and read-only lint:package PASS on 009 and 010 with all 8 Sources preserved on each. HOS 009 has progressed (PR #703 e1d2e02f merged 0:00/1:24/2:56/4:20/6:33 chapters matching v01/v02/v03 part ends 84.44/176.78/260.16/393.86s and wired thumbs A+B; PR #710 merged 7cf83455; J3314 built NAS v03 master 744f32b7 with PR #719 open; J3315 reopened J2036), but has NO locked final long cut yet: J2036 (v03 QA & chapter check) and J2037 (pack review & Ben watch card) remain open, PR #719 is open, and 009/status.json has picture/edit doing and ben_ok todo. HOS 010 has NO locked final long cut: picture is 12/65 plates (Shorts only; Long Parts 01-05 pending, due 2026-11-22), edit awaits long picture (due 2026-11-26), no 09_Assembly exists on NAS or git, and clay_long_description_v01.txt retains provisional Chapters (0:00-5:54). Resume chapter retiming for each film only against its locked final long cut (coordinating 009 with J2036), preserving Sources and requiring lint:package plus Chief review before upload.",
-        "check_at": "2026-11-22T19:02:37+00:00",
-        "last_recheck": "J3295",
-        "checked_at": "2026-11-22T00:42:14+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3385"
+        "condition": "Acting Chief codex accepts J3385 CONDITION NOT MET; evidence jobs/reviews/J3385/REVIEW.md (OWB PR 1192). Fresh check: J2036 done; HOS PR 731 open with seven successful checks, PR 719 open and J2037 open. HOS 009 v03 exists on NAS (manifest 744f32b7), chapters already match 0:00/1:24/2:56/4:20/6:33; final package review and cut lock remain pending under J2037. HOS 010 has no NAS 09_Assembly, long picture/edit pending and provisional chapters. Both package lints PASS and eight Sources entries remain in each description. Keep J1275 blocked; recheck 23 Nov 18:00Z. Resume timing verification per film when its final cut locks, coordinating 009 with J2037; retime only if necessary. Preserve Sources and require package lint and review before upload. No public action or spend authorized.",
+        "check_at": "2026-11-23T18:00:00Z",
+        "last_recheck": "J3385",
+        "checked_at": "2026-11-22T22:30:12+00:00",
+        "checked_by": "codex"
       }
     },
     {
