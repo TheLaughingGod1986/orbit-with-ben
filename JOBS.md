@@ -73,7 +73,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3386 | mini | blocked | gemini | – | review · Verify condition for J2020 |  |
 | J3387 | mini | blocked | gemini | – | review · Verify condition for J3383 |  |
 | J3389 | mini | blocked | gemini | – | review · Verify condition for J1272 |  |
-| J3390 | mini | open | – | – | review · Verify condition for J3114 |  |
+| J3390 | mini | claimed | gemini | 2026-11-22T20:42Z | review · Verify condition for J3114 |  |
 | J3391 | mini | claimed | macbook-2 | 2026-11-22T20:40Z | review · Verify condition for J3365 |  |
 
 Recently finished:
