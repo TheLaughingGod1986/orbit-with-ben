@@ -300938,9 +300938,14 @@
           "at": "2026-11-22T08:34Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J3349 as acting Chief (gemini); starting condition verification for J2537"
+        },
+        {
+          "at": "2026-11-22T08:35Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Verified OWB #954, #219, HOS #694/#180/#657, repo-wide comments, HOS refs (origin/main 19bd550307, origin/hos-desk a4ce692535, 30 open non-desk PRs), and NAS/MiniWork backups + HOS jobs/reviews/J2537/ rehearsal intact; no Ben exception present"
         }
       ],
-      "remaining_action": "Inspect J3338 review, OWB #954, HOS #694/#180/#657, HOS git heads/PRs, and J2537 backups/rehearsal",
+      "remaining_action": "Write J3349 REVIEW.md PR, merge as acting Chief, update J2537 wait with --recheck J3349, post OWB #954 & HOS #694 reports, and mark J3349 done",
       "kind": "review",
       "recheck_of": "J2537",
       "due": "2026-11-18T18:00:00+00:00",
@@ -300954,12 +300959,18 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-22T08:34Z",
+        "at": "2026-11-22T08:35Z",
         "by": "gemini",
-        "note": "Claimed J3349 as acting Chief (gemini); starting condition verification for J2537"
-      }
+        "note": "Verified OWB #954, #219, HOS #694/#180/#657, repo-wide comments, HOS refs (origin/main 19bd550307, origin/hos-desk a4ce6"
+      },
+      "taskKeys": [
+        "HOS:005",
+        "HOS:008",
+        "HOS:011",
+        "HOS:013"
+      ]
     }
   ],
   "focus": [
