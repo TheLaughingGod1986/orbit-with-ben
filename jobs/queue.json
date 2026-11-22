@@ -300915,13 +300915,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-22T08:33Z",
-      "eta": "2026-11-22T10:33Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-22T08:32Z",
-      "result": "",
+      "result": "Acting Chief (gemini) verified J2537 waiting condition at 2026-11-22T08:35Z (OWB PR #1158 merged as 3dac7e0263, jobs/reviews/J3349/REVIEW.md blob 1a38f4e70e): CONDITION NOT MET. Fresh check across OWB #954 (thru 7076584844), OWB #219, HOS desk #694 (thru 7076578399), HOS #180 (2500 cap, last 7024089854), HOS #657 (0 comments), and repo-wide comments found no new Ben exception for rewriting protected HOS hos-desk history while retaining PR180. NAS/MiniWork pre-rewrite backups and HOS jobs/reviews/J2537/ rehearsal remain intact; HOS origin/main is 19bd550307, origin/hos-desk is a4ce692535, with 30 open non-desk PRs. J2537 kept blocked via wait --recheck J3349 (006346485b) for 2026-11-22T16:00:00Z; £0 spend, no live rewrite, no duplicate ask to Ben (Grok 7018109147).",
       "history": [
         {
           "at": "2026-11-22T08:32Z",
@@ -300952,6 +300952,11 @@
           "at": "2026-11-22T08:37Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Merged PR #1158 (3dac7e0263) and updated J2537 wait with --recheck J3349 (006346485b) for 2026-11-22T16:00:00Z"
+        },
+        {
+          "at": "2026-11-22T08:38Z",
+          "by": "gemini",
+          "what": "done: Acting Chief (gemini) verified J2537 waiting condition at 2026-11-22T08:35Z (OWB PR #1158 merged as 3dac7e0263, jobs/reviews/J3349/REVIEW.md blob 1a38f4e70e): CONDITION NOT MET. Fresh check across OWB #954 (thru 7076584844), OWB #219, HOS desk #694 (thru 7076578399), HOS #180 (2500 cap, last 7024089854), HOS #657 (0 comments), and repo-wide comments found no new Ben exception for rewriting protected HOS hos-desk history while retaining PR180. NAS/MiniWork pre-rewrite backups and HOS jobs/reviews/J2537/ rehearsal remain intact; HOS origin/main is 19bd550307, origin/hos-desk is a4ce692535, with 30 open non-desk PRs. J2537 kept blocked via wait --recheck J3349 (006346485b) for 2026-11-22T16:00:00Z; £0 spend, no live rewrite, no duplicate ask to Ben (Grok 7018109147)."
         }
       ],
       "remaining_action": "Post OWB #954 and HOS #694 reports and mark J3349 done",
