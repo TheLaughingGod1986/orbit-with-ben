@@ -299221,13 +299221,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-22T15:36Z",
-      "eta": "2026-11-22T17:36Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-21T21:06Z",
-      "result": "",
+      "result": "Chief PASS recorded: HOS PR 732 merged as 3be57292979147531b96480696f182ea4a87f631; remote main confirms el30-mHiH-0 live. Original read-back evidence accepted (Related wwcjcFfC-5M, AI disclosure, YOUR PULSE cover); fresh signed-out check confirms public at 11:30:33Z and en/en-GB captions. Four PR CI checks green; worker check_all.sh ALL CHECKS PASS. No remaining task or external wait, no YouTube/Buffer writes, zero spend.",
       "history": [
         {
           "at": "2026-11-21T21:06Z",
@@ -299308,6 +299308,11 @@
           "at": "2026-11-22T15:36Z",
           "by": "codex",
           "what": "step 4 of 4 done: Final worker handoff complete: Chief merged HOS PR 732 as 3be57292; remote main library verified live. Separate Chief review tracked independently."
+        },
+        {
+          "at": "2026-11-22T15:37Z",
+          "by": "codex",
+          "what": "done: Chief PASS recorded: HOS PR 732 merged as 3be57292979147531b96480696f182ea4a87f631; remote main confirms el30-mHiH-0 live. Original read-back evidence accepted (Related wwcjcFfC-5M, AI disclosure, YOUR PULSE cover); fresh signed-out check confirms public at 11:30:33Z and en/en-GB captions. Four PR CI checks green; worker check_all.sh ALL CHECKS PASS. No remaining task or external wait, no YouTube/Buffer writes, zero spend."
         }
       ],
       "remaining_action": "Record completion of the verified live library update",
@@ -299330,7 +299335,8 @@
         "at": "2026-11-22T15:36Z",
         "by": "codex",
         "note": "Final worker handoff complete: Chief merged HOS PR 732 as 3be57292; remote main library verified live. Separate Chief re"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/732"
     },
     {
       "id": "J3324",
