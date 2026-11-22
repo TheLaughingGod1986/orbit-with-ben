@@ -69,7 +69,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3365 | mini | blocked | macbook-2 | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J3366 | mini | blocked | gemini | – | listing · Upload the Roman Telescope dated Short v01 (Thu 3 Dec 11:30) Private and scheduled |  |
 | J3367 | mini | blocked | macbook-2 | – | review · Verify condition for J2040 |  |
-| J3368 | mini | claimed | gemini | 2026-11-22T15:34Z | review · Verify condition for J2529 |  |
+| J3368 | mini | blocked | gemini | – | review · Verify condition for J2529 |  |
 
 Recently finished:
 
