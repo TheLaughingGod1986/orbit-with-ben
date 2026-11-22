@@ -303031,13 +303031,13 @@
       "stage": "thumbs",
       "after": "J3363",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-22T14:03Z",
-      "eta": "2026-11-22T16:03Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-22T14:02Z",
-      "result": "",
+      "result": "Waiting for: 48-hour measurement window for ek9F61FVYqY opens 2026-11-24T17:00:00Z; verify actual launch time and collect Studio impressions and CTR then.",
       "history": [
         {
           "at": "2026-11-22T14:02Z",
@@ -303048,9 +303048,19 @@
           "at": "2026-11-22T14:03Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-22T14:03Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: 48-hour measurement window for ek9F61FVYqY opens 2026-11-24T17:00:00Z; verify actual launch time and collect Studio impressions and CTR then."
+        },
+        {
+          "at": "2026-11-22T14:03Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-24T17:00:00Z"
         }
       ],
-      "remaining_action": "Read the first two days of results and apply the approved thumbnail fallback if needed",
+      "remaining_action": "At Tuesday 17:00, read performance and apply the approved archive-only thumbnail fallback if needed",
       "due": "2026-11-24T18:00:00Z",
       "kind": "studio",
       "plain": "Check whether the floating harbour thumbnail is winning clicks and change it if needed",
@@ -303061,6 +303071,11 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "date",
+        "condition": "48-hour measurement window for ek9F61FVYqY opens 2026-11-24T17:00:00Z; verify actual launch time and collect Studio impressions and CTR then.",
+        "check_at": "2026-11-24T17:00:00Z"
       }
     }
   ],
