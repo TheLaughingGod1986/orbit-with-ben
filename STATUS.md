@@ -86,7 +86,6 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 027 | upload | codex | 2026-11-22T20:47Z | 2026-11-22T22:46Z | J1272 OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |
 | 033 | upload | claudecode | 2026-11-18T11:13Z | 2026-11-18T13:12Z | J2986 Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.

@@ -119202,10 +119202,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-22T20:47Z",
-      "eta": "2026-11-22T22:47Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-30T15:52Z",
       "result": "",
@@ -119269,6 +119269,11 @@
           "at": "2026-11-22T20:50Z",
           "by": "codex",
           "what": "step 1 of 3 done: Brief and prior saved end screen checked; two bounded CDP probes failed, no YouTube mutations sent; evidence fcc208b0e0"
+        },
+        {
+          "at": "2026-11-22T20:50Z",
+          "by": "codex",
+          "what": "released: Studio CDP 9223 HTTP responds but Playwright browser attachment times out at 15s and direct existing-page Runtime.evaluate times out at 8s. No YouTube mutation sent. Evidence fcc208b0e0 jobs/readbacks/J1272_2026-11-22_connection.json. Resume when existing Studio tab responds; verify Public, inspect existing comments, post exact package comment only if absent, pin and read back. Prior saved end screen retained. Offload finished with nothing old enough; log ~/. _desk/logs/J1272-offload.log (actual path ~/_desk/logs/J1272-offload.log), .done exit 0."
         }
       ],
       "remaining_action": "Once Studio responds, verify Public status and pin the approved Earth-film comment",
