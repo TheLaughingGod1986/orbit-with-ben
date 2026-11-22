@@ -1,5 +1,5 @@
 {
-  "next_id": 3361,
+  "next_id": 3362,
   "jobs": [
     {
       "id": "J0001",
@@ -302132,6 +302132,52 @@
       "taskKeys": [
         "WW2:003"
       ]
+    },
+    {
+      "id": "J3361",
+      "title": "Field Order History pilot 1 pre-launch check before 17:00 today: live read-back, en-GB captions, description touch-ups, pinned first comment, playlist public at launch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why (Ben, 22 Nov ~12:10 London, in chat: \"Can we check the first foh video is perfected and ready for its debut, meta, title, description, packaging and everything is ready\").** Pilot 1 `ek9F61FVYqY` (\"How Britain Built Two Harbours in Secret and Floated Them to Normandy\", v43, Ben OK'd) goes public TODAY 17:00 London. Claude reviewed ww2-channel 02_Video-Projects/001_Mulberry-Harbours-Floating-Ports-D-Day/11_Upload-Package/metadata_v43.json at 12:10Z: title (66 chars, fits the channel's 45-70 rule), first line, six verified chapters from 00:00, sources, image credits, tags, Education, en-GB, not made for kids, altered content yes, thumbnail B \"FLOATING PORT\" (IWM BU 1024, Chief's packaging decision v02) all look right. Gaps found: no caption file in the package (only YouTube's auto-captions), no first/pinned comment, no hashtags, the making line says \"Ben's AI voice\" on a channel viewers do not know as Ben's, and the series playlist must go public after launch.\n\n**Do on the Mini with Field Order History's own login (YOUTUBE_REFRESH_TOKEN_WW2) and the 9224 Studio window, by 16:30 London:**\n1. LIVE READ-BACK (videos.list snippet,status,contentDetails): title, description, tags, categoryId 27, default and audio language en-GB, Private with publishAt 2026-11-22T17:00:00Z, madeForKids false, containsSyntheticMedia true, licence, embeddable, duration 27:37, thumbnail set (matches 10_Thumbnail/ww2_001_thumb_B_floating_port_v01.jpg), playlist PLPPi-oWEDYtA has it at position 0. In Studio: end screen (Subscribe + video element) saved, comments on (Basic), chapters shown on the edit page. Any mismatch against metadata_v43.json: fix it via the API and read back.\n2. CAPTIONS: build an en-GB .srt from the locked narration script and the v43 VO word timings (the chapter timings are already verified against v43), check it against the master's audio for drift at the six chapter starts, and upload it as an \"English (United Kingdom)\" track (captions.insert). Read back. If the timings cannot be made accurate by 16:30, skip it and say so; never upload a drifting track.\n3. DESCRIPTION (two small edits, nothing else): make the making line \"Narration uses an AI voice.\" (honest, and the channel is not presented as Ben's), and add three plain hashtags on the last line: #WW2 #DDay #Normandy. Read back; chapters must still parse. Update metadata_v43.json to match.\n4. FIRST COMMENT: post one comment as the channel, one question in the channel's calm voice, for example \"Which part surprised you most: the floating roadways, the concrete caissons, or how much fuel came ashore?\" No link, no subscribe ask. Pin it in Studio (9224). Log it in the comment log.\n5. AT 17:00-17:10: confirm the video is public, then make playlist PLPPi-oWEDYtA Public and read back. Confirm the first-day check is queued for about 23:00.\n6. Records (ww2-channel PR, merge as acting Chief) and one receipt on the thread with every read-back.\n\n**Guards.** Do not change the schedule, title, thumbnail, video file or privacy before 17:00 (YouTube makes it public). No spend. If anything in step 1 is badly wrong (wrong file, wrong channel, missing thumbnail) and cannot be fixed by 16:30, say so on the thread and in the job result at once so Claude can tell Ben before 17:00.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-22T12:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-22T12:14Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-22T12:14Z",
+          "by": "claude",
+          "what": "rerouted to gemini on gemini-argon: Gemini is free on the Mini and covers Studio jobs."
+        }
+      ],
+      "remaining_action": "Read back every setting on ek9F61FVYqY; upload accurate en-GB captions; AI-voice line + 3 hashtags; pinned question comment; playlist public at 17:00",
+      "due": "2026-11-22T16:30:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "plain": "Final check of tonight's first Field Order History film: every setting, captions, a pinned question, playlist live at launch",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon",
+      "urgent": 6
     }
   ],
   "focus": [
