@@ -304367,10 +304367,10 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-22T22:38Z",
+      "eta": "2026-11-22T22:58Z",
       "created_by": "codex",
       "created_at": "2026-11-22T14:28Z",
       "result": "",
@@ -304434,6 +304434,11 @@
           "at": "2026-11-22T22:36Z",
           "by": "codex",
           "what": "reopened: J3384 Chief ruling: Option A APPROVED. PR1191 merged at reviewed head 05795cf227. Fresh 22 Nov 22:34Z Runtime.evaluate on existing dedicated HOS Studio port 9460 answered in 0.148s; subsequent read confirmed channel/content links to UCXp7HkBIl1LgaznXuZHJyRg and authenticated analytics, no login prompt. This explicitly replaces the J3372 brief requirement to use 9222 for this task only. Use 9460 and reuse_page on the existing Studio tab; verify HOS identity before reads. Leave hung 9222 and all attached tests untouched. Reopen for exact 25 Oct-21 Nov reach, Willow finished-test report and three current-title/test reads; unavailable metrics remain unknown. No Save, Continue, title/test/privacy/schedule writes, spend or upload. This clears only the browser-input hold; J3365 audit remains unpassed until evidence collection and its review. No external wait remains."
+        },
+        {
+          "at": "2026-11-22T22:38Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Read missing HOS audit figures on approved Mini Studio port 9460; follow J3384 ruling in job history and preserve all tests",
@@ -304442,7 +304447,15 @@
       "mini_only": true,
       "taskKeys": [
         "HOS:006"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-22T22:38Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3373",
