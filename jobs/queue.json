@@ -119407,9 +119407,14 @@
           "at": "2026-11-21T14:06Z",
           "by": "relay",
           "what": "condition verification queued: J3295"
+        },
+        {
+          "at": "2026-11-22T00:42Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-22T18:00:00Z"
         }
       ],
-      "remaining_action": "Re-time HOS 009 and HOS 010 long Chapters once each locked final long cut exists (preserve Sources, run lint:package, open PR for Chief)",
+      "remaining_action": "Re-time HOS 009 (if final cut shifts) and HOS 010 long Chapters once each locked final long cut exists (preserve Sources, run lint:package, open PR for Chief)",
       "kind": "listing",
       "rerouted_from": {
         "needs": "mini",
@@ -119433,12 +119438,11 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "Acting Chief review J3246: condition NOT MET (verified 2026-11-21T01:00Z). HOS main c199174f retains merged PR #389 (7c136209) and read-only lint:package PASS on both 009 and 010. HOS 009 has progressed (J3241 accepted v04_synth score; J2035 finished v01 802b5c7e; J3260 ruled bounded GBP0 v02 re-edit J3261 + thumbnails J3262, leaving PR #703 unmerged), but has NO locked final long cut yet: J3261 is still open at step 1/6 (detached render exited 0 producing NAS v02 9d8731cb, but polish_gate FAIL on 05_minute_second at 316.2s awaits reconciliation and stills), J3262 is parked for Chief on PR #705, J2036 is blocked until 2026-11-21T12:00:00Z, and J2037 is open. HOS 010 has NO locked long cut: picture is 12/65 plates (Shorts only; Long Parts 01-05 pending) and long edit awaits picture (no 09_Assembly on NAS). Resume chapter retiming for each film only against its locked final long cut, preserving Sources and requiring lint:package plus Chief review before upload. Recheck after J2036 noon check.",
-        "check_at": "2026-11-21T15:06:18+00:00",
-        "last_recheck": "J3246",
-        "checked_at": "2026-11-21T01:04:12+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3295"
+        "condition": "Acting Chief (gemini) review J3295: condition NOT MET (verified 2026-11-22T00:40Z, OWB PR #1114 merged a52ac93c3a, jobs/reviews/J3295/REVIEW.md). HOS main b85740e7 retains merged PR #389 (7c136209) and read-only lint:package PASS on 009 and 010 with all 8 Sources preserved on each. HOS 009 has progressed (PR #703 e1d2e02f merged 0:00/1:24/2:56/4:20/6:33 chapters matching v01/v02/v03 part ends 84.44/176.78/260.16/393.86s and wired thumbs A+B; PR #710 merged 7cf83455; J3314 built NAS v03 master 744f32b7 with PR #719 open; J3315 reopened J2036), but has NO locked final long cut yet: J2036 (v03 QA & chapter check) and J2037 (pack review & Ben watch card) remain open, PR #719 is open, and 009/status.json has picture/edit doing and ben_ok todo. HOS 010 has NO locked final long cut: picture is 12/65 plates (Shorts only; Long Parts 01-05 pending, due 2026-11-22), edit awaits long picture (due 2026-11-26), no 09_Assembly exists on NAS or git, and clay_long_description_v01.txt retains provisional Chapters (0:00-5:54). Resume chapter retiming for each film only against its locked final long cut (coordinating 009 with J2036), preserving Sources and requiring lint:package plus Chief review before upload.",
+        "check_at": "2026-11-22T18:00:00Z",
+        "last_recheck": "J3295",
+        "checked_at": "2026-11-22T00:42:14+00:00",
+        "checked_by": "gemini"
       }
     },
     {
