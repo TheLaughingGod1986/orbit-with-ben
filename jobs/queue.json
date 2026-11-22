@@ -297974,10 +297974,10 @@
       "stage": "",
       "after": "J3305",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-22T17:01Z",
+      "eta": "2026-11-22T17:31Z",
       "created_by": "macbook",
       "created_at": "2026-11-21T16:37Z",
       "result": "",
@@ -298026,6 +298026,11 @@
           "at": "2026-11-22T16:59Z",
           "by": "codex",
           "what": "reopened: J3377 Chief ruling: CONDITION MET. PR1179 merged; critique SHA256s independently matched on main (codex.md b4d66a32fc, cursor.md 088b8f670c, gemini.md 3891358394), J3303 done, and 24h deadline 2026-11-22T16:37Z passed. All slots were Gemini fallback runs, not three different models; decision writer must state that limitation. Next: synthesize DECISION.md and queue exact fixes under J3306. J3307 remains dependent on J3306; J3308-J3310 remain dependent on J3307. No packaging PASS or Studio authorization given by this condition review."
+        },
+        {
+          "at": "2026-11-22T17:01Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Read codex.md (or decide with gemini.md + cursor.md after 2026-11-22T16:37Z), write DECISION.md, post 3-line summary on #954, and queue any build/Studio jobs",
@@ -298037,7 +298042,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-22T17:01Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3307",
