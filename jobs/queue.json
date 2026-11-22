@@ -306925,13 +306925,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-22T23:23Z",
-      "eta": "2026-11-23T01:23Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-22T23:11Z",
-      "result": "",
+      "result": "PASS records repair: merged J0317 evidence PR 1199 and J0996 film/stage linkage PR 1200. Preserved active macbook-2 claim and all unrelated fields. 26 workflow tests and completion guard pass. J3399 follows J0996 to reconcile emwQsPxnRGM Private/null schedule evidence; no publication authorized. Review: jobs/reviews/J3397/REVIEW.md. No YouTube changes or spend.",
       "history": [
         {
           "at": "2026-11-22T23:11Z",
@@ -306962,6 +306962,11 @@
           "at": "2026-11-22T23:27Z",
           "by": "codex",
           "what": "step 3 of 3 done: Merged PRs 1199 and 1200; J0996 preserved and linked; J3399 owns read-only schedule discrepancy review after J0996; completion guard passes on main"
+        },
+        {
+          "at": "2026-11-22T23:27Z",
+          "by": "codex",
+          "what": "done: PASS records repair: merged J0317 evidence PR 1199 and J0996 film/stage linkage PR 1200. Preserved active macbook-2 claim and all unrelated fields. 26 workflow tests and completion guard pass. J3399 follows J0996 to reconcile emwQsPxnRGM Private/null schedule evidence; no publication authorized. Review: jobs/reviews/J3397/REVIEW.md. No YouTube changes or spend."
         }
       ],
       "remaining_action": "Records repair verified; existing description work and linked schedule review own the remaining actions",
@@ -306981,7 +306986,8 @@
       },
       "taskKeys": [
         "OWB:027"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1200"
     },
     {
       "id": "J3398",
