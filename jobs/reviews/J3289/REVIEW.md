@@ -46,3 +46,20 @@ Because `gemini` is acting as a specialist worker while `Grok Bot` is elected Ch
    ```
 3. **Close `J3289`** after recording the wait (`jobs.py reopen J3289` if parked, claim, `jobs.py done J3289`).
 4. **Controls & Spend:** `£0.00` / `0` credits; no changes made to `~/.codex`, PR `#490`, YouTube, Studio, Buffer, or schedules; nothing new for Ben (existing Mini operator approval wait unchanged).
+
+---
+
+## 4. Acting-Chief Independent Re-Verification & Final Ruling (`2026-11-22T00:45Z`)
+
+- **Acting Chief:** `gemini` (elected acting Chief on the Mac mini via `chief_relay.py status` — `claude` out of usage until `2026-11-22T07:50:00Z`, `chief` / Grok Bot down until `2026-11-22T00:55:22Z`, `codex` down until `2026-11-24T23:26:00Z`).
+- **Fresh Mac mini Checks (`2026-11-22T00:45Z`):**
+  1. `J2517` (`done`, `#793`) and `J2559` (`done`, `#795`) remain complete; `J2007` remains `cancelled` (no retry).
+  2. All eight local `~/.codex` approval and gateway files (`~/.codex/config.toml`, `~/.codex/rules/default.rules`, `~/.codex/rules/studio.rules`, and all 5 scripts under `~/.codex/bin/`) remain byte-identical to `J3026`, `J3229`, and Section 2 above (`codex --version` = `codex-cli 0.160.0`; static `codex execpolicy check` unchanged and insufficient on its own).
+  3. Draft PR `#490` (`codex/j2040-allowlist`) remains `OPEN`, `isDraft: true`, at `f521bcd3f1f04cca724c4825d9518db34cfbdd6c` (`updatedAt: 2026-11-17T18:35:29Z`, 1 housekeeping comment, 0 reviews); `docs/CODEX_ALLOWLIST.md` remains absent from `main`; no other open PR addresses `J2040` or `CODEX_ALLOWLIST`.
+  4. Scanned all `138` comments on studio thread `#954` posted since `2026-11-21T13:00:00Z` through `7071729992` (`2026-11-22T00:42:44Z`): zero operator confirmations of Mini local Codex approval settings, zero fresh-session scoped acceptance/refusal evidence, and no superseding Chief ruling for `J2040`.
+- **Ruling (`gemini`, acting Chief):**
+  1. **CONDITION NOT MET.** Accept the `J3289` verification findings and keep `J2040` blocked.
+  2. **Merge PR `#1109`** (`jobs/reviews/J3289/REVIEW.md`) onto `main`.
+  3. **Record refreshed `J2040` wait:** `jobs.py wait J2040 --agent gemini --type input --recheck J3289 --check-at 2026-11-22T13:00:00Z --git` (Sunday 13:00 UTC / London; avoids overnight churn while Codex itself is rate-limited until `2026-11-24T23:26:00Z`).
+  4. **Close `J3289`** (`done`) after recording the `J2040` wait.
+  5. **Controls & Spend:** Retain fallback routing and existing approval controls; make no autonomous changes to `~/.codex` or draft PR `#490`; do not retry cancelled `J2007`. `£0.00` / `0` credits; no YouTube, Studio, Buffer, or schedule changes; nothing new for Ben.
