@@ -1688,3 +1688,15 @@ assert(fieldHtml.includes('not enough growth data'));
   assert(!t.renderView(quietBoard, 'overview', NOW).includes('urgent-banner'), 'overview clean with no active alerts');
   console.log('Urgent alert banner OK');
 }
+
+// J3357: the Agents tab carries the relay's idle alarm and retained hard pins.
+{
+  const alarmBoard = {...board, machines: {machines: [{id: 'mini',
+    idleAlarm: {message: 'Mini idle for 30 minutes: J3357 <waiting>'},
+    hardPins: ['J3358 pinned to codex (hard pin retained)']}]}};
+  const html = t.agents(alarmBoard, NOW);
+  assert(html.includes('role="alert">Mini idle for 30 minutes: J3357 &lt;waiting&gt;'));
+  assert(html.includes('J3358 pinned to codex (hard pin retained)'));
+  assert(!t.agents({...board, machines: {machines: []}}, NOW).includes('Mini idle for 30 minutes'));
+  console.log('Relay idle alarm on Agents OK');
+}

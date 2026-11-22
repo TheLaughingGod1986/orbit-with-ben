@@ -1209,7 +1209,8 @@ def heartbeat_doc(at: dt.datetime, state: str, agent: str = "", note: str = "") 
     chief = (read_json(d("current.json")) or {}).get("agent") or ""
     chain_rows = (read_json(d("chain.json")) or {}).get("rows") or []
     return {"at": iso(at), "state": state, "agent": agent, "note": note[:200], "host": "mac-mini", "chief": chief,
-            "chain": chain_rows}
+            "chain": chain_rows, "idleAlarm": (read_json(d("idle-alarm.json")) or {}) if state != "running" else {},
+            "hardPins": (read_json(d("hard-pins.json")) or {}).get("jobs", [])}
 
 
 def parked_reviews(data: dict) -> list:
@@ -1660,7 +1661,7 @@ def stranded_jobs(data: dict, up: set, at=None) -> list:
     agent, e.g. a second opinion from Codex."""
     capabilities = worker_capabilities()
     at = at or now()
-    return [j for j in data.get("jobs", []) if j.get("rerouted_from") and j.get("status") == "open"
+    return [j for j in data.get("jobs", []) if j.get("rerouted_from") and not j.get("pin_hard") and j.get("status") == "open"
             and j.get("for") in routing.MINI_WORKERS
             and (j["for"] not in up or workflow.capability_problem(j,j["for"],at,capabilities)
                  or (j.get("model") and not routing.lane_ok(j["for"], j["model"])))]
@@ -1729,6 +1730,118 @@ def lane_model(lane) -> str:
     return lane[1] if routing.RUNS_ON.get(lane[1]) == lane[0] else ""
 
 
+def ready_open_jobs(data, at):
+    rows = data.get("jobs", [])
+    by_id = {j["id"]: j for j in rows}
+    due = workflow.deadlines(rows)
+    return sorted((j for j in rows if j.get("status") == "open" and not workflow.reason(j, by_id, at)),
+                  key=lambda j: workflow.order(j, due, at=at, rows=rows))
+
+
+def unavailable_pin(job, at):
+    """Only an actual outage qualifies; missing capabilities or a missing CLI do not loosen a pin."""
+    agent = job.get("for")
+    if not agent:
+        return None
+    flags = routing.read_flags(at, str(STUDIO / "scripts" / "credit_flags.json"))
+    keys = [agent]
+    if agent == "claudecode":
+        keys += ["claude", "mini-claude-opus-5-5"]
+    lanes = [(a, m) for a, m in routing.job_chain(job) if a == agent]
+    if lanes and all(m in flags for _, m in lanes):
+        keys += [m for _, m in lanes]
+    mark = read_json(d("down", agent + ".json")) or {}
+    until = workflow.timestamp(mark.get("until"))
+    if mark and (not until or until > at):
+        return {"why": mark.get("reason") or "marked down", "since": mark.get("since"), "until": mark.get("until")}
+    for key in keys:
+        if key in flags:
+            raw = ((read_json(STUDIO / "scripts" / "credit_flags.json") or {}).get("flags") or {}).get(key) or {}
+            return {"why": flags[key], "since": raw.get("since") or raw.get("at"), "until": raw.get("out_until")}
+    if agent == "claude":
+        out, why = claude_out(at)
+        if out:
+            return {"why": why}
+    return None
+
+
+def recover_pinned_jobs(data, at, up, capabilities):
+    """Persist first observation across ticks; reset the clock when a pin's owner recovers."""
+    path = d("pinned-outages.json")
+    previous = read_json(path) or {}
+    observed, moves, hard = {}, [], []
+    due = workflow.deadlines(data.get("jobs", []))
+    for j in ready_open_jobs(data, at):
+        if workflow.role_job(j) or j.get("cloud_only") or j.get("needs") in ("ben", "macbook"):
+            continue
+        outage = unavailable_pin(j, at)
+        if not outage:
+            continue
+        old = previous.get(j["id"]) or {}
+        since = workflow.timestamp(outage.get("since")) or (
+            workflow.timestamp(old.get("since")) if old.get("agent") == j["for"] else None) or at
+        observed[j["id"]] = {"agent": j["for"], "since": iso(since)}
+        if j.get("pin_hard"):
+            hard.append(f"{j['id']} pinned to {j['for']}: {outage['why']} (hard pin retained)")
+            continue
+        if j.get("rerouted_from"):
+            continue
+        deadline = due.get(j["id"])
+        reset = workflow.timestamp(outage.get("until"))
+        if at - since < dt.timedelta(hours=2) and not (deadline and (deadline <= at or (reset and reset > deadline))):
+            continue
+        eligible = {a for a in up if not workflow.capability_problem(j, a, at, capabilities)}
+        lane = (routing.next_lane(j, j["for"], eligible, j.get("model") or "")
+                or routing.next_lane(j, up=eligible)
+                or next(((a, m) for a, m in routing.job_chain(j)
+                         if a in routing.MINI_WORKERS and a != j["for"]), None))
+        moves.append((j, lane, f"pin to {j['for']} reopened: {outage['why']}; out since {iso(since)}"))
+    write_json(path, observed)
+    write_json(d("hard-pins.json"), {"jobs": hard})
+    return moves
+
+
+def check_idle_alarm(at):
+    """One durable alert per idle spell, shared by relay slots and carried in the heartbeat."""
+    path = d("idle-alarm.json")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with d("idle-alarm.lock").open("a") as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        data = read_json(STUDIO / "jobs" / "queue.json") or {}
+        rows = data.get("jobs", [])
+        running = current_executions(at)
+        if running or not any(j.get("status") == "open" for j in rows):
+            write_json(path, {})
+            return
+        spell = read_json(path) or {"since": iso(at)}
+        if not spell.get("alerted") and at - parse(spell["since"]) >= dt.timedelta(minutes=30):
+            details = []
+            up = workers_up(at)
+            caps = worker_capabilities()
+            ready = ready_open_jobs(data, at)
+            for j in ready[:3]:
+                outage = unavailable_pin(j, at)
+                if j.get("for"):
+                    why = f"pinned to {j['for']}" + (": " + outage["why"] if outage else "")
+                    if j.get("pin_hard"):
+                        why += " (hard pin retained)"
+                else:
+                    eligible = [a for a in up if workflow.claimable(j, rows, at, a,
+                        (read_json(d("current.json")) or {}).get("agent"), capabilities=caps)
+                        and routing.lane_fits(j, a)]
+                    why = "eligible but not dispatched" if eligible else "no eligible Mini lane (availability, capability or reservation)"
+                details.append(f"{j['id']}: {why}")
+            if not details:
+                by_id = {j["id"]: j for j in rows}
+                details = [f"{j['id']}: {workflow.reason(j, by_id, at)}" for j in rows if j.get("status") == "open"][:3]
+            message = "Mini idle for 30 minutes with open work: " + "; ".join(details)
+            spell["message"] = message
+            if notify("Chief relay: " + message):
+                spell["alerted"] = iso(at)
+                log(message)
+        write_json(path, spell)
+
+
 def reroute_work(at: dt.datetime) -> list:
     """Walk the fallback chains (routing.CHAINS; Ben, 11 Oct 23:40 and 23:47). If Claude is out of usage, each waiting
     Claude job goes to the next worker up in its chain (Cursor on the Claude model, then Gemini, then Codex). A job
@@ -1744,8 +1857,10 @@ def reroute_work(at: dt.datetime) -> list:
         hand_back_claude(data)
     capabilities = worker_capabilities()
     eligible = lambda j: {a for a in up if not workflow.capability_problem(j,a,at,capabilities)}
-    moves = [(j, routing.next_lane(j, "claude", eligible(j)), f"Claude out of usage ({why})")
-             for j in claude_jobs_to_reroute(data, at, out)]
+    moves = recover_pinned_jobs(data, at, up, capabilities)
+    recovered = {j["id"] for j, _, _ in moves}
+    moves += [(j, routing.next_lane(j, "claude", eligible(j)), f"Claude out of usage ({why})")
+             for j in claude_jobs_to_reroute(data, at, out) if (not j.get("for") or j.get("status") != "open") and not j.get("pin_hard") and j["id"] not in recovered]
     moves += [(j, routing.next_lane(j, j["for"], eligible(j), j.get("model") or ""), f"{NAMES.get(j['for'], j['for'])} is unavailable or lacks required input")
               for j in stranded_jobs(data, up, at)]
     moves += [(j, routing.next_lane(j, j["by"], eligible(j), j.get("model") or ""), f"{NAMES.get(j['by'], j['by'])} stopped answering on it (claim past its ETA)")
@@ -2177,6 +2292,7 @@ def run_locked(at: dt.datetime, slot: int = 0) -> int:
         if guest:
             log("guest chain: " + " | ".join(f"{a}={'UP' if up else 'down'} ({why})" for a, up, why in guest_rows)
                 + f" chief={guest_who}")
+        check_idle_alarm(at)
         up = workers_up(at)
         worker_only = False
         if who is None:
@@ -2370,6 +2486,7 @@ def run_locked(at: dt.datetime, slot: int = 0) -> int:
         finally:
             _select_unlock(held)
         write_slot_json(slot, "runner", {"pid":os.getpid(),"version":LOADED_VERSION,"desiredVersion":code_version(),"at":iso(started),"state":"working","job":execution["job"],"slot":slot})
+        check_idle_alarm(started)  # the validated lease resets the idle spell even for a short run
         try:
             code, tail = run_cli(who, prompt, cap, model)
         finally:
