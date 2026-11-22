@@ -68,7 +68,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3366 | mini | blocked | gemini | – | listing · Upload the Roman Telescope dated Short v01 (Thu 3 Dec 11:30) Private and scheduled |  |
 | J3367 | mini | blocked | macbook-2 | – | review · Verify condition for J2040 |  |
 | J3368 | mini | blocked | gemini | – | review · Verify condition for J2529 |  |
-| J3369 | mini | open (after J3363) | – | – | 001 thumbs · studio · Field Order History pilot 1: 48-hour thumbnail decision |  |
+| J3369 | mini | claimed | codex | 2026-11-22T16:03Z | 001 thumbs · studio · Field Order History pilot 1: 48-hour thumbnail decision |  |
 
 Recently finished:
 
