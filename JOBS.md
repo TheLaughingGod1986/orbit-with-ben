@@ -63,7 +63,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3323 | mini | blocked | gemini | – | 005 upload · listing · HOS 005 Short el30-mHiH-0 post-public read-back & library.json live flip | 7064710774 |
 | J3331 | mini | blocked | gemini | – | assembly · Roman Telescope 7 Dec dated-event Short (airs Thu 3 Dec): voice-over, build from free NASA footage, all Shorts gates, park for review | 02_Video-Projects/_dated_shorts/2026-12-07_roman-telescope-first-images.md |
 | J3347 | mini | claimed | gemini | 2026-11-22T10:40Z | 129 topic · review · HOS 129 How Was the Microwave Invented?: rule-E topic go/no-go review |  |
-| J3350 | any | open | – | – | 130 topic · review · HOS 130 How Does a Nuclear Reactor Work?: rule-E topic go/no-go review |  |
+| J3350 | any | claimed | macbook | 2026-11-22T10:45Z | 130 topic · review · HOS 130 How Does a Nuclear Reactor Work?: rule-E topic go/no-go review |  |
 | J3351 | any | open | – | – | 131 topic · review · HOS 131 What Is the Theory of Relativity?: rule-E topic go/no-go review |  |
 
 Recently finished:
