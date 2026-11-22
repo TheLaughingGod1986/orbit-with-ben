@@ -304288,6 +304288,11 @@
           "at": "2026-11-22T17:10Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-22T17:10Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-22T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Verify readiness: At 17:02Z: confirm ek9F61FVYqY is Public, post and pin first comment in Studio 9224, make playlist PLPPi-oWEDYtA Public and read back, update ww2-channel PR #32 (",
@@ -304295,7 +304300,15 @@
       "recheck_of": "J3361",
       "mini_only": true,
       "due": "2026-11-22T16:30:00+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
