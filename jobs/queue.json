@@ -1,5 +1,5 @@
 {
-  "next_id": 3388,
+  "next_id": 3389,
   "jobs": [
     {
       "id": "J0001",
@@ -304994,6 +304994,42 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3388",
+      "title": "Retention autopsy (7d): \"How Far Is the Nearest Star? (You Can't See It, and It Has a Pla\" (c5AdqQsnnys)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Retention autopsy at 7d (168 h after publish; Ben, 20 Nov 2026; J3256). Read-only on YouTube except listing fixes our rules already allow (Test & Compare only where none is running). £0.\n\nVideo: \"How Far Is the Nearest Star? (You Can't See It, and It Has a Planet)\" (`c5AdqQsnnys`), Orbit With Ben, long. Went live Sun 15 Nov 18:00 London.\n\n1. Run the RSI & funnel inspector:\n   `python3 scripts/retention_autopsy.py inspect c5AdqQsnnys --window 7d --channel owb`\n   Verify all six metrics (showings, CTR, views, average % viewed, 0:30 retention, subscribers per 1,000 views) against both the channel's own same-age median and the niche's small-channel outliers from search research. Show the one-line RSI summary with arrows.\n\n2. Diagnose the funnel in strict order:\n   (1) Showings (topic/search) -> (2) Click-through (title & thumbnail) -> (3) First 30 seconds (hook) -> (4) Mid-film cliffs (pacing/picture) -> (5) End (end screen & next-video handoff).\n\n3. Watch the film at the three steepest retention drops (20 s either side of each drop):\n   Locate the uploaded master MP4 (from UPLOADS.json or NAS archive), cut the three 40 s watch clips with:\n   `python3 scripts/retention_autopsy.py clips c5AdqQsnnys --video <master.mp4> --out-dir <scratch> --window 7d --channel owb`\n   Gemini 4 Neon (moving video + audio input demonstrated) watches every clip with audio on and records what happens on screen and in the voice at each drop. If YouTube suppressed the curve at low views, say so honestly and watch the three proxy windows (0:00-0:40, typical exit, final 40 s). Never claim to watch or hear from stills or text alone.\n\n4. Write `05_Analytics/owb/autopsy/c5AdqQsnnys_7d.md` from a clean worktree: RSI one-liner + table, funnel diagnosis, watched drop-point findings, and at most three concrete fixes each marked `this video` (title/thumbnail Test & Compare only if none is running, description, end screen) or `next film` (hook, pacing, picture, length). Add any repeatable lesson with evidence to `05_Analytics/LEARNINGS.md` (or the channel's own LEARNINGS).\n\nGuards: Never replace a running Test & Compare, never edit privacy/schedule/video, never delete anything, £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 25,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "refill",
+      "created_at": "2026-11-22T18:02Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-22T18:02Z",
+          "by": "refill",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Run 7d RSI retention autopsy on c5AdqQsnnys, watch 3 steepest drop windows with video+audio, write 05_Analytics/owb/autopsy/c5AdqQsnnys_7d.md",
+      "due": "2026-11-23T06:02:00Z",
+      "kind": "review",
+      "model": "gemini-argon",
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ],
+      "autopsy": "c5AdqQsnnys@7d",
+      "plain": "Analyse why viewers stayed or left on \"How Far Is the Nearest Star? (You Can't See It, and It H\" (7d) and write up to 3 fixes"
     }
   ],
   "focus": [
