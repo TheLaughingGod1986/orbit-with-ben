@@ -300447,13 +300447,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-22T07:51Z",
-      "eta": "2026-11-22T09:51Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-22T07:50Z",
-      "result": "",
+      "result": "parked for Chief: J3344 verification complete in PR #1152 (jobs/reviews/J3344/REVIEW.md @ 40398b86bf). Primary non-producer reviewer claude is verified LIVE (claude-heartbeat 2026-11-22T07:52:41Z, note 'studio run', no out:true; chief_relay Chief: Claude), while Mini non-producers remain down/out-of-credit (chief stalled retry 09:29:34Z, last beat 20 Nov 18:04Z; claudecode Fable limit resets Nov 25 10:00 London; Mini codex down until 2026-11-24T23:26:00Z; cursor Claude lanes out until 2026-12-09 & weekly limit hit at 07:23:33Z; gemini excluded as J2171 producer). HOS PR #718 (7248b872, 6/6 CI, MERGEABLE), NAS SHA-256 parity (43dbeb3a / e6e5ae3f), 12/12 NAS QA outputs, iCloud HOS UAT byte sizes, and ben_ok/scheduled=todo verified intact. Elected Chief (claude) needed to merge PR #1152, either reopen J3311 + run jobs.py handback J3311 (clear stale open_claim so producer gemini is not re-woken) or record wait --recheck J3344 if Mini-local non-producer is required, and close J3344 (scripts/jobs.py:603,1059,1561). £0 spent; no upload/schedule/privacy/Buffer changes.",
       "history": [
         {
           "at": "2026-11-22T07:50Z",
@@ -300479,6 +300479,11 @@
           "at": "2026-11-22T07:57Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Opened PR #1152 (jobs/reviews/J3344/REVIEW.md @ 40398b86bf); parking protected Chief hold decision for claude."
+        },
+        {
+          "at": "2026-11-22T07:57Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J3344 verification complete in PR #1152 (jobs/reviews/J3344/REVIEW.md @ 40398b86bf). Primary non-producer reviewer claude is verified LIVE (claude-heartbeat 2026-11-22T07:52:41Z, note 'studio run', no out:true; chief_relay Chief: Claude), while Mini non-producers remain down/out-of-credit (chief stalled retry 09:29:34Z, last beat 20 Nov 18:04Z; claudecode Fable limit resets Nov 25 10:00 London; Mini codex down until 2026-11-24T23:26:00Z; cursor Claude lanes out until 2026-12-09 & weekly limit hit at 07:23:33Z; gemini excluded as J2171 producer). HOS PR #718 (7248b872, 6/6 CI, MERGEABLE), NAS SHA-256 parity (43dbeb3a / e6e5ae3f), 12/12 NAS QA outputs, iCloud HOS UAT byte sizes, and ben_ok/scheduled=todo verified intact. Elected Chief (claude) needed to merge PR #1152, either reopen J3311 + run jobs.py handback J3311 (clear stale open_claim so producer gemini is not re-woken) or record wait --recheck J3344 if Mini-local non-producer is required, and close J3344 (scripts/jobs.py:603,1059,1561). £0 spent; no upload/schedule/privacy/Buffer changes."
         }
       ],
       "remaining_action": "Parked for Chief (claude): merge PR #1152, reopen+handback J3311 (or wait --recheck J3344), and close J3344",
