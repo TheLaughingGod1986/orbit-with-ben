@@ -65,7 +65,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3311 | mini | blocked | gemini | – | HOS:009 edit · qa · Review HOS 009 Short A v01 and Short B v01 (J2171, PR #718) | J2171 |
 | J3323 | mini | blocked | gemini | – | 005 upload · listing · HOS 005 Short el30-mHiH-0 post-public read-back & library.json live flip | 7064710774 |
 | J3331 | mini | blocked | gemini | – | assembly · Roman Telescope 7 Dec dated-event Short (airs Thu 3 Dec): voice-over, build from free NASA footage, all Shorts gates, park for review | 02_Video-Projects/_dated_shorts/2026-12-07_roman-telescope-first-images.md |
-| J3332 | mini | open | – | – | review · Verify condition for J3306 |  |
+| J3332 | mini | claimed | gemini | 2026-11-22T02:52Z | review · Verify condition for J3306 |  |
 | J3336 | mini | blocked | macbook-2 | – | review · Verify condition for J3270 |  |
 | J3337 | mini | blocked | gemini | – | thumb · Roman Telescope 7 Dec dated-event Short: rebuild cover v02 only (opaque spacecraft, no galaxy bleed-through), thumb_preview, park for Chief | jobs/reviews/J3331/REVIEW.md |
 | J3339 | mini | open | – | – | review · Verify condition for J2529 |  |
