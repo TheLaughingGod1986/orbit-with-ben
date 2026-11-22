@@ -1389,6 +1389,8 @@
   function machineTraffic(r) {
     const n=(r.now||[]).length;
     const st=String(r.state||'').toLowerCase();
+    // Grok ruling on the thread is work, even with nothing claimed (J3248). The chip must not say Idle.
+    if(st==='rulings') return {light:'green', word:'Working (rulings on the thread)', count:0};
     if(n>0||st==='running'||st==='working') return {light:'green', word:'Working', count:n||1};
     if(st==='error'||st==='down') return {light:'red', word:'Down', count:0};
     if(st==='busy'||st==='waiting') return {light:'amber', word:'Waiting', count:0};
@@ -1949,6 +1951,15 @@
       let [st, word] = agentLight(id, mine.length, (status[id] || {}).status, c.agent === id && m.fresh !== false);
       if (id === "macbook" && !mine.length) { const mbs = macbookState(macbook, now); st = mbs[0]; word = mbs[1]; why = mbs[2]; }
       why = mine.length ? why : agentReason(why, status[id] || {}, chain);
+      if (id === "chief" && !mine.length) {
+        const grok = (((b.machines || {}).machines) || []).find(r => r.id === "grok");
+        if (grok && String(grok.state || "") === "rulings") {
+          const n = Number(grok.done24) || 0;
+          st = "green";
+          word = "Working (rulings on the thread)";
+          why = (grok.why || word) + (n ? ` · ${n} done` : "");
+        }
+      }
       const href = mine[0] ? jobRoute(mine[0].id) : "#agents";
       return { st, html: `<a class="row agent" href="${href}"><span class="dot ${esc(st)}"></span><div class="body"><b>${esc(name)} <span class="tag ${st}">${word}</span>${c.agent === id ? ' <span class="tag">Chief</span>' : ""}</b>
         <span class="meta">${esc(clip(why, 110))}</span></div><span class="chev">›</span></a>` };
