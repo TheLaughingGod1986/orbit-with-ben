@@ -297040,13 +297040,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-21T20:39Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-21T16:08Z",
-      "result": "parked for Chief: J3300 condition verification complete (jobs/reviews/J3300/REVIEW.md, 2b773977d1): J3178 condition UNMET. agy 1.5.14 read_file on NAS row 58 still returns 8 discrete 1-fps JPEGs (00:00..00:07; missing 3.833-4.250s exit), not continuous 24-fps playback (audio_input demonstrated on pickup WAV); no worker has verified 24-fps moving_video_input (relay 20:36:14Z probe false-positives from 1-fps stills); 11/11 Batch 12-14 NAS SHA-256 hashes match REVIEW_STATE.json and BATCH_12-14 receipts; REVIEW_STATE.json unchanged (48 KEEP / 8 RETAKE / 10 unset); no new 013 marks on HOS #180/#694, OWB #954, or open PRs. Elected Chief (Grok Bot) to record J3178 typed capability wait (--type capability --requires moving_video_input --recheck J3300 --check-at 2026-11-22T02:45:00Z) and close J3300. £0 / 0 credits spent; nothing for Ben.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-21T16:08Z",
@@ -297092,6 +297092,11 @@
           "at": "2026-11-21T22:55Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-22T01:51Z",
+          "by": "gemini",
+          "what": "reopened"
         }
       ],
       "remaining_action": "Parked for elected Chief (Grok Bot) to record J3178 typed capability wait --recheck J3300 and close J3300",
@@ -297110,13 +297115,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-21T20:45Z",
-        "by": "gemini",
-        "note": "Committed jobs/reviews/J3300/REVIEW.md (2b773977d1) from clean worktree; ratchet checks passed."
-      },
       "taskKeys": [
         "HOS:013"
       ],
