@@ -1,5 +1,5 @@
 {
-  "next_id": 3372,
+  "next_id": 3373,
   "jobs": [
     {
       "id": "J0001",
@@ -303207,6 +303207,36 @@
       "remaining_action": "Rebuild the loss graphic and its timing after the corrected narration",
       "kind": "chart",
       "plain": "Correct the bomber loss graphic to match the verified narration"
+    },
+    {
+      "id": "J3372",
+      "title": "J3365 follow-up: HOS exact 28-day reach, Willow test result and current title readback",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "J3365 Chief FIX follow-up, 22 November 2026. Read-only Studio evidence for the HOS weekly thumbnail audit, PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1170. GBP0, no Studio changes.\n\nUse the existing HOS Studio tab on Mini CDP 9222 via scripts/cdp_tabs.py reuse_page. Verify HOS channel UCXp7HkBIl1LgaznXuZHJyRg. Capture the exact 2026-10-25 through 2026-11-21 28-day per-video thumbnail impressions, impressions CTR and views from impressions for public/scheduled audit inventory. Preserve unavailable values as unknown, not zero. Record source/time/window, separate long and Short medians and qualifying >=1000-impression rows. Lifetime statistics cannot substitute for that window. If Studio cannot supply a metric, record the precise limitation.\n\nRead VbPubYd6Fbs (006 Willow) Results ready report. Record exact experiment identity, finish date, variant labels, watch-time shares or NOT_ENOUGH_DATA, and any visible CTR/impressions. Update the existing ledger row (or add only if genuinely absent); no invented zero shares, no win from lifetime CTR change. Preserve the attached finished test.\n\nAlso capture current titles and attached test state for _C92tIJCk8A, AL_-qlWko_g and frP_YrNShsU so the audit stops proposing stale titles. J1130 was closed by Chief on 17 Nov; do not reopen it or arm a replacement. No Save, Continue, test creation/deletion, title edit, privacy/schedule or cover writes. Respect active 004 and 007 test windows.\n\nWrite small JSON/Markdown evidence in OWB 05_Analytics/weekly_thumb_audit/HOS/2026-11-22_evidence/ from an isolated worktree; store screenshots outside git with SHA-256 and paths. Return a PR and its link on J3365. This evidence is a prerequisite to passing the revised audit. A signed-out Mini requiring credentials is a real login issue; do all possible reads first and report it accurately. Do not assume the MacBook sign-out also affects the Mini.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-22T14:28Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-22T14:28Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Read the exact audit-window reach, Willow test result and current titles without changing YouTube",
+      "kind": "studio",
+      "plain": "Reading the missing thumbnail results for the History of Science audit",
+      "mini_only": true
     }
   ],
   "focus": [
