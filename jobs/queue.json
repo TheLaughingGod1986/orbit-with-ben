@@ -300553,9 +300553,14 @@
           "at": "2026-11-22T08:04Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J3345 as specialist worker (Claude is elected Chief); starting direct media probe and evidence checks."
+        },
+        {
+          "at": "2026-11-22T08:04Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Probed media input via read_file: audio_input and image_input demonstrated; continuous 24-fps moving_video_input unavailable (row 58 returned 8 1-fps stills 00:00..00:07). Recorded session capabilities."
         }
       ],
-      "remaining_action": "Probe session media capabilities and verify J3178 waiting condition (NAS hashes, ledger, desk/PRs, worker capabilities)",
+      "remaining_action": "Verify Batch 12-14 NAS SHA-256 hashes, REVIEW_STATE.json, worker capabilities, and desk/thread/PR history for J3178",
       "kind": "review",
       "recheck_of": "J3178",
       "required_capabilities": [
@@ -300564,11 +300569,11 @@
       "due": "2026-11-22T09:01:39+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
         "at": "2026-11-22T08:04Z",
         "by": "gemini",
-        "note": "Claimed J3345 as specialist worker (Claude is elected Chief); starting direct media probe and evidence checks."
+        "note": "Probed media input via read_file: audio_input and image_input demonstrated; continuous 24-fps moving_video_input unavail"
       },
       "taskKeys": [
         "HOS:013"
