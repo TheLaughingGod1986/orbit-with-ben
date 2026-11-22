@@ -593,8 +593,13 @@ def cli_spec(agent: str, model: str = ""):
         if os.environ.get("CODEX_FLAGS"):
             log("CODEX_FLAGS is set in the environment and ignored; the flags come from cli_spec()")
         flags = f"exec --approve-for-me -c sandbox_workspace_write.network_access=true {add_dirs()}"
+        # Always name the model (22 Nov 2026): with no -m, Codex used its CLI default (gpt-6.1-terra), whose own limit
+        # benched the whole agent until 24 Nov while Ben's weekly Codex allowance still showed 94% left. A tool lane
+        # (eleven_v3, Veo, Nano Banana) still thinks on the routing default.
         if model.startswith("gpt-"):
             flags = flags.replace("exec ", f"exec -m {shlex.quote(model)} ", 1)
+        else:
+            flags = f"{flags} -m {shlex.quote(CODEX_DEFAULT_MODEL)}"
     elif agent == "gemini":
         # Gemini via Antigravity `agy` (Ben, 11 Oct 23:47: "remember we also have Gemini and Codex"): a stand-in in the
         # job chains (routing.CHAINS) when Cursor or Codex are out. -p = one prompt, print, exit (as in `agy -p` fact
@@ -1119,6 +1124,9 @@ def scratch_dir() -> pathlib.Path | None:
     got = s if dev is not None and dev != home_dev else None
     _ssd_seen[str(s)] = (time.monotonic(), got)
     return got
+
+
+CODEX_DEFAULT_MODEL = os.environ.get("CODEX_DEFAULT_MODEL", "gpt-6.1-sol")
 
 
 def run_cli(agent: str, prompt: str, cap_s: int, model: str = "") -> tuple:

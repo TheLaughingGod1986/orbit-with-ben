@@ -596,6 +596,10 @@ class Relay(unittest.TestCase):
         _, args = cr.cli_spec("codex")
         self.assertEqual(args[:2], ["exec", "--approve-for-me"])
         self.assertFalse({"-s", "--sandbox"} & set(args))  # 0.160 refuses --sandbox with --approve-for-me
+        # 22 Nov 2026: never the CLI's own default model (gpt-6.1-terra hit its own limit and benched Codex)
+        self.assertEqual(args[args.index("-m") + 1], "gpt-6.1-sol")
+        _, named = cr.cli_spec("codex", "gpt-6-astra")
+        self.assertEqual(named[named.index("-m") + 1], "gpt-6-astra")
 
     def test_chain_order_comes_from_the_env(self):
         os.environ["CHIEF_CHAIN"] = "chief,codex,cursor"
