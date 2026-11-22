@@ -1,5 +1,5 @@
 {
-  "next_id": 3381,
+  "next_id": 3382,
   "jobs": [
     {
       "id": "J0001",
@@ -304548,6 +304548,35 @@
         "OWB:006"
       ],
       "done_ref": "83a8ea89f2"
+    },
+    {
+      "id": "J3381",
+      "title": "Rebuild three thumbnail heroes after J3307 visual FIX",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J3307 exact-file Chief review: FIX all three v02 candidates. Review evidence will be committed at jobs/reviews/J3307/REVIEW.md. This is a bounded £0 rebuild, no generation or Studio writes. Preserve v01, v02 and their ledger history. Produce new J3302_v03 candidate files and hash manifest; never overwrite existing files.\nT041: keep 2× EARTH'S WATER and Earth larger than Europa, but make Europa the unmistakable hero at 168x94. Current Europa is only about 327 pixels in diameter (43 pixels at phone size) against an 850-pixel cropped Earth. Compose a substantially larger, clearly legible Europa with a partial Earth reference behind/alongside while preserving the correct size direction. Meet whole-subject/one-third-frame house requirement; do not claim combined comparison mass substitutes for the hero. Retain real source terminator, no invented glowing cracks. Remove bright residual nebula contours from the starfield; they resemble scratches. Thin arrow only if it helps.\nT042: keep EARTH AGES 7×. The enlarged S84-27018 cutout is visibly soft, the torso is cut off by the lower border and the motion cues almost disappear at phone size. Recompose around a clean, sharp real spacecraft/astronaut subject (existing approved plate or free official source only), recognizable whole subject with dark separation, smooth visible photographic motion cues. Do not enlarge a soft crop just to meet subject area. No vector rays or synthetic cyan disk. Preserve full top-band and badge clearance.\nT043: keep OUTLIVES OUR SUN and the documented SDO-texture red-dwarf illustration, but make the smaller red dwarf prominent and large enough to be the hero at phone size, using a restrained partial pale Sun reference. Current 310-pixel dwarf is only 41 pixels at phone size while the cropped pale Sun dominates. Remove leftover nebula contours and differentiate the layout from Europa; retain a believable comparison and explicit illustrative-proxy provenance.\nRun colour gate, dimensions/size, hash, and 168x94/360x202 badge checks. Source URLs must name the exact variant: Europa and Mystic Mountain in v02 were NASA ~medium.jpg assets (verified by J3307); other three were ~orig.jpg. Keep panel Round 2 titles parked and no metadata changes. Deliver records through owner PR. Create no Studio job duplicates. Subsequent Chief review must inspect final actual JPEGs, give exact-file PASS or FIX, and independently decide one-test successor authorization; builder completion authorizes nothing.\n",
+      "ref": "J3307",
+      "film": "006",
+      "stage": "thumbs",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-22T17:35Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-22T17:35Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Rebuild the three thumbnail compositions from the review notes",
+      "kind": "thumb",
+      "plain": "Improve the Europa, light-speed and last-star thumbnails so their subjects read clearly on a phone"
     }
   ],
   "focus": [
