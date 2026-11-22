@@ -25657,10 +25657,10 @@
       "stage": "upload",
       "after": "J3394",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-22T22:59Z",
+      "eta": "2026-11-23T00:59Z",
       "created_by": "cursor",
       "created_at": "2026-10-15T18:18Z",
       "result": "",
@@ -25844,6 +25844,11 @@
           "at": "2026-11-22T22:56Z",
           "by": "codex",
           "what": "reopened: J3395 Chief ruling CONDITION MET on MacBook only. Merged evidence PRs 1195/1196 and routing PR 1198: J3394 responsive exact Orbit channel DOM at 2026-11-22T21:47:56Z; receipt SHA-256 verified. needs=macbook, due 23 Nov 10:30Z, dependency J3394 done. Reopen for fresh Public verification and saved/reloaded Related to 6bbbvfCx6zY on OVLv9dxTcpE and emwQsPxnRGM only. Original approvals and exclusions retained. No Mini retry or other YouTube changes."
+        },
+        {
+          "at": "2026-11-22T22:59Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "kind": "studio",
@@ -25854,7 +25859,15 @@
       "remaining_action": "On the MacBook, verify the Earth long is public and save both Shorts links with reload checks",
       "not_before": "2026-11-22T18:05Z",
       "due": "2026-11-23T10:30:00Z",
-      "due_kind": "before-scheduled-short"
+      "due_kind": "before-scheduled-short",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-22T22:59Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J0318",
