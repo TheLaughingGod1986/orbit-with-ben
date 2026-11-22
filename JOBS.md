@@ -64,7 +64,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3371 | mini | open (after J3370) | – | – | WW2:003 edit · chart · WW2 003: rebuild loss graphic and cues for corrected narration |  |
 | J3372 | mini | open | – | – | studio · J3365 follow-up: HOS exact 28-day reach, Willow test result and current title readback |  |
 | J3375 | mini | blocked | gemini | – | review · Verify condition for J3178 |  |
-| J3384 | mini | claimed | codex | 2026-11-23T00:36Z | review · Verify condition for J3372 |  |
 | J3391 | mini | blocked | macbook-2 | – | review · Verify condition for J3365 |  |
 | J3392 | mini | blocked | gemini | – | review · Verify condition for J3205 |  |
 | J3395 | mini | blocked | macbook-2 | – | review · Verify condition for J0317 |  |
@@ -91,22 +90,4 @@ Thread read to #7085827873.
 )
 - J3386 done: Verify condition for J2020 (Chief accepted condition verification and merged PR 1185 (81960da6be). Reopened J2020 with evidence and concrete readout scope: disclose analytics cutoff, matched metric periods, late Related linkage, and unknown Shorts attribution; provisional result requires through >= 2026-11-22 follow-up check at 2026-11-25T07:00Z. Date hold only released; no Rule 17 success verdict, no public changes or spend.)
 - J3385 done: Verify condition for J1275 (Acting Chief codex KEEP: accepted CONDITION NOT MET verification and merged evidence PR 1192 at 5eb7e60900. Recorded J1275 dependency hold with last_recheck J3385 and next check 2026-11-23T18:00:00Z. Fresh verification: J2036 done; J2037 and HOS PRs 731/719 remain open; HOS 009 v03 chapters already match, final package review/cut lock pending. HOS 010 has no NAS long assembly and retains provisional chapters. Both package lints PASS; eight Sources entries retained each. Follow-up: J2037 reviews 009; J1275 checks each locked cut and changes chapter timings only as needed before package lint and review. No upload, schedule, privacy, Buffer or spend changes; no audio/motion review claimed.)
-- J3383 done: First-day check at 6 h: "How Does the Heart Pump Blood?" (el30-mHiH-0) ("How Does the Heart Pump Blood?" (el30-mHiH-0) · History of Science · Short · went live Sun 22 Nov 11:30 London
-At 6 h: views 515 · Studio rank 1 of 10 · shown in feed about 1820 (from 475 feed views) · stayed to watch 26.1% · average viewed 67.1%
-Usual for this channel: stayed to watch 29.6%, average viewed 75.0%
-
-Verdict: AHEAD
-  - 515 views at 6 h; the last 5 checked at the same age had 13 (median).
-  - 515 views at 6 h; Studio says the usual for us at this age is 70.
-  - Studio ranks it 1 of 10 against our latest videos at the same age.
-
-What is different about this one
-  - "Blood" was in the title of 3 earlier Shorts: they had 201 views by the next morning (median), against 71 for all Shorts.
-
-Do now
-  - Nothing to fix.
-
-Carry forward
-  - A strong start is a lesson too: note what is different about this one.
-
-Step 1 check (read-only, CDP 9222, UCXp7HkBIl1LgaznXuZHJyRg, 2026-11-22T22:01-22:04Z, ~10 h 30 m after publish): 0 faults. Public, listed under Shorts, Notices/Restrictions empty (no copyright claim, Not Made for Kids, no age restriction, Altered content Yes), HD processing finished (SD+HD), Related video wwcjcFfC-5M (The Tied Arm That Proved Your Blood Circulates) and description match s07 upload package; YOUR PULSE cover live. Recorded in 05_Analytics/hos/launch/el30-mHiH-0.json. No Studio edits, £0 spend.)
+- J3384 done: Verify condition for J3372 (Chief Option A approved and recorded: merged PR1191, independently verified responsive HOS Studio on 9460 at 22:34Z, and reopened J3372 with explicit alternate-route authorization and remaining action. 9222 recovery is not required for this read-only task. J3365 audit still awaits missing exact-window/test/title evidence; no gate or test state changed.)

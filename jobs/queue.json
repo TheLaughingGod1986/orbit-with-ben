@@ -305539,13 +305539,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-22T22:36Z",
-      "eta": "2026-11-23T00:36Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-22T17:52Z",
-      "result": "",
+      "result": "Chief Option A approved and recorded: merged PR1191, independently verified responsive HOS Studio on 9460 at 22:34Z, and reopened J3372 with explicit alternate-route authorization and remaining action. 9222 recovery is not required for this read-only task. J3365 audit still awaits missing exact-window/test/title evidence; no gate or test state changed.",
       "history": [
         {
           "at": "2026-11-22T17:52Z",
@@ -305606,6 +305606,11 @@
           "at": "2026-11-22T22:36Z",
           "by": "codex",
           "what": "step 3 of 3 done: Option A recorded on parent J3372 and parent reopened for immediate read-only collection using 9460; audit approval remains outstanding."
+        },
+        {
+          "at": "2026-11-22T22:37Z",
+          "by": "codex",
+          "what": "done: Chief Option A approved and recorded: merged PR1191, independently verified responsive HOS Studio on 9460 at 22:34Z, and reopened J3372 with explicit alternate-route authorization and remaining action. 9222 recovery is not required for this read-only task. J3365 audit still awaits missing exact-window/test/title evidence; no gate or test state changed."
         }
       ],
       "remaining_action": "Close the recorded Chief review",
@@ -305632,7 +305637,8 @@
         "at": "2026-11-22T22:36Z",
         "by": "codex",
         "note": "Option A recorded on parent J3372 and parent reopened for immediate read-only collection using 9460; audit approval rema"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1191"
     },
     {
       "id": "J3385",
