@@ -306624,9 +306624,14 @@
           "at": "2026-11-22T22:19Z",
           "by": "codex",
           "what": "step 0 of 3 done: Plan: trace approvals and receipts; reconcile the existing handoff; verify and report."
+        },
+        {
+          "at": "2026-11-22T22:20Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Root cause confirmed: J0317 has OWB:027 display tag but empty film/stage. Existing PR 1194 fixes exactly this while preserving its hold."
         }
       ],
-      "remaining_action": "Check the Earth rotation upload records and identify the remaining work",
+      "remaining_action": "Validate and merge the existing correction linking the Earth Shorts job to its film",
       "kind": "chief",
       "handoff": {
         "film": "027",
@@ -306635,11 +306640,11 @@
         "signature": "630f7b04ffe23172b607"
       },
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-22T22:19Z",
+        "at": "2026-11-22T22:20Z",
         "by": "codex",
-        "note": "Plan: trace approvals and receipts; reconcile the existing handoff; verify and report."
+        "note": "Root cause confirmed: J0317 has OWB:027 display tag but empty film/stage. Existing PR 1194 fixes exactly this while pres"
       },
       "taskKeys": [
         "OWB:027"
