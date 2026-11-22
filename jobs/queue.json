@@ -303566,10 +303566,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-22T15:50Z",
+      "eta": "2026-11-22T17:50Z",
       "created_by": "relay",
       "created_at": "2026-11-22T15:32Z",
       "result": "",
@@ -303618,6 +303618,11 @@
           "at": "2026-11-22T15:50Z",
           "by": "codex",
           "what": "reopened: Acting-Chief review accepts unmet condition evidence; J3372 remains held with recheck J3373 at 17:45Z. Reopening only this verification to record completion."
+        },
+        {
+          "at": "2026-11-22T15:50Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief to record J3372 unmet input wait (--recheck J3373) and close J3373",
@@ -303636,7 +303641,15 @@
       "open_claim": true,
       "taskKeys": [
         "HOS:006"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-22T15:50Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
