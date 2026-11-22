@@ -1,5 +1,5 @@
 {
-  "next_id": 3391,
+  "next_id": 3392,
   "jobs": [
     {
       "id": "J0001",
@@ -303306,6 +303306,11 @@
           "at": "2026-11-22T16:14Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-22T18:30:00Z"
+        },
+        {
+          "at": "2026-11-22T18:33Z",
+          "by": "relay",
+          "what": "condition verification queued: J3391"
         }
       ],
       "remaining_action": "Await the Studio evidence, then correct the audit table and resubmit for review",
@@ -303331,10 +303336,11 @@
       "hold": {
         "type": "dependency",
         "condition": "Chief J3374: condition UNMET. J3372 remains blocked; PR1175 at 96fddf7d99 has 45 rows with all reach metrics null, unread Willow result and three unknown title/test states. PR1176 at 9963fd5a79 confirms renderer timeouts; preserve J3372 retry 2026-11-22T17:45:00Z and its bounded recovery instructions. After J3372 returns evidence, incorporate it in PR1170 (currently bf6f0fa491), correct blanket VERIFIED frame-0 table labels to only the three supported masters and the heart row copied from cuff, and resolve or explicitly retain unknown exact compilation shelf image. No final audit PASS or test/title changes. Recheck at 18:30Z after the prerequisite retry.",
-        "check_at": "2026-11-22T18:30:00Z",
+        "check_at": "2026-11-22T19:33:29+00:00",
         "last_recheck": "J3374",
         "checked_at": "2026-11-22T16:14:47+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J3391"
       }
     },
     {
@@ -305285,6 +305291,37 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3391",
+      "title": "Verify condition for J3365",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3365: Chief J3374: condition UNMET. J3372 remains blocked; PR1175 at 96fddf7d99 has 45 rows with all reach metrics null, unread Willow result and three unknown title/test states. PR1176 at 9963fd5a79 confirms renderer timeouts; preserve J3372 retry 2026-11-22T17:45:00Z and its bounded recovery instructions. After J3372 returns evidence, incorporate it in PR1170 (currently bf6f0fa491), correct blanket VERIFIED frame-0 table labels to only the three supported masters and the heart row copied from cuff, and resolve or explicitly retain unknown exact compilation shelf image. No final audit PASS or test/title changes. Recheck at 18:30Z after the prerequisite retry.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3365 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-22T18:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-22T18:33Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await the Studio evidence, then correct the audit table and resubmit for review",
+      "kind": "review",
+      "recheck_of": "J3365",
+      "due": "2026-11-22T19:33:29+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
