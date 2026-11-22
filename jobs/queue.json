@@ -179274,9 +179274,14 @@
           "at": "2026-11-22T11:17Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-22T11:20Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J2036; starting independent v03 verification and package completion for HOS 009"
         }
       ],
-      "remaining_action": "After J3314 completes v03 long master and gates, verify v03 hash/gates/repaired stills, add honest making-of line and reconcile production-status.md header, then hand off to J2037",
+      "remaining_action": "Verify v03 master hash/gates/cards, inspect stills, update package & docs PR, run lint/CI, hand off to J2037",
       "due": "2026-11-15T18:00:00Z",
       "kind": "qa",
       "taskKeys": [
@@ -179293,11 +179298,10 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-22T11:17Z",
+        "of": 5,
+        "at": "2026-11-22T11:20Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Claimed J2036; starting independent v03 verification and package completion for HOS 009"
       }
     },
     {
