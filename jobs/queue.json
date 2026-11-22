@@ -297486,9 +297486,14 @@
           "at": "2026-11-21T22:53Z",
           "by": "relay",
           "what": "condition verification queued: J3332"
+        },
+        {
+          "at": "2026-11-22T00:52Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-22T16:38:00Z"
         }
       ],
-      "remaining_action": "Read codex.md, gemini.md, cursor.md in 05_Analytics/tests/panels/owb-j3302-weekly-2026-11-21/, write DECISION.md, post 3-line summary on #99, and queue any build/Studio jobs",
+      "remaining_action": "Read codex.md (or decide with gemini.md + cursor.md after 2026-11-22T16:37Z), write DECISION.md, post 3-line summary on #954, and queue any build/Studio jobs",
       "kind": "review",
       "rerouted_from": {
         "needs": "cloud",
@@ -297509,8 +297514,10 @@
       "hold": {
         "type": "input",
         "condition": "J3303 (codex.md independent critique in 05_Analytics/tests/panels/owb-j3302-weekly-2026-11-21/) is committed, or 24h fallback deadline 2026-11-22T16:37Z has passed",
-        "check_at": "2026-11-21T23:53:01+00:00",
-        "recheck_task": "J3332"
+        "check_at": "2026-11-22T16:38:00Z",
+        "last_recheck": "J3332",
+        "checked_at": "2026-11-22T00:52:16+00:00",
+        "checked_by": "gemini"
       }
     },
     {
