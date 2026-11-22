@@ -302088,13 +302088,13 @@
       "stage": "",
       "after": "",
       "eta_min": 15,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-22T13:56Z",
-      "eta": "2026-11-22T14:11Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-22T11:56Z",
-      "result": "parked for Chief: Steps 1-3 done on Mini (codex UP and gpt-6.1-sol test exited 0 OK; claudecode left down on real Fable limit until Nov 25 10am London). Step 4 awaits Chief merge of PR #1168 (Codex always runs on a named model, checks green), then git pull + status on the Mini.",
+      "result": "Chief KEEP: PR 1168 merged e48f05d176 and installed; Sol smoke check accepted, 86 model/worker tests and 13 privacy checks passed. Review merged PR 1174. Codex UP; Claude Code real Fable hold preserved, retry corrected to 2026-11-25T10:00:00Z; relay retries then, no purchase or Ben action. Thread receipt posted. No other job taken.",
       "history": [
         {
           "at": "2026-11-22T11:56Z",
@@ -302155,6 +302155,11 @@
           "at": "2026-11-22T13:56Z",
           "by": "codex",
           "what": "step 5 of 5 done: KEEP recorded and PR 1174 merged; receipt posted; Claude Code real limit retained until 2026-11-25T10:00Z."
+        },
+        {
+          "at": "2026-11-22T13:57Z",
+          "by": "codex",
+          "what": "done: Chief KEEP: PR 1168 merged e48f05d176 and installed; Sol smoke check accepted, 86 model/worker tests and 13 privacy checks passed. Review merged PR 1174. Codex UP; Claude Code real Fable hold preserved, retry corrected to 2026-11-25T10:00:00Z; relay retries then, no purchase or Ben action. Thread receipt posted. No other job taken."
         }
       ],
       "remaining_action": "Restoration review complete; Claude Code retries at its recorded reset",
@@ -302178,7 +302183,8 @@
         "at": "2026-11-22T13:56Z",
         "by": "codex",
         "note": "KEEP recorded and PR 1174 merged; receipt posted; Claude Code real limit retained until 2026-11-25T10:00Z."
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1174"
     },
     {
       "id": "J3360",
