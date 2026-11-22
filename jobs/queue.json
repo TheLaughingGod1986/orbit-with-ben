@@ -299221,13 +299221,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-22T15:05Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-21T21:06Z",
-      "result": "parked for Chief: merge HOS PR #732 (el30-mHiH-0 live flip in library.json; signed-out read-back PASS, check_all.sh ALL CHECKS PASS)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-21T21:06Z",
@@ -299293,6 +299293,11 @@
           "at": "2026-11-22T15:10Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: merge HOS PR #732 (el30-mHiH-0 live flip in library.json; signed-out read-back PASS, check_all.sh ALL CHECKS PASS)"
+        },
+        {
+          "at": "2026-11-22T15:36Z",
+          "by": "codex",
+          "what": "reopened: Chief ruling PASS: reviewed original brief/history, J3358 approval and worker evidence; independent signed-out check confirms public since 2026-11-22T11:30:33Z and en/en-GB captions. HOS PR 732 exact head 4078b6d9 passed four CI checks, owner/main verified, merged as 3be57292979147531b96480696f182ea4a87f631. Follow-up: verify main library live, record completion and report; no external wait or YouTube/Buffer writes."
         }
       ],
       "remaining_action": "Parked for Chief merge of HOS PR #732",
@@ -299306,13 +299311,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-22T15:10Z",
-        "by": "gemini",
-        "note": "Opened HOS PR #732 (gemini/J3323-el30-live, commit 4078b6d9); posted read-back evidence and PR URL to HOS desk #694 and "
-      },
       "taskKeys": [
         "HOS:005"
       ]
