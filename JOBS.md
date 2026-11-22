@@ -64,6 +64,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3331 | mini | blocked | gemini | – | assembly · Roman Telescope 7 Dec dated-event Short (airs Thu 3 Dec): voice-over, build from free NASA footage, all Shorts gates, park for review | 02_Video-Projects/_dated_shorts/2026-12-07_roman-telescope-first-images.md |
 | J3346 | mini | open | – | – | 128 topic · review · HOS 128 Why Do We Use AC Instead of DC?: rule-E topic go/no-go review |  |
 | J3347 | mini | open | – | – | 129 topic · review · HOS 129 How Was the Microwave Invented?: rule-E topic go/no-go review |  |
+| J3348 | any | open | – | – | script · HOS: learn from our data, add two new films to the backlog |  |
 
 Recently finished:
 
