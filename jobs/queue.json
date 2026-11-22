@@ -300593,10 +300593,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-22T08:18Z",
+      "eta": "2026-11-22T10:18Z",
       "created_by": "relay",
       "created_at": "2026-11-22T08:01Z",
       "result": "",
@@ -300645,6 +300645,11 @@
           "at": "2026-11-22T08:18Z",
           "by": "gemini",
           "what": "reopened: Acting-Chief gemini reopening J3345 to claim and close after merging PR #1154 (fdda76b651) and recording J3178 capability wait."
+        },
+        {
+          "at": "2026-11-22T08:18Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for Chief (claude): merge PR #1154, record wait J3178 --recheck J3345, and close J3345",
@@ -300657,7 +300662,15 @@
       "due_kind": "condition-verification",
       "taskKeys": [
         "HOS:013"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-22T08:18Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
