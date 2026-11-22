@@ -303872,13 +303872,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-22T16:27Z",
-      "eta": "2026-11-22T18:27Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-22T16:26Z",
-      "result": "",
+      "result": "parked for Chief: condition UNMET for J3178 (HOS 013 rows 56-62, 64-66). Review PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1177 (dcfe72ec59, jobs/reviews/J3375/REVIEW.md) open for Chief Codex to merge, record wait J3178 --type capability --requires moving_video_input --recheck J3375 --check-at 2026-11-22T22:30:00Z, and close J3375. Direct read_file probe on NAS row 58 still returns 8 discrete 1-fps stills (no continuous 24-fps moving_video_input); 11/11 Batch 12-14 NAS hashes verified; REVIEW_STATE.json preserved; £0 spend.",
       "history": [
         {
           "at": "2026-11-22T16:26Z",
@@ -303919,6 +303919,11 @@
           "at": "2026-11-22T16:32Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Posted OWB #954 report and parking J3375 for elected Chief Codex (PR #1177, commit dcfe72ec59)."
+        },
+        {
+          "at": "2026-11-22T16:32Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: condition UNMET for J3178 (HOS 013 rows 56-62, 64-66). Review PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1177 (dcfe72ec59, jobs/reviews/J3375/REVIEW.md) open for Chief Codex to merge, record wait J3178 --type capability --requires moving_video_input --recheck J3375 --check-at 2026-11-22T22:30:00Z, and close J3375. Direct read_file probe on NAS row 58 still returns 8 discrete 1-fps stills (no continuous 24-fps moving_video_input); 11/11 Batch 12-14 NAS hashes verified; REVIEW_STATE.json preserved; £0 spend."
         }
       ],
       "remaining_action": "Parked for Chief Codex: merge PR #1177, record wait J3178 --recheck J3375, and close J3375",
