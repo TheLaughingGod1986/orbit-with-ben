@@ -58,7 +58,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3310 | mini | open (after J3307) | – | – | studio · Studio: arm T043 thumbnail Test & Compare on REXYxuLOBoI (005 — OUTLIVES OUR SUN) after J3307 PASS |  |
 | J3311 | mini | blocked | gemini | – | HOS:009 edit · qa · Review HOS 009 Short A v01 and Short B v01 (J2171, PR #718) | J2171 |
 | J3323 | mini | blocked | gemini | – | 005 upload · listing · HOS 005 Short el30-mHiH-0 post-public read-back & library.json live flip | 7064710774 |
-| J3331 | mini | blocked | gemini | – | assembly · Roman Telescope 7 Dec dated-event Short (airs Thu 3 Dec): voice-over, build from free NASA footage, all Shorts gates, park for review | 02_Video-Projects/_dated_shorts/2026-12-07_roman-telescope-first-images.md |
 | J3354 | mini | blocked | macbook-2 | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3358 | mini | blocked | gemini | – | review · Verify condition for J3323 |  |
 | J3359 | mini | blocked | gemini | – | for gemini · assembly · `gemini-argon` · Bring Codex and Claude Code back on the Mini: clear Codex's stale terra limit mark (Ben: 94% left), check Claude Code, status before/after |  |
@@ -68,6 +67,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3363 | mini | blocked | codex | – | thumb · Field Order History pilot 1 thumbnail: fix white-on-white text before 17:00 (B v02 high-contrast vs A no-text, pick at phone size, set it) |  |
 | J3364 | mini | claimed | codex | 2026-11-22T16:48Z | 002 picture · assembly · Field Order History pilot 2: add the planned archive photos (~65%) to the graphics-only cut, v06 to Ben's watch by Tue 20:00 (else move to Sat 28 Nov) |  |
 | J3365 | mini | claimed | macbook-2 | 2026-11-22T15:48Z | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
+| J3366 | mini | open | – | – | listing · Upload the Roman Telescope dated Short v01 (Thu 3 Dec 11:30) Private and scheduled |  |
 
 Recently finished:
 

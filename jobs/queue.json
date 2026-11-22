@@ -1,5 +1,5 @@
 {
-  "next_id": 3366,
+  "next_id": 3367,
   "jobs": [
     {
       "id": "J0001",
@@ -299741,13 +299741,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-22T01:45Z",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-21T22:26Z",
-      "result": "Waiting for: HELD ON BEN'S OK (Ben's watch): Chief VIDEO v01 KEEP (jobs/reviews/J3331/REVIEW.md, PR #1145) + COVER v02 KEEP (jobs/reviews/J3337/REVIEW.md, PR #1149 f09be0e386; PR #1147 merged 2a9d453f9f). Locked owb_dated_2026_12_07_roman_first_images_v01.mp4 (SHA ff52475588e5ecee) and roman_2026_12_07_cover_v02.jpg (SHA fecf983184783f57) are staged in OWB UAT and OWB UAT/WATCH_FULL (SHA-256 verified) and the watch card is on the board. Needs Ben's OK by Wed 2 Dec 2026 18:00 London for Thu 3 Dec 2026 11:30 London publish (Related ziKBPJ6FY0U); if missed, do not upload.",
+      "result": "Ben OK'd v01 and cover v02 on the board (22 Nov 10:45Z). Upload job J3366 carries it into Thu 3 Dec 11:30, Private.",
       "history": [
         {
           "at": "2026-11-21T22:26Z",
@@ -299833,6 +299833,16 @@
           "at": "2026-11-22T01:45Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-12-02T18:00:00Z"
+        },
+        {
+          "at": "2026-11-22T12:52Z",
+          "by": "claude",
+          "what": "no longer waits on Ben: OK'd, delivered by J3366"
+        },
+        {
+          "at": "2026-11-22T12:52Z",
+          "by": "claude",
+          "what": "done: Ben OK'd v01 and cover v02 on the board (22 Nov 10:45Z). Upload job J3366 carries it into Thu 3 Dec 11:30, Private."
         }
       ],
       "remaining_action": "Wait for Ben's OK on the board by Wed 2 Dec 2026 18:00 London, then upload Private for Thu 3 Dec 2026 11:30 London (Related ziKBPJ6FY0U)",
@@ -299849,7 +299859,12 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       },
-      "awaits_ben": {
+      "hold": {
+        "type": "ben",
+        "condition": "HELD ON BEN'S OK (Ben's watch): Chief VIDEO v01 KEEP (jobs/reviews/J3331/REVIEW.md, PR #1145) + COVER v02 KEEP (jobs/reviews/J3337/REVIEW.md, PR #1149 f09be0e386; PR #1147 merged 2a9d453f9f). Locked owb_dated_2026_12_07_roman_first_images_v01.mp4 (SHA ff52475588e5ecee) and roman_2026_12_07_cover_v02.jpg (SHA fecf983184783f57) are staged in OWB UAT and OWB UAT/WATCH_FULL (SHA-256 verified) and the watch card is on the board. Needs Ben's OK by Wed 2 Dec 2026 18:00 London for Thu 3 Dec 2026 11:30 London publish (Related ziKBPJ6FY0U); if missed, do not upload.",
+        "check_at": "2026-12-02T18:00:00Z"
+      },
+      "awaits_was": {
         "what": "Watch the 7 Dec NASA Roman Telescope First Images dated-event Short v01 (18.2 s) and its rebuilt opaque cover v02",
         "file": "OWB UAT/owb_dated_2026_12_07_roman_first_images_v01.mp4",
         "version": "v01",
@@ -299858,11 +299873,6 @@
         "ifNot": "Do not upload or schedule this dated-event Short if approval misses the deadline",
         "title": "What Will NASA's Roman Telescope Reveal on Dec 7?",
         "type": "short"
-      },
-      "hold": {
-        "type": "ben",
-        "condition": "HELD ON BEN'S OK (Ben's watch): Chief VIDEO v01 KEEP (jobs/reviews/J3331/REVIEW.md, PR #1145) + COVER v02 KEEP (jobs/reviews/J3337/REVIEW.md, PR #1149 f09be0e386; PR #1147 merged 2a9d453f9f). Locked owb_dated_2026_12_07_roman_first_images_v01.mp4 (SHA ff52475588e5ecee) and roman_2026_12_07_cover_v02.jpg (SHA fecf983184783f57) are staged in OWB UAT and OWB UAT/WATCH_FULL (SHA-256 verified) and the watch card is on the board. Needs Ben's OK by Wed 2 Dec 2026 18:00 London for Thu 3 Dec 2026 11:30 London publish (Related ziKBPJ6FY0U); if missed, do not upload.",
-        "check_at": "2026-12-02T18:00:00Z"
       }
     },
     {
@@ -302612,6 +302622,53 @@
         "of": 5,
         "at": "2026-11-22T12:50Z",
         "by": "macbook-2"
+      }
+    },
+    {
+      "id": "J3366",
+      "title": "Upload the Roman Telescope dated Short v01 (Thu 3 Dec 11:30) Private and scheduled",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben OK'd the Roman Telescope dated-event Short v01 and its cover v02 on the board (22 Nov 10:45Z, tick OWB-J3331).** Chief evidence: jobs/reviews/J3331/REVIEW.md (video KEEP) and jobs/reviews/J3337/REVIEW.md (cover KEEP). File `owb_dated_2026_12_07_roman_first_images_v01.mp4` (sha256 starts `ff52475588e5ecee`) and cover `roman_2026_12_07_cover_v02.jpg` (starts `fecf983184783f57`) in `OWB UAT/`; read both full hashes from the review folder and check them.\n\n1. Run `python3 00_Brand/Channel-Setup/tools/gate_shorts_open.py check <file> --air-date 2026-12-03 --id owb_dated_2026_12_07_roman_first_images_v01` without `--report-only`; it must PASS.\n2. Upload as a NEW Private video, publish time Thu 3 Dec 2026 11:30 London (11:30Z). Title \"What Will NASA's Roman Telescope Reveal on Dec 7?\" (or the title in the plan `02_Video-Projects/_dated_shorts/2026-12-07_roman-telescope-first-images.md`), description, tags and credits from the plan and the meta beside the file, the v02 cover, language en-GB, captions en-GB from the cut's words, Related video `ziKBPJ6FY0U`. Not made for kids.\n3. Read back privacy, publish time, title, cover, Related. Record it in `00_Brand/Channel-Setup/social/UPLOADS.json`; queue Buffer posts only inside Buffer's 7-day window. Post the read-back on the thread.\n\nNever Public, never delete, no force-push, no Replace. £0. If anything does not match (privacy, publish time, hash), upload nothing and park for the Chief with the lines.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-22T12:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-22T12:52Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-22T12:52Z",
+          "by": "claude",
+          "what": "approved by Ben: Watch the 7 Dec NASA Roman Telescope First Images dated-event Short v01 (18.2 s) and its rebuilt opaque cover v02 v01 (asked in J3331)"
+        }
+      ],
+      "remaining_action": "Upload the Roman Telescope dated Short v01 (Thu 3 Dec 11:30) Private and scheduled",
+      "due": "2026-12-02T18:00:00Z",
+      "kind": "listing",
+      "plain": "Upload the approved Roman Telescope news Short as Private and schedule it for Thursday 3 December.",
+      "approved_from": {
+        "what": "Watch the 7 Dec NASA Roman Telescope First Images dated-event Short v01 (18.2 s) and its rebuilt opaque cover v02",
+        "file": "OWB UAT/owb_dated_2026_12_07_roman_first_images_v01.mp4",
+        "version": "v01",
+        "airs": "2026-12-03T11:30Z",
+        "title": "What Will NASA's Roman Telescope Reveal on Dec 7?",
+        "type": "short",
+        "channel": "OWB",
+        "number": "",
+        "job": "J3331",
+        "okAt": "2026-11-22T10:45Z"
       }
     }
   ],
