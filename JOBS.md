@@ -63,7 +63,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3360 | mini | blocked | gemini | – | WW2:003 sources · review · WW2 003: reconcile C37 loss categories against original sources |  |
 | J3361 | mini | blocked | gemini | – | for gemini · studio · `gemini-argon` · Field Order History pilot 1 pre-launch check before 17:00 today: live read-back, en-GB captions, description touch-ups, pinned first comment, playlist public at launch |  |
 | J3362 | mini | blocked | macbook | – | review · Verify condition for J3205 |  |
-| J3363 | mini | blocked | codex | – | thumb · Field Order History pilot 1 thumbnail: fix white-on-white text before 17:00 (B v02 high-contrast vs A no-text, pick at phone size, set it) |  |
+| J3363 | mini | open | – | – | thumb · Field Order History pilot 1 thumbnail: fix white-on-white text before 17:00 (B v02 high-contrast vs A no-text, pick at phone size, set it) |  |
 | J3364 | mini | open | – | – | 002 picture · assembly · Field Order History pilot 2: add the planned archive photos (~65%) to the graphics-only cut, v06 to Ben's watch by Tue 20:00 (else move to Sat 28 Nov) |  |
 | J3365 | mini | blocked | macbook-2 | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J3366 | mini | blocked | gemini | – | listing · Upload the Roman Telescope dated Short v01 (Thu 3 Dec 11:30) Private and scheduled |  |
