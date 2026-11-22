@@ -1,5 +1,5 @@
 {
-  "next_id": 3399,
+  "next_id": 3400,
   "jobs": [
     {
       "id": "J0001",
@@ -307043,6 +307043,36 @@
       "taskKeys": [
         "WW2:001"
       ]
+    },
+    {
+      "id": "J3399",
+      "title": "Review Earth equator Short private/schedule discrepancy",
+      "needs": "macbook",
+      "repo": "owb",
+      "body": "J3397 records review found a discrepancy in the accepted J0317 receipt (PR 1199, jobs/readbacks/J0317.json): emwQsPxnRGM was Private with scheduled_publishing_details null before and after Related was saved at 23:06Z on 22 November. Old J0317 prose names 23 November 11:30Z. A null Studio field is evidence to investigate, not authority to schedule.\n\nAfter J0996 releases the shared Earth upload stage, reconcile the exact Short with current upload records, earlier gate/hold decisions, schedule-change history and a fresh read-only YouTube API or responsive Studio read (prefer the working MacBook route, reuse the existing tab). Determine whether it is intentionally private/held, scheduled but absent from this Studio field, or missing its intended slot. Verify no competing writer before a browser read. Record concrete evidence and exact intended next action; correct only internal records supported by that evidence. Preserve any failed gate or prior hold. If publishing action is needed, queue a specifically scoped Chief decision with approval/gate evidence and dependencies. This job authorizes no upload, scheduling, privacy, title, test, Buffer change or spend. Do not duplicate J0996 description work or J0317 Related work.\n\nLink to film 027/upload and leave an explicit owner/action until the discrepancy is resolved. Report on the studio thread.\n",
+      "ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1200",
+      "film": "027",
+      "stage": "upload",
+      "after": "J0996",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-22T23:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-22T23:27Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Reconcile the equator Short schedule with current evidence and existing holds",
+      "due": "2026-11-23T09:00:00Z",
+      "kind": "review",
+      "plain": "Check when the Earth equator Short is meant to go live and why it is private"
     }
   ],
   "focus": [
