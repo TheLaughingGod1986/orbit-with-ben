@@ -305017,9 +305017,14 @@
           "at": "2026-11-22T19:10Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-22T19:11Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Verify readiness: Re-time HOS 009 (if final cut shifts) and HOS 010 long Chapters once each locked final long cut exists (preserve Sources, run lint:package, open PR for Chief)",
+      "remaining_action": "Verify J1275 waiting condition against current HOS 009 and HOS 010 repo, PR, job queue, lint:package, and NAS state",
       "kind": "review",
       "recheck_of": "J1275",
       "due": "2026-11-22T19:02:37+00:00",
@@ -305034,12 +305039,14 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-22T19:10Z",
-        "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "of": 4,
+        "at": "2026-11-22T19:11Z",
+        "by": "gemini"
+      },
+      "taskKeys": [
+        "HOS:009",
+        "HOS:010"
+      ]
     },
     {
       "id": "J3386",
