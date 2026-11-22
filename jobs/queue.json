@@ -301852,9 +301852,14 @@
           "at": "2026-11-22T11:40Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-22T11:42Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3358; checking J3323 approval history, gates, and live YouTube status of el30-mHiH-0"
         }
       ],
-      "remaining_action": "Verify readiness: Verify el30-mHiH-0 live after 2026-11-22T11:30Z and flip library.json scheduled -> live",
+      "remaining_action": "Inspect J3323 evidence/approval history, verify el30-mHiH-0 live public status, and reopen or re-wait J3323",
       "kind": "review",
       "recheck_of": "J3323",
       "due": "2026-11-22T12:39:17+00:00",
@@ -301870,11 +301875,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-22T11:40Z",
+        "at": "2026-11-22T11:42Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3358; checking J3323 approval history, gates, and live YouTube status of el30-mHiH-0"
+      },
+      "taskKeys": [
+        "HOS:005"
+      ]
     }
   ],
   "focus": [
