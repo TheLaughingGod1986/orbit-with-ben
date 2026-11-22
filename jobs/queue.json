@@ -298031,9 +298031,14 @@
           "at": "2026-11-22T17:01Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-22T17:03Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J3306; fetched PR #1118 and inspected all 3 critiques plus phone-badge sheets on NAS"
         }
       ],
-      "remaining_action": "Read codex.md (or decide with gemini.md + cursor.md after 2026-11-22T16:37Z), write DECISION.md, post 3-line summary on #954, and queue any build/Studio jobs",
+      "remaining_action": "Weigh all 3 independent critiques and inspect J3302 sheets, then write DECISION.md",
       "kind": "review",
       "rerouted_from": {
         "needs": "cloud",
@@ -298045,12 +298050,16 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-22T17:01Z",
+        "of": 4,
+        "at": "2026-11-22T17:03Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3306; fetched PR #1118 and inspected all 3 critiques plus phone-badge sheets on NAS"
+      },
+      "taskKeys": [
+        "OWB:006",
+        "OWB:024",
+        "OWB:005"
+      ]
     },
     {
       "id": "J3307",
