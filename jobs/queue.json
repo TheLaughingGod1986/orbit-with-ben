@@ -305593,13 +305593,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-22T21:13Z",
-      "eta": "2026-11-22T23:13Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-22T18:02Z",
-      "result": "",
+      "result": "Codex covering — J3387 Chief review complete.\n\nAccepted and merged PR #1187 (reviewed head 1ac4efd677a2974bddaafc8c5311cce479802393; merge 9f7a77cb9b48e57c74809a6113b65197044683ea). Owner-authored, same repository, base main. No earlier ruling on J3387 found in the studio thread through #7085827873.\n\nThe historical verification is sound: the original HOS Studio tab on CDP 9222 was hung. Fresh Runtime.evaluate at 21:11Z still timed out after 8 seconds. However, the existing dedicated HOS browser on CDP 9460 answered two direct DOM probes with readyState complete, the History of Science header and no sign-in prompt; the first also confirmed the correct channel ID. Playwright attached successfully, though one subsequent DOM read raced a navigation; a direct recheck passed. No new tab was opened or browser restarted.\n\nRuling: authorise CDP 9460 for J3383's read-only check and reopen J3383 with the evidence. This is a scoped alternate route, not a claim that 9222 recovered. The next Studio worker must coordinate browser use, reuse the existing Studio tab, verify the HOS channel, read the heart Short el30-mHiH-0 settings and Since published metrics, and run the original record/judge workflow. Record the actual observation time: these will be late first-day figures, not an exact six-hour snapshot. Omit unavailable metrics. Any fault or BEHIND verdict returns for a Chief ruling. All original no-write limits and gates remain intact; unrelated holds were not changed.\n\nJ3387 closes with this ruling. No spend or YouTube changes; no audio or motion perception claimed. Required scratch offload ran and found no eligible old files (about 9.2 GB free). Nothing needs Ben for this review.\n\nThread read to #7085827873.\n",
       "history": [
         {
           "at": "2026-11-22T18:02Z",
@@ -305655,6 +305655,11 @@
           "at": "2026-11-22T21:13Z",
           "by": "codex",
           "what": "step 3 of 3 done: Chief ruling recorded: PR1187 merged, working 9460 read-only fallback verified and authorised, parent J3383 reopened with concrete follow-up."
+        },
+        {
+          "at": "2026-11-22T21:13Z",
+          "by": "codex",
+          "what": "done: Codex covering — J3387 Chief review complete.\n\nAccepted and merged PR #1187 (reviewed head 1ac4efd677a2974bddaafc8c5311cce479802393; merge 9f7a77cb9b48e57c74809a6113b65197044683ea). Owner-authored, same repository, base main. No earlier ruling on J3387 found in the studio thread through #7085827873.\n\nThe historical verification is sound: the original HOS Studio tab on CDP 9222 was hung. Fresh Runtime.evaluate at 21:11Z still timed out after 8 seconds. However, the existing dedicated HOS browser on CDP 9460 answered two direct DOM probes with readyState complete, the History of Science header and no sign-in prompt; the first also confirmed the correct channel ID. Playwright attached successfully, though one subsequent DOM read raced a navigation; a direct recheck passed. No new tab was opened or browser restarted.\n\nRuling: authorise CDP 9460 for J3383's read-only check and reopen J3383 with the evidence. This is a scoped alternate route, not a claim that 9222 recovered. The next Studio worker must coordinate browser use, reuse the existing Studio tab, verify the HOS channel, read the heart Short el30-mHiH-0 settings and Since published metrics, and run the original record/judge workflow. Record the actual observation time: these will be late first-day figures, not an exact six-hour snapshot. Omit unavailable metrics. Any fault or BEHIND verdict returns for a Chief ruling. All original no-write limits and gates remain intact; unrelated holds were not changed.\n\nJ3387 closes with this ruling. No spend or YouTube changes; no audio or motion perception claimed. Required scratch offload ran and found no eligible old files (about 9.2 GB free). Nothing needs Ben for this review.\n\nThread read to #7085827873.\n"
         }
       ],
       "remaining_action": "Close and report the completed condition review",
