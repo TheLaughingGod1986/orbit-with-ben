@@ -300770,10 +300770,10 @@
       "stage": "topic",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "macbook",
-      "since": "2026-11-22T08:25Z",
-      "eta": "2026-11-22T10:25Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-22T08:20Z",
       "result": "",
@@ -300792,6 +300792,11 @@
           "at": "2026-11-22T08:25Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-22T08:26Z",
+          "by": "macbook",
+          "what": "released: MacBook worker run on claude ended (exit 1) with the job still open; picked up again next run; claude paused on the MacBook until 2026-11-22T10:26:48Z, so the next run uses the next agent in the chain"
         }
       ],
       "remaining_action": "HOS 129 How Was the Microwave Invented?: rule-E topic go/no-go review",
