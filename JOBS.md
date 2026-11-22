@@ -61,7 +61,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3331 | mini | blocked | gemini | – | assembly · Roman Telescope 7 Dec dated-event Short (airs Thu 3 Dec): voice-over, build from free NASA footage, all Shorts gates, park for review | 02_Video-Projects/_dated_shorts/2026-12-07_roman-telescope-first-images.md |
 | J3354 | mini | blocked | macbook-2 | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3358 | mini | blocked | gemini | – | review · Verify condition for J3323 |  |
-| J3359 | mini | open | – | – | for gemini · assembly · `gemini-argon` · Bring Codex and Claude Code back on the Mini: clear Codex's stale terra limit mark (Ben: 94% left), check Claude Code, status before/after |  |
+| J3359 | mini | claimed | gemini | 2026-11-22T12:12Z | for gemini · assembly · `gemini-argon` · Bring Codex and Claude Code back on the Mini: clear Codex's stale terra limit mark (Ben: 94% left), check Claude Code, status before/after |  |
 
 Recently finished:
 
