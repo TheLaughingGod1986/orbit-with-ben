@@ -299343,13 +299343,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-21T22:57Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-21T22:53Z",
-      "result": "parked for Chief: J3306 waiting condition verified NOT MET at 2026-11-21T23:01Z (PR #1136, commit 5c31e4d4e, jobs/reviews/J3332/REVIEW.md; £0 spend, read-only). J3303 remains open/unclaimed (for: codex, needs: mini; Mini Codex down until 2026-11-24T23:26:00Z) and codex.md is absent on main, all PRs, and all remote branches (only gemini.md 3891358394 and cursor.md 088b8f670c exist); 24h fallback 2026-11-22T16:37Z has ~17h 36m remaining. PR #1118 (fe8c0886cd, OPEN/MERGEABLE/CLEAN, Rules check PASS), all 9 NAS studio-live J3302 images, and downstream J3307-J3310 gates verified intact. Elected Chief to merge PR #1136, record jobs.py wait J3306 --recheck J3332 --type input --check-at 2026-11-22T16:38:00Z (or 2026-11-22T08:00:00Z if rerouting J3303), and close J3332 (scripts/jobs.py:591, 603, 1561).",
+      "result": "",
       "history": [
         {
           "at": "2026-11-21T22:53Z",
@@ -299390,6 +299390,11 @@
           "at": "2026-11-21T23:03Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: J3306 waiting condition verified NOT MET at 2026-11-21T23:01Z (PR #1136, commit 5c31e4d4e, jobs/reviews/J3332/REVIEW.md; £0 spend, read-only). J3303 remains open/unclaimed (for: codex, needs: mini; Mini Codex down until 2026-11-24T23:26:00Z) and codex.md is absent on main, all PRs, and all remote branches (only gemini.md 3891358394 and cursor.md 088b8f670c exist); 24h fallback 2026-11-22T16:37Z has ~17h 36m remaining. PR #1118 (fe8c0886cd, OPEN/MERGEABLE/CLEAN, Rules check PASS), all 9 NAS studio-live J3302 images, and downstream J3307-J3310 gates verified intact. Elected Chief to merge PR #1136, record jobs.py wait J3306 --recheck J3332 --type input --check-at 2026-11-22T16:38:00Z (or 2026-11-22T08:00:00Z if rerouting J3303), and close J3332 (scripts/jobs.py:591, 603, 1561)."
+        },
+        {
+          "at": "2026-11-22T00:52Z",
+          "by": "gemini",
+          "what": "reopened: Elected Acting Chief (gemini) closing completed J3332 condition verification after merging PR #1136 (a2c3a72285) and recording wait --recheck J3332 on J3306"
         }
       ],
       "remaining_action": "Parked for elected Chief: merge PR #1136, run jobs.py wait J3306 --recheck J3332 (suggested 2026-11-22T16:38:00Z), and close J3332",
@@ -299404,14 +299409,7 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true,
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-21T23:03Z",
-        "by": "macbook",
-        "note": "Opened PR #1136 (macbook/J3332, 5c31e4d4e, jobs/reviews/J3332/REVIEW.md); email & private-network tests passed; checkout"
-      }
+      "open_claim": true
     },
     {
       "id": "J3333",
