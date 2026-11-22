@@ -304023,9 +304023,14 @@
           "at": "2026-11-22T16:42Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-22T16:44Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3376 as specialist worker (gemini); elected Chief is Codex; starting condition verification for J2537"
         }
       ],
-      "remaining_action": "Verify readiness: Verify readiness: Check for the protected desk history exception, then prepare the controlled rewrite window",
+      "remaining_action": "Verify Ben exception status across OWB/HOS threads, check J2537 backups/rehearsal and HOS refs, open REVIEW.md PR, and park for Chief Codex",
       "kind": "review",
       "recheck_of": "J2537",
       "due": "2026-11-18T18:00:00+00:00",
@@ -304041,11 +304046,16 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-22T16:42Z",
+        "at": "2026-11-22T16:44Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3376 as specialist worker (gemini); elected Chief is Codex; starting condition verification for J2537"
+      },
+      "taskKeys": [
+        "HOS:005",
+        "HOS:008",
+        "HOS:011",
+        "HOS:013"
+      ]
     },
     {
       "id": "J3377",
