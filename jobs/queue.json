@@ -304005,10 +304005,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-22T16:54Z",
+      "eta": "2026-11-22T18:54Z",
       "created_by": "relay",
       "created_at": "2026-11-22T16:41Z",
       "result": "",
@@ -304057,6 +304057,11 @@
           "at": "2026-11-22T16:54Z",
           "by": "codex",
           "what": "reopened: Chief accepts PR1178, merged 7accc1ba42; parent hold recorded with recheck J3376. Reopen verification only to claim and complete it; J2537 remains blocked."
+        },
+        {
+          "at": "2026-11-22T16:54Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for Chief Codex to merge OWB PR #1178, record J2537 wait --recheck J3376, and close J3376",
@@ -304077,7 +304082,15 @@
         "HOS:008",
         "HOS:011",
         "HOS:013"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-22T16:54Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3377",
