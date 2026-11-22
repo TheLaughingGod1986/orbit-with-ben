@@ -305450,13 +305450,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-22T18:47Z",
-      "eta": "2026-11-22T20:47Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-22T18:46Z",
-      "result": "",
+      "result": "parked for Chief: J3392 condition verification complete (PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1190, dbb1cc9e47, jobs/reviews/J3392/REVIEW.md blob 8be789abf6, 19/19 tests PASS). Condition UNMET for J3205 (WW2:003): J3360 FIX is merged in WW2 PR #35 (3d79e06), original approvals/guards remain valid and 5/5 NAS media SHA-256 hashes match (b29_SOUNDTRACK_CANDIDATE_v02.flac still carries disputed S62 wording and stays held), but both required follow-up jobs remain open and unstarted (J3370 S62/S51a VO/source correction and J3371 G11/cues rebuild; neither has a due date despite J3205 due 2026-11-30T18:00:00Z). Ready for elected Chief (Grok Bot) to merge PR #1190, run jobs.py wait J3205 --type dependency --recheck J3392 --check-at 2026-11-23T00:50:00Z, and close J3392. £0 / 0 credits, zero NAS/YouTube/Studio writes.",
       "history": [
         {
           "at": "2026-11-22T18:46Z",
@@ -305487,6 +305487,11 @@
           "at": "2026-11-22T18:53Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Opened PR #1190 (dbb1cc9e47, jobs/reviews/J3392/REVIEW.md blob 8be789abf6, 19/19 tests PASS); parking Chief decision on J3205 hold"
+        },
+        {
+          "at": "2026-11-22T18:53Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J3392 condition verification complete (PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1190, dbb1cc9e47, jobs/reviews/J3392/REVIEW.md blob 8be789abf6, 19/19 tests PASS). Condition UNMET for J3205 (WW2:003): J3360 FIX is merged in WW2 PR #35 (3d79e06), original approvals/guards remain valid and 5/5 NAS media SHA-256 hashes match (b29_SOUNDTRACK_CANDIDATE_v02.flac still carries disputed S62 wording and stays held), but both required follow-up jobs remain open and unstarted (J3370 S62/S51a VO/source correction and J3371 G11/cues rebuild; neither has a due date despite J3205 due 2026-11-30T18:00:00Z). Ready for elected Chief (Grok Bot) to merge PR #1190, run jobs.py wait J3205 --type dependency --recheck J3392 --check-at 2026-11-23T00:50:00Z, and close J3392. £0 / 0 credits, zero NAS/YouTube/Studio writes."
         }
       ],
       "remaining_action": "Parked for elected Chief to merge PR #1190, record J3205 --recheck J3392 hold, and close J3392",
