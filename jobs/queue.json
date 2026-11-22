@@ -1,5 +1,5 @@
 {
-  "next_id": 3362,
+  "next_id": 3363,
   "jobs": [
     {
       "id": "J0001",
@@ -289141,6 +289141,11 @@
           "at": "2026-11-22T12:35Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: J3360 / WW2 PR #31 recommends FIX for locked S62/C37/G11. Authorise exact replacement and guarded narration pickup; existing soundtrack retains disputed wording. PR #30 checkpoint 08fa815; independent production checklist preserved in handoff v09."
+        },
+        {
+          "at": "2026-11-22T12:35Z",
+          "by": "relay",
+          "what": "condition verification queued: J3362"
         }
       ],
       "remaining_action": "Checking existing handoffs and unresolved claim corrections before assembly",
@@ -289161,6 +289166,12 @@
         "of": 3,
         "at": "2026-11-22T12:34Z",
         "by": "macbook"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-22T13:35:52+00:00",
+        "recheck_task": "J3362"
       }
     },
     {
@@ -302293,6 +302304,37 @@
         "condition": "ek9F61FVYqY scheduled Private until 2026-11-22T17:00:00Z; YouTube blocks comments while Private (API 403, watch page 'Comments are not supported on private videos') and playlist PLPPi-oWEDYtA must switch to Public after video goes Public",
         "check_at": "2026-11-22T17:02:00Z"
       }
+    },
+    {
+      "id": "J3362",
+      "title": "Verify condition for J3205",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3205: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3205 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-22T12:35Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-22T12:35Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Checking existing handoffs and unresolved claim corrections before assembly",
+      "kind": "review",
+      "recheck_of": "J3205",
+      "due": "2026-11-22T13:35:52+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
