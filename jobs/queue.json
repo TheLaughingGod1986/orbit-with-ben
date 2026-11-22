@@ -300122,17 +300122,28 @@
           "at": "2026-11-22T02:59Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-22T03:02Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Scanned OWB and HOS against J3104 baseline (266 entries); found 10 net new exports (OWB:024 fri06_muons_ground_v06, OWB dated roman_first_images_v01; HOS:005 s06_v05/s07_v05/s08_v02; HOS:009 long_master v01/v02/v03, short_A_v01, short_B_v01) + 1 updated visual pack (HOS:009 009_code_graphics_v01 +4 9x16 graphics); reconciling 148 J3249 NAS-offloaded baseline sidecar paths"
         }
       ],
-      "remaining_action": "Scan newest OWB and HOS film packs to identify renders missing newer picture_qa, polish_gate, or music_gate outputs",
+      "remaining_action": "Reconcile J3249 offloaded sidecars and execute missing/stale picture_qa, polish_gate, and music_gate checks",
       "kind": "qa",
       "backlog": "both-qa-sweep",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-22T02:59Z",
-        "by": "gemini"
-      }
+        "at": "2026-11-22T03:02Z",
+        "by": "gemini",
+        "note": "Scanned OWB and HOS against J3104 baseline (266 entries); found 10 net new exports (OWB:024 fri06_muons_ground_v06, OWB "
+      },
+      "taskKeys": [
+        "OWB:024",
+        "HOS:005",
+        "HOS:009"
+      ]
     }
   ],
   "focus": [
