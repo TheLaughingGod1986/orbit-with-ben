@@ -304570,13 +304570,13 @@
       "stage": "thumbs",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-22T17:44Z",
-      "eta": "2026-11-22T19:44Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-22T17:35Z",
-      "result": "",
+      "result": "Built three v03 candidates and badge sheets on NAS; PR #1183 contains builder, exact-source hash manifest and review. Colour/dimensions/size/copy hashes pass; all six JPEGs reproduce byte-for-byte. v01/v02 and ledger untouched, no spend/generation/Studio writes. J3382 must inspect exact files and separately authorize successor tests; J3308-J3310 remain held.",
       "history": [
         {
           "at": "2026-11-22T17:35Z",
@@ -304612,6 +304612,11 @@
           "at": "2026-11-22T17:52Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR 1183 delivered; source variants verified, hash guards added, all six JPEGs reproduce byte-for-byte; 13 security checks passed"
+        },
+        {
+          "at": "2026-11-22T17:52Z",
+          "by": "codex",
+          "what": "done: Built three v03 candidates and badge sheets on NAS; PR #1183 contains builder, exact-source hash manifest and review. Colour/dimensions/size/copy hashes pass; all six JPEGs reproduce byte-for-byte. v01/v02 and ledger untouched, no spend/generation/Studio writes. J3382 must inspect exact files and separately authorize successor tests; J3308-J3310 remain held."
         }
       ],
       "remaining_action": "J3382 reviews the exact v03 files and separately decides test authorization",
@@ -304628,7 +304633,8 @@
         "OWB:006",
         "OWB:024",
         "OWB:005"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1183"
     },
     {
       "id": "J3382",
