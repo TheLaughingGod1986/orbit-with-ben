@@ -68,6 +68,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3375 | mini | blocked | gemini | – | review · Verify condition for J3178 |  |
 | J3379 | mini | blocked | gemini | – | review · Verify condition for J3361 |  |
 | J3381 | mini | open | – | – | 006 thumbs · thumb · Rebuild three thumbnail heroes after J3307 visual FIX | J3307 |
+| J3382 | any | open (after J3381) | – | – | 006 thumbs · chief · Review rebuilt thumbnail heroes and decide successor tests after J3381 | J3307 |
 
 Recently finished:
 
