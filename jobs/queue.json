@@ -179867,9 +179867,14 @@
           "at": "2026-11-22T13:04Z",
           "by": "relay",
           "what": "condition verification queued: J3367"
+        },
+        {
+          "at": "2026-11-22T15:15Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-23T13:00:00Z"
         }
       ],
-      "remaining_action": "Await authorized operator confirmation of the Mini local Codex approval configuration plus fresh-session scoped acceptance evidence; recheck at 2026-11-22T13:00:00Z.",
+      "remaining_action": "Await operator confirmation and fresh-session scoped acceptance evidence for the Mini approval configuration; verify again 23 November at 13:00 UTC.",
       "kind": "assembly",
       "urgent": 2,
       "rerouted_from": {
@@ -179890,12 +179895,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Chief ruling J3289 (jobs/reviews/J3289/REVIEW.md @ a23771540b, PR #1109): NOT MET. Fresh 2026-11-22T00:45Z Mac mini checks confirm all eight local ~/.codex approval/gateway hashes match J3026/J3229 unchanged; J2517 (#793) and J2559 (#795) done; J2007 cancelled; PR #490 remains OPEN draft at f521bcd3f1 (1 comment, 0 reviews); docs/CODEX_ALLOWLIST.md absent from main; thread #954 scanned through 7071729992 contains no operator confirmation or fresh-session scoped acceptance evidence. Await authorized operator confirmation of the Mini local Codex approval configuration plus fresh-session scoped acceptance evidence. Unchanged hashes alone do not prove acceptance. Retain fallback routing and existing approval controls; do not retry cancelled J2007. Recheck at 2026-11-22T13:00:00Z.",
-        "check_at": "2026-11-22T14:04:56+00:00",
-        "last_recheck": "J3289",
-        "checked_at": "2026-11-22T00:47:50+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3367"
+        "condition": "Chief ruling J3367: NOT MET. Evidence PR1171 merged. Mini check 2026-11-22T15:13Z: all eight local Codex configuration/rule/gateway SHA256 hashes match J3289 unchanged. PR490 remains OPEN draft at f521bcd3f1; no operator confirmation or fresh-session scoped acceptance evidence in latest thread records. J2517/J2559 done; J2007 cancelled. Retain existing approval controls and fallback routing. Authorized operator must confirm Mini configuration and supply fresh-session scoped acceptance evidence; then resolve draft PR490. Recheck 2026-11-23T13:00:00Z; do not retry J2007.",
+        "check_at": "2026-11-23T13:00:00Z",
+        "last_recheck": "J3367",
+        "checked_at": "2026-11-22T15:15:27+00:00",
+        "checked_by": "codex"
       },
       "plain": "Let Codex run the studio's routine commands on the Mac mini without asking each time (needs you at the Mini)"
     },
