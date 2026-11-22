@@ -1,12 +1,12 @@
 # Studio settings audit — History of Science — 2026-11-21
 
-Audited 2026-11-21 20:04–20:12 UTC (`J3255`, Gemini worker, superseding the read-only pass on PR #1099) and followed up 2026-11-21 21:14–21:23 UTC (`J3325`, Gemini acting Chief) in the signed-in History of Science YouTube Studio browser (CDP port 9460) and read back via the channel's read-only YouTube Data API login (`YT_ANALYTICS_REFRESH_TOKEN_HOS`). Channel `UCXp7HkBIl1LgaznXuZHJyRg`, `@HistoryOfScienceYT`. £0. No live video's visibility, schedule, title, description, thumbnail, or active A/B test was modified. Monetisation was not applied.
+Audited 2026-11-21 20:04–20:12 UTC (`J3255`, Gemini worker, superseding the read-only pass on PR #1099), followed up 2026-11-21 21:14–21:23 UTC (`J3325`, Gemini acting Chief), and read back 2026-11-22 00:04 UTC (`J3335`, Gemini acting Chief) in the signed-in History of Science YouTube Studio browser (CDP port 9460) and via the channel's read-only YouTube Data API login (`YT_ANALYTICS_REFRESH_TOKEN_HOS`). Channel `UCXp7HkBIl1LgaznXuZHJyRg`, `@HistoryOfScienceYT`. £0. No live video's visibility, schedule, title, description, thumbnail, or active A/B test was modified. Monetisation was not applied.
 
 ## For Ben
 
 - **Country** is already United Kingdom (`GB`). Left unchanged.
-- **Automatic dubbing** is **off** (Studio shows `Enable`). Adds non-English views and watch hours, though dubbed views earn less. Orbit With Ben is **on**; Field Order History is **off**. Pick one policy; left off.
-- **Third-party AI training** (*"Allow third-party companies to train AI models using my channel content"*) is **off** (matches Field Order History; Orbit With Ben is **on**). Rights switch; left off.
+- **Automatic dubbing** — **Channel policy (Ben, 21 Nov 2026: off on every channel; revisit after monetisation).** Already **off** (Studio shows `Enable`; read back off 22 Nov 00:04 UTC in `J3335`, unchanged). Matches Orbit With Ben (turned off in `J3335`) and Field Order History (off).
+- **Third-party AI training** — **Channel policy (Ben, 21 Nov 2026: off on every channel).** Already **off** (`aria-checked="false"`; read back off 22 Nov 00:04 UTC in `J3335`, unchanged). Matches Orbit With Ben (turned off in `J3335`) and Field Order History (off).
 - **Contact email (business)** is **empty** on `Customisation > Profile`. Add a business enquiry email if you want one shown on the About page (not invented here).
 
 ## Safe Reversible Fixes Applied & Verified (21 Nov 2026)
@@ -31,11 +31,11 @@ Audited 2026-11-21 20:04–20:12 UTC (`J3255`, Gemini worker, superseding the re
 | Video watermark | Not set (`Upload`) | **Keep unset** | Explicit HOS rule (`STUDIO_PLAYBOOK.md` line 387: *"No branding watermark (no subscribe graphics)."*). Corrects PR #1099's suggestion. | no |
 | Made for kids | No, set this channel as not Made for Kids | Keep | Hard HOS Never-list rule. | no |
 | Automatic captions filter | *"Don't show potentially inappropriate words"* off | Keep off | Keeps scientific/historical auto captions accurate. | no |
-| Automatic dubbing | **Off** (`Enable` button shown) | Ben's call | Watch hours versus lower-earning dubbed views. Differs from Orbit (on). | no |
+| Automatic dubbing | **Off** (`Enable` button shown; read back off 22 Nov 00:04 UTC, `J3335`) | **Keep Off** (Ben, 21 Nov 2026: off on every channel; revisit after monetisation) | January plan targets English-speaking adults, dubbed views earn less, and unreviewed dubs are a quality risk. Matches OWB & FOH. | no |
 | Interest-based ads | Not disabled (`Disable interest-based ads` unchecked) | Keep | Preserves personalised ad monetisation once eligible. | no |
 | Clips / remixing (channel) | *"Allow viewers to clip my content"*: **On** | Keep on | Aids organic sharing. Per-video Shorts remixing is set to *"Allow video and audio remixing"*. | no |
 | Video quality enhancements | Visual enhancement **On**; Audio enhancement **On** | Keep | Applies to future uploads only. | no |
-| Third-party AI training | **Off** | Ben's call (keep off unless Ben aligns across channels) | Rights switch; matches Field Order History (Orbit is on). | no |
+| Third-party AI training | **Off** (`aria-checked="false"`; read back off 22 Nov 00:04 UTC, `J3335`) | **Keep Off** (Ben, 21 Nov 2026: off on every channel) | One policy across OWB, HOS & FOH; no growth effect. | no |
 | Google Ads linking | Not linked | Keep | No ad spend without Ben. | no |
 | Feature eligibility | Standard: **Enabled** · Intermediate: **Enabled** (>15 min videos, custom thumbnails, live streaming) · Advanced: **Enabled** (higher daily upload/live caps, external links, pinned comments, monetisation eligibility) | Keep | All three tiers enabled. | no |
 | Monetisation (`Earn`) | Not eligible (data as of 16 Nov 2026): **6** subscribers (500 / 1,000), **3** uploads in last 90 days (3/3), **4** qualified watch hours in last 365 days (3,000 / 4,000), **1.2k** qualified Shorts views in last 90 days (3m / 10m). | Do not apply | Below thresholds; Apply not clicked. | no |
