@@ -300593,13 +300593,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-22T08:03Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-22T08:01Z",
-      "result": "parked for Chief: J3345 verification complete (PR #1154, 0837434a87, jobs/reviews/J3345/REVIEW.md) — condition UNMET. Direct read_file probe on NAS row 58 in agy 1.5.14 still returns 8 1-fps static JPEGs (00:00..00:07; missing 3.833-4.250s exit), not continuous 24-fps playback (audio_input & image_input demonstrated; relay 07:21:18Z colour-block probe false-positives from 1-fps stills). No worker has verified 24-fps moving_video_input; 11/11 Batch 12-14 NAS hashes match REVIEW_STATE.json and receipts; REVIEW_STATE.json unchanged (48 KEEP / 8 RETAKE / 10 unset); no new 013 marks. Elected Chief (claude) to merge PR #1154, run jobs.py wait J3178 --agent claude --type capability --requires moving_video_input --recheck J3345 --check-at 2026-11-22T14:15:00Z, and close J3345.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-22T08:01Z",
@@ -300640,6 +300640,11 @@
           "at": "2026-11-22T08:08Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3345 verification complete (PR #1154, 0837434a87, jobs/reviews/J3345/REVIEW.md) — condition UNMET. Direct read_file probe on NAS row 58 in agy 1.5.14 still returns 8 1-fps static JPEGs (00:00..00:07; missing 3.833-4.250s exit), not continuous 24-fps playback (audio_input & image_input demonstrated; relay 07:21:18Z colour-block probe false-positives from 1-fps stills). No worker has verified 24-fps moving_video_input; 11/11 Batch 12-14 NAS hashes match REVIEW_STATE.json and receipts; REVIEW_STATE.json unchanged (48 KEEP / 8 RETAKE / 10 unset); no new 013 marks. Elected Chief (claude) to merge PR #1154, run jobs.py wait J3178 --agent claude --type capability --requires moving_video_input --recheck J3345 --check-at 2026-11-22T14:15:00Z, and close J3345."
+        },
+        {
+          "at": "2026-11-22T08:18Z",
+          "by": "gemini",
+          "what": "reopened: Acting-Chief gemini reopening J3345 to claim and close after merging PR #1154 (fdda76b651) and recording J3178 capability wait."
         }
       ],
       "remaining_action": "Parked for Chief (claude): merge PR #1154, record wait J3178 --recheck J3345, and close J3345",
@@ -300650,13 +300655,6 @@
       ],
       "due": "2026-11-22T09:01:39+00:00",
       "due_kind": "condition-verification",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-22T08:08Z",
-        "by": "gemini",
-        "note": "Worker verification complete: condition unmet (no continuous 24-fps moving_video_input on any worker; 11/11 NAS hashes &"
-      },
       "taskKeys": [
         "HOS:013"
       ]
