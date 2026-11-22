@@ -66,7 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3331 | mini | blocked | gemini | – | assembly · Roman Telescope 7 Dec dated-event Short (airs Thu 3 Dec): voice-over, build from free NASA footage, all Shorts gates, park for review | 02_Video-Projects/_dated_shorts/2026-12-07_roman-telescope-first-images.md |
 | J3336 | mini | blocked | macbook-2 | – | review · Verify condition for J3270 |  |
 | J3340 | mini | claimed | gemini | 2026-11-22T03:58Z | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
-| J3341 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J3341 | mini | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
