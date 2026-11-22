@@ -305014,13 +305014,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-22T18:18Z",
-      "eta": "2026-11-22T20:18Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-22T18:02Z",
-      "result": "",
+      "result": "parked for Chief: J3387 condition verification complete (PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1187, 1ac4efd677, jobs/reviews/J3387/REVIEW.md). Condition UNMET for J3383: CDP 9222 existing HOS Studio tab 492851E5D8095B9CEC05EBB938497368 renderer still hung (Runtime.evaluate 15s, Page.getFrameTree/DOM.getDocument 8s, Playwright connect_over_cdp 15s all time out) while Browser.getVersion and flow.google.com/home.mycloud.com respond in 0.00s (same hang since 14:46Z in J3372/J3373). Ready for elected Chief to merge PR #1187, record wait --recheck J3387 on J3383 (suggested 2026-11-22T19:25:00Z and/or authorise recovery of the hung Studio tab), and close J3387. £0, zero Studio writes, no duplicate tabs opened, Chrome untouched.",
       "history": [
         {
           "at": "2026-11-22T18:02Z",
@@ -305051,6 +305051,11 @@
           "at": "2026-11-22T18:25Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Opened PR #1187 (1ac4efd677, jobs/reviews/J3387/REVIEW.md, 13/13 hygiene tests PASS); parking Chief decision on J3383 hold."
+        },
+        {
+          "at": "2026-11-22T18:25Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J3387 condition verification complete (PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1187, 1ac4efd677, jobs/reviews/J3387/REVIEW.md). Condition UNMET for J3383: CDP 9222 existing HOS Studio tab 492851E5D8095B9CEC05EBB938497368 renderer still hung (Runtime.evaluate 15s, Page.getFrameTree/DOM.getDocument 8s, Playwright connect_over_cdp 15s all time out) while Browser.getVersion and flow.google.com/home.mycloud.com respond in 0.00s (same hang since 14:46Z in J3372/J3373). Ready for elected Chief to merge PR #1187, record wait --recheck J3387 on J3383 (suggested 2026-11-22T19:25:00Z and/or authorise recovery of the hung Studio tab), and close J3387. £0, zero Studio writes, no duplicate tabs opened, Chrome untouched."
         }
       ],
       "remaining_action": "Chief merges PR #1187, records wait --recheck J3387 on J3383, and closes J3387",
