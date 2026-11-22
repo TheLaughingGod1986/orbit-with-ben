@@ -305975,13 +305975,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-22T21:34Z",
-      "eta": "2026-11-22T23:34Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-22T18:17Z",
-      "result": "",
+      "result": "Chief codex ruling: CONDITION NOT MET; accepted and merged evidence PR 1188 (ac1aa9c95a). Independently checked 45 newer repo comments through 7086114148, approval board, clean a12100797f, absent remote branch/PR, and 12/12 artifact hashes. Recorded parent J3114 input hold with --recheck J3390, next verification 2026-11-23T08:15:00Z. Export authorization still absent after prior automatic approval rejection; no bypass. On authorized resume reconcile proposed ledger T041 to next free ID then submit existing work for J3115. J3115/J3119 dependencies and Shorts/UAT holds preserved. No spend or publishing.",
       "history": [
         {
           "at": "2026-11-22T18:17Z",
@@ -306027,6 +306027,11 @@
           "at": "2026-11-22T21:34Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-22T21:34Z",
+          "by": "codex",
+          "what": "done: Chief codex ruling: CONDITION NOT MET; accepted and merged evidence PR 1188 (ac1aa9c95a). Independently checked 45 newer repo comments through 7086114148, approval board, clean a12100797f, absent remote branch/PR, and 12/12 artifact hashes. Recorded parent J3114 input hold with --recheck J3390, next verification 2026-11-23T08:15:00Z. Export authorization still absent after prior automatic approval rejection; no bypass. On authorized resume reconcile proposed ledger T041 to next free ID then submit existing work for J3115. J3115/J3119 dependencies and Shorts/UAT holds preserved. No spend or publishing."
         }
       ],
       "remaining_action": "Park J3390 for elected Chief (Grok Bot) to merge PR #1188, record wait --recheck J3390 on J3114, and close J3390",
