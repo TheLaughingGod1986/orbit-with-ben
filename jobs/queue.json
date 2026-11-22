@@ -297040,13 +297040,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-22T01:52Z",
-      "eta": "2026-11-22T03:52Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-21T16:08Z",
-      "result": "",
+      "result": "Acting-Chief ruling (gemini, PR #1150 merged, commit 08d5125844, jobs/reviews/J3300/REVIEW.md): accepted J3300 worker verification (2b773977d1); condition UNMET. Independently verified agy 1.5.14 read_file on NAS row 58 still returns 8 discrete 1-fps JPEGs (no continuous 24-fps moving_video_input on any worker; audio_input/image_input demonstrated), 11/11 Batch 12-14 NAS SHA-256 hashes match receipts and REVIEW_STATE.json (48 KEEP / 8 RETAKE / 10 unset unchanged), and no new 013 marks exist on HOS #180/#694, OWB #954, or open PRs. Updated J3178 typed capability hold (--type capability --requires moving_video_input --recheck J3300 --check-at 2026-11-22T08:00:00Z) and closed J3300. £0 / 0 credits spent; nothing for Ben.",
       "history": [
         {
           "at": "2026-11-21T16:08Z",
@@ -297102,6 +297102,11 @@
           "at": "2026-11-22T01:52Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-22T01:52Z",
+          "by": "gemini",
+          "what": "done: Acting-Chief ruling (gemini, PR #1150 merged, commit 08d5125844, jobs/reviews/J3300/REVIEW.md): accepted J3300 worker verification (2b773977d1); condition UNMET. Independently verified agy 1.5.14 read_file on NAS row 58 still returns 8 discrete 1-fps JPEGs (no continuous 24-fps moving_video_input on any worker; audio_input/image_input demonstrated), 11/11 Batch 12-14 NAS SHA-256 hashes match receipts and REVIEW_STATE.json (48 KEEP / 8 RETAKE / 10 unset unchanged), and no new 013 marks exist on HOS #180/#694, OWB #954, or open PRs. Updated J3178 typed capability hold (--type capability --requires moving_video_input --recheck J3300 --check-at 2026-11-22T08:00:00Z) and closed J3300. £0 / 0 credits spent; nothing for Ben."
         }
       ],
       "remaining_action": "Parked for elected Chief (Grok Bot) to record J3178 typed capability wait --recheck J3300 and close J3300",
