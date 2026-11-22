@@ -1,5 +1,5 @@
 {
-  "next_id": 3376,
+  "next_id": 3378,
   "jobs": [
     {
       "id": "J0001",
@@ -227637,6 +227637,11 @@
           "at": "2026-11-22T08:37Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-22T16:00:00Z"
+        },
+        {
+          "at": "2026-11-22T16:41Z",
+          "by": "relay",
+          "what": "condition verification queued: J3376"
         }
       ],
       "remaining_action": "Verify readiness: Check for the protected desk history exception, then prepare the controlled rewrite window",
@@ -227660,10 +227665,11 @@
       "hold": {
         "type": "input",
         "condition": "Acting Chief (gemini) records J3349 REVIEW.md (OWB PR #1158 merged as 3dac7e0263, file 1a38f4e70e): explicit one-time authorization for irreversible rewrite of protected HOS hos-desk while retaining PR180 remains absent. Fresh check 2026-11-22T08:35Z: OWB #954 through 7076584844 and HOS desk #694 through 7076578399 have no new Ben exception; HOS #180 remains capped at 2500 comments (last 7024089854, rollover done in #694) and HOS #657 has 0 comments. Grok ruling 7018109147 retains this hold and says the question is already open; do not ask again. Pre-rewrite NAS/MiniWork backups and HOS jobs/reviews/J2537/ rehearsal remain intact; HOS origin/main is 19bd550307, origin/hos-desk is a4ce692535, with 30 open non-desk PRs. After authorization, resolve non-desk PRs, refresh backup and rehearsal against current heads, give day-before window notice and hold writers before allowlisted cutover. No live rewrite authorized.",
-        "check_at": "2026-11-22T16:00:00Z",
+        "check_at": "2026-11-22T17:41:34+00:00",
         "last_recheck": "J3349",
         "checked_at": "2026-11-22T08:37:22+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J3376"
       }
     },
     {
@@ -298006,6 +298012,11 @@
           "at": "2026-11-22T00:52Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-22T16:38:00Z"
+        },
+        {
+          "at": "2026-11-22T16:41Z",
+          "by": "relay",
+          "what": "condition verification queued: J3377"
         }
       ],
       "remaining_action": "Read codex.md (or decide with gemini.md + cursor.md after 2026-11-22T16:37Z), write DECISION.md, post 3-line summary on #954, and queue any build/Studio jobs",
@@ -298029,10 +298040,11 @@
       "hold": {
         "type": "input",
         "condition": "J3303 (codex.md independent critique in 05_Analytics/tests/panels/owb-j3302-weekly-2026-11-21/) is committed, or 24h fallback deadline 2026-11-22T16:37Z has passed",
-        "check_at": "2026-11-22T16:38:00Z",
+        "check_at": "2026-11-22T17:41:34+00:00",
         "last_recheck": "J3332",
         "checked_at": "2026-11-22T00:52:16+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J3377"
       }
     },
     {
@@ -303977,6 +303989,68 @@
       "taskKeys": [
         "HOS:013"
       ]
+    },
+    {
+      "id": "J3376",
+      "title": "Verify condition for J2537",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2537: Acting Chief (gemini) records J3349 REVIEW.md (OWB PR #1158 merged as 3dac7e0263, file 1a38f4e70e): explicit one-time authorization for irreversible rewrite of protected HOS hos-desk while retaining PR180 remains absent. Fresh check 2026-11-22T08:35Z: OWB #954 through 7076584844 and HOS desk #694 through 7076578399 have no new Ben exception; HOS #180 remains capped at 2500 comments (last 7024089854, rollover done in #694) and HOS #657 has 0 comments. Grok ruling 7018109147 retains this hold and says the question is already open; do not ask again. Pre-rewrite NAS/MiniWork backups and HOS jobs/reviews/J2537/ rehearsal remain intact; HOS origin/main is 19bd550307, origin/hos-desk is a4ce692535, with 30 open non-desk PRs. After authorization, resolve non-desk PRs, refresh backup and rehearsal against current heads, give day-before window notice and hold writers before allowlisted cutover. No live rewrite authorized.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2537 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-22T16:41Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-22T16:41Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Verify readiness: Check for the protected desk history exception, then prepare the controlled rewrite window",
+      "kind": "review",
+      "recheck_of": "J2537",
+      "due": "2026-11-18T18:00:00+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3377",
+      "title": "Verify condition for J3306",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3306: J3303 (codex.md independent critique in 05_Analytics/tests/panels/owb-j3302-weekly-2026-11-21/) is committed, or 24h fallback deadline 2026-11-22T16:37Z has passed. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3306 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-22T16:41Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-22T16:41Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Read codex.md (or decide with gemini.md + cursor.md after 2026-11-22T16:37Z), write DECISION.md, post 3-line summary on #954, and queue any build/Studio jobs",
+      "kind": "review",
+      "recheck_of": "J3306",
+      "due": "2026-11-22T17:41:34+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
