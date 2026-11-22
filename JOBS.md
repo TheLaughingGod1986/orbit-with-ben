@@ -70,7 +70,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3332 | mini | blocked | macbook | – | review · Verify condition for J3306 |  |
 | J3336 | mini | blocked | macbook-2 | – | review · Verify condition for J3270 |  |
 | J3337 | mini | open | – | – | thumb · Roman Telescope 7 Dec dated-event Short: rebuild cover v02 only (opaque spacecraft, no galaxy bleed-through), thumb_preview, park for Chief | jobs/reviews/J3331/REVIEW.md |
-| J3338 | any | open | – | – | review · Verify condition for J2537 |  |
+| J3338 | mini | open | – | – | review · Verify condition for J2537 |  |
 
 Recently finished:
 
