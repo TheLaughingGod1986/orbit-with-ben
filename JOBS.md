@@ -71,13 +71,13 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3385 | mini | blocked | gemini | – | review · Verify condition for J1275 |  |
 | J3386 | mini | blocked | gemini | – | review · Verify condition for J2020 |  |
 | J3387 | mini | blocked | gemini | – | review · Verify condition for J3383 |  |
-| J3389 | mini | claimed | codex | 2026-11-22T22:44Z | review · Verify condition for J1272 |  |
 | J3390 | mini | blocked | gemini | – | review · Verify condition for J3114 |  |
 | J3391 | mini | blocked | macbook-2 | – | review · Verify condition for J3365 |  |
 | J3392 | mini | blocked | gemini | – | review · Verify condition for J3205 |  |
 
 Recently finished:
 
+- J3389 done: Verify condition for J1272 (Chief review complete: condition satisfied. Merged PR 1186; independently verified 6bbbvfCx6zY Public on Orbit at 2026-11-22T20:44:03Z, checked original approvals/end-screen receipt/pinned-text hash. Ruling and ready-now Step 2 follow-up recorded on reopened J1272. Next Studio worker checks for an existing comment, posts/pins approved text and reads it back. No YouTube changes or spend.)
 - J3388 done: Retention autopsy (7d): "How Far Is the Nearest Star? (You Can't See It, and It Has a Pla" (c5AdqQsnnys) (done)
 - J3382 done: Review rebuilt thumbnail heroes and decide successor tests after J3381 (All three exact v03 thumbnails PASS; conditional one-test successor permissions published in PR1184. J3308-J3310 name approved files/hashes and retain J3307 dependency. J3307 remains open pending prior publication/completion. No spend or YouTube changes.)
 - J3381 done: Rebuild three thumbnail heroes after J3307 visual FIX (Built three v03 candidates and badge sheets on NAS; PR #1183 contains builder, exact-source hash manifest and review. Colour/dimensions/size/copy hashes pass; all six JPEGs reproduce byte-for-byte. v01/v02 and ledger untouched, no spend/generation/Studio writes. J3382 must inspect exact files and separately authorize successor tests; J3308-J3310 remain held.)
@@ -87,4 +87,3 @@ Recently finished:
 - J3377 done: Verify condition for J3306 (CONDITION MET; accepted and merged PR1179 after direct critique hash checks and 13 privacy tests passed. Reopened J3306 with recorded ruling and concrete DECISION.md follow-up; retained J3307 and J3308-J3310 approval dependencies. All three critics were Gemini fallback runs, explicitly noted for synthesis. No spend or YouTube changes.)
 - J3376 done: Verify condition for J2537 (Chief accepted verification and merged PR1178 as 7accc1ba42. Condition NOT MET; J2537 remains blocked with recheck J3376 for 2026-11-22T22:45:00Z. After explicit protected-history authorization: resolve non-desk PRs, refresh backup/rehearsal, day-before notice and writer hold. No rewrite or spend.)
 - J3374 done: Verify condition for J3365 (Chief FIX / condition unmet. Reviewed J3365/J3374 history and PR1170 bf6f0fa491, PR1175 96fddf7d99 and PR1176 9963fd5a79. All 45 exact-window reach rows remain null; Willow and three title/test reads absent. J3365 stays blocked with wait --recheck J3374 at 2026-11-22T18:30:00Z. J3372 retains its 17:45Z recovery check. Parent follow-up includes correcting unsupported blanket frame-0 verification labels and copied heart/cuff wording, incorporating Studio evidence, and retaining unresolved compilation image explicitly. No audit PASS, spend or public change; no Ben input needed.)
-- J3373 done: Verify condition for J3372 (Chief FIX: J3372 condition remains unmet. Gemini 15:43Z and Codex 15:49Z renderer probes time out; PR1176 records ruling and independent evidence. J3372 input hold updated with --recheck J3373 and retry 2026-11-22T17:45:00Z; next check may make one bounded reload of existing Studio tab after verifying no active writer. No browser close, duplicate tabs or Studio writes. J3365 final audit PASS waits for J3372 exact-window reach, Willow result and three title/test reads. No login requirement proven.)
