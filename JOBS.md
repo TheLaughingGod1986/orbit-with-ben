@@ -51,7 +51,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3178 | mini | blocked | gemini | – | 013 picture · for gemini · qa · `gemini-argon` · HOS 013: continuous playback review of ten unresolved pass-one plates |  |
 | J3205 | mini | blocked | macbook | – | WW2:003 edit · assembly · WW2 pilot 003: picture, maps, edit and thumbnail, to Ben's watch |  |
 | J3231 | cloud | open | – | – | review · Weekly search research (Orbit + Field Order History): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
-| J3306 | mini | blocked | macbook-2 | – | review · Packaging panel decision: J3302 weekly OWB Challenger Bs (T041 Europa 2x EARTH'S WATER, T042 Light Speed YOU AGE SLOWER, T043 Last Star OUTLIVES OUR SUN + Round 2 Title Bs; PR #1118) |  |
+| J3306 | mini | open (after J3305) | – | – | review · Packaging panel decision: J3302 weekly OWB Challenger Bs (T041 Europa 2x EARTH'S WATER, T042 Light Speed YOU AGE SLOWER, T043 Last Star OUTLIVES OUR SUN + Round 2 Title Bs; PR #1118) |  |
 | J3307 | cloud | open (after J3306) | – | – | chief · Chief review: J3302 PR #1118 + exact-file PASS & successor auth for T041-T043 (Europa, Light Speed, Last Star) |  |
 | J3308 | mini | open (after J3307) | – | – | studio · Studio: arm T041 thumbnail Test & Compare on NbW5G1BpPY0 (006 — 2× EARTH'S WATER) after J3307 PASS |  |
 | J3309 | mini | open (after J3307) | – | – | studio · Studio: arm T042 thumbnail Test & Compare on rVqgtkBV3jc (024 — YOU AGE SLOWER) after J3307 PASS |  |
