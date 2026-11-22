@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2529, J3205, J3364, J3361, J3383.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2529, J3205, J3364, J3361.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -64,7 +64,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3371 | mini | open (after J3370) | – | – | WW2:003 edit · chart · WW2 003: rebuild loss graphic and cues for corrected narration |  |
 | J3372 | mini | blocked | codex | – | studio · J3365 follow-up: HOS exact 28-day reach, Willow test result and current title readback |  |
 | J3375 | mini | blocked | gemini | – | review · Verify condition for J3178 |  |
-| J3383 | mini | claimed | gemini | 2026-11-22T22:13Z | for gemini · studio · `gemini-argon` · First-day check at 6 h: "How Does the Heart Pump Blood?" (el30-mHiH-0) |  |
 | J3384 | mini | blocked | gemini | – | review · Verify condition for J3372 |  |
 | J3385 | mini | blocked | gemini | – | review · Verify condition for J1275 |  |
 | J3391 | mini | blocked | macbook-2 | – | review · Verify condition for J3365 |  |
@@ -92,7 +91,25 @@ J3387 closes with this ruling. No spend or YouTube changes; no audio or motion p
 Thread read to #7085827873.
 )
 - J3386 done: Verify condition for J2020 (Chief accepted condition verification and merged PR 1185 (81960da6be). Reopened J2020 with evidence and concrete readout scope: disclose analytics cutoff, matched metric periods, late Related linkage, and unknown Shorts attribution; provisional result requires through >= 2026-11-22 follow-up check at 2026-11-25T07:00Z. Date hold only released; no Rule 17 success verdict, no public changes or spend.)
+- J3383 done: First-day check at 6 h: "How Does the Heart Pump Blood?" (el30-mHiH-0) ("How Does the Heart Pump Blood?" (el30-mHiH-0) · History of Science · Short · went live Sun 22 Nov 11:30 London
+At 6 h: views 515 · Studio rank 1 of 10 · shown in feed about 1820 (from 475 feed views) · stayed to watch 26.1% · average viewed 67.1%
+Usual for this channel: stayed to watch 29.6%, average viewed 75.0%
+
+Verdict: AHEAD
+  - 515 views at 6 h; the last 5 checked at the same age had 13 (median).
+  - 515 views at 6 h; Studio says the usual for us at this age is 70.
+  - Studio ranks it 1 of 10 against our latest videos at the same age.
+
+What is different about this one
+  - "Blood" was in the title of 3 earlier Shorts: they had 201 views by the next morning (median), against 71 for all Shorts.
+
+Do now
+  - Nothing to fix.
+
+Carry forward
+  - A strong start is a lesson too: note what is different about this one.
+
+Step 1 check (read-only, CDP 9222, UCXp7HkBIl1LgaznXuZHJyRg, 2026-11-22T22:01-22:04Z, ~10 h 30 m after publish): 0 faults. Public, listed under Shorts, Notices/Restrictions empty (no copyright claim, Not Made for Kids, no age restriction, Altered content Yes), HD processing finished (SD+HD), Related video wwcjcFfC-5M (The Tied Arm That Proved Your Blood Circulates) and description match s07 upload package; YOUR PULSE cover live. Recorded in 05_Analytics/hos/launch/el30-mHiH-0.json. No Studio edits, £0 spend.)
 - J3382 done: Review rebuilt thumbnail heroes and decide successor tests after J3381 (All three exact v03 thumbnails PASS; conditional one-test successor permissions published in PR1184. J3308-J3310 name approved files/hashes and retain J3307 dependency. J3307 remains open pending prior publication/completion. No spend or YouTube changes.)
 - J3381 done: Rebuild three thumbnail heroes after J3307 visual FIX (Built three v03 candidates and badge sheets on NAS; PR #1183 contains builder, exact-source hash manifest and review. Colour/dimensions/size/copy hashes pass; all six JPEGs reproduce byte-for-byte. v01/v02 and ledger untouched, no spend/generation/Studio writes. J3382 must inspect exact files and separately authorize successor tests; J3308-J3310 remain held.)
 - J3380 done: Chief: resolve 006 thumbs orphan-review (Resolved orphan-review in 83a8ea89f2: J3307 now owns Europa thumbs and reviews J3378 v02 evidence; corrected J3308-J3310 paths/hashes while retaining Chief approval and successor-test guards. Verified delivered Europa hash and published handoff. No media PASS, spending or YouTube changes.)
-- J3379 cancelled: Verify condition for J3361 (parked for Chief: J3379 condition verification complete (PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1181, 27298fedb0, jobs/reviews/J3379/REVIEW.md) — CONDITION PROVEN SATISFIED for J3361 (WW2:001 ek9F61FVYqY). Verified live Public since 2026-11-22T17:00:31Z (videos.list + signed-out watch + oEmbed HTTP 200), commentThreads.list HTTP 200 (unblocked), playlist PLPPi-oWEDYtA still Private with ek9F61FVYqY at pos 0, en-GB captions serving, J3363 B v02 FLOATING PORT thumbnail visually verified live, and all Ben/Chief approvals intact. Elected Chief (codex) to merge PR #1181, reopen J3361 with evidence note for steps 4-6 (post & pin first comment, make PLPPi-oWEDYtA Public, update ww2-channel PR #32 preserving PR #33 B v02 metadata), and close J3379. £0 spend; zero YouTube/Studio writes.)
