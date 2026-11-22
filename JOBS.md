@@ -48,12 +48,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3115 | mini | open (after J3114) | – | – | 034 upload · chief · 034 Pluto: final packaging review after J3114 fixes and Ben-gated delivery handoff | J3112,J3114,J2868 |
 | J3119 | mini | open (after J3115) | – | – | 034 upload · studio · Upload the Pluto long master v02 Private and scheduled for Sun 13 Dec 18:00, arm the thumbnail test |  |
 | J3125 | mini | blocked | codex | – | studio · HOS Vaccine test: 24 Nov feed gate and conditional 29 Nov readout |  |
-| J3161 | mini | blocked | codex | – | studio · Supermoon Short: next-morning and full-day performance follow-up |  |
+| J3161 | mini | open (after J3153) | – | – | studio · Supermoon Short: next-morning and full-day performance follow-up |  |
 | J3178 | mini | blocked | gemini | – | 013 picture · for gemini · qa · `gemini-argon` · HOS 013: continuous playback review of ten unresolved pass-one plates |  |
-| J3196 | mini | blocked | gemini | – | for gemini · review · `gemini-argon` · Verify condition for J3161 |  |
 | J3205 | mini | open (after J3204) | – | – | WW2:003 edit · for codex · assembly · WW2 pilot 003: picture, maps, edit and thumbnail, to Ben's watch |  |
 | J3231 | cloud | open | – | – | review · Weekly search research (Orbit + Field Order History): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
-| J3270 | any | blocked | macbook | – | script · HOS: learn from our data, add two new films to the backlog |  |
+| J3270 | mini | open | – | – | for gemini · script · `gemini-argon` · HOS: learn from our data, add two new films to the backlog |  |
 | J3283 | mini | blocked | macbook-2 | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3303 | mini | open | – | – | for codex · review · Packaging panel (codex): J3302 weekly OWB Challenger Bs (T041 Europa 2x EARTH'S WATER, T042 Light Speed YOU AGE SLOWER, T043 Last Star OUTLIVES OUR SUN + Round 2 Title Bs; PR #1118) |  |
 | J3306 | mini | blocked | macbook-2 | – | review · Packaging panel decision: J3302 weekly OWB Challenger Bs (T041 Europa 2x EARTH'S WATER, T042 Light Speed YOU AGE SLOWER, T043 Last Star OUTLIVES OUR SUN + Round 2 Title Bs; PR #1118) |  |
@@ -64,7 +63,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3311 | mini | blocked | gemini | – | HOS:009 edit · qa · Review HOS 009 Short A v01 and Short B v01 (J2171, PR #718) | J2171 |
 | J3323 | mini | blocked | gemini | – | 005 upload · listing · HOS 005 Short el30-mHiH-0 post-public read-back & library.json live flip | 7064710774 |
 | J3331 | mini | blocked | gemini | – | assembly · Roman Telescope 7 Dec dated-event Short (airs Thu 3 Dec): voice-over, build from free NASA footage, all Shorts gates, park for review | 02_Video-Projects/_dated_shorts/2026-12-07_roman-telescope-first-images.md |
-| J3336 | mini | blocked | macbook-2 | – | review · Verify condition for J3270 |  |
 | J3345 | mini | claimed | gemini | 2026-11-22T10:03Z | review · Verify condition for J3178 |  |
 
 Recently finished:
@@ -77,5 +75,5 @@ Recently finished:
 - J3339 done: Verify condition for J2529 (Acting-Chief ruling (gemini, PR #1148 merged 6388849ada, jobs/reviews/J3339/REVIEW.md): J2529 condition UNMET. Independently verified 11/11 Batch 12-14 NAS SHA-256 hashes match REVIEW_STATE.json and BATCH_12-14 receipts; REVIEW_STATE.json unchanged (48 KEEP / 8 RETAKE: 3,10,24,28,47,49,54,63 / 10 unset: 56-62, 64-66); follow-up J3178 remains blocked on moving_video_input (J3300 parked for Chief); no new 013 marks on HOS #180/#694, OWB #954, or PRs; direct read_file probe confirmed audio_input and image_input only (row 58 returned 8 discrete 1-fps frames, not continuous 24-fps playback). Recorded typed capability hold on J2529 (--type capability --requires moving_video_input --recheck J3339 --check-at 2026-11-22T08:00:00Z). £0 / 0 credits spent; no minting, retake allowance, assembly, or YouTube/Buffer changes; nothing for Ben.)
 - J3338 done: Verify condition for J2537 (Acting-Chief (gemini) condition verification complete (jobs/reviews/J3338/REVIEW.md, OWB PR #1146 merged as f9378bf022, file f53fe5af6d): fresh check 2026-11-22T00:26Z across OWB #954 (thru 7071507172), HOS #694 (thru 7070905141), HOS #180 (2500 cap, last 7024089854), HOS #657 (0 comments), and repo-wide comments found no new Ben exception for rewriting protected HOS hos-desk history while retaining PR180. NAS/MiniWork pre-rewrite backups and HOS jobs/reviews/J2537/ rehearsal remain intact; HOS origin/main is b85740e7b6, origin/hos-desk is a4ce692535, with 27 open non-desk PRs. J2537 kept blocked via wait --recheck J3338 (11630da93e) for 2026-11-22T08:00:00Z; £0 spend, no live rewrite, no duplicate ask to Ben (Grok 7018109147).)
 - J3337 done: Roman Telescope 7 Dec dated-event Short: rebuild cover v02 only (opaque spacecraft, no galaxy bleed-through), thumb_preview, park for Chief (Chief COVER v02 KEEP (jobs/reviews/J3337/REVIEW.md, PR #1149 f09be0e386); PR #1147 merged (2a9d453f9f). roman_2026_12_07_cover_v02.jpg (SHA fecf983184783f57874b8fd330baf9f894041e805673827463ea4507225155d3) verified 100% opaque spacecraft with zero galaxy bleed-through, thumb_preview PASS (sat=101.2 near_black=18%), 57/57 v01 files untouched. Locked v01 video + cover_v02 staged to OWB UAT and WATCH_FULL (SHA-256 verified) and J3331 armed for Ben's watch (due Wed 2 Dec 2026 18:00 London).)
+- J3336 done: Verify condition for J3270 (Acting Chief, 22 Nov: condition for J3270 satisfied (PR 1144 merged e82d961); J3270 reopened and rerouted to gemini (gemini-argon).)
 - J3335 done: Ben's settings decisions: automatic dubbing OFF and third-party AI training OFF on every channel (Orbit changes; HOS and FOH already off) (done)
-- J3334 done: Field Order History channel audience read 2026-11-16 (done)

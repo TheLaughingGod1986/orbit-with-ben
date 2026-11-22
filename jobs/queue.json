@@ -285064,13 +285064,13 @@
       "stage": "",
       "after": "J3153",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-19T20:19Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-19T20:17Z",
-      "result": "Waiting for: The 2026-11-20 snapshot is available after the 06:40 UTC analytics run. Read it, then retain this follow-up until a full-day Studio read after 11:30 UTC. No YouTube changes authorized.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-19T20:17Z",
@@ -285096,26 +285096,17 @@
           "at": "2026-11-20T06:52Z",
           "by": "relay",
           "what": "condition verification queued: J3196"
+        },
+        {
+          "at": "2026-11-22T08:04Z",
+          "by": "claude",
+          "what": "reopened: J3196 proved the condition satisfied: 20 Nov snapshot read, Short past the 11:40Z threshold, CDP 9223 reachable (jobs/reviews/J3196/REVIEW.md @ 4924b7ba17). Record the full-day Studio read. No YouTube changes."
         }
       ],
       "remaining_action": "Read tomorrow morning snapshot and then full-day figures for the Supermoon Short",
       "due": "2026-11-20T07:40:00Z",
       "kind": "studio",
-      "plain": "Check whether the Supermoon Short gained viewers overnight",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-19T20:19Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      },
-      "hold": {
-        "type": "date",
-        "condition": "The 2026-11-20 snapshot is available after the 06:40 UTC analytics run. Read it, then retain this follow-up until a full-day Studio read after 11:30 UTC. No YouTube changes authorized.",
-        "check_at": "2026-11-20T07:52:59+00:00",
-        "recheck_task": "J3196"
-      }
+      "plain": "Check whether the Supermoon Short gained viewers overnight"
     },
     {
       "id": "J3162",
@@ -288056,13 +288047,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-20T12:16Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-20T06:52Z",
-      "result": "parked for Chief: parked for Chief: J3196 condition verification complete (jobs/reviews/J3196/REVIEW.md @ 4924b7ba17) — J3161 waiting condition PROVEN SATISFIED at 2026-11-20T12:21Z. Verified 05_Analytics/owb/snapshots/2026-11-20.json on origin/main (commit c26ea15d49, sha256 a98d9203fd949bdd7db30214a8a9fdc3a6b9df7a0a418513fe16c95013cd5cfb, takenAt 2026-11-20T06:40:10.419Z): HXacmpYkXcA (publishedAt 2026-11-19T11:30:24Z, exact age 19h 09m 46s — not a 24h read, no feed/retention fields in snapshot) has 34 views, 0 likes, 0 comments, privacy public vs matched 10-Short next-morning baseline median 193.5 (194). Original 6h reading in 05_Analytics/owb/launch/HXacmpYkXcA.json (sha256 6ea7680ab1e7007b9e28b23de2479b8cea72a9a00e235c3078e9af054f65f382), J3153 ruling (#7021122943), Ben OK OWB-J2478 / J2883 / UPLOADS.json / BUFFER_POSTS.json and live listing (0 faults in J3183/J3225) remain intact with no overriding ruling on OWB #954 through #7039282725. Current Short age (>24h 51m) is already past J3161's 11:40Z threshold and CDP 9223 is reachable (Chrome/157), so reopened J3161 can record the morning note and run the read-only 24h Studio check in one pass. Because scripts/jobs.py lines 984-988 restrict jobs.py reopen J3161 to the elected Chief (codex), exact Chief commands are in jobs/reviews/J3196/REVIEW.md §5. £0 spend, 0 Studio/YouTube changes. (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)",
+      "result": "Acting Chief, 22 Nov: condition for J3161 proven satisfied (REVIEW.md @ 4924b7ba17); J3161 reopened.",
       "history": [
         {
           "at": "2026-11-20T06:52Z",
@@ -288108,6 +288099,11 @@
           "at": "2026-11-20T14:53Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-22T08:04Z",
+          "by": "claude",
+          "what": "done: Acting Chief, 22 Nov: condition for J3161 proven satisfied (REVIEW.md @ 4924b7ba17); J3161 reopened."
         }
       ],
       "remaining_action": "Elected Chief (codex) to reopen J3161 with J3196 evidence and close J3196",
@@ -294194,7 +294190,7 @@
     {
       "id": "J3270",
       "title": "HOS: learn from our data, add two new films to the backlog",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "History of Science daily topic job: discovery stories with a person, a date and a twist.\n\nLEARN FROM OUR DATA FIRST (Ben, 5 Nov 2026: 'learn off past data what works well and build the videos around the data'). Read 05_Analytics/hos/channel_daily.json, 05_Analytics/hos/studio_ctr.json, 05_Analytics/hos/REPORT.md, the newest 05_Analytics/hos/snapshots/ and 05_Analytics/LEARNINGS.md (rules 1-22). Rank our own longs and Shorts by views per day since publish, CTR, average % viewed and Shorts 'stayed'. Write down the 3 best and 3 worst with the numbers and what they share (subject, title shape, opening, thumbnail concept, length).\nTHEN ADD TWO NEW FILMS TO THE BACKLOG (every day; Ben: 'one or two new a day ... a healthy big full backlog so we're never short'). For each: a working title in the shape that wins for us, one-line hook, why it should work (name the past winners it resembles, with their numbers, and the LEARNINGS rules it follows), a neighbour pass (three big videos on the subject with views), and two Short angles from it. Never repeat a topic already in 02_Video-Projects, the ideas folder or WIP. Create its project folder from the template with this as TOPIC.md, and append it to jobs/WIP.json `next_hos` (rule G: it starts only when a place frees up). Queue its rule-E topic review as a kind:review job. Spend nothing: existing subscriptions and free tools only, no paid API, TTS or picture generation; no Studio or publish change. Finish with jobs.py done <id> --result listing the two topics and the data line behind each. HOS films are written in the history-of-science repo; the WIP line and the review job live in orbit-with-ben.",
       "ref": "",
@@ -294202,13 +294198,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-21T03:16Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-21T03:15Z",
-      "result": "parked for Chief: needs a worker with web. The MacBook Claude lane has no web search (WebSearch refused again, 21 Nov 03:2xZ), so the neighbour pass (three big videos with real view counts) cannot be done here and no views will be invented. Same as J3245 on 20 Nov, which Gemini then finished. Please reroute to Gemini or Codex on the Mini (jobs.py reroute J3270 --to gemini --model gemini-argon). No work started: no branch, no PR, no files changed.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-21T03:15Z",
@@ -294239,26 +294235,31 @@
           "at": "2026-11-22T00:09Z",
           "by": "relay",
           "what": "condition verification queued: J3336"
+        },
+        {
+          "at": "2026-11-22T08:04Z",
+          "by": "claude",
+          "what": "reopened: J3336 proved the condition satisfied at 22 Nov 00:15Z (PR 1144 merged e82d961). Assign HOS:128 and HOS:129 (HOS:120-127 are held by open PRs). Needs a worker with web search: gemini."
+        },
+        {
+          "at": "2026-11-22T08:04Z",
+          "by": "claude",
+          "what": "rerouted to gemini on gemini-argon: needs a worker with web; the MacBook Claude lane has none"
         }
       ],
       "remaining_action": "At 2026-11-22T00:05Z verification, reroute J3270 to gemini on gemini-argon (free neighbours.py/public_search.py) for 22 Nov daily HOS topic run after checking open PRs 120-127",
       "kind": "script",
       "backlog": "hos-ideas",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-21T03:16Z",
-        "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+      "escalated_at": "2026-11-21T21:53Z",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
       },
-      "hold": {
-        "type": "date",
-        "condition": "Next daily HOS topic window (22 Nov 2026): J3245 already completed the 21 Nov daily HOS topic run at 00:44Z (HOS:126/127 in HOS PR #706 & OWB PR #1094, both Rule-E GO in J3263/J3264; 33 topics queued across main + 4 open PR pairs). Hold LIVE until 22 Nov 00:05Z to prevent refill 6h same-day duplicate, then reroute to gemini on gemini-argon using free neighbours.py + public_search.py (£0, 0 vidIQ credits; avoids MacBook Claude WebSearch refusal)",
-        "check_at": "2026-11-22T01:09:12+00:00",
-        "recheck_task": "J3336"
-      },
-      "escalated_at": "2026-11-21T21:53Z"
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J3271",
@@ -299760,13 +299761,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook-2",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-22T00:10Z",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-22T00:09Z",
-      "result": "parked for Chief: J3270 waiting condition verified SATISFIED at 2026-11-22T00:15Z (PR #1144, commit 840330fef5, jobs/reviews/J3336/REVIEW.md; £0 spend, read-only). 22 Nov 00:05Z window passed; 0 duplicate 22 Nov hos-ideas runs (J3245 completed 21 Nov at 00:44Z; J3270 has 0 prior branch/PR/file work); fresh 2026-11-21 HOS snapshot on main (f55b5f4a3d), free neighbours.py & public_search.py present on HOS main (b85740e7b6), Mini gemini UP (#954 #7071346908). Open PR pairs still hold HOS:120-127 (HOS #659/#682/#689/#706, OWB #1033/#1051/#1059/#1094; 33 topics queued across main + open PRs), so J3270 must assign HOS:128 and HOS:129. Elected Chief to merge PR #1144, reopen J3270 with evidence, reroute J3270 to gemini on gemini-argon, and close J3336 (scripts/jobs.py:603, 1059, 1561).",
+      "result": "Acting Chief, 22 Nov: condition for J3270 satisfied (PR 1144 merged e82d961); J3270 reopened and rerouted to gemini (gemini-argon).",
       "history": [
         {
           "at": "2026-11-22T00:09Z",
@@ -299802,6 +299803,11 @@
           "at": "2026-11-22T02:19Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-22T08:04Z",
+          "by": "claude",
+          "what": "done: Acting Chief, 22 Nov: condition for J3270 satisfied (PR 1144 merged e82d961); J3270 reopened and rerouted to gemini (gemini-argon)."
         }
       ],
       "remaining_action": "Parked for elected Chief: merge PR #1144, reopen+reroute J3270 to gemini/gemini-argon (HOS:128-129), close J3336",
