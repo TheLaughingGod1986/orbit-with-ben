@@ -177331,7 +177331,7 @@
     {
       "id": "J2020",
       "title": "Rule 17 test: measure film 025 Shorts -> long (subs per 1,000 views) on 2026-11-22",
-      "needs": "cloud",
+      "needs": "mini",
       "repo": "owb",
       "body": "LEARNINGS rule 17 test (Ben, 4 Nov 2026). 14 days after film 025's long went public, measure from the daily snapshots and studio_ctr.json: for each of its Shorts, views, subscribers gained, and subscribers per 1,000 views; the long's views coming from Shorts (traffic source: Shorts feed / related video) if the analytics show it; and whether Related was set within 1 h of go-public (check the J0124/J0135/J0861 receipts). Compare with October's OWB baseline of 0.7 subscribers per 1,000 views. Write the result as one line under rule 17 in 05_Analytics/LEARNINGS.md (pass = at least double) and post it on the studio thread. Reads only.\n",
       "ref": "",
@@ -177376,6 +177376,11 @@
           "at": "2026-11-22T20:54Z",
           "by": "codex",
           "what": "step 0 of 3 done: J3386 released the date hold; next reviewer performs the analysis under the recorded limits. No public video changes authorized."
+        },
+        {
+          "at": "2026-11-22T20:55Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-22T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Measure the Mars Shorts conversion, disclose the data cutoff and late Related link, and publish the Rule 17 readout.",
@@ -177397,7 +177402,15 @@
         "at": "2026-11-22T20:54Z",
         "by": "codex",
         "note": "J3386 released the date hold; next reviewer performs the analysis under the recorded limits. No public video changes aut"
-      }
+      },
+      "rerouted_from": {
+        "needs": "cloud",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J2021",
