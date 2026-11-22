@@ -74,6 +74,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3387 | mini | open | – | – | review · Verify condition for J3383 |  |
 | J3388 | mini | open | – | – | review · `gemini-argon` · Retention autopsy (7d): "How Far Is the Nearest Star? (You Can't See It, and It Has a Pla" (c5AdqQsnnys) |  |
 | J3389 | mini | blocked | gemini | – | review · Verify condition for J1272 |  |
+| J3390 | mini | open | – | – | review · Verify condition for J3114 |  |
 
 Recently finished:
 

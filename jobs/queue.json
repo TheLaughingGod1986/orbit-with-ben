@@ -1,5 +1,5 @@
 {
-  "next_id": 3390,
+  "next_id": 3391,
   "jobs": [
     {
       "id": "J0001",
@@ -281191,6 +281191,11 @@
           "at": "2026-11-22T09:13Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-22T18:10:00Z"
+        },
+        {
+          "at": "2026-11-22T18:17Z",
+          "by": "relay",
+          "what": "condition verification queued: J3390"
         }
       ],
       "remaining_action": "Obtain explicit approval for exporting codex/j3114-pluto-v02 (commit a12100797f) to TheLaughingGod1986/orbit-with-ben, or issue a superseding Chief ruling, then open the Pluto packaging review PR for J3115 without rebuilding",
@@ -281210,10 +281215,11 @@
       "hold": {
         "type": "input",
         "condition": "J3352 Acting Chief ruling (jobs/reviews/J3352/REVIEW.md @ e79bc8f4f0, PR #1164): condition NOT MET. Independently scanned all 116 #954 comments after #7067622773 through #7076957927 (0 new [Ben] posts; primary Chief claude #7076320150 at 08:07Z confirmed J3114 remains parked with export approval unrecorded), absent remote branch/PR (thru #1163), clean local commit a12100797f in /Volumes/MiniWork/scratch/j3114-wt, THUMB_LEDGER tail T040, 12/12 NAS_VERIFY_J3114 SHA-256 hashes, and 4/4 NAS video hashes. Prior automatic approval review rejected exporting codex/j3114-pluto-v02 to public repo TheLaughingGod1986/orbit-with-ben twice; explicit export authorization remains absent across 8 consecutive checks (J3120/J3140/J3167/J3189/J3232/J3284/J3317/J3352). Preserve artifacts, J3115/J3119 dependencies, and UAT/Shorts holds. Do not bypass through another worker or route; elapsed time is not approval. Next check 2026-11-22T18:10:00Z after primary Chief claude's 12:50Z and 17:50Z active windows.",
-        "check_at": "2026-11-22T18:10:00Z",
+        "check_at": "2026-11-22T19:17:59+00:00",
         "last_recheck": "J3352",
         "checked_at": "2026-11-22T09:13:47+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J3390"
       },
       "escalated_at": "2026-11-19T11:45Z"
     },
@@ -305160,6 +305166,37 @@
       "taskKeys": [
         "OWB:027"
       ]
+    },
+    {
+      "id": "J3390",
+      "title": "Verify condition for J3114",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3114: J3352 Acting Chief ruling (jobs/reviews/J3352/REVIEW.md @ e79bc8f4f0, PR #1164): condition NOT MET. Independently scanned all 116 #954 comments after #7067622773 through #7076957927 (0 new [Ben] posts; primary Chief claude #7076320150 at 08:07Z confirmed J3114 remains parked with export approval unrecorded), absent remote branch/PR (thru #1163), clean local commit a12100797f in /Volumes/MiniWork/scratch/j3114-wt, THUMB_LEDGER tail T040, 12/12 NAS_VERIFY_J3114 SHA-256 hashes, and 4/4 NAS video hashes. Prior automatic approval review rejected exporting codex/j3114-pluto-v02 to public repo TheLaughingGod1986/orbit-with-ben twice; explicit export authorization remains absent across 8 consecutive checks (J3120/J3140/J3167/J3189/J3232/J3284/J3317/J3352). Preserve artifacts, J3115/J3119 dependencies, and UAT/Shorts holds. Do not bypass through another worker or route; elapsed time is not approval. Next check 2026-11-22T18:10:00Z after primary Chief claude's 12:50Z and 17:50Z active windows.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3114 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-22T18:17Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-22T18:17Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Obtain explicit approval for exporting codex/j3114-pluto-v02 (commit a12100797f) to TheLaughingGod1986/orbit-with-ben, or issue a superseding Chief ruling, then o",
+      "kind": "review",
+      "recheck_of": "J3114",
+      "due": "2026-11-22T19:17:59+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
