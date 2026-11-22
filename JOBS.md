@@ -64,7 +64,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3359 | mini | blocked | gemini | – | for gemini · assembly · `gemini-argon` · Bring Codex and Claude Code back on the Mini: clear Codex's stale terra limit mark (Ben: 94% left), check Claude Code, status before/after |  |
 | J3360 | mini | blocked | gemini | – | WW2:003 sources · review · WW2 003: reconcile C37 loss categories against original sources |  |
 | J3361 | mini | blocked | gemini | – | for gemini · studio · `gemini-argon` · Field Order History pilot 1 pre-launch check before 17:00 today: live read-back, en-GB captions, description touch-ups, pinned first comment, playlist public at launch |  |
-| J3362 | mini | claimed | macbook | 2026-11-22T14:36Z | review · Verify condition for J3205 |  |
+| J3362 | mini | open | – | – | review · Verify condition for J3205 |  |
 
 Recently finished:
 
