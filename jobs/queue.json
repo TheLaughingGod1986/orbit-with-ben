@@ -25649,9 +25649,9 @@
     {
       "id": "J0317",
       "title": "027 Shorts (OVLv9dxTcpE, emwQsPxnRGM): set Related video to 6bbbvfCx6zY after Sun 22 Nov 18:00Z",
-      "needs": "mini",
+      "needs": "macbook",
       "repo": "owb",
-      "body": "Short 1: OVLv9dxTcpE (What If Earth Stopped Spinning?, earth_sudden_air_v05, sha 666ab5b1) is Private, publishAt Monday 26 October 2026 11:30 London (2026-10-26T11:30:00Z). Custom cover 1,500 KM/H is set. The burned-in house end card stays. J0940 swapped this in for dM1OgGPAYvw (v02, sha 4ab2b658), which is now Private and unscheduled. Do not set Related on dM1OgGPAYvw.\n\nShort 2: emwQsPxnRGM (Why Do You Weigh Less at Earth's Equator?, earth_equator_weight_v01, sha 9781e967, J0853) is Private, publishAt Monday 23 November 2026 11:30 London (2026-11-23T11:30:00Z). Custom cover 0.5% LIGHTER AT THE EQUATOR is set.\n\nThe 027 long is 6bbbvfCx6zY (Private, publishAt Sun 22 Nov 2026 18:00 London, J0834). Once 6bbbvfCx6zY goes public (Sun 22 Nov 18:00Z, before Mon 23 Nov 11:30Z), set Related video on both emwQsPxnRGM and OVLv9dxTcpE to 6bbbvfCx6zY in Orbit Studio (CDP 9223). Do not re-upload. Do not change privacy or the schedule. Buffer still waits until each Short is public, then points at the full film.\n",
+      "body": "Short 1: OVLv9dxTcpE (What If Earth Stopped Spinning?, earth_sudden_air_v05, sha 666ab5b1) is Private, publishAt Monday 26 October 2026 11:30 London (2026-10-26T11:30:00Z). Custom cover 1,500 KM/H is set. The burned-in house end card stays. J0940 swapped this in for dM1OgGPAYvw (v02, sha 4ab2b658), which is now Private and unscheduled. Do not set Related on dM1OgGPAYvw.\n\nShort 2: emwQsPxnRGM (Why Do You Weigh Less at Earth's Equator?, earth_equator_weight_v01, sha 9781e967, J0853) is Private, publishAt Monday 23 November 2026 11:30 London (2026-11-23T11:30:00Z). Custom cover 0.5% LIGHTER AT THE EQUATOR is set.\n\nThe 027 long is 6bbbvfCx6zY (Private, publishAt Sun 22 Nov 2026 18:00 London, J0834). Once 6bbbvfCx6zY goes public (Sun 22 Nov 18:00Z, before Mon 23 Nov 11:30Z), set Related video on both emwQsPxnRGM and OVLv9dxTcpE to 6bbbvfCx6zY in Orbit Studio (CDP 9223). Do not re-upload. Do not change privacy or the schedule. Do not change Buffer; its existing per-Short publication conditions remain in force.\n\nChief ruling J3395, 22 Nov: recovery condition met on the MacBook only (J3394 responsive DOM at 21:47:56Z; accepted PRs #1195/#1196). Run this Studio-only job on MacBook port 9223. Reuse the existing Studio tab and allow its wake navigation to settle. Verify exact Orbit channel identity and long Public afresh. Save Related to 6bbbvfCx6zY on OVLv9dxTcpE and emwQsPxnRGM only, then reload each and record persisted exact target. Do not touch dM1OgGPAYvw, titles, tests, privacy, schedules or Buffer. No upload or spend. Finish before 23 Nov 10:30Z. Existing approvals and gates remain in force.\n",
       "ref": "6197845034",
       "film": "027",
       "stage": "upload",
@@ -25834,6 +25834,11 @@
           "at": "2026-11-22T21:49Z",
           "by": "codex",
           "what": "J3393 records correction: attach existing held Related-links job to film 027 upload stage; dependency J3394, hold, check time and eligibility unchanged."
+        },
+        {
+          "at": "2026-11-22T22:55Z",
+          "by": "codex",
+          "what": "J3395 Chief ruling: CONDITION MET on MacBook only. Route existing J0317 to needs=macbook, due 23 Nov 10:30Z. Hold retained until routing is merged, then reopen with evidence. No YouTube changes or gate waivers."
         }
       ],
       "kind": "studio",
@@ -25841,7 +25846,7 @@
         "OWB:027"
       ],
       "escalated_at": "2026-10-22T15:13Z",
-      "remaining_action": "Wait for Studio recovery J3394, then verify and save both Earth Shorts links",
+      "remaining_action": "On the MacBook, verify the Earth long is public and save both Shorts links with reload checks",
       "not_before": "2026-11-22T18:05Z",
       "progress": {
         "step": 0,
@@ -25855,7 +25860,9 @@
         "condition": "Chief ruling 22 Nov: NOT COMPLETE. J3394 must establish responsive Orbit Studio access and record timestamped DOM/channel evidence. Four connection failures and no saved Related link are verified in history/thread 7085022021. After J3394 completes, Chief verifies evidence and reopens J0317 for fresh Public check and save/reload readback on OVLv9dxTcpE and emwQsPxnRGM to 6bbbvfCx6zY only. No unchanged browser retries.",
         "check_at": "2026-11-22T22:53:19+00:00",
         "recheck_task": "J3395"
-      }
+      },
+      "due": "2026-11-23T10:30:00Z",
+      "due_kind": "before-scheduled-short"
     },
     {
       "id": "J0318",
