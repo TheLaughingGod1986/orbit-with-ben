@@ -299784,6 +299784,11 @@
           "at": "2026-11-22T00:17Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: J3270 waiting condition verified SATISFIED at 2026-11-22T00:15Z (PR #1144, commit 840330fef5, jobs/reviews/J3336/REVIEW.md; £0 spend, read-only). 22 Nov 00:05Z window passed; 0 duplicate 22 Nov hos-ideas runs (J3245 completed 21 Nov at 00:44Z; J3270 has 0 prior branch/PR/file work); fresh 2026-11-21 HOS snapshot on main (f55b5f4a3d), free neighbours.py & public_search.py present on HOS main (b85740e7b6), Mini gemini UP (#954 #7071346908). Open PR pairs still hold HOS:120-127 (HOS #659/#682/#689/#706, OWB #1033/#1051/#1059/#1094; 33 topics queued across main + open PRs), so J3270 must assign HOS:128 and HOS:129. Elected Chief to merge PR #1144, reopen J3270 with evidence, reroute J3270 to gemini on gemini-argon, and close J3336 (scripts/jobs.py:603, 1059, 1561)."
+        },
+        {
+          "at": "2026-11-22T02:19Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Parked for elected Chief: merge PR #1144, reopen+reroute J3270 to gemini/gemini-argon (HOS:128-129), close J3336",
@@ -299805,7 +299810,8 @@
         "at": "2026-11-22T00:17Z",
         "by": "macbook-2",
         "note": "Opened PR #1144 (macbook/J3336, 840330fef5, jobs/reviews/J3336/REVIEW.md); 13/13 hygiene tests passed; checkout back on "
-      }
+      },
+      "escalated_at": "2026-11-22T02:19Z"
     },
     {
       "id": "J3337",
