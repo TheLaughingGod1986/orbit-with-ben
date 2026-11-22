@@ -301678,17 +301678,22 @@
           "at": "2026-11-22T11:20Z",
           "by": "macbook-2",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-22T11:24Z",
+          "by": "macbook-2",
+          "what": "step 2 of 3 done"
         }
       ],
-      "remaining_action": "Inspect relay, implement recovery and idle alarm, verify and open PR",
+      "remaining_action": "Push tested job branch, open PR, and report handoff to Chief",
       "due": "2026-11-24T18:00:00Z",
       "kind": "assembly",
       "plain": "Stop jobs getting stuck behind an agent that's out of usage, and flag when the Mac mini sits idle",
       "urgent": 5,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-22T11:20Z",
+        "at": "2026-11-22T11:24Z",
         "by": "macbook-2"
       }
     }
