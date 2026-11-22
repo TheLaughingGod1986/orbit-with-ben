@@ -302397,10 +302397,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-22T14:09Z",
+      "eta": "2026-11-22T16:09Z",
       "created_by": "relay",
       "created_at": "2026-11-22T12:35Z",
       "result": "",
@@ -302454,6 +302454,11 @@
           "at": "2026-11-22T14:09Z",
           "by": "codex",
           "what": "reopened: Chief ruling recorded on PR1169; reopening only this completed verification to claim and close it. J3205 remains held with last_recheck J3362."
+        },
+        {
+          "at": "2026-11-22T14:09Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for elected Chief to merge PR #1169, record J3205 --type input hold --recheck J3362 (or rule on J3360/PR #31), and close J3362",
@@ -302468,7 +302473,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-22T14:09Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3363",
