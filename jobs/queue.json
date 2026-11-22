@@ -299263,9 +299263,14 @@
           "at": "2026-11-22T15:06Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J3323; starting read-only post-public verification for HOS 005 Short el30-mHiH-0"
+        },
+        {
+          "at": "2026-11-22T15:08Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Signed-out read-back PASS (2026-11-22T15:07Z): playabilityStatus=OK, isPrivate=false, isUnlisted=false, publishDate=2026-11-22T03:30:33-08:00 (11:30:33Z), Related pill->wwcjcFfC-5M, AI pill+howThisWasMadeSectionViewModel present, captions en-GB manual+en ASR, YOUR PULSE custom cover visually verified live"
         }
       ],
-      "remaining_action": "Verify signed-out YouTube Shorts/watch page, Related link, AI disclosure, captions, and frame-0 cover for el30-mHiH-0",
+      "remaining_action": "Flip el30-mHiH-0 to live in clean HOS worktree and run check_all.sh",
       "kind": "listing",
       "plain": "Verify HOS Short el30-mHiH-0 live after Sun 22 Nov 11:30Z and flip its library.json status to live",
       "rerouted_from": {
@@ -299277,11 +299282,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-22T15:06Z",
+        "at": "2026-11-22T15:08Z",
         "by": "gemini",
-        "note": "Claimed J3323; starting read-only post-public verification for HOS 005 Short el30-mHiH-0"
+        "note": "Signed-out read-back PASS (2026-11-22T15:07Z): playabilityStatus=OK, isPrivate=false, isUnlisted=false, publishDate=2026"
       },
       "taskKeys": [
         "HOS:005"
