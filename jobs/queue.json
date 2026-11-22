@@ -301606,10 +301606,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-22T11:17Z",
+      "eta": "2026-11-22T12:17Z",
       "created_by": "claude",
       "created_at": "2026-11-22T11:17Z",
       "result": "",
@@ -301618,13 +301618,26 @@
           "at": "2026-11-22T11:17Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-22T11:17Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Auto-open for=X jobs when X has been out >2h (except pin_hard); 30-minute idle alarm naming why ready jobs can't be claimed; tests",
       "due": "2026-11-24T18:00:00Z",
       "kind": "assembly",
       "plain": "Stop jobs getting stuck behind an agent that's out of usage, and flag when the Mac mini sits idle",
-      "urgent": 5
+      "urgent": 5,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-22T11:17Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
