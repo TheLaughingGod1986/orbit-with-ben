@@ -305545,13 +305545,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-22T19:01Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-22T17:52Z",
-      "result": "parked for Chief: J3384 verified 22 Nov 19:05Z (PR #1191, 05795cf227). CDP 9222 Studio tab 492851E5D8095B9CEC05EBB938497368 still timed out before reload, +6s after 1 bounded reload, and +50s after reload (URL reverted to Bks_JLId1ew/edit; no duplicates, Chrome left open). Dedicated Mini HOS Studio on CDP 9460 (reach_port) is healthy and signed in to UCXp7HkBIl1LgaznXuZHJyRg (Runtime.evaluate 0.23s, DOM 0.07s). Chief to merge PR #1191 and either Option A (recommended: authorize J3372 read-only on CDP 9460 and reopen J3372 + close J3384) or Option B (keep J3372 blocked via wait --recheck J3384 until 9222 tab/browser recovery).",
+      "result": "",
       "history": [
         {
           "at": "2026-11-22T17:52Z",
@@ -305592,6 +305592,11 @@
           "at": "2026-11-22T21:53Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-22T22:36Z",
+          "by": "codex",
+          "what": "reopened: Taking the explicitly assigned Chief review. PR1191 merged; original J3372 remains held until ruling is recorded."
         }
       ],
       "remaining_action": "Chief ruling on J3372 (PR #1191): authorize healthy CDP 9460 and reopen, or record J3384 recheck hold on 9222",
@@ -305608,13 +305613,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-22T19:08Z",
-        "by": "gemini",
-        "note": "PR #1191 opened (05795cf227, 19/19 tests PASS); parking protected Chief decision"
-      },
       "taskKeys": [
         "HOS:006"
       ],
