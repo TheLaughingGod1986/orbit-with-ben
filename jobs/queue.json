@@ -1,5 +1,5 @@
 {
-  "next_id": 3369,
+  "next_id": 3370,
   "jobs": [
     {
       "id": "J0001",
@@ -303002,6 +303002,36 @@
       "taskKeys": [
         "HOS:013"
       ]
+    },
+    {
+      "id": "J3369",
+      "title": "Field Order History pilot 1: 48-hour thumbnail decision",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Follow-up required by J3363, approved by elected acting Chief codex on 22 November 2026; ww2-channel PR 33 merged as 5079d493b83773fd0dab830558f2e56f07447a94.\n\nAt or after 24 November 2026 17:00 UTC (48 hours after scheduled launch), check ek9F61FVYqY with Field Order History login. Record impressions, CTR, average view duration and views in 05_Analytics/READS.md. Confirm actual public time; if launch slipped, record a typed date hold for actual launch plus 48 hours.\n\nB v02 FLOATING PORT is approved and already set. If impressions are strictly over 1,000 and CTR strictly under 3%, set retained 10_Thumbnail/ww2_001_thumb_A_archive_v01.jpg, verify channel identity and read back the thumbnail, update the packaging metadata and record old/new thumbnail and time. This conditional thumbnail change is explicitly authorized by J3363 and this Chief ruling. Preserve any subsequently armed Test & Compare; do not replace it. Otherwise retain B v02 and record the numbers. Do not change title, schedule, privacy or video file; no spend. Source is September 1944 IWM BU 1024, never described as a D-Day photograph.\n\nKeep media outside git. Use an isolated clean worktree for records, PR to main and report on studio thread. Coordinate the channel seven-day read for 29 November 17:00 UTC through the existing learning loop, with a dated follow-up if none exists.\n",
+      "ref": "",
+      "film": "001",
+      "stage": "thumbs",
+      "after": "J3363",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-22T14:02Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-22T14:02Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Read the first two days of results and apply the approved thumbnail fallback if needed",
+      "due": "2026-11-24T18:00:00Z",
+      "kind": "studio",
+      "plain": "Check whether the floating harbour thumbnail is winning clicks and change it if needed"
     }
   ],
   "focus": [
