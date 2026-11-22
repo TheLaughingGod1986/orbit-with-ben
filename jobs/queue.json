@@ -305120,9 +305120,14 @@
           "at": "2026-11-22T18:12Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Read J1272 history/readbacks and confirmed 6bbbvfCx6zY live via public oEmbed (HTTP 200) and signed-out watch page (playabilityStatus OK, isPrivate false, publishDate 2026-11-22T10:00:06-08:00)."
+        },
+        {
+          "at": "2026-11-22T18:13Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: YouTube Data API v3 videos.list + commentThreads.list (18:12:37Z), oEmbed, and watch page confirm 6bbbvfCx6zY is live Public (publishedAt 2026-11-22T18:00:06Z, madeForKids false, 0 comments); J0793/J0834/J1272/J2497 gates and earth_spin_long_pinned_v01.txt verified."
         }
       ],
-      "remaining_action": "Run read-only YouTube Data API v3 check on 6bbbvfCx6zY and verify original 027 upload/approval gates",
+      "remaining_action": "Write jobs/reviews/J3389/REVIEW.md in clean worktree, run checks, push PR, and park for Chief",
       "kind": "review",
       "recheck_of": "J1272",
       "due": "2026-11-20T18:00:00+00:00",
@@ -305136,11 +305141,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-22T18:12Z",
+        "at": "2026-11-22T18:13Z",
         "by": "gemini",
-        "note": "Read J1272 history/readbacks and confirmed 6bbbvfCx6zY live via public oEmbed (HTTP 200) and signed-out watch page (play"
+        "note": "YouTube Data API v3 videos.list + commentThreads.list (18:12:37Z), oEmbed, and watch page confirm 6bbbvfCx6zY is live Pu"
       },
       "taskKeys": [
         "OWB:027"
