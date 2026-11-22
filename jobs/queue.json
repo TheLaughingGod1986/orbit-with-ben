@@ -299221,10 +299221,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-22T15:36Z",
+      "eta": "2026-11-22T17:36Z",
       "created_by": "gemini",
       "created_at": "2026-11-21T21:06Z",
       "result": "",
@@ -299298,6 +299298,11 @@
           "at": "2026-11-22T15:36Z",
           "by": "codex",
           "what": "reopened: Chief ruling PASS: reviewed original brief/history, J3358 approval and worker evidence; independent signed-out check confirms public since 2026-11-22T11:30:33Z and en/en-GB captions. HOS PR 732 exact head 4078b6d9 passed four CI checks, owner/main verified, merged as 3be57292979147531b96480696f182ea4a87f631. Follow-up: verify main library live, record completion and report; no external wait or YouTube/Buffer writes."
+        },
+        {
+          "at": "2026-11-22T15:36Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for Chief merge of HOS PR #732",
@@ -299313,7 +299318,15 @@
       "open_claim": true,
       "taskKeys": [
         "HOS:005"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-22T15:36Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3324",
