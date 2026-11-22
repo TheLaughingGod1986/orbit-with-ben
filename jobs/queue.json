@@ -295901,13 +295901,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-21T13:03Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-21T13:02Z",
-      "result": "parked for Chief: J2040 waiting condition verified NOT MET on Mac mini at 2026-11-21T13:04Z (PR #1109, commit 5883b2ee43, jobs/reviews/J3289/REVIEW.md). All 8 ~/.codex approval/gateway hashes match J3026/J3229 unchanged; J2517 (#793) and J2559 (#795) done; J2007 cancelled; PR #490 OPEN draft at f521bcd3f1 (1 comment, 0 reviews); docs/CODEX_ALLOWLIST.md absent from main; thread #954 through 7062986150 has no operator confirmation or fresh-session scoped acceptance evidence. Elected Chief (Grok Bot) to merge PR #1109, record jobs.py wait J2040 --recheck J3289 (suggested 2026-11-22T13:00:00Z; Codex down until 2026-11-24T23:26:00Z), and close J3289.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-21T13:02Z",
@@ -295948,6 +295948,11 @@
           "at": "2026-11-21T15:30Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-22T00:47Z",
+          "by": "gemini",
+          "what": "reopened"
         }
       ],
       "remaining_action": "Parked for elected Chief (Grok Bot): merge PR #1109, run jobs.py wait J2040 --recheck J3289, and close J3289",
@@ -295963,13 +295968,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-21T13:07Z",
-        "by": "gemini",
-        "note": "Opened PR #1109 (5883b2ee43, jobs/reviews/J3289/REVIEW.md) documenting NOT MET on all J2040 criteria; worktree removed; "
-      },
       "escalated_at": "2026-11-21T15:30Z"
     },
     {
