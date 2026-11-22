@@ -289168,9 +289168,14 @@
           "at": "2026-11-22T14:08Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-22T18:45:00Z"
+        },
+        {
+          "at": "2026-11-22T14:22Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-22T18:45:00Z"
         }
       ],
-      "remaining_action": "Correct the B-29 loss statement and narration through J3360, then rebuild timing and mix before final assembly",
+      "remaining_action": "Wait for corrected narration and loss graphic, then finish assembly and QA",
       "due": "2026-11-30T18:00:00Z",
       "kind": "assembly",
       "plain": "Edit the third WW2 film and put it on Ben's board to watch",
@@ -289190,12 +289195,9 @@
         "by": "macbook"
       },
       "hold": {
-        "type": "input",
-        "condition": "J3362 Chief ruling: unmet dependency J3360. Exact S62/C37/G11 correction and guarded narration pickup are not yet approved; PR31 remains open at a8914a7 and PR30 handoff v09 at 08fa815 confirms soundtrack v02 retains disputed wording. J3360 must rule now, queue the pickup and link its dependency before final assembly resumes. PR31 must be integrated against main without overwriting later handoffs. No film/VO PASS or spend approval.",
-        "check_at": "2026-11-22T18:45:00Z",
-        "last_recheck": "J3362",
-        "checked_at": "2026-11-22T14:08:06+00:00",
-        "checked_by": "codex"
+        "type": "dependency",
+        "condition": "J3360 FIX recorded in WW2 PR35. Final assembly requires J3370 verified corrected S62 and S51a narration/source records, then J3371 corrected G11 and cues. Keep existing soundtrack held; preserve archive and QA guards. Release only after both jobs are done with evidence.",
+        "check_at": "2026-11-22T18:45:00Z"
       }
     },
     {
