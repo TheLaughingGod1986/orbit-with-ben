@@ -22,6 +22,8 @@ SOURCES={
  'field.jpg': ('GSFC_20171208_Archive_e002064','NASA, ESA, M. Livio and the Hubble 20th Anniversary Team (STScI)','https://images.nasa.gov/details/GSFC_20171208_Archive_e002064'),
 }
 
+EXPECTED_SHA256={'earth.jpg': 'cb4c3d2da98ee72130ebfd2ea472fc84ede6726002c2a8c9cabd86e4deea9f0f', 'europa.jpg': 'f020c034750675cb0ace6c3164b18151746bfa28405e888d810312cd563d650d', 'eva_new.jpg': '220b4ef88dd4c98f4dd5b62c18372e7c3151d9a206aa299c274874683569972a', 'sun.jpg': 'e13524641873a6ec38798932ff3823f2f9fa33e27caf6c309d0f0fbe3eb4af34', 'field.jpg': 'd90c54b8a809cd43beb9a630bd846b0c7328d45afa32b26d03fb67041b6e517e'}
+
 def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
 def rgb(a): return Image.fromarray(np.uint8(np.clip(a,0,255)))
 def load(p): return Image.open(p).convert('RGB')
@@ -155,6 +157,7 @@ def main():
     if args.out.exists(): raise SystemExit('Refusing existing output directory')
     for f in SOURCES:
         if not (args.sources/f).is_file(): raise SystemExit('Missing source '+f)
+        if sha(args.sources/f)!=EXPECTED_SHA256[f]: raise SystemExit('Source hash mismatch '+f)
     args.out.mkdir(parents=True)
     rows=[]
     for vid,hook,dur,build in [('NbW5G1BpPY0',"2× EARTH'S WATER",'9:19',europa),('rVqgtkBV3jc','EARTH AGES 7×','8:55',speed),('REXYxuLOBoI','OUTLIVES OUR SUN','8:38',stars)]:
@@ -162,6 +165,6 @@ def main():
         sheet=args.out/f'{vid}_phone_badge_sheet_v03.jpg';phone(im,dur,sheet)
         row=dict(video=vid,hook=hook,file=str(f),sha256=sha(f),bytes=f.stat().st_size,score=score(f,'long'),text_box=box,phone_sheet=str(sheet),phone_sha256=sha(sheet),composition=note)
         rows.append(row);print(vid,row['score'])
-    manifest=dict(job='J3381',status='proposed',spend_gbp=0,sources=[dict(file=f,id=v[0],credit=v[1],url=v[2],sha256=sha(args.sources/f)) for f,v in SOURCES.items()],candidates=rows)
+    manifest=dict(job='J3381',status='proposed',spend_gbp=0,sources=[dict(file=f,id=v[0],credit=v[1],url=v[2],asset_url=f'https://images-assets.nasa.gov/image/{v[0]}/{v[0]}~orig.jpg',sha256=sha(args.sources/f)) for f,v in SOURCES.items()],candidates=rows)
     (args.out/'DESIGN_MANIFEST.json').write_text(json.dumps(manifest,indent=2)+'\n')
 if __name__=='__main__': main()
