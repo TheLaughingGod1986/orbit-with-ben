@@ -299343,13 +299343,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-22T00:52Z",
-      "eta": "2026-11-22T02:52Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-21T22:53Z",
-      "result": "",
+      "result": "Elected Acting Chief (gemini) independently re-verified CONDITION NOT MET at 2026-11-22T00:51Z and merged PR #1136 (a2c3a72285, jobs/reviews/J3332/REVIEW.md): J3303 remains open/unclaimed (for: codex; Mini Codex down until 2026-11-24T23:26Z), codex.md absent on main/PRs/branches (only gemini.md 3891358394 and cursor.md 088b8f670c exist), and 24h fallback 2026-11-22T16:37Z has ~15h 46m remaining. Upstream PR #1118 (fe8c0886cd), all 9 NAS studio-live J3302 images, and downstream J3307-J3310 gates verified intact; £0 spend, zero YouTube changes. Kept J3306 blocked via wait --recheck J3332 with next check 2026-11-22T16:38:00Z.",
       "history": [
         {
           "at": "2026-11-21T22:53Z",
@@ -299400,6 +299400,11 @@
           "at": "2026-11-22T00:52Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-22T00:52Z",
+          "by": "gemini",
+          "what": "done: Elected Acting Chief (gemini) independently re-verified CONDITION NOT MET at 2026-11-22T00:51Z and merged PR #1136 (a2c3a72285, jobs/reviews/J3332/REVIEW.md): J3303 remains open/unclaimed (for: codex; Mini Codex down until 2026-11-24T23:26Z), codex.md absent on main/PRs/branches (only gemini.md 3891358394 and cursor.md 088b8f670c exist), and 24h fallback 2026-11-22T16:37Z has ~15h 46m remaining. Upstream PR #1118 (fe8c0886cd), all 9 NAS studio-live J3302 images, and downstream J3307-J3310 gates verified intact; £0 spend, zero YouTube changes. Kept J3306 blocked via wait --recheck J3332 with next check 2026-11-22T16:38:00Z."
         }
       ],
       "remaining_action": "Parked for elected Chief: merge PR #1136, run jobs.py wait J3306 --recheck J3332 (suggested 2026-11-22T16:38:00Z), and close J3332",
@@ -299422,7 +299427,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "a2c3a72285"
     },
     {
       "id": "J3333",
