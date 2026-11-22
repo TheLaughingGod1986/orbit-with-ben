@@ -305110,9 +305110,14 @@
           "at": "2026-11-22T18:26Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-22T18:27Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Run 7d RSI retention autopsy on c5AdqQsnnys, watch 3 steepest drop windows with video+audio, write 05_Analytics/owb/autopsy/c5AdqQsnnys_7d.md",
+      "remaining_action": "Inspect RSI/funnel metrics, check Studio/snapshot data, and locate 026 master MP4",
       "due": "2026-11-23T06:02:00Z",
       "kind": "review",
       "model": "gemini-argon",
@@ -305124,12 +305129,13 @@
       "plain": "Analyse why viewers stayed or left on \"How Far Is the Nearest Star? (You Can't See It, and It H\" (7d) and write up to 3 fixes",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-22T18:26Z",
-        "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "of": 4,
+        "at": "2026-11-22T18:27Z",
+        "by": "gemini"
+      },
+      "taskKeys": [
+        "OWB:026"
+      ]
     },
     {
       "id": "J3389",
