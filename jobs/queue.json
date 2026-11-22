@@ -300587,9 +300587,14 @@
           "at": "2026-11-22T08:04Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Probed media input via read_file: audio_input and image_input demonstrated; continuous 24-fps moving_video_input unavailable (row 58 returned 8 1-fps stills 00:00..00:07). Recorded session capabilities."
+        },
+        {
+          "at": "2026-11-22T08:06Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified 11/11 Batch 12-14 NAS SHA-256 hashes match REVIEW_STATE.json and BATCH_12-14 receipts; REVIEW_STATE.json unchanged (48 KEEP / 8 RETAKE / 10 unset); no new 013 playback evidence or Chief marks on HOS #180/#694, OWB #954, or open PRs; no worker has verified 24-fps moving_video_input."
         }
       ],
-      "remaining_action": "Verify Batch 12-14 NAS SHA-256 hashes, REVIEW_STATE.json, worker capabilities, and desk/thread/PR history for J3178",
+      "remaining_action": "Write jobs/reviews/J3345/REVIEW.md in clean worktree, open PR, park J3345 for elected Chief (Claude), and post reports",
       "kind": "review",
       "recheck_of": "J3178",
       "required_capabilities": [
@@ -300598,11 +300603,11 @@
       "due": "2026-11-22T09:01:39+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-22T08:04Z",
+        "at": "2026-11-22T08:06Z",
         "by": "gemini",
-        "note": "Probed media input via read_file: audio_input and image_input demonstrated; continuous 24-fps moving_video_input unavail"
+        "note": "Verified 11/11 Batch 12-14 NAS SHA-256 hashes match REVIEW_STATE.json and BATCH_12-14 receipts; REVIEW_STATE.json unchan"
       },
       "taskKeys": [
         "HOS:013"
