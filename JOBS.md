@@ -67,6 +67,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3362 | mini | blocked | macbook | – | review · Verify condition for J3205 |  |
 | J3363 | mini | blocked | codex | – | thumb · Field Order History pilot 1 thumbnail: fix white-on-white text before 17:00 (B v02 high-contrast vs A no-text, pick at phone size, set it) |  |
 | J3364 | mini | open | – | – | 002 picture · assembly · Field Order History pilot 2: add the planned archive photos (~65%) to the graphics-only cut, v06 to Ben's watch by Tue 20:00 (else move to Sat 28 Nov) |  |
+| J3365 | mini | open | – | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 
 Recently finished:
 
