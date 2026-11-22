@@ -67,6 +67,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3372 | mini | blocked | codex | – | studio · J3365 follow-up: HOS exact 28-day reach, Willow test result and current title readback |  |
 | J3375 | mini | blocked | gemini | – | review · Verify condition for J3178 |  |
 | J3378 | any | open | – | – | 006 thumbs · thumb · Rebuild three OWB weekly audit thumbnail Bs per panel decision J3306 (T041 Europa, T042 Light Speed, T043 Last Star) | J3306 |
+| J3379 | mini | open | – | – | review · Verify condition for J3361 |  |
 
 Recently finished:
 
