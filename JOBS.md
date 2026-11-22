@@ -62,7 +62,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3354 | mini | blocked | macbook-2 | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3358 | mini | blocked | gemini | – | review · Verify condition for J3323 |  |
 | J3359 | mini | blocked | gemini | – | for gemini · assembly · `gemini-argon` · Bring Codex and Claude Code back on the Mini: clear Codex's stale terra limit mark (Ben: 94% left), check Claude Code, status before/after |  |
-| J3360 | any | open | – | – | WW2:003 sources · review · WW2 003: reconcile C37 loss categories against original sources |  |
+| J3360 | mini | open | – | – | WW2:003 sources · review · WW2 003: reconcile C37 loss categories against original sources |  |
 
 Recently finished:
 
