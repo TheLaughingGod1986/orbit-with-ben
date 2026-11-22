@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2529, J3205.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2529, J3205, J3357.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -62,6 +62,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3323 | mini | blocked | gemini | – | 005 upload · listing · HOS 005 Short el30-mHiH-0 post-public read-back & library.json live flip | 7064710774 |
 | J3331 | mini | blocked | gemini | – | assembly · Roman Telescope 7 Dec dated-event Short (airs Thu 3 Dec): voice-over, build from free NASA footage, all Shorts gates, park for review | 02_Video-Projects/_dated_shorts/2026-12-07_roman-telescope-first-images.md |
 | J3354 | mini | blocked | macbook-2 | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
+| J3357 | any | open | – | – | assembly · Relay: jobs pinned to an agent that is out reopen to the chain after 2 hours; idle alarm when nothing runs for 30 minutes |  |
 
 Recently finished:
 

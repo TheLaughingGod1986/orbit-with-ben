@@ -1,5 +1,5 @@
 {
-  "next_id": 3357,
+  "next_id": 3358,
   "jobs": [
     {
       "id": "J0001",
@@ -301594,6 +301594,37 @@
         "OWB:025",
         "OWB:026"
       ]
+    },
+    {
+      "id": "J3357",
+      "title": "Relay: jobs pinned to an agent that is out reopen to the chain after 2 hours; idle alarm when nothing runs for 30 minutes",
+      "needs": "any",
+      "repo": "owb",
+      "body": "**Why (Ben, 22 Nov 11:15 London, board screenshot: \"Nothing's running\").** The Mini sat idle from 09:59Z to 11:20Z with 17 open jobs: every ready one was pinned with `for=` to an agent that was out (J3205 WW2 pilot 3 edit and J3303 for Codex, out on its weekly limit since 20 Nov; J2036 for Claude Code on the Mini, paused while Claude is flagged), and #1073's open reroutes only cover chain walks, not jobs pinned by hand. Claude opened those three by hand (22 Nov 11:20Z).\n\n**Do (code, tests, one PR).**\n1. In the relay tick: a ready job pinned `for=X` where X is out (usage flag, down mark or credit flag) for more than 2 hours, or until after the job's due time, is reopened as an open claim to its kind's chain (preferred next lane), with a log line naming why. A job marked `pin_hard` (a second opinion that must come from that agent) is left pinned and listed instead.\n2. Idle alarm: if the Mini has had no running job for 30 minutes while any open job exists, the relay posts one line naming the first three ready jobs and why each cannot be claimed, and the board's Agents tab shows it.\n3. Tests: a job pinned to an out agent opens after 2 h; a pin_hard job stays; the idle alarm fires once per idle spell. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-22T11:17Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-22T11:17Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Auto-open for=X jobs when X has been out >2h (except pin_hard); 30-minute idle alarm naming why ready jobs can't be claimed; tests",
+      "due": "2026-11-24T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Stop jobs getting stuck behind an agent that's out of usage, and flag when the Mac mini sits idle",
+      "urgent": 5
     }
   ],
   "focus": [
