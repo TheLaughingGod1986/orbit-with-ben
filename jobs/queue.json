@@ -300593,13 +300593,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-22T08:18Z",
-      "eta": "2026-11-22T10:18Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-22T08:01Z",
-      "result": "",
+      "result": "Acting-Chief ruling (gemini, PR #1154 merged fdda76b651, ruling 8f62423d49, jobs/reviews/J3345/REVIEW.md): accepted J3345 worker verification (0837434a87); condition UNMET. Independently verified agy 1.5.14 read_file on NAS row 58 still returns 8 discrete 1-fps JPEGs (no continuous 24-fps moving_video_input on any worker; audio_input+image_input demonstrated), 11/11 Batch 12-14 NAS SHA-256 hashes match receipts and REVIEW_STATE.json (48 KEEP / 8 RETAKE / 10 unset unchanged), and no new 013 marks exist on HOS #180/#694, OWB #954, or open PRs. Updated J3178 typed capability hold (--type capability --requires moving_video_input --recheck J3345 --check-at 2026-11-22T14:15:00Z) and closed J3345. £0 / 0 credits spent; nothing for Ben.",
       "history": [
         {
           "at": "2026-11-22T08:01Z",
@@ -300650,6 +300650,11 @@
           "at": "2026-11-22T08:18Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-22T08:18Z",
+          "by": "gemini",
+          "what": "done: Acting-Chief ruling (gemini, PR #1154 merged fdda76b651, ruling 8f62423d49, jobs/reviews/J3345/REVIEW.md): accepted J3345 worker verification (0837434a87); condition UNMET. Independently verified agy 1.5.14 read_file on NAS row 58 still returns 8 discrete 1-fps JPEGs (no continuous 24-fps moving_video_input on any worker; audio_input+image_input demonstrated), 11/11 Batch 12-14 NAS SHA-256 hashes match receipts and REVIEW_STATE.json (48 KEEP / 8 RETAKE / 10 unset unchanged), and no new 013 marks exist on HOS #180/#694, OWB #954, or open PRs. Updated J3178 typed capability hold (--type capability --requires moving_video_input --recheck J3345 --check-at 2026-11-22T14:15:00Z) and closed J3345. £0 / 0 credits spent; nothing for Ben."
         }
       ],
       "remaining_action": "Parked for Chief (claude): merge PR #1154, record wait J3178 --recheck J3345, and close J3345",
