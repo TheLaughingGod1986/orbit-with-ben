@@ -19,7 +19,7 @@ SOURCES={
  'europa.jpg': ('PIA19048','NASA/JPL-Caltech/SETI Institute','https://science.nasa.gov/resource/europa-in-color/'),
  'eva.jpg': ('S84-27018','NASA','https://images.nasa.gov/details/S84-27018'),
  'sun.jpg': ('GSFC_20171208_Archive_e002069','NASA/GSFC/SDO','https://images.nasa.gov/details/GSFC_20171208_Archive_e002069'),
- 'field.webp': ('NGC6638 potw2231a','ESA/Hubble & NASA, R. Cohen','https://science.nasa.gov/missions/hubble/hubble-gazes-at-a-star-studded-skyfield/'),
+ 'field.jpg': ('GSFC_20171208_Archive_e002064','NASA, ESA, M. Livio and the Hubble 20th Anniversary Team (STScI)','https://images.nasa.gov/details/GSFC_20171208_Archive_e002064'),
 }
 
 def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
@@ -27,12 +27,13 @@ def rgb(a): return Image.fromarray(np.uint8(np.clip(a,0,255)))
 def load(p): return Image.open(p).convert('RGB')
 
 def background(p, motion=False):
-    # Peripheral crop avoids the bright cluster core. Real star pixels only.
-    src=load(p); src=src.crop((0,0,1700,956)).resize((W,H),Image.Resampling.LANCZOS)
+    # Remove low-frequency nebula signal; retain real Hubble point-source pixels.
+    src=ImageOps.fit(load(p),(W,H),method=Image.Resampling.LANCZOS)
     a=np.asarray(src,dtype=float)/255
     lum=a.mean(axis=2)
     # Compress dense faint stars while preserving point-source texture.
-    signal=np.power(lum,2.0)*0.30
+    smooth=np.asarray(src.filter(ImageFilter.GaussianBlur(10)),dtype=float).mean(2)/255
+    signal=np.clip(lum-smooth-.18,0,1)**.8*3.5
     a=signal[:,:,None]*np.array([150,175,225])+np.array([17,27,54])
     im=rgb(a)
     if motion:
@@ -74,7 +75,7 @@ def exterior_mask(a,threshold=25):
     return Image.fromarray(np.uint8(~visited)*255)
 
 def europa(s):
-    im=background(s/'field.webp')
+    im=background(s/'field.jpg')
     earth=globe(s/'earth.jpg',850)
     paste(im,earth,(-130,180),(45,95,170))
     # PIA19048 is a crescent/terminator view, not a complete full disk.
@@ -89,8 +90,9 @@ def europa(s):
     return im,box,'Earth diameter 850 px; Europa limb diameter about 327 px (38.5%). Apparent comparison, not an exact physical scale. PIA19048 terminator retained.'
 
 def speed(s):
-    im=background(s/'field.webp',True)
-    src=load(s/'eva.jpg')
+    im=background(s/'field.jpg',True)
+    original=load(s/'eva.jpg')
+    src=original.resize((1920,1920),Image.Resampling.LANCZOS)
     earth=src.crop((0,1225,1920,1900)).resize((1280,400),Image.Resampling.LANCZOS)
     earth=ImageEnhance.Color(earth).enhance(1.65)
     a=np.asarray(earth,dtype=float)*np.array([.34,.43,.56])
@@ -99,16 +101,16 @@ def speed(s):
     alpha=np.clip(np.asarray(earth.convert('RGB')).mean(2)/18,0,1)*255
     alpha[:50]*=np.linspace(0,1,50)[:,None]
     earth.putalpha(Image.fromarray(np.uint8(alpha)));paste(im,earth,(0,450))
-    cut=src.crop((790,620,1070,920));mask=exterior_mask(np.asarray(cut),25)
+    cut=original.crop((2450,1900,3130,2650));mask=exterior_mask(np.asarray(cut),25)
     mask=mask.filter(ImageFilter.MinFilter(3)).filter(ImageFilter.GaussianBlur(.65))
     cut=ImageEnhance.Contrast(cut).enhance(1.07).convert('RGBA');cut.putalpha(mask)
-    cut=cut.resize((644,690),Image.Resampling.LANCZOS)
-    paste(im,cut,(160,120))
+    cut=cut.resize((1020,1125),Image.Resampling.LANCZOS)
+    paste(im,cut,(20,30))
     box=draw_top_band(im,['EARTH','AGES','7×'],'7×',tracking=-2)
-    return im,box,'S84-27018 EVA cutout and Earth limb; 2.3x source crop enlargement. Space travel metaphor, not actual relativistic EVA. Hubble star-pixel zoom integration (64 exposures), no vector rays.'
+    return im,box,'S84-27018 EVA cutout and Earth limb; 1.5x original 5735-pixel source crop enlargement. Space travel metaphor, not actual relativistic EVA. Hubble star-pixel zoom integration (64 exposures), no vector rays.'
 
 def stars(s):
-    im=background(s/'field.webp')
+    im=background(s/'field.jpg')
     src=load(s/'sun.jpg'); a=np.asarray(src);ys,xs=np.where(a[:,:,0]>45)
     src=src.crop((int(xs.min()),int(ys.min()),int(xs.max()+1),int(ys.max()+1)))
     a=np.asarray(src,dtype=float); lum=a[:,:,0]/255
