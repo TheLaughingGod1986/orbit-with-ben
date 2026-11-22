@@ -179264,6 +179264,11 @@
           "at": "2026-11-21T18:30Z",
           "by": "gemini",
           "what": "reopened: J3315 verified satisfied (21 Nov 2026): J3314 done (#7067194875); live NAS+Mini SHA-256 parity verified for j2035_v03/hos009_long_master_v03.mp4 (744f32b7...); v01 (802b5c7e...) and v02 (9d8731cb...) live NAS hashes untouched; ffprobe 519.000s / 15568f; 33 cards 0 overlaps/bleeds/drifts; reviewed_ok identical to v02; 4/4 unmodified gates PASS (picture_qa 0/92, polish 0/92, music PASS, sfx_kit PASS); 21/21 verification stills present (4 spot-checked); locked VO, v04_synth score, and J3262 thumbs A+B intact; HOS PR #719 5/5 CI green (left unmerged, no self-merge). Reopened for independent non-producer QA of v03, making-of line, production-status.md header reconciliation, lint:package + check_all.sh, and J2037 handoff. No audio/moving watch claimed (Ben final watch). £0."
+        },
+        {
+          "at": "2026-11-22T11:16Z",
+          "by": "claude",
+          "what": "opened to any worker in its chain (preferred gemini): Claude, 22 Nov 11:20Z (Ben: \"Nothing's running\"): the Mini had been idle since 09:59Z because every ready job was pinned to an agent that is out: Codex (weekly usage limit since 20 Nov) or Claude Code on the Mini (paused while Claude is flagged). Opened to any capable worker (Gemini on Neon, the MacBooks), preferred Gemini."
         }
       ],
       "remaining_action": "After J3314 completes v03 long master and gates, verify v03 hash/gates/repaired stills, add honest making-of line and reconcile production-status.md header, then hand off to J2037",
@@ -179279,9 +179284,8 @@
         "status": "open",
         "by": ""
       },
-      "for": "claudecode",
-      "model": "mini-claude-opus-5-5",
-      "escalated_at": "2026-11-21T01:52Z"
+      "escalated_at": "2026-11-21T01:52Z",
+      "open_claim": true
     },
     {
       "id": "J2037",
@@ -288914,13 +288918,26 @@
           "at": "2026-11-20T10:21Z",
           "by": "claude",
           "what": "added for codex"
+        },
+        {
+          "at": "2026-11-22T11:16Z",
+          "by": "claude",
+          "what": "opened to any worker in its chain (preferred gemini): Claude, 22 Nov 11:20Z (Ben: \"Nothing's running\"): the Mini had been idle since 09:59Z because every ready job was pinned to an agent that is out: Codex (weekly usage limit since 20 Nov) or Claude Code on the Mini (paused while Claude is flagged). Opened to any capable worker (Gemini on Neon, the MacBooks), preferred Gemini."
         }
       ],
       "remaining_action": "Edit pilot 3 on its narration and J2998's pictures, zero-spend music bed, QA, then to Ben's board",
       "due": "2026-11-30T18:00:00Z",
-      "for": "codex",
       "kind": "assembly",
-      "plain": "Edit the third WW2 film and put it on Ben's board to watch"
+      "plain": "Edit the third WW2 film and put it on Ben's board to watch",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "codex",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true,
+      "urgent": 4
     },
     {
       "id": "J3206",
@@ -297423,11 +297440,23 @@
           "at": "2026-11-21T16:37Z",
           "by": "macbook",
           "what": "added for codex"
+        },
+        {
+          "at": "2026-11-22T11:16Z",
+          "by": "claude",
+          "what": "opened to any worker in its chain (preferred gemini): Claude, 22 Nov 11:20Z (Ben: \"Nothing's running\"): the Mini had been idle since 09:59Z because every ready job was pinned to an agent that is out: Codex (weekly usage limit since 20 Nov) or Claude Code on the Mini (paused while Claude is flagged). Opened to any capable worker (Gemini on Neon, the MacBooks), preferred Gemini."
         }
       ],
       "remaining_action": "Packaging panel (codex): J3302 weekly OWB Challenger Bs (T041 Europa 2x EARTH'S WATER, T042 Light Speed YOU AGE SLOWER, T043 Last Star OUTLIVES OUR SUN + Round 2 Title Bs; PR #1118",
-      "for": "codex",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "codex",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3304",
