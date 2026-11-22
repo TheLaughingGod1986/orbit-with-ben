@@ -86,7 +86,7 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 006 | thumbs | codex | 2026-11-22T17:54Z | 2026-11-22T19:53Z | J3382 Review rebuilt thumbnail heroes and decide successor tests after J3381 |
+| 006 | thumbs | codex | 2026-11-22T17:56Z | 2026-11-22T18:21Z | J3382 reviewing exact v03 proposals; successor tests remain held |
 | 033 | upload | claudecode | 2026-11-18T11:13Z | 2026-11-18T13:12Z | J2986 Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
