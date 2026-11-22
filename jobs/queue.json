@@ -301451,17 +301451,22 @@
           "at": "2026-11-22T09:28Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Live API pulled 2026-11-22T09:28:12Z (68 videos: 7 public longs, 35 public Shorts, 3 scheduled, 23 private unscheduled); channel-audit --file and check_all.sh ran"
+        },
+        {
+          "at": "2026-11-22T09:29Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified 7/7 public longs, 35/35 public Shorts, 3/3 scheduled videos, 8/8 external URLs HTTP 200, 68-video channel-audit 0 errors, check_all.sh PASS, sY0PSQFxjp8 Buffer mirrored at 07:05Z; 0 live Studio fixes needed"
         }
       ],
-      "remaining_action": "Cross-check API descriptions/chapters/sources/Related/endscreens against repo files and open PRs",
+      "remaining_action": "Write dated HOS live listing check report 2026-11-22_J3355.md in clean worktree, run check_all.sh, open PR",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-22T09:28Z",
+        "at": "2026-11-22T09:29Z",
         "by": "gemini",
-        "note": "Live API pulled 2026-11-22T09:28:12Z (68 videos: 7 public longs, 35 public Shorts, 3 scheduled, 23 private unscheduled);"
+        "note": "Verified 7/7 public longs, 35/35 public Shorts, 3/3 scheduled videos, 8/8 external URLs HTTP 200, 68-video channel-audit"
       }
     }
   ],
