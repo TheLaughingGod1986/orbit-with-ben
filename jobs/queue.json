@@ -300391,18 +300391,23 @@
           "at": "2026-11-22T07:12Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Read 17 OWB longs + 91 OWB shorts (omitted 2YiV_zDgLJg) and 7 HOS longs + 34 HOS shorts (omitted Bks_JLId1ew) from Studio Explore (read-only)"
+        },
+        {
+          "at": "2026-11-22T07:13Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Verified 17 OWB + 7 HOS longs and 125 Shorts (91 OWB + 34 HOS); 0 warnings, 0 view drops"
         }
       ],
-      "remaining_action": "Run studio_reach.py morning and rebuild analytics report in clean worktree",
+      "remaining_action": "Rebuild analytics-report.ts, commit/push analytics files, and publish board",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-22T07:12Z",
+        "at": "2026-11-22T07:13Z",
         "by": "gemini",
-        "note": "Read 17 OWB longs + 91 OWB shorts (omitted 2YiV_zDgLJg) and 7 HOS longs + 34 HOS shorts (omitted Bks_JLId1ew) from Studi"
+        "note": "Verified 17 OWB + 7 HOS longs and 125 Shorts (91 OWB + 34 HOS); 0 warnings, 0 view drops"
       }
     }
   ],
