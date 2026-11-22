@@ -302241,9 +302241,14 @@
           "at": "2026-11-22T12:31Z",
           "by": "gemini",
           "what": "step 3 of 6 done: Uploaded en-GB SRT (360 cues, id AUieDaaaSVWMndTD0pUriTpEmCrFls6qKlWJk28r2TOnXNfT, serving + Published in Studio); updated description (Narration uses an AI voice. + #WW2 #DDay #Normandy) and read back; verified End Screen saved (Subscribe + Best for viewer at 27:16:18); commentThreads.insert returned 403 while video is Private"
+        },
+        {
+          "at": "2026-11-22T12:34Z",
+          "by": "gemini",
+          "what": "step 4 of 6 done: Pre-launch checks 1-3 + PR #32 complete: live API+Studio 9224 read-back PASS, 360-cue en-GB SRT uploaded (AUieDaaaSVWMndTD0pUriTpEmCrFls6qKlWJk28r2TOnXNfT, +0.0000s master lag, serving/Published), description updated (Narration uses an AI voice. + #WW2 #DDay #Normandy) & verified, End Screen saved (Subscribe + Best for viewer at 27:16:18), launch_check.due confirmed for 23:00Z, PR #32 opened; comments blocked while Private and playlist waits for 17:00Z go-public"
         }
       ],
-      "remaining_action": "Verify first comment availability (Private vs Public), confirm launch/post-launch steps, open ww2-channel PR",
+      "remaining_action": "At 17:02Z (once Public): post and pin first comment in Studio 9224, set playlist PLPPi-oWEDYtA Public and read back, update ww2-channel PR #32 for Chief merge",
       "due": "2026-11-22T16:30:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -302259,11 +302264,11 @@
       "model": "gemini-argon",
       "urgent": 6,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 6,
-        "at": "2026-11-22T12:31Z",
+        "at": "2026-11-22T12:34Z",
         "by": "gemini",
-        "note": "Uploaded en-GB SRT (360 cues, id AUieDaaaSVWMndTD0pUriTpEmCrFls6qKlWJk28r2TOnXNfT, serving + Published in Studio); updat"
+        "note": "Pre-launch checks 1-3 + PR #32 complete: live API+Studio 9224 read-back PASS, 360-cue en-GB SRT uploaded (AUieDaaaSVWMnd"
       },
       "taskKeys": [
         "WW2:001"
