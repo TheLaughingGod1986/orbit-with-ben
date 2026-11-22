@@ -303553,13 +303553,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-22T15:39Z",
-      "eta": "2026-11-22T17:39Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-22T15:32Z",
-      "result": "",
+      "result": "parked for Chief: J3372 condition NOT satisfied at 2026-11-22T15:43Z (Mini CDP 9222 /json/version Chrome/157.0.8103.79, /json/list, Target.activateTarget and Target.attachToTarget OK, but direct and flattened Runtime.evaluate 12s/10s and DOM.getDocument 8s/10s timed out before and after activation; title still 'Video details - YouTube Studio'; no credential prompt observed). Recording wait --recheck J3373 on J3372 requires elected Chief; please run jobs.py wait J3372 --type input --recheck J3373 --check-at 2026-11-22T17:45:00Z and close J3373, and consider authorizing tab/renderer recovery.",
       "history": [
         {
           "at": "2026-11-22T15:32Z",
@@ -303595,6 +303595,11 @@
           "at": "2026-11-22T15:44Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Probe complete (condition unmet); wait --recheck J3373 is Chief-only, parking J3373 for Chief"
+        },
+        {
+          "at": "2026-11-22T15:44Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J3372 condition NOT satisfied at 2026-11-22T15:43Z (Mini CDP 9222 /json/version Chrome/157.0.8103.79, /json/list, Target.activateTarget and Target.attachToTarget OK, but direct and flattened Runtime.evaluate 12s/10s and DOM.getDocument 8s/10s timed out before and after activation; title still 'Video details - YouTube Studio'; no credential prompt observed). Recording wait --recheck J3373 on J3372 requires elected Chief; please run jobs.py wait J3372 --type input --recheck J3373 --check-at 2026-11-22T17:45:00Z and close J3373, and consider authorizing tab/renderer recovery."
         }
       ],
       "remaining_action": "Chief to record J3372 unmet input wait (--recheck J3373) and close J3373",

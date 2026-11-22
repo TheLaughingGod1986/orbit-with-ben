@@ -66,7 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3370 | mini | open (after J3360) | – | – | WW2:003 vo · vo · WW2 003: correct S62 and S51a narration under J3360 ruling |  |
 | J3371 | mini | open (after J3370) | – | – | WW2:003 edit · chart · WW2 003: rebuild loss graphic and cues for corrected narration |  |
 | J3372 | mini | blocked | codex | – | studio · J3365 follow-up: HOS exact 28-day reach, Willow test result and current title readback |  |
-| J3373 | mini | claimed | gemini | 2026-11-22T17:39Z | review · Verify condition for J3372 |  |
+| J3373 | mini | blocked | gemini | – | review · Verify condition for J3372 |  |
 
 Recently finished:
 
