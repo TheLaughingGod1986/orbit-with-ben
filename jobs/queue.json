@@ -300725,9 +300725,14 @@
           "at": "2026-11-22T08:23Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-22T08:23Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J3346 for Rule-E topic go/no-go review of HOS:128"
         }
       ],
-      "remaining_action": "HOS 128 Why Do We Use AC Instead of DC?: rule-E topic go/no-go review",
+      "remaining_action": "Inspect HOS PR #724, OWB PR #1156, Rule E/G rules, and evidence JSONs",
       "kind": "review",
       "plain": "Review HOS 128 Edison vs Tesla AC/DC topic brief and evidence on HOS PR #724",
       "rerouted_from": {
@@ -300740,12 +300745,14 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-22T08:23Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3346 for Rule-E topic go/no-go review of HOS:128"
+      },
+      "taskKeys": [
+        "HOS:128"
+      ]
     },
     {
       "id": "J3347",
