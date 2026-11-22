@@ -305607,10 +305607,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-22T20:44Z",
+      "eta": "2026-11-22T22:44Z",
       "created_by": "relay",
       "created_at": "2026-11-22T18:09Z",
       "result": "",
@@ -305664,6 +305664,11 @@
           "at": "2026-11-22T20:44Z",
           "by": "codex",
           "what": "reopened: Elected Chief taking the completed verification review; PR 1186 merged after evidence check. J1272 remains held until ruling recorded."
+        },
+        {
+          "at": "2026-11-22T20:44Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Park J3389 for elected Chief (codex) to merge PR #1186, reopen J1272, and close J3389",
@@ -305682,7 +305687,15 @@
       "taskKeys": [
         "OWB:027"
       ],
-      "escalated_at": "2026-11-22T20:22Z"
+      "escalated_at": "2026-11-22T20:22Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-22T20:44Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3390",
