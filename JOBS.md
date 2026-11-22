@@ -65,6 +65,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3391 | mini | blocked | macbook-2 | – | review · Verify condition for J3365 |  |
 | J3392 | mini | blocked | gemini | – | review · Verify condition for J3205 |  |
 | J3399 | macbook | open (after J0996) | – | – | 027 upload · review · Review Earth equator Short private/schedule discrepancy | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1200 |
+| J3400 | mini | open | – | – | review · Verify condition for J0996 |  |
 
 Recently finished:
 

@@ -1,5 +1,5 @@
 {
-  "next_id": 3400,
+  "next_id": 3401,
   "jobs": [
     {
       "id": "J0001",
@@ -91348,6 +91348,11 @@
           "at": "2026-11-22T23:27Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: MacBook CDP 9223 Studio tab 8A9E2F211C963F35D4B2E8AFFD33B157 renderer stalled after pre-save guard aborted Playwright fill() trailing-newline mismatch (666 vs 665 chars); zero YouTube mutations (OVLv9dxTcpE re-verified untouched at 560 bytes sha256 016c8427). Pre-checks passed: Orbit With Ben UC_esArsDKd3GJvOkeO0DUog, 6bbbvfCx6zY Public live title 'What If Earth Stopped Spinning? (It's Already Slowing Down)', OVLv9dxTcpE Related=6bbbvfCx6zY. Fast path: run description-only prepend on Mini via 07_Content-Ops/scripts/redescribe-videos.ts (--mini-only, no Studio needed) and sync PACKAGE_MANIFEST.json before 23 Nov 11:30 London; or recover MacBook Studio tab first. 027 upload claim released."
+        },
+        {
+          "at": "2026-11-22T23:27Z",
+          "by": "relay",
+          "what": "condition verification queued: J3400"
         }
       ],
       "kind": "studio",
@@ -91357,6 +91362,12 @@
         "of": 4,
         "at": "2026-11-22T23:13Z",
         "by": "macbook-2"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-23T00:27:57+00:00",
+        "recheck_task": "J3400"
       }
     },
     {
@@ -307089,6 +307100,37 @@
       "due": "2026-11-23T09:00:00Z",
       "kind": "review",
       "plain": "Check when the Earth equator Short is meant to go live and why it is private"
+    },
+    {
+      "id": "J3400",
+      "title": "Verify condition for J0996",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J0996: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J0996 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-22T23:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-22T23:27Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Prepend live 6bbbvfCx6zY title+URL to OVLv9dxTcpE description in Studio, save, reload, and verify public readback",
+      "kind": "review",
+      "recheck_of": "J0996",
+      "due": "2026-11-23T00:27:57+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
