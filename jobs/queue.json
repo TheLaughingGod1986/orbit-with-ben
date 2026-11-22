@@ -300386,18 +300386,23 @@
           "at": "2026-11-22T07:12Z",
           "by": "gemini",
           "what": "step 0 of 5 done: HOS read 7 longs + 34 shorts; switching OWB to batched VIDEO restricts to capture all 109 videos"
+        },
+        {
+          "at": "2026-11-22T07:12Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Read 17 OWB longs + 91 OWB shorts (omitted 2YiV_zDgLJg) and 7 HOS longs + 34 HOS shorts (omitted Bks_JLId1ew) from Studio Explore (read-only)"
         }
       ],
-      "remaining_action": "Reading OWB and HOS lifetime Studio analytics via batched Explore queries",
+      "remaining_action": "Run studio_reach.py morning and rebuild analytics report in clean worktree",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
         "at": "2026-11-22T07:12Z",
         "by": "gemini",
-        "note": "HOS read 7 longs + 34 shorts; switching OWB to batched VIDEO restricts to capture all 109 videos"
+        "note": "Read 17 OWB longs + 91 OWB shorts (omitted 2YiV_zDgLJg) and 7 HOS longs + 34 HOS shorts (omitted Bks_JLId1ew) from Studi"
       }
     }
   ],
