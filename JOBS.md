@@ -52,9 +52,9 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3205 | mini | blocked | macbook | – | WW2:003 edit · assembly · WW2 pilot 003: picture, maps, edit and thumbnail, to Ben's watch |  |
 | J3231 | cloud | open | – | – | review · Weekly search research (Orbit + Field Order History): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
 | J3307 | cloud | open (after J3378) | – | – | 006 thumbs · chief · Chief review: rebuilt v02 T041-T043 thumbnails, packaging verification and successor authorization |  |
-| J3308 | mini | open (after J3307) | – | – | studio · Studio: arm T041 thumbnail Test & Compare on NbW5G1BpPY0 (006 — 2× EARTH'S WATER) after J3307 PASS |  |
-| J3309 | mini | open (after J3307) | – | – | studio · Studio: arm T042 thumbnail Test & Compare on rVqgtkBV3jc (024 — EARTH AGES 7×) after J3307 PASS |  |
-| J3310 | mini | open (after J3307) | – | – | studio · Studio: arm T043 thumbnail Test & Compare on REXYxuLOBoI (005 — OUTLIVES OUR SUN) after J3307 PASS |  |
+| J3308 | mini | open (after J3307) | – | – | studio · Studio: arm T041 thumbnail Test & Compare on NbW5G1BpPY0 (006 — 2× EARTH'S WATER) after J3307 PASS | jobs/reviews/J3382/REVIEW.md |
+| J3309 | mini | open (after J3307) | – | – | studio · Studio: arm T042 thumbnail Test & Compare on rVqgtkBV3jc (024 — EARTH AGES 7×) after J3307 PASS | jobs/reviews/J3382/REVIEW.md |
+| J3310 | mini | open (after J3307) | – | – | studio · Studio: arm T043 thumbnail Test & Compare on REXYxuLOBoI (005 — OUTLIVES OUR SUN) after J3307 PASS | jobs/reviews/J3382/REVIEW.md |
 | J3311 | mini | blocked | gemini | – | HOS:009 edit · qa · Review HOS 009 Short A v01 and Short B v01 (J2171, PR #718) | J2171 |
 | J3354 | mini | blocked | macbook-2 | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3361 | mini | blocked | gemini | – | for gemini · studio · `gemini-argon` · Field Order History pilot 1 pre-launch check before 17:00 today: live read-back, en-GB captions, description touch-ups, pinned first comment, playlist public at launch |  |
