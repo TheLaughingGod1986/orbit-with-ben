@@ -305631,13 +305631,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-22T19:10Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-22T18:02Z",
-      "result": "parked for Chief: J3385 verification complete — CONDITION NOT MET (jobs/reviews/J3385/REVIEW.md in https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1192). HOS main 3be57292 retains PR #389 + PR #703 and lint:package PASS on 009 & 010 (8 Sources each). HOS 009 progressed (J2036 done, PR #731 7/7 CI green confirming v03 744f32b7 matches 0:00/1:24/2:56/4:20/6:33 + making-of line), but PR #731/#719 and J2037 remain open and ben_ok is todo. HOS 010 still 12/65 Shorts-only plates with no 09_Assembly and provisional Chapters (0:00-5:54). Chief (Grok Bot) is UP and scripts/jobs.py:603 requires elected Chief for wait --recheck: merge https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1192, run wait J1275 --type dependency --recheck J3385 --check-at 2026-11-23T18:00:00Z, and close J3385.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-22T18:02Z",
@@ -305683,6 +305683,11 @@
           "at": "2026-11-22T21:53Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-22T22:30Z",
+          "by": "codex",
+          "what": "reopened: Acting Chief accepts NOT MET verification; PR 1192 merged and J1275 dependency hold recorded with recheck J3385. Reopen only to close this completed review."
         }
       ],
       "remaining_action": "Chief (Grok Bot) to review/merge OWB PR #1192, run wait J1275 --recheck J3385 (check-at 2026-11-23T18:00:00Z), and close J3385",
@@ -305698,13 +305703,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-22T19:15Z",
-        "by": "gemini",
-        "note": "Opened https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1192 with jobs/reviews/J3385/REVIEW.md (CONDITION NOT M"
-      },
       "taskKeys": [
         "HOS:009",
         "HOS:010"

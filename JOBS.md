@@ -65,7 +65,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3372 | mini | blocked | codex | – | studio · J3365 follow-up: HOS exact 28-day reach, Willow test result and current title readback |  |
 | J3375 | mini | blocked | gemini | – | review · Verify condition for J3178 |  |
 | J3384 | mini | blocked | gemini | – | review · Verify condition for J3372 |  |
-| J3385 | mini | blocked | gemini | – | review · Verify condition for J1275 |  |
+| J3385 | mini | open | – | – | review · Verify condition for J1275 |  |
 | J3391 | mini | blocked | macbook-2 | – | review · Verify condition for J3365 |  |
 | J3392 | mini | blocked | gemini | – | review · Verify condition for J3205 |  |
 | J3395 | mini | blocked | macbook-2 | – | review · Verify condition for J0317 |  |
