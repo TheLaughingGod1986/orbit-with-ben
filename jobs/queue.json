@@ -1,5 +1,5 @@
 {
-  "next_id": 3367,
+  "next_id": 3368,
   "jobs": [
     {
       "id": "J0001",
@@ -179862,6 +179862,11 @@
           "at": "2026-11-22T00:47Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-22T13:00:00Z"
+        },
+        {
+          "at": "2026-11-22T13:04Z",
+          "by": "relay",
+          "what": "condition verification queued: J3367"
         }
       ],
       "remaining_action": "Await authorized operator confirmation of the Mini local Codex approval configuration plus fresh-session scoped acceptance evidence; recheck at 2026-11-22T13:00:00Z.",
@@ -179886,10 +179891,11 @@
       "hold": {
         "type": "input",
         "condition": "Chief ruling J3289 (jobs/reviews/J3289/REVIEW.md @ a23771540b, PR #1109): NOT MET. Fresh 2026-11-22T00:45Z Mac mini checks confirm all eight local ~/.codex approval/gateway hashes match J3026/J3229 unchanged; J2517 (#793) and J2559 (#795) done; J2007 cancelled; PR #490 remains OPEN draft at f521bcd3f1 (1 comment, 0 reviews); docs/CODEX_ALLOWLIST.md absent from main; thread #954 scanned through 7071729992 contains no operator confirmation or fresh-session scoped acceptance evidence. Await authorized operator confirmation of the Mini local Codex approval configuration plus fresh-session scoped acceptance evidence. Unchanged hashes alone do not prove acceptance. Retain fallback routing and existing approval controls; do not retry cancelled J2007. Recheck at 2026-11-22T13:00:00Z.",
-        "check_at": "2026-11-22T13:00:00Z",
+        "check_at": "2026-11-22T14:04:56+00:00",
         "last_recheck": "J3289",
         "checked_at": "2026-11-22T00:47:50+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J3367"
       },
       "plain": "Let Codex run the studio's routine commands on the Mac mini without asking each time (needs you at the Mini)"
     },
@@ -302690,6 +302696,37 @@
         "job": "J3331",
         "okAt": "2026-11-22T10:45Z"
       }
+    },
+    {
+      "id": "J3367",
+      "title": "Verify condition for J2040",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2040: Chief ruling J3289 (jobs/reviews/J3289/REVIEW.md @ a23771540b, PR #1109): NOT MET. Fresh 2026-11-22T00:45Z Mac mini checks confirm all eight local ~/.codex approval/gateway hashes match J3026/J3229 unchanged; J2517 (#793) and J2559 (#795) done; J2007 cancelled; PR #490 remains OPEN draft at f521bcd3f1 (1 comment, 0 reviews); docs/CODEX_ALLOWLIST.md absent from main; thread #954 scanned through 7071729992 contains no operator confirmation or fresh-session scoped acceptance evidence. Await authorized operator confirmation of the Mini local Codex approval configuration plus fresh-session scoped acceptance evidence. Unchanged hashes alone do not prove acceptance. Retain fallback routing and existing approval controls; do not retry cancelled J2007. Recheck at 2026-11-22T13:00:00Z.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2040 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-22T13:04Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-22T13:04Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await authorized operator confirmation of the Mini local Codex approval configuration plus fresh-session scoped acceptance evidence; recheck at 2026-11-22T13:00:0",
+      "kind": "review",
+      "recheck_of": "J2040",
+      "due": "2026-11-22T14:04:56+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
