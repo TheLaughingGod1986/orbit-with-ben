@@ -302805,13 +302805,13 @@
       "stage": "",
       "after": "",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-22T14:50Z",
-      "eta": "2026-11-22T17:50Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-22T12:47Z",
-      "result": "Chief FIX: PR 1170 remains unmerged; report corrections ready in thumb lane. J3372 read-only Studio evidence required before revised audit PASS. Ruling: PR comment 7080579002; HOS desk 7080581507; studio thread 7080583435. No public/test/caption/rule change approved.",
+      "result": "Waiting for: J3372 must return exact-window reach, Willow result and current title/test evidence after the Mini Studio renderer recovers; PR1170 corrections bf6f0fa491 are pushed. Resolve or explicitly retain unknown exact compilation shelf image. No final audit PASS until this evidence is incorporated.",
       "history": [
         {
           "at": "2026-11-22T12:47Z",
@@ -302867,9 +302867,19 @@
           "at": "2026-11-22T14:58Z",
           "by": "codex",
           "what": "step 1 of 5 done: PR1170 corrected at bf6f0fa491: 43 matching public JPEGs, 46 preview renders, three delivered-master frame-0 hash checks, per-channel cohorts with insufficiency flags, preserved J1130 closure. JSON/diff and 13 security tests pass. Original progress kept; full audit not complete."
+        },
+        {
+          "at": "2026-11-22T14:58Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: J3372 must return exact-window reach, Willow result and current title/test evidence after the Mini Studio renderer recovers; PR1170 corrections bf6f0fa491 are pushed. Resolve or explicitly retain unknown exact compilation shelf image. No final audit PASS until this evidence is incorporated."
+        },
+        {
+          "at": "2026-11-22T14:58Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-22T16:00:00Z"
         }
       ],
-      "remaining_action": "Incorporate J3372 Studio evidence and resolve the exact compilation shelf image before final audit review",
+      "remaining_action": "Incorporate the separate Studio evidence into the corrected HOS thumbnail audit",
       "kind": "thumb",
       "backlog": "hos-weekly-thumb-audit",
       "progress": {
@@ -302888,7 +302898,12 @@
         "HOS:006",
         "HOS:007",
         "HOS:099"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "J3372 must return exact-window reach, Willow result and current title/test evidence after the Mini Studio renderer recovers; PR1170 corrections bf6f0fa491 are pushed. Resolve or explicitly retain unknown exact compilation shelf image. No final audit PASS until this evidence is incorporated.",
+        "check_at": "2026-11-22T16:00:00Z"
+      }
     },
     {
       "id": "J3366",
