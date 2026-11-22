@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2529, J3205, J3364, J3361.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2529, J3205, J3364, J3361, J3383.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -15,7 +15,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0923 | mini | blocked | cursor | – | 029 upload · studio · 029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back | 6384887788 |
 | J0979 | mini | blocked | macbook-2 | – | 032 edit · assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0996 | mini | open (after J0317) | – | – | studio · OWB 027: matching Earth long description after J0317 (J0980 ruling) |  |
-| J1272 | mini | claimed | macbook | 2026-11-22T22:59Z | 027 upload · studio · OWB 027 Studio finish on 6bbbvfCx6zY: end screen now, pinned comment once public |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J2021 | cloud | blocked | claude | – | review · Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29 |  |
 | J2037 | mini | open (after J2036) | – | – | 009 edit · for claudecode · review · `mini-claude-opus-5-5` · HOS 009: Review HOS009 finished pack and deliver Ben watch card | J2026 |
@@ -65,23 +64,34 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3371 | mini | open (after J3370) | – | – | WW2:003 edit · chart · WW2 003: rebuild loss graphic and cues for corrected narration |  |
 | J3372 | mini | blocked | codex | – | studio · J3365 follow-up: HOS exact 28-day reach, Willow test result and current title readback |  |
 | J3375 | mini | blocked | gemini | – | review · Verify condition for J3178 |  |
-| J3383 | mini | blocked | codex | – | studio · First-day check at 6 h: "How Does the Heart Pump Blood?" (el30-mHiH-0) |  |
+| J3383 | mini | open | – | – | for gemini · studio · `gemini-argon` · First-day check at 6 h: "How Does the Heart Pump Blood?" (el30-mHiH-0) |  |
 | J3384 | mini | blocked | gemini | – | review · Verify condition for J3372 |  |
 | J3385 | mini | blocked | gemini | – | review · Verify condition for J1275 |  |
-| J3387 | mini | blocked | gemini | – | review · Verify condition for J3383 |  |
-| J3390 | mini | blocked | gemini | – | review · Verify condition for J3114 |  |
 | J3391 | mini | blocked | macbook-2 | – | review · Verify condition for J3365 |  |
 | J3392 | mini | blocked | gemini | – | review · Verify condition for J3205 |  |
+| J3393 | mini | claimed | codex | 2026-11-22T23:45Z | chief · Chief: resolve 027 upload orphan-review |  |
+| J3394 | mini | claimed | macbook-2 | 2026-11-22T22:03Z | studio · Restore responsive Orbit Studio access for Earth Shorts Related links |  |
 
 Recently finished:
 
+- J3390 done: Verify condition for J3114 (Chief codex ruling: CONDITION NOT MET; accepted and merged evidence PR 1188 (ac1aa9c95a). Independently checked 45 newer repo comments through 7086114148, approval board, clean a12100797f, absent remote branch/PR, and 12/12 artifact hashes. Recorded parent J3114 input hold with --recheck J3390, next verification 2026-11-23T08:15:00Z. Export authorization still absent after prior automatic approval rejection; no bypass. On authorized resume reconcile proposed ledger T041 to next free ID then submit existing work for J3115. J3115/J3119 dependencies and Shorts/UAT holds preserved. No spend or publishing.)
 - J3389 done: Verify condition for J1272 (Chief review complete: condition satisfied. Merged PR 1186; independently verified 6bbbvfCx6zY Public on Orbit at 2026-11-22T20:44:03Z, checked original approvals/end-screen receipt/pinned-text hash. Ruling and ready-now Step 2 follow-up recorded on reopened J1272. Next Studio worker checks for an existing comment, posts/pins approved text and reads it back. No YouTube changes or spend.)
 - J3388 done: Retention autopsy (7d): "How Far Is the Nearest Star? (You Can't See It, and It Has a Pla" (c5AdqQsnnys) (done)
+- J3387 done: Verify condition for J3383 (Codex covering — J3387 Chief review complete.
+
+Accepted and merged PR #1187 (reviewed head 1ac4efd677a2974bddaafc8c5311cce479802393; merge 9f7a77cb9b48e57c74809a6113b65197044683ea). Owner-authored, same repository, base main. No earlier ruling on J3387 found in the studio thread through #7085827873.
+
+The historical verification is sound: the original HOS Studio tab on CDP 9222 was hung. Fresh Runtime.evaluate at 21:11Z still timed out after 8 seconds. However, the existing dedicated HOS browser on CDP 9460 answered two direct DOM probes with readyState complete, the History of Science header and no sign-in prompt; the first also confirmed the correct channel ID. Playwright attached successfully, though one subsequent DOM read raced a navigation; a direct recheck passed. No new tab was opened or browser restarted.
+
+Ruling: authorise CDP 9460 for J3383's read-only check and reopen J3383 with the evidence. This is a scoped alternate route, not a claim that 9222 recovered. The next Studio worker must coordinate browser use, reuse the existing Studio tab, verify the HOS channel, read the heart Short el30-mHiH-0 settings and Since published metrics, and run the original record/judge workflow. Record the actual observation time: these will be late first-day figures, not an exact six-hour snapshot. Omit unavailable metrics. Any fault or BEHIND verdict returns for a Chief ruling. All original no-write limits and gates remain intact; unrelated holds were not changed.
+
+J3387 closes with this ruling. No spend or YouTube changes; no audio or motion perception claimed. Required scratch offload ran and found no eligible old files (about 9.2 GB free). Nothing needs Ben for this review.
+
+Thread read to #7085827873.
+)
 - J3386 done: Verify condition for J2020 (Chief accepted condition verification and merged PR 1185 (81960da6be). Reopened J2020 with evidence and concrete readout scope: disclose analytics cutoff, matched metric periods, late Related linkage, and unknown Shorts attribution; provisional result requires through >= 2026-11-22 follow-up check at 2026-11-25T07:00Z. Date hold only released; no Rule 17 success verdict, no public changes or spend.)
 - J3382 done: Review rebuilt thumbnail heroes and decide successor tests after J3381 (All three exact v03 thumbnails PASS; conditional one-test successor permissions published in PR1184. J3308-J3310 name approved files/hashes and retain J3307 dependency. J3307 remains open pending prior publication/completion. No spend or YouTube changes.)
 - J3381 done: Rebuild three thumbnail heroes after J3307 visual FIX (Built three v03 candidates and badge sheets on NAS; PR #1183 contains builder, exact-source hash manifest and review. Colour/dimensions/size/copy hashes pass; all six JPEGs reproduce byte-for-byte. v01/v02 and ledger untouched, no spend/generation/Studio writes. J3382 must inspect exact files and separately authorize successor tests; J3308-J3310 remain held.)
 - J3380 done: Chief: resolve 006 thumbs orphan-review (Resolved orphan-review in 83a8ea89f2: J3307 now owns Europa thumbs and reviews J3378 v02 evidence; corrected J3308-J3310 paths/hashes while retaining Chief approval and successor-test guards. Verified delivered Europa hash and published handoff. No media PASS, spending or YouTube changes.)
 - J3379 cancelled: Verify condition for J3361 (parked for Chief: J3379 condition verification complete (PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1181, 27298fedb0, jobs/reviews/J3379/REVIEW.md) — CONDITION PROVEN SATISFIED for J3361 (WW2:001 ek9F61FVYqY). Verified live Public since 2026-11-22T17:00:31Z (videos.list + signed-out watch + oEmbed HTTP 200), commentThreads.list HTTP 200 (unblocked), playlist PLPPi-oWEDYtA still Private with ek9F61FVYqY at pos 0, en-GB captions serving, J3363 B v02 FLOATING PORT thumbnail visually verified live, and all Ben/Chief approvals intact. Elected Chief (codex) to merge PR #1181, reopen J3361 with evidence note for steps 4-6 (post & pin first comment, make PLPPi-oWEDYtA Public, update ww2-channel PR #32 preserving PR #33 B v02 metadata), and close J3379. £0 spend; zero YouTube/Studio writes.)
 - J3378 done: Rebuild three OWB weekly audit thumbnail Bs per panel decision J3306 (T041 Europa, T042 Light Speed, T043 Last Star) (Rebuilt all three v02 proposals on NAS; hashes verified and v01 preserved. PR #1182 contains builder, manifest, review and proposed ledger rows with history. All colour gates pass and rerender is byte-identical. Hold for packaging verification and J3307 exact-file plus successor authorization; no Studio writes. Checkout main.)
-- J3377 done: Verify condition for J3306 (CONDITION MET; accepted and merged PR1179 after direct critique hash checks and 13 privacy tests passed. Reopened J3306 with recorded ruling and concrete DECISION.md follow-up; retained J3307 and J3308-J3310 approval dependencies. All three critics were Gemini fallback runs, explicitly noted for synthesis. No spend or YouTube changes.)
-- J3376 done: Verify condition for J2537 (Chief accepted verification and merged PR1178 as 7accc1ba42. Condition NOT MET; J2537 remains blocked with recheck J3376 for 2026-11-22T22:45:00Z. After explicit protected-history authorization: resolve non-desk PRs, refresh backup/rehearsal, day-before notice and writer hold. No rewrite or spend.)
