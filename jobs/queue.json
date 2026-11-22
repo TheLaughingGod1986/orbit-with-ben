@@ -305308,13 +305308,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-22T21:26Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-22T17:39Z",
-      "result": "parked for Chief: MacBook HOS Studio browser (CDP 9222, ~/.hos-chrome-cdp) is signed out of YouTube Studio (tab 6C42C7A54D0753B93688E35937E6D417 on accounts.google.com/v3/signin/identifier redirecting UCXp7HkBIl1LgaznXuZHJyRg; never sign in) and MacBook has no CDP 9460 or access to the Mini local commit 00ecd2ea20 (branch codex/J3383-first-day in /Volumes/MiniWork/scratch/J3383-record). Blocked rather than released to stop a MacBook claim loop (MACBOOK_CDP includes 9222 while signed out, same as J3312). Pin J3383 mini_only and reopen for the Mini to publish codex local commit 00ecd2ea20 or re-run the read-only check on Mini CDP 9460. Ben needs to re-sign-in on MacBook CDP 9222 for future MacBook HOS Studio jobs. No Studio edits, no launch record written, £0.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-22T17:39Z",
@@ -305395,9 +305395,19 @@
           "at": "2026-11-22T21:31Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: MacBook HOS Studio browser (CDP 9222, ~/.hos-chrome-cdp) is signed out of YouTube Studio (tab 6C42C7A54D0753B93688E35937E6D417 on accounts.google.com/v3/signin/identifier redirecting UCXp7HkBIl1LgaznXuZHJyRg; never sign in) and MacBook has no CDP 9460 or access to the Mini local commit 00ecd2ea20 (branch codex/J3383-first-day in /Volumes/MiniWork/scratch/J3383-record). Blocked rather than released to stop a MacBook claim loop (MACBOOK_CDP includes 9222 while signed out, same as J3312). Pin J3383 mini_only and reopen for the Mini to publish codex local commit 00ecd2ea20 or re-run the read-only check on Mini CDP 9460. Ben needs to re-sign-in on MacBook CDP 9222 for future MacBook HOS Studio jobs. No Studio edits, no launch record written, £0."
+        },
+        {
+          "at": "2026-11-22T21:45Z",
+          "by": "claude",
+          "what": "reopened: The MacBook cannot reach the Mini's saved commit (its 21:31Z park); this only needs the Mini."
+        },
+        {
+          "at": "2026-11-22T21:45Z",
+          "by": "claude",
+          "what": "rerouted to gemini on gemini-argon: Moved to Gemini by Claude, 22 Nov 21:40Z. Codex's own approval reviewer refused twice to push the finished record (it asked for public-disclosure approval). The first-day check and its published numbers are Ben's standing instruction (10 Nov, scripts/launch_check.py); the same kind of record went out yesterday for J3312. Same precedent as J2583/J2270 (rule64). Do only step 3: push the local commit 00ecd2ea20 (branch codex/J3383-first-day, /Volumes/MiniWork/scratch/J3383-record) and post the HOS report. Do not collect the numbers again. If your own tools refuse too, park for the Chief and say exactly what refused."
         }
       ],
-      "remaining_action": "Inspect el30-mHiH-0 in HOS Studio (CDP 9222) and compare against upload package",
+      "remaining_action": "Push Codex's saved first-day record (commit 00ecd2ea20) and post the HOS report",
       "due": "2026-11-22T19:39:00Z",
       "kind": "studio",
       "launch": "el30-mHiH-0@6",
@@ -305405,12 +305415,17 @@
       "taskKeys": [
         "HOS:005"
       ],
-      "progress": {
-        "step": 1,
-        "of": 4,
-        "at": "2026-11-22T21:28Z",
-        "by": "macbook-2"
-      }
+      "mini_only": true,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon",
+      "urgent": 7
     },
     {
       "id": "J3384",
