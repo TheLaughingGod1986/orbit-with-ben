@@ -305607,13 +305607,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-22T18:10Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-22T18:09Z",
-      "result": "parked for Chief: J3389 condition verification complete (PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1186, bdab9cb2f2, jobs/reviews/J3389/REVIEW.md). Condition PROVEN SATISFIED: 027 long 6bbbvfCx6zY confirmed live Public since 2026-11-22T18:00:06Z via Data API v3 videos.list + commentThreads.list (commentCount=0, madeForKids=false), signed-out watch page, and oEmbed HTTP 200; J0793/J0834/J1272/J2497 receipts and earth_spin_long_pinned_v01.txt verified. Ready for elected Chief (codex) to merge PR #1186, reopen J1272 with evidence, and close J3389.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-22T18:09Z",
@@ -305659,6 +305659,11 @@
           "at": "2026-11-22T20:22Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-22T20:44Z",
+          "by": "codex",
+          "what": "reopened: Elected Chief taking the completed verification review; PR 1186 merged after evidence check. J1272 remains held until ruling recorded."
         }
       ],
       "remaining_action": "Park J3389 for elected Chief (codex) to merge PR #1186, reopen J1272, and close J3389",
@@ -305674,13 +305679,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-22T18:15Z",
-        "by": "gemini",
-        "note": "Opened PR #1186 (commit bdab9cb2f2, jobs/reviews/J3389/REVIEW.md; 13/13 privacy/security tests passed); ready to park fo"
-      },
       "taskKeys": [
         "OWB:027"
       ],
