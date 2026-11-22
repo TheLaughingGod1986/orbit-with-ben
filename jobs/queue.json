@@ -303585,9 +303585,14 @@
           "at": "2026-11-22T15:41Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Reviewed J3372, J3365, PR #1175 and existing CDP 9222 tab list"
+        },
+        {
+          "at": "2026-11-22T15:43Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: CDP 9222 probes failed: browser/attach/activate OK, but Runtime.evaluate and DOM.getDocument timed out before and after Target.activateTarget"
         }
       ],
-      "remaining_action": "Run bounded text and DOM read probes on existing Mini HOS Studio tab (CDP 9222)",
+      "remaining_action": "Record unmet input wait on J3372 with --recheck J3373 and post verification report",
       "kind": "review",
       "recheck_of": "J3372",
       "mini_only": true,
@@ -303602,11 +303607,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-22T15:41Z",
+        "at": "2026-11-22T15:43Z",
         "by": "gemini",
-        "note": "Reviewed J3372, J3365, PR #1175 and existing CDP 9222 tab list"
+        "note": "CDP 9222 probes failed: browser/attach/activate OK, but Runtime.evaluate and DOM.getDocument timed out before and after "
       },
       "taskKeys": [
         "HOS:006"
