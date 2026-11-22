@@ -119202,13 +119202,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
-      "since": "2026-10-30T17:22Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-10-30T15:52Z",
-      "result": "Waiting for: 6bbbvfCx6zY reads Public, then post and pin 02_Video-Projects/027_What-If-Earth-Stopped-Spinning/11_Upload-Package/Pinned-Comments/earth_spin_long_pinned_v01.txt",
+      "result": "",
       "history": [
         {
           "at": "2026-10-30T15:52Z",
@@ -119249,27 +119249,19 @@
           "at": "2026-11-22T18:09Z",
           "by": "relay",
           "what": "condition verification queued: J3389"
+        },
+        {
+          "at": "2026-11-22T20:45Z",
+          "by": "codex",
+          "what": "reopened: J3389 Chief ruling by codex: CONDITION SATISFIED. PR 1186 merged (jobs/reviews/J3389/REVIEW.md); independent videos.list at 2026-11-22T20:44:03.472Z confirms 6bbbvfCx6zY processed, privacyStatus public, channel UC_esArsDKd3GJvOkeO0DUog, publishedAt 18:00:06Z, madeForKids false. Checked J0793/J0834/J2497 approval history, saved end-screen receipt and pinned-text sha256 e1ac0740affb6e0ed481b79548abc92cc015ac8e7aa243702a17d0d93622e6a4. Reopen for Step 2 only: next Studio worker verifies identity/Public and existing comments, posts approved text only if absent, pins and reads back, saves evidence and updates status next. Preserve existing end screen, T028, title, description, audience and schedule. GBP0. Ready now; no external wait or further Chief approval."
         }
       ],
       "remaining_action": "After go-public, pin the comment on 6bbbvfCx6zY",
       "due": "2026-11-20T18:00:00Z",
       "kind": "studio",
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-10-30T17:29Z",
-        "by": "cursor",
-        "note": "End screen saved and read back: Subscribe + What Happened to Venus? (VBaYRPp85Sw), 7:06:09-7:26:09 (20s). Title, descrip"
-      },
       "taskKeys": [
         "OWB:027"
-      ],
-      "hold": {
-        "type": "public",
-        "condition": "6bbbvfCx6zY reads Public, then post and pin 02_Video-Projects/027_What-If-Earth-Stopped-Spinning/11_Upload-Package/Pinned-Comments/earth_spin_long_pinned_v01.txt",
-        "check_at": "2026-11-22T19:09:33+00:00",
-        "recheck_task": "J3389"
-      }
+      ]
     },
     {
       "id": "J1273",
