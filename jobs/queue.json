@@ -306397,13 +306397,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-22T22:25Z",
-      "eta": "2026-11-23T00:25Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-22T21:14Z",
-      "result": "",
+      "result": "PASS records repair, verified on main: PR 1193 preserves the J1272 Public/end-screen/pinned-comment receipt; merged PR 1194 attaches existing J0317 to film 027/upload. Completion guard passes and all 26 workflow-handoff tests pass. Evidence jobs/reviews/J3393/REVIEW.md and jobs/reviews/J3396/REVIEW.md. Upload stage remains blocked; J3395 owns browser-condition review and MacBook routing before J0317 saves both Related links. No new media approval, YouTube changes or spend. Existing J3396-offload tmux session remains active with no done marker; no duplicate offload started.",
       "history": [
         {
           "at": "2026-11-22T21:14Z",
@@ -306449,6 +306449,11 @@
           "at": "2026-11-22T22:26Z",
           "by": "codex",
           "what": "step 3 of 3 done: Resumed at existing 3/3; merged repair verified on main, all 26 handoff tests pass and completion guard passes. J0317 hold preserved."
+        },
+        {
+          "at": "2026-11-22T22:26Z",
+          "by": "codex",
+          "what": "done: PASS records repair, verified on main: PR 1193 preserves the J1272 Public/end-screen/pinned-comment receipt; merged PR 1194 attaches existing J0317 to film 027/upload. Completion guard passes and all 26 workflow-handoff tests pass. Evidence jobs/reviews/J3393/REVIEW.md and jobs/reviews/J3396/REVIEW.md. Upload stage remains blocked; J3395 owns browser-condition review and MacBook routing before J0317 saves both Related links. No new media approval, YouTube changes or spend. Existing J3396-offload tmux session remains active with no done marker; no duplicate offload started."
         }
       ],
       "remaining_action": "Close the verified Earth film records repair; existing review owns the remaining Shorts links",
@@ -306468,7 +306473,8 @@
       },
       "taskKeys": [
         "OWB:027"
-      ]
+      ],
+      "done_ref": "4b18860dbe"
     },
     {
       "id": "J3394",
