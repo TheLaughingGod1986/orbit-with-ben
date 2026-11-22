@@ -299709,19 +299709,24 @@
           "at": "2026-11-22T00:30Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J3337; visually confirmed cover_v01 unmasked UDF galaxy bleed-through across Roman hull and sunshield"
+        },
+        {
+          "at": "2026-11-22T00:34Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Built cover_v02.jpg (SHA fecf9831...), thumb_preview.py short --score PASS (sat=101.2, near_black=18%), visually verified solid opaque spacecraft/clean Moon/bold 100 HUBBLES at full size and 168x94, and verified 57/57 v01 files untouched"
         }
       ],
-      "remaining_action": "Inspect clean SVS #15081 hero frames and build opaque-spacecraft cover v02 on NAS",
+      "remaining_action": "Create clean worktree PR with DELIVERY_v01_cover_v02_SHA256.json and cover v02 text/JSON metadata (no media)",
       "due": "2026-11-30T18:00:00Z",
       "kind": "thumb",
       "plain": "Rebuild only the Roman Telescope Short cover v02 with a solid opaque spacecraft (video v01 is already locked KEEP)",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-22T00:30Z",
+        "at": "2026-11-22T00:34Z",
         "by": "gemini",
-        "note": "Claimed J3337; visually confirmed cover_v01 unmasked UDF galaxy bleed-through across Roman hull and sunshield"
+        "note": "Built cover_v02.jpg (SHA fecf9831...), thumb_preview.py short --score PASS (sat=101.2, near_black=18%), visually verifie"
       }
     },
     {
