@@ -303884,6 +303884,11 @@
           "at": "2026-11-22T16:26Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-22T16:26Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-22T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Verify readiness: Review ten unresolved HOS 013 pass-1 plates (rows 56-62, 64-66) in a session with demonstrated continuous 24-fps moving_video_input playback and return to elected",
@@ -303893,7 +303898,15 @@
         "moving_video_input"
       ],
       "due": "2026-11-22T17:26:11+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
