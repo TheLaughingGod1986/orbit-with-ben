@@ -302506,10 +302506,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-22T12:48Z",
+      "eta": "2026-11-22T16:48Z",
       "created_by": "claude",
       "created_at": "2026-11-22T12:46Z",
       "result": "",
@@ -302528,6 +302528,11 @@
           "at": "2026-11-22T12:47Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred codex): Cursor out of usage; next in its chain: codex"
+        },
+        {
+          "at": "2026-11-22T12:48Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify archive share in v05; harvest cleared PD archive per the picture plan; re-edit v06 (same VO/score); gates; Ben watch card by Tue 20:00",
@@ -302542,7 +302547,15 @@
         "by": ""
       },
       "open_claim": true,
-      "urgent": 8
+      "urgent": 8,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-22T12:48Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3365",
