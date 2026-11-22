@@ -68,7 +68,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3364 | mini | open | – | – | 002 picture · assembly · Field Order History pilot 2: add the planned archive photos (~65%) to the graphics-only cut, v06 to Ben's watch by Tue 20:00 (else move to Sat 28 Nov) |  |
 | J3365 | mini | blocked | macbook-2 | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J3366 | mini | claimed | gemini | 2026-11-22T15:06Z | listing · Upload the Roman Telescope dated Short v01 (Thu 3 Dec 11:30) Private and scheduled |  |
-| J3367 | mini | open | – | – | review · Verify condition for J2040 |  |
+| J3367 | mini | claimed | macbook-2 | 2026-11-22T15:08Z | review · Verify condition for J2040 |  |
 
 Recently finished:
 
