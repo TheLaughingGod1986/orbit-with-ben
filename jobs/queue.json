@@ -295509,13 +295509,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-21T10:13Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-21T10:13Z",
-      "result": "Waiting for: Next daily Orbit With Ben comment check window (22 Nov 2026 09:00 London)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-21T10:13Z",
@@ -295541,26 +295541,17 @@
           "at": "2026-11-22T09:01Z",
           "by": "relay",
           "what": "condition verification queued: J3353"
+        },
+        {
+          "at": "2026-11-22T09:08Z",
+          "by": "gemini",
+          "what": "reopened: Acting-Chief verification J3353 (jobs/reviews/J3353/REVIEW.md, PR #1163 / 3161f19090): CONDITION SATISFIED at 2026-11-22T09:03Z/GMT (past 09:00 London window). Verified no duplicate 22 Nov run, Ben 21 Nov approvals and short-hyphen rule intact, CDP 9223 Studio tab live on UC_esArsDKd3GJvOkeO0DUog, and merged baseline log PRs #1104 (44c4b8405a) + #1108 (926ed8ab2b) so 3-line 05_Analytics/owb/COMMENT_REPLIES.jsonl is on main."
         }
       ],
       "remaining_action": "Run daily Orbit With Ben viewer comment check from 09:00 London on 22 Nov 2026",
       "due": "2026-11-22T20:00:00Z",
       "kind": "studio",
-      "plain": "Read new viewer comments on Orbit With Ben each day. Reply to thanks and simple questions, and write drafts for anything critical or factual for Ben.",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-21T10:13Z",
-        "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      },
-      "hold": {
-        "type": "date",
-        "condition": "Next daily Orbit With Ben comment check window (22 Nov 2026 09:00 London)",
-        "check_at": "2026-11-22T10:01:41+00:00",
-        "recheck_task": "J3353"
-      }
+      "plain": "Read new viewer comments on Orbit With Ben each day. Reply to thanks and simple questions, and write drafts for anything critical or factual for Ben."
     },
     {
       "id": "J3284",
