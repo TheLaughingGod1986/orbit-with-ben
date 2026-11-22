@@ -304311,9 +304311,14 @@
           "at": "2026-11-22T17:10Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-22T17:11Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Starting J3379: reading J3361 history, approval records, and preparing read-only live YouTube check"
         }
       ],
-      "remaining_action": "Verify readiness: At 17:02Z: confirm ek9F61FVYqY is Public, post and pin first comment in Studio 9224, make playlist PLPPi-oWEDYtA Public and read back, update ww2-channel PR #32 (",
+      "remaining_action": "Verify whether ek9F61FVYqY is Public and ready for J3361 completion (first comment + playlist PLPPi-oWEDYtA Public)",
       "kind": "review",
       "recheck_of": "J3361",
       "mini_only": true,
@@ -304330,11 +304335,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-22T17:10Z",
+        "at": "2026-11-22T17:11Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Starting J3379: reading J3361 history, approval records, and preparing read-only live YouTube check"
+      },
+      "taskKeys": [
+        "WW2:001"
+      ]
     }
   ],
   "focus": [
