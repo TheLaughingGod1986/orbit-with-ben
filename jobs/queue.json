@@ -281090,6 +281090,11 @@
           "at": "2026-11-22T09:01Z",
           "by": "relay",
           "what": "condition verification queued: J3352"
+        },
+        {
+          "at": "2026-11-22T09:13Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-22T18:10:00Z"
         }
       ],
       "remaining_action": "Obtain explicit approval for exporting codex/j3114-pluto-v02 (commit a12100797f) to TheLaughingGod1986/orbit-with-ben, or issue a superseding Chief ruling, then open the Pluto packaging review PR for J3115 without rebuilding",
@@ -281108,12 +281113,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J3317 Acting Chief ruling (jobs/reviews/J3317/REVIEW.md @ 81ae04405e, PR #1121): condition NOT MET. Independently scanned all 104 #954 comments after #7061468727 through #7067622773, absent remote branch/PR (thru #1120), clean local commit a12100797f in /Volumes/MiniWork/scratch/j3114-wt, THUMB_LEDGER tail T040, 12/12 NAS_VERIFY_J3114 SHA-256 hashes, and 4/4 NAS video hashes. Prior automatic approval review rejected exporting codex/j3114-pluto-v02 to public repo TheLaughingGod1986/orbit-with-ben twice; explicit export authorization remains absent across 7 consecutive checks (J3120/J3140/J3167/J3189/J3232/J3284/J3317). Preserve artifacts, J3115/J3119 dependencies, and UAT/Shorts holds. Do not bypass through another worker or route; elapsed time is not approval. Flagged for primary Chief claude (returning 21:50Z and 22 Nov 07:50Z) to resolve authorization with Ben or issue a superseding ruling.",
-        "check_at": "2026-11-22T10:01:41+00:00",
-        "last_recheck": "J3317",
-        "checked_at": "2026-11-21T19:02:10+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3352"
+        "condition": "J3352 Acting Chief ruling (jobs/reviews/J3352/REVIEW.md @ e79bc8f4f0, PR #1164): condition NOT MET. Independently scanned all 116 #954 comments after #7067622773 through #7076957927 (0 new [Ben] posts; primary Chief claude #7076320150 at 08:07Z confirmed J3114 remains parked with export approval unrecorded), absent remote branch/PR (thru #1163), clean local commit a12100797f in /Volumes/MiniWork/scratch/j3114-wt, THUMB_LEDGER tail T040, 12/12 NAS_VERIFY_J3114 SHA-256 hashes, and 4/4 NAS video hashes. Prior automatic approval review rejected exporting codex/j3114-pluto-v02 to public repo TheLaughingGod1986/orbit-with-ben twice; explicit export authorization remains absent across 8 consecutive checks (J3120/J3140/J3167/J3189/J3232/J3284/J3317/J3352). Preserve artifacts, J3115/J3119 dependencies, and UAT/Shorts holds. Do not bypass through another worker or route; elapsed time is not approval. Next check 2026-11-22T18:10:00Z after primary Chief claude's 12:50Z and 17:50Z active windows.",
+        "check_at": "2026-11-22T18:10:00Z",
+        "last_recheck": "J3352",
+        "checked_at": "2026-11-22T09:13:47+00:00",
+        "checked_by": "gemini"
       },
       "escalated_at": "2026-11-19T11:45Z"
     },
