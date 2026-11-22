@@ -299917,10 +299917,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-22T01:35Z",
+      "eta": "2026-11-22T03:35Z",
       "created_by": "relay",
       "created_at": "2026-11-22T00:29Z",
       "result": "",
@@ -299969,6 +299969,11 @@
           "at": "2026-11-22T01:35Z",
           "by": "gemini",
           "what": "reopened"
+        },
+        {
+          "at": "2026-11-22T01:35Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for elected Chief (Grok Bot) to merge PR #1148, record J2529 typed capability wait --recheck J3339, and close J3339",
@@ -299990,7 +299995,15 @@
       "open_claim": true,
       "taskKeys": [
         "HOS:013"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-22T01:35Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
