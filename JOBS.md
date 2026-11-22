@@ -65,7 +65,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3323 | mini | blocked | gemini | – | 005 upload · listing · HOS 005 Short el30-mHiH-0 post-public read-back & library.json live flip | 7064710774 |
 | J3331 | mini | blocked | gemini | – | assembly · Roman Telescope 7 Dec dated-event Short (airs Thu 3 Dec): voice-over, build from free NASA footage, all Shorts gates, park for review | 02_Video-Projects/_dated_shorts/2026-12-07_roman-telescope-first-images.md |
 | J3336 | mini | blocked | macbook-2 | – | review · Verify condition for J3270 |  |
-| J3340 | mini | blocked | gemini | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
+| J3340 | mini | open | – | – | qa · Backlog: QA sweep of the newest packs on both channels (picture_qa, polish_gate, music_gate) |  |
 
 Recently finished:
 

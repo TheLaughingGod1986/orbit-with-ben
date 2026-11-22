@@ -300100,13 +300100,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-22T02:58Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-22T02:57Z",
-      "result": "parked for Chief: J3340 QA sweep complete across OWB (89a6ef5b2c) and HOS PR #722 (5f9fca210c, CI green, not self-merged) with byte-identical J3340_QA_SWEEP_INVENTORY_2026-11-22.json (sha256 21601432961add9d3d60a1c26d0758424bfd88072e65751b544780abccb0bb49) and J3340_QA_SWEEP_REPORT_2026-11-22.md (sha256 0fbf65d1fa06dd829e0f262fb58b76d3b7204f7a6bf8fa129b93b5a8ade9e4b5). 277 entries inventoried (169 OWB + 108 HOS; 11 net new post-J3104 exports/packs; 148 J3249 NAS-offloaded sidecar paths reconciled); all 808/808 applicable sidecars (781 JSON + 27 .txt) reconciled 1-to-1 against disk with 0 missing/hash/verdict/field/item-list/derived/freshness mismatches; 0 unaddressed current_newest FAILs across 162 newest candidates (all 27 fail indicators belong to 8 historical_superseded cuts); 3,505 warnings preserved unwaived; 0 new repair jobs required. OWB thread and HOS desk reports posted. Spend: £0.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-22T02:57Z",
@@ -300157,18 +300157,16 @@
           "at": "2026-11-22T03:29Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3340 QA sweep complete across OWB (89a6ef5b2c) and HOS PR #722 (5f9fca210c, CI green, not self-merged) with byte-identical J3340_QA_SWEEP_INVENTORY_2026-11-22.json (sha256 21601432961add9d3d60a1c26d0758424bfd88072e65751b544780abccb0bb49) and J3340_QA_SWEEP_REPORT_2026-11-22.md (sha256 0fbf65d1fa06dd829e0f262fb58b76d3b7204f7a6bf8fa129b93b5a8ade9e4b5). 277 entries inventoried (169 OWB + 108 HOS; 11 net new post-J3104 exports/packs; 148 J3249 NAS-offloaded sidecar paths reconciled); all 808/808 applicable sidecars (781 JSON + 27 .txt) reconciled 1-to-1 against disk with 0 missing/hash/verdict/field/item-list/derived/freshness mismatches; 0 unaddressed current_newest FAILs across 162 newest candidates (all 27 fail indicators belong to 8 historical_superseded cuts); 3,505 warnings preserved unwaived; 0 new repair jobs required. OWB thread and HOS desk reports posted. Spend: £0."
+        },
+        {
+          "at": "2026-11-22T03:50Z",
+          "by": "gemini",
+          "what": "reopened"
         }
       ],
       "remaining_action": "Parked for independent Chief review of OWB commit 89a6ef5b2c and HOS PR #722",
       "kind": "qa",
       "backlog": "both-qa-sweep",
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-22T03:29Z",
-        "by": "gemini",
-        "note": "Re-verified all 277 entries / 808 sidecars (0 mismatches, 0 current_newest FAILs), byte-identical OWB 89a6ef5b2c and HOS"
-      },
       "taskKeys": [
         "OWB:024",
         "HOS:005",
