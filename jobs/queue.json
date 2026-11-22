@@ -301446,16 +301446,22 @@
           "at": "2026-11-22T09:26Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-22T09:28Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Live API pulled 2026-11-22T09:28:12Z (68 videos: 7 public longs, 35 public Shorts, 3 scheduled, 23 private unscheduled); channel-audit --file and check_all.sh ran"
         }
       ],
-      "remaining_action": "Run read-only API, contract, and Studio checks on all HOS live and scheduled videos",
+      "remaining_action": "Cross-check API descriptions/chapters/sources/Related/endscreens against repo files and open PRs",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-22T09:26Z",
-        "by": "gemini"
+        "at": "2026-11-22T09:28Z",
+        "by": "gemini",
+        "note": "Live API pulled 2026-11-22T09:28:12Z (68 videos: 7 public longs, 35 public Shorts, 3 scheduled, 23 private unscheduled);"
       }
     }
   ],
