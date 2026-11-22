@@ -305406,9 +305406,14 @@
           "at": "2026-11-22T18:44Z",
           "by": "macbook-2",
           "what": "step 1 of 3 done"
+        },
+        {
+          "at": "2026-11-22T18:48Z",
+          "by": "macbook-2",
+          "what": "step 2 of 3 done: Opened PR #1189 (739b6d6654, jobs/reviews/J3391/REVIEW.md, 13/13 hygiene tests PASS); parking Chief decision on J3365 hold."
         }
       ],
-      "remaining_action": "Evidence verified (condition UNMET); writing jobs/reviews/J3391/REVIEW.md and opening PR",
+      "remaining_action": "Chief merges PR #1189, records wait --recheck J3391 on J3365 (2026-11-22T20:15:00Z), and closes J3391",
       "kind": "review",
       "recheck_of": "J3365",
       "due": "2026-11-22T19:33:29+00:00",
@@ -305422,10 +305427,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-22T18:44Z",
-        "by": "macbook-2"
+        "at": "2026-11-22T18:48Z",
+        "by": "macbook-2",
+        "note": "Opened PR #1189 (739b6d6654, jobs/reviews/J3391/REVIEW.md, 13/13 hygiene tests PASS); parking Chief decision on J3365 ho"
       }
     },
     {
