@@ -1,5 +1,5 @@
 {
-  "next_id": 3370,
+  "next_id": 3371,
   "jobs": [
     {
       "id": "J0001",
@@ -303124,6 +303124,36 @@
         "condition": "48-hour measurement window for ek9F61FVYqY opens 2026-11-24T17:00:00Z; verify actual launch time and collect Studio impressions and CTR then.",
         "check_at": "2026-11-24T17:00:00Z"
       }
+    },
+    {
+      "id": "J3370",
+      "title": "WW2 003: correct S62 and S51a narration under J3360 ruling",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Acting Chief codex authorisation from J3360 (22 Nov 2026). Read WW2 main 07_Edit/C37_CHIEF_RULING_v01.md and J3205_HANDOFF_v10.md for film 003. Exact text is locked there; original Gemini recommendation is superseded. Apply corrected S62 and delete only S51a first sentence causal clause, leaving 'The losses mounted too.' Create new script version, correct C37/C43 source mappings, CLAIMS_CHECK and description source citation. No other spoken edits.\n\nProduce full corrected ch05 and corrected S51a paragraph pickup on Mini using vo_take.py/el_client writer lock and dry run, existing Ben narrator and eleven_v3 plus Scribe. Existing subscription only; maximum 3,000 credits TOTAL incl Scribe; preserve at least 11,000 reserved credits plus all newer commitments after live balance/pending-spend read before each request. Respect any pause flags. Historical 15,222 balance is NOT approval. No money, overage, top-up, music or reserve override. If insufficient, prepare text without spend and typed credits hold to actual availability/reset 2026-11-30T10:50:00Z. One take per segment; no full ch04 retake.\n\nOld script/voice branch references are in PR30 prepare_edit_v01.py. Merge main into your clean working branch, preserving PR30 checkpoints. Verify script <=21,000 chars and per-request limit. Preserve originals; versioned voice concat, Scribe alignment, paragraph splice at verified silence boundaries, new mix candidate and hashes. Check exact transcript, joins by measurable checks, loudness, decode and alignment. Do not claim audition from text/measurements. Regenerate affected cues; old S62 timestamps are invalid. Record actual credit use, files and evidence in PR and queue result. No final film PASS or upload. J3205 stays held until this and the dependent G11 work finish.\n",
+      "ref": "",
+      "film": "WW2:003",
+      "stage": "vo",
+      "after": "J3360",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-22T14:21Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-22T14:21Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Record and verify the corrected bomber loss narration within reserved credit limits",
+      "kind": "vo",
+      "plain": "Correct the bomber loss narration in the third WW2 film",
+      "mini_only": true
     }
   ],
   "focus": [

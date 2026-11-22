@@ -67,6 +67,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3367 | mini | blocked | macbook-2 | – | review · Verify condition for J2040 |  |
 | J3368 | mini | blocked | gemini | – | review · Verify condition for J2529 |  |
 | J3369 | mini | blocked | codex | – | 001 thumbs · studio · Field Order History pilot 1: 48-hour thumbnail decision |  |
+| J3370 | mini | open (after J3360) | – | – | WW2:003 vo · vo · WW2 003: correct S62 and S51a narration under J3360 ruling |  |
 
 Recently finished:
 
