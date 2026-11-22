@@ -303590,9 +303590,14 @@
           "at": "2026-11-22T15:43Z",
           "by": "gemini",
           "what": "step 2 of 3 done: CDP 9222 probes failed: browser/attach/activate OK, but Runtime.evaluate and DOM.getDocument timed out before and after Target.activateTarget"
+        },
+        {
+          "at": "2026-11-22T15:44Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Probe complete (condition unmet); wait --recheck J3373 is Chief-only, parking J3373 for Chief"
         }
       ],
-      "remaining_action": "Record unmet input wait on J3372 with --recheck J3373 and post verification report",
+      "remaining_action": "Chief to record J3372 unmet input wait (--recheck J3373) and close J3373",
       "kind": "review",
       "recheck_of": "J3372",
       "mini_only": true,
@@ -303609,9 +303614,9 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-22T15:43Z",
+        "at": "2026-11-22T15:44Z",
         "by": "gemini",
-        "note": "CDP 9222 probes failed: browser/attach/activate OK, but Runtime.evaluate and DOM.getDocument timed out before and after "
+        "note": "Probe complete (condition unmet); wait --recheck J3373 is Chief-only, parking J3373 for Chief"
       },
       "taskKeys": [
         "HOS:006"
