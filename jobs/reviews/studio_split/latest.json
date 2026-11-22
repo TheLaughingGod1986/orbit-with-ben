@@ -1,8 +1,8 @@
 {
-  "at": "2026-11-21T07:58Z",
-  "commit": "479885cafa",
+  "at": "2026-11-22T07:55Z",
+  "commit": "c8fb663823",
   "clean": true,
-  "left": 0,
+  "left": 1,
   "counts": {
     "names": 0,
     "home": 0,
@@ -11,7 +11,7 @@
     "registry": 0,
     "keys": 0,
     "addresses": 0,
-    "tests": 0
+    "tests": 1
   },
   "groups": [
     {
@@ -59,16 +59,18 @@
     {
       "key": "tests",
       "title": "Tests that fail once the studio and the channels are apart",
-      "count": 0,
-      "items": []
+      "count": 1,
+      "items": [
+        "test_board_publish.py: 1 test"
+      ]
     }
   ],
   "tests": "run",
   "layout": {
-    "studio": 2445,
-    "Orbit With Ben": 12947,
-    "History of Science": 66,
-    "Field Order History": 2,
+    "studio": 2482,
+    "Orbit With Ben": 13005,
+    "History of Science": 70,
+    "Field Order History": 3,
     "built": 1,
     "not on this machine": [
       "Field Order History"
