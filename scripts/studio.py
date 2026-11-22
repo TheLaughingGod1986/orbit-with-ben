@@ -70,7 +70,7 @@ def parse(s):
     return value.astimezone(dt.timezone.utc)
 
 
-def film_dir(films, key):
+def film_dir(films, key, channel=None):
     # A job may name its film as "OWB:026" as well as "026" (8 Nov 2026: three such jobs stopped every MacBook claim).
     key = str(key)
     if ":" in key:
@@ -80,7 +80,8 @@ def film_dir(films, key):
             slug = channels.get(prefix)["slug"]
         except KeyError:
             sys.exit(f"studio: unknown film channel '{prefix}'")
-        if slug != channels.board_channel():
+        expected = channels.get(channel)["slug"] if channel else channels.of_path(films)
+        if slug != expected:
             sys.exit(f"studio: film channel '{prefix}' does not belong to this stage board")
     hits = [d for d in sorted(films.iterdir()) if d.is_dir() and d.name.split("_")[0] == key]
     if len(hits) != 1:
@@ -216,6 +217,12 @@ def git(*args):
     return subprocess.run(["git", "-C", str(ROOT), *args], capture_output=True, text=True)
 
 
+def _git(repo, *args):
+    if repo is None or pathlib.Path(repo).resolve() == ROOT.resolve():
+        return git(*args)
+    return subprocess.run(["git", "-C", str(repo), *args], capture_output=True, text=True)
+
+
 # A picture run appends its spend rows to this tracked file as it works (the Flow runners' `export_ai_spend`, which
 # is made to write the shared checkout's own ledger). Until 11 Nov 2026 those unsaved rows made every queue write on
 # the Mini refuse ("requires a clean working tree") for as long as a batch ran: workers committed them by hand four
@@ -309,7 +316,7 @@ def settle_spend_rows():
     return None
 
 
-def git_transaction(write, message, tries=3):
+def git_transaction(write, message, tries=3, repo=None):
     """Fail closed outside clean main; push only the verified metadata commit.
 
     No rebase, autostash or worker-branch switch. A push that loses a race drops
@@ -320,91 +327,94 @@ def git_transaction(write, message, tries=3):
     """
     from engine_guard import require_active
     require_active(ROOT)
-    common = git("rev-parse", "--git-common-dir")
+    target = pathlib.Path(repo) if repo is not None else ROOT
+    in_root = target.resolve() == ROOT.resolve()
+    common = _git(target, "rev-parse", "--git-common-dir")
     if common.returncode:
         return None, "not a Git checkout"
     lock = pathlib.Path(common.stdout.strip())
     if not lock.is_absolute():
-        lock = ROOT / lock
+        lock = target / lock
     with (lock / "studio-metadata.lock").open("a") as handle:
         fcntl.flock(handle, fcntl.LOCK_EX)
-        branch = git("symbolic-ref", "--quiet", "--short", "HEAD")
+        branch = _git(target, "symbolic-ref", "--quiet", "--short", "HEAD")
         if branch.returncode or branch.stdout.strip() != "main":
             return None, "metadata --git requires clean main; worker branch unchanged"
         # A second worktree forced onto main (`git worktree add --force <dir> main`, Codex J2210, 5 Nov 2026) moves
         # main under the shared checkout, whose stale index then reads as a staged reverse of every newer commit
         # (PR #520) and blocks every later metadata write. Refuse in both until the extra worktree is removed.
-        branches = [l[7:] for l in git("worktree", "list", "--porcelain").stdout.splitlines() if l.startswith("branch ")]
+        branches = [l[7:] for l in _git(target, "worktree", "list", "--porcelain").stdout.splitlines() if l.startswith("branch ")]
         if branches.count("refs/heads/main") > 1:
             return None, ("metadata --git refused: main is checked out in more than one worktree; remove the extra one "
                           "(git worktree list) and use `git worktree add --detach <dir> origin/main` instead")
-        state = git("status", "--porcelain")
-        if not state.returncode and state.stdout.splitlines() == [f" M {SPEND_LEDGER}"]:
+        state = _git(target, "status", "--porcelain")
+        if in_root and not state.returncode and state.stdout.splitlines() == [f" M {SPEND_LEDGER}"]:
             problem = settle_spend_rows()             # a picture run's unsaved rows are saved, not a reason to stop
             if problem:
                 return None, problem
-            state = git("status", "--porcelain")      # a row added since then stays for the next write
+            state = _git(target, "status", "--porcelain")      # a row added since then stays for the next write
             if not state.returncode and state.stdout.splitlines() == [f" M {SPEND_LEDGER}"]:
                 state = subprocess.CompletedProcess(state.args, 0, "", "")
         if state.returncode or state.stdout.strip():
             return None, "metadata --git requires a clean working tree and index"
         for attempt in range(max(1, tries)):
-            result, retry = _metadata_attempt(write, message)
+            result, retry = _metadata_attempt(write, message, repo=target)
             if not retry:
                 return result
             # Another machine pushed first (5 Nov 2026: the Mini and the MacBook both write the queue). Our own
             # verified commit, and nothing else, goes; the change is re-applied on the new main. Never replayed.
             commit, base = retry
             # Never remove a commit another writer put on HEAD, or any concurrent local edits.
-            state = git("status", "--porcelain")
-            if git("rev-parse", "HEAD").stdout.strip() != commit or state.returncode or state.stdout.strip():
+            state = _git(target, "status", "--porcelain")
+            if _git(target, "rev-parse", "HEAD").stdout.strip() != commit or state.returncode or state.stdout.strip():
                 return None, "metadata rollback refused: checkout changed concurrently; reconcile main before retry"
-            if git("reset", "-q", "--keep", base).returncode:
+            if _git(target, "reset", "-q", "--keep", base).returncode:
                 return None, "metadata rollback failed; reconcile main before retry"
             if attempt == max(1, tries) - 1:
                 # A rejected non-fast-forward may mean origin advanced on the final try too.
-                if not git("fetch", "-q", "--no-write-fetch-head", "origin",
-                           "refs/heads/main:refs/remotes/origin/main").returncode:
-                    if git("merge", "-q", "--ff-only", "refs/remotes/origin/main").returncode:
+                if not _git(target, "fetch", "-q", "--no-write-fetch-head", "origin",
+                            "refs/heads/main:refs/remotes/origin/main").returncode:
+                    if _git(target, "merge", "-q", "--ff-only", "refs/remotes/origin/main").returncode:
                         return None, "metadata rolled back but main fast-forward failed"
                 return result
         return result
 
 
-def _metadata_attempt(write, message):
+def _metadata_attempt(write, message, repo=None):
     """((out, err), (verified commit, base) to roll back on push failure, else None)."""
-    if git("fetch", "-q", "--no-write-fetch-head", "origin", "refs/heads/main:refs/remotes/origin/main").returncode:
+    target = pathlib.Path(repo) if repo is not None else ROOT
+    if _git(target, "fetch", "-q", "--no-write-fetch-head", "origin", "refs/heads/main:refs/remotes/origin/main").returncode:
         return (None, "metadata fetch failed; no changes applied"), None
-    base = git("rev-parse", "refs/remotes/origin/main").stdout.strip()
-    head = git("rev-parse", "HEAD").stdout.strip()
-    if git("merge-base", "--is-ancestor", head, base).returncode:
+    base = _git(target, "rev-parse", "refs/remotes/origin/main").stdout.strip()
+    head = _git(target, "rev-parse", "HEAD").stdout.strip()
+    if _git(target, "merge-base", "--is-ancestor", head, base).returncode:
         return (None, "main has unpublished/diverged commits; no changes applied"), None
-    if git("merge", "-q", "--ff-only", base).returncode:
+    if _git(target, "merge", "-q", "--ff-only", base).returncode:
         return (None, "main fast-forward failed; no changes applied"), None
     # An unlocked background pull can fast-forward main between fetch and merge.
     # Verify against the parent actually being edited, never a stale FETCH_HEAD.
-    base = git("rev-parse", "HEAD").stdout.strip()
-    if git("merge-base", "--is-ancestor", base, "refs/remotes/origin/main").returncode:
+    base = _git(target, "rev-parse", "HEAD").stdout.strip()
+    if _git(target, "merge-base", "--is-ancestor", base, "refs/remotes/origin/main").returncode:
         return (None, "main changed concurrently to unpublished history; no changes applied"), None
     out, err, paths = write()
     if err or not paths:
         return (out, err), None
-    paths = [str(pathlib.Path(p).resolve().relative_to(ROOT.resolve())) for p in paths]
-    if git("add", "--", *paths).returncode:
+    paths = [str(pathlib.Path(p).resolve().relative_to(target.resolve())) for p in paths]
+    if _git(target, "add", "--", *paths).returncode:
         return (None, "metadata git add failed; changes preserved"), None
-    if git("commit", "-q", "-m", message, "--", *paths).returncode:
+    if _git(target, "commit", "-q", "-m", message, "--", *paths).returncode:
         return (None, "metadata git commit failed; changes preserved"), None
-    commit = git("rev-parse", "HEAD").stdout.strip()
-    parents = git("rev-list", "--parents", "-n", "1", commit).stdout.split()
-    changed = git("diff-tree", "--no-commit-id", "--name-only", "-r", commit)
+    commit = _git(target, "rev-parse", "HEAD").stdout.strip()
+    parents = _git(target, "rev-list", "--parents", "-n", "1", commit).stdout.split()
+    changed = _git(target, "diff-tree", "--no-commit-id", "--name-only", "-r", commit)
     if parents != [commit, base] or changed.returncode or not set(changed.stdout.splitlines()) <= set(paths):
         # A pull can also land after the base was captured. Drop only our metadata commit,
         # on a single parent proven published; keep the other writer's history intact.
         if (len(parents) == 2 and not changed.returncode and set(changed.stdout.splitlines()) <= set(paths)
-                and not git("merge-base", "--is-ancestor", parents[1], "refs/remotes/origin/main").returncode):
+                and not _git(target, "merge-base", "--is-ancestor", parents[1], "refs/remotes/origin/main").returncode):
             return (None, "metadata parent changed concurrently; verified local commit rolled back"), (commit, parents[1])
         return (None, "metadata commit verification failed; not pushed, changes preserved"), None
-    pushed = git("push", "-q", "origin", f"{commit}:refs/heads/main")
+    pushed = _git(target, "push", "-q", "origin", f"{commit}:refs/heads/main")
     if pushed.returncode:
         return (None, "metadata push rejected; verified local commit rolled back: " + pushed.stderr.strip()), (commit, base)
     return (out, None), None

@@ -1210,27 +1210,124 @@ def do_cancel(job: dict, agent: str, note: str, at: dt.datetime) -> None:
 
 
 # ----------------------------------------------------------------------------- board link (film/stage claims)
-def on_board(job: dict) -> bool:
-    """Only the board channel's jobs have a film folder on the stage board (one status.json per film); a channel that
-    keeps its films another way has none."""
+# Queue jobs use the 9 studio stage keys; a channel may name equivalents in its studio/channel.json
+# (e.g. facts/thumbnails/scheduled). Unknown stages for that channel are skipped rather than inventing keys.
+STAGE_ALIASES = {"sources": "facts", "thumbs": "thumbnails", "upload": "scheduled"}
+
+
+def channel_films_dir(slug: str) -> pathlib.Path | None:
+    """The film folders for a film_status channel, or None when it keeps films another way or is not checked out."""
+    if channels.pipeline(slug).get("kind") != "film_status":
+        return None
+    if slug == channels.board_channel():
+        return studio.FILMS
+    co = channels.checkout(slug)
+    return channels.films_dir(slug, in_checkout=co) if co else None
+
+
+def channel_stage(slug: str, stage: str) -> str:
+    """The stage key as this channel records it in status.json, or '' when the channel has no matching stage."""
+    stage = str(stage or "").strip()
+    if not stage:
+        return ""
+    allowed = channels.stage_keys(slug)
+    if not allowed or stage in allowed:
+        return stage
+    alias = STAGE_ALIASES.get(stage, "")
+    return alias if alias in allowed else ""
+
+
+def _strict_status_board(slug: str) -> bool:
+    """True when the channel validates status.json with its own status_board.py (no 'review' state; underway bool)."""
+    co = channels.checkout(slug)
+    return bool(co and (co / "00_Brand" / "Channel-Setup" / "tools" / "status_board.py").is_file())
+
+
+def board_stage_key(job: dict) -> str:
     identity = job_film_identity(job)
-    return identity is not None and identity[0] == channels.board_channel()
+    return channel_stage(identity[0], job.get("stage") or "") if identity else ""
+
+
+def on_board(job: dict) -> bool:
+    """True when the job targets a valid film in a registered film_status channel with a local film folder.
+
+    Preserves J3060 isolation: a conflicting or unknown channel prefix returns False and never resolves another
+    channel's folder. Each channel writes only inside its own checkout.
+    """
+    identity = job_film_identity(job)
+    if identity is None:
+        return False
+    slug, film_num = identity
+    if job.get("stage") and not channel_stage(slug, job["stage"]):
+        return False
+    films = channel_films_dir(slug)
+    if films is None:
+        return False
+    if slug == channels.board_channel():
+        return True
+    return film_folder_under(films, film_num) is not None
+
+
+def stage_repo(job: dict) -> pathlib.Path | None:
+    """The git checkout root that owns this job's status.json, or None when not on a board."""
+    if not on_board(job):
+        return None
+    slug, _ = job_film_identity(job)
+    if slug == channels.board_channel():
+        return ROOT
+    co = channels.checkout(slug)
+    if co is None:
+        return None
+    # Embedded local channels inside ROOT without their own .git commit inside ROOT.
+    return co if (co / ".git").exists() else ROOT
+
+
+def board_claim_conflict(job: dict, agent: str, at: dt.datetime) -> str | None:
+    """Read-only check: would claiming this stage conflict with another agent's live claim?"""
+    if not on_board(job):
+        return None
+    stage = board_stage_key(job)
+    if not stage:
+        return None
+    path = film_status_path(job)
+    if path is None:
+        return None
+    d = studio.load(path)
+    if (d.get("stages", {}).get(stage) or {}).get("state") in ("done", "skip"):
+        return None
+    for c in d.get("claims", []):
+        if c.get("stage") == stage and c.get("by") != agent and not studio.stalled(c, at):
+            return f"held by {c['by']} since {c['at']} (ETA {c['eta']})"
+    return None
 
 
 def board_claim(job: dict, agent: str, at: dt.datetime) -> str | None:
     if not on_board(job):
         return None
-    path = studio.film_dir(studio.FILMS, job["film"]) / "status.json"
+    slug, _ = job_film_identity(job)
+    stage = board_stage_key(job)
+    if not stage:
+        return None
+    path = film_status_path(job)
+    if path is None:
+        return None
     d = studio.load(path)
-    if (d.get("stages", {}).get(job["stage"]) or {}).get("state") in ("done", "skip"):
+    d.setdefault("stages", {})
+    d.setdefault("claims", [])
+    if (d["stages"].get(stage) or {}).get("state") in ("done", "skip"):
         # Follow-up work on a finished stage (a Short or a review on a live film) never reopens it: claiming it set
         # the stage to doing and a block set it to blocked, so 024's done edit flipped back on every such job
         # (5 Nov 2026, J2248/J2250; stage_sync kept moving it back).
         return None
     mins = max(1, int((studio.parse(job["eta"]) - at).total_seconds() // 60))
-    err = studio.do_claim(d, job["stage"], agent, mins, f"{job['id']} {job['title']}", at)
+    err = studio.do_claim(d, stage, agent, mins, f"{job['id']} {job['title']}", at)
     if err:
         return err
+    if _strict_status_board(slug):
+        st = d["stages"].setdefault(stage, {})
+        st["underway"] = True
+        st.pop("waiting", None)
+        st.pop("approval", None)
     studio.save(path, d)
     return None
 
@@ -1238,8 +1335,14 @@ def board_claim(job: dict, agent: str, at: dt.datetime) -> str | None:
 def check_board_completion(job: dict, ref: str) -> None:
     if not on_board(job) or not workflow.role_job(job):
         return
-    record = studio.load(film_status_path(job))
-    state = record.get("stages", {}).get(job["stage"], {}).get("state")
+    stage = board_stage_key(job)
+    if not stage:
+        return
+    path = film_status_path(job)
+    if path is None:
+        return
+    record = studio.load(path)
+    state = record.get("stages", {}).get(stage, {}).get("state")
     if state not in ("done", "skip", "blocked") or not ref:
         raise ValueError("Chief stage review needs an explicit done/skip/blocked ruling in status.json and --ref before closing; do not leave it doing/review")
 
@@ -1247,14 +1350,42 @@ def check_board_completion(job: dict, ref: str) -> None:
 def board_release(job: dict, agent: str, state: str, ref: str = "") -> None:
     if not on_board(job):
         return
-    path = studio.film_dir(studio.FILMS, job["film"]) / "status.json"
+    slug, _ = job_film_identity(job)
+    stage = board_stage_key(job)
+    if not stage:
+        return
+    path = film_status_path(job)
+    if path is None:
+        return
     d = studio.load(path)
+    d.setdefault("stages", {})
+    d.setdefault("claims", [])
+    cur_state = (d["stages"].get(stage) or {}).get("state")
     if state == "review" and workflow.role_job(job):
         # A Chief has explicitly ruled before closing. Never overwrite that ruling with review again.
-        state = d.get("stages", {}).get(job["stage"], {}).get("state", "review")
-    if any(c["stage"] == job["stage"] and c["by"] == agent for c in d.get("claims", [])):
-        studio.do_release(d, job["stage"], agent, state, ref)
-        studio.save(path, d)
+        state = cur_state or "review"
+    strict = _strict_status_board(slug)
+    target_state = "doing" if (strict and state == "review") else state
+    has_claim = any(c["stage"] == stage and c["by"] == agent for c in d["claims"])
+    no_claims = not any(c["stage"] == stage for c in d["claims"])
+    if has_claim:
+        studio.do_release(d, stage, agent, target_state, ref)
+    elif no_claims and state == "review" and cur_state not in ("done", "skip"):
+        # Job was claimed before per-channel stage updates or while the channel checkout was busy:
+        # still advance the unheld stage on done, never reopening a finished stage.
+        studio.do_set(d, stage, target_state, ref, None)
+    else:
+        return
+    if strict:
+        st = d["stages"].setdefault(stage, {})
+        st["underway"] = False
+        if state == "review":
+            st["waiting"] = f"review ({job['id']})"
+            st["approval"] = {"status": "pending"}
+        elif target_state in ("done", "skip"):
+            st.pop("waiting", None)
+            st.pop("approval", None)
+    studio.save(path, d)
 
 
 # ----------------------------------------------------------------------------- JOBS.md
@@ -1286,6 +1417,11 @@ def render(data: dict, at: dt.datetime) -> str:
 
 
 # ----------------------------------------------------------------------------- git transaction
+def _touches_board_films(touched: list) -> bool:
+    root = studio.FILMS.resolve()
+    return any(pathlib.Path(p).resolve().is_relative_to(root) for p in touched if p)
+
+
 def with_git(apply, message: str, tries: int = 3):
     """Use the clean-main metadata transaction; never replay worker commits."""
     def write():
@@ -1300,14 +1436,35 @@ def with_git(apply, message: str, tries: int = 3):
         JOBS_MD.write_text(render(data, now()))
         paths = [QUEUE, JOBS_MD]
         if touched:
-            studio.write_status(studio.FILMS)
-            paths += list(touched) + [studio.status_path(studio.FILMS)]
+            paths += list(touched)
+            if _touches_board_films(touched):
+                studio.write_status(studio.FILMS)
+                paths.append(studio.status_path(studio.FILMS))
         return out, None, paths
     return studio.git_transaction(write, message, tries)
 
 
-def film_status_path(job: dict):
-    return studio.film_dir(studio.FILMS, job["film"]) / "status.json" if on_board(job) else None
+def film_status_path(job: dict) -> pathlib.Path | None:
+    if not on_board(job):
+        return None
+    slug, _ = job_film_identity(job)
+    films = channel_films_dir(slug)
+    return studio.film_dir(films, job["film"], channel=slug) / "status.json"
+
+
+def sync_external_stage(repo: pathlib.Path, job: dict, op, message: str) -> str | None:
+    """Commit and push one external channel's status.json change in its own clean-main git transaction."""
+    def write():
+        path = film_status_path(job)
+        if path is None:
+            return None, None, []
+        before = path.read_text() if path.exists() else ""
+        err = op()
+        if err:
+            return None, err, []
+        after = path.read_text() if path.exists() else ""
+        return None, None, [path] if after != before else []
+    return studio.git_transaction(write, message, repo=repo)[1]
 
 
 def show(job: dict) -> str:
@@ -1499,8 +1656,27 @@ def main(argv=None) -> int:
         print(show(job))
         return 0
 
+    external_ops = []
+
     def apply(data):
         touched = []
+        external_ops.clear()
+
+        def apply_stage(target_job, op, msg):
+            repo = stage_repo(target_job)
+            if repo is None:
+                return None
+            if args.git and repo.resolve() != ROOT.resolve():
+                external_ops.append((repo, dict(target_job), op, msg))
+                return None
+            err = op()
+            if err:
+                return err
+            path = film_status_path(target_job)
+            if path is not None:
+                touched.append(path)
+            return None
+
         try:
             if args.cmd == "metadata":
                 apply_metadata(data, json.loads(args.file.read_text()), args.agent, at)
@@ -1543,11 +1719,21 @@ def main(argv=None) -> int:
                     return job, None, touched
                 job = do_next(data, args.agent, can, at, args.eta, args.id)
                 if job and on_board(job) and job["history"][-1]["what"].startswith("claimed"):
-                    err = board_claim(job, args.agent, at)
-                    if err:
-                        do_release(job, args.agent, f"board stage held: {err}", at)
-                        return None, f"{job['id']}: the board stage is held ({err}); left open", touched
-                    touched.append(film_status_path(job))
+                    repo = stage_repo(job)
+                    if args.git and repo is not None and repo.resolve() != ROOT.resolve():
+                        err = board_claim_conflict(job, args.agent, at)
+                        if err:
+                            do_release(job, args.agent, f"board stage held: {err}", at)
+                            return None, f"{job['id']}: the board stage is held ({err}); left open", touched
+                        snap = dict(job)
+                        external_ops.append((repo, snap, lambda j=snap: board_claim(j, args.agent, at),
+                                             f"studio: {job['film']} {board_stage_key(job)} claimed by {args.agent}"))
+                    else:
+                        err = board_claim(job, args.agent, at)
+                        if err:
+                            do_release(job, args.agent, f"board stage held: {err}", at)
+                            return None, f"{job['id']}: the board stage is held ({err}); left open", touched
+                        touched.append(film_status_path(job))
                 return job, None, touched
             job = find(data, args.id)
             if not job:
@@ -1563,17 +1749,24 @@ def main(argv=None) -> int:
                 check_board_completion(job, args.ref)
                 handoffs.check_completion(job, data, list(handoffs.records(studio.FILMS)), at)
                 do_done(job, args.agent, args.result or "done", at, args.ref)
-                board_release(job, args.agent, "review", args.ref)
+                snap = dict(job)
+                apply_stage(job, lambda j=snap: board_release(j, args.agent, "review", args.ref),
+                            f"studio: {job.get('film')} {board_stage_key(job)} review by {args.agent}")
             elif args.cmd == "block":
                 do_block(job, args.agent, args.reason or args.result, at)
-                board_release(job, args.agent, "blocked")
+                snap = dict(job)
+                apply_stage(job, lambda j=snap: board_release(j, args.agent, "blocked"),
+                            f"studio: {job.get('film')} {board_stage_key(job)} blocked by {args.agent}")
             elif args.cmd == "release":
                 do_release(job, args.agent, args.note, at)
-                board_release(job, args.agent, "doing")
+                snap = dict(job)
+                apply_stage(job, lambda j=snap: board_release(j, args.agent, "doing"),
+                            f"studio: {job.get('film')} {board_stage_key(job)} released by {args.agent}")
             elif args.cmd == "renew":
                 do_renew(job, args.agent, args.eta, at)
-                if on_board(job):
-                    board_claim(job, args.agent, at)
+                snap = dict(job)
+                apply_stage(job, lambda j=snap: board_claim(j, args.agent, at),
+                            f"studio: {job.get('film')} {board_stage_key(job)} renewed by {args.agent}")
             elif args.cmd == "progress":
                 do_progress(job, args.agent, args.step, args.of, at, args.note, args.films, args.action)
                 return job, None, touched  # the film's board stage doesn't change
@@ -1611,15 +1804,17 @@ def main(argv=None) -> int:
                 held = job.get("by") if job["status"] == "claimed" else ""
                 do_stuck(job, args.agent or "relay", args.runs, at)
                 if held:
-                    board_release(job, held, "blocked")
+                    snap = dict(job)
+                    apply_stage(job, lambda j=snap, h=held: board_release(j, h, "blocked"),
+                                f"studio: {job.get('film')} {board_stage_key(job)} blocked by {held}")
             elif args.cmd == "reroute":
                 held = job.get("by") if job["status"] == "claimed" else ""
                 do_reroute(job, args.agent or "relay", args.to, args.model, args.note, at,
                            open_claim=bool(getattr(args, "open", False)))
                 if held:
-                    board_release(job, held, "doing")
-            if on_board(job):
-                touched.append(film_status_path(job))
+                    snap = dict(job)
+                    apply_stage(job, lambda j=snap, h=held: board_release(j, h, "doing"),
+                                f"studio: {job.get('film')} {board_stage_key(job)} released by {held}")
             return job, None, touched
         except ValueError as e:
             return None, str(e), touched
@@ -1628,13 +1823,18 @@ def main(argv=None) -> int:
         who = getattr(args, "agent", "") or getattr(args, "by", "")
         what = " ".join(x for x in ("jobs:", args.cmd, " ".join(getattr(args, "ids", [])) or getattr(args, "id", "") or (args.title if args.cmd == "add" else ""), "by", who) if x)
         job, err = with_git(apply, what)
+        if not err:
+            for repo, sjob, op, msg in external_ops:
+                ext_err = sync_external_stage(repo, sjob, op, msg)
+                if ext_err:
+                    print(f"jobs: warning: {sjob.get('film')} stage update not pushed to {repo.name}: {ext_err}", file=sys.stderr)
     else:
         data = load()
         job, err, touched = apply(data)
         if not err and not (args.cmd == "next" and args.peek):
             save(data)
             JOBS_MD.write_text(render(data, at))
-            if touched:  # the film's status.json was written by board_claim / board_release
+            if touched and _touches_board_films(touched):  # the board channel's status.json was written
                 studio.write_status(studio.FILMS)
     if err:
         print(f"jobs: {err}", file=sys.stderr)
