@@ -304367,13 +304367,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-22T22:38Z",
-      "eta": "2026-11-22T22:58Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-22T14:28Z",
-      "result": "",
+      "result": "Read-only evidence delivered in PR1197 (361b0bdd1e), linked on J3365 PR1170 comment 7087127183 and HOS desk 7087128032. Exact 25 Oct-21 Nov: 41/45 displayed impressions/CTR rows, four individually confirmed em-dash rows retained unknown; all exact-window views-from-impressions unavailable, limitation documented. Willow finished 19 Nov18:58 NOT_ENOUGH_DATA; missing T044 added with null shares and asset provenance. Three current titles and attached finished tests read. No Studio writes/spend. JSON/hash/ledger validation and private-network tests pass; channel:audit cannot run due missing generated Prisma client, recorded without PASS. Revised audit remains for J3365 review.",
       "history": [
         {
           "at": "2026-11-22T14:28Z",
@@ -304464,6 +304464,11 @@
           "at": "2026-11-22T22:51Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR1197 published; exact-window data and preserved test reports validated. J3365 PR1170 and HOS desk receive report. Channel audit tooling failure recorded without claiming PASS."
+        },
+        {
+          "at": "2026-11-22T22:51Z",
+          "by": "codex",
+          "what": "done: Read-only evidence delivered in PR1197 (361b0bdd1e), linked on J3365 PR1170 comment 7087127183 and HOS desk 7087128032. Exact 25 Oct-21 Nov: 41/45 displayed impressions/CTR rows, four individually confirmed em-dash rows retained unknown; all exact-window views-from-impressions unavailable, limitation documented. Willow finished 19 Nov18:58 NOT_ENOUGH_DATA; missing T044 added with null shares and asset provenance. Three current titles and attached finished tests read. No Studio writes/spend. JSON/hash/ledger validation and private-network tests pass; channel:audit cannot run due missing generated Prisma client, recorded without PASS. Revised audit remains for J3365 review."
         }
       ],
       "remaining_action": "Evidence delivered for the revised HOS thumbnail audit review",
@@ -304481,7 +304486,8 @@
         "at": "2026-11-22T22:51Z",
         "by": "codex",
         "note": "PR1197 published; exact-window data and preserved test reports validated. J3365 PR1170 and HOS desk receive report. Chan"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1197"
     },
     {
       "id": "J3373",
