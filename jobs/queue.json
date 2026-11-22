@@ -299268,9 +299268,14 @@
           "at": "2026-11-22T15:08Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Signed-out read-back PASS (2026-11-22T15:07Z): playabilityStatus=OK, isPrivate=false, isUnlisted=false, publishDate=2026-11-22T03:30:33-08:00 (11:30:33Z), Related pill->wwcjcFfC-5M, AI pill+howThisWasMadeSectionViewModel present, captions en-GB manual+en ASR, YOUR PULSE custom cover visually verified live"
+        },
+        {
+          "at": "2026-11-22T15:08Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Flipped el30-mHiH-0 from scheduled to live in clean HOS worktree (gemini/J3323-el30-live); check_all.sh printed ALL CHECKS PASS (all 10 checks green)"
         }
       ],
-      "remaining_action": "Flip el30-mHiH-0 to live in clean HOS worktree and run check_all.sh",
+      "remaining_action": "Commit library.json flip, open PR to history-of-science main, and post reports to HOS desk #694 and OWB thread",
       "kind": "listing",
       "plain": "Verify HOS Short el30-mHiH-0 live after Sun 22 Nov 11:30Z and flip its library.json status to live",
       "rerouted_from": {
@@ -299282,11 +299287,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
         "at": "2026-11-22T15:08Z",
         "by": "gemini",
-        "note": "Signed-out read-back PASS (2026-11-22T15:07Z): playabilityStatus=OK, isPrivate=false, isUnlisted=false, publishDate=2026"
+        "note": "Flipped el30-mHiH-0 from scheduled to live in clean HOS worktree (gemini/J3323-el30-live); check_all.sh printed ALL CHEC"
       },
       "taskKeys": [
         "HOS:005"
