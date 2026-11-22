@@ -305451,13 +305451,26 @@
           "at": "2026-11-22T18:46Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-22T18:46Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-22T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Verify readiness: Wait for corrected narration and loss graphic, then finish assembly and QA",
       "kind": "review",
       "recheck_of": "J3205",
       "due": "2026-11-22T19:46:41+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
