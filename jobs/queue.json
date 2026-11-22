@@ -303720,13 +303720,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-22T16:14Z",
-      "eta": "2026-11-22T18:14Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-22T16:02Z",
-      "result": "",
+      "result": "Chief FIX / condition unmet. Reviewed J3365/J3374 history and PR1170 bf6f0fa491, PR1175 96fddf7d99 and PR1176 9963fd5a79. All 45 exact-window reach rows remain null; Willow and three title/test reads absent. J3365 stays blocked with wait --recheck J3374 at 2026-11-22T18:30:00Z. J3372 retains its 17:45Z recovery check. Parent follow-up includes correcting unsupported blanket frame-0 verification labels and copied heart/cuff wording, incorporating Studio evidence, and retaining unresolved compilation image explicitly. No audit PASS, spend or public change; no Ben input needed.",
       "history": [
         {
           "at": "2026-11-22T16:02Z",
@@ -303782,6 +303782,11 @@
           "at": "2026-11-22T16:14Z",
           "by": "codex",
           "what": "step 3 of 3 done: Evidence checked; unmet dependency ruling and 18:30Z parent recheck recorded. J3372 17:45Z retry unchanged."
+        },
+        {
+          "at": "2026-11-22T16:15Z",
+          "by": "codex",
+          "what": "done: Chief FIX / condition unmet. Reviewed J3365/J3374 history and PR1170 bf6f0fa491, PR1175 96fddf7d99 and PR1176 9963fd5a79. All 45 exact-window reach rows remain null; Willow and three title/test reads absent. J3365 stays blocked with wait --recheck J3374 at 2026-11-22T18:30:00Z. J3372 retains its 17:45Z recovery check. Parent follow-up includes correcting unsupported blanket frame-0 verification labels and copied heart/cuff wording, incorporating Studio evidence, and retaining unresolved compilation image explicitly. No audit PASS, spend or public change; no Ben input needed."
         }
       ],
       "remaining_action": "Verification complete; audit remains held for missing Studio evidence",
