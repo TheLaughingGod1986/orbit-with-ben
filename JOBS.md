@@ -69,6 +69,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3379 | mini | blocked | gemini | – | review · Verify condition for J3361 |  |
 | J3382 | any | open (after J3381) | – | – | 006 thumbs · chief · Review rebuilt thumbnail heroes and decide successor tests after J3381 | J3307 |
 | J3383 | mini | blocked | codex | – | studio · First-day check at 6 h: "How Does the Heart Pump Blood?" (el30-mHiH-0) |  |
+| J3384 | mini | open | – | – | review · Verify condition for J3372 |  |
 
 Recently finished:
 

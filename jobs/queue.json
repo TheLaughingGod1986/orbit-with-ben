@@ -1,5 +1,5 @@
 {
-  "next_id": 3384,
+  "next_id": 3385,
   "jobs": [
     {
       "id": "J0001",
@@ -303788,6 +303788,11 @@
           "at": "2026-11-22T15:50Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-22T17:45:00Z"
+        },
+        {
+          "at": "2026-11-22T17:52Z",
+          "by": "relay",
+          "what": "condition verification queued: J3384"
         }
       ],
       "remaining_action": "Verify HOS Studio responds, then collect the missing reach and test results",
@@ -303807,10 +303812,11 @@
       "hold": {
         "type": "input",
         "condition": "Existing Mini HOS Studio renderer must answer a bounded text or DOM read. Gemini 15:43Z confirmed browser attach succeeds but renderer reads time out; PR1175 leaves required figures unknown. Next verification may try one bounded reload of the existing Studio tab after checking no active writer; never close Chrome, create duplicate tabs, alter tests or save changes. If still unresponsive retain hold and report exact failure.",
-        "check_at": "2026-11-22T17:45:00Z",
+        "check_at": "2026-11-22T18:52:57+00:00",
         "last_recheck": "J3373",
         "checked_at": "2026-11-22T15:50:16+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J3384"
       }
     },
     {
@@ -304735,6 +304741,38 @@
         "condition": "HOS Studio existing tab on CDP 9222 must respond to page commands. Discovery succeeds, but Playwright connect_over_cdp times out after websocket connection; direct Runtime.evaluate (15 s) and Page.navigate (8 s) also time out. No current settings or metrics verified; retry the same tab without opening duplicates or closing Chrome.",
         "check_at": "2026-11-22T18:00:00Z"
       }
+    },
+    {
+      "id": "J3384",
+      "title": "Verify condition for J3372",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3372: Existing Mini HOS Studio renderer must answer a bounded text or DOM read. Gemini 15:43Z confirmed browser attach succeeds but renderer reads time out; PR1175 leaves required figures unknown. Next verification may try one bounded reload of the existing Studio tab after checking no active writer; never close Chrome, create duplicate tabs, alter tests or save changes. If still unresponsive retain hold and report exact failure.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3372 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-22T17:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-22T17:52Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Verify HOS Studio responds, then collect the missing reach and test results",
+      "kind": "review",
+      "recheck_of": "J3372",
+      "mini_only": true,
+      "due": "2026-11-22T18:52:57+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
