@@ -288906,10 +288906,10 @@
       "stage": "edit",
       "after": "J3204",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-22T11:17Z",
+      "eta": "2026-11-22T15:17Z",
       "created_by": "claude",
       "created_at": "2026-11-20T10:21Z",
       "result": "",
@@ -288923,6 +288923,11 @@
           "at": "2026-11-22T11:16Z",
           "by": "claude",
           "what": "opened to any worker in its chain (preferred gemini): Claude, 22 Nov 11:20Z (Ben: \"Nothing's running\"): the Mini had been idle since 09:59Z because every ready job was pinned to an agent that is out: Codex (weekly usage limit since 20 Nov) or Claude Code on the Mini (paused while Claude is flagged). Opened to any capable worker (Gemini on Neon, the MacBooks), preferred Gemini."
+        },
+        {
+          "at": "2026-11-22T11:17Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Edit pilot 3 on its narration and J2998's pictures, zero-spend music bed, QA, then to Ben's board",
@@ -288937,7 +288942,15 @@
         "by": ""
       },
       "open_claim": true,
-      "urgent": 4
+      "urgent": 4,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-22T11:17Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3206",

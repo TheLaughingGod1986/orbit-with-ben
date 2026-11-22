@@ -50,7 +50,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3125 | mini | blocked | codex | – | studio · HOS Vaccine test: 24 Nov feed gate and conditional 29 Nov readout |  |
 | J3161 | mini | blocked | macbook-2 | – | studio · Supermoon Short: next-morning and full-day performance follow-up |  |
 | J3178 | mini | blocked | gemini | – | 013 picture · for gemini · qa · `gemini-argon` · HOS 013: continuous playback review of ten unresolved pass-one plates |  |
-| J3205 | mini | open (after J3204) | – | – | WW2:003 edit · assembly · WW2 pilot 003: picture, maps, edit and thumbnail, to Ben's watch |  |
+| J3205 | mini | claimed | macbook | 2026-11-22T15:17Z | WW2:003 edit · assembly · WW2 pilot 003: picture, maps, edit and thumbnail, to Ben's watch |  |
 | J3231 | cloud | open | – | – | review · Weekly search research (Orbit + Field Order History): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
 | J3303 | mini | open | – | – | review · Packaging panel (codex): J3302 weekly OWB Challenger Bs (T041 Europa 2x EARTH'S WATER, T042 Light Speed YOU AGE SLOWER, T043 Last Star OUTLIVES OUR SUN + Round 2 Title Bs; PR #1118) |  |
 | J3306 | mini | blocked | macbook-2 | – | review · Packaging panel decision: J3302 weekly OWB Challenger Bs (T041 Europa 2x EARTH'S WATER, T042 Light Speed YOU AGE SLOWER, T043 Last Star OUTLIVES OUR SUN + Round 2 Title Bs; PR #1118) |  |
