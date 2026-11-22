@@ -299331,6 +299331,11 @@
           "at": "2026-11-22T01:45Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-22T01:45Z",
+          "by": "gemini",
+          "what": "waits on Ben: Watch the 7 Dec NASA Roman Telescope First Images dated-event Short v01 (18.2 s) and its rebuilt opaque cover v02 (by 2026-12-02 18:00 London)"
         }
       ],
       "remaining_action": "Wait for J3337 opaque cover_v02.jpg, then Chief checks cover_v02 and stages locked v01 video + cover_v02 to OWB UAT / WATCH_FULL + jobs.py awaits J3331 for Ben's watch",
@@ -299346,6 +299351,16 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "awaits_ben": {
+        "what": "Watch the 7 Dec NASA Roman Telescope First Images dated-event Short v01 (18.2 s) and its rebuilt opaque cover v02",
+        "file": "OWB UAT/owb_dated_2026_12_07_roman_first_images_v01.mp4",
+        "version": "v01",
+        "due": "2026-12-02T18:00Z",
+        "airs": "2026-12-03T11:30Z",
+        "ifNot": "Do not upload or schedule this dated-event Short if approval misses the deadline",
+        "title": "What Will NASA's Roman Telescope Reveal on Dec 7?",
+        "type": "short"
       }
     },
     {
