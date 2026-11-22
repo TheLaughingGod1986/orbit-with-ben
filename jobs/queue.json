@@ -304463,13 +304463,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-22T17:25Z",
-      "eta": "2026-11-22T19:25Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-22T17:24Z",
-      "result": "",
+      "result": "Resolved orphan-review in 83a8ea89f2: J3307 now owns Europa thumbs and reviews J3378 v02 evidence; corrected J3308-J3310 paths/hashes while retaining Chief approval and successor-test guards. Verified delivered Europa hash and published handoff. No media PASS, spending or YouTube changes.",
       "history": [
         {
           "at": "2026-11-22T17:24Z",
@@ -304500,6 +304500,11 @@
           "at": "2026-11-22T17:29Z",
           "by": "codex",
           "what": "step 3 of 3 done: Published-state checks pass; no orphan, no approval granted, no YouTube changes."
+        },
+        {
+          "at": "2026-11-22T17:29Z",
+          "by": "codex",
+          "what": "done: Resolved orphan-review in 83a8ea89f2: J3307 now owns Europa thumbs and reviews J3378 v02 evidence; corrected J3308-J3310 paths/hashes while retaining Chief approval and successor-test guards. Verified delivered Europa hash and published handoff. No media PASS, spending or YouTube changes."
         }
       ],
       "remaining_action": "Report the completed Europa thumbnail handoff repair",
@@ -304519,7 +304524,8 @@
       },
       "taskKeys": [
         "OWB:006"
-      ]
+      ],
+      "done_ref": "83a8ea89f2"
     }
   ],
   "focus": [
