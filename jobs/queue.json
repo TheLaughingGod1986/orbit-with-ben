@@ -305027,9 +305027,14 @@
           "at": "2026-11-22T19:12Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Verified HOS main 3be57292 (PR #389 intact, lint:package PASS on 009 and 010, 8 Sources each), NAS 009 v03 744f32b7, NAS 010 no 09_Assembly, chief_relay shows Chief: Grok Bot UP"
+        },
+        {
+          "at": "2026-11-22T19:13Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Verified J2036 done (PR #731 7/7 CI green, open; supersedes PR #719; exact v03 chapters 0:00/1:24/2:56/4:20/6:33 already on main via PR #703 + making-of line in PR #731); J2037 still open; HOS 009 ben_ok todo; HOS 010 still 12/65 Shorts-only plates with no 09_Assembly; scripts/jobs.py:603 requires elected Chief for --recheck"
         }
       ],
-      "remaining_action": "Inspect J2036/J2037/PR #731/PR #719 and confirm jobs.py recheck authority before writing J3385 REVIEW.md",
+      "remaining_action": "Write jobs/reviews/J3385/REVIEW.md in clean worktree, open OWB PR, and park J3385 for elected Chief (Grok Bot)",
       "kind": "review",
       "recheck_of": "J1275",
       "due": "2026-11-22T19:02:37+00:00",
@@ -305043,11 +305048,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-22T19:12Z",
+        "at": "2026-11-22T19:13Z",
         "by": "gemini",
-        "note": "Verified HOS main 3be57292 (PR #389 intact, lint:package PASS on 009 and 010, 8 Sources each), NAS 009 v03 744f32b7, NAS"
+        "note": "Verified J2036 done (PR #731 7/7 CI green, open; supersedes PR #719; exact v03 chapters 0:00/1:24/2:56/4:20/6:33 already"
       },
       "taskKeys": [
         "HOS:009",
