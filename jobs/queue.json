@@ -1,5 +1,5 @@
 {
-  "next_id": 3337,
+  "next_id": 3338,
   "jobs": [
     {
       "id": "J0001",
@@ -299649,6 +299649,37 @@
         "by": "macbook-2",
         "note": "Opened PR #1144 (macbook/J3336, 840330fef5, jobs/reviews/J3336/REVIEW.md); 13/13 hygiene tests passed; checkout back on "
       }
+    },
+    {
+      "id": "J3337",
+      "title": "Roman Telescope 7 Dec dated-event Short: rebuild cover v02 only (opaque spacecraft, no galaxy bleed-through), thumb_preview, park for Chief",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief review of J3331 (jobs/reviews/J3331/REVIEW.md, 22 Nov 2026) ruled VIDEO v01 KEEP (LOCKED: owb_dated_2026_12_07_roman_first_images_v01.mp4, SHA-256 ff52475588e5ecee1caca6840105711bfed2b67c6b83ab3f08239e3761e47bd1 — do NOT re-render video, VO, or audio) and COVER v01 FIX.\n\nDefect to fix (£0, 0 credits, cover-only):\n- In /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_dated_shorts/2026-12-07_roman-telescope-first-images/assemble_j3331.py (line 460), build_cover_image() added 42% of the Hubble Ultra Deep Field across the whole frame without masking the spacecraft (comp = np.clip(a_h + a_u * 0.42, 0, 255)), causing bright orange/blue galaxies to shine straight through the solid metallic hull and white sunshield of NASA's Roman Space Telescope (double-exposure ghosting visible at full size and in cover_thumb_preview.jpg).\n\nRequired deliverable (cover-only, leave video v01 and cover_v01.jpg untouched):\n1) Build 11_Upload-Package/roman_2026_12_07_cover_v02.jpg (1080x1920) on NAS (/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_dated_shorts/2026-12-07_roman-telescope-first-images/) with a 100% solid, opaque Roman Space Telescope and ZERO galaxies bleeding through its hull or sunshield. Either grade the clean SVS #15081 Milky Way hero frame directly without additive Hubble UDF bleed (keeping vibrant contrast, clean SVS #5587 full Moon scale accent, and bold **100** / HUBBLES top text — 2 words, zero words shared with title), OR cleanly mask the spacecraft silhouette so Hubble UDF galaxies sit strictly behind an opaque spacecraft.\n2) Run python3 00_Brand/Channel-Setup/tools/thumb_preview.py short <cover_v02.jpg> --out <07_Edit-Project/assembly_j3331_v01/qa/cover_v02_thumb_preview.jpg> and inspect both full-size cover_v02.jpg and cover_v02_thumb_preview.jpg (168x94 + 16:9 crop) to verify solid opaque spacecraft, clean Moon, and crisp legibility.\n3) Write DELIVERY_v01_cover_v02_SHA256.json on the NAS recording locked video v01 SHA (ff52475588e5ecee1caca6840105711bfed2b67c6b83ab3f08239e3761e47bd1), cover_v02.jpg SHA, and cover_v02_thumb_preview.jpg SHA; commit text/JSON metadata updates via PR (no media in git).\n4) Do NOT upload or schedule; park for Chief visual review of cover_v02.jpg so Chief can stage locked v01 video + cover_v02.jpg to OWB UAT / WATCH_FULL and arm jobs.py awaits J3331 for Ben's watch (due Wed 2 Dec 2026 18:00 London ahead of Thu 3 Dec 2026 11:30 London publish; Related ziKBPJ6FY0U).\n",
+      "ref": "jobs/reviews/J3331/REVIEW.md",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-22T00:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-22T00:20Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build opaque roman_2026_12_07_cover_v02.jpg (£0), pass thumb_preview.py short, save SHA manifest on NAS, park for Chief check",
+      "due": "2026-11-30T18:00:00Z",
+      "kind": "thumb",
+      "plain": "Rebuild only the Roman Telescope Short cover v02 with a solid opaque spacecraft (video v01 is already locked KEEP)",
+      "mini_only": true
     }
   ],
   "focus": [
