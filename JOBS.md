@@ -13,7 +13,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0912 | mini | blocked | cursor | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0923 | mini | blocked | cursor | – | 029 upload · studio · 029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back | 6384887788 |
 | J0979 | mini | blocked | macbook-2 | – | 032 edit · assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
-| J0996 | mini | open (after J0317) | – | – | studio · OWB 027: matching Earth long description after J0317 (J0980 ruling) |  |
+| J0996 | mini | claimed | macbook-2 | 2026-11-22T23:29Z | studio · OWB 027: matching Earth long description after J0317 (J0980 ruling) |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J2021 | cloud | blocked | claude | – | review · Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29 |  |
 | J2037 | mini | open (after J2036) | – | – | 009 edit · for claudecode · review · `mini-claude-opus-5-5` · HOS 009: Review HOS009 finished pack and deliver Ben watch card | J2026 |
