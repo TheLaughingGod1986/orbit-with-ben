@@ -1,0 +1,44 @@
+{
+  "job": "J3337",
+  "parent_job": "J3331",
+  "review_ref": "jobs/reviews/J3331/REVIEW.md",
+  "delivery_folder": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/_dated_shorts/2026-12-07_roman-telescope-first-images",
+  "video_v01_locked": {
+    "file": "06_Final-Exports/owb_dated_2026_12_07_roman_first_images_v01.mp4",
+    "bytes": 68281951,
+    "sha256": "ff52475588e5ecee1caca6840105711bfed2b67c6b83ab3f08239e3761e47bd1",
+    "status": "LOCKED (untouched from J3331 Chief KEEP)"
+  },
+  "cover_v01_superseded": {
+    "file": "11_Upload-Package/roman_2026_12_07_cover_v01.jpg",
+    "bytes": 706400,
+    "sha256": "c17ac08de15dac4ac383e846374f8bd52059b14175ff985c7341f06bfb52c305",
+    "status": "UNTOUCHED (superseded by cover_v02.jpg)"
+  },
+  "cover_v02": {
+    "file": "11_Upload-Package/roman_2026_12_07_cover_v02.jpg",
+    "bytes": 368454,
+    "sha256": "fecf983184783f57874b8fd330baf9f894041e805673827463ea4507225155d3",
+    "dimensions": "1080x1920",
+    "cover_text": "**100** / HUBBLES",
+    "fix": "Pure graded NASA SVS #15081 Milky Way hero frame (frame 55, cropped clear of NASA credit) with ZERO additive Hubble UDF bleed-through; 100% solid opaque Roman Space Telescope hull and sunshield + clean SVS #5587 full Moon accent inside 16:9 centre crop."
+  },
+  "cover_v02_thumb_preview": {
+    "file": "07_Edit-Project/assembly_j3331_v01/qa/cover_v02_thumb_preview.jpg",
+    "bytes": 33931,
+    "sha256": "ba33b5c7853deeac93ccc05083865c21589f2603b0746b6d33ccc00412965f61",
+    "score_output": "PASS  roman_2026_12_07_cover_v02.jpg  saturation=101.2  near_black=18%"
+  },
+  "supporting_files": [
+    {
+      "file": "07_Edit-Project/assembly_j3331_v01/qa/cover_v02_thumb_preview.txt",
+      "bytes": 250,
+      "sha256": "70e52a9dfd3e70b37de2bebf86d093383a50149c1dd01e511ecd15bcfbce6fee"
+    },
+    {
+      "file": "build_cover_v02.py",
+      "bytes": 10727,
+      "sha256": "55fa3e96a1480275225b3d23aa31c0deea2667d8e411bba774dfbe7396378d47"
+    }
+  ]
+}
