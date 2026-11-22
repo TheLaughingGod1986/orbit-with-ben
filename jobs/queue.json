@@ -305375,10 +305375,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-22T20:53Z",
+      "eta": "2026-11-22T22:53Z",
       "created_by": "relay",
       "created_at": "2026-11-22T18:02Z",
       "result": "",
@@ -305432,6 +305432,11 @@
           "at": "2026-11-22T20:53Z",
           "by": "codex",
           "what": "reopened: Elected Chief review of completed verification; PR 1185 evidence merged. Parent remains held until ruling is recorded."
+        },
+        {
+          "at": "2026-11-22T20:53Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief Codex review: merge PR #1185, reopen J2020 with evidence, and close J3386",
@@ -305450,7 +305455,15 @@
       "taskKeys": [
         "OWB:025"
       ],
-      "escalated_at": "2026-11-22T20:14Z"
+      "escalated_at": "2026-11-22T20:14Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-22T20:53Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3387",
