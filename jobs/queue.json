@@ -91306,13 +91306,13 @@
       "stage": "upload",
       "after": "J0317",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-22T23:09Z",
-      "eta": "2026-11-22T23:29Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-26T22:08Z",
-      "result": "",
+      "result": "parked for Chief: MacBook CDP 9223 Studio tab 8A9E2F211C963F35D4B2E8AFFD33B157 renderer stalled after pre-save guard aborted Playwright fill() trailing-newline mismatch (666 vs 665 chars); zero YouTube mutations (OVLv9dxTcpE re-verified untouched at 560 bytes sha256 016c8427). Pre-checks passed: Orbit With Ben UC_esArsDKd3GJvOkeO0DUog, 6bbbvfCx6zY Public live title 'What If Earth Stopped Spinning? (It's Already Slowing Down)', OVLv9dxTcpE Related=6bbbvfCx6zY. Fast path: run description-only prepend on Mini via 07_Content-Ops/scripts/redescribe-videos.ts (--mini-only, no Studio needed) and sync PACKAGE_MANIFEST.json before 23 Nov 11:30 London; or recover MacBook Studio tab first. 027 upload claim released.",
       "history": [
         {
           "at": "2026-10-26T22:08Z",
@@ -91343,6 +91343,11 @@
           "at": "2026-11-22T23:25Z",
           "by": "codex",
           "what": "J3397 records repair: link existing description handoff to 027/upload; preserve worker, claim, dependency and scope"
+        },
+        {
+          "at": "2026-11-22T23:27Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: MacBook CDP 9223 Studio tab 8A9E2F211C963F35D4B2E8AFFD33B157 renderer stalled after pre-save guard aborted Playwright fill() trailing-newline mismatch (666 vs 665 chars); zero YouTube mutations (OVLv9dxTcpE re-verified untouched at 560 bytes sha256 016c8427). Pre-checks passed: Orbit With Ben UC_esArsDKd3GJvOkeO0DUog, 6bbbvfCx6zY Public live title 'What If Earth Stopped Spinning? (It's Already Slowing Down)', OVLv9dxTcpE Related=6bbbvfCx6zY. Fast path: run description-only prepend on Mini via 07_Content-Ops/scripts/redescribe-videos.ts (--mini-only, no Studio needed) and sync PACKAGE_MANIFEST.json before 23 Nov 11:30 London; or recover MacBook Studio tab first. 027 upload claim released."
         }
       ],
       "kind": "studio",
