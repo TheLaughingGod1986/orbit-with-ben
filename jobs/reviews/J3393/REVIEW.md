@@ -16,3 +16,5 @@ Reviewed evidence:
 Correction: bring the J1272 receipt and comment registry into main; remove the completed stage claim; set upload to blocked with the specific existing J3394 → J0317 handoff rather than orphaned review or all-done. J3393 is complete once that correction is merged. J1272 stays done. J0317 is not reopened by this review.
 
 No audio or moving-video perception claimed; no re-review of the approved cut. No YouTube/Buffer writes, upload, schedule, privacy, title/test change or spend in this task. Existing Chief/Ben approvals, WIP and scheduling are preserved.
+
+Completion validation exposed empty film/stage fields on J0317 despite its OWB:027 display tag. Added film 027 and stage upload to that existing held job; no new job, release or eligibility change. This makes the preserved handoff machine-readable.
