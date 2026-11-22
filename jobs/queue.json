@@ -301664,9 +301664,14 @@
           "at": "2026-11-22T11:18Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-22T11:20Z",
+          "by": "macbook-2",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Auto-open for=X jobs when X has been out >2h (except pin_hard); 30-minute idle alarm naming why ready jobs can't be claimed; tests",
+      "remaining_action": "Inspect relay, implement recovery and idle alarm, verify and open PR",
       "due": "2026-11-24T18:00:00Z",
       "kind": "assembly",
       "plain": "Stop jobs getting stuck behind an agent that's out of usage, and flag when the Mac mini sits idle",
@@ -301674,10 +301679,8 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-22T11:17Z",
-        "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "at": "2026-11-22T11:20Z",
+        "by": "macbook-2"
       }
     }
   ],
