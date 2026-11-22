@@ -302179,10 +302179,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-22T12:22Z",
+      "eta": "2026-11-22T13:22Z",
       "created_by": "claude",
       "created_at": "2026-11-22T12:14Z",
       "result": "",
@@ -302196,6 +302196,11 @@
           "at": "2026-11-22T12:14Z",
           "by": "claude",
           "what": "rerouted to gemini on gemini-argon: Gemini is free on the Mini and covers Studio jobs."
+        },
+        {
+          "at": "2026-11-22T12:22Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Read back every setting on ek9F61FVYqY; upload accurate en-GB captions; AI-voice line + 3 hashtags; pinned question comment; playlist public at 17:00",
@@ -302212,7 +302217,15 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "urgent": 6
+      "urgent": 6,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-22T12:22Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
