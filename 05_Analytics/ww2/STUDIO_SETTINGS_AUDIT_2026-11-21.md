@@ -1,12 +1,12 @@
 # Studio settings audit — Field Order History — 2026-11-21
 
-Updated 2026-11-21 19:43–19:56 UTC (J3320, Gemini acting Chief) after Ben confirmed the Field Order History Studio window (port 9224) was signed in to `UCu94mInMFosxu3W0H6jlI6Q` (`@FieldOrderHistory`). Read and updated via the channel's YouTube Data API login (`YOUTUBE_REFRESH_TOKEN_WW2`) and the signed-in Studio window on port 9224. £0. Neither pilot's schedule, privacy, title, description, thumbnail or video file was changed. Monetisation was not applied.
+Updated 2026-11-21 19:43–19:56 UTC (J3320, Gemini acting Chief) after Ben confirmed the Field Order History Studio window (port 9224) was signed in to `UCu94mInMFosxu3W0H6jlI6Q` (`@FieldOrderHistory`), and read back 2026-11-22 00:04 UTC (`J3335`, Gemini acting Chief). Read and updated via the channel's YouTube Data API login (`YOUTUBE_REFRESH_TOKEN_WW2`) and the signed-in Studio window on port 9224. £0. Neither pilot's schedule, privacy, title, description, thumbnail or video file was changed. Monetisation was not applied.
 
 ## For Ben
 
 - **Country** is already United Kingdom (`GB`). Left unchanged.
-- **Automatic dubbing** is **off** (shows `Enable`). Adds non-English views and watch hours, though dubbed views earn less. Left off; Ben's call.
-- **Third-party AI training** ("Allow third-party companies to train AI models using my channel content") is **off**. Left off; Ben's call.
+- **Automatic dubbing** — **Channel policy (Ben, 21 Nov 2026: off on every channel; revisit after monetisation).** Already **off** (shows `Enable`; read back off 22 Nov 00:04 UTC in `J3335`, unchanged). Matches Orbit With Ben (turned off in `J3335`) and History of Science (off).
+- **Third-party AI training** — **Channel policy (Ben, 21 Nov 2026: off on every channel).** Already **off** (`aria-checked="false"`; read back off 22 Nov 00:04 UTC in `J3335`, unchanged). Matches Orbit With Ben (turned off in `J3335`) and History of Science (off).
 - **Advanced features** (`Channel > Feature eligibility`) shows **Eligible** (Standard and Intermediate are already **Enabled**). Enabling Advanced features requires identity/video verification or channel history (unlocks higher daily upload caps, external links in descriptions, pinned comments, and monetisation eligibility). Identity verification stays with Ben; not urgent for tomorrow's launch.
 - **Video watermark** is not set (`Upload`). Add a 150×150 subscribe watermark once the graphic is ready.
 
@@ -27,11 +27,11 @@ Channel `UCu94mInMFosxu3W0H6jlI6Q`, `@FieldOrderHistory`. Created 18 Nov 2026.
 | Video watermark | Not set (`Upload`) | Add a 150×150 subscribe watermark when art is ready | Growth setting; no image uploaded. | no |
 | Made for kids | No, channel is set as not Made for Kids | Keep | Matches channel rules and both pilots. | no |
 | Automatic captions filter | "Don't show potentially inappropriate words" off | Keep | Keeps auto captions readable (matches Orbit). | no |
-| Automatic dubbing | Off (`Enable` button shown) | Ben's call | Watch hours versus lower-earning dubbed views. Left off. | no |
+| Automatic dubbing | Off (`Enable` button shown; read back off 22 Nov 00:04 UTC, `J3335`) | **Keep Off** (Ben, 21 Nov 2026: off on every channel; revisit after monetisation) | January plan targets English-speaking adults, dubbed views earn less, and unreviewed dubs are a quality risk. Matches OWB & HOS. | no |
 | Interest-based ads | Not disabled | Keep | Do not turn off personalised ads. | no |
 | Clips | Allow viewers to clip my content: On | Keep | Matches Orbit. | no |
 | Video quality enhancements | Visual enhancement On; Audio enhancement On | Keep | Applies to future uploads only (matches Orbit). | no |
-| Third-party AI training | Off | Ben's call | Rights switch; left off. | no |
+| Third-party AI training | Off (`aria-checked="false"`; read back off 22 Nov 00:04 UTC, `J3335`) | **Keep Off** (Ben, 21 Nov 2026: off on every channel) | One policy across OWB, HOS & FOH; no growth effect. | no |
 | Google Ads linking | Not linked | Keep | No ad spend without Ben. | no |
 | Feature eligibility | Standard: Enabled. Intermediate: Enabled (videos >15 min, custom thumbnails, live streaming). Advanced: Eligible (not yet verified). | Ben's call when ready for Advanced verification | Standard + Intermediate cover launch; Advanced verification stays with Ben. | no |
 | Monetisation | Not eligible (data as of 16 Nov 2026: 0/1,000 subscribers, 0/4,000 qualified watch hours in last 365 days, 0/10m Shorts views in last 90 days). | Do not apply | Below thresholds; Apply not clicked. | no |
