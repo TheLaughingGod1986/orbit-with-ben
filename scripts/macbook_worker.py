@@ -445,7 +445,8 @@ def agent_cmd(agent: str, prompt: str, model: str = "") -> list | None:
     if store:  # the brief allows it, so the agent's own sandbox has to as well
         dirs += ["--add-dir", str(store)]
     if agent == "codex":
-        m = ["-m", model] if model.startswith("gpt-") else []
+        # Always a named model, never the Codex CLI default (22 Nov 2026: gpt-6.1-terra hit its own limit; chief_relay)
+        m = ["-m", model if model.startswith("gpt-") else os.environ.get("CODEX_DEFAULT_MODEL", "gpt-6.1-sol")]
         return [b, "exec", *m, "--approve-for-me", "-c", "sandbox_workspace_write.network_access=true", *dirs, prompt]
     if agent == "claude":
         # The prompt goes straight after -p: --add-dir takes a list, so a prompt after it was read as one more folder
