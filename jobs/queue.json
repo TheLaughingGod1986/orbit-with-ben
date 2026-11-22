@@ -302092,13 +302092,13 @@
       "stage": "sources",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-22T12:05Z",
-      "eta": "2026-11-22T14:05Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-22T12:05Z",
-      "result": "",
+      "result": "parked for Chief: primary-source reconciliation recommends FIX on locked S62/C37 and G11 losses (AAF Statistical Digest Table 165 p.261 lists 267 as unsubdivided 'Other Causes'; cited CC5 pp.752-756 lacks 414/147/267 and CC5 Ch.18 p.574 separates unknown causes from operational difficulties); Chief authorisation required for script/VO pickup (Option A ch05 ~2,210 credits or Option B S62 ~216 credits; 4,222 unreserved headroom above 11,000 reserve) and PR #31 merge",
       "history": [
         {
           "at": "2026-11-22T12:05Z",
@@ -302139,6 +302139,11 @@
           "at": "2026-11-22T12:21Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Pushed ww2-channel PR #31 (a8914a7) with C37_RECONCILIATION_v01.md/.json and J3205_HANDOFF_v07.md; notified J3205 on PR #30 (#7079045691) and studio thread"
+        },
+        {
+          "at": "2026-11-22T12:21Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: primary-source reconciliation recommends FIX on locked S62/C37 and G11 losses (AAF Statistical Digest Table 165 p.261 lists 267 as unsubdivided 'Other Causes'; cited CC5 pp.752-756 lacks 414/147/267 and CC5 Ch.18 p.574 separates unknown causes from operational difficulties); Chief authorisation required for script/VO pickup (Option A ch05 ~2,210 credits or Option B S62 ~216 credits; 4,222 unreserved headroom above 11,000 reserve) and PR #31 merge"
         }
       ],
       "remaining_action": "Parked for Chief authorisation of C37/S62 FIX wording, G11 rebuild, and ch05/S62 narration pickup",
