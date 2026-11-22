@@ -300186,13 +300186,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-22T03:26Z",
-      "eta": "2026-11-22T04:26Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-22T03:23Z",
-      "result": "",
+      "result": "Read-only HOS live & scheduled listing check at 2026-11-22T03:29Z-03:31Z: 0 live Studio fixes needed, 0 repo-record deltas remaining on main. 7/7 public longs PASS (5/5 chapter parity across live, description, and repo files; Sources on 004-007; live end screens; AI badges; captions; Education), 35/35 public Shorts PASS (18-26 s, 35/35 live Related pills, AI badges, captions, 8/8 external URLs HTTP 200), 3/3 scheduled videos (el30-mHiH-0, sY0PSQFxjp8, uAomPaOBrM8) Private signed-out; check_all.sh ALL CHECKS PASS. Audit opened in HOS PR #723 (macbook/J3341 -> main) for Chief merge. Nothing changed in Studio/API/Buffer; £0 spend.",
       "history": [
         {
           "at": "2026-11-22T03:23Z",
@@ -300223,6 +300223,11 @@
           "at": "2026-11-22T03:31Z",
           "by": "macbook-2",
           "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-11-22T03:32Z",
+          "by": "macbook-2",
+          "what": "done: Read-only HOS live & scheduled listing check at 2026-11-22T03:29Z-03:31Z: 0 live Studio fixes needed, 0 repo-record deltas remaining on main. 7/7 public longs PASS (5/5 chapter parity across live, description, and repo files; Sources on 004-007; live end screens; AI badges; captions; Education), 35/35 public Shorts PASS (18-26 s, 35/35 live Related pills, AI badges, captions, 8/8 external URLs HTTP 200), 3/3 scheduled videos (el30-mHiH-0, sY0PSQFxjp8, uAomPaOBrM8) Private signed-out; check_all.sh ALL CHECKS PASS. Audit opened in HOS PR #723 (macbook/J3341 -> main) for Chief merge. Nothing changed in Studio/API/Buffer; £0 spend."
         }
       ],
       "remaining_action": "Running check_all.sh, committing audit report on macbook/J3341, pushing PR, and reporting on studio thread",
