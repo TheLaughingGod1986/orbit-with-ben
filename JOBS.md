@@ -65,6 +65,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3347 | mini | claimed | gemini | 2026-11-22T10:40Z | 129 topic · review · HOS 129 How Was the Microwave Invented?: rule-E topic go/no-go review |  |
 | J3348 | any | claimed | macbook | 2026-11-22T09:56Z | script · HOS: learn from our data, add two new films to the backlog |  |
 | J3350 | any | open | – | – | 130 topic · review · HOS 130 How Does a Nuclear Reactor Work?: rule-E topic go/no-go review |  |
+| J3351 | any | open | – | – | 131 topic · review · HOS 131 What Is the Theory of Relativity?: rule-E topic go/no-go review |  |
 
 Recently finished:
 
