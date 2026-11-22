@@ -1,5 +1,5 @@
 {
-  "next_id": 3360,
+  "next_id": 3361,
   "jobs": [
     {
       "id": "J0001",
@@ -302040,6 +302040,35 @@
         "by": "gemini",
         "note": "Captured before/after chief_relay status, cleared codex and verified gpt-6.1-sol (exit 0, OK), kept claudecode down on r"
       }
+    },
+    {
+      "id": "J3360",
+      "title": "WW2 003: reconcile C37 loss categories against original sources",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "Reconcile WW2:003 locked S62 / C37 and G11 losses before the edit uses them. New primary evidence: ww2-channel PR #30 commit 59c5eaa, 07_Edit/C37_PRIMARY_TABLE_v01.json and J3205_HANDOFF_v05.md. Original AAF Statistical Digest table 165 printed p261 scan: https://archive.org/download/ArmyAirForcesStatisticalDigestWorldWarII/page/n281.jpg . Direct image inspection supports 414 very-heavy-bomber combat-mission losses: 147 enemy action, 267 other causes. It does not break the 267 into engine fires, mechanical failures and accidents as the locked narration asserts. Check the original C37 citations (CC5 pp752–756 and USSBS Twentieth Air Force), including category definitions. Record KEEP with precise supporting passage or FIX with exact sourced wording and any required chapter-level narration pickup. Do not spend or change narration in this review. Preserve all existing source, media and credit guards. Update the J3205 handoff and notify the assembly job with the decision. £0. This is a concrete unresolved claims issue, not a new generic review cycle.",
+      "ref": "",
+      "film": "WW2:003",
+      "stage": "sources",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-22T12:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-22T12:05Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "WW2 003: reconcile C37 loss categories against original sources",
+      "kind": "review",
+      "plain": "Check what caused the bomber losses described in the third film"
     }
   ],
   "focus": [
