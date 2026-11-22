@@ -302891,9 +302891,14 @@
           "at": "2026-11-22T13:34Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-22T13:34Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J3368 as specialist worker gemini (Chief: Grok Bot UP); starting fresh condition verification for J2529."
         }
       ],
-      "remaining_action": "Verify readiness: Complete continuous 24-fps moving-video playback review of HOS 013 pass-1 rows 56-62 and 64-66 via J3178 and record elected-Chief KEEP/RETAKE marks before closing",
+      "remaining_action": "Audit J2529/J3178 queue state, desk/PR history, NAS hashes, and session media capabilities",
       "kind": "review",
       "recheck_of": "J2529",
       "mini_only": true,
@@ -302912,12 +302917,14 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-22T13:34Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3368 as specialist worker gemini (Chief: Grok Bot UP); starting fresh condition verification for J2529."
+      },
+      "taskKeys": [
+        "HOS:013"
+      ]
     }
   ],
   "focus": [
