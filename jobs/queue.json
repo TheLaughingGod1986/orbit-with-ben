@@ -289182,6 +289182,11 @@
           "at": "2026-11-22T14:22Z",
           "by": "codex",
           "what": "J3360 FIX ruling PR35: assembly depends on J3371, which depends on J3370; retains existing dependency hold and 18:45Z verification."
+        },
+        {
+          "at": "2026-11-22T15:18Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Wait for corrected narration and loss graphic, then finish assembly and QA",
@@ -289207,7 +289212,8 @@
         "type": "dependency",
         "condition": "J3360 FIX recorded in WW2 PR35. Final assembly requires J3370 verified corrected S62 and S51a narration/source records, then J3371 corrected G11 and cues. Keep existing soundtrack held; preserve archive and QA guards. Release only after both jobs are done with evidence.",
         "check_at": "2026-11-22T18:45:00Z"
-      }
+      },
+      "escalated_at": "2026-11-22T15:18Z"
     },
     {
       "id": "J3206",
