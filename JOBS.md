@@ -56,7 +56,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3270 | any | blocked | macbook | – | script · HOS: learn from our data, add two new films to the backlog |  |
 | J3283 | mini | blocked | macbook-2 | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3289 | mini | blocked | gemini | – | review · Verify condition for J2040 |  |
-| J3295 | mini | open | – | – | review · Verify condition for J1275 |  |
+| J3295 | mini | claimed | gemini | 2026-11-22T02:42Z | review · Verify condition for J1275 |  |
 | J3300 | mini | blocked | gemini | – | review · Verify condition for J3178 |  |
 | J3303 | mini | open | – | – | for codex · review · Packaging panel (codex): J3302 weekly OWB Challenger Bs (T041 Europa 2x EARTH'S WATER, T042 Light Speed YOU AGE SLOWER, T043 Last Star OUTLIVES OUR SUN + Round 2 Title Bs; PR #1118) |  |
 | J3306 | mini | blocked | macbook-2 | – | review · Packaging panel decision: J3302 weekly OWB Challenger Bs (T041 Europa 2x EARTH'S WATER, T042 Light Speed YOU AGE SLOWER, T043 Last Star OUTLIVES OUR SUN + Round 2 Title Bs; PR #1118) |  |

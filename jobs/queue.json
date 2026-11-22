@@ -296534,10 +296534,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-22T00:42Z",
+      "eta": "2026-11-22T02:42Z",
       "created_by": "relay",
       "created_at": "2026-11-21T14:06Z",
       "result": "",
@@ -296591,6 +296591,11 @@
           "at": "2026-11-22T00:42Z",
           "by": "gemini",
           "what": "reopened: Acting Chief (gemini) closing completed J3295 verification after merging OWB PR #1114 (a52ac93c3a) and recording J1275 wait --recheck J3295"
+        },
+        {
+          "at": "2026-11-22T00:42Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief (Grok Bot) to review/merge OWB PR #1114, run jobs.py wait J1275 --recheck J3295 (check-at 2026-11-22T06:00:00Z), and close J3295",
@@ -296610,7 +296615,15 @@
         "HOS:009",
         "HOS:010"
       ],
-      "escalated_at": "2026-11-21T17:35Z"
+      "escalated_at": "2026-11-21T17:35Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-22T00:42Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3296",
