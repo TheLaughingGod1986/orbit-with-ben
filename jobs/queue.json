@@ -179289,9 +179289,14 @@
           "at": "2026-11-22T11:28Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Added honest making-of line to moon_long_description_v01.txt, reconciled production-status.md header + FACT_NOTES provenance, wrote J2036_V03_QA_2026-11-22.md, updated status.json on clean worktree branch gemini/J2036-009-v03-qa"
+        },
+        {
+          "at": "2026-11-22T11:29Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Opened HOS PR #731 (a06e42d3) with J2036 v03 QA pack, making-of line, reconciled production-status.md header, and status.json; check_all.sh ALL CHECKS PASS and lint:package PASS"
         }
       ],
-      "remaining_action": "Verify check_all.sh & lint:package PASS, push HOS PR and confirm CI green, post desk/thread reports, hand off to J2037",
+      "remaining_action": "Confirm HOS PR #731 CI green, post HOS desk and OWB thread reports, close J2036 for J2037 handoff",
       "due": "2026-11-15T18:00:00Z",
       "kind": "qa",
       "taskKeys": [
@@ -179307,11 +179312,11 @@
       "escalated_at": "2026-11-21T01:52Z",
       "open_claim": true,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-22T11:28Z",
+        "at": "2026-11-22T11:29Z",
         "by": "gemini",
-        "note": "Added honest making-of line to moon_long_description_v01.txt, reconciled production-status.md header + FACT_NOTES proven"
+        "note": "Opened HOS PR #731 (a06e42d3) with J2036 v03 QA pack, making-of line, reconciled production-status.md header, and status"
       }
     },
     {
