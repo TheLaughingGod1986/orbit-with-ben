@@ -70,7 +70,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3392 | mini | blocked | gemini | – | review · Verify condition for J3205 |  |
 | J3393 | mini | open | – | – | chief · Chief: resolve 027 upload orphan-review |  |
 | J3395 | mini | blocked | macbook-2 | – | review · Verify condition for J0317 |  |
-| J3396 | mini | open | – | – | chief · Chief: resolve 027 upload orphan-blocked |  |
+| J3396 | mini | claimed | codex | 2026-11-23T00:18Z | chief · Chief: resolve 027 upload orphan-blocked |  |
 
 Recently finished:
 
