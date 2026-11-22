@@ -179279,9 +179279,14 @@
           "at": "2026-11-22T11:20Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J2036; starting independent v03 verification and package completion for HOS 009"
+        },
+        {
+          "at": "2026-11-22T11:25Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Independently re-ran picture_qa (0/92 fail), polish_gate (0/92 fail, 5 warn), music_gate (PASS), sfx_kit level (PASS VO -20.8 / SFX -41.4 LUFS), ebur128 (-20.8 LUFS, 0 silences); visually inspected all 21 v03 stills + 5 low-detail warn frames + Halley/1758/66M cards + thumbs A/B"
         }
       ],
-      "remaining_action": "Verify v03 master hash/gates/cards, inspect stills, update package & docs PR, run lint/CI, hand off to J2037",
+      "remaining_action": "Add making-of line, reconcile production-status.md header, write J2036 v03 QA pack and status.json in clean worktree PR, run lint:package & check_all.sh",
       "due": "2026-11-15T18:00:00Z",
       "kind": "qa",
       "taskKeys": [
@@ -179297,11 +179302,11 @@
       "escalated_at": "2026-11-21T01:52Z",
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-22T11:20Z",
+        "at": "2026-11-22T11:25Z",
         "by": "gemini",
-        "note": "Claimed J2036; starting independent v03 verification and package completion for HOS 009"
+        "note": "Independently re-ran picture_qa (0/92 fail), polish_gate (0/92 fail, 5 warn), music_gate (PASS), sfx_kit level (PASS VO "
       }
     },
     {
