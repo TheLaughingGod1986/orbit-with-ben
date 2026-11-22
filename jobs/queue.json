@@ -305374,13 +305374,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-22T18:40Z",
-      "eta": "2026-11-22T20:40Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-22T18:33Z",
-      "result": "",
+      "result": "parked for Chief: J3391 condition verification complete (PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1189, 739b6d6654, jobs/reviews/J3391/REVIEW.md). Condition UNMET for J3365: prerequisite J3372 remains blocked (mini_only) and its recheck J3384 (due 18:52Z) is still open; PR #1187 (18:20-18:22Z) confirms Mini CDP 9222 HOS Studio tab 492851E5D8095B9CEC05EBB938497368 renderer is still hung. PR #1175 (96fddf7d99) still has 45 null reach rows, unread Willow result (absent from THUMB_LEDGER.json), and 3 null title/test states; PR #1170 (bf6f0fa491) unchanged with blanket VERIFIED frame-0 labels across 37 Short rows (only 3 masters supported), copied cuff text on el30-mHiH-0, and unresolved uAomPaOBrM8 compilation shelf image. Ready for elected Chief to merge PR #1189, record wait --type dependency --recheck J3391 on J3365 (suggested 2026-11-22T20:15:00Z), and close J3391. £0, zero Studio/YouTube/Buffer/NAS writes.",
       "history": [
         {
           "at": "2026-11-22T18:33Z",
@@ -305411,6 +305411,11 @@
           "at": "2026-11-22T18:48Z",
           "by": "macbook-2",
           "what": "step 2 of 3 done: Opened PR #1189 (739b6d6654, jobs/reviews/J3391/REVIEW.md, 13/13 hygiene tests PASS); parking Chief decision on J3365 hold."
+        },
+        {
+          "at": "2026-11-22T18:48Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: J3391 condition verification complete (PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1189, 739b6d6654, jobs/reviews/J3391/REVIEW.md). Condition UNMET for J3365: prerequisite J3372 remains blocked (mini_only) and its recheck J3384 (due 18:52Z) is still open; PR #1187 (18:20-18:22Z) confirms Mini CDP 9222 HOS Studio tab 492851E5D8095B9CEC05EBB938497368 renderer is still hung. PR #1175 (96fddf7d99) still has 45 null reach rows, unread Willow result (absent from THUMB_LEDGER.json), and 3 null title/test states; PR #1170 (bf6f0fa491) unchanged with blanket VERIFIED frame-0 labels across 37 Short rows (only 3 masters supported), copied cuff text on el30-mHiH-0, and unresolved uAomPaOBrM8 compilation shelf image. Ready for elected Chief to merge PR #1189, record wait --type dependency --recheck J3391 on J3365 (suggested 2026-11-22T20:15:00Z), and close J3391. £0, zero Studio/YouTube/Buffer/NAS writes."
         }
       ],
       "remaining_action": "Chief merges PR #1189, records wait --recheck J3391 on J3365 (2026-11-22T20:15:00Z), and closes J3391",
