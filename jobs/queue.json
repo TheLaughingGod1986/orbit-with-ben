@@ -1,5 +1,5 @@
 {
-  "next_id": 3336,
+  "next_id": 3337,
   "jobs": [
     {
       "id": "J0001",
@@ -294196,6 +294196,11 @@
           "at": "2026-11-21T21:53Z",
           "by": "refill",
           "what": "escalated to Chief: parked 18 h"
+        },
+        {
+          "at": "2026-11-22T00:09Z",
+          "by": "relay",
+          "what": "condition verification queued: J3336"
         }
       ],
       "remaining_action": "At 2026-11-22T00:05Z verification, reroute J3270 to gemini on gemini-argon (free neighbours.py/public_search.py) for 22 Nov daily HOS topic run after checking open PRs 120-127",
@@ -294212,7 +294217,8 @@
       "hold": {
         "type": "date",
         "condition": "Next daily HOS topic window (22 Nov 2026): J3245 already completed the 21 Nov daily HOS topic run at 00:44Z (HOS:126/127 in HOS PR #706 & OWB PR #1094, both Rule-E GO in J3263/J3264; 33 topics queued across main + 4 open PR pairs). Hold LIVE until 22 Nov 00:05Z to prevent refill 6h same-day duplicate, then reroute to gemini on gemini-argon using free neighbours.py + public_search.py (£0, 0 vidIQ credits; avoids MacBook Claude WebSearch refusal)",
-        "check_at": "2026-11-22T00:05:00Z"
+        "check_at": "2026-11-22T01:09:12+00:00",
+        "recheck_task": "J3336"
       },
       "escalated_at": "2026-11-21T21:53Z"
     },
@@ -299572,6 +299578,37 @@
         "by": "gemini",
         "note": "PR #1143 merged (7b382e2342) and receipt posted to studio thread."
       }
+    },
+    {
+      "id": "J3336",
+      "title": "Verify condition for J3270",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3270: Next daily HOS topic window (22 Nov 2026): J3245 already completed the 21 Nov daily HOS topic run at 00:44Z (HOS:126/127 in HOS PR #706 & OWB PR #1094, both Rule-E GO in J3263/J3264; 33 topics queued across main + 4 open PR pairs). Hold LIVE until 22 Nov 00:05Z to prevent refill 6h same-day duplicate, then reroute to gemini on gemini-argon using free neighbours.py + public_search.py (£0, 0 vidIQ credits; avoids MacBook Claude WebSearch refusal). Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3270 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-22T00:09Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-22T00:09Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: At 2026-11-22T00:05Z verification, reroute J3270 to gemini on gemini-argon (free neighbours.py/public_search.py) for 22 Nov daily HOS topic run after checking ope",
+      "kind": "review",
+      "recheck_of": "J3270",
+      "due": "2026-11-22T01:09:12+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
