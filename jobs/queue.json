@@ -302796,13 +302796,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-22T14:14Z",
-      "eta": "2026-11-22T16:14Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-22T12:52Z",
-      "result": "",
+      "result": "KEEP: PR 1172 merged with jobs/reviews/J3366/REVIEW.md. Full approved video/cover hashes match; fresh 14:13Z API confirms 71tXqugE-AI private for 2026-12-03T11:30:00Z, en-GB captions serving, not made for kids; Studio Related/cover evidence accepted; strict gate PASS using registered id. No upload or schedule change in review. Follow-up: daily Buffer check owns approved-cut mirror after window opens 2026-11-26T11:30Z; first normal eligible run 2026-11-27T07:05Z, same publish time. No blockers; no other holds changed.",
       "history": [
         {
           "at": "2026-11-22T12:52Z",
@@ -302863,6 +302863,11 @@
           "at": "2026-11-22T14:14Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-22T14:15Z",
+          "by": "codex",
+          "what": "done: KEEP: PR 1172 merged with jobs/reviews/J3366/REVIEW.md. Full approved video/cover hashes match; fresh 14:13Z API confirms 71tXqugE-AI private for 2026-12-03T11:30:00Z, en-GB captions serving, not made for kids; Studio Related/cover evidence accepted; strict gate PASS using registered id. No upload or schedule change in review. Follow-up: daily Buffer check owns approved-cut mirror after window opens 2026-11-26T11:30Z; first normal eligible run 2026-11-27T07:05Z, same publish time. No blockers; no other holds changed."
         }
       ],
       "remaining_action": "Parked for Chief merge of PR #1172",
@@ -302896,7 +302901,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1172"
     },
     {
       "id": "J3367",
