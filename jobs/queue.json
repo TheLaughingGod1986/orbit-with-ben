@@ -1,5 +1,5 @@
 {
-  "next_id": 3363,
+  "next_id": 3364,
   "jobs": [
     {
       "id": "J0001",
@@ -302272,6 +302272,11 @@
           "at": "2026-11-22T12:34Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-22T17:02:00Z"
+        },
+        {
+          "at": "2026-11-22T12:39Z",
+          "by": "claude",
+          "what": "Thumbnail may be replaced by J3363 before 15:30 (Ben: white text on white). In step 1, check the thumbnail matches whatever J3363 set and recorded, not B v01."
         }
       ],
       "remaining_action": "At 17:02Z: confirm ek9F61FVYqY is Public, post and pin first comment in Studio 9224, make playlist PLPPi-oWEDYtA Public and read back, update ww2-channel PR #32 (awaits Chief merge)",
@@ -302371,6 +302376,51 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J3363",
+      "title": "Field Order History pilot 1 thumbnail: fix white-on-white text before 17:00 (B v02 high-contrast vs A no-text, pick at phone size, set it)",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why (Ben, 22 Nov ~12:35 London, in chat, looking at pilot 1's thumbnail in Studio: \"I think it's white text on a white background\").** Pilot 1 `ek9F61FVYqY` goes public today 17:00 London with thumbnail B \"FLOATING PORT\" (10_Thumbnail/ww2_001_thumb_B_floating_port_v01.jpg, IWM BU 1024 aerial). The white letters sit on the bright sky and sea of the photo, so at phone size they wash out. The channel's own outlier study (00_Brand/PLAYBOOK.md item 3: real black-and-white archive photo 10 to 4, no text 8 to 4, dark grade 2 to 10) favours a bright real photo with little or no text, and the packaging decision kept A (archive only) as the alternative.\n\n**Do, by 15:30 London:**\n1. Make B v02 from the same crop of BU 1024: \"FLOATING PORT\" at least 40% larger, in white on a solid dark band or box (or yellow on dark), placed over the photo's darkest area, with a 2-3 px dark outline; keep the photo itself bright (no dark grade); no invented detail, no arrow; 1280x720 JPEG under 2 MB.\n2. Put A (archive only, 10_Thumbnail/ww2_001_thumb_A_archive_v01.jpg), B v01 and B v02 side by side at 168x94 and 320x180 on both a white and a dark YouTube background, and look at them (save the sheet). Pick the one where the subject (a floating harbour) reads instantly at 168x94; text that is not legible at that size loses to no text. Write the pick and why in 03_Picture/PACKAGING_DECISION_v03.md.\n3. Set the pick on `ek9F61FVYqY` with Field Order History's login (thumbnails.set), read it back, and update metadata_v43.json `thumbnail`. One ww2-channel PR (merge as acting Chief) and one line on the thread.\n4. The 48-hour read (Tuesday ~17:00) decides again: with over 1,000 impressions and click-through under 3%, swap to the other candidate (PLAYBOOK item 6).\n\n**Guards.** Same real photo, honest framing (it is a September 1944 aerial; do not imply D-Day). Title, file, schedule unchanged. £0. If no candidate beats B v01 at 168x94, say so and keep v01.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-22T12:39Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-22T12:39Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-22T12:39Z",
+          "by": "claude",
+          "what": "opened to any worker in its chain (preferred gemini): Open to the first free capable worker; Codex is the thumb lead once it is back."
+        }
+      ],
+      "remaining_action": "Make B v02 (big text on dark band), compare A/B v01/B v02 at 168x94 on light and dark, set the clearest on ek9F61FVYqY, record",
+      "due": "2026-11-22T15:30:00Z",
+      "kind": "thumb",
+      "mini_only": true,
+      "plain": "Make tonight's Field Order History thumbnail readable on a phone (Ben spotted white text on a white background)",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true,
+      "urgent": 7
     }
   ],
   "focus": [
