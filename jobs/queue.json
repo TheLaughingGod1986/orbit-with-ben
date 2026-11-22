@@ -304367,13 +304367,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-22T14:43Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-22T14:28Z",
-      "result": "Waiting for: Mini existing HOS Studio renderer must answer a bounded text or DOM read. On 22 Nov 14:46Z browser endpoint and target attach worked, but text, DOM, screenshot and navigation timed out. PR #1175 records unknown values; no credential prompt observed. Finish exact-window reach, Willow and three title/test reads before J3365 final pass.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-22T14:28Z",
@@ -304429,31 +304429,20 @@
           "at": "2026-11-22T22:36Z",
           "by": "codex",
           "what": "remaining action: Read missing HOS audit figures on approved Mini Studio port 9460; follow J3384 ruling in job history and preserve all tests"
+        },
+        {
+          "at": "2026-11-22T22:36Z",
+          "by": "codex",
+          "what": "reopened: J3384 Chief ruling: Option A APPROVED. PR1191 merged at reviewed head 05795cf227. Fresh 22 Nov 22:34Z Runtime.evaluate on existing dedicated HOS Studio port 9460 answered in 0.148s; subsequent read confirmed channel/content links to UCXp7HkBIl1LgaznXuZHJyRg and authenticated analytics, no login prompt. This explicitly replaces the J3372 brief requirement to use 9222 for this task only. Use 9460 and reuse_page on the existing Studio tab; verify HOS identity before reads. Leave hung 9222 and all attached tests untouched. Reopen for exact 25 Oct-21 Nov reach, Willow finished-test report and three current-title/test reads; unavailable metrics remain unknown. No Save, Continue, title/test/privacy/schedule writes, spend or upload. This clears only the browser-input hold; J3365 audit remains unpassed until evidence collection and its review. No external wait remains."
         }
       ],
       "remaining_action": "Read missing HOS audit figures on approved Mini Studio port 9460; follow J3384 ruling in job history and preserve all tests",
       "kind": "studio",
       "plain": "Reading the missing thumbnail results for the History of Science audit",
       "mini_only": true,
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-22T14:49Z",
-        "by": "codex",
-        "note": "Diagnostic evidence committed and JSON checked: PR #1175; J3365 audit PR #1170 comment 7080824133 links it. Requested St"
-      },
       "taskKeys": [
         "HOS:006"
-      ],
-      "hold": {
-        "type": "input",
-        "condition": "Existing Mini HOS Studio renderer must answer a bounded text or DOM read. Gemini 15:43Z confirmed browser attach succeeds but renderer reads time out; PR1175 leaves required figures unknown. Next verification may try one bounded reload of the existing Studio tab after checking no active writer; never close Chrome, create duplicate tabs, alter tests or save changes. If still unresponsive retain hold and report exact failure.",
-        "check_at": "2026-11-22T18:52:57+00:00",
-        "last_recheck": "J3373",
-        "checked_at": "2026-11-22T15:50:16+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3384"
-      }
+      ]
     },
     {
       "id": "J3373",
