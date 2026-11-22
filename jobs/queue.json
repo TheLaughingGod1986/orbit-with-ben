@@ -1,5 +1,5 @@
 {
-  "next_id": 3359,
+  "next_id": 3360,
   "jobs": [
     {
       "id": "J0001",
@@ -301943,6 +301943,52 @@
       "taskKeys": [
         "HOS:005"
       ]
+    },
+    {
+      "id": "J3359",
+      "title": "Bring Codex and Claude Code back on the Mini: clear Codex's stale terra limit mark (Ben: 94% left), check Claude Code, status before/after",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Why (Ben, 22 Nov 11:47 London, screenshot of his Codex usage page: weekly limit 94% remaining, resets Fri 16:26; \"Lots left on codex, I'll let you recommend and implement the best solution\").** The Mini's heartbeat shows Codex \"marked down: codex exec on gpt-6.1-terra returned a usage limit and said try again at Nov 24th, 2026 11:26 PM\". That limit belonged to one model (terra, the Codex CLI's own default), not Ben's weekly allowance. PR \"Codex always runs on a named model\" makes every Codex run pass -m gpt-6.1-sol. Ben also handed Claude the decision on Claude Code on the Mini: the pacing check shows the Claude plan heading for leftovers, so it should work between the Chief's four runs.\n\n**Do, on the Mini, now:**\n1. `python3 scripts/chief_relay.py status` and paste each worker's up/why (cursor, codex, gemini, claudecode).\n2. `python3 scripts/chief_relay.py up codex`. Then one tiny check: `codex exec -m gpt-6.1-sol --approve-for-me \"reply OK\"` exits 0. If it says usage limit, put the mark back with its time and report; do not run terra.\n3. Claude Code on the Mini (`claudecode`): if it is marked down or refused, report why. If the only reason is the Chief's \"four runs a day to save usage\" schedule, clear its mark (`chief_relay.py up claudecode`) so it takes work between the Chief's runs. A real usage-limit message stays.\n4. `git pull` once the Codex PR is on main so the relay runs the new code; run `chief_relay.py status` again and paste it.\n5. One receipt on the thread. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 15,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-22T11:56Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-22T11:56Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-22T11:56Z",
+          "by": "claude",
+          "what": "rerouted to gemini on gemini-argon: Gemini is the only free Mini lane right now."
+        }
+      ],
+      "remaining_action": "chief_relay status; up codex and a one-line codex -m gpt-6.1-sol check; clear claudecode's schedule-only mark; status again; receipt",
+      "due": "2026-11-22T13:00:00Z",
+      "kind": "assembly",
+      "mini_only": true,
+      "plain": "Get Codex and Claude Code working again on the Mac mini (Codex has 94% of its weekly allowance left)",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon",
+      "urgent": 5
     }
   ],
   "focus": [
