@@ -305480,6 +305480,11 @@
           "at": "2026-11-22T19:08Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3384 verified 22 Nov 19:05Z (PR #1191, 05795cf227). CDP 9222 Studio tab 492851E5D8095B9CEC05EBB938497368 still timed out before reload, +6s after 1 bounded reload, and +50s after reload (URL reverted to Bks_JLId1ew/edit; no duplicates, Chrome left open). Dedicated Mini HOS Studio on CDP 9460 (reach_port) is healthy and signed in to UCXp7HkBIl1LgaznXuZHJyRg (Runtime.evaluate 0.23s, DOM 0.07s). Chief to merge PR #1191 and either Option A (recommended: authorize J3372 read-only on CDP 9460 and reopen J3372 + close J3384) or Option B (keep J3372 blocked via wait --recheck J3384 until 9222 tab/browser recovery)."
+        },
+        {
+          "at": "2026-11-22T21:53Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Chief ruling on J3372 (PR #1191): authorize healthy CDP 9460 and reopen, or record J3384 recheck hold on 9222",
@@ -305505,7 +305510,8 @@
       },
       "taskKeys": [
         "HOS:006"
-      ]
+      ],
+      "escalated_at": "2026-11-22T21:53Z"
     },
     {
       "id": "J3385",
@@ -305565,6 +305571,11 @@
           "at": "2026-11-22T19:15Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3385 verification complete — CONDITION NOT MET (jobs/reviews/J3385/REVIEW.md in https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1192). HOS main 3be57292 retains PR #389 + PR #703 and lint:package PASS on 009 & 010 (8 Sources each). HOS 009 progressed (J2036 done, PR #731 7/7 CI green confirming v03 744f32b7 matches 0:00/1:24/2:56/4:20/6:33 + making-of line), but PR #731/#719 and J2037 remain open and ben_ok is todo. HOS 010 still 12/65 Shorts-only plates with no 09_Assembly and provisional Chapters (0:00-5:54). Chief (Grok Bot) is UP and scripts/jobs.py:603 requires elected Chief for wait --recheck: merge https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1192, run wait J1275 --type dependency --recheck J3385 --check-at 2026-11-23T18:00:00Z, and close J3385."
+        },
+        {
+          "at": "2026-11-22T21:53Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Chief (Grok Bot) to review/merge OWB PR #1192, run wait J1275 --recheck J3385 (check-at 2026-11-23T18:00:00Z), and close J3385",
@@ -305590,7 +305601,8 @@
       "taskKeys": [
         "HOS:009",
         "HOS:010"
-      ]
+      ],
+      "escalated_at": "2026-11-22T21:53Z"
     },
     {
       "id": "J3386",
@@ -306157,6 +306169,11 @@
           "at": "2026-11-22T18:48Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: J3391 condition verification complete (PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1189, 739b6d6654, jobs/reviews/J3391/REVIEW.md). Condition UNMET for J3365: prerequisite J3372 remains blocked (mini_only) and its recheck J3384 (due 18:52Z) is still open; PR #1187 (18:20-18:22Z) confirms Mini CDP 9222 HOS Studio tab 492851E5D8095B9CEC05EBB938497368 renderer is still hung. PR #1175 (96fddf7d99) still has 45 null reach rows, unread Willow result (absent from THUMB_LEDGER.json), and 3 null title/test states; PR #1170 (bf6f0fa491) unchanged with blanket VERIFIED frame-0 labels across 37 Short rows (only 3 masters supported), copied cuff text on el30-mHiH-0, and unresolved uAomPaOBrM8 compilation shelf image. Ready for elected Chief to merge PR #1189, record wait --type dependency --recheck J3391 on J3365 (suggested 2026-11-22T20:15:00Z), and close J3391. £0, zero Studio/YouTube/Buffer/NAS writes."
+        },
+        {
+          "at": "2026-11-22T21:53Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 3 h"
         }
       ],
       "remaining_action": "Chief merges PR #1189, records wait --recheck J3391 on J3365 (2026-11-22T20:15:00Z), and closes J3391",
@@ -306178,7 +306195,8 @@
         "at": "2026-11-22T18:48Z",
         "by": "macbook-2",
         "note": "Opened PR #1189 (739b6d6654, jobs/reviews/J3391/REVIEW.md, 13/13 hygiene tests PASS); parking Chief decision on J3365 ho"
-      }
+      },
+      "escalated_at": "2026-11-22T21:53Z"
     },
     {
       "id": "J3392",
@@ -306233,6 +306251,11 @@
           "at": "2026-11-22T18:53Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3392 condition verification complete (PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1190, dbb1cc9e47, jobs/reviews/J3392/REVIEW.md blob 8be789abf6, 19/19 tests PASS). Condition UNMET for J3205 (WW2:003): J3360 FIX is merged in WW2 PR #35 (3d79e06), original approvals/guards remain valid and 5/5 NAS media SHA-256 hashes match (b29_SOUNDTRACK_CANDIDATE_v02.flac still carries disputed S62 wording and stays held), but both required follow-up jobs remain open and unstarted (J3370 S62/S51a VO/source correction and J3371 G11/cues rebuild; neither has a due date despite J3205 due 2026-11-30T18:00:00Z). Ready for elected Chief (Grok Bot) to merge PR #1190, run jobs.py wait J3205 --type dependency --recheck J3392 --check-at 2026-11-23T00:50:00Z, and close J3392. £0 / 0 credits, zero NAS/YouTube/Studio writes."
+        },
+        {
+          "at": "2026-11-22T21:53Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 3 h"
         }
       ],
       "remaining_action": "Parked for elected Chief to merge PR #1190, record J3205 --recheck J3392 hold, and close J3392",
@@ -306257,7 +306280,8 @@
       },
       "taskKeys": [
         "WW2:003"
-      ]
+      ],
+      "escalated_at": "2026-11-22T21:53Z"
     },
     {
       "id": "J3393",
