@@ -306952,9 +306952,14 @@
           "at": "2026-11-22T23:26Z",
           "by": "codex",
           "what": "step 2 of 3 done: PR 1199 receipt accepted; minimal J0996 link fix passes 26 tests and completion guard beyond lease expiry"
+        },
+        {
+          "at": "2026-11-22T23:27Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Merged PRs 1199 and 1200; J0996 preserved and linked; J3399 owns read-only schedule discrepancy review after J0996; completion guard passes on main"
         }
       ],
-      "remaining_action": "Merge the records correction and queue the separate schedule-state review",
+      "remaining_action": "Records repair verified; existing description work and linked schedule review own the remaining actions",
       "kind": "chief",
       "handoff": {
         "film": "027",
@@ -306963,11 +306968,11 @@
         "signature": "6c6138fa6198235eb81c"
       },
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-22T23:26Z",
+        "at": "2026-11-22T23:27Z",
         "by": "codex",
-        "note": "PR 1199 receipt accepted; minimal J0996 link fix passes 26 tests and completion guard beyond lease expiry"
+        "note": "Merged PRs 1199 and 1200; J0996 preserved and linked; J3399 owns read-only schedule discrepancy review after J0996; comp"
       },
       "taskKeys": [
         "OWB:027"
