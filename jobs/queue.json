@@ -305239,10 +305239,10 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-22T21:14Z",
-      "eta": "2026-11-22T21:34Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-22T17:39Z",
       "result": "",
@@ -305306,6 +305306,11 @@
           "at": "2026-11-22T21:18Z",
           "by": "codex",
           "what": "step 2 of 3 done: Verdict AHEAD; no setup faults. Recorded actual late observation time and explained that the 6h label is the requested checkpoint, not historic six-hour data."
+        },
+        {
+          "at": "2026-11-22T21:20Z",
+          "by": "codex",
+          "what": "released: Check and judge saved locally in commit 00ecd2ea20, branch codex/J3383-first-day, worktree /Volumes/MiniWork/scratch/J3383-record. Automatic approval review rejected public export of Studio analytics/evidence twice; requires explicit public-disclosure approval. No payload pushed. Step 2/3; finish by publishing local record and report after approval, without recollecting metrics."
         }
       ],
       "remaining_action": "Saving the first-day check and posting the HOS report",
