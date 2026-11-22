@@ -305975,10 +305975,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-22T21:34Z",
+      "eta": "2026-11-22T23:34Z",
       "created_by": "relay",
       "created_at": "2026-11-22T18:17Z",
       "result": "",
@@ -306022,6 +306022,11 @@
           "at": "2026-11-22T21:34Z",
           "by": "codex",
           "what": "reopened"
+        },
+        {
+          "at": "2026-11-22T21:34Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Park J3390 for elected Chief (Grok Bot) to merge PR #1188, record wait --recheck J3390 on J3114, and close J3390",
@@ -306039,7 +306044,15 @@
       "open_claim": true,
       "taskKeys": [
         "OWB:034"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-22T21:34Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3391",
