@@ -64,6 +64,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3375 | mini | blocked | gemini | – | review · Verify condition for J3178 |  |
 | J3391 | mini | blocked | macbook-2 | – | review · Verify condition for J3365 |  |
 | J3392 | mini | blocked | gemini | – | review · Verify condition for J3205 |  |
+| J3397 | mini | open | – | – | chief · Chief: resolve 027 upload orphan-review |  |
 
 Recently finished:
 
