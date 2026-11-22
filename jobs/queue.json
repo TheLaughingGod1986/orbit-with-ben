@@ -303269,13 +303269,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-22T14:43Z",
-      "eta": "2026-11-22T15:03Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-22T14:28Z",
-      "result": "",
+      "result": "Waiting for: Mini existing HOS Studio renderer must answer a bounded text or DOM read. On 22 Nov 14:46Z browser endpoint and target attach worked, but text, DOM, screenshot and navigation timed out. PR #1175 records unknown values; no credential prompt observed. Finish exact-window reach, Willow and three title/test reads before J3365 final pass.",
       "history": [
         {
           "at": "2026-11-22T14:28Z",
@@ -303301,9 +303301,19 @@
           "at": "2026-11-22T14:49Z",
           "by": "codex",
           "what": "step 1 of 3 done: Diagnostic evidence committed and JSON checked: PR #1175; J3365 audit PR #1170 comment 7080824133 links it. Requested Studio data remains unread."
+        },
+        {
+          "at": "2026-11-22T14:49Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: Mini existing HOS Studio renderer must answer a bounded text or DOM read. On 22 Nov 14:46Z browser endpoint and target attach worked, but text, DOM, screenshot and navigation timed out. PR #1175 records unknown values; no credential prompt observed. Finish exact-window reach, Willow and three title/test reads before J3365 final pass."
+        },
+        {
+          "at": "2026-11-22T14:49Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-22T15:25:00Z"
         }
       ],
-      "remaining_action": "Complete the exact reach, Willow result and current title reads when Studio responds",
+      "remaining_action": "Read HOS reach and test results after the existing Studio tab responds",
       "kind": "studio",
       "plain": "Reading the missing thumbnail results for the History of Science audit",
       "mini_only": true,
@@ -303316,7 +303326,12 @@
       },
       "taskKeys": [
         "HOS:006"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "Mini existing HOS Studio renderer must answer a bounded text or DOM read. On 22 Nov 14:46Z browser endpoint and target attach worked, but text, DOM, screenshot and navigation timed out. PR #1175 records unknown values; no credential prompt observed. Finish exact-window reach, Willow and three title/test reads before J3365 final pass.",
+        "check_at": "2026-11-22T15:25:00Z"
+      }
     }
   ],
   "focus": [
