@@ -304057,13 +304057,26 @@
           "at": "2026-11-22T16:41Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-22T16:41Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-22T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Verify readiness: Read codex.md (or decide with gemini.md + cursor.md after 2026-11-22T16:37Z), write DECISION.md, post 3-line summary on #954, and queue any build/Studio jobs",
       "kind": "review",
       "recheck_of": "J3306",
       "due": "2026-11-22T17:41:34+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
