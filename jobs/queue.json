@@ -286628,6 +286628,11 @@
           "at": "2026-11-22T08:01Z",
           "by": "relay",
           "what": "condition verification queued: J3345"
+        },
+        {
+          "at": "2026-11-22T08:18Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-22T14:15:00Z"
         }
       ],
       "remaining_action": "Review ten unresolved HOS 013 pass-1 plates (rows 56-62, 64-66) in a session with demonstrated continuous 24-fps moving_video_input playback and return to elected Chief for per-row marks",
@@ -286657,15 +286662,14 @@
       ],
       "hold": {
         "type": "capability",
-        "condition": "J3300 acting-Chief ruling (PR #1150 merged, commit 08d5125844, jobs/reviews/J3300/REVIEW.md): condition unmet. Direct read_file probe on NAS row 58 (P05_10_darwin_worried_shelf_t1.mp4) in agy 1.5.14 on Gemini 4 Neon High still returns 8 discrete 1-fps static JPEG frames (00:00..00:07; Darwin whole at 00:03 and absent at 00:04, missing 3.833-4.250s exit), not continuous 24-fps moving-video playback (audio_input and image_input demonstrated; relay 00:55:20Z 2-second colour-block probe false-positives from 1-fps stills). Cursor (weekly usage limit) and Claude Code (Fable limit Nov 25) have available=[]; Codex is down until 2026-11-24T23:26:00Z; Claude returns 2026-11-22T07:50:00Z; Grok Bot retry 2026-11-22T09:29:34Z. Freshly verified 11/11 Batch 12-14 NAS SHA-256 hashes match REVIEW_STATE.json and BATCH_12-14 receipts; REVIEW_STATE.json preserves 48 KEEP / 8 RETAKE (3,10,24,28,47,49,54,63) / 10 unset; no new 013 marks on HOS #180/#694, OWB #954, or open PRs. Keep J3178 held pending continuous 24-fps moving_video_input review of rows 56-62, 64-66; no playback PASS claimed, no minting or assembly authorised.",
-        "check_at": "2026-11-22T09:01:39+00:00",
+        "condition": "J3345 acting-Chief ruling (PR #1154 merged, commit fdda76b651, ruling 8f62423d49, jobs/reviews/J3345/REVIEW.md): condition unmet. Direct read_file probe on NAS row 58 (P05_10_darwin_worried_shelf_t1.mp4) in agy 1.5.14 on Gemini 4 Neon (High) still returns 8 discrete 1-fps static JPEG frames (00:00..00:07; Darwin whole at 00:03 and absent at 00:04, missing 3.833-4.250s exit), not continuous 24-fps moving-video playback (audio_input and image_input demonstrated; relay 07:21:18Z 2-second colour-block probe false-positives from 1-fps stills). Cursor (weekly usage limit), Claude Code (Fable limit Nov 25), and Codex (usage limit 2026-11-24T23:26:00Z) have available=[]; Claude returns 2026-11-22T12:50:00Z (cloud-only); Grok Bot retry 2026-11-22T09:29:34Z. Freshly verified 11/11 Batch 12-14 NAS SHA-256 hashes match REVIEW_STATE.json and BATCH_12-14 receipts; REVIEW_STATE.json preserves 48 KEEP / 8 RETAKE (3,10,24,28,47,49,54,63) / 10 unset; no new 013 marks on HOS #180/#694, OWB #954, or open PRs. Keep J3178 held pending continuous 24-fps moving_video_input review of rows 56-62, 64-66; no playback PASS claimed, no minting or assembly authorised.",
+        "check_at": "2026-11-22T14:15:00Z",
         "requires": [
           "moving_video_input"
         ],
-        "last_recheck": "J3300",
-        "checked_at": "2026-11-22T01:51:51+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3345"
+        "last_recheck": "J3345",
+        "checked_at": "2026-11-22T08:18:18+00:00",
+        "checked_by": "gemini"
       }
     },
     {
