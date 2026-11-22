@@ -1,5 +1,5 @@
 {
-  "next_id": 3364,
+  "next_id": 3365,
   "jobs": [
     {
       "id": "J0001",
@@ -270556,6 +270556,11 @@
           "at": "2026-11-20T22:13Z",
           "by": "cursor",
           "what": "done: done"
+        },
+        {
+          "at": "2026-11-22T12:46Z",
+          "by": "claude",
+          "what": "Ben 22 Nov: pilot 2 v05 is graphics-only; archive upgrade to v06 queued as J3364; airs Wed 25 Nov only if v06 is OK'd in time, else Sat 28 Nov."
         }
       ],
       "remaining_action": "Ben watches the Atlantic film",
@@ -298808,6 +298813,11 @@
           "at": "2026-11-21T19:14Z",
           "by": "gemini",
           "what": "done: Both Field Order History pilots brought forward via YouTube Data API (YOUTUBE_REFRESH_TOKEN_WW2, UCu94mInMFosxu3W0H6jlI6Q) and verified on read-back: ek9F61FVYqY Private publishAt 2026-11-22T17:00:00Z (Sun 22 Nov 17:00 London), J9WGu8aPnHI Private publishAt 2026-11-25T17:00:00Z (Wed 25 Nov 17:00 London); titles, descriptions, thumbnails, privacy and all other status flags unchanged. Records updated and merged as acting Chief: OWB PR #1123 (studio/plan.json) and ww2-channel PR #27 + #28 (status.json, metadata_v43.json, 00_Brand/Channel-Setup/social/UPLOADS.json, studio/channel.json); films 003-006 unchanged (1, 5, 8, 12 Dec). Board push c37425c3 verified showing Sun 22 Nov 17:00 GMT and Wed 25 Nov 17:00 GMT. Confirmed launch_check (6h/48h + 48h/7d autopsies, CDP 9224) and field-order-dispatch/analytics-snapshot key off the new publish times. Receipt posted on studio thread. £0 spend."
+        },
+        {
+          "at": "2026-11-22T12:46Z",
+          "by": "claude",
+          "what": "Ben 22 Nov: pilot 2 v05 is graphics-only; archive upgrade to v06 queued as J3364; airs Wed 25 Nov only if v06 is OK'd in time, else Sat 28 Nov."
         }
       ],
       "remaining_action": "Done: close J3318",
@@ -302474,6 +302484,50 @@
       "taskKeys": [
         "WW2:001"
       ]
+    },
+    {
+      "id": "J3364",
+      "title": "Field Order History pilot 2: add the planned archive photos (~65%) to the graphics-only cut, v06 to Ben's watch by Tue 20:00 (else move to Sat 28 Nov)",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Ben's decision (22 Nov 2026 ~12:50 London, in chat: \"Yes please\").** Ben noticed Field Order History pilot 2 (\"How the Allies Closed the U-Boats' Safest Hunting Ground\", uploaded Private as `J9WGu8aPnHI`, scheduled Wed 25 Nov 17:00 London) has no archive images, only our own graphics. Its PILOT_PLAN.md picture plan called for ~65% US/UK official archive stills (~165 cuts: IWM Coastal Command CH and Admiralty A series - VLR Liberators at Reykjavik and Ballykelly, Flower-class corvettes in Atlantic seas, Type 271 radar, the Western Approaches plotting room in Liverpool - and US NARA/NHHC RG 80-G: USS Bogue, TBF Avenger depth-charge runs, Hedgehog) and ~35% code-drawn maps and diagrams. Ben approved v05 without knowing whether graphics-only was good; Claude advised it is a production gap, not a style choice, and that real archive imagery is the genre's trust signal and the playbook's (00_Brand/PLAYBOOK.md item 3).\n\n**Do (checkpoint and release at each 25-minute cap; never lose work):**\n1. VERIFY: read the v05 edit timeline and list how many shots are archive vs our graphics. If archive is already ~65%, stop and report (Ben may have seen an early part only).\n2. HARVEST: the archive stills the script's 247 sentence-level picture instructions and the picture plan name, from public-domain or Crown-expired sources only, cleared exactly as pilot 1 was (the Chief's 18 Nov Commons ruling; archive_cleared json; ARCHIVE_PROVENANCE.md with photographer, date, URL). Never a modern photo, a reenactment, a generated image passed off as archive, or a photo of a different ship/plane/date than the sentence names.\n3. RE-EDIT to v06: put archive stills on the sentences that name real people, places, ships and aircraft; keep the maps and diagrams where they explain (range rings, HF/DF, radar, ONS 5 plot, tonnage crossover). Target ~65/35. SAME narration file (no new ElevenLabs), same score, same length and chapter times. Gentle moves on stills; no dark grade.\n4. GATES: picture_qa, polish_gate, music_gate and the channel's blocking gates; QA_REPORT_v06; description image credits rebuilt from the used archive ids (same format as pilot 1).\n5. BEN'S WATCH: stage the exact v06 (sha256) on the board as a watch card by **Tue 24 Nov 20:00 London**, note what changed (archive added; words, voice and maps unchanged).\n6. IF NOT ON THE BOARD BY TUE 20:00: move `J9WGu8aPnHI` to Sat 28 Nov 17:00 London (publishAt only, Field Order History login, read back), update plan/status/board, and keep going; the deadline for Ben's watch then becomes Fri 27 Nov 20:00. Never air graphics-only v05 without a new word from Ben.\n7. AFTER BEN'S OK: upload v06 as a new Private video scheduled for the slot, with the approved title, updated description (credits), the same thumbnail, en-GB captions, end screen, playlist PLPPi-oWEDYtA position 1 and pinned question comment; then clear the schedule on `J9WGu8aPnHI` (stays Private, never deleted). Read everything back; records; one thread receipt.\n\n**Guards.** £0 (public-domain archive only). No new narration. Title unchanged. Two Field Order History films never on one day.",
+      "ref": "",
+      "film": "002",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 240,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-22T12:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-22T12:46Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-22T12:46Z",
+          "by": "claude",
+          "what": "opened to any worker in its chain (preferred gemini): Open to the first free capable worker (Codex, Cursor on Grok, Gemini, MacBooks with the NAS)."
+        }
+      ],
+      "remaining_action": "Verify archive share in v05; harvest cleared PD archive per the picture plan; re-edit v06 (same VO/score); gates; Ben watch card by Tue 20:00",
+      "due": "2026-11-24T20:00:00Z",
+      "kind": "assembly",
+      "plain": "Add the real WW2 archive photos that were planned for the second Field Order History film, then Ben re-watches",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true,
+      "urgent": 8
     }
   ],
   "focus": [
