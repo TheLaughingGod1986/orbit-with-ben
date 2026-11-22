@@ -304120,9 +304120,14 @@
           "at": "2026-11-22T16:46Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-22T16:51Z",
+          "by": "macbook-2",
+          "what": "step 1 of 3 done: Verified J3306 condition PROVEN MET (J3303 done + codex.md b4d66a32fc on main + 24h fallback 16:37Z passed; PR #1118 and 9/9 NAS SHA-256s intact)"
         }
       ],
-      "remaining_action": "Verify readiness: Read codex.md (or decide with gemini.md + cursor.md after 2026-11-22T16:37Z), write DECISION.md, post 3-line summary on #954, and queue any build/Studio jobs",
+      "remaining_action": "Write jobs/reviews/J3377/REVIEW.md, open PR, park for elected Chief to reopen J3306 & close J3377",
       "kind": "review",
       "recheck_of": "J3306",
       "due": "2026-11-22T17:41:34+00:00",
@@ -304136,12 +304141,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-22T16:45Z",
+        "at": "2026-11-22T16:51Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "note": "Verified J3306 condition PROVEN MET (J3303 done + codex.md b4d66a32fc on main + 24h fallback 16:37Z passed; PR #1118 and"
       }
     }
   ],
