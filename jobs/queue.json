@@ -306628,13 +306628,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-22T22:54Z",
-      "eta": "2026-11-23T00:54Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-22T21:53Z",
-      "result": "",
+      "result": "Chief ruling: CONDITION MET on MacBook only. Evidence PRs 1195/1196 and ruling/routing PR 1198 merged. J0317 reopened needs=macbook, due 2026-11-23T10:30:00Z, after completed J3394. Worker must freshly verify long Public and save/reload both authorized Related links; upload remains incomplete pending receipt. Original approvals and exclusions preserved. 13 hygiene tests and routing/hash assertions PASS. No YouTube changes or spend.",
       "history": [
         {
           "at": "2026-11-22T21:53Z",
@@ -306695,6 +306695,11 @@
           "at": "2026-11-22T22:56Z",
           "by": "codex",
           "what": "step 3 of 3 done: Ruling merged; J0317 reopened on MacBook with 23 Nov 10:30Z deadline and exact save/reload requirements."
+        },
+        {
+          "at": "2026-11-22T22:56Z",
+          "by": "codex",
+          "what": "done: Chief ruling: CONDITION MET on MacBook only. Evidence PRs 1195/1196 and ruling/routing PR 1198 merged. J0317 reopened needs=macbook, due 2026-11-23T10:30:00Z, after completed J3394. Worker must freshly verify long Public and save/reload both authorized Related links; upload remains incomplete pending receipt. Original approvals and exclusions preserved. 13 hygiene tests and routing/hash assertions PASS. No YouTube changes or spend."
         }
       ],
       "remaining_action": "Complete the recorded browser recovery review",
@@ -306719,7 +306724,8 @@
       },
       "taskKeys": [
         "OWB:027"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1198"
     },
     {
       "id": "J3396",
