@@ -67,7 +67,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3383 | mini | blocked | macbook-2 | – | studio · First-day check at 6 h: "How Does the Heart Pump Blood?" (el30-mHiH-0) |  |
 | J3384 | mini | blocked | gemini | – | review · Verify condition for J3372 |  |
 | J3385 | mini | blocked | gemini | – | review · Verify condition for J1275 |  |
-| J3390 | mini | blocked | gemini | – | review · Verify condition for J3114 |  |
+| J3390 | mini | open | – | – | review · Verify condition for J3114 |  |
 | J3391 | mini | blocked | macbook-2 | – | review · Verify condition for J3365 |  |
 | J3392 | mini | blocked | gemini | – | review · Verify condition for J3205 |  |
 | J3393 | mini | open | – | – | chief · Chief: resolve 027 upload orphan-review |  |

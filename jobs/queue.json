@@ -305975,13 +305975,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-22T18:42Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-22T18:17Z",
-      "result": "parked for Chief: J3390 condition verification complete (PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1188, ac1aa9c95a, jobs/reviews/J3390/REVIEW.md blob 47259370cf). Advisory verdict: CONDITION NOT MET for J3114 across 9 consecutive checks (J3120/J3140/J3167/J3189/J3232/J3284/J3317/J3352/J3390); all 109 #954 comments after #7076957927 thru #7083800313, #219, 4 non-#954 repo comments, remote heads, and PRs thru #1187 show 0 new J3114 export approvals. Preserved local commit a12100797f, 12/12 NAS_VERIFY_J3114 SHA-256 hashes, 4/4 NAS video SHA-256 hashes, and J3115/J3119/J3065/J3066 holds. New drift note: main THUMB_LEDGER.json now ends at T043 (T041-T043 added in PR #1184/J3382), so a12100797f's proposed T041 will need rebasing to T044+ once export is authorized. Chief action: merge PR #1188, run jobs.py wait J3114 --type input --recheck J3390 --check-at 2026-11-23T08:15:00Z, and close J3390.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-22T18:17Z",
@@ -306017,6 +306017,11 @@
           "at": "2026-11-22T18:46Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3390 condition verification complete (PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1188, ac1aa9c95a, jobs/reviews/J3390/REVIEW.md blob 47259370cf). Advisory verdict: CONDITION NOT MET for J3114 across 9 consecutive checks (J3120/J3140/J3167/J3189/J3232/J3284/J3317/J3352/J3390); all 109 #954 comments after #7076957927 thru #7083800313, #219, 4 non-#954 repo comments, remote heads, and PRs thru #1187 show 0 new J3114 export approvals. Preserved local commit a12100797f, 12/12 NAS_VERIFY_J3114 SHA-256 hashes, 4/4 NAS video SHA-256 hashes, and J3115/J3119/J3065/J3066 holds. New drift note: main THUMB_LEDGER.json now ends at T043 (T041-T043 added in PR #1184/J3382), so a12100797f's proposed T041 will need rebasing to T044+ once export is authorized. Chief action: merge PR #1188, run jobs.py wait J3114 --type input --recheck J3390 --check-at 2026-11-23T08:15:00Z, and close J3390."
+        },
+        {
+          "at": "2026-11-22T21:34Z",
+          "by": "codex",
+          "what": "reopened"
         }
       ],
       "remaining_action": "Park J3390 for elected Chief (Grok Bot) to merge PR #1188, record wait --recheck J3390 on J3114, and close J3390",
@@ -306032,13 +306037,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-22T18:46Z",
-        "by": "gemini",
-        "note": "Opened unmerged evidence PR #1188 (ac1aa9c95a, jobs/reviews/J3390/REVIEW.md blob 47259370cf); condition NOT MET across 9"
-      },
       "taskKeys": [
         "OWB:034"
       ]
