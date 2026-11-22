@@ -304088,10 +304088,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-22T16:46Z",
+      "eta": "2026-11-22T18:46Z",
       "created_by": "relay",
       "created_at": "2026-11-22T16:41Z",
       "result": "",
@@ -304115,6 +304115,11 @@
           "at": "2026-11-22T16:46Z",
           "by": "macbook-2",
           "what": "released: MacBook worker run on claude ended (exit 1) with the job still open; picked up again next run; claude paused on the MacBook until 2026-11-22T18:46:20Z, so the next run uses the next agent in the chain"
+        },
+        {
+          "at": "2026-11-22T16:46Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Read codex.md (or decide with gemini.md + cursor.md after 2026-11-22T16:37Z), write DECISION.md, post 3-line summary on #954, and queue any build/Studio jobs",
