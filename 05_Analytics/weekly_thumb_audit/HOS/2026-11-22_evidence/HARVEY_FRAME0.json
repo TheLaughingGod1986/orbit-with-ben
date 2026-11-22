@@ -1,0 +1,48 @@
+[
+  {
+    "id": "l8bxm9L3zl8",
+    "master": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/J3137/hos_005_s06_blood_pressure_cuff_v05.mp4",
+    "master_sha256": "13da54281f378d54f221135a67208b38a91673e9f655a2175403535b150b9733",
+    "matches_upload_registry": true,
+    "frame_index": 0,
+    "timestamp_s": 0,
+    "extraction_command": [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-i",
+      "/Volumes/data/studio-live/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/J3137/hos_005_s06_blood_pressure_cuff_v05.mp4",
+      "-vf",
+      "select=eq(n\\,0)",
+      "-frames:v",
+      "1",
+      "-y",
+      "/Volumes/MiniWork/scratch/j3365-assets/l8bxm9L3zl8_frame0.png"
+    ],
+    "image": "/Volumes/MiniWork/scratch/j3365-assets/l8bxm9L3zl8_frame0.png",
+    "image_sha256": "d55e3f943f255d265874df2c9fd17ae449d99071aa6c87e549f97595aa5d237e"
+  },
+  {
+    "id": "el30-mHiH-0",
+    "master": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/J3137/hos_005_s07_heart_pulse_v05.mp4",
+    "master_sha256": "9efcf7b1d91ede4ef9f8d25783e358c92debde3c453f3d30211b9b09936c8fc1",
+    "matches_upload_registry": true,
+    "frame_index": 0,
+    "timestamp_s": 0,
+    "extraction_command": [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-i",
+      "/Volumes/data/studio-live/History Of Science/02_Video-Projects/005_How-Harvey-Proved-Blood-Circulates/10_Shorts/J3137/hos_005_s07_heart_pulse_v05.mp4",
+      "-vf",
+      "select=eq(n\\,0)",
+      "-frames:v",
+      "1",
+      "-y",
+      "/Volumes/MiniWork/scratch/j3365-assets/el30-mHiH-0_frame0.png"
+    ],
+    "image": "/Volumes/MiniWork/scratch/j3365-assets/el30-mHiH-0_frame0.png",
+    "image_sha256": "b823863df1c9b8ffcf46cf4935c3b0d03c65a908e72307816d93ec9010559ea5"
+  }
+]

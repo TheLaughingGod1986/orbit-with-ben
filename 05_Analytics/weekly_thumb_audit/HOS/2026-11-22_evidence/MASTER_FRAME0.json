@@ -1,0 +1,27 @@
+{
+  "id": "sY0PSQFxjp8",
+  "master": "/Volumes/data/studio-live/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/J2230/hos_007_variolation_v05.mp4",
+  "master_sha256": "c7ae95379e11a355916f2087ffb04efe81bf458069195b729ee280786b1ebbc2",
+  "manifest": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/11_Upload-Package/s06_variolation_v05/PACKAGE_MANIFEST.json",
+  "manifest_expected_sha256": "c7ae95379e11a355916f2087ffb04efe81bf458069195b729ee280786b1ebbc2",
+  "matches_delivered_manifest": true,
+  "frame_index": 0,
+  "timestamp_s": 0,
+  "extraction_command": [
+    "ffmpeg",
+    "-v",
+    "error",
+    "-i",
+    "/Volumes/data/studio-live/History Of Science/02_Video-Projects/007_The-First-Vaccine/10_Shorts/J2230/hos_007_variolation_v05.mp4",
+    "-vf",
+    "select=eq(n\\,0)",
+    "-frames:v",
+    "1",
+    "-y",
+    "/Volumes/MiniWork/scratch/j3365-assets/sY0PSQFxjp8_frame0.png"
+  ],
+  "image": "/Volumes/MiniWork/scratch/j3365-assets/sY0PSQFxjp8_frame0.png",
+  "image_sha256": "098309bea7a637e38a52fd80285d7f34b026e9c6b4112eb47a0cfa5f673a921a",
+  "build_evidence": "Upload manifest records Ben approval 16 Nov 2026; registration 16 Nov 23:07Z, before 19 Nov rule.",
+  "scope": "Still only; no motion/audio perception."
+}
