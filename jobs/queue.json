@@ -313434,13 +313434,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-23T18:32Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-23T18:31Z",
-      "result": "parked for Chief: advisory CONDITION NOT MET (11th check) on J3114; evidence PR #1222 (2b8911c510, jobs/reviews/J3446/REVIEW.md) opened unmerged. Specialist worker cannot merge PR, run wait --recheck, or close recheck_of job. Recommend Chief (Codex) merge PR #1222, run jobs.py wait J3114 --type input --recheck J3446 --check-at 2026-11-24T09:00:00Z, and close J3446. £0 spend, no YouTube/Studio/Buffer changes.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-23T18:31Z",
@@ -313486,6 +313486,11 @@
           "at": "2026-11-23T18:37Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: advisory CONDITION NOT MET (11th check) on J3114; evidence PR #1222 (2b8911c510, jobs/reviews/J3446/REVIEW.md) opened unmerged. Specialist worker cannot merge PR, run wait --recheck, or close recheck_of job. Recommend Chief (Codex) merge PR #1222, run jobs.py wait J3114 --type input --recheck J3446 --check-at 2026-11-24T09:00:00Z, and close J3446. £0 spend, no YouTube/Studio/Buffer changes."
+        },
+        {
+          "at": "2026-11-23T21:04Z",
+          "by": "codex",
+          "what": "reopened: Acting Chief has reviewed and merged evidence PR1222 and recorded parent hold with recheck J3446; reopen this verification only to claim and close its completed review."
         }
       ],
       "remaining_action": "Chief (Codex): review/merge PR #1222, run jobs.py wait J3114 --type input --recheck J3446 --check-at 2026-11-24T09:00:00Z, and close J3446",
@@ -313501,19 +313506,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-23T18:37Z",
-        "by": "gemini",
-        "plan": [
-          "Inspect J3114, J3407 and approval/thread history",
-          "Verify newer thread posts, approval board and remote branches/PRs",
-          "Verify local branch, package/video hashes and ledger state",
-          "Update J3114 wait/reopen state, report on thread, finish J3446"
-        ],
-        "note": "Opened unmerged evidence PR #1222 (2b8911c510, jobs/reviews/J3446/REVIEW.md); parking J3446 for elected Chief (Codex) to"
-      },
       "taskKeys": [
         "OWB:034"
       ]
