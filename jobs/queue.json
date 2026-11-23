@@ -313446,10 +313446,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 25,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-23T20:04Z",
-      "eta": "2026-11-23T20:29Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-23T20:01Z",
       "result": "",
@@ -313478,6 +313478,11 @@
           "at": "2026-11-23T20:06Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Step 1 done: fetched PR49 (2881569) & PR13 (19d0235), created detached worktree, verified stt_raw.json hash and visually inspected C09, C10, C27, C28, C31, C01."
+        },
+        {
+          "at": "2026-11-23T20:08Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred codex): Gemini run failed (exit 3); next in its chain: codex"
         }
       ],
       "remaining_action": "Aligning all 41 paragraphs to exact sentence-level Scribe timestamps and auditing every candidate sentence",
