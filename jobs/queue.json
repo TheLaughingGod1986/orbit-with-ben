@@ -308815,9 +308815,14 @@
           "at": "2026-11-23T07:47Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Claimed J3405; starting condition verification for J3311"
+        },
+        {
+          "at": "2026-11-23T07:49Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified non-producer Mini reviewer codex is UP and actively completing Mini jobs (runs.jsonl 04:12Z-07:35Z); Chief: Codex"
         }
       ],
-      "remaining_action": "Verify non-producer Mini reviewer availability (Codex/Grok/Claude Code), J3311 artifacts/PR #718 state, and reopen/handback or re-wait J3311",
+      "remaining_action": "Verify HOS PR #718 mergeability, HOS 009 long state, and open verification PR for Chief",
       "kind": "review",
       "recheck_of": "J3311",
       "due": "2026-11-23T08:46:33+00:00",
@@ -308831,11 +308836,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-23T07:47Z",
+        "at": "2026-11-23T07:49Z",
         "by": "gemini",
-        "note": "Claimed J3405; starting condition verification for J3311"
+        "note": "Verified non-producer Mini reviewer codex is UP and actively completing Mini jobs (runs.jsonl 04:12Z-07:35Z); Chief: Cod"
       },
       "taskKeys": [
         "HOS:009"
