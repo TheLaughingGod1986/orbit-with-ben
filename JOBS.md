@@ -74,6 +74,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3423 | mini | open | – | – | review · Verify condition for J2040 |  |
 | J3424 | mini | open | – | – | studio · Field Order History pilot 1: change the title to "The Secret Floating Harbours of D-Day" (title only, API) |  |
 | J3425 | mini | open | – | – | assembly · Field Order History films 3-6: copy each opening's narration text into git for Claude's viewer test (text only) |  |
+| J3426 | mini | open | – | – | review · Verify condition for J3419 |  |
 
 Recently finished:
 
