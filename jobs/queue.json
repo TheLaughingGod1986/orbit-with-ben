@@ -303409,10 +303409,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-23T01:56Z",
+      "eta": "2026-11-23T05:56Z",
       "created_by": "claude",
       "created_at": "2026-11-22T12:46Z",
       "result": "",
@@ -304216,6 +304216,11 @@
           "at": "2026-11-23T01:49Z",
           "by": "gemini",
           "what": "released: Checkpoint26 pushed 372c066 to WW2 PR34 (codex/J3364-archive); thread report posted. Resume /Users/benjaminoats/_desk/ww2/J3364-wt at 03_Picture/J3364/CHECKPOINT_26.md and ARCHIVE_PREVIEW_MANIFEST_checkpoint26.json. Coverage under Chief ruling 7089186059: 110 pure-photo inserts (618.96s / 42.89%, 31 sources) + 7 visually verified participant composites L045.01-04, L048.01-02,05 (44.64s / 3.09%, 1080p+168px PASS, 56.91% visible photo) = 117 inserts / 663.60s (45.99% combined); separate SRH-024 documents 14.52s excluded. Bounded 3-candidate pass cleared CH18481 (used on L022.02, L033.03-04, L034.03) and CS344 (Arctic convoy restriction, unallocated); rejected ATP9767C (IWM watermark, 7/41 date; do not retry); plus L002.01 (FL5516) and L039.06 (CH11800). All 6 new clips decoded/probed/inspected; cumulative 117-insert/139-span preflight PASS (PREFLIGHT_checkpoint26.json). No renderer running. 274.40s remain for 65%: 117.04s in 19 SOURCE_NEEDED rows (ceiling 54.10%) and >=157.36s requiring exact-event imagery or further Chief scope. Full v06, blocking gates, final credits, capable media QA and Ben watch unfinished; Tue 24 Nov 20:00 deadline and conditional Sat 28 Nov move unchanged. No spend or YouTube change."
+        },
+        {
+          "at": "2026-11-23T01:56Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Finish remaining 19 SOURCE_NEEDED general slots (117.04s), then submit concrete Chief scope plan for the remaining >=157.36s exact-event gap before full v06 render and gates",
