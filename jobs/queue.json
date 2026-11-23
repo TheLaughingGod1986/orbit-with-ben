@@ -309413,13 +309413,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-23T09:44Z",
-      "eta": "2026-11-23T10:44Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T08:47Z",
-      "result": "",
+      "result": "Chief PASS: ww2 PR36 merged b04da512, ruling aa468ec. D > C > B > A editorial ranking; exact source/candidate/sheet hashes verified. Existing thumbnail-only B/C/D test retained (worker start 2026-11-23T09:11:55Z); no winner claimed. Pilot 2 unchanged. J3414 depends on J3411 and reads metrics/test at 2026-11-24T17:05:00Z, then dated retries if still running. No spend or new YouTube mutation.",
       "history": [
         {
           "at": "2026-11-23T08:47Z",
@@ -309500,6 +309500,11 @@
           "at": "2026-11-23T09:45Z",
           "by": "codex",
           "what": "step 1 of 1 done: PR36 merged b04da512; Chief PASS recorded, hashes verified, pilot 2 unchanged, J3414 owns 24 Nov 17:05 UTC read."
+        },
+        {
+          "at": "2026-11-23T09:45Z",
+          "by": "codex",
+          "what": "done: Chief PASS: ww2 PR36 merged b04da512, ruling aa468ec. D > C > B > A editorial ranking; exact source/candidate/sheet hashes verified. Existing thumbnail-only B/C/D test retained (worker start 2026-11-23T09:11:55Z); no winner claimed. Pilot 2 unchanged. J3414 depends on J3411 and reads metrics/test at 2026-11-24T17:05:00Z, then dated retries if still running. No spend or new YouTube mutation."
         }
       ],
       "remaining_action": "Review complete; follow-up J3414 reads the running test",
@@ -309525,7 +309530,8 @@
         "at": "2026-11-23T09:45Z",
         "by": "codex",
         "note": "PR36 merged b04da512; Chief PASS recorded, hashes verified, pilot 2 unchanged, J3414 owns 24 Nov 17:05 UTC read."
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/36"
     },
     {
       "id": "J3412",
