@@ -1,5 +1,5 @@
 {
-  "next_id": 3418,
+  "next_id": 3419,
   "jobs": [
     {
       "id": "J0001",
@@ -310341,6 +310341,37 @@
         "condition": "J9WGu8aPnHI is Public and saved B/C/D Thumbnail-only test reads Running. PR38 merged at 658a126. Saved 2026-11-23T10:56:58.611Z; current native reason Ineligible: Your video is not public. Read actual launch first (25 Nov 17:00 currently; J3364 may move to 28 Nov). Verify within 30 minutes of actual launch; preserve existing test, never delete/restart it. Evidence in WW2 002 03_Picture/PACKAGING_DECISION_v03.md and thumbnail_ab_receipt_v03.json.",
         "check_at": "2026-11-25T17:05:00Z"
       }
+    },
+    {
+      "id": "J3418",
+      "title": "Field Order History pilot 1: full Studio numbers for Ben's audit (retention graph, traffic sources, audience), read-only",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why (Ben, Mon 23 Nov ~12:20 London, in chat):** he wants a full audit of pilot 1 (`ek9F61FVYqY`, live Sun 22 Nov 17:00): click-through looks to be dropping since the thumbnail test started, and average view duration is about 3.5 minutes of 27:37 (~13%; the playbook bar is 35%). Claude is writing the audit; it needs Studio's own numbers. **Read-only: change nothing in Studio. Do not touch the running Test & Compare.** £0. About 20 minutes.\n\nIn Studio 9224 (Field Order History), video `ek9F61FVYqY`, Analytics, period \"Since published\". Record exact figures and the UTC time you read them:\n1. **Overview:** views, watch time (hours), average view duration, average percentage viewed, subscribers gained/lost, likes, impressions, impressions click-through rate.\n2. **Retention (Engagement tab, audience retention graph):** % still watching at 0:10, 0:30, 1:00, 1:30, 2:00, 3:00, 4:00, 5:00, 7:00, 10:00, 15:00, 20:00, 25:00. The \"Key moments\" card (intro: % still watching at 0:30) and any spike or dip Studio marks with its time. Save a screenshot of the graph.\n3. **Reach (traffic sources):** for each source (Browse features, Suggested videos, YouTube search, Playlists, Channel pages, External, Direct or unknown, Other), its impressions, click-through rate, views and average view duration. Search terms, if any. Impressions click-through split by source if Studio shows it.\n4. **Audience:** new vs returning viewers, top countries, device type (mobile, computer, TV), age/gender if shown.\n5. **Test & Compare panel:** status, and any per-thumbnail watch-time share it shows. Read only.\n6. **Our own views:** note any views you can attribute to the studio itself (agents' read-backs, Ben's own watching) and say how you judged it.\n7. **Since the test (09:11:55Z today):** if Studio's custom date range allows, the same impressions, click-through and views for today only.\n\nWrite it all to ww2-channel `05_Analytics/AUDIT_001_2026-11-23.md` (one PR, merge as acting Chief) and put the numbers in this job's result as plain lines, so Claude can read them from the queue. Screenshots stay on the NAS with their path in the file.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 25,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-23T12:29Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T12:29Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Read pilot 1's Studio analytics (retention, sources, audience) and record them, read-only",
+      "due": "2026-11-23T14:00:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "urgent": 6
     }
   ],
   "focus": [
