@@ -311669,13 +311669,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 180,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-23T15:35Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T15:29Z",
-      "result": "Waiting for: Public archive binary delivery must work again: Commons original and standard 1920-pixel thumbnail downloads returned HTTP 429; Flickr original returned 429 and resized image 403; NHHC direct pages returned 404 on 23 Nov. Nine existing NAS photos hash-verified. Resume draft ww2 PR 49, retrieve and inspect 41 additional distinct photographs (replace failed candidates), then finalise the 41-paragraph plan. Current 57.6% is proposed only and 123 seconds below two-thirds. No new files delivered and no stage PASS.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-23T15:29Z",
@@ -311716,27 +311716,19 @@
           "at": "2026-11-23T16:41Z",
           "by": "relay",
           "what": "condition verification queued: J3437"
+        },
+        {
+          "at": "2026-11-23T16:59Z",
+          "by": "codex",
+          "what": "reopened: Chief ruling J3437: download condition MET; PR 1218 merged. Fresh Mini full downloads at 16:56Z returned HTTP 200 and decoded C01 Commons 5711x3938 JPEG (sha256 83842833363b1afa...) and C23 Flickr original 1796x2448 JPEG (7872f5f51070a321...), matching worker evidence. Resume existing ww2 PR 49 through the image specialist chain: descriptive project User-Agent, single-threaded 1.5-2s pacing, honour Retry-After, Flickr /sizes/o/ originals. Inspect and provenance-check 41 additional distinct photos and finalise paragraph plan; target at least 50 photos and about two-thirds screen time. Proposed 57.6% and 123s shortfall are not approval. No stage PASS; J3430 remains after J3429. Zero spend, no AI pictures, narration/title unchanged."
         }
       ],
       "remaining_action": "Download and verify the extra archive photographs for the submarine torpedo film",
       "due": "2026-11-26T18:00:00Z",
       "kind": "image",
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-23T15:48Z",
-        "by": "codex",
-        "note": "Prepared all 41 paragraph mappings and 50 provenance records: 9 actual verified photos plus 41 candidates. Downloads blo"
-      },
       "taskKeys": [
         "WW2:004"
-      ],
-      "hold": {
-        "type": "input",
-        "condition": "Public archive binary delivery must work again: Commons original and standard 1920-pixel thumbnail downloads returned HTTP 429; Flickr original returned 429 and resized image 403; NHHC direct pages returned 404 on 23 Nov. Nine existing NAS photos hash-verified. Resume draft ww2 PR 49, retrieve and inspect 41 additional distinct photographs (replace failed candidates), then finalise the 41-paragraph plan. Current 57.6% is proposed only and 123 seconds below two-thirds. No new files delivered and no stage PASS.",
-        "check_at": "2026-11-23T17:41:11+00:00",
-        "recheck_task": "J3437"
-      }
+      ]
     },
     {
       "id": "J3430",
