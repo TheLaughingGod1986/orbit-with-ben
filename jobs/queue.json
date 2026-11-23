@@ -1,5 +1,5 @@
 {
-  "next_id": 3445,
+  "next_id": 3446,
   "jobs": [
     {
       "id": "J0001",
@@ -119667,6 +119667,11 @@
           "at": "2026-11-22T22:30Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-23T18:00:00Z"
+        },
+        {
+          "at": "2026-11-23T18:01Z",
+          "by": "relay",
+          "what": "condition verification queued: J3445"
         }
       ],
       "remaining_action": "Check chapters against each locked long cut; preserve Sources, lint both packages and submit any timing fixes for review",
@@ -119694,10 +119699,11 @@
       "hold": {
         "type": "dependency",
         "condition": "Acting Chief codex accepts J3385 CONDITION NOT MET; evidence jobs/reviews/J3385/REVIEW.md (OWB PR 1192). Fresh check: J2036 done; HOS PR 731 open with seven successful checks, PR 719 open and J2037 open. HOS 009 v03 exists on NAS (manifest 744f32b7), chapters already match 0:00/1:24/2:56/4:20/6:33; final package review and cut lock remain pending under J2037. HOS 010 has no NAS 09_Assembly, long picture/edit pending and provisional chapters. Both package lints PASS and eight Sources entries remain in each description. Keep J1275 blocked; recheck 23 Nov 18:00Z. Resume timing verification per film when its final cut locks, coordinating 009 with J2037; retime only if necessary. Preserve Sources and require package lint and review before upload. No public action or spend authorized.",
-        "check_at": "2026-11-23T18:00:00Z",
+        "check_at": "2026-11-23T19:01:11+00:00",
         "last_recheck": "J3385",
         "checked_at": "2026-11-22T22:30:12+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J3445"
       }
     },
     {
@@ -312833,6 +312839,37 @@
         "condition": "24-hour measurement for Dm4xsF1Ateg becomes due 2026-11-24T11:30:00Z; J3439 repair done. Do not collect an early reading as 24 hours.",
         "check_at": "2026-11-24T11:30:00Z"
       }
+    },
+    {
+      "id": "J3445",
+      "title": "Verify condition for J1275",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J1275: Acting Chief codex accepts J3385 CONDITION NOT MET; evidence jobs/reviews/J3385/REVIEW.md (OWB PR 1192). Fresh check: J2036 done; HOS PR 731 open with seven successful checks, PR 719 open and J2037 open. HOS 009 v03 exists on NAS (manifest 744f32b7), chapters already match 0:00/1:24/2:56/4:20/6:33; final package review and cut lock remain pending under J2037. HOS 010 has no NAS 09_Assembly, long picture/edit pending and provisional chapters. Both package lints PASS and eight Sources entries remain in each description. Keep J1275 blocked; recheck 23 Nov 18:00Z. Resume timing verification per film when its final cut locks, coordinating 009 with J2037; retime only if necessary. Preserve Sources and require package lint and review before upload. No public action or spend authorized.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J1275 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-23T18:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T18:01Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Check chapters against each locked long cut; preserve Sources, lint both packages and submit any timing fixes for review",
+      "kind": "review",
+      "recheck_of": "J1275",
+      "due": "2026-11-23T19:01:11+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
