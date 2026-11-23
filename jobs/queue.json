@@ -313488,9 +313488,14 @@
           "at": "2026-11-23T20:09Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-23T20:10Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Aligning all 41 paragraphs to exact sentence-level Scribe timestamps and auditing every candidate sentence",
+      "remaining_action": "Match existing photographs to exact narrated sentences",
       "due": "2026-11-24T18:00:00Z",
       "kind": "review",
       "plain": "Match the torpedo film’s photographs to exact narration sentences",
@@ -313503,17 +313508,15 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
-        "of": 4,
-        "at": "2026-11-23T20:06Z",
-        "by": "gemini",
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-23T20:10Z",
+        "by": "codex",
         "plan": [
-          "Inspect PR49/PR13 files and photo library",
-          "Sentence-level timing & photo audit across 41 rows",
-          "Verify visuals & compute honest coverage share",
-          "Commit allocation evidence to PR49 & post Chief recommendation"
-        ],
-        "note": "Step 1 done: fetched PR49 (2881569) & PR13 (19d0235), created detached worktree, verified stt_raw.json hash and visually"
+          "Read locked words and timing",
+          "Allocate supported photo intervals",
+          "Verify totals and publish recommendation"
+        ]
       },
       "taskKeys": [
         "WW2:004"
