@@ -150,7 +150,7 @@ assert(workingRow.includes('33% → 44%') && workingRow.includes('p24-delta'),
   'claimed cut can show live film progress delta from progress24h');
 assert(!waitingRow.includes('p24-working-dot') && !waitingRow.includes('is-working'),
   'waiting cut does not impersonate live work');
-assert(progressHtml.includes('Queued, blocked, or waiting for a step'), 'waiting group is labeled so it cannot look like live work');
+assert(progressHtml.includes('Nobody is working on these right now'), 'waiting group is labeled so it cannot look like live work');
 t.setSeg('all');
 
 // Claimed work must not be parked in QA by a sibling review/QA/Chief job (Ben, 7 Nov 2026 ~13:30).
@@ -1664,6 +1664,31 @@ const freshHtml=t.fieldOrderCard({fieldOrder:{through:'2026-11-21',targets:[{nam
 assert(freshHtml.includes('<b>1 / 1,000</b> (Studio, 2026-11-23 12:41 UTC)'), freshHtml);
 assert(freshHtml.includes('(API estimate, data through 2026-11-21)'), freshHtml);
 assert(!fieldHtml.includes('(undefined'));
+
+// Ben, 23 Nov 2026: a scheduled film back in production showed "Scheduled" with no progress, and queued work read as
+// "In progress". Rework wins over Scheduled/Passed, queued is called queued, and relay rechecks are not a review.
+{
+  const sched={key:'WW2:002',type:'long',channel:'ww2',lane:'approved',youtube:{state:'scheduled',privacy:'private',publishAt:'2026-11-28T17:00:00Z',publishAtLondon:'Sat 28 Nov 2026 17:00 London'},
+    jobs:[{id:'J3364',status:'open',kind:'assembly',progress:{step:1,of:4}},{id:'J3422',status:'blocked',kind:'vo',progress:{step:4,of:5}},{id:'J3417',status:'blocked',kind:'thumb'},{id:'J3428',status:'blocked',kind:'review',title:'Verify condition for J3422'}]};
+  assert.strictEqual(t.videoLane(sched),'progress');
+  assert(t.stage(sched).startsWith('Being reworked before launch (scheduled Sat 28 Nov 2026 17:00 London)'), t.stage(sched));
+  const rowHtml=t.videoProductionRow(sched,Date.now(),{});
+  assert(rowHtml.includes('Picture and edit: step 1 of 4 · paused, waiting for an agent to pick it back up'), rowHtml);
+  assert(rowHtml.includes('Voice-over: step 4 of 5 · waiting for a step'), rowHtml);
+  assert(!rowHtml.includes('UAT handoff complete') && !rowHtml.includes('outlook-line'), rowHtml);
+  // Only a launch-day job left: back to Scheduled.
+  const launchOnly={...sched,jobs:[sched.jobs[2]]};
+  assert.strictEqual(t.videoLane(launchOnly),'scheduled');
+  // Open jobs nobody has claimed are queued, not in progress.
+  const queued={key:'WW2:004',type:'long',channel:'ww2',lane:'progress',jobs:[{id:'J3429',status:'open',kind:'image'}]};
+  assert.strictEqual(t.stage(queued),'Queued · no agent on it yet');
+  assert(t.videoProductionRow(queued,Date.now(),{}).includes('Archive photos · queued, no agent on it yet'));
+  // A relay "Verify condition for" job does not put a film in QA.
+  const recheck={key:'WW2:003',type:'long',channel:'ww2',lane:'progress',jobs:[{id:'J3205',status:'blocked',kind:'assembly'},{id:'J3392',status:'blocked',kind:'review',title:'Verify condition for J3205'}]};
+  assert.strictEqual(t.isQa(recheck),false);
+  assert.strictEqual(t.videoLane(recheck),'progress');
+  assert.strictEqual(t.stage(recheck),'Waiting');
+}
 
 // J3292: urgent red banner sits at the top of every page and hides cleanly when empty.
 {

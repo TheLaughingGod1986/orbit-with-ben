@@ -113,6 +113,22 @@
   // One meaning of "working" everywhere (Ben, 28 Oct: 11 / 1 / 0 read as a contradiction): an agent has claimed a job
   // on it right now. The tracker's looser v.working flag is not used here.
   const isWorking = v => !!activeJob(v);
+  // Production work still open on a film (Ben, 23 Nov 2026: FOH pilot 2 showed "Scheduled" while its rework ran, its
+  // progress was invisible, and queued work read as "In progress"). The relay's condition checks and launch-day jobs
+  // (Studio reads, listings, thumbnail tests) are not production work.
+  const REWORK_KINDS = new Set(["script", "facts", "vo", "image", "chart", "assembly", "video", "qa"]);
+  const REWORK_LABEL = { script: "Script", facts: "Fact check", vo: "Voice-over", image: "Archive photos", chart: "Graphics",
+    assembly: "Picture and edit", video: "Video clips", qa: "Quality check" };
+  const isRecheck = j => /^Verify condition for\b/i.test(String((j && j.title) || ""));
+  const reworkJobs = v => (v.jobs || []).filter(j => LIVE(j) && !isRecheck(j) && REWORK_KINDS.has(String(j.kind || "").toLowerCase()));
+  const inRework = v => !isLive(v) && reworkJobs(v).length > 0;
+  function jobStepText(j) {
+    const p = j.progress || {}, step = +p.step || 0, of = +p.of || 0;
+    const state = j.status === "claimed" ? `${AGENTS[j.by] || j.by || "an agent"} on it now`
+      : j.status === "blocked" ? "waiting for a step" : step ? "paused, waiting for an agent to pick it back up" : "queued, no agent on it yet";
+    return `${REWORK_LABEL[String(j.kind || "").toLowerCase()] || "Work"}${of ? `: step ${step} of ${of}` : ""} · ${state}`;
+  }
+  const reworkLine = v => reworkJobs(v).slice(0, 4).map(j => `<span class="meta step-line">${esc(jobStepText(j))}</span>`).join("");
 
   // What the agents are doing on a video, in one line: who, the task, and the step they reported.
   function doing(v) {
@@ -174,7 +190,8 @@
   function isQa(v) {
     if (v.lane === "ready" && v.readyFor && v.readyFor !== "Ben") return true;
     return (v.jobs || []).some(j => {
-      if (!LIVE(j)) return false;
+      // The relay's "Verify condition for ..." checks wait on other work; they are not a review of the film.
+      if (!LIVE(j) || isRecheck(j)) return false;
       const kind = String(j.kind || "").toLowerCase();
       if (kind === "review" || kind === "qa" || kind === "chief") return true;
       return !kind && /\b(review|KEEP|shot list|Chief QA|frame review)\b/i.test(j.title || "");
@@ -276,6 +293,8 @@
     if (isLive(v) && (v.jobs || []).some(LIVE)) return "postlive";
     if (isLive(v)) return "live";
     if (needsBenWatch(v)) return "uat";
+    // Scheduled or passed with production work still open: it is being reworked, not waiting to go public.
+    if ((isScheduledNotPublic(v) || v.lane === "approved") && inRework(v)) return "progress";
     if (isScheduledNotPublic(v)) return "scheduled";
     // Passed stays Passed even while an upload/social job runs — it is ready to schedule, not a Ben hold.
     if (v.lane === "approved") return "passed";
@@ -295,6 +314,10 @@
     const lane = videoLane(v);
     if (lane === "live" || isLive(v)) return "Published";
     if (lane === "postlive") return "Post-live improvements";
+    if (lane === "progress" && inRework(v) && (isScheduledNotPublic(v) || v.lane === "approved")) {
+      const when = isScheduledNotPublic(v) ? listingLine(v).replace(/^Scheduled for /, "") : "";
+      return when ? `Being reworked before launch (scheduled ${when})` : "Being reworked before launch";
+    }
     if (lane === "scheduled") return listingLine(v) || "Scheduled";
     if (lane === "passed") return listingLine(v) || "Ready to schedule";
     if (lane === "uat") return "Ready for you";
@@ -307,6 +330,8 @@
     const live = (v.jobs || []).find(j => j.status === "claimed");
     if (live) return "Working now";
     if ((v.jobs || []).some(j => j.status === "blocked")) return "Waiting";
+    // Open jobs nobody has claimed are queued, not in progress (Ben, 23 Nov 2026).
+    if ((v.jobs || []).some(j => j.status === "open")) return "Queued · no agent on it yet";
     return v.lane === "upcoming" ? "Planned" : "In progress";
   }
 
@@ -734,15 +759,17 @@
   }
   function videoProductionRow(v, now, b) {
     if (isLive(v)) return row(v, "");
-    const historyOnly=forBen([v]).length || pendingChanges(v) || ['approved','done','changes'].includes(v.lane) || (v.youtube||{}).state==='scheduled';
-    const scoped=unconfirmedCut(v), current=historyOnly?null:scoped?relatedStage(v):currentProduction(v)[0], f=forecastView(v,now);
+    const historyOnly=!inRework(v) && (forBen([v]).length || pendingChanges(v) || ['approved','done','changes'].includes(v.lane) || (v.youtube||{}).state==='scheduled');
+    // A passed or scheduled film back in production: its recorded milestones and UAT handoff describe the old cut.
+    const rework=inRework(v) && (isScheduledNotPublic(v) || v.lane==='approved');
+    const scoped=unconfirmedCut(v), current=historyOnly||rework?null:scoped?relatedStage(v):currentProduction(v)[0], f=forecastView(v,now);
     const working = videoHasActiveWork(v);
     // Film-level live delta from Overview's progress24h when this cut's parent film moved; never invent cut %s.
     const pct = working ? videoProgressDelta(v, b || board) : null;
     const delta = pct && pct.label && pct.from != null && pct.to != null && pct.from !== pct.to
       ? `<span class="video-live-delta p24-delta${pct.down ? " down" : (pct.grew ? "" : " flat")}">${esc(pct.label)}</span>`
       : "";
-    return row(v, `<span class="meta current-label">${scoped?'Related work: ':''}${esc(current?current.label:stage(v))}${blockedVideo(v)?' · <span class="blocked-word">Waiting for a step</span>':''}${working?' · <span class="working-word">Working now</span>':''}</span>${delta}${milestoneProgress(v)}<span class="meta outlook-line">UAT: ${esc(f.value)}</span>`, null, { working });
+    return row(v, `<span class="meta current-label">${scoped?'Related work: ':''}${esc(current?current.label:stage(v))}${blockedVideo(v)?' · <span class="blocked-word">Waiting for a step</span>':''}${working?' · <span class="working-word">Working now</span>':''}</span>${delta}${rework?'':milestoneProgress(v)}${reworkLine(v)}${rework?'':`<span class="meta outlook-line">UAT: ${esc(f.value)}</span>`}`, null, { working });
   }
   // One set of selectors feeds Overview and its linked lists. Jobs never stand in for videos.
   function uniqueVideos(vs) {
@@ -1673,7 +1700,7 @@
       }
       if (waiting.length) {
         parts.push(`<h3 class="lane-sub">Waiting <span class="n">${waiting.length}</span></h3>`);
-        parts.push(`<p class="meta lane-sub-blurb">Queued, blocked, or waiting for a step — still In progress, not live work.</p>`);
+        parts.push(`<p class="meta lane-sub-blurb">Nobody is working on these right now: queued for an agent, or waiting for a step.</p>`);
         parts.push(jobList(waiting));
       }
       return parts.join("") || empty("Nothing in progress.");
