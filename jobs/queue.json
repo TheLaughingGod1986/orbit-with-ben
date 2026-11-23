@@ -308742,18 +308742,23 @@
           "at": "2026-11-23T07:40Z",
           "by": "codex",
           "what": "step 0 of 3 done: Brief checked; read-only metrics collection."
+        },
+        {
+          "at": "2026-11-23T07:41Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Restored prior checkpoint: HOS 7 longs and 36 Shorts already committed in 3e66467b87. Orbit CDP connection timed out again; bounded existing-tab recovery underway."
         }
       ],
-      "remaining_action": "Reading lifetime Studio metrics for both channels",
+      "remaining_action": "Recovering Orbit Studio and completing its remaining metrics read",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-23T07:40Z",
+        "at": "2026-11-23T07:41Z",
         "by": "codex",
-        "note": "Brief checked; read-only metrics collection."
+        "note": "Restored prior checkpoint: HOS 7 longs and 36 Shorts already committed in 3e66467b87. Orbit CDP connection timed out aga"
       }
     }
   ],
