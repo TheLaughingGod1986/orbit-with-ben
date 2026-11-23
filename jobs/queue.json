@@ -312972,13 +312972,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-23T18:38Z",
-      "eta": "2026-11-23T20:38Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-23T18:01Z",
-      "result": "",
+      "result": "parked for Chief: J3445 verification of J1275 complete (advisory CONDITION NOT MET, evidence in OWB PR #1223 jobs/reviews/J3445/REVIEW.md). Only elected Chief (currently codex) may run jobs.py wait J1275 --recheck J3445 (recommended --type dependency --check-at 2026-11-24T18:00:00Z) and close J3445.",
       "history": [
         {
           "at": "2026-11-23T18:01Z",
@@ -313009,6 +313009,11 @@
           "at": "2026-11-23T18:41Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Opened OWB PR #1223 (745c94863a) with jobs/reviews/J3445/REVIEW.md (advisory CONDITION NOT MET)"
+        },
+        {
+          "at": "2026-11-23T18:41Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J3445 verification of J1275 complete (advisory CONDITION NOT MET, evidence in OWB PR #1223 jobs/reviews/J3445/REVIEW.md). Only elected Chief (currently codex) may run jobs.py wait J1275 --recheck J3445 (recommended --type dependency --check-at 2026-11-24T18:00:00Z) and close J3445."
         }
       ],
       "remaining_action": "Parked for elected Chief (codex) to merge OWB PR #1223, record J1275 wait --recheck J3445 (2026-11-24T18:00:00Z), and close J3445",
