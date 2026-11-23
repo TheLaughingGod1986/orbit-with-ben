@@ -81,7 +81,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3444 | mini | blocked | codex | – | 027 upload · studio · Earth equator Short: 24-hour reach read after Related repair |  |
 | J3445 | mini | blocked | gemini | – | review · Verify condition for J1275 |  |
 | J3446 | mini | blocked | gemini | – | review · Verify condition for J3114 |  |
-| J3450 | any | open | – | – | WW2:006 picture · review · WW2 006: resolve archive allocation and small-photo layouts after Chief review |  |
+| J3450 | mini | open | – | – | WW2:006 picture · review · WW2 006: resolve archive allocation and small-photo layouts after Chief review |  |
 
 Recently finished:
 
