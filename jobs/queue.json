@@ -179756,9 +179756,14 @@
           "at": "2026-11-23T22:22Z",
           "by": "codex",
           "what": "waits on Ben: Watch the Gravity film and review its two thumbnail choices (by 2026-11-24 18:00 London)"
+        },
+        {
+          "at": "2026-11-23T22:22Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-24T18:00:00Z"
         }
       ],
-      "remaining_action": "Parked for elected non-producer Chief PASS, PR #731/#1224 merge, and Ben awaits_ben watch card",
+      "remaining_action": "Waiting for Ben to watch the Gravity film and review its thumbnails",
       "due": "2026-11-15T18:00:00Z",
       "kind": "review",
       "taskKeys": [
@@ -179788,10 +179793,12 @@
       "for": "gemini",
       "model": "gemini-argon",
       "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-23T23:07:33+00:00",
-        "recheck_task": "J3455"
+        "type": "ben",
+        "condition": "J3455 KEEP for private UAT only: exact v03 master 744f32b7 and phone preview b1135b3d; awaiting Ben finished-cut watch and listen. PRs OWB 1224/1225 and HOS 731 merged; HOS 719 closed. No publishing permission.",
+        "check_at": "2026-11-24T18:00:00Z",
+        "last_recheck": "J3455",
+        "checked_at": "2026-11-23T22:22:44+00:00",
+        "checked_by": "codex"
       },
       "awaits_ben": {
         "what": "Watch the Gravity film and review its two thumbnail choices",
