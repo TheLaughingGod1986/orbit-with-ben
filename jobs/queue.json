@@ -308997,13 +308997,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-23T08:16Z",
-      "eta": "2026-11-23T10:16Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-23T08:15Z",
-      "result": "",
+      "result": "parked for Chief: J3407 condition verification complete (PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1207, 7cbdd8e14b, jobs/reviews/J3407/REVIEW.md blob d8a4ea6216). Advisory verdict: CONDITION NOT MET for J3114 across 10 consecutive checks (J3120/J3140/J3167/J3189/J3232/J3284/J3317/J3352/J3390/J3407); all 95 OWB repo comments after #7086114148 thru #7095242186 (94 on #954, 1 on #1170), 0 PR review comments, #219 (unchanged 2026-11-22T10:45:35Z), 7 HOS comments, remote heads, and PRs thru #1206 show 0 new J3114 export approvals. Preserved clean local commit a12100797f, 12/12 NAS_VERIFY_J3114 SHA-256 hashes, 4/4 NAS video SHA-256 hashes, THUMB_LEDGER tail T043 (rebase proposed T041 to T044+ once authorized), and J3115/J3119/J3065/J3066 holds. Specialist worker cannot merge, run wait --recheck, or close recheck_of job (scripts/jobs.py:603-604,1559-1562). Chief action: merge PR #1207, run jobs.py wait J3114 --type input --recheck J3407 --check-at 2026-11-23T18:10:00Z, and close J3407. £0 spend, no YouTube/Studio/Buffer changes.",
       "history": [
         {
           "at": "2026-11-23T08:15Z",
@@ -309034,6 +309034,11 @@
           "at": "2026-11-23T08:22Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Opened unmerged evidence PR #1207 (7cbdd8e14b, jobs/reviews/J3407/REVIEW.md blob d8a4ea6216); parking protected Chief calls."
+        },
+        {
+          "at": "2026-11-23T08:22Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: J3407 condition verification complete (PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1207, 7cbdd8e14b, jobs/reviews/J3407/REVIEW.md blob d8a4ea6216). Advisory verdict: CONDITION NOT MET for J3114 across 10 consecutive checks (J3120/J3140/J3167/J3189/J3232/J3284/J3317/J3352/J3390/J3407); all 95 OWB repo comments after #7086114148 thru #7095242186 (94 on #954, 1 on #1170), 0 PR review comments, #219 (unchanged 2026-11-22T10:45:35Z), 7 HOS comments, remote heads, and PRs thru #1206 show 0 new J3114 export approvals. Preserved clean local commit a12100797f, 12/12 NAS_VERIFY_J3114 SHA-256 hashes, 4/4 NAS video SHA-256 hashes, THUMB_LEDGER tail T043 (rebase proposed T041 to T044+ once authorized), and J3115/J3119/J3065/J3066 holds. Specialist worker cannot merge, run wait --recheck, or close recheck_of job (scripts/jobs.py:603-604,1559-1562). Chief action: merge PR #1207, run jobs.py wait J3114 --type input --recheck J3407 --check-at 2026-11-23T18:10:00Z, and close J3407. £0 spend, no YouTube/Studio/Buffer changes."
         }
       ],
       "remaining_action": "Elected Chief to merge PR #1207, record J3114 input hold with --recheck J3407 (check-at 2026-11-23T18:10:00Z), and close J3407",
