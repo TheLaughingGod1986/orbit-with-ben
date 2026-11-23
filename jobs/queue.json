@@ -311071,13 +311071,13 @@
       "stage": "",
       "after": "",
       "eta_min": 15,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-23T13:49Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T13:48Z",
-      "result": "parked for Chief: review and merge ww2-channel PR #43 (https://github.com/TheLaughingGod1986/ww2-channel/pull/43 @ 4b45f0a). Live YouTube API title-only update on ek9F61FVYqY completed at 2026-11-23T13:51:35Z (change time for J3414 48h read): 'How Britain Built Two Harbours in Secret and Floated Them to Normandy' (69 chars) -> 'The Secret Floating Harbours of D-Day' (37 chars); read-back PASS (description 2,973 chars sha256 66638dbbf384eea12d2d68ad8c0de44563348d1acb5e16cd789d568f3a4e89ec identical, 9 tags identical, categoryId=27, en-GB/en-GB, public, publishAt=null; running Thumbnail Test & Compare B/C/D untouched; £0). Thread posted.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-23T13:48Z",
@@ -311113,6 +311113,11 @@
           "at": "2026-11-23T13:54Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: review and merge ww2-channel PR #43 (https://github.com/TheLaughingGod1986/ww2-channel/pull/43 @ 4b45f0a). Live YouTube API title-only update on ek9F61FVYqY completed at 2026-11-23T13:51:35Z (change time for J3414 48h read): 'How Britain Built Two Harbours in Secret and Floated Them to Normandy' (69 chars) -> 'The Secret Floating Harbours of D-Day' (37 chars); read-back PASS (description 2,973 chars sha256 66638dbbf384eea12d2d68ad8c0de44563348d1acb5e16cd789d568f3a4e89ec identical, 9 tags identical, categoryId=27, en-GB/en-GB, public, publishAt=null; running Thumbnail Test & Compare B/C/D untouched; £0). Thread posted."
+        },
+        {
+          "at": "2026-11-23T15:09Z",
+          "by": "codex",
+          "what": "reopened: Acting-Chief PASS: exact approved title and independent 15:08Z read verified; PR 43 merged as 1fc5273c. Reopen only to record completion. J3414 read stays 2026-11-24T17:05Z with change timestamp 2026-11-23T13:51:35Z; J3419 preserves title."
         }
       ],
       "remaining_action": "Chief review and merge of ww2-channel PR #43",
@@ -311120,13 +311125,6 @@
       "kind": "studio",
       "mini_only": true,
       "urgent": 7,
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-23T13:54Z",
-        "by": "gemini",
-        "note": "Opened ww2-channel PR #43 (4b45f0a: TITLE_CHANGE_v01.md, metadata_v43.json, status.json) and posted thread report; parki"
-      },
       "taskKeys": [
         "WW2:001"
       ]
