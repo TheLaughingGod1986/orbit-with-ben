@@ -79,7 +79,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3438 | mini | blocked | codex | – | studio · First-day check at 6 h: "Why Do You Weigh Less at Earth's Equator?" (Dm4xsF1Ateg) |  |
 | J3439 | mini | claimed | macbook | 2026-11-23T19:42Z | 027 upload · studio · 027 live equator Short: set missing Related on replacement Dm4xsF1Ateg |  |
 | J3440 | mini | open | – | – | listing · Field Order History films 2-6: backfill stale stage records so the board shows real progress |  |
-| J3441 | mini | open | – | – | studio · Board: deploy main (PR #1219 rework/queued fix, PR #1213 card) to the studio-kanban site and verify |  |
+| J3441 | mini | claimed | codex | 2026-11-23T18:02Z | studio · Board: deploy main (PR #1219 rework/queued fix, PR #1213 card) to the studio-kanban site and verify |  |
 
 Recently finished:
 
