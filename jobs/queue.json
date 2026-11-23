@@ -313583,9 +313583,14 @@
           "at": "2026-11-23T20:16Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-23T20:16Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Await the sentence-level photo allocation review, then decide whether coverage is sufficient",
+      "remaining_action": "Check whether the torpedo photo review resolves the coverage hold",
       "kind": "review",
       "recheck_of": "J3429",
       "due": "2026-11-23T21:15:23+00:00",
@@ -313603,9 +313608,15 @@
         "of": 3,
         "at": "2026-11-23T20:16Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read ruling and delivered evidence",
+          "Verify allocation and remaining condition",
+          "Record decision and report"
+        ]
+      },
+      "taskKeys": [
+        "WW2:004"
+      ]
     }
   ],
   "focus": [
