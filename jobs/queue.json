@@ -311974,13 +311974,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-23T16:41Z",
-      "eta": "2026-11-23T17:41Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T16:20Z",
-      "result": "",
+      "result": "parked for Chief: proposed WW2:002 picture-gate ruling and live-verified reviewed-ok JSON (104 entries; fails 171->42 with 0 split panels, 41 real reuse, 1 unwaived opening jitter) ready for Acting Chief sign-off and merge in ww2-channel PR #54 (commit ba56aa6)",
       "history": [
         {
           "at": "2026-11-23T16:20Z",
@@ -312021,6 +312021,11 @@
           "at": "2026-11-23T16:54Z",
           "by": "gemini",
           "what": "step 4 of 5 done: wrote PICTURE_GATE_RULING_v01.md + picture_qa_reviewed_ok_v01.json (104 entries); live-verified picture_qa.py --no-jitter drops fails 171->41 (42 with unwaived opening jitter, 0 split panel)"
+        },
+        {
+          "at": "2026-11-23T16:54Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: proposed WW2:002 picture-gate ruling and live-verified reviewed-ok JSON (104 entries; fails 171->42 with 0 split panels, 41 real reuse, 1 unwaived opening jitter) ready for Acting Chief sign-off and merge in ww2-channel PR #54 (commit ba56aa6)"
         }
       ],
       "remaining_action": "post studio thread report and park J3435 for Acting Chief Codex sign-off",
