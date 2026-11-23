@@ -66,7 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3392 | mini | blocked | gemini | – | review · Verify condition for J3205 |  |
 | J3399 | macbook | open (after J0996) | – | – | 027 upload · review · Review Earth equator Short private/schedule discrepancy | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1200 |
 | J3400 | mini | blocked | gemini | – | review · Verify condition for J0996 |  |
-| J3403 | mini | open | – | – | studio · Field Order History channel audience read 2026-11-23 |  |
+| J3403 | mini | claimed | codex | 2026-11-23T08:57Z | studio · Field Order History channel audience read 2026-11-23 |  |
 
 Recently finished:
 
