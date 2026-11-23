@@ -312016,9 +312016,14 @@
           "at": "2026-11-23T16:49Z",
           "by": "gemini",
           "what": "step 3 of 5 done: audited all 12 reuse sources (43 cuts): 2 pass (24475803.jpg, loc_2017697475_cp06.jpg: <=3 apps, >=30s gaps, ending callbacks); 10 stay FAIL (41 cuts: >3 apps and/or <30s gaps); 1 opening jitter stays FAIL"
+        },
+        {
+          "at": "2026-11-23T16:54Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: wrote PICTURE_GATE_RULING_v01.md + picture_qa_reviewed_ok_v01.json (104 entries); live-verified picture_qa.py --no-jitter drops fails 171->41 (42 with unwaived opening jitter, 0 split panel)"
         }
       ],
-      "remaining_action": "generate reviewed-ok JSON and PICTURE_GATE_RULING_v01.md in clean worktree and verify against checkpoint 74 picture_qa",
+      "remaining_action": "post studio thread report and park J3435 for Acting Chief Codex sign-off",
       "due": "2026-11-24T12:00:00Z",
       "kind": "qa",
       "mini_only": true,
@@ -312032,11 +312037,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-23T16:49Z",
+        "at": "2026-11-23T16:54Z",
         "by": "gemini",
-        "note": "audited all 12 reuse sources (43 cuts): 2 pass (24475803.jpg, loc_2017697475_cp06.jpg: <=3 apps, >=30s gaps, ending call"
+        "note": "wrote PICTURE_GATE_RULING_v01.md + picture_qa_reviewed_ok_v01.json (104 entries); live-verified picture_qa.py --no-jitte"
       },
       "taskKeys": [
         "WW2:002"
