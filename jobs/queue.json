@@ -309156,6 +309156,11 @@
           "at": "2026-11-23T08:02Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: J3406 condition verification complete in PR #1206 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1206, commit 619f17413, jobs/reviews/J3406/REVIEW.md blob c3d3347aed, 13/13 security tests PASS). Advisory verdict: CONDITION NOT MET — explicit payload/destination approval to publish J3307 commit 9d64d92a6181094db74608f8457187e8b4f35af2 to public TheLaughingGod1986/orbit-with-ben remains absent (checked 2026-11-23T08:00Z across 44 OWB issue comments thru #7094794935, 0 PR review comments, #219, HOS/WW2, and origin refs; no J3307 PR/branch). Local Mini worktree /Volumes/MiniWork/scratch/j3307-public-review not mounted on MacBook (last Mini check 01:52Z #7089481710). All 6/6 NAS v02/v03 JPEG hashes, J3382 PR #1184, THUMB_LEDGER T041-T043 proposed rows, and J3308-J3310 dependencies intact. Specialist worker cannot run wait --recheck or close recheck_of job (scripts/jobs.py lines 603-604, 1559-1562). Chief to merge PR #1206, run jobs.py wait J3307 --recheck J3406 --check-at 2026-11-23T14:00:00Z (or settle publication approval) and close J3406. £0 spend, no YouTube changes."
+        },
+        {
+          "at": "2026-11-23T10:31Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Chief: merge PR #1206, run wait --recheck J3406 on J3307 (or settle publication approval) and close J3406",
@@ -309169,7 +309174,8 @@
         "at": "2026-11-23T08:02Z",
         "by": "macbook-2",
         "note": "Opened PR #1206 (619f17413, 13/13 security tests PASS); parking J3406 for elected Chief"
-      }
+      },
+      "escalated_at": "2026-11-23T10:31Z"
     },
     {
       "id": "J3407",
