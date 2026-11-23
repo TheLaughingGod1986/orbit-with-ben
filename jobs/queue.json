@@ -298898,6 +298898,11 @@
           "at": "2026-11-23T09:32Z",
           "by": "codex",
           "what": "waits on Ben: Watch the Moon stopped moving Short (by 2026-11-24 18:00 London)"
+        },
+        {
+          "at": "2026-11-23T09:32Z",
+          "by": "codex",
+          "what": "waits on Ben: Watch the Newton gravity Short (by 2026-11-24 18:00 London)"
         }
       ],
       "remaining_action": "Recording the Moon Shorts review and preparing their private watch cards",
@@ -298923,15 +298928,26 @@
         "by": "codex",
         "note": "Read both delivery reports and all twelve PASS logs; directly inspected both openings, every row, flagged picture sheets"
       },
-      "awaits_ben": {
-        "what": "Watch the Moon stopped moving Short",
-        "file": "HOS UAT/009_The-Falling-Moon-Gravity/10_Shorts/hos_009_short_A_v01.mp4",
-        "version": "v01",
-        "due": "2026-11-24T18:00Z",
-        "ifNot": "Keep private and unscheduled until Ben approves and the Moon long is public",
-        "title": "What Would Happen If the Moon Stopped Moving?",
-        "type": "short"
-      }
+      "awaits_ben": [
+        {
+          "what": "Watch the Moon stopped moving Short",
+          "file": "HOS UAT/009_The-Falling-Moon-Gravity/10_Shorts/hos_009_short_A_v01.mp4",
+          "version": "v01",
+          "due": "2026-11-24T18:00Z",
+          "ifNot": "Keep private and unscheduled until Ben approves and the Moon long is public",
+          "title": "What Would Happen If the Moon Stopped Moving?",
+          "type": "short"
+        },
+        {
+          "what": "Watch the Newton gravity Short",
+          "file": "HOS UAT/009_The-Falling-Moon-Gravity/10_Shorts/hos_009_short_B_v01.mp4",
+          "version": "v01",
+          "due": "2026-11-24T18:00Z",
+          "ifNot": "Keep private and unscheduled until Ben approves and the Moon long is public",
+          "title": "How Did Newton Discover Gravity?",
+          "type": "short"
+        }
+      ]
     },
     {
       "id": "J3312",
