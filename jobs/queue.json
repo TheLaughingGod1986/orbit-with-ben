@@ -313053,9 +313053,14 @@
           "at": "2026-11-23T18:34Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Audited all 90 newer OWB comments (#7098046957..#7110289544, all on #954; 0 non-#954, 0 PR review comments, 0 [Ben] posts, 1 [Claude] post #7101809143 on WW2/HOS), OWB #219 (unchanged 2026-11-23T09:57:51Z, 105 keys, 0 new 034/J3114 ticks), HOS/WW2 comments (0 hits), and remote refs/PRs through #1221: no explicit J3114 export authorization."
+        },
+        {
+          "at": "2026-11-23T18:36Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Verified clean local /Volumes/MiniWork/scratch/j3114-wt (codex/j3114-pluto-v02 at a12100797f, ahead 1/behind 4413), THUMB_LEDGER.json (43 rows through T043; next unused T044), 12/12 NAS_VERIFY_J3114.json SHA-256 hashes, 4/4 NAS video file sizes/hashes, and unchanged 034 status.json / J3115 / J3119 / J3065 / J3066 holds."
         }
       ],
-      "remaining_action": "Complete NAS video hash verification, write jobs/reviews/J3446/REVIEW.md PR, park J3446 for Chief (Codex), and report on #954",
+      "remaining_action": "Open unmerged J3446 evidence PR, park J3446 for Chief (Codex), and report on #954",
       "kind": "review",
       "recheck_of": "J3114",
       "due": "2026-11-23T19:31:24+00:00",
@@ -313069,9 +313074,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-23T18:34Z",
+        "at": "2026-11-23T18:36Z",
         "by": "gemini",
         "plan": [
           "Inspect J3114, J3407 and approval/thread history",
@@ -313079,7 +313084,7 @@
           "Verify local branch, package/video hashes and ledger state",
           "Update J3114 wait/reopen state, report on thread, finish J3446"
         ],
-        "note": "Audited all 90 newer OWB comments (#7098046957..#7110289544, all on #954; 0 non-#954, 0 PR review comments, 0 [Ben] post"
+        "note": "Verified clean local /Volumes/MiniWork/scratch/j3114-wt (codex/j3114-pluto-v02 at a12100797f, ahead 1/behind 4413), THUM"
       },
       "taskKeys": [
         "OWB:034"
