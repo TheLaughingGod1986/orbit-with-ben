@@ -91353,6 +91353,11 @@
           "at": "2026-11-22T23:27Z",
           "by": "relay",
           "what": "condition verification queued: J3400"
+        },
+        {
+          "at": "2026-11-23T01:27Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "kind": "studio",
@@ -91368,7 +91373,8 @@
         "condition": "Required predecessor is complete; verify remaining gates and approvals",
         "check_at": "2026-11-23T00:27:57+00:00",
         "recheck_task": "J3400"
-      }
+      },
+      "escalated_at": "2026-11-23T01:27Z"
     },
     {
       "id": "J0997",
