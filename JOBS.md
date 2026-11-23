@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2529, J3205, J3364, J3370, J3371, J3422, J3419, J3440.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2529, J3205, J3364, J3370, J3371, J3422, J3419, J3440, J3441.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -79,6 +79,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3438 | mini | blocked | codex | – | studio · First-day check at 6 h: "Why Do You Weigh Less at Earth's Equator?" (Dm4xsF1Ateg) |  |
 | J3439 | mini | claimed | macbook | 2026-11-23T19:42Z | 027 upload · studio · 027 live equator Short: set missing Related on replacement Dm4xsF1Ateg |  |
 | J3440 | any | open | – | – | listing · Field Order History films 2-6: backfill stale stage records so the board shows real progress |  |
+| J3441 | mini | open | – | – | studio · Board: deploy main (PR #1219 rework/queued fix, PR #1213 card) to the studio-kanban site and verify |  |
 
 Recently finished:
 

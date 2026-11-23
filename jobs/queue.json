@@ -1,5 +1,5 @@
 {
-  "next_id": 3441,
+  "next_id": 3442,
   "jobs": [
     {
       "id": "J0001",
@@ -312520,6 +312520,37 @@
       "due": "2026-11-24T12:00:00Z",
       "kind": "listing",
       "urgent": 10
+    },
+    {
+      "id": "J3441",
+      "title": "Board: deploy main (PR #1219 rework/queued fix, PR #1213 card) to the studio-kanban site and verify",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Why (Ben, Mon 23 Nov ~17:50 London: the board shows FOH pilot 2 as \"Scheduled\" while it is being reworked, shows no progress for it, and shows queued work as \"In progress\").** The fix is merged on main (orbit-with-ben PR #1219, db434eb), together with the monetisation card's Studio totals (PR #1213, 366c89f). The board site only changes when it is redeployed, so Ben still sees the old code.\n\n**Do (about 10 minutes, on the Mini):**\n1. From a clean checkout of origin/main at or after db434eb: `python3 05_Analytics/kanban/board_site/build.py`, then from that site folder the existing Cloudflare Pages deploy: `npx wrangler pages deploy dist --project-name studio-kanban` (the Mini's own wrangler login; no new keys, nothing else changed).\n2. Verify on the live site: the served `studio_app.js` contains \"Being reworked before launch\" and \"Queued · no agent on it yet\"; the Videos tab shows Field Order History pilot 2 under In progress with its steps (Picture and edit, Voice-over), films 4-6 as \"Queued\", and the Overview's FOH monetisation card shows where each figure came from (Studio, with a time).\n3. One thread line with the deployment id and what you checked.\n\n**Guards.** Deploy only; no settings, secrets, taps or data changes (`BOARD_OPEN_TAPS` stays 0). £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 15,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-23T17:45Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T17:45Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build and deploy the board site from main, then check pilot 2 shows as being reworked",
+      "due": "2026-11-23T19:30:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "urgent": 11
     }
   ],
   "focus": [
