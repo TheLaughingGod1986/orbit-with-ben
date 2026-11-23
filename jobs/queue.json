@@ -312511,9 +312511,14 @@
           "at": "2026-11-23T19:29Z",
           "by": "codex",
           "what": "blocked: parked for Chief: review concrete PR 51 at 3c354c6 and decide the remaining research scope for the 56.37% archive plan; 158.86 seconds short of two-thirds and 51 copies below 1600px. Four bounded research runs preserved in SOURCE_RESEARCH_J3433.md. No picture PASS; J3434 dependency retained."
+        },
+        {
+          "at": "2026-11-23T20:48Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-24T10:00:00Z"
         }
       ],
-      "remaining_action": "Chief to review the Mosquito archive shortfall and set the remaining research scope",
+      "remaining_action": "Await the revised Mosquito photo plan and layout proofs from J3450, then decide picture approval",
       "due": "2026-11-28T18:00:00Z",
       "kind": "image",
       "progress": {
@@ -312530,7 +312535,12 @@
       },
       "taskKeys": [
         "WW2:006"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Chief ruling 23 Nov: picture approval WITHHELD on PR 51 at 3c354c6. Verified 67 photographs; archive 869.70/1542.84s (56.37%), short by 158.86s; 51 smaller copies need layout review. Await immediately eligible J3450: bounded sentence-level allocation and three photo-layout proofs from existing assets, then elected-Chief decision. No repeated broad harvest. J3434 stays dependent on J3433; no picture PASS or merge.",
+        "check_at": "2026-11-24T10:00:00Z"
+      }
     },
     {
       "id": "J3434",
