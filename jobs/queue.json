@@ -303419,10 +303419,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-23T06:05Z",
-      "eta": "2026-11-23T10:05Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-22T12:46Z",
       "result": "",
@@ -304931,6 +304931,11 @@
           "at": "2026-11-23T06:11Z",
           "by": "codex",
           "what": "step 1 of 4 done: Seven convoy layouts repaired:849frames, full decode/exact1080p25/seam and jitter measurements pass; inspected stills. Current coverage unchanged62.188%. Independently checked172 prepared-span hashes and contiguous36076frames; remaining failures retained."
+        },
+        {
+          "at": "2026-11-23T06:13Z",
+          "by": "codex",
+          "what": "released: Checkpoint53 local7305181 in clean isolated _desk/ww2/J3364-wt. Seven convoy layouts repaired849frames; exact1080p25/full decode/no seams/jitter checks PASS, stills inspected. Current157inserts38sources62.188% unchanged;40.60s remain. Prepared52 independently checked172span hashes/receipts/36076frames; internal51 diagnostics retained236layout73jitter58reuse findings.314credits hashes checked. Detached tmux J3364-prepare53 running silent spans; log/done _desk/logs/J3364-prepare53.{log,done}; missingdone means running,never duplicate. Resume CHECKPOINT_53.md. Finalv06/fullgates/watch unfinished. Prior unpublished work preserved,no push retry. No spend orYouTubechange."
         }
       ],
       "remaining_action": "Repair the remaining archive layouts, find the final matching imagery, then run full film checks",
