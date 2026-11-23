@@ -312145,13 +312145,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-23T16:43Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-23T16:41Z",
-      "result": "parked for Chief: J3437 condition verification complete in OWB PR #1218 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1218, commit 037b05944, jobs/reviews/J3437/REVIEW.md). CONDITION MET for J3429 (WW2:004 archive photo top-up): live HTTP verification (2026-11-23T16:46Z-16:49Z) confirmed Wikimedia Commons originals (C01 5711x3938 JPG, C02-C05) and 1920px thumbs (C01, C02 1920x2739 JPG) return HTTP 200 with a descriptive project User-Agent (curl/8.7.1 triggers HTTP 429 Retry-After:120 and default Python-urllib triggers HTTP 403 T400119); Flickr national_museum_of_the_us_navy /sizes/o/ originals (C23 1796x2448, C24, C25 2839x2120) and _b.jpg resized return HTTP 200; NHHC direct pages still return 404 but 0/41 PR #49 candidates depend on NHHC (22 Commons, 19 Flickr). All 9/9 existing NAS photos SHA-256 verified intact; upstream J3000/J3206/J3207/J3427 done and Ben's Mon 23 Nov authorisation valid; £0 spend, no NAS/YouTube writes. Recommend elected Chief (codex) merge PR #1218, reopen J3429 with this evidence and descriptive-UA guidance, and close J3437.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-23T16:41Z",
@@ -312197,6 +312197,11 @@
           "at": "2026-11-23T16:51Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: J3437 condition verification complete in OWB PR #1218 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1218, commit 037b05944, jobs/reviews/J3437/REVIEW.md). CONDITION MET for J3429 (WW2:004 archive photo top-up): live HTTP verification (2026-11-23T16:46Z-16:49Z) confirmed Wikimedia Commons originals (C01 5711x3938 JPG, C02-C05) and 1920px thumbs (C01, C02 1920x2739 JPG) return HTTP 200 with a descriptive project User-Agent (curl/8.7.1 triggers HTTP 429 Retry-After:120 and default Python-urllib triggers HTTP 403 T400119); Flickr national_museum_of_the_us_navy /sizes/o/ originals (C23 1796x2448, C24, C25 2839x2120) and _b.jpg resized return HTTP 200; NHHC direct pages still return 404 but 0/41 PR #49 candidates depend on NHHC (22 Commons, 19 Flickr). All 9/9 existing NAS photos SHA-256 verified intact; upstream J3000/J3206/J3207/J3427 done and Ben's Mon 23 Nov authorisation valid; £0 spend, no NAS/YouTube writes. Recommend elected Chief (codex) merge PR #1218, reopen J3429 with this evidence and descriptive-UA guidance, and close J3437."
+        },
+        {
+          "at": "2026-11-23T16:59Z",
+          "by": "codex",
+          "what": "reopened: Acting-Chief review: evidence accepted after fresh Mini Commons and Flickr full-download probes; record ruling and release only J3429 download hold."
         }
       ],
       "remaining_action": "Parked for elected Chief (codex) to merge PR #1218, reopen J3429, and close J3437",
@@ -312211,13 +312216,7 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-23T16:51Z",
-        "by": "macbook-2"
-      }
+      "open_claim": true
     }
   ],
   "focus": [
