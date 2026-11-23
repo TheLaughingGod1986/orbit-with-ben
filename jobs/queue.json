@@ -308747,18 +308747,23 @@
           "at": "2026-11-23T07:41Z",
           "by": "codex",
           "what": "step 2 of 3 done: Restored prior checkpoint: HOS 7 longs and 36 Shorts already committed in 3e66467b87. Orbit CDP connection timed out again; bounded existing-tab recovery underway."
+        },
+        {
+          "at": "2026-11-23T07:44Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Orbit recovered: 18 longs and 92 Shorts; HOS retained today 7 longs and 36 Shorts. All 637 mapped Studio fields verified in tracker; diff check passed; commit 14231d5493 pushed to main."
         }
       ],
-      "remaining_action": "Recovering Orbit Studio and completing its remaining metrics read",
+      "remaining_action": "Daily lifetime metrics collected and tracker rebuilt",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-23T07:41Z",
+        "at": "2026-11-23T07:44Z",
         "by": "codex",
-        "note": "Restored prior checkpoint: HOS 7 longs and 36 Shorts already committed in 3e66467b87. Orbit CDP connection timed out aga"
+        "note": "Orbit recovered: 18 longs and 92 Shorts; HOS retained today 7 longs and 36 Shorts. All 637 mapped Studio fields verified"
       }
     }
   ],
