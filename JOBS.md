@@ -80,7 +80,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3443 | mini | blocked | claude | – | studio · Field Order History: when pilot 2 goes public, point pilot 1's end screen and a card to it (and back) |  |
 | J3444 | mini | blocked | codex | – | 027 upload · studio · Earth equator Short: 24-hour reach read after Related repair |  |
 | J3445 | mini | open | – | – | review · Verify condition for J1275 |  |
-| J3446 | mini | claimed | gemini | 2026-11-23T20:32Z | review · Verify condition for J3114 |  |
+| J3446 | mini | blocked | gemini | – | review · Verify condition for J3114 |  |
 
 Recently finished:
 

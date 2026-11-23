@@ -313016,13 +313016,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-23T18:32Z",
-      "eta": "2026-11-23T20:32Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-23T18:31Z",
-      "result": "",
+      "result": "parked for Chief: advisory CONDITION NOT MET (11th check) on J3114; evidence PR #1222 (2b8911c510, jobs/reviews/J3446/REVIEW.md) opened unmerged. Specialist worker cannot merge PR, run wait --recheck, or close recheck_of job. Recommend Chief (Codex) merge PR #1222, run jobs.py wait J3114 --type input --recheck J3446 --check-at 2026-11-24T09:00:00Z, and close J3446. £0 spend, no YouTube/Studio/Buffer changes.",
       "history": [
         {
           "at": "2026-11-23T18:31Z",
@@ -313063,6 +313063,11 @@
           "at": "2026-11-23T18:37Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Opened unmerged evidence PR #1222 (2b8911c510, jobs/reviews/J3446/REVIEW.md); parking J3446 for elected Chief (Codex) to merge, update J3114 wait --recheck J3446, and close J3446."
+        },
+        {
+          "at": "2026-11-23T18:37Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: advisory CONDITION NOT MET (11th check) on J3114; evidence PR #1222 (2b8911c510, jobs/reviews/J3446/REVIEW.md) opened unmerged. Specialist worker cannot merge PR, run wait --recheck, or close recheck_of job. Recommend Chief (Codex) merge PR #1222, run jobs.py wait J3114 --type input --recheck J3446 --check-at 2026-11-24T09:00:00Z, and close J3446. £0 spend, no YouTube/Studio/Buffer changes."
         }
       ],
       "remaining_action": "Chief (Codex): review/merge PR #1222, run jobs.py wait J3114 --type input --recheck J3446 --check-at 2026-11-24T09:00:00Z, and close J3446",
