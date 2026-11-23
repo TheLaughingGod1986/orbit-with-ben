@@ -309599,13 +309599,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-23T09:31Z",
-      "eta": "2026-11-23T10:31Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-23T09:29Z",
-      "result": "",
+      "result": "Read-only HOS live & scheduled listing check complete (2026-11-23T09:33Z-09:35Z): 0 live Studio fixes needed, 0 blocking repo deltas. 7/7 public longs, 36/36 public Shorts (including newly public el30-mHiH-0, Related wwcjcFfC-5M, library.json live), 2/2 scheduled (sY0PSQFxjp8, uAomPaOBrM8), and 8/8 external URLs PASS; HOS check_all.sh ALL CHECKS PASS. Audit saved in HOS PR #737 (00_Brand/Channel-Setup/audits/live_fixes/2026-11-23_J3413.md), open for Chief merge. Nothing changed in Studio; spend £0.",
       "history": [
         {
           "at": "2026-11-23T09:29Z",
@@ -309631,6 +309631,11 @@
           "at": "2026-11-23T09:36Z",
           "by": "macbook-2",
           "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-11-23T09:37Z",
+          "by": "macbook-2",
+          "what": "done: Read-only HOS live & scheduled listing check complete (2026-11-23T09:33Z-09:35Z): 0 live Studio fixes needed, 0 blocking repo deltas. 7/7 public longs, 36/36 public Shorts (including newly public el30-mHiH-0, Related wwcjcFfC-5M, library.json live), 2/2 scheduled (sY0PSQFxjp8, uAomPaOBrM8), and 8/8 external URLs PASS; HOS check_all.sh ALL CHECKS PASS. Audit saved in HOS PR #737 (00_Brand/Channel-Setup/audits/live_fixes/2026-11-23_J3413.md), open for Chief merge. Nothing changed in Studio; spend £0."
         }
       ],
       "remaining_action": "Writing 2026-11-23_J3413.md audit report, running check_all.sh, and opening HOS PR",
