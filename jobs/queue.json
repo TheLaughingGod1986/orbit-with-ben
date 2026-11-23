@@ -310655,10 +310655,10 @@
       "stage": "script",
       "after": "",
       "eta_min": 45,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-23T13:22Z",
+      "eta": "2026-11-23T14:07Z",
       "created_by": "claude",
       "created_at": "2026-11-23T12:48Z",
       "result": "",
@@ -310667,12 +310667,25 @@
           "at": "2026-11-23T12:48Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-23T13:22Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Check the new opening's claims against SOURCES.md and lock narration v04",
       "due": "2026-11-24T12:00:00Z",
       "kind": "facts",
-      "urgent": 9
+      "urgent": 9,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-23T13:22Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3422",
