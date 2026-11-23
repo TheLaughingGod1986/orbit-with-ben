@@ -1,5 +1,5 @@
 {
-  "next_id": 3444,
+  "next_id": 3445,
   "jobs": [
     {
       "id": "J0001",
@@ -312759,6 +312759,35 @@
         "condition": "J9WGu8aPnHI is public (Sat 28 Nov 17:00 London, or Wed 25 Nov if pilot 2 makes its stretch date)",
         "check_at": "2026-11-28T17:05:00Z"
       }
+    },
+    {
+      "id": "J3444",
+      "title": "Earth equator Short: 24-hour reach read after Related repair",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Acting Chief codex ruling on J3438: the six-hour Related fault was corrected by J3439; exact persisted target receipt merged in PR #1221. At six hours: 27 views, rank 8/10, stayed 37%, average viewed 69.5%, likes 0. Reach/feed figures were unavailable; do not infer a hook failure or change the live package from this small sample.\nAt or after 2026-11-24T11:30:00Z (24 hours after publication), use Orbit Studio CDP 9223 and cdp_tabs.reuse_page for a READ-ONLY recheck of Dm4xsF1Ateg. Confirm Related remains 6bbbvfCx6zY and Public/processed/restrictions status. Read since-published views, rank, usual comparison, Shorts-feed views/share, shown in feed, stayed, average viewed and likes, omitting missing values. Record using launch_check.py record --hours 24 --by <agent> --git, preserve six-hour measurement and historical fault, and append a note distinguishing the repaired fault from any current fault. Paste full judge output; interpret historical Related FAULT using J3439 and the fresh readback. Report whether distribution is fed (day-1 Shorts-feed share >=50%) or unknown. If new fault or materially behind, route a concrete evidence-based decision to Chief; no live edits, retitle, cover/cut/test/visibility/schedule/Buffer change, upload or spend. Preserve Rule 31 experiment.\n",
+      "ref": "",
+      "film": "027",
+      "stage": "upload",
+      "after": "J3439",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-23T17:59Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T17:59Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Wait for 24-hour data, then read reach and verify the repaired link",
+      "kind": "studio",
+      "plain": "Check how the Earth equator Short is reaching viewers after its link was fixed"
     }
   ],
   "focus": [
