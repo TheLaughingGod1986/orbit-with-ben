@@ -308596,18 +308596,23 @@
           "at": "2026-11-23T07:02Z",
           "by": "codex",
           "what": "step 2 of 3 done: Public film ek9F61FVYqY has no set test or results; A/B dialog offers Set test, closed unchanged. One other film remains Scheduled."
+        },
+        {
+          "at": "2026-11-23T07:03Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Strict import passed; 19 relevant tests passed; evidence and generated analytics committed in PR 1204"
         }
       ],
-      "remaining_action": "Validate and commit the dated audience analytics import",
+      "remaining_action": "Land verified audience records and report the completed read",
       "due": "2026-11-23T06:40:43Z",
       "kind": "studio",
       "plain": "Read Field Order History’s audience and progress towards monetisation",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-23T07:02Z",
+        "at": "2026-11-23T07:03Z",
         "by": "codex",
-        "note": "Public film ek9F61FVYqY has no set test or results; A/B dialog offers Set test, closed unchanged. One other film remains"
+        "note": "Strict import passed; 19 relevant tests passed; evidence and generated analytics committed in PR 1204"
       },
       "taskKeys": [
         "WW2:001"
