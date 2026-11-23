@@ -66,7 +66,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3392 | mini | blocked | gemini | – | review · Verify condition for J3205 |  |
 | J3399 | macbook | open (after J0996) | – | – | 027 upload · review · Review Earth equator Short private/schedule discrepancy | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1200 |
 | J3400 | mini | blocked | gemini | – | review · Verify condition for J0996 |  |
-| J3401 | mini | claimed | codex | 2026-11-23T00:23Z | studio · First-day check at 6 h: "What If Earth Stopped Spinning? (It's Already Slowing Down)" (6bbbvfCx6zY) |  |
+| J3401 | mini | open | – | – | studio · First-day check at 6 h: "What If Earth Stopped Spinning? (It's Already Slowing Down)" (6bbbvfCx6zY) |  |
 
 Recently finished:
 

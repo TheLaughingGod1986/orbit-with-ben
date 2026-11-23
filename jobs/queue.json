@@ -307281,10 +307281,10 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-23T00:03Z",
-      "eta": "2026-11-23T00:23Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-23T00:02Z",
       "result": "",
@@ -307313,6 +307313,11 @@
           "at": "2026-11-23T00:06Z",
           "by": "codex",
           "what": "step 1 of 3 done: Brief and package checked; Mini Studio HTTP responds but Playwright CDP attach timed out at 15 s and existing-page Runtime.evaluate timed out at 8 s. No fresh video state or metrics verified."
+        },
+        {
+          "at": "2026-11-23T00:06Z",
+          "by": "codex",
+          "what": "released: Mini Studio remains unusable: CDP target listing responds, Playwright connect_over_cdp timed out after WebSocket connection (15 s); direct Runtime.evaluate on the existing Studio target timed out (8 s). No video navigation completed, no current Public/restriction/HD/description/Related verification, no analytics observed, no invented launch record or verdict. Next concrete route: MacBook Studio, demonstrated responsive in J3394 at 21:47Z; J3401 is read-only studio work eligible there. Read Since published figures with actual observation time, retain requested six-hour checkpoint label, and record only observed values. No browser restart/close, duplicate tab, metadata change, spend or YouTube write."
         }
       ],
       "remaining_action": "Read the Earth film launch state and six-hour figures from responsive Studio on the MacBook",
