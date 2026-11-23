@@ -312402,13 +312402,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-23T18:00Z",
-      "eta": "2026-11-23T18:20Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-23T17:36Z",
-      "result": "",
+      "result": "\"Why Do You Weigh Less at Earth's Equator?\" (Dm4xsF1Ateg) · Orbit With Ben · Short · went live Mon 23 Nov 11:30 London\nAt 6 h: views 27 · Studio rank 8 of 10 · shown in feed no figure yet · stayed to watch 37.0% · average viewed 69.5%\nUsual for this channel: stayed to watch 33.8%, average viewed 66.5%\n\nVerdict: FAULT\n  - Fault: Related video is None; upload package requires 6bbbvfCx6zY.\n  - 27 views at 6 h; the last 10 checked at the same age had 163 (median).\n  - Studio ranks it 8 of 10 against our latest videos at the same age.\n\nWhat is different about this one\n  - \"Earth\" was in the title of 5 earlier Shorts: they had 386 views by the next morning (median), against 128 for all Shorts.\n  - It is a second upload of the same video (it replaced emwQsPxnRGM).\n\nDo now\n  - Put the fault right today. The Chief queues the Studio fix; visibility and schedule changes are Ben's.\n  - Studio gave no reach figures at this check, so the step that lost the viewers is not known. Read them again before deciding anything.\n\nDone (2026-11-23T17:59Z, codex): J3438 Chief review: historical six-hour FAULT accepted and resolved by J3439. Persisted Related target 6bbbvfCx6zY verified on reload at 17:47:18Z; receipt and registry merged as PR 1221 (b36198ea67). No performance-driven edit: 27 views and absent reach figures are insufficient. J3444 reads 24-hour reach at/after 2026-11-24T11:30Z; Rule 31 remains unchanged.\n\nChief ruling (codex): ACCEPT repair J3439. Exact Related target 6bbbvfCx6zY persisted after reload at 17:47:18Z; PR #1221 merged b36198ea67. Historical six-hour FAULT preserved, current fault resolved by receipt. No performance-driven live edits: only 27 views, reach unavailable. Follow-up J3444 depends on J3439 and has date hold/check_at 2026-11-24T11:30:00Z for 24-hour reach plus link verification. Rule 31 unchanged. Review complete.",
       "history": [
         {
           "at": "2026-11-23T17:36Z",
@@ -312454,6 +312454,11 @@
           "at": "2026-11-23T18:00Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-23T18:00Z",
+          "by": "codex",
+          "what": "done: \"Why Do You Weigh Less at Earth's Equator?\" (Dm4xsF1Ateg) · Orbit With Ben · Short · went live Mon 23 Nov 11:30 London\nAt 6 h: views 27 · Studio rank 8 of 10 · shown in feed no figure yet · stayed to watch 37.0% · average viewed 69.5%\nUsual for this channel: stayed to watch 33.8%, average viewed 66.5%\n\nVerdict: FAULT\n  - Fault: Related video is None; upload package requires 6bbbvfCx6zY.\n  - 27 views at 6 h; the last 10 checked at the same age had 163 (median).\n  - Studio ranks it 8 of 10 against our latest videos at the same age.\n\nWhat is different about this one\n  - \"Earth\" was in the title of 5 earlier Shorts: they had 386 views by the next morning (median), against 128 for all Shorts.\n  - It is a second upload of the same video (it replaced emwQsPxnRGM).\n\nDo now\n  - Put the fault right today. The Chief queues the Studio fix; visibility and schedule changes are Ben's.\n  - Studio gave no reach figures at this check, so the step that lost the viewers is not known. Read them again before deciding anything.\n\nDone (2026-11-23T17:59Z, codex): J3438 Chief review: historical six-hour FAULT accepted and resolved by J3439. Persisted Related target 6bbbvfCx6zY verified on reload at 17:47:18Z; receipt and registry merged as PR 1221 (b36198ea67). No performance-driven edit: 27 views and absent reach figures are insufficient. J3444 reads 24-hour reach at/after 2026-11-24T11:30Z; Rule 31 remains unchanged.\n\nChief ruling (codex): ACCEPT repair J3439. Exact Related target 6bbbvfCx6zY persisted after reload at 17:47:18Z; PR #1221 merged b36198ea67. Historical six-hour FAULT preserved, current fault resolved by receipt. No performance-driven live edits: only 27 views, reach unavailable. Follow-up J3444 depends on J3439 and has date hold/check_at 2026-11-24T11:30:00Z for 24-hour reach plus link verification. Rule 31 unchanged. Review complete."
         }
       ],
       "remaining_action": "Await the queued Related video correction",
@@ -312471,7 +312476,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1221"
     },
     {
       "id": "J3439",
