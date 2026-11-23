@@ -311567,13 +311567,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-23T15:35Z",
-      "eta": "2026-11-23T18:35Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T15:29Z",
-      "result": "",
+      "result": "Waiting for: Public archive binary delivery must work again: Commons original and standard 1920-pixel thumbnail downloads returned HTTP 429; Flickr original returned 429 and resized image 403; NHHC direct pages returned 404 on 23 Nov. Nine existing NAS photos hash-verified. Resume draft ww2 PR 49, retrieve and inspect 41 additional distinct photographs (replace failed candidates), then finalise the 41-paragraph plan. Current 57.6% is proposed only and 123 seconds below two-thirds. No new files delivered and no stage PASS.",
       "history": [
         {
           "at": "2026-11-23T15:29Z",
@@ -311599,9 +311599,19 @@
           "at": "2026-11-23T15:48Z",
           "by": "codex",
           "what": "step 1 of 3 done: Prepared all 41 paragraph mappings and 50 provenance records: 9 actual verified photos plus 41 candidates. Downloads blocked by Commons 429, Flickr 403/429 and NHHC 404. Provisional archive share 57.6%, not achieved; 123 seconds short of two-thirds."
+        },
+        {
+          "at": "2026-11-23T15:49Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: Public archive binary delivery must work again: Commons original and standard 1920-pixel thumbnail downloads returned HTTP 429; Flickr original returned 429 and resized image 403; NHHC direct pages returned 404 on 23 Nov. Nine existing NAS photos hash-verified. Resume draft ww2 PR 49, retrieve and inspect 41 additional distinct photographs (replace failed candidates), then finalise the 41-paragraph plan. Current 57.6% is proposed only and 123 seconds below two-thirds. No new files delivered and no stage PASS."
+        },
+        {
+          "at": "2026-11-23T15:49Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-23T16:30:00Z"
         }
       ],
-      "remaining_action": "Retrieve and visually verify the additional archive photographs, then finalise the picture plan",
+      "remaining_action": "Download and verify the extra archive photographs for the submarine torpedo film",
       "due": "2026-11-26T18:00:00Z",
       "kind": "image",
       "progress": {
@@ -311613,7 +311623,12 @@
       },
       "taskKeys": [
         "WW2:004"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "Public archive binary delivery must work again: Commons original and standard 1920-pixel thumbnail downloads returned HTTP 429; Flickr original returned 429 and resized image 403; NHHC direct pages returned 404 on 23 Nov. Nine existing NAS photos hash-verified. Resume draft ww2 PR 49, retrieve and inspect 41 additional distinct photographs (replace failed candidates), then finalise the 41-paragraph plan. Current 57.6% is proposed only and 123 seconds below two-thirds. No new files delivered and no stage PASS.",
+        "check_at": "2026-11-23T16:30:00Z"
+      }
     },
     {
       "id": "J3430",
