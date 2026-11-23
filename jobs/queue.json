@@ -308006,13 +308006,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-23T04:06Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-23T04:06Z",
-      "result": "parked for Chief: J3402 condition verification for J2537 is NOT YET MET (OWB PR #1203, jobs/reviews/J3402/REVIEW.md @ 8958f4d94d, blob acea76235b). Fresh check 2026-11-23T04:08Z across OWB #954 (thru 7091278106), OWB #219, HOS #694 (thru 7087128032), HOS #180 (capped at 2500 comments, last 7024089854), HOS #657 (0 comments), and repo-wide comments found no new Ben exception for rewriting protected HOS hos-desk history while retaining PR180 (Grok 7018109147: do not ask again). Pre-rewrite NAS/MiniWork backups and HOS jobs/reviews/J2537/ rehearsal files (26 files) verified intact; HOS origin/main is 3be5729297, origin/hos-desk is a4ce692535, with 36 open non-desk PRs. Elected Chief (Codex) needed to merge OWB PR #1203, run jobs.py wait J2537 --agent codex --type input --recheck J3402 --check-at 2026-11-23T10:10:00Z (scripts/jobs.py:603-604), and close J3402 (scripts/jobs.py:1559-1562). £0 spend, no live rewrite, no YouTube/Studio/Buffer changes.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-23T04:06Z",
@@ -308053,6 +308053,11 @@
           "at": "2026-11-23T04:10Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3402 condition verification for J2537 is NOT YET MET (OWB PR #1203, jobs/reviews/J3402/REVIEW.md @ 8958f4d94d, blob acea76235b). Fresh check 2026-11-23T04:08Z across OWB #954 (thru 7091278106), OWB #219, HOS #694 (thru 7087128032), HOS #180 (capped at 2500 comments, last 7024089854), HOS #657 (0 comments), and repo-wide comments found no new Ben exception for rewriting protected HOS hos-desk history while retaining PR180 (Grok 7018109147: do not ask again). Pre-rewrite NAS/MiniWork backups and HOS jobs/reviews/J2537/ rehearsal files (26 files) verified intact; HOS origin/main is 3be5729297, origin/hos-desk is a4ce692535, with 36 open non-desk PRs. Elected Chief (Codex) needed to merge OWB PR #1203, run jobs.py wait J2537 --agent codex --type input --recheck J3402 --check-at 2026-11-23T10:10:00Z (scripts/jobs.py:603-604), and close J3402 (scripts/jobs.py:1559-1562). £0 spend, no live rewrite, no YouTube/Studio/Buffer changes."
+        },
+        {
+          "at": "2026-11-23T04:16Z",
+          "by": "codex",
+          "what": "reopened: Chief accepts merged PR1203; parent hold recorded with recheck J3402. Reopen verification only to claim and finish. J2537 remains blocked."
         }
       ],
       "remaining_action": "Parked for Chief Codex to merge OWB PR #1203, record J2537 wait --recheck J3402, and close J3402",
@@ -308068,13 +308073,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-23T04:10Z",
-        "by": "gemini",
-        "note": "OWB PR #1203 (8958f4d94d) open and reports posted on HOS #694 and OWB #954; condition NOT YET MET; parking J3402 for ele"
-      },
       "taskKeys": [
         "HOS:005",
         "HOS:008",
