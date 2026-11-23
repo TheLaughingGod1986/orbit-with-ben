@@ -298436,13 +298436,13 @@
       "stage": "thumbs",
       "after": "J3378",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-23T01:51Z",
-      "eta": "2026-11-23T03:51Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-21T16:37Z",
-      "result": "",
+      "result": "Prior automatic approval review rejected publication of the completed two-file historical review at commit 9d64d92a6181094db74608f8457187e8b4f35af2 to public TheLaughingGod1986/orbit-with-ben. Explicit payload and destination approval is required before publication. Clean worktree /Volumes/MiniWork/scratch/j3307-public-review preserved. Do not retry unchanged or bypass publication. J3382 v03 decisions and J3308-J3310 dependencies remain unchanged; progress 2 of 3.",
       "history": [
         {
           "at": "2026-11-21T16:37Z",
@@ -298613,6 +298613,11 @@
           "at": "2026-11-23T01:52Z",
           "by": "codex",
           "what": "step 2 of 3 done: Verified clean two-file commit 9d64d92a61 and existing J3382 successor decision. Prior automatic approval rejection remains unresolved; no retry or new ruling."
+        },
+        {
+          "at": "2026-11-23T01:52Z",
+          "by": "codex",
+          "what": "blocked: Prior automatic approval review rejected publication of the completed two-file historical review at commit 9d64d92a6181094db74608f8457187e8b4f35af2 to public TheLaughingGod1986/orbit-with-ben. Explicit payload and destination approval is required before publication. Clean worktree /Volumes/MiniWork/scratch/j3307-public-review preserved. Do not retry unchanged or bypass publication. J3382 v03 decisions and J3308-J3310 dependencies remain unchanged; progress 2 of 3."
         }
       ],
       "remaining_action": "Obtain required publication approval for the completed historical thumbnail review",
@@ -298629,6 +298634,11 @@
         "at": "2026-11-23T01:52Z",
         "by": "codex",
         "note": "Verified clean two-file commit 9d64d92a61 and existing J3382 successor decision. Prior automatic approval rejection rema"
+      },
+      "hold": {
+        "type": "input",
+        "condition": "Prior automatic approval review rejected publication of the completed two-file historical review at commit 9d64d92a6181094db74608f8457187e8b4f35af2 to public TheLaughingGod1986/orbit-with-ben. Explicit payload and destination approval is required before publication. Clean worktree /Volumes/MiniWork/scratch/j3307-public-review preserved. Do not retry unchanged or bypass publication. J3382 v03 decisions and J3308-J3310 dependencies remain unchanged; progress 2 of 3.",
+        "check_at": "2026-11-23T07:52:12+00:00"
       }
     },
     {
