@@ -77,7 +77,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3433 | mini | open | – | – | WW2:006 picture · image · WW2 film 006: top up the archive photographs to about two-thirds of screen time before the edit |  |
 | J3434 | mini | open (after J3433) | – | – | WW2:006 edit · assembly · WW2 film 006: edit, captions, three thumbnails and upload package, to Ben's watch |  |
 | J3438 | mini | blocked | codex | – | studio · First-day check at 6 h: "Why Do You Weigh Less at Earth's Equator?" (Dm4xsF1Ateg) |  |
-| J3439 | mini | open | – | – | 027 upload · studio · 027 live equator Short: set missing Related on replacement Dm4xsF1Ateg |  |
+| J3439 | mini | claimed | macbook | 2026-11-23T19:42Z | 027 upload · studio · 027 live equator Short: set missing Related on replacement Dm4xsF1Ateg |  |
 
 Recently finished:
 
