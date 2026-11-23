@@ -312402,13 +312402,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-23T17:36Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-23T17:36Z",
-      "result": "parked for Chief: first-day check, Verdict: FAULT; correction decided and queued as J3439",
+      "result": "",
       "history": [
         {
           "at": "2026-11-23T17:36Z",
@@ -312444,6 +312444,11 @@
           "at": "2026-11-23T17:40Z",
           "by": "codex",
           "what": "blocked: parked for Chief: first-day check, Verdict: FAULT; correction decided and queued as J3439"
+        },
+        {
+          "at": "2026-11-23T17:59Z",
+          "by": "codex",
+          "what": "reopened: Chief ruling recorded: accept J3439 repair receipt merged PR 1221; historical FAULT resolved. J3444 owns 24-hour reach read under date hold until 2026-11-24T11:30Z. Reopen only to close reviewed task."
         }
       ],
       "remaining_action": "Await the queued Related video correction",
@@ -312451,13 +312456,6 @@
       "kind": "studio",
       "launch": "Dm4xsF1Ateg@6",
       "plain": "Check how \"Why Do You Weigh Less at Earth's Equator?\" is doing 6 hours after it went live",
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-23T17:40Z",
-        "by": "codex",
-        "note": "Read-only check complete; confirmed HD complete and description matches package. Chief correction queued as J3439."
-      },
       "taskKeys": [
         "OWB:027"
       ]
