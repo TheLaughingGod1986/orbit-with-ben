@@ -309685,13 +309685,13 @@
       "stage": "",
       "after": "J3411",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-23T09:45Z",
-      "eta": "2026-11-23T11:45Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-23T09:43Z",
-      "result": "",
+      "result": "Waiting for: Read pilot 1 at its 48-hour launch point at or after 2026-11-24T17:05:00Z; preserve running B/C/D test. Administrative claim only to register this dated hold, no second task performed.",
       "history": [
         {
           "at": "2026-11-23T09:43Z",
@@ -309702,9 +309702,19 @@
           "at": "2026-11-23T09:45Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-23T09:45Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: Read pilot 1 at its 48-hour launch point at or after 2026-11-24T17:05:00Z; preserve running B/C/D test. Administrative claim only to register this dated hold, no second task performed."
+        },
+        {
+          "at": "2026-11-23T09:45Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-24T17:05:00Z"
         }
       ],
-      "remaining_action": "Wait for the harbour film 48-hour read, then record metrics and thumbnail test status",
+      "remaining_action": "Read the harbour film metrics and thumbnail test on 24 November at 17:05 UTC",
       "kind": "studio",
       "plain": "Checking whether the harbour film thumbnails improve viewing",
       "progress": {
@@ -309714,6 +309724,11 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "date",
+        "condition": "Read pilot 1 at its 48-hour launch point at or after 2026-11-24T17:05:00Z; preserve running B/C/D test. Administrative claim only to register this dated hold, no second task performed.",
+        "check_at": "2026-11-24T17:05:00Z"
       }
     }
   ],
