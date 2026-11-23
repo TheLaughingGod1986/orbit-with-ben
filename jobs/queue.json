@@ -311113,9 +311113,14 @@
           "at": "2026-11-23T17:15Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J3422; inspecting VO_PICKUP_v04.txt, v01 join point, and audio probe"
+        },
+        {
+          "at": "2026-11-23T17:17Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: audio_input verified via read_file probe; v01 join 'A strong wind...' starts at 176.820s (-20.1 LUFS); dry-run confirmed 1,042 chars / 186 words vs 15,222 credits remaining"
         }
       ],
-      "remaining_action": "Verify audio input capability, check v01 join point and ElevenLabs credits",
+      "remaining_action": "Generate VO_PICKUP_v04.txt pickup take via vo_take.py under desk-lock elevenlabs",
       "due": "2026-11-25T12:00:00Z",
       "kind": "vo",
       "mini_only": true,
@@ -311136,11 +311141,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-23T17:15Z",
+        "at": "2026-11-23T17:17Z",
         "by": "gemini",
-        "note": "Claimed J3422; inspecting VO_PICKUP_v04.txt, v01 join point, and audio probe"
+        "note": "audio_input verified via read_file probe; v01 join 'A strong wind...' starts at 176.820s (-20.1 LUFS); dry-run confirmed"
       }
     },
     {
