@@ -313823,13 +313823,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 25,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-23T20:50Z",
-      "eta": "2026-11-23T21:15Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-23T20:48Z",
-      "result": "",
+      "result": "Bounded editorial pass delivered in WW2 PR 51 at 7d7d162. Ten exact paragraph partitions; three shared native-size proofs viewed and hashed. Provisional archive budget 771.180s (49.9844442716%), minimum gap 257.380s. Opening group-photo hero FIX. Final picture decision J3451; J3433 held, J3434 dependency preserved. No picture approval.",
       "history": [
         {
           "at": "2026-11-23T20:48Z",
@@ -313865,6 +313865,11 @@
           "at": "2026-11-23T20:58Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR 51 updated at 7d7d162; 67 source integrity checks, 10 interval partitions, exact budget arithmetic and 3 shared proof hashes verified. No picture PASS."
+        },
+        {
+          "at": "2026-11-23T20:58Z",
+          "by": "codex",
+          "what": "done: Bounded editorial pass delivered in WW2 PR 51 at 7d7d162. Ten exact paragraph partitions; three shared native-size proofs viewed and hashed. Provisional archive budget 771.180s (49.9844442716%), minimum gap 257.380s. Opening group-photo hero FIX. Final picture decision J3451; J3433 held, J3434 dependency preserved. No picture approval."
         }
       ],
       "remaining_action": "Completed the bounded picture review; final picture decision remains queued",
@@ -313893,7 +313898,8 @@
       },
       "taskKeys": [
         "WW2:006"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/51"
     },
     {
       "id": "J3451",
