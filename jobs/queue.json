@@ -1,5 +1,5 @@
 {
-  "next_id": 3415,
+  "next_id": 3416,
   "jobs": [
     {
       "id": "J0001",
@@ -309759,6 +309759,35 @@
         "condition": "Read pilot 1 at its 48-hour launch point at or after 2026-11-24T17:05:00Z; preserve running B/C/D test. Administrative claim only to register this dated hold, no second task performed.",
         "check_at": "2026-11-24T17:05:00Z"
       }
+    },
+    {
+      "id": "J3415",
+      "title": "Reply to new viewer comments on Orbit With Ben (daily)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Ben's decision (21 Nov 2026, asked in chat what to do about viewer comments, answered \"2\"):** the studio replies to viewer comments itself, for plain questions and thanks. Anything critical, factual or tricky is drafted and held for Ben. Nobody was reading comments before this.\n\n**What this job does, once a day (Orbit With Ben first; other channels only when Ben says):**\n1. In YouTube Studio (CDP 9223, `reuse_page`), open Comments and list every comment from the last 14 days that has no reply from the channel. Note the video id, the comment id, the author's display name (never an email), the time and the text. Skip comments by the channel itself. Check `05_Analytics/owb/COMMENT_REPLIES.jsonl` first so you do not re-reply to or re-hold comments already logged.\n2. **Reply yourself, short and friendly, only to:** thanks and praise; plain questions the video or its script answers (check `02_Video-Projects/*/` script or facts file; quote nothing you cannot find there); a plain topic suggestion (say it is noted, promise nothing). One or two sentences, en-GB, in the channel's voice (curious, plain, no hype), no links, no emojis beyond one, no promises about future videos or dates, no mention of money or affiliate.\n3. **Do not reply; draft instead and hold for Ben:** disagreement, corrections, anything that says we got a fact wrong, criticism, complaints, anything about the voice or AI, medical or political topics, anything you are unsure of. Write a suggested reply under 40 words and, for a factual point, say which line of the script or source supports it. Spam, abuse and links: do nothing (no hide, no delete, no report).\n4. Never: like, heart or pin a comment; hold or remove one; change settings; reply twice to one comment; reply to more than 15 comments in one run (leave the rest for tomorrow).\n5. Record every comment seen in `05_Analytics/owb/COMMENT_REPLIES.jsonl` (one line each: time, video id, comment id, author name, text, action = replied | held | skipped, and the reply or draft). Commit it through the usual jobs commit path.\n6. Post one short note on the studio thread: how many replied, how many held. For each held comment, give video, the comment text, and the draft, and say it is for Ben. Do not park the job for Ben: finish it.\n7. Before you finish, queue tomorrow's run for 09:00 London the next day (note: `jobs.py add --not-before` is deprecated; add the job and record a `type=date` structured hold with `jobs.py wait <id> --condition ... --check-at \"<YYYY-MM-DD>T09:00:00Z\" --type date --git`). If it did not get queued, say so on the thread.\n\nNo spend. Nothing public except replies of the kind in step 2.\n\n**Dashes (Ben, 21 Nov 2026: \"Only - not —\"):** in every reply and draft use only the short hyphen ( - ), never the long dash (—) or the en dash (–). Check each reply for them before posting.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J3354",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-23T09:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T09:54Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Check Orbit viewer comments from the last fortnight and reply within the approved policy",
+      "kind": "studio",
+      "plain": "Read new Orbit viewer comments and reply to simple questions and thanks"
     }
   ],
   "focus": [
