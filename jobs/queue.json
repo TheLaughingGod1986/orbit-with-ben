@@ -310777,10 +310777,10 @@
       "stage": "vo",
       "after": "J3421",
       "eta_min": 40,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-23T14:17Z",
+      "eta": "2026-11-23T14:57Z",
       "created_by": "claude",
       "created_at": "2026-11-23T12:48Z",
       "result": "",
@@ -310794,13 +310794,26 @@
           "at": "2026-11-23T13:58Z",
           "by": "claude",
           "what": "Text locked (J3421 done, PR #41). Voice today if possible: pilot 2 may go back to Wednesday."
+        },
+        {
+          "at": "2026-11-23T14:17Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Voice the locked new opening and check the join",
       "due": "2026-11-25T12:00:00Z",
       "kind": "vo",
       "mini_only": true,
-      "urgent": 9
+      "urgent": 9,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-23T14:17Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3423",
