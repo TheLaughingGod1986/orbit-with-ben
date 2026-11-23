@@ -71,7 +71,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3422 | mini | blocked | codex | – | WW2:002 vo · vo · WW2 pilot 002: voice the new opening (pickup only, same voice and settings) |  |
 | J3423 | mini | blocked | gemini | – | review · Verify condition for J2040 |  |
 | J3426 | mini | blocked | gemini | – | review · Verify condition for J3419 |  |
-| J3428 | mini | open | – | – | review · Verify condition for J3422 |  |
+| J3428 | mini | claimed | gemini | 2026-11-23T17:11Z | review · Verify condition for J3422 |  |
 
 Recently finished:
 
