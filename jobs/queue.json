@@ -298791,13 +298791,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-21T16:56Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-21T16:55Z",
-      "result": "Waiting for: A non-producer reviewer on the Mini (J3311 needs the NAS contact sheets, iCloud copies and Play links, which cloud Claude cannot open). Gemini made these Shorts (J2171, HOS PR 718) so it cannot review them. Back: Grok Bot (stalled until about 09:30Z 22 Nov), Codex (usage limit until 24 Nov 23:26Z), Claude Code on the Mini (limit resets 25 Nov 10:00 London). Cursor is out until 9 Dec. The parent HOS 009 long is not uploaded, so neither Short can air before it, and nothing is lost by waiting. J3344 verified the Shorts, the 12 QA outputs and PR 718 are intact (22 Nov 07:52Z). When a reviewer is back, reopen J3311 and run `jobs.py handback J3311` so Gemini is not woken again.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-21T16:55Z",
@@ -298863,6 +298863,11 @@
           "at": "2026-11-23T07:46Z",
           "by": "relay",
           "what": "condition verification queued: J3405"
+        },
+        {
+          "at": "2026-11-23T09:27Z",
+          "by": "codex",
+          "what": "reopened: J3405 Chief ruling: condition satisfied by live non-producer Codex on Mini; NAS hashes match and 12 gate reports intact; PR718 exact head has six green checks. Reopen for original QA and UAT handoff only, no media PASS or publishing permission."
         }
       ],
       "remaining_action": "Reopen when a non-producer reviewer on the Mini is up, then handback",
@@ -298877,22 +298882,9 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 0,
-        "of": 4,
-        "at": "2026-11-21T16:59Z",
-        "by": "gemini",
-        "note": "Gemini produced J2171 (PR #718 @ 7248b872, 6/6 CI green, MERGEABLE) and is excluded from self-review; parking via jobs.p"
-      },
       "taskKeys": [
         "HOS:009"
-      ],
-      "hold": {
-        "type": "input",
-        "condition": "A non-producer reviewer on the Mini (J3311 needs the NAS contact sheets, iCloud copies and Play links, which cloud Claude cannot open). Gemini made these Shorts (J2171, HOS PR 718) so it cannot review them. Back: Grok Bot (stalled until about 09:30Z 22 Nov), Codex (usage limit until 24 Nov 23:26Z), Claude Code on the Mini (limit resets 25 Nov 10:00 London). Cursor is out until 9 Dec. The parent HOS 009 long is not uploaded, so neither Short can air before it, and nothing is lost by waiting. J3344 verified the Shorts, the 12 QA outputs and PR 718 are intact (22 Nov 07:52Z). When a reviewer is back, reopen J3311 and run `jobs.py handback J3311` so Gemini is not woken again.",
-        "check_at": "2026-11-23T08:46:33+00:00",
-        "recheck_task": "J3405"
-      }
+      ]
     },
     {
       "id": "J3312",
