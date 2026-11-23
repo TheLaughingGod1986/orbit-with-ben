@@ -310023,13 +310023,13 @@
       "stage": "",
       "after": "",
       "eta_min": 75,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-23T10:51Z",
-      "eta": "2026-11-23T12:06Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T09:57Z",
-      "result": "",
+      "result": "Waiting for: J9WGu8aPnHI is Public and saved B/C/D Thumbnail-only test reads Running. PR38 merged at 658a126. Saved 2026-11-23T10:56:58.611Z; current native reason Ineligible: Your video is not public. Read actual launch first (25 Nov 17:00 currently; J3364 may move to 28 Nov). Verify within 30 minutes of actual launch; preserve existing test, never delete/restart it. Evidence in WW2 002 03_Picture/PACKAGING_DECISION_v03.md and thumbnail_ab_receipt_v03.json.",
       "history": [
         {
           "at": "2026-11-23T09:57Z",
@@ -310085,9 +310085,19 @@
           "at": "2026-11-23T10:59Z",
           "by": "codex",
           "what": "step 3 of 4 done: Saved B/C/D thumbnail-only experiment at 10:56:58Z; reload shows Ineligible only because video is not public. PR 38 reviewed and merged; launch readback remains."
+        },
+        {
+          "at": "2026-11-23T10:59Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: J9WGu8aPnHI is Public and saved B/C/D Thumbnail-only test reads Running. PR38 merged at 658a126. Saved 2026-11-23T10:56:58.611Z; current native reason Ineligible: Your video is not public. Read actual launch first (25 Nov 17:00 currently; J3364 may move to 28 Nov). Verify within 30 minutes of actual launch; preserve existing test, never delete/restart it. Evidence in WW2 002 03_Picture/PACKAGING_DECISION_v03.md and thumbnail_ab_receipt_v03.json."
+        },
+        {
+          "at": "2026-11-23T10:59Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-25T17:05:00Z"
         }
       ],
-      "remaining_action": "At launch, confirm the saved thumbnail test is running and record the time.",
+      "remaining_action": "Confirm the saved three-thumbnail test is running when the Atlantic film goes public.",
       "due": "2026-11-25T15:00:00Z",
       "kind": "thumb",
       "mini_only": true,
@@ -310100,7 +310110,12 @@
       },
       "taskKeys": [
         "WW2:002"
-      ]
+      ],
+      "hold": {
+        "type": "public",
+        "condition": "J9WGu8aPnHI is Public and saved B/C/D Thumbnail-only test reads Running. PR38 merged at 658a126. Saved 2026-11-23T10:56:58.611Z; current native reason Ineligible: Your video is not public. Read actual launch first (25 Nov 17:00 currently; J3364 may move to 28 Nov). Verify within 30 minutes of actual launch; preserve existing test, never delete/restart it. Evidence in WW2 002 03_Picture/PACKAGING_DECISION_v03.md and thumbnail_ab_receipt_v03.json.",
+        "check_at": "2026-11-25T17:05:00Z"
+      }
     }
   ],
   "focus": [
