@@ -131,6 +131,7 @@ The job is already claimed for you: {job}
 {other_checkouts}
 2. Do the job exactly as its brief says. Report progress as you go:
      python3 scripts/jobs.py progress {job} --agent {agent} --step <k> --of <n> --action "<what is left>" --git
+   On the first report add --plan "<step 1> | <step 2> | ..." (n short plain names) so Ben sees which steps are left.
 3. Commit your work on a branch named macbook/<job id>, push it (git push -u origin <branch>), and open a PR to main
    with gh; say the PR number in the result. Never merge, approve or close a PR, and never push to main: merges are
    the Chief's (AGENTS.md), so a brief that says "merge" stops at the open PR and says so. Then switch every checkout you touched back to main

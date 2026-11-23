@@ -344,6 +344,21 @@ class Progress(unittest.TestCase):
         self.assertEqual(j["progress"], {"step": 3, "of": 8, "at": "2026-10-07T12:10Z", "by": "cursor", "note": "grade done"})
         self.assertEqual(j["history"][-1]["what"], "step 3 of 8 done: grade done")
 
+    def test_named_steps_are_kept_until_the_step_count_changes(self):
+        # Ben, 23 Nov 2026: the board lists which steps are left.
+        d = queue(("mini", "edit fixes", {}))
+        j = jobs.do_next(d, "cursor", {"mini"}, T0)
+        jobs.do_progress(j, "cursor", 0, 3, T0 + MIN, plan="check brief | fix photos | final gates")
+        self.assertEqual(j["progress"]["plan"], ["check brief", "fix photos", "final gates"])
+        jobs.do_progress(j, "cursor", 1, 3, T0 + 2 * MIN, note="brief checked")
+        self.assertEqual(j["progress"]["plan"], ["check brief", "fix photos", "final gates"])
+        jobs.do_progress(j, "cursor", 1, 4, T0 + 3 * MIN)
+        self.assertNotIn("plan", j["progress"])
+        with self.assertRaises(ValueError):
+            jobs.do_progress(j, "cursor", 1, 4, T0 + 4 * MIN, plan="only | three | names")
+        with self.assertRaises(ValueError):
+            jobs.do_progress(j, "cursor", 1, 2, T0 + 4 * MIN, plan="ok | " + "x" * 81)
+
     def test_progress_links_a_shared_job_without_completing_a_film_stage(self):
         d = queue(("mini", "Teaching overlays", {}))
         j = jobs.do_next(d, "cursor", {"mini"}, T0)

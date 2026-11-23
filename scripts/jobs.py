@@ -1025,7 +1025,8 @@ def do_renew(job: dict, agent: str, eta_min: int, at: dt.datetime) -> None:
     log(job, at, agent, f"renewed to {job['eta']}")
 
 
-def do_progress(job: dict, agent: str, step: int, of: int, at: dt.datetime, note: str = "", films: str | None = None, action: str | None = None) -> None:
+def do_progress(job: dict, agent: str, step: int, of: int, at: dt.datetime, note: str = "", films: str | None = None, action: str | None = None,
+                plan: str | None = None) -> None:
     """Ben, 11 Oct 22:09: the board says "Working on X, 20% done, finished in about 30 min". A worker reports each
     finished step: `progress J0130 --step 3 --of 8` = 3 of 8 steps done. The page turns it into % done and an ETA from
     the pace so far. Kept across a release (the next run carries on from it); cleared when the job is reopened.
@@ -1039,6 +1040,18 @@ def do_progress(job: dict, agent: str, step: int, of: int, at: dt.datetime, note
         raise ValueError(f"{job['id']} is {job['status']}; progress is for a job in hand")
     if action is not None and (not action.strip() or len(action.strip()) > 180):
         raise ValueError("--action needs a plain remaining action of 1-180 characters")
+    # The named steps (Ben, 23 Nov 2026: "with any job still in progress, I can't see the list of outstanding tasks
+    # that are left"). `--plan "check brief | fix 13 photos | render | final gates"`: one plain name per step, so the
+    # board can tick the first `step` and list the rest. Kept on later reports while `--of` is unchanged.
+    steps = None
+    if plan is not None:
+        steps = [scrub(s.strip()) for s in plan.split("|")]
+        if len(steps) != of or any(not s or len(s) > 80 for s in steps):
+            raise ValueError(f"--plan needs exactly {of} step names separated by '|', each 1-80 characters")
+    else:
+        old = job.get("progress") or {}
+        if isinstance(old.get("plan"), list) and len(old["plan"]) == of:
+            steps = old["plan"]
     if films is not None:
         keys = list(dict.fromkeys(x.strip().upper() for x in films.split(",") if x.strip()))
         if not keys or any(not channels.strict_key_re().fullmatch(x) for x in keys):
@@ -1047,6 +1060,8 @@ def do_progress(job: dict, agent: str, step: int, of: int, at: dt.datetime, note
     if action is not None:
         job["remaining_action"] = action.strip()
     job["progress"] = {"step": step, "of": of, "at": studio.iso(at), "by": agent}
+    if steps:
+        job["progress"]["plan"] = steps
     if note:
         job["progress"]["note"] = note[:120]
     log(job, at, agent, f"step {step} of {of} done" + (": " + note if note else ""))
@@ -1426,6 +1441,7 @@ def main(argv=None) -> int:
             p.add_argument("--of", type=int, required=True, help="steps in the whole job")
             p.add_argument("--action", default=None, help="plain-English action still unfinished; update when the remaining work changes")
             p.add_argument("--films", default=None, help="video(s) this job advances, e.g. " + keys_example())
+            p.add_argument("--plan", default=None, help="the steps' plain names, '|' between them, as many as --of (send with the first report)")
         if name == "stuck":
             p.add_argument("--runs", type=int, required=True, help="runs in a row that hit the time cap (relay only)")
         if name == "reroute":
@@ -1575,7 +1591,7 @@ def main(argv=None) -> int:
                 if on_board(job):
                     board_claim(job, args.agent, at)
             elif args.cmd == "progress":
-                do_progress(job, args.agent, args.step, args.of, at, args.note, args.films, args.action)
+                do_progress(job, args.agent, args.step, args.of, at, args.note, args.films, args.action, args.plan)
                 return job, None, touched  # the film's board stage doesn't change
             elif args.cmd == "reopen":
                 do_reopen(job, args.agent or "claude", args.note, at)
