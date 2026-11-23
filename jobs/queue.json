@@ -313568,13 +313568,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-23T20:16Z",
-      "eta": "2026-11-23T22:16Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-23T20:15Z",
-      "result": "",
+      "result": "Verified J3447 delivery; readiness NOT met. Independent 65-sentence/eight-interval and 41-row totals confirm 43.9598% hybrid coverage, 308.4323s short. Chief FIX rejects current plan and exception. J3429 input hold updated with recheck J3448 for 24 Nov 18:00Z; J3430 remains dependent. Review in WW2 PR49 923c63f.",
       "history": [
         {
           "at": "2026-11-23T20:15Z",
@@ -313610,6 +313610,11 @@
           "at": "2026-11-23T20:19Z",
           "by": "codex",
           "what": "step 3 of 3 done: Parent hold updated with recheck J3448 and original 24 Nov 18:00Z date; J3430 still dependent; review pushed to PR49"
+        },
+        {
+          "at": "2026-11-23T20:19Z",
+          "by": "codex",
+          "what": "done: Verified J3447 delivery; readiness NOT met. Independent 65-sentence/eight-interval and 41-row totals confirm 43.9598% hybrid coverage, 308.4323s short. Chief FIX rejects current plan and exception. J3429 input hold updated with recheck J3448 for 24 Nov 18:00Z; J3430 remains dependent. Review in WW2 PR49 923c63f."
         }
       ],
       "remaining_action": "Verification complete; original picture plan remains held for repair",
@@ -313639,7 +313644,8 @@
       },
       "taskKeys": [
         "WW2:004"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/49/commits/923c63f"
     }
   ],
   "focus": [
