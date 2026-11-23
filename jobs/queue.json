@@ -1,5 +1,5 @@
 {
-  "next_id": 3405,
+  "next_id": 3406,
   "jobs": [
     {
       "id": "J0001",
@@ -298846,6 +298846,11 @@
           "at": "2026-11-22T08:03Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-23T07:40:00Z"
+        },
+        {
+          "at": "2026-11-23T07:46Z",
+          "by": "relay",
+          "what": "condition verification queued: J3405"
         }
       ],
       "remaining_action": "Reopen when a non-producer reviewer on the Mini is up, then handback",
@@ -298873,7 +298878,8 @@
       "hold": {
         "type": "input",
         "condition": "A non-producer reviewer on the Mini (J3311 needs the NAS contact sheets, iCloud copies and Play links, which cloud Claude cannot open). Gemini made these Shorts (J2171, HOS PR 718) so it cannot review them. Back: Grok Bot (stalled until about 09:30Z 22 Nov), Codex (usage limit until 24 Nov 23:26Z), Claude Code on the Mini (limit resets 25 Nov 10:00 London). Cursor is out until 9 Dec. The parent HOS 009 long is not uploaded, so neither Short can air before it, and nothing is lost by waiting. J3344 verified the Shorts, the 12 QA outputs and PR 718 are intact (22 Nov 07:52Z). When a reviewer is back, reopen J3311 and run `jobs.py handback J3311` so Gemini is not woken again.",
-        "check_at": "2026-11-23T07:40:00Z"
+        "check_at": "2026-11-23T08:46:33+00:00",
+        "recheck_task": "J3405"
       }
     },
     {
@@ -308770,6 +308776,37 @@
         "by": "codex",
         "note": "Orbit recovered: 18 longs and 92 Shorts; HOS retained today 7 longs and 36 Shorts. All 637 mapped Studio fields verified"
       }
+    },
+    {
+      "id": "J3405",
+      "title": "Verify condition for J3311",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3311: A non-producer reviewer on the Mini (J3311 needs the NAS contact sheets, iCloud copies and Play links, which cloud Claude cannot open). Gemini made these Shorts (J2171, HOS PR 718) so it cannot review them. Back: Grok Bot (stalled until about 09:30Z 22 Nov), Codex (usage limit until 24 Nov 23:26Z), Claude Code on the Mini (limit resets 25 Nov 10:00 London). Cursor is out until 9 Dec. The parent HOS 009 long is not uploaded, so neither Short can air before it, and nothing is lost by waiting. J3344 verified the Shorts, the 12 QA outputs and PR 718 are intact (22 Nov 07:52Z). When a reviewer is back, reopen J3311 and run `jobs.py handback J3311` so Gemini is not woken again.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3311 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-23T07:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T07:46Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Reopen when a non-producer reviewer on the Mini is up, then handback",
+      "kind": "review",
+      "recheck_of": "J3311",
+      "due": "2026-11-23T08:46:33+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
