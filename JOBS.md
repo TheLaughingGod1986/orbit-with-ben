@@ -70,7 +70,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3419 | mini | blocked | gemini | – | studio · Field Order History pilot 1: cut the 3m45s detour (1:27-5:12) from the live video in Studio's editor, retime captions and chapters (Ben: go) |  |
 | J3420 | mini | blocked | gemini | – | studio · Field Order History pilot 2: move launch to Sat 28 Nov 17:00 (new opening, Ben: go) |  |
 | J3422 | mini | blocked | codex | – | WW2:002 vo · vo · WW2 pilot 002: voice the new opening (pickup only, same voice and settings) |  |
-| J3423 | mini | claimed | gemini | 2026-11-23T16:19Z | review · Verify condition for J2040 |  |
+| J3423 | mini | blocked | gemini | – | review · Verify condition for J2040 |  |
 | J3424 | mini | blocked | gemini | – | studio · Field Order History pilot 1: change the title to "The Secret Floating Harbours of D-Day" (title only, API) |  |
 | J3426 | mini | blocked | gemini | – | review · Verify condition for J3419 |  |
 
