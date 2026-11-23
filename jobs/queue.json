@@ -303166,13 +303166,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-22T19:46Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-22T12:14Z",
-      "result": "Chief review complete: accepted launch records and merged ww2-channel PR 32 (f7dd29ccc5d3a0348878d9a2616031278f836dce). Independent 21:06Z API confirms Public video, exact thumbnail hash, serving en-GB captions, matching description/title, channel comment and Public playlist. SRT and channel_check PASS. Only pinning remains on Ben account-verification hold; next check 2026-11-23T12:00:00Z. After Advanced Features is enabled, Studio worker pins existing Ugwzd5DKJjC4yYgx-xB4AaABAg, verifies Unpin and updates records. Six-hour read due about 23:00Z through normal scheduler. No new upload or YouTube writes.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-22T12:14Z",
@@ -303288,9 +303288,19 @@
           "at": "2026-11-22T23:08Z",
           "by": "claude",
           "what": "Ben, 22 Nov about 23:05Z: phone was already verified; he has now submitted the Advanced features verification for Field Order History (Studio > Settings > Channel > Feature eligibility). YouTube can take up to a day to approve. Do not ask Ben again. At each check, read Feature eligibility in Studio 9224: once Advanced features shows enabled, pin the existing question comment and confirm it stays pinned."
+        },
+        {
+          "at": "2026-11-23T09:57Z",
+          "by": "claude",
+          "what": "reopened: Released by Claude, Mon 23 Nov ~09:50Z. Ben in chat: \"YouTube is verified\" (Advanced features approved). Do the last step now, don't wait for 12:00: in Studio 9224, confirm Settings > Channel > Feature eligibility shows Advanced features enabled, pin the existing question comment Ugwzd5DKJjC4yYgx-xB4AaABAg on ek9F61FVYqY, reload the watch page signed out and confirm it shows as pinned. Leave the running thumbnail Test & Compare (J3411) alone. One line on the thread. If YouTube still blocks the pin, say exactly what Studio shows and park for the Chief; do not ask Ben."
+        },
+        {
+          "at": "2026-11-23T09:57Z",
+          "by": "claude",
+          "what": "rerouted to gemini on gemini-argon: Gemini has the Studio 9224 window and found the pin block."
         }
       ],
-      "remaining_action": "When Advanced features shows enabled (Ben submitted 22 Nov), pin the existing question comment",
+      "remaining_action": "Pin the existing question comment (Advanced features now approved) and confirm it shows as pinned",
       "due": "2026-11-22T16:30:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -303307,19 +303317,7 @@
       "urgent": 6,
       "taskKeys": [
         "WW2:001"
-      ],
-      "progress": {
-        "step": 4,
-        "of": 5,
-        "at": "2026-11-22T19:57Z",
-        "by": "gemini",
-        "note": "Pushed ww2-channel PR #32 (bbf9143, channel_check PASS) and posted full read-back receipt to studio thread"
-      },
-      "hold": {
-        "type": "ben",
-        "condition": "Chief ruling 22 Nov: PR 32 merged as f7dd29ccc5d3a0348878d9a2616031278f836dce; launch records accepted after independent 21:06Z API read and caption checks. Only comment pinning remains. Ben must complete Advanced Features verification for his own account; Studio 9224 showed One-time verification needed. After verified enablement, pin existing Ugwzd5DKJjC4yYgx-xB4AaABAg without reposting, reload for Unpin, update log and finish. No automatic release on elapsed time.",
-        "check_at": "2026-11-23T12:00:00Z"
-      }
+      ]
     },
     {
       "id": "J3362",
