@@ -179674,13 +179674,13 @@
       "stage": "edit",
       "after": "J2036",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-23T21:49Z",
-      "eta": "2026-11-23T23:49Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
-      "result": "",
+      "result": "parked for Chief: non-producer exact-hash PASS on HOS 009 long v03 (744f32b7) + PHONE proxy (b1135b3d) staged in HOS UAT, merge OWB PR #1224 (0b7f5b49) & clean HOS PR #731 (e1f4f687, 7/7 CI green; close superseded PR #719), and arm Ben awaits_ben Ready-for-OK watch card with verified HTTP 302 Play link (gemini produced J3314/J2036 and is worker, not elected Chief)",
       "history": [
         {
           "at": "2026-11-04T16:56Z",
@@ -179741,6 +179741,11 @@
           "at": "2026-11-23T22:06Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Wrote jobs/reviews/J2037/REVIEW.md (OWB PR #1224 @ 0b7f5b49), resolved HOS PR #731 (e1f4f687, 7/7 CI green, MERGEABLE), verified 3-way SHA-256 + full decode for v03 master (744f32b7) and <120 MiB PHONE watch proxy (b1135b3d) in HOS UAT. Parking protected Chief call."
+        },
+        {
+          "at": "2026-11-23T22:07Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: non-producer exact-hash PASS on HOS 009 long v03 (744f32b7) + PHONE proxy (b1135b3d) staged in HOS UAT, merge OWB PR #1224 (0b7f5b49) & clean HOS PR #731 (e1f4f687, 7/7 CI green; close superseded PR #719), and arm Ben awaits_ben Ready-for-OK watch card with verified HTTP 302 Play link (gemini produced J3314/J2036 and is worker, not elected Chief)"
         }
       ],
       "remaining_action": "Parked for elected non-producer Chief PASS, PR #731/#1224 merge, and Ben awaits_ben watch card",
