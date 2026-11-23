@@ -310368,10 +310368,10 @@
       "stage": "",
       "after": "",
       "eta_min": 25,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-23T12:32Z",
+      "eta": "2026-11-23T12:57Z",
       "created_by": "claude",
       "created_at": "2026-11-23T12:29Z",
       "result": "",
@@ -310380,13 +310380,26 @@
           "at": "2026-11-23T12:29Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-23T12:32Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Read pilot 1's Studio analytics (retention, sources, audience) and record them, read-only",
       "due": "2026-11-23T14:00:00Z",
       "kind": "studio",
       "mini_only": true,
-      "urgent": 6
+      "urgent": 6,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-23T12:32Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [

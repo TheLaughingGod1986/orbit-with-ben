@@ -67,7 +67,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3414 | mini | blocked | codex | – | studio · WW2 pilot 1: 48-hour metrics and running thumbnail test read |  |
 | J3415 | mini | blocked | – | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3417 | mini | blocked | codex | – | thumb · Field Order History pilot 2: two close-crop thumbnails and a Test & Compare at launch; one-subject rule into the playbook for films 003+ |  |
-| J3418 | mini | open | – | – | studio · Field Order History pilot 1: full Studio numbers for Ben's audit (retention graph, traffic sources, audience), read-only |  |
+| J3418 | mini | claimed | gemini | 2026-11-23T12:57Z | studio · Field Order History pilot 1: full Studio numbers for Ben's audit (retention graph, traffic sources, audience), read-only |  |
 
 Recently finished:
 
