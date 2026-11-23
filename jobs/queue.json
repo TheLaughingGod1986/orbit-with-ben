@@ -312287,9 +312287,14 @@
           "at": "2026-11-23T19:07Z",
           "by": "codex",
           "what": "blocked: parked for Chief: PR https://github.com/TheLaughingGod1986/ww2-channel/pull/50 at e9e9aba documents 60 distinct photographs plus 41 larger alternatives and all 50 paragraphs. Planned archive coverage 48.3% (610.11/1263.04s), 231.92s short of two-thirds. Repeated bounded searches leave raid-action/survivor gaps under rule 5. Decide the rule-1 shortfall or commission a new narrowly scoped primary-source search; no worker PASS or edit approval."
+        },
+        {
+          "at": "2026-11-23T20:25Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-24T18:00:00Z"
         }
       ],
-      "remaining_action": "Chief to resolve St Nazaire archive coverage shortfall before the edit",
+      "remaining_action": "Wait for the revised St Nazaire picture plan and acceptance of compliant archive coverage",
       "due": "2026-11-27T18:00:00Z",
       "kind": "image",
       "progress": {
@@ -312306,7 +312311,12 @@
       },
       "taskKeys": [
         "WW2:005"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Chief FIX recorded in ww2 PR50 commit fabae85 (jobs/reviews/J3431/REVIEW.md): 60 photographs verified but 48.3% archive coverage fails rule 1; no edit approval. Await J3449 bounded shot-plan revision and recorded acceptance of a compliant plan. J3432 remains after J3431; follow-up completion alone does not release edit.",
+        "check_at": "2026-11-24T18:00:00Z"
+      }
     },
     {
       "id": "J3432",
