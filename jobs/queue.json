@@ -303409,10 +303409,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-23T02:24Z",
-      "eta": "2026-11-23T06:24Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-22T12:46Z",
       "result": "",
@@ -304296,6 +304296,11 @@
           "at": "2026-11-23T02:30Z",
           "by": "codex",
           "what": "step 1 of 4 done: Checkpoint30 pushed a7c1163 to WW2 PR34:127 inserts727.96seconds50.45percent. Two new exact-frame/full-decode previews and individual encoded still checks pass;254hashes verified. Cumulative preflight30 running detached."
+        },
+        {
+          "at": "2026-11-23T02:30Z",
+          "by": "codex",
+          "what": "released: Checkpoint30 pushed a7c1163 to existing WW2 PR34. Resume clean isolated /Users/benjaminoats/_desk/ww2/J3364-wt at film03_Picture/J3364/CHECKPOINT_30.md and cumulative checkpoint30 manifest:127inserts33sources727.96s50.45percent;210.04s remain for65percent. Two labelled CH18032 maintenance-context previews added14.92s;254hashes,exact241/132frames,full decodes and individual encoded still checks PASS. Cumulative preflight30 still running detached in tmux J3364-preflight30; log/done /Users/benjaminoats/_desk/logs/J3364-preflight30.{log,done}, output NAS07_Edit/archive_v06_preflight30/PREFLIGHT.json. Check done before repeating; missing means running. Preview30 done0. Fullv06,gates,finalcredits,capablemediaQA and Benwatch unfinished. Tue24Nov20:00deadline and conditionalSat28Novmove unchanged. No spend or YouTube change."
         }
       ],
       "remaining_action": "Complete the remaining archive coverage, full edit and film checks",
