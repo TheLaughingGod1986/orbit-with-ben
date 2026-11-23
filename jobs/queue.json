@@ -310717,13 +310717,13 @@
       "stage": "",
       "after": "",
       "eta_min": 15,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-23T12:53Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T12:48Z",
-      "result": "parked for Chief: review and merge ww2-channel PR #40 (002 status.json + UPLOADS.json) and orbit-with-ben PR #1212 (studio/plan.json ww2-002 -> 2026-11-28T17:00Z). Live YouTube API read-back (2026-11-23T12:56:19Z: J9WGu8aPnHI private, publishAt 2026-11-28T17:00:00Z, all other fields unchanged), Studio 9224 read-only check (1795885200, saved 3-arm Thumbnail-only Test & Compare B/C/D intact), and studio thread receipt complete; £0 spent.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-23T12:48Z",
@@ -310769,6 +310769,11 @@
           "at": "2026-11-23T13:01Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: review and merge ww2-channel PR #40 (002 status.json + UPLOADS.json) and orbit-with-ben PR #1212 (studio/plan.json ww2-002 -> 2026-11-28T17:00Z). Live YouTube API read-back (2026-11-23T12:56:19Z: J9WGu8aPnHI private, publishAt 2026-11-28T17:00:00Z, all other fields unchanged), Studio 9224 read-only check (1795885200, saved 3-arm Thumbnail-only Test & Compare B/C/D intact), and studio thread receipt complete; £0 spent."
+        },
+        {
+          "at": "2026-11-23T15:02Z",
+          "by": "codex",
+          "what": "reopened: Chief KEEP: reviewed exact owner PR40 1812554 and PR1212 60b5d90; both merged as 1425058 and 335d221. Date-only records match Gemini API and Studio receipt: Private, 28 Nov 17:00Z, B/C/D intact. 31 tests plus WW2 channel check PASS. J3364 owns revised cut after J3422; preserve capability hold and conditional Wednesday stretch only after Ben watch. J3417 retains public/test check 28 Nov 17:05Z. Reopen solely to record completion."
         }
       ],
       "remaining_action": "Await Chief review and merge of ww2-channel PR #40 and orbit-with-ben PR #1212",
@@ -310784,13 +310789,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-23T13:01Z",
-        "by": "gemini",
-        "note": "Posted J3420 receipt on studio thread; all worker steps complete (API read-back 2026-11-28T17:00:00Z Private, Studio 922"
-      },
       "taskKeys": [
         "WW2:002"
       ]
