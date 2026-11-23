@@ -309413,13 +309413,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-23T08:59Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T08:47Z",
-      "result": "parked for Chief: merge ww2-channel PR #36 (4d0f7bf); close-crop C (no text) and D (TOWED BY TUGS) built from IWM A 25799, Pilot 2 J9WGu8aPnHI checked (unchanged), and Thumbnail-only Test & Compare (B v02, C, D) started live on ek9F61FVYqY at 2026-11-23T09:11:55Z (Studio 9224 reload + API readback verified; title/description/privacy unchanged).",
+      "result": "",
       "history": [
         {
           "at": "2026-11-23T08:47Z",
@@ -309480,6 +309480,11 @@
           "at": "2026-11-23T09:15Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: merge ww2-channel PR #36 (4d0f7bf); close-crop C (no text) and D (TOWED BY TUGS) built from IWM A 25799, Pilot 2 J9WGu8aPnHI checked (unchanged), and Thumbnail-only Test & Compare (B v02, C, D) started live on ek9F61FVYqY at 2026-11-23T09:11:55Z (Studio 9224 reload + API readback verified; title/description/privacy unchanged)."
+        },
+        {
+          "at": "2026-11-23T09:44Z",
+          "by": "codex",
+          "what": "reopened: Chief PASS recorded in ww2 PR36 aa468ec: exact phone sheets, receipts and NAS hashes reviewed. D then C editorial ranking; preserve running B/C/D test. Pilot 2 unchanged. Follow-up J3414 depends on J3411 and waits until 2026-11-24T17:05:00Z."
         }
       ],
       "remaining_action": "Chief review and merge of ww2-channel PR #36 (4d0f7bf)",
@@ -309487,13 +309492,6 @@
       "kind": "thumb",
       "mini_only": true,
       "urgent": 7,
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-23T09:15Z",
-        "by": "gemini",
-        "note": "Worker deliverables complete: ww2-channel PR #36 (4d0f7bf) opened; Test & Compare (B v02, C, D) verified running on ek9F"
-      },
       "taskKeys": [
         "WW2:001",
         "WW2:002"
