@@ -310475,10 +310475,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-23T13:02Z",
+      "eta": "2026-11-23T14:02Z",
       "created_by": "claude",
       "created_at": "2026-11-23T12:48Z",
       "result": "",
@@ -310487,13 +310487,26 @@
           "at": "2026-11-23T12:48Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-23T13:02Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Cut 1:27-5:12 from pilot 1 in Studio's editor, then retime captions and chapters",
       "due": "2026-11-23T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
-      "urgent": 7
+      "urgent": 7,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-23T13:02Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3420",
