@@ -314384,13 +314384,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-23T22:08Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-23T22:07Z",
-      "result": "parked for Chief: J3455 condition verification complete (OWB PR #1225 commit 76ec67878f, jobs/reviews/J3455/REVIEW.md blob 7dc82e8481). Predecessor J2036 is done and J2037 specialist pack (OWB PR #1224 @ 0b7f5b49), clean HOS PR #731 (e1f4f687, 7/7 CI green, MERGEABLE), lint:package PASS, and live SHA-256 parity of staged HOS UAT + NAS v03 master (744f32b7) & <120 MiB PHONE watch proxy (b1135b3d) + thumbs A/B are verified. Synthetic dependency hold on J2037 hid J2037 from Chief duties; specialist worker cannot release holds (jobs.py:1074-1075), record wait --recheck (jobs.py:603-604), or self-PASS/self-merge/arm awaits_ben. Elected non-producer Chief (codex) to independently verify v03 + PHONE proxy + 0:04 apple note, merge PR #1224/#1225/HOS #731 (close superseded #719), reopen J2037 (clearing synthetic hold), close J3455, arm Ben awaits_ben Ready-for-OK watch card on J2037 with verified HTTP 302 Play link, and park J2037 for Ben finished-cut watch. £0 spend; no upload/schedule/privacy/Buffer changes.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-23T22:07Z",
@@ -314431,6 +314431,11 @@
           "at": "2026-11-23T22:16Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3455 condition verification complete (OWB PR #1225 commit 76ec67878f, jobs/reviews/J3455/REVIEW.md blob 7dc82e8481). Predecessor J2036 is done and J2037 specialist pack (OWB PR #1224 @ 0b7f5b49), clean HOS PR #731 (e1f4f687, 7/7 CI green, MERGEABLE), lint:package PASS, and live SHA-256 parity of staged HOS UAT + NAS v03 master (744f32b7) & <120 MiB PHONE watch proxy (b1135b3d) + thumbs A/B are verified. Synthetic dependency hold on J2037 hid J2037 from Chief duties; specialist worker cannot release holds (jobs.py:1074-1075), record wait --recheck (jobs.py:603-604), or self-PASS/self-merge/arm awaits_ben. Elected non-producer Chief (codex) to independently verify v03 + PHONE proxy + 0:04 apple note, merge PR #1224/#1225/HOS #731 (close superseded #719), reopen J2037 (clearing synthetic hold), close J3455, arm Ben awaits_ben Ready-for-OK watch card on J2037 with verified HTTP 302 Play link, and park J2037 for Ben finished-cut watch. £0 spend; no upload/schedule/privacy/Buffer changes."
+        },
+        {
+          "at": "2026-11-23T22:22Z",
+          "by": "codex",
+          "what": "reopened: Chief review completed; recording private-UAT KEEP and explicit Ben watch hold on J2037, then closing this verification."
         }
       ],
       "remaining_action": "Parked for elected non-producer Chief Codex: review/merge PR #1224/#1225/HOS #731 (close #719), clear J2037 hold, arm Ben awaits_ben watch card, close J3455",
@@ -314446,19 +314451,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-23T22:15Z",
-        "by": "gemini",
-        "plan": [
-          "Read J2037 and predecessor history",
-          "Verify HOS 009 evidence and gates",
-          "Apply J2037 reopen or wait decision",
-          "Post report and close J3455"
-        ],
-        "note": "Opened OWB PR #1225 (76ec67878f, jobs/reviews/J3455/REVIEW.md); parking J3455 for elected non-producer Chief Codex"
-      },
       "taskKeys": [
         "HOS:009"
       ]
