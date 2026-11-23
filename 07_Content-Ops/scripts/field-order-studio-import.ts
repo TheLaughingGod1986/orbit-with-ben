@@ -9,6 +9,7 @@ const date=z.iso.date();
 const missing=z.record(z.string().max(60),z.string().min(1).max(240));
 export const studioSchema=z.object({
   channelId:z.string().regex(/^UC[\w-]{22}$/),readAt:z.iso.datetime(),eligibleWatchHours:count.optional(),eligibleWatchHoursReadAt:z.iso.datetime().optional(),missing:missing.optional(),whenViewersTimezone:z.string().min(1).max(80).optional(),
+  channelTotals:z.object({subscribers:count.nullable(),watchHours:count.nullable()}).strict().optional(),channelTotalsReadAt:z.iso.datetime().optional(),
   whenViewers:z.array(z.object({day:z.number().int().min(0).max(6),hour:z.number().int().min(0).max(23),viewers:count}).strict()).optional(),
   videos:z.record(z.string().regex(/^[\w-]{11}$/),z.object({
     chapters:z.array(count).optional(),
@@ -19,6 +20,7 @@ export const studioSchema=z.object({
 }).strict().refine(v=>!v.whenViewers || !!v.whenViewersTimezone, 'Viewer activity needs its displayed timezone');
 export function mergeStudio(old:StudioRead|null, fresh:StudioRead):StudioRead {
   if(fresh.eligibleWatchHours!==undefined)fresh={...fresh,eligibleWatchHoursReadAt:fresh.readAt};
+  if(fresh.channelTotals!==undefined)fresh={...fresh,channelTotalsReadAt:fresh.readAt};
   if(!old || old.channelId!==fresh.channelId)return fresh;
   const merged={...old,...fresh,videos:{...old.videos},missing:{...old.missing,...fresh.missing}};
   for(const [id,v] of Object.entries(fresh.videos))merged.videos[id]={...old.videos[id],...v,windows:{...old.videos[id]?.windows,...v.windows}};

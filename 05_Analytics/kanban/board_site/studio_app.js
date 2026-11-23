@@ -1603,7 +1603,10 @@
     const d=b.fieldOrder;
     if(!d) return '';
     const value=x=>x==null?'pending':Number(x).toLocaleString('en-GB',{maximumFractionDigits:1});
-    const targets=(d.targets||[]).map(t=>`<li>${esc(t.name)}: <b>${value(t.current)} / ${value(t.target)}</b> · at the last 7-day pace: ${esc(t.eta||'not enough growth data')}</li>`).join('');
+    // Each figure says where it came from and when: a dated Studio read is fresher than the API's lagged days.
+    const when=x=>/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(x)?`${x.slice(0,10)} ${x.slice(11,16)} UTC`:x;
+    const from=t=>t.asOf?` (${t.source?`${esc(t.source)}, `:''}${esc(when(t.asOf))})`:'';
+    const targets=(d.targets||[]).map(t=>`<li>${esc(t.name)}: <b>${value(t.current)} / ${value(t.target)}</b>${from(t)} · at the last 7-day pace: ${esc(t.eta||'not enough growth data')}</li>`).join('');
     const films=(d.films||[]).map(f=>`<li>${esc(f.title)} (${esc(f.window)}): CTR ${value(f.ctr)}% (median ${value(f.medianCtr)}%); average duration ${value(f.metrics?.averageViewDuration)}s (median ${value(f.medianAvgSeconds)}s); average viewed ${value(f.viewed)}% (median ${value(f.medianViewed)}%). ${esc((f.flags||[]).join(' '))}</li>`).join('');
     return `<section class="overview-p24" aria-label="Field Order History monetisation"><div class="ov-section-head"><h2>Field Order History · monetisation</h2></div><p>Planning line: ${esc(d.deadline||'2027-02-01')} · data through ${esc(d.through||'pending')}</p><ul>${targets||'<li>Subscribers: pending / 1,000</li><li>Watch hours: pending / 4,000 and 8,000</li>'}</ul><p>Qualified public hours from Studio Earn: ${value(d.eligibleWatchHours)} · read ${esc(d.studioReadAt||'pending')}</p><p>${esc(d.note||'')}</p><details><summary>Films against the channel median</summary><ul>${films||'<li>No film reads yet.</li>'}</ul></details></section>`;
   }

@@ -42,6 +42,21 @@ describe('Field Order History learning loop',()=>{
   expect(d.failures).toContain('ageGroups');expect(d.videos.one.windows['48h']).toBeDefined();expect(d.videos.one.windows['7d']).toBeUndefined();
   expect(calls.every(p=>!p.endDate||p.endDate<='2026-11-02')).toBe(true);
  });
+ it('prefers a newer dated Studio read of channel totals and says where each figure came from',()=>{
+  const d=fixture();d.takenAt='2026-11-18T06:40:00Z';
+  const st={...studio(),readAt:'2026-11-19T12:41:00Z',channelTotals:{subscribers:101,watchHours:250},channelTotalsReadAt:'2026-11-19T12:41:00Z'};
+  const r=buildFieldOrder(d,st);
+  expect(r.targets[0]).toMatchObject({current:101,source:'Studio',asOf:'2026-11-19T12:41:00Z'});
+  expect(r.targets[1]).toMatchObject({current:250,source:'Studio, all watch time',asOf:'2026-11-19T12:41:00Z'});
+  // Older than the snapshot and the API's last complete date: the API figures stand.
+  const old={...st,channelTotalsReadAt:'2026-11-17T12:00:00Z'};
+  const r2=buildFieldOrder(d,old);
+  expect(r2.targets[0]).toMatchObject({current:100,source:'YouTube API',asOf:'2026-11-18T06:40:00Z'});
+  expect(r2.targets[1]).toMatchObject({current:200,source:'API estimate',asOf:'data through 2026-11-17'});
+  // A hidden Studio figure never replaces a real one, and another channel's read is ignored.
+  expect(buildFieldOrder(d,{...st,channelTotals:{subscribers:null,watchHours:250}}).targets[0].current).toBe(100);
+  expect(buildFieldOrder(d,{...st,channelId:'other'}).targets[0].current).toBe(100);
+ });
  it('uses only read-only scopes for the third channel',()=>{
   expect(()=>authTarget(['--analytics','ww2'])).toThrow('Set YT_CHANNEL_ID_WW2');
  });
@@ -54,6 +69,17 @@ describe('Studio import contract',()=>{
   expect(studioSchema.safeParse(valid).success).toBe(true);
   expect(studioSchema.safeParse({...valid,token:'never-store'}).success).toBe(false);
   expect(studioSchema.safeParse({...valid,videos:{abcdefghijk:{windows:{'48h':{startDate:'2026-11-01',endDate:'2026-11-02',impressions:1,ctr:101}}}}}).success).toBe(false);
+  expect(studioSchema.safeParse({...valid,channelTotals:{subscribers:1,watchHours:1.36}}).success).toBe(true);
+  expect(studioSchema.safeParse({...valid,channelTotals:{subscribers:-1,watchHours:1}}).success).toBe(false);
+  expect(studioSchema.safeParse({...valid,channelTotals:{subscribers:1,watchHours:1,email:'x'}}).success).toBe(false);
+ });
+ it('stamps channel totals with their own read time and keeps them across later reads',async()=>{
+  const {mergeStudio}=await import('../scripts/field-order-studio-import');
+  const id='UC'+'a'.repeat(22);
+  const first=mergeStudio(null,{channelId:id,readAt:'2026-11-23T12:41:00Z',videos:{},channelTotals:{subscribers:1,watchHours:1.36}});
+  expect(first.channelTotalsReadAt).toBe('2026-11-23T12:41:00Z');
+  const later=mergeStudio(first,{channelId:id,readAt:'2026-11-24T09:00:00Z',videos:{},eligibleWatchHours:2});
+  expect(later.channelTotals).toEqual({subscribers:1,watchHours:1.36});expect(later.channelTotalsReadAt).toBe('2026-11-23T12:41:00Z');
  });
 });
 
@@ -61,11 +87,20 @@ describe('Unattended Studio dispatch and merging',()=>{
  it('dispatches windows only once due, including Pacific date boundary cases',async()=>{
   const {planReads}=await import('../scripts/field-order-dispatch');
   const s:Snapshot={...snapFixture(),videos:[{id:'abcdefghijk',title:'A film',format:'long',privacy:'public',publishedAt:'2026-11-01T01:00:00Z',seconds:600,views:0,likes:0,comments:0}],channelId:'UC'+'a'.repeat(22)};
-  expect(planReads(s,new Date('2026-11-03T00:59:59Z'))).toHaveLength(1);
+  // Each day with a public film also gets one channel totals read (weekly audience read + daily totals).
+  expect(planReads(s,new Date('2026-11-03T00:59:59Z'))).toHaveLength(2);
   const jobs=planReads(s,new Date('2026-11-03T01:00:00Z'));
-  expect(jobs).toHaveLength(2);expect(jobs[0].due).toBe('2026-11-03T01:00:00.000Z');expect(jobs[0].body).toContain('2026-10-31 through 2026-11-01');
-  expect(planReads(s,new Date('2026-11-08T01:00:00Z'))).toHaveLength(3);
+  expect(jobs).toHaveLength(3);expect(jobs[0].due).toBe('2026-11-03T01:00:00.000Z');expect(jobs[0].body).toContain('2026-10-31 through 2026-11-01');
+  expect(planReads(s,new Date('2026-11-08T01:00:00Z'))).toHaveLength(4);
   s.videos[0].privacy='private';expect(planReads(s,new Date('2026-12-01'))).toHaveLength(1);
+ });
+ it('queues one channel totals read per day once a film is public',async()=>{
+  const {planReads}=await import('../scripts/field-order-dispatch');
+  const s:Snapshot={...snapFixture(),videos:[{id:'abcdefghijk',title:'A film',format:'long',privacy:'public',publishedAt:'2026-11-22T17:00:31Z',seconds:600,views:0,likes:0,comments:0}],channelId:'UC'+'a'.repeat(22)};
+  expect(planReads(s,new Date('2026-11-22T16:59:00Z')).map(j=>j.title)).toEqual(['Field Order History channel audience read 2026-11-16']);
+  const titles=planReads(s,new Date('2026-11-23T06:40:00Z')).map(j=>j.title);
+  expect(titles).toContain('Field Order History channel totals read 2026-11-23');
+  expect(planReads(s,new Date('2026-11-24T06:40:00Z')).map(j=>j.title)).toContain('Field Order History channel totals read 2026-11-24');
  });
  it('preserves earlier films and windows on import',async()=>{
   const {mergeStudio}=await import('../scripts/field-order-studio-import');
@@ -92,7 +127,7 @@ describe('Queue and import integration with disk fixtures',()=>{
    const snapshot:Snapshot={...snapFixture(),channel:'ww2',channelId:'UC'+'a'.repeat(22),videos:[{id:'abcdefghijk',title:'Film',privacy:'public',format:'long',publishedAt:'2026-11-01T18:00:00Z',seconds:600,views:0,likes:0,comments:0}]};
    const calls:string[][]=[];
    const run=(args:string[])=>{calls.push(args);const queue=JSON.parse(fs.readFileSync(file,'utf8'));queue.jobs.push({title:args[args.indexOf('--title')+1],status:'done'});fs.writeFileSync(file,JSON.stringify(queue));return Buffer.from('');};
-   expect(dispatchReads(snapshot,root,new Date('2026-11-09'),run)).toHaveLength(3);
+   expect(dispatchReads(snapshot,root,new Date('2026-11-09'),run)).toHaveLength(4);
    expect(dispatchReads(snapshot,root,new Date('2026-11-09'),run)).toEqual([]);
    expect(calls.every(a=>a.includes('--git')&&a.includes('ww2')&&!a.includes('--body'))).toBe(true);
   } finally {fs.rmSync(root,{recursive:true,force:true});}

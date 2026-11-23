@@ -1659,6 +1659,11 @@ const fieldHtml=t.fieldOrderCard({fieldOrder:{through:'2026-11-17',targets:[{nam
 assert(fieldHtml.includes('&lt;unsafe&gt;'));
 assert(fieldHtml.includes('median 3'));
 assert(fieldHtml.includes('not enough growth data'));
+// Each figure says where it came from and when (Ben, 23 Nov: keep the monetisation card current).
+const freshHtml=t.fieldOrderCard({fieldOrder:{through:'2026-11-21',targets:[{name:'Subscribers',current:1,target:1000,eta:null,source:'Studio',asOf:'2026-11-23T12:41:00Z'},{name:'Public watch hours (estimate)',current:0,target:4000,eta:null,source:'API estimate',asOf:'data through 2026-11-21'}],films:[]}});
+assert(freshHtml.includes('<b>1 / 1,000</b> (Studio, 2026-11-23 12:41 UTC)'), freshHtml);
+assert(freshHtml.includes('(API estimate, data through 2026-11-21)'), freshHtml);
+assert(!fieldHtml.includes('(undefined'));
 
 // J3292: urgent red banner sits at the top of every page and hides cleanly when empty.
 {
