@@ -313937,13 +313937,13 @@
       "stage": "picture",
       "after": "J3450",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-23T21:05Z",
-      "eta": "2026-11-23T23:05Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-23T20:58Z",
-      "result": "",
+      "result": "Chief decision recorded in WW2 PR 51 at 77803c2. Accept ten timing corrections and two native-size image treatments; repair TR 917 caption. Opening FIX and picture hold retained. 771.180s provisional archive, gap at least 257.380s. J3452 scopes remaining 44 exact rows and opening; J3433 held, J3434 dependent. No new harvest, spend or media approval.",
       "history": [
         {
           "at": "2026-11-23T20:58Z",
@@ -313974,6 +313974,11 @@
           "at": "2026-11-23T21:11Z",
           "by": "codex",
           "what": "step 3 of 3 done: Decision committed to PR 51 at 77803c2; J3433 dependency hold updated, J3434 preserved, J3452 queued. Picture approval withheld."
+        },
+        {
+          "at": "2026-11-23T21:11Z",
+          "by": "codex",
+          "what": "done: Chief decision recorded in WW2 PR 51 at 77803c2. Accept ten timing corrections and two native-size image treatments; repair TR 917 caption. Opening FIX and picture hold retained. 771.180s provisional archive, gap at least 257.380s. J3452 scopes remaining 44 exact rows and opening; J3433 held, J3434 dependent. No new harvest, spend or media approval."
         }
       ],
       "remaining_action": "Chief decision recorded; remaining picture work is in J3452",
@@ -313993,7 +313998,8 @@
       },
       "taskKeys": [
         "WW2:006"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/51/commits/77803c2"
     },
     {
       "id": "J3452",
