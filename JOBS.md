@@ -66,10 +66,27 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3392 | mini | blocked | gemini | – | review · Verify condition for J3205 |  |
 | J3399 | macbook | open (after J0996) | – | – | 027 upload · review · Review Earth equator Short private/schedule discrepancy | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1200 |
 | J3400 | mini | blocked | gemini | – | review · Verify condition for J0996 |  |
-| J3401 | mini | claimed | macbook-2 | 2026-11-23T00:58Z | studio · First-day check at 6 h: "What If Earth Stopped Spinning? (It's Already Slowing Down)" (6bbbvfCx6zY) |  |
 
 Recently finished:
 
+- J3401 done: First-day check at 6 h: "What If Earth Stopped Spinning? (It's Already Slowing Down)" (6bbbvfCx6zY) (PR #1202 (macbook/J3401). 0 faults found (Visibility Public, Restrictions empty, not Made for Kids, no age restriction, HD processing done, description exact byte match to upload package, Related video N/A for long). Read-only, £0.
+
+"What If Earth Stopped Spinning? (It's Already Slowing Down)" (6bbbvfCx6zY) · Orbit With Ben · long · went live Sun 22 Nov 18:00 London
+At 6 h: views 9 · Studio rank 1 of 10 · impressions 1 · click rate 0.0% · average viewed 2.0%
+Usual for this channel: click rate 2.1%, average viewed 19.6%
+
+Verdict: AHEAD
+  - 9 views at 6 h; Studio says the usual for us at this age is 2.
+  - Studio ranks it 1 of 10 against our latest videos at the same age.
+
+What is different about this one
+  - It is 447 s long; the last 10 longs were 491 to 2858 s.
+
+Do now
+  - Nothing to fix.
+
+Carry forward
+  - A strong start is a lesson too: note what is different about this one.)
 - J3398 done: First-day check at 6 h: "How Britain Built Two Harbours in Secret and Floated Them to Normandy" (ek9F61FVYqY) ("How Britain Built Two Harbours in Secret and Floated Them to Normandy" (ek9F61FVYqY) · Field Order History · long · went live Sun 22 Nov 17:00 London
 At 6 h: views 1 · impressions 10 · click rate 0.0% · average viewed 0.0%
 
@@ -89,15 +106,3 @@ Done (2026-11-22T23:17Z, codex): J3398 read-only Studio CDP 9224 check, 22 Nov 2
 - J3390 done: Verify condition for J3114 (Chief codex ruling: CONDITION NOT MET; accepted and merged evidence PR 1188 (ac1aa9c95a). Independently checked 45 newer repo comments through 7086114148, approval board, clean a12100797f, absent remote branch/PR, and 12/12 artifact hashes. Recorded parent J3114 input hold with --recheck J3390, next verification 2026-11-23T08:15:00Z. Export authorization still absent after prior automatic approval rejection; no bypass. On authorized resume reconcile proposed ledger T041 to next free ID then submit existing work for J3115. J3115/J3119 dependencies and Shorts/UAT holds preserved. No spend or publishing.)
 - J3389 done: Verify condition for J1272 (Chief review complete: condition satisfied. Merged PR 1186; independently verified 6bbbvfCx6zY Public on Orbit at 2026-11-22T20:44:03Z, checked original approvals/end-screen receipt/pinned-text hash. Ruling and ready-now Step 2 follow-up recorded on reopened J1272. Next Studio worker checks for an existing comment, posts/pins approved text and reads it back. No YouTube changes or spend.)
 - J3388 done: Retention autopsy (7d): "How Far Is the Nearest Star? (You Can't See It, and It Has a Pla" (c5AdqQsnnys) (done)
-- J3387 done: Verify condition for J3383 (Codex covering — J3387 Chief review complete.
-
-Accepted and merged PR #1187 (reviewed head 1ac4efd677a2974bddaafc8c5311cce479802393; merge 9f7a77cb9b48e57c74809a6113b65197044683ea). Owner-authored, same repository, base main. No earlier ruling on J3387 found in the studio thread through #7085827873.
-
-The historical verification is sound: the original HOS Studio tab on CDP 9222 was hung. Fresh Runtime.evaluate at 21:11Z still timed out after 8 seconds. However, the existing dedicated HOS browser on CDP 9460 answered two direct DOM probes with readyState complete, the History of Science header and no sign-in prompt; the first also confirmed the correct channel ID. Playwright attached successfully, though one subsequent DOM read raced a navigation; a direct recheck passed. No new tab was opened or browser restarted.
-
-Ruling: authorise CDP 9460 for J3383's read-only check and reopen J3383 with the evidence. This is a scoped alternate route, not a claim that 9222 recovered. The next Studio worker must coordinate browser use, reuse the existing Studio tab, verify the HOS channel, read the heart Short el30-mHiH-0 settings and Since published metrics, and run the original record/judge workflow. Record the actual observation time: these will be late first-day figures, not an exact six-hour snapshot. Omit unavailable metrics. Any fault or BEHIND verdict returns for a Chief ruling. All original no-write limits and gates remain intact; unrelated holds were not changed.
-
-J3387 closes with this ruling. No spend or YouTube changes; no audio or motion perception claimed. Required scratch offload ran and found no eligible old files (about 9.2 GB free). Nothing needs Ben for this review.
-
-Thread read to #7085827873.
-)
