@@ -306299,13 +306299,13 @@
       "stage": "vo",
       "after": "J3360",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-23T16:17Z",
-      "eta": "2026-11-23T18:17Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-22T14:21Z",
-      "result": "",
+      "result": "Waiting for: No-spend correction ready in WW2 PR52 (f60b8c4), based on PR30 with main merged. Live 23 Nov 16:20:59Z: 15,222 left; reserve 11,000 plus newer J3422 take/possible retake about 2,400 leaves at most 1,822 before Scribe. J3370 texts total 4,893 characters; even hypothetical half-rate TTS is 2,446.5 before Scribe, while full-character bound exceeds 3,000 total cap. Zero spend. Recheck actual availability/reset; verify bounded TTS/Scribe pricing, pending spend and all commitments under writer lock before each future request. Reset does not waive cap. Audio, splice, Scribe alignment, cues and new mix remain undone; J3205 and J3371 dependencies unchanged.",
       "history": [
         {
           "at": "2026-11-22T14:21Z",
@@ -306336,9 +306336,19 @@
           "at": "2026-11-23T16:22Z",
           "by": "codex",
           "what": "step 2 of 3 done: Exact ruling text, unchanged other 72 paragraphs and S51a tail, hashes, source arithmetic and both dry runs verified. Live 15,222 credits cannot cover reserve plus newer commitment and correction; zero spend."
+        },
+        {
+          "at": "2026-11-23T16:22Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: No-spend correction ready in WW2 PR52 (f60b8c4), based on PR30 with main merged. Live 23 Nov 16:20:59Z: 15,222 left; reserve 11,000 plus newer J3422 take/possible retake about 2,400 leaves at most 1,822 before Scribe. J3370 texts total 4,893 characters; even hypothetical half-rate TTS is 2,446.5 before Scribe, while full-character bound exceeds 3,000 total cap. Zero spend. Recheck actual availability/reset; verify bounded TTS/Scribe pricing, pending spend and all commitments under writer lock before each future request. Reset does not waive cap. Audio, splice, Scribe alignment, cues and new mix remain undone; J3205 and J3371 dependencies unchanged."
+        },
+        {
+          "at": "2026-11-23T16:22Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-30T10:50:31Z"
         }
       ],
-      "remaining_action": "Record the credit hold and publish the correction checkpoint",
+      "remaining_action": "Wait for enough reserved voice credit to record the two corrected passages",
       "kind": "vo",
       "plain": "Correct the bomber loss narration in the third WW2 film",
       "mini_only": true,
@@ -306352,7 +306362,12 @@
       },
       "taskKeys": [
         "WW2:003"
-      ]
+      ],
+      "hold": {
+        "type": "credits",
+        "condition": "No-spend correction ready in WW2 PR52 (f60b8c4), based on PR30 with main merged. Live 23 Nov 16:20:59Z: 15,222 left; reserve 11,000 plus newer J3422 take/possible retake about 2,400 leaves at most 1,822 before Scribe. J3370 texts total 4,893 characters; even hypothetical half-rate TTS is 2,446.5 before Scribe, while full-character bound exceeds 3,000 total cap. Zero spend. Recheck actual availability/reset; verify bounded TTS/Scribe pricing, pending spend and all commitments under writer lock before each future request. Reset does not waive cap. Audio, splice, Scribe alignment, cues and new mix remain undone; J3205 and J3371 dependencies unchanged.",
+        "check_at": "2026-11-30T10:50:31Z"
+      }
     },
     {
       "id": "J3371",
