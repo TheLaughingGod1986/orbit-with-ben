@@ -312769,13 +312769,13 @@
       "stage": "upload",
       "after": "J3439",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-23T18:00Z",
-      "eta": "2026-11-23T20:00Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-23T17:59Z",
-      "result": "",
+      "result": "Waiting for: 24-hour measurement for Dm4xsF1Ateg becomes due 2026-11-24T11:30:00Z; J3439 repair done. Do not collect an early reading as 24 hours.",
       "history": [
         {
           "at": "2026-11-23T17:59Z",
@@ -312786,9 +312786,19 @@
           "at": "2026-11-23T18:00Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-23T18:00Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: 24-hour measurement for Dm4xsF1Ateg becomes due 2026-11-24T11:30:00Z; J3439 repair done. Do not collect an early reading as 24 hours."
+        },
+        {
+          "at": "2026-11-23T18:00Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-24T11:30:00Z"
         }
       ],
-      "remaining_action": "Wait for 24-hour data, then read reach and verify the repaired link",
+      "remaining_action": "Read 24-hour reach and verify the repaired link after 24 November at 11:30 UTC",
       "kind": "studio",
       "plain": "Check how the Earth equator Short is reaching viewers after its link was fixed",
       "progress": {
@@ -312798,6 +312808,11 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "date",
+        "condition": "24-hour measurement for Dm4xsF1Ateg becomes due 2026-11-24T11:30:00Z; J3439 repair done. Do not collect an early reading as 24 hours.",
+        "check_at": "2026-11-24T11:30:00Z"
       }
     }
   ],
