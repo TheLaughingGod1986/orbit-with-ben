@@ -132,11 +132,13 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [How Does a Blood Pressure Cuff Work?](https://youtu.be/l8bxm9L3zl8) | 2 d | 25 | 36.0% | too few to judge | 67.8% | too few to judge |
-| [How Do Plants Clean the Air?](https://youtu.be/ChbsigHD5_o) | 4 d | 3 | - | no read | 11.3% | too few to judge |
+| [How Does the Heart Pump Blood?](https://youtu.be/el30-mHiH-0) | 20 h (early) | 529 | 26.8% | MISS | 66.4% | WATCH |
+| [How Do Plants Make Oxygen?](https://youtu.be/Bks_JLId1ew) | 44 h (early) | 52 | 48.6% | too few to judge | 96.5% | too few to judge |
+| [How Does a Blood Pressure Cuff Work?](https://youtu.be/l8bxm9L3zl8) | 2 d | 29 | 38.5% | too few to judge | 61.0% | too few to judge |
+| [How Do Plants Clean the Air?](https://youtu.be/ChbsigHD5_o) | 4 d | 5 | 100.0% | too few to judge | 36.1% | too few to judge |
 | [Why Is It Called a Vaccine?](https://youtu.be/xgx2lYHhYZM) | 5 d | 4 | 100.0% | too few to judge | 62.4% | too few to judge |
-| [What Is Dalton's Atomic Theory?](https://youtu.be/xzKoHg0E0_U) | 6 d | 223 | 51.9% | WATCH | 61.0% | WATCH |
-| [The Blood Vessels Finer Than a Hair](https://youtu.be/Wvjd8g0CpzE) | 7 d | 215 | 14.6% | MISS | 76.6% | PASS |
-| [What Was the Edward Jenner Experiment?](https://youtu.be/cLKDiYP55J8) | 9 d | 46 | 43.5% | too few to judge | 67.7% | too few to judge |
+| [What Is Dalton's Atomic Theory?](https://youtu.be/xzKoHg0E0_U) | 6 d | 239 | 53.1% | WATCH | 61.5% | WATCH |
+| [The Blood Vessels Finer Than a Hair](https://youtu.be/Wvjd8g0CpzE) | 7 d | 218 | 15.3% | MISS | 74.9% | PASS |
+| [What Was the Edward Jenner Experiment?](https://youtu.be/cLKDiYP55J8) | 9 d | 47 | 43.5% | too few to judge | 67.7% | too few to judge |
 
-Stayed to watch: 0 of 2 judged Shorts at 60%+. Average viewed: 1 of 2 at 70%+.
+Stayed to watch: 0 of 3 judged Shorts at 60%+. Average viewed: 1 of 3 at 70%+.
