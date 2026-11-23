@@ -312165,13 +312165,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-23T20:25Z",
-      "eta": "2026-11-23T23:25Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T15:29Z",
-      "result": "",
+      "result": "Chief FIX recorded 23 Nov in ww2 PR50 fabae85, jobs/reviews/J3431/REVIEW.md. Verified 60 photos and 41 larger alternatives; archive plan 48.3% (610.11/1263.04s), 231.92s short of two-thirds. J3449 owns bounded picture-plan revision due 24 Nov 18:00Z. Await its evidence and acceptance of compliant coverage; J3432 stays dependent on J3431. No rule waiver, picture PASS or edit approval.",
       "history": [
         {
           "at": "2026-11-23T15:29Z",
@@ -312302,6 +312302,11 @@
           "at": "2026-11-23T20:25Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-23T20:26Z",
+          "by": "codex",
+          "what": "blocked: Chief FIX recorded 23 Nov in ww2 PR50 fabae85, jobs/reviews/J3431/REVIEW.md. Verified 60 photos and 41 larger alternatives; archive plan 48.3% (610.11/1263.04s), 231.92s short of two-thirds. J3449 owns bounded picture-plan revision due 24 Nov 18:00Z. Await its evidence and acceptance of compliant coverage; J3432 stays dependent on J3431. No rule waiver, picture PASS or edit approval."
         }
       ],
       "remaining_action": "Wait for the revised St Nazaire picture plan and acceptance of compliant archive coverage",
@@ -312317,6 +312322,11 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "input",
+        "condition": "Chief FIX recorded 23 Nov in ww2 PR50 fabae85, jobs/reviews/J3431/REVIEW.md. Verified 60 photos and 41 larger alternatives; archive plan 48.3% (610.11/1263.04s), 231.92s short of two-thirds. J3449 owns bounded picture-plan revision due 24 Nov 18:00Z. Await its evidence and acceptance of compliant coverage; J3432 stays dependent on J3431. No rule waiver, picture PASS or edit approval.",
+        "check_at": "2026-11-24T02:26:09+00:00"
       }
     },
     {
