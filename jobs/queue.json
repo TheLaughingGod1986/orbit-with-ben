@@ -308810,9 +308810,14 @@
           "at": "2026-11-23T07:47Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-23T07:47Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3405; starting condition verification for J3311"
         }
       ],
-      "remaining_action": "Verify readiness: Reopen when a non-producer reviewer on the Mini is up, then handback",
+      "remaining_action": "Verify non-producer Mini reviewer availability (Codex/Grok/Claude Code), J3311 artifacts/PR #718 state, and reopen/handback or re-wait J3311",
       "kind": "review",
       "recheck_of": "J3311",
       "due": "2026-11-23T08:46:33+00:00",
@@ -308830,9 +308835,11 @@
         "of": 3,
         "at": "2026-11-23T07:47Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed J3405; starting condition verification for J3311"
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     }
   ],
   "focus": [
