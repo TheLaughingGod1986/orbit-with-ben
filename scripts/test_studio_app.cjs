@@ -1690,6 +1690,18 @@ assert(!fieldHtml.includes('(undefined'));
   assert.strictEqual(t.stage(recheck),'Waiting');
 }
 
+// Ben, 23 Nov 2026: "with any job still in progress, I can't see the list of outstanding tasks that are left".
+{
+  const planned={id:'J9001',status:'open',kind:'assembly',title:'Pilot 2 picture rebuild',remaining_action:'Repair the repeated photos, then re-run the gates',
+    progress:{step:1,of:4,plan:['Check the ruling','Repair 13 repeated photos','Splice the new opening','Final gates and watch card']}};
+  const page=t.jobPage({owb:{jobs:[planned]},tracker:{videos:[]}},'J9001',Date.now());
+  assert(page.includes('✓ Check the ruling') && page.includes('○ Repair 13 repeated photos') && page.includes('(next)'), page);
+  assert(page.includes('Step 1 of 4 done · paused, waiting for an agent to pick it back up'), page);
+  const row=t.videoProductionRow({key:'WW2:002',type:'long',channel:'ww2',lane:'approved',youtube:{state:'scheduled',privacy:'private',publishAt:'2026-11-28T17:00:00Z'},jobs:[planned]},Date.now(),{});
+  assert(row.includes('Picture and edit: step 1 of 4 · paused, waiting for an agent to pick it back up · next: Repair 13 repeated photos'), row);
+  assert(t.jobCard({...planned,status:'claimed',by:'codex'}).includes('plan-steps'));
+}
+
 // J3292: urgent red banner sits at the top of every page and hides cleanly when empty.
 {
   const alertBoard = {

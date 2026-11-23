@@ -126,7 +126,16 @@
     const p = j.progress || {}, step = +p.step || 0, of = +p.of || 0;
     const state = j.status === "claimed" ? `${AGENTS[j.by] || j.by || "an agent"} on it now`
       : j.status === "blocked" ? "waiting for a step" : step ? "paused, waiting for an agent to pick it back up" : "queued, no agent on it yet";
-    return `${REWORK_LABEL[String(j.kind || "").toLowerCase()] || "Work"}${of ? `: step ${step} of ${of}` : ""} · ${state}`;
+    const plan = Array.isArray(p.plan) ? p.plan : [], next = plan.length === of && step < of ? ` · next: ${plan[step]}` : "";
+    return `${REWORK_LABEL[String(j.kind || "").toLowerCase()] || "Work"}${of ? `: step ${step} of ${of}` : ""} · ${state}${next}`;
+  }
+  // A job's named steps, ticked as they finish (Ben, 23 Nov 2026: "with any job still in progress, I can't see the list
+  // of outstanding tasks that are left"). Workers record them with `jobs.py progress --plan "a | b | c"`.
+  function planSteps(j) {
+    const p = (j && j.progress) || {}, plan = Array.isArray(p.plan) ? p.plan : [];
+    if (!plan.length) return "";
+    const done = Math.max(0, Math.min(+p.step || 0, plan.length));
+    return `<ol class="plan-steps">${plan.map((s, i) => `<li class="${i < done ? "done" : i === done ? "next" : "left"}">${i < done ? "✓" : "○"} ${esc(s)}${i === done ? " <span class=\"meta\">(next)</span>" : ""}</li>`).join("")}</ol>`;
   }
   const reworkLine = v => reworkJobs(v).slice(0, 4).map(j => `<span class="meta step-line">${esc(jobStepText(j))}</span>`).join("");
 
@@ -160,7 +169,7 @@
     const dot = working ? `<span class="p24-working-dot" role="img" aria-label="A job is in progress"></span>` : "";
     return `<a class="row${working ? " is-working" : ""}" href="${jobRoute(j.id)}">${dot}<div class="thumb job" aria-hidden="true">⚙</div><div class="body"><b>${esc(clip(jobPlain(null, j), 110))}</b>
       <span class="meta">Studio job · not one video</span><span class="doing">${esc(AGENTS[j.by] || j.by || "An agent")}</span>
-      ${p ? bar(p, left) : left ? `<span class="meta">${esc(left)}</span>` : ""}</div><span class="chev">›</span></a>`;
+      ${p ? bar(p, left) : left ? `<span class="meta">${esc(left)}</span>` : ""}${planSteps(j)}</div><span class="chev">›</span></a>`;
   }
   const uatLink = v => `#uat=${encodeURIComponent(v.key)}`;
 
@@ -1923,6 +1932,8 @@
       j.status === "claimed" && j.claimedAt ? fact("Started", esc(londonWhen(j.claimedAt))) : "",
       p ? fact("How far", `Step ${p.step} of ${p.of}${e ? (e.over ? " · taking longer than usual" : ` · about ${esc(durationText(e.min))} left`) : ""}<div class="bar"><i style="width:${pct(p)}%"></i></div>`)
         : e ? fact("How long", e.over ? "Taking longer than usual" : `About ${esc(durationText(e.min))} left`) : "",
+      !p && (j.progress || {}).of ? fact("How far", `Step ${+j.progress.step || 0} of ${+j.progress.of} done${j.status === "open" ? " · paused, waiting for an agent to pick it back up" : ""}`) : "",
+      fact("Steps", planSteps(j)),
       j.status === "open" ? fact("When", esc(jobQueueLine(b, j))) : "",
       j.status === "blocked" ? fact("Waiting for", esc(jobWaiting(b, j))) : "",
       j.status === "blocked" && Date.parse(h.check_at || "") > now ? fact("We look again", esc(londonWhen(h.check_at))) : "",  // a date already past says nothing

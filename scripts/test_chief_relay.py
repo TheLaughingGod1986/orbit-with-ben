@@ -1422,7 +1422,11 @@ class TheBriefIsBuiltFromTheChannelFiles(TodaysLayout):
                 was = BRIEF_BEFORE_J2618.format(**self.COMMON, owb=self.O, hos=self.H, owb_rules=studio, hos_rules=other)
                 self.assertEqual(was.count("scripts/owb_thread.py"), 2)
                 self.assertEqual(now, was.replace("scripts/owb_thread.py", "scripts/studio_thread.py")
-                                         .replace("desk #180", f"desk #{cr.channels.desk('hos')['number']}"))
+                                         .replace("desk #180", f"desk #{cr.channels.desk('hos')['number']}")
+                                         # 23 Nov 2026 (Ben: show which steps are left): workers name their steps.
+                                         .replace("update that action as the remaining work changes. Use k=0",
+                                                  "update that action as the remaining work changes.\n   On the first report (and whenever n changes) "
+                                                  "add --plan \"<step 1> | <step 2> | ...\" with n short plain names, so Ben sees which steps are left. Use k=0"))
 
     def test_the_sentence_a_worker_gets_is_the_old_one(self):
         self.assertEqual(cr.worker_only_steps(),

@@ -1016,7 +1016,8 @@ Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by{desk_ids}
    If it prints a job, that job is yours: do it (step 4), then  jobs.py done|block|release <id> --agent {agent} ... --git.
    Ben watches % done on the board: split the job into n steps (replace a default_plan at step 0; otherwise keep its earlier n) and run
      python3 scripts/jobs.py progress <id> --agent {agent} --step <k> --of <n> --git
-   with --action "<plain-English action still unfinished>"; update that action as the remaining work changes. Use k=0 when you start and again after each finished step (k = steps done), before you release or finish.
+   with --action "<plain-English action still unfinished>"; update that action as the remaining work changes.
+   On the first report (and whenever n changes) add --plan "<step 1> | <step 2> | ..." with n short plain names, so Ben sees which steps are left. Use k=0 when you start and again after each finished step (k = steps done), before you release or finish.
    During a long step, repeat the current k with an honest --note at least every 5 minutes; never increase k for elapsed time.
    As soon as you choose the video(s), include --films {film_example} (or {studio_label}:028,{studio_label}:029 for a shared job) on that progress
    command, and --note with the concrete outcome of each finished step. Keep the links on later progress updates.
