@@ -303603,10 +303603,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-23T14:53Z",
-      "eta": "2026-11-23T18:53Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-22T12:46Z",
       "result": "",
@@ -305725,6 +305725,11 @@
           "at": "2026-11-23T14:56Z",
           "by": "codex",
           "what": "step 1 of 4 done: J3364-internal75 still running; 172 prepared spans logged. No duplicate render. CH13998 live Commons metadata confirms only 550x800; full-frame crop would exceed existing scale limit, so no selection changed."
+        },
+        {
+          "at": "2026-11-23T14:56Z",
+          "by": "codex",
+          "what": "released: Existing detached tmux J3364-internal75 still running: log /Users/benjaminoats/_desk/logs/J3364-internal75.log; completion /Users/benjaminoats/_desk/logs/J3364-internal75.done (missing at handoff). All172 prepared spans logged, internal copy present, no conform/diagnostic RESULT yet. Do not duplicate. Resume existing clean _desk/ww2/J3364-wt CHECKPOINT_75.md, inspect actual diagnostics picture_exit after completion. Live Commons metadata confirms CH13998 original only550x800, unsuitable for full-frame crop at existing2.35x limit; no edit/source selection change. Four-step plan retained at1/4. J3422 capability hold, coverage/variety/layout decision, captions/gates/capableQA/watch remain. Localonly inherited export restriction retained; no push/spend/YouTube change."
         }
       ],
       "remaining_action": "Wait for the existing conform result, then verify diagnostics before further archive repairs",
