@@ -313823,10 +313823,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 25,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-23T20:50Z",
+      "eta": "2026-11-23T21:15Z",
       "created_by": "codex",
       "created_at": "2026-11-23T20:48Z",
       "result": "",
@@ -313840,6 +313840,11 @@
           "at": "2026-11-23T20:49Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred codex): Claude out of usage (Claude said it's out of usage until 2026-11-23T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: codex on gpt-6-astra"
+        },
+        {
+          "at": "2026-11-23T20:50Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Revise the Mosquito picture plan and show three photo layouts for review",
@@ -313853,7 +313858,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-23T20:50Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
