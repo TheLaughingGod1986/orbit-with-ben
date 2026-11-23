@@ -313038,9 +313038,14 @@
           "at": "2026-11-23T18:32Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-23T18:33Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Verify readiness: Resolve the recorded Pluto package export restriction, then reconcile the ledger and submit the existing package for final review",
+      "remaining_action": "Inspect J3114, J3407, PR 1207, studio thread and approval board",
       "kind": "review",
       "recheck_of": "J3114",
       "due": "2026-11-23T19:31:24+00:00",
@@ -313055,12 +313060,19 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-23T18:32Z",
+        "of": 4,
+        "at": "2026-11-23T18:33Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect J3114, J3407 and approval/thread history",
+          "Verify newer thread posts, approval board and remote branches/PRs",
+          "Verify local branch, package/video hashes and ledger state",
+          "Update J3114 wait/reopen state, report on thread, finish J3446"
+        ]
+      },
+      "taskKeys": [
+        "OWB:034"
+      ]
     }
   ],
   "focus": [
