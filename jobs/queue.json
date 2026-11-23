@@ -1,5 +1,5 @@
 {
-  "next_id": 3452,
+  "next_id": 3453,
   "jobs": [
     {
       "id": "J0001",
@@ -313979,6 +313979,36 @@
       "taskKeys": [
         "WW2:006"
       ]
+    },
+    {
+      "id": "J3452",
+      "title": "WW2 006: time the remaining archive rows and resolve opening treatment",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "Acting-Chief scope from J3451, 23 November 2026. Work on WW2 006 Mosquito, existing PR 51 and the preserved 67-photo corpus. Read channel studio/RULES.md and studio/LEARNINGS.md, then 03_Picture/CHIEF_DECISION_J3451.md. This is timing and layout work, not a new archive harvest or assembly approval.\n\nEstablish a fully timed conservative proposal for the remaining 44 paragraph rows in PICTURE_PLAN_J3433.json, using locked narration and existing Scribe timestamps. Preserve the ten corrections in PHRASE_ALLOCATIONS_J3450.json (43.000 archive seconds) and all original evidence. Each remaining row needs a complete, non-overlapping half-open partition into archive/code, source ID(s), exact spoken text, rationale and date/place/event caption restriction. Its old archive budget is a cap, not guaranteed footage; subtract unsupported seconds. Count simultaneous photos only once. No crossfade may silently borrow code time. Distinguish Scribe-based proposed intervals from a measured finished edit; no claim to hear/watch motion.\n\nPrioritise S01-S03 and inherited single-photo/recurrence risks S18/S24/S34-S35/S38/S43/S47-S49, then all other unretimed rows. Audit recurrence across the full 54 rows using RECURRENCE_J3450.json. Do not pad photo holds, trade crops for added evidence, substitute a different place/aircraft/event, or change script/VO/title. Preserve mechanism and comparison code.\n\nOpening remains FIX. CH 10111 is a group image, not an opening individual hero. CH 10135 is a clearer crew portrait (Reynolds right, Sismore left; Marham 1943), but neither man is named in S01, whose narration concerns Goering and the Berlin broadcast. It cannot illustrate Goering or prove the broadcast/raid. Propose an honest opening treatment against the exact first words using existing sources; if none satisfies the opening brief, record the exact missing input, do not declare the opening fixed. No extra archive seconds from a substitute portrait.\n\nTR 917 and CH 10126 native-size image treatments are accepted as scoped inserts. TR 917 proof caption overruns the canvas: supply a new version with short wrapped caption and margins, e.g. Mrs Judd, Hatfield, 1943 / Working inside a Mosquito hull, retaining IWM/source ID. Keep editorial restrictions in records. Do not overwrite old proofs or enlarge pixels; record new proof hash/path and visually inspect it. Do not treat two sample layouts as approval of the other 48 small sources.\n\nDeliver a complete 54-row timed JSON/CSV proposal, archive total and exact gap to 1028.560 seconds over 1542.840 seconds, plus prioritised missing-input intervals with separate subject/provenance/layout constraints. Current provisional budget is 771.180 seconds, gap at least 257.380. Existing eight recovery ceilings total only 191.560 seconds, leaving at least 65.820 even if all succeeded. These are ceilings, not promises or retrieval authorisations. The result must explain feasibility honestly before any new-source scope is requested.\n\nBound each unattended run to 20 minutes active work; checkpoint completed paragraph IDs and release if unfinished, continuing this same job next time. No restarting prior research budgets, downloads, spending, generation, narration changes, media deletion, upload or schedule changes. Existing rejected sources and blocked endpoints stay rejected/blocked. Text/evidence goes in existing PR 51 from a clean worktree; media remains on the shared film store. J3433 remains held and J3434 dependent. On completion queue one elected-Chief decision with the concrete evidence; do not mark those original jobs done or merge as approved picture work.\n",
+      "ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/51",
+      "film": "WW2:006",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-23T21:09Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T21:09Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Time the remaining 44 paragraphs and report the honest archive shortfall",
+      "due": "2026-11-24T10:00:00Z",
+      "kind": "review",
+      "plain": "Match the remaining Mosquito photographs to the exact narration and fix the opening picture plan"
     }
   ],
   "focus": [
