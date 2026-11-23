@@ -71,7 +71,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3407 | mini | blocked | gemini | – | review · Verify condition for J3114 |  |
 | J3409 | mini | claimed | gemini | 2026-11-23T10:43Z | 132 topic · review · HOS 132 Why Is Glass Transparent?: rule-E topic go/no-go review |  |
 | J3410 | mini | claimed | macbook-2 | 2026-11-23T10:45Z | 133 topic · review · HOS 133 How Was Quantum Physics Discovered?: rule-E topic go/no-go review |  |
-| J3411 | mini | open | – | – | thumb · Field Order History pilot 1: two close-crop thumbnail options (Ben: click rate 0.8%), plus a check of pilot 2's |  |
+| J3411 | mini | open | – | – | thumb · Field Order History pilot 1: close-crop thumbnail options and set the best live (Ben: 641 impressions at 0.8%), plus a check of pilot 2's |  |
 
 Recently finished:
 
