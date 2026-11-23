@@ -69,7 +69,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3405 | mini | blocked | gemini | – | review · Verify condition for J3311 |  |
 | J3406 | any | blocked | macbook-2 | – | review · Verify condition for J3307 |  |
 | J3407 | mini | blocked | gemini | – | review · Verify condition for J3114 |  |
-| J3408 | any | open | – | – | script · HOS: learn from our data, add two new films to the backlog |  |
+| J3408 | any | claimed | gemini | 2026-11-23T09:54Z | script · HOS: learn from our data, add two new films to the backlog |  |
 
 Recently finished:
 
