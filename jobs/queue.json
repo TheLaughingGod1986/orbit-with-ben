@@ -313058,9 +313058,14 @@
           "at": "2026-11-23T18:36Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Verified clean local /Volumes/MiniWork/scratch/j3114-wt (codex/j3114-pluto-v02 at a12100797f, ahead 1/behind 4413), THUMB_LEDGER.json (43 rows through T043; next unused T044), 12/12 NAS_VERIFY_J3114.json SHA-256 hashes, 4/4 NAS video file sizes/hashes, and unchanged 034 status.json / J3115 / J3119 / J3065 / J3066 holds."
+        },
+        {
+          "at": "2026-11-23T18:37Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Opened unmerged evidence PR #1222 (2b8911c510, jobs/reviews/J3446/REVIEW.md); parking J3446 for elected Chief (Codex) to merge, update J3114 wait --recheck J3446, and close J3446."
         }
       ],
-      "remaining_action": "Open unmerged J3446 evidence PR, park J3446 for Chief (Codex), and report on #954",
+      "remaining_action": "Chief (Codex): review/merge PR #1222, run jobs.py wait J3114 --type input --recheck J3446 --check-at 2026-11-24T09:00:00Z, and close J3446",
       "kind": "review",
       "recheck_of": "J3114",
       "due": "2026-11-23T19:31:24+00:00",
@@ -313076,7 +313081,7 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-23T18:36Z",
+        "at": "2026-11-23T18:37Z",
         "by": "gemini",
         "plan": [
           "Inspect J3114, J3407 and approval/thread history",
@@ -313084,7 +313089,7 @@
           "Verify local branch, package/video hashes and ledger state",
           "Update J3114 wait/reopen state, report on thread, finish J3446"
         ],
-        "note": "Verified clean local /Volumes/MiniWork/scratch/j3114-wt (codex/j3114-pluto-v02 at a12100797f, ahead 1/behind 4413), THUM"
+        "note": "Opened unmerged evidence PR #1222 (2b8911c510, jobs/reviews/J3446/REVIEW.md); parking J3446 for elected Chief (Codex) to"
       },
       "taskKeys": [
         "OWB:034"
