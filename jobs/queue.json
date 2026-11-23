@@ -313845,9 +313845,14 @@
           "at": "2026-11-23T20:50Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-23T20:51Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Revise the Mosquito picture plan and show three photo layouts for review",
+      "remaining_action": "Check the Mosquito picture plan and improve supported photo coverage",
       "due": "2026-11-24T10:00:00Z",
       "kind": "review",
       "plain": "Check where the Mosquito photographs fit the narration and whether the smaller pictures look sharp enough",
@@ -313862,11 +313867,17 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-23T20:50Z",
+        "at": "2026-11-23T20:51Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check picture evidence",
+          "Refine timing and make layout proofs",
+          "Verify and request picture decision"
+        ]
+      },
+      "taskKeys": [
+        "WW2:006"
+      ]
     }
   ],
   "focus": [
