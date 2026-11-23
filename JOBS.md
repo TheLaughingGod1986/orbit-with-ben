@@ -65,7 +65,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3399 | macbook | open (after J0996) | – | – | 027 upload · review · Review Earth equator Short private/schedule discrepancy | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1200 |
 | J3400 | mini | blocked | gemini | – | review · Verify condition for J0996 |  |
 | J3406 | any | blocked | macbook-2 | – | review · Verify condition for J3307 |  |
-| J3407 | mini | blocked | gemini | – | review · Verify condition for J3114 |  |
+| J3407 | mini | open | – | – | review · Verify condition for J3114 |  |
 | J3414 | mini | blocked | codex | – | studio · WW2 pilot 1: 48-hour metrics and running thumbnail test read |  |
 | J3415 | mini | blocked | – | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3417 | mini | open | – | – | thumb · Field Order History pilot 2: two close-crop thumbnails and a Test & Compare at launch; one-subject rule into the playbook for films 003+ |  |
