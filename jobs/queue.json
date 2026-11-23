@@ -310495,10 +310495,10 @@
       "stage": "",
       "after": "",
       "eta_min": 15,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-23T12:53Z",
+      "eta": "2026-11-23T13:08Z",
       "created_by": "claude",
       "created_at": "2026-11-23T12:48Z",
       "result": "",
@@ -310512,6 +310512,11 @@
           "at": "2026-11-23T12:53Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred gemini): Cursor out of usage; next in its chain: gemini"
+        },
+        {
+          "at": "2026-11-23T12:53Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Move pilot 2's publishAt to Sat 28 Nov 17:00 and read it back",
@@ -310526,7 +310531,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-23T12:53Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3421",
