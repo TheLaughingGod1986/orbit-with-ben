@@ -310994,13 +310994,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-23T15:24Z",
-      "eta": "2026-11-23T17:24Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-23T13:01Z",
-      "result": "",
+      "result": "Acting-Chief ruling: CONDITION NOT MET. Reviewed original scope/history, merged evidence-only PR1215 at 2fc033a172, independently matched all eight Mini configuration/rule/gateway hashes and confirmed PR490 remains draft f521bcd3f1. No operator confirmation or fresh-session scoped acceptance evidence through thread 7105379476. J2040 remains blocked, last_recheck J3423, next verification 2026-11-24T13:00:00Z. Follow-up: authorized operator confirms configuration and supplies acceptance/refusal evidence; verification worker then resolves PR490. Retain controls and fallback routing; never retry cancelled J2007. No spend, security-setting or publishing changes.",
       "history": [
         {
           "at": "2026-11-23T13:01Z",
@@ -311056,6 +311056,11 @@
           "at": "2026-11-23T15:24Z",
           "by": "codex",
           "what": "step 4 of 4 done: Worker four-step evidence plan retained. Separate Chief review accepted PR1215; J2040 remains held with recheck J3423 and next check 24 Nov 13:00Z."
+        },
+        {
+          "at": "2026-11-23T15:24Z",
+          "by": "codex",
+          "what": "done: Acting-Chief ruling: CONDITION NOT MET. Reviewed original scope/history, merged evidence-only PR1215 at 2fc033a172, independently matched all eight Mini configuration/rule/gateway hashes and confirmed PR490 remains draft f521bcd3f1. No operator confirmation or fresh-session scoped acceptance evidence through thread 7105379476. J2040 remains blocked, last_recheck J3423, next verification 2026-11-24T13:00:00Z. Follow-up: authorized operator confirms configuration and supplies acceptance/refusal evidence; verification worker then resolves PR490. Retain controls and fallback routing; never retry cancelled J2007. No spend, security-setting or publishing changes."
         }
       ],
       "remaining_action": "Record the completed Chief ruling and report the next verification date.",
@@ -311077,7 +311082,8 @@
         "at": "2026-11-23T15:24Z",
         "by": "codex",
         "note": "Worker four-step evidence plan retained. Separate Chief review accepted PR1215; J2040 remains held with recheck J3423 an"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1215"
     },
     {
       "id": "J3424",
