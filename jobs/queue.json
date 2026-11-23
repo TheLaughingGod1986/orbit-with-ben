@@ -281557,9 +281557,14 @@
           "at": "2026-11-23T18:31Z",
           "by": "relay",
           "what": "condition verification queued: J3446"
+        },
+        {
+          "at": "2026-11-23T21:03Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-24T09:00:00Z"
         }
       ],
-      "remaining_action": "Resolve the recorded Pluto package export restriction, then reconcile the ledger and submit the existing package for final review",
+      "remaining_action": "Obtain explicit authorization for the Pluto package public-repository export; then reconcile its ledger entry and submit the existing package for final review",
       "due": "2026-12-08T18:00:00Z",
       "kind": "thumb",
       "plain": "Rebuild Pluto 034 long thumbnails A/B/C v02 and apply the 3-model packaging panel title and <5,000-char description fixes before Chief ruling J3112",
@@ -281575,12 +281580,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J3407 acting Chief codex ruling: CONDITION NOT MET. Accepted evidence PR 1207 (54606fc633). Checked 21 newer studio posts through 7097874847 and current approval board (updated 23 Nov 09:57Z): no explicit J3114 export approval. Local a12100797f remains clean; worker verified 12/12 package and 4/4 video hashes. Prior automatic approval review rejected public repository export twice; do not bypass through another worker or route. Recheck 23 Nov 18:10Z for explicit authorization. Once authorized, reconcile proposed ledger T041 to next unused ID (currently T044), then submit existing package for J3115 without rebuild. Preserve J3115/J3119 dependencies and UAT/Shorts holds.",
-        "check_at": "2026-11-23T19:31:24+00:00",
-        "last_recheck": "J3407",
-        "checked_at": "2026-11-23T10:27:54+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3446"
+        "condition": "J3446 acting Chief codex ruling: CONDITION NOT MET. Accepted merged evidence PR 1222 (2b8911c510); reviewed 39 newer comments through 7113840686 and unchanged approval board updated 23 Nov 09:57Z: no explicit J3114 public-repository export authorization. Local a12100797f remains clean; Gemini verified 12 package and 4 video hashes. Prior automatic approval review rejected branch export twice; do not bypass via another worker or route. External authorization check 24 Nov 09:00Z. Once explicitly authorized, reconcile proposed T041 with the next unused ledger ID (currently T044), submit existing package to J3115 without rebuild, and preserve J3119 dependency plus UAT and Shorts holds.",
+        "check_at": "2026-11-24T09:00:00Z",
+        "last_recheck": "J3446",
+        "checked_at": "2026-11-23T21:03:21+00:00",
+        "checked_by": "codex"
       },
       "escalated_at": "2026-11-19T11:45Z"
     },
