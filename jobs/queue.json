@@ -312371,13 +312371,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-23T17:36Z",
-      "eta": "2026-11-23T17:56Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-23T17:36Z",
-      "result": "",
+      "result": "parked for Chief: first-day check, Verdict: FAULT; correction decided and queued as J3439",
       "history": [
         {
           "at": "2026-11-23T17:36Z",
@@ -312408,6 +312408,11 @@
           "at": "2026-11-23T17:40Z",
           "by": "codex",
           "what": "step 3 of 3 done: Read-only check complete; confirmed HD complete and description matches package. Chief correction queued as J3439."
+        },
+        {
+          "at": "2026-11-23T17:40Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: first-day check, Verdict: FAULT; correction decided and queued as J3439"
         }
       ],
       "remaining_action": "Await the queued Related video correction",
