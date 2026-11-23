@@ -312001,9 +312001,14 @@
           "at": "2026-11-23T16:42Z",
           "by": "gemini",
           "what": "step 0 of 5 done: claimed J3435 as specialist worker; starting audit of 146 seam and 43 reuse failures"
+        },
+        {
+          "at": "2026-11-23T16:45Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: located checkpoint 74/76 picture_qa.json (244 rows, 171 failed: 146 split panel across 102 unique sources, 43 reuse across 12 unique sources, 1 opening jitter) and picture_qa_review.jpg (1920x51840)"
         }
       ],
-      "remaining_action": "locate pilot 2 checkpoint 76 picture_qa outputs, review sheet, source frames, and reviewed-ok schema",
+      "remaining_action": "slice picture_qa_review.jpg and inspect all 146 seam failures at full 960x540 resolution",
       "due": "2026-11-24T12:00:00Z",
       "kind": "qa",
       "mini_only": true,
@@ -312017,11 +312022,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-23T16:42Z",
+        "at": "2026-11-23T16:45Z",
         "by": "gemini",
-        "note": "claimed J3435 as specialist worker; starting audit of 146 seam and 43 reuse failures"
+        "note": "located checkpoint 74/76 picture_qa.json (244 rows, 171 failed: 146 split panel across 102 unique sources, 43 reuse acro"
       },
       "taskKeys": [
         "WW2:002"
