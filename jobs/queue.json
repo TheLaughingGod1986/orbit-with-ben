@@ -1,5 +1,5 @@
 {
-  "next_id": 3411,
+  "next_id": 3412,
   "jobs": [
     {
       "id": "J0001",
@@ -309274,6 +309274,37 @@
         "at": "2026-11-23T08:46Z",
         "by": "macbook-2"
       }
+    },
+    {
+      "id": "J3411",
+      "title": "Field Order History pilot 1: two close-crop thumbnail options (Ben: click rate 0.8%), plus a check of pilot 2's",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why (Ben, Mon 23 Nov ~08:45 London, in chat): \"I think we might have a packaging problem. The conversion's on 0.8.\"** At about 16 hours pilot 1 `ek9F61FVYqY` has 9 views and a 0.8% impressions click-through (the 6-hour check had 10 impressions, 0 clicks). The impression count is still small, so the number is noisy, but the thumbnail has a visible weakness: thumbnail B v02 (\"FLOATING PORT\", IWM BU 1024) is a wide aerial. At phone size (168x94) the harbour is dozens of grey specks with no single subject, on a pale grey photo that blends into the page. The top long-form Mulberry video (Today I Found Out, \"D-Day's Forgotten Critical Secret Weapon\", 159k views) uses one large dark caisson filling half the frame and three words of text. PLAYBOOK item 3 (real black-and-white archive photo, little or no text, no dark grade) still stands; the problem is scale, not style.\n\n**Do, today by 15:00 London. Make the options only: do not change anything on the live video.**\n1. From the film's 79 credited archive photographs (metadata_v43.json archive credits), pick 3 to 4 where ONE large subject can fill at least 60% of the frame after cropping: a Phoenix caisson under tow, a Whale roadway with lorries on it, a pier head, a Bombardon. Look at each one before you choose it. Real photo, black and white, kept bright (no dark grade), nothing invented or added to the photo, and honest framing (don't imply D-Day itself if the photo is later; say the date in the decision note).\n2. Build two candidates, 1280x720 JPEG under 2 MB, in 10_Thumbnail/:\n   - **C:** the best close crop with no text.\n   - **D:** a close crop with 2 to 3 words that add to the title rather than repeat it (e.g. \"TOWED TO FRANCE\"; not \"FLOATING PORT\", not \"SECRET\", which the title already says). Text in white on a solid dark band over the darkest area, at least the size of B v02's.\n3. Put B v02 (live), A (archive only), C and D side by side at 168x94 and 320x180 on a white and a dark YouTube background, beside the Today I Found Out thumbnail (`C1cVKD2i8cg`) at the same size. Look at the sheet. Rank them by \"what is this about, in one second, at 168x94\". Write the ranking and why in 03_Picture/PACKAGING_DECISION_v04.md and save the sheet.\n4. Do the same 168x94 check on pilot 2's thumbnail (`J9WGu8aPnHI`, airs Wed 25 Nov 17:00). If it has the same problem (no single large subject), say so in the note and propose its fix; don't change it.\n5. One ww2-channel PR with the candidates, the sheet and the note; one line on the thread. Merge as acting Chief.\n\n**Next (not this job):** the swap or Test & Compare on the live video waits for Ben's go in chat, and for YouTube's Advanced Features approval (Ben submitted it 22 Nov ~23:05Z; see J3361). £0. Title, schedule and description unchanged.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-23T08:47Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T08:47Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build close-crop thumbnails C and D and rank them against the live one at phone size",
+      "due": "2026-11-23T15:00:00Z",
+      "kind": "thumb",
+      "mini_only": true,
+      "urgent": 7
     }
   ],
   "focus": [
