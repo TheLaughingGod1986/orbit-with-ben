@@ -308024,9 +308024,14 @@
           "at": "2026-11-23T04:06Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-23T04:08Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Started J3402 condition verification for J2537 (replaces default_plan)"
         }
       ],
-      "remaining_action": "Verify readiness: Check for the protected desk history exception, then prepare the controlled rewrite window",
+      "remaining_action": "Check GitHub threads/PRs for Ben's protected hos-desk rewrite exception, verify Stage 3 backup/rehearsal artifacts and HOS repo state, write REVIEW.md PR, and park for Chief",
       "kind": "review",
       "recheck_of": "J2537",
       "due": "2026-11-18T18:00:00+00:00",
@@ -308041,12 +308046,17 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-23T04:06Z",
+        "of": 4,
+        "at": "2026-11-23T04:08Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Started J3402 condition verification for J2537 (replaces default_plan)"
+      },
+      "taskKeys": [
+        "HOS:005",
+        "HOS:008",
+        "HOS:011",
+        "HOS:013"
+      ]
     }
   ],
   "focus": [
