@@ -1,5 +1,5 @@
 {
-  "next_id": 3428,
+  "next_id": 3429,
   "jobs": [
     {
       "id": "J0001",
@@ -310944,6 +310944,11 @@
           "at": "2026-11-23T14:18Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-23T15:00:00Z"
+        },
+        {
+          "at": "2026-11-23T15:04Z",
+          "by": "relay",
+          "what": "condition verification queued: J3428"
         }
       ],
       "remaining_action": "Record the locked opening and ear-check its join with an audio-capable worker",
@@ -310964,10 +310969,11 @@
       "hold": {
         "type": "capability",
         "condition": "Mandatory ear-check of pickup tone and join into existing narration requires demonstrated audio input. Session tool inspection found shell text and still-image tools only; no perceived audio playback. ASR and ffmpeg measurements cannot satisfy this subjective check. No take generated and no credits spent.",
-        "check_at": "2026-11-23T15:00:00Z",
+        "check_at": "2026-11-23T16:04:05+00:00",
         "requires": [
           "audio_input"
-        ]
+        ],
+        "recheck_task": "J3428"
       },
       "required_capabilities": [
         "audio_input"
@@ -311382,6 +311388,41 @@
         "WW2:005",
         "WW2:006"
       ]
+    },
+    {
+      "id": "J3428",
+      "title": "Verify condition for J3422",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3422: Mandatory ear-check of pickup tone and join into existing narration requires demonstrated audio input. Session tool inspection found shell text and still-image tools only; no perceived audio playback. ASR and ffmpeg measurements cannot satisfy this subjective check. No take generated and no credits spent.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3422 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-23T15:04Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T15:04Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Record the locked opening and ear-check its join with an audio-capable worker",
+      "kind": "review",
+      "recheck_of": "J3422",
+      "mini_only": true,
+      "required_capabilities": [
+        "audio_input"
+      ],
+      "due": "2026-11-23T16:04:05+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
