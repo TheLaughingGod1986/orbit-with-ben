@@ -1,5 +1,5 @@
 {
-  "next_id": 3437,
+  "next_id": 3438,
   "jobs": [
     {
       "id": "J0001",
@@ -311711,6 +311711,11 @@
           "at": "2026-11-23T15:49Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-23T16:30:00Z"
+        },
+        {
+          "at": "2026-11-23T16:41Z",
+          "by": "relay",
+          "what": "condition verification queued: J3437"
         }
       ],
       "remaining_action": "Download and verify the extra archive photographs for the submarine torpedo film",
@@ -311729,7 +311734,8 @@
       "hold": {
         "type": "input",
         "condition": "Public archive binary delivery must work again: Commons original and standard 1920-pixel thumbnail downloads returned HTTP 429; Flickr original returned 429 and resized image 403; NHHC direct pages returned 404 on 23 Nov. Nine existing NAS photos hash-verified. Resume draft ww2 PR 49, retrieve and inspect 41 additional distinct photographs (replace failed candidates), then finalise the 41-paragraph plan. Current 57.6% is proposed only and 123 seconds below two-thirds. No new files delivered and no stage PASS.",
-        "check_at": "2026-11-23T16:30:00Z"
+        "check_at": "2026-11-23T17:41:11+00:00",
+        "recheck_task": "J3437"
       }
     },
     {
@@ -312082,6 +312088,37 @@
         "HOS:011",
         "HOS:013"
       ]
+    },
+    {
+      "id": "J3437",
+      "title": "Verify condition for J3429",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3429: Public archive binary delivery must work again: Commons original and standard 1920-pixel thumbnail downloads returned HTTP 429; Flickr original returned 429 and resized image 403; NHHC direct pages returned 404 on 23 Nov. Nine existing NAS photos hash-verified. Resume draft ww2 PR 49, retrieve and inspect 41 additional distinct photographs (replace failed candidates), then finalise the 41-paragraph plan. Current 57.6% is proposed only and 123 seconds below two-thirds. No new files delivered and no stage PASS.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3429 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-23T16:41Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T16:41Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Download and verify the extra archive photographs for the submarine torpedo film",
+      "kind": "review",
+      "recheck_of": "J3429",
+      "due": "2026-11-23T17:41:11+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
