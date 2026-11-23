@@ -309009,13 +309009,26 @@
           "at": "2026-11-23T08:15Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-23T08:15Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-23T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Verify readiness: Resolve the recorded export restriction, then reconcile the thumbnail ledger ID and submit the existing Pluto package for final review",
       "kind": "review",
       "recheck_of": "J3114",
       "due": "2026-11-23T09:15:47+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
