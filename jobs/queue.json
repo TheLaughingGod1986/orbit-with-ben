@@ -313468,9 +313468,14 @@
           "at": "2026-11-23T20:04Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-23T20:04Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Review exact narration intervals against delivered photographs and report an honest coverage total",
+      "remaining_action": "Inspecting WW2 PR49, PR13, and delivered archive photographs",
       "due": "2026-11-24T18:00:00Z",
       "kind": "review",
       "plain": "Match the torpedo film’s photographs to exact narration sentences",
@@ -313484,12 +313489,19 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-23T20:04Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect PR49/PR13 files and photo library",
+          "Sentence-level timing & photo audit across 41 rows",
+          "Verify visuals & compute honest coverage share",
+          "Commit allocation evidence to PR49 & post Chief recommendation"
+        ]
+      },
+      "taskKeys": [
+        "WW2:004"
+      ]
     }
   ],
   "focus": [
