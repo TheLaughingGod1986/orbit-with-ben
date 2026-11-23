@@ -311909,7 +311909,7 @@
       "ref": "",
       "film": "WW2:004",
       "stage": "picture",
-      "after": "",
+      "after": "J3447",
       "eta_min": 180,
       "status": "blocked",
       "by": "codex",
@@ -311917,7 +311917,7 @@
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T15:29Z",
-      "result": "parked for Chief: PR49 f37c9da delivers 50 verified photographs and 41 paragraph mappings, but timed plan remains 57.0%, 131.4 seconds below two-thirds. Review CHIEF_REVIEW_J3429.md and choose a concrete truthful editorial allocation or separately bounded new archive source. No worker waiver; J3430 stays dependent. Do not repeat unchanged failed download checks.",
+      "result": "Chief FIX (codex, 23 Nov): PR49 2881569 records review of 50 delivered photos and independent 41-row timing sum: 774.1054/1358.32s = 56.9899%, 131.4413s short. Count milestone accepted; no picture-stage PASS. J3447 now owns one 20-minute sentence-level editorial allocation review against existing object photos and captions; no repeated download probes, invented photo time or spend. J3429 stays held after J3447; J3430 remains after J3429. Review J3447 evidence before any release or merge.",
       "history": [
         {
           "at": "2026-11-23T15:29Z",
@@ -312068,9 +312068,19 @@
           "at": "2026-11-23T19:15Z",
           "by": "codex",
           "what": "blocked: parked for Chief: PR49 f37c9da delivers 50 verified photographs and 41 paragraph mappings, but timed plan remains 57.0%, 131.4 seconds below two-thirds. Review CHIEF_REVIEW_J3429.md and choose a concrete truthful editorial allocation or separately bounded new archive source. No worker waiver; J3430 stays dependent. Do not repeat unchanged failed download checks."
+        },
+        {
+          "at": "2026-11-23T20:02Z",
+          "by": "codex",
+          "what": "Chief FIX (codex, 23 Nov): PR49 2881569 records review of 50 delivered photos and independent 41-row timing sum: 774.1054/1358.32s = 56.9899%, 131.4413s short. Count milestone accepted; no picture-stage PASS. J3447 now owns one 20-minute sentence-level editorial allocation review against existing object photos and captions; no repeated download probes, invented photo time or spend. J3429 stays held after J3447; J3430 remains after J3429. Review J3447 evidence before any release or merge."
+        },
+        {
+          "at": "2026-11-23T20:02Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-24T18:00:00Z"
         }
       ],
-      "remaining_action": "Chief to resolve the documented archive coverage shortfall",
+      "remaining_action": "Await the sentence-level photo allocation review, then decide whether coverage is sufficient",
       "due": "2026-11-26T18:00:00Z",
       "kind": "image",
       "taskKeys": [
@@ -312095,6 +312105,11 @@
           "Verify coverage and open review PR"
         ],
         "note": "PR49 f37c9da: all50 unique NAS hashes/dimensions verified,41 paragraph totals reconciled;57.0% proposed archive,131.4s s"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "J3447 must deliver its bounded sentence-level allocation and explicit coverage recommendation; then review that evidence against PR49 Chief ruling 2881569. Current 57.0% plan is not approved.",
+        "check_at": "2026-11-24T18:00:00Z"
       }
     },
     {
