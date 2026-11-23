@@ -52,7 +52,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3308 | mini | open (after J3307) | – | – | studio · Studio: arm T041 thumbnail Test & Compare on NbW5G1BpPY0 (006 — 2× EARTH'S WATER) after J3307 PASS | jobs/reviews/J3382/REVIEW.md |
 | J3309 | mini | open (after J3307) | – | – | studio · Studio: arm T042 thumbnail Test & Compare on rVqgtkBV3jc (024 — EARTH AGES 7×) after J3307 PASS | jobs/reviews/J3382/REVIEW.md |
 | J3310 | mini | open (after J3307) | – | – | studio · Studio: arm T043 thumbnail Test & Compare on REXYxuLOBoI (005 — OUTLIVES OUR SUN) after J3307 PASS | jobs/reviews/J3382/REVIEW.md |
-| J3364 | mini | claimed | codex | 2026-11-23T18:27Z | 002 picture · assembly · Field Order History pilot 2: archive photos (~65%) plus the new opening, v06 to Ben's watch by Fri 27 Nov 20:00 (launch Sat 28 Nov 17:00) |  |
+| J3364 | mini | open | – | – | 002 picture · assembly · Field Order History pilot 2: archive photos (~65%) plus the new opening, v06 to Ben's watch by Fri 27 Nov 20:00 (launch Sat 28 Nov 17:00) |  |
 | J3365 | mini | blocked | codex | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J3368 | mini | blocked | gemini | – | review · Verify condition for J2529 |  |
 | J3369 | mini | blocked | codex | – | 001 thumbs · studio · Field Order History pilot 1: 48-hour thumbnail decision |  |
