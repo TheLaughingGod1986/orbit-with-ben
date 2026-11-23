@@ -312582,19 +312582,24 @@
           "at": "2026-11-23T17:47Z",
           "by": "codex",
           "what": "step 0 of 3 done: Read the deployment brief; deploy only, with open taps unchanged"
+        },
+        {
+          "at": "2026-11-23T17:48Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Clean origin/main includes both merged fixes; site build passed"
         }
       ],
-      "remaining_action": "Build and deploy the merged studio board fixes, then verify the live pages",
+      "remaining_action": "Deploy the built board and verify its live pages",
       "due": "2026-11-23T19:30:00Z",
       "kind": "studio",
       "mini_only": true,
       "urgent": 11,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-23T17:47Z",
+        "at": "2026-11-23T17:48Z",
         "by": "codex",
-        "note": "Read the deployment brief; deploy only, with open taps unchanged"
+        "note": "Clean origin/main includes both merged fixes; site build passed"
       },
       "taskKeys": [
         "WW2:002",
