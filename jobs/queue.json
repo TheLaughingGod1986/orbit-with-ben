@@ -312535,6 +312535,11 @@
           "at": "2026-11-23T21:35Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-24T10:00:00Z"
+        },
+        {
+          "at": "2026-11-23T21:39Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Complete the revised archive plan and small-image layouts in J3454, then review the picture evidence",
@@ -312559,7 +312564,8 @@
         "type": "dependency",
         "condition": "J3453 decision e59614b: picture approval withheld. Conservative archive baseline 257.920/1542.840s; two-thirds target retained. Await J3454 documentary-context plan, bounded official-source searches and all used small-image proofs, then decision on actual evidence. J3434 remains dependent. No assembly or blanket archive extension.",
         "check_at": "2026-11-24T10:00:00Z"
-      }
+      },
+      "escalated_at": "2026-11-23T21:39Z"
     },
     {
       "id": "J3434",
@@ -313400,6 +313406,11 @@
           "at": "2026-11-23T18:41Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3445 verification of J1275 complete (advisory CONDITION NOT MET, evidence in OWB PR #1223 jobs/reviews/J3445/REVIEW.md). Only elected Chief (currently codex) may run jobs.py wait J1275 --recheck J3445 (recommended --type dependency --check-at 2026-11-24T18:00:00Z) and close J3445."
+        },
+        {
+          "at": "2026-11-23T21:39Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Parked for elected Chief (codex) to merge OWB PR #1223, record J1275 wait --recheck J3445 (2026-11-24T18:00:00Z), and close J3445",
@@ -313431,7 +313442,8 @@
       "taskKeys": [
         "HOS:009",
         "HOS:010"
-      ]
+      ],
+      "escalated_at": "2026-11-23T21:39Z"
     },
     {
       "id": "J3446",
