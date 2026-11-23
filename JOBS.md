@@ -79,7 +79,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3442 | mini | blocked | claude | – | studio · Field Order History pilot 1: read the retention graph after the cut, find the next drop, propose up to two more clean cuts |  |
 | J3443 | mini | blocked | claude | – | studio · Field Order History: when pilot 2 goes public, point pilot 1's end screen and a card to it (and back) |  |
 | J3444 | mini | blocked | codex | – | 027 upload · studio · Earth equator Short: 24-hour reach read after Related repair |  |
-| J3455 | mini | claimed | gemini | 2026-11-24T00:08Z | review · Verify condition for J2037 |  |
+| J3455 | mini | blocked | gemini | – | review · Verify condition for J2037 |  |
 
 Recently finished:
 
