@@ -310990,10 +310990,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-23T15:24Z",
+      "eta": "2026-11-23T17:24Z",
       "created_by": "relay",
       "created_at": "2026-11-23T13:01Z",
       "result": "",
@@ -311042,6 +311042,11 @@
           "at": "2026-11-23T15:23Z",
           "by": "codex",
           "what": "reopened: Acting-Chief review only: PR1215 evidence accepted and merged. Keep J2040 held pending recorded ruling."
+        },
+        {
+          "at": "2026-11-23T15:24Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief Codex to review and merge PR #1215, record jobs.py wait J2040 --recheck J3423 --check-at 2026-11-24T13:00:00Z, and close J3423",
@@ -311056,7 +311061,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-23T15:24Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3424",
