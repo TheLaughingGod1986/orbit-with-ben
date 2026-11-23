@@ -56,7 +56,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3365 | mini | blocked | codex | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J3368 | mini | blocked | gemini | – | review · Verify condition for J2529 |  |
 | J3369 | mini | blocked | codex | – | 001 thumbs · studio · Field Order History pilot 1: 48-hour thumbnail decision |  |
-| J3370 | mini | open (after J3360) | – | – | WW2:003 vo · vo · WW2 003: correct S62 and S51a narration under J3360 ruling |  |
+| J3370 | mini | claimed | codex | 2026-11-23T18:17Z | WW2:003 vo · vo · WW2 003: correct S62 and S51a narration under J3360 ruling |  |
 | J3371 | mini | open (after J3370) | – | – | WW2:003 edit · chart · WW2 003: rebuild loss graphic and cues for corrected narration |  |
 | J3375 | mini | blocked | gemini | – | review · Verify condition for J3178 |  |
 | J3391 | mini | blocked | macbook-2 | – | review · Verify condition for J3365 |  |
