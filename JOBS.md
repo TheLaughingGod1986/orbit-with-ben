@@ -71,6 +71,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3420 | mini | blocked | gemini | – | studio · Field Order History pilot 2: move launch to Sat 28 Nov 17:00 (new opening, Ben: go) |  |
 | J3421 | any | open | – | – | WW2:002 script · facts · WW2 pilot 002: new 85-second opening (Claude's draft): facts check against its sources and lock v04 |  |
 | J3422 | mini | open (after J3421) | – | – | WW2:002 vo · vo · WW2 pilot 002: voice the new opening (pickup only, same voice and settings) |  |
+| J3423 | mini | open | – | – | review · Verify condition for J2040 |  |
 
 Recently finished:
 
