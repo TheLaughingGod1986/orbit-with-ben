@@ -1,5 +1,5 @@
 {
-  "next_id": 3453,
+  "next_id": 3454,
   "jobs": [
     {
       "id": "J0001",
@@ -314085,6 +314085,35 @@
       "taskKeys": [
         "WW2:006"
       ]
+    },
+    {
+      "id": "J3453",
+      "title": "WW2 006: elected-Chief picture decision after complete 54-row J3452 timing and feasibility pass",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "Elected-Chief picture decision requested after J3452 completed the full 54-row conservative Scribe timing pass, opening analysis, recurrence audit, missing-input decomposition, and TR 917 caption-fix proof on WW2 006 (De Havilland Mosquito) in PR 51 at commit 964a7f37af53bb9575d488806a9474dffb42f55e.\n\nRead 03_Picture/TIMING_PROPOSAL_J3452.md, PHRASE_ALLOCATIONS_J3452.json, TIMED_PROPOSAL_J3452.csv, RECURRENCE_J3452.json, SOURCE_GAPS_J3452.json, LAYOUT_PROOFS_J3452.json, and VALIDATION_J3452.txt.\n\nKey concrete evidence for Chief decision:\n1. Full 54-row conservative timing (existing 67-photo corpus, locked Scribe timestamps, half-open intervals, zero padding/crossfade borrowing): 43.000 s preserved from J3450 (10 rows) + 214.920 s newly timed across the remaining 44 rows (each <= J3433 cap) = 257.920 / 1542.840 s (16.7172% archive; 1284.920 s code). Exact gap to two-thirds (1028.560 s) is 770.640 s. Scribe-based proposal only; no audio/motion review claimed.\n2. Structural feasibility before any new-source scope: indispensable non-archive code (mechanisms, physics, quantitative comparisons, loss-rate statistics, maps/routes, quotes) occupies 848.880 s (55.0206%). All 24 disjoint conditional missing-input windows (8 preserved J3450 ceilings = 191.560 s + 16 newly identified ceilings = 244.480 s) total 436.040 s. Even at 100% ceiling recovery under Rule 5, maximum strict-clause archive is 693.960 / 1542.840 s (44.9794%), leaving an irreducible 334.600 s shortfall to 1028.560 s. Chief must decide between defining bounded documentary-context archive coverage rules (paired with targeted official IWM/NARA retrieval), issuing a channel-rule resolution on the two-thirds bar for this engineering-heavy locked script, or both.\n3. Opening treatment (S01 [0.000, 30.100)) remains FIX: CH 10111 and CH 10135 removed from S01 (CH 10135 placed in S39 over Reynolds' name); honest existing-corpus S01 is 0.000 s archive / 30.100 s code transitioning to CH 7783 at 30.100 s (S02). Exact missing opening input (30 Jan 1943 Berlin broadcast / Goering, Rule 5 provenance-constrained) logged as Priority #1. Chief to decide whether to scope an opening retrieval or approve the code opening.\n4. TR 917 caption-fix proof saved without overwriting J3450 proofs: /Volumes/data/studio-live/ww2/02_Video-Projects/006_De-Havilland-Mosquito-Plywood-Balsa-Bomber/03_Picture/J3452_layout_proofs/woodworking_tr917_caption_fix_1920x1080.png (SHA-256 e0b27bcfc05816e298a089e2627518533adb46a3bcb424a45199488776d9fa21; 1920x1080; 1.0x native 800x555 pixels bit-identical to source; 198 px right margin; visually inspected). Other 24 small used sources (49 total small preferred sources beyond TR 917 and CH 10126) remain unapproved.\n5. Recurrence/hold risks resolved: repeated photos cut from 21 to 7 (max 3x); TR 917 reduced to 1 (S23 only, TR 930 removed); CH 7783/CH 12416 non-adjacent; S38/S43/S49 single-photo holds reduced to 4.320 s / 6.800 s / 9.720 s (max hold 9.760 s).\n\nJ3433 remains held and J3434 dependent. PR 51 stays unmerged pending this elected-Chief decision.\n",
+      "ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/51",
+      "film": "WW2:006",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-23T21:28Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T21:28Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review PR 51 J3452 deliverables and decide picture coverage policy, opening treatment, and any scoped next step",
+      "kind": "chief",
+      "plain": "Review J3452 54-row timing (257.920 s archive), 334.600 s irreducible shortfall, S01 opening FIX, and TR 917 caption-fix proof on PR 51"
     }
   ],
   "focus": [
