@@ -67,7 +67,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3414 | mini | blocked | codex | – | studio · WW2 pilot 1: 48-hour metrics and running thumbnail test read |  |
 | J3415 | mini | blocked | – | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3417 | mini | blocked | codex | – | thumb · Field Order History pilot 2: two close-crop thumbnails and a Test & Compare at launch; one-subject rule into the playbook for films 003+ |  |
-| J3418 | mini | claimed | gemini | 2026-11-23T12:57Z | studio · Field Order History pilot 1: full Studio numbers for Ben's audit (retention graph, traffic sources, audience), read-only |  |
+| J3418 | mini | blocked | gemini | – | studio · Field Order History pilot 1: full Studio numbers for Ben's audit (retention graph, traffic sources, audience), read-only |  |
 | J3419 | mini | open | – | – | studio · Field Order History pilot 1: cut the 3m45s detour (1:27-5:12) from the live video in Studio's editor, retime captions and chapters (Ben: go) |  |
 | J3420 | mini | open | – | – | studio · Field Order History pilot 2: move launch to Sat 28 Nov 17:00 (new opening, Ben: go) |  |
 | J3421 | any | open | – | – | WW2:002 script · facts · WW2 pilot 002: new 85-second opening (Claude's draft): facts check against its sources and lock v04 |  |
