@@ -1,5 +1,5 @@
 {
-  "next_id": 3455,
+  "next_id": 3456,
   "jobs": [
     {
       "id": "J0001",
@@ -179746,6 +179746,11 @@
           "at": "2026-11-23T22:07Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: non-producer exact-hash PASS on HOS 009 long v03 (744f32b7) + PHONE proxy (b1135b3d) staged in HOS UAT, merge OWB PR #1224 (0b7f5b49) & clean HOS PR #731 (e1f4f687, 7/7 CI green; close superseded PR #719), and arm Ben awaits_ben Ready-for-OK watch card with verified HTTP 302 Play link (gemini produced J3314/J2036 and is worker, not elected Chief)"
+        },
+        {
+          "at": "2026-11-23T22:07Z",
+          "by": "relay",
+          "what": "condition verification queued: J3455"
         }
       ],
       "remaining_action": "Parked for elected non-producer Chief PASS, PR #731/#1224 merge, and Ben awaits_ben watch card",
@@ -179776,7 +179781,13 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-23T23:07:33+00:00",
+        "recheck_task": "J3455"
+      }
     },
     {
       "id": "J2038",
@@ -314340,6 +314351,37 @@
           "Commit, push PR & report"
         ]
       }
+    },
+    {
+      "id": "J3455",
+      "title": "Verify condition for J2037",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2037: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2037 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-23T22:07Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T22:07Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Parked for elected non-producer Chief PASS, PR #731/#1224 merge, and Ben awaits_ben watch card",
+      "kind": "review",
+      "recheck_of": "J2037",
+      "due": "2026-11-15T18:00:00+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
