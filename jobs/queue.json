@@ -309182,13 +309182,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-23T10:28Z",
-      "eta": "2026-11-23T12:28Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-23T08:15Z",
-      "result": "",
+      "result": "Acting Chief codex: CONDITION NOT MET. Evidence PR 1207 merged as 54606fc633; checked 21 newer thread posts through 7097874847 and current approval board, no explicit export approval. J3114 input hold recorded with --recheck J3407, next check 2026-11-23T18:10:00Z. Preserve existing package and downstream holds. Once authorized, reconcile ledger ID and submit to J3115 without rebuild. No spend or YouTube changes.",
       "history": [
         {
           "at": "2026-11-23T08:15Z",
@@ -309234,6 +309234,11 @@
           "at": "2026-11-23T10:28Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-23T10:28Z",
+          "by": "codex",
+          "what": "done: Acting Chief codex: CONDITION NOT MET. Evidence PR 1207 merged as 54606fc633; checked 21 newer thread posts through 7097874847 and current approval board, no explicit export approval. J3114 input hold recorded with --recheck J3407, next check 2026-11-23T18:10:00Z. Preserve existing package and downstream holds. Once authorized, reconcile ledger ID and submit to J3115 without rebuild. No spend or YouTube changes."
         }
       ],
       "remaining_action": "Elected Chief to merge PR #1207, record J3114 input hold with --recheck J3407 (check-at 2026-11-23T18:10:00Z), and close J3407",
