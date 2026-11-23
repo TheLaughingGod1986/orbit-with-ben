@@ -308859,13 +308859,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-23T07:47Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-23T07:46Z",
-      "result": "parked for Chief: J3405 verification complete in PR #1205 (jobs/reviews/J3405/REVIEW.md @ b37d4d58b8). Waiting condition for J3311 is PROVEN SATISFIED: non-producer Mini reviewer codex is UP and actively completing Mini jobs (chief_relay Chief: Codex; no codex.json down file; runs.jsonl 23 Nov 04:12Z-07:35Z all exit 0, out_of_usage false; capabilities.json confirms text/still-image input on Mini). HOS PR #718 (7248b872, OPEN, MERGEABLE, CLEAN, 6/6 checks green), NAS SHA-256 parity (43dbeb3a / e6e5ae3f), 12/12 NAS QA outputs, iCloud HOS UAT byte sizes, and ben_ok/scheduled=todo verified intact. Elected Chief needed to merge PR #1205, run jobs.py reopen J3311 + jobs.py handback J3311 + jobs.py reroute J3311 --to codex --model gpt-6-astra (or claim directly as codex so qa does not walk to excluded producer gemini ahead of codex), and close J3405 (scripts/jobs.py:603,1056,1059,1561). £0 spent; no upload/schedule/privacy/Buffer changes.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-23T07:46Z",
@@ -308901,6 +308901,11 @@
           "at": "2026-11-23T07:52Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3405 verification complete in PR #1205 (jobs/reviews/J3405/REVIEW.md @ b37d4d58b8). Waiting condition for J3311 is PROVEN SATISFIED: non-producer Mini reviewer codex is UP and actively completing Mini jobs (chief_relay Chief: Codex; no codex.json down file; runs.jsonl 23 Nov 04:12Z-07:35Z all exit 0, out_of_usage false; capabilities.json confirms text/still-image input on Mini). HOS PR #718 (7248b872, OPEN, MERGEABLE, CLEAN, 6/6 checks green), NAS SHA-256 parity (43dbeb3a / e6e5ae3f), 12/12 NAS QA outputs, iCloud HOS UAT byte sizes, and ben_ok/scheduled=todo verified intact. Elected Chief needed to merge PR #1205, run jobs.py reopen J3311 + jobs.py handback J3311 + jobs.py reroute J3311 --to codex --model gpt-6-astra (or claim directly as codex so qa does not walk to excluded producer gemini ahead of codex), and close J3405 (scripts/jobs.py:603,1056,1059,1561). £0 spent; no upload/schedule/privacy/Buffer changes."
+        },
+        {
+          "at": "2026-11-23T09:27Z",
+          "by": "codex",
+          "what": "reopened: Taking the elected-Chief decision on verified condition; worker evidence reviewed and parent follow-up recorded."
         }
       ],
       "remaining_action": "Parked for Chief: merge PR #1205, reopen/handback/reroute J3311 to codex, and close J3405",
@@ -308916,13 +308921,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-23T07:51Z",
-        "by": "gemini",
-        "note": "Opened PR #1205 (jobs/reviews/J3405/REVIEW.md @ b37d4d58b8); parking protected Chief reopen/close calls"
-      },
       "taskKeys": [
         "HOS:009"
       ]
