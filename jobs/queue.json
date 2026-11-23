@@ -311975,10 +311975,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-23T16:24Z",
+      "eta": "2026-11-23T18:24Z",
       "created_by": "relay",
       "created_at": "2026-11-23T16:23Z",
       "result": "",
@@ -311992,6 +311992,11 @@
           "at": "2026-11-23T16:23Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-23T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
+        },
+        {
+          "at": "2026-11-23T16:24Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Check for the protected desk history exception, then prepare the controlled rewrite window",
@@ -312006,7 +312011,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-23T16:24Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
