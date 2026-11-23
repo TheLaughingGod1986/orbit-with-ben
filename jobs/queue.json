@@ -309793,11 +309793,21 @@
           "at": "2026-11-23T09:55Z",
           "by": "codex",
           "what": "blocked newly created follow-up for mandatory daily date hold; no claim or work performed"
+        },
+        {
+          "at": "2026-11-23T09:55Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-24T09:00:00Z"
         }
       ],
-      "remaining_action": "Check Orbit viewer comments from the last fortnight and reply within the approved policy",
+      "remaining_action": "Wait until tomorrow morning to check new Orbit comments",
       "kind": "studio",
-      "plain": "Read new Orbit viewer comments and reply to simple questions and thanks"
+      "plain": "Read new Orbit viewer comments and reply to simple questions and thanks",
+      "hold": {
+        "type": "date",
+        "condition": "Next daily Orbit comment scan is due at 09:00 London on 24 November 2026; do not run a duplicate scan before then.",
+        "check_at": "2026-11-24T09:00:00Z"
+      }
     }
   ],
   "focus": [
