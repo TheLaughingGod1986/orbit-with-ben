@@ -298868,20 +298868,17 @@
           "at": "2026-11-23T09:27Z",
           "by": "codex",
           "what": "reopened: J3405 Chief ruling: condition satisfied by live non-producer Codex on Mini; NAS hashes match and 12 gate reports intact; PR718 exact head has six green checks. Reopen for original QA and UAT handoff only, no media PASS or publishing permission."
+        },
+        {
+          "at": "2026-11-23T09:27Z",
+          "by": "codex",
+          "what": "handed back: J3405 clear stale producer open_claim before explicit non-producer assignment"
         }
       ],
       "remaining_action": "Reopen when a non-producer reviewer on the Mini is up, then handback",
       "due": "2026-11-24T18:00:00Z",
       "kind": "qa",
       "plain": "Non-producer QA review and Ben UAT handoff for HOS 009 Shorts A and B (PR #718)",
-      "rerouted_from": {
-        "needs": "mini",
-        "for": "",
-        "model": "",
-        "status": "open",
-        "by": ""
-      },
-      "open_claim": true,
       "taskKeys": [
         "HOS:009"
       ]
