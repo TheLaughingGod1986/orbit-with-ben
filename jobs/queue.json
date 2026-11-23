@@ -311996,9 +311996,14 @@
           "at": "2026-11-23T16:41Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-23T16:42Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: claimed J3435 as specialist worker; starting audit of 146 seam and 43 reuse failures"
         }
       ],
-      "remaining_action": "Sort the seam failures into real defects and photo borders, and set a stills reuse rule",
+      "remaining_action": "locate pilot 2 checkpoint 76 picture_qa outputs, review sheet, source frames, and reviewed-ok schema",
       "due": "2026-11-24T12:00:00Z",
       "kind": "qa",
       "mini_only": true,
@@ -312013,12 +312018,14 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-23T16:41Z",
+        "of": 5,
+        "at": "2026-11-23T16:42Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "claimed J3435 as specialist worker; starting audit of 146 seam and 43 reuse failures"
+      },
+      "taskKeys": [
+        "WW2:002"
+      ]
     },
     {
       "id": "J3436",
