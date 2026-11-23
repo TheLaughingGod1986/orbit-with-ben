@@ -1,5 +1,5 @@
 {
-  "next_id": 3435,
+  "next_id": 3436,
   "jobs": [
     {
       "id": "J0001",
@@ -305773,7 +305773,7 @@
         "by": ""
       },
       "open_claim": true,
-      "urgent": 7,
+      "urgent": 5,
       "taskKeys": [
         "WW2:002"
       ],
@@ -306332,7 +306332,7 @@
       "kind": "vo",
       "plain": "Correct the bomber loss narration in the third WW2 film",
       "mini_only": true,
-      "urgent": 8,
+      "urgent": 6,
       "progress": {
         "step": 0,
         "of": 3,
@@ -306377,7 +306377,7 @@
       "remaining_action": "Rebuild the loss graphic and its timing after the corrected narration",
       "kind": "chart",
       "plain": "Correct the bomber loss graphic to match the verified narration",
-      "urgent": 9
+      "urgent": 7
     },
     {
       "id": "J3372",
@@ -310681,13 +310681,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-23T13:02Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T12:48Z",
-      "result": "Waiting for: YouTube Studio Editor processing of ek9F61FVYqY cut 01:27:20-05:12:11 (saved 2026-11-23T13:11:33Z) has finished and duration reads PT23M52S / 23:52; then finish Steps 4-5 using NAS checkpoint /Volumes/data/studio-live/ww2/02_Video-Projects/001_Mulberry-Harbours-Floating-Ports-D-Day/03_Picture/trim_receipt_v01/trim_state_v01.json and 11_Upload-Package/ww2_001_en-GB_v02.srt",
+      "result": "",
       "history": [
         {
           "at": "2026-11-23T12:48Z",
@@ -310743,29 +310743,35 @@
           "at": "2026-11-23T13:48Z",
           "by": "relay",
           "what": "condition verification queued: J3426"
+        },
+        {
+          "at": "2026-11-23T16:20Z",
+          "by": "claude",
+          "what": "reopened: Released by Claude, 23 Nov ~16:25Z: J3426 proved the condition at 14:06-14:08Z (API PT23M53S, processing succeeded, public watch 23:52, Studio Editor done, Test & Compare still Running). Finish steps 4-5 now: upload the retimed en-GB captions v02 (sha c718da04...), update only the description's chapter lines to the new times, check the end screen, pinned comment and playlist, and record the cut times and live time for J3414."
+        },
+        {
+          "at": "2026-11-23T16:20Z",
+          "by": "claude",
+          "what": "rerouted to gemini on gemini-argon: Gemini started the trim and holds the Studio 9224 window and the retimed captions."
         }
       ],
       "remaining_action": "Recheck ek9F61FVYqY API duration and Studio 9224 Editor at 13:45Z; once 23:52 is live, play 20s around 01:27 join, replace en-GB standard captions with v02 SRT, update the 6 description chapter lines only, verify end screen/pinned comment/playlist/Test & Compare (restart B v02/C/D if stopped), and open single ww2-channel PR with metadata_v44.json, ww2_001_en-GB_v02.srt, and 03_Picture/TRIM_RECEIPT_v01.md",
       "due": "2026-11-23T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
-      "urgent": 5,
-      "progress": {
-        "step": 3,
-        "of": 6,
-        "at": "2026-11-23T13:20Z",
-        "by": "gemini",
-        "note": "Studio still processing at 13:19:59Z (API PT27M37S, Editor 'Video editing is in progress...'). Before screenshots (7 PNG"
-      },
+      "urgent": 9,
       "taskKeys": [
         "WW2:001"
       ],
-      "hold": {
-        "type": "dependency",
-        "condition": "YouTube Studio Editor processing of ek9F61FVYqY cut 01:27:20-05:12:11 (saved 2026-11-23T13:11:33Z) has finished and duration reads PT23M52S / 23:52; then finish Steps 4-5 using NAS checkpoint /Volumes/data/studio-live/ww2/02_Video-Projects/001_Mulberry-Harbours-Floating-Ports-D-Day/03_Picture/trim_receipt_v01/trim_state_v01.json and 11_Upload-Package/ww2_001_en-GB_v02.srt",
-        "check_at": "2026-11-23T14:48:39+00:00",
-        "recheck_task": "J3426"
-      }
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J3420",
@@ -310963,13 +310969,13 @@
       "stage": "vo",
       "after": "J3421",
       "eta_min": 40,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-23T14:17Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T12:48Z",
-      "result": "Waiting for: Mandatory ear-check of pickup tone and join into existing narration requires demonstrated audio input. Session tool inspection found shell text and still-image tools only; no perceived audio playback. ASR and ffmpeg measurements cannot satisfy this subjective check. No take generated and no credits spent.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-23T12:48Z",
@@ -311010,35 +311016,38 @@
           "at": "2026-11-23T15:04Z",
           "by": "relay",
           "what": "condition verification queued: J3428"
+        },
+        {
+          "at": "2026-11-23T16:20Z",
+          "by": "claude",
+          "what": "reopened: Moved to Gemini by Claude, 23 Nov ~16:25Z. Codex could not do the mandatory ear-check (no audio input in its session) and generated nothing. Gemini voiced and ear-checked pilot 2's whole narration (J2995, full 24:03 ear-check PASS), so it has the tools. Voice VO_PICKUP_v04.txt only (1,042 characters, same voice, eleven_v3, speed 1.04), listen to the take and the join into 'A strong wind across the runways had delayed its arrival.', then the Scribe check. If your tools can't play audio either, say so and park; don't generate."
+        },
+        {
+          "at": "2026-11-23T16:20Z",
+          "by": "claude",
+          "what": "rerouted to gemini on gemini-argon: Moved to Gemini by Claude, 23 Nov ~16:25Z. Codex could not do the mandatory ear-check (no audio input in its session) and generated nothing. Gemini voiced and ear-checked pilot 2's whole narration (J2995, full 24:03 ear-check PASS), so it has the tools. Voice VO_PICKUP_v04.txt only (1,042 characters, same voice, eleven_v3, speed 1.04), listen to the take and the join into 'A strong wind across the runways had delayed its arrival.', then the Scribe check. If your tools can't play audio either, say so and park; don't generate."
         }
       ],
       "remaining_action": "Record the locked opening and ear-check its join with an audio-capable worker",
       "due": "2026-11-25T12:00:00Z",
       "kind": "vo",
       "mini_only": true,
-      "urgent": 6,
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-23T14:18Z",
-        "by": "codex",
-        "note": "Locked v04 pickup located; mandatory subjective tone and join ear-check cannot be performed with this session tools. No "
-      },
+      "urgent": 8,
       "taskKeys": [
         "WW2:002"
       ],
-      "hold": {
-        "type": "capability",
-        "condition": "Mandatory ear-check of pickup tone and join into existing narration requires demonstrated audio input. Session tool inspection found shell text and still-image tools only; no perceived audio playback. ASR and ffmpeg measurements cannot satisfy this subjective check. No take generated and no credits spent.",
-        "check_at": "2026-11-23T16:04:05+00:00",
-        "requires": [
-          "audio_input"
-        ],
-        "recheck_task": "J3428"
-      },
       "required_capabilities": [
         "audio_input"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J3423",
@@ -311334,8 +311343,8 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-11-23T14:04Z",
       "eta": "",
       "created_by": "relay",
@@ -311371,6 +311380,11 @@
           "at": "2026-11-23T14:08Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: J3419 waiting condition PROVEN SATISFIED at 2026-11-23T14:06-14:07Z (YouTube Data API contentDetails.duration=PT23M53S processingStatus=succeeded uploadStatus=processed privacyStatus=public; public watch lengthSeconds=1432/23:52; Studio 9224 Editor shows 23:53 with processing banner gone; Details shows 00:00/23:53 Public and Thumbnail Test & Compare still Running; NAS trim_state_v01.json, 7 before-PNGs, and ww2_001_en-GB_v02.srt sha256 c718da0465126b5f17fb5c93ffe0c9049e560a037543abb5802a33e9ab24e91e verified; Ben approval and guards intact). Elected Chief (codex) to run jobs.py reopen J3419 --agent codex --note '<evidence>' --git and close J3426 so a Mini worker can finish J3419 Steps 4-5."
+        },
+        {
+          "at": "2026-11-23T16:20Z",
+          "by": "claude",
+          "what": "cancelled: Condition proven (Studio edit finished, 23:52); J3419 released by Claude to finish captions and chapters."
         }
       ],
       "remaining_action": "Chief (codex) to reopen J3419 with verified 23:52/23:53 evidence and close J3426",
@@ -311874,6 +311888,37 @@
       "remaining_action": "Assemble the film to its narration and archive plan, then QA and Ben's watch",
       "due": "2026-12-09T20:00:00Z",
       "kind": "assembly"
+    },
+    {
+      "id": "J3435",
+      "title": "Field Order History pilot 2: rule on the picture gate's 146 'seam' and 43 'reuse' failures for a stills documentary",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** Ben asked (Mon 23 Nov ~16:15 London) whether Field Order History pilot 2 has passed. It hasn't reached his watch: the archive rebuild J3364 has been stuck for days on `picture_qa.py` (checkpoint 76: 171 failed cuts, of them 146 \"seam\", 43 \"reuse\", 1 opening jitter; down only from 187).\n\n`picture_qa.py` and `polish_gate.py` were written for Orbit With Ben's space films: they FAIL diagrams, maps and labelled images, call any full-height straight edge a \"split panel seam\", and FAIL a still that appears more than twice. This channel's own rules (`studio/RULES.md`, rule 1) say real archive photographs carry about two-thirds of the screen time and code-drawn maps explain the rest; old photographs commonly have print borders and sit pillarboxed in a 16:9 frame. The suspicion is that most of the 146 \"seams\" are borders or pillarbox edges, not split panels, and that the reuse limit is wrong for a 24-minute stills documentary. Pilot 1 passed the same gates only with reviewed rulings.\n\n**Do (Chief ruling, by Tue 24 Nov 12:00 London):**\n1. Look at the review sheet (`picture_qa_review.jpg`) for every \"seam\" FAIL at full size and sort them: a real split panel or gutter (fix it) or a photo border / pillarbox edge / natural straight edge in the photograph (rule it OK with `--reviewed-ok`, kinds [\"split panel\"], one line each).\n2. For \"reuse\": allow an archive photograph to return where the narration returns to it (chapter openings, the ending), at most three appearances, never within 30 s; anything else gets a new photo.\n3. Write the ruling in pilot 2's `03_Picture/PICTURE_GATE_RULING_v01.md` and hand J3364 the reviewed-ok file, so its next run fails only on real problems.\n4. Propose, in one paragraph, whether Field Order History needs its own picture-gate profile (stills and code maps allowed, borders ignored, a stills reuse rule) so pilots 3-6 don't hit the same wall. Don't change the shared gate code in this job.\n\n**Guards.** No waiver of a real defect: anything that would look wrong to Ben on his TV gets fixed. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-23T16:20Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T16:20Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Sort the seam failures into real defects and photo borders, and set a stills reuse rule",
+      "due": "2026-11-24T12:00:00Z",
+      "kind": "qa",
+      "mini_only": true,
+      "urgent": 10
     }
   ],
   "focus": [
