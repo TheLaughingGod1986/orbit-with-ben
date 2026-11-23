@@ -313048,9 +313048,14 @@
           "at": "2026-11-23T18:34Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Inspected J3114, J3407 (PR #1207), J3115, J3119, J3065/J3066 and chief_relay status (Chief: Codex; gemini is specialist worker)."
+        },
+        {
+          "at": "2026-11-23T18:34Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Audited all 90 newer OWB comments (#7098046957..#7110289544, all on #954; 0 non-#954, 0 PR review comments, 0 [Ben] posts, 1 [Claude] post #7101809143 on WW2/HOS), OWB #219 (unchanged 2026-11-23T09:57:51Z, 105 keys, 0 new 034/J3114 ticks), HOS/WW2 comments (0 hits), and remote refs/PRs through #1221: no explicit J3114 export authorization."
         }
       ],
-      "remaining_action": "Audit newer thread posts, approval board #219, HOS/WW2 comments, remote branches/PRs, local j3114-wt and NAS hashes",
+      "remaining_action": "Complete NAS video hash verification, write jobs/reviews/J3446/REVIEW.md PR, park J3446 for Chief (Codex), and report on #954",
       "kind": "review",
       "recheck_of": "J3114",
       "due": "2026-11-23T19:31:24+00:00",
@@ -313064,7 +313069,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
         "at": "2026-11-23T18:34Z",
         "by": "gemini",
@@ -313074,7 +313079,7 @@
           "Verify local branch, package/video hashes and ledger state",
           "Update J3114 wait/reopen state, report on thread, finish J3446"
         ],
-        "note": "Inspected J3114, J3407 (PR #1207), J3115, J3119, J3065/J3066 and chief_relay status (Chief: Codex; gemini is specialist "
+        "note": "Audited all 90 newer OWB comments (#7098046957..#7110289544, all on #954; 0 non-#954, 0 PR review comments, 0 [Ben] post"
       },
       "taskKeys": [
         "OWB:034"
