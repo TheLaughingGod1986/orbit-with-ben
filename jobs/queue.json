@@ -303629,10 +303629,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-23T20:39Z",
-      "eta": "2026-11-24T00:39Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-22T12:46Z",
       "result": "",
@@ -305961,6 +305961,11 @@
           "at": "2026-11-23T20:43Z",
           "by": "codex",
           "what": "step 1 of 4 done: Checkpoint83 local 2b7e643: exhaustive minimum-duration replacement plan identifies 27 rows /133.24s; all eight retained sets meet count/gap constraints; seven tests pass. No media or gate result changed."
+        },
+        {
+          "at": "2026-11-23T20:43Z",
+          "by": "codex",
+          "what": "released: Checkpoint83 local 2b7e643 in clean isolated _desk/ww2/J3364-wt. Resume CHECKPOINT_83.md and authoritative selection82. Exhaustive replacement planner identifies27rows/133.24s; retained subsets satisfy existing <=3 appearances and30s gaps; seven tests pass. Planning only,no media change. Eight identity defects and checkpoint82 border flag remain; J3422/PR55 review,opening/retiming/captions/credits/coverage,gates,capableQA and exact Benwatch unfinished. No renderer running. No eligible scratch to offload,about12.1GB free. Localonly inherited export restriction preserved;no push,spend,YouTube or Buffer change."
         }
       ],
       "remaining_action": "Replace the 27 identified archive shot rows with correctly matched cleared photos, then conform the approved opening",
