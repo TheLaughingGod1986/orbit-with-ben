@@ -1,5 +1,5 @@
 {
-  "next_id": 3454,
+  "next_id": 3455,
   "jobs": [
     {
       "id": "J0001",
@@ -314154,6 +314154,35 @@
       "taskKeys": [
         "WW2:006"
       ]
+    },
+    {
+      "id": "J3454",
+      "title": "WW2 006: build documentary-context picture plan and native-size proofs",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "[Chief] Codex decision J3453, WW2 PR 51: implement CHIEF_DECISION_J3453.md. This is one bounded picture-planning job, not assembly or approval.\n\nRead current WW2 studio/RULES.md and LEARNINGS.md, then the decision and J3452 evidence. Preserve all old proposals/source files. Deliver a new full 54-row timed proposal using the decision's documentary-context criteria; explicitly label direct evidence, documentary context and code, quote the narration, identify each source and its actual date/place, and explain every extension beyond J3452. The 257.920s strict-clause baseline stays as a separate comparator. No guaranteed archive percentage. Retain the two-thirds target; disclose any remaining gap.\n\nOnly two new retrieval approaches are authorised, each with a cumulative 20-minute active limit and at most three candidates examined in depth (not reset on resume):\n1. S01: NARA's catalogue and digitised US federal official collections for an identified broadcast/person image relevant to the opening. Captured German/private/agency items do not become US federal public domain merely by being held by NARA. Exact event evidence is preferred; a verified portrait may be explicitly labelled with its actual date/place as person context, never the Berlin broadcast. If nothing passes, use the Chief-approved code opening fallback and log the exhausted budget. Do not retry earlier blocked endpoints unchanged.\n2. S32: NARA/USAAF official photographic records for Hap Arnold, with a verified government creator and rights statement. This new person-context approach targets the named individual, not a supposed photograph of the exact meeting. Record actual date/place and do not imply the photographed event is the narrated conference. Stop when one usable candidate passes. Other gaps use the existing corpus or code; no broad harvest.\n\nFor any retrieval record collection/ID, page and file URL, creator, rights basis, date/place, hash, dimensions and interval; provenance in ARCHIVE_PROVENANCE.md. Media only on the existing shared film store, no media in Git. No paid service, no generation, no restoration/upscale, no VO/title change, no public changes.\n\nProduce native-size 1920x1080 proofs for every used source below 1600px not already accepted (currently 24); if context remapping adds other small sources, include those too. Proofs must preserve source pixels and credits, carry short accurate captions, and be checked at full size and phone size. Drop illegible treatments, do not stretch them. TR 917 and CH 10126 scope remains unchanged.\n\nAudit half-open partitions, actual archive/code union, contextual seconds separately, photo recurrence/holds and first 120s. Keep ordinary photo holds within 10s for this proposal, avoid adjacent repeats and stay at three appearances per photo at most; if insufficient variety, report the gap, do not pad. Archive-plus-small-label counts once only while photograph remains the dominant explanatory image; diagram-dominant frames and decorative photograph thumbnails count as code.\n\nCheckpoint work before 20 minutes per unattended run and release this same job if unfinished; preserve cumulative retrieval time/candidate counts. On completion, request one review decision with the exact evidence commit. J3433 remains dependency-held; J3434 remains dependent; no picture PASS, merge or assembly on delivery alone.\n",
+      "ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/51",
+      "film": "WW2:006",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-23T21:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T21:33Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build the revised archive picture plan and check every small photograph used",
+      "kind": "review",
+      "plain": "Match the Mosquito narration to honest archive pictures and check their layouts"
     }
   ],
   "focus": [
