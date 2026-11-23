@@ -309190,7 +309190,7 @@
     {
       "id": "J3410",
       "title": "HOS 133 How Was Quantum Physics Discovered?: rule-E topic go/no-go review",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Rule-E topic go/no-go review for **HOS:133 (`02_Video-Projects/133_Planck-Rubens-Bohr-How-Was-Quantum-Physics-Discovered`)** on HOS PR `#733` (`https://github.com/TheLaughingGod1986/history-of-science/pull/733`, branch `gemini/J3408-hos-132-133`) and OWB PR `#1208` (`https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1208`, branch `gemini/J3408-wip-hos-132-133`), queued by `J3408`.\n\n### Topic Summary\n- **Proposed 2027 Search Plan Fit (`J3224`, `needsBen` — waiting for Ben's lock):** Aligns directly with **Cluster 2 #6** (*Nuclear, Quantum & Modern Physics Breakthroughs* — Max Planck's Desperate Guess That Invented Quantum Physics), chaining with `126` Higgs Boson, `130` Enrico Fermi Reactor, and `131` Einstein Relativity. Verified `<50k` US small-channel breakouts in `J3224`: `Science Retold` (`3.4K` US) -> `61.9K` (`13x`) on *The Origin Of Planck's Constant*; `Math Everywhere` (`10.3K` US) -> `36.5K` (`10x`) on *MAX PLANCK*; `Cosmo Explains` (`37.0K` US) -> `239.7K` (`65x`). Distinct from `ideas/025_Young-Fresnel-Einstein-Light` (double-slit/photoelectric wave-particle debate): focuses on Berlin's 1887–1900 PTR blackbody lightbulb oven, the Rayleigh–Jeans Ultraviolet Catastrophe, Planck's 7 Oct 1900 postcard & 14 Dec 1900 \"act of desperation\" ($E = h\\nu$), and Bohr's 1913 atomic stability breakthrough.\n- **Title A (Primary Proposal, Rules 1, 15, 23, 26 — `59 chars <= 70`, `0` collisions):** `How Was Quantum Physics Discovered? (The Lightbulb Problem)`\n- **Title A1 (Compact Rule 15 `<=50 chars` Variant — `48 chars`, `0` collisions):** `What Is Quantum Mechanics? (Planck's 1900 Guess)`\n- **Title B (T&C Arm 2, Rule 23 — `49 chars <= 50`, `0` collisions):** `Max Planck's 1900 Postcard (How Quantum Was Born)`\n- **Title C (Rule 26 Exact Phrase + Catastrophe — `65 chars <= 70`, `0` collisions):** `How Was Quantum Physics Discovered? (The Ultraviolet Catastrophe)`\n- **Short S01 (16–19 s Ben 19 Nov rules, `53 chars`, `0` collisions):** `How Did Max Planck Solve the Ultraviolet Catastrophe?`\n- **Short S02 (16–19 s Ben 19 Nov rules, `48 chars`, `0` collisions):** `How Did a Glowing Oven Invent Planck's Constant?`\n- **Saved Evidence (`2026-11-23`):**\n  - `11_Upload-Package/evidence_2026-11-23_neighbours.json` (`PASS`: `13` raw / `11` strictly on-topic education videos `>=1,000,000` views, `3` `TED-Ed >=1M`, `TED-Ed/TED: yes`, led by `Veritasium` `21,553,339` & `20,891,298`, `TED-Ed` ★ `9,228,160`, `The Royal Institution` `4,686,613`, `TEDx` ★ `3,813,226`, `TED` ★ `2,665,434`, `PBS Space Time` `2,514,160` & `2,054,493` *Planck's Constant and The Origin of Quantum Mechanics*, `TED-Ed` ★ `2,168,361` & `1,153,323`, `TED` ★ `1,110,967`; 2 off-topic rows transparently excluded).\n  - `11_Upload-Package/evidence_2026-11-23_public_search.json` (`10` queries / `75` rows; `\"how was quantum physics discovered\"`, `\"what is quantum mechanics\"`, `\"what is the ultraviolet catastrophe\"`, `\"max planck quantum theory\"` all `autocomplete = yes`; ranking videos `The Royal Institution` `4,686,616`, `minutephysics` `3,232,924`, `Physics Explained` `2,714,822`, `PBS Space Time` `2,054,493`; `0` exact title collisions).\n\n### Reviewer Checklist (AGENTS.md Rule E)\n1. Verify `TOPIC.md`, `status.json`, `production-status.md`, `10_Shorts/README.md`, and the two raw JSON evidence files on HOS PR `#733`.\n2. Score the Rule-E topic rubric (neighbour demand `>=3` strictly on-topic at `1M+` views with TED/TED-Ed presence, signed-out YouTube autocomplete demand, title collision check, non-duplication across `02_Video-Projects/`, `ideas/` incl. `025`, open PRs `120–131`, and `WIP.json`, §2.5 thumbnail text non-repeat, and proof-first visual hook).\n3. Confirm all historical and scientific claims remain marked **UNVERIFIED** until `SOURCES.md` exact quotes and the `facts` lane run when an active HOS WIP slot opens under Rule G (`jobs/WIP.json` `next_hos`).\n4. Record the Rule-E go/no-go verdict.\n",
       "ref": "",
@@ -309210,11 +309210,24 @@
           "at": "2026-11-23T08:40Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-23T08:42Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-23T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "HOS 133 How Was Quantum Physics Discovered?: rule-E topic go/no-go review",
       "kind": "review",
-      "plain": "Rule-E topic go/no-go review for HOS 133 How Was Quantum Physics Discovered? (The Lightbulb Problem)"
+      "plain": "Rule-E topic go/no-go review for HOS 133 How Was Quantum Physics Discovered? (The Lightbulb Problem)",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [

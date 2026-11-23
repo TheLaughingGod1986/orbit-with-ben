@@ -70,7 +70,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3406 | any | blocked | macbook-2 | – | review · Verify condition for J3307 |  |
 | J3407 | mini | blocked | gemini | – | review · Verify condition for J3114 |  |
 | J3409 | mini | open | – | – | 132 topic · review · HOS 132 Why Is Glass Transparent?: rule-E topic go/no-go review |  |
-| J3410 | any | open | – | – | 133 topic · review · HOS 133 How Was Quantum Physics Discovered?: rule-E topic go/no-go review |  |
+| J3410 | mini | open | – | – | 133 topic · review · HOS 133 How Was Quantum Physics Discovered?: rule-E topic go/no-go review |  |
 
 Recently finished:
 
