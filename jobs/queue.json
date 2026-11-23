@@ -1,5 +1,5 @@
 {
-  "next_id": 3440,
+  "next_id": 3441,
   "jobs": [
     {
       "id": "J0001",
@@ -312490,6 +312490,36 @@
         "at": "2026-11-23T17:43Z",
         "by": "macbook"
       }
+    },
+    {
+      "id": "J3440",
+      "title": "Field Order History films 2-6: backfill stale stage records so the board shows real progress",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "**Why (Ben, Mon 23 Nov ~17:50 London: \"I can't see the progress ... it actually comes up as scheduled ... the board might not be working as fully intended\").** orbit-with-ben PR #1219 fixes how the board shows open work. The board also reads each film's stage states from its ww2-channel `status.json`, and films 002-006 are stale: 004-006 show no stages at all and still say \"Topic review by the Chief, then the script\", although their scripts, voice-overs and first picture passes are done (J3000-J3002, J3206-J3211); 002 shows only topic, script and vo.\n\n**Do (records only, about 20 minutes):**\n1. Backfill each film's `stages` from the queue's done jobs, with the job id as each ref:\n   - 003: script, sources, vo, picture done (J2997, J3204, J2998); edit \"doing\" (J3205, waiting on J3370/J3371).\n   - 004-006: script and sources done (J3000-J3002), vo done (J3206/J3208/J3210), picture \"doing\" (first pass done J3207/J3209/J3211; archive top-ups J3429/J3431/J3433 open), edit not started (J3430/J3432/J3434 queued).\n   - 002: picture and edit \"doing\" (J3364), vo \"doing\" (J3422 pickup), thumbs done (J3417 saved test).\n2. Set `next` to the real next step in plain words, and the current titles (J3427).\n3. Say in the PR whether anything keeps these files in step automatically for this channel (the board's stage sync works for its home channel); if nothing does, propose the smallest fix in one paragraph.\n4. One ww2-channel PR (Chief merge), one thread line.\n\n**Guards.** Records only. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 25,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-23T17:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T17:43Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Backfill films 2-6 stage states and next steps from the queue",
+      "due": "2026-11-24T12:00:00Z",
+      "kind": "listing",
+      "urgent": 10
     }
   ],
   "focus": [
