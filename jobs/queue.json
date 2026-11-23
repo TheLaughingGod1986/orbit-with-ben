@@ -312577,9 +312577,14 @@
           "at": "2026-11-23T17:47Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-23T17:47Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Read the deployment brief; deploy only, with open taps unchanged"
         }
       ],
-      "remaining_action": "Build and deploy the board site from main, then check pilot 2 shows as being reworked",
+      "remaining_action": "Build and deploy the merged studio board fixes, then verify the live pages",
       "due": "2026-11-23T19:30:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -312589,9 +312594,14 @@
         "of": 3,
         "at": "2026-11-23T17:47Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Read the deployment brief; deploy only, with open taps unchanged"
+      },
+      "taskKeys": [
+        "WW2:002",
+        "WW2:004",
+        "WW2:005",
+        "WW2:006"
+      ]
     }
   ],
   "focus": [
