@@ -73,7 +73,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3423 | mini | open | – | – | review · Verify condition for J2040 |  |
 | J3424 | mini | blocked | gemini | – | studio · Field Order History pilot 1: change the title to "The Secret Floating Harbours of D-Day" (title only, API) |  |
 | J3426 | mini | blocked | gemini | – | review · Verify condition for J3419 |  |
-| J3427 | any | open | – | – | listing · Field Order History films 3-6: apply Claude's viewer test (new titles, the torpedo film's two-sentence cut, thumbnail rule) |  |
+| J3427 | mini | open | – | – | listing · Field Order History films 3-6: apply Claude's viewer test (new titles, the torpedo film's two-sentence cut, thumbnail rule) |  |
 
 Recently finished:
 
