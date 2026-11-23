@@ -310835,10 +310835,10 @@
       "stage": "",
       "after": "",
       "eta_min": 15,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-23T13:49Z",
+      "eta": "2026-11-23T14:04Z",
       "created_by": "claude",
       "created_at": "2026-11-23T13:48Z",
       "result": "",
@@ -310847,13 +310847,26 @@
           "at": "2026-11-23T13:48Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-23T13:49Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Change pilot 1's title only and read back the full snippet",
       "due": "2026-11-23T16:00:00Z",
       "kind": "studio",
       "mini_only": true,
-      "urgent": 9
+      "urgent": 9,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-23T13:49Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3425",
