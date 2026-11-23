@@ -7,7 +7,7 @@ import { execFileSync } from 'child_process';
 import type { Snapshot } from '../src/lib/analytics/channel-tracker';
 import { channelRoot, ENGINE_ROOT, assertAnalyticsEngine } from './analytics-paths';
 
-type ReadJob = { title:string; plain:string; body:string; due:string };
+type ReadJob = { title:string; plain:string; body:string; due:string; kind?:string; needs?:string };
 export function planReads(s:Snapshot, now:Date):ReadJob[] {
   const jobs:ReadJob[]=[];
   for(const v of s.videos.filter(v=>v.privacy==='public' && v.format==='long' && v.publishedAt)) {
@@ -18,6 +18,11 @@ export function planReads(s:Snapshot, now:Date):ReadJob[] {
       jobs.push({title:`Field Order History analytics read ${v.id} ${label}`,due:new Date(Date.parse(v.publishedAt!)+hours*3600000).toISOString(),
         plain:`Read how ${v.title} performed in its first ${days===2?'two':'seven'} days`,
         body:`J3006 automatic read-only learning loop. Channel ${s.channelId}; video ${v.id}; ${label} read due after ${hours} elapsed hours. This is the first daily dispatch after the deadline, not a claim of an exact live 48-hour capture.\nRead this channel's own channels/ww2/studio/RULES.md and 00_Brand/PLAYBOOK.md. Use the configured Studio browser and reuse_page; verify CHANNEL_ID before reading. No saves, account switching, publishing, title or thumbnail changes, spend or sign-in.\nCollect impressions, CTR percent, new and returning viewers and Test & Compare status/variant watch-time shares. Analytics period must be ${startDate} through ${endDate}, inclusive (Pacific dates matching the API); wait for reporting lag rather than substituting lifetime. Keep API views, hours, average seconds/percentage, subscribers, sources and retention/checkpoints.\nImport a strict dated read using 07_Content-Ops/scripts/field-order-studio-import.ts, merging with earlier windows. For suppressed or unavailable fields, use null and a missing reason, never zero. Record the video/window as attempted. Do not persist raw browser responses, credentials or account identity. Commit generated analytics from a clean worktree and report collection evidence. READS.md and board.json rebuild automatically. If there are triggers, recommend thumbnail first, then title, or tightening the next opening; never change packaging in this read job.\n`});
+      // Every read feeds the channel's rules (ww2-channel studio/RULES.md rule 12; Ben, 23 Nov 2026: "rules improving
+      // every video, every time we learn new data ... almost like recursive self-improvement").
+      jobs.push({title:`Field Order History rules review ${v.id} ${label}`,due:new Date(Date.parse(v.publishedAt!)+(hours+12)*3600000).toISOString(),
+        kind:'review',needs:'any',plain:`Update the channel's rules from what ${v.title}'s first ${days===2?'two':'seven'} days taught us`,
+        body:`Rules review after the ${label} read of ${v.id} (${v.title}). Read-only on YouTube, £0. If the ${label} read job ("Field Order History analytics read ${v.id} ${label}") has not imported its numbers yet, wait for it rather than guessing.\n1. Read ww2-channel studio/RULES.md and studio/LEARNINGS.md, then this film's ${label} numbers in channels/ww2/05_Analytics/READS.md and board.json (strangers only: suggested, browse and search; never our own checks), its retention curve and traffic sources, and any running Test & Compare.\n2. For every open prediction in LEARNINGS.md that this read can test, write the result: held, failed, or not yet testable, with the numbers.\n3. Change RULES.md where the data says so: sharpen a rule, add one, or delete one that did not help, always with the data beside it. A rule whose prediction has failed twice is rewritten or deleted. Keep RULES.md under one page; history belongs in LEARNINGS.md.\n4. Add one LEARNINGS.md line per change: date, film, data, change, and what the next film should show if the change is right.\n5. If nothing changes, say why in one LEARNINGS.md line; a read never passes silently.\nOne ww2-channel PR (the Chief merges), one line on the thread. Never change a live film's title, thumbnail or schedule in this job: propose it as a separate job.\n`});
     }
   }
   // One channel read per reporting week, including the first week before any film is public.
@@ -44,7 +49,7 @@ export function dispatchReads(s:Snapshot, queueRepo:string, now=new Date(), run=
     const dir=fs.mkdtempSync(path.join(os.tmpdir(),'field-order-read-'));
     try {
       const file=path.join(dir,'brief.md');fs.writeFileSync(file,job.body);
-      run([path.join(queueRepo,'scripts/jobs.py'),'add','--needs','mini','--kind','studio','--repo','ww2','--title',job.title,'--plain',job.plain,'--action',job.plain,'--due',job.due,'--body-file',file,'--by','codex','--git']);
+      run([path.join(queueRepo,'scripts/jobs.py'),'add','--needs',job.needs??'mini','--kind',job.kind??'studio','--repo','ww2','--title',job.title,'--plain',job.plain,'--action',job.plain,'--due',job.due,'--body-file',file,'--by','codex','--git']);
       created.push(job.title);
     } finally {fs.rmSync(dir,{recursive:true,force:true});}
   }

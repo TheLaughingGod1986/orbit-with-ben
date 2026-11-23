@@ -87,11 +87,14 @@ describe('Unattended Studio dispatch and merging',()=>{
  it('dispatches windows only once due, including Pacific date boundary cases',async()=>{
   const {planReads}=await import('../scripts/field-order-dispatch');
   const s:Snapshot={...snapFixture(),videos:[{id:'abcdefghijk',title:'A film',format:'long',privacy:'public',publishedAt:'2026-11-01T01:00:00Z',seconds:600,views:0,likes:0,comments:0}],channelId:'UC'+'a'.repeat(22)};
-  // Each day with a public film also gets one channel totals read (weekly audience read + daily totals).
+  // Each day with a public film also gets one channel totals read (weekly audience read + daily totals),
+  // and every film read is followed by a rules review.
   expect(planReads(s,new Date('2026-11-03T00:59:59Z'))).toHaveLength(2);
   const jobs=planReads(s,new Date('2026-11-03T01:00:00Z'));
-  expect(jobs).toHaveLength(3);expect(jobs[0].due).toBe('2026-11-03T01:00:00.000Z');expect(jobs[0].body).toContain('2026-10-31 through 2026-11-01');
-  expect(planReads(s,new Date('2026-11-08T01:00:00Z'))).toHaveLength(4);
+  expect(jobs).toHaveLength(4);expect(jobs[0].due).toBe('2026-11-03T01:00:00.000Z');expect(jobs[0].body).toContain('2026-10-31 through 2026-11-01');
+  expect(jobs[1]).toMatchObject({title:'Field Order History rules review abcdefghijk 48h',kind:'review',needs:'any',due:'2026-11-03T13:00:00.000Z'});
+  expect(jobs[1].body).toContain('LEARNINGS.md');expect(jobs[1].body).toContain('strangers only');
+  expect(planReads(s,new Date('2026-11-08T01:00:00Z'))).toHaveLength(6);
   s.videos[0].privacy='private';expect(planReads(s,new Date('2026-12-01'))).toHaveLength(1);
  });
  it('queues one channel totals read per day once a film is public',async()=>{
@@ -127,9 +130,13 @@ describe('Queue and import integration with disk fixtures',()=>{
    const snapshot:Snapshot={...snapFixture(),channel:'ww2',channelId:'UC'+'a'.repeat(22),videos:[{id:'abcdefghijk',title:'Film',privacy:'public',format:'long',publishedAt:'2026-11-01T18:00:00Z',seconds:600,views:0,likes:0,comments:0}]};
    const calls:string[][]=[];
    const run=(args:string[])=>{calls.push(args);const queue=JSON.parse(fs.readFileSync(file,'utf8'));queue.jobs.push({title:args[args.indexOf('--title')+1],status:'done'});fs.writeFileSync(file,JSON.stringify(queue));return Buffer.from('');};
-   expect(dispatchReads(snapshot,root,new Date('2026-11-09'),run)).toHaveLength(4);
+   expect(dispatchReads(snapshot,root,new Date('2026-11-09'),run)).toHaveLength(6);
    expect(dispatchReads(snapshot,root,new Date('2026-11-09'),run)).toEqual([]);
    expect(calls.every(a=>a.includes('--git')&&a.includes('ww2')&&!a.includes('--body'))).toBe(true);
+   const review=calls.find(a=>a.includes('Field Order History rules review abcdefghijk 7d'))!;
+   expect(review[review.indexOf('--kind')+1]).toBe('review');expect(review[review.indexOf('--needs')+1]).toBe('any');
+   const read=calls.find(a=>a.includes('Field Order History analytics read abcdefghijk 7d'))!;
+   expect(read[read.indexOf('--kind')+1]).toBe('studio');expect(read[read.indexOf('--needs')+1]).toBe('mini');
   } finally {fs.rmSync(root,{recursive:true,force:true});}
  });
  it('validates before writing and merges earlier reads on disk',async()=>{
