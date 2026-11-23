@@ -311417,13 +311417,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-23T15:11Z",
-      "eta": "2026-11-23T17:11Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-23T15:04Z",
-      "result": "",
+      "result": "parked for Chief: parked for Chief: J3428 condition verification complete (PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1216, 978e3e03aa, jobs/reviews/J3428/REVIEW.md blob afaed1f014). CONDITION MET for J3422 (WW2:002 v04 opening pickup VO): gemini is UP in the vo chain with verified audio_input (14:26:56Z blind relay probe audio+video PASS 1.00 + 15:15:18Z direct read_file hearing of NAS ch00.mp3); J3421 locked VO_PICKUP_v04.txt (1,042 chars, SHA 770cc46d...b79d), NARRATION_v04.txt (f3439da7...bd673) and NAS v01 master (1fc5fa51...0ae9) match; live ElevenLabs balance 15,222/121,114 remaining (resets 30 Nov 10:50Z, TTS_PAUSE absent, £0 spent); Ben approvals and J3420 schedule intact. Reopening J3422 preserves required_capabilities=[audio_input] so only gemini can claim it. Recommend Chief merge PR #1216, reopen J3422, and close J3428. (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)",
       "history": [
         {
           "at": "2026-11-23T15:04Z",
@@ -311459,6 +311459,11 @@
           "at": "2026-11-23T15:19Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Opened PR #1216 (978e3e03aa, jobs/reviews/J3428/REVIEW.md): CONDITION MET for J3422 (gemini UP in vo chain with verified audio_input; J3421 locked files, NAS v01 master, 15,222 ElevenLabs credits, and Ben approvals all valid). Parking J3428 for Chief to merge PR #1216, reopen J3422, and close J3428."
+        },
+        {
+          "at": "2026-11-23T15:19Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: parked for Chief: J3428 condition verification complete (PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1216, 978e3e03aa, jobs/reviews/J3428/REVIEW.md blob afaed1f014). CONDITION MET for J3422 (WW2:002 v04 opening pickup VO): gemini is UP in the vo chain with verified audio_input (14:26:56Z blind relay probe audio+video PASS 1.00 + 15:15:18Z direct read_file hearing of NAS ch00.mp3); J3421 locked VO_PICKUP_v04.txt (1,042 chars, SHA 770cc46d...b79d), NARRATION_v04.txt (f3439da7...bd673) and NAS v01 master (1fc5fa51...0ae9) match; live ElevenLabs balance 15,222/121,114 remaining (resets 30 Nov 10:50Z, TTS_PAUSE absent, £0 spent); Ben approvals and J3420 schedule intact. Reopening J3422 preserves required_capabilities=[audio_input] so only gemini can claim it. Recommend Chief merge PR #1216, reopen J3422, and close J3428. (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)"
         }
       ],
       "remaining_action": "Chief (codex) to review/merge PR #1216, reopen J3422 (preserving required_capabilities=[audio_input]), and close J3428",
