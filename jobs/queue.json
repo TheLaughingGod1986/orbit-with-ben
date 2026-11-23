@@ -298791,10 +298791,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-23T09:29Z",
+      "eta": "2026-11-23T11:29Z",
       "created_by": "gemini",
       "created_at": "2026-11-21T16:55Z",
       "result": "",
@@ -298878,6 +298878,11 @@
           "at": "2026-11-23T09:27Z",
           "by": "codex",
           "what": "rerouted to codex on gpt-6-astra: J3405 follow-up: non-producer Mini Codex performs original four-step QA and UAT handoff by 24 Nov 18:00Z. Gemini excluded as producer; no upload authorization."
+        },
+        {
+          "at": "2026-11-23T09:29Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Reopen when a non-producer reviewer on the Mini is up, then handback",
@@ -298895,7 +298900,15 @@
         "by": ""
       },
       "for": "codex",
-      "model": "gpt-6-astra"
+      "model": "gpt-6-astra",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-23T09:29Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3312",
