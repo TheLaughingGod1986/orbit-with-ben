@@ -77,7 +77,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3433 | mini | open | – | – | WW2:006 picture · image · WW2 film 006: top up the archive photographs to about two-thirds of screen time before the edit |  |
 | J3434 | mini | open (after J3433) | – | – | WW2:006 edit · assembly · WW2 film 006: edit, captions, three thumbnails and upload package, to Ben's watch |  |
 | J3438 | mini | blocked | codex | – | studio · First-day check at 6 h: "Why Do You Weigh Less at Earth's Equator?" (Dm4xsF1Ateg) |  |
-| J3440 | mini | open | – | – | listing · Field Order History films 2-6: backfill stale stage records so the board shows real progress |  |
+| J3440 | mini | claimed | macbook | 2026-11-23T18:16Z | listing · Field Order History films 2-6: backfill stale stage records so the board shows real progress |  |
 | J3441 | mini | claimed | codex | 2026-11-23T18:02Z | studio · Board: deploy main (PR #1219 rework/queued fix, PR #1213 card) to the studio-kanban site and verify |  |
 
 Recently finished:
