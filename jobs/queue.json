@@ -314390,9 +314390,14 @@
           "at": "2026-11-23T22:09Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-23T22:09Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Read J2037 history and J2036 done record; checking PR #1224, HOS PR #731/#719, and Chief escalation mechanics"
         }
       ],
-      "remaining_action": "Inspect J2037, its predecessors, and HOS 009 evidence",
+      "remaining_action": "Verify HOS 009 evidence, PR checks, and why J2037 is parked for elected Chief Codex",
       "kind": "review",
       "recheck_of": "J2037",
       "due": "2026-11-15T18:00:00+00:00",
@@ -314406,7 +314411,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
         "at": "2026-11-23T22:09Z",
         "by": "gemini",
@@ -314415,7 +314420,8 @@
           "Verify HOS 009 evidence and gates",
           "Apply J2037 reopen or wait decision",
           "Post report and close J3455"
-        ]
+        ],
+        "note": "Read J2037 history and J2036 done record; checking PR #1224, HOS PR #731/#719, and Chief escalation mechanics"
       },
       "taskKeys": [
         "HOS:009"
