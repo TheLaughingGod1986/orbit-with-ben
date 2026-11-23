@@ -311046,10 +311046,10 @@
       "stage": "vo",
       "after": "J3421",
       "eta_min": 40,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-23T17:14Z",
+      "eta": "2026-11-23T17:54Z",
       "created_by": "claude",
       "created_at": "2026-11-23T12:48Z",
       "result": "",
@@ -311103,6 +311103,11 @@
           "at": "2026-11-23T16:20Z",
           "by": "claude",
           "what": "rerouted to gemini on gemini-argon: Moved to Gemini by Claude, 23 Nov ~16:25Z. Codex could not do the mandatory ear-check (no audio input in its session) and generated nothing. Gemini voiced and ear-checked pilot 2's whole narration (J2995, full 24:03 ear-check PASS), so it has the tools. Voice VO_PICKUP_v04.txt only (1,042 characters, same voice, eleven_v3, speed 1.04), listen to the take and the join into 'A strong wind across the runways had delayed its arrival.', then the Scribe check. If your tools can't play audio either, say so and park; don't generate."
+        },
+        {
+          "at": "2026-11-23T17:14Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Record the locked opening and ear-check its join with an audio-capable worker",
@@ -311124,7 +311129,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-23T17:14Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3423",
