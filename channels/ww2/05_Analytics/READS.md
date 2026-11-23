@@ -1,6 +1,6 @@
 # Field Order History: film reads
 
-Analytics through 2026-11-20. Generated automatically; do not edit.
+Analytics through 2026-11-21. Generated automatically; do not edit.
 
 48h uses the first two Pacific calendar dates; 7d uses the first seven. The API has daily granularity and a reporting lag, so these are not exact elapsed-hour windows. Studio reach reads must match these date ranges.
 
