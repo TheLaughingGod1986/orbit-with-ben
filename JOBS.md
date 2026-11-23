@@ -78,7 +78,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3434 | mini | open (after J3433) | – | – | WW2:006 edit · assembly · WW2 film 006: edit, captions, three thumbnails and upload package, to Ben's watch |  |
 | J3438 | mini | blocked | codex | – | studio · First-day check at 6 h: "Why Do You Weigh Less at Earth's Equator?" (Dm4xsF1Ateg) |  |
 | J3439 | mini | claimed | macbook | 2026-11-23T19:42Z | 027 upload · studio · 027 live equator Short: set missing Related on replacement Dm4xsF1Ateg |  |
-| J3440 | any | open | – | – | listing · Field Order History films 2-6: backfill stale stage records so the board shows real progress |  |
+| J3440 | mini | open | – | – | listing · Field Order History films 2-6: backfill stale stage records so the board shows real progress |  |
 | J3441 | mini | open | – | – | studio · Board: deploy main (PR #1219 rework/queued fix, PR #1213 card) to the studio-kanban site and verify |  |
 
 Recently finished:
