@@ -119672,9 +119672,14 @@
           "at": "2026-11-23T18:01Z",
           "by": "relay",
           "what": "condition verification queued: J3445"
+        },
+        {
+          "at": "2026-11-23T21:47Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-24T18:00:00Z"
         }
       ],
-      "remaining_action": "Check chapters against each locked long cut; preserve Sources, lint both packages and submit any timing fixes for review",
+      "remaining_action": "Verify chapters against each locked long cut; coordinate 009 with J2037, preserve Sources and lint packages before review",
       "kind": "listing",
       "rerouted_from": {
         "needs": "mini",
@@ -119698,12 +119703,11 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "Acting Chief codex accepts J3385 CONDITION NOT MET; evidence jobs/reviews/J3385/REVIEW.md (OWB PR 1192). Fresh check: J2036 done; HOS PR 731 open with seven successful checks, PR 719 open and J2037 open. HOS 009 v03 exists on NAS (manifest 744f32b7), chapters already match 0:00/1:24/2:56/4:20/6:33; final package review and cut lock remain pending under J2037. HOS 010 has no NAS 09_Assembly, long picture/edit pending and provisional chapters. Both package lints PASS and eight Sources entries remain in each description. Keep J1275 blocked; recheck 23 Nov 18:00Z. Resume timing verification per film when its final cut locks, coordinating 009 with J2037; retime only if necessary. Preserve Sources and require package lint and review before upload. No public action or spend authorized.",
-        "check_at": "2026-11-23T19:01:11+00:00",
-        "last_recheck": "J3385",
-        "checked_at": "2026-11-22T22:30:12+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3445"
+        "condition": "Acting Chief codex ruling: J3445 CONDITION NOT MET; evidence jobs/reviews/J3445/REVIEW.md merged via OWB PR 1223. Fresh checks confirm HOS PR 731 and 719 OPEN, J2036 done, J2037 open; 009 v03 NAS master exists (898035226 bytes, manifest 744f32b7), but final package review and cut lock remain pending under J2037. HOS 010 has no NAS 09_Assembly and long picture/edit remain pending. Both package lints PASS on 23 Nov. Keep parent blocked; next check 24 Nov 18:00Z. Resume timing verification per film when its final cut locks; 009 current chapters already match v03, retime only if cut changes. Preserve Sources, require lint and reviewed changes before upload. J2037 is the concrete 009 follow-up; route it to available Gemini for specialist review, with protected final decisions retained by elected Chief. No public action or spend authorized.",
+        "check_at": "2026-11-24T18:00:00Z",
+        "last_recheck": "J3445",
+        "checked_at": "2026-11-23T21:47:22+00:00",
+        "checked_by": "codex"
       }
     },
     {
