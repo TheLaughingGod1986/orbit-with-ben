@@ -78,7 +78,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3434 | mini | open (after J3433) | – | – | WW2:006 edit · assembly · WW2 film 006: edit, captions, three thumbnails and upload package, to Ben's watch |  |
 | J3435 | mini | claimed | gemini | 2026-11-23T17:41Z | qa · Field Order History pilot 2: rule on the picture gate's 146 'seam' and 43 'reuse' failures for a stills documentary |  |
 | J3436 | mini | blocked | gemini | – | review · Verify condition for J2537 |  |
-| J3437 | mini | claimed | macbook-2 | 2026-11-23T18:42Z | review · Verify condition for J3429 |  |
+| J3437 | mini | open | – | – | review · Verify condition for J3429 |  |
 
 Recently finished:
 
