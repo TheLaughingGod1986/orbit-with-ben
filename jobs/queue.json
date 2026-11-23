@@ -310655,13 +310655,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 45,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-23T13:22Z",
-      "eta": "2026-11-23T14:07Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T12:48Z",
-      "result": "",
+      "result": "parked for Chief: review ww2-channel PR #41 (https://github.com/TheLaughingGod1986/ww2-channel/pull/41 @ e814260), issue Acting-Chief v04 script lock (2 minimal source fixes in L002/L003; remainder byte-for-byte unchanged from 'A strong wind...' with soft-callback notes on L047/L054 in GEMINI_CLAIMS_CHECK_v04.md), update status.json after PR #40, merge PR #41, and close J3421 to unblock J3422 (VO_PICKUP_v04.txt, 1,042 spoken chars, £0 spent here).",
       "history": [
         {
           "at": "2026-11-23T12:48Z",
@@ -310687,6 +310687,11 @@
           "at": "2026-11-23T13:30Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Opened ww2-channel PR #41 (e814260) with GEMINI_CLAIMS_CHECK_v04.md, NARRATION_v04.txt (3,046w/18,452 spoken chars, sha f3439da7f952), lines_v04.json (54 blocks), and VO_PICKUP_v04.txt (186w/1,042 spoken chars, sha 770cc46dba4a), verified channel_check PASS, and posted studio thread receipt."
+        },
+        {
+          "at": "2026-11-23T13:30Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: review ww2-channel PR #41 (https://github.com/TheLaughingGod1986/ww2-channel/pull/41 @ e814260), issue Acting-Chief v04 script lock (2 minimal source fixes in L002/L003; remainder byte-for-byte unchanged from 'A strong wind...' with soft-callback notes on L047/L054 in GEMINI_CLAIMS_CHECK_v04.md), update status.json after PR #40, merge PR #41, and close J3421 to unblock J3422 (VO_PICKUP_v04.txt, 1,042 spoken chars, £0 spent here)."
         }
       ],
       "remaining_action": "Await elected Chief (codex) v04 script lock and merge of ww2-channel PR #41 to unblock J3422",
