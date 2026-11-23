@@ -1,5 +1,5 @@
 {
-  "next_id": 3450,
+  "next_id": 3451,
   "jobs": [
     {
       "id": "J0001",
@@ -313801,6 +313801,36 @@
         "WW2:005"
       ],
       "done_ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/50"
+    },
+    {
+      "id": "J3450",
+      "title": "WW2 006: resolve archive allocation and small-photo layouts after Chief review",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "Acting-Chief ruling on J3433, 23 November 2026: picture approval WITHHELD. Review draft WW2 PR 51 at 3c354c61ae04c43aeb098350efea4c08abbef60d. Its 67 distinct NAS files match the recorded hashes and dimensions; 54 paragraph allocations total 869.70 archive seconds in 1542.84 seconds (56.37%). Count target is met, screen-time target is not. 51 preferred copies are below 1600px. J3434 must remain dependent on J3433; this task does not approve an edit.\n\nDo ONE bounded editorial pass (20 minutes active work), using the existing 67 photographs and locked narration. This is a new approach to the shortfall, not another archive harvest. Read WW2 studio/RULES.md and studio/LEARNINGS.md; do not import OWB/HOS picture rules. Existing evidence is in PR 51 under 02_Video-Projects/006_De-Havilland-Mosquito-Plywood-Balsa-Bomber/03_Picture/: PICTURE_PLAN_J3433.json, PICTURE_PLAN.md, ARCHIVE_PROVENANCE.md, SOURCE_RESEARCH_J3433.md.\n\n1. Replace coarse paragraph fractions with sentence/phrase-level start/end allocations for those paragraphs where existing photographs genuinely support more of the words. Prioritise production S19/S23/S26-S28, aircraft demonstration S31-S32 and people/operational context S36/S40/S46. Keep code for mechanisms, quantitative comparisons and exact events lacking photographs. A dated contextual photograph is allowed only where the words concern its depicted subject, never as evidence of another place/date/event. Do not simply extend photos to hit a percentage. Record reason and caption restriction for every changed interval; check recurrence/pacing across the whole film. Do not pad or alter narration/title.\n2. Produce three representative 1920x1080 still layout proofs using existing smaller images, including the opening portrait, a woodworking photograph and an operational photograph. Preserve source detail and metadata; no fake high-resolution claim or generative restoration. Prefer restrained framed layouts to excessive enlargement. This is a layout review, not motion/audio QA. Record source size and display scale, and visually assess the actual proofs. Identify any image unusable even framed. The brief asks for 1600px where available; a smaller source is not automatically a prohibition, but must look suitable in the proposed frame. No new retrieval attempts in this pass.\n3. Deliver exact proposed archive seconds and remaining gap, with conservative non-overlapping timing and no rounding to a pass. Goal remains about two-thirds (1028.56s at exact two-thirds), not 56.37%. If an honest allocation cannot reach it, deliver the maximum defensible plan and name the precise spoken intervals still needing new sources, with the seconds each would recover. End with a concrete Chief decision request; no automatic reset of archive research budgets.\n\nText revisions and proofs manifest/hashes go in the existing WW2 PR 51 using a clean worktree; proof image files stay on shared film media. Preserve all worker evidence and existing media. Route back to elected Chief for the final picture decision. J3433 remains held until that decision; J3434 remains dependent. Do not mark either original job done. No spend, AI pictures, narration changes, publication or schedule changes. Report the original ruling and follow-up job ID on J3433. This task is immediately eligible; its due time is a review target, not a delayed start.\n",
+      "ref": "",
+      "film": "WW2:006",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 25,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-23T20:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T20:48Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Revise the Mosquito picture plan and show three photo layouts for review",
+      "due": "2026-11-24T10:00:00Z",
+      "kind": "review",
+      "plain": "Check where the Mosquito photographs fit the narration and whether the smaller pictures look sharp enough"
     }
   ],
   "focus": [
