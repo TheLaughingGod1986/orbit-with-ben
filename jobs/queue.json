@@ -1,5 +1,5 @@
 {
-  "next_id": 3436,
+  "next_id": 3437,
   "jobs": [
     {
       "id": "J0001",
@@ -227990,6 +227990,11 @@
           "at": "2026-11-23T04:16Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-23T10:10:00Z"
+        },
+        {
+          "at": "2026-11-23T16:23Z",
+          "by": "relay",
+          "what": "condition verification queued: J3436"
         }
       ],
       "remaining_action": "Check for the protected desk history exception, then prepare the controlled rewrite window",
@@ -228013,10 +228018,11 @@
       "hold": {
         "type": "input",
         "condition": "Chief accepts J3402 evidence in merged PR1203. Explicit one-time Ben exception for irreversible protected HOS hos-desk rewrite while retaining PR180 remains absent. Refreshed comments through OWB 7091349114 and HOS 7091348869; Grok ruling 7018109147 retains hold and says do not ask again. After authorization: resolve non-desk PRs, refresh backup and rehearsal against current heads, give day-before notice and hold HOS writers before cutover. No live rewrite authorized.",
-        "check_at": "2026-11-23T10:10:00Z",
+        "check_at": "2026-11-23T17:23:16+00:00",
         "last_recheck": "J3402",
         "checked_at": "2026-11-23T04:16:05+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J3436"
       }
     },
     {
@@ -311944,6 +311950,37 @@
       "kind": "qa",
       "mini_only": true,
       "urgent": 10
+    },
+    {
+      "id": "J3436",
+      "title": "Verify condition for J2537",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2537: Chief accepts J3402 evidence in merged PR1203. Explicit one-time Ben exception for irreversible protected HOS hos-desk rewrite while retaining PR180 remains absent. Refreshed comments through OWB 7091349114 and HOS 7091348869; Grok ruling 7018109147 retains hold and says do not ask again. After authorization: resolve non-desk PRs, refresh backup and rehearsal against current heads, give day-before notice and hold HOS writers before cutover. No live rewrite authorized.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2537 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-23T16:23Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T16:23Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Check for the protected desk history exception, then prepare the controlled rewrite window",
+      "kind": "review",
+      "recheck_of": "J2537",
+      "due": "2026-11-18T18:00:00+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
