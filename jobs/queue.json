@@ -310799,9 +310799,14 @@
           "at": "2026-11-23T14:17Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-23T14:17Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Claimed pickup job; checking the mandatory ear-check requirement before credit spend."
         }
       ],
-      "remaining_action": "Voice the locked new opening and check the join",
+      "remaining_action": "Check the locked opening and audio review capability before recording the pickup",
       "due": "2026-11-25T12:00:00Z",
       "kind": "vo",
       "mini_only": true,
@@ -310811,9 +310816,11 @@
         "of": 3,
         "at": "2026-11-23T14:17Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "note": "Claimed pickup job; checking the mandatory ear-check requirement before credit spend."
+      },
+      "taskKeys": [
+        "WW2:002"
+      ]
     },
     {
       "id": "J3423",
