@@ -55,7 +55,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3311 | mini | blocked | gemini | – | HOS:009 edit · qa · Review HOS 009 Short A v01 and Short B v01 (J2171, PR #718) | J2171 |
 | J3354 | mini | blocked | macbook-2 | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3361 | mini | blocked | gemini | – | for gemini · studio · `gemini-argon` · Field Order History pilot 1 pre-launch check before 17:00 today: live read-back, en-GB captions, description touch-ups, pinned first comment, playlist public at launch |  |
-| J3364 | mini | claimed | codex | 2026-11-23T04:53Z | 002 picture · assembly · Field Order History pilot 2: add the planned archive photos (~65%) to the graphics-only cut, v06 to Ben's watch by Tue 20:00 (else move to Sat 28 Nov) |  |
+| J3364 | mini | blocked | codex | – | 002 picture · assembly · Field Order History pilot 2: add the planned archive photos (~65%) to the graphics-only cut, v06 to Ben's watch by Tue 20:00 (else move to Sat 28 Nov) |  |
 | J3365 | mini | blocked | codex | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J3368 | mini | blocked | gemini | – | review · Verify condition for J2529 |  |
 | J3369 | mini | blocked | codex | – | 001 thumbs · studio · Field Order History pilot 1: 48-hour thumbnail decision |  |
