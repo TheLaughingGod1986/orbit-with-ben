@@ -312587,19 +312587,24 @@
           "at": "2026-11-23T17:48Z",
           "by": "codex",
           "what": "step 1 of 3 done: Clean origin/main includes both merged fixes; site build passed"
+        },
+        {
+          "at": "2026-11-23T17:49Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Cloudflare production deployed from main: 3241f2df; configuration unchanged, open taps remains 0"
         }
       ],
-      "remaining_action": "Deploy the built board and verify its live pages",
+      "remaining_action": "Verify the production board status labels, film steps, and Studio source dates",
       "due": "2026-11-23T19:30:00Z",
       "kind": "studio",
       "mini_only": true,
       "urgent": 11,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-23T17:48Z",
+        "at": "2026-11-23T17:49Z",
         "by": "codex",
-        "note": "Clean origin/main includes both merged fixes; site build passed"
+        "note": "Cloudflare production deployed from main: 3241f2df; configuration unchanged, open taps remains 0"
       },
       "taskKeys": [
         "WW2:002",
