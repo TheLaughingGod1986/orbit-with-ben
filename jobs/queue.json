@@ -312165,10 +312165,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-23T20:25Z",
+      "eta": "2026-11-23T23:25Z",
       "created_by": "claude",
       "created_at": "2026-11-23T15:29Z",
       "result": "",
@@ -312297,6 +312297,11 @@
           "at": "2026-11-23T20:25Z",
           "by": "codex",
           "what": "reopened: Chief ruling recorded in PR50 fabae85: FIX, not approved. Administrative transition to replace obsolete parked-for-Chief result with the J3449 dependency hold; no production release."
+        },
+        {
+          "at": "2026-11-23T20:25Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Wait for the revised St Nazaire picture plan and acceptance of compliant archive coverage",
@@ -312304,7 +312309,15 @@
       "kind": "image",
       "taskKeys": [
         "WW2:005"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-23T20:25Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3432",
