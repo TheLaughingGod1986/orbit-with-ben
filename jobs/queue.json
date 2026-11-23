@@ -313434,13 +313434,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-23T21:04Z",
-      "eta": "2026-11-23T23:04Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-23T18:31Z",
-      "result": "",
+      "result": "Acting Chief codex ruling: CONDITION NOT MET. Accepted evidence PR1222 merged at 795bab8e81. Checked 39 newer posts through 7113840686, unchanged approval board and clean local a12100797f; no explicit export authorization. J3114 retains input hold recorded with --recheck J3446 and next check 2026-11-24T09:00:00Z. After explicit authorization, reconcile ledger T041 to next unused ID then submit existing package for J3115 without rebuild. J3119 and UAT/Shorts holds preserved. Report: studio thread 7113948770. This verification complete; original package remains held.",
       "history": [
         {
           "at": "2026-11-23T18:31Z",
@@ -313496,6 +313496,11 @@
           "at": "2026-11-23T21:04Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-23T21:04Z",
+          "by": "codex",
+          "what": "done: Acting Chief codex ruling: CONDITION NOT MET. Accepted evidence PR1222 merged at 795bab8e81. Checked 39 newer posts through 7113840686, unchanged approval board and clean local a12100797f; no explicit export authorization. J3114 retains input hold recorded with --recheck J3446 and next check 2026-11-24T09:00:00Z. After explicit authorization, reconcile ledger T041 to next unused ID then submit existing package for J3115 without rebuild. J3119 and UAT/Shorts holds preserved. Report: studio thread 7113948770. This verification complete; original package remains held."
         }
       ],
       "remaining_action": "Chief (Codex): review/merge PR #1222, run jobs.py wait J3114 --type input --recheck J3446 --check-at 2026-11-24T09:00:00Z, and close J3446",
@@ -313521,7 +313526,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "795bab8e816a83a46f7608d803d1a0a82f50c340"
     },
     {
       "id": "J3447",
