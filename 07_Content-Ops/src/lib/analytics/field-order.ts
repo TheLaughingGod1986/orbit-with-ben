@@ -10,15 +10,17 @@ export type StudioRead = {
   readAt: string; channelId: string;
   videos: Record<string, { chapters?: number[]; windows?: Record<string, { startDate: string; endDate: string; impressions: number|null; ctr: number|null; newViewers?: number|null; returningViewers?: number|null; missing?: Record<string,string>; testCompare?: unknown }> }>;
   eligibleWatchHours?: number; eligibleWatchHoursReadAt?:string; whenViewers?: unknown; whenViewersTimezone?:string; missing?:Record<string,string>;
+  /** Studio's own channel totals (subscribers, lifetime watch hours): fresher than the API's lagged days. */
+  channelTotals?: { subscribers: number|null; watchHours: number|null }; channelTotalsReadAt?: string;
 };
 type Metrics = Record<string, number>;
 type WindowRead = { startDate: string; endDate: string; metrics: Metrics | null; sources?: Record<string, unknown>[] | null };
 type VideoDetail = { title: string; publishedAt?: string | null; seconds: number; chapters?: number[]; windows: Record<string, WindowRead>; suggested?: Record<string, unknown>[] | null; retention: RetentionPoint[] };
 type FilmRead = { id: string; title: string; window: string; startDate: string; endDate: string; metrics: Metrics | null; impressions: number | null; ctr: number | null; viewed: number | null; watchHours: number | null; sources: WindowRead['sources']; suggested: VideoDetail['suggested']; retention: RetentionPoint[]; checkpoints: { seconds: number; ratio: number | null }[]; newViewers: number | null; returningViewers: number | null; studioMissing: Record<string, string>; testCompare: unknown; flags: string[]; medianAvgSeconds?: number | null; avgSecondsVsMedian?: number | null; medianCtr?: number | null; medianViewed?: number | null; ctrVsMedian?: number | null; viewedVsMedian?: number | null };
-export type Detail = { through: string; channelId: string; subscribers: number | null; channel: Record<string,unknown>; videos: Record<string, VideoDetail>; failures: string[] };
+export type Detail = { through: string; takenAt?: string; channelId: string; subscribers: number | null; channel: Record<string,unknown>; videos: Record<string, VideoDetail>; failures: string[] };
 export async function collectFieldOrder(s: Snapshot, q: Query): Promise<Detail> {
   const through = s.analytics!.through;
-  const d: Detail = { through, channelId:s.channelId, subscribers:s.totals.subscribers, channel:{}, videos:{}, failures:[] };
+  const d: Detail = { through, takenAt:s.takenAt, channelId:s.channelId, subscribers:s.totals.subscribers, channel:{}, videos:{}, failures:[] };
   const safe = async (name:string, p:Record<string,string>) => {
     try { return rows(await q(p)); } catch { d.failures.push(name); return null; }
   };
@@ -98,8 +100,17 @@ export function buildFieldOrder(d:Detail, studio:StudioRead|null) {
   const longDaily=d.channel.publicLongDaily as Record<string,number>|null;
   const hourPace=complete && longDaily ? Object.entries(longDaily).filter(([day])=>day>=addDays(d.through,-6)&&day<=d.through).reduce((a,[,minutes])=>a+minutes,0)/60/7:null;
   const hours=own?n(own.eligibleWatchHours):null, estimate=n(d.channel.publicLongHoursEstimate);
-  const targets=[{name:'Subscribers',current:d.subscribers,target:1000,eta:projection(d.through,d.subscribers,1000,subPace)},
-    ...[4000,8000].map(target=>({name:'Public watch hours (estimate)',current:estimate,target,eta:projection(d.through,estimate,target,hourPace)}))];
+  // A dated Studio read of channel totals wins when it is newer than the API figure it would replace:
+  // subscribers against the snapshot time, watch hours against the API's last complete Pacific date.
+  const totals=own?.channelTotals, totalsAt=own?.channelTotalsReadAt ?? null;
+  const studioSubs=totals && totalsAt && n(totals.subscribers)!=null && (!d.takenAt || Date.parse(totalsAt)>Date.parse(d.takenAt)) ? totals.subscribers : null;
+  const studioHours=totals && totalsAt && n(totals.watchHours)!=null && totalsAt.slice(0,10)>d.through ? totals.watchHours : null;
+  const subBase=studioSubs!=null ? totalsAt!.slice(0,10) : d.through, hourBase=studioHours!=null ? totalsAt!.slice(0,10) : d.through;
+  const subCurrent=studioSubs ?? d.subscribers, hourCurrent=studioHours ?? estimate;
+  const subFrom=studioSubs!=null ? {asOf:totalsAt, source:'Studio'} : {asOf:d.takenAt ?? null, source:'YouTube API'};
+  const hourFrom=studioHours!=null ? {asOf:totalsAt, source:'Studio, all watch time'} : {asOf:`data through ${d.through}`, source:'API estimate'};
+  const targets=[{name:'Subscribers',current:subCurrent,target:1000,eta:projection(subBase,subCurrent,1000,subPace),...subFrom},
+    ...[4000,8000].map(target=>({name:'Public watch hours (estimate)',current:hourCurrent,target,eta:projection(hourBase,hourCurrent,target,hourPace),...hourFrom}))];
   return {name:'Field Order History',through:d.through,deadline:'2027-02-01',targets,eligibleWatchHours:hours,studioReadAt:own?.eligibleWatchHoursReadAt??own?.readAt??null,estimatedPublicLongHours:estimate,
     note:'Watch-hour forecasts are estimates, not YPP eligibility. Rolling 365-day hours can expire. February 1 is the studio planning line; confirm current policy before applying.',
     films,countries:d.channel.countries,ageGroups:d.channel.ageGroups,whenViewers:own?.whenViewers??null,whenViewersTimezone:own?.whenViewersTimezone??null,studioMissing:own?.missing??{},failures:d.failures};

@@ -25,6 +25,13 @@ export function planReads(s:Snapshot, now:Date):ReadJob[] {
   jobs.push({title:`Field Order History channel audience read ${monday.toISOString().slice(0,10)}`,due:now.toISOString(),
     plain:'Read Field Order History’s audience and progress towards monetisation',
     body:`J3006 automatic weekly read. Read-only, £0; channel ${s.channelId}. Reuse its configured Studio tab and verify channel identity. Never switch accounts, save settings or start a sign-in. Read qualified public watch hours (trailing 365 days) from Earn and when viewers are on YouTube from Audience (weekday, hour, relative activity and displayed timezone). Record Test & Compare results on public films if present. Never invent numbers if hidden or unavailable.\nUse the strict dated importer 07_Content-Ops/scripts/field-order-studio-import.ts; eligibleWatchHours is separate from the API estimate. whenViewers must carry its timezone. Use missing reasons for unavailable channel fields. Merge without replacing previous video windows, commit generated analytics in a clean worktree and report evidence. No public changes.\n`});
+  // Daily totals keep the board's monetisation card current: the API's watch hours lag a day or two (Ben, 23 Nov 2026).
+  if(s.videos.some(v=>v.privacy==='public' && v.publishedAt && Date.parse(v.publishedAt)<=now.getTime())) {
+    const day=now.toISOString().slice(0,10);
+    jobs.push({title:`Field Order History channel totals read ${day}`,due:now.toISOString(),
+      plain:'Read Field Order History’s subscribers and watch hours so the board stays current',
+      body:`J3006 automatic daily read, about five minutes. Read-only, £0; channel ${s.channelId}. Reuse its configured Studio tab and verify channel identity. Never switch accounts, save settings or start a sign-in. In Studio Analytics, Overview, period Lifetime, read the channel's total subscribers and total watch time in hours, exactly as Studio shows them. Never invent numbers; if one is hidden, use null and a missing reason.\nImport them with the strict dated importer 07_Content-Ops/scripts/field-order-studio-import.ts as channelTotals {subscribers, watchHours}, with readAt the time you read them and videos {}. Commit the generated analytics from a clean worktree and report the two numbers. No public changes.\n`});
+  }
   return jobs;
 }
 export function dispatchReads(s:Snapshot, queueRepo:string, now=new Date(), run=(args:string[])=>execFileSync('python3',args,{cwd:queueRepo,stdio:'pipe',timeout:120000})) {
