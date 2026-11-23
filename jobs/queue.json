@@ -313446,13 +313446,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 25,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-23T20:09Z",
-      "eta": "2026-11-23T20:34Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-23T20:01Z",
-      "result": "",
+      "result": "Bounded review delivered: 65 sentences, eight photo intervals; revised hybrid coverage 43.9598%, short by 308.4323s. FIX recommendation; original J3429 must resolve format/rule 1 before J3430. No PASS or waiver.",
       "history": [
         {
           "at": "2026-11-23T20:01Z",
@@ -313508,6 +313508,11 @@
           "at": "2026-11-23T20:15Z",
           "by": "codex",
           "what": "step 3 of 3 done: Validated 65 sentences and eight photo intervals; pushed 36821f8 to PR49 and posted recommendation. J3429/J3430 remain held."
+        },
+        {
+          "at": "2026-11-23T20:15Z",
+          "by": "codex",
+          "what": "done: Bounded review delivered: 65 sentences, eight photo intervals; revised hybrid coverage 43.9598%, short by 308.4323s. FIX recommendation; original J3429 must resolve format/rule 1 before J3430. No PASS or waiver."
         }
       ],
       "remaining_action": "Completed sentence allocation; original J3429 owns the remaining format decision",
@@ -313536,7 +313541,8 @@
       },
       "taskKeys": [
         "WW2:004"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/49/commits/36821f8"
     }
   ],
   "focus": [
