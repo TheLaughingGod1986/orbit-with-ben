@@ -309951,10 +309951,10 @@
       "stage": "",
       "after": "",
       "eta_min": 75,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-23T10:17Z",
+      "eta": "2026-11-23T11:32Z",
       "created_by": "claude",
       "created_at": "2026-11-23T09:57Z",
       "result": "",
@@ -309963,12 +309963,25 @@
           "at": "2026-11-23T09:57Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-23T10:17Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Build pilot 2 thumbnails C and D, set up the three-way test for launch, add the one-subject rule",
       "due": "2026-11-25T15:00:00Z",
       "kind": "thumb",
-      "mini_only": true
+      "mini_only": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-23T10:17Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
