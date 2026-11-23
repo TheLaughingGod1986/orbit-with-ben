@@ -312006,9 +312006,14 @@
           "at": "2026-11-23T16:45Z",
           "by": "gemini",
           "what": "step 1 of 5 done: located checkpoint 74/76 picture_qa.json (244 rows, 171 failed: 146 split panel across 102 unique sources, 43 reuse across 12 unique sources, 1 opening jitter) and picture_qa_review.jpg (1920x51840)"
+        },
+        {
+          "at": "2026-11-23T16:47Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: visually inspected all 146 seam FAIL tiles across 19 full-res 960x540 contact sheets (102 unique sources)"
         }
       ],
-      "remaining_action": "slice picture_qa_review.jpg and inspect all 146 seam failures at full 960x540 resolution",
+      "remaining_action": "audit all 12 reuse sources (43 cuts) against narration/gaps and check 4 raw composite frames",
       "due": "2026-11-24T12:00:00Z",
       "kind": "qa",
       "mini_only": true,
@@ -312022,11 +312027,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-23T16:45Z",
+        "at": "2026-11-23T16:47Z",
         "by": "gemini",
-        "note": "located checkpoint 74/76 picture_qa.json (244 rows, 171 failed: 146 split panel across 102 unique sources, 43 reuse acro"
+        "note": "visually inspected all 146 seam FAIL tiles across 19 full-res 960x540 contact sheets (102 unique sources)"
       },
       "taskKeys": [
         "WW2:002"
