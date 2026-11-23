@@ -312615,19 +312615,24 @@
           "at": "2026-11-23T17:51Z",
           "by": "claude",
           "what": "Deploy the latest main: if orbit-with-ben PR #1220 (named job steps on the board) has merged, it goes out in the same deploy; check a job page shows its steps ticked."
+        },
+        {
+          "at": "2026-11-23T17:52Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Live Chrome checks passed: pilot 2 rework and steps, films 4-6 queued, Studio timestamps; regression suite passed"
         }
       ],
-      "remaining_action": "Verify the production board status labels, film steps, and Studio source dates",
+      "remaining_action": "Deployment and live verification complete",
       "due": "2026-11-23T19:30:00Z",
       "kind": "studio",
       "mini_only": true,
       "urgent": 11,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-23T17:49Z",
+        "at": "2026-11-23T17:52Z",
         "by": "codex",
-        "note": "Cloudflare production deployed from main: 3241f2df; configuration unchanged, open taps remains 0"
+        "note": "Live Chrome checks passed: pilot 2 rework and steps, films 4-6 queued, Studio timestamps; regression suite passed"
       },
       "taskKeys": [
         "WW2:002",
