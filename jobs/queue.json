@@ -311071,13 +311071,13 @@
       "stage": "",
       "after": "",
       "eta_min": 15,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-23T15:09Z",
-      "eta": "2026-11-23T15:24Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T13:48Z",
-      "result": "",
+      "result": "Chief review PASS; PR 43 merged 1fc5273c6ecc0d9106bb7cd3907c97b3987268a7 at 2026-11-23T15:08:43Z. Exact title The Secret Floating Harbours of D-Day independently verified via read-only API at 15:08:14Z; description 2973 chars/hash, nine tags, category, languages, public status unchanged. Original title change time 2026-11-23T13:51:35Z. Follow-up: J3414 metrics at/after 2026-11-24T17:05:00Z must account for that change time; J3419 preserves exact title in retimed metadata. No additional hold or YouTube write; GBP0.",
       "history": [
         {
           "at": "2026-11-23T13:48Z",
@@ -311123,6 +311123,11 @@
           "at": "2026-11-23T15:09Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-23T15:10Z",
+          "by": "codex",
+          "what": "done: Chief review PASS; PR 43 merged 1fc5273c6ecc0d9106bb7cd3907c97b3987268a7 at 2026-11-23T15:08:43Z. Exact title The Secret Floating Harbours of D-Day independently verified via read-only API at 15:08:14Z; description 2973 chars/hash, nine tags, category, languages, public status unchanged. Original title change time 2026-11-23T13:51:35Z. Follow-up: J3414 metrics at/after 2026-11-24T17:05:00Z must account for that change time; J3419 preserves exact title in retimed metadata. No additional hold or YouTube write; GBP0."
         }
       ],
       "remaining_action": "Chief review and merge of ww2-channel PR #43",
@@ -311140,7 +311145,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/43"
     },
     {
       "id": "J3425",
