@@ -308859,10 +308859,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-23T09:28Z",
+      "eta": "2026-11-23T11:28Z",
       "created_by": "relay",
       "created_at": "2026-11-23T07:46Z",
       "result": "",
@@ -308906,6 +308906,11 @@
           "at": "2026-11-23T09:27Z",
           "by": "codex",
           "what": "reopened: Taking the elected-Chief decision on verified condition; worker evidence reviewed and parent follow-up recorded."
+        },
+        {
+          "at": "2026-11-23T09:28Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for Chief: merge PR #1205, reopen/handback/reroute J3311 to codex, and close J3405",
@@ -308923,7 +308928,15 @@
       "open_claim": true,
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-23T09:28Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3406",
