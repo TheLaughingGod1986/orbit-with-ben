@@ -1,5 +1,5 @@
 {
-  "next_id": 3417,
+  "next_id": 3418,
   "jobs": [
     {
       "id": "J0001",
@@ -309851,6 +309851,36 @@
       "remaining_action": "Check the chapters, sources and links on recent Orbit videos",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes"
+    },
+    {
+      "id": "J3417",
+      "title": "Field Order History pilot 2: two close-crop thumbnails and a Test & Compare at launch; one-subject rule into the playbook for films 003+",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why (Ben, Mon 23 Nov ~09:50 London, in chat): \"YouTube is verified please make the changes you feel are needed.\"** Pilot 1 launched with a wide aerial thumbnail that read as grey specks at phone size: 641 impressions at 0.8% click-through. J3411 (PR #36, Chief PASS) started a Test & Compare on pilot 1 at 09:11:55Z (B v02 vs close crops C and D). Its pilot 2 check (03_Picture/PACKAGING_DECISION_v04.md in the pilot 1 folder, section 4) found pilot 2's thumbnail B \"LIBERATOR\" readable but weak: the top ~45% is white sky that disappears on a white page, the letters are outlined rather than on a solid band, and a parked bomber on grass doesn't connect to the U-boat title. The Chief left it unchanged and said a redesign needs its own brief and review: this is that brief. Advanced features are now on, so pilot 2 should launch with a test instead of a guess.\n\n**Do, by Wed 25 Nov 15:00 London (pilot 2 `J9WGu8aPnHI` airs 17:00):**\n1. Build two candidates from pilot 2's own cleared archive photographs (its provenance records), 1280x720 JPEG under 2 MB, in its 10_Thumbnail/: real black-and-white photo kept bright, no dark grade, nothing invented, honest dates.\n   - **C:** a close crop where one subject fills at least 60% of the frame: the Liberator FK228 cropped tight (little sky), or a better single subject if one exists. Optional 2 to 3 words on a solid dark band (e.g. \"AIR GAP CLOSED\"), never repeating the title's words.\n   - **D:** the U-boat side of the story: a U-boat, a U-boat under air attack, or a convoy from the air, cropped so one subject fills at least 60% of the frame. Same text rules.\n2. Rank B (current), C and D at 168x94 and 320x180 on white and dark YouTube backgrounds, beside pilot 1's D (`ww2_001_thumb_D_towed_by_tugs_v04.jpg`). Save the sheet; write the ranking in pilot 2's 03_Picture/PACKAGING_DECISION_v02.md (or the next free version).\n3. **Set up Thumbnail-only Test & Compare on `J9WGu8aPnHI` with B, C and D**, on the scheduled video if Studio allows; if it doesn't, start it in Studio 9224 within 30 minutes of 17:00 on Wednesday and record the exact UTC time. If neither C nor D beats B at 168x94, test the better one against B anyway; don't skip the test.\n4. **Make it the rule for every film from 003:** add one line to 00_Brand/PLAYBOOK.md packaging: \"At 168x94 one subject fills at least 60% of the frame; no wide aerials as the main image; text, if any, on a solid dark band. Every long film launches with a Thumbnail-only Test & Compare of three designs.\" Check films 003 to 006's planned thumbnails against it and list any that fail in the decision note (don't redesign them in this job).\n5. One ww2-channel PR (Chief review and merge), one line on the thread.\n\n**Guards.** Pilot 2's title, description, schedule and the J3364 archive cut are not touched. Pilot 1's running test is not touched. £0. If J3364 moves pilot 2 to Sat 28 Nov, keep the same steps with the new launch time.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 75,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-23T09:57Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T09:57Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build pilot 2 thumbnails C and D, set up the three-way test for launch, add the one-subject rule",
+      "due": "2026-11-25T15:00:00Z",
+      "kind": "thumb",
+      "mini_only": true
     }
   ],
   "focus": [
