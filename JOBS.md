@@ -67,7 +67,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3400 | mini | blocked | gemini | – | review · Verify condition for J0996 |  |
 | J3406 | any | blocked | macbook-2 | – | review · Verify condition for J3307 |  |
 | J3407 | mini | blocked | gemini | – | review · Verify condition for J3114 |  |
-| J3412 | mini | blocked | gemini | – | review · Verify condition for J3354 |  |
+| J3412 | mini | open | – | – | review · Verify condition for J3354 |  |
 | J3414 | mini | blocked | codex | – | studio · WW2 pilot 1: 48-hour metrics and running thumbnail test read |  |
 
 Recently finished:
