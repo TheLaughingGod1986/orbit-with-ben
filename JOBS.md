@@ -80,7 +80,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3443 | mini | blocked | claude | – | studio · Field Order History: when pilot 2 goes public, point pilot 1's end screen and a card to it (and back) |  |
 | J3444 | mini | blocked | codex | – | 027 upload · studio · Earth equator Short: 24-hour reach read after Related repair |  |
 | J3445 | mini | blocked | gemini | – | review · Verify condition for J1275 |  |
-| J3452 | any | open | – | – | WW2:006 picture · review · WW2 006: time the remaining archive rows and resolve opening treatment | https://github.com/TheLaughingGod1986/ww2-channel/pull/51 |
+| J3452 | mini | open | – | – | WW2:006 picture · review · WW2 006: time the remaining archive rows and resolve opening treatment | https://github.com/TheLaughingGod1986/ww2-channel/pull/51 |
 
 Recently finished:
 
