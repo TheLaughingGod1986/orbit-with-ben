@@ -311715,10 +311715,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-23T17:25Z",
+      "eta": "2026-11-23T20:25Z",
       "created_by": "claude",
       "created_at": "2026-11-23T15:29Z",
       "result": "",
@@ -311772,6 +311772,11 @@
           "at": "2026-11-23T17:24Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred codex): Cursor out of usage; next in its chain: codex"
+        },
+        {
+          "at": "2026-11-23T17:25Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Download and verify the extra archive photographs for the submarine torpedo film",
@@ -311787,7 +311792,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-23T17:25Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3430",
