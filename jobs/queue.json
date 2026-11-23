@@ -311970,13 +311970,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-23T16:41Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T16:20Z",
-      "result": "parked for Chief: proposed WW2:002 picture-gate ruling and live-verified reviewed-ok JSON (104 entries; fails 171->42 with 0 split panels, 41 real reuse, 1 unwaived opening jitter) ready for Acting Chief sign-off and merge in ww2-channel PR #54 (commit ba56aa6)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-23T16:20Z",
@@ -312022,6 +312022,11 @@
           "at": "2026-11-23T16:54Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: proposed WW2:002 picture-gate ruling and live-verified reviewed-ok JSON (104 entries; fails 171->42 with 0 split panels, 41 real reuse, 1 unwaived opening jitter) ready for Acting Chief sign-off and merge in ww2-channel PR #54 (commit ba56aa6)"
+        },
+        {
+          "at": "2026-11-23T17:12Z",
+          "by": "codex",
+          "what": "reopened: Chief ruling recorded in WW2 PR54 at 12c5478: scoped seam exemptions approved; 41 reuse plus opening jitter and three additional short-gap repeats remain blocking. Reopening only to record this completed review, not film approval."
         }
       ],
       "remaining_action": "post studio thread report and park J3435 for Acting Chief Codex sign-off",
@@ -312037,13 +312042,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 4,
-        "of": 5,
-        "at": "2026-11-23T16:54Z",
-        "by": "gemini",
-        "note": "wrote PICTURE_GATE_RULING_v01.md + picture_qa_reviewed_ok_v01.json (104 entries); live-verified picture_qa.py --no-jitte"
-      },
       "taskKeys": [
         "WW2:002"
       ]
