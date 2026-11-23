@@ -312994,9 +312994,14 @@
           "at": "2026-11-23T18:38Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-23T18:38Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Verify readiness: Check chapters against each locked long cut; preserve Sources, lint both packages and submit any timing fixes for review",
+      "remaining_action": "Inspecting J1275, prior verification J3385, J2037, and HOS repo/NAS state",
       "kind": "review",
       "recheck_of": "J1275",
       "due": "2026-11-23T19:01:11+00:00",
@@ -313011,12 +313016,20 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-23T18:38Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect J1275, J3385 and J2037 state",
+          "Check HOS 009 and 010 PRs, NAS cuts and lints",
+          "Update J1275 wait or reopen with evidence",
+          "Post report and finish J3445"
+        ]
+      },
+      "taskKeys": [
+        "HOS:009",
+        "HOS:010"
+      ]
     },
     {
       "id": "J3446",
