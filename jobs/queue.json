@@ -180200,9 +180200,14 @@
           "at": "2026-11-23T13:01Z",
           "by": "relay",
           "what": "condition verification queued: J3423"
+        },
+        {
+          "at": "2026-11-23T15:24Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-24T13:00:00Z"
         }
       ],
-      "remaining_action": "Await operator confirmation and fresh-session scoped acceptance evidence for the Mini approval configuration; verify again 23 November at 13:00 UTC.",
+      "remaining_action": "Await operator confirmation and fresh-session acceptance evidence for the Mini permission settings; verify on 24 November at 13:00 UTC, then resolve the documentation draft.",
       "kind": "assembly",
       "urgent": 2,
       "rerouted_from": {
@@ -180223,12 +180228,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Chief ruling J3367: NOT MET. Evidence PR1171 merged. Mini check 2026-11-22T15:13Z: all eight local Codex configuration/rule/gateway SHA256 hashes match J3289 unchanged. PR490 remains OPEN draft at f521bcd3f1; no operator confirmation or fresh-session scoped acceptance evidence in latest thread records. J2517/J2559 done; J2007 cancelled. Retain existing approval controls and fallback routing. Authorized operator must confirm Mini configuration and supply fresh-session scoped acceptance evidence; then resolve draft PR490. Recheck 2026-11-23T13:00:00Z; do not retry J2007.",
-        "check_at": "2026-11-23T14:01:52+00:00",
-        "last_recheck": "J3367",
-        "checked_at": "2026-11-22T15:15:27+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3423"
+        "condition": "Chief ruling J3423: CONDITION NOT MET. Evidence PR1215 merged as 2fc033a172. Independent Mini check 23 Nov confirms all eight configuration/rule/gateway hashes unchanged; PR490 remains OPEN draft at f521bcd3f1. Thread through 7105379476 contains no new operator confirmation or fresh-session scoped acceptance evidence. Authorized operator must confirm Mini configuration and provide scoped acceptance/refusal evidence; then the verification worker resolves draft PR490. Retain existing approval controls and fallback routing. J2517/J2559 done; J2007 cancelled and must not be retried. Recheck 24 Nov 13:00 UTC.",
+        "check_at": "2026-11-24T13:00:00Z",
+        "last_recheck": "J3423",
+        "checked_at": "2026-11-23T15:24:38+00:00",
+        "checked_by": "codex"
       },
       "plain": "Let Codex run the studio's routine commands on the Mac mini without asking each time (needs you at the Mini)"
     },
