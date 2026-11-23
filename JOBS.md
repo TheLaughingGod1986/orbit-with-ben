@@ -82,6 +82,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3445 | mini | blocked | gemini | – | review · Verify condition for J1275 |  |
 | J3446 | mini | blocked | gemini | – | review · Verify condition for J3114 |  |
 | J3450 | mini | claimed | codex | 2026-11-23T21:15Z | WW2:006 picture · review · WW2 006: resolve archive allocation and small-photo layouts after Chief review |  |
+| J3451 | any | open (after J3450) | – | – | 006 picture · chief · WW2 006: final picture decision after the bounded timing and layout pass | https://github.com/TheLaughingGod1986/ww2-channel/pull/51 |
 
 Recently finished:
 

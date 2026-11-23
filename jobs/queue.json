@@ -1,5 +1,5 @@
 {
-  "next_id": 3451,
+  "next_id": 3452,
   "jobs": [
     {
       "id": "J0001",
@@ -313889,6 +313889,35 @@
       "taskKeys": [
         "WW2:006"
       ]
+    },
+    {
+      "id": "J3451",
+      "title": "WW2 006: final picture decision after the bounded timing and layout pass",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "Final picture decision requested after the completed bounded J3450 editorial pass on WW2 film 006. Review existing WW2 PR 51, commit 7d7d162, especially 03_Picture/EDITORIAL_REVIEW_J3450.md and linked JSON/manifests. Do not reopen the archive search automatically.\n\nOriginal J3433 ruling withheld picture approval at 869.70 seconds (56.37%) with 67 files and 51 small sources. J3450 found the ten priority paragraphs support 43.000 seconds instead of 141.52; the other 44 provisional budgets total 728.18 seconds. Revised budget 771.180 / 1542.840 seconds (49.9844442716%), minimum gap 257.380 seconds. This is explicitly not a fully timed edit. Exact source-gap windows and whole-film recurrence risks are documented. No new retrieval, spend or script change.\n\nThree actual native-size framed proofs are on shared film media with hashes and provenance. Woodworking and operational inserts are suitable; CH 10111 is a group picture and unsuitable as the opening hero. Review the existing larger CH 10135 pair for any stronger opening treatment; no identity or raid-event inference.\n\nDecide whether to accept the timing corrections and two layouts, retain the opening FIX and picture hold, and explicitly scope the next way to close the shortfall. Recommended: establish exact intervals for the remaining 44 provisional rows before authorising specific new-source approaches. Existing research budgets and rejected sources remain in force; no blanket reset, target waiver or narration change. Never treat missing footage as permission to pad.\n\nJ3433 remains held and J3434 remains dependent on it until an explicit compliant final picture decision. Do not mark either original job done merely because this bounded pass is delivered. Re-read chief_relay.py status before protected decisions. This is an ordinary studio decision, not a Ben approval request.\n",
+      "ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/51",
+      "film": "006",
+      "stage": "picture",
+      "after": "J3450",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-23T20:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T20:58Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review the corrected photo timings and layouts, then set the next permitted step",
+      "kind": "chief",
+      "plain": "Decide how to close the missing archive coverage in the Mosquito film"
     }
   ],
   "focus": [
