@@ -1,5 +1,5 @@
 {
-  "next_id": 3442,
+  "next_id": 3444,
   "jobs": [
     {
       "id": "J0001",
@@ -312610,6 +312610,11 @@
           "at": "2026-11-23T17:49Z",
           "by": "codex",
           "what": "step 2 of 3 done: Cloudflare production deployed from main: 3241f2df; configuration unchanged, open taps remains 0"
+        },
+        {
+          "at": "2026-11-23T17:51Z",
+          "by": "claude",
+          "what": "Deploy the latest main: if orbit-with-ben PR #1220 (named job steps on the board) has merged, it goes out in the same deploy; check a job page shows its steps ticked."
         }
       ],
       "remaining_action": "Verify the production board status labels, film steps, and Studio source dates",
@@ -312630,6 +312635,96 @@
         "WW2:005",
         "WW2:006"
       ]
+    },
+    {
+      "id": "J3442",
+      "title": "Field Order History pilot 1: read the retention graph after the cut, find the next drop, propose up to two more clean cuts",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why (Ben, Mon 23 Nov ~18:10 London: \"as we know the weak points of Pilot Video 1 ... are we working on perfecting that for Video 1, or just moving all these fixes into Video 2?\" Answer: both. Pilot 1 (`ek9F61FVYqY`) keeps being improved in place.)** Done so far on pilot 1: three-way thumbnail test (09:12Z 23 Nov), search-led title \"The Secret Floating Harbours of D-Day\" (13:51Z), the 3m45s detour cut with Studio's editor (live at 23:52, ~14:07Z), pinned question, retimed captions and chapters (J3419). Its first retention graph was \"not ready\" on 23 Nov; Studio says up to two days.\n\n**Do, once Studio shows the retention graph (check from Wed 25 Nov 09:00Z; if still not ready, re-check every 12 hours):**\n1. Read the audience retention graph for the edited film (23:52) and the key moments card. Record % still watching at 0:30, 1:00, 2:00, 5:00, 10:00, 15:00 and 20:00, and the times of the three steepest drops (use `scripts/retention_autopsy.py inspect ek9F61FVYqY --window 7d --channel ww2` once it has data; its `clips` command cuts 40-second clips around the drops for a watch with sound).\n2. For each steep drop, say what is on screen and in the narration there (a slow stretch, a run of figures, a detour, a weak picture). Where a drop sits on a passage that can be cut cleanly between sentences without losing the story, propose the exact cut (start/end on a pause, the joined sentences), at most two cuts, each under 90 seconds.\n3. Park the proposal for Claude's review with the evidence; after Claude's OK, make the cut(s) with Studio's editor exactly as J3419 did (retimed captions and chapters, end screen checked, Test & Compare preserved), and record before/after in ww2-channel `03_Picture/TRIM_RECEIPT_v02.md`.\n4. Write what you found in `studio/LEARNINGS.md` (rule 12): did the first cut hold strangers longer (prediction #3: strangers' average viewed above 18%)?\n\n**Guards.** Studio editor only: never re-upload, Replace or delete. Title and thumbnails stay with their own tests. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "blocked",
+      "by": "claude",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-23T17:51Z",
+      "result": "Waiting for: Studio shows the audience retention graph for ek9F61FVYqY (it said 'not ready yet, up to two days' on 23 Nov)",
+      "history": [
+        {
+          "at": "2026-11-23T17:51Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-23T17:51Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: Studio shows the audience retention graph for ek9F61FVYqY (it said 'not ready yet, up to two days' on 23 Nov)"
+        },
+        {
+          "at": "2026-11-23T17:51Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-25T09:00:00Z"
+        }
+      ],
+      "remaining_action": "Read the retention graph once Studio shows it, then propose cuts at the steepest drops",
+      "due": "2026-11-26T18:00:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "hold": {
+        "type": "date",
+        "condition": "Studio shows the audience retention graph for ek9F61FVYqY (it said 'not ready yet, up to two days' on 23 Nov)",
+        "check_at": "2026-11-25T09:00:00Z"
+      }
+    },
+    {
+      "id": "J3443",
+      "title": "Field Order History: when pilot 2 goes public, point pilot 1's end screen and a card to it (and back)",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why (Ben, Mon 23 Nov ~18:10 London: \"as we know the weak points of Pilot Video 1 ... are we working on perfecting that for Video 1, or just moving all these fixes into Video 2?\" Answer: both. Pilot 1 (`ek9F61FVYqY`) keeps being improved in place.)** When pilot 2 (`J9WGu8aPnHI`) goes public (Sat 28 Nov 17:00 London, or Wed 25 Nov if it makes the stretch date), pilot 1's viewers should be sent straight to it.\n\n**Do, within an hour of pilot 2 going public (Studio 9224):**\n1. Pilot 1's end screen: make the \"best for viewer\"/playlist element point to pilot 2 itself (video element), keep subscribe; check it on the last 20 seconds.\n2. Add one info card on pilot 1 at the end of its main story (just before the final chapter) pointing to pilot 2, with a short teaser line in the series voice (no clickbait).\n3. Pilot 2 in the series playlist right after pilot 1, and pilot 2's own end screen pointing back to pilot 1 for new viewers.\n4. Read back each change; one thread line; record in ww2-channel.\n\n**Guards.** No title, thumbnail or description changes. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "blocked",
+      "by": "claude",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-23T17:51Z",
+      "result": "Waiting for: J9WGu8aPnHI is public (Sat 28 Nov 17:00 London, or Wed 25 Nov if pilot 2 makes its stretch date)",
+      "history": [
+        {
+          "at": "2026-11-23T17:51Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-23T17:51Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: J9WGu8aPnHI is public (Sat 28 Nov 17:00 London, or Wed 25 Nov if pilot 2 makes its stretch date)"
+        },
+        {
+          "at": "2026-11-23T17:51Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-28T17:05:00Z"
+        }
+      ],
+      "remaining_action": "Link pilot 1 and pilot 2 once pilot 2 is public",
+      "due": "2026-11-28T18:00:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "hold": {
+        "type": "public",
+        "condition": "J9WGu8aPnHI is public (Sat 28 Nov 17:00 London, or Wed 25 Nov if pilot 2 makes its stretch date)",
+        "check_at": "2026-11-28T17:05:00Z"
+      }
     }
   ],
   "focus": [
