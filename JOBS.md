@@ -52,7 +52,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3308 | mini | open (after J3307) | – | – | studio · Studio: arm T041 thumbnail Test & Compare on NbW5G1BpPY0 (006 — 2× EARTH'S WATER) after J3307 PASS | jobs/reviews/J3382/REVIEW.md |
 | J3309 | mini | open (after J3307) | – | – | studio · Studio: arm T042 thumbnail Test & Compare on rVqgtkBV3jc (024 — EARTH AGES 7×) after J3307 PASS | jobs/reviews/J3382/REVIEW.md |
 | J3310 | mini | open (after J3307) | – | – | studio · Studio: arm T043 thumbnail Test & Compare on REXYxuLOBoI (005 — OUTLIVES OUR SUN) after J3307 PASS | jobs/reviews/J3382/REVIEW.md |
-| J3354 | mini | blocked | macbook-2 | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
+| J3354 | mini | open | – | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3361 | mini | blocked | gemini | – | for gemini · studio · `gemini-argon` · Field Order History pilot 1 pre-launch check before 17:00 today: live read-back, en-GB captions, description touch-ups, pinned first comment, playlist public at launch |  |
 | J3364 | mini | open | – | – | 002 picture · assembly · Field Order History pilot 2: add the planned archive photos (~65%) to the graphics-only cut, v06 to Ben's watch by Tue 20:00 (else move to Sat 28 Nov) |  |
 | J3365 | mini | blocked | codex | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |

@@ -302508,13 +302508,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-22T09:15Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "macbook-2",
       "created_at": "2026-11-22T09:13Z",
-      "result": "Waiting for: Next daily Orbit With Ben comment check window (23 Nov 2026 09:00 London)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-22T09:13Z",
@@ -302545,6 +302545,11 @@
           "at": "2026-11-23T09:15Z",
           "by": "relay",
           "what": "condition verification queued: J3412"
+        },
+        {
+          "at": "2026-11-23T09:48Z",
+          "by": "codex",
+          "what": "reopened: J3412 Chief ruling KEEP: date condition satisfied. London clock 2026-11-23T09:48:22Z is past 09:00; three valid COMMENT_REPLIES rows retain SHA256 c17c74f9365f1df7d05d61b61a8b2b93e4f664a65826bea4c830e3b2961b697c; no duplicate daily run; approval unchanged through thread 7097072863. PR1210 merged. Ready for studio specialist to perform original 14-day scan, dedupe, scoped replies/drafts and queue 24 Nov 09:00 run. Fresh browser check required on execution; saved worker probe was responsive. No broader publishing permission."
         }
       ],
       "remaining_action": "Check Orbit With Ben Studio comments from the last 14 days and reply/draft per rules",
@@ -302558,21 +302563,7 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true,
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-22T09:15Z",
-        "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      },
-      "hold": {
-        "type": "date",
-        "condition": "Next daily Orbit With Ben comment check window (23 Nov 2026 09:00 London)",
-        "check_at": "2026-11-23T10:15:55+00:00",
-        "recheck_task": "J3412"
-      }
+      "open_claim": true
     },
     {
       "id": "J3355",
