@@ -309321,10 +309321,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-23T08:55Z",
-      "eta": "2026-11-23T09:55Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T08:47Z",
       "result": "",
@@ -309348,6 +309348,11 @@
           "at": "2026-11-23T08:56Z",
           "by": "codex",
           "what": "step 0 of 4 done: Reading the brief and checking archive sources; worker role retained, merge reserved for Chief."
+        },
+        {
+          "at": "2026-11-23T08:58Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred cursor): Codex out of usage; next in its chain: cursor"
         }
       ],
       "remaining_action": "Build and compare close-up thumbnail options for the first Field Order History film",
@@ -309365,7 +309370,15 @@
       "taskKeys": [
         "WW2:001",
         "WW2:002"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "claimed",
+        "by": "codex"
+      },
+      "open_claim": true
     }
   ],
   "focus": [
