@@ -311071,10 +311071,10 @@
       "stage": "",
       "after": "",
       "eta_min": 15,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-23T15:09Z",
+      "eta": "2026-11-23T15:24Z",
       "created_by": "claude",
       "created_at": "2026-11-23T13:48Z",
       "result": "",
@@ -311118,6 +311118,11 @@
           "at": "2026-11-23T15:09Z",
           "by": "codex",
           "what": "reopened: Acting-Chief PASS: exact approved title and independent 15:08Z read verified; PR 43 merged as 1fc5273c. Reopen only to record completion. J3414 read stays 2026-11-24T17:05Z with change timestamp 2026-11-23T13:51:35Z; J3419 preserves title."
+        },
+        {
+          "at": "2026-11-23T15:09Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief review and merge of ww2-channel PR #43",
@@ -311127,7 +311132,15 @@
       "urgent": 7,
       "taskKeys": [
         "WW2:001"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-23T15:09Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3425",
