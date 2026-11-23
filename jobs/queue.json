@@ -311444,9 +311444,14 @@
           "at": "2026-11-23T15:12Z",
           "by": "gemini",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-23T15:15Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Verified J3421 locked script SHA-256s, NAS v01 master SHA-256s, vo_take dry-run (1,042 chars/186 words), fresh gemini relay probe + direct read_file hearing of ch00.mp3, and reopen routing (gemini only eligible worker)."
         }
       ],
-      "remaining_action": "Inspect J3422 wait condition, probe actual session audio_input capability, and update J3422/J3428",
+      "remaining_action": "Confirm live ElevenLabs remaining credits, write jobs/reviews/J3428/REVIEW.md PR, and park J3428 for Chief",
       "kind": "review",
       "recheck_of": "J3422",
       "mini_only": true,
@@ -311464,10 +311469,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-23T15:12Z",
-        "by": "gemini"
+        "at": "2026-11-23T15:15Z",
+        "by": "gemini",
+        "note": "Verified J3421 locked script SHA-256s, NAS v01 master SHA-256s, vo_take dry-run (1,042 chars/186 words), fresh gemini re"
       },
       "taskKeys": [
         "WW2:002"
