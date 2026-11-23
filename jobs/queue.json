@@ -1,5 +1,5 @@
 {
-  "next_id": 3403,
+  "next_id": 3404,
   "jobs": [
     {
       "id": "J0001",
@@ -308492,6 +308492,36 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J3403",
+      "title": "Field Order History channel audience read 2026-11-23",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "J3006 automatic weekly read. Read-only, £0; channel UCu94mInMFosxu3W0H6jlI6Q. Reuse its configured Studio tab and verify channel identity. Never switch accounts, save settings or start a sign-in. Read qualified public watch hours (trailing 365 days) from Earn and when viewers are on YouTube from Audience (weekday, hour, relative activity and displayed timezone). Record Test & Compare results on public films if present. Never invent numbers if hidden or unavailable.\nUse the strict dated importer 07_Content-Ops/scripts/field-order-studio-import.ts; eligibleWatchHours is separate from the API estimate. whenViewers must carry its timezone. Use missing reasons for unavailable channel fields. Merge without replacing previous video windows, commit generated analytics in a clean worktree and report evidence. No public changes.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-23T06:40Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T06:40Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Read Field Order History’s audience and progress towards monetisation",
+      "due": "2026-11-23T06:40:43Z",
+      "kind": "studio",
+      "plain": "Read Field Order History’s audience and progress towards monetisation"
     }
   ],
   "focus": [
