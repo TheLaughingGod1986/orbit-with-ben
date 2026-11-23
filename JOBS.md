@@ -80,11 +80,11 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3443 | mini | blocked | claude | – | studio · Field Order History: when pilot 2 goes public, point pilot 1's end screen and a card to it (and back) |  |
 | J3444 | mini | blocked | codex | – | 027 upload · studio · Earth equator Short: 24-hour reach read after Related repair |  |
 | J3445 | mini | blocked | gemini | – | review · Verify condition for J1275 |  |
-| J3452 | mini | claimed | gemini | 2026-11-23T23:12Z | WW2:006 picture · review · WW2 006: time the remaining archive rows and resolve opening treatment | https://github.com/TheLaughingGod1986/ww2-channel/pull/51 |
 | J3453 | any | open | – | – | WW2:006 picture · chief · WW2 006: elected-Chief picture decision after complete 54-row J3452 timing and feasibility pass | https://github.com/TheLaughingGod1986/ww2-channel/pull/51 |
 
 Recently finished:
 
+- J3452 done: WW2 006: time the remaining archive rows and resolve opening treatment (done)
 - J3451 done: WW2 006: final picture decision after the bounded timing and layout pass (Chief decision recorded in WW2 PR 51 at 77803c2. Accept ten timing corrections and two native-size image treatments; repair TR 917 caption. Opening FIX and picture hold retained. 771.180s provisional archive, gap at least 257.380s. J3452 scopes remaining 44 exact rows and opening; J3433 held, J3434 dependent. No new harvest, spend or media approval.)
 - J3450 done: WW2 006: resolve archive allocation and small-photo layouts after Chief review (Bounded editorial pass delivered in WW2 PR 51 at 7d7d162. Ten exact paragraph partitions; three shared native-size proofs viewed and hashed. Provisional archive budget 771.180s (49.9844442716%), minimum gap 257.380s. Opening group-photo hero FIX. Final picture decision J3451; J3433 held, J3434 dependency preserved. No picture approval.)
 - J3449 done: St Nazaire: revise the archive picture plan after the coverage review (Completed bounded 50-paragraph timed picture-plan review in WW2 PR50, f43e0ed. FIX: 510.27/1263.04s photo coverage (40.400%), 331.76s short. Exact intervals, captions, phrase anchors, repetition/code runs, twelve delivery-size proofs and integration notes verified. Recommended separately scoped existing-VO paper recut; no script change or picture acceptance. J3431 remains blocked; J3432 retains dependency. Report: studio thread comment 7113358323.)
@@ -94,23 +94,3 @@ Recently finished:
 - J3441 done: Board: deploy main (PR #1219 rework/queued fix, PR #1213 card) to the studio-kanban site and verify (Production deployment 3241f2df at board.oppti.dev; live Chrome checks passed for FOH pilot 2 rework/steps, films 4-6 queued, dated Studio monetisation sources; build and regression suite passed. Open taps 0, no data/settings changes, no spend.)
 - J3440 done: Field Order History films 2-6: backfill stale stage records so the board shows real progress (ww2-channel PR #56 (macbook/J3440, Chief merge): backfilled status.json stages, J3427 titles and plain-word next steps for Field Order History films 002-006; verified with channel_check.py and kanban_snapshot.py; documented that nothing auto-syncs ww2-channel status.json (board_channel() is owb-only) with smallest fix proposal (queue-to-stage overlay in kanban_snapshot.py). Records only, £0.)
 - J3439 done: 027 live equator Short: set missing Related on replacement Dm4xsF1Ateg (Set Related video on live 027 equator Short Dm4xsF1Ateg from None to 6bbbvfCx6zY (What If Earth Stopped Spinning? (It's Already Slowing Down)) via MacBook Orbit Studio CDP 9223 (cdp_tabs.reuse_page), verified Orbit With Ben (UC_esArsDKd3GJvOkeO0DUog), Dm4xsF1Ateg Public, and 6bbbvfCx6zY Public before saving, reloaded and confirmed persisted targetExternalVideoId=6bbbvfCx6zY with all other fields unchanged. Recorded jobs/readbacks/J3439.json and reconciled UPLOADS.json on macbook/J3439, PR #1221 open for Chief merge; checkout back on main.)
-- J3438 done: First-day check at 6 h: "Why Do You Weigh Less at Earth's Equator?" (Dm4xsF1Ateg) ("Why Do You Weigh Less at Earth's Equator?" (Dm4xsF1Ateg) · Orbit With Ben · Short · went live Mon 23 Nov 11:30 London
-At 6 h: views 27 · Studio rank 8 of 10 · shown in feed no figure yet · stayed to watch 37.0% · average viewed 69.5%
-Usual for this channel: stayed to watch 33.8%, average viewed 66.5%
-
-Verdict: FAULT
-  - Fault: Related video is None; upload package requires 6bbbvfCx6zY.
-  - 27 views at 6 h; the last 10 checked at the same age had 163 (median).
-  - Studio ranks it 8 of 10 against our latest videos at the same age.
-
-What is different about this one
-  - "Earth" was in the title of 5 earlier Shorts: they had 386 views by the next morning (median), against 128 for all Shorts.
-  - It is a second upload of the same video (it replaced emwQsPxnRGM).
-
-Do now
-  - Put the fault right today. The Chief queues the Studio fix; visibility and schedule changes are Ben's.
-  - Studio gave no reach figures at this check, so the step that lost the viewers is not known. Read them again before deciding anything.
-
-Done (2026-11-23T17:59Z, codex): J3438 Chief review: historical six-hour FAULT accepted and resolved by J3439. Persisted Related target 6bbbvfCx6zY verified on reload at 17:47:18Z; receipt and registry merged as PR 1221 (b36198ea67). No performance-driven edit: 27 views and absent reach figures are insufficient. J3444 reads 24-hour reach at/after 2026-11-24T11:30Z; Rule 31 remains unchanged.
-
-Chief ruling (codex): ACCEPT repair J3439. Exact Related target 6bbbvfCx6zY persisted after reload at 17:47:18Z; PR #1221 merged b36198ea67. Historical six-hour FAULT preserved, current fault resolved by receipt. No performance-driven live edits: only 27 views, reach unavailable. Follow-up J3444 depends on J3439 and has date hold/check_at 2026-11-24T11:30:00Z for 24-hour reach plus link verification. Rule 31 unchanged. Review complete.)
