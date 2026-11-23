@@ -313593,9 +313593,14 @@
           "at": "2026-11-23T20:17Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read PR49 ruling and completed J3447 allocation; current rules still require about two-thirds archive coverage"
+        },
+        {
+          "at": "2026-11-23T20:18Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Independent totals confirm 43.9598% proposed coverage and 308.4323s shortfall; FIX recorded in PR49 commit 923c63f"
         }
       ],
-      "remaining_action": "Recalculate sentence intervals and determine whether assembly can resume",
+      "remaining_action": "Update the original coverage hold and report the verification",
       "kind": "review",
       "recheck_of": "J3429",
       "due": "2026-11-23T21:15:23+00:00",
@@ -313609,16 +313614,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-23T20:17Z",
+        "at": "2026-11-23T20:18Z",
         "by": "codex",
         "plan": [
           "Read ruling and delivered evidence",
           "Verify allocation and remaining condition",
           "Record decision and report"
         ],
-        "note": "Read PR49 ruling and completed J3447 allocation; current rules still require about two-thirds archive coverage"
+        "note": "Independent totals confirm 43.9598% proposed coverage and 308.4323s shortfall; FIX recorded in PR49 commit 923c63f"
       },
       "taskKeys": [
         "WW2:004"
