@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2529, J3205, J3364, J3418.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2529, J3205, J3364, J3418, J3419, J3420, J3421.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -52,7 +52,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3308 | mini | open (after J3307) | – | – | studio · Studio: arm T041 thumbnail Test & Compare on NbW5G1BpPY0 (006 — 2× EARTH'S WATER) after J3307 PASS | jobs/reviews/J3382/REVIEW.md |
 | J3309 | mini | open (after J3307) | – | – | studio · Studio: arm T042 thumbnail Test & Compare on rVqgtkBV3jc (024 — EARTH AGES 7×) after J3307 PASS | jobs/reviews/J3382/REVIEW.md |
 | J3310 | mini | open (after J3307) | – | – | studio · Studio: arm T043 thumbnail Test & Compare on REXYxuLOBoI (005 — OUTLIVES OUR SUN) after J3307 PASS | jobs/reviews/J3382/REVIEW.md |
-| J3364 | mini | open | – | – | 002 picture · assembly · Field Order History pilot 2: add the planned archive photos (~65%) to the graphics-only cut, v06 to Ben's watch by Tue 20:00 (else move to Sat 28 Nov) |  |
+| J3364 | mini | open | – | – | 002 picture · assembly · Field Order History pilot 2: archive photos (~65%) plus the new opening, v06 to Ben's watch by Fri 27 Nov 20:00 (launch Sat 28 Nov 17:00) |  |
 | J3365 | mini | blocked | codex | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J3368 | mini | blocked | gemini | – | review · Verify condition for J2529 |  |
 | J3369 | mini | blocked | codex | – | 001 thumbs · studio · Field Order History pilot 1: 48-hour thumbnail decision |  |
@@ -68,6 +68,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3415 | mini | blocked | – | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3417 | mini | blocked | codex | – | thumb · Field Order History pilot 2: two close-crop thumbnails and a Test & Compare at launch; one-subject rule into the playbook for films 003+ |  |
 | J3418 | mini | claimed | gemini | 2026-11-23T12:57Z | studio · Field Order History pilot 1: full Studio numbers for Ben's audit (retention graph, traffic sources, audience), read-only |  |
+| J3419 | mini | open | – | – | studio · Field Order History pilot 1: cut the 3m45s detour (1:27-5:12) from the live video in Studio's editor, retime captions and chapters (Ben: go) |  |
+| J3420 | mini | open | – | – | studio · Field Order History pilot 2: move launch to Sat 28 Nov 17:00 (new opening, Ben: go) |  |
+| J3421 | any | open | – | – | WW2:002 script · facts · WW2 pilot 002: new 85-second opening (Claude's draft): facts check against its sources and lock v04 |  |
+| J3422 | mini | open (after J3421) | – | – | WW2:002 vo · vo · WW2 pilot 002: voice the new opening (pickup only, same voice and settings) |  |
 
 Recently finished:
 
