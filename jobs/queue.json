@@ -311773,10 +311773,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-23T16:04Z",
+      "eta": "2026-11-23T19:04Z",
       "created_by": "claude",
       "created_at": "2026-11-23T15:29Z",
       "result": "",
@@ -311785,11 +311785,24 @@
           "at": "2026-11-23T15:29Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-23T16:04Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Find and log at least 50 matched archive photos and write the picture plan",
       "due": "2026-11-28T18:00:00Z",
-      "kind": "image"
+      "kind": "image",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-23T16:04Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3434",
