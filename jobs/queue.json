@@ -312011,9 +312011,14 @@
           "at": "2026-11-23T16:47Z",
           "by": "gemini",
           "what": "step 2 of 5 done: visually inspected all 146 seam FAIL tiles across 19 full-res 960x540 contact sheets (102 unique sources)"
+        },
+        {
+          "at": "2026-11-23T16:49Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: audited all 12 reuse sources (43 cuts): 2 pass (24475803.jpg, loc_2017697475_cp06.jpg: <=3 apps, >=30s gaps, ending callbacks); 10 stay FAIL (41 cuts: >3 apps and/or <30s gaps); 1 opening jitter stays FAIL"
         }
       ],
-      "remaining_action": "audit all 12 reuse sources (43 cuts) against narration/gaps and check 4 raw composite frames",
+      "remaining_action": "generate reviewed-ok JSON and PICTURE_GATE_RULING_v01.md in clean worktree and verify against checkpoint 74 picture_qa",
       "due": "2026-11-24T12:00:00Z",
       "kind": "qa",
       "mini_only": true,
@@ -312027,11 +312032,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-23T16:47Z",
+        "at": "2026-11-23T16:49Z",
         "by": "gemini",
-        "note": "visually inspected all 146 seam FAIL tiles across 19 full-res 960x540 contact sheets (102 unique sources)"
+        "note": "audited all 12 reuse sources (43 cuts): 2 pass (24475803.jpg, loc_2017697475_cp06.jpg: <=3 apps, >=30s gaps, ending call"
       },
       "taskKeys": [
         "WW2:002"
