@@ -311975,13 +311975,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-23T17:13Z",
-      "eta": "2026-11-23T18:13Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T16:20Z",
-      "result": "",
+      "result": "Chief review complete: WW2 PR54 merged, ruling at 12c5478. Independently inspected all146 seam frames and4 raw composites;104 scoped exemptions approved (102 seam sources,2 compliant callbacks). Saved diagnostic recomputation retains42 failed cuts:41 reuse plus1 opening jitter. Whole-timeline audit adds3 missed short-gap repeats at L011.04/L038.03/L052.05;13 source identities need repair. J3364 action updated: section3+6 exact swaps now, final splice depends on checked J3422 pickup, then archive coverage/retiming/captions/credits, fresh gates including jitter and exact-film review before Ben watch. Hash-bound scope requires revalidation on changed renders. Dedicated FOH profile proposed only; no shared gate change. No film PASS, spend or YouTube changes.",
       "history": [
         {
           "at": "2026-11-23T16:20Z",
@@ -312037,6 +312037,11 @@
           "at": "2026-11-23T17:13Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-23T17:13Z",
+          "by": "codex",
+          "what": "done: Chief review complete: WW2 PR54 merged, ruling at 12c5478. Independently inspected all146 seam frames and4 raw composites;104 scoped exemptions approved (102 seam sources,2 compliant callbacks). Saved diagnostic recomputation retains42 failed cuts:41 reuse plus1 opening jitter. Whole-timeline audit adds3 missed short-gap repeats at L011.04/L038.03/L052.05;13 source identities need repair. J3364 action updated: section3+6 exact swaps now, final splice depends on checked J3422 pickup, then archive coverage/retiming/captions/credits, fresh gates including jitter and exact-film review before Ben watch. Hash-bound scope requires revalidation on changed renders. Dedicated FOH profile proposed only; no shared gate change. No film PASS, spend or YouTube changes."
         }
       ],
       "remaining_action": "post studio thread report and park J3435 for Acting Chief Codex sign-off",
@@ -312062,7 +312067,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/54"
     },
     {
       "id": "J3436",
