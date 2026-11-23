@@ -313028,13 +313028,26 @@
           "at": "2026-11-23T18:31Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-23T18:31Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-23T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Verify readiness: Resolve the recorded Pluto package export restriction, then reconcile the ledger and submit the existing package for final review",
       "kind": "review",
       "recheck_of": "J3114",
       "due": "2026-11-23T19:31:24+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
