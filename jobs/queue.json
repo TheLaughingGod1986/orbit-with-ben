@@ -309217,10 +309217,10 @@
       "stage": "topic",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-23T08:45Z",
+      "eta": "2026-11-23T10:45Z",
       "created_by": "gemini",
       "created_at": "2026-11-23T08:40Z",
       "result": "",
@@ -309234,6 +309234,11 @@
           "at": "2026-11-23T08:42Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-23T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
+        },
+        {
+          "at": "2026-11-23T08:45Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "HOS 133 How Was Quantum Physics Discovered?: rule-E topic go/no-go review",
@@ -309246,7 +309251,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-23T08:45Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
