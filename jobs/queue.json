@@ -310777,13 +310777,13 @@
       "stage": "vo",
       "after": "J3421",
       "eta_min": 40,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-23T14:17Z",
-      "eta": "2026-11-23T14:57Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T12:48Z",
-      "result": "",
+      "result": "Waiting for: Mandatory ear-check of pickup tone and join into existing narration requires demonstrated audio input. Session tool inspection found shell text and still-image tools only; no perceived audio playback. ASR and ffmpeg measurements cannot satisfy this subjective check. No take generated and no credits spent.",
       "history": [
         {
           "at": "2026-11-23T12:48Z",
@@ -310809,9 +310809,19 @@
           "at": "2026-11-23T14:18Z",
           "by": "codex",
           "what": "step 1 of 3 done: Locked v04 pickup located; mandatory subjective tone and join ear-check cannot be performed with this session tools. No generation or credit spend."
+        },
+        {
+          "at": "2026-11-23T14:18Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: Mandatory ear-check of pickup tone and join into existing narration requires demonstrated audio input. Session tool inspection found shell text and still-image tools only; no perceived audio playback. ASR and ffmpeg measurements cannot satisfy this subjective check. No take generated and no credits spent."
+        },
+        {
+          "at": "2026-11-23T14:18Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-23T15:00:00Z"
         }
       ],
-      "remaining_action": "Record and verify the opening pickup when audio input is available",
+      "remaining_action": "Record the locked opening and ear-check its join with an audio-capable worker",
       "due": "2026-11-25T12:00:00Z",
       "kind": "vo",
       "mini_only": true,
@@ -310825,6 +310835,17 @@
       },
       "taskKeys": [
         "WW2:002"
+      ],
+      "hold": {
+        "type": "capability",
+        "condition": "Mandatory ear-check of pickup tone and join into existing narration requires demonstrated audio input. Session tool inspection found shell text and still-image tools only; no perceived audio playback. ASR and ffmpeg measurements cannot satisfy this subjective check. No take generated and no credits spent.",
+        "check_at": "2026-11-23T15:00:00Z",
+        "requires": [
+          "audio_input"
+        ]
+      },
+      "required_capabilities": [
+        "audio_input"
       ]
     },
     {
