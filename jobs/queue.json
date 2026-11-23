@@ -1,5 +1,5 @@
 {
-  "next_id": 3429,
+  "next_id": 3435,
   "jobs": [
     {
       "id": "J0001",
@@ -305753,7 +305753,7 @@
         "by": ""
       },
       "open_claim": true,
-      "urgent": 10,
+      "urgent": 7,
       "taskKeys": [
         "WW2:002"
       ],
@@ -306291,12 +306291,18 @@
           "at": "2026-11-22T14:21Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-23T15:29Z",
+          "by": "claude",
+          "what": "Ben, Mon 23 Nov ~14:15 London, in chat, after Claude's viewer test of films 3-6: \"are we good to go ahead and have the ones built up properly?\" Yes: build them now, to the channel's rules (ww2-channel `studio/RULES.md`, read rules 1-6 and 12, and `studio/LEARNINGS.md`). Film 3 airs Tue 1 Dec and its edit (J3205) waits on this: urgent."
         }
       ],
       "remaining_action": "Record and verify the corrected bomber loss narration within reserved credit limits",
       "kind": "vo",
       "plain": "Correct the bomber loss narration in the third WW2 film",
-      "mini_only": true
+      "mini_only": true,
+      "urgent": 8
     },
     {
       "id": "J3371",
@@ -306321,11 +306327,17 @@
           "at": "2026-11-22T14:21Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-23T15:29Z",
+          "by": "claude",
+          "what": "Ben, Mon 23 Nov ~14:15 London, in chat, after Claude's viewer test of films 3-6: \"are we good to go ahead and have the ones built up properly?\" Yes: build them now, to the channel's rules (ww2-channel `studio/RULES.md`, read rules 1-6 and 12, and `studio/LEARNINGS.md`). Film 3 airs Tue 1 Dec and its edit (J3205) waits on this: urgent."
         }
       ],
       "remaining_action": "Rebuild the loss graphic and its timing after the corrected narration",
       "kind": "chart",
-      "plain": "Correct the bomber loss graphic to match the verified narration"
+      "plain": "Correct the bomber loss graphic to match the verified narration",
+      "urgent": 9
     },
     {
       "id": "J3372",
@@ -310964,7 +310976,7 @@
       "due": "2026-11-25T12:00:00Z",
       "kind": "vo",
       "mini_only": true,
-      "urgent": 9,
+      "urgent": 6,
       "progress": {
         "step": 1,
         "of": 3,
@@ -311523,6 +311535,180 @@
       "taskKeys": [
         "WW2:002"
       ]
+    },
+    {
+      "id": "J3429",
+      "title": "WW2 film 004: top up the archive photographs to about two-thirds of screen time before the edit",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why (Ben, Mon 23 Nov ~14:15 London, in chat, after Claude's viewer test of films 3-6: \"are we good to go ahead and have the ones built up properly?\" Yes: build them now, to the channel's rules (ww2-channel `studio/RULES.md`, read rules 1-6 and 12, and `studio/LEARNINGS.md`).)** Pilot 1 used 79 archive photographs in 27 minutes and pilot 3 has 54; pilot 2 went to Ben with none and needed a multi-day rebuild (J3364). Film 004 (the US submarine torpedoes) has only about 10 real archive photos (J3207: one named frame plus nine Navy photos) and 43 code diagrams. Built properly means real archive photographs carry about two-thirds of the screen time, so top the set up **before** the edit, not after.\n\n**Do:**\n1. From the locked narration, list each paragraph and what a viewer should see. Then find real photographs for as many as possible: target **at least 50**, matched to the words, at least 1,600 px wide where the archive has it. Look in NARA RG 80-G and RG 19/RG 74 (Navy, Bureau of Ordnance), NHHC, Library of Congress; Mark 14 torpedoes, fleet submarines and crews, Pearl Harbor and Newport torpedo station, test firings. Every image: collection, ID, date, photographer if known, and licence in `03_Picture/ARCHIVE_PROVENANCE.md` (rule 5: US federal public domain or UK Crown copyright expired only; never agency, wire or private photos). Never label a photo with a date, place or ship it doesn't show; if a photo is a near match, say so in its caption note.\n2. Write `03_Picture/PICTURE_PLAN.md`: paragraph by paragraph, photo or code map, and the share of screen time that will be real archive. Say plainly if the archive can't reach two-thirds and where the gaps are.\n3. Media on the shared film store; text in one ww2-channel PR (Chief merge); one thread line with the count and share.\n\n**Guards.** £0. No AI pictures. Narration and title untouched.",
+      "ref": "",
+      "film": "WW2:004",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-23T15:29Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T15:29Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Find and log at least 50 matched archive photos and write the picture plan",
+      "due": "2026-11-26T18:00:00Z",
+      "kind": "image"
+    },
+    {
+      "id": "J3430",
+      "title": "WW2 film 004: edit, captions, three thumbnails and upload package, to Ben's watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why (Ben, Mon 23 Nov ~14:15 London, in chat, after Claude's viewer test of films 3-6: \"are we good to go ahead and have the ones built up properly?\" Yes: build them now, to the channel's rules (ww2-channel `studio/RULES.md`, read rules 1-6 and 12, and `studio/LEARNINGS.md`).)** Assemble film 004 (the US submarine torpedoes) once its archive top-up (the job this waits on) is done. Air **Sat 5 Dec 17:00**; Ben's watch due 2026-12-02 20:00 London.\n\n**Do (to the channel's rules):**\n1. Cut the film to its locked narration: real archive photographs carry about two-thirds of the screen time (`03_Picture/PICTURE_PLAN.md`), code maps where they explain, slow camera moves, the studio's zero-spend music bed (licence logged; no ElevenLabs music this cycle, Ben 20 Nov). 1080p. Apply the cut in `07_Edit/EDIT_NOTES.md` (J3427): drop the two opening sentences that give away the answer (\"A depth error concealed ... at the moment of impact.\").\n2. The first two minutes get the closest picture work: a striking real photo on the first line, nothing slower than the words.\n3. Chapters from the narration's sections; en-GB captions from the voice-over timing.\n4. Three thumbnail designs (rule 2: one subject filling the frame at 168 px, normal or bright grade, 0-3 words on a solid dark band) with a 168 px and 320 px comparison sheet on white and dark backgrounds; they launch as a three-way Test & Compare.\n5. Upload package: title **Why America's Torpedoes Failed Even When They Hit** (50 characters or fewer), description with sources, archive credits and chapters, the AI-voice disclosure line as on pilot 1, tags, pinned question comment, end screen to the series playlist.\n6. Run the studio's QA gates and a full watch-through, then put the cut on Ben's board for his watch (`jobs.py awaits`, due 2026-12-02 20:00). Ben's watch starts with the first three minutes on a phone (rule 6).\n\n**Guards.** No upload or schedule change before Ben's OK. £0. Record anything a later read should test in `studio/LEARNINGS.md`.",
+      "ref": "",
+      "film": "WW2:004",
+      "stage": "edit",
+      "after": "J3429",
+      "eta_min": 480,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-23T15:29Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T15:29Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Assemble the film to its narration and archive plan, then QA and Ben's watch",
+      "due": "2026-12-02T20:00:00Z",
+      "kind": "assembly"
+    },
+    {
+      "id": "J3431",
+      "title": "WW2 film 005: top up the archive photographs to about two-thirds of screen time before the edit",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why (Ben, Mon 23 Nov ~14:15 London, in chat, after Claude's viewer test of films 3-6: \"are we good to go ahead and have the ones built up properly?\" Yes: build them now, to the channel's rules (ww2-channel `studio/RULES.md`, read rules 1-6 and 12, and `studio/LEARNINGS.md`).)** Pilot 1 used 79 archive photographs in 27 minutes and pilot 3 has 54; pilot 2 went to Ben with none and needed a multi-day rebuild (J3364). Film 005 (the St Nazaire raid) has only 10 real archive photos and 19 code plates (J3209). Built properly means real archive photographs carry about two-thirds of the screen time, so top the set up **before** the edit, not after.\n\n**Do:**\n1. From the locked narration, list each paragraph and what a viewer should see. Then find real photographs for as many as possible: target **at least 50**, matched to the words, at least 1,600 px wide where the archive has it. Look in IWM Crown-expired official collections (Admiralty A, War Office H/B, Air Ministry C/CH; HMS Campbeltown in British service, Chariot force, motor launches, Tirpitz reconnaissance), US NARA/NHHC (USS Buchanan), TNA; never captured German photographs (rule 5). Every image: collection, ID, date, photographer if known, and licence in `03_Picture/ARCHIVE_PROVENANCE.md` (rule 5: US federal public domain or UK Crown copyright expired only; never agency, wire or private photos). Never label a photo with a date, place or ship it doesn't show; if a photo is a near match, say so in its caption note.\n2. Write `03_Picture/PICTURE_PLAN.md`: paragraph by paragraph, photo or code map, and the share of screen time that will be real archive. Say plainly if the archive can't reach two-thirds and where the gaps are.\n3. Media on the shared film store; text in one ww2-channel PR (Chief merge); one thread line with the count and share.\n\n**Guards.** £0. No AI pictures. Narration and title untouched.",
+      "ref": "",
+      "film": "WW2:005",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-23T15:29Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T15:29Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Find and log at least 50 matched archive photos and write the picture plan",
+      "due": "2026-11-27T18:00:00Z",
+      "kind": "image"
+    },
+    {
+      "id": "J3432",
+      "title": "WW2 film 005: edit, captions, three thumbnails and upload package, to Ben's watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why (Ben, Mon 23 Nov ~14:15 London, in chat, after Claude's viewer test of films 3-6: \"are we good to go ahead and have the ones built up properly?\" Yes: build them now, to the channel's rules (ww2-channel `studio/RULES.md`, read rules 1-6 and 12, and `studio/LEARNINGS.md`).)** Assemble film 005 (the St Nazaire raid) once its archive top-up (the job this waits on) is done. Air **Tue 8 Dec 17:00**; Ben's watch due 2026-12-05 20:00 London.\n\n**Do (to the channel's rules):**\n1. Cut the film to its locked narration: real archive photographs carry about two-thirds of the screen time (`03_Picture/PICTURE_PLAN.md`), code maps where they explain, slow camera moves, the studio's zero-spend music bed (licence logged; no ElevenLabs music this cycle, Ben 20 Nov). 1080p. \n2. The first two minutes get the closest picture work: a striking real photo on the first line, nothing slower than the words.\n3. Chapters from the narration's sections; en-GB captions from the voice-over timing.\n4. Three thumbnail designs (rule 2: one subject filling the frame at 168 px, normal or bright grade, 0-3 words on a solid dark band) with a 168 px and 320 px comparison sheet on white and dark backgrounds; they launch as a three-way Test & Compare.\n5. Upload package: title **St Nazaire: The Ship Britain Turned Into a Bomb** (50 characters or fewer), description with sources, archive credits and chapters, the AI-voice disclosure line as on pilot 1, tags, pinned question comment, end screen to the series playlist.\n6. Run the studio's QA gates and a full watch-through, then put the cut on Ben's board for his watch (`jobs.py awaits`, due 2026-12-05 20:00). Ben's watch starts with the first three minutes on a phone (rule 6).\n\n**Guards.** No upload or schedule change before Ben's OK. £0. Record anything a later read should test in `studio/LEARNINGS.md`.",
+      "ref": "",
+      "film": "WW2:005",
+      "stage": "edit",
+      "after": "J3431",
+      "eta_min": 480,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-23T15:29Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T15:29Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Assemble the film to its narration and archive plan, then QA and Ben's watch",
+      "due": "2026-12-05T20:00:00Z",
+      "kind": "assembly"
+    },
+    {
+      "id": "J3433",
+      "title": "WW2 film 006: top up the archive photographs to about two-thirds of screen time before the edit",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why (Ben, Mon 23 Nov ~14:15 London, in chat, after Claude's viewer test of films 3-6: \"are we good to go ahead and have the ones built up properly?\" Yes: build them now, to the channel's rules (ww2-channel `studio/RULES.md`, read rules 1-6 and 12, and `studio/LEARNINGS.md`).)** Pilot 1 used 79 archive photographs in 27 minutes and pilot 3 has 54; pilot 2 went to Ben with none and needed a multi-day rebuild (J3364). Film 006 (the de Havilland Mosquito) has only 25 IWM photographs and 15 code maps (J3211; 47 shot-list numbers did not match). Built properly means real archive photographs carry about two-thirds of the screen time, so top the set up **before** the edit, not after.\n\n**Do:**\n1. From the locked narration, list each paragraph and what a viewer should see. Then find real photographs for as many as possible: target **at least 50**, matched to the words, at least 1,600 px wide where the archive has it. Look in IWM Air Ministry and Ministry of Information collections (Mosquito production in furniture works, Hatfield, crews, Berlin raids), Library and Archives Canada Crown-expired items for Canadian production, US NARA. Every image: collection, ID, date, photographer if known, and licence in `03_Picture/ARCHIVE_PROVENANCE.md` (rule 5: US federal public domain or UK Crown copyright expired only; never agency, wire or private photos). Never label a photo with a date, place or ship it doesn't show; if a photo is a near match, say so in its caption note.\n2. Write `03_Picture/PICTURE_PLAN.md`: paragraph by paragraph, photo or code map, and the share of screen time that will be real archive. Say plainly if the archive can't reach two-thirds and where the gaps are.\n3. Media on the shared film store; text in one ww2-channel PR (Chief merge); one thread line with the count and share.\n\n**Guards.** £0. No AI pictures. Narration and title untouched.",
+      "ref": "",
+      "film": "WW2:006",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-23T15:29Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T15:29Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Find and log at least 50 matched archive photos and write the picture plan",
+      "due": "2026-11-28T18:00:00Z",
+      "kind": "image"
+    },
+    {
+      "id": "J3434",
+      "title": "WW2 film 006: edit, captions, three thumbnails and upload package, to Ben's watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why (Ben, Mon 23 Nov ~14:15 London, in chat, after Claude's viewer test of films 3-6: \"are we good to go ahead and have the ones built up properly?\" Yes: build them now, to the channel's rules (ww2-channel `studio/RULES.md`, read rules 1-6 and 12, and `studio/LEARNINGS.md`).)** Assemble film 006 (the de Havilland Mosquito) once its archive top-up (the job this waits on) is done. Air **Sat 12 Dec 17:00**; Ben's watch due 2026-12-09 20:00 London.\n\n**Do (to the channel's rules):**\n1. Cut the film to its locked narration: real archive photographs carry about two-thirds of the screen time (`03_Picture/PICTURE_PLAN.md`), code maps where they explain, slow camera moves, the studio's zero-spend music bed (licence logged; no ElevenLabs music this cycle, Ben 20 Nov). 1080p. \n2. The first two minutes get the closest picture work: a striking real photo on the first line, nothing slower than the words.\n3. Chapters from the narration's sections; en-GB captions from the voice-over timing.\n4. Three thumbnail designs (rule 2: one subject filling the frame at 168 px, normal or bright grade, 0-3 words on a solid dark band) with a 168 px and 320 px comparison sheet on white and dark backgrounds; they launch as a three-way Test & Compare.\n5. Upload package: title **Why the Mosquito Bomber Was Made of Wood** (50 characters or fewer), description with sources, archive credits and chapters, the AI-voice disclosure line as on pilot 1, tags, pinned question comment, end screen to the series playlist.\n6. Run the studio's QA gates and a full watch-through, then put the cut on Ben's board for his watch (`jobs.py awaits`, due 2026-12-09 20:00). Ben's watch starts with the first three minutes on a phone (rule 6).\n\n**Guards.** No upload or schedule change before Ben's OK. £0. Record anything a later read should test in `studio/LEARNINGS.md`.",
+      "ref": "",
+      "film": "WW2:006",
+      "stage": "edit",
+      "after": "J3433",
+      "eta_min": 480,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-23T15:29Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T15:29Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Assemble the film to its narration and archive plan, then QA and Ben's watch",
+      "due": "2026-12-09T20:00:00Z",
+      "kind": "assembly"
     }
   ],
   "focus": [

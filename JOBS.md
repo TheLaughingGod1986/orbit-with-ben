@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2529, J3205, J3419, J3422, J3364.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2529, J3205, J3419, J3422, J3364, J3370, J3371.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -71,6 +71,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3422 | mini | blocked | codex | – | WW2:002 vo · vo · WW2 pilot 002: voice the new opening (pickup only, same voice and settings) |  |
 | J3426 | mini | blocked | gemini | – | review · Verify condition for J3419 |  |
 | J3428 | mini | blocked | gemini | – | review · Verify condition for J3422 |  |
+| J3429 | mini | open | – | – | WW2:004 picture · image · WW2 film 004: top up the archive photographs to about two-thirds of screen time before the edit |  |
+| J3430 | mini | open (after J3429) | – | – | WW2:004 edit · assembly · WW2 film 004: edit, captions, three thumbnails and upload package, to Ben's watch |  |
+| J3431 | mini | open | – | – | WW2:005 picture · image · WW2 film 005: top up the archive photographs to about two-thirds of screen time before the edit |  |
+| J3432 | mini | open (after J3431) | – | – | WW2:005 edit · assembly · WW2 film 005: edit, captions, three thumbnails and upload package, to Ben's watch |  |
+| J3433 | mini | open | – | – | WW2:006 picture · image · WW2 film 006: top up the archive photographs to about two-thirds of screen time before the edit |  |
+| J3434 | mini | open (after J3433) | – | – | WW2:006 edit · assembly · WW2 film 006: edit, captions, three thumbnails and upload package, to Ben's watch |  |
 
 Recently finished:
 
