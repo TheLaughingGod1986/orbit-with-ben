@@ -67,12 +67,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3400 | mini | blocked | gemini | – | review · Verify condition for J0996 |  |
 | J3406 | any | blocked | macbook-2 | – | review · Verify condition for J3307 |  |
 | J3407 | mini | blocked | gemini | – | review · Verify condition for J3114 |  |
-| J3412 | mini | claimed | codex | 2026-11-23T11:49Z | review · Verify condition for J3354 |  |
 | J3414 | mini | blocked | codex | – | studio · WW2 pilot 1: 48-hour metrics and running thumbnail test read |  |
 
 Recently finished:
 
 - J3413 done: Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) (Read-only HOS live & scheduled listing check complete (2026-11-23T09:33Z-09:35Z): 0 live Studio fixes needed, 0 blocking repo deltas. 7/7 public longs, 36/36 public Shorts (including newly public el30-mHiH-0, Related wwcjcFfC-5M, library.json live), 2/2 scheduled (sY0PSQFxjp8, uAomPaOBrM8), and 8/8 external URLs PASS; HOS check_all.sh ALL CHECKS PASS. Audit saved in HOS PR #737 (00_Brand/Channel-Setup/audits/live_fixes/2026-11-23_J3413.md), open for Chief merge. Nothing changed in Studio; spend £0.)
+- J3412 done: Verify condition for J3354 (Chief KEEP: verification PR1210 merged acb1fa1a83. Parent J3354 reopened with independent clock, dedupe SHA256, duplicate-run and approval checks. Follow-up J3354 runs scoped daily comments and queues 24 Nov 09:00Z successor. No remaining external wait, no YouTube changes or spend.)
 - J3411 done: Field Order History pilot 1: close-crop thumbnail options and set the best live (Ben: 641 impressions at 0.8%), plus a check of pilot 2's (Chief PASS: ww2 PR36 merged b04da512, ruling aa468ec. D > C > B > A editorial ranking; exact source/candidate/sheet hashes verified. Existing thumbnail-only B/C/D test retained (worker start 2026-11-23T09:11:55Z); no winner claimed. Pilot 2 unchanged. J3414 depends on J3411 and reads metrics/test at 2026-11-24T17:05:00Z, then dated retries if still running. No spend or new YouTube mutation.)
 - J3410 done: HOS 133 How Was Quantum Physics Discovered?: rule-E topic go/no-go review (Rule-E topic go/no-go review for HOS:133 (How Was Quantum Physics Discovered? (The Lightbulb Problem)) PASS — GO (96.8/100, 9.68/10 Opportunity Score) pre-cleared in jobs/WIP.json next_hos under Rule G (4/4 active HOS slots full). Opened isolated HOS PR #734 (branch macbook/J3410, 17 files; merges cleanly alongside J3409 HOS:132). Passed 10/10 Rule-E gates (neighbours.py PASS 13 raw / 11 on-topic quantum >=1M [9 core + 2 adjacent TED], 3 TED-Ed >=1M; public_search.py 4/4 core autocomplete=yes, 0 exact/near collisions; zero overlap incl. ideas/025; status_board.py --check & check_all.sh ALL CHECKS PASS). Fixed Thumb A §2.5 cross-arm repeat (1900 POSTCARD -> IMPOSSIBLE GLOW), populated blank PRE_BUILD_VIDIQ_AUDIT.md at £0 with 5-part layout, added TOPIC_GO_NO_GO_SHEET.md & TOPIC_OPPORTUNITY_SCORE.md, and logged 6 script-stage precision guardrails (incl. Rayleigh-Jeans/infrared chronology and von Jolly 1874 vs 1878). All claims remain UNVERIFIED pending open WIP slot, SOURCES.md verbatim quotes, and facts lane; all 12 status.json stages todo; £0.00 spent.)
 - J3409 done: HOS 132 Why Is Glass Transparent?: rule-E topic go/no-go review (Rule-E topic go/no-go review for HOS:132 (Why Is Glass Transparent? (The Quantum Gap)) from J3408 (HOS PR #733, OWB PR #1208): GO (95.1/100 · 9.51/10 Opportunity Score, 10/10 Rule-E gates PASS) pre-cleared in jobs/WIP.json next_hos under Rule G (4/4 active HOS slots full). Opened isolated HOS PR #735 (gemini/J3409, 22ad7298, check_all.sh ALL CHECKS PASS, test_no_private_network.py OK) and OWB PR #1209 (gemini/J3409, 3901750758, jobs/reviews/J3409/REVIEW.md + evidence JSONs) for Chief merge. Fixes applied: removed unsaved Fermilab ref (cited saved Veritasium 5.79M), excluded 3 <1M off-topic neighbour rows (incl. Google Glass), fixed Thumb A/B §2.5 & §2.6 (LIGHT PASSES THROUGH / WINDOWS NEVER FLOW), separated pure silica ~9 eV gap from soda-lime ~3.9-4.1 eV UVB cutoff (Short S02 -> BLOCKS SUNBURN UVB), distinguished Zachariasen 1932 theory vs Warren X-ray diffraction, logged Zanotto 1998/1999 + cylinder/crown glass + Pilkington 1970 knighthood WHO guardrail, populated PRE_BUILD_VIDIQ_AUDIT.md, added TOPIC_GO_NO_GO_SHEET.md & TOPIC_OPPORTUNITY_SCORE.md. All claims remain UNVERIFIED pending open WIP slot, SOURCES.md, and facts lane. £0.00 spent.)
@@ -81,21 +81,3 @@ Recently finished:
 - J3404 done: Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker (18 OWB + 7 HOS longs; 92 OWB + 36 HOS Shorts. CTR >=4%: OWB 3/18, HOS 4/7 (small samples). Commit 14231d5493; published tracker verified at board-data 7a5dd401033db14550819237b662bd1070a71062. No spend or YouTube changes.)
 - J3403 done: Field Order History channel audience read 2026-11-23 (Recorded verified Field Order History Studio audience read: 0 qualified hours (Earn as of 17 Nov), viewer heatmap unavailable with GMT+00:00 retained, no set public-film test. Strict import and 19 tests passed; PR 1204 merged. No public changes.)
 - J3402 done: Verify condition for J2537 (Chief accepted and merged PR1203. Condition NOT MET: no protected desk-history exception in refreshed comments through OWB 7091349114 and HOS 7091348869. J2537 remains blocked via recheck J3402 until 2026-11-23T10:10:00Z. On authorization resolve non-desk PRs, refresh backup/rehearsal, give day-before notice and hold writers. No rewrite, spend or duplicate ask.)
-- J3401 done: First-day check at 6 h: "What If Earth Stopped Spinning? (It's Already Slowing Down)" (6bbbvfCx6zY) (PR #1202 (macbook/J3401). 0 faults found (Visibility Public, Restrictions empty, not Made for Kids, no age restriction, HD processing done, description exact byte match to upload package, Related video N/A for long). Read-only, £0.
-
-"What If Earth Stopped Spinning? (It's Already Slowing Down)" (6bbbvfCx6zY) · Orbit With Ben · long · went live Sun 22 Nov 18:00 London
-At 6 h: views 9 · Studio rank 1 of 10 · impressions 1 · click rate 0.0% · average viewed 2.0%
-Usual for this channel: click rate 2.1%, average viewed 19.6%
-
-Verdict: AHEAD
-  - 9 views at 6 h; Studio says the usual for us at this age is 2.
-  - Studio ranks it 1 of 10 against our latest videos at the same age.
-
-What is different about this one
-  - It is 447 s long; the last 10 longs were 491 to 2858 s.
-
-Do now
-  - Nothing to fix.
-
-Carry forward
-  - A strong start is a lesson too: note what is different about this one.)
