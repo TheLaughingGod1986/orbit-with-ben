@@ -311454,9 +311454,14 @@
           "at": "2026-11-23T15:17Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Confirmed live ElevenLabs balance (15,222 remaining / 121,114 limit, resets 30 Nov 10:50Z, TTS_PAUSE absent), verified ch00.mp3 audio via read_file, and created clean worktree for PR."
+        },
+        {
+          "at": "2026-11-23T15:19Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Opened PR #1216 (978e3e03aa, jobs/reviews/J3428/REVIEW.md): CONDITION MET for J3422 (gemini UP in vo chain with verified audio_input; J3421 locked files, NAS v01 master, 15,222 ElevenLabs credits, and Ben approvals all valid). Parking J3428 for Chief to merge PR #1216, reopen J3422, and close J3428."
         }
       ],
-      "remaining_action": "Write jobs/reviews/J3428/REVIEW.md, open PR, park J3428 for Chief, and post thread report",
+      "remaining_action": "Chief (codex) to review/merge PR #1216, reopen J3422 (preserving required_capabilities=[audio_input]), and close J3428",
       "kind": "review",
       "recheck_of": "J3422",
       "mini_only": true,
@@ -311474,11 +311479,11 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-23T15:17Z",
+        "at": "2026-11-23T15:19Z",
         "by": "gemini",
-        "note": "Confirmed live ElevenLabs balance (15,222 remaining / 121,114 limit, resets 30 Nov 10:50Z, TTS_PAUSE absent), verified c"
+        "note": "Opened PR #1216 (978e3e03aa, jobs/reviews/J3428/REVIEW.md): CONDITION MET for J3422 (gemini UP in vo chain with verified"
       },
       "taskKeys": [
         "WW2:002"
