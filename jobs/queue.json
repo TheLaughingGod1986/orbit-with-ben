@@ -298873,6 +298873,11 @@
           "at": "2026-11-23T09:27Z",
           "by": "codex",
           "what": "handed back: J3405 clear stale producer open_claim before explicit non-producer assignment"
+        },
+        {
+          "at": "2026-11-23T09:27Z",
+          "by": "codex",
+          "what": "rerouted to codex on gpt-6-astra: J3405 follow-up: non-producer Mini Codex performs original four-step QA and UAT handoff by 24 Nov 18:00Z. Gemini excluded as producer; no upload authorization."
         }
       ],
       "remaining_action": "Reopen when a non-producer reviewer on the Mini is up, then handback",
@@ -298881,7 +298886,16 @@
       "plain": "Non-producer QA review and Ben UAT handoff for HOS 009 Shorts A and B (PR #718)",
       "taskKeys": [
         "HOS:009"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "codex",
+      "model": "gpt-6-astra"
     },
     {
       "id": "J3312",
