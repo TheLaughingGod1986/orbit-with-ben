@@ -310517,9 +310517,14 @@
           "at": "2026-11-23T13:16Z",
           "by": "gemini",
           "what": "step 3 of 6 done: Checked at 13:16Z (~4.5 min post-save); updating heartbeat."
+        },
+        {
+          "at": "2026-11-23T13:20Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: Studio still processing at 13:19:59Z (API PT27M37S, Editor 'Video editing is in progress...'). Before screenshots (7 PNGs), retimed ww2_001_en-GB_v02.srt (311 cues, sha256 c718da0465126b5f17fb5c93ffe0c9049e560a037543abb5802a33e9ab24e91e), and trim_state_v01.json saved to NAS studio-live."
         }
       ],
-      "remaining_action": "Checking Studio Editor processing completion for ek9F61FVYqY (01:27:20-05:12:11 cut saved at 13:11:33Z)",
+      "remaining_action": "Wait for Studio Editor processing of cut 01:27:20-05:12:11 on ek9F61FVYqY (saved 13:11:33Z) to finish (PT23M52S / 23:52), then execute Steps 4-5 using prepared NAS checkpoint",
       "due": "2026-11-23T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -310527,9 +310532,9 @@
       "progress": {
         "step": 3,
         "of": 6,
-        "at": "2026-11-23T13:16Z",
+        "at": "2026-11-23T13:20Z",
         "by": "gemini",
-        "note": "Checked at 13:16Z (~4.5 min post-save); updating heartbeat."
+        "note": "Studio still processing at 13:19:59Z (API PT27M37S, Editor 'Video editing is in progress...'). Before screenshots (7 PNG"
       },
       "taskKeys": [
         "WW2:001"
