@@ -312083,9 +312083,14 @@
           "at": "2026-11-23T20:15Z",
           "by": "relay",
           "what": "condition verification queued: J3448"
+        },
+        {
+          "at": "2026-11-23T20:19Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-24T18:00:00Z"
         }
       ],
-      "remaining_action": "Await the sentence-level photo allocation review, then decide whether coverage is sufficient",
+      "remaining_action": "Resolve the torpedo picture-plan coverage shortfall with a concrete editorial repair scope",
       "due": "2026-11-26T18:00:00Z",
       "kind": "image",
       "taskKeys": [
@@ -312112,10 +312117,12 @@
         "note": "PR49 f37c9da: all50 unique NAS hashes/dimensions verified,41 paragraph totals reconciled;57.0% proposed archive,131.4s s"
       },
       "hold": {
-        "type": "dependency",
-        "condition": "J3447 must deliver its bounded sentence-level allocation and explicit coverage recommendation; then review that evidence against PR49 Chief ruling 2881569. Current 57.0% plan is not approved.",
-        "check_at": "2026-11-23T21:15:23+00:00",
-        "recheck_task": "J3448"
+        "type": "input",
+        "condition": "J3448 reviewed completed J3447 at 36821f8: 65 sentences, eight photo intervals, 597.1144/1358.32s hybrid proposed coverage (43.9598%); 308.4323s short, 29 paragraph estimates unverified. Chief FIX in PR49 923c63f rejects current-plan acceptance and coverage exception. Need a revised evidence-backed plan meeting rule 1, or separately authorised scope resolving that rule, before assembly. No repeated exhausted probes or identical allocation retry; J3430 remains dependent.",
+        "check_at": "2026-11-24T18:00:00Z",
+        "last_recheck": "J3448",
+        "checked_at": "2026-11-23T20:19:05+00:00",
+        "checked_by": "codex"
       }
     },
     {
