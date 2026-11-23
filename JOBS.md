@@ -70,7 +70,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3407 | mini | blocked | gemini | – | review · Verify condition for J3114 |  |
 | J3411 | mini | blocked | gemini | – | thumb · Field Order History pilot 1: close-crop thumbnail options and set the best live (Ben: 641 impressions at 0.8%), plus a check of pilot 2's |  |
 | J3412 | mini | blocked | gemini | – | review · Verify condition for J3354 |  |
-| J3413 | any | open | – | – | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
+| J3413 | any | claimed | macbook-2 | 2026-11-23T10:31Z | listing · Backlog HOS: listing check on live videos (chapters, sources, end screens, Related) |  |
 
 Recently finished:
 
