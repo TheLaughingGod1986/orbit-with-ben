@@ -1,5 +1,5 @@
 {
-  "next_id": 3427,
+  "next_id": 3428,
   "jobs": [
     {
       "id": "J0001",
@@ -289567,6 +289567,11 @@
           "at": "2026-11-22T18:46Z",
           "by": "relay",
           "what": "condition verification queued: J3392"
+        },
+        {
+          "at": "2026-11-23T14:06Z",
+          "by": "claude",
+          "what": "Claude's viewer test (23 Nov, ww2-channel 00_Brand/OPENINGS_REVIEW_2026-11-23.md): the B-29 opening passes. Optional free cut for this edit: the B-32 paragraph in chapter 1 ('Boeing was not the only company in the running ... only a handful ever saw combat.', about 20 s), an aside before the B-29's own story gets going. New title: 'Why the B-29 Cost More Than the Atomic Bomb'. Thumbnail per rule 2: one subject filling the frame at 168 px, three designs, three-way test."
         }
       ],
       "remaining_action": "Wait for corrected narration and loss graphic, then finish assembly and QA",
@@ -310923,13 +310928,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-23T13:56Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T13:48Z",
-      "result": "parked for Chief: records-only PR https://github.com/TheLaughingGod1986/ww2-channel/pull/45 (commit 31d2742) adds 00_Brand/OPENINGS_REVIEW_2026-11-23.md for WW2:003-006 (verified exact Scribe >3:00 opening paragraphs, packaging options, VO lengths, chapter-1 end times, air dates, C37 ch04/ch05 note, zero secrets/local paths, £0); Codex is elected Chief so worker gemini cannot merge",
+      "result": "PR #45 merged (113b1b9) by Claude. Viewer test done: ww2-channel PR #46 (cb842af): 003, 005, 006 pass; 004 needs a free two-sentence cut; new titles for 003, 005, 006.",
       "history": [
         {
           "at": "2026-11-23T13:48Z",
@@ -310970,6 +310975,11 @@
           "at": "2026-11-23T14:03Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: records-only PR https://github.com/TheLaughingGod1986/ww2-channel/pull/45 (commit 31d2742) adds 00_Brand/OPENINGS_REVIEW_2026-11-23.md for WW2:003-006 (verified exact Scribe >3:00 opening paragraphs, packaging options, VO lengths, chapter-1 end times, air dates, C37 ch04/ch05 note, zero secrets/local paths, £0); Codex is elected Chief so worker gemini cannot merge"
+        },
+        {
+          "at": "2026-11-23T14:06Z",
+          "by": "claude",
+          "what": "done: PR #45 merged (113b1b9) by Claude. Viewer test done: ww2-channel PR #46 (cb842af): 003, 005, 006 pass; 004 needs a free two-sentence cut; new titles for 003, 005, 006."
         }
       ],
       "remaining_action": "Chief review and merge of ww2-channel PR #45 (records only)",
@@ -310997,7 +311007,8 @@
         "WW2:004",
         "WW2:005",
         "WW2:006"
-      ]
+      ],
+      "done_ref": "ww2-channel#46"
     },
     {
       "id": "J3426",
@@ -311063,6 +311074,35 @@
       "taskKeys": [
         "WW2:001"
       ]
+    },
+    {
+      "id": "J3427",
+      "title": "Field Order History films 3-6: apply Claude's viewer test (new titles, the torpedo film's two-sentence cut, thumbnail rule)",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "**Why.** Claude's rule 6 viewer test of films 3-6 (Ben left the call to Claude, 23 Nov) is in ww2-channel `00_Brand/OPENINGS_REVIEW_2026-11-23.md` (PR #46, merged cb842af). Three openings pass; the torpedo film needs a free two-sentence cut; three titles change under rule 2 (50 characters or fewer, naming the thing viewers know). No re-voicing.\n\n**Do (text and records only, about 20 minutes):**\n1. **Titles.** Set the planned title in each film's `status.json`, `01_Script/SCRIPT.md` packaging line and any `11_Upload-Package` draft metadata:\n   - B-29 film: **Why the B-29 Cost More Than the Atomic Bomb**\n   - St Nazaire film: **St Nazaire: The Ship Britain Turned Into a Bomb**\n   - Mosquito film: **Why the Mosquito Bomber Was Made of Wood**\n   - Torpedo film: unchanged (\"Why America's Torpedoes Failed Even When They Hit\").\n   Keep the old titles in a \"previous titles\" line, not deleted. If a title says anything the film's sources don't support, say so and stop on that one.\n2. **The torpedo film's cut.** Write it where its edit will see it: an `07_Edit/EDIT_NOTES.md` in the torpedo film's folder (and a line in its `status.json` `next`), saying: in the opening, cut exactly \"A depth error concealed an unreliable magnetic device. Removing that device exposed a contact mechanism that could jam at the moment of impact.\" (about 2:15 in the voice-over), so the join reads \"But the engineering story is more revealing. / Each apparent solution changed what the men could see, until the final fault became impossible to ignore.\" Captions and chapter times follow the cut.\n3. **Thumbnails.** In each of the four films' `EDIT_NOTES.md` (create where missing), note rule 2: one subject filling the frame at 168 px, three designs, launched as a three-way Test & Compare.\n4. One ww2-channel PR (Chief merge), one thread line.\n\n**Guards.** No script, audio or edit changes in this job. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 25,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-23T14:06Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T14:06Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Set the new titles and write the torpedo film's cut into its edit notes",
+      "due": "2026-11-24T18:00:00Z",
+      "kind": "listing"
     }
   ],
   "focus": [
