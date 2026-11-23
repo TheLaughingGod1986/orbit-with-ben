@@ -179721,9 +179721,14 @@
           "at": "2026-11-23T21:49Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-23T21:54Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J2037 as specialist worker under Acting Chief Codex; verifying exact hashes, delivered gates, and package contracts."
         }
       ],
-      "remaining_action": "Review HOS009 finished pack and deliver Ben watch card",
+      "remaining_action": "Verify v03 hashes, gates, and package contracts",
       "due": "2026-11-15T18:00:00Z",
       "kind": "review",
       "taskKeys": [
@@ -179731,10 +179736,16 @@
       ],
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-04T16:56Z",
-        "by": "codex",
-        "note": "Queued successor under J2026; not claimed or started"
+        "of": 4,
+        "at": "2026-11-23T21:54Z",
+        "by": "gemini",
+        "plan": [
+          "Verify v03 hashes, gates, and package contracts",
+          "Inspect stills, thumbnails, and audio/video probe",
+          "Rebase PR #731 conflict and stage v03 to HOS UAT",
+          "Write REVIEW.md and park protected Chief PASS for Codex"
+        ],
+        "note": "Claimed J2037 as specialist worker under Acting Chief Codex; verifying exact hashes, delivered gates, and package contra"
       },
       "urgent": 1,
       "rerouted_from": {
