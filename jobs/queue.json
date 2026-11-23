@@ -311118,9 +311118,14 @@
           "at": "2026-11-23T17:17Z",
           "by": "gemini",
           "what": "step 1 of 5 done: audio_input verified via read_file probe; v01 join 'A strong wind...' starts at 176.820s (-20.1 LUFS); dry-run confirmed 1,042 chars / 186 words vs 15,222 credits remaining"
+        },
+        {
+          "at": "2026-11-23T17:22Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Take 1 rejected by ear-check + Scribe/Whisper ('air supports' at 0:23.14). Authorized retake atlantic_black_pit_vo_pickup_v04_t2 passed full ear-check + join check (80.000s, -20.5 LUFS, 100% norm Scribe, Whisper PASS, clean join into v01 at 176.050s)"
         }
       ],
-      "remaining_action": "Generate VO_PICKUP_v04.txt pickup take via vo_take.py under desk-lock elevenlabs",
+      "remaining_action": "Write VO_REPORT_v04.md, commit evidence in clean WW2 worktree, open PR, and park for Chief PASS",
       "due": "2026-11-25T12:00:00Z",
       "kind": "vo",
       "mini_only": true,
@@ -311141,11 +311146,11 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-23T17:17Z",
+        "at": "2026-11-23T17:22Z",
         "by": "gemini",
-        "note": "audio_input verified via read_file probe; v01 join 'A strong wind...' starts at 176.820s (-20.1 LUFS); dry-run confirmed"
+        "note": "Take 1 rejected by ear-check + Scribe/Whisper ('air supports' at 0:23.14). Authorized retake atlantic_black_pit_vo_picku"
       }
     },
     {
