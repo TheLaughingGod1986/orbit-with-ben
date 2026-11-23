@@ -314389,13 +314389,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-23T22:22Z",
-      "eta": "2026-11-24T00:22Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-23T22:07Z",
-      "result": "",
+      "result": "Chief KEEP for private UAT only; J2036 complete, exact NAS/iCloud master 744f32b7 and phone b1135b3d hashes match, delivered four gates PASS, flagged stills reviewed. OWB 1224/1225 and HOS 731 merged; HOS 719 closed. J2037 remains blocked with explicit Ben finished-cut watch hold, last_recheck J3455, due 24 Nov 18:00Z, and v03 watch card. No upload/schedule authorized. Ruling PR 1226.",
       "history": [
         {
           "at": "2026-11-23T22:07Z",
@@ -314446,6 +314446,11 @@
           "at": "2026-11-23T22:22Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-23T22:23Z",
+          "by": "codex",
+          "what": "done: Chief KEEP for private UAT only; J2036 complete, exact NAS/iCloud master 744f32b7 and phone b1135b3d hashes match, delivered four gates PASS, flagged stills reviewed. OWB 1224/1225 and HOS 731 merged; HOS 719 closed. J2037 remains blocked with explicit Ben finished-cut watch hold, last_recheck J3455, due 24 Nov 18:00Z, and v03 watch card. No upload/schedule authorized. Ruling PR 1226."
         }
       ],
       "remaining_action": "Parked for elected non-producer Chief Codex: review/merge PR #1224/#1225/HOS #731 (close #719), clear J2037 hold, arm Ben awaits_ben watch card, close J3455",
@@ -314471,7 +314476,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1226"
     }
   ],
   "focus": [
