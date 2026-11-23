@@ -313473,9 +313473,14 @@
           "at": "2026-11-23T20:04Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-23T20:06Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Step 1 done: fetched PR49 (2881569) & PR13 (19d0235), created detached worktree, verified stt_raw.json hash and visually inspected C09, C10, C27, C28, C31, C01."
         }
       ],
-      "remaining_action": "Inspecting WW2 PR49, PR13, and delivered archive photographs",
+      "remaining_action": "Aligning all 41 paragraphs to exact sentence-level Scribe timestamps and auditing every candidate sentence",
       "due": "2026-11-24T18:00:00Z",
       "kind": "review",
       "plain": "Match the torpedo film’s photographs to exact narration sentences",
@@ -313488,16 +313493,17 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-23T20:04Z",
+        "at": "2026-11-23T20:06Z",
         "by": "gemini",
         "plan": [
           "Inspect PR49/PR13 files and photo library",
           "Sentence-level timing & photo audit across 41 rows",
           "Verify visuals & compute honest coverage share",
           "Commit allocation evidence to PR49 & post Chief recommendation"
-        ]
+        ],
+        "note": "Step 1 done: fetched PR49 (2881569) & PR13 (19d0235), created detached worktree, verified stt_raw.json hash and visually"
       },
       "taskKeys": [
         "WW2:004"
