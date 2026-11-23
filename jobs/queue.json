@@ -1,5 +1,5 @@
 {
-  "next_id": 3448,
+  "next_id": 3449,
   "jobs": [
     {
       "id": "J0001",
@@ -312078,6 +312078,11 @@
           "at": "2026-11-23T20:02Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-24T18:00:00Z"
+        },
+        {
+          "at": "2026-11-23T20:15Z",
+          "by": "relay",
+          "what": "condition verification queued: J3448"
         }
       ],
       "remaining_action": "Await the sentence-level photo allocation review, then decide whether coverage is sufficient",
@@ -312109,7 +312114,8 @@
       "hold": {
         "type": "dependency",
         "condition": "J3447 must deliver its bounded sentence-level allocation and explicit coverage recommendation; then review that evidence against PR49 Chief ruling 2881569. Current 57.0% plan is not approved.",
-        "check_at": "2026-11-24T18:00:00Z"
+        "check_at": "2026-11-23T21:15:23+00:00",
+        "recheck_task": "J3448"
       }
     },
     {
@@ -313543,6 +313549,37 @@
         "WW2:004"
       ],
       "done_ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/49/commits/36821f8"
+    },
+    {
+      "id": "J3448",
+      "title": "Verify condition for J3429",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3429: J3447 must deliver its bounded sentence-level allocation and explicit coverage recommendation; then review that evidence against PR49 Chief ruling 2881569. Current 57.0% plan is not approved.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3429 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-23T20:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T20:15Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await the sentence-level photo allocation review, then decide whether coverage is sufficient",
+      "kind": "review",
+      "recheck_of": "J3429",
+      "due": "2026-11-23T21:15:23+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
