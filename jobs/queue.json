@@ -313676,7 +313676,7 @@
     {
       "id": "J3449",
       "title": "St Nazaire: revise the archive picture plan after the coverage review",
-      "needs": "any",
+      "needs": "mini",
       "repo": "ww2",
       "body": "Acting-Chief ruling on J3431, 23 Nov 2026: FIX. The 60-photo harvest is useful and verified, but 48.3% is not about two-thirds. Do not start J3432 or waive WW2 rule 1. This is a picture-plan/shot-list review, routed through kind review, not another broad image harvest.\n\nRead WW2 studio/RULES.md and studio/LEARNINGS.md. Work from ww2-channel PR50 (head e9e9aba before the Chief review commit), existing clean worktree /Volumes/MiniWork/scratch/J3431-wt, and script/maps PR15 at 9739bf4. Preserve narration, title, all NAS originals, and the single evidence PR50. Do not merge either PR as a worker.\n\nWithin one bounded 20-minute review pass:\n1. Review all 50 paragraphs against the 60-image inventory and maps. 46 distinct IDs are currently allocated; the remaining options are not automatically relevant. Replace percentage guesses with proposed shot seconds and exact image IDs, caption wording, crop/overlay and specific phrase they support. Review the proposed frame at delivery size for each newly used low-resolution image. All 101 files matched hashes/dimensions and decoded in the Chief review; do not redo the harvest or full checksum pass unless files change.\n2. Test whether relevant photographs can remain the principal picture while simple annotations explain real dock geometry, ship identity and equipment. Prioritise paragraphs 7-9, 11-15, 18-20, 22-30 and 43-50. Keep full-screen maps for actions that were not photographed. Do not extend unrelated training/crews across combat, label context as Chariot participants, inflate archive time for map-dominated frames, or hold the same aerial merely to hit a ratio. Count true photo-dominant seconds; show repetitions by image and consecutive map-only runs. A photograph need not depict an unphotographed action to establish its actual place or vessel, but that distinction must be explicit and narratively useful.\n3. Target about two-thirds (842.03 seconds of the current 1263.04-second basis), without changing runtime or speech. The current gap is 231.92 seconds. If a defensible allocation cannot reach this, report the honest maximum and precise remaining paragraphs/seconds. Do not invent a pass. Recommend one next action: a narrowly scoped official-source acquisition with an exact new catalogue/reference, or a concrete editorial alternative for Chief to decide. No repeat of the checked German/private/conversion/HU53260/unchanged-403 searches and no unbounded sourcing loop.\n4. Update PR50 picture plan and its JSON consistently, retain source/caption caveats and resolution flags, and resolve stale progress text. PR15 and PR50 both add ARCHIVE_PROVENANCE.md and change status.json: explicitly document the integration needed, without dropping either set of provenance. No unrelated film-stage approval. Return a KEEP/FIX recommendation with exact share and a small evidence sheet to Chief within 24 hours; if incomplete at the run cap, save a clean checkpoint.\n\n£0. No AI images, no new VO, no title change, no upload/Studio action, no NAS deletion. J3431 stays blocked pending this review and a recorded acceptance of a compliant plan; J3432 retains after J3431. A completed follow-up alone is not permission to edit.\n",
       "ref": "",
@@ -313706,6 +313706,11 @@
           "at": "2026-11-23T20:26Z",
           "by": "macbook-2",
           "what": "released: MacBook worker run on claude ended (exit 1) with the job still open; picked up again next run; claude paused on the MacBook until 2026-11-23T22:26:22Z, so the next run uses the next agent in the chain"
+        },
+        {
+          "at": "2026-11-23T20:27Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred codex): Claude out of usage (Claude said it's out of usage until 2026-11-23T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: codex on gpt-6-astra"
         }
       ],
       "remaining_action": "Revise the St Nazaire picture plan with relevant photographs and measured screen time",
@@ -313719,7 +313724,15 @@
         "by": "macbook-2",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
