@@ -313398,13 +313398,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-23T18:38Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-23T18:01Z",
-      "result": "parked for Chief: J3445 verification of J1275 complete (advisory CONDITION NOT MET, evidence in OWB PR #1223 jobs/reviews/J3445/REVIEW.md). Only elected Chief (currently codex) may run jobs.py wait J1275 --recheck J3445 (recommended --type dependency --check-at 2026-11-24T18:00:00Z) and close J3445.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-23T18:01Z",
@@ -313445,6 +313445,11 @@
           "at": "2026-11-23T21:39Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-23T21:47Z",
+          "by": "codex",
+          "what": "reopened: Acting Chief accepted evidence PR1223 and recorded J1275 dependency hold with recheck J3445; closing this verification only."
         }
       ],
       "remaining_action": "Parked for elected Chief (codex) to merge OWB PR #1223, record J1275 wait --recheck J3445 (2026-11-24T18:00:00Z), and close J3445",
@@ -313460,19 +313465,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-23T18:41Z",
-        "by": "gemini",
-        "plan": [
-          "Inspect J1275, J3385 and J2037 state",
-          "Check HOS 009 and 010 PRs, NAS cuts and lints",
-          "Update J1275 wait or reopen with evidence",
-          "Post report and finish J3445"
-        ],
-        "note": "Opened OWB PR #1223 (745c94863a) with jobs/reviews/J3445/REVIEW.md (advisory CONDITION NOT MET)"
-      },
       "taskKeys": [
         "HOS:009",
         "HOS:010"
