@@ -313561,10 +313561,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-23T20:16Z",
+      "eta": "2026-11-23T22:16Z",
       "created_by": "relay",
       "created_at": "2026-11-23T20:15Z",
       "result": "",
@@ -313578,6 +313578,11 @@
           "at": "2026-11-23T20:15Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred codex): Claude out of usage (Claude said it's out of usage until 2026-11-23T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: codex on gpt-6-astra"
+        },
+        {
+          "at": "2026-11-23T20:16Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Await the sentence-level photo allocation review, then decide whether coverage is sufficient",
@@ -313592,7 +313597,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-23T20:16Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
