@@ -309103,18 +309103,27 @@
           "at": "2026-11-23T08:27Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Analysed 2026-11-23 HOS analytics (7 public longs, 36 public Shorts, studio_ctr, channel_daily, LEARNINGS 1-41, J3224 search clusters) and checked all open HOS PRs (next free IDs: 132 & 133)"
+        },
+        {
+          "at": "2026-11-23T08:32Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Selected HOS:132 (Why Is Glass Transparent? (The Quantum Gap), 4/4 strictly on-topic >=1M edu neighbours incl. Veritasium 9.81M & TED-Ed 5.03M) and HOS:133 (How Was Quantum Physics Discovered? (The Lightbulb Problem), J3224 Cluster 2 #6, 11/13 strictly on-topic >=1M edu neighbours incl. 3 TED-Ed & PBS Space Time 2.05M)"
         }
       ],
-      "remaining_action": "Test top J3224 candidate topics with public_search.py and neighbours.py to pick 2 strongest HOS backlog films",
+      "remaining_action": "Verify 0-collision title/Short search evidence, build HOS:132 and HOS:133 folders from template, and validate with status_board.py --check",
       "kind": "script",
       "backlog": "hos-ideas",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-23T08:27Z",
+        "at": "2026-11-23T08:32Z",
         "by": "gemini",
-        "note": "Analysed 2026-11-23 HOS analytics (7 public longs, 36 public Shorts, studio_ctr, channel_daily, LEARNINGS 1-41, J3224 se"
-      }
+        "note": "Selected HOS:132 (Why Is Glass Transparent? (The Quantum Gap), 4/4 strictly on-topic >=1M edu neighbours incl. Veritasiu"
+      },
+      "taskKeys": [
+        "HOS:132",
+        "HOS:133"
+      ]
     }
   ],
   "focus": [
