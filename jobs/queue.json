@@ -1,5 +1,5 @@
 {
-  "next_id": 3447,
+  "next_id": 3448,
   "jobs": [
     {
       "id": "J0001",
@@ -313419,6 +313419,36 @@
       "taskKeys": [
         "OWB:034"
       ]
+    },
+    {
+      "id": "J3447",
+      "title": "WW2 004: resolve archive coverage with sentence-level photo allocation",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "# J3429 Chief ruling — 23 November 2026\n\nCodex, elected acting Chief. Reviewed PR49 at f37c9dae62432611260df3932ee5fc6ab0c92a80, its eight evidence files, the full queue history, J3430, PR13 relationship, current channel rules and thread through #7112338329. No prior ruling resolves this latest coverage hold.\n\n**FIX.** Accept the delivered-count milestone (50 photographs, supported by the worker's hash/dimension and visual receipts), not the picture stage. Independently summed all 41 timed rows: 1,358.32 retained seconds and 774.1054 proposed photo seconds = 56.9899%; 131.4413 additional seconds would reach two-thirds. No fresh full-library visual or hash audit is claimed. The current plan cannot release J3430. PR49 stays draft and unmerged; PR13's older provenance must not overwrite it.\n\n**Chosen next step: one bounded editorial allocation review, not another archive download pass.** The plan reserves entire paragraphs for diagrams even where some sentences describe an existing photographed object. Review the locked paragraph text and existing Scribe timing sentence by sentence. First examine P07/P08/P19/P29/P30/P33 against C09 (Mark 6 Mod 1) and C10 (early Mark 6), P09/P10/P11 against C27 (later exercise-body production), and P17 against C28/C31 (propeller assembly, not the pressure recorder). Then examine P21/P22 against C01/C18 (Gould Island context, not evidence of a particular test). These are candidate matches to test, not permission to assign invented seconds or assume that the full gap can close.\n\nFor each accepted interval, record the exact spoken sentence, start/end on retained VO, actual photograph ID, visible subject, honest context caption and why the image supports those words. Keep diagrams for the invisible mechanism, reported attack counts, pressure/depth errors and actual net/cliff/drop/Chesapeake events. A labelled object photograph may introduce or conclude an explanation; it is never proof that a fault or test was photographed. Do not add a faint photo behind a diagram to count the entire interval as archive. Do not count source scans, cards, diagrams, repeated crops as new photographs, overlapping intervals twice, or stretch holds solely to hit a percentage. Preserve the opening's pace and all provenance restrictions.\n\nThe review lane gets one 20-minute active editorial pass using existing files, with no download retries, generation, money, narration/title edits or rendering. Deliver a sentence-level allocation table and updated proposed share in this same PR; record unresolved sentences and the remaining shortfall if it cannot honestly reach about two-thirds. A partial improvement is not a PASS. The reviewer returns a concrete acceptance recommendation; the elected Chief resolves any remaining exception instead of cycling this same investigation. Actual cut coverage remains an assembler check after acceptance.\n\nOriginal J3429 remains held on that follow-up; J3430 remains after J3429. No failed gate is waived and nothing is sent to Ben for this internal decision. Audio and moving-video perception were not demonstrated in this Chief session; this is a text/evidence ruling.\n\nImplementation: work in a clean worktree on existing WW2 PR49, preserve all delivered media and the expanded provenance. Read SCRIPT.md/PARAGRAPH_LEDGER.json from PR13 and TIMING_ALIGNMENT_J3429.json from PR49. Commit only the revised allocation/evidence; no media in git. Record the recommendation and exact remaining action on the follow-up job and studio thread. Stop after this bounded pass, even if it finds the target infeasible. Do not start J3430 or mark J3429 done.\n",
+      "ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/49/commits/2881569",
+      "film": "WW2:004",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 25,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-23T20:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T20:01Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review exact narration intervals against delivered photographs and report an honest coverage total",
+      "due": "2026-11-24T18:00:00Z",
+      "kind": "review",
+      "plain": "Match the torpedo film’s photographs to exact narration sentences"
     }
   ],
   "focus": [
