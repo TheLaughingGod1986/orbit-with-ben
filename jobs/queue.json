@@ -312137,13 +312137,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-23T16:59Z",
-      "eta": "2026-11-23T18:59Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-23T16:41Z",
-      "result": "",
+      "result": "Chief ruling: CONDITION MET. Evidence PR 1218 merged; independent Mini original-image downloads decoded Commons C01 and Flickr C23 successfully with matching hashes. J3429 reopened with descriptive User-Agent, paced retrieval, provenance/visual checks and screen-time-gap instructions; J3430 remains dependent on J3429. No production PASS or external wait remains for this verification.",
       "history": [
         {
           "at": "2026-11-23T16:41Z",
@@ -312204,6 +312204,11 @@
           "at": "2026-11-23T16:59Z",
           "by": "codex",
           "what": "step 2 of 3 done: Chief review has its own review-progress checkpoints; fresh Mini download probes passed and evidence PR merged."
+        },
+        {
+          "at": "2026-11-23T16:59Z",
+          "by": "codex",
+          "what": "done: Chief ruling: CONDITION MET. Evidence PR 1218 merged; independent Mini original-image downloads decoded Commons C01 and Flickr C23 successfully with matching hashes. J3429 reopened with descriptive User-Agent, paced retrieval, provenance/visual checks and screen-time-gap instructions; J3430 remains dependent on J3429. No production PASS or external wait remains for this verification."
         }
       ],
       "remaining_action": "Record the archive download decision and finish the review",
@@ -312228,7 +312233,8 @@
       },
       "taskKeys": [
         "WW2:004"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1218"
     }
   ],
   "focus": [
