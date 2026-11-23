@@ -1,5 +1,5 @@
 {
-  "next_id": 3424,
+  "next_id": 3426,
   "jobs": [
     {
       "id": "J0001",
@@ -310573,7 +310573,7 @@
       "due": "2026-11-23T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
-      "urgent": 7,
+      "urgent": 6,
       "progress": {
         "step": 3,
         "of": 6,
@@ -310659,7 +310659,7 @@
       "due": "2026-11-23T16:00:00Z",
       "kind": "studio",
       "mini_only": true,
-      "urgent": 8,
+      "urgent": 7,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -310732,7 +310732,7 @@
       "remaining_action": "Await elected Chief (codex) v04 script lock and merge of ww2-channel PR #41 to unblock J3422",
       "due": "2026-11-24T12:00:00Z",
       "kind": "facts",
-      "urgent": 9,
+      "urgent": 8,
       "progress": {
         "step": 3,
         "of": 4,
@@ -310817,6 +310817,68 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3424",
+      "title": "Field Order History pilot 1: change the title to \"The Secret Floating Harbours of D-Day\" (title only, API)",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why (Ben, Mon 23 Nov ~13:20 London, in chat, on Claude's three recommendations (new pilot 1 title, the new standard, viewer-test films 3-6): \"I'll leave them choices up to you.\" Claude chose yes to all three. The standard is now in ww2-channel `studio/RULES.md` (PR #42, merged a5f2c34): read rules 2, 3, 4, 6 and 8 before any Field Order History work.)** Pilot 1's Studio data (J3418, PR #39): 97% of 957 impressions were suggested beside unrelated videos and search gave 14 impressions, 0 clicks. The title (69 characters) never says \"D-Day\", which is searched about 98,000 times a month. New rule 2: 50 characters or fewer, naming the thing viewers know.\n\n**Do now:**\n1. With Field Order History's login (YOUTUBE_REFRESH_TOKEN_WW2), read `ek9F61FVYqY`'s full snippet (videos.list part=snippet), change ONLY the title to exactly:\n   **The Secret Floating Harbours of D-Day**\n   and write back the full snippet unchanged otherwise (categoryId, description, tags, defaultLanguage, defaultAudioLanguage). Read it back: title exact; description length and text identical to before (2,973 characters unless J3419 has already updated the chapter lines; compare with what you read a moment earlier); tags identical.\n2. Leave the running thumbnail Test & Compare alone (it is thumbnail-only; a title change applies to all three arms equally). Note the exact UTC time of the change.\n3. Record in ww2-channel: `11_Upload-Package/TITLE_CHANGE_v01.md` (old title, new title, time, read-back) and the title field in the latest metadata file (J3419, the trim, may be writing metadata v44 today: if so, add the title to it instead of making a second version). One PR, Chief merge, one thread line. Put the change time in this job's result for the 48-hour read (J3414).\n\n**Guards.** Title only. No other field, no thumbnail, no privacy or schedule change. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 15,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-23T13:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T13:48Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Change pilot 1's title only and read back the full snippet",
+      "due": "2026-11-23T16:00:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "urgent": 9
+    },
+    {
+      "id": "J3425",
+      "title": "Field Order History films 3-6: copy each opening's narration text into git for Claude's viewer test (text only)",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why (Ben, Mon 23 Nov ~13:20 London, in chat, on Claude's three recommendations (new pilot 1 title, the new standard, viewer-test films 3-6): \"I'll leave them choices up to you.\" Claude chose yes to all three. The standard is now in ww2-channel `studio/RULES.md` (PR #42, merged a5f2c34): read rules 2, 3, 4, 6 and 8 before any Field Order History work.)** New rule 6: before a film is voiced, Claude reads its first 300 words as a stranger would. Films 3, 4, 5 and 6 (the B-29, the US submarine torpedoes, the St Nazaire raid and the Mosquito) are already voiced, so Claude will viewer-test their openings now and say where an opening needs a cut (free, in the edit) or a short re-voiced pickup. Their narration text is not in git, so Claude can't read it from the cloud.\n\n**Do (text only, about 15 minutes):**\n1. For each of the four films, from its locked narration file on the NAS (the one its voice-over was made from; for the B-29 film include any corrected lines from the C37 ruling if they are locked), copy the narration from the start up to the end of the first paragraph that ends after 3 minutes of voice (about 450 words), exactly as spoken.\n2. For each, also note: the working title and any packaging options in its script folder, the voice-over length and the chapter-1 end time, the planned air date, and which file the text came from.\n3. Put them in ww2-channel `00_Brand/OPENINGS_REVIEW_2026-11-23.md` (one section per film, text in quote blocks). One PR; merge as acting Chief (records only). Put the PR link in this job's result.\n\n**Guards.** Copy only: change no script, audio or edit. No secrets or local paths in the file beyond the film folder names. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-23T13:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T13:48Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Copy films 3-6 opening narration and titles into one review file",
+      "due": "2026-11-23T16:30:00Z",
+      "kind": "assembly",
+      "mini_only": true,
+      "urgent": 10
     }
   ],
   "focus": [
