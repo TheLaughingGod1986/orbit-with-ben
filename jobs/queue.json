@@ -1,5 +1,5 @@
 {
-  "next_id": 3446,
+  "next_id": 3447,
   "jobs": [
     {
       "id": "J0001",
@@ -281552,6 +281552,11 @@
           "at": "2026-11-23T10:27Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-23T18:10:00Z"
+        },
+        {
+          "at": "2026-11-23T18:31Z",
+          "by": "relay",
+          "what": "condition verification queued: J3446"
         }
       ],
       "remaining_action": "Resolve the recorded Pluto package export restriction, then reconcile the ledger and submit the existing package for final review",
@@ -281571,10 +281576,11 @@
       "hold": {
         "type": "input",
         "condition": "J3407 acting Chief codex ruling: CONDITION NOT MET. Accepted evidence PR 1207 (54606fc633). Checked 21 newer studio posts through 7097874847 and current approval board (updated 23 Nov 09:57Z): no explicit J3114 export approval. Local a12100797f remains clean; worker verified 12/12 package and 4/4 video hashes. Prior automatic approval review rejected public repository export twice; do not bypass through another worker or route. Recheck 23 Nov 18:10Z for explicit authorization. Once authorized, reconcile proposed ledger T041 to next unused ID (currently T044), then submit existing package for J3115 without rebuild. Preserve J3115/J3119 dependencies and UAT/Shorts holds.",
-        "check_at": "2026-11-23T18:10:00Z",
+        "check_at": "2026-11-23T19:31:24+00:00",
         "last_recheck": "J3407",
         "checked_at": "2026-11-23T10:27:54+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J3446"
       },
       "escalated_at": "2026-11-19T11:45Z"
     },
@@ -312998,6 +313004,37 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3446",
+      "title": "Verify condition for J3114",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3114: J3407 acting Chief codex ruling: CONDITION NOT MET. Accepted evidence PR 1207 (54606fc633). Checked 21 newer studio posts through 7097874847 and current approval board (updated 23 Nov 09:57Z): no explicit J3114 export approval. Local a12100797f remains clean; worker verified 12/12 package and 4/4 video hashes. Prior automatic approval review rejected public repository export twice; do not bypass through another worker or route. Recheck 23 Nov 18:10Z for explicit authorization. Once authorized, reconcile proposed ledger T041 to next unused ID (currently T044), then submit existing package for J3115 without rebuild. Preserve J3115/J3119 dependencies and UAT/Shorts holds.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3114 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-23T18:31Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-23T18:31Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Resolve the recorded Pluto package export restriction, then reconcile the ledger and submit the existing package for final review",
+      "kind": "review",
+      "recheck_of": "J3114",
+      "due": "2026-11-23T19:31:24+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
