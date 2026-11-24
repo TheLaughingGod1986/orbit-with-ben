@@ -1,5 +1,5 @@
 {
-  "next_id": 3603,
+  "next_id": 3604,
   "jobs": [
     {
       "id": "J0001",
@@ -326341,6 +326341,36 @@
       ],
       "autopsy": "6bbbvfCx6zY@48h",
       "plain": "Analyse why viewers stayed or left on \"What If Earth Stopped Spinning? (It's Already Slowing Do\" (48h) and write up to 3 fixes"
+    },
+    {
+      "id": "J3603",
+      "title": "Chief ruling on J3599 FIX review of Mulberry Short v01 and reopen J3542",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "Elected-Chief follow-on after J3599 independent review (OWB PR #1282, commit 0e4f5504892dc2325ea9a613b98ed5929e3efb48, jobs/reviews/J3599/REVIEW.md + EVIDENCE.json) of J3542 finished Mulberry harbour test Short v01 (SHA-256 30b6a3a3de762dcbb5d0ea941c275058c4bd284352ad0450312d2e3b9f85d11b).\n\nJ3599 verdict: **FIX** (rebuild to v02 at GBP 0.00 before Ben's Wed 25 Nov 20:00 UTC watch deadline; do not put v01 on Ben's watch card). J3542 remains blocked because only the elected Chief may release a held job or merge PRs.\n\nBlocking defects verified directly on the NAS master, captions.ass, archive originals, and 14 extracted 1080x1920 frames:\n1. **11 overlapping ASS caption pairs (14 dual-caption frames at 25 fps)** with visually confirmed garbled collisions at frame 162 (6.48s) and frame 683 (27.32s), plus all 5 shot cuts splitting captions mid-sentence across VO pauses; fix spelling to Farthest and Spud pierheads.\n2. **3.20x-3.67x archive upscales** exceeding Pilot 1's 2.35x provenance cap (A_25814 3.20x, A_24159 3.671x, IWM_H_39297 3.447x) plus Shot 0 and Shot 2 duplicating B_5726_30887292.jpg across 40% of runtime, when cleared high-res originals already exist on the NAS (80_G_285141.jpg 2662x2142 for Spud pierheads; A_24675_25086141.jpg 2480x1673 / BU_1024_24494355.jpg 4580x4590 for overview; IWM_H_39300.jpg 2746x2480 / IWM_H_38675.jpg 1868x1772 / IWM_H_37606.jpg 3496x3508 to split Phoenix caissons; native 9:16 code schematic or <=2.35x cleared framing for Bombardons/Gooseberries without blurred padding).\n3. **Shorts mobile UI safe-zone collision**: Credit (MarginV=230) sits behind YouTube's bottom chrome / Related Video pill; Caption (MarginV=335) sits too low. Raise Caption to MarginV=520 and move Credit clear of bottom 420px chrome.\n4. **GBP 0 polish**: mix Pilot 1 score bed (05_Music/original_score_v01/engineering_v01.mp3) softly under VO to remove 1.40s and 1.17s digital dead silence, and encode standard 48000 Hz stereo AAC.\n\nExact Chief actions:\n1. Review and merge OWB PR #1282 (0e4f55048).\n2. Reopen held J3542 with the exact v02 fix list from jobs/reviews/J3599/REVIEW.md (writing Mulberry_Test_v02 without touching v01, zero new ElevenLabs spend — reuse locked body VO + existing 94-char pickup), keeping Ben watch deadline Wed 25 Nov 20:00 UTC and planned air Thu 26 Nov 12:00 London. (Or, if Chief explicitly overrides to KEEP v01, register Short watch card WW2:001-S1 preserving live long WW2:001.)\n3. Coordinate Claude Code privacy-review and publish handoff for local Mini branches codex/J3542 (e43f0d3) and codex/J3542-ledger (c3129faa3e) once final records land.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J3599",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T18:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T18:14Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review and merge OWB PR #1282, then reopen J3542 for v02 rebuild",
+      "due": "2026-11-25T16:00:00Z",
+      "kind": "chief",
+      "plain": "Review the Mulberry Short fix list and reopen the build for v02"
     }
   ],
   "focus": [
