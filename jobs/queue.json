@@ -317148,16 +317148,21 @@
           "at": "2026-11-24T09:46Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Inspected ww2-channel PR #61 (macbook/J3473 c9adb40): verified SCRIPT.md (69 claims C01-C69), SOURCES.md (3 flagged items), NARRATION_v01.txt (18,747 stripped chars <= 21,000; SHA-256 ba3005abe486b4f7a5b57c77b1fac0458d089517fb0114de10c91a8d803df568), and sister PR #66 convention."
+        },
+        {
+          "at": "2026-11-24T09:54Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Completed independent primary/official-source audit of all 69 claims (C01-C69) and all 3 flagged items (C10 Churchill 'bloody fool', C39 21 lb dry ice verified, C59 1st Parachute Div error + Greece 1->8 vs Balkans 8->18 scope). Found 60 PASS and 9 FLAG pre-lock fixes (C05, C10, C13, C14, C40, C50, C57, C59, C63). Confirmed NARRATION_v01.txt parity (38/38 paras, 18,747 spoken chars <= 21,000, SHA-256 matched)."
         }
       ],
-      "remaining_action": "Auditing all 69 claims (C01-C69) and the 3 flagged items in SOURCES.md against primary/official sources",
+      "remaining_action": "Writing 01_Script/CLAIMS_CHECK.md and updating status.json in a clean ww2-channel worktree",
       "due": "2026-11-27T18:00:00Z",
       "kind": "facts",
       "plain": "Check every fact, date and number in WW2 film 008 Operation Mincemeat before script lock",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-24T09:46Z",
+        "at": "2026-11-24T09:54Z",
         "by": "gemini",
         "plan": [
           "Inspect PR #61 script and sources",
@@ -317165,7 +317170,7 @@
           "Write CLAIMS_CHECK.md and update status.json",
           "Open ww2-channel PR and report"
         ],
-        "note": "Inspected ww2-channel PR #61 (macbook/J3473 c9adb40): verified SCRIPT.md (69 claims C01-C69), SOURCES.md (3 flagged item"
+        "note": "Completed independent primary/official-source audit of all 69 claims (C01-C69) and all 3 flagged items (C10 Churchill 'b"
       },
       "taskKeys": [
         "WW2:008"
