@@ -1,5 +1,5 @@
 {
-  "next_id": 3543,
+  "next_id": 3544,
   "jobs": [
     {
       "id": "J0001",
@@ -292068,6 +292068,11 @@
           "at": "2026-11-20T23:34Z",
           "by": "gemini",
           "what": "deadline: 2026-12-07T18:00:00Z"
+        },
+        {
+          "at": "2026-11-24T14:46Z",
+          "by": "claude",
+          "what": "Field Order History half done (scheduled task, 24 Nov): 05_Analytics/ww2/search_research/2026-11-24.md (PR #1263). WW2 top 3: Pearl Harbor salvage, Battle of the Bulge (narrow question), Higgins boat. Credits 50/50. Fed into J3487 (016) and J3543 (017). Orbit half (100 credits) still to run by 7 Dec."
         }
       ],
       "remaining_action": "Run weekly vidIQ search research for Orbit and Field Order History",
@@ -317896,6 +317901,11 @@
           "at": "2026-11-24T09:50Z",
           "by": "claude",
           "what": "Calendar moved up one slot to fill Sat 28 Nov (Ben); films 11-17 now start Thu 17 Dec."
+        },
+        {
+          "at": "2026-11-24T14:46Z",
+          "by": "claude",
+          "what": "Films 11-17 topics: 011-015 as queued; 016 now Battle of the Bulge (J3487, Bletchley NO-GO), 017 Pearl Harbor salvage (J3543); January ranked list (Higgins boat, Red Ball Express, Market Garden, Omaha Beach) in 05_Analytics/ww2/search_research/2026-11-24.md."
         }
       ],
       "remaining_action": "Write THREE_A_WEEK_2026-12.md, films 011-016 folders, and studio/plan.json updates",
@@ -318476,22 +318486,22 @@
     },
     {
       "id": "J3487",
-      "title": "WW2 film 016: topic check, packaging first, script and sources, to lock by 2026-12-18",
-      "needs": "mini",
+      "title": "WW2 film 016: topic check, packaging first, script and sources, to lock by 2026-12-16",
+      "needs": "any",
       "repo": "ww2",
-      "body": "**Why (Ben, Tue 24 Nov ~09:35 London: \"So from 1st of December, let's do 3 a week.\").** Field Order History airs three films a week (Tue, Thu, Sat at 17:00 London) from Tue 1 Dec (slot map in `00_Brand/THREE_A_WEEK_2026-12.md`). This film's slot is **Thu 31 Dec 17:00**; its script must be locked by **2026-12-18 18:00** (13 days before air) so it can be voiced, harvested and edited to reach Ben's watch three days before air.\n\n**Topic & series:** `016_Bletchley-Park-Enigma-Bombe` — working title *\"How Bletchley Park Cracked the Enigma Machine\"* (45 chars), series **Deception**, selected from `00_Brand/VIDEO_BACKLOG.json` using Pilot 1 data, `PACKAGING_FINDINGS.md` (`J3005`, 1,020 videos) and the 17 Nov vidIQ outlier study. Incorporate Pilot 2's 48h/7d numbers and `studio/LEARNINGS.md` updates at topic check.\n- **Primary US/UK official archives:** UK IWM Admiralty/War Office (U-110 / HMS Bulldog Enigma capture, Bletchley Park Wrens, Bombe/Colossus Crown-expired photos) + UK TNA HW series + US NARA RG 80-G (U-505 & US Navy Bombe)\n\n**Do, to the channel's rules (ww2-channel `studio/RULES.md` 1-6 and 12, `studio/LEARNINGS.md`, `00_Brand/PLAYBOOK.md`):**\n1. **Topic check** (reviewer rubric, AGENTS.md E): no near-duplicate on our channel; audience evidence (vidIQ search demand for the thing's name, comparable videos' views, Pilot 1 & 2 learnings); enough US/UK official archive photographs to carry at least half the screen time (list 15 real candidates with IDs now). If the topic fails, say so and propose an alternative from `00_Brand/VIDEO_BACKLOG.json`.\n2. **Packaging first (rule 2):** three titles of 50 characters or fewer naming the thing viewers know (score them), three thumbnail ideas with one subject filling the frame at 168 px. Pick one title.\n3. **Script:** a story, not a list (rule 4); the first two minutes per rule 3 (a concrete moment by 0:30, the promise by 0:45, the story moving by 1:00, no detours, the title's answer kept for later); plain words, one figure at a time; length follows the story, at most 21,000 spoken characters (rule 9 — or 35-45 min only if Ben has upgraded ElevenLabs). `01_Script/SCRIPT.md`, `NARRATION_v01.txt`, `SOURCES.md` with every claim sourced.\n4. **Claims check** (Gemini, facts lane) and **Claude's viewer test of the first 300 words** (rule 6) before it is locked; then queue the voice-over.\n5. One ww2-channel PR per stage; update the film's `status.json` stages as you go (nothing syncs them automatically).\n\n**Guards.** No voice credits spent in this script job. £0.\n",
+      "body": "**Why (Ben, Tue 24 Nov ~09:35 London: \"So from 1st of December, let's do 3 a week.\").** Field Order History airs three films a week (Tue, Thu, Sat at 17:00 London) from Tue 1 Dec (slot map in `00_Brand/THREE_A_WEEK_2026-12.md`). This film's slot is **Thu 31 Dec 17:00**; its script must be locked by **2026-12-18 18:00** (13 days before air) so it can be voiced, harvested and edited to reach Ben's watch three days before air.\n\n**Topic & series:** `016_Bletchley-Park-Enigma-Bombe` — working title *\"How Bletchley Park Cracked the Enigma Machine\"* (45 chars), series **Deception**, selected from `00_Brand/VIDEO_BACKLOG.json` using Pilot 1 data, `PACKAGING_FINDINGS.md` (`J3005`, 1,020 videos) and the 17 Nov vidIQ outlier study. Incorporate Pilot 2's 48h/7d numbers and `studio/LEARNINGS.md` updates at topic check.\n- **Primary US/UK official archives:** UK IWM Admiralty/War Office (U-110 / HMS Bulldog Enigma capture, Bletchley Park Wrens, Bombe/Colossus Crown-expired photos) + UK TNA HW series + US NARA RG 80-G (U-505 & US Navy Bombe)\n\n**Do, to the channel's rules (ww2-channel `studio/RULES.md` 1-6 and 12, `studio/LEARNINGS.md`, `00_Brand/PLAYBOOK.md`):**\n1. **Topic check** (reviewer rubric, AGENTS.md E): no near-duplicate on our channel; audience evidence (vidIQ search demand for the thing's name, comparable videos' views, Pilot 1 & 2 learnings); enough US/UK official archive photographs to carry at least half the screen time (list 15 real candidates with IDs now). If the topic fails, say so and propose an alternative from `00_Brand/VIDEO_BACKLOG.json`.\n2. **Packaging first (rule 2):** three titles of 50 characters or fewer naming the thing viewers know (score them), three thumbnail ideas with one subject filling the frame at 168 px. Pick one title.\n3. **Script:** a story, not a list (rule 4); the first two minutes per rule 3 (a concrete moment by 0:30, the promise by 0:45, the story moving by 1:00, no detours, the title's answer kept for later); plain words, one figure at a time; length follows the story, at most 21,000 spoken characters (rule 9 — or 35-45 min only if Ben has upgraded ElevenLabs). `01_Script/SCRIPT.md`, `NARRATION_v01.txt`, `SOURCES.md` with every claim sourced.\n4. **Claims check** (Gemini, facts lane) and **Claude's viewer test of the first 300 words** (rule 6) before it is locked; then queue the voice-over.\n5. One ww2-channel PR per stage; update the film's `status.json` stages as you go (nothing syncs them automatically).\n\n**Guards.** No voice credits spent in this script job. £0.\n\n\n**Update (Claude, acting Chief, 24 Nov ~15:20 UTC): new topic, and the date is corrected.** Ben, Tue 24 Nov, in chat after pilot 1's 32 views: \"What's the fix going forward for this video and other videos, knowing what we know now?\" (\"thousands of views ideally\"). Weekly search research (J3231, Field Order History half, 50/50 vidIQ credits) in orbit-with-ben `05_Analytics/ww2/search_research/2026-11-24.md` (PR #1263).\n- Bletchley is closed: J3541's reviewer NO-GO on archive coverage (ww2 PR #85). Close PR #84 as superseded when this job opens its topic PR.\n- **Slot corrected:** after the calendar moved up one slot (Ben, 24 Nov ~09:55), film 016 airs **Tue 29 Dec 17:00 London**, so its script locks by **Wed 16 Dec 18:00** (13 days before air).\n- **New topic: Battle of the Bulge, told through one narrow engineering or logistics question.** The broad story is held by big channels (HISTORY, Real Time History, IWM, The Operations Room), so pick one of these at topic check:\n  - Patton turning the Third Army north to relieve Bastogne;\n  - the proximity fuze's first use on land.\n- **Demand:** \"battle of the bulge\" gets 135,980 searches a month (US among its top three markets). \"battle of the bulge documentary\" gets 8,206 at competition 38. The film airs during the anniversary (16 Dec to 25 Jan; Bastogne relieved 26 Dec).\n- **Archive:** NARA RG 111 Signal Corps film and stills.\n- **Title ideas:**\n  - *Battle of the Bulge: How Patton Turned in 48 Hours*\n  - *How Patton Turned an Army North to Save Bastogne*\n  - *Battle of the Bulge: The Fuze Germany Never Saw*\n\n**Do, to the channel's rules (ww2-channel `studio/RULES.md` 1-6 and 12, `studio/LEARNINGS.md`, `00_Brand/PLAYBOOK.md`):**\n1. **Topic check** (reviewer rubric, AGENTS.md E): no near-duplicate on our channel; audience evidence (the research file above, plus pilots 1 and 2); enough US/UK official archive photographs and film to carry at least half the screen time (list 15 real candidates with IDs now). If it fails, say so and take the next topic from the research file's ranked list (Higgins boat, Red Ball Express, Market Garden).\n2. **Packaging first (rule 2):** three titles of 50 characters or fewer that carry the searched phrase (start from the research file's ideas; never copy the top-ranking video's title words, pilot 1's lesson), three thumbnail ideas with one subject filling the frame at 168 px. Pick one title.\n3. **Script:** a story, not a list (rule 4); the first two minutes per rule 3; plain words, one figure at a time; at most 21,000 spoken characters (rule 9). `01_Script/SCRIPT.md`, `NARRATION_v01.txt`, `SOURCES.md` with every claim sourced.\n4. **Shorts:** name two or three engineering Shorts from the same film (the research file lists the ones working now) in `status.json`, to air in the days before the long film and link to it.\n5. **Claims check** (Gemini, facts lane) and **Claude's viewer test of the first 300 words** (rule 6) before it is locked; then queue the voice-over.\n6. One ww2-channel PR per stage; add the film to `00_Brand/VIDEO_BACKLOG.json`; update the film's `status.json` stages as you go.\n\n**Guards.** No voice credits spent in this script job. No change to films 001-015, the schedule or the format tests. £0.",
       "ref": "",
       "film": "WW2:016",
       "stage": "script",
       "after": "",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-24T14:14Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-24T09:37Z",
-      "result": "Topic-stage PR ww2-channel #84 open; J3541 must establish relevant official archive coverage of at least half the Bletchley film by 2026-11-25 14:30 UTC. Demand and packaging recorded; script and lock reviews not started. No VO queued.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-24T09:37Z",
@@ -318522,38 +318532,18 @@
           "at": "2026-11-24T14:22Z",
           "by": "macbook",
           "what": "blocked: Topic-stage PR ww2-channel #84 open; J3541 must establish relevant official archive coverage of at least half the Bletchley film by 2026-11-25 14:30 UTC. Demand and packaging recorded; script and lock reviews not started. No VO queued."
+        },
+        {
+          "at": "2026-11-24T14:46Z",
+          "by": "claude",
+          "what": "reopened: New topic from the 24 Nov search research: Battle of the Bulge (Bletchley NO-GO in J3541). Air date corrected to Tue 29 Dec; script lock Wed 16 Dec."
         }
       ],
-      "remaining_action": "Resolve Bletchley archive coverage at topic review; demand research and packaging concepts are recorded",
-      "due": "2026-12-18T18:00:00Z",
+      "remaining_action": "Topic check, packaging and script for the Battle of the Bulge film",
+      "due": "2026-12-16T18:00:00Z",
       "kind": "script",
-      "plain": "Research, package and write the script for WW2 film 016 (Bletchley Park and cracking the Enigma machine)",
-      "rerouted_from": {
-        "needs": "any",
-        "for": "",
-        "model": "",
-        "status": "open",
-        "by": ""
-      },
-      "open_claim": true,
-      "progress": {
-        "step": 0,
-        "of": 5,
-        "at": "2026-11-24T14:20Z",
-        "by": "macbook",
-        "plan": [
-          "Check topic and archives",
-          "Choose title and thumbnail concepts",
-          "Draft sourced narration",
-          "Obtain claims and opening reviews",
-          "Open stage pull request and hand off"
-        ]
-      },
-      "hold": {
-        "type": "input",
-        "condition": "Topic-stage PR ww2-channel #84 open; J3541 must establish relevant official archive coverage of at least half the Bletchley film by 2026-11-25 14:30 UTC. Demand and packaging recorded; script and lock reviews not started. No VO queued.",
-        "check_at": "2026-11-24T20:22:19+00:00"
-      }
+      "plain": "Research, package and write the script for WW2 film 016 (Battle of the Bulge, one engineering or logistics question)",
+      "open_claim": true
     },
     {
       "id": "J3488",
@@ -322429,6 +322419,36 @@
       "kind": "assembly",
       "mini_only": true,
       "urgent": 13
+    },
+    {
+      "id": "J3543",
+      "title": "WW2 film 017: topic check, packaging first, script and sources, to lock by 2026-12-18",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "**Why (Ben, Tue 24 Nov, in chat after pilot 1's 32 views: \"What's the fix going forward for this video and other videos, knowing what we know now?\" (\"thousands of views ideally\"). Weekly search research (J3231, Field Order History half, 50/50 vidIQ credits) in orbit-with-ben `05_Analytics/ww2/search_research/2026-11-24.md` (PR #1263).)** Field Order History airs three films a week. After the calendar moved up one slot (Ben, 24 Nov ~09:55: \"one today, Tuesday 24th, one Saturday 28th, and then Tuesday the 1st...\"), films 11-17 fill Thu 17 to Thu 31 Dec. J3479 finished before that change, so film 017 was never queued. Its slot is **Thu 31 Dec 17:00 London**, and its script locks by **Fri 18 Dec 18:00** (13 days before air).\n\n**Topic: Pearl Harbor salvage, how the US Navy raised the sunk battleships.** Ranked first in the research.\n- **Demand:** \"pearl harbor\" gets 267,002 searches a month (up 122% now). \"pearl harbor documentary\" gets 17,726 at competition 44. \"pearl harbor attack\" gets 36,989 at 38.\n- **Results-page gap 6 of 10:** four strong videos (Drachinifel 2020; Oceanliner Designs Dec 2025, 1.76M), the rest small or off-target.\n- **Proof:** Ivan's Engineering (1,410 subscribers) got 521,874 views (530x) on this exact story on 12 Oct 2026.\n- **Different first moment:** ours must lead with a different first moment than those two recent films, and must not reuse their title words beyond \"Pearl Harbor\" and \"battleships\".\n- **Archive:** NHHC post-attack ship salvage photo series, NARA RG 80-G, US Navy film.\n- **Title ideas:**\n  - *How the US Raised Pearl Harbor's Sunk Battleships*\n  - *Pearl Harbor: How the Sunk Fleet Came Back*\n  - *The Pearl Harbor Battleships Japan Failed to Kill*\n- **Shorts ideas:**\n  - why Japan's torpedoes needed wooden fins;\n  - righting a capsized battleship with winches.\n\n**Do, to the channel's rules (ww2-channel `studio/RULES.md` 1-6 and 12, `studio/LEARNINGS.md`, `00_Brand/PLAYBOOK.md`):**\n1. **Topic check** (reviewer rubric, AGENTS.md E): no near-duplicate on our channel; audience evidence (the research file above, plus pilots 1 and 2); enough US/UK official archive photographs and film to carry at least half the screen time (list 15 real candidates with IDs now). If it fails, say so and take the next topic from the research file's ranked list (Higgins boat, Red Ball Express, Market Garden).\n2. **Packaging first (rule 2):** three titles of 50 characters or fewer that carry the searched phrase (start from the research file's ideas; never copy the top-ranking video's title words, pilot 1's lesson), three thumbnail ideas with one subject filling the frame at 168 px. Pick one title.\n3. **Script:** a story, not a list (rule 4); the first two minutes per rule 3; plain words, one figure at a time; at most 21,000 spoken characters (rule 9). `01_Script/SCRIPT.md`, `NARRATION_v01.txt`, `SOURCES.md` with every claim sourced.\n4. **Shorts:** name two or three engineering Shorts from the same film (the research file lists the ones working now) in `status.json`, to air in the days before the long film and link to it.\n5. **Claims check** (Gemini, facts lane) and **Claude's viewer test of the first 300 words** (rule 6) before it is locked; then queue the voice-over.\n6. One ww2-channel PR per stage; add the film to `00_Brand/VIDEO_BACKLOG.json`; update the film's `status.json` stages as you go.\n\n**Guards.** No voice credits spent in this script job. No change to films 001-015, the schedule or the format tests. £0.",
+      "ref": "",
+      "film": "WW2:017",
+      "stage": "script",
+      "after": "",
+      "eta_min": 240,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T14:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T14:46Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Topic check, packaging and script for the Pearl Harbor salvage film",
+      "due": "2026-12-18T18:00:00Z",
+      "kind": "script",
+      "plain": "Research, package and write the script for WW2 film 017 (Pearl Harbor salvage: raising the sunk battleships)"
     }
   ],
   "focus": [
