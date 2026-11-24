@@ -318313,19 +318313,29 @@
           "at": "2026-11-24T11:22Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T11:23Z",
+          "by": "macbook",
+          "what": "step 1 of 5 done"
         }
       ],
-      "remaining_action": "WW2 film 010: independent Gemini claims check on SCRIPT.md and SOURCES.md (PR #69)",
+      "remaining_action": "Inspecting PR #69 script, sources, and channel conventions",
       "due": "2026-12-01T18:00:00Z",
       "kind": "facts",
       "plain": "Fact-check every claim and figure in WW2 film 010 script against primary official histories",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T10:12Z",
+        "step": 1,
+        "of": 5,
+        "at": "2026-11-24T11:23Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect PR 69 files",
+          "Audit all 29 claims",
+          "Write claims check",
+          "Update status and open PR",
+          "Finish job and report"
+        ]
       }
     },
     {
