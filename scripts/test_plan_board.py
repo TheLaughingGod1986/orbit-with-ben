@@ -69,9 +69,10 @@ class PlanBoardTest(unittest.TestCase):
         hos = block["plans"][3]
         self.assertEqual(hos["id"], "hos-search-2027-01")
         self.assertEqual(hos["channel"], "hos")
-        self.assertEqual(hos["steps"][0]["stand"], "Waiting for your lock")
-        self.assertTrue(hos["steps"][0]["needsYou"])
-        self.assertIn("1 thing needs you:", hos["card"]["needs"])
+        # Ben approved the plan in chat on 24 Nov 2026, so its lock step is done and it asks him for nothing.
+        self.assertEqual(hos["steps"][0]["stand"], "Done")
+        self.assertFalse(hos["steps"][0]["needsYou"])
+        self.assertEqual(hos["card"]["needs"], "")
         self.assertEqual(hos["baseline"]["best"], "Best long so far: 162 views")
         self.assertEqual(hos["baseline"]["showings"],
                          "All 7 longs: about 2,185 showings (read 20 Nov)")
