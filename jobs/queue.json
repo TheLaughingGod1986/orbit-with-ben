@@ -326779,9 +326779,14 @@
           "at": "2026-11-24T18:49Z",
           "by": "codex",
           "what": "step 2 of 3 done: Log at 18:46:46Z confirms second-run spawn; runner-1 ready at 18:47:25Z, matching installed 253c7fe66b787b2f. Only execution-0 is live (Codex/J3607). Memory allows another slot: 3.459 GiB, threshold 3 GiB. Other CLI workers remain marked down; no concurrent execution claimed."
+        },
+        {
+          "at": "2026-11-24T18:50Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Verification report posted as thread comment 7141216261. Spawn and version match verified; final concurrency check still requires two live different-worker leases, unavailable while every other CLI worker is down."
         }
       ],
-      "remaining_action": "Recording the successful second-run spawn and worker-availability limit",
+      "remaining_action": "Confirming simultaneous jobs once a second CLI worker is available",
       "due": "2026-11-24T21:00:00Z",
       "kind": "assembly",
       "mini_only": true,
@@ -326789,14 +326794,14 @@
       "progress": {
         "step": 2,
         "of": 3,
-        "at": "2026-11-24T18:49Z",
+        "at": "2026-11-24T18:50Z",
         "by": "codex",
         "plan": [
           "Check installed runner",
           "Verify two live slots",
           "Record outcome"
         ],
-        "note": "Log at 18:46:46Z confirms second-run spawn; runner-1 ready at 18:47:25Z, matching installed 253c7fe66b787b2f. Only execu"
+        "note": "Verification report posted as thread comment 7141216261. Spawn and version match verified; final concurrency check still"
       }
     },
     {
