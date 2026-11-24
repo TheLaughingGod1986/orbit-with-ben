@@ -324812,13 +324812,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-24T21:17Z",
-      "eta": "2026-11-24T23:17Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-24T16:20Z",
-      "result": "",
+      "result": "Chief ruling: CONDITION NOT MET. Parent J3430 remains held; last_recheck J3560 recorded. Follow-up chain J3623 delivery repair -> J3624 full audiovisual QA -> J3625 Chief delivery decision and watch staging. No film PASS. Review complete.",
       "history": [
         {
           "at": "2026-11-24T16:20Z",
@@ -324874,6 +324874,11 @@
           "at": "2026-11-24T21:17Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T21:17Z",
+          "by": "codex",
+          "what": "done: Chief ruling: CONDITION NOT MET. Parent J3430 remains held; last_recheck J3560 recorded. Follow-up chain J3623 delivery repair -> J3624 full audiovisual QA -> J3625 Chief delivery decision and watch staging. No film PASS. Review complete."
         }
       ],
       "remaining_action": "Chief (codex) to review OWB PR #1268, reconcile/merge ww2 PR #94 (status.json/conflicts), close PR #60, and record J3430 hold/awaits",
