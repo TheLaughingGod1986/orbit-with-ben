@@ -316953,9 +316953,14 @@
           "at": "2026-11-24T09:48Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T09:49Z",
+          "by": "macbook",
+          "what": "step 1 of 5 done"
         }
       ],
-      "remaining_action": "Check the topic, write the packaging first, then the script and sources",
+      "remaining_action": "Verify Operation Pedestal demand, primary sources, and 15+ official archive photo IDs",
       "due": "2026-12-02T18:00:00Z",
       "kind": "script",
       "rerouted_from": {
@@ -316967,12 +316972,17 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T09:48Z",
+        "step": 1,
+        "of": 5,
+        "at": "2026-11-24T09:49Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Topic check and archive IDs",
+          "Packaging first",
+          "Script and sources",
+          "Verify counts and status",
+          "Open PR and report"
+        ]
       }
     },
     {
