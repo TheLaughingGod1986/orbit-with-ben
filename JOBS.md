@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J2529, J3430, J3431, J3432, J3434, J3496, J3501, J3519, J3500, J3205, J3530.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J2529, J3430, J3431, J3432, J3434, J3496, J3501, J3519, J3500, J3205, J3530, J3542.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -98,6 +98,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3539 | mini | open (after J3538) | – | – | 064 script · review · OWB 064: Verify v03 sources and decide exact script lock | J3520 |
 | J3540 | mini | open (after J3414) | – | – | WW2:001 upload · studio · Field Order History pilot 1: title test naming the Mulberry harbours (search), after the 48-hour read |  |
 | J3541 | any | claimed | macbook-2 | 2026-11-24T16:26Z | WW2:016 topic · review · WW2 016: resolve archive coverage and issue topic verdict |  |
+| J3542 | mini | open | – | – | WW2:001 edit · assembly · Field Order History: one test Short on the Mulberry harbours, cut from pilot 1, pointing to the full film |  |
 
 Recently finished:
 
