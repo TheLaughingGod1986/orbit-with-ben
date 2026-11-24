@@ -1,5 +1,5 @@
 {
-  "next_id": 3564,
+  "next_id": 3565,
   "jobs": [
     {
       "id": "J0001",
@@ -324183,6 +324183,36 @@
         ],
         "note": "Locked 20 Shorts (002-010) + 1 reserve with exact word-level timecodes, verified PD photos and <=50-char Rule-2 titles"
       }
+    },
+    {
+      "id": "J3564",
+      "title": "HOS 137 Accidental Inventions (Thu 24 Dec): independent facts audit of v01 script, SOURCES.md & Shorts (PR #754)",
+      "needs": "gemini",
+      "repo": "hos",
+      "body": "Run an independent `facts` lane (`gemini-agy`) audit on the `HOS:137` (*Accidental Inventions: 5 Mistakes That Worked*, Cluster 3 Film 3, target Thu 24 Dec 2026 18:00 London) script draft v01, `SOURCES.md`, `FACT_NOTES_v01.md`, and `SHORTS_SCRIPTS_v01.md` in **HOS PR `#754`** (`gemini/J3513-hos137-script`, commit `1ae0da81`, built on `origin/main` + `origin/macbook/J3503`).\n\n**Files to audit in HOS PR `#754` (`02_Video-Projects/137_Accidental-Inventions-That-Changed-The-World/`):**\n- `01_Script/accidental_inventions_script_master_v01.md` (`1,225` words, `8.2` min, `review:script` PASS `92.6/100`, `gate:episode` PASS)\n- `01_Script/SOURCES.md`\n- `01_Script/FACT_NOTES_v01.md` (`24` rows)\n- `10_Shorts/SHORTS_SCRIPTS_v01.md` (`S01` 46w & `S02` 43w, 16–19 s house rules)\n\n**Check every claim, date, lifespan, role, and all 6 `J3503` guardrails:**\n1. **Greatbatch (1956) precision:** Verify `10 kΩ` intended vs `1 MΩ` grabbed (`100×` error), `1.8 ms` pulse / `1 s` pause, heart-sound recording oscillator, Buffalo VA Hospital surgeons **William Chardack** (`1914–2006`) & **Andrew Gage** (`1922–2024`) (`May 1958` dog test, `April 1960` human implant, `U.S. Patent 3,057,356`), and distinction from **Rune Elmqvist** (`1906–1996`) & **Åke Senning's** (`1915–2000`) October 1958 Swedish rechargeable implant (never overclaim \"first pacemaker ever\").\n2. **Goodyear (1839) prepared mind:** Verify Woburn, Massachusetts (`1839`) hot-stove spill followed years of obsessive sulfur/nitric-acid/white-lead trials, `U.S. Patent 3,633` (`15 June 1844`), `1860` death nearly `$200,000` in debt, and `1898` naming of Goodyear Tire & Rubber (`38 years` later, not founded by him).\n3. **Bénédictus (1903 → 1909) timeline separation:** Verify `1903` Paris evaporated cellulose-nitrate/collodion glass flask fall kept strictly separate from `November 1909` Triplex patent (`FR 405,881`, `U.S. Patent 1,098,342`), `1911` company, and WWI gas-mask eyepiece adoption.\n4. **Fleming (1928) + Oxford team (1939–1941):** Verify `3 September 1928` St Mary's Hospital account, `June 1929` *Br J Exp Pathol* paper (`PMC2048009`), explicit credit to **Howard Florey**, **Ernst Chain**, and **Norman Heatley** (`25 May 1940` eight-mouse proof, `1940–1941` *The Lancet*), and strictly historical lab-discovery framing (zero vaccine or medical-advice claims).\n5. **Silver (1968) & Fry (1974) microspheres:** Verify low-tack, pressure-sensitive, repositionable **acrylate copolymer microspheres** (`U.S. Patent 3,691,140`, `1972` — never \"glue that didn't stick at all\"), Art Fry's `1974` church choir hymnal bookmarks, `1977` *Press 'n Peel*, `1978` Boise Blitz (`>90%` buyer intent), and `April 1980` US national launch.\n6. **Year-accurate `WHO:` cards (13 named people) & HOS lane:** Zero overlap with `HOS:129` (Microwave), `001–007`, `130`, WW2, or Orbit; §2.6 hand-verified text.\n\n**Output:** Commit the independent audit update onto a follow-on branch/PR or review note, and hand off to the script review & Chief lock job. No VO, picture, or paid spend (`£0.00`).\n",
+      "ref": "J3513",
+      "film": "HOS:137",
+      "stage": "sources",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-24T16:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T16:53Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Independently verify all 24 claims in HOS:137 SOURCES.md, FACT_NOTES_v01.md, long script, and Shorts (PR #754)",
+      "due": "2026-12-08T18:00:00Z",
+      "kind": "facts",
+      "plain": "Fact-check every spoken claim, quote, date, and guardrail in the Accidental Inventions v01 script and Shorts."
     }
   ],
   "focus": [
