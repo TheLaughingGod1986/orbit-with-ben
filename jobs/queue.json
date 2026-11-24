@@ -1,5 +1,5 @@
 {
-  "next_id": 3481,
+  "next_id": 3482,
   "jobs": [
     {
       "id": "J0001",
@@ -317151,6 +317151,37 @@
       "due": "2026-11-28T18:00:00Z",
       "kind": "facts",
       "plain": "Check every date, ship, dimension, and figure in WW2 film 007 script v01 against primary US Navy sources."
+    },
+    {
+      "id": "J3481",
+      "title": "WW2 film 007: Claude Rule-6 viewer test (first 300 words), topic/script lock, and queue post-reset VO",
+      "needs": "cloud",
+      "repo": "ww2",
+      "body": "After J3480 (independent Gemini claims check) passes on ww2-channel PR #62 (branch macbook/J3472): (1) Run Claude's studio/RULES.md Rule-6 viewer test on the first 300 words of 01_Script/NARRATION_v01.txt (19,482 chars <= 21,000 cap; SHA-256 c1bd8e578c4342eb5ef6906ac9fe66a73873c74715e027f2bd9aac64bdaa4006; cold open 117 words ~51s) checking concrete moment by 0:30, promise by 0:45, main story moving by 1:00, no detours, title not answered in the opening, and one figure at a time; (2) Confirm per-keyword vidIQ search volume for 'floating dry dock' / 'floating dry dock ww2' and confirm Rule-2 picked title ('How WW2 Floating Dry Docks Lifted Battleships', 45 chars, 93/100) and 3 close-crop thumbnail concepts in TOPIC_REVIEW.md; (3) Lock topic and script (AGENTS.md E) and update ww2-channel status.json stages in a PR; (4) Once locked, queue WW2:007 voice-over (Ben Orbit Narrator, <=21,000 chars) strictly for AFTER the ElevenLabs reset (2026-11-30 10:50Z) so film 007 stays on track for Tue 15 Dec 2026 17:00 London. Guards: zero ElevenLabs credits spent before 2026-11-30 10:50Z; £0 spend.",
+      "ref": "",
+      "film": "WW2:007",
+      "stage": "script",
+      "after": "J3480",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T09:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T09:27Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "WW2 film 007: Claude Rule-6 viewer test (first 300 words), topic/script lock, and queue post-reset VO",
+      "due": "2026-12-01T18:00:00Z",
+      "kind": "review",
+      "plain": "Run Claude's viewer test on WW2 film 007 opening, confirm vidIQ keyword demand, lock topic and script, and queue voice-over for after 30 Nov reset.",
+      "cloud_only": true
     }
   ],
   "focus": [
