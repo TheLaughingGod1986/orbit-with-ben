@@ -318036,13 +318036,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-24T10:04Z",
-      "eta": "2026-11-24T12:04Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-24T10:00Z",
-      "result": "",
+      "result": "Waiting for: J3491 (independent Gemini claims check on WW2:009 PR #68) completes with 01_Script/CLAIMS_CHECK.md PASS or v02 fixes applied",
       "history": [
         {
           "at": "2026-11-24T10:00Z",
@@ -318073,9 +318073,19 @@
           "at": "2026-11-24T10:12Z",
           "by": "macbook",
           "what": "step 3 of 4 done"
+        },
+        {
+          "at": "2026-11-24T10:12Z",
+          "by": "macbook",
+          "what": "blocked: Waiting for: J3491 (independent Gemini claims check on WW2:009 PR #68) completes with 01_Script/CLAIMS_CHECK.md PASS or v02 fixes applied"
+        },
+        {
+          "at": "2026-11-24T10:12Z",
+          "by": "macbook",
+          "what": "condition recorded; next verification 2026-11-24T12:15:00Z"
         }
       ],
-      "remaining_action": "Recording dependency hold on J3491 after opening ww2-channel PR #70",
+      "remaining_action": "Verify J3491 CLAIMS_CHECK.md, fold P02 polish + any fixes into v02, lock WW2:009 script (<=30 Nov 18:00Z), and queue post-reset VO (>30 Nov 10:50Z); viewer test in ww2#70",
       "due": "2026-11-30T18:00:00Z",
       "kind": "review",
       "plain": "Test the Operation Pedestal opening as a stranger, lock the script, and queue voice-over after 30 Nov",
@@ -318098,6 +318108,11 @@
           "Verify J3491 claims check & char budget",
           "Commit review PR & wait on J3491 for lock/VO"
         ]
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "J3491 (independent Gemini claims check on WW2:009 PR #68) completes with 01_Script/CLAIMS_CHECK.md PASS or v02 fixes applied",
+        "check_at": "2026-11-24T12:15:00Z"
       }
     },
     {
