@@ -320966,9 +320966,14 @@
           "at": "2026-11-24T13:08Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T13:11Z",
+          "by": "macbook",
+          "what": "step 1 of 5 done"
         }
       ],
-      "remaining_action": "WW2 film 012: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO",
+      "remaining_action": "Creating branch macbook/J3524 from PR #78 and auditing first 300 words & J3523 claims report",
       "due": "2026-12-09T18:00:00Z",
       "kind": "review",
       "plain": "Viewer test of first 300 words, Pilot 2 learnings check, Rule E topic and script lock for WW2 film 012 (Liberty Ships)",
@@ -320981,12 +320986,17 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T13:08Z",
+        "step": 1,
+        "of": 5,
+        "at": "2026-11-24T13:11Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Branch from PR #78 and audit opening",
+          "Apply J3523 fixes into v02 script/sources/provenance",
+          "Write Rule-6 viewer test & Rule-E lock report",
+          "Verify parity, Rule-9 cap & queue post-reset VO",
+          "Push PR, return to main & post thread report"
+        ]
       }
     },
     {
