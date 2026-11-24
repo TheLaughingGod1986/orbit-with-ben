@@ -272555,19 +272555,19 @@
       "title": "Decoupling phase 3: move the studio engine into its own repo, runbook now, move after a clean week",
       "needs": "mini",
       "repo": "owb",
-      "body": "**Ben, in chat (17 Nov 19:00Z):** created `https://github.com/TheLaughingGod1986/studio` for the studio engine (private, empty, default branch main). Claude checked that the Claude GitHub app can reach it (cloned it, empty). This is phase 3 of `docs/MULTI_CHANNEL_PLAN.md`: the engine (queue, board, relay, agents' scripts, thread) moves out of orbit-with-ben into its own repo, and Orbit With Ben, History of Science and the WW2 channel all plug in through the registry. Ben, 10 Nov: \"there should be 3 GitHub repos. One for Studio, one for Orbit with Ben, and one for History of Science\" (now four, with ww2-channel).\n\n**Do not move before all of these hold:**\n1. `scripts/studio_split.py` has read 0 on seven days in a row (it read 0 on 14, 15, 16 and 17 Nov; the earliest is 20 Nov).\n2. J2537 is done: email addresses out of both channels' current files and git history.\n3. Ben has been told the day before the move, in one message on the thread: the date, what he will notice (none, if it goes right), and any credential he must change. That message is a notice, not a question, unless a credential change is truly needed.\n\n**Do now, while waiting.** Write the move runbook in `docs/STUDIO_MOVE.md`: what the new repo holds (from the dry run's layout); how queue history and the thread carry over; every machine change (the Mac mini's and the MacBook's checkouts, launchd jobs, the relay, the board publisher, `board_site.json`, GitHub workflows); every credential that must cover the new repo (the board's GitHub token currently covers orbit-with-ben and history-of-science only; the board's tick store and thread can stay where they are if that avoids a token change, so say which is simpler); the rollback; and a rehearsal on a branch of the new repo that leaves live work untouched. Open a pull request for the runbook. When the three conditions hold, run the move by the runbook, prove one full relay cycle, one board publish and one tick, and close.\n\n**Guards.** £0. Nothing deleted from orbit-with-ben until the new repo is live and proven. No token or account address in any file. Nothing that needs Ben beyond the day-before notice and, only if unavoidable, one credential change.\n\n**Result.** The runbook PR now; at the move, the new repo's state, the checks, and anything left.\n\n\n**Changed by Claude, 17 Nov 19:12Z: the move does not wait for J2537's history rewrite.** Start the new studio repo with one clean first commit built from the split, not with orbit-with-ben's history, so no old address can travel into it; the history stays readable in orbit-with-ben. Condition 2 above becomes: the dry run's address count is 0 on the files that move (it is). Conditions 1 and 3 stand (seven zero days, so 20 Nov at the earliest; Ben told the day before). Aim: runbook and rehearsal by Sat 21 Nov, move Mon 23 or Tue 24 Nov.\n\n**Update (Claude, 24 Nov ~12:35): Ben said yes to the move and is doing the token grant himself now.** Ben, Tue 24 Nov ~12:30 London, in chat: \"the three answers. 1, yes, Claude Code publish, codexes work. 2, yes, if you think it's beneficial. 3, yes.\" Steps given to Ben (from PR #1075's proven probe: the board token gets 404 on the studio repo): on GitHub, edit the board's fine-grained token, add `TheLaughingGod1986/studio` to its repositories, and set Contents to Read-only, without regenerating it. When Ben confirms (Claude records it here):\n1. Re-run the authenticated `/api/migration` probe (PR #1075's redirect fix is merged); it must answer 200 with `contentsRead: true`. Then switch the flag off and check it answers 404.\n2. Day-before notice on the thread **Thu 26 Nov**; the move **Fri 27 Nov from 10:00 London** by `docs/STUDIO_MOVE.md`, after Thursday's History of Science launch and before Field Order film 3's Saturday slot, with the documented rollback.\n3. Prove one full relay cycle, one board publish, one harmless tick and both MacBook slots, then close.",
+      "body": "**Ben, in chat (17 Nov 19:00Z):** created `https://github.com/TheLaughingGod1986/studio` for the studio engine (private, empty, default branch main). Claude checked that the Claude GitHub app can reach it (cloned it, empty). This is phase 3 of `docs/MULTI_CHANNEL_PLAN.md`: the engine (queue, board, relay, agents' scripts, thread) moves out of orbit-with-ben into its own repo, and Orbit With Ben, History of Science and the WW2 channel all plug in through the registry. Ben, 10 Nov: \"there should be 3 GitHub repos. One for Studio, one for Orbit with Ben, and one for History of Science\" (now four, with ww2-channel).\n\n**Do not move before all of these hold:**\n1. `scripts/studio_split.py` has read 0 on seven days in a row (it read 0 on 14, 15, 16 and 17 Nov; the earliest is 20 Nov).\n2. J2537 is done: email addresses out of both channels' current files and git history.\n3. Ben has been told the day before the move, in one message on the thread: the date, what he will notice (none, if it goes right), and any credential he must change. That message is a notice, not a question, unless a credential change is truly needed.\n\n**Do now, while waiting.** Write the move runbook in `docs/STUDIO_MOVE.md`: what the new repo holds (from the dry run's layout); how queue history and the thread carry over; every machine change (the Mac mini's and the MacBook's checkouts, launchd jobs, the relay, the board publisher, `board_site.json`, GitHub workflows); every credential that must cover the new repo (the board's GitHub token currently covers orbit-with-ben and history-of-science only; the board's tick store and thread can stay where they are if that avoids a token change, so say which is simpler); the rollback; and a rehearsal on a branch of the new repo that leaves live work untouched. Open a pull request for the runbook. When the three conditions hold, run the move by the runbook, prove one full relay cycle, one board publish and one tick, and close.\n\n**Guards.** £0. Nothing deleted from orbit-with-ben until the new repo is live and proven. No token or account address in any file. Nothing that needs Ben beyond the day-before notice and, only if unavoidable, one credential change.\n\n**Result.** The runbook PR now; at the move, the new repo's state, the checks, and anything left.\n\n\n**Changed by Claude, 17 Nov 19:12Z: the move does not wait for J2537's history rewrite.** Start the new studio repo with one clean first commit built from the split, not with orbit-with-ben's history, so no old address can travel into it; the history stays readable in orbit-with-ben. Condition 2 above becomes: the dry run's address count is 0 on the files that move (it is). Conditions 1 and 3 stand (seven zero days, so 20 Nov at the earliest; Ben told the day before). Aim: runbook and rehearsal by Sat 21 Nov, move Mon 23 or Tue 24 Nov.\n\n**Update (Claude, 24 Nov ~12:35): Ben said yes to the move and is doing the token grant himself now.** Ben, Tue 24 Nov ~12:30 London, in chat: \"the three answers. 1, yes, Claude Code publish, codexes work. 2, yes, if you think it's beneficial. 3, yes.\" Steps given to Ben (from PR #1075's proven probe: the board token gets 404 on the studio repo): on GitHub, edit the board's fine-grained token, add `TheLaughingGod1986/studio` to its repositories, and set Contents to Read-only, without regenerating it. When Ben confirms (Claude records it here):\n1. Re-run the authenticated `/api/migration` probe (PR #1075's redirect fix is merged); it must answer 200 with `contentsRead: true`. Then switch the flag off and check it answers 404.\n2. Day-before notice on the thread **Thu 26 Nov**; the move **Fri 27 Nov from 10:00 London** by `docs/STUDIO_MOVE.md`, after Thursday's History of Science launch and before Field Order film 3's Saturday slot, with the documented rollback.\n3. Prove one full relay cycle, one board publish, one harmless tick and both MacBook slots, then close.\n\n**Update (Claude, 24 Nov ~12:45): Ben has updated the board token.** Ben, in chat: \"Cool, yeah, updated. Thank you.\" His screenshots show the fine-grained token `studio-board` (no expiry). It had orbit-with-ben and history-of-science, with read access to code and metadata and read/write on issues and pull requests. He added `TheLaughingGod1986/studio` without regenerating, so the Cloudflare secret is unchanged.\n\n**Next, in order:**\n1. **Re-probe today:** the narrow `/api/migration` deploy with `BOARD_MIGRATION_PROBE=1` (redirect fix merged in PR #1075). It needs 401 signed out, and 200 with `contentsRead: true` and the rehearsal commit when signed in. Then restore the exact production build, check the probe answers 404 and delete the probe deployment. Record the deployment ids and times only.\n2. **Day-before notice on the thread on Thu 26 Nov.**\n3. **Move on Fri 27 Nov from 10:00 London** by `docs/STUDIO_MOVE.md`, with its rollback. Prove one relay cycle, one board publish, one harmless tick and both MacBook slots.\n4. **New step (Ben, 24 Nov: \"why can't [Orbit] and History of Science work like this?\").** Once the move is proven, put the tick store and the studio thread in the private studio repo. History of Science's watch ticks join that same thread, as Field Order History's already share Orbit's (`api/checks.js` STORE and THREADS). Then the board writes nothing to the public channel repos. Test a tick on each channel. Then tell Ben in one line that he can remove orbit-with-ben and history-of-science from `studio-board`, leaving only studio, and re-test a tick after he does.",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-20T18:54Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
-      "result": "Waiting for: Ben's one-time BOARD_GH_TOKEN grant via his own account adding TheLaughingGod1986/studio (Contents: Read-only), plus independent review/merge of PR #1075 (5fe73b23d3) and quick re-probe confirming 200 contentsRead:true before posting preceding-day cutover notice",
+      "result": "",
       "history": [
         {
           "at": "2026-11-17T19:00Z",
@@ -273563,19 +273563,22 @@
           "at": "2026-11-24T12:25Z",
           "by": "claude",
           "what": "Ben said yes to the studio move and is doing the board-token grant now; then probe, notice Thu 26 Nov, move Fri 27 Nov 10:00 London."
+        },
+        {
+          "at": "2026-11-24T12:37Z",
+          "by": "claude",
+          "what": "Ben updated the studio-board token to include the studio repo (24 Nov ~12:45); re-probe today, notice Thu 26 Nov, move Fri 27 Nov 10:00 London."
+        },
+        {
+          "at": "2026-11-24T12:37Z",
+          "by": "claude",
+          "what": "reopened: Ben's token grant is done (24 Nov ~12:45, in chat). Re-probe, then the notice and the Fri 27 Nov move."
         }
       ],
       "remaining_action": "Verify Ben's BOARD_GH_TOKEN studio grant (re-probe 200 contentsRead:true) and PR #1075 merge, then post preceding-day notice for Mon 23/Tue 24 Nov cutover",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-20T19:02Z",
-        "by": "gemini",
-        "note": "Merged PR #1076 (J3242 MacBook inventory -> 8441d1ae5e); full detached studio_split.py PASS (left:0) on main; parking on"
-      },
       "taskKeys": [
         "HOS:009",
         "HOS:010",
@@ -273589,12 +273592,7 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon",
-      "hold": {
-        "type": "input",
-        "condition": "Ben confirms in chat that the board token now covers the studio repo (Contents: Read-only); Claude records it here",
-        "check_at": "2026-11-25T09:00:00Z"
-      }
+      "model": "gemini-argon"
     },
     {
       "id": "J3013",
