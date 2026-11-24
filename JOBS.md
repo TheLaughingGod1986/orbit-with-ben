@@ -130,7 +130,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3606 | mini | open | – | – | for claudecode · assembly · Publish final Mulberry Short records after the corrected cut is verified |  |
 | J3610 | mini | open | – | – | 010 upload · studio · Schedule HOS 010 bird Short after its long is confirmed | J3511 |
 | J3611 | mini | open | – | – | 010 upload · studio · HOS 010 Short A: schedule only after actual long readiness and finish Studio checks | J3512 |
-| J3613 | mini | open | – | – | review · Verify condition for J3519 |  |
+| J3613 | mini | claimed | codex | 2026-11-24T22:30Z | review · Verify condition for J3519 |  |
 | J3615 | mini | open | – | – | assembly · Relay: restore a free second slot when a worker returns during a job chain |  |
 | J3616 | mini | claimed | gemini | 2026-11-24T22:29Z | review · Verify condition for J3602 |  |
 

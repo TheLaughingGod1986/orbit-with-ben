@@ -327633,10 +327633,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-24T20:30Z",
+      "eta": "2026-11-24T22:30Z",
       "created_by": "relay",
       "created_at": "2026-11-24T20:01Z",
       "result": "",
@@ -327685,6 +327685,11 @@
           "at": "2026-11-24T20:30Z",
           "by": "codex",
           "what": "reopened: Chief ruling recorded: J3519 remains held for J3530 publication and 25 Nov 10:15Z verification after the actual Claude Code reset. Reopening only the verification for closure."
+        },
+        {
+          "at": "2026-11-24T20:30Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief to record jobs.py wait J3519 --recheck J3613 (--check-at 2026-11-25T10:15:00Z after claudecode reset) and close J3613",
@@ -327705,7 +327710,15 @@
         "HOS:008",
         "HOS:009",
         "HOS:010"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T20:30Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3614",
