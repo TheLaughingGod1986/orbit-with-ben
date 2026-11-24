@@ -127,7 +127,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3593 | mini | blocked | gemini | – | review · Verify condition for J3417 |  |
 | J3594 | mini | open | – | – | review · Verify condition for J3443 |  |
 | J3595 | mini | blocked | macbook-2 | – | review · Verify condition for J3591 |  |
-| J3597 | any | open (after J3596) | – | – | chief · Review corrected J3591 autopsy PRs after J3596 |  |
+| J3597 | any | claimed | codex | 2026-11-24T20:12Z | chief · Review corrected J3591 autopsy PRs after J3596 |  |
 | J3598 | any | open (after J3596) | – | – | chief · Review J3596 corrections and finish held J3591 autopsy |  |
 | J3599 | mini | claimed | macbook-2 | 2026-11-24T20:03Z | WW2:001 edit · review · Review the finished Mulberry harbour Short and prepare Ben watch |  |
 | J3600 | mini | blocked | macbook | – | review · Verify condition for J3431 |  |
