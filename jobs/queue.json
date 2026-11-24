@@ -329619,16 +329619,21 @@
           "at": "2026-11-24T22:33Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Verified 26/26 local evidence hashes, 5/5 live re-fetches, Gazette 38377 pp.4501-4512 + Mason GC, ADM267/84 cover/plan/text, and fetched 15 new remote sources (Kindell, Mason, Hague Pt2, IWM Commons, uboat.net, Britannica/CIA)."
+        },
+        {
+          "at": "2026-11-24T22:42Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Completed direct-source verification of all 37 claims across Gazette 38377/35695, Roskill Vol II Ch XIII (Tables 26-27), Hague Pt1b/Pt2/Pt3, Kindell RN rolls, ADM 267/84, Mason, Sun Ship, Boxol/Plumleaf, Henshaw, uboat.net, and IWM photos GM1452/GM1436. Result: 31 PASS, 6 FLAG -> FIX."
         }
       ],
-      "remaining_action": "Deep-verify priority claims, C20 ADM267/84 vs Gazette, and removed items",
+      "remaining_action": "Write CLAIMS_CHECK_v03.md and check parity/hashes",
       "due": "2026-11-25T18:00:00Z",
       "kind": "facts",
       "plain": "Checking the revised Operation Pedestal narration against the original sources",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-24T22:33Z",
+        "at": "2026-11-24T22:42Z",
         "by": "gemini",
         "plan": [
           "Create clean worktree and verify v03 artifacts",
@@ -329637,7 +329642,7 @@
           "Write CLAIMS_CHECK_v03.md and check parity/hashes",
           "Push PR, report findings, and handle J3492/FIX routing"
         ],
-        "note": "Verified 26/26 local evidence hashes, 5/5 live re-fetches, Gazette 38377 pp.4501-4512 + Mason GC, ADM267/84 cover/plan/t"
+        "note": "Completed direct-source verification of all 37 claims across Gazette 38377/35695, Roskill Vol II Ch XIII (Tables 26-27),"
       },
       "taskKeys": [
         "WW2:009"
