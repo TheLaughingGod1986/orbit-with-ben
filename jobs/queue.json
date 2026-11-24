@@ -330835,9 +330835,14 @@
           "at": "2026-11-24T23:58Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T23:59Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Upload the approved Short privately, schedule Thu 12:00, link pilot 1",
+      "remaining_action": "Verify v02 file hash, archive credits, and capture pilot 1 Shorts/Related traffic baseline",
       "due": "2026-11-25T20:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -330847,12 +330852,20 @@
       "urgent": 14,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-24T23:58Z",
+        "of": 5,
+        "at": "2026-11-24T23:59Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify v02 cut & capture pilot 1 baseline",
+          "Upload v02 Private & schedule Thu 26 Nov 12:00 London",
+          "Set Studio Related ek9F61FVYqY, cover frame & altered content",
+          "Read back Studio & API and record ID in status.json",
+          "Queue 7-day read (Thu 3 Dec 12:05 London) & post report"
+        ]
+      },
+      "taskKeys": [
+        "WW2:001"
+      ]
     },
     {
       "id": "J3647",
