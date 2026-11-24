@@ -1,5 +1,5 @@
 {
-  "next_id": 3618,
+  "next_id": 3619,
   "jobs": [
     {
       "id": "J0001",
@@ -328034,6 +328034,35 @@
       "remaining_action": "Repair completed-predecessor review classification with regression tests",
       "kind": "assembly",
       "plain": "Fix reviews getting stuck behind completed work"
+    },
+    {
+      "id": "J3618",
+      "title": "OWB 027: verify Earth spin series playlist membership",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "J3616 acting-Chief follow-up for OWB:027, video 6bbbvfCx6zY. Read the merged autopsy and CHIEF_RULING.md. Verify current membership using Studio or the Data API, without playing the public video. PACKAGE_MANIFEST playlistId null is not proof of absence. Verify the existing What Would Happen If series playlist belongs to Orbit and matches this film. If already a member, record no-op. If absent, this brief authorises adding only this video to that existing verified playlist, then reading back membership. If the playlist cannot be identified, report the exact missing evidence; do not create a guessed playlist. Preserve running T028, titles, thumbnails, privacy, schedule, end screen and pinned comment. No upload, recut or spend. Record evidence and report through studio_thread.py. Seven-day autopsy stays due 29 Nov after 18:00Z under normal automatic queueing; this task does not delay it.",
+      "ref": "",
+      "film": "027",
+      "stage": "upload",
+      "after": "J3602",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-24T20:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T20:51Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify current playlist membership and add only if missing",
+      "kind": "studio",
+      "plain": "Check the Earth spin film is in its series playlist"
     }
   ],
   "focus": [

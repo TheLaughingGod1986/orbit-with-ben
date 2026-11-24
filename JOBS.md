@@ -133,6 +133,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3615 | mini | open | – | – | assembly · Relay: restore a free second slot when a worker returns during a job chain |  |
 | J3616 | mini | blocked | gemini | – | review · Verify condition for J3602 |  |
 | J3617 | any | open | – | – | assembly · Keep merge reviews visible after completed predecessors |  |
+| J3618 | mini | open (after J3602) | – | – | 027 upload · studio · OWB 027: verify Earth spin series playlist membership |  |
 
 Recently finished:
 
