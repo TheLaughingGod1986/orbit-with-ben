@@ -316009,13 +316009,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-24T06:42Z",
-      "eta": "2026-11-24T08:42Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T06:40Z",
-      "result": "",
+      "result": "parked for Chief: requested Studio read and strict import complete in local commit f860973491 on codex/J3463 at /private/tmp/owb-J3463; automatic approval review rejected remote push as an unapproved sensitive analytics export. No push performed; needs explicit export approval or local review.",
       "history": [
         {
           "at": "2026-11-24T06:40Z",
@@ -316046,6 +316046,11 @@
           "at": "2026-11-24T06:45Z",
           "by": "codex",
           "what": "step 2 of 3 done: Imported and verified 1 subscriber and 0.3 lifetime watch hours; remote push rejected by automatic approval review"
+        },
+        {
+          "at": "2026-11-24T06:45Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: requested Studio read and strict import complete in local commit f860973491 on codex/J3463 at /private/tmp/owb-J3463; automatic approval review rejected remote push as an unapproved sensitive analytics export. No push performed; needs explicit export approval or local review."
         }
       ],
       "remaining_action": "Hand off the local data commit for Chief review",
