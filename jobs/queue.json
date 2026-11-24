@@ -310445,19 +310445,29 @@
           "at": "2026-11-24T12:07Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T12:08Z",
+          "by": "macbook-2",
+          "what": "step 1 of 5 done"
         }
       ],
-      "remaining_action": "Reconcile the equator Short schedule with current evidence and existing holds",
+      "remaining_action": "Checking 027 upload records, snapshots, gates, and job history for emwQsPxnRGM",
       "due": "2026-11-23T09:00:00Z",
       "kind": "review",
       "plain": "Check when the Earth equator Short is meant to go live and why it is private",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T12:07Z",
+        "step": 1,
+        "of": 5,
+        "at": "2026-11-24T12:08Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Check records and history",
+          "Verify live YouTube state read-only",
+          "Reconcile discrepancy and write evidence",
+          "Update internal records and queue next action",
+          "Open PR and report on thread"
+        ]
       }
     },
     {
