@@ -319665,13 +319665,13 @@
       "stage": "upload",
       "after": "J3505",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-24T11:31Z",
-      "eta": "2026-11-24T13:31Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T10:53Z",
-      "result": "",
+      "result": "parked for Chief: HOS channel:audit and live upload auth require missing generated Prisma client; generation fails P1012 on installed Prisma 6.19.0. Approved hash verified; gate and check_all PASS; private unscheduled dry-run request prepared but exits 1. No upload. Local HOS commit 91915668, branch codex/J3512.",
       "history": [
         {
           "at": "2026-11-24T10:53Z",
@@ -319697,6 +319697,11 @@
           "at": "2026-11-24T11:35Z",
           "by": "codex",
           "what": "step 1 of 3 done: Exact approved SHA256 verified; fresh Short gate and package lint PASS. Audit and dry-run command fail on missing Prisma runtime; no upload performed."
+        },
+        {
+          "at": "2026-11-24T11:36Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: HOS channel:audit and live upload auth require missing generated Prisma client; generation fails P1012 on installed Prisma 6.19.0. Approved hash verified; gate and check_all PASS; private unscheduled dry-run request prepared but exits 1. No upload. Local HOS commit 91915668, branch codex/J3512."
         }
       ],
       "remaining_action": "Restore the History of Science publishing tools, then verify and upload the approved Short privately",
