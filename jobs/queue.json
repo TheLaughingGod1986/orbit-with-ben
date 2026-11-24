@@ -320684,9 +320684,14 @@
           "at": "2026-11-24T13:27Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T13:27Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Chief review complete: FIX in merged PR 1260; J3538 correction then J3539 independent check; J3020 and narration remain held."
         }
       ],
-      "remaining_action": "Parking J3520 for Elected Chief to merge PR #1015 + PR #1251, lock v02, complete J3020, and release J3021 VO",
+      "remaining_action": "Close the completed review and report the correction handoff",
       "due": "2026-11-25T18:00:00Z",
       "kind": "review",
       "rerouted_from": {
@@ -320698,13 +320703,20 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 3,
         "at": "2026-11-24T13:27Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check inputs and authority",
+          "Review sources and choose ruling",
+          "Record ruling and corrective jobs"
+        ],
+        "note": "Chief review complete: FIX in merged PR 1260; J3538 correction then J3539 independent check; J3020 and narration remain "
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3521",
