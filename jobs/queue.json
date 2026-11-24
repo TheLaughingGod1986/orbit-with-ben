@@ -314368,16 +314368,21 @@
           "at": "2026-11-24T21:18Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J3434; verified WW2:006 locked VO (1542.84s), 68 verified archive photos, J3453/J3454 decisions, and J3562 Rule-2 title audit."
+        },
+        {
+          "at": "2026-11-24T21:29Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Built 146-segment EDIT_PLAN_v01 (53.52% real archive across 62 photos, min repeat gap 68.0s, max hold 9.83s), 12 bespoke diagrams, 376 en-GB SRT cues, 3 Rule-2 thumbnails + sheet, and upload package."
         }
       ],
-      "remaining_action": "Inspecting 006 archive corpus, existing code graphics, and Scribe timing",
+      "remaining_action": "Inspecting thumbnails/diagrams and rendering 1080p master",
       "due": "2026-12-02T20:00:00Z",
       "kind": "assembly",
       "urgent": 6,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-24T21:18Z",
+        "at": "2026-11-24T21:29Z",
         "by": "gemini",
         "plan": [
           "Verify inputs and existing assets",
@@ -314386,7 +314391,7 @@
           "Render 1080p master and 3 Rule-2 thumbnails",
           "Run QA gates, inspect visuals, and open PR"
         ],
-        "note": "Claimed J3434; verified WW2:006 locked VO (1542.84s), 68 verified archive photos, J3453/J3454 decisions, and J3562 Rule-"
+        "note": "Built 146-segment EDIT_PLAN_v01 (53.52% real archive across 62 photos, min repeat gap 68.0s, max hold 9.83s), 12 bespoke"
       },
       "taskKeys": [
         "WW2:006"
