@@ -323591,9 +323591,14 @@
           "at": "2026-11-24T16:07Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T16:09Z",
+          "by": "macbook",
+          "what": "step 1 of 5 done"
         }
       ],
-      "remaining_action": "Run Rule-6 first-300-words viewer test, Pilot 2 Rule-12 check, lock WW2:017 script, and queue post-reset VO",
+      "remaining_action": "Read 017 script, sources, claims check, topic review & packaging on macbook/J3557",
       "due": "2026-12-18T18:00:00Z",
       "kind": "review",
       "plain": "Reviewing opening 300 words and locking the Pearl Harbor salvage script",
@@ -323606,12 +323611,17 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T16:07Z",
+        "step": 1,
+        "of": 5,
+        "at": "2026-11-24T16:09Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read 017 draft & claims check",
+          "Rule-6 viewer test (first 300 words)",
+          "Rule-E topic, packaging & Shorts verdict",
+          "Apply claims fixes into locked v02",
+          "Update status, open PR & queue post-reset VO"
+        ]
       }
     },
     {
