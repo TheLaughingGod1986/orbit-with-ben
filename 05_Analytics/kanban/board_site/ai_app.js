@@ -398,7 +398,7 @@
     const rows = items.map(a => {
       const href = a && a.href && /^#[A-Za-z0-9_=%:&./-]+$/.test(a.href) ? "/" + a.href : "/#review";
       const label = a && a.kind === "approval" ? "Upload job needed" : a && a.kind === "pulled" ? "Urgent · Video pulled" : "Urgent · Watch needed";
-      const cta = a && a.kind === "approval" ? "Open Videos ›" : href.includes("#uat=") || href.endsWith("#review") ? "Open watch card ›" : "Open schedule ›";
+      const cta = a && a.kind === "approval" ? "Open video ›" : href.includes("#uat=") || href.endsWith("#review") ? "Open watch card ›" : "Open schedule ›";
       return `<div class="urgent-banner-item"><div class="urgent-banner-head"><i class="urgent-banner-dot" aria-hidden="true"></i><span>${esc(label)}</span></div>`
         + `<p class="urgent-banner-text">${esc((a && (a.message || a.text)) || "")}</p>`
         + `<a class="urgent-banner-link" href="${esc(href)}">${esc(cta)}</a></div>`;

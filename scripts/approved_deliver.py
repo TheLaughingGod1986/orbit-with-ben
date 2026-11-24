@@ -16,6 +16,7 @@ import datetime as dt
 import json
 import re
 import sys
+from urllib.parse import quote
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -299,7 +300,15 @@ def delivery_jobs_for(video: dict, alljobs: list[dict]) -> list[dict]:
             continue
         # An approval card names its original watch/review job too. That is not an upload.
         text = " ".join(str(j.get(k) or "") for k in ("title", "action"))
-        delivery = j.get("stage") == "upload" or (j.get("kind") == "studio" and bool(re.search(r"\bupload\b|\bbuffer\b", text, re.I)))
+        # 24 Nov 2026: upload jobs filed as `listing` (the Uranus and Pluto Shorts) and the swap a card names (Muons,
+        # J2881) are delivery too; only review-type work is not. A job may list every card it delivers (`delivers`):
+        # one upload job takes a long and its Shorts (HOS 008 with Shorts A and C in J3500).
+        delivery = j.get("stage") == "upload" or key in (j.get("delivers") or []) or (
+            j.get("kind") not in ("review", "qa", "chief", "script", "facts")
+            and bool(re.search(r"\b(?:upload|buffer|swap)", text, re.I)))
+        if key and key in (j.get("delivers") or []):
+            out.append(j)
+            continue
         if job_id and j.get("id") == job_id and delivery:
             out.append(j)
             continue
@@ -330,7 +339,8 @@ def waiting_approvals(videos: list[dict], alljobs: list[dict], *, now: dt.dateti
     """Every Passed card without live delivery work, including its age (unknown stays unknown)."""
     out = []
     for v in passed_candidates(videos):
-        if already_delivered(v, videos) or any(j.get("status") in ("open", "claimed", "blocked")
+        # A finished delivery job counts as delivered: YouTube's read-back can lag the card (Muons, 24 Nov 2026).
+        if already_delivered(v, videos) or any(j.get("status") in ("open", "claimed", "blocked", "done")
                                                for j in delivery_jobs_for(v, alljobs)):
             continue
         stamp = (v.get("check") or {}).get("at") or (v.get("approved") or {}).get("okAt")
@@ -342,7 +352,8 @@ def waiting_approvals(videos: list[dict], alljobs: list[dict], *, now: dt.dateti
 
 
 def approval_alerts(videos: list[dict], alljobs: list[dict], *, now: dt.datetime) -> list[dict]:
-    return [{"id": "approval:" + str(v["key"]), "kind": "approval", "href": "#videos",
+    # Each alert opens its own video's page (24 Nov 2026: "#videos" did nothing when Ben was already on Videos).
+    return [{"id": "approval:" + str(v["key"]), "kind": "approval", "href": "#v=" + quote(str(v["key"]), safe=""),
              "message": f"Your OK on {v['title']} is waiting for an upload job, {v['ageHours']} h"}
             for v in waiting_approvals(videos, alljobs, now=now)
             if v["ageHours"] is not None and v["ageHours"] >= 12]
