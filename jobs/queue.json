@@ -317840,9 +317840,14 @@
           "at": "2026-11-24T10:00Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-24T10:01Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Clean origin/main includes 5ebde24; build succeeded; BOARD_OPEN_TAPS is 0"
         }
       ],
-      "remaining_action": "Build and deploy the schedule overview, then verify the live page",
+      "remaining_action": "Deploy the built schedule overview to Cloudflare",
       "due": "2026-11-24T16:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -317855,15 +317860,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-24T10:00Z",
+        "at": "2026-11-24T10:01Z",
         "by": "codex",
         "plan": [
           "Build the approved board",
           "Deploy to Cloudflare",
           "Verify the live schedule"
-        ]
+        ],
+        "note": "Clean origin/main includes 5ebde24; build succeeded; BOARD_OPEN_TAPS is 0"
       }
     },
     {
