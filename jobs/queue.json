@@ -314051,9 +314051,14 @@
           "at": "2026-11-24T18:02Z",
           "by": "relay",
           "what": "condition verification queued: J3600"
+        },
+        {
+          "at": "2026-11-24T20:15Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-25T12:00:00Z"
         }
       ],
-      "remaining_action": "Wait for the revised St Nazaire picture plan and acceptance of compliant archive coverage",
+      "remaining_action": "Await the shorter St Nazaire paper cut and Chief acceptance of its real-photo coverage",
       "due": "2026-11-27T18:00:00Z",
       "kind": "image",
       "taskKeys": [
@@ -314069,9 +314074,11 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "J3449 brings film 5 to at least 50% real archive (rule 1 as changed 24 Nov, PR #59); then accept the picture stage and release J3432.",
-        "check_at": "2026-11-24T19:02:18+00:00",
-        "recheck_task": "J3600"
+        "condition": "J3600 Chief ruling FIX: J3449 supports 510.27/1263.04s (40.400%), 121.25s below current 50% floor; obsolete 48.3% estimate rejected. Await J3614 complete-sentence existing-VO paper recut, resolved PR50 stage/provenance integration, and Chief acceptance of coherent >=50% photo-dominant plan before J3431 completion and J3432 release.",
+        "check_at": "2026-11-25T12:00:00Z",
+        "last_recheck": "J3600",
+        "checked_at": "2026-11-24T20:15:33+00:00",
+        "checked_by": "codex"
       },
       "urgent": 4
     },
