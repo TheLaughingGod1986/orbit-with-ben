@@ -128,7 +128,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3602 | mini | claimed | gemini | 2026-11-24T20:44Z | review · `gemini-argon` · Retention autopsy (48h): "What If Earth Stopped Spinning? (It's Already Slowing Down)" (6bbbvfCx6zY) |  |
 | J3605 | mini | blocked | codex | – | WW2:001 upload · studio · WW2 pilot 1: seven-day outcome after searched-name title change |  |
 | J3606 | mini | open | – | – | for claudecode · assembly · Publish final Mulberry Short records after the corrected cut is verified |  |
-| J3607 | mini | blocked | codex | – | assembly · Mini: pull PR #1285 and confirm the second slot really opens (two jobs at once) |  |
+| J3607 | mini | open | – | – | assembly · Mini: pull PR #1285 and confirm the second slot really opens (two jobs at once) |  |
 | J3610 | mini | open | – | – | 010 upload · studio · Schedule HOS 010 bird Short after its long is confirmed | J3511 |
 | J3611 | mini | open | – | – | 010 upload · studio · HOS 010 Short A: schedule only after actual long readiness and finish Studio checks | J3512 |
 | J3612 | mini | blocked | gemini | – | review · Verify condition for J3607 |  |
