@@ -97,6 +97,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3532 | mini | blocked | claude | – | for claudecode · assembly · History of Science: history rewrite window Mon 30 Nov 08:00 London (Ben's one-time exception), by the J2537 runbook |  |
 | J3534 | mini | open | – | – | review · Verify condition for J3307 |  |
 | J3535 | mini | claimed | gemini | 2026-11-24T15:12Z | review · Verify condition for J3510 |  |
+| J3536 | mini | open (after J3524) | – | – | WW2:012 vo · vo · WW2 film 012: narration in Ben's voice (Liberty Ships, post-reset) |  |
 
 Recently finished:
 
