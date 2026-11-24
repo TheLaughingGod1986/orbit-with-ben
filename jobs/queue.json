@@ -320372,13 +320372,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-24T20:55Z",
-      "eta": "2026-11-24T22:55Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-24T10:43Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-24T10:43Z",
@@ -320424,6 +320424,11 @@
           "at": "2026-11-24T21:13Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Opened HOS PR #756 (commit d66b6071, check_all.sh ALL CHECKS PASS, review:script 93.6/100 PASS, gate:episode PASS); queued J3621 (facts) and J3622 (review/lock); posted HOS desk handoff; £0.00 spent"
+        },
+        {
+          "at": "2026-11-24T21:13Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "All steps complete; closing J3504",
