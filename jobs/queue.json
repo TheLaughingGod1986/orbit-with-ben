@@ -328530,19 +328530,28 @@
           "at": "2026-11-24T21:16Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T21:17Z",
+          "by": "macbook",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Resolve delivery conflicts, correct captions and verify the package",
+      "remaining_action": "Reconciling delivery with current production records",
       "due": "2026-11-25T12:00:00Z",
       "kind": "assembly",
       "plain": "Fix the torpedo film delivery files before its final quality check",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T21:16Z",
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-24T21:17Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Reconcile records",
+          "Repair package",
+          "Verify delivery",
+          "Open review PR"
+        ]
       }
     },
     {
