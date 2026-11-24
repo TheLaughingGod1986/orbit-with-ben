@@ -326884,13 +326884,13 @@
       "stage": "",
       "after": "J3601",
       "eta_min": 25,
-      "status": "blocked",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-24T20:19Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-24T18:02Z",
-      "result": "parked for Chief: review and merge PR #1287 (05_Analytics/owb/autopsy/6bbbvfCx6zY_48h.md and LEARNINGS.md Rule 38 evidence, head 922bc292e7582f57f4156da70451a5f31b235295); worker cannot merge",
+      "result": "J3616 Chief acceptance: corrected PR1287 merged c53bca806d35; predecessor PR1283 merged 0bfd429a6bda; verification PR1288 merged 39ebe07869f4. Gemini completed media review accepted from recorded capability evidence; Codex performed record review only. Newer 48h metrics reconciled, causal claims limited. Follow-ups J3618 playlist verification (after J3602) and J3617 queue classification repair; 7d read 29 Nov after 18:00Z. T028 unchanged. No production rerun.",
       "history": [
         {
           "at": "2026-11-24T18:02Z",
@@ -326941,9 +326941,14 @@
           "at": "2026-11-24T20:29Z",
           "by": "relay",
           "what": "condition verification queued: J3616"
+        },
+        {
+          "at": "2026-11-24T20:53Z",
+          "by": "codex",
+          "what": "Chief acceptance of completed worker artifacts under J3616 (no new media capability claim): J3616 Chief acceptance: corrected PR1287 merged c53bca806d35; predecessor PR1283 merged 0bfd429a6bda; verification PR1288 merged 39ebe07869f4. Gemini completed media review accepted from recorded capability evidence; Codex performed record review only. Newer 48h metrics reconciled, causal claims limited. Follow-ups J3618 playlist verification (after J3602) and J3617 queue classification repair; 7d read 29 Nov after 18:00Z. T028 unchanged. No production rerun."
         }
       ],
-      "remaining_action": "Waiting for Chief review and merge of PR #1287",
+      "remaining_action": "Complete; playlist follow-up J3618 and queue repair J3617",
       "due": "2026-11-25T06:02:00Z",
       "kind": "review",
       "model": "gemini-argon",
@@ -326970,12 +326975,7 @@
       "taskKeys": [
         "OWB:027"
       ],
-      "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-24T21:29:08+00:00",
-        "recheck_task": "J3616"
-      }
+      "done_ref": "c53bca806d351af7825b16168326dfdcbd35de87"
     },
     {
       "id": "J3603",

@@ -125,7 +125,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3593 | mini | blocked | gemini | – | review · Verify condition for J3417 |  |
 | J3597 | any | blocked | codex | – | chief · Review corrected J3591 autopsy PRs after J3596 |  |
 | J3598 | any | open (after J3596) | – | – | chief · Review J3596 corrections and finish held J3591 autopsy |  |
-| J3602 | mini | blocked | gemini | – | review · `gemini-argon` · Retention autopsy (48h): "What If Earth Stopped Spinning? (It's Already Slowing Down)" (6bbbvfCx6zY) |  |
 | J3605 | mini | blocked | codex | – | WW2:001 upload · studio · WW2 pilot 1: seven-day outcome after searched-name title change |  |
 | J3606 | mini | open | – | – | for claudecode · assembly · Publish final Mulberry Short records after the corrected cut is verified |  |
 | J3610 | mini | open | – | – | 010 upload · studio · Schedule HOS 010 bird Short after its long is confirmed | J3511 |
@@ -145,6 +144,7 @@ Recently finished:
 - J3607 done: Mini: pull PR #1285 and confirm the second slot really opens (two jobs at once) (Confirmed simultaneous live Codex J3607 slot 0 and Gemini J3602 slot 1 at 20:25:38Z by unexpired leases and live PID probes. Spawn logged 20:17:51; both runners match installed 253c7fe66b787b2f. Main current; no setting changes or restart required. Report posted to studio thread. Available memory 3.948 GiB; scratch offload found nothing eligible.)
 - J3604 done: Fix mixed-snapshot wrong-window views found by J3597 (Fixed and published PR #1284, head 0f68a818b6a1efe949ea07316d42928b829a415b. 90 focused tests pass. Existing J3598 reviews correction; J3591 remains held. No duplicate review.)
 - J3603 done: Chief ruling on J3599 FIX review of Mulberry Short v01 and reopen J3542 (Accepted J3599 FIX. Reviewed exact 0e4f550489; 13 privacy tests passed; PR 1282 merged as afbe5fb57c. Reopened J3542 with exact zero-spend v02 fixes in dispatch brief, preserved 25 Nov 20:00 UTC watch deadline and 26 Nov 12:00 London planned air after Ben OK. J3606 assigned to Claude Code for final-record privacy review and publishing after v02 records land. No v01 watch card; no spend, YouTube or Buffer writes. No audio/motion perception claimed.)
+- J3602 done: Retention autopsy (48h): "What If Earth Stopped Spinning? (It's Already Slowing Down)" (6bbbvfCx6zY) (J3616 Chief acceptance: corrected PR1287 merged c53bca806d35; predecessor PR1283 merged 0bfd429a6bda; verification PR1288 merged 39ebe07869f4. Gemini completed media review accepted from recorded capability evidence; Codex performed record review only. Newer 48h metrics reconciled, causal claims limited. Follow-ups J3618 playlist verification (after J3602) and J3617 queue classification repair; 7d read 29 Nov after 18:00Z. T028 unchanged. No production rerun.)
 - J3601 done: First-day check at 48 h: "What If Earth Stopped Spinning? (It's Already Slowing Down)" (6bbbvfCx6zY) (PR #1283 (macbook/J3601, adds 05_Analytics/owb/launch/6bbbvfCx6zY.json). No faults (Public, no restrictions/claims, Not Made for Kids, no age restriction, HD finished, description exact match, T028 running; Studio typical tooltip: "About the same as the usual 2 - 9", no single usual figure or N-of-10 rank card, Likes 0).
 
 "What If Earth Stopped Spinning? (It's Already Slowing Down)" (6bbbvfCx6zY) · Orbit With Ben · long · went live Sun 22 Nov 18:00 London
@@ -160,4 +160,3 @@ What is different about this one
 
 Do now
   - Read it again from tomorrow morning's snapshot.)
-- J3600 done: Verify condition for J3431 (Acting-Chief ruling FIX: condition not met. Independently summed timed plan at 510.27/1263.04s = 40.400%, below current 50% floor by 121.25s; 48.3% estimate superseded. Evidence PR1281 merged at 8ba223a082e4. J3431 hold updated with last_recheck J3600, dependency J3614 and check 25 Nov 12:00Z; J3432 remains dependent. J3614 commissions one bounded existing-VO complete-sentence paper recut plus PR50 integration; Chief acceptance required before release. No picture PASS, edit release, spend or schedule change.)
