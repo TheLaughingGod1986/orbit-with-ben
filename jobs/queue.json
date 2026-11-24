@@ -317813,13 +317813,13 @@
       "stage": "",
       "after": "",
       "eta_min": 15,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-24T10:00Z",
-      "eta": "2026-11-24T10:15Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T09:48Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-24T09:48Z",
@@ -317855,6 +317855,11 @@
           "at": "2026-11-24T10:04Z",
           "by": "codex",
           "what": "step 3 of 3 done: Live Chrome checks passed for all three channel plans, no JS errors, four routes HTTP 200, noindex headers; deployment f9385b8b"
+        },
+        {
+          "at": "2026-11-24T10:04Z",
+          "by": "codex",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Complete: live schedule overview deployed and verified",
