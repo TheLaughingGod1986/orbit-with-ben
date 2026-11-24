@@ -319524,9 +319524,14 @@
           "at": "2026-11-24T11:41Z",
           "by": "codex",
           "what": "step 1 of 3 done: Approved hash verified; dry run succeeded. Slot gate PASS using --id heiGCnGKTkE to exclude the private copy being replaced; no padding failures. No existing v06 upload record found."
+        },
+        {
+          "at": "2026-11-24T11:46Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: verify-swap.ts passed: old Private unscheduled, new Private 14 Dec 11:30Z. en-GB captions serving, cover saved and visually read back, Related pending J0923. Buffer plan has no errors and defers until its 7-day window; no old posts to cancel."
         }
       ],
-      "remaining_action": "Uploading the approved Betelgeuse Short privately before transferring its slot",
+      "remaining_action": "Committing verified replacement records for Chief review",
       "due": "2026-11-25T12:00:00Z",
       "kind": "studio",
       "plain": "Upload the approved brighter Betelgeuse Short while keeping its date",
@@ -319547,16 +319552,16 @@
         "okRef": "board:OWB:ASK:J2551.2;J3505"
       },
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-24T11:41Z",
+        "at": "2026-11-24T11:46Z",
         "by": "codex",
         "plan": [
           "Verify approved cut and current state",
           "Upload and transfer the existing slot",
           "Verify and record the replacement"
         ],
-        "note": "Approved hash verified; dry run succeeded. Slot gate PASS using --id heiGCnGKTkE to exclude the private copy being repla"
+        "note": "verify-swap.ts passed: old Private unscheduled, new Private 14 Dec 11:30Z. en-GB captions serving, cover saved and visua"
       },
       "taskKeys": [
         "OWB:029"
