@@ -326189,7 +326189,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -326206,6 +326206,11 @@
           "at": "2026-11-24T17:15Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
+        },
+        {
+          "at": "2026-11-24T20:06Z",
+          "by": "relay",
+          "what": "cancelled: nothing left to verify, J3443 is open and no longer waiting"
         }
       ],
       "remaining_action": "Verify readiness: Link pilot 1 to new pilot 2 qfc6EBStOfo after launch, preserving subscribe and verifying both directions",
