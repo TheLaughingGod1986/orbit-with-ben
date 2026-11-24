@@ -328968,20 +328968,33 @@
           "at": "2026-11-24T22:48Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T22:49Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J3625 as elected acting Chief (gemini); reading PR #106, PR #109 QA findings, PR #94/#60/#49, and OWB PR #1268"
         }
       ],
-      "remaining_action": "Review repaired delivery and full quality evidence, then stage the private watch copy",
+      "remaining_action": "Reviewing J3623 reconciled delivery (WW2 PR #106), J3624 full audiovisual QA (WW2 PR #109), and OWB PR #1268",
       "due": "2026-11-27T12:00:00Z",
       "kind": "chief",
       "plain": "Approve the checked torpedo film and put it on Ben’s watch page",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-24T22:48Z",
+        "of": 4,
+        "at": "2026-11-24T22:49Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect PR106, PR109 QA & PR1268",
+          "Decide QA/title/PRs & verify authority",
+          "Execute clean merges/closes & follow-up",
+          "Update J3430, post report & finish"
+        ],
+        "note": "Claimed J3625 as elected acting Chief (gemini); reading PR #106, PR #109 QA findings, PR #94/#60/#49, and OWB PR #1268"
+      },
+      "taskKeys": [
+        "WW2:004"
+      ]
     },
     {
       "id": "J3626",
