@@ -1,5 +1,5 @@
 {
-  "about": "Ben's WIP limit (G, 4 Nov 2026: 'yes to E, F, G'; raised to 8 the same evening for two OWB longs a week). At most `limit` films are in production (topic to Ben's watch) at once. A film leaves `active` when it reaches Ben's watch (UAT); the first film in `next` then enters through one topic go/no-go review (AGENTS.md rule E) and its work is queued. Shorts and Studio finishing on uploaded films don't count. Per channel (5 Nov 2026, Ben: 'we've almost run out of history of science'): OWB 5 and HOS 4 places; a film that leaves is replaced from its own channel's line (`next` for OWB, `next_hos` for HOS). Before this, `next` held only OWB films, so every HOS place that freed up went to OWB. 24 Nov 2026 (Ben, in chat, on the History of Science January search-led plan: \"If we can get that one queued up and working straight away\"): HOS 5 places and 10 in all (Orbit keeps its 5), so HOS:128 (Edison vs Tesla, film 1, Rule-E GO 22 Nov) entered production the same day; the other January films (Trinity, Accidental Inventions, Wright Brothers) take the next HOS places in that order (J3495).",
+  "about": "Ben's WIP limit (G, 4 Nov 2026: 'yes to E, F, G'; raised to 8 the same evening for two OWB longs a week). At most `limit` films are in production (topic to Ben's watch) at once. A film leaves `active` when it reaches Ben's watch (UAT); the first film in `next` then enters through one topic go/no-go review (AGENTS.md rule E) and its work is queued. Shorts and Studio finishing on uploaded films don't count. Per channel (5 Nov 2026, Ben: 'we've almost run out of history of science'): OWB 5 and HOS 4 places; a film that leaves is replaced from its own channel's line (`next` for OWB, `next_hos` for HOS). Before this, `next` held only OWB films, so every HOS place that freed up went to OWB. 24 Nov 2026 (Ben, in chat, on the History of Science search-led plan: \"If we can get that one queued up and working straight away\" and bringing the 4 search-led films into December): HOS 5 places and 10 in all (Orbit keeps its 5), so HOS:128 (Edison vs Tesla, film 1, Rule-E GO 22 Nov) entered production the same day; films 2-4 — HOS:136 (Trinity Test), HOS:137 (Accidental Inventions), and HOS:127 (Wright Brothers 1901 Wind Tunnel, existing Rule-E GO 97.2/100 from J3264 / PR #706/#708) — sit at the front of `next_hos` in that order ahead of HOS:011 (008 and 009 leave `active` after Ben's watch this week so HOS:136 and HOS:137 enter at once; 010/011/013 stay untouched and move to January or gap fill; J3495).",
   "limit": 10,
   "active": [
     "HOS:008",
@@ -63,8 +63,8 @@
     "OWB:086",
     "OWB:087"
   ],
-  "updated": "2026-11-20T10:06:00Z",
-  "by": "claudecode",
+  "updated": "2026-11-24T10:38:00Z",
+  "by": "gemini",
   "entered": {
     "HOS:008": "2026-11-04",
     "HOS:009": "2026-11-04",
@@ -86,6 +86,9 @@
     "HOS": 5
   },
   "next_hos": [
+    "HOS:136",
+    "HOS:137",
+    "HOS:127",
     "HOS:011",
     "HOS:012",
     "HOS:014",
