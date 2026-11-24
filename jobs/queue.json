@@ -1,5 +1,5 @@
 {
-  "next_id": 3629,
+  "next_id": 3630,
   "jobs": [
     {
       "id": "J0001",
@@ -328876,6 +328876,36 @@
       "due": "2026-11-26T18:00:00Z",
       "kind": "script",
       "plain": "Correct the Edison and Tesla narration, sources and short films before recording"
+    },
+    {
+      "id": "J3629",
+      "title": "HOS 128: independent v02 facts and source verification",
+      "needs": "gemini",
+      "repo": "hos",
+      "body": "Independent Gemini facts check for corrected HOS 128 long, two Shorts, all WHO/WHEN/DATA/FACT/SCALE and packaging numbers. Depends on rewrite job. Run agy via facts lane; read HOS PR752 and J3547 ruling, but independently open each supporting source. Record exact findable quotations and URLs, source identity, claim-by-claim OK/PARTIAL/FLAG, exact input hashes. Priorities: Pearl Street qualification and 3pm; Stanley distribution versus voltage demo; cycles/reversals; Niagara route-specific distance, voltage and date/time; Chicago bids and causal claims; Ferraris dates/motive; physical cable dimensions; visual cards and final nuclear-test handoff. No spoken rewrites; report gaps to script lane. No VO/picture spend or lock.\n",
+      "ref": "",
+      "film": "HOS:128",
+      "stage": "sources",
+      "after": "J3628",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-24T21:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T21:33Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 128: independent v02 facts and source verification",
+      "due": "2026-11-27T18:00:00Z",
+      "kind": "facts",
+      "plain": "Independently check every fact in the corrected Edison and Tesla film"
     }
   ],
   "focus": [
