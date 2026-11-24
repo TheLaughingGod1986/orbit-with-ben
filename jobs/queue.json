@@ -317042,20 +317042,32 @@
           "at": "2026-11-24T09:45Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T09:45Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Run independent Gemini claims check on WW2:008 PR #61 SCRIPT.md and SOURCES.md",
+      "remaining_action": "Inspecting ww2-channel PR #61 files and existing WW2 claims check conventions",
       "due": "2026-11-27T18:00:00Z",
       "kind": "facts",
       "plain": "Check every fact, date and number in WW2 film 008 Operation Mincemeat before script lock",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-24T09:45Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect PR #61 script and sources",
+          "Audit all 69 claims and 3 flagged items",
+          "Write CLAIMS_CHECK.md and update status.json",
+          "Open ww2-channel PR and report"
+        ]
+      },
+      "taskKeys": [
+        "WW2:008"
+      ]
     },
     {
       "id": "J3477",
