@@ -317188,20 +317188,32 @@
           "at": "2026-11-24T09:30Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T09:31Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "WW2 film 007: independent Gemini claims check on script v01 and SOURCES.md",
+      "remaining_action": "Reading WW2:007 PR #62 files and checking ww2-channel claims-check conventions",
       "due": "2026-11-28T18:00:00Z",
       "kind": "facts",
       "plain": "Check every date, ship, dimension, and figure in WW2 film 007 script v01 against primary US Navy sources.",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-24T09:30Z",
+        "of": 4,
+        "at": "2026-11-24T09:31Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read WW2:007 script, narration, sources and repo conventions",
+          "Verify C01-C23 and 5 flagged items via primary US Navy sources",
+          "Write CLAIMS_CHECK_v01.md and update status.json in clean worktree",
+          "Open ww2-channel PR and report results"
+        ]
+      },
+      "taskKeys": [
+        "WW2:007"
+      ]
     },
     {
       "id": "J3481",
