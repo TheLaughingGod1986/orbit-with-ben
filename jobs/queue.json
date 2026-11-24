@@ -313710,15 +313710,20 @@
           "at": "2026-11-24T16:00Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Resumed J3430 from Codex PR #60 prep checkpoint (1/4 done); inspecting all 41 paragraphs and 50 archive photos to build exact timed cut list"
+        },
+        {
+          "at": "2026-11-24T16:11Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Built 157-segment cut list (50.52% verified archive, 50 photos, J3447 12 paragraphs preserved), 355 UK-orthography captions, 3 refined thumbnails + 168/320px sheet, zero-spend score bed & mix, full upload package; 1080p render running in tmux J3430-render"
         }
       ],
-      "remaining_action": "Build sentence-level timed cut list across all 41 paragraphs (>=50% honest archive), render zero-spend score and 1080p master, refine thumbnails and upload package",
+      "remaining_action": "Finish 1080p render (tmux J3430-render), inspect QA contact sheet, commit and push deliverables, hand off for Chief review & Ben watch",
       "due": "2026-11-28T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-24T16:00Z",
+        "at": "2026-11-24T16:11Z",
         "by": "gemini",
         "plan": [
           "Check narration and picture plan",
@@ -313726,7 +313731,7 @@
           "Build thumbnails and upload package",
           "Verify and prepare Ben watch"
         ],
-        "note": "Resumed J3430 from Codex PR #60 prep checkpoint (1/4 done); inspecting all 41 paragraphs and 50 archive photos to build "
+        "note": "Built 157-segment cut list (50.52% verified archive, 50 photos, J3447 12 paragraphs preserved), 355 UK-orthography capti"
       },
       "taskKeys": [
         "WW2:004"
