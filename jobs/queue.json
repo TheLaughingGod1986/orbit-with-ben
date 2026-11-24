@@ -316961,13 +316961,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-24T09:48Z",
-      "eta": "2026-11-24T13:48Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T09:09Z",
-      "result": "",
+      "result": "Opened ww2-channel PR #68 (branch macbook/J3474, commit ebb9600) for WW2:009 (Operation Pedestal: One Broken Tanker Saved Malta, target air Sat 12 Dec 17:00 London, lock due 2026-11-30 18:00 UTC). Deliverables: TOPIC_REVIEW.md (GO recommended; 3 Rule-2 titles <=50 chars, picked 49-char title + 3 close-crop Test & Compare thumbnail designs), 03_Picture/ARCHIVE_PROVENANCE.md (41 verified official UK IWM A/GM PD photos, zero HU/wire), 01_Script/SCRIPT.md & NARRATION_v01.txt (2,716 words, 16,406 spoken chars <=21,000 Rule 9 cap, ~20.1 min, cold open 121 words ~53.8s, SHA-256 2de059ed72849c3b45735adcdfd4b277d90e9328e4773351c7792cfdb41feeb4), 01_Script/SOURCES.md (37 claims C01-C37 mapped to 10 official/primary sources R1-R10, 4 flagged items F1-F4), and updated status.json. Queued follow-up gates J3491 (Gemini facts claims check) and J3492 (Claude Rule-6 viewer test, Rule-E lock & post-reset VO queue). £0 spent; no ElevenLabs spend before 30 Nov 10:50Z; ww2-channel returned to main.",
       "history": [
         {
           "at": "2026-11-24T09:09Z",
@@ -317018,6 +317018,11 @@
           "at": "2026-11-24T09:59Z",
           "by": "macbook",
           "what": "step 5 of 5 done"
+        },
+        {
+          "at": "2026-11-24T10:01Z",
+          "by": "macbook",
+          "what": "done: Opened ww2-channel PR #68 (branch macbook/J3474, commit ebb9600) for WW2:009 (Operation Pedestal: One Broken Tanker Saved Malta, target air Sat 12 Dec 17:00 London, lock due 2026-11-30 18:00 UTC). Deliverables: TOPIC_REVIEW.md (GO recommended; 3 Rule-2 titles <=50 chars, picked 49-char title + 3 close-crop Test & Compare thumbnail designs), 03_Picture/ARCHIVE_PROVENANCE.md (41 verified official UK IWM A/GM PD photos, zero HU/wire), 01_Script/SCRIPT.md & NARRATION_v01.txt (2,716 words, 16,406 spoken chars <=21,000 Rule 9 cap, ~20.1 min, cold open 121 words ~53.8s, SHA-256 2de059ed72849c3b45735adcdfd4b277d90e9328e4773351c7792cfdb41feeb4), 01_Script/SOURCES.md (37 claims C01-C37 mapped to 10 official/primary sources R1-R10, 4 flagged items F1-F4), and updated status.json. Queued follow-up gates J3491 (Gemini facts claims check) and J3492 (Claude Rule-6 viewer test, Rule-E lock & post-reset VO queue). £0 spent; no ElevenLabs spend before 30 Nov 10:50Z; ww2-channel returned to main."
         }
       ],
       "remaining_action": "Commit on macbook/J3474, push, open PR, switch back to main, queue follow-up gates, mark done, and post report",
