@@ -325351,10 +325351,10 @@
       "stage": "",
       "after": "J3590",
       "eta_min": 25,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-24T17:25Z",
+      "eta": "2026-11-24T17:50Z",
       "created_by": "refill",
       "created_at": "2026-11-24T17:03Z",
       "result": "",
@@ -325363,6 +325363,11 @@
           "at": "2026-11-24T17:03Z",
           "by": "refill",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T17:25Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Run 48h RSI retention autopsy on ek9F61FVYqY, watch 3 steepest drop windows with video+audio, write 05_Analytics/ww2/autopsy/ek9F61FVYqY_48h.md",
@@ -325374,7 +325379,15 @@
         "moving_video_input"
       ],
       "autopsy": "ek9F61FVYqY@48h",
-      "plain": "Analyse why viewers stayed or left on \"How Britain Built Two Harbours in Secret and Floated The\" (48h) and write up to 3 fixes"
+      "plain": "Analyse why viewers stayed or left on \"How Britain Built Two Harbours in Secret and Floated The\" (48h) and write up to 3 fixes",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T17:25Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3592",
