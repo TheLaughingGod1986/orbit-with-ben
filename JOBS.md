@@ -52,7 +52,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3432 | mini | open (after J3431) | – | – | WW2:005 edit · assembly · WW2 film 005: edit, captions, three thumbnails and upload package, to Ben's watch |  |
 | J3434 | mini | open (after J3433) | – | – | WW2:006 edit · assembly · WW2 film 006: edit, captions, three thumbnails and upload package, to Ben's watch |  |
 | J3442 | mini | blocked | claude | – | studio · Field Order History pilot 1: read the retention graph after the cut, find the next drop, propose up to two more clean cuts |  |
-| J3443 | mini | open | – | – | studio · Field Order History: when pilot 2 goes public, point pilot 1's end screen and a card to it (and back) |  |
+| J3443 | mini | claimed | codex | 2026-11-24T21:19Z | studio · Field Order History: when pilot 2 goes public, point pilot 1's end screen and a card to it (and back) |  |
 | J3444 | mini | blocked | codex | – | 027 upload · studio · Earth equator Short: 24-hour reach read after Related repair |  |
 | J3463 | mini | blocked | codex | – | studio · Field Order History channel totals read 2026-11-24 |  |
 | J3467 | mini | open (after J3466) | – | – | 002 upload · studio · Field Order History pilot 2: pin its question after v06 goes public |  |
