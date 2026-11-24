@@ -1,5 +1,5 @@
 {
-  "next_id": 3477,
+  "next_id": 3478,
   "jobs": [
     {
       "id": "J0001",
@@ -316970,6 +316970,37 @@
       "due": "2026-12-01T18:00:00Z",
       "kind": "facts",
       "plain": "Check every fact, date and number in WW2 film 008 Operation Mincemeat before script lock"
+    },
+    {
+      "id": "J3477",
+      "title": "WW2 film 008: Claude viewer test (first 300 words), Rule E lock & queue VO",
+      "needs": "cloud",
+      "repo": "ww2",
+      "body": "Claude Rule 6 viewer test of the first 300 words and Rule E topic/packaging/script lock for Field Order History film `WW2:008` (*Operation Mincemeat: One Briefcase Fooled Hitler*), prepared in `ww2-channel` PR #61 (`macbook/J3473`) and checked by Gemini in `J3476`.\n\n**Do (ww2-channel `studio/RULES.md` rules 1–6 and 9, deadline 2026-12-03 18:00):**\n1. Review `TOPIC_REVIEW.md` (GO recommendation, 26 verified official archive photo IDs, picked title `Operation Mincemeat: One Briefcase Fooled Hitler` at 48 chars, 3 launch Test & Compare thumbnail concepts) and record the Rule E topic verdict.\n2. Perform **Claude's viewer test of the first 300 words** of `01_Script/NARRATION_v01.txt` as a stranger would (concrete moment by 0:30, promise by 0:45, main story moving by 1:00, no detours, title's answer withheld, one figure at a time).\n3. Verify `J3476` claims check is clean and `NARRATION_v01.txt` is `<= 21,000` spoken chars (currently `18,747`).\n4. Lock the script (or return exact fixes), update `status.json`, and queue the ElevenLabs voice-over job for **after 30 Nov 2026 10:50Z** (slot: **Sat 19 Dec 17:00 London**).\n\n**Guards:** No ElevenLabs spend before 30 Nov 10:50Z. £0.\n",
+      "ref": "ww2-channel#61",
+      "film": "WW2:008",
+      "stage": "script",
+      "after": "J3476",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-24T09:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T09:24Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Run Claude Rule 6 viewer test of first 300 words and lock WW2:008 script by 2026-12-03 18:00",
+      "due": "2026-12-03T18:00:00Z",
+      "kind": "review",
+      "plain": "Run Claude's stranger test on film 008's opening, lock the script, and queue voice-over for after 30 Nov",
+      "cloud_only": true
     }
   ],
   "focus": [
