@@ -67,7 +67,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3497 | cloud | open | – | – | review · Weekly search research (History of Science): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
 | J3499 | cloud | open (after J3498) | – | – | 011 script · review · WW2 film 011: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO | ww2-channel#71 |
 | J3500 | mini | blocked | gemini | – | 008 upload · studio · HOS 008 Franklin: search-led title, package, and schedule Thu 26 Nov 18:00 after Ben's watch |  |
-| J3501 | mini | claimed | codex | 2026-11-24T22:36Z | 009 upload · studio · HOS 009 Gravity: search-led title, package, and schedule Thu 3 Dec 18:00 after Ben's watch |  |
+| J3501 | mini | blocked | codex | – | 009 upload · studio · HOS 009 Gravity: search-led title, package, and schedule Thu 3 Dec 18:00 after Ben's watch |  |
 | J3508 | mini | blocked | codex | – | 032 upload · studio · Upload approved Titan Test A Short v02 for 2 Dec 11:30 | J3505 |
 | J3510 | mini | blocked | gemini | – | 029 upload · studio · 029 Short k2kEaA7ICjc: swap to approved v06; retain 11 Dec 11:30 | J3505 |
 | J3511 | mini | blocked | codex | – | 010 upload · studio · Upload approved HOS 010 bird Short C v01 privately; no schedule yet | J3505 |
