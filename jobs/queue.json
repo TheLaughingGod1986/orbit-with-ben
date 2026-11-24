@@ -326463,23 +326463,28 @@
           "at": "2026-11-24T18:21Z",
           "by": "codex",
           "what": "step 2 of 3 done: Target views now require exact-window launch data or an in-window target snapshot. Mixed-snapshot and historical-target regressions pass; report heading corrected without altering media findings."
+        },
+        {
+          "at": "2026-11-24T18:22Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Published PR #1284 at exact head 0f68a818b6a1efe949ea07316d42928b829a415b; 15 autopsy and 75 launch-check tests pass. Existing J3598 reviews; J3591 stays held."
         }
       ],
-      "remaining_action": "Publish the tested correction and hand it to the existing review",
+      "remaining_action": "Existing review checks the published correction",
       "due": "2026-11-25T05:03:00Z",
       "kind": "assembly",
       "plain": "Correct the remaining date-window bug in the harbour audience analysis",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-24T18:21Z",
+        "at": "2026-11-24T18:22Z",
         "by": "codex",
         "plan": [
           "Reproduce wrong-window fallback",
           "Correct provenance and regressions",
           "Publish correction and evidence"
         ],
-        "note": "Target views now require exact-window launch data or an in-window target snapshot. Mixed-snapshot and historical-target "
+        "note": "Published PR #1284 at exact head 0f68a818b6a1efe949ea07316d42928b829a415b; 15 autopsy and 75 launch-check tests pass. Ex"
       }
     }
   ],
