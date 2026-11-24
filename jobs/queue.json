@@ -1,5 +1,5 @@
 {
-  "next_id": 3596,
+  "next_id": 3597,
   "jobs": [
     {
       "id": "J0001",
@@ -325830,6 +325830,36 @@
         ],
         "note": "Opened OWB PR #1276 (jobs/reviews/J3595/REVIEW.md); parking J3595 for Chief Codex"
       }
+    },
+    {
+      "id": "J3596",
+      "title": "Correct retention autopsy fallback and evidence wording from J3595",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "Chief ruling from J3595: FIX before merging OWB PR #1273, companion ww2-channel #101 and advisory #1276. Keep J3591 held. This is a narrow correction, not a repeat of the completed five media-review steps.\n\n1. In PR #1273 retention_autopsy.video_context, do not assign the latest reading to launch_at_window when its hours differs from the requested window. A targeted probe at e89d46f283 with no snapshots and only hours=6, views=1, impressions=10 returns window=48h and those six-hour metrics. Missing exact-window evidence must remain explicitly unavailable or clearly labelled as a non-window proxy; it must not be scored as a 48h result. Add regression tests for only-6h/request-48h and only-48h/request-7d, retaining the exact-window success test. Check the 7d exact-reading path too (impressions/CTR currently only prefer readings for 48h).\n2. Review clip fallback provenance: ffprobe of an uploaded source cannot substitute for the live edited duration/timeline. Require explicit trim mapping or a clear source-timeline limitation before presenting proxy clips as live exit/end windows. Preserve Gemini actual mapped watch notes; no repeat watch required.\n3. In the autopsy report qualify the claim that missing Mulberry caused off-niche recommendations: this is a hypothesis, not established by 32 views. Distinguish average-view-duration proxy windows from measured retention drops. Verify source support for numerical niche benchmarks; label configured reference targets honestly if peer measurements do not support exact figures. Correct companion row 10 and advisory review where they call all five clips 40 seconds (one is 48 seconds).\n4. Run focused tests; update the existing PRs from clean worktrees (or clearly linked replacement PRs). Record exact heads and evidence. Queue an elected-Chief review after this correction, referencing J3591 and J3595, to merge acceptable PRs and finish J3591. Do not close J3591 before that review. No YouTube changes, no spend, no rule changes or changes to unrelated holds.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-24T17:49Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T17:49Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Correct the fallback tests and qualify the audience-review findings",
+      "due": "2026-11-25T05:03:00Z",
+      "kind": "assembly",
+      "plain": "Fix the time-window checks in the Mulberry harbour audience review"
     }
   ],
   "focus": [
