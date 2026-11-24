@@ -303729,13 +303729,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-24T04:14Z",
-      "eta": "2026-11-24T08:14Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-22T12:46Z",
-      "result": "",
+      "result": "Waiting for: Ben must watch and approve exact finished WW2:002 v06, SHA256 1d8bc79a9573ef5cbc399e7d811575f9fa726119cc9828b9aa5f421d19f81d53. Chief production review PASS; no new upload or old-v05 schedule clear before his decision.",
       "history": [
         {
           "at": "2026-11-22T12:46Z",
@@ -306886,9 +306886,19 @@
           "at": "2026-11-24T04:27Z",
           "by": "codex",
           "what": "step 5 of 5 done: Checkpoint112 local2ccf746: exactv06 ChiefPASS;picture232cuts0fail,polish0fail,musicPASS;561captions. NAS/iCloud hashes match;R2signed206MP4. Watch card requested;no YouTube change."
+        },
+        {
+          "at": "2026-11-24T04:28Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: Ben must watch and approve exact finished WW2:002 v06, SHA256 1d8bc79a9573ef5cbc399e7d811575f9fa726119cc9828b9aa5f421d19f81d53. Chief production review PASS; no new upload or old-v05 schedule clear before his decision."
+        },
+        {
+          "at": "2026-11-24T04:28Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-24T20:05:00Z"
         }
       ],
-      "remaining_action": "Await Ben’s watch of the completed film before the new upload",
+      "remaining_action": "Await Ben’s final watch of the rebuilt U-boat film",
       "due": "2026-11-27T20:00:00Z",
       "kind": "assembly",
       "plain": "Add the real WW2 archive photos that were planned for the second Field Order History film, then Ben re-watches",
@@ -306932,6 +306942,11 @@
         "fixed": [
           "Added 64 official archival photographs and the approved new opening; later narration and score retained"
         ]
+      },
+      "hold": {
+        "type": "ben",
+        "condition": "Ben must watch and approve exact finished WW2:002 v06, SHA256 1d8bc79a9573ef5cbc399e7d811575f9fa726119cc9828b9aa5f421d19f81d53. Chief production review PASS; no new upload or old-v05 schedule clear before his decision.",
+        "check_at": "2026-11-24T20:05:00Z"
       }
     },
     {
