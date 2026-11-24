@@ -316089,10 +316089,10 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-24T07:02Z",
-      "eta": "2026-11-24T07:47Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-24T07:01Z",
       "result": "",
@@ -316116,6 +316116,11 @@
           "at": "2026-11-24T07:06Z",
           "by": "codex",
           "what": "step 1 of 3 done: Checked browser sessions and isolated records worktree. Public Orbit analytics renders, but studio_reach capture expects get_screen while current UI sends yta_web/join. No fresh metric records written."
+        },
+        {
+          "at": "2026-11-24T07:07Z",
+          "by": "codex",
+          "what": "released: Stopped at clean diagnostic point near unattended runtime limit. No fresh studio_ctr values or rebuild committed. Current Studio sends yta_web/join rather than get_screen; public Orbit Reach renders. Next: adapt read-only lifetime queries or DOM reader, verify both channel identities, collect all rows, rebuild/publish. Probe scripts and clean detached worktree: /Volumes/MiniWork/scratch/J3464-*. Required low-disk offload detached as tmux J3464-disk-retry; log ~/_desk/logs/J3464-disk.log and exit file J3464-disk.done; do not duplicate while active."
         }
       ],
       "remaining_action": "Adapt the lifetime metrics read to the current Studio endpoint, then rebuild the tracker",
