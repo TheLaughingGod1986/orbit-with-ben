@@ -328872,13 +328872,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-24T21:29Z",
-      "eta": "2026-11-24T23:29Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T21:27Z",
-      "result": "",
+      "result": "Opened ww2-channel PR #108 (macbook/J3626, commit f14c4db) resolving all 8 J3491 FLAG claims (C03+P02, C11/F2+aligned C24, C12, C14, C28, C30, C34, C35/F4) and all 7 SOURCES.md precision notes (C02, C13, C16, C18, C20, C25, C32) with inspectable primary/official URLs and verbatim quotes; softened/omitted unquoted secondary details rather than copying blindly. Preserved NARRATION_v01.txt (SHA-256 2de059ed72849c3b45735adcdfd4b277d90e9328e4773351c7792cfdb41feeb4) and original J3491 CLAIMS_CHECK.md from PR #96 head 41676228 (SHA-256 90c8771e26d968322e7ba63cf4f2a5c297c6c1f01965b201f33813de43cc80d1) unchanged as evidence. Verified NARRATION_v02.txt: 2,729 words, 16,502 stripped spoken chars (<=21,000 Rule 9 cap; 4,498 headroom), 46/46 exact byte-for-byte parity with SCRIPT.md, SHA-256 16b56a537e97eda4385cf0d7ed8847ce1cd4163ab6f1f09efd7bec32e7eb31f4. Reassessed first 300 words after P02 edit (-2 words, Cold Open 119 words ~0:50-0:53, Ch 1 <1:00 = PASS). Recorded full per-claim change table in 01_Script/REVISION_v02.md. status.json updated to review (never locked). Zero spend; no generation/voice/upload/scheduling; no ElevenLabs before 2026-11-30 10:50Z AND script lock. Ready for independent Gemini v02 recheck, then J3492 viewer/lock decision.",
       "history": [
         {
           "at": "2026-11-24T21:27Z",
@@ -328919,6 +328919,11 @@
           "at": "2026-11-24T21:44Z",
           "by": "macbook-2",
           "what": "step 5 of 5 done"
+        },
+        {
+          "at": "2026-11-24T21:44Z",
+          "by": "macbook-2",
+          "what": "done: Opened ww2-channel PR #108 (macbook/J3626, commit f14c4db) resolving all 8 J3491 FLAG claims (C03+P02, C11/F2+aligned C24, C12, C14, C28, C30, C34, C35/F4) and all 7 SOURCES.md precision notes (C02, C13, C16, C18, C20, C25, C32) with inspectable primary/official URLs and verbatim quotes; softened/omitted unquoted secondary details rather than copying blindly. Preserved NARRATION_v01.txt (SHA-256 2de059ed72849c3b45735adcdfd4b277d90e9328e4773351c7792cfdb41feeb4) and original J3491 CLAIMS_CHECK.md from PR #96 head 41676228 (SHA-256 90c8771e26d968322e7ba63cf4f2a5c297c6c1f01965b201f33813de43cc80d1) unchanged as evidence. Verified NARRATION_v02.txt: 2,729 words, 16,502 stripped spoken chars (<=21,000 Rule 9 cap; 4,498 headroom), 46/46 exact byte-for-byte parity with SCRIPT.md, SHA-256 16b56a537e97eda4385cf0d7ed8847ce1cd4163ab6f1f09efd7bec32e7eb31f4. Reassessed first 300 words after P02 edit (-2 words, Cold Open 119 words ~0:50-0:53, Ch 1 <1:00 = PASS). Recorded full per-claim change table in 01_Script/REVISION_v02.md. status.json updated to review (never locked). Zero spend; no generation/voice/upload/scheduling; no ElevenLabs before 2026-11-30 10:50Z AND script lock. Ready for independent Gemini v02 recheck, then J3492 viewer/lock decision."
         }
       ],
       "remaining_action": "Committing macbook/J3626, opening ww2-channel PR, cleaning up worktree, closing job and posting thread report",
