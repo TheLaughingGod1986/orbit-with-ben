@@ -318355,13 +318355,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-24T15:39Z",
-      "eta": "2026-11-24T19:39Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-24T09:37Z",
-      "result": "",
+      "result": "WW2:014 Dambusters script stage complete in ww2-channel PR #88 (branch macbook/J3485, commit 6df6e74, follows merged topic/packaging PR #82; channel_check PASS; Chief merge required). Expanded 03_Picture/ARCHIVE_PROVENANCE.md v02 to 36 distinct verified official UK PD still photos (+ 7 Reculver trial film frames; HU 62922 excluded); replaced flagged Thumbnail Concept C in PACKAGING_v01.md v02 with IWM FLM 2343 (backup still IWM TR 1000; picked title 'How the Dambusters Bouncing Bomb Worked', 39 chars <= 50). Drafted 01_Script/SCRIPT.md v01, 01_Script/NARRATION_v01.txt (44/44 paras verbatim parity, 2,941 words, 18,245 stripped spoken chars <= 21,000 Rule-9 cap, 2,755-char margin, Cold Open 160 words, 32/41 visual beats = 78.0% official archive, SHA-256 efd833c81ef358d393712e0ae0bc3904e36495a3d867e58c4bdba0cbb2ee6716), 01_Script/SOURCES.md (R1-R10, C01-C32, F01-F05), and updated status.json/TOPIC.md/HANDOFF_J3485.md. Queued follow-up jobs: J3554 (Gemini facts-lane claims check) -> J3555 (Claude Rule-6 first-300-word viewer test, Pilot 2 48h/7d LEARNINGS check, Rule-E lock by 2026-12-11 18:00Z & post-reset VO queue). Zero voice credits spent (£0); all checkouts back on main.",
       "history": [
         {
           "at": "2026-11-24T09:37Z",
@@ -318442,6 +318442,11 @@
           "at": "2026-11-24T15:51Z",
           "by": "macbook",
           "what": "step 5 of 5 done"
+        },
+        {
+          "at": "2026-11-24T15:52Z",
+          "by": "macbook",
+          "what": "done: WW2:014 Dambusters script stage complete in ww2-channel PR #88 (branch macbook/J3485, commit 6df6e74, follows merged topic/packaging PR #82; channel_check PASS; Chief merge required). Expanded 03_Picture/ARCHIVE_PROVENANCE.md v02 to 36 distinct verified official UK PD still photos (+ 7 Reculver trial film frames; HU 62922 excluded); replaced flagged Thumbnail Concept C in PACKAGING_v01.md v02 with IWM FLM 2343 (backup still IWM TR 1000; picked title 'How the Dambusters Bouncing Bomb Worked', 39 chars <= 50). Drafted 01_Script/SCRIPT.md v01, 01_Script/NARRATION_v01.txt (44/44 paras verbatim parity, 2,941 words, 18,245 stripped spoken chars <= 21,000 Rule-9 cap, 2,755-char margin, Cold Open 160 words, 32/41 visual beats = 78.0% official archive, SHA-256 efd833c81ef358d393712e0ae0bc3904e36495a3d867e58c4bdba0cbb2ee6716), 01_Script/SOURCES.md (R1-R10, C01-C32, F01-F05), and updated status.json/TOPIC.md/HANDOFF_J3485.md. Queued follow-up jobs: J3554 (Gemini facts-lane claims check) -> J3555 (Claude Rule-6 first-300-word viewer test, Pilot 2 48h/7d LEARNINGS check, Rule-E lock by 2026-12-11 18:00Z & post-reset VO queue). Zero voice credits spent (£0); all checkouts back on main."
         }
       ],
       "remaining_action": "Opening PR, queuing Gemini facts check + Claude Rule-6 viewer test, closing J3485 & reporting",
