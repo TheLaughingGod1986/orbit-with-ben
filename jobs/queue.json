@@ -1,5 +1,5 @@
 {
-  "next_id": 3530,
+  "next_id": 3533,
   "jobs": [
     {
       "id": "J0001",
@@ -227625,11 +227625,11 @@
       "title": "HOS, then Orbit: take the email addresses out of the files and then out of the history (Ben's OK 10 Nov), in stages with planned windows",
       "needs": "cloud",
       "repo": "hos",
-      "body": "Ben, 10 Nov, asked \"Email address in HOS history: do you want the history rewritten to remove it?\", said: \"Ok on both\". This repo is public and stays public.\n\nCounted on 10 Nov (names and counts only, never an address): History of Science's current files hold an email address in 374 files (980 places, 8 different addresses), nearly all under `02_Video-Projects`. Its history holds more. Orbit With Ben's current files hold one in 46 files; its history is NOT covered by Ben's OK and is not touched by this job.\n\nA history rewrite cannot be undone and breaks every copy of the repo, so it is done once, in a planned window, in this order. Nothing in stage 4 happens while a picture run or any other History of Science job is working.\n\n1. The files as they are today. In ordinary pull requests, replace each address with what it stands for (\"the studio Ultra account\", \"the personal account\", a role), and where code compares an address, compare its sha256 instead (the 013 runner already does). Do not touch a file that a working job pins by hash (009's and 013's plans, boards and scopes) until that job is done, then change it and re-pin in the same pull request. The repo's own address check goes to zero and stays there.\n2. Open pull requests. A branch that still holds an address brings it back when merged. Close or carry every open pull request first (the table from J2495; the carry is J2502).\n3. Rehearse on a mirror copy: rewrite with the same replacement list, then check every branch and tag for zero addresses, count the rewritten commits, and check the newest commit's files are byte for byte what main has. Keep one full copy of the old history as a bundle on the NAS (never deleted, never pushed anywhere).\n4. The window. Tell Ben the day before. Hold History of Science jobs in the queue, push the rewritten branches and tags, then every machine takes a fresh copy (the Mini, both MacBook slots, cloud sessions) and its checks are run. Lift the hold. No video is made, changed or published by any of this.\n5. What a rewrite does not reach: GitHub keeps old commits reachable through closed pull requests and its caches until its support team clears them. Draft that request for Ben to send (it goes under his name), and say plainly what remains visible until they act.\n\nReport after each stage on the thread. No real money.\n\n\n10 Nov 20:35Z, acting Chief (Claude). Asked whether Orbit With Ben's history should be rewritten too, Ben said: \"Do what you feel is best\". Decision: yes, the same way, but as a sixth stage and only if stages 1 to 5 here went cleanly: after the studio has moved out of that repo (then it has few writers), in its own planned window, Ben told the day before. If the History of Science run shows the cost is higher than the gain, stop and say so instead.\nWhat the count found (fingerprints only): the address that appears most is the owner's own, which is also the studio Ultra account; a second Google account appears about a fifth as often; a handful of others appear a few times.\nOrbit's current files are cleaned as part of stage 1, in this order: the job queue's text (done 10 Nov, 25 places in 13 jobs, through the queue tool); one comment in `scripts/macbook_worker.py`; film folders and `_archive`; the AI spend ledger's notes last, and only when no picture run is working (the runner appends to that file on the Mini).",
+      "body": "Ben, 10 Nov, asked \"Email address in HOS history: do you want the history rewritten to remove it?\", said: \"Ok on both\". This repo is public and stays public.\n\nCounted on 10 Nov (names and counts only, never an address): History of Science's current files hold an email address in 374 files (980 places, 8 different addresses), nearly all under `02_Video-Projects`. Its history holds more. Orbit With Ben's current files hold one in 46 files; its history is NOT covered by Ben's OK and is not touched by this job.\n\nA history rewrite cannot be undone and breaks every copy of the repo, so it is done once, in a planned window, in this order. Nothing in stage 4 happens while a picture run or any other History of Science job is working.\n\n1. The files as they are today. In ordinary pull requests, replace each address with what it stands for (\"the studio Ultra account\", \"the personal account\", a role), and where code compares an address, compare its sha256 instead (the 013 runner already does). Do not touch a file that a working job pins by hash (009's and 013's plans, boards and scopes) until that job is done, then change it and re-pin in the same pull request. The repo's own address check goes to zero and stays there.\n2. Open pull requests. A branch that still holds an address brings it back when merged. Close or carry every open pull request first (the table from J2495; the carry is J2502).\n3. Rehearse on a mirror copy: rewrite with the same replacement list, then check every branch and tag for zero addresses, count the rewritten commits, and check the newest commit's files are byte for byte what main has. Keep one full copy of the old history as a bundle on the NAS (never deleted, never pushed anywhere).\n4. The window. Tell Ben the day before. Hold History of Science jobs in the queue, push the rewritten branches and tags, then every machine takes a fresh copy (the Mini, both MacBook slots, cloud sessions) and its checks are run. Lift the hold. No video is made, changed or published by any of this.\n5. What a rewrite does not reach: GitHub keeps old commits reachable through closed pull requests and its caches until its support team clears them. Draft that request for Ben to send (it goes under his name), and say plainly what remains visible until they act.\n\nReport after each stage on the thread. No real money.\n\n\n10 Nov 20:35Z, acting Chief (Claude). Asked whether Orbit With Ben's history should be rewritten too, Ben said: \"Do what you feel is best\". Decision: yes, the same way, but as a sixth stage and only if stages 1 to 5 here went cleanly: after the studio has moved out of that repo (then it has few writers), in its own planned window, Ben told the day before. If the History of Science run shows the cost is higher than the gain, stop and say so instead.\nWhat the count found (fingerprints only): the address that appears most is the owner's own, which is also the studio Ultra account; a second Google account appears about a fifth as often; a handful of others appear a few times.\nOrbit's current files are cleaned as part of stage 1, in this order: the job queue's text (done 10 Nov, 25 places in 13 jobs, through the queue tool); one comment in `scripts/macbook_worker.py`; film folders and `_archive`; the AI spend ledger's notes last, and only when no picture run is working (the runner appends to that file on the Mini).\n\n**Update (Claude, acting Chief, 24 Nov ~12:35): Ben's one-time exception is given.** Ben, Tue 24 Nov ~12:30 London, in chat: \"the three answers. 1, yes, Claude Code publish, codexes work. 2, yes, if you think it's beneficial. 3, yes.\" The live window is J3532 (Mon 30 Nov 08:00-10:00 London, Claude Code on the Mini). This job closes when it reports done.",
       "ref": "Ben 10 Nov: Ok on both",
       "film": "",
       "stage": "",
-      "after": "",
+      "after": "J3532",
       "eta_min": 120,
       "status": "blocked",
       "by": "codex",
@@ -228203,6 +228203,11 @@
           "at": "2026-11-24T11:54Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-24T15:30:00Z"
+        },
+        {
+          "at": "2026-11-24T12:25Z",
+          "by": "claude",
+          "what": "Ben gave the one-time exception for the history rewrite (24 Nov); window J3532 Mon 30 Nov 08:00 London."
         }
       ],
       "remaining_action": "Check for the protected desk history exception, then prepare the controlled rewrite window",
@@ -228224,12 +228229,9 @@
         "HOS:013"
       ],
       "hold": {
-        "type": "input",
-        "condition": "Chief records existing J3478 NOT MET ruling from OWB7130084687 and HOS7130086493; PR1233 merged 80fd69590c. Fresh owner comments through OWB7130642535 and HOS7130323741 contain no explicit one-time Ben exception for irreversible protected HOS hos-desk history rewrite retaining PR180. Grok7018109147 stands: question already open, do not ask again. After authorization resolve non-desk PRs, refresh backup and private rehearsal against current heads, give day-before notice and hold HOS writers before cutover. No live rewrite authorized.",
-        "check_at": "2026-11-24T15:30:00Z",
-        "last_recheck": "J3478",
-        "checked_at": "2026-11-24T11:54:16+00:00",
-        "checked_by": "codex"
+        "type": "dependency",
+        "condition": "J3532 (the rewrite window, Mon 30 Nov) is done",
+        "check_at": "2026-11-30T12:00:00Z"
       }
     },
     {
@@ -272553,7 +272555,7 @@
       "title": "Decoupling phase 3: move the studio engine into its own repo, runbook now, move after a clean week",
       "needs": "mini",
       "repo": "owb",
-      "body": "**Ben, in chat (17 Nov 19:00Z):** created `https://github.com/TheLaughingGod1986/studio` for the studio engine (private, empty, default branch main). Claude checked that the Claude GitHub app can reach it (cloned it, empty). This is phase 3 of `docs/MULTI_CHANNEL_PLAN.md`: the engine (queue, board, relay, agents' scripts, thread) moves out of orbit-with-ben into its own repo, and Orbit With Ben, History of Science and the WW2 channel all plug in through the registry. Ben, 10 Nov: \"there should be 3 GitHub repos. One for Studio, one for Orbit with Ben, and one for History of Science\" (now four, with ww2-channel).\n\n**Do not move before all of these hold:**\n1. `scripts/studio_split.py` has read 0 on seven days in a row (it read 0 on 14, 15, 16 and 17 Nov; the earliest is 20 Nov).\n2. J2537 is done: email addresses out of both channels' current files and git history.\n3. Ben has been told the day before the move, in one message on the thread: the date, what he will notice (none, if it goes right), and any credential he must change. That message is a notice, not a question, unless a credential change is truly needed.\n\n**Do now, while waiting.** Write the move runbook in `docs/STUDIO_MOVE.md`: what the new repo holds (from the dry run's layout); how queue history and the thread carry over; every machine change (the Mac mini's and the MacBook's checkouts, launchd jobs, the relay, the board publisher, `board_site.json`, GitHub workflows); every credential that must cover the new repo (the board's GitHub token currently covers orbit-with-ben and history-of-science only; the board's tick store and thread can stay where they are if that avoids a token change, so say which is simpler); the rollback; and a rehearsal on a branch of the new repo that leaves live work untouched. Open a pull request for the runbook. When the three conditions hold, run the move by the runbook, prove one full relay cycle, one board publish and one tick, and close.\n\n**Guards.** £0. Nothing deleted from orbit-with-ben until the new repo is live and proven. No token or account address in any file. Nothing that needs Ben beyond the day-before notice and, only if unavoidable, one credential change.\n\n**Result.** The runbook PR now; at the move, the new repo's state, the checks, and anything left.\n\n\n**Changed by Claude, 17 Nov 19:12Z: the move does not wait for J2537's history rewrite.** Start the new studio repo with one clean first commit built from the split, not with orbit-with-ben's history, so no old address can travel into it; the history stays readable in orbit-with-ben. Condition 2 above becomes: the dry run's address count is 0 on the files that move (it is). Conditions 1 and 3 stand (seven zero days, so 20 Nov at the earliest; Ben told the day before). Aim: runbook and rehearsal by Sat 21 Nov, move Mon 23 or Tue 24 Nov.",
+      "body": "**Ben, in chat (17 Nov 19:00Z):** created `https://github.com/TheLaughingGod1986/studio` for the studio engine (private, empty, default branch main). Claude checked that the Claude GitHub app can reach it (cloned it, empty). This is phase 3 of `docs/MULTI_CHANNEL_PLAN.md`: the engine (queue, board, relay, agents' scripts, thread) moves out of orbit-with-ben into its own repo, and Orbit With Ben, History of Science and the WW2 channel all plug in through the registry. Ben, 10 Nov: \"there should be 3 GitHub repos. One for Studio, one for Orbit with Ben, and one for History of Science\" (now four, with ww2-channel).\n\n**Do not move before all of these hold:**\n1. `scripts/studio_split.py` has read 0 on seven days in a row (it read 0 on 14, 15, 16 and 17 Nov; the earliest is 20 Nov).\n2. J2537 is done: email addresses out of both channels' current files and git history.\n3. Ben has been told the day before the move, in one message on the thread: the date, what he will notice (none, if it goes right), and any credential he must change. That message is a notice, not a question, unless a credential change is truly needed.\n\n**Do now, while waiting.** Write the move runbook in `docs/STUDIO_MOVE.md`: what the new repo holds (from the dry run's layout); how queue history and the thread carry over; every machine change (the Mac mini's and the MacBook's checkouts, launchd jobs, the relay, the board publisher, `board_site.json`, GitHub workflows); every credential that must cover the new repo (the board's GitHub token currently covers orbit-with-ben and history-of-science only; the board's tick store and thread can stay where they are if that avoids a token change, so say which is simpler); the rollback; and a rehearsal on a branch of the new repo that leaves live work untouched. Open a pull request for the runbook. When the three conditions hold, run the move by the runbook, prove one full relay cycle, one board publish and one tick, and close.\n\n**Guards.** £0. Nothing deleted from orbit-with-ben until the new repo is live and proven. No token or account address in any file. Nothing that needs Ben beyond the day-before notice and, only if unavoidable, one credential change.\n\n**Result.** The runbook PR now; at the move, the new repo's state, the checks, and anything left.\n\n\n**Changed by Claude, 17 Nov 19:12Z: the move does not wait for J2537's history rewrite.** Start the new studio repo with one clean first commit built from the split, not with orbit-with-ben's history, so no old address can travel into it; the history stays readable in orbit-with-ben. Condition 2 above becomes: the dry run's address count is 0 on the files that move (it is). Conditions 1 and 3 stand (seven zero days, so 20 Nov at the earliest; Ben told the day before). Aim: runbook and rehearsal by Sat 21 Nov, move Mon 23 or Tue 24 Nov.\n\n**Update (Claude, 24 Nov ~12:35): Ben said yes to the move and is doing the token grant himself now.** Ben, Tue 24 Nov ~12:30 London, in chat: \"the three answers. 1, yes, Claude Code publish, codexes work. 2, yes, if you think it's beneficial. 3, yes.\" Steps given to Ben (from PR #1075's proven probe: the board token gets 404 on the studio repo): on GitHub, edit the board's fine-grained token, add `TheLaughingGod1986/studio` to its repositories, and set Contents to Read-only, without regenerating it. When Ben confirms (Claude records it here):\n1. Re-run the authenticated `/api/migration` probe (PR #1075's redirect fix is merged); it must answer 200 with `contentsRead: true`. Then switch the flag off and check it answers 404.\n2. Day-before notice on the thread **Thu 26 Nov**; the move **Fri 27 Nov from 10:00 London** by `docs/STUDIO_MOVE.md`, after Thursday's History of Science launch and before Field Order film 3's Saturday slot, with the documented rollback.\n3. Prove one full relay cycle, one board publish, one harmless tick and both MacBook slots, then close.",
       "ref": "",
       "film": "",
       "stage": "",
@@ -273556,6 +273558,11 @@
           "at": "2026-11-20T19:02Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-21T12:00:00Z"
+        },
+        {
+          "at": "2026-11-24T12:25Z",
+          "by": "claude",
+          "what": "Ben said yes to the studio move and is doing the board-token grant now; then probe, notice Thu 26 Nov, move Fri 27 Nov 10:00 London."
         }
       ],
       "remaining_action": "Verify Ben's BOARD_GH_TOKEN studio grant (re-probe 200 contentsRead:true) and PR #1075 merge, then post preceding-day notice for Mon 23/Tue 24 Nov cutover",
@@ -273584,9 +273591,9 @@
       "for": "gemini",
       "model": "gemini-argon",
       "hold": {
-        "type": "ben",
-        "condition": "Ben's one-time BOARD_GH_TOKEN grant via his own account adding TheLaughingGod1986/studio (Contents: Read-only), plus independent review/merge of PR #1075 (5fe73b23d3) and quick re-probe confirming 200 contentsRead:true before posting preceding-day cutover notice",
-        "check_at": "2026-11-21T12:00:00Z"
+        "type": "input",
+        "condition": "Ben confirms in chat that the board token now covers the studio repo (Contents: Read-only); Claude records it here",
+        "check_at": "2026-11-25T09:00:00Z"
       }
     },
     {
@@ -320920,6 +320927,113 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3530",
+      "title": "Claude Code: publish Codex's finished work it could not push (Pluto thumbnails first), after a privacy check",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Why (Ben, Tue 24 Nov ~12:30 London, in chat: \"the three answers. 1, yes, Claude Code publish, codexes work. 2, yes, if you think it's beneficial. 3, yes.\")** Rule in AGENTS.md (orbit-with-ben PR #1250): Codex's refused pushes go to Claude Code, which checks the diff holds nothing private, pushes, opens the PR and merges it when green.\n\n**Do (Claude Code on the Mini; due Wed 25 Nov 12:00 UTC):**\n1. **J3114, Pluto thumbnails v02 (needed for the 13 Dec film):** local commit a12100797f on branch `codex/j3114-pluto-v02` in `/Volumes/MiniWork/scratch/j3114-wt`. Read the whole diff; if it holds nothing private (no address, token, key, password, revenue, personal detail or raw Studio export), push the branch, open the PR, merge it when green, then finish J3114 with the PR and merge commit so J3115 starts.\n2. **J3307, the historical thumbnail review:** commit 9d64d92a6181094db74608f8457187e8b4f35af2 in `/Volumes/MiniWork/scratch/j3307-public-review`. Same check, push, PR, merge when green; then do the queue side J3307 asks for.\n3. Search the queue for any other job blocked on \"automatic approval review rejected\" or \"explicit export approval\" and treat it the same way, except J3463 (its evidence was not accepted on its merits; J3465 owns it).\n4. Anything that fails the privacy check: park for the Chief with the reason, never push.\nOne thread line listing what was published. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T12:25Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T12:25Z",
+          "by": "claude",
+          "what": "added for claudecode"
+        }
+      ],
+      "remaining_action": "Check each refused Codex commit for private data, then push, open and merge its PR",
+      "due": "2026-11-25T12:00:00Z",
+      "for": "claudecode",
+      "kind": "assembly",
+      "mini_only": true,
+      "urgent": 13
+    },
+    {
+      "id": "J3531",
+      "title": "Relay: a refused Codex push is handed to Claude Code automatically ('publish via Claude Code')",
+      "needs": "any",
+      "repo": "owb",
+      "body": "**Why (Ben, Tue 24 Nov ~12:30 London, in chat: \"the three answers. 1, yes, Claude Code publish, codexes work. 2, yes, if you think it's beneficial. 3, yes.\")** Make the AGENTS.md rule (PR #1250) automatic, so a refused Codex push never sits parked again.\n\n**Do (orbit-with-ben, with tests; one PR):**\n1. In the Codex worker prompt (`chief_relay.py` PROMPT/authority text): when its sandbox review refuses a push, keep the commit on a named local branch and block with `publish via Claude Code: <worktree> <branch>`.\n2. In the relay round: a blocked job whose result starts with that phrase is handed to Claude Code on the Mini (`for: claudecode`, mini-only), with the worktree and branch in its next action, in the same round.\n3. Tests for both. Merge when green. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T12:25Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T12:25Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Teach Codex to block with 'publish via Claude Code' and the relay to hand it on",
+      "due": "2026-11-27T18:00:00Z",
+      "kind": "assembly"
+    },
+    {
+      "id": "J3532",
+      "title": "History of Science: history rewrite window Mon 30 Nov 08:00 London (Ben's one-time exception), by the J2537 runbook",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**Why (Ben, Tue 24 Nov ~12:30 London, in chat: \"the three answers. 1, yes, Claude Code publish, codexes work. 2, yes, if you think it's beneficial. 3, yes.\")** This is Ben's explicit one-time exception for J2537's history rewrite, which the never-push-the-desk rule needed (J2537 stage 4; private rehearsal recorded in PR657). Claude's advice to Ben: worth doing. History of Science is public and its old commits hold the addresses behind the studio's accounts (8 addresses counted on 10 Nov), which invites spam and targeted phishing. The rehearsal is done, so the cost is one planned morning.\n\n**When:** **Mon 30 Nov, 08:00-10:00 London.** Start only if all of these hold: the studio move (J3012) is done, or not due within 24 hours; no History of Science job is claimed or running a picture job; and the day-before notice was posted on the thread on Sun 29 Nov (one plain message to Ben: the window, what he will notice, which should be nothing, and that every machine takes a fresh copy). If any fails, move to the next quiet weekday morning and say so.\n\n**Do (Claude Code on the Mini; follow J2537 stages 3 to 5 exactly):**\n1. Keep one full bundle of the old history on the NAS. Never delete it and never push it anywhere.\n2. Re-run the rehearsal check on a fresh mirror: zero addresses on every branch and tag, and the newest files byte for byte the same as main.\n3. Hold History of Science jobs. Push the rewritten branches and tags, keeping desk PR #180 open. Every machine takes a fresh copy (Mini, both MacBook slots, cloud sessions) and runs its checks. Lift the hold.\n4. Draft the GitHub support request that clears cached old commits, for Ben to send under his name.\nReport on the thread. No video is made, changed or published by this. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "blocked",
+      "by": "claude",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T12:25Z",
+      "result": "Waiting for: Mon 30 Nov 2026 08:00 London reached, the studio move is done or not due within 24 h, no History of Science job running, and the day-before notice posted Sun 29 Nov",
+      "history": [
+        {
+          "at": "2026-11-24T12:25Z",
+          "by": "claude",
+          "what": "added for claudecode"
+        },
+        {
+          "at": "2026-11-24T12:25Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: Mon 30 Nov 2026 08:00 London reached, the studio move is done or not due within 24 h, no History of Science job running, and the day-before notice posted Sun 29 Nov"
+        },
+        {
+          "at": "2026-11-24T12:25Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-30T08:00:00Z"
+        }
+      ],
+      "remaining_action": "Run the history rewrite window by the J2537 runbook",
+      "due": "2026-11-30T12:00:00Z",
+      "for": "claudecode",
+      "kind": "assembly",
+      "mini_only": true,
+      "hold": {
+        "type": "date",
+        "condition": "Mon 30 Nov 2026 08:00 London reached, the studio move is done or not due within 24 h, no History of Science job running, and the day-before notice posted Sun 29 Nov",
+        "check_at": "2026-11-30T08:00:00Z"
+      }
     }
   ],
   "focus": [

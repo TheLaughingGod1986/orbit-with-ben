@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J2529, J3430, J3431, J3432, J3434, J3496, J3501, J3519, J3500, J3205, J3521.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J2529, J3430, J3431, J3432, J3434, J3496, J3501, J3519, J3500, J3205, J3521, J3530.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -96,6 +96,9 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3527 | mini | claimed | gemini | 2026-11-24T14:16Z | review · Verify condition for J3125 |  |
 | J3528 | mini | blocked | gemini | – | review · Verify condition for J3463 |  |
 | J3529 | mini | open | – | – | review · Verify condition for J3492 |  |
+| J3530 | mini | open | – | – | for claudecode · assembly · Claude Code: publish Codex's finished work it could not push (Pluto thumbnails first), after a privacy check |  |
+| J3531 | any | open | – | – | assembly · Relay: a refused Codex push is handed to Claude Code automatically ('publish via Claude Code') |  |
+| J3532 | mini | blocked | claude | – | for claudecode · assembly · History of Science: history rewrite window Mon 30 Nov 08:00 London (Ben's one-time exception), by the J2537 runbook |  |
 
 Recently finished:
 
