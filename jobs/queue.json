@@ -317178,13 +317178,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-24T09:28Z",
-      "eta": "2026-11-24T10:58Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T09:26Z",
-      "result": "",
+      "result": "Completed J3479 three-a-week Dec rollout pack for Field Order History (£0, no ElevenLabs plan change). Opened ww2-channel PR #65 (00_Brand/THREE_A_WEEK_2026-12.md, films 004-010 new air dates in status.json, films 011-016 added to VIDEO_BACKLOG.json and 02_Video-Projects/011..016/) and orbit-with-ben PR #1235 (studio/plan.json updated for 002 and 004-016 + test_plan_board.py 6/6 PASS; channel_check/email/network tests PASS). Queued films 011-016 script jobs J3482-J3487 (locks Sun 6 Dec to Fri 18 Dec) and pulled forward J3205/J3476/J3477/J3480/J3481 deadlines. Flagged 005 (High risk, J3431 blocked at 48.3%) and 003 (Medium risk, J3370 reopened today), recommended skipping Christmas Eve (Thu 24 Dec) while keeping Boxing Day (Sat 26 Dec, Dambusters), and computed Creator (/mo, 121k) run-out at 6-9 Dec (1:1) / 18-21 Dec (observed 0.462x) with Pro (/mo, 600k, Black Friday annual promo ending 1 Dec) as cheapest plan closing the gap. Posted one-page summary to studio thread; all checkouts returned cleanly to main.",
       "history": [
         {
           "at": "2026-11-24T09:26Z",
@@ -317215,6 +317215,11 @@
           "at": "2026-11-24T09:38Z",
           "by": "macbook",
           "what": "step 3 of 5 done"
+        },
+        {
+          "at": "2026-11-24T09:44Z",
+          "by": "macbook",
+          "what": "done: Completed J3479 three-a-week Dec rollout pack for Field Order History (£0, no ElevenLabs plan change). Opened ww2-channel PR #65 (00_Brand/THREE_A_WEEK_2026-12.md, films 004-010 new air dates in status.json, films 011-016 added to VIDEO_BACKLOG.json and 02_Video-Projects/011..016/) and orbit-with-ben PR #1235 (studio/plan.json updated for 002 and 004-016 + test_plan_board.py 6/6 PASS; channel_check/email/network tests PASS). Queued films 011-016 script jobs J3482-J3487 (locks Sun 6 Dec to Fri 18 Dec) and pulled forward J3205/J3476/J3477/J3480/J3481 deadlines. Flagged 005 (High risk, J3431 blocked at 48.3%) and 003 (Medium risk, J3370 reopened today), recommended skipping Christmas Eve (Thu 24 Dec) while keeping Boxing Day (Sat 26 Dec, Dambusters), and computed Creator (/mo, 121k) run-out at 6-9 Dec (1:1) / 18-21 Dec (observed 0.462x) with Pro (/mo, 600k, Black Friday annual promo ending 1 Dec) as cheapest plan closing the gap. Posted one-page summary to studio thread; all checkouts returned cleanly to main."
         }
       ],
       "remaining_action": "Write THREE_A_WEEK_2026-12.md, films 011-016 folders, and studio/plan.json updates",
