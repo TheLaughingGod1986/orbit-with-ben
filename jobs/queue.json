@@ -328744,7 +328744,7 @@
     {
       "id": "J3626",
       "title": "WW2 009: resolve eight claims flags in narration v02",
-      "needs": "any",
+      "needs": "mini",
       "repo": "ww2",
       "body": "J3529 Chief ruling: CONDITION NOT MET. Prepare WW2:009 Operation Pedestal v02 from the merged v01 and Gemini J3491 report in ww2-channel PR #96 (head 4167622832e81bb48049f3c9588655f00113dd45). This is script-lane correction work, not script lock or voice permission.\n\nResolve all eight flagged claims C03, C11/F2, C12, C14, C28, C30, C34, C35/F4, and seven source precision notes C02/C13/C16/C18/C20/C25/C32. Fold in P02 from VIEWER_TEST_v01.md; preserve the v01 narration as evidence and write NARRATION_v02.txt. Keep SCRIPT.md and narration exactly aligned and below 21,000 characters. Record exact hash, parity, and a per-claim change table. Do not copy unverified new details blindly: the Gemini report names sources but lacks exact page quotations for several proposed replacement details. Provide inspectable source URLs/pages and quoted evidence for every changed factual statement; soften or omit unsupported detail. Do not invent quotations.\n\nUse a clean WW2 worktree and open a PR. Preserve the original J3491 report unchanged as evidence. Update status to review, never locked. Independent Gemini recheck follows this job, then J3492 owns the final viewer/lock decision. Reassess first 300 words if edits change them. No generation, voice, upload or scheduling. Zero spend; no ElevenLabs before 30 Nov 2026 10:50Z AND script lock. Existing script-lock deadline 30 Nov 18:00Z, Ben watch 9 Dec and air slot 12 Dec 17:00 London stay unchanged. Finish corrections by 25 Nov 18:00Z.\n",
       "ref": "ww2-channel#96",
@@ -328764,12 +328764,25 @@
           "at": "2026-11-24T21:27Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T21:29Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Correct eight flagged claims and document the evidence for the revised narration",
       "due": "2026-11-25T18:00:00Z",
       "kind": "script",
-      "plain": "Correct the flagged facts in the Operation Pedestal script"
+      "plain": "Correct the flagged facts in the Operation Pedestal script",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3627",
