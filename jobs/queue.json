@@ -322244,13 +322244,13 @@
       "stage": "script",
       "after": "J3538",
       "eta_min": 120,
-      "status": "done",
-      "by": "macbook",
-      "since": "2026-11-24T14:36Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T13:26Z",
-      "result": "Independent exact-hash FIX on v03 9d5cd3bd: PR #1265, commit 96b168553. All 16 source rows inspected; four J3520 fixes retained, further semantics/citation/teaching corrections specified. Gates 93.1 and episode pass; 13 privacy tests pass. Follow-ups J3544 correction and J3545 independent recheck. J3020 hold records this review; J3021 remains gated. No lock or media changes. Checkout main.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-24T13:26Z",
@@ -322286,6 +322286,11 @@
           "at": "2026-11-24T14:47Z",
           "by": "macbook",
           "what": "done: Independent exact-hash FIX on v03 9d5cd3bd: PR #1265, commit 96b168553. All 16 source rows inspected; four J3520 fixes retained, further semantics/citation/teaching corrections specified. Gates 93.1 and episode pass; 13 privacy tests pass. Follow-ups J3544 correction and J3545 independent recheck. J3020 hold records this review; J3021 remains gated. No lock or media changes. Checkout main."
+        },
+        {
+          "at": "2026-11-24T14:49Z",
+          "by": "macbook",
+          "what": "reopened: Correct completion wording: protected J3020 hold update was rejected; Chief handoff J3546 is queued. Review remains FIX in PR 1265."
         }
       ],
       "remaining_action": "Review published in PR 1265; corrections and independent recheck queued",
@@ -322299,19 +322304,7 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true,
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-24T14:47Z",
-        "by": "macbook",
-        "plan": [
-          "Read corrected script",
-          "Verify primary sources",
-          "Check gates and teaching notes",
-          "Publish review and handoff"
-        ]
-      }
+      "open_claim": true
     },
     {
       "id": "J3540",
