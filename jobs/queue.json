@@ -325991,13 +325991,13 @@
       "stage": "",
       "after": "J3596",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-24T18:12Z",
-      "eta": "2026-11-24T20:12Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T17:49Z",
-      "result": "",
+      "result": "Review finished FIX; J3591 hold updated and J3604 correction queued. publish via Claude Code: /Volumes/MiniWork/scratch/j3597-review codex/j3597-review (commit 1eb13065c3). Automatic approval review rejected direct branch push; no retry or indirect publication attempted. Publication requires the approved route or explicit approval.",
       "history": [
         {
           "at": "2026-11-24T17:49Z",
@@ -326028,6 +326028,11 @@
           "at": "2026-11-24T18:17Z",
           "by": "codex",
           "what": "step 3 of 3 done: Review complete: FIX recorded on J3591, J3604 queued, J3598 retains follow-up. Review commit 1eb13065c3 is local; automatic approval review rejected branch publication."
+        },
+        {
+          "at": "2026-11-24T18:17Z",
+          "by": "codex",
+          "what": "blocked: Review finished FIX; J3591 hold updated and J3604 correction queued. publish via Claude Code: /Volumes/MiniWork/scratch/j3597-review codex/j3597-review (commit 1eb13065c3). Automatic approval review rejected direct branch push; no retry or indirect publication attempted. Publication requires the approved route or explicit approval."
         }
       ],
       "remaining_action": "Publish the completed review record through the approved route",
@@ -326048,7 +326053,12 @@
       },
       "taskKeys": [
         "WW2:001"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "Review finished FIX; J3591 hold updated and J3604 correction queued. publish via Claude Code: /Volumes/MiniWork/scratch/j3597-review codex/j3597-review (commit 1eb13065c3). Automatic approval review rejected direct branch push; no retry or indirect publication attempted. Publication requires the approved route or explicit approval.",
+        "check_at": "2026-11-25T00:17:44+00:00"
+      }
     },
     {
       "id": "J3598",
