@@ -80,7 +80,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3470 | mini | open | – | – | review · Verify condition for J3114 |  |
 | J3471 | mini | open | – | – | review · Verify condition for J3415 |  |
 | J3474 | mini | claimed | macbook | 2026-11-24T13:48Z | WW2:009 script · script · WW2 film 009: topic check, packaging first, script and sources, to lock by 2026-12-06 |  |
-| J3475 | mini | open | – | – | WW2:010 script · script · WW2 film 010: topic check, packaging first, script and sources, to lock by 2026-12-08 |  |
+| J3475 | mini | claimed | macbook-2 | 2026-11-24T13:48Z | WW2:010 script · script · WW2 film 010: topic check, packaging first, script and sources, to lock by 2026-12-08 |  |
 | J3476 | any | claimed | gemini | 2026-11-24T11:45Z | WW2:008 sources · facts · WW2 film 008: Gemini claims check on SCRIPT.md and SOURCES.md (PR #61) | ww2-channel#61 |
 | J3477 | cloud | open (after J3476) | – | – | WW2:008 script · review · WW2 film 008: Claude viewer test (first 300 words), Rule E lock & queue VO | ww2-channel#61 |
 | J3478 | mini | blocked | gemini | – | review · Verify condition for J2537 |  |
