@@ -129,7 +129,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3620 | mini | open | – | – | review · Verify condition for J3487 |  |
 | J3621 | gemini | open | – | – | HOS:127 sources · facts · HOS 127 Wright Brothers First Flight (Thu 31 Dec): independent facts audit of v01 script, SOURCES.md & Shorts (PR #756) | J3504 |
 | J3622 | mini | open (after J3621) | – | – | HOS:127 script · review · HOS 127 Wright Brothers First Flight (Thu 31 Dec): review and lock script v01, package-first scoring, sources & Shorts (PR #756) | J3504 |
-| J3625 | any | open (after J3624) | – | – | WW2:004 edit · chief · WW2 004: decide repaired delivery and stage Ben watch |  |
+| J3625 | any | claimed | gemini | 2026-11-25T00:48Z | WW2:004 edit · chief · WW2 004: decide repaired delivery and stage Ben watch |  |
 | J3629 | gemini | open (after J3628) | – | – | HOS:128 sources · facts · HOS 128: independent v02 facts and source verification |  |
 | J3630 | mini | open (after J3629) | – | – | HOS:128 script · review · HOS 128: direct quote check and corrected script lock decision |  |
 | J3631 | mini | blocked | macbook-2 | – | review · Verify condition for J3434 |  |
