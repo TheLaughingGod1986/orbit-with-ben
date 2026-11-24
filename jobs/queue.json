@@ -321926,10 +321926,10 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "macbook",
-      "since": "2026-11-24T13:29Z",
-      "eta": "2026-11-24T15:29Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T13:25Z",
       "result": "",
@@ -321958,6 +321958,11 @@
           "at": "2026-11-24T13:33Z",
           "by": "macbook",
           "what": "step 2 of 6 done"
+        },
+        {
+          "at": "2026-11-24T13:45Z",
+          "by": "macbook",
+          "what": "released: MacBook worker run on claude ended (exit 1) with the job still open; picked up again next run; claude paused on the MacBook until 2026-11-24T15:45:28Z, so the next run uses the next agent in the chain"
         }
       ],
       "remaining_action": "Draft v03 script, draft copy, and updated SOURCES.md",
