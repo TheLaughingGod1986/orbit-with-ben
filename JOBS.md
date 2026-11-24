@@ -93,7 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3492 | mini | blocked | macbook | – | WW2:009 script · review · WW2 film 009: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue VO | ww2-channel#68 |
 | J3493 | any | open | – | – | WW2:010 sources · facts · WW2 film 010: independent Gemini claims check on SCRIPT.md and SOURCES.md (PR #69) | ww2-channel#69 |
 | J3494 | mini | open (after J3493) | – | – | WW2:010 script · review · WW2 film 010: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO | ww2-channel#69 |
-| J3495 | any | open | – | – | review · History of Science: start the 2027 search-led plan (Ben's OK): rules, January line-up, film folders, dates |  |
+| J3495 | mini | open | – | – | review · History of Science: start the 2027 search-led plan (Ben's OK): rules, January line-up, film folders, dates |  |
 | J3496 | any | open | – | – | 128 script · script · HOS 128 Edison vs Tesla (film 1, Thu 7 Jan): package first, then the 7-9 minute script draft |  |
 | J3497 | cloud | open | – | – | review · Weekly search research (History of Science): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
 
