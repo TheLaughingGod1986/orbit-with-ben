@@ -318604,19 +318604,29 @@
           "at": "2026-11-24T10:32Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T10:36Z",
+          "by": "macbook-2",
+          "what": "step 1 of 5 done"
         }
       ],
-      "remaining_action": "Set a search-led title and package for Gravity; schedule Thu 3 Dec once Ben passes it",
+      "remaining_action": "Run signed-out US/UK search-led title and collision check for HOS 009",
       "due": "2026-12-03T12:00:00Z",
       "kind": "studio",
       "urgent": 14,
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T10:32Z",
+        "step": 1,
+        "of": 5,
+        "at": "2026-11-24T10:36Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Search-led title & US top-10 check",
+          "Build v03 captions & chapters",
+          "Wire 3 Dec upload package & verify NAS hashes",
+          "Run lint:package & check_all + open HOS PR",
+          "Block on Ben HOS:009 watch OK & post thread report"
+        ]
       }
     }
   ],
