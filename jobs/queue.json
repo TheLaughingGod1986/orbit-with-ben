@@ -1,5 +1,5 @@
 {
-  "next_id": 3514,
+  "next_id": 3516,
   "jobs": [
     {
       "id": "J0001",
@@ -314611,6 +314611,11 @@
           "at": "2026-11-23T18:00Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-24T11:30:00Z"
+        },
+        {
+          "at": "2026-11-24T11:30Z",
+          "by": "relay",
+          "what": "condition verification queued: J3514"
         }
       ],
       "remaining_action": "Read 24-hour reach and verify the repaired link after 24 November at 11:30 UTC",
@@ -314627,7 +314632,8 @@
       "hold": {
         "type": "date",
         "condition": "24-hour measurement for Dm4xsF1Ateg becomes due 2026-11-24T11:30:00Z; J3439 repair done. Do not collect an early reading as 24 hours.",
-        "check_at": "2026-11-24T11:30:00Z"
+        "check_at": "2026-11-24T12:30:49+00:00",
+        "recheck_task": "J3514"
       }
     },
     {
@@ -319546,6 +319552,11 @@
           "at": "2026-11-24T11:30Z",
           "by": "codex",
           "what": "blocked: parked for Chief: HOS publishing runtime missing generated Prisma client; channel:audit exits 2. npx prisma generate fails P1012 (CLI 6.19.0 vs declared 7.10.1 schema). Exact approved hash and six recorded gates verified; lint passes; no YouTube writes. Restore publishing runtime then resume duplicate check and private upload."
+        },
+        {
+          "at": "2026-11-24T11:30Z",
+          "by": "relay",
+          "what": "condition verification queued: J3515"
         }
       ],
       "remaining_action": "Restore the HOS uploader dependencies before checking YouTube and uploading privately",
@@ -319582,7 +319593,13 @@
       },
       "taskKeys": [
         "HOS:010"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-24T12:30:49+00:00",
+        "recheck_task": "J3515"
+      }
     },
     {
       "id": "J3512",
@@ -319676,6 +319693,69 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3514",
+      "title": "Verify condition for J3444",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3444: 24-hour measurement for Dm4xsF1Ateg becomes due 2026-11-24T11:30:00Z; J3439 repair done. Do not collect an early reading as 24 hours.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3444 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-24T11:30Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T11:30Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Read 24-hour reach and verify the repaired link after 24 November at 11:30 UTC",
+      "kind": "review",
+      "recheck_of": "J3444",
+      "due": "2026-11-24T12:30:49+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3515",
+      "title": "Verify condition for J3511",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3511: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3511 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-24T11:30Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T11:30Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Restore the HOS uploader dependencies before checking YouTube and uploading privately",
+      "kind": "review",
+      "recheck_of": "J3511",
+      "mini_only": true,
+      "due": "2026-11-24T12:30:49+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
