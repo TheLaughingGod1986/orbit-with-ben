@@ -325670,16 +325670,21 @@
           "at": "2026-11-24T23:31Z",
           "by": "macbook",
           "what": "step 2 of 5 done: Rendered 48.60s 1080x1920 25fps v01 master (-16.6 LUFS, -1.5 dBFS, 0 overlaps)"
+        },
+        {
+          "at": "2026-11-24T23:33Z",
+          "by": "macbook",
+          "what": "step 3 of 5 done: Visual + technical QA PASS on polished v01 (60.41% archive, 1.10x max upscale, -16.6 LUFS, 0 overlaps)"
         }
       ],
-      "remaining_action": "Inspect rendered stills, verify captions/gates, and polish if needed",
+      "remaining_action": "Copy verified master and receipts to NAS with SHA-256 check, commit records, and open PR",
       "due": "2026-11-28T18:00:00Z",
       "kind": "assembly",
       "plain": "Build the first Mark 14 torpedo Short about firing torpedoes into nets to prove they ran 10 feet too deep",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-24T23:31Z",
+        "at": "2026-11-24T23:33Z",
         "by": "macbook",
         "plan": [
           "Verify VO and archive inputs",
@@ -325688,7 +325693,7 @@
           "Copy verified cut to NAS and open PR",
           "Finish job and post report"
         ],
-        "note": "Rendered 48.60s 1080x1920 25fps v01 master (-16.6 LUFS, -1.5 dBFS, 0 overlaps)"
+        "note": "Visual + technical QA PASS on polished v01 (60.41% archive, 1.10x max upscale, -16.6 LUFS, 0 overlaps)"
       }
     },
     {
