@@ -328077,24 +328077,30 @@
           "at": "2026-11-24T21:20Z",
           "by": "codex",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-24T21:21Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Existing PR #1289 is merged: boundary retry, inherited spawn reservation, and requested guard tests already present; verifying rather than duplicating the implementation."
         }
       ],
-      "remaining_action": "Inspect slot locks and safe relay job boundaries",
+      "remaining_action": "Verify merged relay tests and installed runner evidence",
       "due": "2026-11-25T12:00:00Z",
       "kind": "assembly",
       "plain": "Keep both available workers busy when one returns during a run",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-24T21:20Z",
+        "at": "2026-11-24T21:21Z",
         "by": "codex",
         "plan": [
           "Inspect relay guards",
           "Implement boundary retry and tests",
           "Validate and publish PR",
           "Record review and refresh evidence"
-        ]
+        ],
+        "note": "Existing PR #1289 is merged: boundary retry, inherited spawn reservation, and requested guard tests already present; ver"
       }
     },
     {
