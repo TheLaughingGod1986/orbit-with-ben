@@ -327190,13 +327190,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-24T19:19Z",
-      "eta": "2026-11-24T21:19Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-24T19:18Z",
-      "result": "",
+      "result": "parked for Chief: Verification for J3607 complete (UNMET at 2026-11-24T19:21:44Z; report #7142020284, addendum #7142034875). Both codex and gemini are UP and memory permits slot 1 (3.520 GiB >= 3.0 GiB, parallel_limit=2), yet only execution-0 (Gemini/J3612, PID 51574) is live; no execution-1 exists and runner-1 PID 51577 exited at 18:47:25Z. Root cause in scripts/chief_relay.py: spawn_second_slot() is called only once in main() (lines 2711-2717), never inside run_locked() chain loop (CHIEF_CHAIN_MAX=12, PID 51574 on job 6/12). jobs.py wait J3607 --recheck J3612 requires elected Chief (Codex). Chief action: run jobs.py wait J3607 --agent codex --type input --check-at 2026-11-24T20:30:00Z --recheck J3612, close J3612, and consider queueing a fix to call spawn_second_slot() inside run_locked().",
       "history": [
         {
           "at": "2026-11-24T19:18Z",
@@ -327232,6 +327232,11 @@
           "at": "2026-11-24T19:23Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Verification complete (UNMET at 19:21:44Z); posted #7142020284 and addendum #7142034875; jobs.py wait --recheck J3612 requires elected Chief"
+        },
+        {
+          "at": "2026-11-24T19:23Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Verification for J3607 complete (UNMET at 2026-11-24T19:21:44Z; report #7142020284, addendum #7142034875). Both codex and gemini are UP and memory permits slot 1 (3.520 GiB >= 3.0 GiB, parallel_limit=2), yet only execution-0 (Gemini/J3612, PID 51574) is live; no execution-1 exists and runner-1 PID 51577 exited at 18:47:25Z. Root cause in scripts/chief_relay.py: spawn_second_slot() is called only once in main() (lines 2711-2717), never inside run_locked() chain loop (CHIEF_CHAIN_MAX=12, PID 51574 on job 6/12). jobs.py wait J3607 --recheck J3612 requires elected Chief (Codex). Chief action: run jobs.py wait J3607 --agent codex --type input --check-at 2026-11-24T20:30:00Z --recheck J3612, close J3612, and consider queueing a fix to call spawn_second_slot() inside run_locked()."
         }
       ],
       "remaining_action": "Parked for Chief (Codex) to record jobs.py wait J3607 --recheck J3612 (next check 2026-11-24T20:30:00Z) and close J3612",
