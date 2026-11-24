@@ -319508,13 +319508,13 @@
       "stage": "upload",
       "after": "J3505",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-24T11:37Z",
-      "eta": "2026-11-24T13:37Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T10:53Z",
-      "result": "",
+      "result": "parked for Chief: review and merge verified records PR #1247, then close J3509. Approved v06 BXSoBnyiTNg is already Private for 14 Dec 11:30Z; old heiGCnGKTkE Private unscheduled. No upload or reschedule remains. PR includes UPLOADS, opening library, Buffer plan and J0923 replacement target.",
       "history": [
         {
           "at": "2026-11-24T10:53Z",
@@ -319560,6 +319560,11 @@
           "at": "2026-11-24T11:48Z",
           "by": "codex",
           "what": "step 3 of 3 done: Upload, slot transfer and verification complete. PR #1247 includes UPLOADS, opening library, Buffer plan and J0923 target; only protected Chief review/merge remains. No second upload needed."
+        },
+        {
+          "at": "2026-11-24T11:49Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: review and merge verified records PR #1247, then close J3509. Approved v06 BXSoBnyiTNg is already Private for 14 Dec 11:30Z; old heiGCnGKTkE Private unscheduled. No upload or reschedule remains. PR includes UPLOADS, opening library, Buffer plan and J0923 replacement target."
         }
       ],
       "remaining_action": "Chief review and merge of the verified replacement records",
