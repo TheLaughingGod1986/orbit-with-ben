@@ -1,5 +1,5 @@
 {
-  "next_id": 3646,
+  "next_id": 3647,
   "jobs": [
     {
       "id": "J0001",
@@ -320218,7 +320218,7 @@
       "remaining_action": "Finish Franklin end screen, thumbnail test and Shorts links after HOS Studio sign-in; verify disclosure before Thursday noon.",
       "due": "2026-11-26T12:00:00Z",
       "kind": "studio",
-      "urgent": 14,
+      "urgent": 13,
       "approved_from": {
         "what": "Watch HOS 008 Franklin master v05 (all 8 fixes in: 0:20 & 33 bottom-text cards on dark umber panels, 0:30 flash gone, 0:51 night street & 1:49 salon spark clean with no flying hair, 2:18 upright jar workbench, 3:13 points desk take 3, 3:31 3D packet ship + letter icon, 7:59 stationary rods take 2)",
         "file": "HOS UAT/008_Lightning-Franklin/hos_008_master_v05_PHONE.mp4",
@@ -323747,13 +323747,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 150,
-      "status": "blocked",
-      "by": "codex",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-24T19:25Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T14:28Z",
-      "result": "Waiting for: Ben must watch and listen to the finished v02 Short on WW2:001-S1 and say OK or changes before any YouTube upload or scheduling. Local records d2e21c5 are ready for J3606 publishing after Claude Code reset; that does not block private watch.",
+      "result": "v02 built and reviewed; Ben OK'd the Mulberry Short v02 on the board (Review tab, card 001-S1 'You OK'd v02', his screenshot 24 Nov 23:18 London, sent in chat with \"No film to review.\"). Upload and 7-day read in J3646.",
       "history": [
         {
           "at": "2026-11-24T14:28Z",
@@ -323874,6 +323874,11 @@
           "at": "2026-11-24T19:31Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-25T20:00:00Z"
+        },
+        {
+          "at": "2026-11-24T23:19Z",
+          "by": "claude",
+          "what": "done: v02 built and reviewed; Ben OK'd the Mulberry Short v02 on the board (Review tab, card 001-S1 'You OK'd v02', his screenshot 24 Nov 23:18 London, sent in chat with \"No film to review.\"). Upload and 7-day read in J3646."
         }
       ],
       "remaining_action": "Waiting for Ben to watch the first Mulberry harbours Short",
@@ -323908,11 +323913,6 @@
         "title": "Mulberry Harbours: How Did They Work?",
         "number": "001-S1",
         "type": "short"
-      },
-      "hold": {
-        "type": "ben",
-        "condition": "Ben must watch and listen to the finished v02 Short on WW2:001-S1 and say OK or changes before any YouTube upload or scheduling. Local records d2e21c5 are ready for J3606 publishing after Claude Code reset; that does not block private watch.",
-        "check_at": "2026-11-25T20:00:00Z"
       }
     },
     {
@@ -329796,7 +329796,7 @@
       "due": "2026-11-24T23:30:00Z",
       "kind": "studio",
       "mini_only": true,
-      "urgent": 12,
+      "urgent": 11,
       "progress": {
         "step": 3,
         "of": 3,
@@ -330243,7 +330243,7 @@
       "due": "2026-11-25T08:00:00Z",
       "kind": "qa",
       "mini_only": true,
-      "urgent": 13,
+      "urgent": 12,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -330327,6 +330327,40 @@
       "due": "2026-11-25T16:00:00Z",
       "kind": "thumb",
       "mini_only": true
+    },
+    {
+      "id": "J3646",
+      "title": "WW2 001-S1: upload Ben-approved Mulberry Short v02, scheduled Thu 26 Nov 12:00 London, linked to pilot 1",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** Ben OK'd the Mulberry Short v02 on the board (Review tab, card 001-S1 'You OK'd v02', his screenshot 24 Nov 23:18 London, sent in chat with \"No film to review.\"). Built in J3542 (v02 after J3599's FIX; NAS `Shorts/Mulberry_Test_v02/mulberry_short_v02.mp4`, the hash J3542 recorded). Field Order History's first Short, pointing to pilot 1.\n\n**Do (Mini; Field Order History Studio on 9224 and the Data API only; never open or play a public video):**\n1. Capture pilot 1's (`ek9F61FVYqY`) Shorts and Related-video traffic as the before-number.\n2. Upload v02 **private**, scheduled **Thu 26 Nov 2026 12:00 London**. Do not clash with the long films' Tue/Thu/Sat 17:00 slots.\n   - **Title:** *Mulberry Harbours: How Did They Work?*\n   - **Description:** two plain lines naming the Mulberry harbours and D-Day, then \"Full film: \" plus pilot 1's link, then the archive credits for the five photos in the Short (from `ARCHIVE_PROVENANCE.md`).\n   - **Tags:** Mulberry harbour, D-Day, Normandy, Phoenix caissons, WW2 engineering.\n   - **Settings:** Not made for kids; altered content as the long film.\n   - **Cover frame:** the opening frame with the question.\n   - **Related video:** `ek9F61FVYqY`.\n3. Read everything back in Studio and the API. Record the id in the film's `status.json`.\n4. Queue the 7-day read with `jobs.py wait ... --type date --release-at-time`, due Thu 3 Dec 12:05 London. It covers the Short's views, stayed-to-watch, subscribers, and pilot 1's views from Shorts/Related against the before-number, with the verdict against `studio/LEARNINGS.md` line 9.\n5. **If something is wrong at upload, park for the Chief.** Never upload a different cut than the one Ben OK'd.\n\n£0.",
+      "ref": "",
+      "film": "WW2:001",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 40,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T23:19Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T23:19Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Upload the approved Short privately, schedule Thu 12:00, link pilot 1",
+      "due": "2026-11-25T20:00:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "delivers": [
+        "WW2:001-S1"
+      ],
+      "urgent": 14
     }
   ],
   "focus": [

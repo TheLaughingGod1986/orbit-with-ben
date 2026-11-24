@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J2529, J3430, J3431, J3432, J3434, J3501, J3519, J3530, J3205, J3542, J3635, J3643, J3500.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J2529, J3430, J3431, J3432, J3434, J3501, J3519, J3530, J3205, J3635, J3643, J3500, J3646.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -81,7 +81,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3535 | mini | blocked | gemini | – | review · Verify condition for J3510 |  |
 | J3536 | mini | open (after J3524) | – | – | WW2:012 vo · vo · WW2 film 012: narration in Ben's voice (Liberty Ships, post-reset) |  |
 | J3537 | mini | open (after J3526) | – | – | WW2:013 vo · vo · WW2 film 013: narration in Ben's voice (Ghost Army, post-reset) |  |
-| J3542 | mini | blocked | codex | – | WW2:001 edit · assembly · Field Order History: one test Short on the Mulberry harbours, cut from pilot 1, pointing to the full film |  |
 | J3546 | any | open | – | – | 064 script · chief · OWB 064: Record J3539 FIX in the Chief-owned script hold | J3539 |
 | J3547 | mini | blocked | macbook | – | HOS:128 script · review · HOS 128 Edison vs Tesla (Thu 10 Dec): review and lock script v01, package-first scoring, sources & Shorts (PR #751) |  |
 | J3548 | mini | blocked | macbook | – | for claudecode · review · Review local Field Order analytics delivery privacy |  |
@@ -142,6 +141,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3643 | mini | open | – | – | WW2:003 edit · qa · WW2 film 3 (B-29) v01: independent QA, then Ben's watch card tonight |  |
 | J3644 | mini | open | – | – | review · Verify condition for J3205 |  |
 | J3645 | mini | open | – | – | WW2:002 thumbs · thumb · WW2 pilot 2: make a U-boat thumbnail (design E) ready for the 24-hour read |  |
+| J3646 | mini | open | – | – | WW2:001 upload · studio · WW2 001-S1: upload Ben-approved Mulberry Short v02, scheduled Thu 26 Nov 12:00 London, linked to pilot 1 |  |
 
 Recently finished:
 
