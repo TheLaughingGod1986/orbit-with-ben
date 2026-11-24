@@ -126,7 +126,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3588 | mini | blocked | gemini | – | review · Verify condition for J3369 |  |
 | J3589 | mini | open | – | – | chief · Chief: resolve 003 edit orphan-blocked |  |
 | J3591 | mini | claimed | gemini | 2026-11-24T17:50Z | review · `gemini-argon` · Retention autopsy (48h): "How Britain Built Two Harbours in Secret and Floated Them to Nor" (ek9F61FVYqY) |  |
-| J3592 | mini | claimed | macbook | 2026-11-24T19:24Z | review · Verify condition for J3414 |  |
+| J3592 | mini | blocked | macbook | – | review · Verify condition for J3414 |  |
 | J3593 | mini | open | – | – | review · Verify condition for J3417 |  |
 | J3594 | mini | open | – | – | review · Verify condition for J3443 |  |
 
