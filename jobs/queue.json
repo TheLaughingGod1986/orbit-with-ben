@@ -327928,13 +327928,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-24T20:52Z",
-      "eta": "2026-11-24T22:52Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-24T20:29Z",
-      "result": "",
+      "result": "Chief KEEP with corrections recorded in jobs/reviews/J3616/CHIEF_RULING.md. PR1283, corrected PR1287 and PR1288 merged; J3602 completed with original worker history preserved. 99 checks passed. Follow-ups J3617 queue repair and J3618 playlist verification after J3602. Seven-day read 29 Nov after 18:00Z; T028 untouched; no spend, public playback or YouTube changes.",
       "history": [
         {
           "at": "2026-11-24T20:29Z",
@@ -327990,6 +327990,11 @@
           "at": "2026-11-24T20:53Z",
           "by": "codex",
           "what": "step 3 of 3 done: Chief review complete: three PRs merged, J3602 accepted, follow-ups J3617 and J3618 queued."
+        },
+        {
+          "at": "2026-11-24T20:53Z",
+          "by": "codex",
+          "what": "done: Chief KEEP with corrections recorded in jobs/reviews/J3616/CHIEF_RULING.md. PR1283, corrected PR1287 and PR1288 merged; J3602 completed with original worker history preserved. 99 checks passed. Follow-ups J3617 queue repair and J3618 playlist verification after J3602. Seven-day read 29 Nov after 18:00Z; T028 untouched; no spend, public playback or YouTube changes."
         }
       ],
       "remaining_action": "Post the recorded Chief ruling and close this verification",
@@ -328019,7 +328024,8 @@
           "Record ruling and follow-up"
         ],
         "note": "Chief review complete: three PRs merged, J3602 accepted, follow-ups J3617 and J3618 queued."
-      }
+      },
+      "done_ref": "c53bca806d351af7825b16168326dfdcbd35de87"
     },
     {
       "id": "J3617",

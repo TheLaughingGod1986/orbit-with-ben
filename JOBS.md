@@ -130,12 +130,12 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3610 | mini | open | – | – | 010 upload · studio · Schedule HOS 010 bird Short after its long is confirmed | J3511 |
 | J3611 | mini | open | – | – | 010 upload · studio · HOS 010 Short A: schedule only after actual long readiness and finish Studio checks | J3512 |
 | J3615 | mini | open | – | – | assembly · Relay: restore a free second slot when a worker returns during a job chain |  |
-| J3616 | mini | claimed | codex | 2026-11-24T22:52Z | review · Verify condition for J3602 |  |
 | J3617 | any | open | – | – | assembly · Keep merge reviews visible after completed predecessors |  |
 | J3618 | mini | open (after J3602) | – | – | 027 upload · studio · OWB 027: verify Earth spin series playlist membership |  |
 
 Recently finished:
 
+- J3616 done: Verify condition for J3602 (Chief KEEP with corrections recorded in jobs/reviews/J3616/CHIEF_RULING.md. PR1283, corrected PR1287 and PR1288 merged; J3602 completed with original worker history preserved. 99 checks passed. Follow-ups J3617 queue repair and J3618 playlist verification after J3602. Seven-day read 29 Nov after 18:00Z; T028 untouched; no spend, public playback or YouTube changes.)
 - J3614 done: St Nazaire: propose a shorter existing-voice cut with compliant archive coverage (KEEP (proposed no-spend paper recut ready for Chief acceptance; picture stage remains blocked, J3431/J3432 held). Updated single evidence PR ww2-channel#50 (codex/J3431-archive @ 337af58, merged main cleanly resolving status.json preserving all 7 stages and air 2026-12-03, both J3209/J3431 provenance histories and rights exclusions; unmerged). Retains 137/184 complete verbatim sentences (2,252 words across ch00-ch08; 0 rewritten words, £0 spend): 492.08/941.21s (52.282% est, +42.95s inside 984.16s ceiling), 486.61/934.58s (52.067% Scribe-aligned strict no-grow, +38.64s inside 973.22s ceiling), 501.30/934.58s (53.639% aligned natural). 31 distinct verified IDs (0 new IDs, C 2351 <= J3449); longest non-photo run 102.14s est / 98.34s aln (down from 174.56s); all 22 splice cuts sit in 0.480-2.041s pauses. Deliverables: RECUT_SENTENCE_LIST_J3614.{md,json}, SCRIPT_RECUT_v02_J3614.md, PICTURE_PLAN_RECUT_J3614.{md,json}, REVIEW_J3614.md, VALIDATION_J3614.md. Originals & NAS untouched.)
 - J3613 done: Verify condition for J3519 (Chief ruling: condition UNMET. J3519 remains blocked; wait recorded with recheck J3613, next 2026-11-25T10:15:00Z after actual Claude Code reset. J3530 explicitly owns privacy-check/publication of local HOS 91c93f44, then green-check merge, safe shared pull, PGOPTIONS read-only audit and J3512 private dry run. Remote main 12eceaff still lacks fix; no branch/PR exists. Original 09:00 deadline risk recorded; no unrelated holds changed. Report https://github.com/TheLaughingGod1986/orbit-with-ben/issues/954#issuecomment-7143671471)
 - J3612 done: Verify condition for J3607 (Chief review SATISFIED at 2026-11-24T20:20:49Z: process-validated concurrent slot 0 Codex/J3612 PID 36763 and slot 1 Gemini/J3602 PID 36768, installed version 253c7fe66b787b2f. Spawn log 20:17:51Z. J3607 reopened with evidence; J3615 queued for safe mid-chain worker recovery, due 25 Nov 12:00 London. Report 7143439135. No external wait, settings change, spend or YouTube change.)
@@ -145,18 +145,3 @@ Recently finished:
 - J3604 done: Fix mixed-snapshot wrong-window views found by J3597 (Fixed and published PR #1284, head 0f68a818b6a1efe949ea07316d42928b829a415b. 90 focused tests pass. Existing J3598 reviews correction; J3591 remains held. No duplicate review.)
 - J3603 done: Chief ruling on J3599 FIX review of Mulberry Short v01 and reopen J3542 (Accepted J3599 FIX. Reviewed exact 0e4f550489; 13 privacy tests passed; PR 1282 merged as afbe5fb57c. Reopened J3542 with exact zero-spend v02 fixes in dispatch brief, preserved 25 Nov 20:00 UTC watch deadline and 26 Nov 12:00 London planned air after Ben OK. J3606 assigned to Claude Code for final-record privacy review and publishing after v02 records land. No v01 watch card; no spend, YouTube or Buffer writes. No audio/motion perception claimed.)
 - J3602 done: Retention autopsy (48h): "What If Earth Stopped Spinning? (It's Already Slowing Down)" (6bbbvfCx6zY) (J3616 Chief acceptance: corrected PR1287 merged c53bca806d35; predecessor PR1283 merged 0bfd429a6bda; verification PR1288 merged 39ebe07869f4. Gemini completed media review accepted from recorded capability evidence; Codex performed record review only. Newer 48h metrics reconciled, causal claims limited. Follow-ups J3618 playlist verification (after J3602) and J3617 queue classification repair; 7d read 29 Nov after 18:00Z. T028 unchanged. No production rerun.)
-- J3601 done: First-day check at 48 h: "What If Earth Stopped Spinning? (It's Already Slowing Down)" (6bbbvfCx6zY) (PR #1283 (macbook/J3601, adds 05_Analytics/owb/launch/6bbbvfCx6zY.json). No faults (Public, no restrictions/claims, Not Made for Kids, no age restriction, HD finished, description exact match, T028 running; Studio typical tooltip: "About the same as the usual 2 - 9", no single usual figure or N-of-10 rank card, Likes 0).
-
-"What If Earth Stopped Spinning? (It's Already Slowing Down)" (6bbbvfCx6zY) · Orbit With Ben · long · went live Sun 22 Nov 18:00 London
-At 48 h: views 6 · impressions 8 · click rate 0.0% · average viewed 0.0%
-Usual for this channel: click rate 2.2%, average viewed 16.0%
-
-Verdict: UNKNOWN
-  - Nothing to compare it with yet: no usual figure or rank from Studio, and fewer than three earlier checks at this age.
-  - By the next morning it had 9 views; the 7 before it had 1 (median).
-
-What is different about this one
-  - It is 447 s long; the last 10 longs were 491 to 2858 s.
-
-Do now
-  - Read it again from tomorrow morning's snapshot.)
