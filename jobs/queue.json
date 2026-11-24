@@ -323077,13 +323077,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-24T17:05Z",
-      "eta": "2026-11-24T19:05Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-24T14:46Z",
-      "result": "",
+      "result": "Delivered OWB 064 v04 corrections in PR #1269 (branch macbook/J3544, commit ee3308007). Byte-identical master/draft v04 SHA-256 556f3c8df68ee3cd1420ef03b8cedc04a7f0f79463d98ebf4d3d5e5753408db8 (1,296 spoken words / 1,341 whitespace tokens / 8,471 chars; first sentence 17 expanded words ~7.03s <8s; spoken answer ~11.17s; est. 606.28s incl. 18s hold); SOURCES.md SHA-256 4a7e3fa5c74a548764886a274514d2590e5951e5e8782aa8118566d252fdc415 (16 rows, 7-column verified, live verbatim quotes tightened in Rows 8/12/16). All 4 J3520 fixes retained and all 7 J3539 FIX items + optional Gauss/ESA tightening implemented; v01-v03 and prior raw Gemini audits preserved. Fresh complete 16-row Gemini audit preserved unedited in jobs/reviews/J3544/GEMINI_RAW_v04.txt (SHA-256 feb40147..., 49/49 HTML/XML URLs HTTP 200 live incl. heic1410, 2 PDFs not-fetched-here, 0 mismatches). Gates PASS: review:script 91.6/100, explicit-v04 gate:episode --require-checklist PASS, 13 privacy tests PASS. Downstream v04 stamps updated. J3020 not locked/completed; J3021 remains gated pending J3545 independent review and elected Chief lock. Zero spend/generation/media/YouTube changes; checkout on main.",
       "history": [
         {
           "at": "2026-11-24T14:46Z",
@@ -323124,6 +323124,11 @@
           "at": "2026-11-24T17:07Z",
           "by": "macbook",
           "what": "step 1 of 5 done"
+        },
+        {
+          "at": "2026-11-24T17:20Z",
+          "by": "macbook",
+          "what": "done: Delivered OWB 064 v04 corrections in PR #1269 (branch macbook/J3544, commit ee3308007). Byte-identical master/draft v04 SHA-256 556f3c8df68ee3cd1420ef03b8cedc04a7f0f79463d98ebf4d3d5e5753408db8 (1,296 spoken words / 1,341 whitespace tokens / 8,471 chars; first sentence 17 expanded words ~7.03s <8s; spoken answer ~11.17s; est. 606.28s incl. 18s hold); SOURCES.md SHA-256 4a7e3fa5c74a548764886a274514d2590e5951e5e8782aa8118566d252fdc415 (16 rows, 7-column verified, live verbatim quotes tightened in Rows 8/12/16). All 4 J3520 fixes retained and all 7 J3539 FIX items + optional Gauss/ESA tightening implemented; v01-v03 and prior raw Gemini audits preserved. Fresh complete 16-row Gemini audit preserved unedited in jobs/reviews/J3544/GEMINI_RAW_v04.txt (SHA-256 feb40147..., 49/49 HTML/XML URLs HTTP 200 live incl. heic1410, 2 PDFs not-fetched-here, 0 mismatches). Gates PASS: review:script 91.6/100, explicit-v04 gate:episode --require-checklist PASS, 13 privacy tests PASS. Downstream v04 stamps updated. J3020 not locked/completed; J3021 remains gated pending J3545 independent review and elected Chief lock. Zero spend/generation/media/YouTube changes; checkout on main."
         }
       ],
       "remaining_action": "Auditing PR 1269 against J3539 REVIEW.md, CLAUDE_QUOTE_CHECK_v03.md, and J3520 CHIEF_RULING.md",
@@ -323149,7 +323154,8 @@
           "Re-run gates, counts and privacy tests",
           "Push PR 1269, return to main and report"
         ]
-      }
+      },
+      "done_ref": "ee3308007"
     },
     {
       "id": "J3545",
