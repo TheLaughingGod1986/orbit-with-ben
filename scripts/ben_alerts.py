@@ -949,6 +949,9 @@ def evaluate(*, at: dt.datetime | None = None, jobs: list[dict] | None = None, c
         if deliver or sent_now or not p.exists():
             _write_json_atomic(p, state)
 
+    # These are operational alerts on the board; they never ask Ben to approve again.
+    from approved_deliver import approval_alerts
+    board_active.extend(approval_alerts(videos, jobs, now=at))
     phone_route = "ntfy" if cfg.get("ntfyUrl") else ("custom" if cfg.get("webhookCmd") else "unconfigured")
     return {
         "sent": sent_now,

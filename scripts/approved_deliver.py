@@ -162,7 +162,8 @@ def is_swap(job: dict | None, video: dict | None = None) -> bool:
         bits += [job.get("title") or "", job.get("body") or "", ((job.get("approved_from") or {}).get("what") or "")]
     if video:
         bits += [((video.get("approved") or {}).get("what") or ""), video.get("title") or ""]
-    return bool(SWAP_RE.search(" ".join(bits)))
+    text = re.sub(r"\b(?:do not|never|don't)\s+swap\b", "", " ".join(bits), flags=re.I)
+    return bool(SWAP_RE.search(text))
 
 
 def parent_long_public(video: dict, videos: list[dict]) -> bool:
@@ -296,18 +297,26 @@ def delivery_jobs_for(video: dict, alljobs: list[dict]) -> list[dict]:
     for j in alljobs:
         if j.get("status") not in ("open", "claimed", "blocked", "done"):
             continue
-        if job_id and j.get("id") == job_id:
+        # An approval card names its original watch/review job too. That is not an upload.
+        text = " ".join(str(j.get(k) or "") for k in ("title", "action"))
+        delivery = j.get("stage") == "upload" or (j.get("kind") == "studio" and bool(re.search(r"\bupload\b|\bbuffer\b", text, re.I)))
+        if job_id and j.get("id") == job_id and delivery:
             out.append(j)
             continue
         if is_swap(j):
             continue
         af = j.get("approved_from") if isinstance(j.get("approved_from"), dict) else {}
-        if af and (af.get("card") == key or (film and af.get("number") == film and af.get("version") == (appr.get("version") or video.get("version")))):
+        if delivery and af and (af.get("card") == key or (
+                video.get("type") != "short" and film and str(af.get("number")) == film
+                and af.get("channel") == video.get("channel") and af.get("type") != "short"
+                and af.get("version") == (appr.get("version") or video.get("version")))):
             out.append(j)
             continue
         title = (j.get("title") or "") + " " + (j.get("body") or "")
         kind = j.get("kind") or ""
-        if film and re.search(rf"\b{re.escape(film)}\b", title) and (
+        if video.get("type") == "short" or channels.label_of_repo(j.get("repo")) != video.get("channel"):
+            continue  # A film number alone never identifies a Short or a channel.
+        if delivery and film and re.search(rf"\b{re.escape(film)}\b", title) and (
                 kind in ("studio",) or re.search(r"\bupload\b|\bbuffer-mirror\b|\bbuffer\b", title, re.I)):
             # Prefer jobs that name this cut's version when known.
             ver = appr.get("version") or video.get("version") or ""
@@ -315,6 +324,28 @@ def delivery_jobs_for(video: dict, alljobs: list[dict]) -> list[dict]:
                 continue
             out.append(j)
     return out
+
+
+def waiting_approvals(videos: list[dict], alljobs: list[dict], *, now: dt.datetime) -> list[dict]:
+    """Every Passed card without live delivery work, including its age (unknown stays unknown)."""
+    out = []
+    for v in passed_candidates(videos):
+        if already_delivered(v, videos) or any(j.get("status") in ("open", "claimed", "blocked")
+                                               for j in delivery_jobs_for(v, alljobs)):
+            continue
+        stamp = (v.get("check") or {}).get("at") or (v.get("approved") or {}).get("okAt")
+        when = vt._parse_iso(stamp)
+        hours = max(0, int((now - when).total_seconds() // 3600)) if when else None
+        out.append({"key": v.get("key"), "title": v.get("title") or v.get("key"),
+                    "ageHours": hours, "job": (v.get("approved") or {}).get("job") or ""})
+    return out
+
+
+def approval_alerts(videos: list[dict], alljobs: list[dict], *, now: dt.datetime) -> list[dict]:
+    return [{"id": "approval:" + str(v["key"]), "kind": "approval", "href": "#videos",
+             "message": f"Your OK on {v['title']} is waiting for an upload job, {v['ageHours']} h"}
+            for v in waiting_approvals(videos, alljobs, now=now)
+            if v["ageHours"] is not None and v["ageHours"] >= 12]
 
 
 def passed_candidates(videos: list[dict]) -> list[dict]:
@@ -329,6 +360,16 @@ def passed_candidates(videos: list[dict]) -> list[dict]:
             continue
         out.append(v)
     return out
+
+
+def approval_link(video: dict) -> dict:
+    approved, ask, tick = video.get("approved") or {}, video.get("ask") or {}, video.get("check") or {}
+    return {"key": video.get("key"), "approved_job": ask.get("job") or approved.get("askJob") or approved.get("job") or "",
+            "check_id": video.get("checkId") or vt.check_id(video.get("key") or ""),
+            "check_at": tick.get("at") or approved.get("okAt") or "", "ask_file": ask.get("file") or "",
+            "version": approved.get("version") or video.get("version") or "",
+            "channel": video.get("channel") or default_label(), "type": video.get("type") or "long",
+            "number": video.get("number") or "", "title": video.get("title") or ""}
 
 
 def plan_actions(videos: list[dict], alljobs: list[dict], *, now: dt.datetime | None = None,
@@ -378,7 +419,10 @@ def plan_actions(videos: list[dict], alljobs: list[dict], *, now: dt.datetime | 
             j = live[0]
             if j.get("status") == "blocked" and LISTING_HOLD_RE.search(str(j.get("result") or "") + str((j.get("hold") or {}).get("condition") or "")):
                 actions.append({"op": "unblock", "key": v.get("key"), "job": j["id"],
-                                "destination": dest, "reason": "Listing package complete"})
+                                "destination": dest, "reason": "Listing package complete", **approval_link(v)})
+            elif (v.get("check") or {}).get("verdict") == "ok" and not (v.get("check") or {}).get("handled") and (
+                    (j.get("board_ok") or {}).get("at") != (v.get("check") or {}).get("at")):
+                actions.append({"op": "acknowledge", "job": j["id"], **approval_link(v)})
             else:
                 actions.append({"op": "skip", "key": v.get("key"), "job": j["id"],
                                 "reason": f"Delivery job already {j.get('status')}"})
@@ -415,6 +459,10 @@ def plan_actions(videos: list[dict], alljobs: list[dict], *, now: dt.datetime | 
                     f"Do not reuse {' or '.join(sorted(BANNED_REUSE_IDS))} as destinations. "
                     "Listing package is complete (title, thumbnail, description, tags).")
             kind = "studio"
+        body += (f"\nApproved board card: {v.get('key') or ''}; cut: {ver}."
+                 f"\nApproval/watch job: {(v.get('ask') or {}).get('job') or (v.get('approved') or {}).get('job') or ''}."
+                 f"\nWatch file: {(v.get('ask') or {}).get('file') or ''}."
+                 f"\nListing package: {listing.get('packageDir') or listing.get('manifest') or ''}.")
         actions.append({
             "op": "create", "key": v.get("key"), "destination": dest, "title": title, "body": body,
             # The queue can only claim a stage on the default channel's films, so only those carry film and stage.
@@ -422,9 +470,54 @@ def plan_actions(videos: list[dict], alljobs: list[dict], *, now: dt.datetime | 
             "stage": "upload" if channel == default_label() and re.fullmatch(r"(?:\d{3}|[A-Z]\d{2})", str(num)) else "",
             "repo": slug_of(channel) or channels.default(),
             "airs": slot, "version": ver, "channel": channel, "type": vtype,
-            "approved_job": (v.get("approved") or {}).get("job") or "",
+            **{k: value for k, value in approval_link(v).items() if k not in ("title", "type", "channel", "version")},
         })
     return actions
+
+
+def link_approval(job: dict, a: dict, by_id: dict, *, agent: str, at: dt.datetime) -> None:
+    # Link Ben's approval onto the delivering job when we know the ask.
+    src_id = a.get("approved_job") or ""
+    src = by_id.get(src_id) if src_id else None
+    over = {k: a[k] for k in ("airs", "version", "channel", "type", "title") if a.get(k)}
+    if not over.get("airs") and (job.get("approved_from") or {}).get("airs"):
+        over["airs"] = job["approved_from"]["airs"]
+    over["number"] = a.get("number") or a.get("film") or ""
+    over["card"] = a.get("key") or ""
+    over["what"] = "Passed cut — deliver listing package"
+    # jobs.do_approved expects London wall time, not a UTC ISO cadence stamp.
+    if over.get("airs"):
+        over["airs"] = dt.datetime.fromisoformat(over["airs"].replace("Z", "+00:00")).astimezone(LONDON).strftime("%Y-%m-%d %H:%M")
+    if src and (src.get("awaits_ben") or src.get("awaits_was") or src.get("approved_from")):
+        raw = src.get("awaits_ben") or src.get("awaits_was") or {}
+        entries = raw if isinstance(raw, list) else [raw]
+        entry = 0
+        if len(entries) > 1:
+            matches = [i for i, item in enumerate(entries, 1)
+                       if item.get("version") == a.get("version") and (
+                           (a.get("ask_file") and item.get("file") == a["ask_file"])
+                           or item.get("card") == a.get("key"))]
+            entry = matches[0] if len(matches) == 1 else 0
+        # Ambiguous multi-cut approvals fail closed; never mark an unidentified cut handled.
+        J.do_approved(job, src, agent, at, entry=entry, over=over)
+    else:
+        job["approved_from"] = {
+            "what": over.get("what") or "Passed cut — deliver listing package",
+            "version": a.get("version") or "",
+            "airs": a.get("airs") or "",
+            "card": a.get("key") or "",
+            "title": a.get("title") or "",
+            "number": a.get("number") or a.get("film") or "",
+            "type": a.get("type") or "",
+            "channel": a.get("channel") or "",
+            "job": job["id"],
+            "okAt": J.studio.iso(at),
+        }
+    # Durable acknowledgement of precisely this tap, not any later version/undo.
+    if a.get("check_at"):
+        job["board_ok"] = {"id": a.get("check_id"), "at": a["check_at"],
+                           "version": a.get("version") or "", "handled": True}
+        job["approved_from"]["okAt"] = a["check_at"]
 
 
 def apply_actions(data: dict, actions: list[dict], *, agent: str, at: dt.datetime) -> list[str]:
@@ -432,13 +525,19 @@ def apply_actions(data: dict, actions: list[dict], *, agent: str, at: dt.datetim
     touched = []
     by_id = {j["id"]: j for j in data["jobs"]}
     for a in actions:
-        if a.get("op") == "unblock":
+        if a.get("op") == "acknowledge":
+            job = by_id.get(a["job"])
+            if job and job.get("status") in ("open", "claimed", "blocked"):
+                link_approval(job, a, by_id, agent=agent, at=at)
+                touched.append(job["id"])
+        elif a.get("op") == "unblock":
             j = by_id.get(a["job"])
             if not j or j.get("status") != "blocked":
                 continue
             j.update(status="open", by="", since="", eta="", result="")
             j.pop("hold", None)
             J.log(j, at, agent, "unblocked: listing package complete — ready to upload")
+            link_approval(j, a, by_id, agent=agent, at=at)
             touched.append(j["id"])
         elif a.get("op") == "create":
             # Idempotent: skip if a matching open job appeared this run.
@@ -450,34 +549,7 @@ def apply_actions(data: dict, actions: list[dict], *, agent: str, at: dt.datetim
                            action=("Upload to YouTube Studio as Private" if a.get("destination") != "social"
                                    else "Schedule Buffer social posts"),
                            **kwargs)
-            # Link Ben's approval onto the delivering job when we know the ask.
-            src_id = a.get("approved_job") or ""
-            src = by_id.get(src_id) if src_id else None
-            over = {k: a[k] for k in ("airs", "version", "channel", "type", "title") if a.get(k)}
-            over["card"] = a.get("key") or ""
-            over["what"] = "Passed cut — deliver listing package"
-            if src and (src.get("awaits_ben") or src.get("awaits_was") or src.get("approved_from")):
-                try:
-                    J.do_approved(job, src, agent, at, over=over)
-                except ValueError:
-                    job["approved_from"] = {k: str(over.get(k) or "") for k in
-                                            ("what", "version", "airs", "card", "title", "number", "type", "channel")
-                                            if over.get(k)}
-                    job["approved_from"]["job"] = src_id or job["id"]
-                    job["approved_from"]["number"] = str(a.get("film") or "")
-            else:
-                job["approved_from"] = {
-                    "what": over.get("what") or "Passed cut — deliver listing package",
-                    "version": a.get("version") or "",
-                    "airs": a.get("airs") or "",
-                    "card": a.get("key") or "",
-                    "title": a.get("title") or "",
-                    "number": a.get("film") or "",
-                    "type": a.get("type") or "",
-                    "channel": a.get("channel") or "",
-                    "job": job["id"],
-                    "okAt": J.studio.iso(at),
-                }
+            link_approval(job, a, by_id, agent=agent, at=at)
             touched.append(job["id"])
             by_id[job["id"]] = job
     return touched
@@ -621,7 +693,8 @@ def run(*, apply: bool = False, git: bool = False, agent: str = "relay",
         return result
 
     def mutate(d):
-        touched = apply_actions(d, actions, agent=agent, at=at)
+        current_actions = plan_actions(videos, d["jobs"], now=at, root=root)
+        touched = apply_actions(d, current_actions, agent=agent, at=at)
         result["touched"] = touched
         return {"touched": touched, "n": len(touched)}, None, []
 

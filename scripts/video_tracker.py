@@ -1194,6 +1194,19 @@ def film_rows(slug: str, doc) -> list[dict]:
              "release": f.get("release"), "upload": None, "status_files": True} for f in (doc or [])]
 
 
+def handled_checks(checks: dict, alljobs: list[dict]) -> dict:
+    """Overlay durable queue acknowledgements; never consume a newer tap or a request for changes."""
+    result = {k: dict(v) for k, v in checks.items()}
+    for job in alljobs:
+        receipt = job.get("board_ok") or {}
+        tick = result.get(receipt.get("id"))
+        if (receipt.get("handled") and job.get("status") in LIVE_STATUSES | {"done"}
+                and tick and tick.get("verdict") == "ok" and tick.get("at") == receipt.get("at")
+                and (tick.get("version") or "") == receipt.get("version")):
+            tick.update(handled=True, handledBy=job.get("id"))
+    return result
+
+
 def build_videos(
     *,
     briefs: dict,
@@ -1219,6 +1232,7 @@ def build_videos(
     `documents` is {slug: that channel's film document} (see `film_rows`). A caller may also pass each one as a
     keyword named by the channel's slug, as every caller did when there were two channels. A channel given no
     document is read from its own checkout through channel_films."""
+    checks = handled_checks(checks, alljobs or jobs)
     documents = dict(documents or {})
     for slug, doc in by_slug.items():
         if slug not in channels.slugs():

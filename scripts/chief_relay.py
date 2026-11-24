@@ -847,11 +847,35 @@ def review_progress(agent: str, job: str, step: int, note: str, at: dt.datetime)
     write_json(d("active.json"), active)
 
 
+def approval_round(at: dt.datetime, *, apply: bool = False) -> list[dict]:
+    """Read Ben's board OKs every relay round, independent of queue-only Chief duties."""
+    import approved_deliver as ad
+    from workflow_board import load_tracker
+    videos = load_tracker(HOME / "_desk/state/board/board.json").get("videos") or []
+    queue = read_json(STUDIO / "jobs" / "queue.json") or {}
+    waiting = ad.waiting_approvals(videos, queue.get("jobs") or [], now=at)
+    if apply and waiting:
+        # Queue only: existing listing/swap/read-back/cadence guards stay in force.
+        result = ad.run(apply=True, git=True, agent="relay", root=STUDIO, at=at, videos=videos)
+        if result.get("error"):
+            raise RuntimeError(result["error"])
+    return waiting
+
+
+def approval_summary(items: list[dict]) -> str:
+    if not items:
+        return ""
+    return "Board OKs waiting for upload jobs: " + "; ".join(
+        f"{v['key']} {v['title']} ({str(v['ageHours']) + ' h' if v['ageHours'] is not None else 'age unknown'})"
+        for v in items) + ". Resolve the missing delivery work; Ben has already approved these cuts."
+
+
 def publish_chief_inbox(items: list, leader: str | None, at: dt.datetime, dest: pathlib.Path | None = None) -> None:
     """A durable inbox for app/cloud Chiefs too, with bounded repeated delivery.
     History of Science duties use a separate file when its Chief is not orbit-with-ben's."""
     dest = dest or d("inbox.json")
     previous = read_json(dest) or {}
+    approvals = approval_round(at)
     rows = [{"id": j["id"], "title": j.get("title", ""), "fingerprint": chief_fingerprint(j)} for j in items]
     same = previous.get("agent") == leader and previous.get("jobs") == rows
     since = previous.get("since") if same else iso(at)
@@ -866,17 +890,18 @@ def publish_chief_inbox(items: list, leader: str | None, at: dt.datetime, dest: 
     progress = previous.get("progress_at", "") if same else iso(at)
     if previous.get("agent") != leader or not progress:
         progress = iso(at)
-    if items and cloud_chief(leader):
+    if (items or approvals) and cloud_chief(leader):
         try:
             due = not sent or at - parse(sent) >= dt.timedelta(minutes=10)
         except ValueError:
             due = True
         if due and notify("Chief duties for " + NAMES.get(leader, leader) + ": " +
                           "; ".join(j["id"] + " " + j.get("title", "")[:120] for j in items) +
-                          ". Resolve or delegate these before ordinary work; record each decision on its job."):
+                          ". Resolve or delegate these before ordinary work; record each decision on its job. " +
+                          approval_summary(approvals)):
             sent = iso(at)
     write_json(dest, {"at": iso(at), "agent": leader, "since": since, "progress_at": progress,
-                      "notified_at": sent, "jobs": rows, "waiting": waiting})
+                      "notified_at": sent, "jobs": rows, "waiting": waiting, "approvals": approvals})
 
 
 def chief_delivery_overdue(agent: str | None, at: dt.datetime, dest: pathlib.Path | None = None) -> bool:
@@ -2200,6 +2225,10 @@ def run_locked(at: dt.datetime, slot: int = 0) -> int:
         # Fallback chains (Ben, 11 Oct 23:40 / 23:47): Claude's jobs when it's out of usage, and jobs whose worker ran
         # out, go to the next worker up in their chain, addressed to it, so the loop below wakes it in this same run.
         rerouted = reroute_work(at)
+        try:
+            approval_round(at, apply=True)
+        except Exception as e:  # queue failure must remain visible, and retry next round
+            log(f"board approval handoff failed: {e}")
         # One deadline-first selector ranks Chief duties and production together; named workers retain eligibility.
         chief_inbox = pending_chief_reviews(at)
         if guest and guest_who != leader:
@@ -2347,7 +2376,7 @@ def run_locked(at: dt.datetime, slot: int = 0) -> int:
         auth_leader = guest_who if guest_job else leader
         prompt = PROMPT.format(name=NAMES.get(who, who), agent=who, why=why,
                                authority=authority_prompt(who, auth_leader, guest_job),
-                               priority=priority,
+                               priority=priority + ("\n" + approval_summary(approval_round(at)) if who == auth_leader else ""),
                                role="the elected acting Chief" if who == auth_leader else "a specialist worker",
                                **brief_channels(who))
         log(f"run: {who}{' on ' + model if model else ''}{' for ' + job['id'] if job else ''} (cap {cap}s)")
