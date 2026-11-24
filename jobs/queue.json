@@ -330082,9 +330082,14 @@
           "at": "2026-11-24T23:00Z",
           "by": "macbook",
           "what": "step 1 of 3 done"
+        },
+        {
+          "at": "2026-11-24T23:02Z",
+          "by": "macbook",
+          "what": "step 2 of 3 done"
         }
       ],
-      "remaining_action": "Verify J3430 hold condition against J3637-J3639, WW2 repo and NAS",
+      "remaining_action": "Record unmet condition on J3430 wait hold and verify relay will not re-fire early",
       "kind": "review",
       "recheck_of": "J3430",
       "due": "2026-11-24T23:56:28+00:00",
@@ -330098,9 +330103,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-24T23:00Z",
+        "at": "2026-11-24T23:02Z",
         "by": "macbook",
         "plan": [
           "Inspect J3430 hold and v02 evidence",
