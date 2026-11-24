@@ -320381,9 +320381,14 @@
           "at": "2026-11-24T12:37Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T12:38Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Install the declared Prisma version, generate the client, prove channel:audit passes",
+      "remaining_action": "Inspecting the publishing dependencies and prepared private-upload dry run",
       "due": "2026-11-25T09:00:00Z",
       "kind": "assembly",
       "mini_only": true,
@@ -320391,11 +320396,18 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-24T12:37Z",
+        "at": "2026-11-24T12:38Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect runtime and dry run",
+          "Restore locked dependencies",
+          "Verify audit and dry run"
+        ]
+      },
+      "taskKeys": [
+        "HOS:008",
+        "HOS:009"
+      ]
     },
     {
       "id": "J3520",
