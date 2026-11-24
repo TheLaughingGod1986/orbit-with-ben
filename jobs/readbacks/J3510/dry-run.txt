@@ -1,0 +1,112 @@
+
+> content-ops@0.1.0 youtube:package
+> tsx --env-file=.env scripts/youtube-package-upload.ts --package /Volumes/MiniWork/scratch/J3510-wt/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/fri11_opening_testA/11_Upload-Package/v06-J3510 --video /Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/fri11_opening_testA/06_Final-Exports/029_short_fri11_opening_testA_v06.mp4 --dry-run
+
+PASS  029_short_fri11_opening_testA_v06.mp4  dur=33.9s  audio=-17.0dB  motion=6.02  f0diff=2.06  cut1=2.23s  vo_onset=0.08s  tail_gap=2.32s  vo_src=/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/fri11_opening_testA/06_Final-Exports/029_short_fri11_opening_testA_v06_vo.wav  dhash=000d234f0e0e77f3  visor=0.0
+   full-bleed 0.00s  fills the frame  sharp above/middle/below=0.16/0.425/0.288  detail top/centre/bottom=12.8/6.51/2.71  spread top/bottom=55.28/6.62
+   full-bleed 0.25s  fills the frame  sharp above/middle/below=0.163/0.433/0.298  detail top/centre/bottom=12.88/6.53/2.74  spread top/bottom=55.19/6.13
+   full-bleed 0.50s  fills the frame  sharp above/middle/below=0.16/0.437/0.31  detail top/centre/bottom=12.85/6.52/2.78  spread top/bottom=55.02/5.85
+   full-bleed whole Short  0/34 frames padded at one a second, 0/68 at two a second  padded stretches: none  end card 31.9-33.9s judged apart
+   warn  duration 33.90s outside 16.0–19.0s band
+   warn  gap from last word to end is 2.32s > 1.5s (last word 31.58s, duration 33.90s)
+   warn  picture barely changes in the first second (motion 6.0 < 10) — trim the clip's ease-in so frame 0 is already mid-action
+   sheet /Volumes/MiniWork/scratch/orbit_shorts_gate/029_short_fri11_opening_testA_v06_open_sheet.jpg
+{
+  "ok": true,
+  "dryRun": true,
+  "method": "youtube_data_api_package",
+  "upload": {
+    "published": false,
+    "scheduledOnPlatform": false,
+    "scheduledFor": null,
+    "platformPostId": null,
+    "platformUrl": null,
+    "message": "Dry-run complete. YouTube upload request prepared but not sent.",
+    "responseSummary": "{\"title\":\"Is Betelgeuse Really About to Explode?\",\"privacyStatus\":\"private\",\"publishAt\":null,\"madeForKids\":false,\"containsSyntheticMedia\":true,\"categoryId\":\"28\",\"contentFormat\":\"shorts\"}"
+  },
+  "package": {
+    "packageDir": "02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/fri11_opening_testA/11_Upload-Package/v06-J3510",
+    "sha256": "eafe7435d56c5e01877ded752edd73b78af1749025a16669778005825f574015",
+    "title": "Is Betelgeuse Really About to Explode?",
+    "format": "shorts",
+    "privacy": "private",
+    "tagCount": 7,
+    "hasPinnedComment": false,
+    "thumbnailPath": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/fri11_opening_testA/06_Final-Exports/029_short_fri11_opening_testA_v06_cover.jpg",
+    "scheduledAt": null,
+    "sources": {
+      "manifest": "/Volumes/MiniWork/scratch/J3510-wt/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/fri11_opening_testA/11_Upload-Package/v06-J3510/PACKAGE_MANIFEST.json",
+      "video": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/fri11_opening_testA/06_Final-Exports/029_short_fri11_opening_testA_v06.mp4",
+      "thumbnail": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/029_Is-Betelgeuse-About-To-Explode/10_Shorts/fri11_opening_testA/06_Final-Exports/029_short_fri11_opening_testA_v06_cover.jpg"
+    }
+  },
+  "postUpload": {
+    "firstCommentPosted": false,
+    "commentMessage": null,
+    "playlistAdded": false,
+    "playlistMessage": null
+  },
+  "studioFinish": {
+    "videoId": null,
+    "studioEditUrl": null,
+    "items": [
+      {
+        "id": "api_metadata",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Title · description · tags · schedule · video",
+        "detail": "Run package upload first"
+      },
+      {
+        "id": "primary_thumbnail",
+        "required": true,
+        "status": "api_done",
+        "title": "Primary thumbnail",
+        "detail": "Set via thumbnails.set"
+      },
+      {
+        "id": "title_thumb_abc",
+        "required": false,
+        "status": "n/a",
+        "title": "Title + thumbnail ABC (Test & Compare)",
+        "detail": "A/B Testing not available for Shorts"
+      },
+      {
+        "id": "first_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "First / pinned comment text",
+        "detail": "No pinned comment file in package"
+      },
+      {
+        "id": "pin_comment",
+        "required": false,
+        "status": "n/a",
+        "title": "Pin the comment",
+        "detail": "Studio only — no official Data API pin endpoint"
+      },
+      {
+        "id": "related_watch_next",
+        "required": true,
+        "status": "pending_studio",
+        "title": "Related video (full film)",
+        "detail": "Desktop Studio: set Related video to vP1BbqZ_dnM (its own full film). No new Short pins."
+      },
+      {
+        "id": "end_screens_cards",
+        "required": false,
+        "status": "n/a",
+        "title": "End screen + cards",
+        "detail": "Studio only — subscribe + best next video"
+      },
+      {
+        "id": "playlist",
+        "required": false,
+        "status": "n/a",
+        "title": "Add to playlist",
+        "detail": "No playlistId in manifest"
+      }
+    ],
+    "summary": "Package resolved; upload not run yet."
+  }
+}
