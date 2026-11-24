@@ -1,5 +1,5 @@
 {
-  "next_id": 3541,
+  "next_id": 3542,
   "jobs": [
     {
       "id": "J0001",
@@ -322198,6 +322198,36 @@
       "due": "2026-11-25T18:00:00Z",
       "kind": "studio",
       "mini_only": true
+    },
+    {
+      "id": "J3541",
+      "title": "WW2 016: resolve archive coverage and issue topic verdict",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "Review WW2 film 016 topic-stage PR https://github.com/TheLaughingGod1986/ww2-channel/pull/84 (macbook/J3487), TOPIC.md, PACKAGING.md and 03_Picture/ARCHIVE_PROVENANCE.md. J3487 remains unfinished: no script, claims check, opening review or VO yet.\n\nOne missing fact, deadline 2026-11-25 14:30 UTC: can individually verified official archive photographs carry at least half of a Bletchley-centred film without unrelated U-boat padding? Fifteen real official candidates are recorded, but fourteen cover U-505 and the fifteenth is a US Bombe. Close the gap with relevant British Bombe, Wrens, intercept and Enigma pictures; exact official IDs, creator/date/rights and a plausible screen-time plan. UK card-index and NSA catalogue leads are recorded but are not cleared assets. No purchases, sign-ins, VO or generation. Do not portray Colossus as an Enigma machine or U-505 as the first break.\n\nWrite one reviewer verdict: GO if coverage is substantiated, then reopen J3487 for the script stage; NO-GO if not, with the existing 007 Ulithi topic proposed for a separate review instead of making a duplicate. This is the first recorded defer; a second defer or missed deadline is NO-GO under the brief's rule-E rubric. Pilot 2 future readouts must be checked when available, not invented. PR merge remains the Chief's call; the MacBook never merges. Use a separate stage PR for any subsequent script work. Update status.json accurately.\n",
+      "ref": "",
+      "film": "WW2:016",
+      "stage": "topic",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-24T14:21Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T14:21Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify relevant official photographs cover at least half the film and decide whether scripting can begin",
+      "due": "2026-11-25T14:30:00Z",
+      "kind": "review",
+      "plain": "Check whether archive pictures can support the Bletchley Park film"
     }
   ],
   "focus": [
