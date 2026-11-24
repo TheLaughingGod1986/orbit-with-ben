@@ -318317,9 +318317,14 @@
           "at": "2026-11-24T10:27Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T10:30Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done"
         }
       ],
-      "remaining_action": "Write Ben's OK and the search-led rule into HOS LEARNINGS, line up the four January films with dates",
+      "remaining_action": "Verifying WIP order, overlap check, and running free public_search/neighbours checks for HOS 136-138",
       "due": "2026-11-25T12:00:00Z",
       "kind": "review",
       "urgent": 12,
@@ -318333,12 +318338,24 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-24T10:27Z",
+        "of": 6,
+        "at": "2026-11-24T10:30Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify state, overlap & run search/neighbour gates",
+          "Create HOS 136-138 folders & TOPIC/package briefs",
+          "Update HOS rules, playbook & retention learnings",
+          "Update OWB LEARNINGS, WIP.json & plan.json",
+          "Queue Rule-E reviews & run all repo tests",
+          "Open PRs, post desk/thread & complete J3495"
+        ]
+      },
+      "taskKeys": [
+        "HOS:128",
+        "HOS:136",
+        "HOS:137",
+        "HOS:138"
+      ]
     },
     {
       "id": "J3496",
