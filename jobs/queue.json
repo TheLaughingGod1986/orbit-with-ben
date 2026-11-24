@@ -325404,13 +325404,13 @@
       "stage": "",
       "after": "J3590",
       "eta_min": 25,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-24T17:25Z",
-      "eta": "2026-11-24T17:50Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-24T17:03Z",
-      "result": "",
+      "result": "parked for Chief: review and merge OWB PR #1273 (05_Analytics/ww2/autopsy/ek9F61FVYqY_48h.md + retention_autopsy.py launch-record fallback) and ww2-channel PR #101 (studio/LEARNINGS.md row 10); worker cannot merge",
       "history": [
         {
           "at": "2026-11-24T17:03Z",
@@ -325446,6 +325446,11 @@
           "at": "2026-11-24T17:35Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Opened OWB PR #1273 (autopsy report + retention_autopsy.py fallback) and ww2-channel PR #101 (LEARNINGS row 10); worktrees cleaned"
+        },
+        {
+          "at": "2026-11-24T17:35Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: review and merge OWB PR #1273 (05_Analytics/ww2/autopsy/ek9F61FVYqY_48h.md + retention_autopsy.py launch-record fallback) and ww2-channel PR #101 (studio/LEARNINGS.md row 10); worker cannot merge"
         }
       ],
       "remaining_action": "Awaiting Chief review and merge of OWB PR #1273 and ww2-channel PR #101",
