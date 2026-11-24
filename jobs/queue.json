@@ -322244,13 +322244,13 @@
       "stage": "script",
       "after": "J3538",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-24T14:49Z",
-      "eta": "2026-11-24T16:49Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T13:26Z",
-      "result": "",
+      "result": "Independent exact-hash FIX on v03 9d5cd3bd; PR #1265, commit 96b168553. All 16 rows inspected; gates 93.1/episode pass, 13 privacy tests pass. J3544 corrections and J3545 independent recheck queued. J3020 hold update refused by holder/Chief guard; J3546 queues that protected update. Parent remains blocked; J3021 gated. No script lock, media or YouTube changes. Checkout main.",
       "history": [
         {
           "at": "2026-11-24T13:26Z",
@@ -322296,6 +322296,11 @@
           "at": "2026-11-24T14:49Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T14:49Z",
+          "by": "macbook",
+          "what": "done: Independent exact-hash FIX on v03 9d5cd3bd; PR #1265, commit 96b168553. All 16 rows inspected; gates 93.1/episode pass, 13 privacy tests pass. J3544 corrections and J3545 independent recheck queued. J3020 hold update refused by holder/Chief guard; J3546 queues that protected update. Parent remains blocked; J3021 gated. No script lock, media or YouTube changes. Checkout main."
         }
       ],
       "remaining_action": "Review published in PR 1265; corrections and independent recheck queued",
