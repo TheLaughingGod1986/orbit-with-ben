@@ -91385,16 +91385,21 @@
           "at": "2026-11-24T11:58Z",
           "by": "gemini",
           "what": "step 1 of 5 done: API verified Orbit With Ben (UC_esArsDKd3GJvOkeO0DUog), 6bbbvfCx6zY Public ('What If Earth Stopped Spinning? (It's Already Slowing Down)'), OVLv9dxTcpE Public untouched at 560 bytes (sha256 016c8427); J0317 done"
+        },
+        {
+          "at": "2026-11-24T12:01Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Fresh Mini Studio CDP 9223 verified UC_esArsDKd3GJvOkeO0DUog, 6bbbvfCx6zY Public, and OVLv9dxTcpE Related='What If Earth Stopped Spinning? (It's Already Slowing Down)' with description untouched at 560 bytes (sha256 016c8427)"
         }
       ],
       "kind": "studio",
-      "remaining_action": "Verify OVLv9dxTcpE Related=6bbbvfCx6zY fresh in Mini Studio CDP 9223",
+      "remaining_action": "Run dry-run and apply description prepend on OVLv9dxTcpE via YouTube Data API, then read back API and Mini Studio",
       "escalated_at": "2026-11-23T01:27Z",
       "mini_only": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-24T11:58Z",
+        "at": "2026-11-24T12:01Z",
         "by": "gemini",
         "plan": [
           "Check J0317 & live OWB/YouTube state",
@@ -91403,7 +91408,7 @@
           "Sync local 027 Short package & commit via worktree",
           "Post thread report & finish J0996"
         ],
-        "note": "API verified Orbit With Ben (UC_esArsDKd3GJvOkeO0DUog), 6bbbvfCx6zY Public ('What If Earth Stopped Spinning? (It's Alrea"
+        "note": "Fresh Mini Studio CDP 9223 verified UC_esArsDKd3GJvOkeO0DUog, 6bbbvfCx6zY Public, and OVLv9dxTcpE Related='What If Earth"
       },
       "taskKeys": [
         "OWB:027"
