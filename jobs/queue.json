@@ -320509,17 +320509,22 @@
           "at": "2026-11-24T12:32Z",
           "by": "codex",
           "what": "step 1 of 4 done: Main pulled; PR 1248 is merged; loaded relay version matches installed. No launchd chain, parallel or memory overrides found. Scratch offload found no eligible old folders."
+        },
+        {
+          "at": "2026-11-24T12:33Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: No launchd overrides; default two slots and 3 GiB threshold apply. Cursor marked down to 26 Nov 11:00:21Z from actual CLI reset. Available memory measured 3.185 GiB. Only one launchd relay service exists and stays occupied by slot 0, so its 60-second trigger cannot launch slot 1 while running; simultaneous dispatch is not demonstrated."
         }
       ],
-      "remaining_action": "Checking Cursor reset evidence and the second relay slot",
+      "remaining_action": "Deploying and verifying the updated board",
       "due": "2026-11-24T18:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "urgent": 12,
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-24T12:32Z",
+        "at": "2026-11-24T12:33Z",
         "by": "codex",
         "plan": [
           "Check runtime and environment",
@@ -320527,7 +320532,7 @@
           "Verify slots and reset times",
           "Deploy and verify board"
         ],
-        "note": "Main pulled; PR 1248 is merged; loaded relay version matches installed. No launchd chain, parallel or memory overrides f"
+        "note": "No launchd overrides; default two slots and 3 GiB threshold apply. Cursor marked down to 26 Nov 11:00:21Z from actual CL"
       }
     },
     {
