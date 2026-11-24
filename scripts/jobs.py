@@ -597,6 +597,13 @@ def set_wait(job, agent, at, hold, action="", recheck=""):
     value = {"type":hold.get("type") or "input","condition":condition,"check_at":check}
     if requirements:
         value["requires"] = requirements
+    if hold.get("release") == "auto":
+        # A start-time wait (a 48-hour read, a timed check) whose time is the whole condition. It reopens itself at
+        # check_at: no verification task, no Chief release (24 Nov 2026: pilot 1's 48-hour read, J3414, sat behind a
+        # verification task that was then parked for the Chief, while Ben waited for the numbers).
+        if value["type"] != "date":
+            raise ValueError("--release-at-time is only for --type date holds whose time is the whole condition")
+        value["release"] = "auto"
     if recheck:
         if workflow.timestamp(check) <= at:
             raise ValueError("A verification retry needs a future --check-at")
@@ -735,6 +742,14 @@ def reconcile_holds(data, at):
                 changed.append(pending["id"])
             continue
         if not workflow.hold_due(parent,by_id,at):
+            continue
+        hold = parent.get("hold") or {}
+        if hold.get("type") == "date" and hold.get("release") == "auto":
+            parent.pop("hold", None)
+            parent.update(status="open", by="", since="", eta="", result="")
+            parent.pop("progress", None)
+            log(parent, at, "relay", "reopened: its start time " + str(hold.get("check_at")) + " has come (release-at-time hold)")
+            changed.append(parent["id"])
             continue
         if recheck_backoff(data,parent,by_id,at):
             continue
@@ -1432,7 +1447,8 @@ def main(argv=None) -> int:
     md = sub.add_parser("metadata", help="set explicit remaining actions and structured holds without releasing work")
     md.add_argument("--file", type=pathlib.Path, required=True)
     md.add_argument("--agent", required=True)
-    wt = sub.add_parser("wait", help="record a condition and verification time; never auto-release a hold")
+    wt = sub.add_parser("wait", help="record a condition and verification time; never auto-release a hold "
+                                      "(except --release-at-time on a --type date hold whose time is the whole condition)")
     wt.add_argument("id")
     wt.add_argument("--agent", required=True)
     wt.add_argument("--condition", required=True)
@@ -1441,6 +1457,8 @@ def main(argv=None) -> int:
     wt.add_argument("--requires", default="", help="missing capabilities; required for --type capability")
     wt.add_argument("--action", default="")
     wt.add_argument("--recheck", default="", help="verification task whose condition check this records")
+    wt.add_argument("--release-at-time", action="store_true",
+                    help="--type date only: reopen the job by itself at --check-at, because the time is the whole condition")
     n = sub.add_parser("next")
     n.add_argument("--agent", required=True)
     n.add_argument("--can", required=True, help="comma list from: " + ",".join(NEEDS))
@@ -1618,7 +1636,8 @@ def main(argv=None) -> int:
             elif args.cmd == "wait":
                 if args.recheck and (find(data,args.recheck) or {}).get("recheck_of") != job["id"]:
                     raise ValueError("--recheck must identify this job's verification task")
-                set_wait(job, args.agent, at, {"type":args.hold_type,"condition":args.condition,"check_at":args.check_at,"requires":args.requires}, args.action, args.recheck)
+                set_wait(job, args.agent, at, {"type":args.hold_type,"condition":args.condition,"check_at":args.check_at,"requires":args.requires,
+                                                "release":"auto" if args.release_at_time else ""}, args.action, args.recheck)
             elif args.cmd == "awaits" and args.clear and not args.dropped and job.get("awaits_ben") and (
                     args.ok or job["status"] in ("open", "claimed", "blocked")):
                 # Clearing a held job that goes on = Ben OK'd it (Ben, 25 Oct 14:13): it shows in "Approved, on its
