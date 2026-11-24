@@ -327231,24 +327231,29 @@
           "at": "2026-11-24T20:25Z",
           "by": "codex",
           "what": "step 2 of 3 done: Main is current; both runners match installed 253c7fe66b787b2f. Live slot 0 Codex J3607 and slot 1 Gemini J3602 observed concurrently; no restart needed."
+        },
+        {
+          "at": "2026-11-24T20:26Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: At 20:25:38Z both PID-verified leases were live on different workers; spawn log 20:17:51. Completion report posted; no configuration changes."
         }
       ],
-      "remaining_action": "Recording the confirmed simultaneous Codex and Gemini runs",
+      "remaining_action": "Verification complete; closing the job",
       "due": "2026-11-24T21:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "urgent": 11,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-24T20:25Z",
+        "at": "2026-11-24T20:26Z",
         "by": "codex",
         "plan": [
           "Confirm installed runner",
           "Check simultaneous worker leases",
           "Record observed result"
         ],
-        "note": "Main is current; both runners match installed 253c7fe66b787b2f. Live slot 0 Codex J3607 and slot 1 Gemini J3602 observed"
+        "note": "At 20:25:38Z both PID-verified leases were live on different workers; spawn log 20:17:51. Completion report posted; no c"
       }
     },
     {
