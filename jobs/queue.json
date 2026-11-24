@@ -330444,10 +330444,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 45,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-24T23:37Z",
+      "eta": "2026-11-25T00:22Z",
       "created_by": "claude",
       "created_at": "2026-11-24T23:12Z",
       "result": "",
@@ -330461,6 +330461,11 @@
           "at": "2026-11-24T23:13Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-25T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
+        },
+        {
+          "at": "2026-11-24T23:37Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "QA the 003 v01 master and put it on Ben's watch card",
@@ -330475,7 +330480,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T23:37Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3644",

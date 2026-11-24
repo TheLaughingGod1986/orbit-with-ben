@@ -134,7 +134,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3639 | any | open (after J3638) | – | – | WW2:004 edit · chief · WW2 004: Chief decision on v02 delivery and stage Ben watch |  |
 | J3640 | mini | blocked | macbook | – | review · Verify condition for J3430 |  |
 | J3642 | gemini | open | – | – | 009 sources · facts · WW2 009: independent Gemini direct-source recheck of v04 | https://github.com/TheLaughingGod1986/ww2-channel/pull/114 |
-| J3643 | mini | open | – | – | WW2:003 edit · qa · WW2 film 3 (B-29) v01: independent QA, then Ben's watch card tonight |  |
+| J3643 | mini | claimed | gemini | 2026-11-25T00:22Z | WW2:003 edit · qa · WW2 film 3 (B-29) v01: independent QA, then Ben's watch card tonight |  |
 | J3644 | mini | open | – | – | review · Verify condition for J3205 |  |
 | J3645 | mini | open | – | – | WW2:002 thumbs · thumb · WW2 pilot 2: make a U-boat thumbnail (design E) ready for the 24-hour read |  |
 | J3646 | mini | open | – | – | WW2:001 upload · studio · WW2 001-S1: upload Ben-approved Mulberry Short v02, scheduled Thu 26 Nov 12:00 London, linked to pilot 1 |  |
