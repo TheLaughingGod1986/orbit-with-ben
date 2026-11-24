@@ -327221,23 +327221,29 @@
           "at": "2026-11-24T20:24Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-24T20:25Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Main is current; both runners match installed 253c7fe66b787b2f. Live slot 0 Codex J3607 and slot 1 Gemini J3602 observed concurrently; no restart needed."
         }
       ],
-      "remaining_action": "Checking that the Mini can run two different workers at once",
+      "remaining_action": "Recording the confirmed simultaneous Codex and Gemini runs",
       "due": "2026-11-24T21:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "urgent": 11,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-24T20:24Z",
+        "at": "2026-11-24T20:25Z",
         "by": "codex",
         "plan": [
           "Confirm installed runner",
           "Check simultaneous worker leases",
           "Record observed result"
-        ]
+        ],
+        "note": "Main is current; both runners match installed 253c7fe66b787b2f. Live slot 0 Codex J3607 and slot 1 Gemini J3602 observed"
       }
     },
     {
