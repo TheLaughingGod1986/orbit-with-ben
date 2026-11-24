@@ -325272,24 +325272,30 @@
           "at": "2026-11-24T17:16Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-24T17:18Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: WW2:001 metadata_v44.json read; connected read-only to existing Studio tab on CDP 9224"
         }
       ],
-      "remaining_action": "Check WW2:001 upload package and connect to Studio CDP 9224",
+      "remaining_action": "Inspect Studio Content and Details pages (read-only) for faults",
       "due": "2026-11-24T19:03:00Z",
       "kind": "studio",
       "launch": "ek9F61FVYqY@48",
       "plain": "Check how \"How Britain Built Two Harbours in Secret and Floated Them to\" is doing 48 hours after it went live",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-24T17:16Z",
+        "at": "2026-11-24T17:18Z",
         "by": "gemini",
         "plan": [
           "Check package & browser",
           "Inspect Content page",
           "Read 48h Analytics",
           "Record & judge"
-        ]
+        ],
+        "note": "WW2:001 metadata_v44.json read; connected read-only to existing Studio tab on CDP 9224"
       },
       "taskKeys": [
         "WW2:001"
