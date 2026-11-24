@@ -326547,24 +326547,40 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
+      "status": "blocked",
+      "by": "codex",
       "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T18:31Z",
-      "result": "",
+      "result": "Waiting for seven-day after-title-switch measurement window",
       "history": [
         {
           "at": "2026-11-24T18:31Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T18:33Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-12-01T18:31:00Z"
+        },
+        {
+          "at": "2026-11-24T18:33Z",
+          "by": "codex",
+          "what": "Created follow-up date hold as part of J3540; no work claim or second task performed"
         }
       ],
       "remaining_action": "Wait until seven days after the Mulberry harbour title change, then read the search and click-through numbers",
       "due": "2026-12-02T12:00:00Z",
       "kind": "studio",
-      "plain": "Check whether naming the Mulberry harbours brings the first film more search traffic"
+      "plain": "Check whether naming the Mulberry harbours brings the first film more search traffic",
+      "hold": {
+        "type": "date",
+        "condition": "Seven days after J3540 title save at 2026-11-24T18:30:17.062Z",
+        "check_at": "2026-12-01T18:31:00Z",
+        "release": "auto"
+      }
     }
   ],
   "focus": [

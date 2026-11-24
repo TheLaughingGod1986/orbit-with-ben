@@ -132,7 +132,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3600 | mini | blocked | macbook | – | review · Verify condition for J3431 |  |
 | J3602 | mini | open (after J3601) | – | – | review · `gemini-argon` · Retention autopsy (48h): "What If Earth Stopped Spinning? (It's Already Slowing Down)" (6bbbvfCx6zY) |  |
 | J3603 | any | open (after J3599) | – | – | chief · Chief ruling on J3599 FIX review of Mulberry Short v01 and reopen J3542 |  |
-| J3605 | mini | open | – | – | WW2:001 upload · studio · WW2 pilot 1: seven-day outcome after searched-name title change |  |
+| J3605 | mini | blocked | codex | – | WW2:001 upload · studio · WW2 pilot 1: seven-day outcome after searched-name title change |  |
 
 Recently finished:
 
