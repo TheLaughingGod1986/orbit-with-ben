@@ -328789,9 +328789,14 @@
           "at": "2026-11-24T21:41Z",
           "by": "gemini",
           "what": "step 1 of 6 done: Capabilities recorded (audio_input, moving_video_input); verified master hash matches J3623 PR106; starting full watch-through"
+        },
+        {
+          "at": "2026-11-24T21:43Z",
+          "by": "gemini",
+          "what": "step 2 of 6 done: Completed minutes 0-8 watch+listen: opening cut at 02:16-02:18 audio join clean, narration/music clear; flagged major visual issues (00:07 G01 empty boxes + firing-pin spoiler, internal boilerplate in G02/G04/G06/G10, missing Ch3 card at 06:35, static empty boxes 03:56-06:36, rapid <60s repeats)"
         }
       ],
-      "remaining_action": "Watching and listening to WW2 004 master minutes 0-8 (first 2 minutes, authorised opening join, picture/narration fit)",
+      "remaining_action": "Watching and listening to WW2 004 master minutes 8-16",
       "due": "2026-11-26T12:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -328808,9 +328813,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 6,
-        "at": "2026-11-24T21:41Z",
+        "at": "2026-11-24T21:43Z",
         "by": "gemini",
         "plan": [
           "Record capabilities and inspect delivery",
@@ -328820,7 +328825,7 @@
           "Inspect thumbnails, captions and technical QA",
           "Write QA report and hand off to Chief"
         ],
-        "note": "Capabilities recorded (audio_input, moving_video_input); verified master hash matches J3623 PR106; starting full watch-t"
+        "note": "Completed minutes 0-8 watch+listen: opening cut at 02:16-02:18 audio join clean, narration/music clear; flagged major vi"
       },
       "taskKeys": [
         "WW2:004"
