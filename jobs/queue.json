@@ -327212,9 +327212,14 @@
           "at": "2026-11-24T19:19Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T19:20Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J3612 as Gemini fallback worker; inspecting J3607 and relay concurrency state"
         }
       ],
-      "remaining_action": "Verify readiness: Confirming two simultaneous jobs after a second worker returns",
+      "remaining_action": "Reading J3607 history, report comment 7141216261, and live runner state",
       "kind": "review",
       "recheck_of": "J3607",
       "mini_only": true,
@@ -327230,11 +327235,16 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-24T19:19Z",
+        "of": 4,
+        "at": "2026-11-24T19:20Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read J3607 history and evidence",
+          "Inspect live concurrent runners and logs",
+          "Update J3607 and finish J3612",
+          "Post verification report"
+        ],
+        "note": "Claimed J3612 as Gemini fallback worker; inspecting J3607 and relay concurrency state"
       }
     }
   ],
