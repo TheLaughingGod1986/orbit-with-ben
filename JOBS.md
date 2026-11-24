@@ -135,7 +135,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3638 | mini | open (after J3637) | – | – | WW2:004 edit · qa · WW2 004: full private audiovisual QA of v02 master |  |
 | J3639 | any | open (after J3638) | – | – | WW2:004 edit · chief · WW2 004: Chief decision on v02 delivery and stage Ben watch |  |
 | J3640 | mini | blocked | macbook | – | review · Verify condition for J3430 |  |
-| J3641 | mini | open | – | – | studio · First-day check at 6 h: "How the U-Boats Lost Their Safest Hunting Ground" (qfc6EBStOfo) |  |
+| J3641 | mini | claimed | gemini | 2026-11-24T23:49Z | studio · First-day check at 6 h: "How the U-Boats Lost Their Safest Hunting Ground" (qfc6EBStOfo) |  |
 | J3642 | gemini | open | – | – | 009 sources · facts · WW2 009: independent Gemini direct-source recheck of v04 | https://github.com/TheLaughingGod1986/ww2-channel/pull/114 |
 | J3643 | mini | open | – | – | WW2:003 edit · qa · WW2 film 3 (B-29) v01: independent QA, then Ben's watch card tonight |  |
 | J3644 | mini | open | – | – | review · Verify condition for J3205 |  |
