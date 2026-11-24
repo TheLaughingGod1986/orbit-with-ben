@@ -264048,6 +264048,11 @@
           "at": "2026-11-17T09:23Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-12-01T18:00:00Z"
+        },
+        {
+          "at": "2026-11-24T10:54Z",
+          "by": "codex",
+          "what": "no longer waits on Ben (entry 2): OK'd, delivered by J3511"
         }
       ],
       "remaining_action": "Wait for Ben's final UAT watch on HOS 010 Short A v01 (J2933.1) and Short C v01 (J2933.2) by 1 Dec 18:00 London",
@@ -264066,28 +264071,16 @@
       "taskKeys": [
         "HOS:010"
       ],
-      "awaits_ben": [
-        {
-          "what": "Watch HOS 010 Short A, What Killed the Dinosaurs? (23 s), before it is uploaded",
-          "file": "HOS UAT/010_Alvarez-Clay-Line-Dinosaurs/10_Shorts/hos_010_short_A_v01.mp4",
-          "version": "v01",
-          "due": "2026-12-01T18:00Z",
-          "ifNot": "Short A is not uploaded or scheduled; it also waits for the HOS 010 long to be public",
-          "title": "HOS 010 Short A: What Killed the Dinosaurs?",
-          "number": "010 Short A",
-          "type": "short"
-        },
-        {
-          "what": "Watch HOS 010 Short C, Are Birds Really Dinosaurs? (24 s), before it is uploaded",
-          "file": "HOS UAT/010_Alvarez-Clay-Line-Dinosaurs/10_Shorts/hos_010_short_C_v01.mp4",
-          "version": "v01",
-          "due": "2026-12-01T18:00Z",
-          "ifNot": "Short C is not uploaded or scheduled; it also waits for the HOS 010 long to be public",
-          "title": "HOS 010 Short C: Are Birds Really Dinosaurs?",
-          "number": "010 Short C",
-          "type": "short"
-        }
-      ],
+      "awaits_ben": {
+        "what": "Watch HOS 010 Short A, What Killed the Dinosaurs? (23 s), before it is uploaded",
+        "file": "HOS UAT/010_Alvarez-Clay-Line-Dinosaurs/10_Shorts/hos_010_short_A_v01.mp4",
+        "version": "v01",
+        "due": "2026-12-01T18:00Z",
+        "ifNot": "Short A is not uploaded or scheduled; it also waits for the HOS 010 long to be public",
+        "title": "HOS 010 Short A: What Killed the Dinosaurs?",
+        "number": "010 Short A",
+        "type": "short"
+      },
       "escalated_at": "2026-11-16T10:25Z",
       "hold": {
         "type": "ben",
@@ -319190,13 +319183,32 @@
           "at": "2026-11-24T10:53Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T10:54Z",
+          "by": "codex",
+          "what": "approved by Ben: Watch HOS 010 Short C, Are Birds Really Dinosaurs? (24 s), before it is uploaded v01 (asked in J2933)"
         }
       ],
       "remaining_action": "Upload the dinosaur and birds Short you approved as a private video",
       "due": "2026-11-25T12:00:00Z",
       "kind": "studio",
       "plain": "Upload the dinosaur and birds Short you approved as a private video",
-      "mini_only": true
+      "mini_only": true,
+      "approved_from": {
+        "what": "Watch HOS 010 Short C, Are Birds Really Dinosaurs? (24 s), before it is uploaded",
+        "file": "HOS UAT/010_Alvarez-Clay-Line-Dinosaurs/10_Shorts/hos_010_short_C_v01.mp4",
+        "version": "v01",
+        "title": "HOS 010 Short C: Are Birds Really Dinosaurs?",
+        "number": "010 Short C",
+        "type": "short",
+        "card": "HOS:ASK:J2933.2",
+        "channel": "HOS",
+        "job": "J2933",
+        "askId": "J2933.2",
+        "okAt": "2026-11-16T09:33Z",
+        "okRef": "board:HOS:ASK:J2933.2;J3505"
+      }
     },
     {
       "id": "J3512",
