@@ -1,5 +1,5 @@
 {
-  "next_id": 3643,
+  "next_id": 3644,
   "jobs": [
     {
       "id": "J0001",
@@ -290120,6 +290120,11 @@
           "at": "2026-11-24T22:20Z",
           "by": "relay",
           "what": "condition verification queued: J3633"
+        },
+        {
+          "at": "2026-11-24T23:12Z",
+          "by": "claude",
+          "what": "Chief: QA and Ben's watch card go ahead now as J3643; the GitHub publish waits for Claude Code (Wed 10:00)."
         }
       ],
       "remaining_action": "Chief QA review, board watch upload (watch_upload.mjs + awaits), and Claude Code PR publish for codex/J3205-mini",
@@ -329556,8 +329561,8 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-11-24T22:21Z",
       "eta": "",
       "created_by": "relay",
@@ -329603,6 +329608,11 @@
           "at": "2026-11-24T22:28Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: Read-only verification complete in OWB PR #1296 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1296, 6f399e2294, jobs/reviews/J3633/REVIEW.md). Recommended DO NOT REOPEN J3205 for assembly: predecessor J3371 is done and assembly is already finished on clean local branch codex/J3205-mini (4d8422d, 7/7 NAS SHA-256 hashes verified, iCloud WW2 UAT staged). Unmet gates remain: (1) local branch unpushed / no PR (needs claudecode privacy check & publish after 2026-11-25T10:00:00Z reset; 3 local home-path strings flagged, 0 secrets/emails/private IPs), (2) no full audiovisual QA or Chief PASS / Rule-2 title lock (open WW2 PR #98 J3562 + open Chief J3589), (3) no watch_uploads.json entry or jobs.py awaits for Ben watch. Elected Chief (codex) to merge PR #1296, record J3205 wait --type input --recheck J3633 --check-at 2026-11-25T10:15:00Z, queue audiovisual QA & claudecode publish, reconcile J3589, and close J3633. £0 spent."
+        },
+        {
+          "at": "2026-11-24T23:12Z",
+          "by": "claude",
+          "what": "cancelled: moot: the Chief released 003 v01 to QA and Ben's watch (J3643); only the publish waits"
         }
       ],
       "remaining_action": "Parked for elected Chief (codex): merge PR #1296, record J3205 wait --recheck J3633, queue QA/publish, close J3633",
@@ -330188,6 +330198,37 @@
       "remaining_action": "Verify v04 6 surgical fixes and write CLAIMS_CHECK_v04.md",
       "kind": "facts",
       "plain": "Independent Gemini direct-source recheck of WW2 film 009 narration v04 after the 6 surgical J3634 fixes"
+    },
+    {
+      "id": "J3643",
+      "title": "WW2 film 3 (B-29) v01: independent QA, then Ben's watch card tonight",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why (Ben, 24 Nov, in chat: he is waiting on film 3; its watch is due Wed 25 Nov 20:00 UTC, and it airs Sat 28 Nov 17:00 London).** J3205 finished WW2:003 v01:\n- master 25:50.42, 1080p30, -16.3 LUFS, -1.8 dBFS true peak, 0 decode/black/silence errors;\n- 61.38% cleared US federal public-domain archive;\n- 720p phone proxy, three launch covers and the upload package v01;\n- NAS sha256 876736a1...a027a66; iCloud WW2 UAT staged.\n\nIt parked for the Chief only for a GitHub publish (Claude Code is out until Wed 10:00 London). Publishing never blocks Ben's private watch (AGENTS.md as of PR #1271).\n\n**Do now (Mini; independent of whoever built it):**\n1. **QA the exact master**, in the J3599 manner: hash, full decode, loudness and peak, captions against narration, archive share and provenance, the first 2 minutes against rule 3 (frame sheet), covers at 168 px.\n2. **If it passes:** run `watch_upload.mjs` for WW2:003 v01 and set Ben's watch card with `jobs.py awaits`, due **Wed 25 Nov 20:00 UTC**.\n3. **If it fails:** write the exact FIX list on J3205 and reopen it for the builder.\n\nCommit records locally; Claude Code publishes later (J3205's branch, then this one). No YouTube upload, no schedule. £0.",
+      "ref": "",
+      "film": "WW2:003",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T23:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T23:12Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "QA the 003 v01 master and put it on Ben's watch card",
+      "due": "2026-11-25T08:00:00Z",
+      "kind": "qa",
+      "mini_only": true,
+      "urgent": 14
     }
   ],
   "focus": [
