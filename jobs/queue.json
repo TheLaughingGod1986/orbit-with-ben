@@ -319035,9 +319035,14 @@
           "at": "2026-11-24T13:31Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T13:32Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Claimed J3496; starting HOS:128 package-first + script draft (no spend)"
         }
       ],
-      "remaining_action": "Score three titles and two thumbnails, then draft the Edison vs Tesla script",
+      "remaining_action": "Reading J3346 topic evidence, HOS script rules, and recent script templates",
       "due": "2026-11-27T18:00:00Z",
       "kind": "script",
       "urgent": 7,
@@ -319051,12 +319056,22 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-24T13:31Z",
+        "of": 6,
+        "at": "2026-11-24T13:32Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Review Rule-E evidence & HOS rules",
+          "Package-first title & thumbnail score",
+          "Draft 7-9 min script & FACT_NOTES",
+          "Draft 2 Short angles & run script gates",
+          "Open HOS PR with 128 folder & status.json",
+          "Post desk handoff & queue script review"
+        ],
+        "note": "Claimed J3496; starting HOS:128 package-first + script draft (no spend)"
+      },
+      "taskKeys": [
+        "HOS:128"
+      ]
     },
     {
       "id": "J3497",
