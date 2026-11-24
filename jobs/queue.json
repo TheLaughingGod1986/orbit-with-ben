@@ -326925,9 +326925,14 @@
           "at": "2026-11-24T18:53Z",
           "by": "codex",
           "what": "step 2 of 3 done: No successful post-grant runtime receipt in the current thread or parent history. Claude Code is marked unavailable until 25 Nov 10:00Z; prior production-scope rejection remains unresolved. No production operation attempted."
+        },
+        {
+          "at": "2026-11-24T18:53Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Condition remains unmet. Parent hold linked with recheck J3609, next verification 25 Nov 10:00Z; progress 3/4 and migration gates preserved. No live probe or production mutation."
         }
       ],
-      "remaining_action": "Record the unmet runtime-check condition and close this verification",
+      "remaining_action": "Verification complete; parent remains held for approved runtime-check evidence",
       "kind": "review",
       "recheck_of": "J3012",
       "due": "2026-11-24T18:00:00+00:00",
@@ -326941,7 +326946,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
         "at": "2026-11-24T18:53Z",
         "by": "codex",
@@ -326950,7 +326955,7 @@
           "Verify current evidence",
           "Update hold and report"
         ],
-        "note": "No successful post-grant runtime receipt in the current thread or parent history. Claude Code is marked unavailable unti"
+        "note": "Condition remains unmet. Parent hold linked with recheck J3609, next verification 25 Nov 10:00Z; progress 3/4 and migrat"
       }
     }
   ],
