@@ -321933,7 +321933,7 @@
     {
       "id": "J3539",
       "title": "OWB 064: Verify v03 sources and decide exact script lock",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "After the v03 correction job, independently review OWB:064 against J3520/CHIEF_RULING.md and J3020 scope. Verify every MUST QUOTE directly against its primary source and check the actual spoken meaning, including Jupiter's exclusion of the Sun, Galileo transmission versus destruction and consistent reference levels, Earth's equatorial speed, and the named wind comparison with honest rounding. Inspect fresh preserved Gemini output, all visual/teaching notes, exact counts/hash, script score >=90 and episode gate. Record a versioned direct quote check and exact-hash PASS or FIX. A PASS may lock only the reviewed bytes; the elected Chief completes J3020 to release J3021 through its existing dependency. A FIX gets exact corrections and a concrete follow-up; update J3020 hold with this review as recheck and finish the review. Never accept PR #1015/#1251's v02 PASS as a substitute. No spend, generation, narration, upload, schedule or privacy changes; approved format and dates unchanged.\n",
       "ref": "J3520",
@@ -321953,12 +321953,25 @@
           "at": "2026-11-24T13:26Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T13:29Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Verify the corrected planet script against its sources and decide whether it is ready to record",
       "due": "2026-11-25T18:00:00Z",
       "kind": "review",
-      "plain": "Check the corrected planet script before recording"
+      "plain": "Check the corrected planet script before recording",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
