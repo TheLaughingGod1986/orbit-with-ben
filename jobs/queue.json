@@ -320272,9 +320272,14 @@
           "at": "2026-11-24T21:36Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T21:36Z",
+          "by": "codex",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Block J3501 on Ben HOS:009 watch OK and post [MacBook] report on studio thread",
+      "remaining_action": "Checking Gravity’s approved files and release package",
       "due": "2026-12-03T12:00:00Z",
       "kind": "studio",
       "urgent": 7,
@@ -320286,12 +320291,19 @@
       ],
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-24T21:36Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check approved files and package",
+          "Upload and schedule long",
+          "Upload and schedule Shorts",
+          "Verify and record delivery"
+        ]
+      },
+      "taskKeys": [
+        "HOS:009"
+      ]
     },
     {
       "id": "J3502",
