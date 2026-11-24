@@ -321017,19 +321017,29 @@
           "at": "2026-11-24T13:08Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T13:08Z",
+          "by": "macbook-2",
+          "what": "step 1 of 5 done"
         }
       ],
-      "remaining_action": "WW2 film 013: independent Gemini claims check on SCRIPT.md and SOURCES.md (PR #77)",
+      "remaining_action": "Reading WW2 rules and PR #77 files",
       "due": "2026-12-10T18:00:00Z",
       "kind": "facts",
       "plain": "Fact-check every claim and number in WW2 film 013 Ghost Army script and sources before lock",
       "progress": {
-        "step": 0,
-        "of": 3,
+        "step": 1,
+        "of": 5,
         "at": "2026-11-24T13:08Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read WW2 rules and PR #77 script/sources",
+          "Audit claims C01-C30 and checkpoints F1-F5 against primary sources",
+          "Verify NARRATION_v01.txt limits and apply wording fixes if needed",
+          "Write CLAIMS_CHECK_v01.md and update status.json",
+          "Push branch, open PR, report done on thread"
+        ]
       }
     },
     {
