@@ -321683,17 +321683,22 @@
           "at": "2026-11-24T12:25Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-30T08:00:00Z"
+        },
+        {
+          "at": "2026-11-24T13:53Z",
+          "by": "chief",
+          "what": "condition recorded; next verification 2026-11-27T11:54:00Z"
         }
       ],
-      "remaining_action": "Run the history rewrite window by the J2537 runbook",
+      "remaining_action": "Keep the rewrite parked until a named protected-desk exception is recorded",
       "due": "2026-11-30T12:00:00Z",
       "for": "claudecode",
       "kind": "assembly",
       "mini_only": true,
       "hold": {
-        "type": "date",
-        "condition": "Mon 30 Nov 2026 08:00 London reached, the studio move is done or not due within 24 h, no History of Science job running, and the day-before notice posted Sun 29 Nov",
-        "check_at": "2026-11-30T08:00:00Z"
+        "type": "input",
+        "condition": "Do not run the history rewrite. The 24 Nov chat line in f2292898b4 does not name an irreversible rewrite of protected HOS hos-desk history while retaining PR180. J2537's protected-history hold stands (6faeab492c). Grok ruling 7018109147: the question is already open; do not ask again. Reaching 30 Nov does not authorize the push.",
+        "check_at": "2026-11-27T11:54:00Z"
       }
     },
     {
