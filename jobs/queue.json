@@ -317429,13 +317429,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-24T11:54Z",
-      "eta": "2026-11-24T13:54Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-24T09:24Z",
-      "result": "",
+      "result": "Chief review complete: existing NOT MET ruling OWB7130084687/HOS7130086493 recorded and PR1233 merge 80fd69590c verified. Fresh owner comments through OWB7130642535 and HOS7130323741 add no protected-desk rewrite exception. J2537 remains blocked via wait --recheck J3478, next check 2026-11-24T15:30:00Z. After explicit exception: resolve non-desk PRs, refresh backup/rehearsal, give day-before notice and hold writers. Grok7018109147 do-not-ask-again ruling preserved. No live rewrite, spend or publishing change.",
       "history": [
         {
           "at": "2026-11-24T09:24Z",
@@ -317486,6 +317486,11 @@
           "at": "2026-11-24T11:54Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T11:54Z",
+          "by": "codex",
+          "what": "done: Chief review complete: existing NOT MET ruling OWB7130084687/HOS7130086493 recorded and PR1233 merge 80fd69590c verified. Fresh owner comments through OWB7130642535 and HOS7130323741 add no protected-desk rewrite exception. J2537 remains blocked via wait --recheck J3478, next check 2026-11-24T15:30:00Z. After explicit exception: resolve non-desk PRs, refresh backup/rehearsal, give day-before notice and hold writers. Grok7018109147 do-not-ask-again ruling preserved. No live rewrite, spend or publishing change."
         }
       ],
       "remaining_action": "Park J3478 for elected Chief (Codex) to merge PR #1233, record wait --recheck J3478 on J2537, and close J3478",
