@@ -318958,23 +318958,28 @@
           "at": "2026-11-24T10:51Z",
           "by": "codex",
           "what": "step 1 of 3 done: Five exact board approvals verified; keep Betelgeuse 11 and 14 Dec slots, use 2 Dec for Titan, HOS private only."
+        },
+        {
+          "at": "2026-11-24T10:56Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Five upload jobs J3508-J3512 and approvals recorded; stale J0979/J2933 holds cleared in PR 1241; all 85 local tests passed."
         }
       ],
-      "remaining_action": "Queue five upload or swap jobs and record the exact board approvals",
+      "remaining_action": "Verify the merged approval handoffs and report the delivery jobs",
       "due": "2026-11-25T12:00:00Z",
       "kind": "chief",
       "urgent": 15,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-24T10:51Z",
+        "at": "2026-11-24T10:56Z",
         "by": "codex",
         "plan": [
           "Check approvals and upload work",
           "Record approvals and queue uploads",
           "Verify records and report"
         ],
-        "note": "Five exact board approvals verified; keep Betelgeuse 11 and 14 Dec slots, use 2 Dec for Titan, HOS private only."
+        "note": "Five upload jobs J3508-J3512 and approvals recorded; stale J0979/J2933 holds cleared in PR 1241; all 85 local tests pass"
       },
       "taskKeys": [
         "OWB:032",
