@@ -327227,9 +327227,14 @@
           "at": "2026-11-24T19:22Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Confirmed condition UNMET at 19:21:44Z: codex and gemini both UP, memory 3.520 GiB >= 3 GiB, yet only execution-0 (Gemini/J3612, PID 51574) is live and PID 51577 exited at 18:47:25Z. Root cause: spawn_second_slot() runs only once in main(), never inside run_locked() chain loop (PID 51574 on job 6/12)"
+        },
+        {
+          "at": "2026-11-24T19:23Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Verification complete (UNMET at 19:21:44Z); posted #7142020284 and addendum #7142034875; jobs.py wait --recheck J3612 requires elected Chief"
         }
       ],
-      "remaining_action": "Updating J3607 wait hold with exact unmet condition and root cause, then finishing J3612",
+      "remaining_action": "Parked for Chief (Codex) to record jobs.py wait J3607 --recheck J3612 (next check 2026-11-24T20:30:00Z) and close J3612",
       "kind": "review",
       "recheck_of": "J3607",
       "mini_only": true,
@@ -327244,9 +327249,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-24T19:22Z",
+        "at": "2026-11-24T19:23Z",
         "by": "gemini",
         "plan": [
           "Read J3607 history and evidence",
@@ -327254,7 +327259,7 @@
           "Update J3607 and finish J3612",
           "Post verification report"
         ],
-        "note": "Confirmed condition UNMET at 19:21:44Z: codex and gemini both UP, memory 3.520 GiB >= 3 GiB, yet only execution-0 (Gemin"
+        "note": "Verification complete (UNMET at 19:21:44Z); posted #7142020284 and addendum #7142034875; jobs.py wait --recheck J3612 re"
       }
     }
   ],
