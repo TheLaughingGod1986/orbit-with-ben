@@ -324033,10 +324033,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-24T16:37Z",
+      "eta": "2026-11-24T18:07Z",
       "created_by": "claude",
       "created_at": "2026-11-24T16:35Z",
       "result": "",
@@ -324045,12 +324045,25 @@
           "at": "2026-11-24T16:35Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T16:37Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Check titles and thumbnails of films 003-017 against rule 2 and fix the ones that fail",
       "due": "2026-11-25T18:00:00Z",
       "kind": "review",
-      "urgent": 13
+      "urgent": 13,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T16:37Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3563",
