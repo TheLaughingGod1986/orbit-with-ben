@@ -91375,20 +91375,34 @@
           "at": "2026-11-24T11:56Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T11:57Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J0996; checking J0317 completion, API/Studio access, and local 027 Short files"
         }
       ],
       "kind": "studio",
-      "remaining_action": "Prepend live 6bbbvfCx6zY title+URL to OVLv9dxTcpE description in Studio, save, reload, and verify public readback",
+      "remaining_action": "Check J0317 evidence, OWB account, and live state of 6bbbvfCx6zY and OVLv9dxTcpE",
       "escalated_at": "2026-11-23T01:27Z",
       "mini_only": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-24T11:56Z",
+        "of": 5,
+        "at": "2026-11-24T11:57Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check J0317 & live OWB/YouTube state",
+          "Verify 6bbbvfCx6zY Public and OVLv9dxTcpE Related",
+          "Update OVLv9dxTcpE description & read back",
+          "Sync local 027 Short package & commit via worktree",
+          "Post thread report & finish J0996"
+        ],
+        "note": "Claimed J0996; checking J0317 completion, API/Studio access, and local 027 Short files"
+      },
+      "taskKeys": [
+        "OWB:027"
+      ]
     },
     {
       "id": "J0997",
