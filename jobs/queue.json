@@ -326431,13 +326431,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-24T18:18Z",
-      "eta": "2026-11-24T20:18Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T18:16Z",
-      "result": "",
+      "result": "Fixed and published PR #1284, head 0f68a818b6a1efe949ea07316d42928b829a415b. 90 focused tests pass. Existing J3598 reviews correction; J3591 remains held. No duplicate review.",
       "history": [
         {
           "at": "2026-11-24T18:16Z",
@@ -326468,6 +326468,11 @@
           "at": "2026-11-24T18:22Z",
           "by": "codex",
           "what": "step 3 of 3 done: Published PR #1284 at exact head 0f68a818b6a1efe949ea07316d42928b829a415b; 15 autopsy and 75 launch-check tests pass. Existing J3598 reviews; J3591 stays held."
+        },
+        {
+          "at": "2026-11-24T18:22Z",
+          "by": "codex",
+          "what": "done: Fixed and published PR #1284, head 0f68a818b6a1efe949ea07316d42928b829a415b. 90 focused tests pass. Existing J3598 reviews correction; J3591 remains held. No duplicate review."
         }
       ],
       "remaining_action": "Existing review checks the published correction",
@@ -326485,7 +326490,8 @@
           "Publish correction and evidence"
         ],
         "note": "Published PR #1284 at exact head 0f68a818b6a1efe949ea07316d42928b829a415b; 15 autopsy and 75 launch-check tests pass. Ex"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1284"
     }
   ],
   "focus": [
