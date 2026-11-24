@@ -315590,18 +315590,28 @@
           "at": "2026-11-24T04:31Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T04:31Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Pick two data-backed History of Science topics and add them to the waiting line",
+      "remaining_action": "Reading HOS analytics, LEARNINGS.md, and existing HOS backlog",
       "kind": "script",
       "backlog": "hos-ideas",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-24T04:31Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Analyse HOS data and rankings",
+          "Check existing HOS backlog and conventions",
+          "Pick 2 new HOS topics and run neighbour checks",
+          "Create HOS project folders and commit",
+          "Update OWB WIP, queue reviews, and report"
+        ]
       }
     }
   ],
