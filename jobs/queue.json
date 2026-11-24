@@ -320366,10 +320366,10 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-24T12:37Z",
+      "eta": "2026-11-24T13:22Z",
       "created_by": "claude",
       "created_at": "2026-11-24T11:54Z",
       "result": "",
@@ -320378,13 +320378,26 @@
           "at": "2026-11-24T11:54Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T12:37Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Install the declared Prisma version, generate the client, prove channel:audit passes",
       "due": "2026-11-25T09:00:00Z",
       "kind": "assembly",
       "mini_only": true,
-      "urgent": 9
+      "urgent": 9,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T12:37Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3520",
