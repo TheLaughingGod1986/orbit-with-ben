@@ -329937,16 +329937,21 @@
           "at": "2026-11-24T22:58Z",
           "by": "gemini",
           "what": "step 0 of 6 done: Claimed J3637; Mini disk 6.2 GB free so all render scratch and outputs will stay on NAS studio-live."
+        },
+        {
+          "at": "2026-11-24T23:01Z",
+          "by": "gemini",
+          "what": "step 1 of 6 done: Audited all 17 <60s repeats, 3 <2s flashes, 14 >=20s static holds, missing Ch3 card, and J3447 restricted rows; created clean worktree gemini/J3637-ww2-004-v02 and NAS scratch dir."
         }
       ],
-      "remaining_action": "Inspecting J3624 QA review, J3625 ruling, v01 scripts, and NAS working files",
+      "remaining_action": "Redesigning draw_maps_004.py to strip all boilerplate, fix tofu glyph, and draw rich technical schematics and latitude maps",
       "due": "2026-11-26T12:00:00Z",
       "kind": "assembly",
       "plain": "Fix the torpedo film graphics, spoiler, missing chapter card and repeats, then render v02",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-11-24T22:58Z",
+        "at": "2026-11-24T23:01Z",
         "by": "gemini",
         "plan": [
           "Inspect QA findings and scripts",
@@ -329956,7 +329961,7 @@
           "Render v02 master on NAS",
           "Run technical QA and open WW2 PR"
         ],
-        "note": "Claimed J3637; Mini disk 6.2 GB free so all render scratch and outputs will stay on NAS studio-live."
+        "note": "Audited all 17 <60s repeats, 3 <2s flashes, 14 >=20s static holds, missing Ch3 card, and J3447 restricted rows; created "
       },
       "taskKeys": [
         "WW2:004"
