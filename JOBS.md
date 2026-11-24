@@ -102,6 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3555 | mini | open (after J3554) | – | – | WW2:014 script · review · WW2 film 014: Claude Rule-6 viewer test (first 300 words), Pilot 2 learnings check, Rule-E lock & queue VO | ww2-channel#88 |
 | J3558 | mini | open | – | – | chief · Chief: resolve 003 edit orphan-doing |  |
 | J3559 | mini | open (after J3557) | – | – | WW2:017 vo · vo · WW2 film 017: narration in Ben's voice (Pearl Harbor Salvage, post-reset) |  |
+| J3560 | mini | open | – | – | review · Verify condition for J3430 |  |
 
 Recently finished:
 
