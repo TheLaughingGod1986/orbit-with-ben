@@ -1,5 +1,5 @@
 {
-  "next_id": 3556,
+  "next_id": 3557,
   "jobs": [
     {
       "id": "J0001",
@@ -323346,6 +323346,36 @@
       "due": "2026-12-11T18:00:00Z",
       "kind": "review",
       "plain": "Viewer-test the Dambusters film 014 opening, apply Pilot 2 learnings, lock the script and queue post-reset voice-over"
+    },
+    {
+      "id": "J3556",
+      "title": "WW2 film 017: independent Gemini claims check on SCRIPT.md and SOURCES.md (PR #89)",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "Independent Gemini facts-lane claims check for Field Order History film `WW2:017` (*How 6 Pearl Harbor Battleships Returned to War*) on `ww2-channel` PR #89 (branch `macbook/J3543`, commit `521a509`).\n\n**Check:**\n1. Audit all 35 claim rows (`C01`–`C35`) in `02_Video-Projects/017_Pearl-Harbor-Salvage-Sunk-Battleships/01_Script/SCRIPT.md` and `01_Script/SOURCES.md` against primary/official sources (Vice Admiral Homer N. Wallin *Pearl Harbor: Why, How, Fleet Salvage and Final Appraisal*, NHHC/DANFS official ship histories, U.S. Navy Bureau of Ships / Captain F.H. Whitaker & Pacific Bridge Co. salvage reports, Morison, Anthony Tully *Battle of Surigao Strait* & *USS West Virginia* Action Report, Daniel Madsen *Resurrection*, NPS, Prange).\n2. Specifically resolve the 5 flagged checkpoints (`F1`–`F5`) in `SOURCES.md`:\n   - `F1` (`C05`, `C09`): Pearl Harbor total warships sunk/damaged tally (`18` vs `19`/`21` incl. yard craft / target ship *Utah*) and Captain Homer Wallin's formal appointment/title as Head of Pearl Harbor Salvage Division.\n   - `F2` (`C14`, `C15`, `C17`): Wallin's official diving total (`~5,000` dives / `~20,000` underwater hours) and exact date (`7 February 1942`) + fatality count (`2` men killed) in the *USS Nevada* hydrogen sulfide compartment incident.\n   - `F3` (`C18`, `C20`, `C22`, `C25`): *USS California* refloat date (`24` vs `25 March 1942`) and open inspection manholes; *USS West Virginia* modular patch specs (`~50 ft × 13.5 ft`, 24-in vertical I-beams, `~325` cu yd / `~650` tons underwater tremie concrete) and departure date for Puget Sound (`30 April` vs `7 May 1943`).\n   - `F4` (`C27`, `C30`, `C31`, `C32`): *USS Oklahoma* parbuckling rig (21 A-frame bents, 17-part tackle, 21 Ford Island electric winches, coral fill anti-slide berm, `8 Mar` – `16 Jun 1943`, `3 Nov 1943` refloat, `28 Dec 1943` dry dock, `17 May 1947` sinking under tow) and Julio DeCastro / `32` rescued / `429` lost.\n   - `F5` (`C01`, `C03`, `C33`, `C35`): *USS West Virginia* Surigao Strait opening salvo (`03:52`, `22,800` yards, 8-gun 16-inch AP salvo hitting *Yamashiro* on first salvo via Mark 8 radar) and all five Pearl Harbor veterans in Oldendorf's line (*West Virginia*, *California*, *Tennessee*, *Maryland*, *Pennsylvania*).\n3. Spot-check the 25+ verified official US Navy / NARA `RG 80-G` / `19-N` / NHHC PD archive photograph IDs in `03_Picture/ARCHIVE_PROVENANCE.md` for collection/licence accuracy.\n4. Record the independent verification report in `01_Script/CLAIMS_CHECK_v01.md` on a `ww2-channel` PR, update `status.json` `sources` stage, and leave `vo` held until script lock and post-`2026-11-30 10:50Z` ElevenLabs reset.\n\n**Guards:** Zero ElevenLabs voice credits spent. £0 spend.\n",
+      "ref": "ww2-channel#89",
+      "film": "017",
+      "stage": "sources",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T15:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T15:53Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify claims C01-C35, checkpoints F1-F5, and 25+ archive IDs for WW2:017 (PR #89)",
+      "due": "2026-12-16T18:00:00Z",
+      "kind": "facts",
+      "plain": "Double-checking facts and archive sources for the Pearl Harbor salvage film"
     }
   ],
   "focus": [
