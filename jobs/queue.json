@@ -228145,6 +228145,11 @@
           "at": "2026-11-24T09:24Z",
           "by": "relay",
           "what": "condition verification queued: J3478"
+        },
+        {
+          "at": "2026-11-24T11:54Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-24T15:30:00Z"
         }
       ],
       "remaining_action": "Check for the protected desk history exception, then prepare the controlled rewrite window",
@@ -228167,12 +228172,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "Acting Chief accepts J3456 evidence in PR1227. Explicit one-time Ben exception for irreversible protected HOS hos-desk history rewrite while retaining PR180 is still absent. Fresh owner-comment check through OWB 7118936735 and unchanged HOS 7115742588 adds no exception; OWB219, HOS180 and HOS657 unchanged. Grok ruling 7018109147 stands: retain hold, do not ask again. After authorization resolve non-desk PRs, refresh backup and private rehearsal against current heads, give day-before notice and hold HOS writers before cutover. No live rewrite authorized.",
-        "check_at": "2026-11-24T10:24:35+00:00",
-        "last_recheck": "J3456",
-        "checked_at": "2026-11-24T01:23:59+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3478"
+        "condition": "Chief records existing J3478 NOT MET ruling from OWB7130084687 and HOS7130086493; PR1233 merged 80fd69590c. Fresh owner comments through OWB7130642535 and HOS7130323741 contain no explicit one-time Ben exception for irreversible protected HOS hos-desk history rewrite retaining PR180. Grok7018109147 stands: question already open, do not ask again. After authorization resolve non-desk PRs, refresh backup and private rehearsal against current heads, give day-before notice and hold HOS writers before cutover. No live rewrite authorized.",
+        "check_at": "2026-11-24T15:30:00Z",
+        "last_recheck": "J3478",
+        "checked_at": "2026-11-24T11:54:16+00:00",
+        "checked_by": "codex"
       }
     },
     {
