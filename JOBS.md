@@ -93,7 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3526 | mini | open (after J3525) | – | – | 013 script · review · WW2 film 013: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO | ww2-channel#77 |
 | J3527 | mini | blocked | gemini | – | review · Verify condition for J3125 |  |
 | J3528 | mini | blocked | gemini | – | review · Verify condition for J3463 |  |
-| J3529 | mini | open | – | – | review · Verify condition for J3492 |  |
+| J3529 | mini | claimed | macbook | 2026-11-24T14:37Z | review · Verify condition for J3492 |  |
 | J3530 | mini | open | – | – | for claudecode · assembly · Claude Code: publish Codex's finished work it could not push (Pluto thumbnails first), after a privacy check |  |
 | J3532 | mini | blocked | claude | – | for claudecode · assembly · History of Science: history rewrite window Mon 30 Nov 08:00 London (Ben's one-time exception), by the J2537 runbook |  |
 
