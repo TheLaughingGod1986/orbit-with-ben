@@ -321626,9 +321626,14 @@
           "at": "2026-11-24T20:01Z",
           "by": "relay",
           "what": "condition verification queued: J3613"
+        },
+        {
+          "at": "2026-11-24T20:29Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-25T10:15:00Z"
         }
       ],
-      "remaining_action": "Publishing the tested read-only audit fix through Claude Code, then checking the shared runtime",
+      "remaining_action": "Claude Code publication under J3530 after its usage reset, then shared-runtime audit and private dry run",
       "due": "2026-11-25T09:00:00Z",
       "kind": "assembly",
       "mini_only": true,
@@ -321652,12 +321657,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J3608 verified 24 Nov: remote HOS main remains 12eceaff; no remote codex/J3519 branch and no PR. Local clean branch at /Volumes/MiniWork/scratch/J3519-hos retains 91c93f44. Prisma and client are 7.10.1, but shared channel:audit lacks readOnly:true. Still needs the recorded Claude Code publication handoff, green checks and merge, shared pull, then PGOPTIONS read-only audit. Earlier Codex push rejection is not retried.",
-        "check_at": "2026-11-24T21:01:55+00:00",
-        "last_recheck": "J3608",
-        "checked_at": "2026-11-24T18:56:38+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3613"
+        "condition": "Chief review J3613: still unmet. HOS remote main is 12eceaff; codex/J3519 has no remote branch or PR. Local 91c93f44 contains the reviewed read-only audit fix; shared Prisma/client are 7.10.1 but main lacks readOnly:true. Existing Claude Code publication job J3530 owns privacy review, push, PR and green-check merge of /Volumes/MiniWork/scratch/J3519-hos branch codex/J3519. Claude Code is usage-limited until 25 Nov 10:00Z; verify at 10:15Z, not an assumed completion time. Then pull shared HOS main safely and prove PGOPTIONS read-only channel:audit plus J3512 private dry run. Prior push refusal retained; no upload or approval gates waived.",
+        "check_at": "2026-11-25T10:15:00Z",
+        "last_recheck": "J3613",
+        "checked_at": "2026-11-24T20:29:40+00:00",
+        "checked_by": "codex"
       }
     },
     {
