@@ -326509,20 +326509,31 @@
           "at": "2026-11-24T18:40Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T18:41Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Review and merge OWB PR #1282, then reopen J3542 for v02 rebuild",
+      "remaining_action": "Review the Mulberry Short defects and authorize its corrected edit",
       "due": "2026-11-25T16:00:00Z",
       "kind": "chief",
       "plain": "Review the Mulberry Short fix list and reopen the build for v02",
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-24T18:40Z",
+        "at": "2026-11-24T18:41Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Review evidence and authority",
+          "Record ruling and reopen edit",
+          "Verify handoff and report"
+        ]
+      },
+      "taskKeys": [
+        "WW2:001"
+      ]
     },
     {
       "id": "J3604",
