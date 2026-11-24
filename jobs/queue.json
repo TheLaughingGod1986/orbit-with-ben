@@ -319994,9 +319994,14 @@
           "at": "2026-11-24T12:50Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J3510 and located approved OWB UAT v06 master; inspecting prior swap records and live state"
+        },
+        {
+          "at": "2026-11-24T12:53Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Verified exact approved v06 SHA-256 eafe7435...574015, cover 7bb71fb9...19d828, gate PASS (--id k2kEaA7ICjc), live YouTube k2kEaA7ICjc Private/2026-12-11T11:30:00Z, parent vP1BbqZ_dnM Private/2026-12-06T18:00:00Z, no duplicate upload"
         }
       ],
-      "remaining_action": "Verify v06 master hash, gates, and current YouTube/Buffer/library state",
+      "remaining_action": "Prepare versioned v06 upload package and run dry-run",
       "due": "2026-11-25T12:00:00Z",
       "kind": "studio",
       "plain": "Upload the approved Betelgeuse opening Short while keeping its date",
@@ -320017,9 +320022,9 @@
         "askId": "J2551.1"
       },
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-24T12:50Z",
+        "at": "2026-11-24T12:53Z",
         "by": "gemini",
         "plan": [
           "Verify v06 master, gates, and live YouTube state",
@@ -320028,7 +320033,7 @@
           "Run verify-swap readback and update UPLOADS, Buffer, gate library, J0923, status",
           "Commit clean worktree, post thread report, close J3510"
         ],
-        "note": "Claimed J3510 and located approved OWB UAT v06 master; inspecting prior swap records and live state"
+        "note": "Verified exact approved v06 SHA-256 eafe7435...574015, cover 7bb71fb9...19d828, gate PASS (--id k2kEaA7ICjc), live YouTu"
       },
       "taskKeys": [
         "OWB:029"
