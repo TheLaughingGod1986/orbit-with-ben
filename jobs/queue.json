@@ -319386,9 +319386,14 @@
           "at": "2026-11-24T12:15Z",
           "by": "relay",
           "what": "condition verification queued: J3529"
+        },
+        {
+          "at": "2026-11-24T21:27Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-25T03:30:00Z"
         }
       ],
-      "remaining_action": "Verify J3491 CLAIMS_CHECK.md, fold P02 polish + any fixes into v02, lock WW2:009 script (<=30 Nov 18:00Z), and queue post-reset VO (>30 Nov 10:50Z); viewer test in ww2#70",
+      "remaining_action": "Await corrected narration J3626 and independent Gemini check J3627, then finish viewer review and script lock; retain 30 Nov voice hold",
       "due": "2026-11-30T18:00:00Z",
       "kind": "review",
       "plain": "Test the Operation Pedestal opening as a stranger, lock the script, and queue voice-over after 30 Nov",
@@ -319414,9 +319419,11 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "J3491 (independent Gemini claims check on WW2:009 PR #68) completes with 01_Script/CLAIMS_CHECK.md PASS or v02 fixes applied",
-        "check_at": "2026-11-24T13:15:25+00:00",
-        "recheck_task": "J3529"
+        "condition": "J3626 applies all eight J3491 flags and seven source notes in WW2:009 v02; J3627 independently verifies the exact revised narration with source quotations and a clean claims verdict. PR96 at 4167622832e81bb48049f3c9588655f00113dd45 is 29 PASS / 8 FLAG, not a clean pass; v02 absent on main at review. No script lock or VO release.",
+        "check_at": "2026-11-25T03:30:00Z",
+        "last_recheck": "J3529",
+        "checked_at": "2026-11-24T21:27:55+00:00",
+        "checked_by": "codex"
       }
     },
     {
