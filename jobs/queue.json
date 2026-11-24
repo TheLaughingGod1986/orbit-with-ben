@@ -319892,9 +319892,14 @@
           "at": "2026-11-24T19:38Z",
           "by": "gemini",
           "what": "step 2 of 7 done: All pre-upload gates PASS: lint:package PASS, Short A v04 gate_shorts_open PASS (2026-11-27), Short C v07 gate_shorts_open PASS (2026-11-29), long v05 youtube:package --dry-run PASS."
+        },
+        {
+          "at": "2026-11-24T19:44Z",
+          "by": "gemini",
+          "what": "step 2 of 7 done: Upload in progress (pid 63849); Short A v04 and Short C v07 en-GB SRT captions and frame-0 covers prepared and verified while long upload streams."
         }
       ],
-      "remaining_action": "Uploading HOS 008 long master v05 private and scheduled Thu 26 Nov 18:00 UK",
+      "remaining_action": "Uploading HOS 008 long master v05 (2.85 GB) to YouTube private/scheduled Thu 26 Nov 18:00 UK",
       "due": "2026-11-26T12:00:00Z",
       "kind": "studio",
       "urgent": 13,
@@ -319919,7 +319924,7 @@
       "progress": {
         "step": 2,
         "of": 7,
-        "at": "2026-11-24T19:38Z",
+        "at": "2026-11-24T19:44Z",
         "by": "gemini",
         "plan": [
           "Inspect package, style sheet and NAS files",
@@ -319930,7 +319935,7 @@
           "Read back YouTube/Studio state and run channel:audit",
           "Update status/records PR and report"
         ],
-        "note": "All pre-upload gates PASS: lint:package PASS, Short A v04 gate_shorts_open PASS (2026-11-27), Short C v07 gate_shorts_op"
+        "note": "Upload in progress (pid 63849); Short A v04 and Short C v07 en-GB SRT captions and frame-0 covers prepared and verified "
       },
       "taskKeys": [
         "HOS:008"
