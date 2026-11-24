@@ -317808,10 +317808,10 @@
       "stage": "",
       "after": "",
       "eta_min": 15,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-24T10:00Z",
+      "eta": "2026-11-24T10:15Z",
       "created_by": "claude",
       "created_at": "2026-11-24T09:48Z",
       "result": "",
@@ -317825,6 +317825,11 @@
           "at": "2026-11-24T09:59Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred codex): Cursor out of usage; next in its chain: codex"
+        },
+        {
+          "at": "2026-11-24T10:00Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Build and deploy the board from main, then check the Schedule tab shows the plan",
@@ -317838,7 +317843,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T10:00Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3489",

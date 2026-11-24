@@ -90,7 +90,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3485 | mini | open | – | – | WW2:014 script · script · WW2 film 014: topic check, packaging first, script and sources, to lock by 2026-12-13 |  |
 | J3486 | mini | open | – | – | WW2:015 script · script · WW2 film 015: topic check, packaging first, script and sources, to lock by 2026-12-16 |  |
 | J3487 | mini | open | – | – | WW2:016 script · script · WW2 film 016: topic check, packaging first, script and sources, to lock by 2026-12-18 |  |
-| J3488 | mini | open | – | – | studio · Board: deploy the Schedule tab's plan overview (PR #1234) to the studio-kanban site and verify |  |
+| J3488 | mini | claimed | codex | 2026-11-24T10:15Z | studio · Board: deploy the Schedule tab's plan overview (PR #1234) to the studio-kanban site and verify |  |
 | J3489 | mini | open | – | – | review · AI spend: Google AI Ultra review before the 12 Dec renewal (Flow and Gemini use against cheaper tiers), for Ben |  |
 | J3490 | any | open | – | – | assembly · Board: monthly channel scorecard (subscribers, watch hours, Shorts, return per film) and the 4 Jan review rule |  |
 
