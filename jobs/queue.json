@@ -320514,17 +320514,22 @@
           "at": "2026-11-24T12:33Z",
           "by": "codex",
           "what": "step 3 of 4 done: No launchd overrides; default two slots and 3 GiB threshold apply. Cursor marked down to 26 Nov 11:00:21Z from actual CLI reset. Available memory measured 3.185 GiB. Only one launchd relay service exists and stays occupied by slot 0, so its 60-second trigger cannot launch slot 1 while running; simultaneous dispatch is not demonstrated."
+        },
+        {
+          "at": "2026-11-24T12:35Z",
+          "by": "codex",
+          "what": "step 4 of 4 done: Board deployed as 20ebe92b; current-data render shows Stuck and Cursor Out; forecast has Cursor up=false and zero queued. Studio app regression tests pass. Live browser timed out; single-service launchd limitation reported explicitly."
         }
       ],
-      "remaining_action": "Deploying and verifying the updated board",
+      "remaining_action": "Recording the completed reliability verification and remaining launcher limitation",
       "due": "2026-11-24T18:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "urgent": 12,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-24T12:33Z",
+        "at": "2026-11-24T12:35Z",
         "by": "codex",
         "plan": [
           "Check runtime and environment",
@@ -320532,7 +320537,7 @@
           "Verify slots and reset times",
           "Deploy and verify board"
         ],
-        "note": "No launchd overrides; default two slots and 3 GiB threshold apply. Cursor marked down to 26 Nov 11:00:21Z from actual CL"
+        "note": "Board deployed as 20ebe92b; current-data render shows Stuck and Cursor Out; forecast has Cursor up=false and zero queued"
       }
     },
     {
