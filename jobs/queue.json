@@ -327458,10 +327458,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-24T20:22Z",
+      "eta": "2026-11-24T22:22Z",
       "created_by": "relay",
       "created_at": "2026-11-24T19:18Z",
       "result": "",
@@ -327510,6 +327510,11 @@
           "at": "2026-11-24T20:22Z",
           "by": "codex",
           "what": "reopened: Chief ruling recorded in report 7143439135; reopening solely to claim and close this completed verification. J3607 already reopened; J3615 owns resilience follow-up."
+        },
+        {
+          "at": "2026-11-24T20:22Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for Chief (Codex) to record jobs.py wait J3607 --recheck J3612 (next check 2026-11-24T20:30:00Z) and close J3612",
@@ -327525,7 +327530,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T20:22Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3613",

@@ -131,7 +131,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3607 | mini | open | – | – | assembly · Mini: pull PR #1285 and confirm the second slot really opens (two jobs at once) |  |
 | J3610 | mini | open | – | – | 010 upload · studio · Schedule HOS 010 bird Short after its long is confirmed | J3511 |
 | J3611 | mini | open | – | – | 010 upload · studio · HOS 010 Short A: schedule only after actual long readiness and finish Studio checks | J3512 |
-| J3612 | mini | open | – | – | review · Verify condition for J3607 |  |
+| J3612 | mini | claimed | codex | 2026-11-24T22:22Z | review · Verify condition for J3607 |  |
 | J3613 | mini | blocked | gemini | – | review · Verify condition for J3519 |  |
 | J3614 | any | claimed | macbook-2 | 2026-11-24T20:41Z | WW2:005 picture · review · St Nazaire: propose a shorter existing-voice cut with compliant archive coverage |  |
 | J3615 | mini | open | – | – | assembly · Relay: restore a free second slot when a worker returns during a job chain |  |
