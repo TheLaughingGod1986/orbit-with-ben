@@ -76,7 +76,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3470 | mini | open | – | – | review · Verify condition for J3114 |  |
 | J3471 | mini | open | – | – | review · Verify condition for J3415 |  |
 | J3477 | cloud | open (after J3476) | – | – | WW2:008 script · review · WW2 film 008: Claude viewer test (first 300 words), Rule E lock & queue VO | ww2-channel#61 |
-| J3478 | mini | blocked | gemini | – | review · Verify condition for J2537 |  |
+| J3478 | mini | open | – | – | review · Verify condition for J2537 |  |
 | J3481 | cloud | open (after J3480) | – | – | WW2:007 script · review · WW2 film 007: Claude Rule-6 viewer test (first 300 words), topic/script lock, and queue post-reset VO |  |
 | J3483 | mini | claimed | macbook | 2026-11-24T15:49Z | WW2:012 script · script · WW2 film 012: topic check, packaging first, script and sources, to lock by 2026-12-09 |  |
 | J3484 | mini | claimed | macbook-2 | 2026-11-24T15:49Z | WW2:013 script · script · WW2 film 013: topic check, packaging first, script and sources, to lock by 2026-12-11 |  |
