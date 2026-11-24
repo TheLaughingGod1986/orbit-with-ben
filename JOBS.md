@@ -73,7 +73,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3504 | mini | open | – | – | 127 script · script · HOS 127 Wright Brothers First Flight (film 4, Thu 31 Dec): package first, then the 7-9 minute script draft |  |
 | J3508 | mini | blocked | codex | – | 032 upload · studio · Upload approved Titan Test A Short v02 for 2 Dec 11:30 | J3505 |
 | J3510 | mini | blocked | gemini | – | 029 upload · studio · 029 Short k2kEaA7ICjc: swap to approved v06; retain 11 Dec 11:30 | J3505 |
-| J3511 | mini | claimed | codex | 2026-11-24T20:57Z | 010 upload · studio · Upload approved HOS 010 bird Short C v01 privately; no schedule yet | J3505 |
+| J3511 | mini | blocked | codex | – | 010 upload · studio · Upload approved HOS 010 bird Short C v01 privately; no schedule yet | J3505 |
 | J3512 | mini | open | – | – | 010 upload · studio · Upload approved HOS 010 dinosaur Short A v01 privately; no schedule yet | J3505 |
 | J3514 | mini | blocked | macbook-2 | – | review · Verify condition for J3444 |  |
 | J3517 | mini | open (after J3494) | – | – | WW2:010 vo · vo · WW2 film 010: narration in Ben's voice (Hobart's Funnies, post-reset) |  |

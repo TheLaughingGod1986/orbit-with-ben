@@ -320793,13 +320793,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-24T18:57Z",
-      "eta": "2026-11-24T20:57Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T10:53Z",
-      "result": "",
+      "result": "publish via Claude Code: /Volumes/MiniWork/scratch/J3511-resume codex/J3511-resume; also /Volumes/MiniWork/scratch/J3511-registry codex/J3511-registry (already pushed; PR refused). PRIVATE UPLOAD COMPLETE sMPlMuxK3YU no publishAt, no Buffer posts. Privacy-review both finished diffs, publish/open PRs/merge per standing rule; do not re-upload. J3610 conditional scheduling.",
       "history": [
         {
           "at": "2026-11-24T10:53Z",
@@ -320875,6 +320875,11 @@
           "at": "2026-11-24T19:08Z",
           "by": "codex",
           "what": "step 4 of 4 done: Upload complete: sMPlMuxK3YU Private/no publishAt; hash, cover, captions, audit and checks verified; J3610 queued. HOS evidence and OWB registry committed in own worktrees. Automatic review refused HOS push and registry PR; Claude Code publication handoff required. Do not re-upload."
+        },
+        {
+          "at": "2026-11-24T19:08Z",
+          "by": "codex",
+          "what": "blocked: publish via Claude Code: /Volumes/MiniWork/scratch/J3511-resume codex/J3511-resume; also /Volumes/MiniWork/scratch/J3511-registry codex/J3511-registry (already pushed; PR refused). PRIVATE UPLOAD COMPLETE sMPlMuxK3YU no publishAt, no Buffer posts. Privacy-review both finished diffs, publish/open PRs/merge per standing rule; do not re-upload. J3610 conditional scheduling."
         }
       ],
       "remaining_action": "Publish the finished upload records through Claude Code privacy review",
@@ -320911,6 +320916,11 @@
           "Register and report"
         ],
         "note": "Upload complete: sMPlMuxK3YU Private/no publishAt; hash, cover, captions, audit and checks verified; J3610 queued. HOS e"
+      },
+      "hold": {
+        "type": "input",
+        "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/J3511-resume codex/J3511-resume; also /Volumes/MiniWork/scratch/J3511-registry codex/J3511-registry (already pushed; PR refused). PRIVATE UPLOAD COMPLETE sMPlMuxK3YU no publishAt, no Buffer posts. Privacy-review both finished diffs, publish/open PRs/merge per standing rule; do not re-upload. J3610 conditional scheduling.",
+        "check_at": "2026-11-25T01:08:21+00:00"
       }
     },
     {
