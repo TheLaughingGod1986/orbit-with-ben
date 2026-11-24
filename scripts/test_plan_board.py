@@ -62,7 +62,7 @@ class PlanBoardTest(unittest.TestCase):
         self.assertEqual(ww2["card"]["title"], "Plan: starting our WW2 documentary channel")
         # Ben, 17 Nov 2026: on this channel he is asked only to watch finished films, so its plan asks him for nothing.
         self.assertEqual(ww2["card"]["needs"], "")
-        self.assertEqual(len(ww2["steps"]), 12)
+        self.assertEqual(len(ww2["steps"]), 18)
         self.assertFalse(any(s["needsYou"] for s in ww2["steps"]))
         self.assertEqual(ww2["card"]["score"], "No film is public yet.")
         self.assertEqual(ww2["baseline"]["best"], "No long film yet")
