@@ -1,5 +1,5 @@
 {
-  "next_id": 3615,
+  "next_id": 3616,
   "jobs": [
     {
       "id": "J0001",
@@ -327689,6 +327689,37 @@
           "Post Chief review & thread report"
         ]
       }
+    },
+    {
+      "id": "J3615",
+      "title": "Relay: restore a free second slot when a worker returns during a job chain",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Chief follow-up from J3612. Current two-worker concurrency is proven at 2026-11-24T20:20:49Z (Codex/J3612 slot 0 and Gemini/J3602 slot 1; version 253c7fe66b787b2f), so this does not block J3607. Earlier worker evidence in thread comments 7142020284 and 7142034875 shows a resilience gap: spawn_second_slot runs only at main startup; a child that exits when no second worker is available is not replaced during the parent job chain when a worker returns.\n\nImplement safe re-evaluation at job boundaries, using existing slot locks, memory checks, worker availability and child-recursion guards. Do not duplicate active runners, interrupt active jobs, weaken memory or parallel limits, or change credit holds/settings. Inspect busy_slots semantics before moving the startup helper into a running parent: its n-1 guard counts the parent differently at startup. Add meaningful tests for second worker unavailable then restored, occupied slot, memory denied, pause, and no recursive spawning. Use an isolated worktree, open a PR and arrange ordinary Chief merge review. Refresh only at a safe boundary after merge, then record evidence. No money, uploads or production media changes.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-24T20:21Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T20:21Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Repairing second-worker recovery between jobs and testing slot safeguards",
+      "due": "2026-11-25T12:00:00Z",
+      "kind": "assembly",
+      "plain": "Keep both available workers busy when one returns during a run",
+      "mini_only": true
     }
   ],
   "focus": [
