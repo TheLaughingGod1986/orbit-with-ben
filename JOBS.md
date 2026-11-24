@@ -99,7 +99,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3500 | mini | blocked | macbook | – | 008 upload · studio · HOS 008 Franklin: search-led title, package, and schedule Thu 26 Nov 18:00 after Ben's watch |  |
 | J3501 | mini | blocked | macbook-2 | – | 009 upload · studio · HOS 009 Gravity: search-led title, package, and schedule Thu 3 Dec 18:00 after Ben's watch |  |
 | J3502 | any | claimed | macbook-2 | 2026-11-24T12:44Z | 136 topic · review · HOS 136 Trinity Test Explained (film 2, Thu 17 Dec): rule-E topic go/no-go review |  |
-| J3503 | mini | open | – | – | 137 topic · review · HOS 137 Accidental Inventions (film 3, Thu 24 Dec): rule-E topic go/no-go review |  |
+| J3503 | mini | claimed | macbook | 2026-11-24T12:55Z | 137 topic · review · HOS 137 Accidental Inventions (film 3, Thu 24 Dec): rule-E topic go/no-go review |  |
 | J3504 | mini | open | – | – | 127 script · script · HOS 127 Wright Brothers First Flight (film 4, Thu 31 Dec): package first, then the 7-9 minute script draft |  |
 | J3505 | any | claimed | codex | 2026-11-24T11:34Z | chief · Ben's board OKs with no upload job: Titan Short, two Betelgeuse Shorts, the two History of Science dinosaur Shorts |  |
 | J3506 | any | open | – | – | assembly · Board and relay: an OK Ben gives on the board must become an upload job (10 sat up to 12 days) |  |
