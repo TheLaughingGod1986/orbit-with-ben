@@ -325142,9 +325142,14 @@
           "at": "2026-11-24T17:04Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T17:05Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3588; starting evidence and approval audit for J3369 (WW2:001 ek9F61FVYqY)"
         }
       ],
-      "remaining_action": "Verify readiness: At Tuesday 17:00, read performance and apply the approved archive-only thumbnail fallback if needed",
+      "remaining_action": "Reviewing J3369, J3363, J3411 records and verifying ek9F61FVYqY actual launch time and 48h Studio metrics readiness",
       "kind": "review",
       "recheck_of": "J3369",
       "due": "2026-11-24T18:00:00+00:00",
@@ -325160,11 +325165,18 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-24T17:04Z",
+        "at": "2026-11-24T17:05Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Review J3369 history and approvals",
+          "Verify ek9F61FVYqY live status, launch time and Studio window",
+          "Update J3369 and close J3588 with thread report"
+        ],
+        "note": "Claimed J3588; starting evidence and approval audit for J3369 (WW2:001 ek9F61FVYqY)"
+      },
+      "taskKeys": [
+        "WW2:001"
+      ]
     },
     {
       "id": "J3589",
