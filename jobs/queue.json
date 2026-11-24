@@ -322989,10 +322989,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 150,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-24T17:51Z",
+      "eta": "2026-11-24T20:21Z",
       "created_by": "claude",
       "created_at": "2026-11-24T14:28Z",
       "result": "",
@@ -323036,6 +323036,11 @@
           "at": "2026-11-24T17:12Z",
           "by": "claude",
           "what": "reopened: NAS back (Ben reset it); continue locally, publish once at the end."
+        },
+        {
+          "at": "2026-11-24T17:51Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Read the pilot media from the NAS, build the portrait cut, and prepare Ben watch",
@@ -323045,7 +323050,15 @@
       "urgent": 13,
       "taskKeys": [
         "WW2:001"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T17:51Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3543",
