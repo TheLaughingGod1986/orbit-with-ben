@@ -274084,9 +274084,14 @@
           "at": "2026-11-24T11:54Z",
           "by": "claude",
           "what": "Script lock queued for Claude as J3520 (due 25 Nov 18:00 UTC)."
+        },
+        {
+          "at": "2026-11-24T13:26Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-25T18:00:00Z"
         }
       ],
-      "remaining_action": "Resolve publication permission for the completed script review, then record its follow-up",
+      "remaining_action": "Correct the planet script and verify its sources before narration can start",
       "due": "2026-11-23T18:00:00Z",
       "kind": "script",
       "plain": "Write and check the script for the every-planet film",
@@ -274111,10 +274116,10 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "The J3051 ruling and follow-up remain local because automatic approval review requires explicit permission to publish them. No accepted script lock is recorded; J3021 remains dependent on J3020. Recheck publication permission and the recorded follow-up before any release.",
-        "check_at": "2026-11-18T22:45:00Z",
+        "condition": "J3520 FIX on v02 0dd5ea6c reconfirms J3051: Jupiter mass scope, Galileo transmission versus crushing, Earth equatorial/wind qualifiers and Neptune ratio require correction. Wait for J3538 corrected v03 and J3539 independent source verification and exact-hash PASS. Only then complete J3020; J3021 remains gated on J3020. Ruling: PR 1260, jobs/reviews/J3520/CHIEF_RULING.md.",
+        "check_at": "2026-11-25T18:00:00Z",
         "last_recheck": "J3051",
-        "checked_at": "2026-11-18T16:39:03+00:00",
+        "checked_at": "2026-11-24T13:26:40+00:00",
         "checked_by": "codex"
       },
       "escalated_at": "2026-11-18T06:14Z"
