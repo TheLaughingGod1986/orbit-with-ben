@@ -316126,23 +316126,27 @@
           "at": "2026-11-24T07:10Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T07:11Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Adapt the lifetime metrics read to the current Studio endpoint, then rebuild the tracker",
+      "remaining_action": "Reading lifetime Studio analytics for both channels",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 1,
+        "step": 0,
         "of": 3,
-        "at": "2026-11-24T07:06Z",
+        "at": "2026-11-24T07:11Z",
         "by": "codex",
         "plan": [
-          "Check Studio reader and sessions",
-          "Read lifetime metrics",
-          "Rebuild and publish tracker"
-        ],
-        "note": "Checked browser sessions and isolated records worktree. Public Orbit analytics renders, but studio_reach capture expects"
+          "Read Studio metrics",
+          "Update tracker files",
+          "Verify and publish tracker"
+        ]
       }
     }
   ],
