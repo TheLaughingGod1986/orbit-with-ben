@@ -316111,22 +316111,28 @@
           "at": "2026-11-24T07:03Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-24T07:06Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Checked browser sessions and isolated records worktree. Public Orbit analytics renders, but studio_reach capture expects get_screen while current UI sends yta_web/join. No fresh metric records written."
         }
       ],
-      "remaining_action": "Checking the signed-in Studio sessions and metrics reader",
+      "remaining_action": "Adapt the lifetime metrics read to the current Studio endpoint, then rebuild the tracker",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-24T07:03Z",
+        "at": "2026-11-24T07:06Z",
         "by": "codex",
         "plan": [
           "Check Studio reader and sessions",
           "Read lifetime metrics",
           "Rebuild and publish tracker"
-        ]
+        ],
+        "note": "Checked browser sessions and isolated records worktree. Public Orbit analytics renders, but studio_reach capture expects"
       }
     }
   ],
