@@ -322893,10 +322893,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-24T18:23Z",
+      "eta": "2026-11-24T18:53Z",
       "created_by": "claude",
       "created_at": "2026-11-24T13:32Z",
       "result": "",
@@ -322920,13 +322920,26 @@
           "at": "2026-11-24T17:52Z",
           "by": "claude",
           "what": "Carries J3414's 48-hour read; no longer waits on it."
+        },
+        {
+          "at": "2026-11-24T18:23Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Read the thumbnail test, then start a title test with a Mulberry title",
       "due": "2026-11-25T12:00:00Z",
       "kind": "studio",
       "mini_only": true,
-      "urgent": 13
+      "urgent": 13,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T18:23Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3541",
