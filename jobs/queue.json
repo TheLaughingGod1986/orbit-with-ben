@@ -327871,17 +327871,22 @@
           "at": "2026-11-24T20:36Z",
           "by": "codex",
           "what": "step 2 of 4 done: Implemented boundary retry with parent-aware capacity, worker exclusion and inherited spawn reservation. Added recovery, lock, memory, pause, recursion and real child-lifetime tests."
+        },
+        {
+          "at": "2026-11-24T20:39Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: All 128 relay tests pass; focused recovery and inherited-lock tests pass. PR 1289 opened and ordinary Chief code review recorded; waiting for CI before merge."
         }
       ],
-      "remaining_action": "Running relay tests and reviewing the change",
+      "remaining_action": "Waiting for checks, then installing the relay fix through its safe handoff",
       "due": "2026-11-25T12:00:00Z",
       "kind": "assembly",
       "plain": "Keep both available workers busy when one returns during a run",
       "mini_only": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-24T20:36Z",
+        "at": "2026-11-24T20:39Z",
         "by": "codex",
         "plan": [
           "Inspect slot guards",
@@ -327889,7 +327894,7 @@
           "Test and review change",
           "Publish and refresh safely"
         ],
-        "note": "Implemented boundary retry with parent-aware capacity, worker exclusion and inherited spawn reservation. Added recovery,"
+        "note": "All 128 relay tests pass; focused recovery and inherited-lock tests pass. PR 1289 opened and ordinary Chief code review "
       }
     },
     {
