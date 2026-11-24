@@ -327829,10 +327829,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-24T20:33Z",
+      "eta": "2026-11-24T22:33Z",
       "created_by": "codex",
       "created_at": "2026-11-24T20:21Z",
       "result": "",
@@ -327841,13 +327841,26 @@
           "at": "2026-11-24T20:21Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T20:33Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Repairing second-worker recovery between jobs and testing slot safeguards",
       "due": "2026-11-25T12:00:00Z",
       "kind": "assembly",
       "plain": "Keep both available workers busy when one returns during a run",
-      "mini_only": true
+      "mini_only": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T20:33Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3616",
