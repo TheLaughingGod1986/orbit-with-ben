@@ -323181,13 +323181,13 @@
       "stage": "script",
       "after": "J3544",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-24T17:24Z",
-      "eta": "2026-11-24T19:24Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-24T14:47Z",
-      "result": "",
+      "result": "ADVISORY PASS (ready for elected Chief lock; not locked here) delivered in PR #1274 (branch macbook/J3545, commit dd0d587b4, jobs/reviews/J3545/) on OWB 064 v04 candidate PR #1269 (commit ee3308007). Exact byte-identical master/draft v04 SHA-256 556f3c8df68ee3cd1420ef03b8cedc04a7f0f79463d98ebf4d3d5e5753408db8 (1,296 alnum tokens / 1,341 ws tokens / 1,374 expanded words / 8,471 chars; first sentence 17 expanded words ~7.03s <8s; immediate spoken answer ~11.17s; est. 606.28s incl. 18s hold); SOURCES.md SHA-256 4a7e3fa5c74a548764886a274514d2590e5951e5e8782aa8118566d252fdc415 (16 rows, 7 cols). Direct live verification: 52/52 URLs HTTP 200 (all 49 HTML/XML sources + both archival PDFs sp-4524.pdf pp.124/129 and mola.summary.pdf Table 8 p.21 extracted via PDFKit + diagnostic erroneous PMID 17782980 Solanum paper), 16/16 MUST QUOTE rows PASS. All 4 J3520 fixes and all 9 explicit J3545/J3539 items + Gauss/ESA tightening resolved. Raw Gemini v04 output inspected without inheriting verdict (PDF gaps closed; minor non-blocking Row 3 NSSDCA label note recorded). Fresh review:script 91.6/100 PASS, explicit-v04 gate:episode --require-checklist PASS, 13/13 privacy tests PASS; v01-v03 and J3538/J3539 preserved intact. J3020 remains blocked and J3021 remains dependent until elected Chief merges PR #1269 + PR #1274, records lock, and completes J3020. Zero spend/generation/narration/upload/schedule changes; checkout left on main.",
       "history": [
         {
           "at": "2026-11-24T14:47Z",
@@ -323223,6 +323223,11 @@
           "at": "2026-11-24T17:31Z",
           "by": "macbook-2",
           "what": "step 4 of 6 done"
+        },
+        {
+          "at": "2026-11-24T17:34Z",
+          "by": "macbook-2",
+          "what": "done: ADVISORY PASS (ready for elected Chief lock; not locked here) delivered in PR #1274 (branch macbook/J3545, commit dd0d587b4, jobs/reviews/J3545/) on OWB 064 v04 candidate PR #1269 (commit ee3308007). Exact byte-identical master/draft v04 SHA-256 556f3c8df68ee3cd1420ef03b8cedc04a7f0f79463d98ebf4d3d5e5753408db8 (1,296 alnum tokens / 1,341 ws tokens / 1,374 expanded words / 8,471 chars; first sentence 17 expanded words ~7.03s <8s; immediate spoken answer ~11.17s; est. 606.28s incl. 18s hold); SOURCES.md SHA-256 4a7e3fa5c74a548764886a274514d2590e5951e5e8782aa8118566d252fdc415 (16 rows, 7 cols). Direct live verification: 52/52 URLs HTTP 200 (all 49 HTML/XML sources + both archival PDFs sp-4524.pdf pp.124/129 and mola.summary.pdf Table 8 p.21 extracted via PDFKit + diagnostic erroneous PMID 17782980 Solanum paper), 16/16 MUST QUOTE rows PASS. All 4 J3520 fixes and all 9 explicit J3545/J3539 items + Gauss/ESA tightening resolved. Raw Gemini v04 output inspected without inheriting verdict (PDF gaps closed; minor non-blocking Row 3 NSSDCA label note recorded). Fresh review:script 91.6/100 PASS, explicit-v04 gate:episode --require-checklist PASS, 13/13 privacy tests PASS; v01-v03 and J3538/J3539 preserved intact. J3020 remains blocked and J3021 remains dependent until elected Chief merges PR #1269 + PR #1274, records lock, and completes J3020. Zero spend/generation/narration/upload/schedule changes; checkout left on main."
         }
       ],
       "remaining_action": "Creating branch macbook/J3545 and writing versioned exact-hash review artifacts",
