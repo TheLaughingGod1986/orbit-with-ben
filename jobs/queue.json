@@ -1,5 +1,5 @@
 {
-  "next_id": 3488,
+  "next_id": 3490,
   "jobs": [
     {
       "id": "J0001",
@@ -317676,6 +317676,65 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3488",
+      "title": "Board: deploy the Schedule tab's plan overview (PR #1234) to the studio-kanban site and verify",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Why (Ben, Tue 24 Nov ~09:40 London: \"Can we possibly add ... the full schedule? ... an overview of if this plan is correct\").** orbit-with-ben PR #1234 (5ebde24) adds \"The plan\" to the board's Schedule tab: per channel, long films and Shorts a week with their days and times (from each channel's own `cadence`), and FOH's new Tue/Thu/Sat 17:00 slots.\n\n**Do (about 10 minutes, on the Mini):** from a clean origin/main at or after 5ebde24, `python3 05_Analytics/kanban/board_site/build.py`, then the existing Cloudflare Pages deploy (`npx wrangler pages deploy dist --project-name studio-kanban`, the Mini's own login). Check on the live site that the Schedule tab opens with \"The plan\" showing Orbit With Ben 2 long + 4 Shorts, History of Science 1 long + 4 Shorts, Field Order History 3 long and no Shorts. One thread line with the deployment id.\n\n**Guards.** Deploy only; `BOARD_OPEN_TAPS` stays 0. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 15,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T09:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T09:48Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build and deploy the board from main, then check the Schedule tab shows the plan",
+      "due": "2026-11-24T16:00:00Z",
+      "kind": "studio",
+      "mini_only": true
+    },
+    {
+      "id": "J3489",
+      "title": "AI spend: Google AI Ultra review before the 12 Dec renewal (Flow and Gemini use against cheaper tiers), for Ben",
+      "needs": "any",
+      "repo": "owb",
+      "body": "**Why (Ben, Tue 24 Nov ~09:40 London: \"I think we're possibly paying too much for Gemini. I've noticed with Gemini Flow, with VO, we're not actually using all the credits\").** The ledger agrees: Google AI Ultra (£189.99 a month, renews 12 Dec) gives 25,000 Flow credits a month; this cycle (from 12 Nov) has used only about 1,550 of them by 24 Nov (23,450 left). Gemini's weekly quota has run at 2-29% used. The £75.18 monthly Cloud credit sits unused (£144.66 available). On 9 Nov Ben chose to keep Ultra one more month and review. The review is due before the 12 Dec renewal.\n\n**Do, by Mon 7 Dec 18:00 London (a one-page recommendation for Ben):**\n1. **Use:** Flow credits per month by channel (HOS pictures, Orbit, anything else) from `05_Analytics/ai_spend/ledger.jsonl`, and Gemini's weekly quota use, for the last 8 weeks. Project December: Field Order History goes to three films a week from 1 Dec and uses archive photos (no Flow); Gemini is now the studio's busiest worker (Studio tasks, ear-checks, facts).\n2. **Options, from Google's own current plan pages (not memory):** what each lower tier includes and costs in the UK: Flow credits, the Gemini quota that Antigravity/Gemini CLI uses (the agents' lane), the Cloud credit, storage. In particular the ~£90 tier the ledger lists as \"10,000 Flow credits\" (unverified) and Google AI Pro.\n3. **Recommendation:** the cheapest tier that covers December's Flow and Gemini use with headroom, the saving per month, and what would be lost (for example a smaller Gemini quota in a heavy week). Say plainly if the Gemini quota on a cheaper tier would slow the studio.\n4. Post it on the thread and in `05_Analytics/ai_spend/GOOGLE_PLAN_REVIEW_2026-12.md`. **Ben changes the plan himself if he chooses; agents never change a subscription.**\n\n**Guards.** Read-only. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T09:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T09:48Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Measure Flow and Gemini use, compare Google's current tiers, recommend one to Ben",
+      "due": "2026-12-07T18:00:00Z",
+      "kind": "review"
     }
   ],
   "focus": [
