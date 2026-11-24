@@ -328072,25 +328072,29 @@
           "at": "2026-11-24T21:19Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T21:20Z",
+          "by": "codex",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Confirming the updated relay loads after the current jobs finish",
+      "remaining_action": "Inspect slot locks and safe relay job boundaries",
       "due": "2026-11-25T12:00:00Z",
       "kind": "assembly",
       "plain": "Keep both available workers busy when one returns during a run",
       "mini_only": true,
       "progress": {
-        "step": 3,
+        "step": 0,
         "of": 4,
-        "at": "2026-11-24T20:44Z",
+        "at": "2026-11-24T21:20Z",
         "by": "codex",
         "plan": [
-          "Inspect slot guards",
-          "Implement boundary retry",
-          "Test and review change",
-          "Publish and refresh safely"
-        ],
-        "note": "PR 1289 merged with green CI; shared checkout fast-forwarded. Installed b7f20fb5eea010db; active slots still run 253c7fe"
+          "Inspect relay guards",
+          "Implement boundary retry and tests",
+          "Validate and publish PR",
+          "Record review and refresh evidence"
+        ]
       }
     },
     {
