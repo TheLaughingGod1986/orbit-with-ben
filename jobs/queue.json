@@ -320287,9 +320287,14 @@
           "at": "2026-11-24T21:42Z",
           "by": "codex",
           "what": "step 1 of 4 done: Detached long upload active in tmux J3501-long-upload; log ~/_desk/logs/J3501-long-upload.log and completion ~/_desk/logs/J3501-long-upload.done. NAS and local master hashes both match 744f32b7. Both Shorts match approved hashes and opening gate/dry runs PASS. Studio 9222 Runtime probe times out; alternate HOS 9460 is signed out."
+        },
+        {
+          "at": "2026-11-24T21:42Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Long upload succeeded wiyfRnsTfTY, private + publishAt 2026-12-03T18:00Z; thumbnail A set and playlist added. Detached completion exit 0."
         }
       ],
-      "remaining_action": "Waiting for the Gravity long upload, then delivering its two Shorts",
+      "remaining_action": "Delivering the approved Gravity Shorts and captions",
       "due": "2026-12-03T12:00:00Z",
       "kind": "studio",
       "urgent": 7,
@@ -320300,7 +320305,7 @@
         "HOS:ASK:J3311.2"
       ],
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
         "at": "2026-11-24T21:42Z",
         "by": "codex",
@@ -320310,7 +320315,7 @@
           "Upload and schedule Shorts",
           "Verify and record delivery"
         ],
-        "note": "Detached long upload active in tmux J3501-long-upload; log ~/_desk/logs/J3501-long-upload.log and completion ~/_desk/log"
+        "note": "Long upload succeeded wiyfRnsTfTY, private + publishAt 2026-12-03T18:00Z; thumbnail A set and playlist added. Detached c"
       },
       "taskKeys": [
         "HOS:009"
