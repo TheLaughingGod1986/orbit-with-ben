@@ -325536,19 +325536,30 @@
           "at": "2026-11-24T23:22Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T23:23Z",
+          "by": "macbook-2",
+          "what": "step 1 of 6 done"
         }
       ],
-      "remaining_action": "Cut locked 003 narration (03:58.240-04:36.800), assemble 1080x1920 vertical Short reusing J3542 pipeline, and put on Ben watch",
+      "remaining_action": "Verify 003 audio, STT timings, music bed, and archive originals",
       "due": "2026-11-27T18:00:00Z",
       "kind": "assembly",
       "plain": "Build the first B-29 Short about the 28-inch pressurised crawl tunnel over the bomb bays",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T23:22Z",
+        "step": 1,
+        "of": 6,
+        "at": "2026-11-24T23:23Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Verify assets & word timings",
+          "Inspect photos & design crops",
+          "Build 9:16 Short & mix audio",
+          "Run technical & still QA",
+          "Copy master to NAS with SHA-256",
+          "Commit records, open PR & report"
+        ]
       }
     },
     {
