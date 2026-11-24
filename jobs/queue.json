@@ -315694,7 +315694,7 @@
     {
       "id": "J3460",
       "title": "HOS 135 What Is Entropy?: rule-E topic go/no-go review",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Rule-E topic go/no-go review for **HOS:135 (`02_Video-Projects/135_Carnot-Clausius-Boltzmann-What-Is-Entropy`)** on HOS PR `#739` (`https://github.com/TheLaughingGod1986/history-of-science/pull/739`, branch `gemini/J3458-hos-134-135`) and OWB PR `#1229` (`https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1229`, branch `gemini/J3458-wip-hos-134-135`), queued by `J3458`.\n\n### Topic Summary\n- **Proposed 2027 Search Plan Fit (`J3224`, `needsBen` — waiting for Ben's lock):** Bridges **Cluster 2 (Modern Physics Breakthroughs)** and **Cluster 4 (Breakthrough Engineering)**, backed in `public_search.py` by `<50k` US breakout channel `Science Retold` (`21,064` views on *How Entropy Was Discovered*) alongside `Veritasium` (`31.70M`) and `TED-Ed` (`5.09M`). Explicitly distinct from `ideas/024_Rumford-Joule-Thermodynamics` (First Law / Conservation of Energy via Rumford's 1798 cannon & Joule's 1845–1849 paddle wheel): focuses on the **Second Law, Entropy & the Arrow of Time** (Sadi Carnot 1824 ideal steam-engine limit, Rudolf Clausius 1865 coining of *Entropie*, Ludwig Boltzmann 1877 statistical atom-counting law `S = k log W`, and Jean Perrin 1908 Brownian-motion vindication).\n- **Title A (Primary Proposal, Rules 1, 15, 23, 26 — `50 chars <= 50`, `0` collisions):** `What Is Entropy? (Boltzmann's Gravestone Equation)`\n- **Title B (T&C Arm 2, Rules 15, 23, 26 — `59 chars <= 70`, `0` collisions):** `What Is Entropy? (The Engine That Proved Time Runs One Way)`\n- **Title C (Story+Stakes, Rule 23 — `56 chars <= 70`, `0` collisions):** `Why Time Only Runs Forward (The 1824 Steam Engine Twist)`\n- **Short S01 (16–19 s Ben 19 Nov rules, `51 chars`, `0` collisions):** `Why Is S = k log W Carved on Boltzmann's Tombstone?`\n- **Short S02 (16–19 s Ben 19 Nov rules, `37 chars`, `0` collisions):** `How Did Sadi Carnot Discover Entropy?`\n- **Saved Evidence (`2026-11-24`):**\n  - `11_Upload-Package/evidence_2026-11-24_neighbours.json` (`PASS`: `7` raw / `6` strictly on-topic Entropy & Second Law education videos `>=1,000,000` views + `1` adjacent thermodynamics video `Khan Academy` *Enthalpy* `1,559,665`, `TED-Ed/TED: yes`, led by `Veritasium` `31,701,405`, `TED-Ed` `5,090,744`, `CrashCourse` `2,050,142` & `2,033,809`, `TED-Ed` `1,399,583`, `PBS Space Time` `1,268,850`).\n  - `11_Upload-Package/evidence_2026-11-24_public_search.json` (`10` queries / `72` rows; `4/5` core phrases `autocomplete = yes` + `1` related, `0` exact title collisions; ranking videos `Veritasium` `31,701,440`, `Abide By Reason` `1,307,580`, `Big Think & Sean Carroll` `1,223,064`, `The Royal Institution` `609,319`, `Science Retold` `21,064`).\n\n### Reviewer Checklist (AGENTS.md Rule E)\n1. Verify `TOPIC.md`, `status.json`, `production-status.md`, `10_Shorts/README.md`, and the two raw JSON evidence files on HOS PR `#739`.\n2. Score the Rule-E topic rubric (neighbour demand `>=3` strictly on-topic at `1M+` views with TED/TED-Ed presence, signed-out YouTube autocomplete demand, title collision check, explicit non-duplication vs `ideas/024_Rumford-Joule-Thermodynamics`, `02_Video-Projects/`, open PRs `120–133`, and `WIP.json`, §2.5 thumbnail text non-repeat, and proof-first visual hook).\n3. Confirm all historical and scientific claims remain marked **UNVERIFIED** until `SOURCES.md` exact quotes and the `facts` lane run when an active HOS WIP slot opens under Rule G (`jobs/WIP.json` `next_hos`).\n4. Record the Rule-E go/no-go verdict.\n",
       "ref": "",
@@ -315714,11 +315714,24 @@
           "at": "2026-11-24T04:46Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T04:47Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Review HOS 135 TOPIC.md, neighbours.json, public_search.json, and non-duplication vs ideas/024 on HOS PR #739",
       "kind": "review",
-      "plain": "Score the Rule-E topic rubric for HOS 135 (What Is Entropy?) on HOS PR #739"
+      "plain": "Score the Rule-E topic rubric for HOS 135 (What Is Entropy?) on HOS PR #739",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
