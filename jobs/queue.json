@@ -321524,24 +321524,29 @@
           "at": "2026-11-24T13:08Z",
           "by": "codex",
           "what": "step 1 of 3 done: PR 1257 is merged on main; relay confirms Codex is acting Chief; production deployment is explicitly authorized by this job."
+        },
+        {
+          "at": "2026-11-24T13:09Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Built merged main and deployed Cloudflare Pages production deployment cb5f2794; requested one board data refresh."
         }
       ],
-      "remaining_action": "Publish the merged board fix to the live site",
+      "remaining_action": "Verify the live board alerts and video navigation",
       "due": "2026-11-24T17:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "urgent": 13,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-24T13:08Z",
+        "at": "2026-11-24T13:09Z",
         "by": "codex",
         "plan": [
           "Confirm merged fix and publishing instructions",
           "Build and deploy board",
           "Verify live alerts and record result"
         ],
-        "note": "PR 1257 is merged on main; relay confirms Codex is acting Chief; production deployment is explicitly authorized by this "
+        "note": "Built merged main and deployed Cloudflare Pages production deployment cb5f2794; requested one board data refresh."
       }
     },
     {
