@@ -1,5 +1,5 @@
 {
-  "next_id": 3538,
+  "next_id": 3539,
   "jobs": [
     {
       "id": "J0001",
@@ -321848,6 +321848,36 @@
       "kind": "vo",
       "plain": "Record Ben's narration for WW2 film 013 (Ghost Army) after ElevenLabs resets on 30 Nov and Pilot 2's 48h/7d check",
       "mini_only": true
+    },
+    {
+      "id": "J3538",
+      "title": "OWB 064: Correct remaining source mismatches in script v03",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Implement J3520/CHIEF_RULING.md as v03 of OWB:064, preserving v01/v02 and historical reviews. Apply the exact Jupiter mass, Galileo transmission, Earth equatorial-speed/wind and Neptune comparison fixes throughout narration, draft, sources and teaching/visual notes. Read the complete ruling and J3020 scope. Preserve the eight-planet outward tour, approved dates, word limits and zero-generation picture/music plan. Obtain a fresh Gemini facts/claims pass via agy and preserve its unedited output; test semantics, units, reference levels, uncertainty and ratios. Run review:script >=90 and gate:episode against v03; record exact hash, reproducible counts and chapter timings. Correct downstream hash/count stamps. Deliver evidence in a PR. Do not lock the script or finish J3020; the dependent independent review decides. No narration, generation, spend, upload or schedule/privacy changes. This is correction of the approved format test, not new topic development.\n",
+      "ref": "J3520",
+      "film": "064",
+      "stage": "script",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-24T13:25Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T13:25Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Correct the Jupiter facts and Earth and Neptune comparisons, then check the sources",
+      "due": "2026-11-25T12:00:00Z",
+      "kind": "script",
+      "plain": "Correct the planet narration before it is recorded"
     }
   ],
   "focus": [
