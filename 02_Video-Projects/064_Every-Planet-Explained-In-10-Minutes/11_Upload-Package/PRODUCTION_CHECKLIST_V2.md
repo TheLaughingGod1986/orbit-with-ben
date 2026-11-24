@@ -14,9 +14,9 @@ Rules: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` · `FAMILIAR_DANGER_STRATEGY.
 - [x] Pre-build vidIQ audit signed off (`11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md`)
 - [x] First 3 s of picture = Mercury (`PIA19411` rotating global colour mosaic). Sentence one = the promise + hook question. Payoff named by 30 s.
 - [x] 8 ordered planet sections (`Mercury` → `Neptune`, `7` chapter cards + cold open) told as cause and effect. The world does the science. Orbit in 1–2 beats only (`2` `[ORBIT ACTS]` beats).
-- [x] Picture change about every 4–6 s (`≤4 s` in first 30 s). Every number sourced (`01_Script/SOURCES.md`, `16/16` rows verified live in `GEMINI_QUOTE_PASS_v01.md` & `CLAUDE_QUOTE_CHECK_v01.md`). No goodbye line. The last line hands off to the next film (`034` Pluto).
-- [x] One `[SUBSCRIBE BEAT]` after the first payoff (`35%` through, `15` words: Line 4 *"We make one of these every week. Subscribing is how the next one finds you."*, not used in the last four longs `031`–`034`)
-- [x] Runtime ~9–10 min (`1,246` spoken words / `8,161` spoken characters across 8 planets + `18 s` end hold)
+- [x] Picture change about every 4–6 s (`≤4 s` in first 30 s). Source ledger corrected for v03; fresh facts evidence and independent direct-quote lock review remain required. Historical v01/v02 passes do not lock v03. No goodbye line. The last line hands off to the next film (`034` Pluto).
+- [x] One `[SUBSCRIBE BEAT]` after the first payoff (`36%` through, `15` words: Line 4 *"We make one of these every week. Subscribing is how the next one finds you."*, not used in the last four longs `031`–`034`)
+- [x] Runtime ~9–10 min (`1,257` spoken words / `8,189` spoken characters across 8 planets + `18 s` end hold)
 - [x] `npm run review:script` 90 or more (`93.1 / 100`) · `npm run gate:episode` PASS
 
 ## Voice and picture
@@ -52,3 +52,5 @@ Rules: `00_Brand/Channel-Setup/STUDIO_PLAYBOOK.md` · `FAMILIAR_DANGER_STRATEGY.
 - [ ] Shorts: Related → the long each promotes · no new pin · zero `/go/`
 
 **Ship only when every box is ticked and Ben has signed off.**
+
+Current candidate: v03 SHA-256 `9d5cd3bd256652621441cece4f3ac250be32d0abb08fbadd12835e3684d4851f`; not locked. Counts and timing basis: `01_Script/SCRIPT_NOTES_v03.md`.
