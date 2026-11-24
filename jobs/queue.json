@@ -303715,10 +303715,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
-      "by": "codex",
-      "since": "2026-11-24T00:01Z",
-      "eta": "2026-11-24T04:01Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-22T12:46Z",
       "result": "",
@@ -306332,6 +306332,11 @@
           "at": "2026-11-24T00:08Z",
           "by": "codex",
           "what": "step 1 of 4 done: Checkpoint95 local7cc4a44: actual1344.970s narration conform verified sample-exact,561caption cues and218retimed cuts pass; seven tests pass. Full film unfinished."
+        },
+        {
+          "at": "2026-11-24T00:08Z",
+          "by": "codex",
+          "what": "released: Checkpoint95 local7cc4a44 in isolated _desk/ww2/J3364-wt. Actual1344.970s internal narration conform from reviewed176.050s boundary; both PCM sections independently match input digests.561nonoverlapping captions and218contiguous retimed tail cuts verified; seven tests pass. Resume CHECKPOINT_95.md. No renderer running:J3364-voice95.done=0; log/done under _desk/logs. Build80s archive opening; repair photo reuse/borders; conform score/chapters/credits; run final gates and Ben-watch master. PR55 remains open; bounded internal-use ruling saved. No spend or YouTube change. Local-only checkpoint under inherited remote-export restriction; no push."
         }
       ],
       "remaining_action": "Build the archive opening, repair picture reuse and borders, then finish final checks",
