@@ -322806,18 +322806,27 @@
           "at": "2026-11-24T15:05Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T15:06Z",
+          "by": "macbook-2",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Bring each open ww2 PR up to main or mark it superseded, for one Chief batch",
+      "remaining_action": "Compare the 19 pull requests with current main",
       "due": "2026-11-27T18:00:00Z",
       "kind": "review",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T15:05Z",
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-24T15:06Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Compare changes",
+          "Reconcile useful branches",
+          "Check and publish review",
+          "Record handoff"
+        ]
       }
     }
   ],
