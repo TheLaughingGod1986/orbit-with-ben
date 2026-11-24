@@ -1,5 +1,5 @@
 {
-  "next_id": 3498,
+  "next_id": 3499,
   "jobs": [
     {
       "id": "J0001",
@@ -318423,6 +318423,36 @@
       "kind": "review",
       "cloud_only": true,
       "backlog": "hos-search-research"
+    },
+    {
+      "id": "J3498",
+      "title": "WW2 film 011: independent Gemini claims check on SCRIPT.md and SOURCES.md (PR #71)",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "Independent Gemini facts-lane claims check for Field Order History film `WW2:011` (*How a British Engine Made the P-51 Mustang*) on `ww2-channel` PR #71 (branch `macbook/J3482`, commit `9e67124`).\n\n**Check:**\n1. Audit all 33 claim rows (`C01`–`C33`) in `02_Video-Projects/011_P51-Mustang-Rolls-Royce-Merlin-Engine/01_Script/SCRIPT.md` and `01_Script/SOURCES.md` against primary/official sources (Craven & Cate Vols. II & III, *AAF Statistical Digest*, Williamson Murray *Strategy for Defeat*, Stanley Hooker *Not Much of an Engineer*, Ronnie Harker *The Engines Were Rolls-Royce*, F.W. Meredith RAE R&M 1683, NMUSAF / `AAF Manual 51-127-5`, Ludwig, Neal, Galland).\n2. Specifically resolve the 5 flagged checkpoints in `SOURCES.md`:\n   - `F1` (`C08`): NA-73X rollout span (`102` vs `117` days depending on contract milestone) and `26 October 1940` maiden flight by Vance Breese at Mines Field.\n   - `F2` (`C12`, `C16`): Allison V-1710-39 rating (`~1,150 hp` low/mid, drop-off above `15,000` ft) vs two-stage Merlin 61 rating (`~1,500 hp` past `25,000` ft).\n   - `F3` (`C17`): Hucknall Mustang X `AL975` first flight (`13 October 1942`, Capt. Ronald T. Shepherd), top speed (`~433 mph` at `22,000` ft), and climb to `20,000` ft (`~6` min).\n   - `F4` (`C25`, `C27`): P-51B/D fuel figures (`184` gal wing + `85` gal rear fuselage tank + `2×75`/`2×108`/`2×110` gal drop tanks) and 354th Fighter Group's `13 December 1943` Kiel mission (`49` P-51Bs, nearly `500` miles each way).\n   - `F5` (`C32`, `C33`): D-Day Allied (`>14,000`) vs Luftwaffe (`a few hundred`) sorties, and US-built licensed Merlin count (`>55,000` total V-1650s led by Packard Detroit's `54,714` + Continental's `797`).\n3. Confirm `01_Script/NARRATION_v01.txt` stays `<= 21,000` spoken characters (currently `19,314` chars, `3,028` words, SHA-256 `9b71b3cae1cdd4dfa18e688205a78ecf061f2b0769d326023e5da636aeed994f`).\n4. Write `01_Script/CLAIMS_CHECK_v01.md` (PASS or exact wording fixes), update `status.json` `sources` stage, and open a `ww2-channel` PR.\n\n**Guards:** £0 spend. No ElevenLabs voice credits spent before `2026-11-30 10:50Z`.\n",
+      "ref": "ww2-channel#71",
+      "film": "011",
+      "stage": "sources",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-24T10:28Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T10:28Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "WW2 film 011: independent Gemini claims check on SCRIPT.md and SOURCES.md (PR #71)",
+      "due": "2026-12-04T18:00:00Z",
+      "kind": "facts",
+      "plain": "Check every factual claim and figure in the P-51 Mustang script against primary sources"
     }
   ],
   "focus": [
