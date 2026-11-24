@@ -323773,9 +323773,14 @@
           "at": "2026-11-24T16:21Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T16:22Z",
+          "by": "macbook",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Verify readiness: Chief (codex) review of J3430 v01 master & PR, merge, and stage on Ben's watch (due 2026-11-28 20:00 UTC)",
+      "remaining_action": "Verify J3430 artifacts, WW2 PRs, gates and Chief review status",
       "kind": "review",
       "recheck_of": "J3430",
       "due": "2026-11-24T17:20:51+00:00",
@@ -323789,12 +323794,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T16:21Z",
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-24T16:22Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read J3430 history and WW2 rules",
+          "Verify WW2 004 build, PR and gates",
+          "Check Chief review and hold status",
+          "Update J3430, finish J3560 and report"
+        ]
       }
     }
   ],
