@@ -1,5 +1,5 @@
 {
-  "next_id": 3553,
+  "next_id": 3554,
   "jobs": [
     {
       "id": "J0001",
@@ -323163,6 +323163,35 @@
       "remaining_action": "Run independent gemini-agy facts check on HOS PR #753 script, SOURCES.md, FACT_NOTES_v01.md & Shorts",
       "due": "2026-12-03T18:00:00Z",
       "kind": "facts"
+    },
+    {
+      "id": "J3553",
+      "title": "HOS 136 Trinity Test Explained (Thu 17 Dec): review and lock script v01, package-first scoring, sources & Shorts (PR #753)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Review and lock the `HOS:136` (*Trinity Test Explained: Could It Ignite the Sky?*, Cluster 2 Film 2, target Thu 17 Dec 2026 18:00 London) package-first scoring, 7–9 min script draft v01, sources, and two 16–19 s Shorts delivered by `J3507` in **HOS PR `#753`** (`gemini/J3507-hos136-script`, commit `ebb55eea`, built cleanly on `origin/main` + `origin/macbook/J3502`), after the independent `facts` lane completes.\n\n**Files in HOS PR `#753` (`02_Video-Projects/136_Oppenheimer-Teller-Bethe-Trinity-Test-Explained/`):**\n- `11_Upload-Package/PACKAGE_FIRST_SCORING_v01.md` & `PRE_BUILD_VIDIQ_AUDIT.md`: 3 query-first titles & 2 painted 3D thumbnails scored vs Cluster 2 outliers. Primary Arm A pick: *Trinity Test Explained: Could It Ignite the Sky?* (`48c`, `96/100`, `0` collisions); T&C Arm B (plan title): *Trinity Test Explained: The Calculation That Nearly Stopped the Bomb* (`68c`, `92/100`); T&C Arm C: *Trinity Test: The Calculation That Nearly Stopped It* (`52c`, `88/100`). Thumb A (`AIR ON FIRE?`, `96/100`, gold on `FIRE?`) & Thumb B (`MEASURED BY PAPER`, `93/100`, gold on `PAPER`). Low-RPM `nuclear bomb` excluded.\n- `01_Script/trinity_test_explained_script_master_v01.md`: `1,266` spoken words (`8.4` min), `review:script` **PASS `93.7/100`** (`8/8` structure gates), `gate:episode` **PASS** (`9/9` checks OK), proof-first 0:30 open + early `DATA+SCALE` at 0:27, `5 DATA` + `5 SCALE` (incl. 1942–1946 timeline), `8 WHO` (year-accurate 1942–1945 roles), `5 WHEN`, `4 FACT`, `2 [EXPLORER ACTS]` (Parts 02 & 04, outside first minute), `4 [CHAPTER CARD]` (5 parts), `18 [VISUAL MUST]`, `5 [TEACH]`.\n- `01_Script/SOURCES.md` & `01_Script/FACT_NOTES_v01.md` (`20/20` rows verified, all 7 `J3502` guardrails resolved).\n- `10_Shorts/SHORTS_SCRIPTS_v01.md` & `11_Upload-Package/evidence_2026-11-24_s01_short_search.json`: `S01` (*Could the Trinity Test Have Ignited the Sky?*, `44c`, `0` collisions, `44w` ≈ `17.2 s`, Sat 19 Dec 11:30) and `S02` (*How Did Enrico Fermi Measure the Trinity Blast With Paper?*, `58c`, `0` collisions, `46w` ≈ `17.9 s`, Fri 18 Dec 11:30), plus `11_Upload-Package/LAUNCH_PLAN.md`.\n\n**Review & lock checklist (due Fri 4 Dec 2026 18:00 London; Ben's watch Mon 14 Dec; target air Thu 17 Dec):**\n1. Confirm Primary Title Arm A, T&C Arms B/C, and Thumb A/B concepts (with §2.6 hand-verified equations).\n2. Review `trinity_test_explained_script_master_v01.md`, independent `facts` audit, `SOURCES.md`, `FACT_NOTES_v01.md`, and `SHORTS_SCRIPTS_v01.md` against HOS Teach-on-Screen, Polish-Pass, Craft, and Ben 19 Nov Shorts house rules.\n3. If PASS: Chief merges PR `#753` (which includes `origin/macbook/J3502`), locks script & facts, and queues HOS:136 VO once an open HOS WIP slot clears under Rule G (`008`/`009` leaving active). No VO or picture spend until Chief PASS.\n",
+      "ref": "J3507",
+      "film": "HOS:136",
+      "stage": "script",
+      "after": "J3552",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-24T15:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T15:46Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review HOS PR #753 + facts audit, confirm package & script lock, and merge on Chief PASS",
+      "due": "2026-12-04T18:00:00Z",
+      "kind": "review"
     }
   ],
   "focus": [
