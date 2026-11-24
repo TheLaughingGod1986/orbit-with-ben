@@ -100,7 +100,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3552 | gemini | open | – | – | HOS:136 sources · facts · HOS 136 Trinity Test Explained (Thu 17 Dec): independent facts audit of v01 script, SOURCES.md & Shorts (PR #753) | J3507 |
 | J3553 | mini | open (after J3552) | – | – | HOS:136 script · review · HOS 136 Trinity Test Explained (Thu 17 Dec): review and lock script v01, package-first scoring, sources & Shorts (PR #753) | J3507 |
 | J3555 | mini | open (after J3554) | – | – | WW2:014 script · review · WW2 film 014: Claude Rule-6 viewer test (first 300 words), Pilot 2 learnings check, Rule-E lock & queue VO | ww2-channel#88 |
-| J3557 | mini | open (after J3556) | – | – | 017 script · review · WW2 film 017: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO | ww2-channel#89 |
+| J3557 | mini | claimed | macbook | 2026-11-24T18:07Z | 017 script · review · WW2 film 017: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO | ww2-channel#89 |
 | J3558 | mini | open | – | – | chief · Chief: resolve 003 edit orphan-doing |  |
 
 Recently finished:
