@@ -317845,9 +317845,14 @@
           "at": "2026-11-24T10:01Z",
           "by": "codex",
           "what": "step 1 of 3 done: Clean origin/main includes 5ebde24; build succeeded; BOARD_OPEN_TAPS is 0"
+        },
+        {
+          "at": "2026-11-24T10:02Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Cloudflare production deployment f9385b8b completed successfully; open taps stays 0"
         }
       ],
-      "remaining_action": "Deploy the built schedule overview to Cloudflare",
+      "remaining_action": "Verify the live Schedule overview and board routes",
       "due": "2026-11-24T16:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -317860,16 +317865,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-24T10:01Z",
+        "at": "2026-11-24T10:02Z",
         "by": "codex",
         "plan": [
           "Build the approved board",
           "Deploy to Cloudflare",
           "Verify the live schedule"
         ],
-        "note": "Clean origin/main includes 5ebde24; build succeeded; BOARD_OPEN_TAPS is 0"
+        "note": "Cloudflare production deployment f9385b8b completed successfully; open taps stays 0"
       }
     },
     {
