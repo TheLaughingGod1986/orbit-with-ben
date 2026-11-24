@@ -1313,6 +1313,39 @@ class Relay(unittest.TestCase):
         self.assertGreater(cr.vm_stat_available(out), 3 * 1024 ** 3)
         self.assertEqual(cr.vm_stat_available(""), 0)
 
+    def test_a_launchd_run_spawns_one_detached_run_for_a_free_slot(self):
+        """24 Nov 2026 (J3521): launchd never starts a second run while one works, so slot 1 never opened."""
+        from unittest import mock
+        os.environ.update({"CHIEF_PARALLEL": "2", "CHIEF_FREE_MEM_BYTES": str(8 << 30), "CHIEF_SPAWN_SLOTS": "1"})
+        os.environ.pop("CHIEF_SPAWNED", None)
+        with mock.patch.object(cr.subprocess, "Popen") as popen:
+            self.assertTrue(cr.spawn_second_slot(T0))
+        args, kw = popen.call_args
+        self.assertEqual(args[0][-1], "run")
+        self.assertEqual(kw["env"]["CHIEF_SPAWNED"], "1")
+        self.assertTrue(kw["start_new_session"])
+
+    def test_no_spawn_from_a_spawned_run_when_slots_are_busy_low_memory_or_off(self):
+        from unittest import mock
+        os.environ.update({"CHIEF_PARALLEL": "2", "CHIEF_FREE_MEM_BYTES": str(8 << 30), "CHIEF_SPAWN_SLOTS": "1"})
+        with mock.patch.object(cr.subprocess, "Popen") as popen:
+            os.environ["CHIEF_SPAWNED"] = "1"
+            self.assertFalse(cr.spawn_second_slot(T0))
+            os.environ.pop("CHIEF_SPAWNED")
+            self._live_lease(0, "cursor")
+            self.assertFalse(cr.spawn_second_slot(T0))  # only one slot left: this run takes it
+            cr.d("execution-0.json").unlink()
+            os.environ["CHIEF_FREE_MEM_BYTES"] = str(1 << 30)
+            os.environ["CHIEF_SLOT_MIN_GB"] = "3"
+            self.assertFalse(cr.spawn_second_slot(T0))
+            os.environ["CHIEF_FREE_MEM_BYTES"] = str(8 << 30)
+            os.environ["CHIEF_SPAWN_SLOTS"] = "0"
+            self.assertFalse(cr.spawn_second_slot(T0))
+            os.environ["CHIEF_PARALLEL"] = "1"
+            os.environ["CHIEF_SPAWN_SLOTS"] = "1"
+            self.assertFalse(cr.spawn_second_slot(T0))
+        popen.assert_not_called()
+
     def test_the_first_slot_still_starts_when_memory_is_low(self):
         self.routed_queue('{"jobs": [{"id": "J0505", "kind": "assembly", "status": "open", "needs": "mini", '
                           '"title": "Assemble the cut"}]}')
