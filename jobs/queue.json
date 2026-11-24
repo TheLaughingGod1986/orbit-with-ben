@@ -321051,21 +321051,27 @@
           "at": "2026-11-24T12:31Z",
           "by": "macbook",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-24T12:33Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done: Implementation committed; queue tests pass"
         }
       ],
-      "remaining_action": "Add automatic publishing handoff and tests",
+      "remaining_action": "Verify publication handoff and queue tests",
       "due": "2026-11-27T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-24T12:31Z",
+        "at": "2026-11-24T12:33Z",
         "by": "macbook",
         "plan": [
           "Inspect relay and queue",
           "Implement and test handoff",
           "Open pull request and report"
-        ]
+        ],
+        "note": "Implementation committed; queue tests pass"
       }
     },
     {
