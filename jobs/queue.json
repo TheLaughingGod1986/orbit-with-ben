@@ -326888,13 +326888,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-24T18:51Z",
-      "eta": "2026-11-24T20:51Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-24T18:50Z",
-      "result": "",
+      "result": "Verification complete: condition not met. Reviewed J3012 brief/history and trusted thread through 7141235333. Grant reported complete but no successful runtime receipt; prior exact production-scope rejection unresolved. Recorded wait J3012 --recheck J3609 for 25 Nov 10:00Z, preserving 3/4 and Thursday notice / Friday move gates. Claude Code handoff recorded as existing history only; no probe, delegation, deployment, spend or film changes.",
       "history": [
         {
           "at": "2026-11-24T18:50Z",
@@ -326930,6 +326930,11 @@
           "at": "2026-11-24T18:53Z",
           "by": "codex",
           "what": "step 3 of 3 done: Condition remains unmet. Parent hold linked with recheck J3609, next verification 25 Nov 10:00Z; progress 3/4 and migration gates preserved. No live probe or production mutation."
+        },
+        {
+          "at": "2026-11-24T18:53Z",
+          "by": "codex",
+          "what": "done: Verification complete: condition not met. Reviewed J3012 brief/history and trusted thread through 7141235333. Grant reported complete but no successful runtime receipt; prior exact production-scope rejection unresolved. Recorded wait J3012 --recheck J3609 for 25 Nov 10:00Z, preserving 3/4 and Thursday notice / Friday move gates. Claude Code handoff recorded as existing history only; no probe, delegation, deployment, spend or film changes."
         }
       ],
       "remaining_action": "Verification complete; parent remains held for approved runtime-check evidence",
