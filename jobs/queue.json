@@ -320081,10 +320081,10 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-24T15:35Z",
+      "eta": "2026-11-24T17:35Z",
       "created_by": "macbook-2",
       "created_at": "2026-11-24T10:51Z",
       "result": "",
@@ -320098,6 +320098,11 @@
           "at": "2026-11-24T11:00Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
+        },
+        {
+          "at": "2026-11-24T15:35Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Lock package-first title/thumbs (carrying J3502 §2.5/§2.B fixes), write SOURCES.md & 5-part 7-9 min script draft + 2 Shorts by Sat 28 Nov 18:00 London",
@@ -320111,7 +320116,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T15:35Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3508",
