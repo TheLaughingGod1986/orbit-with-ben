@@ -329618,9 +329618,14 @@
           "at": "2026-11-24T22:26Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T22:27Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Read pilot 2's Studio settings, claims and reach; fix a wrong listing setting",
+      "remaining_action": "Checking why the Atlantic film has no views",
       "due": "2026-11-24T23:30:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -329628,11 +329633,17 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-24T22:26Z",
+        "at": "2026-11-24T22:27Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check listing and copyright",
+          "Read early reach",
+          "Record findings"
+        ]
+      },
+      "taskKeys": [
+        "WW2:002"
+      ]
     }
   ],
   "focus": [
