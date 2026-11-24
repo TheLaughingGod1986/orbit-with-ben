@@ -329629,16 +329629,21 @@
           "at": "2026-11-24T22:45Z",
           "by": "gemini",
           "what": "step 4 of 5 done: Wrote 01_Script/CLAIMS_CHECK_v03.md (31 PASS, 6 FLAG, 0 UNVERIFIABLE) and updated status.json (review, not locked); verified byte-for-byte preservation of all earlier narrations/reports and 46/46 parity."
+        },
+        {
+          "at": "2026-11-24T22:46Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Opened ww2-channel PR #112 (commit 96afbb3), routed 6 surgical FIX items to script lane (J3636), posted studio thread report; J3492 not released."
         }
       ],
-      "remaining_action": "Push PR, route FIX to script lane, post thread report, and finish J3634",
+      "remaining_action": "Completed J3634",
       "due": "2026-11-25T18:00:00Z",
       "kind": "facts",
       "plain": "Checking the revised Operation Pedestal narration against the original sources",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-24T22:45Z",
+        "at": "2026-11-24T22:46Z",
         "by": "gemini",
         "plan": [
           "Create clean worktree and verify v03 artifacts",
@@ -329647,7 +329652,7 @@
           "Write CLAIMS_CHECK_v03.md and check parity/hashes",
           "Push PR, report findings, and handle J3492/FIX routing"
         ],
-        "note": "Wrote 01_Script/CLAIMS_CHECK_v03.md (31 PASS, 6 FLAG, 0 UNVERIFIABLE) and updated status.json (review, not locked); veri"
+        "note": "Opened ww2-channel PR #112 (commit 96afbb3), routed 6 surgical FIX items to script lane (J3636), posted studio thread re"
       },
       "taskKeys": [
         "WW2:009"
