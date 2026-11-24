@@ -316218,21 +316218,27 @@
           "at": "2026-11-24T07:32Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-24T07:33Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Prior evidence inspected; selected period was not captured. Isolated local worktree created."
         }
       ],
-      "remaining_action": "Verify the selected Lifetime period and channel totals locally",
+      "remaining_action": "Select Lifetime and capture its control state with the channel cards",
       "kind": "studio",
       "plain": "Check that Field Order History totals cover the whole lifetime of the channel",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-24T07:32Z",
+        "at": "2026-11-24T07:33Z",
         "by": "codex",
         "plan": [
           "Inspect prior evidence",
           "Verify Lifetime in Studio",
           "Validate local import and report"
-        ]
+        ],
+        "note": "Prior evidence inspected; selected period was not captured. Isolated local worktree created."
       }
     }
   ],
