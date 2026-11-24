@@ -139,6 +139,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3637 | mini | open | – | – | WW2:004 edit · assembly · WW2 004: v02 zero-spend visual/graphic repair, Rule-2 title package and render |  |
 | J3638 | mini | open (after J3637) | – | – | WW2:004 edit · qa · WW2 004: full private audiovisual QA of v02 master |  |
 | J3639 | any | open (after J3638) | – | – | WW2:004 edit · chief · WW2 004: Chief decision on v02 delivery and stage Ben watch |  |
+| J3640 | mini | open | – | – | review · Verify condition for J3430 |  |
 
 Recently finished:
 

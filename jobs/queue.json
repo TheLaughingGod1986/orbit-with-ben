@@ -1,5 +1,5 @@
 {
-  "next_id": 3640,
+  "next_id": 3641,
   "jobs": [
     {
       "id": "J0001",
@@ -313918,6 +313918,11 @@
           "at": "2026-11-24T22:54Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-28T12:00:00Z"
+        },
+        {
+          "at": "2026-11-24T22:56Z",
+          "by": "relay",
+          "what": "condition verification queued: J3640"
         }
       ],
       "remaining_action": "Hold J3430 pending v02 zero-spend visual repair (J3637), v02 full audiovisual QA (J3638), and Chief v02 watch staging (J3639)",
@@ -313943,7 +313948,8 @@
       "hold": {
         "type": "dependency",
         "condition": "J3625 elected-Chief ruling: v01 HELD (not passed/not staged to WW2 UAT) due to J3624 visual QA blockers (00:06.8 Rule 3 spoiler, tofu glyph + leaked internal boilerplate on 15+ slides, 14 frozen empty-box holds of 21-38s, missing Ch3 card, 17 <60s repeats, 3 <2s flashes). Wait for zero-spend v02 repair (J3637), full v02 private audiovisual QA (J3638), and elected-Chief v02 approval & Ben-watch staging (J3639). Adopted Rule-2 title: Mark 14 Torpedo: Why Perfect Hits Failed (40 chars). Watch due 2026-11-28T20:00Z; planned air 2026-12-01T17:00Z.",
-        "check_at": "2026-11-28T12:00:00Z"
+        "check_at": "2026-11-24T23:56:28+00:00",
+        "recheck_task": "J3640"
       },
       "escalated_at": "2026-11-24T18:35Z"
     },
@@ -329974,6 +329980,37 @@
       "due": "2026-11-28T12:00:00Z",
       "kind": "chief",
       "plain": "Approve the repaired torpedo film v02 and put it on Ben's watch page"
+    },
+    {
+      "id": "J3640",
+      "title": "Verify condition for J3430",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3430: J3625 elected-Chief ruling: v01 HELD (not passed/not staged to WW2 UAT) due to J3624 visual QA blockers (00:06.8 Rule 3 spoiler, tofu glyph + leaked internal boilerplate on 15+ slides, 14 frozen empty-box holds of 21-38s, missing Ch3 card, 17 <60s repeats, 3 <2s flashes). Wait for zero-spend v02 repair (J3637), full v02 private audiovisual QA (J3638), and elected-Chief v02 approval & Ben-watch staging (J3639). Adopted Rule-2 title: Mark 14 Torpedo: Why Perfect Hits Failed (40 chars). Watch due 2026-11-28T20:00Z; planned air 2026-12-01T17:00Z.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3430 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-24T22:56Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T22:56Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Hold J3430 pending v02 zero-spend visual repair (J3637), v02 full audiovisual QA (J3638), and Chief v02 watch staging (J3639)",
+      "kind": "review",
+      "recheck_of": "J3430",
+      "due": "2026-11-24T23:56:28+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
