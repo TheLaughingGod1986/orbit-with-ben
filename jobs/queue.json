@@ -319073,18 +319073,26 @@
           "at": "2026-11-24T11:07Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T11:08Z",
+          "by": "macbook",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Find why board OKs don't reach the Chief, add the 12-hour alert, and mark OKs handled",
+      "remaining_action": "Trace why board approvals do not become upload jobs",
       "due": "2026-11-27T18:00:00Z",
       "kind": "assembly",
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-24T11:07Z",
+        "at": "2026-11-24T11:08Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Trace board approvals",
+          "Fix relay and board alerts",
+          "Test and open PR"
+        ]
       }
     },
     {
