@@ -327458,13 +327458,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-24T20:22Z",
-      "eta": "2026-11-24T22:22Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-24T19:18Z",
-      "result": "",
+      "result": "Chief review SATISFIED at 2026-11-24T20:20:49Z: process-validated concurrent slot 0 Codex/J3612 PID 36763 and slot 1 Gemini/J3602 PID 36768, installed version 253c7fe66b787b2f. Spawn log 20:17:51Z. J3607 reopened with evidence; J3615 queued for safe mid-chain worker recovery, due 25 Nov 12:00 London. Report 7143439135. No external wait, settings change, spend or YouTube change.",
       "history": [
         {
           "at": "2026-11-24T19:18Z",
@@ -327515,6 +327515,11 @@
           "at": "2026-11-24T20:22Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T20:22Z",
+          "by": "codex",
+          "what": "done: Chief review SATISFIED at 2026-11-24T20:20:49Z: process-validated concurrent slot 0 Codex/J3612 PID 36763 and slot 1 Gemini/J3602 PID 36768, installed version 253c7fe66b787b2f. Spawn log 20:17:51Z. J3607 reopened with evidence; J3615 queued for safe mid-chain worker recovery, due 25 Nov 12:00 London. Report 7143439135. No external wait, settings change, spend or YouTube change."
         }
       ],
       "remaining_action": "Parked for Chief (Codex) to record jobs.py wait J3607 --recheck J3612 (next check 2026-11-24T20:30:00Z) and close J3612",
