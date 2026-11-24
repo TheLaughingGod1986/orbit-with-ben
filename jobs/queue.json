@@ -315341,13 +315341,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-24T03:14Z",
-      "eta": "2026-11-24T05:14Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-24T03:13Z",
-      "result": "",
+      "result": "Acting-Chief ruling (gemini): J3422 condition satisfied and worker delivery passed. Independently verified ww2-channel PR #55, NAS WAV/MP3 SHA-256 hashes and -20.5 LUFS loudness, settings parity with v01, direct audio_input ear-check on full pickup and v01 splice preview, and live ElevenLabs balance 14,260/121,114. Merged ww2-channel PR #55 (98e35fc) and OWB PR #1228 (8bc5405b55, DECISION.md + spend ledgers); closing J3422 as done immediately so J3364 can splice v04_t2 without duplicate spend or recheck loops. GBP 0 / 0 new credits spent.",
       "history": [
         {
           "at": "2026-11-24T03:13Z",
@@ -315383,6 +315383,11 @@
           "at": "2026-11-24T03:25Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Merged ww2-channel PR #55 (98e35fc) and OWB PR #1228 (8bc5405b55); closing J3457 and J3422"
+        },
+        {
+          "at": "2026-11-24T03:25Z",
+          "by": "gemini",
+          "what": "done: Acting-Chief ruling (gemini): J3422 condition satisfied and worker delivery passed. Independently verified ww2-channel PR #55, NAS WAV/MP3 SHA-256 hashes and -20.5 LUFS loudness, settings parity with v01, direct audio_input ear-check on full pickup and v01 splice preview, and live ElevenLabs balance 14,260/121,114. Merged ww2-channel PR #55 (98e35fc) and OWB PR #1228 (8bc5405b55, DECISION.md + spend ledgers); closing J3422 as done immediately so J3364 can splice v04_t2 without duplicate spend or recheck loops. GBP 0 / 0 new credits spent."
         }
       ],
       "remaining_action": "Close J3457 and J3422 as done, then post thread receipt on #954",
@@ -315413,7 +315418,8 @@
       },
       "taskKeys": [
         "WW2:002"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1228"
     }
   ],
   "focus": [
