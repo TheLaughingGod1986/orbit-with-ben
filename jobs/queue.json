@@ -316341,9 +316341,14 @@
           "at": "2026-11-24T09:01Z",
           "by": "codex",
           "what": "step 2 of 4 done: Processing succeeded. Saved pilot 1 plus Subscribe end screen for 22:07–22:27. B/C/D test survives reload; old v05 schedule removed."
+        },
+        {
+          "at": "2026-11-24T09:03Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Final API and Studio readbacks pass: processed/scheduled today 17:00Z; captions serving; playlist second; B/C/D saved; end screen survives reload; old v05 Private without publishAt."
         }
       ],
-      "remaining_action": "Verify end screen, schedule, captions and archived v05 state",
+      "remaining_action": "Commit and merge the verified upload records and report completion",
       "due": "2026-11-24T15:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -316357,9 +316362,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-24T09:01Z",
+        "at": "2026-11-24T09:03Z",
         "by": "codex",
         "plan": [
           "Verify approved master and package",
@@ -316367,7 +316372,7 @@
           "Retire old schedule and verify",
           "Commit records and report"
         ],
-        "note": "Processing succeeded. Saved pilot 1 plus Subscribe end screen for 22:07–22:27. B/C/D test survives reload; old v05 sched"
+        "note": "Final API and Studio readbacks pass: processed/scheduled today 17:00Z; captions serving; playlist second; B/C/D saved; e"
       },
       "taskKeys": [
         "WW2:002"
