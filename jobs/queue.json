@@ -330515,9 +330515,14 @@
           "at": "2026-11-24T23:38Z",
           "by": "gemini",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-24T23:41Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Master & phone SHA-256 match NAS (876736a1.../7e105c11...); full ffmpeg decode 0 errors; -16.3 LUFS, 4.4 LU LRA, -1.8 dBFS TP; 0 black>=0.5s, 0 silence>=2.5s"
         }
       ],
-      "remaining_action": "Locating WW2:003 v01 master, J3205 worktree, and J3599 QA baseline",
+      "remaining_action": "Checking captions, archive provenance, all 27 rendered graphics, and A/V sync",
       "due": "2026-11-25T08:00:00Z",
       "kind": "qa",
       "mini_only": true,
@@ -330531,9 +330536,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-24T23:38Z",
+        "at": "2026-11-24T23:41Z",
         "by": "gemini",
         "plan": [
           "Locate master & verify hash/decode/loudness",
@@ -330541,7 +330546,8 @@
           "Inspect first 2m frame sheet & 168px covers",
           "Run watch_upload & set watch card (or FIX list)",
           "Commit QA record locally & post report"
-        ]
+        ],
+        "note": "Master & phone SHA-256 match NAS (876736a1.../7e105c11...); full ffmpeg decode 0 errors; -16.3 LUFS, 4.4 LU LRA, -1.8 dB"
       },
       "taskKeys": [
         "WW2:003"
