@@ -321671,9 +321671,14 @@
           "at": "2026-11-24T13:13Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-24T13:15Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Read J3510/J3505/J2551/J2906/J3509 history: J3510 upload+swap already completed by gemini (emKN9xjDswI replacing k2kEaA7ICjc, PR #1258 OPEN); J3535 was auto-queued by relay on J3505 predecessor"
         }
       ],
-      "remaining_action": "Inspect J3510 full history, predecessor completion, and exact hold condition",
+      "remaining_action": "Independently verify PR #1258 records, NAS v06 hash, and live YouTube state for k2kEaA7ICjc, emKN9xjDswI, and vP1BbqZ_dnM",
       "kind": "review",
       "recheck_of": "J3510",
       "mini_only": true,
@@ -321688,16 +321693,17 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-24T13:13Z",
+        "at": "2026-11-24T13:15Z",
         "by": "gemini",
         "plan": [
           "Read J3510 and predecessor history",
           "Verify gates, hash, and approvals",
           "Check live YouTube/Studio state",
           "Reopen or update wait on J3510 and finish J3535"
-        ]
+        ],
+        "note": "Read J3510/J3505/J2551/J2906/J3509 history: J3510 upload+swap already completed by gemini (emKN9xjDswI replacing k2kEaA7"
       },
       "taskKeys": [
         "OWB:029"
