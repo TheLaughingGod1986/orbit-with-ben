@@ -320376,9 +320376,14 @@
           "at": "2026-11-24T20:57Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Read J3264 topic files, J3513 template, and J3547 review lessons; verifying primary NASA/Smithsonian/NPS/LOC quotes"
+        },
+        {
+          "at": "2026-11-24T21:03Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Verified primary institutional sources (Smithsonian NASM, NASA GRC, NPS) and 0 collisions on verbatim plan title"
         }
       ],
-      "remaining_action": "Verifying primary sources and scoring titles + thumbnail concepts",
+      "remaining_action": "Writing package-first scoring, LAUNCH_PLAN, and updated PRE_BUILD_VIDIQ_AUDIT",
       "due": "2026-12-02T18:00:00Z",
       "kind": "script",
       "plain": "Choose package-first title/thumbnail ideas and draft the 7-9 minute script for HOS 127 (Wright Brothers)",
@@ -320391,9 +320396,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-24T20:57Z",
+        "at": "2026-11-24T21:03Z",
         "by": "gemini",
         "plan": [
           "Inspect J3264 branch and sibling drafts",
@@ -320402,7 +320407,7 @@
           "Run review:script, gate:episode, and CI checks",
           "Commit, open PR, queue review/facts, and report"
         ],
-        "note": "Read J3264 topic files, J3513 template, and J3547 review lessons; verifying primary NASA/Smithsonian/NPS/LOC quotes"
+        "note": "Verified primary institutional sources (Smithsonian NASM, NASA GRC, NPS) and 0 collisions on verbatim plan title"
       },
       "taskKeys": [
         "HOS:127"
