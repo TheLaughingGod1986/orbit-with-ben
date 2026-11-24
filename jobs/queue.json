@@ -1,5 +1,5 @@
 {
-  "next_id": 3491,
+  "next_id": 3492,
   "jobs": [
     {
       "id": "J0001",
@@ -317923,6 +317923,36 @@
       "remaining_action": "Build the monthly channel scorecard on the board and set up the 4 Jan review",
       "due": "2026-12-18T18:00:00Z",
       "kind": "assembly"
+    },
+    {
+      "id": "J3491",
+      "title": "WW2 film 009: Gemini claims check on SCRIPT.md and SOURCES.md (PR #68)",
+      "needs": "gemini",
+      "repo": "ww2",
+      "body": "Independent Gemini claims check (`facts` lane) for Field Order History film `WW2:009` (*Operation Pedestal: One Broken Tanker Saved Malta*), drafted in `ww2-channel` PR #68 (`macbook/J3474`, commit `ebb9600`).\n\n**Check:**\n1. Audit all 37 claim rows (`C01`–`C37`) in `02_Video-Projects/009_Operation-Pedestal-Tanker-SS-Ohio-Saved-Malta/01_Script/SCRIPT.md` and `01_Script/SOURCES.md` against official/primary sources (Syfret *London Gazette* 38377, Roskill Vol. II, Playfair Vol. III, Admiralty *Battle Summary No. 32* / `TNA ADM 237/270`, Mason GC *London Gazette* 35695, Woodman, IWM A/GM captions, Mars).\n2. Specifically verify the 4 flagged items (`F1`–`F4`) in `SOURCES.md`:\n   - `F1` (`C02`): exact *Axum* torpedo hole dimensions in *SS Ohio*'s port midships pump room (~24 ft × 27 ft).\n   - `F2` (`C11`): *SS Ohio*'s exact tank count (`21` cargo tanks from two continuous longitudinal bulkheads) and all-welded steel framing description.\n   - `F3` (`C13`): Admiralty `TNA ADM 237/270` cargo split (fuel oil, diesel oil, kerosene on *Ohio*; ~10,000 tons discharged; drummed/cased avgas on dry-cargo ships including *MV Waimarama*).\n   - `F4` (`C35`): Operation Pedestal total Allied fatalities (~350–400 across RN and Merchant Navy) and our hedged phrasing.\n3. Confirm `01_Script/NARRATION_v01.txt` stays `<= 21,000` spoken characters (currently `16,406` chars, `2,716` words, SHA-256 `2de059ed72849c3b45735adcdfd4b277d90e9328e4773351c7792cfdb41feeb4`).\n4. Write `01_Script/CLAIMS_CHECK.md` (PASS or exact fixes needed), update `status.json`, and open a `ww2-channel` PR.\n\n**Guards:** £0. No ElevenLabs spend before `2026-11-30 10:50Z`.\n",
+      "ref": "ww2-channel#68",
+      "film": "WW2:009",
+      "stage": "sources",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-24T10:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T10:00Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "WW2 film 009: Gemini claims check on SCRIPT.md and SOURCES.md (PR #68)",
+      "due": "2026-11-30T12:00:00Z",
+      "kind": "facts",
+      "plain": "Check every fact and figure in the Operation Pedestal script against official naval records"
     }
   ],
   "focus": [

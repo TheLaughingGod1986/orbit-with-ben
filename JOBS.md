@@ -93,6 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3488 | mini | claimed | codex | 2026-11-24T10:15Z | studio · Board: deploy the Schedule tab's plan overview (PR #1234) to the studio-kanban site and verify |  |
 | J3489 | mini | open | – | – | review · AI spend: Google AI Ultra review before the 12 Dec renewal (Flow and Gemini use against cheaper tiers), for Ben |  |
 | J3490 | any | open | – | – | assembly · Board: monthly channel scorecard (subscribers, watch hours, Shorts, return per film) and the 4 Jan review rule |  |
+| J3491 | gemini | open | – | – | WW2:009 sources · facts · WW2 film 009: Gemini claims check on SCRIPT.md and SOURCES.md (PR #68) | ww2-channel#68 |
 
 Recently finished:
 
