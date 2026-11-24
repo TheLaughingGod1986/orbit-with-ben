@@ -320686,9 +320686,14 @@
           "at": "2026-11-24T12:09Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T12:10Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Wait for the local Lifetime verification, then resolve export approval before publication",
+      "remaining_action": "Inspect J3463, J3465, approval history, and local evidence",
       "kind": "review",
       "recheck_of": "J3463",
       "due": "2026-11-24T06:40:43+00:00",
@@ -320704,10 +320709,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-24T12:09Z",
+        "at": "2026-11-24T12:10Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect J3463/J3465 records and approvals",
+          "Verify local J3465 evidence and commit",
+          "Update J3463 wait state and report"
+        ]
       }
     }
   ],
