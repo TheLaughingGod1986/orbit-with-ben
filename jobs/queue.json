@@ -290105,9 +290105,14 @@
           "at": "2026-11-24T22:13Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Built 3 Rule-2 launch thumbnails (A/B/C + 168px phone sheet) and complete 11_Upload-Package v01 (401 UK SRT cues, 7 exact chapters, 40 archive credits, metadata); full 46,513-frame 1080p30 render running now"
+        },
+        {
+          "at": "2026-11-24T22:20Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Assembled full 1080p30 master (25:50.42, -16.3 LUFS, -1.8 dBFS TP, 0 decode/black/silence errors, 61.38% cleared US Fed PD archive, 0 <60s repeats), 720p phone proxy, 3 Rule-2 launch covers + 168px phone sheet, and complete 11_Upload-Package v01; staged on NAS & iCloud WW2 UAT; committed 4d8422d on codex/J3205-mini"
         }
       ],
-      "remaining_action": "Finish 1080p30 master assembly, phone proxy, NAS verify, measurable QA and Ben-watch staging",
+      "remaining_action": "Chief QA review, board watch upload (watch_upload.mjs + awaits), and Claude Code PR publish for codex/J3205-mini",
       "due": "2026-11-26T20:00:00Z",
       "kind": "assembly",
       "plain": "Edit the third WW2 film and put it on Ben's board to watch",
@@ -290126,9 +290131,9 @@
       ],
       "mini_only": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-24T22:13Z",
+        "at": "2026-11-24T22:20Z",
         "by": "gemini",
         "plan": [
           "Verify corrected inputs",
@@ -290136,7 +290141,7 @@
           "Assemble film and three covers",
           "Check film and deliver for watch"
         ],
-        "note": "Built 3 Rule-2 launch thumbnails (A/B/C + 168px phone sheet) and complete 11_Upload-Package v01 (401 UK SRT cues, 7 exac"
+        "note": "Assembled full 1080p30 master (25:50.42, -16.3 LUFS, -1.8 dBFS TP, 0 decode/black/silence errors, 61.38% cleared US Fed "
       }
     },
     {
