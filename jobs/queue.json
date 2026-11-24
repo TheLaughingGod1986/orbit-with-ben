@@ -317253,6 +317253,11 @@
           "at": "2026-11-24T12:52Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: Read-only verification complete in OWB PR #1256 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1256, 019d43803, jobs/reviews/J3470/REVIEW.md). Export-authorization condition MET & superseded by Ben 24 Nov rule (PR #1250, 8de8a1c2e) and urgent Mini Claude Code publish job J3530 (f2292898b, open, due 2026-11-25T12:00:00Z). Recommend DO NOT reopen J3114 to codex; update J3114 via wait --recheck J3470 (--check-at 2026-11-24T18:30:00Z) to track J3530 publishing a12100797f (reconciling THUMB_LEDGER.json T041->T044 without rebuild) and close J3470 (or close J3470 directly if J3530 finishes first). Verified 12/12 NAS package and 4/4 NAS video hashes, 143 #954 comments through #7131814506, #219 approvals, and J3115/J3119/Shorts holds. £0 spent; zero YouTube/NAS writes."
+        },
+        {
+          "at": "2026-11-24T16:56Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 4 h"
         }
       ],
       "remaining_action": "Elected Chief to review/merge OWB PR #1256, update J3114 hold via wait --recheck J3470 to track J3530 (do not reopen to codex), and close J3470",
@@ -317280,7 +317285,8 @@
           "Complete J3470 & post thread report"
         ],
         "note": "Opened PR #1256 (macbook/J3470, 019d43803) and returned checkout to main"
-      }
+      },
+      "escalated_at": "2026-11-24T16:56Z"
     },
     {
       "id": "J3471",
@@ -320605,6 +320611,11 @@
           "at": "2026-11-24T13:05Z",
           "by": "relay",
           "what": "condition verification queued: J3535"
+        },
+        {
+          "at": "2026-11-24T16:56Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 3 h"
         }
       ],
       "remaining_action": "Chief review and merge of verified records PR #1258, then close J3510",
@@ -320649,7 +320660,8 @@
         "condition": "Required predecessor is complete; verify remaining gates and approvals",
         "check_at": "2026-11-24T14:05:57+00:00",
         "recheck_task": "J3535"
-      }
+      },
+      "escalated_at": "2026-11-24T16:56Z"
     },
     {
       "id": "J3511",
@@ -322079,6 +322091,11 @@
           "at": "2026-11-24T12:42Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: Read-only verification complete in OWB PR #1255 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1255, 346f7c258, jobs/reviews/J3529/REVIEW.md). Recommended CONDITION NOT MET — keep J3492 blocked: J3491 (needs: gemini, kind: facts, due 2026-11-30T12:00:00Z) is still open/unclaimed; ww2-channel PR #68 and PR #70 remain OPEN with no 01_Script/CLAIMS_CHECK.md or v02 fixes on main, remote branches/PRs, or NAS. Original gates valid (lock <=2026-11-30T18:00:00Z, air Sat 12 Dec 17:00 London, no ElevenLabs spend before 2026-11-30 10:50Z). jobs.py wait J3492 --recheck J3529 requires the elected Chief (codex now / claude after 12:50Z); recommend --check-at 2026-11-24T18:30:00Z (--type input). £0 spent; zero YouTube/NAS/ww2 writes."
+        },
+        {
+          "at": "2026-11-24T16:56Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 4 h"
         }
       ],
       "remaining_action": "Elected Chief to review/merge OWB PR #1255, record J3492 wait --recheck J3529 (--check-at 2026-11-24T18:30:00Z), and close J3529",
@@ -322104,7 +322121,8 @@
           "Record wait or reopen J3492 with evidence",
           "Close J3529 and post studio thread report"
         ]
-      }
+      },
+      "escalated_at": "2026-11-24T16:56Z"
     },
     {
       "id": "J3530",
@@ -322445,6 +322463,11 @@
           "at": "2026-11-24T15:17Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-25T10:00:00Z"
+        },
+        {
+          "at": "2026-11-24T16:56Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 3 h"
         }
       ],
       "remaining_action": "publish via Claude Code: /Volumes/MiniWork/scratch/J3535-chief codex/j3535-chief",
@@ -322481,7 +322504,8 @@
         "type": "input",
         "condition": "Claude Code must review local closure commit 638389bacc for private material and publish codex/j3535-chief after its usage reset; Codex push was rejected by automatic approval review.",
         "check_at": "2026-11-25T10:00:00Z"
-      }
+      },
+      "escalated_at": "2026-11-24T16:56Z"
     },
     {
       "id": "J3536",
