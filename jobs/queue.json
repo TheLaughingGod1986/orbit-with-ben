@@ -1,5 +1,5 @@
 {
-  "next_id": 3547,
+  "next_id": 3548,
   "jobs": [
     {
       "id": "J0001",
@@ -322617,6 +322617,36 @@
       "remaining_action": "Update the existing script hold with the independent review and new dependencies",
       "kind": "chief",
       "plain": "Keep recording paused until the planet corrections are checked"
+    },
+    {
+      "id": "J3547",
+      "title": "HOS 128 Edison vs Tesla (Thu 10 Dec): review and lock script v01, package-first scoring, sources & Shorts (PR #751)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Review and lock the `HOS:128` (Edison vs Tesla, Cluster 1 lead film 1, target Thu 10 Dec 18:00 London) package-first scoring, 7–9 min script draft v01, sources, and two 16–19 s Shorts delivered by `J3496` in HOS PR #751 (`gemini/J3496-hos128-script`, commit `7702cc76`, built cleanly on open Rule-E GO PR #725 / `a54f0d73`).\n\n**Files in HOS PR #751 (`02_Video-Projects/128_Edison-Tesla-Westinghouse-Why-Do-We-Use-AC-Instead-Of-DC/`):**\n- `11_Upload-Package/PACKAGE_FIRST_SCORING_v01.md`: 3 titles & 2 painted 3D thumbnails scored vs Cluster 1 outliers (`Business History Podcast` 92.9K, `Real-World Learning` 13.2K, `RELIQUARY ARCHIVES` 2.1K). Primary Arm A pick: *Why Do We Use AC Instead of DC? (Edison vs Tesla)* (49 chars, 95/100); T&C Arm B (plan title): *Thomas Edison vs Nikola Tesla: How AC Won the War of Currents* (61 chars, 93/100); T&C Arm C: *Thomas Edison vs Nikola Tesla: Why AC Won the War of Currents* (61 chars, 91/100). Thumb A (`1 MILE LIMIT`, 94/100) & Thumb B (`22 MILES AWAY`, 91/100 — corrected from unverified 26 mi to primary-verified 22 mi).\n- `01_Script/edison_tesla_ac_dc_script_master_v01.md`: 1,292 spoken words (8.6 min est.), `review:script` **PASS 92/100** (8/8 structure gates), `gate:episode` **PASS** (9/9 checks OK), answers search question inside 0:30, 20 `[VISUAL MUST]` 3D cartoon scene notes, 7 `DATA:` + 7 `SCALE:` (incl. 1882–1896 animated timeline), 6 `WHO:` cards (year-accurate roles), 13 `WHEN:` stamps, 4 `FACT:` beats, 2 `[EXPLORER ACTS]` beats (Parts 02 & 05, outside first minute), 5 chapter cards (6 parts), 6 `[TEACH]` blocks, zero Topsy-the-elephant myth.\n- `01_Script/FACT_NOTES_v01.md` (`21 OK · 0 PARTIAL · 0 FLAG`) & `01_Script/SOURCES.md`: open URLs + verbatim quotes resolving every J3346 guardrail.\n- `10_Shorts/SHORTS_SCRIPTS_v01.md`: two 16–19 s search-titled Shorts (`S01` Fri 11 Dec 11:30, 45w; `S02` Sat 12 Dec 11:30, 46w) built to Ben's 19 Nov house rules + `11_Upload-Package/LAUNCH_PLAN.md`.\n\n**Review & lock checklist (due Tue 1 Dec 18:00 London so VO + picture can start for Thu 10 Dec 18:00):**\n1. Confirm Primary Title Arm A (or swap Arm A ↔ Arm B before lock if Chief prefers leading with the named-rivalry query) and Thumb A/B concepts.\n2. Review `edison_tesla_ac_dc_script_master_v01.md`, `FACT_NOTES_v01.md`, `SOURCES.md`, and `SHORTS_SCRIPTS_v01.md` against HOS Teach-on-Screen, Polish-Pass, Craft, and Ben 19 Nov Shorts house rules.\n3. If PASS: Chief merges PR #751 (which already includes PR #725 / `a54f0d73`), locks script & facts, and queues HOS:128 long + Shorts VO jobs. No VO or picture spend until Chief PASS.\n",
+      "ref": "",
+      "film": "HOS:128",
+      "stage": "script",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-24T14:57Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T14:57Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review HOS PR #751 and pass to Chief for script lock, PR merge, and VO queue",
+      "due": "2026-12-01T18:00:00Z",
+      "kind": "review",
+      "plain": "Review and lock HOS 128 Edison vs Tesla v01 script, package-first scoring, sources, and 16-19s Shorts (PR #751)"
     }
   ],
   "focus": [

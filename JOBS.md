@@ -99,6 +99,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3544 | any | open | – | – | 064 script · script · OWB 064: Correct v03 source and teaching issues as v04 | J3539 |
 | J3545 | any | open (after J3544) | – | – | 064 script · review · OWB 064: Independently verify corrected v04 before script lock | J3539 |
 | J3546 | any | open | – | – | 064 script · chief · OWB 064: Record J3539 FIX in the Chief-owned script hold | J3539 |
+| J3547 | mini | open | – | – | HOS:128 script · review · HOS 128 Edison vs Tesla (Thu 10 Dec): review and lock script v01, package-first scoring, sources & Shorts (PR #751) |  |
 
 Recently finished:
 
