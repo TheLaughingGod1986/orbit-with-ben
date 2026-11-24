@@ -329289,9 +329289,14 @@
           "at": "2026-11-24T22:00Z",
           "by": "macbook-2",
           "what": "step 1 of 4 done: Checked J3434, J3433 (done), PR #107 (open/clean), and J3560/J3624 precedent"
+        },
+        {
+          "at": "2026-11-24T22:03Z",
+          "by": "macbook-2",
+          "what": "step 2 of 4 done: Verified NAS hashes (master/score/3 thumbs/sheets), ffprobe, SRT, PR #107 diff, and J3434/J3631 gates"
         }
       ],
-      "remaining_action": "Verify NAS master, PR #107 deliverables, QA gates, and Chief review requirements",
+      "remaining_action": "Write jobs/reviews/J3631/REVIEW.md, open OWB PR on macbook/J3631, and park for Chief",
       "kind": "review",
       "recheck_of": "J3434",
       "due": "2026-11-24T22:35:39+00:00",
@@ -329305,9 +329310,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-24T22:00Z",
+        "at": "2026-11-24T22:03Z",
         "by": "macbook-2",
         "plan": [
           "Inspect J3434, predecessor, PR #107, and thread",
@@ -329315,7 +329320,7 @@
           "Update J3434 hold and finish J3631",
           "Post report on studio thread"
         ],
-        "note": "Checked J3434, J3433 (done), PR #107 (open/clean), and J3560/J3624 precedent"
+        "note": "Verified NAS hashes (master/score/3 thumbs/sheets), ffprobe, SRT, PR #107 diff, and J3434/J3631 gates"
       }
     }
   ],
