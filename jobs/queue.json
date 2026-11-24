@@ -323406,10 +323406,10 @@
       "stage": "script",
       "after": "J3554",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "macbook-2",
-      "since": "2026-11-24T16:06Z",
-      "eta": "2026-11-24T18:06Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-24T15:52Z",
       "result": "",
@@ -323428,6 +323428,11 @@
           "at": "2026-11-24T16:06Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T16:06Z",
+          "by": "macbook-2",
+          "what": "released: MacBook worker run on claude ended (exit 1) with the job still open; picked up again next run; claude paused on the MacBook until 2026-11-24T18:06:20Z, so the next run uses the next agent in the chain"
         }
       ],
       "remaining_action": "Run Rule-6 viewer test, Pilot 2 48h/7d check, fold J3554 fixes, Rule-E lock WW2:014 and queue post-reset VO",
