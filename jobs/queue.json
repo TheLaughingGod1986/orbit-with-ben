@@ -324093,18 +324093,28 @@
           "at": "2026-11-24T16:37Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T16:38Z",
+          "by": "macbook-2",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Pick and schedule each film's Shorts and queue the builds for films 002 and 003",
+      "remaining_action": "Inspect films 002-010 scripts, picture plans, VO timings and channel schedules",
       "due": "2026-11-27T18:00:00Z",
       "kind": "review",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-24T16:37Z",
+        "of": 5,
+        "at": "2026-11-24T16:38Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read films 002-010 scripts, picture plans and schedules",
+          "Pick Shorts with timecodes, pictures and titles",
+          "Write SHORTS_PLAN_2026-12.md and update status files",
+          "Queue Short build jobs",
+          "Verify, open PR and report"
+        ]
       }
     }
   ],
