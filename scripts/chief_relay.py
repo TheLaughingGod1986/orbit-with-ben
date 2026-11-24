@@ -1517,13 +1517,14 @@ def busy_slots(at: dt.datetime, n: int) -> set:
     return busy
 
 
-def spawn_second_slot(at: dt.datetime) -> bool:
+def spawn_second_slot(at: dt.datetime, parent_slot: int | None = None) -> bool:
     """Start one detached `run` for another free slot (24 Nov 2026, J3521).
 
     launchd never starts the relay again while a run is working, so slot 1 never opened and the Mini worked one job
     at a time with 50 waiting. A launchd run now starts one more run in its own session (so launchd's clean-up of
     this run cannot stop it), which waits CHIEF_SPAWN_DELAY seconds for this run's lease and then takes the next free
-    slot under the usual memory guard. A spawned run never spawns again. CHIEF_SPAWN_SLOTS=0 turns this off."""
+    slot under the usual memory guard. Job boundaries retry if that child has exited.
+    A spawned run never spawns again. CHIEF_SPAWN_SLOTS=0 turns this off."""
     if os.environ.get("CHIEF_SPAWN_SLOTS", "1") == "0" or os.environ.get("CHIEF_SPAWNED") == "1":
         return False
     if (STATE / "chief-relay.pause").exists():
@@ -1533,14 +1534,29 @@ def spawn_second_slot(at: dt.datetime) -> bool:
         return False
     try:
         d().mkdir(parents=True, exist_ok=True)
-        if len(busy_slots(at, n)) >= n - 1:
+        busy = busy_slots(at, n)
+        # Startup still needs a slot for this parent. At a job boundary its
+        # held run lock already counts it, even between execution leases.
+        if parent_slot is not None:
+            busy.add(parent_slot)
+            if not (set(workers_up(at)) - other_slot_workers(at, -1)):
+                return False
+        if len(busy) >= n - (parent_slot is None):
             return False
         if not memory_for_new_slot():
             return False
-        subprocess.Popen([sys.executable, str(pathlib.Path(__file__).resolve()), "run"],
-                         env={**os.environ, "CHIEF_SPAWNED": "1"}, cwd=str(pathlib.Path(__file__).resolve().parent),
-                         stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
-                         start_new_session=True)
+        # The child inherits this reservation through its delay and lifetime.
+        # Closing the parent's copy (without LOCK_UN) leaves the child's flock
+        # held, preventing duplicate pending runners at fast job boundaries.
+        with open(d("spawn.lock"), "a+") as reservation:
+            try:
+                fcntl.flock(reservation, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            except OSError:
+                return False
+            subprocess.Popen([sys.executable, str(pathlib.Path(__file__).resolve()), "run"],
+                             env={**os.environ, "CHIEF_SPAWNED": "1"}, cwd=str(pathlib.Path(__file__).resolve().parent),
+                             stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                             pass_fds=(reservation.fileno(),), start_new_session=True)
         log("spawned a second run for another free slot")
         return True
     except (OSError, ValueError) as e:
@@ -2505,6 +2521,10 @@ def run_locked(at: dt.datetime, slot: int = 0) -> int:
         finally:
             _select_unlock(held)
         write_slot_json(slot, "runner", {"pid":os.getpid(),"version":LOADED_VERSION,"desiredVersion":code_version(),"at":iso(started),"state":"working","job":execution["job"],"slot":slot})
+        # Publish our selected worker first, so the child cannot choose it.
+        # This safe boundary is also reached when an unavailable worker returns
+        # during a long parent chain. Active workers are never interrupted.
+        spawn_second_slot(now(), parent_slot=slot)
         try:
             code, tail = run_cli(who, prompt, cap, model)
         finally:

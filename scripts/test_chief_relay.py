@@ -51,7 +51,7 @@ class Relay(unittest.TestCase):
         self.env = dict(os.environ)
         os.environ.update({"CHIEF_CLAUDE_BEAT_URL": "", "CHIEF_CLAUDE_BEAT_FETCH_MIN": "999999", "CHIEF_NOTIFY": str(notify), "CHIEF_HOURS": "0-24", "CHIEF_SWEEP_HOURS": "0-24", "CHIEF_CHAIN": "chief,cursor,codex",
                            "CHIEF_HEARTBEAT": "0", "CHIEF_MIN_FREE_MB": "0",
-                           "CHIEF_OFFLOAD_GB": "0"})  # no live heartbeat or scratch offload from unit tests
+                           "CHIEF_OFFLOAD_GB": "0", "CHIEF_SPAWN_SLOTS": "0"})  # no live heartbeat or scratch offload from unit tests
         self.cursor = self.fake("cursor", 'echo "cursor did J0001"')
         self.codex = self.fake("codex", 'echo "codex did J0001"')
         os.environ["CURSOR_AGENT_BIN"], os.environ["CODEX_BIN"] = str(self.cursor), str(self.codex)
@@ -1345,6 +1345,85 @@ class Relay(unittest.TestCase):
             os.environ["CHIEF_SPAWN_SLOTS"] = "1"
             self.assertFalse(cr.spawn_second_slot(T0))
         popen.assert_not_called()
+
+    def test_boundary_retries_when_a_second_worker_returns(self):
+        os.environ.update({"CHIEF_PARALLEL": "2", "CHIEF_FREE_MEM_BYTES": str(8 << 30), "CHIEF_SPAWN_SLOTS": "1"})
+        os.environ.pop("CHIEF_SPAWNED", None)
+        self._live_lease(0, "codex")
+        with mock.patch.object(cr, "workers_up", return_value={"codex"}) as available, \
+                mock.patch.object(cr.subprocess, "Popen") as popen:
+            self.assertFalse(cr.spawn_second_slot(T0, parent_slot=0))
+            popen.assert_not_called()
+            available.return_value = {"codex", "gemini"}
+            self.assertTrue(cr.spawn_second_slot(T0, parent_slot=0))
+            self.assertEqual(popen.call_count, 1)
+            # A running parent counts once; startup still reserves its own slot.
+            self.assertFalse(cr.spawn_second_slot(T0))
+
+    def test_boundary_retains_slot_memory_pause_and_recursion_guards(self):
+        os.environ.update({"CHIEF_PARALLEL": "2", "CHIEF_FREE_MEM_BYTES": str(8 << 30), "CHIEF_SPAWN_SLOTS": "1"})
+        os.environ.pop("CHIEF_SPAWNED", None)
+        self._live_lease(0, "codex")
+        with mock.patch.object(cr, "workers_up", return_value={"codex", "gemini", "cursor"}), \
+                mock.patch.object(cr.subprocess, "Popen") as popen:
+            self._live_lease(1, "gemini")
+            self.assertFalse(cr.spawn_second_slot(T0, parent_slot=0))
+            cr.d("execution-1.json").unlink()
+            os.environ["CHIEF_FREE_MEM_BYTES"] = str(1 << 30)
+            os.environ["CHIEF_SLOT_MIN_GB"] = "3"
+            self.assertFalse(cr.spawn_second_slot(T0, parent_slot=0))
+            os.environ["CHIEF_FREE_MEM_BYTES"] = str(8 << 30)
+            pause = cr.STATE / "chief-relay.pause"
+            pause.touch()
+            self.assertFalse(cr.spawn_second_slot(T0, parent_slot=0))
+            pause.unlink()
+            os.environ["CHIEF_SPAWNED"] = "1"
+            self.assertFalse(cr.spawn_second_slot(T0, parent_slot=0))
+            os.environ.pop("CHIEF_SPAWNED")
+            # A held run lock also blocks spawning, without an execution lease.
+            with open(cr.d("run-1.lock"), "a+") as held:
+                cr.fcntl.flock(held, cr.fcntl.LOCK_EX | cr.fcntl.LOCK_NB)
+                self.assertFalse(cr.spawn_second_slot(T0, parent_slot=0))
+            popen.assert_not_called()
+
+    def test_pending_child_reserves_spawn_until_it_exits(self):
+        os.environ.update({"CHIEF_PARALLEL": "2", "CHIEF_FREE_MEM_BYTES": str(8 << 30), "CHIEF_SPAWN_SLOTS": "1"})
+        os.environ.pop("CHIEF_SPAWNED", None)
+        real_popen = cr.subprocess.Popen
+        children = []
+        def delayed_child(args, **kw):
+            # Exercise real descriptor inheritance and flock lifetime, without
+            # starting a relay or touching the live queue.
+            child = real_popen([sys.executable, "-c", "import time; time.sleep(30)"], **kw)
+            children.append(child)
+            return child
+        try:
+            with mock.patch.object(cr.subprocess, "Popen", side_effect=delayed_child) as popen:
+                self.assertTrue(cr.spawn_second_slot(T0))
+                self.assertFalse(cr.spawn_second_slot(T0))
+                self.assertEqual(popen.call_count, 1)
+                children[0].terminate()
+                children[0].wait(timeout=5)
+                self.assertTrue(cr.spawn_second_slot(T0))
+        finally:
+            for child in children:
+                if child.poll() is None:
+                    child.terminate()
+                child.wait(timeout=5)
+
+    def test_each_job_boundary_rechecks_after_publishing_its_worker(self):
+        ran = self._chain(["J0001", "J0002", "J0003"])
+        cr.seen("chief", T0 - 10 * MIN)
+        leases = []
+        def boundary(at, parent_slot=None):
+            leases.append(cr.read_json(cr.d(f"execution-{parent_slot}.json")))
+            return False
+        with mock.patch.object(cr, "spawn_second_slot", side_effect=boundary) as spawn:
+            cr.cmd_run(T0)
+        self.assertEqual(ran, ["J0001", "J0002", "J0003"])
+        self.assertEqual(spawn.call_count, 3)
+        self.assertEqual([row["job"] for row in leases], ran)
+        self.assertTrue(all(row["worker"] for row in leases))
 
     def test_the_first_slot_still_starts_when_memory_is_low(self):
         self.routed_queue('{"jobs": [{"id": "J0505", "kind": "assembly", "status": "open", "needs": "mini", '
