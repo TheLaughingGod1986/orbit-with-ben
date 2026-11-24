@@ -306841,9 +306841,14 @@
           "at": "2026-11-24T03:58Z",
           "by": "gemini",
           "what": "step 0 of 5 done: All 219 conformed parts (33,675 contiguous frames) and mix WAV SHA-256 verified; ffmpeg concat/mux + technical verification running on NAS."
+        },
+        {
+          "at": "2026-11-24T04:04Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Built 002_Atlantic-Black-Pit_v06.mp4 (33,675f, 1347.0s, SHA-256 1d8bc79a9573ef5c, full decode PASS, 0 black, 0 silence, -18.1 LUFS / -1.4 dBFS), conformed score v04, and 232-cut v06_cuts/v06_pool."
         }
       ],
-      "remaining_action": "Concatenating 219 verified conformed parts and muxing v04 audio/score into 002_Atlantic-Black-Pit_v06.mp4",
+      "remaining_action": "Running blocking gates (picture_qa, polish_gate, music_gate) and preparing direct audio/visual QA clips on v06 master",
       "due": "2026-11-27T20:00:00Z",
       "kind": "assembly",
       "plain": "Add the real WW2 archive photos that were planned for the second Field Order History film, then Ben re-watches",
@@ -306860,9 +306865,9 @@
         "WW2:002"
       ],
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-24T03:58Z",
+        "at": "2026-11-24T04:04Z",
         "by": "gemini",
         "plan": [
           "Concat and mux full v06 master",
@@ -306871,7 +306876,7 @@
           "Direct audio and visual/motion QA review",
           "Stage hashed v06 for Ben watch and save records"
         ],
-        "note": "All 219 conformed parts (33,675 contiguous frames) and mix WAV SHA-256 verified; ffmpeg concat/mux + technical verificat"
+        "note": "Built 002_Atlantic-Black-Pit_v06.mp4 (33,675f, 1347.0s, SHA-256 1d8bc79a9573ef5c, full decode PASS, 0 black, 0 silence, "
       }
     },
     {
