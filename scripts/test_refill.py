@@ -225,6 +225,22 @@ class MonthlyReviews(unittest.TestCase):
         self.assertEqual(refill.do_refill(d,[it],at),[])
         self.assertEqual(len(refill.do_refill(d,[it],at+dt.timedelta(minutes=1))),1)
 
+    def test_first_monday_monthly_start_catchup_and_summer(self):
+        d=empty();it={**self.item(),"monthly_weekday":0,"start_month":"2027-01"}
+        del it['monthly_on']
+        for at in [dt.datetime(2026,12,7,9,tzinfo=dt.timezone.utc), dt.datetime(2027,1,1,9,tzinfo=dt.timezone.utc), dt.datetime(2027,1,4,8,59,tzinfo=dt.timezone.utc)]:
+            self.assertEqual(refill.do_refill(d,[it],at),[])
+        at=dt.datetime(2027,1,4,9,tzinfo=dt.timezone.utc)
+        self.assertEqual(len(refill.do_refill(d,[it],at)),1)
+        self.assertEqual(d['jobs'][-1]['report_month'],'2026-12')
+        d['jobs'][-1]['status']='done'
+        self.assertEqual(refill.do_refill(d,[it],at+H),[])
+        self.assertEqual(len(refill.do_refill(d,[it],dt.datetime(2027,2,2,9,tzinfo=dt.timezone.utc))),1)
+        self.assertEqual(d['jobs'][-1]['report_month'],'2027-01')
+        fresh=empty()
+        self.assertEqual(refill.do_refill(fresh,[it],dt.datetime(2027,6,7,7,59,tzinfo=dt.timezone.utc)),[])
+        self.assertEqual(len(refill.do_refill(fresh,[it],dt.datetime(2027,6,7,8,tzinfo=dt.timezone.utc))),1)
+
 
 class FailedTransaction(unittest.TestCase):
     def test_cli_reports_metadata_failure(self):

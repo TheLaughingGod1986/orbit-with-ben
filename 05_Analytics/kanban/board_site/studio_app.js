@@ -1618,6 +1618,32 @@
       ${must.length ? `<h3>What stops the studio running it</h3>${list(must)}` : ""}
       ${todo.length ? `<details class="technical" data-disclosure="channel-${esc(c.slug)}-todo"><summary>Housekeeping left · ${todo.length}</summary><div class="technical-body">${list(todo)}</div></details>` : ""}</article>`;
   }
+  function scorecardSection(b, full = false) {
+    const card = (b || {}).scorecard;
+    if (!card) return "";
+    const fields = [["subscribers", "New subscribers (net)"], ["longHours", "Public-long hours (estimate)"],
+      ["shortViews", "Shorts views"], ["subsPer1000", "Subscribers / 1,000 all views"],
+      ["subsPer1000ShortViews", "Subscribers / 1,000 Shorts views (proxy)"], ["longs", "Longs published"],
+      ["shorts", "Shorts published"], ["films", "All films published"], ["returnPerFilm", "Return per film"],
+      ["medianLong", "Typical long views"], ["medianShort", "Typical Short views"]];
+    const value = m => m && Number.isFinite(m.value) ? m.value.toLocaleString("en-GB", {maximumFractionDigits: 2}) : "U";
+    const figures = r => fields.map(([key, label]) => {
+      const a = (r.current || {})[key], z = (r.previous || {})[key];
+      const why = m => m && (m.reason || m.source) || "Figure unavailable";
+      return `<tr><th scope="row">${esc(label)}</th><td title="${esc(why(a))}">${esc(value(a))}</td><td title="${esc(why(z))}">${esc(value(z))}</td></tr>`;
+    }).join("");
+    const rows = (card.channels || []).map(r => {
+      const tests = (r.tests || []).map(t => `<li>${esc(t.film)} · day ${esc(t.day)} of ${esc(t.days)} · ${t.views == null ? "U: views not linked yet" : esc(t.views) + " views"} · keep ≥${esc(t.keep)}, drop &lt;${esc(t.drop)} · read ends ${esc(londonWhen(t.finishes))}</li>`).join("");
+      const table = `<div style="overflow-x:auto"><table class="scorecard-table"><caption>${esc(card.month)} against ${esc(card.previousMonth)}</caption><thead><tr><th>Measure</th><th>${esc(card.month)}</th><th>${esc(card.previousMonth)}</th></tr></thead><tbody>${figures(r)}</tbody></table></div>`;
+      const reasons = fields.flatMap(([k, label]) => ["current", "previous"].map(period => {
+        const m = (r[period] || {})[k];
+        return m && m.value == null ? `${label} (${(r[period] || {}).month || period}): ${m.reason || "unavailable"}` : "";
+      })).filter(Boolean);
+      const detail = table + (reasons.length ? `<ul class="meta">${reasons.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : "");
+      return `<article class="ov-card"><h3>${esc(r.name)}</h3><p>Return per film: <b>${esc(value((r.current || {}).returnPerFilm))}</b> (previous ${esc(value((r.previous || {}).returnPerFilm))})</p><p>${esc(r.channelVerdict)}</p><p>${esc(r.shortsVerdict)}</p>${tests ? `<ul>${tests}</ul>` : ""}${full ? detail : `<details><summary>Monthly figures and coverage</summary>${detail}</details>`}</article>`;
+    }).join("");
+    return `<section aria-label="Monthly channel scorecard"><div class="ov-section-head"><h2>Monthly channel scorecard</h2>${full ? "" : '<a class="more" href="#channels">Full comparison ›</a>'}</div><p>Next review: ${esc(card.nextReview || "U")} · (${esc(card.month || "U")} against ${esc(card.previousMonth || "U")})</p><p>Return per film = (net new subscribers + estimated public-long hours) / films published.</p><div class="ov-stack">${rows}</div><p class="meta">${esc(card.note || "")}</p></section>`;
+  }
   function channelsPage(b) {
     const list = channelsOf(b), room = (b || {}).channelRoom;
     const left = room && Number.isFinite(room.left) ? room.left : null;
@@ -1626,6 +1652,7 @@
       : "Yes. The studio's own code no longer assumes which channels it runs.";
     return `<header class="top"><a class="more back" href="#overview">‹ Back to Overview</a></header>
       <div class="overview-home"><header class="overview-header"><div><h1>Channels</h1><p>Each channel is its own set of films and rules. The studio does the work for every channel plugged in here.</p></div></header>
+      ${scorecardSection(b, true)}
       <div class="ov-stack">${list.map(c => channelCard(b, c)).join("") || empty("No channel is plugged in.")}
         <article class="ov-card ch-card ch-add"><header class="ch-head"><h2>Add a channel</h2></header>
           <p class="ch-lead">Nothing on this page changes anything. Adding a channel starts with a message to Claude.</p>
@@ -1702,6 +1729,7 @@
       ${needsAttentionBanner(b)}
       ${stuckSection(b, now)}
       ${planSection(b)}
+      ${scorecardSection(b)}
       ${firstDaySection(b,now)}
       ${machinesCard(b,now)}
       ${activityCard(b,now)}
