@@ -131,6 +131,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3602 | mini | open (after J3601) | – | – | review · `gemini-argon` · Retention autopsy (48h): "What If Earth Stopped Spinning? (It's Already Slowing Down)" (6bbbvfCx6zY) |  |
 | J3603 | any | claimed | codex | 2026-11-24T20:40Z | chief · Chief ruling on J3599 FIX review of Mulberry Short v01 and reopen J3542 |  |
 | J3605 | mini | blocked | codex | – | WW2:001 upload · studio · WW2 pilot 1: seven-day outcome after searched-name title change |  |
+| J3606 | mini | open | – | – | for claudecode · assembly · Publish final Mulberry Short records after the corrected cut is verified |  |
 
 Recently finished:
 
