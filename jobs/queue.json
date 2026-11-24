@@ -323077,21 +323077,26 @@
           "at": "2026-11-24T15:48Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T15:48Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Validate resolved branches and draft completion notes",
+      "remaining_action": "Inspect all 19 open ww2 PRs against main",
       "due": "2026-11-27T18:00:00Z",
       "kind": "review",
       "progress": {
-        "step": 2,
+        "step": 0,
         "of": 4,
-        "at": "2026-11-24T15:08Z",
-        "by": "macbook-2",
+        "at": "2026-11-24T15:48Z",
+        "by": "gemini",
         "plan": [
-          "Compare changes",
-          "Reconcile useful branches",
-          "Check and publish review",
-          "Record handoff"
+          "Inspect 19 PRs against main",
+          "Comment on superseded PRs",
+          "Merge main into remaining branches",
+          "Post triage summary and finish"
         ]
       },
       "rerouted_from": {
