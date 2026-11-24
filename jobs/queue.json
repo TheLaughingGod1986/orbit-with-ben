@@ -1,5 +1,5 @@
 {
-  "next_id": 3634,
+  "next_id": 3635,
   "jobs": [
     {
       "id": "J0001",
@@ -329538,6 +329538,36 @@
       "taskKeys": [
         "WW2:003"
       ]
+    },
+    {
+      "id": "J3634",
+      "title": "WW2 009: independent Gemini direct-source recheck of v03",
+      "needs": "gemini",
+      "repo": "ww2",
+      "body": "Independent Gemini facts recheck of WW2:009 narration v03, J3632 commit 6cadca41b0caf399e8cd6aa1ab26455cbfaef3fc on codex/j3632-direct-sources (stacked on PR110 b7b544a). Run via Gemini/agy, not a Codex rewrite of findings. Use a clean worktree at the exact commit.\n\nRead studio/RULES.md, 01_Script/DIRECT_SOURCE_CHECK_v03.md, SOURCES.md, SOURCE_ACCESS_v03.json, VALIDATION_v03.json, SCRIPT.md and NARRATION_v03.txt. Project: 02_Video-Projects/009_Operation-Pedestal-Tanker-SS-Ohio-Saved-Malta. v03 hash e971a7f70c9c9705ec07ca98a39b9d8f40476a5027b069218fcafa278050845b; 14060 stripped characters, 46 spoken blocks.\n\nFetch actual cited HTML/PDFs (direct URL reads or local HTTP downloads and extraction). Search grounding alone is not direct-source evidence. Check all 37 claim rows and full narration, especially remaining C06, C14 escort scope, C16 fatalities, C23 salvo allocation, C30 bow damage, C35 aggregate casualties and C37 strategic effect. Check C20 two hits against the hosted ADM267/84 section IV transcription versus Gazette three-hit summary; if the detailed transcription cannot be supported, FLAG or recommend dropping the integer. Confirm the removed cargo chemistry, dimensions, complement and fixed towing geometry did not survive in narration or visual notes. Independently verify new short quotations, dates and source identities, including source/transcription/secondary distinctions.\n\nLocal direct downloads are available as a convenience at /Volumes/MiniWork/scratch/j3632-evidence but not a replacement for inspecting the source contents. Re-fetch by SOURCE_ACCESS_v03.json when remote; do not paste source-site contact details or full copyrighted documents into git. Record access failures honestly. Never call an earlier PASS or a search summary an exact quote.\n\nWrite CLAIMS_CHECK_v03.md with claim-by-claim evidence and PASS/FLAG/UNVERIFIABLE, URLs, actual section/page and brief exact quotes. Preserve both earlier narrations and both earlier Gemini reports byte-for-byte; do not rewrite spoken lines. Verify 46-block parity, <=21000 chars and narration SHA256. Submit PR/findings and route any FIX to script lane. On clean independent evidence, queue/notify J3492's condition verification; do not release J3492, lock script or authorize VO yourself in this facts job.\n\nNo spend, generation, upload or scheduling. No VO before 2026-11-30 10:50Z AND lock. Lock deadline 30 Nov 18:00Z; Ben watch 9 Dec, planned air 12 Dec 17:00 London unchanged. Corrections remain review, not approved.\n",
+      "ref": "https://github.com/TheLaughingGod1986/ww2-channel/tree/6cadca41b0caf399e8cd6aa1ab26455cbfaef3fc",
+      "film": "009",
+      "stage": "sources",
+      "after": "J3632",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-24T22:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T22:24Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify the revised narration from directly inspected sources before script approval",
+      "due": "2026-11-25T18:00:00Z",
+      "kind": "facts",
+      "plain": "Checking the revised Operation Pedestal narration against the original sources"
     }
   ],
   "focus": [

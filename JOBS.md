@@ -135,6 +135,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3631 | mini | blocked | macbook-2 | – | review · Verify condition for J3434 |  |
 | J3632 | mini | claimed | codex | 2026-11-25T00:14Z | WW2:009 script · script · WW2 009: resolve remaining v02 evidence gaps with direct source checks | https://github.com/TheLaughingGod1986/ww2-channel/pull/110 |
 | J3633 | mini | claimed | gemini | 2026-11-25T00:21Z | review · Verify condition for J3205 |  |
+| J3634 | gemini | open (after J3632) | – | – | 009 sources · facts · WW2 009: independent Gemini direct-source recheck of v03 | https://github.com/TheLaughingGod1986/ww2-channel/tree/6cadca41b0caf399e8cd6aa1ab26455cbfaef3fc |
 
 Recently finished:
 
