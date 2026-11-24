@@ -323340,19 +323340,29 @@
           "at": "2026-11-24T15:56Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T15:57Z",
+          "by": "macbook-2",
+          "what": "step 1 of 5 done"
         }
       ],
-      "remaining_action": "Audit C01-C32 and F01-F05 in WW2:014 SCRIPT.md and SOURCES.md (PR #88)",
+      "remaining_action": "Inspecting WW2:014 PR #88 files and recent claims-check examples",
       "due": "2026-12-10T18:00:00Z",
       "kind": "facts",
       "plain": "Fact-check all 32 claims and 5 source flags in the Dambusters film 014 script",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T15:56Z",
+        "step": 1,
+        "of": 5,
+        "at": "2026-11-24T15:57Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read PR #88 script, sources & provenance",
+          "Audit C01-C32 & resolve F01-F05 via primary sources",
+          "Verify NARRATION_v01.txt char count & SHA-256",
+          "Write CLAIMS_CHECK_v01.md & update status.json",
+          "Push branch, open PR & report on thread"
+        ]
       }
     },
     {
