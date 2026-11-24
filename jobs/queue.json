@@ -318849,13 +318849,13 @@
       "stage": "topic",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-24T10:55Z",
-      "eta": "2026-11-24T12:55Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-24T10:43Z",
-      "result": "",
+      "result": "GO (95.8/100, 9.58/10, 10/10 Rule-E & Rule-42 gates PASS after J3503 fixes). Opened isolated HOS review PR #747 (history-of-science#747, macbook/J3503) and OWB review PR #1243 (orbit-with-ben#1243, macbook/J3503); queued follow-on script job J3513 (draft Mon 30 Nov 18:00 London, lock Tue 8 Dec, Ben watch Mon 21 Dec, target air Thu 24 Dec). Key fixes: retired colliding PR #743 Title A (5 live collisions incl. nLbBtuydgZo 251.7K) for 'Accidental Inventions: 5 Mistakes That Worked' (45c, 0 collisions); fixed Thumb A/B §2.2/§2.5/§2.B copy & composition (NEARLY TRASHED single hero / WRONG RESISTOR); locked Safety Glass 1903 over Microwave (zero overlap with HOS:129 GO); filtered off-topic AI neighbour RzkD_rTEBYs (3 strictly on-topic >=1M in neighbours.json + SciShow 1.48M); verified 5/5 core autocomplete & 0 collisions across 13 public_search queries incl. Shorts S01/S02; logged 6 script guardrails. status_board.py --check & check_all.sh PASS. All claims UNVERIFIED pending SOURCES.md + facts lane. £0.00 spent.",
       "history": [
         {
           "at": "2026-11-24T10:43Z",
@@ -318891,6 +318891,11 @@
           "at": "2026-11-24T11:05Z",
           "by": "macbook",
           "what": "step 3 of 4 done: Queued J3513 (script), passed check_all.sh, opened isolated HOS PR #747"
+        },
+        {
+          "at": "2026-11-24T11:07Z",
+          "by": "macbook",
+          "what": "done: GO (95.8/100, 9.58/10, 10/10 Rule-E & Rule-42 gates PASS after J3503 fixes). Opened isolated HOS review PR #747 (history-of-science#747, macbook/J3503) and OWB review PR #1243 (orbit-with-ben#1243, macbook/J3503); queued follow-on script job J3513 (draft Mon 30 Nov 18:00 London, lock Tue 8 Dec, Ben watch Mon 21 Dec, target air Thu 24 Dec). Key fixes: retired colliding PR #743 Title A (5 live collisions incl. nLbBtuydgZo 251.7K) for 'Accidental Inventions: 5 Mistakes That Worked' (45c, 0 collisions); fixed Thumb A/B §2.2/§2.5/§2.B copy & composition (NEARLY TRASHED single hero / WRONG RESISTOR); locked Safety Glass 1903 over Microwave (zero overlap with HOS:129 GO); filtered off-topic AI neighbour RzkD_rTEBYs (3 strictly on-topic >=1M in neighbours.json + SciShow 1.48M); verified 5/5 core autocomplete & 0 collisions across 13 public_search queries incl. Shorts S01/S02; logged 6 script guardrails. status_board.py --check & check_all.sh PASS. All claims UNVERIFIED pending SOURCES.md + facts lane. £0.00 spent."
         }
       ],
       "remaining_action": "Opening OWB review PR (jobs/reviews/J3503/REVIEW.md), closing J3503, and posting studio thread report",
