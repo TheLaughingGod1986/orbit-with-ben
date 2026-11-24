@@ -317825,7 +317825,7 @@
     {
       "id": "J3489",
       "title": "AI spend: Google AI Ultra review before the 12 Dec renewal (Flow and Gemini use against cheaper tiers), for Ben",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "**Why (Ben, Tue 24 Nov ~09:40 London: \"I think we're possibly paying too much for Gemini. I've noticed with Gemini Flow, with VO, we're not actually using all the credits\").** The ledger agrees: Google AI Ultra (£189.99 a month, renews 12 Dec) gives 25,000 Flow credits a month; this cycle (from 12 Nov) has used only about 1,550 of them by 24 Nov (23,450 left). Gemini's weekly quota has run at 2-29% used. The £75.18 monthly Cloud credit sits unused (£144.66 available). On 9 Nov Ben chose to keep Ultra one more month and review. The review is due before the 12 Dec renewal.\n\n**Do, by Mon 7 Dec 18:00 London (a one-page recommendation for Ben):**\n1. **Use:** Flow credits per month by channel (HOS pictures, Orbit, anything else) from `05_Analytics/ai_spend/ledger.jsonl`, and Gemini's weekly quota use, for the last 8 weeks. Project December: Field Order History goes to three films a week from 1 Dec and uses archive photos (no Flow); Gemini is now the studio's busiest worker (Studio tasks, ear-checks, facts).\n2. **Options, from Google's own current plan pages (not memory):** what each lower tier includes and costs in the UK: Flow credits, the Gemini quota that Antigravity/Gemini CLI uses (the agents' lane), the Cloud credit, storage. In particular the ~£90 tier the ledger lists as \"10,000 Flow credits\" (unverified) and Google AI Pro.\n3. **Recommendation:** the cheapest tier that covers December's Flow and Gemini use with headroom, the saving per month, and what would be lost (for example a smaller Gemini quota in a heavy week). Say plainly if the Gemini quota on a cheaper tier would slow the studio.\n4. Post it on the thread and in `05_Analytics/ai_spend/GOOGLE_PLAN_REVIEW_2026-12.md`. **Ben changes the plan himself if he chooses; agents never change a subscription.**\n\n**Guards.** Read-only. £0.",
       "ref": "",
@@ -317845,11 +317845,24 @@
           "at": "2026-11-24T09:48Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T09:58Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Measure Flow and Gemini use, compare Google's current tiers, recommend one to Ben",
       "due": "2026-12-07T18:00:00Z",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3490",
