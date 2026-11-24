@@ -317894,9 +317894,14 @@
           "at": "2026-11-24T11:49Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T11:50Z",
+          "by": "macbook-2",
+          "what": "step 1 of 5 done"
         }
       ],
-      "remaining_action": "Check the topic, write the packaging first, then the script and sources",
+      "remaining_action": "Verifying Ghost Army demand, Pilot 1/2 learnings, and 15+ US NARA/UK IWM official archive photo IDs",
       "due": "2026-12-11T18:00:00Z",
       "kind": "script",
       "plain": "Research, package and write the script for WW2 film 013 (WW2 Ghost Army inflatable tanks and deception)",
@@ -317909,12 +317914,17 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T11:49Z",
+        "step": 1,
+        "of": 5,
+        "at": "2026-11-24T11:50Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Topic check & archive IDs",
+          "Packaging first (3 titles, 3 thumbs)",
+          "Script v01 & narration (<=21k chars)",
+          "Sources, provenance & status.json",
+          "Validate, open PR, queue checks & report"
+        ]
       }
     },
     {
