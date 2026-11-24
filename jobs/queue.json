@@ -264053,6 +264053,11 @@
           "at": "2026-11-24T10:54Z",
           "by": "codex",
           "what": "no longer waits on Ben (entry 2): OK'd, delivered by J3511"
+        },
+        {
+          "at": "2026-11-24T10:54Z",
+          "by": "codex",
+          "what": "no longer waits on Ben (entry 1): OK'd, delivered by J3512"
         }
       ],
       "remaining_action": "Wait for Ben's final UAT watch on HOS 010 Short A v01 (J2933.1) and Short C v01 (J2933.2) by 1 Dec 18:00 London",
@@ -264071,7 +264076,13 @@
       "taskKeys": [
         "HOS:010"
       ],
-      "awaits_ben": {
+      "escalated_at": "2026-11-16T10:25Z",
+      "hold": {
+        "type": "ben",
+        "condition": "HELD ON BEN'S OK: HOS PR #611 merged (a26ca06f); HOS 010 Short A v01 (J2933.1) and Short C v01 (J2933.2) are in HOS UAT and WATCH_FULL awaiting Ben's final watch by Tue 1 Dec 2026 18:00 London.",
+        "check_at": "2026-12-01T18:00:00Z"
+      },
+      "awaits_was": {
         "what": "Watch HOS 010 Short A, What Killed the Dinosaurs? (23 s), before it is uploaded",
         "file": "HOS UAT/010_Alvarez-Clay-Line-Dinosaurs/10_Shorts/hos_010_short_A_v01.mp4",
         "version": "v01",
@@ -264080,12 +264091,6 @@
         "title": "HOS 010 Short A: What Killed the Dinosaurs?",
         "number": "010 Short A",
         "type": "short"
-      },
-      "escalated_at": "2026-11-16T10:25Z",
-      "hold": {
-        "type": "ben",
-        "condition": "HELD ON BEN'S OK: HOS PR #611 merged (a26ca06f); HOS 010 Short A v01 (J2933.1) and Short C v01 (J2933.2) are in HOS UAT and WATCH_FULL awaiting Ben's final watch by Tue 1 Dec 2026 18:00 London.",
-        "check_at": "2026-12-01T18:00:00Z"
       }
     },
     {
@@ -319233,13 +319238,31 @@
           "at": "2026-11-24T10:53Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T10:54Z",
+          "by": "codex",
+          "what": "approved by Ben: Watch HOS 010 Short A, What Killed the Dinosaurs? (23 s), before it is uploaded v01 (asked in J2933)"
         }
       ],
       "remaining_action": "Upload the dinosaur extinction Short you approved as a private video",
       "due": "2026-11-25T12:00:00Z",
       "kind": "studio",
       "plain": "Upload the dinosaur extinction Short you approved as a private video",
-      "mini_only": true
+      "mini_only": true,
+      "approved_from": {
+        "what": "Watch HOS 010 Short A, What Killed the Dinosaurs? (23 s), before it is uploaded",
+        "file": "HOS UAT/010_Alvarez-Clay-Line-Dinosaurs/10_Shorts/hos_010_short_A_v01.mp4",
+        "version": "v01",
+        "title": "HOS 010 Short A: What Killed the Dinosaurs?",
+        "number": "010 Short A",
+        "type": "short",
+        "card": "HOS:ASK:J2933.1",
+        "channel": "HOS",
+        "job": "J2933",
+        "okAt": "2026-11-16T11:10Z",
+        "okRef": "board:HOS:ASK:J2933.1;J3505"
+      }
     }
   ],
   "focus": [
