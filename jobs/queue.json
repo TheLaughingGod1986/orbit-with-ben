@@ -1,5 +1,5 @@
 {
-  "next_id": 3645,
+  "next_id": 3646,
   "jobs": [
     {
       "id": "J0001",
@@ -320086,13 +320086,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-24T19:33Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T10:31Z",
-      "result": "parked for Chief: API uploads/schedules/captions/playlist/Buffer-registrations done (YqCWYlv_LCY Thu 26 Nov 18:00, __UtUYdEUwg Fri 27 Nov 11:30, 4sYTV_rQcqs Sun 29 Nov 11:30; channel:audit 72 videos 0 errors; HOS PR #755 & OWB PR #1286 ready to merge). HOS Studio Chrome CDP 9460 is signed out (accounts.google.com) and needs Ben one-time sign-in for Studio-only finish (end screen, Title+Thumb T&C, Shorts Related, visual Altered/Audience check).",
+      "result": "",
       "history": [
         {
           "at": "2026-11-24T10:31Z",
@@ -320208,12 +320208,17 @@
           "at": "2026-11-24T22:35Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-24T23:18Z",
+          "by": "claude",
+          "what": "reopened: Ben's screen photo (24 Nov ~23:16 London) shows History of Science's YouTube Studio channel dashboard signed in on the Mini's display, after the request to sign in once for Franklin's Studio-only finish. Finish the Studio-only steps now; if the profile on 9460 is still signed out, say so in one line."
         }
       ],
       "remaining_action": "Finish Franklin end screen, thumbnail test and Shorts links after HOS Studio sign-in; verify disclosure before Thursday noon.",
       "due": "2026-11-26T12:00:00Z",
       "kind": "studio",
-      "urgent": 12,
+      "urgent": 14,
       "approved_from": {
         "what": "Watch HOS 008 Franklin master v05 (all 8 fixes in: 0:20 & 33 bottom-text cards on dark umber panels, 0:30 flash gone, 0:51 night street & 1:49 salon spark clean with no flying hair, 2:18 upright jar workbench, 3:13 points desk take 3, 3:31 3D packet ship + letter icon, 7:59 stationary rods take 2)",
         "file": "HOS UAT/008_Lightning-Franklin/hos_008_master_v05_PHONE.mp4",
@@ -320232,30 +320237,9 @@
         "HOS:ASK:J2699",
         "HOS:ASK:J2984"
       ],
-      "progress": {
-        "step": 6,
-        "of": 7,
-        "at": "2026-11-24T19:53Z",
-        "by": "gemini",
-        "plan": [
-          "Inspect package, style sheet and NAS files",
-          "Run lint and gate checks",
-          "Upload HOS 008 long v05 scheduled Thu 26 Nov 18:00",
-          "Set long playlist, end screen and Title+Thumb Test & Compare",
-          "Upload Short A v04 and Short C v07 to free slots and register for Buffer",
-          "Read back YouTube/Studio state and run channel:audit",
-          "Update status/records PR and report"
-        ],
-        "note": "Uploaded & scheduled all 3 videos on @HistoryOfScienceYT (long YqCWYlv_LCY Thu 26 Nov 18:00, Short A __UtUYdEUwg Fri 27 "
-      },
       "taskKeys": [
         "HOS:008"
       ],
-      "hold": {
-        "type": "input",
-        "condition": "Chief ruling 24 Nov: ACCEPT API upload records; merged HOS PR 755 and OWB PR 1286 after full diff and green-check review. Fresh HOS audit: 72 videos, 0 errors; all three IDs processed, private, correct schedules, Not Made for Kids. HOS Studio 9460 remains on Google sign-in: Ben must sign in once. Gemini then finishes playlist+Subscribe end screen, title/thumbnail test with search-led A, both Shorts Related to YqCWYlv_LCY, thumbnail ledger and all Studio checklist fields. Fresh API did not return containsSyntheticMedia, so verify Altered YES in Studio; do not infer it from manifests. Keep existing Ben approvals and schedules; no reupload. Recheck login 25 Nov 09:00 UTC and finish before 26 Nov noon; if still incomplete at deadline escalate to elected Chief before airing.",
-        "check_at": "2026-11-25T09:00:00Z"
-      },
       "escalated_at": "2026-11-24T22:35Z"
     },
     {
@@ -325191,6 +325175,11 @@
           "at": "2026-11-24T18:24Z",
           "by": "claude",
           "what": "Hold is a pure start time (24-hour look at pilot 2): it reopens itself at 2026-11-25T17:05Z (PR #1280)."
+        },
+        {
+          "at": "2026-11-24T23:18Z",
+          "by": "claude",
+          "what": "Design E (a U-boat thumbnail) is being made in J3645 for this read: under 2% means title test plus E in the thumbnail test."
         }
       ],
       "remaining_action": "Look at pilot 2 at 24 hours",
@@ -329801,7 +329790,7 @@
       "due": "2026-11-24T23:30:00Z",
       "kind": "studio",
       "mini_only": true,
-      "urgent": 13,
+      "urgent": 12,
       "progress": {
         "step": 3,
         "of": 3,
@@ -330243,7 +330232,7 @@
       "due": "2026-11-25T08:00:00Z",
       "kind": "qa",
       "mini_only": true,
-      "urgent": 14,
+      "urgent": 13,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -330297,6 +330286,36 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3645",
+      "title": "WW2 pilot 2: make a U-boat thumbnail (design E) ready for the 24-hour read",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** Ben sent a photo of pilot 2's Studio page (24 Nov ~23:16 London, \"finding\"). Pilot 2 is *How the U-Boats Lost Their Safest Hunting Ground* (`qfc6EBStOfo`), with 4 impressions and 0 views at 5.5 h; no setting or claim limits it (J3635).\n\nIts three test thumbnails (`11_Upload-Package/THUMBNAIL_TEST_v06.json`) show no U-boat:\n- B: a parked Liberator with the word LIBERATOR;\n- C: a Liberator in flight;\n- D: a convoy at sea.\n\n\"LIBERATOR\" also does not connect to the title's \"U-Boats\". Rule 2 (as of ww2 PR #97) asks for the thing viewers know, one subject filling the frame at 168 px.\n\n**Do (by Wed 25 Nov 16:00 UTC, ready before J3561's 24-hour read at 17:05):**\n1. **Pick the photo.** From pilot 2's own cleared archive pool, or another US federal public-domain or Crown-expired official photo logged in `ARCHIVE_PROVENANCE.md`, choose a **surfaced U-boat under air attack** (spray, crew on deck, or the aircraft overhead). The U-boat must fill most of the frame at 168 px wide.\n2. **Make design E:** 1280x720, normal or bright grade, 0-3 words on a solid dark band (for example \"U-BOAT HUNTED\" or none). No Nazi insignia (rule 13).\n3. **Check and save:** make a 168 px phone sheet beside B/C/D. Save E in `11_Upload-Package/` and record it in `status.json`.\n4. **No YouTube change in this job.** J3561 decides at the 24-hour read: if strangers' click-through is under 2%, E replaces the weakest arm (end the test, keeping the arm with the highest watch-time share, then run E against it), alongside the title test.\n\n£0.",
+      "ref": "",
+      "film": "WW2:002",
+      "stage": "thumbs",
+      "after": "",
+      "eta_min": 40,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T23:18Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T23:18Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Make a close-crop U-boat thumbnail from cleared archive, ready to swap",
+      "due": "2026-11-25T16:00:00Z",
+      "kind": "thumb",
+      "mini_only": true
     }
   ],
   "focus": [
