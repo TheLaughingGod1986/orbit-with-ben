@@ -1,5 +1,5 @@
 {
-  "next_id": 3525,
+  "next_id": 3526,
   "jobs": [
     {
       "id": "J0001",
@@ -320429,6 +320429,36 @@
       "due": "2026-12-09T18:00:00Z",
       "kind": "review",
       "plain": "Viewer test of first 300 words, Pilot 2 learnings check, Rule E topic and script lock for WW2 film 012 (Liberty Ships)"
+    },
+    {
+      "id": "J3525",
+      "title": "WW2 film 013: independent Gemini claims check on SCRIPT.md and SOURCES.md (PR #77)",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "Independent Gemini facts-lane claims check for Field Order History film `WW2:013` (*How the WW2 Ghost Army Fooled German Generals*) on `ww2-channel` PR #77 (branch `macbook/J3484`, commit `e60b14b`).\n\n**Check:**\n1. Audit all 30 claim rows (`C01`–`C30`) in `02_Video-Projects/013_WW2-Ghost-Army-Inflatable-Tanks/01_Script/SCRIPT.md` and `01_Script/SOURCES.md` against primary/official sources (Capt. Frederick Fox *Official History of the 23rd Headquarters Special Troops* NARA RG 407, Public Law 117-85, Charles B. MacDonald *The Last Offensive*, National WWII Museum, UK IWM War Office & TNA WO 201 records).\n2. Specifically resolve the 5 flagged checkpoints in `SOURCES.md`:\n   - `F1` (`C09`): Inflatable M4 Sherman tank weight (`93 pounds` fully inflated) and Capt. Fred Fox's September 1945 *Official History* quote (32-ton tanks vs 93-lb rubber M4s).\n   - `F2` (`C12`, `C13`): 3132nd Signal Service Company Special Bell Labs / Fort Knox field recordings on 37-gauge steel wire recorders, `~500-pound` speaker arrays vs `500-watt` amplifier rating, and `15-mile` audible range from M3/M3A1 half-tracks.\n   - `F3` (`C17`, `C18`): Operation Elephant (`1–4 July 1944`, Forest of Cerisy, US 2nd Armored Division) deployment details (`<40%` / `~37%` ashore, no sonic half-tracks, 1 deceptive radio, overt daylight movement).\n   - `F4` (`C26`): Operation Viersen (`18–24 March 1945`) Ninth Army initial Rhine crossing casualty figure (`31 casualties` in opening assault phase of 30th/79th Infantry Divisions) — verify exact scope against Ninth Army / XVI Corps / MacDonald records and tighten wording if needed.\n   - `F5` (`C27`, `C28`): Total operations count (`21` vs `22` depending on grouping) and total unit casualties (`3 killed`, `~30 wounded`, confirming whether 406th Engineer Combat Company losses are included).\n3. Confirm `01_Script/NARRATION_v01.txt` stays `<= 21,000` spoken characters (currently `17,233` chars, `2,644` words, SHA-256 `9908baa58d620577be979b08db6a5e67351b83e9a7485c9317026c33cf28a775`).\n4. Write `01_Script/CLAIMS_CHECK_v01.md` (PASS or exact wording fixes), update `status.json` `sources` stage, and open a `ww2-channel` PR.\n\n**Guards:** £0 spend. No ElevenLabs voice credits spent before `2026-11-30 10:50Z`.\n",
+      "ref": "ww2-channel#77",
+      "film": "013",
+      "stage": "sources",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T12:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T12:03Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "WW2 film 013: independent Gemini claims check on SCRIPT.md and SOURCES.md (PR #77)",
+      "due": "2026-12-10T18:00:00Z",
+      "kind": "facts",
+      "plain": "Fact-check every claim and number in WW2 film 013 Ghost Army script and sources before lock"
     }
   ],
   "focus": [
