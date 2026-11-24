@@ -321461,10 +321461,10 @@
       "stage": "",
       "after": "",
       "eta_min": 15,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-24T13:07Z",
+      "eta": "2026-11-24T13:22Z",
       "created_by": "claude",
       "created_at": "2026-11-24T12:52Z",
       "result": "",
@@ -321473,13 +321473,26 @@
           "at": "2026-11-24T12:52Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T13:07Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Build and deploy the board after PR #1257 merges, then check the banner links",
       "due": "2026-11-24T17:00:00Z",
       "kind": "assembly",
       "mini_only": true,
-      "urgent": 13
+      "urgent": 13,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T13:07Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3534",
