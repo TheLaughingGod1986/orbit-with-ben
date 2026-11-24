@@ -320934,13 +320934,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-24T19:10Z",
-      "eta": "2026-11-24T21:10Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T10:53Z",
-      "result": "",
+      "result": "publish via Claude Code: /Volumes/MiniWork/scratch/J3512-resume codex/J3512-resume at 5008d480; /Volumes/MiniWork/scratch/J3512-registry codex/J3512-registry at bfb399e268. PRIVATE UPLOAD COMPLETE mpK3D6S7WLk no publishAt, no Buffer posts. Review whole diffs for private data, publish/open PRs/merge with green checks. Registry push rejected by automatic review; no retries. J3611 owns conditional scheduling and remaining Studio checks. Do not re-upload. Shared registry copies preserved in named J3512 stash.",
       "history": [
         {
           "at": "2026-11-24T10:53Z",
@@ -321011,6 +321011,11 @@
           "at": "2026-11-24T19:17Z",
           "by": "codex",
           "what": "step 4 of 4 done: Private upload complete, 69-video audit zero errors, check_all ALL CHECKS PASS. J3611 owns conditional scheduling/Studio fields. Both upload evidence and registry committed; public push rejected, Claude Code publication required. Do not re-upload."
+        },
+        {
+          "at": "2026-11-24T19:18Z",
+          "by": "codex",
+          "what": "blocked: publish via Claude Code: /Volumes/MiniWork/scratch/J3512-resume codex/J3512-resume at 5008d480; /Volumes/MiniWork/scratch/J3512-registry codex/J3512-registry at bfb399e268. PRIVATE UPLOAD COMPLETE mpK3D6S7WLk no publishAt, no Buffer posts. Review whole diffs for private data, publish/open PRs/merge with green checks. Registry push rejected by automatic review; no retries. J3611 owns conditional scheduling and remaining Studio checks. Do not re-upload. Shared registry copies preserved in named J3512 stash."
         }
       ],
       "remaining_action": "Publish finished upload and registration records through Claude Code privacy review",
@@ -321047,6 +321052,11 @@
           "Record upload and follow-up"
         ],
         "note": "Private upload complete, 69-video audit zero errors, check_all ALL CHECKS PASS. J3611 owns conditional scheduling/Studio"
+      },
+      "hold": {
+        "type": "input",
+        "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/J3512-resume codex/J3512-resume at 5008d480; /Volumes/MiniWork/scratch/J3512-registry codex/J3512-registry at bfb399e268. PRIVATE UPLOAD COMPLETE mpK3D6S7WLk no publishAt, no Buffer posts. Review whole diffs for private data, publish/open PRs/merge with green checks. Registry push rejected by automatic review; no retries. J3611 owns conditional scheduling and remaining Studio checks. Do not re-upload. Shared registry copies preserved in named J3512 stash.",
+        "check_at": "2026-11-25T01:18:16+00:00"
       }
     },
     {
