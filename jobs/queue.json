@@ -326790,6 +326790,11 @@
           "at": "2026-11-24T18:46Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T18:47Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred codex): Claude out of usage (Claude said it's out of usage until 2026-11-24T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: codex on gpt-6-astra"
         }
       ],
       "remaining_action": "Verify readiness: Publishing the tested read-only audit fix through Claude Code",
@@ -326797,7 +326802,15 @@
       "recheck_of": "J3519",
       "mini_only": true,
       "due": "2026-11-24T19:46:55+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
