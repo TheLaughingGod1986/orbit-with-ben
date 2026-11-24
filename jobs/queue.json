@@ -329040,13 +329040,13 @@
       "stage": "sources",
       "after": "J3626",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-24T21:53Z",
-      "eta": "2026-11-24T23:53Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T21:27Z",
-      "result": "",
+      "result": "Gemini Argon audit delivered FIX in WW2 PR110, exact commit b7b544a1d2c9411100dab36fcbb5ca4a66ba2298. All requested items covered; 46/46 parity, 16502 stripped characters, narration hash preserved. Completeness correction discloses search-summary evidence rather than direct-source access, so individual PASS labels remain provisional. J3632 queued for direct-source checks and corrections; J3492 remains held, no script lock or voice release. Zero spend.",
       "history": [
         {
           "at": "2026-11-24T21:27Z",
@@ -329082,6 +329082,11 @@
           "at": "2026-11-24T22:12Z",
           "by": "codex",
           "what": "step 3 of 3 done: PR110 published at b7b544a1d2c9411100dab36fcbb5ca4a66ba2298. Gemini FIX and search-summary limitations recorded; J3632 queued, J3492 held, narration unchanged."
+        },
+        {
+          "at": "2026-11-24T22:13Z",
+          "by": "codex",
+          "what": "done: Gemini Argon audit delivered FIX in WW2 PR110, exact commit b7b544a1d2c9411100dab36fcbb5ca4a66ba2298. All requested items covered; 46/46 parity, 16502 stripped characters, narration hash preserved. Completeness correction discloses search-summary evidence rather than direct-source access, so individual PASS labels remain provisional. J3632 queued for direct-source checks and corrections; J3492 remains held, no script lock or voice release. Zero spend."
         }
       ],
       "remaining_action": "Handoff complete: J3632 resolves evidence gaps before any script lock",
@@ -329102,7 +329107,8 @@
       },
       "taskKeys": [
         "WW2:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/110"
     },
     {
       "id": "J3628",
