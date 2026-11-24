@@ -319483,9 +319483,14 @@
           "at": "2026-11-24T11:37Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T11:38Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Upload the approved brighter Betelgeuse Short while keeping its date",
+      "remaining_action": "Verifying the approved Betelgeuse Short before replacing its private copy",
       "due": "2026-11-25T12:00:00Z",
       "kind": "studio",
       "plain": "Upload the approved brighter Betelgeuse Short while keeping its date",
@@ -319508,11 +319513,17 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-24T11:37Z",
+        "at": "2026-11-24T11:38Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify approved cut and current state",
+          "Upload and transfer the existing slot",
+          "Verify and record the replacement"
+        ]
+      },
+      "taskKeys": [
+        "OWB:029"
+      ]
     },
     {
       "id": "J3510",
