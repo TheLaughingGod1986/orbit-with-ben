@@ -324353,6 +324353,11 @@
           "at": "2026-11-24T16:35Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-25T17:05:00Z"
+        },
+        {
+          "at": "2026-11-24T18:24Z",
+          "by": "claude",
+          "what": "Hold is a pure start time (24-hour look at pilot 2): it reopens itself at 2026-11-25T17:05Z (PR #1280)."
         }
       ],
       "remaining_action": "Look at pilot 2 at 24 hours",
@@ -324362,7 +324367,8 @@
       "hold": {
         "type": "date",
         "condition": "Pilot 2 (qfc6EBStOfo): look at 24 hours; act if 1,000+ impressions, else hold to the 48-hour point 2026-11-26T17:05:00Z.",
-        "check_at": "2026-11-25T17:05:00Z"
+        "check_at": "2026-11-25T17:05:00Z",
+        "release": "auto"
       }
     },
     {
