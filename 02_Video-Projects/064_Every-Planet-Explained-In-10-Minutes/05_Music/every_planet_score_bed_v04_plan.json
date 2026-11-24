@@ -1,0 +1,66 @@
+{
+  "film": "064_Every-Planet-Explained-In-10-Minutes",
+  "bed": "every_planet_score_bed_v01.mp3",
+  "duration_s": 606.28,
+  "bpm_target": 71.5,
+  "pace_range_bpm": [
+    68,
+    76
+  ],
+  "spend_gbp": 0.0,
+  "generator": "_build_064_score_bed_v01.py",
+  "prompt": "Grand outward solar-system voyage score for Every Planet Explained in 10 Minutes (Mercury to Neptune), alternating between sunlit inner-planet curiosity (\"explain\": warm felt-piano ostinato, crisp pizzicato strings, and gentle marimba-synth pulse for orbital resonances, core cutaways, and spacecraft probes) and deep outer-system wonder (\"awe\": wide harmonic string pads, glassy celesta overtones, resonant brass swells, and deep sub-bass planetary horizon drones). Smooth 2.5-second crossfades at each planet transition from 0.4 AU Mercury out to 30 AU Neptune, lifting at the Jupiter \"no solid surface\" midpoint twist and resolving into a weightless Kuiper-belt horizon hold.\nPace: 68-76 BPM, calm measured pulse matched to British narration, shifting cleanly between explain and awe chapters without heavy percussion.\nNOT: Do not sound like 020/023/024/025 shared Jupiter ambient track, 021/022 solar brass drones, 026 Proxima Centauri deep-space pulse, 027 Earth spin clockwork strings, 028 Gliese 710 tension drone, 029 Betelgeuse orchestral doom brass, 031 Earth magnetic-flip sub-bass pulse, 032 Titan sub-aquatic methane sonar, 033 Uranus bowed vibraphone/glass harmonica solo bed, or 034 Pluto frozen-heart celesta bed. No vocals, no lyrics, no drums, no trap beats, no trailer booms, no comedy stings.",
+  "chapters": [
+    {
+      "chapter": "Mercury",
+      "start_s": 0.0,
+      "end_s": 76.02,
+      "mood": "explain"
+    },
+    {
+      "chapter": "Venus",
+      "start_s": 76.02,
+      "end_s": 143.34,
+      "mood": "awe"
+    },
+    {
+      "chapter": "Earth",
+      "start_s": 143.34,
+      "end_s": 216.47,
+      "mood": "explain"
+    },
+    {
+      "chapter": "Mars",
+      "start_s": 216.47,
+      "end_s": 281.31,
+      "mood": "awe"
+    },
+    {
+      "chapter": "Jupiter",
+      "start_s": 281.31,
+      "end_s": 354.43,
+      "mood": "explain"
+    },
+    {
+      "chapter": "Saturn",
+      "start_s": 354.43,
+      "end_s": 437.9,
+      "mood": "awe"
+    },
+    {
+      "chapter": "Uranus",
+      "start_s": 437.9,
+      "end_s": 511.43,
+      "mood": "explain"
+    },
+    {
+      "chapter": "Neptune",
+      "start_s": 511.43,
+      "end_s": 606.28,
+      "mood": "awe"
+    }
+  ],
+  "script_sha256": "556f3c8df68ee3cd1420ef03b8cedc04a7f0f79463d98ebf4d3d5e5753408db8",
+  "script_version": "v04 — not locked",
+  "timing_basis": "145 alphanumeric tokens/minute; 6.5 seconds transition/breath per chapter; 18 seconds final picture/music hold. Estimates only, no audio rendered."
+}
