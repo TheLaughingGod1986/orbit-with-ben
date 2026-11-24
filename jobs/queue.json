@@ -320482,13 +320482,13 @@
       "stage": "",
       "after": "",
       "eta_min": 40,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-24T12:30Z",
-      "eta": "2026-11-24T13:10Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T11:55Z",
-      "result": "",
+      "result": "Reliability verification complete: current runner matches installed; no launchd overrides; Cursor reset preserved to 26 Nov 11:00:21Z; board deployed 20ebe92b with Stuck panel and Cursor Out verified against current data; regression tests pass. Slot 1 not demonstrated: sole foreground launchd service prevents concurrent timer instances. Live UI timed out; no visual PASS claimed. Report posted to studio thread.",
       "history": [
         {
           "at": "2026-11-24T11:55Z",
@@ -320519,6 +320519,11 @@
           "at": "2026-11-24T12:35Z",
           "by": "codex",
           "what": "step 4 of 4 done: Board deployed as 20ebe92b; current-data render shows Stuck and Cursor Out; forecast has Cursor up=false and zero queued. Studio app regression tests pass. Live browser timed out; single-service launchd limitation reported explicitly."
+        },
+        {
+          "at": "2026-11-24T12:36Z",
+          "by": "codex",
+          "what": "done: Reliability verification complete: current runner matches installed; no launchd overrides; Cursor reset preserved to 26 Nov 11:00:21Z; board deployed 20ebe92b with Stuck panel and Cursor Out verified against current data; regression tests pass. Slot 1 not demonstrated: sole foreground launchd service prevents concurrent timer instances. Live UI timed out; no visual PASS claimed. Report posted to studio thread."
         }
       ],
       "remaining_action": "Recording the completed reliability verification and remaining launcher limitation",
