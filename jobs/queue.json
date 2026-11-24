@@ -322562,7 +322562,7 @@
     {
       "id": "J3544",
       "title": "OWB 064: Correct v03 source and teaching issues as v04",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Implement the J3539 independent FIX review in jobs/reviews/J3539/REVIEW.md and CLAUDE_QUOTE_CHECK_v03.md as v04 of OWB 064. Read the review PR and J3520 ruling; retain all four correct J3520 changes. Correct Mercury tilt conflict, Mars magnetic-history inference, Saturn haze uncertainty, Uranus scope, Venus ocean inference, incorrect/stale quote attribution, Mars 90-Martian-day unit and teaching timing/timeline/card-label issues. Use the precise replacements or a more concise directly sourced equivalent. Preserve v01-v03 and Gemini raw audits. Fix source IDs (Donahue PMID 17783310, not 17782980), use the working Venera primary history, and distinguish MOLA elevation from relief. Obtain fresh preserved Gemini output, rerun explicit-version review >=90 and episode gate, reproduce hashes/counts/chapter estimates and update downstream stamps. Deliver a PR; do not lock or complete J3020. Independent review follows. Approved eight-planet format, dates and zero-spend/no-generation scope unchanged; no narration, upload or schedule/privacy changes.\n",
       "ref": "J3539",
@@ -322582,11 +322582,24 @@
           "at": "2026-11-24T14:46Z",
           "by": "macbook",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T14:58Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Apply the independent source review corrections and submit a new version",
       "kind": "script",
-      "plain": "Correct the planet facts and teaching notes before recording"
+      "plain": "Correct the planet facts and teaching notes before recording",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3545",

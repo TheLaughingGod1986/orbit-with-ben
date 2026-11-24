@@ -95,7 +95,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3540 | mini | open (after J3414) | – | – | WW2:001 upload · studio · Field Order History pilot 1: title test naming the Mulberry harbours (search), after the 48-hour read |  |
 | J3542 | mini | open | – | – | WW2:001 edit · assembly · Field Order History: one test Short on the Mulberry harbours, cut from pilot 1, pointing to the full film |  |
 | J3543 | mini | open | – | – | WW2:017 script · script · WW2 film 017: topic check, packaging first, script and sources, to lock by 2026-12-18 |  |
-| J3544 | any | open | – | – | 064 script · script · OWB 064: Correct v03 source and teaching issues as v04 | J3539 |
+| J3544 | mini | open | – | – | 064 script · script · OWB 064: Correct v03 source and teaching issues as v04 | J3539 |
 | J3545 | any | open (after J3544) | – | – | 064 script · review · OWB 064: Independently verify corrected v04 before script lock | J3539 |
 | J3546 | any | open | – | – | 064 script · chief · OWB 064: Record J3539 FIX in the Chief-owned script hold | J3539 |
 | J3547 | mini | open | – | – | HOS:128 script · review · HOS 128 Edison vs Tesla (Thu 10 Dec): review and lock script v01, package-first scoring, sources & Shorts (PR #751) |  |
