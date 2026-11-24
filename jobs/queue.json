@@ -316709,18 +316709,29 @@
           "at": "2026-11-24T09:11Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T09:13Z",
+          "by": "macbook-2",
+          "what": "step 1 of 6 done"
         }
       ],
-      "remaining_action": "Check the topic, write the packaging first, then the script and sources",
+      "remaining_action": "Running topic check, audience/search demand verification, and verifying 15+ real US Navy NARA/NHHC archive photo IDs",
       "due": "2026-12-01T18:00:00Z",
       "kind": "script",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T09:11Z",
+        "step": 1,
+        "of": 6,
+        "at": "2026-11-24T09:13Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Topic check and 15+ archive IDs",
+          "Packaging (3 titles, 3 thumbs)",
+          "Write script and narration",
+          "Build SOURCES.md",
+          "Open PR and update status.json",
+          "Queue claims check, viewer test, and post-reset VO"
+        ]
       }
     },
     {
