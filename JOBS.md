@@ -130,7 +130,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3611 | mini | open | – | – | 010 upload · studio · HOS 010 Short A: schedule only after actual long readiness and finish Studio checks | J3512 |
 | J3615 | mini | open | – | – | assembly · Relay: restore a free second slot when a worker returns during a job chain |  |
 | J3619 | mini | open | – | – | review · Verify condition for J3486 |  |
-| J3620 | any | open | – | – | review · Verify condition for J3487 |  |
+| J3620 | mini | open | – | – | review · Verify condition for J3487 |  |
 
 Recently finished:
 
