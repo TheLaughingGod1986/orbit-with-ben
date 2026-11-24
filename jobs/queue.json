@@ -326453,22 +326453,28 @@
           "at": "2026-11-24T18:19Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-24T18:20Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Reproduced both mixed-snapshot failures at views=123; also confirmed the latest out-of-window target fallback. New regressions fail before the fix."
         }
       ],
-      "remaining_action": "Reproduce the mixed-snapshot scoring bug",
+      "remaining_action": "Verify the provenance fix and prepare the correction pull request",
       "due": "2026-11-25T05:03:00Z",
       "kind": "assembly",
       "plain": "Correct the remaining date-window bug in the harbour audience analysis",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-24T18:19Z",
+        "at": "2026-11-24T18:20Z",
         "by": "codex",
         "plan": [
           "Reproduce wrong-window fallback",
           "Correct provenance and regressions",
           "Publish correction and evidence"
-        ]
+        ],
+        "note": "Reproduced both mixed-snapshot failures at views=123; also confirmed the latest out-of-window target fallback. New regre"
       }
     }
   ],
