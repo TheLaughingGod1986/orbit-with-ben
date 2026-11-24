@@ -289859,9 +289859,14 @@
           "at": "2026-11-24T12:19Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T12:20Z",
+          "by": "macbook-2",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Wait for corrected narration and loss graphic, then finish assembly and QA",
+      "remaining_action": "Checking B-29 narration, archive pictures and build inputs",
       "due": "2026-11-26T20:00:00Z",
       "kind": "assembly",
       "plain": "Edit the third WW2 film and put it on Ben's board to watch",
@@ -289876,12 +289881,16 @@
       "urgent": 11,
       "escalated_at": "2026-11-22T15:18Z",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T12:19Z",
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-24T12:20Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Check inputs",
+          "Build film and covers",
+          "Check finished package",
+          "Open PR and report"
+        ]
       }
     },
     {
