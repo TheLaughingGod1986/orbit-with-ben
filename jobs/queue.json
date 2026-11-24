@@ -318052,9 +318052,14 @@
           "at": "2026-11-24T10:04Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T10:08Z",
+          "by": "macbook",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "WW2 film 009: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue VO",
+      "remaining_action": "Running Rule-6 viewer test of first 300 words and verifying TOPIC_REVIEW/ARCHIVE_PROVENANCE against Rules 1-6 and 9",
       "due": "2026-11-30T18:00:00Z",
       "kind": "review",
       "plain": "Test the Operation Pedestal opening as a stranger, lock the script, and queue voice-over after 30 Nov",
@@ -318067,12 +318072,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T10:04Z",
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-24T10:08Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect PR 68 & TOPIC_REVIEW",
+          "Run Rule-6 viewer test (first 300 words)",
+          "Verify J3491 claims check & char budget",
+          "Commit review PR & wait on J3491 for lock/VO"
+        ]
       }
     },
     {
