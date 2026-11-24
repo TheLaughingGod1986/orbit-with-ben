@@ -325701,9 +325701,14 @@
           "at": "2026-11-24T17:35Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T17:36Z",
+          "by": "macbook-2",
+          "what": "step 1 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Awaiting Chief review and merge of OWB PR #1273 and ww2-channel PR #101",
+      "remaining_action": "Inspecting J3591 evidence, OWB PR #1273, ww2-channel PR #101, and studio thread",
       "kind": "review",
       "recheck_of": "J3591",
       "due": "2026-11-24T18:35:48+00:00",
@@ -325717,12 +325722,15 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-24T17:35Z",
+        "at": "2026-11-24T17:36Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect J3591, PRs #1273/#101, and thread",
+          "Verify condition and update J3591 hold or reopen",
+          "Close J3595 and post studio thread report"
+        ]
       }
     }
   ],
