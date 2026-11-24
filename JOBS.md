@@ -101,6 +101,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3548 | mini | open | – | – | for claudecode · review · Review local Field Order analytics delivery privacy |  |
 | J3549 | any | claimed | macbook-2 | 2026-11-24T16:35Z | review · Field Order History: triage the 19 PRs still open after the 24 Nov merge batch |  |
 | J3550 | gemini | open | – | – | WW2:015 sources · for gemini · facts · WW2 015: independent Gemini check of Sherman draft claims |  |
+| J3551 | cloud | open (after J3550) | – | – | WW2:015 script · for claude · review · WW2 015: Claude topic archive and opening review before lock |  |
 
 Recently finished:
 
