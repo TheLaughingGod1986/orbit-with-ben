@@ -329624,16 +329624,21 @@
           "at": "2026-11-24T22:42Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Completed direct-source verification of all 37 claims across Gazette 38377/35695, Roskill Vol II Ch XIII (Tables 26-27), Hague Pt1b/Pt2/Pt3, Kindell RN rolls, ADM 267/84, Mason, Sun Ship, Boxol/Plumleaf, Henshaw, uboat.net, and IWM photos GM1452/GM1436. Result: 31 PASS, 6 FLAG -> FIX."
+        },
+        {
+          "at": "2026-11-24T22:45Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Wrote 01_Script/CLAIMS_CHECK_v03.md (31 PASS, 6 FLAG, 0 UNVERIFIABLE) and updated status.json (review, not locked); verified byte-for-byte preservation of all earlier narrations/reports and 46/46 parity."
         }
       ],
-      "remaining_action": "Write CLAIMS_CHECK_v03.md and check parity/hashes",
+      "remaining_action": "Push PR, route FIX to script lane, post thread report, and finish J3634",
       "due": "2026-11-25T18:00:00Z",
       "kind": "facts",
       "plain": "Checking the revised Operation Pedestal narration against the original sources",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-24T22:42Z",
+        "at": "2026-11-24T22:45Z",
         "by": "gemini",
         "plan": [
           "Create clean worktree and verify v03 artifacts",
@@ -329642,7 +329647,7 @@
           "Write CLAIMS_CHECK_v03.md and check parity/hashes",
           "Push PR, report findings, and handle J3492/FIX routing"
         ],
-        "note": "Completed direct-source verification of all 37 claims across Gazette 38377/35695, Roskill Vol II Ch XIII (Tables 26-27),"
+        "note": "Wrote 01_Script/CLAIMS_CHECK_v03.md (31 PASS, 6 FLAG, 0 UNVERIFIABLE) and updated status.json (review, not locked); veri"
       },
       "taskKeys": [
         "WW2:009"
