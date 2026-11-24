@@ -134,13 +134,13 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [How Does the Heart Pump Blood?](https://youtu.be/el30-mHiH-0) | 43 h (early) | 529 | 26.8% | MISS | 66.4% | WATCH |
-| [How Do Plants Make Oxygen?](https://youtu.be/Bks_JLId1ew) | 2 d | 52 | 48.6% | too few to judge | 96.5% | too few to judge |
-| [How Does a Blood Pressure Cuff Work?](https://youtu.be/l8bxm9L3zl8) | 3 d | 29 | 38.5% | too few to judge | 61.0% | too few to judge |
-| [How Do Plants Clean the Air?](https://youtu.be/ChbsigHD5_o) | 5 d | 5 | 100.0% | too few to judge | 36.1% | too few to judge |
-| [Why Is It Called a Vaccine?](https://youtu.be/xgx2lYHhYZM) | 6 d | 4 | 100.0% | too few to judge | 62.4% | too few to judge |
-| [What Is Dalton's Atomic Theory?](https://youtu.be/xzKoHg0E0_U) | 7 d | 239 | 53.1% | WATCH | 61.5% | WATCH |
-| [The Blood Vessels Finer Than a Hair](https://youtu.be/Wvjd8g0CpzE) | 8 d | 218 | 15.3% | MISS | 74.9% | PASS |
-| [What Was the Edward Jenner Experiment?](https://youtu.be/cLKDiYP55J8) | 10 d | 47 | 43.5% | too few to judge | 67.7% | too few to judge |
+| [How Does the Heart Pump Blood?](https://youtu.be/el30-mHiH-0) | 44 h (early) | 541 | 27.3% | MISS | 66.0% | WATCH |
+| [How Do Plants Make Oxygen?](https://youtu.be/Bks_JLId1ew) | 2 d | 67 | 46.7% | too few to judge | 96.0% | too few to judge |
+| [How Does a Blood Pressure Cuff Work?](https://youtu.be/l8bxm9L3zl8) | 3 d | 29 | 38.5% | too few to judge | - | no read |
+| [How Do Plants Clean the Air?](https://youtu.be/ChbsigHD5_o) | 5 d | 5 | 100.0% | too few to judge | - | no read |
+| [Why Is It Called a Vaccine?](https://youtu.be/xgx2lYHhYZM) | 6 d | 4 | 100.0% | too few to judge | - | no read |
+| [What Is Dalton's Atomic Theory?](https://youtu.be/xzKoHg0E0_U) | 7 d | 249 | 54.3% | WATCH | 61.0% | WATCH |
+| [The Blood Vessels Finer Than a Hair](https://youtu.be/Wvjd8g0CpzE) | 8 d | 218 | 15.4% | MISS | 74.0% | PASS |
+| [What Was the Edward Jenner Experiment?](https://youtu.be/cLKDiYP55J8) | 10 d | 47 | 43.5% | too few to judge | 67.0% | too few to judge |
 
 Stayed to watch: 0 of 3 judged Shorts at 60%+. Average viewed: 1 of 3 at 70%+.

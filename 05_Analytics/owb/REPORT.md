@@ -217,16 +217,17 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [Muons Shouldn't Reach the Ground. They Do.](https://youtu.be/2YiV_zDgLJg) | 2 d | 246 | 45.6% | WATCH | 66.7% | WATCH |
-| [Will Asteroid 2024 YR4 Hit the Moon in 2032?](https://youtu.be/93JL_IK57EM) | 3 d | 1022 | 42.6% | MISS | 80.6% | PASS |
-| [How Close Will the Supermoon Get on November 24?](https://youtu.be/HXacmpYkXcA) | 4 d | 69 | 35.1% | too few to judge | 58.5% | too few to judge |
-| [If Voyager Needs 75,000 Years, How Far Is the Nearest Star?](https://youtu.be/dH_yCRmzkMo) | 5 d | 27 | 92.3% | too few to judge | 79.5% | too few to judge |
-| [How Far From Earth Is Voyager 1 Right Now?](https://youtu.be/9q_OvQ1Rd8Y) | 6 d | 281 | 27.7% | MISS | 104.3% | LOOP |
-| [If You Can't See the Nearest Star, How Far Away Is It?](https://youtu.be/aEfdxex__Bo) | 7 d | 476 | 37.1% | MISS | 151.7% | LOOP |
-| [How Did a Helicopter Fly 72 Times on Mars?](https://youtu.be/RT-ec4_GcOk) | 9 d | 1270 | 50.7% | WATCH | 100.8% | LOOP |
+| [Why Do You Weigh Less at Earth's Equator?](https://youtu.be/Dm4xsF1Ateg) | 20 h (early) | 28 | 39.3% | too few to judge | - | no read |
+| [Muons Shouldn't Reach the Ground. They Do.](https://youtu.be/2YiV_zDgLJg) | 2 d | 254 | 44.9% | MISS | 66.0% | WATCH |
+| [Will Asteroid 2024 YR4 Hit the Moon in 2032?](https://youtu.be/93JL_IK57EM) | 3 d | 1000 | 42.7% | MISS | 80.0% | PASS |
+| [How Close Will the Supermoon Get on November 24?](https://youtu.be/HXacmpYkXcA) | 4 d | 76 | 36.1% | too few to judge | 58.0% | too few to judge |
+| [If Voyager Needs 75,000 Years, How Far Is the Nearest Star?](https://youtu.be/dH_yCRmzkMo) | 5 d | 27 | 92.3% | too few to judge | 79.0% | too few to judge |
+| [How Far From Earth Is Voyager 1 Right Now?](https://youtu.be/9q_OvQ1Rd8Y) | 6 d | 281 | 27.7% | MISS | 104.0% | LOOP |
+| [If You Can't See the Nearest Star, How Far Away Is It?](https://youtu.be/aEfdxex__Bo) | 7 d | 476 | 37.1% | MISS | 151.0% | LOOP |
+| [How Did a Helicopter Fly 72 Times on Mars?](https://youtu.be/RT-ec4_GcOk) | 9 d | 1200 | 50.7% | WATCH | 100.0% | LOOP |
 | [Why Does Pluto's Giant Ice Heart Have Zero Craters?](https://youtu.be/z5V6gIXXYs8) | 10 d | 383 | 39.8% | MISS | 99.0% | PASS |
 | [How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?](https://youtu.be/uhZSRcvngvE) | 11 d | 60 | 43.2% | too few to judge | 59.0% | too few to judge |
-| [Why Did a 90-Day Mars Rover Last 14 Years?](https://youtu.be/B1z2dv7m7Vk) | 12 d | 110 | 52.7% | WATCH | 72.7% | PASS |
+| [Why Did a 90-Day Mars Rover Last 14 Years?](https://youtu.be/B1z2dv7m7Vk) | 12 d | 110 | 52.7% | WATCH | 72.0% | PASS |
 | [What Would Standing on Saturn's Moon Titan Feel Like?](https://youtu.be/ffYKoNVPoqg) | 13 d | 110 | 46.9% | WATCH | 52.0% | WATCH |
 
 Stayed to watch: 0 of 8 judged Shorts at 60%+. Average viewed: 6 of 8 at 70%+.
