@@ -314329,10 +314329,10 @@
       "stage": "edit",
       "after": "J3433",
       "eta_min": 480,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-24T21:14Z",
+      "eta": "2026-11-25T05:14Z",
       "created_by": "claude",
       "created_at": "2026-11-23T15:29Z",
       "result": "",
@@ -314351,12 +314351,25 @@
           "at": "2026-11-24T09:50Z",
           "by": "claude",
           "what": "Moved up one slot (Ben: fill Sat 28 Nov): air Sat 5 Dec 17:00, Ben's watch due 2026-12-02T20:00Z."
+        },
+        {
+          "at": "2026-11-24T21:14Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Assemble the film to its narration and archive plan, then QA and Ben's watch",
       "due": "2026-12-02T20:00:00Z",
       "kind": "assembly",
-      "urgent": 6
+      "urgent": 6,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T21:14Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3435",
