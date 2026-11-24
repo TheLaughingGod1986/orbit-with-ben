@@ -91,7 +91,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3536 | mini | open (after J3524) | – | – | WW2:012 vo · vo · WW2 film 012: narration in Ben's voice (Liberty Ships, post-reset) |  |
 | J3537 | mini | open (after J3526) | – | – | WW2:013 vo · vo · WW2 film 013: narration in Ben's voice (Ghost Army, post-reset) |  |
 | J3540 | mini | open (after J3414) | – | – | WW2:001 upload · studio · Field Order History pilot 1: title test naming the Mulberry harbours (search), after the 48-hour read |  |
-| J3542 | mini | claimed | codex | 2026-11-24T17:48Z | WW2:001 edit · assembly · Field Order History: one test Short on the Mulberry harbours, cut from pilot 1, pointing to the full film |  |
+| J3542 | mini | blocked | codex | – | WW2:001 edit · assembly · Field Order History: one test Short on the Mulberry harbours, cut from pilot 1, pointing to the full film |  |
 | J3543 | mini | open | – | – | WW2:017 script · script · WW2 film 017: topic check, packaging first, script and sources, to lock by 2026-12-18 |  |
 | J3544 | mini | open | – | – | 064 script · script · OWB 064: Correct v03 source and teaching issues as v04 | J3539 |
 | J3545 | mini | open (after J3544) | – | – | 064 script · review · OWB 064: Independently verify corrected v04 before script lock | J3539 |
