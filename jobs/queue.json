@@ -326448,19 +326448,27 @@
           "at": "2026-11-24T18:18Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T18:19Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Fix wrong-age view counts when a snapshot omits the film and add regression checks",
+      "remaining_action": "Reproduce the mixed-snapshot scoring bug",
       "due": "2026-11-25T05:03:00Z",
       "kind": "assembly",
       "plain": "Correct the remaining date-window bug in the harbour audience analysis",
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-24T18:18Z",
+        "at": "2026-11-24T18:19Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Reproduce wrong-window fallback",
+          "Correct provenance and regressions",
+          "Publish correction and evidence"
+        ]
       }
     }
   ],
