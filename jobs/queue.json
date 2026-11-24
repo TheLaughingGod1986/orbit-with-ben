@@ -1,5 +1,5 @@
 {
-  "next_id": 3621,
+  "next_id": 3622,
   "jobs": [
     {
       "id": "J0001",
@@ -328379,6 +328379,36 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3621",
+      "title": "HOS 127 Wright Brothers First Flight (Thu 31 Dec): independent facts audit of v01 script, SOURCES.md & Shorts (PR #756)",
+      "needs": "gemini",
+      "repo": "hos",
+      "body": "Run an independent `facts` lane (`gemini-agy`) audit on the `HOS:127` (*Wright Brothers First Flight: The 1901 Wind Tunnel*, Cluster 4 Lead Film 4, target Thu 31 Dec 2026 18:00 London) script draft v01, `SOURCES.md`, `FACT_NOTES_v01.md`, and `SHORTS_SCRIPTS_v01.md` in **HOS PR `#756`** (`gemini/J3504-hos127-script`, commit `d66b6071`, built cleanly on `origin/main` + `origin/macbook/J3264`).\n\n**Files to audit in HOS PR `#756` (`02_Video-Projects/127_Wright-Brothers-How-Do-Airplanes-Fly-Wind-Tunnel/`):**\n- `01_Script/wright_brothers_wind_tunnel_script_master_v01.md` (`1,239` words, `8.3` min, `review:script` PASS `93.6/100`, `gate:episode` PASS)\n- `01_Script/SOURCES.md`\n- `01_Script/FACT_NOTES_v01.md` (`17` rows backed by live NASA GRC, Smithsonian NASM, and NPS institutional pages + honestly labelled secondary lifespans)\n- `10_Shorts/SHORTS_SCRIPTS_v01.md` (`S01` `42w` & `S02` `42w`, 16–19 s house rules)\n\n**Check every claim, date, lifespan, role, and all `J3264` guardrails:**\n1. **Smeaton coefficient math:** Verify John Smeaton's `0.005` (published 1700s) vs Wrights' `0.0033` (modern NASA `0.00327`) — `(0.005 - 0.0033) / 0.0033 = 51.5%` (~50% too high; never 40%).\n2. **Accurate aerodynamic lift physics:** Confirm equal-transit-time myth is debunked and lift is accurately explained via pressure difference + downward airflow deflection (`NASA GRC Bernoulli and Newton`).\n3. **1901 glider & Dayton wind tunnel:** Verify 1901 glider `1/3` predicted lift (`100 lb` airframe + `150 lb` pilot at `15 mph` / `5°`), horizontal bicycle-wheel test (`>3×` expected angle), belt-driven wooden wind tunnel, hacksaw-blade & bicycle-spoke balances, `20-gauge` (`1/32` in) steel wing models (between 100 and 200 preliminary / nearly 50 formally charted).\n4. **1902 glider three-axis control:** Verify `\"well digging\"` turn reversals (adverse yaw), movable single rear rudder linked to hip cradle, `700–1,000` glides, best `622.5 ft` in `26 s`, and Wilbur quote `\"It is possible to fly without motors, but not without knowledge and skill\"`.\n5. **1903 propulsion & Kill Devil Hills first flights + 1905:** Verify Charlie Taylor (`1868–1956`) 6-week `12-hp` cast-aluminium-crankcase engine (first tested `12 Feb 1903`, NASA `6-hp` lawn-mower `2×` comparison), `8.5-ft` rotary-wing spruce propellers (`~350 rpm`, figure-eight chain), `14 Dec 1903` `3.5 s` stall, **`17 Dec 1903 10:35 a.m.`** `27 mph` headwind (`12 s / 120 ft` Orville; `59 s / 852 ft` Wilbur), and `5 Oct 1905` Huffman Prairie (`39 min`, `24.5 mi`, `30` circles).\n6. **Year-accurate `WHO:` cards (5 named people) & Kill Devil Hills vs Kitty Hawk precision.**\n\n**Output:** Commit the independent audit update onto a follow-on branch/PR or review note, and hand off to the script review & Chief lock job. No VO, picture, or paid spend (`£0.00`).\n",
+      "ref": "J3504",
+      "film": "HOS:127",
+      "stage": "sources",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-24T21:13Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T21:13Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Auditing HOS:127 v01 script, SOURCES.md, FACT_NOTES_v01.md and Shorts against primary sources",
+      "due": "2026-12-11T18:00:00Z",
+      "kind": "facts",
+      "plain": "Independently check every claim, date, quote and lifespan in HOS 127 script v01, SOURCES.md and Shorts before Chief lock"
     }
   ],
   "focus": [
