@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2529, J3419, J3371, J3205, J3430, J3431, J3432, J3434, J3495, J3496, J3500, J3501.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2529, J3419, J3371, J3205, J3430, J3431, J3432, J3434, J3495, J3496, J3500, J3501, J3505.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -102,6 +102,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3502 | any | open | – | – | 136 topic · review · HOS 136 Trinity Test Explained (film 2, Thu 17 Dec): rule-E topic go/no-go review |  |
 | J3503 | any | open | – | – | 137 topic · review · HOS 137 Accidental Inventions (film 3, Thu 24 Dec): rule-E topic go/no-go review |  |
 | J3504 | any | open | – | – | 127 script · script · HOS 127 Wright Brothers First Flight (film 4, Thu 31 Dec): package first, then the 7-9 minute script draft |  |
+| J3505 | any | open | – | – | chief · Ben's board OKs with no upload job: Titan Short, two Betelgeuse Shorts, the two History of Science dinosaur Shorts |  |
+| J3506 | any | open | – | – | assembly · Board and relay: an OK Ben gives on the board must become an upload job (10 sat up to 12 days) |  |
 
 Recently finished:
 
