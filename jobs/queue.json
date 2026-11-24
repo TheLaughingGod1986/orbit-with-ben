@@ -316136,23 +316136,28 @@
           "at": "2026-11-24T07:16Z",
           "by": "codex",
           "what": "step 0 of 3 done: Confirmed both signed-in channels; new Studio UI uses browse responses rather than the retired get_screen request. Read-only collection is running."
+        },
+        {
+          "at": "2026-11-24T07:19Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read all 111 OWB and 43 HOS videos with no request errors; verifying long Reach cards and displayed precision before rebuilding."
         }
       ],
-      "remaining_action": "Reading current Studio metrics through its updated analytics pages",
+      "remaining_action": "Updating both channels’ tracker records from the completed Studio read",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-24T07:16Z",
+        "at": "2026-11-24T07:19Z",
         "by": "codex",
         "plan": [
           "Read Studio metrics",
           "Update tracker files",
           "Verify and publish tracker"
         ],
-        "note": "Confirmed both signed-in channels; new Studio UI uses browse responses rather than the retired get_screen request. Read-"
+        "note": "Read all 111 OWB and 43 HOS videos with no request errors; verifying long Reach cards and displayed precision before reb"
       }
     }
   ],
