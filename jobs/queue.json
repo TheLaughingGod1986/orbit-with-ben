@@ -329922,20 +329922,35 @@
           "at": "2026-11-24T22:58Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T22:58Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Claimed J3637; Mini disk 6.2 GB free so all render scratch and outputs will stay on NAS studio-live."
         }
       ],
-      "remaining_action": "Rebuild WW2:004 v02 graphics/edit plan, apply adopted Rule-2 title and SRT fix, render v02 master on NAS, open clean PR",
+      "remaining_action": "Inspecting J3624 QA review, J3625 ruling, v01 scripts, and NAS working files",
       "due": "2026-11-26T12:00:00Z",
       "kind": "assembly",
       "plain": "Fix the torpedo film graphics, spoiler, missing chapter card and repeats, then render v02",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 6,
         "at": "2026-11-24T22:58Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect QA findings and scripts",
+          "Fix draw_maps_004.py and redesign sparse slides",
+          "Rebuild v02 cutlist, Rule-2 title and SRT",
+          "Generate v02 graphics and verify visuals",
+          "Render v02 master on NAS",
+          "Run technical QA and open WW2 PR"
+        ],
+        "note": "Claimed J3637; Mini disk 6.2 GB free so all render scratch and outputs will stay on NAS studio-live."
+      },
+      "taskKeys": [
+        "WW2:004"
+      ]
     },
     {
       "id": "J3638",
