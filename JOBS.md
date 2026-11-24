@@ -126,7 +126,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3586 | mini | open (after J3555) | – | – | WW2:014 vo · vo · WW2 film 014: narration in Ben's voice (Dambusters, post-reset) |  |
 | J3588 | mini | blocked | gemini | – | review · Verify condition for J3369 |  |
 | J3589 | mini | open | – | – | chief · Chief: resolve 003 edit orphan-blocked |  |
-| J3590 | mini | open | – | – | studio · First-day check at 48 h: "How Britain Built Two Harbours in Secret and Floated Them to Normandy" (ek9F61FVYqY) |  |
+| J3590 | mini | claimed | gemini | 2026-11-24T17:35Z | studio · First-day check at 48 h: "How Britain Built Two Harbours in Secret and Floated Them to Normandy" (ek9F61FVYqY) |  |
 | J3591 | mini | open (after J3590) | – | – | review · `gemini-argon` · Retention autopsy (48h): "How Britain Built Two Harbours in Secret and Floated Them to Nor" (ek9F61FVYqY) |  |
 | J3592 | mini | open | – | – | review · Verify condition for J3414 |  |
 | J3593 | mini | open | – | – | review · Verify condition for J3417 |  |
