@@ -1,5 +1,5 @@
 {
-  "next_id": 3619,
+  "next_id": 3621,
   "jobs": [
     {
       "id": "J0001",
@@ -318853,6 +318853,11 @@
           "at": "2026-11-24T16:23Z",
           "by": "claude",
           "what": "Air date now Tue 29 Dec 17:00 London; Ben's watch by Tue 22 Dec, together with 014 (early, so Ben has no watch 24-27 Dec) (ww2 PR #95)."
+        },
+        {
+          "at": "2026-11-24T21:11Z",
+          "by": "relay",
+          "what": "condition verification queued: J3619"
         }
       ],
       "remaining_action": "Await Gemini facts and Claude archive/opening decisions on draft PR 87",
@@ -318882,7 +318887,8 @@
       "hold": {
         "type": "input",
         "condition": "Draft PR #87 published, commit 60bd322. Required reviews queued: J3550 Gemini claims; J3551 Claude topic/archive and first-300-word viewer test after J3550. US depot and medium-tank remanufacture photo coverage remains unproven. No script lock or VO queue. Reviewer resolves flags/coverage then locks and queues VO, or returns for fixes. WW2 checkout clean on main.",
-        "check_at": "2026-11-24T21:08:28+00:00"
+        "check_at": "2026-11-24T22:11:55+00:00",
+        "recheck_task": "J3619"
       }
     },
     {
@@ -318968,6 +318974,11 @@
           "at": "2026-11-24T16:23Z",
           "by": "claude",
           "what": "Air date now Thu 31 Dec 17:00 London (still inside the anniversary); Ben's watch by Mon 28 Dec (ww2 PR #95)."
+        },
+        {
+          "at": "2026-11-24T21:11Z",
+          "by": "relay",
+          "what": "condition verification queued: J3620"
         }
       ],
       "remaining_action": "Checking archive coverage limits and preparing a topic-stage handoff",
@@ -318990,7 +319001,8 @@
       "hold": {
         "type": "input",
         "condition": "publish via Claude Code: /Users/ben/_desk/worker/slot2/ww2-channel macbook/J3487",
-        "check_at": "2026-11-24T21:04:09+00:00"
+        "check_at": "2026-11-24T22:11:55+00:00",
+        "recheck_task": "J3620"
       }
     },
     {
@@ -328261,6 +328273,68 @@
           "Commit evidence PR and report"
         ]
       }
+    },
+    {
+      "id": "J3619",
+      "title": "Verify condition for J3486",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3486: Draft PR #87 published, commit 60bd322. Required reviews queued: J3550 Gemini claims; J3551 Claude topic/archive and first-300-word viewer test after J3550. US depot and medium-tank remanufacture photo coverage remains unproven. No script lock or VO queue. Reviewer resolves flags/coverage then locks and queues VO, or returns for fixes. WW2 checkout clean on main.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3486 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-24T21:11Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T21:11Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await Gemini facts and Claude archive/opening decisions on draft PR 87",
+      "kind": "review",
+      "recheck_of": "J3486",
+      "due": "2026-11-24T22:11:55+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3620",
+      "title": "Verify condition for J3487",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3487: publish via Claude Code: /Users/ben/_desk/worker/slot2/ww2-channel macbook/J3487. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3487 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-24T21:11Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T21:11Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Checking archive coverage limits and preparing a topic-stage handoff",
+      "kind": "review",
+      "recheck_of": "J3487",
+      "due": "2026-11-24T22:11:55+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
