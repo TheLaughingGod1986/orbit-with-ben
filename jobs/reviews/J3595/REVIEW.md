@@ -8,7 +8,13 @@
 
 ---
 
-## Advisory Verdict
+## J3596 correction to the advisory (24 Nov 2026)
+
+The original recommendation below was superseded by the elected Chief’s FIX ruling recorded in J3596. Do not merge the original heads on this advisory alone. J3596 supplies a linked replacement for OWB #1273 and this advisory #1276, plus a companion replacement for ww2-channel #101. Keep J3591 held until the elected Chief reviews the corrected exact heads, merges acceptable work, and finishes J3591. No repeat watch is required.
+
+The original code assessment was too strong: launch fallback could score a six-hour reading as 48h, and source ffprobe could not establish the live trimmed timeline. Numerical niche targets are configured references without exact peer measurement support in the cited sources. AVD windows are inspection proxies, not measured exits/cliffs; the missing Mulberry title term is a discovery hypothesis, not an established recommendation cause. Original evidence and recommendations below are historical to the stated heads.
+
+## Original Advisory Verdict (superseded)
 
 **DO NOT REOPEN `J3591` FOR WORKER RE-EXECUTION — PREDECESSOR `J3590` IS `done` AND ALL 5 WORKER STEPS OF `J3591` ARE ALREADY COMPLETE.**
 
@@ -21,7 +27,7 @@
 ### Predecessor & Original Job History
 1. **Predecessor `J3590` (`done` by `gemini` at `2026-11-24T17:22Z`):** Read-only 48h Studio check for `WW2:001` (`ek9F61FVYqY`, Field Order History, went live `2026-11-22T17:00Z`) completed with `0` faults and recorded the 48h reading in `05_Analytics/ww2/launch/ek9F61FVYqY.json` on `main` (`views: 32`, `avgPct: 15.4`, `impressions: 1699`, `ctr: 0.8`, `likes: 1`; running 3-arm Thumbnail Test & Compare untouched; retention curve suppressed `"Not enough data"`).
 2. **`J3591` worker execution (`5/5` steps done by `gemini` at `2026-11-24T17:25–17:35Z`):**
-   - Verified moving-video + audio capabilities (`audio_input`, `moving_video_input`) and watched five 40 s H.264+AAC clips from `mulberry_scored_draft_v43.mp4` mapped to the live trimmed `23:52` timeline.
+   - Verified moving-video + audio capabilities (`audio_input`, `moving_video_input`) and watched five H.264+AAC clips (four 40 s, one 48 s extended opening) from `mulberry_scored_draft_v43.mp4` mapped to the live trimmed `23:52` timeline.
    - Posted full report on the studio thread (`#7139420419` at `2026-11-24T17:35:29Z`).
    - Parked `J3591` at `2026-11-24T17:35Z` with: `parked for Chief: review and merge OWB PR #1273 (05_Analytics/ww2/autopsy/ek9F61FVYqY_48h.md + retention_autopsy.py launch-record fallback) and ww2-channel PR #101 (studio/LEARNINGS.md row 10); worker cannot merge`.
 
@@ -35,7 +41,7 @@
   - `05_Analytics/ww2/autopsy/ek9F61FVYqY_48h.md` is not yet on `main` (confirmed absent).
   - All six RSI figures match `05_Analytics/ww2/launch/ek9F61FVYqY.json` and `05_Analytics/ww2/niche_benchmarks.json` (`20,000` impr -> `8↓↓`; `4.5%` CTR -> `15↓↓`; `1,000` views -> `3↓↓`; `35.0%` avg% -> `31↓`; `0:30` suppressed -> `—`; `31.25` subs/1k vs `10.0` -> `76↑↑*` with `n=1` caveat; channel median `—` with `n=0 < 3`).
   - Strict 5-step funnel order, honest suppressed-curve disclosure + 5 watched moving-video/audio proxy windows, max 3 concrete fixes (`this video` / `next film`), and all guards intact (running B/C/D Thumbnail Test & Compare untouched; read-only on YouTube; `£0`).
-  - `scripts/retention_autopsy.py` adds a clean launch-record fallback + `ffprobe` duration fallback with unit test in `scripts/test_retention_autopsy.py`. Because this modifies `scripts/`, it is a **Chief-only code/system merge** under Rule H.
+  - `scripts/retention_autopsy.py` adds a launch-record fallback + `ffprobe` duration fallback (subsequently found unsafe without the J3596 corrections) with unit test in `scripts/test_retention_autopsy.py`. Because this modifies `scripts/`, it is a **Chief-only code/system merge** under Rule H.
 - **Learnings row check (`ww2-channel PR #101`):**
   - `ww2-channel/studio/LEARNINGS.md` on `main` currently ends at Row #9; PR #101 cleanly appends Row #10 with exact autopsy findings and a testable prediction for films 002–006.
 
