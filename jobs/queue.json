@@ -321656,9 +321656,14 @@
           "at": "2026-11-24T13:12Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T13:13Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Verify readiness: Chief review and merge of verified records PR #1258, then close J3510",
+      "remaining_action": "Inspect J3510 full history, predecessor completion, and exact hold condition",
       "kind": "review",
       "recheck_of": "J3510",
       "mini_only": true,
@@ -321674,12 +321679,19 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-24T13:12Z",
+        "of": 4,
+        "at": "2026-11-24T13:13Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read J3510 and predecessor history",
+          "Verify gates, hash, and approvals",
+          "Check live YouTube/Studio state",
+          "Reopen or update wait on J3510 and finish J3535"
+        ]
+      },
+      "taskKeys": [
+        "OWB:029"
+      ]
     }
   ],
   "focus": [
