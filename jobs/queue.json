@@ -1,5 +1,5 @@
 {
-  "next_id": 3592,
+  "next_id": 3595,
   "jobs": [
     {
       "id": "J0001",
@@ -312038,6 +312038,11 @@
           "at": "2026-11-24T08:47Z",
           "by": "claude",
           "what": "Pilot 2 (v06) may go public today at 17:00, right as this 48-hour read is due: read pilot 1's numbers first, and note any traffic from pilot 2 separately."
+        },
+        {
+          "at": "2026-11-24T17:14Z",
+          "by": "relay",
+          "what": "condition verification queued: J3592"
         }
       ],
       "remaining_action": "Read the harbour film metrics and thumbnail test on 24 November at 17:05 UTC",
@@ -312054,7 +312059,8 @@
       "hold": {
         "type": "date",
         "condition": "Read pilot 1 at its 48-hour launch point at or after 2026-11-24T17:05:00Z; preserve running B/C/D test. Administrative claim only to register this dated hold, no second task performed.",
-        "check_at": "2026-11-24T17:05:00Z"
+        "check_at": "2026-11-24T18:14:45+00:00",
+        "recheck_task": "J3592"
       }
     },
     {
@@ -312270,6 +312276,11 @@
           "at": "2026-11-24T09:00Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-24T17:05:00Z"
+        },
+        {
+          "at": "2026-11-24T17:14Z",
+          "by": "relay",
+          "what": "condition verification queued: J3593"
         }
       ],
       "remaining_action": "Confirm the saved three-thumbnail test on qfc6EBStOfo is running after the U-boat film launches",
@@ -312289,7 +312300,8 @@
       "hold": {
         "type": "public",
         "condition": "New approved v06 qfc6EBStOfo is Public and its saved B/C/D Thumbnail-only test reads Running. Old v05 J9WGu8aPnHI is retired Private with no schedule. Preserve both tests; never restart.",
-        "check_at": "2026-11-24T17:05:00Z"
+        "check_at": "2026-11-24T18:14:45+00:00",
+        "recheck_task": "J3593"
       }
     },
     {
@@ -314923,6 +314935,11 @@
           "at": "2026-11-24T09:00Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-24T17:05:00Z"
+        },
+        {
+          "at": "2026-11-24T17:14Z",
+          "by": "relay",
+          "what": "condition verification queued: J3594"
         }
       ],
       "remaining_action": "Link pilot 1 to new pilot 2 qfc6EBStOfo after launch, preserving subscribe and verifying both directions",
@@ -314932,7 +314949,8 @@
       "hold": {
         "type": "public",
         "condition": "New pilot 2 v06 qfc6EBStOfo is public (24 Nov 17:00Z target; J3466 controls fallback). Use qfc6EBStOfo for pilot 1 end-screen/card links; old v05 J9WGu8aPnHI must remain Private.",
-        "check_at": "2026-11-24T17:05:00Z"
+        "check_at": "2026-11-24T18:14:45+00:00",
+        "recheck_task": "J3594"
       }
     },
     {
@@ -325060,7 +325078,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -325077,6 +325095,11 @@
           "at": "2026-11-24T17:03Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
+        },
+        {
+          "at": "2026-11-24T17:14Z",
+          "by": "relay",
+          "what": "cancelled: nothing left to verify, J3205 is open and no longer waiting"
         }
       ],
       "remaining_action": "Verify readiness: Publish the verified checkpoint through Claude Code, then clear archives and assemble the film",
@@ -325282,6 +325305,101 @@
       ],
       "autopsy": "ek9F61FVYqY@48h",
       "plain": "Analyse why viewers stayed or left on \"How Britain Built Two Harbours in Secret and Floated The\" (48h) and write up to 3 fixes"
+    },
+    {
+      "id": "J3592",
+      "title": "Verify condition for J3414",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3414: Read pilot 1 at its 48-hour launch point at or after 2026-11-24T17:05:00Z; preserve running B/C/D test. Administrative claim only to register this dated hold, no second task performed.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3414 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-24T17:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T17:14Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Read the harbour film metrics and thumbnail test on 24 November at 17:05 UTC",
+      "kind": "review",
+      "recheck_of": "J3414",
+      "due": "2026-11-24T18:14:45+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3593",
+      "title": "Verify condition for J3417",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3417: New approved v06 qfc6EBStOfo is Public and its saved B/C/D Thumbnail-only test reads Running. Old v05 J9WGu8aPnHI is retired Private with no schedule. Preserve both tests; never restart.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3417 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-24T17:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T17:14Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Confirm the saved three-thumbnail test on qfc6EBStOfo is running after the U-boat film launches",
+      "kind": "review",
+      "recheck_of": "J3417",
+      "mini_only": true,
+      "due": "2026-11-24T18:14:45+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3594",
+      "title": "Verify condition for J3443",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3443: New pilot 2 v06 qfc6EBStOfo is public (24 Nov 17:00Z target; J3466 controls fallback). Use qfc6EBStOfo for pilot 1 end-screen/card links; old v05 J9WGu8aPnHI must remain Private.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3443 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-24T17:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T17:14Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Link pilot 1 to new pilot 2 qfc6EBStOfo after launch, preserving subscribe and verifying both directions",
+      "kind": "review",
+      "recheck_of": "J3443",
+      "mini_only": true,
+      "due": "2026-11-24T18:14:45+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
