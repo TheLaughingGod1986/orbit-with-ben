@@ -47,6 +47,11 @@ def card(c: dict, root=None) -> dict:
     out["repo"] = repo_name((c.get("repo") or {}).get("url"))
     limit = (c.get("wip") or {}).get("limit")
     out["wip"] = limit if isinstance(limit, int) and not isinstance(limit, bool) else None
+    # The publishing slots, as written ("Sun 18:00"), for the Schedule tab's plan (Ben, 24 Nov 2026: "an overview of
+    # if this plan is correct"). Only well-formed slots; a malformed cadence is channel_check's job to report.
+    cad = c.get("cadence") if isinstance(c.get("cadence"), dict) else {}
+    out["cadence"] = {kind: [s for s in (cad.get(kind) or []) if isinstance(s, str) and channels.SLOT.fullmatch(s)]
+                      for kind in ("long", "short")}
     root = root or channels.checkout(c["slug"])
     if root is None:
         out.update(here=False, ready=None, must=[], todo=[], rules=None)

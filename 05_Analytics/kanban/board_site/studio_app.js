@@ -411,10 +411,19 @@
   const inProgress = vs => vs.filter(v => ["todo", "progress", "qa"].includes(videoLane(v)));
 
   // Publications from now on: YouTube's own schedule first, else the planned air date; one row per YouTube video.
-  function schedule(vs, now) {
+  // A planned air date's time: the channel's own slot on that weekday, else its first slot, else 18:00 (London; the
+  // board shows GMT-season dates as written).
+  function slotTime(v, chans) {
+    const c = (chans || []).find(x => x && (x.label === v.channel || x.slug === v.channel || x.short === v.channel));
+    const slots = ((c && c.cadence) || {})[v.type === "short" ? "short" : "long"] || [];
+    const wd = v.air ? new Date(v.air + "T12:00:00Z").toLocaleDateString("en-GB", { timeZone: "UTC", weekday: "short" }) : "";
+    const hit = slots.find(s => s.startsWith(wd + " ")) || slots[0] || "";
+    return /\d\d:\d\d$/.test(hit) ? hit.slice(-5) : "18:00";
+  }
+  function schedule(vs, now, chans) {
     const seen = new Set(), rows = [];
     for (const v of vs) {
-      const yt = v.youtube || {}, at = Date.parse(yt.publishAt || "") || Date.parse(v.air ? v.air + "T18:00:00Z" : "");
+      const yt = v.youtube || {}, at = Date.parse(yt.publishAt || "") || Date.parse(v.air ? `${v.air}T${slotTime(v, chans)}:00Z` : "");
       if (!at || at < now - 36e5 || (yt.state === "live" && yt.privacy === "public")) continue;
       const slot = `${v.channel}|${v.type}|${at}`, id = yt.videoId || "";
       if ((id && seen.has(id)) || seen.has(slot)) {
@@ -2313,9 +2322,29 @@
     return "";
   }
 
+  // The plan, per channel, from each channel's own publishing slots (Ben, 24 Nov 2026: "I'd just like to know an
+  // overview of if this plan is correct").
+  const SLOT_DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  function slotsText(slots) {
+    const byTime = new Map();
+    for (const s of slots || []) { const [d, t] = s.split(" "); byTime.set(t, (byTime.get(t) || []).concat([d])); }
+    return [...byTime].map(([t, ds]) => `${ds.sort((a, c) => SLOT_DAYS.indexOf(a) - SLOT_DAYS.indexOf(c)).join(", ")} ${t}`).join("; ");
+  }
+  function planOverview(b) {
+    const chans = (b.channels || []).filter(c => c && c.cadence && ((c.cadence.long || []).length || (c.cadence.short || []).length));
+    if (!chans.length) return "";
+    const line = c => {
+      const L = c.cadence.long || [], S = c.cadence.short || [];
+      const longs = L.length ? `<b>${L.length} long film${L.length === 1 ? "" : "s"}</b> a week (${esc(slotsText(L))})` : "No long films";
+      const shorts = S.length ? `<b>${S.length} Short${S.length === 1 ? "" : "s"}</b> (${esc(slotsText(S))})` : "no Shorts";
+      return `<div class="plan-line"><b>${esc(c.name || c.label)}</b><span class="meta">${longs} · ${shorts}</span></div>`;
+    };
+    const total = chans.reduce((n, c) => n + (c.cadence.long || []).length, 0), shorts = chans.reduce((n, c) => n + (c.cadence.short || []).length, 0);
+    return section("The plan", null, chans.map(line).join("") + `<p class="meta">In all: ${total} long films and ${shorts} Shorts a week · London time · each channel's own publishing days.</p>`);
+  }
   function scheduleTab(b, now) {
     const vs=uniqueVideos(((b.tracker||{}).videos)||[]);
-    const rows = schedule(vs, now), actualWeek=scheduledThisWeek(vs,now), bounds=weekDates(now);
+    const rows = schedule(vs, now, b.channels), actualWeek=scheduledThisWeek(vs,now), bounds=weekDates(now);
     const day = at => new Date(at).toLocaleDateString("en-GB", { timeZone: "Europe/London", weekday: "long", day: "numeric", month: "short" });
     const time = at => new Date(at).toLocaleTimeString("en-GB", { timeZone: "Europe/London", hour: "2-digit", minute: "2-digit" });
     const item = r => { const warn = readiness(r.v, r.at, now);
@@ -2334,6 +2363,7 @@
     // Always show This week then Next week (and Later). view=week is a deep-link only — never hides a week list.
     return `<header class="top"><h1>Schedule</h1></header><p class="meta">Calendar weeks · Monday–Sunday · London time</p>
       ${chips}
+      ${planOverview(b)}
       ${section("This week · scheduled",actualWeek.length,byDay(actualWeek)||empty("Nothing scheduled this week."))}
       ${planned.length?section("This week · planned",planned.length,byDay(planned)):''}
       ${section("Next week",next.length,byDay(next)||empty("Nothing yet."))}
