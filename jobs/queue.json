@@ -320419,9 +320419,14 @@
           "at": "2026-11-24T21:11Z",
           "by": "gemini",
           "what": "step 4 of 5 done: check_all.sh ALL CHECKS PASS: review:script PASS 93.6/100 (1,239w, 8.3m, 8/8 gates), gate:episode PASS (9/9 OK), status_board PASS"
+        },
+        {
+          "at": "2026-11-24T21:13Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Opened HOS PR #756 (commit d66b6071, check_all.sh ALL CHECKS PASS, review:script 93.6/100 PASS, gate:episode PASS); queued J3621 (facts) and J3622 (review/lock); posted HOS desk handoff; £0.00 spent"
         }
       ],
-      "remaining_action": "Committing HOS:127 branch, opening PR, queueing facts/review jobs, and posting desk handoff",
+      "remaining_action": "All steps complete; closing J3504",
       "due": "2026-12-02T18:00:00Z",
       "kind": "script",
       "plain": "Choose package-first title/thumbnail ideas and draft the 7-9 minute script for HOS 127 (Wright Brothers)",
@@ -320434,9 +320439,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-24T21:11Z",
+        "at": "2026-11-24T21:13Z",
         "by": "gemini",
         "plan": [
           "Inspect J3264 branch and sibling drafts",
@@ -320445,7 +320450,7 @@
           "Run review:script, gate:episode, and CI checks",
           "Commit, open PR, queue review/facts, and report"
         ],
-        "note": "check_all.sh ALL CHECKS PASS: review:script PASS 93.6/100 (1,239w, 8.3m, 8/8 gates), gate:episode PASS (9/9 OK), status_"
+        "note": "Opened HOS PR #756 (commit d66b6071, check_all.sh ALL CHECKS PASS, review:script 93.6/100 PASS, gate:episode PASS); queu"
       },
       "taskKeys": [
         "HOS:127"
