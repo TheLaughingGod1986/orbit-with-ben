@@ -318955,20 +318955,32 @@
           "at": "2026-11-24T16:22Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T16:23Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "WW2 film 009: Gemini claims check on SCRIPT.md and SOURCES.md (PR #68)",
+      "remaining_action": "Fetch PR #68 and read SCRIPT.md, SOURCES.md, NARRATION_v01.txt, and status.json",
       "due": "2026-11-30T12:00:00Z",
       "kind": "facts",
       "plain": "Check every fact and figure in the Operation Pedestal script against official naval records",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-24T16:22Z",
+        "of": 4,
+        "at": "2026-11-24T16:23Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read PR #68 script and sources",
+          "Verify C01-C37 and F1-F4 against primary sources",
+          "Write CLAIMS_CHECK.md and update status.json",
+          "Run checks, open PR, and report"
+        ]
+      },
+      "taskKeys": [
+        "WW2:009"
+      ]
     },
     {
       "id": "J3492",
