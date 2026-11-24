@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2529, J3205, J3364, J3370, J3371, J3422, J3419.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2529, J3205, J3364, J3370, J3371, J3419.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -67,7 +67,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3415 | mini | blocked | – | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3417 | mini | blocked | codex | – | thumb · Field Order History pilot 2: two close-crop thumbnails and a Test & Compare at launch; one-subject rule into the playbook for films 003+ |  |
 | J3419 | mini | blocked | gemini | – | for gemini · studio · `gemini-argon` · Field Order History pilot 1: cut the 3m45s detour (1:27-5:12) from the live video in Studio's editor, retime captions and chapters (Ben: go) |  |
-| J3422 | mini | claimed | gemini | 2026-11-24T04:05Z | WW2:002 vo · for gemini · vo · `gemini-argon` · WW2 pilot 002: voice the new opening (pickup only, same voice and settings) |  |
 | J3429 | mini | blocked | codex | – | WW2:004 picture · image · WW2 film 004: top up the archive photographs to about two-thirds of screen time before the edit |  |
 | J3430 | mini | open (after J3429) | – | – | WW2:004 edit · assembly · WW2 film 004: edit, captions, three thumbnails and upload package, to Ben's watch |  |
 | J3431 | mini | blocked | codex | – | WW2:005 picture · image · WW2 film 005: top up the archive photographs to about two-thirds of screen time before the edit |  |
