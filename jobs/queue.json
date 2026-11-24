@@ -325630,19 +325630,29 @@
           "at": "2026-11-24T23:34Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T23:35Z",
+          "by": "macbook-2",
+          "what": "step 1 of 5 done"
         }
       ],
-      "remaining_action": "Cut locked 003 narration (04:49.020-05:33.780), assemble 1080x1920 vertical Short reusing J3542 pipeline, and put on Ben watch",
+      "remaining_action": "Verify 003-S2 STT timings, archive photos, and turret diagram",
       "due": "2026-11-29T18:00:00Z",
       "kind": "assembly",
       "plain": "Build the second B-29 Short about the remote-controlled gun turrets aimed by a General Electric analogue computer",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T23:34Z",
+        "step": 1,
+        "of": 5,
+        "at": "2026-11-24T23:35Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Verify sources & timings",
+          "Design shots & build script",
+          "Render master & verify gates",
+          "Copy to NAS & inspect stills",
+          "Open PR & report"
+        ]
       }
     },
     {
