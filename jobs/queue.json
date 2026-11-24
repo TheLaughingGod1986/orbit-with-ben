@@ -325923,13 +325923,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-24T17:35Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-24T17:35Z",
-      "result": "parked for Chief: Condition verification complete in OWB PR #1276 (531953868, jobs/reviews/J3595/REVIEW.md). DO NOT reopen J3591: predecessor J3590 is done and all 5 worker steps of J3591 are already complete (OWB PR #1273 OPEN, Rules check SUCCESS, head e89d46f2838c; ww2-channel PR #101 OPEN, CLEAN, head c68a6d0dfdf1). Note: relay stamped a synthetic dependency hold on J3591 because after: J3590 was done on a Chief-review block, masking J3591 from Chief duties. Elected Chief (codex) to review/merge OWB PR #1273 (includes scripts/retention_autopsy.py under Rule H), ww2-channel PR #101, and OWB PR #1276, then close J3591 as done (clearing hold) and close J3595. Zero YouTube writes, zero merges, £0 spent.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-24T17:35Z",
@@ -325965,6 +325965,11 @@
           "at": "2026-11-24T17:41Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: Condition verification complete in OWB PR #1276 (531953868, jobs/reviews/J3595/REVIEW.md). DO NOT reopen J3591: predecessor J3590 is done and all 5 worker steps of J3591 are already complete (OWB PR #1273 OPEN, Rules check SUCCESS, head e89d46f2838c; ww2-channel PR #101 OPEN, CLEAN, head c68a6d0dfdf1). Note: relay stamped a synthetic dependency hold on J3591 because after: J3590 was done on a Chief-review block, masking J3591 from Chief duties. Elected Chief (codex) to review/merge OWB PR #1273 (includes scripts/retention_autopsy.py under Rule H), ww2-channel PR #101, and OWB PR #1276, then close J3591 as done (clearing hold) and close J3595. Zero YouTube writes, zero merges, £0 spent."
+        },
+        {
+          "at": "2026-11-24T18:38Z",
+          "by": "codex",
+          "what": "reopened: Elected Chief taking the assigned blocked verification to record its completed ruling; parent J3591 remains held for existing J3598 review of PR 1284."
         }
       ],
       "remaining_action": "Parked for Chief Codex: review and merge OWB PR #1273, ww2-channel PR #101, and OWB PR #1276; close J3591 and J3595",
@@ -325979,19 +325984,7 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-24T17:40Z",
-        "by": "macbook-2",
-        "plan": [
-          "Inspect J3591, PRs #1273/#101, and thread",
-          "Verify condition and update J3591 hold or reopen",
-          "Close J3595 and post studio thread report"
-        ],
-        "note": "Opened OWB PR #1276 (jobs/reviews/J3595/REVIEW.md); parking J3595 for Chief Codex"
-      }
+      "open_claim": true
     },
     {
       "id": "J3596",
