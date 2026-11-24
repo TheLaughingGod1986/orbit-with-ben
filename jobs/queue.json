@@ -325446,9 +325446,14 @@
           "at": "2026-11-24T17:24Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T17:26Z",
+          "by": "macbook",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Read the harbour film metrics and thumbnail test on 24 November at 17:05 UTC",
+      "remaining_action": "Auditing J3414 history, approvals, and live pilot 1 state",
       "kind": "review",
       "recheck_of": "J3414",
       "due": "2026-11-24T18:14:45+00:00",
@@ -325464,10 +325469,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-24T17:24Z",
+        "at": "2026-11-24T17:26Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Audit J3414 history and live evidence",
+          "Write verification review PR",
+          "Update queue state and report on thread"
+        ]
       }
     },
     {
