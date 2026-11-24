@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J2529, J3430, J3431, J3432, J3434, J3501, J3519, J3500, J3530, J3540, J3205, J3542.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J2529, J3430, J3431, J3432, J3434, J3501, J3519, J3500, J3530, J3205, J3542, J3540.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -46,7 +46,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3310 | mini | open (after J3307) | – | – | studio · Studio: arm T043 thumbnail Test & Compare on REXYxuLOBoI (005 — OUTLIVES OUR SUN) after J3307 PASS | jobs/reviews/J3382/REVIEW.md |
 | J3365 | mini | open | – | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J3369 | mini | blocked | codex | – | 001 thumbs · studio · Field Order History pilot 1: 48-hour thumbnail decision |  |
-| J3414 | mini | blocked | codex | – | studio · WW2 pilot 1: 48-hour metrics and running thumbnail test read |  |
 | J3415 | mini | blocked | – | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3417 | mini | blocked | codex | – | thumb · Field Order History pilot 2: two close-crop thumbnails and a Test & Compare at launch; one-subject rule into the playbook for films 003+ |  |
 | J3430 | mini | blocked | gemini | – | WW2:004 edit · assembly · WW2 film 004: edit, captions, three thumbnails and upload package, to Ben's watch |  |
@@ -86,7 +85,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3535 | mini | blocked | gemini | – | review · Verify condition for J3510 |  |
 | J3536 | mini | open (after J3524) | – | – | WW2:012 vo · vo · WW2 film 012: narration in Ben's voice (Liberty Ships, post-reset) |  |
 | J3537 | mini | open (after J3526) | – | – | WW2:013 vo · vo · WW2 film 013: narration in Ben's voice (Ghost Army, post-reset) |  |
-| J3540 | mini | open (after J3414) | – | – | WW2:001 upload · studio · Field Order History pilot 1: change the title to name the Mulberry harbours, right after the 48-hour read |  |
+| J3540 | mini | open | – | – | WW2:001 upload · studio · WW2 pilot 1: 48-hour Studio read, then change the title to name the Mulberry harbours |  |
 | J3542 | mini | claimed | codex | 2026-11-24T20:21Z | WW2:001 edit · assembly · Field Order History: one test Short on the Mulberry harbours, cut from pilot 1, pointing to the full film |  |
 | J3546 | any | open | – | – | 064 script · chief · OWB 064: Record J3539 FIX in the Chief-owned script hold | J3539 |
 | J3547 | mini | blocked | macbook | – | HOS:128 script · review · HOS 128 Edison vs Tesla (Thu 10 Dec): review and lock script v01, package-first scoring, sources & Shorts (PR #751) |  |
@@ -125,7 +124,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3588 | mini | blocked | gemini | – | review · Verify condition for J3369 |  |
 | J3589 | mini | open | – | – | chief · Chief: resolve 003 edit orphan-blocked |  |
 | J3591 | mini | blocked | gemini | – | review · `gemini-argon` · Retention autopsy (48h): "How Britain Built Two Harbours in Secret and Floated Them to Nor" (ek9F61FVYqY) |  |
-| J3592 | mini | blocked | macbook | – | review · Verify condition for J3414 |  |
 | J3593 | mini | blocked | gemini | – | review · Verify condition for J3417 |  |
 | J3594 | mini | open | – | – | review · Verify condition for J3443 |  |
 | J3595 | mini | blocked | macbook-2 | – | review · Verify condition for J3591 |  |
@@ -134,6 +132,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 Recently finished:
 
+- J3592 cancelled: Verify condition for J3414 (parked for Chief: Read-only verification complete in OWB PR #1272 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1272, 491663b6c, jobs/reviews/J3592/REVIEW.md). Condition PROVEN SATISFIED: J3411 done (ww2 PR #36), all 4 NAS thumb SHA-256 hashes match, live API+Studio read-backs (J3590 05_Analytics/ww2/launch/ek9F61FVYqY.json & J3588 PR #1270) confirm ek9F61FVYqY Public since 2026-11-22T17:00:31Z (48h open since 17:00:31Z), 0 faults, B/C/D test still Running untouched, and ww2/05_Analytics/READS.md not yet written. Elected Chief (codex) to merge PR #1272, reopen J3414 (preserving running B/C/D test, including J3419 trim/TV/pilot-2 notes, splitting ongoing test read to 2026-11-30T09:15:00Z to unblock urgent J3540), coordinate J3369/J3588 & missing 29 Nov 7-day read, and close J3592. Zero YouTube edits, zero public watch opens, £0 spent.)
 - J3590 done: First-day check at 48 h: "How Britain Built Two Harbours in Secret and Floated Them to Normandy" (ek9F61FVYqY) ("How Britain Built Two Harbours in Secret and Floated Them to Normandy" (ek9F61FVYqY) · Field Order History · long · went live Sun 22 Nov 17:00 London
 At 48 h: views 32 · impressions 1699 · click rate 0.8% · average viewed 15.4%
 
@@ -173,4 +172,3 @@ Done (2026-11-24T17:22Z, gemini): J3590 read-only Studio CDP 9224 48h check, 24 
 #49 DRAFT RETAINED (fa6df46, CLEAN): main merged; UNFINISHED (004 archive pool/sentence review delivered, J3448 FIX 43.96% photo allocation <50%; no picture PASS).
 #50 DRAFT RETAINED (01d5f75, CLEAN): main merged; UNFINISHED (005 archive pool/J3449 review delivered, 40.400% coverage <50% awaiting Chief decision; no picture PASS).
 #60 DRAFT RETAINED (7ca9377, CLEAN): main merged; UNFINISHED (004 J3430 step 1/4 prep checkpoint only; assembly/QA unfinished, 43.99% allocation unresolved).)
-- J3545 done: OWB 064: Independently verify corrected v04 before script lock (ADVISORY PASS (ready for elected Chief lock; not locked here) delivered in PR #1274 (branch macbook/J3545, commit dd0d587b4, jobs/reviews/J3545/) on OWB 064 v04 candidate PR #1269 (commit ee3308007). Exact byte-identical master/draft v04 SHA-256 556f3c8df68ee3cd1420ef03b8cedc04a7f0f79463d98ebf4d3d5e5753408db8 (1,296 alnum tokens / 1,341 ws tokens / 1,374 expanded words / 8,471 chars; first sentence 17 expanded words ~7.03s <8s; immediate spoken answer ~11.17s; est. 606.28s incl. 18s hold); SOURCES.md SHA-256 4a7e3fa5c74a548764886a274514d2590e5951e5e8782aa8118566d252fdc415 (16 rows, 7 cols). Direct live verification: 52/52 URLs HTTP 200 (all 49 HTML/XML sources + both archival PDFs sp-4524.pdf pp.124/129 and mola.summary.pdf Table 8 p.21 extracted via PDFKit + diagnostic erroneous PMID 17782980 Solanum paper), 16/16 MUST QUOTE rows PASS. All 4 J3520 fixes and all 9 explicit J3545/J3539 items + Gauss/ESA tightening resolved. Raw Gemini v04 output inspected without inheriting verdict (PDF gaps closed; minor non-blocking Row 3 NSSDCA label note recorded). Fresh review:script 91.6/100 PASS, explicit-v04 gate:episode --require-checklist PASS, 13/13 privacy tests PASS; v01-v03 and J3538/J3539 preserved intact. J3020 remains blocked and J3021 remains dependent until elected Chief merges PR #1269 + PR #1274, records lock, and completes J3020. Zero spend/generation/narration/upload/schedule changes; checkout left on main.)

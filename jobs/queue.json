@@ -290041,7 +290041,7 @@
         "by": ""
       },
       "open_claim": true,
-      "urgent": 12,
+      "urgent": 11,
       "escalated_at": "2026-11-22T15:18Z",
       "taskKeys": [
         "WW2:003"
@@ -311996,8 +311996,8 @@
       "stage": "",
       "after": "J3411",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-11-23T09:45Z",
       "eta": "",
       "created_by": "codex",
@@ -312043,6 +312043,11 @@
           "at": "2026-11-24T17:14Z",
           "by": "relay",
           "what": "condition verification queued: J3592"
+        },
+        {
+          "at": "2026-11-24T17:52Z",
+          "by": "claude",
+          "what": "cancelled: merged into J3540 (one Studio visit does the 48-hour read and the title change)"
         }
       ],
       "remaining_action": "Read the harbour film metrics and thumbnail test on 24 November at 17:05 UTC",
@@ -322873,14 +322878,14 @@
     },
     {
       "id": "J3540",
-      "title": "Field Order History pilot 1: change the title to name the Mulberry harbours, right after the 48-hour read",
+      "title": "WW2 pilot 1: 48-hour Studio read, then change the title to name the Mulberry harbours",
       "needs": "mini",
       "repo": "ww2",
-      "body": "**Why (Ben, Tue 24 Nov ~13:10 London: \"Full Audit on the first video\"; Claude's audit).** Pilot 1 (ek9F61FVYqY) got 97% of its first 956 impressions from Suggested videos at 0.6-0.8% click-through; search gave 14 impressions and 0 clicks. Its title, *The Secret Floating Harbours of D-Day*, does not name the thing people search for. vidIQ (24 Nov): `mulberry harbour` about 6,600 searches a month, competition 50; `mulberry harbour d-day` about 4,700, competition 44. The title is also close to Real Engineering's *The Floating Harbors of D-Day* (973K views), which wins that phrase in search. Rule 2 (studio/RULES.md): a title of 50 characters or fewer that names the known thing.\n\n**Do (Mini, Field Order History Studio; after J3414's 48-hour read today):**\n1. Read the running thumbnail-only Test & Compare (B v02 / C / D). If Studio names a leader, record it. Never delete or restart a test.\n2. When Studio allows it, without disturbing the running thumbnail test, start a **title test**: A = the current title; B = **Mulberry Harbours: D-Day's Floating Ports** (41 characters); C = **How the Mulberry Harbours Won D-Day** (35). If Studio only allows one test at a time, start the title test the moment the thumbnail test finishes, and say when.\n3. Record the before and after (time, titles, impressions and CTR at the switch) in the film's records and `studio/LEARNINGS.md`.\n**Guards.** Listing change only: no re-upload, no schedule or visibility change. £0.\n\n**Update (Claude, acting Chief, 24 Nov ~16:45 UTC): change the title directly, tonight; no title test.**\n- YouTube runs one Test & Compare per video at a time, and the thumbnail test is still running.\n- At about 1,000 impressions a day, a three-way title test would take a week or more to show anything.\n- Ben asked when the new title goes live (24 Nov, in chat). Titles are the studio's call (rule 7).\n\n**Do, right after J3414's 48-hour read (from 17:05 UTC today):**\n1. Record impressions, strangers' click-through and search impressions at that moment.\n2. In Studio, change the title to **Mulberry Harbours: D-Day's Floating Ports**. That is the searched name first, per rule 2 as of ww2 PR #97.\n   - Keep the running thumbnail test. Every arm gets the same title, so the comparison stays fair.\n   - If Studio refuses a title edit while the test runs: end the test, keep the arm with the highest watch-time share (C if Studio shows none), then change the title. Never delete the video or restart a test.\n3. Read the title back in Studio and the Data API only. Never open the public page.\n4. Record the switch time, the before numbers, and the 7-day after numbers (search impressions and clicks, strangers' click-through) in the film's `status.json` and against `studio/LEARNINGS.md` lines 1 and 9.\n\nDue tonight, latest Wed 25 Nov 12:00 UTC.",
+      "body": "**Why (Ben, Tue 24 Nov ~13:10 London: \"Full Audit on the first video\"; Claude's audit).** Pilot 1 (ek9F61FVYqY) got 97% of its first 956 impressions from Suggested videos at 0.6-0.8% click-through; search gave 14 impressions and 0 clicks. Its title, *The Secret Floating Harbours of D-Day*, does not name the thing people search for. vidIQ (24 Nov): `mulberry harbour` about 6,600 searches a month, competition 50; `mulberry harbour d-day` about 4,700, competition 44. The title is also close to Real Engineering's *The Floating Harbors of D-Day* (973K views), which wins that phrase in search. Rule 2 (studio/RULES.md): a title of 50 characters or fewer that names the known thing.\n\n**Do (Mini, Field Order History Studio; after J3414's 48-hour read today):**\n1. Read the running thumbnail-only Test & Compare (B v02 / C / D). If Studio names a leader, record it. Never delete or restart a test.\n2. When Studio allows it, without disturbing the running thumbnail test, start a **title test**: A = the current title; B = **Mulberry Harbours: D-Day's Floating Ports** (41 characters); C = **How the Mulberry Harbours Won D-Day** (35). If Studio only allows one test at a time, start the title test the moment the thumbnail test finishes, and say when.\n3. Record the before and after (time, titles, impressions and CTR at the switch) in the film's records and `studio/LEARNINGS.md`.\n**Guards.** Listing change only: no re-upload, no schedule or visibility change. £0.\n\n**Update (Claude, acting Chief, 24 Nov ~16:45 UTC): change the title directly, tonight; no title test.**\n- YouTube runs one Test & Compare per video at a time, and the thumbnail test is still running.\n- At about 1,000 impressions a day, a three-way title test would take a week or more to show anything.\n- Ben asked when the new title goes live (24 Nov, in chat). Titles are the studio's call (rule 7).\n\n**Do, right after J3414's 48-hour read (from 17:05 UTC today):**\n1. Record impressions, strangers' click-through and search impressions at that moment.\n2. In Studio, change the title to **Mulberry Harbours: D-Day's Floating Ports**. That is the searched name first, per rule 2 as of ww2 PR #97.\n   - Keep the running thumbnail test. Every arm gets the same title, so the comparison stays fair.\n   - If Studio refuses a title edit while the test runs: end the test, keep the arm with the highest watch-time share (C if Studio shows none), then change the title. Never delete the video or restart a test.\n3. Read the title back in Studio and the Data API only. Never open the public page.\n4. Record the switch time, the before numbers, and the 7-day after numbers (search impressions and clicks, strangers' click-through) in the film's `status.json` and against `studio/LEARNINGS.md` lines 1 and 9.\n\nDue tonight, latest Wed 25 Nov 12:00 UTC.\n\n**Update (Claude, acting Chief, 24 Nov ~17:55 UTC): this job now carries J3414's 48-hour read too (one Studio visit, not two).**\nJ3414 waited past its 17:05 date while the relay queued a verification (J3592, condition proven satisfied in OWB PR #1272). Only Codex and Gemini are up on the Mini tonight: Claude Code is out until Wed 10:00 London and Cursor until Thu.\n\n**Do first, before the title change (Studio and the Data API only):**\n1. Record impressions, click-through by traffic source (suggested, browse, search), views, average view duration and percentage viewed. Do each twice: since publish, and since the 23 Nov 13:51Z retitle.\n2. Read the B/C/D thumbnail test: its leader and watch-time shares, if Studio shows them.\n3. Read the retention curve, if ready: the biggest drops after the 23 Nov cut to 23:52.\n4. List the suggesting videos.\n5. Note pilot 2's first hours separately (it went public 24 Nov 17:00).\n\nWrite these as `05_Analytics/AUDIT_001_48H_2026-11-24.md` in one ww2-channel PR, in the same shape as `AUDIT_001_2026-11-23.md`.\n\n**Then** do the title change exactly as above. Public counter at 17:50 (vidIQ API read, nobody played the video): 33 views, 1 like, about 11 views on day two, now under 1 view an hour.",
       "ref": "",
       "film": "WW2:001",
       "stage": "upload",
-      "after": "J3414",
+      "after": "",
       "eta_min": 30,
       "status": "open",
       "by": "",
@@ -322904,13 +322909,18 @@
           "at": "2026-11-24T16:41Z",
           "by": "claude",
           "what": "Direct title change after the 48-hour read, replacing the title test (one test per video at a time; too few impressions for a 3-way test)."
+        },
+        {
+          "at": "2026-11-24T17:52Z",
+          "by": "claude",
+          "what": "Carries J3414's 48-hour read; no longer waits on it."
         }
       ],
       "remaining_action": "Read the thumbnail test, then start a title test with a Mulberry title",
       "due": "2026-11-25T12:00:00Z",
       "kind": "studio",
       "mini_only": true,
-      "urgent": 11
+      "urgent": 13
     },
     {
       "id": "J3541",
@@ -323047,7 +323057,7 @@
       "due": "2026-11-25T20:00:00Z",
       "kind": "assembly",
       "mini_only": true,
-      "urgent": 13,
+      "urgent": 12,
       "taskKeys": [
         "WW2:001"
       ],
@@ -325575,8 +325585,8 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-11-24T17:24Z",
       "eta": "",
       "created_by": "relay",
@@ -325617,6 +325627,11 @@
           "at": "2026-11-24T17:30Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: Read-only verification complete in OWB PR #1272 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1272, 491663b6c, jobs/reviews/J3592/REVIEW.md). Condition PROVEN SATISFIED: J3411 done (ww2 PR #36), all 4 NAS thumb SHA-256 hashes match, live API+Studio read-backs (J3590 05_Analytics/ww2/launch/ek9F61FVYqY.json & J3588 PR #1270) confirm ek9F61FVYqY Public since 2026-11-22T17:00:31Z (48h open since 17:00:31Z), 0 faults, B/C/D test still Running untouched, and ww2/05_Analytics/READS.md not yet written. Elected Chief (codex) to merge PR #1272, reopen J3414 (preserving running B/C/D test, including J3419 trim/TV/pilot-2 notes, splitting ongoing test read to 2026-11-30T09:15:00Z to unblock urgent J3540), coordinate J3369/J3588 & missing 29 Nov 7-day read, and close J3592. Zero YouTube edits, zero public watch opens, £0 spent."
+        },
+        {
+          "at": "2026-11-24T17:52Z",
+          "by": "claude",
+          "what": "cancelled: condition proven satisfied (OWB PR #1272); J3414's read now runs inside J3540"
         }
       ],
       "remaining_action": "Parked for Chief (codex): merge PR #1272, reopen J3414, close J3592",
