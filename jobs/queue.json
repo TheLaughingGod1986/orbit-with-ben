@@ -328890,19 +328890,30 @@
           "at": "2026-11-24T21:33Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T21:34Z",
+          "by": "macbook",
+          "what": "step 1 of 6 done"
         }
       ],
-      "remaining_action": "Correct historical claims and opening timings before independent checks",
+      "remaining_action": "Reading PR #751 v01 files and PR #752 J3547 review findings",
       "due": "2026-11-26T18:00:00Z",
       "kind": "script",
       "plain": "Correct the Edison and Tesla narration, sources and short films before recording",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T21:33Z",
+        "step": 1,
+        "of": 6,
+        "at": "2026-11-24T21:34Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read PR 751 v01 and PR 752 review",
+          "Verify facts and primary URLs",
+          "Rewrite script, Shorts and packaging v02",
+          "Update sources, fact notes and status",
+          "Run script review and episode gates",
+          "Push PR, queue follow-up and report"
+        ]
       }
     },
     {
