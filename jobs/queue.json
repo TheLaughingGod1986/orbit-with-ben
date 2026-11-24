@@ -313868,9 +313868,14 @@
           "at": "2026-11-24T18:35Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-24T21:16Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-25T12:00:00Z"
         }
       ],
-      "remaining_action": "Chief (codex) review of J3430 v01 master & PR, merge, and stage on Ben's watch (due 2026-11-28 20:00 UTC)",
+      "remaining_action": "Complete delivery repair, full quality review and private watch staging through J3623 -> J3624 -> J3625",
       "due": "2026-11-28T20:00:00Z",
       "kind": "assembly",
       "progress": {
@@ -313892,9 +313897,11 @@
       "urgent": 3,
       "hold": {
         "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-24T17:20:51+00:00",
-        "recheck_task": "J3560"
+        "condition": "J3560 ruling: CONDITION NOT MET. Complete J3623 delivery reconciliation, then J3624 full audiovisual QA, then J3625 elected-Chief merge and verified Ben-watch staging. PR94 currently conflicts and drops prior stages; captions need correction. No film PASS or upload permission. Ben watch due 2026-11-28T20:00Z remains.",
+        "check_at": "2026-11-25T12:00:00Z",
+        "last_recheck": "J3560",
+        "checked_at": "2026-11-24T21:16:41+00:00",
+        "checked_by": "codex"
       },
       "escalated_at": "2026-11-24T18:35Z"
     },
