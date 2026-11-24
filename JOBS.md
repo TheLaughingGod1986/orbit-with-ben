@@ -93,7 +93,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3545 | mini | open (after J3544) | – | – | 064 script · review · OWB 064: Independently verify corrected v04 before script lock | J3539 |
 | J3546 | any | open | – | – | 064 script · chief · OWB 064: Record J3539 FIX in the Chief-owned script hold | J3539 |
 | J3547 | mini | blocked | macbook | – | HOS:128 script · review · HOS 128 Edison vs Tesla (Thu 10 Dec): review and lock script v01, package-first scoring, sources & Shorts (PR #751) |  |
-| J3548 | mini | claimed | macbook | 2026-11-24T18:30Z | for claudecode · review · Review local Field Order analytics delivery privacy |  |
+| J3548 | mini | blocked | macbook | – | for claudecode · review · Review local Field Order analytics delivery privacy |  |
 | J3550 | gemini | open | – | – | WW2:015 sources · for gemini · facts · WW2 015: independent Gemini check of Sherman draft claims |  |
 | J3551 | mini | open (after J3550) | – | – | WW2:015 script · review · WW2 015: Claude topic archive and opening review before lock |  |
 | J3552 | gemini | open | – | – | HOS:136 sources · facts · HOS 136 Trinity Test Explained (Thu 17 Dec): independent facts audit of v01 script, SOURCES.md & Shorts (PR #753) | J3507 |

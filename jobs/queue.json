@@ -323176,13 +323176,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-24T16:30Z",
-      "eta": "2026-11-24T18:30Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T15:01Z",
-      "result": "",
+      "result": "Waiting for: Mini-only local worktree inputs /private/tmp/owb-J3463 (codex/J3463, f860973491) and /private/tmp/owb-J3465 (c69d1ee2d6d724086729934315b38611dd15dc5b) are absent on MacBook, and brief requires local-only review by Mini claudecode after recorded Claude Code reset at 2026-11-25T10:00Z. Reopen for Mini claudecode (mini_only) after reset; export stays prohibited without explicit destination-specific approval.",
       "history": [
         {
           "at": "2026-11-24T15:01Z",
@@ -323193,9 +323193,19 @@
           "at": "2026-11-24T16:30Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T16:33Z",
+          "by": "macbook",
+          "what": "blocked: Waiting for: Mini-only local worktree inputs /private/tmp/owb-J3463 (codex/J3463, f860973491) and /private/tmp/owb-J3465 (c69d1ee2d6d724086729934315b38611dd15dc5b) are absent on MacBook, and brief requires local-only review by Mini claudecode after recorded Claude Code reset at 2026-11-25T10:00Z. Reopen for Mini claudecode (mini_only) after reset; export stays prohibited without explicit destination-specific approval."
+        },
+        {
+          "at": "2026-11-24T16:33Z",
+          "by": "macbook",
+          "what": "condition recorded; next verification 2026-11-25T10:00:00Z"
         }
       ],
-      "remaining_action": "Review the local files after the recorded Claude Code usage reset; export stays prohibited",
+      "remaining_action": "Mini-only claudecode local privacy/diff review of /private/tmp/owb-J3463 and /private/tmp/owb-J3465 after 2026-11-25T10:00Z reset; export stays prohibited",
       "for": "claudecode",
       "kind": "review",
       "plain": "Check which local Field Order History records can be shared safely",
@@ -323206,6 +323216,11 @@
         "by": "macbook",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "input",
+        "condition": "Mini-only local worktree inputs /private/tmp/owb-J3463 (codex/J3463, f860973491) and /private/tmp/owb-J3465 (c69d1ee2d6d724086729934315b38611dd15dc5b) are absent on MacBook, and brief requires local-only review by Mini claudecode after recorded Claude Code reset at 2026-11-25T10:00Z. Reopen for Mini claudecode (mini_only) after reset; export stays prohibited without explicit destination-specific approval.",
+        "check_at": "2026-11-25T10:00:00Z"
       }
     },
     {
