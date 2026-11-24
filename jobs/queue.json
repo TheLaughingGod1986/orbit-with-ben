@@ -323675,9 +323675,14 @@
           "at": "2026-11-24T16:53Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Run Rule-6 viewer test, Pilot 2 48h/7d check, fold J3554 fixes, Rule-E lock WW2:014 and queue post-reset VO",
+      "remaining_action": "Reading PR #88/91 script, sources, provenance, and J3554 claims check",
       "due": "2026-12-11T18:00:00Z",
       "kind": "review",
       "plain": "Viewer-test the Dambusters film 014 opening, apply Pilot 2 learnings, lock the script and queue post-reset voice-over",
@@ -323691,11 +323696,16 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-24T16:06Z",
-        "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "of": 5,
+        "at": "2026-11-24T16:55Z",
+        "by": "macbook",
+        "plan": [
+          "Read PR 88/91 script, sources & claims check",
+          "Run Rule-6 viewer test & Rule-2/Pilot-2 audit",
+          "Apply J3554 fixes to v02 script, sources & provenance",
+          "Record Rule-E verdict, status.json & verify checks",
+          "Push PR, queue post-reset VO & post thread report"
+        ]
       }
     },
     {
