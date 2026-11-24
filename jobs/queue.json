@@ -1,5 +1,5 @@
 {
-  "next_id": 3499,
+  "next_id": 3500,
   "jobs": [
     {
       "id": "J0001",
@@ -318453,6 +318453,37 @@
       "due": "2026-12-04T18:00:00Z",
       "kind": "facts",
       "plain": "Check every factual claim and figure in the P-51 Mustang script against primary sources"
+    },
+    {
+      "id": "J3499",
+      "title": "WW2 film 011: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO",
+      "needs": "cloud",
+      "repo": "ww2",
+      "body": "Claude Rule-6 viewer test of the first 300 words, Pilot 2 48h/7d learnings check, and `AGENTS.md` Rule E topic/packaging/script lock for Field Order History film `WW2:011` (*How a British Engine Made the P-51 Mustang*), drafted in `ww2-channel` PR #71 (branch `macbook/J3482`, commit `9e67124`) after the independent Gemini `facts`-lane claims check passes.\n\n**Do (`ww2-channel/studio/RULES.md` rules 1–6, 9 & 12; script lock due `2026-12-06 18:00 UTC` for Sat 19 Dec 2026 17:00 London slot):**\n1. Perform **Claude's viewer test of the first 300 words** of `01_Script/NARRATION_v01.txt` (`19,314` spoken chars `<= 21,000` Rule-9 cap, `3,028` words, Cold Open `118` words `~52.4s`, concrete moment `~23.6s`, promise `~34.7s`, SHA-256 `9b71b3cae1cdd4dfa18e688205a78ecf061f2b0769d326023e5da636aeed994f`) as a stranger would: concrete moment by 0:30, promise by 0:45, main story moving by 1:00, no detours, title's answer withheld, one figure at a time.\n2. Incorporate **Pilot 2 (`qfc6EBStOfo`, airs Tue 24 Nov 17:00) 48h (~26 Nov) and 7d (~1 Dec) numbers** plus any resulting `studio/RULES.md` / `studio/LEARNINGS.md` updates, confirm per-keyword vidIQ search volume for `\"p-51 mustang\"` / `\"rolls royce merlin\"`, review `TOPIC_REVIEW.md` (GO recommendation, 31 verified US/UK official PD archive photo IDs, picked Rule-2 title `How a British Engine Made the P-51 Mustang` at `42` chars `95/100`, 3 close-crop launch Test & Compare thumbnail concepts), and record the Rule E topic verdict.\n3. Verify the independent Gemini claims check is clean and `NARRATION_v01.txt` remains `<= 21,000` spoken characters.\n4. Lock topic and script (or return exact fixes), update `status.json` in a `ww2-channel` PR, and queue the ElevenLabs voice-over job strictly for **after the ElevenLabs reset (`2026-11-30 10:50Z`)**.\n\n**Guards:** Zero ElevenLabs voice credits spent before `2026-11-30 10:50Z`. £0 spend.\n",
+      "ref": "ww2-channel#71",
+      "film": "011",
+      "stage": "script",
+      "after": "J3498",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-24T10:28Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T10:28Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "WW2 film 011: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO",
+      "due": "2026-12-06T18:00:00Z",
+      "kind": "review",
+      "plain": "Run Claude's viewer test on the P-51 Mustang opening, apply Pilot 2 learnings, and lock the script",
+      "cloud_only": true
     }
   ],
   "focus": [

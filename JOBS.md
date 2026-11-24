@@ -97,6 +97,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3496 | mini | open | – | – | 128 script · script · HOS 128 Edison vs Tesla (film 1, Thu 7 Jan): package first, then the 7-9 minute script draft |  |
 | J3497 | cloud | open | – | – | review · Weekly search research (History of Science): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
 | J3498 | any | open | – | – | 011 sources · facts · WW2 film 011: independent Gemini claims check on SCRIPT.md and SOURCES.md (PR #71) | ww2-channel#71 |
+| J3499 | cloud | open (after J3498) | – | – | 011 script · review · WW2 film 011: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO | ww2-channel#71 |
 
 Recently finished:
 
