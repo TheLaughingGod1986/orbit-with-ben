@@ -316031,9 +316031,14 @@
           "at": "2026-11-24T06:42Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T06:43Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Read Field Order History’s subscribers and watch hours so the board stays current",
+      "remaining_action": "Read Field Order History lifetime subscribers and watch hours",
       "due": "2026-11-24T06:40:43Z",
       "kind": "studio",
       "plain": "Read Field Order History’s subscribers and watch hours so the board stays current",
@@ -316048,10 +316053,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-24T06:42Z",
+        "at": "2026-11-24T06:43Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read channel totals",
+          "Import dated evidence",
+          "Verify and report"
+        ]
       }
     }
   ],
