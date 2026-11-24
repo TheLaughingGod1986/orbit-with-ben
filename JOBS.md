@@ -94,7 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3564 | gemini | open | – | – | HOS:137 sources · facts · HOS 137 Accidental Inventions (Thu 24 Dec): independent facts audit of v01 script, SOURCES.md & Shorts (PR #754) | J3513 |
 | J3565 | mini | open (after J3564) | – | – | HOS:137 script · review · HOS 137 Accidental Inventions (Thu 24 Dec): review and lock script v01, package-first scoring, sources & Shorts (PR #754) | J3513 |
 | J3566 | mini | claimed | macbook-2 | 2026-11-25T01:22Z | WW2:002 edit · assembly · WW2 002 Short 1: build 'WW2 U-Boats: Why They Could Not Stay Underwater' for Ben watch | J3563 |
-| J3567 | mini | open (after J3542) | – | – | WW2:002 edit · assembly · WW2 002 Short 2: build 'U-Boat Radar vs Metox: Why German Warnings Failed' for Ben watch | J3563 |
+| J3567 | mini | claimed | macbook | 2026-11-25T01:22Z | WW2:002 edit · assembly · WW2 002 Short 2: build 'U-Boat Radar vs Metox: Why German Warnings Failed' for Ben watch | J3563 |
 | J3568 | mini | open (after J3542) | – | – | WW2:003 edit · assembly · WW2 003 Short 1: build 'B-29 Superfortress: The 28-Inch Crawl Tunnel' for Ben watch | J3563 |
 | J3569 | mini | open (after J3542) | – | – | WW2:003 edit · assembly · WW2 003 Short 2: build 'B-29 Remote Gun Turrets: WW2's Analogue Computer' for Ben watch | J3563 |
 | J3570 | mini | open (after J3542) | – | – | WW2:004 edit · assembly · WW2 004 Short 1: build 'Mark 14 Torpedo: Why It Ran 10 Feet Too Deep' for Ben watch | J3563 |
