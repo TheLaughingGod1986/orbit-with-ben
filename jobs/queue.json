@@ -327985,9 +327985,14 @@
           "at": "2026-11-24T20:52Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T20:53Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Chief review complete: three PRs merged, J3602 accepted, follow-ups J3617 and J3618 queued."
         }
       ],
-      "remaining_action": "Waiting for Chief review/merge of PR #1288, PR #1287, and PR #1283 to close J3602 and J3616",
+      "remaining_action": "Post the recorded Chief ruling and close this verification",
       "kind": "review",
       "recheck_of": "J3602",
       "due": "2026-11-24T21:29:08+00:00",
@@ -328004,12 +328009,16 @@
         "OWB:027"
       ],
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-24T20:52Z",
+        "at": "2026-11-24T20:53Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Check inputs and authority",
+          "Review evidence and choose ruling",
+          "Record ruling and follow-up"
+        ],
+        "note": "Chief review complete: three PRs merged, J3602 accepted, follow-ups J3617 and J3618 queued."
       }
     },
     {
