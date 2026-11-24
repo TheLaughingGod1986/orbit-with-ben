@@ -133,7 +133,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3629 | gemini | open (after J3628) | – | – | HOS:128 sources · facts · HOS 128: independent v02 facts and source verification |  |
 | J3630 | mini | open (after J3629) | – | – | HOS:128 script · review · HOS 128: direct quote check and corrected script lock decision |  |
 | J3631 | mini | blocked | macbook-2 | – | review · Verify condition for J3434 |  |
-| J3633 | mini | claimed | gemini | 2026-11-25T00:21Z | review · Verify condition for J3205 |  |
+| J3633 | mini | blocked | gemini | – | review · Verify condition for J3205 |  |
 | J3634 | gemini | open (after J3632) | – | – | 009 sources · facts · WW2 009: independent Gemini direct-source recheck of v03 | https://github.com/TheLaughingGod1986/ww2-channel/tree/6cadca41b0caf399e8cd6aa1ab26455cbfaef3fc |
 | J3635 | mini | claimed | codex | 2026-11-24T22:46Z | studio · WW2 pilot 2: check its settings, claims and impressions now (0 views at 5 hours) |  |
 
