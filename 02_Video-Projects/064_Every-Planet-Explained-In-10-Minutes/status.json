@@ -14,10 +14,18 @@
       }
     },
     "script": {
-      "state": "review",
+      "state": "doing",
       "ref": "jobs/reviews/J3520/CHIEF_RULING.md"
     }
   },
-  "claims": [],
+  "claims": [
+    {
+      "stage": "script",
+      "by": "macbook-2",
+      "at": "2026-11-24T16:06Z",
+      "eta": "2026-11-24T18:05Z",
+      "note": "J3544 OWB 064: Correct v03 source and teaching issues as v04"
+    }
+  ],
   "next": "J3520 FIX: J3538 corrects v03 and reruns Gemini facts; J3539 independently checks sources and exact hash. J3020 and J3021 narration remain held until lock. Review due 25 Nov 18:00Z; approved 16 Dec slot unchanged."
 }
