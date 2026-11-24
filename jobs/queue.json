@@ -322519,7 +322519,7 @@
     {
       "id": "J3543",
       "title": "WW2 film 017: topic check, packaging first, script and sources, to lock by 2026-12-18",
-      "needs": "any",
+      "needs": "mini",
       "repo": "ww2",
       "body": "**Why (Ben, Tue 24 Nov, in chat after pilot 1's 32 views: \"What's the fix going forward for this video and other videos, knowing what we know now?\" (\"thousands of views ideally\"). Weekly search research (J3231, Field Order History half, 50/50 vidIQ credits) in orbit-with-ben `05_Analytics/ww2/search_research/2026-11-24.md` (PR #1263).)** Field Order History airs three films a week. After the calendar moved up one slot (Ben, 24 Nov ~09:55: \"one today, Tuesday 24th, one Saturday 28th, and then Tuesday the 1st...\"), films 11-17 fill Thu 17 to Thu 31 Dec. J3479 finished before that change, so film 017 was never queued. Its slot is **Thu 31 Dec 17:00 London**, and its script locks by **Fri 18 Dec 18:00** (13 days before air).\n\n**Topic: Pearl Harbor salvage, how the US Navy raised the sunk battleships.** Ranked first in the research.\n- **Demand:** \"pearl harbor\" gets 267,002 searches a month (up 122% now). \"pearl harbor documentary\" gets 17,726 at competition 44. \"pearl harbor attack\" gets 36,989 at 38.\n- **Results-page gap 6 of 10:** four strong videos (Drachinifel 2020; Oceanliner Designs Dec 2025, 1.76M), the rest small or off-target.\n- **Proof:** Ivan's Engineering (1,410 subscribers) got 521,874 views (530x) on this exact story on 12 Oct 2026.\n- **Different first moment:** ours must lead with a different first moment than those two recent films, and must not reuse their title words beyond \"Pearl Harbor\" and \"battleships\".\n- **Archive:** NHHC post-attack ship salvage photo series, NARA RG 80-G, US Navy film.\n- **Title ideas:**\n  - *How the US Raised Pearl Harbor's Sunk Battleships*\n  - *Pearl Harbor: How the Sunk Fleet Came Back*\n  - *The Pearl Harbor Battleships Japan Failed to Kill*\n- **Shorts ideas:**\n  - why Japan's torpedoes needed wooden fins;\n  - righting a capsized battleship with winches.\n\n**Do, to the channel's rules (ww2-channel `studio/RULES.md` 1-6 and 12, `studio/LEARNINGS.md`, `00_Brand/PLAYBOOK.md`):**\n1. **Topic check** (reviewer rubric, AGENTS.md E): no near-duplicate on our channel; audience evidence (the research file above, plus pilots 1 and 2); enough US/UK official archive photographs and film to carry at least half the screen time (list 15 real candidates with IDs now). If it fails, say so and take the next topic from the research file's ranked list (Higgins boat, Red Ball Express, Market Garden).\n2. **Packaging first (rule 2):** three titles of 50 characters or fewer that carry the searched phrase (start from the research file's ideas; never copy the top-ranking video's title words, pilot 1's lesson), three thumbnail ideas with one subject filling the frame at 168 px. Pick one title.\n3. **Script:** a story, not a list (rule 4); the first two minutes per rule 3; plain words, one figure at a time; at most 21,000 spoken characters (rule 9). `01_Script/SCRIPT.md`, `NARRATION_v01.txt`, `SOURCES.md` with every claim sourced.\n4. **Shorts:** name two or three engineering Shorts from the same film (the research file lists the ones working now) in `status.json`, to air in the days before the long film and link to it.\n5. **Claims check** (Gemini, facts lane) and **Claude's viewer test of the first 300 words** (rule 6) before it is locked; then queue the voice-over.\n6. One ww2-channel PR per stage; add the film to `00_Brand/VIDEO_BACKLOG.json`; update the film's `status.json` stages as you go.\n\n**Guards.** No voice credits spent in this script job. No change to films 001-015, the schedule or the format tests. £0.",
       "ref": "",
@@ -322539,12 +322539,25 @@
           "at": "2026-11-24T14:46Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T14:58Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Topic check, packaging and script for the Pearl Harbor salvage film",
       "due": "2026-12-18T18:00:00Z",
       "kind": "script",
-      "plain": "Research, package and write the script for WW2 film 017 (Pearl Harbor salvage: raising the sunk battleships)"
+      "plain": "Research, package and write the script for WW2 film 017 (Pearl Harbor salvage: raising the sunk battleships)",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3544",
