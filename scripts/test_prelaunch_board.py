@@ -46,7 +46,9 @@ class Prelaunch(unittest.TestCase):
         self.assertEqual(channels.get('ww2')['repo']['url'], '')
         self.assertEqual(len(channel_films.films('ww2')), 10)
         doc = ks.read_documents({'ww2': root})['ww2']
-        board = vt.build_from_docs({'ww2': {'films': doc}})
+        # The fixture's ten films must not pick up current queue approval cards.
+        with mock.patch.object(vt, 'ROOT', channels.ROOT):
+            board = vt.build_from_docs({'ww2': {'films': doc}})
         films = [v for v in board['videos'] if v['channel'] == 'WW2']
         self.assertEqual(len(films), 10)
         self.assertTrue(any(v['key'] == 'WW2:001' for v in films))
