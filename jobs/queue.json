@@ -327458,6 +327458,11 @@
           "at": "2026-11-24T20:01Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T20:02Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Verify readiness: Publishing the tested read-only audit fix through Claude Code, then checking the shared runtime",
@@ -327465,7 +327470,15 @@
       "recheck_of": "J3519",
       "mini_only": true,
       "due": "2026-11-24T21:01:55+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
