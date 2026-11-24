@@ -1,5 +1,5 @@
 {
-  "next_id": 3635,
+  "next_id": 3636,
   "jobs": [
     {
       "id": "J0001",
@@ -320190,7 +320190,7 @@
       "remaining_action": "Finish Franklin end screen, thumbnail test and Shorts links after HOS Studio sign-in; verify disclosure before Thursday noon.",
       "due": "2026-11-26T12:00:00Z",
       "kind": "studio",
-      "urgent": 13,
+      "urgent": 12,
       "approved_from": {
         "what": "Watch HOS 008 Franklin master v05 (all 8 fixes in: 0:20 & 33 bottom-text cards on dark umber panels, 0:30 flash gone, 0:51 night street & 1:49 salon spark clean with no flying hair, 2:18 upright jar workbench, 3:13 points desk take 3, 3:31 3D packet ship + letter icon, 7:59 stationary rods take 2)",
         "file": "HOS UAT/008_Lightning-Franklin/hos_008_master_v05_PHONE.mp4",
@@ -323872,7 +323872,7 @@
       "due": "2026-11-25T20:00:00Z",
       "kind": "assembly",
       "mini_only": true,
-      "urgent": 12,
+      "urgent": 11,
       "taskKeys": [
         "WW2:001"
       ],
@@ -329568,6 +329568,37 @@
       "due": "2026-11-25T18:00:00Z",
       "kind": "facts",
       "plain": "Checking the revised Operation Pedestal narration against the original sources"
+    },
+    {
+      "id": "J3635",
+      "title": "WW2 pilot 2: check its settings, claims and impressions now (0 views at 5 hours)",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why (Ben, 24 Nov ~22:20 London, in chat: \"Still no views. ... Can you double check what's happening? Maybe it's a setting?\").** Pilot 2 (`qfc6EBStOfo`) has been public since 17:00:12Z with 0 public views at 22:20Z.\n- The Data API (vidIQ) shows it public and listed in channel search, but it is not in the top 5 for its exact title in US or GB search.\n- Pilot 1 at the same age: about 10 impressions and only our own pre-launch view; its first stranger view came about 8 hours in.\n- The cloud cannot read this channel's Studio.\n\n**Do now (Mini, Field Order History Studio on 9224 and the Data API only; never open or play the public video):**\n1. **Content list row:** visibility, the Restrictions column (copyright claim, age restriction, made for kids), and date.\n2. **Video details:** audience (not made for kids), age restriction (none), visibility (Public), and under Show more:\n   - \"Publish to subscriptions feed and notify subscribers\";\n   - embedding allowed;\n   - category, licence, altered-content answer.\n3. **Copyright and Checks:** any Content ID claim, with its owner, the matched segment, and its effect (track, monetise, block) and countries. Also the Checks result.\n4. **Reach since publish, by the hour:** impressions, click-through, views and traffic sources. Compare with pilot 1's first 6 hours (`AUDIT_001_2026-11-23.md`: 10 impressions, 0 stranger views).\n5. **If a setting is wrong, fix that listing setting now and read it back.** That covers made for kids, age restriction, visibility, and the subscriptions-feed box being unticked. If a claim blocks or limits it, change nothing and report at once with the details; never dispute without the Chief.\n6. **One thread line plus a short note** in ww2-channel `02_Video-Projects/002_*/12_Analytics/`. Say plainly either \"no setting or claim is limiting it\" or what was found and fixed.\n\n**Guards.** No re-upload, no schedule change, no playback. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T22:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T22:24Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Read pilot 2's Studio settings, claims and reach; fix a wrong listing setting",
+      "due": "2026-11-24T23:30:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "urgent": 13
     }
   ],
   "focus": [

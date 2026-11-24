@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J2529, J3430, J3431, J3432, J3434, J3501, J3519, J3530, J3205, J3542, J3500.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J2529, J3430, J3431, J3432, J3434, J3501, J3519, J3530, J3205, J3542, J3500, J3635.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -136,6 +136,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3632 | mini | claimed | codex | 2026-11-25T00:14Z | WW2:009 script · script · WW2 009: resolve remaining v02 evidence gaps with direct source checks | https://github.com/TheLaughingGod1986/ww2-channel/pull/110 |
 | J3633 | mini | claimed | gemini | 2026-11-25T00:21Z | review · Verify condition for J3205 |  |
 | J3634 | gemini | open (after J3632) | – | – | 009 sources · facts · WW2 009: independent Gemini direct-source recheck of v03 | https://github.com/TheLaughingGod1986/ww2-channel/tree/6cadca41b0caf399e8cd6aa1ab26455cbfaef3fc |
+| J3635 | mini | open | – | – | studio · WW2 pilot 2: check its settings, claims and impressions now (0 views at 5 hours) |  |
 
 Recently finished:
 
