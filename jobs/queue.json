@@ -325805,19 +325805,29 @@
           "at": "2026-11-24T23:50Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T23:51Z",
+          "by": "macbook",
+          "what": "step 1 of 5 done"
         }
       ],
-      "remaining_action": "Cut locked 004 narration (15:11.716-15:44.896 + 16:18.436-16:29.576), assemble 1080x1920 vertical Short, and put on Ben watch",
+      "remaining_action": "Inspecting J3570 pipeline, locked VO word timings, and 004 archive assets",
       "due": "2026-12-01T18:00:00Z",
       "kind": "assembly",
       "plain": "Build the second Mark 14 torpedo Short about why a square hit jammed the firing pin and how 90-foot drop tests proved it",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T23:50Z",
+        "step": 1,
+        "of": 5,
+        "at": "2026-11-24T23:51Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Verify sources and VO timecodes",
+          "Design shots, schematics and captions",
+          "Render vertical 9:16 Short v01",
+          "Verify technical, audio and stills QA",
+          "Copy to NAS, open PR and report"
+        ]
       }
     },
     {
