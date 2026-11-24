@@ -329079,13 +329079,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-24T21:33Z",
-      "eta": "2026-11-24T23:33Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T21:32Z",
-      "result": "",
+      "result": "HOS PR #758 opened (head dc99d2344a96d1dfe5baafd4db4c42af976094c6) with corrected HOS 128 v02 long script (sha256 32781f64a5d201970b90ec3d3ba14bd72c59290aa26b6732197e0d0fc30fe359), FACT_NOTES_v02.md (15099bcec09648c9c429e468c7a51161cef3be6da5d4c45a93f2531d7271f21d), SOURCES.md (9f6b8d3159c5865b29f5da61afae4714e883fb54e85ee6e5bb4819fa5f4818f8), SHORTS_SCRIPTS_v02.md (fbb43d3cd3fee9329279e20ec769daca60020cab7a637fd6bceb3bafa40a9c95), PACKAGE_FIRST_SCORING_v02.md (ffdbdd884e5626b28b1db3dc40bcaf3391405d4ac1e3ec7c99ee84125a3e9465), LAUNCH_PLAN.md, PRE_BUILD_VIDIQ_AUDIT.md, production-status.md and status.json. Mechanical checks on exact v02: review:script PASS 92.3/100 (1314 words, 8.8 min est., 8/8 gates), gate:episode PASS, check_all.sh ALL CHECKS PASS, test_no_private_network.py OK. All 8 J3547/PR #752 corrections and Teach/Craft findings applied; zero Topsy myth; 22 MILES AWAY held pending facts; working title retained (not final packaging PASS); 10 Dec target and Mon 7 Dec -> 17 Dec slip contingency preserved; GBP 0 spend. Not self-certified; handed off to existing independent Gemini facts job J3629 and direct-quote/lock review J3630. HOS checkout back on main.",
       "history": [
         {
           "at": "2026-11-24T21:32Z",
@@ -329126,6 +329126,11 @@
           "at": "2026-11-24T21:53Z",
           "by": "macbook",
           "what": "step 6 of 6 done"
+        },
+        {
+          "at": "2026-11-24T21:54Z",
+          "by": "macbook",
+          "what": "done: HOS PR #758 opened (head dc99d2344a96d1dfe5baafd4db4c42af976094c6) with corrected HOS 128 v02 long script (sha256 32781f64a5d201970b90ec3d3ba14bd72c59290aa26b6732197e0d0fc30fe359), FACT_NOTES_v02.md (15099bcec09648c9c429e468c7a51161cef3be6da5d4c45a93f2531d7271f21d), SOURCES.md (9f6b8d3159c5865b29f5da61afae4714e883fb54e85ee6e5bb4819fa5f4818f8), SHORTS_SCRIPTS_v02.md (fbb43d3cd3fee9329279e20ec769daca60020cab7a637fd6bceb3bafa40a9c95), PACKAGE_FIRST_SCORING_v02.md (ffdbdd884e5626b28b1db3dc40bcaf3391405d4ac1e3ec7c99ee84125a3e9465), LAUNCH_PLAN.md, PRE_BUILD_VIDIQ_AUDIT.md, production-status.md and status.json. Mechanical checks on exact v02: review:script PASS 92.3/100 (1314 words, 8.8 min est., 8/8 gates), gate:episode PASS, check_all.sh ALL CHECKS PASS, test_no_private_network.py OK. All 8 J3547/PR #752 corrections and Teach/Craft findings applied; zero Topsy myth; 22 MILES AWAY held pending facts; working title retained (not final packaging PASS); 10 Dec target and Mon 7 Dec -> 17 Dec slip contingency preserved; GBP 0 spend. Not self-certified; handed off to existing independent Gemini facts job J3629 and direct-quote/lock review J3630. HOS checkout back on main."
         }
       ],
       "remaining_action": "Pushing macbook/J3628 PR, switching back to main, completing job, and posting studio thread report",
