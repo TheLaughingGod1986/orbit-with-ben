@@ -326011,23 +326011,28 @@
           "at": "2026-11-24T18:13Z",
           "by": "codex",
           "what": "step 0 of 3 done: J3596 supplied replacements OWB 1279 and WW2 102; original PRs are closed."
+        },
+        {
+          "at": "2026-11-24T18:14Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Same-owner main-base replacements 1279 and WW2 102 were merged at 18:09Z before this claim; originals closed. Reviewing exact replacement heads."
         }
       ],
-      "remaining_action": "Review the replacement audience-analysis pull requests and test the corrections",
+      "remaining_action": "Test the merged corrections and record whether the original review can close",
       "due": "2026-11-25T05:03:00Z",
       "kind": "chief",
       "plain": "Review the corrected Mulberry harbour audience analysis",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-24T18:13Z",
+        "at": "2026-11-24T18:14Z",
         "by": "codex",
         "plan": [
           "Review corrected changes",
           "Verify regressions and evidence",
           "Record decision and finish handoff"
         ],
-        "note": "J3596 supplied replacements OWB 1279 and WW2 102; original PRs are closed."
+        "note": "Same-owner main-base replacements 1279 and WW2 102 were merged at 18:09Z before this claim; originals closed. Reviewing "
       },
       "taskKeys": [
         "WW2:001"
