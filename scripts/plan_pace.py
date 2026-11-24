@@ -35,9 +35,10 @@ LEFTOVER_PCT = 90.0
 EARLY_DAYS = 3.0
 DUE_SOON_DAYS = 7
 SCHEDULE_DAYS = 28
-# November Option 1 VO jobs keep 11,000 credits back (HOS fixes plus a margin). A raise
-# that would spend into that reserve does not go ahead.
-ELEVENLABS_RESERVE = 11000
+# No ElevenLabs reserve (Ben, 24 Nov 2026: "We shouldn't have a credit restriction. We're paying for the credits, let's
+# use them until it hits 0."). A job still never spends past what is left: the plan is never topped up and pay-per-use
+# overage stays capped at £0 (pay_per_use_caps.json). Was 11,000 (November Option 1, 20 Nov).
+ELEVENLABS_RESERVE = 0
 WW2_MUSIC_UNTIL = datetime(2026, 12, 1, tzinfo=timezone.utc)
 PROPOSAL = (
     "Ben: pay-per-use caps are unset, so nothing new bills the card — "
@@ -678,7 +679,8 @@ def report_text(at: datetime | None = None) -> str:
 
     lines.append(
         f"ElevenLabs first run: {_whole(el.get('left'))} left of {_whole(el.get('total'))}, "
-        f"reserve {_whole(el.get('reserve'))}, spare above reserve {_whole(el.get('spare'))}. {el.get('line')}."
+        + (f"reserve {_whole(el.get('reserve'))}, spare above reserve {_whole(el.get('spare'))}. " if el.get('reserve') else "no reserve: credits are used down to zero, never past it. ")
+        + f"{el.get('line')}."
     )
     try:
         import jobs as jobs_mod
