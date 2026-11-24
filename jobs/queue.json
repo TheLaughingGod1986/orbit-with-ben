@@ -273583,9 +273583,14 @@
           "at": "2026-11-24T12:44Z",
           "by": "codex",
           "what": "step 3 of 4 done: Preserving earlier 3/4 migration progress; today is the authorized runtime credential re-probe only."
+        },
+        {
+          "at": "2026-11-24T12:48Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Exact production source d19c7783f7 staged at /Volumes/MiniWork/scratch/J3012-reprobe-1124; five live static assets byte-identical; eight probe tests pass. Automatic approval review rejected temporary production deploy, credential check, rollback and deletion before execution. No probe ran; grant remains unverified."
         }
       ],
-      "remaining_action": "Verify the updated board token, restore production, then notify on Thursday and migrate on Friday",
+      "remaining_action": "Obtain explicit production-probe approval, verify the token, then notify Thursday and migrate Friday",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
@@ -273606,7 +273611,7 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-24T12:44Z",
+        "at": "2026-11-24T12:48Z",
         "by": "codex",
         "plan": [
           "Inspect migration dependencies",
@@ -273614,7 +273619,7 @@
           "Publish preparation",
           "Verify access and complete scheduled move"
         ],
-        "note": "Preserving earlier 3/4 migration progress; today is the authorized runtime credential re-probe only."
+        "note": "Exact production source d19c7783f7 staged at /Volumes/MiniWork/scratch/J3012-reprobe-1124; five live static assets byte-"
       }
     },
     {
