@@ -136,6 +136,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3633 | mini | blocked | gemini | – | review · Verify condition for J3205 |  |
 | J3634 | gemini | claimed | gemini | 2026-11-25T00:29Z | 009 sources · facts · WW2 009: independent Gemini direct-source recheck of v03 | https://github.com/TheLaughingGod1986/ww2-channel/tree/6cadca41b0caf399e8cd6aa1ab26455cbfaef3fc |
 | J3635 | mini | blocked | codex | – | studio · WW2 pilot 2: check its settings, claims and impressions now (0 views at 5 hours) |  |
+| J3636 | mini | open | – | – | 009 script · script · WW2 009: apply 6 surgical J3634 v03 direct-source fixes (v04) | https://github.com/TheLaughingGod1986/ww2-channel/pull/112 |
 
 Recently finished:
 

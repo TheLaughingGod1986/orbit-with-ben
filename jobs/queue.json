@@ -1,5 +1,5 @@
 {
-  "next_id": 3636,
+  "next_id": 3637,
   "jobs": [
     {
       "id": "J0001",
@@ -329738,6 +329738,36 @@
         "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/j3635-ww2 codex/j3635-settings-audit",
         "check_at": "2026-11-25T04:33:00+00:00"
       }
+    },
+    {
+      "id": "J3636",
+      "title": "WW2 009: apply 6 surgical J3634 v03 direct-source fixes (v04)",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Follow-up to J3634 WW2 PR #112 (commit 96afbb3 on gemini/j3634-ww2-009-claims-v03, stacked on PR #111 codex/j3632-direct-sources). Read 01_Script/CLAIMS_CHECK_v03.md (verdict: FIX — 31 PASS, 6 FLAG, 0 UNVERIFIABLE).\n\nApply the 6 surgical fixes from CLAIMS_CHECK_v03.md Section 5 to produce NARRATION_v04.txt and updated SCRIPT.md (46/46 exact spoken-block parity, <=21,000 spoken chars, SHA-256 recorded):\n1. C04 ([S03]) + non-spoken leftover: change plural \"enemy aircraft would crash onto her deck\" to singular \"an enemy aircraft would crash onto her deck\"; rename SCRIPT.md Chapter 4 heading (removing \"Broken Back\") and update status.json Thumb B text 'BROKEN BACK' so removed broken-back claims do not survive in chapters/thumbnails.\n2. C14 ([S13]-[S14]): reconcile escort scope/integer across LG 38377 App. A (30/31 eastbound/Furious DDs), Roskill Table 27 (31 DDs, 3 CVs excluding Furious), and Hague/Roskill prose (32 DDs including the 8 additional Furious/Gibraltar destroyers). Soften \"forty-five major warships in all\" / \"thirty-two destroyers\" to scope-safe wording.\n3. C16 ([S17]): hedge HMS Eagle fatality count per Rule 4 (\"about one hundred and sixty went down with her\") to reflect Kindell (162), uboat.net (160), and Roskill/Mason (~260), with no death total in LG 38377.\n4. C20 ([S22]): drop the disputed integer \"Two\" on HMS Indomitable (\"Heavy bombs smashed through her flight deck\") because both published official records (LG 38377 p. 4510 & Roskill Vol. II p. 305) state 3 hits while the incomplete hosted ADM 267/84 transcription states 2 hits + 3 near-misses (and its D.U.B.D. memo disputes 500 kg -> 250 kg).\n5. C23 ([S24]-[S25]): remove \"the port side of SS Ohio\" (derivative Sun Ship summary only, matching C02) and avoid asserting an unverified primary 1-2-1 Axum torpedo allocation.\n6. C26 ([S30]): remove uninspected deck-stowage detail \"whose deck carried cases of aviation petrol\" on Waimarama.\n7. Optional polish while editing v04: tighten [S15] fog timing (10 Aug 02:45-05:00 vs 11 Aug noon Spitfire launch) and add Roskill Vol. II Ch. XIII (HyperWar UK-RN-II-13.html), Kindell (xDKCas1942-08AUG.htm), IWM GM 1452/GM 1436/GM 1426/A 14520, and uboat.net (u73.htm, ship/2034.html) to SOURCES.md.\n\nPreserve NARRATION_v01.txt, NARRATION_v02.txt, NARRATION_v03.txt, CLAIMS_CHECK.md, CLAIMS_CHECK_v02.md, and CLAIMS_CHECK_v03.md byte-for-byte unchanged. Keep status.json at \"review\" (not locked). Use a clean worktree stacked on 96afbb3 and open a PR. Queue an independent Gemini direct-source recheck of v04 before J3492 can verify its condition; do not release J3492, lock script, or authorize VO here.\n\nNo spend, generation, upload, or scheduling. No VO before 2026-11-30 10:50Z AND script lock. Lock deadline 2026-11-30 18:00Z; Ben watch 9 Dec; planned air 12 Dec 17:00 London unchanged.\n",
+      "ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/112",
+      "film": "009",
+      "stage": "script",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-24T22:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T22:46Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Apply 6 surgical v03 flags (C04/Ch.4 title, C14, C16, C20, C23, C26) into v04 and queue final Gemini recheck",
+      "due": "2026-11-30T18:00:00Z",
+      "kind": "script",
+      "plain": "Apply 6 direct-source script fixes from Gemini v03 recheck to produce WW2:009 narration v04"
     }
   ],
   "focus": [
