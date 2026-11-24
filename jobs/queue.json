@@ -320096,13 +320096,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-24T15:35Z",
-      "eta": "2026-11-24T17:35Z",
+      "eta": "",
       "created_by": "macbook-2",
       "created_at": "2026-11-24T10:51Z",
-      "result": "",
+      "result": "HOS:136 package-first scoring, v01 script (93.7/100 PASS, gate:episode PASS, 1,266 words), SOURCES.md + FACT_NOTES_v01.md (20/20 verified), two 16-19s Shorts (S01 44c & S02 58c, 0 collisions), LAUNCH_PLAN.md opened in HOS PR #753 (ebb55eea). HOS desk posted; queued J3552 (facts) -> J3553 (review/Chief lock). £0 spent.",
       "history": [
         {
           "at": "2026-11-24T10:51Z",
@@ -320143,6 +320143,11 @@
           "at": "2026-11-24T15:46Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Step 5 done: HOS PR #753 (ebb55eea) opened, HOS desk & studio thread posted, queued J3552 (facts) -> J3553 (review/lock)"
+        },
+        {
+          "at": "2026-11-24T15:47Z",
+          "by": "gemini",
+          "what": "done: HOS:136 package-first scoring, v01 script (93.7/100 PASS, gate:episode PASS, 1,266 words), SOURCES.md + FACT_NOTES_v01.md (20/20 verified), two 16-19s Shorts (S01 44c & S02 58c, 0 collisions), LAUNCH_PLAN.md opened in HOS PR #753 (ebb55eea). HOS desk posted; queued J3552 (facts) -> J3553 (review/Chief lock). £0 spent."
         }
       ],
       "remaining_action": "Done — HOS PR #753 opened; facts (J3552) and review/lock (J3553) queued",
@@ -320173,7 +320178,8 @@
       },
       "taskKeys": [
         "HOS:136"
-      ]
+      ],
+      "done_ref": "HOS PR #753"
     },
     {
       "id": "J3508",
