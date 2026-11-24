@@ -320627,10 +320627,10 @@
       "stage": "script",
       "after": "",
       "eta_min": 45,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-24T13:27Z",
+      "eta": "2026-11-24T14:12Z",
       "created_by": "claude",
       "created_at": "2026-11-24T11:54Z",
       "result": "",
@@ -320679,6 +320679,11 @@
           "at": "2026-11-24T13:27Z",
           "by": "codex",
           "what": "reopened: Chief ruling recorded in merged PR 1260: FIX on v02, exact replacements and J3538 -> J3539 follow-up; J3020 remains held. Reopen only to close this completed review."
+        },
+        {
+          "at": "2026-11-24T13:27Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parking J3520 for Elected Chief to merge PR #1015 + PR #1251, lock v02, complete J3020, and release J3021 VO",
@@ -320691,7 +320696,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T13:27Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3521",

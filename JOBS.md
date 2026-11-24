@@ -86,7 +86,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3514 | mini | open | – | – | review · Verify condition for J3444 |  |
 | J3517 | mini | open (after J3494) | – | – | WW2:010 vo · vo · WW2 film 010: narration in Ben's voice (Hobart's Funnies, post-reset) |  |
 | J3519 | mini | blocked | codex | – | assembly · History of Science: repair the publishing runtime on the Mini (Prisma client) so uploads run |  |
-| J3520 | mini | open | – | – | 064 script · review · OWB 064 Every Planet: read and lock the script (Claude), or write its fix list |  |
+| J3520 | mini | claimed | codex | 2026-11-24T14:12Z | 064 script · review · OWB 064 Every Planet: read and lock the script (Claude), or write its fix list |  |
 | J3527 | mini | blocked | gemini | – | review · Verify condition for J3125 |  |
 | J3528 | mini | blocked | gemini | – | review · Verify condition for J3463 |  |
 | J3529 | mini | blocked | macbook | – | review · Verify condition for J3492 |  |
