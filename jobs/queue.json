@@ -320368,9 +320368,14 @@
           "at": "2026-11-24T12:10Z",
           "by": "macbook",
           "what": "step 1 of 4 done: Audited 064 history: v01 was FIX'd in J3027, v02 landed in J3036, J3037 reviewed v02 in open PR #1015, J3051 blocked on Codex publish approval"
+        },
+        {
+          "at": "2026-11-24T12:13Z",
+          "by": "macbook",
+          "what": "step 2 of 4 done: Verified 064 v02 PASS (93.1/100, gate:episode PASS, 51/51 URLs HTTP 200, all J3027 fixes hold); v01 must NOT be locked"
         }
       ],
-      "remaining_action": "Independently verifying v02 script against live sources, Orbit rules, and studio thread",
+      "remaining_action": "Writing jobs/reviews/J3520/REVIEW.md and opening PR macbook/J3520",
       "due": "2026-11-25T18:00:00Z",
       "kind": "review",
       "rerouted_from": {
@@ -320382,9 +320387,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-24T12:10Z",
+        "at": "2026-11-24T12:13Z",
         "by": "macbook",
         "plan": [
           "Audit 064 v02 script and history",
@@ -320392,7 +320397,7 @@
           "Write independent review verdict and PR",
           "Update queue and post thread report"
         ],
-        "note": "Audited 064 history: v01 was FIX'd in J3027, v02 landed in J3036, J3037 reviewed v02 in open PR #1015, J3051 blocked on "
+        "note": "Verified 064 v02 PASS (93.1/100, gate:episode PASS, 51/51 URLs HTTP 200, all J3027 fixes hold); v01 must NOT be locked"
       }
     },
     {
