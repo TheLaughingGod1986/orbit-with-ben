@@ -85,6 +85,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3475 | mini | open | – | – | WW2:010 script · script · WW2 film 010: topic check, packaging first, script and sources, to lock by 2026-12-08 |  |
 | J3476 | any | open | – | – | WW2:008 sources · facts · WW2 film 008: Gemini claims check on SCRIPT.md and SOURCES.md (PR #61) | ww2-channel#61 |
 | J3477 | cloud | open (after J3476) | – | – | WW2:008 script · review · WW2 film 008: Claude viewer test (first 300 words), Rule E lock & queue VO | ww2-channel#61 |
+| J3478 | any | open | – | – | review · Verify condition for J2537 |  |
 
 Recently finished:
 
