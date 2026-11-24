@@ -329391,13 +329391,13 @@
       "stage": "script",
       "after": "J3627",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-24T22:14Z",
-      "eta": "2026-11-25T00:14Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T22:12Z",
-      "result": "",
+      "result": "Delivered WW2 PR111 at 6cadca41b0caf399e8cd6aa1ab26455cbfaef3fc: directly sourced v03 corrections, 46/46 parity, 14060 characters, nine quote checks, prior narration/report hashes unchanged. Independent Gemini direct-source recheck J3634 queued before J3492 condition verification. Script remains review; no lock or voice release. No spend or publishing changes.",
       "history": [
         {
           "at": "2026-11-24T22:12Z",
@@ -329443,6 +329443,11 @@
           "at": "2026-11-24T22:25Z",
           "by": "codex",
           "what": "step 4 of 4 done: PR111 open at 6cadca41b0caf399e8cd6aa1ab26455cbfaef3fc, stacked on PR110. Independent direct-source check J3634 queued. No script lock, J3492 release, spend or publishing change."
+        },
+        {
+          "at": "2026-11-24T22:25Z",
+          "by": "codex",
+          "what": "done: Delivered WW2 PR111 at 6cadca41b0caf399e8cd6aa1ab26455cbfaef3fc: directly sourced v03 corrections, 46/46 parity, 14060 characters, nine quote checks, prior narration/report hashes unchanged. Independent Gemini direct-source recheck J3634 queued before J3492 condition verification. Script remains review; no lock or voice release. No spend or publishing changes."
         }
       ],
       "remaining_action": "Correction draft delivered; independent Gemini source recheck is queued",
@@ -329472,7 +329477,8 @@
       },
       "taskKeys": [
         "WW2:009"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/111"
     },
     {
       "id": "J3633",
