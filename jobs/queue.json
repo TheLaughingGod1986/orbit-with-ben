@@ -321512,13 +321512,13 @@
       "stage": "",
       "after": "",
       "eta_min": 15,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-24T13:07Z",
-      "eta": "2026-11-24T13:22Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T12:52Z",
-      "result": "",
+      "result": "Deployed PR 1257: cb5f2794, version b803321f9537da48. Live Pages board has zero false upload alerts; browser-only fixture navigates to matching Franklin video. App regressions and published endpoint/header checks pass. No spend.",
       "history": [
         {
           "at": "2026-11-24T12:52Z",
@@ -321549,6 +321549,11 @@
           "at": "2026-11-24T13:11Z",
           "by": "codex",
           "what": "step 3 of 3 done: Live Pages version b803321f9537da48 verified in Chrome; published data bf2ac401 has zero active alerts. Browser-only alert fixture clicked through to HOS:ASK:J2699 and its matching Franklin detail. All app regressions pass; /, /tracker, /ai and /version.json return 200 with noindex/nofollow. Raw custom-domain probe returned 403, so verification used studio-kanban.pages.dev."
+        },
+        {
+          "at": "2026-11-24T13:11Z",
+          "by": "codex",
+          "what": "done: Deployed PR 1257: cb5f2794, version b803321f9537da48. Live Pages board has zero false upload alerts; browser-only fixture navigates to matching Franklin video. App regressions and published endpoint/header checks pass. No spend."
         }
       ],
       "remaining_action": "Record the verified board deployment and close the job",
