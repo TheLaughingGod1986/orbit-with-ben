@@ -320325,9 +320325,14 @@
           "at": "2026-11-24T20:55Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T20:56Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3504; checking existing J3264 files and J3496/J3507/J3513 format"
         }
       ],
-      "remaining_action": "Score package-first titles & thumbnails and draft the 7-9 minute script for HOS:127",
+      "remaining_action": "Inspecting J3264 branch and sibling HOS search-led script drafts",
       "due": "2026-12-02T18:00:00Z",
       "kind": "script",
       "plain": "Choose package-first title/thumbnail ideas and draft the 7-9 minute script for HOS 127 (Wright Brothers)",
@@ -320341,12 +320346,21 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-24T20:55Z",
+        "of": 5,
+        "at": "2026-11-24T20:56Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect J3264 branch and sibling drafts",
+          "Score titles and thumbnail concepts",
+          "Draft 7-9 min script, Shorts, and SOURCES.md",
+          "Run review:script, gate:episode, and CI checks",
+          "Commit, open PR, queue review/facts, and report"
+        ],
+        "note": "Claimed J3504; checking existing J3264 files and J3496/J3507/J3513 format"
+      },
+      "taskKeys": [
+        "HOS:127"
+      ]
     },
     {
       "id": "J3505",
