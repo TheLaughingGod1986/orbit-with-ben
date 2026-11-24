@@ -320282,9 +320282,14 @@
           "at": "2026-11-24T21:39Z",
           "by": "codex",
           "what": "step 1 of 4 done: Episode gate PASS, package lint PASS, channel audit 0 errors and no Gravity duplicate; dry run PASS after linking existing generated Prisma client in isolated worktree. Ben approvals recorded from brief."
+        },
+        {
+          "at": "2026-11-24T21:42Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Detached long upload active in tmux J3501-long-upload; log ~/_desk/logs/J3501-long-upload.log and completion ~/_desk/logs/J3501-long-upload.done. NAS and local master hashes both match 744f32b7. Both Shorts match approved hashes and opening gate/dry runs PASS. Studio 9222 Runtime probe times out; alternate HOS 9460 is signed out."
         }
       ],
-      "remaining_action": "Uploading and scheduling the approved Gravity long",
+      "remaining_action": "Waiting for the Gravity long upload, then delivering its two Shorts",
       "due": "2026-12-03T12:00:00Z",
       "kind": "studio",
       "urgent": 7,
@@ -320297,7 +320302,7 @@
       "progress": {
         "step": 1,
         "of": 4,
-        "at": "2026-11-24T21:39Z",
+        "at": "2026-11-24T21:42Z",
         "by": "codex",
         "plan": [
           "Check approved files and package",
@@ -320305,7 +320310,7 @@
           "Upload and schedule Shorts",
           "Verify and record delivery"
         ],
-        "note": "Episode gate PASS, package lint PASS, channel audit 0 errors and no Gravity duplicate; dry run PASS after linking existi"
+        "note": "Detached long upload active in tmux J3501-long-upload; log ~/_desk/logs/J3501-long-upload.log and completion ~/_desk/log"
       },
       "taskKeys": [
         "HOS:009"
