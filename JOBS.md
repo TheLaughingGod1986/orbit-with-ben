@@ -100,6 +100,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3500 | mini | claimed | macbook | 2026-11-24T11:32Z | 008 upload · studio · HOS 008 Franklin: search-led title, package, and schedule Thu 26 Nov 18:00 after Ben's watch |  |
 | J3501 | mini | claimed | macbook-2 | 2026-11-24T11:32Z | 009 upload · studio · HOS 009 Gravity: search-led title, package, and schedule Thu 3 Dec 18:00 after Ben's watch |  |
 | J3502 | any | open | – | – | 136 topic · review · HOS 136 Trinity Test Explained (film 2, Thu 17 Dec): rule-E topic go/no-go review |  |
+| J3503 | any | open | – | – | 137 topic · review · HOS 137 Accidental Inventions (film 3, Thu 24 Dec): rule-E topic go/no-go review |  |
 
 Recently finished:
 

@@ -1,5 +1,5 @@
 {
-  "next_id": 3503,
+  "next_id": 3504,
   "jobs": [
     {
       "id": "J0001",
@@ -318698,6 +318698,36 @@
       "due": "2026-11-26T18:00:00Z",
       "kind": "review",
       "plain": "Review HOS 136 (Trinity Test) topic brief and search evidence, then queue its script draft"
+    },
+    {
+      "id": "J3503",
+      "title": "HOS 137 Accidental Inventions (film 3, Thu 24 Dec): rule-E topic go/no-go review",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Rule-E topic go/no-go review for **HOS:137 (`02_Video-Projects/137_Accidental-Inventions-That-Changed-The-World`)** on HOS PR `#743` (`https://github.com/TheLaughingGod1986/history-of-science/pull/743`, branch `gemini/J3495-hos-search-2027`), queued by `J3495` under Ben's approved search-led plan (`hos-search-2027-01`, accelerated into December on 24 Nov 2026).\n\n### Topic Summary (Film 3 · Cluster 3: Accidental & World-Changing Inventions · Target Air Thu 24 Dec 18:00 London)\n- **Search-Led Evidence (`05_Analytics/hos/search_research/2026-11-20.md` · `J3224`):** `inventions that changed the world` `35,881`/mo (**US 23% = 8,280 US/mo**, **10/10** gap); `accidental discoveries` `9,367`/mo comp `39` (**+93.0%**, parent `amazing discoveries` **AU 20% + US 20%**, **9/10** gap); `accidental inventions that changed the world` `8,092`/mo (**+73.9%**, **10/10** gap); `inventions that shook the world` `8,001`/mo comp `32` (`+69.5%`); US Education RPM proxy `$3.42` mid; sub-50k breakouts (`Invention Flex` 6.2K US → `9.6K` `8.3×`, `Industrial Case Files` 138 US → `4.7K` `8.6×`, `Counter Facts Lab` 1.4K → `1.5K` `22×`, `TheOriginLens` 246 → `1.6K` `8×`). Low-RPM trap `history of inventions` (`PK 25%`) explicitly excluded.\n- **Package-First Candidates (Method Step 5, `0` Collisions on `2026-11-24`):**\n  - Title A (`46c ≤ 50`): `5 Accidental Inventions That Changed the World`\n  - Title B (Plan / T&C Arm 2, `69c`): `Accidental Inventions That Changed the World (5 Mistakes That Worked)`\n  - Title C (`56c`): `Accidental Inventions: 5 Mistakes That Changed the World`\n  - Two 3D cartoon thumbnail concepts in `TOPIC.md` (`5 MISTAKES` workbench; `WRONG PART` 1956 pacemaker resistor).\n- **Live Free Evidence (`2026-11-24`):**\n  - `11_Upload-Package/evidence_2026-11-24_neighbours.json` (tie-breaker **PASS**: `4` edu videos ≥1M, `TED-Ed/TED: yes`, led by `TED-Ed` `2.32M`, `Thoughty2` `1.59M`, `TED-Ed` `1.49M` & `1.04M`).\n  - `11_Upload-Package/evidence_2026-11-24_public_search.json` (`4/4` core phrases `autocomplete = yes`, `0` exact title collisions).\n- **Overlap Audit:** Five-mistake Cluster 3 anthology hub (~75–90 s per invention: Pacemaker 1956, Vulcanised Rubber 1839, Safety Glass 1903 [or Microwave 1945 teaser], Penicillin 1928, Post-it Notes 1968–1974). Zero overlap with public HOS longs `001–007`, `HOS:130` (nuclear reactor), Field Order History (no combat), or Orbit (no space).\n\n### Reviewer Checklist & Follow-On (Due Thu 26 Nov 18:00 London; £0 spend)\n1. Verify `TOPIC.md`, `status.json`, `production-status.md`, `11_Upload-Package/PRE_BUILD_VIDIQ_AUDIT.md`, and both `2026-11-24` JSON evidence files on HOS PR `#743`.\n2. Score against the HOS search-led topic method (`LEARNINGS.md` rule 42) and Rule-E rubric; confirm the 5-beat shortlist (Safety Glass vs Microwave teaser vs `HOS:129`) and confirm all claims remain marked **UNVERIFIED** pending `SOURCES.md` and `facts` lane.\n3. **As soon as this passes (per J3495 24 Nov update):** queue its package-first + 7–9 min script job (same shape as `J3496`, `kind:script`, `--repo hos`, `--film 137`) with **script draft due Mon 30 Nov 18:00 London**, **script lock Tue 8 Dec**, **Ben's watch by Mon 21 Dec**, **target air Thu 24 Dec 18:00 London** (enters production at the next free HOS WIP place once `008`/`009` clear Ben's watch this week; never rushed).\n",
+      "ref": "",
+      "film": "137",
+      "stage": "topic",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-24T10:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T10:43Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Score HOS:137 Accidental Inventions against search-led & Rule-E rubric and queue script draft due Mon 30 Nov",
+      "due": "2026-11-26T18:00:00Z",
+      "kind": "review",
+      "plain": "Review HOS 137 (Accidental Inventions) topic brief and search evidence, then queue its script draft"
     }
   ],
   "focus": [
