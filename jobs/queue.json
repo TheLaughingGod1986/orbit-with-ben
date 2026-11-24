@@ -315660,10 +315660,10 @@
       "stage": "topic",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-24T04:48Z",
+      "eta": "2026-11-24T06:48Z",
       "created_by": "gemini",
       "created_at": "2026-11-24T04:45Z",
       "result": "",
@@ -315677,6 +315677,11 @@
           "at": "2026-11-24T04:47Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
+        },
+        {
+          "at": "2026-11-24T04:48Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review HOS 134 TOPIC.md, neighbours.json, public_search.json, and non-duplication on HOS PR #739",
@@ -315689,7 +315694,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T04:48Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3460",
