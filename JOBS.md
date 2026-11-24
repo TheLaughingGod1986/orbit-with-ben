@@ -104,6 +104,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3515 | mini | open | – | – | review · Verify condition for J3511 |  |
 | J3516 | mini | open | – | – | review · Verify condition for J3512 |  |
 | J3517 | mini | open (after J3494) | – | – | WW2:010 vo · vo · WW2 film 010: narration in Ben's voice (Hobart's Funnies, post-reset) |  |
+| J3518 | mini | open | – | – | review · Verify condition for J3509 |  |
 
 Recently finished:
 
