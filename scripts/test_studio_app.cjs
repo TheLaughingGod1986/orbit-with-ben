@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {urgentBannerHtml,renderView,fieldOrderCard,agentReason,parseWeeklyReset,normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, channelsSection, channelsPage, channelCard, channelLight, channelFacts, firstDayCard, firstDaySection, firstDayPage, firstDayNext, planCard, planSection, planPage, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
+  globalThis.test = {planOverview,slotsText,urgentBannerHtml,renderView,fieldOrderCard,agentReason,parseWeeklyReset,normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, channelsSection, channelsPage, channelCard, channelLight, channelFacts, firstDayCard, firstDaySection, firstDayPage, firstDayNext, planCard, planSection, planPage, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -1700,6 +1700,22 @@ assert(!fieldHtml.includes('(undefined'));
   const row=t.videoProductionRow({key:'WW2:002',type:'long',channel:'ww2',lane:'approved',youtube:{state:'scheduled',privacy:'private',publishAt:'2026-11-28T17:00:00Z'},jobs:[planned]},Date.now(),{});
   assert(row.includes('Picture and edit: step 1 of 4 · paused, waiting for an agent to pick it back up · next: Repair 13 repeated photos'), row);
   assert(t.jobCard({...planned,status:'claimed',by:'codex'}).includes('plan-steps'));
+}
+
+// Ben, 24 Nov 2026: the Schedule tab opens with the plan, per channel, from each channel's own publishing slots.
+{
+  const chans=[{slug:'owb',label:'OWB',name:'Orbit With Ben',cadence:{long:['Sun 18:00','Wed 18:00'],short:['Mon 11:30','Wed 11:30','Fri 11:30','Sat 11:30']}},
+    {slug:'hos',label:'HOS',name:'History of Science',cadence:{long:['Thu 18:00'],short:['Sat 11:30','Fri 11:30','Sun 11:30','Tue 11:30']}},
+    {slug:'ww2',label:'WW2',name:'Field Order History',cadence:{long:['Tue 17:00','Thu 17:00','Sat 17:00'],short:[]}}];
+  const plan=t.planOverview({channels:chans});
+  assert(plan.includes('The plan'), plan);
+  assert(plan.includes('<b>2 long films</b> a week (Wed, Sun 18:00)') && plan.includes('<b>4 Shorts</b> (Mon, Wed, Fri, Sat 11:30)'), plan);
+  assert(plan.includes('<b>1 long film</b> a week (Thu 18:00)') && plan.includes('(Tue, Fri, Sat, Sun 11:30)'), plan);
+  assert(plan.includes('<b>3 long films</b> a week (Tue, Thu, Sat 17:00) · no Shorts'), plan);
+  assert(plan.includes('In all: 6 long films and 8 Shorts a week'), plan);
+  assert.strictEqual(t.planOverview({channels:[]}), '');
+  const tab=t.renderView({tracker:{videos:[]},owb:{jobs:[]},channels:chans},'schedule',Date.now(),{});
+  assert(tab.indexOf('The plan') > tab.indexOf('<h1>Schedule</h1>'), 'plan sits on the Schedule tab');
 }
 
 // J3292: urgent red banner sits at the top of every page and hides cleanly when empty.
