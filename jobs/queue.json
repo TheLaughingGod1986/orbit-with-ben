@@ -330540,9 +330540,14 @@
           "at": "2026-11-24T23:43Z",
           "by": "gemini",
           "what": "step 2 of 5 done: SRT 401 cues 0 overlaps 3501/3501 words (only 15 UK/US orthography diffs); 40/40 NAS archive SHA-256 match ARCHIVE_PROVENANCE.md (61.38% pure archive, min repeat gap 102.8s, max upscale 2.177x); all 27 rendered graphics + first-2m Rule 3 + 3 covers at 168px visually verified; opening & transition A/V clips heard/watched cleanly"
+        },
+        {
+          "at": "2026-11-24T23:44Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: End-of-film A/V clip (25:38-25:50) heard/watched cleanly with zero sync drift; all J3643 QA checks PASS"
         }
       ],
-      "remaining_action": "Verifying end-of-film A/V sync and preparing watch_upload + Ben watch card",
+      "remaining_action": "Uploading WW2:003 v01 phone proxy via watch_upload.mjs and setting Ben watch card",
       "due": "2026-11-25T08:00:00Z",
       "kind": "qa",
       "mini_only": true,
@@ -330556,9 +330561,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-24T23:43Z",
+        "at": "2026-11-24T23:44Z",
         "by": "gemini",
         "plan": [
           "Locate master & verify hash/decode/loudness",
@@ -330567,7 +330572,7 @@
           "Run watch_upload & set watch card (or FIX list)",
           "Commit QA record locally & post report"
         ],
-        "note": "SRT 401 cues 0 overlaps 3501/3501 words (only 15 UK/US orthography diffs); 40/40 NAS archive SHA-256 match ARCHIVE_PROVE"
+        "note": "End-of-film A/V clip (25:38-25:50) heard/watched cleanly with zero sync drift; all J3643 QA checks PASS"
       },
       "taskKeys": [
         "WW2:003"
