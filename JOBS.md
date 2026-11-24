@@ -77,7 +77,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3443 | mini | blocked | claude | – | studio · Field Order History: when pilot 2 goes public, point pilot 1's end screen and a card to it (and back) |  |
 | J3444 | mini | blocked | codex | – | 027 upload · studio · Earth equator Short: 24-hour reach read after Related repair |  |
 | J3463 | mini | blocked | codex | – | studio · Field Order History channel totals read 2026-11-24 |  |
-| J3465 | mini | open | – | – | studio · Verify the selected Lifetime period for J3463 locally |  |
+| J3465 | mini | claimed | codex | 2026-11-24T09:32Z | studio · Verify the selected Lifetime period for J3463 locally |  |
 
 Recently finished:
 
