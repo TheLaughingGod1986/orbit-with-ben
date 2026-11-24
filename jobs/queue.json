@@ -317047,23 +317047,29 @@
           "at": "2026-11-24T09:45Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-24T09:46Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Inspected ww2-channel PR #61 (macbook/J3473 c9adb40): verified SCRIPT.md (69 claims C01-C69), SOURCES.md (3 flagged items), NARRATION_v01.txt (18,747 stripped chars <= 21,000; SHA-256 ba3005abe486b4f7a5b57c77b1fac0458d089517fb0114de10c91a8d803df568), and sister PR #66 convention."
         }
       ],
-      "remaining_action": "Inspecting ww2-channel PR #61 files and existing WW2 claims check conventions",
+      "remaining_action": "Auditing all 69 claims (C01-C69) and the 3 flagged items in SOURCES.md against primary/official sources",
       "due": "2026-11-27T18:00:00Z",
       "kind": "facts",
       "plain": "Check every fact, date and number in WW2 film 008 Operation Mincemeat before script lock",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-24T09:45Z",
+        "at": "2026-11-24T09:46Z",
         "by": "gemini",
         "plan": [
           "Inspect PR #61 script and sources",
           "Audit all 69 claims and 3 flagged items",
           "Write CLAIMS_CHECK.md and update status.json",
           "Open ww2-channel PR and report"
-        ]
+        ],
+        "note": "Inspected ww2-channel PR #61 (macbook/J3473 c9adb40): verified SCRIPT.md (69 claims C01-C69), SOURCES.md (3 flagged item"
       },
       "taskKeys": [
         "WW2:008"
