@@ -1,5 +1,5 @@
 {
-  "next_id": 3598,
+  "next_id": 3599,
   "jobs": [
     {
       "id": "J0001",
@@ -325971,6 +325971,35 @@
       "due": "2026-11-25T05:03:00Z",
       "kind": "chief",
       "plain": "Review the corrected Mulberry harbour audience analysis"
+    },
+    {
+      "id": "J3598",
+      "title": "Review J3596 corrections and finish held J3591 autopsy",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "Elected-Chief review required by J3596, following J3595 FIX ruling. Keep J3591 held until this review; do not repeat its five completed media-review steps.\n\nReview OWB replacement PR #1279, head 0299f1920c59a4d5012b3ab2d2400a081df0a815, replacing #1273 and advisory #1276; and ww2-channel replacement PR #102, head 1036da1884540ef71b8a50b4dbc57d960ef13284, replacing #101. Both base main. Originals remain open and must not be merged in addition to replacements.\n\nCorrection evidence: only-6h/request-48h and only-48h/request-7d now leave launch-only requested-window metrics unavailable and unscored; exact 48h success retained and exact 7d impressions/CTR/views tested. Source extraction requires --source-timeline and writes limitation/provenance sidecar; it does not use live retention/AVD on an unmapped source. Gemini's existing trim-mapped observations preserved. Missing Mulberry -> recommendations is a hypothesis; AVD proxies are not measured retention drops. Cited local sources do not support exact numeric peer targets; report labels configured references. Four clips are 40s, one 48s (208s total).\n\nValidation at OWB head: retention 11, launch-check 75, email-ratchet 8, private-network 5 tests all pass (99 total); both diffs whitespace-clean. No YouTube changes, spend, media writes or rule changes. Both worker checkouts restored to clean main.\n\nAssess code/evidence and CI at these exact heads, merge acceptable replacement PRs as elected Chief, handle superseded originals, then finish J3591 under its existing gates. J3595 advisory is explicitly superseded by FIX and correction. Worker has neither merged nor closed J3591 or any PR. Do not alter unrelated holds or running thumbnail tests.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J3596",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T17:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T17:55Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review corrected exact PR heads, merge acceptable replacements, then finish J3591",
+      "kind": "chief",
+      "plain": "Review the corrected harbour-film analysis and finish its held review"
     }
   ],
   "focus": [
