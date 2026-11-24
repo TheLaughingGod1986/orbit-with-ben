@@ -316051,9 +316051,14 @@
           "at": "2026-11-24T06:45Z",
           "by": "codex",
           "what": "blocked: parked for Chief: requested Studio read and strict import complete in local commit f860973491 on codex/J3463 at /private/tmp/owb-J3463; automatic approval review rejected remote push as an unapproved sensitive analytics export. No push performed; needs explicit export approval or local review."
+        },
+        {
+          "at": "2026-11-24T07:30Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-24T12:00:00Z"
         }
       ],
-      "remaining_action": "Hand off the local data commit for Chief review",
+      "remaining_action": "Wait for the local Lifetime verification, then resolve export approval before publication",
       "due": "2026-11-24T06:40:43Z",
       "kind": "studio",
       "plain": "Read Field Order History’s subscribers and watch hours so the board stays current",
@@ -316076,6 +316081,11 @@
           "Verify and report"
         ],
         "note": "Imported and verified 1 subscriber and 0.3 lifetime watch hours; remote push rejected by automatic approval review"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Chief ruling 24 Nov: local commit f860973491 is preserved but not accepted for publication. Saved Studio text identifies the channel yet does not prove which date-range control was selected. J3465 must complete local selected-Lifetime evidence and strict-import validation before acceptance. The prior automatic approval rejection of public GitHub analytics export remains binding; do not export without explicit destination-specific approval. Do not infer approval from this retry date.",
+        "check_at": "2026-11-24T12:00:00Z"
       }
     },
     {
