@@ -323436,19 +323436,29 @@
           "at": "2026-11-24T15:56Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T15:57Z",
+          "by": "macbook",
+          "what": "step 1 of 5 done"
         }
       ],
-      "remaining_action": "Verify claims C01-C35, checkpoints F1-F5, and 25+ archive IDs for WW2:017 (PR #89)",
+      "remaining_action": "Reading WW2 017 PR #89 files and repo conventions",
       "due": "2026-12-16T18:00:00Z",
       "kind": "facts",
       "plain": "Double-checking facts and archive sources for the Pearl Harbor salvage film",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T15:56Z",
+        "step": 1,
+        "of": 5,
+        "at": "2026-11-24T15:57Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read PR 89 files and conventions",
+          "Verify all 35 claims and F1-F5 checkpoints",
+          "Spot-check archive provenance IDs",
+          "Write CLAIMS_CHECK_v01.md and update status.json",
+          "Push branch, open PR, and report"
+        ]
       }
     },
     {
