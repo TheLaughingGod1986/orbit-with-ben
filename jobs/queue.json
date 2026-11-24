@@ -1,5 +1,5 @@
 {
-  "next_id": 3533,
+  "next_id": 3534,
   "jobs": [
     {
       "id": "J0001",
@@ -319219,6 +319219,11 @@
           "at": "2026-11-24T11:54Z",
           "by": "claude",
           "what": "reopened: HOS PR #745 merged by the acting Chief; Ben's OKs recorded. Mini uploads and schedules Thu 26 Nov 18:00."
+        },
+        {
+          "at": "2026-11-24T12:52Z",
+          "by": "claude",
+          "what": "delivers: HOS:008, HOS:ASK:J2699, HOS:ASK:J2984 (the long and its Shorts; board alerts read this, PR #1257)."
         }
       ],
       "remaining_action": "Commit macbook/J3500, open HOS PR, switch back to main, park Mini upload, and post thread report",
@@ -319237,7 +319242,12 @@
         "okAt": "2026-11-16T15:24Z",
         "okRef": "board-check HOS-008 v05 2026-11-16T15:24:18.694Z"
       },
-      "mini_only": true
+      "mini_only": true,
+      "delivers": [
+        "HOS:008",
+        "HOS:ASK:J2699",
+        "HOS:ASK:J2984"
+      ]
     },
     {
       "id": "J3501",
@@ -319302,13 +319312,23 @@
           "at": "2026-11-24T11:54Z",
           "by": "claude",
           "what": "reopened: Ben OK'd v03 on the board 24 Nov 08:42; HOS PR #744 merged by the acting Chief. Mini uploads and schedules Thu 3 Dec 18:00."
+        },
+        {
+          "at": "2026-11-24T12:52Z",
+          "by": "claude",
+          "what": "delivers: HOS:009, HOS:ASK:J3311.1, HOS:ASK:J3311.2 (the long and its Shorts; board alerts read this, PR #1257)."
         }
       ],
       "remaining_action": "Block J3501 on Ben HOS:009 watch OK and post [MacBook] report on studio thread",
       "due": "2026-12-03T12:00:00Z",
       "kind": "studio",
       "urgent": 8,
-      "mini_only": true
+      "mini_only": true,
+      "delivers": [
+        "HOS:009",
+        "HOS:ASK:J3311.1",
+        "HOS:ASK:J3311.2"
+      ]
     },
     {
       "id": "J3502",
@@ -321236,7 +321256,7 @@
       "for": "claudecode",
       "kind": "assembly",
       "mini_only": true,
-      "urgent": 13
+      "urgent": 12
     },
     {
       "id": "J3531",
@@ -321354,6 +321374,37 @@
         "condition": "Mon 30 Nov 2026 08:00 London reached, the studio move is done or not due within 24 h, no History of Science job running, and the day-before notice posted Sun 29 Nov",
         "check_at": "2026-11-30T08:00:00Z"
       }
+    },
+    {
+      "id": "J3533",
+      "title": "Board: deploy PR #1257 (upload alerts open their video; false alerts gone) and check the live banner",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Why (Ben, 24 Nov ~12:50 London, with screenshots: the red \"Open Videos\" buttons did nothing, under nine \"waiting for an upload job\" alerts, most of them false).** orbit-with-ben PR #1257 makes each alert open its own video page, and stops the false alerts (listing-kind upload jobs, finished swaps, and jobs that deliver a long and its Shorts together via `delivers`).\n\n**Do (Mini, about 10 minutes, once PR #1257 is merged on main):** `python3 05_Analytics/kanban/board_site/build.py`, then the Pages deploy (`npx wrangler pages deploy dist --project-name studio-kanban`). Let the board publish run once, then check on the live site:\n- the red banner lists only OKs that really have no upload job (expected: none);\n- tapping a banner button opens that video's page.\nOne thread line with the deployment id. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 15,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T12:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T12:52Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build and deploy the board after PR #1257 merges, then check the banner links",
+      "due": "2026-11-24T17:00:00Z",
+      "kind": "assembly",
+      "mini_only": true,
+      "urgent": 13
     }
   ],
   "focus": [
