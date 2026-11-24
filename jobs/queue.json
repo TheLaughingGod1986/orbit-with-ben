@@ -328087,17 +328087,22 @@
           "at": "2026-11-24T21:21Z",
           "by": "codex",
           "what": "step 3 of 4 done: All four targeted boundary/reservation regressions pass in an isolated worktree. PR #1289 already merged at 20:44Z with Rules CI success. Both live runner slots report installed version b7f20fb5eea010db."
+        },
+        {
+          "at": "2026-11-24T21:22Z",
+          "by": "codex",
+          "what": "step 4 of 4 done: Safe-boundary refresh verified: both runner slots load b7f20fb5eea010db matching installed; relay log records second-slot spawn at 20:54:13Z. Four relay regression tests and five prelaunch tests pass. Runtime receipt in ~/_desk/logs/J3615-runtime-verified.json; no runner interrupted."
         }
       ],
-      "remaining_action": "Record completed merge and runtime evidence, then close the stale job",
+      "remaining_action": "Verification complete; recording final result",
       "due": "2026-11-25T12:00:00Z",
       "kind": "assembly",
       "plain": "Keep both available workers busy when one returns during a run",
       "mini_only": true,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-24T21:21Z",
+        "at": "2026-11-24T21:22Z",
         "by": "codex",
         "plan": [
           "Inspect relay guards",
@@ -328105,7 +328110,7 @@
           "Validate and publish PR",
           "Record review and refresh evidence"
         ],
-        "note": "All four targeted boundary/reservation regressions pass in an isolated worktree. PR #1289 already merged at 20:44Z with "
+        "note": "Safe-boundary refresh verified: both runner slots load b7f20fb5eea010db matching installed; relay log records second-slo"
       }
     },
     {
