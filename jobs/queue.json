@@ -324812,10 +324812,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-24T21:17Z",
+      "eta": "2026-11-24T23:17Z",
       "created_by": "relay",
       "created_at": "2026-11-24T16:20Z",
       "result": "",
@@ -324869,6 +324869,11 @@
           "at": "2026-11-24T21:17Z",
           "by": "codex",
           "what": "reopened: Chief evidence review finished; reopen verification only to record its completion. J3430 remains held with recorded last_recheck J3560 and follow-ups J3623/J3624/J3625."
+        },
+        {
+          "at": "2026-11-24T21:17Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief (codex) to review OWB PR #1268, reconcile/merge ww2 PR #94 (status.json/conflicts), close PR #60, and record J3430 hold/awaits",
@@ -324884,7 +324889,15 @@
         "by": ""
       },
       "open_claim": true,
-      "escalated_at": "2026-11-24T18:35Z"
+      "escalated_at": "2026-11-24T18:35Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T21:17Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3561",
