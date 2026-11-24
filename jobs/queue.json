@@ -324139,15 +324139,20 @@
           "at": "2026-11-24T16:41Z",
           "by": "macbook-2",
           "what": "step 1 of 5 done: Read all scripts, status files and schedules for films 002-010 plus OWB/HOS Short cadences"
+        },
+        {
+          "at": "2026-11-24T16:46Z",
+          "by": "macbook-2",
+          "what": "step 2 of 5 done: Locked 20 Shorts (002-010) + 1 reserve with exact word-level timecodes, verified PD photos and <=50-char Rule-2 titles"
         }
       ],
-      "remaining_action": "Extract exact SRT timecodes for 002-006, verify archive photo IDs for 002-010, and lock 2-3 Shorts per film",
+      "remaining_action": "Queue Short build jobs, write SHORTS_PLAN_2026-12.md and update film status files",
       "due": "2026-11-27T18:00:00Z",
       "kind": "review",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-24T16:41Z",
+        "at": "2026-11-24T16:46Z",
         "by": "macbook-2",
         "plan": [
           "Read films 002-010 scripts, picture plans and schedules",
@@ -324156,7 +324161,7 @@
           "Queue Short build jobs",
           "Verify, open PR and report"
         ],
-        "note": "Read all scripts, status files and schedules for films 002-010 plus OWB/HOS Short cadences"
+        "note": "Locked 20 Shorts (002-010) + 1 reserve with exact word-level timecodes, verified PD photos and <=50-char Rule-2 titles"
       }
     }
   ],
