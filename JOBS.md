@@ -130,6 +130,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3594 | mini | open | – | – | review · Verify condition for J3443 |  |
 | J3595 | mini | blocked | macbook-2 | – | review · Verify condition for J3591 |  |
 | J3596 | any | open | – | – | assembly · Correct retention autopsy fallback and evidence wording from J3595 |  |
+| J3597 | any | open (after J3596) | – | – | chief · Review corrected J3591 autopsy PRs after J3596 |  |
 
 Recently finished:
 

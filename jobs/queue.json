@@ -1,5 +1,5 @@
 {
-  "next_id": 3597,
+  "next_id": 3598,
   "jobs": [
     {
       "id": "J0001",
@@ -325860,6 +325860,36 @@
       "due": "2026-11-25T05:03:00Z",
       "kind": "assembly",
       "plain": "Fix the time-window checks in the Mulberry harbour audience review"
+    },
+    {
+      "id": "J3597",
+      "title": "Review corrected J3591 autopsy PRs after J3596",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "Follow-up to Chief ruling J3595. After J3596 completes, review its exact PR heads and regression evidence for OWB #1273, ww2-channel #101 and OWB #1276. Preserve original J3591 media findings. Confirm wrong-window data cannot masquerade as 48h or 7d evidence, clip timeline provenance is explicit, and causal/benchmark claims are qualified. Recheck elected-Chief authority and required checks; merge acceptable same-owner main-base PRs, then finish held J3591 with evidence. No YouTube mutations, no spend, no unrelated holds. If fixes still fail, record exact next correction on J3591.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J3596",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-24T17:49Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T17:49Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Check the corrected fallback and evidence before accepting the audience review",
+      "due": "2026-11-25T05:03:00Z",
+      "kind": "chief",
+      "plain": "Review the corrected Mulberry harbour audience analysis"
     }
   ],
   "focus": [
