@@ -323406,10 +323406,10 @@
       "stage": "script",
       "after": "J3554",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-24T16:06Z",
+      "eta": "2026-11-24T18:06Z",
       "created_by": "macbook",
       "created_at": "2026-11-24T15:52Z",
       "result": "",
@@ -323423,6 +323423,11 @@
           "at": "2026-11-24T15:55Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
+        },
+        {
+          "at": "2026-11-24T16:06Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Run Rule-6 viewer test, Pilot 2 48h/7d check, fold J3554 fixes, Rule-E lock WW2:014 and queue post-reset VO",
@@ -323436,7 +323441,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T16:06Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3556",
