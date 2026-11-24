@@ -327876,9 +327876,14 @@
           "at": "2026-11-24T20:39Z",
           "by": "codex",
           "what": "step 3 of 4 done: All 128 relay tests pass; focused recovery and inherited-lock tests pass. PR 1289 opened and ordinary Chief code review recorded; waiting for CI before merge."
+        },
+        {
+          "at": "2026-11-24T20:44Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: PR 1289 merged with green CI; shared checkout fast-forwarded. Installed b7f20fb5eea010db; active slots still run 253c7fe66b787b2f on J3615/J3205. Receipt: ~/_desk/logs/J3615-installed.json. No active runner restarted."
         }
       ],
-      "remaining_action": "Waiting for checks, then installing the relay fix through its safe handoff",
+      "remaining_action": "Confirming the updated relay loads after the current jobs finish",
       "due": "2026-11-25T12:00:00Z",
       "kind": "assembly",
       "plain": "Keep both available workers busy when one returns during a run",
@@ -327886,7 +327891,7 @@
       "progress": {
         "step": 3,
         "of": 4,
-        "at": "2026-11-24T20:39Z",
+        "at": "2026-11-24T20:44Z",
         "by": "codex",
         "plan": [
           "Inspect slot guards",
@@ -327894,7 +327899,7 @@
           "Test and review change",
           "Publish and refresh safely"
         ],
-        "note": "All 128 relay tests pass; focused recovery and inherited-lock tests pass. PR 1289 opened and ordinary Chief code review "
+        "note": "PR 1289 merged with green CI; shared checkout fast-forwarded. Installed b7f20fb5eea010db; active slots still run 253c7fe"
       }
     },
     {
