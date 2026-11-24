@@ -105,6 +105,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3561 | mini | blocked | claude | – | studio · WW2 pilot 2: read at 1,000 impressions or 48 hours, and change the title that day if click-through is under 2% |  |
 | J3563 | any | claimed | macbook-2 | 2026-11-24T18:37Z | review · Field Order History: plan two or three Shorts per film (002-010) and queue the first builds |  |
 | J3564 | gemini | open | – | – | HOS:137 sources · facts · HOS 137 Accidental Inventions (Thu 24 Dec): independent facts audit of v01 script, SOURCES.md & Shorts (PR #754) | J3513 |
+| J3565 | mini | open (after J3564) | – | – | HOS:137 script · review · HOS 137 Accidental Inventions (Thu 24 Dec): review and lock script v01, package-first scoring, sources & Shorts (PR #754) | J3513 |
 
 Recently finished:
 

@@ -1,5 +1,5 @@
 {
-  "next_id": 3565,
+  "next_id": 3566,
   "jobs": [
     {
       "id": "J0001",
@@ -324213,6 +324213,36 @@
       "due": "2026-12-08T18:00:00Z",
       "kind": "facts",
       "plain": "Fact-check every spoken claim, quote, date, and guardrail in the Accidental Inventions v01 script and Shorts."
+    },
+    {
+      "id": "J3565",
+      "title": "HOS 137 Accidental Inventions (Thu 24 Dec): review and lock script v01, package-first scoring, sources & Shorts (PR #754)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Review and lock the `HOS:137` (*Accidental Inventions: 5 Mistakes That Worked*, Cluster 3 Film 3, target Thu 24 Dec 2026 18:00 London) package-first scoring, 7–9 min script draft v01, sources, and two 16–19 s Shorts delivered by `J3513` in **HOS PR `#754`** (`gemini/J3513-hos137-script`, commit `1ae0da81`, built cleanly on `origin/main` + `origin/macbook/J3503`), after the independent `facts` lane completes.\n\n**Files in HOS PR `#754` (`02_Video-Projects/137_Accidental-Inventions-That-Changed-The-World/`):**\n- `11_Upload-Package/PACKAGE_FIRST_SCORING_v01.md` & `PRE_BUILD_VIDIQ_AUDIT.md`: 3 zero-collision query-first titles & 2 `J3503`-corrected single-hero 3D thumbnails scored vs Cluster 3 outliers. Primary Arm A pick: *Accidental Inventions: 5 Mistakes That Worked* (`45c`, `96/100`, `0` collisions); T&C Arm B (plan title): *Accidental Inventions That Changed the World (5 Mistakes That Worked)* (`69c`, `92/100`); T&C Arm C: *Accidental Inventions: 5 Mistakes That Changed the World* (`56c`, `90/100`). Thumb A (`NEARLY TRASHED`, `96/100`, gold on `TRASHED`, single giant 1903 cracked-yet-intact flask) & Thumb B (`WRONG RESISTOR`, `93/100`, gold on `WRONG`, 1956 wrong resistor + heartbeat oscilloscope). Low-RPM trap `history of inventions` (`PK 25%`) excluded.\n- `01_Script/accidental_inventions_script_master_v01.md`: `1,225` spoken words (`8.2` min), `review:script` **PASS `92.6/100`** (`8/8` structure gates), `gate:episode` **PASS** (`9/9` checks OK), Safety Glass (1903) locked & Microwave excluded for zero overlap with `HOS:129`, proof-first 0:30 open + early `DATA+SCALE` at `0:28`, `5 DATA` + `5 SCALE` (incl. `1839–1974` timeline), `13 WHO` (year-accurate roles), `10 WHEN`, `4 FACT`, `2 [EXPLORER ACTS]` (Parts 02 & 05, outside first minute), `4 [CHAPTER CARD]` (5 parts), `19 [VISUAL MUST]`, `5 [TEACH]`.\n- `01_Script/SOURCES.md` & `01_Script/FACT_NOTES_v01.md` (`24/24` rows verified with verbatim quotes & open URLs, all 6 `J3503` guardrails resolved).\n- `10_Shorts/SHORTS_SCRIPTS_v01.md` & `11_Upload-Package/LAUNCH_PLAN.md`: `S01` (*How Did One Wrong Resistor Invent the Pacemaker?*, `48c`, `0` collisions, `46w` ≈ `17.9 s`, Sat 26 Dec 11:30) and `S02` (*How Did Failed Glue Accidentally Invent Post-it Notes?*, `54c`, `0` collisions, `43w` ≈ `16.8 s`, Fri 25 Dec 11:30).\n\n**Review & lock checklist (due Tue 8 Dec 2026 18:00 London; Ben's watch Mon 21 Dec; target air Thu 24 Dec):**\n1. Confirm Primary Title Arm A, T&C Arms B/C, and Thumb A/B concepts (with §2.6 hand-verified text/oscilloscope).\n2. Review `accidental_inventions_script_master_v01.md`, independent `facts` audit, `SOURCES.md`, `FACT_NOTES_v01.md`, and `SHORTS_SCRIPTS_v01.md` against HOS Teach-on-Screen, Polish-Pass, Craft, and Ben 19 Nov Shorts house rules.\n3. If PASS: Chief merges PR `#754` (which includes `origin/macbook/J3503`), locks script & facts, and queues HOS:137 VO once an open HOS WIP slot clears under Rule G (`008`/`009` leaving active). No VO or picture spend until Chief PASS.\n",
+      "ref": "J3513",
+      "film": "HOS:137",
+      "stage": "script",
+      "after": "J3564",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-24T16:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T16:53Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review and lock HOS:137 PR #754 after independent facts audit J3564",
+      "due": "2026-12-08T18:00:00Z",
+      "kind": "review",
+      "plain": "Review and lock the Accidental Inventions package, 7-9 minute script, sources, and two Shorts."
     }
   ],
   "focus": [
