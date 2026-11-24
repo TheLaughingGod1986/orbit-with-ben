@@ -89,7 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3482 | mini | open | – | – | WW2:011 script · script · WW2 film 011: topic check, packaging first, script and sources, to lock by 2026-12-06 |  |
 | J3483 | mini | open | – | – | WW2:012 script · script · WW2 film 012: topic check, packaging first, script and sources, to lock by 2026-12-09 |  |
 | J3484 | mini | open | – | – | WW2:013 script · script · WW2 film 013: topic check, packaging first, script and sources, to lock by 2026-12-11 |  |
-| J3485 | any | open | – | – | WW2:014 script · script · WW2 film 014: topic check, packaging first, script and sources, to lock by 2026-12-13 |  |
+| J3485 | mini | open | – | – | WW2:014 script · script · WW2 film 014: topic check, packaging first, script and sources, to lock by 2026-12-13 |  |
 | J3486 | any | open | – | – | WW2:015 script · script · WW2 film 015: topic check, packaging first, script and sources, to lock by 2026-12-16 |  |
 | J3487 | any | open | – | – | WW2:016 script · script · WW2 film 016: topic check, packaging first, script and sources, to lock by 2026-12-18 |  |
 
