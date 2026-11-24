@@ -316629,9 +316629,14 @@
           "at": "2026-11-24T12:08Z",
           "by": "relay",
           "what": "condition verification queued: J3528"
+        },
+        {
+          "at": "2026-11-24T15:02Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-25T10:15:00Z"
         }
       ],
-      "remaining_action": "Wait for the local Lifetime verification, then resolve export approval before publication",
+      "remaining_action": "Await the local privacy review and explicit approval for the proposed export files",
       "due": "2026-11-24T06:40:43Z",
       "kind": "studio",
       "plain": "Read Field Order History’s subscribers and watch hours so the board stays current",
@@ -316657,9 +316662,11 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "Chief ruling 24 Nov: local commit f860973491 is preserved but not accepted for publication. Saved Studio text identifies the channel yet does not prove which date-range control was selected. J3465 must complete local selected-Lifetime evidence and strict-import validation before acceptance. The prior automatic approval rejection of public GitHub analytics export remains binding; do not export without explicit destination-specific approval. Do not infer approval from this retry date.",
-        "check_at": "2026-11-24T13:08:02+00:00",
-        "recheck_task": "J3528"
+        "condition": "J3528 Chief ruling: J3465 local commit c69d1ee2d6 accepted for selected-Lifetime evidence and dated import after screenshot, DOM, hash and generated-file review. PR 1250 is merged, but raw Studio exports remain excluded. Await J3548 local-only privacy review by Claude Code after its recorded 25 Nov 10:00Z reset, then check explicit destination-specific approval for the actual proposed files. Neither reset nor J3548 authorizes export; preserve original local commits and do not push analytics/raw evidence.",
+        "check_at": "2026-11-25T10:15:00Z",
+        "last_recheck": "J3528",
+        "checked_at": "2026-11-24T15:02:05+00:00",
+        "checked_by": "codex"
       },
       "escalated_at": "2026-11-24T08:46Z"
     },
