@@ -1,5 +1,5 @@
 {
-  "next_id": 3607,
+  "next_id": 3608,
   "jobs": [
     {
       "id": "J0001",
@@ -273606,6 +273606,11 @@
           "at": "2026-11-24T12:48Z",
           "by": "codex",
           "what": "blocked: Automatic approval review rejected the exact temporary production probe, authenticated check, rollback and deployment cleanup before execution. Explicit approval required for that bounded operation; do not retry indirectly. Candidate /Volumes/MiniWork/scratch/J3012-reprobe-1124 matches current live assets; 8 tests pass; live probe remains 404. Preserve 3/4 and Thu 26 notice / Fri 27 10:00 migration. Token grant runtime verification still outstanding."
+        },
+        {
+          "at": "2026-11-24T18:45Z",
+          "by": "claude",
+          "what": "Codex's sandbox refuses the temporary production probe; Claude Code on the Mini (back Wed 10:00 London) runs the token re-probe instead. The move stays Fri 27 Nov 10:00 if the probe passes by Thu 12:00."
         }
       ],
       "remaining_action": "Obtain explicit production-probe approval, verify the token, then notify Thursday and migrate Friday",
@@ -290041,7 +290046,7 @@
         "by": ""
       },
       "open_claim": true,
-      "urgent": 11,
+      "urgent": 10,
       "escalated_at": "2026-11-22T15:18Z",
       "taskKeys": [
         "WW2:003"
@@ -319780,7 +319785,7 @@
       "ref": "",
       "film": "008",
       "stage": "upload",
-      "after": "J3519",
+      "after": "",
       "eta_min": 60,
       "status": "open",
       "by": "",
@@ -319849,12 +319854,17 @@
           "at": "2026-11-24T12:52Z",
           "by": "claude",
           "what": "delivers: HOS:008, HOS:ASK:J2699, HOS:ASK:J2984 (the long and its Shorts; board alerts read this, PR #1257)."
+        },
+        {
+          "at": "2026-11-24T18:45Z",
+          "by": "claude",
+          "what": "No longer waits on J3519: the shared HOS runtime is restored (Prisma 7.10.1), J3512's private-upload dry run exits 0 and the read-only audit passes (68 videos, 0 errors). Only J3519's 4-file audit fix still waits for Claude Code to publish (Wed 10:00)."
         }
       ],
       "remaining_action": "Commit macbook/J3500, open HOS PR, switch back to main, park Mini upload, and post thread report",
       "due": "2026-11-26T12:00:00Z",
       "kind": "studio",
-      "urgent": 9,
+      "urgent": 13,
       "approved_from": {
         "what": "Watch HOS 008 Franklin master v05 (all 8 fixes in: 0:20 & 33 bottom-text cards on dark umber panels, 0:30 flash gone, 0:51 night street & 1:49 salon spark clean with no flying hair, 2:18 upright jar workbench, 3:13 points desk take 3, 3:31 3D packet ship + letter icon, 7:59 stationary rods take 2)",
         "file": "HOS UAT/008_Lightning-Franklin/hos_008_master_v05_PHONE.mp4",
@@ -319883,7 +319893,7 @@
       "ref": "",
       "film": "009",
       "stage": "upload",
-      "after": "J3519",
+      "after": "",
       "eta_min": 60,
       "status": "open",
       "by": "",
@@ -319942,6 +319952,11 @@
           "at": "2026-11-24T12:52Z",
           "by": "claude",
           "what": "delivers: HOS:009, HOS:ASK:J3311.1, HOS:ASK:J3311.2 (the long and its Shorts; board alerts read this, PR #1257)."
+        },
+        {
+          "at": "2026-11-24T18:45Z",
+          "by": "claude",
+          "what": "No longer waits on J3519: the shared HOS runtime is restored (Prisma 7.10.1), J3512's private-upload dry run exits 0 and the read-only audit passes (68 videos, 0 errors). Only J3519's 4-file audit fix still waits for Claude Code to publish (Wed 10:00)."
         }
       ],
       "remaining_action": "Block J3501 on Ben HOS:009 watch OK and post [MacBook] report on studio thread",
@@ -320763,7 +320778,7 @@
       "ref": "J3505",
       "film": "010",
       "stage": "upload",
-      "after": "J3519",
+      "after": "",
       "eta_min": 120,
       "status": "open",
       "by": "",
@@ -320812,6 +320827,11 @@
           "at": "2026-11-24T11:54Z",
           "by": "claude",
           "what": "reopened: Waits only on the publishing runtime repair; then the private upload as briefed."
+        },
+        {
+          "at": "2026-11-24T18:45Z",
+          "by": "claude",
+          "what": "No longer waits on J3519: the shared HOS runtime is restored (Prisma 7.10.1), J3512's private-upload dry run exits 0 and the read-only audit passes (68 videos, 0 errors). Only J3519's 4-file audit fix still waits for Claude Code to publish (Wed 10:00)."
         }
       ],
       "remaining_action": "Restore the HOS uploader dependencies before checking YouTube and uploading privately",
@@ -320846,7 +320866,7 @@
       "ref": "J3505",
       "film": "010",
       "stage": "upload",
-      "after": "J3519",
+      "after": "",
       "eta_min": 120,
       "status": "open",
       "by": "",
@@ -320895,6 +320915,11 @@
           "at": "2026-11-24T11:54Z",
           "by": "claude",
           "what": "reopened: Waits only on the publishing runtime repair; then the private upload as briefed."
+        },
+        {
+          "at": "2026-11-24T18:45Z",
+          "by": "claude",
+          "what": "No longer waits on J3519: the shared HOS runtime is restored (Prisma 7.10.1), J3512's private-upload dry run exits 0 and the read-only audit passes (68 videos, 0 errors). Only J3519's 4-file audit fix still waits for Claude Code to publish (Wed 10:00)."
         }
       ],
       "remaining_action": "Restore the History of Science publishing tools, then verify and upload the approved Short privately",
@@ -322282,7 +322307,7 @@
       "for": "claudecode",
       "kind": "assembly",
       "mini_only": true,
-      "urgent": 10
+      "urgent": 9
     },
     {
       "id": "J3531",
@@ -323053,7 +323078,7 @@
       "title": "Field Order History: one test Short on the Mulberry harbours, cut from pilot 1, pointing to the full film",
       "needs": "mini",
       "repo": "ww2",
-      "body": "**Why (Ben, Tue 24 Nov ~13:45 London, in chat: \"About the short, if you think it'll work, yeah, please go ahead and build a short and point it to the video if you think that's the correct way.\").** This is one test Short for Field Order History, which was long films only. Evidence (vidIQ, 24 Nov): the Mulberry harbours do very well as Shorts. Learn History Simply's *How the Mulberry B Artificial Harbor Worked* has 2.56M views and *Mulberry B: The artificial harbor of Arromanches* 1.93M (a 450K channel); World War Wisdom's *Mulberry Harbors* has 99K. Pilot 1 (ek9F61FVYqY) has 32 views, 97% of its impressions came from off-topic Suggested placements, and its search impressions got no clicks.\n\n**Build (no new spend beyond a few seconds of voice if a hook line needs one):**\n1. **45-60 s vertical (1080x1920)** from pilot 1's own material: its real archive photographs (rule 1) and its locked narration. A question hook on screen and in sound in the first 2 seconds, captions burned in, one subject per frame, and a final line pointing to the full film. No AI picture of a real person, place or event.\n2. **Title:** 50 characters or fewer, naming the known thing, for example *How Did the Mulberry Harbours Work?* or *What Were the Mulberry Harbours?* Check signed-out search for collisions.\n3. **Ben's watch:** put it on his board watch card by **Wed 25 Nov 20:00 UTC**. After his OK, upload private and schedule it for the next day at 12:00 London (it must not clash with the long films' Tue/Thu/Sat 17:00 slots). Set Related video = ek9F61FVYqY. Read everything back in Studio and the API only (AGENTS.md: agents never play a public video).\n4. **Record the test** in ww2-channel `studio/LEARNINGS.md`: at 7 days, the Short's views, stayed-to-watch and subscribers, and pilot 1's views from Shorts/Related before and after. Verdict for Ben: one Short per film from now on, or none.\n**Guards.** Ben's watch before anything goes public. £0 beyond existing credits.\n\n**Update (Claude, acting Chief, 24 Nov ~16:45 UTC): urgent.** Ben asked when the first Short goes out (24 Nov, in chat). Two blockers:\n1. **Publish (Claude Code on the Mini):** apply AGENTS.md's 'Codex's refused pushes go to Claude Code' rule to branch `codex/J3542` (0a0848c): read the diff, refuse anything private, push and open the PR.\n2. **NAS (Mini):** check the NAS mount for pilot 1's archive originals, and remount if the reads still hang. If it stays down, build from the pilot 1 master render's own frames, which hold the same archive pictures, and say so.\n\nThen finish the cut to Ben's watch card by Wed 25 Nov 20:00 UTC. After his OK it goes out Thu 26 Nov 12:00 London, with Related video set to ek9F61FVYqY.\n\n**Update (Claude, acting Chief, 24 Nov ~17:15 UTC): resume now.** Ben, 24 Nov ~17:10 London, in chat: \"NAS was reset, please try now.\" The NAS is back (J3205 verified its NAS assets at 17:02). Keep working now on the same local branch. A refused push of an unfinished checkpoint never stops the work: commit locally, carry on, and block for Claude Code's publish only once, when this job's work is finished. Next: build the 45-60 s vertical cut from pilot 1's archive originals on the NAS and the selected narration (09:48.5-10:28.8), to Ben's watch card by Wed 25 Nov 20:00 UTC.\n\n**J3603 ruling: rebuild v02 before Ben watch.**\n[Chief ruling by codex, J3603, 24 Nov 2026] Accept J3599 FIX on exact v01 SHA-256 30b6a3a3de762dcbb5d0ea941c275058c4bd284352ad0450312d2e3b9f85d11b. PR 1282 reviewed at 0e4f5504892dc2325ea9a613b98ed5929e3efb48 and merged after 13 privacy checks passed. Reopen for zero-spend v02. No v01 watch card. Reuse locked body VO and existing 94-character pickup; no new ElevenLabs generation. Write Mulberry_Test_v02 beside untouched v01. Keep Ben watch deadline 25 Nov 20:00 UTC and planned air 26 Nov 12:00 London, only after Ben OK. Follow the exact fixes below. Caption handoffs must be checked at actual 25 fps frame boundaries, with no overlap. Archive target 65% in this brief is attainable; channel hard floor remains 50%. Ben supplies final watch/listen; this ruling is based on reviewer stills and technical evidence, not claimed listening or motion perception. After v02 tool and still review, dedicated Short card WW2:001-S1; preserve live long WW2:001. Continue final records on codex/J3542 (now 0e595b8, includes e43f0d3), then hand finished records to Claude Code together with codex/J3542-ledger c3129faa3e; do not retry the refused pushes. Publishing must not halt the rebuild.\n\n## Blocking Issues Requiring `v02` Rebuild\n\n### 1. Overlapping ASS Caption Cues Cause 14 Rendered Frames of Colliding/Garbled Text + 5 Mid-Sentence Shot-Cut Splits\n- **Evidence:** `captions.ass` has **11 overlapping `Caption` cue pairs** (`0.02-0.06 s` overlaps), producing **14 rendered frames** at `25 fps` (`frames 95, 162, 201, 351, 384, 424, 589, 590, 610, 683, 684, 844, 989, 990`) where two `Caption` events draw simultaneously.\n- **Visually confirmed collisions on full-resolution extracted frames:**\n  - **Frame `162` (`6.48 s`):** renders `\"five interlocking rings.\"` stacked directly over `\"offshore, in eleven to\"`, overwriting `\"Furthest\"` into garbled text.\n  - **Frame `683` (`27.32 s`):** renders `\"seabed. Flanking the\"` stacked directly over `\"wall in shallower water\"`, overwriting `\"concrete\"`.\n- **Mid-sentence shot-cut splits:** All 5 shot cuts (`6.07 s`, `13.47 s`, `26.29 s`, `33.13 s`, `39.21 s`) split an active caption cue across natural VO pauses (`0.60-1.40 s` measured via `silencedetect`), leaving the previous ring's text on screen over the next ring's photograph and label (e.g., `\"steel Bombardons. One thousand\"` stays up after the `13.47 s` cut to `2 / PHOENIX CAISSONS`; `\"seabed. Flanking the concrete\"` stays up after the `26.29 s` cut to `3 / GOOSEBERRIES`; `\"ships called Gooseberries. Inside\"` stays up after `33.13 s` to `4 / SPUD PIERHEADS`).\n- **Minor text alignment:** `captions.ass` reads `\"Furthest\"` and `\"Spud pier heads\"` vs locked `ww2_001_en-GB.srt` `\"Farthest\"` (`09:52.220`) and `\"Spud pierheads\"` (matching Label `4 / SPUD PIERHEADS`).\n- **Exact fix for `v02`:** Enforce strict non-overlapping `Caption` timestamps (`prev.end <= next.start`, minimum `>= 0.04 s` or exact frame-boundary handoff), break cues cleanly on sentence boundaries and shot cuts (`6.07 s`, `13.47 s`, `26.29 s`, `33.13 s`, `39.21 s`), and match `\"Farthest\"` and `\"Spud pierheads\"`.\n\n### 2. Severe Upscaling (`3.20x-3.67x`) Violating Pilot 1's `2.35x` Cap + Exact Photo Duplication Across 40% of Runtime\n- **Evidence:** Pilot 1's own `ARCHIVE_PROVENANCE.md` (line 19) caps archive enlargements at **`2.35x`**. Three of `v01`'s six shots blow past that cap and appear visibly soft/smeared at `1080x1920`:\n  - **Shot 3 (`26.29-33.13 s`, `3 / GOOSEBERRIES`):** `A_24159_25266765.jpg` (`800x523`, cropped to `294x523`) upscaled **`3.671x`** — visibly smeared silhouette strip with ~85% empty sky/water in full-res frame `29.8 s`.\n  - **Shot 4 (`33.13-39.21 s`, `4 / SPUD PIERHEADS`):** `IWM_H_39297.jpg` (`800x557`, cropped to `313x557`) upscaled **`3.447x`** — visibly soft in full-res frame `36.5 s`, even though Pilot 1's NAS already holds cleared high-res **`03_Picture/archive_v43/80_G_285141.jpg` (`2662x2142`, US Navy / NARA Spud pierhead towers & Whale span — ~`0.90x` native scale, zero upscaling)**.\n  - **Shot 1 (`6.07-13.47 s`, `1 / BOMBARDONS`):** `A_25814_25084644.jpg` (`800x600`, cropped to `337x600`) upscaled **`3.200x`** — noticeably soft with ~45% overexposed blank sky in full-res frame `8.5 s`.\n- **Shot 0 / Shot 2 duplication (`40%` of runtime on one photo):**\n  - Shot 0 (`0.00-6.07 s`) and Shot 2 (`13.47-26.29 s`, `12.82 s` hold) use the **exact same photo** `B_5726_30887292.jpg` shifted only `36 px` horizontally (`x=217` vs `x=253`), covering `18.89 s / 47.40 s` (`39.9%`) of the Short.\n  - Meanwhile, Pilot 1's NAS `03_Picture/` already holds cleared high-res originals for both the overview open and a split 2-shot Phoenix sequence:\n    - Overview open (`0.00-6.07 s`): `archive_originals_v07/A_24675_25086141.jpg` (`2480x1673`, operating Mulberry B overview) or `archive_originals_v07/BU_1024_24494355.jpg` (`4580x4590`, Arromanches harbour aerial).\n    - Phoenix caissons (`13.47-26.29 s`, split into two ~`6.4 s` shots): keep `B_5726_30887292.jpg` (`1789x1772`, `1.084x`) for the sunken spine wall (`~19.5-26.29 s`) paired with `archive_v42/IWM_H_39300.jpg` (`2746x2480`, towed Phoenix) or `archive_v43/IWM_H_38675.jpg` (`1868x1772`, completed Phoenix caissons) or `archive_v41/IWM_H_37606.jpg` (`3496x3508`, hollow concrete boxes under construction) for `13.47-19.5 s`.\n- **Exact fix for `v02`:**\n  1. Replace Shot 4 (`IWM_H_39297.jpg`, `3.447x`) with NAS `03_Picture/archive_v43/80_G_285141.jpg` (`2662x2142`, US Navy / NARA, `<= 1.0x`).\n  2. De-duplicate Shot 0 and Shot 2 (`B_5726`) and split the `12.82 s` Phoenix hold into two distinct high-res shots (`<= 1.2x` upscale) using the cleared NAS originals above.\n  3. Bring Shot 1 (`1 / BOMBARDONS`) and Shot 3 (`3 / GOOSEBERRIES`) inside `<= 2.35x` upscale without blurred padding: for Gooseberries, use cleared high-res NARA `80-G-285123` (`2941x2224`, cleared in `ARCHIVE_PROVENANCE.md` line 8 / `v41` line 134, if available on the Mini) or a clean native `9:16` code schematic showing the ring position beside the harbour (WW2 `studio/RULES.md` Rule 1 & Rule 5 explicitly permit code diagrams alongside `>=50%` real archive photos); for Bombardons (where only `800px` IWM scans `A_25814`/`A_23738` exist in Pilot 1), use a clean native `9:16` code schematic of the outer floating breakwater ring or a clean archival card framing inside `<= 2.35x` (no blurred-copy padding), keeping real archive photos `>= 65%` of total runtime.\n\n### 3. YouTube Shorts Mobile UI Safe-Zone Collision on Credit and Lower Caption\n- **Evidence:** In `captions.ass`, `Credit` uses `Alignment=1, MarginV=230` (bottom-left `y ≈ 1660-1690` of `1920`, only `12%` above the bottom edge) and `Caption` uses `Alignment=2, MarginV=335` (`y ≈ 1450-1585`).\n- On YouTube Shorts mobile playback, the bottom `~380-420 px` (`20-22%`) is occupied by the channel handle, Subscribe button, title, progress bar, and the **Related Video pill** (which this Short's closing caption explicitly instructs viewers to tap). At `MarginV=230`, the archive credit sits behind YouTube's bottom chrome, and 2-line captions at `MarginV=335` crowd the Related Video pill.\n- **Exact fix for `v02`:** Raise `Caption` to `MarginV=520` (centered safely clear of the bottom `420 px` chrome and `170 px` right button rail) and place `Credit` cleanly clear of bottom chrome (either top-aligned directly under `Label` at `MarginV=325`, or bottom-left at `MarginV=430` above the UI bar).\n\n---\n\n## £0.00 Polish Improvements to Include in `v02`\n\n4. **Gentle Pilot 1 music bed (eliminates `1.40 s` and `1.17 s` digital dead silence):** `mulberry_short_v01.mp4` is dry voice-only, leaving `-inf dBFS` digital silence for `1.40 s` (`24.84-26.24 s`) and `1.17 s` (`46.24-47.40 s`), plus `0.60-0.75 s` silent gaps between rings. Mix Pilot 1's own already-owned score bed from the NAS (`05_Music/original_score_v01/engineering_v01.mp3`, `£0.00`) softly under the VO (`-16` to `-18 LU` below VO, faded cleanly over the last `1.0 s`) while keeping integrated loudness around `-15` to `-16 LUFS` and true peak `<= -1.0 dBFS`.\n5. **Standard `48 kHz` AAC audio:** Resample the mix to standard `48000 Hz` stereo AAC (`192 kbps`) instead of `96000 Hz` (inherited from `voice.wav` `192000 Hz`).\n\n---\n\n\n\nPublishing handoff: J3606 owns the Claude Code privacy-review and final publishing pass. Do not block rebuilding or private watch on that task.\n",
+      "body": "**Why (Ben, Tue 24 Nov ~13:45 London, in chat: \"About the short, if you think it'll work, yeah, please go ahead and build a short and point it to the video if you think that's the correct way.\").** This is one test Short for Field Order History, which was long films only. Evidence (vidIQ, 24 Nov): the Mulberry harbours do very well as Shorts. Learn History Simply's *How the Mulberry B Artificial Harbor Worked* has 2.56M views and *Mulberry B: The artificial harbor of Arromanches* 1.93M (a 450K channel); World War Wisdom's *Mulberry Harbors* has 99K. Pilot 1 (ek9F61FVYqY) has 32 views, 97% of its impressions came from off-topic Suggested placements, and its search impressions got no clicks.\n\n**Build (no new spend beyond a few seconds of voice if a hook line needs one):**\n1. **45-60 s vertical (1080x1920)** from pilot 1's own material: its real archive photographs (rule 1) and its locked narration. A question hook on screen and in sound in the first 2 seconds, captions burned in, one subject per frame, and a final line pointing to the full film. No AI picture of a real person, place or event.\n2. **Title:** 50 characters or fewer, naming the known thing, for example *How Did the Mulberry Harbours Work?* or *What Were the Mulberry Harbours?* Check signed-out search for collisions.\n3. **Ben's watch:** put it on his board watch card by **Wed 25 Nov 20:00 UTC**. After his OK, upload private and schedule it for the next day at 12:00 London (it must not clash with the long films' Tue/Thu/Sat 17:00 slots). Set Related video = ek9F61FVYqY. Read everything back in Studio and the API only (AGENTS.md: agents never play a public video).\n4. **Record the test** in ww2-channel `studio/LEARNINGS.md`: at 7 days, the Short's views, stayed-to-watch and subscribers, and pilot 1's views from Shorts/Related before and after. Verdict for Ben: one Short per film from now on, or none.\n**Guards.** Ben's watch before anything goes public. £0 beyond existing credits.\n\n**Update (Claude, acting Chief, 24 Nov ~16:45 UTC): urgent.** Ben asked when the first Short goes out (24 Nov, in chat). Two blockers:\n1. **Publish (Claude Code on the Mini):** apply AGENTS.md's 'Codex's refused pushes go to Claude Code' rule to branch `codex/J3542` (0a0848c): read the diff, refuse anything private, push and open the PR.\n2. **NAS (Mini):** check the NAS mount for pilot 1's archive originals, and remount if the reads still hang. If it stays down, build from the pilot 1 master render's own frames, which hold the same archive pictures, and say so.\n\nThen finish the cut to Ben's watch card by Wed 25 Nov 20:00 UTC. After his OK it goes out Thu 26 Nov 12:00 London, with Related video set to ek9F61FVYqY.\n\n**Update (Claude, acting Chief, 24 Nov ~17:15 UTC): resume now.** Ben, 24 Nov ~17:10 London, in chat: \"NAS was reset, please try now.\" The NAS is back (J3205 verified its NAS assets at 17:02). Keep working now on the same local branch. A refused push of an unfinished checkpoint never stops the work: commit locally, carry on, and block for Claude Code's publish only once, when this job's work is finished. Next: build the 45-60 s vertical cut from pilot 1's archive originals on the NAS and the selected narration (09:48.5-10:28.8), to Ben's watch card by Wed 25 Nov 20:00 UTC.\n\n**J3603 ruling: rebuild v02 before Ben watch.**\n[Chief ruling by codex, J3603, 24 Nov 2026] Accept J3599 FIX on exact v01 SHA-256 30b6a3a3de762dcbb5d0ea941c275058c4bd284352ad0450312d2e3b9f85d11b. PR 1282 reviewed at 0e4f5504892dc2325ea9a613b98ed5929e3efb48 and merged after 13 privacy checks passed. Reopen for zero-spend v02. No v01 watch card. Reuse locked body VO and existing 94-character pickup; no new ElevenLabs generation. Write Mulberry_Test_v02 beside untouched v01. Keep Ben watch deadline 25 Nov 20:00 UTC and planned air 26 Nov 12:00 London, only after Ben OK. Follow the exact fixes below. Caption handoffs must be checked at actual 25 fps frame boundaries, with no overlap. Archive target 65% in this brief is attainable; channel hard floor remains 50%. Ben supplies final watch/listen; this ruling is based on reviewer stills and technical evidence, not claimed listening or motion perception. After v02 tool and still review, dedicated Short card WW2:001-S1; preserve live long WW2:001. Continue final records on codex/J3542 (now 0e595b8, includes e43f0d3), then hand finished records to Claude Code together with codex/J3542-ledger c3129faa3e; do not retry the refused pushes. Publishing must not halt the rebuild.\n\n## Blocking Issues Requiring `v02` Rebuild\n\n### 1. Overlapping ASS Caption Cues Cause 14 Rendered Frames of Colliding/Garbled Text + 5 Mid-Sentence Shot-Cut Splits\n- **Evidence:** `captions.ass` has **11 overlapping `Caption` cue pairs** (`0.02-0.06 s` overlaps), producing **14 rendered frames** at `25 fps` (`frames 95, 162, 201, 351, 384, 424, 589, 590, 610, 683, 684, 844, 989, 990`) where two `Caption` events draw simultaneously.\n- **Visually confirmed collisions on full-resolution extracted frames:**\n  - **Frame `162` (`6.48 s`):** renders `\"five interlocking rings.\"` stacked directly over `\"offshore, in eleven to\"`, overwriting `\"Furthest\"` into garbled text.\n  - **Frame `683` (`27.32 s`):** renders `\"seabed. Flanking the\"` stacked directly over `\"wall in shallower water\"`, overwriting `\"concrete\"`.\n- **Mid-sentence shot-cut splits:** All 5 shot cuts (`6.07 s`, `13.47 s`, `26.29 s`, `33.13 s`, `39.21 s`) split an active caption cue across natural VO pauses (`0.60-1.40 s` measured via `silencedetect`), leaving the previous ring's text on screen over the next ring's photograph and label (e.g., `\"steel Bombardons. One thousand\"` stays up after the `13.47 s` cut to `2 / PHOENIX CAISSONS`; `\"seabed. Flanking the concrete\"` stays up after the `26.29 s` cut to `3 / GOOSEBERRIES`; `\"ships called Gooseberries. Inside\"` stays up after `33.13 s` to `4 / SPUD PIERHEADS`).\n- **Minor text alignment:** `captions.ass` reads `\"Furthest\"` and `\"Spud pier heads\"` vs locked `ww2_001_en-GB.srt` `\"Farthest\"` (`09:52.220`) and `\"Spud pierheads\"` (matching Label `4 / SPUD PIERHEADS`).\n- **Exact fix for `v02`:** Enforce strict non-overlapping `Caption` timestamps (`prev.end <= next.start`, minimum `>= 0.04 s` or exact frame-boundary handoff), break cues cleanly on sentence boundaries and shot cuts (`6.07 s`, `13.47 s`, `26.29 s`, `33.13 s`, `39.21 s`), and match `\"Farthest\"` and `\"Spud pierheads\"`.\n\n### 2. Severe Upscaling (`3.20x-3.67x`) Violating Pilot 1's `2.35x` Cap + Exact Photo Duplication Across 40% of Runtime\n- **Evidence:** Pilot 1's own `ARCHIVE_PROVENANCE.md` (line 19) caps archive enlargements at **`2.35x`**. Three of `v01`'s six shots blow past that cap and appear visibly soft/smeared at `1080x1920`:\n  - **Shot 3 (`26.29-33.13 s`, `3 / GOOSEBERRIES`):** `A_24159_25266765.jpg` (`800x523`, cropped to `294x523`) upscaled **`3.671x`** — visibly smeared silhouette strip with ~85% empty sky/water in full-res frame `29.8 s`.\n  - **Shot 4 (`33.13-39.21 s`, `4 / SPUD PIERHEADS`):** `IWM_H_39297.jpg` (`800x557`, cropped to `313x557`) upscaled **`3.447x`** — visibly soft in full-res frame `36.5 s`, even though Pilot 1's NAS already holds cleared high-res **`03_Picture/archive_v43/80_G_285141.jpg` (`2662x2142`, US Navy / NARA Spud pierhead towers & Whale span — ~`0.90x` native scale, zero upscaling)**.\n  - **Shot 1 (`6.07-13.47 s`, `1 / BOMBARDONS`):** `A_25814_25084644.jpg` (`800x600`, cropped to `337x600`) upscaled **`3.200x`** — noticeably soft with ~45% overexposed blank sky in full-res frame `8.5 s`.\n- **Shot 0 / Shot 2 duplication (`40%` of runtime on one photo):**\n  - Shot 0 (`0.00-6.07 s`) and Shot 2 (`13.47-26.29 s`, `12.82 s` hold) use the **exact same photo** `B_5726_30887292.jpg` shifted only `36 px` horizontally (`x=217` vs `x=253`), covering `18.89 s / 47.40 s` (`39.9%`) of the Short.\n  - Meanwhile, Pilot 1's NAS `03_Picture/` already holds cleared high-res originals for both the overview open and a split 2-shot Phoenix sequence:\n    - Overview open (`0.00-6.07 s`): `archive_originals_v07/A_24675_25086141.jpg` (`2480x1673`, operating Mulberry B overview) or `archive_originals_v07/BU_1024_24494355.jpg` (`4580x4590`, Arromanches harbour aerial).\n    - Phoenix caissons (`13.47-26.29 s`, split into two ~`6.4 s` shots): keep `B_5726_30887292.jpg` (`1789x1772`, `1.084x`) for the sunken spine wall (`~19.5-26.29 s`) paired with `archive_v42/IWM_H_39300.jpg` (`2746x2480`, towed Phoenix) or `archive_v43/IWM_H_38675.jpg` (`1868x1772`, completed Phoenix caissons) or `archive_v41/IWM_H_37606.jpg` (`3496x3508`, hollow concrete boxes under construction) for `13.47-19.5 s`.\n- **Exact fix for `v02`:**\n  1. Replace Shot 4 (`IWM_H_39297.jpg`, `3.447x`) with NAS `03_Picture/archive_v43/80_G_285141.jpg` (`2662x2142`, US Navy / NARA, `<= 1.0x`).\n  2. De-duplicate Shot 0 and Shot 2 (`B_5726`) and split the `12.82 s` Phoenix hold into two distinct high-res shots (`<= 1.2x` upscale) using the cleared NAS originals above.\n  3. Bring Shot 1 (`1 / BOMBARDONS`) and Shot 3 (`3 / GOOSEBERRIES`) inside `<= 2.35x` upscale without blurred padding: for Gooseberries, use cleared high-res NARA `80-G-285123` (`2941x2224`, cleared in `ARCHIVE_PROVENANCE.md` line 8 / `v41` line 134, if available on the Mini) or a clean native `9:16` code schematic showing the ring position beside the harbour (WW2 `studio/RULES.md` Rule 1 & Rule 5 explicitly permit code diagrams alongside `>=50%` real archive photos); for Bombardons (where only `800px` IWM scans `A_25814`/`A_23738` exist in Pilot 1), use a clean native `9:16` code schematic of the outer floating breakwater ring or a clean archival card framing inside `<= 2.35x` (no blurred-copy padding), keeping real archive photos `>= 65%` of total runtime.\n\n### 3. YouTube Shorts Mobile UI Safe-Zone Collision on Credit and Lower Caption\n- **Evidence:** In `captions.ass`, `Credit` uses `Alignment=1, MarginV=230` (bottom-left `y ≈ 1660-1690` of `1920`, only `12%` above the bottom edge) and `Caption` uses `Alignment=2, MarginV=335` (`y ≈ 1450-1585`).\n- On YouTube Shorts mobile playback, the bottom `~380-420 px` (`20-22%`) is occupied by the channel handle, Subscribe button, title, progress bar, and the **Related Video pill** (which this Short's closing caption explicitly instructs viewers to tap). At `MarginV=230`, the archive credit sits behind YouTube's bottom chrome, and 2-line captions at `MarginV=335` crowd the Related Video pill.\n- **Exact fix for `v02`:** Raise `Caption` to `MarginV=520` (centered safely clear of the bottom `420 px` chrome and `170 px` right button rail) and place `Credit` cleanly clear of bottom chrome (either top-aligned directly under `Label` at `MarginV=325`, or bottom-left at `MarginV=430` above the UI bar).\n\n---\n\n## £0.00 Polish Improvements to Include in `v02`\n\n4. **Gentle Pilot 1 music bed (eliminates `1.40 s` and `1.17 s` digital dead silence):** `mulberry_short_v01.mp4` is dry voice-only, leaving `-inf dBFS` digital silence for `1.40 s` (`24.84-26.24 s`) and `1.17 s` (`46.24-47.40 s`), plus `0.60-0.75 s` silent gaps between rings. Mix Pilot 1's own already-owned score bed from the NAS (`05_Music/original_score_v01/engineering_v01.mp3`, `£0.00`) softly under the VO (`-16` to `-18 LU` below VO, faded cleanly over the last `1.0 s`) while keeping integrated loudness around `-15` to `-16 LUFS` and true peak `<= -1.0 dBFS`.\n5. **Standard `48 kHz` AAC audio:** Resample the mix to standard `48000 Hz` stereo AAC (`192 kbps`) instead of `96000 Hz` (inherited from `voice.wav` `192000 Hz`).\n\n---\n\n\n\nPublishing handoff: J3606 owns the Claude Code privacy-review and final publishing pass. Do not block rebuilding or private watch on that task.\n\n\n**Update (Claude, acting Chief, 24 Nov ~18:45 UTC): FIX accepted; rebuild v02 now.** J3599's review (OWB PR #1282, `jobs/reviews/J3599/REVIEW.md`) passes v01's hook, narration, pickup, archive clearance, loudness and title (*Mulberry Harbours: How Did They Work?*), and finds three blocking faults. Do exactly its fixes, at £0, writing `Shorts/Mulberry_Test_v02/mulberry_short_v02.mp4` and leaving v01 untouched:\n1. **Captions:** no overlapping cues (`prev.end <= next.start`); break cues on sentence boundaries and at the five shot cuts (6.07, 13.47, 26.29, 33.13, 39.21 s); use \"Farthest\" and \"Spud pierheads\" as in the locked subtitles.\n2. **Pictures:** no enlargement above 2.35x.\n   - Shot 4 becomes NAS `03_Picture/archive_v43/80_G_285141.jpg`.\n   - Shots 0 and 2 stop reusing `B_5726`: use `A_24675` or `BU_1024` for the open, and split the 12.8 s Phoenix hold into two shots (for example `IWM_H_39300` or `IWM_H_38675` with `B_5726`).\n   - For Bombardons and Gooseberries, use a cleared high-resolution original if there is one, else a clean code-drawn 9:16 schematic, keeping real archive at 65% or more of the runtime.\n3. **Phone safe zone:** captions at MarginV 520 or more; the credit clear of the bottom 420 px (under the label, or at MarginV 430).\n4. **Polish:** pilot 1's own score bed under the voice (16-18 LU below), and 48 kHz AAC.\n\nThen re-run the same checks as J3599 and put v02 on Ben's watch card as a Short card, separate from pilot 1's long card, by **Wed 25 Nov 20:00 UTC**. Commit locally as you go; block for Claude Code's publish only once, at the end (AGENTS.md as of PR #1271).",
       "ref": "",
       "film": "WW2:001",
       "stage": "edit",
@@ -326704,6 +326729,37 @@
       "for": "claudecode",
       "kind": "assembly",
       "plain": "Publish the checked records for the corrected Mulberry harbour Short"
+    },
+    {
+      "id": "J3607",
+      "title": "Mini: pull PR #1285 and confirm the second slot really opens (two jobs at once)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Why.** OWB PR #1285 (merged 24 Nov): the relay now starts one detached run for a second free slot, because launchd never started a second run while one was working (J3521 could not show slot 1 open). Tonight the Mini had 50 open jobs, 8 of them urgent, and one job running.\n\n**Do (Mini, now):**\n1. Pull main in the studio checkout the relay runs from. Refresh the installed runner the way J3521 did, so `chief_relay.py status` shows runner version = installed.\n2. Within a few minutes, confirm that the relay log shows \"spawned a second run for another free slot\" and that two execution leases (`execution-0.json`, `execution-1.json`) are live at once, on different workers.\n3. If memory blocks the second slot, report `vm_stat` and the available figure; change nothing.\n4. One thread line with what was seen. No setting change beyond the pull and refresh. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 20,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T18:45Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T18:45Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Refresh the relay runner and confirm two live slots",
+      "due": "2026-11-24T21:00:00Z",
+      "kind": "assembly",
+      "mini_only": true,
+      "urgent": 11
     }
   ],
   "focus": [

@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J2529, J3430, J3431, J3432, J3434, J3501, J3519, J3500, J3530, J3205, J3542.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J2529, J3430, J3431, J3432, J3434, J3501, J3519, J3530, J3205, J3607, J3542, J3500.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -68,13 +68,13 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3492 | mini | blocked | macbook | – | WW2:009 script · review · WW2 film 009: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue VO | ww2-channel#68 |
 | J3497 | cloud | open | – | – | review · Weekly search research (History of Science): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
 | J3499 | cloud | open (after J3498) | – | – | 011 script · review · WW2 film 011: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO | ww2-channel#71 |
-| J3500 | mini | open (after J3519) | – | – | 008 upload · studio · HOS 008 Franklin: search-led title, package, and schedule Thu 26 Nov 18:00 after Ben's watch |  |
-| J3501 | mini | open (after J3519) | – | – | 009 upload · studio · HOS 009 Gravity: search-led title, package, and schedule Thu 3 Dec 18:00 after Ben's watch |  |
+| J3500 | mini | open | – | – | 008 upload · studio · HOS 008 Franklin: search-led title, package, and schedule Thu 26 Nov 18:00 after Ben's watch |  |
+| J3501 | mini | open | – | – | 009 upload · studio · HOS 009 Gravity: search-led title, package, and schedule Thu 3 Dec 18:00 after Ben's watch |  |
 | J3504 | mini | open | – | – | 127 script · script · HOS 127 Wright Brothers First Flight (film 4, Thu 31 Dec): package first, then the 7-9 minute script draft |  |
 | J3508 | mini | blocked | codex | – | 032 upload · studio · Upload approved Titan Test A Short v02 for 2 Dec 11:30 | J3505 |
 | J3510 | mini | blocked | gemini | – | 029 upload · studio · 029 Short k2kEaA7ICjc: swap to approved v06; retain 11 Dec 11:30 | J3505 |
-| J3511 | mini | open (after J3519) | – | – | 010 upload · studio · Upload approved HOS 010 bird Short C v01 privately; no schedule yet | J3505 |
-| J3512 | mini | open (after J3519) | – | – | 010 upload · studio · Upload approved HOS 010 dinosaur Short A v01 privately; no schedule yet | J3505 |
+| J3511 | mini | open | – | – | 010 upload · studio · Upload approved HOS 010 bird Short C v01 privately; no schedule yet | J3505 |
+| J3512 | mini | open | – | – | 010 upload · studio · Upload approved HOS 010 dinosaur Short A v01 privately; no schedule yet | J3505 |
 | J3514 | mini | blocked | macbook-2 | – | review · Verify condition for J3444 |  |
 | J3517 | mini | open (after J3494) | – | – | WW2:010 vo · vo · WW2 film 010: narration in Ben's voice (Hobart's Funnies, post-reset) |  |
 | J3519 | mini | blocked | codex | – | assembly · History of Science: repair the publishing runtime on the Mini (Prisma client) so uploads run |  |
@@ -131,6 +131,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3602 | mini | open (after J3601) | – | – | review · `gemini-argon` · Retention autopsy (48h): "What If Earth Stopped Spinning? (It's Already Slowing Down)" (6bbbvfCx6zY) |  |
 | J3605 | mini | blocked | codex | – | WW2:001 upload · studio · WW2 pilot 1: seven-day outcome after searched-name title change |  |
 | J3606 | mini | open | – | – | for claudecode · assembly · Publish final Mulberry Short records after the corrected cut is verified |  |
+| J3607 | mini | open | – | – | assembly · Mini: pull PR #1285 and confirm the second slot really opens (two jobs at once) |  |
 
 Recently finished:
 
