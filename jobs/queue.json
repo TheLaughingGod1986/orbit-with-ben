@@ -319999,9 +319999,14 @@
           "at": "2026-11-24T12:53Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Verified exact approved v06 SHA-256 eafe7435...574015, cover 7bb71fb9...19d828, gate PASS (--id k2kEaA7ICjc), live YouTube k2kEaA7ICjc Private/2026-12-11T11:30:00Z, parent vP1BbqZ_dnM Private/2026-12-06T18:00:00Z, no duplicate upload"
+        },
+        {
+          "at": "2026-11-24T12:56Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Built versioned package v06-J3510 and 19-cue en-GB.srt; youtube:package --dry-run PASS with gate exit 0 and exact SHA-256"
         }
       ],
-      "remaining_action": "Prepare versioned v06 upload package and run dry-run",
+      "remaining_action": "Upload v06 privately without schedule, verify processed, set en-GB language/captions and cover, then transfer 11 Dec 11:30Z slot",
       "due": "2026-11-25T12:00:00Z",
       "kind": "studio",
       "plain": "Upload the approved Betelgeuse opening Short while keeping its date",
@@ -320022,9 +320027,9 @@
         "askId": "J2551.1"
       },
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-24T12:53Z",
+        "at": "2026-11-24T12:56Z",
         "by": "gemini",
         "plan": [
           "Verify v06 master, gates, and live YouTube state",
@@ -320033,7 +320038,7 @@
           "Run verify-swap readback and update UPLOADS, Buffer, gate library, J0923, status",
           "Commit clean worktree, post thread report, close J3510"
         ],
-        "note": "Verified exact approved v06 SHA-256 eafe7435...574015, cover 7bb71fb9...19d828, gate PASS (--id k2kEaA7ICjc), live YouTu"
+        "note": "Built versioned package v06-J3510 and 19-cue en-GB.srt; youtube:package --dry-run PASS with gate exit 0 and exact SHA-25"
       },
       "taskKeys": [
         "OWB:029"
