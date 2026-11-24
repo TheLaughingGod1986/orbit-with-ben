@@ -327159,13 +327159,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-24T20:24Z",
-      "eta": "2026-11-24T20:44Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T18:45Z",
-      "result": "",
+      "result": "Confirmed simultaneous live Codex J3607 slot 0 and Gemini J3602 slot 1 at 20:25:38Z by unexpired leases and live PID probes. Spawn logged 20:17:51; both runners match installed 253c7fe66b787b2f. Main current; no setting changes or restart required. Report posted to studio thread. Available memory 3.948 GiB; scratch offload found nothing eligible.",
       "history": [
         {
           "at": "2026-11-24T18:45Z",
@@ -327236,6 +327236,11 @@
           "at": "2026-11-24T20:26Z",
           "by": "codex",
           "what": "step 3 of 3 done: At 20:25:38Z both PID-verified leases were live on different workers; spawn log 20:17:51. Completion report posted; no configuration changes."
+        },
+        {
+          "at": "2026-11-24T20:26Z",
+          "by": "codex",
+          "what": "done: Confirmed simultaneous live Codex J3607 slot 0 and Gemini J3602 slot 1 at 20:25:38Z by unexpired leases and live PID probes. Spawn logged 20:17:51; both runners match installed 253c7fe66b787b2f. Main current; no setting changes or restart required. Report posted to studio thread. Available memory 3.948 GiB; scratch offload found nothing eligible."
         }
       ],
       "remaining_action": "Verification complete; closing the job",
