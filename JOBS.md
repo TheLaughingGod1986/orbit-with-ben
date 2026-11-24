@@ -128,6 +128,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3592 | mini | blocked | macbook | – | review · Verify condition for J3414 |  |
 | J3593 | mini | open | – | – | review · Verify condition for J3417 |  |
 | J3594 | mini | open | – | – | review · Verify condition for J3443 |  |
+| J3595 | mini | open | – | – | review · Verify condition for J3591 |  |
 
 Recently finished:
 
