@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {planOverview,slotsText,urgentBannerHtml,renderView,fieldOrderCard,agentReason,parseWeeklyReset,normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, channelsSection, channelsPage, channelCard, channelLight, channelFacts, firstDayCard, firstDaySection, firstDayPage, firstDayNext, planCard, planSection, planPage, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
+  globalThis.test = {planOverview,stuckModel,stuckSection,slotsText,urgentBannerHtml,renderView,fieldOrderCard,agentReason,parseWeeklyReset,normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, channelsSection, channelsPage, channelCard, channelLight, channelFacts, firstDayCard, firstDaySection, firstDayPage, firstDayNext, planCard, planSection, planPage, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -1745,4 +1745,36 @@ assert(!fieldHtml.includes('(undefined'));
   assert.equal(t.urgentBannerHtml(quietBoard), '', 'no banner when alerts are empty');
   assert(!t.renderView(quietBoard, 'overview', NOW).includes('urgent-banner'), 'overview clean with no active alerts');
   console.log('Urgent alert banner OK');
+}
+
+// 24 Nov 2026 (Ben: why jobs are missed and build up in the past): the Overview's Stuck panel.
+{
+  const at = Date.parse('2026-11-24T12:00:00Z');
+  const sb = {
+    models: {models: [
+      {id: 'cursor', name: 'Cursor', status: 'red', why: 'Weekly usage limit reached. It resets in 2 days.', until: '2026-11-26T11:00Z'},
+      {id: 'codex', name: 'Codex', status: 'green', why: 'ready'},
+      {id: 'elevenlabs', name: 'ElevenLabs', status: 'red', why: 'not tracked'}]},
+    owb: {jobs: [
+      {id: 'J1', status: 'open', title: 'Upload the Titan Short', plain: 'Uploading the Titan Short', due: '2026-11-24T09:00:00Z', created_at: '2026-11-24T08:00Z'},
+      {id: 'J2', status: 'blocked', title: 'Old held job', created_at: '2026-10-25T08:00Z'},
+      {id: 'J3', status: 'blocked', title: 'Fresh held job', created_at: '2026-11-23T08:00Z'},
+      {id: 'J4', status: 'open', title: 'Verify condition for J2', recheck_of: 'J2', due: '2026-11-20T09:00:00Z'},
+      {id: 'J5', status: 'done', title: 'Finished', due: '2026-11-20T09:00:00Z'},
+      {id: 'J6', status: 'open', title: 'Future', due: '2026-11-30T09:00:00Z'}]},
+  };
+  const m = t.stuckModel(sb, at);
+  assert.deepStrictEqual(m.out.map(a => a.name), ['Cursor'], 'only real agents that are out (not tool pools)');
+  assert.strictEqual(m.out[0].back, Date.parse('2026-11-26T11:00Z'));
+  assert.deepStrictEqual(m.overdue.map(j => j.id), ['J1'], 'overdue live jobs only, condition checks left out');
+  assert.deepStrictEqual(m.stale.map(j => j.id), ['J2'], 'blocked more than three days');
+  const html = t.stuckSection(sb, at);
+  assert(html.includes('<b>Stuck</b>') && html.includes('1 late') && html.includes('1 waiting 3+ days') && html.includes('1 agent out'));
+  assert(html.includes('Uploading the Titan Short') && html.includes('3 h late'), 'plain job line with how late');
+  assert(html.includes('back Thu 26 Nov'), 'says when the agent is back');
+  assert(html.includes('href="#job=J2"'), 'each line opens its job');
+  assert.strictEqual(t.stuckSection({models: {models: []}, owb: {jobs: []}}, at), '', 'nothing stuck: no panel');
+  const full = {...board, models: sb.models, owb: {...(board.owb || {}), jobs: [...((board.owb || {}).jobs || []), ...sb.owb.jobs]}};
+  assert(t.renderView(full, 'overview', at).includes('overview-stuck'), 'Overview shows the panel');
+  console.log('Stuck panel OK');
 }

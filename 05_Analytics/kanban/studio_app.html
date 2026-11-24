@@ -347,6 +347,9 @@ nav#nav { padding:8px 4px calc(8px + env(safe-area-inset-bottom)); }.btns { padd
 .overview-attention { margin:0; border:1px solid color-mix(in srgb, var(--amber) 45%, var(--line)); background:color-mix(in srgb, var(--amber) 12%, var(--panel)); border-radius:14px; overflow:hidden; }
 .overview-attention>summary { list-style:none; display:flex; align-items:center; gap:12px; padding:12px 14px; min-height:52px; cursor:pointer; }
 .overview-attention>summary::-webkit-details-marker { display:none; }
+.overview-stuck .stuck-body { padding:0 14px 12px; }
+.overview-stuck .stuck-body h3 { font-size:13px; font-weight:600; margin:10px 0 4px; color:var(--muted); }
+.overview-stuck .stuck-body .muted { font-size:12px; }
 .overview-attention .att-icon { flex:0 0 22px; width:22px; height:22px; border-radius:6px; background:color-mix(in srgb, var(--amber) 28%, transparent); position:relative; }
 .overview-attention .att-icon::before { content:""; position:absolute; left:50%; top:5px; width:0; height:0; border-left:6px solid transparent; border-right:6px solid transparent; border-bottom:11px solid var(--amber); transform:translateX(-50%); }
 .overview-attention .att-icon::after { content:""; position:absolute; left:50%; top:10px; width:2px; height:5px; background:#3a2a0a; transform:translateX(-50%); border-radius:1px; box-shadow:0 4px 0 #3a2a0a; }

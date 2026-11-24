@@ -164,6 +164,14 @@ class OrderAndHandoffs(unittest.TestCase):
         self.assertEqual(r["pos"]["J3"]["waitsFor"], "J9")
         self.assertEqual(r["lines"]["chief"], ["J6"])
 
+    def test_a_job_that_blocks_a_deadline_runs_at_that_deadline(self):
+        """24 Nov 2026: J3371 had no due of its own but J3205 (due Thu 26 Nov, film 3 to Ben's watch) waited on it; the
+        board listed it after every dated job. It now inherits J3205's deadline, as the scheduler already did."""
+        J = lambda i, **k: dict({"id": i, "needs": "mini", "status": "open", "film": "", "after": "", "eta_min": 120}, **k)
+        jobs = [J("J10", due="2026-11-27T18:00:00Z"), J("J11", due="2026-11-25T12:00:00Z"),
+                J("J12"), J("J13", status="blocked", after="J12", due="2026-11-26T20:00:00Z")]
+        self.assertEqual(ks.run_order(jobs)["lines"]["mini"], ["J11", "J12", "J10"])
+
     def test_reviews_say_chief_and_future_handoffs_say_ready(self):
         b = {"OWB:024": {"steps": [{"who": "Claude", "what": "final OK", "done": True},
                                    {"who": "Claude", "what": "listen to the music and check v04"},

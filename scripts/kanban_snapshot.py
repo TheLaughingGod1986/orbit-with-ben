@@ -530,9 +530,32 @@ def gates(alljobs: list[dict]) -> dict:
     return {k: v for k, v in out.items() if v}
 
 
+def _queue_key(alljobs: list[dict], focus=()):
+    """The scheduler's own sort key over the whole queue (jobs.ordered): a job inherits the earliest deadline of the
+    work waiting on it, and the film that airs soonest goes first. 24 Nov 2026: the board sorted each job alone, so the
+    film 3 graphic (no due of its own, blocking film 3's Thursday watch) showed 24th behind next week's Shorts."""
+    try:
+        sys.path.insert(0, str(ROOT / "scripts"))
+        import datetime as _dt
+        import jobs as _jobs
+        flow = _jobs.workflow
+        due = flow.deadlines(alljobs)
+        try:
+            from workflow_board import load_tracker
+            tracker = load_tracker()
+            nearest, air = flow.near_watch(tracker), flow.air_dates(tracker)
+        except Exception:  # noqa: BLE001  (no tracker: deadlines alone)
+            nearest, air = (), None
+        at = _dt.datetime.now(_dt.timezone.utc)
+        return lambda j: flow.order(j, due, tuple(focus), at, nearest, air, alljobs)
+    except Exception:  # noqa: BLE001
+        order = _job_order()
+        return lambda j: order(j, tuple(focus))
+
+
 def run_order(alljobs: list[dict], focus=()) -> dict:
     """{"lines": {"mini": [ids in run order], "chief": [...]}, "pos": {id: {line, pos, waitsFor}}}. pos 0 = in hand now."""
-    order = _job_order()
+    key = _queue_key(alljobs, focus)
     live = {j["id"]: j for j in alljobs if j.get("status") in ("open", "claimed", "blocked")}
     out, lines = {}, {}
     for ln in ("mini", "chief"):
@@ -546,7 +569,7 @@ def run_order(alljobs: list[dict], focus=()) -> dict:
             ready = [j for j in todo if j["id"] not in done and (not j.get("after") or j["after"] not in live or j["after"] in done)]
             if not ready:
                 break
-            j = min(ready, key=lambda j: order(j, tuple(focus)))
+            j = min(ready, key=key)
             done.add(j["id"]); seq.append(j["id"]); n += 1
             out[j["id"]] = {"line": ln, "pos": n}
         for j in mine:

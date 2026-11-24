@@ -132,10 +132,31 @@ class RecheckBackoff(unittest.TestCase):
         # 3 checks, last 5 h ago -> due
         data={'jobs':[self.held(),self.check(1,11),self.check(2,8),self.check(3,5)],'next_id':10}
         self.assertEqual(len(jobs.reconcile_holds(data,AT)),2)
-    def test_wait_caps_at_24h(self):
+    def test_wait_grows_to_72h_and_the_count_spans_two_weeks(self):
+        # 24 Nov 2026: the old 48-hour count fell back to a 2-hour wait after every long gap (121 checks in a week).
         checks=[self.check(i,26+i) for i in range(1,8)]+[self.check(9,25)]
         data={'jobs':[self.held()]+checks,'next_id':20}
+        self.assertEqual(jobs.reconcile_holds(data,AT),[])  # 8 unchanged checks: 72 h since the last
+        checks=[self.check(i,100+24*i) for i in range(1,8)]+[self.check(9,73)]
+        data={'jobs':[self.held()]+checks,'next_id':20}
         self.assertEqual(len(jobs.reconcile_holds(data,AT)),2)
+        # two checks 30 h and 3 days back still count: the wait is 2 h, not 1 h reset by a gap
+        data={'jobs':[self.held(),self.check(1,72),self.check(2,1.5)],'next_id':20}
+        self.assertEqual(jobs.reconcile_holds(data,AT),[])
+    def test_a_reopen_restarts_the_count(self):
+        parent=self.held()
+        parent['history']=[{'at':(AT-dt.timedelta(hours=10)).strftime('%Y-%m-%dT%H:%MZ'),'by':'codex','what':'reopened: met'}]
+        checks=[self.check(i,20+i) for i in range(1,7)]+[self.check(9,2)]
+        data={'jobs':[parent]+checks,'next_id':20}
+        self.assertEqual(len(jobs.reconcile_holds(data,AT)),2)  # one check since the reopen: 1 h wait, 2 h passed
+    def test_a_hold_waiting_on_bens_decision_waits_72h_between_checks(self):
+        parent=self.held(); parent['hold']['condition']="Ben: explicit one-time exception needed for the history rewrite"
+        data={'jobs':[parent,self.check(1,30)],'next_id':20}
+        self.assertEqual(jobs.reconcile_holds(data,AT),[])
+        data={'jobs':[parent,self.check(1,73)],'next_id':20}
+        self.assertEqual(len(jobs.reconcile_holds(data,AT)),2)
+        self.assertTrue(jobs.waits_on_ben({'result':"Waiting for Ben's OK on the rewrite"}))
+        self.assertFalse(jobs.waits_on_ben({'result':'Waiting for: Sun 29 Nov 18:00Z reached'}))
     def test_finished_predecessor_skips_the_wait(self):
         parent=self.held();parent['after']='J0'
         pre={'id':'J0','title':'pre','status':'done','history':[{'at':(AT-dt.timedelta(minutes=10)).strftime('%Y-%m-%dT%H:%MZ'),'by':'codex','what':'done'}]}
