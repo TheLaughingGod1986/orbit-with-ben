@@ -85,7 +85,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3513 | mini | open | – | – | 137 script · script · HOS 137 Accidental Inventions (film 3, Thu 24 Dec): package first, then the 7-9 minute script draft | J3503 |
 | J3514 | mini | open | – | – | review · Verify condition for J3444 |  |
 | J3517 | mini | open (after J3494) | – | – | WW2:010 vo · vo · WW2 film 010: narration in Ben's voice (Hobart's Funnies, post-reset) |  |
-| J3519 | mini | claimed | codex | 2026-11-24T13:22Z | assembly · History of Science: repair the publishing runtime on the Mini (Prisma client) so uploads run |  |
+| J3519 | mini | blocked | codex | – | assembly · History of Science: repair the publishing runtime on the Mini (Prisma client) so uploads run |  |
 | J3520 | mini | blocked | macbook | – | 064 script · review · OWB 064 Every Planet: read and lock the script (Claude), or write its fix list |  |
 | J3523 | any | open | – | – | 012 sources · facts · WW2 film 012: independent Gemini claims check on SCRIPT.md and SOURCES.md (PR #76) | ww2-channel#76 |
 | J3524 | mini | open (after J3523) | – | – | 012 script · review · WW2 film 012: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO | ww2-channel#76 |
