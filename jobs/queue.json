@@ -330067,9 +330067,14 @@
           "at": "2026-11-24T22:59Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T23:00Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Hold J3430 pending v02 zero-spend visual repair (J3637), v02 full audiovisual QA (J3638), and Chief v02 watch staging (J3639)",
+      "remaining_action": "Verify J3430 hold condition against J3637-J3639, WW2 repo and NAS",
       "kind": "review",
       "recheck_of": "J3430",
       "due": "2026-11-24T23:56:28+00:00",
@@ -330083,12 +330088,15 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-24T22:59Z",
+        "at": "2026-11-24T23:00Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect J3430 hold and v02 evidence",
+          "Update J3430 wait hold",
+          "Close J3640 and post report"
+        ]
       }
     }
   ],
