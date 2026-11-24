@@ -328322,9 +328322,14 @@
           "at": "2026-11-24T21:12Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T21:14Z",
+          "by": "macbook-2",
+          "what": "step 1 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Await Gemini facts and Claude archive/opening decisions on draft PR 87",
+      "remaining_action": "Verify J3550/J3551 review completion and PR #87/archive state",
       "kind": "review",
       "recheck_of": "J3486",
       "due": "2026-11-24T22:11:55+00:00",
@@ -328338,12 +328343,15 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-24T21:12Z",
+        "at": "2026-11-24T21:14Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect J3486 and PR #87 evidence",
+          "Verify J3550 and J3551 review status",
+          "Update wait hold and report"
+        ]
       }
     },
     {
