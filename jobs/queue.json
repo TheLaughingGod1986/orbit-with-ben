@@ -320353,9 +320353,14 @@
           "at": "2026-11-24T12:09Z",
           "by": "macbook",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-24T12:10Z",
+          "by": "macbook",
+          "what": "step 1 of 4 done: Audited 064 history: v01 was FIX'd in J3027, v02 landed in J3036, J3037 reviewed v02 in open PR #1015, J3051 blocked on Codex publish approval"
         }
       ],
-      "remaining_action": "Inspecting 064 v02 script, SOURCES.md, PR #1015 and J3027/J3037/J3051 history",
+      "remaining_action": "Independently verifying v02 script against live sources, Orbit rules, and studio thread",
       "due": "2026-11-25T18:00:00Z",
       "kind": "review",
       "rerouted_from": {
@@ -320367,16 +320372,17 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-24T12:09Z",
+        "at": "2026-11-24T12:10Z",
         "by": "macbook",
         "plan": [
           "Audit 064 v02 script and history",
           "Verify quotes, facts, rules and gates",
           "Write independent review verdict and PR",
           "Update queue and post thread report"
-        ]
+        ],
+        "note": "Audited 064 history: v01 was FIX'd in J3027, v02 landed in J3036, J3037 reviewed v02 in open PR #1015, J3051 blocked on "
       }
     },
     {
