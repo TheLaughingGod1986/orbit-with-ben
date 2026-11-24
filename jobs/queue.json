@@ -329643,13 +329643,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-24T22:26Z",
-      "eta": "2026-11-24T22:46Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T22:24Z",
-      "result": "",
+      "result": "publish via Claude Code: /Volumes/MiniWork/scratch/j3635-ww2 codex/j3635-settings-audit",
       "history": [
         {
           "at": "2026-11-24T22:24Z",
@@ -329685,6 +329685,11 @@
           "at": "2026-11-24T22:32Z",
           "by": "codex",
           "what": "step 3 of 3 done: Audit finished in local commit 09320b4 at /Volumes/MiniWork/scratch/j3635-ww2 on codex/j3635-settings-audit. Automatic approval review rejected remote push because analytics and remote trust; no retry. No setting or copyright claim limits the film."
+        },
+        {
+          "at": "2026-11-24T22:33Z",
+          "by": "codex",
+          "what": "blocked: publish via Claude Code: /Volumes/MiniWork/scratch/j3635-ww2 codex/j3635-settings-audit"
         }
       ],
       "remaining_action": "Publishing the completed audit note through the approved handoff",
@@ -329706,7 +329711,12 @@
       },
       "taskKeys": [
         "WW2:002"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/j3635-ww2 codex/j3635-settings-audit",
+        "check_at": "2026-11-25T04:33:00+00:00"
+      }
     }
   ],
   "focus": [
