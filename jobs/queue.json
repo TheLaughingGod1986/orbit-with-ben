@@ -329962,16 +329962,21 @@
           "at": "2026-11-24T23:11Z",
           "by": "gemini",
           "what": "step 3 of 6 done: Generated all 60 v02 ASCII plates (0% near-black) and built EDIT_PLAN_v02.json (51.34% archive across 50 photos, all 5 chapter cards, min seg 2.0s, max diagram 18.54s, zero non-J3447 <60s repeats, Rule-2 title, SRT cue 253 fixed)."
+        },
+        {
+          "at": "2026-11-24T23:13Z",
+          "by": "gemini",
+          "what": "step 4 of 6 done: Visually verified redesigned v02 schematics and Natural Earth maps (G20A/B, G25A, G26A, G28A, G18, G14A, G13, G02, D01_PREFACE) via read_file; fixed map polygon clipping and G25A/G26A/G20B label spacing."
         }
       ],
-      "remaining_action": "Visually verifying redesigned v02 schematics and maps before starting full NAS render",
+      "remaining_action": "Rendering full 1080p 24fps v02 master and 32-frame QA contact sheet to NAS studio-live",
       "due": "2026-11-26T12:00:00Z",
       "kind": "assembly",
       "plain": "Fix the torpedo film graphics, spoiler, missing chapter card and repeats, then render v02",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 6,
-        "at": "2026-11-24T23:11Z",
+        "at": "2026-11-24T23:13Z",
         "by": "gemini",
         "plan": [
           "Inspect QA findings and scripts",
@@ -329981,7 +329986,7 @@
           "Render v02 master on NAS",
           "Run technical QA and open WW2 PR"
         ],
-        "note": "Generated all 60 v02 ASCII plates (0% near-black) and built EDIT_PLAN_v02.json (51.34% archive across 50 photos, all 5 c"
+        "note": "Visually verified redesigned v02 schematics and Natural Earth maps (G20A/B, G25A, G26A, G28A, G18, G14A, G13, G02, D01_P"
       },
       "taskKeys": [
         "WW2:004"
