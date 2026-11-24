@@ -329786,10 +329786,10 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "macbook-2",
-      "since": "2026-11-24T22:50Z",
-      "eta": "2026-11-25T00:50Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-24T22:46Z",
       "result": "",
@@ -329808,6 +329808,11 @@
           "at": "2026-11-24T22:50Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T22:51Z",
+          "by": "macbook-2",
+          "what": "released: MacBook worker run on claude ended (exit 1) with the job still open; picked up again next run; claude paused on the MacBook until 2026-11-25T00:51:05Z, so the next run uses the next agent in the chain"
         }
       ],
       "remaining_action": "Apply 6 surgical v03 flags (C04/Ch.4 title, C14, C16, C20, C23, C26) into v04 and queue final Gemini recheck",
