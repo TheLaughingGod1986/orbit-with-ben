@@ -1,5 +1,5 @@
 {
-  "next_id": 3466,
+  "next_id": 3467,
   "jobs": [
     {
       "id": "J0001",
@@ -303729,13 +303729,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "codex",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-24T04:14Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-22T12:46Z",
-      "result": "Waiting for: Ben must watch and approve exact finished WW2:002 v06, SHA256 1d8bc79a9573ef5cbc399e7d811575f9fa726119cc9828b9aa5f421d19f81d53. Chief production review PASS; no new upload or old-v05 schedule clear before his decision.",
+      "result": "Ben, Tue 24 Nov ~08:35 London, in chat: \"I have passed FOH Pilot 2, so we could possibly get our scheduled up for a little bit earlier, maybe for today.\" Ben's watch OK of the exact v06 (SHA-256 1d8bc79a...1d53, Chief production PASS, checkpoint 112: picture 232 cuts 0 fail, polish 0 fail, music PASS, 561 captions). Released for upload as a new video (old v05 J9WGu8aPnHI stays private).",
       "history": [
         {
           "at": "2026-11-22T12:46Z",
@@ -306896,6 +306896,11 @@
           "at": "2026-11-24T04:28Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-24T20:05:00Z"
+        },
+        {
+          "at": "2026-11-24T08:47Z",
+          "by": "claude",
+          "what": "done: Ben, Tue 24 Nov ~08:35 London, in chat: \"I have passed FOH Pilot 2, so we could possibly get our scheduled up for a little bit earlier, maybe for today.\" Ben's watch OK of the exact v06 (SHA-256 1d8bc79a...1d53, Chief production PASS, checkpoint 112: picture 232 cuts 0 fail, polish 0 fail, music PASS, 561 captions). Released for upload as a new video (old v05 J9WGu8aPnHI stays private)."
         }
       ],
       "remaining_action": "Await Ben’s final watch of the rebuilt U-boat film",
@@ -306943,11 +306948,7 @@
           "Added 64 official archival photographs and the approved new opening; later narration and score retained"
         ]
       },
-      "hold": {
-        "type": "ben",
-        "condition": "Ben must watch and approve exact finished WW2:002 v06, SHA256 1d8bc79a9573ef5cbc399e7d811575f9fa726119cc9828b9aa5f421d19f81d53. Chief production review PASS; no new upload or old-v05 schedule clear before his decision.",
-        "check_at": "2026-11-24T20:05:00Z"
-      }
+      "done_ref": "ww2:v06"
     },
     {
       "id": "J3365",
@@ -307532,7 +307533,7 @@
       "kind": "vo",
       "plain": "Correct the bomber loss narration in the third WW2 film",
       "mini_only": true,
-      "urgent": 6,
+      "urgent": 5,
       "progress": {
         "step": 2,
         "of": 3,
@@ -307582,7 +307583,7 @@
       "remaining_action": "Rebuild the loss graphic and its timing after the corrected narration",
       "kind": "chart",
       "plain": "Correct the bomber loss graphic to match the verified narration",
-      "urgent": 7
+      "urgent": 6
     },
     {
       "id": "J3372",
@@ -311546,6 +311547,11 @@
           "at": "2026-11-23T13:41Z",
           "by": "claude",
           "what": "Ben confirmed in chat, Mon 23 Nov ~13:10 London: he has not watched pilot 1 on a TV. So the two TV views at 11:59Z (52:35 together, ~26 min each of 27:37) and the like and subscriber at 12:25Z are organic. Count them as strangers. Strangers' average view duration at the 12:40Z read: 5:04 (18%) excluding the 3 definite agent views, ~6:14 (23%) if the 3 short Direct hits were also studio checks (J3418, ww2-channel PR #39)."
+        },
+        {
+          "at": "2026-11-24T08:47Z",
+          "by": "claude",
+          "what": "Pilot 2 (v06) may go public today at 17:00, right as this 48-hour read is due: read pilot 1's numbers first, and note any traffic from pilot 2 separately."
         }
       ],
       "remaining_action": "Read the harbour film metrics and thumbnail test on 24 November at 17:05 UTC",
@@ -311762,6 +311768,11 @@
           "at": "2026-11-23T12:48Z",
           "by": "claude",
           "what": "Pilot 2 launch moves to Sat 28 Nov 17:00 (J3420). Verify the saved B/C/D test within 30 minutes of that launch instead."
+        },
+        {
+          "at": "2026-11-24T08:47Z",
+          "by": "claude",
+          "what": "Pilot 2 goes up as a NEW video (J3466: v06, today 17:00 London, Wed 17:00 fallback). Verify the B/C/D test on the new video id within 30 minutes of its launch; the old J9WGu8aPnHI stays private."
         }
       ],
       "remaining_action": "Confirm the saved three-thumbnail test is running when the Atlantic film goes public.",
@@ -311781,7 +311792,7 @@
       "hold": {
         "type": "public",
         "condition": "J9WGu8aPnHI is Public and saved B/C/D Thumbnail-only test reads Running. PR38 merged at 658a126. Saved 2026-11-23T10:56:58.611Z; current native reason Ineligible: Your video is not public. Read actual launch first (25 Nov 17:00 currently; J3364 may move to 28 Nov). Verify within 30 minutes of actual launch; preserve existing test, never delete/restart it. Evidence in WW2 002 03_Picture/PACKAGING_DECISION_v03.md and thumbnail_ab_receipt_v03.json.",
-        "check_at": "2026-11-28T17:05:00Z"
+        "check_at": "2026-11-24T17:05:00Z"
       }
     },
     {
@@ -311999,7 +312010,7 @@
       "due": "2026-11-23T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
-      "urgent": 9,
+      "urgent": 7,
       "taskKeys": [
         "WW2:001"
       ],
@@ -314285,6 +314296,11 @@
           "at": "2026-11-23T17:51Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-28T17:05:00Z"
+        },
+        {
+          "at": "2026-11-24T08:47Z",
+          "by": "claude",
+          "what": "Pilot 2 goes up as a NEW video (J3466: v06, today 17:00 London, Wed 17:00 fallback). Link pilot 1 to the new video id (from status.json / UPLOADS.json) once it is public, not to J9WGu8aPnHI."
         }
       ],
       "remaining_action": "Link pilot 1 and pilot 2 once pilot 2 is public",
@@ -314294,7 +314310,7 @@
       "hold": {
         "type": "public",
         "condition": "J9WGu8aPnHI is public (Sat 28 Nov 17:00 London, or Wed 25 Nov if pilot 2 makes its stretch date)",
-        "check_at": "2026-11-28T17:05:00Z"
+        "check_at": "2026-11-24T17:05:00Z"
       }
     },
     {
@@ -316261,6 +316277,37 @@
         ],
         "note": "Strict importer and local validation passed. Local-only commit c69d1ee2d6 at /private/tmp/owb-J3465; screenshot retained"
       }
+    },
+    {
+      "id": "J3466",
+      "title": "Field Order History pilot 2: upload Ben-approved v06 as a new video for today 17:00 (Wed 17:00 fallback), retire the old v05 schedule",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** Ben, Tue 24 Nov ~08:35 London, in chat: \"I have passed FOH Pilot 2, so we could possibly get our scheduled up for a little bit earlier, maybe for today.\" Ben's watch OK of the exact v06 (SHA-256 1d8bc79a...1d53, Chief production PASS, checkpoint 112: picture 232 cuts 0 fail, polish 0 fail, music PASS, 561 captions). The video on YouTube now (`J9WGu8aPnHI`, Private, scheduled Sat 28 Nov 17:00) is the **old graphics-only v05**. YouTube can't swap a video's file, so v06 goes up as a **new video**, and the old one must never go public.\n\n**Target: public today, Tue 24 Nov, 17:00 London (17:00Z). Hard check at 15:00 London:** if steps 1-6 are not all done and read back by then, set the new video's publishAt to **Wed 25 Nov 17:00** instead and say so on the thread. Never rush a step to make 17:00.\n\n**Do (Field Order History's own login and Studio 9224; the FOH upload path from J3089):**\n1. **Upload package v06** in ww2-channel `02_Video-Projects/002_.../11_Upload-Package/` (pilot 1's `metadata_v43.json` is the model):\n   - **Title:** **How the U-Boats Lost Their Safest Hunting Ground** (48 characters; rule 2: 50 or fewer, naming U-boats; it keeps the superlative and says the turn honestly: Dönitz withdrew on 24 May 1943).\n   - **Description:** first line in plain words with \"U-boat\" and \"Battle of the Atlantic\" in it; chapters from v06's own section timings (the new opening is ~85 s, so every later chapter moves); sources as in v03/v04's SOURCES.md; **every archive credit** from v06's `ARCHIVE_PROVENANCE`; the AI-voice disclosure line exactly as pilot 1's; hashtags #WW2 #BattleOfTheAtlantic #UBoat.\n   - Tags, category Education, en-GB, not made for kids, the series playlist.\n2. **Upload v06** (the exact approved file, SHA-256 1d8bc79a...1d53) as Private with publishAt `2026-11-24T17:00:00Z`; read back id, duration, processing, publishAt.\n3. **Captions:** v06's en-GB track (561 cues) as our own uploaded track.\n4. **Thumbnails:** B (LIBERATOR) as the default and save a **Thumbnail-only Test & Compare** with B, C and D exactly as J3417 did on the old id (it starts when the video goes public).\n5. **Studio:** end screen = pilot 1 (`ek9F61FVYqY`) + subscribe; add to playlist `PLPPi-oWEDYtA` right after pilot 1.\n6. **The old v05 (`J9WGu8aPnHI`):** clear its publishAt and keep it **Private** (never delete it, never make it public); read back that it has no schedule. Move its saved test notes to the new id in the records.\n7. Records: `status.json` (new videoId, air, release), `UPLOADS.json`, metadata v06, receipts. One ww2-channel PR (Chief merge) and one thread line with the new video id.\n\n**After it goes public (separate jobs already exist; give them the new id):** J3417 (confirm the three-way test is running), J3443 (pilot 1's end screen and a card to pilot 2, and back), pinned question comment from pilot 2's package, and the automatic first-day check.\n\n**Guards.** Exact approved file only. No change to pilot 1 beyond J3443's links. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T08:47Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T08:47Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build the v06 package, upload it scheduled for 17:00, set captions, thumbnails test, end screen, playlist; unschedule old v05",
+      "due": "2026-11-24T15:00:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "urgent": 8
     }
   ],
   "focus": [
