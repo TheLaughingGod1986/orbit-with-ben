@@ -91313,10 +91313,10 @@
       "stage": "upload",
       "after": "J0317",
       "eta_min": 20,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-24T11:56Z",
+      "eta": "2026-11-24T12:16Z",
       "created_by": "codex",
       "created_at": "2026-10-26T22:08Z",
       "result": "",
@@ -91370,12 +91370,25 @@
           "at": "2026-11-24T11:54Z",
           "by": "claude",
           "what": "reopened: A fresh attempt on the Mini's own Studio browser: the earlier run stalled on a reused or MacBook CDP tab with zero YouTube changes. Same guards as the brief."
+        },
+        {
+          "at": "2026-11-24T11:56Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "kind": "studio",
       "remaining_action": "Prepend live 6bbbvfCx6zY title+URL to OVLv9dxTcpE description in Studio, save, reload, and verify public readback",
       "escalated_at": "2026-11-23T01:27Z",
-      "mini_only": true
+      "mini_only": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T11:56Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J0997",

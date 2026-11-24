@@ -11,7 +11,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 |---|---|---|---|---|---|---|
 | J0910 | mini | blocked | chief | – | studio · 028 Shorts: set Related video -> F-jImX5h7ws after Sun 29 Nov 18:00Z + pinned comment on long |  |
 | J0923 | mini | blocked | cursor | – | 029 upload · studio · 029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back | 6384887788 |
-| J0996 | mini | open (after J0317) | – | – | 027 upload · studio · OWB 027: matching Earth long description after J0317 (J0980 ruling) |  |
+| J0996 | mini | claimed | gemini | 2026-11-24T12:16Z | 027 upload · studio · OWB 027: matching Earth long description after J0317 (J0980 ruling) |  |
 | J2021 | cloud | blocked | claude | – | review · Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29 |  |
 | J2040 | mini | blocked | codex | – | for codex · assembly · `gpt-6.1-sol` · Codex allow-list for unattended Mini runs (Ben's yes to F, 4 Nov): our 2 repos, R2 owb-media, Buffer, YouTube API |  |
 | J2529 | mini | blocked | gemini | – | 013 picture · for gemini · video · HOS 013 Darwin & Wallace: mint pass 1, the 66 Quality rows of picture plan v02 (at most 6,600 Flow credits, none in cash), before the credits reset on Thu 12 Nov | https://github.com/TheLaughingGod1986/history-of-science/pull/180#issuecomment-6805898066 |

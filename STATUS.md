@@ -86,7 +86,7 @@ A claim past its ETA counts as stalled; the Mini's watchdog posts it to the thre
 
 | Film | Stage | By | Since (UTC) | ETA (UTC) | Note |
 |---|---|---|---|---|---|
-| 027 | upload | codex | 2026-11-23T18:00Z | 2026-11-23T19:59Z | J3444 Earth equator Short: 24-hour reach read after Related repair |
+| 027 | upload | gemini | 2026-11-24T11:56Z | 2026-11-24T12:15Z | J0996 OWB 027: matching Earth long description after J0317 (J0980 ruling) (took over stalled claim by codex, ETA 2026-11-23T19:59Z) |
 | 033 | upload | claudecode | 2026-11-18T11:13Z | 2026-11-18T13:12Z | J2986 Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test |
 
 Stages: topic, script, sources, vo, shots, picture, edit, thumbs, upload.
