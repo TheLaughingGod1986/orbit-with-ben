@@ -97,7 +97,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3538 | mini | claimed | macbook | 2026-11-24T16:26Z | 064 script · script · OWB 064: Correct remaining source mismatches in script v03 | J3520 |
 | J3539 | mini | open (after J3538) | – | – | 064 script · review · OWB 064: Verify v03 sources and decide exact script lock | J3520 |
 | J3540 | mini | open (after J3414) | – | – | WW2:001 upload · studio · Field Order History pilot 1: title test naming the Mulberry harbours (search), after the 48-hour read |  |
-| J3541 | any | open | – | – | WW2:016 topic · review · WW2 016: resolve archive coverage and issue topic verdict |  |
+| J3541 | any | claimed | macbook-2 | 2026-11-24T16:26Z | WW2:016 topic · review · WW2 016: resolve archive coverage and issue topic verdict |  |
 
 Recently finished:
 
