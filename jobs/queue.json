@@ -306836,9 +306836,14 @@
           "at": "2026-11-24T03:52Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Resumed J3364 from checkpoint 110 (848e928, 65.761% archive-bearing, 219 conformed parts verified)."
+        },
+        {
+          "at": "2026-11-24T03:58Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: All 219 conformed parts (33,675 contiguous frames) and mix WAV SHA-256 verified; ffmpeg concat/mux + technical verification running on NAS."
         }
       ],
-      "remaining_action": "Inspecting checkpoint 110 conformed parts, delivery specs, and gate scripts before assembling full v06 master",
+      "remaining_action": "Concatenating 219 verified conformed parts and muxing v04 audio/score into 002_Atlantic-Black-Pit_v06.mp4",
       "due": "2026-11-27T20:00:00Z",
       "kind": "assembly",
       "plain": "Add the real WW2 archive photos that were planned for the second Field Order History film, then Ben re-watches",
@@ -306857,7 +306862,7 @@
       "progress": {
         "step": 0,
         "of": 5,
-        "at": "2026-11-24T03:52Z",
+        "at": "2026-11-24T03:58Z",
         "by": "gemini",
         "plan": [
           "Concat and mux full v06 master",
@@ -306866,7 +306871,7 @@
           "Direct audio and visual/motion QA review",
           "Stage hashed v06 for Ben watch and save records"
         ],
-        "note": "Resumed J3364 from checkpoint 110 (848e928, 65.761% archive-bearing, 219 conformed parts verified)."
+        "note": "All 219 conformed parts (33,675 contiguous frames) and mix WAV SHA-256 verified; ffmpeg concat/mux + technical verificat"
       }
     },
     {
