@@ -320870,9 +320870,14 @@
           "at": "2026-11-24T16:46Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Drafted SOURCES.md, FACT_NOTES_v01.md (24 verified quotes), accidental_inventions_script_master_v01.md, and SHORTS_SCRIPTS_v01.md"
+        },
+        {
+          "at": "2026-11-24T16:50Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Finalised trimmed 5-part v01 script, 16-19s Shorts (46w/43w), status.json, production-status.md, and README.md"
         }
       ],
-      "remaining_action": "Running review:script, gate:episode, and marker/word audits on HOS:137 v01 draft",
+      "remaining_action": "Running final review:script, gate:episode, status_board.py, and check_all.sh before pushing PR",
       "due": "2026-11-30T18:00:00Z",
       "kind": "script",
       "plain": "Pick the title and thumbnail ideas, then draft the Accidental Inventions script for History of Science",
@@ -320885,9 +320890,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-24T16:46Z",
+        "at": "2026-11-24T16:50Z",
         "by": "gemini",
         "plan": [
           "Inspect J3503 review and template",
@@ -320896,7 +320901,7 @@
           "Draft 5-part long script and two Shorts",
           "Run script/episode/status gates and push branch"
         ],
-        "note": "Drafted SOURCES.md, FACT_NOTES_v01.md (24 verified quotes), accidental_inventions_script_master_v01.md, and SHORTS_SCRIP"
+        "note": "Finalised trimmed 5-part v01 script, 16-19s Shorts (46w/43w), status.json, production-status.md, and README.md"
       },
       "taskKeys": [
         "HOS:137"
