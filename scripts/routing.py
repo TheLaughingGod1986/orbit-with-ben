@@ -107,9 +107,14 @@ MINI_CLAUDE = ("claudecode", "mini-claude-opus-5-5")
 PROTECTED = ("final OK / PASS", "merge", "AGENTS.md and the Never list", "spend past the written rules",
              "anything irreversible")
 
-# Reasoning, scripts, listings and review notes: Claude Code -> Cursor on Claude -> Gemini -> Codex (last resort).
-# Gemini stands in on Argon here: these are the hard reasoning jobs (Ben, 15 Oct 2026).
-_CLAUDE_CHAIN = [("claude", "claude-opus-5-5"), CLAUDE_FALLBACK, ARGON, ASTRA, MINI_CLAUDE]
+# Ben, 24 Nov 2026, in chat: "Cursor and Grokbot are tied up in the X subscription ... I've dropped it down to £20 a
+# month ... they're going to be used up pretty quickly ... Gemini, we have a lot of usage ... Claude, we have a lot of
+# usage ... Codex, we're on the £90 a month plan, so we have a decent amount". So Cursor and Grok Bot are the last
+# resort in every chain. Judgment work (scripts, reviews, QA, listings) goes Claude -> Claude Code on the Mini (the
+# same Opus, Ben's big Claude plan) -> Gemini Argon -> Codex, and only then Cursor on Claude. Code and graphics stay
+# Codex first, Studio browser work goes to Gemini first, and the paid tool runs (voice, pictures, video) to Codex,
+# then Gemini, then Claude Code.
+_CLAUDE_CHAIN = [("claude", "claude-opus-5-5"), MINI_CLAUDE, ARGON, ASTRA, CLAUDE_FALLBACK]
 
 # kind: (job type, chain [(agent, model), ...] primary first, how the job runs). Code and graphics: Codex first.
 # Tool jobs (vo, image, video): the same tool, run by whichever worker is up.
@@ -117,44 +122,44 @@ CHAINS = {
     "script":   ("Script writing and fact research", _CLAUDE_CHAIN,
                  "Claude writes; Gemini (agy) drafts SOURCES.md and checks every claim (kind facts). A Gemini or Codex "
                  "draft is a draft only; Claude or Chief locks it"),
-    "facts":    ("Sources and claims check", [("cursor", "gemini-agy"), ARGON, ("claude", "claude-opus-5-5"),
-                                               CLAUDE_FALLBACK, ASTRA, MINI_CLAUDE],
+    "facts":    ("Sources and claims check", [ARGON, ("claude", "claude-opus-5-5"), MINI_CLAUDE, ASTRA,
+                                               ("cursor", "gemini-agy"), CLAUDE_FALLBACK],
                  "the worker runs `agy` (claims as <driver>/gemini), or the relay wakes agy itself; Claude's quote "
                  "check backs it"),
     "review":   ("Script review, reasoning, shot lists, music prompts", _CLAUDE_CHAIN,
                  "a stand-in's review is advisory; Chief makes the call"),
-    "vo":       ("Voice-over", [("cursor", "eleven_v3"), ("codex", "eleven_v3"), ("gemini", "eleven_v3"),
-                                ("claudecode", "eleven_v3")],
+    "vo":       ("Voice-over", [("codex", "eleven_v3"), ("gemini", "eleven_v3"), ("claudecode", "eleven_v3"),
+                                ("cursor", "eleven_v3")],
                  "vo_take.py / el_client.py on the Mini, Scribe v2 check; no other voice, ever"),
-    "image":    ("Stills, plates and thumbnail art", [("cursor", "gemini-2.5-flash-image"),
-                                                      ("codex", "gemini-2.5-flash-image"),
+    "image":    ("Stills, plates and thumbnail art", [("codex", "gemini-2.5-flash-image"),
                                                       ("gemini", "gemini-2.5-flash-image"),
-                                                      ("claudecode", "gemini-2.5-flash-image")],
+                                                      ("claudecode", "gemini-2.5-flash-image"),
+                                                      ("cursor", "gemini-2.5-flash-image")],
                  "Master frame or NASA plate first, else Flow Nano Banana 2 (every channel, Ben 5 Nov 2026), then Vertex. "
                  "Text always from the builders, never the image model"),
     "chart":    ("Charts, graphs, overlays, people cards, date call-outs, thumbnail builders",
-                 [ASTRA, CURSOR_GROK, CURSOR_AUTO, GEMINI, MINI_CLAUDE],
+                 [ASTRA, GEMINI, MINI_CLAUDE, CURSOR_GROK, CURSOR_AUTO],
                  "our own code graphics (Python/ffmpeg), rendered per row"),
     "thumb":    ("Thumbnail design: the whole thumbnail (art, character, hook text) and its Test & Compare variants",
-                 [ASTRA, CURSOR_GROK, CURSOR_AUTO, GEMINI, MINI_CLAUDE],
+                 [ASTRA, GEMINI, MINI_CLAUDE, CURSOR_GROK, CURSOR_AUTO],
                  "Codex designs it (Ben, 14 Oct 2026: Codex built NO WAY OUT? / NO SOLID GROUND?, which beat the house "
                  "style on sight); every new design goes in as Test & Compare B against the live thumb and the result "
                  "decides; checks: 1280x720, under 2 MB, readable at 168 px, nothing under the duration badge"),
-    "video":    ("Video generation", [("cursor", "veo-3.1-fast-generate-001"), ("codex", "veo-3.1-fast-generate-001"),
-                                      ("gemini", "veo-3.1-fast-generate-001"),
-                                      ("claudecode", "veo-3.1-fast-generate-001")],
+    "video":    ("Video generation", [("codex", "veo-3.1-fast-generate-001"), ("gemini", "veo-3.1-fast-generate-001"),
+                                      ("claudecode", "veo-3.1-fast-generate-001"),
+                                      ("cursor", "veo-3.1-fast-generate-001")],
                  "Flow Veo 3.1 first for both channels (Ben, 5 Nov 2026: Flow has lots of credit), then Vertex Veo (Quality "
                  "only for a hero); Omni gemini-omni-flash-preview at global for Orbit only when a job names it"),
-    "assembly": ("Picture assembly, ffmpeg, code and tools", [CURSOR_GROK, CURSOR_AUTO, SOL, GEMINI, MINI_CLAUDE],
+    "assembly": ("Picture assembly, ffmpeg, code and tools", [SOL, MINI_CLAUDE, GEMINI, CURSOR_GROK, CURSOR_AUTO],
                  "on the Mini; long renders in detached tmux"),
     "qa":       ("Frame review and QA", _CLAUDE_CHAIN,
                  "picture_qa / polish_gate / music_gate must PASS first; Chief gives the PASS"),
     "listing":  ("Titles, descriptions, tags, SEO", _CLAUDE_CHAIN,
                  "Gemini checks any fact in it; Chief OKs; applied by the upload or Studio job"),
-    "studio":   ("Studio browser tasks", [("chief", "grok"), CURSOR_GROK, CURSOR_AUTO, SOL, ARGON, MINI_CLAUDE],
+    "studio":   ("Studio browser tasks", [ARGON, SOL, MINI_CLAUDE, ("chief", "grok"), CURSOR_GROK, CURSOR_AUTO],
                  "each channel's Studio browser on its own CDP port (its channel file); never Replace, never delete"),
-    "chief":    ("Merges, final OK, PASS, AGENTS.md", [("claude", "claude-opus-5-5"), ("chief", "grok"), ASTRA, ARGON],
-                 "only the elected Chief may claim; Claude -> Grok -> Codex -> Gemini (Ben, 9 Nov 2026); money and the irreversible stay with Ben"),
+    "chief":    ("Merges, final OK, PASS, AGENTS.md", [("claude", "claude-opus-5-5"), ASTRA, ARGON, ("chief", "grok")],
+                 "only the elected Chief may claim; Claude -> Codex -> Gemini -> Grok (Ben, 24 Nov 2026: Grok Bot is on a £20 plan); money and the irreversible stay with Ben"),
 }
 
 # Older view kept for callers: kind -> (job type, primary, first fallback or None, how).

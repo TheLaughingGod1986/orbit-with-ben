@@ -379,8 +379,10 @@ def add_dirs() -> str:
 # bigger plan): Claude -> Grok -> Codex -> Gemini for orbit-with-ben. Cursor stays a worker.
 # Ben, 11 Nov 2026, desk #180: the non-home channel keeps the 26 Oct chain (Grok first). The 9 Nov chain
 # stays the home channel's. A status that names Claude on that channel's job means Grok is down.
-DEFAULT_CHAIN = "claude,chief,codex,gemini"
-SECOND_CHAIN = "chief,claude,codex,gemini"
+# Ben, 24 Nov 2026, in chat: Cursor and Grok Bot share an X subscription cut to £20 a month and mostly spent by Grok on
+# other projects, so Grok Bot is the last link on both channels: Claude -> Codex -> Gemini -> Grok Bot.
+DEFAULT_CHAIN = "claude,codex,gemini,chief"
+SECOND_CHAIN = "claude,codex,gemini,chief"
 NAMES = {"chief": "Grok Bot", "cursor": "Cursor", "codex": "Codex", "gemini": "Gemini", "claude": "Claude",
          "claudecode": "Claude Code"}
 
@@ -925,8 +927,8 @@ Never park a job for Ben's OK on anything else."""
 
 def authority_prompt(agent: str, leader: str | None, repo: str | None = None) -> str:
     guest = bool(repo and repo != channels.default())
-    order = ("11 Nov 2026: Grok -> Claude -> Codex -> Gemini" if guest
-             else "26 Oct 2026, reordered 9 Nov 2026: Claude -> Grok -> Codex -> Gemini")
+    order = ("24 Nov 2026 (Grok Bot on a £20 plan): Claude -> Codex -> Gemini -> Grok" if guest
+             else "26 Oct 2026, reordered 9 Nov and 24 Nov 2026: Claude -> Codex -> Gemini -> Grok")
     return (CHIEF_AUTHORITY if agent == leader else WORKER_AUTHORITY).format(agent=agent, order=order)
 
 
@@ -2334,12 +2336,12 @@ def run_locked(at: dt.datetime, slot: int = 0) -> int:
             label = channels.name(guest_job)
             if who == guest_who:
                 why = (f"{named} is Chief for {label} "
-                       "(Grok -> Claude -> Codex -> Gemini). "
+                       "(Claude -> Codex -> Gemini -> Grok). "
                        "A relay line that names someone else on this channel's job means the first agent in its chain is down.")
             else:
                 why = (f"{named} is Chief for {label} "
-                       "(Grok -> Claude -> Codex -> Gemini). You are its WORKER for this channel's queue job. "
-                       "If this line names anyone but Grok Bot, Grok is down. "
+                       "(Claude -> Codex -> Gemini -> Grok). You are its WORKER for this channel's queue job. "
+                       "If this line names anyone but Claude, Claude is out. "
                        "In step 3 skip the channel check and the desk inbox: do only the job "
                        "`jobs.py next` gives you. If it exits 10, stop without posting")
         auth_leader = guest_who if guest_job else leader
@@ -2508,7 +2510,7 @@ def cmd_status(at: dt.datetime) -> int:
     if len(guests) == 1:
         grows, gwho = acting(at, guests[0])
         print(f"{channels.name(guests[0])} Chief: {NAMES.get(gwho, gwho) if gwho else 'nobody'} "
-              "(Grok -> Claude -> Codex -> Gemini)")
+              "(Claude -> Codex -> Gemini -> Grok)")
         for a, up, why in grows:
             mark = ">" if a == gwho else " "
             print(f"  {mark} {a:<7} {NAMES.get(a, a):<9} {'UP  ' if up else 'down'}  {why}")

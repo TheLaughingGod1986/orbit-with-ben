@@ -217,7 +217,7 @@ class RoutedSteps(unittest.TestCase):
              "OWB:025": {"steps": []}}
         out = ks.queue_job_steps(b, self.jobs)
         self.assertEqual([s.get("job") for s in out["HOS:006"]["steps"]], ["J2", "J1", None])
-        self.assertEqual(out["HOS:006"]["steps"][1]["who"], "Cursor")
+        self.assertEqual(out["HOS:006"]["steps"][1]["who"], "Codex")  # assembly: Codex first since 24 Nov 2026
         self.assertEqual(out["HOS:006"]["steps"][1]["what"], "Part 03 rough v01")
         self.assertEqual(out["OWB:025"]["steps"], [])  # OWB jobs: the page adds them
 
