@@ -1,5 +1,5 @@
 {
-  "next_id": 3509,
+  "next_id": 3510,
   "jobs": [
     {
       "id": "J0001",
@@ -319054,6 +319054,37 @@
       "due": "2026-11-25T12:00:00Z",
       "kind": "studio",
       "plain": "Upload the Titan Short you approved into the next free slot",
+      "mini_only": true
+    },
+    {
+      "id": "J3509",
+      "title": "Swap approved Betelgeuse half-Moon Short to v06; retain 14 Dec 11:30",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Authority: J3505, Ben board OK relayed by Claude and independently checked against board-data on 24 Nov 2026. Codex elected Chief verified before queuing. GBP 0, no generation. Claim film upload stage before work. Verify exact approved master hash and all applicable gates; prepare complete listing package and dry run before uploading. Keep existing uploaded files and manifests intact; use a new versioned upload package. Read current YouTube state before any write; stop duplicate uploads if this exact cut is already uploaded. Never delete a video, change a running thumbnail test, or make anything public immediately. Record every privacy/publishAt change with old/new state and authority on the studio thread in the same session; update gate library, UPLOADS.json and Buffer records together. Read back channel, privacy, publishAt, cover, captions and Related status. All Shorts must air after their long is public. If its long slips, prevent the Short airing first. Report exact ids and times, and commit records from a clean worktree.\n\nBen OK 16 Nov 09:13 London, card OWB:ASK:J2551.2. Exact approved file OWB UAT/029_short_mon14_half_moon_daylight_v06/029_short_mon14_half_moon_daylight_v06.mp4. Old id heiGCnGKTkE currently has v04 (UPLOADS hash 31f362f4437b4ca56ec16b8abef1dce4c65fb5a5c6c7b5b4e2ba39229a33efd5), Private for Mon 14 Dec 2026 11:30Z. Parent vP1BbqZ_dnM scheduled 6 Dec 18:00Z. This is a separately authorised swap of the approved full-bleed v06, not a second Short. Upload new v06 privately and verify before unscheduling the old private copy and transferring the SAME slot. Keep old id private with no publishAt; never delete or rename the old file. Title unchanged: How Bright Will Betelgeuse Get When It Explodes? No move to 11 Dec: that is occupied by opening Short. Use J2551 delivery and gate records, prior J2906 swap procedure, and verify-swap.ts readback to prove old Private/unscheduled and new Private/scheduled. Update J0923 Related targets to replacement, open-gate library and Buffer/UPLOADS in same job. If old copy has already gone public, stop for a scoped ruling; this is not permission to duplicate a public idea.\n",
+      "ref": "J3505",
+      "film": "029",
+      "stage": "upload",
+      "after": "J3505",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-24T10:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T10:53Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Upload the approved brighter Betelgeuse Short while keeping its date",
+      "due": "2026-11-25T12:00:00Z",
+      "kind": "studio",
+      "plain": "Upload the approved brighter Betelgeuse Short while keeping its date",
       "mini_only": true
     }
   ],
