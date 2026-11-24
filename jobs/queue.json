@@ -329598,20 +329598,34 @@
           "at": "2026-11-24T22:29Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T22:29Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3634; starting independent Gemini direct-source recheck of WW2:009 v03."
         }
       ],
-      "remaining_action": "Verify the revised narration from directly inspected sources before script approval",
+      "remaining_action": "Set up clean worktree at 6cadca41 and read all v03 files",
       "due": "2026-11-25T18:00:00Z",
       "kind": "facts",
       "plain": "Checking the revised Operation Pedestal narration against the original sources",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-24T22:29Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Create clean worktree and verify v03 artifacts",
+          "Audit local and remote direct sources for all 37 claims",
+          "Deep-verify priority claims, C20 ADM267/84 vs Gazette, and removed items",
+          "Write CLAIMS_CHECK_v03.md and check parity/hashes",
+          "Push PR, report findings, and handle J3492/FIX routing"
+        ],
+        "note": "Claimed J3634; starting independent Gemini direct-source recheck of WW2:009 v03."
+      },
+      "taskKeys": [
+        "WW2:009"
+      ]
     },
     {
       "id": "J3635",
