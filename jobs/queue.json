@@ -320627,13 +320627,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 45,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-24T13:27Z",
-      "eta": "2026-11-24T14:12Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T11:54Z",
-      "result": "",
+      "result": "Chief FIX on v02 0dd5ea6c. Merged PR 1260 records exact Jupiter mass and Galileo transmission fixes, Earth scope and Neptune ratio corrections. J3538 writes v03 with fresh Gemini facts; J3539 independently verifies sources and exact hash. J3020 remains held until PASS, next check 25 Nov 18:00Z; J3021 not released. PRs 1015/1251 PASS recommendations not accepted.",
       "history": [
         {
           "at": "2026-11-24T11:54Z",
@@ -320689,6 +320689,11 @@
           "at": "2026-11-24T13:27Z",
           "by": "codex",
           "what": "step 3 of 3 done: Chief review complete: FIX in merged PR 1260; J3538 correction then J3539 independent check; J3020 and narration remain held."
+        },
+        {
+          "at": "2026-11-24T13:27Z",
+          "by": "codex",
+          "what": "done: Chief FIX on v02 0dd5ea6c. Merged PR 1260 records exact Jupiter mass and Galileo transmission fixes, Earth scope and Neptune ratio corrections. J3538 writes v03 with fresh Gemini facts; J3539 independently verifies sources and exact hash. J3020 remains held until PASS, next check 25 Nov 18:00Z; J3021 not released. PRs 1015/1251 PASS recommendations not accepted."
         }
       ],
       "remaining_action": "Close the completed review and report the correction handoff",
@@ -320716,7 +320721,8 @@
       },
       "taskKeys": [
         "OWB:064"
-      ]
+      ],
+      "done_ref": "jobs/reviews/J3520/CHIEF_RULING.md"
     },
     {
       "id": "J3521",
