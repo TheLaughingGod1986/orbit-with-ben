@@ -80,7 +80,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3470 | mini | open | – | – | review · Verify condition for J3114 |  |
 | J3471 | mini | open | – | – | review · Verify condition for J3415 |  |
 | J3472 | any | claimed | macbook-2 | 2026-11-24T13:11Z | WW2:007 script · script · WW2 film 007: topic check, packaging first, script and sources, to lock by 2026-12-01 |  |
-| J3473 | any | open | – | – | WW2:008 script · script · WW2 film 008: topic check, packaging first, script and sources, to lock by 2026-12-03 |  |
+| J3473 | any | claimed | macbook | 2026-11-24T13:11Z | WW2:008 script · script · WW2 film 008: topic check, packaging first, script and sources, to lock by 2026-12-03 |  |
 | J3474 | any | open | – | – | WW2:009 script · script · WW2 film 009: topic check, packaging first, script and sources, to lock by 2026-12-06 |  |
 | J3475 | any | open | – | – | WW2:010 script · script · WW2 film 010: topic check, packaging first, script and sources, to lock by 2026-12-08 |  |
 
