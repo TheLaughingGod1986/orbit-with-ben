@@ -321509,23 +321509,29 @@
           "at": "2026-11-24T13:07Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-24T13:08Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: PR 1257 is merged on main; relay confirms Codex is acting Chief; production deployment is explicitly authorized by this job."
         }
       ],
-      "remaining_action": "Confirm the board fix is merged and ready to publish",
+      "remaining_action": "Publish the merged board fix to the live site",
       "due": "2026-11-24T17:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "urgent": 13,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-24T13:07Z",
+        "at": "2026-11-24T13:08Z",
         "by": "codex",
         "plan": [
           "Confirm merged fix and publishing instructions",
           "Build and deploy board",
           "Verify live alerts and record result"
-        ]
+        ],
+        "note": "PR 1257 is merged on main; relay confirms Codex is acting Chief; production deployment is explicitly authorized by this "
       }
     },
     {
