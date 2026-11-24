@@ -318464,13 +318464,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-24T14:14Z",
-      "eta": "2026-11-24T18:14Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-24T09:37Z",
-      "result": "",
+      "result": "Topic-stage PR ww2-channel #84 open; J3541 must establish relevant official archive coverage of at least half the Bletchley film by 2026-11-25 14:30 UTC. Demand and packaging recorded; script and lock reviews not started. No VO queued.",
       "history": [
         {
           "at": "2026-11-24T09:37Z",
@@ -318496,6 +318496,11 @@
           "at": "2026-11-24T14:20Z",
           "by": "macbook",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-24T14:22Z",
+          "by": "macbook",
+          "what": "blocked: Topic-stage PR ww2-channel #84 open; J3541 must establish relevant official archive coverage of at least half the Bletchley film by 2026-11-25 14:30 UTC. Demand and packaging recorded; script and lock reviews not started. No VO queued."
         }
       ],
       "remaining_action": "Resolve Bletchley archive coverage at topic review; demand research and packaging concepts are recorded",
@@ -318522,6 +318527,11 @@
           "Obtain claims and opening reviews",
           "Open stage pull request and hand off"
         ]
+      },
+      "hold": {
+        "type": "input",
+        "condition": "Topic-stage PR ww2-channel #84 open; J3541 must establish relevant official archive coverage of at least half the Bletchley film by 2026-11-25 14:30 UTC. Demand and packaging recorded; script and lock reviews not started. No VO queued.",
+        "check_at": "2026-11-24T20:22:19+00:00"
       }
     },
     {
