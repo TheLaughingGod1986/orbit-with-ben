@@ -324124,15 +324124,20 @@
           "at": "2026-11-24T16:38Z",
           "by": "macbook-2",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-24T16:41Z",
+          "by": "macbook-2",
+          "what": "step 1 of 5 done: Read all scripts, status files and schedules for films 002-010 plus OWB/HOS Short cadences"
         }
       ],
-      "remaining_action": "Inspect films 002-010 scripts, picture plans, VO timings and channel schedules",
+      "remaining_action": "Extract exact SRT timecodes for 002-006, verify archive photo IDs for 002-010, and lock 2-3 Shorts per film",
       "due": "2026-11-27T18:00:00Z",
       "kind": "review",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-24T16:38Z",
+        "at": "2026-11-24T16:41Z",
         "by": "macbook-2",
         "plan": [
           "Read films 002-010 scripts, picture plans and schedules",
@@ -324140,7 +324145,8 @@
           "Write SHORTS_PLAN_2026-12.md and update status files",
           "Queue Short build jobs",
           "Verify, open PR and report"
-        ]
+        ],
+        "note": "Read all scripts, status files and schedules for films 002-010 plus OWB/HOS Short cadences"
       }
     }
   ],
