@@ -326764,9 +326764,14 @@
           "at": "2026-11-24T18:47Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T18:48Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Refresh the relay runner and confirm two live slots",
+      "remaining_action": "Checking the installed relay and evidence of two simultaneous workers",
       "due": "2026-11-24T21:00:00Z",
       "kind": "assembly",
       "mini_only": true,
@@ -326774,10 +326779,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-24T18:47Z",
+        "at": "2026-11-24T18:48Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Check installed runner",
+          "Verify two live slots",
+          "Record outcome"
+        ]
       }
     },
     {
