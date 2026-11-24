@@ -289607,10 +289607,10 @@
       "stage": "edit",
       "after": "J3371",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-24T12:19Z",
+      "eta": "2026-11-24T16:19Z",
       "created_by": "claude",
       "created_at": "2026-11-20T10:21Z",
       "result": "",
@@ -289854,6 +289854,11 @@
           "at": "2026-11-24T11:54Z",
           "by": "claude",
           "what": "reopened: Both inputs are done: J3370 (corrected S62/S51a narration) and J3371 (corrected G11 graphic and cues, WW2 PR #72). Finish the picture, maps, edit and thumbnail to Ben's watch by Thu 26 Nov 20:00 UTC."
+        },
+        {
+          "at": "2026-11-24T12:19Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Wait for corrected narration and loss graphic, then finish assembly and QA",
@@ -289869,7 +289874,15 @@
       },
       "open_claim": true,
       "urgent": 11,
-      "escalated_at": "2026-11-22T15:18Z"
+      "escalated_at": "2026-11-22T15:18Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T12:19Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3206",
