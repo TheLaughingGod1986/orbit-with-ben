@@ -1,5 +1,5 @@
 {
-  "next_id": 3550,
+  "next_id": 3551,
   "jobs": [
     {
       "id": "J0001",
@@ -322828,6 +322828,36 @@
           "Record handoff"
         ]
       }
+    },
+    {
+      "id": "J3550",
+      "title": "WW2 015: independent Gemini check of Sherman draft claims",
+      "needs": "gemini",
+      "repo": "ww2",
+      "body": "Continue J3486's WW2 film 015 sourced draft on branch macbook/J3486, commit 8bc8127. Work in ww2-channel, film 015_M4-Sherman-Tank-Engineering-Logistics. Read channel RULES and LEARNINGS.\n\nGemini facts lane: independently verify every factual passage in 01_Script/SCRIPT.md and SOURCES.md against the linked sources. Primary official history full PDF was read by writer; original image records have explicitly different verification levels. Check especially the Chrysler dates, five models/engine differences, British radios for UK/USSR wording, production-vs-demand chronology, scope of 600 medium tanks per month, estimated half new-tank cost, and wet-stowage/stabiliser wording. Do not turn source leads or search excerpts into exact quotes. The writer excluded unproved production totals, kill ratios and fire percentages.\n\nWrite 01_Script/CLAIMS_CHECK_v01.md with PASS/FLAG per mapped passage and precise suggested corrections. Do not rewrite spoken lines silently; reviewer/Claude resolves them. Read the actual draft from the named branch or PR, not older main. No script lock or VO from this facts job. The archive feasibility and topic verdict remain separately unresolved; 03_Picture/ARCHIVE_COVERAGE_v01.md lists the gap. No spend, no logins, no YouTube actions. Open a WW2 stage PR and record its link. This is a required independent review, not another writing pass.\n",
+      "ref": "",
+      "film": "WW2:015",
+      "stage": "sources",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-24T15:06Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T15:06Z",
+          "by": "macbook",
+          "what": "added for gemini"
+        }
+      ],
+      "remaining_action": "Verify the draft against its sources and record exact corrections",
+      "for": "gemini",
+      "kind": "facts",
+      "plain": "Check the facts in the Sherman tank story"
     }
   ],
   "focus": [
