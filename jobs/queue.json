@@ -1,5 +1,5 @@
 {
-  "next_id": 3468,
+  "next_id": 3472,
   "jobs": [
     {
       "id": "J0001",
@@ -226875,6 +226875,11 @@
           "at": "2026-11-24T03:03Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-24T09:00:00Z"
+        },
+        {
+          "at": "2026-11-24T09:06Z",
+          "by": "relay",
+          "what": "condition verification queued: J3468"
         }
       ],
       "remaining_action": "Complete continuous 24-fps moving-video playback review of HOS 013 pass-1 rows 56-62 and 64-66 via J3178 and record elected-Chief KEEP/RETAKE marks before closing J2529",
@@ -226899,13 +226904,14 @@
       "hold": {
         "type": "capability",
         "condition": "J3368 acting-Chief ruling (gemini, PR #1173 merged fe8dba0b9d, ruling f9163ec892, jobs/reviews/J3368/REVIEW.md): condition unmet. Follow-up J3178 remains blocked on moving_video_input (last recheck J3345; next verification J3375 parked for Chief on PR #1177) and no continuous 24-fps playback evidence or elected-Chief KEEP/RETAKE marks exist for the 10 unresolved pass-1 rows (56-62, 64-66) on HOS #180/#694 (112 comments), OWB #954 (1,644 comments), or open/merged HOS/OWB PRs. Independently re-verified 11/11 Batch 12-14 NAS SHA-256 hashes match REVIEW_STATE.json and BATCH_12-14 receipts; REVIEW_STATE.json preserves 48 KEEP / 8 RETAKE (3,10,24,28,47,49,54,63) / 10 unset. Fresh direct read_file probe at 2026-11-24T03:00Z on NAS row 58 (P05_10_darwin_worried_shelf_t1.mp4) returned 8 discrete 1-fps static frames (00:00..00:07; Darwin whole at 00:03, absent at 00:04, missing 3.833-4.250s exit), not continuous 24-fps playback (audio_input and image_input demonstrated; relay 02:14:08Z colour-block probe false-positives from 1-fps stills). Keep J2529 held pending continuous-playback review via J3178 and elected-Chief marks; no minting, retake allowance, or assembly authorised.",
-        "check_at": "2026-11-24T09:00:00Z",
+        "check_at": "2026-11-24T10:06:30+00:00",
         "requires": [
           "moving_video_input"
         ],
         "last_recheck": "J3368",
         "checked_at": "2026-11-24T03:03:34+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J3468"
       },
       "required_capabilities": [
         "moving_video_input"
@@ -242606,6 +242612,11 @@
           "at": "2026-11-17T09:23Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-24T09:00:00Z"
+        },
+        {
+          "at": "2026-11-24T09:06Z",
+          "by": "relay",
+          "what": "condition verification queued: J3469"
         }
       ],
       "remaining_action": "Run hosted Preview build and auth/home smoke checks once J2708 provides isolated hosted PostgreSQL",
@@ -242622,10 +242633,11 @@
       "hold": {
         "type": "dependency",
         "condition": "Waiting on J2708 (isolated hosted PostgreSQL for HOS Preview validation) before running hosted Preview smoke checks; local Next 16.4.6 checks pass on HOS PR #569.",
-        "check_at": "2026-11-24T09:00:00Z",
+        "check_at": "2026-11-24T10:06:30+00:00",
         "last_recheck": "J2709",
         "checked_at": "2026-11-17T09:23:01+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J3469"
       }
     },
     {
@@ -281658,6 +281670,11 @@
           "at": "2026-11-23T21:03Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-24T09:00:00Z"
+        },
+        {
+          "at": "2026-11-24T09:06Z",
+          "by": "relay",
+          "what": "condition verification queued: J3470"
         }
       ],
       "remaining_action": "Obtain explicit authorization for the Pluto package public-repository export; then reconcile its ledger entry and submit the existing package for final review",
@@ -281677,10 +281694,11 @@
       "hold": {
         "type": "input",
         "condition": "J3446 acting Chief codex ruling: CONDITION NOT MET. Accepted merged evidence PR 1222 (2b8911c510); reviewed 39 newer comments through 7113840686 and unchanged approval board updated 23 Nov 09:57Z: no explicit J3114 public-repository export authorization. Local a12100797f remains clean; Gemini verified 12 package and 4 video hashes. Prior automatic approval review rejected branch export twice; do not bypass via another worker or route. External authorization check 24 Nov 09:00Z. Once explicitly authorized, reconcile proposed T041 with the next unused ledger ID (currently T044), submit existing package to J3115 without rebuild, and preserve J3119 dependency plus UAT and Shorts holds.",
-        "check_at": "2026-11-24T09:00:00Z",
+        "check_at": "2026-11-24T10:06:30+00:00",
         "last_recheck": "J3446",
         "checked_at": "2026-11-23T21:03:21+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J3470"
       },
       "escalated_at": "2026-11-19T11:45Z"
     },
@@ -311604,6 +311622,11 @@
           "at": "2026-11-23T09:55Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-24T09:00:00Z"
+        },
+        {
+          "at": "2026-11-24T09:06Z",
+          "by": "relay",
+          "what": "condition verification queued: J3471"
         }
       ],
       "remaining_action": "Wait until tomorrow morning to check new Orbit comments",
@@ -311612,7 +311635,8 @@
       "hold": {
         "type": "date",
         "condition": "Next daily Orbit comment scan is due at 09:00 London on 24 November 2026; do not run a duplicate scan before then.",
-        "check_at": "2026-11-24T09:00:00Z"
+        "check_at": "2026-11-24T10:06:30+00:00",
+        "recheck_task": "J3471"
       }
     },
     {
@@ -316417,6 +316441,135 @@
       "remaining_action": "After qfc6EBStOfo is Public, post and pin the exact package question and verify it",
       "kind": "studio",
       "plain": "Pin the question for viewers when the new U-boat film goes live"
+    },
+    {
+      "id": "J3468",
+      "title": "Verify condition for J2529",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2529: J3368 acting-Chief ruling (gemini, PR #1173 merged fe8dba0b9d, ruling f9163ec892, jobs/reviews/J3368/REVIEW.md): condition unmet. Follow-up J3178 remains blocked on moving_video_input (last recheck J3345; next verification J3375 parked for Chief on PR #1177) and no continuous 24-fps playback evidence or elected-Chief KEEP/RETAKE marks exist for the 10 unresolved pass-1 rows (56-62, 64-66) on HOS #180/#694 (112 comments), OWB #954 (1,644 comments), or open/merged HOS/OWB PRs. Independently re-verified 11/11 Batch 12-14 NAS SHA-256 hashes match REVIEW_STATE.json and BATCH_12-14 receipts; REVIEW_STATE.json preserves 48 KEEP / 8 RETAKE (3,10,24,28,47,49,54,63) / 10 unset. Fresh direct read_file probe at 2026-11-24T03:00Z on NAS row 58 (P05_10_darwin_worried_shelf_t1.mp4) returned 8 discrete 1-fps static frames (00:00..00:07; Darwin whole at 00:03, absent at 00:04, missing 3.833-4.250s exit), not continuous 24-fps playback (audio_input and image_input demonstrated; relay 02:14:08Z colour-block probe false-positives from 1-fps stills). Keep J2529 held pending continuous-playback review via J3178 and elected-Chief marks; no minting, retake allowance, or assembly authorised.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2529 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-24T09:06Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T09:06Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Complete continuous 24-fps moving-video playback review of HOS 013 pass-1 rows 56-62 and 64-66 via J3178 and record elected-Chief KEEP/RETAKE marks before closing",
+      "kind": "review",
+      "recheck_of": "J2529",
+      "mini_only": true,
+      "required_capabilities": [
+        "moving_video_input"
+      ],
+      "due": "2026-11-21T18:00:00+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3469",
+      "title": "Verify condition for J2704",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2704: Waiting on J2708 (isolated hosted PostgreSQL for HOS Preview validation) before running hosted Preview smoke checks; local Next 16.4.6 checks pass on HOS PR #569.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2704 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-24T09:06Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T09:06Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Run hosted Preview build and auth/home smoke checks once J2708 provides isolated hosted PostgreSQL",
+      "kind": "review",
+      "recheck_of": "J2704",
+      "mini_only": true,
+      "due": "2026-11-24T10:06:30+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3470",
+      "title": "Verify condition for J3114",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3114: J3446 acting Chief codex ruling: CONDITION NOT MET. Accepted merged evidence PR 1222 (2b8911c510); reviewed 39 newer comments through 7113840686 and unchanged approval board updated 23 Nov 09:57Z: no explicit J3114 public-repository export authorization. Local a12100797f remains clean; Gemini verified 12 package and 4 video hashes. Prior automatic approval review rejected branch export twice; do not bypass via another worker or route. External authorization check 24 Nov 09:00Z. Once explicitly authorized, reconcile proposed T041 with the next unused ledger ID (currently T044), submit existing package to J3115 without rebuild, and preserve J3119 dependency plus UAT and Shorts holds.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3114 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-24T09:06Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T09:06Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Obtain explicit authorization for the Pluto package public-repository export; then reconcile its ledger entry and submit the existing package for final review",
+      "kind": "review",
+      "recheck_of": "J3114",
+      "due": "2026-11-24T10:06:30+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3471",
+      "title": "Verify condition for J3415",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3415: Next daily Orbit comment scan is due at 09:00 London on 24 November 2026; do not run a duplicate scan before then.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3415 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-24T09:06Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T09:06Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Wait until tomorrow morning to check new Orbit comments",
+      "kind": "review",
+      "recheck_of": "J3415",
+      "due": "2026-11-24T10:06:30+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
