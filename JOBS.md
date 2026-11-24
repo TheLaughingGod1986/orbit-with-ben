@@ -105,6 +105,26 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3563 | any | claimed | macbook-2 | 2026-11-24T18:37Z | review · Field Order History: plan two or three Shorts per film (002-010) and queue the first builds |  |
 | J3564 | gemini | open | – | – | HOS:137 sources · facts · HOS 137 Accidental Inventions (Thu 24 Dec): independent facts audit of v01 script, SOURCES.md & Shorts (PR #754) | J3513 |
 | J3565 | mini | open (after J3564) | – | – | HOS:137 script · review · HOS 137 Accidental Inventions (Thu 24 Dec): review and lock script v01, package-first scoring, sources & Shorts (PR #754) | J3513 |
+| J3566 | mini | open (after J3542) | – | – | WW2:002 edit · assembly · WW2 002 Short 1: build 'WW2 U-Boats: Why They Could Not Stay Underwater' for Ben watch | J3563 |
+| J3567 | mini | open (after J3542) | – | – | WW2:002 edit · assembly · WW2 002 Short 2: build 'U-Boat Radar vs Metox: Why German Warnings Failed' for Ben watch | J3563 |
+| J3568 | mini | open (after J3542) | – | – | WW2:003 edit · assembly · WW2 003 Short 1: build 'B-29 Superfortress: The 28-Inch Crawl Tunnel' for Ben watch | J3563 |
+| J3569 | mini | open (after J3542) | – | – | WW2:003 edit · assembly · WW2 003 Short 2: build 'B-29 Remote Gun Turrets: WW2's Analogue Computer' for Ben watch | J3563 |
+| J3570 | mini | open (after J3542) | – | – | WW2:004 edit · assembly · WW2 004 Short 1: build 'Mark 14 Torpedo: Why It Ran 10 Feet Too Deep' for Ben watch | J3563 |
+| J3571 | mini | open (after J3542) | – | – | WW2:004 edit · assembly · WW2 004 Short 2: build 'Mark 14 Torpedo: Why a Direct Hit Failed to Fire' for Ben watch | J3563 |
+| J3572 | mini | open (after J3542) | – | – | WW2:005 edit · assembly · WW2 005 Short 1: build 'HMS Campbeltown: 4 Tons of Explosive in Concrete' for Ben watch | J3563 |
+| J3573 | mini | open (after J3542) | – | – | WW2:005 edit · assembly · WW2 005 Short 2: build 'St Nazaire Raid: Why the Ship Blew Up Hours Later' for Ben watch | J3563 |
+| J3574 | mini | open (after J3542) | – | – | WW2:005 edit · assembly · WW2 005 Short 3: build 'St Nazaire Dock: The 35ft Gate Built for Tirpitz' for Ben watch | J3563 |
+| J3575 | mini | open (after J3542) | – | – | WW2:006 edit · assembly · WW2 006 Short 1: build 'Mosquito Bomber: The 11mm Birch and Balsa Shell' for Ben watch | J3563 |
+| J3576 | mini | open (after J3542) | – | – | WW2:006 edit · assembly · WW2 006 Short 2: build 'Mosquito vs B-17: Same 4,000lb Bomb, Two Crew' for Ben watch | J3563 |
+| J3577 | mini | blocked | macbook-2 | – | WW2:007 edit · assembly · WW2 007 Short 1: build 'WW2 Floating Dry Docks: 55ft Fold-Up Steel Walls' for Ben watch | J3563 |
+| J3578 | mini | blocked | macbook-2 | – | WW2:007 edit · assembly · WW2 007 Short 2: build 'WW2 Floating Dry Dock: How It Lifted Itself' for Ben watch | J3563 |
+| J3579 | mini | blocked | macbook-2 | – | WW2:008 edit · assembly · WW2 008 Short 1: build 'Operation Mincemeat: Faking a Man's Pocket Clutter' for Ben watch | J3563 |
+| J3580 | mini | blocked | macbook-2 | – | WW2:008 edit · assembly · WW2 008 Short 2: build 'Operation Mincemeat: The Single Eyelash Trap' for Ben watch | J3563 |
+| J3581 | mini | blocked | macbook-2 | – | WW2:009 edit · assembly · WW2 009 Short 1: build 'SS Ohio: Why a 27ft Torpedo Hole Didn't Sink Her' for Ben watch | J3563 |
+| J3582 | mini | blocked | macbook-2 | – | WW2:009 edit · assembly · WW2 009 Short 2: build 'Operation Pedestal: The 4-Ship Splint Tow to Malta' for Ben watch | J3563 |
+| J3583 | mini | open (after J3517) | – | – | WW2:010 edit · assembly · WW2 010 Short 1: build 'Sherman DD: How Britain Made a 30-Ton Tank Swim' for Ben watch | J3563 |
+| J3584 | mini | open (after J3517) | – | – | WW2:010 edit · assembly · WW2 010 Short 2: build 'Sherman Crab: The 43-Chain Mine-Clearing Tank' for Ben watch | J3563 |
+| J3585 | mini | open (after J3517) | – | – | WW2:010 edit · assembly · WW2 010 Short 3: build 'Churchill AVRE: The 40-Pound Flying Dustbin Gun' for Ben watch | J3563 |
 
 Recently finished:
 

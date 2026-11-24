@@ -1,5 +1,5 @@
 {
-  "next_id": 3566,
+  "next_id": 3586,
   "jobs": [
     {
       "id": "J0001",
@@ -324258,6 +324258,666 @@
       "due": "2026-12-08T18:00:00Z",
       "kind": "review",
       "plain": "Review and lock the Accidental Inventions package, 7-9 minute script, sources, and two Shorts."
+    },
+    {
+      "id": "J3566",
+      "title": "WW2 002 Short 1: build 'WW2 U-Boats: Why They Could Not Stay Underwater' for Ben watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Build Field Order History Short 002-S1 (plan: ww2-channel `00_Brand/SHORTS_PLAN_2026-12.md`, from J3563).\n\n- **Short title (47 chars, Rule 2):** WW2 U-Boats: Why They Could Not Stay Underwater\n- **Links to long film:** WW2:002 (`qfc6EBStOfo`, aired Tue 24 Nov 17:00 London)\n- **Target air slot:** Fri 27 Nov 2026 12:30 London (Ben watch due Thu 26 Nov 18:00 UTC; no upload/publish before Ben OK)\n- **Narration excerpt (locked 002 audio, £0 new voice):** `00:02:08.450 – 00:02:53.190` (`44.74 s`, 106 words, single contiguous span from `ww2_002_en-GB_v06.srt` / `NARRATION_v04.txt`: \"The conventional U-boats fighting this campaign were not designed to spend their whole patrol deep underwater...\" through \"...An air patrol could disrupt the hunt without leaving a wreck behind.\")\n- **First 2 s hook:** Full-bleed vertical crop of surfaced U-boat (`39602220.jpg` HMS Graph ex U-570 / `10316430.jpg` NARA 80-G-324336 U-505) with caption hook \"WHY WW2 U-BOATS HAD TO SURFACE\".\n- **Pictures (1080x1920 full-bleed vertical crop, verified PD only):** `39602220.jpg` (HMS Graph ex U-570), `25086652.jpg` (IWM A 9886 HMS Graph motor switchboard), `10316430.jpg` (NARA 80-G-324336 U-505), `24467525.jpg` (Coastal Command patrol aircraft) + 2 s end card pointing to full film `qfc6EBStOfo`.\n- **Pipeline & guards:** Reuse J3542's vertical Short pipeline once J3542 delivers its finished Short. Burned-in captions, under 60 s total, £0 new ElevenLabs voice, £0 paid stock, no upload before Ben's watch OK.",
+      "ref": "J3563",
+      "film": "WW2:002",
+      "stage": "edit",
+      "after": "J3542",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T16:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Cut locked 002 narration (02:08.450-02:53.190), assemble 1080x1920 vertical Short reusing J3542 pipeline, and put on Ben watch",
+      "due": "2026-11-26T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Build the first Battle of the Atlantic Short about why Second World War U-boats could not stay underwater"
+    },
+    {
+      "id": "J3567",
+      "title": "WW2 002 Short 2: build 'U-Boat Radar vs Metox: Why German Warnings Failed' for Ben watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Build Field Order History Short 002-S2 (plan: ww2-channel `00_Brand/SHORTS_PLAN_2026-12.md`, from J3563).\n\n- **Short title (49 chars, Rule 2):** U-Boat Radar vs Metox: Why German Warnings Failed\n- **Links to long film:** WW2:002 (`qfc6EBStOfo`, aired Tue 24 Nov 17:00 London)\n- **Target air slot:** Sun 29 Nov 2026 12:30 London (Ben watch due Fri 27 Nov 18:00 UTC; no upload/publish before Ben OK)\n- **Narration excerpt (locked 002 audio, £0 new voice):** Two clean sentence-boundary segments from `ww2_002_en-GB_v06.srt` (`44.08 s` speech + ~0.35 s breath = ~44.4 s, 109 words):\n  - Seg A: `00:10:50.802 – 00:11:13.282` (22.48 s: \"A U-boat on the surface could be hard to find at night... give a submarine time to dive before the aircraft arrived.\")\n  - Seg B: `00:11:39.882 – 00:12:01.482` (21.60 s: \"During nineteen forty-three, centimetric radar altered that contest... without receiving the warning its crew had come to expect from the old system.\")\n- **First 2 s hook:** Tight vertical crop of Liberator radar noses (`P1.jpg` IWM CH 18035) with caption hook \"METOX vs CENTIMETRIC RADAR\".\n- **Pictures (1080x1920 full-bleed vertical crop, verified PD only):** `P1.jpg` (IWM CH 18035 Aldergrove Liberator radar installations), `24463363-cp21.jpg` (IWM CH 13998 Leigh Light maintenance, St Eval), `10316430.jpg` (NARA 80-G-324336 U-505), and 002 detection schematic reframed to 9:16 + 2 s end card pointing to `qfc6EBStOfo`.\n- **Pipeline & guards:** Reuse J3542's vertical Short pipeline once finished. Burned-in captions, under 60 s total, £0 new voice, £0 paid stock, Ben watch before any publish.",
+      "ref": "J3563",
+      "film": "WW2:002",
+      "stage": "edit",
+      "after": "J3542",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T16:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Cut locked 002 narration (10:50.802-11:13.282 + 11:39.882-12:01.482), assemble 1080x1920 vertical Short, and put on Ben watch",
+      "due": "2026-11-27T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Build the second Battle of the Atlantic Short about how centimetric radar beat the U-boat Metox warning receiver"
+    },
+    {
+      "id": "J3568",
+      "title": "WW2 003 Short 1: build 'B-29 Superfortress: The 28-Inch Crawl Tunnel' for Ben watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Build Field Order History Short 003-S1 (plan: ww2-channel `00_Brand/SHORTS_PLAN_2026-12.md`, from J3563).\n\n- **Short title (44 chars, Rule 2):** B-29 Superfortress: The 28-Inch Crawl Tunnel\n- **Links to long film:** WW2:003 (*Why the B-29 Cost More Than the Atomic Bomb*, airs Sat 28 Nov 17:00 London)\n- **Target air slot:** Sat 28 Nov 2026 12:30 London (4.5 h before long; Ben watch due Fri 27 Nov 18:00 UTC; no publish before Ben OK; set Related video as soon as 003 is public)\n- **Narration excerpt (locked 003 audio, preserved PCM in `b29_superfortress_vo_v04.wav`, £0 new voice):** `00:03:58.240 – 00:04:36.800` (`38.56 s`, 102 words, single contiguous span `[S11]-[S12]`: \"But a bomber has a problem that an airliner does not...\" through \"...just big enough for a man to crawl through on his hands and knees.\")\n- **First 2 s hook:** Full-bleed vertical crop of `a08a_nara_542362_b29_padded_crawl_tunnel.jpg` (NARA NAID 542362, crewman inside the 28-inch padded tunnel) with caption hook \"B-29's 28-INCH CRAWL TUNNEL\".\n- **Pictures (1080x1920 full-bleed vertical crop, verified PD only from `003/03_Picture/PICTURE_MANIFEST.json`):** `a08a_nara_542362_b29_padded_crawl_tunnel.jpg` (A08a, NARA 542362), `a07_nara_342_fh_001297_b29_eddie_allen_cockpit.jpg` (A07, NARA 342-FH-001297), `a09_nara_342_fh_000529_b29_bombs_india_china.jpg` (A09, NARA 342-FH-000529), `a01a_nmusaf_090625_b29_in_flight.jpg` (A01a, NMUSAF 090625-F-1234K-015) + 2 s end card pointing to full B-29 film.\n- **Pipeline & guards:** Reuse J3542's vertical Short pipeline once finished. Burned-in captions, under 60 s total, £0 new voice, £0 paid stock, Ben watch before any publish.",
+      "ref": "J3563",
+      "film": "WW2:003",
+      "stage": "edit",
+      "after": "J3542",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T16:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Cut locked 003 narration (03:58.240-04:36.800), assemble 1080x1920 vertical Short reusing J3542 pipeline, and put on Ben watch",
+      "due": "2026-11-27T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Build the first B-29 Short about the 28-inch pressurised crawl tunnel over the bomb bays"
+    },
+    {
+      "id": "J3569",
+      "title": "WW2 003 Short 2: build 'B-29 Remote Gun Turrets: WW2's Analogue Computer' for Ben watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Build Field Order History Short 003-S2 (plan: ww2-channel `00_Brand/SHORTS_PLAN_2026-12.md`, from J3563).\n\n- **Short title (48 chars, Rule 2):** B-29 Remote Gun Turrets: WW2's Analogue Computer\n- **Links to long film:** WW2:003 (*Why the B-29 Cost More Than the Atomic Bomb*, airs Sat 28 Nov 17:00 London)\n- **Target air slot:** Tue 1 Dec 2026 12:30 London (Ben watch due Sun 29 Nov 18:00 UTC; Related video = WW2:003)\n- **Narration excerpt (locked 003 audio, preserved PCM in `b29_superfortress_vo_v04.wav`, £0 new voice):** `00:04:49.020 – 00:05:33.780` (`44.76 s`, 123 words, single contiguous span `[S13]-[S14]`: \"With a crew sealed inside, nobody could stand at an open window with a machine gun...\" through \"...Nothing like it had gone to war in a bomber before.\")\n- **First 2 s hook:** Tight vertical crop of `a08c_usaf_hf_sn_98_07477_b29_remote_gunsight.jpg` (USAF HF-SN-98-07477 GE remote optical gunsight) with caption hook \"B-29 REMOTE COMPUTER TURRETS\".\n- **Pictures (1080x1920 full-bleed vertical crop, verified PD only from `003/03_Picture/PICTURE_MANIFEST.json`):** `a08c_usaf_hf_sn_98_07477_b29_remote_gunsight.jpg` (A08c, USAF HF-SN-98-07477), `a08b_nara_542361_b29_gun_blister_station.jpg` (A08b, NARA 542361), `a10a_nara_342_fh_001221_engineer_instrument_panel.jpg` (A10a, NARA 342-FH-001221), and `S13_TURRET` remote fire-control diagram reframed 9:16 + 2 s end card pointing to full B-29 film.\n- **Pipeline & guards:** Reuse J3542's vertical Short pipeline once finished. Burned-in captions, under 60 s total, £0 new voice, £0 paid stock, Ben watch before any publish.",
+      "ref": "J3563",
+      "film": "WW2:003",
+      "stage": "edit",
+      "after": "J3542",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T16:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Cut locked 003 narration (04:49.020-05:33.780), assemble 1080x1920 vertical Short reusing J3542 pipeline, and put on Ben watch",
+      "due": "2026-11-29T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Build the second B-29 Short about the remote-controlled gun turrets aimed by a General Electric analogue computer"
+    },
+    {
+      "id": "J3570",
+      "title": "WW2 004 Short 1: build 'Mark 14 Torpedo: Why It Ran 10 Feet Too Deep' for Ben watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Build Field Order History Short 004-S1 (plan: ww2-channel `00_Brand/SHORTS_PLAN_2026-12.md`, from J3563; 004 airs Tue 1 Dec, inside 14-day build window).\n\n- **Short title (44 chars, Rule 2):** Mark 14 Torpedo: Why It Ran 10 Feet Too Deep\n- **Links to long film:** WW2:004 (*Why America's Torpedoes Failed Even When They Hit*, airs Tue 1 Dec 17:00 London)\n- **Target air slot:** Mon 30 Nov 2026 12:30 London (day -1; Ben watch due Sat 28 Nov 18:00 UTC; link Related video once 004 is public)\n- **Narration excerpt (locked `submarine_torpedoes_vo_v01`, £0 new voice):** Two clean segments (`45.56 s` speech + ~0.35 s breath = ~45.9 s, 122 words):\n  - Seg A: `00:07:18.988 – 00:07:34.648` (15.66 s: \"Torpedoes were fired into nets... put an obstacle in its path and measured the result.\")\n  - Seg B: `00:07:49.728 – 00:08:19.628` (29.90 s: \"The Bureau eventually confirmed the problem... because the weapon was not going where he had told it to go.\")\n- **First 2 s hook:** Full-bleed vertical crop of `n01_nara_520831_torpedo_transfer.jpg` (NARA 80-G-468128) with caption hook \"MARK 14 TORPEDO: 10 FEET TOO DEEP\".\n- **Pictures (1080x1920 full-bleed vertical crop, verified PD only from `004/03_Picture/HARVEST_LEDGER.md` & J3429):** `n01_nara_520831_torpedo_transfer.jpg` (NARA 80-G-468128), `n03_nara_520832_torpedo_shop.jpg` (NARA 80-G-468134), `n07_nara_520588_periscope.jpg` (NARA 80-G-11258), plus 004 depth-error net schematic reframed 9:16 + 2 s end card. Keep all photo context honest per HARVEST_LEDGER.md.\n- **Pipeline & guards:** Reuse J3542's vertical Short pipeline. Burned-in captions, under 60 s total, £0 new voice, £0 paid stock, Ben watch before any publish.",
+      "ref": "J3563",
+      "film": "WW2:004",
+      "stage": "edit",
+      "after": "J3542",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T16:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Cut locked 004 narration (07:18.988-07:34.648 + 07:49.728-08:19.628), assemble 1080x1920 vertical Short, and put on Ben watch",
+      "due": "2026-11-28T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Build the first Mark 14 torpedo Short about firing torpedoes into nets to prove they ran 10 feet too deep"
+    },
+    {
+      "id": "J3571",
+      "title": "WW2 004 Short 2: build 'Mark 14 Torpedo: Why a Direct Hit Failed to Fire' for Ben watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Build Field Order History Short 004-S2 (plan: ww2-channel `00_Brand/SHORTS_PLAN_2026-12.md`, from J3563; 004 airs Tue 1 Dec, inside 14-day build window).\n\n- **Short title (48 chars, Rule 2):** Mark 14 Torpedo: Why a Direct Hit Failed to Fire\n- **Links to long film:** WW2:004 (*Why America's Torpedoes Failed Even When They Hit*, airs Tue 1 Dec 17:00 London)\n- **Target air slot:** Thu 3 Dec 2026 12:30 London (day +2; Ben watch due Tue 1 Dec 18:00 UTC; Related video = WW2:004)\n- **Narration excerpt (locked `submarine_torpedoes_vo_v01`, £0 new voice):** Two clean segments (`44.32 s` speech + ~0.35 s breath = ~44.7 s, 109 words):\n  - Seg A: `00:15:11.716 – 00:15:44.896` (33.18 s: \"The Mark Six's firing pin moved across the torpedo's axis... A glancing hit could therefore succeed where a square hit failed.\")\n  - Seg B: `00:16:18.436 – 00:16:29.576` (11.14 s: \"At Pearl Harbor, Lockwood's investigators fired into a cliff and dropped inert-loaded warheads onto steel plates. The official history records drops from ninety feet.\")\n- **First 2 s hook:** Full-bleed vertical crop of `n03_nara_520832_torpedo_shop.jpg` (NARA 80-G-468134) / firing-pin schematic with caption hook \"WHY A PERFECT HIT JAMMED THE PIN\".\n- **Pictures (1080x1920 full-bleed vertical crop, verified PD only):** `n03_nara_520832_torpedo_shop.jpg` (NARA 80-G-468134), `n01_nara_520831_torpedo_transfer.jpg` (NARA 80-G-468128), `n11_nara_520847_new_london_deck.jpg` (NARA 80-G-468316), plus 004 Mark 6 firing-pin friction & 90-foot drop diagram reframed 9:16 + 2 s end card.\n- **Pipeline & guards:** Reuse J3542's vertical Short pipeline. Burned-in captions, under 60 s total, £0 new voice, £0 paid stock, Ben watch before any publish.",
+      "ref": "J3563",
+      "film": "WW2:004",
+      "stage": "edit",
+      "after": "J3542",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T16:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Cut locked 004 narration (15:11.716-15:44.896 + 16:18.436-16:29.576), assemble 1080x1920 vertical Short, and put on Ben watch",
+      "due": "2026-12-01T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Build the second Mark 14 torpedo Short about why a square hit jammed the firing pin and how 90-foot drop tests proved it"
+    },
+    {
+      "id": "J3572",
+      "title": "WW2 005 Short 1: build 'HMS Campbeltown: 4 Tons of Explosive in Concrete' for Ben watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Build Field Order History Short 005-S1 (plan: ww2-channel `00_Brand/SHORTS_PLAN_2026-12.md`, from J3563; 005 airs Thu 3 Dec, inside 14-day build window).\n\n- **Short title (48 chars, Rule 2):** HMS Campbeltown: 4 Tons of Explosive in Concrete\n- **Links to long film:** WW2:005 (*St Nazaire: The Ship Britain Turned Into a Bomb*, airs Thu 3 Dec 17:00 London)\n- **Target air slot:** Wed 2 Dec 2026 12:30 London (day -1; Ben watch due Mon 30 Nov 18:00 UTC; link Related video once 005 is public)\n- **Narration excerpt (locked `st_nazaire_campbeltown_vo_v01`, £0 new voice):** `00:07:59.350 – 00:08:47.590` (`48.24 s`, 118 words, single contiguous span `[S19]-[S20]`: \"It was made of twenty-four Mark Seven depth charges, holding about four and a quarter tons of the explosive amatol...\" through \"...would find no ticking clock, only concrete.\")\n- **First 2 s hook:** Full-bleed vertical crop of `a17_iwm_a952_campbeltown_castleton.jpg` (IWM A 952 HMS Campbeltown) with caption hook \"4.25 TONS OF EXPLOSIVE IN CONCRETE\".\n- **Pictures (1080x1920 full-bleed vertical crop, verified PD only from `005/03_Picture/PICTURE_MANIFEST.json`):** `a17_iwm_a952_campbeltown_castleton.jpg` (IWM A 952), `a16b_loc_fsa_8e00843_wickes_transfer.jpg` (LoC fsa.8e00843), `a02_iwm_c2351_st_nazaire.jpg` (IWM C 2351), plus `G7` bow concrete charge cutaway and chemical fuse diagram reframed 9:16 + 2 s end card. Never use Bundesarchiv or IWM HU photos.\n- **Pipeline & guards:** Reuse J3542's vertical Short pipeline. Burned-in captions, under 60 s total, £0 new voice, £0 paid stock, Ben watch before any publish.",
+      "ref": "J3563",
+      "film": "WW2:005",
+      "stage": "edit",
+      "after": "J3542",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T16:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Cut locked 005 narration (07:59.350-08:47.590), assemble 1080x1920 vertical Short, and put on Ben watch",
+      "due": "2026-11-30T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Build the first St Nazaire Short about packing four tons of depth charges in concrete inside HMS Campbeltown's bow"
+    },
+    {
+      "id": "J3573",
+      "title": "WW2 005 Short 2: build 'St Nazaire Raid: Why the Ship Blew Up Hours Later' for Ben watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Build Field Order History Short 005-S2 (plan: ww2-channel `00_Brand/SHORTS_PLAN_2026-12.md`, from J3563; 005 airs Thu 3 Dec, inside 14-day build window).\n\n- **Short title (49 chars, Rule 2):** St Nazaire Raid: Why the Ship Blew Up Hours Later\n- **Links to long film:** WW2:005 (*St Nazaire: The Ship Britain Turned Into a Bomb*, airs Thu 3 Dec 17:00 London)\n- **Target air slot:** Sat 5 Dec 2026 12:30 London (day +2; Ben watch due Thu 3 Dec 18:00 UTC; Related video = WW2:005)\n- **Narration excerpt (locked `st_nazaire_campbeltown_vo_v01`, £0 new voice):** `00:17:12.478 – 00:17:54.238` (`41.76 s`, 111 words, single contiguous span `[S39]-[S40]`: \"At daybreak on 28 March, Campbeltown was still sitting on the caisson...\" through \"...Many of the Germans who had gone aboard or gathered around her were killed.\")\n- **First 2 s hook:** Full-bleed vertical crop of `a02_iwm_c2351_st_nazaire.jpg` (IWM C 2351 St Nazaire dock) / `G10` wedged-ship diagram with caption hook \"AT DAYBREAK, THE FUSES HADN'T FIRED\".\n- **Pictures (1080x1920 full-bleed vertical crop, verified PD only):** `a02_iwm_c2351_st_nazaire.jpg` (IWM C 2351), `a02b_iwm_c2352_st_nazaire.jpg` (IWM C 2352), `a17_iwm_a952_campbeltown_castleton.jpg` (IWM A 952), plus `G10` wedged ship & `G13` flooded dock diagrams reframed 9:16 + 2 s end card. Never use Bundesarchiv or IWM HU photos.\n- **Pipeline & guards:** Reuse J3542's vertical Short pipeline. Burned-in captions, under 60 s total, £0 new voice, £0 paid stock, Ben watch before any publish.",
+      "ref": "J3563",
+      "film": "WW2:005",
+      "stage": "edit",
+      "after": "J3542",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T16:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Cut locked 005 narration (17:12.478-17:54.238), assemble 1080x1920 vertical Short, and put on Ben watch",
+      "due": "2026-12-03T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Build the second St Nazaire Short about the delayed morning blast that destroyed the Normandie dry dock gate"
+    },
+    {
+      "id": "J3574",
+      "title": "WW2 005 Short 3: build 'St Nazaire Dock: The 35ft Gate Built for Tirpitz' for Ben watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Build Field Order History Short 005-S3 (plan: ww2-channel `00_Brand/SHORTS_PLAN_2026-12.md`, from J3563; 005 airs Thu 3 Dec, inside 14-day build window).\n\n- **Short title (48 chars, Rule 2):** St Nazaire Dock: The 35ft Gate Built for Tirpitz\n- **Links to long film:** WW2:005 (*St Nazaire: The Ship Britain Turned Into a Bomb*, airs Thu 3 Dec 17:00 London)\n- **Target air slot:** Tue 8 Dec 2026 12:30 London (day +5; Ben watch due Sun 6 Dec 18:00 UTC; Related video = WW2:005)\n- **Narration excerpt (locked `st_nazaire_campbeltown_vo_v01`, £0 new voice):** `00:00:00.140 – 00:00:47.380` (`47.24 s`, 109 words, single contiguous span `[S01]-[S02]`: \"In the early hours of 28 March 1942, an old destroyer flying a German flag...\" through \"...sitting a thousand miles away in a Norwegian fjord.\")\n- **First 2 s hook:** Full-bleed vertical crop of `a04_iwm_a22634_tirpitz_kaafjord.jpg` (IWM A 22634 Tirpitz) / `a02_iwm_c2351_st_nazaire.jpg` with caption hook \"HER TARGET WAS A 35-FOOT DOOR\".\n- **Pictures (1080x1920 full-bleed vertical crop, verified PD only):** `a17_iwm_a952_campbeltown_castleton.jpg` (IWM A 952), `a02_iwm_c2351_st_nazaire.jpg` (IWM C 2351), `a04_iwm_a22634_tirpitz_kaafjord.jpg` (IWM A 22634), plus `G1` Atlantic coast & `G5` caisson gate diagrams reframed 9:16 + 2 s end card.\n- **Pipeline & guards:** Reuse J3542's vertical Short pipeline. Burned-in captions, under 60 s total, £0 new voice, £0 paid stock, Ben watch before any publish.",
+      "ref": "J3563",
+      "film": "WW2:005",
+      "stage": "edit",
+      "after": "J3542",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T16:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Cut locked 005 narration (00:00.140-00:47.380), assemble 1080x1920 vertical Short, and put on Ben watch",
+      "due": "2026-12-06T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Build the third St Nazaire Short about why Britain risked 600 men to smash a 35-foot dock gate and trap Tirpitz"
+    },
+    {
+      "id": "J3575",
+      "title": "WW2 006 Short 1: build 'Mosquito Bomber: The 11mm Birch and Balsa Shell' for Ben watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Build Field Order History Short 006-S1 (plan: ww2-channel `00_Brand/SHORTS_PLAN_2026-12.md`, from J3563; 006 airs Sat 5 Dec, inside 14-day build window).\n\n- **Short title (47 chars, Rule 2):** Mosquito Bomber: The 11mm Birch and Balsa Shell\n- **Links to long film:** WW2:006 (*Why the Mosquito Bomber Was Made of Wood*, airs Sat 5 Dec 17:00 London)\n- **Target air slot:** Fri 4 Dec 2026 12:30 London (day -1; Ben watch due Wed 2 Dec 18:00 UTC; link Related video once 006 is public)\n- **Narration excerpt (locked `mosquito_plywood_bomber_vo_v01`, £0 new voice):** `00:09:08.744 – 00:10:01.424` (`52.68 s`, 116 words, single contiguous span `[S21]-[S22]`: \"The secret lay in pairing two timbers from opposite sides of the Americas...\" through \"...creating a curving monocoque shell of immense strength.\")\n- **First 2 s hook:** Full-bleed vertical crop of `iwm_subj_mosquitofuselage.jpg` (IWM CH 12623 Mosquito wooden fuselage) with caption hook \"11MM OF BIRCH AND BALSA WOOD\".\n- **Pictures (1080x1920 full-bleed vertical crop, verified PD only from `006/03_Picture/HARVEST_LEDGER.md`):** `iwm_subj_mosquitofuselage.jpg` (IWM CH 12623), `iwm_fill_mosquitowingassemblyhatf.jpg` (IWM TR 1426), `iwm_fill_mosquitoprototypew4050.jpg` (IWM CH 15781), plus 006 birch/balsa sandwich cross-section code diagram reframed 9:16 + 2 s end card.\n- **Pipeline & guards:** Reuse J3542's vertical Short pipeline. Burned-in captions, under 60 s total, £0 new voice, £0 paid stock, Ben watch before any publish.",
+      "ref": "J3563",
+      "film": "WW2:006",
+      "stage": "edit",
+      "after": "J3542",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T16:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Cut locked 006 narration (09:08.744-10:01.424), assemble 1080x1920 vertical Short, and put on Ben watch",
+      "due": "2026-12-02T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Build the first Mosquito bomber Short about how Canadian birch plywood and Ecuadorian balsa formed an 11mm shell"
+    },
+    {
+      "id": "J3576",
+      "title": "WW2 006 Short 2: build 'Mosquito vs B-17: Same 4,000lb Bomb, Two Crew' for Ben watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Build Field Order History Short 006-S2 (plan: ww2-channel `00_Brand/SHORTS_PLAN_2026-12.md`, from J3563; 006 airs Sat 5 Dec, inside 14-day build window).\n\n- **Short title (45 chars, Rule 2):** Mosquito vs B-17: Same 4,000lb Bomb, Two Crew\n- **Links to long film:** WW2:006 (*Why the Mosquito Bomber Was Made of Wood*, airs Sat 5 Dec 17:00 London)\n- **Target air slot:** Sun 6 Dec 2026 12:30 London (day +1; Ben watch due Fri 4 Dec 18:00 UTC; Related video = WW2:006)\n- **Narration excerpt (locked `mosquito_plywood_bomber_vo_v01`, £0 new voice):** `00:20:04.760 – 00:20:50.640` (`45.88 s`, 89 words, single contiguous span `[S43]-[S44]` sentences 1-4: \"When the United States Eighth Air Force sent a four-engine Boeing B-17G Flying Fortress from England to Berlin...\" through \"...and risked two crewmen instead of ten.\")\n- **First 2 s hook:** Full-bleed vertical crop of `iwm_fill_mosquito4000lbcookiebomb.jpg` (IWM CH 12620 4,000-lb Cookie bomb) with caption hook \"SAME 4,000-LB BOMB, 2 CREW NOT 10\".\n- **Pictures (1080x1920 full-bleed vertical crop, verified PD only):** `iwm_fill_mosquito4000lbcookiebomb.jpg` (IWM CH 12620), `iwm_subj_mosquitocookiebomb.jpg` (IWM CH 12621), `iwm_fill_mosquitonightbomber.jpg` (IWM CH 10110), `iwm_fill_mosquitophotographicreco.jpg` (IWM TR 2788), plus 006 B-17 vs Mosquito code comparison plate reframed 9:16 + 2 s end card.\n- **Pipeline & guards:** Reuse J3542's vertical Short pipeline. Burned-in captions, under 60 s total, £0 new voice, £0 paid stock, Ben watch before any publish.",
+      "ref": "J3563",
+      "film": "WW2:006",
+      "stage": "edit",
+      "after": "J3542",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T16:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Cut locked 006 narration (20:04.760-20:50.640), assemble 1080x1920 vertical Short, and put on Ben watch",
+      "due": "2026-12-04T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Build the second Mosquito bomber Short comparing its 4,000-pound Berlin bomb load and two crew against a ten-man B-17"
+    },
+    {
+      "id": "J3577",
+      "title": "WW2 007 Short 1: build 'WW2 Floating Dry Docks: 55ft Fold-Up Steel Walls' for Ben watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Build Field Order History Short 007-S1 (plan: ww2-channel `00_Brand/SHORTS_PLAN_2026-12.md`, from J3563; 007 airs Tue 8 Dec).\n\n- **Short title (48 chars, Rule 2):** WW2 Floating Dry Docks: 55ft Fold-Up Steel Walls\n- **Links to long film:** WW2:007 (*How WW2 Floating Dry Docks Lifted Battleships*, airs Tue 8 Dec 17:00 London)\n- **Target air slot:** Mon 7 Dec 2026 12:30 London (day -1; Ben watch due Sat 5 Dec 18:00 UTC; link Related video once 007 is public)\n- **Narration excerpt (locked from post-reset 007 VO, £0 new voice):** Beat `[S16]` (109 words, ~45 s at ~145 wpm; exact timecodes locked from post-reset `words.srt`; zero flagged claims): \"The designers hinged the wing walls at the bottom. After building a section upright in an American yard...\" through \"...so the wall would not slam home.\"\n- **First 2 s hook:** Full-bleed vertical crop of `80-G-K-2106` (USS Pennsylvania inside ABSD towering wing walls) with caption hook \"55-FOOT FOLD-UP STEEL WALLS\".\n- **Pictures (1080x1920 full-bleed vertical crop, verified PD only from `007/03_Picture/ARCHIVE_PROVENANCE.md`):** `80-G-K-2106`, `80-G-354318` (ABSD-2 & ABSD-4 at Manus), `80-G-337373` (USS Trinity entering ABSD-2), plus `G9`/`G10` hinged wing-wall & 500-ton hydraulic jack code diagrams reframed 9:16 + 2 s end card.\n- **Pipeline & guards:** Reuse J3542's pipeline after 007 post-reset VO lands. Burned-in captions, under 60 s total, £0 new voice, £0 paid stock, Ben watch before any publish.",
+      "ref": "J3563",
+      "film": "WW2:007",
+      "stage": "edit",
+      "after": "J3542",
+      "eta_min": 120,
+      "status": "blocked",
+      "by": "macbook-2",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T16:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook-2",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook-2",
+          "what": "condition recorded; next verification 2026-12-01T12:00:00Z"
+        }
+      ],
+      "remaining_action": "Wait for 007 post-reset VO and archive harvest, then cut [S16], assemble 1080x1920 vertical Short, and put on Ben watch",
+      "due": "2026-12-05T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Build the first floating dry docks Short about hinged 55-foot steel walls folded flat to cross the Pacific",
+      "hold": {
+        "type": "input",
+        "condition": "WW2:007 post-reset VO (after 2026-11-30 10:50Z) and archive harvest completed, and J3542 Short pipeline finished",
+        "check_at": "2026-12-01T12:00:00Z"
+      }
+    },
+    {
+      "id": "J3578",
+      "title": "WW2 007 Short 2: build 'WW2 Floating Dry Dock: How It Lifted Itself' for Ben watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Build Field Order History Short 007-S2 (plan: ww2-channel `00_Brand/SHORTS_PLAN_2026-12.md`, from J3563; 007 airs Tue 8 Dec).\n\n- **Short title (43 chars, Rule 2):** WW2 Floating Dry Dock: How It Lifted Itself\n- **Links to long film:** WW2:007 (*How WW2 Floating Dry Docks Lifted Battleships*, airs Tue 8 Dec 17:00 London)\n- **Target air slot:** Thu 10 Dec 2026 12:30 London (day +2; Ben watch due Tue 8 Dec 18:00 UTC; Related video = WW2:007)\n- **Narration excerpt (locked from post-reset 007 VO, £0 new voice):** Beat `[S18]` (79 words, ~33 s at ~145 wpm; exact timecodes locked from post-reset `words.srt`; zero flagged claims): \"Best of all, the dock could repair itself...\" through \"...The rest of the dock then pumped itself dry and lifted its own missing piece into the air.\"\n- **First 2 s hook:** Full-bleed vertical crop of `80-G-304088` (ABSD-2 lifting three warships at Manus) with caption hook \"A DRY DOCK THAT LIFTED ITSELF\".\n- **Pictures (1080x1920 full-bleed vertical crop, verified PD only):** `80-G-304088`, `80-G-354318`, `80-G-421124` (USS Iowa in ABSD-2), plus `G11` self-docking 90-degree rotation code diagram reframed 9:16 + 2 s end card.\n- **Pipeline & guards:** Reuse J3542's pipeline after 007 post-reset VO lands. Burned-in captions, under 60 s total, £0 new voice, £0 paid stock, Ben watch before any publish.",
+      "ref": "J3563",
+      "film": "WW2:007",
+      "stage": "edit",
+      "after": "J3542",
+      "eta_min": 120,
+      "status": "blocked",
+      "by": "macbook-2",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T16:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook-2",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook-2",
+          "what": "condition recorded; next verification 2026-12-01T12:00:00Z"
+        }
+      ],
+      "remaining_action": "Wait for 007 post-reset VO and archive harvest, then cut [S18], assemble 1080x1920 vertical Short, and put on Ben watch",
+      "due": "2026-12-08T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Build the second floating dry docks Short about how a 10-section dock unbolted one piece and lifted itself out of the sea",
+      "hold": {
+        "type": "input",
+        "condition": "WW2:007 post-reset VO (after 2026-11-30 10:50Z) and archive harvest completed, and J3542 Short pipeline finished",
+        "check_at": "2026-12-01T12:00:00Z"
+      }
+    },
+    {
+      "id": "J3579",
+      "title": "WW2 008 Short 1: build 'Operation Mincemeat: Faking a Man's Pocket Clutter' for Ben watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Build Field Order History Short 008-S1 (plan: ww2-channel `00_Brand/SHORTS_PLAN_2026-12.md`, from J3563; 008 airs Thu 10 Dec).\n\n- **Short title (50 chars, Rule 2):** Operation Mincemeat: Faking a Man's Pocket Clutter\n- **Links to long film:** WW2:008 (*Operation Mincemeat: One Briefcase Fooled Hitler*, airs Thu 10 Dec 17:00 London)\n- **Target air slot:** Wed 9 Dec 2026 12:30 London (day -1; Ben watch due Mon 7 Dec 18:00 UTC; link Related video once 008 is public)\n- **Narration excerpt (locked from post-reset 008 VO, £0 new voice):** Final sentence of `[S13]` + `[S14]` (125 words, ~51 s at ~145 wpm; exact timecodes locked from post-reset `words.srt`; claims C25-C28 all PASS): \"So they gave William Martin a fiancée named Pam...\" through \"...so the cardboard looked worn rather than freshly minted.\"\n- **First 2 s hook:** Full-bleed vertical crop of `TNA ADM 223/464` (Major William Martin Naval Identity Card 148228) with caption hook \"HOW BRITAIN FAKED A MAN'S POCKETS\".\n- **Pictures (1080x1920 full-bleed vertical crop, verified PD only from `008/03_Picture/ARCHIVE_PROVENANCE.md`):** `TNA ADM 223/464` (ID card 148228), `IWM H 15636` (Whitehall War Office desk), plus `G06`/`G07` pocket-litter & ring-bill/overdraft code diagrams reframed 9:16 + 2 s end card.\n- **Pipeline & guards:** Reuse J3542's pipeline after 008 post-reset VO lands. Burned-in captions, under 60 s total, £0 new voice, £0 paid stock, Ben watch before any publish.",
+      "ref": "J3563",
+      "film": "WW2:008",
+      "stage": "edit",
+      "after": "J3542",
+      "eta_min": 120,
+      "status": "blocked",
+      "by": "macbook-2",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T16:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook-2",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook-2",
+          "what": "condition recorded; next verification 2026-12-01T12:00:00Z"
+        }
+      ],
+      "remaining_action": "Wait for 008 post-reset VO and archive harvest, then cut [S13]-[S14], assemble 1080x1920 vertical Short, and put on Ben watch",
+      "due": "2026-12-07T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Build the first Operation Mincemeat Short about the fake bills, theatre stubs and worn ID card planted in Major Martin's pockets",
+      "hold": {
+        "type": "input",
+        "condition": "WW2:008 post-reset VO (after 2026-11-30 10:50Z) and archive harvest completed, and J3542 Short pipeline finished",
+        "check_at": "2026-12-01T12:00:00Z"
+      }
+    },
+    {
+      "id": "J3580",
+      "title": "WW2 008 Short 2: build 'Operation Mincemeat: The Single Eyelash Trap' for Ben watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Build Field Order History Short 008-S2 (plan: ww2-channel `00_Brand/SHORTS_PLAN_2026-12.md`, from J3563; 008 airs Thu 10 Dec).\n\n- **Short title (44 chars, Rule 2):** Operation Mincemeat: The Single Eyelash Trap\n- **Links to long film:** WW2:008 (*Operation Mincemeat: One Briefcase Fooled Hitler*, airs Thu 10 Dec 17:00 London)\n- **Target air slot:** Sat 12 Dec 2026 12:30 London (day +2; Ben watch due Thu 10 Dec 18:00 UTC; Related video = WW2:008)\n- **Narration excerpt (locked from post-reset 008 VO, £0 new voice):** Two clean segments (`116 words`, ~48 s at ~145 wpm; exact timecodes locked from post-reset `words.srt`; claims C37, C51, C52 all PASS):\n  - Seg A (`[S20]` second half, 48 words): \"Second, how would London ever know whether the Spanish or Germans had actually read the letters? Montagu folded Nye's letter in a specific pattern and placed a single black eyelash across the inner fold before sealing the envelope with wax. If anyone slipped the paper out, that hair would vanish.\"\n  - Seg B (`[S28]`, 68 words): \"On the eleventh of May, Spanish officials handed the briefcase back to the British naval attaché... and the black eyelash Montagu had placed inside the fold was gone.\"\n- **First 2 s hook:** Full-bleed vertical crop of `G09` eyelash-trap envelope schematic + `TNA ADM 223/464` with caption hook \"ONE EYELASH PROVED HITLER READ IT\".\n- **Pictures (1080x1920 full-bleed vertical crop, verified PD only):** `TNA ADM 223/464`, `IWM A 21106` (HMS Seraph), `IWM A 14799` (Admiralty intelligence coordination), plus `G09` eyelash trap & `G13` lab inspection diagrams reframed 9:16 + 2 s end card.\n- **Pipeline & guards:** Reuse J3542's pipeline after 008 post-reset VO lands. Burned-in captions, under 60 s total, £0 new voice, £0 paid stock, Ben watch before any publish.",
+      "ref": "J3563",
+      "film": "WW2:008",
+      "stage": "edit",
+      "after": "J3542",
+      "eta_min": 120,
+      "status": "blocked",
+      "by": "macbook-2",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T16:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook-2",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook-2",
+          "what": "condition recorded; next verification 2026-12-01T12:00:00Z"
+        }
+      ],
+      "remaining_action": "Wait for 008 post-reset VO and archive harvest, then cut [S20b]+[S28], assemble 1080x1920 vertical Short, and put on Ben watch",
+      "due": "2026-12-10T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Build the second Operation Mincemeat Short about the single black eyelash placed inside the letter fold to prove Germany read it",
+      "hold": {
+        "type": "input",
+        "condition": "WW2:008 post-reset VO (after 2026-11-30 10:50Z) and archive harvest completed, and J3542 Short pipeline finished",
+        "check_at": "2026-12-01T12:00:00Z"
+      }
+    },
+    {
+      "id": "J3581",
+      "title": "WW2 009 Short 1: build 'SS Ohio: Why a 27ft Torpedo Hole Didn't Sink Her' for Ben watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Build Field Order History Short 009-S1 (plan: ww2-channel `00_Brand/SHORTS_PLAN_2026-12.md`, from J3563; 009 airs Sat 12 Dec).\n\n- **Short title (48 chars, Rule 2):** SS Ohio: Why a 27ft Torpedo Hole Didn't Sink Her\n- **Links to long film:** WW2:009 (*Operation Pedestal: One Broken Tanker Saved Malta*, airs Sat 12 Dec 17:00 London)\n- **Target air slot:** Fri 11 Dec 2026 12:30 London (day -1; Ben watch due Wed 9 Dec 18:00 UTC; link Related video once 009 is public)\n- **Narration excerpt (locked from post-reset 009 VO, £0 new voice):** Contiguous beats `[S26]-[S27]` (129 words, ~53 s at ~145 wpm; exact timecodes locked from post-reset `words.srt`): \"The explosion ripped open Ohio's midships pump room, punching a hole roughly twenty-four feet by twenty-seven feet...\" through \"...worked back up to sixteen knots and pushed into the dark behind the convoy.\"\n- **First 2 s hook:** Full-bleed vertical crop of `IWM A 11194` (SS Ohio underway) / `IWM GM 1469` (deck damage on SS Ohio) with caption hook \"A 27-FOOT TORPEDO HOLE — STILL AT 16 KNOTS\".\n- **Pictures (1080x1920 full-bleed vertical crop, verified PD only from `009/03_Picture/ARCHIVE_PROVENANCE.md`):** `IWM A 11194`, `IWM GM 1469`, `IWM A 11249` (Capt. Dudley Mason), plus `[S26]/[S27]` welded longitudinal bulkhead cross-section diagram reframed 9:16 + 2 s end card.\n- **Pipeline & guards:** Reuse J3542's pipeline after 009 post-reset VO lands. Burned-in captions, under 60 s total, £0 new voice, £0 paid stock, Ben watch before any publish.",
+      "ref": "J3563",
+      "film": "WW2:009",
+      "stage": "edit",
+      "after": "J3542",
+      "eta_min": 120,
+      "status": "blocked",
+      "by": "macbook-2",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T16:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook-2",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook-2",
+          "what": "condition recorded; next verification 2026-12-02T12:00:00Z"
+        }
+      ],
+      "remaining_action": "Wait for 009 post-reset VO and archive harvest, then cut [S26]-[S27], assemble 1080x1920 vertical Short, and put on Ben watch",
+      "due": "2026-12-09T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Build the first Operation Pedestal Short about how SS Ohio's all-welded bulkheads kept her steaming after a 27-foot torpedo hole",
+      "hold": {
+        "type": "input",
+        "condition": "WW2:009 post-reset VO (after 2026-11-30 10:50Z) and archive harvest completed, and J3542 Short pipeline finished",
+        "check_at": "2026-12-02T12:00:00Z"
+      }
+    },
+    {
+      "id": "J3582",
+      "title": "WW2 009 Short 2: build 'Operation Pedestal: The 4-Ship Splint Tow to Malta' for Ben watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Build Field Order History Short 009-S2 (plan: ww2-channel `00_Brand/SHORTS_PLAN_2026-12.md`, from J3563; 009 airs Sat 12 Dec).\n\n- **Short title (50 chars, Rule 2):** Operation Pedestal: The 4-Ship Splint Tow to Malta\n- **Links to long film:** WW2:009 (*Operation Pedestal: One Broken Tanker Saved Malta*, airs Sat 12 Dec 17:00 London)\n- **Target air slot:** Sun 13 Dec 2026 12:30 London (day +1; Ben watch due Fri 11 Dec 18:00 UTC; Related video = WW2:009)\n- **Narration excerpt (locked from post-reset 009 VO, £0 new voice):** Contiguous final sentence of `[S38]` + `[S39]` + `[S40]` (123 words, ~51 s at ~145 wpm; exact timecodes locked from post-reset `words.srt`): \"If one ship could not pull her straight, three warships would become her hull and steering gear. HMS Penn edged in...\" through \"...whenever the wallowing tanker began to sheer off course.\"\n- **First 2 s hook:** Full-bleed vertical crop of `IWM GM 1480` (SS Ohio lashed between destroyers approaching Malta) with caption hook \"TWO DESTROYERS LASHED LIKE SPLINTS\".\n- **Pictures (1080x1920 full-bleed vertical crop, verified PD only):** `IWM GM 1480`, `IWM A 11260` (HMS Ledbury alongside SS Ohio), `IWM A 11261` (SS Ohio between destroyers entering Grand Harbour), plus `[S38]` 4-ship sandwich tow formation diagram reframed 9:16 + 2 s end card.\n- **Pipeline & guards:** Reuse J3542's pipeline after 009 post-reset VO lands. Burned-in captions, under 60 s total, £0 new voice, £0 paid stock, Ben watch before any publish.",
+      "ref": "J3563",
+      "film": "WW2:009",
+      "stage": "edit",
+      "after": "J3542",
+      "eta_min": 120,
+      "status": "blocked",
+      "by": "macbook-2",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T16:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook-2",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook-2",
+          "what": "condition recorded; next verification 2026-12-02T12:00:00Z"
+        }
+      ],
+      "remaining_action": "Wait for 009 post-reset VO and archive harvest, then cut [S38b]-[S40], assemble 1080x1920 vertical Short, and put on Ben watch",
+      "due": "2026-12-11T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Build the second Operation Pedestal Short about lashing two destroyers alongside broken-backed SS Ohio to push her into Malta",
+      "hold": {
+        "type": "input",
+        "condition": "WW2:009 post-reset VO (after 2026-11-30 10:50Z) and archive harvest completed, and J3542 Short pipeline finished",
+        "check_at": "2026-12-02T12:00:00Z"
+      }
+    },
+    {
+      "id": "J3583",
+      "title": "WW2 010 Short 1: build 'Sherman DD: How Britain Made a 30-Ton Tank Swim' for Ben watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Build Field Order History Short 010-S1 (plan: ww2-channel `00_Brand/SHORTS_PLAN_2026-12.md`, from J3563; 010 airs Tue 15 Dec; waits on VO job J3517).\n\n- **Short title (47 chars, Rule 2):** Sherman DD: How Britain Made a 30-Ton Tank Swim\n- **Links to long film:** WW2:010 (*Why Britain Built D-Day's Strangest Tanks*, airs Tue 15 Dec 17:00 London)\n- **Target air slot:** Mon 14 Dec 2026 12:30 London (day -1; Ben watch due Sat 12 Dec 18:00 UTC; link Related video once 010 is public)\n- **Narration excerpt (locked `NARRATION_v02.txt`, voiced by J3517, £0 new voice):** Contiguous Ch 2 Sherman DD paragraphs (`111 words`, ~46 s at ~145 wpm; exact timecodes locked from J3517 `words.srt`): \"The answer came from Nicholas Straussler, a Hungarian-born engineer in Britain...\" through \"...trained on Valentines at Gosport before adapting the American Sherman.\"\n- **First 2 s hook:** Full-bleed vertical crop of `IWM MH 3661` (Sherman DD with canvas flotation screen raised) with caption hook \"A 30-TON TANK IN A CANVAS TUB\".\n- **Pictures (1080x1920 full-bleed vertical crop, verified PD only from `010/03_Picture/ARCHIVE_PROVENANCE.md`):** `IWM MH 3661` (screen raised), `IWM MH 3662` (screen lowered), `IWM H 35169` (Valentine DD at Gosport), `IWM MH 2011` (Sherman DD ashore on Sword Beach), plus Ch 2 Duplex Drive propeller/canvas diagram reframed 9:16 + 2 s end card.\n- **Pipeline & guards:** Reuse J3542's vertical Short pipeline after J3517 VO and 010 picture harvest complete. Burned-in captions, under 60 s total, £0 new voice, £0 paid stock, Ben watch before any publish.",
+      "ref": "J3563",
+      "film": "WW2:010",
+      "stage": "edit",
+      "after": "J3517",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T16:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "After J3517 VO and 010 archive harvest, cut Ch 2 Sherman DD excerpt, assemble 1080x1920 vertical Short, and put on Ben watch",
+      "due": "2026-12-12T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Build the first Hobart's Funnies Short about the waterproof canvas skirt and stern propellers that let a 30-ton Sherman tank swim"
+    },
+    {
+      "id": "J3584",
+      "title": "WW2 010 Short 2: build 'Sherman Crab: The 43-Chain Mine-Clearing Tank' for Ben watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Build Field Order History Short 010-S2 (plan: ww2-channel `00_Brand/SHORTS_PLAN_2026-12.md`, from J3563; 010 airs Tue 15 Dec; waits on VO job J3517).\n\n- **Short title (45 chars, Rule 2):** Sherman Crab: The 43-Chain Mine-Clearing Tank\n- **Links to long film:** WW2:010 (*Why Britain Built D-Day's Strangest Tanks*, airs Tue 15 Dec 17:00 London)\n- **Target air slot:** Tue 15 Dec 2026 12:30 London (launch morning, 4.5 h before long; Ben watch due Sun 13 Dec 18:00 UTC; link Related video once 010 is public)\n- **Narration excerpt (locked `NARRATION_v02.txt`, voiced by J3517, £0 new voice):** Contiguous Ch 3 Sherman Crab paragraph (`103 words`, ~43 s at ~145 wpm; exact timecodes locked from J3517 `words.srt`): \"Hobart's engineers rebuilt the idea on a Sherman and named it the Crab...\" through \"...yet the Crab kept its turret gun ready to shoot back while it swept.\"\n- **First 2 s hook:** Full-bleed vertical crop of `IWM H 38079` (Sherman Crab Mk II spinning chains in dust cloud) with caption hook \"43 STEEL CHAINS AT 140 RPM\".\n- **Pictures (1080x1920 full-bleed vertical crop, verified PD only):** `IWM H 38079` (Sherman Crab trials), `IWM B 5192` / `IWM B 7540` / `IWM BU 3514` (Sherman Crabs in action), plus Ch 3 power take-off rotor diagram reframed 9:16 + 2 s end card.\n- **Pipeline & guards:** Reuse J3542's vertical Short pipeline after J3517 VO and 010 picture harvest complete. Burned-in captions, under 60 s total, £0 new voice, £0 paid stock, Ben watch before any publish.",
+      "ref": "J3563",
+      "film": "WW2:010",
+      "stage": "edit",
+      "after": "J3517",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T16:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "After J3517 VO and 010 archive harvest, cut Ch 3 Sherman Crab excerpt, assemble 1080x1920 vertical Short, and put on Ben watch",
+      "due": "2026-12-13T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Build the second Hobart's Funnies Short about the Sherman Crab tank spinning 43 steel chains to detonate mines on D-Day"
+    },
+    {
+      "id": "J3585",
+      "title": "WW2 010 Short 3: build 'Churchill AVRE: The 40-Pound Flying Dustbin Gun' for Ben watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Build Field Order History Short 010-S3 (plan: ww2-channel `00_Brand/SHORTS_PLAN_2026-12.md`, from J3563; 010 airs Tue 15 Dec; waits on VO job J3517).\n\n- **Short title (47 chars, Rule 2):** Churchill AVRE: The 40-Pound Flying Dustbin Gun\n- **Links to long film:** WW2:010 (*Why Britain Built D-Day's Strangest Tanks*, airs Tue 15 Dec 17:00 London)\n- **Target air slot:** Thu 17 Dec 2026 12:30 London (day +2; Ben watch due Tue 15 Dec 18:00 UTC; Related video = WW2:010)\n- **Narration excerpt (locked `NARRATION_v02.txt`, voiced by J3517, £0 new voice):** Contiguous Ch 3 Petard spigot mortar paragraph (`116 words`, ~48 s at ~145 wpm; exact timecodes locked from J3517 `words.srt`): \"Because standard tank shells bounced off reinforced concrete, the AVRE swapped its main gun...\" through \"...collapsed firing slits, and stunned the defenders inside.\"\n- **First 2 s hook:** Full-bleed vertical crop of `IWM H 38001` (close-up of 290mm Petard spigot mortar & 40-lb bomb) with caption hook \"THE 290MM 'FLYING DUSTBIN' MORTAR\".\n- **Pictures (1080x1920 full-bleed vertical crop, verified PD only):** `IWM H 38001` (290mm Petard mortar & 40-lb bomb), `IWM B 5085` (Churchill AVREs on Sword Beach), `IWM H 38090` (Churchill AVRE towing beach obstacle), plus Ch 3 Petard 80-yard trajectory schematic reframed 9:16 + 2 s end card.\n- **Pipeline & guards:** Reuse J3542's vertical Short pipeline after J3517 VO and 010 picture harvest complete. Burned-in captions, under 60 s total, £0 new voice, £0 paid stock, Ben watch before any publish.",
+      "ref": "J3563",
+      "film": "WW2:010",
+      "stage": "edit",
+      "after": "J3517",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T16:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T16:55Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "After J3517 VO and 010 archive harvest, cut Ch 3 Churchill AVRE Petard excerpt, assemble 1080x1920 vertical Short, and put on Ben watch",
+      "due": "2026-12-15T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Build the third Hobart's Funnies Short about the Churchill AVRE tank's 290mm spigot mortar firing 40-pound demolition bombs"
     }
   ],
   "focus": [
