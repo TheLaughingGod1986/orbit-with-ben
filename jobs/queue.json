@@ -330060,16 +330060,21 @@
           "at": "2026-11-24T23:26Z",
           "by": "gemini",
           "what": "step 5 of 6 done: Resumed J3637 after prior run rendered v02_master/ww2_004_torpedoes_v02.mp4 (SHA-256 991dfba22dc7663006fea95f971a8f8bfda5fa8febf81512add90d6a2e552dcb) and committed locally at 7f58cf0; auditing hashes, graphics, and removing stray .pyc before PR push."
+        },
+        {
+          "at": "2026-11-24T23:28Z",
+          "by": "gemini",
+          "what": "step 6 of 6 done: Removed stray .pyc, verified all 5 SHA-256 hashes, zero boilerplate/non-ASCII, archive 51.34%, J3447 65/65, and opened ww2-channel PR #115 (commit 5211f57)."
         }
       ],
-      "remaining_action": "Clean accidental .pyc from commit, verify all v02 technical checks and hashes, push ww2-channel PR, and hand off to J3638",
+      "remaining_action": "Completing J3637 and handing off v02 master and PR #115 to J3638",
       "due": "2026-11-26T12:00:00Z",
       "kind": "assembly",
       "plain": "Fix the torpedo film graphics, spoiler, missing chapter card and repeats, then render v02",
       "progress": {
-        "step": 5,
+        "step": 6,
         "of": 6,
-        "at": "2026-11-24T23:26Z",
+        "at": "2026-11-24T23:28Z",
         "by": "gemini",
         "plan": [
           "Inspect QA findings and scripts",
@@ -330079,7 +330084,7 @@
           "Render v02 master on NAS",
           "Run technical QA and open WW2 PR"
         ],
-        "note": "Resumed J3637 after prior run rendered v02_master/ww2_004_torpedoes_v02.mp4 (SHA-256 991dfba22dc7663006fea95f971a8f8bfda"
+        "note": "Removed stray .pyc, verified all 5 SHA-256 hashes, zero boilerplate/non-ASCII, archive 51.34%, J3447 65/65, and opened w"
       },
       "taskKeys": [
         "WW2:004"
