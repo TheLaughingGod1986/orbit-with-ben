@@ -321478,9 +321478,14 @@
           "at": "2026-11-24T13:07Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T13:07Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Build and deploy the board after PR #1257 merges, then check the banner links",
+      "remaining_action": "Confirm the board fix is merged and ready to publish",
       "due": "2026-11-24T17:00:00Z",
       "kind": "assembly",
       "mini_only": true,
@@ -321490,8 +321495,11 @@
         "of": 3,
         "at": "2026-11-24T13:07Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Confirm merged fix and publishing instructions",
+          "Build and deploy board",
+          "Verify live alerts and record result"
+        ]
       }
     },
     {
