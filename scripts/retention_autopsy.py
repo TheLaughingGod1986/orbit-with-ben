@@ -275,30 +275,67 @@ def channel_baseline(slug: str, window: str, exclude_vid: str = "", before_iso: 
     }
 
 
+def _probe_duration_s(video_path: pathlib.Path) -> float:
+    """Return video duration in seconds via ffprobe, or 0.0 on failure."""
+    try:
+        out = subprocess.check_output(
+            [
+                "ffprobe", "-v", "error", "-show_entries", "format=duration",
+                "-of", "default=nw=1:nk=1", str(video_path),
+            ],
+            text=True,
+        ).strip()
+        return max(0.0, float(out))
+    except (OSError, ValueError, subprocess.SubprocessError):
+        return 0.0
+
+
 def video_context(slug: str, vid: str, window: str) -> dict:
     """Gather all metrics, retention curve, traffic sources, and metadata for one long video."""
     snaps = _all_snapshots(slug)
-    if not snaps:
-        raise ValueError(f"No snapshots found for channel {slug}")
-    taken, latest_doc = snaps[-1]
-    video = next((v for v in latest_doc.get("videos") or [] if v.get("id") == vid), None)
+    launch_rec = lc.load_record(slug, vid) or {}
+    hours = WINDOW_HOURS[window]
+    readings = launch_rec.get("readings") or []
+    launch_at_window = next((r for r in readings if r.get("hours") == hours), None)
+
+    latest_doc: dict = {}
+    taken: dt.datetime | None = None
+    video = None
+    if snaps:
+        taken, latest_doc = snaps[-1]
+        video = next((v for v in latest_doc.get("videos") or [] if v.get("id") == vid), None)
+
     if not video:
-        raise ValueError(f"Video {vid} not found in latest {slug} snapshot")
+        if not launch_rec:
+            if not snaps:
+                raise ValueError(f"No snapshots found for channel {slug}")
+            raise ValueError(f"Video {vid} not found in latest {slug} snapshot")
+        latest_reading = launch_at_window or (readings[-1] if readings else {})
+        read_at = latest_reading.get("readAt") or launch_rec.get("wentLive")
+        taken = studio.parse(read_at) if read_at else dt.datetime.now(dt.timezone.utc)
+        video = {
+            "id": vid,
+            "title": launch_rec.get("title") or vid,
+            "publishedAt": launch_rec.get("wentLive") or "",
+            "seconds": launch_rec.get("seconds") or 0,
+            "views": latest_reading.get("views"),
+        }
+        latest_doc = {"date": f"launch:{taken.date().isoformat()}", "analytics": {}}
+        if launch_at_window is None and latest_reading:
+            launch_at_window = latest_reading
+
     an = latest_doc.get("analytics") or {}
     lt = (an.get("lifetime") or {}).get(vid) or {}
     sources = (an.get("sources") or {}).get(vid) or {}
     curve = (an.get("retention") or {}).get(vid) or []
     studio_ctr = ((lc._json(channels.analytics_dir(slug) / "studio_ctr.json") or {}).get("videos") or {}).get(vid) or {}
-    launch_rec = lc.load_record(slug, vid) or {}
-    hours = WINDOW_HOURS[window]
-    launch_at_window = next((r for r in launch_rec.get("readings") or [] if r.get("hours") == hours), None)
 
     pub = studio.parse(video["publishedAt"]) if video.get("publishedAt") else taken
     age_h = round((taken - pub).total_seconds() / 3600.0, 1)
     duration_s = float(video.get("seconds") or 0)
 
     # Prefer exact-window launch reading for 48h where impressions/CTR are cleaner, else latest Studio/snapshot
-    win_views = _views_at_window(snaps, vid, pub, window)
+    win_views = _views_at_window(snaps, vid, pub, window) if snaps else None
     views = (
         launch_at_window.get("views")
         if (window == "48h" and launch_at_window and launch_at_window.get("views") is not None)
@@ -320,10 +357,16 @@ def video_context(slug: str, vid: str, window: str) -> dict:
     if avg_pct is None and launch_at_window:
         avg_pct = launch_at_window.get("avgPct")
     avg_sec = studio_ctr.get("avgViewSeconds") or lt.get("avgViewSeconds")
+    if avg_sec is None and launch_at_window:
+        avg_sec = launch_at_window.get("avgViewSeconds")
+    if avg_sec is None and avg_pct is not None and duration_s > 0:
+        avg_sec = round(duration_s * float(avg_pct) / 100.0, 1)
 
     r30 = _retention_at(curve, duration_s, 30.0)
     end_ret = _retention_at(curve, duration_s, duration_s)
     subs = lt.get("subs")
+    if subs is None and launch_at_window:
+        subs = launch_at_window.get("subs")
     lt_views = lt.get("views") or video.get("views") or 0
     subs_per_1k = round(float(subs) * 1000.0 / float(lt_views), 2) if (subs is not None and lt_views > 0) else None
 
@@ -688,8 +731,15 @@ def main(argv=None) -> int:
         print(inspect_text(slug, args.id, args.window))
         return 0
     ctx = video_context(slug, args.id, args.window)
-    drops = steepest_drops(ctx["retention"], ctx["duration_s"], avg_view_seconds=ctx["avg_view_seconds"])
-    paths = extract_clips(pathlib.Path(args.video), drops, pathlib.Path(args.out_dir), prefix=f"{slug}_{args.id}_drop")
+    video_path = pathlib.Path(args.video)
+    duration_s = ctx["duration_s"]
+    if duration_s <= 0 and video_path.is_file():
+        duration_s = _probe_duration_s(video_path)
+    avg_sec = ctx["avg_view_seconds"]
+    if avg_sec is None and ctx["metrics"].get("avg_pct") is not None and duration_s > 0:
+        avg_sec = round(duration_s * float(ctx["metrics"]["avg_pct"]) / 100.0, 1)
+    drops = steepest_drops(ctx["retention"], duration_s, avg_view_seconds=avg_sec)
+    paths = extract_clips(video_path, drops, pathlib.Path(args.out_dir), prefix=f"{slug}_{args.id}_drop")
     for p in paths:
         print(p)
     return 0

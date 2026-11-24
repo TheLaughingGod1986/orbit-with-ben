@@ -170,6 +170,34 @@ class AutopsyQueueWiringTests(unittest.TestCase):
         self.assertEqual(new_7d["repo"], "ww2")
         self.assertGreaterEqual(len(added), 2)
 
+    def test_launch_record_fallback_when_no_snapshots_exist(self):
+        launch_dir = self.root / "05_Analytics" / "ww2" / "launch"
+        launch_dir.mkdir(parents=True, exist_ok=True)
+        (launch_dir / "ek9F61FVYqY.json").write_text(json.dumps({
+            "id": "ek9F61FVYqY",
+            "channel": "ww2",
+            "format": "long",
+            "title": "The Secret Floating Harbours of D-Day",
+            "wentLive": "2026-11-22T17:00Z",
+            "seconds": 1432,
+            "readings": [{
+                "hours": 48,
+                "readAt": "2026-11-24T17:22Z",
+                "by": "gemini",
+                "views": 32,
+                "avgPct": 15.4,
+                "impressions": 1699,
+                "ctr": 0.8,
+                "likes": 1,
+            }],
+        }))
+        txt = ra.inspect_text("ww2", "ek9F61FVYqY", "48h")
+        self.assertIn("ek9F61FVYqY", txt)
+        self.assertIn("1699", txt)
+        self.assertIn("0.8%", txt)
+        self.assertIn("Primary bottleneck: Step 2", txt)
+        self.assertIn("PROXY", txt)
+
 
 if __name__ == "__main__":
     unittest.main()
