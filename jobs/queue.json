@@ -319498,9 +319498,14 @@
           "at": "2026-11-24T11:38Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-24T11:41Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Exact v06 hash matches; old Short private at 14 Dec 11:30Z and long private at 6 Dec 18:00Z. Private-unscheduled package dry run succeeded; slot gate rechecking with the old id excluded as self."
         }
       ],
-      "remaining_action": "Verifying the approved Betelgeuse Short before replacing its private copy",
+      "remaining_action": "Checking the replacement against the December slot and preparing the private upload",
       "due": "2026-11-25T12:00:00Z",
       "kind": "studio",
       "plain": "Upload the approved brighter Betelgeuse Short while keeping its date",
@@ -319523,13 +319528,14 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-24T11:38Z",
+        "at": "2026-11-24T11:41Z",
         "by": "codex",
         "plan": [
           "Verify approved cut and current state",
           "Upload and transfer the existing slot",
           "Verify and record the replacement"
-        ]
+        ],
+        "note": "Exact v06 hash matches; old Short private at 14 Dec 11:30Z and long private at 6 Dec 18:00Z. Private-unscheduled package"
       },
       "taskKeys": [
         "OWB:029"
