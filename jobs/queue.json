@@ -318737,19 +318737,28 @@
           "at": "2026-11-24T10:44Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T10:47Z",
+          "by": "macbook-2",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Score HOS:136 Trinity Test against search-led & Rule-E rubric and queue script draft due Sat 28 Nov",
+      "remaining_action": "reading full TOPIC.md, evidence JSONs, non-duplication across repos, and packaging rules",
       "due": "2026-11-26T18:00:00Z",
       "kind": "review",
       "plain": "Review HOS 136 (Trinity Test) topic brief and search evidence, then queue its script draft",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T10:44Z",
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-24T10:47Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Verify PR #743 files & evidence",
+          "Audit Rule-E & Rule-42 gates + guardrails",
+          "Write review sheets & update status",
+          "Open PR, queue/hand off & post reports"
+        ]
       }
     },
     {
