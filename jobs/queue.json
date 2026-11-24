@@ -316311,9 +316311,14 @@
           "at": "2026-11-24T08:49Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T08:50Z",
+          "by": "codex",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Build the v06 package, upload it scheduled for 17:00, set captions, thumbnails test, end screen, playlist; unschedule old v05",
+      "remaining_action": "Verify the approved U-boat film and prepare its upload package",
       "due": "2026-11-24T15:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -316328,12 +316333,19 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-24T08:49Z",
+        "of": 4,
+        "at": "2026-11-24T08:50Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify approved master and package",
+          "Upload and configure new video",
+          "Retire old schedule and verify",
+          "Commit records and report"
+        ]
+      },
+      "taskKeys": [
+        "WW2:002"
+      ]
     }
   ],
   "focus": [
