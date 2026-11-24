@@ -321030,13 +321030,13 @@
       "stage": "sources",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-24T13:08Z",
-      "eta": "2026-11-24T15:08Z",
+      "eta": "",
       "created_by": "macbook-2",
       "created_at": "2026-11-24T12:03Z",
-      "result": "",
+      "result": "WW2:013 independent Gemini claims check complete (ww2-channel#79, branch macbook/J3525, commit 46086ff; open for Chief codex merge). Audited all 30 claims (C01-C30) and resolved F1-F5 in 01_Script/CLAIMS_CHECK_v01.md; updated status.json sources stage -> claude. Verdict: PASS WITH FIXES REQUIRED BEFORE SCRIPT LOCK (25 PASS, 5 FLAG: C12 16-inch Fort Knox discs transferred to 37-gauge steel wire recorders for field playback; C23 Viersen is west of the Rhine so 'around' not 'opposite'; C04 Lt. Col. Billy Harris in late 1943; C13 bound 15-mile range to still night & separate 500W amps / 500-lb speakers in VISUAL; C20 align Cold Open gap wording with Ch. 4). F1/F3/F4/F5 PASS (MacDonald Ch. XIV verbatim match for 31 casualties; 406th Capt. Wells & S/Sgt. Peddle confirmed at Bouzonville). NARRATION_v01.txt verified at 17,233 spoken chars (<=21,000, 2,644 words, SHA-256 9908baa58d620577be979b08db6a5e67351b83e9a7485c9317026c33cf28a775, 42/42 paras match SCRIPT.md). Archive spot-check: 28/30 clean PD + 2 HU-prefix harvest checks (#9/#10). £0 spend; zero ElevenLabs credits spent.",
       "history": [
         {
           "at": "2026-11-24T12:03Z",
@@ -321067,6 +321067,11 @@
           "at": "2026-11-24T13:15Z",
           "by": "macbook-2",
           "what": "step 4 of 5 done"
+        },
+        {
+          "at": "2026-11-24T13:16Z",
+          "by": "macbook-2",
+          "what": "done: WW2:013 independent Gemini claims check complete (ww2-channel#79, branch macbook/J3525, commit 46086ff; open for Chief codex merge). Audited all 30 claims (C01-C30) and resolved F1-F5 in 01_Script/CLAIMS_CHECK_v01.md; updated status.json sources stage -> claude. Verdict: PASS WITH FIXES REQUIRED BEFORE SCRIPT LOCK (25 PASS, 5 FLAG: C12 16-inch Fort Knox discs transferred to 37-gauge steel wire recorders for field playback; C23 Viersen is west of the Rhine so 'around' not 'opposite'; C04 Lt. Col. Billy Harris in late 1943; C13 bound 15-mile range to still night & separate 500W amps / 500-lb speakers in VISUAL; C20 align Cold Open gap wording with Ch. 4). F1/F3/F4/F5 PASS (MacDonald Ch. XIV verbatim match for 31 casualties; 406th Capt. Wells & S/Sgt. Peddle confirmed at Bouzonville). NARRATION_v01.txt verified at 17,233 spoken chars (<=21,000, 2,644 words, SHA-256 9908baa58d620577be979b08db6a5e67351b83e9a7485c9317026c33cf28a775, 42/42 paras match SCRIPT.md). Archive spot-check: 28/30 clean PD + 2 HU-prefix harvest checks (#9/#10). £0 spend; zero ElevenLabs credits spent."
         }
       ],
       "remaining_action": "Wrote CLAIMS_CHECK_v01.md and updated status.json; validating JSON and opening PR",
