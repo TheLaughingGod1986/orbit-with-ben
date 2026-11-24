@@ -319118,10 +319118,10 @@
       "stage": "upload",
       "after": "J3505",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-24T11:01Z",
+      "eta": "2026-11-24T13:01Z",
       "created_by": "codex",
       "created_at": "2026-11-24T10:52Z",
       "result": "",
@@ -319140,6 +319140,11 @@
           "at": "2026-11-24T11:00Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred codex): Cursor out of usage; next in its chain: codex"
+        },
+        {
+          "at": "2026-11-24T11:01Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Upload the Titan Short you approved into the next free slot",
@@ -319168,7 +319173,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T11:01Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3509",

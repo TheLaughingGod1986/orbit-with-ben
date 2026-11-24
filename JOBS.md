@@ -100,7 +100,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3504 | mini | open | – | – | 127 script · script · HOS 127 Wright Brothers First Flight (film 4, Thu 31 Dec): package first, then the 7-9 minute script draft |  |
 | J3506 | any | open | – | – | assembly · Board and relay: an OK Ben gives on the board must become an upload job (10 sat up to 12 days) |  |
 | J3507 | mini | open | – | – | 136 script · script · HOS 136 Trinity Test Explained (film 2, Thu 17 Dec): package first, then the 7-9 minute script draft | J3502 |
-| J3508 | mini | open (after J3505) | – | – | 032 upload · studio · Upload approved Titan Test A Short v02 for 2 Dec 11:30 | J3505 |
+| J3508 | mini | claimed | codex | 2026-11-24T13:01Z | 032 upload · studio · Upload approved Titan Test A Short v02 for 2 Dec 11:30 | J3505 |
 | J3509 | mini | open (after J3505) | – | – | 029 upload · studio · 029 Short heiGCnGKTkE: swap to approved v06; retain 14 Dec 11:30 | J3505 |
 | J3510 | mini | open (after J3505) | – | – | 029 upload · studio · 029 Short k2kEaA7ICjc: swap to approved v06; retain 11 Dec 11:30 | J3505 |
 | J3511 | mini | open (after J3505) | – | – | 010 upload · studio · Upload approved HOS 010 bird Short C v01 privately; no schedule yet | J3505 |
