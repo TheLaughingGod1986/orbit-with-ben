@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J2529, J3430, J3431, J3432, J3434, J3501, J3519, J3500, J3205, J3530, J3542.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J2529, J3430, J3431, J3432, J3434, J3501, J3519, J3500, J3205, J3530, J3542, J3562.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -102,6 +102,9 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3558 | mini | open | – | – | chief · Chief: resolve 003 edit orphan-doing |  |
 | J3559 | mini | open (after J3557) | – | – | WW2:017 vo · vo · WW2 film 017: narration in Ben's voice (Pearl Harbor Salvage, post-reset) |  |
 | J3560 | mini | blocked | macbook | – | review · Verify condition for J3430 |  |
+| J3561 | mini | blocked | claude | – | studio · WW2 pilot 2: read at 1,000 impressions or 48 hours, and change the title that day if click-through is under 2% |  |
+| J3562 | any | open | – | – | review · Field Order History: check every upcoming title against the new packaging rule (film 003 first) |  |
+| J3563 | any | open | – | – | review · Field Order History: plan two or three Shorts per film (002-010) and queue the first builds |  |
 
 Recently finished:
 

@@ -1,5 +1,5 @@
 {
-  "next_id": 3561,
+  "next_id": 3564,
   "jobs": [
     {
       "id": "J0001",
@@ -290016,7 +290016,7 @@
         "by": ""
       },
       "open_claim": true,
-      "urgent": 11,
+      "urgent": 10,
       "escalated_at": "2026-11-22T15:18Z",
       "progress": {
         "step": 2,
@@ -319757,7 +319757,7 @@
       "remaining_action": "Commit macbook/J3500, open HOS PR, switch back to main, park Mini upload, and post thread report",
       "due": "2026-11-26T12:00:00Z",
       "kind": "studio",
-      "urgent": 10,
+      "urgent": 9,
       "approved_from": {
         "what": "Watch HOS 008 Franklin master v05 (all 8 fixes in: 0:20 & 33 bottom-text cards on dark umber panels, 0:30 flash gone, 0:51 night street & 1:49 salon spark clean with no flying hair, 2:18 upright jar workbench, 3:13 points desk take 3, 3:31 3D packet ship + letter icon, 7:59 stationary rods take 2)",
         "file": "HOS UAT/008_Lightning-Franklin/hos_008_master_v05_PHONE.mp4",
@@ -319850,7 +319850,7 @@
       "remaining_action": "Block J3501 on Ben HOS:009 watch OK and post [MacBook] report on studio thread",
       "due": "2026-12-03T12:00:00Z",
       "kind": "studio",
-      "urgent": 8,
+      "urgent": 7,
       "mini_only": true,
       "delivers": [
         "HOS:009",
@@ -321171,7 +321171,7 @@
       "due": "2026-11-25T09:00:00Z",
       "kind": "assembly",
       "mini_only": true,
-      "urgent": 9,
+      "urgent": 8,
       "progress": {
         "step": 2,
         "of": 3,
@@ -322106,7 +322106,7 @@
       "for": "claudecode",
       "kind": "assembly",
       "mini_only": true,
-      "urgent": 12
+      "urgent": 11
     },
     {
       "id": "J3531",
@@ -322729,6 +322729,11 @@
           "at": "2026-11-24T13:32Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T16:35Z",
+          "by": "claude",
+          "what": "Ben OK'd this title test (24 Nov, in chat: \"I like your idea for Fix 1 ... Please set that and have it so\")."
         }
       ],
       "remaining_action": "Read the thumbnail test, then start a title test with a Mulberry title",
@@ -322845,13 +322850,18 @@
           "at": "2026-11-24T15:23Z",
           "by": "codex",
           "what": "blocked: publish via Claude Code: /Volumes/MiniWork/scratch/J3542-ww2 codex/J3542 (0a0848c). Auto-review refused public push over possible local/workflow-path exposure; Claude Code privacy review required by standing handoff. Build also waits for NAS pilot inputs: both directory reads hung for several minutes; local subsets miss required component originals. Edit plan only, no spend or finished cut."
+        },
+        {
+          "at": "2026-11-24T16:35Z",
+          "by": "claude",
+          "what": "Ben OK'd Shorts for every film (24 Nov, Fix 2); rule 1 no longer says 'No Shorts until film 20' (ww2 PR #97). This test Short sets the pipeline the per-film Shorts reuse."
         }
       ],
       "remaining_action": "Read the pilot media from the NAS, build the portrait cut, and prepare Ben watch",
       "due": "2026-11-25T20:00:00Z",
       "kind": "assembly",
       "mini_only": true,
-      "urgent": 13,
+      "urgent": 12,
       "progress": {
         "step": 1,
         "of": 3,
@@ -323956,6 +323966,110 @@
           "Update J3430, finish J3560 and report"
         ]
       }
+    },
+    {
+      "id": "J3561",
+      "title": "WW2 pilot 2: read at 1,000 impressions or 48 hours, and change the title that day if click-through is under 2%",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why (Ben, 24 Nov, in chat, on Claude's click-through summary: \"I like your idea for Fix 1 and for Fix for the rest of the films. Please set that and have it so.\" Set in ww2-channel `studio/RULES.md` (PR #97): rule 2 the searched name first, then one hook, no vague words, never the top video's title words; rule 8 strangers' click-through under 2% at ~1,000 impressions or the 48-hour read means a title or thumbnail change that day; rule 1 two or three Shorts per long film, linked to it.)**\n\nPilot 2, *How the U-Boats Lost Their Safest Hunting Ground* (`qfc6EBStOfo`), airs **Tue 24 Nov 17:00 London**. Rule 8 (as of PR #97): read it at about 1,000 impressions or 48 hours, whichever comes first, and act on click-through that day.\n\n**Do (Mini, Field Order History Studio and the YouTube Data API only; never open or play the public video, AGENTS.md):**\n1. **From Thu 26 Nov 17:05 UTC, or as soon as Studio shows 1,000 or more impressions if that comes first, record:** impressions, click-through by traffic source (suggested, browse, search), views, average view duration and percentage viewed, still watching at 30 seconds if Studio shows it, the suggesting videos, and the thumbnail Test & Compare state. Use strangers only: our own checks are excluded.\n2. **If strangers' click-through is under 2%:** start a **title Test & Compare** that day, keeping any running thumbnail test (if Studio allows only one test, start the title test the moment the thumbnail test ends, and say when).\n   - A = the current title.\n   - B = **Battle of the Atlantic: The Month U-Boats Lost** (46 characters).\n   - C = **How the U-Boats Lost the Battle of the Atlantic** (47 characters).\n   - First check both against the film's script and sources, and swap a word if either claims more than the film shows.\n   - \"battle of the atlantic\" is the searched name; the current title does not carry it.\n3. **If it is 2% or more:** no change.\n4. Write the numbers into the film's `status.json` and the result against `studio/LEARNINGS.md` lines 1-3 and 9 (held, failed, or not yet testable). This read triggers the rule 12 rules review as usual.\n\n**Guards.** Listing change only: no re-upload, no schedule or visibility change, no Studio editor cut. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "blocked",
+      "by": "claude",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T16:35Z",
+      "result": "Waiting for: Read pilot 2 (qfc6EBStOfo) at 1,000 impressions or its 48-hour point, whichever comes first; the 48-hour point is 2026-11-26T17:05:00Z.",
+      "history": [
+        {
+          "at": "2026-11-24T16:35Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-24T16:35Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: Read pilot 2 (qfc6EBStOfo) at 1,000 impressions or its 48-hour point, whichever comes first; the 48-hour point is 2026-11-26T17:05:00Z."
+        },
+        {
+          "at": "2026-11-24T16:35Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-26T17:05:00Z"
+        }
+      ],
+      "remaining_action": "Read pilot 2 at 1,000 impressions or 48 hours",
+      "due": "2026-11-26T20:00:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "hold": {
+        "type": "date",
+        "condition": "Read pilot 2 (qfc6EBStOfo) at 1,000 impressions or its 48-hour point, whichever comes first; the 48-hour point is 2026-11-26T17:05:00Z.",
+        "check_at": "2026-11-26T17:05:00Z"
+      }
+    },
+    {
+      "id": "J3562",
+      "title": "Field Order History: check every upcoming title against the new packaging rule (film 003 first)",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "**Why (Ben, 24 Nov, in chat, on Claude's click-through summary: \"I like your idea for Fix 1 and for Fix for the rest of the films. Please set that and have it so.\" Set in ww2-channel `studio/RULES.md` (PR #97): rule 2 the searched name first, then one hook, no vague words, never the top video's title words; rule 8 strangers' click-through under 2% at ~1,000 impressions or the 48-hour read means a title or thumbnail change that day; rule 1 two or three Shorts per long film, linked to it.)**\n\nFilm 3 airs **Sat 28 Nov**, and its upload package is being prepared now. Every upcoming film's title must meet the new rule 2 before upload.\n\n**Do (reviewer lane; film 003 first, by Wed 25 Nov 18:00 UTC; the rest by Fri 27 Nov 18:00):** for films 003 to 017, read each film's chosen title and its three thumbnail designs (`status.json`, `11_Upload-Package/`, `TOPIC.md`) against `studio/RULES.md` rule 2 as of PR #97.\n1. **Title:** 50 characters or fewer.\n   - Starts with the exact name viewers search, then one hook. Use the film's topic research for that name, or vidIQ if none is recorded, up to 5 credits a film.\n   - No vague words (\"secret\", \"untold\").\n   - Doesn't reuse the top-ranking video's title words beyond that name.\n2. **Thumbnails:** three designs, each with one subject that fills the frame at 168 px wide and 0-3 words.\n3. **Where a film fails:** write the fixed title (or name the thumbnail that needs a new crop) in its `status.json` and upload package, with the reason and the searched name's monthly searches.\n   - Titles are the studio's call (rule 7); Ben is not asked.\n   - Likely candidates: 004 (*Why America's Torpedoes Failed Even When They Hit*: no \"Mark 14 torpedo\") and 010 (*Why Britain Built D-Day's Strangest Tanks*: no \"Hobart's Funnies\").\n4. One ww2-channel PR with every change and a one-line verdict per film, for the Chief to merge.\n\n**Guards.** No upload, no Studio change, no film or voice change. £0 beyond the vidIQ credits named.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T16:35Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T16:35Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Check titles and thumbnails of films 003-017 against rule 2 and fix the ones that fail",
+      "due": "2026-11-25T18:00:00Z",
+      "kind": "review",
+      "urgent": 13
+    },
+    {
+      "id": "J3563",
+      "title": "Field Order History: plan two or three Shorts per film (002-010) and queue the first builds",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "**Why (Ben, 24 Nov, in chat, on Claude's click-through summary: \"I like your idea for Fix 1 and for Fix for the rest of the films. Please set that and have it so.\" Set in ww2-channel `studio/RULES.md` (PR #97): rule 2 the searched name first, then one hook, no vague words, never the top video's title words; rule 8 strangers' click-through under 2% at ~1,000 impressions or the 48-hour read means a title or thumbnail change that day; rule 1 two or three Shorts per long film, linked to it.)** Rule 1 (as of PR #97): every long film gets two or three Shorts (under a minute, one machine or one fact each), cut from its own narration and pictures, so no new voice. Each is linked to the long film and aired in the days around it.\n\nProof (vidIQ, 24 Nov, orbit-with-ben `05_Analytics/ww2/search_research/2026-11-24.md`): over the last three months, small channels' WW2 engineering Shorts drew millions of views. Examples:\n- self-sealing fuel tank: 2.2M from a 9k-subscriber channel;\n- rivets to welded tank armour: 3.5M;\n- \"They Turned A Warship Into A Time Bomb\" (our film 005's story): 3.7M.\n\nThe first test Short (J3542, pilot 1 / Mulberry) is building its pipeline.\n\n**Do (by Fri 27 Nov 18:00 UTC):**\n1. **Pick the Shorts.** For films 002 to 010, pick two or three Shorts each from the locked narration and picture plan:\n   - the exact narration lines (timecodes);\n   - the pictures, vertical crop at 1080x1920;\n   - a title of 50 characters or fewer naming the thing (rule 2);\n   - the long film they link to.\n   Lead with a concrete machine or fact in the first two seconds.\n2. **Schedule them** around each long film, off the long-film slots: for example 11:30 London on the day before and two days after each film. Leave room for Orbit's and History of Science's own Short slots. Write the plan to `00_Brand/SHORTS_PLAN_2026-12.md` and each film's `status.json`.\n3. **Queue the build jobs.** Queue one build job per Short for films 002 and 003 now (needs: mini), reusing J3542's pipeline once it has one finished Short, and every other film's two weeks before its air date.\n   - Each Short goes to Ben's watch like a film. Each is under a minute.\n   - Nothing publishes before his OK.\n4. **Budget:** no new ElevenLabs voice (narration is cut from the film), no paid stock. One ww2-channel PR for the Chief.\n\n**Guards.** No upload in this job. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T16:35Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T16:35Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Pick and schedule each film's Shorts and queue the builds for films 002 and 003",
+      "due": "2026-11-27T18:00:00Z",
+      "kind": "review"
     }
   ],
   "focus": [
