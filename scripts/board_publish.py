@@ -841,6 +841,7 @@ def run_once(a) -> int:
     except Exception as e:  # noqa: BLE001
         log(f"progress24h not built: {e}")
     add_plan(board, at)
+    add_scorecard(board, at)
     add_field_order(board)
     add_alerts(board, at, dry_run=a.dry_run)
     return finish(a, at, prev, prev_path, key, docs, board, hashes, checks, checks_at, {**checks_meta, **health})
@@ -907,6 +908,16 @@ def add_plan(board: dict, at: dt.datetime) -> None:
             plans, queue.get("jobs") or [], videos, analytics, iso(at), previous, now=at)
     except Exception as e:  # noqa: BLE001
         log(f"plan not built: {e}")
+
+
+def add_scorecard(board: dict, at: dt.datetime) -> None:
+    """Read-only monthly portfolio scorecard from the fresh main worktree."""
+    try:
+        import channel_scorecard
+        board["scorecard"] = channel_scorecard.section(wt(), at, (board.get("tracker") or {}).get("videos", []))
+    except Exception as exc:  # a bad source never prevents the rest of the board
+        board["scorecard"] = {"channels": [], "note": "U: monthly scorecard sources could not be read"}
+        log(f"scorecard not built: {exc}")
 
 
 def add_channels(board: dict) -> None:

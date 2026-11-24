@@ -2,6 +2,20 @@
   "_about": "Standing backlog (Chief, 12 Oct 2026; Ben: the Mini works 24/7). scripts/refill.py adds the next of these to the queue whenever fewer than 3 Mini jobs are ready. Every item is no-spend (no Vertex, Flow, ElevenLabs or any paid call), never deletes anything, never makes a video public, never replaces an armed Test & Compare, and ends parked for Chief (PASS gate) unless it only reads. A key is not re-added while a job from it is open or claimed, nor within every_h of the last one; if nothing at all is ready the oldest key is added anyway (never empty). Lowest tier: jobs.order runs backlog jobs only when no pipeline job is ready. Weekly audits and idea/script drafts for both channels lead (Ben, 12 Oct 14:36). An item with \"paused\" is skipped until the Chief removes it; a key with 2 jobs parked for Chief is skipped until one is ruled (refill.PARK_CAP, 21 Oct). 5 Nov 2026: owb-ideas and hos-ideas unpaused (paused 'pipeline full' since 21 Oct, so no new topics for two weeks) and made daily, data-led, two films each (Ben). 20 Nov 2026: owb-ideas paused while Orbit longs are paused under Rule 34 (avoids growing 45+ unused topics) and weekly cloud item search-research added for Orbit + WW2 search-led topic research (Ben, 20 Nov 2026 / J3222).",
   "items": [
     {
+      "key": "monthly-portfolio-scorecard",
+      "repo": "owb",
+      "needs": "any",
+      "kind": "review",
+      "eta": 45,
+      "monthly_weekday": 0,
+      "monthly_at": "09:00",
+      "start_month": "2027-01",
+      "title": "Monthly studio channel scorecard review",
+      "remaining_action": "Compare monthly channel growth and recommend the next month’s effort",
+      "body": "Read docs/MONTHLY_PORTFOLIO_REVIEW.md and the board monthly scorecard. Report the specified closed calendar month against the preceding month with numbers and coverage reasons. Write plain recommendations for Ben, including running test read windows and protection dates. Change no schedule, video or rule. First review 4 Jan 2027, then first Monday monthly.",
+      "plain": "Comparing monthly channel growth and recommending where the studio puts its effort"
+    },
+    {
       "key": "monthly-improvement-hos",
       "repo": "hos",
       "needs": "mini",

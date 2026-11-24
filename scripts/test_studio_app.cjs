@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {planOverview,stuckModel,stuckSection,slotsText,urgentBannerHtml,renderView,fieldOrderCard,agentReason,parseWeeklyReset,normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, channelsSection, channelsPage, channelCard, channelLight, channelFacts, firstDayCard, firstDaySection, firstDayPage, firstDayNext, planCard, planSection, planPage, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
+  globalThis.test = {scorecardSection,planOverview,stuckModel,stuckSection,slotsText,urgentBannerHtml,renderView,fieldOrderCard,agentReason,parseWeeklyReset,normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, channelsSection, channelsPage, channelCard, channelLight, channelFacts, firstDayCard, firstDaySection, firstDayPage, firstDayNext, planCard, planSection, planPage, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -1778,4 +1778,25 @@ assert(!fieldHtml.includes('(undefined'));
   const full = {...board, models: sb.models, owb: {...(board.owb || {}), jobs: [...((board.owb || {}).jobs || []), ...sb.owb.jobs]}};
   assert(t.renderView(full, 'overview', at).includes('overview-stuck'), 'Overview shows the panel');
   console.log('Stuck panel OK');
+}
+
+// Monthly scorecard: comparison, unknown reasons, test windows, escaping, read-only UI.
+{
+  const m = value => ({value, reason: value == null ? "Missing boundary" : ""});
+  const sc = {scorecard: {month:"2026-12",previousMonth:"2026-11",nextReview:"2027-01-04",note:"Recommendations only",channels:[{
+    name:"Orbit <script>",current:{returnPerFilm:m(3),longHours:m(null)},previous:{returnPerFilm:m(2)},
+    channelVerdict:"Tests come first; keep schedule",shortsVerdict:"Keep schedule while tests read",
+    tests:[{film:"Journey <img>",day:3,days:14,views:null,keep:500,drop:200,finishes:"2026-12-22T18:00Z"}]
+  }]}};
+  const compact=t.scorecardSection(sc), full=t.scorecardSection(sc,true);
+  assert(compact.includes('Monthly figures and coverage'));
+  assert(full.includes('Missing boundary') && full.includes('2026-11') && full.includes('2026-12'));
+  assert(full.includes('day 3 of 14') && full.includes('U: views not linked yet'));
+  assert(full.includes('Journey &lt;img&gt;') && !full.includes('Journey <img>'));
+  assert(full.includes('Orbit &lt;script&gt;'));
+  assert(!full.includes('<button') && !full.includes('<input'));
+  const home=t.overview(sc,NOW);
+  assert(home.indexOf('Monthly channel scorecard') < home.indexOf('overview-channels'));
+  assert(t.channelsPage(sc).includes('Monthly channel scorecard'));
+  assert.equal(t.scorecardSection({}), '');
 }
