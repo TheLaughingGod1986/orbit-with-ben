@@ -330693,9 +330693,14 @@
           "at": "2026-11-24T23:48Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T23:48Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Make a close-crop U-boat thumbnail from cleared archive, ready to swap",
+      "remaining_action": "Inspecting pilot 2 archive pool, provenance, and existing B/C/D thumbnails",
       "due": "2026-11-25T16:00:00Z",
       "kind": "thumb",
       "mini_only": true,
@@ -330709,12 +330714,19 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-24T23:48Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect pilot 2 pool, B/C/D thumbs and provenance",
+          "Pick best cleared surfaced U-boat under air attack photo",
+          "Build 1280x720 design E and 168px phone sheet beside B/C/D",
+          "Verify visually, save to 11_Upload-Package and status.json, merge PR"
+        ]
+      },
+      "taskKeys": [
+        "WW2:002"
+      ]
     },
     {
       "id": "J3646",
