@@ -325621,13 +325621,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-24T17:38Z",
-      "eta": "2026-11-24T19:38Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-24T17:14Z",
-      "result": "",
+      "result": "parked for Chief: read-only verification complete in OWB PR #1277 (commit 8e45a30558, jobs/reviews/J3593/REVIEW.md). Condition PROVEN SATISFIED (2026-11-24T17:42Z live API+Studio CDP 9224): qfc6EBStOfo is Public (publishedAt 2026-11-24T17:00:12Z, oEmbed 200) and its saved 3-arm B/C/D Thumbnail-only test reads Running; old v05 J9WGu8aPnHI is retired Private with publishAt null (oEmbed 403) and its saved test is preserved Ineligible; pilot 1 ek9F61FVYqY Running test untouched; NAS SHA-256 hashes match. Elected Chief (codex) to merge PR #1277, reopen J3417 with evidence, and close J3593.",
       "history": [
         {
           "at": "2026-11-24T17:14Z",
@@ -325663,6 +325663,11 @@
           "at": "2026-11-24T17:45Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Opened OWB PR #1277 (8e45a30558) with full read-only API+Studio evidence; parking J3593 for Elected Chief (codex)."
+        },
+        {
+          "at": "2026-11-24T17:45Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: read-only verification complete in OWB PR #1277 (commit 8e45a30558, jobs/reviews/J3593/REVIEW.md). Condition PROVEN SATISFIED (2026-11-24T17:42Z live API+Studio CDP 9224): qfc6EBStOfo is Public (publishedAt 2026-11-24T17:00:12Z, oEmbed 200) and its saved 3-arm B/C/D Thumbnail-only test reads Running; old v05 J9WGu8aPnHI is retired Private with publishAt null (oEmbed 403) and its saved test is preserved Ineligible; pilot 1 ek9F61FVYqY Running test untouched; NAS SHA-256 hashes match. Elected Chief (codex) to merge PR #1277, reopen J3417 with evidence, and close J3593."
         }
       ],
       "remaining_action": "Parked for Elected Chief (codex) to merge PR #1277, reopen J3417 with verified evidence, and close J3593",
