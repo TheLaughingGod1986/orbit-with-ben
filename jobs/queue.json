@@ -321130,9 +321130,14 @@
           "at": "2026-11-24T13:17Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T13:19Z",
+          "by": "macbook",
+          "what": "step 1 of 5 done"
         }
       ],
-      "remaining_action": "WW2 film 013: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO",
+      "remaining_action": "Read PR #77/#79 files and full CLAIMS_CHECK_v01.md",
       "due": "2026-12-11T18:00:00Z",
       "kind": "review",
       "plain": "Run Claude viewer test on WW2 film 013 opening, fold in Pilot 2 learnings, lock script and queue post-reset voice-over",
@@ -321145,12 +321150,17 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T13:17Z",
+        "step": 1,
+        "of": 5,
+        "at": "2026-11-24T13:19Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read PR #77/#79 files",
+          "Run Rule-6 viewer test",
+          "Apply J3525 fixes to v02",
+          "Lock topic/script & PR",
+          "Queue post-reset VO & report"
+        ]
       }
     },
     {
