@@ -319981,13 +319981,13 @@
       "stage": "upload",
       "after": "J3505",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-24T12:49Z",
-      "eta": "2026-11-24T14:49Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T10:53Z",
-      "result": "",
+      "result": "parked for Chief: review and merge verified records PR #1258, then close J3510. Approved v06 emKN9xjDswI is already Private for Fri 11 Dec 2026 11:30Z; old k2kEaA7ICjc Private unscheduled. No upload or reschedule remains. PR #1258 includes UPLOADS, opening library, Buffer plan, versioned v06-J3510 package, verify-swap readback and J0923 replacement target.",
       "history": [
         {
           "at": "2026-11-24T10:53Z",
@@ -320033,6 +320033,11 @@
           "at": "2026-11-24T13:05Z",
           "by": "gemini",
           "what": "step 4 of 5 done: Upload, slot transfer (k2kEaA7ICjc -> emKN9xjDswI, Fri 11 Dec 2026 11:30Z), Studio cover/Altered Content/en-GB captions readback, Buffer mirror, open-gate library, verify-swap.ts PASS, thread report, and PR #1258 complete. Only protected Chief review/merge remains."
+        },
+        {
+          "at": "2026-11-24T13:05Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: review and merge verified records PR #1258, then close J3510. Approved v06 emKN9xjDswI is already Private for Fri 11 Dec 2026 11:30Z; old k2kEaA7ICjc Private unscheduled. No upload or reschedule remains. PR #1258 includes UPLOADS, opening library, Buffer plan, versioned v06-J3510 package, verify-swap readback and J0923 replacement target."
         }
       ],
       "remaining_action": "Chief review and merge of verified records PR #1258, then close J3510",
