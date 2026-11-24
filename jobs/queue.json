@@ -328105,13 +328105,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-24T20:59Z",
-      "eta": "2026-11-24T22:59Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T20:51Z",
-      "result": "",
+      "result": "Delivered isolated PR #1290 (macbook/J3617, 6b2be6094). Reproduced J3602/J3616 implicit hold bug; pending Chief reviews no longer synthesize dependency holds. Explicit holds and unresolved dependencies preserved. 70 focused tests passed, core check and diff check passed. No jobs reopened, no spend or YouTube changes. PR open for Chief review, not merged. Checkout returned to main.",
       "history": [
         {
           "at": "2026-11-24T20:51Z",
@@ -328137,6 +328137,11 @@
           "at": "2026-11-24T21:02Z",
           "by": "macbook",
           "what": "step 3 of 3 done"
+        },
+        {
+          "at": "2026-11-24T21:02Z",
+          "by": "macbook",
+          "what": "done: Delivered isolated PR #1290 (macbook/J3617, 6b2be6094). Reproduced J3602/J3616 implicit hold bug; pending Chief reviews no longer synthesize dependency holds. Explicit holds and unresolved dependencies preserved. 70 focused tests passed, core check and diff check passed. No jobs reopened, no spend or YouTube changes. PR open for Chief review, not merged. Checkout returned to main."
         }
       ],
       "remaining_action": "Delivered PR 1290 for Chief review; merge remains with Chief",
