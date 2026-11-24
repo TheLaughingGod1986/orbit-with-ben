@@ -326126,9 +326126,14 @@
           "at": "2026-11-24T18:03Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T18:04Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Wait for the revised St Nazaire picture plan and acceptance of compliant archive coverage",
+      "remaining_action": "Inspect J3431, J3449, J3432 records and ww2-channel PRs",
       "kind": "review",
       "recheck_of": "J3431",
       "due": "2026-11-24T19:02:18+00:00",
@@ -326142,12 +326147,15 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-24T18:03Z",
+        "at": "2026-11-24T18:04Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect job records and PRs",
+          "Verify archive share and provenance",
+          "Update job states and report"
+        ]
       }
     },
     {
