@@ -320348,9 +320348,14 @@
           "at": "2026-11-24T12:07Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T12:09Z",
+          "by": "macbook",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Read the 064 script against its sources and the rules, then lock it or list fixes",
+      "remaining_action": "Inspecting 064 v02 script, SOURCES.md, PR #1015 and J3027/J3037/J3051 history",
       "due": "2026-11-25T18:00:00Z",
       "kind": "review",
       "rerouted_from": {
@@ -320363,11 +320368,15 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-24T12:07Z",
+        "of": 4,
+        "at": "2026-11-24T12:09Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Audit 064 v02 script and history",
+          "Verify quotes, facts, rules and gates",
+          "Write independent review verdict and PR",
+          "Update queue and post thread report"
+        ]
       }
     },
     {
