@@ -128,6 +128,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3587 | mini | open | – | – | review · Verify condition for J3205 |  |
 | J3588 | mini | open | – | – | review · Verify condition for J3369 |  |
 | J3589 | mini | open | – | – | chief · Chief: resolve 003 edit orphan-blocked |  |
+| J3590 | mini | open | – | – | studio · First-day check at 48 h: "How Britain Built Two Harbours in Secret and Floated Them to Normandy" (ek9F61FVYqY) |  |
+| J3591 | mini | open (after J3590) | – | – | review · `gemini-argon` · Retention autopsy (48h): "How Britain Built Two Harbours in Secret and Floated Them to Nor" (ek9F61FVYqY) |  |
 
 Recently finished:
 
