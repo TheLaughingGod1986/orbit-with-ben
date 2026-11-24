@@ -322726,9 +322726,14 @@
           "at": "2026-11-24T15:39Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T15:41Z",
+          "by": "macbook-2",
+          "what": "step 0 of 6 done"
         }
       ],
-      "remaining_action": "Topic check, packaging and script for the Pearl Harbor salvage film",
+      "remaining_action": "Verify 15+ real NHHC/NARA/LoC Pearl Harbor salvage archive photo IDs and primary historical facts",
       "due": "2026-12-18T18:00:00Z",
       "kind": "script",
       "plain": "Research, package and write the script for WW2 film 017 (Pearl Harbor salvage: raising the sunk battleships)",
@@ -322742,11 +322747,17 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-24T15:39Z",
+        "of": 6,
+        "at": "2026-11-24T15:41Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Verify PD archive photos and sources",
+          "Write topic check and packaging",
+          "Draft script, narration and sources",
+          "Update backlog and status.json",
+          "Push PR and restore main",
+          "Queue follow-ups and post report"
+        ]
       }
     },
     {
