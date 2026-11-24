@@ -95,7 +95,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3565 | mini | open (after J3564) | – | – | HOS:137 script · review · HOS 137 Accidental Inventions (Thu 24 Dec): review and lock script v01, package-first scoring, sources & Shorts (PR #754) | J3513 |
 | J3566 | mini | open (after J3542) | – | – | WW2:002 edit · assembly · WW2 002 Short 1: build 'WW2 U-Boats: Why They Could Not Stay Underwater' for Ben watch | J3563 |
 | J3567 | mini | open (after J3542) | – | – | WW2:002 edit · assembly · WW2 002 Short 2: build 'U-Boat Radar vs Metox: Why German Warnings Failed' for Ben watch | J3563 |
-| J3571 | mini | open (after J3542) | – | – | WW2:004 edit · assembly · WW2 004 Short 2: build 'Mark 14 Torpedo: Why a Direct Hit Failed to Fire' for Ben watch | J3563 |
+| J3571 | mini | claimed | macbook | 2026-11-25T01:50Z | WW2:004 edit · assembly · WW2 004 Short 2: build 'Mark 14 Torpedo: Why a Direct Hit Failed to Fire' for Ben watch | J3563 |
 | J3573 | mini | open (after J3542) | – | – | WW2:005 edit · assembly · WW2 005 Short 2: build 'St Nazaire Raid: Why the Ship Blew Up Hours Later' for Ben watch | J3563 |
 | J3574 | mini | open (after J3542) | – | – | WW2:005 edit · assembly · WW2 005 Short 3: build 'St Nazaire Dock: The 35ft Gate Built for Tirpitz' for Ben watch | J3563 |
 | J3575 | mini | open (after J3542) | – | – | WW2:006 edit · assembly · WW2 006 Short 1: build 'Mosquito Bomber: The 11mm Birch and Balsa Shell' for Ben watch | J3563 |
