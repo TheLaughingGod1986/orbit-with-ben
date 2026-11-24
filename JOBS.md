@@ -92,7 +92,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3524 | mini | open (after J3523) | – | – | 012 script · review · WW2 film 012: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO | ww2-channel#76 |
 | J3525 | any | open | – | – | 013 sources · facts · WW2 film 013: independent Gemini claims check on SCRIPT.md and SOURCES.md (PR #77) | ww2-channel#77 |
 | J3526 | mini | open (after J3525) | – | – | 013 script · review · WW2 film 013: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO | ww2-channel#77 |
-| J3527 | mini | claimed | gemini | 2026-11-24T14:16Z | review · Verify condition for J3125 |  |
+| J3527 | mini | blocked | gemini | – | review · Verify condition for J3125 |  |
 | J3528 | mini | blocked | gemini | – | review · Verify condition for J3463 |  |
 | J3529 | mini | open | – | – | review · Verify condition for J3492 |  |
 | J3530 | mini | open | – | – | for claudecode · assembly · Claude Code: publish Codex's finished work it could not push (Pluto thumbnails first), after a privacy check |  |
