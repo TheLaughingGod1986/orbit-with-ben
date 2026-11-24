@@ -318612,13 +318612,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-24T10:32Z",
-      "eta": "2026-11-24T11:32Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T10:31Z",
-      "result": "",
+      "result": "Waiting for Ben's finished-cut watch OK on HOS:009 (J2037, v03 744f32b7) and Chief merge of HOS PR #744 before private upload and Thu 3 Dec 18:00 London schedule (cutoff Thu 3 Dec 12:00 London). Search-led title check ('How Isaac Newton Proved Gravity Using the Moon', 46 chars, T&C B 'Why Doesn't the Moon Fall to Earth?'), en-GB v03 captions (138 cues), chapters+8 sources, playlist PLEbpfUzWzcXU, and NAS SHA-256 parity verified; lint:package PASS (0 err/0 warn) and check_all.sh ALL CHECKS PASS. £0, no YouTube changes.",
       "history": [
         {
           "at": "2026-11-24T10:31Z",
@@ -318649,6 +318649,11 @@
           "at": "2026-11-24T10:43Z",
           "by": "macbook-2",
           "what": "step 4 of 5 done"
+        },
+        {
+          "at": "2026-11-24T10:43Z",
+          "by": "macbook-2",
+          "what": "blocked: Waiting for Ben's finished-cut watch OK on HOS:009 (J2037, v03 744f32b7) and Chief merge of HOS PR #744 before private upload and Thu 3 Dec 18:00 London schedule (cutoff Thu 3 Dec 12:00 London). Search-led title check ('How Isaac Newton Proved Gravity Using the Moon', 46 chars, T&C B 'Why Doesn't the Moon Fall to Earth?'), en-GB v03 captions (138 cues), chapters+8 sources, playlist PLEbpfUzWzcXU, and NAS SHA-256 parity verified; lint:package PASS (0 err/0 warn) and check_all.sh ALL CHECKS PASS. £0, no YouTube changes."
         }
       ],
       "remaining_action": "Block J3501 on Ben HOS:009 watch OK and post [MacBook] report on studio thread",
@@ -318667,6 +318672,11 @@
           "Run lint:package & check_all + open HOS PR",
           "Block on Ben HOS:009 watch OK & post thread report"
         ]
+      },
+      "hold": {
+        "type": "ben",
+        "condition": "Waiting for Ben's finished-cut watch OK on HOS:009 (J2037, v03 744f32b7) and Chief merge of HOS PR #744 before private upload and Thu 3 Dec 18:00 London schedule (cutoff Thu 3 Dec 12:00 London). Search-led title check ('How Isaac Newton Proved Gravity Using the Moon', 46 chars, T&C B 'Why Doesn't the Moon Fall to Earth?'), en-GB v03 captions (138 cues), chapters+8 sources, playlist PLEbpfUzWzcXU, and NAS SHA-256 parity verified; lint:package PASS (0 err/0 warn) and check_all.sh ALL CHECKS PASS. £0, no YouTube changes.",
+        "check_at": "2026-11-24T16:43:51+00:00"
       }
     },
     {
