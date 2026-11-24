@@ -1,0 +1,5 @@
+Codex covering J3509 under J3505 authority (Ben board OK, 16 Nov 09:13 London, OWB:ASK:J2551.2). Exact approved v06 SHA-256 e2d7f967aa25f81d0f585936c7d366f59f9cf357dc1e789c5552dd5a82c6612c uploaded as BXSoBnyiTNg, initially Private with no publishAt. API processed readback verified; en-GB captions serving; custom cover set in Studio and visually read back after reload.
+
+State changes this session: heiGCnGKTkE Private / 2026-12-14T11:30:00Z -> Private / no publishAt. BXSoBnyiTNg Private / no publishAt -> Private / 2026-12-14T11:30:00Z. Authority: explicitly authorized controlled swap J3509, queued after elected-Chief verification J3505. The first immediate old-copy read returned stale publishAt; a fresh read proved it cleared before scheduling the replacement. No video deleted, made Public, or title changed. Parent vP1BbqZ_dnM read Private for 6 Dec 18:00Z, before the Short.
+
+Bookkeeping, Buffer and final Studio/API readback are in progress. Related remains None pending J0923 after the long is Public. GBP 0 spent. Thread read to #7130334457.
