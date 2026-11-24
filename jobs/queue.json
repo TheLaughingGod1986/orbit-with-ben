@@ -325571,9 +325571,14 @@
           "at": "2026-11-24T17:49Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-25T05:03:00Z"
+        },
+        {
+          "at": "2026-11-24T18:17Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-25T05:03:00Z"
         }
       ],
-      "remaining_action": "Correct the time-window fallback, then review and merge the revised audience-analysis PRs",
+      "remaining_action": "Fix the remaining wrong-window view count in J3604, then verify it in J3598",
       "due": "2026-11-25T05:03:00Z",
       "kind": "review",
       "model": "gemini-argon",
@@ -325602,11 +325607,8 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "Chief FIX ruling J3595: J3596 must correct the wrong-window fallback and evidence wording, then dependent Chief review must approve and merge the corrected PRs. Existing five media-review steps retained.",
-        "check_at": "2026-11-25T05:03:00Z",
-        "last_recheck": "J3595",
-        "checked_at": "2026-11-24T17:49:55+00:00",
-        "checked_by": "codex"
+        "condition": "J3597 FIX: merged correction still scores wrong-age launch views when channel snapshots omit the target. J3604 must fix target-provenance fallback and mixed-snapshot 6h/48h and 48h/7d regressions; J3598 then reviews exact corrected head before closure. Preserve five completed Gemini media steps.",
+        "check_at": "2026-11-25T05:03:00Z"
       }
     },
     {
