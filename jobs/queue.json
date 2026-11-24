@@ -307717,24 +307717,29 @@
           "at": "2026-11-24T11:17Z",
           "by": "codex",
           "what": "step 2 of 3 done: Rendered corrected 1080p G11, 1022 frames; new plan and Scribe cue events replace old asset only in S62. Full decode and narration/alignment hashes match."
+        },
+        {
+          "at": "2026-11-24T11:19Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Corrected chart and PNG saved to NAS with matching hashes; decode, timing, arithmetic and phone still checks complete; handoff v11 and branch 7f56838 published."
         }
       ],
-      "remaining_action": "Verify the saved graphic and publish the assembly handoff",
+      "remaining_action": "Hand corrected graphic and cues to the assembly condition review",
       "kind": "chart",
       "plain": "Correct the bomber loss graphic to match the verified narration",
       "urgent": 5,
       "due": "2026-11-25T09:00:00Z",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-24T11:17Z",
+        "at": "2026-11-24T11:19Z",
         "by": "codex",
         "plan": [
           "Verify corrected narration and source ruling",
           "Rebuild loss graphic and cues",
           "Check outputs and record handoff"
         ],
-        "note": "Rendered corrected 1080p G11, 1022 frames; new plan and Scribe cue events replace old asset only in S62. Full decode and"
+        "note": "Corrected chart and PNG saved to NAS with matching hashes; decode, timing, arithmetic and phone still checks complete; h"
       },
       "taskKeys": [
         "WW2:003"
