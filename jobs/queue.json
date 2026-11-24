@@ -325418,6 +325418,11 @@
           "at": "2026-11-24T17:14Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T17:15Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Verify readiness: Link pilot 1 to new pilot 2 qfc6EBStOfo after launch, preserving subscribe and verifying both directions",
@@ -325425,7 +325430,15 @@
       "recheck_of": "J3443",
       "mini_only": true,
       "due": "2026-11-24T18:14:45+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
