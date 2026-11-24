@@ -326118,13 +326118,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-24T18:03Z",
-      "eta": "2026-11-24T20:03Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-24T18:02Z",
-      "result": "",
+      "result": "parked for Chief: OWB PR #1281 (jobs/reviews/J3600/REVIEW.md) delivers full condition verification for J3431 (WW2:005 St Nazaire). Advisory verdict: CONDITION NOT MET (keep J3431 blocked and J3432 dependent). J3449 finished FIX at 510.27/1263.04s = 40.400% (121.25s below Rule 1 50% floor of 631.52s from PR #59; supersedes earlier 48.3% estimate). All 60/60 NAS primary archive SHA-256 hashes verified. Draft ww2 PR #50 now has a status.json conflict vs main (7de038c) after PR #90. Chief action needed: (1) record wait --recheck J3600 on J3431 and close J3600 (restricted to elected Chief by scripts/jobs.py); (2) decide J3449 editorial path (under 50% rule, no-spend existing-VO paper recut ceiling is 1020.54s / >=242.50s cut; watch due 2026-11-30T20:00Z, air Thu 3 Dec).",
       "history": [
         {
           "at": "2026-11-24T18:02Z",
@@ -326155,6 +326155,11 @@
           "at": "2026-11-24T18:10Z",
           "by": "macbook",
           "what": "step 3 of 3 done"
+        },
+        {
+          "at": "2026-11-24T18:10Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: OWB PR #1281 (jobs/reviews/J3600/REVIEW.md) delivers full condition verification for J3431 (WW2:005 St Nazaire). Advisory verdict: CONDITION NOT MET (keep J3431 blocked and J3432 dependent). J3449 finished FIX at 510.27/1263.04s = 40.400% (121.25s below Rule 1 50% floor of 631.52s from PR #59; supersedes earlier 48.3% estimate). All 60/60 NAS primary archive SHA-256 hashes verified. Draft ww2 PR #50 now has a status.json conflict vs main (7de038c) after PR #90. Chief action needed: (1) record wait --recheck J3600 on J3431 and close J3600 (restricted to elected Chief by scripts/jobs.py); (2) decide J3449 editorial path (under 50% rule, no-spend existing-VO paper recut ceiling is 1020.54s / >=242.50s cut; watch due 2026-11-30T20:00Z, air Thu 3 Dec)."
         }
       ],
       "remaining_action": "Parked for elected Chief to record wait --recheck J3600 on J3431 and decide WW2:005 editorial path",
