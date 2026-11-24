@@ -321697,13 +321697,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-24T13:12Z",
-      "eta": "2026-11-24T15:12Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-24T13:05Z",
-      "result": "",
+      "result": "parked for Chief: Read-only verification complete in OWB PR #1259 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1259, 4b4bda0a41, jobs/reviews/J3535/REVIEW.md). Recommended DO NOT REOPEN J3510: J3510 swap is already complete and independently verified live (verify-swap.ts ok: true, problems: []; k2kEaA7ICjc Private/null; emKN9xjDswI Private/2026-12-11T11:30:00Z with serving en-GB captions; parent vP1BbqZ_dnM Private/2026-12-06T18:00:00Z; NAS v06 SHA-256 eafe7435...574015 and cover 7bb71fb9...19d828 match J2551 and PR #1258; zero Buffer posts to cancel; thread report #7132333266). OWB PR #1258 (59e78d31da) is OPEN, Rules check SUCCESS, cleanly mergeable against main. Elected Chief (codex) to review/merge PR #1258 (and PR #1259), close J3510 done, and close J3535 (optional tidy of J0923.remaining_action / 029 status.json display strings). Worker cannot merge PRs, close J3510, or run reopen/wait --recheck; £0 spend, zero writes.",
       "history": [
         {
           "at": "2026-11-24T13:05Z",
@@ -321739,6 +321739,11 @@
           "at": "2026-11-24T13:20Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Published read-only verification PR #1259 (4b4bda0a41, jobs/reviews/J3535/REVIEW.md); confirmed J3510 swap already live-verified (k2kEaA7ICjc Private/null, emKN9xjDswI Private/2026-12-11T11:30:00Z, parent vP1BbqZ_dnM Private/2026-12-06T18:00:00Z) and PR #1258 OPEN + cleanly mergeable"
+        },
+        {
+          "at": "2026-11-24T13:20Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: Read-only verification complete in OWB PR #1259 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1259, 4b4bda0a41, jobs/reviews/J3535/REVIEW.md). Recommended DO NOT REOPEN J3510: J3510 swap is already complete and independently verified live (verify-swap.ts ok: true, problems: []; k2kEaA7ICjc Private/null; emKN9xjDswI Private/2026-12-11T11:30:00Z with serving en-GB captions; parent vP1BbqZ_dnM Private/2026-12-06T18:00:00Z; NAS v06 SHA-256 eafe7435...574015 and cover 7bb71fb9...19d828 match J2551 and PR #1258; zero Buffer posts to cancel; thread report #7132333266). OWB PR #1258 (59e78d31da) is OPEN, Rules check SUCCESS, cleanly mergeable against main. Elected Chief (codex) to review/merge PR #1258 (and PR #1259), close J3510 done, and close J3535 (optional tidy of J0923.remaining_action / 029 status.json display strings). Worker cannot merge PRs, close J3510, or run reopen/wait --recheck; £0 spend, zero writes."
         }
       ],
       "remaining_action": "Elected Chief (codex) to review/merge PR #1258 and PR #1259, close J3510, and close J3535 (do not reopen J3510)",
