@@ -323190,9 +323190,14 @@
           "at": "2026-11-24T17:24Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T17:25Z",
+          "by": "macbook-2",
+          "what": "step 1 of 6 done"
         }
       ],
-      "remaining_action": "Verify the new script against primary sources and send the exact version to Chief",
+      "remaining_action": "Inspecting J3539 FIX, J3520 ruling, and J3544 PR #1269 v04 candidate",
       "kind": "review",
       "plain": "Check the corrected planet facts before recording",
       "rerouted_from": {
@@ -323204,12 +323209,18 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T17:24Z",
+        "step": 1,
+        "of": 6,
+        "at": "2026-11-24T17:25Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read rules, prior rulings, and v04 candidate",
+          "Direct-verify every MUST QUOTE and raw Gemini output",
+          "Audit all explicit factual and source issues",
+          "Check teaching timing, counts/hash, review:script, and episode gate",
+          "Write versioned exact-hash review and open PR",
+          "Finish job, restore main, and post thread report"
+        ]
       }
     },
     {
