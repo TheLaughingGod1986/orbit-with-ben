@@ -321734,9 +321734,14 @@
           "at": "2026-11-24T13:17Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Verified NAS v06 master/cover SHA-256, PR #1258 OPEN (Rules check SUCCESS, clean merge tree 7bfe240d59), and fresh live YouTube API + verify-swap.ts PASS (k2kEaA7ICjc Private/null, emKN9xjDswI Private/2026-12-11T11:30:00Z en-GB serving, parent vP1BbqZ_dnM Private/2026-12-06T18:00:00Z)"
+        },
+        {
+          "at": "2026-11-24T13:20Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Published read-only verification PR #1259 (4b4bda0a41, jobs/reviews/J3535/REVIEW.md); confirmed J3510 swap already live-verified (k2kEaA7ICjc Private/null, emKN9xjDswI Private/2026-12-11T11:30:00Z, parent vP1BbqZ_dnM Private/2026-12-06T18:00:00Z) and PR #1258 OPEN + cleanly mergeable"
         }
       ],
-      "remaining_action": "Verify Buffer ledger and studio thread report for J3510, write J3535 evidence review, and park J3535 for elected Chief (Codex)",
+      "remaining_action": "Elected Chief (codex) to review/merge PR #1258 and PR #1259, close J3510, and close J3535 (do not reopen J3510)",
       "kind": "review",
       "recheck_of": "J3510",
       "mini_only": true,
@@ -321751,9 +321756,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-24T13:17Z",
+        "at": "2026-11-24T13:20Z",
         "by": "gemini",
         "plan": [
           "Read J3510 and predecessor history",
@@ -321761,7 +321766,7 @@
           "Check live YouTube/Studio state",
           "Reopen or update wait on J3510 and finish J3535"
         ],
-        "note": "Verified NAS v06 master/cover SHA-256, PR #1258 OPEN (Rules check SUCCESS, clean merge tree 7bfe240d59), and fresh live "
+        "note": "Published read-only verification PR #1259 (4b4bda0a41, jobs/reviews/J3535/REVIEW.md); confirmed J3510 swap already live-"
       },
       "taskKeys": [
         "OWB:029"
