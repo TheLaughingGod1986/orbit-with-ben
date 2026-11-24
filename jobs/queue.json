@@ -318064,7 +318064,7 @@
     {
       "id": "J3494",
       "title": "WW2 film 010: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO",
-      "needs": "cloud",
+      "needs": "mini",
       "repo": "ww2",
       "body": "Claude Rule-6 viewer test of the first 300 words and `AGENTS.md` Rule E topic/packaging/script lock for Field Order History film `WW2:010` (*Why Britain Built D-Day's Strangest Tanks*), drafted in `ww2-channel` PR #69 (branch `macbook/J3475`, commit `91fb13d`) after the independent Gemini `facts`-lane claims check passes.\n\n**Do (`ww2-channel/studio/RULES.md` rules 1–6 & 9; script lock due `2026-12-02 18:00 UTC` for Tue 15 Dec 2026 17:00 London slot):**\n1. Perform **Claude's viewer test of the first 300 words** of `01_Script/NARRATION_v01.txt` (`18,380` spoken chars `<= 21,000` Rule-9 cap, `2,947` words, Cold Open `135` words `~60s`, SHA-256 `9a387b69ceab219ae34916f44a162f429ca750353124e3e4fbe7523306dd8081`) as a stranger would: concrete moment by 0:30, promise by 0:45, main story moving by 1:00, no detours, title's answer withheld, one figure at a time.\n2. Confirm per-keyword vidIQ search volume for `\"hobart's funnies\"` / `\"d-day tanks\"`, review `TOPIC_REVIEW.md` (GO recommendation, 26 verified US/UK official PD archive photo IDs, picked Rule-2 title `Why Britain Built D-Day's Strangest Tanks` at `41` chars `94/100`, 3 close-crop launch Test & Compare thumbnail concepts), and record the Rule E topic verdict.\n3. Verify the independent Gemini claims check is clean and `NARRATION_v01.txt` remains `<= 21,000` spoken characters.\n4. Lock topic and script (or return exact fixes), update `status.json` in a `ww2-channel` PR, and queue the ElevenLabs voice-over job strictly for **after the ElevenLabs reset (`2026-11-30 10:50Z`)**.\n\n**Guards:** Zero ElevenLabs voice credits spent before `2026-11-30 10:50Z`. £0 spend.\n",
       "ref": "ww2-channel#69",
@@ -318084,12 +318084,25 @@
           "at": "2026-11-24T10:04Z",
           "by": "macbook-2",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T10:04Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "WW2 film 010: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO",
       "due": "2026-12-02T18:00:00Z",
       "kind": "review",
-      "plain": "Review WW2 film 010 opening 300 words, lock topic and script, and queue post-reset voice-over"
+      "plain": "Review WW2 film 010 opening 300 words, lock topic and script, and queue post-reset voice-over",
+      "rerouted_from": {
+        "needs": "cloud",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
