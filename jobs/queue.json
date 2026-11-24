@@ -316336,9 +316336,14 @@
           "at": "2026-11-24T08:55Z",
           "by": "codex",
           "what": "step 1 of 4 done: New id qfc6EBStOfo uploaded, exact hash verified; 561 en-GB captions serving; default B set and playlist inserted at position 1. Old v05 now Private with no schedule."
+        },
+        {
+          "at": "2026-11-24T09:01Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Processing succeeded. Saved pilot 1 plus Subscribe end screen for 22:07–22:27. B/C/D test survives reload; old v05 schedule removed."
         }
       ],
-      "remaining_action": "Wait for YouTube processing and configure thumbnails and end screen",
+      "remaining_action": "Verify end screen, schedule, captions and archived v05 state",
       "due": "2026-11-24T15:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -316352,9 +316357,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-24T08:55Z",
+        "at": "2026-11-24T09:01Z",
         "by": "codex",
         "plan": [
           "Verify approved master and package",
@@ -316362,7 +316367,7 @@
           "Retire old schedule and verify",
           "Commit records and report"
         ],
-        "note": "New id qfc6EBStOfo uploaded, exact hash verified; 561 en-GB captions serving; default B set and playlist inserted at pos"
+        "note": "Processing succeeded. Saved pilot 1 plus Subscribe end screen for 22:07–22:27. B/C/D test survives reload; old v05 sched"
       },
       "taskKeys": [
         "WW2:002"
