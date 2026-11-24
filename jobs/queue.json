@@ -329900,10 +329900,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-24T22:58Z",
+      "eta": "2026-11-25T00:58Z",
       "created_by": "gemini",
       "created_at": "2026-11-24T22:54Z",
       "result": "",
@@ -329912,12 +329912,25 @@
           "at": "2026-11-24T22:54Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T22:58Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Rebuild WW2:004 v02 graphics/edit plan, apply adopted Rule-2 title and SRT fix, render v02 master on NAS, open clean PR",
       "due": "2026-11-26T12:00:00Z",
       "kind": "assembly",
-      "plain": "Fix the torpedo film graphics, spoiler, missing chapter card and repeats, then render v02"
+      "plain": "Fix the torpedo film graphics, spoiler, missing chapter card and repeats, then render v02",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T22:58Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3638",

@@ -135,7 +135,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3633 | mini | blocked | gemini | – | review · Verify condition for J3205 |  |
 | J3635 | mini | blocked | codex | – | studio · WW2 pilot 2: check its settings, claims and impressions now (0 views at 5 hours) |  |
 | J3636 | mini | claimed | macbook-2 | 2026-11-25T00:51Z | 009 script · script · WW2 009: apply 6 surgical J3634 v03 direct-source fixes (v04) | https://github.com/TheLaughingGod1986/ww2-channel/pull/112 |
-| J3637 | mini | open | – | – | WW2:004 edit · assembly · WW2 004: v02 zero-spend visual/graphic repair, Rule-2 title package and render |  |
+| J3637 | mini | claimed | gemini | 2026-11-25T00:58Z | WW2:004 edit · assembly · WW2 004: v02 zero-spend visual/graphic repair, Rule-2 title package and render |  |
 | J3638 | mini | open (after J3637) | – | – | WW2:004 edit · qa · WW2 004: full private audiovisual QA of v02 master |  |
 | J3639 | any | open (after J3638) | – | – | WW2:004 edit · chief · WW2 004: Chief decision on v02 delivery and stage Ben watch |  |
 | J3640 | mini | open | – | – | review · Verify condition for J3430 |  |
