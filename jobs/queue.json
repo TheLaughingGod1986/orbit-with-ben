@@ -88908,6 +88908,11 @@
           "at": "2026-11-16T06:14Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-24T10:53Z",
+          "by": "codex",
+          "what": "no longer waits on Ben: OK'd, delivered by J3508"
         }
       ],
       "kind": "assembly",
@@ -88931,7 +88936,7 @@
         "checked_at": "2026-11-16T06:09:39+00:00",
         "checked_by": "gemini"
       },
-      "awaits_ben": {
+      "awaits_was": {
         "what": "Watch 032 Titan Short #2 (Test A Opening) v02 and its cover: Could You Survive Stepping Onto Saturn's Moon Titan?",
         "file": "OWB UAT/032_short_fri27_opening_testA_v02.mp4",
         "version": "v02",
@@ -319048,13 +319053,32 @@
           "at": "2026-11-24T10:52Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T10:53Z",
+          "by": "codex",
+          "what": "approved by Ben: Watch 032 Titan Short #2 (Test A Opening) v02 and its cover: Could You Survive Stepping Onto Saturn's Moon Titan? v02 (asked in J0979)"
         }
       ],
       "remaining_action": "Upload the Titan Short you approved into the next free slot",
       "due": "2026-11-25T12:00:00Z",
       "kind": "studio",
       "plain": "Upload the Titan Short you approved into the next free slot",
-      "mini_only": true
+      "mini_only": true,
+      "approved_from": {
+        "what": "Watch 032 Titan Short #2 (Test A Opening) v02 and its cover: Could You Survive Stepping Onto Saturn's Moon Titan?",
+        "file": "OWB UAT/032_short_fri27_opening_testA_v02.mp4",
+        "version": "v02",
+        "airs": "2026-12-02T11:30Z",
+        "title": "Could You Survive Stepping Onto Saturn's Moon Titan?",
+        "number": "032 Short 2",
+        "type": "short",
+        "card": "OWB:ASK:J0979",
+        "channel": "OWB",
+        "job": "J0979",
+        "okAt": "2026-11-16T09:32Z",
+        "okRef": "board:OWB:ASK:J0979;J3505"
+      }
     },
     {
       "id": "J3509",
