@@ -316141,23 +316141,28 @@
           "at": "2026-11-24T07:19Z",
           "by": "codex",
           "what": "step 1 of 3 done: Read all 111 OWB and 43 HOS videos with no request errors; verifying long Reach cards and displayed precision before rebuilding."
+        },
+        {
+          "at": "2026-11-24T07:22Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Rebuilt both reports and dashboard; validated all 154 rows and merge values. All 25 longs have complete metrics; 24 Shorts lack processed retention in Studio."
         }
       ],
-      "remaining_action": "Updating both channels’ tracker records from the completed Studio read",
+      "remaining_action": "Publishing the verified tracker update",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-24T07:19Z",
+        "at": "2026-11-24T07:22Z",
         "by": "codex",
         "plan": [
           "Read Studio metrics",
           "Update tracker files",
           "Verify and publish tracker"
         ],
-        "note": "Read all 111 OWB and 43 HOS videos with no request errors; verifying long Reach cards and displayed precision before reb"
+        "note": "Rebuilt both reports and dashboard; validated all 154 rows and merge values. All 25 longs have complete metrics; 24 Shor"
       }
     }
   ],
