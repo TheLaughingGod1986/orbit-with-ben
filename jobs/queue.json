@@ -320627,13 +320627,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 45,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-24T12:07Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T11:54Z",
-      "result": "parked for Chief: PR #1251 (jobs/reviews/J3520/REVIEW.md) verified OWB:064 v02 PASS (SHA-256 0dd5ea6c3d8db1a48e46394c04737cd5c990895142aa5f5bb24642cfa8c8c11b, 1,257 spoken words / 8,200 chars, review:script 93.1/100 PASS, gate:episode PASS 10/10, 51/51 SOURCES.md URLs HTTP 200, all J3027 fixes hold). Do NOT lock v01 (c9945afa..., rejected in J3027). Elected Chief (claude/codex) to merge PR #1015 (J3037 CLAUDE_QUOTE_CHECK_v02.md) + PR #1251, lock v02 in 064/status.json, reopen & complete J3020 (releasing J3021 VO), and close J3051 + J3520.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-24T11:54Z",
@@ -320674,6 +320674,11 @@
           "at": "2026-11-24T12:16Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: PR #1251 (jobs/reviews/J3520/REVIEW.md) verified OWB:064 v02 PASS (SHA-256 0dd5ea6c3d8db1a48e46394c04737cd5c990895142aa5f5bb24642cfa8c8c11b, 1,257 spoken words / 8,200 chars, review:script 93.1/100 PASS, gate:episode PASS 10/10, 51/51 SOURCES.md URLs HTTP 200, all J3027 fixes hold). Do NOT lock v01 (c9945afa..., rejected in J3027). Elected Chief (claude/codex) to merge PR #1015 (J3037 CLAUDE_QUOTE_CHECK_v02.md) + PR #1251, lock v02 in 064/status.json, reopen & complete J3020 (releasing J3021 VO), and close J3051 + J3520."
+        },
+        {
+          "at": "2026-11-24T13:27Z",
+          "by": "codex",
+          "what": "reopened: Chief ruling recorded in merged PR 1260: FIX on v02, exact replacements and J3538 -> J3539 follow-up; J3020 remains held. Reopen only to close this completed review."
         }
       ],
       "remaining_action": "Parking J3520 for Elected Chief to merge PR #1015 + PR #1251, lock v02, complete J3020, and release J3021 VO",
@@ -320686,20 +320691,7 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-24T12:16Z",
-        "by": "macbook",
-        "plan": [
-          "Audit 064 v02 script and history",
-          "Verify quotes, facts, rules and gates",
-          "Write independent review verdict and PR",
-          "Update queue and post thread report"
-        ],
-        "note": "Opened PR #1251 with jobs/reviews/J3520/REVIEW.md (PASS on v02; do not lock rejected v01)"
-      }
+      "open_claim": true
     },
     {
       "id": "J3521",
