@@ -290130,6 +290130,11 @@
           "at": "2026-11-24T23:13Z",
           "by": "relay",
           "what": "condition verification queued: J3644"
+        },
+        {
+          "at": "2026-11-24T23:45Z",
+          "by": "gemini",
+          "what": "waits on Ben: Watch the 25-minute B-29 film (v01) and say OK or what to change (by 2026-11-25 20:00 London)"
         }
       ],
       "remaining_action": "Chief QA review, board watch upload (watch_upload.mjs + awaits), and Claude Code PR publish for codex/J3205-mini",
@@ -290168,6 +290173,18 @@
         "condition": "Required predecessor is complete; verify remaining gates and approvals",
         "check_at": "2026-11-25T00:13:09+00:00",
         "recheck_task": "J3644"
+      },
+      "awaits_ben": {
+        "what": "Watch the 25-minute B-29 film (v01) and say OK or what to change",
+        "file": "WW2 UAT/003_Why-B29-Superfortress-Cost-More-Than-Atomic-Bomb/003_B29-Superfortress_v01_PHONE.mp4",
+        "version": "v01",
+        "due": "2026-11-25T20:00Z",
+        "airs": "2026-11-28T17:00Z",
+        "ifNot": "Hold the film; nothing uploads or schedules without your OK",
+        "card": "WW2:003",
+        "title": "B-29: Why It Cost More Than the Atomic Bomb",
+        "number": "003",
+        "type": "long"
       }
     },
     {
