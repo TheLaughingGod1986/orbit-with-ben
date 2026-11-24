@@ -645,14 +645,30 @@ def apply_metadata(data, entries, agent, at):
     data.clear(); data.update(planned)
 
 
-RECHECK_MAX_H = 24
+RECHECK_MAX_H = 72
+RECHECK_STEPS_H = (1, 2, 4, 8, 16, 24, 48, 72)
+RECHECK_WINDOW = dt.timedelta(days=14)
+# A hold that waits on a decision only Ben can make. A worker re-reading it every few hours cannot change it: J2537 was
+# re-checked 14 times in a week (24 Nov 2026) while it waited on Ben's word about an irreversible history rewrite.
+BEN_WAIT_RE = re.compile(r"\bBen(?:'s)?\b\s*(?::|explicit|word|ok\b|okay|approval|decision|go\b|answer|exception|"
+                         r"to (?:decide|choose|approve|confirm|sign))|waiting (?:on|for) Ben\b|needs Ben\b|ask Ben\b", re.I)
+
+
+def waits_on_ben(job: dict) -> bool:
+    """True when the job's hold or blocked result says it waits on Ben's own decision."""
+    hold = job.get("hold") or {}
+    text = " ".join(str(x or "") for x in (hold.get("condition"), job.get("result")))
+    return hold.get("type") == "ben" or bool(BEN_WAIT_RE.search(text))
 
 
 def recheck_backoff(data, parent, by_id, at):
     """True while the next condition check for `parent` should wait (Ben, 4 Nov 2026: videos weren't moving; 357 of
     499 jobs since 1 Nov were hourly 'verify condition' re-checks of the same ~10 held jobs, all using the Chief's
-    slot). Each check that finds the hold unchanged doubles the wait: 1, 2, 4, 8, 16, then 24 h, counted from the last
-    check. A predecessor (`after`) finishing after that check is real news, so it is checked at once."""
+    slot). Each check that finds the hold unchanged lengthens the wait: 1, 2, 4, 8, 16, 24, 48, then 72 h, counted
+    from the last check. The count covers 14 days and restarts when the job is reopened (24 Nov 2026: the old 48-hour
+    count fell back to a 2-hour wait after every long gap, so stuck jobs were re-checked twice a day for weeks; 121
+    checks in seven days). A hold waiting on Ben's own decision waits at least 72 h between checks. A predecessor
+    (`after`) finishing after the last check is real news, so it is checked at once."""
     done = [j for j in data["jobs"] if j.get("recheck_of") == parent["id"] and j.get("status") == "done"]
     stamps = sorted(t for t in (workflow.timestamp(next((h.get("at") for h in reversed(j.get("history") or [])
                                                           if str(h.get("what", "")).startswith("done")), None)) for j in done) if t)
@@ -665,9 +681,13 @@ def recheck_backoff(data, parent, by_id, at):
                                        if str(h.get("what", "")).startswith("done")), None))
         if fin and fin > last:
             return False
-    recent = [t for t in stamps if at - t <= dt.timedelta(hours=48)]
-    wait = dt.timedelta(hours=min(RECHECK_MAX_H, 2 ** max(0, len(recent) - 1)))
-    return at < last + wait
+    restart = max((t for t in (workflow.timestamp(h.get("at")) for h in parent.get("history") or []
+                               if str(h.get("what", "")).startswith(("reopened", "added"))) if t), default=None)
+    recent = [t for t in stamps if at - t <= RECHECK_WINDOW and (restart is None or t > restart)]
+    hours = RECHECK_STEPS_H[min(max(0, len(recent) - 1), len(RECHECK_STEPS_H) - 1)]
+    if waits_on_ben(parent):
+        hours = max(hours, RECHECK_MAX_H)
+    return at < last + dt.timedelta(hours=hours)
 
 
 def recheck_moot(parent: dict) -> str:

@@ -757,6 +757,29 @@ class Relay(unittest.TestCase):
         self.assertTrue(self.ran("codex"))
         self.assertIn("exec -m gpt-6-astra", (self.tmp / "codex.args").read_text())
 
+    def test_a_worker_is_marked_down_until_the_reset_it_printed(self):
+        """24 Nov 2026: Cursor printed "Weekly usage limit reached. It resets in 2 days" and was retried hourly."""
+        T = cr.now()
+        self.assertEqual(cr.stated_reset("ActionRequiredError: Weekly usage limit reached. It resets in 2 days. "
+                                         "Buy credits to keep going now.", T), T + dt.timedelta(days=2))
+        self.assertEqual(cr.stated_reset("rate limited, try again in 3h 20m", T), T + dt.timedelta(minutes=200))
+        self.assertEqual(cr.stated_reset("limit; resets at 2026-12-01T09:00Z", dt.datetime(2026, 11, 30, tzinfo=dt.timezone.utc)),
+                         dt.datetime(2026, 12, 1, 9, 0, tzinfo=dt.timezone.utc))
+        self.assertEqual(cr.stated_reset("Weekly usage limit reached", T), T + dt.timedelta(hours=12))
+        self.assertIsNone(cr.stated_reset("You have hit your usage limit", T))
+        self.assertEqual(cr.stated_reset("resets in 30 days", T), T + cr.RESET_MAX)  # capped
+        q = self.claude_setup('{"jobs": [{"id": "J0311", "kind": "chart", "status": "open", "needs": "mini"}]}')
+        self.fake("codex", 'echo "ActionRequiredError: Weekly usage limit reached. It resets in 2 days."; exit 1')
+        cr.seen("chief", T0 - 10 * MIN)
+        cr.cmd_run(T0)
+        mark = cr.read_json(cr.d("down", "codex.json"))
+        self.assertGreater(cr.parse(mark["until"]) - cr.parse(mark["since"]), dt.timedelta(hours=47))
+        self.assertTrue(self.ran("agy"))  # and the chart job walked on to Gemini in the same run
+        rows = {r["agent"]: r for r in cr.heartbeat_doc(cr.now(), "idle")["workers"]}
+        self.assertFalse(rows["codex"]["up"])
+        self.assertEqual(rows["codex"]["until"], mark["until"])
+        self.assertTrue(rows["gemini"]["up"])
+
     def test_while_claude_is_up_its_jobs_stay_with_claude(self):
         q = self.claude_setup('{"jobs": [{"id": "J0306", "kind": "script", "status": "open", "needs": "cloud"}, '
                               '{"id": "J0307", "kind": "qa", "status": "blocked", "needs": "cloud", "result": "needs Ben: a sign-in", '
@@ -1277,6 +1300,18 @@ class Relay(unittest.TestCase):
         self.assertEqual(cr.cmd_run(T0), 0)
         self.assertFalse(self.ran("codex"))
         self.assertFalse(self.ran("cursor"))
+
+    def test_reclaimable_memory_counts_for_a_second_slot(self):
+        """24 Nov 2026: 0.3 GB free but 9 GB inactive and purgeable on the Mini; only free counted, so one slot ran."""
+        out = ("Mach Virtual Memory Statistics: (page size of 16384 bytes)\n"
+               "Pages free:                               20000.\n"
+               "Pages active:                            400000.\n"
+               "Pages inactive:                          500000.\n"
+               "Pages speculative:                        10000.\n"
+               "Pages purgeable:                          60000.\n")
+        self.assertEqual(cr.vm_stat_available(out), (20000 + 10000 + 500000 + 60000) * 16384)
+        self.assertGreater(cr.vm_stat_available(out), 3 * 1024 ** 3)
+        self.assertEqual(cr.vm_stat_available(""), 0)
 
     def test_the_first_slot_still_starts_when_memory_is_low(self):
         self.routed_queue('{"jobs": [{"id": "J0505", "kind": "assembly", "status": "open", "needs": "mini", '

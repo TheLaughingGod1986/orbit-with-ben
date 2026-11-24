@@ -131,16 +131,7 @@ def free_memory_bytes() -> int:
             pass
     if sys.platform == "darwin":
         try:
-            out = subprocess.run(["vm_stat"], capture_output=True, text=True, timeout=2).stdout
-            page = 4096
-            sized = re.search(r"page size of (\d+)", out)
-            if sized:
-                page = int(sized.group(1))
-            free = 0
-            for label in ("Pages free", "Pages speculative"):
-                row = re.search(rf"{label}:\s+(\d+)", out)
-                if row:
-                    free += int(row.group(1)) * page
+            free = vm_stat_available(subprocess.run(["vm_stat"], capture_output=True, text=True, timeout=2).stdout)
             if free:
                 return free
         except (OSError, subprocess.SubprocessError):
@@ -149,6 +140,22 @@ def free_memory_bytes() -> int:
         return int(os.sysconf("SC_AVPHYS_PAGES")) * int(os.sysconf("SC_PAGE_SIZE"))
     except (OSError, ValueError, AttributeError, TypeError):
         return 8 << 30
+
+
+def vm_stat_available(out: str) -> int:
+    """Bytes macOS can hand a new job now: free and speculative pages plus the inactive and purgeable ones it reclaims on
+    demand. Free pages alone sit near zero on a Mac that has been up a while (the file cache keeps the rest), so the
+    3 GB guard kept the second slot shut while twenty jobs were ready and Gemini was idle (24 Nov 2026)."""
+    page = 4096
+    sized = re.search(r"page size of (\d+)", out or "")
+    if sized:
+        page = int(sized.group(1))
+    total = 0
+    for label in ("Pages free", "Pages speculative", "Pages inactive", "Pages purgeable"):
+        row = re.search(rf"{label}:\s+(\d+)", out or "")
+        if row:
+            total += int(row.group(1)) * page
+    return total
 
 
 def memory_for_new_slot() -> bool:
@@ -875,7 +882,11 @@ def publish_chief_inbox(items: list, leader: str | None, at: dt.datetime, dest: 
     History of Science duties use a separate file when its Chief is not orbit-with-ben's."""
     dest = dest or d("inbox.json")
     previous = read_json(dest) or {}
-    approvals = approval_round(at)
+    try:
+        approvals = approval_round(at)
+    except Exception as e:  # a board read must never stop the Chief's inbox
+        log(f"board approvals not read: {e.__class__.__name__}: {e}")
+        approvals = []
     rows = [{"id": j["id"], "title": j.get("title", ""), "fingerprint": chief_fingerprint(j)} for j in items]
     same = previous.get("agent") == leader and previous.get("jobs") == rows
     since = previous.get("since") if same else iso(at)
@@ -1191,6 +1202,40 @@ def run_cli(agent: str, prompt: str, cap_s: int, model: str = "") -> tuple:
     return code, out[-4000:]
 
 
+# How long a worker says it is out (Ben, 24 Nov 2026: Cursor printed "Weekly usage limit reached. It resets in 2 days"
+# and was retried every hour, so the board and the forecast kept counting it as up and 10 jobs waited behind it).
+_RESET_UNITS = {"d": 1440, "day": 1440, "days": 1440, "h": 60, "hr": 60, "hrs": 60, "hour": 60, "hours": 60,
+                "m": 1, "min": 1, "mins": 1, "minute": 1, "minutes": 1}
+RESET_IN_RE = re.compile(r"(?:resets?|try again|retry|available again|back)\s+(?:in|after)\s+(?:about\s+|~)?"
+                         r"((?:\d+(?:\.\d+)?\s*(?:days?|d|hours?|hrs?|h|minutes?|mins?|m)\b[\s,]*(?:and\s+)?)+)", re.I)
+RESET_AT_RE = re.compile(r"(?:resets?|try again|until|available)\s+(?:at\s+|on\s+)?"
+                         r"(\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}(?::\d{2})?(?:\.\d+)?(?:Z|[+-]\d{2}:?\d{2})?)", re.I)
+RESET_MAX = dt.timedelta(days=8)
+
+
+def stated_reset(text: str, at: dt.datetime):
+    """The reset time a CLI printed with its limit error ("resets in 2 days", "try again in 3h 20m", "resets at
+    2026-11-26T09:00Z"), capped at RESET_MAX, or None when it gave none. A weekly limit with no time counts 12 h."""
+    text = text or ""
+    m = RESET_IN_RE.search(text)
+    if m:
+        mins = sum(float(n) * _RESET_UNITS[u.lower()] for n, u in
+                   re.findall(r"(\d+(?:\.\d+)?)\s*(days?|d|hours?|hrs?|h|minutes?|mins?|m)\b", m.group(1), re.I))
+        if mins > 0:
+            return at + min(dt.timedelta(minutes=mins), RESET_MAX)
+    m = RESET_AT_RE.search(text)
+    if m:
+        try:
+            when = parse(m.group(1).replace(" ", "T"))
+        except (ValueError, TypeError):
+            when = None
+        if when and when > at:
+            return min(when, at + RESET_MAX)
+    if re.search(r"\bweekly\b.{0,40}\blimit|\blimit\b.{0,40}\bweekly\b", text, re.I):
+        return at + dt.timedelta(hours=12)
+    return None
+
+
 def credit_phrase(code: int, tail: str) -> str:
     """The out-of-credit / signed-out phrase a CLI ended its run with, or "". Only the last CHIEF_CREDIT_TAIL (800)
     characters count: that's where a CLI prints its own error. A run that did real work and quoted a YouTube 429, a
@@ -1245,7 +1290,22 @@ def heartbeat_doc(at: dt.datetime, state: str, agent: str = "", note: str = "") 
     chief = (read_json(d("current.json")) or {}).get("agent") or ""
     chain_rows = (read_json(d("chain.json")) or {}).get("rows") or []
     return {"at": iso(at), "state": state, "agent": agent, "note": note[:200], "host": "mac-mini", "chief": chief,
-            "chain": chain_rows}
+            "chain": chain_rows, "workers": worker_rows(at)}
+
+
+def worker_rows(at: dt.datetime) -> list:
+    """Every Mini worker's own state (up, why, until), not only the Chief chain's: the queue forecast read Cursor as up
+    from the chain alone while its down mark said "resets in 2 days" (24 Nov 2026)."""
+    rows = []
+    for a in routing.MINI_WORKERS:
+        try:
+            up, why = state_of(a, at)
+        except Exception as e:  # a heartbeat must never fail on one worker's state
+            up, why = True, f"state unknown ({e.__class__.__name__})"
+        mark = read_json(d("down", a + ".json")) or {}
+        rows.append({"agent": a, "up": bool(up), "why": str(why or "")[:160],
+                     "until": "" if up else str(mark.get("until") or "")})
+    return rows
 
 
 def parked_reviews(data: dict) -> list:
@@ -2424,6 +2484,9 @@ def run_locked(at: dt.datetime, slot: int = 0) -> int:
             reviewed.add(reviews[0]["id"])
         if usage:
             until = now() + dt.timedelta(hours=retry_h)
+            stated = stated_reset(tail[-1500:], now())
+            if stated and stated > until:
+                until = stated  # the worker's own reset time, not an hourly retry it is sure to fail
             on_auto = who == "cursor" and model not in routing.SEPARATE_POOLS and bool(cursor_default_out(now()))
             if who == "cursor" and MODEL_LIMIT_RE.search(said) and model not in routing.SEPARATE_POOLS and not on_auto:
                 # Only the model Cursor defaults to is out (its Opus pool), not Cursor: run it on Auto for the

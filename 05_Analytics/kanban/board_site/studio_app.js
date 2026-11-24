@@ -1385,6 +1385,44 @@
       <ul class="p24-glance-list att-list">${list}</ul>
     </details>`;
   }
+  // One honest list of what is stuck (Ben, 24 Nov 2026: "the reason why jobs are being missed, and why jobs are
+  // building up in past and not being moved on"): agents that are out and when they are back, jobs past their due
+  // time, and jobs blocked for more than three days. Each line is plain words; the job page has the detail.
+  function stuckModel(b, now) {
+    const t = Number(now) || Date.now();
+    const models = (((b || {}).models || {}).models || []).filter(m => m && m.status === 'red' && !['elevenlabs', 'vertex'].includes(m.id));
+    const out = models.map(m => {
+      const back = m.until ? Date.parse(m.until) : NaN;
+      return {name: m.name || m.id, why: clip(String(m.why || 'out'), 110), back: Number.isFinite(back) && back > t ? back : null};
+    });
+    const live = (((b || {}).owb || {}).jobs || []).filter(j => j && ['open', 'blocked'].includes(j.status) && !j.recheck_of);
+    const due = j => { const d = Date.parse(j.due || ''); return Number.isFinite(d) ? d : null; };
+    const overdue = live.filter(j => due(j) !== null && due(j) < t).sort((x, y) => due(x) - due(y));
+    const born = j => { const d = Date.parse(j.created_at || ''); return Number.isFinite(d) ? d : null; };
+    const DAY = 864e5;
+    // A job waiting for a set time (a film going public, a 48-hour read) is on schedule, not stuck.
+    const scheduled = j => { const h = j.hold || {}; const c = Date.parse(h.check_at || ''); return ['date', 'public', 'test'].includes(h.type) && Number.isFinite(c) && c > t; };
+    const stale = live.filter(j => j.status === 'blocked' && born(j) !== null && t - born(j) > 3 * DAY && !overdue.includes(j) && !scheduled(j))
+      .sort((x, y) => born(x) - born(y));
+    return {out, overdue, stale, now: t};
+  }
+  function stuckSection(b, now) {
+    const m = stuckModel(b, now);
+    const n = m.out.length + m.overdue.length + m.stale.length;
+    if (!n) return '';
+    const hrs = ms => { const h = Math.round(ms / 36e5); return h < 48 ? `${h} h` : `${Math.round(h / 24)} days`; };
+    const when = ms => new Date(ms).toLocaleString('en-GB', {weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/London'});
+    const jobLine = (j, note) => `<li><a href="#job=${esc(j.id)}"><span class="p24-title wrap">${esc(clip(jobPlain(b, j) || j.title || j.id, 110))}</span></a> <span class="muted">${esc(note)}</span></li>`;
+    const parts = [];
+    if (m.out.length) parts.push(`<h3>Agents out</h3><ul class="p24-glance-list att-list">${m.out.map(a => `<li><b>${esc(a.name)}</b> <span class="muted">${a.back ? 'back ' + esc(when(a.back)) : 'no return time'} · ${esc(a.why)}</span></li>`).join('')}</ul>`);
+    if (m.overdue.length) parts.push(`<h3>Past their due time (${m.overdue.length})</h3><ul class="p24-glance-list att-list">${m.overdue.slice(0, 8).map(j => jobLine(j, `${hrs(m.now - Date.parse(j.due))} late · ${j.status === 'blocked' ? 'waiting' : 'queued'}`)).join('')}</ul>`);
+    if (m.stale.length) parts.push(`<h3>Waiting more than 3 days (${m.stale.length})</h3><ul class="p24-glance-list att-list">${m.stale.slice(0, 8).map(j => jobLine(j, `waiting ${hrs(m.now - Date.parse(j.created_at))}`)).join('')}</ul>`);
+    const bits = [m.overdue.length ? `${m.overdue.length} late` : '', m.stale.length ? `${m.stale.length} waiting 3+ days` : '', m.out.length ? `${m.out.length} agent${m.out.length === 1 ? '' : 's'} out` : ''].filter(Boolean).join(' · ');
+    return `<details class="overview-attention overview-stuck" aria-label="Stuck">
+      <summary><span class="att-icon" aria-hidden="true"></span><span class="att-copy"><b>Stuck</b><span>${esc(bits)}</span></span><span class="att-chev" aria-hidden="true">›</span></summary>
+      <div class="stuck-body">${parts.join('')}</div>
+    </details>`;
+  }
   function workingOnNowBody(b) {
     const p=b.progress24h; if(!p) return '';
     const focus=p24FocusSet(b);
@@ -1662,6 +1700,7 @@
       <div class="seg" aria-label="Studio video counts"><a href="#review"><b>${s.ready.length}</b><span>To review</span></a><a href="#videos&view=producing"><b>${s.producing.length}</b><span>Producing</span></a><a href="#schedule&view=week"><b>${s.week.length}</b><span>This week</span></a></div>
       ${checksStaleBanner(b)}
       ${needsAttentionBanner(b)}
+      ${stuckSection(b, now)}
       ${planSection(b)}
       ${firstDaySection(b,now)}
       ${machinesCard(b,now)}
