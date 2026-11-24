@@ -314363,20 +314363,34 @@
           "at": "2026-11-24T21:14Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T21:18Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3434; verified WW2:006 locked VO (1542.84s), 68 verified archive photos, J3453/J3454 decisions, and J3562 Rule-2 title audit."
         }
       ],
-      "remaining_action": "Assemble the film to its narration and archive plan, then QA and Ben's watch",
+      "remaining_action": "Inspecting 006 archive corpus, existing code graphics, and Scribe timing",
       "due": "2026-12-02T20:00:00Z",
       "kind": "assembly",
       "urgent": 6,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-24T21:14Z",
+        "of": 5,
+        "at": "2026-11-24T21:18Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify inputs and existing assets",
+          "Build cut list, captions, and upload package",
+          "Generate zero-spend score and audio mix",
+          "Render 1080p master and 3 Rule-2 thumbnails",
+          "Run QA gates, inspect visuals, and open PR"
+        ],
+        "note": "Claimed J3434; verified WW2:006 locked VO (1542.84s), 68 verified archive photos, J3453/J3454 decisions, and J3562 Rule-"
+      },
+      "taskKeys": [
+        "WW2:006"
+      ]
     },
     {
       "id": "J3435",
