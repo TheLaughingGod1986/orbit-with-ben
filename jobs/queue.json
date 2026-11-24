@@ -322582,10 +322582,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 150,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-24T15:18Z",
+      "eta": "2026-11-24T17:48Z",
       "created_by": "claude",
       "created_at": "2026-11-24T14:28Z",
       "result": "",
@@ -322594,13 +322594,26 @@
           "at": "2026-11-24T14:28Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T15:18Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Cut a 60-second vertical Short from pilot 1's archive and narration for Ben's watch",
       "due": "2026-11-25T20:00:00Z",
       "kind": "assembly",
       "mini_only": true,
-      "urgent": 13
+      "urgent": 13,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T15:18Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3543",
