@@ -88531,13 +88531,13 @@
       "stage": "edit",
       "after": "J2477",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook-2",
+      "status": "done",
+      "by": "codex",
       "since": "2026-11-16T02:24Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-26T12:14Z",
-      "result": "Waiting for: HELD ON BEN'S OK: Chief KEEP v02 (jobs/reviews/J2926/REVIEW.md, 592efd8d8c; 7/7 gates PASS). 032_short_fri27_opening_testA_v02.mp4 is in OWB UAT and WATCH_FULL for Ben's final watch by Fri 20 Nov 2026 18:00 London.",
+      "result": "J3505: completed work accepted by Ben on 16 November; exact board approval recorded on J3508. Stale Ben-watch hold cleared. Upload delivery queued separately; no upload performed here.",
       "history": [
         {
           "at": "2026-10-26T12:14Z",
@@ -88913,6 +88913,11 @@
           "at": "2026-11-24T10:53Z",
           "by": "codex",
           "what": "no longer waits on Ben: OK'd, delivered by J3508"
+        },
+        {
+          "at": "2026-11-24T10:54Z",
+          "by": "codex",
+          "what": "done: J3505: completed work accepted by Ben on 16 November; exact board approval recorded on J3508. Stale Ben-watch hold cleared. Upload delivery queued separately; no upload performed here."
         }
       ],
       "kind": "assembly",
@@ -88920,21 +88925,13 @@
       "taskKeys": [
         "OWB:032"
       ],
-      "escalated_at": "2026-11-16T06:14Z",
-      "remaining_action": "Wait for Ben's final UAT watch on the board by Fri 20 Nov 18:00 London before any Private upload for Fri 27 Nov 11:30 London (Related T3cBBss1F60)",
+      "remaining_action": "Completed; delivery is tracked by J3508",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-16T03:31Z",
-        "by": "macbook-2"
-      },
-      "hold": {
-        "type": "ben",
-        "condition": "HELD ON BEN'S OK: Chief KEEP v02 (jobs/reviews/J2926/REVIEW.md, 592efd8d8c; 7/7 gates + audio/video review PASS). 032_short_fri27_opening_testA_v02.mp4 (ea9f4386...) and 032_short_fri27_opening_testA_v02_cover.jpg (9cd9e5e7...) are in OWB UAT and WATCH_FULL and the watch card is on the board. Needs Ben's final UAT watch by Fri 20 Nov 2026 18:00 London for Fri 27 Nov 2026 11:30 London Test A slot (after 032 long T3cBBss1F60 goes public Wed 25 Nov 18:00 London).",
-        "check_at": "2026-11-20T18:00:00Z",
-        "last_recheck": "J2926",
-        "checked_at": "2026-11-16T06:09:39+00:00",
-        "checked_by": "gemini"
+        "at": "2026-11-24T10:54Z",
+        "by": "codex",
+        "note": "Board approval verified and recorded; delivery job queued"
       },
       "awaits_was": {
         "what": "Watch 032 Titan Short #2 (Test A Opening) v02 and its cover: Could You Survive Stepping Onto Saturn's Moon Titan?",
@@ -229835,17 +229832,30 @@
       "required_capabilities": [
         "audio_input"
       ],
-      "awaits_was": {
-        "what": "029 opening Short v06 (k2kEaA7ICjc, Fri 11 Dec, Test A): rebuilt the 8.6-12.1 s, 12.1-18.7 s and 21.1-26.9 s graphics and telescope plates full-frame 9:16 so there is no blurred band anywhere; same voice, words and length",
-        "file": "OWB UAT/029_short_fri11_opening_testA_v06/029_short_fri11_opening_testA_v06.mp4",
-        "version": "v06",
-        "due": "2026-12-08T18:00Z",
-        "airs": "2026-12-11T11:30Z",
-        "ifNot": "the cut you OK'd airs",
-        "title": "Is Betelgeuse Really About to Explode?",
-        "number": "029",
-        "type": "short"
-      },
+      "awaits_was": [
+        {
+          "what": "029 opening Short v06 (k2kEaA7ICjc, Fri 11 Dec, Test A): rebuilt the 8.6-12.1 s, 12.1-18.7 s and 21.1-26.9 s graphics and telescope plates full-frame 9:16 so there is no blurred band anywhere; same voice, words and length",
+          "file": "OWB UAT/029_short_fri11_opening_testA_v06/029_short_fri11_opening_testA_v06.mp4",
+          "version": "v06",
+          "due": "2026-12-08T18:00Z",
+          "airs": "2026-12-11T11:30Z",
+          "ifNot": "the cut you OK'd airs",
+          "title": "Is Betelgeuse Really About to Explode?",
+          "number": "029",
+          "type": "short"
+        },
+        {
+          "what": "029 half-Moon Short v06 (heiGCnGKTkE, Mon 14 Dec): rebuilt the 3.0-5.8 s neutrino burst, 5.8-8.9 s La Silla sky and 12.4-16.2 s / 19.8-21.9 s Orion flare graphics full-frame 9:16 so there is no blurred band anywhere; same voice, words and length",
+          "file": "OWB UAT/029_short_mon14_half_moon_daylight_v06/029_short_mon14_half_moon_daylight_v06.mp4",
+          "version": "v06",
+          "due": "2026-12-11T18:00Z",
+          "airs": "2026-12-14T11:30Z",
+          "ifNot": "the cut you OK'd airs",
+          "title": "How Bright Will Betelgeuse Get When It Explodes?",
+          "number": "029",
+          "type": "short"
+        }
+      ],
       "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/944"
     },
     {
@@ -263981,13 +263991,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
+      "status": "done",
+      "by": "codex",
       "since": "2026-11-16T07:51Z",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-16T07:48Z",
-      "result": "Waiting for: HELD ON BEN'S OK: HOS PR #611 merged (a26ca06f); HOS 010 Short A v01 (J2933.1) and Short C v01 (J2933.2) wait in HOS UAT and WATCH_FULL for Ben's final watch by 1 Dec 18:00 London.",
+      "result": "J3505: completed work accepted by Ben on 16 November; exact board approval recorded on J3512 (A) and J3511 (C). Stale Ben-watch hold cleared. Upload delivery queued separately; no upload performed here.",
       "history": [
         {
           "at": "2026-11-16T07:48Z",
@@ -264058,40 +264068,51 @@
           "at": "2026-11-24T10:54Z",
           "by": "codex",
           "what": "no longer waits on Ben (entry 1): OK'd, delivered by J3512"
+        },
+        {
+          "at": "2026-11-24T10:54Z",
+          "by": "codex",
+          "what": "done: J3505: completed work accepted by Ben on 16 November; exact board approval recorded on J3512 (A) and J3511 (C). Stale Ben-watch hold cleared. Upload delivery queued separately; no upload performed here."
         }
       ],
-      "remaining_action": "Wait for Ben's final UAT watch on HOS 010 Short A v01 (J2933.1) and Short C v01 (J2933.2) by 1 Dec 18:00 London",
+      "remaining_action": "Completed; delivery is tracked by J3512 (A) and J3511 (C)",
       "due": "2026-11-30T18:00:00Z",
       "kind": "qa",
       "model": "mini-claude-opus-5-5",
       "plain": "Non-producer QA review of HOS 010 Short A and Short C, then place both on Ben's watch with working Play links",
       "mini_only": true,
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-16T07:54Z",
-        "by": "claudecode",
-        "note": "board_check OK at 07:54Z: cards HOS:ASK:J2933.1 and J2933.2 in Ben's lane, both Play links answer 302"
+        "at": "2026-11-24T10:54Z",
+        "by": "codex",
+        "note": "Board approval verified and recorded; delivery job queued"
       },
       "taskKeys": [
         "HOS:010"
       ],
-      "escalated_at": "2026-11-16T10:25Z",
-      "hold": {
-        "type": "ben",
-        "condition": "HELD ON BEN'S OK: HOS PR #611 merged (a26ca06f); HOS 010 Short A v01 (J2933.1) and Short C v01 (J2933.2) are in HOS UAT and WATCH_FULL awaiting Ben's final watch by Tue 1 Dec 2026 18:00 London.",
-        "check_at": "2026-12-01T18:00:00Z"
-      },
-      "awaits_was": {
-        "what": "Watch HOS 010 Short A, What Killed the Dinosaurs? (23 s), before it is uploaded",
-        "file": "HOS UAT/010_Alvarez-Clay-Line-Dinosaurs/10_Shorts/hos_010_short_A_v01.mp4",
-        "version": "v01",
-        "due": "2026-12-01T18:00Z",
-        "ifNot": "Short A is not uploaded or scheduled; it also waits for the HOS 010 long to be public",
-        "title": "HOS 010 Short A: What Killed the Dinosaurs?",
-        "number": "010 Short A",
-        "type": "short"
-      }
+      "awaits_was": [
+        {
+          "what": "Watch HOS 010 Short A, What Killed the Dinosaurs? (23 s), before it is uploaded",
+          "file": "HOS UAT/010_Alvarez-Clay-Line-Dinosaurs/10_Shorts/hos_010_short_A_v01.mp4",
+          "version": "v01",
+          "due": "2026-12-01T18:00Z",
+          "ifNot": "Short A is not uploaded or scheduled; it also waits for the HOS 010 long to be public",
+          "title": "HOS 010 Short A: What Killed the Dinosaurs?",
+          "number": "010 Short A",
+          "type": "short"
+        },
+        {
+          "what": "Watch HOS 010 Short C, Are Birds Really Dinosaurs? (24 s), before it is uploaded",
+          "file": "HOS UAT/010_Alvarez-Clay-Line-Dinosaurs/10_Shorts/hos_010_short_C_v01.mp4",
+          "version": "v01",
+          "due": "2026-12-01T18:00Z",
+          "ifNot": "Short C is not uploaded or scheduled; it also waits for the HOS 010 long to be public",
+          "title": "HOS 010 Short C: Are Birds Really Dinosaurs?",
+          "number": "010 Short C",
+          "type": "short"
+        }
+      ]
     },
     {
       "id": "J2934",
@@ -319103,7 +319124,7 @@
     },
     {
       "id": "J3509",
-      "title": "Swap approved Betelgeuse half-Moon Short to v06; retain 14 Dec 11:30",
+      "title": "029 Short heiGCnGKTkE: swap to approved v06; retain 14 Dec 11:30",
       "needs": "mini",
       "repo": "owb",
       "body": "Authority: J3505, Ben board OK relayed by Claude and independently checked against board-data on 24 Nov 2026. Codex elected Chief verified before queuing. GBP 0, no generation. Claim film upload stage before work. Verify exact approved master hash and all applicable gates; prepare complete listing package and dry run before uploading. Keep existing uploaded files and manifests intact; use a new versioned upload package. Read current YouTube state before any write; stop duplicate uploads if this exact cut is already uploaded. Never delete a video, change a running thumbnail test, or make anything public immediately. Record every privacy/publishAt change with old/new state and authority on the studio thread in the same session; update gate library, UPLOADS.json and Buffer records together. Read back channel, privacy, publishAt, cover, captions and Related status. All Shorts must air after their long is public. If its long slips, prevent the Short airing first. Report exact ids and times, and commit records from a clean worktree.\n\nBen OK 16 Nov 09:13 London, card OWB:ASK:J2551.2. Exact approved file OWB UAT/029_short_mon14_half_moon_daylight_v06/029_short_mon14_half_moon_daylight_v06.mp4. Old id heiGCnGKTkE currently has v04 (UPLOADS hash 31f362f4437b4ca56ec16b8abef1dce4c65fb5a5c6c7b5b4e2ba39229a33efd5), Private for Mon 14 Dec 2026 11:30Z. Parent vP1BbqZ_dnM scheduled 6 Dec 18:00Z. This is a separately authorised swap of the approved full-bleed v06, not a second Short. Upload new v06 privately and verify before unscheduling the old private copy and transferring the SAME slot. Keep old id private with no publishAt; never delete or rename the old file. Title unchanged: How Bright Will Betelgeuse Get When It Explodes? No move to 11 Dec: that is occupied by opening Short. Use J2551 delivery and gate records, prior J2906 swap procedure, and verify-swap.ts readback to prove old Private/unscheduled and new Private/scheduled. Update J0923 Related targets to replacement, open-gate library and Buffer/UPLOADS in same job. If old copy has already gone public, stop for a scoped ruling; this is not permission to duplicate a public idea.\n",
@@ -319129,6 +319150,11 @@
           "at": "2026-11-24T10:54Z",
           "by": "codex",
           "what": "approved by Ben: 029 half-Moon Short v06 (heiGCnGKTkE, Mon 14 Dec): rebuilt the 3.0-5.8 s neutrino burst, 5.8-8.9 s La Silla sky and 12.4-16.2 s / 19.8-21.9 s Orion flare graphics full-frame 9:16 so there is no blurred band anywhere; same voice, words and length v06 (asked in J2551)"
+        },
+        {
+          "at": "2026-11-24T10:54Z",
+          "by": "codex",
+          "what": "J3505: name old id in title so existing swap-readback guard is mandatory"
         }
       ],
       "remaining_action": "Upload the approved brighter Betelgeuse Short while keeping its date",
@@ -319154,7 +319180,7 @@
     },
     {
       "id": "J3510",
-      "title": "Swap approved Betelgeuse opening Short to v06; retain 11 Dec 11:30",
+      "title": "029 Short k2kEaA7ICjc: swap to approved v06; retain 11 Dec 11:30",
       "needs": "mini",
       "repo": "owb",
       "body": "Authority: J3505, Ben board OK relayed by Claude and independently checked against board-data on 24 Nov 2026. Codex elected Chief verified before queuing. GBP 0, no generation. Claim film upload stage before work. Verify exact approved master hash and all applicable gates; prepare complete listing package and dry run before uploading. Keep existing uploaded files and manifests intact; use a new versioned upload package. Read current YouTube state before any write; stop duplicate uploads if this exact cut is already uploaded. Never delete a video, change a running thumbnail test, or make anything public immediately. Record every privacy/publishAt change with old/new state and authority on the studio thread in the same session; update gate library, UPLOADS.json and Buffer records together. Read back channel, privacy, publishAt, cover, captions and Related status. All Shorts must air after their long is public. If its long slips, prevent the Short airing first. Report exact ids and times, and commit records from a clean worktree.\n\nBen OK 16 Nov 09:32 London, card OWB:ASK:J2551.1. Exact approved file OWB UAT/029_short_fri11_opening_testA_v06/029_short_fri11_opening_testA_v06.mp4. Old id k2kEaA7ICjc currently has v04 (UPLOADS hash ff4194857a027cfc5f93551ef398125276e6bcfb9cd3ce2fd18d8ee1134e2405), Private for Fri 11 Dec 2026 11:30Z. Parent vP1BbqZ_dnM scheduled 6 Dec 18:00Z. This is a separately authorised swap of the approved full-bleed v06, not a second Short. Upload new v06 privately and verify before unscheduling the old private copy and transferring the SAME slot. Keep old id private with no publishAt; never delete or rename old file. Title unchanged: Is Betelgeuse Really About to Explode? 8 Dec is its old watch deadline, not its air slot. Use J2551 delivery and gate records, prior J2906 swap procedure, and verify-swap.ts readback to prove old Private/unscheduled and new Private/scheduled. Preserve Test A exemption. Update J0923 Related targets to replacement, open-gate library and Buffer/UPLOADS in same job. If old copy has already gone public, stop for a scoped ruling; this is not permission to duplicate a public idea.\n",
@@ -319180,6 +319206,11 @@
           "at": "2026-11-24T10:54Z",
           "by": "codex",
           "what": "approved by Ben: 029 opening Short v06 (k2kEaA7ICjc, Fri 11 Dec, Test A): rebuilt the 8.6-12.1 s, 12.1-18.7 s and 21.1-26.9 s graphics and telescope plates full-frame 9:16 so there is no blurred band anywhere; same voice, words and length v06 (asked in J2551)"
+        },
+        {
+          "at": "2026-11-24T10:54Z",
+          "by": "codex",
+          "what": "J3505: name old id in title so existing swap-readback guard is mandatory"
         }
       ],
       "remaining_action": "Upload the approved Betelgeuse opening Short while keeping its date",
@@ -319199,7 +319230,8 @@
         "channel": "OWB",
         "job": "J2551",
         "okAt": "2026-11-16T09:32Z",
-        "okRef": "board:OWB:ASK:J2551.1;J3505"
+        "okRef": "board:OWB:ASK:J2551.1;J3505",
+        "askId": "J2551.1"
       }
     },
     {
@@ -319298,7 +319330,8 @@
         "channel": "HOS",
         "job": "J2933",
         "okAt": "2026-11-16T11:10Z",
-        "okRef": "board:HOS:ASK:J2933.1;J3505"
+        "okRef": "board:HOS:ASK:J2933.1;J3505",
+        "askId": "J2933.1"
       }
     }
   ],

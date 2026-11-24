@@ -12,7 +12,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J0910 | mini | blocked | chief | – | studio · 028 Shorts: set Related video -> F-jImX5h7ws after Sun 29 Nov 18:00Z + pinned comment on long |  |
 | J0912 | mini | blocked | cursor | – | assembly · Backlog HOS: next search-titled Short cut from a locked long (existing VO + picture only) |  |
 | J0923 | mini | blocked | cursor | – | 029 upload · studio · 029 Betelgeuse: Studio finish (captions en-GB, Test & Compare A/B/C, end screen + cards, pinned comment), read back | 6384887788 |
-| J0979 | mini | blocked | macbook-2 | – | 032 edit · assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J0996 | mini | blocked | macbook-2 | – | 027 upload · studio · OWB 027: matching Earth long description after J0317 (J0980 ruling) |  |
 | J1275 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · HOS 009/010: merge PR #389 (Sources + provisional Chapters), then re-time the Chapters on each locked cut |  |
 | J2021 | cloud | blocked | claude | – | review · Rule 17 test: measure film 026 Shorts -> long (subs per 1,000 views) on 2026-11-29 |  |
@@ -30,7 +29,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J2886 | mini | blocked | cursor | – | studio · Pin the Titan long comment once T3cBBss1F60 is public |  |
 | J2895 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about landing on an ice giant (v02) Private, slot Sat 19 Dec 11:30 |  |
 | J2896 | mini | blocked | gemini | – | for gemini · listing · `gemini-argon` · Upload the Uranus Short about the 21-year winters (v02, Test A opening) Private, slot Fri 18 Dec 11:30 |  |
-| J2933 | mini | blocked | claudecode | – | 010 edit · qa · `mini-claude-opus-5-5` · Review HOS 010 Short A v01 and Short C v01 (J2172, PR #611) | J2172 |
 | J2986 | mini | blocked | claudecode | – | 033 upload · for claudecode · studio · `mini-claude-opus-5-5` · Upload the Uranus long master v05 Private and scheduled for Wed 9 Dec 18:00, arm the thumbnail test |  |
 | J3012 | mini | blocked | gemini | – | for gemini · chief · `gemini-argon` · Decoupling phase 3: move the studio engine into its own repo, runbook now, move after a clean week |  |
 | J3020 | mini | blocked | gemini | – | 064 script · for gemini · script · `gemini-argon` · OWB 064: Write and check the script for the every-planet film | J3011 |
@@ -104,8 +102,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3506 | any | open | – | – | assembly · Board and relay: an OK Ben gives on the board must become an upload job (10 sat up to 12 days) |  |
 | J3507 | any | open | – | – | 136 script · script · HOS 136 Trinity Test Explained (film 2, Thu 17 Dec): package first, then the 7-9 minute script draft | J3502 |
 | J3508 | mini | open (after J3505) | – | – | 032 upload · studio · Upload approved Titan Test A Short v02 for 2 Dec 11:30 | J3505 |
-| J3509 | mini | open (after J3505) | – | – | 029 upload · studio · Swap approved Betelgeuse half-Moon Short to v06; retain 14 Dec 11:30 | J3505 |
-| J3510 | mini | open (after J3505) | – | – | 029 upload · studio · Swap approved Betelgeuse opening Short to v06; retain 11 Dec 11:30 | J3505 |
+| J3509 | mini | open (after J3505) | – | – | 029 upload · studio · 029 Short heiGCnGKTkE: swap to approved v06; retain 14 Dec 11:30 | J3505 |
+| J3510 | mini | open (after J3505) | – | – | 029 upload · studio · 029 Short k2kEaA7ICjc: swap to approved v06; retain 11 Dec 11:30 | J3505 |
 | J3511 | mini | open (after J3505) | – | – | 010 upload · studio · Upload approved HOS 010 bird Short C v01 privately; no schedule yet | J3505 |
 | J3512 | mini | open (after J3505) | – | – | 010 upload · studio · Upload approved HOS 010 dinosaur Short A v01 privately; no schedule yet | J3505 |
 
