@@ -299461,6 +299461,11 @@
           "at": "2026-11-23T09:36Z",
           "by": "codex",
           "what": "done: PASS for private UAT only. PR 718 merged; NAS/UAT hashes match; twelve delivered gate PASS logs and all requested stills reviewed; independent decode and frame-0 uniqueness PASS. Two published watch cards ready with unique HTTP 302 links, due 24 Nov 18:00Z. Ben watch/listen pending. Review evidence PR 736; all local checks PASS. No YouTube or Buffer changes."
+        },
+        {
+          "at": "2026-11-24T21:48Z",
+          "by": "codex",
+          "what": "no longer waits on Ben (entry 1): OK'd, delivered by J3501"
         }
       ],
       "remaining_action": "Finishing the private Moon Shorts handoff record",
@@ -299486,26 +299491,15 @@
         "by": "codex",
         "note": "Both published UAT cards verified ready with correct titles and separate HTTP 302 Play links. Review PR 736 records exac"
       },
-      "awaits_ben": [
-        {
-          "what": "Watch the Moon stopped moving Short",
-          "file": "HOS UAT/009_The-Falling-Moon-Gravity/10_Shorts/hos_009_short_A_v01.mp4",
-          "version": "v01",
-          "due": "2026-11-24T18:00Z",
-          "ifNot": "Keep private and unscheduled until Ben approves and the Moon long is public",
-          "title": "What Would Happen If the Moon Stopped Moving?",
-          "type": "short"
-        },
-        {
-          "what": "Watch the Newton gravity Short",
-          "file": "HOS UAT/009_The-Falling-Moon-Gravity/10_Shorts/hos_009_short_B_v01.mp4",
-          "version": "v01",
-          "due": "2026-11-24T18:00Z",
-          "ifNot": "Keep private and unscheduled until Ben approves and the Moon long is public",
-          "title": "How Did Newton Discover Gravity?",
-          "type": "short"
-        }
-      ]
+      "awaits_ben": {
+        "what": "Watch the Newton gravity Short",
+        "file": "HOS UAT/009_The-Falling-Moon-Gravity/10_Shorts/hos_009_short_B_v01.mp4",
+        "version": "v01",
+        "due": "2026-11-24T18:00Z",
+        "ifNot": "Keep private and unscheduled until Ben approves and the Moon long is public",
+        "title": "How Did Newton Discover Gravity?",
+        "type": "short"
+      }
     },
     {
       "id": "J3312",
@@ -320297,6 +320291,11 @@
           "at": "2026-11-24T21:48Z",
           "by": "codex",
           "what": "approved by Ben: Upload the approved Gravity long v03 v03 (asked in J2037)"
+        },
+        {
+          "at": "2026-11-24T21:48Z",
+          "by": "codex",
+          "what": "approved by Ben: Watch the Moon stopped moving Short v01 (asked in J3311)"
         }
       ],
       "remaining_action": "Delivering the approved Gravity Shorts and captions",
@@ -320326,16 +320325,16 @@
         "HOS:009"
       ],
       "approved_from": {
-        "what": "Upload the approved Gravity long v03",
-        "file": "HOS UAT/009_The-Falling-Moon-Gravity/hos009_long_master_v03_PHONE.mp4",
-        "version": "v03",
-        "card": "HOS:009",
-        "type": "long",
-        "airs": "2026-12-03T18:00Z",
+        "what": "Watch the Moon stopped moving Short",
+        "file": "HOS UAT/009_The-Falling-Moon-Gravity/10_Shorts/hos_009_short_A_v01.mp4",
+        "version": "v01",
+        "title": "What Would Happen If the Moon Stopped Moving?",
+        "type": "short",
         "channel": "HOS",
-        "number": "009",
-        "job": "J2037",
-        "okAt": "2026-11-24T08:42Z",
+        "number": "HOS:009",
+        "job": "J3311",
+        "askId": "J3311.1",
+        "okAt": "2026-11-23T09:57Z",
         "okRef": "Ben board OK; Claude J3501 briefing"
       }
     },
