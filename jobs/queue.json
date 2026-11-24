@@ -1,5 +1,5 @@
 {
-  "next_id": 3517,
+  "next_id": 3518,
   "jobs": [
     {
       "id": "J0001",
@@ -319971,6 +319971,37 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3517",
+      "title": "WW2 film 010: narration in Ben's voice (Hobart's Funnies, post-reset)",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**HARD GUARD — DO NOT SPEND ELEVENLABS CREDITS BEFORE `2026-11-30 10:50Z`!**\n- If claimed before **`2026-11-30 10:50Z`** OR before elected Chief (`codex`) has merged `ww2-channel` PR #69 (`macbook/J3475`), PR #74 (`macbook/J3493`), and the `macbook/J3494` locked `v02` script PR to `main`, **spend £0 / 0 credits** and immediately register the structured post-reset hold:\n  `python3 scripts/jobs.py wait <THIS_JOB_ID> --agent <you> --type credits --condition \"ElevenLabs monthly credit reset (2026-11-30 10:50Z) confirmed AND elected Chief has merged WW2:010 locked script v02 PR (macbook/J3494) to main\" --check-at \"2026-11-30T11:00:00Z\" --git`\n- Never change or top up Ben's ElevenLabs plan (`studio/RULES.md` Rule 9). Never use the ElevenLabs website (API via `vo_take.py` / `el_client.py` only).\n\n**Task (strictly AFTER `2026-11-30 10:50Z` reset and Chief merge of `macbook/J3494`):**\nRecord full narration in Ben's voice (`eleven_v3`, Ben Orbit Narrator) for Field Order History film **`WW2:010`** (*Why Britain Built D-Day's Strangest Tanks*, target air slot **Thu 17 Dec 2026 17:00 London**, Ben's watch due **Mon 14 Dec 2026**).\n\n**Locked Source File (`ww2-channel` `main` after Chief merge of `macbook/J3494`):**\n- Path: `02_Video-Projects/010_Hobarts-Funnies-Specialist-Assault-Tanks-D-Day/01_Script/NARRATION_v02.txt` (matches `01_Script/SCRIPT.md` v02, `45/45` paragraphs byte-for-byte)\n- Length: **`2,965` spoken words · `18,465` stripped spoken characters** (`<= 21,000` Rule-9 cap, `2,535`-char margin)\n- SHA-256: **`a4d08707afb6b6d4888421d8ef93f3871db5c953a3644225c84f871c9c99bc32`**\n- All 5 `J3493` pre-lock factual fixes (`C09`, `C10`, `C16`, `C21`, `C22`) and Rule-6 viewer test (`VIEWER_TEST_v01.md`) are already verified and locked in `v02`.\n\n**Steps:**\n1. Verify current UTC time is `>= 2026-11-30T10:50:00Z`, `ww2-channel` `main` has `NARRATION_v02.txt` matching SHA-256 `a4d08707afb6b6d4888421d8ef93f3871db5c953a3644225c84f871c9c99bc32`, and live ElevenLabs balance covers `18,465` spoken characters (`scripts/ai_spend.py record` before & after).\n2. Generate chapter-split VO via API (`vo_take.py` / `el_client.py`), run Scribe `scribe_v2` / `faster-whisper` word verification and loudness/peak QA, and log settled spend against `WW2:010`.\n3. Copy finished WAV/MP3 masters to the shared NAS working store (`/Volumes/data/studio-live/ww2/02_Video-Projects/010_Hobarts-Funnies-Specialist-Assault-Tanks-D-Day/02_Voiceover/`) with SHA-256 verification.\n4. Commit `VO_REPORT.md`, take metadata, and updated `status.json` (`vo: review`) in a `ww2-channel` PR (no media in git).\n",
+      "ref": "",
+      "film": "WW2:010",
+      "stage": "vo",
+      "after": "J3494",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-24T11:43Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T11:43Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Hold until 2026-11-30 10:50Z ElevenLabs reset and Chief merge of WW2:010 v02 PR, then record NARRATION_v02.txt",
+      "due": "2026-12-03T18:00:00Z",
+      "kind": "vo",
+      "plain": "Record Ben's narration for WW2 film 010 (Hobart's Funnies) after the 30 Nov ElevenLabs reset",
+      "mini_only": true
     }
   ],
   "focus": [
