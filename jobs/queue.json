@@ -326198,10 +326198,10 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
-      "by": "gemini",
-      "since": "2026-11-24T18:03Z",
-      "eta": "2026-11-24T18:23Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-24T18:02Z",
       "result": "",
@@ -326225,6 +326225,11 @@
           "at": "2026-11-24T18:08Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Content & Details verified on CDP 9223 (UC_esArsDKd3GJvOkeO0DUog): Public, Notices empty, not Made for Kids, no age restriction, SD+HD complete, description exact match to upload package, relatedVideoId null (long), T028 A/B test running. 0 faults."
+        },
+        {
+          "at": "2026-11-24T18:10Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred codex): Gemini run failed (exit 1); next in its chain: codex"
         }
       ],
       "remaining_action": "Verify exact 48h Studio Analytics numbers (typical range, avg %, impressions, CTR, likes, rank)",
@@ -326247,7 +326252,15 @@
       },
       "taskKeys": [
         "OWB:027"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "claimed",
+        "by": "gemini"
+      },
+      "open_claim": true
     },
     {
       "id": "J3602",
