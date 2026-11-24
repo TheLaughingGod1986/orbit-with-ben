@@ -140,6 +140,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3639 | any | open (after J3638) | – | – | WW2:004 edit · chief · WW2 004: Chief decision on v02 delivery and stage Ben watch |  |
 | J3640 | mini | claimed | macbook | 2026-11-25T00:59Z | review · Verify condition for J3430 |  |
 | J3641 | mini | open | – | – | studio · First-day check at 6 h: "How the U-Boats Lost Their Safest Hunting Ground" (qfc6EBStOfo) |  |
+| J3642 | gemini | open | – | – | 009 sources · facts · WW2 009: independent Gemini direct-source recheck of v04 | https://github.com/TheLaughingGod1986/ww2-channel/pull/114 |
 
 Recently finished:
 

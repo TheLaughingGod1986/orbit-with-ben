@@ -1,5 +1,5 @@
 {
-  "next_id": 3642,
+  "next_id": 3643,
   "jobs": [
     {
       "id": "J0001",
@@ -330129,6 +330129,35 @@
       "kind": "studio",
       "launch": "qfc6EBStOfo@6",
       "plain": "Check how \"How the U-Boats Lost Their Safest Hunting Ground\" is doing 6 hours after it went live"
+    },
+    {
+      "id": "J3642",
+      "title": "WW2 009: independent Gemini direct-source recheck of v04",
+      "needs": "gemini",
+      "repo": "ww2",
+      "body": "Independent Gemini direct-source facts recheck of WW2:009 narration v04, J3636 commit 3eae2e72209e1802d7cfce780b95addfa8287762 on macbook/J3636 (PR #114, stacked on PR #112 commit 96afbb3). Run via Gemini/agy, not a script-lane self-review. Use a clean worktree at the exact commit 3eae2e72209e1802d7cfce780b95addfa8287762.\n\nRead studio/RULES.md, 01_Script/CLAIMS_CHECK_v03.md, 01_Script/SOURCES.md, 01_Script/VALIDATION_v04.json, 01_Script/SCRIPT.md, 01_Script/NARRATION_v04.txt, and status.json. Project: 02_Video-Projects/009_Operation-Pedestal-Tanker-SS-Ohio-Saved-Malta. v04 hash 5ea74805d67df5f0eea8b1cfcb40a4bed7c819a9ec94c02bece094eb3cdbe7e9; 14077 stripped spoken characters (<=21000), 46 spoken blocks (46/46 parity).\n\nVerify all 6 J3634 FLAG fixes and optional polish against directly inspected primary/official sources (confirming all 31 previously PASSed claims remain unchanged and clean):\n1. C04 ([S03]) + non-spoken packaging: singular \"an enemy aircraft would crash onto her deck and further attacks would leave her engine room wrecked\"; SCRIPT.md Ch. 4 renamed to \"Fire, Steel, and Dead Engines\"; status.json Thumb B updated to 'HELD AFLOAT' (no 'BROKEN BACK' leftover).\n2. C14 ([S13]-[S14]): scope-safe \"more than forty major warships in all\" and \"around thirty destroyers, combining the main-force screen with additional destroyers supporting Furious and the western basin\" reconciled across LG 38377 App. A, Roskill Table 27, and Roskill/Hague prose.\n3. C16 ([S17]): hedged \"yet about one hundred and sixty went down with her\" per Rule 4 across Kindell (162), uboat.net (160), and Roskill/Mason (~260).\n4. C20 ([S22]): disputed integer dropped (\"Heavy bombs smashed through her flight deck\") vs LG 38377 / Roskill (3 hits) and incomplete hosted ADM 267/84 transcription (2 hits + 3 near-misses).\n5. C23 ([S24]-[S25]): removed \"the port side of SS Ohio\" and unverified primary 1-2-1 Axum torpedo allocation, plus visual note guard on [S24].\n6. C26 ([S30]): removed uninspected \"whose deck carried cases of aviation petrol\" on Waimarama.\n7. Optional polish: [S15] Strait fog (10 Aug) separated from 11 Aug noon Spitfire launch and later departure; SOURCES.md direct-source registry updated with Roskill Vol. II Ch. XIII, Kindell, IWM GM 1452/GM 1436/GM 1426/A 14520, and uboat.net URLs.\n\nWrite 01_Script/CLAIMS_CHECK_v04.md with exact SHA-256 verification, 46/46 parity check, <=21000 char check, and PASS/FLAG/UNVERIFIABLE verdict. Preserve NARRATION_v01.txt, NARRATION_v02.txt, NARRATION_v03.txt, NARRATION_v04.txt, CLAIMS_CHECK.md, CLAIMS_CHECK_v02.md, and CLAIMS_CHECK_v03.md byte-for-byte unchanged; do not rewrite spoken lines. Open a PR stacked on macbook/J3636. On CLEAN independent verification, queue/notify J3492's condition verification; do not release J3492, lock script, or authorize VO yourself in this facts job.\n\nNo spend, generation, upload, or scheduling. No VO before 2026-11-30 10:50Z AND script lock. Lock deadline 2026-11-30 18:00Z; Ben watch 9 Dec; planned air 12 Dec 17:00 London unchanged.\n",
+      "ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/114",
+      "film": "009",
+      "stage": "sources",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T23:00Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T23:00Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify v04 6 surgical fixes and write CLAIMS_CHECK_v04.md",
+      "kind": "facts",
+      "plain": "Independent Gemini direct-source recheck of WW2 film 009 narration v04 after the 6 surgical J3634 fixes"
     }
   ],
   "focus": [
