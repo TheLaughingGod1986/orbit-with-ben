@@ -48,12 +48,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3310 | mini | open (after J3307) | – | – | studio · Studio: arm T043 thumbnail Test & Compare on REXYxuLOBoI (005 — OUTLIVES OUR SUN) after J3307 PASS | jobs/reviews/J3382/REVIEW.md |
 | J3365 | mini | open | – | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J3369 | mini | blocked | codex | – | 001 thumbs · studio · Field Order History pilot 1: 48-hour thumbnail decision |  |
-| J3375 | mini | blocked | gemini | – | review · Verify condition for J3178 |  |
-| J3391 | mini | blocked | macbook-2 | – | review · Verify condition for J3365 |  |
-| J3392 | mini | blocked | gemini | – | review · Verify condition for J3205 |  |
 | J3399 | macbook | open (after J0996) | – | – | 027 upload · review · Review Earth equator Short private/schedule discrepancy | https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1200 |
-| J3400 | mini | blocked | gemini | – | review · Verify condition for J0996 |  |
-| J3406 | any | blocked | macbook-2 | – | review · Verify condition for J3307 |  |
 | J3414 | mini | blocked | codex | – | studio · WW2 pilot 1: 48-hour metrics and running thumbnail test read |  |
 | J3415 | mini | blocked | – | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3417 | mini | blocked | codex | – | thumb · Field Order History pilot 2: two close-crop thumbnails and a Test & Compare at launch; one-subject rule into the playbook for films 003+ |  |
@@ -66,7 +61,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3444 | mini | blocked | codex | – | 027 upload · studio · Earth equator Short: 24-hour reach read after Related repair |  |
 | J3463 | mini | blocked | codex | – | studio · Field Order History channel totals read 2026-11-24 |  |
 | J3467 | mini | open (after J3466) | – | – | 002 upload · studio · Field Order History pilot 2: pin its question after v06 goes public |  |
-| J3468 | mini | blocked | gemini | – | review · Verify condition for J2529 |  |
 | J3469 | mini | open | – | – | review · Verify condition for J2704 |  |
 | J3470 | mini | open | – | – | review · Verify condition for J3114 |  |
 | J3471 | mini | open | – | – | review · Verify condition for J3415 |  |
