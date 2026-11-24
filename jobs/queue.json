@@ -324104,9 +324104,14 @@
           "at": "2026-11-24T18:35Z",
           "by": "refill",
           "what": "escalated to Chief: parked 3 h"
+        },
+        {
+          "at": "2026-11-24T21:33Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-27T18:30:00Z"
         }
       ],
-      "remaining_action": "Chief to route corrections and decide script lock after independent recheck",
+      "remaining_action": "Await corrected script, independent facts and direct-quote lock ruling",
       "due": "2026-12-01T18:00:00Z",
       "kind": "review",
       "plain": "Review and lock HOS 128 Edison vs Tesla v01 script, package-first scoring, sources, and 16-19s Shorts (PR #751)",
@@ -324129,7 +324134,12 @@
           "Publish review for Chief"
         ]
       },
-      "escalated_at": "2026-11-24T18:35Z"
+      "escalated_at": "2026-11-24T18:35Z",
+      "hold": {
+        "type": "dependency",
+        "condition": "Chief FIX on v01 at 7702cc76: complete J3628 corrected script and Shorts, J3629 independent Gemini facts, then dependent direct-quote and lock review. No script lock, merge of 751, VO or picture spend until corrected evidence passes.",
+        "check_at": "2026-11-27T18:30:00Z"
+      }
     },
     {
       "id": "J3548",
