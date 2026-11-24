@@ -315832,13 +315832,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-24T05:00Z",
-      "eta": "2026-11-24T06:00Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-24T04:59Z",
-      "result": "",
+      "result": "Read-only HOS live & scheduled listing check (2026-11-24T05:03Z-05:05Z): 0 live Studio fixes needed, 0 blocking repo-record deltas. 7/7 public longs PASS (5/5 chapters, Sources on 004-007, end screens, AI badges, captions, Education), 36/36 public Shorts PASS (18-26 s, 36/36 live Related pills, AI badges, captions, 8/8 external source URLs HTTP 200), 2/2 scheduled videos (sY0PSQFxjp8, uAomPaOBrM8) PASS (LOGIN_REQUIRED signed-out, library/Buffer/readback parity verified), check_all.sh ALL CHECKS PASS. Audit committed on macbook/J3461 and opened as HOS PR #742 (00_Brand/Channel-Setup/audits/live_fixes/2026-11-24_J3461.md) for Chief merge. Nothing changed in Studio or via API; £0 / 0 credits.",
       "history": [
         {
           "at": "2026-11-24T04:59Z",
@@ -315884,6 +315884,11 @@
           "at": "2026-11-24T05:06Z",
           "by": "macbook-2",
           "what": "step 4 of 4 done"
+        },
+        {
+          "at": "2026-11-24T05:07Z",
+          "by": "macbook-2",
+          "what": "done: Read-only HOS live & scheduled listing check (2026-11-24T05:03Z-05:05Z): 0 live Studio fixes needed, 0 blocking repo-record deltas. 7/7 public longs PASS (5/5 chapters, Sources on 004-007, end screens, AI badges, captions, Education), 36/36 public Shorts PASS (18-26 s, 36/36 live Related pills, AI badges, captions, 8/8 external source URLs HTTP 200), 2/2 scheduled videos (sY0PSQFxjp8, uAomPaOBrM8) PASS (LOGIN_REQUIRED signed-out, library/Buffer/readback parity verified), check_all.sh ALL CHECKS PASS. Audit committed on macbook/J3461 and opened as HOS PR #742 (00_Brand/Channel-Setup/audits/live_fixes/2026-11-24_J3461.md) for Chief merge. Nothing changed in Studio or via API; £0 / 0 credits."
         }
       ],
       "remaining_action": "Writing audit report, running checks, opening PR, and posting thread report",
