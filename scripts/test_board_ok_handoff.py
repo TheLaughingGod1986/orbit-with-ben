@@ -36,7 +36,7 @@ class BoardOK(unittest.TestCase):
         self.assertFalse(ad.approval_alerts([card(11.99)], [review()], now=NOW))
         alert = ad.approval_alerts([card()], [review()], now=NOW)[0]
         self.assertEqual(alert['message'], 'Your OK on Titan is waiting for an upload job, 12 h')
-        self.assertEqual(alert['href'], '#videos')
+        self.assertEqual(alert['href'], '#v=OWB%3AASK%3AJ3400')  # opens that video's own page (24 Nov 2026)
         unknown = card(check={}, approved={})
         self.assertIsNone(ad.waiting_approvals([unknown], [], now=NOW)[0]['ageHours'])
         self.assertFalse(ad.approval_alerts([unknown], [], now=NOW))
@@ -93,6 +93,24 @@ class BoardOK(unittest.TestCase):
             self.assertEqual(len(data['jobs']), 2)
             self.assertEqual(upload['board_ok']['id'], v['checkId'])
             self.assertNotIn('awaits_ben', data['jobs'][0])
+
+    def test_listing_upload_finished_swap_and_listed_cards_count_as_delivery(self):
+        # 24 Nov 2026: Ben saw nine "waiting for an upload job" alerts; most had one.
+        uranus = card(key='OWB:OK:J2895', type='short', number='033', approved={'job': 'J2895', 'version': 'v02', 'okAt': card()['check']['at']})
+        listing = {'id': 'J2895', 'status': 'blocked', 'kind': 'listing', 'repo': 'owb',
+                   'title': 'Upload the Uranus Short about landing on an ice giant (v02) Private, slot Sat 19 Dec 11:30'}
+        self.assertEqual(ad.waiting_approvals([uranus], [listing], now=NOW), [])
+        muons = card(key='OWB:OK:J2881', type='short', approved={'job': 'J2881', 'version': 'v05', 'okAt': card()['check']['at']})
+        swap = {'id': 'J2881', 'status': 'done', 'kind': 'listing', 'repo': 'owb',
+                'title': 'Swap the Muons Short rvug71d7Dqk (Sat 21 Nov) to the full-screen cut Ben OK\'d, v05'}
+        self.assertEqual(ad.waiting_approvals([muons], [swap], now=NOW), [])
+        short_a = card(key='HOS:ASK:J2699', channel='HOS', type='short', number='008', approved={'job': 'J2699', 'version': 'v04', 'okAt': card()['check']['at']})
+        review = {'id': 'J2699', 'status': 'done', 'kind': 'edit', 'repo': 'hos', 'title': 'HOS 008 Short A v04: private final-watch handoff'}
+        self.assertEqual(len(ad.waiting_approvals([short_a], [review], now=NOW)), 1)  # a watch handoff is not an upload
+        bundle = {'id': 'J3500', 'status': 'open', 'kind': 'studio', 'repo': 'hos', 'film': '008', 'stage': 'upload',
+                  'title': 'HOS 008 Franklin: package and schedule', 'delivers': ['HOS:008', 'HOS:ASK:J2699', 'HOS:ASK:J2984']}
+        self.assertEqual(ad.waiting_approvals([short_a], [review, bundle], now=NOW), [])
+        self.assertEqual(ad.approval_alerts([short_a], [review], now=NOW)[0]['href'], '#v=HOS%3AASK%3AJ2699')
 
     def test_board_alert_payload_and_swap_guard(self):
         import ben_alerts

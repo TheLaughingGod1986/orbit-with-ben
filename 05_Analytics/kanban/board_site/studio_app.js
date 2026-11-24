@@ -2416,7 +2416,7 @@
     const rows = items.map(a => {
       const href = a && a.href && /^#[A-Za-z0-9_=%:&./-]+$/.test(a.href) ? a.href : "#review";
       const label = a && a.kind === "approval" ? "Upload job needed" : a && a.kind === "pulled" ? "Urgent · Video pulled" : "Urgent · Watch needed";
-      const cta = a && a.kind === "approval" ? "Open Videos ›" : href.startsWith("#uat=") || href === "#review" ? "Open watch card ›" : "Open schedule ›";
+      const cta = a && a.kind === "approval" ? "Open video ›" : href.startsWith("#uat=") || href === "#review" ? "Open watch card ›" : "Open schedule ›";
       const msg = (a && (a.message || a.text)) || "";
       return `<div class="urgent-banner-item"><div class="urgent-banner-head"><i class="urgent-banner-dot" aria-hidden="true"></i><span>${esc(label)}</span></div>`
         + `<p class="urgent-banner-text">${esc(msg)}</p>`
