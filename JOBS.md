@@ -104,6 +104,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3505 | any | claimed | codex | 2026-11-24T11:34Z | chief · Ben's board OKs with no upload job: Titan Short, two Betelgeuse Shorts, the two History of Science dinosaur Shorts |  |
 | J3506 | any | open | – | – | assembly · Board and relay: an OK Ben gives on the board must become an upload job (10 sat up to 12 days) |  |
 | J3507 | any | open | – | – | 136 script · script · HOS 136 Trinity Test Explained (film 2, Thu 17 Dec): package first, then the 7-9 minute script draft | J3502 |
+| J3508 | mini | open (after J3505) | – | – | 032 upload · studio · Upload approved Titan Test A Short v02 for 2 Dec 11:30 | J3505 |
 
 Recently finished:
 

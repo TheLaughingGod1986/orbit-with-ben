@@ -1,5 +1,5 @@
 {
-  "next_id": 3508,
+  "next_id": 3509,
   "jobs": [
     {
       "id": "J0001",
@@ -319024,6 +319024,37 @@
       "due": "2026-11-28T18:00:00Z",
       "kind": "script",
       "plain": "Package-first lock and 7-9 minute script draft for HOS 136 Trinity Test Explained"
+    },
+    {
+      "id": "J3508",
+      "title": "Upload approved Titan Test A Short v02 for 2 Dec 11:30",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Authority: J3505, Ben board OK relayed by Claude and independently checked against board-data on 24 Nov 2026. Codex elected Chief verified before queuing. GBP 0, no generation. Claim film upload stage before work. Verify exact approved master hash and all applicable gates; prepare complete listing package and dry run before uploading. Keep existing uploaded files and manifests intact; use a new versioned upload package. Read current YouTube state before any write; stop duplicate uploads if this exact cut is already uploaded. Never delete a video, change a running thumbnail test, or make anything public immediately. Record every privacy/publishAt change with old/new state and authority on the studio thread in the same session; update gate library, UPLOADS.json and Buffer records together. Read back channel, privacy, publishAt, cover, captions and Related status. All Shorts must air after their long is public. If its long slips, prevent the Short airing first. Report exact ids and times, and commit records from a clean worktree.\n\nBen OK: 16 Nov 2026 09:32 London, card OWB:ASK:J0979. Exact cut OWB UAT/032_short_fri27_opening_testA_v02.mp4, SHA256 ea9f43867d7acc729400376b55a913f695f3aa66ca705adb1b4ec320f4b78a17. Approved cover SHA256 9cd9e5e7fe8e310eeaebb63814679cc92d0b47f32d763f59cf3ea51d9fda05ca. Source and 7 gate reports: jobs/reviews/J2926/REVIEW.md and 032/10_Shorts/SHORT2_TESTA_OPENING_HANDOFF_J0979_v02.md; package under 032/10_Shorts/fri27_opening_testA/07_Upload-Package. Title: Could You Survive Stepping Onto Saturn's Moon Titan? Parent T3cBBss1F60 is scheduled 25 Nov 18:00Z. Target Wed 2 Dec 2026 11:30 London, first free regular OWB slot after parent in 24 Nov snapshot: 27 Nov, 28 Nov and 30 Nov already occupied. Recheck entire channel for collisions and queued reservations; never move an existing scheduled Short. If occupied, choose next unoccupied Mon/Wed/Fri/Sat 11:30 after parent and record reason. Upload Private plus future publishAt only after gates pass. Register social copy and media; maintain deferred Buffer handling if outside window. Preserve Test A length exemption. J2744 cohort names strike-match whereas this is Test A: report exact identity, do not silently substitute this cut into that experiment.\n",
+      "ref": "J3505",
+      "film": "032",
+      "stage": "upload",
+      "after": "J3505",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-24T10:52Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T10:52Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Upload the Titan Short you approved into the next free slot",
+      "due": "2026-11-25T12:00:00Z",
+      "kind": "studio",
+      "plain": "Upload the Titan Short you approved into the next free slot",
+      "mini_only": true
     }
   ],
   "focus": [
