@@ -289680,13 +289680,13 @@
       "stage": "edit",
       "after": "J3371",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-24T15:24Z",
-      "eta": "2026-11-24T19:24Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-20T10:21Z",
-      "result": "",
+      "result": "publish via Claude Code: /Volumes/MiniWork/scratch/J3205-mini codex/J3205-mini; checkpoint bc431ff, handoff v16. Automatic approval review rejected Codex push of internal edit plans/evidence to an unverified remote. Claude Code must review full diff for privacy and publish under the standing handoff rule. Then resume archive clearance, 21 graphic allocations, full assembly, three covers and QA; no finished film.",
       "history": [
         {
           "at": "2026-11-20T10:21Z",
@@ -290012,6 +290012,11 @@
           "at": "2026-11-24T17:02Z",
           "by": "codex",
           "what": "step 1 of 4 done: bc431ff: S13 NAS assets verified and integrated; 57 input hashes match; 74 contiguous windows, zero empty windows; 21 graphic allocations and archive clearance remain. Push rejected by automatic review; local branch preserved for Claude Code."
+        },
+        {
+          "at": "2026-11-24T17:02Z",
+          "by": "codex",
+          "what": "blocked: publish via Claude Code: /Volumes/MiniWork/scratch/J3205-mini codex/J3205-mini; checkpoint bc431ff, handoff v16. Automatic approval review rejected Codex push of internal edit plans/evidence to an unverified remote. Claude Code must review full diff for privacy and publish under the standing handoff rule. Then resume archive clearance, 21 graphic allocations, full assembly, three covers and QA; no finished film."
         }
       ],
       "remaining_action": "Publish the verified checkpoint through Claude Code, then clear archives and assemble the film",
@@ -290043,7 +290048,12 @@
       },
       "taskKeys": [
         "WW2:003"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/J3205-mini codex/J3205-mini; checkpoint bc431ff, handoff v16. Automatic approval review rejected Codex push of internal edit plans/evidence to an unverified remote. Claude Code must review full diff for privacy and publish under the standing handoff rule. Then resume archive clearance, 21 graphic allocations, full assembly, three covers and QA; no finished film.",
+        "check_at": "2026-11-24T23:02:43+00:00"
+      }
     },
     {
       "id": "J3206",
