@@ -126,7 +126,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3606 | mini | open | – | – | for claudecode · assembly · Publish final Mulberry Short records after the corrected cut is verified |  |
 | J3610 | mini | open | – | – | 010 upload · studio · Schedule HOS 010 bird Short after its long is confirmed | J3511 |
 | J3611 | mini | open | – | – | 010 upload · studio · HOS 010 Short A: schedule only after actual long readiness and finish Studio checks | J3512 |
-| J3615 | mini | open | – | – | assembly · Relay: restore a free second slot when a worker returns during a job chain |  |
+| J3615 | mini | claimed | codex | 2026-11-24T23:19Z | assembly · Relay: restore a free second slot when a worker returns during a job chain |  |
 | J3619 | mini | blocked | macbook-2 | – | review · Verify condition for J3486 |  |
 | J3620 | mini | open | – | – | review · Verify condition for J3487 |  |
 | J3621 | gemini | open | – | – | HOS:127 sources · facts · HOS 127 Wright Brothers First Flight (Thu 31 Dec): independent facts audit of v01 script, SOURCES.md & Shorts (PR #756) | J3504 |

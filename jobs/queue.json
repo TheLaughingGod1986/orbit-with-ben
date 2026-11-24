@@ -328020,10 +328020,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-24T21:19Z",
+      "eta": "2026-11-24T23:19Z",
       "created_by": "codex",
       "created_at": "2026-11-24T20:21Z",
       "result": "",
@@ -328067,6 +328067,11 @@
           "at": "2026-11-24T20:44Z",
           "by": "codex",
           "what": "released: Code, tests, Chief review, green CI and merge/install complete: PR 1289. Only final safe-boundary runtime verification remains. This run is itself held by old runner slot 0; do not interrupt it or slot 1/J3205. Next claim: compare live runner loaded version with installed b7f20fb5eea010db, record fresh evidence, advance 4/4 and done. Existing receipt ~/_desk/logs/J3615-installed.json. No code rebuild or duplicate runner needed."
+        },
+        {
+          "at": "2026-11-24T21:19Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Confirming the updated relay loads after the current jobs finish",
