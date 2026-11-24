@@ -289698,13 +289698,13 @@
       "stage": "edit",
       "after": "J3371",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-24T21:56Z",
-      "eta": "2026-11-25T01:56Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-20T10:21Z",
-      "result": "",
+      "result": "parked for Chief: WW2:003 v01 master, phone proxy, 3 launch covers, 11_Upload-Package v01 and measurable QA complete on codex/J3205-mini (4d8422d at /Volumes/MiniWork/scratch/J3205-mini; NAS sha256 876736a1a23d42109a5648bb7188707f842843c15dcd1a3d882de4dd8a027a66; iCloud WW2 UAT staged). Publish via Claude Code: /Volumes/MiniWork/scratch/J3205-mini codex/J3205-mini; then Chief QA pass + watch_upload.mjs + jobs.py awaits for Ben's watch (due Wed 25 Nov 20:00 UTC, airs Sat 28 Nov 17:00 London).",
       "history": [
         {
           "at": "2026-11-20T10:21Z",
@@ -290110,6 +290110,11 @@
           "at": "2026-11-24T22:20Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Assembled full 1080p30 master (25:50.42, -16.3 LUFS, -1.8 dBFS TP, 0 decode/black/silence errors, 61.38% cleared US Fed PD archive, 0 <60s repeats), 720p phone proxy, 3 Rule-2 launch covers + 168px phone sheet, and complete 11_Upload-Package v01; staged on NAS & iCloud WW2 UAT; committed 4d8422d on codex/J3205-mini"
+        },
+        {
+          "at": "2026-11-24T22:20Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: WW2:003 v01 master, phone proxy, 3 launch covers, 11_Upload-Package v01 and measurable QA complete on codex/J3205-mini (4d8422d at /Volumes/MiniWork/scratch/J3205-mini; NAS sha256 876736a1a23d42109a5648bb7188707f842843c15dcd1a3d882de4dd8a027a66; iCloud WW2 UAT staged). Publish via Claude Code: /Volumes/MiniWork/scratch/J3205-mini codex/J3205-mini; then Chief QA pass + watch_upload.mjs + jobs.py awaits for Ben's watch (due Wed 25 Nov 20:00 UTC, airs Sat 28 Nov 17:00 London)."
         }
       ],
       "remaining_action": "Chief QA review, board watch upload (watch_upload.mjs + awaits), and Claude Code PR publish for codex/J3205-mini",
