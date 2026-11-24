@@ -328122,18 +328122,26 @@
           "at": "2026-11-24T20:59Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T21:00Z",
+          "by": "macbook",
+          "what": "step 1 of 3 done"
         }
       ],
-      "remaining_action": "Repair completed-predecessor review classification with regression tests",
+      "remaining_action": "Reproduce review hold classification and add regression coverage",
       "kind": "assembly",
       "plain": "Fix reviews getting stuck behind completed work",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-24T20:59Z",
+        "at": "2026-11-24T21:00Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Reproduce classification",
+          "Fix and test holds",
+          "Open review PR"
+        ]
       }
     },
     {
