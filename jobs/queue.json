@@ -322661,10 +322661,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-24T21:26Z",
+      "eta": "2026-11-24T23:26Z",
       "created_by": "relay",
       "created_at": "2026-11-24T12:15Z",
       "result": "",
@@ -322708,6 +322708,11 @@
           "at": "2026-11-24T21:26Z",
           "by": "codex",
           "what": "reopened: Acting-Chief review underway; parent J3492 stays held. New evidence J3491 has eight pre-lock flags."
+        },
+        {
+          "at": "2026-11-24T21:26Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief to review/merge OWB PR #1255, record J3492 wait --recheck J3529 (--check-at 2026-11-24T18:30:00Z), and close J3529",
@@ -322723,7 +322728,15 @@
         "by": ""
       },
       "open_claim": true,
-      "escalated_at": "2026-11-24T16:56Z"
+      "escalated_at": "2026-11-24T16:56Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T21:26Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3530",
