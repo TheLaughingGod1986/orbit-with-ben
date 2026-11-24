@@ -329962,16 +329962,21 @@
           "at": "2026-11-24T23:13Z",
           "by": "gemini",
           "what": "step 4 of 6 done: Visually verified redesigned v02 schematics and Natural Earth maps (G20A/B, G25A, G26A, G28A, G18, G14A, G13, G02, D01_PREFACE) via read_file; fixed map polygon clipping and G25A/G26A/G20B label spacing."
+        },
+        {
+          "at": "2026-11-24T23:18Z",
+          "by": "gemini",
+          "what": "step 4 of 6 done: All 179/179 v02 segments finished in 127.4s; currently completing final mux, full decode, ebur128 loudness, and contact sheet verification."
         }
       ],
-      "remaining_action": "Rendering full 1080p 24fps v02 master and 32-frame QA contact sheet to NAS studio-live",
+      "remaining_action": "Completing v02 master mux, full ffmpeg decode, loudness check, and 32-frame QA contact sheet on NAS",
       "due": "2026-11-26T12:00:00Z",
       "kind": "assembly",
       "plain": "Fix the torpedo film graphics, spoiler, missing chapter card and repeats, then render v02",
       "progress": {
         "step": 4,
         "of": 6,
-        "at": "2026-11-24T23:13Z",
+        "at": "2026-11-24T23:18Z",
         "by": "gemini",
         "plan": [
           "Inspect QA findings and scripts",
@@ -329981,7 +329986,7 @@
           "Render v02 master on NAS",
           "Run technical QA and open WW2 PR"
         ],
-        "note": "Visually verified redesigned v02 schematics and Natural Earth maps (G20A/B, G25A, G26A, G28A, G18, G14A, G13, G02, D01_P"
+        "note": "All 179/179 v02 segments finished in 127.4s; currently completing final mux, full decode, ebur128 loudness, and contact "
       },
       "taskKeys": [
         "WW2:004"
