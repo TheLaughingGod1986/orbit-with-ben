@@ -328774,9 +328774,14 @@
           "at": "2026-11-24T21:29Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T21:30Z",
+          "by": "macbook-2",
+          "what": "step 1 of 5 done"
         }
       ],
-      "remaining_action": "Correct eight flagged claims and document the evidence for the revised narration",
+      "remaining_action": "Inspecting v01 script, SOURCES.md, VIEWER_TEST_v01.md, and PR #96 CLAIMS_CHECK.md",
       "due": "2026-11-25T18:00:00Z",
       "kind": "script",
       "plain": "Correct the flagged facts in the Operation Pedestal script",
@@ -328789,12 +328794,17 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T21:29Z",
+        "step": 1,
+        "of": 5,
+        "at": "2026-11-24T21:30Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Audit v01 + J3491 report",
+          "Verify sources for 8 flags & 7 notes",
+          "Revise SCRIPT.md, NARRATION_v02.txt & SOURCES.md",
+          "Verify parity, hash & first-300 words",
+          "Commit, push PR & report"
+        ]
       }
     },
     {
