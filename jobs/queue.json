@@ -312095,13 +312095,13 @@
       "stage": "vo",
       "after": "J3421",
       "eta_min": 40,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-23T17:14Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T12:48Z",
-      "result": "parked for Chief: ww2-channel PR #55 (9a2f37e) ready for Chief PASS and merge — atlantic_black_pit_vo_pickup_v04_t2.wav (80.000s, -20.5 LUFS, 100% norm Scribe, Whisper PASS, direct audio_input ear-check + seamless v01 join PASS; 962 net ElevenLabs credits, 14,260 left)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-23T12:48Z",
@@ -312192,6 +312192,11 @@
           "at": "2026-11-24T03:13Z",
           "by": "relay",
           "what": "condition verification queued: J3457"
+        },
+        {
+          "at": "2026-11-24T03:24Z",
+          "by": "gemini",
+          "what": "reopened: Acting-Chief VO PASS (J3457, OWB PR #1228 8bc5405b55): ww2-channel PR #55 merged at 98e35fc and OWB spend ledgers reconciled; claiming immediately to close J3422 as done."
         }
       ],
       "remaining_action": "Chief (Codex) PASS and merge ww2-channel PR #55 + record OWB spend ledgers so J3364 can splice v04_t2",
@@ -312214,20 +312219,7 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "progress": {
-        "step": 4,
-        "of": 5,
-        "at": "2026-11-23T17:24Z",
-        "by": "gemini",
-        "note": "Opened ww2-channel PR #55 (9a2f37e) with VO_REPORT_v04.md and non-media evidence; posted thread report on #99; parking f"
-      },
-      "escalated_at": "2026-11-23T19:31Z",
-      "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-24T04:13:18+00:00",
-        "recheck_task": "J3457"
-      }
+      "escalated_at": "2026-11-23T19:31Z"
     },
     {
       "id": "J3423",
