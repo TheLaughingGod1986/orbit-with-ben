@@ -329407,9 +329407,14 @@
           "at": "2026-11-24T22:17Z",
           "by": "codex",
           "what": "step 1 of 4 done: Downloaded Gazette original PDFs and Sun Ship hull database. Hull 190 table gives 22 April 1940. Admiralty damage transcription gives two direct hits; Gazette summary says three. No search summaries treated as proof."
+        },
+        {
+          "at": "2026-11-24T22:19Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Direct source conflicts reconciled; unsupported detail removed in v03 draft. Sun hull record confirms launch date; cargo labels remain disputed so no chemistry claim retained."
         }
       ],
-      "remaining_action": "Reconciling source conflicts before rewriting unsupported details",
+      "remaining_action": "Validating revised narration and writing a direct-source evidence record",
       "due": "2026-11-25T18:00:00Z",
       "kind": "script",
       "plain": "Resolve the remaining evidence gaps in the Operation Pedestal narration",
@@ -329422,9 +329427,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-24T22:17Z",
+        "at": "2026-11-24T22:19Z",
         "by": "codex",
         "plan": [
           "Read evidence gaps",
@@ -329432,7 +329437,7 @@
           "Correct narration and verify",
           "Publish changes and queue recheck"
         ],
-        "note": "Downloaded Gazette original PDFs and Sun Ship hull database. Hull 190 table gives 22 April 1940. Admiralty damage transc"
+        "note": "Direct source conflicts reconciled; unsupported detail removed in v03 draft. Sun hull record confirms launch date; cargo"
       },
       "taskKeys": [
         "WW2:009"
