@@ -319958,9 +319958,14 @@
           "at": "2026-11-24T12:49Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T12:50Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3510 and located approved OWB UAT v06 master; inspecting prior swap records and live state"
         }
       ],
-      "remaining_action": "Upload the approved Betelgeuse opening Short while keeping its date",
+      "remaining_action": "Verify v06 master hash, gates, and current YouTube/Buffer/library state",
       "due": "2026-11-25T12:00:00Z",
       "kind": "studio",
       "plain": "Upload the approved Betelgeuse opening Short while keeping its date",
@@ -319982,12 +319987,21 @@
       },
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-24T12:49Z",
+        "of": 5,
+        "at": "2026-11-24T12:50Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify v06 master, gates, and live YouTube state",
+          "Prepare versioned v06 upload package and dry-run",
+          "Upload v06 private, verify, transfer 11 Dec 11:30Z slot from k2kEaA7ICjc",
+          "Run verify-swap readback and update UPLOADS, Buffer, gate library, J0923, status",
+          "Commit clean worktree, post thread report, close J3510"
+        ],
+        "note": "Claimed J3510 and located approved OWB UAT v06 master; inspecting prior swap records and live state"
+      },
+      "taskKeys": [
+        "OWB:029"
+      ]
     },
     {
       "id": "J3511",
