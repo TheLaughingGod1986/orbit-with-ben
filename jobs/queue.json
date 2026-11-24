@@ -318342,9 +318342,14 @@
           "at": "2026-11-24T10:34Z",
           "by": "gemini",
           "what": "step 1 of 6 done: Confirmed PR #1238 already merged (HOS:128 active, hos-ideas paused, hos-search-research added, plan.json Ben OK recorded). Checked open HOS PRs 120-135: HOS:127 (PR #706/#708, Rule-E GO 97.2/100) ALREADY covers Wright Brothers 1901 Wind Tunnel (Cluster 4 Lead Film 4), so reusing HOS:127 avoids duplication; next free numbers are HOS:136 (Trinity Test) and HOS:137 (Accidental Inventions). Ran free neighbours.py & public_search.py for both (both PASS)."
+        },
+        {
+          "at": "2026-11-24T10:40Z",
+          "by": "gemini",
+          "what": "step 2 of 6 done: Scaffolded HOS:136 (Trinity Test) and HOS:137 (Accidental Inventions) from template in hos-J3495 worktree with TOPIC.md, status.json, production-status.md, README.md, 10_Shorts/README.md, PRE_BUILD_VIDIQ_AUDIT.md, and live 2026-11-24 neighbours.py PASS + public_search.py evidence. Adopted Claude's 24 Nov 10:55 December air-date update (10/17/24/31 Dec)."
         }
       ],
-      "remaining_action": "Creating clean worktrees and scaffolding HOS:136 and HOS:137 folders with search evidence and package-first briefs",
+      "remaining_action": "Updating HOS rules/playbook/templates and OWB LEARNINGS.md + WIP.json",
       "due": "2026-11-25T12:00:00Z",
       "kind": "review",
       "urgent": 11,
@@ -318357,9 +318362,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 6,
-        "at": "2026-11-24T10:34Z",
+        "at": "2026-11-24T10:40Z",
         "by": "gemini",
         "plan": [
           "Verify state, overlap & run search/neighbour gates",
@@ -318369,7 +318374,7 @@
           "Queue Rule-E reviews, HOS:127 script & run tests",
           "Open PRs, post desk/thread & complete J3495"
         ],
-        "note": "Confirmed PR #1238 already merged (HOS:128 active, hos-ideas paused, hos-search-research added, plan.json Ben OK recorde"
+        "note": "Scaffolded HOS:136 (Trinity Test) and HOS:137 (Accidental Inventions) from template in hos-J3495 worktree with TOPIC.md,"
       },
       "taskKeys": [
         "HOS:128",
