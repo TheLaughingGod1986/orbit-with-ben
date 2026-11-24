@@ -106,6 +106,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3507 | any | open | – | – | 136 script · script · HOS 136 Trinity Test Explained (film 2, Thu 17 Dec): package first, then the 7-9 minute script draft | J3502 |
 | J3508 | mini | open (after J3505) | – | – | 032 upload · studio · Upload approved Titan Test A Short v02 for 2 Dec 11:30 | J3505 |
 | J3509 | mini | open (after J3505) | – | – | 029 upload · studio · Swap approved Betelgeuse half-Moon Short to v06; retain 14 Dec 11:30 | J3505 |
+| J3510 | mini | open (after J3505) | – | – | 029 upload · studio · Swap approved Betelgeuse opening Short to v06; retain 11 Dec 11:30 | J3505 |
 
 Recently finished:
 
