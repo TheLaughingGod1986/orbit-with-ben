@@ -129,7 +129,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3595 | mini | blocked | macbook-2 | – | review · Verify condition for J3591 |  |
 | J3597 | any | open (after J3596) | – | – | chief · Review corrected J3591 autopsy PRs after J3596 |  |
 | J3598 | any | open (after J3596) | – | – | chief · Review J3596 corrections and finish held J3591 autopsy |  |
-| J3599 | mini | open | – | – | WW2:001 edit · review · Review the finished Mulberry harbour Short and prepare Ben watch |  |
+| J3599 | mini | claimed | macbook-2 | 2026-11-24T20:03Z | WW2:001 edit · review · Review the finished Mulberry harbour Short and prepare Ben watch |  |
 | J3600 | mini | open | – | – | review · Verify condition for J3431 |  |
 | J3601 | mini | claimed | gemini | 2026-11-24T18:23Z | studio · First-day check at 48 h: "What If Earth Stopped Spinning? (It's Already Slowing Down)" (6bbbvfCx6zY) |  |
 | J3602 | mini | open (after J3601) | – | – | review · `gemini-argon` · Retention autopsy (48h): "What If Earth Stopped Spinning? (It's Already Slowing Down)" (6bbbvfCx6zY) |  |
