@@ -272561,13 +272561,13 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-24T12:44Z",
-      "eta": "2026-11-24T16:44Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
-      "result": "",
+      "result": "Automatic approval review rejected the exact temporary production probe, authenticated check, rollback and deployment cleanup before execution. Explicit approval required for that bounded operation; do not retry indirectly. Candidate /Volumes/MiniWork/scratch/J3012-reprobe-1124 matches current live assets; 8 tests pass; live probe remains 404. Preserve 3/4 and Thu 26 notice / Fri 27 10:00 migration. Token grant runtime verification still outstanding.",
       "history": [
         {
           "at": "2026-11-17T19:00Z",
@@ -273588,6 +273588,11 @@
           "at": "2026-11-24T12:48Z",
           "by": "codex",
           "what": "step 3 of 4 done: Exact production source d19c7783f7 staged at /Volumes/MiniWork/scratch/J3012-reprobe-1124; five live static assets byte-identical; eight probe tests pass. Automatic approval review rejected temporary production deploy, credential check, rollback and deletion before execution. No probe ran; grant remains unverified."
+        },
+        {
+          "at": "2026-11-24T12:48Z",
+          "by": "codex",
+          "what": "blocked: Automatic approval review rejected the exact temporary production probe, authenticated check, rollback and deployment cleanup before execution. Explicit approval required for that bounded operation; do not retry indirectly. Candidate /Volumes/MiniWork/scratch/J3012-reprobe-1124 matches current live assets; 8 tests pass; live probe remains 404. Preserve 3/4 and Thu 26 notice / Fri 27 10:00 migration. Token grant runtime verification still outstanding."
         }
       ],
       "remaining_action": "Obtain explicit production-probe approval, verify the token, then notify Thursday and migrate Friday",
@@ -273620,6 +273625,11 @@
           "Verify access and complete scheduled move"
         ],
         "note": "Exact production source d19c7783f7 staged at /Volumes/MiniWork/scratch/J3012-reprobe-1124; five live static assets byte-"
+      },
+      "hold": {
+        "type": "input",
+        "condition": "Automatic approval review rejected the exact temporary production probe, authenticated check, rollback and deployment cleanup before execution. Explicit approval required for that bounded operation; do not retry indirectly. Candidate /Volumes/MiniWork/scratch/J3012-reprobe-1124 matches current live assets; 8 tests pass; live probe remains 404. Preserve 3/4 and Thu 26 notice / Fri 27 10:00 migration. Token grant runtime verification still outstanding.",
+        "check_at": "2026-11-24T18:48:17+00:00"
       }
     },
     {
