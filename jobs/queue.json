@@ -318622,19 +318622,29 @@
           "at": "2026-11-24T11:22Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T11:23Z",
+          "by": "macbook-2",
+          "what": "step 1 of 5 done"
         }
       ],
-      "remaining_action": "WW2 film 011: independent Gemini claims check on SCRIPT.md and SOURCES.md (PR #71)",
+      "remaining_action": "Reading PR #71 files and WW2 claims-check conventions",
       "due": "2026-12-04T18:00:00Z",
       "kind": "facts",
       "plain": "Check every factual claim and figure in the P-51 Mustang script against primary sources",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T11:22Z",
+        "step": 1,
+        "of": 5,
+        "at": "2026-11-24T11:23Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read PR 71 files and conventions",
+          "Verify claims C01-C33 and checkpoints F1-F5",
+          "Check NARRATION_v01.txt budget and SHA",
+          "Write CLAIMS_CHECK_v01.md and update status.json",
+          "Push branch, open PR, report"
+        ]
       }
     },
     {
