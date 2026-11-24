@@ -322900,7 +322900,7 @@
     {
       "id": "J3551",
       "title": "WW2 015: Claude topic archive and opening review before lock",
-      "needs": "cloud",
+      "needs": "mini",
       "repo": "ww2",
       "body": "Continue J3486, WW2 film 015, branch macbook/J3486 commit 8bc8127. Read the current draft and records in 015_M4-Sherman-Tank-Engineering-Logistics and WW2's own RULES/LEARNINGS.\n\nClaude reviewer lane: (1) assess TOPIC_CHECK_v02.md and close the archive feasibility gate before topic GO; (2) read the first 300 words as a stranger per rule 6, explicitly identify promise, concrete moment, story start and anything skippable; (3) assess the 2,600-word/15,855-character story and selected packaging; (4) resolve Gemini's independent claims-check flags before any lock.\n\nExact archive gap: official US tank-depot and MEDIUM-tank remanufacture photographs plus distinct factory stages. Twenty candidate IDs exist but do not prove half the 18-minute planning duration. Two British repair images have been visually checked; they are not US rebuild pictures. The official history p.258 photo depicts LIGHT M3A3 tanks, not Shermans. Use a bounded targeted search for those missing roles, or shorten/change the relevant story sections and recompute coverage. Do not pad with unrelated Fireflies or a long-held still. If the topic fails, record NO-GO and propose a non-duplicate alternative from VIDEO_BACKLOG.json. Do not repeatedly defer the same missing evidence.\n\nWrite topic verdict and 01_Script/VIEWER_TEST_v01.md. Draft remains unlocked until topic/archive and claims checks pass. Incorporate available Pilot 2 48h/7d findings before lock; those windows were not yet due at drafting (26 Nov/1 Dec at 17:00 if it airs as recorded). Keep the 21,000-character cap and 16 December 18:00 lock deadline. Only after successful lock queue the Mini VO with a dependency on lock, within the current voice-credit/reset rules; no voice spend in this review. The parent J3486 must be released for fixes or completed with linked evidence when all its requirements are actually met. Open a stage PR; no ordinary worker merge or publishing action.\n",
       "ref": "",
@@ -322920,12 +322920,24 @@
           "at": "2026-11-24T15:07Z",
           "by": "macbook",
           "what": "added for claude"
+        },
+        {
+          "at": "2026-11-24T15:10Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Resolve archive coverage and facts then test the opening before locking narration",
-      "for": "claude",
       "kind": "review",
-      "plain": "Review the Sherman story and confirm there are enough archive pictures"
+      "plain": "Review the Sherman story and confirm there are enough archive pictures",
+      "rerouted_from": {
+        "needs": "cloud",
+        "for": "claude",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
