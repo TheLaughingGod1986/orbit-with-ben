@@ -325923,13 +325923,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-24T18:39Z",
-      "eta": "2026-11-24T20:39Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-24T17:35Z",
-      "result": "",
+      "result": "Chief ruling: superseded verification complete. J3591 remains held with recheck J3595 recorded and existing retry 2026-11-25T05:03:00Z. J3604 completed correction PR #1284, head 0f68a818b6a1efe949ea07316d42928b829a415b, OPEN with Rules check SUCCESS. Existing J3598 must review that exact head and merge before closing J3591. OWB #1279 and WW2 #102 already merged. Preserve all five Gemini media steps; no duplicate review, repeated watch, YouTube changes or spend.",
       "history": [
         {
           "at": "2026-11-24T17:35Z",
@@ -325975,6 +325975,11 @@
           "at": "2026-11-24T18:39Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T18:39Z",
+          "by": "codex",
+          "what": "done: Chief ruling: superseded verification complete. J3591 remains held with recheck J3595 recorded and existing retry 2026-11-25T05:03:00Z. J3604 completed correction PR #1284, head 0f68a818b6a1efe949ea07316d42928b829a415b, OPEN with Rules check SUCCESS. Existing J3598 must review that exact head and merge before closing J3591. OWB #1279 and WW2 #102 already merged. Preserve all five Gemini media steps; no duplicate review, repeated watch, YouTube changes or spend."
         }
       ],
       "remaining_action": "Parked for Chief Codex: review and merge OWB PR #1273, ww2-channel PR #101, and OWB PR #1276; close J3591 and J3595",
