@@ -326747,13 +326747,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-24T18:47Z",
-      "eta": "2026-11-24T19:07Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T18:45Z",
-      "result": "",
+      "result": "Waiting for: Second-run spawn verified at 18:46:46Z and runner-1 ready. Concurrent execution remains unverified because Codex holds execution-0 and every other CLI worker is down. Recheck after Gemini retry 19:10:19Z; require execution-0 and execution-1 live simultaneously on different workers. Memory permits slot (3.459 GiB available vs 3 GiB threshold). No settings changed. Report comment 7141216261.",
       "history": [
         {
           "at": "2026-11-24T18:45Z",
@@ -326784,9 +326784,19 @@
           "at": "2026-11-24T18:50Z",
           "by": "codex",
           "what": "step 2 of 3 done: Verification report posted as thread comment 7141216261. Spawn and version match verified; final concurrency check still requires two live different-worker leases, unavailable while every other CLI worker is down."
+        },
+        {
+          "at": "2026-11-24T18:50Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: Second-run spawn verified at 18:46:46Z and runner-1 ready. Concurrent execution remains unverified because Codex holds execution-0 and every other CLI worker is down. Recheck after Gemini retry 19:10:19Z; require execution-0 and execution-1 live simultaneously on different workers. Memory permits slot (3.459 GiB available vs 3 GiB threshold). No settings changed. Report comment 7141216261."
+        },
+        {
+          "at": "2026-11-24T18:50Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-24T19:15:00Z"
         }
       ],
-      "remaining_action": "Confirming simultaneous jobs once a second CLI worker is available",
+      "remaining_action": "Confirming two simultaneous jobs after a second worker returns",
       "due": "2026-11-24T21:00:00Z",
       "kind": "assembly",
       "mini_only": true,
@@ -326802,6 +326812,11 @@
           "Record outcome"
         ],
         "note": "Verification report posted as thread comment 7141216261. Spawn and version match verified; final concurrency check still"
+      },
+      "hold": {
+        "type": "input",
+        "condition": "Second-run spawn verified at 18:46:46Z and runner-1 ready. Concurrent execution remains unverified because Codex holds execution-0 and every other CLI worker is down. Recheck after Gemini retry 19:10:19Z; require execution-0 and execution-1 live simultaneously on different workers. Memory permits slot (3.459 GiB available vs 3 GiB threshold). No settings changed. Report comment 7141216261.",
+        "check_at": "2026-11-24T19:15:00Z"
       }
     },
     {
