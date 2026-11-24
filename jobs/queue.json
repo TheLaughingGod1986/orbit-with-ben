@@ -322925,21 +322925,34 @@
           "at": "2026-11-24T18:23Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T18:23Z",
+          "by": "codex",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Read the thumbnail test, then start a title test with a Mulberry title",
+      "remaining_action": "Reading the first film’s analytics before changing its title",
       "due": "2026-11-25T12:00:00Z",
       "kind": "studio",
       "mini_only": true,
       "urgent": 13,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-24T18:23Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read Studio analytics",
+          "Record the 48-hour audit",
+          "Change and verify title",
+          "Publish records and follow-up"
+        ]
+      },
+      "taskKeys": [
+        "WW2:001",
+        "WW2:002"
+      ]
     },
     {
       "id": "J3541",
