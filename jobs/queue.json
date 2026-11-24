@@ -315071,9 +315071,14 @@
           "at": "2026-11-24T20:59Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T20:59Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Link pilot 1 to new pilot 2 qfc6EBStOfo after launch, preserving subscribe and verifying both directions",
+      "remaining_action": "Checking the current end screen and card links on both films",
       "due": "2026-11-28T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -315083,9 +315088,16 @@
         "of": 3,
         "at": "2026-11-24T20:59Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read current links",
+          "Save the approved links",
+          "Verify and record delivery"
+        ]
+      },
+      "taskKeys": [
+        "WW2:001",
+        "WW2:002"
+      ]
     },
     {
       "id": "J3444",
