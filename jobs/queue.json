@@ -307576,9 +307576,14 @@
           "at": "2026-11-24T10:05Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T10:06Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Wait for enough reserved voice credit to record the two corrected passages",
+      "remaining_action": "Checking the approved narration fixes and available voice credits",
       "kind": "vo",
       "plain": "Correct the bomber loss narration in the third WW2 film",
       "mini_only": true,
@@ -307589,10 +307594,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-24T10:05Z",
+        "at": "2026-11-24T10:06Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Check ruling and credit safeguards",
+          "Correct narration and edit evidence",
+          "Verify and hand off"
+        ]
       }
     },
     {
