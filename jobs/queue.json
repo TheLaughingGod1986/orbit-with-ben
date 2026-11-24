@@ -1,5 +1,5 @@
 {
-  "next_id": 3523,
+  "next_id": 3524,
   "jobs": [
     {
       "id": "J0001",
@@ -320369,6 +320369,36 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3523",
+      "title": "WW2 film 012: independent Gemini claims check on SCRIPT.md and SOURCES.md (PR #76)",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "Independent Gemini facts-lane claims check for Field Order History film `WW2:012` (*How America Built a Liberty Ship in Four Days*) on `ww2-channel` PR #76 (branch `macbook/J3483`, commit `7e941ca`).\n\n**Check:**\n1. Audit all 33 claim rows (`C01`–`C33`) in `02_Video-Projects/012_Liberty-Ships-Built-In-Four-Days/01_Script/SCRIPT.md` and `01_Script/SOURCES.md` against primary/official sources (Frederic Lane *Ships for Victory* 1951, 1946 Board of Investigation Final Report on Welded Steel Merchant Vessels, Sawyer & Mitchell *The Liberty Ships*, Constance Tipper *The Brittle Fracture Story*, John Gorley Bunker, NPS Richmond Home Front records, ABS *SS Schenectady* report, USCG *SS John P. Gaines* casualty record, Roskill / Morison, HAER / Project Liberty Ship).\n2. Specifically resolve the 5 flagged checkpoints (`F1`–`F5`) in `SOURCES.md`:\n   - `F1` (`C03`, `C10`): 1942 Allied merchant shipping loss figure (`~7.8` million gross tons) and *SS Patrick Henry* `244` days keel-to-delivery vs early-1942 `~230`-day average.\n   - `F2` (`C01`, `C17`, `C18`): *SS Robert E. Peary* prefabrication (`~250,000` parts into `<100` subassemblies, `~135`-ton steam engine), keel `12:01 a.m. 8 Nov 1942`, launch `4d 15h 29m` (12 Nov 1942), delivery `15 Nov 1942` (`~7d 14h`).\n   - `F3` (`C14`): Traditional riveted freighter rivet count (`~900,000`) and electric-arc welding steel-weight saving (`~10–15%`).\n   - `F4` (`C21`, `C22`, `C23`, `C28`): July 1946 Board of Investigation final report exact figures (`4,694` welded ships, `970` fractured, `~1,031` Liberty incidents, exact number broken completely in two, *SS Schenectady* `26°F` air / `40°F` water / `~22:30–23:00` 16 Jan 1943, *SS John P. Gaines* `10` lives lost 24 Nov 1943, crack-arrestor effectiveness).\n   - `F5` (`C29`, `C30`, `C32`): 1943 Allied merchant launch tonnage (`>12` million gross tons vs `~19` million DWT USMC), per-yard Liberty totals (`384` Bethlehem-Fairfield, `322` Oregon, `306` Calship, `489` Richmond Yards 1+2, `2,710` total), and Liberty enemy-action losses (`~200`).\n3. Spot-check the 32 verified US/UK official public-domain photograph IDs in `03_Picture/ARCHIVE_PROVENANCE.md` for collection/licence accuracy.\n4. Record the independent verification report in `ww2-channel` PR (branch `gemini/<job-id>` or `macbook/<job-id>`), update `status.json` `sources` stage, and leave `vo` held until script lock and post-`2026-11-30 10:50Z` ElevenLabs reset.\n\n**Guards:** Zero ElevenLabs voice credits spent. £0 spend.\n",
+      "ref": "ww2-channel#76",
+      "film": "012",
+      "stage": "sources",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-24T12:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T12:03Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "WW2 film 012: independent Gemini claims check on SCRIPT.md and SOURCES.md (PR #76)",
+      "due": "2026-12-07T18:00:00Z",
+      "kind": "facts",
+      "plain": "Independent claims check of all 33 sourced facts and 5 verification checkpoints in WW2 film 012 (Liberty Ships)"
     }
   ],
   "focus": [
