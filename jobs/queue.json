@@ -313715,15 +313715,20 @@
           "at": "2026-11-24T16:11Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Built 157-segment cut list (50.52% verified archive, 50 photos, J3447 12 paragraphs preserved), 355 UK-orthography captions, 3 refined thumbnails + 168/320px sheet, zero-spend score bed & mix, full upload package; 1080p render running in tmux J3430-render"
+        },
+        {
+          "at": "2026-11-24T16:20Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Rendered 1080p master on NAS (sha256 d2656fea..., 50.52% archive across 50 photos, J3447 12 paragraphs preserved, -15.8 LUFS / -1.5 dBTP, 0 decode errors), 24-frame QA sheet & 3 thumbnails inspected, UK captions & upload package complete on branch gemini/J3430-assembly"
         }
       ],
-      "remaining_action": "Finish 1080p render (tmux J3430-render), inspect QA contact sheet, commit and push deliverables, hand off for Chief review & Ben watch",
+      "remaining_action": "Chief (codex) review of J3430 v01 master & PR, merge, and stage on Ben's watch (due 2026-11-28 20:00 UTC)",
       "due": "2026-11-28T20:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-24T16:11Z",
+        "at": "2026-11-24T16:20Z",
         "by": "gemini",
         "plan": [
           "Check narration and picture plan",
@@ -313731,7 +313736,7 @@
           "Build thumbnails and upload package",
           "Verify and prepare Ben watch"
         ],
-        "note": "Built 157-segment cut list (50.52% verified archive, 50 photos, J3447 12 paragraphs preserved), 355 UK-orthography capti"
+        "note": "Rendered 1080p master on NAS (sha256 d2656fea..., 50.52% archive across 50 photos, J3447 12 paragraphs preserved, -15.8 "
       },
       "taskKeys": [
         "WW2:004"
