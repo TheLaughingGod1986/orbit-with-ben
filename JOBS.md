@@ -101,6 +101,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3549 | any | open | – | – | review · Field Order History: triage the 19 PRs still open after the 24 Nov merge batch |  |
 | J3550 | gemini | open | – | – | WW2:015 sources · for gemini · facts · WW2 015: independent Gemini check of Sherman draft claims |  |
 | J3551 | mini | open (after J3550) | – | – | WW2:015 script · review · WW2 015: Claude topic archive and opening review before lock |  |
+| J3552 | gemini | open | – | – | HOS:136 sources · facts · HOS 136 Trinity Test Explained (Thu 17 Dec): independent facts audit of v01 script, SOURCES.md & Shorts (PR #753) | J3507 |
 
 Recently finished:
 

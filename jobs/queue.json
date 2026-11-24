@@ -1,5 +1,5 @@
 {
-  "next_id": 3552,
+  "next_id": 3553,
   "jobs": [
     {
       "id": "J0001",
@@ -323134,6 +323134,35 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3552",
+      "title": "HOS 136 Trinity Test Explained (Thu 17 Dec): independent facts audit of v01 script, SOURCES.md & Shorts (PR #753)",
+      "needs": "gemini",
+      "repo": "hos",
+      "body": "Run an independent `facts` lane (`gemini-agy`) audit on the `HOS:136` (*Trinity Test Explained: Could It Ignite the Sky?*, Cluster 2 Film 2, target Thu 17 Dec 2026 18:00 London) script draft v01, `SOURCES.md`, `FACT_NOTES_v01.md`, and `SHORTS_SCRIPTS_v01.md` in **HOS PR `#753`** (`gemini/J3507-hos136-script`, commit `ebb55eea`, built on `origin/macbook/J3502`).\n\n**Files to audit in HOS PR `#753` (`02_Video-Projects/136_Oppenheimer-Teller-Bethe-Trinity-Test-Explained/`):**\n- `01_Script/trinity_test_explained_script_master_v01.md` (`1,266` words, `8.4` min, `review:script` PASS `93.7/100`, `gate:episode` PASS)\n- `01_Script/SOURCES.md`\n- `01_Script/FACT_NOTES_v01.md` (`20` rows)\n- `10_Shorts/SHORTS_SCRIPTS_v01.md` (`S01` 44w & `S02` 46w, 16–19 s house rules)\n\n**Check every claim, date, lifespan, role, and all 7 `J3502` guardrails:**\n1. `LA-602` (*Ignition of the Atmosphere with Nuclear Bombs*, Konopinski, Marvin, Teller) dated **August 1946** (post-war documentation of July 1942 Berkeley & pre-Trinity checks — never claimed written in 1942/1945).\n2. Nitrogen-14 (`¹⁴N + ¹⁴N`) fusion prevented by radiative cooling (Bremsstrahlung / inverse Compton losses) with a large safety margin; Arthur Compton's 1959 *\"three chances in a million\"* interview explicitly attributed to 1959 and paired with Hans Bethe's rebuttal.\n3. Enrico Fermi's pre-shot side bet at Base Camp strictly separated from his ~40 s post-flash torn-paper measurement (`~2.5 m` shift from ~6 ft → `~10 kt` blast estimate vs `~21 kt` official postwar yield / `~24.8 ± 2 kt` 2021 Los Alamos re-analysis).\n4. Conceptual-only Segrè April 1944 Pu-240 spontaneous fission & spherical explosive-lens implosion physics (zero actionable blueprints).\n5. Year-accurate 1942–1945 `WHO:` cards (8 named physicists) and lifespans verified against primary/open sources.\n6. Strict HOS 3D cartoon lab-physics lane (zero combat, zero Hiroshima/Nagasaki bombing/casualty imagery, zero fear framing).\n\n**Output:** Commit the independent audit update onto a follow-on branch/PR or review note, and hand off to the script review & Chief lock job. No VO, picture, or paid spend (`£0.00`).\n",
+      "ref": "J3507",
+      "film": "HOS:136",
+      "stage": "sources",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-24T15:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T15:46Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Run independent gemini-agy facts check on HOS PR #753 script, SOURCES.md, FACT_NOTES_v01.md & Shorts",
+      "due": "2026-12-03T18:00:00Z",
+      "kind": "facts"
     }
   ],
   "focus": [
