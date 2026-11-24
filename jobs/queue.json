@@ -317051,9 +317051,14 @@
           "at": "2026-11-24T09:25Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T09:25Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3478; starting verification of J2537 waiting condition"
         }
       ],
-      "remaining_action": "Verify readiness: Check for the protected desk history exception, then prepare the controlled rewrite window",
+      "remaining_action": "Read J2537, J3456, PR1227 and approval history",
       "kind": "review",
       "recheck_of": "J2537",
       "due": "2026-11-18T18:00:00+00:00",
@@ -317071,8 +317076,12 @@
         "of": 3,
         "at": "2026-11-24T09:25Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read J2537 history and evidence",
+          "Check fresh GitHub comments and PRs",
+          "Update J2537, close J3478, and report"
+        ],
+        "note": "Claimed J3478; starting verification of J2537 waiting condition"
       }
     }
   ],
