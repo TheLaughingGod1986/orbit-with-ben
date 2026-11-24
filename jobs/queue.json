@@ -320004,9 +320004,14 @@
           "at": "2026-11-24T19:53Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: API uploads/schedules/captions/playlist/Buffer-registrations done (YqCWYlv_LCY Thu 26 Nov 18:00, __UtUYdEUwg Fri 27 Nov 11:30, 4sYTV_rQcqs Sun 29 Nov 11:30; channel:audit 72 videos 0 errors; HOS PR #755 & OWB PR #1286 ready to merge). HOS Studio Chrome CDP 9460 is signed out (accounts.google.com) and needs Ben one-time sign-in for Studio-only finish (end screen, Title+Thumb T&C, Shorts Related, visual Altered/Audience check)."
+        },
+        {
+          "at": "2026-11-24T20:57Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-25T09:00:00Z"
         }
       ],
-      "remaining_action": "Parking J3500 for Chief PR merges and Ben sign-in on HOS Studio CDP 9460 for Studio-only finish",
+      "remaining_action": "Finish Franklin end screen, thumbnail test and Shorts links after HOS Studio sign-in; verify disclosure before Thursday noon.",
       "due": "2026-11-26T12:00:00Z",
       "kind": "studio",
       "urgent": 13,
@@ -320046,7 +320051,12 @@
       },
       "taskKeys": [
         "HOS:008"
-      ]
+      ],
+      "hold": {
+        "type": "input",
+        "condition": "Chief ruling 24 Nov: ACCEPT API upload records; merged HOS PR 755 and OWB PR 1286 after full diff and green-check review. Fresh HOS audit: 72 videos, 0 errors; all three IDs processed, private, correct schedules, Not Made for Kids. HOS Studio 9460 remains on Google sign-in: Ben must sign in once. Gemini then finishes playlist+Subscribe end screen, title/thumbnail test with search-led A, both Shorts Related to YqCWYlv_LCY, thumbnail ledger and all Studio checklist fields. Fresh API did not return containsSyntheticMedia, so verify Altered YES in Studio; do not infer it from manifests. Keep existing Ben approvals and schedules; no reupload. Recheck login 25 Nov 09:00 UTC and finish before 26 Nov noon; if still incomplete at deadline escalate to elected Chief before airing.",
+        "check_at": "2026-11-25T09:00:00Z"
+      }
     },
     {
       "id": "J3501",
