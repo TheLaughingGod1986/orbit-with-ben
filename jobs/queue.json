@@ -318538,10 +318538,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-24T10:32Z",
+      "eta": "2026-11-24T11:32Z",
       "created_by": "claude",
       "created_at": "2026-11-24T10:31Z",
       "result": "",
@@ -318550,12 +318550,25 @@
           "at": "2026-11-24T10:31Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T10:32Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Set a search-led title and package for Franklin; schedule Thu 26 Nov once Ben passes it",
       "due": "2026-11-26T12:00:00Z",
       "kind": "studio",
-      "urgent": 13
+      "urgent": 13,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T10:32Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3501",

@@ -97,7 +97,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3497 | cloud | open | – | – | review · Weekly search research (History of Science): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
 | J3498 | any | open | – | – | 011 sources · facts · WW2 film 011: independent Gemini claims check on SCRIPT.md and SOURCES.md (PR #71) | ww2-channel#71 |
 | J3499 | cloud | open (after J3498) | – | – | 011 script · review · WW2 film 011: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO | ww2-channel#71 |
-| J3500 | mini | open | – | – | 008 upload · studio · HOS 008 Franklin: search-led title, package, and schedule Thu 26 Nov 18:00 after Ben's watch |  |
+| J3500 | mini | claimed | macbook | 2026-11-24T11:32Z | 008 upload · studio · HOS 008 Franklin: search-led title, package, and schedule Thu 26 Nov 18:00 after Ben's watch |  |
 | J3501 | mini | open | – | – | 009 upload · studio · HOS 009 Gravity: search-led title, package, and schedule Thu 3 Dec 18:00 after Ben's watch |  |
 
 Recently finished:
