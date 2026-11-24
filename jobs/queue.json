@@ -319150,9 +319150,14 @@
           "at": "2026-11-24T11:02Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-24T11:05Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Exact approved hashes, fresh Shorts gate and dry run PASS; all 183 channel videos checked, no duplicate or collision"
         }
       ],
-      "remaining_action": "Verify the approved Titan Short and its upload slot",
+      "remaining_action": "Upload the approved Titan Short privately for 2 December",
       "due": "2026-11-25T12:00:00Z",
       "kind": "studio",
       "plain": "Upload the Titan Short you approved into the next free slot",
@@ -319180,15 +319185,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-24T11:02Z",
+        "at": "2026-11-24T11:05Z",
         "by": "codex",
         "plan": [
           "Verify approved cut and schedule",
           "Prepare and upload package",
           "Verify and record result"
-        ]
+        ],
+        "note": "Exact approved hashes, fresh Shorts gate and dry run PASS; all 183 channel videos checked, no duplicate or collision"
       },
       "taskKeys": [
         "OWB:032"
