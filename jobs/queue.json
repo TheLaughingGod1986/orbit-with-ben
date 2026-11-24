@@ -1,5 +1,5 @@
 {
-  "next_id": 3507,
+  "next_id": 3508,
   "jobs": [
     {
       "id": "J0001",
@@ -318978,6 +318978,36 @@
       "remaining_action": "Find why board OKs don't reach the Chief, add the 12-hour alert, and mark OKs handled",
       "due": "2026-11-27T18:00:00Z",
       "kind": "assembly"
+    },
+    {
+      "id": "J3507",
+      "title": "HOS 136 Trinity Test Explained (film 2, Thu 17 Dec): package first, then the 7-9 minute script draft",
+      "needs": "any",
+      "repo": "hos",
+      "body": "**Why (Ben, Tue 24 Nov 2026, approved `hos-search-2027-01` and accelerated the first four search-led HOS films into December — `J3495` / OWB PR `#1238` & `#1239`).** **HOS:136 (`02_Video-Projects/136_Oppenheimer-Teller-Bethe-Trinity-Test-Explained`)** is Film 2 of the search-led test cohort (**Cluster 2 — Nuclear, Quantum & Modern Physics Breakthroughs**) and targets **Thu 17 Dec 2026, 18:00 London** (7–9 min, normal publish, no Premiere; slides one week if not ready and a finished older film `010`/`011`/`013` takes the slot; never rushed; nothing airs without Ben's watch). Its **Rule-E topic go/no-go review passed on 24 Nov 2026 (`GO 96.3/100` · `9.63/10` Opportunity Score, `J3502`)**. (Note: Chief merges HOS PR `#743` and the `J3502` review PR onto `main`; branch `origin/macbook/J3502` holds the reviewed `HOS:136` folder.)\n\n**Do (no spend; same shape as `J3496` & `J3504`):**\n1. **Package first (method step 5, before any script):** score three query-first titles plus the two `J3502`-corrected thumbnail ideas against the Cluster 2 outliers (`Unifying Lens` 1.5K US → `1.7K` `15×`, `Untold WWII` 84 US → `5.8K` `172×`, `Science Retold` 3.4K US → `61.9K` `13×` & `28.5K` `6.1×`, `Math Everywhere` 10.3K US → `36.5K` `10×`):\n   - **Title A (Recommended Primary, `48 chars ≤ 50`, `0` collisions):** `Trinity Test Explained: Could It Ignite the Sky?`\n   - **Title B (Plan Title / T&C Arm 2, `68 chars ≤ 70`, `0` collisions):** `Trinity Test Explained: The Calculation That Nearly Stopped the Bomb`\n   - **Title C (Backup / T&C Arm 3, `52 chars`, `0` collisions):** `Trinity Test: The Calculation That Nearly Stopped It`\n   - **Thumbnail Concept A (`J3502` §2.5/§2.B fix):** 3D cartoon 1945 Los Alamos chalkboard equations + pre-dawn Jornada del Muerto steel tower, Explorer small lower-left, top-left serif band text **`AIR ON FIRE?`** (gold on `FIRE?` — zero title-word repeat; never `IGNITE THE SKY?`).\n   - **Thumbnail Concept B (`J3502` §2.5/physics fix):** 3D cartoon hand releasing torn paper scraps in warm pre-dawn flash outside observation shelter, Explorer small lower-left, top-left serif band text **`MEASURED BY PAPER`** (gold on `PAPER` — replaces physics-inaccurate `ZERO MARGIN`).\n   - Pick one primary title (query words first, `≤50` chars where query allows); keep the other two for Test & Compare. Low-RPM trap `nuclear bomb` (`IN 26%, BD 17%`) stays excluded from primary title/metadata targeting.\n2. **Script draft (7–9 min, 5 parts, ~1,200–1,300 words) by Sat 28 Nov 2026 18:00 London**, for lock by **Fri 4 Dec** (Ben's watch by **Mon 14 Dec**):\n   - Proof-first 0:30 open (pre-dawn desert tower + Los Alamos chalkboard equation; answer the atmospheric-ignition question immediately).\n   - Teach on Screen & Polish pass markers (`≥3` animated `DATA+SCALE` graphics incl. 1942–1945 timeline, Bremsstrahlung cooling vs nitrogen-fusion threshold, microsecond implosion timing, and Fermi's ~10 kt paper estimate vs ~20–21 kt official measurement; year-accurate `WHO` cards; `WHEN` stamps; `2–4 FACT` beats; Explorer 1–3 beats, never first minute).\n   - `SOURCES.md` verbatim primary-source quotes for every spoken and visual claim, carrying forward all `J3502` guardrails:\n     1. **LA-602 date vs pre-test timeline:** `LA-602` (*Ignition of the Atmosphere with Nuclear Bombs*, Konopinski, Marvin & Teller) is dated **August 1946** (post-war documentation of the July 1942 Berkeley & pre-Trinity Los Alamos checks — do not claim `LA-602` was handed to Groves in 1942/1945).\n     2. **Physics & no movie-myth conflation:** Nitrogen–nitrogen (`¹⁴N + ¹⁴N`) fusion prevented by radiative cooling (Bremsstrahlung / inverse Compton losses) with a large safety margin; do not present Arthur Compton's 1959 *\"three chances in a million\"* recollection as settled 1945 math without primary attribution and Bethe's rebuttal.\n     3. **Separate Fermi's side bet from his paper-scrap measurement:** Do not conflate Fermi's pre-shot dark-humour side bet with his ~40 s post-flash torn-paper shockwave displacement (~2.5 m → ~10 kt estimate vs ~20–21 kt official yield).\n     4. **Plutonium-240 implosion physics:** High-level conceptual physics only (Segrè 1944 Pu-240 spontaneous fission → gun-type pre-detonation → spherical explosive lenses); zero actionable weapon blueprints.\n     5. **Strict HOS lane & Advertiser-Friendly guardrail:** 100% 3D cartoon laboratory physics & equations; zero combat footage, zero Hiroshima/Nagasaki bombing/casualty imagery, zero fear framing; zero overlap with `HOS:130` (Chicago Pile-1 1942), `ideas/022` (1938 fission), Field Order History, or Orbit.\n     6. **Typography (§2.6):** Chalkboard/teach equations inked cleanly in edit or hand-verified (no AI-garbled math).\n   - Two standalone 16–19 s search-question Shorts (Fri & Sat of launch week, Related → `HOS:136`, Ben 19 Nov 3D cartoon house rules): S01 atmospheric-ignition question (consider tightening ≤60c variant like *Could the Trinity Test Have Ignited the Sky?*) and S02 *How Did Enrico Fermi Measure the Trinity Blast With Paper?* (`58c`, `0` collisions).\n3. Hand the draft and `SOURCES.md` to the `facts` lane (`gemini-agy`) and script review in the HOS chain (`npm run review:script ≥ 90`, `npm run gate:episode` PASS).\n\n**Guards.** No VO, picture or paid call yet (Rule G: enters active production at the next free HOS WIP place once `008`/`009` clear Ben's watch this week; Flow credits renew 12 Dec; ElevenLabs down to zero, never past it; never rush — slides one week if not ready). £0.\n",
+      "ref": "J3502",
+      "film": "136",
+      "stage": "script",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T10:51Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T10:51Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Lock package-first title/thumbs (carrying J3502 §2.5/§2.B fixes), write SOURCES.md & 5-part 7-9 min script draft + 2 Shorts by Sat 28 Nov 18:00 London",
+      "due": "2026-11-28T18:00:00Z",
+      "kind": "script",
+      "plain": "Package-first lock and 7-9 minute script draft for HOS 136 Trinity Test Explained"
     }
   ],
   "focus": [
