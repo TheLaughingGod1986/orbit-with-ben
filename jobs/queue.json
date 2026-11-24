@@ -319456,10 +319456,10 @@
       "stage": "upload",
       "after": "J3505",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-24T11:37Z",
+      "eta": "2026-11-24T13:37Z",
       "created_by": "codex",
       "created_at": "2026-11-24T10:53Z",
       "result": "",
@@ -319478,6 +319478,11 @@
           "at": "2026-11-24T10:54Z",
           "by": "codex",
           "what": "J3505: name old id in title so existing swap-readback guard is mandatory"
+        },
+        {
+          "at": "2026-11-24T11:37Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Upload the approved brighter Betelgeuse Short while keeping its date",
@@ -319499,6 +319504,14 @@
         "askId": "J2551.2",
         "okAt": "2026-11-16T09:13Z",
         "okRef": "board:OWB:ASK:J2551.2;J3505"
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T11:37Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
