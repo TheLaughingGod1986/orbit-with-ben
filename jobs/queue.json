@@ -328093,10 +328093,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-24T20:59Z",
+      "eta": "2026-11-24T22:59Z",
       "created_by": "codex",
       "created_at": "2026-11-24T20:51Z",
       "result": "",
@@ -328105,11 +328105,24 @@
           "at": "2026-11-24T20:51Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T20:59Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Repair completed-predecessor review classification with regression tests",
       "kind": "assembly",
-      "plain": "Fix reviews getting stuck behind completed work"
+      "plain": "Fix reviews getting stuck behind completed work",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T20:59Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3618",
