@@ -133,6 +133,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3613 | mini | blocked | gemini | – | review · Verify condition for J3519 |  |
 | J3614 | any | claimed | macbook-2 | 2026-11-24T20:41Z | WW2:005 picture · review · St Nazaire: propose a shorter existing-voice cut with compliant archive coverage |  |
 | J3615 | mini | open | – | – | assembly · Relay: restore a free second slot when a worker returns during a job chain |  |
+| J3616 | mini | open | – | – | review · Verify condition for J3602 |  |
 
 Recently finished:
 
