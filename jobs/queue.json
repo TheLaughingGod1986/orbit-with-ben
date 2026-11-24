@@ -320485,9 +320485,14 @@
           "at": "2026-11-24T12:17Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T12:19Z",
+          "by": "macbook",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Update the HOS rule files to the 24 Nov Chief and worker order",
+      "remaining_action": "Auditing HOS rule files, desk notes, and tests for Chief/worker references",
       "due": "2026-11-26T18:00:00Z",
       "kind": "review",
       "rerouted_from": {
@@ -320499,12 +320504,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T12:17Z",
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-24T12:19Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Audit HOS rules and desk notes",
+          "Update Chief chain and worker order",
+          "Sync copies and run checks",
+          "Push PR and report"
+        ]
       }
     },
     {
