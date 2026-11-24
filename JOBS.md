@@ -102,6 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3551 | mini | open (after J3550) | – | – | WW2:015 script · review · WW2 015: Claude topic archive and opening review before lock |  |
 | J3552 | gemini | open | – | – | HOS:136 sources · facts · HOS 136 Trinity Test Explained (Thu 17 Dec): independent facts audit of v01 script, SOURCES.md & Shorts (PR #753) | J3507 |
 | J3553 | mini | open (after J3552) | – | – | HOS:136 script · review · HOS 136 Trinity Test Explained (Thu 17 Dec): review and lock script v01, package-first scoring, sources & Shorts (PR #753) | J3507 |
+| J3554 | any | open | – | – | WW2:014 sources · facts · WW2 film 014: independent Gemini claims check on SCRIPT.md and SOURCES.md (PR #88) | ww2-channel#88 |
 
 Recently finished:
 
