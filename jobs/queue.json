@@ -321565,10 +321565,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-24T15:09Z",
+      "eta": "2026-11-24T17:09Z",
       "created_by": "relay",
       "created_at": "2026-11-24T12:08Z",
       "result": "",
@@ -321622,6 +321622,11 @@
           "at": "2026-11-24T15:09Z",
           "by": "codex",
           "what": "reopened: Chief evidence review complete: J3125 hold and 25 Nov noon retry already recorded. Reopen verification only to claim and close with the HOLD ruling; original parent remains blocked."
+        },
+        {
+          "at": "2026-11-24T15:09Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief to review/merge PR #1253, reopen J3125 (or set 25 Nov 12:00Z YTA wait), and close J3527",
@@ -321642,7 +321647,15 @@
         "HOS:006",
         "HOS:007"
       ],
-      "escalated_at": "2026-11-24T14:29Z"
+      "escalated_at": "2026-11-24T14:29Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T15:09Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3528",
