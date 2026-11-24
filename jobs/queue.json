@@ -318715,18 +318715,27 @@
           "at": "2026-11-24T14:38Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T14:39Z",
+          "by": "macbook-2",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Build the monthly channel scorecard on the board and set up the 4 Jan review",
+      "remaining_action": "Read analytics sources and define monthly measures",
       "due": "2026-12-18T18:00:00Z",
       "kind": "assembly",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T14:38Z",
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-24T14:39Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Check sources",
+          "Build scorecard",
+          "Test board and reviews",
+          "Open pull request"
+        ]
       }
     },
     {
