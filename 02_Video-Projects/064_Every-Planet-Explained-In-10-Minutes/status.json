@@ -14,10 +14,18 @@
       }
     },
     "script": {
-      "state": "review",
+      "state": "doing",
       "ref": "jobs/reviews/J3520/CHIEF_RULING.md"
     }
   },
-  "claims": [],
+  "claims": [
+    {
+      "stage": "script",
+      "by": "macbook",
+      "at": "2026-11-24T14:36Z",
+      "eta": "2026-11-24T16:35Z",
+      "note": "J3539 OWB 064: Verify v03 sources and decide exact script lock"
+    }
+  ],
   "next": "J3520 FIX: J3538 corrects v03 and reruns Gemini facts; J3539 independently checks sources and exact hash. J3020 and J3021 narration remain held until lock. Review due 25 Nov 18:00Z; approved 16 Dec slot unchanged."
 }
