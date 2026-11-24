@@ -317081,9 +317081,14 @@
           "at": "2026-11-24T12:46Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T12:47Z",
+          "by": "macbook-2",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Verify readiness: Obtain explicit authorization for the Pluto package public-repository export; then reconcile its ledger entry and submit the existing package for final review",
+      "remaining_action": "Inspecting J3114 state, J3446 evidence, new rules, and studio thread comments since #7113840686",
       "kind": "review",
       "recheck_of": "J3114",
       "due": "2026-11-24T10:06:30+00:00",
@@ -317097,12 +317102,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T09:07Z",
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-24T12:47Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect J3114 history & thread",
+          "Verify authorization, board & hashes",
+          "Record review PR & update J3114",
+          "Complete J3470 & post thread report"
+        ]
       }
     },
     {
