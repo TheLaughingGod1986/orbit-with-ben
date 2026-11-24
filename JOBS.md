@@ -79,7 +79,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3467 | mini | open (after J3466) | – | – | 002 upload · studio · Field Order History pilot 2: pin its question after v06 goes public |  |
 | J3468 | mini | open | – | – | review · Verify condition for J2529 |  |
 | J3469 | mini | open | – | – | review · Verify condition for J2704 |  |
-| J3470 | mini | open | – | – | review · Verify condition for J3114 |  |
+| J3470 | mini | claimed | macbook-2 | 2026-11-24T11:07Z | review · Verify condition for J3114 |  |
 | J3471 | mini | open | – | – | review · Verify condition for J3415 |  |
 
 Recently finished:
