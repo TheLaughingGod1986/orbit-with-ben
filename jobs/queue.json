@@ -273578,9 +273578,14 @@
           "at": "2026-11-24T12:44Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T12:44Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: Preserving earlier 3/4 migration progress; today is the authorized runtime credential re-probe only."
         }
       ],
-      "remaining_action": "Verify Ben's BOARD_GH_TOKEN studio grant (re-probe 200 contentsRead:true) and PR #1075 merge, then post preceding-day notice for Mon 23/Tue 24 Nov cutover",
+      "remaining_action": "Verify the updated board token, restore production, then notify on Thursday and migrate on Friday",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
@@ -273599,12 +273604,17 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
-        "of": 3,
+        "step": 3,
+        "of": 4,
         "at": "2026-11-24T12:44Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect migration dependencies",
+          "Write and rehearse runbook",
+          "Publish preparation",
+          "Verify access and complete scheduled move"
+        ],
+        "note": "Preserving earlier 3/4 migration progress; today is the authorized runtime credential re-probe only."
       }
     },
     {
