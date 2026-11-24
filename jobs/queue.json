@@ -318337,9 +318337,14 @@
           "at": "2026-11-24T10:31Z",
           "by": "claude",
           "what": "Ben: bring it forward. Search-led films air 10, 17, 24 and 31 Dec; 008 Franklin airs 26 Nov and 009 Gravity 3 Dec after Ben's watch."
+        },
+        {
+          "at": "2026-11-24T10:34Z",
+          "by": "gemini",
+          "what": "step 1 of 6 done: Confirmed PR #1238 already merged (HOS:128 active, hos-ideas paused, hos-search-research added, plan.json Ben OK recorded). Checked open HOS PRs 120-135: HOS:127 (PR #706/#708, Rule-E GO 97.2/100) ALREADY covers Wright Brothers 1901 Wind Tunnel (Cluster 4 Lead Film 4), so reusing HOS:127 avoids duplication; next free numbers are HOS:136 (Trinity Test) and HOS:137 (Accidental Inventions). Ran free neighbours.py & public_search.py for both (both PASS)."
         }
       ],
-      "remaining_action": "Verifying WIP order, overlap check, and running free public_search/neighbours checks for HOS 136-138",
+      "remaining_action": "Creating clean worktrees and scaffolding HOS:136 and HOS:137 folders with search evidence and package-first briefs",
       "due": "2026-11-25T12:00:00Z",
       "kind": "review",
       "urgent": 11,
@@ -318352,24 +318357,25 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-11-24T10:30Z",
+        "at": "2026-11-24T10:34Z",
         "by": "gemini",
         "plan": [
           "Verify state, overlap & run search/neighbour gates",
-          "Create HOS 136-138 folders & TOPIC/package briefs",
+          "Create HOS 136-137 folders & TOPIC/package briefs",
           "Update HOS rules, playbook & retention learnings",
           "Update OWB LEARNINGS, WIP.json & plan.json",
-          "Queue Rule-E reviews & run all repo tests",
+          "Queue Rule-E reviews, HOS:127 script & run tests",
           "Open PRs, post desk/thread & complete J3495"
-        ]
+        ],
+        "note": "Confirmed PR #1238 already merged (HOS:128 active, hos-ideas paused, hos-search-research added, plan.json Ben OK recorde"
       },
       "taskKeys": [
         "HOS:128",
         "HOS:136",
         "HOS:137",
-        "HOS:138"
+        "HOS:127"
       ]
     },
     {
