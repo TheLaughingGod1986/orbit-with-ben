@@ -320828,10 +320828,10 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-24T16:34Z",
+      "eta": "2026-11-24T18:34Z",
       "created_by": "macbook",
       "created_at": "2026-11-24T11:01Z",
       "result": "",
@@ -320845,6 +320845,11 @@
           "at": "2026-11-24T11:12Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
+        },
+        {
+          "at": "2026-11-24T16:34Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Score package-first titles/thumbs (with J3503 fixes) and draft the 7-9 min HOS:137 script, SOURCES.md, and 2 Short angles by Mon 30 Nov 18:00 London",
@@ -320858,7 +320863,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T16:34Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3514",
