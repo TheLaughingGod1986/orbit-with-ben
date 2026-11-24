@@ -326774,15 +326774,20 @@
           "at": "2026-11-24T18:49Z",
           "by": "codex",
           "what": "step 1 of 3 done: All three checkouts are current. Loaded runner and installed version both 253c7fe66b787b2f; slot 1 runner already started, so no restart of active work is needed."
+        },
+        {
+          "at": "2026-11-24T18:49Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Log at 18:46:46Z confirms second-run spawn; runner-1 ready at 18:47:25Z, matching installed 253c7fe66b787b2f. Only execution-0 is live (Codex/J3607). Memory allows another slot: 3.459 GiB, threshold 3 GiB. Other CLI workers remain marked down; no concurrent execution claimed."
         }
       ],
-      "remaining_action": "Checking why the spawned second runner has no execution lease",
+      "remaining_action": "Recording the successful second-run spawn and worker-availability limit",
       "due": "2026-11-24T21:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "urgent": 11,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-24T18:49Z",
         "by": "codex",
@@ -326791,7 +326796,7 @@
           "Verify two live slots",
           "Record outcome"
         ],
-        "note": "All three checkouts are current. Loaded runner and installed version both 253c7fe66b787b2f; slot 1 runner already starte"
+        "note": "Log at 18:46:46Z confirms second-run spawn; runner-1 ready at 18:47:25Z, matching installed 253c7fe66b787b2f. Only execu"
       }
     },
     {
