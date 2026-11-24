@@ -320234,7 +320234,7 @@
     {
       "id": "J3522",
       "title": "History of Science rules: Chief chain is now Claude, Codex, Gemini, then Grok Bot; Cursor last",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "**Why (Ben, Tue 24 Nov ~11:20 London, in chat: \"Cursor and Grokbot are tied up in the X subscription ... £20 a month ... Gemini, we have a lot of usage ... Claude, we have a lot of usage ... Codex, we're on the £90 a month plan ... please go ahead and make all the changes you recommended\".)** orbit-with-ben PR #1246 made the Chief chain Claude -> Codex -> Gemini -> Grok Bot for History of Science too (its 11 Nov Grok-first chain ends) and put Cursor last in every job chain. The History of Science rule files still say \"Chief for History of Science is Grok\".\n\n**Do (history-of-science repo; due Thu 26 Nov 18:00):** update the lines that name the HOS Chief and the worker order (AGENTS.md, studio/RULES.md, the desk notes that describe roles) to the 24 Nov order, quoting Ben, and re-sync any copies with `scripts/sync_rules.py`. Keep the desk (PR #180) open; no history rewrite. One PR, merged when green. £0.",
       "ref": "",
@@ -320254,11 +320254,24 @@
           "at": "2026-11-24T11:55Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T11:56Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Update the HOS rule files to the 24 Nov Chief and worker order",
       "due": "2026-11-26T18:00:00Z",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [

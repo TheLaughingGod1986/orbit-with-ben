@@ -98,7 +98,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3519 | mini | open | – | – | assembly · History of Science: repair the publishing runtime on the Mini (Prisma client) so uploads run |  |
 | J3520 | mini | open | – | – | 064 script · review · OWB 064 Every Planet: read and lock the script (Claude), or write its fix list |  |
 | J3521 | mini | open | – | – | assembly · Mini: apply and verify today's reliability changes (new chain, second slot, reset times, board deploy) |  |
-| J3522 | any | open | – | – | review · History of Science rules: Chief chain is now Claude, Codex, Gemini, then Grok Bot; Cursor last |  |
+| J3522 | mini | open | – | – | review · History of Science rules: Chief chain is now Claude, Codex, Gemini, then Grok Bot; Cursor last |  |
 
 Recently finished:
 
