@@ -320504,24 +320504,30 @@
           "at": "2026-11-24T12:31Z",
           "by": "codex",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-24T12:32Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Main pulled; PR 1248 is merged; loaded relay version matches installed. No launchd chain, parallel or memory overrides found. Scratch offload found no eligible old folders."
         }
       ],
-      "remaining_action": "Checking the relay settings and installed changes",
+      "remaining_action": "Checking Cursor reset evidence and the second relay slot",
       "due": "2026-11-24T18:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "urgent": 12,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-24T12:31Z",
+        "at": "2026-11-24T12:32Z",
         "by": "codex",
         "plan": [
           "Check runtime and environment",
           "Apply reliability settings",
           "Verify slots and reset times",
           "Deploy and verify board"
-        ]
+        ],
+        "note": "Main pulled; PR 1248 is merged; loaded relay version matches installed. No launchd chain, parallel or memory overrides f"
       }
     },
     {
