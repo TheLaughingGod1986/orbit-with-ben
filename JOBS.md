@@ -136,6 +136,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3628 | any | claimed | macbook | 2026-11-24T23:33Z | HOS:128 script · script · HOS 128: correct Edison vs Tesla script and Shorts to v02 |  |
 | J3629 | gemini | open (after J3628) | – | – | HOS:128 sources · facts · HOS 128: independent v02 facts and source verification |  |
 | J3630 | mini | open (after J3629) | – | – | HOS:128 script · review · HOS 128: direct quote check and corrected script lock decision |  |
+| J3631 | mini | open | – | – | review · Verify condition for J3434 |  |
 
 Recently finished:
 
