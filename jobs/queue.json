@@ -330466,9 +330466,14 @@
           "at": "2026-11-24T23:37Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T23:38Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "QA the 003 v01 master and put it on Ben's watch card",
+      "remaining_action": "Locating WW2:003 v01 master, J3205 worktree, and J3599 QA baseline",
       "due": "2026-11-25T08:00:00Z",
       "kind": "qa",
       "mini_only": true,
@@ -330483,12 +330488,20 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-24T23:37Z",
+        "of": 5,
+        "at": "2026-11-24T23:38Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Locate master & verify hash/decode/loudness",
+          "Check captions, VO & archive provenance",
+          "Inspect first 2m frame sheet & 168px covers",
+          "Run watch_upload & set watch card (or FIX list)",
+          "Commit QA record locally & post report"
+        ]
+      },
+      "taskKeys": [
+        "WW2:003"
+      ]
     },
     {
       "id": "J3644",
