@@ -330589,7 +330589,7 @@
     {
       "id": "J3647",
       "title": "Review WW2 004 Short 1 v01 ('Mark 14 Torpedo: Why It Ran 10 Feet Too Deep') for Ben watch",
-      "needs": "any",
+      "needs": "mini",
       "repo": "ww2",
       "body": "Independent Rule-H review of finished Field Order History Short `WW2:004-S1` v01 (*Mark 14 Torpedo: Why It Ran 10 Feet Too Deep*, 44 chars, Rule 2), built in J3570 (ww2-channel PR #117).\n\n- **NAS master:** `/Volumes/data/studio-live/ww2/02_Video-Projects/004_Why-US-Submarine-Torpedoes-Failed-21-Months/Shorts/004_S1_v01/mark14_depth_short_v01.mp4`\n- **SHA-256:** `fef4e0566ece342650cf4501a50f04042372cdad21be94b90740971b9b68e2e8` (`48.60 s`, 1215 frames @ 25 fps, 1080x1920, 48 kHz AAC, -16.6 LUFS, -1.5 dBFS)\n- **Contact sheet & receipts on NAS:** `Shorts/004_S1_v01/review_sheet.jpg`, `VERIFICATION.json`, `REVIEW.md`, `manifest.json`, `caption_frames.json`, `metadata.json`\n- **PR to inspect:** `ww2-channel` PR #117 (`macbook/J3570`)\n\n### Review checks\n1. Inspect `review_sheet.jpg` and full-res frames from the NAS master (frame 0 hook, archive crops, three schematics, captions, end card, mobile safe zones).\n2. Verify caption frame invariants (`0` overlaps, `0` shot-cut crossings, British English), archive share (`60.41%`, 5 unique verified PD NARA hashes, max upscale `1.1026x`), honest `HARVEST_LEDGER.md` context, loudness/silence, and £0 spend.\n3. Write `jobs/reviews/<this-job-id>/REVIEW.md` with verdict **KEEP** or **FIX** (exact fix list if FIX). On KEEP, hand off to Chief to merge PR #117 and arm dedicated Short Ben watch card `WW2:004-S1` (preserving long card `WW2:004`) before **Sat 28 Nov 2026 18:00 UTC** for the **Mon 30 Nov 12:30 London** slot. No upload or public play.\n",
       "ref": "J3570",
@@ -330609,12 +330609,25 @@
           "at": "2026-11-24T23:35Z",
           "by": "macbook",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T23:36Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-25T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Inspect WW2 004-S1 v01 stills, captions, provenance and technical checks, then hand off for Chief PR #117 merge and Ben watch card WW2:004-S1",
       "due": "2026-11-28T18:00:00Z",
       "kind": "review",
-      "plain": "Check the finished Mark 14 torpedo depth-error Short and hand it off for Ben's watch"
+      "plain": "Check the finished Mark 14 torpedo depth-error Short and hand it off for Ben's watch",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
