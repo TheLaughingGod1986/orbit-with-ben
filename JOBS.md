@@ -140,6 +140,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3644 | mini | open | – | – | review · Verify condition for J3205 |  |
 | J3645 | mini | open | – | – | WW2:002 thumbs · thumb · WW2 pilot 2: make a U-boat thumbnail (design E) ready for the 24-hour read |  |
 | J3646 | mini | open | – | – | WW2:001 upload · studio · WW2 001-S1: upload Ben-approved Mulberry Short v02, scheduled Thu 26 Nov 12:00 London, linked to pilot 1 |  |
+| J3647 | any | open | – | – | WW2:004 edit · review · Review WW2 004 Short 1 v01 ('Mark 14 Torpedo: Why It Ran 10 Feet Too Deep') for Ben watch | J3570 |
 
 Recently finished:
 
