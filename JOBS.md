@@ -78,6 +78,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3444 | mini | blocked | codex | – | 027 upload · studio · Earth equator Short: 24-hour reach read after Related repair |  |
 | J3458 | any | claimed | gemini | 2026-11-24T06:01Z | script · HOS: learn from our data, add two new films to the backlog |  |
 | J3459 | any | open | – | – | 134 topic · review · HOS 134 What Is Antimatter?: rule-E topic go/no-go review |  |
+| J3460 | any | open | – | – | 135 topic · review · HOS 135 What Is Entropy?: rule-E topic go/no-go review |  |
 
 Recently finished:
 
