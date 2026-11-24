@@ -133,6 +133,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3621 | gemini | open | – | – | HOS:127 sources · facts · HOS 127 Wright Brothers First Flight (Thu 31 Dec): independent facts audit of v01 script, SOURCES.md & Shorts (PR #756) | J3504 |
 | J3622 | mini | open (after J3621) | – | – | HOS:127 script · review · HOS 127 Wright Brothers First Flight (Thu 31 Dec): review and lock script v01, package-first scoring, sources & Shorts (PR #756) | J3504 |
 | J3623 | mini | open | – | – | WW2:004 edit · assembly · WW2 004: reconcile delivery branch and preserve production records |  |
+| J3624 | mini | open (after J3623) | – | – | WW2:004 edit · qa · WW2 004: full private audiovisual quality review |  |
 
 Recently finished:
 

@@ -1,5 +1,5 @@
 {
-  "next_id": 3624,
+  "next_id": 3625,
   "jobs": [
     {
       "id": "J0001",
@@ -328518,6 +328518,40 @@
       "due": "2026-11-25T12:00:00Z",
       "kind": "assembly",
       "plain": "Fix the torpedo film delivery files before its final quality check"
+    },
+    {
+      "id": "J3624",
+      "title": "WW2 004: full private audiovisual quality review",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "J3560 Chief ruling: after the delivery repair, perform the J3430-required full private master watch-through with sound on WW2 film 004. Demonstrate audio_input and moving_video_input in this session before claiming perceptual review; use a typed capability hold if absent. Still sheets, ASR, ffprobe and loudness are technical evidence only, not listening/motion review. Use the repair job exact path/hash; original master SHA256 d2656fea86b93c4b7978817153b46167934314e4e99307b59e47e33111ae03fc. Check whole film, especially first 2 minutes, authorised opening join, picture/narration fit and archive identifications, transitions, music/narration intelligibility, captions. Read WW2 studio/RULES.md. Record timestamped findings and tools actually used, inspect 3 thumbnail variants at 168px against rules 2/13, verify applicable technical QA. No public player, upload, money, re-voicing, rule waiver or final Chief PASS. Deliver recommendation and exact evidence to dependent Chief job. J3430 remains held; Ben watch due 28 Nov 20:00 UTC.\n",
+      "ref": "",
+      "film": "WW2:004",
+      "stage": "edit",
+      "after": "J3623",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-24T21:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T21:15Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review the repaired delivery with genuine audio and moving-video input",
+      "due": "2026-11-26T12:00:00Z",
+      "kind": "qa",
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ],
+      "plain": "Watch and listen to the whole torpedo film before Ben sees it"
     }
   ],
   "focus": [
