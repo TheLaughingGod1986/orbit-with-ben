@@ -1,5 +1,5 @@
 {
-  "next_id": 3627,
+  "next_id": 3628,
   "jobs": [
     {
       "id": "J0001",
@@ -328746,6 +328746,36 @@
       "due": "2026-11-25T18:00:00Z",
       "kind": "script",
       "plain": "Correct the flagged facts in the Operation Pedestal script"
+    },
+    {
+      "id": "J3627",
+      "title": "WW2 009: independently verify corrected narration v02",
+      "needs": "gemini",
+      "repo": "ww2",
+      "body": "J3529 follow-up: independently verify the revised WW2:009 Operation Pedestal script after the linked correction job completes. Use Gemini via agy in the facts lane. Read J3491 at ww2-channel PR #96 without treating its PASS WITH FIXES wording as a clean pass. Check all eight flags C03/C11/C12/C14/C28/C30/C34/C35 and seven source notes; validate every changed spoken statement against inspectable sources with exact page/URL and quotations. Flag inaccessible or unsupported detail rather than inventing quotations. Check the full revised narration for regressions, exact SCRIPT/narration parity, <=21,000 characters and SHA-256. Write CLAIMS_CHECK_v02.md with PASS or precise remaining fixes and update status as review, not locked. Do not rewrite spoken lines. Open a PR and record its exact commit. When clean, notify the J3492 review lane that its condition is ready for verification; do not auto-release or lock it. No voice or generation spend; preserve 30 Nov 10:50Z voice hold and script-lock deadline 30 Nov 18:00Z. Due 26 Nov 12:00Z.\n",
+      "ref": "ww2-channel#96",
+      "film": "WW2:009",
+      "stage": "sources",
+      "after": "J3626",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-24T21:27Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T21:27Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify the revised narration against source quotations before script lock",
+      "due": "2026-11-26T12:00:00Z",
+      "kind": "facts",
+      "plain": "Check the corrected facts in the Operation Pedestal script"
     }
   ],
   "focus": [

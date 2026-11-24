@@ -133,6 +133,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3624 | mini | open (after J3623) | – | – | WW2:004 edit · qa · WW2 004: full private audiovisual quality review |  |
 | J3625 | any | open (after J3624) | – | – | WW2:004 edit · chief · WW2 004: decide repaired delivery and stage Ben watch |  |
 | J3626 | any | open | – | – | WW2:009 script · script · WW2 009: resolve eight claims flags in narration v02 | ww2-channel#96 |
+| J3627 | gemini | open (after J3626) | – | – | WW2:009 sources · facts · WW2 009: independently verify corrected narration v02 | ww2-channel#96 |
 
 Recently finished:
 
