@@ -318432,13 +318432,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-24T14:53Z",
-      "eta": "2026-11-24T18:53Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-24T09:37Z",
-      "result": "",
+      "result": "Draft PR #87 published, commit 60bd322. Required reviews queued: J3550 Gemini claims; J3551 Claude topic/archive and first-300-word viewer test after J3550. US depot and medium-tank remanufacture photo coverage remains unproven. No script lock or VO queue. Reviewer resolves flags/coverage then locks and queues VO, or returns for fixes. WW2 checkout clean on main.",
       "history": [
         {
           "at": "2026-11-24T09:37Z",
@@ -318494,6 +318494,11 @@
           "at": "2026-11-24T15:08Z",
           "by": "macbook",
           "what": "step 4 of 4 done"
+        },
+        {
+          "at": "2026-11-24T15:08Z",
+          "by": "macbook",
+          "what": "blocked: Draft PR #87 published, commit 60bd322. Required reviews queued: J3550 Gemini claims; J3551 Claude topic/archive and first-300-word viewer test after J3550. US depot and medium-tank remanufacture photo coverage remains unproven. No script lock or VO queue. Reviewer resolves flags/coverage then locks and queues VO, or returns for fixes. WW2 checkout clean on main."
         }
       ],
       "remaining_action": "Await Gemini facts and Claude archive/opening decisions on draft PR 87",
@@ -318519,6 +318524,11 @@
           "Draft sourced story",
           "Publish and hand off reviews"
         ]
+      },
+      "hold": {
+        "type": "input",
+        "condition": "Draft PR #87 published, commit 60bd322. Required reviews queued: J3550 Gemini claims; J3551 Claude topic/archive and first-300-word viewer test after J3550. US depot and medium-tank remanufacture photo coverage remains unproven. No script lock or VO queue. Reviewer resolves flags/coverage then locks and queues VO, or returns for fixes. WW2 checkout clean on main.",
+        "check_at": "2026-11-24T21:08:28+00:00"
       }
     },
     {
