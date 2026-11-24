@@ -328082,15 +328082,20 @@
           "at": "2026-11-24T21:21Z",
           "by": "codex",
           "what": "step 2 of 4 done: Existing PR #1289 is merged: boundary retry, inherited spawn reservation, and requested guard tests already present; verifying rather than duplicating the implementation."
+        },
+        {
+          "at": "2026-11-24T21:21Z",
+          "by": "codex",
+          "what": "step 3 of 4 done: All four targeted boundary/reservation regressions pass in an isolated worktree. PR #1289 already merged at 20:44Z with Rules CI success. Both live runner slots report installed version b7f20fb5eea010db."
         }
       ],
-      "remaining_action": "Verify merged relay tests and installed runner evidence",
+      "remaining_action": "Record completed merge and runtime evidence, then close the stale job",
       "due": "2026-11-25T12:00:00Z",
       "kind": "assembly",
       "plain": "Keep both available workers busy when one returns during a run",
       "mini_only": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
         "at": "2026-11-24T21:21Z",
         "by": "codex",
@@ -328100,7 +328105,7 @@
           "Validate and publish PR",
           "Record review and refresh evidence"
         ],
-        "note": "Existing PR #1289 is merged: boundary retry, inherited spawn reservation, and requested guard tests already present; ver"
+        "note": "All four targeted boundary/reservation regressions pass in an isolated worktree. PR #1289 already merged at 20:44Z with "
       }
     },
     {
