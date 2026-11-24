@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J2529, J3430, J3431, J3432, J3434, J3501, J3519, J3500, J3205, J3530, J3542, J3562.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J2529, J3430, J3431, J3432, J3434, J3501, J3519, J3500, J3205, J3530, J3562, J3540, J3542.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -87,7 +87,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3535 | mini | blocked | gemini | – | review · Verify condition for J3510 |  |
 | J3536 | mini | open (after J3524) | – | – | WW2:012 vo · vo · WW2 film 012: narration in Ben's voice (Liberty Ships, post-reset) |  |
 | J3537 | mini | open (after J3526) | – | – | WW2:013 vo · vo · WW2 film 013: narration in Ben's voice (Ghost Army, post-reset) |  |
-| J3540 | mini | open (after J3414) | – | – | WW2:001 upload · studio · Field Order History pilot 1: title test naming the Mulberry harbours (search), after the 48-hour read |  |
+| J3540 | mini | open (after J3414) | – | – | WW2:001 upload · studio · Field Order History pilot 1: change the title to name the Mulberry harbours, right after the 48-hour read |  |
 | J3542 | mini | blocked | codex | – | WW2:001 edit · assembly · Field Order History: one test Short on the Mulberry harbours, cut from pilot 1, pointing to the full film |  |
 | J3544 | mini | open | – | – | 064 script · script · OWB 064: Correct v03 source and teaching issues as v04 | J3539 |
 | J3545 | mini | open (after J3544) | – | – | 064 script · review · OWB 064: Independently verify corrected v04 before script lock | J3539 |
