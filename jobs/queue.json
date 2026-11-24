@@ -316513,6 +316513,11 @@
           "at": "2026-11-24T09:06Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T09:06Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Verify readiness: Run hosted Preview build and auth/home smoke checks once J2708 provides isolated hosted PostgreSQL",
@@ -316520,7 +316525,15 @@
       "recheck_of": "J2704",
       "mini_only": true,
       "due": "2026-11-24T10:06:30+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3470",
