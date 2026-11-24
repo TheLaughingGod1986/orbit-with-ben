@@ -330227,13 +330227,26 @@
           "at": "2026-11-24T23:12Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T23:13Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-25T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "QA the 003 v01 master and put it on Ben's watch card",
       "due": "2026-11-25T08:00:00Z",
       "kind": "qa",
       "mini_only": true,
-      "urgent": 14
+      "urgent": 14,
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3644",
