@@ -325185,6 +325185,11 @@
           "at": "2026-11-24T23:29Z",
           "by": "claude",
           "what": "Data point from Ben's Studio app screenshots, 24 Nov 23:27 London (~6.5 h after launch): 208 impressions, 1.9% click-through, 5 views, 0.2 watch hours, 3:35 average view, 100% Suggested videos; retention not ready. Impressions were 4 at 22:30Z (J3635), so YouTube's first test wave began about 23:00Z (pilot 1's came at 01:00-02:00Z: 178 impressions, 1.69%). No agent plays public videos (AGENTS.md); these are strangers."
+        },
+        {
+          "at": "2026-11-24T23:31Z",
+          "by": "claude",
+          "what": "Suggesting videos at 23:30 London (Ben's screenshot), one view each: The Shamrock Spitfire (WW2 film), an Italian Bermuda Triangle documentary, a flight-investigation documentary, a debate clip, and a true-crime execution story. That is 1 WW2, 2 near documentaries, 2 off-topic, against pilot 1's 0 of 5 WW2. YouTube's API topic for this video is 'Society' (pilot 1: Knowledge, Military). Rule 8's 1,000-impression trigger is likely overnight at this rate, so the first look moves to 08:00Z."
         }
       ],
       "remaining_action": "Look at pilot 2 at 24 hours",
@@ -325193,8 +325198,8 @@
       "mini_only": true,
       "hold": {
         "type": "date",
-        "condition": "Pilot 2 (qfc6EBStOfo): look at 24 hours; act if 1,000+ impressions, else hold to the 48-hour point 2026-11-26T17:05:00Z.",
-        "check_at": "2026-11-25T17:05:00Z",
+        "condition": "Pilot 2 (qfc6EBStOfo): look at 08:00Z; act if 1,000+ impressions, else record and hold to the 24-hour point 2026-11-25T17:05:00Z.",
+        "check_at": "2026-11-25T08:00:00+00:00",
         "release": "auto"
       }
     },
