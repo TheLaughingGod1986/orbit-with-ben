@@ -86,6 +86,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3477 | cloud | open (after J3476) | – | – | WW2:008 script · review · WW2 film 008: Claude viewer test (first 300 words), Rule E lock & queue VO | ww2-channel#61 |
 | J3478 | mini | claimed | gemini | 2026-11-24T11:25Z | review · Verify condition for J2537 |  |
 | J3479 | any | open | – | – | review · Field Order History: three films a week from mid-December, decision pack for Ben on Tue 1 Dec (slots, topics 11-14, lead time, voice) |  |
+| J3480 | gemini | open | – | – | WW2:007 sources · facts · WW2 film 007: independent Gemini claims check on script v01 and SOURCES.md |  |
 
 Recently finished:
 
