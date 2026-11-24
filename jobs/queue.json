@@ -325368,9 +325368,14 @@
           "at": "2026-11-24T17:25Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T17:25Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Run 48h RSI retention autopsy on ek9F61FVYqY, watch 3 steepest drop windows with video+audio, write 05_Analytics/ww2/autopsy/ek9F61FVYqY_48h.md",
+      "remaining_action": "Running RSI inspector and checking latest WW2 snapshots, launch records, and Studio state",
       "due": "2026-11-25T05:03:00Z",
       "kind": "review",
       "model": "gemini-argon",
@@ -325382,12 +325387,20 @@
       "plain": "Analyse why viewers stayed or left on \"How Britain Built Two Harbours in Secret and Floated The\" (48h) and write up to 3 fixes",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-24T17:25Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect RSI metrics and Studio state",
+          "Locate master MP4 and cut 40s watch clips",
+          "Watch all clips with moving video and audio",
+          "Write 48h autopsy report and update learnings",
+          "Commit in clean worktree, push PR, and report"
+        ]
+      },
+      "taskKeys": [
+        "WW2:001"
+      ]
     },
     {
       "id": "J3592",
