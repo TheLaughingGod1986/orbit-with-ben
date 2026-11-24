@@ -325621,9 +325621,14 @@
           "at": "2026-11-24T17:38Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T17:39Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Starting read-only verification for J3417 (WW2 pilot 2 qfc6EBStOfo / J9WGu8aPnHI)."
         }
       ],
-      "remaining_action": "Verify readiness: Confirm the saved three-thumbnail test on qfc6EBStOfo is running after the U-boat film launches",
+      "remaining_action": "Verify live Public status and Running B/C/D test on qfc6EBStOfo and retired Private status on J9WGu8aPnHI for J3417",
       "kind": "review",
       "recheck_of": "J3417",
       "mini_only": true,
@@ -325640,11 +325645,18 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-24T17:38Z",
+        "at": "2026-11-24T17:39Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Review J3417 history and approvals",
+          "Verify live YouTube/Studio state of qfc6EBStOfo and J9WGu8aPnHI",
+          "Write evidence PR, park for Chief, and report"
+        ],
+        "note": "Starting read-only verification for J3417 (WW2 pilot 2 qfc6EBStOfo / J9WGu8aPnHI)."
+      },
+      "taskKeys": [
+        "WW2:002"
+      ]
     },
     {
       "id": "J3594",
