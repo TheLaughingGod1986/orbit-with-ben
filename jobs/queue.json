@@ -319887,9 +319887,14 @@
           "at": "2026-11-24T19:37Z",
           "by": "gemini",
           "what": "step 1 of 7 done: Inspected HOS 008 package, NAS assets, and style sheet: both Thumbnail A (THE KEY SPARKED) and B (NO BOLT STRUCK) PASS HOOK, BAND, and PHONE at 168px; lint:package PASS; channel:audit 69 videos 0 errors; free slots confirmed Thu 26 Nov 18:00 (long), Fri 27 Nov 11:30 (Short A), Sun 29 Nov 11:30 (Short C; Sat 28 Nov held by sY0PSQFxjp8)."
+        },
+        {
+          "at": "2026-11-24T19:38Z",
+          "by": "gemini",
+          "what": "step 2 of 7 done: All pre-upload gates PASS: lint:package PASS, Short A v04 gate_shorts_open PASS (2026-11-27), Short C v07 gate_shorts_open PASS (2026-11-29), long v05 youtube:package --dry-run PASS."
         }
       ],
-      "remaining_action": "Running package/Shorts gates and preparing HOS 008 long v05 upload",
+      "remaining_action": "Uploading HOS 008 long master v05 private and scheduled Thu 26 Nov 18:00 UK",
       "due": "2026-11-26T12:00:00Z",
       "kind": "studio",
       "urgent": 13,
@@ -319912,9 +319917,9 @@
         "HOS:ASK:J2984"
       ],
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 7,
-        "at": "2026-11-24T19:37Z",
+        "at": "2026-11-24T19:38Z",
         "by": "gemini",
         "plan": [
           "Inspect package, style sheet and NAS files",
@@ -319925,7 +319930,7 @@
           "Read back YouTube/Studio state and run channel:audit",
           "Update status/records PR and report"
         ],
-        "note": "Inspected HOS 008 package, NAS assets, and style sheet: both Thumbnail A (THE KEY SPARKED) and B (NO BOLT STRUCK) PASS H"
+        "note": "All pre-upload gates PASS: lint:package PASS, Short A v04 gate_shorts_open PASS (2026-11-27), Short C v07 gate_shorts_op"
       },
       "taskKeys": [
         "HOS:008"
