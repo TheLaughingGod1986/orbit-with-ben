@@ -290050,9 +290050,14 @@
           "at": "2026-11-24T19:55Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T19:55Z",
+          "by": "codex",
+          "what": "step 1 of 4 done: Resumed clean local branch bc431ff; S07 and S13 are integrated. Full film remains unassembled."
         }
       ],
-      "remaining_action": "Publish the verified checkpoint through Claude Code, then clear archives and assemble the film",
+      "remaining_action": "Clear archive pictures and build narration-length graphics for the B-29 edit",
       "due": "2026-11-26T20:00:00Z",
       "kind": "assembly",
       "plain": "Edit the third WW2 film and put it on Ben's board to watch",
@@ -290071,12 +290076,17 @@
       ],
       "mini_only": true,
       "progress": {
-        "step": 0,
-        "of": 3,
+        "step": 1,
+        "of": 4,
         "at": "2026-11-24T19:55Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Verify corrected inputs",
+          "Clear pictures and finish graphics",
+          "Assemble film and three covers",
+          "Check film and deliver for watch"
+        ],
+        "note": "Resumed clean local branch bc431ff; S07 and S13 are integrated. Full film remains unassembled."
       }
     },
     {
