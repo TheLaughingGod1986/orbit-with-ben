@@ -329072,23 +329072,28 @@
           "at": "2026-11-24T22:00Z",
           "by": "codex",
           "what": "step 1 of 3 done: Gemini Argon audit running via agy. Local checks confirm 46/46 paragraph parity, 16502 stripped chars, matching v02 SHA256, preserved v01 and original audit hashes."
+        },
+        {
+          "at": "2026-11-24T22:08Z",
+          "by": "codex",
+          "what": "step 2 of 3 done: Independent Gemini verdict FIX: six of eight earlier flags resolved; C11/C12 plus C02/C13/C20/C24/C32 evidence gaps remain. Full narration scan and integrity checks complete. Checking one incomplete source citation before publication."
         }
       ],
-      "remaining_action": "Finish Gemini verification of source evidence and write the findings",
+      "remaining_action": "Publish Gemini findings and preserve the script-review hold",
       "due": "2026-11-26T12:00:00Z",
       "kind": "facts",
       "plain": "Check the corrected facts in the Operation Pedestal script",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-24T22:00Z",
+        "at": "2026-11-24T22:08Z",
         "by": "codex",
         "plan": [
           "Inspect corrected script and earlier findings",
           "Run independent Gemini source verification",
           "Publish findings and review handoff"
         ],
-        "note": "Gemini Argon audit running via agy. Local checks confirm 46/46 paragraph parity, 16502 stripped chars, matching v02 SHA2"
+        "note": "Independent Gemini verdict FIX: six of eight earlier flags resolved; C11/C12 plus C02/C13/C20/C24/C32 evidence gaps rema"
       },
       "taskKeys": [
         "WW2:009"
