@@ -323211,13 +323211,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 150,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-24T19:25Z",
-      "eta": "2026-11-24T21:55Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T14:28Z",
-      "result": "",
+      "result": "Waiting for: Ben must watch and listen to the finished v02 Short on WW2:001-S1 and say OK or changes before any YouTube upload or scheduling. Local records d2e21c5 are ready for J3606 publishing after Claude Code reset; that does not block private watch.",
       "history": [
         {
           "at": "2026-11-24T14:28Z",
@@ -323328,9 +323328,19 @@
           "at": "2026-11-24T19:31Z",
           "by": "codex",
           "what": "step 4 of 4 done: NAS master hash verified; dedicated WW2:001-S1 v02 watch card set, due 25 Nov 20:00 UTC. Final local commit d2e21c5 is ready for J3606 Claude Code publishing; no push retry, upload or public action."
+        },
+        {
+          "at": "2026-11-24T19:31Z",
+          "by": "codex",
+          "what": "blocked: Waiting for: Ben must watch and listen to the finished v02 Short on WW2:001-S1 and say OK or changes before any YouTube upload or scheduling. Local records d2e21c5 are ready for J3606 publishing after Claude Code reset; that does not block private watch."
+        },
+        {
+          "at": "2026-11-24T19:31Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-25T20:00:00Z"
         }
       ],
-      "remaining_action": "Waiting for Ben to watch the corrected Mulberry Short",
+      "remaining_action": "Waiting for Ben to watch the first Mulberry harbours Short",
       "due": "2026-11-25T20:00:00Z",
       "kind": "assembly",
       "mini_only": true,
@@ -323362,6 +323372,11 @@
         "title": "Mulberry Harbours: How Did They Work?",
         "number": "001-S1",
         "type": "short"
+      },
+      "hold": {
+        "type": "ben",
+        "condition": "Ben must watch and listen to the finished v02 Short on WW2:001-S1 and say OK or changes before any YouTube upload or scheduling. Local records d2e21c5 are ready for J3606 publishing after Claude Code reset; that does not block private watch.",
+        "check_at": "2026-11-25T20:00:00Z"
       }
     },
     {
