@@ -319521,9 +319521,14 @@
           "at": "2026-11-24T11:26Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T11:27Z",
+          "by": "codex",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Upload the dinosaur and birds Short you approved as a private video",
+      "remaining_action": "Checking the approved bird Short before its private upload",
       "due": "2026-11-25T12:00:00Z",
       "kind": "studio",
       "plain": "Upload the dinosaur and birds Short you approved as a private video",
@@ -319544,12 +319549,19 @@
       },
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-24T11:26Z",
+        "of": 4,
+        "at": "2026-11-24T11:27Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check approved cut and records",
+          "Prepare and validate package",
+          "Upload privately and verify",
+          "Record upload and handoff"
+        ]
+      },
+      "taskKeys": [
+        "HOS:010"
+      ]
     },
     {
       "id": "J3512",
