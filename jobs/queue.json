@@ -307675,10 +307675,10 @@
       "stage": "edit",
       "after": "J3370",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-24T11:13Z",
+      "eta": "2026-11-24T13:13Z",
       "created_by": "codex",
       "created_at": "2026-11-22T14:21Z",
       "result": "",
@@ -307697,13 +307697,26 @@
           "at": "2026-11-24T11:11Z",
           "by": "claude",
           "what": "Given a due date (Wed 25 Nov 09:00Z): it blocks J3205 (film 3 to Ben's watch, due Thu 26 Nov 20:00) but had no due, so the due-ordered run list put it 24th behind same-week Shorts uploads."
+        },
+        {
+          "at": "2026-11-24T11:13Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Rebuild the loss graphic and its timing after the corrected narration",
       "kind": "chart",
       "plain": "Correct the bomber loss graphic to match the verified narration",
       "urgent": 5,
-      "due": "2026-11-25T09:00:00Z"
+      "due": "2026-11-25T09:00:00Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T11:13Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3372",
