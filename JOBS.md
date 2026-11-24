@@ -134,7 +134,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3607 | mini | blocked | codex | – | assembly · Mini: pull PR #1285 and confirm the second slot really opens (two jobs at once) |  |
 | J3610 | mini | open | – | – | 010 upload · studio · Schedule HOS 010 bird Short after its long is confirmed | J3511 |
 | J3611 | mini | open | – | – | 010 upload · studio · HOS 010 Short A: schedule only after actual long readiness and finish Studio checks | J3512 |
-| J3612 | mini | open | – | – | review · Verify condition for J3607 |  |
+| J3612 | mini | claimed | gemini | 2026-11-24T21:19Z | review · Verify condition for J3607 |  |
 
 Recently finished:
 
