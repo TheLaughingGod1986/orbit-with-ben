@@ -320934,10 +320934,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-24T19:10Z",
+      "eta": "2026-11-24T21:10Z",
       "created_by": "codex",
       "created_at": "2026-11-24T10:53Z",
       "result": "",
@@ -320986,6 +320986,11 @@
           "at": "2026-11-24T18:45Z",
           "by": "claude",
           "what": "No longer waits on J3519: the shared HOS runtime is restored (Prisma 7.10.1), J3512's private-upload dry run exits 0 and the read-only audit passes (68 videos, 0 errors). Only J3519's 4-file audit fix still waits for Claude Code to publish (Wed 10:00)."
+        },
+        {
+          "at": "2026-11-24T19:10Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Restore the History of Science publishing tools, then verify and upload the approved Short privately",
@@ -321009,7 +321014,15 @@
       },
       "taskKeys": [
         "HOS:010"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T19:10Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3513",
