@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2529, J3419, J3371, J3205, J3430, J3431, J3432, J3434, J3495, J3496.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2529, J3419, J3371, J3205, J3430, J3431, J3432, J3434, J3495, J3496, J3500, J3501.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -97,6 +97,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3497 | cloud | open | – | – | review · Weekly search research (History of Science): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
 | J3498 | any | open | – | – | 011 sources · facts · WW2 film 011: independent Gemini claims check on SCRIPT.md and SOURCES.md (PR #71) | ww2-channel#71 |
 | J3499 | cloud | open (after J3498) | – | – | 011 script · review · WW2 film 011: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO | ww2-channel#71 |
+| J3500 | mini | open | – | – | 008 upload · studio · HOS 008 Franklin: search-led title, package, and schedule Thu 26 Nov 18:00 after Ben's watch |  |
+| J3501 | mini | open | – | – | 009 upload · studio · HOS 009 Gravity: search-led title, package, and schedule Thu 3 Dec 18:00 after Ben's watch |  |
 
 Recently finished:
 

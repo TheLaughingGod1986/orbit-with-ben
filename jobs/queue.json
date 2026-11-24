@@ -1,5 +1,5 @@
 {
-  "next_id": 3500,
+  "next_id": 3502,
   "jobs": [
     {
       "id": "J0001",
@@ -179766,6 +179766,11 @@
           "at": "2026-11-23T22:23Z",
           "by": "codex",
           "what": "J3455 Chief KEEP for private UAT only. Waiting for Ben finished-cut watch/listen of v03 master 744f32b7 via phone preview b1135b3d; thumbnail variants A/B and separate Shorts remain subject to final approval. No upload or schedule authorized."
+        },
+        {
+          "at": "2026-11-24T10:31Z",
+          "by": "claude",
+          "what": "Air date set by Claude on Ben's go (24 Nov): Thu 3 Dec 18:00 London once Ben passes the watch (J3501 schedules it)."
         }
       ],
       "remaining_action": "Waiting for Ben to watch the Gravity film and review its thumbnails",
@@ -197286,6 +197291,11 @@
           "at": "2026-11-16T09:21Z",
           "by": "gemini",
           "what": "waits on Ben: Watch HOS 008 Franklin master v05 (all 8 fixes in: 0:20 & 33 bottom-text cards on dark umber panels, 0:30 flash gone, 0:51 night street & 1:49 salon spark clean with no flying hair, 2:18 upright jar workbench, 3:13 points desk take 3, 3:31 3D packet ship + letter icon, 7:59 stationary rods take 2) (by 2026-11-18 18:00 London)"
+        },
+        {
+          "at": "2026-11-24T10:31Z",
+          "by": "claude",
+          "what": "Air date set by Claude on Ben's go (24 Nov): Thu 26 Nov 18:00 London once Ben passes the watch (J3500 schedules it)."
         }
       ],
       "remaining_action": "Await Ben's final finished-film watch of hos_008_master_v05.mp4 on Ready for OK card HOS:008",
@@ -289751,7 +289761,7 @@
         "by": ""
       },
       "open_claim": true,
-      "urgent": 7,
+      "urgent": 6,
       "progress": {
         "step": 0,
         "of": 3,
@@ -307662,7 +307672,7 @@
       "remaining_action": "Rebuild the loss graphic and its timing after the corrected narration",
       "kind": "chart",
       "plain": "Correct the bomber loss graphic to match the verified narration",
-      "urgent": 6
+      "urgent": 5
     },
     {
       "id": "J3372",
@@ -313328,7 +313338,7 @@
       "taskKeys": [
         "WW2:004"
       ],
-      "urgent": 8
+      "urgent": 7
     },
     {
       "id": "J3431",
@@ -313519,7 +313529,7 @@
         "condition": "J3449 brings film 5 to at least 50% real archive (rule 1 as changed 24 Nov, PR #59); then accept the picture stage and release J3432.",
         "check_at": "2026-11-24T18:00:00Z"
       },
-      "urgent": 9
+      "urgent": 8
     },
     {
       "id": "J3432",
@@ -313559,7 +313569,7 @@
       "remaining_action": "Assemble the film to its narration and archive plan, then QA and Ben's watch",
       "due": "2026-11-30T20:00:00Z",
       "kind": "assembly",
-      "urgent": 10
+      "urgent": 9
     },
     {
       "id": "J3433",
@@ -313775,7 +313785,7 @@
       "remaining_action": "Assemble the film to its narration and archive plan, then QA and Ben's watch",
       "due": "2026-12-02T20:00:00Z",
       "kind": "assembly",
-      "urgent": 11
+      "urgent": 10
     },
     {
       "id": "J3435",
@@ -318279,7 +318289,7 @@
       "title": "History of Science: start the 2027 search-led plan (Ben's OK): rules, January line-up, film folders, dates",
       "needs": "mini",
       "repo": "hos",
-      "body": "**Why (Ben, Tue 24 Nov ~10:40 London, in chat: \"History of science. January search-led plan. Yeah, I'll give you okay for that. Please go ahead and start it.\" This is the OK that HOS LEARNINGS rule 34 item 7 asks for, on the plan `hos-search-2027-01` (`studio/plan.json`; summary `05_Analytics/hos/search_research/2026-11-20_SUMMARY_FOR_BEN.md`, from J3223 audit and J3224 research).)**\n\n**The plan Ben approved:** the search-led method for HOS topics locked from 1 Jan 2027, four Anglosphere adult clusters (1 Electricity & Inventor Rivalries, 2 Nuclear & Modern Physics, 3 Accidental & World-Changing Inventions, 4 Breakthrough & Lost Engineering); 1 search-led long a week (Thu 18:00 London, 7-9 min, normal publish) + 4 Shorts (Fri, Sat, Sun, Tue 11:30 London); the 14-day test bar against HOS's best long (162 views): **500+ keep the cluster, 162-499 one more film, under 162 drop or change**, always reported with impressions, CTR and the US+UK+CA+AU share. **Films 008-011 and 013 stay untouched through December.**\n\n**Do (by Fri 27 Nov 18:00 London; no spend):**\n1. **Rules (history-of-science repo LEARNINGS):** record Ben's OK above against rule 34 item 7, and add the search-led topic rule for HOS in the same shape as Orbit's rule 37 (orbit-with-ben `05_Analytics/LEARNINGS.md`): the eight steps (demand, Anglosphere adult value, top-10 gap, small-channel proof, package first, clusters, Shorts as tests, our own search terms monthly), effective for topics locked from 1 Jan 2027, with the cadence and the test bar above. The daily data-only ideas item `hos-ideas` is paused from today (new topics come from the weekly `hos-search-research`, as Orbit did on 20 Nov); topics already in `next_hos` stay, but none is locked for 2027 without passing the new gate.\n2. **January line-up (`jobs/WIP.json` `next_hos`, rule G):** HOS:128 (Edison vs Tesla, Rule-E GO 97.1 on 22 Nov, J3346) is film 1 and now sits right after HOS:011. Create project folders from the template, at the next free numbers, for film 2 *Trinity Test Explained: The Calculation That Nearly Stopped the Bomb* (cluster 2), film 3 *Accidental Inventions That Changed the World (5 Mistakes That Worked)* (cluster 3) and film 4 *Wright Brothers First Flight: The 1901 Wind Tunnel That Solved Lift* (cluster 4), each with TOPIC.md carrying its search evidence from `05_Analytics/hos/search_research/2026-11-20.md` (queries, volume, competition, top countries, top-10 gap, small-channel outliers). Put them in `next_hos` right after HOS:128 in that order, and queue each one's Rule-E topic review as a kind:review job due Fri 4 Dec. Check nothing overlaps HOS 130 (nuclear reactor) or Field Order History (no combat) or Orbit (no space).\n3. **Package first (method step 5), for each film before its script:** three titles that start with the query words plus one hook, and two thumbnail ideas, scored against the outlier set; the chosen title stays at 50 characters or fewer where the query allows.\n4. **Production dates, working back from air (set them as job dues):**\n   - Film 1, HOS:128, airs Thu 7 Jan: script lock Fri 11 Dec; Ben's watch by Sun 3 Jan.\n   - Film 2, Trinity, airs Thu 14 Jan: script lock Fri 18 Dec; Ben's watch by Sun 10 Jan.\n   - Film 3, Accidental Inventions, airs Thu 21 Jan: script lock Wed 23 Dec; Ben's watch by Sun 17 Jan.\n   - Film 4, Wright Brothers, airs Thu 28 Jan: script lock Wed 6 Jan; Ben's watch by Sun 24 Jan.\n   Voice and pictures start only when a place frees up (rule G, HOS limit 4) and spend only inside existing plans (Flow credits renew 12 Dec; ElevenLabs down to zero, never past it).\n5. **Shorts from January (plan step `cadence`):** Fri and Sat promote that week's long; Sun and Tue rotate a cluster winner or test next month's candidate topic before it is scripted (a fed Short with high stayed-to-watch is the cheapest proof for a long). Every Short title is a search phrase or question.\n6. One HOS desk line and one orbit-with-ben thread line with the PRs.\n\n**Guards.** No change to 008-011 or 013, their schedule or their packaging. No publish, Studio change, paid call or top-up. Ben's watch stays the gate before any film goes public.\n\n**Update (Claude, 24 Nov ~10:35): start this week, not mid-December.** Ben, Tue 24 Nov ~10:30 London, in chat: \"Edison vs. Tesla, the Trinity test, the accidental inventions with the Wright brothers. That plan is HOS test that could turn around. I think that's definitely worth a look this week. If we can get that one queued up and working straight away, thank you.\"\n- **HOS:128 entered production today** (orbit-with-ben PR #1238: `jobs/WIP.json` `active`, HOS places 4 -> 5, total 9 -> 10 so Orbit keeps its fifth place). Its voice and pictures can start as soon as its script locks, using this cycle's unused Flow credits (about 23,450 left; the plan renews 12 Dec).\n- **This job is now due Wed 25 Nov 12:00 London.** Films 2-4 (Trinity, Accidental Inventions, Wright Brothers): folders and TOPIC.md today, Rule-E topic reviews queued at once and due **Thu 26 Nov**. As each passes, queue its package-first + script job (same shape as J3496) with the draft due **Trinity Sat 28 Nov, Accidental Inventions Mon 30 Nov, Wright Brothers Wed 2 Dec**, and script locks **Fri 4 Dec, Tue 8 Dec, Fri 11 Dec**. Each enters production at the next free HOS place (rule G), in that order, ahead of the rest of `next_hos`.\n- Film 1's script lock moves to **Tue 1 Dec** (draft Fri 27 Nov, J3496).\n- Air dates stay Thursdays 7, 14, 21 and 28 Jan, and December's films (008-011, 013) stay as they are. Report to the Chief if a January film is finished and passed by Ben's watch early, so Ben can choose whether it takes a December Thursday that one of those films can't make.",
+      "body": "**Why (Ben, Tue 24 Nov ~10:40 London, in chat: \"History of science. January search-led plan. Yeah, I'll give you okay for that. Please go ahead and start it.\" This is the OK that HOS LEARNINGS rule 34 item 7 asks for, on the plan `hos-search-2027-01` (`studio/plan.json`; summary `05_Analytics/hos/search_research/2026-11-20_SUMMARY_FOR_BEN.md`, from J3223 audit and J3224 research).)**\n\n**The plan Ben approved:** the search-led method for HOS topics locked from 1 Jan 2027, four Anglosphere adult clusters (1 Electricity & Inventor Rivalries, 2 Nuclear & Modern Physics, 3 Accidental & World-Changing Inventions, 4 Breakthrough & Lost Engineering); 1 search-led long a week (Thu 18:00 London, 7-9 min, normal publish) + 4 Shorts (Fri, Sat, Sun, Tue 11:30 London); the 14-day test bar against HOS's best long (162 views): **500+ keep the cluster, 162-499 one more film, under 162 drop or change**, always reported with impressions, CTR and the US+UK+CA+AU share. **Films 008-011 and 013 stay untouched through December.**\n\n**Do (by Fri 27 Nov 18:00 London; no spend):**\n1. **Rules (history-of-science repo LEARNINGS):** record Ben's OK above against rule 34 item 7, and add the search-led topic rule for HOS in the same shape as Orbit's rule 37 (orbit-with-ben `05_Analytics/LEARNINGS.md`): the eight steps (demand, Anglosphere adult value, top-10 gap, small-channel proof, package first, clusters, Shorts as tests, our own search terms monthly), effective for topics locked from 1 Jan 2027, with the cadence and the test bar above. The daily data-only ideas item `hos-ideas` is paused from today (new topics come from the weekly `hos-search-research`, as Orbit did on 20 Nov); topics already in `next_hos` stay, but none is locked for 2027 without passing the new gate.\n2. **January line-up (`jobs/WIP.json` `next_hos`, rule G):** HOS:128 (Edison vs Tesla, Rule-E GO 97.1 on 22 Nov, J3346) is film 1 and now sits right after HOS:011. Create project folders from the template, at the next free numbers, for film 2 *Trinity Test Explained: The Calculation That Nearly Stopped the Bomb* (cluster 2), film 3 *Accidental Inventions That Changed the World (5 Mistakes That Worked)* (cluster 3) and film 4 *Wright Brothers First Flight: The 1901 Wind Tunnel That Solved Lift* (cluster 4), each with TOPIC.md carrying its search evidence from `05_Analytics/hos/search_research/2026-11-20.md` (queries, volume, competition, top countries, top-10 gap, small-channel outliers). Put them in `next_hos` right after HOS:128 in that order, and queue each one's Rule-E topic review as a kind:review job due Fri 4 Dec. Check nothing overlaps HOS 130 (nuclear reactor) or Field Order History (no combat) or Orbit (no space).\n3. **Package first (method step 5), for each film before its script:** three titles that start with the query words plus one hook, and two thumbnail ideas, scored against the outlier set; the chosen title stays at 50 characters or fewer where the query allows.\n4. **Production dates, working back from air (set them as job dues):**\n   - Film 1, HOS:128, airs Thu 7 Jan: script lock Fri 11 Dec; Ben's watch by Sun 3 Jan.\n   - Film 2, Trinity, airs Thu 14 Jan: script lock Fri 18 Dec; Ben's watch by Sun 10 Jan.\n   - Film 3, Accidental Inventions, airs Thu 21 Jan: script lock Wed 23 Dec; Ben's watch by Sun 17 Jan.\n   - Film 4, Wright Brothers, airs Thu 28 Jan: script lock Wed 6 Jan; Ben's watch by Sun 24 Jan.\n   Voice and pictures start only when a place frees up (rule G, HOS limit 4) and spend only inside existing plans (Flow credits renew 12 Dec; ElevenLabs down to zero, never past it).\n5. **Shorts from January (plan step `cadence`):** Fri and Sat promote that week's long; Sun and Tue rotate a cluster winner or test next month's candidate topic before it is scripted (a fed Short with high stayed-to-watch is the cheapest proof for a long). Every Short title is a search phrase or question.\n6. One HOS desk line and one orbit-with-ben thread line with the PRs.\n\n**Guards.** No change to 008-011 or 013, their schedule or their packaging. No publish, Studio change, paid call or top-up. Ben's watch stays the gate before any film goes public.\n\n**Update (Claude, 24 Nov ~10:35): start this week, not mid-December.** Ben, Tue 24 Nov ~10:30 London, in chat: \"Edison vs. Tesla, the Trinity test, the accidental inventions with the Wright brothers. That plan is HOS test that could turn around. I think that's definitely worth a look this week. If we can get that one queued up and working straight away, thank you.\"\n- **HOS:128 entered production today** (orbit-with-ben PR #1238: `jobs/WIP.json` `active`, HOS places 4 -> 5, total 9 -> 10 so Orbit keeps its fifth place). Its voice and pictures can start as soon as its script locks, using this cycle's unused Flow credits (about 23,450 left; the plan renews 12 Dec).\n- **This job is now due Wed 25 Nov 12:00 London.** Films 2-4 (Trinity, Accidental Inventions, Wright Brothers): folders and TOPIC.md today, Rule-E topic reviews queued at once and due **Thu 26 Nov**. As each passes, queue its package-first + script job (same shape as J3496) with the draft due **Trinity Sat 28 Nov, Accidental Inventions Mon 30 Nov, Wright Brothers Wed 2 Dec**, and script locks **Fri 4 Dec, Tue 8 Dec, Fri 11 Dec**. Each enters production at the next free HOS place (rule G), in that order, ahead of the rest of `next_hos`.\n- Film 1's script lock moves to **Tue 1 Dec** (draft Fri 27 Nov, J3496).\n- Air dates stay Thursdays 7, 14, 21 and 28 Jan, and December's films (008-011, 013) stay as they are. Report to the Chief if a January film is finished and passed by Ben's watch early, so Ben can choose whether it takes a December Thursday that one of those films can't make.\n\n**Update (Claude, 24 Nov ~10:55): the search-led films air in December.** Ben, Tue 24 Nov ~10:45 London, in chat: \"Yeah, if we can move it from December to this Thursday, sounds like a good idea. I'll let you do your best call and best recommendations here.\" Claude's call: Edison vs Tesla has no script yet, so it cannot be made well by Thursday (never rush a film). Two December films are finished and wait only for Ben's watch: 008 Franklin (master v05, Chief PASS 16 Nov, J2243) and 009 Gravity (master v03, Chief KEEP 23 Nov, J2037). HOS has had no long since 12 Nov. New HOS long calendar, Thursdays 18:00 London: **26 Nov 008 Franklin** (electricity, so it leads into Edison vs Tesla); **3 Dec 009 Gravity**; **10 Dec Edison vs Tesla**; **17 Dec Trinity Test**; **24 Dec Accidental Inventions**; **31 Dec Wright Brothers**. A search-led film that is not ready slides one week and a finished older film (010, 011, 013) takes the Thursday. Nothing airs without Ben's watch.\n- Air dates (Thursdays 18:00 London): Edison vs Tesla **10 Dec** (Ben's watch by Mon 7 Dec), Trinity **17 Dec** (watch by Mon 14 Dec), Accidental Inventions **24 Dec** (watch by Mon 21 Dec), Wright Brothers **31 Dec** (watch by Mon 28 Dec). Script locks stay 1, 4, 8 and 11 Dec.\n- 008 and 009 leave production when Ben watches them this week (rule G), so Trinity and Accidental Inventions take those two HOS places at once.\n- 010, 011 and 013 move to January Thursdays, or take any December Thursday a search-led film can't make. Their films are not changed.",
       "ref": "",
       "film": "",
       "stage": "",
@@ -318322,12 +318332,17 @@
           "at": "2026-11-24T10:30Z",
           "by": "gemini",
           "what": "step 0 of 6 done"
+        },
+        {
+          "at": "2026-11-24T10:31Z",
+          "by": "claude",
+          "what": "Ben: bring it forward. Search-led films air 10, 17, 24 and 31 Dec; 008 Franklin airs 26 Nov and 009 Gravity 3 Dec after Ben's watch."
         }
       ],
       "remaining_action": "Verifying WIP order, overlap check, and running free public_search/neighbours checks for HOS 136-138",
       "due": "2026-11-25T12:00:00Z",
       "kind": "review",
-      "urgent": 12,
+      "urgent": 11,
       "rerouted_from": {
         "needs": "any",
         "for": "",
@@ -318362,7 +318377,7 @@
       "title": "HOS 128 Edison vs Tesla (film 1, Thu 7 Jan): package first, then the 7-9 minute script draft",
       "needs": "mini",
       "repo": "hos",
-      "body": "**Why (Ben, Tue 24 Nov ~10:40 London, in chat: \"History of science. January search-led plan. Yeah, I'll give you okay for that. Please go ahead and start it.\" This is the OK that HOS LEARNINGS rule 34 item 7 asks for, on the plan `hos-search-2027-01` (`studio/plan.json`; summary `05_Analytics/hos/search_research/2026-11-20_SUMMARY_FOR_BEN.md`, from J3223 audit and J3224 research).)** HOS:128 is film 1 of the plan and airs **Thu 7 Jan 2027, 18:00 London** (7-9 min, normal publish). Its Rule-E topic review passed on 22 Nov (GO 97.1/100, J3346, HOS PR #725, OWB PR #1157).\n\n**Do (no spend):**\n1. **Package first:** the plan title is *Thomas Edison vs Nikola Tesla: How AC Won the War of Currents*; J3346 also scored *Why Do We Use AC Instead of DC? (Edison vs Tesla)* (49 characters) and *Thomas Edison vs Nikola Tesla: Why AC Won the War of Currents*. Score them with two thumbnail ideas against the cluster 1 outliers (Business History Podcast 92.9K, Real-World Learning 13.2K, RELIQUARY 2.1K) and pick one, query words first; keep the other two for Test & Compare.\n2. **Script draft (7-9 min) by Fri 4 Dec 18:00 London**, for lock by Fri 11 Dec: answer the search question in the first 30 seconds; a person, a date and a twist; plain words and one figure at a time; 3D cartoon picture plan notes per scene. Sources for every claim. Two Short angles that promote the film (Fri and Sat of its week).\n3. Hand the draft to its script review in the HOS chain.\n\n**Guards.** No VO, picture or paid call yet (rule G: production starts when a place frees up). £0.\n\n**Update (Claude, 24 Nov ~10:35): draft due Fri 27 Nov, lock Tue 1 Dec.** Ben, Tue 24 Nov ~10:30 London, in chat: \"Edison vs. Tesla, the Trinity test, the accidental inventions with the Wright brothers. That plan is HOS test that could turn around. I think that's definitely worth a look this week. If we can get that one queued up and working straight away, thank you.\" HOS:128 entered production today (PR #1238), so once the script locks its voice and picture jobs follow straight away, inside existing plans (this cycle's Flow credits renew 12 Dec; ElevenLabs down to zero, never past it).",
+      "body": "**Why (Ben, Tue 24 Nov ~10:40 London, in chat: \"History of science. January search-led plan. Yeah, I'll give you okay for that. Please go ahead and start it.\" This is the OK that HOS LEARNINGS rule 34 item 7 asks for, on the plan `hos-search-2027-01` (`studio/plan.json`; summary `05_Analytics/hos/search_research/2026-11-20_SUMMARY_FOR_BEN.md`, from J3223 audit and J3224 research).)** HOS:128 is film 1 of the plan and airs **Thu 7 Jan 2027, 18:00 London** (7-9 min, normal publish). Its Rule-E topic review passed on 22 Nov (GO 97.1/100, J3346, HOS PR #725, OWB PR #1157).\n\n**Do (no spend):**\n1. **Package first:** the plan title is *Thomas Edison vs Nikola Tesla: How AC Won the War of Currents*; J3346 also scored *Why Do We Use AC Instead of DC? (Edison vs Tesla)* (49 characters) and *Thomas Edison vs Nikola Tesla: Why AC Won the War of Currents*. Score them with two thumbnail ideas against the cluster 1 outliers (Business History Podcast 92.9K, Real-World Learning 13.2K, RELIQUARY 2.1K) and pick one, query words first; keep the other two for Test & Compare.\n2. **Script draft (7-9 min) by Fri 4 Dec 18:00 London**, for lock by Fri 11 Dec: answer the search question in the first 30 seconds; a person, a date and a twist; plain words and one figure at a time; 3D cartoon picture plan notes per scene. Sources for every claim. Two Short angles that promote the film (Fri and Sat of its week).\n3. Hand the draft to its script review in the HOS chain.\n\n**Guards.** No VO, picture or paid call yet (rule G: production starts when a place frees up). £0.\n\n**Update (Claude, 24 Nov ~10:35): draft due Fri 27 Nov, lock Tue 1 Dec.** Ben, Tue 24 Nov ~10:30 London, in chat: \"Edison vs. Tesla, the Trinity test, the accidental inventions with the Wright brothers. That plan is HOS test that could turn around. I think that's definitely worth a look this week. If we can get that one queued up and working straight away, thank you.\" HOS:128 entered production today (PR #1238), so once the script locks its voice and picture jobs follow straight away, inside existing plans (this cycle's Flow credits renew 12 Dec; ElevenLabs down to zero, never past it).\n\n**Update (Claude, 24 Nov ~10:55): Edison vs Tesla now airs Thu 10 Dec 18:00 London.** Ben, Tue 24 Nov ~10:45 London, in chat: \"Yeah, if we can move it from December to this Thursday, sounds like a good idea. I'll let you do your best call and best recommendations here.\" Claude's call: Edison vs Tesla has no script yet, so it cannot be made well by Thursday (never rush a film). Two December films are finished and wait only for Ben's watch: 008 Franklin (master v05, Chief PASS 16 Nov, J2243) and 009 Gravity (master v03, Chief KEEP 23 Nov, J2037). HOS has had no long since 12 Nov. New HOS long calendar, Thursdays 18:00 London: **26 Nov 008 Franklin** (electricity, so it leads into Edison vs Tesla); **3 Dec 009 Gravity**; **10 Dec Edison vs Tesla**; **17 Dec Trinity Test**; **24 Dec Accidental Inventions**; **31 Dec Wright Brothers**. A search-led film that is not ready slides one week and a finished older film (010, 011, 013) takes the Thursday. Nothing airs without Ben's watch. Draft Fri 27 Nov, lock Tue 1 Dec, Ben's watch by Mon 7 Dec. That is tight: if it is not right by 7 Dec it airs Thu 17 Dec instead, never rushed.",
       "ref": "",
       "film": "128",
       "stage": "script",
@@ -318395,12 +318410,17 @@
           "at": "2026-11-24T10:26Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
+        },
+        {
+          "at": "2026-11-24T10:31Z",
+          "by": "claude",
+          "what": "Edison vs Tesla now airs Thu 10 Dec (Ben's watch by 7 Dec); 17 Dec if not right by then."
         }
       ],
       "remaining_action": "Score three titles and two thumbnails, then draft the Edison vs Tesla script",
       "due": "2026-11-27T18:00:00Z",
       "kind": "script",
-      "urgent": 13,
+      "urgent": 12,
       "rerouted_from": {
         "needs": "any",
         "for": "",
@@ -318506,6 +318526,66 @@
       "kind": "review",
       "plain": "Run Claude's viewer test on the P-51 Mustang opening, apply Pilot 2 learnings, and lock the script",
       "cloud_only": true
+    },
+    {
+      "id": "J3500",
+      "title": "HOS 008 Franklin: search-led title, package, and schedule Thu 26 Nov 18:00 after Ben's watch",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**Why (Ben, Tue 24 Nov ~10:45 London, in chat: \"Yeah, if we can move it from December to this Thursday, sounds like a good idea. I'll let you do your best call and best recommendations here.\" Claude's call: Edison vs Tesla has no script yet, so it cannot be made well by Thursday (never rush a film). Two December films are finished and wait only for Ben's watch: 008 Franklin (master v05, Chief PASS 16 Nov, J2243) and 009 Gravity (master v03, Chief KEEP 23 Nov, J2037). HOS has had no long since 12 Nov. New HOS long calendar, Thursdays 18:00 London: **26 Nov 008 Franklin** (electricity, so it leads into Edison vs Tesla); **3 Dec 009 Gravity**; **10 Dec Edison vs Tesla**; **17 Dec Trinity Test**; **24 Dec Accidental Inventions**; **31 Dec Wright Brothers**. A search-led film that is not ready slides one week and a finished older film (010, 011, 013) takes the Thursday. Nothing airs without Ben's watch.)**\n\n**Do (Mini, Studio login; due Thu 26 Nov 12:00 London):**\n1. **Title, search-led (plan method step 5), today.** vidIQ, 24 Nov (Claude): `benjamin franklin` 74,407 searches a month, competition 56, US among the top three markets (17%), up 52%; the kite phrasings (`ben franklin kite experiment`, `franklins kite experiment`, comp 28-32) are small but easy. Start the title with \"Benjamin Franklin\" plus the film's own hook, 50 characters or fewer, for example *Benjamin Franklin's Kite Experiment Explained* or *Did Benjamin Franklin Really Fly a Kite in a Storm?* Check signed-out US top 10 and HOS title collisions; keep the film's current title as a Test & Compare arm with the A/B thumbnails.\n2. **Package ready tonight:** description with the Chapters + Sources block (J1265), captions, end screen to the HOS playlist, both thumbnails. Upload only the master Ben watches (v05, d1ffb78d...841b).\n3. **After Ben's OK on the HOS:008 watch card (Play 302)**: upload private and schedule **Thu 26 Nov 18:00 London**. If there is no OK by Thu 12:00 London, do not schedule: the slot stays empty and Ben is told. The 008 Shorts (A v04, C v07) take Fri 27 and Sat 28 Nov 11:30 if Ben passes them.\n\n**Guards.** No change to the film itself. Nothing public or scheduled without Ben's OK. £0.",
+      "ref": "",
+      "film": "008",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T10:31Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T10:31Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Set a search-led title and package for Franklin; schedule Thu 26 Nov once Ben passes it",
+      "due": "2026-11-26T12:00:00Z",
+      "kind": "studio",
+      "urgent": 13
+    },
+    {
+      "id": "J3501",
+      "title": "HOS 009 Gravity: search-led title, package, and schedule Thu 3 Dec 18:00 after Ben's watch",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**Why (Ben, Tue 24 Nov ~10:45 London, in chat: \"Yeah, if we can move it from December to this Thursday, sounds like a good idea. I'll let you do your best call and best recommendations here.\" Claude's call: Edison vs Tesla has no script yet, so it cannot be made well by Thursday (never rush a film). Two December films are finished and wait only for Ben's watch: 008 Franklin (master v05, Chief PASS 16 Nov, J2243) and 009 Gravity (master v03, Chief KEEP 23 Nov, J2037). HOS has had no long since 12 Nov. New HOS long calendar, Thursdays 18:00 London: **26 Nov 008 Franklin** (electricity, so it leads into Edison vs Tesla); **3 Dec 009 Gravity**; **10 Dec Edison vs Tesla**; **17 Dec Trinity Test**; **24 Dec Accidental Inventions**; **31 Dec Wright Brothers**. A search-led film that is not ready slides one week and a finished older film (010, 011, 013) takes the Thursday. Nothing airs without Ben's watch.)**\n\n**Do (Mini, Studio login; due Thu 3 Dec 12:00 London):** search-led title check as for 008 (vidIQ, 24 Nov: `isaac newton` 84,169 a month but led by Brazil, Ethiopia and Colombia; `laws of motion` 13,262, comp 49; `isaac newton documentary` comp 25), then the package (Chapters + Sources, captions, end screen, thumbnails A IT MISSES / B ONE APPLE from J3262). After Ben's OK on the HOS:009 watch card (v03 744f32b7, J2037), upload private and schedule **Thu 3 Dec 18:00 London**; no OK by Thu 3 Dec 12:00 means no schedule and Ben is told. Its Shorts take Fri 4 and Sat 5 Dec 11:30 if passed. £0.",
+      "ref": "",
+      "film": "009",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T10:31Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T10:31Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Set a search-led title and package for Gravity; schedule Thu 3 Dec once Ben passes it",
+      "due": "2026-12-03T12:00:00Z",
+      "kind": "studio",
+      "urgent": 14
     }
   ],
   "focus": [
