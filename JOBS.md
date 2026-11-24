@@ -77,6 +77,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3444 | mini | blocked | codex | – | 027 upload · studio · Earth equator Short: 24-hour reach read after Related repair |  |
 | J3463 | mini | blocked | codex | – | studio · Field Order History channel totals read 2026-11-24 |  |
 | J3466 | mini | claimed | codex | 2026-11-24T10:49Z | studio · Field Order History pilot 2: upload Ben-approved v06 as a new video for today 17:00 (Wed 17:00 fallback), retire the old v05 schedule |  |
+| J3467 | mini | open (after J3466) | – | – | 002 upload · studio · Field Order History pilot 2: pin its question after v06 goes public |  |
 
 Recently finished:
 
