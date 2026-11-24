@@ -316726,6 +316726,11 @@
           "at": "2026-11-24T09:13Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: condition UNMET for J2529 (HOS 013 pass-1 rows 56-62, 64-66). Review PR https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1231 (cc5742d9aa, jobs/reviews/J3468/REVIEW.md) open for elected Chief Codex to merge, record wait J2529 --type capability --requires moving_video_input --recheck J3468 --check-at 2026-11-24T15:15:00Z, and close J3468. Follow-up J3178 (last recheck J3345; J3375 PR #1177 parked) remains blocked on moving_video_input; direct read_file probe in agy 1.5.16 on NAS row 58 still returns 8 discrete 1-fps stills (no continuous 24-fps playback); 11/11 Batch 12-14 NAS SHA-256 hashes verified; REVIEW_STATE.json preserved (48 KEEP / 8 RETAKE / 10 unset); £0 spend."
+        },
+        {
+          "at": "2026-11-24T11:21Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Parked for Chief Codex: merge PR #1231, record wait J2529 --recheck J3468, and close J3468",
@@ -316760,7 +316765,8 @@
       },
       "taskKeys": [
         "HOS:013"
-      ]
+      ],
+      "escalated_at": "2026-11-24T11:21Z"
     },
     {
       "id": "J3469",
