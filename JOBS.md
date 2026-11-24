@@ -89,6 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3481 | cloud | open (after J3480) | – | – | WW2:007 script · review · WW2 film 007: Claude Rule-6 viewer test (first 300 words), topic/script lock, and queue post-reset VO |  |
 | J3482 | any | open | – | – | WW2:011 script · script · WW2 film 011: topic check, packaging first, script and sources, to lock by 2026-12-06 |  |
 | J3483 | any | open | – | – | WW2:012 script · script · WW2 film 012: topic check, packaging first, script and sources, to lock by 2026-12-09 |  |
+| J3484 | any | open | – | – | WW2:013 script · script · WW2 film 013: topic check, packaging first, script and sources, to lock by 2026-12-11 |  |
 
 Recently finished:
 
