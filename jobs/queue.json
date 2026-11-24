@@ -1,5 +1,5 @@
 {
-  "next_id": 3611,
+  "next_id": 3612,
   "jobs": [
     {
       "id": "J0001",
@@ -327121,6 +327121,36 @@
       "remaining_action": "Schedule HOS 010 bird Short after its long is confirmed",
       "kind": "studio",
       "plain": "Schedule the approved birds Short after its full dinosaur film is ready",
+      "mini_only": true
+    },
+    {
+      "id": "J3611",
+      "title": "HOS 010 Short A: schedule only after actual long readiness and finish Studio checks",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "J3512 uploaded exact Ben-approved HOS 010 Short A v01 as mpK3D6S7WLk, Private without publishAt on 24 Nov 2026 19:13Z. SHA256 ea29e26487d6631416449c9adf712f51b1b9508db06b7b6c29edc4236970fe59. Wait for actual HOS 010 long upload id and confirmed air date; no invented date. Claim upload stage, check fresh channel state, choose unoccupied HOS Sat/Fri/Sun/Tue 11:30 London slot strictly after long publication, set Related to actual long id and update social/hos UPLOADS.json long, Buffer hold and gate library together. Re-read long Public before Short airs; if long slips contain/cancel schedule and Buffer together. Finish Studio-only readback before scheduling: cover THE LINE, Related currently unavailable because no long exists, disclosure Yes (sent in API but omitted in readback), paid promotion, comments/moderation, remix, automatic places, education subfields and Audience. Studio 9222 connection timed out on J3512; reopen signed-in browser as needed, only real login belongs to Ben. API confirms processed, Private/no publishAt, not Made for Kids, Education/en-GB, English manual captions serving; cover visually read back. Run lint:package and channel:audit. Record old/new privacy/publishAt with authority on studio thread and HOS desk. No generation, money, deletion or immediate public release. Preserve approved pre-19-Nov cut. Ensure J3512 records published before scheduling.\n",
+      "ref": "J3512",
+      "film": "010",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-24T19:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T19:15Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 010 Short A: schedule only after actual long readiness and finish Studio checks",
+      "kind": "studio",
+      "plain": "Schedule the approved dinosaur Short after its full film is ready",
       "mini_only": true
     }
   ],
