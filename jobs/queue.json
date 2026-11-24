@@ -313913,9 +313913,14 @@
           "at": "2026-11-24T21:16Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-25T12:00:00Z"
+        },
+        {
+          "at": "2026-11-24T22:54Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-28T12:00:00Z"
         }
       ],
-      "remaining_action": "Complete delivery repair, full quality review and private watch staging through J3623 -> J3624 -> J3625",
+      "remaining_action": "Hold J3430 pending v02 zero-spend visual repair (J3637), v02 full audiovisual QA (J3638), and Chief v02 watch staging (J3639)",
       "due": "2026-11-28T20:00:00Z",
       "kind": "assembly",
       "progress": {
@@ -313937,11 +313942,8 @@
       "urgent": 3,
       "hold": {
         "type": "dependency",
-        "condition": "J3560 ruling: CONDITION NOT MET. Complete J3623 delivery reconciliation, then J3624 full audiovisual QA, then J3625 elected-Chief merge and verified Ben-watch staging. PR94 currently conflicts and drops prior stages; captions need correction. No film PASS or upload permission. Ben watch due 2026-11-28T20:00Z remains.",
-        "check_at": "2026-11-25T12:00:00Z",
-        "last_recheck": "J3560",
-        "checked_at": "2026-11-24T21:16:41+00:00",
-        "checked_by": "codex"
+        "condition": "J3625 elected-Chief ruling: v01 HELD (not passed/not staged to WW2 UAT) due to J3624 visual QA blockers (00:06.8 Rule 3 spoiler, tofu glyph + leaked internal boilerplate on 15+ slides, 14 frozen empty-box holds of 21-38s, missing Ch3 card, 17 <60s repeats, 3 <2s flashes). Wait for zero-spend v02 repair (J3637), full v02 private audiovisual QA (J3638), and elected-Chief v02 approval & Ben-watch staging (J3639). Adopted Rule-2 title: Mark 14 Torpedo: Why Perfect Hits Failed (40 chars). Watch due 2026-11-28T20:00Z; planned air 2026-12-01T17:00Z.",
+        "check_at": "2026-11-28T12:00:00Z"
       },
       "escalated_at": "2026-11-24T18:35Z"
     },
