@@ -321036,9 +321036,14 @@
           "at": "2026-11-24T17:41Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T17:45Z",
+          "by": "macbook-2",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Verify readiness: Read 24-hour reach and verify the repaired link after 24 November at 11:30 UTC",
+      "remaining_action": "Verify live status, gates, and whether J3444 can be reopened",
       "kind": "review",
       "recheck_of": "J3444",
       "due": "2026-11-24T12:30:49+00:00",
@@ -321052,12 +321057,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T17:41Z",
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-24T17:45Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect J3444 and J3439 evidence",
+          "Verify live status and timing",
+          "Write verification review and PR",
+          "Update queue and post thread report"
+        ]
       }
     },
     {
