@@ -320028,9 +320028,14 @@
           "at": "2026-11-24T13:01Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Uploaded v06 as emKN9xjDswI (en-GB captions serving, approved v06 cover verified in Studio after reload, Altered Content Yes); unscheduled k2kEaA7ICjc (Private/null) and scheduled emKN9xjDswI (Private/2026-12-11T11:30:00Z); verify-swap.ts PASS"
+        },
+        {
+          "at": "2026-11-24T13:05Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Upload, slot transfer (k2kEaA7ICjc -> emKN9xjDswI, Fri 11 Dec 2026 11:30Z), Studio cover/Altered Content/en-GB captions readback, Buffer mirror, open-gate library, verify-swap.ts PASS, thread report, and PR #1258 complete. Only protected Chief review/merge remains."
         }
       ],
-      "remaining_action": "Run final Studio readback, Buffer mirror, open-gate library, UPLOADS, J0923 and status records",
+      "remaining_action": "Chief review and merge of verified records PR #1258, then close J3510",
       "due": "2026-11-25T12:00:00Z",
       "kind": "studio",
       "plain": "Upload the approved Betelgeuse opening Short while keeping its date",
@@ -320051,9 +320056,9 @@
         "askId": "J2551.1"
       },
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-24T13:01Z",
+        "at": "2026-11-24T13:05Z",
         "by": "gemini",
         "plan": [
           "Verify v06 master, gates, and live YouTube state",
@@ -320062,7 +320067,7 @@
           "Run verify-swap readback and update UPLOADS, Buffer, gate library, J0923, status",
           "Commit clean worktree, post thread report, close J3510"
         ],
-        "note": "Uploaded v06 as emKN9xjDswI (en-GB captions serving, approved v06 cover verified in Studio after reload, Altered Content"
+        "note": "Upload, slot transfer (k2kEaA7ICjc -> emKN9xjDswI, Fri 11 Dec 2026 11:30Z), Studio cover/Altered Content/en-GB captions "
       },
       "taskKeys": [
         "OWB:029"
