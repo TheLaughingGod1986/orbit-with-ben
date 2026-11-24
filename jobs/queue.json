@@ -321534,24 +321534,29 @@
           "at": "2026-11-24T13:09Z",
           "by": "codex",
           "what": "step 2 of 3 done: Built merged main and deployed Cloudflare Pages production deployment cb5f2794; requested one board data refresh."
+        },
+        {
+          "at": "2026-11-24T13:11Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: Live Pages version b803321f9537da48 verified in Chrome; published data bf2ac401 has zero active alerts. Browser-only alert fixture clicked through to HOS:ASK:J2699 and its matching Franklin detail. All app regressions pass; /, /tracker, /ai and /version.json return 200 with noindex/nofollow. Raw custom-domain probe returned 403, so verification used studio-kanban.pages.dev."
         }
       ],
-      "remaining_action": "Verify the live board alerts and video navigation",
+      "remaining_action": "Record the verified board deployment and close the job",
       "due": "2026-11-24T17:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "urgent": 13,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-24T13:09Z",
+        "at": "2026-11-24T13:11Z",
         "by": "codex",
         "plan": [
           "Confirm merged fix and publishing instructions",
           "Build and deploy board",
           "Verify live alerts and record result"
         ],
-        "note": "Built merged main and deployed Cloudflare Pages production deployment cb5f2794; requested one board data refresh."
+        "note": "Live Pages version b803321f9537da48 verified in Chrome; published data bf2ac401 has zero active alerts. Browser-only ale"
       }
     },
     {
