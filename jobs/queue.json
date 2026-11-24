@@ -320513,13 +320513,13 @@
       "stage": "",
       "after": "",
       "eta_min": 40,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-24T12:17Z",
-      "eta": "2026-11-24T12:57Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T11:55Z",
-      "result": "",
+      "result": "Opened history-of-science PR #750 (branch macbook/J3522, commit bba66f42) updating AGENTS.md, studio/RULES.md, HANDOVER.md, STUDIO_PLAYBOOK.md, HOS_STRATEGY.md, .cursor/rules/hos-studio.mdc, .cursor/rules/hos-build-long.mdc, hos_desk.py, and sync_rules.py to the 24 Nov Chief chain (Claude -> Codex -> Gemini -> Grok Bot) and worker order (Cursor/Grok Bot last, quoting Ben, matching orbit-with-ben PR #1246). Synced rule copies (sync_rules.py --check: rules OK), check_all.sh: ALL CHECKS PASS, core_sync.py check: core OK, test_rule_files + test_no_private_network: 18/18 OK. Desk PR 180 remains open; stopped at open PR for Chief review and merge. GBP 0.",
       "history": [
         {
           "at": "2026-11-24T11:55Z",
@@ -320555,6 +320555,11 @@
           "at": "2026-11-24T12:25Z",
           "by": "macbook",
           "what": "step 4 of 4 done"
+        },
+        {
+          "at": "2026-11-24T12:26Z",
+          "by": "macbook",
+          "what": "done: Opened history-of-science PR #750 (branch macbook/J3522, commit bba66f42) updating AGENTS.md, studio/RULES.md, HANDOVER.md, STUDIO_PLAYBOOK.md, HOS_STRATEGY.md, .cursor/rules/hos-studio.mdc, .cursor/rules/hos-build-long.mdc, hos_desk.py, and sync_rules.py to the 24 Nov Chief chain (Claude -> Codex -> Gemini -> Grok Bot) and worker order (Cursor/Grok Bot last, quoting Ben, matching orbit-with-ben PR #1246). Synced rule copies (sync_rules.py --check: rules OK), check_all.sh: ALL CHECKS PASS, core_sync.py check: core OK, test_rule_files + test_no_private_network: 18/18 OK. Desk PR 180 remains open; stopped at open PR for Chief review and merge. GBP 0."
         }
       ],
       "remaining_action": "Committing branch macbook/J3522, opening PR for Chief review/merge, and posting thread report",
