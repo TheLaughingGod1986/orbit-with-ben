@@ -1,5 +1,5 @@
 {
-  "next_id": 3559,
+  "next_id": 3560,
   "jobs": [
     {
       "id": "J0001",
@@ -323682,6 +323682,37 @@
         "kind": "orphan-doing",
         "signature": "13b3e739f2490fc126a9"
       }
+    },
+    {
+      "id": "J3559",
+      "title": "WW2 film 017: narration in Ben's voice (Pearl Harbor Salvage, post-reset)",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**HARD GUARD — DO NOT SPEND ELEVENLABS CREDITS BEFORE `2026-11-30 10:50Z`!**\n- If claimed before **`2026-11-30 10:50Z`** OR before elected Chief (`codex`) has merged `ww2-channel` PR #89 (`macbook/J3543`), PR #92 (`macbook/J3556`), and the `macbook/J3557` locked `v02` script PR to `main`, **spend £0 / 0 credits** and immediately register the structured post-reset hold:\n  `python3 scripts/jobs.py wait <THIS_JOB_ID> --agent <you> --type credits --condition \"ElevenLabs monthly credit reset (2026-11-30 10:50Z) confirmed, Pilot 2 48h/7d Rule-12 check reviewed, AND elected Chief has merged WW2:017 locked script v02 PR (macbook/J3557) to main\" --check-at \"2026-11-30T11:00:00Z\" --git`\n- **Pilot 2 Rule-12 Pre-Voicing Check (`studio/RULES.md` Rule 12):** Pilot 2 (`qfc6EBStOfo`, airs Tue 24 Nov 2026 17:00 London) had not aired when `J3557` locked `v02` on 24 Nov. Before spending credits after `2026-11-30 10:50Z`, read `ww2-channel/studio/LEARNINGS.md` and `studio/RULES.md` to confirm whether Pilot 2's 48h (`~26 Nov`) or 7d (`~1 Dec`) readout triggered any Rule-12 opening/script change (or whether Ben upgraded ElevenLabs for 35–45 min scripts). If no Rule-12 rewrite is required, proceed straight to recording `NARRATION_v02.txt`; if a Rule-12 tweak is required, park for Chief before voicing.\n- **Shorts guard (`studio/RULES.md` Rule 1):** Record ONLY the long-film narration (`NARRATION_v02.txt`). Do NOT voice the 3 held engineering Shorts (`017-S1`, `017-S2`, `017-S3`) unless elected Chief formally amends Rule 1 (*\"No Shorts until the film-20 check\"*) and opens a separate Shorts VO job.\n- Never change or top up Ben's ElevenLabs plan (`studio/RULES.md` Rule 9). Never use the ElevenLabs website (API via `vo_take.py` / `el_client.py` only).\n\n**Task (strictly AFTER `2026-11-30 10:50Z` reset, Pilot 2 Rule-12 check, and Chief merge of `macbook/J3557`):**\nRecord full narration in Ben's voice (`eleven_v3`, Ben Orbit Narrator) for Field Order History film **`WW2:017`** (*How 6 Pearl Harbor Battleships Returned to War*, target air slot **Thu 31 Dec 2026 17:00 London**, Ben's watch due **Mon 28 Dec 2026**).\n\n**Locked Source File (`ww2-channel` `main` after Chief merge of `macbook/J3557`):**\n- Path: `02_Video-Projects/017_Pearl-Harbor-Salvage-Sunk-Battleships/01_Script/NARRATION_v02.txt` (matches `01_Script/SCRIPT.md` v02, `52/52` paragraphs byte-for-byte)\n- Length: **`2,903` spoken words · `18,296` stripped spoken characters** (`<= 21,000` Rule-9 cap, `2,704`-char margin)\n- SHA-256: **`8703a537dede6485c38bc2022e490cc7ea6182212b18b6d1ec2b82ff62342601`**\n- All 5 `J3556` pre-lock factual fixes (`C09` early January 1942 Wallin Salvage Division, `C15` Nevada 7 Feb 1942 salvage officer opening air-test fitting & two men died from exposure, `C25` West Virginia departed Pearl Harbor 30 April 1943, `C27` Hawaiian shipyard caulker Julio DeCastro, `C35` USS Pennsylvania steamed in line unable to lock on with older radar), `SOURCES.md` `v02` polish notes (`C01`, `C05`, `C20`, `C30`, `C31`), `ARCHIVE_PROVENANCE.md` `v02` (`26/26` clean official US Federal PD photos + 6 full-res harvest flags & `#24 NH 63916` 8 Mar 1943 date), and Rule-6 viewer test (`VIEWER_TEST_v01.md`) are already verified and locked in `v02`.\n\n**Steps:**\n1. Verify current UTC time is `>= 2026-11-30T10:50:00Z`, Pilot 2's 48h/7d `studio/LEARNINGS.md` / `studio/RULES.md` check requires no script rewrite, `ww2-channel` `main` has `NARRATION_v02.txt` matching SHA-256 `8703a537dede6485c38bc2022e490cc7ea6182212b18b6d1ec2b82ff62342601`, and live ElevenLabs balance covers `18,296` spoken characters (`scripts/ai_spend.py record` before & after).\n2. Generate chapter-split VO via API (`vo_take.py` / `el_client.py`), run Scribe `scribe_v2` / `faster-whisper` word verification and loudness/peak QA, and log settled spend against `WW2:017`.\n3. Copy finished WAV/MP3 masters to the shared NAS working store (`/Volumes/data/studio-live/ww2/02_Video-Projects/017_Pearl-Harbor-Salvage-Sunk-Battleships/02_Voiceover/`) with SHA-256 verification.\n4. Commit `VO_REPORT.md`, take metadata, and updated `status.json` (`vo: review`) in a `ww2-channel` PR (no media in git).\n",
+      "ref": "",
+      "film": "WW2:017",
+      "stage": "vo",
+      "after": "J3557",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-24T16:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T16:14Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "WW2 film 017: narration in Ben's voice (Pearl Harbor Salvage, post-reset)",
+      "due": "2026-12-19T18:00:00Z",
+      "kind": "vo",
+      "plain": "Record Ben's voice narration for WW2 film 017 (Pearl Harbor Salvage) after the 30 Nov ElevenLabs reset and Pilot 2 check",
+      "mini_only": true
     }
   ],
   "focus": [
