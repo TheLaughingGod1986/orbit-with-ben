@@ -326178,21 +326178,33 @@
           "at": "2026-11-24T18:03Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T18:04Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Read the long's Studio numbers 48 h after it went live, record them and give the verdict",
+      "remaining_action": "Inspect Studio Content visibility, restrictions, HD, description and related video against 027 upload package",
       "due": "2026-11-24T20:02:00Z",
       "kind": "studio",
       "launch": "6bbbvfCx6zY@48",
       "plain": "Check how \"What If Earth Stopped Spinning? (It's Already Slowing Down)\" is doing 48 hours after it went live",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-24T18:03Z",
+        "of": 4,
+        "at": "2026-11-24T18:04Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect Studio Content and upload package",
+          "Read 48h Studio Analytics",
+          "Record metrics and judge",
+          "Report and close or park"
+        ]
+      },
+      "taskKeys": [
+        "OWB:027"
+      ]
     },
     {
       "id": "J3602",
