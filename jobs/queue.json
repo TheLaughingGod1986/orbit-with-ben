@@ -318320,7 +318320,7 @@
     {
       "id": "J3496",
       "title": "HOS 128 Edison vs Tesla (film 1, Thu 7 Jan): package first, then the 7-9 minute script draft",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "**Why (Ben, Tue 24 Nov ~10:40 London, in chat: \"History of science. January search-led plan. Yeah, I'll give you okay for that. Please go ahead and start it.\" This is the OK that HOS LEARNINGS rule 34 item 7 asks for, on the plan `hos-search-2027-01` (`studio/plan.json`; summary `05_Analytics/hos/search_research/2026-11-20_SUMMARY_FOR_BEN.md`, from J3223 audit and J3224 research).)** HOS:128 is film 1 of the plan and airs **Thu 7 Jan 2027, 18:00 London** (7-9 min, normal publish). Its Rule-E topic review passed on 22 Nov (GO 97.1/100, J3346, HOS PR #725, OWB PR #1157).\n\n**Do (no spend):**\n1. **Package first:** the plan title is *Thomas Edison vs Nikola Tesla: How AC Won the War of Currents*; J3346 also scored *Why Do We Use AC Instead of DC? (Edison vs Tesla)* (49 characters) and *Thomas Edison vs Nikola Tesla: Why AC Won the War of Currents*. Score them with two thumbnail ideas against the cluster 1 outliers (Business History Podcast 92.9K, Real-World Learning 13.2K, RELIQUARY 2.1K) and pick one, query words first; keep the other two for Test & Compare.\n2. **Script draft (7-9 min) by Fri 4 Dec 18:00 London**, for lock by Fri 11 Dec: answer the search question in the first 30 seconds; a person, a date and a twist; plain words and one figure at a time; 3D cartoon picture plan notes per scene. Sources for every claim. Two Short angles that promote the film (Fri and Sat of its week).\n3. Hand the draft to its script review in the HOS chain.\n\n**Guards.** No VO, picture or paid call yet (rule G: production starts when a place frees up). £0.\n\n**Update (Claude, 24 Nov ~10:35): draft due Fri 27 Nov, lock Tue 1 Dec.** Ben, Tue 24 Nov ~10:30 London, in chat: \"Edison vs. Tesla, the Trinity test, the accidental inventions with the Wright brothers. That plan is HOS test that could turn around. I think that's definitely worth a look this week. If we can get that one queued up and working straight away, thank you.\" HOS:128 entered production today (PR #1238), so once the script locks its voice and picture jobs follow straight away, inside existing plans (this cycle's Flow credits renew 12 Dec; ElevenLabs down to zero, never past it).",
       "ref": "",
@@ -318350,12 +318350,25 @@
           "at": "2026-11-24T10:22Z",
           "by": "claude",
           "what": "Ben: start this week. Draft due Fri 27 Nov, lock Tue 1 Dec; HOS:128 entered production today."
+        },
+        {
+          "at": "2026-11-24T10:26Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Score three titles and two thumbnails, then draft the Edison vs Tesla script",
       "due": "2026-11-27T18:00:00Z",
       "kind": "script",
-      "urgent": 13
+      "urgent": 13,
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3497",
