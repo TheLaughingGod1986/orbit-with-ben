@@ -315864,18 +315864,27 @@
           "at": "2026-11-24T05:00Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T05:02Z",
+          "by": "macbook-2",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on HOS videos",
+      "remaining_action": "Inspecting prior audit PR #737, snapshots, and HOS tools",
       "kind": "listing",
       "backlog": "hos-live-listing-fixes",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T04:59Z",
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-24T05:02Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect prior audit and data",
+          "Run lint and channel audit",
+          "Verify live and scheduled listings",
+          "Write report, open PR, post thread"
+        ]
       },
       "rerouted_from": {
         "needs": "any",
