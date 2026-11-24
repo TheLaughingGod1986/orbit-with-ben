@@ -326492,10 +326492,10 @@
       "stage": "",
       "after": "J3599",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-24T18:40Z",
+      "eta": "2026-11-24T20:40Z",
       "created_by": "macbook-2",
       "created_at": "2026-11-24T18:14Z",
       "result": "",
@@ -326504,12 +326504,25 @@
           "at": "2026-11-24T18:14Z",
           "by": "macbook-2",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T18:40Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review and merge OWB PR #1282, then reopen J3542 for v02 rebuild",
       "due": "2026-11-25T16:00:00Z",
       "kind": "chief",
-      "plain": "Review the Mulberry Short fix list and reopen the build for v02"
+      "plain": "Review the Mulberry Short fix list and reopen the build for v02",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T18:40Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3604",
