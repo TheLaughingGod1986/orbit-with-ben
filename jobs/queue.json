@@ -322755,13 +322755,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-24T15:39Z",
-      "eta": "2026-11-24T19:39Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T14:46Z",
-      "result": "",
+      "result": "WW2 film 017 Pearl Harbor salvage topic check, packaging first, 25+ verified official US Navy PD archive IDs, 3 planned engineering Shorts in status.json, SCRIPT.md v01, NARRATION_v01.txt (18,225 chars <= 21,000, 52/52 parity, SHA-256 274fe0fd744bfa74d4b591f6a80a9098d93e4cf704614bf017544cf3f58e009e), SOURCES.md (35 claims, F1-F5), and VIDEO_BACKLOG.json submitted in ww2-channel PR #89 (branch macbook/J3543, commit 521a509; open for Chief merge). Follow-up gates queued: J3556 (independent Gemini facts-lane claims check) -> J3557 (Claude Rule-6 viewer test, Pilot 2 Rule-12 check, Rule-E lock & post-reset VO queue). £0 spend, zero voice credits spent; all checkouts back on main.",
       "history": [
         {
           "at": "2026-11-24T14:46Z",
@@ -322797,6 +322797,11 @@
           "at": "2026-11-24T15:51Z",
           "by": "macbook-2",
           "what": "step 4 of 6 done: All checks passed: 52/52 parity, 18,225 chars, valid JSON, zero hygiene issues"
+        },
+        {
+          "at": "2026-11-24T15:53Z",
+          "by": "macbook-2",
+          "what": "done: WW2 film 017 Pearl Harbor salvage topic check, packaging first, 25+ verified official US Navy PD archive IDs, 3 planned engineering Shorts in status.json, SCRIPT.md v01, NARRATION_v01.txt (18,225 chars <= 21,000, 52/52 parity, SHA-256 274fe0fd744bfa74d4b591f6a80a9098d93e4cf704614bf017544cf3f58e009e), SOURCES.md (35 claims, F1-F5), and VIDEO_BACKLOG.json submitted in ww2-channel PR #89 (branch macbook/J3543, commit 521a509; open for Chief merge). Follow-up gates queued: J3556 (independent Gemini facts-lane claims check) -> J3557 (Claude Rule-6 viewer test, Pilot 2 Rule-12 check, Rule-E lock & post-reset VO queue). £0 spend, zero voice credits spent; all checkouts back on main."
         }
       ],
       "remaining_action": "Commit on macbook/J3543, push PR to main, switch ww2-channel back to main, queue independent claims check and viewer test, close J3543",
