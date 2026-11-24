@@ -1,5 +1,5 @@
 {
-  "next_id": 3545,
+  "next_id": 3546,
   "jobs": [
     {
       "id": "J0001",
@@ -322483,6 +322483,35 @@
       "remaining_action": "Apply the independent source review corrections and submit a new version",
       "kind": "script",
       "plain": "Correct the planet facts and teaching notes before recording"
+    },
+    {
+      "id": "J3545",
+      "title": "OWB 064: Independently verify corrected v04 before script lock",
+      "needs": "any",
+      "repo": "owb",
+      "body": "After J3544, independently review the exact OWB 064 v04 candidate against J3539 (PR #1265), J3520 and J3020. Verify every retained MUST QUOTE directly; explicitly resolve Mercury tilt, Mars field-presence versus shutdown, Saturn haze uncertainty, Uranus scope/measurement attribution, Venus water versus ocean, correct Donahue PMID, working Venera evidence, MOLA datum and source quotation integrity. Inspect fresh raw Gemini findings without inheriting its verdict. Check teaching timing/timeline/label limits, reproducible counts/hash, score >=90 and explicit-version episode gate. Write a versioned exact-hash FIX or advisory recommendation; only the elected Chief may lock and complete J3020. J3021 must remain dependent on J3020 until that lock. No spend, generation, narration, upload or schedule/privacy changes. Dates and approved format unchanged.\n",
+      "ref": "J3539",
+      "film": "064",
+      "stage": "script",
+      "after": "J3544",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-24T14:47Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T14:47Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify the new script against primary sources and send the exact version to Chief",
+      "kind": "review",
+      "plain": "Check the corrected planet facts before recording"
     }
   ],
   "focus": [
