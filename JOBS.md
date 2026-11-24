@@ -103,6 +103,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3513 | mini | open | – | – | 137 script · script · HOS 137 Accidental Inventions (film 3, Thu 24 Dec): package first, then the 7-9 minute script draft | J3503 |
 | J3514 | mini | open | – | – | review · Verify condition for J3444 |  |
 | J3515 | mini | open | – | – | review · Verify condition for J3511 |  |
+| J3516 | mini | open | – | – | review · Verify condition for J3512 |  |
 
 Recently finished:
 
