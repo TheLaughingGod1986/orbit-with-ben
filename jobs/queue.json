@@ -329866,9 +329866,14 @@
           "at": "2026-11-24T22:58Z",
           "by": "macbook-2",
           "what": "step 3 of 5 done"
+        },
+        {
+          "at": "2026-11-24T22:59Z",
+          "by": "macbook-2",
+          "what": "step 4 of 5 done"
         }
       ],
-      "remaining_action": "Verifying parity, char limit, SHA-256, and updating status.json",
+      "remaining_action": "Pushing PR and queueing independent Gemini v04 direct-source recheck",
       "due": "2026-11-30T18:00:00Z",
       "kind": "script",
       "plain": "Apply 6 direct-source script fixes from Gemini v03 recheck to produce WW2:009 narration v04",
@@ -329881,9 +329886,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-24T22:58Z",
+        "at": "2026-11-24T22:59Z",
         "by": "macbook-2",
         "plan": [
           "Read v03 claims check and script",
