@@ -324054,13 +324054,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-24T16:37Z",
-      "eta": "2026-11-24T18:07Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T16:35Z",
-      "result": "",
+      "result": "Opened ww2-channel PR #98 (branch macbook/J3562, ready for Chief merge): audited films 003-017 against studio/RULES.md rule 2 (PR #97). 2 pass as-is (008, 015), 11 failed title rule and are fixed in status.json (003-007, 009-014; plus 003 11_Upload-Package/metadata_DRAFT_v02.json updated to 'B-29: Why It Cost More Than the Atomic Bomb' 43 ch), 016 superseded by Battle of the Bulge (J3487: lock one of two Rule-2 titles + 3 thumb designs), 017 fixed to 'Pearl Harbor: How 6 Battleships Returned to War' (47 ch, apply on PR #89/#93 merge). Thumbnail actions flagged for 003 (build Designs B & C), 004 (re-crop Thumb C ww2_004_thumb_C_v02.jpg + update PR #94 title), 005 (build 2 more designs), 006 (build 3 single-subject designs), 010 (Thumb C band text -> FLAME TANK), 014 (merge PR #88 Concept C fix). Full report in 05_Analytics/PACKAGING_RULE2_AUDIT_2026-11-24.md. £0 spent.",
       "history": [
         {
           "at": "2026-11-24T16:35Z",
@@ -324091,6 +324091,11 @@
           "at": "2026-11-24T16:46Z",
           "by": "macbook",
           "what": "step 4 of 5 done"
+        },
+        {
+          "at": "2026-11-24T16:50Z",
+          "by": "macbook",
+          "what": "done: Opened ww2-channel PR #98 (branch macbook/J3562, ready for Chief merge): audited films 003-017 against studio/RULES.md rule 2 (PR #97). 2 pass as-is (008, 015), 11 failed title rule and are fixed in status.json (003-007, 009-014; plus 003 11_Upload-Package/metadata_DRAFT_v02.json updated to 'B-29: Why It Cost More Than the Atomic Bomb' 43 ch), 016 superseded by Battle of the Bulge (J3487: lock one of two Rule-2 titles + 3 thumb designs), 017 fixed to 'Pearl Harbor: How 6 Battleships Returned to War' (47 ch, apply on PR #89/#93 merge). Thumbnail actions flagged for 003 (build Designs B & C), 004 (re-crop Thumb C ww2_004_thumb_C_v02.jpg + update PR #94 title), 005 (build 2 more designs), 006 (build 3 single-subject designs), 010 (Thumb C band text -> FLAME TANK), 014 (merge PR #88 Concept C fix). Full report in 05_Analytics/PACKAGING_RULE2_AUDIT_2026-11-24.md. £0 spent."
         }
       ],
       "remaining_action": "Updating status.json files, film 003 upload package, and writing packaging audit report",
