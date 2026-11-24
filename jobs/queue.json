@@ -326633,13 +326633,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-24T20:14Z",
-      "eta": "2026-11-24T22:14Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-24T18:02Z",
-      "result": "",
+      "result": "Acting-Chief ruling FIX: condition not met. Independently summed timed plan at 510.27/1263.04s = 40.400%, below current 50% floor by 121.25s; 48.3% estimate superseded. Evidence PR1281 merged at 8ba223a082e4. J3431 hold updated with last_recheck J3600, dependency J3614 and check 25 Nov 12:00Z; J3432 remains dependent. J3614 commissions one bounded existing-VO complete-sentence paper recut plus PR50 integration; Chief acceptance required before release. No picture PASS, edit release, spend or schedule change.",
       "history": [
         {
           "at": "2026-11-24T18:02Z",
@@ -326685,6 +326685,11 @@
           "at": "2026-11-24T20:14Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T20:16Z",
+          "by": "codex",
+          "what": "done: Acting-Chief ruling FIX: condition not met. Independently summed timed plan at 510.27/1263.04s = 40.400%, below current 50% floor by 121.25s; 48.3% estimate superseded. Evidence PR1281 merged at 8ba223a082e4. J3431 hold updated with last_recheck J3600, dependency J3614 and check 25 Nov 12:00Z; J3432 remains dependent. J3614 commissions one bounded existing-VO complete-sentence paper recut plus PR50 integration; Chief acceptance required before release. No picture PASS, edit release, spend or schedule change."
         }
       ],
       "remaining_action": "Parked for elected Chief to record wait --recheck J3600 on J3431 and decide WW2:005 editorial path",
@@ -326707,7 +326712,8 @@
         "by": "codex",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1281"
     },
     {
       "id": "J3601",
