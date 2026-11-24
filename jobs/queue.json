@@ -323340,7 +323340,7 @@
     {
       "id": "J3555",
       "title": "WW2 film 014: Claude Rule-6 viewer test (first 300 words), Pilot 2 learnings check, Rule-E lock & queue VO",
-      "needs": "any",
+      "needs": "mini",
       "repo": "ww2",
       "body": "Independent Claude review lane for Field Order History film `WW2:014` (*How the Dambusters Bouncing Bomb Worked*), drafted in `ww2-channel` PR #88 (branch `macbook/J3485`, commit `6df6e74`; follows merged topic/packaging PR #82), running after Gemini facts check `J3554`.\n\n**Do (`ww2-channel/studio/RULES.md` rules 1–6, 9 & 12; script lock due `2026-12-11 18:00 UTC` per `00_Brand/THREE_A_WEEK_2026-12.md` §0 for Thu 24 Dec 2026 17:00 London slot — Ben's call whether to keep Christmas Eve or slide):**\n1. Perform **Claude's Rule-6 viewer test of the first 300 words** of `01_Script/NARRATION_v01.txt` (`18,245` spoken chars `<= 21,000` Rule-9 cap, `2,941` words, Cold Open `160` words, SHA-256 `efd833c81ef358d393712e0ae0bc3904e36495a3d867e58c4bdba0cbb2ee6716`) as a stranger would: concrete moment by 0:30, promise by 0:45, main story moving by 1:00, no detours, title's mechanism answer withheld until Chapter 3, one figure at a time.\n2. Incorporate **Pilot 2 (`qfc6EBStOfo`, airs Tue 24 Nov 17:00) 48h (~26 Nov) and 7d (~1 Dec) numbers** plus any `studio/RULES.md` / `studio/LEARNINGS.md` updates; confirm archive coverage (`03_Picture/ARCHIVE_PROVENANCE.md` v02: 36 distinct verified official UK PD still photos + 7 Reculver trial film frames; 32/41 visual beats = 78.0% official archive) and packaging (`PACKAGING_v01.md` v02: picked Rule-2 title *How the Dambusters Bouncing Bomb Worked* at 39 chars, Concept C replaced with `IWM FLM 2343` / backup `IWM TR 1000`); record the Rule-E topic verdict.\n3. Fold any required fixes from Gemini claims check `J3554` cleanly into locked script/narration while staying `<= 21,000` spoken characters.\n4. Lock topic and script (or return exact fixes), update `status.json` in a `ww2-channel` PR, and queue the ElevenLabs voice-over job strictly for **after the ElevenLabs reset (`2026-11-30 10:50Z`)**.\n\n**Guards:** Zero ElevenLabs voice credits spent before `2026-11-30 10:50Z`. £0 spend.\n",
       "ref": "ww2-channel#88",
@@ -323360,12 +323360,25 @@
           "at": "2026-11-24T15:52Z",
           "by": "macbook",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T15:55Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Run Rule-6 viewer test, Pilot 2 48h/7d check, fold J3554 fixes, Rule-E lock WW2:014 and queue post-reset VO",
       "due": "2026-12-11T18:00:00Z",
       "kind": "review",
-      "plain": "Viewer-test the Dambusters film 014 opening, apply Pilot 2 learnings, lock the script and queue post-reset voice-over"
+      "plain": "Viewer-test the Dambusters film 014 opening, apply Pilot 2 learnings, lock the script and queue post-reset voice-over",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3556",
