@@ -319504,13 +319504,13 @@
       "stage": "upload",
       "after": "J3505",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-24T11:26Z",
-      "eta": "2026-11-24T13:26Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T10:53Z",
-      "result": "",
+      "result": "parked for Chief: HOS publishing runtime missing generated Prisma client; channel:audit exits 2. npx prisma generate fails P1012 (CLI 6.19.0 vs declared 7.10.1 schema). Exact approved hash and six recorded gates verified; lint passes; no YouTube writes. Restore publishing runtime then resume duplicate check and private upload.",
       "history": [
         {
           "at": "2026-11-24T10:53Z",
@@ -319536,6 +319536,11 @@
           "at": "2026-11-24T11:29Z",
           "by": "codex",
           "what": "step 1 of 4 done: Approved master hash verified; six recorded gates and package lint pass. Channel audit fails on missing generated Prisma client; generation fails P1012 with CLI/schema version mismatch. No YouTube writes."
+        },
+        {
+          "at": "2026-11-24T11:30Z",
+          "by": "codex",
+          "what": "blocked: parked for Chief: HOS publishing runtime missing generated Prisma client; channel:audit exits 2. npx prisma generate fails P1012 (CLI 6.19.0 vs declared 7.10.1 schema). Exact approved hash and six recorded gates verified; lint passes; no YouTube writes. Restore publishing runtime then resume duplicate check and private upload."
         }
       ],
       "remaining_action": "Restore the HOS uploader dependencies before checking YouTube and uploading privately",

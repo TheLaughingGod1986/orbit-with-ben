@@ -100,7 +100,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3508 | mini | blocked | codex | – | 032 upload · studio · Upload approved Titan Test A Short v02 for 2 Dec 11:30 | J3505 |
 | J3509 | mini | open (after J3505) | – | – | 029 upload · studio · 029 Short heiGCnGKTkE: swap to approved v06; retain 14 Dec 11:30 | J3505 |
 | J3510 | mini | open (after J3505) | – | – | 029 upload · studio · 029 Short k2kEaA7ICjc: swap to approved v06; retain 11 Dec 11:30 | J3505 |
-| J3511 | mini | claimed | codex | 2026-11-24T13:26Z | 010 upload · studio · Upload approved HOS 010 bird Short C v01 privately; no schedule yet | J3505 |
+| J3511 | mini | blocked | codex | – | 010 upload · studio · Upload approved HOS 010 bird Short C v01 privately; no schedule yet | J3505 |
 | J3512 | mini | open (after J3505) | – | – | 010 upload · studio · Upload approved HOS 010 dinosaur Short A v01 privately; no schedule yet | J3505 |
 | J3513 | mini | open | – | – | 137 script · script · HOS 137 Accidental Inventions (film 3, Thu 24 Dec): package first, then the 7-9 minute script draft | J3503 |
 
