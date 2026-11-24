@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2529, J3419, J3371, J3205, J3430, J3431, J3432, J3434, J3496, J3500, J3501.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2529, J3419, J3205, J3430, J3431, J3432, J3434, J3496, J3500, J3501.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -52,7 +52,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3310 | mini | open (after J3307) | – | – | studio · Studio: arm T043 thumbnail Test & Compare on REXYxuLOBoI (005 — OUTLIVES OUR SUN) after J3307 PASS | jobs/reviews/J3382/REVIEW.md |
 | J3365 | mini | blocked | codex | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J3369 | mini | blocked | codex | – | 001 thumbs · studio · Field Order History pilot 1: 48-hour thumbnail decision |  |
-| J3371 | mini | claimed | codex | 2026-11-24T13:13Z | WW2:003 edit · chart · WW2 003: rebuild loss graphic and cues for corrected narration |  |
 | J3375 | mini | blocked | gemini | – | review · Verify condition for J3178 |  |
 | J3391 | mini | blocked | macbook-2 | – | review · Verify condition for J3365 |  |
 | J3392 | mini | blocked | gemini | – | review · Verify condition for J3205 |  |
