@@ -328097,18 +328097,27 @@
           "at": "2026-11-24T20:55Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T20:55Z",
+          "by": "macbook-2",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Verify current playlist membership and add only if missing",
+      "remaining_action": "Reading J3616 ruling, playlist audit, and checking CDP 9223 tabs",
       "kind": "studio",
       "plain": "Check the Earth spin film is in its series playlist",
       "progress": {
-        "step": 0,
-        "of": 3,
+        "step": 1,
+        "of": 4,
         "at": "2026-11-24T20:55Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read J3616 ruling and playlist audit",
+          "Verify Studio channel and playlist membership",
+          "Add video if absent and read back",
+          "Commit evidence PR and report"
+        ]
       }
     }
   ],
