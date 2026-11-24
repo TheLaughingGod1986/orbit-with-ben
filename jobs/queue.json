@@ -330567,9 +330567,14 @@
           "at": "2026-11-24T23:44Z",
           "by": "gemini",
           "what": "step 3 of 5 done: End-of-film A/V clip (25:38-25:50) heard/watched cleanly with zero sync drift; all J3643 QA checks PASS"
+        },
+        {
+          "at": "2026-11-24T23:46Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Uploaded ww2-003-v01 to R2 (170,239,867 bytes), registered in local & repo watch_uploads.json, set Ben watch card on J3205 (due Wed 25 Nov 20:00 UTC, airs Sat 28 Nov 17:00 London), and committed local QA branches gemini/J3643-qa (674c088) & gemini/J3643-review (5925f6828c)"
         }
       ],
-      "remaining_action": "Uploading WW2:003 v01 phone proxy via watch_upload.mjs and setting Ben watch card",
+      "remaining_action": "Closing J3643 and posting studio thread report",
       "due": "2026-11-25T08:00:00Z",
       "kind": "qa",
       "mini_only": true,
@@ -330583,9 +330588,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 3,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-24T23:44Z",
+        "at": "2026-11-24T23:46Z",
         "by": "gemini",
         "plan": [
           "Locate master & verify hash/decode/loudness",
@@ -330594,7 +330599,7 @@
           "Run watch_upload & set watch card (or FIX list)",
           "Commit QA record locally & post report"
         ],
-        "note": "End-of-film A/V clip (25:38-25:50) heard/watched cleanly with zero sync drift; all J3643 QA checks PASS"
+        "note": "Uploaded ww2-003-v01 to R2 (170,239,867 bytes), registered in local & repo watch_uploads.json, set Ben watch card on J32"
       },
       "taskKeys": [
         "WW2:003"
