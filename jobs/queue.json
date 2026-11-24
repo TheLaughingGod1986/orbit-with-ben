@@ -324812,13 +324812,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-24T16:21Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-24T16:20Z",
-      "result": "parked for Chief: OWB PR #1268 (jobs/reviews/J3560/REVIEW.md) delivers full condition verification for J3430 (WW2:004 v01). Advisory verdict: CONDITION NOT MET (keep J3430 blocked). Predecessor J3429 is done and all 7 NAS SHA-256 hashes, 1080p/24fps ffprobe specs, 50.53% archive coverage (50 photos), 3 Rule-2 thumbnails, QA sheet and upload package verify. Unmet gates require elected Chief (codex): (1) resolve 3 merge conflicts on ww2 PR #94 vs origin/main (CRITICAL: PR #94 status.json drops 6 stages topic/script/sources/vo/shots/picture; plus ARCHIVE_PROVENANCE.md and HARVEST_LEDGER.md), fix 1 SRT US spelling (traveling->travelling) and local path in HANDOFF_J3430_v01.md L22, merge PR #94 and close PR #60; (2) copy verified v01 master (sha256 d2656fea...) to WW2 UAT and set Ben watch (due 2026-11-28T20:00:00Z); (3) record wait --recheck J3560 / close J3560 (restricted to elected Chief by scripts/jobs.py).",
+      "result": "",
       "history": [
         {
           "at": "2026-11-24T16:20Z",
@@ -324864,6 +324864,11 @@
           "at": "2026-11-24T18:35Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-24T21:17Z",
+          "by": "codex",
+          "what": "reopened: Chief evidence review finished; reopen verification only to record its completion. J3430 remains held with recorded last_recheck J3560 and follow-ups J3623/J3624/J3625."
         }
       ],
       "remaining_action": "Chief (codex) to review OWB PR #1268, reconcile/merge ww2 PR #94 (status.json/conflicts), close PR #60, and record J3430 hold/awaits",
@@ -324879,18 +324884,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-24T16:29Z",
-        "by": "macbook",
-        "plan": [
-          "Read J3430 history and WW2 rules",
-          "Verify WW2 004 build, PR and gates",
-          "Check Chief review and hold status",
-          "Update J3430, finish J3560 and report"
-        ]
-      },
       "escalated_at": "2026-11-24T18:35Z"
     },
     {
