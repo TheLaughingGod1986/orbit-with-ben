@@ -1,5 +1,5 @@
 {
-  "next_id": 3472,
+  "next_id": 3476,
   "jobs": [
     {
       "id": "J0001",
@@ -312981,13 +312981,13 @@
       "stage": "picture",
       "after": "J3447",
       "eta_min": 180,
-      "status": "blocked",
-      "by": "codex",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-23T19:12Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T15:29Z",
-      "result": "Chief FIX (codex, 23 Nov): PR49 2881569 records review of 50 delivered photos and independent 41-row timing sum: 774.1054/1358.32s = 56.9899%, 131.4413s short. Count milestone accepted; no picture-stage PASS. J3447 now owns one 20-minute sentence-level editorial allocation review against existing object photos and captions; no repeated download probes, invented photo time or spend. J3429 stays held after J3447; J3430 remains after J3429. Review J3447 evidence before any release or merge.",
+      "result": "Film 4 reached 774/1358 s = 57% real archive (Chief review PR49 2881569) after a full search. Rule 1 changed 24 Nov (ww2-channel PR #59, 124d687; LEARNINGS #8): real archive carries at least half of the screen time, two-thirds the aim, and a film is never held for the last stretch between half and two-thirds. Picture stage accepted by Claude; the edit can start. Any extra photos the in-flight searches find go into the edit.",
       "history": [
         {
           "at": "2026-11-23T15:29Z",
@@ -313158,6 +313158,11 @@
           "at": "2026-11-23T20:19Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-24T18:00:00Z"
+        },
+        {
+          "at": "2026-11-24T09:09Z",
+          "by": "claude",
+          "what": "done: Film 4 reached 774/1358 s = 57% real archive (Chief review PR49 2881569) after a full search. Rule 1 changed 24 Nov (ww2-channel PR #59, 124d687; LEARNINGS #8): real archive carries at least half of the screen time, two-thirds the aim, and a film is never held for the last stretch between half and two-thirds. Picture stage accepted by Claude; the edit can start. Any extra photos the in-flight searches find go into the edit."
         }
       ],
       "remaining_action": "Resolve the torpedo picture-plan coverage shortfall with a concrete editorial repair scope",
@@ -313186,14 +313191,7 @@
         ],
         "note": "PR49 f37c9da: all50 unique NAS hashes/dimensions verified,41 paragraph totals reconciled;57.0% proposed archive,131.4s s"
       },
-      "hold": {
-        "type": "input",
-        "condition": "J3448 reviewed completed J3447 at 36821f8: 65 sentences, eight photo intervals, 597.1144/1358.32s hybrid proposed coverage (43.9598%); 308.4323s short, 29 paragraph estimates unverified. Chief FIX in PR49 923c63f rejects current-plan acceptance and coverage exception. Need a revised evidence-backed plan meeting rule 1, or separately authorised scope resolving that rule, before assembly. No repeated exhausted probes or identical allocation retry; J3430 remains dependent.",
-        "check_at": "2026-11-24T18:00:00Z",
-        "last_recheck": "J3448",
-        "checked_at": "2026-11-23T20:19:05+00:00",
-        "checked_by": "codex"
-      }
+      "done_ref": "ww2#59"
     },
     {
       "id": "J3430",
@@ -313382,6 +313380,11 @@
           "at": "2026-11-23T20:26Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-24T18:00:00Z"
+        },
+        {
+          "at": "2026-11-24T09:09Z",
+          "by": "claude",
+          "what": "Rule 1 changed 24 Nov (ww2-channel PR #59, 124d687; LEARNINGS #8): real archive carries at least half of the screen time, two-thirds the aim, and a film is never held for the last stretch between half and two-thirds. Film 5 is at 48.3%: accept as soon as the J3449 revision reaches 50% (about 25 s more real archive); don't chase two-thirds."
         }
       ],
       "remaining_action": "Wait for the revised St Nazaire picture plan and acceptance of compliant archive coverage",
@@ -313400,7 +313403,7 @@
       },
       "hold": {
         "type": "dependency",
-        "condition": "J3449 completes the bounded archive picture-plan revision and a reviewer records acceptance of compliant coverage. Chief FIX in PR50 fabae85; current 48.3% is not approved. J3432 stays after J3431, and follow-up completion alone does not release the edit.",
+        "condition": "J3449 brings film 5 to at least 50% real archive (rule 1 as changed 24 Nov, PR #59); then accept the picture stage and release J3432.",
         "check_at": "2026-11-24T18:00:00Z"
       }
     },
@@ -313444,13 +313447,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 180,
-      "status": "blocked",
-      "by": "codex",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-23T19:24Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T15:29Z",
-      "result": "parked for Chief: review concrete PR 51 at 3c354c6 and decide the remaining research scope for the 56.37% archive plan; 158.86 seconds short of two-thirds and 51 copies below 1600px. Four bounded research runs preserved in SOURCE_RESEARCH_J3433.md. No picture PASS; J3434 dependency retained.",
+      "result": "Film 6 reached 49.98% real archive (J3450 evidence) after a full search; that is half. Rule 1 changed 24 Nov (ww2-channel PR #59, 124d687; LEARNINGS #8): real archive carries at least half of the screen time, two-thirds the aim, and a film is never held for the last stretch between half and two-thirds. Picture stage accepted by Claude; the edit can start. Any extra photos the in-flight searches find go into the edit.",
       "history": [
         {
           "at": "2026-11-23T15:29Z",
@@ -313581,6 +313584,11 @@
           "at": "2026-11-23T21:39Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-24T09:09Z",
+          "by": "claude",
+          "what": "done: Film 6 reached 49.98% real archive (J3450 evidence) after a full search; that is half. Rule 1 changed 24 Nov (ww2-channel PR #59, 124d687; LEARNINGS #8): real archive carries at least half of the screen time, two-thirds the aim, and a film is never held for the last stretch between half and two-thirds. Picture stage accepted by Claude; the edit can start. Any extra photos the in-flight searches find go into the edit."
         }
       ],
       "remaining_action": "Complete the revised archive plan and small-image layouts in J3454, then review the picture evidence",
@@ -313601,12 +313609,8 @@
       "taskKeys": [
         "WW2:006"
       ],
-      "hold": {
-        "type": "dependency",
-        "condition": "J3453 decision e59614b: picture approval withheld. Conservative archive baseline 257.920/1542.840s; two-thirds target retained. Await J3454 documentary-context plan, bounded official-source searches and all used small-image proofs, then decision on actual evidence. J3434 remains dependent. No assembly or blanket archive extension.",
-        "check_at": "2026-11-24T10:00:00Z"
-      },
-      "escalated_at": "2026-11-23T21:39Z"
+      "escalated_at": "2026-11-23T21:39Z",
+      "done_ref": "ww2#59"
     },
     {
       "id": "J3434",
@@ -316666,6 +316670,122 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3472",
+      "title": "WW2 film 007: topic check, packaging first, script and sources, to lock by 2026-12-01",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "**Why (Ben, Tue 24 Nov ~08:50 London, asking for the schedule: \"we're doing 3 or 4 videos a week on FOH ... what dates?\").** Films 3-6 are booked for Tue 1, Sat 5, Tue 8 and Sat 12 Dec (two a week, Tuesdays and Saturdays, 17:00 London). Nothing is written for after 12 December. This film's slot is **Tue 15 Dec 17:00**; its script must be locked by **2026-12-01 18:00** so it can be voiced after the ElevenLabs reset (30 Nov) and built in time.\n\n**Do, to the channel's rules (ww2-channel `studio/RULES.md` 1-6 and 12, `studio/LEARNINGS.md`, `00_Brand/PLAYBOOK.md`):**\n1. **Topic check** (reviewer rubric, AGENTS.md E): no near-duplicate on our channel; audience evidence (vidIQ search demand for the thing's name, a comparable video's views); enough US/UK official archive photographs to carry at least half the screen time (list 15 real candidates with IDs now). If the topic fails, say so and propose the next from `00_Brand/VIDEO_BACKLOG.json`.\n2. **Packaging first (rule 2):** three titles of 50 characters or fewer naming the thing viewers know (score them), three thumbnail ideas with one subject filling the frame at 168 px. Pick one title.\n3. **Script:** a story, not a list (rule 4); the first two minutes per rule 3 (a concrete moment by 0:30, the promise by 0:45, the story moving by 1:00, no detours, the title's answer kept for later); plain words, one figure at a time; length follows the story, at most 21,000 spoken characters (rule 9). `01_Script/SCRIPT.md`, `NARRATION_v01.txt`, `SOURCES.md` with every claim sourced.\n4. **Claims check** (Gemini, facts lane) and **Claude's viewer test of the first 300 words** (rule 6) before it is locked; then queue the voice-over for after the 30 Nov reset.\n5. One ww2-channel PR per stage; update the film's `status.json` stages as you go (nothing syncs them automatically).\n\n**Guards.** No voice credits spent before 30 Nov 10:50Z. £0.",
+      "ref": "",
+      "film": "WW2:007",
+      "stage": "script",
+      "after": "",
+      "eta_min": 240,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T09:09Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T09:09Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Check the topic, write the packaging first, then the script and sources",
+      "due": "2026-12-01T18:00:00Z",
+      "kind": "script"
+    },
+    {
+      "id": "J3473",
+      "title": "WW2 film 008: topic check, packaging first, script and sources, to lock by 2026-12-03",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "**Why (Ben, Tue 24 Nov ~08:50 London, asking for the schedule: \"we're doing 3 or 4 videos a week on FOH ... what dates?\").** Films 3-6 are booked for Tue 1, Sat 5, Tue 8 and Sat 12 Dec (two a week, Tuesdays and Saturdays, 17:00 London). Nothing is written for after 12 December. This film's slot is **Sat 19 Dec 17:00**; its script must be locked by **2026-12-03 18:00** so it can be voiced after the ElevenLabs reset (30 Nov) and built in time.\n\n**Do, to the channel's rules (ww2-channel `studio/RULES.md` 1-6 and 12, `studio/LEARNINGS.md`, `00_Brand/PLAYBOOK.md`):**\n1. **Topic check** (reviewer rubric, AGENTS.md E): no near-duplicate on our channel; audience evidence (vidIQ search demand for the thing's name, a comparable video's views); enough US/UK official archive photographs to carry at least half the screen time (list 15 real candidates with IDs now). If the topic fails, say so and propose the next from `00_Brand/VIDEO_BACKLOG.json`.\n2. **Packaging first (rule 2):** three titles of 50 characters or fewer naming the thing viewers know (score them), three thumbnail ideas with one subject filling the frame at 168 px. Pick one title.\n3. **Script:** a story, not a list (rule 4); the first two minutes per rule 3 (a concrete moment by 0:30, the promise by 0:45, the story moving by 1:00, no detours, the title's answer kept for later); plain words, one figure at a time; length follows the story, at most 21,000 spoken characters (rule 9). `01_Script/SCRIPT.md`, `NARRATION_v01.txt`, `SOURCES.md` with every claim sourced.\n4. **Claims check** (Gemini, facts lane) and **Claude's viewer test of the first 300 words** (rule 6) before it is locked; then queue the voice-over for after the 30 Nov reset.\n5. One ww2-channel PR per stage; update the film's `status.json` stages as you go (nothing syncs them automatically).\n\n**Guards.** No voice credits spent before 30 Nov 10:50Z. £0.",
+      "ref": "",
+      "film": "WW2:008",
+      "stage": "script",
+      "after": "",
+      "eta_min": 240,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T09:09Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T09:09Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Check the topic, write the packaging first, then the script and sources",
+      "due": "2026-12-03T18:00:00Z",
+      "kind": "script"
+    },
+    {
+      "id": "J3474",
+      "title": "WW2 film 009: topic check, packaging first, script and sources, to lock by 2026-12-06",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "**Why (Ben, Tue 24 Nov ~08:50 London, asking for the schedule: \"we're doing 3 or 4 videos a week on FOH ... what dates?\").** Films 3-6 are booked for Tue 1, Sat 5, Tue 8 and Sat 12 Dec (two a week, Tuesdays and Saturdays, 17:00 London). Nothing is written for after 12 December. This film's slot is **Tue 22 Dec 17:00**; its script must be locked by **2026-12-06 18:00** so it can be voiced after the ElevenLabs reset (30 Nov) and built in time.\n\n**Do, to the channel's rules (ww2-channel `studio/RULES.md` 1-6 and 12, `studio/LEARNINGS.md`, `00_Brand/PLAYBOOK.md`):**\n1. **Topic check** (reviewer rubric, AGENTS.md E): no near-duplicate on our channel; audience evidence (vidIQ search demand for the thing's name, a comparable video's views); enough US/UK official archive photographs to carry at least half the screen time (list 15 real candidates with IDs now). If the topic fails, say so and propose the next from `00_Brand/VIDEO_BACKLOG.json`.\n2. **Packaging first (rule 2):** three titles of 50 characters or fewer naming the thing viewers know (score them), three thumbnail ideas with one subject filling the frame at 168 px. Pick one title.\n3. **Script:** a story, not a list (rule 4); the first two minutes per rule 3 (a concrete moment by 0:30, the promise by 0:45, the story moving by 1:00, no detours, the title's answer kept for later); plain words, one figure at a time; length follows the story, at most 21,000 spoken characters (rule 9). `01_Script/SCRIPT.md`, `NARRATION_v01.txt`, `SOURCES.md` with every claim sourced.\n4. **Claims check** (Gemini, facts lane) and **Claude's viewer test of the first 300 words** (rule 6) before it is locked; then queue the voice-over for after the 30 Nov reset.\n5. One ww2-channel PR per stage; update the film's `status.json` stages as you go (nothing syncs them automatically).\n\n**Guards.** No voice credits spent before 30 Nov 10:50Z. £0.",
+      "ref": "",
+      "film": "WW2:009",
+      "stage": "script",
+      "after": "",
+      "eta_min": 240,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T09:09Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T09:09Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Check the topic, write the packaging first, then the script and sources",
+      "due": "2026-12-06T18:00:00Z",
+      "kind": "script"
+    },
+    {
+      "id": "J3475",
+      "title": "WW2 film 010: topic check, packaging first, script and sources, to lock by 2026-12-08",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "**Why (Ben, Tue 24 Nov ~08:50 London, asking for the schedule: \"we're doing 3 or 4 videos a week on FOH ... what dates?\").** Films 3-6 are booked for Tue 1, Sat 5, Tue 8 and Sat 12 Dec (two a week, Tuesdays and Saturdays, 17:00 London). Nothing is written for after 12 December. This film's slot is **Sat 26 Dec 17:00**; its script must be locked by **2026-12-08 18:00** so it can be voiced after the ElevenLabs reset (30 Nov) and built in time.\n\n**Do, to the channel's rules (ww2-channel `studio/RULES.md` 1-6 and 12, `studio/LEARNINGS.md`, `00_Brand/PLAYBOOK.md`):**\n1. **Topic check** (reviewer rubric, AGENTS.md E): no near-duplicate on our channel; audience evidence (vidIQ search demand for the thing's name, a comparable video's views); enough US/UK official archive photographs to carry at least half the screen time (list 15 real candidates with IDs now). If the topic fails, say so and propose the next from `00_Brand/VIDEO_BACKLOG.json`.\n2. **Packaging first (rule 2):** three titles of 50 characters or fewer naming the thing viewers know (score them), three thumbnail ideas with one subject filling the frame at 168 px. Pick one title.\n3. **Script:** a story, not a list (rule 4); the first two minutes per rule 3 (a concrete moment by 0:30, the promise by 0:45, the story moving by 1:00, no detours, the title's answer kept for later); plain words, one figure at a time; length follows the story, at most 21,000 spoken characters (rule 9). `01_Script/SCRIPT.md`, `NARRATION_v01.txt`, `SOURCES.md` with every claim sourced.\n4. **Claims check** (Gemini, facts lane) and **Claude's viewer test of the first 300 words** (rule 6) before it is locked; then queue the voice-over for after the 30 Nov reset.\n5. One ww2-channel PR per stage; update the film's `status.json` stages as you go (nothing syncs them automatically).\n\n**Guards.** No voice credits spent before 30 Nov 10:50Z. £0.",
+      "ref": "",
+      "film": "WW2:010",
+      "stage": "script",
+      "after": "",
+      "eta_min": 240,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T09:09Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T09:09Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Check the topic, write the packaging first, then the script and sources",
+      "due": "2026-12-08T18:00:00Z",
+      "kind": "script"
     }
   ],
   "focus": [
