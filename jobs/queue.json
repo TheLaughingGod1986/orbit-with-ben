@@ -228093,6 +228093,11 @@
           "at": "2026-11-24T01:11Z",
           "by": "relay",
           "what": "condition verification queued: J3456"
+        },
+        {
+          "at": "2026-11-24T01:23Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-24T07:15:00Z"
         }
       ],
       "remaining_action": "Check for the protected desk history exception, then prepare the controlled rewrite window",
@@ -228115,12 +228120,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "Chief accepts J3436 evidence merged in PR1217 (c94897f4c6). Explicit one-time Ben exception for irreversible protected HOS hos-desk history rewrite while retaining PR180 remains absent. Newer owner comments checked through OWB 7108000861; HOS unchanged through 7097318199. Grok ruling 7018109147 stands: retain hold and do not ask again. After authorization, resolve non-desk PRs, refresh backup and private rehearsal against current heads, give day-before notice and hold HOS writers before cutover. No live rewrite authorized.",
-        "check_at": "2026-11-24T02:11:54+00:00",
-        "last_recheck": "J3436",
-        "checked_at": "2026-11-23T17:05:27+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3456"
+        "condition": "Acting Chief accepts J3456 evidence in PR1227. Explicit one-time Ben exception for irreversible protected HOS hos-desk history rewrite while retaining PR180 is still absent. Fresh owner-comment check through OWB 7118936735 and unchanged HOS 7115742588 adds no exception; OWB219, HOS180 and HOS657 unchanged. Grok ruling 7018109147 stands: retain hold, do not ask again. After authorization resolve non-desk PRs, refresh backup and private rehearsal against current heads, give day-before notice and hold HOS writers before cutover. No live rewrite authorized.",
+        "check_at": "2026-11-24T07:15:00Z",
+        "last_recheck": "J3456",
+        "checked_at": "2026-11-24T01:23:59+00:00",
+        "checked_by": "codex"
       }
     },
     {
