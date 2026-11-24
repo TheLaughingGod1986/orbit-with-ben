@@ -327222,9 +327222,14 @@
           "at": "2026-11-24T19:20Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Read J3607 history, comment 7141216261, and state files: execution-0 is Gemini/J3612 (19:19:02Z), no execution-1 exists yet, Codex and Gemini are both UP"
+        },
+        {
+          "at": "2026-11-24T19:22Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Confirmed condition UNMET at 19:21:44Z: codex and gemini both UP, memory 3.520 GiB >= 3 GiB, yet only execution-0 (Gemini/J3612, PID 51574) is live and PID 51577 exited at 18:47:25Z. Root cause: spawn_second_slot() runs only once in main(), never inside run_locked() chain loop (PID 51574 on job 6/12)"
         }
       ],
-      "remaining_action": "Checking chief_relay logs, memory threshold, and why slot 1 did or did not open alongside slot 0",
+      "remaining_action": "Updating J3607 wait hold with exact unmet condition and root cause, then finishing J3612",
       "kind": "review",
       "recheck_of": "J3607",
       "mini_only": true,
@@ -327239,9 +327244,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-24T19:20Z",
+        "at": "2026-11-24T19:22Z",
         "by": "gemini",
         "plan": [
           "Read J3607 history and evidence",
@@ -327249,7 +327254,7 @@
           "Update J3607 and finish J3612",
           "Post verification report"
         ],
-        "note": "Read J3607 history, comment 7141216261, and state files: execution-0 is Gemini/J3612 (19:19:02Z), no execution-1 exists "
+        "note": "Confirmed condition UNMET at 19:21:44Z: codex and gemini both UP, memory 3.520 GiB >= 3 GiB, yet only execution-0 (Gemin"
       }
     }
   ],
