@@ -323217,11 +323217,24 @@
           "at": "2026-11-24T15:46Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T15:47Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Review HOS PR #753 + facts audit, confirm package & script lock, and merge on Chief PASS",
       "due": "2026-12-04T18:00:00Z",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
