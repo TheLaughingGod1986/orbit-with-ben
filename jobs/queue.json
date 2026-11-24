@@ -326881,10 +326881,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-24T18:51Z",
+      "eta": "2026-11-24T20:51Z",
       "created_by": "relay",
       "created_at": "2026-11-24T18:50Z",
       "result": "",
@@ -326898,6 +326898,11 @@
           "at": "2026-11-24T18:50Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred codex): Claude out of usage (Claude said it's out of usage until 2026-11-24T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: codex on gpt-6-astra"
+        },
+        {
+          "at": "2026-11-24T18:51Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Obtain explicit production-probe approval, verify the token, then notify Thursday and migrate Friday",
@@ -326912,7 +326917,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T18:51Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [

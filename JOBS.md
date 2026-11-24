@@ -133,7 +133,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3606 | mini | open | – | – | for claudecode · assembly · Publish final Mulberry Short records after the corrected cut is verified |  |
 | J3607 | mini | blocked | codex | – | assembly · Mini: pull PR #1285 and confirm the second slot really opens (two jobs at once) |  |
 | J3608 | mini | open | – | – | review · Verify condition for J3519 |  |
-| J3609 | mini | open | – | – | review · Verify condition for J3012 |  |
+| J3609 | mini | claimed | codex | 2026-11-24T20:51Z | review · Verify condition for J3012 |  |
 
 Recently finished:
 
