@@ -330731,9 +330731,14 @@
           "at": "2026-11-24T23:48Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-24T23:52Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Audited pilot 2 pool (14920883 is 3-panel montage, 26-G-1512 is surface cutter attack, 39602220 is flat profile); located official US Navy NARA 80-G-208280..208287 (U-848 under PB4Y Liberator air attack) and checking batch 2 candidates"
         }
       ],
-      "remaining_action": "Inspecting pilot 2 archive pool, provenance, and existing B/C/D thumbnails",
+      "remaining_action": "Selecting and verifying provenance of the best surfaced U-boat under air attack photo",
       "due": "2026-11-25T16:00:00Z",
       "kind": "thumb",
       "mini_only": true,
@@ -330746,16 +330751,17 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-24T23:48Z",
+        "at": "2026-11-24T23:52Z",
         "by": "gemini",
         "plan": [
           "Inspect pilot 2 pool, B/C/D thumbs and provenance",
           "Pick best cleared surfaced U-boat under air attack photo",
           "Build 1280x720 design E and 168px phone sheet beside B/C/D",
           "Verify visually, save to 11_Upload-Package and status.json, merge PR"
-        ]
+        ],
+        "note": "Audited pilot 2 pool (14920883 is 3-panel montage, 26-G-1512 is surface cutter attack, 39602220 is flat profile); locate"
       },
       "taskKeys": [
         "WW2:002"
