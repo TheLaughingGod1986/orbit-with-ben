@@ -330813,10 +330813,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 40,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-24T23:58Z",
+      "eta": "2026-11-25T00:38Z",
       "created_by": "claude",
       "created_at": "2026-11-24T23:19Z",
       "result": "",
@@ -330825,6 +330825,11 @@
           "at": "2026-11-24T23:19Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T23:58Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Upload the approved Short privately, schedule Thu 12:00, link pilot 1",
@@ -330834,7 +330839,15 @@
       "delivers": [
         "WW2:001-S1"
       ],
-      "urgent": 14
+      "urgent": 14,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T23:58Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3647",
