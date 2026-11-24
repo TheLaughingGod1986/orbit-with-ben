@@ -91,7 +91,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3521 | mini | open | – | – | assembly · Mini: apply and verify today's reliability changes (new chain, second slot, reset times, board deploy) |  |
 | J3522 | mini | open | – | – | review · History of Science rules: Chief chain is now Claude, Codex, Gemini, then Grok Bot; Cursor last |  |
 | J3523 | any | open | – | – | 012 sources · facts · WW2 film 012: independent Gemini claims check on SCRIPT.md and SOURCES.md (PR #76) | ww2-channel#76 |
-| J3524 | cloud | open (after J3523) | – | – | 012 script · review · WW2 film 012: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO | ww2-channel#76 |
+| J3524 | mini | open (after J3523) | – | – | 012 script · review · WW2 film 012: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO | ww2-channel#76 |
 | J3525 | any | open | – | – | 013 sources · facts · WW2 film 013: independent Gemini claims check on SCRIPT.md and SOURCES.md (PR #77) | ww2-channel#77 |
 | J3526 | cloud | open (after J3525) | – | – | 013 script · review · WW2 film 013: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO | ww2-channel#77 |
 | J3527 | mini | open | – | – | review · Verify condition for J3125 |  |

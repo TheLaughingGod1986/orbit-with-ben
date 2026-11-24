@@ -320466,7 +320466,7 @@
     {
       "id": "J3524",
       "title": "WW2 film 012: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO",
-      "needs": "cloud",
+      "needs": "mini",
       "repo": "ww2",
       "body": "Claude Rule-6 viewer test of the first 300 words and `AGENTS.md` Rule E topic/packaging/script lock for Field Order History film `WW2:012` (*How America Built a Liberty Ship in Four Days*), drafted in `ww2-channel` PR #76 (branch `macbook/J3483`, commit `7e941ca`), after the independent Gemini `facts`-lane claims check passes.\n\n**Do (`ww2-channel/studio/RULES.md` rules 1–6, 9 & 12; script lock due `2026-12-09 18:00 UTC` for Tue 22 Dec 2026 17:00 London slot):**\n1. Perform **Claude's viewer test of the first 300 words** of `01_Script/NARRATION_v01.txt` (`18,005` spoken chars `<= 21,000` Rule-9 cap, `2,816` words, Cold Open `113` words `~50.2s`, concrete moment `~22.2s`, promise `~40.0s`, SHA-256 `ea490cc8432f21593b2c4a4bd6017c0dc4c24e38739447fe41818084173b1985`) as a stranger would: concrete moment by 0:30, promise by 0:45, main story moving by 1:00, no detours, title's answer withheld, one figure at a time.\n2. Confirm per-keyword vidIQ search volume for `\"liberty ship\"` / `\"liberty ships\"`, fold in Pilot 2's (`qfc6EBStOfo`, airs Tue 24 Nov 17:00 London) 48h and 7d Studio numbers plus any resulting `studio/LEARNINGS.md` / `studio/RULES.md` Rule-12 updates, review `TOPIC_REVIEW.md` (GO recommendation, 32 verified US/UK official PD archive photo IDs, picked Rule-2 title `How America Built a Liberty Ship in Four Days` at `45` chars `95/100`, 3 close-crop launch Test & Compare thumbnail concepts), and record the Rule E topic verdict.\n3. Verify the independent Gemini claims check is clean and `NARRATION_v01.txt` remains `<= 21,000` spoken characters (or 35–45 min only if Ben has upgraded ElevenLabs).\n4. Lock topic and script (or return exact fixes), update `status.json` in a `ww2-channel` PR, and queue the ElevenLabs voice-over job strictly for **after the ElevenLabs reset (`2026-11-30 10:50Z`)**.\n\n**Guards:** Zero ElevenLabs voice credits spent before `2026-11-30 10:50Z`. £0 spend.\n",
       "ref": "ww2-channel#76",
@@ -320486,12 +320486,25 @@
           "at": "2026-11-24T12:03Z",
           "by": "macbook",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T12:08Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "WW2 film 012: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO",
       "due": "2026-12-09T18:00:00Z",
       "kind": "review",
-      "plain": "Viewer test of first 300 words, Pilot 2 learnings check, Rule E topic and script lock for WW2 film 012 (Liberty Ships)"
+      "plain": "Viewer test of first 300 words, Pilot 2 learnings check, Rule E topic and script lock for WW2 film 012 (Liberty Ships)",
+      "rerouted_from": {
+        "needs": "cloud",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3525",
