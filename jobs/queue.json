@@ -320386,9 +320386,14 @@
           "at": "2026-11-24T21:03Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Verified primary institutional sources (Smithsonian NASM, NASA GRC, NPS) and 0 collisions on verbatim plan title"
+        },
+        {
+          "at": "2026-11-24T21:08Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Drafted PACKAGE_FIRST_SCORING_v01.md, LAUNCH_PLAN.md, SOURCES.md, FACT_NOTES_v01.md, wright_brothers_wind_tunnel_script_master_v01.md, and SHORTS_SCRIPTS_v01.md"
         }
       ],
-      "remaining_action": "Writing package-first scoring, LAUNCH_PLAN, and updated PRE_BUILD_VIDIQ_AUDIT",
+      "remaining_action": "Running review:script, gate:episode, and marker/timing checks on v01 draft",
       "due": "2026-12-02T18:00:00Z",
       "kind": "script",
       "plain": "Choose package-first title/thumbnail ideas and draft the 7-9 minute script for HOS 127 (Wright Brothers)",
@@ -320401,9 +320406,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-24T21:03Z",
+        "at": "2026-11-24T21:08Z",
         "by": "gemini",
         "plan": [
           "Inspect J3264 branch and sibling drafts",
@@ -320412,7 +320417,7 @@
           "Run review:script, gate:episode, and CI checks",
           "Commit, open PR, queue review/facts, and report"
         ],
-        "note": "Verified primary institutional sources (Smithsonian NASM, NASA GRC, NPS) and 0 collisions on verbatim plan title"
+        "note": "Drafted PACKAGE_FIRST_SCORING_v01.md, LAUNCH_PLAN.md, SOURCES.md, FACT_NOTES_v01.md, wright_brothers_wind_tunnel_script_"
       },
       "taskKeys": [
         "HOS:127"
