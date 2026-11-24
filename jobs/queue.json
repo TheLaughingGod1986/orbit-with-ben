@@ -319145,9 +319145,14 @@
           "at": "2026-11-24T11:01Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T11:02Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Upload the Titan Short you approved into the next free slot",
+      "remaining_action": "Verify the approved Titan Short and its upload slot",
       "due": "2026-11-25T12:00:00Z",
       "kind": "studio",
       "plain": "Upload the Titan Short you approved into the next free slot",
@@ -319177,11 +319182,17 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-24T11:01Z",
+        "at": "2026-11-24T11:02Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify approved cut and schedule",
+          "Prepare and upload package",
+          "Verify and record result"
+        ]
+      },
+      "taskKeys": [
+        "OWB:032"
+      ]
     },
     {
       "id": "J3509",
