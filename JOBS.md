@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J2529, J3430, J3431, J3432, J3434, J3496, J3501, J3519, J3500, J3205.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J2529, J3430, J3431, J3432, J3434, J3496, J3501, J3519, J3500, J3205, J3521.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -100,6 +100,8 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3518 | mini | open | – | – | review · Verify condition for J3509 |  |
 | J3519 | mini | open | – | – | assembly · History of Science: repair the publishing runtime on the Mini (Prisma client) so uploads run |  |
 | J3520 | any | open | – | – | 064 script · review · OWB 064 Every Planet: read and lock the script (Claude), or write its fix list |  |
+| J3521 | mini | open | – | – | assembly · Mini: apply and verify today's reliability changes (new chain, second slot, reset times, board deploy) |  |
+| J3522 | any | open | – | – | review · History of Science rules: Chief chain is now Claude, Codex, Gemini, then Grok Bot; Cursor last |  |
 
 Recently finished:
 

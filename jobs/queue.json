@@ -1,5 +1,5 @@
 {
-  "next_id": 3521,
+  "next_id": 3523,
   "jobs": [
     {
       "id": "J0001",
@@ -320170,6 +320170,66 @@
       ],
       "remaining_action": "Read the 064 script against its sources and the rules, then lock it or list fixes",
       "due": "2026-11-25T18:00:00Z",
+      "kind": "review"
+    },
+    {
+      "id": "J3521",
+      "title": "Mini: apply and verify today's reliability changes (new chain, second slot, reset times, board deploy)",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Why (Ben, Tue 24 Nov ~11:20 London, in chat: \"Cursor and Grokbot are tied up in the X subscription ... £20 a month ... Gemini, we have a lot of usage ... Claude, we have a lot of usage ... Codex, we're on the £90 a month plan ... please go ahead and make all the changes you recommended\".)** Merged today: PR #1246 (routing: Claude, Claude Code, Gemini and Codex first; Cursor and Grok Bot last; Chief chain Claude -> Codex -> Gemini -> Grok Bot on both channels) and, once green, PR #1248 (second Mini slot counts reclaimable memory; a worker is marked down until the reset it prints; the heartbeat carries every worker's state for the forecast; the board's run order follows the scheduler; longer recheck backoff; the Overview \"Stuck\" panel). PR #1245 (Ben's OKs become upload jobs) is merged too.\n\n**Do on the Mini (due today 18:00 London):**\n1. Pull main and restart the relay runner so it runs the new code (check `chief_relay.py status`: runner version equals installed).\n2. **Environment:** report whether `CHIEF_CHAIN`, `CHIEF_CHAIN_HOS` (or any `CHIEF_CHAIN_*`), `CHIEF_PARALLEL` or `CHIEF_SLOT_MIN_GB` are set in the relay's launchd environment. Unset any chain override so the new default applies; `CHIEF_PARALLEL` should be 2 (or unset). Never print a secret.\n3. **Slots:** run `vm_stat` and `python3 -c \"import sys; sys.path.insert(0,'scripts'); import chief_relay as c; print(c.free_memory_bytes()/2**30)\"`; confirm the second slot opens when two jobs for different workers are ready (heartbeat or log line), or say what still stops it.\n4. **Cursor:** confirm its down mark now runs to its stated reset (about Thu 26 Nov 11:00 UTC) and that `chief_relay.py status` shows Claude, Codex, Gemini, Grok Bot in that order.\n5. **Board:** after PR #1248 merges, `python3 05_Analytics/kanban/board_site/build.py` and the Pages deploy (`npx wrangler pages deploy dist --project-name studio-kanban`); check the Overview shows the Stuck panel and the Agents tab no longer counts Cursor as available.\nOne thread line with what was found and changed. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 40,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T11:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T11:55Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Restart the relay on the new code, check its settings and slots, deploy the board",
+      "due": "2026-11-24T18:00:00Z",
+      "kind": "assembly",
+      "mini_only": true,
+      "urgent": 12
+    },
+    {
+      "id": "J3522",
+      "title": "History of Science rules: Chief chain is now Claude, Codex, Gemini, then Grok Bot; Cursor last",
+      "needs": "any",
+      "repo": "hos",
+      "body": "**Why (Ben, Tue 24 Nov ~11:20 London, in chat: \"Cursor and Grokbot are tied up in the X subscription ... £20 a month ... Gemini, we have a lot of usage ... Claude, we have a lot of usage ... Codex, we're on the £90 a month plan ... please go ahead and make all the changes you recommended\".)** orbit-with-ben PR #1246 made the Chief chain Claude -> Codex -> Gemini -> Grok Bot for History of Science too (its 11 Nov Grok-first chain ends) and put Cursor last in every job chain. The History of Science rule files still say \"Chief for History of Science is Grok\".\n\n**Do (history-of-science repo; due Thu 26 Nov 18:00):** update the lines that name the HOS Chief and the worker order (AGENTS.md, studio/RULES.md, the desk notes that describe roles) to the 24 Nov order, quoting Ben, and re-sync any copies with `scripts/sync_rules.py`. Keep the desk (PR #180) open; no history rewrite. One PR, merged when green. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 40,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T11:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T11:55Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Update the HOS rule files to the 24 Nov Chief and worker order",
+      "due": "2026-11-26T18:00:00Z",
       "kind": "review"
     }
   ],
