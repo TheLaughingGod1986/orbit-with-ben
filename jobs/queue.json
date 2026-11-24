@@ -317163,16 +317163,21 @@
           "at": "2026-11-24T09:54Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Completed independent primary/official-source audit of all 69 claims (C01-C69) and all 3 flagged items (C10 Churchill 'bloody fool', C39 21 lb dry ice verified, C59 1st Parachute Div error + Greece 1->8 vs Balkans 8->18 scope). Found 60 PASS and 9 FLAG pre-lock fixes (C05, C10, C13, C14, C40, C50, C57, C59, C63). Confirmed NARRATION_v01.txt parity (38/38 paras, 18,747 spoken chars <= 21,000, SHA-256 matched)."
+        },
+        {
+          "at": "2026-11-24T09:58Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Wrote 01_Script/CLAIMS_CHECK.md and updated status.json; opened ww2-channel PR #67 (commit f366de5) stacked on PR #61."
         }
       ],
-      "remaining_action": "Writing 01_Script/CLAIMS_CHECK.md and updating status.json in a clean ww2-channel worktree",
+      "remaining_action": "Posting studio thread report and closing J3476",
       "due": "2026-11-27T18:00:00Z",
       "kind": "facts",
       "plain": "Check every fact, date and number in WW2 film 008 Operation Mincemeat before script lock",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-24T09:54Z",
+        "at": "2026-11-24T09:58Z",
         "by": "gemini",
         "plan": [
           "Inspect PR #61 script and sources",
@@ -317180,7 +317185,7 @@
           "Write CLAIMS_CHECK.md and update status.json",
           "Open ww2-channel PR and report"
         ],
-        "note": "Completed independent primary/official-source audit of all 69 claims (C01-C69) and all 3 flagged items (C10 Churchill 'b"
+        "note": "Wrote 01_Script/CLAIMS_CHECK.md and updated status.json; opened ww2-channel PR #67 (commit f366de5) stacked on PR #61."
       },
       "taskKeys": [
         "WW2:008"
