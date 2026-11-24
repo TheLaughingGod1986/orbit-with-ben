@@ -320499,20 +320499,29 @@
           "at": "2026-11-24T12:30Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T12:31Z",
+          "by": "codex",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Restart the relay on the new code, check its settings and slots, deploy the board",
+      "remaining_action": "Checking the relay settings and installed changes",
       "due": "2026-11-24T18:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "urgent": 12,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-24T12:30Z",
+        "of": 4,
+        "at": "2026-11-24T12:31Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Check runtime and environment",
+          "Apply reliability settings",
+          "Verify slots and reset times",
+          "Deploy and verify board"
+        ]
       }
     },
     {
