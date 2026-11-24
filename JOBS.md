@@ -125,7 +125,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3593 | mini | blocked | gemini | – | review · Verify condition for J3417 |  |
 | J3597 | any | blocked | codex | – | chief · Review corrected J3591 autopsy PRs after J3596 |  |
 | J3598 | any | open (after J3596) | – | – | chief · Review J3596 corrections and finish held J3591 autopsy |  |
-| J3600 | mini | blocked | macbook | – | review · Verify condition for J3431 |  |
+| J3600 | mini | open | – | – | review · Verify condition for J3431 |  |
 | J3602 | mini | open (after J3601) | – | – | review · `gemini-argon` · Retention autopsy (48h): "What If Earth Stopped Spinning? (It's Already Slowing Down)" (6bbbvfCx6zY) |  |
 | J3605 | mini | blocked | codex | – | WW2:001 upload · studio · WW2 pilot 1: seven-day outcome after searched-name title change |  |
 | J3606 | mini | open | – | – | for claudecode · assembly · Publish final Mulberry Short records after the corrected cut is verified |  |
