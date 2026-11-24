@@ -320463,10 +320463,10 @@
       "stage": "",
       "after": "",
       "eta_min": 40,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-24T12:17Z",
+      "eta": "2026-11-24T12:57Z",
       "created_by": "claude",
       "created_at": "2026-11-24T11:55Z",
       "result": "",
@@ -320480,6 +320480,11 @@
           "at": "2026-11-24T11:56Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
+        },
+        {
+          "at": "2026-11-24T12:17Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Update the HOS rule files to the 24 Nov Chief and worker order",
@@ -320492,7 +320497,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T12:17Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3523",

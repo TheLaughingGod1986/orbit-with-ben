@@ -89,7 +89,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3519 | mini | open | – | – | assembly · History of Science: repair the publishing runtime on the Mini (Prisma client) so uploads run |  |
 | J3520 | mini | blocked | macbook | – | 064 script · review · OWB 064 Every Planet: read and lock the script (Claude), or write its fix list |  |
 | J3521 | mini | open | – | – | assembly · Mini: apply and verify today's reliability changes (new chain, second slot, reset times, board deploy) |  |
-| J3522 | mini | open | – | – | review · History of Science rules: Chief chain is now Claude, Codex, Gemini, then Grok Bot; Cursor last |  |
+| J3522 | mini | claimed | macbook | 2026-11-24T12:57Z | review · History of Science rules: Chief chain is now Claude, Codex, Gemini, then Grok Bot; Cursor last |  |
 | J3523 | any | open | – | – | 012 sources · facts · WW2 film 012: independent Gemini claims check on SCRIPT.md and SOURCES.md (PR #76) | ww2-channel#76 |
 | J3524 | mini | open (after J3523) | – | – | 012 script · review · WW2 film 012: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO | ww2-channel#76 |
 | J3525 | any | open | – | – | 013 sources · facts · WW2 film 013: independent Gemini claims check on SCRIPT.md and SOURCES.md (PR #77) | ww2-channel#77 |
