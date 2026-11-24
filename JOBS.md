@@ -131,7 +131,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3610 | mini | open | – | – | 010 upload · studio · Schedule HOS 010 bird Short after its long is confirmed | J3511 |
 | J3611 | mini | open | – | – | 010 upload · studio · HOS 010 Short A: schedule only after actual long readiness and finish Studio checks | J3512 |
 | J3615 | mini | open | – | – | assembly · Relay: restore a free second slot when a worker returns during a job chain |  |
-| J3616 | mini | open | – | – | review · Verify condition for J3602 |  |
+| J3616 | mini | claimed | codex | 2026-11-24T22:52Z | review · Verify condition for J3602 |  |
 | J3617 | any | open | – | – | assembly · Keep merge reviews visible after completed predecessors |  |
 | J3618 | mini | open (after J3602) | – | – | 027 upload · studio · OWB 027: verify Earth spin series playlist membership |  |
 
