@@ -91390,16 +91390,21 @@
           "at": "2026-11-24T12:01Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Fresh Mini Studio CDP 9223 verified UC_esArsDKd3GJvOkeO0DUog, 6bbbvfCx6zY Public, and OVLv9dxTcpE Related='What If Earth Stopped Spinning? (It's Already Slowing Down)' with description untouched at 560 bytes (sha256 016c8427)"
+        },
+        {
+          "at": "2026-11-24T12:02Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Applied OVLv9dxTcpE description prepend via YouTube Data API (redescribe-videos.ts); API readback confirmed 665 bytes (sha256 1c3c392a), title/privacy/tags/6bbbvfCx6zY unchanged; running Studio reload readback"
         }
       ],
       "kind": "studio",
-      "remaining_action": "Run dry-run and apply description prepend on OVLv9dxTcpE via YouTube Data API, then read back API and Mini Studio",
+      "remaining_action": "Sync local 027 Short PACKAGE_MANIFEST.json and save J0996 readback in a clean git worktree",
       "escalated_at": "2026-11-23T01:27Z",
       "mini_only": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-24T12:01Z",
+        "at": "2026-11-24T12:02Z",
         "by": "gemini",
         "plan": [
           "Check J0317 & live OWB/YouTube state",
@@ -91408,7 +91413,7 @@
           "Sync local 027 Short package & commit via worktree",
           "Post thread report & finish J0996"
         ],
-        "note": "Fresh Mini Studio CDP 9223 verified UC_esArsDKd3GJvOkeO0DUog, 6bbbvfCx6zY Public, and OVLv9dxTcpE Related='What If Earth"
+        "note": "Applied OVLv9dxTcpE description prepend via YouTube Data API (redescribe-videos.ts); API readback confirmed 665 bytes (s"
       },
       "taskKeys": [
         "OWB:027"
