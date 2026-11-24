@@ -326769,23 +326769,29 @@
           "at": "2026-11-24T18:48Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-24T18:49Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: All three checkouts are current. Loaded runner and installed version both 253c7fe66b787b2f; slot 1 runner already started, so no restart of active work is needed."
         }
       ],
-      "remaining_action": "Checking the installed relay and evidence of two simultaneous workers",
+      "remaining_action": "Checking why the spawned second runner has no execution lease",
       "due": "2026-11-24T21:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "urgent": 11,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-24T18:48Z",
+        "at": "2026-11-24T18:49Z",
         "by": "codex",
         "plan": [
           "Check installed runner",
           "Verify two live slots",
           "Record outcome"
-        ]
+        ],
+        "note": "All three checkouts are current. Loaded runner and installed version both 253c7fe66b787b2f; slot 1 runner already starte"
       }
     },
     {
