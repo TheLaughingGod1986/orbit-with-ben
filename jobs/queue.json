@@ -322999,13 +322999,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 150,
-      "status": "claimed",
+      "status": "blocked",
       "by": "codex",
       "since": "2026-11-24T17:51Z",
-      "eta": "2026-11-24T20:21Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T14:28Z",
-      "result": "",
+      "result": "Finished cut awaits exact review J3599 and completed-record publishing via Claude Code under the prior refused-push handoff. Review can proceed now; Ben watch deadline 25 Nov 20:00 UTC, planned air 26 Nov 12:00 London after his OK. No upload or schedule yet.",
       "history": [
         {
           "at": "2026-11-24T14:28Z",
@@ -323066,6 +323066,11 @@
           "at": "2026-11-24T18:01Z",
           "by": "codex",
           "what": "step 3 of 3 done: Finished cut and evidence saved with matching NAS checksums; private board watch copy uploaded; exact review queued immediately as J3599. Records committed locally on codex/J3542 e43f0d3 and credit ledger c3129faa3e. No YouTube changes."
+        },
+        {
+          "at": "2026-11-24T18:01Z",
+          "by": "codex",
+          "what": "blocked: Finished cut awaits exact review J3599 and completed-record publishing via Claude Code under the prior refused-push handoff. Review can proceed now; Ben watch deadline 25 Nov 20:00 UTC, planned air 26 Nov 12:00 London after his OK. No upload or schedule yet."
         }
       ],
       "remaining_action": "Review the finished Short in J3599, publish its records and place the approved cut on Ben watch",
@@ -323087,6 +323092,11 @@
           "Verify and prepare Ben watch"
         ],
         "note": "Finished cut and evidence saved with matching NAS checksums; private board watch copy uploaded; exact review queued imme"
+      },
+      "hold": {
+        "type": "input",
+        "condition": "Finished cut awaits exact review J3599 and completed-record publishing via Claude Code under the prior refused-push handoff. Review can proceed now; Ben watch deadline 25 Nov 20:00 UTC, planned air 26 Nov 12:00 London after his OK. No upload or schedule yet.",
+        "check_at": "2026-11-25T00:01:18+00:00"
       }
     },
     {
