@@ -96,7 +96,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3530 | mini | open | – | – | for claudecode · assembly · Claude Code: publish Codex's finished work it could not push (Pluto thumbnails first), after a privacy check |  |
 | J3532 | mini | blocked | claude | – | for claudecode · assembly · History of Science: history rewrite window Mon 30 Nov 08:00 London (Ben's one-time exception), by the J2537 runbook |  |
 | J3534 | mini | open | – | – | review · Verify condition for J3307 |  |
-| J3535 | mini | open | – | – | review · Verify condition for J3510 |  |
+| J3535 | mini | claimed | gemini | 2026-11-24T15:12Z | review · Verify condition for J3510 |  |
 
 Recently finished:
 
