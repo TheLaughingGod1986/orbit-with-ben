@@ -325626,9 +325626,14 @@
           "at": "2026-11-24T17:39Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Starting read-only verification for J3417 (WW2 pilot 2 qfc6EBStOfo / J9WGu8aPnHI)."
+        },
+        {
+          "at": "2026-11-24T17:40Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Reviewed J3417/J3466/status.json/THUMBNAIL_TEST_v06.json and verified public oEmbed (qfc6EBStOfo=200, J9WGu8aPnHI=403)."
         }
       ],
-      "remaining_action": "Verify live Public status and Running B/C/D test on qfc6EBStOfo and retired Private status on J9WGu8aPnHI for J3417",
+      "remaining_action": "Verify live YouTube API and Studio 9224 state of qfc6EBStOfo, J9WGu8aPnHI, and ek9F61FVYqY",
       "kind": "review",
       "recheck_of": "J3417",
       "mini_only": true,
@@ -325643,16 +325648,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-24T17:39Z",
+        "at": "2026-11-24T17:40Z",
         "by": "gemini",
         "plan": [
           "Review J3417 history and approvals",
           "Verify live YouTube/Studio state of qfc6EBStOfo and J9WGu8aPnHI",
           "Write evidence PR, park for Chief, and report"
         ],
-        "note": "Starting read-only verification for J3417 (WW2 pilot 2 qfc6EBStOfo / J9WGu8aPnHI)."
+        "note": "Reviewed J3417/J3466/status.json/THUMBNAIL_TEST_v06.json and verified public oEmbed (qfc6EBStOfo=200, J9WGu8aPnHI=403)."
       },
       "taskKeys": [
         "WW2:002"
