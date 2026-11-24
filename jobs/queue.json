@@ -322219,9 +322219,14 @@
           "at": "2026-11-24T14:36Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T14:38Z",
+          "by": "macbook",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Verify the corrected planet script against its sources and decide whether it is ready to record",
+      "remaining_action": "Verify corrected script sources and evidence",
       "due": "2026-11-25T18:00:00Z",
       "kind": "review",
       "plain": "Check the corrected planet script before recording",
@@ -322235,11 +322240,15 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-24T14:36Z",
+        "of": 4,
+        "at": "2026-11-24T14:38Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read corrected script",
+          "Verify primary sources",
+          "Check gates and teaching notes",
+          "Publish review and handoff"
+        ]
       }
     },
     {
