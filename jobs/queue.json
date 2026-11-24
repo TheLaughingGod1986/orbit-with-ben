@@ -325620,19 +325620,29 @@
           "at": "2026-11-24T23:22Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T23:24Z",
+          "by": "macbook",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Cut locked 004 narration (07:18.988-07:34.648 + 07:49.728-08:19.628), assemble 1080x1920 vertical Short, and put on Ben watch",
+      "remaining_action": "Verify locked VO segments, archive photos, and net schematic for WW2 004-S1",
       "due": "2026-11-28T18:00:00Z",
       "kind": "assembly",
       "plain": "Build the first Mark 14 torpedo Short about firing torpedoes into nets to prove they ran 10 feet too deep",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-24T23:22Z",
+        "of": 5,
+        "at": "2026-11-24T23:24Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Verify VO and archive inputs",
+          "Build 9:16 Short 004-S1 cut",
+          "Run technical and still QA",
+          "Copy verified cut to NAS and open PR",
+          "Finish job and post report"
+        ]
       }
     },
     {
