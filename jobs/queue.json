@@ -329392,9 +329392,14 @@
           "at": "2026-11-24T22:14Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T22:15Z",
+          "by": "codex",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Inspect original sources and correct unsupported narration details",
+      "remaining_action": "Checking original sources for the Operation Pedestal script",
       "due": "2026-11-25T18:00:00Z",
       "kind": "script",
       "plain": "Resolve the remaining evidence gaps in the Operation Pedestal narration",
@@ -329408,12 +329413,19 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-24T22:14Z",
+        "of": 4,
+        "at": "2026-11-24T22:15Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read evidence gaps",
+          "Check original sources",
+          "Correct narration and verify",
+          "Publish changes and queue recheck"
+        ]
+      },
+      "taskKeys": [
+        "WW2:009"
+      ]
     }
   ],
   "focus": [
