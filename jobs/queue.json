@@ -320161,7 +320161,7 @@
     {
       "id": "J3520",
       "title": "OWB 064 Every Planet: read and lock the script (Claude), or write its fix list",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "**Why (Ben, Tue 24 Nov ~11:20 London, in chat: \"please go ahead and make all the changes you recommended ... anything else you think that we can do to optimize and make this more efficient, let's go ahead and get it done.\" Claude, acting as Chief (top of the chain since PR #1246), clearing the blocked pile (48 blocked on 24 Nov).)** Orbit's Every Planet film (064) is one of December's three format tests (airs **Wed 16 Dec**). Its script has sat parked for 6 days waiting for a Claude/Chief lock (J3020): master v01, 93.1/100 PASS, 1,246 spoken words, 16-row live-verified SOURCES.md, Gemini quote pass and Claude quote check, committed in 3b9f165c43. Its voice (J3021), pictures (J3022) and edit (J3023) wait behind it.\n\n**Do (Claude; due Wed 25 Nov 18:00 UTC):** read the 064 script master v01 against its SOURCES.md, the Orbit rules (`studio/RULES.md`, `05_Analytics/LEARNINGS.md`, December format-test brief) and the quote checks. If it holds: record the lock on the thread (\"Claude: 064 script v01 locked, <reason>\") and finish J3020 as done with that lock, which releases J3021 (voice). If it needs changes: write the exact line fixes as a FIX list on J3020 and reopen it for the writer. £0.",
       "ref": "",
@@ -320181,11 +320181,24 @@
           "at": "2026-11-24T11:54Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T11:56Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Read the 064 script against its sources and the rules, then lock it or list fixes",
       "due": "2026-11-25T18:00:00Z",
-      "kind": "review"
+      "kind": "review",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3521",

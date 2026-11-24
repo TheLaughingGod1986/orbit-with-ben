@@ -96,7 +96,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3514 | mini | open | – | – | review · Verify condition for J3444 |  |
 | J3517 | mini | open (after J3494) | – | – | WW2:010 vo · vo · WW2 film 010: narration in Ben's voice (Hobart's Funnies, post-reset) |  |
 | J3519 | mini | open | – | – | assembly · History of Science: repair the publishing runtime on the Mini (Prisma client) so uploads run |  |
-| J3520 | any | open | – | – | 064 script · review · OWB 064 Every Planet: read and lock the script (Claude), or write its fix list |  |
+| J3520 | mini | open | – | – | 064 script · review · OWB 064 Every Planet: read and lock the script (Claude), or write its fix list |  |
 | J3521 | mini | open | – | – | assembly · Mini: apply and verify today's reliability changes (new chain, second slot, reset times, board deploy) |  |
 | J3522 | any | open | – | – | review · History of Science rules: Chief chain is now Claude, Codex, Gemini, then Grok Bot; Cursor last |  |
 
