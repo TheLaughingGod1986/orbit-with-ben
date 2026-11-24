@@ -1,5 +1,5 @@
 {
-  "next_id": 3587,
+  "next_id": 3590,
   "jobs": [
     {
       "id": "J0001",
@@ -290017,6 +290017,11 @@
           "at": "2026-11-24T17:02Z",
           "by": "codex",
           "what": "blocked: publish via Claude Code: /Volumes/MiniWork/scratch/J3205-mini codex/J3205-mini; checkpoint bc431ff, handoff v16. Automatic approval review rejected Codex push of internal edit plans/evidence to an unverified remote. Claude Code must review full diff for privacy and publish under the standing handoff rule. Then resume archive clearance, 21 graphic allocations, full assembly, three covers and QA; no finished film."
+        },
+        {
+          "at": "2026-11-24T17:03Z",
+          "by": "relay",
+          "what": "condition verification queued: J3587"
         }
       ],
       "remaining_action": "Publish the verified checkpoint through Claude Code, then clear archives and assemble the film",
@@ -290052,7 +290057,8 @@
       "hold": {
         "type": "dependency",
         "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/J3205-mini codex/J3205-mini; checkpoint bc431ff, handoff v16. Automatic approval review rejected Codex push of internal edit plans/evidence to an unverified remote. Claude Code must review full diff for privacy and publish under the standing handoff rule. Then resume archive clearance, 21 graphic allocations, full assembly, three covers and QA; no finished film.",
-        "check_at": "2026-11-24T23:02:43+00:00"
+        "check_at": "2026-11-24T18:03:15+00:00",
+        "recheck_task": "J3587"
       }
     },
     {
@@ -307776,6 +307782,11 @@
           "at": "2026-11-23T08:48Z",
           "by": "claude",
           "what": "J3411 changes the thumbnail today (Ben: 641 impressions at 0.8%). At the 48-hour read, compare click-through before and after the change time recorded by J3411, not the whole 48 hours."
+        },
+        {
+          "at": "2026-11-24T17:03Z",
+          "by": "relay",
+          "what": "condition verification queued: J3588"
         }
       ],
       "remaining_action": "At Tuesday 17:00, read performance and apply the approved archive-only thumbnail fallback if needed",
@@ -307793,7 +307804,8 @@
       "hold": {
         "type": "date",
         "condition": "48-hour measurement window for ek9F61FVYqY opens 2026-11-24T17:00:00Z; verify actual launch time and collect Studio impressions and CTR then.",
-        "check_at": "2026-11-24T17:00:00Z"
+        "check_at": "2026-11-24T18:03:15+00:00",
+        "recheck_task": "J3588"
       }
     },
     {
@@ -325042,6 +325054,102 @@
       "kind": "vo",
       "plain": "Record Ben's voice narration for WW2 film 014 (Dambusters) after the 30 Nov ElevenLabs reset and Pilot 2 check",
       "mini_only": true
+    },
+    {
+      "id": "J3587",
+      "title": "Verify condition for J3205",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3205: publish via Claude Code: /Volumes/MiniWork/scratch/J3205-mini codex/J3205-mini; checkpoint bc431ff, handoff v16. Automatic approval review rejected Codex push of internal edit plans/evidence to an unverified remote. Claude Code must review full diff for privacy and publish under the standing handoff rule. Then resume archive clearance, 21 graphic allocations, full assembly, three covers and QA; no finished film.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3205 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-24T17:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T17:03Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Publish the verified checkpoint through Claude Code, then clear archives and assemble the film",
+      "kind": "review",
+      "recheck_of": "J3205",
+      "due": "2026-11-24T18:03:15+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3588",
+      "title": "Verify condition for J3369",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3369: 48-hour measurement window for ek9F61FVYqY opens 2026-11-24T17:00:00Z; verify actual launch time and collect Studio impressions and CTR then.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3369 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-24T17:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T17:03Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: At Tuesday 17:00, read performance and apply the approved archive-only thumbnail fallback if needed",
+      "kind": "review",
+      "recheck_of": "J3369",
+      "due": "2026-11-24T18:00:00+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3589",
+      "title": "Chief: resolve 003 edit orphan-blocked",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Resolve recorded workflow gap: {\"film\": \"003\", \"stage\": \"edit\", \"kind\": \"orphan-blocked\", \"signature\": \"80389f4bf900e66d7b1d\"}. Read the current film status, original job results, approval history and actual evidence. Record a specific PASS/FIX or queue the missing next action with film/stage and dependencies. Unknown records are not approvals. Never mark media approved from a filename, prose lock, or job completion alone. If review needs media, verify on the Mini and perform required listening/viewing. Preserve all Chief/Ben gates, focus priority, holds and scheduling. No paid generation, upload or visibility change is authorized by this repair task. Before closing, resolve the stage state or create a linked successor/correction/review job; otherwise keep this task on a structured hold with a specific condition and next check.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-24T17:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T17:03Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief resolves 003 edit handoff and records the next owner/action",
+      "kind": "chief",
+      "handoff": {
+        "film": "003",
+        "stage": "edit",
+        "kind": "orphan-blocked",
+        "signature": "80389f4bf900e66d7b1d"
+      }
     }
   ],
   "focus": [

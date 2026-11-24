@@ -125,6 +125,9 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3584 | mini | open (after J3517) | – | – | WW2:010 edit · assembly · WW2 010 Short 2: build 'Sherman Crab: The 43-Chain Mine-Clearing Tank' for Ben watch | J3563 |
 | J3585 | mini | open (after J3517) | – | – | WW2:010 edit · assembly · WW2 010 Short 3: build 'Churchill AVRE: The 40-Pound Flying Dustbin Gun' for Ben watch | J3563 |
 | J3586 | mini | open (after J3555) | – | – | WW2:014 vo · vo · WW2 film 014: narration in Ben's voice (Dambusters, post-reset) |  |
+| J3587 | mini | open | – | – | review · Verify condition for J3205 |  |
+| J3588 | mini | open | – | – | review · Verify condition for J3369 |  |
+| J3589 | mini | open | – | – | chief · Chief: resolve 003 edit orphan-blocked |  |
 
 Recently finished:
 
