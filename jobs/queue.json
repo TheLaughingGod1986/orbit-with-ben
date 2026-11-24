@@ -327154,10 +327154,10 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-24T20:24Z",
+      "eta": "2026-11-24T20:44Z",
       "created_by": "claude",
       "created_at": "2026-11-24T18:45Z",
       "result": "",
@@ -327211,13 +327211,26 @@
           "at": "2026-11-24T20:21Z",
           "by": "codex",
           "what": "reopened: J3612 Chief ruling: condition SATISFIED at 2026-11-24T20:20:49Z. Process-validated current_executions returned slot 0 Codex/J3612 PID 36763 and slot 1 Gemini/J3602 PID 36768 concurrently; starts 20:18:53Z and 20:19:13Z, both version 253c7fe66b787b2f matching installed. Log records second-run spawn 20:17:51Z. Reopen for final outcome record under original no-settings/no-spend scope. Earlier 19:21Z unmet evidence remains historical, not a current blocker."
+        },
+        {
+          "at": "2026-11-24T20:24Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Confirming two simultaneous jobs after a second worker returns",
       "due": "2026-11-24T21:00:00Z",
       "kind": "assembly",
       "mini_only": true,
-      "urgent": 11
+      "urgent": 11,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T20:24Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3608",
