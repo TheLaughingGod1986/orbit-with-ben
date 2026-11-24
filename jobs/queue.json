@@ -314306,15 +314306,20 @@
           "at": "2026-11-24T08:47Z",
           "by": "claude",
           "what": "Pilot 2 goes up as a NEW video (J3466: v06, today 17:00 London, Wed 17:00 fallback). Link pilot 1 to the new video id (from status.json / UPLOADS.json) once it is public, not to J9WGu8aPnHI."
+        },
+        {
+          "at": "2026-11-24T09:00Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-24T17:05:00Z"
         }
       ],
-      "remaining_action": "Link pilot 1 and pilot 2 once pilot 2 is public",
+      "remaining_action": "Link pilot 1 to new pilot 2 qfc6EBStOfo after launch, preserving subscribe and verifying both directions",
       "due": "2026-11-28T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
       "hold": {
         "type": "public",
-        "condition": "J9WGu8aPnHI is public (Sat 28 Nov 17:00 London, or Wed 25 Nov if pilot 2 makes its stretch date)",
+        "condition": "New pilot 2 v06 qfc6EBStOfo is public (24 Nov 17:00Z target; J3466 controls fallback). Use qfc6EBStOfo for pilot 1 end-screen/card links; old v05 J9WGu8aPnHI must remain Private.",
         "check_at": "2026-11-24T17:05:00Z"
       }
     },
