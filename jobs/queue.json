@@ -1,5 +1,5 @@
 {
-  "next_id": 3600,
+  "next_id": 3601,
   "jobs": [
     {
       "id": "J0001",
@@ -313963,6 +313963,11 @@
           "at": "2026-11-24T09:32Z",
           "by": "claude",
           "what": "Film 5 now airs Sat 5 Dec (three a week from 1 Dec): its picture stage is on the critical path; accept at 50% as soon as it is reached."
+        },
+        {
+          "at": "2026-11-24T18:02Z",
+          "by": "relay",
+          "what": "condition verification queued: J3600"
         }
       ],
       "remaining_action": "Wait for the revised St Nazaire picture plan and acceptance of compliant archive coverage",
@@ -313982,7 +313987,8 @@
       "hold": {
         "type": "dependency",
         "condition": "J3449 brings film 5 to at least 50% real archive (rule 1 as changed 24 Nov, PR #59); then accept the picture stage and release J3432.",
-        "check_at": "2026-11-24T18:00:00Z"
+        "check_at": "2026-11-24T19:02:18+00:00",
+        "recheck_task": "J3600"
       },
       "urgent": 4
     },
@@ -326060,6 +326066,37 @@
       "due": "2026-11-25T18:00:00Z",
       "kind": "review",
       "plain": "Checking the finished Mulberry harbour Short before Ben watches it"
+    },
+    {
+      "id": "J3600",
+      "title": "Verify condition for J3431",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3431: J3449 brings film 5 to at least 50% real archive (rule 1 as changed 24 Nov, PR #59); then accept the picture stage and release J3432.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3431 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-24T18:02Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T18:02Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Wait for the revised St Nazaire picture plan and acceptance of compliant archive coverage",
+      "kind": "review",
+      "recheck_of": "J3431",
+      "due": "2026-11-24T19:02:18+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
