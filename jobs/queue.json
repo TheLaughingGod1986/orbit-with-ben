@@ -315928,18 +315928,27 @@
           "at": "2026-11-24T05:04Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T05:04Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Check the chapters, sources and links on recent Orbit videos",
+      "remaining_action": "Identify the last 10 live public OWB videos from YouTube API and latest snapshot",
       "kind": "listing",
       "backlog": "owb-live-listing-fixes",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-24T05:04Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Identify last 10 live OWB videos",
+          "Audit live API descriptions, chapters against cuts, and sources",
+          "Check end screens and Shorts Related pills read-only",
+          "Write live_fixes/2026-11-24.md and report"
+        ]
       }
     }
   ],
