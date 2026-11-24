@@ -1,5 +1,5 @@
 {
-  "next_id": 3526,
+  "next_id": 3527,
   "jobs": [
     {
       "id": "J0001",
@@ -320459,6 +320459,36 @@
       "due": "2026-12-10T18:00:00Z",
       "kind": "facts",
       "plain": "Fact-check every claim and number in WW2 film 013 Ghost Army script and sources before lock"
+    },
+    {
+      "id": "J3526",
+      "title": "WW2 film 013: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO",
+      "needs": "cloud",
+      "repo": "ww2",
+      "body": "Claude Rule-6 viewer test of the first 300 words, Pilot 2 48h/7d learnings check, and `AGENTS.md` Rule E topic/packaging/script lock for Field Order History film `WW2:013` (*How the WW2 Ghost Army Fooled German Generals*), drafted in `ww2-channel` PR #77 (branch `macbook/J3484`, commit `e60b14b`) after the independent Gemini `facts`-lane claims check passes.\n\n**Do (`ww2-channel/studio/RULES.md` rules 1–6, 9 & 12; script lock due `2026-12-11 18:00 UTC` for Thu 24 Dec 2026 17:00 London slot — or Sat 26 / Tue 29 Dec if Ben skips Christmas Eve per `00_Brand/THREE_A_WEEK_2026-12.md`):**\n1. Perform **Claude's viewer test of the first 300 words** of `01_Script/NARRATION_v01.txt` (`17,233` spoken chars `<= 21,000` Rule-9 cap, `2,644` words, Cold Open `110` words `~48.9s`, concrete moment `~24.4s`, promise `~37.8s`, SHA-256 `9908baa58d620577be979b08db6a5e67351b83e9a7485c9317026c33cf28a775`) as a stranger would: concrete moment by 0:30, promise by 0:45, main story moving by 1:00, no detours, title's answer withheld, one figure at a time.\n2. Incorporate **Pilot 2 (`qfc6EBStOfo`, airs Tue 24 Nov 17:00) 48h (~26 Nov) and 7d (~1 Dec) numbers** plus any resulting `studio/RULES.md` / `studio/LEARNINGS.md` updates, confirm per-keyword vidIQ search volume for `\"ghost army ww2\"` / `\"inflatable tanks ww2\"`, review `TOPIC_REVIEW.md` (GO recommendation, 30 verified US NARA/UK IWM/TNA official PD archive photo IDs, picked Rule-2 title `How the WW2 Ghost Army Fooled German Generals` at `45` chars `9.5/10`, 3 close-crop launch Test & Compare thumbnail concepts), and record the Rule E topic verdict.\n3. Verify the independent Gemini claims check is clean and `NARRATION_v01.txt` remains `<= 21,000` spoken characters.\n4. Lock topic and script (or return exact fixes), update `status.json` in a `ww2-channel` PR, and queue the ElevenLabs voice-over job strictly for **after the ElevenLabs reset (`2026-11-30 10:50Z`)**.\n\n**Guards:** Zero ElevenLabs voice credits spent before `2026-11-30 10:50Z`. £0 spend.\n",
+      "ref": "ww2-channel#77",
+      "film": "013",
+      "stage": "script",
+      "after": "J3525",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T12:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T12:03Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "WW2 film 013: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO",
+      "due": "2026-12-11T18:00:00Z",
+      "kind": "review",
+      "plain": "Run Claude viewer test on WW2 film 013 opening, fold in Pilot 2 learnings, lock script and queue post-reset voice-over"
     }
   ],
   "focus": [
