@@ -328020,13 +328020,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-24T21:19Z",
-      "eta": "2026-11-24T23:19Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T20:21Z",
-      "result": "",
+      "result": "PR #1289 merged; safe-boundary runtime refresh verified on both live slots at version b7f20fb5eea010db. Four targeted relay regressions and five prelaunch tests pass. Receipt: ~/_desk/logs/J3615-runtime-verified.json. No code duplication, restarts, settings, credits or production changes.",
       "history": [
         {
           "at": "2026-11-24T20:21Z",
@@ -328092,6 +328092,11 @@
           "at": "2026-11-24T21:22Z",
           "by": "codex",
           "what": "step 4 of 4 done: Safe-boundary refresh verified: both runner slots load b7f20fb5eea010db matching installed; relay log records second-slot spawn at 20:54:13Z. Four relay regression tests and five prelaunch tests pass. Runtime receipt in ~/_desk/logs/J3615-runtime-verified.json; no runner interrupted."
+        },
+        {
+          "at": "2026-11-24T21:22Z",
+          "by": "codex",
+          "what": "done: PR #1289 merged; safe-boundary runtime refresh verified on both live slots at version b7f20fb5eea010db. Four targeted relay regressions and five prelaunch tests pass. Receipt: ~/_desk/logs/J3615-runtime-verified.json. No code duplication, restarts, settings, credits or production changes."
         }
       ],
       "remaining_action": "Verification complete; recording final result",
