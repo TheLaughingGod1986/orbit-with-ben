@@ -316089,13 +316089,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-24T07:10Z",
-      "eta": "2026-11-24T07:55Z",
+      "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-24T07:01Z",
-      "result": "",
+      "result": "18 OWB + 7 HOS longs; 93 OWB + 36 HOS Shorts. CTR hits vs 4%: OWB 3/18, HOS 4/7. Six analytics files published as 59f149bb08; 154-row validation and tracker rebuild succeeded. Board-data 82fa28f0 verified with new tracker timestamp. 24 Shorts have no processed retention. HOS channel audit could not start: missing generated Prisma client.",
       "history": [
         {
           "at": "2026-11-24T07:01Z",
@@ -316151,6 +316151,11 @@
           "at": "2026-11-24T07:23Z",
           "by": "codex",
           "what": "step 3 of 3 done: Published 59f149bb08 to main; six analytics files only. Tracker rebuild and 154-row validation succeeded; board publisher returned 0."
+        },
+        {
+          "at": "2026-11-24T07:25Z",
+          "by": "codex",
+          "what": "done: 18 OWB + 7 HOS longs; 93 OWB + 36 HOS Shorts. CTR hits vs 4%: OWB 3/18, HOS 4/7. Six analytics files published as 59f149bb08; 154-row validation and tracker rebuild succeeded. Board-data 82fa28f0 verified with new tracker timestamp. 24 Shorts have no processed retention. HOS channel audit could not start: missing generated Prisma client."
         }
       ],
       "remaining_action": "Recording the completed daily tracker update",
