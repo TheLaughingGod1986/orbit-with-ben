@@ -1,5 +1,5 @@
 {
-  "next_id": 3513,
+  "next_id": 3514,
   "jobs": [
     {
       "id": "J0001",
@@ -319394,6 +319394,36 @@
         "okRef": "board:HOS:ASK:J2933.1;J3505",
         "askId": "J2933.1"
       }
+    },
+    {
+      "id": "J3513",
+      "title": "HOS 137 Accidental Inventions (film 3, Thu 24 Dec): package first, then the 7-9 minute script draft",
+      "needs": "any",
+      "repo": "hos",
+      "body": "**Why (Ben, Tue 24 Nov 2026, approved `hos-search-2027-01` and accelerated the first four search-led HOS films into December — `J3495` / OWB PR `#1238`, `#1239`, `#1240`).** **HOS:137 (`02_Video-Projects/137_Accidental-Inventions-That-Changed-The-World`)** is Film 3 of the search-led test cohort (**Cluster 3 — Accidental & World-Changing Inventions**) and targets **Thu 24 Dec 2026, 18:00 London** (7–9 min, normal publish, no Premiere; slides one week if not ready and a finished older film `010`/`011`/`013` takes the slot; never rushed; nothing airs without Ben's watch). Its **Rule-E topic go/no-go review passed on 24 Nov 2026 (`GO 95.8/100` · `9.58/10` Opportunity Score, `J3503`)**. (Note: Chief merges HOS PR `#743` and the isolated `J3503` review PR onto `main`; branch `origin/macbook/J3503` holds the reviewed `HOS:137` folder.)\n\n**Do (no spend; same shape as `J3496`, `J3504`, `J3507`):**\n1. **Package first (method step 5, before any script):** score three zero-collision query-first titles plus the two `J3503`-corrected single-hero thumbnail ideas against the Cluster 3 outliers (`Invention Flex` 6.2K US → `9.6K` `8.3×` in 7:42; `Industrial Case Files` 138 US → `4.7K` `8.6×`; `Counter Facts Lab` 1.4K → `1.5K` `22×`; `TheOriginLens` 246 → `1.6K` `8×`):\n   - **Title A (Recommended Primary, `45 chars ≤ 50`, `0` collisions — replaces PR `#743` `5 Accidental Inventions That Changed the World`, which had 5 exact live collisions incl. `Arun Surya Teja` `nLbBtuydgZo` 251.7K views):** `Accidental Inventions: 5 Mistakes That Worked`\n   - **Title B (Ben-Approved Plan Title / T&C Arm 2, `69 chars ≤ 70`, `0` collisions):** `Accidental Inventions That Changed the World (5 Mistakes That Worked)`\n   - **Title C (Backup / T&C Arm 3, `56 chars`, `0` collisions):** `Accidental Inventions: 5 Mistakes That Changed the World`\n   - *(Alternate `≤50c` backup, `48 chars`, `0` collisions: `5 Accidental Lab Mistakes That Changed the World`.)*\n   - **Thumbnail Concept A (`J3503` §2.2 & §2.5 fix):** Single giant hero object filling 2/3 of the right frame (warm 3D cartoon spiderwebbed cracked-yet-intact 1903 glass flask OR glowing emerald *Penicillium* Petri dish on a period lab bench — never a cluttered 3-object collage), Explorer small lower-left, top-left painted serif band text **`NEARLY TRASHED`** (gold on `TRASHED` — zero overlap with Titles A/B/C; never `5 MISTAKES`).\n   - **Thumbnail Concept B (`J3503` §2.B.1 fix):** Close-up 3D cartoon 1956 workbench with one oversized warm-glowing wrong resistor plugged into a transistor circuit pulsing a steady golden heartbeat trace on a small period oscilloscope beside a crossed-out notebook, Explorer small lower-left, top-left painted serif band text **`WRONG RESISTOR`** (gold on `WRONG` — names the exact physical object on screen).\n   - Pick one primary title (query words first, `≤50` chars where query allows); keep the other two for Test & Compare. Low-RPM trap `history of inventions` (`PK 25%`) stays strictly excluded from title and metadata targeting.\n2. **Script draft (7–9 min, 5 parts, ~1,200–1,300 words) by Mon 30 Nov 2026 18:00 London**, for lock by **Tue 8 Dec** (Ben's watch by **Mon 21 Dec**):\n   - **Locked 5-beat shortlist (`J3503` ruling — Safety Glass locked, Microwave excluded to keep zero overlap with `HOS:129` GO 96.4/100):**\n     1. **Wilson Greatbatch (1956 · Implantable Pacemaker)** — proof-first 0:30 open (`0:05` glowing wrong resistor + heartbeat pulse) OR brief 0:30 hook into chronological order `1839 → 1903 → 1928 → 1956 → 1968–1974` (choose whichever flows cleanest with the timeline graphic).\n     2. **Charles Goodyear (1839 · Vulcanised Rubber)**\n     3. **Édouard Bénédictus (1903 · Laminated Safety Glass)** — locked in place of Microwave so `HOS:129` stays 100% fresh.\n     4. **Alexander Fleming + Oxford team (1928–1941 · Penicillin)**\n     5. **Spencer Silver & Art Fry (1968–1974 · Post-it Notes)** — ending hand-off to Cluster 3 single-subject deep dives (including `HOS:129` Microwave).\n   - **Teach on Screen & Polish pass markers:** `≥3` animated `DATA+SCALE` graphics (incl. 1839–1974 timeline, 100× resistor error `10 kΩ → 1 MΩ` + `1.8 ms` pulse scale, and Penicillin's 12-year gap from 1928 dish to 1940–41 clinical proof), year-accurate `WHO` cards, `WHEN` stamps, `2–4 FACT` beats, Explorer 1–3 beats (never first minute).\n   - **`SOURCES.md` verbatim primary-source quotes for every spoken and visual claim, carrying forward all `J3503` guardrails:**\n     1. **Greatbatch (1956) precision:** Verify `10 kΩ` vs `1 MΩ` resistor and `1.8 ms` pulse duration/rate in primary sources; note he was building a heart-sound recording oscillator; credit William Chardack & Andrew Gage (1958 animal test, 1960 Buffalo human implant) and distinguish from Elmqvist & Senning's 1958 Swedish implant so we do not overclaim \"first pacemaker ever\".\n     2. **Goodyear (1839) prepared mind:** Verify Woburn, Massachusetts 1839 account and 1844 patent — years of obsessive sulfur/lead experiments preceded the hot-stove spill (not an idle fluke); died in debt (1860); Goodyear Tire & Rubber was named after him in 1898, not founded by him.\n     3. **Bénédictus (1903 → 1909) timeline:** Verify 1903 Paris evaporated cellulose-nitrate/collodion flask fall and keep the 1909 Triplex patent / windscreen adoption distinct (do not telescope 1903 and 1909 into one day).\n     4. **Fleming (1928) + Oxford team (1939–1941):** Verify Sept 1928 St Mary's Hospital account and explicitly credit Howard Florey, Ernst Chain, and Norman Heatley for purifying and scaling penicillin; keep strictly historical lab-discovery framing (zero vaccine or medical-advice claims).\n     5. **Silver (1968) & Fry (1974) microspheres:** Silver accidentally created low-tack, pressure-sensitive repositionable acrylate **microspheres** (do not oversimplify as \"glue that didn't stick at all\"); Fry applied it to falling church choir bookmarks in 1974; national launch 1980 after 1978 Boise sample test.\n     6. **Typography & HOS lane (§2.6):** 100% 3D cartoon laboratory discovery & proof; zero AI-garbled labels/oscilloscope numbers/patents (inked in edit or hand-verified); zero overlap with public HOS `001–007`, `HOS:129`, `HOS:130`, Field Order History, or Orbit.\n   - **Two standalone 16–19 s search-question Shorts** (Fri & Sat of launch week, Related → `HOS:137`, Ben 19 Nov 3D cartoon house rules, `0` collisions verified in `J3503`):\n     - Sat go-public-day Short: `How Did One Wrong Resistor Accidentally Invent the Pacemaker?` (`61c`, `0` collisions; or tighter `48c` `How Did One Wrong Resistor Invent the Pacemaker?`, also `0` collisions).\n     - Fri support Short: `How Did Failed Glue Accidentally Invent Post-it Notes?` (`54c`, `0` collisions).\n3. Hand the draft and `SOURCES.md` to the `facts` lane (`gemini-agy`) and script review in the HOS chain (`npm run review:script ≥ 90`, `npm run gate:episode` PASS).\n\n**Guards.** No VO, picture or paid call yet (Rule G: enters active production at the next free HOS WIP place once `008`/`009` clear Ben's watch this week; Flow credits renew 12 Dec; ElevenLabs down to zero, never past it; never rush — slides one week if not ready). £0.\n",
+      "ref": "J3503",
+      "film": "137",
+      "stage": "script",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-24T11:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T11:01Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Score package-first titles/thumbs (with J3503 fixes) and draft the 7-9 min HOS:137 script, SOURCES.md, and 2 Short angles by Mon 30 Nov 18:00 London",
+      "due": "2026-11-30T18:00:00Z",
+      "kind": "script",
+      "plain": "Pick the title and thumbnail ideas, then draft the Accidental Inventions script for History of Science"
     }
   ],
   "focus": [
