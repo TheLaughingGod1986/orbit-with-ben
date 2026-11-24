@@ -99,6 +99,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3546 | any | open | – | – | 064 script · chief · OWB 064: Record J3539 FIX in the Chief-owned script hold | J3539 |
 | J3547 | mini | open | – | – | HOS:128 script · review · HOS 128 Edison vs Tesla (Thu 10 Dec): review and lock script v01, package-first scoring, sources & Shorts (PR #751) |  |
 | J3548 | mini | open | – | – | for claudecode · review · Review local Field Order analytics delivery privacy |  |
+| J3549 | any | open | – | – | review · Field Order History: triage the 19 PRs still open after the 24 Nov merge batch |  |
 
 Recently finished:
 

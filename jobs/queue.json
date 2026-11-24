@@ -1,5 +1,5 @@
 {
-  "next_id": 3549,
+  "next_id": 3550,
   "jobs": [
     {
       "id": "J0001",
@@ -322777,6 +322777,35 @@
       "for": "claudecode",
       "kind": "review",
       "plain": "Check which local Field Order History records can be shared safely"
+    },
+    {
+      "id": "J3549",
+      "title": "Field Order History: triage the 19 PRs still open after the 24 Nov merge batch",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "**Why (Ben, Tue 24 Nov ~11:20 London, in chat: \"why jobs are being missed, and why jobs are building up in past and not being moved on ... please go ahead and make all the changes you recommended\".)** ww2-channel had 54 open PRs, some from 17 Nov. Agents reading `main` saw stale records (film 016's topic job reported \"Pilot 2 future readouts unavailable\"; air dates disagreed film to film). On 24 Nov the acting Chief (Claude) landed 32 of them in ww2 PR #86 (merge commits, so each shows as merged), set every film's `air` to Ben's 24 Nov calendar and wrote the current slot map into `00_Brand/THREE_A_WEEK_2026-12.md` section 0.\n\n**Still open (19): triage each, due Fri 27 Nov 18:00 UTC.**\n- 15 that clash with `main`: #2, #4, #7, #11, #12, #13, #16, #17, #19, #20, #21, #24, #25, #26, #56.\n- 4 drafts: #34, #49, #50, #60.\n\nFor each one:\n1. If its work is already on `main` or superseded (for example the pilot-1 picture and voice work for a film already live, or a later version merged in #86), comment one line saying where the newer version is. Leave it for the Chief to close.\n2. Otherwise merge `main` into its branch, never rebase or force-push.\n   - `status.json`: keep both jobs' stage records. Where both changed one field, keep the newer one. Keep `air` exactly as `main` has it.\n   - `studio/RULES.md` (#11, #17): keep `main`'s text and add only the PR's new lines.\n   - Push the branch, then comment \"ready for Chief merge: <what it adds>\".\n3. Drafts: merge `main` in the same way and say whether the work is finished. Never mark someone else's draft ready.\n\nFinish with one line per PR on this job. The Chief then merges or closes them in one batch.\n\n**Guards.** No change to `main` directly. No merge or close by a worker (the Chief's call). No voice, upload or Studio change. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T15:04Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T15:04Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Bring each open ww2 PR up to main or mark it superseded, for one Chief batch",
+      "due": "2026-11-27T18:00:00Z",
+      "kind": "review"
     }
   ],
   "focus": [
