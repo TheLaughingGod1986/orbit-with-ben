@@ -316131,22 +316131,28 @@
           "at": "2026-11-24T07:11Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-24T07:16Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: Confirmed both signed-in channels; new Studio UI uses browse responses rather than the retired get_screen request. Read-only collection is running."
         }
       ],
-      "remaining_action": "Reading lifetime Studio analytics for both channels",
+      "remaining_action": "Reading current Studio metrics through its updated analytics pages",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-24T07:11Z",
+        "at": "2026-11-24T07:16Z",
         "by": "codex",
         "plan": [
           "Read Studio metrics",
           "Update tracker files",
           "Verify and publish tracker"
-        ]
+        ],
+        "note": "Confirmed both signed-in channels; new Studio UI uses browse responses rather than the retired get_screen request. Read-"
       }
     }
   ],
