@@ -321378,9 +321378,14 @@
           "at": "2026-11-24T18:46Z",
           "by": "relay",
           "what": "condition verification queued: J3608"
+        },
+        {
+          "at": "2026-11-24T18:56Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-24T19:46:55Z"
         }
       ],
-      "remaining_action": "Publishing the tested read-only audit fix through Claude Code",
+      "remaining_action": "Publishing the tested read-only audit fix through Claude Code, then checking the shared runtime",
       "due": "2026-11-25T09:00:00Z",
       "kind": "assembly",
       "mini_only": true,
@@ -321404,9 +321409,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/J3519-hos codex/J3519; commit 91c93f44. Review four-file diff for private data, push/open PR and merge with green checks, then pull shared HOS main and rerun PGOPTIONS read-only channel:audit. Shared runtime already restored to Prisma 7.10.1; J3512 exact private-upload dry run exits 0. Branch audit exits 0 (68 videos, zero errors), 33 targeted tests and check_all pass. No upload, schedule, database write or spend. Automatic review rejected Codex push and required Claude Code publication.",
-        "check_at": "2026-11-24T19:46:55+00:00",
-        "recheck_task": "J3608"
+        "condition": "J3608 verified 24 Nov: remote HOS main remains 12eceaff; no remote codex/J3519 branch and no PR. Local clean branch at /Volumes/MiniWork/scratch/J3519-hos retains 91c93f44. Prisma and client are 7.10.1, but shared channel:audit lacks readOnly:true. Still needs the recorded Claude Code publication handoff, green checks and merge, shared pull, then PGOPTIONS read-only audit. Earlier Codex push rejection is not retried.",
+        "check_at": "2026-11-24T19:46:55Z",
+        "last_recheck": "J3608",
+        "checked_at": "2026-11-24T18:56:38+00:00",
+        "checked_by": "codex"
       }
     },
     {
