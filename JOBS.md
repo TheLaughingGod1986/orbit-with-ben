@@ -96,6 +96,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3526 | mini | open (after J3525) | – | – | 013 script · review · WW2 film 013: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO | ww2-channel#77 |
 | J3527 | mini | open | – | – | review · Verify condition for J3125 |  |
 | J3528 | mini | blocked | gemini | – | review · Verify condition for J3463 |  |
+| J3529 | mini | open | – | – | review · Verify condition for J3492 |  |
 
 Recently finished:
 
