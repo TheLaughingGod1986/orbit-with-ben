@@ -104,7 +104,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3560 | mini | blocked | macbook | – | review · Verify condition for J3430 |  |
 | J3561 | mini | blocked | claude | – | studio · WW2 pilot 2: read at 1,000 impressions or 48 hours, and change the title that day if click-through is under 2% |  |
 | J3562 | any | claimed | macbook | 2026-11-24T18:07Z | review · Field Order History: check every upcoming title against the new packaging rule (film 003 first) |  |
-| J3563 | any | open | – | – | review · Field Order History: plan two or three Shorts per film (002-010) and queue the first builds |  |
+| J3563 | any | claimed | macbook-2 | 2026-11-24T18:37Z | review · Field Order History: plan two or three Shorts per film (002-010) and queue the first builds |  |
 
 Recently finished:
 
