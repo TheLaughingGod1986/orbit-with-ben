@@ -133,7 +133,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3625 | any | open (after J3624) | – | – | WW2:004 edit · chief · WW2 004: decide repaired delivery and stage Ben watch |  |
 | J3626 | mini | claimed | macbook-2 | 2026-11-24T23:29Z | WW2:009 script · script · WW2 009: resolve eight claims flags in narration v02 | ww2-channel#96 |
 | J3627 | gemini | open (after J3626) | – | – | WW2:009 sources · facts · WW2 009: independently verify corrected narration v02 | ww2-channel#96 |
-| J3628 | any | open | – | – | HOS:128 script · script · HOS 128: correct Edison vs Tesla script and Shorts to v02 |  |
+| J3628 | any | claimed | macbook | 2026-11-24T23:33Z | HOS:128 script · script · HOS 128: correct Edison vs Tesla script and Shorts to v02 |  |
 | J3629 | gemini | open (after J3628) | – | – | HOS:128 sources · facts · HOS 128: independent v02 facts and source verification |  |
 | J3630 | any | open (after J3629) | – | – | HOS:128 script · review · HOS 128: direct quote check and corrected script lock decision |  |
 
