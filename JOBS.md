@@ -96,7 +96,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3566 | mini | open (after J3542) | – | – | WW2:002 edit · assembly · WW2 002 Short 1: build 'WW2 U-Boats: Why They Could Not Stay Underwater' for Ben watch | J3563 |
 | J3567 | mini | open (after J3542) | – | – | WW2:002 edit · assembly · WW2 002 Short 2: build 'U-Boat Radar vs Metox: Why German Warnings Failed' for Ben watch | J3563 |
 | J3569 | mini | claimed | macbook-2 | 2026-11-25T01:34Z | WW2:003 edit · assembly · WW2 003 Short 2: build 'B-29 Remote Gun Turrets: WW2's Analogue Computer' for Ben watch | J3563 |
-| J3570 | mini | claimed | macbook | 2026-11-25T01:22Z | WW2:004 edit · assembly · WW2 004 Short 1: build 'Mark 14 Torpedo: Why It Ran 10 Feet Too Deep' for Ben watch | J3563 |
 | J3571 | mini | open (after J3542) | – | – | WW2:004 edit · assembly · WW2 004 Short 2: build 'Mark 14 Torpedo: Why a Direct Hit Failed to Fire' for Ben watch | J3563 |
 | J3572 | mini | open (after J3542) | – | – | WW2:005 edit · assembly · WW2 005 Short 1: build 'HMS Campbeltown: 4 Tons of Explosive in Concrete' for Ben watch | J3563 |
 | J3573 | mini | open (after J3542) | – | – | WW2:005 edit · assembly · WW2 005 Short 2: build 'St Nazaire Raid: Why the Ship Blew Up Hours Later' for Ben watch | J3563 |

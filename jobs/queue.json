@@ -325666,13 +325666,13 @@
       "stage": "edit",
       "after": "J3542",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-24T23:22Z",
-      "eta": "2026-11-25T01:22Z",
+      "eta": "",
       "created_by": "macbook-2",
       "created_at": "2026-11-24T16:55Z",
-      "result": "",
+      "result": "Built WW2 004-S1 Short v01 ('Mark 14 Torpedo: Why It Ran 10 Feet Too Deep', 44 chars, Rule 2) at £0.00 spend. NAS master: /Volumes/data/studio-live/ww2/02_Video-Projects/004_Why-US-Submarine-Torpedoes-Failed-21-Months/Shorts/004_S1_v01/mark14_depth_short_v01.mp4 (25,815,067 B, SHA-256 fef4e0566ece342650cf4501a50f04042372cdad21be94b90740971b9b68e2e8; all 11 NAS deliverables SHA-256 verified). 48.60s (1215 frames @ 25fps), 1080x1920 H.264, 48kHz stereo AAC 192kbps, full decode exit 0, -16.6 LUFS / -1.5 dBFS / 0 silence >0.5s below -60dB; locked submarine_torpedoes_vo_v01 Seg A + 0.36s breath + Seg B over WW2:004 Cue 02 score bed. 60.41% real archive (63.66% of story runtime before 2.48s end card) across 5 unique PD NARA photos (max upscale 1.1026x, 0 blurred padding), 3 native 9:16 FOH schematics + end card, 32 frame-quantized captions (0 overlaps, 0 shot-cut crossings, British English, safe zone MarginV>=530), 10 stills inspected. Opened ww2-channel PR #117 (macbook/J3570), returned ww2-channel to main, and queued independent review J3647 for Chief PR merge and Ben watch card WW2:004-S1 (due 2026-11-28 18:00 UTC). NOT uploaded; no listening/motion perception claimed.",
       "history": [
         {
           "at": "2026-11-24T16:55Z",
@@ -325703,6 +325703,11 @@
           "at": "2026-11-24T23:33Z",
           "by": "macbook",
           "what": "step 3 of 5 done: Visual + technical QA PASS on polished v01 (60.41% archive, 1.10x max upscale, -16.6 LUFS, 0 overlaps)"
+        },
+        {
+          "at": "2026-11-24T23:35Z",
+          "by": "macbook",
+          "what": "done: Built WW2 004-S1 Short v01 ('Mark 14 Torpedo: Why It Ran 10 Feet Too Deep', 44 chars, Rule 2) at £0.00 spend. NAS master: /Volumes/data/studio-live/ww2/02_Video-Projects/004_Why-US-Submarine-Torpedoes-Failed-21-Months/Shorts/004_S1_v01/mark14_depth_short_v01.mp4 (25,815,067 B, SHA-256 fef4e0566ece342650cf4501a50f04042372cdad21be94b90740971b9b68e2e8; all 11 NAS deliverables SHA-256 verified). 48.60s (1215 frames @ 25fps), 1080x1920 H.264, 48kHz stereo AAC 192kbps, full decode exit 0, -16.6 LUFS / -1.5 dBFS / 0 silence >0.5s below -60dB; locked submarine_torpedoes_vo_v01 Seg A + 0.36s breath + Seg B over WW2:004 Cue 02 score bed. 60.41% real archive (63.66% of story runtime before 2.48s end card) across 5 unique PD NARA photos (max upscale 1.1026x, 0 blurred padding), 3 native 9:16 FOH schematics + end card, 32 frame-quantized captions (0 overlaps, 0 shot-cut crossings, British English, safe zone MarginV>=530), 10 stills inspected. Opened ww2-channel PR #117 (macbook/J3570), returned ww2-channel to main, and queued independent review J3647 for Chief PR merge and Ben watch card WW2:004-S1 (due 2026-11-28 18:00 UTC). NOT uploaded; no listening/motion perception claimed."
         }
       ],
       "remaining_action": "Copy verified master and receipts to NAS with SHA-256 check, commit records, and open PR",
