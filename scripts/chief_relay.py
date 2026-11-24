@@ -965,7 +965,15 @@ def authority_prompt(agent: str, leader: str | None, repo: str | None = None) ->
     guest = bool(repo and repo != channels.default())
     order = ("24 Nov 2026 (Grok Bot on a £20 plan): Claude -> Codex -> Gemini -> Grok" if guest
              else "26 Oct 2026, reordered 9 Nov and 24 Nov 2026: Claude -> Codex -> Gemini -> Grok")
-    return (CHIEF_AUTHORITY if agent == leader else WORKER_AUTHORITY).format(agent=agent, order=order)
+    text = (CHIEF_AUTHORITY if agent == leader else WORKER_AUTHORITY).format(agent=agent, order=order)
+    if agent == "codex":
+        text += """
+If sandbox review refuses a git push, do not retry or stop with uncommitted work. Keep the finished work
+committed on a named local branch in its worktree and block the job with this exact reason:
+  publish via Claude Code: <worktree> <branch>
+Use the absolute worktree path (shell-quote it if it contains spaces) and the actual branch name.
+The relay hands publication to Claude Code on the Mini; this does not grant any protected approval."""
+    return text
 
 
 def cloud_chief(who) -> bool:
@@ -1757,6 +1765,7 @@ def stranded_jobs(data: dict, up: set, at=None) -> list:
     capabilities = worker_capabilities()
     at = at or now()
     return [j for j in data.get("jobs", []) if j.get("rerouted_from") and j.get("status") == "open"
+            and not j.get("publish_via_claude")
             and j.get("for") in routing.MINI_WORKERS
             and (j["for"] not in up or workflow.capability_problem(j,j["for"],at,capabilities)
                  or (j.get("model") and not routing.lane_ok(j["for"], j["model"])))]
@@ -1766,7 +1775,7 @@ def stalled_claims(data: dict, at: dt.datetime) -> list:
     """One 45-minute inactivity/ETA grace plus a validated active-run lease, shared with claims and the board."""
     execution = current_execution(at)
     return [j for j in data.get("jobs", []) if j.get("by") in routing.MINI_WORKERS
-            and workflow.claim_is_stalled(j,at,execution)]
+            and not j.get("publish_via_claude") and workflow.claim_is_stalled(j,at,execution)]
 
 
 def jobs_py(*args):
@@ -1795,13 +1804,29 @@ def reroute(job: dict, to: str, model: str, note: str, open_claim: bool = False)
     return True
 
 
+def handoff_refused_pushes() -> list:
+    """Reopen refused publications atomically before this round selects a worker."""
+    data = read_json(STUDIO / "jobs" / "queue.json") or {}
+    moved = []
+    for job in data.get("jobs", []):
+        if job.get("status") != "blocked" or not str(job.get("result", "")).startswith("publish via Claude Code:"):
+            continue
+        result = jobs_py("reroute", job["id"], "--agent", "relay", "--to", "claudecode",
+                         "--model", "mini-claude-opus-5-5", "--publish-via-claude")
+        if result is not None and result.returncode == 0:
+            moved.append(job["id"])
+        else:
+            log(f"publication handoff failed for {job['id']}; left blocked for retry")
+    return moved
+
+
 def hand_back_claude(data: dict) -> list:
     """Claude is back (Ben, 14 Oct 2026: "when you're back online, it switches back to you"): every Claude job that was
     walked down the chain while Claude was out and that no stand-in has started yet (still open) goes back to Claude."""
     back = []
     for j in data.get("jobs", []):
         rf = j.get("rerouted_from") or {}
-        if j.get("status") != "open" or rf.get("needs") != "cloud" or rf.get("for", "") not in ("", "claude"):
+        if j.get("publish_via_claude") or j.get("status") != "open" or rf.get("needs") != "cloud" or rf.get("for", "") not in ("", "claude"):
             continue
         argv = [sys.executable, str(STUDIO / "scripts" / "jobs.py"), "handback", j["id"], "--agent", "relay",
                 "--note", "Claude is back online", "--git"]
@@ -2273,6 +2298,7 @@ def run_locked(at: dt.datetime, slot: int = 0) -> int:
         if guest:
             log("guest chain: " + " | ".join(f"{a}={'UP' if up else 'down'} ({why})" for a, up, why in guest_rows)
                 + f" chief={guest_who}")
+        handoff_refused_pushes()
         up = workers_up(at)
         worker_only = False
         if who is None:
