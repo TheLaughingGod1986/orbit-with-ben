@@ -318989,23 +318989,28 @@
           "at": "2026-11-24T10:56Z",
           "by": "codex",
           "what": "step 2 of 3 done: Five upload jobs J3508-J3512 and approvals recorded; stale J0979/J2933 holds cleared in PR 1241; all 85 local tests passed."
+        },
+        {
+          "at": "2026-11-24T10:59Z",
+          "by": "codex",
+          "what": "step 3 of 3 done: PR 1241 merged and main verified. OWB report 7129489834; HOS report 7129497065. Five approved follow-ons ready; no publishing performed."
         }
       ],
-      "remaining_action": "Verify the merged approval handoffs and report the delivery jobs",
+      "remaining_action": "Completed: five approved Shorts now have delivery jobs",
       "due": "2026-11-25T12:00:00Z",
       "kind": "chief",
       "urgent": 15,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-24T10:56Z",
+        "at": "2026-11-24T10:59Z",
         "by": "codex",
         "plan": [
           "Check approvals and upload work",
           "Record approvals and queue uploads",
           "Verify records and report"
         ],
-        "note": "Five upload jobs J3508-J3512 and approvals recorded; stale J0979/J2933 holds cleared in PR 1241; all 85 local tests pass"
+        "note": "PR 1241 merged and main verified. OWB report 7129489834; HOS report 7129497065. Five approved follow-ons ready; no publi"
       },
       "taskKeys": [
         "OWB:032",
