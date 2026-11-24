@@ -326006,20 +326006,32 @@
           "at": "2026-11-24T18:12Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T18:13Z",
+          "by": "codex",
+          "what": "step 0 of 3 done: J3596 supplied replacements OWB 1279 and WW2 102; original PRs are closed."
         }
       ],
-      "remaining_action": "Check the corrected fallback and evidence before accepting the audience review",
+      "remaining_action": "Review the replacement audience-analysis pull requests and test the corrections",
       "due": "2026-11-25T05:03:00Z",
       "kind": "chief",
       "plain": "Review the corrected Mulberry harbour audience analysis",
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-24T18:12Z",
+        "at": "2026-11-24T18:13Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Review corrected changes",
+          "Verify regressions and evidence",
+          "Record decision and finish handoff"
+        ],
+        "note": "J3596 supplied replacements OWB 1279 and WW2 102; original PRs are closed."
+      },
+      "taskKeys": [
+        "WW2:001"
+      ]
     },
     {
       "id": "J3598",
