@@ -1,5 +1,5 @@
 {
-  "next_id": 3544,
+  "next_id": 3545,
   "jobs": [
     {
       "id": "J0001",
@@ -322449,6 +322449,35 @@
       "due": "2026-12-18T18:00:00Z",
       "kind": "script",
       "plain": "Research, package and write the script for WW2 film 017 (Pearl Harbor salvage: raising the sunk battleships)"
+    },
+    {
+      "id": "J3544",
+      "title": "OWB 064: Correct v03 source and teaching issues as v04",
+      "needs": "any",
+      "repo": "owb",
+      "body": "Implement the J3539 independent FIX review in jobs/reviews/J3539/REVIEW.md and CLAUDE_QUOTE_CHECK_v03.md as v04 of OWB 064. Read the review PR and J3520 ruling; retain all four correct J3520 changes. Correct Mercury tilt conflict, Mars magnetic-history inference, Saturn haze uncertainty, Uranus scope, Venus ocean inference, incorrect/stale quote attribution, Mars 90-Martian-day unit and teaching timing/timeline/card-label issues. Use the precise replacements or a more concise directly sourced equivalent. Preserve v01-v03 and Gemini raw audits. Fix source IDs (Donahue PMID 17783310, not 17782980), use the working Venera primary history, and distinguish MOLA elevation from relief. Obtain fresh preserved Gemini output, rerun explicit-version review >=90 and episode gate, reproduce hashes/counts/chapter estimates and update downstream stamps. Deliver a PR; do not lock or complete J3020. Independent review follows. Approved eight-planet format, dates and zero-spend/no-generation scope unchanged; no narration, upload or schedule/privacy changes.\n",
+      "ref": "J3539",
+      "film": "064",
+      "stage": "script",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-24T14:46Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T14:46Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Apply the independent source review corrections and submit a new version",
+      "kind": "script",
+      "plain": "Correct the planet facts and teaching notes before recording"
     }
   ],
   "focus": [
