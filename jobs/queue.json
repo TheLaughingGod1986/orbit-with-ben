@@ -328181,13 +328181,13 @@
       "stage": "upload",
       "after": "J3602",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-24T20:55Z",
-      "eta": "2026-11-24T22:55Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T20:51Z",
-      "result": "",
+      "result": "Verified in Studio (CDP 9223, Orbit With Ben UC_esArsDKd3GJvOkeO0DUog, no public playback) that 6bbbvfCx6zY was absent from both Orbit playlists (PLOw2VKzGCOWU 11 videos, PLdoEpeiktw_Y 12 videos; Video Details showed Select). Verified PLOw2VKzGCOWU (What Would Happen If...: Black Holes, Neutron Stars and Extreme Space) belongs to Orbit and matches OWB 027. Added only 6bbbvfCx6zY via Content > Videos bulk Add to playlist (edit_playlist HTTP 200) and read back: PLOw2VKzGCOWU now 12 videos with 6bbbvfCx6zY at slot 12, PLdoEpeiktw_Y unchanged at 12, Video Details lists PLOw2VKzGCOWU, and running T028, titles, thumbnails, Public visibility, end screen (Venus + Subscribe), and comment count (1) all preserved. Evidence PR #1291 (jobs/reviews/J3618/PLAYLIST_VERIFICATION.md); 7d autopsy stays due 29 Nov after 18:00Z.",
       "history": [
         {
           "at": "2026-11-24T20:51Z",
@@ -328218,6 +328218,11 @@
           "at": "2026-11-24T21:02Z",
           "by": "macbook-2",
           "what": "step 4 of 4 done"
+        },
+        {
+          "at": "2026-11-24T21:04Z",
+          "by": "macbook-2",
+          "what": "done: Verified in Studio (CDP 9223, Orbit With Ben UC_esArsDKd3GJvOkeO0DUog, no public playback) that 6bbbvfCx6zY was absent from both Orbit playlists (PLOw2VKzGCOWU 11 videos, PLdoEpeiktw_Y 12 videos; Video Details showed Select). Verified PLOw2VKzGCOWU (What Would Happen If...: Black Holes, Neutron Stars and Extreme Space) belongs to Orbit and matches OWB 027. Added only 6bbbvfCx6zY via Content > Videos bulk Add to playlist (edit_playlist HTTP 200) and read back: PLOw2VKzGCOWU now 12 videos with 6bbbvfCx6zY at slot 12, PLdoEpeiktw_Y unchanged at 12, Video Details lists PLOw2VKzGCOWU, and running T028, titles, thumbnails, Public visibility, end screen (Venus + Subscribe), and comment count (1) all preserved. Evidence PR #1291 (jobs/reviews/J3618/PLAYLIST_VERIFICATION.md); 7d autopsy stays due 29 Nov after 18:00Z."
         }
       ],
       "remaining_action": "Writing J3618 evidence PR, closing job, and posting thread report",
