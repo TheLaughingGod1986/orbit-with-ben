@@ -83,6 +83,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3473 | any | claimed | macbook | 2026-11-24T13:11Z | WW2:008 script · script · WW2 film 008: topic check, packaging first, script and sources, to lock by 2026-12-03 |  |
 | J3474 | mini | open | – | – | WW2:009 script · script · WW2 film 009: topic check, packaging first, script and sources, to lock by 2026-12-06 |  |
 | J3475 | mini | open | – | – | WW2:010 script · script · WW2 film 010: topic check, packaging first, script and sources, to lock by 2026-12-08 |  |
+| J3476 | any | open | – | – | WW2:008 sources · facts · WW2 film 008: Gemini claims check on SCRIPT.md and SOURCES.md (PR #61) | ww2-channel#61 |
 
 Recently finished:
 

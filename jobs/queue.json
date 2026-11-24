@@ -1,5 +1,5 @@
 {
-  "next_id": 3476,
+  "next_id": 3477,
   "jobs": [
     {
       "id": "J0001",
@@ -316940,6 +316940,36 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3476",
+      "title": "WW2 film 008: Gemini claims check on SCRIPT.md and SOURCES.md (PR #61)",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "Independent Gemini claims check (`facts` lane) for Field Order History film `WW2:008` (*Operation Mincemeat: One Briefcase Fooled Hitler*), drafted in `ww2-channel` PR #61 (`macbook/J3473`, commit `c9adb40`).\n\n**Check:**\n1. Audit all 69 claims (`C01`–`C69`) in `02_Video-Projects/008_Operation-Mincemeat-Planted-Briefcase-Sicily/01_Script/SCRIPT.md` and `01_Script/SOURCES.md` against primary/official sources (`TNA ADM 223`, `CAB 154`, Howard Vol. 5, Hinsley Vol. 3 Part 1, US Army CMH *Sicily*, Montagu, Smyth, Macintyre, CWGC).\n2. Specifically verify the 3 flagged items in `SOURCES.md`: (a) `C10` exact wording of Churchill's Sicily remark, (b) `C39` exact dry-ice weight in the canister (`21 pounds`), and (c) `C59` German division count shifted to Greece/Balkans in May–June 1943.\n3. Confirm `01_Script/NARRATION_v01.txt` stays `<= 21,000` spoken characters (currently `18,747` chars, SHA-256 `ba3005abe486b4f7a5b57c77b1fac0458d089517fb0114de10c91a8d803df568`).\n4. Write `01_Script/CLAIMS_CHECK.md` (PASS or exact fixes needed), update `status.json`, and open a `ww2-channel` PR.\n\n**Guards:** £0. No ElevenLabs spend before 30 Nov 10:50Z.\n",
+      "ref": "ww2-channel#61",
+      "film": "WW2:008",
+      "stage": "sources",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook",
+      "created_at": "2026-11-24T09:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T09:24Z",
+          "by": "macbook",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Run independent Gemini claims check on WW2:008 PR #61 SCRIPT.md and SOURCES.md",
+      "due": "2026-12-01T18:00:00Z",
+      "kind": "facts",
+      "plain": "Check every fact, date and number in WW2 film 008 Operation Mincemeat before script lock"
     }
   ],
   "focus": [
