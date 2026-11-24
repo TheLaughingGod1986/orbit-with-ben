@@ -306846,9 +306846,14 @@
           "at": "2026-11-24T04:04Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Built 002_Atlantic-Black-Pit_v06.mp4 (33,675f, 1347.0s, SHA-256 1d8bc79a9573ef5c, full decode PASS, 0 black, 0 silence, -18.1 LUFS / -1.4 dBFS), conformed score v04, and 232-cut v06_cuts/v06_pool."
+        },
+        {
+          "at": "2026-11-24T04:10Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Checkpoint 111: v06 master (1d8bc79a9573ef5c, 33675f, -18.1 LUFS) built, full decode/black/silence PASS, music_gate PASS, raw picture_qa 0 real defects, 10-clip direct audio/visual QA PASS. Codex returned as Chief; handing off."
         }
       ],
-      "remaining_action": "Running blocking gates (picture_qa, polish_gate, music_gate) and preparing direct audio/visual QA clips on v06 master",
+      "remaining_action": "Awaiting elected Chief (Codex) scoped picture_qa_reviewed_ok_v06 ruling, final Chief PASS, and Ben watch staging",
       "due": "2026-11-27T20:00:00Z",
       "kind": "assembly",
       "plain": "Add the real WW2 archive photos that were planned for the second Field Order History film, then Ben re-watches",
@@ -306865,9 +306870,9 @@
         "WW2:002"
       ],
       "progress": {
-        "step": 2,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-24T04:04Z",
+        "at": "2026-11-24T04:10Z",
         "by": "gemini",
         "plan": [
           "Concat and mux full v06 master",
@@ -306876,7 +306881,7 @@
           "Direct audio and visual/motion QA review",
           "Stage hashed v06 for Ben watch and save records"
         ],
-        "note": "Built 002_Atlantic-Black-Pit_v06.mp4 (33,675f, 1347.0s, SHA-256 1d8bc79a9573ef5c, full decode PASS, 0 black, 0 silence, "
+        "note": "Checkpoint 111: v06 master (1d8bc79a9573ef5c, 33675f, -18.1 LUFS) built, full decode/black/silence PASS, music_gate PASS"
       }
     },
     {
