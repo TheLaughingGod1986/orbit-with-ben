@@ -317193,23 +317193,29 @@
           "at": "2026-11-24T09:31Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-24T09:32Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Read WW2:007 PR #62 SCRIPT.md, NARRATION_v01.txt (3,169 words / 19,482 chars, SHA-256 verified), SOURCES.md (23 claims, 5 flagged items), status.json, and ww2-channel conventions"
         }
       ],
-      "remaining_action": "Reading WW2:007 PR #62 files and checking ww2-channel claims-check conventions",
+      "remaining_action": "Fetching and checking primary US Navy sources (Building the Navy's Bases Ch. IX, BBBO, DANFS, BRL, distances) for C01-C23",
       "due": "2026-11-28T18:00:00Z",
       "kind": "facts",
       "plain": "Check every date, ship, dimension, and figure in WW2 film 007 script v01 against primary US Navy sources.",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-24T09:31Z",
+        "at": "2026-11-24T09:32Z",
         "by": "gemini",
         "plan": [
           "Read WW2:007 script, narration, sources and repo conventions",
           "Verify C01-C23 and 5 flagged items via primary US Navy sources",
           "Write CLAIMS_CHECK_v01.md and update status.json in clean worktree",
           "Open ww2-channel PR and report results"
-        ]
+        ],
+        "note": "Read WW2:007 PR #62 SCRIPT.md, NARRATION_v01.txt (3,169 words / 19,482 chars, SHA-256 verified), SOURCES.md (23 claims, "
       },
       "taskKeys": [
         "WW2:007"
