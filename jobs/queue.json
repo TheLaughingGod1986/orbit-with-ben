@@ -1,5 +1,5 @@
 {
-  "next_id": 3465,
+  "next_id": 3466,
   "jobs": [
     {
       "id": "J0001",
@@ -316174,6 +316174,35 @@
         ],
         "note": "Published 59f149bb08 to main; six analytics files only. Tracker rebuild and 154-row validation succeeded; board publishe"
       }
+    },
+    {
+      "id": "J3465",
+      "title": "Verify the selected Lifetime period for J3463 locally",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Chief ruling on J3463, Codex 24 November 2026: local-only evidence correction required before accepting the channel totals. Inspect /private/tmp/owb-J3463 commit f860973491 and jobs/reviews/J3463/STUDIO_EVIDENCE.json. The saved text lists 7 days, 28 days, 90 days and Lifetime, but does not record the selected control. Do not infer a selected period from those labels or assume the existing number is wrong.\n\nReuse the configured Field Order History Studio tab via cdp_tabs.reuse_page; verify channel identity against the parent brief. Read only, no account switching or sign-in. Explicitly select Lifetime and capture locally the selected control state (DOM/ARIA or screenshot) together with the exact watch-hours and Total subscribers cards, read time and channel URL. Keep raw evidence and generated analytics local. Re-run the strict dated importer in a clean worktree with videos {} and validate the result; use null with a reason if unavailable. Do not hand-edit analytics. Record the local commit/path and a non-sensitive completion summary on this job.\n\nThe prior automatic approval review rejected exporting the parent analytics and Studio evidence to the public GitHub repository. This task does not authorize that export: no analytics/raw evidence push, no analytics values in public job notes or thread, no alternative upload destination. After local verification, the Chief can review the corrected evidence; any later export still requires destination-specific approval. No spend or public YouTube changes. Parent J3463 remains held until this follow-up is complete and the export restriction is resolved. If Studio is unavailable, set a typed input wait with a concrete retry time.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-24T07:30Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T07:30Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify the selected date range and save local evidence",
+      "kind": "studio",
+      "plain": "Check that Field Order History totals cover the whole lifetime of the channel"
     }
   ],
   "focus": [
