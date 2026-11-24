@@ -73,7 +73,7 @@ YouTube Analytics returned `0` retention-curve points at `32` views (`"Not enoug
    - **`4:12–4:18` (Immediate 4-second repeat):** Cuts right back to the **exact same archive photo `IWM A 25814`**, now captioned `Bombardon experiments | Weymouth Bay, April 1944 | not the test results`.
    - **`4:19–4:29` (10+ second text-only filler slide):** Plain beige slide with **no map, no photo, and no diagram** — just text `GARLIESTON, WIGTOWN BAY / Secret experimental port | Southwest Scotland` (`4:19–4:27`) -> `THE CONDITIONS HAD TO MATCH / Tides, mudflats and gales` (`4:28+`) with a thin red line creeping across the bottom while VO describes Scotland vs Normandy's tides. Ambient piano music remains completely flat across the entire segment.
 
-4. **Window 2b (Engaged-viewer exit) — Live `6:57–7:37` (`v43` `10:42–11:22`; centered on Reach funnel `7:17` engaged AVD):**
+4. **Window 2b (Engaged-viewer AVD proxy) — Live `6:57–7:37` (`v43` `10:42–11:22`; centered on Reach funnel `7:17` engaged AVD):**
    - **`6:57–6:59`:** `A PIER THAT FOLLOWS THE TIDE` schematic reused for a **third** time.
    - **`7:00–7:05`:** Strong archive photo `IWM A 25792` (Phoenix caissons under construction, Southampton).
    - **`7:06–7:12`:** Animated grid counter (`65` -> `212` caissons filling in; clean visual, marred by `Inherited J2991 sources... | Locked narration unchanged`).

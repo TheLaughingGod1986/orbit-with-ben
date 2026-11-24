@@ -337,12 +337,12 @@ def video_context(slug: str, vid: str, window: str) -> dict:
     duration_s = float(video.get("seconds") or 0)
 
     # Prefer exact-window launch readings for both windows; never promote another age.
-    # Snapshot/Studio fallbacks retain their existing basis; launch-only missing windows are unavailable.
+    # Views require target evidence within the requested age window, even when other snapshots exist.
     win_views = _views_at_window(snaps, vid, pub, window) if snaps else None
     views = (
         launch_at_window.get("views")
         if (launch_at_window and launch_at_window.get("views") is not None)
-        else (win_views if win_views is not None else (video.get("views") if snaps else None))
+        else win_views
     )
     impressions = (
         launch_at_window.get("impressions")
