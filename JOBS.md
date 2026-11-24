@@ -94,6 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3490 | any | open | – | – | assembly · Board: monthly channel scorecard (subscribers, watch hours, Shorts, return per film) and the 4 Jan review rule |  |
 | J3491 | gemini | open | – | – | WW2:009 sources · facts · WW2 film 009: Gemini claims check on SCRIPT.md and SOURCES.md (PR #68) | ww2-channel#68 |
 | J3492 | cloud | open | – | – | WW2:009 script · review · WW2 film 009: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue VO | ww2-channel#68 |
+| J3493 | any | open | – | – | WW2:010 sources · facts · WW2 film 010: independent Gemini claims check on SCRIPT.md and SOURCES.md (PR #69) | ww2-channel#69 |
 
 Recently finished:
 
