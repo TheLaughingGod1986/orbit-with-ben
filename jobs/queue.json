@@ -91395,16 +91395,21 @@
           "at": "2026-11-24T12:02Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Applied OVLv9dxTcpE description prepend via YouTube Data API (redescribe-videos.ts); API readback confirmed 665 bytes (sha256 1c3c392a), title/privacy/tags/6bbbvfCx6zY unchanged; running Studio reload readback"
+        },
+        {
+          "at": "2026-11-24T12:04Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Mini Studio CDP 9223 reload confirmed 665-byte description (sha256 1c3c392a), Related=6bbbvfCx6zY, Public, title unchanged; committed manifest sync + readbacks on branch gemini/J0996 for PR"
         }
       ],
       "kind": "studio",
-      "remaining_action": "Sync local 027 Short PACKAGE_MANIFEST.json and save J0996 readback in a clean git worktree",
+      "remaining_action": "Post studio thread report and close J0996",
       "escalated_at": "2026-11-23T01:27Z",
       "mini_only": true,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-24T12:02Z",
+        "at": "2026-11-24T12:04Z",
         "by": "gemini",
         "plan": [
           "Check J0317 & live OWB/YouTube state",
@@ -91413,7 +91418,7 @@
           "Sync local 027 Short package & commit via worktree",
           "Post thread report & finish J0996"
         ],
-        "note": "Applied OVLv9dxTcpE description prepend via YouTube Data API (redescribe-videos.ts); API readback confirmed 665 bytes (s"
+        "note": "Mini Studio CDP 9223 reload confirmed 665-byte description (sha256 1c3c392a), Related=6bbbvfCx6zY, Public, title unchang"
       },
       "taskKeys": [
         "OWB:027"
