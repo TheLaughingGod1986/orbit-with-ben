@@ -320783,13 +320783,26 @@
           "at": "2026-11-24T12:15Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T12:15Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Verify readiness: Verify J3491 CLAIMS_CHECK.md, fold P02 polish + any fixes into v02, lock WW2:009 script (<=30 Nov 18:00Z), and queue post-reset VO (>30 Nov 10:50Z); viewer test i",
       "kind": "review",
       "recheck_of": "J3492",
       "due": "2026-11-24T13:15:25+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
