@@ -136,7 +136,9 @@ def hold_due(j, by_id, at):
         # Verification can repair the graph; it never releases the held production job automatically.
     if check:
         return check <= at
-    return bool(j.get("after") and by_id.get(j["after"], {}).get("status") == "done" and not external_hold(j, at))
+    # A completed predecessor does not turn pending Chief acceptance into an input hold.
+    # Recorded holds above still request verification, including on a review job.
+    return bool(not is_review(j) and j.get("after") and by_id.get(j["after"], {}).get("status") == "done" and not external_hold(j, at))
 
 def starting_execution(j, at, execution=None):
     """Caller supplies a process-validated execution lease, not a heartbeat.
