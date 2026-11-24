@@ -317991,7 +317991,7 @@
     {
       "id": "J3492",
       "title": "WW2 film 009: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue VO",
-      "needs": "cloud",
+      "needs": "mini",
       "repo": "ww2",
       "body": "Claude Rule-6 viewer test of the first 300 words and Rule-E topic/packaging/script lock for Field Order History film `WW2:009` (*Operation Pedestal: One Broken Tanker Saved Malta*), prepared in `ww2-channel` PR #68 (`macbook/J3474`, commit `ebb9600`).\n\n**Do (ww2-channel `studio/RULES.md` rules 1–6 and 9; script lock deadline `2026-11-30 18:00 UTC`; air slot **Sat 12 Dec 2026 17:00 London**):**\n1. Review `TOPIC_REVIEW.md` (GO recommendation, 41 verified official UK IWM A/GM PD archive photo IDs, picked title `Operation Pedestal: One Broken Tanker Saved Malta` at `49` chars, 3 launch Test & Compare thumbnail designs) — optionally add per-keyword vidIQ integer for `\"operation pedestal\"` — and record the Rule-E topic verdict.\n2. Perform **Claude's viewer test of the first 300 words** of `01_Script/NARRATION_v01.txt` as a stranger would (concrete moment by 0:30, promise by 0:45, main story moving by 1:00, no detours, title's answer withheld, one figure at a time).\n3. Verify the independent Gemini claims check is clean and `NARRATION_v01.txt` stays `<= 21,000` spoken chars (currently `16,406`, SHA-256 `2de059ed72849c3b45735adcdfd4b277d90e9328e4773351c7792cfdb41feeb4`).\n4. Lock the script (or return exact fixes), update `status.json`, and queue the ElevenLabs voice-over job for **after `2026-11-30 10:50Z`** (for Sat 12 Dec 17:00 London launch; Ben's watch due Wed 9 Dec).\n\n**Guards:** No ElevenLabs spend before `2026-11-30 10:50Z`. £0.\n",
       "ref": "ww2-channel#68",
@@ -318011,12 +318011,25 @@
           "at": "2026-11-24T10:00Z",
           "by": "macbook",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T10:04Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "WW2 film 009: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue VO",
       "due": "2026-11-30T18:00:00Z",
       "kind": "review",
-      "plain": "Test the Operation Pedestal opening as a stranger, lock the script, and queue voice-over after 30 Nov"
+      "plain": "Test the Operation Pedestal opening as a stranger, lock the script, and queue voice-over after 30 Nov",
+      "rerouted_from": {
+        "needs": "cloud",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3493",
