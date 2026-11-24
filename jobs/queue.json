@@ -317830,9 +317830,14 @@
           "at": "2026-11-24T10:00Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T10:00Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Build and deploy the board from main, then check the Schedule tab shows the plan",
+      "remaining_action": "Build and deploy the schedule overview, then verify the live page",
       "due": "2026-11-24T16:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -317849,8 +317854,11 @@
         "of": 3,
         "at": "2026-11-24T10:00Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Build the approved board",
+          "Deploy to Cloudflare",
+          "Verify the live schedule"
+        ]
       }
     },
     {
