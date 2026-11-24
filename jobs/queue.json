@@ -282734,9 +282734,14 @@
           "at": "2026-11-24T12:08Z",
           "by": "relay",
           "what": "condition verification queued: J3527"
+        },
+        {
+          "at": "2026-11-24T15:07Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-25T12:00:00Z"
         }
       ],
-      "remaining_action": "Check the comparison Shorts on 24 November before allowing the vaccine test to air",
+      "remaining_action": "Read matching first-day traffic sources on 25 November; retain the vaccine gate and 26 November stop deadline",
       "due": "2026-11-24T12:00:00Z",
       "kind": "studio",
       "plain": "Check whether other Shorts are reaching viewers before the vaccine test airs",
@@ -282749,10 +282754,12 @@
         "note": "Starting: check the brief, complete the work, verify the result"
       },
       "hold": {
-        "type": "test",
-        "condition": "The 20-22 November comparison Shorts have aired and their day-1 traffic sources are available for the standing 24 November gate; Plants first-48-hour data must also be read.",
-        "check_at": "2026-11-24T13:08:02+00:00",
-        "recheck_task": "J3527"
+        "type": "input",
+        "condition": "J3527 Chief HOLD: exact first-24-hour Shorts-feed count and total/share for named control Bks_JLId1ew are unproven. PR1253 supplies 23 first-24h total views, but 8/23 is a Pacific calendar-day ratio with 22 Nov unsettled and 20.6 percent is lifetime. Obtain matching-window traffic-source evidence; preserve unavailable Sq_lV89VMUs/fgsR8yAHr5s, no replacement substitution. Plants 48h read accepted from J3226. Retry 25 Nov 12:00Z; unresolved at 26 Nov 12:00Z means test not cleared and J3125 must unschedule sY0PSQFxjp8 by 18:00Z with Buffer and library records, per existing authorization.",
+        "check_at": "2026-11-25T12:00:00Z",
+        "last_recheck": "J3527",
+        "checked_at": "2026-11-24T15:07:03+00:00",
+        "checked_by": "codex"
       }
     },
     {
