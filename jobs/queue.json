@@ -328774,9 +328774,14 @@
           "at": "2026-11-24T21:40Z",
           "by": "gemini",
           "what": "step 0 of 6 done: Master SHA256 verified d2656fea86b93c4b7978817153b46167934314e4e99307b59e47e33111ae03fc; audio_input and moving_video_input demonstrated via read_file on 0:00-0:15 probe"
+        },
+        {
+          "at": "2026-11-24T21:41Z",
+          "by": "gemini",
+          "what": "step 1 of 6 done: Capabilities recorded (audio_input, moving_video_input); verified master hash matches J3623 PR106; starting full watch-through"
         }
       ],
-      "remaining_action": "Splitting exact verified master into contiguous chunks and inspecting J3623 delivery package",
+      "remaining_action": "Watching and listening to WW2 004 master minutes 0-8 (first 2 minutes, authorised opening join, picture/narration fit)",
       "due": "2026-11-26T12:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -328793,9 +328798,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-11-24T21:40Z",
+        "at": "2026-11-24T21:41Z",
         "by": "gemini",
         "plan": [
           "Record capabilities and inspect delivery",
@@ -328805,7 +328810,7 @@
           "Inspect thumbnails, captions and technical QA",
           "Write QA report and hand off to Chief"
         ],
-        "note": "Master SHA256 verified d2656fea86b93c4b7978817153b46167934314e4e99307b59e47e33111ae03fc; audio_input and moving_video_in"
+        "note": "Capabilities recorded (audio_input, moving_video_input); verified master hash matches J3623 PR106; starting full watch-t"
       },
       "taskKeys": [
         "WW2:004"
