@@ -323480,13 +323480,13 @@
       "stage": "sources",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook",
       "since": "2026-11-24T15:56Z",
-      "eta": "2026-11-24T17:56Z",
+      "eta": "",
       "created_by": "macbook-2",
       "created_at": "2026-11-24T15:53Z",
-      "result": "",
+      "result": "WW2:017 independent Gemini claims check complete on ww2-channel PR #92 (branch macbook/J3556, commit d87f582, stacked on PR #89). Verdict: PASS WITH FIXES REQUIRED BEFORE SCRIPT LOCK (30 PASS, 5 FLAG — 2 material: C25 West Virginia departed Pearl Harbor 30 Apr 1943 / arrived Puget Sound 7 May 1943, C35 USS Pennsylvania never fired a shot at Surigao Strait; 3 minor: C09 Wallin formally took Salvage Division 9 Jan 1942, C15 Nevada H2S 7 Feb 1942 Lt Clarkson air-test fitting + CMM DeVries hospital death, C27 Julio DeCastro shipyard caulker/chipper not machinist; F1-F5 all resolved). 26/26 official US Federal PD archive IDs verified clean (6 preview scans flagged for full-res harvest). NARRATION_v01.txt verified 18,225 stripped chars (2,889 words, 52/52 parity, projected 18,296 post-fixes <= 21,000). status.json updated (sources -> claude; vo held, £0 spend / 0 ElevenLabs credits). Handed to Claude for v02 + Rule-6 viewer test and Chief (codex) merge/lock.",
       "history": [
         {
           "at": "2026-11-24T15:53Z",
@@ -323522,6 +323522,11 @@
           "at": "2026-11-24T16:05Z",
           "by": "macbook",
           "what": "step 5 of 5 done"
+        },
+        {
+          "at": "2026-11-24T16:07Z",
+          "by": "macbook",
+          "what": "done: WW2:017 independent Gemini claims check complete on ww2-channel PR #92 (branch macbook/J3556, commit d87f582, stacked on PR #89). Verdict: PASS WITH FIXES REQUIRED BEFORE SCRIPT LOCK (30 PASS, 5 FLAG — 2 material: C25 West Virginia departed Pearl Harbor 30 Apr 1943 / arrived Puget Sound 7 May 1943, C35 USS Pennsylvania never fired a shot at Surigao Strait; 3 minor: C09 Wallin formally took Salvage Division 9 Jan 1942, C15 Nevada H2S 7 Feb 1942 Lt Clarkson air-test fitting + CMM DeVries hospital death, C27 Julio DeCastro shipyard caulker/chipper not machinist; F1-F5 all resolved). 26/26 official US Federal PD archive IDs verified clean (6 preview scans flagged for full-res harvest). NARRATION_v01.txt verified 18,225 stripped chars (2,889 words, 52/52 parity, projected 18,296 post-fixes <= 21,000). status.json updated (sources -> claude; vo held, £0 spend / 0 ElevenLabs credits). Handed to Claude for v02 + Rule-6 viewer test and Chief (codex) merge/lock."
         }
       ],
       "remaining_action": "Validating JSON, committing, pushing branch macbook/J3556, opening PR, and posting report",
