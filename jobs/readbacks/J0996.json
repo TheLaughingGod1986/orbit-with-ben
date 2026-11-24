@@ -1,0 +1,117 @@
+{
+  "job": "J0996",
+  "by": "gemini",
+  "machine": "Mini",
+  "method": "youtube_data_api_redescribe_plus_studio_cdp_9223_readback",
+  "films": [
+    "OWB:027"
+  ],
+  "dependency": {
+    "job": "J0317",
+    "status": "done",
+    "evidence": "jobs/readbacks/J0317.json (PR #1199 merged)"
+  },
+  "channel_identity": {
+    "channel_id": "UC_esArsDKd3GJvOkeO0DUog",
+    "channel_title": "Orbit With Ben",
+    "custom_url": "@orbitwithben",
+    "verified_via": [
+      "youtube_data_api_channels_mine",
+      "mini_studio_cdp_9223_ytcfg"
+    ]
+  },
+  "parent_long": {
+    "video_id": "6bbbvfCx6zY",
+    "channel_id": "UC_esArsDKd3GJvOkeO0DUog",
+    "privacy_status": "public",
+    "publish_at": null,
+    "live_listing_title": "What If Earth Stopped Spinning? (It's Already Slowing Down)",
+    "studio_visibility_text": "Visibility\nPublic",
+    "description_sha256_before": "a858107264b3c61025e24c98910f547cfcb6033c5d0b1a3f6a1351f0b7775474",
+    "description_sha256_after": "a858107264b3c61025e24c98910f547cfcb6033c5d0b1a3f6a1351f0b7775474",
+    "untouched": true
+  },
+  "target_short": {
+    "video_id": "OVLv9dxTcpE",
+    "channel_id": "UC_esArsDKd3GJvOkeO0DUog",
+    "title": "What If Earth Stopped Spinning?",
+    "privacy_status": "public",
+    "publish_at": null,
+    "made_for_kids": false,
+    "category_id": "28",
+    "default_language": "en-GB",
+    "default_audio_language": "en-GB",
+    "tags": [
+      "1500 km/h",
+      "earth rotation",
+      "earth stopped spinning",
+      "equator atmosphere",
+      "space documentary",
+      "what if earth stopped spinning"
+    ],
+    "prefix_prepended": "What If Earth Stopped Spinning? (It's Already Slowing Down)\nhttps://www.youtube.com/watch?v=6bbbvfCx6zY\n\n",
+    "prefix_bytes": 105,
+    "before": {
+      "checked_at_utc": "2026-11-24T11:58:22Z",
+      "description": "What If Earth Stopped Spinning?\n\nIf the ground stopped and the air did not, the air at the equator would keep going at more than 1,500 km/h, faster than sound.\n\nSources: World Meteorological Organization, Archive of Weather and Climate Extremes (highest gust 408 km/h, Barrow Island, 10 April 1996). Equatorial rotation about 1,670 km/h. Speed of sound at sea level about 1,235 km/h.\nhttps://wmo.asu.edu/content/world-highest-wind-gust-recorded-cyclone\n\nPictures: NASA EPIC imagery. Facts: every number is checked against the source above.\nImage credits: NASA.",
+      "description_chars": 560,
+      "description_bytes": 560,
+      "description_sha256": "016c84279071dee34756a343c620acad6ccdd9a8ce79b1fea3d9a121518f2369",
+      "studio_related_text": "Related video\nWhat If Earth Stopped Spinning? (It's Already Slowing Down)",
+      "studio_visibility_text": "Visibility\nPublic"
+    },
+    "api_update": {
+      "tool": "07_Content-Ops/scripts/redescribe-videos.ts",
+      "input_file": "05_Analytics/live_fixes/2026-11-24_J0996_OVLv9dxTcpE_description.json",
+      "result_file": "05_Analytics/live_fixes/2026-11-24_J0996_OVLv9dxTcpE_description_RESULT.json",
+      "finished_at_utc": "2026-11-24T12:02:18.241Z",
+      "updated": true
+    },
+    "after_api_readback": {
+      "checked_at_utc": "2026-11-24T12:02:18Z",
+      "title": "What If Earth Stopped Spinning?",
+      "privacy_status": "public",
+      "publish_at": null,
+      "made_for_kids": false,
+      "description": "What If Earth Stopped Spinning? (It's Already Slowing Down)\nhttps://www.youtube.com/watch?v=6bbbvfCx6zY\n\nWhat If Earth Stopped Spinning?\n\nIf the ground stopped and the air did not, the air at the equator would keep going at more than 1,500 km/h, faster than sound.\n\nSources: World Meteorological Organization, Archive of Weather and Climate Extremes (highest gust 408 km/h, Barrow Island, 10 April 1996). Equatorial rotation about 1,670 km/h. Speed of sound at sea level about 1,235 km/h.\nhttps://wmo.asu.edu/content/world-highest-wind-gust-recorded-cyclone\n\nPictures: NASA EPIC imagery. Facts: every number is checked against the source above.\nImage credits: NASA.",
+      "description_chars": 665,
+      "description_bytes": 665,
+      "description_sha256": "1c3c392a7acc1fdbc1ed7b9ec286688d072a5d8ea166fdb76a5d0bcf7f38c4f8",
+      "existing_tail_byte_exact": true,
+      "no_duplicate_prefix": true
+    },
+    "after_studio_reload_readback": {
+      "checked_at_utc": "2026-11-24T12:02:44.259Z",
+      "cdp_port": 9223,
+      "url": "https://studio.youtube.com/video/OVLv9dxTcpE/edit",
+      "ytcfg_channel_id": "UC_esArsDKd3GJvOkeO0DUog",
+      "dom_title": "What If Earth Stopped Spinning?",
+      "visibility_text": "Visibility\nPublic",
+      "related_text": "Related video\nWhat If Earth Stopped Spinning? (It's Already Slowing Down)",
+      "dom_description_chars": 665,
+      "dom_description_bytes": 665,
+      "dom_description_sha256": "1c3c392a7acc1fdbc1ed7b9ec286688d072a5d8ea166fdb76a5d0bcf7f38c4f8",
+      "matches_api_byte_exact": true
+    }
+  },
+  "local_package_sync": {
+    "file": "02_Video-Projects/027_What-If-Earth-Stopped-Spinning/10_Shorts/lift_sudden_air/11_Upload-Package/PACKAGE_MANIFEST.json",
+    "description_sha256_before": "016c84279071dee34756a343c620acad6ccdd9a8ce79b1fea3d9a121518f2369",
+    "description_sha256_after": "1c3c392a7acc1fdbc1ed7b9ec286688d072a5d8ea166fdb76a5d0bcf7f38c4f8",
+    "other_fields_unchanged": true
+  },
+  "guards": {
+    "retitle": false,
+    "privacy_or_schedule_changed": false,
+    "media_or_upload_changed": false,
+    "test_and_compare_changed": false,
+    "pinned_comment_changed": false,
+    "related_video_changed": false,
+    "old_dM1OgGPAYvw_touched": false,
+    "standalone_s1_touched": false,
+    "spend_gbp": 0
+  },
+  "notes": [
+    "00_Brand/Channel-Setup/social/UPLOADS.json still records relatedVideoId=VBaYRPp85Sw (relatedJob=J0975) for OVLv9dxTcpE while live Studio shows Related video = What If Earth Stopped Spinning? (It's Already Slowing Down) (6bbbvfCx6zY, set in J0317). Left untouched here because J0317 owns Related records and J0996 scope is OVLv9dxTcpE description only."
+  ]
+}
