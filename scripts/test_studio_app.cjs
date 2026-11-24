@@ -1761,13 +1761,14 @@ assert(!fieldHtml.includes('(undefined'));
       {id: 'J3', status: 'blocked', title: 'Fresh held job', created_at: '2026-11-23T08:00Z'},
       {id: 'J4', status: 'open', title: 'Verify condition for J2', recheck_of: 'J2', due: '2026-11-20T09:00:00Z'},
       {id: 'J5', status: 'done', title: 'Finished', due: '2026-11-20T09:00:00Z'},
-      {id: 'J6', status: 'open', title: 'Future', due: '2026-11-30T09:00:00Z'}]},
+      {id: 'J6', status: 'open', title: 'Future', due: '2026-11-30T09:00:00Z'},
+      {id: 'J7', status: 'blocked', title: 'Pin once public', created_at: '2026-10-25T08:00Z', hold: {type: 'public', check_at: '2026-12-06T18:05:00Z'}}]},
   };
   const m = t.stuckModel(sb, at);
   assert.deepStrictEqual(m.out.map(a => a.name), ['Cursor'], 'only real agents that are out (not tool pools)');
   assert.strictEqual(m.out[0].back, Date.parse('2026-11-26T11:00Z'));
   assert.deepStrictEqual(m.overdue.map(j => j.id), ['J1'], 'overdue live jobs only, condition checks left out');
-  assert.deepStrictEqual(m.stale.map(j => j.id), ['J2'], 'blocked more than three days');
+  assert.deepStrictEqual(m.stale.map(j => j.id), ['J2'], 'blocked more than three days; a dated wait (J7) is on schedule, not stuck');
   const html = t.stuckSection(sb, at);
   assert(html.includes('<b>Stuck</b>') && html.includes('1 late') && html.includes('1 waiting 3+ days') && html.includes('1 agent out'));
   assert(html.includes('Uploading the Titan Short') && html.includes('3 h late'), 'plain job line with how late');

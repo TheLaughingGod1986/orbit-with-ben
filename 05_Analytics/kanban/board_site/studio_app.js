@@ -1400,7 +1400,9 @@
     const overdue = live.filter(j => due(j) !== null && due(j) < t).sort((x, y) => due(x) - due(y));
     const born = j => { const d = Date.parse(j.created_at || ''); return Number.isFinite(d) ? d : null; };
     const DAY = 864e5;
-    const stale = live.filter(j => j.status === 'blocked' && born(j) !== null && t - born(j) > 3 * DAY && !overdue.includes(j))
+    // A job waiting for a set time (a film going public, a 48-hour read) is on schedule, not stuck.
+    const scheduled = j => { const h = j.hold || {}; const c = Date.parse(h.check_at || ''); return ['date', 'public', 'test'].includes(h.type) && Number.isFinite(c) && c > t; };
+    const stale = live.filter(j => j.status === 'blocked' && born(j) !== null && t - born(j) > 3 * DAY && !overdue.includes(j) && !scheduled(j))
       .sort((x, y) => born(x) - born(y));
     return {out, overdue, stale, now: t};
   }
