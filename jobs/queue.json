@@ -322893,13 +322893,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 30,
-      "status": "claimed",
+      "status": "done",
       "by": "codex",
       "since": "2026-11-24T18:23Z",
-      "eta": "2026-11-24T18:53Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T13:32Z",
-      "result": "",
+      "result": "Completed: 48-hour audit and verified title change merged in WW2 PR #103 (4632a2a55259f9d8bd479922dbd4da929287a4bc). Saved Mulberry Harbours: D-Day’s Floating Ports at 24 Nov 18:30:17 UTC; Studio reload and Data API verified. B/C/D test untouched and Running. Baseline 1701 impressions/0.8% CTR; search 42/0 clicks. Retention and exact prior 13:51 split unavailable and documented. J3605 date-held to 1 Dec 18:31 UTC for seven-day title outcome. No playback, privacy/schedule changes or spend.",
       "history": [
         {
           "at": "2026-11-24T13:32Z",
@@ -322945,6 +322945,11 @@
           "at": "2026-11-24T18:33Z",
           "by": "codex",
           "what": "step 4 of 4 done: WW2 PR #103 publishes audit/status/LEARNINGS. Studio reload + API verify title; running thumbnail test retained. J3605 date-held to 1 Dec 18:31 UTC with automatic release for the seven-day title outcome. Exact prior-retitle split and retention curve unavailable, documented."
+        },
+        {
+          "at": "2026-11-24T18:34Z",
+          "by": "codex",
+          "what": "done: Completed: 48-hour audit and verified title change merged in WW2 PR #103 (4632a2a55259f9d8bd479922dbd4da929287a4bc). Saved Mulberry Harbours: D-Day’s Floating Ports at 24 Nov 18:30:17 UTC; Studio reload and Data API verified. B/C/D test untouched and Running. Baseline 1701 impressions/0.8% CTR; search 42/0 clicks. Retention and exact prior 13:51 split unavailable and documented. J3605 date-held to 1 Dec 18:31 UTC for seven-day title outcome. No playback, privacy/schedule changes or spend."
         }
       ],
       "remaining_action": "Recording the completed title change and audit handoff",
@@ -322968,7 +322973,8 @@
       "taskKeys": [
         "WW2:001",
         "WW2:002"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/103"
     },
     {
       "id": "J3541",
