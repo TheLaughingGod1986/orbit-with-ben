@@ -316546,10 +316546,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "macbook-2",
-      "since": "2026-11-24T09:07Z",
-      "eta": "2026-11-24T11:07Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-24T09:06Z",
       "result": "",
@@ -316568,6 +316568,11 @@
           "at": "2026-11-24T09:07Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T09:07Z",
+          "by": "macbook-2",
+          "what": "released: MacBook worker run on claude ended (exit 1) with the job still open; picked up again next run; claude paused on the MacBook until 2026-11-24T11:07:17Z, so the next run uses the next agent in the chain"
         }
       ],
       "remaining_action": "Verify readiness: Obtain explicit authorization for the Pluto package public-repository export; then reconcile its ledger entry and submit the existing package for final review",
