@@ -327856,17 +327856,22 @@
           "at": "2026-11-24T20:34Z",
           "by": "codex",
           "what": "step 1 of 4 done: Confirmed startup reserves one slot for the parent; a running parent is already counted by its lock. Boundary retries also need a reservation covering the child startup delay."
+        },
+        {
+          "at": "2026-11-24T20:36Z",
+          "by": "codex",
+          "what": "step 2 of 4 done: Implemented boundary retry with parent-aware capacity, worker exclusion and inherited spawn reservation. Added recovery, lock, memory, pause, recursion and real child-lifetime tests."
         }
       ],
-      "remaining_action": "Adding safe retries when a worker slot becomes free",
+      "remaining_action": "Running relay tests and reviewing the change",
       "due": "2026-11-25T12:00:00Z",
       "kind": "assembly",
       "plain": "Keep both available workers busy when one returns during a run",
       "mini_only": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-24T20:34Z",
+        "at": "2026-11-24T20:36Z",
         "by": "codex",
         "plan": [
           "Inspect slot guards",
@@ -327874,7 +327879,7 @@
           "Test and review change",
           "Publish and refresh safely"
         ],
-        "note": "Confirmed startup reserves one slot for the parent; a running parent is already counted by its lock. Boundary retries al"
+        "note": "Implemented boundary retry with parent-aware capacity, worker exclusion and inherited spawn reservation. Added recovery,"
       }
     },
     {
