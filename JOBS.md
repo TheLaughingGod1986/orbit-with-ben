@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2037, J2040, J2529, J3205, J3370, J3371, J3419.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2037, J2040, J2529, J3205, J3371, J3419, J3370.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -54,7 +54,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3310 | mini | open (after J3307) | – | – | studio · Studio: arm T043 thumbnail Test & Compare on REXYxuLOBoI (005 — OUTLIVES OUR SUN) after J3307 PASS | jobs/reviews/J3382/REVIEW.md |
 | J3365 | mini | blocked | codex | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J3369 | mini | blocked | codex | – | 001 thumbs · studio · Field Order History pilot 1: 48-hour thumbnail decision |  |
-| J3370 | mini | blocked | codex | – | WW2:003 vo · vo · WW2 003: correct S62 and S51a narration under J3360 ruling |  |
+| J3370 | mini | open (after J3360) | – | – | WW2:003 vo · vo · WW2 003: correct S62 and S51a narration under J3360 ruling |  |
 | J3371 | mini | open (after J3370) | – | – | WW2:003 edit · chart · WW2 003: rebuild loss graphic and cues for corrected narration |  |
 | J3375 | mini | blocked | gemini | – | review · Verify condition for J3178 |  |
 | J3391 | mini | blocked | macbook-2 | – | review · Verify condition for J3365 |  |
@@ -85,6 +85,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3476 | any | open | – | – | WW2:008 sources · facts · WW2 film 008: Gemini claims check on SCRIPT.md and SOURCES.md (PR #61) | ww2-channel#61 |
 | J3477 | cloud | open (after J3476) | – | – | WW2:008 script · review · WW2 film 008: Claude viewer test (first 300 words), Rule E lock & queue VO | ww2-channel#61 |
 | J3478 | mini | claimed | gemini | 2026-11-24T11:25Z | review · Verify condition for J2537 |  |
+| J3479 | any | open | – | – | review · Field Order History: three films a week from mid-December, decision pack for Ben on Tue 1 Dec (slots, topics 11-14, lead time, voice) |  |
 
 Recently finished:
 

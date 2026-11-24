@@ -1,5 +1,5 @@
 {
-  "next_id": 3479,
+  "next_id": 3480,
   "jobs": [
     {
       "id": "J0001",
@@ -307504,13 +307504,13 @@
       "stage": "vo",
       "after": "J3360",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-23T16:17Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-22T14:21Z",
-      "result": "Waiting for: No-spend correction ready in WW2 PR52 (f60b8c4), based on PR30 with main merged. Live 23 Nov 16:20:59Z: 15,222 left; reserve 11,000 plus newer J3422 take/possible retake about 2,400 leaves at most 1,822 before Scribe. J3370 texts total 4,893 characters; even hypothetical half-rate TTS is 2,446.5 before Scribe, while full-character bound exceeds 3,000 total cap. Zero spend. Recheck actual availability/reset; verify bounded TTS/Scribe pricing, pending spend and all commitments under writer lock before each future request. Reset does not waive cap. Audio, splice, Scribe alignment, cues and new mix remain undone; J3205 and J3371 dependencies unchanged.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-22T14:21Z",
@@ -307551,28 +307551,21 @@
           "at": "2026-11-23T16:22Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-30T10:50:31Z"
+        },
+        {
+          "at": "2026-11-24T09:26Z",
+          "by": "claude",
+          "what": "reopened: Released by Claude. Ben, Tue 24 Nov ~09:20 London, in chat: \"yes, remove the credit restriction. We shouldn't have a credit restriction. We're paying for the credits, let's use them until it hits 0.\" The 11,000-credit ElevenLabs reserve is gone (orbit-with-ben PR #1232, plan_pace.ELEVENLABS_RESERVE = 0). Spend what is left, never past it: no top-up, overage capped at £0. About 14,260 credits were left at 03:25Z after pilot 2's pickup; this job's texts are 4,893 characters plus the Scribe check, so it fits. Voice the S51a and S62 corrections now (same voice, settings and checks as WW2 PR52 prepared, with the ear-check by an agent that can hear), so J3371 and the edit J3205 can finish for film 3's Tue 1 Dec slot. If the live balance is too low when you start, say the exact figure and stop; never go past zero."
         }
       ],
       "remaining_action": "Wait for enough reserved voice credit to record the two corrected passages",
       "kind": "vo",
       "plain": "Correct the bomber loss narration in the third WW2 film",
       "mini_only": true,
-      "urgent": 5,
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-23T16:22Z",
-        "by": "codex",
-        "note": "Exact ruling text, unchanged other 72 paragraphs and S51a tail, hashes, source arithmetic and both dry runs verified. Li"
-      },
+      "urgent": 7,
       "taskKeys": [
         "WW2:003"
-      ],
-      "hold": {
-        "type": "credits",
-        "condition": "No-spend correction ready in WW2 PR52 (f60b8c4), based on PR30 with main merged. Live 23 Nov 16:20:59Z: 15,222 left; reserve 11,000 plus newer J3422 take/possible retake about 2,400 leaves at most 1,822 before Scribe. J3370 texts total 4,893 characters; even hypothetical half-rate TTS is 2,446.5 before Scribe, while full-character bound exceeds 3,000 total cap. Zero spend. Recheck actual availability/reset; verify bounded TTS/Scribe pricing, pending spend and all commitments under writer lock before each future request. Reset does not waive cap. Audio, splice, Scribe alignment, cues and new mix remain undone; J3205 and J3371 dependencies unchanged.",
-        "check_at": "2026-11-30T10:50:31Z"
-      }
+      ]
     },
     {
       "id": "J3371",
@@ -307607,7 +307600,7 @@
       "remaining_action": "Rebuild the loss graphic and its timing after the corrected narration",
       "kind": "chart",
       "plain": "Correct the bomber loss graphic to match the verified narration",
-      "urgent": 6
+      "urgent": 5
     },
     {
       "id": "J3372",
@@ -312045,7 +312038,7 @@
       "due": "2026-11-23T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
-      "urgent": 7,
+      "urgent": 6,
       "taskKeys": [
         "WW2:001"
       ],
@@ -317083,6 +317076,35 @@
         ],
         "note": "Claimed J3478; starting verification of J2537 waiting condition"
       }
+    },
+    {
+      "id": "J3479",
+      "title": "Field Order History: three films a week from mid-December, decision pack for Ben on Tue 1 Dec (slots, topics 11-14, lead time, voice)",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "**Why (Ben, Tue 24 Nov ~09:20 London, in chat: \"3 a week from mid-December. Yeah, let's try the 1st of December, like you recommended. It's a good idea.\").** Field Order History goes from two films a week (Tue and Sat, 17:00 London) to three (Tue, Thu, Sat) from mid-December, with the go decision on **Tue 1 Dec**. Two things decide it: films reaching Ben's watch at least three days before they air, and enough ElevenLabs voice for about 13 films in December (the Creator plan gives about six new films a month; a bigger plan is Ben's money call).\n\n**Do, by Mon 30 Nov 18:00 London (a decision pack for Ben on 1 Dec):**\n1. **Slot map from Tue 15 Dec:** Tue 15 (film 7), Thu 17 (8), Sat 19 (9), Tue 22 (10), Thu 24 (11, or skip Christmas Eve if the data says viewers are away), Sat 26 (12), Tue 29 (13), Thu 31 (14). Move films 7-10's script lock dates (J3472-J3475) earlier where the Thursday slots need it, and say which.\n2. **Topics 11-14:** pick four from `00_Brand/VIDEO_BACKLOG.json` by the channel's own data so far (pilot 1 and 2 numbers, the outlier study) and queue their topic-check-and-script jobs exactly like J3472, locks spread through 10-17 Dec.\n3. **Lead time check:** for films 2-6, the date each reached Ben's watch against its air date; can the studio keep three days' lead at three a week?\n4. **Voice:** December need in characters (films 7-14 at up to 21,000 each, plus any pickups) against the plan's ~121,000 a month after the 30 Nov reset; the gap and the cheapest plan that closes it, with its monthly price from ElevenLabs' own page. Don't change the plan: that is Ben's decision.\n5. **One page for Ben:** go / not yet, the first Thursday, and the one decision he needs to make (the voice plan). Put it on the thread and in ww2-channel `00_Brand/THREE_A_WEEK_2026-12.md`.\n\n**Guards.** No plan change, no spend, no schedule change to films 3-6. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T09:26Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T09:26Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Map the three-a-week slots, pick topics 11-14, check lead time and voice need",
+      "due": "2026-11-30T18:00:00Z",
+      "kind": "review"
     }
   ],
   "focus": [
