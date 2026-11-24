@@ -67,7 +67,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3486 | mini | open | – | – | WW2:015 script · script · WW2 film 015: topic check, packaging first, script and sources, to lock by 2026-12-16 |  |
 | J3487 | mini | blocked | macbook | – | WW2:016 script · script · WW2 film 016: topic check, packaging first, script and sources, to lock by 2026-12-18 |  |
 | J3489 | mini | open | – | – | review · AI spend: Google AI Ultra review before the 12 Dec renewal (Flow and Gemini use against cheaper tiers), for Ben |  |
-| J3490 | any | open | – | – | assembly · Board: monthly channel scorecard (subscribers, watch hours, Shorts, return per film) and the 4 Jan review rule |  |
+| J3490 | any | claimed | macbook-2 | 2026-11-24T18:38Z | assembly · Board: monthly channel scorecard (subscribers, watch hours, Shorts, return per film) and the 4 Jan review rule |  |
 | J3491 | gemini | open | – | – | WW2:009 sources · facts · WW2 film 009: Gemini claims check on SCRIPT.md and SOURCES.md (PR #68) | ww2-channel#68 |
 | J3492 | mini | blocked | macbook | – | WW2:009 script · review · WW2 film 009: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue VO | ww2-channel#68 |
 | J3496 | mini | claimed | gemini | 2026-11-24T16:31Z | 128 script · script · HOS 128 Edison vs Tesla (film 1, Thu 7 Jan): package first, then the 7-9 minute script draft |  |
