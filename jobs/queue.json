@@ -317532,7 +317532,7 @@
     {
       "id": "J3486",
       "title": "WW2 film 015: topic check, packaging first, script and sources, to lock by 2026-12-16",
-      "needs": "any",
+      "needs": "mini",
       "repo": "ww2",
       "body": "**Why (Ben, Tue 24 Nov ~09:35 London: \"So from 1st of December, let's do 3 a week.\").** Field Order History airs three films a week (Tue, Thu, Sat at 17:00 London) from Tue 1 Dec (slot map in `00_Brand/THREE_A_WEEK_2026-12.md`). This film's slot is **Tue 29 Dec 17:00**; its script must be locked by **2026-12-16 18:00** (13 days before air) so it can be voiced, harvested and edited to reach Ben's watch three days before air.\n\n**Topic & series:** `015_M4-Sherman-Tank-Engineering-Logistics` — working title *\"Why the Sherman Tank Outlasted German Tigers\"* (44 chars), series **Engineering that won the war**, selected from `00_Brand/VIDEO_BACKLOG.json` using Pilot 1 data, `PACKAGING_FINDINGS.md` (`J3005`, 1,020 videos) and the 17 Nov vidIQ outlier study. Incorporate Pilot 2's 48h/7d numbers and `studio/LEARNINGS.md` updates at topic check.\n- **Primary US/UK official archives:** US NARA RG 111-SC & LoC FSA/OWI (Detroit Tank Arsenal Chrysler lines, Sherman wet-stowage, gyro-stabiliser, Normandy field repair) + UK IWM War Office B/BU (Sherman Firefly)\n\n**Do, to the channel's rules (ww2-channel `studio/RULES.md` 1-6 and 12, `studio/LEARNINGS.md`, `00_Brand/PLAYBOOK.md`):**\n1. **Topic check** (reviewer rubric, AGENTS.md E): no near-duplicate on our channel; audience evidence (vidIQ search demand for the thing's name, comparable videos' views, Pilot 1 & 2 learnings); enough US/UK official archive photographs to carry at least half the screen time (list 15 real candidates with IDs now). If the topic fails, say so and propose an alternative from `00_Brand/VIDEO_BACKLOG.json`.\n2. **Packaging first (rule 2):** three titles of 50 characters or fewer naming the thing viewers know (score them), three thumbnail ideas with one subject filling the frame at 168 px. Pick one title.\n3. **Script:** a story, not a list (rule 4); the first two minutes per rule 3 (a concrete moment by 0:30, the promise by 0:45, the story moving by 1:00, no detours, the title's answer kept for later); plain words, one figure at a time; length follows the story, at most 21,000 spoken characters (rule 9 — or 35-45 min only if Ben has upgraded ElevenLabs). `01_Script/SCRIPT.md`, `NARRATION_v01.txt`, `SOURCES.md` with every claim sourced.\n4. **Claims check** (Gemini, facts lane) and **Claude's viewer test of the first 300 words** (rule 6) before it is locked; then queue the voice-over.\n5. One ww2-channel PR per stage; update the film's `status.json` stages as you go (nothing syncs them automatically).\n\n**Guards.** No voice credits spent in this script job. £0.\n",
       "ref": "",
@@ -317552,12 +317552,25 @@
           "at": "2026-11-24T09:37Z",
           "by": "macbook",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T09:44Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Check the topic, write the packaging first, then the script and sources",
       "due": "2026-12-16T18:00:00Z",
       "kind": "script",
-      "plain": "Research, package and write the script for WW2 film 015 (M4 Sherman tank engineering and reliability)"
+      "plain": "Research, package and write the script for WW2 film 015 (M4 Sherman tank engineering and reliability)",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3487",
