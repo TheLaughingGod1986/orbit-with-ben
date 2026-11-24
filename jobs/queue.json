@@ -324050,19 +324050,29 @@
           "at": "2026-11-24T16:37Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T16:38Z",
+          "by": "macbook",
+          "what": "step 1 of 5 done"
         }
       ],
-      "remaining_action": "Check titles and thumbnails of films 003-017 against rule 2 and fix the ones that fail",
+      "remaining_action": "Auditing film 003 and reading ww2-channel packaging files",
       "due": "2026-11-25T18:00:00Z",
       "kind": "review",
       "urgent": 13,
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T16:37Z",
+        "step": 1,
+        "of": 5,
+        "at": "2026-11-24T16:38Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Audit film 003 packaging",
+          "Audit films 004 to 017",
+          "Check search terms and top videos",
+          "Update status and upload packages",
+          "Open ww2-channel PR and report"
+        ]
       }
     },
     {
