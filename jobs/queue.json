@@ -318917,9 +318917,14 @@
           "at": "2026-11-24T10:49Z",
           "by": "codex",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-24T10:49Z",
+          "by": "codex",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Record Ben's OKs and queue the upload for each approved Short",
+      "remaining_action": "Check the five approved Shorts and their upload jobs",
       "due": "2026-11-25T12:00:00Z",
       "kind": "chief",
       "urgent": 15,
@@ -318928,9 +318933,17 @@
         "of": 3,
         "at": "2026-11-24T10:49Z",
         "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check approvals and upload work",
+          "Record approvals and queue uploads",
+          "Verify records and report"
+        ]
+      },
+      "taskKeys": [
+        "OWB:032",
+        "OWB:029",
+        "HOS:010"
+      ]
     },
     {
       "id": "J3506",
