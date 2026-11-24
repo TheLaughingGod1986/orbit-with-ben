@@ -108,6 +108,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3509 | mini | open (after J3505) | – | – | 029 upload · studio · Swap approved Betelgeuse half-Moon Short to v06; retain 14 Dec 11:30 | J3505 |
 | J3510 | mini | open (after J3505) | – | – | 029 upload · studio · Swap approved Betelgeuse opening Short to v06; retain 11 Dec 11:30 | J3505 |
 | J3511 | mini | open (after J3505) | – | – | 010 upload · studio · Upload approved HOS 010 bird Short C v01 privately; no schedule yet | J3505 |
+| J3512 | mini | open (after J3505) | – | – | 010 upload · studio · Upload approved HOS 010 dinosaur Short A v01 privately; no schedule yet | J3505 |
 
 Recently finished:
 

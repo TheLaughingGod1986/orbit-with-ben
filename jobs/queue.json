@@ -1,5 +1,5 @@
 {
-  "next_id": 3512,
+  "next_id": 3513,
   "jobs": [
     {
       "id": "J0001",
@@ -319147,6 +319147,37 @@
       "due": "2026-11-25T12:00:00Z",
       "kind": "studio",
       "plain": "Upload the dinosaur and birds Short you approved as a private video",
+      "mini_only": true
+    },
+    {
+      "id": "J3512",
+      "title": "Upload approved HOS 010 dinosaur Short A v01 privately; no schedule yet",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Authority: J3505, Ben board OK relayed by Claude and independently checked against board-data on 24 Nov 2026. Codex elected Chief verified before queuing. GBP 0, no generation. Claim film upload stage before work. Verify exact approved master hash and all applicable gates; prepare complete listing package and dry run before uploading. Keep existing uploaded files and manifests intact; use a new versioned upload package. Read current YouTube state before any write; stop duplicate uploads if this exact cut is already uploaded. Never delete a video, change a running thumbnail test, or make anything public immediately. Record every privacy/publishAt change with old/new state and authority on the studio thread in the same session; update gate library, UPLOADS.json and Buffer records together. Read back channel, privacy, publishAt, cover, captions and Related status. All Shorts must air after their long is public. If its long slips, prevent the Short airing first. Report exact ids and times, and commit records from a clean worktree.\n\nBen OK 16 Nov 11:10 London, card HOS:ASK:J2933.1. Exact file HOS UAT/010_Alvarez-Clay-Line-Dinosaurs/10_Shorts/hos_010_short_A_v01.mp4, SHA256 ea29e26487d6631416449c9adf712f51b1b9508db06b7b6c29edc4236970fe59. Title What Killed the Dinosaurs? Source HOS 010/10_Shorts/J2172/short_A and DELIVERY_MANIFEST.json; review J2933, merged HOS PR 611. Prepare listing using approved title/cover/copy, lint:package and dry-run, then upload PRIVATE WITHOUT publishAt now. Ben approval predates 19 Nov new-short length rule; preserve approved v01, no unsolicited rebuild. Register final cut in OWB social/hos/UPLOADS.json at upload even though private, no public Buffer delivery before intended air. Queue a separate conditional scheduling follow-up linked to the actual upload id: wait until HOS 010 long has a confirmed air date; select an unoccupied HOS Sat/Fri/Sun/Tue 11:30 slot strictly after long publication, re-read long Public before Short airs. No invented long date and no December 1 Ben-watch hold. HOS lint/audit and desk reporting required.\n",
+      "ref": "J3505",
+      "film": "010",
+      "stage": "upload",
+      "after": "J3505",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "codex",
+      "created_at": "2026-11-24T10:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T10:53Z",
+          "by": "codex",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Upload the dinosaur extinction Short you approved as a private video",
+      "due": "2026-11-25T12:00:00Z",
+      "kind": "studio",
+      "plain": "Upload the dinosaur extinction Short you approved as a private video",
       "mini_only": true
     }
   ],
