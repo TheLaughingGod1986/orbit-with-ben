@@ -1,5 +1,5 @@
 {
-  "next_id": 3622,
+  "next_id": 3623,
   "jobs": [
     {
       "id": "J0001",
@@ -328409,6 +328409,36 @@
       "due": "2026-12-11T18:00:00Z",
       "kind": "facts",
       "plain": "Independently check every claim, date, quote and lifespan in HOS 127 script v01, SOURCES.md and Shorts before Chief lock"
+    },
+    {
+      "id": "J3622",
+      "title": "HOS 127 Wright Brothers First Flight (Thu 31 Dec): review and lock script v01, package-first scoring, sources & Shorts (PR #756)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Review and lock the `HOS:127` (*Wright Brothers First Flight: The 1901 Wind Tunnel*, Cluster 4 Lead Film 4, target Thu 31 Dec 2026 18:00 London) package-first scoring, 7–9 min script draft v01, primary institutional sources, and two 16–19 s Shorts delivered by `J3504` in **HOS PR `#756`** (`gemini/J3504-hos127-script`, commit `d66b6071`, built cleanly on `origin/main` + `origin/macbook/J3264`), after the independent `facts` lane completes.\n\n**Files in HOS PR `#756` (`02_Video-Projects/127_Wright-Brothers-How-Do-Airplanes-Fly-Wind-Tunnel/`):**\n- `11_Upload-Package/PACKAGE_FIRST_SCORING_v01.md`, updated `PRE_BUILD_VIDIQ_AUDIT.md`, `evidence_2026-11-24_plan_title_search.json`, & `LAUNCH_PLAN.md`: 3 zero-collision query-first titles & 2 house-style 3D thumbnails scored vs Cluster 4 outliers (`History Dude` 13×, `Acta Historia` 12×, `Buried Signal` 77×, `Lost Engineering` 7.5×). Primary Arm A pick: *Wright Brothers First Flight: The 1901 Wind Tunnel* (`50c`, `0` collisions); T&C Arm B (verbatim plan title): *Wright Brothers First Flight: The 1901 Wind Tunnel That Solved Lift* (`67c`, `0` collisions verified `2026-11-24`); T&C Arm C (physics lead): *How Do Airplanes Fly? (The 1901 Wind Tunnel)* (`44c`, `0` collisions). Thumb A (`50% TOO HIGH`, gold on `50%`, carrying forward `J3264` Smeaton fix) & Thumb B (`200 TINY WINGS`, gold on `200`). Low-RPM trap `aviation history` (`PK 35%`, `VN 12%`) excluded.\n- `01_Script/wright_brothers_wind_tunnel_script_master_v01.md`: `1,239` spoken words (`8.3` min), `review:script` **PASS `93.6/100`** (`8/8` structure gates), `gate:episode` **PASS** (`9/9` checks OK), spoken opening milestones verified at 150 wpm (question ~6.8 s, promise ~14.0 s, stakes ~23.6 s, early DATA+SCALE ~30–40 s), `7 DATA` + `7 SCALE` (all spoken & sourced, incl. `1899–1905` timeline), `5 WHO` (all named people, year-accurate roles), `12 WHEN`, `4 FACT` (≤4w), `27 LABEL` (0 over 4w), `2 [EXPLORER ACTS]` (Parts 02 & 05, outside first minute), `4 [CHAPTER CARD]` (5 parts), `29 [VISUAL MUST]`, `5 [TEACH]`.\n- `01_Script/SOURCES.md` & `01_Script/FACT_NOTES_v01.md`: 17 claim rows backed by verbatim quotes from live NASA GRC, Smithsonian NASM, and NPS institutional pages (+ honestly labelled secondary Wikipedia references for biographical lifespans only).\n- `10_Shorts/SHORTS_SCRIPTS_v01.md`: `S01` (*Why Did the Wright Brothers Build a Wind Tunnel?*, `48c`, `0` collisions, `42` spoken words ≈ `17.6 s`, Sat 2 Jan 11:30) and `S02` (*How Did the Wright Brothers Steer the First Plane?*, `50c`, `0` collisions, `42` spoken words ≈ `17.6 s`, Fri 1 Jan 11:30) — Ben 19 Nov 3D cartoon house rules.\n\n**Review & lock checklist (due Fri 11 Dec 2026; Ben's watch Mon 28 Dec; target air Thu 31 Dec):**\n1. Confirm Primary Title Arm A, T&C Arms B/C, and Thumb A/B concepts (`§2.6` hand-verified text; `style_sheet.py` & `thumb_preview.py` at render).\n2. Review `wright_brothers_wind_tunnel_script_master_v01.md`, independent `facts` audit, `SOURCES.md`, `FACT_NOTES_v01.md`, and `SHORTS_SCRIPTS_v01.md` against HOS Teach-on-Screen, Polish-Pass, Craft, and Ben 19 Nov Shorts house rules.\n3. If PASS: Chief merges PR `#756` (which includes `origin/macbook/J3264`), locks script & facts, and queues `HOS:127` VO once a Rule G HOS WIP place opens behind `HOS:136` and `HOS:137`. No VO or picture spend until Chief PASS.\n",
+      "ref": "J3504",
+      "film": "HOS:127",
+      "stage": "script",
+      "after": "J3621",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-24T21:13Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T21:13Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Reviewing HOS:127 package-first scoring, v01 script draft, verified sources and Shorts for Chief lock",
+      "due": "2026-12-11T18:00:00Z",
+      "kind": "review",
+      "plain": "Review and Chief-lock HOS 127 package-first scoring, v01 script draft, verified sources and Shorts (PR #756)"
     }
   ],
   "focus": [
