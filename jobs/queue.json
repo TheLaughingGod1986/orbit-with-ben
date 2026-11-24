@@ -1,5 +1,5 @@
 {
-  "next_id": 3519,
+  "next_id": 3521,
   "jobs": [
     {
       "id": "J0001",
@@ -78040,13 +78040,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "cursor",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-07T02:13Z",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-10-24T18:18Z",
-      "result": "Waiting for: the watch-and-listen check on HOS 008 Short A v04 (J2339, reopened for Gemini on 10 Nov) and the Chief's PASS on it",
+      "result": "Ben OK'd HOS 008 Short A v04 on the board, Thu 12 Nov 14:45 (HOS-J2699). The cut and private handoff were already complete; scheduling is in J3500 (Fri 27 Nov 11:30).",
       "history": [
         {
           "at": "2026-10-24T18:18Z",
@@ -78307,6 +78307,11 @@
           "at": "2026-11-14T20:20Z",
           "by": "gemini",
           "what": "J2829 Chief ruling: required_capabilities=[audio_input] for future backlog runs; existing Ben hold preserved"
+        },
+        {
+          "at": "2026-11-24T11:54Z",
+          "by": "claude",
+          "what": "done: Ben OK'd HOS 008 Short A v04 on the board, Thu 12 Nov 14:45 (HOS-J2699). The cut and private handoff were already complete; scheduling is in J3500 (Fri 27 Nov 11:30)."
         }
       ],
       "kind": "assembly",
@@ -78327,11 +78332,6 @@
       "required_capabilities": [
         "audio_input"
       ],
-      "hold": {
-        "type": "ben",
-        "condition": "J2699 handoff COMPLETE: exact v04 watch copy 76d801a3, published HOS:ASK:J2699 card readyFor Ben, Play 302 and streamed bytes HTTP200/hash match; board check PASS. Assembly remains 4/4. Only actual Ben final watch/approval of this Short remains before a separate publishing job; long must be public first. Evidence HOS PR567 and J2684 ruling.",
-        "check_at": "2026-11-13T12:00:00Z"
-      },
       "plain": "Cut the next History of Science Short from a finished film"
     },
     {
@@ -91313,13 +91313,13 @@
       "stage": "upload",
       "after": "J0317",
       "eta_min": 20,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-22T23:09Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-10-26T22:08Z",
-      "result": "parked for Chief: MacBook CDP 9223 Studio tab 8A9E2F211C963F35D4B2E8AFFD33B157 renderer stalled after pre-save guard aborted Playwright fill() trailing-newline mismatch (666 vs 665 chars); zero YouTube mutations (OVLv9dxTcpE re-verified untouched at 560 bytes sha256 016c8427). Pre-checks passed: Orbit With Ben UC_esArsDKd3GJvOkeO0DUog, 6bbbvfCx6zY Public live title 'What If Earth Stopped Spinning? (It's Already Slowing Down)', OVLv9dxTcpE Related=6bbbvfCx6zY. Fast path: run description-only prepend on Mini via 07_Content-Ops/scripts/redescribe-videos.ts (--mini-only, no Studio needed) and sync PACKAGE_MANIFEST.json before 23 Nov 11:30 London; or recover MacBook Studio tab first. 027 upload claim released.",
+      "result": "",
       "history": [
         {
           "at": "2026-10-26T22:08Z",
@@ -91365,23 +91365,17 @@
           "at": "2026-11-23T01:27Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-24T11:54Z",
+          "by": "claude",
+          "what": "reopened: A fresh attempt on the Mini's own Studio browser: the earlier run stalled on a reused or MacBook CDP tab with zero YouTube changes. Same guards as the brief."
         }
       ],
       "kind": "studio",
       "remaining_action": "Prepend live 6bbbvfCx6zY title+URL to OVLv9dxTcpE description in Studio, save, reload, and verify public readback",
-      "progress": {
-        "step": 2,
-        "of": 4,
-        "at": "2026-11-22T23:13Z",
-        "by": "macbook-2"
-      },
-      "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-23T00:27:57+00:00",
-        "recheck_task": "J3400"
-      },
-      "escalated_at": "2026-11-23T01:27Z"
+      "escalated_at": "2026-11-23T01:27Z",
+      "mini_only": true
     },
     {
       "id": "J0997",
@@ -119587,8 +119581,8 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-10-30T20:06Z",
       "eta": "",
       "created_by": "claude",
@@ -119684,6 +119678,11 @@
           "at": "2026-11-23T21:47Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-24T18:00:00Z"
+        },
+        {
+          "at": "2026-11-24T11:54Z",
+          "by": "claude",
+          "what": "cancelled: superseded: HOS 009's chapters are re-timed to the locked v03 in HOS PR #744 (J3501); HOS 010's go in its own upload package when its cut locks."
         }
       ],
       "remaining_action": "Verify chapters against each locked long cut; coordinate 009 with J2037, preserve Sources and lint packages before review",
@@ -179681,13 +179680,13 @@
       "stage": "edit",
       "after": "J2036",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-23T21:49Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-04T16:56Z",
-      "result": "J3455 Chief KEEP for private UAT only. Waiting for Ben finished-cut watch/listen of v03 master 744f32b7 via phone preview b1135b3d; thumbnail variants A/B and separate Shorts remain subject to final approval. No upload or schedule authorized.",
+      "result": "Ben OK'd HOS 009 v03 on the board, Tue 24 Nov 08:42 (check HOS-009). Upload package merged in HOS PR #744; J3501 uploads and schedules Thu 3 Dec 18:00 London.",
       "history": [
         {
           "at": "2026-11-04T16:56Z",
@@ -179783,6 +179782,11 @@
           "at": "2026-11-24T10:44Z",
           "by": "claude",
           "what": "Ben OK'd v03 on the board on Tue 24 Nov 08:42; J3501 schedules Thu 3 Dec 18:00."
+        },
+        {
+          "at": "2026-11-24T11:54Z",
+          "by": "claude",
+          "what": "done: Ben OK'd HOS 009 v03 on the board, Tue 24 Nov 08:42 (check HOS-009). Upload package merged in HOS PR #744; J3501 uploads and schedules Thu 3 Dec 18:00 London."
         }
       ],
       "remaining_action": "Waiting for Ben to watch the Gravity film and review its thumbnails",
@@ -179814,15 +179818,7 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "hold": {
-        "type": "ben",
-        "condition": "J3455 KEEP for private UAT only: exact v03 master 744f32b7 and phone preview b1135b3d; awaiting Ben finished-cut watch and listen. PRs OWB 1224/1225 and HOS 731 merged; HOS 719 closed. No publishing permission.",
-        "check_at": "2026-11-24T18:00:00Z",
-        "last_recheck": "J3455",
-        "checked_at": "2026-11-23T22:22:44+00:00",
-        "checked_by": "codex"
-      },
-      "awaits_ben": {
+      "awaits_was": {
         "what": "Watch the Gravity film and review its two thumbnail choices",
         "file": "HOS UAT/009_The-Falling-Moon-Gravity/hos009_long_master_v03_PHONE.mp4",
         "version": "v03",
@@ -180314,7 +180310,7 @@
       ],
       "remaining_action": "Await operator confirmation and fresh-session acceptance evidence for the Mini permission settings; verify on 24 November at 13:00 UTC, then resolve the documentation draft.",
       "kind": "assembly",
-      "urgent": 2,
+      "urgent": 1,
       "rerouted_from": {
         "needs": "mini",
         "for": "",
@@ -226924,7 +226920,7 @@
         "HOS:013"
       ],
       "action": "Run the 14 batches one at a time under the Chief's guards: --floor 3000 stated, live balance before each Create, release between batches",
-      "urgent": 3,
+      "urgent": 2,
       "escalated_at": "2026-11-20T01:42Z",
       "progress": {
         "step": 14,
@@ -255886,13 +255882,13 @@
       "stage": "",
       "after": "J2844",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-19T00:20Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "macbook-2",
       "created_at": "2026-11-14T17:11Z",
-      "result": "parked for Chief: Studio test state uncertain: CDP 9223 reused Orbit Studio tab; thumbnail A/B preview and title A/B control did not expose a report after bounded reads. Cannot freshly confirm finished T005 dates/verdict or absence of a running test. Per brief stop without changes. Evidence: ~/_desk/J2846/fresh-report.txt, final-read.txt and report.png/final-read.png. Baseline SILENCE and recorded Fermi title match; Public. No Save, New test, Continue, upload or ledger start performed. Next: restore report access and freshly confirm exact T005 before proceeding; no Ben approval needed. (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-14T17:11Z",
@@ -255933,6 +255929,11 @@
           "at": "2026-11-19T02:32Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-24T11:54Z",
+          "by": "claude",
+          "what": "reopened: A fresh attempt on the Mini's own Studio browser: the earlier run stalled on a reused or MacBook CDP tab with zero YouTube changes. Same guards as the brief."
         }
       ],
       "remaining_action": "Confirming the finished T005 report in Studio before the approved thumbnail comparison can start",
@@ -255947,17 +255948,11 @@
       },
       "for": "codex",
       "model": "gpt-6.1-sol",
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-19T00:23Z",
-        "by": "codex",
-        "note": "Live SILENCE thumbnail, recorded Fermi title and Public state confirmed; A/B controls did not expose a report, so test s"
-      },
       "taskKeys": [
         "OWB:001"
       ],
-      "escalated_at": "2026-11-19T02:32Z"
+      "escalated_at": "2026-11-19T02:32Z",
+      "mini_only": true
     },
     {
       "id": "J2847",
@@ -273984,6 +273979,11 @@
           "at": "2026-11-18T16:39Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-18T22:45:00Z"
+        },
+        {
+          "at": "2026-11-24T11:54Z",
+          "by": "claude",
+          "what": "Script lock queued for Claude as J3520 (due 25 Nov 18:00 UTC)."
         }
       ],
       "remaining_action": "Resolve publication permission for the completed script review, then record its follow-up",
@@ -285715,13 +285715,13 @@
       "stage": "",
       "after": "J3153",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook-2",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-22T08:04Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-19T20:17Z",
-      "result": "parked for Chief: J3161 complete (PR #1155, macbook/J3161 @ e5be2d92e) — materially weak day-one result on Supermoon Short HXacmpYkXcA (Verdict: BEHIND, not shown; <50% feed share; 0 setup faults). Morning snapshot 2026-11-20T06:40:10.419Z (age 19 h 09 m 46 s, not 24 h, no feed/retention fields): 34 views (+5 vs 6 h) vs matched 10-Short next-morning median 193.5 (194; 17.6% of median); original 6 h reading intact. Full-day Studio read (read-only CDP 9223, UC_esArsDKd3GJvOkeO0DUog, readAt 2026-11-22T08:07Z, age 68 h 37 m; recorded under --hours 24): Since published 67 views (213 less than usual 280-1.1k), Shorts feed 25 (37.3%, 74.3% avg viewed), YouTube search 41 (61.2%, 54.6% avg viewed), Other 1 (1.5%), stayed 35.1% (usual 32.8%), avg viewed 58.3% (Advanced Mode; 57% card), 0 likes, Shown in feed and rank unavailable (omitted). Exact First 24 hours (19 Nov 11:30-20 Nov 11:30): 46 views (114 less than usual 160-1.1k), 14 engaged, 0:10 AVD; with 23 views in last 48 h (18 search + 5 feed), day-1 feed share was <=22/46 (43.5%-47.8%, <50% not-fed). 0 setup faults (Public, Shorts tab, Restrictions empty, not Made for Kids, SD/HD done, Related 2fsQcea-voM, title/description match PACKAGE_MANIFEST.json). No topic-fatigue schedule change warranted (next-day Moon Short 93JL_IK57EM was 87.2% fed at 6 h, 1,008 views by 22 Nov). 88/88 unit tests pass. £0 spend, 0 Studio/YouTube/Buffer changes. Chief to review/merge PR #1155 and rule/close J3161.",
+      "result": "Chief (Claude): merged PR #1155. Verdict BEHIND, not shown, with no setup fault; one not-fed Supermoon Short and the next Moon Short was strongly fed, so no schedule change. Evidence carried to the weekly audit.",
       "history": [
         {
           "at": "2026-11-19T20:17Z",
@@ -285787,6 +285787,11 @@
           "at": "2026-11-22T10:16Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-24T11:54Z",
+          "by": "claude",
+          "what": "done: Chief (Claude): merged PR #1155. Verdict BEHIND, not shown, with no setup fault; one not-fed Supermoon Short and the next Moon Short was strongly fed, so no schedule change. Evidence carried to the weekly audit."
         }
       ],
       "remaining_action": "Commit HXacmpYkXcA morning note and 24h Studio reading on branch macbook/J3161, open PR, park evidence for elected Chief",
@@ -289539,13 +289544,13 @@
       "stage": "edit",
       "after": "J3371",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-22T12:32Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-20T10:21Z",
-      "result": "parked for Chief: J3360 / WW2 PR #31 recommends FIX for locked S62/C37/G11. Authorise exact replacement and guarded narration pickup; existing soundtrack retains disputed wording. PR #30 checkpoint 08fa815; independent production checklist preserved in handoff v09.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-20T10:21Z",
@@ -289781,6 +289786,11 @@
           "at": "2026-11-24T09:50Z",
           "by": "claude",
           "what": "Film 3 is now the Sat 28 Nov film: its watch lead is two days (Thu 26 Nov 20:00), not three, because the slot came forward. The narration fix (J3370) and loss graphic (J3371) go first; both are urgent."
+        },
+        {
+          "at": "2026-11-24T11:54Z",
+          "by": "claude",
+          "what": "reopened: Both inputs are done: J3370 (corrected S62/S51a narration) and J3371 (corrected G11 graphic and cues, WW2 PR #72). Finish the picture, maps, edit and thumbnail to Ben's watch by Thu 26 Nov 20:00 UTC."
         }
       ],
       "remaining_action": "Wait for corrected narration and loss graphic, then finish assembly and QA",
@@ -289795,19 +289805,7 @@
         "by": ""
       },
       "open_claim": true,
-      "urgent": 6,
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-22T12:34Z",
-        "by": "macbook"
-      },
-      "hold": {
-        "type": "dependency",
-        "condition": "J3360 FIX recorded in WW2 PR35. Final assembly requires J3370 verified corrected S62 and S51a narration/source records, then J3371 corrected G11 and cues. Keep existing soundtrack held; preserve archive and QA guards. Release only after both jobs are done with evidence.",
-        "check_at": "2026-11-22T19:46:41+00:00",
-        "recheck_task": "J3392"
-      },
+      "urgent": 11,
       "escalated_at": "2026-11-22T15:18Z"
     },
     {
@@ -307044,13 +307042,13 @@
       "stage": "",
       "after": "",
       "eta_min": 180,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-22T14:50Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-22T12:47Z",
-      "result": "Waiting for: J3372 must return exact-window reach, Willow result and current title/test evidence after the Mini Studio renderer recovers; PR1170 corrections bf6f0fa491 are pushed. Resolve or explicitly retain unknown exact compilation shelf image. No final audit PASS until this evidence is incorporated.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-22T12:47Z",
@@ -307131,18 +307129,16 @@
           "at": "2026-11-22T18:33Z",
           "by": "relay",
           "what": "condition verification queued: J3391"
+        },
+        {
+          "at": "2026-11-24T11:54Z",
+          "by": "claude",
+          "what": "reopened: J3372 is done (exact 28-day reach, Willow result, current titles); carry its evidence into the audit."
         }
       ],
       "remaining_action": "Await the Studio evidence, then correct the audit table and resubmit for review",
       "kind": "thumb",
       "backlog": "hos-weekly-thumb-audit",
-      "progress": {
-        "step": 1,
-        "of": 5,
-        "at": "2026-11-22T14:58Z",
-        "by": "codex",
-        "note": "PR1170 corrected at bf6f0fa491: 43 matching public JPEGs, 46 preview renders, three delivered-master frame-0 hash checks"
-      },
       "taskKeys": [
         "HOS:001",
         "HOS:002",
@@ -307152,16 +307148,7 @@
         "HOS:006",
         "HOS:007",
         "HOS:099"
-      ],
-      "hold": {
-        "type": "dependency",
-        "condition": "Chief J3374: condition UNMET. J3372 remains blocked; PR1175 at 96fddf7d99 has 45 rows with all reach metrics null, unread Willow result and three unknown title/test states. PR1176 at 9963fd5a79 confirms renderer timeouts; preserve J3372 retry 2026-11-22T17:45:00Z and its bounded recovery instructions. After J3372 returns evidence, incorporate it in PR1170 (currently bf6f0fa491), correct blanket VERIFIED frame-0 table labels to only the three supported masters and the heart row copied from cuff, and resolve or explicitly retain unknown exact compilation shelf image. No final audit PASS or test/title changes. Recheck at 18:30Z after the prerequisite retry.",
-        "check_at": "2026-11-22T19:33:29+00:00",
-        "last_recheck": "J3374",
-        "checked_at": "2026-11-22T16:14:47+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3391"
-      }
+      ]
     },
     {
       "id": "J3366",
@@ -312082,13 +312069,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-23T16:29Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T12:48Z",
-      "result": "parked for Chief: review and merge ww2-channel PR #53 (https://github.com/TheLaughingGod1986/ww2-channel/pull/53 @ b11da13). Live YouTube Studio Editor trim on ek9F61FVYqY complete: cut 01:27:20 (87.80s) to 05:12:11 (312.44s), length 03:44:16 (224.64s, 25fps); duration 27:37 -> 23:52 (PT23M53S, 1432.061s). Timestamps for J3414 48h read: saved 2026-11-23T13:11:33Z, YouTube trimmed stream creation_time 2026-11-23T13:21:41Z, first API PT23M53S read 2026-11-23T13:51:35Z (J3426 verified 14:06Z-14:08Z), retimed en-GB v02 captions live 2026-11-23T16:33:45Z (track AUieDaaaSVWMndTD0pUriTpEmCrFls6qKlWJk28r2TOnXNfT, 311 cues, sha256 c718da0465126b5f17fb5c93ffe0c9049e560a037543abb5802a33e9ab24e91e, ASR untouched), description chapter-only update live 2026-11-23T16:33:46Z (00:00/01:27/06:03/10:13/14:48/19:02, 2973 chars, sha256 d8893bcba66691ff9b4f5d0b43adceeef570e14717fe18d4e2e5c018e1de16be, title The Secret Floating Harbours of D-Day preserved). Direct audio+video join check PASS (01:17-01:37, clean cut at 01:27.8, zero clipped words); Thumbnail Test & Compare B/C/D still Running (no restart needed); End screen 23:32:02-23:52:01; pinned comment Ugwzd5DKJjC4yYgx-xB4AaABAg and Public playlist PLPPi-oWEDYtA intact. Thread posted. GBP 0.",
+      "result": "Chief (Claude): merged ww2-channel PR #53 (live trim to 23:52, retimed en-GB v02 captions and chapters).",
       "history": [
         {
           "at": "2026-11-23T12:48Z",
@@ -312189,6 +312176,11 @@
           "at": "2026-11-23T18:43Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-24T11:54Z",
+          "by": "claude",
+          "what": "done: Chief (Claude): merged ww2-channel PR #53 (live trim to 23:52, retimed en-GB v02 captions and chapters)."
         }
       ],
       "remaining_action": "Chief (codex) review and merge ww2-channel PR #53",
@@ -313423,7 +313415,7 @@
       "taskKeys": [
         "WW2:004"
       ],
-      "urgent": 7
+      "urgent": 3
     },
     {
       "id": "J3431",
@@ -313614,7 +313606,7 @@
         "condition": "J3449 brings film 5 to at least 50% real archive (rule 1 as changed 24 Nov, PR #59); then accept the picture stage and release J3432.",
         "check_at": "2026-11-24T18:00:00Z"
       },
-      "urgent": 8
+      "urgent": 4
     },
     {
       "id": "J3432",
@@ -313654,7 +313646,7 @@
       "remaining_action": "Assemble the film to its narration and archive plan, then QA and Ben's watch",
       "due": "2026-11-30T20:00:00Z",
       "kind": "assembly",
-      "urgent": 9
+      "urgent": 5
     },
     {
       "id": "J3433",
@@ -313870,7 +313862,7 @@
       "remaining_action": "Assemble the film to its narration and archive plan, then QA and Ben's watch",
       "due": "2026-12-02T20:00:00Z",
       "kind": "assembly",
-      "urgent": 10
+      "urgent": 6
     },
     {
       "id": "J3435",
@@ -318705,7 +318697,7 @@
       "remaining_action": "Score three titles and two thumbnails, then draft the Edison vs Tesla script",
       "due": "2026-11-27T18:00:00Z",
       "kind": "script",
-      "urgent": 12,
+      "urgent": 7,
       "rerouted_from": {
         "needs": "any",
         "for": "",
@@ -318855,19 +318847,19 @@
       "title": "HOS 008 Franklin: search-led title, package, and schedule Thu 26 Nov 18:00 after Ben's watch",
       "needs": "mini",
       "repo": "hos",
-      "body": "**Why (Ben, Tue 24 Nov ~10:45 London, in chat: \"Yeah, if we can move it from December to this Thursday, sounds like a good idea. I'll let you do your best call and best recommendations here.\" Claude's call: Edison vs Tesla has no script yet, so it cannot be made well by Thursday (never rush a film). Two December films are finished and wait only for Ben's watch: 008 Franklin (master v05, Chief PASS 16 Nov, J2243) and 009 Gravity (master v03, Chief KEEP 23 Nov, J2037). HOS has had no long since 12 Nov. New HOS long calendar, Thursdays 18:00 London: **26 Nov 008 Franklin** (electricity, so it leads into Edison vs Tesla); **3 Dec 009 Gravity**; **10 Dec Edison vs Tesla**; **17 Dec Trinity Test**; **24 Dec Accidental Inventions**; **31 Dec Wright Brothers**. A search-led film that is not ready slides one week and a finished older film (010, 011, 013) takes the Thursday. Nothing airs without Ben's watch.)**\n\n**Do (Mini, Studio login; due Thu 26 Nov 12:00 London):**\n1. **Title, search-led (plan method step 5), today.** vidIQ, 24 Nov (Claude): `benjamin franklin` 74,407 searches a month, competition 56, US among the top three markets (17%), up 52%; the kite phrasings (`ben franklin kite experiment`, `franklins kite experiment`, comp 28-32) are small but easy. Start the title with \"Benjamin Franklin\" plus the film's own hook, 50 characters or fewer, for example *Benjamin Franklin's Kite Experiment Explained* or *Did Benjamin Franklin Really Fly a Kite in a Storm?* Check signed-out US top 10 and HOS title collisions; keep the film's current title as a Test & Compare arm with the A/B thumbnails.\n2. **Package ready tonight:** description with the Chapters + Sources block (J1265), captions, end screen to the HOS playlist, both thumbnails. Upload only the master Ben watches (v05, d1ffb78d...841b).\n3. **After Ben's OK on the HOS:008 watch card (Play 302)**: upload private and schedule **Thu 26 Nov 18:00 London**. If there is no OK by Thu 12:00 London, do not schedule: the slot stays empty and Ben is told. The 008 Shorts (A v04, C v07) take Fri 27 and Sat 28 Nov 11:30 if Ben passes them.\n\n**Guards.** No change to the film itself. Nothing public or scheduled without Ben's OK. £0.\n\n**Update (Claude, 24 Nov ~10:50): Ben's OK is already given. Do not wait for another.** Ben, Tue 24 Nov 10:40 London, sent his board's Review tab: \"Nothing here ready for me to watch.\" Claude checked the board data: Ben has **already OK'd** these on the board, and no agent acted on the OKs (each card still says \"Waiting for the Chief to queue the upload\"): **HOS 008 long v05 on Mon 16 Nov 15:24** (watch id hos-008-v05-42f37ffc34923d7af3ba, the exact v05 master d1ffb78d...841b), **Short A v04 \"Why Was Franklin's Kite Experiment So Dangerous?\" on Thu 12 Nov 14:45** (J2699), **Short C v07 \"Franklin's lightning rod\" on Wed 18 Nov 11:31** (J2984). Waiting on that OK cost HOS its Thu 19 Nov slot.\n- As soon as the package passes (title, description with Chapters + Sources, captions, thumbnails), **upload v05 private and schedule Thu 26 Nov 18:00 London.** Record Ben's OK on J2243 (`jobs.py approved`, ok-at 2026-11-16T15:24Z) so its wait closes.\n- **Shorts:** Short A and Short C take the first free HOS Short slots after the long (Fri, Sat, Sun, Tue 11:30). Check the live HOS calendar first: the vaccine Shorts were set for Sat 28 and Sun 29 Nov (J2957, J2958), so it is likely Short A Fri 27 Nov and Short C Tue 1 Dec. Never move anything already scheduled.\n- Post the YouTube id and schedule on the thread. £0.",
+      "body": "**Why (Ben, Tue 24 Nov ~10:45 London, in chat: \"Yeah, if we can move it from December to this Thursday, sounds like a good idea. I'll let you do your best call and best recommendations here.\" Claude's call: Edison vs Tesla has no script yet, so it cannot be made well by Thursday (never rush a film). Two December films are finished and wait only for Ben's watch: 008 Franklin (master v05, Chief PASS 16 Nov, J2243) and 009 Gravity (master v03, Chief KEEP 23 Nov, J2037). HOS has had no long since 12 Nov. New HOS long calendar, Thursdays 18:00 London: **26 Nov 008 Franklin** (electricity, so it leads into Edison vs Tesla); **3 Dec 009 Gravity**; **10 Dec Edison vs Tesla**; **17 Dec Trinity Test**; **24 Dec Accidental Inventions**; **31 Dec Wright Brothers**. A search-led film that is not ready slides one week and a finished older film (010, 011, 013) takes the Thursday. Nothing airs without Ben's watch.)**\n\n**Do (Mini, Studio login; due Thu 26 Nov 12:00 London):**\n1. **Title, search-led (plan method step 5), today.** vidIQ, 24 Nov (Claude): `benjamin franklin` 74,407 searches a month, competition 56, US among the top three markets (17%), up 52%; the kite phrasings (`ben franklin kite experiment`, `franklins kite experiment`, comp 28-32) are small but easy. Start the title with \"Benjamin Franklin\" plus the film's own hook, 50 characters or fewer, for example *Benjamin Franklin's Kite Experiment Explained* or *Did Benjamin Franklin Really Fly a Kite in a Storm?* Check signed-out US top 10 and HOS title collisions; keep the film's current title as a Test & Compare arm with the A/B thumbnails.\n2. **Package ready tonight:** description with the Chapters + Sources block (J1265), captions, end screen to the HOS playlist, both thumbnails. Upload only the master Ben watches (v05, d1ffb78d...841b).\n3. **After Ben's OK on the HOS:008 watch card (Play 302)**: upload private and schedule **Thu 26 Nov 18:00 London**. If there is no OK by Thu 12:00 London, do not schedule: the slot stays empty and Ben is told. The 008 Shorts (A v04, C v07) take Fri 27 and Sat 28 Nov 11:30 if Ben passes them.\n\n**Guards.** No change to the film itself. Nothing public or scheduled without Ben's OK. £0.\n\n**Update (Claude, 24 Nov ~10:50): Ben's OK is already given. Do not wait for another.** Ben, Tue 24 Nov 10:40 London, sent his board's Review tab: \"Nothing here ready for me to watch.\" Claude checked the board data: Ben has **already OK'd** these on the board, and no agent acted on the OKs (each card still says \"Waiting for the Chief to queue the upload\"): **HOS 008 long v05 on Mon 16 Nov 15:24** (watch id hos-008-v05-42f37ffc34923d7af3ba, the exact v05 master d1ffb78d...841b), **Short A v04 \"Why Was Franklin's Kite Experiment So Dangerous?\" on Thu 12 Nov 14:45** (J2699), **Short C v07 \"Franklin's lightning rod\" on Wed 18 Nov 11:31** (J2984). Waiting on that OK cost HOS its Thu 19 Nov slot.\n- As soon as the package passes (title, description with Chapters + Sources, captions, thumbnails), **upload v05 private and schedule Thu 26 Nov 18:00 London.** Record Ben's OK on J2243 (`jobs.py approved`, ok-at 2026-11-16T15:24Z) so its wait closes.\n- **Shorts:** Short A and Short C take the first free HOS Short slots after the long (Fri, Sat, Sun, Tue 11:30). Check the live HOS calendar first: the vaccine Shorts were set for Sat 28 and Sun 29 Nov (J2957, J2958), so it is likely Short A Fri 27 Nov and Short C Tue 1 Dec. Never move anything already scheduled.\n- Post the YouTube id and schedule on the thread. £0.\n\n**Update (Claude, acting Chief, 24 Nov ~12:05): released to the Mini for the upload.** Ben, Tue 24 Nov ~11:20 London, in chat: \"please go ahead and make all the changes you recommended ... anything else you think that we can do to optimize and make this more efficient, let's go ahead and get it done.\" Claude, acting as Chief (top of the chain since PR #1246), clearing the blocked pile (48 blocked on 24 Nov).\n- HOS PR #745 is merged (search-led title A *Benjamin Franklin's Kite Experiment Explained*, B *Why Did Franklin Fly a Kite in a Storm?*, v05 description, chapters, 143 en-GB captions, tags, A/B thumbnails). Ben's OKs are recorded (long v05 16 Nov, Short A 12 Nov, Short C 18 Nov).\n- **Do on the Mini, after the Prisma fix (the job this waits on):** look at the A/B thumbnails' style sheet (`08_Thumbnail/Selected/hos_008_thumbs_AB_v01_style_sheet.jpg` on the NAS) for HOOK, BAND and PHONE at 168 px; if one fails, arm the passing one only and note it. Upload `hos_008_master_v05.mp4` (d1ffb78d...841b) **private, scheduled Thu 26 Nov 18:00 London**, with the package as merged, en-GB captions, the HOS playlist, end screen, Not Made for Kids, altered content YES, and the Title + Thumbnail Test & Compare with title A as side A. Then Short A (v04) **Fri 27 Nov 11:30** and Short C (v07) in the first free HOS Short slot after it. Read everything back.\n- If the upload cannot be done by **Thu 26 Nov 12:00 London**, do not schedule; park for the Chief and say why.",
       "ref": "",
       "film": "008",
       "stage": "upload",
-      "after": "",
+      "after": "J3519",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-24T10:32Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T10:31Z",
-      "result": "parked for Chief: parked for Chief + Mini upload: HOS PR #745 ready (search-led title, v05 package, 143-cue en-GB captions, £0 A/B thumbnails, J2243 Ben OK recorded); MacBook cannot upload/schedule videos or merge PRs (no 07_Content-Ops/.env) (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-24T10:31Z",
@@ -318918,25 +318910,17 @@
           "at": "2026-11-24T10:52Z",
           "by": "macbook",
           "what": "blocked: parked for Chief: parked for Chief + Mini upload: HOS PR #745 ready (search-led title, v05 package, 143-cue en-GB captions, £0 A/B thumbnails, J2243 Ben OK recorded); MacBook cannot upload/schedule videos or merge PRs (no 07_Content-Ops/.env) (not a Ben call: he only watches finished cuts, spends money and does his own logins; Chief decides)"
+        },
+        {
+          "at": "2026-11-24T11:54Z",
+          "by": "claude",
+          "what": "reopened: HOS PR #745 merged by the acting Chief; Ben's OKs recorded. Mini uploads and schedules Thu 26 Nov 18:00."
         }
       ],
       "remaining_action": "Commit macbook/J3500, open HOS PR, switch back to main, park Mini upload, and post thread report",
       "due": "2026-11-26T12:00:00Z",
       "kind": "studio",
-      "urgent": 13,
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-24T10:50Z",
-        "by": "macbook",
-        "plan": [
-          "Search-led title check",
-          "Verify v05 chapters & build captions",
-          "Build A/B thumbnails (£0 house look)",
-          "Update 008 upload package & status",
-          "Verify checks, open PR & hand off upload to Mini/Chief"
-        ]
-      },
+      "urgent": 10,
       "approved_from": {
         "what": "Watch HOS 008 Franklin master v05 (all 8 fixes in: 0:20 & 33 bottom-text cards on dark umber panels, 0:30 flash gone, 0:51 night street & 1:49 salon spark clean with no flying hair, 2:18 upright jar workbench, 3:13 points desk take 3, 3:31 3D packet ship + letter icon, 7:59 stationary rods take 2)",
         "file": "HOS UAT/008_Lightning-Franklin/hos_008_master_v05_PHONE.mp4",
@@ -318948,26 +318932,27 @@
         "job": "J2243",
         "okAt": "2026-11-16T15:24Z",
         "okRef": "board-check HOS-008 v05 2026-11-16T15:24:18.694Z"
-      }
+      },
+      "mini_only": true
     },
     {
       "id": "J3501",
       "title": "HOS 009 Gravity: search-led title, package, and schedule Thu 3 Dec 18:00 after Ben's watch",
       "needs": "mini",
       "repo": "hos",
-      "body": "**Why (Ben, Tue 24 Nov ~10:45 London, in chat: \"Yeah, if we can move it from December to this Thursday, sounds like a good idea. I'll let you do your best call and best recommendations here.\" Claude's call: Edison vs Tesla has no script yet, so it cannot be made well by Thursday (never rush a film). Two December films are finished and wait only for Ben's watch: 008 Franklin (master v05, Chief PASS 16 Nov, J2243) and 009 Gravity (master v03, Chief KEEP 23 Nov, J2037). HOS has had no long since 12 Nov. New HOS long calendar, Thursdays 18:00 London: **26 Nov 008 Franklin** (electricity, so it leads into Edison vs Tesla); **3 Dec 009 Gravity**; **10 Dec Edison vs Tesla**; **17 Dec Trinity Test**; **24 Dec Accidental Inventions**; **31 Dec Wright Brothers**. A search-led film that is not ready slides one week and a finished older film (010, 011, 013) takes the Thursday. Nothing airs without Ben's watch.)**\n\n**Do (Mini, Studio login; due Thu 3 Dec 12:00 London):** search-led title check as for 008 (vidIQ, 24 Nov: `isaac newton` 84,169 a month but led by Brazil, Ethiopia and Colombia; `laws of motion` 13,262, comp 49; `isaac newton documentary` comp 25), then the package (Chapters + Sources, captions, end screen, thumbnails A IT MISSES / B ONE APPLE from J3262). After Ben's OK on the HOS:009 watch card (v03 744f32b7, J2037), upload private and schedule **Thu 3 Dec 18:00 London**; no OK by Thu 3 Dec 12:00 means no schedule and Ben is told. Its Shorts take Fri 4 and Sat 5 Dec 11:30 if passed. £0.\n\n**Update (Claude, 24 Nov ~10:50): Ben's OK is already given.** Ben, Tue 24 Nov 10:40 London, sent his board's Review tab: \"Nothing here ready for me to watch.\" Claude checked the board data: Ben has **already OK'd** these on the board, and no agent acted on the OKs (each card still says \"Waiting for the Chief to queue the upload\"): **HOS 009 long v03 on Tue 24 Nov 08:42** (master 744f32b7), and both Gravity Shorts v01 on **Mon 23 Nov 09:57**: \"What Would Happen If the Moon Stopped Moving?\" (J3311.1) and \"How Did Newton Discover Gravity?\" (J3311.2). Its card title is \"Why Doesn't the Moon Fall to Earth?\".\n- When the package passes, **upload v03 private and schedule Thu 3 Dec 18:00 London**, and the two Shorts in the first free HOS Short slots after it (likely Fri 4 and Sat 5 Dec 11:30). Record Ben's OKs (J2037 ok-at 2026-11-24T08:42Z, J3311 ok-at 2026-11-23T09:57Z) so those waits close. £0.",
+      "body": "**Why (Ben, Tue 24 Nov ~10:45 London, in chat: \"Yeah, if we can move it from December to this Thursday, sounds like a good idea. I'll let you do your best call and best recommendations here.\" Claude's call: Edison vs Tesla has no script yet, so it cannot be made well by Thursday (never rush a film). Two December films are finished and wait only for Ben's watch: 008 Franklin (master v05, Chief PASS 16 Nov, J2243) and 009 Gravity (master v03, Chief KEEP 23 Nov, J2037). HOS has had no long since 12 Nov. New HOS long calendar, Thursdays 18:00 London: **26 Nov 008 Franklin** (electricity, so it leads into Edison vs Tesla); **3 Dec 009 Gravity**; **10 Dec Edison vs Tesla**; **17 Dec Trinity Test**; **24 Dec Accidental Inventions**; **31 Dec Wright Brothers**. A search-led film that is not ready slides one week and a finished older film (010, 011, 013) takes the Thursday. Nothing airs without Ben's watch.)**\n\n**Do (Mini, Studio login; due Thu 3 Dec 12:00 London):** search-led title check as for 008 (vidIQ, 24 Nov: `isaac newton` 84,169 a month but led by Brazil, Ethiopia and Colombia; `laws of motion` 13,262, comp 49; `isaac newton documentary` comp 25), then the package (Chapters + Sources, captions, end screen, thumbnails A IT MISSES / B ONE APPLE from J3262). After Ben's OK on the HOS:009 watch card (v03 744f32b7, J2037), upload private and schedule **Thu 3 Dec 18:00 London**; no OK by Thu 3 Dec 12:00 means no schedule and Ben is told. Its Shorts take Fri 4 and Sat 5 Dec 11:30 if passed. £0.\n\n**Update (Claude, 24 Nov ~10:50): Ben's OK is already given.** Ben, Tue 24 Nov 10:40 London, sent his board's Review tab: \"Nothing here ready for me to watch.\" Claude checked the board data: Ben has **already OK'd** these on the board, and no agent acted on the OKs (each card still says \"Waiting for the Chief to queue the upload\"): **HOS 009 long v03 on Tue 24 Nov 08:42** (master 744f32b7), and both Gravity Shorts v01 on **Mon 23 Nov 09:57**: \"What Would Happen If the Moon Stopped Moving?\" (J3311.1) and \"How Did Newton Discover Gravity?\" (J3311.2). Its card title is \"Why Doesn't the Moon Fall to Earth?\".\n- When the package passes, **upload v03 private and schedule Thu 3 Dec 18:00 London**, and the two Shorts in the first free HOS Short slots after it (likely Fri 4 and Sat 5 Dec 11:30). Record Ben's OKs (J2037 ok-at 2026-11-24T08:42Z, J3311 ok-at 2026-11-23T09:57Z) so those waits close. £0.\n\n**Update (Claude, acting Chief, 24 Nov ~12:05): Ben's OK is already given and the package is merged; released to the Mini.** Ben, Tue 24 Nov ~11:20 London, in chat: \"please go ahead and make all the changes you recommended ... anything else you think that we can do to optimize and make this more efficient, let's go ahead and get it done.\" Claude, acting as Chief (top of the chain since PR #1246), clearing the blocked pile (48 blocked on 24 Nov). Ben OK'd 009 v03 on the board on **Tue 24 Nov 08:42**, and both Gravity Shorts v01 on Mon 23 Nov 09:57. HOS PR #744 is merged (title A *How Isaac Newton Proved Gravity Using the Moon*, B *Why Doesn't the Moon Fall to Earth?*, captions, chapters, 8 sources).\n- **Do on the Mini, after the Prisma fix:** upload v03 (744f32b7) **private, scheduled Thu 3 Dec 18:00 London**, Test & Compare A/B with thumbs IT MISSES / ONE APPLE (Chief PASS J3262), playlist, end screen, captions; then the two Shorts in the first free HOS Short slots after it (likely Fri 4 and Sat 5 Dec 11:30). Read back. Cutoff Thu 3 Dec 12:00 London.",
       "ref": "",
       "film": "009",
       "stage": "upload",
-      "after": "",
+      "after": "J3519",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-24T10:32Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T10:31Z",
-      "result": "Waiting for Ben's finished-cut watch OK on HOS:009 (J2037, v03 744f32b7) and Chief merge of HOS PR #744 before private upload and Thu 3 Dec 18:00 London schedule (cutoff Thu 3 Dec 12:00 London). Search-led title check ('How Isaac Newton Proved Gravity Using the Moon', 46 chars, T&C B 'Why Doesn't the Moon Fall to Earth?'), en-GB v03 captions (138 cues), chapters+8 sources, playlist PLEbpfUzWzcXU, and NAS SHA-256 parity verified; lint:package PASS (0 err/0 warn) and check_all.sh ALL CHECKS PASS. £0, no YouTube changes.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-24T10:31Z",
@@ -319008,30 +318993,18 @@
           "at": "2026-11-24T10:44Z",
           "by": "claude",
           "what": "Ben already OK'd 009 v03 today 08:42 and both Gravity Shorts on 23 Nov: schedule Thu 3 Dec once packaged."
+        },
+        {
+          "at": "2026-11-24T11:54Z",
+          "by": "claude",
+          "what": "reopened: Ben OK'd v03 on the board 24 Nov 08:42; HOS PR #744 merged by the acting Chief. Mini uploads and schedules Thu 3 Dec 18:00."
         }
       ],
       "remaining_action": "Block J3501 on Ben HOS:009 watch OK and post [MacBook] report on studio thread",
       "due": "2026-12-03T12:00:00Z",
       "kind": "studio",
-      "urgent": 14,
-      "progress": {
-        "step": 4,
-        "of": 5,
-        "at": "2026-11-24T10:43Z",
-        "by": "macbook-2",
-        "plan": [
-          "Search-led title & US top-10 check",
-          "Build v03 captions & chapters",
-          "Wire 3 Dec upload package & verify NAS hashes",
-          "Run lint:package & check_all + open HOS PR",
-          "Block on Ben HOS:009 watch OK & post thread report"
-        ]
-      },
-      "hold": {
-        "type": "ben",
-        "condition": "Waiting for Ben's finished-cut watch OK on HOS:009 (J2037, v03 744f32b7) and Chief merge of HOS PR #744 before private upload and Thu 3 Dec 18:00 London schedule (cutoff Thu 3 Dec 12:00 London). Search-led title check ('How Isaac Newton Proved Gravity Using the Moon', 46 chars, T&C B 'Why Doesn't the Moon Fall to Earth?'), en-GB v03 captions (138 cues), chapters+8 sources, playlist PLEbpfUzWzcXU, and NAS SHA-256 parity verified; lint:package PASS (0 err/0 warn) and check_all.sh ALL CHECKS PASS. £0, no YouTube changes.",
-        "check_at": "2026-11-24T16:43:51+00:00"
-      }
+      "urgent": 8,
+      "mini_only": true
     },
     {
       "id": "J3502",
@@ -319549,13 +319522,13 @@
       "stage": "upload",
       "after": "J3505",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-24T11:37Z",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T10:53Z",
-      "result": "parked for Chief: review and merge verified records PR #1247, then close J3509. Approved v06 BXSoBnyiTNg is already Private for 14 Dec 11:30Z; old heiGCnGKTkE Private unscheduled. No upload or reschedule remains. PR includes UPLOADS, opening library, Buffer plan and J0923 replacement target.",
+      "result": "Chief (Claude): merged OWB PR #1247 (approved v06 BXSoBnyiTNg Private for 14 Dec 11:30Z; old copy unscheduled).",
       "history": [
         {
           "at": "2026-11-24T10:53Z",
@@ -319611,6 +319584,11 @@
           "at": "2026-11-24T11:51Z",
           "by": "relay",
           "what": "condition verification queued: J3518"
+        },
+        {
+          "at": "2026-11-24T11:54Z",
+          "by": "claude",
+          "what": "done: Chief (Claude): merged OWB PR #1247 (approved v06 BXSoBnyiTNg Private for 14 Dec 11:30Z; old copy unscheduled)."
         }
       ],
       "remaining_action": "Chief review and merge of the verified replacement records",
@@ -319647,13 +319625,7 @@
       },
       "taskKeys": [
         "OWB:029"
-      ],
-      "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-24T12:51:08+00:00",
-        "recheck_task": "J3518"
-      }
+      ]
     },
     {
       "id": "J3510",
@@ -319720,15 +319692,15 @@
       "ref": "J3505",
       "film": "010",
       "stage": "upload",
-      "after": "J3505",
+      "after": "J3519",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-24T11:26Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T10:53Z",
-      "result": "parked for Chief: HOS publishing runtime missing generated Prisma client; channel:audit exits 2. npx prisma generate fails P1012 (CLI 6.19.0 vs declared 7.10.1 schema). Exact approved hash and six recorded gates verified; lint passes; no YouTube writes. Restore publishing runtime then resume duplicate check and private upload.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-24T10:53Z",
@@ -319764,6 +319736,11 @@
           "at": "2026-11-24T11:30Z",
           "by": "relay",
           "what": "condition verification queued: J3515"
+        },
+        {
+          "at": "2026-11-24T11:54Z",
+          "by": "claude",
+          "what": "reopened: Waits only on the publishing runtime repair; then the private upload as briefed."
         }
       ],
       "remaining_action": "Restore the HOS uploader dependencies before checking YouTube and uploading privately",
@@ -319785,28 +319762,9 @@
         "okAt": "2026-11-16T09:33Z",
         "okRef": "board:HOS:ASK:J2933.2;J3505"
       },
-      "progress": {
-        "step": 1,
-        "of": 4,
-        "at": "2026-11-24T11:29Z",
-        "by": "codex",
-        "plan": [
-          "Check approved cut and records",
-          "Prepare and validate package",
-          "Upload privately and verify",
-          "Record upload and handoff"
-        ],
-        "note": "Approved master hash verified; six recorded gates and package lint pass. Channel audit fails on missing generated Prisma"
-      },
       "taskKeys": [
         "HOS:010"
-      ],
-      "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-24T12:30:49+00:00",
-        "recheck_task": "J3515"
-      }
+      ]
     },
     {
       "id": "J3512",
@@ -319817,15 +319775,15 @@
       "ref": "J3505",
       "film": "010",
       "stage": "upload",
-      "after": "J3505",
+      "after": "J3519",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-24T11:31Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T10:53Z",
-      "result": "parked for Chief: HOS channel:audit and live upload auth require missing generated Prisma client; generation fails P1012 on installed Prisma 6.19.0. Approved hash verified; gate and check_all PASS; private unscheduled dry-run request prepared but exits 1. No upload. Local HOS commit 91915668, branch codex/J3512.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-24T10:53Z",
@@ -319861,6 +319819,11 @@
           "at": "2026-11-24T11:37Z",
           "by": "relay",
           "what": "condition verification queued: J3516"
+        },
+        {
+          "at": "2026-11-24T11:54Z",
+          "by": "claude",
+          "what": "reopened: Waits only on the publishing runtime repair; then the private upload as briefed."
         }
       ],
       "remaining_action": "Restore the History of Science publishing tools, then verify and upload the approved Short privately",
@@ -319882,27 +319845,9 @@
         "okRef": "board:HOS:ASK:J2933.1;J3505",
         "askId": "J2933.1"
       },
-      "progress": {
-        "step": 1,
-        "of": 3,
-        "at": "2026-11-24T11:35Z",
-        "by": "codex",
-        "plan": [
-          "Verify approved cut and existing uploads",
-          "Prepare and upload private package",
-          "Verify and record upload and scheduling follow-up"
-        ],
-        "note": "Exact approved SHA256 verified; fresh Short gate and package lint PASS. Audit and dry-run command fail on missing Prisma"
-      },
       "taskKeys": [
         "HOS:010"
-      ],
-      "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-24T12:37:08+00:00",
-        "recheck_task": "J3516"
-      }
+      ]
     },
     {
       "id": "J3513",
@@ -320156,6 +320101,66 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3519",
+      "title": "History of Science: repair the publishing runtime on the Mini (Prisma client) so uploads run",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**Why (Ben, Tue 24 Nov ~11:20 London, in chat: \"please go ahead and make all the changes you recommended ... anything else you think that we can do to optimize and make this more efficient, let's go ahead and get it done.\" Claude, acting as Chief (top of the chain since PR #1246), clearing the blocked pile (48 blocked on 24 Nov).)** Two History of Science uploads stopped today on the same fault: J3511 and J3512 report that the HOS publishing runtime has no generated Prisma client (`channel:audit` exits 2; `npx prisma generate` fails P1012: installed Prisma CLI 6.19.0 against a schema that declares 7.10.1). Franklin's upload (J3500, airs **Thu 26 Nov 18:00 London**, cutoff Thu 12:00) and Gravity's (J3501, 3 Dec) use the same runtime.\n\n**Do (Mini, in the history-of-science checkout's 07_Content-Ops; due Wed 25 Nov 09:00 UTC):**\n1. Install the versions the lockfile declares (`npm ci` in that folder; if the lockfile itself is behind the schema, install the declared `prisma` and `@prisma/client` 7.10.1 and commit the lockfile in a PR), then `npx prisma generate`.\n2. Prove it: `npm run channel:audit` exits 0, and the private-upload dry run that J3512 prepared (local branch codex/J3512) now succeeds.\n3. One thread line, then finish. The uploads themselves stay with J3500, J3501, J3511 and J3512.\n\n**Guards.** No upload, schedule or Studio change in this job. No database writes beyond what `generate` does locally. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T11:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T11:54Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Install the declared Prisma version, generate the client, prove channel:audit passes",
+      "due": "2026-11-25T09:00:00Z",
+      "kind": "assembly",
+      "mini_only": true,
+      "urgent": 9
+    },
+    {
+      "id": "J3520",
+      "title": "OWB 064 Every Planet: read and lock the script (Claude), or write its fix list",
+      "needs": "any",
+      "repo": "owb",
+      "body": "**Why (Ben, Tue 24 Nov ~11:20 London, in chat: \"please go ahead and make all the changes you recommended ... anything else you think that we can do to optimize and make this more efficient, let's go ahead and get it done.\" Claude, acting as Chief (top of the chain since PR #1246), clearing the blocked pile (48 blocked on 24 Nov).)** Orbit's Every Planet film (064) is one of December's three format tests (airs **Wed 16 Dec**). Its script has sat parked for 6 days waiting for a Claude/Chief lock (J3020): master v01, 93.1/100 PASS, 1,246 spoken words, 16-row live-verified SOURCES.md, Gemini quote pass and Claude quote check, committed in 3b9f165c43. Its voice (J3021), pictures (J3022) and edit (J3023) wait behind it.\n\n**Do (Claude; due Wed 25 Nov 18:00 UTC):** read the 064 script master v01 against its SOURCES.md, the Orbit rules (`studio/RULES.md`, `05_Analytics/LEARNINGS.md`, December format-test brief) and the quote checks. If it holds: record the lock on the thread (\"Claude: 064 script v01 locked, <reason>\") and finish J3020 as done with that lock, which releases J3021 (voice). If it needs changes: write the exact line fixes as a FIX list on J3020 and reopen it for the writer. £0.",
+      "ref": "",
+      "film": "064",
+      "stage": "script",
+      "after": "",
+      "eta_min": 45,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-24T11:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T11:54Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Read the 064 script against its sources and the rules, then lock it or list fixes",
+      "due": "2026-11-25T18:00:00Z",
+      "kind": "review"
     }
   ],
   "focus": [
