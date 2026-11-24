@@ -328980,16 +328980,21 @@
           "at": "2026-11-24T22:51Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Reviewed PR #106 (J3623 reconciliation), PR #109 (J3624 full 22:37 audiovisual QA), OWB PR #1268, and verified master SHA256 d2656fea...1ae03fc on NAS. J3624 found blocking Rule-3 spoiler at 00:06.8, tofu glyph + leaked internal boilerplate on 15+ slides, 14 frozen empty-box holds (21-38s), missing Ch3 card, 17 <60s repeats, and 3 <2s flashes."
+        },
+        {
+          "at": "2026-11-24T22:55Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Merged OWB PR #1268 (technical evidence only), WW2 PR #106 and PR #109; reconciled PR #94/#60; queued v02 chain J3637 -> J3638 -> J3639 and updated J3430 hold"
         }
       ],
-      "remaining_action": "Preparing Chief ruling: HOLD v01 for zero-spend v02 visual/edit repair, adopt Rule-2 title, merge PRs #106/#109/#1268, close superseded PRs",
+      "remaining_action": "Commit CHIEF_RULING_J3625.md and updated status.json on ww2-channel, post studio thread report, and close J3625",
       "due": "2026-11-27T12:00:00Z",
       "kind": "chief",
       "plain": "Approve the checked torpedo film and put it on Ben’s watch page",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-24T22:51Z",
+        "at": "2026-11-24T22:55Z",
         "by": "gemini",
         "plan": [
           "Inspect PR106, PR109 QA & PR1268",
@@ -328997,7 +329002,7 @@
           "Execute clean merges/closes & follow-up",
           "Update J3430, post report & finish"
         ],
-        "note": "Reviewed PR #106 (J3623 reconciliation), PR #109 (J3624 full 22:37 audiovisual QA), OWB PR #1268, and verified master SH"
+        "note": "Merged OWB PR #1268 (technical evidence only), WW2 PR #106 and PR #109; reconciled PR #94/#60; queued v02 chain J3637 ->"
       },
       "taskKeys": [
         "WW2:004"
