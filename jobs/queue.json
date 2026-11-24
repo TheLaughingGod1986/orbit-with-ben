@@ -1,5 +1,5 @@
 {
-  "next_id": 3637,
+  "next_id": 3638,
   "jobs": [
     {
       "id": "J0001",
@@ -329845,6 +329845,36 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J3637",
+      "title": "WW2 004: v02 zero-spend visual/graphic repair, Rule-2 title package and render",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Elected acting Chief ruling (`J3625`, `07_Edit/CHIEF_RULING_J3625.md` and `07_Edit/QA_REVIEW_J3624.md` on `ww2-channel` `main`): `v01` is HELD for zero-spend visual/graphic/edit repair (`v02`) before Ben's watch (due `2026-11-28T20:00:00Z`, planned air `2026-12-01T17:00:00Z`). Do NOT re-voice, do NOT spend money/credits, and do NOT upload or copy to `WW2 UAT/`.\n\n**Preserve unchanged (already passed in J3623/J3624):**\n- Exact locked narration + authorised opening cut (`137.020–147.570 s` removed, derived VO SHA-256 `bfa93afeb5f8fa91cc9c76cb1891349a25d5290e63c7e8c6e374c8b133b7dd80`, clean join at `02:16–02:18`).\n- Existing zero-spend score bed (`05_Music/torpedoes_score_v01.wav`, SHA-256 `b65cf32b17e74bf4d7ac9527215d220e801b5ce3ea09bdc604cd9ae7770eaff9`) and clean mix loudness (`~-15.8 LUFS`, true peak `<= -1.0 dBFS`, score `~20 LU` under VO).\n- Real archive screen time `>= 50%` across verified US federal public-domain photos (`03_Picture/ARCHIVE_PROVENANCE.md`), honest captions/IDs/context qualifiers, and all 65 `J3447` restricted sentence assignments.\n- All 3 Rule-2/13 thumbnail variants (`A`, `B`, `C`, optionally tightening Arm C's vertical crop slightly to fill more of 168 px; if re-exported, regenerate comparison sheet and hashes).\n\n**Mandatory fixes in `v02` (from `07_Edit/QA_REVIEW_J3624.md`):**\n1. **Remove Rule 3 visual spoiler at `00:06.8–00:12.2` (`G01`):** Replace `G01` with a verified archive photo or non-spoiler visual — never reveal firing-pin mechanics or the answer in the opening.\n2. **Fix tofu glyph (`□`) & strip ALL internal production/compliance boilerplate from `draw_maps_004.py` / all rendered slides:**\n   - Replace broken glyph in `\"GOVERNMENT PRINTING OFFICE · □ FEDERAL PUBLIC DOMAIN\"` (`draw_maps_004.py` line 437) using an ASCII/verified glyph supported by the loaded font.\n   - Remove `\"SOURCE CARD · NOT A PAGE SCAN\"`, `\"The page image is a separate plate beside this card.\"`, and `\"Citation card for the locked narration. It does not invent a memorandum.\"` from `D01_PREFACE` / `D01_P107` (`20:12–20:40`).\n   - Fix `G25` headline `\"ACROSS THE AXIS · NO TOLERANCES\"` and footer `\"No dimensions.\"` (`15:01–15:30`, `22:22–22:25`).\n   - Strip all internal notes across `G02, G04, G06, G08, G10, G17, G18, G20, G24, G27, G28, G29, G30` (`\"No shot-by-shot order is shown.\"`, `\"No reconstructed footage.\"`, `\"That farther range is not given a second number here.\"`, `\"Not a scale model.\"`, `\"No magnetic numbers. Not to scale.\"`, `\"No weight is stated.\"`, `\"Qualitative only.\"`, `\"Qualitative. No ranges.\"`, `\"Not a patrol report.\"`, `\"No magnetic-field numbers. Not to scale.\"`, `\"No portrait.\"`, `\"Not a live-explosive instruction.\"`, `\"Schematic places, not a charted range.\"`, `\"No force numbers.\"`, `\"No retirement date.\"`).\n3. **Eliminate 80–90% empty-box static holds (14 holds of `21–38 s` in `v01`):**\n   - Redesign code diagrams/maps so every graphic visually explains the spoken concept (real visual schematics/diagrams/maps, not sparse text tucked in empty outline boxes): specifically draw an actual Newport RI vs Pacific Ocean latitude comparison map for `G20` (`10:55`), an actual torpedo-nose + perpendicular vs glancing hull-impact schematic for `G25`/`G26` (`15:01–16:08`), distinct non-repetitive visual panels for `G18` (`09:51`), and rich mechanical/depth diagrams plus tighter archive intercuts across `03:56–06:36` (`G09, G10, G12`) and all `>=20 s` graphic stretches. Add subtle visual progression/camera motion or intercut verified archive photos so no static slide freezes empty for 20+ seconds.\n4. **Add missing Chapter 3 title card at `06:35.9`** (`PART 3 · MARK 14 TORPEDO` / `\"The net that challenged the instruments\"`, matching Chapters 2, 4, 5, 6), **eliminate `<2 s` flashes** (`C41` `1.83 s`, `C10` `1.42 s` at `10:17.9`, `C20` `1.46 s`), **eliminate `<60 s` asset repeats** (all 17 repeats flagged in `QA_REVIEW_J3624.md` §3.C.2), and make transitions consistent (remove the two stray dips-to-black at `00:33` and `16:07`).\n5. **Update upload package to `v02` with Chief-adopted Rule-2 title & caption fix:**\n   - Locked Rule-2 title: **`Mark 14 Torpedo: Why Perfect Hits Failed`** (40 chars), preserving both prior titles in `previous_titles` (`metadata_v02.json`, `DESCRIPTION_v02.txt`, `status.json`); `upload_authorized: false`, `planned_air_date: 2026-12-01T17:00:00Z`, `ben_watch_due: 2026-11-28T20:00:00Z`.\n   - Fix SRT cue 253 at `15:40.9`: `\"Better geometry against a target\"` -> `\"Better geometry against the target\"` (`ww2_004_en-GB_v02.srt`).\n\n**Render & delivery:**\n- Output `v02` master on NAS `studio-live` (`07_Edit/v02_master/ww2_004_torpedoes_v02.mp4`), leaving `v01_master` untouched. Use detached `tmux` with log + `.done` file if the ffmpeg render exceeds ~10 min, and keep Mini disk safe (render scratch on NAS if Mini `<20 GB` free).\n- Run fresh technical QA (`ffprobe`, full `ffmpeg` null decode, loudness/true-peak, archive coverage `>=50%`, all photo/deliverable SHA-256 hashes, updated contact sheet). Do NOT claim perceptual audio/motion review.\n- Open a clean PR against `ww2-channel` `main` with all `v02` scripts, plan, receipts, package, and `status.json` (preserving all 6 prior stages), and hand the exact `v02` master path and SHA-256 to the dependent full audiovisual QA job.\n",
+      "ref": "",
+      "film": "WW2:004",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-24T22:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T22:54Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Rebuild WW2:004 v02 graphics/edit plan, apply adopted Rule-2 title and SRT fix, render v02 master on NAS, open clean PR",
+      "due": "2026-11-26T12:00:00Z",
+      "kind": "assembly",
+      "plain": "Fix the torpedo film graphics, spoiler, missing chapter card and repeats, then render v02"
     }
   ],
   "focus": [
