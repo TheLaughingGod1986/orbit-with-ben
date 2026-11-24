@@ -133,7 +133,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3611 | mini | open | – | – | 010 upload · studio · HOS 010 Short A: schedule only after actual long readiness and finish Studio checks | J3512 |
 | J3612 | mini | blocked | gemini | – | review · Verify condition for J3607 |  |
 | J3613 | mini | blocked | gemini | – | review · Verify condition for J3519 |  |
-| J3614 | any | claimed | macbook-2 | 2026-11-24T20:41Z | WW2:005 picture · review · St Nazaire: propose a shorter existing-voice cut with compliant archive coverage |  |
+| J3614 | any | open (after J3449) | – | – | WW2:005 picture · review · St Nazaire: propose a shorter existing-voice cut with compliant archive coverage |  |
 
 Recently finished:
 
