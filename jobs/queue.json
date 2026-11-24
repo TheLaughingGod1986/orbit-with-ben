@@ -325498,9 +325498,14 @@
           "at": "2026-11-24T17:35Z",
           "by": "relay",
           "what": "condition verification queued: J3595"
+        },
+        {
+          "at": "2026-11-24T17:49Z",
+          "by": "codex",
+          "what": "condition recorded; next verification 2026-11-25T05:03:00Z"
         }
       ],
-      "remaining_action": "Awaiting Chief review and merge of OWB PR #1273 and ww2-channel PR #101",
+      "remaining_action": "Correct the time-window fallback, then review and merge the revised audience-analysis PRs",
       "due": "2026-11-25T05:03:00Z",
       "kind": "review",
       "model": "gemini-argon",
@@ -325528,10 +325533,12 @@
         "WW2:001"
       ],
       "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-24T18:35:48+00:00",
-        "recheck_task": "J3595"
+        "type": "input",
+        "condition": "Chief FIX ruling J3595: J3596 must correct the wrong-window fallback and evidence wording, then dependent Chief review must approve and merge the corrected PRs. Existing five media-review steps retained.",
+        "check_at": "2026-11-25T05:03:00Z",
+        "last_recheck": "J3595",
+        "checked_at": "2026-11-24T17:49:55+00:00",
+        "checked_by": "codex"
       }
     },
     {
