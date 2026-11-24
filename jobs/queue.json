@@ -1,5 +1,5 @@
 {
-  "next_id": 3457,
+  "next_id": 3458,
   "jobs": [
     {
       "id": "J0001",
@@ -312187,6 +312187,11 @@
           "at": "2026-11-23T19:31Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-24T03:13Z",
+          "by": "relay",
+          "what": "condition verification queued: J3457"
         }
       ],
       "remaining_action": "Chief (Codex) PASS and merge ww2-channel PR #55 + record OWB spend ledgers so J3364 can splice v04_t2",
@@ -312216,7 +312221,13 @@
         "by": "gemini",
         "note": "Opened ww2-channel PR #55 (9a2f37e) with VO_REPORT_v04.md and non-media evidence; posted thread report on #99; parking f"
       },
-      "escalated_at": "2026-11-23T19:31Z"
+      "escalated_at": "2026-11-23T19:31Z",
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-24T04:13:18+00:00",
+        "recheck_task": "J3457"
+      }
     },
     {
       "id": "J3423",
@@ -315326,6 +315337,38 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J3457",
+      "title": "Verify condition for J3422",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3422: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3422 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-24T03:13Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T03:13Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Chief (Codex) PASS and merge ww2-channel PR #55 + record OWB spend ledgers so J3364 can splice v04_t2",
+      "kind": "review",
+      "recheck_of": "J3422",
+      "mini_only": true,
+      "due": "2026-11-24T04:13:18+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
