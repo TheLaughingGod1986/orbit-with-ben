@@ -325399,9 +325399,14 @@
           "at": "2026-11-24T17:27Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Collected 48h J3590 Studio data (1,699 impr, 0.8% CTR, 32 views, 15.4% avg viewed, +1 sub, curve suppressed) and cut 5 watch clips from mulberry_scored_draft_v43.mp4 mapped to live 23:52 trimmed timeline"
+        },
+        {
+          "at": "2026-11-24T17:30Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Watched all 5 H.264+AAC MP4 clips with audio on via read_file (0:00-1:28, live 3:49-4:29, live 6:57-7:37, live 23:12-23:52); recorded audio_input+moving_video_input capabilities"
         }
       ],
-      "remaining_action": "Watching all 5 cut clips with moving video and audio via read_file",
+      "remaining_action": "Writing 48h autopsy report, retention_autopsy.py launch-record fallback, and WW2 LEARNINGS row in clean worktrees",
       "due": "2026-11-25T05:03:00Z",
       "kind": "review",
       "model": "gemini-argon",
@@ -325412,9 +325417,9 @@
       "autopsy": "ek9F61FVYqY@48h",
       "plain": "Analyse why viewers stayed or left on \"How Britain Built Two Harbours in Secret and Floated The\" (48h) and write up to 3 fixes",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-24T17:27Z",
+        "at": "2026-11-24T17:30Z",
         "by": "gemini",
         "plan": [
           "Inspect RSI metrics and Studio state",
@@ -325423,7 +325428,7 @@
           "Write 48h autopsy report and update learnings",
           "Commit in clean worktree, push PR, and report"
         ],
-        "note": "Collected 48h J3590 Studio data (1,699 impr, 0.8% CTR, 32 views, 15.4% avg viewed, +1 sub, curve suppressed) and cut 5 w"
+        "note": "Watched all 5 H.264+AAC MP4 clips with audio on via read_file (0:00-1:28, live 3:49-4:29, live 6:57-7:37, live 23:12-23:"
       },
       "taskKeys": [
         "WW2:001"
