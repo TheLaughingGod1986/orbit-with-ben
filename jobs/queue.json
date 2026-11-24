@@ -330055,13 +330055,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-24T22:59Z",
-      "eta": "2026-11-25T00:59Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-24T22:56Z",
-      "result": "",
+      "result": "parked for Chief: Read-only verification complete in OWB PR #1297 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1297, 6d1185d51, jobs/reviews/J3640/REVIEW.md; test_email_ratchet + test_no_private_network PASS). Condition UNMET — keep J3430 blocked: J3625 Chief ruling (ww2 PR #113, 0ebdbd4, thread #7146836105) holds v01; J3637 (v02 repair/render, due 2026-11-26T12:00Z) is claimed by gemini at step 1/6 with no v02_master on NAS studio-live and no v02 PR in ww2-channel; J3638 (v02 QA, due 2026-11-27T12:00Z) and J3639 (Chief v02 approval & Ben watch staging, due 2026-11-28T12:00Z) are open; WW2 UAT/ has no 004 cut staged. Root cause of early J3640 trigger: J3625 set hold.type=dependency without last_recheck while J3430 has legacy after=J3429 (done). scripts/jobs.py restricts wait --recheck to elected Chief. Elected Chief to merge OWB PR #1297, record jobs.py wait J3430 --type input --recheck J3640 --check-at 2026-11-28T12:00:00Z (watch due 2026-11-28T20:00Z, air 2026-12-01T17:00Z), and close J3640. Zero uploads, zero NAS edits, GBP 0 spent.",
       "history": [
         {
           "at": "2026-11-24T22:56Z",
@@ -330092,6 +330092,11 @@
           "at": "2026-11-24T23:04Z",
           "by": "macbook",
           "what": "step 3 of 3 done"
+        },
+        {
+          "at": "2026-11-24T23:04Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: Read-only verification complete in OWB PR #1297 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1297, 6d1185d51, jobs/reviews/J3640/REVIEW.md; test_email_ratchet + test_no_private_network PASS). Condition UNMET — keep J3430 blocked: J3625 Chief ruling (ww2 PR #113, 0ebdbd4, thread #7146836105) holds v01; J3637 (v02 repair/render, due 2026-11-26T12:00Z) is claimed by gemini at step 1/6 with no v02_master on NAS studio-live and no v02 PR in ww2-channel; J3638 (v02 QA, due 2026-11-27T12:00Z) and J3639 (Chief v02 approval & Ben watch staging, due 2026-11-28T12:00Z) are open; WW2 UAT/ has no 004 cut staged. Root cause of early J3640 trigger: J3625 set hold.type=dependency without last_recheck while J3430 has legacy after=J3429 (done). scripts/jobs.py restricts wait --recheck to elected Chief. Elected Chief to merge OWB PR #1297, record jobs.py wait J3430 --type input --recheck J3640 --check-at 2026-11-28T12:00:00Z (watch due 2026-11-28T20:00Z, air 2026-12-01T17:00Z), and close J3640. Zero uploads, zero NAS edits, GBP 0 spent."
         }
       ],
       "remaining_action": "Parked for Chief: merge OWB PR #1297, record wait --type input --recheck J3640 on J3430, close J3640",
