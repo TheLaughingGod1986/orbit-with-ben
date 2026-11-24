@@ -329942,16 +329942,21 @@
           "at": "2026-11-24T23:01Z",
           "by": "gemini",
           "what": "step 1 of 6 done: Audited all 17 <60s repeats, 3 <2s flashes, 14 >=20s static holds, missing Ch3 card, and J3447 restricted rows; created clean worktree gemini/J3637-ww2-004-v02 and NAS scratch dir."
+        },
+        {
+          "at": "2026-11-24T23:11Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: Generated all 60 v02 ASCII plates (0% near-black) and built EDIT_PLAN_v02.json (51.34% archive across 50 photos, all 5 chapter cards, min seg 2.0s, max diagram 18.54s, zero non-J3447 <60s repeats, Rule-2 title, SRT cue 253 fixed)."
         }
       ],
-      "remaining_action": "Redesigning draw_maps_004.py to strip all boilerplate, fix tofu glyph, and draw rich technical schematics and latitude maps",
+      "remaining_action": "Visually verifying redesigned v02 schematics and maps before starting full NAS render",
       "due": "2026-11-26T12:00:00Z",
       "kind": "assembly",
       "plain": "Fix the torpedo film graphics, spoiler, missing chapter card and repeats, then render v02",
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 6,
-        "at": "2026-11-24T23:01Z",
+        "at": "2026-11-24T23:11Z",
         "by": "gemini",
         "plan": [
           "Inspect QA findings and scripts",
@@ -329961,7 +329966,7 @@
           "Render v02 master on NAS",
           "Run technical QA and open WW2 PR"
         ],
-        "note": "Audited all 17 <60s repeats, 3 <2s flashes, 14 >=20s static holds, missing Ch3 card, and J3447 restricted rows; created "
+        "note": "Generated all 60 v02 ASCII plates (0% near-black) and built EDIT_PLAN_v02.json (51.34% archive across 50 photos, all 5 c"
       },
       "taskKeys": [
         "WW2:004"
