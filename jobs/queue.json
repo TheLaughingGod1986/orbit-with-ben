@@ -329601,10 +329601,10 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-24T22:26Z",
+      "eta": "2026-11-24T22:46Z",
       "created_by": "claude",
       "created_at": "2026-11-24T22:24Z",
       "result": "",
@@ -329613,13 +329613,26 @@
           "at": "2026-11-24T22:24Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T22:26Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Read pilot 2's Studio settings, claims and reach; fix a wrong listing setting",
       "due": "2026-11-24T23:30:00Z",
       "kind": "studio",
       "mini_only": true,
-      "urgent": 13
+      "urgent": 13,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T22:26Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
