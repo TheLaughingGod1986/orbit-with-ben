@@ -1,7 +1,7 @@
 # History of Science — Proposed 2027 Plan (One-Page Summary for Ben)
 
 **Date:** 20 Nov 2026 (`J3224`, following the full `J3223` audit)  
-**Status:** **Approved by Ben, 24 Nov 2026** (in chat: "I'll give you okay for that. Please go ahead and start it."). The plan (`hos-search-2027-01`) is in force for HOS topics locked from 1 Jan 2027; `008–011` and `013` stay untouched through December (`LEARNINGS.md` rule 34 item 7 satisfied).
+**Status:** **Approved by Ben, 24 Nov 2026** (in chat: "I'll give you okay for that. Please go ahead and start it."). The plan (`hos-search-2027-01`) is in force for HOS topics locked from 1 Jan 2027; `008–011` and `013` stay untouched through December (`LEARNINGS.md` rule 34 item 7 satisfied). **Brought forward the same day (Ben: "move it from December to this Thursday ... your best call"):** 008 Franklin airs Thu 26 Nov and 009 Gravity Thu 3 Dec (each after Ben's watch), and the four films below air **10, 17, 24 and 31 Dec** instead of 7-28 Jan.
 
 ---
 
