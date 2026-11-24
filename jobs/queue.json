@@ -325293,17 +325293,22 @@
           "at": "2026-11-24T17:21Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Read 48h Since published via Studio CDP 9224 (Explore + tabs): 32 views, 1,699 impressions, 0.8% CTR (0.82%), 15.4% avg viewed (15.41%), 1 like; no rank/typical baseline yet; 0 faults"
+        },
+        {
+          "at": "2026-11-24T17:23Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Recorded 48h reading in 05_Analytics/ww2/launch/ek9F61FVYqY.json and ran judge (Verdict: UNKNOWN, 0 faults)"
         }
       ],
-      "remaining_action": "Store 48h reading with launch_check.py record, run judge, and close or park for Chief",
+      "remaining_action": "Completed 48h read-only check; closing J3590 with full judge output",
       "due": "2026-11-24T19:03:00Z",
       "kind": "studio",
       "launch": "ek9F61FVYqY@48",
       "plain": "Check how \"How Britain Built Two Harbours in Secret and Floated Them to\" is doing 48 hours after it went live",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-24T17:21Z",
+        "at": "2026-11-24T17:23Z",
         "by": "gemini",
         "plan": [
           "Check package & browser",
@@ -325311,7 +325316,7 @@
           "Read 48h Analytics",
           "Record & judge"
         ],
-        "note": "Read 48h Since published via Studio CDP 9224 (Explore + tabs): 32 views, 1,699 impressions, 0.8% CTR (0.82%), 15.4% avg "
+        "note": "Recorded 48h reading in 05_Analytics/ww2/launch/ek9F61FVYqY.json and ran judge (Verdict: UNKNOWN, 0 faults)"
       },
       "taskKeys": [
         "WW2:001"
