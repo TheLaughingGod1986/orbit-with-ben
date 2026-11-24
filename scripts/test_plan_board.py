@@ -112,6 +112,17 @@ class PlanBoardTest(unittest.TestCase):
         self.assertTrue(planets["needsYou"])
         self.assertEqual(block["plans"][0]["card"]["needs"], "1 thing needs you: lock the every-planet film")
 
+    def test_a_studio_wide_plan_needs_no_baseline_and_scores_nothing(self):
+        # 24 Nov 2026 (Ben: monthly scorecard, fade what isn't working): a plan for the whole studio, not one channel.
+        plan = {"id": "s", "scope": "studio", "channel": "", "title": "Grow what works", "agreed": "2026-11-24",
+                "goal": "Effort where it grows.", "why": ["Because."], "decisions": [],
+                "steps": [{"id": "first-review", "name": "First monthly review", "what": "Verdicts for Ben.", "when": "2027-01-04T09:00Z", "jobs": []}]}
+        block = plan_board.section([plan], [], [], {}, "2026-11-24T10:00:00Z", now=dt.datetime(2026, 11, 24, 10, tzinfo=dt.timezone.utc))
+        card = block["plans"][0]["card"]
+        self.assertEqual(card["score"], "")
+        self.assertEqual(block["plans"][0]["baseline"], {})
+        self.assertEqual(card["title"], "Plan: grow what works")
+
     def test_youtube_states_and_the_fourteen_day_verdict(self):
         step = {
             "id": "journey", "name": "Journey film (58 minutes)", "what": "A calm film.",
