@@ -229809,6 +229809,11 @@
           "at": "2026-11-24T10:54Z",
           "by": "codex",
           "what": "no longer waits on Ben (entry 2): OK'd, delivered by J3509"
+        },
+        {
+          "at": "2026-11-24T10:54Z",
+          "by": "codex",
+          "what": "no longer waits on Ben (entry 1): OK'd, delivered by J3510"
         }
       ],
       "remaining_action": "All 4 Shorts rebuilt, 10/10 gated, J2829-reviewed and UAT-staged; arming Short 4 watch card and closing J2551",
@@ -229831,17 +229836,6 @@
         "audio_input"
       ],
       "awaits_was": {
-        "what": "029 Great Dimming Short v06 (SWDCZfWZVao, Wed 9 Dec): rebuilt the 2.7-5.1 s brightness-dip graphic upright 9:16 and reframed the 12.4-15.1 s Paranal and VLT/ESO plates full-frame so there is no blurred band anywhere; same voice, words and length",
-        "file": "OWB UAT/029_short_wed09_great_dimming_v06/029_short_wed09_great_dimming_v06.mp4",
-        "version": "v06",
-        "due": "2026-12-06T18:00Z",
-        "airs": "2026-12-09T11:30Z",
-        "ifNot": "the cut you OK'd airs",
-        "title": "Why Did Betelgeuse Suddenly Lose Two-Thirds of Its Light?",
-        "number": "029",
-        "type": "short"
-      },
-      "awaits_ben": {
         "what": "029 opening Short v06 (k2kEaA7ICjc, Fri 11 Dec, Test A): rebuilt the 8.6-12.1 s, 12.1-18.7 s and 21.1-26.9 s graphics and telescope plates full-frame 9:16 so there is no blurred band anywhere; same voice, words and length",
         "file": "OWB UAT/029_short_fri11_opening_testA_v06/029_short_fri11_opening_testA_v06.mp4",
         "version": "v06",
@@ -319146,13 +319140,32 @@
           "at": "2026-11-24T10:53Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T10:54Z",
+          "by": "codex",
+          "what": "approved by Ben: 029 opening Short v06 (k2kEaA7ICjc, Fri 11 Dec, Test A): rebuilt the 8.6-12.1 s, 12.1-18.7 s and 21.1-26.9 s graphics and telescope plates full-frame 9:16 so there is no blurred band anywhere; same voice, words and length v06 (asked in J2551)"
         }
       ],
       "remaining_action": "Upload the approved Betelgeuse opening Short while keeping its date",
       "due": "2026-11-25T12:00:00Z",
       "kind": "studio",
       "plain": "Upload the approved Betelgeuse opening Short while keeping its date",
-      "mini_only": true
+      "mini_only": true,
+      "approved_from": {
+        "what": "029 opening Short v06 (k2kEaA7ICjc, Fri 11 Dec, Test A): rebuilt the 8.6-12.1 s, 12.1-18.7 s and 21.1-26.9 s graphics and telescope plates full-frame 9:16 so there is no blurred band anywhere; same voice, words and length",
+        "file": "OWB UAT/029_short_fri11_opening_testA_v06/029_short_fri11_opening_testA_v06.mp4",
+        "version": "v06",
+        "airs": "2026-12-11T11:30Z",
+        "title": "Is Betelgeuse Really About to Explode?",
+        "number": "029",
+        "type": "short",
+        "card": "OWB:ASK:J2551.1",
+        "channel": "OWB",
+        "job": "J2551",
+        "okAt": "2026-11-16T09:32Z",
+        "okRef": "board:OWB:ASK:J2551.1;J3505"
+      }
     },
     {
       "id": "J3511",
