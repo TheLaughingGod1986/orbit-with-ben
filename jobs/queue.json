@@ -1,5 +1,5 @@
 {
-  "next_id": 3527,
+  "next_id": 3529,
   "jobs": [
     {
       "id": "J0001",
@@ -282668,6 +282668,11 @@
           "at": "2026-11-20T02:54Z",
           "by": "cursor",
           "what": "note: J3188 cohort note, 20 Nov 2026: Sq_lV89VMUs and fgsR8yAHr5s were contained before they aired. Both are Private with no publishAt. Their day-1 Shorts-feed numbers are unavailable, not zero. Do not substitute another video id. Bks_JLId1ew stays the 21 Nov control. The 24 Nov date gate and the sY0PSQFxjp8 schedule are unchanged. Leave the 20 Nov and 22 Nov gaps until an approved replacement has its own publishing brief."
+        },
+        {
+          "at": "2026-11-24T12:08Z",
+          "by": "relay",
+          "what": "condition verification queued: J3527"
         }
       ],
       "remaining_action": "Check the comparison Shorts on 24 November before allowing the vaccine test to air",
@@ -282685,7 +282690,8 @@
       "hold": {
         "type": "test",
         "condition": "The 20-22 November comparison Shorts have aired and their day-1 traffic sources are available for the standing 24 November gate; Plants first-48-hour data must also be read.",
-        "check_at": "2026-11-24T12:00:00Z"
+        "check_at": "2026-11-24T13:08:02+00:00",
+        "recheck_task": "J3527"
       }
     },
     {
@@ -316439,6 +316445,11 @@
           "at": "2026-11-24T08:46Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-24T12:08Z",
+          "by": "relay",
+          "what": "condition verification queued: J3528"
         }
       ],
       "remaining_action": "Wait for the local Lifetime verification, then resolve export approval before publication",
@@ -316468,7 +316479,8 @@
       "hold": {
         "type": "dependency",
         "condition": "Chief ruling 24 Nov: local commit f860973491 is preserved but not accepted for publication. Saved Studio text identifies the channel yet does not prove which date-range control was selected. J3465 must complete local selected-Lifetime evidence and strict-import validation before acceptance. The prior automatic approval rejection of public GitHub analytics export remains binding; do not export without explicit destination-specific approval. Do not infer approval from this retry date.",
-        "check_at": "2026-11-24T12:00:00Z"
+        "check_at": "2026-11-24T13:08:02+00:00",
+        "recheck_task": "J3528"
       },
       "escalated_at": "2026-11-24T08:46Z"
     },
@@ -320540,6 +320552,68 @@
       "due": "2026-12-11T18:00:00Z",
       "kind": "review",
       "plain": "Run Claude viewer test on WW2 film 013 opening, fold in Pilot 2 learnings, lock script and queue post-reset voice-over"
+    },
+    {
+      "id": "J3527",
+      "title": "Verify condition for J3125",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3125: The 20-22 November comparison Shorts have aired and their day-1 traffic sources are available for the standing 24 November gate; Plants first-48-hour data must also be read.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3125 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-24T12:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T12:08Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Check the comparison Shorts on 24 November before allowing the vaccine test to air",
+      "kind": "review",
+      "recheck_of": "J3125",
+      "due": "2026-11-24T12:00:00+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3528",
+      "title": "Verify condition for J3463",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3463: Chief ruling 24 Nov: local commit f860973491 is preserved but not accepted for publication. Saved Studio text identifies the channel yet does not prove which date-range control was selected. J3465 must complete local selected-Lifetime evidence and strict-import validation before acceptance. The prior automatic approval rejection of public GitHub analytics export remains binding; do not export without explicit destination-specific approval. Do not infer approval from this retry date.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3463 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-24T12:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T12:08Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Wait for the local Lifetime verification, then resolve export approval before publication",
+      "kind": "review",
+      "recheck_of": "J3463",
+      "due": "2026-11-24T06:40:43+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
