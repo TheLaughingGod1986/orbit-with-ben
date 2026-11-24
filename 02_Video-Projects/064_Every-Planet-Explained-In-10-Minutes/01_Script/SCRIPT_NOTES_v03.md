@@ -24,3 +24,5 @@ Picture/music scope remains zero generation and zero spend: verified shelf/archi
 | Saturn | 172 | 1104 | 348.64 | 426.31 |
 | Uranus | 151 | 1003 | 426.31 | 495.29 |
 | Neptune | 170 | 1128 | 495.29 | 572.14 |
+
+Fresh Gemini audit completed: see `jobs/reviews/J3538/GEMINI_RAW_v03.txt` and `RESULT.md`. Four mandatory corrections confirmed; required source-table cleanup resolved without changing this script hash. Optional geomagnetic timeframe note remains for independent review.
