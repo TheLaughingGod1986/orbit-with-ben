@@ -54,7 +54,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3310 | mini | open (after J3307) | – | – | studio · Studio: arm T043 thumbnail Test & Compare on REXYxuLOBoI (005 — OUTLIVES OUR SUN) after J3307 PASS | jobs/reviews/J3382/REVIEW.md |
 | J3364 | mini | open | – | – | 002 picture · assembly · Field Order History pilot 2: archive photos (~65%) plus the new opening, v06 to Ben's watch by Fri 27 Nov 20:00 (launch Sat 28 Nov 17:00) |  |
 | J3365 | mini | blocked | codex | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
-| J3368 | mini | claimed | gemini | 2026-11-24T05:03Z | review · Verify condition for J2529 |  |
 | J3369 | mini | blocked | codex | – | 001 thumbs · studio · Field Order History pilot 1: 48-hour thumbnail decision |  |
 | J3370 | mini | blocked | codex | – | WW2:003 vo · vo · WW2 003: correct S62 and S51a narration under J3360 ruling |  |
 | J3371 | mini | open (after J3370) | – | – | WW2:003 edit · chart · WW2 003: rebuild loss graphic and cues for corrected narration |  |
