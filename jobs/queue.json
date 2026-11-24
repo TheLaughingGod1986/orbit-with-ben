@@ -1,5 +1,5 @@
 {
-  "next_id": 3557,
+  "next_id": 3558,
   "jobs": [
     {
       "id": "J0001",
@@ -323376,6 +323376,36 @@
       "due": "2026-12-16T18:00:00Z",
       "kind": "facts",
       "plain": "Double-checking facts and archive sources for the Pearl Harbor salvage film"
+    },
+    {
+      "id": "J3557",
+      "title": "WW2 film 017: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Claude Rule-6 viewer test of the first 300 words and `AGENTS.md` Rule E topic/packaging/script lock for Field Order History film `WW2:017` (*How 6 Pearl Harbor Battleships Returned to War*), drafted in `ww2-channel` PR #89 (branch `macbook/J3543`, commit `521a509`), after the independent Gemini `facts`-lane claims check passes.\n\n**Do (`ww2-channel/studio/RULES.md` rules 1–6, 9 & 12; script lock due `2026-12-18 18:00 UTC` for Thu 31 Dec 2026 17:00 London slot):**\n1. Perform **Claude's viewer test of the first 300 words** of `01_Script/NARRATION_v01.txt` (`18,225` spoken chars `<= 21,000` Rule-9 cap, `2,889` words, Cold Open `119` words `~51.0s`, concrete moment `~26.1s <= 0:30`, promise `~40.3s <= 0:45`, Ch 1 moving `< 1:00`, SHA-256 `274fe0fd744bfa74d4b591f6a80a9098d93e4cf704614bf017544cf3f58e009e`) as a stranger would: concrete moment by 0:30, promise by 0:45, main story moving by 1:00, no detours, title answer withheld, one rounded figure at a time, and deliberately different first moment from Oceanliner Designs and Ivan's Engineering.\n2. Fold in Pilot 2's (`qfc6EBStOfo`, airs Tue 24 Nov 17:00 London) 48h and 7d Studio reads plus any resulting `studio/LEARNINGS.md` / `studio/RULES.md` Rule-12 updates; review `TOPIC_REVIEW.md` (GO recommendation, #1 ranked 2026-11-24 vidIQ research topic, 25+ verified official US Navy PD archive photo IDs, picked Rule-2 title `How 6 Pearl Harbor Battleships Returned to War` at `46` chars with zero copied rival hook words, 3 launch Test & Compare thumbnail concepts) and record the Rule E topic verdict.\n3. Confirm the independent Gemini `facts`-lane claims check (`CLAIMS_CHECK_v01.md`) is clean, fold any required fixes into locked `v02` (maintaining `<= 21,000` spoken characters unless Ben has upgraded ElevenLabs), and rule on the 3 planned engineering Shorts in `status.json` (`017-S1` wooden torpedo fins, `017-S2` 21 winches righting *Oklahoma*, `017-S3` 650-ton concrete patch on *West Virginia*) against `studio/RULES.md` Rule 1.\n4. Update `status.json` in a `ww2-channel` PR and queue the ElevenLabs voice-over job strictly for **after the ElevenLabs reset (`2026-11-30 10:50Z`)** and Chief PR merge.\n\n**Guards:** Zero ElevenLabs voice credits spent before `2026-11-30 10:50Z`. £0 spend.\n",
+      "ref": "ww2-channel#89",
+      "film": "017",
+      "stage": "script",
+      "after": "J3556",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "macbook-2",
+      "created_at": "2026-11-24T15:53Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-24T15:53Z",
+          "by": "macbook-2",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Run Rule-6 first-300-words viewer test, Pilot 2 Rule-12 check, lock WW2:017 script, and queue post-reset VO",
+      "due": "2026-12-18T18:00:00Z",
+      "kind": "review",
+      "plain": "Reviewing opening 300 words and locking the Pearl Harbor salvage script"
     }
   ],
   "focus": [

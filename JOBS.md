@@ -104,6 +104,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3554 | any | open | – | – | WW2:014 sources · facts · WW2 film 014: independent Gemini claims check on SCRIPT.md and SOURCES.md (PR #88) | ww2-channel#88 |
 | J3555 | any | open (after J3554) | – | – | WW2:014 script · review · WW2 film 014: Claude Rule-6 viewer test (first 300 words), Pilot 2 learnings check, Rule-E lock & queue VO | ww2-channel#88 |
 | J3556 | any | open | – | – | 017 sources · facts · WW2 film 017: independent Gemini claims check on SCRIPT.md and SOURCES.md (PR #89) | ww2-channel#89 |
+| J3557 | mini | open (after J3556) | – | – | 017 script · review · WW2 film 017: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO | ww2-channel#89 |
 
 Recently finished:
 
