@@ -326908,9 +326908,14 @@
           "at": "2026-11-24T18:52Z",
           "by": "codex",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-24T18:52Z",
+          "by": "codex",
+          "what": "step 1 of 3 done: Read original brief and full queue history: token grant reported complete; runtime verification not complete; Claude recorded a 24 Nov 18:45 handoff to Claude Code for Wed 25 Nov 10:00."
         }
       ],
-      "remaining_action": "Check the recorded probe handoff and update the migration hold",
+      "remaining_action": "Check for a completed runtime probe and record the remaining condition",
       "kind": "review",
       "recheck_of": "J3012",
       "due": "2026-11-24T18:00:00+00:00",
@@ -326924,7 +326929,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-24T18:52Z",
         "by": "codex",
@@ -326932,7 +326937,8 @@
           "Read approval history",
           "Verify current evidence",
           "Update hold and report"
-        ]
+        ],
+        "note": "Read original brief and full queue history: token grant reported complete; runtime verification not complete; Claude rec"
       }
     }
   ],
