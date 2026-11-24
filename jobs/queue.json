@@ -321625,10 +321625,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "codex",
+      "since": "2026-11-24T15:03Z",
+      "eta": "2026-11-24T17:03Z",
       "created_by": "relay",
       "created_at": "2026-11-24T12:08Z",
       "result": "",
@@ -321682,6 +321682,11 @@
           "at": "2026-11-24T15:03Z",
           "by": "codex",
           "what": "reopened: Acting Chief has reviewed the evidence and recorded parent hold with recheck J3528; reopen only this verification for ownership and closure. Parent J3463 stays blocked."
+        },
+        {
+          "at": "2026-11-24T15:03Z",
+          "by": "codex",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief to record J3463 wait --recheck J3528, review local J3465 commit c69d1ee2d6 and PR #1250, and close J3528",
@@ -321697,7 +321702,15 @@
         "by": ""
       },
       "open_claim": true,
-      "escalated_at": "2026-11-24T14:14Z"
+      "escalated_at": "2026-11-24T14:14Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-24T15:03Z",
+        "by": "codex",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3529",
