@@ -321890,7 +321890,7 @@
     {
       "id": "J3538",
       "title": "OWB 064: Correct remaining source mismatches in script v03",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Implement J3520/CHIEF_RULING.md as v03 of OWB:064, preserving v01/v02 and historical reviews. Apply the exact Jupiter mass, Galileo transmission, Earth equatorial-speed/wind and Neptune comparison fixes throughout narration, draft, sources and teaching/visual notes. Read the complete ruling and J3020 scope. Preserve the eight-planet outward tour, approved dates, word limits and zero-generation picture/music plan. Obtain a fresh Gemini facts/claims pass via agy and preserve its unedited output; test semantics, units, reference levels, uncertainty and ratios. Run review:script >=90 and gate:episode against v03; record exact hash, reproducible counts and chapter timings. Correct downstream hash/count stamps. Deliver evidence in a PR. Do not lock the script or finish J3020; the dependent independent review decides. No narration, generation, spend, upload or schedule/privacy changes. This is correction of the approved format test, not new topic development.\n",
       "ref": "J3520",
@@ -321910,12 +321910,25 @@
           "at": "2026-11-24T13:25Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-24T13:29Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Correct the Jupiter facts and Earth and Neptune comparisons, then check the sources",
       "due": "2026-11-25T12:00:00Z",
       "kind": "script",
-      "plain": "Correct the planet narration before it is recorded"
+      "plain": "Correct the planet narration before it is recorded",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3539",
