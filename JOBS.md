@@ -94,7 +94,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3535 | mini | blocked | gemini | – | review · Verify condition for J3510 |  |
 | J3536 | mini | open (after J3524) | – | – | WW2:012 vo · vo · WW2 film 012: narration in Ben's voice (Liberty Ships, post-reset) |  |
 | J3537 | mini | open (after J3526) | – | – | WW2:013 vo · vo · WW2 film 013: narration in Ben's voice (Ghost Army, post-reset) |  |
-| J3538 | mini | open | – | – | 064 script · script · OWB 064: Correct remaining source mismatches in script v03 | J3520 |
+| J3538 | mini | claimed | macbook | 2026-11-24T15:29Z | 064 script · script · OWB 064: Correct remaining source mismatches in script v03 | J3520 |
 | J3539 | mini | open (after J3538) | – | – | 064 script · review · OWB 064: Verify v03 sources and decide exact script lock | J3520 |
 
 Recently finished:
