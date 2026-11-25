@@ -333021,10 +333021,10 @@
       "stage": "edit",
       "after": "J3662",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T03:50Z",
+      "eta": "2026-11-25T05:50Z",
       "created_by": "gemini",
       "created_at": "2026-11-25T03:17Z",
       "result": "",
@@ -333038,6 +333038,11 @@
           "at": "2026-11-25T03:49Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred gemini): Codex out of usage; next in its chain: gemini"
+        },
+        {
+          "at": "2026-11-25T03:50Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "After J3662, review WW2:006 QA and PR #107, confirm Rule-2 title and picture=done, and either queue v02 repair or merge and stage Ben watch (due 2026-12-02 20:00 UTC)",
@@ -333051,7 +333056,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T03:50Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3664",
