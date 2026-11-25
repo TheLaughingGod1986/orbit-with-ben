@@ -343869,9 +343869,14 @@
           "at": "2026-11-25T23:32Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T23:32Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Write RETAKE_BOARD_v02.json and clean Nano Banana 2 start-still prompts for rows 49 and 63 (£0, park for Chief GO)",
+      "remaining_action": "Build the take-3 retake board for rows 49 and 63 of the Darwin and Wallace film",
       "due": "2026-11-28T18:00:00Z",
       "kind": "script",
       "plain": "Scope and price take-3 retakes and fresh start stills for the 2 failed Darwin & Wallace retake rows",
@@ -343885,12 +343890,20 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-25T23:32Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read brief and existing board",
+          "Write take-3 prompts and builder",
+          "Run checks",
+          "Status and PR",
+          "Desk post and park for Chief"
+        ]
+      },
+      "taskKeys": [
+        "HOS:013"
+      ]
     }
   ],
   "focus": [
