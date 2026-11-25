@@ -1,5 +1,5 @@
 {
-  "next_id": 3705,
+  "next_id": 3706,
   "jobs": [
     {
       "id": "J0001",
@@ -328151,6 +328151,11 @@
           "at": "2026-11-25T05:07Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-25T11:10:00Z"
+        },
+        {
+          "at": "2026-11-25T11:12Z",
+          "by": "relay",
+          "what": "condition verification queued: J3705"
         }
       ],
       "remaining_action": "Review PR #1284 in open elected-Chief job J3598, merge if PASS, then close held J3591",
@@ -328183,10 +328188,11 @@
       "hold": {
         "type": "input",
         "condition": "Verification J3674 (2026-11-25T05:07Z): UNMET. Existing elected-Chief review J3598 is still open (unclaimed), and J3604 correction OWB PR #1284 (codex/j3604-window-fix, head 0f68a818b6a1efe949ea07316d42928b829a415b) is still OPEN (mergedAt null, 0 reviews, Rules check SUCCESS, Studio core check SKIPPED). Replacements OWB #1279 and WW2 #102 remain merged; superseded originals OWB #1273, OWB #1276 and WW2 #101 are CLOSED. Keep J3591 blocked (do not reopen or repeat its 5 completed Gemini media steps); J3598 must review PR #1284 at exact head 0f68a818b6a1efe949ea07316d42928b829a415b, merge if PASS, and close J3591.",
-        "check_at": "2026-11-25T11:10:00Z",
+        "check_at": "2026-11-25T12:12:56+00:00",
         "last_recheck": "J3674",
         "checked_at": "2026-11-25T05:07:48+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J3705"
       },
       "escalated_at": "2026-11-24T20:18Z"
     },
@@ -337668,6 +337674,37 @@
         "check_at": "2026-11-26T17:05:00Z",
         "release": "auto"
       }
+    },
+    {
+      "id": "J3705",
+      "title": "Verify condition for J3591",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3591: Verification J3674 (2026-11-25T05:07Z): UNMET. Existing elected-Chief review J3598 is still open (unclaimed), and J3604 correction OWB PR #1284 (codex/j3604-window-fix, head 0f68a818b6a1efe949ea07316d42928b829a415b) is still OPEN (mergedAt null, 0 reviews, Rules check SUCCESS, Studio core check SKIPPED). Replacements OWB #1279 and WW2 #102 remain merged; superseded originals OWB #1273, OWB #1276 and WW2 #101 are CLOSED. Keep J3591 blocked (do not reopen or repeat its 5 completed Gemini media steps); J3598 must review PR #1284 at exact head 0f68a818b6a1efe949ea07316d42928b829a415b, merge if PASS, and close J3591.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3591 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-25T11:12Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T11:12Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Review PR #1284 in open elected-Chief job J3598, merge if PASS, then close held J3591",
+      "kind": "review",
+      "recheck_of": "J3591",
+      "due": "2026-11-25T05:03:00+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
