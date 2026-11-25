@@ -340168,13 +340168,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claudecode",
       "since": "2026-11-25T15:40Z",
-      "eta": "2026-11-25T17:40Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T14:58Z",
-      "result": "",
+      "result": "v03 pre-watch build finished and independently re-checked: master 1418.37 s on NAS studio-live film 006 07_Edit/v03_master (sha256 9d1968b7...8192f585e), Cuts A 82.667 s + B 41.792 s = 124.458 s, -15.3 LUFS, -1.6 dBTP, 0 decode errors, 344 captions, 7 chapters, v02 untouched (60df8793...). ww2-channel PR #159 open on main, parked for Chief, no merge, no PASS. No one has listened to or watched v03: audiovisual QA job is next. Chief points in HANDOFF_J3723_v03.md: description first line still leads on the removed 1939 shortage passage; no card for renamed Chapter 1; status/board/watch copy still v02.",
       "history": [
         {
           "at": "2026-11-25T14:58Z",
@@ -340240,6 +340240,11 @@
           "at": "2026-11-25T15:49Z",
           "by": "claudecode",
           "what": "step 5 of 5 done: ww2-channel PR #159 opened against main (parked for Chief, not merged)"
+        },
+        {
+          "at": "2026-11-25T15:50Z",
+          "by": "claudecode",
+          "what": "done: v03 pre-watch build finished and independently re-checked: master 1418.37 s on NAS studio-live film 006 07_Edit/v03_master (sha256 9d1968b7...8192f585e), Cuts A 82.667 s + B 41.792 s = 124.458 s, -15.3 LUFS, -1.6 dBTP, 0 decode errors, 344 captions, 7 chapters, v02 untouched (60df8793...). ww2-channel PR #159 open on main, parked for Chief, no merge, no PASS. No one has listened to or watched v03: audiovisual QA job is next. Chief points in HANDOFF_J3723_v03.md: description first line still leads on the removed 1939 shortage passage; no card for renamed Chapter 1; status/board/watch copy still v02."
         }
       ],
       "remaining_action": "Open the WW2 pull request for the v03 package (GitHub is returning server errors on pull-request creation)",
@@ -340262,7 +340267,8 @@
       },
       "taskKeys": [
         "WW2:006"
-      ]
+      ],
+      "done_ref": "ww2-channel PR #159 fb7a1a6"
     },
     {
       "id": "J3724",
