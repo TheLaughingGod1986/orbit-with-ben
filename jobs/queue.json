@@ -335968,9 +335968,14 @@
           "at": "2026-11-25T08:53Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T08:56Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Starting condition verification for J3681 (WW2:001 ek9F61FVYqY 48h rules review)."
         }
       ],
-      "remaining_action": "Verify readiness: After J3680 imports ek9F61FVYqY 48h Studio numbers into READS.md and board.json, run the Field Order History rules review",
+      "remaining_action": "Verify J3680 completion and ek9F61FVYqY 48h Studio numbers in channels/ww2/05_Analytics/READS.md and board.json",
       "kind": "review",
       "recheck_of": "J3681",
       "due": "2026-11-25T05:00:31+00:00",
@@ -335986,11 +335991,18 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-25T08:53Z",
+        "at": "2026-11-25T08:56Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check J3680 completion and READS.md",
+          "Verify ek9F61FVYqY 48h data in board.json and gates",
+          "Reopen J3681 and post verification report"
+        ],
+        "note": "Starting condition verification for J3681 (WW2:001 ek9F61FVYqY 48h rules review)."
+      },
+      "taskKeys": [
+        "WW2:001"
+      ]
     }
   ],
   "focus": [
