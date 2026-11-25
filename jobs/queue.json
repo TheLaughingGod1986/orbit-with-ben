@@ -324788,13 +324788,13 @@
       "stage": "sources",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T04:43Z",
-      "eta": "2026-11-25T06:43Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-24T15:46Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-24T15:46Z",
@@ -324835,6 +324835,11 @@
           "at": "2026-11-25T04:56Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Committed GEMINI_FACTS_CHECK_v01.md (4afb106fa58402eae05857f022f64551713ba313, https://github.com/TheLaughingGod1986/history-of-science/pull/764; 13 OK / 2 PARTIAL / 8 FLAG), check_all.sh ALL CHECKS PASS, desk report posted to Claude for J3553"
+        },
+        {
+          "at": "2026-11-25T04:56Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Done: independent Gemini facts audit committed, PR opened, and desk handoff posted to J3553",
