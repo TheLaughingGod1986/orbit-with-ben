@@ -126,6 +126,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3681 | any | blocked | macbook-2 | – | review · Field Order History rules review ek9F61FVYqY 48h |  |
 | J3682 | mini | open | – | – | studio · Field Order History channel totals read 2026-11-25 |  |
 | J3683 | mini | claimed | macbook-2 | 2026-11-25T09:03Z | review · Verify condition for J3565 |  |
+| J3684 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 
 Recently finished:
 
