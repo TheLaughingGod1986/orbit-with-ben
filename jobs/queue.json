@@ -319406,10 +319406,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T05:56Z",
+      "eta": "2026-11-25T06:56Z",
       "created_by": "claude",
       "created_at": "2026-11-24T09:48Z",
       "result": "",
@@ -319423,6 +319423,11 @@
           "at": "2026-11-24T09:58Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-24T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
+        },
+        {
+          "at": "2026-11-25T05:56Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Measure Flow and Gemini use, compare Google's current tiers, recommend one to Ben",
@@ -319435,7 +319440,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T05:56Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3490",
