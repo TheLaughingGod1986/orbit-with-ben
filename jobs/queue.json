@@ -315288,13 +315288,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "blocked",
-      "by": "claude",
+      "status": "open",
+      "by": "",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T17:51Z",
-      "result": "Waiting for: Studio shows the audience retention graph for ek9F61FVYqY (it said 'not ready yet, up to two days' on 23 Nov)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-23T17:51Z",
@@ -315315,18 +315315,17 @@
           "at": "2026-11-25T09:04Z",
           "by": "relay",
           "what": "condition verification queued: J3694"
+        },
+        {
+          "at": "2026-11-25T09:13Z",
+          "by": "gemini",
+          "what": "reopened: Verified via J3694 (read-only Studio CDP 9224 check, 2026-11-25T09:11Z, Field Order History UCu94mInMFosxu3W0H6jlI6Q): Studio Engagement (hub_engagement) and Overview (hub_overview) now render the live audience retention graph for ek9F61FVYqY (Mulberry Harbours: D-Day's Floating Ports, 23:52) across 0:00-23:52 (Since published: 34 views, 2.4 watch hours, 1.7k impressions, 0.8% CTR; Key moments card shows 4:07 AVD, 15% avg viewed, full blue curve plotted, no Not enough data suppression). Original guards remain valid: £0, Studio editor only, never touch running B/C/D Thumbnail Test & Compare, park any proposed cuts for Chief/Claude review before editing. Note: 05_Analytics/ww2/snapshots/ still has no daily API snapshot, so read the live curve directly on Studio CDP 9224 and note the small sample (34 views)."
         }
       ],
       "remaining_action": "Read the retention graph once Studio shows it, then propose cuts at the steepest drops",
       "due": "2026-11-26T18:00:00Z",
       "kind": "studio",
-      "mini_only": true,
-      "hold": {
-        "type": "date",
-        "condition": "Studio shows the audience retention graph for ek9F61FVYqY (it said 'not ready yet, up to two days' on 23 Nov)",
-        "check_at": "2026-11-25T10:04:44+00:00",
-        "recheck_task": "J3694"
-      }
+      "mini_only": true
     },
     {
       "id": "J3443",
