@@ -341852,13 +341852,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T21:21Z",
-      "eta": "2026-11-25T23:21Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T19:17Z",
-      "result": "",
+      "result": "Acting Chief (gemini, 25 Nov 2026): PASS & merged HOS PR #789 (0d243f72 -> main 37c49f91, 5/5 CI green, _build_retake_board_v01.py --check PASS, 0 real names/forbidden terms, 8/8 NAS start stills SHA-256 matched). Price PASS & Mint GO on Option A (Pre-5-Dec Veo 3.1 - Quality, 8 x 100 = 800 cr cap, £0 cash; retake allowance raised 700 -> 800 cr to include row 63; prompt_retake selected for all 8 rows 3,10,24,28,47,49,54,63; --floor 3000; <2026-12-05 cutoff). Queued J3747 (mini-only, video) to build guarded retake runner and mint take 2. Recorded on HOS desk #7174948698. J2529 held; J3178 10 capability-held rows (56-62,64-66) untouched. £0 spent.",
       "history": [
         {
           "at": "2026-11-25T19:17Z",
@@ -341909,6 +341909,11 @@
           "at": "2026-11-25T21:21Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T21:21Z",
+          "by": "gemini",
+          "what": "done: Acting Chief (gemini, 25 Nov 2026): PASS & merged HOS PR #789 (0d243f72 -> main 37c49f91, 5/5 CI green, _build_retake_board_v01.py --check PASS, 0 real names/forbidden terms, 8/8 NAS start stills SHA-256 matched). Price PASS & Mint GO on Option A (Pre-5-Dec Veo 3.1 - Quality, 8 x 100 = 800 cr cap, £0 cash; retake allowance raised 700 -> 800 cr to include row 63; prompt_retake selected for all 8 rows 3,10,24,28,47,49,54,63; --floor 3000; <2026-12-05 cutoff). Queued J3747 (mini-only, video) to build guarded retake runner and mint take 2. Recorded on HOS desk #7174948698. J2529 held; J3178 10 capability-held rows (56-62,64-66) untouched. £0 spent."
         }
       ],
       "remaining_action": "Chief price PASS and mint GO on the 8-row retake board",
@@ -341933,7 +341938,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "HOS#789,J3747,desk#7174948698"
     },
     {
       "id": "J3739",
