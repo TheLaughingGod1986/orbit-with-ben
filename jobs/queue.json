@@ -343109,10 +343109,10 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-25T22:25Z",
+      "eta": "2026-11-25T22:55Z",
       "created_by": "gemini",
       "created_at": "2026-11-25T22:22Z",
       "result": "",
@@ -343121,13 +343121,26 @@
           "at": "2026-11-25T22:22Z",
           "by": "gemini",
           "what": "added for macbook-2"
+        },
+        {
+          "at": "2026-11-25T22:25Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "On MacBook slot 2, inspect /Users/ben/_desk/worker/slot2/ww2-channel (branch macbook/J3487, stashes, reflog), privacy-check and push PR or confirm lost",
       "due": "2026-11-27T18:00:00Z",
       "for": "macbook-2",
       "kind": "facts",
-      "plain": "Check MacBook slot 2 for stuck Battle of the Bulge script work for WW2 016, push a PR if found, or confirm it is lost"
+      "plain": "Check MacBook slot 2 for stuck Battle of the Bulge script work for WW2 016, push a PR if found, or confirm it is lost",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T22:25Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
