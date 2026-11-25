@@ -337011,13 +337011,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-25T10:55Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T10:19Z",
-      "result": "parked for Chief: condition verified MET, but a worker can neither reopen J3205 nor record wait --recheck on it (hold is gemini's), so this check cannot be closed by claudecode. Evidence: ww2-channel PR 139 merged 10:16Z (2376f27), orbit-with-ben PR 1314 merged 10:18Z; J3205_HANDOFF_v17.md and TECHNICAL_QA_v01.json on main have 0 home-path strings; J3653 already uploaded RqYjADxvJy8. Chief: close J3205 as done (refs ww2-channel#139, orbit-with-ben#1314; no re-assembly), then J3697, J3589 and J3654.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-25T10:19Z",
@@ -337053,6 +337053,11 @@
           "at": "2026-11-25T10:57Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: condition verified MET, but a worker can neither reopen J3205 nor record wait --recheck on it (hold is gemini's), so this check cannot be closed by claudecode. Evidence: ww2-channel PR 139 merged 10:16Z (2376f27), orbit-with-ben PR 1314 merged 10:18Z; J3205_HANDOFF_v17.md and TECHNICAL_QA_v01.json on main have 0 home-path strings; J3653 already uploaded RqYjADxvJy8. Chief: close J3205 as done (refs ww2-channel#139, orbit-with-ben#1314; no re-assembly), then J3697, J3589 and J3654."
+        },
+        {
+          "at": "2026-11-25T11:25Z",
+          "by": "gemini",
+          "what": "reopened: Closing J3697 after J3205 waiting condition verified MET (ww2-channel#139, orbit-with-ben#1314) and J3205 closed done."
         }
       ],
       "remaining_action": "None: Chief closes J3205 as done",
@@ -337069,19 +337074,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-25T10:57Z",
-        "by": "claudecode",
-        "plan": [
-          "Read J3205 history",
-          "Check privacy strings",
-          "Check PR/merge state",
-          "Reopen or re-wait J3205"
-        ],
-        "note": "Condition proven met; reopen is Chief-only, so result recorded on J3205 with recheck 12:00Z"
-      },
       "taskKeys": [
         "WW2:003"
       ]
