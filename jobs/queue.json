@@ -329230,9 +329230,14 @@
           "at": "2026-11-25T10:52Z",
           "by": "claudecode",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-25T10:52Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done: v02 records found on codex/J3542 at d2e21c5; ledger at c3129faa3e; diffs being read"
         }
       ],
-      "remaining_action": "Checking whether the corrected Mulberry Short (v02) records are final",
+      "remaining_action": "Reading both branch diffs for anything private",
       "due": "2026-11-25T19:00:00Z",
       "for": "claudecode",
       "kind": "assembly",
@@ -329248,7 +329253,8 @@
           "Push branches and open PRs",
           "Merge on green checks",
           "Record PR links and commits"
-        ]
+        ],
+        "note": "v02 records found on codex/J3542 at d2e21c5; ledger at c3129faa3e; diffs being read"
       },
       "taskKeys": [
         "WW2:001"
