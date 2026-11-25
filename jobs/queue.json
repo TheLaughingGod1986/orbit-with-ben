@@ -324897,6 +324897,11 @@
           "at": "2026-11-24T23:19Z",
           "by": "claude",
           "what": "done: v02 built and reviewed; Ben OK'd the Mulberry Short v02 on the board (Review tab, card 001-S1 'You OK'd v02', his screenshot 24 Nov 23:18 London, sent in chat with \"No film to review.\"). Upload and 7-day read in J3646."
+        },
+        {
+          "at": "2026-11-25T13:30Z",
+          "by": "claude",
+          "what": "no longer waits on Ben: OK'd, delivered by J3646"
         }
       ],
       "remaining_action": "Waiting for Ben to watch the first Mulberry harbours Short",
@@ -324920,7 +324925,7 @@
         ],
         "note": "NAS master hash verified; dedicated WW2:001-S1 v02 watch card set, due 25 Nov 20:00 UTC. Final local commit d2e21c5 is r"
       },
-      "awaits_ben": {
+      "awaits_was": {
         "what": "Watch the first Mulberry harbours Short and say OK or what to change",
         "file": "/Volumes/data/studio-live/ww2/02_Video-Projects/001_Mulberry-Harbours-Floating-Ports-D-Day/Shorts/Mulberry_Test_v02/mulberry_short_v02.mp4",
         "version": "v02",
@@ -333606,6 +333611,16 @@
           "at": "2026-11-25T00:08Z",
           "by": "gemini",
           "what": "done: Uploaded Ben-approved Mulberry Short v02 (SHA-256 a63f323f124c078d0999a066c2a34cbf36c52dfecebcb5cf3b0cb8ab04c11b89) as NoQQqrW2meM on Field Order History (Private, scheduled Thu 26 Nov 2026 12:00 London = 2026-11-26T12:00:00Z). Studio 9224 + Data API readback verified: Short (PT48S, HD processed), Related video = ek9F61FVYqY, opening question cover frame (Auto-generated thumbnail 1), Altered content = Yes, Not made for kids, all 5 tags & archive credits set. Captured Pilot 1 ek9F61FVYqY before-number baseline (2026-11-25T00:01Z: 33 total views, Suggested 21 views / 1,715 impr / 0.8% CTR, Shorts 0 / absent). Recorded in ww2 status.json (merged PR #122, a4db817). Queued 7-day read J3648 for Thu 3 Dec 2026 12:05 London. £0."
+        },
+        {
+          "at": "2026-11-25T13:30Z",
+          "by": "claude",
+          "what": "approved by Ben: Watch the first Mulberry harbours Short and say OK or what to change v02 (asked in J3542)"
+        },
+        {
+          "at": "2026-11-25T13:30Z",
+          "by": "claude",
+          "what": "Chief: linked to Ben's OK on J3542. The board showed 'Your OK on Mulberry Harbours: How Did They Work? is waiting for an upload job, 17 h' because this job named the card WW2:001-S1 while the board keyed it WW2:ASK:J3542. NoQQqrW2meM is Private, scheduled Thu 26 Nov 12:00 London (this job's read-back)."
         }
       ],
       "remaining_action": "Mark J3646 done, arm J3648 date wait for Thu 3 Dec 12:05 London, and post studio thread report",
@@ -333632,7 +333647,21 @@
       },
       "taskKeys": [
         "WW2:001"
-      ]
+      ],
+      "approved_from": {
+        "what": "Watch the first Mulberry harbours Short and say OK or what to change",
+        "file": "/Volumes/data/studio-live/ww2/02_Video-Projects/001_Mulberry-Harbours-Floating-Ports-D-Day/Shorts/Mulberry_Test_v02/mulberry_short_v02.mp4",
+        "version": "v02",
+        "airs": "2026-11-26T12:00Z",
+        "card": "WW2:001-S1",
+        "title": "Mulberry Harbours: How Did They Work?",
+        "number": "001-S1",
+        "type": "short",
+        "channel": "WW2",
+        "job": "J3542",
+        "okAt": "2026-11-24T23:18Z",
+        "okRef": "board Review card 001-S1 'You OK'd v02' (ww2 status.json shorts[0].ben_ok)"
+      }
     },
     {
       "id": "J3647",
