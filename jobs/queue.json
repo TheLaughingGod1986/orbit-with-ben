@@ -336253,20 +336253,33 @@
           "at": "2026-11-25T19:23Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T19:24Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "HOS 128 Edison vs Tesla: long voiceover (6 parts) from locked script v03",
+      "remaining_action": "Record the six narration parts for the Edison vs Tesla film and check each one",
       "due": "2026-12-02T18:00:00Z",
       "kind": "vo",
       "plain": "Record and vo_check the 6-part long narration for HOS 128 from locked script v03 using Ben Orbit Narrator",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T19:23Z",
+        "of": 5,
+        "at": "2026-11-25T19:24Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify locked script and credit",
+          "Record 6 parts",
+          "Run voice checks on each part",
+          "Commit records in a pull request",
+          "Park for Chief review"
+        ]
+      },
+      "taskKeys": [
+        "HOS:128"
+      ]
     },
     {
       "id": "J3671",
