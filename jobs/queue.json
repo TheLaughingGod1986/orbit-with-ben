@@ -335330,13 +335330,13 @@
       "stage": "sources",
       "after": "J3685",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T07:53Z",
-      "eta": "2026-11-25T09:53Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T07:23Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-25T07:23Z",
@@ -335377,6 +335377,11 @@
           "at": "2026-11-25T08:03Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Committed GEMINI_FACTS_CHECK_v02.md (18 OK / 10 PARTIAL / 0 FLAG), updated production-status.md and status.json, opened HOS PR #775 (b7871857, gemini/J3686-hos137-facts-v02), and posted HOS desk handoff to Claude for J3687."
+        },
+        {
+          "at": "2026-11-25T08:03Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Complete: HOS PR #775 open and handed off to Chief v02 lock review (J3687)",
