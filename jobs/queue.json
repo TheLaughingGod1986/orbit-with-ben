@@ -335367,16 +335367,21 @@
           "at": "2026-11-25T07:58Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Completed full v02 claim, visual-card, Shorts pacing, and J3564 FLAG-1..4 audit: 18 OK / 10 PARTIAL / 0 FLAG across 28 items (all 4 J3564 FLAGs resolved, 36/36 URLs HTTP 200, all cards <=4 words, Part 01 milestones & Shorts 17.2s pacing verified)."
+        },
+        {
+          "at": "2026-11-25T08:02Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Wrote 01_Script/GEMINI_FACTS_CHECK_v02.md (18 OK / 10 PARTIAL / 0 FLAG), updated production-status.md and status.json (owner -> Claude, state doing); check_all.sh ALL CHECKS PASS (review:script 91.8/100, gate:episode PASS, status_board PASS)."
         }
       ],
-      "remaining_action": "Write 01_Script/GEMINI_FACTS_CHECK_v02.md (18 OK / 10 PARTIAL / 0 FLAG) and run 00_Brand/Channel-Setup/tools/check_all.sh",
+      "remaining_action": "Commit GEMINI_FACTS_CHECK_v02.md, open clean HOS PR to main, post desk handoff, and finish J3686",
       "due": "2026-12-04T18:00:00Z",
       "kind": "facts",
       "plain": "Independently verify every fact, source URL and exact quote in the HOS 137 v02 script and Shorts.",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-25T07:58Z",
+        "at": "2026-11-25T08:02Z",
         "by": "gemini",
         "plan": [
           "Stack worktree and record SHA-256 hashes",
@@ -335385,7 +335390,7 @@
           "Write GEMINI_FACTS_CHECK_v02.md and run check_all.sh",
           "Open HOS PR and hand off to Chief"
         ],
-        "note": "Completed full v02 claim, visual-card, Shorts pacing, and J3564 FLAG-1..4 audit: 18 OK / 10 PARTIAL / 0 FLAG across 28 i"
+        "note": "Wrote 01_Script/GEMINI_FACTS_CHECK_v02.md (18 OK / 10 PARTIAL / 0 FLAG), updated production-status.md and status.json (o"
       },
       "taskKeys": [
         "HOS:137"
