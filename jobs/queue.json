@@ -340639,7 +340639,7 @@
     {
       "id": "J3730",
       "title": "Verify condition for J3487",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "Verify the waiting condition for J3487: Acting-Chief verification J3620: condition UNMET. Post-reopen Battle of the Bulge work from macbook-2 (24 Nov 14:53-15:04Z) is not published: ww2-channel origin/macbook/J3487 remains at pre-reopen Bletchley commit 03ce06aeb6815306cdd3efdcf2edd4a1447b84be (merged in PR #84/#86), origin/main (be57e17ecd78bf940425b9829f1871ae2850a03b) still holds only superseded 016_Bletchley-Park-Enigma-Bombe (J3541 NO-GO, air 2026-12-31), and no new PR or remote branch exists for WW2:016 Battle of the Bulge. Target worktree /Users/ben/_desk/worker/slot2/ww2-channel (branch macbook/J3487) is a MacBook path (/Users/ben does not exist on the Mac mini), so Mini claudecode/J3530 cannot inspect or push it. Needs MacBook Claude Code (or MacBook check) to verify whether local branch macbook/J3487 still holds the unpushed Battle of the Bulge commits, privacy-check, push, open PR and merge when green (or confirm lost so Chief can reopen J3487 cleanly ahead of 2026-12-16 script lock). OWB PR #1254 (J3531) also remains open/unmerged. No spend, upload or schedule change.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3487 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
       "ref": "",
@@ -340659,13 +340659,26 @@
           "at": "2026-11-25T16:06Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-25T16:06Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred claudecode): Claude out of usage (Claude said it's out of usage until 2026-11-25T17:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: claudecode on its default"
         }
       ],
       "remaining_action": "Verify readiness: Publish unpushed MacBook branch macbook/J3487 from /Users/ben/_desk/worker/slot2/ww2-channel via Claude Code after privacy check (or confirm branch state on MacBo",
       "kind": "review",
       "recheck_of": "J3487",
       "due": "2026-11-25T17:06:07+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
