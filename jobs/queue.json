@@ -331907,10 +331907,10 @@
       "stage": "",
       "after": "",
       "eta_min": 480,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T02:50Z",
+      "eta": "2026-11-25T10:50Z",
       "created_by": "claude",
       "created_at": "2026-11-25T00:30Z",
       "result": "",
@@ -331919,12 +331919,25 @@
           "at": "2026-11-25T00:30Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-25T02:50Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Build the watchlist, tracker, weekly tagging and the board's Market tab",
       "due": "2026-12-02T18:00:00Z",
       "kind": "studio",
-      "mini_only": true
+      "mini_only": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T02:50Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3651",
