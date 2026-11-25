@@ -274301,16 +274301,21 @@
           "at": "2026-11-25T14:02Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Step 1 done: J3711 v04 lock verified (SHA-256 556f3c8d...); live ElevenLabs balance 11,943/121,114 remaining (can_extend=false, resets 2026-11-30T10:50:31Z); dry-run verified 8 chapters, 8,481 chars, 1,341 words -> studio-live 02_Voiceover"
+        },
+        {
+          "at": "2026-11-25T14:08Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Step 2 done: recorded every_planet_explained_vo_v01 on studio-live (8 chapters, 683.86s, -20.2 LUFS, Scribe 89.45% raw / 63 mismatch runs, 8,481 spoken chars)"
         }
       ],
-      "remaining_action": "Recording OWB:064 locked v04 narration (8 chapters, 8,481 chars) via vo_take.py + Scribe scribe_v2 under desk-lock elevenlabs",
+      "remaining_action": "Running word-mismatch, repetition, chapter-boundary, loudness/true-peak, and first-minute timing checks on every_planet_explained_vo_v01",
       "due": "2026-11-25T18:00:00Z",
       "kind": "vo",
       "plain": "Record and check narration for the every-planet film",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-25T14:02Z",
+        "at": "2026-11-25T14:08Z",
         "by": "gemini",
         "plan": [
           "Verify lock, live balance & dry-run",
@@ -274319,7 +274324,7 @@
           "Resolve any defective chapter pickup if needed",
           "Write evidence, update status/ledger & submit PR"
         ],
-        "note": "Step 1 done: J3711 v04 lock verified (SHA-256 556f3c8d...); live ElevenLabs balance 11,943/121,114 remaining (can_extend"
+        "note": "Step 2 done: recorded every_planet_explained_vo_v01 on studio-live (8 chapters, 683.86s, -20.2 LUFS, Scribe 89.45% raw /"
       },
       "taskKeys": [
         "OWB:064"
