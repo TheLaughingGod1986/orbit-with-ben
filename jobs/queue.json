@@ -337401,16 +337401,21 @@
           "at": "2026-11-25T22:54Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J3684; inspecting Studio reach reader and OWB/HOS video lists"
+        },
+        {
+          "at": "2026-11-25T22:58Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Verified OWB Studio (9223) and HOS Studio (9460/9222) sessions and 18 OWB + 7 HOS longs / 93 OWB + 36 HOS Shorts inventory; also queued Acting Chief upload jobs J3752 (003-S3) and J3753 (004-S1) clearing Ben board OKs"
         }
       ],
-      "remaining_action": "Check OWB/HOS Studio sessions and video inventory",
+      "remaining_action": "Read OWB Studio lifetime metrics (18 longs + 93 Shorts) on CDP 9223",
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-25T22:54Z",
+        "at": "2026-11-25T22:58Z",
         "by": "gemini",
         "plan": [
           "Check Studio CDP sessions & video list",
@@ -337419,7 +337424,7 @@
           "Run studio_reach, rebuild tracker & board",
           "Commit, push & close J3684"
         ],
-        "note": "Claimed J3684; inspecting Studio reach reader and OWB/HOS video lists"
+        "note": "Verified OWB Studio (9223) and HOS Studio (9460/9222) sessions and 18 OWB + 7 HOS longs / 93 OWB + 36 HOS Shorts invento"
       }
     },
     {
