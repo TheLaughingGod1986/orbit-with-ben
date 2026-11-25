@@ -326298,19 +326298,30 @@
           "at": "2026-11-25T00:34Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T00:35Z",
+          "by": "macbook",
+          "what": "step 1 of 6 done"
         }
       ],
-      "remaining_action": "Cut locked 006 narration (20:04.760-20:50.640), assemble 1080x1920 vertical Short, and put on Ben watch",
+      "remaining_action": "Inspecting 006-S1 pipeline, narration timestamps, archive images and music bed",
       "due": "2026-12-04T18:00:00Z",
       "kind": "assembly",
       "plain": "Build the second Mosquito bomber Short comparing its 4,000-pound Berlin bomb load and two crew against a ten-man B-17",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-25T00:34Z",
+        "step": 1,
+        "of": 6,
+        "at": "2026-11-25T00:35Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect assets and 006-S1 pipeline",
+          "Design shots, diagram and captions",
+          "Render 006-S2 Short and audio",
+          "Verify frames, audio and gates",
+          "Copy master to NAS with SHA-256",
+          "Commit branch, open PR and report"
+        ]
       }
     },
     {
