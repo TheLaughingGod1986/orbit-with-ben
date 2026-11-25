@@ -342436,9 +342436,14 @@
           "at": "2026-11-25T21:02Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Finished watching & listening to all 15 AV chunks (0:00-14:46.21): verified splices 1-19 (probing faint onset at Join 10 8:37), confirmed Ryder duplicate card bug on G6 4:14, A 9804 & A 23877 freezes, G8 missing casualty labels, C 3317A thumb C legibility, clean ending hold/fade"
+        },
+        {
+          "at": "2026-11-25T21:05Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Confirmed Join 10 (517.02s/8:37) audible clipped 'I-' stub from cut P27.S2 in raw VO (-24.3 dBFS at 659.45s); verified 18/19 other splices seamless, 214 UK captions clean, Rule-2 title/description/pinned PASS; verdict = FIX (zero-spend v04)"
         }
       ],
-      "remaining_action": "Verifying Join 10 onset, captions/chapters sync, and drafting QA_REVIEW_J3745.md",
+      "remaining_action": "Committing QA_REVIEW_J3745.md on clean ww2 worktree PR, merging as Acting Chief, and queueing zero-spend v04 fix",
       "due": "2026-11-28T20:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -342455,9 +342460,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-25T21:02Z",
+        "at": "2026-11-25T21:05Z",
         "by": "gemini",
         "plan": [
           "Verify master & test AV input",
@@ -342466,7 +342471,7 @@
           "Check captions, chapters & thumbnails",
           "Commit QA review PR & report"
         ],
-        "note": "Finished watching & listening to all 15 AV chunks (0:00-14:46.21): verified splices 1-19 (probing faint onset at Join 10"
+        "note": "Confirmed Join 10 (517.02s/8:37) audible clipped 'I-' stub from cut P27.S2 in raw VO (-24.3 dBFS at 659.45s); verified 1"
       },
       "taskKeys": [
         "WW2:005"
