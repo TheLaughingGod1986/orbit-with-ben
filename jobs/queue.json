@@ -333588,17 +333588,29 @@
           "at": "2026-11-25T11:27Z",
           "by": "gemini",
           "what": "reopened: Chief review PASS: verified ww2-channel#139 (2376f27) and orbit-with-ben#1314 (3a0abe6bdf) merged cleanly with 0 home paths/secrets; closed J3205, J3697, J3589, J3558 after OWB 003 cleanup PR #1318."
+        },
+        {
+          "at": "2026-11-25T11:28Z",
+          "by": "gemini",
+          "what": "rerouted to gemini: Acting Chief closing J3654 after verifying ww2-channel#139, orbit-with-ben#1314, orbit-with-ben#1318, and closing J3205/J3697/J3589/J3558."
         }
       ],
       "remaining_action": "Chief closes the assembly job with the two merge references",
       "due": "2026-11-25T14:00:00Z",
-      "for": "claudecode",
+      "for": "gemini",
       "kind": "assembly",
       "plain": "Privacy-check and publish the B-29 edit and QA branches to GitHub",
       "mini_only": true,
       "taskKeys": [
         "WW2:003"
-      ]
+      ],
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "claudecode",
+        "model": "",
+        "status": "open",
+        "by": ""
+      }
     },
     {
       "id": "J3655",
