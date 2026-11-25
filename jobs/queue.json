@@ -329225,21 +329225,34 @@
           "at": "2026-11-25T10:51Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T10:52Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Check final corrected Short records for privacy, then publish their branches and pull requests",
+      "remaining_action": "Checking whether the corrected Mulberry Short (v02) records are final",
       "due": "2026-11-25T19:00:00Z",
       "for": "claudecode",
       "kind": "assembly",
       "plain": "Publish the checked records for the corrected Mulberry harbour Short",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T10:51Z",
+        "of": 5,
+        "at": "2026-11-25T10:52Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check J3542 v02 records are final",
+          "Read both branch diffs for privacy",
+          "Push branches and open PRs",
+          "Merge on green checks",
+          "Record PR links and commits"
+        ]
+      },
+      "taskKeys": [
+        "WW2:001"
+      ]
     },
     {
       "id": "J3607",
