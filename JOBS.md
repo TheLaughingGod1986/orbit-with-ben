@@ -109,7 +109,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3754 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2 003-S3 (RtEMDrfeKR8): 7-day Short read and RqYjADxvJy8 Related traffic | J3752 |
 | J3755 | mini | blocked | claudecode | – | WW2:004 upload · studio · WW2 004-S1 (l7P2DdGCr-A): 7-day Short read and WW2:004 Related traffic | J3753 |
 | J3756 | mini | blocked | gemini | – | 013 picture · review · HOS 013: continuous 24-fps playback review of 6 visually clean take-2 retake plates (rows 3,10,24,28,47,54) | J3747 |
-| J3757 | mini | open | – | – | 013 picture · script · HOS 013: build take-3 retake board and clean start-still prompts for rows 49 and 63 (£0, before 5 Dec) | J3747 |
+| J3757 | mini | claimed | gemini | 2026-11-26T01:50Z | 013 picture · script · HOS 013: build take-3 retake board and clean start-still prompts for rows 49 and 63 (£0, before 5 Dec) | J3747 |
 | J3758 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J3759 | mini | open | – | – | 013 picture · image · HOS 013: mint 2 clean take-3 Flow start stills for rows 49 and 63 (0 cr, Nano Banana 2, before 5 Dec) | J3757 |
 | J3760 | mini | open (after J3759) | – | – | 013 picture · video · HOS 013: mint take-3 Veo 3.1 Quality clips for rows 49 and 63 (Option A, 200 Flow cr max, before 5 Dec) | J3757 |
