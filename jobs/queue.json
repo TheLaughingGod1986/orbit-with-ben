@@ -325547,23 +325547,29 @@
           "at": "2026-11-25T12:57Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-25T12:59Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Inspected macbook/J3486 (60bd322/8bc8127) SCRIPT.md (2,600 words, 8 chapters), SOURCES.md (21 mapped rows), ARCHIVE_PROVENANCE.md, and ARCHIVE_COVERAGE_v01.md"
         }
       ],
-      "remaining_action": "Fetching macbook/J3486 and reading film 015 SCRIPT.md and SOURCES.md",
+      "remaining_action": "Downloading and verifying S1 PDF, S2 Tank Museum article, and primary archive/technical records",
       "for": "gemini",
       "kind": "facts",
       "plain": "Check the facts in the Sherman tank story",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-25T12:57Z",
+        "at": "2026-11-25T12:59Z",
         "by": "gemini",
         "plan": [
           "Inspect J3486 draft and sources",
           "Independently verify claims against primary sources",
           "Write CLAIMS_CHECK_v01.md",
           "Open WW2 stage PR and report"
-        ]
+        ],
+        "note": "Inspected macbook/J3486 (60bd322/8bc8127) SCRIPT.md (2,600 words, 8 chapters), SOURCES.md (21 mapped rows), ARCHIVE_PROV"
       },
       "taskKeys": [
         "WW2:015"
