@@ -1,5 +1,5 @@
 {
-  "next_id": 3735,
+  "next_id": 3736,
   "jobs": [
     {
       "id": "J0001",
@@ -259794,6 +259794,11 @@
           "at": "2026-11-15T09:43Z",
           "by": "cursor",
           "what": "condition recorded; next verification 2026-11-25T18:10:00Z"
+        },
+        {
+          "at": "2026-11-25T18:10Z",
+          "by": "relay",
+          "what": "condition verification queued: J3735"
         }
       ],
       "remaining_action": "Pin the prepared comment once the Titan long is public",
@@ -259810,7 +259815,8 @@
       "hold": {
         "type": "date",
         "condition": "T3cBBss1F60 privacyStatus is public",
-        "check_at": "2026-11-25T18:10:00Z"
+        "check_at": "2026-11-25T19:10:10+00:00",
+        "recheck_task": "J3735"
       }
     },
     {
@@ -341199,6 +341205,37 @@
       "due": "2026-11-27T18:00:00Z",
       "kind": "chief",
       "urgent": 9
+    },
+    {
+      "id": "J3735",
+      "title": "Verify condition for J2886",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J2886: T3cBBss1F60 privacyStatus is public. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J2886 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-25T18:10Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T18:10Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Pin the prepared comment once the Titan long is public",
+      "kind": "review",
+      "recheck_of": "J2886",
+      "due": "2026-11-25T19:10:10+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
