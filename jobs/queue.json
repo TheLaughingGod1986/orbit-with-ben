@@ -331005,8 +331005,8 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-11-24T22:59Z",
       "eta": "",
       "created_by": "relay",
@@ -331052,6 +331052,11 @@
           "at": "2026-11-25T01:34Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-25T02:00Z",
+          "by": "gemini",
+          "what": "cancelled: Superseded by J3639: J3430 hold resolved, v02 passed full QA and Chief review, staged for Ben's watch (WW2:004, ww2-004-v02, board_check ok=true), and J3430 completed."
         }
       ],
       "remaining_action": "Parked for Chief: merge OWB PR #1297, record wait --type input --recheck J3640 on J3430, close J3640",
