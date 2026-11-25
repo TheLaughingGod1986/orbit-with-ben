@@ -341337,13 +341337,13 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T19:01Z",
-      "eta": "2026-11-25T20:31Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-25T18:08Z",
-      "result": "",
+      "result": "Acting Chief (gemini, £0): unified HOS line-up (Thu 3 Dec 009 Gravity finished/scheduled; Thu 10 Dec SKIPPED — first Thursday with no film; Thu 17 Dec 011 Anaesthesia; Thu 24 Dec SKIPPED Christmas Eve; Thu 31 Dec 013 Darwin & Wallace with 010 swap reserve; Thu 7/14/21/28 Jan 128/136/137/127 search-led; 010 parked Thu 4 Feb; 012/014/015/018 stale dates cleared) across plan.json, status.json, manifests & film_briefs.json (HOS PR #786 9f8382e3, OWB PR #1330 6cb91cb341f5195f973f80bb41dd8ce8e4adc5c7). Freed WIP (009 out, 010 parked -> 011 & 137 active 5/5). Queued next jobs J3736 (011 price/runner), J3740 (011 16-19s Shorts/thumb brief), J3737 (013 J2652 non-producer review), J3738 (013 8 confirmed retakes £0 board), J3739 (137 VO after J3678) and aligned J3670/J3671/J3678/J3679 due dates; kept J3178/J2529 moving_video_input hold intact and escalated UAT reel option to Claude. Pre-built at £0 picture plans, Flow prompt boards, lint-passing upload packages & thumbnail briefs for 128, 136, 137 (check_all.sh ALL CHECKS PASS). Reported on HOS desk #694 (#7172144702) & studio thread.",
       "history": [
         {
           "at": "2026-11-25T18:08Z",
@@ -341374,6 +341374,11 @@
           "at": "2026-11-25T19:20Z",
           "by": "gemini",
           "what": "step 5 of 5 done: HOS PR #786 (9f8382e3) & OWB PR #1330 (6cb91cb341f5195f973f80bb41dd8ce8e4adc5c7) merged green; J3736-J3740 queued; desk #694 (#7172144702) & studio thread posted."
+        },
+        {
+          "at": "2026-11-25T19:20Z",
+          "by": "gemini",
+          "what": "done: Acting Chief (gemini, £0): unified HOS line-up (Thu 3 Dec 009 Gravity finished/scheduled; Thu 10 Dec SKIPPED — first Thursday with no film; Thu 17 Dec 011 Anaesthesia; Thu 24 Dec SKIPPED Christmas Eve; Thu 31 Dec 013 Darwin & Wallace with 010 swap reserve; Thu 7/14/21/28 Jan 128/136/137/127 search-led; 010 parked Thu 4 Feb; 012/014/015/018 stale dates cleared) across plan.json, status.json, manifests & film_briefs.json (HOS PR #786 9f8382e3, OWB PR #1330 6cb91cb341f5195f973f80bb41dd8ce8e4adc5c7). Freed WIP (009 out, 010 parked -> 011 & 137 active 5/5). Queued next jobs J3736 (011 price/runner), J3740 (011 16-19s Shorts/thumb brief), J3737 (013 J2652 non-producer review), J3738 (013 8 confirmed retakes £0 board), J3739 (137 VO after J3678) and aligned J3670/J3671/J3678/J3679 due dates; kept J3178/J2529 moving_video_input hold intact and escalated UAT reel option to Claude. Pre-built at £0 picture plans, Flow prompt boards, lint-passing upload packages & thumbnail briefs for 128, 136, 137 (check_all.sh ALL CHECKS PASS). Reported on HOS desk #694 (#7172144702) & studio thread."
         }
       ],
       "remaining_action": "All deliverables merged, queued, and reported",
@@ -341406,7 +341411,8 @@
         "HOS:128",
         "HOS:136",
         "HOS:137"
-      ]
+      ],
+      "done_ref": "HOS#786,OWB#1330,desk#7172144702"
     },
     {
       "id": "J3735",
