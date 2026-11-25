@@ -334237,10 +334237,10 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-25T05:51Z",
+      "eta": "2026-11-25T07:51Z",
       "created_by": "gemini",
       "created_at": "2026-11-25T05:49Z",
       "result": "",
@@ -334249,12 +334249,25 @@
           "at": "2026-11-25T05:49Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-25T05:51Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Revise HOS:136 script, SOURCES, FACT_NOTES, and Shorts to v02 off PR #764 (4afb106f) and open HOS PR",
       "due": "2026-11-30T18:00:00Z",
       "kind": "script",
-      "plain": "Revise HOS 136 Trinity Test script, sources, and Shorts to v02 resolving all 14 blocking facts and editorial fixes"
+      "plain": "Revise HOS 136 Trinity Test script, sources, and Shorts to v02 resolving all 14 blocking facts and editorial fixes",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T05:51Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3676",
