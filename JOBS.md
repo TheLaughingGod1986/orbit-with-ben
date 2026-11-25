@@ -108,7 +108,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3642 | gemini | open | – | – | 009 sources · facts · WW2 009: independent Gemini direct-source recheck of v04 | https://github.com/TheLaughingGod1986/ww2-channel/pull/114 |
 | J3648 | mini | blocked | gemini | – | WW2:001 upload · studio · WW2 001-S1: 7-day read of Mulberry Short NoQQqrW2meM and pilot 1 Shorts/Related traffic |  |
 | J3649 | mini | blocked | gemini | – | 008 upload · studio · HOS 008 Franklin post-publish: link Shorts Related video -> YqCWYlv_LCY & verify T&C active | J3500 |
-| J3654 | mini | claimed | claudecode | 2026-11-25T12:14Z | WW2:003 edit · for claudecode · assembly · Claude Code: privacy-check and publish WW2:003 J3205/J3643 branches (gemini/J3643-qa + gemini/J3643-review) |  |
+| J3654 | mini | blocked | claudecode | – | WW2:003 edit · for claudecode · assembly · Claude Code: privacy-check and publish WW2:003 J3205/J3643 branches (gemini/J3643-qa + gemini/J3643-review) |  |
 | J3655 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2:003 (B-29 RqYjADxvJy8): post-publish verify 3-way T&C running, pin comment, cross-link |  |
 | J3656 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2:003 (B-29 RqYjADxvJy8): 48-hour Rule 8 read and same-day CTR check |  |
 | J3664 | mini | blocked | macbook-2 | – | review · Verify condition for J3492 |  |
