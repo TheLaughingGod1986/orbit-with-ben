@@ -14,10 +14,18 @@
       }
     },
     "script": {
-      "state": "review",
+      "state": "doing",
       "ref": "ee3308007"
     }
   },
-  "claims": [],
+  "claims": [
+    {
+      "stage": "script",
+      "by": "gemini",
+      "at": "2026-11-25T12:45Z",
+      "eta": "2026-11-25T14:44Z",
+      "note": "J3546 OWB 064: Record J3539 FIX in the Chief-owned script hold"
+    }
+  ],
   "next": "J3520 FIX: J3538 corrects v03 and reruns Gemini facts; J3539 independently checks sources and exact hash. J3020 and J3021 narration remain held until lock. Review due 25 Nov 18:00Z; approved 16 Dec slot unchanged."
 }
