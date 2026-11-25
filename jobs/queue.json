@@ -339149,9 +339149,14 @@
           "at": "2026-11-25T13:19Z",
           "by": "claudecode",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-25T13:20Z",
+          "by": "claudecode",
+          "what": "step 2 of 3 done: Predecessor facts check is done. The review itself is already delivered as a NO-GO in WW2 pull request 151 (clean, mergeable, base main); only the Chief's merge and ruling remain"
         }
       ],
-      "remaining_action": "Reading the held job to see whether what it waited for is finished",
+      "remaining_action": "Recording that the Sherman review waits only on the Chief's merge and ruling",
       "kind": "review",
       "recheck_of": "J3551",
       "due": "2026-11-25T14:16:10+00:00",
@@ -339165,15 +339170,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-25T13:19Z",
+        "at": "2026-11-25T13:20Z",
         "by": "claudecode",
         "plan": [
           "Read the held job and its history",
           "Check the predecessor and remaining gates",
           "Reopen or re-hold, and report"
-        ]
+        ],
+        "note": "Predecessor facts check is done. The review itself is already delivered as a NO-GO in WW2 pull request 151 (clean, merge"
       }
     }
   ],
