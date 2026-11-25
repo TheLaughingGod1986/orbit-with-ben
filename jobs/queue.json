@@ -340625,10 +340625,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 180,
-      "status": "claimed",
-      "by": "claudecode",
-      "since": "2026-11-25T17:09Z",
-      "eta": "2026-11-25T20:09Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-25T16:05Z",
       "result": "",
@@ -340817,6 +340817,11 @@
           "at": "2026-11-25T17:14Z",
           "by": "claudecode",
           "what": "step 3 of 6 done: 105 Navy photo numbers on the NAS, 102 usable, all checked by eye and logged with checksum and beat; Navy-archive download finished; the slow second download is still running"
+        },
+        {
+          "at": "2026-11-25T17:14Z",
+          "by": "claudecode",
+          "what": "released: Provenance done (plan step 3): ww2-channel claudecode/J3728-017-picture now holds ARCHIVE_PROVENANCE.md with a generated table (build_provenance_017.py, safe to re-run) of 105 catalogue numbers on the NAS, 102 usable: collection, licence, master file, pixels, SHA-256, by-eye note, script beat. 46 are on a beat, 56 spare. CAPTION_CHECK_017.json now covers 106 rows. NHHC pass FINISHED (~/_desk/logs/J3728-nhhc.done present; final log committed). Commons pass 2 STILL RUNNING detached: tmux J3728-pass2; log ~/_desk/logs/J3728-pass2.log; done file ~/_desk/logs/J3728-pass2.done (missing = running, do not start a second copy); its RETRIEVAL_LOG_017.json is written at the end and is not yet committed (the table hashes those files itself). Findings: 80-G-19948 is a blank scan (marked do not use); NH 64300 and NH 64302 are USS Utah by their print captions, not Oklahoma; 80-G-276601 is a diver portrait for the wanted diver beat; NH 64476 (timber patch on the quay), NH 64478 (hull staging in dry dock), 80-G-19947 (hoses on a burning battleship), 80-G-64768 (sailors watching a grounded battleship), NH 64482 (two wrecked destroyers in dry dock), NH 83993 (Arizona 2/17/42) are strong spares. Still held for the Chief: NH 50930/50931 (Japanese-taken). Still small: 80-G-32462 (713 px), NH 64484 (740 px). Still wanted: Nevada in Dry Dock 2, Nevada off Utah Beach, West Virginia in Tokyo Bay. Next run: when pass2.done appears commit RETRIEVAL_LOG_017.json and re-run build_provenance_017.py; put the strong spares on the long diagram runs and the W/O rows in PICTURE_PLAN_017.md and recount the archive share (re-run the builder after so beats match); read NHHC catalogue captions for rows marked owed; then open the one PR for the Chief. Maps (20a7e8c) and thumbnails (9d30785) done. Worktree /Volumes/MiniWork/scratch/J3728-wt; contact sheets /Volumes/MiniWork/scratch/J3728-prev/new3."
         }
       ],
       "remaining_action": "Add the last few photos to the plan, update its counts, then open the PR for the Chief",
