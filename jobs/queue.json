@@ -329727,10 +329727,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T11:30Z",
+      "eta": "2026-11-25T13:30Z",
       "created_by": "codex",
       "created_at": "2026-11-24T19:04Z",
       "result": "",
@@ -329739,12 +329739,25 @@
           "at": "2026-11-24T19:04Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-25T11:30Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Schedule HOS 010 bird Short after its long is confirmed",
       "kind": "studio",
       "plain": "Schedule the approved birds Short after its full dinosaur film is ready",
-      "mini_only": true
+      "mini_only": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T11:30Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3611",
