@@ -333048,9 +333048,14 @@
           "at": "2026-11-25T03:51Z",
           "by": "gemini",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-25T03:51Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Read J3662 QA PR #132 (QA_REVIEW_v01.md: 4 hard defects incl. G5 tofu boxes, G7 200 vs 280 lb contradiction, G00B 16:00 PM typo, G9 392/MPH gap; 3 copy fixes; 9 long/consecutive diagram holds), PR #107, PR #98, and J3625/J3637/J3638/J3639 precedent"
         }
       ],
-      "remaining_action": "Inspecting J3662 QA PR #132, PR #107, PR #98 and J3639 precedent",
+      "remaining_action": "Independently verifying NAS v01 SHA-256, PR #107 files/scripts/status.json, PR #132 hygiene, and PR #98 title alignment",
       "due": "2026-12-01T12:00:00Z",
       "kind": "chief",
       "plain": "Review WW2 Mosquito QA and PR #107, merge or repair, and stage Ben's watch",
@@ -333063,7 +333068,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
         "at": "2026-11-25T03:51Z",
         "by": "gemini",
@@ -333073,7 +333078,8 @@
           "Execute Chief ruling (merge/stage or queue v02 repair)",
           "Update queue, board and Chief review artifact",
           "Post Chief report on studio thread"
-        ]
+        ],
+        "note": "Read J3662 QA PR #132 (QA_REVIEW_v01.md: 4 hard defects incl. G5 tofu boxes, G7 200 vs 280 lb contradiction, G00B 16:00 "
       },
       "taskKeys": [
         "WW2:006"
