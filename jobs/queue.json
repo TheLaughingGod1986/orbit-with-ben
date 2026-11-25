@@ -335973,9 +335973,14 @@
           "at": "2026-11-25T08:56Z",
           "by": "gemini",
           "what": "step 0 of 3 done: Starting condition verification for J3681 (WW2:001 ek9F61FVYqY 48h rules review)."
+        },
+        {
+          "at": "2026-11-25T08:56Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Confirmed J3680 is done (2026-11-25T07:02Z, OWB PR #1307 commit a668cf8f1b) and channels/ww2/05_Analytics/READS.md contains the 48h row for Mulberry Harbours (1,561 impressions, 0.9% CTR, 9 API views, 7.76% avg viewed, Test & Compare Running)."
         }
       ],
-      "remaining_action": "Verify J3680 completion and ek9F61FVYqY 48h Studio numbers in channels/ww2/05_Analytics/READS.md and board.json",
+      "remaining_action": "Verify ek9F61FVYqY 48h Studio numbers in channels/ww2/05_Analytics/board.json and confirm J3681 gates",
       "kind": "review",
       "recheck_of": "J3681",
       "due": "2026-11-25T05:00:31+00:00",
@@ -335989,7 +335994,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
         "at": "2026-11-25T08:56Z",
         "by": "gemini",
@@ -335998,7 +336003,7 @@
           "Verify ek9F61FVYqY 48h data in board.json and gates",
           "Reopen J3681 and post verification report"
         ],
-        "note": "Starting condition verification for J3681 (WW2:001 ek9F61FVYqY 48h rules review)."
+        "note": "Confirmed J3680 is done (2026-11-25T07:02Z, OWB PR #1307 commit a668cf8f1b) and channels/ww2/05_Analytics/READS.md conta"
       },
       "taskKeys": [
         "WW2:001"
