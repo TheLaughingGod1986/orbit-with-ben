@@ -333540,9 +333540,14 @@
           "at": "2026-11-25T05:09Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T05:10Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Claimed J3666; v02 master present on NAS (163,535,051 bytes) and PR #134 open"
         }
       ],
-      "remaining_action": "Watch and listen to 100% of WW2 006 v02 master and verify every J3662/J3663 visual and pacing defect is resolved",
+      "remaining_action": "Inspect PR #134, prepare lossless NAS segments, and demonstrate native audio/video playback capability",
       "due": "2026-11-30T18:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -333560,12 +333565,22 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T05:09Z",
+        "of": 6,
+        "at": "2026-11-25T05:10Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Demonstrate audio/video capabilities",
+          "Technical & metadata verification",
+          "Watch & listen segs 00-05",
+          "Watch & listen segs 06-11",
+          "Watch & listen segs 12-end & thumbnails",
+          "Commit QA_REVIEW_v02.md PR & report"
+        ],
+        "note": "Claimed J3666; v02 master present on NAS (163,535,051 bytes) and PR #134 open"
+      },
+      "taskKeys": [
+        "WW2:006"
+      ]
     },
     {
       "id": "J3667",
