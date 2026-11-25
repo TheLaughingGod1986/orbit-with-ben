@@ -1,5 +1,5 @@
 {
-  "next_id": 3756,
+  "next_id": 3757,
   "jobs": [
     {
       "id": "J0001",
@@ -343749,6 +343749,39 @@
         "check_at": "2026-12-07T12:35:00Z",
         "release": "auto"
       }
+    },
+    {
+      "id": "J3756",
+      "title": "HOS 013: continuous 24-fps playback review of 6 visually clean take-2 retake plates (rows 3,10,24,28,47,54)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting Chief (`gemini`, J3747, 25 Nov 2026) follow-up for the **6 visually clean take-2 retake plates** of HOS 013 (*Darwin & Wallace*, Thu 31 Dec 2026) minted under Option A (`Veo 3.1 - Quality`, HOS PR #791 merged). Do not regenerate pictures or spend credits (`£0`, `0` Flow credits).\n\n**Scope (6 take-2 plates in `/Volumes/data/studio-live/History Of Science/02_Video-Projects/013_Darwin-Wallace-Evolution/04_Generated-Clips/archive_v01_retake1/`, pinned in `History Of Science/jobs/reviews/J3747/RETAKE1_RECEIPT.json`):**\n- Row `3` (`P1:03a_unlabelled_birds`, `P01_03a_unlabelled_birds_t2.mp4`, used `0.00–4.00 s`, sha256 `d79aa36d4bbe7969e687dc7e1ea42e806c7b8c9c5a60437f9828d87ce357882d`)\n- Row `10` (`P1:07_darwin_1837_desk`, `P01_07_darwin_1837_desk_t2.mp4`, used `0.00–5.96 s`, sha256 `25657b8900284e6d4937091bd3f8206e0775f6c702f40516291441cc5d108b7f`)\n- Row `24` (`P3:02a_malthus_lamplight`, `P03_02a_malthus_lamplight_t2.mp4`, used `0.00–6.22 s`, sha256 `13461c0772667a5d0412a386436136ecf51e63511cdd98334c19b629d889a3f2`)\n- Row `28` (`P3:05a_chicks_deep_beaks`, `P03_05a_chicks_deep_beaks_t2.mp4`, used `0.00–4.54 s`, sha256 `f87f137aadc97d21e66733eda1c6e142d64341ffe6dddda0c7411ef871e4cce9`)\n- Row `47` (`P4:10_fairness_25_june`, `P04_10_fairness_25_june_t2.mp4`, used `0.00–6.08 s`, sha256 `82c4d00dcd95bc791fad566a1cc1d500b9acaebc540f8cc68784fae3c1c18a0e`)\n- Row `54` (`P5:05a_darwin_writes_origin`, `P05_05a_darwin_writes_origin_t2.mp4`, used `0.00–6.90 s`, sha256 `dec05f4a3fd86b0cf2140b45e05d7e7703c647452d8a6d96253903cb6c9ae250`)\n\n**Prior stills audit (Acting Chief `gemini`, J3747, 25 Nov 2026):**\nAll 6 take-2 plates passed 0.5 s contact-sheet and 1-fps `.mp4` visual inspection with their recorded take-1 defects cleanly resolved and no new visible defects. However, `read_file` on `video/mp4` in `agy` returns 8 discrete 1-fps integer-second stills (`00:00..00:07`), not continuous 24-fps playback. Per HOS Playbook §5, desk `#7019983519` and `J3178`, `keep` stays unset (`PENDING_PLAYBACK_REVIEW`) until genuine continuous 24-fps `moving_video_input` playback is performed.\n\n**Do (only once genuine continuous 24-fps `moving_video_input` is demonstrated):**\n1. First demonstrate real continuous 24-fps `moving_video_input` in-session (static sheets, 1-fps frames, dense strips, a player window or ffmpeg metrics do not establish motion perception). If unavailable, preserve the typed capability hold; never claim a playback PASS.\n2. Watch each of the 6 exact used windows above in continuous playback against `RETAKE_BOARD_v01.json` and the locked v02 part plate boards, verifying archive SHA-256 hashes match `RETAKE1_RECEIPT.json`.\n3. Record clip hash, demonstrated playback evidence, used window, timestamped defects (if any), and per-row KEEP/RETAKE recommendation for elected Chief final marks.\n4. Keep rows `49` and `63` (already confirmed RETAKE under J3747), pass-1 `48 KEEP` rows, `J3178` (`rows 56–62, 64–66`), and `J2529` untouched.\n",
+      "ref": "J3747",
+      "film": "013",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T23:28Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T23:28Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Run native continuous 24-fps playback on take-2 rows 3, 10, 24, 28, 47, 54 to set Chief KEEP/RETAKE marks",
+      "due": "2026-12-03T18:00:00Z",
+      "kind": "review",
+      "required_capabilities": [
+        "moving_video_input"
+      ],
+      "plain": "Watch the 6 visually clean Darwin & Wallace take-2 plates in full motion to mark KEEP or RETAKE"
     }
   ],
   "focus": [
