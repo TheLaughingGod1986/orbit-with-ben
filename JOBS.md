@@ -125,6 +125,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3684 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J3687 | mini | open (after J3686) | – | – | HOS:137 script · review · HOS 137: verify v02 fixes and Chief script lock decision (close J3565 if KEEP) | J3565 |
 | J3689 | mini | claimed | macbook-2 | 2026-11-25T10:05Z | review · Verify condition for J3622 |  |
+| J3690 | gemini | open | – | – | HOS:127 sources · facts · HOS 127: independent v02 facts and exact-quote verification | J3622 |
 
 Recently finished:
 
