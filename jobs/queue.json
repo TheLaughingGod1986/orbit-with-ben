@@ -339985,16 +339985,21 @@
           "at": "2026-11-25T15:08Z",
           "by": "claudecode",
           "what": "step 4 of 6 done: v03 rendered: 1295.542 s, 31093 frames, 0 decode errors; records built (archive 52.88%, 50 photos, 0 dropped, 0 new repeats); copying master to NAS"
+        },
+        {
+          "at": "2026-11-25T15:10Z",
+          "by": "claudecode",
+          "what": "step 6 of 6 done: v03 on NAS (sha256 1ffa642e, 1295.542 s, -15.7 LUFS, -1.5 dBTP, 0 decode errors); ww2-channel PR 156 (b6571f8) open for Chief"
         }
       ],
-      "remaining_action": "Finish the technical checks on the v03 cut and open the pull request",
+      "remaining_action": "Nothing left on this job; the watch-and-listen check of the new cut is next",
       "due": "2026-11-27T12:00:00Z",
       "kind": "assembly",
       "plain": "Apply J3715 opening cuts A+B (61.8 s) to film 004 as zero-spend v03 keeping v02 untouched",
       "progress": {
-        "step": 4,
+        "step": 6,
         "of": 6,
-        "at": "2026-11-25T15:08Z",
+        "at": "2026-11-25T15:10Z",
         "by": "claudecode",
         "plan": [
           "Check watch state and inputs",
@@ -340004,7 +340009,7 @@
           "Technical checks",
           "Open PR and hand to QA"
         ],
-        "note": "v03 rendered: 1295.542 s, 31093 frames, 0 decode errors; records built (archive 52.88%, 50 photos, 0 dropped, 0 new repe"
+        "note": "v03 on NAS (sha256 1ffa642e, 1295.542 s, -15.7 LUFS, -1.5 dBTP, 0 decode errors); ww2-channel PR 156 (b6571f8) open for "
       },
       "taskKeys": [
         "WW2:004"
