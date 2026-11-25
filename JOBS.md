@@ -111,6 +111,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3729 | mini | open (after J3559) | – | – | WW2:017 edit · assembly · WW2 017 Short 1: Pearl Harbor salvage Short for the 7 Dec anniversary, from the film's narration, for Ben's watch |  |
 | J3730 | mini | blocked | claudecode | – | review · Verify condition for J3487 |  |
 | J3731 | macbook | open | – | – | for claudecode · MacBook: publish (or confirm lost) the unpushed Battle of the Bulge work for J3487 |  |
+| J3733 | mini | open | – | – | review · Verify condition for J3508 |  |
 
 Recently finished:
 
