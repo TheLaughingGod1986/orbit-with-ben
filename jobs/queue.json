@@ -338397,6 +338397,11 @@
           "at": "2026-11-25T12:10Z",
           "by": "claudecode",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-25T12:10Z",
+          "by": "claudecode",
+          "what": "step 1 of 4 done: Read J3492, J3664, J3634, J3636, J3642 records: v04 fix job and Gemini recheck both done; J3492 hold still names the old v02 condition"
         }
       ],
       "remaining_action": "Check the Pedestal v04 claims pass really holds on the exact script file, then record whether the held script job can move",
@@ -338412,7 +338417,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
         "at": "2026-11-25T12:10Z",
         "by": "claudecode",
@@ -338421,7 +338426,8 @@
           "Check the pull request files and hashes",
           "Record the result on the held job",
           "Report"
-        ]
+        ],
+        "note": "Read J3492, J3664, J3634, J3636, J3642 records: v04 fix job and Gemini recheck both done; J3492 hold still names the old"
       },
       "taskKeys": [
         "WW2:009"
