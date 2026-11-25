@@ -340625,10 +340625,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 180,
-      "status": "claimed",
-      "by": "claudecode",
-      "since": "2026-11-25T16:48Z",
-      "eta": "2026-11-25T19:48Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-25T16:05Z",
       "result": "",
@@ -340762,6 +340762,11 @@
           "at": "2026-11-25T16:56Z",
           "by": "claudecode",
           "what": "step 2 of 6 done: Draft picture plan pushed (ef844e9): all 52 script beats covered, 62% archive if every photo lands, 43% in hand; 36 full-size Navy masters on the NAS"
+        },
+        {
+          "at": "2026-11-25T16:56Z",
+          "by": "claudecode",
+          "what": "released: Thumbnails built and picture plan drafted; downloads STILL RUNNING detached, do not start second copies: tmux J3728-nhhc (log ~/_desk/logs/J3728-nhhc.log, done file ~/_desk/logs/J3728-nhhc.done) is 36 full-size Navy masters in and now sweeping neighbouring numbers; tmux J3728-pass2 (log ~/_desk/logs/J3728-pass2.log, done file ~/_desk/logs/J3728-pass2.done) is slowly bringing the owed 80-G numbers from Commons between 429 waits (80-G-32763, 80-G-387566/7/8 arrived). Missing .done = still running. Pushed to ww2-channel claudecode/J3728-017-picture (ef844e9): build_thumbnails_017.py + THUMBNAILS_017.json (three 1280x720 JPEGs and a 168x94 check sheet on NAS .../017_.../03_Picture/thumbnails/), CAPTION_CHECK_017.json (30 photos looked at against their listed subjects), PICTURE_PLAN_017.md (all 52 script beats; 62% archive if every photo lands, 43% in hand today). Findings: thumbnail A (80-G-410533) is weak at phone size because the photo is an aerial, NH 63917 or colour 80-G-K-574 would be stronger, Chief's call; B uses 80-G-13154 because 80-G-19934 is not at NHHC; the four colour photos 80-G-K-569/570/572/574 are not dry-dock views as listed (K-574 shows hull number 48 alongside a quay); NH 63917 is Oklahoma's torn side in dry dock 1 Mar 1944, not rigging. Next run: read the two .done files and logs; look at the photos not yet checked (listed in CAPTION_CHECK_017.json) and everything the sweep added, reading NHHC catalogue captions for the rows marked owed; commit both RETRIEVAL_LOG files; rewrite ARCHIVE_PROVENANCE.md with collection, ID, licence, SHA-256 and beat per photo; look in the NARA catalogue for masters still owed and the five wanted subjects (divers, Nevada Dry Dock 2, Nevada at Utah Beach, West Virginia Tokyo Bay, California cofferdam); update the plan's counts; open the one PR. Maps done earlier (20a7e8c). Worktree /Volumes/MiniWork/scratch/J3728-wt."
         }
       ],
       "remaining_action": "Let the downloads finish, log every photo with its checksum and beat, find the photos still missing, then open the PR",
