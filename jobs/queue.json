@@ -333929,13 +333929,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T05:05Z",
-      "eta": "2026-11-25T07:05Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T05:04Z",
-      "result": "",
+      "result": "Verified UNMET at 2026-11-25T05:07Z: open elected-Chief review J3598 is still unclaimed and J3604 correction OWB PR #1284 (head 0f68a818b6a1efe949ea07316d42928b829a415b) is still OPEN (Rules check SUCCESS, 0 reviews). Replacements OWB #1279 and WW2 #102 remain merged; originals #1273/#1276/WW2#101 are CLOSED; J3591's 5 completed Gemini media steps preserved. Updated J3591 hold via jobs.py wait (--type input --recheck J3674 --check-at 2026-11-25T11:10:00Z). Zero YouTube writes, zero merges, £0 spent.",
       "history": [
         {
           "at": "2026-11-25T05:04Z",
@@ -333966,6 +333966,11 @@
           "at": "2026-11-25T05:08Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Recorded J3591 wait (--recheck J3674, check-at 2026-11-25T11:10:00Z); finishing J3674"
+        },
+        {
+          "at": "2026-11-25T05:08Z",
+          "by": "gemini",
+          "what": "done: Verified UNMET at 2026-11-25T05:07Z: open elected-Chief review J3598 is still unclaimed and J3604 correction OWB PR #1284 (head 0f68a818b6a1efe949ea07316d42928b829a415b) is still OPEN (Rules check SUCCESS, 0 reviews). Replacements OWB #1279 and WW2 #102 remain merged; originals #1273/#1276/WW2#101 are CLOSED; J3591's 5 completed Gemini media steps preserved. Updated J3591 hold via jobs.py wait (--type input --recheck J3674 --check-at 2026-11-25T11:10:00Z). Zero YouTube writes, zero merges, £0 spent."
         }
       ],
       "remaining_action": "Done: J3591 hold updated with recheck J3674; posting report",
