@@ -338281,13 +338281,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-25T12:06Z",
-      "eta": "2026-11-25T14:06Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T12:04Z",
-      "result": "",
+      "result": "parked for Chief: condition check finished, but a worker cannot write the result to J3431 (jobs.py: only the holder or elected Chief may update this hold). Finding: J3614 delivered its KEEP paper recut (137 of 184 sentences; re-summed 486.61/934.58 s = 52.07% photo-dominant strict aligned, 52.28% estimated) and ww2 PR 50 at 337af58 is MERGEABLE/CLEAN and unmerged; the only unmet part is Chief acceptance, now owned by J3710. When ruling J3710, update or clear the J3431 hold with --recheck J3708 and close this task. J3431 stays blocked; J3432 not released.",
       "history": [
         {
           "at": "2026-11-25T12:04Z",
@@ -338318,6 +338318,11 @@
           "at": "2026-11-25T12:08Z",
           "by": "claudecode",
           "what": "step 2 of 3 done: Hold on J3431 updated: only Chief acceptance is outstanding; Chief job J3710 queued, due 25 Nov 20:00Z"
+        },
+        {
+          "at": "2026-11-25T12:08Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: condition check finished, but a worker cannot write the result to J3431 (jobs.py: only the holder or elected Chief may update this hold). Finding: J3614 delivered its KEEP paper recut (137 of 184 sentences; re-summed 486.61/934.58 s = 52.07% photo-dominant strict aligned, 52.28% estimated) and ww2 PR 50 at 337af58 is MERGEABLE/CLEAN and unmerged; the only unmet part is Chief acceptance, now owned by J3710. When ruling J3710, update or clear the J3431 hold with --recheck J3708 and close this task. J3431 stays blocked; J3432 not released."
         }
       ],
       "remaining_action": "Posting the report",
