@@ -322151,13 +322151,13 @@
       "stage": "upload",
       "after": "J3505",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-24T11:01Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T10:52Z",
-      "result": "Waiting for: BLCuJ4EKic4 is already uploaded Private for 2 Dec 11:30Z. Parent T3cBBss1F60 must read Public before Studio permits its Related link (picker returned no matching results while Private). Set and verify Related once Public; if parent slips, prevent Short airing first. Do not upload again. Buffer registered and deferred without errors.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-24T10:52Z",
@@ -322208,6 +322208,11 @@
           "at": "2026-11-25T18:05Z",
           "by": "relay",
           "what": "condition verification queued: J3733"
+        },
+        {
+          "at": "2026-11-25T18:59Z",
+          "by": "gemini",
+          "what": "reopened: J3733 verified (elected acting Chief gemini): live read-only YouTube Data API at 2026-11-25T18:57Z confirms parent T3cBBss1F60 is Public (publishedAt 2026-11-25T18:00:24Z, processed, UC_esArsDKd3GJvOkeO0DUog) and Short BLCuJ4EKic4 remains Private scheduled 2026-12-02T11:30:00Z (processed, en-GB captions). Original Ben approval (OWB:ASK:J0979 16 Nov, J3505), J2926 7/7 gates, J3508 upload receipt (PR #1244), UPLOADS.json and library.json remain valid. DO NOT upload again: BLCuJ4EKic4 is already uploaded with verified cover and captions. Remaining work: set and verify Related video T3cBBss1F60 on BLCuJ4EKic4 in Studio (CDP 9223), recheck Private/2026-12-02T11:30:00Z and Buffer deferral, record result, close J3508."
         }
       ],
       "remaining_action": "Link the Titan Short to its full film once the full film is public",
@@ -322237,27 +322242,9 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-24T11:05Z",
-        "by": "codex",
-        "plan": [
-          "Verify approved cut and schedule",
-          "Prepare and upload package",
-          "Verify and record result"
-        ],
-        "note": "BLCuJ4EKic4 uploaded Private for 2 Dec 11:30Z; cover API set; Buffer deferred without errors"
-      },
       "taskKeys": [
         "OWB:032"
-      ],
-      "hold": {
-        "type": "public",
-        "condition": "BLCuJ4EKic4 is already uploaded Private for 2 Dec 11:30Z. Parent T3cBBss1F60 must read Public before Studio permits its Related link (picker returned no matching results while Private). Set and verify Related once Public; if parent slips, prevent Short airing first. Do not upload again. Buffer registered and deferred without errors.",
-        "check_at": "2026-11-25T19:05:07+00:00",
-        "recheck_task": "J3733"
-      }
+      ]
     },
     {
       "id": "J3509",
