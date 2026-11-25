@@ -314581,6 +314581,11 @@
           "at": "2026-11-25T05:31Z",
           "by": "gemini",
           "what": "reopened: J3667 elected acting Chief PASS: v02 master verified and staged to WW2 UAT + R2 (ww2-006-v02); arming awaits_ben and completing J3434."
+        },
+        {
+          "at": "2026-11-25T05:31Z",
+          "by": "gemini",
+          "what": "rerouted to gemini on gemini-argon"
         }
       ],
       "remaining_action": "Awaiting WW2:006 v02 full audiovisual QA (J3666) -> Chief PASS, ww2 PR #134 + QA PR merge, and Ben watch staging (J3667; watch due 2026-12-02 20:00 UTC)",
@@ -314590,7 +314595,16 @@
       "taskKeys": [
         "WW2:006"
       ],
-      "escalated_at": "2026-11-24T23:38Z"
+      "escalated_at": "2026-11-24T23:38Z",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "for": "gemini",
+      "model": "gemini-argon"
     },
     {
       "id": "J3435",
