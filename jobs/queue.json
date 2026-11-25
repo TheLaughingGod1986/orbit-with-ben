@@ -341571,9 +341571,14 @@
           "at": "2026-11-25T19:19Z",
           "by": "claudecode",
           "what": "step 1 of 5 done: Rules, ruling 6808560760 and review items 6945397541/6957443445 read; ad52a2dc is 137 added + 1 modified file vs main"
+        },
+        {
+          "at": "2026-11-25T19:20Z",
+          "by": "claudecode",
+          "what": "step 3 of 5 done: Sheets read: 3 card items fixed; 7 checks recomputed (0 in-word cuts over 1213 words, max row 7.00 s, callback 3.56 s, 43/43 onsets); PICTURE_PLAN_v02 json+md byte-identical to main"
         }
       ],
-      "remaining_action": "Inspecting the r4 sheets and the 7 timing checks",
+      "remaining_action": "Porting ad52a2dc to a fresh PR on HOS main and running check_all",
       "due": "2026-11-26T18:00:00Z",
       "kind": "review",
       "plain": "Independently review and merge 013's 35 free graphics and timing rough (J2652)",
@@ -341586,9 +341591,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-25T19:19Z",
+        "at": "2026-11-25T19:20Z",
         "by": "claudecode",
         "plan": [
           "Read rules and the rulings",
@@ -341597,7 +341602,7 @@
           "Port to fresh PR on main",
           "check_all, CI, park for Chief"
         ],
-        "note": "Rules, ruling 6808560760 and review items 6945397541/6957443445 read; ad52a2dc is 137 added + 1 modified file vs main"
+        "note": "Sheets read: 3 card items fixed; 7 checks recomputed (0 in-word cuts over 1213 words, max row 7.00 s, callback 3.56 s, 4"
       },
       "taskKeys": [
         "HOS:013"
