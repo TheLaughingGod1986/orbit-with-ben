@@ -102,7 +102,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3716 | mini | open | – | – | 064 thumbs · for codex · review · Packaging panel (codex): OWB 064 Every Planet Explained (3 titles, 3 thumbnails A/B/C, opening & chapters) |  |
 | J3717 | mini | open | – | – | 064 thumbs · for gemini · review · Packaging panel (gemini): OWB 064 Every Planet Explained (3 titles, 3 thumbnails A/B/C, opening & chapters) |  |
 | J3718 | mini | open | – | – | 064 thumbs · for cursor · review · Packaging panel (cursor): OWB 064 Every Planet Explained (3 titles, 3 thumbnails A/B/C, opening & chapters) |  |
-| J3719 | mini | open (after J3718) | – | – | 064 thumbs · review · Packaging panel decision: OWB 064 Every Planet Explained (3 titles, 3 thumbnails A/B/C, opening & chapters) |  |
+| J3719 | cloud | open (after J3718) | – | – | 064 thumbs · review · Packaging panel decision: OWB 064 Every Planet Explained (3 titles, 3 thumbnails A/B/C, opening & chapters) |  |
 | J3720 | mini | blocked | claudecode | – | review · Verify condition for J3022 |  |
 | J3722 | mini | open (after J3721) | – | – | WW2:004 edit · qa · WW2 004: full private audiovisual QA of v03 master (J3715 Cuts A+B) for Chief watch stage | b1392f1 |
 | J3724 | mini | open (after J3723) | – | – | WW2:006 edit · qa · WW2 006: full private audiovisual QA of v03 master (J3715 Cuts A+B) for Chief watch stage | b1392f1 |
