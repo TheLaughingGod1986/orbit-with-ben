@@ -1,5 +1,5 @@
 {
-  "next_id": 3687,
+  "next_id": 3688,
   "jobs": [
     {
       "id": "J0001",
@@ -335165,6 +335165,36 @@
       "due": "2026-12-04T18:00:00Z",
       "kind": "facts",
       "plain": "Independently verify every fact, source URL and exact quote in the HOS 137 v02 script and Shorts."
+    },
+    {
+      "id": "J3687",
+      "title": "HOS 137: verify v02 fixes and Chief script lock decision (close J3565 if KEEP)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Final review and elected-Chief script lock decision for **HOS:137** (*Accidental Inventions: 5 Mistakes That Worked*, target Thu 24 Dec 2026 18:00 London; lock due Tue 8 Dec 18:00 London; Ben watch Mon 21 Dec) after the `v02` script rewrite and independent `v02` Gemini facts verification complete.\n\n### Checklist\n1. Independently verify all 9 blocking fixes (`FIX-1` through `FIX-9` from merged HOS PR `#770`, `jobs/reviews/J3565/REVIEW.md`) and `GEMINI_FACTS_CHECK_v02.md` (`0` FLAGs), including direct live HTTP exact-quote checks against the exact `v02` SHA-256 hashes (do not inherit `v01` checks).\n2. Confirm Part 01 opening timings (`≤0:15` promise, `≤0:25` stakes, `0:25–0:40` early `DATA+SCALE`, `<0:45` first real fact), Teach-on-Screen & Polish Pass rules (`≤4` words per card/label, spoken `DATA`+`SCALE`), Shorts `S01`/`S02` realistic `~150 wpm` row pacing inside `16.0–19.0 s`, `≤4`-word overlays clear of `0–2 s` and `9–14 s`, R7 title/loop cleanliness, single `v02` master filename, `review:script` ≥90 PASS, default `gate:episode` PASS, `check_all.sh` PASS, and green CI.\n3. **Only on complete elected-Chief `KEEP`:**\n   - Merge the `v02` script+facts PR to HOS `main` (superseding PRs `#747`, `#754`, `#769`, which can then be closed cleanly), record `jobs/reviews/<this-id>/REVIEW.md` + locked `status.json`, and **close parent `J3565` as `done`**.\n   - **Rule G WIP guard:** Check `orbit-with-ben/jobs/WIP.json` (currently `5/5` HOS active: `HOS:009`, `HOS:010`, `HOS:013`, `HOS:128`, `HOS:136`). Queue `HOS:137` long VO + Shorts VO ONLY once an open HOS WIP slot clears (or hold VO queue on WIP slot release). Picture and rendered thumbnails wait for VO PASS; draft thumbnail concepts remain unrendered drafts.\n   - Preserve Tue 8 Dec lock, Mon 21 Dec Ben watch, and Thu 24 Dec 18:00 London air target (with standing 1-week slip contingency if needed). Zero spend or scheduling in this review (`£0.00`).\n",
+      "ref": "J3565",
+      "film": "HOS:137",
+      "stage": "script",
+      "after": "J3686",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T07:23Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T07:23Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Chief review & KEEP/FIX lock decision on HOS:137 v02 after independent facts verification (close J3565 on KEEP)",
+      "due": "2026-12-08T18:00:00Z",
+      "kind": "review",
+      "plain": "Verify all 9 v02 fixes and exact quotes for Accidental Inventions, lock the script on KEEP, and close J3565."
     }
   ],
   "focus": [
