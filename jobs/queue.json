@@ -314489,10 +314489,10 @@
       "stage": "edit",
       "after": "J3433",
       "eta_min": 480,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T05:33Z",
+      "eta": "2026-11-25T13:33Z",
       "created_by": "claude",
       "created_at": "2026-11-23T15:29Z",
       "result": "",
@@ -314596,6 +314596,11 @@
           "at": "2026-11-25T05:33Z",
           "by": "gemini",
           "what": "no longer waits on Ben"
+        },
+        {
+          "at": "2026-11-25T05:33Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Awaiting WW2:006 v02 full audiovisual QA (J3666) -> Chief PASS, ww2 PR #134 + QA PR merge, and Ben watch staging (J3667; watch due 2026-12-02 20:00 UTC)",
@@ -314626,6 +314631,14 @@
         "title": "De Havilland Mosquito: Why It Was Made of Wood",
         "number": "006",
         "type": "long"
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T05:33Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
