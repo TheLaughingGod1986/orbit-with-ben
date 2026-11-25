@@ -324810,15 +324810,20 @@
           "at": "2026-11-25T04:43Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J3552; starting independent facts audit of HOS:136 PR #753 (commit ebb55eea)"
+        },
+        {
+          "at": "2026-11-25T04:44Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Checked out PR #753 (ebb55eea) in clean worktree and read script v01, SOURCES.md, FACT_NOTES_v01.md, SHORTS_SCRIPTS_v01.md, TOPIC.md, status.json; flagged initial anomalies (microsecond/light-travel math, Bainbridge bunker distance, LA-602/Compton/Bethe verbatim verification, S02 silent shockwave) for primary-source verification"
         }
       ],
-      "remaining_action": "Check out PR #753 in a clean HOS worktree and read all HOS:136 files",
+      "remaining_action": "Verify all claims, numbers, quotes, URLs, and 7 J3502 guardrails against primary sources",
       "due": "2026-12-03T18:00:00Z",
       "kind": "facts",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-25T04:43Z",
+        "at": "2026-11-25T04:44Z",
         "by": "gemini",
         "plan": [
           "Check out PR #753 and read HOS:136 files",
@@ -324827,7 +324832,7 @@
           "Write independent audit report and update status/production-status",
           "Push follow-on PR, verify CI/checks and post desk handoff"
         ],
-        "note": "Claimed J3552; starting independent facts audit of HOS:136 PR #753 (commit ebb55eea)"
+        "note": "Checked out PR #753 (ebb55eea) in clean worktree and read script v01, SOURCES.md, FACT_NOTES_v01.md, SHORTS_SCRIPTS_v01."
       },
       "taskKeys": [
         "HOS:136"
