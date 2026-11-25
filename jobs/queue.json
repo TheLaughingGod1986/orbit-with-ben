@@ -340802,16 +340802,21 @@
           "at": "2026-11-25T17:10Z",
           "by": "claudecode",
           "what": "step 2 of 6 done: Resumed: reading the background download logs and the branch state"
+        },
+        {
+          "at": "2026-11-25T17:11Z",
+          "by": "claudecode",
+          "what": "step 2 of 6 done: Writing the provenance table (collection, licence, checksum, beat) for the 98 files on the NAS; both downloads still running"
         }
       ],
-      "remaining_action": "Let the downloads finish, log every photo with its checksum and beat, find the photos still missing, then open the PR",
+      "remaining_action": "Let the downloads finish, find the photos still missing, update the plan counts, then open the PR",
       "due": "2026-11-28T20:00:00Z",
       "kind": "image",
       "urgent": 9,
       "progress": {
         "step": 2,
         "of": 6,
-        "at": "2026-11-25T17:10Z",
+        "at": "2026-11-25T17:11Z",
         "by": "claudecode",
         "plan": [
           "Pull full-size masters for the 26 candidates",
@@ -340821,7 +340826,7 @@
           "Build three thumbnails",
           "Write the picture plan and open the PR"
         ],
-        "note": "Resumed: reading the background download logs and the branch state"
+        "note": "Writing the provenance table (collection, licence, checksum, beat) for the 98 files on the NAS; both downloads still run"
       },
       "taskKeys": [
         "WW2:017"
