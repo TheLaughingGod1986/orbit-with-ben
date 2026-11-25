@@ -335357,16 +335357,21 @@
           "at": "2026-11-25T07:54Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Stacked worktree /tmp/hos-J3686-worktree on origin/macbook/J3685 (be99dffe, PR #772) branch gemini/J3686-hos137-facts-v02; verified all 4 v02 SHA-256 hashes match PR #772 byte-for-byte."
+        },
+        {
+          "at": "2026-11-25T07:57Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Independently fetched all 36 unique URLs in SOURCES.md and FACT_NOTES_v02.md (36/36 HTTP 200, 0 dead URLs); verified every verbatim quote, PDF extract (Lechner 2019), Crossref DOI (Chardack 2006), Amigone obituary (Gage 2024), and Art Fry living status."
         }
       ],
-      "remaining_action": "Independently fetch and verify every live MUST QUOTE URL and verbatim quote in v02 SOURCES.md and FACT_NOTES_v02.md",
+      "remaining_action": "Audit v02 script claims, visual cards, Shorts S01/S02 pacing, packaging evidence, and all 4 J3564 FLAG resolutions",
       "due": "2026-12-04T18:00:00Z",
       "kind": "facts",
       "plain": "Independently verify every fact, source URL and exact quote in the HOS 137 v02 script and Shorts.",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-25T07:54Z",
+        "at": "2026-11-25T07:57Z",
         "by": "gemini",
         "plan": [
           "Stack worktree and record SHA-256 hashes",
@@ -335375,7 +335380,7 @@
           "Write GEMINI_FACTS_CHECK_v02.md and run check_all.sh",
           "Open HOS PR and hand off to Chief"
         ],
-        "note": "Stacked worktree /tmp/hos-J3686-worktree on origin/macbook/J3685 (be99dffe, PR #772) branch gemini/J3686-hos137-facts-v0"
+        "note": "Independently fetched all 36 unique URLs in SOURCES.md and FACT_NOTES_v02.md (36/36 HTTP 200, 0 dead URLs); verified eve"
       },
       "taskKeys": [
         "HOS:137"
