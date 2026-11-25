@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J2529, J3432, J3501, J3704, J3442.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J2529, J3432, J3501, J3704, J3442, J3725.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -107,6 +107,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3722 | mini | open (after J3721) | – | – | WW2:004 edit · qa · WW2 004: full private audiovisual QA of v03 master (J3715 Cuts A+B) for Chief watch stage | b1392f1 |
 | J3723 | mini | claimed | gemini | 2026-11-25T17:02Z | WW2:006 edit · assembly · WW2 006: v03 pre-watch opening trims (J3715 Cuts A+B, 124.5 s), chapters, captions and render | b1392f1 |
 | J3724 | mini | open (after J3723) | – | – | WW2:006 edit · qa · WW2 006: full private audiovisual QA of v03 master (J3715 Cuts A+B) for Chief watch stage | b1392f1 |
+| J3725 | mini | open | – | – | WW2:003 edit · assembly · WW2 003 Short 3: build 'B-29 vs the Atomic Bomb: Which Cost More?' from the film's opening, for Ben's watch |  |
 
 Recently finished:
 

@@ -1,5 +1,5 @@
 {
-  "next_id": 3725,
+  "next_id": 3726,
   "jobs": [
     {
       "id": "J0001",
@@ -340239,6 +340239,36 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3725",
+      "title": "WW2 003 Short 3: build 'B-29 vs the Atomic Bomb: Which Cost More?' from the film's opening, for Ben's watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** Ben, Wed 25 Nov, in chat, on the Market tab: \"Interesting idea, actually ... please do what you're doing first\". The idea was a B-29 Short on the atomic-bomb angle. That week's top WW2 breakout on the Market tab (`05_Analytics/market/weekly/2026-11-25.md`) was a 2,690-subscriber channel's Short, *How the Hiroshima Atomic Bomb Knew When to Explode* (7,772 views, 58x its median). Film 003 (`RqYjADxvJy8`, airs Sat 28 Nov 17:00 London) opens on the same comparison.\n\n**Spec:** ww2-channel `00_Brand/SHORTS_PLAN_2026-12.md`, section `003-S3`. Build it exactly as `003-S1` was built (J3568, the J3542 vertical pipeline).\n- **Title (41 characters):** B-29 vs the Atomic Bomb: Which Cost More?\n- **Narration:** the film's own opening, from the v01 master `07_Edit/v01/ww2_003_b29_superfortress_v01.mp4`, 00:00:00.160 to 00:00:37.800 (37.64 s). The J3714 trims don't touch it. No new voice.\n- **Pictures, 1080x1920 full-bleed, verified PD from `PICTURE_MANIFEST.json`:**\n  - `a23b_nara_208_enola_gay_tinian_1945.jpg`;\n  - the cost graphic `S01_COST_v03`, re-rendered natively in portrait;\n  - `a03a_afhra_boeing_wichita_assembly_1944.jpg`;\n  - `a01a_nmusaf_090625_b29_in_flight.jpg`;\n  - a 2.5 s end card pointing to the full film.\n  - Aircraft only: no mushroom cloud and no Hiroshima damage (rule 13).\n- **Captions:** burned-in, from the same lines. Total under 45 s.\n- **Ben's watch:** put it on his watch card as `WW2:003-S3` (`jobs.py awaits <this job> --card WW2:003-S3 --type short ...`), due **Fri 27 Nov 18:00 UTC**.\n- **Air:** Sat 28 Nov 12:30 London, only after Ben's OK. The upload job sets Related video to `RqYjADxvJy8` once the long is public. `003-S1` (crawl tunnel, built) moves to reserve.\n\n**Records:** one ww2-channel PR for the Chief, with the master on the NAS and its SHA-256, archive credits, and the `status.json` shorts entry updated to built.\n\n**Guards.** £0: no new voice, no paid stock. No upload in this job, and nothing publishes before Ben's OK.",
+      "ref": "",
+      "film": "WW2:003",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-25T15:23Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T15:23Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build film 3's atomic-bomb Short and put it on Ben's watch",
+      "due": "2026-11-27T12:00:00Z",
+      "kind": "assembly",
+      "urgent": 7
     }
   ],
   "focus": [
