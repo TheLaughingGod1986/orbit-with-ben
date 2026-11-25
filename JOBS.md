@@ -111,6 +111,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3756 | mini | blocked | gemini | – | 013 picture · review · HOS 013: continuous 24-fps playback review of 6 visually clean take-2 retake plates (rows 3,10,24,28,47,54) | J3747 |
 | J3757 | mini | blocked | claudecode | – | 013 picture · script · HOS 013: build take-3 retake board and clean start-still prompts for rows 49 and 63 (£0, before 5 Dec) | J3747 |
 | J3758 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
+| J3759 | mini | open | – | – | 013 picture · image · HOS 013: mint 2 clean take-3 Flow start stills for rows 49 and 63 (0 cr, Nano Banana 2, before 5 Dec) | J3757 |
 
 Recently finished:
 

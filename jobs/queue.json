@@ -1,5 +1,5 @@
 {
-  "next_id": 3759,
+  "next_id": 3760,
   "jobs": [
     {
       "id": "J0001",
@@ -343988,6 +343988,36 @@
       "remaining_action": "Prepare the next Orbit Short from approved existing material",
       "kind": "assembly",
       "backlog": "owb-short-from-locked"
+    },
+    {
+      "id": "J3759",
+      "title": "HOS 013: mint 2 clean take-3 Flow start stills for rows 49 and 63 (0 cr, Nano Banana 2, before 5 Dec)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting Chief (`gemini`, J3757 ruling, 25 Nov 2026) — **Stage 1 of 2 (0 Flow credits, £0 cash): Mint the 2 fresh take-3 start stills for HOS 013 (*Darwin & Wallace*, Thu 31 Dec 2026) rows 49 and 63** from merged `RETAKE_BOARD_v02.json` (HOS PR #792, board sha256 `ce0e8461dbfb70453463a9a94530d6ca39a0cc64301fae675cf4f6c2b44af77c`).\n\n**Why gated separately from video minting:** Both take-2 clips failed because their take-1 start stills already carried the defects at frame 0 (two bulky bundles on row 49; cracked glowing green cover on row 63). Minting the 2 free stills first and passing them through Chief visual review guarantees zero wasted Veo 3.1 - Quality credits in Stage 2 (before the `2026-12-05T00:00:00Z` retirement cutoff).\n\n**Authorisation & Guards (`£0` cash, `0` Flow credits):**\n- **Model:** Flow **Nano Banana 2** (`16:9`, **0 credits**). **MUST verify the Flow UI shows `0` credits right before every Create** — if the UI shows any non-zero price, STOP immediately and park for Chief.\n- **Account & lock:** Studio Ultra account SHA-256 verified (`:9222` Flow browser on Mac mini only), shared Flow `WriterLock`, reuse existing Flow tab (`scripts/cdp_tabs.py`), never open extra tabs or close Chrome.\n- **Tries:** Up to **3 free tries per row** (`0` credits each). Visually inspect each generated PNG against its `accept_before_video` test below before accepting. If try 1 fails, save it as `..._t3_try1.png` and try again (up to try 3) using the same pinned prompt. If all 3 tries fail, STOP and park for Chief with the contact sheet of all tries.\n- **No video clips minted in this job** (`0` video Create clicks, `0` Flow credits spent).\n\n**Exact 2 rows and pinned `start_still_take_3` prompts (from `02_Video-Projects/013_Darwin-Wallace-Evolution/07_Edit-Project/RETAKE_BOARD_v02.json`):**\n\n1. **Row `49` — `P4:12_lyell_hooker_bundle`**\n   - **Prompt SHA-256:** `b08b71a86a2e8e123d54ab71f69be577106fd23a7bbc3ca059ec6489c59af4e2`\n   - **Accept test (`accept_before_video`):** Exactly **one** ribbon-tied manuscript bundle (held in both hands against one gentleman's chest), **two** Victorian gentlemen in dark frock coats and top hats side by side at the foot of wide pale stone steps, the second gentleman's hands **empty**, **nothing** lying on the steps or ground, soft overcast daylight, zero readable words/numbers, no Explorer/Orbit.\n   - **Output path (NAS):** `/Volumes/data/studio-live/History Of Science/02_Video-Projects/013_Darwin-Wallace-Evolution/04_Generated-Clips/part04/refs/v01_flow_stills/P04_12_lyell_hooker_bundle_t3.png` (+ `.sha256` sidecar). **NEVER overwrite `_t1.png`.**\n\n2. **Row `63` — `P6:06a_origin_fifth_edition`** (Chief ruling: **primary closed-book start still**, not the open-book alternative)\n   - **Prompt SHA-256:** `331f7c47ab5a7556a9354862ec4a264bfd86a75b9ad445f53c6ea8f916bdb220`\n   - **Accept test (`accept_before_video`):** Green cloth-bound book lying **closed and flat** on a mahogany desk beside a window, cover **whole, smooth and undamaged** (no crack, tear or crease), lit **exclusively by cool grey overcast window light** from the left, **zero warm/yellow/gold/orange light or glow** anywhere, one flat folded handwritten letter (scribble lines only, no readable words) + round wire spectacles resting flat on the desk, no Explorer/Orbit.\n   - **Output path (NAS):** `/Volumes/data/studio-live/History Of Science/02_Video-Projects/013_Darwin-Wallace-Evolution/04_Generated-Clips/part06/refs/v01_flow_stills/P06_06a_origin_fifth_edition_t3.png` (+ `.sha256` sidecar). **NEVER overwrite `_t1.png`.**\n\n**Deliverables:**\n1. Archive the accepted `t3.png` files + `.sha256` + Flow UI pre-Create 0-credit proof screenshots on NAS (`/Volumes/data/studio-live/History Of Science/02_Video-Projects/013_Darwin-Wallace-Evolution/04_Generated-Clips/archive_v01_retake2/stills_review/`), plus a side-by-side `t1_vs_t3` comparison contact sheet PNG/JPG for both rows and a JSON receipt recording exact file paths, SHA-256s, try counts, and 0-credit verification. Keep HOS git 100% media-free!\n2. Do **NOT** touch `REVIEW_STATE.json`, `archive_v01_pass1/`, `archive_v01_retake1/`, `_t1.png` stills, `J3178` (`rows 56–62, 64–66`), `J3756` (`rows 3, 10, 24, 28, 47, 54`), or `J2529`.\n3. Post the receipt and exact NAS paths/SHA-256s on HOS desk `#180` (with `--image` of the `t1_vs_t3` sheet if convenient) and **park for Chief visual still PASS** (`jobs.py block ... --reason \"parked for Chief: visual still PASS on HOS 013 take-3 start stills (rows 49, 63) before video mint\"`).\n",
+      "ref": "J3757",
+      "film": "013",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T23:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T23:48Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Mint 2 free Nano Banana 2 take-3 start stills on Flow (0 cr), verify accept_before_video, archive to NAS, park for Chief visual PASS",
+      "due": "2026-11-29T18:00:00Z",
+      "kind": "image",
+      "plain": "Mint 2 free take-3 Flow start stills for Darwin & Wallace rows 49 and 63 and park for Chief visual PASS"
     }
   ],
   "focus": [
