@@ -335762,16 +335762,21 @@
           "at": "2026-11-25T08:30Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Completed read-only CDP :9222 Flow UI inspection (0 credits): verified exact model labels (Omni 1.2 Flash, Omni 1.1 Flash Leaving 5 Dec, Veo 3.1 - Lite 5 cr, Veo 3.1 - Fast 10 cr Leaving 5 Dec, Veo 3.1 - Quality 100 cr Leaving 5 Dec, Veo 3.1 - Lite [Lower Priority] 0 cr), Frames/Ingredients parity, Veo 4s/6s/8s radios vs Omni 1.2 360p/720p radios + Length slider (0..12, val 5 = 8 sec, 24 cr)."
+        },
+        {
+          "at": "2026-11-25T08:35Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Updated orbit_flow_veo_ui.py (Veo 3.1 Lite, Lite [Lower Priority], opt-in Omni 1.2 Flash 720p + Length slider, exact dropdown matching, spend estimates, CLI flags), added tests/test_flow_model_lineup.py, and updated AGENTS.md, studio/RULES.md, STUDIO_PLAYBOOK.md, and Cursor rules."
         }
       ],
-      "remaining_action": "Updating orbit_flow_veo_ui.py in a clean HOS worktree for Veo 3.1 Lite, Lite [Lower Priority], and Omni 1.2 Flash",
+      "remaining_action": "Running sync_rules.py, full unittest suite, and check_all.sh on the J3691 HOS worktree",
       "due": "2026-12-03T18:00:00Z",
       "kind": "assembly",
       "plain": "Prepare HOS Flow script and rules PR before Veo 3.1 Fast/Quality retire on 5 Dec",
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-25T08:30Z",
+        "at": "2026-11-25T08:35Z",
         "by": "gemini",
         "plan": [
           "Inspect Flow UI on CDP 9222 and codebase",
@@ -335780,7 +335785,7 @@
           "Draft studio/RULES.md and AGENTS.md updates",
           "Open PR and apply acting-Chief review/decision"
         ],
-        "note": "Completed read-only CDP :9222 Flow UI inspection (0 credits): verified exact model labels (Omni 1.2 Flash, Omni 1.1 Flas"
+        "note": "Updated orbit_flow_veo_ui.py (Veo 3.1 Lite, Lite [Lower Priority], opt-in Omni 1.2 Flash 720p + Length slider, exact dro"
       }
     },
     {
