@@ -1,5 +1,5 @@
 {
-  "next_id": 3728,
+  "next_id": 3730,
   "jobs": [
     {
       "id": "J0001",
@@ -319559,10 +319559,15 @@
           "at": "2026-11-24T09:37Z",
           "by": "macbook",
           "what": "deadline: 2026-11-27T18:00:00Z"
+        },
+        {
+          "at": "2026-11-25T16:05Z",
+          "by": "claude",
+          "what": "Chief: film 007 moved to Sat 2 Jan (swapped with 017, ww2 #160); script lock due Fri 18 Dec."
         }
       ],
       "remaining_action": "WW2 film 007: Claude Rule-6 viewer test (first 300 words), topic/script lock, and queue post-reset VO",
-      "due": "2026-11-27T18:00:00Z",
+      "due": "2026-12-18T18:00:00Z",
       "kind": "review",
       "plain": "Run Claude's viewer test on WW2 film 007 opening, confirm vidIQ keyword demand, lock topic and script, and queue voice-over for after 30 Nov reset.",
       "cloud_only": true
@@ -326790,13 +326795,19 @@
           "at": "2026-11-24T16:14Z",
           "by": "macbook",
           "what": "added"
+        },
+        {
+          "at": "2026-11-25T16:05Z",
+          "by": "claude",
+          "what": "Chief: film 017 moved up to Tue 8 Dec (Pearl Harbor anniversary; ww2 #160). Voice it FIRST after the 30 Nov 10:50Z credit reset, before 008-011; due Tue 1 Dec 12:00 UTC so Ben's watch can be Sat 5 Dec."
         }
       ],
       "remaining_action": "WW2 film 017: narration in Ben's voice (Pearl Harbor Salvage, post-reset)",
-      "due": "2026-12-19T18:00:00Z",
+      "due": "2026-12-01T12:00:00Z",
       "kind": "vo",
       "plain": "Record Ben's voice narration for WW2 film 017 (Pearl Harbor Salvage) after the 30 Nov ElevenLabs reset and Pilot 2 check",
-      "mini_only": true
+      "mini_only": true,
+      "urgent": 8
     },
     {
       "id": "J3560",
@@ -328356,10 +328367,15 @@
           "at": "2026-11-24T16:55Z",
           "by": "macbook-2",
           "what": "condition recorded; next verification 2026-12-01T12:00:00Z"
+        },
+        {
+          "at": "2026-11-25T16:05Z",
+          "by": "claude",
+          "what": "Chief: 007 now airs Sat 2 Jan (ww2 #160); its Shorts re-slot around 2 Jan, and Mon 7 Dec goes to 017-S1."
         }
       ],
       "remaining_action": "Wait for 007 post-reset VO and archive harvest, then cut [S16], assemble 1080x1920 vertical Short, and put on Ben watch",
-      "due": "2026-12-05T18:00:00Z",
+      "due": "2026-12-30T18:00:00Z",
       "kind": "assembly",
       "plain": "Build the first floating dry docks Short about hinged 55-foot steel walls folded flat to cross the Pacific",
       "hold": {
@@ -328396,10 +328412,15 @@
           "at": "2026-11-24T16:55Z",
           "by": "macbook-2",
           "what": "condition recorded; next verification 2026-12-01T12:00:00Z"
+        },
+        {
+          "at": "2026-11-25T16:05Z",
+          "by": "claude",
+          "what": "Chief: 007 now airs Sat 2 Jan (ww2 #160); its Shorts re-slot around 2 Jan, and Mon 7 Dec goes to 017-S1."
         }
       ],
       "remaining_action": "Wait for 007 post-reset VO and archive harvest, then cut [S18], assemble 1080x1920 vertical Short, and put on Ben watch",
-      "due": "2026-12-08T18:00:00Z",
+      "due": "2027-01-02T18:00:00Z",
       "kind": "assembly",
       "plain": "Build the second floating dry docks Short about how a 10-section dock unbolted one piece and lifted itself out of the sea",
       "hold": {
@@ -340549,6 +340570,65 @@
       "taskKeys": [
         "WW2:005"
       ]
+    },
+    {
+      "id": "J3728",
+      "title": "WW2 film 017 (Pearl Harbor, now Tue 8 Dec): full archive harvest, code maps, three thumbnails and the picture plan",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** Claude, acting Chief, 25 Nov, on Ben's \"You decide on the data\" and his question \"What's the biggest search with the lowest competition?\": 'pearl harbor' is the niche's biggest search (267,002 a month, +122% before the 7 Dec anniversary). Film 017 is further along than 007 was, so it swaps into Tue 8 Dec (ww2-channel #160) and 007 goes to Sat 2 Jan.\n\n**Do (Mini; £0; by Sat 28 Nov 20:00 UTC; it doesn't need the narration).** In ww2-channel `02_Video-Projects/017_Pearl-Harbor-Salvage-Sunk-Battleships`, take the picture stage from the 26 verified candidates in `03_Picture/ARCHIVE_PROVENANCE.md` to a build-ready set:\n1. Pull full-resolution masters for every candidate, starting with the six preview-size scans the file flags. Add NHHC and NARA RG 80-G salvage-series photos until the set has 45-60 stills, enough for at least half the screen time to be archive (rule 1; aim for two-thirds).\n   - Use official US Navy or NARA sources only. No AP, Acme, Getty or private donations.\n2. Log each photo's collection, ID, licence and SHA-256 in `ARCHIVE_PROVENANCE.md`, with a planned beat from `01_Script/SCRIPT.md`.\n3. Draw the code maps the script needs (Battleship Row, Puget Sound and the route home) with no job IDs or footers.\n4. Build three rule-2 thumbnail designs from the `PACKAGING.md` ideas: one real photo filling the frame at 168 px, 0-3 words, and nothing in rule 13 (no bodies; the burning Arizona only if the ship itself is the subject).\n5. Write a picture plan against the script beats, so the edit can start as soon as the voice lands.\n\nOne ww2-channel PR for the Chief.",
+      "ref": "",
+      "film": "WW2:017",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 180,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-25T16:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T16:05Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build Pearl Harbor's picture set, maps, thumbnails and picture plan",
+      "due": "2026-11-28T20:00:00Z",
+      "kind": "image",
+      "urgent": 9
+    },
+    {
+      "id": "J3729",
+      "title": "WW2 017 Short 1: Pearl Harbor salvage Short for the 7 Dec anniversary, from the film's narration, for Ben's watch",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** Claude, acting Chief, 25 Nov, on Ben's \"You decide on the data\" and his question \"What's the biggest search with the lowest competition?\": 'pearl harbor' is the niche's biggest search (267,002 a month, +122% before the 7 Dec anniversary). Film 017 is further along than 007 was, so it swaps into Tue 8 Dec (ww2-channel #160) and 007 goes to Sat 2 Jan. 7 Dec is the anniversary, when searches peak.\n\n**Do (Mini; after the 017 narration, J3559).** Build Short `017-S1` for **Mon 7 Dec 12:30 London**, cut from 017's own narration (no new voice) and following rule 1 and the J3542 pipeline. Model it on `003-S3` in `00_Brand/SHORTS_PLAN_2026-12.md`.\n- Choose one contiguous passage of 35-45 s with a concrete salvage fact in the first two seconds (for example a battleship lifted from the mud and back at war).\n- Pictures: 1080x1920 full-bleed from 017's verified archive. Ships and salvage only; no bodies (rule 13).\n- Title: 50 characters or fewer, starting with \"Pearl Harbor\".\n- End card: points to the full film, which airs Tue 8 Dec 17:00.\n- Put it on Ben's watch card as `WW2:017-S1`, due **Sat 5 Dec 18:00 UTC**.\n- Add the row to `SHORTS_PLAN_2026-12.md`, replacing `007-S1` on Mon 7 Dec (007 moved to 2 Jan), and record it in 017's `status.json`.\n\nNothing publishes before Ben's OK. £0.",
+      "ref": "",
+      "film": "WW2:017",
+      "stage": "edit",
+      "after": "J3559",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-25T16:05Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T16:05Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build the Pearl Harbor anniversary Short for Ben's watch",
+      "due": "2026-12-05T12:00:00Z",
+      "kind": "assembly"
     }
   ],
   "focus": [
