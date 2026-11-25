@@ -335073,13 +335073,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-25T07:03Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-25T06:40Z",
-      "result": "parked for Chief: review and merge PR #1309 (108d51edb4, base main, Rules check PASS) for J3682 Field Order History daily channel totals read (subscribers=1, watchHours=2.4 at 2026-11-25T07:08:34Z; read-only, £0, no public changes). Codex returned as Chief at 07:10:53Z before merge.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-25T06:40Z",
@@ -335105,25 +335105,17 @@
           "at": "2026-11-25T07:11Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: review and merge PR #1309 (108d51edb4, base main, Rules check PASS) for J3682 Field Order History daily channel totals read (subscribers=1, watchHours=2.4 at 2026-11-25T07:08:34Z; read-only, £0, no public changes). Codex returned as Chief at 07:10:53Z before merge."
+        },
+        {
+          "at": "2026-11-25T08:08Z",
+          "by": "gemini",
+          "what": "reopened"
         }
       ],
       "remaining_action": "Open PR, wait for CI checks, merge as acting Chief, and post report",
       "due": "2026-11-25T06:40:44Z",
       "kind": "studio",
-      "plain": "Read Field Order History’s subscribers and watch hours so the board stays current",
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-25T07:10Z",
-        "by": "gemini",
-        "plan": [
-          "Verify Studio channel on 9224",
-          "Read Lifetime subscribers and watch hours",
-          "Import analytics in clean worktree and test",
-          "Open/merge PR and report numbers"
-        ],
-        "note": "Imported channelTotals (subscribers=1, watchHours=2.4) in clean worktree; vitest (17/17), test_studio_app.cjs, email_rat"
-      }
+      "plain": "Read Field Order History’s subscribers and watch hours so the board stays current"
     },
     {
       "id": "J3683",
