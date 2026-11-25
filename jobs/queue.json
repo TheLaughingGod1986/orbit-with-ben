@@ -333640,20 +333640,34 @@
           "at": "2026-11-25T05:23Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T05:23Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3667 as elected acting Chief (Gemini)."
         }
       ],
-      "remaining_action": "Review WW2 006 v02 repair and QA PRs; if clean PASS, merge, verify SHA-256, stage WW2 UAT + private R2 watch copy, arm J3434 awaits (due 2026-12-02T20:00Z)",
+      "remaining_action": "Inspecting WW2:006 v02 repair PR, v02 audiovisual QA PR, J3663 ruling, and related jobs",
       "due": "2026-12-01T20:00:00Z",
       "kind": "chief",
       "plain": "Elected Chief decision on WW2 006 v02 delivery, clean PR merge, and Ben watch staging (due 2 Dec 20:00 UTC)",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-25T05:23Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect PRs & QA",
+          "Verify rules & master SHA-256",
+          "Merge PRs & record Chief ruling",
+          "Stage UAT & R2 watch copy",
+          "Arm J3434 watch & report"
+        ],
+        "note": "Claimed J3667 as elected acting Chief (Gemini)."
+      },
+      "taskKeys": [
+        "WW2:006"
+      ]
     },
     {
       "id": "J3668",
