@@ -1,5 +1,5 @@
 {
-  "next_id": 3660,
+  "next_id": 3661,
   "jobs": [
     {
       "id": "J0001",
@@ -332504,6 +332504,36 @@
       "due": "2026-12-01T12:00:00Z",
       "kind": "script",
       "plain": "Apply the 6 J3630/J3629 blocking fixes to HOS 128 v02 and deliver clean v03 for Chief script lock."
+    },
+    {
+      "id": "J3660",
+      "title": "HOS 128: verify v03 fixes and Chief script lock decision (close J3547 if KEEP)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Verify HOS 128 v03 PR (delivered by the v03 script-fix job) against all 6 blocking items (FIX-1 through FIX-6) and 3 minor polishes recorded in J3630 (`jobs/reviews/J3630/REVIEW.md`).\n\nCheck exact v03 SHA-256 hashes, verify no unverified spoken claims were introduced beyond the J3629/J3630-verified corrections, confirm Arm B public_search evidence (or honest pending label), confirm `review:script` >=90 PASS and **default** `gate:episode` (WITHOUT `--script`) picks `edison_tesla_ac_dc_script_master_v03.md` and PASSes, and confirm `check_all.sh` PASSes.\n\nRecord KEEP/FIX:\n- Only on complete KEEP: elected Chief merges the v03 script PR (superseding PR #758/#760/#751/#725), updates original `J3547` and marks `J3547` done (lock achieved), and queues HOS 128 long VO + Shorts S01/S02 VO jobs under normal ElevenLabs credit rules. Picture and thumbnail generation still wait for VO PASS.\n- Keep Thu 10 Dec 2026 18:00 London target and Mon 7 Dec -> Thu 17 Dec slip contingency; no scheduling or spend in this review. Draft thumbnail concepts remain unrendered drafts (not rendered packaging PASS).\n",
+      "ref": "HOS PR #761 (J3630), J3547, J3659",
+      "film": "HOS:128",
+      "stage": "script",
+      "after": "J3659",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T02:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T02:24Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify HOS 128 v03 diff/hashes/default gate:episode and decide Chief script lock + VO queueing.",
+      "due": "2026-12-01T18:00:00Z",
+      "kind": "review",
+      "plain": "Verify HOS 128 v03 resolves all 6 J3630 blocking fixes, then decide KEEP/lock, merge PR, close J3547, and queue VO."
     }
   ],
   "focus": [
