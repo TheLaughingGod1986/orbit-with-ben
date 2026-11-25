@@ -320109,10 +320109,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T00:09Z",
+      "eta": "2026-11-25T01:09Z",
       "created_by": "claude",
       "created_at": "2026-11-24T10:31Z",
       "result": "",
@@ -320236,6 +320236,11 @@
           "at": "2026-11-24T23:18Z",
           "by": "claude",
           "what": "reopened: Ben's screen photo (24 Nov ~23:16 London) shows History of Science's YouTube Studio channel dashboard signed in on the Mini's display, after the request to sign in once for Franklin's Studio-only finish. Finish the Studio-only steps now; if the profile on 9460 is still signed out, say so in one line."
+        },
+        {
+          "at": "2026-11-25T00:09Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Finish Franklin end screen, thumbnail test and Shorts links after HOS Studio sign-in; verify disclosure before Thursday noon.",
@@ -320263,7 +320268,15 @@
       "taskKeys": [
         "HOS:008"
       ],
-      "escalated_at": "2026-11-24T22:35Z"
+      "escalated_at": "2026-11-24T22:35Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T00:09Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3501",
