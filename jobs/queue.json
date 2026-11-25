@@ -321776,13 +321776,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-24T18:57Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T10:53Z",
-      "result": "publish via Claude Code: /Volumes/MiniWork/scratch/J3511-resume codex/J3511-resume; also /Volumes/MiniWork/scratch/J3511-registry codex/J3511-registry (already pushed; PR refused). PRIVATE UPLOAD COMPLETE sMPlMuxK3YU no publishAt, no Buffer posts. Privacy-review both finished diffs, publish/open PRs/merge per standing rule; do not re-upload. J3610 conditional scheduling.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-24T10:53Z",
@@ -321878,6 +321878,11 @@
           "at": "2026-11-25T10:19Z",
           "by": "relay",
           "what": "condition verification queued: J3699"
+        },
+        {
+          "at": "2026-11-25T11:14Z",
+          "by": "gemini",
+          "what": "reopened: Condition verified MET in J3699: HOS PR #781 (merge 8cb627bc914fe4fb0a9412a265a646f1a1c1a19a, all CI green, ancestor of 7f330315) and OWB PR #1315 (merge f65145ecf5645996b8a9462c2e021557eef062bf, Rules check green, ancestor of 3de7c15805) are merged on origin/main after Claude Code privacy review. Private upload sMPlMuxK3YU (exact Ben-approved SHA-256 698db62789e1e6884ae15797dc51083c39bbc0ee3c0cc1ecf83f92e2e87a0359, HOS:ASK:J2933.2) and all 4/4 Codex steps are complete; closing J3511 next (do NOT re-upload; J3610 handles conditional scheduling)."
         }
       ],
       "remaining_action": "Publish finished J3511 HOS and OWB upload records through Claude Code privacy review (do not re-upload sMPlMuxK3YU)",
@@ -321901,29 +321906,7 @@
       },
       "taskKeys": [
         "HOS:010"
-      ],
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-24T19:08Z",
-        "by": "codex",
-        "plan": [
-          "Verify approval and source",
-          "Prepare and check package",
-          "Upload privately and read back",
-          "Register and report"
-        ],
-        "note": "Upload complete: sMPlMuxK3YU Private/no publishAt; hash, cover, captions, audit and checks verified; J3610 queued. HOS e"
-      },
-      "hold": {
-        "type": "input",
-        "condition": "Acting-Chief verification J3657: condition UNMET. Private upload sMPlMuxK3YU (Are Birds Really Dinosaurs?, exact Ben-approved SHA-256 698db62789e1e6884ae15797dc51083c39bbc0ee3c0cc1ecf83f92e2e87a0359, HOS:ASK:J2933.2) is already complete without publishAt or Buffer posts; do NOT re-upload. Both publication records remain unmerged: (1) HOS origin/main (6b44c291) lacks J3511_short_C_v01/ and sMPlMuxK3YU in library.json/status.json, and no remote codex/J3511-resume branch or PR exists (only superseded preflight PR #748 on codex/J3511-private-short); clean local /Volumes/MiniWork/scratch/J3511-resume codex/J3511-resume sits at 7f3303158ee6bf97845334849ce1492501366997 (13 files, +908/-3). (2) OWB origin/main (19adad240d) lacks sMPlMuxK3YU in social/hos/UPLOADS.json and BUFFER_POSTS.json; remote origin/codex/J3511-registry matches clean local /Volumes/MiniWork/scratch/J3511-registry at 3de7c158058667f2fd430d602fff4fe26dc7a54d (2 files, +24), with no PR opened. Under AGENTS.md, claudecode owns formal privacy review, push, PR creation, green-check merge (via open job J3530 step 3), and closing J3511; claudecode is usage-limited until 2026-11-25T10:00:00Z (verify at 10:15Z, ahead of J3511 due 12:00Z). J3610 remains open for conditional scheduling.",
-        "check_at": "2026-11-25T11:19:38+00:00",
-        "last_recheck": "J3657",
-        "checked_at": "2026-11-25T01:25:12+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3699"
-      }
+      ]
     },
     {
       "id": "J3512",
