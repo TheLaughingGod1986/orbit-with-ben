@@ -85,7 +85,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3558 | mini | open | – | – | chief · Chief: resolve 003 edit orphan-doing |  |
 | J3559 | mini | open (after J3557) | – | – | WW2:017 vo · vo · WW2 film 017: narration in Ben's voice (Pearl Harbor Salvage, post-reset) |  |
 | J3561 | mini | blocked | claude | – | studio · WW2 pilot 2: read at 1,000 impressions or 48 hours, and change the title that day if click-through is under 2% |  |
-| J3564 | gemini | open | – | – | HOS:137 sources · facts · HOS 137 Accidental Inventions (Thu 24 Dec): independent facts audit of v01 script, SOURCES.md & Shorts (PR #754) | J3513 |
+| J3564 | gemini | claimed | gemini | 2026-11-25T08:34Z | HOS:137 sources · facts · HOS 137 Accidental Inventions (Thu 24 Dec): independent facts audit of v01 script, SOURCES.md & Shorts (PR #754) | J3513 |
 | J3565 | mini | open (after J3564) | – | – | HOS:137 script · review · HOS 137 Accidental Inventions (Thu 24 Dec): review and lock script v01, package-first scoring, sources & Shorts (PR #754) | J3513 |
 | J3577 | mini | blocked | macbook-2 | – | WW2:007 edit · assembly · WW2 007 Short 1: build 'WW2 Floating Dry Docks: 55ft Fold-Up Steel Walls' for Ben watch | J3563 |
 | J3578 | mini | blocked | macbook-2 | – | WW2:007 edit · assembly · WW2 007 Short 2: build 'WW2 Floating Dry Dock: How It Lifted Itself' for Ben watch | J3563 |
