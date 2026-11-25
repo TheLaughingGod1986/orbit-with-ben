@@ -432,7 +432,7 @@ class AsksTheLoader(unittest.TestCase):
             "/02_Video-Projects/*/status.json", "/02_Video-Projects/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",
             "/02_Video-Projects/*/10_Shorts/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",
             "/00_Brand/Channel-Setup/social/UPLOADS.json", "/00_Brand/Channel-Setup/social/*/UPLOADS.json",
-            "/05_Analytics/dashboard/data.json", *shared]))
+            "/05_Analytics/dashboard/data.json", "/05_Analytics/market/board.json", *shared]))
         import channel_pins
         with channel_pins.one_file("hos"):       # a channel that keeps every film in one file
             self.assertEqual(sorted(bp.sparse("hos")), sorted([

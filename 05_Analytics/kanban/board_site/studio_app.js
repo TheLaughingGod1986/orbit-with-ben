@@ -24,11 +24,11 @@
   const boardFetch = sha => window.__boardUpdates ? window.__boardUpdates(sha, own, fullBoardFetch) : fullBoardFetch(sha);
   const DATA_AT = sha => `https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/${sha}/board.json`;
   const DATA = "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/board-data/board.json";
-  const TABS = [["overview", "Overview", "⌂"], ["videos", "Videos", "▤"], ["review", "Review", "▶︎"], ["agents", "Agents", "◉"], ["schedule", "Schedule", "▦"]];
+  const TABS = [["overview", "Overview", "⌂"], ["videos", "Videos", "▤"], ["review", "Review", "▶︎"], ["agents", "Agents", "◉"], ["schedule", "Schedule", "▦"], ["market", "Market", "◈"]];
   const QUIET_MIN = 75;  // the relay checks in every 10-20 min; this long without it, the Mac mini is quiet
   const AGENTS = { chief: "Grok", claude: "Claude", codex: "Codex", gemini: "Gemini", cursor: "Cursor", macbook: "MacBook", "macbook-2": "MacBook 2" };
   const POOLS = { elevenlabs: "ElevenLabs", flow: "Flow", vertex: "Vertex", cursor: "Cursor", codex: "Codex" };
-  let board = null, lastSha = "", filterCh = "all", filterType = "all", seg = "all";
+  let board = null, lastSha = "", filterCh = "all", filterType = "all", seg = "all", marketNiche = "all", marketFormat = "all";
   // Videos lane: smart default once per visit unless Ben taps a chip or the hash names a lane (Ben, 7 Nov 2026).
   let videosLaneChosen = false, videosLandingApplied = false;
   const sent = {};  // checkId -> the tick just sent, until board.json shows it
@@ -2425,9 +2425,128 @@
     return `<div class="urgent-banner" role="alert" aria-live="assertive">${rows}</div>`;
   }
 
+  const MARKET_NICHES = [
+    ["ww2", "WW2", "Field Order History"],
+    ["owb", "Space", "Orbit With Ben"],
+    ["hos", "History of Science", "History of Science"],
+  ];
+
+  function fmtCompact(n) {
+    const v = Number(n || 0);
+    if (!Number.isFinite(v)) return "0";
+    if (v >= 1e6) return (v / 1e6).toFixed(v >= 1e7 ? 0 : 1).replace(/\.0$/, "") + "M";
+    if (v >= 1e3) return (v / 1e3).toFixed(v >= 1e5 ? 0 : 1).replace(/\.0$/, "") + "k";
+    return String(Math.round(v));
+  }
+
+  function fmtAgeHours(h) {
+    const v = Number(h || 0);
+    if (!Number.isFinite(v) || v <= 0) return "new";
+    if (v < 48) return `${Math.round(v)}h ago`;
+    return `${Math.round(v / 24)}d ago`;
+  }
+
+  function marketPatternsCard(patterns) {
+    const p = patterns || {};
+    if (!p.count) return "";
+    const openers = (p.title_openers || []).slice(0, 3)
+      .map(o => `<span class="tag">${esc(o.label)} · ${esc(o.pct)}%</span>`).join("");
+    const traits = (p.thumbnail_traits || []).slice(0, 3)
+      .map(t => `<span class="tag">${esc(t.label)}${t.pct != null ? ` · ${esc(t.pct)}%` : ""}</span>`).join("");
+    return `<section class="mkt-patterns" aria-label="Patterns this week">
+      <h2>Patterns this week <span class="n">${esc(p.count)}</span></h2>
+      <div class="mkt-panel">
+        <p class="meta">Avg title length: <b>${esc(p.avg_word_count || 0)} words</b> · Searched subject first: <b>${esc(p.pct_searched_name || 0)}%</b> · How/Why: <b>${esc(p.pct_how_why || 0)}%</b> · Number: <b>${esc(p.pct_has_number || 0)}%</b></p>
+        ${openers ? `<div class="flags">${openers}</div>` : ""}
+        ${traits ? `<div class="flags">${traits}</div>` : ""}
+      </div>
+    </section>`;
+  }
+
+  function marketBreakoutCard(item) {
+    const nicheMeta = MARKET_NICHES.find(([slug]) => slug === item.niche) || [item.niche || "", item.niche || "", ""];
+    const fmt = item.format === "short" ? "Short" : "Long";
+    const mult = item.multiple != null ? `${Number(item.multiple).toFixed(1)}× median` : "new baseline";
+    const vph = `${fmtCompact(item.viewsPerHour)}/hr`;
+    const thumbSrc = /^https:\/\//.test(String(item.thumbnail || "")) ? item.thumbnail : "";
+    const tierBadge = item.tier === "rising" ? '<span class="tag green">Rising</span>' : "";
+    const thumbInfo = item.thumbTags && item.thumbTags.grade && item.thumbTags.grade !== "unknown"
+      ? ` · Thumb: ${esc(item.thumbTags.grade)}${item.thumbTags.fillPct != null ? ` (${esc(item.thumbTags.fillPct)}% fill)` : ""}`
+      : "";
+    return `<article class="mkt-card">
+      <div class="mkt-top">
+        ${thumbSrc ? `<div class="mkt-thumb"><img loading="lazy" alt="" src="${esc(thumbSrc)}"></div>` : ""}
+        <div class="mkt-head">
+          <div class="flags">
+            <span class="tag">${esc(nicheMeta[1])}</span>
+            <span class="tag ${fmt === "Long" ? "amber" : ""}">${fmt}</span>
+            ${tierBadge}
+          </div>
+          <h3 class="mkt-title">${esc(item.title)}</h3>
+          <p class="meta">${esc(item.channel)} · ${esc(fmtCompact(item.subscribers))} subs · ${esc(fmtAgeHours(item.ageHours))}</p>
+        </div>
+      </div>
+      <div class="mkt-stats">
+        <span><b>${esc(fmtCompact(item.views))}</b> views</span>
+        <span><b>${esc(vph)}</b></span>
+        <span><b class="green">${esc(mult)}</b>${thumbInfo}</span>
+      </div>
+      ${item.angle ? `<p class="mkt-angle"><b>Angle we could take:</b> ${esc(item.angle)}</p>` : ""}
+    </article>`;
+  }
+
+  function market(b) {
+    const m = (b && b.market) || {};
+    const all = Array.isArray(m.breakouts) ? m.breakouts : [];
+    const filtered = all.filter(it =>
+      (marketNiche === "all" || it.niche === marketNiche) &&
+      (marketFormat === "all" || (it.format || "long") === marketFormat)
+    );
+    const longsCount = all.filter(it => (it.format || "long") === "long").length;
+    const shortsCount = all.filter(it => it.format === "short").length;
+    const subParts = [];
+    if (m.watchlistTotal) subParts.push(`${m.watchlistTotal} channels tracked`);
+    if (m.farmFilteredCount) subParts.push(`${m.farmFilteredCount} farm${m.farmFilteredCount === 1 ? "" : "s"} filtered`);
+    if (m.updatedAt) subParts.push(`updated ${String(m.updatedAt).slice(0, 16).replace("T", " ")} UTC`);
+    const nicheChips = [["all", "All niches"], ...MARKET_NICHES.map(([slug, label]) => [slug, label])]
+      .map(([v, label]) => `<button type="button" data-mf="niche" data-v="${esc(v)}" class="${marketNiche === v ? "on" : ""}">${esc(label)}</button>`).join("");
+    const fmtChips = [["all", "All formats"], ["long", "Long"], ["short", "Shorts"]]
+      .map(([v, label]) => `<button type="button" data-mf="fmt" data-v="${esc(v)}" class="${marketFormat === v ? "on" : ""}">${esc(label)}</button>`).join("");
+
+    let body = "";
+    if (!all.length) {
+      body = `<p class="empty">${esc(m.note || "No breakouts recorded in the last 7 days yet. Daily sweep runs at 06:40 London.")}</p>`;
+    } else if (!filtered.length) {
+      body = '<p class="empty">No breakouts match the current filter.</p>';
+    } else {
+      const groups = marketNiche === "all"
+        ? MARKET_NICHES
+        : MARKET_NICHES.filter(([slug]) => slug === marketNiche);
+      body = groups.map(([slug, label, chLabel]) => {
+        const items = filtered.filter(it => it.niche === slug);
+        if (!items.length) return "";
+        return `<section aria-label="${esc(label)} breakouts">
+          <h2>${esc(label)} <span class="n">${items.length}</span><span class="meta mkt-ch">${esc(chLabel)}</span></h2>
+          ${items.map(marketBreakoutCard).join("")}
+        </section>`;
+      }).join("");
+    }
+    return `<div class="top"><h1>Market</h1></div>
+      ${subParts.length ? `<p class="meta">${esc(subParts.join(" · "))}</p>` : ""}
+      <div class="seg">
+        <div><b>${all.length}</b><span>Breakouts (7d)</span></div>
+        <div><b>${longsCount}</b><span>Long-form</span></div>
+        <div><b>${shortsCount}</b><span>Shorts</span></div>
+      </div>
+      ${marketPatternsCard(m.patterns)}
+      <div class="chips mkt-chips" role="group" aria-label="Filter by niche">${nicheChips}</div>
+      <div class="chips mkt-chips" role="group" aria-label="Filter by format">${fmtChips}</div>
+      ${body}`;
+  }
+
   function renderTab(tab, b, now) {
     if (!b || !b.tracker) return '<p class="empty">Loading the studio…</p>';
-    return ({ overview, videos, review, agents, schedule: scheduleTab }[tab] || overview)(b, now);
+    return ({ overview, videos, review, agents, schedule: scheduleTab, market }[tab] || overview)(b, now);
   }
 
   function renderView(b, tab, now, opts) {
@@ -2514,7 +2633,9 @@
       render();
     });
     document.querySelectorAll(".chips button").forEach(btn => btn.onclick = () => {
-      if (btn.dataset.f === "ch") filterCh = btn.dataset.v;
+      if (btn.dataset.mf === "niche") marketNiche = btn.dataset.v;
+      else if (btn.dataset.mf === "fmt") marketFormat = btn.dataset.v;
+      else if (btn.dataset.f === "ch") filterCh = btn.dataset.v;
       else filterType = filterType === btn.dataset.v ? "all" : btn.dataset.v;
       render();
     });
