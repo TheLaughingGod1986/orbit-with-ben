@@ -51,7 +51,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3432 | mini | open (after J3431) | – | – | WW2:005 edit · assembly · WW2 film 005: edit, captions, three thumbnails and upload package, to Ben's watch |  |
 | J3442 | mini | blocked | gemini | – | studio · Field Order History pilot 1: read the retention graph after the cut, find the next drop, propose up to two more clean cuts |  |
 | J3444 | mini | blocked | codex | – | 027 upload · studio · Earth equator Short: 24-hour reach read after Related repair |  |
-| J3463 | mini | blocked | codex | – | studio · Field Order History channel totals read 2026-11-24 |  |
 | J3469 | mini | open | – | – | review · Verify condition for J2704 |  |
 | J3471 | mini | blocked | macbook | – | review · Verify condition for J3415 |  |
 | J3477 | cloud | open (after J3476) | – | – | WW2:008 script · review · WW2 film 008: Claude viewer test (first 300 words), Rule E lock & queue VO | ww2-channel#61 |

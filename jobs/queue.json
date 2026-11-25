@@ -317250,8 +317250,8 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-11-24T06:42Z",
       "eta": "",
       "created_by": "codex",
@@ -317317,6 +317317,11 @@
           "at": "2026-11-25T10:19Z",
           "by": "relay",
           "what": "condition verification queued: J3698"
+        },
+        {
+          "at": "2026-11-25T11:08Z",
+          "by": "gemini",
+          "what": "cancelled: Acting Chief ruling (J3698): superseded on main by J3682 (2026-11-25 daily totals read, merged via PR #1309 / 095218acaa, studio_read.json readAt 2026-11-25T07:08:34Z). Strict importer field-order-studio-import.ts rejects older 2026-11-24 reads as stale. Prior public export restriction honored with zero export: codex/J3463 (f860973491), codex/J3465 (c69d1ee2d6), and SHA-256-verified NAS copies (/Volumes/nas-staging/mac-mini-archive/mini-tmp-scratch/2026-11-25/owb-J3463 and owb-J3465) remain preserved strictly locally. No analytics values or raw evidence exported; no YouTube or spend changes."
         }
       ],
       "remaining_action": "Await the local privacy review and explicit approval for the proposed export files",
