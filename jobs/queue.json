@@ -1,5 +1,5 @@
 {
-  "next_id": 3706,
+  "next_id": 3707,
   "jobs": [
     {
       "id": "J0001",
@@ -290218,7 +290218,7 @@
         "by": ""
       },
       "open_claim": true,
-      "urgent": 8,
+      "urgent": 6,
       "escalated_at": "2026-11-25T00:40Z",
       "taskKeys": [
         "WW2:003"
@@ -326028,13 +326028,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "claudecode",
+      "status": "done",
+      "by": "claude",
       "since": "2026-11-25T10:42Z",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T16:35Z",
-      "result": "parked for Chief: direct change live 25 Nov 10:48:50Z (title Battle of the Atlantic: The Month U-Boats Lost + Design E, B/C/D test ended, Studio readback OK). Merge ww2-channel PR 142 (records). Still owed: Data API readback, 48-hour read Thu 26 Nov 17:05 UTC, 7-day after-check Wed 2 Dec 10:50 UTC judging the pair.",
+      "result": "Direct change live 25 Nov 10:48:50Z (title Battle of the Atlantic: The Month U-Boats Lost + Design E; Studio readback OK). Records merged in ww2 #144. Data API readback, current numbers and retention in J3704 (now); 7-day after-check queued.",
       "history": [
         {
           "at": "2026-11-24T16:35Z",
@@ -326145,6 +326145,11 @@
           "at": "2026-11-25T10:51Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: direct change live 25 Nov 10:48:50Z (title Battle of the Atlantic: The Month U-Boats Lost + Design E, B/C/D test ended, Studio readback OK). Merge ww2-channel PR 142 (records). Still owed: Data API readback, 48-hour read Thu 26 Nov 17:05 UTC, 7-day after-check Wed 2 Dec 10:50 UTC judging the pair."
+        },
+        {
+          "at": "2026-11-25T11:15Z",
+          "by": "claude",
+          "what": "done: Direct change live 25 Nov 10:48:50Z (title Battle of the Atlantic: The Month U-Boats Lost + Design E; Studio readback OK). Records merged in ww2 #144. Data API readback, current numbers and retention in J3704 (now); 7-day after-check queued."
         }
       ],
       "remaining_action": "Chief: merge ww2 PR 142; API readback, 48-hour read and 7-day after-check still owed",
@@ -337650,22 +337655,22 @@
     },
     {
       "id": "J3704",
-      "title": "WW2 pilot 2: read the retention graph at 48 hours and propose a cut for the biggest early drop",
+      "title": "WW2 pilots 1 and 2: numbers now, pilot 2's retention graph, and confirm pilot 2's new title and thumbnail are live",
       "needs": "mini",
       "repo": "ww2",
-      "body": "**Why.** Ben, Wed 25 Nov ~10:20 London, in chat: \"Looks like pilot 2 has done worse than the first.\" At 08:13Z: 792 impressions, 1.0% click-through (1.9% in the first wave), 16 views, 2:14 average view; likely past 1,000 impressions by now. Rule 8 (ww2 PR #97): under 2% at about 1,000 impressions means a change that day. The 2:14 average view is about 10% of 22:28. For pilot 1, cutting a detour at 1:28 (J3419) took strangers' average view from 2:06 to 5:06. Studio's retention graph for pilot 2 should be ready about 48 hours after launch.\n\n**Do (Thu 26 Nov from 17:05 UTC; Studio and the Data API only):**\n1. Read pilot 2's retention curve: the 30-second and 1-minute marks, and every drop steeper than the curve around it in the first 5 minutes.\n2. Match each drop to the script line and the picture at that moment.\n3. If one stretch is a clear cliff (a detour, a slow explainer, a repeat), write the exact proposed Studio-editor trim (in and out times) with the reason and the expected gain. Put it on the thread for the Chief to take to Ben.\n   - Pilot 1's cut had Ben's go. Make no cut in this job.\n4. Write the curve numbers into `status.json` and the result against `studio/LEARNINGS.md` line 3. £0.",
+      "body": "**Why.** Ben, Wed 25 Nov ~10:20 London, in chat: \"Looks like pilot 2 has done worse than the first.\" At 08:13Z: 792 impressions, 1.0% click-through (1.9% in the first wave), 16 views, 2:14 average view; likely past 1,000 impressions by now. Rule 8 (ww2 PR #97): under 2% at about 1,000 impressions means a change that day. The 2:14 average view is about 10% of 22:28. For pilot 1, cutting a detour at 1:28 (J3419) took strangers' average view from 2:06 to 5:06. Studio's retention graph for pilot 2 should be ready about 48 hours after launch.\n\n**Do (Thu 26 Nov from 17:05 UTC; Studio and the Data API only):**\n1. Read pilot 2's retention curve: the 30-second and 1-minute marks, and every drop steeper than the curve around it in the first 5 minutes.\n2. Match each drop to the script line and the picture at that moment.\n3. If one stretch is a clear cliff (a detour, a slow explainer, a repeat), write the exact proposed Studio-editor trim (in and out times) with the reason and the expected gain. Put it on the thread for the Chief to take to Ben.\n   - Pilot 1's cut had Ben's go. Make no cut in this job.\n4. Write the curve numbers into `status.json` and the result against `studio/LEARNINGS.md` line 3. £0.\n\n**Update (Claude, acting Chief, 25 Nov ~11:20 UTC): run now, not Thursday.** Ben, 25 Nov ~11:15 London, in chat: \"Can we check the numbers for pilot 1, 2? I think the retention graph should be ready now. And are the changes to pilot 2 made and live?\"\n\n**Do now (Studio 9224 and the Data API with the WW2 tokens Ben saved on 24 Nov; never play a video):**\n1. **Data API readback of pilot 2** (`qfc6EBStOfo`): the title must read *Battle of the Atlantic: The Month U-Boats Lost*, and the thumbnail must be Design E (compare the default thumbnail image against `ww2_002_thumb_E_uboat_hunted_v01.jpg`). Say plainly whether both are live.\n2. **Current numbers for both pilots**, since publish and since each one's last change (pilot 1: retitle 24 Nov 18:30Z; pilot 2: 25 Nov 10:48:50Z): impressions, click-through by source, views, average view duration, percentage viewed.\n3. **Pilot 2's retention curve, if Studio shows it:** the marks at 0:30, 1:00, 2:00 and 5:00, plus the steepest drops in the first 5 minutes with the script line and picture at each. If Studio still says not ready, record that and set `jobs.py wait --type date --release-at-time` to Thu 26 Nov 17:05 UTC for the retention part only.\n4. One short table on the thread plus `status.json` for each film. £0.",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 40,
-      "status": "blocked",
-      "by": "claude",
+      "status": "open",
+      "by": "",
       "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-25T10:22Z",
-      "result": "Waiting for: Pilot 2's 48-hour point (retention graph ready), 2026-11-26T17:05:00Z.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-25T10:22Z",
@@ -337681,18 +337686,18 @@
           "at": "2026-11-25T10:22Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-26T17:05:00Z"
+        },
+        {
+          "at": "2026-11-25T11:15Z",
+          "by": "claude",
+          "what": "reopened: Ben asked for both pilots' numbers and pilot 2's retention now; run now."
         }
       ],
       "remaining_action": "Read pilot 2's retention at 48 hours",
-      "due": "2026-11-26T20:00:00Z",
+      "due": "2026-11-25T14:00:00Z",
       "kind": "studio",
       "mini_only": true,
-      "hold": {
-        "type": "date",
-        "condition": "Pilot 2's 48-hour point (retention graph ready), 2026-11-26T17:05:00Z.",
-        "check_at": "2026-11-26T17:05:00Z",
-        "release": "auto"
-      }
+      "urgent": 7
     },
     {
       "id": "J3705",
@@ -337737,6 +337742,52 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3706",
+      "title": "WW2 pilot 2: 7-day after-check of the new title and U-boat thumbnail (changed 25 Nov 10:48Z)",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** On 25 Nov 10:48:50Z J3561 changed pilot 2 (`qfc6EBStOfo`) directly: the title became *Battle of the Atlantic: The Month U-Boats Lost*, and Design E (U-BOAT HUNTED) replaced the B/C/D test. Both changed together, so this read judges the pair.\n\n**Do (from Wed 2 Dec 10:50 UTC; Studio and the Data API only):**\n1. Read strangers' click-through, impressions, search impressions and clicks, and views for the 7 days after the change, against the before numbers in `status.json`.\n2. Give the verdict against `studio/LEARNINGS.md` line 9 (rule 2 and rule 8): held, or failed.\n3. If click-through is still under 2%, propose the next single change for the Chief. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "blocked",
+      "by": "claude",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-25T11:15Z",
+      "result": "Waiting for: Seven days after pilot 2's change, 2026-12-02T10:50:00Z.",
+      "history": [
+        {
+          "at": "2026-11-25T11:15Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-25T11:15Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: Seven days after pilot 2's change, 2026-12-02T10:50:00Z."
+        },
+        {
+          "at": "2026-11-25T11:15Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-12-02T10:50:00Z"
+        }
+      ],
+      "remaining_action": "Judge pilot 2's change at 7 days",
+      "due": "2026-12-02T18:00:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "hold": {
+        "type": "date",
+        "condition": "Seven days after pilot 2's change, 2026-12-02T10:50:00Z.",
+        "check_at": "2026-12-02T10:50:00Z",
+        "release": "auto"
+      }
     }
   ],
   "focus": [

@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J2529, J3431, J3432, J3501, J3205, J3561.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J2529, J3431, J3432, J3501, J3205, J3704.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -76,7 +76,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3551 | mini | open (after J3550) | – | – | WW2:015 script · review · WW2 015: Claude topic archive and opening review before lock |  |
 | J3558 | mini | open | – | – | chief · Chief: resolve 003 edit orphan-doing |  |
 | J3559 | mini | open (after J3557) | – | – | WW2:017 vo · vo · WW2 film 017: narration in Ben's voice (Pearl Harbor Salvage, post-reset) |  |
-| J3561 | mini | blocked | claudecode | – | studio · WW2 pilot 2: read at 1,000 impressions or 48 hours, and change the title that day if click-through is under 2% |  |
 | J3577 | mini | blocked | macbook-2 | – | WW2:007 edit · assembly · WW2 007 Short 1: build 'WW2 Floating Dry Docks: 55ft Fold-Up Steel Walls' for Ben watch | J3563 |
 | J3578 | mini | blocked | macbook-2 | – | WW2:007 edit · assembly · WW2 007 Short 2: build 'WW2 Floating Dry Dock: How It Lifted Itself' for Ben watch | J3563 |
 | J3579 | mini | blocked | macbook-2 | – | WW2:008 edit · assembly · WW2 008 Short 1: build 'Operation Mincemeat: Faking a Man's Pocket Clutter' for Ben watch | J3563 |
@@ -111,8 +110,9 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3684 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J3692 | any | blocked | gemini | – | review · AI spend: Google AI Ultra 20x vs Ultra 5x re-review before 12 Jan 2027 renewal, for Ben |  |
 | J3697 | mini | blocked | claudecode | – | review · Verify condition for J3205 |  |
-| J3704 | mini | blocked | claude | – | studio · WW2 pilot 2: read the retention graph at 48 hours and propose a cut for the biggest early drop |  |
+| J3704 | mini | open | – | – | studio · WW2 pilots 1 and 2: numbers now, pilot 2's retention graph, and confirm pilot 2's new title and thumbnail are live |  |
 | J3705 | mini | open | – | – | review · Verify condition for J3591 |  |
+| J3706 | mini | blocked | claude | – | studio · WW2 pilot 2: 7-day after-check of the new title and U-boat thumbnail (changed 25 Nov 10:48Z) |  |
 
 Recently finished:
 
