@@ -332943,9 +332943,14 @@
           "at": "2026-11-25T03:37Z",
           "by": "gemini",
           "what": "step 1 of 6 done: Master SHA-256 & ffprobe verified; audio_input & moving_video_input registered; lossless 18-segment split ready (1542.854s continuous)."
+        },
+        {
+          "at": "2026-11-25T03:38Z",
+          "by": "gemini",
+          "what": "step 2 of 6 done: Watched & listened 00:00-09:08 (seg_00-05): confirmed G00B '16:00 PM' typo, caught NEW missing-glyph tofu boxes on G5 (01:15), US spelling 'ALUMINUM' on G17 (02:20/07:51), and G17/G15 timeline mismatch."
         }
       ],
-      "remaining_action": "Watch and listen continuously to Part 1 (00:00-09:08, seg_00 through seg_05)",
+      "remaining_action": "Watch and listen continuously to Part 2 (09:08-18:08, seg_06 through seg_11)",
       "due": "2026-11-28T12:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -332962,9 +332967,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 6,
-        "at": "2026-11-25T03:37Z",
+        "at": "2026-11-25T03:38Z",
         "by": "gemini",
         "plan": [
           "Verify master & register capabilities",
@@ -332974,7 +332979,7 @@
           "Verify captions, provenance & thumbnails",
           "Write QA_REVIEW_v01.md & open ww2 PR"
         ],
-        "note": "Master SHA-256 & ffprobe verified; audio_input & moving_video_input registered; lossless 18-segment split ready (1542.85"
+        "note": "Watched & listened 00:00-09:08 (seg_00-05): confirmed G00B '16:00 PM' typo, caught NEW missing-glyph tofu boxes on G5 (0"
       },
       "taskKeys": [
         "WW2:006"
