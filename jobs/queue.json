@@ -331006,9 +331006,14 @@
           "at": "2026-11-25T00:39Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T00:40Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Chief QA review, board watch upload (watch_upload.mjs + awaits), and Claude Code PR publish for codex/J3205-mini",
+      "remaining_action": "Inspect J3205 history, WW2:003 files, board approval and predecessor state",
       "kind": "review",
       "recheck_of": "J3205",
       "mini_only": true,
@@ -331025,11 +331030,17 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-25T00:39Z",
+        "at": "2026-11-25T00:40Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect J3205 and WW2:003 state",
+          "Verify gates, approvals and publish status",
+          "Update J3205 and finish J3644"
+        ]
+      },
+      "taskKeys": [
+        "WW2:003"
+      ]
     },
     {
       "id": "J3645",
