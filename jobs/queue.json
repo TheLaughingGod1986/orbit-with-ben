@@ -332539,9 +332539,14 @@
           "at": "2026-11-25T02:28Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Ran public_search.py on Candidate Title Arm B and saved evidence_2026-11-25_public_search_arm_b.json."
+        },
+        {
+          "at": "2026-11-25T02:33Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Applied FIX-1..FIX-6 and 3 alignment polishes across v03 script, FACT_NOTES_v03, SOURCES, SHORTS_SCRIPTS_v03, PACKAGE_FIRST_SCORING_v03, PRE_BUILD_VIDIQ_AUDIT, LAUNCH_PLAN, README, and status.json."
         }
       ],
-      "remaining_action": "Applying all 6 blocking fixes and 3 polishes to v03 files and renaming superseded master drafts",
+      "remaining_action": "Running review:script, default gate:episode, check_all.sh, and recording exact outputs + SHA-256 hashes in production-status.md",
       "due": "2026-12-01T12:00:00Z",
       "kind": "script",
       "plain": "Apply the 6 J3630/J3629 blocking fixes to HOS 128 v02 and deliver clean v03 for Chief script lock.",
@@ -332554,9 +332559,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-25T02:28Z",
+        "at": "2026-11-25T02:33Z",
         "by": "gemini",
         "plan": [
           "Inspect PR #760/#761 and create worktree",
@@ -332565,7 +332570,7 @@
           "Run review:script, gate:episode, check_all.sh and record SHA-256",
           "Open HOS PR, update status, and report on desk/thread"
         ],
-        "note": "Ran public_search.py on Candidate Title Arm B and saved evidence_2026-11-25_public_search_arm_b.json."
+        "note": "Applied FIX-1..FIX-6 and 3 alignment polishes across v03 script, FACT_NOTES_v03, SOURCES, SHORTS_SCRIPTS_v03, PACKAGE_FI"
       },
       "taskKeys": [
         "HOS:128"
