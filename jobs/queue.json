@@ -342444,26 +342444,29 @@
           "at": "2026-11-25T22:24Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T22:24Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Wait for the two re-done Lockwood shots, the re-join and the checks, look at the new sheet, then open the pull request",
+      "remaining_action": "Reading the v03 render code and edit plan",
       "due": "2026-11-26T20:00:00Z",
       "kind": "assembly",
       "plain": "Rebuild film 004 v04 so all archive photos fill 16:9 edge-to-edge (fixing Ben's 0:15 change note) while keeping J3715 Cuts A+B",
       "progress": {
-        "step": 4,
-        "of": 6,
-        "at": "2026-11-25T21:50Z",
+        "step": 0,
+        "of": 5,
+        "at": "2026-11-25T22:24Z",
         "by": "claudecode",
         "plan": [
-          "Read the v03 render and plan",
-          "Write the full-screen renderer",
-          "Test frames by eye",
-          "Full render on the NAS",
-          "Checks and contact sheet",
-          "Pull request and hand-off"
-        ],
-        "note": "If this run is cut off: third pass runs detached in tmux J3743-pass3 (log ~/_desk/logs/J3743-pass3.log, marker ~/_desk/l"
+          "Read v02/v03 render code and plan",
+          "Write render_004_v04.py full-bleed framing",
+          "Render v04 on NAS (detached)",
+          "Border check, contact sheet, QA json",
+          "PR and handoff"
+        ]
       },
       "taskKeys": [
         "WW2:004"
