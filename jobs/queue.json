@@ -333023,9 +333023,14 @@
           "at": "2026-11-25T03:33Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T03:34Z",
+          "by": "macbook-2",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Verify readiness: Await corrected narration J3626 and independent Gemini check J3627, then finish viewer review and script lock; retain 30 Nov voice hold",
+      "remaining_action": "Inspecting J3492, J3626, J3627 records and ww2-channel PRs",
       "kind": "review",
       "recheck_of": "J3492",
       "due": "2026-11-25T04:31:02+00:00",
@@ -333039,12 +333044,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-25T03:33Z",
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-25T03:34Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect J3492, J3626, J3627 history and PRs",
+          "Verify WW2:009 v02 script, claims check, and hashes",
+          "Update J3492 status (reopen or wait)",
+          "Finish J3664 and report on studio thread"
+        ]
       }
     }
   ],
