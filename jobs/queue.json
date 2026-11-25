@@ -325562,16 +325562,21 @@
           "at": "2026-11-25T13:07Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Wrote 01_Script/CLAIMS_CHECK_v01.md (14 PASS, 7 FLAG across 21 mapped passages) and updated status.json; SCRIPT.md and NARRATION_v01.txt untouched"
+        },
+        {
+          "at": "2026-11-25T13:09Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Opened WW2 stage PR #150 (gemini/J3550-ww2-015-claims-check @ b37e506 -> macbook/J3486) with 01_Script/CLAIMS_CHECK_v01.md (14 PASS, 7 FLAG) and updated status.json"
         }
       ],
-      "remaining_action": "Fixing exact character deltas, committing to gemini/J3550-ww2-015-claims-check, opening WW2 stage PR, and posting report",
+      "remaining_action": "Posting thread report and marking J3550 done",
       "for": "gemini",
       "kind": "facts",
       "plain": "Check the facts in the Sherman tank story",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-25T13:07Z",
+        "at": "2026-11-25T13:09Z",
         "by": "gemini",
         "plan": [
           "Inspect J3486 draft and sources",
@@ -325579,7 +325584,7 @@
           "Write CLAIMS_CHECK_v01.md",
           "Open WW2 stage PR and report"
         ],
-        "note": "Wrote 01_Script/CLAIMS_CHECK_v01.md (14 PASS, 7 FLAG across 21 mapped passages) and updated status.json; SCRIPT.md and N"
+        "note": "Opened WW2 stage PR #150 (gemini/J3550-ww2-015-claims-check @ b37e506 -> macbook/J3486) with 01_Script/CLAIMS_CHECK_v01."
       },
       "taskKeys": [
         "WW2:015"
