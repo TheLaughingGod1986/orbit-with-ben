@@ -336986,13 +336986,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-25T10:38Z",
-      "eta": "2026-11-25T12:38Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T10:19Z",
-      "result": "",
+      "result": "parked for Chief: J3512's condition is VERIFIED MET (claudecode back after the 10:00Z reset, this session ran and pushed at 10:38Z; branches codex/J3512-resume 5008d480 and codex/J3512-registry bfb399e268 intact and unpushed; neither origin/main registers mpK3D6S7WLk; 25 Nov HOS snapshot reads it private, publishAt null). The queue refuses a worker on both paths: reopen J3512 (Chief-only) and wait J3512 --recheck J3700 (holder codex or Chief only), so J3700 cannot be closed by claudecode. Chief: reopen J3512 with this evidence, then close J3700. Full evidence on thread comment 7160043371.",
       "history": [
         {
           "at": "2026-11-25T10:19Z",
@@ -337023,6 +337023,11 @@
           "at": "2026-11-25T10:41Z",
           "by": "claudecode",
           "what": "step 3 of 4 done: Step 3: worker reopen refused (Chief-only), so J3512 re-parked for Chief with the verified evidence, next check 11:45Z."
+        },
+        {
+          "at": "2026-11-25T10:41Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: J3512's condition is VERIFIED MET (claudecode back after the 10:00Z reset, this session ran and pushed at 10:38Z; branches codex/J3512-resume 5008d480 and codex/J3512-registry bfb399e268 intact and unpushed; neither origin/main registers mpK3D6S7WLk; 25 Nov HOS snapshot reads it private, publishAt null). The queue refuses a worker on both paths: reopen J3512 (Chief-only) and wait J3512 --recheck J3700 (holder codex or Chief only), so J3700 cannot be closed by claudecode. Chief: reopen J3512 with this evidence, then close J3700. Full evidence on thread comment 7160043371."
         }
       ],
       "remaining_action": "Posting the report",
