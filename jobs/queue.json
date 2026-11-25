@@ -332963,9 +332963,14 @@
           "at": "2026-11-25T03:43Z",
           "by": "gemini",
           "what": "step 5 of 6 done: Verified 376 SRT cues (0 overlaps, 0 US spellings), 62/62 archive provenance & credits, and 3 Rule-2/13 thumbnails + 168px comparison sheet."
+        },
+        {
+          "at": "2026-11-25T03:46Z",
+          "by": "gemini",
+          "what": "step 6 of 6 done: Wrote QA_REVIEW_v01.md and opened clean ww2-channel PR #132 (commit 339105d); temp segments deleted."
         }
       ],
-      "remaining_action": "Write QA_REVIEW_v01.md in clean ww2-channel worktree and open PR",
+      "remaining_action": "Complete",
       "due": "2026-11-28T12:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -332982,9 +332987,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 5,
+        "step": 6,
         "of": 6,
-        "at": "2026-11-25T03:43Z",
+        "at": "2026-11-25T03:46Z",
         "by": "gemini",
         "plan": [
           "Verify master & register capabilities",
@@ -332994,7 +332999,7 @@
           "Verify captions, provenance & thumbnails",
           "Write QA_REVIEW_v01.md & open ww2 PR"
         ],
-        "note": "Verified 376 SRT cues (0 overlaps, 0 US spellings), 62/62 archive provenance & credits, and 3 Rule-2/13 thumbnails + 168"
+        "note": "Wrote QA_REVIEW_v01.md and opened clean ww2-channel PR #132 (commit 339105d); temp segments deleted."
       },
       "taskKeys": [
         "WW2:006"
