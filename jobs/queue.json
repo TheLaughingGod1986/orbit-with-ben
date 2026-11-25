@@ -343569,9 +343569,14 @@
           "at": "2026-11-25T23:18Z",
           "by": "claudecode",
           "what": "step 0 of 5 done: Claimed; reading brief and the prior Short upload precedent"
+        },
+        {
+          "at": "2026-11-25T23:19Z",
+          "by": "claudecode",
+          "what": "step 1 of 5 done: Master verified: sha256 fef4e056...e2e8, 25,815,067 bytes, 48.60 s, 1080x1920 25fps, audio present (mean -19.7 dB)"
         }
       ],
-      "remaining_action": "Verify master hash, then upload Short 004-S1 v01 Private scheduled Mon 30 Nov 12:30 London",
+      "remaining_action": "Upload Short 004-S1 v01 Private scheduled Mon 30 Nov 12:30 London",
       "due": "2026-11-29T12:00:00Z",
       "kind": "studio",
       "plain": "Upload Ben-approved Short 004-S1 v01 Private, scheduled Mon 30 Nov 12:30 London",
@@ -343590,9 +343595,9 @@
         "okRef": "J3570"
       },
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-25T23:18Z",
+        "at": "2026-11-25T23:19Z",
         "by": "claudecode",
         "plan": [
           "Verify approved master",
@@ -343601,7 +343606,7 @@
           "Record in status via PR",
           "Queue 7-day read"
         ],
-        "note": "Claimed; reading brief and the prior Short upload precedent"
+        "note": "Master verified: sha256 fef4e056...e2e8, 25,815,067 bytes, 48.60 s, 1080x1920 25fps, audio present (mean -19.7 dB)"
       },
       "taskKeys": [
         "WW2:004"
