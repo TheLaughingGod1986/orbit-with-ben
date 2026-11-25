@@ -342365,9 +342365,14 @@
           "at": "2026-11-25T20:32Z",
           "by": "gemini",
           "what": "step 3 of 6 done: Step 3 done (4:30-9:00): Joins 6-9 and 11 clean; flagged Join 10 (~8:37.5) for close-up audio inspection of faint pre-roll syllable/breath; Beattie lower-third at 7:10 clean; G11/G7/G16/G6 crisp."
+        },
+        {
+          "at": "2026-11-25T20:34Z",
+          "by": "gemini",
+          "what": "step 4 of 6 done: Step 4 done (9:00-14:46): Full 14:46 watched and heard. Ending 2.5s hold + 1.5s fade clean; G10 3-stage smooth; caught Chapter 8 stamp mismatch (13:15 vs 13:27 Tirpitz start), G10d static 34.2s through explosion, A 23877 frozen 8.89s, G8 missing casualty callouts."
         }
       ],
-      "remaining_action": "Watching and listening to chunks 07-10 (9:00 to 14:46) with audio_input and moving_video_input",
+      "remaining_action": "Running close-up splice audio inspection (Join 10 and Cuts A/B), British-spelling caption audit, and thumbnail/package review",
       "due": "2026-11-28T20:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -342384,9 +342389,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 6,
-        "at": "2026-11-25T20:32Z",
+        "at": "2026-11-25T20:34Z",
         "by": "gemini",
         "plan": [
           "Verify master hash and split chunks",
@@ -342396,7 +342401,7 @@
           "Audit splices, captions, thumbs, package",
           "Write QA report and open PR"
         ],
-        "note": "Step 3 done (4:30-9:00): Joins 6-9 and 11 clean; flagged Join 10 (~8:37.5) for close-up audio inspection of faint pre-ro"
+        "note": "Step 4 done (9:00-14:46): Full 14:46 watched and heard. Ending 2.5s hold + 1.5s fade clean; G10 3-stage smooth; caught C"
       },
       "taskKeys": [
         "WW2:005"
