@@ -335735,10 +335735,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T08:24Z",
+      "eta": "2026-11-25T10:24Z",
       "created_by": "gemini",
       "created_at": "2026-11-25T08:21Z",
       "result": "",
@@ -335747,12 +335747,25 @@
           "at": "2026-11-25T08:21Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-25T08:24Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Inspect HOS Flow UI read-only and open PR updating orbit_flow_veo_ui.py + rules for Chief review before 5 Dec",
       "due": "2026-12-03T18:00:00Z",
       "kind": "assembly",
-      "plain": "Prepare HOS Flow script and rules PR before Veo 3.1 Fast/Quality retire on 5 Dec"
+      "plain": "Prepare HOS Flow script and rules PR before Veo 3.1 Fast/Quality retire on 5 Dec",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T08:24Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3692",
