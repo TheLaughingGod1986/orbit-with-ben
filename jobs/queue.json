@@ -1,5 +1,5 @@
 {
-  "next_id": 3720,
+  "next_id": 3721,
   "jobs": [
     {
       "id": "J0001",
@@ -274403,6 +274403,11 @@
           "at": "2026-11-25T14:40Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-25T18:30:00Z"
+        },
+        {
+          "at": "2026-11-25T14:40Z",
+          "by": "relay",
+          "what": "condition verification queued: J3720"
         }
       ],
       "remaining_action": "Retain 05_Analytics/tests/panels/owb-064-every-planet/DECISION.md, apply any approved thumbnail/title tweaks, and close J3022 so J3023 assembly starts",
@@ -274430,7 +274435,8 @@
       "hold": {
         "type": "dependency",
         "condition": "Independent packaging panel (J3716, J3717, J3718, J3719) completes 05_Analytics/tests/panels/owb-064-every-planet/DECISION.md",
-        "check_at": "2026-11-25T18:30:00Z"
+        "check_at": "2026-11-25T15:40:58+00:00",
+        "recheck_task": "J3720"
       }
     },
     {
@@ -339777,6 +339783,37 @@
       ],
       "remaining_action": "Packaging panel decision: OWB 064 Every Planet Explained (3 titles, 3 thumbnails A/B/C, opening & chapters)",
       "kind": "review"
+    },
+    {
+      "id": "J3720",
+      "title": "Verify condition for J3022",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3022: Independent packaging panel (J3716, J3717, J3718, J3719) completes 05_Analytics/tests/panels/owb-064-every-planet/DECISION.md. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3022 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-25T14:40Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T14:40Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Retain 05_Analytics/tests/panels/owb-064-every-planet/DECISION.md, apply any approved thumbnail/title tweaks, and close J3022 so J3023 assembly starts",
+      "kind": "review",
+      "recheck_of": "J3022",
+      "due": "2026-11-25T15:40:58+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
