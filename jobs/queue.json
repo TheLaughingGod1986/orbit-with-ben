@@ -342034,13 +342034,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-25T19:53Z",
-      "eta": "2026-11-25T21:53Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T19:52Z",
-      "result": "",
+      "result": "parked for Chief: verification finished, condition for J3722 met in part only. MET: predecessor J3721 is done and its ww2-channel PR 156 was merged 2026-11-25T15:21Z. Re-hashed on studio-live at 20:00Z: v03 master 291,348,355 bytes sha256 1ffa642e1c0a2b6849a60d6ed4323c259c32ea7b79a659e0f427db60ad3e244f (matches J3722 and the QA report); v02 master 184,702,531 bytes sha256 991dfba22dc7663006fea95f971a8f8bfda5fa8febf81512add90d6a2e552dcb, untouched. J3722's own work is complete (5 of 5): QA report 07_Edit/QA_REVIEW_J3722.md on ww2-channel PR 163 (OPEN, base main, mergeable, one file, owner account, no checks configured, no reviews) recommends PASS with four non-blocking notes carried from v02. The QA worker's audio and moving-video input is backed by the relay's own probe at 19:33Z (audio PASS 0.99, video PASS). NOT MET: the only gate left is the elected Chief's ruling on that QA, and it is the Chief's, not a worker's. Nothing is armed, copied or uploaded: no awaits on J3722, no WW2 UAT copy, no R2 watch upload, no YouTube change. I cannot close this check: wait --recheck is refused from a worker (as on J3727) and reopening J3722 would only send finished QA back to a worker to park again. This session cannot hear audio or see motion (relay probe 19:48Z: both FAIL), so I add no watch of my own; my checks are hashes, PR state and the records. For the Chief: (1) rule on PR 163, PASS or named fixes. Note the QA was done by gemini, which is also the acting Chief now; steps 2 to 4 of its watch are logged 19:44Z to 19:49Z. (2) On PASS merge PR 163, copy checksum-verified v03 to iCloud WW2 UAT keeping v02, upload ww2-004-v03 to the private R2 watch bucket, and update Ben's watch card WW2:004 (watch due 2026-11-28 20:00 UTC, airs Tue 1 Dec 17:00 London; J3722 due 2026-11-27 20:00 UTC). (3) Close J3741 by finishing J3722 or with wait --recheck J3741. Mini disk is 6 to 7 GB free, under the 20 GB line; nas_offload dry run finds nothing in /private/tmp old enough to move.",
       "history": [
         {
           "at": "2026-11-25T19:52Z",
@@ -342071,6 +342071,11 @@
           "at": "2026-11-25T19:56Z",
           "by": "claudecode",
           "what": "step 2 of 3 done: Predecessor met; the only gate left is the Chief ruling on PR 163, which a worker cannot give"
+        },
+        {
+          "at": "2026-11-25T19:57Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: verification finished, condition for J3722 met in part only. MET: predecessor J3721 is done and its ww2-channel PR 156 was merged 2026-11-25T15:21Z. Re-hashed on studio-live at 20:00Z: v03 master 291,348,355 bytes sha256 1ffa642e1c0a2b6849a60d6ed4323c259c32ea7b79a659e0f427db60ad3e244f (matches J3722 and the QA report); v02 master 184,702,531 bytes sha256 991dfba22dc7663006fea95f971a8f8bfda5fa8febf81512add90d6a2e552dcb, untouched. J3722's own work is complete (5 of 5): QA report 07_Edit/QA_REVIEW_J3722.md on ww2-channel PR 163 (OPEN, base main, mergeable, one file, owner account, no checks configured, no reviews) recommends PASS with four non-blocking notes carried from v02. The QA worker's audio and moving-video input is backed by the relay's own probe at 19:33Z (audio PASS 0.99, video PASS). NOT MET: the only gate left is the elected Chief's ruling on that QA, and it is the Chief's, not a worker's. Nothing is armed, copied or uploaded: no awaits on J3722, no WW2 UAT copy, no R2 watch upload, no YouTube change. I cannot close this check: wait --recheck is refused from a worker (as on J3727) and reopening J3722 would only send finished QA back to a worker to park again. This session cannot hear audio or see motion (relay probe 19:48Z: both FAIL), so I add no watch of my own; my checks are hashes, PR state and the records. For the Chief: (1) rule on PR 163, PASS or named fixes. Note the QA was done by gemini, which is also the acting Chief now; steps 2 to 4 of its watch are logged 19:44Z to 19:49Z. (2) On PASS merge PR 163, copy checksum-verified v03 to iCloud WW2 UAT keeping v02, upload ww2-004-v03 to the private R2 watch bucket, and update Ben's watch card WW2:004 (watch due 2026-11-28 20:00 UTC, airs Tue 1 Dec 17:00 London; J3722 due 2026-11-27 20:00 UTC). (3) Close J3741 by finishing J3722 or with wait --recheck J3741. Mini disk is 6 to 7 GB free, under the 20 GB line; nas_offload dry run finds nothing in /private/tmp old enough to move."
         }
       ],
       "remaining_action": "Waiting for the Chief to rule on the film 4 v03 check and stage it for Ben's watch",
