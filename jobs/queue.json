@@ -332958,9 +332958,14 @@
           "at": "2026-11-25T03:42Z",
           "by": "gemini",
           "what": "step 4 of 6 done: Completed 100% continuous audiovisual watch/listen (00:00.00-25:42.85, all 18 lossless segments); deleted temp segments. Also caught G13 duplicate 'HEAVY BOMBERS' labels (21:49) and verified clean ending."
+        },
+        {
+          "at": "2026-11-25T03:43Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: Verified 376 SRT cues (0 overlaps, 0 US spellings), 62/62 archive provenance & credits, and 3 Rule-2/13 thumbnails + 168px comparison sheet."
         }
       ],
-      "remaining_action": "Verify captions, provenance & thumbnails and prepare QA_REVIEW_v01.md",
+      "remaining_action": "Write QA_REVIEW_v01.md in clean ww2-channel worktree and open PR",
       "due": "2026-11-28T12:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -332977,9 +332982,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 6,
-        "at": "2026-11-25T03:42Z",
+        "at": "2026-11-25T03:43Z",
         "by": "gemini",
         "plan": [
           "Verify master & register capabilities",
@@ -332989,7 +332994,7 @@
           "Verify captions, provenance & thumbnails",
           "Write QA_REVIEW_v01.md & open ww2 PR"
         ],
-        "note": "Completed 100% continuous audiovisual watch/listen (00:00.00-25:42.85, all 18 lossless segments); deleted temp segments."
+        "note": "Verified 376 SRT cues (0 overlaps, 0 US spellings), 62/62 archive provenance & credits, and 3 Rule-2/13 thumbnails + 168"
       },
       "taskKeys": [
         "WW2:006"
