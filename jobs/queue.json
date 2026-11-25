@@ -342805,9 +342805,14 @@
           "at": "2026-11-25T22:13Z",
           "by": "claudecode",
           "what": "step 3 of 6 done: Row 3 (P1:03a) take 2 landed: 7.92 s, technical ok, NAS archive sha256 verified, keep false / PENDING_REVIEW. 100 of 800 credits used."
+        },
+        {
+          "at": "2026-11-25T22:16Z",
+          "by": "claudecode",
+          "what": "step 3 of 6 done: Rows 3 and 10 take 2 landed: 7.92 s each, technical ok, NAS archive verified, keep false. 200 of 800 credits used. Receipt and contact-sheet builder committed to the job branch (98944e94)."
         }
       ],
-      "remaining_action": "Submitting the 8 take-2 rows on Flow (row 2 of 8 rendering in tmux J3747-retake)",
+      "remaining_action": "Submitting the 8 take-2 rows on Flow (row 3 of 8 rendering in tmux J3747-retake)",
       "due": "2026-12-01T18:00:00Z",
       "kind": "video",
       "plain": "Build guarded retake runner and mint take 2 for 013's 8 confirmed RETAKE plates before 5 Dec (800 Flow cr max, £0 cash)",
@@ -342815,7 +342820,7 @@
       "progress": {
         "step": 3,
         "of": 6,
-        "at": "2026-11-25T22:13Z",
+        "at": "2026-11-25T22:16Z",
         "by": "claudecode",
         "plan": [
           "Read rules and pass-1 runner",
@@ -342825,7 +342830,7 @@
           "Archive, hash and contact sheets",
           "Status, PR, desk post and park"
         ],
-        "note": "Row 3 (P1:03a) take 2 landed: 7.92 s, technical ok, NAS archive sha256 verified, keep false / PENDING_REVIEW. 100 of 800"
+        "note": "Rows 3 and 10 take 2 landed: 7.92 s each, technical ok, NAS archive verified, keep false. 200 of 800 credits used. Recei"
       },
       "taskKeys": [
         "HOS:013"
