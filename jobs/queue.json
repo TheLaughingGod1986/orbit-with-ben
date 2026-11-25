@@ -325923,10 +325923,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-25T10:42Z",
+      "eta": "2026-11-25T11:42Z",
       "created_by": "claude",
       "created_at": "2026-11-24T16:35Z",
       "result": "",
@@ -326010,6 +326010,11 @@
           "at": "2026-11-25T10:22Z",
           "by": "claude",
           "what": "reopened: Act now: under 2% at about 1,000 impressions (rule 8); direct title and thumbnail change."
+        },
+        {
+          "at": "2026-11-25T10:42Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "At Wed 25 Nov 17:05 UTC (24h), check qfc6EBStOfo impressions; if >=1,000 run full read and act on CTR + Design E if <2%, else log 24h numbers and hold to Thu 26 Nov 17:05 UTC (48h)",
@@ -326019,7 +326024,15 @@
       "taskKeys": [
         "WW2:002"
       ],
-      "urgent": 10
+      "urgent": 10,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T10:42Z",
+        "by": "claudecode",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3562",

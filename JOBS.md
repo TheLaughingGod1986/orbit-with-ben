@@ -81,7 +81,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3551 | mini | open (after J3550) | – | – | WW2:015 script · review · WW2 015: Claude topic archive and opening review before lock |  |
 | J3558 | mini | open | – | – | chief · Chief: resolve 003 edit orphan-doing |  |
 | J3559 | mini | open (after J3557) | – | – | WW2:017 vo · vo · WW2 film 017: narration in Ben's voice (Pearl Harbor Salvage, post-reset) |  |
-| J3561 | mini | open | – | – | studio · WW2 pilot 2: read at 1,000 impressions or 48 hours, and change the title that day if click-through is under 2% |  |
+| J3561 | mini | claimed | claudecode | 2026-11-25T11:42Z | studio · WW2 pilot 2: read at 1,000 impressions or 48 hours, and change the title that day if click-through is under 2% |  |
 | J3577 | mini | blocked | macbook-2 | – | WW2:007 edit · assembly · WW2 007 Short 1: build 'WW2 Floating Dry Docks: 55ft Fold-Up Steel Walls' for Ben watch | J3563 |
 | J3578 | mini | blocked | macbook-2 | – | WW2:007 edit · assembly · WW2 007 Short 2: build 'WW2 Floating Dry Dock: How It Lifted Itself' for Ben watch | J3563 |
 | J3579 | mini | blocked | macbook-2 | – | WW2:008 edit · assembly · WW2 008 Short 1: build 'Operation Mincemeat: Faking a Man's Pocket Clutter' for Ben watch | J3563 |
