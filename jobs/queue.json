@@ -332110,9 +332110,14 @@
           "at": "2026-11-25T01:29Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Read J3512 history, PR #749, and both Codex scratch worktrees (J3512-resume at 5008d480, J3512-registry at bfb399e268)."
+        },
+        {
+          "at": "2026-11-25T01:29Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Confirmed condition UNMET: neither codex/J3512-resume (HOS, local only at 5008d480) nor codex/J3512-registry (OWB, local only at bfb399e268) is pushed/merged to main; exact NAS SHA256 verified; claudecode down until 2026-11-25T10:00:00Z."
         }
       ],
-      "remaining_action": "Verifying publication status, diffs, NAS master hash, and claudecode reset",
+      "remaining_action": "Updating J3512 wait hold (--recheck J3658), posting reports, and finishing J3658",
       "kind": "review",
       "recheck_of": "J3512",
       "mini_only": true,
@@ -332127,7 +332132,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
         "at": "2026-11-25T01:29Z",
         "by": "gemini",
@@ -332136,7 +332141,7 @@
           "Inspect diffs and check whether J3512 publish condition is met",
           "Update J3512 wait/reopen state, close J3658, and post report"
         ],
-        "note": "Read J3512 history, PR #749, and both Codex scratch worktrees (J3512-resume at 5008d480, J3512-registry at bfb399e268)."
+        "note": "Confirmed condition UNMET: neither codex/J3512-resume (HOS, local only at 5008d480) nor codex/J3512-registry (OWB, local"
       },
       "taskKeys": [
         "HOS:010"
