@@ -340225,6 +340225,11 @@
           "at": "2026-11-25T15:41Z",
           "by": "claudecode",
           "what": "step 3 of 5 done: Detached render finished with exit 0 (626 s): v03 master 1418.37 s on NAS studio-live with QA record; now re-verifying it independently"
+        },
+        {
+          "at": "2026-11-25T15:43Z",
+          "by": "claudecode",
+          "what": "step 3 of 5 done: Re-check so far: v03 and v02 hashes match the record, all four cut points sit inside measured narration pauses, 344 captions in order with no Comet/Albatross lines; finishing loudness and decode re-read"
         }
       ],
       "remaining_action": "Independently re-check the finished v03 render (file hash, loudness, joins, captions, v02 untouched), then open the WW2 pull request",
@@ -340234,7 +340239,7 @@
       "progress": {
         "step": 3,
         "of": 5,
-        "at": "2026-11-25T15:41Z",
+        "at": "2026-11-25T15:43Z",
         "by": "claudecode",
         "plan": [
           "Verify SRT sync and measure exact silence points",
@@ -340243,7 +340248,7 @@
           "Run technical QA and verify v02 untouched",
           "Open WW2 PR and complete handoff"
         ],
-        "note": "Detached render finished with exit 0 (626 s): v03 master 1418.37 s on NAS studio-live with QA record; now re-verifying i"
+        "note": "Re-check so far: v03 and v02 hashes match the record, all four cut points sit inside measured narration pauses, 344 capt"
       },
       "taskKeys": [
         "WW2:006"
