@@ -340358,9 +340358,14 @@
           "at": "2026-11-25T19:42Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J3722; checking assembly PR and NAS v03 master"
+        },
+        {
+          "at": "2026-11-25T19:44Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Recorded audio_input,moving_video_input via read_file probe; verified exact SHA-256 of v03 (1ffa642e...e244f) and untouched v02 (991dfba2...52dcb)"
         }
       ],
-      "remaining_action": "Probing multimodal audio/video input and verifying v03 master + assembly PR",
+      "remaining_action": "Watching/listening to Cut A & Cut B joins (720p) and full v03 cut",
       "due": "2026-11-27T20:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -340377,9 +340382,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-25T19:42Z",
+        "at": "2026-11-25T19:44Z",
         "by": "gemini",
         "plan": [
           "Probe audio/video input & verify v03 files",
@@ -340388,7 +340393,7 @@
           "Verify chapters, SRT, archive share & repeats",
           "Write QA PR & report"
         ],
-        "note": "Claimed J3722; checking assembly PR and NAS v03 master"
+        "note": "Recorded audio_input,moving_video_input via read_file probe; verified exact SHA-256 of v03 (1ffa642e...e244f) and untouc"
       },
       "taskKeys": [
         "WW2:004"
