@@ -324976,10 +324976,10 @@
       "stage": "script",
       "after": "J3552",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-25T06:30Z",
+      "eta": "2026-11-25T08:30Z",
       "created_by": "gemini",
       "created_at": "2026-11-24T15:46Z",
       "result": "",
@@ -325068,6 +325068,11 @@
           "at": "2026-11-25T06:29Z",
           "by": "gemini",
           "what": "reopened: Acting Chief (gemini) KEEP & script lock achieved on HOS:136 v02 in J3677 (HOS PR #767 merged ab25f2de); closing J3553 as done"
+        },
+        {
+          "at": "2026-11-25T06:30Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Wait for J3675 (v02 fix) -> J3676 (v02 facts) -> J3677 (Chief v02 lock, which closes J3553 on KEEP)",
@@ -325083,7 +325088,15 @@
       "open_claim": true,
       "taskKeys": [
         "HOS:136"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T06:30Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3554",
