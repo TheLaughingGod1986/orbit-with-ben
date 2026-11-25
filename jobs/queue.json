@@ -330210,9 +330210,14 @@
           "at": "2026-11-25T02:20Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Completed direct HTTP/PDF quote verification of all MUST QUOTE sources (incl. scanned NPS NRIS 75001212 pp.1-14) plus timings, Shorts, Teach/Craft, and mechanical gate checks. Confirmed 5 J3629 FLAGs + 1 new mechanical gate:episode duplicate _master_ defect; ruling is FIX (not locked)."
+        },
+        {
+          "at": "2026-11-25T02:23Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Opened HOS PR #761 (6dee6dbf, jobs/reviews/J3630/REVIEW.md) with full direct-quote audit and Acting Chief FIX ruling; check_all.sh PASS"
         }
       ],
-      "remaining_action": "Writing J3630 direct-quote verification and Chief FIX ruling, opening review PR, and queueing v03 fix + lock follow-up",
+      "remaining_action": "Queueing v03 script fix and lock follow-up jobs, recording ruling on J3547, finishing J3630, and posting desk/thread reports",
       "due": "2026-12-01T18:00:00Z",
       "kind": "review",
       "plain": "Check the corrected Edison and Tesla script against original sources and decide whether recording can begin",
@@ -330225,9 +330230,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-25T02:20Z",
+        "at": "2026-11-25T02:23Z",
         "by": "gemini",
         "plan": [
           "Inspect PR752/758/760 and v02 files",
@@ -330236,7 +330241,7 @@
           "Write KEEP/FIX ruling and merge/queue if KEEP",
           "Update J3547/board and post reports"
         ],
-        "note": "Completed direct HTTP/PDF quote verification of all MUST QUOTE sources (incl. scanned NPS NRIS 75001212 pp.1-14) plus ti"
+        "note": "Opened HOS PR #761 (6dee6dbf, jobs/reviews/J3630/REVIEW.md) with full direct-quote audit and Acting Chief FIX ruling; ch"
       },
       "taskKeys": [
         "HOS:128"
