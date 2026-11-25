@@ -339970,20 +339970,34 @@
           "at": "2026-11-25T15:00Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T15:00Z",
+          "by": "claudecode",
+          "what": "step 0 of 6 done"
         }
       ],
-      "remaining_action": "Check board for Ben v02 OK, apply Cuts A+B to render v03, verify >=50% archive and open ww2 PR",
+      "remaining_action": "Check Ben has not already OK'd v02, then build the v03 cut with the two approved opening trims",
       "due": "2026-11-27T12:00:00Z",
       "kind": "assembly",
       "plain": "Apply J3715 opening cuts A+B (61.8 s) to film 004 as zero-spend v03 keeping v02 untouched",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 6,
         "at": "2026-11-25T15:00Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check watch state and inputs",
+          "Measure cut points on the audio",
+          "Build v03 cut list, captions, chapters",
+          "Render v03 to the NAS",
+          "Technical checks",
+          "Open PR and hand to QA"
+        ]
+      },
+      "taskKeys": [
+        "WW2:004"
+      ]
     },
     {
       "id": "J3722",
