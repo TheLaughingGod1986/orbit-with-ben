@@ -324488,9 +324488,14 @@
           "at": "2026-11-25T04:27Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T04:31Z",
+          "by": "macbook-2",
+          "what": "step 1 of 2 done"
         }
       ],
-      "remaining_action": "J3630 Chief ruling (HOS PR #761): FIX on v02 (6 items); stays blocked until J3659 (v03 fix) + J3660 (v03 lock) achieve KEEP.",
+      "remaining_action": "Close J3547 as done per Acting Chief J3660 lock",
       "due": "2026-12-01T18:00:00Z",
       "kind": "review",
       "plain": "Review and lock HOS 128 Edison vs Tesla v01 script, package-first scoring, sources, and 16-19s Shorts (PR #751)",
@@ -324504,12 +324509,14 @@
       "open_claim": true,
       "escalated_at": "2026-11-24T18:35Z",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-25T04:27Z",
+        "step": 1,
+        "of": 2,
+        "at": "2026-11-25T04:31Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Verify J3660 lock on HOS main",
+          "Close J3547 and post report"
+        ]
       }
     },
     {
