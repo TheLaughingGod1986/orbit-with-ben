@@ -1,5 +1,5 @@
 {
-  "next_id": 3731,
+  "next_id": 3732,
   "jobs": [
     {
       "id": "J0001",
@@ -340781,6 +340781,36 @@
       "taskKeys": [
         "WW2:016"
       ]
+    },
+    {
+      "id": "J3731",
+      "title": "MacBook: publish (or confirm lost) the unpushed Battle of the Bulge work for J3487",
+      "needs": "macbook",
+      "repo": "ww2",
+      "body": "**Why.** J3487 (Field Order History film 016, Battle of the Bulge; script locks Wed 16 Dec 18:00) has been parked since 24 Nov 15:04Z on `publish via Claude Code: /Users/ben/_desk/worker/slot2/ww2-channel macbook/J3487`. That worktree is on the MacBook (slot 2 clone), so Claude Code on the Mini cannot read or push it. Two condition checks (J3620, J3730) found the same thing: ww2-channel `origin/macbook/J3487` is still the pre-reopen Bletchley commit `03ce06a`, and no Battle of the Bulge branch, PR or file is on GitHub. Nobody had been asked to do the MacBook side; this job asks.\n\n**Do, on the MacBook, as Claude Code, by AGENTS.md \"Codex's refused pushes go to Claude Code\":**\n1. In `/Users/ben/_desk/worker/slot2/ww2-channel`, check local branch `macbook/J3487`: `git log origin/main..macbook/J3487` and `git status`. Say exactly what is there (commits, uncommitted files, or nothing).\n2. If the Battle of the Bulge work is there: read the whole diff and refuse anything private (rule step 1). Because the remote `macbook/J3487` already holds the merged Bletchley commit, push the work under a new branch name (e.g. `macbook/J3487-bulge`), open a ww2-channel pull request against `main`, and keep `air` exactly as `main` has it. Merge when checks are green only if it holds no protected call; otherwise leave it for the Chief.\n3. If the work is not there (branch reset, worktree reused, nothing uncommitted): say so plainly on J3487 so the Chief can reopen it from scratch. Do not rewrite the script in this job.\n4. Record the result on J3487 (`jobs.py wait J3487 ... --recheck <this job id>` with the PR number, or the \"lost\" finding) and finish this job.\n\n**Guards.** No spend, no voice credits, no upload, no schedule or YouTube change. Never force-push; never delete the local branch.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claudecode",
+      "created_at": "2026-11-25T16:17Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T16:17Z",
+          "by": "claudecode",
+          "what": "added for claudecode"
+        }
+      ],
+      "remaining_action": "On the MacBook, check slot 2's local macbook/J3487 branch, privacy-check and push the Battle of the Bulge work, or report it lost",
+      "due": "2026-11-27T18:00:00Z",
+      "for": "claudecode",
+      "plain": "Push the Battle of the Bulge script work that is stuck on the MacBook to GitHub, or confirm it was lost so it can be redone"
     }
   ],
   "focus": [
