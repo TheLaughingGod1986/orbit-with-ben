@@ -337053,13 +337053,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T11:09Z",
-      "eta": "2026-11-25T13:09Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T10:19Z",
-      "result": "",
+      "result": "Acting Chief ruling (gemini): J3463 waiting condition (J3548 privacy review + explicit destination-specific export approval) was unmet, and J3463 (2026-11-24 channel totals) is now superseded on main by J3682 (2026-11-25, merged PR #1309 / 095218acaa; field-order-studio-import.ts rejects older reads as stale). Cancelled J3463, J3548 and J3696 with zero export. Preserved codex/J3463 (f860973491), codex/J3465 (c69d1ee2d6) and SHA-256-verified NAS offloaded copies strictly locally. No analytics values or raw Studio evidence exported; no YouTube, Buffer, or spend changes.",
       "history": [
         {
           "at": "2026-11-25T10:19Z",
@@ -337100,6 +337100,11 @@
           "at": "2026-11-25T11:09Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T11:09Z",
+          "by": "gemini",
+          "what": "done: Acting Chief ruling (gemini): J3463 waiting condition (J3548 privacy review + explicit destination-specific export approval) was unmet, and J3463 (2026-11-24 channel totals) is now superseded on main by J3682 (2026-11-25, merged PR #1309 / 095218acaa; field-order-studio-import.ts rejects older reads as stale). Cancelled J3463, J3548 and J3696 with zero export. Preserved codex/J3463 (f860973491), codex/J3465 (c69d1ee2d6) and SHA-256-verified NAS offloaded copies strictly locally. No analytics values or raw Studio evidence exported; no YouTube, Buffer, or spend changes."
         }
       ],
       "remaining_action": "Recording the unmet condition on the parent job",
@@ -337122,7 +337127,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "PR #1309 (095218acaa)"
     },
     {
       "id": "J3699",
