@@ -340616,10 +340616,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-25T16:23Z",
+      "eta": "2026-11-25T19:23Z",
       "created_by": "claude",
       "created_at": "2026-11-25T16:05Z",
       "result": "",
@@ -340653,6 +340653,11 @@
           "at": "2026-11-25T16:10Z",
           "by": "claudecode",
           "what": "released: Step 2 running detached: tmux J3728-harvest; log ~/_desk/logs/J3728-harvest.log; done file ~/_desk/logs/J3728-harvest.done (missing = still running, do not start a second copy). Worktree $STUDIO_SCRATCH/J3728-wt on ww2-channel branch claudecode/J3728-017-picture (6f0da84) holds harvest_archive_017.py and will hold RETRIEVAL_LOG_017.json (uncommitted until the run ends). Photos land on NAS studio-live/ww2/02_Video-Projects/017_.../03_Picture/archive/. Next: read each kept photo's caption against its subject, rewrite ARCHIVE_PROVENANCE.md with SHA-256 and beats, draw 3 maps (need a finer coastline than Natural Earth 1:50m), 3 thumbnails, picture plan, one PR."
+        },
+        {
+          "at": "2026-11-25T16:23Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Downloading full-size archive photos (detached: tmux J3728-harvest)",
