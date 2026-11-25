@@ -325488,19 +325488,30 @@
           "at": "2026-11-25T00:05Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T00:07Z",
+          "by": "macbook",
+          "what": "step 1 of 6 done"
         }
       ],
-      "remaining_action": "Cut locked 002 narration (02:08.450-02:53.190), assemble 1080x1920 vertical Short reusing J3542 pipeline, and put on Ben watch",
+      "remaining_action": "Auditing WW2:002 narration, music, and verified PD archive originals on NAS",
       "due": "2026-11-26T18:00:00Z",
       "kind": "assembly",
       "plain": "Build the first Battle of the Atlantic Short about why Second World War U-boats could not stay underwater",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T23:22Z",
-        "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "step": 1,
+        "of": 6,
+        "at": "2026-11-25T00:07Z",
+        "by": "macbook",
+        "plan": [
+          "Audit 002 assets & provenance",
+          "Inspect audio & STT timestamps",
+          "Verify archive crops & upscale",
+          "Build 1080x1920 Short v01",
+          "Verify decode/audio/captions/stills",
+          "Copy to NAS, open PR & report"
+        ]
       }
     },
     {
