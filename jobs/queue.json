@@ -343585,13 +343585,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-25T23:16Z",
-      "eta": "2026-11-26T01:16Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T23:14Z",
-      "result": "",
+      "result": "Waiting for: 7 days after RtEMDrfeKR8 scheduled go-public (Sat 28 Nov 2026 12:30:00Z)",
       "history": [
         {
           "at": "2026-11-25T23:14Z",
@@ -343602,9 +343602,19 @@
           "at": "2026-11-25T23:16Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T23:16Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: 7 days after RtEMDrfeKR8 scheduled go-public (Sat 28 Nov 2026 12:30:00Z)"
+        },
+        {
+          "at": "2026-11-25T23:16Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-12-05T12:35:00Z"
         }
       ],
-      "remaining_action": "Read 7-day Field Order History Studio 9224 stats for RtEMDrfeKR8 and RqYjADxvJy8 Related traffic after Sat 5 Dec 2026 12:35 London",
+      "remaining_action": "Read 7-day Studio 9224 stats for RtEMDrfeKR8 (views, stayed-to-watch, avg % viewed, subscribers, RqYjADxvJy8 Shorts/Related traffic) after Sat 5 Dec 2026 12:35Z",
       "due": "2026-12-05T14:00:00Z",
       "kind": "studio",
       "plain": "Read 7-day Studio stats for Short RtEMDrfeKR8 (views, stayed-to-watch, avg % viewed, subs) and Related-video traffic to RqYjADxvJy8",
@@ -343615,6 +343625,12 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "date",
+        "condition": "7 days after RtEMDrfeKR8 scheduled go-public (Sat 28 Nov 2026 12:30:00Z)",
+        "check_at": "2026-12-05T12:35:00Z",
+        "release": "auto"
       }
     }
   ],
