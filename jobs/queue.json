@@ -331907,13 +331907,13 @@
       "stage": "",
       "after": "",
       "eta_min": 480,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T02:50Z",
-      "eta": "2026-11-25T10:50Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-25T00:30Z",
-      "result": "",
+      "result": "PR #1300 (merged, all CI checks green): 88-channel Data-API-verified watchlist (30 ww2, 30 owb, 28 hos; 43 strict <6m/<20k rising + 45 benchmarks) in 05_Analytics/market/watchlist.json; daily tracker, farm filter, 1500-unit quota guard, 14-day weekly rollup, weekly tagger and <=40-credit monthly discovery in scripts/market_track.py wired into 07_Content-Ops/launchd/analytics-snapshot.sh; mobile-first Market tab in 05_Analytics/kanban/board_site/studio_app.js + studio_app.html fed via scripts/board_publish.py; 05_Analytics/market/README.md; 16 unit tests in scripts/test_market_track.py + Market tab tests in scripts/test_studio_app.cjs. Next: deploy board_site/dist to Cloudflare Pages when ready so #market is live.",
       "history": [
         {
           "at": "2026-11-25T00:30Z",
@@ -331944,6 +331944,11 @@
           "at": "2026-11-25T03:12Z",
           "by": "gemini",
           "what": "step 6 of 6 done: PR #1300 all checks green (merged); 88-channel verified watchlist, daily tracker, weekly tagger, monthly discovery, Market tab, README, and unit/JS tests complete"
+        },
+        {
+          "at": "2026-11-25T03:12Z",
+          "by": "gemini",
+          "what": "done: PR #1300 (merged, all CI checks green): 88-channel Data-API-verified watchlist (30 ww2, 30 owb, 28 hos; 43 strict <6m/<20k rising + 45 benchmarks) in 05_Analytics/market/watchlist.json; daily tracker, farm filter, 1500-unit quota guard, 14-day weekly rollup, weekly tagger and <=40-credit monthly discovery in scripts/market_track.py wired into 07_Content-Ops/launchd/analytics-snapshot.sh; mobile-first Market tab in 05_Analytics/kanban/board_site/studio_app.js + studio_app.html fed via scripts/board_publish.py; 05_Analytics/market/README.md; 16 unit tests in scripts/test_market_track.py + Market tab tests in scripts/test_studio_app.cjs. Next: deploy board_site/dist to Cloudflare Pages when ready so #market is live."
         }
       ],
       "remaining_action": "Done — PR #1300 merged, all CI checks green",
