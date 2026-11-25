@@ -112,6 +112,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3734 | any | claimed | gemini | 2026-11-25T20:31Z | chief · History of Science: one line-up to the end of January, a next job for every film, and pre-build while voice credits are at zero |  |
 | J3735 | mini | blocked | claudecode | – | review · Verify condition for J2886 |  |
 | J3736 | mini | open | – | – | 011 picture · assembly · HOS 011 Anaesthesia: £0 Flow pass-1 price pass (66 plates), P5:16b fix & guarded runner build | J3734 |
+| J3737 | any | open | – | – | 013 picture · review · HOS 013 Darwin & Wallace: non-producer review & port of J2652 v03f-r4 (ad52a2dc) to main | J2652 |
 
 Recently finished:
 
