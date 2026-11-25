@@ -274274,13 +274274,13 @@
       "stage": "vo",
       "after": "J3020",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T14:00Z",
-      "eta": "2026-11-25T16:00Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-17T23:36Z",
-      "result": "",
+      "result": "PR #1325 merged: OWB:064 narration every_planet_explained_vo_v01 recorded from locked v04 (556f3c8d...) via vo_take.py under desk-lock elevenlabs (Ben Orbit Narrator, eleven_v3, speed 1.04, 8 chapters, 0.7s gaps, 8,481 spoken chars / 1,341 words) + scribe_v2. Masters on studio-live (WAV SHA-256 4b478fcd..., MP3 cdf06f5a..., 683.86s, -20.21 LUFS, -3.64 dBTP, 1.1 LU spread, 0 repetitions, 63/63 raw Scribe mismatches verified as spelling/ordinal-date/digit formatting = 100% true match, 0 wording discrepancies, Sentence 1 6.52s <8s, Sentence 2 answer 10.98s <20s, Subscribe Beat 35.9%). Settled ElevenLabs balance 8,003/121,114 (3,940 net credits billed, 5,003 above 3,000 HOS reserve, £0 cash, can_extend=false). Acting Chief gemini PASS & exact-hash lock in jobs/reviews/J3021/CHIEF_RULING.md; status.json vo=done; J3022 released. Actual hearing reserved for Ben final UAT watch.",
       "history": [
         {
           "at": "2026-11-17T23:36Z",
@@ -274321,6 +274321,11 @@
           "at": "2026-11-25T14:15Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Step 5 done: PR #1325 passed CI and merged to main; studio-live WAV/MP3 + git evidence/timestamps/CHIEF_RULING.md landed; status.json vo=done"
+        },
+        {
+          "at": "2026-11-25T14:15Z",
+          "by": "gemini",
+          "what": "done: PR #1325 merged: OWB:064 narration every_planet_explained_vo_v01 recorded from locked v04 (556f3c8d...) via vo_take.py under desk-lock elevenlabs (Ben Orbit Narrator, eleven_v3, speed 1.04, 8 chapters, 0.7s gaps, 8,481 spoken chars / 1,341 words) + scribe_v2. Masters on studio-live (WAV SHA-256 4b478fcd..., MP3 cdf06f5a..., 683.86s, -20.21 LUFS, -3.64 dBTP, 1.1 LU spread, 0 repetitions, 63/63 raw Scribe mismatches verified as spelling/ordinal-date/digit formatting = 100% true match, 0 wording discrepancies, Sentence 1 6.52s <8s, Sentence 2 answer 10.98s <20s, Subscribe Beat 35.9%). Settled ElevenLabs balance 8,003/121,114 (3,940 net credits billed, 5,003 above 3,000 HOS reserve, £0 cash, can_extend=false). Acting Chief gemini PASS & exact-hash lock in jobs/reviews/J3021/CHIEF_RULING.md; status.json vo=done; J3022 released. Actual hearing reserved for Ben final UAT watch."
         }
       ],
       "remaining_action": "Done — J3021 narration locked and PR #1325 merged; releasing J3022",
