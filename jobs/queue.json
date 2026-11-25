@@ -335757,16 +335757,21 @@
           "at": "2026-11-25T08:25Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J3691 as acting Chief (gemini); reading HOS tooling, rules, and J3489 context."
+        },
+        {
+          "at": "2026-11-25T08:30Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Completed read-only CDP :9222 Flow UI inspection (0 credits): verified exact model labels (Omni 1.2 Flash, Omni 1.1 Flash Leaving 5 Dec, Veo 3.1 - Lite 5 cr, Veo 3.1 - Fast 10 cr Leaving 5 Dec, Veo 3.1 - Quality 100 cr Leaving 5 Dec, Veo 3.1 - Lite [Lower Priority] 0 cr), Frames/Ingredients parity, Veo 4s/6s/8s radios vs Omni 1.2 360p/720p radios + Length slider (0..12, val 5 = 8 sec, 24 cr)."
         }
       ],
-      "remaining_action": "Inspecting Flow UI model picker on CDP :9222 (read-only) and existing HOS Flow tooling/rules",
+      "remaining_action": "Updating orbit_flow_veo_ui.py in a clean HOS worktree for Veo 3.1 Lite, Lite [Lower Priority], and Omni 1.2 Flash",
       "due": "2026-12-03T18:00:00Z",
       "kind": "assembly",
       "plain": "Prepare HOS Flow script and rules PR before Veo 3.1 Fast/Quality retire on 5 Dec",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-25T08:25Z",
+        "at": "2026-11-25T08:30Z",
         "by": "gemini",
         "plan": [
           "Inspect Flow UI on CDP 9222 and codebase",
@@ -335775,7 +335780,7 @@
           "Draft studio/RULES.md and AGENTS.md updates",
           "Open PR and apply acting-Chief review/decision"
         ],
-        "note": "Claimed J3691 as acting Chief (gemini); reading HOS tooling, rules, and J3489 context."
+        "note": "Completed read-only CDP :9222 Flow UI inspection (0 credits): verified exact model labels (Omni 1.2 Flash, Omni 1.1 Flas"
       }
     },
     {
