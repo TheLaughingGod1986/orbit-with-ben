@@ -341313,20 +341313,44 @@
           "at": "2026-11-25T19:01Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T19:01Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3734 as acting Chief for HOS; inspecting live repo and queue state."
         }
       ],
-      "remaining_action": "Make one HOS line-up to the end of January and give each film its next job",
+      "remaining_action": "Auditing HOS films (008-014, 127, 128, 136, 137), WIP.json, film_briefs.json, and open/blocked HOS jobs",
       "due": "2026-11-27T18:00:00Z",
       "kind": "chief",
       "urgent": 9,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-25T19:01Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Audit HOS films and blocked jobs",
+          "Unify Dec-Jan line-up in plan, status, and briefs",
+          "Rule on 011/013 blocks, WIP, and queue next jobs",
+          "Pre-build £0 plans, boards, thumbs, and packages",
+          "Verify checks and post desk #180 + J3734 reports"
+        ],
+        "note": "Claimed J3734 as acting Chief for HOS; inspecting live repo and queue state."
+      },
+      "taskKeys": [
+        "HOS:008",
+        "HOS:009",
+        "HOS:010",
+        "HOS:011",
+        "HOS:012",
+        "HOS:013",
+        "HOS:014",
+        "HOS:127",
+        "HOS:128",
+        "HOS:136",
+        "HOS:137"
+      ]
     },
     {
       "id": "J3735",
