@@ -342616,13 +342616,13 @@
       "stage": "edit",
       "after": "J3743",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T23:41Z",
-      "eta": "2026-11-26T01:41Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T20:15Z",
-      "result": "",
+      "result": "Acting-Chief (gemini) PASS ruling on WW2:004 v04 (ww2-channel PR #172 68705c2 + PR #174 4ba78bd + PR #177 e923ac1, 07_Edit/CHIEF_RULING_J3751.md; OWB PR #1332 c8297639f7): 100% audiovisual QA verified full-bleed 16:9 archive framing across all 111 shots (fixing Ben's 0:15 change note) + J3715 Cuts A+B (-61.8 s, 21:35.54, decoded audio identical to v03, 52.88% archive, 0 decode errors, -15.78 LUFS/-1.46 dBFS, moov=32). Checksum-verified v04 (62b9e10c...364a8afa, 524,164,879 B) staged in WW2 UAT alongside untouched v02 and 3 thumbnails, uploaded to private R2 (ww2-004-v04), and J3430 awaits_ben updated (--version v04 --prev WW2-004, due 28 Nov 20:00Z, planned air 1 Dec 17:00Z). v02/v03 untouched; £0 spend; upload_authorized: false; no YouTube upload/schedule.",
       "history": [
         {
           "at": "2026-11-25T20:15Z",
@@ -342683,6 +342683,11 @@
           "at": "2026-11-25T23:41Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T23:41Z",
+          "by": "gemini",
+          "what": "done: Acting-Chief (gemini) PASS ruling on WW2:004 v04 (ww2-channel PR #172 68705c2 + PR #174 4ba78bd + PR #177 e923ac1, 07_Edit/CHIEF_RULING_J3751.md; OWB PR #1332 c8297639f7): 100% audiovisual QA verified full-bleed 16:9 archive framing across all 111 shots (fixing Ben's 0:15 change note) + J3715 Cuts A+B (-61.8 s, 21:35.54, decoded audio identical to v03, 52.88% archive, 0 decode errors, -15.78 LUFS/-1.46 dBFS, moov=32). Checksum-verified v04 (62b9e10c...364a8afa, 524,164,879 B) staged in WW2 UAT alongside untouched v02 and 3 thumbnails, uploaded to private R2 (ww2-004-v04), and J3430 awaits_ben updated (--version v04 --prev WW2-004, due 28 Nov 20:00Z, planned air 1 Dec 17:00Z). v02/v03 untouched; £0 spend; upload_authorized: false; no YouTube upload/schedule."
         }
       ],
       "remaining_action": "Parked for Chief to merge PR #172 + PR #174, stage v04 to iCloud WW2 UAT + R2 ww2-004-v04, and update Ben watch card WW2:004",
@@ -342711,7 +342716,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "e923ac1"
     },
     {
       "id": "J3745",
