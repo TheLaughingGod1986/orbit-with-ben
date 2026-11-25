@@ -47,7 +47,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3365 | mini | open | – | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J3369 | mini | blocked | codex | – | 001 thumbs · studio · Field Order History pilot 1: 48-hour thumbnail decision |  |
 | J3415 | mini | blocked | – | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
-| J3430 | mini | open (after J3429) | – | – | WW2:004 edit · for gemini · assembly · WW2 film 004: edit, captions, three thumbnails and upload package, to Ben's watch |  |
+| J3430 | mini | claimed | gemini | 2026-11-25T10:02Z | WW2:004 edit · for gemini · assembly · WW2 film 004: edit, captions, three thumbnails and upload package, to Ben's watch |  |
 | J3431 | mini | blocked | codex | – | WW2:005 picture · image · WW2 film 005: top up the archive photographs to about two-thirds of screen time before the edit |  |
 | J3432 | mini | open (after J3431) | – | – | WW2:005 edit · assembly · WW2 film 005: edit, captions, three thumbnails and upload package, to Ben's watch |  |
 | J3434 | mini | blocked | gemini | – | WW2:006 edit · assembly · WW2 film 006: edit, captions, three thumbnails and upload package, to Ben's watch |  |
