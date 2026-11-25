@@ -314408,10 +314408,10 @@
       "stage": "edit",
       "after": "J3431",
       "eta_min": 480,
-      "status": "claimed",
-      "by": "claudecode",
-      "since": "2026-11-25T13:14Z",
-      "eta": "2026-11-25T21:14Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T15:29Z",
       "result": "",
@@ -314510,6 +314510,11 @@
           "at": "2026-11-25T13:16Z",
           "by": "claudecode",
           "what": "step 3 of 8 done: Six swapped-in photos looked at and fit their lines. Seven of the drawn plates are text boxes only and must be redrawn before the build; list saved with the film."
+        },
+        {
+          "at": "2026-11-25T13:16Z",
+          "by": "claudecode",
+          "what": "released: Still step 3 of 8 done; step 4 started, not finished. Added 03_Picture/PLATE_AND_PHOTO_CHECK_J3432.md (ww2 branch claudecode/J3432-vo-splice, commit ccf665a, PR 148, worktree /Volumes/MiniWork/worktrees/J3432-ww2; merge is Chief's): six substituted photos seen as stills and fit; 24 of 35 photos are 800 px or less so moves stay under 8%; eight portrait/square files need a fill crop. Plates: remove footer() from all; G2, G4, G9, G11, G13, G14, G15 are text boxes only (about 115 s of screen) and must be redrawn as maps/drawings per the note; N01-N04 not rendered; add G16; stage G10. No film build running. Detached: tmux nas-offload-1125 (scratch offload, Mini at 6 GB free), log ~/_desk/logs/nas-offload-1125.log, done file ~/_desk/logs/nas-offload-1125.done. Next: rewrite draw_maps_005.py plates, look at each, then build 1080p under /Volumes/MiniWork/scratch/J3432 in detached tmux."
         }
       ],
       "remaining_action": "Redraw the map plates without text boxes or footers, then build the St Nazaire cut",
