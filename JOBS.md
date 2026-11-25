@@ -92,7 +92,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3561 | mini | blocked | claude | – | studio · WW2 pilot 2: read at 1,000 impressions or 48 hours, and change the title that day if click-through is under 2% |  |
 | J3564 | gemini | open | – | – | HOS:137 sources · facts · HOS 137 Accidental Inventions (Thu 24 Dec): independent facts audit of v01 script, SOURCES.md & Shorts (PR #754) | J3513 |
 | J3565 | mini | open (after J3564) | – | – | HOS:137 script · review · HOS 137 Accidental Inventions (Thu 24 Dec): review and lock script v01, package-first scoring, sources & Shorts (PR #754) | J3513 |
-| J3573 | mini | claimed | macbook | 2026-11-25T02:22Z | WW2:005 edit · assembly · WW2 005 Short 2: build 'St Nazaire Raid: Why the Ship Blew Up Hours Later' for Ben watch | J3563 |
 | J3574 | mini | open (after J3542) | – | – | WW2:005 edit · assembly · WW2 005 Short 3: build 'St Nazaire Dock: The 35ft Gate Built for Tirpitz' for Ben watch | J3563 |
 | J3576 | mini | open (after J3542) | – | – | WW2:006 edit · assembly · WW2 006 Short 2: build 'Mosquito vs B-17: Same 4,000lb Bomb, Two Crew' for Ben watch | J3563 |
 | J3577 | mini | blocked | macbook-2 | – | WW2:007 edit · assembly · WW2 007 Short 1: build 'WW2 Floating Dry Docks: 55ft Fold-Up Steel Walls' for Ben watch | J3563 |
