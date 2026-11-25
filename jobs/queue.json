@@ -341589,9 +341589,14 @@
           "at": "2026-11-25T19:20Z",
           "by": "claudecode",
           "what": "step 3 of 5 done: Sheets read: 3 card items fixed; 7 checks recomputed (0 in-word cuts over 1213 words, max row 7.00 s, callback 3.56 s, 43/43 onsets); PICTURE_PLAN_v02 json+md byte-identical to main"
+        },
+        {
+          "at": "2026-11-25T19:22Z",
+          "by": "claudecode",
+          "what": "step 4 of 5 done: Ported as HOS PR 787 (041a2c45); check_all 10/10 PASS locally"
         }
       ],
-      "remaining_action": "Porting ad52a2dc to a fresh PR on HOS main and running check_all",
+      "remaining_action": "Chief to confirm CI on HOS PR 787, merge it and close J2652",
       "due": "2026-11-26T18:00:00Z",
       "kind": "review",
       "plain": "Independently review and merge 013's 35 free graphics and timing rough (J2652)",
@@ -341604,9 +341609,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-25T19:20Z",
+        "at": "2026-11-25T19:22Z",
         "by": "claudecode",
         "plan": [
           "Read rules and the rulings",
@@ -341615,7 +341620,7 @@
           "Port to fresh PR on main",
           "check_all, CI, park for Chief"
         ],
-        "note": "Sheets read: 3 card items fixed; 7 checks recomputed (0 in-word cuts over 1213 words, max row 7.00 s, callback 3.56 s, 4"
+        "note": "Ported as HOS PR 787 (041a2c45); check_all 10/10 PASS locally"
       },
       "taskKeys": [
         "HOS:013"
