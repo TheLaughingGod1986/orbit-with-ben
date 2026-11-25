@@ -111,10 +111,25 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3729 | mini | open (after J3559) | – | – | WW2:017 edit · assembly · WW2 017 Short 1: Pearl Harbor salvage Short for the 7 Dec anniversary, from the film's narration, for Ben's watch |  |
 | J3730 | mini | blocked | claudecode | – | review · Verify condition for J3487 |  |
 | J3731 | macbook | open | – | – | for claudecode · MacBook: publish (or confirm lost) the unpushed Battle of the Bulge work for J3487 |  |
-| J3732 | mini | claimed | claudecode | 2026-11-25T17:52Z | studio · First-day check at 6 h: "Where Will the International Space Station Crash?" (_dVWVUnbDzA) |  |
 
 Recently finished:
 
+- J3732 done: First-day check at 6 h: "Where Will the International Space Station Crash?" (_dVWVUnbDzA) ("Where Will the International Space Station Crash?" (_dVWVUnbDzA) · Orbit With Ben · Short · went live Wed 25 Nov 11:30 London
+At 6 h: views 906 · shown in feed about 2021 (from 881 feed views) · stayed to watch 43.6% · average viewed 85.9%
+Usual for this channel: stayed to watch 33.8%, average viewed 66.0%
+
+Verdict: AHEAD
+  - 906 views at 6 h; the last 10 checked at the same age had 163 (median).
+  - 906 views at 6 h; Studio says the usual for us at this age is 210.
+
+What is different about this one
+  - It is a second upload of the same video (it replaced xdurJQcoiGM).
+
+Do now
+  - Nothing to fix.
+
+Carry forward
+  - A strong start is a lesson too: note what is different about this one.)
 - J3728 done: WW2 film 017 (Pearl Harbor, now Tue 8 Dec): full archive harvest, code maps, three thumbnails and the picture plan (ww2-channel PR 161 open for the Chief (branch claudecode/J3728-017-picture, ee6aaa2): 107 Navy photo numbers on the NAS (104 usable) logged with collection, licence, SHA-256, by-eye note and beat; picture plan v02 puts Navy photos in hand at 64% of screen time (67% if 3 wanted views are found), 59 photos on beats, 45 spare; 3 code maps and 3 thumbnails included. Chief to rule: NH 50930/50931 are Japanese-taken (held out); 20% of screen time uses photos whose catalogue captions are still to be read before naming a ship or date; map caveats in the PR. Not done: Nevada in Dry Dock 2, Nevada off Utah Beach, West Virginia in Tokyo Bay not found; 80-G-32462 and NH 64484 too small; plan's explanatory diagrams not drawn (outside this job). Commons download still running detached (tmux J3728-pass2, log ~/_desk/logs/J3728-pass2.log, done file ~/_desk/logs/J3728-pass2.done): do not start a second copy; when it ends re-run build_provenance_017.py and commit RETRIEVAL_LOG_017.json.)
 - J3726 done: Orbit and History of Science: propose five space-history crossover pairs and how the two channels would link them (Opened PR #1328 (branch macbook/J3726) with 05_Analytics/CROSSOVER_PROPOSAL_2026-12.md. Proposes 5 ranked space-history crossover pairs (pilot recommendation: #1 Neptune Found by Maths <-> What Is It Like on Neptune Today; runner-up #2 Hubble's Flawed Mirror <-> What Has Hubble Discovered) with signed-out US YouTube autocomplete + top-10 views (vidIQ marked to do in a cloud lane), full OWB/HOS/WIP overlap audit (Galileo's moons & Dark Matter tested and parked), YouTube Help-verified cross-linking features incl. same-channel-only Shorts Related Video limit and Ben Studio steps, 14 Feb 2027 primary readout plan, and HOS no-space/style/cost risks (£0 cash). Proposal only; parked for Chief (claude) to review, merge, and take one recommendation to Ben.)
 - J3723 done: WW2 006: v03 pre-watch opening trims (J3715 Cuts A+B, 124.5 s), chapters, captions and render (v03 pre-watch build finished and independently re-checked: master 1418.37 s on NAS studio-live film 006 07_Edit/v03_master (sha256 9d1968b7...8192f585e), Cuts A 82.667 s + B 41.792 s = 124.458 s, -15.3 LUFS, -1.6 dBTP, 0 decode errors, 344 captions, 7 chapters, v02 untouched (60df8793...). ww2-channel PR #159 open on main, parked for Chief, no merge, no PASS. No one has listened to or watched v03: audiovisual QA job is next. Chief points in HANDOFF_J3723_v03.md: description first line still leads on the removed 1939 shortage passage; no card for renamed Chapter 1; status/board/watch copy still v02.)
@@ -124,4 +139,3 @@ Recently finished:
 - J3711 done: Verify condition for J3020 (PASS & exact-hash script lock granted by elected acting Chief (gemini) on OWB:064 v04 (SHA-256 556f3c8df68ee3cd1420ef03b8cedc04a7f0f79463d98ebf4d3d5e5753408db8; SOURCES.md 4a7e3fa5...); merged PRs #1269, #1274, #1322, and #1324; closed superseded PRs #1015/#1251/#1262/#1265; completed J3020; set 064 script/sources done; released J3021 narration via after: J3020. Ruling: jobs/reviews/J3711/CHIEF_RULING.md.)
 - J3710 done: St Nazaire: Chief ruling on the J3614 shorter paper recut (accept, merge PR 50, release the edit; or fix) (Chief ruling (gemini, 25 Nov): ACCEPTED J3614 137-sentence paper recut (52.067% strict aligned / 52.282% est / 53.639% natural, £0 spend). Merged WW2 PR #50 (6661e8c) and PR #147 (0f79fdf: status.json picture=done + 03_Picture/RULING_J3710.md with existing-take splice scope and 25 Nov Rule 1 hygiene directives). Completing J3431/J3708 and releasing J3432.)
 - J3708 done: Verify condition for J3431 (Condition satisfied under Acting Chief ruling J3710 (25 Nov): J3614 recut accepted (52.07% strict aligned), WW2 PR #50 (6661e8c) and PR #147 (0f79fdf) merged, J3431 completed, J3432 released.)
-- J3707 done: Verify condition for J3125 (Acting Chief ruling (PR #1320 merged at c2ad86f9e2, jobs/reviews/J3707/CHIEF_DECISION.md): CONDITION SATISFIED; J3125 reopened and J3707 closed done. HOS Studio CDP 9460 Advanced Mode First 24 hours read (2026-11-25T12:25Z): named 21 Nov control Bks_JLId1ew = 23 total views (15 YT Search [65.2%], 8 Shorts feed [34.8%] < 50%); Sq_lV89VMUs/fgsR8yAHr5s remain Private/unavailable (J3188, no substitution); ChbsigHD5_o 48h accepted (J3226). 0/3 named controls >=50%: sY0PSQFxjp8 NOT CLEARED; J3125 reopened to execute authorized unschedule + Buffer cancellation + UPLOADS/BUFFER_POSTS/library/LEARNINGS row 36 updates by Thu 26 Nov 18:00Z. Separate non-substituted v05 context logged (l8bxm9L3zl8 15/25=60.0%, el30-mHiH-0 477/532=89.7%). PR #1253 remains superseded. Zero YouTube/Buffer/schedule changes or spend in J3707 (£0).)
