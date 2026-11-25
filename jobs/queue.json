@@ -334434,16 +334434,21 @@
           "at": "2026-11-25T06:11Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Created clean worktree gemini/J3676-hos136-facts-v02 off origin/macbook/J3675 (PR #766, fff4addb) and loaded v02 script, SOURCES, FACT_NOTES_v02, and SHORTS_SCRIPTS_v02"
+        },
+        {
+          "at": "2026-11-25T06:13Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Programmatic checks confirm v02 script (1,240 whitespace / 1,260 review:script words, 93.4/100 PASS, gate:episode 9/9 PASS), Part 01 milestones (13.6s/22.0s/22.0-29.2s/29.2-39.2s), S01=42w & S02=42w, and 0 stacked cards; opening LA-602 PDF pages 1,2,3,10,12,15,16 and verifying exact quotes"
         }
       ],
-      "remaining_action": "Auditing all 8 J3552 FLAGs, 2 R20 polishes, J3553 ADD items, and new spoken claims in v02",
+      "remaining_action": "Verifying LA-602 PDF pages visually and checking remaining verbatim quotes & edge cases",
       "due": "2026-12-02T18:00:00Z",
       "kind": "facts",
       "plain": "Independently verify all v02 facts, quotes, and Shorts lengths for HOS 136 Trinity Test",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-25T06:11Z",
+        "at": "2026-11-25T06:13Z",
         "by": "gemini",
         "plan": [
           "Inspect v02 PR & J3552/J3553 flags",
@@ -334452,7 +334457,7 @@
           "Run programmatic word/timing & script checks",
           "Write GEMINI_FACTS_CHECK_v02.md, run check_all.sh & open PR"
         ],
-        "note": "Created clean worktree gemini/J3676-hos136-facts-v02 off origin/macbook/J3675 (PR #766, fff4addb) and loaded v02 script,"
+        "note": "Programmatic checks confirm v02 script (1,240 whitespace / 1,260 review:script words, 93.4/100 PASS, gate:episode 9/9 PA"
       },
       "taskKeys": [
         "HOS:136"
