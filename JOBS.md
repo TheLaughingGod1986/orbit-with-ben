@@ -108,7 +108,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3706 | mini | blocked | claude | – | studio · WW2 pilot 2: 7-day after-check of the new title and U-boat thumbnail (changed 25 Nov 10:48Z) |  |
 | J3707 | mini | blocked | macbook | – | review · Verify condition for J3125 |  |
 | J3708 | mini | blocked | claudecode | – | review · Verify condition for J3431 |  |
-| J3709 | mini | claimed | claudecode | 2026-11-25T14:10Z | WW2:009 script · review · WW2 009: verify J3492 condition after CLEAN J3642 v04 claims pass | https://github.com/TheLaughingGod1986/ww2-channel/pull/146 |
+| J3709 | mini | blocked | claudecode | – | WW2:009 script · review · WW2 009: verify J3492 condition after CLEAN J3642 v04 claims pass | https://github.com/TheLaughingGod1986/ww2-channel/pull/146 |
 | J3710 | any | claimed | gemini | 2026-11-25T12:34Z | WW2:005 picture · chief · St Nazaire: Chief ruling on the J3614 shorter paper recut (accept, merge PR 50, release the edit; or fix) |  |
 
 Recently finished:
