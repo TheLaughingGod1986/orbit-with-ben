@@ -325541,19 +325541,30 @@
           "at": "2026-11-25T00:05Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T00:07Z",
+          "by": "macbook-2",
+          "what": "step 1 of 6 done"
         }
       ],
-      "remaining_action": "Cut locked 002 narration (10:50.802-11:13.282 + 11:39.882-12:01.482), assemble 1080x1920 vertical Short, and put on Ben watch",
+      "remaining_action": "Inspecting locked 002 VO, music, PD photos, and J3542/J3571 Short pipeline",
       "due": "2026-11-27T18:00:00Z",
       "kind": "assembly",
       "plain": "Build the second Battle of the Atlantic Short about how centimetric radar beat the U-boat Metox warning receiver",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-24T23:22Z",
-        "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "step": 1,
+        "of": 6,
+        "at": "2026-11-25T00:07Z",
+        "by": "macbook-2",
+        "plan": [
+          "Inspect locked 002 assets & provenance",
+          "Check audio & music bed timings",
+          "Inspect & verify PD archive stills",
+          "Render 9:16 schematic & assemble v01 Short",
+          "Run technical & visual QA on stills",
+          "Copy to NAS with SHA-256 & open PR"
+        ]
       }
     },
     {
