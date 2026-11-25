@@ -337082,9 +337082,14 @@
           "at": "2026-11-25T10:24Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T10:24Z",
+          "by": "claudecode",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Verify readiness: Claude Code privacy-check, push, PR and merge of codex/j3635-settings-audit (09320b462e) in ww2-channel, then close J3635",
+      "remaining_action": "Reading the parked settings-audit work before publishing it",
       "kind": "review",
       "recheck_of": "J3635",
       "mini_only": true,
@@ -337100,11 +337105,15 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-25T10:24Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read the original job and its branch",
+          "Check the diff for anything private",
+          "Push, open and merge the pull request",
+          "Update the original job and report"
+        ]
       }
     },
     {
