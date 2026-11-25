@@ -322206,13 +322206,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T13:15Z",
-      "eta": "2026-11-25T15:15Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T10:53Z",
-      "result": "",
+      "result": "Private upload complete and all publication records merged: Ben-approved HOS 010 dinosaur Short A v01 (What Killed the Dinosaurs?, HOS:ASK:J2933.1, verified NAS SHA-256 ea29e26487d6631416449c9adf712f51b1b9508db06b7b6c29edc4236970fe59) uploaded privately as mpK3D6S7WLk on 24 Nov 2026 19:13:40Z (privacy absent->private, publishAt absent->absent, madeForKids false, en-GB captions serving, THE LINE cliff cover read back, Related None pending actual long; post-upload channel:audit 69 videos / 0 errors, lint:package PASS, check_all.sh ALL CHECKS PASS). Privacy-checked and merged via HOS PR #782 (2b5e2e3c) and OWB PR #1317 (eba495f15b); superseded HOS PR #749 closed; Buffer held with zero posts. J3611 completed all private-only Studio finishing on mpK3D6S7WLk (HOS PR #784, 8c9ab7fa) and remains parked waiting on actual HOS 010 long upload id and confirmed air date. GBP 0.",
       "history": [
         {
           "at": "2026-11-24T10:53Z",
@@ -322323,6 +322323,11 @@
           "at": "2026-11-25T13:15Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T13:15Z",
+          "by": "gemini",
+          "what": "done: Private upload complete and all publication records merged: Ben-approved HOS 010 dinosaur Short A v01 (What Killed the Dinosaurs?, HOS:ASK:J2933.1, verified NAS SHA-256 ea29e26487d6631416449c9adf712f51b1b9508db06b7b6c29edc4236970fe59) uploaded privately as mpK3D6S7WLk on 24 Nov 2026 19:13:40Z (privacy absent->private, publishAt absent->absent, madeForKids false, en-GB captions serving, THE LINE cliff cover read back, Related None pending actual long; post-upload channel:audit 69 videos / 0 errors, lint:package PASS, check_all.sh ALL CHECKS PASS). Privacy-checked and merged via HOS PR #782 (2b5e2e3c) and OWB PR #1317 (eba495f15b); superseded HOS PR #749 closed; Buffer held with zero posts. J3611 completed all private-only Studio finishing on mpK3D6S7WLk (HOS PR #784, 8c9ab7fa) and remains parked waiting on actual HOS 010 long upload id and confirmed air date. GBP 0."
         }
       ],
       "remaining_action": "J3530 (claudecode): privacy-check, rebase, push, open PRs & merge green codex/J3512-resume (HOS) + codex/J3512-registry (OWB); then close J3512. Do not re-upload mpK3D6S7WLk.",
@@ -322354,7 +322359,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "HOS PR #782 (2b5e2e3c); OWB PR #1317 (eba495f15b)"
     },
     {
       "id": "J3513",
