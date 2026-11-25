@@ -325878,16 +325878,21 @@
           "at": "2026-11-25T06:36Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Fetched HOS PR #754 (1ae0da81) into clean worktree /Volumes/MiniWork/scratch/J3564-hos and inspected script v01, SOURCES.md, FACT_NOTES_v01.md, SHORTS_SCRIPTS_v01.md, and J3503 guardrails"
+        },
+        {
+          "at": "2026-11-25T06:42Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Independently verified all 24 FACT_NOTES rows, 23 live URLs, primary patents (US3057356A, US3633A, US1098342A, FR405881A, US3691140A), PMC3232561, PMC5403050, Nobel/NIHF/3M sources, Shorts, 13 WHO cards & packaging JSON; identified 4 blocking FLAGs + 8 PARTIAL nuances"
         }
       ],
-      "remaining_action": "Independently verify all 24 claims, dates, lifespans, quotes, patents, and 6 guardrails",
+      "remaining_action": "Write independent audit GEMINI_FACTS_CHECK_v01.md and update status.json & production-status.md on clean worktree",
       "due": "2026-12-08T18:00:00Z",
       "kind": "facts",
       "plain": "Fact-check every spoken claim, quote, date, and guardrail in the Accidental Inventions v01 script and Shorts.",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-25T06:36Z",
+        "at": "2026-11-25T06:42Z",
         "by": "gemini",
         "plan": [
           "Fetch PR #754 & inspect files",
@@ -325896,7 +325901,7 @@
           "Run HOS checks & push PR",
           "Update queue, desk & thread reports"
         ],
-        "note": "Fetched HOS PR #754 (1ae0da81) into clean worktree /Volumes/MiniWork/scratch/J3564-hos and inspected script v01, SOURCES"
+        "note": "Independently verified all 24 FACT_NOTES rows, 23 live URLs, primary patents (US3057356A, US3633A, US1098342A, FR405881A"
       },
       "taskKeys": [
         "HOS:137"
