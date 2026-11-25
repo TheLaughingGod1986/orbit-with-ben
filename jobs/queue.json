@@ -314457,10 +314457,10 @@
       "stage": "edit",
       "after": "J3431",
       "eta_min": 480,
-      "status": "claimed",
-      "by": "claudecode",
-      "since": "2026-11-25T13:31Z",
-      "eta": "2026-11-25T21:31Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T15:29Z",
       "result": "",
@@ -314584,6 +314584,11 @@
           "at": "2026-11-25T13:35Z",
           "by": "claudecode",
           "what": "step 3 of 8 done: 17 map and drawing plates redrawn with no footers or text-only cards and looked at once; two still need a fix, no build started"
+        },
+        {
+          "at": "2026-11-25T13:35Z",
+          "by": "claudecode",
+          "what": "released: Still step 3 of 8 done; step 4 part done. draw_maps_005.py rewritten on ww2 branch claudecode/J3432-vo-splice (PR 148, worktree /Volumes/MiniWork/worktrees/J3432-ww2; merge is Chief's): 17 plates as maps and drawings, no footers, no text-only cards, G10 in three stages (G10a-c), new G16, G14 and N01-N04 dropped. PNGs in /Volumes/MiniWork/scratch/J3432/plates (render: python3 draw_maps_005.py --out-dir <dir> --manifest-json <file> --skip-mp4). All looked at once as stills; after fixes only G1, G3, G8, G9, G11, G13 looked at again. To fix: G13 torpedo lines cross the OLD ENTRANCE label; G9 beams read as a star. Harbour and estuary plans are schematic, layout not checked against a source. Nothing running detached; no build started. Next: fix those two, look at the rest, copy plates to the film NAS folder, build 1080p in detached tmux under /Volumes/MiniWork/scratch/J3432 (Mini disk 5 GB free, MiniWork 12 GB)."
         }
       ],
       "remaining_action": "Fix two map plates (G13 label, G9 beams), look at the rest again, then build the St Nazaire cut",
