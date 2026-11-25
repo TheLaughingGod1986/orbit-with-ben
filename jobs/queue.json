@@ -331636,9 +331636,14 @@
           "at": "2026-11-25T02:03Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T02:04Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Inspect WW2 004-S1 v01 stills, captions, provenance and technical checks, then hand off for Chief PR #117 merge and Ben watch card WW2:004-S1",
+      "remaining_action": "Inspecting Rule-H requirements, PR #117 diff, and verifying NAS deliverables for WW2:004-S1",
       "due": "2026-11-28T18:00:00Z",
       "kind": "review",
       "plain": "Check the finished Mark 14 torpedo depth-error Short and hand it off for Ben's watch",
@@ -331652,12 +331657,20 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T02:03Z",
+        "of": 5,
+        "at": "2026-11-25T02:04Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify NAS master and PR #117 receipts",
+          "Inspect video, audio, full-res frames and caption/archive invariants",
+          "Write J3647 independent REVIEW.md",
+          "Re-check Chief status and execute Chief handoff/merge/watch card if KEEP",
+          "Publish report and finish J3647"
+        ]
+      },
+      "taskKeys": [
+        "WW2:004"
+      ]
     },
     {
       "id": "J3648",
