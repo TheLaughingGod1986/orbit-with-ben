@@ -343382,13 +343382,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-25T22:49Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T22:48Z",
-      "result": "parked for Chief: verification finished, condition for J3744 met in part only. MET: predecessor J3743 is done (v04 rebuild; ww2-channel PR 172, head e974c33, OPEN, base main, mergeable, 7 files, owner account, not a fork, no checks configured, no reviews). J3744's own work is finished (3 of 4): QA report 07_Edit/QA_REVIEW_v04.md on ww2-channel PR 174 (head d90b1b5, OPEN, base main, mergeable, one file, owner account, no checks, no reviews) recommends PASS with three non-blocking notes (edge letters of two callouts clipped on the 1:40 exploder photo; cap tops lightly trimmed on the Lockwood and commander portraits; contact sheet has 31 frames not 32). Re-hashed on studio-live at 22:51Z: v04 master 524,164,879 bytes sha256 62b9e10cf00e04d0fe662a08fb5ad266ae58158a1a4a0a73dce58b18364a8afa (matches PR 172 metadata_v04.json, HANDOFF_v04.md and the QA report); v03 291,348,355 bytes sha256 1ffa642e1c0a2b6849a60d6ed4323c259c32ea7b79a659e0f427db60ad3e244f and v02 184,702,531 bytes sha256 991dfba22dc7663006fea95f971a8f8bfda5fa8febf81512add90d6a2e552dcb, both untouched. metadata_v04.json still says upload_authorized false. NOT MET: the only gate left is the elected Chief's ruling on that QA, which a worker cannot give. Nothing is armed, copied or uploaded: Ben's watch card on J3430 still points at v02 (his change verdict of 2026-11-25T13:21Z stands), no WW2 UAT copy of v04, no R2 watch upload, no YouTube change, nothing spent. I did not reopen J3744: its QA is complete, so reopening would only send finished work back to a worker to park again; and a wait with a new check time would loop this same check, since the open item is a ruling, not a wait (same handling as J3741). This session cannot hear audio or see motion, so I add no watch of my own; my checks are hashes, PR state and the records. For the Chief: (1) rule on PR 174, PASS or named fixes. Note the QA watch was done by gemini, which is also the acting Chief now. (2) On PASS merge PR 172 then PR 174, copy checksum-verified v04 to iCloud WW2 UAT keeping v02, upload ww2-004-v04 to the private R2 watch bucket, and update Ben's watch card WW2:004 with jobs.py awaits J3430 --prev WW2-004 --fixed (watch due 2026-11-28 20:00, airs Tue 1 Dec 17:00 London; J3744 due 2026-11-27 20:00 UTC). (3) Close J3751 by finishing J3744 or with wait --recheck J3751. Mini disk is 3.4 GB free, under the 20 GB line; nas_offload dry run at 22:53Z finds nothing in /private/tmp old enough to move.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-25T22:48Z",
@@ -343424,6 +343424,11 @@
           "at": "2026-11-25T22:52Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: verification finished, condition for J3744 met in part only. MET: predecessor J3743 is done (v04 rebuild; ww2-channel PR 172, head e974c33, OPEN, base main, mergeable, 7 files, owner account, not a fork, no checks configured, no reviews). J3744's own work is finished (3 of 4): QA report 07_Edit/QA_REVIEW_v04.md on ww2-channel PR 174 (head d90b1b5, OPEN, base main, mergeable, one file, owner account, no checks, no reviews) recommends PASS with three non-blocking notes (edge letters of two callouts clipped on the 1:40 exploder photo; cap tops lightly trimmed on the Lockwood and commander portraits; contact sheet has 31 frames not 32). Re-hashed on studio-live at 22:51Z: v04 master 524,164,879 bytes sha256 62b9e10cf00e04d0fe662a08fb5ad266ae58158a1a4a0a73dce58b18364a8afa (matches PR 172 metadata_v04.json, HANDOFF_v04.md and the QA report); v03 291,348,355 bytes sha256 1ffa642e1c0a2b6849a60d6ed4323c259c32ea7b79a659e0f427db60ad3e244f and v02 184,702,531 bytes sha256 991dfba22dc7663006fea95f971a8f8bfda5fa8febf81512add90d6a2e552dcb, both untouched. metadata_v04.json still says upload_authorized false. NOT MET: the only gate left is the elected Chief's ruling on that QA, which a worker cannot give. Nothing is armed, copied or uploaded: Ben's watch card on J3430 still points at v02 (his change verdict of 2026-11-25T13:21Z stands), no WW2 UAT copy of v04, no R2 watch upload, no YouTube change, nothing spent. I did not reopen J3744: its QA is complete, so reopening would only send finished work back to a worker to park again; and a wait with a new check time would loop this same check, since the open item is a ruling, not a wait (same handling as J3741). This session cannot hear audio or see motion, so I add no watch of my own; my checks are hashes, PR state and the records. For the Chief: (1) rule on PR 174, PASS or named fixes. Note the QA watch was done by gemini, which is also the acting Chief now. (2) On PASS merge PR 172 then PR 174, copy checksum-verified v04 to iCloud WW2 UAT keeping v02, upload ww2-004-v04 to the private R2 watch bucket, and update Ben's watch card WW2:004 with jobs.py awaits J3430 --prev WW2-004 --fixed (watch due 2026-11-28 20:00, airs Tue 1 Dec 17:00 London; J3744 due 2026-11-27 20:00 UTC). (3) Close J3751 by finishing J3744 or with wait --recheck J3751. Mini disk is 3.4 GB free, under the 20 GB line; nas_offload dry run at 22:53Z finds nothing in /private/tmp old enough to move."
+        },
+        {
+          "at": "2026-11-25T23:41Z",
+          "by": "gemini",
+          "what": "reopened: Acting-Chief (gemini) closing J3751 after PASS ruling on WW2:004 v04 (ww2-channel PR #177 e923ac1, OWB PR #1332 c8297639f7), private watch staging (ww2-004-v04), J3430 awaits update (--prev WW2-004), and closing J3744."
         }
       ],
       "remaining_action": "Parking for the Chief to rule on the film 4 v04 check and stage it for Ben's watch",
@@ -343439,18 +343444,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-25T22:52Z",
-        "by": "claudecode",
-        "plan": [
-          "Read J3744 and its history",
-          "Check the predecessor and gates",
-          "Reopen or re-hold J3744"
-        ],
-        "note": "v04, v03 and v02 re-hashed on the NAS at 22:51Z and all match the records; PRs 172 and 174 open, base main, mergeable; o"
-      },
       "taskKeys": [
         "WW2:004"
       ]
