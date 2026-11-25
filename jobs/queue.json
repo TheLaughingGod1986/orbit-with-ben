@@ -1,5 +1,5 @@
 {
-  "next_id": 3670,
+  "next_id": 3671,
   "jobs": [
     {
       "id": "J0001",
@@ -333526,6 +333526,36 @@
           "Post report to studio thread"
         ]
       }
+    },
+    {
+      "id": "J3670",
+      "title": "HOS 128 Edison vs Tesla: long voiceover (6 parts) from locked script v03",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Record the 6-part long narration for HOS 128 (*Why Do We Use AC Instead of DC? (Edison vs Tesla)*) from the Acting Chief-locked v03 master script (J3660 KEEP/lock; HOS PR #762 merged as `84af0f7d05701a5147d7ad7fb30403a0152e80ff`; `review:script` 91.9/100 PASS; default `gate:episode` PASS).\n\n**Locked script (exact file & hash — verify before spending any credit):**\n- Path: `02_Video-Projects/128_Edison-Tesla-Westinghouse-Why-Do-We-Use-AC-Instead-Of-DC/01_Script/edison_tesla_ac_dc_script_master_v03.md`\n- SHA-256: `c389c3cfbf758f5f261103bc6aa174cdb85dcc6f48c7e546f50ae63c98d3bb8b`\n- Parts: 6 parts (~1,314 spoken words, ~8.8 min est.). Never alter a single spoken word of the locked script (regenerate the sentence instead).\n\n**Voice & credit rules (Mac mini only):**\n1. Voice: **Ben Orbit Narrator** (`eleven_v3`), API only through `04_Audio/tools/el_client.py` / `vo_take.py` on the Mac mini under `desk-lock elevenlabs` (one recorder at a time). Never use the ElevenLabs website or any other voice.\n2. Check live ElevenLabs balance first and log it with `ai_spend.py record --pool elevenlabs --film HOS:128`. Subscription credit floor is 0 (Ben, 9/12 Oct); spend nothing if balance is below what the take needs; never buy credits, top up, or spill into paid billing.\n3. Run `00_Brand/Channel-Setup/tools/vo_check_py312.sh` (word diff, loudness, pace, first minute) on every part; `atempo <= 1.06`. A take whose word check did not run FAILS.\n4. Commit take metadata, exact audio SHA-256 hashes, word timings, and pasted `vo_check` outputs to HOS in a clean PR (no media in git); update `status.json` and `production-status.md`; queue/park for Chief VO review and PASS.\n\n**Schedule & guardrails:**\n- Preserve **Thu 10 Dec 2026, 18:00 London** target (normal publish, no Premiere) and **Mon 7 Dec -> Thu 17 Dec** slip contingency.\n- **No picture, thumbnail, or scheduling spend** until Chief passes the VO.\n",
+      "ref": "HOS PR #762 (84af0f7d), J3660, J3547",
+      "film": "HOS:128",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T04:25Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T04:25Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 128 Edison vs Tesla: long voiceover (6 parts) from locked script v03",
+      "due": "2026-12-03T18:00:00Z",
+      "kind": "vo",
+      "plain": "Record and vo_check the 6-part long narration for HOS 128 from locked script v03 using Ben Orbit Narrator"
     }
   ],
   "focus": [
