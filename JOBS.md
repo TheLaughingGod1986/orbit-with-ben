@@ -119,7 +119,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3679 | mini | open | – | – | HOS:136 vo · vo · HOS 136 Trinity Test Explained: Shorts S01 & S02 voiceover from locked v02 scripts | HOS PR #767 (ab25f2de), J3677, J3553, J3678 |
 | J3684 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J3692 | any | blocked | gemini | – | review · AI spend: Google AI Ultra 20x vs Ultra 5x re-review before 12 Jan 2027 renewal, for Ben |  |
-| J3695 | mini | blocked | claudecode | – | review · Verify condition for J3012 |  |
+| J3695 | mini | open | – | – | review · Verify condition for J3012 |  |
 | J3696 | mini | open | – | – | review · Verify condition for J3548 |  |
 
 Recently finished:

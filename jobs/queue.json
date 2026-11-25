@@ -336495,13 +336495,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-25T10:01Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T10:01Z",
-      "result": "parked for Chief: the J3012 token probe PASSED 25 Nov 10:05Z (401 anonymous; 200 ok/private/contentsRead:true at rehearsal commit 534cf0f7; rolled back to 1f8cac64, probe 404 both ways, assets byte-identical, probe deployment 35d29502 deleted, temporary flag removed). jobs.py refuses a worker's reopen of J3012, its hold update, and so this check's close. Chief: reopen J3012 with the receipts in thread comment 7159250002, then close J3695. No further probe needed.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-25T10:01Z",
@@ -336547,6 +336547,11 @@
           "at": "2026-11-25T10:07Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: the J3012 token probe PASSED 25 Nov 10:05Z (401 anonymous; 200 ok/private/contentsRead:true at rehearsal commit 534cf0f7; rolled back to 1f8cac64, probe 404 both ways, assets byte-identical, probe deployment 35d29502 deleted, temporary flag removed). jobs.py refuses a worker's reopen of J3012, its hold update, and so this check's close. Chief: reopen J3012 with the receipts in thread comment 7159250002, then close J3695. No further probe needed."
+        },
+        {
+          "at": "2026-11-25T10:13Z",
+          "by": "gemini",
+          "what": "reopened: Acting Chief review of Claude Code's 25 Nov 10:05Z probe receipts (#7159250002)"
         }
       ],
       "remaining_action": "Posting the report so the Chief can reopen J3012",
@@ -336561,20 +336566,7 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-25T10:07Z",
-        "by": "claudecode",
-        "plan": [
-          "Read J3012 and J3609 history",
-          "Check for approved probe receipts",
-          "Record J3012 wait or reopen",
-          "Finish and report"
-        ],
-        "note": "Probe passed and production restored. jobs.py refused both the reopen of J3012 and the hold update from a worker (Chief-"
-      }
+      "open_claim": true
     },
     {
       "id": "J3696",
