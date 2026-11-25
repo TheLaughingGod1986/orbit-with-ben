@@ -335152,19 +335152,29 @@
           "at": "2026-11-25T07:24Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T07:25Z",
+          "by": "macbook-2",
+          "what": "step 1 of 5 done"
         }
       ],
-      "remaining_action": "Build HOS:137 v02 script, sources and Shorts off PR #769 (7ae40acf) resolving FIX-1..FIX-9 and open PR to main",
+      "remaining_action": "Inspecting v01 script, J3564 facts audit, and J3565 review",
       "due": "2026-12-01T18:00:00Z",
       "kind": "script",
       "plain": "Fix the 9 factual, timing and Shorts defects in the Accidental Inventions script, sources and Shorts to v02.",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-25T07:24Z",
+        "step": 1,
+        "of": 5,
+        "at": "2026-11-25T07:25Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect v01 & reviews",
+          "Verify primary sources",
+          "Write v02 script, sources & Shorts",
+          "Update status & run gates",
+          "Push PR & report"
+        ]
       }
     },
     {
