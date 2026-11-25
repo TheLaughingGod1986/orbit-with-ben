@@ -335921,16 +335921,21 @@
           "at": "2026-11-25T09:33Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Fetched all 20 live URLs + CrossRef API (100% reachable/verified); 76/78 quote substrings exact-matched, inspecting 2 live strings"
+        },
+        {
+          "at": "2026-11-25T09:34Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Verified all 20 live URLs + CrossRef API (77/77 cited verbatim quotes confirmed) and all 8 FIX-1..FIX-8 items (0 FLAGs; 17 OK, 4 PARTIAL non-blocking secondary lifespans)"
         }
       ],
-      "remaining_action": "Auditing FIX-1 through FIX-8 and inspecting live text discrepancies on R11 and R13",
+      "remaining_action": "Writing 01_Script/GEMINI_FACTS_CHECK_v02.md and running check_all.sh on HOS:127",
       "due": "2026-12-09T18:00:00Z",
       "kind": "facts",
       "plain": "Fact-check the revised Wright Brothers script, sources, and Shorts",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-25T09:33Z",
+        "at": "2026-11-25T09:34Z",
         "by": "gemini",
         "plan": [
           "Create worktree and verify v02 hashes",
@@ -335939,7 +335944,7 @@
           "Write GEMINI_FACTS_CHECK_v02.md and run check_all.sh",
           "Push PR and post desk handoff"
         ],
-        "note": "Fetched all 20 live URLs + CrossRef API (100% reachable/verified); 76/78 quote substrings exact-matched, inspecting 2 li"
+        "note": "Verified all 20 live URLs + CrossRef API (77/77 cited verbatim quotes confirmed) and all 8 FIX-1..FIX-8 items (0 FLAGs; "
       },
       "taskKeys": [
         "HOS:127"
