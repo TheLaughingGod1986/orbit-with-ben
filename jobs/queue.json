@@ -340373,9 +340373,14 @@
           "at": "2026-11-25T19:46Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Watched+listened seg_02-08 (04:00-18:02): Parts 3-6 cards, maps, schematics, archive photos, and audio all clean"
+        },
+        {
+          "at": "2026-11-25T19:49Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Completed 100% continuous audiovisual watch/listen (00:00-21:35.5), ffprobe/decode/loudnorm (-15.78 LUFS / -1.46 dBFS / 0 errors), moov faststart, SRT/chapter/archive (52.88%)/repeat checks; scratch deleted"
         }
       ],
-      "remaining_action": "Finishing final segments (18:00-21:35) and technical verification",
+      "remaining_action": "Writing QA_REVIEW_J3722.md PR, parking for Chief, and posting report",
       "due": "2026-11-27T20:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -340392,9 +340397,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-25T19:46Z",
+        "at": "2026-11-25T19:49Z",
         "by": "gemini",
         "plan": [
           "Probe audio/video input & verify v03 files",
@@ -340403,7 +340408,7 @@
           "Verify chapters, SRT, archive share & repeats",
           "Write QA PR & report"
         ],
-        "note": "Watched+listened seg_02-08 (04:00-18:02): Parts 3-6 cards, maps, schematics, archive photos, and audio all clean"
+        "note": "Completed 100% continuous audiovisual watch/listen (00:00-21:35.5), ffprobe/decode/loudnorm (-15.78 LUFS / -1.46 dBFS / "
       },
       "taskKeys": [
         "WW2:004"
