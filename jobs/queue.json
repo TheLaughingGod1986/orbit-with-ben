@@ -335755,13 +335755,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-25T08:22Z",
-      "eta": "2026-11-25T10:22Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T08:21Z",
-      "result": "",
+      "result": "Waiting for: Wait until Mon 4 Jan 2027 for 4 clean post-Neon Gemini weeks, post-5 Dec Flow credit burn, and first monthly channel scorecard before 12 Jan 2027 renewal",
       "history": [
         {
           "at": "2026-11-25T08:21Z",
@@ -335772,9 +335772,19 @@
           "at": "2026-11-25T08:22Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T08:22Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: Wait until Mon 4 Jan 2027 for 4 clean post-Neon Gemini weeks, post-5 Dec Flow credit burn, and first monthly channel scorecard before 12 Jan 2027 renewal"
+        },
+        {
+          "at": "2026-11-25T08:22Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2027-01-04T09:00:00Z"
         }
       ],
-      "remaining_action": "Wait until Mon 4 Jan 2027, then review December Gemini/Flow actuals before 12 Jan renewal",
+      "remaining_action": "Re-run Google AI Ultra 20x vs Ultra 5x review from 4 Jan 2027 before 12 Jan renewal",
       "due": "2027-01-08T18:00:00Z",
       "kind": "review",
       "plain": "Re-review Google AI Ultra 20x vs Ultra 5x in early Jan 2027 after December usage data",
@@ -335785,6 +335795,12 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "date",
+        "condition": "Wait until Mon 4 Jan 2027 for 4 clean post-Neon Gemini weeks, post-5 Dec Flow credit burn, and first monthly channel scorecard before 12 Jan 2027 renewal",
+        "check_at": "2027-01-04T09:00:00Z",
+        "release": "auto"
       }
     }
   ],
