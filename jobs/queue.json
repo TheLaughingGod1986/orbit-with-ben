@@ -333536,13 +333536,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-25T10:14Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T00:47Z",
-      "result": "parked for Chief: publishing is finished, only the queue close is left. ww2-channel PR 139 merged (2376f27; squash of gemini/J3643-qa 674c088 on codex/J3205-mini 4d8422d; 3 home paths made relative; status.json untouched because main already records edit done and the J3653 upload). orbit-with-ben PR 1314 merged (3a0abe6bdf; J3643 review records + ww2-003-v01 watch rows, register conflict resolved keeping 004/006 rows; test_watch_r2 9 OK). PR 1296 closed as superseded (J3633 cancelled, J3644 holds the ruling). jobs.py refused 'done J3205' from claudecode because J3205 is parked by gemini: Chief please run jobs.py done J3205 with refs ww2-channel#139 and orbit-with-ben#1314 (do not reopen for assembly), close J3589 (003 edit is no longer orphaned), then close J3654.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-25T00:47Z",
@@ -333583,6 +333583,11 @@
           "at": "2026-11-25T10:19Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: publishing is finished, only the queue close is left. ww2-channel PR 139 merged (2376f27; squash of gemini/J3643-qa 674c088 on codex/J3205-mini 4d8422d; 3 home paths made relative; status.json untouched because main already records edit done and the J3653 upload). orbit-with-ben PR 1314 merged (3a0abe6bdf; J3643 review records + ww2-003-v01 watch rows, register conflict resolved keeping 004/006 rows; test_watch_r2 9 OK). PR 1296 closed as superseded (J3633 cancelled, J3644 holds the ruling). jobs.py refused 'done J3205' from claudecode because J3205 is parked by gemini: Chief please run jobs.py done J3205 with refs ww2-channel#139 and orbit-with-ben#1314 (do not reopen for assembly), close J3589 (003 edit is no longer orphaned), then close J3654."
+        },
+        {
+          "at": "2026-11-25T11:27Z",
+          "by": "gemini",
+          "what": "reopened: Chief review PASS: verified ww2-channel#139 (2376f27) and orbit-with-ben#1314 (3a0abe6bdf) merged cleanly with 0 home paths/secrets; closed J3205, J3697, J3589, J3558 after OWB 003 cleanup PR #1318."
         }
       ],
       "remaining_action": "Chief closes the assembly job with the two merge references",
@@ -333591,21 +333596,6 @@
       "kind": "assembly",
       "plain": "Privacy-check and publish the B-29 edit and QA branches to GitHub",
       "mini_only": true,
-      "progress": {
-        "step": 5,
-        "of": 6,
-        "at": "2026-11-25T10:19Z",
-        "by": "claudecode",
-        "plan": [
-          "Privacy-read WW2 diff",
-          "Sanitise, push, PR, merge WW2",
-          "Privacy-read and rebase OWB branch",
-          "Push, PR, merge OWB",
-          "Close J3205 and reconcile leftovers",
-          "Report"
-        ],
-        "note": "J3205 cannot be closed by claudecode (parked by gemini); PR 1296 closed as superseded; J3589 is a Chief job"
-      },
       "taskKeys": [
         "WW2:003"
       ]
