@@ -1347,5 +1347,31 @@
       "tier": "benchmark",
       "rising_strict_6m": false
     }
-  ]
+  ],
+  "niches": {
+    "ww2": {
+      "slug": "ww2",
+      "label": "WW2",
+      "channel": "Field Order History",
+      "credit_weight": 15,
+      "long_angle": "Field Order long: archive-photo + code-map engineering/logistics breakdown of '{topic}' (searched name first, <=50 chars, distinct wording).",
+      "short_angle": "Field Order Short: 45s archive-photo engineering fact on '{topic}', linked to a matching long."
+    },
+    "owb": {
+      "slug": "owb",
+      "label": "Space",
+      "channel": "Orbit With Ben",
+      "credit_weight": 15,
+      "long_angle": "Orbit long: real NASA/ESA + animated data-scale explainer on '{topic}' (searched phrase first, wonder not dread).",
+      "short_angle": "Orbit Short: 22-27s wonder-led question on '{topic}', real space imagery at frame 0 (no Orbit at 0:00)."
+    },
+    "hos": {
+      "slug": "hos",
+      "label": "History of Science",
+      "channel": "History of Science",
+      "credit_weight": 10,
+      "long_angle": "HOS long: 3D cartoon discovery story + proof apparatus behind '{topic}' (searched name first, adult US/UK framing).",
+      "short_angle": "HOS Short: 16-19s 3D cartoon apparatus hook on '{topic}', looping last line into first."
+    }
+  }
 }

@@ -9,13 +9,18 @@ import sys
 import tempfile
 import unittest
 
-from PIL import Image
+try:
+    from PIL import Image
+except ImportError:  # CI Ubuntu Python 3.12 runs stdlib-only without Pillow
+    Image = None
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import market_track as mt  # noqa: E402
 
 
 def _make_png(color: tuple[int, int, int], size: tuple[int, int] = (320, 180), fg_box: bool = False) -> bytes:
+    if Image is None:
+        return b"\x89PNG\r\n\x1a\n"
     img = Image.new("RGB", size, color)
     if fg_box:
         for x in range(60, 260):
@@ -193,8 +198,9 @@ class RollupAndTaggingTests(unittest.TestCase):
         self.assertEqual(th["main_subject"], "battleship hull")
         self.assertEqual(th["words_on_thumb"], 2)
         self.assertFalse(th["has_face"])
-        self.assertIsNotNone(th["frame_fill_pct_168px"])
-        self.assertGreater(th["frame_fill_pct_168px"], 25.0)
+        if Image is not None:
+            self.assertIsNotNone(th["frame_fill_pct_168px"])
+            self.assertGreater(th["frame_fill_pct_168px"], 25.0)
 
         with tempfile.TemporaryDirectory() as tmp:
             out_md = pathlib.Path(tmp) / "2026-11-25.md"

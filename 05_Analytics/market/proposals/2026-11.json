@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "month": "2026-11",
-  "generated_at": "2026-11-25T03:03:53Z",
+  "generated_at": "2026-11-25T03:09:22Z",
   "credit_budget": 40,
   "credits_used": 0,
   "never_buy_credits": true,
   "allocation": {
-    "ww2": 15,
     "owb": 15,
-    "hos": 10
+    "hos": 10,
+    "ww2": 15
   },
   "drop_candidates": [
     {
@@ -170,15 +170,6 @@
   ],
   "proposals": [
     {
-      "niche": "ww2",
-      "status": "planned_for_vidiq_mcp",
-      "credit_cap": 15,
-      "calls": [
-        "vidiq_outliers (niche=ww2, maxSubs=20000, minMultiple=5, 5 credits)",
-        "vidiq_similar_channels (top rising ww2 channel, 5 credits)"
-      ]
-    },
-    {
       "niche": "owb",
       "status": "planned_for_vidiq_mcp",
       "credit_cap": 15,
@@ -194,6 +185,15 @@
       "calls": [
         "vidiq_outliers (niche=hos, maxSubs=20000, minMultiple=5, 5 credits)",
         "vidiq_similar_channels (top rising hos channel, 5 credits)"
+      ]
+    },
+    {
+      "niche": "ww2",
+      "status": "planned_for_vidiq_mcp",
+      "credit_cap": 15,
+      "calls": [
+        "vidiq_outliers (niche=ww2, maxSubs=20000, minMultiple=5, 5 credits)",
+        "vidiq_similar_channels (top rising ww2 channel, 5 credits)"
       ]
     }
   ]

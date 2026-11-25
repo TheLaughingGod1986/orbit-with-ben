@@ -41,8 +41,10 @@ try:
 except ImportError:  # pragma: no cover - Pillow is installed on the Mini & CI
     Image = ImageFilter = ImageStat = None
 
-ROOT = pathlib.Path(__file__).resolve().parents[1]
-MARKET_DIR = ROOT / "05_Analytics" / "market"
+import channels
+
+BASE = pathlib.Path(__file__).resolve().parents[1]
+MARKET_DIR = BASE.joinpath("05_Analytics", "market")
 WATCHLIST_PATH = MARKET_DIR / "watchlist.json"
 DAILY_DIR = MARKET_DIR / "daily"
 WEEKLY_DIR = MARKET_DIR / "weekly"
@@ -51,7 +53,7 @@ STATE_PATH = MARKET_DIR / "state.json"
 FARMS_PATH = MARKET_DIR / "farms.json"
 QUOTA_PATH = MARKET_DIR / "quota.json"
 BOARD_PATH = MARKET_DIR / "board.json"
-DEFAULT_ENV_PATH = ROOT / "07_Content-Ops" / ".env"
+DEFAULT_ENV_PATH = BASE.joinpath("07_Content-Ops", ".env")
 
 DAILY_QUOTA_CAP = 1500
 MONTHLY_VIDIQ_CAP = 40
@@ -68,11 +70,27 @@ DAILY_RETENTION_DAYS = 14
 TRACK_WINDOW_HOURS = 168.0  # keep active tracking for 7 days
 YT_API_BASE = "https://www.googleapis.com/youtube/v3"
 
-NICHE_META = {
-    "ww2": {"slug": "ww2", "label": "WW2", "channel": "Field Order History"},
-    "owb": {"slug": "owb", "label": "Space", "channel": "Orbit With Ben"},
-    "hos": {"slug": "hos", "label": "History of Science", "channel": "History of Science"},
-}
+
+def load_niche_meta(watchlist: dict[str, Any] | None = None) -> dict[str, dict[str, Any]]:
+    """Read niche labels, channel names, credit weights and angle templates from watchlist/registry."""
+    out: dict[str, dict[str, Any]] = {}
+    for ch in channels.all_channels():
+        slug = str(ch.get("slug") or "")
+        if not slug:
+            continue
+        out[slug] = {
+            "slug": slug,
+            "label": str(ch.get("short") or ch.get("label") or slug.upper()),
+            "channel": str(ch.get("name") or slug),
+            "credit_weight": 13,
+            "long_angle": "{channel} long: searched-name-first breakdown of '{topic}' in our house format (distinct wording).",
+            "short_angle": "{channel} Short: concise single-fact hook on '{topic}', linked to a matching long.",
+        }
+    if isinstance(watchlist, dict) and isinstance(watchlist.get("niches"), dict):
+        for slug, cfg in watchlist["niches"].items():
+            if isinstance(cfg, dict):
+                out[slug] = {**out.get(slug, {"slug": slug, "label": slug.upper(), "channel": slug}), **cfg}
+    return out
 
 FARM_TITLE_PATTERNS = [
     re.compile(r"^\s*what\s+.+\s+(?:said|did|found|discovered|saw|told|heard|revealed)\s+when\b", re.I),
@@ -316,7 +334,13 @@ def resolve_env_path(path: pathlib.Path | None = None) -> pathlib.Path:
         return pathlib.Path(env_override)
     if DEFAULT_ENV_PATH.is_file():
         return DEFAULT_ENV_PATH
-    fallback = pathlib.Path(os.environ.get("ORBIT_REPO", str(pathlib.Path.home() / "YouTube" / "orbit-with-ben"))) / "07_Content-Ops" / ".env"
+    studio_slug = channels.studio_slug()
+    studio_dir = (
+        channels.repo_path(studio_slug, pathlib.Path.home())
+        if studio_slug
+        else channels.studio_checkout(pathlib.Path.home())
+    )
+    fallback = studio_dir.joinpath("07_Content-Ops", ".env")
     return fallback if fallback.is_file() else (path or DEFAULT_ENV_PATH)
 
 
@@ -354,12 +378,13 @@ class YouTubeDataClient:
             return self._bearer
         cid = os.environ.get("GOOGLE_CLIENT_ID") or self._env.get("GOOGLE_CLIENT_ID", "")
         csec = os.environ.get("GOOGLE_CLIENT_SECRET") or self._env.get("GOOGLE_CLIENT_SECRET", "")
-        rtok = (
-            os.environ.get("YT_ANALYTICS_REFRESH_TOKEN_OWB")
-            or self._env.get("YT_ANALYTICS_REFRESH_TOKEN_OWB")
-            or os.environ.get("YOUTUBE_REFRESH_TOKEN")
-            or self._env.get("YOUTUBE_REFRESH_TOKEN", "")
-        )
+        rtok = os.environ.get("YOUTUBE_REFRESH_TOKEN") or self._env.get("YOUTUBE_REFRESH_TOKEN", "")
+        if not rtok:
+            for slug in channels.slugs():
+                key = f"YT_ANALYTICS_REFRESH_TOKEN_{slug.upper()}"
+                rtok = os.environ.get(key) or self._env.get(key, "")
+                if rtok:
+                    break
         if not (cid and csec and rtok):
             raise RuntimeError("Missing YouTube Data API key or OAuth credentials in environment / 07_Content-Ops/.env")
         data = urllib.parse.urlencode({
@@ -551,25 +576,22 @@ def tag_thumbnail(
     return result
 
 
-def suggest_angle(breakout: dict[str, Any]) -> str:
+def suggest_angle(breakout: dict[str, Any], niche_meta: dict[str, dict[str, Any]] | None = None) -> str:
     """One concrete angle line tailored to the matching channel's format and rules."""
-    niche = breakout.get("niche", "")
+    niche = str(breakout.get("niche") or "")
     title = str(breakout.get("title") or "").strip()
     short_topic = re.sub(r"\s*[\|\-—:]\s*.*$", "", title).strip()
     if len(short_topic) > 48:
         short_topic = " ".join(short_topic.split()[:7])
     fmt = breakout.get("format", "long")
-    if niche == "ww2":
-        if fmt == "short":
-            return f"Field Order Short: 45s archive-photo engineering fact on '{short_topic}', linked to a matching long."
-        return f"Field Order long: archive-photo + code-map engineering/logistics breakdown of '{short_topic}' (searched name first, <=50 chars, distinct wording)."
-    if niche == "owb":
-        if fmt == "short":
-            return f"Orbit Short: 22-27s wonder-led question on '{short_topic}', real space imagery at frame 0 (no Orbit at 0:00)."
-        return f"Orbit long: real NASA/ESA + animated data-scale explainer on '{short_topic}' (searched phrase first, wonder not dread)."
-    if fmt == "short":
-        return f"HOS Short: 16-19s 3D cartoon apparatus hook on '{short_topic}', looping last line into first."
-    return f"HOS long: 3D cartoon discovery story + proof apparatus behind '{short_topic}' (searched name first, adult US/UK framing)."
+    meta = (niche_meta or load_niche_meta()).get(niche) or {
+        "label": niche.upper() or "Channel",
+        "channel": niche.upper() or "Channel",
+        "long_angle": "{channel} long: searched-name-first breakdown of '{topic}' in our house format (distinct wording).",
+        "short_angle": "{channel} Short: concise single-fact hook on '{topic}', linked to a matching long.",
+    }
+    tpl = meta.get("short_angle") if fmt == "short" else meta.get("long_angle")
+    return str(tpl or "{channel}: '{topic}'").format(channel=meta.get("channel", niche), label=meta.get("label", niche), topic=short_topic)
 
 
 def summarize_patterns(breakouts: list[dict[str, Any]]) -> dict[str, Any]:
@@ -725,8 +747,10 @@ def write_weekly_report(
     out_path: pathlib.Path,
     report_date: str,
     patterns: dict[str, Any],
+    niche_meta: dict[str, dict[str, Any]] | None = None,
 ) -> pathlib.Path:
     """Write `05_Analytics/market/weekly/<date>.md` with top breakouts per niche and angle lines."""
+    meta_map = niche_meta or load_niche_meta()
     lines = [
         f"# Market Intelligence Weekly Digest ({report_date})",
         "",
@@ -745,8 +769,14 @@ def write_weekly_report(
         lines.append(f"- **Thumbnail traits (168 px phone read):** {traits}")
         lines.append("")
 
-    for niche in ("ww2", "owb", "hos"):
-        meta = NICHE_META[niche]
+    ordered_niches = list(meta_map.keys())
+    for b in breakouts:
+        n = str(b.get("niche") or "")
+        if n and n not in ordered_niches:
+            ordered_niches.append(n)
+
+    for niche in ordered_niches:
+        meta = meta_map.get(niche) or {"label": niche.upper(), "channel": niche}
         items = [b for b in breakouts if b.get("niche") == niche]
         items.sort(key=lambda x: (0 if x.get("format") == "long" else 1, -(x.get("multiple") or 0), -(x.get("views") or 0)))
         lines.append(f"## {meta['label']} ({meta['channel']})")
@@ -772,7 +802,7 @@ def write_weekly_report(
                 f"- **Thumbnail (168 px):** grade=`{th.get('grade', 'unknown')}` · fill={fill} · "
                 f"face={face} · words={th.get('words_on_thumb') if th.get('words_on_thumb') is not None else 'untagged'} · "
                 f"subject={th.get('main_subject') or 'untagged'}",
-                f"- **The angle we could take:** {b.get('angle') or suggest_angle(b)}",
+                f"- **The angle we could take:** {b.get('angle') or suggest_angle(b, meta_map)}",
                 "",
             ])
 
@@ -831,22 +861,28 @@ def build_board_payload(
                 "subject": th.get("main_subject"),
             },
         })
+    meta_map = load_niche_meta(watchlist)
     patterns = summarize_patterns(ordered)
-    channels = watchlist.get("channels") or []
+    channels_list = watchlist.get("channels") or []
+    niche_keys = list(meta_map.keys())
+    for c in channels_list:
+        n = str(c.get("niche") or "")
+        if n and n not in niche_keys:
+            niche_keys.append(n)
     by_niche = {
         n: {
-            "label": NICHE_META[n]["label"],
-            "channel": NICHE_META[n]["channel"],
-            "watchlist": sum(1 for c in channels if c.get("niche") == n),
-            "rising": sum(1 for c in channels if c.get("niche") == n and c.get("tier") == "rising"),
+            "label": (meta_map.get(n) or {}).get("label", n.upper()),
+            "channel": (meta_map.get(n) or {}).get("channel", n),
+            "watchlist": sum(1 for c in channels_list if c.get("niche") == n),
+            "rising": sum(1 for c in channels_list if c.get("niche") == n and c.get("tier") == "rising"),
             "breakouts": sum(1 for x in items if x["niche"] == n),
         }
-        for n in ("ww2", "owb", "hos")
+        for n in niche_keys
     }
     return {
         "schemaVersion": 1,
         "updatedAt": generated_at,
-        "watchlistTotal": len(channels),
+        "watchlistTotal": len(channels_list),
         "farmFilteredCount": len(farms),
         "weeklyReport": weekly_md_rel or "",
         "quota": quota or {},
@@ -1040,7 +1076,7 @@ def run_daily(
                 farm_registry[vid] = {**compact_farm, "seen_at": iso_utc(now)}
             elif scored["is_breakout"]:
                 scored["title_tags"] = tag_title(scored["title"], scored["niche"])
-                scored["angle"] = suggest_angle(scored)
+                scored["angle"] = suggest_angle(scored, load_niche_meta(watchlist))
                 breakouts_today.append(scored)
 
     breakouts_today.sort(
@@ -1131,12 +1167,12 @@ def run_weekly(
         item = dict(b)
         item["title_tags"] = tag_title(item.get("title", ""), item.get("niche", ""))
         item["thumb_tags"] = tag_thumbnail(item.get("thumbnail_url", ""), vision_fn=vision_fn, fetcher=fetcher)
-        item["angle"] = suggest_angle(item)
+        item["angle"] = suggest_angle(item, load_niche_meta(watchlist))
         tagged.append(item)
 
     patterns = summarize_patterns(tagged)
     out_md = weekly_dir / f"{today_str}.md"
-    write_weekly_report(tagged, out_md, today_str, patterns)
+    write_weekly_report(tagged, out_md, today_str, patterns, load_niche_meta(watchlist))
 
     quota_summary: dict[str, Any] = {}
     if quota_path.is_file():
@@ -1173,7 +1209,7 @@ def monthly_discovery_plan(
     if credit_budget > MONTHLY_VIDIQ_CAP or credit_budget < 0:
         raise ValueError(f"Monthly vidIQ discovery budget must be 0..{MONTHLY_VIDIQ_CAP} credits, got {credit_budget}")
     month_str = month_str or utc_now().strftime("%Y-%m")
-    channels = watchlist.get("channels") or []
+    channels_list = watchlist.get("channels") or []
 
     # Identify swap-out candidates (channels repeatedly appearing in farms.json or very low upload count).
     farm_counts: collections.Counter[str] = collections.Counter()
@@ -1192,18 +1228,27 @@ def monthly_discovery_plan(
             "niche": c.get("niche", ""),
             "reason": f"farm_flags={farm_counts[c['id']]}" if farm_counts[c["id"]] >= 2 else "stale_or_inactive",
         }
-        for c in channels
+        for c in channels_list
         if farm_counts[c["id"]] >= 2 or int(c.get("video_count", 0) or 0) < 3
     ]
 
-    # Allocate <= 40 vidIQ credits across the three niches (15 ww2 / 15 owb / 10 hos, scaled to credit_budget).
-    base_alloc = [("ww2", 15), ("owb", 15), ("hos", 10)]
+    # Allocate <= 40 vidIQ credits across the registered niches from watchlist/channel metadata.
+    meta_map = load_niche_meta(watchlist)
+    niche_keys = list(meta_map.keys())
+    for c in channels_list:
+        n = str(c.get("niche") or "")
+        if n and n not in niche_keys:
+            niche_keys.append(n)
     alloc: dict[str, int] = {}
     remaining = credit_budget
-    for niche, want in base_alloc:
-        take = min(want, remaining)
-        alloc[niche] = take
-        remaining -= take
+    for idx, niche in enumerate(niche_keys):
+        want = int((meta_map.get(niche) or {}).get("credit_weight", max(1, credit_budget // max(len(niche_keys), 1))))
+        if idx == len(niche_keys) - 1:
+            take = remaining
+        else:
+            take = min(want, remaining)
+        alloc[niche] = max(0, take)
+        remaining = max(0, remaining - alloc[niche])
 
     credits_used = 0
     proposals: list[dict[str, Any]] = []
@@ -1244,11 +1289,12 @@ def monthly_discovery_plan(
     out_dir.mkdir(parents=True, exist_ok=True)
     (out_dir / f"{month_str}.json").write_text(json.dumps(doc, indent=2, ensure_ascii=False) + "\n")
 
+    alloc_line = " · ".join(f"{(meta_map.get(n) or {}).get('label', n)} {alloc.get(n, 0)} cr" for n in niche_keys)
     md_lines = [
         f"# Monthly Watchlist Discovery Proposal ({month_str})",
         "",
         f"- **vidIQ credit budget:** {credits_used} / {credit_budget} credits used (hard cap {MONTHLY_VIDIQ_CAP}; never buy credits).",
-        f"- **Allocation:** WW2 {alloc.get('ww2', 0)} cr · Space {alloc.get('owb', 0)} cr · History of Science {alloc.get('hos', 0)} cr.",
+        f"- **Allocation:** {alloc_line}.",
         "",
         "## Channels flagged for swap-out review",
         "",
@@ -1261,7 +1307,8 @@ def monthly_discovery_plan(
     md_lines.extend(["", "## Discovery sweep / proposed additions", ""])
     for p in proposals:
         if p.get("status") == "planned_for_vidiq_mcp":
-            md_lines.append(f"- **{NICHE_META[p['niche']]['label']}** (cap {p['credit_cap']} cr): " + "; ".join(p["calls"]))
+            lbl = (meta_map.get(p["niche"]) or {}).get("label", p["niche"])
+            md_lines.append(f"- **{lbl}** (cap {p['credit_cap']} cr): " + "; ".join(p["calls"]))
         else:
             md_lines.append(f"- **{p.get('niche')}** · `{p.get('id', '')}` **{p.get('title', '')}** ({p.get('subscribers', '?')} subs)")
     (out_dir / f"{month_str}.md").write_text("\n".join(md_lines).rstrip() + "\n")
