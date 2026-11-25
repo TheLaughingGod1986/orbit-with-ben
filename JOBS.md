@@ -107,7 +107,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3611 | mini | open | – | – | 010 upload · studio · HOS 010 Short A: schedule only after actual long readiness and finish Studio checks | J3512 |
 | J3619 | mini | blocked | macbook-2 | – | review · Verify condition for J3486 |  |
 | J3620 | mini | open | – | – | review · Verify condition for J3487 |  |
-| J3622 | mini | open (after J3621) | – | – | HOS:127 script · review · HOS 127 Wright Brothers First Flight (Thu 31 Dec): review and lock script v01, package-first scoring, sources & Shorts (PR #756) | J3504 |
+| J3622 | mini | claimed | gemini | 2026-11-25T09:42Z | HOS:127 script · review · HOS 127 Wright Brothers First Flight (Thu 31 Dec): review and lock script v01, package-first scoring, sources & Shorts (PR #756) | J3504 |
 | J3635 | mini | blocked | codex | – | studio · WW2 pilot 2: check its settings, claims and impressions now (0 views at 5 hours) |  |
 | J3642 | gemini | open | – | – | 009 sources · facts · WW2 009: independent Gemini direct-source recheck of v04 | https://github.com/TheLaughingGod1986/ww2-channel/pull/114 |
 | J3648 | mini | blocked | gemini | – | WW2:001 upload · studio · WW2 001-S1: 7-day read of Mulberry Short NoQQqrW2meM and pilot 1 Shorts/Related traffic |  |
