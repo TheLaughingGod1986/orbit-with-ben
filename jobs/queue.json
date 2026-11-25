@@ -340822,13 +340822,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T20:25Z",
-      "eta": "2026-11-25T22:25Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T15:33Z",
-      "result": "",
+      "result": "Acting-Chief (gemini) review complete (ww2-channel PR #165 a8e9fd7, 07_Edit/CHIEF_RULING_J3727.md): verified predecessor J3431/J3710/J3715, PR #158 already merged (27eb9df), NAS v03 master ww2_005_st_nazaire_v03_mix.mp4 SHA-256 1a6b253f8e57185950749568e8d412d2a527966348ec8420d6d71458f7b5cf17 (14:46, 51.85% archive, zero <60s repeats, full-bleed 16:9 confirmed on spot stills), and no Ben watch/UAT staged. Synced 11_Upload-Package/metadata_v01.json title to J3562 Rule-2 audited title ('St Nazaire Raid: The Ship Turned Into a Bomb', 44 chars) and updated status.json edit stage to doing. Kept J3432 held via wait --recheck J3727 (check-at 2026-11-26T04:00:00Z) because zero audiovisual watch/listen QA has run on the 19 VO splices, synthetic score bed, 2 NO_MOVE holds (A 9804, A 23877), long single-plate diagrams, or Thumb C legibility at 168 px. Queued zero-spend J3745 (kind: qa, audio_input+moving_video_input, due 2026-11-28 20:00Z). No UAT copy, R2 upload, awaits, or YouTube change; £0.",
       "history": [
         {
           "at": "2026-11-25T15:33Z",
@@ -340879,6 +340879,11 @@
           "at": "2026-11-25T20:25Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T20:25Z",
+          "by": "gemini",
+          "what": "done: Acting-Chief (gemini) review complete (ww2-channel PR #165 a8e9fd7, 07_Edit/CHIEF_RULING_J3727.md): verified predecessor J3431/J3710/J3715, PR #158 already merged (27eb9df), NAS v03 master ww2_005_st_nazaire_v03_mix.mp4 SHA-256 1a6b253f8e57185950749568e8d412d2a527966348ec8420d6d71458f7b5cf17 (14:46, 51.85% archive, zero <60s repeats, full-bleed 16:9 confirmed on spot stills), and no Ben watch/UAT staged. Synced 11_Upload-Package/metadata_v01.json title to J3562 Rule-2 audited title ('St Nazaire Raid: The Ship Turned Into a Bomb', 44 chars) and updated status.json edit stage to doing. Kept J3432 held via wait --recheck J3727 (check-at 2026-11-26T04:00:00Z) because zero audiovisual watch/listen QA has run on the 19 VO splices, synthetic score bed, 2 NO_MOVE holds (A 9804, A 23877), long single-plate diagrams, or Thumb C legibility at 168 px. Queued zero-spend J3745 (kind: qa, audio_input+moving_video_input, due 2026-11-28 20:00Z). No UAT copy, R2 upload, awaits, or YouTube change; £0."
         }
       ],
       "remaining_action": "Recording that film 005 still waits for the Chief's review",
@@ -340905,7 +340910,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "a8e9fd7"
     },
     {
       "id": "J3728",
