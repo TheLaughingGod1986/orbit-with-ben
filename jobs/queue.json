@@ -314959,9 +314959,14 @@
           "at": "2026-11-25T17:39Z",
           "by": "refill",
           "what": "escalated to Chief: parked 2 h"
+        },
+        {
+          "at": "2026-11-25T20:25Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-26T04:00:00Z"
         }
       ],
-      "remaining_action": "Quality checks on the St Nazaire cut, then put it on Ben's board for his watch",
+      "remaining_action": "Complete audiovisual QA (J3745) and Chief ruling, then stage WW2:005 for Ben's watch",
       "due": "2026-11-30T20:00:00Z",
       "kind": "assembly",
       "urgent": 3,
@@ -314987,9 +314992,11 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-25T16:33:29+00:00",
-        "recheck_task": "J3727"
+        "condition": "Awaiting full private audiovisual QA J3745 (audio_input+moving_video_input, due 2026-11-28 20:00Z) of ww2_005_st_nazaire_v03_mix.mp4 (SHA-256 1a6b253f...) and Chief PASS ruling before staging WW2:005 for Ben watch (due 2026-11-30 20:00Z)",
+        "check_at": "2026-11-26T04:00:00Z",
+        "last_recheck": "J3727",
+        "checked_at": "2026-11-25T20:25:09+00:00",
+        "checked_by": "gemini"
       },
       "escalated_at": "2026-11-25T17:39Z"
     },
