@@ -314628,10 +314628,10 @@
       "stage": "edit",
       "after": "J3431",
       "eta_min": 480,
-      "status": "claimed",
-      "by": "claudecode",
-      "since": "2026-11-25T14:55Z",
-      "eta": "2026-11-25T22:55Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T15:29Z",
       "result": "",
@@ -314855,6 +314855,11 @@
           "at": "2026-11-25T14:58Z",
           "by": "claudecode",
           "what": "step 3 of 8 done: Dock label now moves with three photographs; daybreak map has no 01:34 clock; cut rebuilt with music (15:34). Stills checked only, not watched or heard"
+        },
+        {
+          "at": "2026-11-25T14:58Z",
+          "by": "claudecode",
+          "what": "released: Still step 3 of 8 done; step 4 nearly done. This run: NORMANDIE DOCK label drawn INTO the photograph (moves with the camera) on shots 23, 52 (C 2351) and 61 (C 3317A) via 07_Edit/PHOTO_LABELS_005.json (x, y, tx, ty as 0-1 of the 16:9 frame before the move). Pumping station, winding houses and gate NOT labelled: not identifiable on the photographs against a source. New plate G10d (no 01:34 clock) used for shot 59 (daybreak); on the NAS in 03_Picture/maps_v02_J3432. Cut with music: /Volumes/MiniWork/scratch/J3432/out/ww2_005_st_nazaire_v02_mix.mp4 (22,430 frames, 15:34.58, decodes clean, sha256 7e3cf557...); v01_mix is superseded. Mux only: silent picture plus out/st_nazaire_mix_v01.wav, video copied. Commit 8abb3fd on ww2 branch claudecode/J3432-vo-splice (PR 148, worktree /Volumes/MiniWork/worktrees/J3432-ww2; merge is Chief's). Looked at six stills of the changed shots (scratch/qa/sheet_labels_v02.jpg) only; no motion or sound reviewed. Nothing running detached. Still to do before step 4 is done: (1) shots 15 and 16 (A 7901, A 7900) near-identical back to back; A 9804 weak; (2) film ends on the last word: add a 2-3 s picture and music hold and fade (needs the score and mix lengthened in build_score_005_v01.py and a hold on the last segment); (3) plate titles at full size checked on G10d only. Then captions, chapters, thumbnails, package, QA. Disk: Mini 8 GB free, MiniWork 11 GB."
         }
       ],
       "remaining_action": "Fix two look-alike photographs and add an ending hold to the St Nazaire cut, then captions, thumbnails and package",
