@@ -333187,10 +333187,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-25T10:14Z",
+      "eta": "2026-11-25T12:14Z",
       "created_by": "gemini",
       "created_at": "2026-11-25T00:47Z",
       "result": "",
@@ -333199,6 +333199,11 @@
           "at": "2026-11-25T00:47Z",
           "by": "gemini",
           "what": "added for claudecode"
+        },
+        {
+          "at": "2026-11-25T10:14Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "After 10:00Z reset, sanitize 3 home paths, privacy-check, push/PR/merge gemini/J3643-qa and gemini/J3643-review, and close J3205",
@@ -333206,7 +333211,15 @@
       "for": "claudecode",
       "kind": "assembly",
       "plain": "Privacy-check and publish the B-29 edit and QA branches to GitHub",
-      "mini_only": true
+      "mini_only": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T10:14Z",
+        "by": "claudecode",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3655",
