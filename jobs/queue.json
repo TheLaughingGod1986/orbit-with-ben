@@ -1,5 +1,5 @@
 {
-  "next_id": 3721,
+  "next_id": 3722,
   "jobs": [
     {
       "id": "J0001",
@@ -339915,6 +339915,36 @@
       "taskKeys": [
         "OWB:064"
       ]
+    },
+    {
+      "id": "J3721",
+      "title": "WW2 004: v03 pre-watch opening trims (J3715 Cuts A+B, 61.8 s), chapters, captions and render",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** Acting-Chief (`gemini`) ruling on `J3715` (`ww2-channel` PR #155 `b1392f1`, `00_Brand/OPENING_CHECK_RULING_J3715_2026-11-25.md`, based on merged PR #154 `cbb67e3` `07_Edit/OPENING_CHECK_v01.md`). Film 004 (`Mark 14 Torpedo: Why Perfect Hits Failed`, airs Tue 1 Dec 17:00 London, Ben's watch due Sat 28 Nov 20:00Z) has a 4m11s pre-war background turn from `2:24.8` to `6:35.9`. Chief approved Cuts A + B (`61.8 s`, archive share rises from `51.34%` to `52.88%`) and rejected Cut C (`02:53.3-03:55.7`, orphan pronoun \"those tests\").\n\n**Do (zero-spend `v03` pre-watch assembly; £0):**\n1. **Check board/watch state first:** verify `WW2:004` (`J3430`) still awaits Ben's watch on `v02`. If Ben has already recorded an OK on `v02`, STOP and block for Chief instead of replacing it.\n2. **Keep `v02` untouched** on NAS (`studio-live`), iCloud `WW2 UAT`, and private R2 watch bucket (`ww2-004-v02`).\n3. **Apply Chief-approved Cuts A + B** on the `v02` timeline (existing narration only, zero new voice):\n   - **Cut A (`05:02.05-05:34.25`, `32.2 s`, captions 83-91):** measure exact silence boundaries on the audio (`+-0.3 s`, zero clipped words) joining *\"...how far below the ship it had gone.\"* -> *\"There was also an instrument intended to settle that question.\"* Align end cleanly onto `G12_REC` (`05:34.71`) so `G11B` does not flash.\n   - **Cut B (`06:05.45-06:35.08`, `29.6 s`, captions 101-109):** measure exact silence boundaries (`+-0.3 s`, zero clipped words) joining *\"...agree with the weapon and still be wrong.\"* -> Part 3 card -> *\"War supplied the challenge.\"*\n   - Do **not** take rejected Cut C (`02:53.3-03:55.7`).\n4. **Update metadata & technical verification:**\n   - Shift chapters (Part 3 onward, `-61.8 s`), regenerate `11_Upload-Package/ww2_004_en-GB_v03.srt`, and update `07_Edit/SENTENCE_CUT_LIST_v03.md` / upload-package chapter timestamps.\n   - Verify archive share stays `>=50%` (expected `52.88%`), zero photos leave the film (`C27` stays at `17:52`, `C18` stays at `17:07`, credits unchanged), and zero `<60 s` asset repeat regressions.\n   - Render `ww2_004_torpedoes_v03.mp4` (1080p 24fps CFR, `faststart`, smooth music crossfade across both cuts, integrated loudness ~`-14` to `-16 LUFS`, true peak `<= -1 dBTP`) to NAS `studio-live` and record SHA-256 and technical checks.\n5. **Open one `ww2-channel` PR** with the `v03` cut list, captions, chapters, and technical verification (parked for Chief; no merge) and close this job so the chained audiovisual QA job runs next.\n\n**Guards.** £0 spend. No new voice. No YouTube upload, schedule, retitle, or privacy change. Do not overwrite `v02` or update Ben's watch card yet (that follows audiovisual QA and Chief PASS). Do not claim audio/motion perception unless demonstrated.\n",
+      "ref": "b1392f1",
+      "film": "WW2:004",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T14:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T14:58Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Check board for Ben v02 OK, apply Cuts A+B to render v03, verify >=50% archive and open ww2 PR",
+      "due": "2026-11-27T12:00:00Z",
+      "kind": "assembly",
+      "plain": "Apply J3715 opening cuts A+B (61.8 s) to film 004 as zero-spend v03 keeping v02 untouched"
     }
   ],
   "focus": [
