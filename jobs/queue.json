@@ -340718,13 +340718,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-25T16:15Z",
-      "eta": "2026-11-25T18:15Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T16:06Z",
-      "result": "",
+      "result": "parked for Chief: condition for J3487 verified UNMET at 25 Nov 16:15Z (ww2-channel origin/macbook/J3487 still Bletchley 03ce06a; origin/main 9075a1c has no Battle of the Bulge branch, PR or file; work is only on the MacBook at /Users/ben/_desk/worker/slot2/ww2-channel). The queue refused my hold update (only the holder macbook-2 or the elected Chief may). Chief: run jobs.py wait J3487 --agent chief --type input --recheck J3730 --check-at 2026-11-26T10:00:00Z with condition 'met when a Battle of the Bulge PR exists on ww2-channel or J3731 records the work lost', then close J3730. J3731 (needs macbook, for Claude Code, due 27 Nov 18:00) is queued to push the branch or confirm it lost. No spend, upload or schedule change.",
       "history": [
         {
           "at": "2026-11-25T16:06Z",
@@ -340755,6 +340755,11 @@
           "at": "2026-11-25T16:17Z",
           "by": "claudecode",
           "what": "step 3 of 4 done: J3487 kept blocked, next check 26 Nov 10:00Z; J3731 queued for the MacBook to push or confirm lost"
+        },
+        {
+          "at": "2026-11-25T16:18Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: condition for J3487 verified UNMET at 25 Nov 16:15Z (ww2-channel origin/macbook/J3487 still Bletchley 03ce06a; origin/main 9075a1c has no Battle of the Bulge branch, PR or file; work is only on the MacBook at /Users/ben/_desk/worker/slot2/ww2-channel). The queue refused my hold update (only the holder macbook-2 or the elected Chief may). Chief: run jobs.py wait J3487 --agent chief --type input --recheck J3730 --check-at 2026-11-26T10:00:00Z with condition 'met when a Battle of the Bulge PR exists on ww2-channel or J3731 records the work lost', then close J3730. J3731 (needs macbook, for Claude Code, due 27 Nov 18:00) is queued to push the branch or confirm it lost. No spend, upload or schedule change."
         }
       ],
       "remaining_action": "Post the report and finish",
