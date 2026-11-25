@@ -111,7 +111,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3738 | mini | blocked | claudecode | – | 013 picture · script · HOS 013 Darwin & Wallace: £0 retake prompt & price board for 8 confirmed RETAKE plates | J2529 |
 | J3739 | mini | open (after J3678) | – | – | 137 vo · vo · HOS 137 Accidental Inventions: long VO (5 parts) & Shorts S01/S02 VO from locked v02 scripts | J3734 |
 | J3742 | mini | open (after J3678) | – | – | 011 vo · vo · HOS 011 Anaesthesia: Shorts S01 & S02 voiceover from locked v03 scripts | J3740 |
-| J3743 | mini | open | – | – | WW2:004 edit · assembly · WW2 004: v04 full-bleed 16:9 archive framing rebuild (Ben 0:15 change) + J3715 Cuts A+B | 1a152ff |
+| J3743 | mini | claimed | claudecode | 2026-11-25T22:23Z | WW2:004 edit · assembly · WW2 004: v04 full-bleed 16:9 archive framing rebuild (Ben 0:15 change) + J3715 Cuts A+B | 1a152ff |
 | J3744 | mini | open (after J3743) | – | – | WW2:004 edit · qa · WW2 004: full private audiovisual QA of v04 master (full-bleed 16:9 + Cuts A+B) for Chief watch stage | 1a152ff |
 | J3745 | mini | open | – | – | WW2:005 edit · qa · WW2 005: full private audiovisual QA of v03 master (J3715 Cuts A+B) for Chief watch stage | 27eb9df |
 

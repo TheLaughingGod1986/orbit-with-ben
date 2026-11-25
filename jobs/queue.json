@@ -342174,10 +342174,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-25T20:23Z",
+      "eta": "2026-11-25T22:23Z",
       "created_by": "gemini",
       "created_at": "2026-11-25T20:14Z",
       "result": "",
@@ -342206,6 +342206,11 @@
           "at": "2026-11-25T20:20Z",
           "by": "claudecode",
           "what": "released: Segment render running detached: tmux J3743-render, log ~/_desk/logs/J3743-render.log, done file ~/_desk/logs/J3743-render.done (missing = still running; never start a second copy). Worktree /Volumes/MiniWork/scratch/wt-ww2-J3743, branch J3743-004-v04 pushed (d2332f2). NAS scratch /Volumes/data/studio-live/scratch/J3743-v04. Next run: 1) read .done (0 = all 173 segments rendered); 2) look at preview/preview_2.jpg and preview_3.jpg (only sheet 1 was checked by eye: all full width, C08/C34/C02 focal set in FOCAL_v04.json); for any chopped head or subject add the asset to FOCAL_v04.json, remove just that segment's scratch file and rerun; 3) run render_004_v04.py with no flag (segments are reused; writes v04_master, v03 sound stream-copied), then --verify (side-bar check, 32-frame sheet, RENDER_QA_v04.json) and read the sheet; 4) write HANDOFF_v04.md and 11_Upload-Package/metadata_v04.json (upload_authorized false), open the PR, park for Chief. v01-v03 untouched; no upload; nothing spent."
+        },
+        {
+          "at": "2026-11-25T20:23Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Check the new full-screen framing of each photo by eye, then render the whole film on the NAS",
