@@ -342640,21 +342640,35 @@
           "at": "2026-11-25T21:27Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T21:28Z",
+          "by": "claudecode",
+          "what": "step 0 of 6 done"
         }
       ],
-      "remaining_action": "Build guarded retake runner, dry-run, mint 8 take-2 plates (Option A Quality, <=800 cr) before 5 Dec, archive & park for Chief UAT",
+      "remaining_action": "Reading the pass-1 runner and retake board before building the retake runner",
       "due": "2026-12-01T18:00:00Z",
       "kind": "video",
       "plain": "Build guarded retake runner and mint take 2 for 013's 8 confirmed RETAKE plates before 5 Dec (800 Flow cr max, £0 cash)",
       "mini_only": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T21:27Z",
+        "of": 6,
+        "at": "2026-11-25T21:28Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read rules and pass-1 runner",
+          "Build guarded retake runner",
+          "Dry-run at floor 3000",
+          "Submit 8 take-2 rows",
+          "Verify, archive, sheets, receipt",
+          "PR, desk post, park for Chief"
+        ]
+      },
+      "taskKeys": [
+        "HOS:013"
+      ]
     }
   ],
   "focus": [
