@@ -343461,9 +343461,14 @@
           "at": "2026-11-25T23:07Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J3752; inspecting approved master, metadata, J3655, and WW2 upload tooling"
+        },
+        {
+          "at": "2026-11-25T23:08Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Verified master SHA-256 b047c49455230cd8360e40d2f6669b151ced19d0ae315aefc9e96ef5d0de79ec (10,187,355 bytes, 40.52s, 1080x1920 25fps) and confirmed no existing upload on UCu94mInMFosxu3W0H6jlI6Q"
         }
       ],
-      "remaining_action": "Verify approved master SHA-256 and inspect metadata and upload scripts",
+      "remaining_action": "Upload approved v01 Short Private scheduled for Sat 28 Nov 12:30Z",
       "due": "2026-11-27T18:00:00Z",
       "kind": "studio",
       "plain": "Upload Ben-approved Short 003-S3 v01 Private, scheduled Sat 28 Nov 12:30 London",
@@ -343482,9 +343487,9 @@
         "okRef": "J3725"
       },
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-25T23:07Z",
+        "at": "2026-11-25T23:08Z",
         "by": "gemini",
         "plan": [
           "Verify approved master SHA-256 and metadata",
@@ -343493,7 +343498,7 @@
           "Read back API and Studio 9224 after reload",
           "Update WW2 003 status.json PR and queue 7-day read"
         ],
-        "note": "Claimed J3752; inspecting approved master, metadata, J3655, and WW2 upload tooling"
+        "note": "Verified master SHA-256 b047c49455230cd8360e40d2f6669b151ced19d0ae315aefc9e96ef5d0de79ec (10,187,355 bytes, 40.52s, 1080"
       },
       "taskKeys": [
         "WW2:003"
