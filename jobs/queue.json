@@ -330049,13 +330049,13 @@
       "stage": "script",
       "after": "J3621",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-25T07:42Z",
-      "eta": "2026-11-25T09:42Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-24T21:13Z",
-      "result": "",
+      "result": "Waiting for: Waiting on J3688 (HOS:127 v02 script/sources/Shorts/packaging resolving FIX-1..FIX-8 in HOS PR #773), independent v02 facts re-verification, and Chief merge of HOS PR #773",
       "history": [
         {
           "at": "2026-11-24T21:13Z",
@@ -330101,9 +330101,19 @@
           "at": "2026-11-25T07:51Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Issued FIX before lock review (HOS PR #773, all CI green, handed to returned Chief claude to merge), queued v02 job J3688, and posted HOS desk + OWB thread reports (£0.00 spent)."
+        },
+        {
+          "at": "2026-11-25T07:51Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: Waiting on J3688 (HOS:127 v02 script/sources/Shorts/packaging resolving FIX-1..FIX-8 in HOS PR #773), independent v02 facts re-verification, and Chief merge of HOS PR #773"
+        },
+        {
+          "at": "2026-11-25T07:51Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-26T08:00:00Z"
         }
       ],
-      "remaining_action": "Waiting on J3688 (HOS:127 v02 build resolving FIX-1..FIX-8), independent v02 facts re-verification, and Chief merge of HOS PR #773",
+      "remaining_action": "Review and lock HOS:127 v02 script, sources, Shorts & packaging once J3688 and v02 facts re-verification complete",
       "due": "2026-12-11T18:00:00Z",
       "kind": "review",
       "plain": "Review and Chief-lock HOS 127 package-first scoring, v01 script draft, verified sources and Shorts (PR #756)",
@@ -330131,7 +330141,12 @@
       },
       "taskKeys": [
         "HOS:127"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Waiting on J3688 (HOS:127 v02 script/sources/Shorts/packaging resolving FIX-1..FIX-8 in HOS PR #773), independent v02 facts re-verification, and Chief merge of HOS PR #773",
+        "check_at": "2026-11-26T08:00:00Z"
+      }
     },
     {
       "id": "J3623",
