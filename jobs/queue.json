@@ -1,5 +1,5 @@
 {
-  "next_id": 3663,
+  "next_id": 3664,
   "jobs": [
     {
       "id": "J0001",
@@ -332865,6 +332865,36 @@
         "moving_video_input"
       ],
       "plain": "Watch and listen to the full WW2 Mosquito v01 cut privately before Chief approval"
+    },
+    {
+      "id": "J3663",
+      "title": "WW2 006: Chief decision on v01 delivery, PR #107 merge and Ben watch staging",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Follow-up to `J3631` elected acting Chief ruling (OWB PR #1295 `jobs/reviews/J3631/REVIEW.md`): after `WW2:006` full private audiovisual QA (`J3662`) finishes, the elected Chief rechecks authority (`chief_relay.py status`) and decides `WW2:006` `v01` delivery.\n\n**Do:**\n1. Review `ww2-channel` PR #107 (`gemini/J3434-mosquito-assembly`, commit `a251f00`) and the `J3662` full audiovisual QA PR against `ww2-channel` `main` and `studio/RULES.md`:\n   - Confirm Rule-2 searched-name title `De Havilland Mosquito: Why It Was Made of Wood` (46 chars, matching `J3562` PR #98).\n   - Reconcile `006/status.json` `picture` stage (`doing -> done` per completed `J3433`) and coordinate merge ordering with open PR #98 (`J3562`).\n   - Check schedule: planned air `Sat 5 Dec 17:00` London (`2026-12-05T17:00:00Z`), Ben's watch due `2026-12-02T20:00:00Z`.\n2. Resolve any failure rather than waiving it. If `J3662` reports defects warranting a targeted zero-spend `v02` patch (e.g. `G00B` `16:00 PM` typo at `00:25`/`18:40`, `14:32` `392 MPH` spacing, long static diagram holds up to `33.0 s`, or any defect found in the watch-through), hold `v01` and queue bounded zero-spend `v02` repair -> `v02` QA -> Chief watch staging (note `EDIT_PLAN_v01.json` bespoke diagram PNGs reference Mini local scratch `/Volumes/MiniWork/scratch/J3434-package-v01/bespoke_diagrams/`).\n3. Only if `v01` cleanly passes full audiovisual QA and technical checks:\n   - Merge reviewed clean PRs (PR #107 + `J3662` QA PR, with `picture: done` reconciled).\n   - Independently verify exact NAS master SHA-256 (`7561d4958875e3edc8464563281bc84134b7f4012f0ea04a8c5e93cee53cb993`), make checksum-verified private copy + 3 thumbnails and comparison sheet in `WW2 UAT/006_De-Havilland-Mosquito-Plywood-Balsa-Bomber/`, and upload private R2 watch copy.\n   - Arm `jobs.py awaits` on `J3434` (`due 2026-12-02T20:00Z`, air `2026-12-05T17:00Z`), verify the board watch card/link, and mark `J3434` done.\n\n**Guards:** £0 spend. Preserve Ben's approval requirement before any YouTube upload, schedule, or privacy change. Nothing here needs Ben other than watching the finished cut.\n",
+      "ref": "",
+      "film": "WW2:006",
+      "stage": "edit",
+      "after": "J3662",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T03:17Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T03:17Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "After J3662, review WW2:006 QA and PR #107, confirm Rule-2 title and picture=done, and either queue v02 repair or merge and stage Ben watch (due 2026-12-02 20:00 UTC)",
+      "due": "2026-12-01T12:00:00Z",
+      "kind": "chief",
+      "plain": "Review WW2 Mosquito QA and PR #107, merge or repair, and stage Ben's watch"
     }
   ],
   "focus": [
