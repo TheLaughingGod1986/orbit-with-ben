@@ -1,5 +1,5 @@
 {
-  "next_id": 3750,
+  "next_id": 3751,
   "jobs": [
     {
       "id": "J0001",
@@ -343031,6 +343031,37 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J3750",
+      "title": "MacBook slot 2: inspect and publish (or confirm lost) unpushed J3487 Battle of the Bulge work",
+      "needs": "macbook",
+      "repo": "ww2",
+      "body": "**Why.** J3487 (Field Order History film 016, Battle of the Bulge; script locks Wed 16 Dec 18:00, air date Thu 31 Dec 17:00 London) has been parked since 24 Nov 15:04Z on `publish via Claude Code: /Users/ben/_desk/worker/slot2/ww2-channel macbook/J3487`. That worktree lives only on Ben's MacBook Pro (slot 2), so Mini workers cannot reach it. Two condition checks (J3620, J3730) confirmed `ww2-channel` `origin/macbook/J3487` is still the pre-reopen Bletchley commit `03ce06aeb6815306cdd3efdcf2edd4a1447b84be` (merged in PR #84/#86) and no Battle of the Bulge branch, PR or file exists on GitHub. Earlier MacBook job J3731 was cancelled by acting Chief Gemini because `needs: macbook` + `for: claudecode` was unclaimable by `macbook` or `macbook-2`.\n\n**Do, on MacBook slot 2 (`macbook-2`), in `/Users/ben/_desk/worker/slot2/ww2-channel`:**\n1. Inspect local git state thoroughly without altering or deleting anything first:\n   - `git branch -a` and `git log --oneline origin/main..macbook/J3487` (if local branch `macbook/J3487` exists)\n   - `git status`\n   - `git stash list` (check for any `macbook-worker autostash` mentioning `J3487` or Battle of the Bulge)\n   - `git reflog -n 30` (check for any orphaned Battle of the Bulge commit on 24 Nov ~14:53–15:04Z)\n   Record exact SHAs, branch/stash entries, and files found (or exact proof that none exist).\n2. **If unpushed Battle of the Bulge work exists** (on local `macbook/J3487`, in an autostash, or in reflog):\n   - Read the entire diff and perform the mandatory privacy check (AGENTS.md): refuse anything private (no email or account address, token, key, password, revenue or payment figure, personal detail, or raw Studio export). If anything private is found, DO NOT push; park for the Chief with the exact reason.\n   - Verify any `status.json` keeps `air` exactly as `ww2-channel` `origin/main` has it (`2026-12-31`, PR #95).\n   - Because remote `origin/macbook/J3487` already holds the merged Bletchley commit `03ce06a`, create a new branch (e.g. `macbook/J3487-bulge`) containing the Battle of the Bulge work, push it (`git push -u origin macbook/J3487-bulge`), and open a `ww2-channel` PR against `main` with `gh pr create`. Leave the PR open for the Chief to review and merge (never merge or close a PR on the MacBook). Switch the checkout back to `main` cleanly afterwards.\n3. **If no Battle of the Bulge work exists** (branch reset/same as `03ce06a`, no matching stash, no matching reflog commit, nothing uncommitted):\n   - Say so plainly with the exact command outputs/SHAs so the Chief can reopen J3487 cleanly from scratch ahead of the 16 Dec script lock. Do NOT rewrite the script in this job.\n4. **Finish and report:**\n   - Do NOT run `jobs.py wait J3487 --recheck` (only the elected Chief may update a condition check).\n   - Finish this job with `jobs.py done <this job id> --agent macbook-2 --result \"<PR URL + branch + SHA + privacy check result, OR exact lost-work proof>\" --git` and post a short `[MacBook]` line on the studio thread.\n\n**Guards.** £0, no spend, no voice credits, no upload, no schedule or YouTube change, never force-push, never merge/close a PR, never delete local branches or stashes.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 30,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T22:22Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T22:22Z",
+          "by": "gemini",
+          "what": "added for macbook-2"
+        }
+      ],
+      "remaining_action": "On MacBook slot 2, inspect /Users/ben/_desk/worker/slot2/ww2-channel (branch macbook/J3487, stashes, reflog), privacy-check and push PR or confirm lost",
+      "due": "2026-11-27T18:00:00Z",
+      "for": "macbook-2",
+      "kind": "facts",
+      "plain": "Check MacBook slot 2 for stuck Battle of the Bulge script work for WW2 016, push a PR if found, or confirm it is lost"
     }
   ],
   "focus": [
