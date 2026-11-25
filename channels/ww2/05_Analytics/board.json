@@ -1,40 +1,168 @@
 {
   "name": "Field Order History",
-  "through": "2026-11-20",
+  "through": "2026-11-23",
   "deadline": "2027-02-01",
   "targets": [
     {
       "name": "Subscribers",
-      "current": 0,
+      "current": 1,
       "target": 1000,
-      "eta": null
+      "eta": null,
+      "asOf": "2026-11-25T07:08:34Z",
+      "source": "Studio"
     },
     {
       "name": "Public watch hours (estimate)",
-      "current": 0,
+      "current": 2.4,
       "target": 4000,
-      "eta": null
+      "eta": null,
+      "asOf": "2026-11-25T07:08:34Z",
+      "source": "Studio, all watch time"
     },
     {
       "name": "Public watch hours (estimate)",
-      "current": 0,
+      "current": 2.4,
       "target": 8000,
-      "eta": null
+      "eta": null,
+      "asOf": "2026-11-25T07:08:34Z",
+      "source": "Studio, all watch time"
     }
   ],
   "eligibleWatchHours": 0,
-  "studioReadAt": "2026-11-21T23:54:00Z",
-  "estimatedPublicLongHours": 0,
+  "studioReadAt": "2026-11-23T07:02:42Z",
+  "estimatedPublicLongHours": 0.2833333333333333,
   "note": "Watch-hour forecasts are estimates, not YPP eligibility. Rolling 365-day hours can expire. February 1 is the studio planning line; confirm current policy before applying.",
-  "films": [],
+  "films": [
+    {
+      "id": "ek9F61FVYqY",
+      "title": "Mulberry Harbours: D-Day's Floating Ports",
+      "window": "48h",
+      "startDate": "2026-11-22",
+      "endDate": "2026-11-23",
+      "metrics": {
+        "views": 9,
+        "estimatedMinutesWatched": 17,
+        "averageViewDuration": 128,
+        "averageViewPercentage": 7.76,
+        "subscribersGained": 0
+      },
+      "impressions": 1561,
+      "ctr": 0.9,
+      "viewed": 7.76,
+      "watchHours": 0.2833333333333333,
+      "sources": [
+        {
+          "insightTrafficSourceType": "NO_LINK_OTHER",
+          "views": 1
+        },
+        {
+          "insightTrafficSourceType": "RELATED_VIDEO",
+          "views": 7
+        },
+        {
+          "insightTrafficSourceType": "PLAYLIST",
+          "views": 1
+        }
+      ],
+      "suggested": [
+        {
+          "insightTrafficSourceDetail": "0d8EK1riXaE",
+          "views": 1
+        },
+        {
+          "insightTrafficSourceDetail": "Ca0LcbubFaY",
+          "views": 1
+        },
+        {
+          "insightTrafficSourceDetail": "JN_d89-FEKk",
+          "views": 1
+        },
+        {
+          "insightTrafficSourceDetail": "eqYhNrdIedI",
+          "views": 1
+        },
+        {
+          "insightTrafficSourceDetail": "fqKYSxqJoN8",
+          "views": 1
+        },
+        {
+          "insightTrafficSourceDetail": "hlmP6bz8jPY",
+          "views": 1
+        },
+        {
+          "insightTrafficSourceDetail": "rXdsDZqPH-g",
+          "views": 1
+        }
+      ],
+      "retention": [],
+      "checkpoints": [
+        {
+          "seconds": 30,
+          "ratio": null
+        },
+        {
+          "seconds": 60,
+          "ratio": null
+        },
+        {
+          "seconds": 120,
+          "ratio": null
+        },
+        {
+          "seconds": 0,
+          "ratio": null
+        },
+        {
+          "seconds": 87,
+          "ratio": null
+        },
+        {
+          "seconds": 363,
+          "ratio": null
+        },
+        {
+          "seconds": 613,
+          "ratio": null
+        },
+        {
+          "seconds": 888,
+          "ratio": null
+        },
+        {
+          "seconds": 1142,
+          "ratio": null
+        }
+      ],
+      "newViewers": null,
+      "returningViewers": 0,
+      "studioMissing": {
+        "newViewers": "Studio Advanced mode (22-23 Nov 2026 Pacific) shows '—' for New viewers, Casual viewers and Regular viewers; Audience by watch behaviour says Not enough data (Unique viewers = 25).",
+        "testCompare": "Studio Reach A/B test card and Details show 3-arm thumbnail test Running with no watch-time share percentages or winner reported yet."
+      },
+      "testCompare": {
+        "status": "running",
+        "variants": []
+      },
+      "flags": [
+        "Change thumbnail first, then title; Chief reviews before any change.",
+        "Tighten the next script's first two minutes."
+      ],
+      "medianAvgSeconds": 128,
+      "avgSecondsVsMedian": 0,
+      "medianCtr": 0.9,
+      "medianViewed": 7.76,
+      "ctrVsMedian": 0,
+      "viewedVsMedian": 0
+    }
+  ],
   "countries": [],
   "ageGroups": [],
   "whenViewers": null,
   "whenViewersTimezone": "GMT+00:00",
   "studioMissing": {
-    "whenViewers": "Not enough data on Studio Audience card (Your local time GMT+00:00, Last 28 days; no public videos yet)",
-    "testCompare": "No public films yet (2 scheduled uploads: 22 Nov and 25 Nov 2026)",
-    "demographics": "Not enough data on Studio Audience (Top geographies, Age, Gender; Last 28 days)"
+    "whenViewers": "Studio Audience: Not enough data; Your local time (GMT+00:00), Last 28 days. No weekday/hour/activity cells available.",
+    "testCompare": "Public film ek9F61FVYqY has no set test/results: A/B Testing opens setup with Set test. Closed unchanged. Other film is Scheduled.",
+    "demographics": "Studio Audience: Top geographies, Age and Gender each say Not enough data (Last 28 days)."
   },
   "failures": []
 }

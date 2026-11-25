@@ -73,6 +73,31 @@ class Capabilities(unittest.TestCase):
         before=copy.deepcopy(data);jobs.reconcile_holds(data,AT+dt.timedelta(hours=2))
         self.assertEqual(before,data)
 
+    def test_release_at_time_date_hold_reopens_itself_without_a_verification_task(self):
+        parent={**row('READ'),'status':'blocked','by':'codex'}
+        jobs.set_wait(parent,'codex',AT,{'type':'date','condition':'Read the film at its 48-hour point',
+            'check_at':(AT+dt.timedelta(hours=1)).isoformat(),'release':'auto'})
+        data={'jobs':[parent],'next_id':1}
+        self.assertEqual(jobs.reconcile_holds(data,AT),[])
+        self.assertEqual(parent['status'],'blocked')
+        self.assertEqual(jobs.reconcile_holds(data,AT+dt.timedelta(hours=1)),['READ'])
+        self.assertEqual((parent['status'],parent['by']),('open',''))
+        self.assertNotIn('hold',parent)
+        self.assertEqual(len(data['jobs']),1)
+
+    def test_plain_date_hold_still_asks_for_verification(self):
+        parent={**row('WAIT'),'status':'blocked','by':'codex'}
+        jobs.set_wait(parent,'codex',AT,{'type':'date','condition':'Credits reset','check_at':AT.isoformat()})
+        data={'jobs':[parent],'next_id':1}
+        jobs.reconcile_holds(data,AT)
+        self.assertEqual(parent['status'],'blocked')
+        self.assertEqual(data['jobs'][1]['recheck_of'],'WAIT')
+
+    def test_release_at_time_is_refused_on_other_hold_types(self):
+        parent={**row('X'),'status':'blocked','by':'codex'}
+        with self.assertRaises(ValueError):
+            jobs.set_wait(parent,'codex',AT,{'type':'credits','condition':'Voice credits back','check_at':AT.isoformat(),'release':'auto'})
+
     def test_pending_legacy_check_gains_requirement_when_parent_hold_is_typed(self):
         parent={**row('PARENT'),'status':'blocked','hold':{'type':'capability','requires':['audio_input'],
             'condition':'No listening input','check_at':(AT+dt.timedelta(hours=6)).isoformat()}}

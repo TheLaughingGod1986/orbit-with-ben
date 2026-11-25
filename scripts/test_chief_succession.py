@@ -1,4 +1,4 @@
-"""Ben, 26 Oct (reordered 9 Nov 2026): Claude -> Grok -> Codex -> Gemini, with real role authority and recovery."""
+"""Ben, 26 Oct (reordered 9 Nov and 24 Nov 2026): Claude -> Codex -> Gemini -> Grok, with real role authority and recovery."""
 import contextlib
 import datetime as dt
 import io
@@ -39,38 +39,43 @@ class ChiefTestCase(unittest.TestCase):
 
 class ChiefSuccession(ChiefTestCase):
     def test_default_order_and_each_successor(self):
-        self.assertEqual(cr.chain(), ['claude', 'chief', 'codex', 'gemini'])  # Ben, 9 Nov 2026: Claude first
+        # Ben, 24 Nov 2026: Grok Bot shares a £20 X plan, so it is the last link.
+        self.assertEqual(cr.chain(), ['claude', 'codex', 'gemini', 'chief'])
         self.assertEqual(self.chief(), 'codex')
         cr.seen('chief', T0)
-        self.assertEqual(self.chief(), 'chief')
+        self.assertEqual(self.chief(), 'codex')
         self.beat(T0 - 5 * MIN)
         self.assertEqual(self.chief(), 'claude')
         self.beat(T0 - 100 * MIN)
-        self.assertEqual(self.chief(), 'chief')
-        cr.mark_down('chief', 'credit exhausted', None, T0)
         self.assertEqual(self.chief(), 'codex')
         cr.mark_down('codex', 'usage limit', T0 + 60 * MIN, T0)
         self.assertEqual(self.chief(), 'gemini')
+        cr.mark_down('gemini', 'usage limit', T0 + 60 * MIN, T0)
+        self.assertEqual(self.chief(), 'chief')
         self.assertTrue(cr.state_of('cursor', T0)[0])  # available Cursor does not enter succession
 
-    def test_history_of_science_keeps_grok_first_while_orbit_keeps_claude(self):
-        self.assertEqual(cr.chain(), ['claude', 'chief', 'codex', 'gemini'])
-        self.assertEqual(cr.chain('hos'), ['chief', 'claude', 'codex', 'gemini'])
+    def test_both_channels_put_grok_bot_last(self):
+        # Ben, 24 Nov 2026: Grok Bot is on a £20 plan spent mostly on other projects; History of Science's 11 Nov
+        # Grok-first chain gives way to the same order as Orbit's.
+        self.assertEqual(cr.chain(), ['claude', 'codex', 'gemini', 'chief'])
+        self.assertEqual(cr.chain('hos'), ['claude', 'codex', 'gemini', 'chief'])
         self.beat(T0 - 5 * MIN)
         cr.seen('chief', T0)
         hos = {'id': 'J9', 'repo': 'hos', 'kind': 'chief', 'title': 'Desk ruling'}
         owb = {'id': 'J8', 'repo': 'owb', 'kind': 'chief', 'title': 'Queue ruling'}
         self.assertEqual(self.chief(), 'claude')
-        self.assertEqual(cr.acting(T0, 'hos')[1], 'chief')
-        self.assertTrue(cr.elected_for('chief', T0, hos))
-        self.assertFalse(cr.elected_for('claude', T0, hos))
-        self.assertTrue(cr.elected_for('claude', T0, owb))
-        self.assertFalse(cr.elected_for('chief', T0, owb))
-        cr.mark_down('chief', 'quiet', None, T0)
         self.assertEqual(cr.acting(T0, 'hos')[1], 'claude')
         self.assertTrue(cr.elected_for('claude', T0, hos))
+        self.assertFalse(cr.elected_for('chief', T0, hos))
+        self.assertTrue(cr.elected_for('claude', T0, owb))
+        self.assertFalse(cr.elected_for('chief', T0, owb))
+        cr.mark_down('codex', 'usage limit', T0 + 60 * MIN, T0)
+        cr.mark_down('gemini', 'usage limit', T0 + 60 * MIN, T0)
+        self.beat(T0 - 100 * MIN)
+        self.assertEqual(cr.acting(T0, 'hos')[1], 'chief')
+        self.assertTrue(cr.elected_for('chief', T0, hos))
 
-    def test_a_hos_queue_job_names_grok_while_grok_is_up(self):
+    def test_a_hos_queue_job_names_claude_while_claude_is_up(self):
         self.beat(T0 - 5 * MIN)
         cr.seen('chief', T0)
         self.queue([{'id': 'J1', 'status': 'open', 'needs': 'mini', 'kind': 'assembly',
@@ -81,16 +86,15 @@ class ChiefSuccession(ChiefTestCase):
                 mock.patch.object(cr, 'queue_has_work', return_value=True):
             cr.cmd_run(T0)
         self.assertTrue(calls)
-        self.assertIn('Grok Bot is Chief for History of Science', calls[0])
-        self.assertIn('If this line names anyone but Grok Bot, Grok is down', calls[0])
-        self.assertNotIn('Claude is Chief (reviews, PASS, merges', calls[0])
+        self.assertIn('Claude is Chief for History of Science', calls[0])
+        self.assertIn('If this line names anyone but Claude, Claude is out', calls[0])
 
     def test_recovery_hands_back_in_priority_order_without_manual_switches(self):
         cr.mark_down('codex', 'usage limit', T0 + 60 * MIN, T0)
         self.assertEqual(self.chief(), 'gemini')
         self.assertEqual(self.chief(T0 + 61 * MIN), 'codex')
         cr.seen('chief', T0 + 60 * MIN)
-        self.assertEqual(self.chief(T0 + 62 * MIN), 'chief')
+        self.assertEqual(self.chief(T0 + 62 * MIN), 'codex')  # Grok Bot back does not jump ahead of Codex
         self.beat(T0 + 63 * MIN)
         self.assertEqual(self.chief(T0 + 64 * MIN), 'claude')
 

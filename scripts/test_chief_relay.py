@@ -51,7 +51,7 @@ class Relay(unittest.TestCase):
         self.env = dict(os.environ)
         os.environ.update({"CHIEF_CLAUDE_BEAT_URL": "", "CHIEF_CLAUDE_BEAT_FETCH_MIN": "999999", "CHIEF_NOTIFY": str(notify), "CHIEF_HOURS": "0-24", "CHIEF_SWEEP_HOURS": "0-24", "CHIEF_CHAIN": "chief,cursor,codex",
                            "CHIEF_HEARTBEAT": "0", "CHIEF_MIN_FREE_MB": "0",
-                           "CHIEF_OFFLOAD_GB": "0"})  # no live heartbeat or scratch offload from unit tests
+                           "CHIEF_OFFLOAD_GB": "0", "CHIEF_SPAWN_SLOTS": "0"})  # no live heartbeat or scratch offload from unit tests
         self.cursor = self.fake("cursor", 'echo "cursor did J0001"')
         self.codex = self.fake("codex", 'echo "codex did J0001"')
         os.environ["CURSOR_AGENT_BIN"], os.environ["CODEX_BIN"] = str(self.cursor), str(self.codex)
@@ -542,7 +542,8 @@ class Relay(unittest.TestCase):
         finally:
             cr.queue_has_work = old_q
 
-    def test_with_codex_down_cursor_stands_in_then_hands_back(self):
+    def test_with_codex_down_gemini_stands_in_then_hands_back(self):
+        # Ben, 24 Nov 2026: Cursor is on a £20 X plan, so Gemini is the chart job's first stand-in.
         old_q = cr.queue_has_work
         self.routed_queue('{"jobs": [{"id": "J0200", "kind": "chart", "status": "open", "needs": "mini"}]}')
         cr.queue_has_work = lambda agent: True
@@ -550,25 +551,29 @@ class Relay(unittest.TestCase):
             cr.seen("chief", T0 - 10 * MIN)
             cr.mark_down("codex", "usage limit", T0 + 60 * MIN, T0)
             cr.cmd_run(T0)
-            self.assertTrue(self.ran("cursor"))  # the backup takes the chart job
+            self.assertTrue(self.ran("agy"))  # the backup takes the chart job
             self.assertFalse(self.ran("codex"))
-            (self.tmp / "cursor.ran").unlink()
+            self.assertFalse(self.ran("cursor"))
+            (self.tmp / "agy.ran").unlink()
             cr.seen("chief", T0 + 61 * MIN)
             cr.cmd_run(T0 + 61 * MIN)  # Codex's limit is over: the next chart job goes back to it
             self.assertTrue(self.ran("codex"))
-            self.assertFalse(self.ran("cursor"))
+            self.assertFalse(self.ran("agy"))
         finally:
             cr.queue_has_work = old_q
 
-    def test_an_assembly_job_stays_with_cursor_and_no_model_flag(self):
+    def test_an_assembly_job_goes_to_codex_on_sol_not_cursor(self):
+        # Ben, 24 Nov 2026: Cursor shares Grok Bot's £20 X plan; assembly goes to Codex first.
         old_q = cr.queue_has_work
         self.routed_queue('{"jobs": [{"id": "J0201", "kind": "assembly", "status": "open", "needs": "mini"}]}')
         cr.queue_has_work = lambda agent: True
+        self.codex = self.fake("codex", f'echo "$@" > {self.tmp}/codex.args; echo "codex did it"')
         try:
             cr.seen("chief", T0 - 10 * MIN)
             cr.cmd_run(T0)
-            self.assertTrue(self.ran("cursor"))
-            self.assertFalse(self.ran("codex"))
+            self.assertTrue(self.ran("codex"))
+            self.assertFalse(self.ran("cursor"))
+            self.assertIn("exec -m gpt-6.1-sol", (self.tmp / "codex.args").read_text())
         finally:
             cr.queue_has_work = old_q
 
@@ -632,20 +637,20 @@ class Relay(unittest.TestCase):
         import json
         return next(j for j in json.loads(q.read_text())["jobs"] if j["id"] == jid)
 
-    def test_a_claude_job_blocked_on_a_usage_limit_is_redispatched_to_cursor_on_the_claude_model(self):
+    def test_a_claude_job_blocked_on_a_usage_limit_is_redispatched_to_claude_code_on_the_mini(self):
         q = self.claude_setup('{"jobs": [{"id": "J0300", "kind": "script", "status": "blocked", "needs": "cloud", '
                               '"by": "claude", "result": "Claude Code: usage limit reached, resets 04:00", "history": '
                               '[{"by": "claude", "what": "blocked: Claude Code: usage limit reached, resets 04:00"}]}]}')
-        cr.seen("chief", T0 - 10 * MIN)  # Grok is Chief: Cursor is the worker
+        cr.seen("chief", T0 - 10 * MIN)  # Grok is Chief: the Mini CLIs are workers
         cr.cmd_run(T0)
         j = self.job(q, "J0300")
         self.assertEqual((j["status"], j.get("for"), j["needs"]), ("open", None, "mini"))
         self.assertNotIn("model", j)
         self.assertTrue(j.get("open_claim"))
         self.assertEqual(j["rerouted_from"]["needs"], "cloud")
-        self.assertTrue(self.ran("cursor"))  # woken in the same run, not left parked
+        self.assertTrue(self.ran("claude"))  # Claude Code on the Mini, woken in the same run, not left parked
+        self.assertFalse(self.ran("cursor"))
         self.assertFalse(self.ran("codex"))
-        self.assertIn("--model claude-opus-5-5", (self.tmp / "cursor.args").read_text())
         self.assertTrue(cr.claude_out(T0 + MIN)[0])  # Claude marked down for the retry time
         self.assertTrue((cr.STATE / "chief" / "down" / "claude.json").exists())
         self.assertIn("Claude is out of usage", self.posts.read_text())
@@ -664,11 +669,11 @@ class Relay(unittest.TestCase):
         self.assertNotIn("for", self.job(q, "J0301"))
         for jid in ("J0302", "J0303", "J0304", "J0305"):  # J0305: a MacBook job stays on the MacBook
             self.assertNotIn("rerouted_from", self.job(q, jid), jid)
-        self.assertIn("--model claude-opus-5-5", (self.tmp / "cursor.args").read_text())
-        # The released/open review no longer stops unrelated assembly work in
-        # this run. Keep all invocations rather than inspecting only the last.
-        self.assertIn("--model grok-4.7", (self.tmp / "cursor.args").read_text())
-        self.assertIn("DISPATCH PRIORITY: claim only J0302", (self.tmp / "cursor.args").read_text())
+        self.assertTrue(self.ran("claude"))  # the review went to Claude Code on the Mini
+        self.assertFalse(self.ran("cursor"))
+        # The released/open review no longer stops unrelated assembly work in this run: Codex takes it.
+        self.assertIn("exec -m gpt-6.1-sol", (self.tmp / "codex.args").read_text())
+        self.assertIn("DISPATCH PRIORITY: claim only J0302", (self.tmp / "codex.args").read_text())
 
     def test_cloud_only_job_is_not_rerouted_when_claude_is_out(self):
         # J3231 (20 Nov 2026): vidIQ search-research needs Claude cloud and must not walk to Mini/MacBook workers.
@@ -686,11 +691,11 @@ class Relay(unittest.TestCase):
         self.assertNotIn("for", j)
         self.assertNotIn("rerouted_from", j)
 
-    def test_with_cursor_down_the_claude_job_goes_to_gemini_before_codex(self):
+    def test_with_claude_code_down_the_claude_job_goes_to_gemini_before_codex(self):
         os.environ["AGY_BIN"] = str(self.fake("agy", f'echo "$@" > {self.tmp}/agy.args; echo "gemini did it"'))
         q = self.claude_setup('{"jobs": [{"id": "J0308", "kind": "listing", "status": "open", "needs": "cloud"}]}')
         cr.mark_down("claude", "usage limit", None, T0)
-        cr.mark_down("cursor", "out of credit", T0 + 60 * MIN, T0)
+        cr.mark_down("claudecode", "usage limit", T0 + 60 * MIN, T0)
         cr.seen("chief", T0 - 10 * MIN)
         cr.cmd_run(T0)
         j = self.job(q, "J0308")
@@ -707,39 +712,41 @@ class Relay(unittest.TestCase):
         import json
         os.environ["AGY_BIN"] = str(self.fake("agy", f'echo "$@" > {self.tmp}/agy.args; echo "gemini did it"'))
         q = self.claude_setup('{"jobs": [{"id": "J0309", "kind": "review", "status": "open", "needs": "cloud"}]}')
-        self.fake("cursor", f'echo "$@" > {self.tmp}/cursor.args; echo "Error: usage limit reached for this model"; exit 1')
-        cr.mark_down("claude", "usage limit", None, T0)  # 1) Claude Code is out
+        self.fake("claude", f'echo "$@" > {self.tmp}/claude.args; echo "Error: usage limit reached"; exit 1')
+        cr.mark_down("claude", "usage limit", None, T0)  # 1) the cloud Claude is out
         cr.seen("chief", T0 - 10 * MIN)
         cr.cmd_run(T0)
-        self.assertIn("--model claude-opus-5-5", (self.tmp / "cursor.args").read_text())  # 2) Cursor on Claude tried
+        self.assertTrue((self.tmp / "claude.args").exists())  # 2) Claude Code on the Mini tried
         self.assertTrue(self.ran("agy"))  # 3) Gemini took it in the same run, not parked
         self.assertFalse(self.ran("codex"))
+        self.assertFalse(self.ran("cursor"))
         j = self.job(q, "J0309")
         self.assertTrue(j.get("open_claim"))
         self.assertNotIn("for", j)
-        # Ben, 14 Oct: only Claude-in-Cursor's pool is empty; Cursor stays up for its own models (Auto)
-        self.assertEqual(cr.state_of("cursor", cr.now())[1], "ready")
-        self.assertIn("cursor-claude-opus-5-5", cr.load_out(cr.now()))
+        self.assertFalse(cr.state_of("claudecode", cr.now())[0])  # Claude Code is marked down after its limit
         runs = [json.loads(l) for l in (cr.STATE / "chief" / "runs.jsonl").read_text().splitlines()]
-        self.assertEqual([(r["job"], r["worker"], r["cli_model"], r["lane"], r["out_of_usage"]) for r in runs],
-                         [("J0309", "cursor", "claude-opus-5-5", 2, True),
-                          ("J0309", "gemini", cr.routing.AGY_ARGON_MODEL, 3, False)])
+        self.assertEqual([(r["job"], r["worker"], r["lane"], r["out_of_usage"]) for r in runs],
+                         [("J0309", "claudecode", 2, True),
+                          ("J0309", "gemini", 3, False)])
+        self.assertEqual(runs[1]["cli_model"], cr.routing.AGY_ARGON_MODEL)
 
-    def test_codex_out_of_usage_on_a_chart_job_moves_to_cursor(self):
+    def test_codex_out_of_usage_on_a_chart_job_moves_to_gemini(self):
+        os.environ["AGY_BIN"] = str(self.fake("agy", f'echo "$@" > {self.tmp}/agy.args; echo "gemini did it"'))
         q = self.claude_setup('{"jobs": [{"id": "J0310", "kind": "chart", "status": "open", "needs": "mini"}]}')
         self.fake("codex", f'echo "$@" > {self.tmp}/codex.args; echo "ERROR: You have hit your usage limit"; exit 1')
         cr.seen("chief", T0 - 10 * MIN)
         cr.cmd_run(T0)
         self.assertIn("exec -m gpt-6-astra", (self.tmp / "codex.args").read_text())  # code and graphics: Codex first
-        self.assertTrue(self.ran("cursor"))  # then the next in the chart chain
-        self.assertIn("--model grok-4.7", (self.tmp / "cursor.args").read_text())  # Cursor on Grok 4.7 for a chart
+        self.assertTrue(self.ran("agy"))  # then the next in the chart chain (Gemini, before Claude Code and Cursor)
+        self.assertFalse(self.ran("cursor"))
+        self.assertIn(f"--model {cr.routing.AGY_ARGON_MODEL}", (self.tmp / "agy.args").read_text())
         self.assertTrue(self.job(q, "J0310").get("open_claim"))
         self.assertNotIn("for", self.job(q, "J0310"))
 
-    def test_with_cursor_and_gemini_down_the_claude_job_goes_to_codex_on_astra(self):
+    def test_with_claude_code_and_gemini_down_the_claude_job_goes_to_codex_on_astra(self):
         q = self.claude_setup('{"jobs": [{"id": "J0305", "kind": "listing", "status": "open", "needs": "cloud"}]}')
         cr.mark_down("claude", "usage limit", None, T0)
-        cr.mark_down("cursor", "out of credit", T0 + 60 * MIN, T0)
+        cr.mark_down("claudecode", "usage limit", T0 + 60 * MIN, T0)
         cr.mark_down("gemini", "quota exhausted", T0 + 60 * MIN, T0)
         cr.seen("chief", T0 - 10 * MIN)
         cr.cmd_run(T0)
@@ -749,6 +756,29 @@ class Relay(unittest.TestCase):
         self.assertNotIn("model", j)
         self.assertTrue(self.ran("codex"))
         self.assertIn("exec -m gpt-6-astra", (self.tmp / "codex.args").read_text())
+
+    def test_a_worker_is_marked_down_until_the_reset_it_printed(self):
+        """24 Nov 2026: Cursor printed "Weekly usage limit reached. It resets in 2 days" and was retried hourly."""
+        T = cr.now()
+        self.assertEqual(cr.stated_reset("ActionRequiredError: Weekly usage limit reached. It resets in 2 days. "
+                                         "Buy credits to keep going now.", T), T + dt.timedelta(days=2))
+        self.assertEqual(cr.stated_reset("rate limited, try again in 3h 20m", T), T + dt.timedelta(minutes=200))
+        self.assertEqual(cr.stated_reset("limit; resets at 2026-12-01T09:00Z", dt.datetime(2026, 11, 30, tzinfo=dt.timezone.utc)),
+                         dt.datetime(2026, 12, 1, 9, 0, tzinfo=dt.timezone.utc))
+        self.assertEqual(cr.stated_reset("Weekly usage limit reached", T), T + dt.timedelta(hours=12))
+        self.assertIsNone(cr.stated_reset("You have hit your usage limit", T))
+        self.assertEqual(cr.stated_reset("resets in 30 days", T), T + cr.RESET_MAX)  # capped
+        q = self.claude_setup('{"jobs": [{"id": "J0311", "kind": "chart", "status": "open", "needs": "mini"}]}')
+        self.fake("codex", 'echo "ActionRequiredError: Weekly usage limit reached. It resets in 2 days."; exit 1')
+        cr.seen("chief", T0 - 10 * MIN)
+        cr.cmd_run(T0)
+        mark = cr.read_json(cr.d("down", "codex.json"))
+        self.assertGreater(cr.parse(mark["until"]) - cr.parse(mark["since"]), dt.timedelta(hours=47))
+        self.assertTrue(self.ran("agy"))  # and the chart job walked on to Gemini in the same run
+        rows = {r["agent"]: r for r in cr.heartbeat_doc(cr.now(), "idle")["workers"]}
+        self.assertFalse(rows["codex"]["up"])
+        self.assertEqual(rows["codex"]["until"], mark["until"])
+        self.assertTrue(rows["gemini"]["up"])
 
     def test_while_claude_is_up_its_jobs_stay_with_claude(self):
         q = self.claude_setup('{"jobs": [{"id": "J0306", "kind": "script", "status": "open", "needs": "cloud"}, '
@@ -824,13 +854,14 @@ class Relay(unittest.TestCase):
         q = self.claude_setup('{"jobs": [{"id": "J0401", "kind": "review", "status": "open", "needs": "cloud"},'
                               ' {"id": "J0402", "kind": "assembly", "status": "open", "needs": "mini"}]}')
         os.environ["AGY_BIN"] = str(self.fake("agy", 'echo "gemini did it"'))
-        self.flags({"cursor-claude-opus-5-5": {"out_until": "2026-11-06T00:00:00Z", "reason": "Other Models used up"}})
+        self.flags({"mini-claude-opus-5-5": {"out_until": "2026-11-06T00:00:00Z", "reason": "Claude plan used up"}})
         cr.mark_down("claude", "usage limit", None, T0)
         cr.seen("chief", T0 - 10 * MIN)
         cr.cmd_run(T0)
-        self.assertTrue(self.job(q, "J0401").get("open_claim"))  # straight past Claude-in-Cursor; not pinned to Gemini
+        self.assertTrue(self.job(q, "J0401").get("open_claim"))  # straight past Claude Code; not pinned to Gemini
         self.assertNotIn("for", self.job(q, "J0401"))
         self.assertTrue(self.ran("agy"))
+        self.assertFalse(self.ran("claude"))
         self.assertEqual(cr.state_of("cursor", T0)[1], "ready")  # Cursor itself is fine for Auto jobs
         self.assertEqual(cr.routing.model_for({"kind": "assembly"}, "cursor"), "cursor-grok-4-7")
 
@@ -851,7 +882,7 @@ class Relay(unittest.TestCase):
         (cr.STUDIO / "scripts").mkdir(parents=True, exist_ok=True)
         (cr.STUDIO / "scripts" / "chief_override.json").write_text(json.dumps(
             {"agent": "claude", "until": "2026-10-16T18:00:00Z", "reason": "Ben, 14 Oct: Grok out until Friday"}))
-        self.cursor = self.fake("cursor", f'echo "$@" > {self.tmp}/cursor.args; echo "cursor did it"')
+        self.codex = self.fake("codex", f'echo "$@" > {self.tmp}/codex.args; echo "codex did it"')
         old = cr.queue_has_work
         cr.queue_has_work = lambda agent: True
         try:
@@ -859,7 +890,7 @@ class Relay(unittest.TestCase):
             cr.cmd_run(T0)
         finally:
             cr.queue_has_work = old
-        self.assertIn("Claude is Chief (reviews, PASS, merges", (self.tmp / "cursor.args").read_text())
+        self.assertIn("Claude is Chief (reviews, PASS, merges", (self.tmp / "codex.args").read_text())
         posts = self.posts.read_text()
         self.assertIn("**Claude is acting Chief** until 2026-10-16T18:00:00Z", posts)
         self.assertIn("Grok out until Friday", posts)
@@ -924,9 +955,9 @@ class Relay(unittest.TestCase):
 
     # ---- Ben, 21 Oct 2026: a standing chain with Claude in it, and one alert when nobody can be Chief ----
 
-    def test_the_default_chain_puts_claude_second(self):
+    def test_the_default_chain_puts_claude_first_and_grok_last(self):
         del os.environ["CHIEF_CHAIN"]
-        self.assertEqual(cr.chain(), ["claude", "chief", "codex", "gemini"])
+        self.assertEqual(cr.chain(), ["claude", "codex", "gemini", "chief"])  # Ben, 24 Nov 2026
 
     def test_claude_is_chief_after_grok_while_its_heartbeat_is_fresh_and_hands_on_and_back(self):
         os.environ["CHIEF_CHAIN"] = "chief,claude,cursor,codex"
@@ -949,14 +980,14 @@ class Relay(unittest.TestCase):
         os.environ["CHIEF_CHAIN"] = "chief,claude,cursor,codex"
         self.routed_queue('{"jobs": [{"id": "J0403", "kind": "assembly", "status": "open", "needs": "mini"}]}')
         self.beat(T0 - 5 * MIN)
-        self.cursor = self.fake("cursor", f'echo "$@" > {self.tmp}/cursor.args; echo "cursor did it"')
+        self.codex = self.fake("codex", f'echo "$@" > {self.tmp}/codex.args; echo "codex did it"')
         old = cr.queue_has_work
         cr.queue_has_work = lambda agent: True
         try:
             cr.cmd_run(T0)
         finally:
             cr.queue_has_work = old
-        self.assertIn("Claude is Chief (reviews, PASS, merges", (self.tmp / "cursor.args").read_text())
+        self.assertIn("Claude is Chief (reviews, PASS, merges", (self.tmp / "codex.args").read_text())
         posts = self.posts.read_text()
         self.assertIn("**Claude is acting Chief**", posts)
         self.assertIn("reviews, PASS, merges and final OKs go to Claude", posts)
@@ -1248,13 +1279,13 @@ class Relay(unittest.TestCase):
         folder.mkdir(parents=True)
         (folder / "owner.txt").write_text(f"pid={os.getpid()}\n")
         os.environ["DESK_LOCK_ROOT"] = str(root)
-        self.cursor = self.fake("cursor", f'echo "$@" > {self.tmp}/cursor.args')
+        self.codex = self.fake("codex", f'echo "$@" > {self.tmp}/codex.args')
         self.routed_queue('{"jobs": ['
                           '{"id": "J0502", "kind": "vo", "status": "open", "needs": "mini", "title": "Record the line"},'
                           '{"id": "J0503", "kind": "assembly", "status": "open", "needs": "mini", "title": "Assemble the cut"}]}')
         cr.seen("chief", T0 - 10 * MIN)
         cr.cmd_run(T0)
-        text = (self.tmp / "cursor.args").read_text() if (self.tmp / "cursor.args").exists() else ""
+        text = (self.tmp / "codex.args").read_text() if (self.tmp / "codex.args").exists() else ""
         self.assertIn("claim only J0503", text)
         self.assertNotIn("claim only J0502", text)
 
@@ -1270,6 +1301,130 @@ class Relay(unittest.TestCase):
         self.assertFalse(self.ran("codex"))
         self.assertFalse(self.ran("cursor"))
 
+    def test_reclaimable_memory_counts_for_a_second_slot(self):
+        """24 Nov 2026: 0.3 GB free but 9 GB inactive and purgeable on the Mini; only free counted, so one slot ran."""
+        out = ("Mach Virtual Memory Statistics: (page size of 16384 bytes)\n"
+               "Pages free:                               20000.\n"
+               "Pages active:                            400000.\n"
+               "Pages inactive:                          500000.\n"
+               "Pages speculative:                        10000.\n"
+               "Pages purgeable:                          60000.\n")
+        self.assertEqual(cr.vm_stat_available(out), (20000 + 10000 + 500000 + 60000) * 16384)
+        self.assertGreater(cr.vm_stat_available(out), 3 * 1024 ** 3)
+        self.assertEqual(cr.vm_stat_available(""), 0)
+
+    def test_a_launchd_run_spawns_one_detached_run_for_a_free_slot(self):
+        """24 Nov 2026 (J3521): launchd never starts a second run while one works, so slot 1 never opened."""
+        from unittest import mock
+        os.environ.update({"CHIEF_PARALLEL": "2", "CHIEF_FREE_MEM_BYTES": str(8 << 30), "CHIEF_SPAWN_SLOTS": "1"})
+        os.environ.pop("CHIEF_SPAWNED", None)
+        with mock.patch.object(cr.subprocess, "Popen") as popen:
+            self.assertTrue(cr.spawn_second_slot(T0))
+        args, kw = popen.call_args
+        self.assertEqual(args[0][-1], "run")
+        self.assertEqual(kw["env"]["CHIEF_SPAWNED"], "1")
+        self.assertTrue(kw["start_new_session"])
+
+    def test_no_spawn_from_a_spawned_run_when_slots_are_busy_low_memory_or_off(self):
+        from unittest import mock
+        os.environ.update({"CHIEF_PARALLEL": "2", "CHIEF_FREE_MEM_BYTES": str(8 << 30), "CHIEF_SPAWN_SLOTS": "1"})
+        with mock.patch.object(cr.subprocess, "Popen") as popen:
+            os.environ["CHIEF_SPAWNED"] = "1"
+            self.assertFalse(cr.spawn_second_slot(T0))
+            os.environ.pop("CHIEF_SPAWNED")
+            self._live_lease(0, "cursor")
+            self.assertFalse(cr.spawn_second_slot(T0))  # only one slot left: this run takes it
+            cr.d("execution-0.json").unlink()
+            os.environ["CHIEF_FREE_MEM_BYTES"] = str(1 << 30)
+            os.environ["CHIEF_SLOT_MIN_GB"] = "3"
+            self.assertFalse(cr.spawn_second_slot(T0))
+            os.environ["CHIEF_FREE_MEM_BYTES"] = str(8 << 30)
+            os.environ["CHIEF_SPAWN_SLOTS"] = "0"
+            self.assertFalse(cr.spawn_second_slot(T0))
+            os.environ["CHIEF_PARALLEL"] = "1"
+            os.environ["CHIEF_SPAWN_SLOTS"] = "1"
+            self.assertFalse(cr.spawn_second_slot(T0))
+        popen.assert_not_called()
+
+    def test_boundary_retries_when_a_second_worker_returns(self):
+        os.environ.update({"CHIEF_PARALLEL": "2", "CHIEF_FREE_MEM_BYTES": str(8 << 30), "CHIEF_SPAWN_SLOTS": "1"})
+        os.environ.pop("CHIEF_SPAWNED", None)
+        self._live_lease(0, "codex")
+        with mock.patch.object(cr, "workers_up", return_value={"codex"}) as available, \
+                mock.patch.object(cr.subprocess, "Popen") as popen:
+            self.assertFalse(cr.spawn_second_slot(T0, parent_slot=0))
+            popen.assert_not_called()
+            available.return_value = {"codex", "gemini"}
+            self.assertTrue(cr.spawn_second_slot(T0, parent_slot=0))
+            self.assertEqual(popen.call_count, 1)
+            # A running parent counts once; startup still reserves its own slot.
+            self.assertFalse(cr.spawn_second_slot(T0))
+
+    def test_boundary_retains_slot_memory_pause_and_recursion_guards(self):
+        os.environ.update({"CHIEF_PARALLEL": "2", "CHIEF_FREE_MEM_BYTES": str(8 << 30), "CHIEF_SPAWN_SLOTS": "1"})
+        os.environ.pop("CHIEF_SPAWNED", None)
+        self._live_lease(0, "codex")
+        with mock.patch.object(cr, "workers_up", return_value={"codex", "gemini", "cursor"}), \
+                mock.patch.object(cr.subprocess, "Popen") as popen:
+            self._live_lease(1, "gemini")
+            self.assertFalse(cr.spawn_second_slot(T0, parent_slot=0))
+            cr.d("execution-1.json").unlink()
+            os.environ["CHIEF_FREE_MEM_BYTES"] = str(1 << 30)
+            os.environ["CHIEF_SLOT_MIN_GB"] = "3"
+            self.assertFalse(cr.spawn_second_slot(T0, parent_slot=0))
+            os.environ["CHIEF_FREE_MEM_BYTES"] = str(8 << 30)
+            pause = cr.STATE / "chief-relay.pause"
+            pause.touch()
+            self.assertFalse(cr.spawn_second_slot(T0, parent_slot=0))
+            pause.unlink()
+            os.environ["CHIEF_SPAWNED"] = "1"
+            self.assertFalse(cr.spawn_second_slot(T0, parent_slot=0))
+            os.environ.pop("CHIEF_SPAWNED")
+            # A held run lock also blocks spawning, without an execution lease.
+            with open(cr.d("run-1.lock"), "a+") as held:
+                cr.fcntl.flock(held, cr.fcntl.LOCK_EX | cr.fcntl.LOCK_NB)
+                self.assertFalse(cr.spawn_second_slot(T0, parent_slot=0))
+            popen.assert_not_called()
+
+    def test_pending_child_reserves_spawn_until_it_exits(self):
+        os.environ.update({"CHIEF_PARALLEL": "2", "CHIEF_FREE_MEM_BYTES": str(8 << 30), "CHIEF_SPAWN_SLOTS": "1"})
+        os.environ.pop("CHIEF_SPAWNED", None)
+        real_popen = cr.subprocess.Popen
+        children = []
+        def delayed_child(args, **kw):
+            # Exercise real descriptor inheritance and flock lifetime, without
+            # starting a relay or touching the live queue.
+            child = real_popen([sys.executable, "-c", "import time; time.sleep(30)"], **kw)
+            children.append(child)
+            return child
+        try:
+            with mock.patch.object(cr.subprocess, "Popen", side_effect=delayed_child) as popen:
+                self.assertTrue(cr.spawn_second_slot(T0))
+                self.assertFalse(cr.spawn_second_slot(T0))
+                self.assertEqual(popen.call_count, 1)
+                children[0].terminate()
+                children[0].wait(timeout=5)
+                self.assertTrue(cr.spawn_second_slot(T0))
+        finally:
+            for child in children:
+                if child.poll() is None:
+                    child.terminate()
+                child.wait(timeout=5)
+
+    def test_each_job_boundary_rechecks_after_publishing_its_worker(self):
+        ran = self._chain(["J0001", "J0002", "J0003"])
+        cr.seen("chief", T0 - 10 * MIN)
+        leases = []
+        def boundary(at, parent_slot=None):
+            leases.append(cr.read_json(cr.d(f"execution-{parent_slot}.json")))
+            return False
+        with mock.patch.object(cr, "spawn_second_slot", side_effect=boundary) as spawn:
+            cr.cmd_run(T0)
+        self.assertEqual(ran, ["J0001", "J0002", "J0003"])
+        self.assertEqual(spawn.call_count, 3)
+        self.assertEqual([row["job"] for row in leases], ran)
+        self.assertTrue(all(row["worker"] for row in leases))
+
     def test_the_first_slot_still_starts_when_memory_is_low(self):
         self.routed_queue('{"jobs": [{"id": "J0505", "kind": "assembly", "status": "open", "needs": "mini", '
                           '"title": "Assemble the cut"}]}')
@@ -1277,7 +1432,7 @@ class Relay(unittest.TestCase):
         os.environ["CHIEF_SLOT_MIN_GB"] = "3"
         cr.seen("chief", T0 - 10 * MIN)
         cr.cmd_run(T0)
-        self.assertTrue(self.ran("cursor"))
+        self.assertTrue(self.ran("codex"))  # assembly goes to Codex first (Ben, 24 Nov 2026)
 
 
 class PromptNamesTheRuleFiles(TodaysLayout):
@@ -1422,7 +1577,11 @@ class TheBriefIsBuiltFromTheChannelFiles(TodaysLayout):
                 was = BRIEF_BEFORE_J2618.format(**self.COMMON, owb=self.O, hos=self.H, owb_rules=studio, hos_rules=other)
                 self.assertEqual(was.count("scripts/owb_thread.py"), 2)
                 self.assertEqual(now, was.replace("scripts/owb_thread.py", "scripts/studio_thread.py")
-                                         .replace("desk #180", f"desk #{cr.channels.desk('hos')['number']}"))
+                                         .replace("desk #180", f"desk #{cr.channels.desk('hos')['number']}")
+                                         # 23 Nov 2026 (Ben: show which steps are left): workers name their steps.
+                                         .replace("update that action as the remaining work changes. Use k=0",
+                                                  "update that action as the remaining work changes.\n   On the first report (and whenever n changes) "
+                                                  "add --plan \"<step 1> | <step 2> | ...\" with n short plain names, so Ben sees which steps are left. Use k=0"))
 
     def test_the_sentence_a_worker_gets_is_the_old_one(self):
         self.assertEqual(cr.worker_only_steps(),

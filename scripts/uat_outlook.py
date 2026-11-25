@@ -31,7 +31,10 @@ def stage_record(stages, key):
     An explicit canonical record (including unknown/pending) wins over an alias.
     HOS's upload-package scaffold is not the complete Packaging milestone.
     """
-    return (stages.get(key) if key in stages else stages.get(STAGE_ALIASES.get(key))) or {}
+    raw = (stages.get(key) if key in stages else stages.get(STAGE_ALIASES.get(key))) or {}
+    # Some older status.json files record a stage as a bare word ("done") rather than {"state": ...}; the board build
+    # read every past version and stopped on the first one (24 Nov 2026).
+    return raw if isinstance(raw, dict) else {'state': str(raw)}
 
 
 def date(value):

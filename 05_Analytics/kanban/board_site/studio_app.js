@@ -24,11 +24,11 @@
   const boardFetch = sha => window.__boardUpdates ? window.__boardUpdates(sha, own, fullBoardFetch) : fullBoardFetch(sha);
   const DATA_AT = sha => `https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/${sha}/board.json`;
   const DATA = "https://raw.githubusercontent.com/TheLaughingGod1986/orbit-with-ben/board-data/board.json";
-  const TABS = [["overview", "Overview", "⌂"], ["videos", "Videos", "▤"], ["review", "Review", "▶︎"], ["agents", "Agents", "◉"], ["schedule", "Schedule", "▦"]];
+  const TABS = [["overview", "Overview", "⌂"], ["videos", "Videos", "▤"], ["review", "Review", "▶︎"], ["agents", "Agents", "◉"], ["schedule", "Schedule", "▦"], ["market", "Market", "◈"]];
   const QUIET_MIN = 75;  // the relay checks in every 10-20 min; this long without it, the Mac mini is quiet
   const AGENTS = { chief: "Grok", claude: "Claude", codex: "Codex", gemini: "Gemini", cursor: "Cursor", macbook: "MacBook", "macbook-2": "MacBook 2" };
   const POOLS = { elevenlabs: "ElevenLabs", flow: "Flow", vertex: "Vertex", cursor: "Cursor", codex: "Codex" };
-  let board = null, lastSha = "", filterCh = "all", filterType = "all", seg = "all";
+  let board = null, lastSha = "", filterCh = "all", filterType = "all", seg = "all", marketNiche = "all", marketFormat = "all";
   // Videos lane: smart default once per visit unless Ben taps a chip or the hash names a lane (Ben, 7 Nov 2026).
   let videosLaneChosen = false, videosLandingApplied = false;
   const sent = {};  // checkId -> the tick just sent, until board.json shows it
@@ -113,6 +113,31 @@
   // One meaning of "working" everywhere (Ben, 28 Oct: 11 / 1 / 0 read as a contradiction): an agent has claimed a job
   // on it right now. The tracker's looser v.working flag is not used here.
   const isWorking = v => !!activeJob(v);
+  // Production work still open on a film (Ben, 23 Nov 2026: FOH pilot 2 showed "Scheduled" while its rework ran, its
+  // progress was invisible, and queued work read as "In progress"). The relay's condition checks and launch-day jobs
+  // (Studio reads, listings, thumbnail tests) are not production work.
+  const REWORK_KINDS = new Set(["script", "facts", "vo", "image", "chart", "assembly", "video", "qa"]);
+  const REWORK_LABEL = { script: "Script", facts: "Fact check", vo: "Voice-over", image: "Archive photos", chart: "Graphics",
+    assembly: "Picture and edit", video: "Video clips", qa: "Quality check" };
+  const isRecheck = j => /^Verify condition for\b/i.test(String((j && j.title) || ""));
+  const reworkJobs = v => (v.jobs || []).filter(j => LIVE(j) && !isRecheck(j) && REWORK_KINDS.has(String(j.kind || "").toLowerCase()));
+  const inRework = v => !isLive(v) && reworkJobs(v).length > 0;
+  function jobStepText(j) {
+    const p = j.progress || {}, step = +p.step || 0, of = +p.of || 0;
+    const state = j.status === "claimed" ? `${AGENTS[j.by] || j.by || "an agent"} on it now`
+      : j.status === "blocked" ? "waiting for a step" : step ? "paused, waiting for an agent to pick it back up" : "queued, no agent on it yet";
+    const plan = Array.isArray(p.plan) ? p.plan : [], next = plan.length === of && step < of ? ` · next: ${plan[step]}` : "";
+    return `${REWORK_LABEL[String(j.kind || "").toLowerCase()] || "Work"}${of ? `: step ${step} of ${of}` : ""} · ${state}${next}`;
+  }
+  // A job's named steps, ticked as they finish (Ben, 23 Nov 2026: "with any job still in progress, I can't see the list
+  // of outstanding tasks that are left"). Workers record them with `jobs.py progress --plan "a | b | c"`.
+  function planSteps(j) {
+    const p = (j && j.progress) || {}, plan = Array.isArray(p.plan) ? p.plan : [];
+    if (!plan.length) return "";
+    const done = Math.max(0, Math.min(+p.step || 0, plan.length));
+    return `<ol class="plan-steps">${plan.map((s, i) => `<li class="${i < done ? "done" : i === done ? "next" : "left"}">${i < done ? "✓" : "○"} ${esc(s)}${i === done ? " <span class=\"meta\">(next)</span>" : ""}</li>`).join("")}</ol>`;
+  }
+  const reworkLine = v => reworkJobs(v).slice(0, 4).map(j => `<span class="meta step-line">${esc(jobStepText(j))}</span>`).join("");
 
   // What the agents are doing on a video, in one line: who, the task, and the step they reported.
   function doing(v) {
@@ -144,7 +169,7 @@
     const dot = working ? `<span class="p24-working-dot" role="img" aria-label="A job is in progress"></span>` : "";
     return `<a class="row${working ? " is-working" : ""}" href="${jobRoute(j.id)}">${dot}<div class="thumb job" aria-hidden="true">⚙</div><div class="body"><b>${esc(clip(jobPlain(null, j), 110))}</b>
       <span class="meta">Studio job · not one video</span><span class="doing">${esc(AGENTS[j.by] || j.by || "An agent")}</span>
-      ${p ? bar(p, left) : left ? `<span class="meta">${esc(left)}</span>` : ""}</div><span class="chev">›</span></a>`;
+      ${p ? bar(p, left) : left ? `<span class="meta">${esc(left)}</span>` : ""}${planSteps(j)}</div><span class="chev">›</span></a>`;
   }
   const uatLink = v => `#uat=${encodeURIComponent(v.key)}`;
 
@@ -174,7 +199,8 @@
   function isQa(v) {
     if (v.lane === "ready" && v.readyFor && v.readyFor !== "Ben") return true;
     return (v.jobs || []).some(j => {
-      if (!LIVE(j)) return false;
+      // The relay's "Verify condition for ..." checks wait on other work; they are not a review of the film.
+      if (!LIVE(j) || isRecheck(j)) return false;
       const kind = String(j.kind || "").toLowerCase();
       if (kind === "review" || kind === "qa" || kind === "chief") return true;
       return !kind && /\b(review|KEEP|shot list|Chief QA|frame review)\b/i.test(j.title || "");
@@ -276,6 +302,8 @@
     if (isLive(v) && (v.jobs || []).some(LIVE)) return "postlive";
     if (isLive(v)) return "live";
     if (needsBenWatch(v)) return "uat";
+    // Scheduled or passed with production work still open: it is being reworked, not waiting to go public.
+    if ((isScheduledNotPublic(v) || v.lane === "approved") && inRework(v)) return "progress";
     if (isScheduledNotPublic(v)) return "scheduled";
     // Passed stays Passed even while an upload/social job runs — it is ready to schedule, not a Ben hold.
     if (v.lane === "approved") return "passed";
@@ -295,6 +323,10 @@
     const lane = videoLane(v);
     if (lane === "live" || isLive(v)) return "Published";
     if (lane === "postlive") return "Post-live improvements";
+    if (lane === "progress" && inRework(v) && (isScheduledNotPublic(v) || v.lane === "approved")) {
+      const when = isScheduledNotPublic(v) ? listingLine(v).replace(/^Scheduled for /, "") : "";
+      return when ? `Being reworked before launch (scheduled ${when})` : "Being reworked before launch";
+    }
     if (lane === "scheduled") return listingLine(v) || "Scheduled";
     if (lane === "passed") return listingLine(v) || "Ready to schedule";
     if (lane === "uat") return "Ready for you";
@@ -307,6 +339,8 @@
     const live = (v.jobs || []).find(j => j.status === "claimed");
     if (live) return "Working now";
     if ((v.jobs || []).some(j => j.status === "blocked")) return "Waiting";
+    // Open jobs nobody has claimed are queued, not in progress (Ben, 23 Nov 2026).
+    if ((v.jobs || []).some(j => j.status === "open")) return "Queued · no agent on it yet";
     return v.lane === "upcoming" ? "Planned" : "In progress";
   }
 
@@ -377,10 +411,19 @@
   const inProgress = vs => vs.filter(v => ["todo", "progress", "qa"].includes(videoLane(v)));
 
   // Publications from now on: YouTube's own schedule first, else the planned air date; one row per YouTube video.
-  function schedule(vs, now) {
+  // A planned air date's time: the channel's own slot on that weekday, else its first slot, else 18:00 (London; the
+  // board shows GMT-season dates as written).
+  function slotTime(v, chans) {
+    const c = (chans || []).find(x => x && (x.label === v.channel || x.slug === v.channel || x.short === v.channel));
+    const slots = ((c && c.cadence) || {})[v.type === "short" ? "short" : "long"] || [];
+    const wd = v.air ? new Date(v.air + "T12:00:00Z").toLocaleDateString("en-GB", { timeZone: "UTC", weekday: "short" }) : "";
+    const hit = slots.find(s => s.startsWith(wd + " ")) || slots[0] || "";
+    return /\d\d:\d\d$/.test(hit) ? hit.slice(-5) : "18:00";
+  }
+  function schedule(vs, now, chans) {
     const seen = new Set(), rows = [];
     for (const v of vs) {
-      const yt = v.youtube || {}, at = Date.parse(yt.publishAt || "") || Date.parse(v.air ? v.air + "T18:00:00Z" : "");
+      const yt = v.youtube || {}, at = Date.parse(yt.publishAt || "") || Date.parse(v.air ? `${v.air}T${slotTime(v, chans)}:00Z` : "");
       if (!at || at < now - 36e5 || (yt.state === "live" && yt.privacy === "public")) continue;
       const slot = `${v.channel}|${v.type}|${at}`, id = yt.videoId || "";
       if ((id && seen.has(id)) || seen.has(slot)) {
@@ -734,15 +777,17 @@
   }
   function videoProductionRow(v, now, b) {
     if (isLive(v)) return row(v, "");
-    const historyOnly=forBen([v]).length || pendingChanges(v) || ['approved','done','changes'].includes(v.lane) || (v.youtube||{}).state==='scheduled';
-    const scoped=unconfirmedCut(v), current=historyOnly?null:scoped?relatedStage(v):currentProduction(v)[0], f=forecastView(v,now);
+    const historyOnly=!inRework(v) && (forBen([v]).length || pendingChanges(v) || ['approved','done','changes'].includes(v.lane) || (v.youtube||{}).state==='scheduled');
+    // A passed or scheduled film back in production: its recorded milestones and UAT handoff describe the old cut.
+    const rework=inRework(v) && (isScheduledNotPublic(v) || v.lane==='approved');
+    const scoped=unconfirmedCut(v), current=historyOnly||rework?null:scoped?relatedStage(v):currentProduction(v)[0], f=forecastView(v,now);
     const working = videoHasActiveWork(v);
     // Film-level live delta from Overview's progress24h when this cut's parent film moved; never invent cut %s.
     const pct = working ? videoProgressDelta(v, b || board) : null;
     const delta = pct && pct.label && pct.from != null && pct.to != null && pct.from !== pct.to
       ? `<span class="video-live-delta p24-delta${pct.down ? " down" : (pct.grew ? "" : " flat")}">${esc(pct.label)}</span>`
       : "";
-    return row(v, `<span class="meta current-label">${scoped?'Related work: ':''}${esc(current?current.label:stage(v))}${blockedVideo(v)?' · <span class="blocked-word">Waiting for a step</span>':''}${working?' · <span class="working-word">Working now</span>':''}</span>${delta}${milestoneProgress(v)}<span class="meta outlook-line">UAT: ${esc(f.value)}</span>`, null, { working });
+    return row(v, `<span class="meta current-label">${scoped?'Related work: ':''}${esc(current?current.label:stage(v))}${blockedVideo(v)?' · <span class="blocked-word">Waiting for a step</span>':''}${working?' · <span class="working-word">Working now</span>':''}</span>${delta}${rework?'':milestoneProgress(v)}${reworkLine(v)}${rework?'':`<span class="meta outlook-line">UAT: ${esc(f.value)}</span>`}`, null, { working });
   }
   // One set of selectors feeds Overview and its linked lists. Jobs never stand in for videos.
   function uniqueVideos(vs) {
@@ -1340,6 +1385,44 @@
       <ul class="p24-glance-list att-list">${list}</ul>
     </details>`;
   }
+  // One honest list of what is stuck (Ben, 24 Nov 2026: "the reason why jobs are being missed, and why jobs are
+  // building up in past and not being moved on"): agents that are out and when they are back, jobs past their due
+  // time, and jobs blocked for more than three days. Each line is plain words; the job page has the detail.
+  function stuckModel(b, now) {
+    const t = Number(now) || Date.now();
+    const models = (((b || {}).models || {}).models || []).filter(m => m && m.status === 'red' && !['elevenlabs', 'vertex'].includes(m.id));
+    const out = models.map(m => {
+      const back = m.until ? Date.parse(m.until) : NaN;
+      return {name: m.name || m.id, why: clip(String(m.why || 'out'), 110), back: Number.isFinite(back) && back > t ? back : null};
+    });
+    const live = (((b || {}).owb || {}).jobs || []).filter(j => j && ['open', 'blocked'].includes(j.status) && !j.recheck_of);
+    const due = j => { const d = Date.parse(j.due || ''); return Number.isFinite(d) ? d : null; };
+    const overdue = live.filter(j => due(j) !== null && due(j) < t).sort((x, y) => due(x) - due(y));
+    const born = j => { const d = Date.parse(j.created_at || ''); return Number.isFinite(d) ? d : null; };
+    const DAY = 864e5;
+    // A job waiting for a set time (a film going public, a 48-hour read) is on schedule, not stuck.
+    const scheduled = j => { const h = j.hold || {}; const c = Date.parse(h.check_at || ''); return ['date', 'public', 'test'].includes(h.type) && Number.isFinite(c) && c > t; };
+    const stale = live.filter(j => j.status === 'blocked' && born(j) !== null && t - born(j) > 3 * DAY && !overdue.includes(j) && !scheduled(j))
+      .sort((x, y) => born(x) - born(y));
+    return {out, overdue, stale, now: t};
+  }
+  function stuckSection(b, now) {
+    const m = stuckModel(b, now);
+    const n = m.out.length + m.overdue.length + m.stale.length;
+    if (!n) return '';
+    const hrs = ms => { const h = Math.round(ms / 36e5); return h < 48 ? `${h} h` : `${Math.round(h / 24)} days`; };
+    const when = ms => new Date(ms).toLocaleString('en-GB', {weekday: 'short', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/London'});
+    const jobLine = (j, note) => `<li><a href="#job=${esc(j.id)}"><span class="p24-title wrap">${esc(clip(jobPlain(b, j) || j.title || j.id, 110))}</span></a> <span class="muted">${esc(note)}</span></li>`;
+    const parts = [];
+    if (m.out.length) parts.push(`<h3>Agents out</h3><ul class="p24-glance-list att-list">${m.out.map(a => `<li><b>${esc(a.name)}</b> <span class="muted">${a.back ? 'back ' + esc(when(a.back)) : 'no return time'} · ${esc(a.why)}</span></li>`).join('')}</ul>`);
+    if (m.overdue.length) parts.push(`<h3>Past their due time (${m.overdue.length})</h3><ul class="p24-glance-list att-list">${m.overdue.slice(0, 8).map(j => jobLine(j, `${hrs(m.now - Date.parse(j.due))} late · ${j.status === 'blocked' ? 'waiting' : 'queued'}`)).join('')}</ul>`);
+    if (m.stale.length) parts.push(`<h3>Waiting more than 3 days (${m.stale.length})</h3><ul class="p24-glance-list att-list">${m.stale.slice(0, 8).map(j => jobLine(j, `waiting ${hrs(m.now - Date.parse(j.created_at))}`)).join('')}</ul>`);
+    const bits = [m.overdue.length ? `${m.overdue.length} late` : '', m.stale.length ? `${m.stale.length} waiting 3+ days` : '', m.out.length ? `${m.out.length} agent${m.out.length === 1 ? '' : 's'} out` : ''].filter(Boolean).join(' · ');
+    return `<details class="overview-attention overview-stuck" aria-label="Stuck">
+      <summary><span class="att-icon" aria-hidden="true"></span><span class="att-copy"><b>Stuck</b><span>${esc(bits)}</span></span><span class="att-chev" aria-hidden="true">›</span></summary>
+      <div class="stuck-body">${parts.join('')}</div>
+    </details>`;
+  }
   function workingOnNowBody(b) {
     const p=b.progress24h; if(!p) return '';
     const focus=p24FocusSet(b);
@@ -1603,7 +1686,10 @@
     const d=b.fieldOrder;
     if(!d) return '';
     const value=x=>x==null?'pending':Number(x).toLocaleString('en-GB',{maximumFractionDigits:1});
-    const targets=(d.targets||[]).map(t=>`<li>${esc(t.name)}: <b>${value(t.current)} / ${value(t.target)}</b> · at the last 7-day pace: ${esc(t.eta||'not enough growth data')}</li>`).join('');
+    // Each figure says where it came from and when: a dated Studio read is fresher than the API's lagged days.
+    const when=x=>/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(x)?`${x.slice(0,10)} ${x.slice(11,16)} UTC`:x;
+    const from=t=>t.asOf?` (${t.source?`${esc(t.source)}, `:''}${esc(when(t.asOf))})`:'';
+    const targets=(d.targets||[]).map(t=>`<li>${esc(t.name)}: <b>${value(t.current)} / ${value(t.target)}</b>${from(t)} · at the last 7-day pace: ${esc(t.eta||'not enough growth data')}</li>`).join('');
     const films=(d.films||[]).map(f=>`<li>${esc(f.title)} (${esc(f.window)}): CTR ${value(f.ctr)}% (median ${value(f.medianCtr)}%); average duration ${value(f.metrics?.averageViewDuration)}s (median ${value(f.medianAvgSeconds)}s); average viewed ${value(f.viewed)}% (median ${value(f.medianViewed)}%). ${esc((f.flags||[]).join(' '))}</li>`).join('');
     return `<section class="overview-p24" aria-label="Field Order History monetisation"><div class="ov-section-head"><h2>Field Order History · monetisation</h2></div><p>Planning line: ${esc(d.deadline||'2027-02-01')} · data through ${esc(d.through||'pending')}</p><ul>${targets||'<li>Subscribers: pending / 1,000</li><li>Watch hours: pending / 4,000 and 8,000</li>'}</ul><p>Qualified public hours from Studio Earn: ${value(d.eligibleWatchHours)} · read ${esc(d.studioReadAt||'pending')}</p><p>${esc(d.note||'')}</p><details><summary>Films against the channel median</summary><ul>${films||'<li>No film reads yet.</li>'}</ul></details></section>`;
   }
@@ -1614,6 +1700,7 @@
       <div class="seg" aria-label="Studio video counts"><a href="#review"><b>${s.ready.length}</b><span>To review</span></a><a href="#videos&view=producing"><b>${s.producing.length}</b><span>Producing</span></a><a href="#schedule&view=week"><b>${s.week.length}</b><span>This week</span></a></div>
       ${checksStaleBanner(b)}
       ${needsAttentionBanner(b)}
+      ${stuckSection(b, now)}
       ${planSection(b)}
       ${firstDaySection(b,now)}
       ${machinesCard(b,now)}
@@ -1670,7 +1757,7 @@
       }
       if (waiting.length) {
         parts.push(`<h3 class="lane-sub">Waiting <span class="n">${waiting.length}</span></h3>`);
-        parts.push(`<p class="meta lane-sub-blurb">Queued, blocked, or waiting for a step — still In progress, not live work.</p>`);
+        parts.push(`<p class="meta lane-sub-blurb">Nobody is working on these right now: queued for an agent, or waiting for a step.</p>`);
         parts.push(jobList(waiting));
       }
       return parts.join("") || empty("Nothing in progress.");
@@ -1893,6 +1980,8 @@
       j.status === "claimed" && j.claimedAt ? fact("Started", esc(londonWhen(j.claimedAt))) : "",
       p ? fact("How far", `Step ${p.step} of ${p.of}${e ? (e.over ? " · taking longer than usual" : ` · about ${esc(durationText(e.min))} left`) : ""}<div class="bar"><i style="width:${pct(p)}%"></i></div>`)
         : e ? fact("How long", e.over ? "Taking longer than usual" : `About ${esc(durationText(e.min))} left`) : "",
+      !p && (j.progress || {}).of ? fact("How far", `Step ${+j.progress.step || 0} of ${+j.progress.of} done${j.status === "open" ? " · paused, waiting for an agent to pick it back up" : ""}`) : "",
+      fact("Steps", planSteps(j)),
       j.status === "open" ? fact("When", esc(jobQueueLine(b, j))) : "",
       j.status === "blocked" ? fact("Waiting for", esc(jobWaiting(b, j))) : "",
       j.status === "blocked" && Date.parse(h.check_at || "") > now ? fact("We look again", esc(londonWhen(h.check_at))) : "",  // a date already past says nothing
@@ -2272,9 +2361,29 @@
     return "";
   }
 
+  // The plan, per channel, from each channel's own publishing slots (Ben, 24 Nov 2026: "I'd just like to know an
+  // overview of if this plan is correct").
+  const SLOT_DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  function slotsText(slots) {
+    const byTime = new Map();
+    for (const s of slots || []) { const [d, t] = s.split(" "); byTime.set(t, (byTime.get(t) || []).concat([d])); }
+    return [...byTime].map(([t, ds]) => `${ds.sort((a, c) => SLOT_DAYS.indexOf(a) - SLOT_DAYS.indexOf(c)).join(", ")} ${t}`).join("; ");
+  }
+  function planOverview(b) {
+    const chans = (b.channels || []).filter(c => c && c.cadence && ((c.cadence.long || []).length || (c.cadence.short || []).length));
+    if (!chans.length) return "";
+    const line = c => {
+      const L = c.cadence.long || [], S = c.cadence.short || [];
+      const longs = L.length ? `<b>${L.length} long film${L.length === 1 ? "" : "s"}</b> a week (${esc(slotsText(L))})` : "No long films";
+      const shorts = S.length ? `<b>${S.length} Short${S.length === 1 ? "" : "s"}</b> (${esc(slotsText(S))})` : "no Shorts";
+      return `<div class="plan-line"><b>${esc(c.name || c.label)}</b><span class="meta">${longs} · ${shorts}</span></div>`;
+    };
+    const total = chans.reduce((n, c) => n + (c.cadence.long || []).length, 0), shorts = chans.reduce((n, c) => n + (c.cadence.short || []).length, 0);
+    return section("The plan", null, chans.map(line).join("") + `<p class="meta">In all: ${total} long films and ${shorts} Shorts a week · London time · each channel's own publishing days.</p>`);
+  }
   function scheduleTab(b, now) {
     const vs=uniqueVideos(((b.tracker||{}).videos)||[]);
-    const rows = schedule(vs, now), actualWeek=scheduledThisWeek(vs,now), bounds=weekDates(now);
+    const rows = schedule(vs, now, b.channels), actualWeek=scheduledThisWeek(vs,now), bounds=weekDates(now);
     const day = at => new Date(at).toLocaleDateString("en-GB", { timeZone: "Europe/London", weekday: "long", day: "numeric", month: "short" });
     const time = at => new Date(at).toLocaleTimeString("en-GB", { timeZone: "Europe/London", hour: "2-digit", minute: "2-digit" });
     const item = r => { const warn = readiness(r.v, r.at, now);
@@ -2293,6 +2402,7 @@
     // Always show This week then Next week (and Later). view=week is a deep-link only — never hides a week list.
     return `<header class="top"><h1>Schedule</h1></header><p class="meta">Calendar weeks · Monday–Sunday · London time</p>
       ${chips}
+      ${planOverview(b)}
       ${section("This week · scheduled",actualWeek.length,byDay(actualWeek)||empty("Nothing scheduled this week."))}
       ${planned.length?section("This week · planned",planned.length,byDay(planned)):''}
       ${section("Next week",next.length,byDay(next)||empty("Nothing yet."))}
@@ -2305,8 +2415,8 @@
     if (!items.length) return "";
     const rows = items.map(a => {
       const href = a && a.href && /^#[A-Za-z0-9_=%:&./-]+$/.test(a.href) ? a.href : "#review";
-      const label = a && a.kind === "pulled" ? "Urgent · Video pulled" : "Urgent · Watch needed";
-      const cta = href.startsWith("#uat=") || href === "#review" ? "Open watch card ›" : "Open schedule ›";
+      const label = a && a.kind === "approval" ? "Upload job needed" : a && a.kind === "pulled" ? "Urgent · Video pulled" : "Urgent · Watch needed";
+      const cta = a && a.kind === "approval" ? "Open video ›" : href.startsWith("#uat=") || href === "#review" ? "Open watch card ›" : "Open schedule ›";
       const msg = (a && (a.message || a.text)) || "";
       return `<div class="urgent-banner-item"><div class="urgent-banner-head"><i class="urgent-banner-dot" aria-hidden="true"></i><span>${esc(label)}</span></div>`
         + `<p class="urgent-banner-text">${esc(msg)}</p>`
@@ -2315,9 +2425,128 @@
     return `<div class="urgent-banner" role="alert" aria-live="assertive">${rows}</div>`;
   }
 
+  const MARKET_NICHES = [
+    ["ww2", "WW2", "Field Order History"],
+    ["owb", "Space", "Orbit With Ben"],
+    ["hos", "History of Science", "History of Science"],
+  ];
+
+  function fmtCompact(n) {
+    const v = Number(n || 0);
+    if (!Number.isFinite(v)) return "0";
+    if (v >= 1e6) return (v / 1e6).toFixed(v >= 1e7 ? 0 : 1).replace(/\.0$/, "") + "M";
+    if (v >= 1e3) return (v / 1e3).toFixed(v >= 1e5 ? 0 : 1).replace(/\.0$/, "") + "k";
+    return String(Math.round(v));
+  }
+
+  function fmtAgeHours(h) {
+    const v = Number(h || 0);
+    if (!Number.isFinite(v) || v <= 0) return "new";
+    if (v < 48) return `${Math.round(v)}h ago`;
+    return `${Math.round(v / 24)}d ago`;
+  }
+
+  function marketPatternsCard(patterns) {
+    const p = patterns || {};
+    if (!p.count) return "";
+    const openers = (p.title_openers || []).slice(0, 3)
+      .map(o => `<span class="tag">${esc(o.label)} · ${esc(o.pct)}%</span>`).join("");
+    const traits = (p.thumbnail_traits || []).slice(0, 3)
+      .map(t => `<span class="tag">${esc(t.label)}${t.pct != null ? ` · ${esc(t.pct)}%` : ""}</span>`).join("");
+    return `<section class="mkt-patterns" aria-label="Patterns this week">
+      <h2>Patterns this week <span class="n">${esc(p.count)}</span></h2>
+      <div class="mkt-panel">
+        <p class="meta">Avg title length: <b>${esc(p.avg_word_count || 0)} words</b> · Searched subject first: <b>${esc(p.pct_searched_name || 0)}%</b> · How/Why: <b>${esc(p.pct_how_why || 0)}%</b> · Number: <b>${esc(p.pct_has_number || 0)}%</b></p>
+        ${openers ? `<div class="flags">${openers}</div>` : ""}
+        ${traits ? `<div class="flags">${traits}</div>` : ""}
+      </div>
+    </section>`;
+  }
+
+  function marketBreakoutCard(item) {
+    const nicheMeta = MARKET_NICHES.find(([slug]) => slug === item.niche) || [item.niche || "", item.niche || "", ""];
+    const fmt = item.format === "short" ? "Short" : "Long";
+    const mult = item.multiple != null ? `${Number(item.multiple).toFixed(1)}× median` : "new baseline";
+    const vph = `${fmtCompact(item.viewsPerHour)}/hr`;
+    const thumbSrc = /^https:\/\//.test(String(item.thumbnail || "")) ? item.thumbnail : "";
+    const tierBadge = item.tier === "rising" ? '<span class="tag green">Rising</span>' : "";
+    const thumbInfo = item.thumbTags && item.thumbTags.grade && item.thumbTags.grade !== "unknown"
+      ? ` · Thumb: ${esc(item.thumbTags.grade)}${item.thumbTags.fillPct != null ? ` (${esc(item.thumbTags.fillPct)}% fill)` : ""}`
+      : "";
+    return `<article class="mkt-card">
+      <div class="mkt-top">
+        ${thumbSrc ? `<div class="mkt-thumb"><img loading="lazy" alt="" src="${esc(thumbSrc)}"></div>` : ""}
+        <div class="mkt-head">
+          <div class="flags">
+            <span class="tag">${esc(nicheMeta[1])}</span>
+            <span class="tag ${fmt === "Long" ? "amber" : ""}">${fmt}</span>
+            ${tierBadge}
+          </div>
+          <h3 class="mkt-title">${esc(item.title)}</h3>
+          <p class="meta">${esc(item.channel)} · ${esc(fmtCompact(item.subscribers))} subs · ${esc(fmtAgeHours(item.ageHours))}</p>
+        </div>
+      </div>
+      <div class="mkt-stats">
+        <span><b>${esc(fmtCompact(item.views))}</b> views</span>
+        <span><b>${esc(vph)}</b></span>
+        <span><b class="green">${esc(mult)}</b>${thumbInfo}</span>
+      </div>
+      ${item.angle ? `<p class="mkt-angle"><b>Angle we could take:</b> ${esc(item.angle)}</p>` : ""}
+    </article>`;
+  }
+
+  function market(b) {
+    const m = (b && b.market) || {};
+    const all = Array.isArray(m.breakouts) ? m.breakouts : [];
+    const filtered = all.filter(it =>
+      (marketNiche === "all" || it.niche === marketNiche) &&
+      (marketFormat === "all" || (it.format || "long") === marketFormat)
+    );
+    const longsCount = all.filter(it => (it.format || "long") === "long").length;
+    const shortsCount = all.filter(it => it.format === "short").length;
+    const subParts = [];
+    if (m.watchlistTotal) subParts.push(`${m.watchlistTotal} channels tracked`);
+    if (m.farmFilteredCount) subParts.push(`${m.farmFilteredCount} farm${m.farmFilteredCount === 1 ? "" : "s"} filtered`);
+    if (m.updatedAt) subParts.push(`updated ${String(m.updatedAt).slice(0, 16).replace("T", " ")} UTC`);
+    const nicheChips = [["all", "All niches"], ...MARKET_NICHES.map(([slug, label]) => [slug, label])]
+      .map(([v, label]) => `<button type="button" data-mf="niche" data-v="${esc(v)}" class="${marketNiche === v ? "on" : ""}">${esc(label)}</button>`).join("");
+    const fmtChips = [["all", "All formats"], ["long", "Long"], ["short", "Shorts"]]
+      .map(([v, label]) => `<button type="button" data-mf="fmt" data-v="${esc(v)}" class="${marketFormat === v ? "on" : ""}">${esc(label)}</button>`).join("");
+
+    let body = "";
+    if (!all.length) {
+      body = `<p class="empty">${esc(m.note || "No breakouts recorded in the last 7 days yet. Daily sweep runs at 06:40 London.")}</p>`;
+    } else if (!filtered.length) {
+      body = '<p class="empty">No breakouts match the current filter.</p>';
+    } else {
+      const groups = marketNiche === "all"
+        ? MARKET_NICHES
+        : MARKET_NICHES.filter(([slug]) => slug === marketNiche);
+      body = groups.map(([slug, label, chLabel]) => {
+        const items = filtered.filter(it => it.niche === slug);
+        if (!items.length) return "";
+        return `<section aria-label="${esc(label)} breakouts">
+          <h2>${esc(label)} <span class="n">${items.length}</span><span class="meta mkt-ch">${esc(chLabel)}</span></h2>
+          ${items.map(marketBreakoutCard).join("")}
+        </section>`;
+      }).join("");
+    }
+    return `<div class="top"><h1>Market</h1></div>
+      ${subParts.length ? `<p class="meta">${esc(subParts.join(" · "))}</p>` : ""}
+      <div class="seg">
+        <div><b>${all.length}</b><span>Breakouts (7d)</span></div>
+        <div><b>${longsCount}</b><span>Long-form</span></div>
+        <div><b>${shortsCount}</b><span>Shorts</span></div>
+      </div>
+      ${marketPatternsCard(m.patterns)}
+      <div class="chips mkt-chips" role="group" aria-label="Filter by niche">${nicheChips}</div>
+      <div class="chips mkt-chips" role="group" aria-label="Filter by format">${fmtChips}</div>
+      ${body}`;
+  }
+
   function renderTab(tab, b, now) {
     if (!b || !b.tracker) return '<p class="empty">Loading the studio…</p>';
-    return ({ overview, videos, review, agents, schedule: scheduleTab }[tab] || overview)(b, now);
+    return ({ overview, videos, review, agents, schedule: scheduleTab, market }[tab] || overview)(b, now);
   }
 
   function renderView(b, tab, now, opts) {
@@ -2404,7 +2633,9 @@
       render();
     });
     document.querySelectorAll(".chips button").forEach(btn => btn.onclick = () => {
-      if (btn.dataset.f === "ch") filterCh = btn.dataset.v;
+      if (btn.dataset.mf === "niche") marketNiche = btn.dataset.v;
+      else if (btn.dataset.mf === "fmt") marketFormat = btn.dataset.v;
+      else if (btn.dataset.f === "ch") filterCh = btn.dataset.v;
       else filterType = filterType === btn.dataset.v ? "all" : btn.dataset.v;
       render();
     });

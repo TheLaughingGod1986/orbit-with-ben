@@ -170,6 +170,150 @@ class AutopsyQueueWiringTests(unittest.TestCase):
         self.assertEqual(new_7d["repo"], "ww2")
         self.assertGreaterEqual(len(added), 2)
 
+    def test_launch_record_fallback_when_no_snapshots_exist(self):
+        launch_dir = self.root / "05_Analytics" / "ww2" / "launch"
+        launch_dir.mkdir(parents=True, exist_ok=True)
+        (launch_dir / "ek9F61FVYqY.json").write_text(json.dumps({
+            "id": "ek9F61FVYqY",
+            "channel": "ww2",
+            "format": "long",
+            "title": "The Secret Floating Harbours of D-Day",
+            "wentLive": "2026-11-22T17:00Z",
+            "seconds": 1432,
+            "readings": [{
+                "hours": 48,
+                "readAt": "2026-11-24T17:22Z",
+                "by": "gemini",
+                "views": 32,
+                "avgPct": 15.4,
+                "impressions": 1699,
+                "ctr": 0.8,
+                "likes": 1,
+            }],
+        }))
+        txt = ra.inspect_text("ww2", "ek9F61FVYqY", "48h")
+        self.assertIn("ek9F61FVYqY", txt)
+        self.assertIn("1699", txt)
+        self.assertIn("0.8%", txt)
+        self.assertIn("Primary bottleneck: Step 2", txt)
+        self.assertIn("PROXY", txt)
+
+
+    def test_launch_only_wrong_age_is_not_scored_as_requested_window(self):
+        for reading_hours, window in ((6, "48h"), (48, "7d")):
+            with self.subTest(reading_hours=reading_hours, window=window), \
+                 mock.patch.object(ra, "_all_snapshots", return_value=[]), \
+                 mock.patch.object(lc, "load_record", return_value={
+                     "wentLive": "2026-11-22T17:00Z", "seconds": 1432,
+                     "readings": [{"hours": reading_hours, "views": 1,
+                                   "impressions": 10, "ctr": 10, "avgPct": 15.4}],
+                 }):
+                ctx = ra.video_context("ww2", "probe", window)
+                self.assertIsNone(ctx["launch_reading"])
+                self.assertEqual(ctx["non_window_launch_proxy"]["hours"], reading_hours)
+                self.assertTrue(all(v is None for v in ctx["metrics"].values()))
+                scores = ra.score_metrics(ctx["metrics"], {"values": {}}, ra.niche_benchmark("ww2", window))
+                self.assertTrue(all(v["niche_rsi"] is None for v in scores.values()))
+
+    def test_mixed_snapshots_do_not_score_wrong_window_launch_views(self):
+        for reading_hours, window in ((6, "48h"), (48, "7d")):
+            with self.subTest(reading_hours=reading_hours, window=window), \
+                 mock.patch.object(ra, "_all_snapshots", return_value=[
+                     (t("2026-11-29T17:00:00"), {"videos": [{"id": "other", "views": 999}]}),
+                 ]), \
+                 mock.patch.object(lc, "load_record", return_value={
+                     "wentLive": "2026-11-22T17:00Z", "seconds": 1432,
+                     "readings": [{"hours": reading_hours, "views": 123}],
+                 }):
+                ctx = ra.video_context("ww2", "probe", window)
+                self.assertIsNone(ctx["launch_reading"])
+                self.assertIsNone(ctx["metrics"]["views"])
+                scores = ra.score_metrics(ctx["metrics"], {"values": {"views": 100}},
+                                          ra.niche_benchmark("ww2", window))
+                self.assertIsNone(scores["views"]["ch_rsi"])
+                self.assertIsNone(scores["views"]["niche_rsi"])
+                txt = ra.inspect_text("ww2", "probe", window)
+                self.assertIn(f"not scored as {window} evidence", txt)
+                views_row = next(line for line in txt.splitlines() if line.startswith("| Views |"))
+                self.assertEqual(views_row.split(" | ")[1], "—")
+                self.assertTrue(views_row.endswith("| — |"))
+
+    def test_historical_target_snapshot_supplies_window_views_when_latest_omits_target(self):
+        for hours, window in ((48, "48h"), (168, "7d")):
+            pub = t("2026-11-22T17:00:00")
+            with self.subTest(window=window), \
+                 mock.patch.object(ra, "_all_snapshots", return_value=[
+                     (pub + dt.timedelta(hours=hours), {"videos": [{"id": "probe", "views": 456}]}),
+                     (pub + dt.timedelta(hours=240), {"videos": [{"id": "other", "views": 999}]}),
+                 ]), \
+                 mock.patch.object(lc, "load_record", return_value={
+                     "wentLive": pub.isoformat(), "seconds": 1432,
+                     "readings": [{"hours": 6, "views": 123}],
+                 }):
+                self.assertEqual(ra.video_context("ww2", "probe", window)["metrics"]["views"], 456)
+
+    def test_exact_window_launch_views_override_unrelated_snapshots(self):
+        for hours, window in ((48, "48h"), (168, "7d")):
+            with self.subTest(window=window), \
+                 mock.patch.object(ra, "_all_snapshots", return_value=[
+                     (t("2026-11-29T17:00:00"), {"videos": [{"id": "other", "views": 999}]}),
+                 ]), \
+                 mock.patch.object(lc, "load_record", return_value={
+                     "wentLive": "2026-11-22T17:00Z", "seconds": 1432,
+                     "readings": [{"hours": hours, "views": 0, "impressions": 20, "ctr": 0}],
+                 }):
+                ctx = ra.video_context("ww2", "probe", window)
+                self.assertEqual(ctx["metrics"]["views"], 0)
+                self.assertEqual(ctx["metrics"]["impressions"], 20)
+                self.assertEqual(ctx["metrics"]["ctr"], 0)
+                self.assertIsNone(ctx["non_window_launch_proxy"])
+
+    def test_out_of_window_target_snapshot_views_are_unavailable(self):
+        pub = t("2026-11-22T17:00:00")
+        with mock.patch.object(ra, "_all_snapshots", return_value=[
+                 (pub + dt.timedelta(hours=240), {"videos": [{
+                     "id": "probe", "publishedAt": pub.isoformat(), "views": 999,
+                 }]}),
+             ]), mock.patch.object(lc, "load_record", return_value={}):
+            self.assertIsNone(ra.video_context("ww2", "probe", "48h")["metrics"]["views"])
+
+    def test_exact_7d_reading_supplies_impressions_ctr_and_views(self):
+        with mock.patch.object(ra, "_all_snapshots", return_value=[]), \
+             mock.patch.object(lc, "load_record", return_value={
+                 "wentLive": "2026-11-22T17:00Z", "seconds": 1432,
+                 "readings": [{"hours": 168, "views": 100, "impressions": 2000, "ctr": 5}],
+             }):
+            ctx = ra.video_context("ww2", "probe", "7d")
+            self.assertEqual(ctx["metrics"]["views"], 100)
+            self.assertEqual(ctx["metrics"]["impressions"], 2000)
+            self.assertEqual(ctx["metrics"]["ctr"], 5)
+
+
+class ClipTimelineTests(unittest.TestCase):
+    def test_unknown_timeline_requires_source_limitation_before_extraction(self):
+        with mock.patch.object(ra, "video_context", return_value={"duration_s": 0}), \
+             mock.patch.object(ra, "extract_clips") as extract:
+            self.assertEqual(ra.main(["clips", "probe", "--channel", "ww2",
+                                      "--video", "source.mp4", "--out-dir", "/tmp/unused"]), 2)
+            extract.assert_not_called()
+
+    def test_source_mode_does_not_use_live_curve_or_avd(self):
+        with mock.patch.object(ra, "video_context", return_value={
+                 "duration_s": 1432, "retention": [{"at": 0.5, "watching": 0.2}],
+                 "avg_view_seconds": 249, "metrics": {"avg_pct": 15.4}}), \
+             mock.patch.object(pathlib.Path, "is_file", return_value=True), \
+             mock.patch.object(ra, "_probe_duration_s", return_value=1657), \
+             mock.patch.object(pathlib.Path, "mkdir"), \
+             mock.patch.object(pathlib.Path, "write_text") as write, \
+             mock.patch.object(ra, "extract_clips", return_value=[]) as extract:
+            self.assertEqual(ra.main(["clips", "probe", "--channel", "ww2", "--source-timeline",
+                                      "--video", "source.mp4", "--out-dir", "/tmp/unused"]), 0)
+            drops = extract.call_args.args[1]
+            self.assertTrue(all(d["proxy"] for d in drops))
+            self.assertEqual(drops[-1]["watch_end_s"], 1657)
+            self.assertIn("source_proxy", extract.call_args.kwargs["prefix"])
+            self.assertEqual(json.loads(write.call_args.args[0])["timeline"], "source_only")
+
 
 if __name__ == "__main__":
     unittest.main()

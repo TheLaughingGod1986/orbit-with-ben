@@ -25,6 +25,7 @@ globalThis.fetch = async (url, init) => {
     {type:'file',path:'channels/channels.json',sha,content:'private-file-body'};
   if (mode === 'bad-ref' && stage === 'ref') value.object.sha = 'invalid';
   if (mode === 'bad-file' && stage === 'contents') value.path = 'wrong';
+  if (mode === 'redirect' && stage === 'repository') return {ok: false, status: 302, json:async()=>({})};
   return {ok: stage !== failure, status: stage === failure ? 403 : 200, json:async()=>value};
 };
 __SETUP__
@@ -74,7 +75,7 @@ class Probe(unittest.TestCase):
             for c in r["calls"]:
                 self.assertEqual(c["method"], "GET")
                 self.assertTrue(c["auth"] and c["bounded"])
-                self.assertEqual(c["redirect"], "error")
+                self.assertEqual(c["redirect"], "manual")
                 self.assertTrue(c["url"].startswith('https://api.github.com/repos/TheLaughingGod1986/studio'))
                 self.assertNotIn('evil', c["url"])
             self.assertTrue(r["calls"][-1]["url"].endswith('?ref=' + 'a' * 40))
@@ -88,10 +89,13 @@ class Probe(unittest.TestCase):
             self.assertTrue(all(c["auth"] for c in r["calls"]))
 
     def test_public_or_invalid_results_do_not_pass(self):
-        for mode in ["public", "bad-ref", "bad-file", "throw"]:
+        for mode in ["public", "bad-ref", "bad-file", "throw", "redirect"]:
             r = self.run_probe(f"mode='{mode}';")
             self.assertEqual(r["out"]["status"], 502)
             self.assertNotIn("ok", r["out"]["body"])
+            if mode == "redirect":
+                self.assertEqual(r["out"]["body"].get("status"), 302)
+                self.assertEqual(len(r["calls"]), 1)
 
     def test_cloudflare_route_stays_disabled_until_enabled(self):
         code = r'''

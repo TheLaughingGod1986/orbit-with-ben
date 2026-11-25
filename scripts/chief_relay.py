@@ -131,16 +131,7 @@ def free_memory_bytes() -> int:
             pass
     if sys.platform == "darwin":
         try:
-            out = subprocess.run(["vm_stat"], capture_output=True, text=True, timeout=2).stdout
-            page = 4096
-            sized = re.search(r"page size of (\d+)", out)
-            if sized:
-                page = int(sized.group(1))
-            free = 0
-            for label in ("Pages free", "Pages speculative"):
-                row = re.search(rf"{label}:\s+(\d+)", out)
-                if row:
-                    free += int(row.group(1)) * page
+            free = vm_stat_available(subprocess.run(["vm_stat"], capture_output=True, text=True, timeout=2).stdout)
             if free:
                 return free
         except (OSError, subprocess.SubprocessError):
@@ -149,6 +140,22 @@ def free_memory_bytes() -> int:
         return int(os.sysconf("SC_AVPHYS_PAGES")) * int(os.sysconf("SC_PAGE_SIZE"))
     except (OSError, ValueError, AttributeError, TypeError):
         return 8 << 30
+
+
+def vm_stat_available(out: str) -> int:
+    """Bytes macOS can hand a new job now: free and speculative pages plus the inactive and purgeable ones it reclaims on
+    demand. Free pages alone sit near zero on a Mac that has been up a while (the file cache keeps the rest), so the
+    3 GB guard kept the second slot shut while twenty jobs were ready and Gemini was idle (24 Nov 2026)."""
+    page = 4096
+    sized = re.search(r"page size of (\d+)", out or "")
+    if sized:
+        page = int(sized.group(1))
+    total = 0
+    for label in ("Pages free", "Pages speculative", "Pages inactive", "Pages purgeable"):
+        row = re.search(rf"{label}:\s+(\d+)", out or "")
+        if row:
+            total += int(row.group(1)) * page
+    return total
 
 
 def memory_for_new_slot() -> bool:
@@ -379,8 +386,10 @@ def add_dirs() -> str:
 # bigger plan): Claude -> Grok -> Codex -> Gemini for orbit-with-ben. Cursor stays a worker.
 # Ben, 11 Nov 2026, desk #180: the non-home channel keeps the 26 Oct chain (Grok first). The 9 Nov chain
 # stays the home channel's. A status that names Claude on that channel's job means Grok is down.
-DEFAULT_CHAIN = "claude,chief,codex,gemini"
-SECOND_CHAIN = "chief,claude,codex,gemini"
+# Ben, 24 Nov 2026, in chat: Cursor and Grok Bot share an X subscription cut to £20 a month and mostly spent by Grok on
+# other projects, so Grok Bot is the last link on both channels: Claude -> Codex -> Gemini -> Grok Bot.
+DEFAULT_CHAIN = "claude,codex,gemini,chief"
+SECOND_CHAIN = "claude,codex,gemini,chief"
 NAMES = {"chief": "Grok Bot", "cursor": "Cursor", "codex": "Codex", "gemini": "Gemini", "claude": "Claude",
          "claudecode": "Claude Code"}
 
@@ -845,11 +854,39 @@ def review_progress(agent: str, job: str, step: int, note: str, at: dt.datetime)
     write_json(d("active.json"), active)
 
 
+def approval_round(at: dt.datetime, *, apply: bool = False) -> list[dict]:
+    """Read Ben's board OKs every relay round, independent of queue-only Chief duties."""
+    import approved_deliver as ad
+    from workflow_board import load_tracker
+    videos = load_tracker(HOME / "_desk/state/board/board.json").get("videos") or []
+    queue = read_json(STUDIO / "jobs" / "queue.json") or {}
+    waiting = ad.waiting_approvals(videos, queue.get("jobs") or [], now=at)
+    if apply and waiting:
+        # Queue only: existing listing/swap/read-back/cadence guards stay in force.
+        result = ad.run(apply=True, git=True, agent="relay", root=STUDIO, at=at, videos=videos)
+        if result.get("error"):
+            raise RuntimeError(result["error"])
+    return waiting
+
+
+def approval_summary(items: list[dict]) -> str:
+    if not items:
+        return ""
+    return "Board OKs waiting for upload jobs: " + "; ".join(
+        f"{v['key']} {v['title']} ({str(v['ageHours']) + ' h' if v['ageHours'] is not None else 'age unknown'})"
+        for v in items) + ". Resolve the missing delivery work; Ben has already approved these cuts."
+
+
 def publish_chief_inbox(items: list, leader: str | None, at: dt.datetime, dest: pathlib.Path | None = None) -> None:
     """A durable inbox for app/cloud Chiefs too, with bounded repeated delivery.
     History of Science duties use a separate file when its Chief is not orbit-with-ben's."""
     dest = dest or d("inbox.json")
     previous = read_json(dest) or {}
+    try:
+        approvals = approval_round(at)
+    except Exception as e:  # a board read must never stop the Chief's inbox
+        log(f"board approvals not read: {e.__class__.__name__}: {e}")
+        approvals = []
     rows = [{"id": j["id"], "title": j.get("title", ""), "fingerprint": chief_fingerprint(j)} for j in items]
     same = previous.get("agent") == leader and previous.get("jobs") == rows
     since = previous.get("since") if same else iso(at)
@@ -864,17 +901,18 @@ def publish_chief_inbox(items: list, leader: str | None, at: dt.datetime, dest: 
     progress = previous.get("progress_at", "") if same else iso(at)
     if previous.get("agent") != leader or not progress:
         progress = iso(at)
-    if items and cloud_chief(leader):
+    if (items or approvals) and cloud_chief(leader):
         try:
             due = not sent or at - parse(sent) >= dt.timedelta(minutes=10)
         except ValueError:
             due = True
         if due and notify("Chief duties for " + NAMES.get(leader, leader) + ": " +
                           "; ".join(j["id"] + " " + j.get("title", "")[:120] for j in items) +
-                          ". Resolve or delegate these before ordinary work; record each decision on its job."):
+                          ". Resolve or delegate these before ordinary work; record each decision on its job. " +
+                          approval_summary(approvals)):
             sent = iso(at)
     write_json(dest, {"at": iso(at), "agent": leader, "since": since, "progress_at": progress,
-                      "notified_at": sent, "jobs": rows, "waiting": waiting})
+                      "notified_at": sent, "jobs": rows, "waiting": waiting, "approvals": approvals})
 
 
 def chief_delivery_overdue(agent: str | None, at: dt.datetime, dest: pathlib.Path | None = None) -> bool:
@@ -925,8 +963,8 @@ Never park a job for Ben's OK on anything else."""
 
 def authority_prompt(agent: str, leader: str | None, repo: str | None = None) -> str:
     guest = bool(repo and repo != channels.default())
-    order = ("11 Nov 2026: Grok -> Claude -> Codex -> Gemini" if guest
-             else "26 Oct 2026, reordered 9 Nov 2026: Claude -> Grok -> Codex -> Gemini")
+    order = ("24 Nov 2026 (Grok Bot on a £20 plan): Claude -> Codex -> Gemini -> Grok" if guest
+             else "26 Oct 2026, reordered 9 Nov and 24 Nov 2026: Claude -> Codex -> Gemini -> Grok")
     return (CHIEF_AUTHORITY if agent == leader else WORKER_AUTHORITY).format(agent=agent, order=order)
 
 
@@ -1016,7 +1054,8 @@ Your agent id is `{agent}` everywhere (jobs.py --agent, studio.py --by{desk_ids}
    If it prints a job, that job is yours: do it (step 4), then  jobs.py done|block|release <id> --agent {agent} ... --git.
    Ben watches % done on the board: split the job into n steps (replace a default_plan at step 0; otherwise keep its earlier n) and run
      python3 scripts/jobs.py progress <id> --agent {agent} --step <k> --of <n> --git
-   with --action "<plain-English action still unfinished>"; update that action as the remaining work changes. Use k=0 when you start and again after each finished step (k = steps done), before you release or finish.
+   with --action "<plain-English action still unfinished>"; update that action as the remaining work changes.
+   On the first report (and whenever n changes) add --plan "<step 1> | <step 2> | ..." with n short plain names, so Ben sees which steps are left. Use k=0 when you start and again after each finished step (k = steps done), before you release or finish.
    During a long step, repeat the current k with an honest --note at least every 5 minutes; never increase k for elapsed time.
    As soon as you choose the video(s), include --films {film_example} (or {studio_label}:028,{studio_label}:029 for a shared job) on that progress
    command, and --note with the concrete outcome of each finished step. Keep the links on later progress updates.
@@ -1163,6 +1202,40 @@ def run_cli(agent: str, prompt: str, cap_s: int, model: str = "") -> tuple:
     return code, out[-4000:]
 
 
+# How long a worker says it is out (Ben, 24 Nov 2026: Cursor printed "Weekly usage limit reached. It resets in 2 days"
+# and was retried every hour, so the board and the forecast kept counting it as up and 10 jobs waited behind it).
+_RESET_UNITS = {"d": 1440, "day": 1440, "days": 1440, "h": 60, "hr": 60, "hrs": 60, "hour": 60, "hours": 60,
+                "m": 1, "min": 1, "mins": 1, "minute": 1, "minutes": 1}
+RESET_IN_RE = re.compile(r"(?:resets?|try again|retry|available again|back)\s+(?:in|after)\s+(?:about\s+|~)?"
+                         r"((?:\d+(?:\.\d+)?\s*(?:days?|d|hours?|hrs?|h|minutes?|mins?|m)\b[\s,]*(?:and\s+)?)+)", re.I)
+RESET_AT_RE = re.compile(r"(?:resets?|try again|until|available)\s+(?:at\s+|on\s+)?"
+                         r"(\d{4}-\d{2}-\d{2}[T ]\d{2}:\d{2}(?::\d{2})?(?:\.\d+)?(?:Z|[+-]\d{2}:?\d{2})?)", re.I)
+RESET_MAX = dt.timedelta(days=8)
+
+
+def stated_reset(text: str, at: dt.datetime):
+    """The reset time a CLI printed with its limit error ("resets in 2 days", "try again in 3h 20m", "resets at
+    2026-11-26T09:00Z"), capped at RESET_MAX, or None when it gave none. A weekly limit with no time counts 12 h."""
+    text = text or ""
+    m = RESET_IN_RE.search(text)
+    if m:
+        mins = sum(float(n) * _RESET_UNITS[u.lower()] for n, u in
+                   re.findall(r"(\d+(?:\.\d+)?)\s*(days?|d|hours?|hrs?|h|minutes?|mins?|m)\b", m.group(1), re.I))
+        if mins > 0:
+            return at + min(dt.timedelta(minutes=mins), RESET_MAX)
+    m = RESET_AT_RE.search(text)
+    if m:
+        try:
+            when = parse(m.group(1).replace(" ", "T"))
+        except (ValueError, TypeError):
+            when = None
+        if when and when > at:
+            return min(when, at + RESET_MAX)
+    if re.search(r"\bweekly\b.{0,40}\blimit|\blimit\b.{0,40}\bweekly\b", text, re.I):
+        return at + dt.timedelta(hours=12)
+    return None
+
+
 def credit_phrase(code: int, tail: str) -> str:
     """The out-of-credit / signed-out phrase a CLI ended its run with, or "". Only the last CHIEF_CREDIT_TAIL (800)
     characters count: that's where a CLI prints its own error. A run that did real work and quoted a YouTube 429, a
@@ -1217,7 +1290,22 @@ def heartbeat_doc(at: dt.datetime, state: str, agent: str = "", note: str = "") 
     chief = (read_json(d("current.json")) or {}).get("agent") or ""
     chain_rows = (read_json(d("chain.json")) or {}).get("rows") or []
     return {"at": iso(at), "state": state, "agent": agent, "note": note[:200], "host": "mac-mini", "chief": chief,
-            "chain": chain_rows}
+            "chain": chain_rows, "workers": worker_rows(at)}
+
+
+def worker_rows(at: dt.datetime) -> list:
+    """Every Mini worker's own state (up, why, until), not only the Chief chain's: the queue forecast read Cursor as up
+    from the chain alone while its down mark said "resets in 2 days" (24 Nov 2026)."""
+    rows = []
+    for a in routing.MINI_WORKERS:
+        try:
+            up, why = state_of(a, at)
+        except Exception as e:  # a heartbeat must never fail on one worker's state
+            up, why = True, f"state unknown ({e.__class__.__name__})"
+        mark = read_json(d("down", a + ".json")) or {}
+        rows.append({"agent": a, "up": bool(up), "why": str(why or "")[:160],
+                     "until": "" if up else str(mark.get("until") or "")})
+    return rows
 
 
 def parked_reviews(data: dict) -> list:
@@ -1411,6 +1499,71 @@ def push_heartbeat(at: dt.datetime, state: str, agent: str = "", note: str = "")
         log(f"heartbeat not pushed: {e}")
 
 
+def busy_slots(at: dt.datetime, n: int) -> set:
+    """Slots with a live execution lease or a held run lock."""
+    busy = {int(e.get("slot", 0)) for e in current_executions(at)}
+    for i in range(n):
+        path = d(f"run-{i}.lock")
+        if not path.exists():
+            continue
+        probe = open(path, "a+")
+        try:
+            fcntl.flock(probe, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            fcntl.flock(probe, fcntl.LOCK_UN)
+        except OSError:
+            busy.add(i)
+        finally:
+            probe.close()
+    return busy
+
+
+def spawn_second_slot(at: dt.datetime, parent_slot: int | None = None) -> bool:
+    """Start one detached `run` for another free slot (24 Nov 2026, J3521).
+
+    launchd never starts the relay again while a run is working, so slot 1 never opened and the Mini worked one job
+    at a time with 50 waiting. A launchd run now starts one more run in its own session (so launchd's clean-up of
+    this run cannot stop it), which waits CHIEF_SPAWN_DELAY seconds for this run's lease and then takes the next free
+    slot under the usual memory guard. Job boundaries retry if that child has exited.
+    A spawned run never spawns again. CHIEF_SPAWN_SLOTS=0 turns this off."""
+    if os.environ.get("CHIEF_SPAWN_SLOTS", "1") == "0" or os.environ.get("CHIEF_SPAWNED") == "1":
+        return False
+    if (STATE / "chief-relay.pause").exists():
+        return False
+    n = parallel_limit()
+    if n < 2:
+        return False
+    try:
+        d().mkdir(parents=True, exist_ok=True)
+        busy = busy_slots(at, n)
+        # Startup still needs a slot for this parent. At a job boundary its
+        # held run lock already counts it, even between execution leases.
+        if parent_slot is not None:
+            busy.add(parent_slot)
+            if not (set(workers_up(at)) - other_slot_workers(at, -1)):
+                return False
+        if len(busy) >= n - (parent_slot is None):
+            return False
+        if not memory_for_new_slot():
+            return False
+        # The child inherits this reservation through its delay and lifetime.
+        # Closing the parent's copy (without LOCK_UN) leaves the child's flock
+        # held, preventing duplicate pending runners at fast job boundaries.
+        with open(d("spawn.lock"), "a+") as reservation:
+            try:
+                fcntl.flock(reservation, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            except OSError:
+                return False
+            subprocess.Popen([sys.executable, str(pathlib.Path(__file__).resolve()), "run"],
+                             env={**os.environ, "CHIEF_SPAWNED": "1"}, cwd=str(pathlib.Path(__file__).resolve().parent),
+                             stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                             pass_fds=(reservation.fileno(),), start_new_session=True)
+        log("spawned a second run for another free slot")
+        return True
+    except (OSError, ValueError) as e:
+        log(f"second slot not spawned: {e}")
+        return False
+
+
 def cmd_run(at: dt.datetime) -> int:
     if (STATE / "chief-relay.pause").exists():
         log("skip: paused")
@@ -1425,21 +1578,7 @@ def cmd_run(at: dt.datetime) -> int:
     # Up to CHIEF_PARALLEL slots (default 2, cap 3). Each holds its own lock and runs one agent.
     # A second slot waits when free memory is under CHIEF_SLOT_MIN_GB (default 3). CHIEF_PARALLEL=1 is the old single run.
     n = parallel_limit()
-    busy = set()
-    for e in current_executions(at):
-        busy.add(int(e.get("slot", 0)))
-    for i in range(n):
-        path = d(f"run-{i}.lock")
-        if not path.exists():
-            continue
-        probe = open(path, "a+")
-        try:
-            fcntl.flock(probe, fcntl.LOCK_EX | fcntl.LOCK_NB)
-            fcntl.flock(probe, fcntl.LOCK_UN)
-        except OSError:
-            busy.add(i)
-        finally:
-            probe.close()
+    busy = busy_slots(at, n)
     if len(busy) >= n:
         log("skip: all parallel slots are working")
         push_heartbeat(at, "busy", note="every parallel slot is still working")
@@ -2197,6 +2336,10 @@ def run_locked(at: dt.datetime, slot: int = 0) -> int:
         # Fallback chains (Ben, 11 Oct 23:40 / 23:47): Claude's jobs when it's out of usage, and jobs whose worker ran
         # out, go to the next worker up in their chain, addressed to it, so the loop below wakes it in this same run.
         rerouted = reroute_work(at)
+        try:
+            approval_round(at, apply=True)
+        except Exception as e:  # queue failure must remain visible, and retry next round
+            log(f"board approval handoff failed: {e}")
         # One deadline-first selector ranks Chief duties and production together; named workers retain eligibility.
         chief_inbox = pending_chief_reviews(at)
         if guest and guest_who != leader:
@@ -2333,18 +2476,18 @@ def run_locked(at: dt.datetime, slot: int = 0) -> int:
             label = channels.name(guest_job)
             if who == guest_who:
                 why = (f"{named} is Chief for {label} "
-                       "(Grok -> Claude -> Codex -> Gemini). "
+                       "(Claude -> Codex -> Gemini -> Grok). "
                        "A relay line that names someone else on this channel's job means the first agent in its chain is down.")
             else:
                 why = (f"{named} is Chief for {label} "
-                       "(Grok -> Claude -> Codex -> Gemini). You are its WORKER for this channel's queue job. "
-                       "If this line names anyone but Grok Bot, Grok is down. "
+                       "(Claude -> Codex -> Gemini -> Grok). You are its WORKER for this channel's queue job. "
+                       "If this line names anyone but Claude, Claude is out. "
                        "In step 3 skip the channel check and the desk inbox: do only the job "
                        "`jobs.py next` gives you. If it exits 10, stop without posting")
         auth_leader = guest_who if guest_job else leader
         prompt = PROMPT.format(name=NAMES.get(who, who), agent=who, why=why,
                                authority=authority_prompt(who, auth_leader, guest_job),
-                               priority=priority,
+                               priority=priority + ("\n" + approval_summary(approval_round(at)) if who == auth_leader else ""),
                                role="the elected acting Chief" if who == auth_leader else "a specialist worker",
                                **brief_channels(who))
         log(f"run: {who}{' on ' + model if model else ''}{' for ' + job['id'] if job else ''} (cap {cap}s)")
@@ -2378,6 +2521,10 @@ def run_locked(at: dt.datetime, slot: int = 0) -> int:
         finally:
             _select_unlock(held)
         write_slot_json(slot, "runner", {"pid":os.getpid(),"version":LOADED_VERSION,"desiredVersion":code_version(),"at":iso(started),"state":"working","job":execution["job"],"slot":slot})
+        # Publish our selected worker first, so the child cannot choose it.
+        # This safe boundary is also reached when an unavailable worker returns
+        # during a long parent chain. Active workers are never interrupted.
+        spawn_second_slot(now(), parent_slot=slot)
         try:
             code, tail = run_cli(who, prompt, cap, model)
         finally:
@@ -2392,6 +2539,9 @@ def run_locked(at: dt.datetime, slot: int = 0) -> int:
             reviewed.add(reviews[0]["id"])
         if usage:
             until = now() + dt.timedelta(hours=retry_h)
+            stated = stated_reset(tail[-1500:], now())
+            if stated and stated > until:
+                until = stated  # the worker's own reset time, not an hourly retry it is sure to fail
             on_auto = who == "cursor" and model not in routing.SEPARATE_POOLS and bool(cursor_default_out(now()))
             if who == "cursor" and MODEL_LIMIT_RE.search(said) and model not in routing.SEPARATE_POOLS and not on_auto:
                 # Only the model Cursor defaults to is out (its Opus pool), not Cursor: run it on Auto for the
@@ -2507,7 +2657,7 @@ def cmd_status(at: dt.datetime) -> int:
     if len(guests) == 1:
         grows, gwho = acting(at, guests[0])
         print(f"{channels.name(guests[0])} Chief: {NAMES.get(gwho, gwho) if gwho else 'nobody'} "
-              "(Grok -> Claude -> Codex -> Gemini)")
+              "(Claude -> Codex -> Gemini -> Grok)")
         for a, up, why in grows:
             mark = ">" if a == gwho else " "
             print(f"  {mark} {a:<7} {NAMES.get(a, a):<9} {'UP  ' if up else 'down'}  {why}")
@@ -2579,6 +2729,11 @@ def main(argv=None) -> int:
     if a.cmd == "status":
         return cmd_status(at)
     if a.cmd == "run":
+        if os.environ.get("CHIEF_SPAWNED") == "1":
+            time.sleep(max(0, int(os.environ.get("CHIEF_SPAWN_DELAY", "20") or 0)))
+            at = now()
+        else:
+            spawn_second_slot(at)
         return cmd_run(at)
     if a.cmd == "seen":
         seen(a.agent, at)

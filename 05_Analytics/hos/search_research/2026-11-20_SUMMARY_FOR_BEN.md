@@ -1,7 +1,7 @@
 # History of Science — Proposed 2027 Plan (One-Page Summary for Ben)
 
 **Date:** 20 Nov 2026 (`J3224`, following the full `J3223` audit)  
-**Status:** **Waiting for your OK** on the studio board (`hos-search-2027-01`). Nothing changes on History of Science (`008–011`, `013`, rules, or schedule) until you say yes (`LEARNINGS.md` rule 34 item 7).
+**Status:** **Approved by Ben, 24 Nov 2026** (in chat: "I'll give you okay for that. Please go ahead and start it."). The plan (`hos-search-2027-01`) is in force for HOS topics locked from 1 Jan 2027; `008–011` and `013` stay untouched through December (`LEARNINGS.md` rule 34 item 7 satisfied). **Brought forward the same day (Ben: "move it from December to this Thursday ... your best call"):** 008 Franklin airs Thu 26 Nov and 009 Gravity Thu 3 Dec (each after Ben's watch), and the four films below air **10, 17, 24 and 31 Dec** instead of 7-28 Jan.
 
 ---
 
@@ -40,7 +40,6 @@ High-volume generic terms like `history of medicine` (`PK 19%, IN 14%`), `turing
 - **Clear test bar (14 days after publish, vs HOS's best long of `162` views):** **`500+` views = Keep cluster** · **`162–499` = One more film** · **Under `162` = Drop or change** (always reporting impressions, CTR, and US+UK+CA+AU share alongside views).
 - **Checkpoints:** Monthly own search terms read (**Mon 1 Feb 2027**) + **Six-week review (Thu 18 Feb 2027)** to double down on winning clusters, drop weak ones, and optionally test one 45–60 min calm science-history compilation (if Orbit's December sleep/journey tests pass — small US channels are hitting `20K–240K` views on calm physics/electricity history).
 
-## 4. Decision Needed From You
+## 4. Decision (Ben, 24 Nov 2026)
 
-- **Say "Yes" on `hos-search-2027-01`** to adopt the search-led method for HOS topics locked from **1 Jan 2027** (keeping `008–011` and `013` untouched through December, and starting weekly HOS search research + the four January films above).
-- Or tell us any cluster, title, or cadence tweak you want before we lock it.
+- **Yes.** Ben approved `hos-search-2027-01` in chat on 24 Nov 2026: "I'll give you okay for that. Please go ahead and start it." The search-led method applies to HOS topics locked from **1 Jan 2027**; `008–011` and `013` stay untouched through December. Weekly HOS search research and work on the four January films above start now.

@@ -1,0 +1,101 @@
+{
+  "job": "J3384",
+  "recheck_of": "J3372",
+  "parent_audit": "J3365",
+  "verifier": "gemini",
+  "probed_at_utc": "2026-11-22T19:04:53Z",
+  "followup_probe_utc": "2026-11-22T19:06:00Z",
+  "active_writers_check": {
+    "other_claimed_jobs": 0,
+    "tmux_sessions": 0,
+    "cdp_client_sockets_9222_9460": 0
+  },
+  "ports": {
+    "9222": {
+      "role": "Flow browser (configured studio_port for hos in channel.json)",
+      "browser": "Chrome/157.0.8103.79",
+      "page_tab_count_before": 6,
+      "page_tab_count_after": 6,
+      "studio_target_id": "492851E5D8095B9CEC05EBB938497368",
+      "url_before_reload": "https://studio.youtube.com/video/el30-mHiH-0/edit",
+      "url_after_reload": "https://studio.youtube.com/video/Bks_JLId1ew/edit",
+      "initial_probes": [
+        {
+          "method": "Runtime.evaluate",
+          "elapsed_s": 8.01,
+          "outcome": "TimeoutError"
+        },
+        {
+          "method": "DOM.getDocument",
+          "elapsed_s": 8.01,
+          "outcome": "TimeoutError"
+        }
+      ],
+      "bounded_reload": {
+        "attempted": true,
+        "count": 1,
+        "method": "Page.reload",
+        "ignoreCache": false,
+        "elapsed_s": 0.02,
+        "outcome": "ok"
+      },
+      "post_reload_probes_6s": [
+        {
+          "method": "Runtime.evaluate",
+          "elapsed_s": 10.0,
+          "outcome": "TimeoutError"
+        },
+        {
+          "method": "DOM.getDocument",
+          "elapsed_s": 8.0,
+          "outcome": "TimeoutError"
+        }
+      ],
+      "post_reload_probes_50s": [
+        {
+          "method": "Runtime.evaluate",
+          "elapsed_s": 8.0,
+          "outcome": "TimeoutError"
+        },
+        {
+          "method": "DOM.getDocument",
+          "elapsed_s": 8.0,
+          "outcome": "TimeoutError"
+        }
+      ],
+      "responsive": false,
+      "sign_in_prompt_observed": false
+    },
+    "9460": {
+      "role": "Dedicated HOS Studio browser (configured reach_port for hos in channel.json; scripts/mini/cdp_browsers.sh)",
+      "browser": "Chrome/157.0.8103.79",
+      "page_tab_count_before": 1,
+      "page_tab_count_after": 1,
+      "studio_target_id": "22220D855A4B1181D3881DB2D616000C",
+      "url": "https://studio.youtube.com/channel/UCXp7HkBIl1LgaznXuZHJyRg/analytics/hub_overview/explore?entity_type=CHANNEL&entity_id=UCXp7HkBIl1LgaznXuZHJyRg&time_period=lifetime&explore_type=TABLE_AND_CHART&metric=VIEWS&granularity=DAY&t_metrics=VIEWS&t_metrics=AVERAGE_WATCH_PERCENTAGE&t_metrics=AVERAGE_WATCH_TIME&t_metrics=VIDEO_THUMBNAIL_IMPRESSIONS&t_metrics=VIDEO_THUMBNAIL_IMPRESSIONS_VTR&t_metrics=SHORTS_FEED_IMPRESSIONS_VTR&dimension=VIDEO&o_column=VIEWS&o_direction=ANALYTICS_ORDER_DIRECTION_DESC",
+      "reload_attempted": false,
+      "read_only_probes": [
+        {
+          "method": "Runtime.evaluate",
+          "elapsed_s": 0.23,
+          "outcome": "ok",
+          "readyState": "complete",
+          "title": "Channel analytics - YouTube Studio",
+          "textLen": 4030,
+          "hasChannelId": true,
+          "expectedChannelId": "UCXp7HkBIl1LgaznXuZHJyRg",
+          "hasSignInPrompt": false
+        },
+        {
+          "method": "DOM.getDocument",
+          "elapsed_s": 0.07,
+          "outcome": "ok",
+          "nodeName": "#document",
+          "childNodeCount": 2
+        }
+      ],
+      "responsive": true,
+      "sign_in_prompt_observed": false
+    }
+  }
+}
