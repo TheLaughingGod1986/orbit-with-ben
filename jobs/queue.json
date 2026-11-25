@@ -338402,9 +338402,14 @@
           "at": "2026-11-25T12:10Z",
           "by": "claudecode",
           "what": "step 1 of 4 done: Read J3492, J3664, J3634, J3636, J3642 records: v04 fix job and Gemini recheck both done; J3492 hold still names the old v02 condition"
+        },
+        {
+          "at": "2026-11-25T12:12Z",
+          "by": "claudecode",
+          "what": "step 2 of 4 done: PR 146 at 649af06: v04 hash 5ea74805 matches, 46/46 parity and 14077 chars recomputed, 6/6 old files unchanged, 5 cited sources re-fetched with quotes found and byte sizes matching Gemini's ledger"
         }
       ],
-      "remaining_action": "Check the Pedestal v04 claims pass really holds on the exact script file, then record whether the held script job can move",
+      "remaining_action": "Record the verified result on the held Pedestal script job and hand the superseded check to the Chief",
       "due": "2026-11-26T12:00:00Z",
       "kind": "review",
       "plain": "Verify WW2:009 v04 CLEAN claims pass (J3642 PR #146), resolve superseded J3664, and reopen J3492",
@@ -338417,9 +338422,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-25T12:10Z",
+        "at": "2026-11-25T12:12Z",
         "by": "claudecode",
         "plan": [
           "Read the held job and its history",
@@ -338427,7 +338432,7 @@
           "Record the result on the held job",
           "Report"
         ],
-        "note": "Read J3492, J3664, J3634, J3636, J3642 records: v04 fix job and Gemini recheck both done; J3492 hold still names the old"
+        "note": "PR 146 at 649af06: v04 hash 5ea74805 matches, 46/46 parity and 14077 chars recomputed, 6/6 old files unchanged, 5 cited "
       },
       "taskKeys": [
         "WW2:009"
