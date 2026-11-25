@@ -335931,16 +335931,21 @@
           "at": "2026-11-25T09:38Z",
           "by": "gemini",
           "what": "step 4 of 5 done: Wrote GEMINI_FACTS_CHECK_v02.md (17 OK, 4 non-blocking PARTIAL, 0 FLAG) and verified check_all.sh ALL CHECKS PASS (review:script 93.6/100, gate:episode 9/9 OK)"
+        },
+        {
+          "at": "2026-11-25T09:39Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: PR #778 (gemini/J3690-hos127-facts-v02, 09567d14) opened; desk #694 handoff posted; 0 blocking FLAGs (17 OK, 4 non-blocking secondary-lifespan PARTIAL); check_all.sh ALL CHECKS PASS; £0.00 spent"
         }
       ],
-      "remaining_action": "Pushing gemini/J3690-hos127-facts-v02, opening PR to HOS main, and posting desk handoff",
+      "remaining_action": "Done: PR #778 open and HOS desk handoff posted for Chief J3622 v02 lock review",
       "due": "2026-12-09T18:00:00Z",
       "kind": "facts",
       "plain": "Fact-check the revised Wright Brothers script, sources, and Shorts",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-25T09:38Z",
+        "at": "2026-11-25T09:39Z",
         "by": "gemini",
         "plan": [
           "Create worktree and verify v02 hashes",
@@ -335949,7 +335954,7 @@
           "Write GEMINI_FACTS_CHECK_v02.md and run check_all.sh",
           "Push PR and post desk handoff"
         ],
-        "note": "Wrote GEMINI_FACTS_CHECK_v02.md (17 OK, 4 non-blocking PARTIAL, 0 FLAG) and verified check_all.sh ALL CHECKS PASS (revie"
+        "note": "PR #778 (gemini/J3690-hos127-facts-v02, 09567d14) opened; desk #694 handoff posted; 0 blocking FLAGs (17 OK, 4 non-block"
       },
       "taskKeys": [
         "HOS:127"
