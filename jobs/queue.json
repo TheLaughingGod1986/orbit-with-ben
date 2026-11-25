@@ -315336,13 +315336,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-25T11:59Z",
-      "eta": "2026-11-25T12:44Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T17:51Z",
-      "result": "",
+      "result": "Waiting for: Studio finishes processing the 07:44:00-08:47:15 cut saved at 12:02:52Z (the first cut took 40 minutes to go live). The cut is already made: never cut again. If the video still reads 23:53 at 12:50Z, wait again; do not re-save",
       "history": [
         {
           "at": "2026-11-23T17:51Z",
@@ -315438,9 +315438,19 @@
           "at": "2026-11-25T12:04Z",
           "by": "claudecode",
           "what": "step 2 of 6 done: Cut 07:44:00-08:47:15 saved 12:02:52Z, processing (still 'Video editing is in progress' at 12:04Z); thumbnail test still Running. DO NOT CUT AGAIN. Local unpushed commit 90898a4 on branch claudecode/J3442-cut1 in worktree ~/_desk/J3442/wt holds TRIM_RECEIPT_v02.md part 1 and ww2_001_en-GB_v03.srt; screenshots in ~/_desk/J3442/shots; CDP helper ~/_desk/J3442/cdp.py"
+        },
+        {
+          "at": "2026-11-25T12:04Z",
+          "by": "claudecode",
+          "what": "blocked: Waiting for: Studio finishes processing the 07:44:00-08:47:15 cut saved at 12:02:52Z (the first cut took 40 minutes to go live). The cut is already made: never cut again. If the video still reads 23:53 at 12:50Z, wait again; do not re-save"
+        },
+        {
+          "at": "2026-11-25T12:04Z",
+          "by": "claudecode",
+          "what": "condition recorded; next verification 2026-11-25T12:50:00Z"
         }
       ],
-      "remaining_action": "Once Studio finishes processing the cut: shift chapters 4-6, move the card to 17:58, upload the v03 captions, check the end screen, read everything back and finish the receipt",
+      "remaining_action": "Once the video reads 22:48: shift chapters 4-6 by 63.6 s, move the card to 17:58, upload the v03 captions, check the end screen and the thumbnail test, read back, finish TRIM_RECEIPT_v02 and status.json from worktree ~/_desk/J3442/wt (commit 90898a4), then publish once",
       "due": "2026-11-25T20:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -315462,6 +315472,12 @@
           "Write the receipt and report"
         ],
         "note": "Cut 07:44:00-08:47:15 saved 12:02:52Z, processing (still 'Video editing is in progress' at 12:04Z); thumbnail test still"
+      },
+      "hold": {
+        "type": "date",
+        "condition": "Studio finishes processing the 07:44:00-08:47:15 cut saved at 12:02:52Z (the first cut took 40 minutes to go live). The cut is already made: never cut again. If the video still reads 23:53 at 12:50Z, wait again; do not re-save",
+        "check_at": "2026-11-25T12:50:00Z",
+        "release": "auto"
       }
     },
     {
