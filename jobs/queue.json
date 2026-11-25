@@ -333204,9 +333204,14 @@
           "at": "2026-11-25T10:14Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T10:14Z",
+          "by": "claudecode",
+          "what": "step 0 of 6 done"
         }
       ],
-      "remaining_action": "After 10:00Z reset, sanitize 3 home paths, privacy-check, push/PR/merge gemini/J3643-qa and gemini/J3643-review, and close J3205",
+      "remaining_action": "Privacy-read the WW2 branch diff, then publish both branches",
       "due": "2026-11-25T14:00:00Z",
       "for": "claudecode",
       "kind": "assembly",
@@ -333214,12 +333219,21 @@
       "mini_only": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 6,
         "at": "2026-11-25T10:14Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Privacy-read WW2 diff",
+          "Sanitise, push, PR, merge WW2",
+          "Privacy-read and rebase OWB branch",
+          "Push, PR, merge OWB",
+          "Close J3205 and reconcile leftovers",
+          "Report"
+        ]
+      },
+      "taskKeys": [
+        "WW2:003"
+      ]
     },
     {
       "id": "J3655",
