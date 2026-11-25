@@ -289747,13 +289747,13 @@
       "stage": "edit",
       "after": "J3371",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T11:25Z",
-      "eta": "2026-11-25T15:25Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-20T10:21Z",
-      "result": "",
+      "result": "Complete: v01 master (876736a1...), 3 covers, upload package & technical QA built (codex/J3205-mini 4d8422d); J3643 QA PASS; Ben board OK 2026-11-24T23:58:36Z; J3653 uploaded RqYjADxvJy8 Private scheduled 2026-11-28T17:00Z; GitHub records published and merged in ww2-channel#139 (2376f27) and orbit-with-ben#1314 (3a0abe6bdf).",
       "history": [
         {
           "at": "2026-11-20T10:21Z",
@@ -290214,6 +290214,11 @@
           "at": "2026-11-25T11:25Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T11:25Z",
+          "by": "gemini",
+          "what": "done: Complete: v01 master (876736a1...), 3 covers, upload package & technical QA built (codex/J3205-mini 4d8422d); J3643 QA PASS; Ben board OK 2026-11-24T23:58:36Z; J3653 uploaded RqYjADxvJy8 Private scheduled 2026-11-28T17:00Z; GitHub records published and merged in ww2-channel#139 (2376f27) and orbit-with-ben#1314 (3a0abe6bdf)."
         }
       ],
       "remaining_action": "Claude Code privacy check and GitHub PR publish of gemini/J3643-qa (674c088 / 4d8422d) and gemini/J3643-review (5925f6828c) after 10:00Z reset, then close J3205",
@@ -290253,7 +290258,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "ww2-channel#139,orbit-with-ben#1314"
     },
     {
       "id": "J3206",
