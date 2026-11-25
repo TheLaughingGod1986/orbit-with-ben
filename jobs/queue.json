@@ -333237,16 +333237,21 @@
           "at": "2026-11-25T04:00Z",
           "by": "gemini",
           "what": "step 0 of 6 done: Claimed J3665; verified Mini / has 4.8 GB free so all render scratch will run on NAS (/Volumes/data or /Volumes/nas-staging)."
+        },
+        {
+          "at": "2026-11-25T04:07Z",
+          "by": "gemini",
+          "what": "step 1 of 6 done: Rendered all 15 maps_v02 and 12 bespoke_diagrams_v02 on NAS; EDIT_PLAN_v02 built and passed all guards (65.29% archive across 62 photos, max diagram hold 19.42s, 0 back-to-back diagrams after S01, 0 local scratch paths)."
         }
       ],
-      "remaining_action": "Inspecting v01 render script, edit plan, and claims check before patching v02 graphics",
+      "remaining_action": "Visually inspecting all 8 patched v02 diagrams (G5, G7, G00B, G9, G17, G13, G10, G11) before rendering v02 master",
       "due": "2026-11-28T18:00:00Z",
       "kind": "assembly",
       "plain": "Patch WW2 006 v01 visual/factual diagram defects and static holds at £0 spend, render v02 master on NAS",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-11-25T04:00Z",
+        "at": "2026-11-25T04:07Z",
         "by": "gemini",
         "plan": [
           "Patch and render v02 graphics to NAS",
@@ -333256,7 +333261,7 @@
           "Run technical QA and verify contact sheet",
           "Update metadata_v02, status.json and open PR"
         ],
-        "note": "Claimed J3665; verified Mini / has 4.8 GB free so all render scratch will run on NAS (/Volumes/data or /Volumes/nas-stag"
+        "note": "Rendered all 15 maps_v02 and 12 bespoke_diagrams_v02 on NAS; EDIT_PLAN_v02 built and passed all guards (65.29% archive a"
       },
       "taskKeys": [
         "WW2:006"
