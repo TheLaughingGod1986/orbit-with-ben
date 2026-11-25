@@ -337068,9 +337068,14 @@
           "at": "2026-11-25T10:29Z",
           "by": "claudecode",
           "what": "step 2 of 4 done: Condition MET: origin/main f0c96baab2 has jobs/reviews/J3597/REVIEW.md (blob 44b4057f63, 42 lines, identical to codex commit 1eb13065c3); PR #1313 merged 2026-11-25T10:12:03Z as 052e368633"
+        },
+        {
+          "at": "2026-11-25T10:30Z",
+          "by": "claudecode",
+          "what": "step 3 of 4 done: jobs.py refused both reopen and wait on J3597 for a worker (chief job held by codex); evidence handed to elected Chief Codex instead"
         }
       ],
-      "remaining_action": "Reopening J3597 with the publication evidence",
+      "remaining_action": "Finishing the verification and reporting to the Chief",
       "kind": "review",
       "recheck_of": "J3597",
       "due": "2026-11-25T05:03:00+00:00",
@@ -337084,9 +337089,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-25T10:29Z",
+        "at": "2026-11-25T10:30Z",
         "by": "claudecode",
         "plan": [
           "Read J3597 and J3530 history",
@@ -337094,7 +337099,7 @@
           "Record wait or reopen J3597",
           "Finish and report"
         ],
-        "note": "Condition MET: origin/main f0c96baab2 has jobs/reviews/J3597/REVIEW.md (blob 44b4057f63, 42 lines, identical to codex co"
+        "note": "jobs.py refused both reopen and wait on J3597 for a worker (chief job held by codex); evidence handed to elected Chief C"
       }
     },
     {
