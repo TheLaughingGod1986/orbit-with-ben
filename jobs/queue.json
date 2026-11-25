@@ -324815,15 +324815,20 @@
           "at": "2026-11-25T04:44Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Checked out PR #753 (ebb55eea) in clean worktree and read script v01, SOURCES.md, FACT_NOTES_v01.md, SHORTS_SCRIPTS_v01.md, TOPIC.md, status.json; flagged initial anomalies (microsecond/light-travel math, Bainbridge bunker distance, LA-602/Compton/Bethe verbatim verification, S02 silent shockwave) for primary-source verification"
+        },
+        {
+          "at": "2026-11-25T04:49Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Completed claim-by-claim live URL & math audit: caught 8 concrete FLAGs including wrong OSTI ID 4036390 (1964 Misra paper), false microsecond/football-field light-travel scale (inverted by 3x+), unsourced '1,000x faster' cooling ratio vs LA-602 1.6 minimum safety factor, Bainbridge bunker mislocated to 10 mi instead of S-10000 (5.7 mi), Shorts S01/S02 miscounted (55w/65w vs claimed 44w/46w -> exceeds 16-19s house rule), S02 'silent shockwave' error, Row 10 misleading sentence splice, and missing verbatim quotes in Rows 8-9"
         }
       ],
-      "remaining_action": "Verify all claims, numbers, quotes, URLs, and 7 J3502 guardrails against primary sources",
+      "remaining_action": "Finalize primary-source citations (LA-602 OSTI ID, Bethe 1976, Selby 2021) and verify all 7 J3502 guardrails",
       "due": "2026-12-03T18:00:00Z",
       "kind": "facts",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-25T04:44Z",
+        "at": "2026-11-25T04:49Z",
         "by": "gemini",
         "plan": [
           "Check out PR #753 and read HOS:136 files",
@@ -324832,7 +324837,7 @@
           "Write independent audit report and update status/production-status",
           "Push follow-on PR, verify CI/checks and post desk handoff"
         ],
-        "note": "Checked out PR #753 (ebb55eea) in clean worktree and read script v01, SOURCES.md, FACT_NOTES_v01.md, SHORTS_SCRIPTS_v01."
+        "note": "Completed claim-by-claim live URL & math audit: caught 8 concrete FLAGs including wrong OSTI ID 4036390 (1964 Misra pape"
       },
       "taskKeys": [
         "HOS:136"
