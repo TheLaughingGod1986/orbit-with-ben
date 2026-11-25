@@ -322151,10 +322151,10 @@
       "stage": "upload",
       "after": "J3505",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-25T19:00Z",
+      "eta": "2026-11-25T21:00Z",
       "created_by": "codex",
       "created_at": "2026-11-24T10:52Z",
       "result": "",
@@ -322213,6 +322213,11 @@
           "at": "2026-11-25T18:59Z",
           "by": "gemini",
           "what": "reopened: J3733 verified (elected acting Chief gemini): live read-only YouTube Data API at 2026-11-25T18:57Z confirms parent T3cBBss1F60 is Public (publishedAt 2026-11-25T18:00:24Z, processed, UC_esArsDKd3GJvOkeO0DUog) and Short BLCuJ4EKic4 remains Private scheduled 2026-12-02T11:30:00Z (processed, en-GB captions). Original Ben approval (OWB:ASK:J0979 16 Nov, J3505), J2926 7/7 gates, J3508 upload receipt (PR #1244), UPLOADS.json and library.json remain valid. DO NOT upload again: BLCuJ4EKic4 is already uploaded with verified cover and captions. Remaining work: set and verify Related video T3cBBss1F60 on BLCuJ4EKic4 in Studio (CDP 9223), recheck Private/2026-12-02T11:30:00Z and Buffer deferral, record result, close J3508."
+        },
+        {
+          "at": "2026-11-25T19:00Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Link the Titan Short to its full film once the full film is public",
@@ -322244,7 +322249,15 @@
       "open_claim": true,
       "taskKeys": [
         "OWB:032"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T19:00Z",
+        "by": "claudecode",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3509",
