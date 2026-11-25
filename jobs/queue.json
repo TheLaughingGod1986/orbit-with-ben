@@ -315413,9 +315413,14 @@
           "at": "2026-11-25T11:59Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T12:00Z",
+          "by": "claudecode",
+          "what": "step 0 of 6 done: Claimed; reading history and finding the J3419 method"
         }
       ],
-      "remaining_action": "Await Claude review and OK on TRIM_PROPOSAL_v02.md (ww2-channel PR #138) before any live Studio Editor cut",
+      "remaining_action": "Record pilot 1's before state in Studio, then trim 07:44 to 08:47 with Studio's editor",
       "due": "2026-11-25T20:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -315425,11 +315430,18 @@
       "urgent": 7,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T11:59Z",
+        "of": 6,
+        "at": "2026-11-25T12:00Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Record the before state",
+          "Trim 07:44-08:47 in Studio editor",
+          "Wait for the edit to go live",
+          "Fix chapters, card, captions, end screen",
+          "Read everything back",
+          "Write the receipt and report"
+        ],
+        "note": "Claimed; reading history and finding the J3419 method"
       }
     },
     {
