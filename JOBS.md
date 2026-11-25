@@ -126,6 +126,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3663 | mini | claimed | gemini | 2026-11-25T05:50Z | WW2:006 edit · chief · WW2 006: Chief decision on v01 delivery, PR #107 merge and Ben watch staging |  |
 | J3664 | mini | blocked | macbook-2 | – | review · Verify condition for J3492 |  |
 | J3665 | mini | open | – | – | 006 edit · assembly · WW2 006: v02 zero-spend visual/graphic repair, pacing trim and render |  |
+| J3666 | mini | open (after J3665) | – | – | 006 edit · qa · WW2 006: full private audiovisual QA of v02 master |  |
 
 Recently finished:
 

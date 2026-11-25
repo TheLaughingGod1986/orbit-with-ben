@@ -1,5 +1,5 @@
 {
-  "next_id": 3666,
+  "next_id": 3667,
   "jobs": [
     {
       "id": "J0001",
@@ -333205,6 +333205,40 @@
       "due": "2026-11-28T18:00:00Z",
       "kind": "assembly",
       "plain": "Patch WW2 006 v01 visual/factual diagram defects and static holds at £0 spend, render v02 master on NAS"
+    },
+    {
+      "id": "J3666",
+      "title": "WW2 006: full private audiovisual QA of v02 master",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Follow-up to `J3663` elected acting Chief ruling (`07_Edit/CHIEF_RULING_J3663.md` on `ww2-channel` `main`): after the `WW2:006` `v02` zero-spend visual/graphic repair completes, perform genuine full 100% continuous private end-to-end audiovisual QA (`00:00.00–25:42.83`) on `07_Edit/v02_master/ww2_006_mosquito_v02.mp4`.\n\n**Requirements:**\n1. Demonstrate `audio_input` and `moving_video_input` in this session via `chief_relay.py capabilities` before claiming perceptual review; use a typed capability hold if absent. Still sheets, ASR, `ffprobe`, and loudness are technical evidence only, not listening/motion review.\n2. Independently verify the exact `v02` master path and SHA-256 delivered by the `v02` repair PR, plus `ffprobe`, loudness (`~-15.3 LUFS`, `<= -1.0 dBTP`), `>= 53.5%` verified archive coverage across the 62 provenanced photos, `0` excluded photos, `0` `<60 s` repeats, and NAS-hosted diagram paths (no `/Volumes/MiniWork/scratch/` refs).\n3. Watch and listen to 100% of `v02` continuously (using lossless stream-copied segments if needed, deleting any local temp segments afterward) and specifically verify every `J3662` / `J3663` blocker is resolved:\n   - `G5` (`01:15` & `09:29`): zero tofu boxes (`□`), clean birch/balsa sandwich labels.\n   - `G7` (`11:41`): consistent `Under 280 lb` (no `200 lb` contradiction), `BARE AIRFRAME`, clean wipe-in with zero text overflow past its box.\n   - `G00B` (`00:21` & `18:31`): `16:00 PM` typo fixed cleanly inside the opening 30 s.\n   - `G9` (`14:24`): clean tight `392 MPH` spacing (no ~450 px gap).\n   - `G17` (`ZERO ALUMINIUM DRAIN` UK spelling, no anachronistic `May–July 1940` spoiler at `02:20`) and `G15` (no anachronistic reuse at `08:26`).\n   - `G13` (`21:49`): distinct sourced heavy-bomber loss-rate labels (no duplicate identical `HEAVY BOMBERS` bars).\n   - `G10` (`VICTORIA TERRASSE` clear of yellow route line), `G11` (`RELEASE` dot aligned on `CAT` arc), and `G18` unreadable `2.6 s` flash at `05:09` removed.\n   - Static diagram pacing: no single static diagram holds past `~20 s` (`G19`, `G16`, `G5`, `G4`, `G23`, `G3`, `G8` broken up/trimmed) and no consecutive back-to-back diagrams without archive between them (`G22+G7`, `G18+G5`, `G11+G11b`).\n   - Audio/narration/score/sync, Rule-3 first two minutes, Rule-13 ad safety, 376 en-GB captions, Rule-2 title `De Havilland Mosquito: Why It Was Made of Wood` (46 chars, `upload_authorized: false`), and 3 thumbnails (`A`, `B`, `C` + `168 px` sheet) all intact.\n4. Commit timestamped findings and tools actually used in `02_Video-Projects/006_De-Havilland-Mosquito-Plywood-Balsa-Bomber/07_Edit/QA_REVIEW_v02.md` (citing this job ID) on a clean `ww2-channel` PR from `origin/main`, and hand a clear recommendation + exact `v02` SHA-256 to the dependent Chief decision job.\n\n**Guards:** `£0` spend. No Chief PASS, no PR merge, no YouTube upload/schedule/privacy change, and no copy to `WW2 UAT/`. `J3434` remains held until the dependent Chief decision job rules.\n",
+      "ref": "",
+      "film": "006",
+      "stage": "edit",
+      "after": "J3665",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T03:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T03:55Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Watch and listen to 100% of WW2 006 v02 master and verify every J3662/J3663 visual and pacing defect is resolved",
+      "due": "2026-11-30T18:00:00Z",
+      "kind": "qa",
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ],
+      "plain": "Full private end-to-end watch and listen QA of WW2 006 v02 master"
     }
   ],
   "focus": [
