@@ -83,7 +83,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3548 | mini | blocked | macbook | – | for claudecode · review · Review local Field Order analytics delivery privacy |  |
 | J3550 | gemini | open | – | – | WW2:015 sources · for gemini · facts · WW2 015: independent Gemini check of Sherman draft claims |  |
 | J3551 | mini | open (after J3550) | – | – | WW2:015 script · review · WW2 015: Claude topic archive and opening review before lock |  |
-| J3553 | mini | open (after J3552) | – | – | HOS:136 script · review · HOS 136 Trinity Test Explained (Thu 17 Dec): review and lock script v01, package-first scoring, sources & Shorts (PR #753) | J3507 |
+| J3553 | mini | claimed | gemini | 2026-11-25T06:57Z | HOS:136 script · review · HOS 136 Trinity Test Explained (Thu 17 Dec): review and lock script v01, package-first scoring, sources & Shorts (PR #753) | J3507 |
 | J3558 | mini | open | – | – | chief · Chief: resolve 003 edit orphan-doing |  |
 | J3559 | mini | open (after J3557) | – | – | WW2:017 vo · vo · WW2 film 017: narration in Ben's voice (Pearl Harbor Salvage, post-reset) |  |
 | J3561 | mini | blocked | claude | – | studio · WW2 pilot 2: read at 1,000 impressions or 48 hours, and change the title that day if click-through is under 2% |  |
