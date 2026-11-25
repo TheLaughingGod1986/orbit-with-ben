@@ -330115,9 +330115,14 @@
           "at": "2026-11-25T10:03Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Step 1 done: inspected J3487 history, ww2-channel PRs (#84/#85/#86/#98), and origin/macbook/J3487 (still at pre-reopen Bletchley commit 03ce06ae)."
+        },
+        {
+          "at": "2026-11-25T10:04Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Step 2 done: condition UNMET. ww2-channel origin/macbook/J3487 remains at pre-reopen Bletchley commit 03ce06ae (merged in PR #84/#86); origin/main (be57e17e) has no Battle of the Bulge commits or PR. /Users/ben/_desk/worker/slot2/ww2-channel is a MacBook path unreachable from the Mini."
         }
       ],
-      "remaining_action": "Verifying J3487 publish condition, remote branch state, and MacBook worktree reachability",
+      "remaining_action": "Updating J3487 wait hold with recheck J3620, finishing J3620, and posting studio thread report",
       "kind": "review",
       "recheck_of": "J3487",
       "due": "2026-11-24T22:11:55+00:00",
@@ -330131,16 +330136,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-25T10:03Z",
+        "at": "2026-11-25T10:04Z",
         "by": "gemini",
         "plan": [
           "Inspect J3487 history and git state",
           "Verify publish condition and gates",
           "Reopen or update wait and report"
         ],
-        "note": "Step 1 done: inspected J3487 history, ww2-channel PRs (#84/#85/#86/#98), and origin/macbook/J3487 (still at pre-reopen B"
+        "note": "Step 2 done: condition UNMET. ww2-channel origin/macbook/J3487 remains at pre-reopen Bletchley commit 03ce06ae (merged i"
       },
       "taskKeys": [
         "WW2:016"
