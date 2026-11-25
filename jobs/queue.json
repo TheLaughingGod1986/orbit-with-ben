@@ -333043,9 +333043,14 @@
           "at": "2026-11-25T03:50Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T03:51Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "After J3662, review WW2:006 QA and PR #107, confirm Rule-2 title and picture=done, and either queue v02 repair or merge and stage Ben watch (due 2026-12-02 20:00 UTC)",
+      "remaining_action": "Inspecting J3662 QA PR #132, PR #107, PR #98 and J3639 precedent",
       "due": "2026-12-01T12:00:00Z",
       "kind": "chief",
       "plain": "Review WW2 Mosquito QA and PR #107, merge or repair, and stage Ben's watch",
@@ -333059,12 +333064,20 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T03:50Z",
+        "of": 5,
+        "at": "2026-11-25T03:51Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect J3662 QA PR #132, PR #107, PR #98 and J3639 precedent",
+          "Verify technical checks, SHA-256 and defects vs rules",
+          "Execute Chief ruling (merge/stage or queue v02 repair)",
+          "Update queue, board and Chief review artifact",
+          "Post Chief report on studio thread"
+        ]
+      },
+      "taskKeys": [
+        "WW2:006"
+      ]
     },
     {
       "id": "J3664",
