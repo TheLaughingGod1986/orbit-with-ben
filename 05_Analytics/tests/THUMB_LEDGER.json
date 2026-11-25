@@ -1799,6 +1799,50 @@
         "sha256": "c23a742058756337b7ee56e3e2aafe526763e5cccc3369f439cefd2f6a501aa3",
         "text": "FLOWING ICE"
       }
+    },
+    {
+      "id": "T045",
+      "status": "done",
+      "started": "2026-11-05",
+      "ended": "2026-11-19",
+      "readBack": "2026-11-22",
+      "channel": "hos",
+      "film": "006",
+      "video": "VbPubYd6Fbs",
+      "title": "The Willow Tree That Was Made of Air",
+      "job": "J0958 / J3372 / J3365",
+      "test_type": "title_and_thumbnail",
+      "experiment_identity": {
+        "started_at_local": "2026-11-05T18:00:00",
+        "finished_at_local": "2026-11-19T18:58:00",
+        "timezone": "Europe/London (UTC on both dates)",
+        "opaque_id": null
+      },
+      "maker_source": "HOS 006 08_Thumbnail/THUMBS_INDEX_v01.json (J0869): maker gemini; both existing assets, not newly generated.",
+      "a": {
+        "maker": "gemini",
+        "file": "Selected/hos_006_thumb_A_wood_from_sky_v01.jpg",
+        "sha256": "904d2f58be22be993fb36e9c86997d00e239649e9f4b576ccebe4703c83dd0f0",
+        "title": "The Willow Tree That Was Made of Air",
+        "hook": "WOOD FROM SKY?"
+      },
+      "b": {
+        "maker": "gemini",
+        "file": "Selected/hos_006_thumb_B_do_plants_eat_soil_v01.jpg",
+        "sha256": "ee5f2605520a0155f146d26700d41c99d47b45596457f84d9692415fe15360c4",
+        "title": "Where Does a Tree's Weight Come From?",
+        "hook": "DO PLANTS EAT SOIL?"
+      },
+      "result": {
+        "winner": "draw",
+        "status": "NOT_ENOUGH_DATA",
+        "wt_a": null,
+        "wt_b": null,
+        "read": "2026-11-22",
+        "impressions": null,
+        "note": "Studio: Not enough impressions to declare a winner. Both watch-time shares displayed as em dashes; no experiment CTR or impressions shown. A remains visible to all viewers. Finished report preserved. Exact 28-day reach (70 impressions / 4.3% CTR) is separate and cannot establish a test winner. Drafted as T044 in J3372 PR #1197 on 22 Nov; numbered T045 here because main assigned T044 to OWB 034 Pluto on 25 Nov (J3530).",
+        "evidence": "05_Analytics/weekly_thumb_audit/HOS/2026-11-22_evidence/J3372_studio_readback.json"
+      }
     }
   ]
 }

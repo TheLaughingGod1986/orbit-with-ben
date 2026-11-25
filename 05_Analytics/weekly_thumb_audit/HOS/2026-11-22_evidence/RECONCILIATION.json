@@ -12,9 +12,10 @@
     {
       "id": "AL_-qlWko_g",
       "snapshot_present": true,
-      "title": "How Did We Discover the Periodic Table? (Mendeleev's Blank Spaces)",
+      "title": "How Did We Discover the Periodic Table?",
       "state_at_snapshot": "public",
-      "conflict": "Snapshot omits suffix; 17 Nov J1130 final Chief closure explicitly preserves this full search-led title. J3372 to resolve current Studio text."
+      "conflict": "Resolved by J3372 Studio readback (22 Nov 22:47Z): live Studio title is 'How Did We Discover the Periodic Table?' (matching 22 Nov API snapshot), with no attached title test and finished T023 thumbnail report preserved. J1130's 17 Nov Chief closure note (J2979, HOS PR #634) cited '(Mendeleev's Blank Spaces)' while closing J1130 and preserving finished T023; J1130 remains CLOSED and untouched.",
+      "title_studio_readback_2026_11_22": "How Did We Discover the Periodic Table?"
     },
     {
       "id": "frP_YrNShsU",
@@ -318,5 +319,23 @@
       "conflict": null
     }
   ],
-  "missing_from_inventory": []
+  "missing_from_inventory": [],
+  "reconciled_with_j3372_utc": "2026-11-22T22:48:35.808650+00:00",
+  "snapshot_delta_2026_11_25_informational": {
+    "snapshot_file": "05_Analytics/hos/snapshots/2026-11-25.json",
+    "note": "Informational context only; does not alter the 22 Nov 45-video audit inventory or the 25 Oct-21 Nov 28-day Studio window.",
+    "state_changes_in_45_video_set": [
+      "el30-mHiH-0 ('How Does the Heart Pump Blood?') passed its 22 Nov 11:30Z schedule and shows no publishAt in 25 Nov snapshot (aired)."
+    ],
+    "new_videos_uploaded_after_22_nov_audit": [
+      "YqCWYlv_LCY (scheduled 2026-11-26T18:00:00Z, Benjamin Franklin's Kite Experiment Explained)",
+      "__UtUYdEUwg (scheduled 2026-11-27T11:30:00Z, Why Was Franklin's Kite Experiment So Dangerous?)",
+      "4sYTV_rQcqs (scheduled 2026-11-29T11:30:00Z, How Does a Lightning Rod Work?)",
+      "wiyfRnsTfTY (scheduled 2026-12-03T18:00:00Z, How Isaac Newton Proved Gravity Using the Moon)",
+      "OhdDVA9kWBk (scheduled 2026-12-04T11:30:00Z, What Would Happen If the Moon Stopped Moving?)",
+      "9ETHUOUH5-A (scheduled 2026-12-05T11:30:00Z, How Did Newton Discover Gravity?)",
+      "mpK3D6S7WLk (private/unscheduled draft, What Killed the Dinosaurs?)",
+      "sMPlMuxK3YU (private/unscheduled draft, Are Birds Really Dinosaurs?)"
+    ]
+  }
 }

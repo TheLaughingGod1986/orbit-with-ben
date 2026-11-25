@@ -9,7 +9,8 @@
     "studio_ctr": "05_Analytics/hos/studio_ctr.json (readAt 2026-11-22T07:12:32.334030+00:00, lifetime impressions/CTR for longs + stayed-to-watch for Shorts)",
     "studio_settings_audit": "05_Analytics/hos/STUDIO_SETTINGS_AUDIT_2026-11-21.md (21 Nov 20:04Z; confirmed VbPubYd6Fbs Results ready, ETynHpIYLeY Running)",
     "macbook_cdp_9222_status": "SIGNED_OUT (accounts.google.com/v3/signin/identifier) — read-only; no sign-in attempted. Mini owes 28d yta_web/join per-video CTR + VbPubYd6Fbs modal read-back.",
-    "correction": "Latest available snapshot plus J1130 final closure; J3372 PR1175 reports renderer timeout, not a demonstrated Mini login issue."
+    "correction": "Completed with J3372 (PR #1197) exact 25 Oct-21 Nov reach, Willow T045 readback, and 001/002/003 live Studio titles/tests.",
+    "j3372_studio_readback": "05_Analytics/weekly_thumb_audit/HOS/2026-11-22_evidence/J3372_studio_readback.json (captured 2026-11-22T22:48:35Z on J3384-approved Mini HOS Studio browser, exact window 2026-10-25 to 2026-11-21)"
   },
   "long_lifetime_median_ctr_pct": 4.3,
   "short_28d_median_ctr_pct_prior_nov15": 2.44,
@@ -65,18 +66,20 @@
       "avg_view_pct_lifetime": 48.1,
       "prev_28d_impressions_nov15": 5,
       "prev_28d_ctr_pct_nov15": 0,
-      "test_status": "T009 finished inconclusive; preserve attached test. J1126 drafts confer no new arming permission.",
+      "test_status": "T009 finished 5 Nov 02:21 London (NOT_ENOUGH_DATA / draw, null shares, live A visible); no title test attached (verified J3372 22 Nov 22:47Z). Preserve attached test; J1126 drafts confer no arming permission.",
       "saved_copy": "/Volumes/MiniWork/scratch/j3365-assets/_C92tIJCk8A.jpg",
       "sha256": "4dab1c5420aea0b73db7b4c4c1ba4d363498ec0920b3182b02f6ea3db8734ddc",
       "title_prior_audit": "How Did We Discover Germs?",
-      "metadata_source": "2026-11-22 snapshot at 06:40:31Z; not a fresh Studio read",
+      "metadata_source": "J3372 Studio readback 2026-11-22T22:47Z + 2026-11-22 snapshot",
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 4,
+        "ctr_pct": 0.0,
+        "vs_format_available_median_pp": -6.1,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
       "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
       "release_gate_status": "NOT_ASSESSED",
@@ -88,7 +91,7 @@
       "film": "002",
       "state": "public",
       "publishAt": "2026-09-17T18:00:06Z",
-      "title": "How Did We Discover the Periodic Table? (Mendeleev's Blank Spaces)",
+      "title": "How Did We Discover the Periodic Table?",
       "on_thumb_text": "HOW DID WE DISCOVER THE PERIODIC TABLE?",
       "style_verdict": "LEGACY_DIFFERENCE",
       "rule_note": "Long title-heavy lettering differs from current §2.5; explicit live-back-catalogue no-rework rule applies. Not a new release failure.",
@@ -103,23 +106,26 @@
       "avg_view_pct_lifetime": 21.2,
       "prev_28d_impressions_nov15": 200,
       "prev_28d_ctr_pct_nov15": 3.5,
-      "test_status": "T023 finished inconclusive. J1130 CLOSED by Chief 17 Nov (J2979, HOS PR634); preserve finished test and search-led title. No reopening.",
+      "test_status": "T023 finished 12 Nov 01:34 London (NOT_ENOUGH_DATA / draw, null shares, live A visible); no title test attached (verified J3372 22 Nov 22:47Z). J1130 CLOSED 17 Nov; preserve finished test.",
       "saved_copy": "/Volumes/MiniWork/scratch/j3365-assets/AL_-qlWko_g.jpg",
       "sha256": "f4bb9a7a771768cf5cfd000774fad958412a5afcef9b66883cdcab3ab4e195cd",
       "title_prior_audit": "How Did We Discover the Periodic Table?",
-      "metadata_source": "2026-11-22 snapshot at 06:40:31Z; not a fresh Studio read",
+      "metadata_source": "J3372 Studio readback 2026-11-22T22:47Z + 2026-11-22 snapshot",
       "metadata_conflict": "Snapshot omits suffix; 17 Nov J1130 final Chief closure explicitly preserves this full search-led title. J3372 to resolve current Studio text.",
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 98,
+        "ctr_pct": 6.1,
+        "vs_format_available_median_pp": 0.0,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
       "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
       "release_gate_status": "NOT_ASSESSED",
-      "build_lock_date": null
+      "build_lock_date": null,
+      "j1130_closure_note": "J1130 CLOSED by Chief 17 Nov (J2979, HOS PR #634) preserving finished T023; closure text cited '(Mendeleev's Blank Spaces)', whereas Studio readback (22 Nov 22:47Z) and snapshot show 'How Did We Discover the Periodic Table?' live. Preserve closure and T023; no reopen or title edit."
     },
     {
       "id": "frP_YrNShsU",
@@ -142,18 +148,20 @@
       "avg_view_pct_lifetime": 26.6,
       "prev_28d_impressions_nov15": 10,
       "prev_28d_ctr_pct_nov15": 10,
-      "test_status": "T001 finished inconclusive; preserve attached test. No new title test or before/after substitution authorized.",
+      "test_status": "T001 finished 28 Oct 21:17 London (NOT_ENOUGH_DATA / draw, null shares, live A visible); no title test attached (verified J3372 22 Nov 22:47Z). Preserve attached test; no new title test authorized.",
       "saved_copy": "/Volumes/MiniWork/scratch/j3365-assets/frP_YrNShsU.jpg",
       "sha256": "38dc8d1b668724ae0be3f6bdd50cfea3d99bf3cb78b0634b842bdd22a054e6cc",
       "title_prior_audit": "How Did We Discover X-rays?",
-      "metadata_source": "2026-11-22 snapshot at 06:40:31Z; not a fresh Studio read",
+      "metadata_source": "J3372 Studio readback 2026-11-22T22:47Z + 2026-11-22 snapshot",
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 4,
+        "ctr_pct": 25.0,
+        "vs_format_available_median_pp": 18.9,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
       "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
       "release_gate_status": "NOT_ASSESSED",
@@ -180,7 +188,7 @@
       "avg_view_pct_lifetime": 23.5,
       "prev_28d_impressions_nov15": 528,
       "prev_28d_ctr_pct_nov15": 1.7,
-      "test_status": "Recorded title Test B window 12–26 Nov; preserve. Fresh Studio state pending J3372.",
+      "test_status": "Recorded title Test B window 12–26 Nov; preserve untouched (not opened in J3372 per active-window hold).",
       "saved_copy": "/Volumes/MiniWork/scratch/j3365-assets/GHZDsiH7L7A.jpg",
       "sha256": "9da05e25f2b9a0a16ca85982c8e6bb63d592098647147c3b3455829294ac1027",
       "title_prior_audit": "What's Inside an Atom? Mostly Empty Space",
@@ -188,10 +196,12 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 65,
+        "ctr_pct": 6.2,
+        "vs_format_available_median_pp": 0.1,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
       "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
       "release_gate_status": "NOT_ASSESSED",
@@ -226,10 +236,12 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 17,
+        "ctr_pct": 17.7,
+        "vs_format_available_median_pp": 11.6,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
       "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
       "release_gate_status": "NOT_ASSESSED",
@@ -256,7 +268,7 @@
       "avg_view_pct_lifetime": 48.1,
       "prev_28d_impressions_nov15": 36,
       "prev_28d_ctr_pct_nov15": 2.78,
-      "test_status": "Results ready in 21 Nov Studio audit; verdict/shares unknown pending J3372. Preserve finished test.",
+      "test_status": "T045 (Title & thumbnail, 5 Nov 18:00–19 Nov 18:58 London; drafted as T044 in J3372 PR #1197) finished NOT_ENOUGH_DATA / draw; both watch-time shares em-dash (null); A visible to all; report preserved.",
       "saved_copy": "/Volumes/MiniWork/scratch/j3365-assets/VbPubYd6Fbs.jpg",
       "sha256": "a9337ae6b26251b3154a1c1baece202b2c4acac7281b6c9de75c8f2cb6294f14",
       "title_prior_audit": "The Willow Tree That Was Made of Air",
@@ -264,10 +276,12 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 70,
+        "ctr_pct": 4.3,
+        "vs_format_available_median_pp": -1.8,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
       "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
       "release_gate_status": "NOT_ASSESSED",
@@ -302,10 +316,12 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 44,
+        "ctr_pct": 4.6,
+        "vs_format_available_median_pp": -1.5,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
       "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
       "release_gate_status": "NOT_ASSESSED",
@@ -333,7 +349,7 @@
       "prev_28d_impressions_nov15": null,
       "prev_28d_ctr_pct_nov15": null,
       "test_status": "No test recorded; scheduled compilation exception previously approved.",
-      "saved_copy": "/Users/ben/_desk/j3365/live/uAomPaOBrM8.jpg",
+      "saved_copy": "/Users/benjaminoats/YouTube/History Of Science/02_Video-Projects/099_Six-Experiments-Compilation/11_Upload-Package/compilation_thumb_v02.jpg",
       "sha256": "de8e1c13c6736518ecafb8f54e564fba1cce2494c85c6c358f549481ef427aeb",
       "title_prior_audit": "Experiments That Changed the World (Blood, Germs and Atoms)",
       "metadata_source": "2026-11-22 snapshot at 06:40:31Z; not a fresh Studio read",
@@ -342,13 +358,19 @@
         "end": "2026-11-21",
         "impressions": null,
         "ctr_pct": null,
+        "vs_format_available_median_pp": null,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "unknown_em_dash_in_individual_report"
       },
       "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
-      "asset_availability": "Exact earlier served JPEG unavailable. Local compilation_thumb_v01.jpg is a different hash; candidate only, not proof of live image."
+      "asset_availability": "Exact earlier served JPEG unavailable. Local compilation_thumb_v01.jpg is a different hash; candidate only, not proof of live image.",
+      "sha256_manifest_v02": "07f34be900d9449bbe150b1c49c1dd34aedd1c4eb8cee98eab6bd81b51d52ef4",
+      "preview_v02": "/Volumes/MiniWork/scratch/j3365-assets/preview_uAomPaOBrM8_v02.jpg",
+      "preview_v02_sha256": "db3f3b770625da20045d4fa109a7f7b3671b2694d6b44ee2104c82815ed22145",
+      "live_served_jpeg_status": "UNRESOLVED: HTTP 404 while scheduled/Private; manifest source v02 (6 EXPERIMENTS) verified at 168x94."
     },
     {
       "id": "H1y0DXFVmw8",
@@ -378,12 +400,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 10,
+        "ctr_pct": 10.0,
+        "vs_format_available_median_pp": 8.1,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "AN ENEMY WITH NO SHADOW"
@@ -416,12 +440,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 20,
+        "ctr_pct": 0.0,
+        "vs_format_available_median_pp": -1.9,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "A DROP IS NOT EMPTY"
@@ -454,12 +480,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 60,
+        "ctr_pct": 8.3,
+        "vs_format_available_median_pp": 6.4,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "YOU ARE THE VECTOR"
@@ -492,12 +520,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 3,
+        "ctr_pct": 0.0,
+        "vs_format_available_median_pp": -1.9,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "A FLASK LIKE A QUESTION MARK"
@@ -530,12 +560,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 19,
+        "ctr_pct": 0.0,
+        "vs_format_available_median_pp": -1.9,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "THE EMPTY WERE THE CHAIRS"
@@ -570,10 +602,12 @@
         "end": "2026-11-21",
         "impressions": null,
         "ctr_pct": null,
+        "vs_format_available_median_pp": null,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "unknown_em_dash_in_individual_report"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "HE PREDICTED A METAL"
@@ -606,12 +640,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 5,
+        "ctr_pct": 0.0,
+        "vs_format_available_median_pp": -1.9,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "GALLIUM IN THE GAP"
@@ -644,12 +680,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 42,
+        "ctr_pct": 2.4,
+        "vs_format_available_median_pp": 0.5,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "TELLURIUM BEFORE IODINE"
@@ -682,12 +720,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 11,
+        "ctr_pct": 0.0,
+        "vs_format_available_median_pp": -1.9,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "WHAT OTHER TABLE HAS GAPS?"
@@ -720,12 +760,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 2,
+        "ctr_pct": 50.0,
+        "vs_format_available_median_pp": 48.1,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "HOW X-RAYS WERE DISCOVERED BY ACCIDENT"
@@ -758,12 +800,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 29,
+        "ctr_pct": 3.5,
+        "vs_format_available_median_pp": 1.6,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "SEE BONES WITHOUT CUTTING"
@@ -796,12 +840,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 9,
+        "ctr_pct": 0.0,
+        "vs_format_available_median_pp": -1.9,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "THE FIRST X-RAY SHOWED A WEDDING RING"
@@ -834,12 +880,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 25,
+        "ctr_pct": 0.0,
+        "vs_format_available_median_pp": -1.9,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "WHAT ELSE IS STILL INVISIBLE?"
@@ -872,12 +920,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 89,
+        "ctr_pct": 0.0,
+        "vs_format_available_median_pp": -1.9,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "HOW SO SMALL?"
@@ -910,12 +960,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 26,
+        "ctr_pct": 3.9,
+        "vs_format_available_median_pp": 2.0,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "EVERY EIGHTH ELEMENT?"
@@ -948,12 +1000,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 64,
+        "ctr_pct": 1.6,
+        "vs_format_available_median_pp": -0.3,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "HEAT beyond RED"
@@ -986,12 +1040,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 53,
+        "ctr_pct": 1.9,
+        "vs_format_available_median_pp": 0.0,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "THE CARBOLIC SPRAY"
@@ -1024,12 +1080,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 202,
+        "ctr_pct": 2.5,
+        "vs_format_available_median_pp": 0.6,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "GLOW not GOLD"
@@ -1062,12 +1120,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 91,
+        "ctr_pct": 0.0,
+        "vs_format_available_median_pp": -1.9,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "THE BEAM BENT"
@@ -1100,12 +1160,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 291,
+        "ctr_pct": 1.7,
+        "vs_format_available_median_pp": -0.2,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "REMOVE the HANDLE"
@@ -1138,12 +1200,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 932,
+        "ctr_pct": 4.5,
+        "vs_format_available_median_pp": 2.6,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "FLASK STAYS"
@@ -1176,12 +1240,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 250,
+        "ctr_pct": 4.0,
+        "vs_format_available_median_pp": 2.1,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "BOOKS behind LEAD"
@@ -1214,12 +1280,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 108,
+        "ctr_pct": 0.0,
+        "vs_format_available_median_pp": -1.9,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "MORE THAN YOU HAVE"
@@ -1252,12 +1320,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 160,
+        "ctr_pct": 2.5,
+        "vs_format_available_median_pp": 0.6,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "IS THE HEART A PUMP?"
@@ -1290,12 +1360,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 696,
+        "ctr_pct": 2.2,
+        "vs_format_available_median_pp": 0.3,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "GOLD THREW IT BACK"
@@ -1328,12 +1400,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 393,
+        "ctr_pct": 1.8,
+        "vs_format_available_median_pp": -0.1,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "FOUR ELEMENTS WERE WRONG"
@@ -1366,12 +1440,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 110,
+        "ctr_pct": 2.7,
+        "vs_format_available_median_pp": 0.8,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "DOORS IN VEINS"
@@ -1404,12 +1480,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 197,
+        "ctr_pct": 4.6,
+        "vs_format_available_median_pp": 2.7,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "ONE TIGHT BAND"
@@ -1442,12 +1520,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 290,
+        "ctr_pct": 3.1,
+        "vs_format_available_median_pp": 1.2,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "THE FIRST TEST"
@@ -1480,12 +1560,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 205,
+        "ctr_pct": 1.0,
+        "vs_format_available_median_pp": -0.9,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "HE NEVER SAW THIS (+ burned-in subtitle)"
@@ -1518,12 +1600,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 2337,
+        "ctr_pct": 1.7,
+        "vs_format_available_median_pp": -0.2,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": true,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "EACH ATOM (+ burned-in subtitle)"
@@ -1556,12 +1640,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 53,
+        "ctr_pct": 1.9,
+        "vs_format_available_median_pp": 0.0,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "NOT THE FIRST (centered serif)"
@@ -1594,12 +1680,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 49,
+        "ctr_pct": 2.0,
+        "vs_format_available_median_pp": 0.1,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": null,
       "cover_observation": "MINT FIXED THE AIR (centered serif)"
@@ -1632,12 +1720,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 236,
+        "ctr_pct": 1.3,
+        "vs_format_available_median_pp": -0.6,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "VERIFIED still at frame index 0 / 0 seconds; delivered-master hash matches. See MASTER_FRAME0.json / HARVEY_FRAME0.json. No motion/audio verdict.",
+      "frame0_status": "VERIFIED still at frame index 0 / 0s; delivered-master hash matches (HARVEY_FRAME0.json). No motion/audio verdict.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": "Pre-19-Nov picture: J2230 watch delivery 15 Nov; Harvey v05 remux preserves v04 picture packets. Variolation manifest approval 16 Nov.",
       "cover_observation": "THE CUFF (serif label)"
@@ -1670,12 +1760,14 @@
       "reach_28d": {
         "start": "2026-10-25",
         "end": "2026-11-21",
-        "impressions": null,
-        "ctr_pct": null,
+        "impressions": 103,
+        "ctr_pct": 2.9,
+        "vs_format_available_median_pp": 1.0,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "available_as_displayed"
       },
-      "frame0_status": "UNKNOWN: served JPEG is not delivered-master frame 0",
+      "frame0_status": "UNKNOWN: shelf JPEG only; delivered-master frame 0 not extracted/verified in this audit.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": "Uploaded/registered 6 Nov (social/hos/UPLOADS.json), before 19 Nov.",
       "cover_observation": "ONLY IN THE LIGHT (centered serif)"
@@ -1688,7 +1780,7 @@
       "title": "How Does the Heart Pump Blood?",
       "on_thumb_text": "YOUR PULSE (+ burned-in subtitle)",
       "style_verdict": "LEGACY_OPENING_OBSERVATION",
-      "rule_note": "Verified opening: serif YOUR PULSE label above heart; small lower narration caption is separate, not overlapping. At phone tile size lower caption is hard to read. Centre 16:9 crop loses both text regions. Legacy picture; no blanket caption suppression.",
+      "rule_note": "Verified opening: serif YOUR PULSE label above glowing anatomical heart, plus separate lower-third narration subtitle 'The heart isn't a stove.' Readable on portrait tile (lower subtitle small); both absent from 16:9 centre crop. Legacy frame-0 evaluated under §3, not §4; YOUR PULSE label alone is not a 19 Nov fact-first exemplar.",
       "url_kind": "maxresdefault",
       "maxresdefault_200": true,
       "saturation": 195.1,
@@ -1710,10 +1802,12 @@
         "end": "2026-11-21",
         "impressions": null,
         "ctr_pct": null,
+        "vs_format_available_median_pp": null,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "unknown_em_dash_in_individual_report"
       },
-      "frame0_status": "VERIFIED still at frame index 0 / 0 seconds; delivered-master hash matches. See MASTER_FRAME0.json / HARVEY_FRAME0.json. No motion/audio verdict.",
+      "frame0_status": "VERIFIED still at frame index 0 / 0s; delivered-master hash matches (HARVEY_FRAME0.json). No motion/audio verdict.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": "Pre-19-Nov picture: J2230 watch delivery 15 Nov; Harvey v05 remux preserves v04 picture packets. Variolation manifest approval 16 Nov.",
       "cover_observation": "YOUR PULSE (+ burned-in subtitle)"
@@ -1748,10 +1842,12 @@
         "end": "2026-11-21",
         "impressions": null,
         "ctr_pct": null,
+        "vs_format_available_median_pp": null,
         "views_from_impressions": null,
-        "status": "awaiting J3372"
+        "qualifies_1000_impr": false,
+        "status": "unknown_em_dash_in_individual_report"
       },
-      "frame0_status": "VERIFIED still at frame index 0 / 0 seconds; delivered-master hash matches. See MASTER_FRAME0.json / HARVEY_FRAME0.json. No motion/audio verdict.",
+      "frame0_status": "VERIFIED still at frame index 0 / 0s; delivered-master hash matches (MASTER_FRAME0.json). No motion/audio verdict.",
       "release_gate_status": "NOT_ASSESSED",
       "build_lock_date": "Pre-19-Nov picture: J2230 watch delivery 15 Nov; Harvey v05 remux preserves v04 picture packets. Variolation manifest approval 16 Nov.",
       "cover_observation": "SMALLPOX SORE (top serif, NAS master frame 0)"
@@ -1760,5 +1856,19 @@
   "correction_at": "2026-11-22T14:54:11.212585+00:00",
   "long_28d_median_ctr_pct": null,
   "short_28d_median_ctr_pct": null,
-  "eligible_28d_bottom_quartile": null
+  "eligible_28d_bottom_quartile": null,
+  "updatedAt": "2026-11-25T13:43:00Z",
+  "updatedBy": "gemini",
+  "exact_28d_window": {
+    "start": "2026-10-25",
+    "end": "2026-11-21",
+    "days": 28,
+    "studio_label": "25 Oct – 21 Nov 2026 / Last 28 days"
+  },
+  "exact_28d_long_median_ctr_pct_available_rows": 6.1,
+  "exact_28d_short_median_ctr_pct_available_rows": 1.9,
+  "exact_28d_channel_total_as_displayed": {
+    "impressions": 7477,
+    "impressions_ctr_pct": 2.5
+  }
 }
