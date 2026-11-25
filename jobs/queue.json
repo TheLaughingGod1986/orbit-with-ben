@@ -330050,16 +330050,21 @@
           "at": "2026-11-25T01:40Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Step 3: audited all 22 FACT_NOTES_v02 rows against live pages + 14-page NPS PDF; found Edison age-at-Holborn (34 vs 35), Ferraris date (18 vs 11 Mar 1888), Stanley birthdate misquote (22 vs 28 Nov), and unverified quote mismatches"
+        },
+        {
+          "at": "2026-11-25T01:45Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Step 4: completed independent verification of all 22 rows, Shorts v02, visual cards, and packaging JSONs; writing report with exact quotes, URLs, hashes, and OK/PARTIAL/FLAG verdicts"
         }
       ],
-      "remaining_action": "Verifying packaging numbers, visual cards, cable dimensions, Ferraris dates, Niagara route distance, and UK/US grid primary sources",
+      "remaining_action": "Writing GEMINI_FACTS_CHECK_v02.md, updating HOS 128 status/production-status, and running check_all.sh",
       "due": "2026-11-27T18:00:00Z",
       "kind": "facts",
       "plain": "Independently check every fact in the corrected Edison and Tesla film",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-25T01:40Z",
+        "at": "2026-11-25T01:45Z",
         "by": "gemini",
         "plan": [
           "Inspect v02 inputs, PR752 & J3547",
@@ -330068,7 +330073,7 @@
           "Verify cables, cards & nuclear handoff",
           "Write report, check & open PR"
         ],
-        "note": "Step 3: audited all 22 FACT_NOTES_v02 rows against live pages + 14-page NPS PDF; found Edison age-at-Holborn (34 vs 35),"
+        "note": "Step 4: completed independent verification of all 22 rows, Shorts v02, visual cards, and packaging JSONs; writing report"
       },
       "taskKeys": [
         "HOS:128"
