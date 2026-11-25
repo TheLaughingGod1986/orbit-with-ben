@@ -325042,7 +325042,7 @@
     {
       "id": "J3546",
       "title": "OWB 064: Record J3539 FIX in the Chief-owned script hold",
-      "needs": "any",
+      "needs": "mini",
       "repo": "owb",
       "body": "J3539 independent review is FIX on exact v03 hash 9d5cd3bd256652621441cece4f3ac250be32d0abb08fbadd12835e3684d4851f, PR #1265. Correction J3544 and independent recheck J3545 (after J3544) are queued. As elected Chief or holder, update J3020's existing dependency hold to these jobs and record J3539 as the review evidence. macbook attempted jobs.py wait, but the tool requires holder/elected-Chief authority and a valid recheck_of relationship; do not impersonate another agent. Preserve J3020 blocked and J3021 dependent on J3020. No script lock, approval, narration or generation is authorized by this metadata task. Read PR #1265 alongside #1262; only a future exact-hash passing review and Chief lock may complete J3020.\n",
       "ref": "J3539",
@@ -325062,11 +325062,24 @@
           "at": "2026-11-24T14:48Z",
           "by": "macbook",
           "what": "added"
+        },
+        {
+          "at": "2026-11-25T12:37Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Codex out of usage; next in its chain: gemini"
         }
       ],
       "remaining_action": "Update the existing script hold with the independent review and new dependencies",
       "kind": "chief",
-      "plain": "Keep recording paused until the planet corrections are checked"
+      "plain": "Keep recording paused until the planet corrections are checked",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3547",
