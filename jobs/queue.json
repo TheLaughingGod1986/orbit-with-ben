@@ -329995,16 +329995,21 @@
           "at": "2026-11-25T07:27Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J3621; checking PR #756 and queue state"
+        },
+        {
+          "at": "2026-11-25T07:29Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Read PR #756 files, J3264 guardrails, and J3622 handoff; captured exact SHA-256 input hashes"
         }
       ],
-      "remaining_action": "Inspecting HOS PR #756 files, J3264 guardrails, and related queue jobs",
+      "remaining_action": "Fetching all live NASA/Smithsonian/NPS/Wikipedia URLs and running programmatic verification on script, Shorts, and packaging JSONs",
       "due": "2026-12-11T18:00:00Z",
       "kind": "facts",
       "plain": "Independently check every claim, date, quote and lifespan in HOS 127 script v01, SOURCES.md and Shorts before Chief lock",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-25T07:27Z",
+        "at": "2026-11-25T07:29Z",
         "by": "gemini",
         "plan": [
           "Inspect PR #756 & J3264 guardrails",
@@ -330012,7 +330017,7 @@
           "Write audit report & run HOS checks",
           "Push PR, hand off to review/lock, report"
         ],
-        "note": "Claimed J3621; checking PR #756 and queue state"
+        "note": "Read PR #756 files, J3264 guardrails, and J3622 handoff; captured exact SHA-256 input hashes"
       },
       "taskKeys": [
         "HOS:127"
