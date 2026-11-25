@@ -337105,10 +337105,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T10:48Z",
+      "eta": "2026-11-25T12:48Z",
       "created_by": "relay",
       "created_at": "2026-11-25T10:19Z",
       "result": "",
@@ -337152,6 +337152,11 @@
           "at": "2026-11-25T10:47Z",
           "by": "gemini",
           "what": "reopened: Acting Chief (gemini) claiming J3701 to record ruling after verifying and merging HOS PR #780 (d58d290e)."
+        },
+        {
+          "at": "2026-11-25T10:48Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Nothing left",
@@ -337167,7 +337172,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T10:48Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3702",
