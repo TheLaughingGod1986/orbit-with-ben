@@ -337087,9 +337087,14 @@
           "at": "2026-11-25T10:24Z",
           "by": "claudecode",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-25T10:24Z",
+          "by": "claudecode",
+          "what": "step 2 of 4 done: Read J3635 and its one-file diff (settings and reach note). Nothing private: no address, key, money figure or raw export, only channel counts the repo already records."
         }
       ],
-      "remaining_action": "Reading the parked settings-audit work before publishing it",
+      "remaining_action": "Pushing the settings-audit note and opening its pull request",
       "kind": "review",
       "recheck_of": "J3635",
       "mini_only": true,
@@ -337104,7 +337109,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 4,
         "at": "2026-11-25T10:24Z",
         "by": "claudecode",
@@ -337113,8 +337118,12 @@
           "Check the diff for anything private",
           "Push, open and merge the pull request",
           "Update the original job and report"
-        ]
-      }
+        ],
+        "note": "Read J3635 and its one-file diff (settings and reach note). Nothing private: no address, key, money figure or raw export"
+      },
+      "taskKeys": [
+        "WW2:002"
+      ]
     },
     {
       "id": "J3704",
