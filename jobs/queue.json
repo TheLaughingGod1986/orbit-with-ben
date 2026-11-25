@@ -326026,13 +326026,13 @@
       "stage": "script",
       "after": "J3564",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-25T08:51Z",
-      "eta": "2026-11-25T10:51Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-24T16:53Z",
-      "result": "",
+      "result": "Administrative closure per Acting Chief (gemini) J3687 KEEP & script lock (#7157582737). Acting Chief reopened J3565 (9c71ee678) solely to close it as done after merging HOS PR #770 (ababb407, J3565 advisory FIX review), HOS PR #775 (b4622600, J3686 v02 facts audit auto-merging #747/#754/#769/#772), and HOS PR #777 (43851373, jobs/reviews/J3687/REVIEW.md + locked status.json); macbook-2 claimed J3565 in the reopen->done window (same pattern as J3553). Independently verified merged commits, all 7 PRs MERGED, status_board.py --check PASS (36 files), WIP.json 5/5 HOS active (VO cleanly held under Rule G), and exact locked v02 SHA-256 hashes (d2a359c4..., bc755590..., 7f502091..., 1fd7a797..., 62ff7c99...) on HOS main. No new Chief ruling, no PR needed, £0.00 spent. All checkouts clean on main.",
       "history": [
         {
           "at": "2026-11-24T16:53Z",
@@ -326103,6 +326103,11 @@
           "at": "2026-11-25T08:54Z",
           "by": "macbook-2",
           "what": "step 1 of 2 done"
+        },
+        {
+          "at": "2026-11-25T08:55Z",
+          "by": "macbook-2",
+          "what": "done: Administrative closure per Acting Chief (gemini) J3687 KEEP & script lock (#7157582737). Acting Chief reopened J3565 (9c71ee678) solely to close it as done after merging HOS PR #770 (ababb407, J3565 advisory FIX review), HOS PR #775 (b4622600, J3686 v02 facts audit auto-merging #747/#754/#769/#772), and HOS PR #777 (43851373, jobs/reviews/J3687/REVIEW.md + locked status.json); macbook-2 claimed J3565 in the reopen->done window (same pattern as J3553). Independently verified merged commits, all 7 PRs MERGED, status_board.py --check PASS (36 files), WIP.json 5/5 HOS active (VO cleanly held under Rule G), and exact locked v02 SHA-256 hashes (d2a359c4..., bc755590..., 7f502091..., 1fd7a797..., 62ff7c99...) on HOS main. No new Chief ruling, no PR needed, £0.00 spent. All checkouts clean on main."
         }
       ],
       "remaining_action": "Verify merged HOS commits, locked v02 SHA-256 hashes, status_board.py --check, and PR states before administrative closure",
