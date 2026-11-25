@@ -343574,9 +343574,14 @@
           "at": "2026-11-25T23:19Z",
           "by": "claudecode",
           "what": "step 1 of 5 done: Master verified: sha256 fef4e056...e2e8, 25,815,067 bytes, 48.60 s, 1080x1920 25fps, audio present (mean -19.7 dB)"
+        },
+        {
+          "at": "2026-11-25T23:20Z",
+          "by": "claudecode",
+          "what": "step 2 of 5 done: Uploaded l7P2DdGCr-A Private, publishAt 2026-11-30T12:30:00Z (no duplicate on channel; no slot clash)"
         }
       ],
-      "remaining_action": "Upload Short 004-S1 v01 Private scheduled Mon 30 Nov 12:30 London",
+      "remaining_action": "Read the upload back in Studio and the API, then record it and queue the 7-day read",
       "due": "2026-11-29T12:00:00Z",
       "kind": "studio",
       "plain": "Upload Ben-approved Short 004-S1 v01 Private, scheduled Mon 30 Nov 12:30 London",
@@ -343595,9 +343600,9 @@
         "okRef": "J3570"
       },
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-25T23:19Z",
+        "at": "2026-11-25T23:20Z",
         "by": "claudecode",
         "plan": [
           "Verify approved master",
@@ -343606,7 +343611,7 @@
           "Record in status via PR",
           "Queue 7-day read"
         ],
-        "note": "Master verified: sha256 fef4e056...e2e8, 25,815,067 bytes, 48.60 s, 1080x1920 25fps, audio present (mean -19.7 dB)"
+        "note": "Uploaded l7P2DdGCr-A Private, publishAt 2026-11-30T12:30:00Z (no duplicate on channel; no slot clash)"
       },
       "taskKeys": [
         "WW2:004"
