@@ -342587,9 +342587,14 @@
           "at": "2026-11-25T22:42Z",
           "by": "gemini",
           "what": "step 1 of 4 done: NAS proxies ready (0 decode errors, -15.78 LUFS / -1.46 dBFS, decoded audio MD5 c22b09bb... identical to v03); beginning 100% audiovisual watch-through."
+        },
+        {
+          "at": "2026-11-25T22:45Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Step 2 done: watched and listened to 100% of v04 (00:00-21:35.54 across 11 segments + 4 HD clips); Ben's 0:15 & film-wide 16:9 full-bleed framing PASS, Cuts A+B PASS; NAS proxy scratch deleted and verified."
         }
       ],
-      "remaining_action": "Watching 4 HD inspection clips and all 11 full-runtime review segments (00:00-21:35.54)",
+      "remaining_action": "Write 07_Edit/QA_REVIEW_v04.md on a clean ww2-channel PR and park for Chief watch staging",
       "due": "2026-11-27T20:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -342606,9 +342611,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-25T22:42Z",
+        "at": "2026-11-25T22:45Z",
         "by": "gemini",
         "plan": [
           "Verify v04 master, technical gates and media input",
@@ -342616,7 +342621,7 @@
           "Write QA_REVIEW_v04.md and open PR",
           "Chief handoff or watch staging"
         ],
-        "note": "NAS proxies ready (0 decode errors, -15.78 LUFS / -1.46 dBFS, decoded audio MD5 c22b09bb... identical to v03); beginning"
+        "note": "Step 2 done: watched and listened to 100% of v04 (00:00-21:35.54 across 11 segments + 4 HD clips); Ben's 0:15 & film-wid"
       },
       "taskKeys": [
         "WW2:004"
