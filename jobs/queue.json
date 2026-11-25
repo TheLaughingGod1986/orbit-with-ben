@@ -335347,20 +335347,33 @@
           "at": "2026-11-25T07:53Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T07:54Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Run independent Gemini exact-quote audit on HOS:137 v02 script, sources and Shorts and open PR",
+      "remaining_action": "Locate preceding HOS 137 v02 script PR, create clean stacked worktree, and record SHA-256 hashes",
       "due": "2026-12-04T18:00:00Z",
       "kind": "facts",
       "plain": "Independently verify every fact, source URL and exact quote in the HOS 137 v02 script and Shorts.",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T07:53Z",
+        "of": 5,
+        "at": "2026-11-25T07:54Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Stack worktree and record SHA-256 hashes",
+          "Fetch and verify all MUST QUOTE URLs and quotes",
+          "Audit script claims, cards, Shorts, and J3564 FLAGs",
+          "Write GEMINI_FACTS_CHECK_v02.md and run check_all.sh",
+          "Open HOS PR and hand off to Chief"
+        ]
+      },
+      "taskKeys": [
+        "HOS:137"
+      ]
     },
     {
       "id": "J3687",
