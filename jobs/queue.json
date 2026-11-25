@@ -256016,9 +256016,14 @@
           "at": "2026-11-25T13:17Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T13:18Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Confirming the finished T005 report in Studio before the approved thumbnail comparison can start",
+      "remaining_action": "Verify approved B file hash, manifest baseline, and Studio CDP 9223",
       "kind": "studio",
       "plain": "Test the approved new thumbnail for the Fermi Paradox video",
       "rerouted_from": {
@@ -256036,11 +256041,16 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T13:17Z",
+        "of": 5,
+        "at": "2026-11-25T13:18Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Verify approved B and baseline",
+          "Fresh read Studio test state",
+          "Arm T038 thumbnail-only test",
+          "Reload and verify running",
+          "Update ledger and post report"
+        ]
       }
     },
     {
