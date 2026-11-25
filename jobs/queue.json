@@ -339677,13 +339677,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T14:59Z",
-      "eta": "2026-11-25T15:59Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-25T14:30Z",
-      "result": "",
+      "result": "Acting-Chief (gemini) ruling recorded and adopted: merged ww2-channel PR #154 (cbb67e3, 004-006 OPENING_CHECK_v01.md) and PR #155 (b1392f1, 00_Brand/OPENING_CHECK_RULING_J3715_2026-11-25.md + 005/status.json). Rulings: (1) WW2:004 approve Cuts A+B (61.8 s, 52.88% archive, 0 photos dropped; reject Cut C orphan pronoun 'those tests') -> queued J3721 (v03 assembly, keeping v02 untouched) -> J3722 (audiovisual QA); (2) WW2:005 approve Cut A (P04.S2, 11.30 s) + Cut B (P10 PQ 12 sortie, 39.56 s; 53.02% archive on J3432 TIMELINE_RESOLVED_J3432.json; drop A 7901/A 7898/A 7902 credits; reject Chapter 3 reorder) -> folded into active J3432 via PR #148 directive (#issuecomment-7165917914) and 005/status.json; (3) WW2:006 approve Cuts A+B (124.5 s, 65.75% archive, verified zero spoken Albatross/Comet callbacks in Part 3, rename Chapter 1 at 01:50) -> queued J3723 (v03 assembly, keeping v02 untouched for Ben) -> J3724 (audiovisual QA). £0 spend; no upload, schedule, or privacy change.",
       "history": [
         {
           "at": "2026-11-25T14:30Z",
@@ -339709,6 +339709,11 @@
           "at": "2026-11-25T14:59Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T14:59Z",
+          "by": "gemini",
+          "what": "done: Acting-Chief (gemini) ruling recorded and adopted: merged ww2-channel PR #154 (cbb67e3, 004-006 OPENING_CHECK_v01.md) and PR #155 (b1392f1, 00_Brand/OPENING_CHECK_RULING_J3715_2026-11-25.md + 005/status.json). Rulings: (1) WW2:004 approve Cuts A+B (61.8 s, 52.88% archive, 0 photos dropped; reject Cut C orphan pronoun 'those tests') -> queued J3721 (v03 assembly, keeping v02 untouched) -> J3722 (audiovisual QA); (2) WW2:005 approve Cut A (P04.S2, 11.30 s) + Cut B (P10 PQ 12 sortie, 39.56 s; 53.02% archive on J3432 TIMELINE_RESOLVED_J3432.json; drop A 7901/A 7898/A 7902 credits; reject Chapter 3 reorder) -> folded into active J3432 via PR #148 directive (#issuecomment-7165917914) and 005/status.json; (3) WW2:006 approve Cuts A+B (124.5 s, 65.75% archive, verified zero spoken Albatross/Comet callbacks in Part 3, rename Chapter 1 at 01:50) -> queued J3723 (v03 assembly, keeping v02 untouched for Ben) -> J3724 (audiovisual QA). £0 spend; no upload, schedule, or privacy change."
         }
       ],
       "remaining_action": "Check films 004-006's first eight minutes and propose at most two cuts each",
@@ -339722,7 +339727,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "b1392f1"
     },
     {
       "id": "J3716",
