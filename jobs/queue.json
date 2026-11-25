@@ -238043,10 +238043,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T19:40Z",
+      "eta": "2026-11-25T21:40Z",
       "created_by": "claude",
       "created_at": "2026-11-11T22:56Z",
       "result": "",
@@ -238375,6 +238375,11 @@
           "at": "2026-11-25T19:40Z",
           "by": "gemini",
           "what": "reopened: Acting Chief (gemini) reopening to close done after independent non-producer review & HOS PR #787 merge (1950fce1) in J3737"
+        },
+        {
+          "at": "2026-11-25T19:40Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Non-producer / Chief review of v03f-r4 390px sheets on HOS PR #551 (ad52a2dc) and desk #180 #6958713817",
@@ -238393,7 +238398,15 @@
         "status": "open",
         "by": ""
       },
-      "model": "gemini-agy"
+      "model": "gemini-agy",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T19:40Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2653",
