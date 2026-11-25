@@ -96,7 +96,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3566 | mini | claimed | macbook | 2026-11-25T02:05Z | WW2:002 edit · assembly · WW2 002 Short 1: build 'WW2 U-Boats: Why They Could Not Stay Underwater' for Ben watch | J3563 |
 | J3573 | mini | open (after J3542) | – | – | WW2:005 edit · assembly · WW2 005 Short 2: build 'St Nazaire Raid: Why the Ship Blew Up Hours Later' for Ben watch | J3563 |
 | J3574 | mini | open (after J3542) | – | – | WW2:005 edit · assembly · WW2 005 Short 3: build 'St Nazaire Dock: The 35ft Gate Built for Tirpitz' for Ben watch | J3563 |
-| J3575 | mini | open (after J3542) | – | – | WW2:006 edit · assembly · WW2 006 Short 1: build 'Mosquito Bomber: The 11mm Birch and Balsa Shell' for Ben watch | J3563 |
+| J3575 | mini | claimed | macbook-2 | 2026-11-25T02:17Z | WW2:006 edit · assembly · WW2 006 Short 1: build 'Mosquito Bomber: The 11mm Birch and Balsa Shell' for Ben watch | J3563 |
 | J3576 | mini | open (after J3542) | – | – | WW2:006 edit · assembly · WW2 006 Short 2: build 'Mosquito vs B-17: Same 4,000lb Bomb, Two Crew' for Ben watch | J3563 |
 | J3577 | mini | blocked | macbook-2 | – | WW2:007 edit · assembly · WW2 007 Short 1: build 'WW2 Floating Dry Docks: 55ft Fold-Up Steel Walls' for Ben watch | J3563 |
 | J3578 | mini | blocked | macbook-2 | – | WW2:007 edit · assembly · WW2 007 Short 2: build 'WW2 Floating Dry Dock: How It Lifted Itself' for Ben watch | J3563 |
