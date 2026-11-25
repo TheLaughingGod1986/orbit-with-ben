@@ -340605,20 +340605,34 @@
           "at": "2026-11-25T16:06Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T16:07Z",
+          "by": "claudecode",
+          "what": "step 0 of 6 done"
         }
       ],
-      "remaining_action": "Build Pearl Harbor's picture set, maps, thumbnails and picture plan",
+      "remaining_action": "Freeing disk space on the Mini (6 GB free) before downloading photos",
       "due": "2026-11-28T20:00:00Z",
       "kind": "image",
       "urgent": 9,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T16:06Z",
+        "of": 6,
+        "at": "2026-11-25T16:07Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Free disk space",
+          "Download full-size archive photos",
+          "Log provenance and hashes",
+          "Draw the three maps",
+          "Build three thumbnails",
+          "Write picture plan and open PR"
+        ]
+      },
+      "taskKeys": [
+        "WW2:017"
+      ]
     },
     {
       "id": "J3729",
