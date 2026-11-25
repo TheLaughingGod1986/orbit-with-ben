@@ -314378,6 +314378,11 @@
           "at": "2026-11-25T02:02Z",
           "by": "gemini",
           "what": "done: WW2:004 v02 (Mark 14 Torpedo: Why Perfect Hits Failed) passed full audiovisual QA (J3638 PR #130) and J3639 elected acting Chief PASS (PR #131). Exact checksum-verified copy staged in WW2 UAT/004_Why-US-Submarine-Torpedoes-Failed-21-Months/ (SHA-256 991dfba22dc7663006fea95f971a8f8bfda5fa8febf81512add90d6a2e552dcb + 3 thumbnails & sheet), uploaded to private R2 watch bucket (ww2-004-v02, HTTP 302 verified), and awaits_ben set on card WW2:004 (due 2026-11-28T20:00Z, planned air 2026-12-01T17:00Z, board_check ok=true). No upload or schedule change until Ben's OK."
+        },
+        {
+          "at": "2026-11-25T23:41Z",
+          "by": "gemini",
+          "what": "waits on Ben: Watch Mark 14 Torpedo: Why Perfect Hits Failed (v04, 21m35s — full-bleed 16:9 archive framing fixing 0:15 + J3715 Cuts A+B -61.8s) + 3 thumbnails (A/B/C) and say OK or what to change (by 2026-11-28 20:00 London)"
         }
       ],
       "remaining_action": "Hold J3430 pending v02 zero-spend visual repair (J3637), v02 full audiovisual QA (J3638), and Chief v02 watch staging (J3639)",
@@ -314417,16 +314422,23 @@
         "note": "Starting: check the brief, complete the work, verify the result"
       },
       "awaits_ben": {
-        "what": "Watch Mark 14 Torpedo: Why Perfect Hits Failed (v02, 22m37s) + 3 thumbnails (A/B/C) and say OK or what to change",
-        "file": "WW2 UAT/004_Why-US-Submarine-Torpedoes-Failed-21-Months/ww2_004_torpedoes_v02.mp4",
-        "version": "v02",
+        "what": "Watch Mark 14 Torpedo: Why Perfect Hits Failed (v04, 21m35s — full-bleed 16:9 archive framing fixing 0:15 + J3715 Cuts A+B -61.8s) + 3 thumbnails (A/B/C) and say OK or what to change",
+        "file": "WW2 UAT/004_Why-US-Submarine-Torpedoes-Failed-21-Months/ww2_004_torpedoes_v04.mp4",
+        "version": "v04",
         "due": "2026-11-28T20:00Z",
         "airs": "2026-12-01T17:00Z",
         "ifNot": "Hold the film; nothing uploads or schedules without your OK",
         "card": "WW2:004",
         "title": "Mark 14 Torpedo: Why Perfect Hits Failed",
         "number": "004",
-        "type": "long"
+        "type": "long",
+        "prev": [
+          "WW2-004"
+        ],
+        "fixed": [
+          "0:15 archive photo and all 111 archive shots rebuilt full-bleed 16:9 edge-to-edge (zero blurred sidebars or scan borders)",
+          "Applied J3715 opening Cuts A+B (-61.8 s to 21m35s) with synced captions and chapters"
+        ]
       }
     },
     {
