@@ -329732,20 +329732,33 @@
           "at": "2026-11-25T11:30Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T11:31Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done: Claimed J3610; inspecting HOS 010 status, J3511 report, and live channel audit"
         }
       ],
-      "remaining_action": "Schedule HOS 010 bird Short after its long is confirmed",
+      "remaining_action": "Verify whether HOS 010 long has an actual upload id and confirmed air date on YouTube and in HOS status records",
       "kind": "studio",
       "plain": "Schedule the approved birds Short after its full dinosaur film is ready",
       "mini_only": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T11:30Z",
+        "of": 4,
+        "at": "2026-11-25T11:31Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify live HOS 010 long readiness and channel state",
+          "Check private Studio settings for sMPlMuxK3YU",
+          "Apply valid scheduling or park with typed dependency wait",
+          "Record evidence and post desk and thread reports"
+        ],
+        "note": "Claimed J3610; inspecting HOS 010 status, J3511 report, and live channel audit"
+      },
+      "taskKeys": [
+        "HOS:010"
+      ]
     },
     {
       "id": "J3611",
