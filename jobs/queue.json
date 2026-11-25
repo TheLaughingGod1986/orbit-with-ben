@@ -342847,13 +342847,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-25T21:44Z",
-      "eta": "2026-11-25T23:44Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T21:44Z",
-      "result": "",
+      "result": "parked for Chief: condition check of J3724 done at 2026-11-25T21:50Z, result cannot be recorded by a worker (wait --recheck is elected-Chief only: 'Only the holder or elected Chief may update this hold'). Evidence: predecessor J3723 is done and its ww2-channel PR #159 is MERGED to main (19:43Z). J3724's own QA work is finished (step 4 of 4, v03 PASS) in ww2-channel PR #169, which is OPEN, mergeable, base main, one file (QA_REVIEW_J3724.md), no comments. The only unmet condition is the Chief's own call: merge PR #169 and rule on WW2:006 (ship the v02 cut the board records as already OK'd at 13:22Z, or stage v03 privately beside intact v02; plus the framing and description-line-1 advisories). No Chief ruling on the studio thread up to #7175490574. Do NOT reopen J3724: that would rerun finished QA. Chief: rule, then close J3724 (jobs.py done) or record wait J3724 --recheck J3749, and close this check. No files changed, no branch, no PR, nothing spent.",
       "history": [
         {
           "at": "2026-11-25T21:44Z",
@@ -342874,6 +342874,11 @@
           "at": "2026-11-25T21:46Z",
           "by": "macbook",
           "what": "step 2 of 3 done: Predecessor done and merged; J3724 work finished, waits only on the Chief's merge and ruling"
+        },
+        {
+          "at": "2026-11-25T21:47Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: condition check of J3724 done at 2026-11-25T21:50Z, result cannot be recorded by a worker (wait --recheck is elected-Chief only: 'Only the holder or elected Chief may update this hold'). Evidence: predecessor J3723 is done and its ww2-channel PR #159 is MERGED to main (19:43Z). J3724's own QA work is finished (step 4 of 4, v03 PASS) in ww2-channel PR #169, which is OPEN, mergeable, base main, one file (QA_REVIEW_J3724.md), no comments. The only unmet condition is the Chief's own call: merge PR #169 and rule on WW2:006 (ship the v02 cut the board records as already OK'd at 13:22Z, or stage v03 privately beside intact v02; plus the framing and description-line-1 advisories). No Chief ruling on the studio thread up to #7175490574. Do NOT reopen J3724: that would rerun finished QA. Chief: rule, then close J3724 (jobs.py done) or record wait J3724 --recheck J3749, and close this check. No files changed, no branch, no PR, nothing spent."
         }
       ],
       "remaining_action": "Record the condition result on J3724 and report",
