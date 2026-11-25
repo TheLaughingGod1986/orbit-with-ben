@@ -342061,9 +342061,14 @@
           "at": "2026-11-25T19:53Z",
           "by": "claudecode",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-25T19:55Z",
+          "by": "claudecode",
+          "what": "step 1 of 3 done: J3721 done, PR 156 merged, v03 and v02 checksums match on the NAS, QA report on PR 163 read"
         }
       ],
-      "remaining_action": "Checking whether the Field Order film 4 v03 check can restart",
+      "remaining_action": "Deciding how the finished v03 check reaches the Chief for its ruling",
       "kind": "review",
       "recheck_of": "J3722",
       "due": "2026-11-25T20:52:53+00:00",
@@ -342077,15 +342082,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-25T19:53Z",
+        "at": "2026-11-25T19:55Z",
         "by": "claudecode",
         "plan": [
           "Read J3722 and its evidence",
           "Verify predecessor, master and capability",
           "Reopen or re-hold J3722, record"
-        ]
+        ],
+        "note": "J3721 done, PR 156 merged, v03 and v02 checksums match on the NAS, QA report on PR 163 read"
       },
       "taskKeys": [
         "WW2:004"
