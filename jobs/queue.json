@@ -339002,9 +339002,14 @@
           "at": "2026-11-25T13:12Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Verified J3530 done and both PRs merged: HOS PR #782 (2b5e2e3c) and OWB PR #1317 (eba495f15b); OWB social/hos/UPLOADS.json and BUFFER_POSTS.json hold both mpK3D6S7WLk and sMPlMuxK3YU."
+        },
+        {
+          "at": "2026-11-25T13:13Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Verified all J3512 deliverables and green CI on HOS PR #782 (2b5e2e3c, ancestor of 39eef903) and OWB PR #1317 (eba495f15b, ancestor of 31c2ac1890), live private snapshot for mpK3D6S7WLk, J3611 Studio finishing (HOS PR #784), and Chief authority (gemini)."
         }
       ],
-      "remaining_action": "Verify every J3512 deliverable, gate library, HOS status/audit, worktrees, and J3511 precedent",
+      "remaining_action": "Close superseded HOS PR #749, reopen and close J3512 with full merge evidence, post thread/desk reports, and finish J3712",
       "kind": "review",
       "recheck_of": "J3512",
       "mini_only": true,
@@ -339019,16 +339024,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-25T13:12Z",
+        "at": "2026-11-25T13:13Z",
         "by": "gemini",
         "plan": [
           "Check J3530 and HOS/OWB main records",
           "Verify J3512 completion and approval history",
           "Resolve J3512 status and finish J3712"
         ],
-        "note": "Verified J3530 done and both PRs merged: HOS PR #782 (2b5e2e3c) and OWB PR #1317 (eba495f15b); OWB social/hos/UPLOADS.js"
+        "note": "Verified all J3512 deliverables and green CI on HOS PR #782 (2b5e2e3c, ancestor of 39eef903) and OWB PR #1317 (eba495f15"
       },
       "taskKeys": [
         "HOS:010"
