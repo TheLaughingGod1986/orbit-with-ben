@@ -1,5 +1,5 @@
 {
-  "next_id": 3695,
+  "next_id": 3697,
   "jobs": [
     {
       "id": "J0001",
@@ -273621,6 +273621,11 @@
           "at": "2026-11-24T18:53Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-25T10:00:00Z"
+        },
+        {
+          "at": "2026-11-25T10:01Z",
+          "by": "relay",
+          "what": "condition verification queued: J3695"
         }
       ],
       "remaining_action": "Resolve the production-probe approval block and verify runtime token access before the Thursday notice and Friday move",
@@ -273657,10 +273662,11 @@
       "hold": {
         "type": "input",
         "condition": "J3609: no successful post-grant runtime receipt. Ben reported the token grant done; automatic approval review subsequently rejected the exact temporary production deploy, authenticated probe, rollback and cleanup because its production scope was not clearly authorized. No retry or delegation executed by this verification. Claude history at 24 Nov 18:45 assigns the check to Claude Code after its 25 Nov 10:00Z reset; that note is not a successful probe or clearance of the rejection. Require approved execution and 401 anonymous, 200 authenticated contentsRead:true, exact restore and disabled 404 receipts. Preserve progress 3/4; Thu 26 notice and Fri 27 10:00 move remain gated on successful check by Thu 12:00.",
-        "check_at": "2026-11-25T10:00:00Z",
+        "check_at": "2026-11-25T11:01:04+00:00",
         "last_recheck": "J3609",
         "checked_at": "2026-11-24T18:53:30+00:00",
-        "checked_by": "codex"
+        "checked_by": "codex",
+        "recheck_task": "J3695"
       }
     },
     {
@@ -324759,6 +324765,11 @@
           "at": "2026-11-24T16:33Z",
           "by": "macbook",
           "what": "condition recorded; next verification 2026-11-25T10:00:00Z"
+        },
+        {
+          "at": "2026-11-25T10:01Z",
+          "by": "relay",
+          "what": "condition verification queued: J3696"
         }
       ],
       "remaining_action": "Mini-only claudecode local privacy/diff review of /private/tmp/owb-J3463 and /private/tmp/owb-J3465 after 2026-11-25T10:00Z reset; export stays prohibited",
@@ -324776,7 +324787,8 @@
       "hold": {
         "type": "input",
         "condition": "Mini-only local worktree inputs /private/tmp/owb-J3463 (codex/J3463, f860973491) and /private/tmp/owb-J3465 (c69d1ee2d6d724086729934315b38611dd15dc5b) are absent on MacBook, and brief requires local-only review by Mini claudecode after recorded Claude Code reset at 2026-11-25T10:00Z. Reopen for Mini claudecode (mini_only) after reset; export stays prohibited without explicit destination-specific approval.",
-        "check_at": "2026-11-25T10:00:00Z"
+        "check_at": "2026-11-25T11:01:04+00:00",
+        "recheck_task": "J3696"
       }
     },
     {
@@ -336341,6 +336353,68 @@
       "taskKeys": [
         "WW2:001"
       ]
+    },
+    {
+      "id": "J3695",
+      "title": "Verify condition for J3012",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3012: J3609: no successful post-grant runtime receipt. Ben reported the token grant done; automatic approval review subsequently rejected the exact temporary production deploy, authenticated probe, rollback and cleanup because its production scope was not clearly authorized. No retry or delegation executed by this verification. Claude history at 24 Nov 18:45 assigns the check to Claude Code after its 25 Nov 10:00Z reset; that note is not a successful probe or clearance of the rejection. Require approved execution and 401 anonymous, 200 authenticated contentsRead:true, exact restore and disabled 404 receipts. Preserve progress 3/4; Thu 26 notice and Fri 27 10:00 move remain gated on successful check by Thu 12:00.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3012 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-25T10:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T10:01Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Resolve the production-probe approval block and verify runtime token access before the Thursday notice and Friday move",
+      "kind": "review",
+      "recheck_of": "J3012",
+      "due": "2026-11-24T18:00:00+00:00",
+      "due_kind": "condition-verification"
+    },
+    {
+      "id": "J3696",
+      "title": "Verify condition for J3548",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3548: Mini-only local worktree inputs /private/tmp/owb-J3463 (codex/J3463, f860973491) and /private/tmp/owb-J3465 (c69d1ee2d6d724086729934315b38611dd15dc5b) are absent on MacBook, and brief requires local-only review by Mini claudecode after recorded Claude Code reset at 2026-11-25T10:00Z. Reopen for Mini claudecode (mini_only) after reset; export stays prohibited without explicit destination-specific approval.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3548 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-25T10:01Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T10:01Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Mini-only claudecode local privacy/diff review of /private/tmp/owb-J3463 and /private/tmp/owb-J3465 after 2026-11-25T10:00Z reset; export stays prohibited",
+      "kind": "review",
+      "recheck_of": "J3548",
+      "due": "2026-11-25T11:01:04+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
