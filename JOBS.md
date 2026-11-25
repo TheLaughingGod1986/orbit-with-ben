@@ -130,7 +130,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3644 | mini | open | – | – | review · Verify condition for J3205 |  |
 | J3647 | mini | open | – | – | WW2:004 edit · review · Review WW2 004 Short 1 v01 ('Mark 14 Torpedo: Why It Ran 10 Feet Too Deep') for Ben watch | J3570 |
 | J3648 | mini | blocked | gemini | – | WW2:001 upload · studio · WW2 001-S1: 7-day read of Mulberry Short NoQQqrW2meM and pilot 1 Shorts/Related traffic |  |
-| J3649 | mini | open | – | – | 008 upload · studio · HOS 008 Franklin post-publish: link Shorts Related video -> YqCWYlv_LCY & verify T&C active | J3500 |
+| J3649 | mini | claimed | gemini | 2026-11-25T02:29Z | 008 upload · studio · HOS 008 Franklin post-publish: link Shorts Related video -> YqCWYlv_LCY & verify T&C active | J3500 |
 
 Recently finished:
 

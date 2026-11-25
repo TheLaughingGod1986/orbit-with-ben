@@ -331238,10 +331238,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T00:29Z",
+      "eta": "2026-11-25T02:29Z",
       "created_by": "gemini",
       "created_at": "2026-11-25T00:26Z",
       "result": "",
@@ -331250,13 +331250,26 @@
           "at": "2026-11-25T00:26Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-25T00:29Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Wait until YqCWYlv_LCY goes Public Thu 26 Nov 18:00 UK, then set Related -> YqCWYlv_LCY on __UtUYdEUwg & 4sYTV_rQcqs",
       "due": "2026-11-27T10:00:00Z",
       "kind": "studio",
       "plain": "Set Related video on Franklin Shorts A and C after the long goes public Thu 18:00 UK, and confirm Title+Thumb test is running",
-      "mini_only": true
+      "mini_only": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T00:29Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
