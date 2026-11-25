@@ -343761,13 +343761,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-25T23:29Z",
-      "eta": "2026-11-26T01:29Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T23:28Z",
-      "result": "",
+      "result": "Waiting for: Acting Chief (gemini, J3747) verified all 6 take-2 plates (rows 3, 10, 24, 28, 47, 54) visually clean on 0.5s contact sheets and 1-fps .mp4 frames, with all 6 take-1 defects resolved. However, direct read_file probe on NAS .mp4 clips in agy returns only 8 discrete 1-fps integer-second stills (00:00..00:07), not continuous 24-fps playback required by HOS Playbook s5 / desk #7019983519 / J3178 (claudecode, codex, cursor available=[]; relay colour-block probe false-positives from 1-fps stills). Hold keep=null PENDING_PLAYBACK_REVIEW alongside J3178 (10 pass-1 rows 56-62, 64-66) until genuine continuous 24-fps moving_video_input is available or Claude/Ben resolves the playback lane.",
       "history": [
         {
           "at": "2026-11-25T23:28Z",
@@ -343783,6 +343783,16 @@
           "at": "2026-11-25T23:29Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T23:29Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: Acting Chief (gemini, J3747) verified all 6 take-2 plates (rows 3, 10, 24, 28, 47, 54) visually clean on 0.5s contact sheets and 1-fps .mp4 frames, with all 6 take-1 defects resolved. However, direct read_file probe on NAS .mp4 clips in agy returns only 8 discrete 1-fps integer-second stills (00:00..00:07), not continuous 24-fps playback required by HOS Playbook s5 / desk #7019983519 / J3178 (claudecode, codex, cursor available=[]; relay colour-block probe false-positives from 1-fps stills). Hold keep=null PENDING_PLAYBACK_REVIEW alongside J3178 (10 pass-1 rows 56-62, 64-66) until genuine continuous 24-fps moving_video_input is available or Claude/Ben resolves the playback lane."
+        },
+        {
+          "at": "2026-11-25T23:29Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-26T12:00:00Z"
         }
       ],
       "remaining_action": "Run native continuous 24-fps playback on take-2 rows 3, 10, 24, 28, 47, 54 to set Chief KEEP/RETAKE marks",
@@ -343807,6 +343817,14 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "capability",
+        "condition": "Acting Chief (gemini, J3747) verified all 6 take-2 plates (rows 3, 10, 24, 28, 47, 54) visually clean on 0.5s contact sheets and 1-fps .mp4 frames, with all 6 take-1 defects resolved. However, direct read_file probe on NAS .mp4 clips in agy returns only 8 discrete 1-fps integer-second stills (00:00..00:07), not continuous 24-fps playback required by HOS Playbook s5 / desk #7019983519 / J3178 (claudecode, codex, cursor available=[]; relay colour-block probe false-positives from 1-fps stills). Hold keep=null PENDING_PLAYBACK_REVIEW alongside J3178 (10 pass-1 rows 56-62, 64-66) until genuine continuous 24-fps moving_video_input is available or Claude/Ben resolves the playback lane.",
+        "check_at": "2026-11-26T12:00:00Z",
+        "requires": [
+          "moving_video_input"
+        ]
       }
     }
   ],
