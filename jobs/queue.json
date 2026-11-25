@@ -336781,6 +336781,11 @@
           "at": "2026-11-25T10:19Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-25T10:19Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred claudecode): Claude out of usage (Claude said it's out of usage until 2026-11-25T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: claudecode on its default"
         }
       ],
       "remaining_action": "Verify readiness: Claude Code privacy check and GitHub PR publish of gemini/J3643-qa (674c088 / 4d8422d) and gemini/J3643-review (5925f6828c) after 10:00Z reset, then close J3205",
@@ -336788,7 +336793,15 @@
       "recheck_of": "J3205",
       "mini_only": true,
       "due": "2026-11-25T11:19:38+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3698",
