@@ -331929,16 +331929,21 @@
           "at": "2026-11-25T02:50Z",
           "by": "gemini",
           "what": "step 0 of 6 done"
+        },
+        {
+          "at": "2026-11-25T03:00Z",
+          "by": "gemini",
+          "what": "step 4 of 6 done: Implemented scripts/market_track.py, wired daily/Monday/monthly sweep into analytics-snapshot.sh, added Market tab to studio_app.js/html and board_publish.py, wrote README.md and tests"
         }
       ],
-      "remaining_action": "Inspecting existing research data, Data API config, launchd schedule and board_site",
+      "remaining_action": "Verifying initial daily/weekly market sweep, running full test suite, and preparing PR",
       "due": "2026-12-02T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 4,
         "of": 6,
-        "at": "2026-11-25T02:50Z",
+        "at": "2026-11-25T03:00Z",
         "by": "gemini",
         "plan": [
           "Verify 90-channel watchlist via Data API",
@@ -331947,7 +331952,8 @@
           "Add Market tab to board_site & publish path",
           "Add unit & studio_app tests and run full suite",
           "Write README, open PR & report"
-        ]
+        ],
+        "note": "Implemented scripts/market_track.py, wired daily/Monday/monthly sweep into analytics-snapshot.sh, added Market tab to st"
       }
     },
     {
