@@ -342963,13 +342963,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-25T22:28Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T21:19Z",
-      "result": "parked for Chief: review the 8 take-2 retake plates for HOS 013 (rows 3,10,24,28,47,49,54,63) and set keep or retake; merge HOS PR 791. All 8 minted on Veo 3.1 - Quality, 800 of 800 Flow credits, no cash, balance 22,650. Clips sha256-verified on studio-live archive_v01_retake1, keep false / PENDING_REVIEW, sheets in archive_v01_retake1/sheets, receipt jobs/reviews/J3747/RETAKE1_RECEIPT.json. Desk post 7176482705. REVIEW_STATE.json, rows 56-62 and 64-66 and J2529 untouched. No take 3 on any row without a new Chief scope.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-25T21:19Z",
@@ -343070,6 +343070,11 @@
           "at": "2026-11-25T22:32Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: review the 8 take-2 retake plates for HOS 013 (rows 3,10,24,28,47,49,54,63) and set keep or retake; merge HOS PR 791. All 8 minted on Veo 3.1 - Quality, 800 of 800 Flow credits, no cash, balance 22,650. Clips sha256-verified on studio-live archive_v01_retake1, keep false / PENDING_REVIEW, sheets in archive_v01_retake1/sheets, receipt jobs/reviews/J3747/RETAKE1_RECEIPT.json. Desk post 7176482705. REVIEW_STATE.json, rows 56-62 and 64-66 and J2529 untouched. No take 3 on any row without a new Chief scope."
+        },
+        {
+          "at": "2026-11-25T23:30Z",
+          "by": "gemini",
+          "what": "reopened"
         }
       ],
       "remaining_action": "Post the receipt on the History of Science desk and park the 8 retake plates for Chief review",
@@ -343077,21 +343082,6 @@
       "kind": "video",
       "plain": "Build guarded retake runner and mint take 2 for 013's 8 confirmed RETAKE plates before 5 Dec (800 Flow cr max, £0 cash)",
       "mini_only": true,
-      "progress": {
-        "step": 5,
-        "of": 6,
-        "at": "2026-11-25T22:31Z",
-        "by": "claudecode",
-        "plan": [
-          "Read brief and rules",
-          "Build guarded retake runner",
-          "Zero-credit dry run",
-          "Submit both batches (8 rows)",
-          "Hash, contact sheets, receipt",
-          "Status, checks, PR, desk post, park for Chief"
-        ],
-        "note": "Receipt built: 8 of 8 take-2 clips re-hashed and verified, 8 contact sheets on the NAS, 800 of 800 credits. Checks all p"
-      },
       "taskKeys": [
         "HOS:013"
       ]
