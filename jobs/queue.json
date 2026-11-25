@@ -342572,9 +342572,14 @@
           "at": "2026-11-25T22:31Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T22:32Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Wait for J3743, then run full audiovisual QA of WW2:004 v04 master and park for Chief watch staging",
+      "remaining_action": "Inspect J3743 outputs, verify v04 master hash and technical gates, and probe media perception",
       "due": "2026-11-27T20:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -342592,12 +342597,19 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T22:31Z",
+        "of": 4,
+        "at": "2026-11-25T22:32Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify v04 master, technical gates and media input",
+          "Watch and listen to 100% of v04 cut",
+          "Write QA_REVIEW_v04.md and open PR",
+          "Chief handoff or watch staging"
+        ]
+      },
+      "taskKeys": [
+        "WW2:004"
+      ]
     },
     {
       "id": "J3745",
