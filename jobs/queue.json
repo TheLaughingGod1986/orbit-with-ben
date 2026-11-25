@@ -342790,17 +342790,22 @@
           "at": "2026-11-25T22:07Z",
           "by": "claudecode",
           "what": "step 1 of 6 done: Rules, retake board (8 rows, take 2, prompts and stills hashed) and pass-1 runner read. Mini disk has 5 GB free; offload dry run found nothing old enough to move."
+        },
+        {
+          "at": "2026-11-25T22:09Z",
+          "by": "claudecode",
+          "what": "step 3 of 6 done: Correction: steps 1-3 were already done by the 21:31Z run (runner on HOS branch j3747-hos013-retake1-runner d61a8212, dry-run passed). Picking up at the submit step."
         }
       ],
-      "remaining_action": "Building the guarded retake runner on top of the pass-1 guards",
+      "remaining_action": "Checking the shared Flow reservation, then submitting batch 1 of the take-2 retakes",
       "due": "2026-12-01T18:00:00Z",
       "kind": "video",
       "plain": "Build guarded retake runner and mint take 2 for 013's 8 confirmed RETAKE plates before 5 Dec (800 Flow cr max, £0 cash)",
       "mini_only": true,
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 6,
-        "at": "2026-11-25T22:07Z",
+        "at": "2026-11-25T22:09Z",
         "by": "claudecode",
         "plan": [
           "Read rules and pass-1 runner",
@@ -342810,7 +342815,7 @@
           "Archive, hash and contact sheets",
           "Status, PR, desk post and park"
         ],
-        "note": "Rules, retake board (8 rows, take 2, prompts and stills hashed) and pass-1 runner read. Mini disk has 5 GB free; offload"
+        "note": "Correction: steps 1-3 were already done by the 21:31Z run (runner on HOS branch j3747-hos013-retake1-runner d61a8212, dr"
       },
       "taskKeys": [
         "HOS:013"
