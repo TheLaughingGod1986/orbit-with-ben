@@ -330013,10 +330013,10 @@
       "stage": "sources",
       "after": "J3628",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T01:35Z",
+      "eta": "2026-11-25T03:35Z",
       "created_by": "codex",
       "created_at": "2026-11-24T21:33Z",
       "result": "",
@@ -330025,12 +330025,25 @@
           "at": "2026-11-24T21:33Z",
           "by": "codex",
           "what": "added"
+        },
+        {
+          "at": "2026-11-25T01:35Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "HOS 128: independent v02 facts and source verification",
       "due": "2026-11-27T18:00:00Z",
       "kind": "facts",
-      "plain": "Independently check every fact in the corrected Edison and Tesla film"
+      "plain": "Independently check every fact in the corrected Edison and Tesla film",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T01:35Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3630",
