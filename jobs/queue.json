@@ -329737,16 +329737,21 @@
           "at": "2026-11-25T11:31Z",
           "by": "gemini",
           "what": "step 0 of 4 done: Claimed J3610; inspecting HOS 010 status, J3511 report, and live channel audit"
+        },
+        {
+          "at": "2026-11-25T11:33Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Verified live HOS channel:audit (75 videos, 0 errors): no HOS 010 long exists on YouTube; status.json shows picture 12/65 and long edit/thumbnails/ben_ok unfinished. sMPlMuxK3YU is Private without publishAt."
         }
       ],
-      "remaining_action": "Verify whether HOS 010 long has an actual upload id and confirmed air date on YouTube and in HOS status records",
+      "remaining_action": "Verify and finish private-only Studio settings on sMPlMuxK3YU (Paid promotion No, Automatic places off, Education fields, Basic moderation, cover and captions)",
       "kind": "studio",
       "plain": "Schedule the approved birds Short after its full dinosaur film is ready",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-25T11:31Z",
+        "at": "2026-11-25T11:33Z",
         "by": "gemini",
         "plan": [
           "Verify live HOS 010 long readiness and channel state",
@@ -329754,7 +329759,7 @@
           "Apply valid scheduling or park with typed dependency wait",
           "Record evidence and post desk and thread reports"
         ],
-        "note": "Claimed J3610; inspecting HOS 010 status, J3511 report, and live channel audit"
+        "note": "Verified live HOS channel:audit (75 videos, 0 errors): no HOS 010 long exists on YouTube; status.json shows picture 12/6"
       },
       "taskKeys": [
         "HOS:010"
