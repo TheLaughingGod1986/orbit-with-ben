@@ -1,5 +1,5 @@
 {
-  "next_id": 3686,
+  "next_id": 3687,
   "jobs": [
     {
       "id": "J0001",
@@ -335135,6 +335135,36 @@
       "due": "2026-12-01T18:00:00Z",
       "kind": "script",
       "plain": "Fix the 9 factual, timing and Shorts defects in the Accidental Inventions script, sources and Shorts to v02."
+    },
+    {
+      "id": "J3686",
+      "title": "HOS 137: independent v02 facts and exact-quote verification",
+      "needs": "gemini",
+      "repo": "hos",
+      "body": "Independent Gemini `facts` lane verification of **HOS:137** (*Accidental Inventions: 5 Mistakes That Worked*) `v02` script, `SOURCES.md`, `FACT_NOTES_v02.md`, and `10_Shorts/SHORTS_SCRIPTS_v02.md` delivered by the preceding `v02` script job.\n\n### Verification Scope\n1. Stack a clean branch on the preceding `v02` script PR head commit (`git worktree add -b gemini/<job>-hos137-facts-v02 <dir> origin/<v02-branch>`). Do NOT rewrite any spoken line, do NOT lock, do NOT merge, and spend `£0.00`.\n2. Record exact SHA-256 hashes of `01_Script/accidental_inventions_script_master_v02.md`, `01_Script/SOURCES.md`, `01_Script/FACT_NOTES_v02.md`, and `10_Shorts/SHORTS_SCRIPTS_v02.md` (confirm byte-for-byte unchanged).\n3. Independently fetch and verify every live MUST QUOTE URL and verbatim quote across `v02` (do not blindly inherit `v01` rows), specifically confirming resolution of all 4 `J3564` FLAGs (`FR405881A` `1909-08-10`, `PMC3232561` & VA two-stage April/June 1960 & survival, dead `heartrhythm.com` removed, `US3691140A`/NIHF high-tack low-adhesion), the 8 primary/institutional upgrades, Chardack/Gage/Elmqvist/Senning lifespan quotes, the new Part 01 pulse/blink scale reference, Part 02 `US3633A` `270°F` spoken scale, Part 05 Boise Blitz `90%` alignment & `\"aerospace\"` handling, and all `WHO`/`WHEN`/`DATA`/`SCALE`/`FACT`/`LABEL` visual cards (`≤4` words) and Shorts `S01`/`S02` claims.\n4. Commit `01_Script/GEMINI_FACTS_CHECK_v02.md` (with explicit `OK / PARTIAL / FLAG` counts and exact hashes), run `00_Brand/Channel-Setup/tools/check_all.sh` (ALL CHECKS PASS), open a clean PR to HOS `main`, and hand off to the Chief `v02` lock review job.\n",
+      "ref": "J3565",
+      "film": "HOS:137",
+      "stage": "sources",
+      "after": "J3685",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T07:23Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T07:23Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Run independent Gemini exact-quote audit on HOS:137 v02 script, sources and Shorts and open PR",
+      "due": "2026-12-04T18:00:00Z",
+      "kind": "facts",
+      "plain": "Independently verify every fact, source URL and exact quote in the HOS 137 v02 script and Shorts."
     }
   ],
   "focus": [
