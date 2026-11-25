@@ -340230,16 +340230,21 @@
           "at": "2026-11-25T15:43Z",
           "by": "claudecode",
           "what": "step 3 of 5 done: Re-check so far: v03 and v02 hashes match the record, all four cut points sit inside measured narration pauses, 344 captions in order with no Comet/Albatross lines; finishing loudness and decode re-read"
+        },
+        {
+          "at": "2026-11-25T15:46Z",
+          "by": "claudecode",
+          "what": "step 4 of 5 done: Independent re-check passed: hashes match, v02 untouched, -15.3 LUFS / -1.6 dBTP, 0 decode errors, cuts inside narration pauses, 344 captions clean; branch gemini/J3723-006-v03 pushed at b611e68"
         }
       ],
-      "remaining_action": "Independently re-check the finished v03 render (file hash, loudness, joins, captions, v02 untouched), then open the WW2 pull request",
+      "remaining_action": "Open the WW2 pull request for the v03 package (GitHub is returning server errors on pull-request creation)",
       "due": "2026-11-30T12:00:00Z",
       "kind": "assembly",
       "plain": "Apply J3715 opening cuts A+B (124.5 s) to film 006 as zero-spend v03 keeping v02 untouched",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-25T15:43Z",
+        "at": "2026-11-25T15:46Z",
         "by": "claudecode",
         "plan": [
           "Verify SRT sync and measure exact silence points",
@@ -340248,7 +340253,7 @@
           "Run technical QA and verify v02 untouched",
           "Open WW2 PR and complete handoff"
         ],
-        "note": "Re-check so far: v03 and v02 hashes match the record, all four cut points sit inside measured narration pauses, 344 capt"
+        "note": "Independent re-check passed: hashes match, v02 untouched, -15.3 LUFS / -1.6 dBTP, 0 decode errors, cuts inside narration"
       },
       "taskKeys": [
         "WW2:006"
