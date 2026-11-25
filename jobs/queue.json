@@ -323604,9 +323604,14 @@
           "at": "2026-11-25T11:09Z",
           "by": "claudecode",
           "what": "step 3 of 5 done: Resumed: reading the last hand-over; J3512 HOS half and J3205 remain"
+        },
+        {
+          "at": "2026-11-25T11:10Z",
+          "by": "claudecode",
+          "what": "step 3 of 5 done: J3512 HOS branch rebuilt on main with both conflicts resolved; pull request opened, checks running"
         }
       ],
-      "remaining_action": "Publish J3512 HOS branch (resolve 2 status-file conflicts) and J3205",
+      "remaining_action": "Merge the J3512 HOS pull request when green, then publish J3205",
       "due": "2026-11-25T12:00:00Z",
       "for": "claudecode",
       "kind": "assembly",
@@ -323615,7 +323620,7 @@
       "progress": {
         "step": 3,
         "of": 5,
-        "at": "2026-11-25T11:09Z",
+        "at": "2026-11-25T11:10Z",
         "by": "claudecode",
         "plan": [
           "Privacy-check and publish J3114 Pluto thumbnails",
@@ -323624,7 +323629,7 @@
           "Publish the other refused pushes (J3519, J3635, J3511, J3512, J3205)",
           "Report on the thread"
         ],
-        "note": "Resumed: reading the last hand-over; J3512 HOS half and J3205 remain"
+        "note": "J3512 HOS branch rebuilt on main with both conflicts resolved; pull request opened, checks running"
       },
       "taskKeys": [
         "OWB:034",
