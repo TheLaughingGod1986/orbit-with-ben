@@ -274072,13 +274072,13 @@
       "stage": "script",
       "after": "J3011",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-18T00:21Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-17T23:36Z",
-      "result": "parked for Chief: 064 script master v01 (93.1/100 PASS, 1,246 spoken words / 8,161 chars, SHA-256 c9945afa...), 16-row live-verified SOURCES.md, GEMINI_QUOTE_PASS_v01.md, CLAUDE_QUOTE_CHECK_v01.md, and film-specific MUSIC_BRIEF_v01.md committed in 3b9f165c43; stand-in draft awaits Chief/Claude explicit script lock before releasing J3021 VO",
+      "result": "",
       "history": [
         {
           "at": "2026-11-17T23:36Z",
@@ -274219,6 +274219,11 @@
           "at": "2026-11-25T12:49Z",
           "by": "relay",
           "what": "condition verification queued: J3711"
+        },
+        {
+          "at": "2026-11-25T13:58Z",
+          "by": "gemini",
+          "what": "reopened: Elected acting Chief (gemini) independently verified and locked OWB:064 v04 (SHA-256 556f3c8df68ee3cd1420ef03b8cedc04a7f0f79463d98ebf4d3d5e5753408db8; SOURCES.md 4a7e3fa5...); merged PRs #1269, #1274, #1322, and #1324 (jobs/reviews/J3711/CHIEF_RULING.md)."
         }
       ],
       "remaining_action": "Await elected Chief exact-hash review and script lock (v04 PR #1269 / J3545 PR #1274 after J3539 FIX PR #1265/#1262) before completing J3020 and releasing J3021",
@@ -274234,22 +274239,9 @@
       },
       "for": "gemini",
       "model": "gemini-argon",
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-18T03:06Z",
-        "by": "gemini",
-        "note": "Committed 064 script/sources/quote-checks/music package (3b9f165c43); parking J3020 for Chief/Claude script lock"
-      },
       "taskKeys": [
         "OWB:064"
       ],
-      "hold": {
-        "type": "dependency",
-        "condition": "J3539 independent review is FIX on exact v03 hash 9d5cd3bd256652621441cece4f3ac250be32d0abb08fbadd12835e3684d4851f (PR #1265 alongside PR #1262; Mercury tilt, Mars magnetic history, Saturn haze uncertainty, Uranus scope, Venus ocean, citations/teaching). Correction J3544 (PR #1269, v04 556f3c8d) and independent recheck J3545 (PR #1274, advisory PASS on v04 556f3c8d) are now done. J3020 stays blocked and J3021 stays dependent on J3020 until elected Chief independently reviews and locks the exact passing candidate and completes J3020. No script lock, approval, narration or generation authorized by J3546.",
-        "check_at": "2026-11-25T13:49:37+00:00",
-        "recheck_task": "J3711"
-      },
       "escalated_at": "2026-11-18T06:14Z"
     },
     {
