@@ -330738,9 +330738,14 @@
           "at": "2026-11-25T01:08Z",
           "by": "gemini",
           "what": "step 0 of 6 done"
+        },
+        {
+          "at": "2026-11-25T01:09Z",
+          "by": "gemini",
+          "what": "step 1 of 6 done: Verified PR #115, v02 SHA-256 991dfba22dc7663006fea95f971a8f8bfda5fa8febf81512add90d6a2e552dcb, ffprobe 1080p 24fps 32576f 1357.333s 0.000s sync, 51.34% archive (50 photos), Rule-2 title, SRT cue 253 fix, and split 12 lossless segments."
         }
       ],
-      "remaining_action": "Inspecting J3637 PR #115, verifying v02 SHA-256 and technical gates",
+      "remaining_action": "Demonstrating audio_input and moving_video_input via read_file probe",
       "due": "2026-11-27T12:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -330757,9 +330762,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-11-25T01:08Z",
+        "at": "2026-11-25T01:09Z",
         "by": "gemini",
         "plan": [
           "Verify PR #115 & technical checks",
@@ -330768,7 +330773,8 @@
           "Watch & listen segments 6-11 (12:00-22:37)",
           "Inspect thumbnails & package metadata",
           "Commit QA_REVIEW_J3638.md PR & finish"
-        ]
+        ],
+        "note": "Verified PR #115, v02 SHA-256 991dfba22dc7663006fea95f971a8f8bfda5fa8febf81512add90d6a2e552dcb, ffprobe 1080p 24fps 3257"
       },
       "taskKeys": [
         "WW2:004"
