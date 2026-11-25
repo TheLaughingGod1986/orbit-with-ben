@@ -324820,15 +324820,20 @@
           "at": "2026-11-25T04:49Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Completed claim-by-claim live URL & math audit: caught 8 concrete FLAGs including wrong OSTI ID 4036390 (1964 Misra paper), false microsecond/football-field light-travel scale (inverted by 3x+), unsourced '1,000x faster' cooling ratio vs LA-602 1.6 minimum safety factor, Bainbridge bunker mislocated to 10 mi instead of S-10000 (5.7 mi), Shorts S01/S02 miscounted (55w/65w vs claimed 44w/46w -> exceeds 16-19s house rule), S02 'silent shockwave' error, Row 10 misleading sentence splice, and missing verbatim quotes in Rows 8-9"
+        },
+        {
+          "at": "2026-11-25T04:51Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Read full 22-page declassified LA-602 PDF (14 Aug 1946, declassified 2 Feb 1973), verified CrossRef DOIs for Selby et al. 2021 and Bethe June 1976, DOE OpenNet, NobelPrize.org, NASA Earth Fact Sheet, and all 7 J3502 guardrails; ready to write audit artifact"
         }
       ],
-      "remaining_action": "Finalize primary-source citations (LA-602 OSTI ID, Bethe 1976, Selby 2021) and verify all 7 J3502 guardrails",
+      "remaining_action": "Write GEMINI_FACTS_CHECK_v01.md and update HOS:136 status.json and production-status.md",
       "due": "2026-12-03T18:00:00Z",
       "kind": "facts",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-25T04:49Z",
+        "at": "2026-11-25T04:51Z",
         "by": "gemini",
         "plan": [
           "Check out PR #753 and read HOS:136 files",
@@ -324837,7 +324842,7 @@
           "Write independent audit report and update status/production-status",
           "Push follow-on PR, verify CI/checks and post desk handoff"
         ],
-        "note": "Completed claim-by-claim live URL & math audit: caught 8 concrete FLAGs including wrong OSTI ID 4036390 (1964 Misra pape"
+        "note": "Read full 22-page declassified LA-602 PDF (14 Aug 1946, declassified 2 Feb 1973), verified CrossRef DOIs for Selby et al"
       },
       "taskKeys": [
         "HOS:136"
