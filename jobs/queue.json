@@ -334407,10 +334407,10 @@
       "stage": "sources",
       "after": "J3675",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T06:09Z",
+      "eta": "2026-11-25T08:09Z",
       "created_by": "gemini",
       "created_at": "2026-11-25T05:49Z",
       "result": "",
@@ -334419,12 +334419,25 @@
           "at": "2026-11-25T05:49Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-25T06:09Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Audit HOS:136 v02 PR from J3675 against primary sources and commit GEMINI_FACTS_CHECK_v02.md",
       "due": "2026-12-02T18:00:00Z",
       "kind": "facts",
-      "plain": "Independently verify all v02 facts, quotes, and Shorts lengths for HOS 136 Trinity Test"
+      "plain": "Independently verify all v02 facts, quotes, and Shorts lengths for HOS 136 Trinity Test",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T06:09Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3677",
