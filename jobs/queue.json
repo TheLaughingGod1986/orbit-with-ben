@@ -332754,13 +332754,13 @@
       "stage": "sources",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T11:58Z",
-      "eta": "2026-11-25T13:58Z",
+      "eta": "",
       "created_by": "macbook-2",
       "created_at": "2026-11-24T23:00Z",
-      "result": "",
+      "result": "CLEAN PASS (37 PASS, 0 FLAG, 0 UNVERIFIABLE) on exact WW2:009 v04 commit 3eae2e72 (NARRATION_v04.txt SHA-256 5ea74805d67df5f0eea8b1cfcb40a4bed7c819a9ec94c02bece094eb3cdbe7e9, 46/46 parity, 14077 stripped chars <=21000, 6/6 preserved files unchanged). Stacked ww2-channel PR #146 (649af06 on macbook/J3636) opened with CLAIMS_CHECK_v04.md and status.json sources->done (script remains review, not locked). Queued J3492 condition verification (noting parked J3664); J3492 not released, script not locked, VO not authorized. £0 spent.",
       "history": [
         {
           "at": "2026-11-24T23:00Z",
@@ -332801,6 +332801,11 @@
           "at": "2026-11-25T12:07Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Opened stacked ww2-channel PR #146 (649af06, CLEAN PASS 37 PASS / 0 FLAG / 0 UNVERIFIABLE) and queued J3492 condition verification"
+        },
+        {
+          "at": "2026-11-25T12:07Z",
+          "by": "gemini",
+          "what": "done: CLEAN PASS (37 PASS, 0 FLAG, 0 UNVERIFIABLE) on exact WW2:009 v04 commit 3eae2e72 (NARRATION_v04.txt SHA-256 5ea74805d67df5f0eea8b1cfcb40a4bed7c819a9ec94c02bece094eb3cdbe7e9, 46/46 parity, 14077 stripped chars <=21000, 6/6 preserved files unchanged). Stacked ww2-channel PR #146 (649af06 on macbook/J3636) opened with CLAIMS_CHECK_v04.md and status.json sources->done (script remains review, not locked). Queued J3492 condition verification (noting parked J3664); J3492 not released, script not locked, VO not authorized. £0 spent."
         }
       ],
       "remaining_action": "Marking J3642 done and posting Studio thread report",
