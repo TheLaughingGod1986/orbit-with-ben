@@ -333242,14 +333242,19 @@
           "at": "2026-11-25T04:07Z",
           "by": "gemini",
           "what": "step 1 of 6 done: Rendered all 15 maps_v02 and 12 bespoke_diagrams_v02 on NAS; EDIT_PLAN_v02 built and passed all guards (65.29% archive across 62 photos, max diagram hold 19.42s, 0 back-to-back diagrams after S01, 0 local scratch paths)."
+        },
+        {
+          "at": "2026-11-25T04:07Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: Visually verified all 8 patched v02 diagrams (G5 zero tofu boxes, G7 Under 280 lb + BARE AIRFRAME + zero wipe overflow, G00B 4:00 PM, G9 392 MPH unit kerning, G17 ZERO ALUMINIUM DRAIN, G13 LOW/HIGH labels, G10 VICTORIA TERRASSE clear of line, G11 RELEASE on CAT arc) and validated EDIT_PLAN_v02 (65.29% archive, max diagram 19.42s, 0 consecutive diagrams after S01)."
         }
       ],
-      "remaining_action": "Visually inspecting all 8 patched v02 diagrams (G5, G7, G00B, G9, G17, G13, G10, G11) before rendering v02 master",
+      "remaining_action": "Rendering ww2_006_mosquito_v02.mp4 (166 segments) using NAS staging scratch and running technical QA",
       "due": "2026-11-28T18:00:00Z",
       "kind": "assembly",
       "plain": "Patch WW2 006 v01 visual/factual diagram defects and static holds at £0 spend, render v02 master on NAS",
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 6,
         "at": "2026-11-25T04:07Z",
         "by": "gemini",
@@ -333261,7 +333266,7 @@
           "Run technical QA and verify contact sheet",
           "Update metadata_v02, status.json and open PR"
         ],
-        "note": "Rendered all 15 maps_v02 and 12 bespoke_diagrams_v02 on NAS; EDIT_PLAN_v02 built and passed all guards (65.29% archive a"
+        "note": "Visually verified all 8 patched v02 diagrams (G5 zero tofu boxes, G7 Under 280 lb + BARE AIRFRAME + zero wipe overflow, "
       },
       "taskKeys": [
         "WW2:006"
