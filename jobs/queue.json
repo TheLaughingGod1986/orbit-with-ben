@@ -342806,9 +342806,14 @@
           "at": "2026-11-25T21:47Z",
           "by": "gemini",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-25T21:48Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Verified v04 master SHA-256 55ffac72... (14:46, 130 MB) and read J3745/J3746 refs"
         }
       ],
-      "remaining_action": "Verifying v04 master, reading J3745/J3746 refs, and probing audio/video perception",
+      "remaining_action": "Extracting and watching/listening to targeted v04 clips, extra joins, and ending fade",
       "due": "2026-11-28T20:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -342825,9 +342830,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-25T21:47Z",
+        "at": "2026-11-25T21:48Z",
         "by": "gemini",
         "plan": [
           "Verify v04 master and probe media input",
@@ -342835,7 +342840,8 @@
           "Review thumbnail C v02 and 168 px sheet",
           "Write QA_REVIEW_v04.md and open ww2 PR",
           "Report on thread and hand off J3748"
-        ]
+        ],
+        "note": "Verified v04 master SHA-256 55ffac72... (14:46, 130 MB) and read J3745/J3746 refs"
       },
       "taskKeys": [
         "WW2:005"
