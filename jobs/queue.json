@@ -330899,10 +330899,10 @@
       "stage": "edit",
       "after": "J3638",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T01:48Z",
+      "eta": "2026-11-25T03:48Z",
       "created_by": "gemini",
       "created_at": "2026-11-24T22:54Z",
       "result": "",
@@ -330916,6 +330916,11 @@
           "at": "2026-11-25T01:41Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred gemini): Codex out of usage; next in its chain: gemini"
+        },
+        {
+          "at": "2026-11-25T01:48Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review WW2:004 v02 delivery and full audiovisual QA, merge clean PRs, copy verified v02 master to WW2 UAT and set J3430 awaits",
@@ -330929,7 +330934,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T01:48Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3640",
