@@ -314127,13 +314127,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 180,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-23T20:25Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T15:29Z",
-      "result": "Chief FIX recorded 23 Nov in ww2 PR50 fabae85, jobs/reviews/J3431/REVIEW.md. Verified 60 photos and 41 larger alternatives; archive plan 48.3% (610.11/1263.04s), 231.92s short of two-thirds. J3449 owns bounded picture-plan revision due 24 Nov 18:00Z. Await its evidence and acceptance of compliant coverage; J3432 stays dependent on J3431. No rule waiver, picture PASS or edit approval.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-23T15:29Z",
@@ -314299,6 +314299,11 @@
           "at": "2026-11-25T12:04Z",
           "by": "relay",
           "what": "condition verification queued: J3708"
+        },
+        {
+          "at": "2026-11-25T12:16Z",
+          "by": "gemini",
+          "what": "reopened: Acting Chief ruling J3710 (25 Nov): ACCEPT J3614 137-sentence existing-voice paper recut (52.067% strict aligned / 52.282% est / 53.639% natural, £0 spend); WW2 PR #50 (6661e8c) and PR #147 merged; J3708 condition satisfied."
         }
       ],
       "remaining_action": "Await the shorter St Nazaire paper cut and Chief acceptance of its real-photo coverage",
@@ -314307,23 +314312,6 @@
       "taskKeys": [
         "WW2:005"
       ],
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-23T20:25Z",
-        "by": "codex",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      },
-      "hold": {
-        "type": "dependency",
-        "condition": "J3600 Chief ruling FIX: J3449 supports 510.27/1263.04s (40.400%), 121.25s below current 50% floor; obsolete 48.3% estimate rejected. Await J3614 complete-sentence existing-VO paper recut, resolved PR50 stage/provenance integration, and Chief acceptance of coherent >=50% photo-dominant plan before J3431 completion and J3432 release.",
-        "check_at": "2026-11-25T13:04:59+00:00",
-        "last_recheck": "J3600",
-        "checked_at": "2026-11-24T20:15:33+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3708"
-      },
       "urgent": 3
     },
     {
