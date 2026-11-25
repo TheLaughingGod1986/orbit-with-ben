@@ -335372,16 +335372,21 @@
           "at": "2026-11-25T08:02Z",
           "by": "gemini",
           "what": "step 4 of 5 done: Wrote 01_Script/GEMINI_FACTS_CHECK_v02.md (18 OK / 10 PARTIAL / 0 FLAG), updated production-status.md and status.json (owner -> Claude, state doing); check_all.sh ALL CHECKS PASS (review:script 91.8/100, gate:episode PASS, status_board PASS)."
+        },
+        {
+          "at": "2026-11-25T08:03Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Committed GEMINI_FACTS_CHECK_v02.md (18 OK / 10 PARTIAL / 0 FLAG), updated production-status.md and status.json, opened HOS PR #775 (b7871857, gemini/J3686-hos137-facts-v02), and posted HOS desk handoff to Claude for J3687."
         }
       ],
-      "remaining_action": "Commit GEMINI_FACTS_CHECK_v02.md, open clean HOS PR to main, post desk handoff, and finish J3686",
+      "remaining_action": "Complete: HOS PR #775 open and handed off to Chief v02 lock review (J3687)",
       "due": "2026-12-04T18:00:00Z",
       "kind": "facts",
       "plain": "Independently verify every fact, source URL and exact quote in the HOS 137 v02 script and Shorts.",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-25T08:02Z",
+        "at": "2026-11-25T08:03Z",
         "by": "gemini",
         "plan": [
           "Stack worktree and record SHA-256 hashes",
@@ -335390,7 +335395,7 @@
           "Write GEMINI_FACTS_CHECK_v02.md and run check_all.sh",
           "Open HOS PR and hand off to Chief"
         ],
-        "note": "Wrote 01_Script/GEMINI_FACTS_CHECK_v02.md (18 OK / 10 PARTIAL / 0 FLAG), updated production-status.md and status.json (o"
+        "note": "Committed GEMINI_FACTS_CHECK_v02.md (18 OK / 10 PARTIAL / 0 FLAG), updated production-status.md and status.json, opened "
       },
       "taskKeys": [
         "HOS:137"
