@@ -331643,13 +331643,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-24T22:26Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T22:24Z",
-      "result": "publish via Claude Code: /Volumes/MiniWork/scratch/j3635-ww2 codex/j3635-settings-audit",
+      "result": "",
       "history": [
         {
           "at": "2026-11-24T22:24Z",
@@ -331705,6 +331705,11 @@
           "at": "2026-11-25T10:19Z",
           "by": "relay",
           "what": "condition verification queued: J3703"
+        },
+        {
+          "at": "2026-11-25T10:38Z",
+          "by": "gemini",
+          "what": "reopened: Condition verified MET in J3703: Codex commit 09320b462e (SETTINGS_AND_REACH_2026-11-24.md, 45 lines, zero private data) is merged on ww2-channel main via PR #140 (3052547bf868b86023cddf5c2b79cae214c1e542); Codex posted thread report #7146352575 and completed all 6 audit items."
         }
       ],
       "remaining_action": "Claude Code privacy-check, push, PR and merge of codex/j3635-settings-audit (09320b462e) in ww2-channel, then close J3635",
@@ -331712,30 +331717,9 @@
       "kind": "studio",
       "mini_only": true,
       "urgent": 9,
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-24T22:32Z",
-        "by": "codex",
-        "plan": [
-          "Check listing and copyright",
-          "Read early reach",
-          "Record findings"
-        ],
-        "note": "Audit finished in local commit 09320b4 at /Volumes/MiniWork/scratch/j3635-ww2 on codex/j3635-settings-audit. Automatic a"
-      },
       "taskKeys": [
         "WW2:002"
-      ],
-      "hold": {
-        "type": "input",
-        "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/j3635-ww2 codex/j3635-settings-audit (commit 09320b462e4e22f1c3aee89743eb41e7f2aae757 not pushed/PR'd/merged to ww2-channel main 8df668465c; claudecode down until 2026-11-25T10:00:00Z)",
-        "check_at": "2026-11-25T11:19:38+00:00",
-        "last_recheck": "J3672",
-        "checked_at": "2026-11-25T04:41:21+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3703"
-      }
+      ]
     },
     {
       "id": "J3636",
