@@ -274388,16 +274388,21 @@
           "at": "2026-11-25T14:28Z",
           "by": "gemini",
           "what": "step 1 of 6 done: Audited 26 shelf media files across 020-034 (both Omni clips SHA-256 matched) and fetched 35 official NASA Images API plates + 5 verified PD portraits; flagged and rejected 5 unsuitable candidates (PIA00104/PIA00257 computer-simulated, PIA21974 1280x433 strip, PIA16949/GSFC wrong subject, Colombo mosaic)"
+        },
+        {
+          "at": "2026-11-25T14:39Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: Merged PR #1326: shot_list_v01 (clip_check PASS 54 rows), cuts/pool/provenance (picture_qa PASS 0/86 fail), 25 fresh 24fps code graphics rendered on studio-live (CG_DONE=0), Thumbnails A/B/C all thumb_preview --score PASS, £0 music bed 701.9s music_gate PASS; queued packaging panel (J3716, J3717, J3718, J3719)"
         }
       ],
-      "remaining_action": "Building timestamped shot list, cut inputs and provenance pool from locked VO v01",
+      "remaining_action": "Waiting for independent packaging panel (J3716, J3717, J3718, J3719) DECISION.md before closing J3022",
       "due": "2026-12-04T18:00:00Z",
       "kind": "chart",
       "plain": "Prepare shelf pictures, graphics and three thumbnails for the every-planet film",
       "progress": {
-        "step": 1,
+        "step": 5,
         "of": 6,
-        "at": "2026-11-25T14:28Z",
+        "at": "2026-11-25T14:39Z",
         "by": "gemini",
         "plan": [
           "Audit shelf media and fetch NASA plates",
@@ -274407,7 +274412,7 @@
           "Finalize film-specific music plan and hashes",
           "Commit package and queue packaging panel"
         ],
-        "note": "Audited 26 shelf media files across 020-034 (both Omni clips SHA-256 matched) and fetched 35 official NASA Images API pl"
+        "note": "Merged PR #1326: shot_list_v01 (clip_check PASS 54 rows), cuts/pool/provenance (picture_qa PASS 0/86 fail), 25 fresh 24f"
       },
       "taskKeys": [
         "OWB:064"
