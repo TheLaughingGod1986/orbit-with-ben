@@ -340750,9 +340750,14 @@
           "at": "2026-11-25T16:16Z",
           "by": "claudecode",
           "what": "step 2 of 4 done: Condition still unmet: origin/macbook/J3487 still 03ce06a (Bletchley), no Bulge branch, PR or files on ww2 origin/main 9075a1c; OWB PR 1254 still open"
+        },
+        {
+          "at": "2026-11-25T16:17Z",
+          "by": "claudecode",
+          "what": "step 3 of 4 done: J3487 kept blocked, next check 26 Nov 10:00Z; J3731 queued for the MacBook to push or confirm lost"
         }
       ],
-      "remaining_action": "Record the unmet condition on J3487 and queue the MacBook-side push",
+      "remaining_action": "Post the report and finish",
       "kind": "review",
       "recheck_of": "J3487",
       "due": "2026-11-25T17:06:07+00:00",
@@ -340766,9 +340771,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-25T16:16Z",
+        "at": "2026-11-25T16:17Z",
         "by": "claudecode",
         "plan": [
           "Read J3487 history",
@@ -340776,7 +340781,7 @@
           "Record wait or reopen J3487",
           "Finish and report"
         ],
-        "note": "Condition still unmet: origin/macbook/J3487 still 03ce06a (Bletchley), no Bulge branch, PR or files on ww2 origin/main 9"
+        "note": "J3487 kept blocked, next check 26 Nov 10:00Z; J3731 queued for the MacBook to push or confirm lost"
       },
       "taskKeys": [
         "WW2:016"
