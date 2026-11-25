@@ -282841,16 +282841,21 @@
           "at": "2026-11-25T12:36Z",
           "by": "gemini",
           "what": "step 2 of 6 done: Unscheduled sY0PSQFxjp8 via HOS YouTube Data API; verified read-back at 2026-11-25T12:36:34Z (private, publishAt null, madeForKids false; jkUZpyO71lU and wkyGOKepjeQ unchanged private/null); captured cropped Studio receipt"
+        },
+        {
+          "at": "2026-11-25T12:37Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: Cancelled all 3 Buffer posts for sY0PSQFxjp8 (6b02943702479690922e8c8e, 6b029438d5eabfb8cc8c2cf2, 6b029439d864a01105a3cbc9) at 2026-11-25T12:36:55Z; all 3 verified null via Buffer API"
         }
       ],
-      "remaining_action": "Cancel 3 Buffer posts for sY0PSQFxjp8 and verify via Buffer API",
+      "remaining_action": "Update OWB records (UPLOADS, BUFFER_POSTS, LEARNINGS row 36) and HOS open-gate library",
       "due": "2026-11-24T12:00:00Z",
       "kind": "studio",
       "plain": "Check whether other Shorts are reaching viewers before the vaccine test airs",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 6,
-        "at": "2026-11-25T12:36Z",
+        "at": "2026-11-25T12:37Z",
         "by": "gemini",
         "plan": [
           "Verify authority and live state",
@@ -282860,7 +282865,7 @@
           "Update and merge HOS library and run checks",
           "Post desk and thread reports and close J3125"
         ],
-        "note": "Unscheduled sY0PSQFxjp8 via HOS YouTube Data API; verified read-back at 2026-11-25T12:36:34Z (private, publishAt null, m"
+        "note": "Cancelled all 3 Buffer posts for sY0PSQFxjp8 (6b02943702479690922e8c8e, 6b029438d5eabfb8cc8c2cf2, 6b029439d864a01105a3cb"
       },
       "taskKeys": [
         "HOS:007"
