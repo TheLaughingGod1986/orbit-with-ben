@@ -324421,13 +324421,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
-      "since": "2026-11-24T15:12Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-24T14:57Z",
-      "result": "parked for Chief: review delivered in HOS PR #752 (5551b6ee), FIX before lock of #751 at 7702cc76. Correct historical/source and Shorts/opening timing issues, obtain independent facts and exact-quote recheck, then Chief decides lock and VO jobs. No merge or spend. Both checkouts on main.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-24T14:57Z",
@@ -324478,6 +324478,11 @@
           "at": "2026-11-25T02:25Z",
           "by": "gemini",
           "what": "remaining action: J3630 Chief ruling (HOS PR #761): FIX on v02 (6 items); stays blocked until J3659 (v03 fix) + J3660 (v03 lock) achieve KEEP."
+        },
+        {
+          "at": "2026-11-25T04:25Z",
+          "by": "gemini",
+          "what": "reopened: Verified by J3660 (Acting Chief gemini, 2026-11-25): HOS PR #762 (v03, 9bc20d9c) independently verified PASS on all 6 FIX items, 3 polishes, 8/8 SHA-256 hashes, review:script 91.9/100 PASS, default gate:episode PASS, check_all.sh PASS, and merged into HOS main as 84af0f7d05701a5147d7ad7fb30403a0152e80ff (superseding PRs #758/#760/#751/#725). Reopening to close J3547 as done (lock achieved)."
         }
       ],
       "remaining_action": "J3630 Chief ruling (HOS PR #761): FIX on v02 (6 items); stays blocked until J3659 (v03 fix) + J3660 (v03 lock) achieve KEEP.",
@@ -324492,23 +324497,7 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 3,
-        "at": "2026-11-24T15:34Z",
-        "by": "macbook",
-        "plan": [
-          "Read draft and rules",
-          "Check claims and editorial gaps",
-          "Publish review for Chief"
-        ]
-      },
-      "escalated_at": "2026-11-24T18:35Z",
-      "hold": {
-        "type": "dependency",
-        "condition": "Chief FIX on v01 at 7702cc76: complete J3628 corrected script and Shorts, J3629 independent Gemini facts, then dependent direct-quote and lock review. No script lock, merge of 751, VO or picture spend until corrected evidence passes.",
-        "check_at": "2026-11-27T18:30:00Z"
-      }
+      "escalated_at": "2026-11-24T18:35Z"
     },
     {
       "id": "J3548",
