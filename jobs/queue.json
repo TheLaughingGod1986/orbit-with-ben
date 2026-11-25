@@ -323507,10 +323507,10 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-25T11:08Z",
+      "eta": "2026-11-25T11:53Z",
       "created_by": "claude",
       "created_at": "2026-11-24T12:25Z",
       "result": "",
@@ -323594,6 +323594,11 @@
           "at": "2026-11-25T11:05Z",
           "by": "claudecode",
           "what": "released: Stopping at the run limit. Merged to date: OWB 1311 (J3114), 1312 (J3307), 1313 (J3597), 1317 (J3512 registry, eba495f15b); HOS 780 (J3519), 781 (J3511); WW2 140 (J3635). Chief must close J3114 (PR 1311, 28dfe21fa6) and release J3307: jobs.py refuses a worker. Next run: (1) J3512 HOS half, codex/J3512-resume 9cd64899+5008d480, privacy read PASSED, but 9cd64899 conflicts with HOS main in 010 status.json and production-status.md (keep J3511 records, add J3512's); clean worktree /Volumes/MiniWork/scratch/j3530-hos-j3512 on claudecode/J3512-resume is ready. (2) J3205: WW2 gemini/J3643-qa and OWB gemini/J3643-review, clean 3 home-path strings first. J3463 excluded."
+        },
+        {
+          "at": "2026-11-25T11:08Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Publish J3512 HOS branch (resolve 2 status-file conflicts) and J3205",
