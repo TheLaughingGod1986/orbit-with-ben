@@ -339975,16 +339975,21 @@
           "at": "2026-11-25T15:00Z",
           "by": "claudecode",
           "what": "step 0 of 6 done"
+        },
+        {
+          "at": "2026-11-25T15:03Z",
+          "by": "claudecode",
+          "what": "step 2 of 6 done: Ben has not ticked v02 (still awaiting watch). Narration gaps measured on v02 audio: 301.59-302.53, 333.71-334.73, 364.98-365.82, 395.05-395.87 s. Cuts: frames 7260-8033 and 8772-9482 (61.792 s). Render running in tmux J3721-render, log ~/_desk/logs/J3721-render.log, done file ~/_desk/logs/J3721-render.done"
         }
       ],
-      "remaining_action": "Check Ben has not already OK'd v02, then build the v03 cut with the two approved opening trims",
+      "remaining_action": "Render the v03 cut, rebuild captions and chapters, run technical checks, open the pull request",
       "due": "2026-11-27T12:00:00Z",
       "kind": "assembly",
       "plain": "Apply J3715 opening cuts A+B (61.8 s) to film 004 as zero-spend v03 keeping v02 untouched",
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 6,
-        "at": "2026-11-25T15:00Z",
+        "at": "2026-11-25T15:03Z",
         "by": "claudecode",
         "plan": [
           "Check watch state and inputs",
@@ -339993,7 +339998,8 @@
           "Render v03 to the NAS",
           "Technical checks",
           "Open PR and hand to QA"
-        ]
+        ],
+        "note": "Ben has not ticked v02 (still awaiting watch). Narration gaps measured on v02 audio: 301.59-302.53, 333.71-334.73, 364.9"
       },
       "taskKeys": [
         "WW2:004"
