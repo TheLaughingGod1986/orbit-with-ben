@@ -335352,14 +335352,19 @@
           "at": "2026-11-25T07:54Z",
           "by": "gemini",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-25T07:54Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Stacked worktree /tmp/hos-J3686-worktree on origin/macbook/J3685 (be99dffe, PR #772) branch gemini/J3686-hos137-facts-v02; verified all 4 v02 SHA-256 hashes match PR #772 byte-for-byte."
         }
       ],
-      "remaining_action": "Locate preceding HOS 137 v02 script PR, create clean stacked worktree, and record SHA-256 hashes",
+      "remaining_action": "Independently fetch and verify every live MUST QUOTE URL and verbatim quote in v02 SOURCES.md and FACT_NOTES_v02.md",
       "due": "2026-12-04T18:00:00Z",
       "kind": "facts",
       "plain": "Independently verify every fact, source URL and exact quote in the HOS 137 v02 script and Shorts.",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
         "at": "2026-11-25T07:54Z",
         "by": "gemini",
@@ -335369,7 +335374,8 @@
           "Audit script claims, cards, Shorts, and J3564 FLAGs",
           "Write GEMINI_FACTS_CHECK_v02.md and run check_all.sh",
           "Open HOS PR and hand off to Chief"
-        ]
+        ],
+        "note": "Stacked worktree /tmp/hos-J3686-worktree on origin/macbook/J3685 (be99dffe, PR #772) branch gemini/J3686-hos137-facts-v0"
       },
       "taskKeys": [
         "HOS:137"
