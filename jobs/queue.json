@@ -272578,10 +272578,10 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T10:12Z",
+      "eta": "2026-11-25T14:12Z",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
       "result": "",
@@ -273635,6 +273635,11 @@
           "at": "2026-11-25T10:12Z",
           "by": "gemini",
           "what": "reopened: Token probe PASSED 25 Nov 10:05Z (J3695 / thread #7159250002): probe deploy 35d29502 returned 401 anon and 200 ok/private/contentsRead:true on rehearsal/j3012 @ 534cf0f7; independently verified 10:11Z live deploy 1f8cac64 (0bc5d999) restored, 35d29502 deleted (404), BOARD_MIGRATION_PROBE removed from prod bindings, /api/migration 404 anon+auth, split streak 12. Moving J3012 to auto-release date hold for Thu 26 Nov day-before notice."
+        },
+        {
+          "at": "2026-11-25T10:12Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Resolve the production-probe approval block and verify runtime token access before the Thursday notice and Friday move",
@@ -273654,7 +273659,15 @@
         "by": ""
       },
       "for": "gemini",
-      "model": "gemini-argon"
+      "model": "gemini-argon",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T10:12Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3013",
