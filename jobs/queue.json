@@ -331651,9 +331651,14 @@
           "at": "2026-11-25T02:08Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Completed direct audiovisual inspection (read_file on MP4 + 10 full-res 1080x1920 frames + review_sheet.jpg): verdict KEEP. Clean British narration, smooth Seg A/B join, crisp full-bleed NARA photos, clear schematics, safe-zone compliant, faststart verified."
+        },
+        {
+          "at": "2026-11-25T02:09Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Staged checksum-verified private copy in WW2 UAT (SHA-256 fef4e056...), uploaded ww2-004-s1-v01 to private R2 watch bucket, resolved status.json merge conflict cleanly and merged ww2-channel PR #117 as acting Chief."
         }
       ],
-      "remaining_action": "Writing independent J3647 REVIEW.md (KEEP verdict) and preparing Chief PR #117 merge & WW2:004-S1 Ben watch staging",
+      "remaining_action": "Writing J3647 REVIEW.md, registering ww2-004-s1-v01 watch upload in OWB repo, and arming Ben watch card WW2:004-S1",
       "due": "2026-11-28T18:00:00Z",
       "kind": "review",
       "plain": "Check the finished Mark 14 torpedo depth-error Short and hand it off for Ben's watch",
@@ -331666,9 +331671,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-25T02:08Z",
+        "at": "2026-11-25T02:09Z",
         "by": "gemini",
         "plan": [
           "Verify NAS master and PR #117 receipts",
@@ -331677,7 +331682,7 @@
           "Re-check Chief status and execute Chief handoff/merge/watch card if KEEP",
           "Publish report and finish J3647"
         ],
-        "note": "Completed direct audiovisual inspection (read_file on MP4 + 10 full-res 1080x1920 frames + review_sheet.jpg): verdict KE"
+        "note": "Staged checksum-verified private copy in WW2 UAT (SHA-256 fef4e056...), uploaded ww2-004-s1-v01 to private R2 watch buck"
       },
       "taskKeys": [
         "WW2:004"
