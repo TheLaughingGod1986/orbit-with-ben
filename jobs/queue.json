@@ -342564,10 +342564,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-25T21:32Z",
+      "eta": "2026-11-25T23:32Z",
       "created_by": "gemini",
       "created_at": "2026-11-25T20:47Z",
       "result": "",
@@ -342596,6 +342596,11 @@
           "at": "2026-11-25T20:57Z",
           "by": "claudecode",
           "what": "released: Part 1 done by claudecode on branch claudecode/J3746-ww2-005-v04 (ww2 repo, commit 0af5d10, no PR yet; includes the J3745 QA branch). Scratch: /Volumes/MiniWork/scratch/J3746 (segments copied from J3432; 004, 019, 051 re-rendered by 07_Edit/build_film_005_v03.py, tmux J3746-segs finished, ~/_desk/logs/J3746-segs.done = 0; segment 054 deliberately missing). Worktree: /Volumes/MiniWork/scratch/J3746-wt.\nDONE: fix 1 (shot 19 Ryder lower third removed); fix 4 (shot 4 A 9804 -> A 22631, A 23877 3% drift, NO_MOVE empty; TIMELINE_RESOLVED_v05_J3746.json: 31 distinct photos, no repeat under 60 s); fix 2 (vo_splice_v04.py: P27.S1 ends 659.00 s and the 0.47 s is given back as silence, so narration stays 883.718 s and no shot, caption or score time moves; join 10 now -79.6 dBFS before the cut, all 19 joins pass by measurement; wav + map on NAS 02_Voiceover/recut_v04, sha256 3398962e...); fix 3 timeline half (shot 57 G13 now chapter 7).\nLEFT: (a) draw plate ww2_005_g10e_charge_goes_off.png into scratch plates (style reference: new_plates_J3432_reference.py in scratch), then build_film_005_v03.py --scratch /Volumes/MiniWork/scratch/J3746 renders 054 and joins the picture (cross-fade at 739.5 s is already wired); (b) score v03 with the chapter 8 cue at 807.72 s, mix v03, mux ww2_005_st_nazaire_v04_mix.mp4 to NAS; (c) captions/chapters/description/metadata v02 (chapter 8 at 13:27, drop A 9804 credit, keep the 44-char title); (d) thumbnail C v02 + recipes; (e) QA_TECHNICAL_v04.json, PR, queue the targeted audio+motion check. Nothing rendered so far has been watched or heard."
+        },
+        {
+          "at": "2026-11-25T21:32Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Draw the explosion plate, rebuild score, mix, captions and metadata for the chapter 8 move, tighten thumbnail C, then render and check v04",
