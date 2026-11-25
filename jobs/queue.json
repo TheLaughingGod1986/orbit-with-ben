@@ -333436,6 +333436,11 @@
           "at": "2026-11-25T03:39Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: Read-only verification complete in OWB PR #1302 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1302, 25b45a1bd, jobs/reviews/J3664/REVIEW.md). Recommended CONDITION NOT MET — keep J3492 blocked: v02 (J3627, ww2-channel PR #110 b7b544a) and v03 (J3634, PR #112 96afbb3) both returned FIX; J3636 applied all 6 surgical Section 5 fixes in v04 (PR #114 3eae2e72, 14077 stripped chars <=21000, 46/46 parity, SHA-256 5ea74805d67df5f0eea8b1cfcb40a4bed7c819a9ec94c02bece094eb3cdbe7e9, status review) and queued J3642 (independent Gemini direct-source recheck of v04), which remains open/unclaimed with no CLAIMS_CHECK_v04.md on any branch or PR; ww2-channel main (4f2f42a) still holds v01 only. Original gates valid (lock <=2026-11-30T18:00Z, no ElevenLabs spend before 2026-11-30 10:50Z AND lock, watch 9 Dec, air Sat 12 Dec 17:00 London). jobs.py wait J3492 --recheck J3664 requires elected Chief (Chief: Codex; Claude resets 07:50Z); recommend --check-at 2026-11-25T10:00:00Z (--type input) then merge PR #1302 and close J3664. £0 spent; zero YouTube/Studio/NAS/ww2 writes."
+        },
+        {
+          "at": "2026-11-25T05:44Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Parking J3664 for elected Chief (OWB PR #1302) and posting studio thread report",
@@ -333462,7 +333467,8 @@
           "Update J3492 status (reopen or wait)",
           "Finish J3664 and report on studio thread"
         ]
-      }
+      },
+      "escalated_at": "2026-11-25T05:44Z"
     },
     {
       "id": "J3665",
