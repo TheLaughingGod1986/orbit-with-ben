@@ -340619,10 +340619,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-25T16:35Z",
+      "eta": "2026-11-25T19:35Z",
       "created_by": "claude",
       "created_at": "2026-11-25T16:05Z",
       "result": "",
@@ -340701,6 +340701,11 @@
           "at": "2026-11-25T16:32Z",
           "by": "claudecode",
           "what": "released: Maps done (plan step 4): draw_maps_017.py + MAPS_MANIFEST_017.json on ww2-channel claudecode/J3728-017-picture (20a7e8c); PNGs on NAS studio-live/ww2/02_Video-Projects/017_.../03_Picture/maps/. Harvest STILL RUNNING detached: tmux J3728-harvest then J3728-pass2 (chained); log ~/_desk/logs/J3728-harvest.log; done file ~/_desk/logs/J3728-harvest.done (missing = running, do not start a second copy). 9 photos on NAS .../03_Picture/archive/ (3 only 740 px). Commons is a poor source here (429s and many numbers not on Commons): if the set is still short when pass 2 ends, fetch the missing NH/80-G numbers straight from NHHC and the NARA catalogue, writing to a separate log. Worktree $STUDIO_SCRATCH/J3728-wt; RETRIEVAL_LOG_017.json uncommitted until the run ends. Left: provenance file with SHA-256 and beats, 3 thumbnails, picture plan, one PR. Map caveats for the Chief: Battleship Row is a schematic (not to scale), Nevada shown at her berth, dry dock position indicative."
+        },
+        {
+          "at": "2026-11-25T16:35Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Finish downloading the Pearl Harbor salvage photos (still running in the background), log them, build the three thumbnails and write the picture plan",
