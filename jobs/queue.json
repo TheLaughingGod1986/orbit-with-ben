@@ -326015,9 +326015,14 @@
           "at": "2026-11-25T10:42Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T10:43Z",
+          "by": "claudecode",
+          "what": "step 0 of 6 done"
         }
       ],
-      "remaining_action": "At Wed 25 Nov 17:05 UTC (24h), check qfc6EBStOfo impressions; if >=1,000 run full read and act on CTR + Design E if <2%, else log 24h numbers and hold to Thu 26 Nov 17:05 UTC (48h)",
+      "remaining_action": "Read pilot 2 before numbers in Studio",
       "due": "2026-11-25T14:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -326027,11 +326032,17 @@
       "urgent": 10,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T10:42Z",
+        "of": 6,
+        "at": "2026-11-25T10:43Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Before numbers",
+          "Check title against script",
+          "End test, set thumb E",
+          "Change title, rename old upload",
+          "Read back",
+          "Records and report"
+        ]
       }
     },
     {
