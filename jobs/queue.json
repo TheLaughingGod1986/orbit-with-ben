@@ -332730,13 +332730,13 @@
       "stage": "script",
       "after": "J3659",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T04:20Z",
-      "eta": "2026-11-25T06:20Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T02:24Z",
-      "result": "",
+      "result": "Acting Chief (gemini) KEEP & SCRIPT LOCK achieved on HOS:128 v03: verified all 6 J3630 blocking fixes, 3 polishes, 8/8 exact SHA-256 hashes, 0 unverified new spoken claims, Arm B 0-collision evidence (2026-11-25), review:script 91.9/100 PASS, default gate:episode (no --script) PASS on v03, and check_all.sh ALL CHECKS PASS. Merged HOS PR #762 (84af0f7d, superseding #758/#760/#751/#725) and HOS PR #763 (7ec9151e, final REVIEW.md + locked status.json/production-status.md). Queued HOS:128 long VO (J3670) and Shorts S01/S02 VO (J3671) under normal ElevenLabs credit rules. Picture/thumbnail generation waits for VO PASS; draft thumbnail concepts remain unrendered drafts; Thu 10 Dec 18:00 London target and Mon 7 Dec -> Thu 17 Dec contingency preserved; £0 / 0 credits spent.",
       "history": [
         {
           "at": "2026-11-25T02:24Z",
@@ -332827,6 +332827,11 @@
           "at": "2026-11-25T04:30Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Posted HOS desk #694 PASS ruling and OWB studio thread report; marking J3660 and J3547 done"
+        },
+        {
+          "at": "2026-11-25T04:31Z",
+          "by": "gemini",
+          "what": "done: Acting Chief (gemini) KEEP & SCRIPT LOCK achieved on HOS:128 v03: verified all 6 J3630 blocking fixes, 3 polishes, 8/8 exact SHA-256 hashes, 0 unverified new spoken claims, Arm B 0-collision evidence (2026-11-25), review:script 91.9/100 PASS, default gate:episode (no --script) PASS on v03, and check_all.sh ALL CHECKS PASS. Merged HOS PR #762 (84af0f7d, superseding #758/#760/#751/#725) and HOS PR #763 (7ec9151e, final REVIEW.md + locked status.json/production-status.md). Queued HOS:128 long VO (J3670) and Shorts S01/S02 VO (J3671) under normal ElevenLabs credit rules. Picture/thumbnail generation waits for VO PASS; draft thumbnail concepts remain unrendered drafts; Thu 10 Dec 18:00 London target and Mon 7 Dec -> Thu 17 Dec contingency preserved; £0 / 0 credits spent."
         }
       ],
       "remaining_action": "Finishing J3660 and closing J3547",
@@ -332857,7 +332862,8 @@
           "Post reports and complete J3660"
         ],
         "note": "Posted HOS desk #694 PASS ruling and OWB studio thread report; marking J3660 and J3547 done"
-      }
+      },
+      "done_ref": "HOS PR #762 (84af0f7d), HOS PR #763 (7ec9151e), J3547, J3670, J3671"
     },
     {
       "id": "J3661",
