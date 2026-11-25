@@ -342592,9 +342592,14 @@
           "at": "2026-11-25T22:45Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Step 2 done: watched and listened to 100% of v04 (00:00-21:35.54 across 11 segments + 4 HD clips); Ben's 0:15 & film-wide 16:9 full-bleed framing PASS, Cuts A+B PASS; NAS proxy scratch deleted and verified."
+        },
+        {
+          "at": "2026-11-25T22:47Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Step 3 done: opened ww2-channel PR #174 (d90b1b5, 07_Edit/QA_REVIEW_v04.md) recommending PASS for Ben's private watch; worktree cleaned."
         }
       ],
-      "remaining_action": "Write 07_Edit/QA_REVIEW_v04.md on a clean ww2-channel PR and park for Chief watch staging",
+      "remaining_action": "Parked for Chief to merge PR #172 + PR #174, stage v04 to iCloud WW2 UAT + R2 ww2-004-v04, and update Ben watch card WW2:004",
       "due": "2026-11-27T20:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -342611,9 +342616,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-25T22:45Z",
+        "at": "2026-11-25T22:47Z",
         "by": "gemini",
         "plan": [
           "Verify v04 master, technical gates and media input",
@@ -342621,7 +342626,7 @@
           "Write QA_REVIEW_v04.md and open PR",
           "Chief handoff or watch staging"
         ],
-        "note": "Step 2 done: watched and listened to 100% of v04 (00:00-21:35.54 across 11 segments + 4 HD clips); Ben's 0:15 & film-wid"
+        "note": "Step 3 done: opened ww2-channel PR #174 (d90b1b5, 07_Edit/QA_REVIEW_v04.md) recommending PASS for Ben's private watch; w"
       },
       "taskKeys": [
         "WW2:004"
