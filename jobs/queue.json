@@ -1,5 +1,5 @@
 {
-  "next_id": 3679,
+  "next_id": 3680,
   "jobs": [
     {
       "id": "J0001",
@@ -334592,6 +334592,36 @@
       "due": "2026-12-07T18:00:00Z",
       "kind": "vo",
       "plain": "Record the 5-part long narration for HOS 136 (Trinity Test Explained) from the locked v02 script in Ben's voice"
+    },
+    {
+      "id": "J3679",
+      "title": "HOS 136 Trinity Test Explained: Shorts S01 & S02 voiceover from locked v02 scripts",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Record the two 16–19 s search-titled Shorts (`S01` & `S02`) for HOS 136 (*Trinity Test Explained: Could It Ignite the Sky?*, Cluster 2 Film 2) from the Acting Chief-locked v02 Shorts scripts (`J3677` KEEP/lock; HOS PR `#767` merged as `ab25f2de`).\n\n**Locked Shorts script (exact file & hash — verify before spending any credit):**\n- Path: `02_Video-Projects/136_Oppenheimer-Teller-Bethe-Trinity-Test-Explained/10_Shorts/SHORTS_SCRIPTS_v02.md`\n- SHA-256: `e1df5d81baffca83c559b78a2a87df97df0fe8be15fb8de96a761445906941fe`\n- **Short A (`S01`, target Sat 19 Dec 11:30 London — Go-Public-Day Short):** *Could the Trinity Test Have Ignited the Sky?* (`44c`, `0` collisions; `42` spoken words; target `16.0–19.0 s` per Ben 19 Nov Shorts house rules).\n- **Short B (`S02`, target Fri 18 Dec 11:30 London — Support Short):** *How Did Enrico Fermi Measure the Trinity Blast With Paper?* (`58c`, `0` collisions; `42` spoken words; target `16.0–19.0 s` per Ben 19 Nov Shorts house rules).\n- Never alter a spoken word of the locked scripts.\n\n**Voice & credit rules (Mac mini only):**\n1. Voice: **Ben Orbit Narrator** (`eleven_v3`, speed 1.04 as house HOS Shorts), API only through `04_Audio/tools/el_client.py` / `vo_take.py` on the Mac mini under `desk-lock elevenlabs` (`--dry-run` first; one recorder at a time). Never use the ElevenLabs website or any other voice.\n2. Check live ElevenLabs balance first and log it with `ai_spend.py record --pool elevenlabs --film HOS:136`. Subscription credit floor is 0 (Ben, 9/12 Oct); spend nothing if balance is below what the take needs; never buy credits, top up, or spill into paid billing. `HOS:128` (`J3670`/`J3671`, Thu 10 Dec) and `HOS:136` long VO take priority if ElevenLabs credit is tight.\n3. Run `00_Brand/Channel-Setup/tools/vo_check_py312.sh` on both takes; verify both sit cleanly in the `16.0–19.0 s` runtime band with clean causal loops; `atempo <= 1.06`.\n4. Commit take metadata, word timings, exact audio SHA-256 hashes, and pasted `vo_check` outputs in a clean HOS PR (no media in git); update `status.json` and `production-status.md`; queue/park for Chief VO review and PASS.\n\n**Schedule & guardrails:**\n- Preserve **Thu 17 Dec 2026, 18:00 London** long target (Fri 18 Dec `S02` / Sat 19 Dec `S01` 11:30 London; Ben's watch Mon 14 Dec; slides one week if not ready).\n- **No picture, thumbnail, or scheduling spend** until Chief passes the VO.\n",
+      "ref": "HOS PR #767 (ab25f2de), J3677, J3553, J3678",
+      "film": "HOS:136",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T06:28Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T06:28Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Check ElevenLabs balance and record Shorts S01 & S02 VO for HOS 136 from locked v02 scripts",
+      "due": "2026-12-08T18:00:00Z",
+      "kind": "vo",
+      "plain": "Record the two 16-19 s Shorts narrations (S01 & S02) for HOS 136 from the locked v02 scripts in Ben's voice"
     }
   ],
   "focus": [
