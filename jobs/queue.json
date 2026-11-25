@@ -337005,9 +337005,14 @@
           "at": "2026-11-25T10:38Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T10:38Z",
+          "by": "claudecode",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Verify readiness: Privacy-review, push, open PRs, and merge green for codex/J3512-resume (HOS) and codex/J3512-registry (OWB) via claudecode (J3530) after 2026-11-25T10:00:00Z rese",
+      "remaining_action": "Reading J3512 history and evidence",
       "kind": "review",
       "recheck_of": "J3512",
       "mini_only": true,
@@ -337023,11 +337028,15 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-25T10:38Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read J3512 history",
+          "Check the waiting condition",
+          "Reopen or re-park J3512",
+          "Finish and report"
+        ]
       }
     },
     {
