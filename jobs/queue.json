@@ -1,5 +1,5 @@
 {
-  "next_id": 3751,
+  "next_id": 3752,
   "jobs": [
     {
       "id": "J0001",
@@ -342602,6 +342602,11 @@
           "at": "2026-11-25T22:47Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: full 100% audiovisual QA of WW2:004 v04 (SHA-256 62b9e10cf00e04d0fe662a08fb5ad266ae58158a1a4a0a73dce58b18364a8afa; v02 and v03 untouched) recommends PASS on ww2-channel PR #174 (d90b1b5, 07_Edit/QA_REVIEW_v04.md; assembly PR #172 open). Ben's 0:15 change and all 111 archive shots verified full-bleed 16:9 edge-to-edge with zero blurred sidebars, and J3715 Cuts A+B verified seamless (decoded audio MD5 c22b09bbfc31a14aa868c7c4f9f6d5d6 identical to v03). Ready for Chief PASS ruling, merge of PR #172 + PR #174, checksum-verified v04 copy to iCloud WW2 UAT (keeping v02 intact), private R2 upload ww2-004-v04, and Ben watch card WW2:004 update (jobs.py awaits J3430 ... --prev WW2-004 --fixed ..., due 2026-11-28 20:00 London, planned air 2026-12-01 17:00 London)."
+        },
+        {
+          "at": "2026-11-25T22:48Z",
+          "by": "relay",
+          "what": "condition verification queued: J3751"
         }
       ],
       "remaining_action": "Parked for Chief to merge PR #172 + PR #174, stage v04 to iCloud WW2 UAT + R2 ww2-004-v04, and update Ben watch card WW2:004",
@@ -342635,7 +342640,13 @@
       },
       "taskKeys": [
         "WW2:004"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-25T23:48:39+00:00",
+        "recheck_task": "J3751"
+      }
     },
     {
       "id": "J3745",
@@ -343273,6 +343284,37 @@
           "Clean up checkout & report on studio thread"
         ]
       }
+    },
+    {
+      "id": "J3751",
+      "title": "Verify condition for J3744",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3744: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3744 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-25T22:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T22:48Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Parked for Chief to merge PR #172 + PR #174, stage v04 to iCloud WW2 UAT + R2 ww2-004-v04, and update Ben watch card WW2:004",
+      "kind": "review",
+      "recheck_of": "J3744",
+      "due": "2026-11-25T23:48:39+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
