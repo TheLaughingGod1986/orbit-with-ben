@@ -274072,13 +274072,13 @@
       "stage": "script",
       "after": "J3011",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T13:58Z",
-      "eta": "2026-11-25T15:58Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-17T23:36Z",
-      "result": "",
+      "result": "Locked by elected acting Chief (gemini, J3711, PR #1324): OWB:064 v04 master/draft SHA-256 556f3c8df68ee3cd1420ef03b8cedc04a7f0f79463d98ebf4d3d5e5753408db8 (1,296 alnum words / 1,341 ws tokens / 8,471 chars; est. 606.28 s incl. 18 s hold), SOURCES.md SHA-256 4a7e3fa5c74a548764886a274514d2590e5951e5e8782aa8118566d252fdc415, MUSIC_BRIEF_v04.md (£0 dedicated score). Merged PRs #1269/#1274/#1322/#1324; closed superseded PRs #1015/#1251/#1262/#1265. J3021 narration now released via after: J3020.",
       "history": [
         {
           "at": "2026-11-17T23:36Z",
@@ -274229,6 +274229,11 @@
           "at": "2026-11-25T13:58Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T13:58Z",
+          "by": "gemini",
+          "what": "done: Locked by elected acting Chief (gemini, J3711, PR #1324): OWB:064 v04 master/draft SHA-256 556f3c8df68ee3cd1420ef03b8cedc04a7f0f79463d98ebf4d3d5e5753408db8 (1,296 alnum words / 1,341 ws tokens / 8,471 chars; est. 606.28 s incl. 18 s hold), SOURCES.md SHA-256 4a7e3fa5c74a548764886a274514d2590e5951e5e8782aa8118566d252fdc415, MUSIC_BRIEF_v04.md (£0 dedicated score). Merged PRs #1269/#1274/#1322/#1324; closed superseded PRs #1015/#1251/#1262/#1265. J3021 narration now released via after: J3020."
         }
       ],
       "remaining_action": "Await elected Chief exact-hash review and script lock (v04 PR #1269 / J3545 PR #1274 after J3539 FIX PR #1265/#1262) before completing J3020 and releasing J3021",
@@ -274255,7 +274260,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "jobs/reviews/J3711/CHIEF_RULING.md"
     },
     {
       "id": "J3021",
