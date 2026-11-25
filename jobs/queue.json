@@ -343318,9 +343318,14 @@
           "at": "2026-11-25T22:49Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T22:49Z",
+          "by": "claudecode",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Parked for Chief to merge PR #172 + PR #174, stage v04 to iCloud WW2 UAT + R2 ww2-004-v04, and update Ben watch card WW2:004",
+      "remaining_action": "Reading J3744's hold, evidence and approvals",
       "kind": "review",
       "recheck_of": "J3744",
       "due": "2026-11-25T23:48:39+00:00",
@@ -343338,8 +343343,11 @@
         "of": 3,
         "at": "2026-11-25T22:49Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read J3744 and its history",
+          "Check the predecessor and gates",
+          "Reopen or re-hold J3744"
+        ]
       }
     }
   ],
