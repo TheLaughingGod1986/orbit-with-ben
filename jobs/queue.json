@@ -1,5 +1,5 @@
 {
-  "next_id": 3655,
+  "next_id": 3656,
   "jobs": [
     {
       "id": "J0001",
@@ -331770,6 +331770,36 @@
       "kind": "assembly",
       "plain": "Privacy-check and publish the B-29 edit and QA branches to GitHub",
       "mini_only": true
+    },
+    {
+      "id": "J3655",
+      "title": "WW2:003 (B-29 RqYjADxvJy8): post-publish verify 3-way T&C running, pin comment, cross-link",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** `WW2:003` (*B-29: Why It Cost More Than the Atomic Bomb*, `RqYjADxvJy8`) is scheduled to go Public on Field Order History (`UCu94mInMFosxu3W0H6jlI6Q`, Studio port `9224`) at **Sat 28 Nov 2026 17:00 London (`2026-11-28T17:00:00Z`)**.\n\n**Do (after `2026-11-28T17:05:00Z`, once `RqYjADxvJy8` reads `Public` via YouTube Data API + Studio `9224`):**\n1. **Confirm Public & 3-way Test & Compare running:** verify `RqYjADxvJy8` is `public` and its 3-way Thumbnail-only Test & Compare (`A: $3 BILLION`, `B: Wichita assembly no-text`, `C: ENGINE FIRES`) shows **Running…** in Studio `9224` (read-only; never restart or replace a running test).\n2. **Post & pin the opening question comment:** post the exact text from `ww2/02_Video-Projects/003_Why-B29-Superfortress-Cost-More-Than-Atomic-Bomb/11_Upload-Package/PINNED_COMMENT_v01.txt` (also at `/Volumes/MiniWork/scratch/J3205-mini/02_Video-Projects/003_Why-B29-Superfortress-Cost-More-Than-Atomic-Bomb/11_Upload-Package/PINNED_COMMENT_v01.txt` if PR pending) via `YOUTUBE_REFRESH_TOKEN_WW2` and pin it in Studio `9224` (`Comments`). Verify pinned after reload.\n3. **Cross-link from Pilot 2 (`qfc6EBStOfo`) & any uploaded `003` Shorts:**\n   - Update Pilot 2 (`qfc6EBStOfo`) End Screen or Info Card to point forward to `RqYjADxvJy8` (keep Subscribe) if appropriate and clean.\n   - Link Related Video -> `RqYjADxvJy8` on any uploaded/scheduled `WW2:003` Shorts once `RqYjADxvJy8` is Public.\n4. **Record receipt** in `ww2/02_Video-Projects/003_.../status.json` via a clean PR and post one line on the studio thread.\n\n**Guards.** Field Order History (`UCu94mInMFosxu3W0H6jlI6Q`, Studio `9224`) only. Never play the public video or restart the thumbnail test. Never delete any video. `£0`.\n",
+      "ref": "",
+      "film": "WW2:003",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T01:04Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T01:04Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "After 2026-11-28T17:05:00Z verify RqYjADxvJy8 Public + 3-way T&C running, post & pin PINNED_COMMENT_v01.txt, link pilot 2 / Shorts",
+      "due": "2026-11-28T18:00:00Z",
+      "kind": "studio",
+      "plain": "Confirm B-29 film RqYjADxvJy8 is live with its 3-way thumbnail test running, pin its question, and cross-link pilot 2 and Shorts"
     }
   ],
   "focus": [

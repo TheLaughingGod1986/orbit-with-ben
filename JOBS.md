@@ -131,6 +131,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3651 | mini | open (after J3650) | – | – | assembly · Market intelligence: first run, daily schedule live, and the Market tab deployed to the board |  |
 | J3653 | mini | claimed | gemini | 2026-11-25T02:48Z | WW2:003 upload · studio · WW2:003 (B-29): upload Ben-approved v01 Private, scheduled Sat 28 Nov 17:00 London, 3-way thumb T&C |  |
 | J3654 | mini | open | – | – | WW2:003 edit · for claudecode · assembly · Claude Code: privacy-check and publish WW2:003 J3205/J3643 branches (gemini/J3643-qa + gemini/J3643-review) |  |
+| J3655 | mini | open | – | – | WW2:003 upload · studio · WW2:003 (B-29 RqYjADxvJy8): post-publish verify 3-way T&C running, pin comment, cross-link |  |
 
 Recently finished:
 
