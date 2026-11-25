@@ -325624,13 +325624,13 @@
       "stage": "script",
       "after": "J3550",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-25T13:10Z",
-      "eta": "2026-11-25T15:10Z",
+      "eta": "",
       "created_by": "macbook",
       "created_at": "2026-11-24T15:07Z",
-      "result": "",
+      "result": "parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J3551 in ww2-channel is 4 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/ww2-channel/pull/151. Review and merge it and close the job, or reopen the job with a note.",
       "history": [
         {
           "at": "2026-11-24T15:07Z",
@@ -325656,6 +325656,11 @@
           "at": "2026-11-25T13:10Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T13:15Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: the MacBook run on claude ended (exit 0) with its work pushed and the job still open. Branch macbook/J3551 in ww2-channel is 4 commit(s) ahead of main; pull request https://github.com/TheLaughingGod1986/ww2-channel/pull/151. Review and merge it and close the job, or reopen the job with a note."
         }
       ],
       "remaining_action": "Resolve archive coverage and facts then test the opening before locking narration",
