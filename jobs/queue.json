@@ -274361,13 +274361,13 @@
       "stage": "picture",
       "after": "J3021",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-25T14:17Z",
-      "eta": "2026-11-25T16:17Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-17T23:36Z",
-      "result": "",
+      "result": "Waiting for: Independent packaging panel (J3716, J3717, J3718, J3719) completes 05_Analytics/tests/panels/owb-064-every-planet/DECISION.md",
       "history": [
         {
           "at": "2026-11-17T23:36Z",
@@ -274393,9 +274393,19 @@
           "at": "2026-11-25T14:39Z",
           "by": "gemini",
           "what": "step 5 of 6 done: Merged PR #1326: shot_list_v01 (clip_check PASS 54 rows), cuts/pool/provenance (picture_qa PASS 0/86 fail), 25 fresh 24fps code graphics rendered on studio-live (CG_DONE=0), Thumbnails A/B/C all thumb_preview --score PASS, £0 music bed 701.9s music_gate PASS; queued packaging panel (J3716, J3717, J3718, J3719)"
+        },
+        {
+          "at": "2026-11-25T14:40Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: Independent packaging panel (J3716, J3717, J3718, J3719) completes 05_Analytics/tests/panels/owb-064-every-planet/DECISION.md"
+        },
+        {
+          "at": "2026-11-25T14:40Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-25T18:30:00Z"
         }
       ],
-      "remaining_action": "Waiting for independent packaging panel (J3716, J3717, J3718, J3719) DECISION.md before closing J3022",
+      "remaining_action": "Retain 05_Analytics/tests/panels/owb-064-every-planet/DECISION.md, apply any approved thumbnail/title tweaks, and close J3022 so J3023 assembly starts",
       "due": "2026-12-04T18:00:00Z",
       "kind": "chart",
       "plain": "Prepare shelf pictures, graphics and three thumbnails for the every-planet film",
@@ -274416,7 +274426,12 @@
       },
       "taskKeys": [
         "OWB:064"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Independent packaging panel (J3716, J3717, J3718, J3719) completes 05_Analytics/tests/panels/owb-064-every-planet/DECISION.md",
+        "check_at": "2026-11-25T18:30:00Z"
+      }
     },
     {
       "id": "J3023",
