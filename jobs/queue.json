@@ -337058,9 +337058,14 @@
           "at": "2026-11-25T10:29Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T10:29Z",
+          "by": "claudecode",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Verify readiness: Await Claude Code publication under J3530 after 2026-11-25T10:00:00Z reset (codex/j3597-review commit 1eb13065c3)",
+      "remaining_action": "Reading J3597 and J3530 history",
       "kind": "review",
       "recheck_of": "J3597",
       "due": "2026-11-25T05:03:00+00:00",
@@ -337075,11 +337080,15 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-25T10:29Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read J3597 and J3530 history",
+          "Check origin/main, branch and PR",
+          "Record wait or reopen J3597",
+          "Finish and report"
+        ]
       }
     },
     {
