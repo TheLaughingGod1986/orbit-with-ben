@@ -338425,20 +338425,32 @@
           "at": "2026-11-25T12:09Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T12:09Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Rule on the shorter St Nazaire cut and its 52% real-photo plan, then release or hold the edit",
+      "remaining_action": "Inspecting WW2 PR 50 deliverables, locked script, recut script, and J3600/J3614/J3431 context",
       "due": "2026-11-25T20:00:00Z",
       "kind": "chief",
       "plain": "Decide whether the shorter St Nazaire film, told with enough real archive photographs, can go to the edit",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-25T12:09Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect PR 50, recut script, and timing",
+          "Evaluate editorial coherence and rule 1 compliance",
+          "Record Chief ruling, merge PR 50 if accepted, update J3431 and J3432",
+          "Post Chief report on studio thread and close J3710"
+        ]
+      },
+      "taskKeys": [
+        "WW2:005"
+      ]
     }
   ],
   "focus": [
