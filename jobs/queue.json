@@ -342851,9 +342851,14 @@
           "at": "2026-11-25T21:44Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T21:46Z",
+          "by": "macbook",
+          "what": "step 2 of 3 done: Predecessor done and merged; J3724 work finished, waits only on the Chief's merge and ruling"
         }
       ],
-      "remaining_action": "Verify readiness: Parked for Chief: merge ww2-channel PR #169 and rule on already-Ben-OKd v02 vs v03 private watch staging",
+      "remaining_action": "Record the condition result on J3724 and report",
       "kind": "review",
       "recheck_of": "J3724",
       "due": "2026-11-25T22:44:45+00:00",
@@ -342867,12 +342872,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-25T21:44Z",
+        "at": "2026-11-25T21:46Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read the held job and its evidence",
+          "Check the condition and approvals",
+          "Record the result and report"
+        ],
+        "note": "Predecessor done and merged; J3724 work finished, waits only on the Chief's merge and ruling"
       }
     }
   ],
