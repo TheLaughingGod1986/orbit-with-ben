@@ -1,5 +1,5 @@
 {
-  "next_id": 3739,
+  "next_id": 3740,
   "jobs": [
     {
       "id": "J0001",
@@ -341551,6 +341551,37 @@
       "due": "2026-11-27T18:00:00Z",
       "kind": "script",
       "plain": "Scope and price 013's 8 already-ruled retake plates at £0"
+    },
+    {
+      "id": "J3739",
+      "title": "HOS 137 Accidental Inventions: long VO (5 parts) & Shorts S01/S02 VO from locked v02 scripts",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Queued by Acting Chief (gemini, J3734, 25 Nov 2026) after promoting **HOS:137** (*Accidental Inventions: 5 Mistakes That Worked*, Search-led Film 3, target **Thu 21 Jan 2027 18:00 London**, Ben watch Mon 18 Jan) into active HOS WIP (5/5) and completing its £0 pre-build (picture plan, 5 Flow prompt boards, lint-passing upload package & thumbnail brief).\n\n**Locked scripts (verify exact SHA-256 before spending any credit):**\n- Long (5 parts, 1,256 w, ~8.4 min): `02_Video-Projects/137_Accidental-Inventions-That-Changed-The-World/01_Script/accidental_inventions_script_master_v02.md` (`d2a359c4...`, J3687 KEEP, HOS PR #775)\n- Shorts S01 & S02 (16–19 s): `02_Video-Projects/137_Accidental-Inventions-That-Changed-The-World/10_Shorts/SHORTS_SCRIPTS_v02.md` (`62ff7c99...`, J3687 KEEP)\n\n**Voice & credit rules (Mac mini only, #3 in HOS post-30-Nov voice order behind HOS:128 J3670 & HOS:136 J3678):**\n1. Voice: **Ben Orbit Narrator** (`eleven_v3`), API only through `04_Audio/tools/el_client.py` / `vo_take.py` under `desk-lock elevenlabs` (`--dry-run` first; one recorder at a time). Never use the ElevenLabs website or any other voice.\n2. Check live ElevenLabs balance first and log with `ai_spend.py record --pool elevenlabs --film HOS:137`. Subscription floor is 0; spend nothing if balance is below what the take needs; never buy credits or spill into paid billing.\n3. Run `00_Brand/Channel-Setup/tools/vo_check_py312.sh` on every long part and both Shorts (`atempo <= 1.06`; Shorts 16.0–19.0 s).\n4. Commit metadata, word timings, SHA-256 hashes, and pasted `vo_check` outputs in a clean HOS PR (no media in git); update `status.json`; park for Chief VO PASS.\n",
+      "ref": "J3734",
+      "film": "137",
+      "stage": "vo",
+      "after": "J3678",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T19:17Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T19:17Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Record 5-part long VO + 2 Shorts VOs via el_client.py after 30 Nov reset & J3678",
+      "due": "2026-12-07T18:00:00Z",
+      "kind": "vo",
+      "plain": "Record Accidental Inventions long and Shorts voiceovers after 128 and 136 (post-30-Nov reset)",
+      "mini_only": true
     }
   ],
   "focus": [
