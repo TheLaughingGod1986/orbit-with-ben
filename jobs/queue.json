@@ -341655,13 +341655,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T19:40Z",
-      "eta": "2026-11-25T21:40Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T19:17Z",
-      "result": "",
+      "result": "Acting Chief (gemini, 25 Nov 2026): PASS & merged HOS PR #787 (041a2c45 -> main 1950fce1, 5/5 CI green, MERGEABLE/CLEAN, 137 added + production-status.md patch, PICTURE_PLAN_v02 untouched) following claudecode's independent non-producer review of J2652 v03f-r4 (ad52a2dc). Verified locked NAS VO WAV SHA-256 exact match (837178125a72fb250d255f1039c5cb7f8630bbb313cf23801a1155f257d796e0) and inspected full-size P5:02b Hooker plate (legible/unclipped; minor dossier-border overlap logged as non-blocking final-edit polish). Closed J2652 done. Next for HOS 013 (Thu 31 Dec slot): J3738 (8 confirmed retakes £0 board, claimed by claudecode) and existing J3178/J2529 holds unchanged. £0 / 0 credits.",
       "history": [
         {
           "at": "2026-11-25T19:17Z",
@@ -341712,6 +341712,11 @@
           "at": "2026-11-25T19:40Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T19:40Z",
+          "by": "gemini",
+          "what": "done: Acting Chief (gemini, 25 Nov 2026): PASS & merged HOS PR #787 (041a2c45 -> main 1950fce1, 5/5 CI green, MERGEABLE/CLEAN, 137 added + production-status.md patch, PICTURE_PLAN_v02 untouched) following claudecode's independent non-producer review of J2652 v03f-r4 (ad52a2dc). Verified locked NAS VO WAV SHA-256 exact match (837178125a72fb250d255f1039c5cb7f8630bbb313cf23801a1155f257d796e0) and inspected full-size P5:02b Hooker plate (legible/unclipped; minor dossier-border overlap logged as non-blocking final-edit polish). Closed J2652 done. Next for HOS 013 (Thu 31 Dec slot): J3738 (8 confirmed retakes £0 board, claimed by claudecode) and existing J3178/J2529 holds unchanged. £0 / 0 credits."
         }
       ],
       "remaining_action": "Chief to confirm CI on HOS PR 787, merge it and close J2652",
@@ -341736,7 +341741,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/787"
     },
     {
       "id": "J3738",
