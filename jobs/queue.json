@@ -341296,10 +341296,10 @@
       "stage": "",
       "after": "",
       "eta_min": 90,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T19:01Z",
+      "eta": "2026-11-25T20:31Z",
       "created_by": "claude",
       "created_at": "2026-11-25T18:08Z",
       "result": "",
@@ -341308,12 +341308,25 @@
           "at": "2026-11-25T18:08Z",
           "by": "claude",
           "what": "added"
+        },
+        {
+          "at": "2026-11-25T19:01Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Make one HOS line-up to the end of January and give each film its next job",
       "due": "2026-11-27T18:00:00Z",
       "kind": "chief",
-      "urgent": 9
+      "urgent": 9,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T19:01Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3735",
