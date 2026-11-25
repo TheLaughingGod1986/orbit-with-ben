@@ -127,6 +127,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3666 | mini | open (after J3665) | – | – | 006 edit · qa · WW2 006: full private audiovisual QA of v02 master |  |
 | J3667 | mini | open (after J3666) | – | – | 006 edit · chief · WW2 006: Chief decision on v02 delivery and Ben watch staging |  |
 | J3668 | mini | open | – | – | review · Verify condition for J3178 |  |
+| J3669 | mini | open | – | – | review · Verify condition for J3434 |  |
 
 Recently finished:
 
