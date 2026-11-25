@@ -281866,9 +281866,14 @@
           "at": "2026-11-24T09:06Z",
           "by": "relay",
           "what": "condition verification queued: J3470"
+        },
+        {
+          "at": "2026-11-25T07:16Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-25T10:15:00Z"
         }
       ],
-      "remaining_action": "Obtain explicit authorization for the Pluto package public-repository export; then reconcile its ledger entry and submit the existing package for final review",
+      "remaining_action": "Await J3530 (Mini Claude Code after 2026-11-25T10:00:00Z reset) to privacy-check, reconcile THUMB_LEDGER T041->next unused ID (T044), push/merge codex/j3114-pluto-v02 (a12100797f), and close J3114 for J3115",
       "due": "2026-12-08T18:00:00Z",
       "kind": "thumb",
       "plain": "Rebuild Pluto 034 long thumbnails A/B/C v02 and apply the 3-model packaging panel title and <5,000-char description fixes before Chief ruling J3112",
@@ -281884,12 +281889,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J3446 acting Chief codex ruling: CONDITION NOT MET. Accepted merged evidence PR 1222 (2b8911c510); reviewed 39 newer comments through 7113840686 and unchanged approval board updated 23 Nov 09:57Z: no explicit J3114 public-repository export authorization. Local a12100797f remains clean; Gemini verified 12 package and 4 video hashes. Prior automatic approval review rejected branch export twice; do not bypass via another worker or route. External authorization check 24 Nov 09:00Z. Once explicitly authorized, reconcile proposed T041 with the next unused ledger ID (currently T044), submit existing package to J3115 without rebuild, and preserve J3119 dependency plus UAT and Shorts holds.",
-        "check_at": "2026-11-24T10:06:30+00:00",
-        "last_recheck": "J3446",
-        "checked_at": "2026-11-23T21:03:21+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3470"
+        "condition": "Acting-Chief ruling (J3470, merged PR #1256 @ cfcaaba434): export-authorization condition MET & superseded by Ben 24 Nov 2026 rule (AGENTS.md PR #1250, 8de8a1c2e2) and urgent Mini Claude Code publish job J3530 (open, for claudecode, due 2026-11-25T12:00:00Z). Do NOT reopen J3114 to codex or rebuild. Keep J3114 held solely on J3530 publication: publish via Claude Code: /Volumes/MiniWork/scratch/j3114-wt codex/j3114-pluto-v02 (local clean commit a12100797f680d2bae5d9c517efea751d04785f8; no remote branch or PR yet). claudecode resets 2026-11-25T10:00:00Z (verify at 10:15Z). J3530 must formally privacy-check a12100797f, reconcile proposed THUMB_LEDGER.json T041 -> next unused ID (currently T044, 43 rows through T043), push/open/merge PR when green, and close J3114 so J3115 starts. 12/12 NAS_VERIFY_J3114.json and 4/4 preserved NAS video hashes verified intact; J3115, J3119, UAT (OWB-034, OWB-J2868.2, OWB-J2868.3) and J3065/J3066 Shorts holds preserved.",
+        "check_at": "2026-11-25T10:15:00Z",
+        "last_recheck": "J3470",
+        "checked_at": "2026-11-25T07:16:58+00:00",
+        "checked_by": "gemini"
       },
       "escalated_at": "2026-11-19T11:45Z"
     },
