@@ -1,5 +1,5 @@
 {
-  "next_id": 3661,
+  "next_id": 3662,
   "jobs": [
     {
       "id": "J0001",
@@ -332654,6 +332654,11 @@
           "at": "2026-11-25T02:44Z",
           "by": "gemini",
           "what": "blocked: parked for Chief: all 6 FIX items, 3 polishes, 8/8 v03 SHA-256 hashes, Arm B 0-collision evidence, review:script 91.9/100 PASS, default gate:episode (no --script) PASS on v03, and check_all.sh PASS verified in HOS PR #763 (advisory RECOMMEND KEEP); chief_relay.py status returned Chief: Codex at 02:41:49Z before protected calls, so PR #762 merge, J3547 closure, and HOS 128 long+Shorts VO queueing are handed back to elected Chief"
+        },
+        {
+          "at": "2026-11-25T02:44Z",
+          "by": "relay",
+          "what": "condition verification queued: J3661"
         }
       ],
       "remaining_action": "Parking J3660 for elected Chief protected calls and posting reports",
@@ -332684,7 +332689,44 @@
       },
       "taskKeys": [
         "HOS:128"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-25T03:44:54+00:00",
+        "recheck_task": "J3661"
+      }
+    },
+    {
+      "id": "J3661",
+      "title": "Verify condition for J3660",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3660: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3660 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-25T02:44Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T02:44Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Parking J3660 for elected Chief protected calls and posting reports",
+      "kind": "review",
+      "recheck_of": "J3660",
+      "due": "2026-11-25T03:44:54+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
