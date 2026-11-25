@@ -324805,19 +324805,33 @@
           "at": "2026-11-25T04:43Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T04:43Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3552; starting independent facts audit of HOS:136 PR #753 (commit ebb55eea)"
         }
       ],
-      "remaining_action": "Run independent gemini-agy facts check on HOS PR #753 script, SOURCES.md, FACT_NOTES_v01.md & Shorts",
+      "remaining_action": "Check out PR #753 in a clean HOS worktree and read all HOS:136 files",
       "due": "2026-12-03T18:00:00Z",
       "kind": "facts",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-25T04:43Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check out PR #753 and read HOS:136 files",
+          "Audit all script, SOURCES, FACT_NOTES and Shorts claims against primary sources",
+          "Check all 7 J3502 guardrails, WHO roles/lifespans and HOS lane compliance",
+          "Write independent audit report and update status/production-status",
+          "Push follow-on PR, verify CI/checks and post desk handoff"
+        ],
+        "note": "Claimed J3552; starting independent facts audit of HOS:136 PR #753 (commit ebb55eea)"
+      },
+      "taskKeys": [
+        "HOS:136"
+      ]
     },
     {
       "id": "J3553",
