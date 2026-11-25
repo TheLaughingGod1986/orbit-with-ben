@@ -330030,20 +330030,33 @@
           "at": "2026-11-25T01:35Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T01:35Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "HOS 128: independent v02 facts and source verification",
+      "remaining_action": "Reading HOS 128 v02 files (PR #758), PR #752, and J3547 ruling",
       "due": "2026-11-27T18:00:00Z",
       "kind": "facts",
       "plain": "Independently check every fact in the corrected Edison and Tesla film",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-25T01:35Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect v02 inputs, PR752 & J3547",
+          "Verify Pearl St, Stanley & AC physics",
+          "Verify Niagara, Chicago & Ferraris",
+          "Verify cables, cards & nuclear handoff",
+          "Write report, check & open PR"
+        ]
+      },
+      "taskKeys": [
+        "HOS:128"
+      ]
     },
     {
       "id": "J3630",
