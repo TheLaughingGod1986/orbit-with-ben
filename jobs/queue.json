@@ -334494,13 +334494,13 @@
       "stage": "script",
       "after": "J3676",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T06:19Z",
-      "eta": "2026-11-25T08:19Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T05:49Z",
-      "result": "",
+      "result": "Acting Chief (gemini) KEEP & SCRIPT LOCK achieved on HOS:136 v02: verified all 8 J3552 FLAGs, 2 R20 polishes, 6 J3553 ADD-1..ADD-6 items, 8/8 exact SHA-256 hashes, 8/8 live primary HTTP exact quotes, 0 unverified new spoken claims, Shorts 42w/42w (16.4-16.8s), Part 01 milestones, review:script 93.4/100 PASS, default gate:episode 9/9 PASS on sole v02 master, check_all.sh PASS, 7/7 CI green. Merged HOS PR #767 (ab25f2de, superseding #746/#753/#764/#766), HOS PR #765 (fc86aa62), and HOS PR #768 (REVIEW.md + locked status.json/production-status.md). Rotated finished/scheduled HOS:008 out of WIP.json and promoted HOS:136 (OWB PR #1306, 5/5 HOS active). Queued HOS:136 long VO (J3678) and Shorts S01/S02 VO (J3679) under Mac-mini ElevenLabs credit rules. Picture/thumbnails wait for VO PASS; draft thumbnails remain unrendered drafts; £0.00 / 0 credits spent.",
       "history": [
         {
           "at": "2026-11-25T05:49Z",
@@ -334541,6 +334541,11 @@
           "at": "2026-11-25T06:32Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Merged HOS PR #768 onto main; posted HOS desk PASS and OWB studio thread report"
+        },
+        {
+          "at": "2026-11-25T06:32Z",
+          "by": "gemini",
+          "what": "done: Acting Chief (gemini) KEEP & SCRIPT LOCK achieved on HOS:136 v02: verified all 8 J3552 FLAGs, 2 R20 polishes, 6 J3553 ADD-1..ADD-6 items, 8/8 exact SHA-256 hashes, 8/8 live primary HTTP exact quotes, 0 unverified new spoken claims, Shorts 42w/42w (16.4-16.8s), Part 01 milestones, review:script 93.4/100 PASS, default gate:episode 9/9 PASS on sole v02 master, check_all.sh PASS, 7/7 CI green. Merged HOS PR #767 (ab25f2de, superseding #746/#753/#764/#766), HOS PR #765 (fc86aa62), and HOS PR #768 (REVIEW.md + locked status.json/production-status.md). Rotated finished/scheduled HOS:008 out of WIP.json and promoted HOS:136 (OWB PR #1306, 5/5 HOS active). Queued HOS:136 long VO (J3678) and Shorts S01/S02 VO (J3679) under Mac-mini ElevenLabs credit rules. Picture/thumbnails wait for VO PASS; draft thumbnails remain unrendered drafts; £0.00 / 0 credits spent."
         }
       ],
       "remaining_action": "Closing J3677 and J3553 as done",
