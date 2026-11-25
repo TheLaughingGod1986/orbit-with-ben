@@ -313875,13 +313875,13 @@
       "stage": "edit",
       "after": "J3429",
       "eta_min": 480,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-24T15:56Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T15:29Z",
-      "result": "parked for Chief: WW2:004 v01 master rendered and verified on NAS (ww2_004_torpedoes_v01.mp4, sha256 d2656fea86b93c4b7978817153b46167934314e4e99307b59e47e33111ae03fc, 50.52% archive, 50 photos, J3447 preserved, -15.8 LUFS / -1.5 dBTP, 0 decode errors) with zero-spend score, 355 UK captions, 3 rule-2 thumbnails + sheet, and upload package on ww2 branch gemini/J3430-assembly. Chief (codex) to review PR, merge (reconciling PR #60), and stage on Ben's watch (due 2026-11-28 20:00 UTC).",
+      "result": "",
       "history": [
         {
           "at": "2026-11-23T15:29Z",
@@ -313972,34 +313972,20 @@
           "at": "2026-11-25T01:56Z",
           "by": "gemini",
           "what": "waits on Ben: Watch Mark 14 Torpedo: Why Perfect Hits Failed (v02, 22m37s) + 3 thumbnails (A/B/C) and say OK or what to change (by 2026-11-28 20:00 London)"
+        },
+        {
+          "at": "2026-11-25T01:58Z",
+          "by": "gemini",
+          "what": "reopened: J3639 elected acting Chief PASS on WW2:004 v02: PR #115 (6a91874), PR #130 (fc0c886), PR #131 (ec21700), OWB PR #1298 (4759acc1cf) merged; checksum-verified copy staged in WW2 UAT/004_Why-US-Submarine-Torpedoes-Failed-21-Months/ (SHA-256 991dfba22dc7663006fea95f971a8f8bfda5fa8febf81512add90d6a2e552dcb); private R2 watch ww2-004-v02 verified HTTP 302; J3430 awaits set (due 2026-11-28T20:00Z, air 2026-12-01T17:00Z)."
         }
       ],
       "remaining_action": "Hold J3430 pending v02 zero-spend visual repair (J3637), v02 full audiovisual QA (J3638), and Chief v02 watch staging (J3639)",
       "due": "2026-11-28T20:00:00Z",
       "kind": "assembly",
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-24T16:20Z",
-        "by": "gemini",
-        "plan": [
-          "Check narration and picture plan",
-          "Build cut and captions",
-          "Build thumbnails and upload package",
-          "Verify and prepare Ben watch"
-        ],
-        "note": "Rendered 1080p master on NAS (sha256 d2656fea..., 50.52% archive across 50 photos, J3447 12 paragraphs preserved, -15.8 "
-      },
       "taskKeys": [
         "WW2:004"
       ],
       "urgent": 3,
-      "hold": {
-        "type": "dependency",
-        "condition": "J3625 elected-Chief ruling: v01 HELD (not passed/not staged to WW2 UAT) due to J3624 visual QA blockers (00:06.8 Rule 3 spoiler, tofu glyph + leaked internal boilerplate on 15+ slides, 14 frozen empty-box holds of 21-38s, missing Ch3 card, 17 <60s repeats, 3 <2s flashes). Wait for zero-spend v02 repair (J3637), full v02 private audiovisual QA (J3638), and elected-Chief v02 approval & Ben-watch staging (J3639). Adopted Rule-2 title: Mark 14 Torpedo: Why Perfect Hits Failed (40 chars). Watch due 2026-11-28T20:00Z; planned air 2026-12-01T17:00Z.",
-        "check_at": "2026-11-24T23:56:28+00:00",
-        "recheck_task": "J3640"
-      },
       "escalated_at": "2026-11-24T18:35Z",
       "awaits_ben": {
         "what": "Watch Mark 14 Torpedo: Why Perfect Hits Failed (v02, 22m37s) + 3 thumbnails (A/B/C) and say OK or what to change",
