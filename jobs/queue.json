@@ -342345,9 +342345,14 @@
           "at": "2026-11-25T20:26Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T20:28Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Demonstrated real audio_input and moving_video_input on 0:00-0:15 probe clip; SHA-256 1a6b253f8e57185950749568e8d412d2a527966348ec8420d6d71458f7b5cf17 verified exact match (1920x1080, 24 fps, 21269 frames, 886.218 s)."
         }
       ],
-      "remaining_action": "Watch and listen to WW2 005 v03 verifying 19 VO splices, score bed, static holds, long plates, captions and thumbnails, then park PR for Chief",
+      "remaining_action": "Verifying NAS v03 master hash and slicing into 10 watchable 720p audiovisual chunks on NAS scratch",
       "due": "2026-11-28T20:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -342365,12 +342370,22 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T20:26Z",
+        "of": 6,
+        "at": "2026-11-25T20:28Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify master hash and split chunks",
+          "Watch and listen 0:00 to 4:30",
+          "Watch and listen 4:30 to 9:00",
+          "Watch and listen 9:00 to 14:46",
+          "Audit splices, captions, thumbs, package",
+          "Write QA report and open PR"
+        ],
+        "note": "Demonstrated real audio_input and moving_video_input on 0:00-0:15 probe clip; SHA-256 1a6b253f8e57185950749568e8d412d2a5"
+      },
+      "taskKeys": [
+        "WW2:005"
+      ]
     }
   ],
   "focus": [
