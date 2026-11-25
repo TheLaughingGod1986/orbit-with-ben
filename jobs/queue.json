@@ -317639,19 +317639,32 @@
           "at": "2026-11-25T10:15Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T10:16Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "After qfc6EBStOfo is Public, post and pin the exact package question and verify it",
+      "remaining_action": "Verify qfc6EBStOfo is Public and read PINNED_COMMENT_v06.txt",
       "kind": "studio",
       "plain": "Pin the question for viewers when the new U-boat film goes live",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T10:15Z",
+        "of": 5,
+        "at": "2026-11-25T10:16Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify qfc6EBStOfo is Public and read PINNED_COMMENT_v06.txt",
+          "Check existing comments on qfc6EBStOfo via Studio 9224",
+          "Post or reuse exact comment and pin it",
+          "Verify pinned state and no unintended changes",
+          "Record receipt, report on studio thread, and finish job"
+        ]
+      },
+      "taskKeys": [
+        "WW2:002"
+      ]
     },
     {
       "id": "J3468",
