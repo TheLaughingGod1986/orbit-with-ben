@@ -1,5 +1,5 @@
 {
-  "next_id": 3667,
+  "next_id": 3668,
   "jobs": [
     {
       "id": "J0001",
@@ -333239,6 +333239,36 @@
         "moving_video_input"
       ],
       "plain": "Full private end-to-end watch and listen QA of WW2 006 v02 master"
+    },
+    {
+      "id": "J3667",
+      "title": "WW2 006: Chief decision on v02 delivery and Ben watch staging",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Follow-up to `J3663` elected acting Chief ruling (`07_Edit/CHIEF_RULING_J3663.md` on `ww2-channel` `main`): after `WW2:006` `v02` zero-spend visual/graphic repair and genuine full private audiovisual QA of `v02` finish, the elected Chief rechecks authority (`chief_relay.py status`) and decides `WW2:006` `v02` delivery.\n\n**Do:**\n1. Review the `v02` repair PR and `v02` full audiovisual QA PR (`07_Edit/QA_REVIEW_v02.md`) against `ww2-channel` `main` and `studio/RULES.md`:\n   - Confirm all 7 prior stages preserved (`picture: done`), `>= 50%` (target `>= 53.5%`) real provenanced archive, zero `J3662`/`J3663` defects remaining, Rule-2 title **`De Havilland Mosquito: Why It Was Made of Wood`** (46 chars), and schedule air `Sat 5 Dec 17:00` London (`2026-12-05T17:00:00Z`) / Ben watch due `2026-12-02T20:00:00Z`.\n2. Resolve any remaining failure rather than waiving it. Only if `v02` cleanly passes full audiovisual QA and technical checks:\n   - Merge the reviewed clean PRs (`v02` repair PR + `v02` QA PR) to `ww2-channel` `main`, and record Chief ruling (`07_Edit/CHIEF_RULING_<job_id>.md`, updating `status.json` and `metadata_v02.json` to `STAGED_FOR_BEN_WATCH_NO_UPLOAD`, `upload_authorized: false`).\n   - Independently verify the exact `v02` master SHA-256 on NAS `studio-live`, make a checksum-verified private copy + 3 thumbnails (`A`, `B`, `C`) and `thumbnail_comparison_v01.jpg` in `WW2 UAT/006_De-Havilland-Mosquito-Plywood-Balsa-Bomber/`, and upload the private R2 watch copy.\n   - Arm `jobs.py awaits` on `J3434` (`due 2026-12-02T20:00Z`, air `2026-12-05T17:00Z`), verify the board watch card/link, and mark `J3434` done.\n3. If any gate fails, keep `J3434` held with a precise follow-up.\n\n**Guards:** `£0` spend. Preserve Ben's approval requirement before any YouTube upload, schedule, or privacy change. Nothing here needs Ben other than watching the finished cut.\n",
+      "ref": "",
+      "film": "006",
+      "stage": "edit",
+      "after": "J3666",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T03:55Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T03:55Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Review WW2 006 v02 repair and QA PRs; if clean PASS, merge, verify SHA-256, stage WW2 UAT + private R2 watch copy, arm J3434 awaits (due 2026-12-02T20:00Z)",
+      "due": "2026-12-01T20:00:00Z",
+      "kind": "chief",
+      "plain": "Elected Chief decision on WW2 006 v02 delivery, clean PR merge, and Ben watch staging (due 2 Dec 20:00 UTC)"
     }
   ],
   "focus": [
