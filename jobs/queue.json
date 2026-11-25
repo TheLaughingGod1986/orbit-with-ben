@@ -343434,10 +343434,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T23:06Z",
+      "eta": "2026-11-26T01:06Z",
       "created_by": "gemini",
       "created_at": "2026-11-25T22:57Z",
       "result": "",
@@ -343451,6 +343451,11 @@
           "at": "2026-11-25T22:57Z",
           "by": "gemini",
           "what": "approved by Ben: Watch B-29 vs the Atomic Bomb: Which Cost More? (Short 003-S3 v01, 40.5s) and say OK or what to change v01 (asked in J3725)"
+        },
+        {
+          "at": "2026-11-25T23:06Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify master SHA-256 and upload 003-S3 v01 Private scheduled Sat 28 Nov 12:30 London",
@@ -343470,6 +343475,14 @@
         "job": "J3725",
         "okAt": "2026-11-25T22:57Z",
         "okRef": "J3725"
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T23:06Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
