@@ -343382,10 +343382,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T23:41Z",
+      "eta": "2026-11-26T01:41Z",
       "created_by": "relay",
       "created_at": "2026-11-25T22:48Z",
       "result": "",
@@ -343429,6 +343429,11 @@
           "at": "2026-11-25T23:41Z",
           "by": "gemini",
           "what": "reopened: Acting-Chief (gemini) closing J3751 after PASS ruling on WW2:004 v04 (ww2-channel PR #177 e923ac1, OWB PR #1332 c8297639f7), private watch staging (ww2-004-v04), J3430 awaits update (--prev WW2-004), and closing J3744."
+        },
+        {
+          "at": "2026-11-25T23:41Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parking for the Chief to rule on the film 4 v04 check and stage it for Ben's watch",
@@ -343446,7 +343451,15 @@
       "open_claim": true,
       "taskKeys": [
         "WW2:004"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T23:41Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3752",
