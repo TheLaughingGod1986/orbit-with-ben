@@ -294,6 +294,9 @@ def delivery_jobs_for(video: dict, alljobs: list[dict]) -> list[dict]:
     job_id = appr.get("job") or ""
     film = str(video.get("number") or "")
     key = video.get("key") or ""
+    # A job-keyed card (WW2:ASK:J3542) also answers to the name its ask gave it (WW2:001-S1), which the upload job
+    # names (25 Nov 2026: J3646 had delivered it for 17 h while the board still asked for an upload job).
+    names = {key, *(video.get("aliases") or [])} - {""}
     out = []
     for j in alljobs:
         if j.get("status") not in ("open", "claimed", "blocked", "done"):
@@ -303,10 +306,11 @@ def delivery_jobs_for(video: dict, alljobs: list[dict]) -> list[dict]:
         # 24 Nov 2026: upload jobs filed as `listing` (the Uranus and Pluto Shorts) and the swap a card names (Muons,
         # J2881) are delivery too; only review-type work is not. A job may list every card it delivers (`delivers`):
         # one upload job takes a long and its Shorts (HOS 008 with Shorts A and C in J3500).
-        delivery = j.get("stage") == "upload" or key in (j.get("delivers") or []) or (
+        listed = bool(names & set(j.get("delivers") or []))
+        delivery = j.get("stage") == "upload" or listed or (
             j.get("kind") not in ("review", "qa", "chief", "script", "facts")
             and bool(re.search(r"\b(?:upload|buffer|swap)", text, re.I)))
-        if key and key in (j.get("delivers") or []):
+        if listed:
             out.append(j)
             continue
         if job_id and j.get("id") == job_id and delivery:
@@ -315,7 +319,7 @@ def delivery_jobs_for(video: dict, alljobs: list[dict]) -> list[dict]:
         if is_swap(j):
             continue
         af = j.get("approved_from") if isinstance(j.get("approved_from"), dict) else {}
-        if delivery and af and (af.get("card") == key or (
+        if delivery and af and (af.get("card") in names or (
                 video.get("type") != "short" and film and str(af.get("number")) == film
                 and af.get("channel") == video.get("channel") and af.get("type") != "short"
                 and af.get("version") == (appr.get("version") or video.get("version")))):

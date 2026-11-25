@@ -112,6 +112,30 @@ class BoardOK(unittest.TestCase):
         self.assertEqual(ad.waiting_approvals([short_a], [review, bundle], now=NOW), [])
         self.assertEqual(ad.approval_alerts([short_a], [review], now=NOW)[0]['href'], '#v=HOS%3AASK%3AJ2699')
 
+    def test_upload_that_names_the_asks_own_card_counts_as_delivery(self):
+        # 25 Nov 2026: J3542 asked Ben about card WW2:001-S1; no such card existed, so the board keyed it WW2:ASK:J3542.
+        # J3646 uploaded it (delivers ['WW2:001-S1']) and the banner still said "waiting for an upload job, 17 h".
+        ask = {"what": "Watch the Mulberry Short", "file": "mulberry_short_v02.mp4", "version": "v02",
+               "airs": "2026-11-26T12:00Z", "card": "WW2:001-S1", "channel": "WW2", "number": "001-S1",
+               "type": "short", "id": "J3542", "job": "J3542", "jobStatus": "done", "title": "Mulberry Short"}
+        short = vt.ask_card(ask)
+        self.assertEqual((short["key"], short["aliases"]), ("WW2:ASK:J3542", ["WW2:001-S1"]))
+        short.update(lane="approved", readyFor="", approved={"job": "J3542", "askJob": "J3542", "version": "v02",
+                                                "okAt": (NOW - dt.timedelta(hours=17)).isoformat()})
+        build = {"id": "J3542", "status": "done", "kind": "assembly", "repo": "ww2", "title": "One test Short"}
+        self.assertEqual(len(ad.approval_alerts([short], [build], now=NOW)), 1)
+        upload = {"id": "J3646", "status": "done", "kind": "studio", "stage": "upload", "repo": "ww2",
+                  "title": "WW2 001-S1: upload Ben-approved Mulberry Short v02", "delivers": ["WW2:001-S1"]}
+        self.assertEqual(ad.delivery_jobs_for(short, [build, upload]), [upload])
+        self.assertEqual(ad.approval_alerts([short], [build, upload], now=NOW), [])
+        # approved_from naming the ask's card settles that card too, rather than adding a second one.
+        videos = [vt.ask_card(ask)]
+        entry = {**{k: ask[k] for k in ("what", "file", "version", "airs", "card", "title", "number", "type", "channel")},
+                 "askJob": "J3542", "id": "J3646", "job": "J3646", "jobStatus": "done", "okAt": "",
+                 "result": "Uploaded as NoQQqrW2meM (Private, scheduled Thu 26 Nov 2026 12:00 London)"}
+        vt.add_approved(videos, [entry], {}, NOW, files={})
+        self.assertEqual([(v["key"], v["lane"]) for v in videos], [("WW2:ASK:J3542", "done")])
+
     def test_board_alert_payload_and_swap_guard(self):
         import ben_alerts
         with tempfile.TemporaryDirectory() as d:
