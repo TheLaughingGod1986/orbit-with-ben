@@ -335362,16 +335362,21 @@
           "at": "2026-11-25T07:57Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Independently fetched all 36 unique URLs in SOURCES.md and FACT_NOTES_v02.md (36/36 HTTP 200, 0 dead URLs); verified every verbatim quote, PDF extract (Lechner 2019), Crossref DOI (Chardack 2006), Amigone obituary (Gage 2024), and Art Fry living status."
+        },
+        {
+          "at": "2026-11-25T07:58Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Completed full v02 claim, visual-card, Shorts pacing, and J3564 FLAG-1..4 audit: 18 OK / 10 PARTIAL / 0 FLAG across 28 items (all 4 J3564 FLAGs resolved, 36/36 URLs HTTP 200, all cards <=4 words, Part 01 milestones & Shorts 17.2s pacing verified)."
         }
       ],
-      "remaining_action": "Audit v02 script claims, visual cards, Shorts S01/S02 pacing, packaging evidence, and all 4 J3564 FLAG resolutions",
+      "remaining_action": "Write 01_Script/GEMINI_FACTS_CHECK_v02.md (18 OK / 10 PARTIAL / 0 FLAG) and run 00_Brand/Channel-Setup/tools/check_all.sh",
       "due": "2026-12-04T18:00:00Z",
       "kind": "facts",
       "plain": "Independently verify every fact, source URL and exact quote in the HOS 137 v02 script and Shorts.",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-25T07:57Z",
+        "at": "2026-11-25T07:58Z",
         "by": "gemini",
         "plan": [
           "Stack worktree and record SHA-256 hashes",
@@ -335380,7 +335385,7 @@
           "Write GEMINI_FACTS_CHECK_v02.md and run check_all.sh",
           "Open HOS PR and hand off to Chief"
         ],
-        "note": "Independently fetched all 36 unique URLs in SOURCES.md and FACT_NOTES_v02.md (36/36 HTTP 200, 0 dead URLs); verified eve"
+        "note": "Completed full v02 claim, visual-card, Shorts pacing, and J3564 FLAG-1..4 audit: 18 OK / 10 PARTIAL / 0 FLAG across 28 i"
       },
       "taskKeys": [
         "HOS:137"
