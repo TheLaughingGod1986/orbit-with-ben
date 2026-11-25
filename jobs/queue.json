@@ -334988,9 +334988,14 @@
           "at": "2026-11-25T07:03Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T07:04Z",
+          "by": "macbook-2",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Verify readiness: Delivered HOS PR #770; parking J3565 for Chief and posting report",
+      "remaining_action": "Inspect J3565 history, predecessor J3564, HOS PRs and Chief rulings",
       "kind": "review",
       "recheck_of": "J3565",
       "due": "2026-11-25T08:03:01+00:00",
@@ -335004,12 +335009,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-25T07:03Z",
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-25T07:04Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect J3565 & predecessor history",
+          "Check PRs, desk & studio thread",
+          "Update J3565 hold or reopen",
+          "Close J3683 & post report"
+        ]
       }
     },
     {
