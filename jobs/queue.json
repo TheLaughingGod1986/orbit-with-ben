@@ -1,5 +1,5 @@
 {
-  "next_id": 3685,
+  "next_id": 3686,
   "jobs": [
     {
       "id": "J0001",
@@ -335105,6 +335105,36 @@
       "kind": "studio",
       "backlog": "studio-ctr-daily",
       "urgent": 0
+    },
+    {
+      "id": "J3685",
+      "title": "HOS 137: correct Accidental Inventions script, sources & Shorts to v02 (9 J3564/J3565 fixes)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting Chief (`gemini`) FIX ruling on **HOS:137** (*Accidental Inventions: 5 Mistakes That Worked*, target Thu 24 Dec 2026 18:00 London) following `J3564` independent Gemini facts audit (**HOS PR #769**, `7ae40acf`) and `J3565` independent review (**HOS PR #770**, `638df933`, merged to HOS `main`) + `J3683` verification (**OWB PR #1308**, merged to OWB `main`).\n\nBuild **`v02`** cleanly on a new branch stacked on `origin/gemini/J3564-hos137-facts-audit` (`7ae40acf`, which already carries PR `#747` + PR `#754` + PR `#769`), in your own clean worktree (`git worktree add -b <branch> <dir> origin/gemini/J3564-hos137-facts-audit`). Do NOT merge, lock, or spend (`£0.00`).\n\n### Mandatory Corrections (`FIX-1` through `FIX-9` — every item required)\n1. **`FIX-1` (`J3564` FLAG-1 — Bénédictus French Patent `FR 405,881` date):** Update Part 03 line 85 from *\"filed his French patent in November nineteen oh-nine\"* to *\"filed his French patent in August nineteen oh-nine\"* (primary `https://patents.google.com/patent/FR405881A/en` filing/priority date `1909-08-10`) or year-only *\"filed his French patent in nineteen oh-nine\"*. Add `FR405881A` to `SOURCES.md` and `FACT_NOTES_v02.md`.\n2. **`FIX-2` (`J3564` FLAG-2 — Chardack-Greatbatch 1960 two-stage implant & survival):** Update Part 01 lines 31 & 34 so the self-contained mercury-battery pulse generator is not attributed unqualified to `April 1960` (use *\"in nineteen sixty\"* or *\"in June nineteen sixty\"* / visual `Buffalo 1960` or `Buffalo June 1960` per `PMC3232561` & VA two-stage April lead + June 1960 pulse generator). Reconcile *\"eighteen months\"* with VA/`PMC3232561` *\"two years\"* (prefer *\"two years\"* matching both institutional sources, or document the literature variance explicitly in `FACT_NOTES_v02.md`).\n3. **`FIX-3` (`J3564` FLAG-3 — Dead URL, lifespans & 8 primary upgrades):** Replace dead `HTTP 521` `https://heartrhythm.com/40th-Anniversary/Wilson-Greatbatch` in `FACT_NOTES_v02.md` & `SOURCES.md` (and `S01` provenance) with live peer-reviewed `https://pmc.ncbi.nlm.nih.gov/articles/PMC3232561/`. Merge `J3564`'s 8 primary/institutional upgrades (`FR405881A`, `PMC3232561`, `PMC5403050`, `US3633A` `270°F`, NobelPrize.org Fleming/Florey/Chain/1945, NIHF Arthur L. Fry & Percy L. Spencer, 3M Post-it history, `US2495429A`), add explicit opened source quotes for the lifespans of Chardack (`1914–2006`), Gage (`1922–2024`), Elmqvist (`1906–1996`), and Senning (`1915–2000`), and remove the un-upheld `\"24 OK · 0 PARTIAL · 0 FLAG\"` summary line from `FACT_NOTES`.\n4. **`FIX-4` (`J3564` FLAG-4 — Microsphere chemistry):** Replace `\"low-tack\"` in Part 05 line 122, `SOURCES.md`, and `FACT_NOTES_v02.md` with `\"low-adhesion, pressure-sensitive adhesive\"` or `\"light-grip, pressure-sensitive adhesive\"` so it matches primary `US3691140A` (`\"inherently tacky ... low degree of adhesion\"`) and NIHF (`\"high level of tack but a low degree of adhesion\"`).\n5. **`FIX-5` (Part 01 opening milestones & `\"camera flash\"` scale):** Trim Part 01's 41-word agenda line by ~20 words so at `150 wpm` the promise lands `≤0:15`, stakes land `≤0:25`, and Greatbatch's 1956 `100×` error starts inside `0:25–0:40` (syncing `[VISUAL MUST]` early `DATA+SCALE` and `<0:45` first real fact). Replace unsourced/physically inverted `\"briefer than a camera flash\"` (`~0.2–1.0 ms` xenon flash `< 1.8 ms`) with an accurate, sourced scale (e.g., *\"less than two thousandths of a second — a tiny fraction of a blink\"*, with a verified open blink-duration quote in `FACT_NOTES_v02.md`).\n6. **`FIX-6` (Polish Pass #4 unspoken Part 02 `DATA`/`SCALE` & Part 05 alignment):** Speak Goodyear's `270°F` / `132°C` *\"hotter than boiling water\"* comparison in Part 02 VO (backed by primary `US3633A` `\"heat of 270 of Fahrenheit's scale\"`), or tie the Part 02 `DATA`/`SCALE` marker to a number actually spoken in VO. Align Part 05 Long and Short `S02` on the 3M Boise Blitz figure (`ninety percent` / `nine out of ten` per 3M official history), and either qualify `\"aerospace\"` (secondary-only; absent from `US3691140A` & NIHF) or replace with `\"super-strong\"` / cite secondary explicitly.\n7. **`FIX-7` (5-word `FACT:` card cap):** Tighten Part 03 line 80 `FACT: First used in gas masks` (5 words) to `≤4` words (e.g., `Used in gas masks` or `First in gas masks`).\n8. **`FIX-8` (Shorts `S01` & `S02` pacing, overlays & R7 in `10_Shorts/SHORTS_SCRIPTS_v02.md`):** Rebalance row timestamps on both `S01` and `S02` to realistic `~150 wpm` speech (fixing the `276–324 wpm` and `215–231 wpm` front-loaded rows) so subject + surprise lands within `~1.5 s` and total runtime lands cleanly inside `16.0–19.0 s` (`~40–45 words`, `atempo ≤ 1.06`). Sync each single Teach overlay to its spoken line, clear of `0–2 s` and `9–14 s`, and cap `S01`'s overlay at `≤4` words (replacing 6-token `1.8 MS PULSE · 1 S PAUSE` with e.g. `1.8 MS PULSE` or `100× WRONG RESISTOR`). Specify how the promoted long's exact live title (*Accidental Inventions: 5 Mistakes That Worked*) appears cleanly at `9–14 s` and satisfies R7 without breaking the `≤0.3 s` Frame-0 match-cut loop.\n9. **`FIX-9` (Single `v02` master filename & template-stub hygiene):** Keep ONLY `01_Script/accidental_inventions_script_master_v02.md` in `01_Script/` (remove `accidental_inventions_script_master_v01.md` so default `npm run gate:episode` without `--script` resolves `v02`). Update `FACT_NOTES_v02.md`, `SOURCES.md`, `SHORTS_SCRIPTS_v02.md`, `production-status.md`, and `status.json`; do not describe unfilled `_template` `07_Edit-Project/parts/part-01_plates_v01.json` as a finished Part 01 plate board.\n\n### Confirmed Packaging Direction (carry forward into `v02`)\n- **Primary Title Arm A:** `Accidental Inventions: 5 Mistakes That Worked` (`45c`, `0` collisions; confirm manifest neighbour phrase `\"inventions\"` per §1.3 while Arms B/C and description line 1 also carry `\"that changed the world\"`).\n- **T&C Arm B:** `Accidental Inventions That Changed the World (5 Mistakes That Worked)` (`69c`, `0` collisions); **Arm C:** `Accidental Inventions: 5 Mistakes That Changed the World` (`56c`, `0` collisions).\n- **Draft Thumb Concepts A & B:** `NEARLY TRASHED` (gold on `TRASHED`) & `WRONG RESISTOR` (gold on `WRONG`, §2.6 hand-verified oscilloscope/resistor); remain unrendered drafts until post-VO (3rd T&C variant built post-VO per §2.9).\n\n### Verification Gates Required Before PR\n- `cd 07_Content-Ops && npm run review:script -- --file ../02_Video-Projects/137_Accidental-Inventions-That-Changed-The-World/01_Script/accidental_inventions_script_master_v02.md` -> **PASS ≥90**\n- `cd 07_Content-Ops && npm run gate:episode -- --project ../02_Video-Projects/137_Accidental-Inventions-That-Changed-The-World` (default, no `--script`) -> **PASS** (confirming `v02` scored)\n- `python3 00_Brand/Channel-Setup/tools/status_board.py --check` -> **PASS**\n- `00_Brand/Channel-Setup/tools/check_all.sh` -> **ALL CHECKS PASS**\n- Record exact SHA-256 hashes of `v02` script, `SOURCES.md`, `FACT_NOTES_v02.md`, and `SHORTS_SCRIPTS_v02.md` in the PR body and job result. Open PR to HOS `main` (do NOT merge).\n",
+      "ref": "J3565",
+      "film": "HOS:137",
+      "stage": "script",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T07:23Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T07:23Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build HOS:137 v02 script, sources and Shorts off PR #769 (7ae40acf) resolving FIX-1..FIX-9 and open PR to main",
+      "due": "2026-12-01T18:00:00Z",
+      "kind": "script",
+      "plain": "Fix the 9 factual, timing and Shorts defects in the Accidental Inventions script, sources and Shorts to v02."
     }
   ],
   "focus": [

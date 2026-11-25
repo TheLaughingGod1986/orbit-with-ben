@@ -126,6 +126,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3682 | mini | blocked | gemini | – | studio · Field Order History channel totals read 2026-11-25 |  |
 | J3683 | mini | blocked | macbook-2 | – | review · Verify condition for J3565 |  |
 | J3684 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
+| J3685 | mini | open | – | – | HOS:137 script · script · HOS 137: correct Accidental Inventions script, sources & Shorts to v02 (9 J3564/J3565 fixes) | J3565 |
 
 Recently finished:
 
