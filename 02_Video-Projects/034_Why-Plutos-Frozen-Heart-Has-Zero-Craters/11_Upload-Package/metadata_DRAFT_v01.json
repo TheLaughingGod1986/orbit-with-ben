@@ -1,21 +1,19 @@
 {
-  "status": "review_pending_panel_and_chief_decision",
+  "status": "review_pending_J3115",
   "series": "Real Worlds",
   "source_script": "01_Script/pluto_frozen_heart_script_master_v03.md",
   "description_file": "Descriptions/pluto_frozen_heart_long_description_v01.txt",
   "title_options": [
-    "Why Pluto's Frozen Heart Has Zero Craters",
     "Why Does Pluto Have a Heart? (And Why It Has Zero Craters)",
-    "What New Horizons Saw Inside Pluto's Frozen Heart",
+    "Why Pluto's Frozen Heart Has Zero Craters",
     "The Only Spacecraft Photos Ever Taken of Pluto",
-    "Why Does Pluto Have a Heart? (A Glacier With No Craters)"
+    "New Horizons Pluto Images: A Heart With Zero Craters"
   ],
   "title_notes": {
-    "Why Pluto's Frozen Heart Has Zero Craters": "rule 15 scenario/stakes title (41 chars <= 50): names subject (Pluto's Frozen Heart) and concrete zero-crater mystery; matches locked script heading and Short 2 v02 9-14 s title banner; zero word overlap with J3105 hooks NITROGEN GLACIER / ICE MOUNTAINS / FLOWING ICE",
     "Why Does Pluto Have a Heart? (And Why It Has Zero Craters)": "LEARNINGS rule 26 search-first bracketed variant (58 chars <= 70): starts verbatim with signed-out YouTube autocomplete suggestion #2 for 'why does pluto' ('why does pluto have a heart', ranked by 6xbxZ1F1-mc 19.2K views and _FZ-tDD9TMg 43.3K views) + zero-crater stakes tail; zero word overlap with J3105 hooks and avoids exact collision with fssbsdzMiaQ ('Why Does Pluto Have a Heart?')",
-    "What New Horizons Saw Inside Pluto's Frozen Heart": "LEARNINGS rule 18 real-imagery variant (49 chars <= 50): sells real July 2015 New Horizons close-up imagery of Sputnik Planitia and targets 'new horizons pluto' search cluster (ranked by Astrum 6l4kr36TzQ4 9.26M views and NASA g1fPhhTT2Oo 2.77M views)",
+    "Why Pluto's Frozen Heart Has Zero Craters": "rule 15 scenario/stakes title (41 chars <= 50): names subject (Pluto's Frozen Heart) and concrete zero-crater mystery; matches locked script heading and Short 2 v02 9-14 s title banner; zero word overlap with J3105 hooks NITROGEN GLACIER / ICE MOUNTAINS / FLOWING ICE",
     "The Only Spacecraft Photos Ever Taken of Pluto": "LEARNINGS rule 18 real-imagery variant (46 chars <= 50): 'Only' backed verbatim by SOURCES.md row 1 (science.nasa.gov/dwarf-planets/pluto/facts/: 'The only spacecraft to explore Pluto up close was NASA's New Horizons. It flew by the dwarf planet and its moons in 2015.'); benchmarked against Astrum D5XPuS-Y0fg (18.47M views)",
-    "Why Does Pluto Have a Heart? (A Glacier With No Craters)": "J3105 provisional Rule-26 pairing (56 chars <= 70); note that 'Glacier' overlaps Thumb A's hook word GLACIER ('NITROGEN GLACIER'), so 'Why Does Pluto Have a Heart? (And Why It Has Zero Craters)' is provided above as the non-overlapping Rule-26 alternative"
+    "New Horizons Pluto Images: A Heart With Zero Craters": "Panel J3111 wording applied under Chief J3112; reserve pending exact-arm review J3115."
   },
   "search_and_collision_evidence": {
     "checked_at": "2026-11-19T03:41:28Z",
@@ -143,44 +141,44 @@
   ],
   "launch_plan": {
     "test": "Day-1 YouTube Test & Compare, A/B/C (LEARNINGS rules 12, 14, 19); future authorised publishing job only after packaging panel, Chief decision, and Ben UAT watch",
-    "decision": "Packaging panel (Codex, Gemini, Cursor) critiques title options, J3105 thumbnails A/B/C, hook, and description independently; Chief selects final title and thumbnail test arms.",
+    "decision": "J3112 FIX implemented by J3114; J3115 must review exact files and lock three distinct picture arms before gated delivery.",
     "shared_design": "One large focal point, scale visible at 168x94. House heavy sans (Arial Black), one yellow hook word (#ffe119), other words white, dark outline, top band clear of subject, no Orbit. Grade (mean saturation >=100; near-black <=30%) and phone-preview gates passed in J3105.",
     "concepts": [
       {
         "variant": "A",
-        "rule": "LEARNINGS rule 19 \u2014 single clean real spacecraft frame, graded, 0-3 words, no composite",
-        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/08_Thumbnail/J3105_v01/034_pluto_A_j3105_v01.jpg",
-        "sha256": "b42bfb90b67752ed0ee58790b0697cf179e41b56e34c48425f0e7f26c17d4eb9",
+        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/08_Thumbnail/J3105_v02/034_pluto_A_j3105_v02.jpg",
+        "sha256": "8f5673606c0070eda94f90b7fee7960975fe41a49415812fcd841d20a9195a42",
         "text": "NITROGEN GLACIER",
         "yellow_word": "GLACIER",
-        "saturation": 166.0,
-        "near_black_pct": 3,
-        "picture": "Whole enhanced-colour New Horizons MVIC globe of Pluto (PIA19952) showing Sputnik Planitia, black point lifted to navy, with 2,377 km PLUTO DIAMETER scale label.",
-        "source_image": "NASA/JHUAPL/SwRI New Horizons PIA19952 (sha256 257757c3f7a481a677f2932749a8bf3b93c0874ae3a6ed5eead6ea718d7825a1)."
+        "saturation": 159.6,
+        "near_black_pct": 4,
+        "result": "PASS",
+        "picture": "Whole globe with 3.5 px circular limb feather, no rectangular paste seam. 560 px diameter prioritises whole limb and text clearance under J3112. Planet diameter explicitly labelled; no glacier caliper.",
+        "source_image": "PIA19952"
       },
       {
         "variant": "B",
-        "rule": "LEARNINGS rule 12 \u2014 distinct picture concept showing mountain/plain topography and scale",
-        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/08_Thumbnail/J3105_v01/034_pluto_B_j3105_v01.jpg",
-        "sha256": "91c88215c47fcc74d2648a004b76d6f5c251ee0e91c1b80bbdedff1c5a23a1fe",
+        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/08_Thumbnail/J3105_v02/034_pluto_B_j3105_v02.jpg",
+        "sha256": "3b17f4c7f131bc275d4cd7109f591ef65535db0d63bc4286e3d7a584f7b4c4f7",
         "text": "ICE MOUNTAINS",
         "yellow_word": "MOUNTAINS",
-        "saturation": 133.1,
+        "saturation": 176.5,
         "near_black_pct": 1,
-        "picture": "Full 1,250 km New Horizons MVIC oblique horizon panorama across Pluto's mountains, plains and atmospheric hazes (PIA19948) in warm editorial duotone with 250 km scale bar.",
-        "source_image": "NASA/JHUAPL/SwRI New Horizons PIA19948 (sha256 e3c18859009cc3dc9c30ce0c7a371d46101c7d6c8f7dc0ed853fb0021b54da89)."
+        "result": "PASS",
+        "picture": "Cold blue/silver editorial grade, not true colour. 18% horizontal crop retains haze and mountain/plain boundary. Approximate scene-width scale, not a local foreshortened terrain measurement.",
+        "source_image": "PIA19948"
       },
       {
         "variant": "C",
-        "rule": "LEARNINGS rule 14 \u2014 bright high-contrast background test",
-        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/08_Thumbnail/J3105_v01/034_pluto_C_j3105_v01.jpg",
-        "sha256": "9f33ddab1696b92496e759d6a5559e4f8a479e841bd26f8d48d835f1e32f3ae9",
+        "file": "/Volumes/data/studio-live/orbit-with-ben/02_Video-Projects/034_Why-Plutos-Frozen-Heart-Has-Zero-Craters/08_Thumbnail/J3105_v02/034_pluto_C_j3105_v02.jpg",
+        "sha256": "c23a742058756337b7ee56e3e2aafe526763e5cccc3369f439cefd2f6a501aa3",
         "text": "FLOWING ICE",
         "yellow_word": "ICE",
-        "saturation": 107.7,
+        "saturation": 104.2,
         "near_black_pct": 1,
-        "picture": "Bright cyan/cream editorial grade of Sputnik Planitia's polygonal convection cells and shoreline mountains (PIA20726, 400 km width) with 100 km scale bar.",
-        "source_image": "NASA/JHUAPL/SwRI New Horizons PIA20726 (sha256 b574be3f199b8b305efdce747f372d59a3acd484faf125199a7cf249da671c12)."
+        "result": "PASS",
+        "picture": "Warm cream/rust/charcoal editorial grade, not natural colour; actual cellular plain and shoreline. Smooth navy top vignette and lower-left scale pad. Full 400 km source width retained; approximate scene reference.",
+        "source_image": "PIA20726"
       }
     ]
   },
@@ -201,5 +199,6 @@
     "paragraph_support": [
       "Opening 1,000 km zero-crater Sputnik Planitia glacier and July 2015 New Horizons flyby; chapter 1 (1:06) for 1930 Tombaugh discovery, 11-year-old Venetia Burney, and 2,377 km / 39 AU scale; chapter 2 (2:41) for 1978 Charon discovery and 153-hour mutual tidal locking; chapter 3 (4:26) for 2006 launch at 58,536 km/h, IAU reclassification, and 15-month 6.25 GB download; chapter 4 (6:15) for city-sized nitrogen convection cells and 2-3 km mountains; chapter 5 (7:41) for -226 to -240 C water-ice bedrock and Aug 2026 basal liquid nitrogen evidence; chapter 6 (9:05) for 200,000 km farewell crescent, 2019 Arrokoth flyby, and Oct 2024 60 AU milestone."
     ]
-  }
+  },
+  "title": "Why Does Pluto Have a Heart? (And Why It Has Zero Craters)"
 }
