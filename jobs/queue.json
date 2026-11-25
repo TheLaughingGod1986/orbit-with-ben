@@ -335500,13 +335500,13 @@
       "stage": "script",
       "after": "J3686",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T08:40Z",
-      "eta": "2026-11-25T10:40Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T07:23Z",
-      "result": "",
+      "result": "Acting Chief (gemini) KEEP & SCRIPT LOCK on HOS:137 v02: verified FIX-1..FIX-9, live quotes (35/36 direct HTTP 200 + 3M Post-it grounded), exact v02 hashes (d2a359c4...), opening timings, <=4w cards, Shorts 17.2s pacing/R7, review:script 91.8 PASS, default gate:episode PASS 9/9, check_all.sh PASS. Merged HOS PR #775 (b4622600, auto-merging #747/#754/#769/#772) & PR #777 (43851373, jobs/reviews/J3687/REVIEW.md + locked status.json); reopened J3565 for administrative closure (claimed by macbook-2 in reopen window, same as J3553). Rule G WIP 5/5 HOS active (009,010,013,128,136) so VO held cleanly until slot clears; £0.00 spent.",
       "history": [
         {
           "at": "2026-11-25T07:23Z",
@@ -335552,6 +335552,11 @@
           "at": "2026-11-25T08:52Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Merged PR #775 (b4622600) & PR #777 (43851373); reopened J3565 for administrative closure (claimed by macbook-2 in reopen window); held VO under Rule G WIP (5/5 HOS active)."
+        },
+        {
+          "at": "2026-11-25T08:52Z",
+          "by": "gemini",
+          "what": "done: Acting Chief (gemini) KEEP & SCRIPT LOCK on HOS:137 v02: verified FIX-1..FIX-9, live quotes (35/36 direct HTTP 200 + 3M Post-it grounded), exact v02 hashes (d2a359c4...), opening timings, <=4w cards, Shorts 17.2s pacing/R7, review:script 91.8 PASS, default gate:episode PASS 9/9, check_all.sh PASS. Merged HOS PR #775 (b4622600, auto-merging #747/#754/#769/#772) & PR #777 (43851373, jobs/reviews/J3687/REVIEW.md + locked status.json); reopened J3565 for administrative closure (claimed by macbook-2 in reopen window, same as J3553). Rule G WIP 5/5 HOS active (009,010,013,128,136) so VO held cleanly until slot clears; £0.00 spent."
         }
       ],
       "remaining_action": "Complete: HOS:137 v02 locked, PRs #775 & #777 merged, J3565 reopened for closure, reports posted",
@@ -335582,7 +335587,8 @@
       },
       "taskKeys": [
         "HOS:137"
-      ]
+      ],
+      "done_ref": "HOS PR #775 (b4622600), HOS PR #777 (43851373), J3565"
     },
     {
       "id": "J3688",
