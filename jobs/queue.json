@@ -322206,13 +322206,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-24T19:10Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T10:53Z",
-      "result": "publish via Claude Code: /Volumes/MiniWork/scratch/J3512-resume codex/J3512-resume at 5008d480; /Volumes/MiniWork/scratch/J3512-registry codex/J3512-registry at bfb399e268. PRIVATE UPLOAD COMPLETE mpK3D6S7WLk no publishAt, no Buffer posts. Review whole diffs for private data, publish/open PRs/merge with green checks. Registry push rejected by automatic review; no retries. J3611 owns conditional scheduling and remaining Studio checks. Do not re-upload. Shared registry copies preserved in named J3512 stash.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-24T10:53Z",
@@ -322313,6 +322313,11 @@
           "at": "2026-11-25T13:09Z",
           "by": "relay",
           "what": "condition verification queued: J3712"
+        },
+        {
+          "at": "2026-11-25T13:14Z",
+          "by": "gemini",
+          "what": "reopened: Condition verified MET in J3712: HOS PR #782 (merge 2b5e2e3cf591b993402f5135d198297227b7e5e2, all CI green, ancestor of HOS origin/main 39eef903) and OWB PR #1317 (merge eba495f15b360b9406a8073df59845b5550ddbdd, Rules check green, ancestor of OWB origin/main 31c2ac1890) merged on origin/main after Claude Code privacy review under J3530. Private upload mpK3D6S7WLk (exact Ben-approved SHA-256 ea29e26487d6631416449c9adf712f51b1b9508db06b7b6c29edc4236970fe59, HOS:ASK:J2933.1) verified complete; closing J3512 next (do NOT re-upload; J3611 owns conditional scheduling and completed private Studio finishing in HOS PR #784)."
         }
       ],
       "remaining_action": "J3530 (claudecode): privacy-check, rebase, push, open PRs & merge green codex/J3512-resume (HOS) + codex/J3512-registry (OWB); then close J3512. Do not re-upload mpK3D6S7WLk.",
@@ -322336,29 +322341,7 @@
       },
       "taskKeys": [
         "HOS:010"
-      ],
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-24T19:17Z",
-        "by": "codex",
-        "plan": [
-          "Verify approved cut",
-          "Prepare upload package",
-          "Upload privately and verify",
-          "Record upload and follow-up"
-        ],
-        "note": "Private upload complete, 69-video audit zero errors, check_all ALL CHECKS PASS. J3611 owns conditional scheduling/Studio"
-      },
-      "hold": {
-        "type": "input",
-        "condition": "Acting-Chief ruling (J3700, 25 Nov 10:58Z): publication condition STILL UNMET; do NOT reopen J3512 (kind=studio would misroute and collide with J3530). Private upload mpK3D6S7WLk (What Killed the Dinosaurs?, exact Ben-approved SHA256 ea29e26487d6631416449c9adf712f51b1b9508db06b7b6c29edc4236970fe59, HOS:ASK:J2933.1) is verified complete (25 Nov HOS snapshot: private, publishAt null, 0 views); do NOT re-upload. Both finished branches remain local-only and unmerged: (1) HOS /Volumes/MiniWork/scratch/J3512-resume codex/J3512-resume at 5008d48040e4f696fcdf4e3cb6042ae7736a2285 (2 ahead, 53 behind HOS origin/main d58d290e; supersedes PR #749; HOS main lacks J3512_short_A_v01/ and mpK3D6S7WLk); (2) OWB /Volumes/MiniWork/scratch/J3512-registry codex/J3512-registry at bfb399e2680be44bdfbb4af1b6f791859e0fde76 (1 ahead, 1148 behind OWB origin/main; OWB main lacks mpK3D6S7WLk in social/hos/UPLOADS.json and BUFFER_POSTS.json; OWB stash@{0} preserves copy). claudecode is UP and owns formal privacy review, rebase onto current mains (preserving J3511 sMPlMuxK3YU entries), push, PRs, and green-check merges under open urgent job J3530 (for=claudecode, due 12:00Z; only open claudecode job). Close J3512 once both PRs merge on origin/main. J3611 owns conditional scheduling and remaining Studio checks.",
-        "check_at": "2026-11-25T14:09:47+00:00",
-        "last_recheck": "J3700",
-        "checked_at": "2026-11-25T10:59:10+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3712"
-      }
+      ]
     },
     {
       "id": "J3513",
