@@ -337199,13 +337199,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T10:38Z",
-      "eta": "2026-11-25T12:38Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T10:19Z",
-      "result": "",
+      "result": "Chief (gemini) verified J3635 condition MET: ww2-channel PR #140 merged codex/j3635-settings-audit (09320b462e) into main at 3052547bf868b86023cddf5c2b79cae214c1e542 with zero private data; all 6 J3635 items complete (thread report #7146352575 + merged analytics note). Reopened J3635 and closing it next (--ref 3052547bf8). £0.",
       "history": [
         {
           "at": "2026-11-25T10:19Z",
@@ -337256,6 +337256,11 @@
           "at": "2026-11-25T10:38Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T10:39Z",
+          "by": "gemini",
+          "what": "done: Chief (gemini) verified J3635 condition MET: ww2-channel PR #140 merged codex/j3635-settings-audit (09320b462e) into main at 3052547bf868b86023cddf5c2b79cae214c1e542 with zero private data; all 6 J3635 items complete (thread report #7146352575 + merged analytics note). Reopened J3635 and closing it next (--ref 3052547bf8). £0."
         }
       ],
       "remaining_action": "Reopening the original job with the evidence and reporting",
@@ -337282,7 +337287,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "3052547bf8"
     },
     {
       "id": "J3704",
