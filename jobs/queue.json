@@ -341750,9 +341750,14 @@
           "at": "2026-11-25T19:35Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T19:36Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Write RETAKE_BOARD_v01 for rows 3,10,24,28,47,49,54,63 (no real names) and park for Chief price PASS",
+      "remaining_action": "Write the retake prompt and price board for the 8 confirmed retake plates of Darwin & Wallace, then open the HOS pull request",
       "due": "2026-11-27T18:00:00Z",
       "kind": "script",
       "plain": "Scope and price 013's 8 already-ruled retake plates at £0",
@@ -341766,12 +341771,20 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T19:35Z",
+        "of": 5,
+        "at": "2026-11-25T19:36Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read brief and the 8 defects",
+          "Write retake prompts",
+          "Price against live Flow balance",
+          "Run checks and open PR",
+          "Park for Chief"
+        ]
+      },
+      "taskKeys": [
+        "HOS:013"
+      ]
     },
     {
       "id": "J3739",
