@@ -331643,9 +331643,14 @@
           "at": "2026-11-25T00:49Z",
           "by": "gemini",
           "what": "step 0 of 6 done: Claimed J3653 as acting Chief; checking files, SHA-256 hashes, WW2 YouTube API/CDP 9224 setup"
+        },
+        {
+          "at": "2026-11-25T00:50Z",
+          "by": "gemini",
+          "what": "step 1 of 6 done: Verified exact SHA-256 on NAS master (876736a1...), 3 launch thumbnails A/B/C, SRT (8836e647...), DESCRIPTION_v01.txt (4312 chars) and metadata_v01.json; Studio 9224 open on Field Order History"
         }
       ],
-      "remaining_action": "Verify NAS master, 3 thumbnails, upload package and WW2 YouTube upload tooling",
+      "remaining_action": "Upload B-29 v01 master as Private scheduled 2026-11-28T17:00:00Z + en-GB captions via YouTube Data API",
       "due": "2026-11-26T20:00:00Z",
       "kind": "studio",
       "plain": "Upload the Ben-approved B-29 film and schedule it for Saturday 17:00",
@@ -331665,9 +331670,9 @@
         "okRef": "board-check:WW2-003@2026-11-24T23:58:36.819Z"
       },
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-11-25T00:49Z",
+        "at": "2026-11-25T00:50Z",
         "by": "gemini",
         "plan": [
           "Verify files & package",
@@ -331677,7 +331682,7 @@
           "Read back & verify Studio + API",
           "Update status.json, queue follow-ons & report"
         ],
-        "note": "Claimed J3653 as acting Chief; checking files, SHA-256 hashes, WW2 YouTube API/CDP 9224 setup"
+        "note": "Verified exact SHA-256 on NAS master (876736a1...), 3 launch thumbnails A/B/C, SRT (8836e647...), DESCRIPTION_v01.txt (4"
       },
       "taskKeys": [
         "WW2:003"
