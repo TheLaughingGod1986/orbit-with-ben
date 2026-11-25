@@ -321469,9 +321469,14 @@
           "at": "2026-11-25T01:19Z",
           "by": "relay",
           "what": "condition verification queued: J3657"
+        },
+        {
+          "at": "2026-11-25T01:25Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-25T10:15:00Z"
         }
       ],
-      "remaining_action": "Publish the finished upload records through Claude Code privacy review",
+      "remaining_action": "Publish finished J3511 HOS and OWB upload records through Claude Code privacy review (do not re-upload sMPlMuxK3YU)",
       "due": "2026-11-25T12:00:00Z",
       "kind": "studio",
       "plain": "Upload the dinosaur and birds Short you approved as a private video",
@@ -321508,9 +321513,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/J3511-resume codex/J3511-resume; also /Volumes/MiniWork/scratch/J3511-registry codex/J3511-registry (already pushed; PR refused). PRIVATE UPLOAD COMPLETE sMPlMuxK3YU no publishAt, no Buffer posts. Privacy-review both finished diffs, publish/open PRs/merge per standing rule; do not re-upload. J3610 conditional scheduling.",
-        "check_at": "2026-11-25T02:19:54+00:00",
-        "recheck_task": "J3657"
+        "condition": "Acting-Chief verification J3657: condition UNMET. Private upload sMPlMuxK3YU (Are Birds Really Dinosaurs?, exact Ben-approved SHA-256 698db62789e1e6884ae15797dc51083c39bbc0ee3c0cc1ecf83f92e2e87a0359, HOS:ASK:J2933.2) is already complete without publishAt or Buffer posts; do NOT re-upload. Both publication records remain unmerged: (1) HOS origin/main (6b44c291) lacks J3511_short_C_v01/ and sMPlMuxK3YU in library.json/status.json, and no remote codex/J3511-resume branch or PR exists (only superseded preflight PR #748 on codex/J3511-private-short); clean local /Volumes/MiniWork/scratch/J3511-resume codex/J3511-resume sits at 7f3303158ee6bf97845334849ce1492501366997 (13 files, +908/-3). (2) OWB origin/main (19adad240d) lacks sMPlMuxK3YU in social/hos/UPLOADS.json and BUFFER_POSTS.json; remote origin/codex/J3511-registry matches clean local /Volumes/MiniWork/scratch/J3511-registry at 3de7c158058667f2fd430d602fff4fe26dc7a54d (2 files, +24), with no PR opened. Under AGENTS.md, claudecode owns formal privacy review, push, PR creation, green-check merge (via open job J3530 step 3), and closing J3511; claudecode is usage-limited until 2026-11-25T10:00:00Z (verify at 10:15Z, ahead of J3511 due 12:00Z). J3610 remains open for conditional scheduling.",
+        "check_at": "2026-11-25T10:15:00Z",
+        "last_recheck": "J3657",
+        "checked_at": "2026-11-25T01:25:12+00:00",
+        "checked_by": "gemini"
       }
     },
     {
