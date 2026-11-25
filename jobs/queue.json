@@ -328604,10 +328604,10 @@
       "stage": "",
       "after": "J3590",
       "eta_min": 25,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T13:33Z",
+      "eta": "2026-11-25T13:58Z",
       "created_by": "refill",
       "created_at": "2026-11-24T17:03Z",
       "result": "",
@@ -328701,6 +328701,11 @@
           "at": "2026-11-25T13:33Z",
           "by": "gemini",
           "what": "reopened: Elected acting Chief (gemini) completed J3598: verified OWB #1279 (9fab6082ff), WW2 #102 (fdfb46ab73), J3597 review #1313 (052e368633) merged, superseded #1273/#1276/WW2#101 closed, and merged J3604 correction OWB PR #1284 (head 0f68a818b6 -> main 4b66eb1120, 103/103 tests PASS); closing J3591 without repeating its 5 completed Gemini media steps"
+        },
+        {
+          "at": "2026-11-25T13:33Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Review PR #1284 in open elected-Chief job J3598, merge if PASS, then close held J3591",
@@ -328716,7 +328721,15 @@
       "taskKeys": [
         "WW2:001"
       ],
-      "escalated_at": "2026-11-24T20:18Z"
+      "escalated_at": "2026-11-24T20:18Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T13:33Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3592",
