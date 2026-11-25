@@ -324901,9 +324901,14 @@
           "at": "2026-11-25T04:58Z",
           "by": "gemini",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-25T04:59Z",
+          "by": "gemini",
+          "what": "step 1 of 4 done: Found PR #764 (J3552 facts audit) stacked on PR #753 with 8 blocking FLAGs (13 OK, 2 PARTIAL, 8 FLAG); all 7 CI checks green."
         }
       ],
-      "remaining_action": "Inspecting J3552 facts audit and checking out PR #753 files",
+      "remaining_action": "Running review:script, gate:episode, marker checks, and reading PR #753 + PR #764 (J3552 facts audit)",
       "due": "2026-12-04T18:00:00Z",
       "kind": "review",
       "rerouted_from": {
@@ -324915,16 +324920,17 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-25T04:58Z",
+        "at": "2026-11-25T04:59Z",
         "by": "gemini",
         "plan": [
           "Inspect J3552 facts audit and PR #753",
           "Run review:script, gate:episode & marker checks",
           "Review script, packaging, sources & Shorts vs HOS rules",
           "Post advisory review and park Chief lock/merge"
-        ]
+        ],
+        "note": "Found PR #764 (J3552 facts audit) stacked on PR #753 with 8 blocking FLAGs (13 OK, 2 PARTIAL, 8 FLAG); all 7 CI checks g"
       },
       "taskKeys": [
         "HOS:136"
