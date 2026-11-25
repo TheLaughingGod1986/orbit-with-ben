@@ -331924,19 +331924,30 @@
           "at": "2026-11-25T02:50Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T02:50Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done"
         }
       ],
-      "remaining_action": "Build the watchlist, tracker, weekly tagging and the board's Market tab",
+      "remaining_action": "Inspecting existing research data, Data API config, launchd schedule and board_site",
       "due": "2026-12-02T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 6,
         "at": "2026-11-25T02:50Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Verify 90-channel watchlist via Data API",
+          "Implement daily tracker, farm filter, rollup & weekly tagger",
+          "Wire scheduled sweep & run initial snapshot",
+          "Add Market tab to board_site & publish path",
+          "Add unit & studio_app tests and run full suite",
+          "Write README, open PR & report"
+        ]
       }
     },
     {
