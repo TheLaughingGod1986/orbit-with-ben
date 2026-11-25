@@ -124,7 +124,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3656 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2:003 (B-29 RqYjADxvJy8): 48-hour Rule 8 read and same-day CTR check |  |
 | J3660 | mini | open (after J3659) | – | – | HOS:128 script · review · HOS 128: verify v03 fixes and Chief script lock decision (close J3547 if KEEP) | HOS PR #761 (J3630), J3547, J3659 |
 | J3664 | mini | blocked | macbook-2 | – | review · Verify condition for J3492 |  |
-| J3665 | mini | open | – | – | 006 edit · assembly · WW2 006: v02 zero-spend visual/graphic repair, pacing trim and render |  |
+| J3665 | mini | claimed | gemini | 2026-11-25T05:59Z | 006 edit · assembly · WW2 006: v02 zero-spend visual/graphic repair, pacing trim and render |  |
 | J3666 | mini | open (after J3665) | – | – | 006 edit · qa · WW2 006: full private audiovisual QA of v02 master |  |
 | J3667 | mini | open (after J3666) | – | – | 006 edit · chief · WW2 006: Chief decision on v02 delivery and Ben watch staging |  |
 | J3668 | mini | open | – | – | review · Verify condition for J3178 |  |
