@@ -322541,9 +322541,14 @@
           "at": "2026-11-25T10:51Z",
           "by": "gemini",
           "what": "step 1 of 3 done: Shared HOS checkout at d58d290e (PR #780 merged); Prisma Client 7.10.1 generated (96ms); 31/31 token+contract tests pass"
+        },
+        {
+          "at": "2026-11-25T10:52Z",
+          "by": "gemini",
+          "what": "step 2 of 3 done: Read-only channel:audit exits 0 (75 videos, 0 errors); J3512 exact package --dry-run exits 0 (ok:true, private, publishAt null, Shorts gate PASS); check_all.sh ALL CHECKS PASS"
         }
       ],
-      "remaining_action": "Prove read-only channel:audit and J3512 private-upload dry-run on shared runtime",
+      "remaining_action": "Post thread line and mark J3519 done",
       "due": "2026-11-25T09:00:00Z",
       "kind": "assembly",
       "mini_only": true,
@@ -322554,16 +322559,16 @@
         "HOS:010"
       ],
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-25T10:51Z",
+        "at": "2026-11-25T10:52Z",
         "by": "gemini",
         "plan": [
           "Verify HOS main and Prisma 7.10.1 runtime",
           "Prove read-only channel:audit, J3512 dry-run and tests",
           "Post thread report and close J3519"
         ],
-        "note": "Shared HOS checkout at d58d290e (PR #780 merged); Prisma Client 7.10.1 generated (96ms); 31/31 token+contract tests pass"
+        "note": "Read-only channel:audit exits 0 (75 videos, 0 errors); J3512 exact package --dry-run exits 0 (ok:true, private, publishA"
       }
     },
     {
