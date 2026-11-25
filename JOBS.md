@@ -122,7 +122,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3679 | mini | open | – | – | HOS:136 vo · vo · HOS 136 Trinity Test Explained: Shorts S01 & S02 voiceover from locked v02 scripts | HOS PR #767 (ab25f2de), J3677, J3553, J3678 |
 | J3681 | any | blocked | macbook-2 | – | review · Field Order History rules review ek9F61FVYqY 48h |  |
 | J3684 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
-| J3687 | mini | open (after J3686) | – | – | HOS:137 script · review · HOS 137: verify v02 fixes and Chief script lock decision (close J3565 if KEEP) | J3565 |
+| J3687 | mini | claimed | gemini | 2026-11-25T10:40Z | HOS:137 script · review · HOS 137: verify v02 fixes and Chief script lock decision (close J3565 if KEEP) | J3565 |
 | J3689 | mini | blocked | macbook-2 | – | review · Verify condition for J3622 |  |
 | J3690 | gemini | open | – | – | HOS:127 sources · facts · HOS 127: independent v02 facts and exact-quote verification | J3622 |
 | J3692 | any | blocked | gemini | – | review · AI spend: Google AI Ultra 20x vs Ultra 5x re-review before 12 Jan 2027 renewal, for Ben |  |
