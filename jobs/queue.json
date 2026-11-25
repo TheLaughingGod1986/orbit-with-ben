@@ -340822,10 +340822,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T20:25Z",
+      "eta": "2026-11-25T22:25Z",
       "created_by": "relay",
       "created_at": "2026-11-25T15:33Z",
       "result": "",
@@ -340874,6 +340874,11 @@
           "at": "2026-11-25T20:25Z",
           "by": "gemini",
           "what": "reopened: Acting-Chief (gemini) closing J3727 after recording ruling in ww2-channel PR #165 (a8e9fd7), queuing J3745, and updating J3432 hold with --recheck J3727."
+        },
+        {
+          "at": "2026-11-25T20:25Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Recording that film 005 still waits for the Chief's review",
@@ -340892,7 +340897,15 @@
       "taskKeys": [
         "WW2:005"
       ],
-      "escalated_at": "2026-11-25T17:39Z"
+      "escalated_at": "2026-11-25T17:39Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T20:25Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3728",
