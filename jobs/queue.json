@@ -330733,9 +330733,14 @@
           "at": "2026-11-25T01:07Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T01:08Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done"
         }
       ],
-      "remaining_action": "Demonstrate audio/video input, watch and listen to WW2:004 v02 end-to-end, verify all J3624 blockers fixed",
+      "remaining_action": "Inspecting J3637 PR #115, verifying v02 SHA-256 and technical gates",
       "due": "2026-11-27T12:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -330753,12 +330758,21 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T01:07Z",
+        "of": 6,
+        "at": "2026-11-25T01:08Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify PR #115 & technical checks",
+          "Demonstrate A/V capabilities & segment v02",
+          "Watch & listen segments 0-5 (00:00-12:00)",
+          "Watch & listen segments 6-11 (12:00-22:37)",
+          "Inspect thumbnails & package metadata",
+          "Commit QA_REVIEW_J3638.md PR & finish"
+        ]
+      },
+      "taskKeys": [
+        "WW2:004"
+      ]
     },
     {
       "id": "J3639",
