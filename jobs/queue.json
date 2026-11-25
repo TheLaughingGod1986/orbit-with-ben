@@ -329720,13 +329720,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-25T11:30Z",
-      "eta": "2026-11-25T13:30Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T19:04Z",
-      "result": "",
+      "result": "Waiting for: HOS 010 long (What Killed the Dinosaurs Was Hidden in a Line of Clay) has an actual YouTube upload id on @HistoryOfScienceYT and a confirmed air date (not speculative manifest date), ready to set Related and schedule sMPlMuxK3YU strictly after long publication on an unoccupied Sat/Fri/Sun/Tue 11:30 London slot. All J3511 private-only Studio finishing settings on sMPlMuxK3YU are completed and verified on reload (PR #783 merged).",
       "history": [
         {
           "at": "2026-11-24T19:04Z",
@@ -329757,9 +329757,19 @@
           "at": "2026-11-25T11:40Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Verified STILL HERE robin cover and serving en-GB captions via live YouTube API; opened HOS PR #783 with check_all.sh ALL CHECKS PASS (0 errors)."
+        },
+        {
+          "at": "2026-11-25T11:42Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: HOS 010 long (What Killed the Dinosaurs Was Hidden in a Line of Clay) has an actual YouTube upload id on @HistoryOfScienceYT and a confirmed air date (not speculative manifest date), ready to set Related and schedule sMPlMuxK3YU strictly after long publication on an unoccupied Sat/Fri/Sun/Tue 11:30 London slot. All J3511 private-only Studio finishing settings on sMPlMuxK3YU are completed and verified on reload (PR #783 merged)."
+        },
+        {
+          "at": "2026-11-25T11:42Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-28T12:00:00Z"
         }
       ],
-      "remaining_action": "Park J3610 with typed dependency wait on HOS 010 long upload id and confirmed air date, and post HOS desk and studio thread reports",
+      "remaining_action": "Wait for actual HOS 010 long upload id and confirmed air date, then set Related, select unoccupied Sat/Fri/Sun/Tue 11:30 London slot strictly after long, schedule sMPlMuxK3YU, and update UPLOADS.json, BUFFER_POSTS.json and shorts_open_library together",
       "kind": "studio",
       "plain": "Schedule the approved birds Short after its full dinosaur film is ready",
       "mini_only": true,
@@ -329778,7 +329788,12 @@
       },
       "taskKeys": [
         "HOS:010"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "HOS 010 long (What Killed the Dinosaurs Was Hidden in a Line of Clay) has an actual YouTube upload id on @HistoryOfScienceYT and a confirmed air date (not speculative manifest date), ready to set Related and schedule sMPlMuxK3YU strictly after long publication on an unoccupied Sat/Fri/Sun/Tue 11:30 London slot. All J3511 private-only Studio finishing settings on sMPlMuxK3YU are completed and verified on reload (PR #783 merged).",
+        "check_at": "2026-11-28T12:00:00Z"
+      }
     },
     {
       "id": "J3611",
