@@ -332002,9 +332002,14 @@
           "at": "2026-11-25T01:20Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T01:22Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3657 and starting read-only condition verification for J3511 (HOS:010)."
         }
       ],
-      "remaining_action": "Verify readiness: Publish the finished upload records through Claude Code privacy review",
+      "remaining_action": "Inspect J3511 history, both Codex worktrees, and publication state",
       "kind": "review",
       "recheck_of": "J3511",
       "mini_only": true,
@@ -332021,11 +332026,18 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-25T01:20Z",
+        "at": "2026-11-25T01:22Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect J3511 history and both Codex worktrees",
+          "Verify publication state, PRs, main commits, and Claude Code status",
+          "Update J3511 wait hold or reopen with evidence and finish J3657"
+        ],
+        "note": "Claimed J3657 and starting read-only condition verification for J3511 (HOS:010)."
+      },
+      "taskKeys": [
+        "HOS:010"
+      ]
     },
     {
       "id": "J3658",
