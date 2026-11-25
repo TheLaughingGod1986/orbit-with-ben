@@ -341898,9 +341898,14 @@
           "at": "2026-11-25T19:41Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T19:41Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Write 16-19 s SHORTS_SCRIPTS_v03.md and 08_Thumbnail/THUMBNAIL_BRIEF_v01.md at £0",
+      "remaining_action": "Rewrite the two Anaesthesia Shorts scripts to 16-19 s and write the thumbnail brief",
       "due": "2026-11-28T18:00:00Z",
       "kind": "script",
       "plain": "Update 011 Shorts scripts to 16-19 s house rules and write the thumbnail brief at £0",
@@ -341914,12 +341919,20 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-25T19:41Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read rules and v02 scripts",
+          "Write Shorts scripts v03",
+          "Write thumbnail brief",
+          "Run checks and open HOS PR",
+          "Park for Chief script lock"
+        ]
+      },
+      "taskKeys": [
+        "HOS:011"
+      ]
     }
   ],
   "focus": [
