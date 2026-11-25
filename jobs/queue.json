@@ -339144,9 +339144,14 @@
           "at": "2026-11-25T13:19Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T13:19Z",
+          "by": "claudecode",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Resolve archive coverage and facts then test the opening before locking narration",
+      "remaining_action": "Reading the held job to see whether what it waited for is finished",
       "kind": "review",
       "recheck_of": "J3551",
       "due": "2026-11-25T14:16:10+00:00",
@@ -339164,8 +339169,11 @@
         "of": 3,
         "at": "2026-11-25T13:19Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read the held job and its history",
+          "Check the predecessor and remaining gates",
+          "Reopen or re-hold, and report"
+        ]
       }
     }
   ],
