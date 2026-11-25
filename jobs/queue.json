@@ -341373,7 +341373,7 @@
       "stage": "",
       "after": "",
       "eta_min": 30,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -341385,6 +341385,11 @@
           "at": "2026-11-25T16:17Z",
           "by": "claudecode",
           "what": "added for claudecode"
+        },
+        {
+          "at": "2026-11-25T22:22Z",
+          "by": "gemini",
+          "what": "cancelled: Unclaimable deadlock: needs=macbook with for=claudecode cannot be claimed by macbook or macbook-2 (both slots idle saying 'no MacBook job waiting'); replaced by cleanly routed macbook-2 job."
         }
       ],
       "remaining_action": "On the MacBook, check slot 2's local macbook/J3487 branch, privacy-check and push the Battle of the Bulge work, or report it lost",
