@@ -340423,13 +340423,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T15:26Z",
-      "eta": "2026-11-25T17:26Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-25T15:23Z",
-      "result": "",
+      "result": "Built WW2 003-S3 ('B-29 vs the Atomic Bomb: Which Cost More?', 40.52s, 1080x1920 25fps, -16.70 LUFS / -1.83 dBFS TP, 66.24% verified PD archive + native portrait animated S01_COST_v03, Rule 13 aircraft-only, £0 spend). Verified master SHA-256 b047c49455230cd8360e40d2f6669b151ced19d0ae315aefc9e96ef5d0de79ec on NAS and iCloud WW2 UAT; WW2 PR #162 merged; Ben watch card WW2:003-S3 published (due Fri 27 Nov 18:00 UTC). No upload before Ben's OK.",
       "history": [
         {
           "at": "2026-11-25T15:23Z",
@@ -340490,6 +340490,11 @@
           "at": "2026-11-25T18:54Z",
           "by": "gemini",
           "what": "step 5 of 5 done: WW2:003-S3 watch card published (due Fri 27 Nov 18:00Z, planned air Sat 28 Nov 12:30 London); £0 spend, no upload"
+        },
+        {
+          "at": "2026-11-25T18:54Z",
+          "by": "gemini",
+          "what": "done: Built WW2 003-S3 ('B-29 vs the Atomic Bomb: Which Cost More?', 40.52s, 1080x1920 25fps, -16.70 LUFS / -1.83 dBFS TP, 66.24% verified PD archive + native portrait animated S01_COST_v03, Rule 13 aircraft-only, £0 spend). Verified master SHA-256 b047c49455230cd8360e40d2f6669b151ced19d0ae315aefc9e96ef5d0de79ec on NAS and iCloud WW2 UAT; WW2 PR #162 merged; Ben watch card WW2:003-S3 published (due Fri 27 Nov 18:00 UTC). No upload before Ben's OK."
         }
       ],
       "remaining_action": "Complete — awaiting Ben's watch OK on WW2:003-S3",
@@ -340524,7 +340529,8 @@
         "title": "B-29 vs the Atomic Bomb: Which Cost More?",
         "number": "003-S3",
         "type": "short"
-      }
+      },
+      "done_ref": "ww2-channel#162"
     },
     {
       "id": "J3726",
