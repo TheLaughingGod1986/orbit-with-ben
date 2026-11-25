@@ -1,0 +1,72 @@
+{
+  "film": "064_Every-Planet-Explained-In-10-Minutes",
+  "bed": "every_planet_score_bed_v01.mp3",
+  "bed_wav": "every_planet_score_bed_v01.wav",
+  "duration_s": 701.86,
+  "vo_duration_s": 683.86,
+  "end_hold_s": 18.0,
+  "bpm_target": 72.3,
+  "pace_range_bpm": [
+    68,
+    76
+  ],
+  "spend_gbp": 0.0,
+  "credits_spent": 0,
+  "generator": "_build_064_score_bed_v01.py",
+  "sha256_mp3": "3e47e9d6da9aca6836a00c27a1fa58e53801190ae06ed445966ed51f5c0d75c6",
+  "sha256_wav": "8cdf633114b5b1ca1160480adeecc88f170f0e9303440b1be046835a30aa94b5",
+  "prompt": "Grand outward solar-system voyage score for Every Planet Explained in 10 Minutes (Mercury to Neptune), alternating between sunlit inner-planet curiosity (\"explain\": warm felt-piano ostinato, crisp pizzicato strings, and gentle marimba-synth pulse for orbital resonances, core cutaways, and spacecraft probes) and deep outer-system wonder (\"awe\": wide harmonic string pads, glassy celesta overtones, resonant brass swells, and deep sub-bass planetary horizon drones). Smooth 2.5-second crossfades at each planet transition from 0.4 AU Mercury out to 30 AU Neptune, lifting at the Jupiter \"no solid surface\" midpoint twist and resolving into a weightless Kuiper-belt horizon hold.\nPace: 68-76 BPM, calm measured pulse matched to British narration, shifting cleanly between explain and awe chapters without heavy percussion.\nNOT: Do not sound like 020/023/024/025 shared Jupiter ambient track, 021/022 solar brass drones, 026 Proxima Centauri deep-space pulse, 027 Earth spin clockwork strings, 028 Gliese 710 tension drone, 029 Betelgeuse orchestral doom brass, 031 Earth magnetic-flip sub-bass pulse, 032 Titan sub-aquatic methane sonar, 033 Uranus bowed vibraphone/glass harmonica solo bed, or 034 Pluto frozen-heart celesta bed. No vocals, no lyrics, no drums, no trap beats, no trailer booms, no comedy stings.",
+  "chapters": [
+    {
+      "chapter": "Mercury",
+      "start_s": 0.0,
+      "end_s": 81.71,
+      "mood": "explain"
+    },
+    {
+      "chapter": "Venus",
+      "start_s": 81.71,
+      "end_s": 158.25,
+      "mood": "awe"
+    },
+    {
+      "chapter": "Earth",
+      "start_s": 158.25,
+      "end_s": 251.59,
+      "mood": "explain"
+    },
+    {
+      "chapter": "Mars",
+      "start_s": 251.59,
+      "end_s": 324.69,
+      "mood": "awe"
+    },
+    {
+      "chapter": "Jupiter",
+      "start_s": 324.69,
+      "end_s": 407.23,
+      "mood": "explain"
+    },
+    {
+      "chapter": "Saturn",
+      "start_s": 407.23,
+      "end_s": 496.81,
+      "mood": "awe"
+    },
+    {
+      "chapter": "Uranus",
+      "start_s": 496.81,
+      "end_s": 584.79,
+      "mood": "explain"
+    },
+    {
+      "chapter": "Neptune",
+      "start_s": 584.79,
+      "end_s": 701.86,
+      "mood": "awe"
+    }
+  ],
+  "script_sha256": "556f3c8df68ee3cd1420ef03b8cedc04a7f0f79463d98ebf4d3d5e5753408db8",
+  "vo_wav_sha256": "4b478fcded393890064ffd285a4121882dc26e0515f3cadc6569adf0465616aa",
+  "timing_basis": "Exact locked VO v01 chapter timestamps (683.86 s) + 18.00 s end-screen hold = 701.86 s."
+}
