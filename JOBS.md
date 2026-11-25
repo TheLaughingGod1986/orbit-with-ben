@@ -108,7 +108,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3704 | mini | blocked | claudecode | – | studio · WW2 pilots 1 and 2: numbers now, pilot 2's retention graph, and confirm pilot 2's new title and thumbnail are live |  |
 | J3706 | mini | blocked | claude | – | studio · WW2 pilot 2: 7-day after-check of the new title and U-boat thumbnail (changed 25 Nov 10:48Z) |  |
 | J3707 | mini | open | – | – | review · Verify condition for J3125 |  |
-| J3708 | mini | open | – | – | review · Verify condition for J3431 |  |
+| J3708 | mini | claimed | claudecode | 2026-11-25T14:06Z | review · Verify condition for J3431 |  |
 
 Recently finished:
 
