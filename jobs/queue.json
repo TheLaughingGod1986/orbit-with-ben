@@ -334295,13 +334295,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-25T05:52Z",
-      "eta": "2026-11-25T07:52Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T05:49Z",
-      "result": "",
+      "result": "HOS PR #766 (macbook/J3675, commit fff4addb, base main, stacked on PR #764 4afb106f): resolved all 8 J3552 FLAGs, both R20 polishes, and all 6 J3553 ADD-1..ADD-6 items into HOS:136 v02. review:script PASS 93.4/100 (1,260w, 8/8 gates), default gate:episode PASS (9/9, scored v02), check_all.sh ALL CHECKS PASS. Shorts S01=42w / S02=42w (16.4-16.8s speech inside 16-19s house rule). SHA-256: v02 script 85fb1286610264f5692a1e1dfe766fc0dfb90231016fd27f012dc079499047b2; SOURCES.md 060acf45825759934812f8a12833f298c2d5de68a236e9a237d215961a69311a; FACT_NOTES_v02.md 899156a368a5f22e554b3d267f073e3c69ff7eded609e2aa07f5db2e5c8126a6; SHORTS_SCRIPTS_v02.md e1df5d81baffca83c559b78a2a87df97df0fe8be15fb8de96a761445906941fe. Ready for Chief lock; £0.00 spent; not merged.",
       "history": [
         {
           "at": "2026-11-25T05:49Z",
@@ -334352,6 +334352,11 @@
           "at": "2026-11-25T06:05Z",
           "by": "macbook-2",
           "what": "step 6 of 6 done"
+        },
+        {
+          "at": "2026-11-25T06:06Z",
+          "by": "macbook-2",
+          "what": "done: HOS PR #766 (macbook/J3675, commit fff4addb, base main, stacked on PR #764 4afb106f): resolved all 8 J3552 FLAGs, both R20 polishes, and all 6 J3553 ADD-1..ADD-6 items into HOS:136 v02. review:script PASS 93.4/100 (1,260w, 8/8 gates), default gate:episode PASS (9/9, scored v02), check_all.sh ALL CHECKS PASS. Shorts S01=42w / S02=42w (16.4-16.8s speech inside 16-19s house rule). SHA-256: v02 script 85fb1286610264f5692a1e1dfe766fc0dfb90231016fd27f012dc079499047b2; SOURCES.md 060acf45825759934812f8a12833f298c2d5de68a236e9a237d215961a69311a; FACT_NOTES_v02.md 899156a368a5f22e554b3d267f073e3c69ff7eded609e2aa07f5db2e5c8126a6; SHORTS_SCRIPTS_v02.md e1df5d81baffca83c559b78a2a87df97df0fe8be15fb8de96a761445906941fe. Ready for Chief lock; £0.00 spent; not merged."
         }
       ],
       "remaining_action": "Commit macbook/J3675, push, open PR to main, return checkout to main, mark done and post thread report",
