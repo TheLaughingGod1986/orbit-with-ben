@@ -1,5 +1,5 @@
 {
-  "next_id": 3676,
+  "next_id": 3677,
   "jobs": [
     {
       "id": "J0001",
@@ -334255,6 +334255,36 @@
       "due": "2026-11-30T18:00:00Z",
       "kind": "script",
       "plain": "Revise HOS 136 Trinity Test script, sources, and Shorts to v02 resolving all 14 blocking facts and editorial fixes"
+    },
+    {
+      "id": "J3676",
+      "title": "HOS 136: independent v02 facts and exact-quote verification",
+      "needs": "gemini",
+      "repo": "hos",
+      "body": "Run an independent `facts` lane (`gemini-agy`) audit on the `HOS:136` (*Trinity Test Explained: Could It Ignite the Sky?*, Cluster 2 Film 2, target Thu 17 Dec 2026 18:00 London) `v02` PR produced by the `v02` script revision job.\n\n**Check independently:**\n1. Every one of the 8 `J3552` blocking `FLAG`s (`FLAG-1`–`FLAG-8`), both `R20` polishes, and `J3553` factual/Teach-on-Screen items (`ADD-1` Cloyd Marvin/Compton, `ADD-2` `1959`/`1943` `WHEN:` stamps, `ADD-5` `S02` overlay) is cleanly resolved in `trinity_test_explained_script_master_v02.md`, `SOURCES.md`, `FACT_NOTES_v02.md`, and `10_Shorts/SHORTS_SCRIPTS_v02.md`.\n2. Open and verify every newly added or modified URL and verbatim quote (especially Row 3 NASA Goddard, Row 7 Wayback `LA-602`, Row 8 `LA-602` pp. 10/15–16, Row 9 Compton 1959 + Bethe 1976 DOI `10.1080/00963402.1976.11455623`, Row 10 DOE OpenNet `hans-bethe.html`, and any Cloyd Marvin biographical source if retained).\n3. Verify programmatically: `S01` and `S02` actual whitespace word counts (`40–44w` fitting Ben's 19 Nov 2026 `16.0–19.0 s` house rule), Part 01 opening milestone timings (`<=0:15` promise, `<=0:25` stakes, `0:25–0:40` early `DATA+SCALE`, `<0:45` first real fact), and zero unverified new spoken claims introduced during `v02` edits.\n4. Commit `01_Script/GEMINI_FACTS_CHECK_v02.md` with exact SHA-256 hashes of all verified `v02` files, run `check_all.sh`, and hand off to the `v02` Chief script lock job. **No spoken rewrites, no merge, no VO/picture spend (`£0.00`).**\n",
+      "ref": "J3553",
+      "film": "HOS:136",
+      "stage": "sources",
+      "after": "J3675",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T05:49Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T05:49Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Audit HOS:136 v02 PR from J3675 against primary sources and commit GEMINI_FACTS_CHECK_v02.md",
+      "due": "2026-12-02T18:00:00Z",
+      "kind": "facts",
+      "plain": "Independently verify all v02 facts, quotes, and Shorts lengths for HOS 136 Trinity Test"
     }
   ],
   "focus": [
