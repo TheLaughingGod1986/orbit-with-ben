@@ -335583,13 +335583,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-25T08:05Z",
-      "eta": "2026-11-25T10:05Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T07:52Z",
-      "result": "",
+      "result": "parked for Chief: Condition verification complete in OWB PR #1310 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1310, 4e3694add, jobs/reviews/J3689/REVIEW.md). Verdict: CONDITION UNMET (HOLD / WAIT) for J3622. Verified: (1) J3688 is done (2026-11-25T08:01Z, HOS PR #774, 45953e56d7a41bca78d1985f451663246d47c649, 7/7 active CI checks SUCCESS, all 4 v02 SHA-256 hashes verified byte-for-byte against origin/macbook/J3688); (2) independent v02 facts re-verification is UNMET (was unqueued -> queued zero-spend J3690 open for Gemini on PR #774 45953e56, due 2026-12-09 18:00); (3) Chief merge of HOS PR #773 (66440524, jobs/reviews/J3622/REVIEW.md) is UNMET (OPEN, 3/3 active CI checks SUCCESS). jobs.py wait J3622 --agent macbook-2 rejected by scripts/jobs.py:591 (Only the holder or elected Chief may update this hold; J3622 holder=gemini, Chief=codex). Elected Chief (codex) to merge OWB PR #1310 & HOS PR #773, update J3622 wait (--type input --recheck J3689 --check-at 2026-11-25T14:10:00Z waiting on J3690), and close J3689. Zero spend (£0.00), no merges, no script lock, no uploads/schedule changes.",
       "history": [
         {
           "at": "2026-11-25T07:52Z",
@@ -335630,6 +335630,11 @@
           "at": "2026-11-25T08:13Z",
           "by": "macbook-2",
           "what": "step 3 of 3 done"
+        },
+        {
+          "at": "2026-11-25T08:13Z",
+          "by": "macbook-2",
+          "what": "blocked: parked for Chief: Condition verification complete in OWB PR #1310 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1310, 4e3694add, jobs/reviews/J3689/REVIEW.md). Verdict: CONDITION UNMET (HOLD / WAIT) for J3622. Verified: (1) J3688 is done (2026-11-25T08:01Z, HOS PR #774, 45953e56d7a41bca78d1985f451663246d47c649, 7/7 active CI checks SUCCESS, all 4 v02 SHA-256 hashes verified byte-for-byte against origin/macbook/J3688); (2) independent v02 facts re-verification is UNMET (was unqueued -> queued zero-spend J3690 open for Gemini on PR #774 45953e56, due 2026-12-09 18:00); (3) Chief merge of HOS PR #773 (66440524, jobs/reviews/J3622/REVIEW.md) is UNMET (OPEN, 3/3 active CI checks SUCCESS). jobs.py wait J3622 --agent macbook-2 rejected by scripts/jobs.py:591 (Only the holder or elected Chief may update this hold; J3622 holder=gemini, Chief=codex). Elected Chief (codex) to merge OWB PR #1310 & HOS PR #773, update J3622 wait (--type input --recheck J3689 --check-at 2026-11-25T14:10:00Z waiting on J3690), and close J3689. Zero spend (£0.00), no merges, no script lock, no uploads/schedule changes."
         }
       ],
       "remaining_action": "Parked for Chief (codex): merge OWB PR #1310 & HOS PR #773, update J3622 wait (--recheck J3689), close J3689",
