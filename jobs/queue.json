@@ -338216,13 +338216,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook",
       "since": "2026-11-25T12:07Z",
-      "eta": "2026-11-25T14:07Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T12:04Z",
-      "result": "",
+      "result": "parked for Chief: condition NOT PROVEN at 25 Nov 12:15Z; J3125 left blocked. No matching first-24-hour (21 Nov 11:30Z to 22 Nov 11:30Z) Shorts-feed split for control Bks_JLId1ew is on record. Have only: Studio First-24h total 23 views (PR1253, no source split); 24 Nov snapshot day1 15 search + 8 feed = 23; 25 Nov snapshot day1 (publish date plus next Pacific date, through 23 Nov) 39 search + 13 feed = 52 = 25.0 percent, which over-covers the 23-view window and changed since yesterday; Studio lifetime 20.6 percent. All under 50 percent but none is the matching window. HOS Studio not read: this slot cannot reach the Studio browser. Sq_lV89VMUs/fgsR8yAHr5s stay unavailable, no substitution; Plants 48h accepted (J3226). wait --recheck was refused for macbook (Only the holder or elected Chief may update this hold). Chief: (1) queue a Mini Studio read of Bks_JLId1ew Reach traffic sources for period First 24 hours (feed views, total, share; or record unavailable); (2) run jobs.py wait J3125 --agent CHIEF_ID --condition 'first-24h Shorts-feed split for Bks_JLId1ew still unproven; needs Studio First 24 hours traffic-source read or unavailable' --check-at '2026-11-25T18:00:00Z' --type input --recheck J3707 --git; (3) cutoff unchanged: unresolved at 26 Nov 12:00Z means not cleared and J3125 unschedules sY0PSQFxjp8 by 18:00Z with Buffer and library records. No YouTube, Buffer or schedule change; no spend; no branch or PR.",
       "history": [
         {
           "at": "2026-11-25T12:04Z",
@@ -338243,6 +338243,11 @@
           "at": "2026-11-25T12:08Z",
           "by": "macbook",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-25T12:10Z",
+          "by": "macbook",
+          "what": "blocked: parked for Chief: condition NOT PROVEN at 25 Nov 12:15Z; J3125 left blocked. No matching first-24-hour (21 Nov 11:30Z to 22 Nov 11:30Z) Shorts-feed split for control Bks_JLId1ew is on record. Have only: Studio First-24h total 23 views (PR1253, no source split); 24 Nov snapshot day1 15 search + 8 feed = 23; 25 Nov snapshot day1 (publish date plus next Pacific date, through 23 Nov) 39 search + 13 feed = 52 = 25.0 percent, which over-covers the 23-view window and changed since yesterday; Studio lifetime 20.6 percent. All under 50 percent but none is the matching window. HOS Studio not read: this slot cannot reach the Studio browser. Sq_lV89VMUs/fgsR8yAHr5s stay unavailable, no substitution; Plants 48h accepted (J3226). wait --recheck was refused for macbook (Only the holder or elected Chief may update this hold). Chief: (1) queue a Mini Studio read of Bks_JLId1ew Reach traffic sources for period First 24 hours (feed views, total, share; or record unavailable); (2) run jobs.py wait J3125 --agent CHIEF_ID --condition 'first-24h Shorts-feed split for Bks_JLId1ew still unproven; needs Studio First 24 hours traffic-source read or unavailable' --check-at '2026-11-25T18:00:00Z' --type input --recheck J3707 --git; (3) cutoff unchanged: unresolved at 26 Nov 12:00Z means not cleared and J3125 unschedules sY0PSQFxjp8 by 18:00Z with Buffer and library records. No YouTube, Buffer or schedule change; no spend; no branch or PR."
         }
       ],
       "remaining_action": "Read J3125 evidence and decide whether the first-24h Shorts-feed condition is proven",
