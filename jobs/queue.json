@@ -335926,16 +335926,21 @@
           "at": "2026-11-25T09:34Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Verified all 20 live URLs + CrossRef API (77/77 cited verbatim quotes confirmed) and all 8 FIX-1..FIX-8 items (0 FLAGs; 17 OK, 4 PARTIAL non-blocking secondary lifespans)"
+        },
+        {
+          "at": "2026-11-25T09:38Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Wrote GEMINI_FACTS_CHECK_v02.md (17 OK, 4 non-blocking PARTIAL, 0 FLAG) and verified check_all.sh ALL CHECKS PASS (review:script 93.6/100, gate:episode 9/9 OK)"
         }
       ],
-      "remaining_action": "Writing 01_Script/GEMINI_FACTS_CHECK_v02.md and running check_all.sh on HOS:127",
+      "remaining_action": "Pushing gemini/J3690-hos127-facts-v02, opening PR to HOS main, and posting desk handoff",
       "due": "2026-12-09T18:00:00Z",
       "kind": "facts",
       "plain": "Fact-check the revised Wright Brothers script, sources, and Shorts",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-25T09:34Z",
+        "at": "2026-11-25T09:38Z",
         "by": "gemini",
         "plan": [
           "Create worktree and verify v02 hashes",
@@ -335944,7 +335949,7 @@
           "Write GEMINI_FACTS_CHECK_v02.md and run check_all.sh",
           "Push PR and post desk handoff"
         ],
-        "note": "Verified all 20 live URLs + CrossRef API (77/77 cited verbatim quotes confirmed) and all 8 FIX-1..FIX-8 items (0 FLAGs; "
+        "note": "Wrote GEMINI_FACTS_CHECK_v02.md (17 OK, 4 non-blocking PARTIAL, 0 FLAG) and verified check_all.sh ALL CHECKS PASS (revie"
       },
       "taskKeys": [
         "HOS:127"
