@@ -325851,13 +325851,13 @@
       "stage": "sources",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T06:34Z",
-      "eta": "2026-11-25T08:34Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-24T16:53Z",
-      "result": "",
+      "result": "Independent Gemini facts audit complete on HOS:137 PR #754 (1ae0da81); delivered GEMINI_FACTS_CHECK_v01.md (sha256 3e570433...) + status/production-status updates in HOS PR #769 (gemini/J3564-hos137-facts-audit, 7ae40acf). Tally (28 items): 9 OK, 15 PARTIAL, 4 blocking FLAGs + 8 primary source upgrades (no spoken rewrites, £0.00 spent). Blocking FLAGs for J3565: (1) FR 405,881 filed 1909-08-10 vs spoken Nov 1909, (2) Chardack-Greatbatch two-stage April lead / June 1960 pulse generator & 2 yr vs 18 mo survival (PMC3232561/VA), (3) dead HTTP 521 heartrhythm.com URL in Row 2 -> replace with PMC3232561, (4) spoken 'low-tack' vs US3691140A/NIHF 'inherently tacky / low adhesion'. Also flagged 5-word FACT #3 card. check_all.sh & test_no_private_network PASS. Handed off to J3565.",
       "history": [
         {
           "at": "2026-11-24T16:53Z",
@@ -325898,6 +325898,11 @@
           "at": "2026-11-25T06:48Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Completed independent facts audit (9 OK / 15 PARTIAL / 4 FLAG + 8 primary upgrades) in HOS PR #769; posted desk & thread reports"
+        },
+        {
+          "at": "2026-11-25T06:48Z",
+          "by": "gemini",
+          "what": "done: Independent Gemini facts audit complete on HOS:137 PR #754 (1ae0da81); delivered GEMINI_FACTS_CHECK_v01.md (sha256 3e570433...) + status/production-status updates in HOS PR #769 (gemini/J3564-hos137-facts-audit, 7ae40acf). Tally (28 items): 9 OK, 15 PARTIAL, 4 blocking FLAGs + 8 primary source upgrades (no spoken rewrites, £0.00 spent). Blocking FLAGs for J3565: (1) FR 405,881 filed 1909-08-10 vs spoken Nov 1909, (2) Chardack-Greatbatch two-stage April lead / June 1960 pulse generator & 2 yr vs 18 mo survival (PMC3232561/VA), (3) dead HTTP 521 heartrhythm.com URL in Row 2 -> replace with PMC3232561, (4) spoken 'low-tack' vs US3691140A/NIHF 'inherently tacky / low adhesion'. Also flagged 5-word FACT #3 card. check_all.sh & test_no_private_network PASS. Handed off to J3565."
         }
       ],
       "remaining_action": "Done — handed off to J3565",
