@@ -340331,10 +340331,10 @@
       "stage": "edit",
       "after": "J3721",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T20:16Z",
+      "eta": "2026-11-25T22:16Z",
       "created_by": "gemini",
       "created_at": "2026-11-25T14:58Z",
       "result": "",
@@ -340398,6 +340398,11 @@
           "at": "2026-11-25T20:16Z",
           "by": "gemini",
           "what": "reopened: Acting-Chief (gemini) ruling recorded in ww2-channel PR #164 (b0c4cc6, 07_Edit/CHIEF_RULING_J3741.md): closing J3722 with PR #163 (1a152ff) merged as v03 QA audit record; v03 HELD from Ben watch due to Ben 13:21:30Z WW2-004 v02 change tick ('0:15 Image is not full screen, is cut like a short'); superseded by queued J3743 (v04 full-bleed 16:9 rebuild) -> J3744 (v04 QA)."
+        },
+        {
+          "at": "2026-11-25T20:16Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for Chief merge, WW2 UAT copy, private R2 watch upload, and WW2:004 watch card update",
@@ -340418,7 +340423,15 @@
       "open_claim": true,
       "taskKeys": [
         "WW2:004"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T20:16Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3723",
