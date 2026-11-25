@@ -321618,9 +321618,14 @@
           "at": "2026-11-25T01:19Z",
           "by": "relay",
           "what": "condition verification queued: J3658"
+        },
+        {
+          "at": "2026-11-25T01:31Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-25T10:15:00Z"
         }
       ],
-      "remaining_action": "Publish finished upload and registration records through Claude Code privacy review",
+      "remaining_action": "Privacy-review, push, open PRs, and merge green for codex/J3512-resume (HOS) and codex/J3512-registry (OWB) via claudecode (J3530) after 2026-11-25T10:00:00Z reset; do not re-upload mpK3D6S7WLk",
       "due": "2026-11-25T12:00:00Z",
       "kind": "studio",
       "plain": "Upload the dinosaur extinction Short you approved as a private video",
@@ -321657,9 +321662,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/J3512-resume codex/J3512-resume at 5008d480; /Volumes/MiniWork/scratch/J3512-registry codex/J3512-registry at bfb399e268. PRIVATE UPLOAD COMPLETE mpK3D6S7WLk no publishAt, no Buffer posts. Review whole diffs for private data, publish/open PRs/merge with green checks. Registry push rejected by automatic review; no retries. J3611 owns conditional scheduling and remaining Studio checks. Do not re-upload. Shared registry copies preserved in named J3512 stash.",
-        "check_at": "2026-11-25T02:19:54+00:00",
-        "recheck_task": "J3658"
+        "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/J3512-resume codex/J3512-resume at 5008d480 (unpushed; HOS origin/main 6b44c291 lacks J3512_short_A_v01/ and mpK3D6S7WLk; supersedes PR #749) and /Volumes/MiniWork/scratch/J3512-registry codex/J3512-registry at bfb399e268 (unpushed; OWB origin/main a3b2f0e708 lacks mpK3D6S7WLk; OWB stash@{0} holds byte-identical copy). PRIVATE UPLOAD COMPLETE mpK3D6S7WLk no publishAt, no Buffer posts; do not re-upload. J3611 owns conditional scheduling. Waiting on claudecode reset at 2026-11-25T10:00:00Z for J3530 publication.",
+        "check_at": "2026-11-25T10:15:00Z",
+        "last_recheck": "J3658",
+        "checked_at": "2026-11-25T01:31:39+00:00",
+        "checked_by": "gemini"
       }
     },
     {
