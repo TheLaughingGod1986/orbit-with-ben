@@ -125,6 +125,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3655 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2:003 (B-29 RqYjADxvJy8): post-publish verify 3-way T&C running, pin comment, cross-link |  |
 | J3656 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2:003 (B-29 RqYjADxvJy8): 48-hour Rule 8 read and same-day CTR check |  |
 | J3660 | mini | open (after J3659) | – | – | HOS:128 script · review · HOS 128: verify v03 fixes and Chief script lock decision (close J3547 if KEEP) | HOS PR #761 (J3630), J3547, J3659 |
+| J3662 | mini | open | – | – | WW2:006 edit · qa · WW2 006: full private audiovisual QA of v01 master |  |
 
 Recently finished:
 

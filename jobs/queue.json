@@ -1,5 +1,5 @@
 {
-  "next_id": 3662,
+  "next_id": 3663,
   "jobs": [
     {
       "id": "J0001",
@@ -332831,6 +332831,40 @@
       "taskKeys": [
         "HOS:128"
       ]
+    },
+    {
+      "id": "J3662",
+      "title": "WW2 006: full private audiovisual QA of v01 master",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Elected acting Chief ruling (`J3631`, OWB PR #1295 `jobs/reviews/J3631/REVIEW.md`): `J3434` (`WW2:006` De Havilland Mosquito) remains held pending genuine full private end-to-end audiovisual QA (`J3434` step 6 and `J3560`/`J3624` precedent; `HANDOFF_J3434_v01.md` recorded only a 3-clip 115 s / 7.5% spot-check).\n\n**Requirements:**\n1. Demonstrate `audio_input` and `moving_video_input` in this session via `chief_relay.py capabilities` before claiming perceptual review; use a typed capability hold if absent. Still sheets, ASR, `ffprobe`, and loudness numbers are technical evidence only, not listening/motion review.\n2. Independently verify the exact `v01` master path and SHA-256 delivered by `ww2-channel` PR #107 (`gemini/J3434-mosquito-assembly`, commit `a251f00`):\n   - `/Volumes/data/studio-live/ww2/02_Video-Projects/006_De-Havilland-Mosquito-Plywood-Balsa-Bomber/07_Edit/v01_master/ww2_006_mosquito_v01.mp4`\n   - Expected SHA-256: `7561d4958875e3edc8464563281bc84134b7f4012f0ea04a8c5e93cee53cb993` (`1920x1080`, `24 fps`, `1542.832 s`).\n3. Watch and listen to 100% of `v01` continuously (`00:00.00–25:42.83`, using lossless stream-copied segments if needed, deleting any local temp segments afterward), verifying:\n   - Narration intelligibility, pacing, audio cleanliness, score level (`~20 LU` below VO), and A/V sync across the full runtime.\n   - First two minutes (Rule 3): concrete moment inside 30 s, promise by 45 s, main story moving by 1:00, no answer spoiler, clean `0:30.1` Mosquito archive reveal.\n   - All archive photographs (`53.52%` across 62 provenanced photos), captions/credits honesty, chapter cards, bespoke diagrams, and legacy code maps (zero internal IDs, garbled glyphs, or unmasked shot-list boilerplate).\n   - Explicitly evaluate the `J3631` flagged visual items and give a concrete recommendation (pass `v01` as-is vs targeted zero-spend `v02` graphic/edit patch before Ben's watch due `2026-12-02 20:00` UTC):\n     - `G00B` `16:00 PM` typo (mixing 24-hour clock with `PM`) at `00:25` and `18:40`.\n     - Diagram `14:32` (`392` / `MPH` wide horizontal spacing).\n     - Long diagram holds (`G5` `S22_01_G5` `33.0 s`, `G3` `S13_01_G3` `28.042 s`, `G18` `S21_01_G18` `20.458 s`, `G15` `S16_02_G15` `20.208 s`, `G06V2` `S23_02_G06V2` `19.292 s`).\n   - Captions (`11_Upload-Package/ww2_006_en-GB_v01.srt`) timing/orthography check and visual check of the 3 Rule-2/13 thumbnails (`A`, `B`, `C` and `thumbnail_comparison_v01.jpg` at `168 px`).\n4. Write `02_Video-Projects/006_De-Havilland-Mosquito-Plywood-Balsa-Bomber/07_Edit/QA_REVIEW_v01.md` (citing this job ID) and open a clean `ww2-channel` PR from `origin/main` (do not overwrite PR #107 files).\n\n**Guards:** £0 spend. No Chief PASS, no PR merge, no upload, no schedule change, and no copy to `WW2 UAT/`. `J3434` stays held until the dependent Chief decision job completes.\n",
+      "ref": "",
+      "film": "WW2:006",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T03:17Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T03:17Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Run full private end-to-end audiovisual QA on WW2:006 v01 master (sha256 7561d495...)",
+      "due": "2026-11-28T12:00:00Z",
+      "kind": "qa",
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ],
+      "plain": "Watch and listen to the full WW2 Mosquito v01 cut privately before Chief approval"
     }
   ],
   "focus": [
