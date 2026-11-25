@@ -329250,17 +329250,22 @@
           "at": "2026-11-25T10:52Z",
           "by": "claudecode",
           "what": "step 0 of 5 done: v02 records found on codex/J3542 at d2e21c5; ledger at c3129faa3e; diffs being read"
+        },
+        {
+          "at": "2026-11-25T10:53Z",
+          "by": "claudecode",
+          "what": "step 2 of 5 done: Privacy read passed on both whole diffs (no secret, address, personal or money detail; mount paths already on main). v02 is final: Ben OK'd it 24 Nov. Main merged into both branches keeping both sides; pushed."
         }
       ],
-      "remaining_action": "Reading both branch diffs for anything private",
+      "remaining_action": "Opening the two pull requests and waiting for checks",
       "due": "2026-11-25T19:00:00Z",
       "for": "claudecode",
       "kind": "assembly",
       "plain": "Publish the checked records for the corrected Mulberry harbour Short",
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-25T10:52Z",
+        "at": "2026-11-25T10:53Z",
         "by": "claudecode",
         "plan": [
           "Check J3542 v02 records are final",
@@ -329269,7 +329274,7 @@
           "Merge on green checks",
           "Record PR links and commits"
         ],
-        "note": "v02 records found on codex/J3542 at d2e21c5; ledger at c3129faa3e; diffs being read"
+        "note": "Privacy read passed on both whole diffs (no secret, address, personal or money detail; mount paths already on main). v02"
       },
       "taskKeys": [
         "WW2:001"
