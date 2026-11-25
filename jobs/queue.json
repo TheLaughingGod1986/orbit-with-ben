@@ -341223,9 +341223,14 @@
           "at": "2026-11-25T18:56Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T18:56Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3733; inspecting J3508 history, approvals, and live YouTube API state"
         }
       ],
-      "remaining_action": "Verify readiness: Link the Titan Short to its full film once the full film is public",
+      "remaining_action": "Check J3508 history and live YouTube status for parent T3cBBss1F60 and Short BLCuJ4EKic4",
       "kind": "review",
       "recheck_of": "J3508",
       "mini_only": true,
@@ -341244,9 +341249,16 @@
         "of": 3,
         "at": "2026-11-25T18:56Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check J3508 history and approvals",
+          "Query live YouTube status for T3cBBss1F60 and BLCuJ4EKic4",
+          "Reopen or re-hold J3508 and report"
+        ],
+        "note": "Claimed J3733; inspecting J3508 history, approvals, and live YouTube API state"
+      },
+      "taskKeys": [
+        "OWB:032"
+      ]
     },
     {
       "id": "J3734",
