@@ -1,5 +1,5 @@
 {
-  "next_id": 3722,
+  "next_id": 3723,
   "jobs": [
     {
       "id": "J0001",
@@ -339945,6 +339945,40 @@
       "due": "2026-11-27T12:00:00Z",
       "kind": "assembly",
       "plain": "Apply J3715 opening cuts A+B (61.8 s) to film 004 as zero-spend v03 keeping v02 untouched"
+    },
+    {
+      "id": "J3722",
+      "title": "WW2 004: full private audiovisual QA of v03 master (J3715 Cuts A+B) for Chief watch stage",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** Follows the `WW2:004` `v03` pre-watch opening-cut assembly (`J3715` acting-Chief ruling, `ww2-channel` PR #155 `b1392f1`). Required before Chief updates Ben's watch card `WW2:004` (watch due Sat 28 Nov 20:00Z, planned air Tue 1 Dec 17:00 London).\n\n**Do (private audiovisual QA; requires real `audio_input,moving_video_input`; £0):**\n1. Inspect the `v03` master `ww2_004_torpedoes_v03.mp4` on NAS `studio-live` (verify exact SHA-256 matches the assembly PR) and verify `v02` remains untouched.\n2. Watch and listen to the full `v03` cut — paying extra attention to both `J3715` cut joins:\n   - Cut A join (`~05:02`, *\"...how far below the ship it had gone.\"* -> *\"There was also an instrument intended to settle that question.\"*): zero clipped syllables, clean breathing room, clean visual transition onto `G12_REC` with zero `G11B` flash, smooth music continuity.\n   - Cut B join (`~05:33`, *\"...agree with the weapon and still be wrong.\"* -> Part 3 card -> *\"War supplied the challenge.\"*): zero clipped syllables, clean Part 3 card timing, smooth music continuity.\n3. Verify shifted chapters, `ww2_004_en-GB_v03.srt` caption sync, Rule 1 archive share (`>=50%`, expected `52.88%`), no `<60 s` repeat regressions, no framing/border/label/audio defects across the full runtime.\n4. Record the audiovisual QA report in a `ww2-channel` PR and **park for Chief** to merge both PRs, copy checksum-verified `v03` to iCloud `WW2 UAT`, upload `ww2-004-v03` to the private R2 watch bucket, and update Ben's watch card `WW2:004` (keeping `v02` intact).\n\n**Guards.** £0 spend. No YouTube upload, schedule, retitle, or privacy change. Never claim to hear audio or watch motion without real demonstrated `audio_input,moving_video_input`.\n",
+      "ref": "b1392f1",
+      "film": "WW2:004",
+      "stage": "edit",
+      "after": "J3721",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T14:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T14:58Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Watch and listen to WW2 004 v03 verifying both cut joins, captions and chapters, then park PR for Chief",
+      "due": "2026-11-27T20:00:00Z",
+      "kind": "qa",
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ],
+      "plain": "Run full audiovisual QA on film 004 v03 opening-cut master and park for Chief watch staging"
     }
   ],
   "focus": [

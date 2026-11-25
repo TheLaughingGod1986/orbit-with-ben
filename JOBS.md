@@ -106,6 +106,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3719 | mini | open (after J3718) | – | – | 064 thumbs · review · Packaging panel decision: OWB 064 Every Planet Explained (3 titles, 3 thumbnails A/B/C, opening & chapters) |  |
 | J3720 | mini | blocked | claudecode | – | review · Verify condition for J3022 |  |
 | J3721 | mini | open | – | – | WW2:004 edit · assembly · WW2 004: v03 pre-watch opening trims (J3715 Cuts A+B, 61.8 s), chapters, captions and render | b1392f1 |
+| J3722 | mini | open (after J3721) | – | – | WW2:004 edit · qa · WW2 004: full private audiovisual QA of v03 master (J3715 Cuts A+B) for Chief watch stage | b1392f1 |
 
 Recently finished:
 
