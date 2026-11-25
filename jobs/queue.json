@@ -342337,13 +342337,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claudecode",
       "since": "2026-11-25T22:24Z",
-      "eta": "2026-11-26T00:24Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T20:14Z",
-      "result": "",
+      "result": "v04 master on NAS (sha256 62b9e10c..., 31,093 frames, v03 sound identical), all 11 technical checks true, 0 open side-bar flags; ww2-channel PR 172 parked for Chief, no merge, upload_authorized false. Stills and tool checks only; no sound heard, no motion watched. For QA: sheet has 31 frames not 32; label words clipped at 1:40; cap tops cropped on tight portraits.",
       "history": [
         {
           "at": "2026-11-25T20:14Z",
@@ -342494,6 +342494,11 @@
           "at": "2026-11-25T22:26Z",
           "by": "claudecode",
           "what": "step 5 of 5 done: PR 172 opened on ww2-channel, parked for Chief"
+        },
+        {
+          "at": "2026-11-25T22:26Z",
+          "by": "claudecode",
+          "what": "done: v04 master on NAS (sha256 62b9e10c..., 31,093 frames, v03 sound identical), all 11 technical checks true, 0 open side-bar flags; ww2-channel PR 172 parked for Chief, no merge, upload_authorized false. Stills and tool checks only; no sound heard, no motion watched. For QA: sheet has 31 frames not 32; label words clipped at 1:40; cap tops cropped on tight portraits."
         }
       ],
       "remaining_action": "Closing the job",
@@ -342516,7 +342521,8 @@
       },
       "taskKeys": [
         "WW2:004"
-      ]
+      ],
+      "done_ref": "ww2-channel#172"
     },
     {
       "id": "J3744",
