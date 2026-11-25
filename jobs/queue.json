@@ -326091,19 +326091,29 @@
           "at": "2026-11-25T00:22Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T00:23Z",
+          "by": "macbook",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Cut locked 005 narration (17:12.478-17:54.238), assemble 1080x1920 vertical Short, and put on Ben watch",
+      "remaining_action": "Inspecting 005-S2 narration, archive photos, and 005-S1 pipeline",
       "due": "2026-12-03T18:00:00Z",
       "kind": "assembly",
       "plain": "Build the second St Nazaire Short about the delayed morning blast that destroyed the Normandie dry dock gate",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T00:22Z",
+        "of": 5,
+        "at": "2026-11-25T00:23Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect 005-S2 assets and VO",
+          "Write 005-S2 build script",
+          "Render 005-S2 master and review sheet",
+          "Verify decode, loudness, frames and NAS SHA-256",
+          "Open PR, queue review and post report"
+        ]
       }
     },
     {
