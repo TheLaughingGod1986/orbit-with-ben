@@ -336258,16 +336258,21 @@
           "at": "2026-11-25T19:24Z",
           "by": "claudecode",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-25T19:25Z",
+          "by": "claudecode",
+          "what": "step 1 of 5 done: Script hash matches c389c3cf; dry run 6 parts, 9,062 characters; live balance 8,003, so nothing recorded or spent"
         }
       ],
-      "remaining_action": "Record the six narration parts for the Edison vs Tesla film and check each one",
+      "remaining_action": "Record the six narration parts once the voice credit resets on 30 Nov",
       "due": "2026-12-02T18:00:00Z",
       "kind": "vo",
       "plain": "Record and vo_check the 6-part long narration for HOS 128 from locked script v03 using Ben Orbit Narrator",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-25T19:24Z",
+        "at": "2026-11-25T19:25Z",
         "by": "claudecode",
         "plan": [
           "Verify locked script and credit",
@@ -336275,7 +336280,8 @@
           "Run voice checks on each part",
           "Commit records in a pull request",
           "Park for Chief review"
-        ]
+        ],
+        "note": "Script hash matches c389c3cf; dry run 6 parts, 9,062 characters; live balance 8,003, so nothing recorded or spent"
       },
       "taskKeys": [
         "HOS:128"
