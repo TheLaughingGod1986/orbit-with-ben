@@ -332716,13 +332716,18 @@
           "at": "2026-11-25T11:59Z",
           "by": "gemini",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-25T11:59Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Clean worktree at 3eae2e72 created on /Volumes/MiniWork/scratch/ww2-J3642; NARRATION_v04.txt SHA-256 confirmed 5ea74805d67df5f0eea8b1cfcb40a4bed7c819a9ec94c02bece094eb3cdbe7e9"
         }
       ],
-      "remaining_action": "Fetching exact commit 3eae2e72 in a clean worktree and checking v04 SHA-256 and parity",
+      "remaining_action": "Inspecting v03->v04 diffs, 46/46 block parity, stripped char count, and J3492 hold details",
       "kind": "facts",
       "plain": "Independent Gemini direct-source recheck of WW2 film 009 narration v04 after the 6 surgical J3634 fixes",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
         "at": "2026-11-25T11:59Z",
         "by": "gemini",
@@ -332732,7 +332737,8 @@
           "Independently verify all 6 fixes & polish",
           "Write CLAIMS_CHECK_v04.md & verify locks",
           "Push stacked PR, notify J3492 & report"
-        ]
+        ],
+        "note": "Clean worktree at 3eae2e72 created on /Volumes/MiniWork/scratch/ww2-J3642; NARRATION_v04.txt SHA-256 confirmed 5ea74805d"
       },
       "taskKeys": [
         "WW2:009"
