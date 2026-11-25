@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J2529, J3432, J3501, J3704, J3442.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J2529, J3432, J3501, J3704, J3442, J3715.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -99,6 +99,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3709 | mini | blocked | claudecode | – | WW2:009 script · review · WW2 009: verify J3492 condition after CLEAN J3642 v04 claims pass | https://github.com/TheLaughingGod1986/ww2-channel/pull/146 |
 | J3713 | mini | blocked | claudecode | – | review · Verify condition for J3551 |  |
 | J3714 | mini | blocked | claude | – | WW2:003  · studio · WW2 film 3 (B-29): two pre-air trims in Studio editor (01:33.70-03:03.00, 06:51.90-07:24.70), then chapters, captions and end screen |  |
+| J3715 | any | open | – | – | review · Field Order History: films 004-006, check the first eight minutes for a background turn or run of figures and propose cuts |  |
 
 Recently finished:
 

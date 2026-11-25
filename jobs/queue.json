@@ -1,5 +1,5 @@
 {
-  "next_id": 3715,
+  "next_id": 3716,
   "jobs": [
     {
       "id": "J0001",
@@ -314794,7 +314794,7 @@
       "remaining_action": "Add the music bed and the labels on three photographs to the St Nazaire cut, then captions, thumbnails and package",
       "due": "2026-11-30T20:00:00Z",
       "kind": "assembly",
-      "urgent": 4,
+      "urgent": 3,
       "progress": {
         "step": 3,
         "of": 8,
@@ -315959,7 +315959,7 @@
       "taskKeys": [
         "WW2:001"
       ],
-      "urgent": 7,
+      "urgent": 6,
       "progress": {
         "step": 6,
         "of": 6,
@@ -321419,7 +321419,7 @@
       "remaining_action": "Waiting for Ben’s login to finish Gravity’s Studio settings",
       "due": "2026-12-03T12:00:00Z",
       "kind": "studio",
-      "urgent": 5,
+      "urgent": 4,
       "mini_only": true,
       "delivers": [
         "HOS:009",
@@ -338769,7 +338769,7 @@
       "due": "2026-11-25T14:00:00Z",
       "kind": "studio",
       "mini_only": true,
-      "urgent": 6,
+      "urgent": 5,
       "progress": {
         "step": 4,
         "of": 5,
@@ -339594,6 +339594,36 @@
         "check_at": "2026-11-26T17:30:00Z",
         "release": "auto"
       }
+    },
+    {
+      "id": "J3715",
+      "title": "Field Order History: films 004-006, check the first eight minutes for a background turn or run of figures and propose cuts",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "**Why.** Ben, Wed 25 Nov, in chat: \"Great any other improvements or let it run?\" The acting Chief's answer: let the live films run, and check films 4-6 now while they are still being edited.\n- Pilot 1's strangers left as a background detour began at 1:28. Once it was cut, overall average viewed went from 7.8% to 19.5%.\n- Film 003 had the same turn at 1:34 and is trimmed before air (J3714).\n- Film 006 v01 turns at 1:45 (\"To understand why Britain turned to wood in the autumn of 1939...\") into lists of aircraft and turret makers until de Havilland appears at about 3:10.\n- Rule 6 now covers the first ~1,200 words (ww2-channel PR #153; `studio/LEARNINGS.md` row 14).\n\n**Do (any lane; read only; no edits; by Thu 26 Nov 18:00 UTC).** For **004** (airs Tue 1 Dec; v02, Ben's changes in progress), **005** (airs Thu 3 Dec; recut under J3710) and **006** (airs Sat 5 Dec; Ben OK'd v02), read the current cut's captions or narration for 0:00-8:00. Use the latest `11_Upload-Package/*.srt`, or the recut script and sentence list for 005.\n1. **Opening against rule 3:** a concrete moment by 0:30, a promise by 0:45, the main story moving by 1:00.\n2. **Find any background turn before the main story** (\"To understand...\", \"In 1939...\", lists of designs, makers or specifications), and note when the main story actually starts.\n3. **Find any run of figures:** more than four numbers in 30 seconds (rule 4).\n4. **For each problem, propose at most two cuts per film**, each under 90 seconds and cut between sentences in the existing narration (no new voice). Give:\n   - exact start and end times on that cut's timeline;\n   - the joined sentences;\n   - the pictures either side, and any photo that would leave the film (its credit);\n   - the archive share after the cut (rule 1: at least half).\n   - Use `02_Video-Projects/003_*/07_Edit/TRIM_PLAN_v01.md` as the model.\n5. **Write `07_Edit/OPENING_CHECK_v01.md` for each film.** One ww2-channel PR; park it for the Chief.\n   - For 004 and 005, a cut goes into the film's current edit round before upload.\n   - For 006, the Chief takes it to Ben, because he has OK'd v02.\n   - Write \"no change\" where a film passes.\n\n**Guards.** Proposals only: no edit, voice, upload or Studio change. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-25T14:30Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T14:30Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Check films 004-006's first eight minutes and propose at most two cuts each",
+      "due": "2026-11-26T18:00:00Z",
+      "kind": "review",
+      "urgent": 7
     }
   ],
   "focus": [
