@@ -340447,9 +340447,14 @@
           "at": "2026-11-25T15:34Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T15:34Z",
+          "by": "claudecode",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Quality checks on the St Nazaire cut, then put it on Ben's board for his watch",
+      "remaining_action": "Checking whether film 005's edit job can restart",
       "kind": "review",
       "recheck_of": "J3432",
       "due": "2026-11-25T16:33:29+00:00",
@@ -340467,9 +340472,15 @@
         "of": 3,
         "at": "2026-11-25T15:34Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read J3432 history and hold",
+          "Check predecessor and gates",
+          "Reopen or re-park J3432 and report"
+        ]
+      },
+      "taskKeys": [
+        "WW2:005"
+      ]
     }
   ],
   "focus": [
