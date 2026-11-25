@@ -317671,15 +317671,20 @@
           "at": "2026-11-25T10:24Z",
           "by": "gemini",
           "what": "step 3 of 5 done: Posted comment Ugyi4bTig55nbg0cu-54AaABAg via WW2 API (HTTP 200, exact match) and pinned in Studio 9224 at 2026-11-25T10:22:52Z ('Comment pinned' toast)."
+        },
+        {
+          "at": "2026-11-25T10:25Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Verified pinned state ('Pinned by @FieldOrderHistory', Ugyi4bTig55nbg0cu-54AaABAg, exact text match, 1 comment total) on two signed-out Innertube reads (10:24:39Z, 10:24:40Z) and Data API; qfc6EBStOfo Public untouched, old v05 J9WGu8aPnHI retired Private."
         }
       ],
-      "remaining_action": "Verify pinned state on signed-out readback, confirm no unintended changes, and record receipt",
+      "remaining_action": "Record receipt in ww2 repo PR, report on studio thread, and finish J3467",
       "kind": "studio",
       "plain": "Pin the question for viewers when the new U-boat film goes live",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-25T10:24Z",
+        "at": "2026-11-25T10:25Z",
         "by": "gemini",
         "plan": [
           "Verify qfc6EBStOfo is Public and read PINNED_COMMENT_v06.txt",
@@ -317688,7 +317693,7 @@
           "Verify pinned state and no unintended changes",
           "Record receipt, report on studio thread, and finish job"
         ],
-        "note": "Posted comment Ugyi4bTig55nbg0cu-54AaABAg via WW2 API (HTTP 200, exact match) and pinned in Studio 9224 at 2026-11-25T10"
+        "note": "Verified pinned state ('Pinned by @FieldOrderHistory', Ugyi4bTig55nbg0cu-54AaABAg, exact text match, 1 comment total) on"
       },
       "taskKeys": [
         "WW2:002"
