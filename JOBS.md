@@ -59,7 +59,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3481 | cloud | open (after J3480) | – | – | WW2:007 script · review · WW2 film 007: Claude Rule-6 viewer test (first 300 words), topic/script lock, and queue post-reset VO |  |
 | J3486 | mini | blocked | macbook | – | WW2:015 script · script · WW2 film 015: topic check, packaging first, script and sources, to lock by 2026-12-16 |  |
 | J3487 | any | blocked | macbook-2 | – | WW2:016 script · script · WW2 film 016: topic check, packaging first, script and sources, to lock by 2026-12-16 |  |
-| J3489 | mini | claimed | gemini | 2026-11-25T09:23Z | review · AI spend: Google AI Ultra review before the 12 Dec renewal (Flow and Gemini use against cheaper tiers), for Ben |  |
 | J3492 | mini | blocked | macbook | – | WW2:009 script · review · WW2 film 009: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue VO | ww2-channel#68 |
 | J3497 | cloud | open | – | – | review · Weekly search research (History of Science): vidIQ demand, Anglosphere adult value, top-10 gap, small-channel outliers |  |
 | J3499 | cloud | open (after J3498) | – | – | 011 script · review · WW2 film 011: Claude Rule-6 viewer test (first 300 words), Rule E lock & queue post-reset VO | ww2-channel#71 |
