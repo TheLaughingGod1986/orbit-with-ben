@@ -342564,13 +342564,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claudecode",
       "since": "2026-11-25T21:32Z",
-      "eta": "2026-11-25T23:32Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T20:47Z",
-      "result": "",
+      "result": "v04 built at £0, no new voice: ww2_005_st_nazaire_v04_mix.mp4 in the film's studio-live 07_Edit (sha256 55ffac7219d623d3442fa4214a5d638db804514121f63fced848f7f973e4603c, 14:46, 21,269 frames). All five fixes plus the G10e explosion plate applied; score v03, mix v03, captions/chapters/description/metadata v02 (chapter 8 at 13:27, 31 photos, title unchanged), thumbnail C v02. QA_TECHNICAL_v04.json passes every listed check. ww2-channel PR #168 (branch claudecode/J3746-ww2-005-v04, head 9562103) is open and NOT merged: merge is the Chief's. Nobody has watched or heard v04: targeted audio and moving-picture check queued as J3748. J3432 stays held; no UAT copy, watch upload, awaits or YouTube change. Note: an extra copy of the G10e plate png sits in the NAS 03_Picture root (harmless; left in place).",
       "history": [
         {
           "at": "2026-11-25T20:47Z",
@@ -342631,6 +342631,11 @@
           "at": "2026-11-25T21:41Z",
           "by": "claudecode",
           "what": "step 7 of 7 done: Technical checks pass (no freezes over 3 s, no repeats under 60 s, archive 52.2%, -15.3 LUFS, -1.6 dBTP, 0 caption overlaps, 0 US spellings); PR 168 opened; targeted watch-and-listen check queued"
+        },
+        {
+          "at": "2026-11-25T21:41Z",
+          "by": "claudecode",
+          "what": "done: v04 built at £0, no new voice: ww2_005_st_nazaire_v04_mix.mp4 in the film's studio-live 07_Edit (sha256 55ffac7219d623d3442fa4214a5d638db804514121f63fced848f7f973e4603c, 14:46, 21,269 frames). All five fixes plus the G10e explosion plate applied; score v03, mix v03, captions/chapters/description/metadata v02 (chapter 8 at 13:27, 31 photos, title unchanged), thumbnail C v02. QA_TECHNICAL_v04.json passes every listed check. ww2-channel PR #168 (branch claudecode/J3746-ww2-005-v04, head 9562103) is open and NOT merged: merge is the Chief's. Nobody has watched or heard v04: targeted audio and moving-picture check queued as J3748. J3432 stays held; no UAT copy, watch upload, awaits or YouTube change. Note: an extra copy of the G10e plate png sits in the NAS 03_Picture root (harmless; left in place)."
         }
       ],
       "remaining_action": "Nothing left on this job; the watch-and-listen check and the Chief's merge come next",
@@ -342655,7 +342660,8 @@
       },
       "taskKeys": [
         "WW2:005"
-      ]
+      ],
+      "done_ref": "9562103"
     },
     {
       "id": "J3747",
