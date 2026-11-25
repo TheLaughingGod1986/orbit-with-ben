@@ -342271,16 +342271,21 @@
           "at": "2026-11-25T21:01Z",
           "by": "claudecode",
           "what": "step 4 of 6 done: All file checks pass and the 32-frame sheet shows every photo full width; the automatic side-bar check flagged 37 shots, each being looked at by eye"
+        },
+        {
+          "at": "2026-11-25T21:02Z",
+          "by": "claudecode",
+          "what": "step 4 of 6 done: Film rendered and all file checks pass; every photo is full width with no boxes, but seven photos show a thin strip of the scan's own edge and need a trim before hand-over"
         }
       ],
-      "remaining_action": "Read the checks and the 32-frame sheet, then open the pull request",
+      "remaining_action": "Trim the scan edges on seven photos, re-render those shots, re-check, then open the pull request",
       "due": "2026-11-26T20:00:00Z",
       "kind": "assembly",
       "plain": "Rebuild film 004 v04 so all archive photos fill 16:9 edge-to-edge (fixing Ben's 0:15 change note) while keeping J3715 Cuts A+B",
       "progress": {
         "step": 4,
         "of": 6,
-        "at": "2026-11-25T21:01Z",
+        "at": "2026-11-25T21:02Z",
         "by": "claudecode",
         "plan": [
           "Read the v03 render and plan",
@@ -342290,7 +342295,7 @@
           "Checks and contact sheet",
           "Pull request and hand-off"
         ],
-        "note": "All file checks pass and the 32-frame sheet shows every photo full width; the automatic side-bar check flagged 37 shots,"
+        "note": "Film rendered and all file checks pass; every photo is full width with no boxes, but seven photos show a thin strip of t"
       },
       "taskKeys": [
         "WW2:004"
