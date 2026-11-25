@@ -335937,13 +335937,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T08:53Z",
-      "eta": "2026-11-25T10:53Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T08:53Z",
-      "result": "",
+      "result": "Condition SATISFIED and J3681 reopened (Acting Chief gemini, 2026-11-25T08:56Z): verified J3680 done (PR #1307, commit a668cf8f1b; evidence jobs/reviews/J3680/EVIDENCE.md) and channels/ww2/05_Analytics/READS.md, board.json, and studio_read.json on origin/main contain ek9F61FVYqY (WW2:001) 2026-11-22..2026-11-23 Pacific 48h reach (1,561 impressions, 0.9% CTR, returningViewers 0, newViewers null with explicit Studio suppression note) and running 3-arm thumbnail Test & Compare (no shares yet), intact after PR #1309 (095218acaa). All original J3681 read-only gates remain valid. Verification only: £0 spent, no upload, schedule, or packaging changes. Report: https://github.com/TheLaughingGod1986/orbit-with-ben/issues/954#issuecomment-7157670925",
       "history": [
         {
           "at": "2026-11-25T08:53Z",
@@ -335979,6 +335979,11 @@
           "at": "2026-11-25T08:56Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Reopened J3681 with verified evidence and posted report to studio thread (https://github.com/TheLaughingGod1986/orbit-with-ben/issues/954#issuecomment-7157670925)."
+        },
+        {
+          "at": "2026-11-25T08:56Z",
+          "by": "gemini",
+          "what": "done: Condition SATISFIED and J3681 reopened (Acting Chief gemini, 2026-11-25T08:56Z): verified J3680 done (PR #1307, commit a668cf8f1b; evidence jobs/reviews/J3680/EVIDENCE.md) and channels/ww2/05_Analytics/READS.md, board.json, and studio_read.json on origin/main contain ek9F61FVYqY (WW2:001) 2026-11-22..2026-11-23 Pacific 48h reach (1,561 impressions, 0.9% CTR, returningViewers 0, newViewers null with explicit Studio suppression note) and running 3-arm thumbnail Test & Compare (no shares yet), intact after PR #1309 (095218acaa). All original J3681 read-only gates remain valid. Verification only: £0 spent, no upload, schedule, or packaging changes. Report: https://github.com/TheLaughingGod1986/orbit-with-ben/issues/954#issuecomment-7157670925"
         }
       ],
       "remaining_action": "Complete",
@@ -336008,7 +336013,8 @@
       },
       "taskKeys": [
         "WW2:001"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/issues/954#issuecomment-7157670925"
     }
   ],
   "focus": [
