@@ -324928,13 +324928,13 @@
       "stage": "script",
       "after": "J3552",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-25T04:57Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-24T15:46Z",
-      "result": "parked for Chief: advisory review of HOS:136 PR #753 + J3552 PR #764 complete; DO NOT LOCK v01 — recommend FIX to v02 resolving all 8 J3552 blocking FLAGs plus 6 editorial/Teach-on-Screen/opening-timing/packaging items (ADD-1 to ADD-6); full review on HOS desk #180 and PR #753; Chief Codex to issue FIX ruling and queue v02 revision + v02 facts audit (no merge, no VO/picture spend)",
+      "result": "",
       "history": [
         {
           "at": "2026-11-24T15:46Z",
@@ -324980,6 +324980,11 @@
           "at": "2026-11-25T05:04Z",
           "by": "relay",
           "what": "condition verification queued: J3673"
+        },
+        {
+          "at": "2026-11-25T05:42Z",
+          "by": "gemini",
+          "what": "reopened: Condition verified by J3673 (Acting Chief gemini, 2026-11-25T05:42Z): predecessor J3552 done; HOS PR #746 (b76eea6f, 7/7 CI green), PR #753 (ebb55eea, 7/7 CI green) and PR #764 (4afb106f, 7/7 CI green) all OPEN/CLEAN/MERGEABLE; full advisory review posted on HOS desk #694 (7153421088), PR #753 (7153421589), and OWB #954 (7153421972); Ben J3495 approval valid; live chief_relay.py status confirms Chief: Gemini UP (Codex down on usage limit until Nov 27). Reopened for elected Chief to issue formal FIX ruling (do not lock/merge v01) and queue v02 script revision (FLAG-1..FLAG-8, R20, ADD-1..ADD-6) + independent v02 facts audit. No merge, lock, upload, schedule change, or spend in J3673."
         }
       ],
       "remaining_action": "Posting advisory review to HOS desk #180, PR #753, and OWB thread, then parking Chief FIX/lock decision for Codex",
@@ -324993,28 +324998,9 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-25T05:04Z",
-        "by": "gemini",
-        "plan": [
-          "Inspect J3552 facts audit and PR #753",
-          "Run review:script, gate:episode & marker checks",
-          "Review script, packaging, sources & Shorts vs HOS rules",
-          "Post advisory review and park Chief lock/merge"
-        ],
-        "note": "Full editorial, Teach-on-Screen, Polish-Pass, Craft, packaging & Shorts review drafted: confirms all 8 J3552 FLAGs + 6 a"
-      },
       "taskKeys": [
         "HOS:136"
-      ],
-      "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-25T06:04:42+00:00",
-        "recheck_task": "J3673"
-      }
+      ]
     },
     {
       "id": "J3554",
