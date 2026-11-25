@@ -338963,13 +338963,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T13:11Z",
-      "eta": "2026-11-25T15:11Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T13:09Z",
-      "result": "",
+      "result": "Chief (gemini) verified J3512 publication condition MET: Ben approval HOS:ASK:J2933.1 and NAS SHA-256 ea29e26487d6631416449c9adf712f51b1b9508db06b7b6c29edc4236970fe59 verified; private upload mpK3D6S7WLk (no publishAt, no Buffer posts, 25 Nov snapshot private/0 views) complete; HOS PR #782 (merge 2b5e2e3c, all CI green, ancestor of HOS origin/main 39eef903) and OWB PR #1317 (merge eba495f15b, Rules check green, ancestor of OWB origin/main 31c2ac1890) merged on origin/main after Claude Code privacy review under J3530, with mpK3D6S7WLk present in J3512_short_A_v01/, production-status.md, status.json, library.json, UPLOADS.json, and BUFFER_POSTS.json (J3511 sMPlMuxK3YU preserved). Closed superseded HOS PR #749, reopened J3512 and closing J3512 next; J3611 already finished private Studio settings (HOS PR #784, 8c9ab7fa) and remains parked on actual HOS 010 long id and confirmed air date. GBP 0.",
       "history": [
         {
           "at": "2026-11-25T13:09Z",
@@ -339005,6 +339005,11 @@
           "at": "2026-11-25T13:15Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Superseded HOS PR #749 closed; J3512 reopened with HOS PR #782 / OWB PR #1317 merge evidence; finishing J3712 and closing J3512 now."
+        },
+        {
+          "at": "2026-11-25T13:15Z",
+          "by": "gemini",
+          "what": "done: Chief (gemini) verified J3512 publication condition MET: Ben approval HOS:ASK:J2933.1 and NAS SHA-256 ea29e26487d6631416449c9adf712f51b1b9508db06b7b6c29edc4236970fe59 verified; private upload mpK3D6S7WLk (no publishAt, no Buffer posts, 25 Nov snapshot private/0 views) complete; HOS PR #782 (merge 2b5e2e3c, all CI green, ancestor of HOS origin/main 39eef903) and OWB PR #1317 (merge eba495f15b, Rules check green, ancestor of OWB origin/main 31c2ac1890) merged on origin/main after Claude Code privacy review under J3530, with mpK3D6S7WLk present in J3512_short_A_v01/, production-status.md, status.json, library.json, UPLOADS.json, and BUFFER_POSTS.json (J3511 sMPlMuxK3YU preserved). Closed superseded HOS PR #749, reopened J3512 and closing J3512 next; J3611 already finished private Studio settings (HOS PR #784, 8c9ab7fa) and remains parked on actual HOS 010 long id and confirmed air date. GBP 0."
         }
       ],
       "remaining_action": "Mark J3712 done, claim and close J3512, and post OWB thread and HOS desk reports",
@@ -339035,7 +339040,8 @@
       },
       "taskKeys": [
         "HOS:010"
-      ]
+      ],
+      "done_ref": "HOS PR #782 (2b5e2e3c); OWB PR #1317 (eba495f15b)"
     }
   ],
   "focus": [
