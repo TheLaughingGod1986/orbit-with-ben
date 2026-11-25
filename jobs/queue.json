@@ -342401,9 +342401,14 @@
           "at": "2026-11-25T20:56Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Master SHA-256 1a6b253f8e57185950749568e8d412d2a527966348ec8420d6d71458f7b5cf17 verified (1920x1080 24fps 21269 frames 886.21s AAC 48kHz stereo); audio_input & moving_video_input demonstrated via read_file probes"
+        },
+        {
+          "at": "2026-11-25T20:58Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Reviewed 0:00-8:02 AV chunks: splices 1-8 (incl. J3715 Cuts A & B) seamless, score clean; caught premature duplicate COMMANDER ROBERT RYDER lower-third colliding with MUD FLATS on G6 at 4:14-4:20 during Mountbatten line, plus A 9804 6.67s freeze/strut-obscured still at 0:41.75"
         }
       ],
-      "remaining_action": "Watching and listening to full v03 cut chunks 0:00-7:30 (splices 1-8, A 9804 freeze, G5/G6/G7/G11/G16)",
+      "remaining_action": "Watching and listening to full v03 cut chunks 7:30-14:46 (splices 9-19, G10/G12/G8/G10d, A 23877 freeze, ending fade)",
       "due": "2026-11-28T20:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -342420,9 +342425,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-25T20:56Z",
+        "at": "2026-11-25T20:58Z",
         "by": "gemini",
         "plan": [
           "Verify master & test AV input",
@@ -342431,7 +342436,7 @@
           "Check captions, chapters & thumbnails",
           "Commit QA review PR & report"
         ],
-        "note": "Master SHA-256 1a6b253f8e57185950749568e8d412d2a527966348ec8420d6d71458f7b5cf17 verified (1920x1080 24fps 21269 frames 8"
+        "note": "Reviewed 0:00-8:02 AV chunks: splices 1-8 (incl. J3715 Cuts A & B) seamless, score clean; caught premature duplicate COM"
       },
       "taskKeys": [
         "WW2:005"
