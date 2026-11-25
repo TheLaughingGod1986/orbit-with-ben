@@ -321776,13 +321776,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T11:15Z",
-      "eta": "2026-11-25T13:15Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T10:53Z",
-      "result": "",
+      "result": "Private upload complete and all publication records merged: Ben-approved HOS 010 bird Short C v01 (Are Birds Really Dinosaurs?, HOS:ASK:J2933.2, SHA-256 698db62789e1e6884ae15797dc51083c39bbc0ee3c0cc1ecf83f92e2e87a0359) uploaded privately as sMPlMuxK3YU on 24 Nov 2026 19:02Z (privacy absent->private, publishAt absent->absent, madeForKids false, en-GB captions serving, STILL HERE robin cover read back, Related None pending actual long; post-upload channel:audit 68 videos / 0 errors, lint:package PASS, check_all.sh ALL CHECKS PASS). Privacy-checked and merged via HOS PR #781 (8cb627bc) and OWB PR #1315 (f65145ec); Buffer held with zero posts. J3610 remains open for conditional scheduling and outstanding Studio settings check once actual HOS 010 long id and air date exist. £0.",
       "history": [
         {
           "at": "2026-11-24T10:53Z",
@@ -321888,6 +321888,11 @@
           "at": "2026-11-25T11:15Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T11:15Z",
+          "by": "gemini",
+          "what": "done: Private upload complete and all publication records merged: Ben-approved HOS 010 bird Short C v01 (Are Birds Really Dinosaurs?, HOS:ASK:J2933.2, SHA-256 698db62789e1e6884ae15797dc51083c39bbc0ee3c0cc1ecf83f92e2e87a0359) uploaded privately as sMPlMuxK3YU on 24 Nov 2026 19:02Z (privacy absent->private, publishAt absent->absent, madeForKids false, en-GB captions serving, STILL HERE robin cover read back, Related None pending actual long; post-upload channel:audit 68 videos / 0 errors, lint:package PASS, check_all.sh ALL CHECKS PASS). Privacy-checked and merged via HOS PR #781 (8cb627bc) and OWB PR #1315 (f65145ec); Buffer held with zero posts. J3610 remains open for conditional scheduling and outstanding Studio settings check once actual HOS 010 long id and air date exist. £0."
         }
       ],
       "remaining_action": "Publish finished J3511 HOS and OWB upload records through Claude Code privacy review (do not re-upload sMPlMuxK3YU)",
@@ -321919,7 +321924,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "HOS PR #781 (8cb627bc); OWB PR #1315 (f65145ec)"
     },
     {
       "id": "J3512",
