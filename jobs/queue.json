@@ -314628,10 +314628,10 @@
       "stage": "edit",
       "after": "J3431",
       "eta_min": 480,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-25T14:47Z",
+      "eta": "2026-11-25T22:47Z",
       "created_by": "claude",
       "created_at": "2026-11-23T15:29Z",
       "result": "",
@@ -314815,6 +314815,11 @@
           "at": "2026-11-25T14:27Z",
           "by": "claudecode",
           "what": "released: Still step 3 of 8 done; step 4 mostly done. First picture build exists: /Volumes/MiniWork/scratch/J3432/out/ww2_005_st_nazaire_picture_v01_voice_only.mp4 (1920x1080, 24 fps, 22,430 frames = 15:34.58, 141 MB, decodes clean, narration only, sha256 8e3d436d...; BUILD_REPORT_v01.json beside it and in 07_Edit). Builder: 07_Edit/build_film_005_v01.py on ww2 branch claudecode/J3432-vo-splice (commit ca2e5ee, PR 148, worktree /Volumes/MiniWork/worktrees/J3432-ww2; merge is Chief's). Full build takes 70 s; segments cached in scratch/segments (delete seg_NNN.mp4 to redo one, or --only N). Looked at one still per shot (scratch/qa/sheet_v01_0-2.jpg) only; no motion or sound reviewed. Nothing running detached. Not on the NAS yet (preview, not a master). To do before step 4 is done: (1) music bed: none mixed yet; reuse the film 004 code score method (004 07_Edit/build_score_004_v01.py), log licence; (2) photo labels for shots 23 (C 2351, from spoken words), 52 (C 2351, pumping station marker), 61 (C 3317A: pumps, winding gear, gate): look at each photo full size, write 07_Edit/PHOTO_LABELS_005.json (x, y as 0-1), rebuild with --only 23,52,61 then a full run; (3) G10 second use (shot 59, 12:53-13:27) shows the 01:34 clock from the ramming plate: check the narration there and draw a plate without the clock if it is about the next day; (4) check plate titles are not cut at the top edge at full size; (5) A 7901 and A 7900 (shots 15, 16) are near-identical views back to back; A 9804 is weak. Then captions, chapters, thumbnails, package, QA. Disk: Mini 7 GB free, MiniWork 12 GB."
+        },
+        {
+          "at": "2026-11-25T14:47Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Add the music bed and the labels on three photographs to the St Nazaire cut, then captions, thumbnails and package",
