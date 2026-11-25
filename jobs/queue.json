@@ -340353,9 +340353,14 @@
           "at": "2026-11-25T19:41Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T19:42Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3722; checking assembly PR and NAS v03 master"
         }
       ],
-      "remaining_action": "Watch and listen to WW2 004 v03 verifying both cut joins, captions and chapters, then park PR for Chief",
+      "remaining_action": "Probing multimodal audio/video input and verifying v03 master + assembly PR",
       "due": "2026-11-27T20:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -340373,12 +340378,21 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T19:41Z",
+        "of": 5,
+        "at": "2026-11-25T19:42Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Probe audio/video input & verify v03 files",
+          "Watch/listen Cuts A+B joins & opening",
+          "Full v03 audiovisual QA pass",
+          "Verify chapters, SRT, archive share & repeats",
+          "Write QA PR & report"
+        ],
+        "note": "Claimed J3722; checking assembly PR and NAS v03 master"
+      },
+      "taskKeys": [
+        "WW2:004"
+      ]
     },
     {
       "id": "J3723",
