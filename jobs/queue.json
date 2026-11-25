@@ -332552,12 +332552,25 @@
           "at": "2026-11-25T02:24Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-25T02:25Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-25T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Verify HOS 128 v03 diff/hashes/default gate:episode and decide Chief script lock + VO queueing.",
       "due": "2026-12-01T18:00:00Z",
       "kind": "review",
-      "plain": "Verify HOS 128 v03 resolves all 6 J3630 blocking fixes, then decide KEEP/lock, merge PR, close J3547, and queue VO."
+      "plain": "Verify HOS 128 v03 resolves all 6 J3630 blocking fixes, then decide KEEP/lock, merge PR, close J3547, and queue VO.",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
