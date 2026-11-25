@@ -342360,9 +342360,14 @@
           "at": "2026-11-25T20:30Z",
           "by": "gemini",
           "what": "step 2 of 6 done: Step 2 done (0:00-4:30): Joins 1-5 seamless; caught factual lower-third bug at 4:14-4:21 (COMMANDER ROBERT RYDER pops over MUD FLATS during Mountbatten narration, then repeats at 4:27); A 9804 frozen/obscured by struts at 0:42."
+        },
+        {
+          "at": "2026-11-25T20:32Z",
+          "by": "gemini",
+          "what": "step 3 of 6 done: Step 3 done (4:30-9:00): Joins 6-9 and 11 clean; flagged Join 10 (~8:37.5) for close-up audio inspection of faint pre-roll syllable/breath; Beattie lower-third at 7:10 clean; G11/G7/G16/G6 crisp."
         }
       ],
-      "remaining_action": "Watching and listening to chunks 04-06 (4:30 to 9:00) with audio_input and moving_video_input",
+      "remaining_action": "Watching and listening to chunks 07-10 (9:00 to 14:46) with audio_input and moving_video_input",
       "due": "2026-11-28T20:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -342379,9 +342384,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 6,
-        "at": "2026-11-25T20:30Z",
+        "at": "2026-11-25T20:32Z",
         "by": "gemini",
         "plan": [
           "Verify master hash and split chunks",
@@ -342391,7 +342396,7 @@
           "Audit splices, captions, thumbs, package",
           "Write QA report and open PR"
         ],
-        "note": "Step 2 done (0:00-4:30): Joins 1-5 seamless; caught factual lower-third bug at 4:14-4:21 (COMMANDER ROBERT RYDER pops ov"
+        "note": "Step 3 done (4:30-9:00): Joins 6-9 and 11 clean; flagged Join 10 (~8:37.5) for close-up audio inspection of faint pre-ro"
       },
       "taskKeys": [
         "WW2:005"
