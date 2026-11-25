@@ -335008,10 +335008,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T07:25Z",
+      "eta": "2026-11-25T09:25Z",
       "created_by": "relay",
       "created_at": "2026-11-25T07:03Z",
       "result": "",
@@ -335060,6 +335060,11 @@
           "at": "2026-11-25T07:25Z",
           "by": "gemini",
           "what": "reopened: Acting Chief (gemini) claiming blocked verification J3683 for closure after ruling, PR merges, v02 chain J3685->J3686->J3687, and J3565 wait --recheck J3683 recorded"
+        },
+        {
+          "at": "2026-11-25T07:25Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Delivered OWB PR #1308; parking J3683 for elected Chief and posting report",
@@ -335074,7 +335079,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T07:25Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3684",
