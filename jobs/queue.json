@@ -342645,15 +342645,20 @@
           "at": "2026-11-25T21:28Z",
           "by": "claudecode",
           "what": "step 0 of 6 done"
+        },
+        {
+          "at": "2026-11-25T21:28Z",
+          "by": "claudecode",
+          "what": "step 1 of 6 done: Step 1 done: read pass-1 runner guards, RETAKE_BOARD_v01 (8 rows, take 2, prompt_retake + start_still hashes). No credits spent, no Flow opened."
         }
       ],
-      "remaining_action": "Reading the pass-1 runner and retake board before building the retake runner",
+      "remaining_action": "Building the retake runner as a guarded wrapper over the pass-1 runner",
       "due": "2026-12-01T18:00:00Z",
       "kind": "video",
       "plain": "Build guarded retake runner and mint take 2 for 013's 8 confirmed RETAKE plates before 5 Dec (800 Flow cr max, £0 cash)",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
         "at": "2026-11-25T21:28Z",
         "by": "claudecode",
@@ -342664,7 +342669,8 @@
           "Submit 8 take-2 rows",
           "Verify, archive, sheets, receipt",
           "PR, desk post, park for Chief"
-        ]
+        ],
+        "note": "Step 1 done: read pass-1 runner guards, RETAKE_BOARD_v01 (8 rows, take 2, prompt_retake + start_still hashes). No credit"
       },
       "taskKeys": [
         "HOS:013"
