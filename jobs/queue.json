@@ -340465,16 +340465,21 @@
           "at": "2026-11-25T18:46Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Verified 003-S1/S2 pipeline, STT word timings (0.160-37.800 s, 88 words), SHA-256 PD photos, and S01_COST_v03 source"
+        },
+        {
+          "at": "2026-11-25T18:49Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Rendered 40.52s 1080x1920 25fps master (66.24% archive, -16.70 LUFS, -1.83 dBFS TP, 0 silence/black flags)"
         }
       ],
-      "remaining_action": "Writing build_short.py with native 9:16 animated S01_COST_v03 and rendering 003-S3 master",
+      "remaining_action": "Inspecting rendered stills, captions, safe zones, and ffprobe metrics",
       "due": "2026-11-27T12:00:00Z",
       "kind": "assembly",
       "urgent": 7,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-25T18:46Z",
+        "at": "2026-11-25T18:49Z",
         "by": "gemini",
         "plan": [
           "Inspect 003-S1 pipeline & assets",
@@ -340483,7 +340488,7 @@
           "Copy master to NAS, watch store & open PR",
           "Publish watch card & report"
         ],
-        "note": "Verified 003-S1/S2 pipeline, STT word timings (0.160-37.800 s, 88 words), SHA-256 PD photos, and S01_COST_v03 source"
+        "note": "Rendered 40.52s 1080x1920 25fps master (66.24% archive, -16.70 LUFS, -1.83 dBFS TP, 0 silence/black flags)"
       },
       "taskKeys": [
         "WW2:003"
