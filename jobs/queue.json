@@ -330205,9 +330205,14 @@
           "at": "2026-11-25T02:18Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Inspected PR #752, #758, #760, J3547, and all v02 script/Shorts/facts/packaging files; confirmed 5 J3629 FLAGs and duplicate _master_ filename hazard"
+        },
+        {
+          "at": "2026-11-25T02:20Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Completed direct HTTP/PDF quote verification of all MUST QUOTE sources (incl. scanned NPS NRIS 75001212 pp.1-14) plus timings, Shorts, Teach/Craft, and mechanical gate checks. Confirmed 5 J3629 FLAGs + 1 new mechanical gate:episode duplicate _master_ defect; ruling is FIX (not locked)."
         }
       ],
-      "remaining_action": "Independently opening all MUST QUOTE URLs and NPS PDF for direct quote verification",
+      "remaining_action": "Writing J3630 direct-quote verification and Chief FIX ruling, opening review PR, and queueing v03 fix + lock follow-up",
       "due": "2026-12-01T18:00:00Z",
       "kind": "review",
       "plain": "Check the corrected Edison and Tesla script against original sources and decide whether recording can begin",
@@ -330220,9 +330225,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-25T02:18Z",
+        "at": "2026-11-25T02:20Z",
         "by": "gemini",
         "plan": [
           "Inspect PR752/758/760 and v02 files",
@@ -330231,7 +330236,7 @@
           "Write KEEP/FIX ruling and merge/queue if KEEP",
           "Update J3547/board and post reports"
         ],
-        "note": "Inspected PR #752, #758, #760, J3547, and all v02 script/Shorts/facts/packaging files; confirmed 5 J3629 FLAGs and dupli"
+        "note": "Completed direct HTTP/PDF quote verification of all MUST QUOTE sources (incl. scanned NPS NRIS 75001212 pp.1-14) plus ti"
       },
       "taskKeys": [
         "HOS:128"
