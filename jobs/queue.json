@@ -329255,17 +329255,22 @@
           "at": "2026-11-25T10:53Z",
           "by": "claudecode",
           "what": "step 2 of 5 done: Privacy read passed on both whole diffs (no secret, address, personal or money detail; mount paths already on main). v02 is final: Ben OK'd it 24 Nov. Main merged into both branches keeping both sides; pushed."
+        },
+        {
+          "at": "2026-11-25T10:54Z",
+          "by": "claudecode",
+          "what": "step 3 of 5 done: PRs open: orbit-with-ben #1316, ww2-channel #143"
         }
       ],
-      "remaining_action": "Opening the two pull requests and waiting for checks",
+      "remaining_action": "Waiting for checks on both pull requests, then merging",
       "due": "2026-11-25T19:00:00Z",
       "for": "claudecode",
       "kind": "assembly",
       "plain": "Publish the checked records for the corrected Mulberry harbour Short",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-25T10:53Z",
+        "at": "2026-11-25T10:54Z",
         "by": "claudecode",
         "plan": [
           "Check J3542 v02 records are final",
@@ -329274,7 +329279,7 @@
           "Merge on green checks",
           "Record PR links and commits"
         ],
-        "note": "Privacy read passed on both whole diffs (no secret, address, personal or money detail; mount paths already on main). v02"
+        "note": "PRs open: orbit-with-ben #1316, ww2-channel #143"
       },
       "taskKeys": [
         "WW2:001"
