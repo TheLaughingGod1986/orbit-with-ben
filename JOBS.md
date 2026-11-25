@@ -134,6 +134,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3644 | mini | open | – | – | review · Verify condition for J3205 |  |
 | J3646 | mini | claimed | gemini | 2026-11-25T00:38Z | WW2:001 upload · studio · WW2 001-S1: upload Ben-approved Mulberry Short v02, scheduled Thu 26 Nov 12:00 London, linked to pilot 1 |  |
 | J3647 | mini | open | – | – | WW2:004 edit · review · Review WW2 004 Short 1 v01 ('Mark 14 Torpedo: Why It Ran 10 Feet Too Deep') for Ben watch | J3570 |
+| J3648 | mini | open | – | – | WW2:001 upload · studio · WW2 001-S1: 7-day read of Mulberry Short NoQQqrW2meM and pilot 1 Shorts/Related traffic |  |
 
 Recently finished:
 

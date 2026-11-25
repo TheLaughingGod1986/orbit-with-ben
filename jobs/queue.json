@@ -1,5 +1,5 @@
 {
-  "next_id": 3648,
+  "next_id": 3649,
   "jobs": [
     {
       "id": "J0001",
@@ -330940,6 +330940,36 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3648",
+      "title": "WW2 001-S1: 7-day read of Mulberry Short NoQQqrW2meM and pilot 1 Shorts/Related traffic",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** 7-day readout for Field Order History's first Short (`WW2:001-S1`, `NoQQqrW2meM`, *Mulberry Harbours: How Did They Work?*, scheduled Thu 26 Nov 2026 12:00 London = `2026-11-26T12:00:00Z`, uploaded in J3646 from Ben-approved v02 SHA-256 `a63f323f124c078d0999a066c2a34cbf36c52dfecebcb5cf3b0cb8ab04c11b89`). Evaluates `studio/LEARNINGS.md` line 9 (\"within 7 days of a film's first Short, the long film shows views from Shorts in its traffic sources\").\n\n**Before-number baseline (Pilot 1 `ek9F61FVYqY`, captured 2026-11-25T00:01Z before Short upload):**\n- Studio Advanced mode (`Since published`, 22 Nov 2026 – Now): Total 33 views, 2.4 watch hours, 4:09 AVD, 1,767 impressions, 0.8% CTR.\n  - Suggested videos: 21 views, 0.8 watch hours, 2:43 AVD, 1,715 impressions, 0.8% CTR.\n  - Direct or unknown: 10 views, 1.6 watch hours, 7:20 AVD.\n  - YouTube search: 1 view, 0.0 watch hours, 48 impressions, 0% CTR.\n  - Playlists: 1 view, 0.1 watch hours, 4:23 AVD, 2 impressions, 0% CTR.\n  - Browse features: 0 views, 2 impressions, 0% CTR.\n  - Other YouTube features: 0 views.\n  - **Shorts feed / Shorts traffic: 0 views (row absent).**\n- Data API (`2026-11-25T00:00Z`): 33 views, 1 like, 1 comment.\n- YouTube Analytics API (`2026-11-22`–`2026-11-25`, settled daily batch): `RELATED_VIDEO`: 7 views / 12 min; `PLAYLIST`: 1 view / 4 min; `NO_LINK_OTHER`: 1 view / 0 min; `SHORTS`: absent (0 views).\n\n**Do (Mini; Field Order History Studio on 9224 and Data/Analytics API only; never open or play a public video):**\n1. Read `NoQQqrW2meM` in Studio 9224 and the Data/Analytics API: views, Shorts-feed share, stayed-to-watch (viewed vs swiped away), average view duration / % viewed, likes, subscribers gained, and confirm Related video = `ek9F61FVYqY`.\n2. Read Pilot 1 (`ek9F61FVYqY`) traffic sources in Studio 9224 Advanced mode and Analytics API: capture views from Shorts / Related video against the 2026-11-25T00:01Z before-number above.\n3. Record the 7-day read and verdict against `studio/LEARNINGS.md` line 9 (and `02_Video-Projects/001_Mulberry-Harbours-Floating-Ports-D-Day/status.json`), plus the recommendation on Shorts per film for Field Order History.\n\n£0.\n",
+      "ref": "",
+      "film": "WW2:001",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T00:06Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T00:06Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "WW2 001-S1: 7-day read of Mulberry Short NoQQqrW2meM and pilot 1 Shorts/Related traffic",
+      "due": "2026-12-03T12:05:00Z",
+      "kind": "studio",
+      "plain": "Read 7-day stats for Mulberry Short NoQQqrW2meM and pilot 1 Shorts/Related traffic vs baseline, then record verdict in LEARNINGS.md"
     }
   ],
   "focus": [
