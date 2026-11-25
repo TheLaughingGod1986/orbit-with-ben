@@ -111,7 +111,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3735 | mini | blocked | claudecode | – | review · Verify condition for J2886 |  |
 | J3738 | mini | blocked | claudecode | – | 013 picture · script · HOS 013 Darwin & Wallace: £0 retake prompt & price board for 8 confirmed RETAKE plates | J2529 |
 | J3739 | mini | open (after J3678) | – | – | 137 vo · vo · HOS 137 Accidental Inventions: long VO (5 parts) & Shorts S01/S02 VO from locked v02 scripts | J3734 |
-| J3740 | mini | open | – | – | 011 script · script · HOS 011 Anaesthesia: £0 Shorts scripts v03 (16-19 s) & thumbnail brief | J3734 |
+| J3740 | mini | claimed | claudecode | 2026-11-25T21:41Z | 011 script · script · HOS 011 Anaesthesia: £0 Shorts scripts v03 (16-19 s) & thumbnail brief | J3734 |
 
 Recently finished:
 
