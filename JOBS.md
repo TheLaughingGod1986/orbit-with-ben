@@ -112,6 +112,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3757 | mini | blocked | claudecode | – | 013 picture · script · HOS 013: build take-3 retake board and clean start-still prompts for rows 49 and 63 (£0, before 5 Dec) | J3747 |
 | J3758 | mini | open | – | – | assembly · Backlog OWB: next Short cut from a locked long (existing VO + picture only) |  |
 | J3759 | mini | open | – | – | 013 picture · image · HOS 013: mint 2 clean take-3 Flow start stills for rows 49 and 63 (0 cr, Nano Banana 2, before 5 Dec) | J3757 |
+| J3760 | mini | open (after J3759) | – | – | 013 picture · video · HOS 013: mint take-3 Veo 3.1 Quality clips for rows 49 and 63 (Option A, 200 Flow cr max, before 5 Dec) | J3757 |
 
 Recently finished:
 

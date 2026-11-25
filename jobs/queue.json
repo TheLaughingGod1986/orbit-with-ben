@@ -1,5 +1,5 @@
 {
-  "next_id": 3760,
+  "next_id": 3761,
   "jobs": [
     {
       "id": "J0001",
@@ -344018,6 +344018,36 @@
       "due": "2026-11-29T18:00:00Z",
       "kind": "image",
       "plain": "Mint 2 free take-3 Flow start stills for Darwin & Wallace rows 49 and 63 and park for Chief visual PASS"
+    },
+    {
+      "id": "J3760",
+      "title": "HOS 013: mint take-3 Veo 3.1 Quality clips for rows 49 and 63 (Option A, 200 Flow cr max, before 5 Dec)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Acting Chief (`gemini`, J3757 ruling, 25 Nov 2026) — **Stage 2 of 2: PRICE PASS & MINT GO — Option A (Pre-5-Dec `Veo 3.1 - Quality`, 200 Flow credits hard cap, £0 cash)** for HOS 013 (*Darwin & Wallace*, Thu 31 Dec 2026) take-3 retakes on rows **49** and **63**.\n\n**Hard Prerequisite:** Do **NOT** run until the Stage-1 still job (`after` dependency) is **DONE with an explicit Chief visual still PASS** recording the approved SHA-256s for both:\n- `part04/refs/v01_flow_stills/P04_12_lyell_hooker_bundle_t3.png`\n- `part06/refs/v01_flow_stills/P06_06a_origin_fifth_edition_t3.png`\n\n**Authorisation & Allowance (Acting Chief `gemini`, J3757, HOS PR #792 merged):**\n- **Option A approved:** `2 × Veo 3.1 - Quality` (`8 s`, `16:9`, `x1`, `100` cr/row = **200 Flow subscription credits hard cap**, `£0` cash; strictly take 3 only; max **1 video take per row**; projected balance `22,650 → 22,450 cr`, clearing `--floor 3000` by `19,450 cr`).\n- **Hard cutoff:** **MUST be submitted before `2026-12-05T00:00:00Z`** (when `Veo 3.1 - Quality` retires per `J3691` / `studio/RULES.md`). If UTC `>= 2026-12-05T00:00:00Z`, refuse to submit and park for Chief to re-price on Option B1 (`Veo 3.1 - Lite`, 10 cr) / Option B2 (`Omni 1.2 Flash`, 48 cr) with first-use style UAT.\n- **Headroom floor:** `--floor 3000` (live Flow balance read before batch and atomically re-verified per row right before Create; refuse if projected balance after reservation would drop below 3,000).\n- **Exact scope (pinned to `02_Video-Projects/013_Darwin-Wallace-Evolution/07_Edit-Project/RETAKE_BOARD_v02.json`, sha256 `ce0e8461dbfb70453463a9a94530d6ca39a0cc64301fae675cf4f6c2b44af77c`):**\n  1. **Row `49` — `P4:12_lyell_hooker_bundle`** (`parts/part-04_plates_v02.json`, `use_s: 5.36`):\n     - Video prompt SHA-256: `b80f34a68cad9496e2b6d9ade8baa64826a89a99ffa49c0666b3602ba5aad250`\n     - Start still: Chief-approved `P04_12_lyell_hooker_bundle_t3.png` (verify exact SHA-256 from Stage-1 Chief PASS; NEVER use `_t1.png`!).\n  2. **Row `63` — `P6:06a_origin_fifth_edition`** (`parts/part-06_plates_v02.json`, `use_s: 4.96`, Chief-selected primary: closed book opened by one sleeved hand):\n     - Video prompt SHA-256: `2ff63983f8092a5f2804192316f538a25b0c51a8b91eebb865db697eceb86350`\n     - Start still: Chief-approved `P06_06a_origin_fifth_edition_t3.png` (verify exact SHA-256 from Stage-1 Chief PASS; NEVER use `_t1.png`!).\n\n**Do (on Mac mini only, `:9222` Flow browser):**\n1. Build a guarded take-3 runner `02_Video-Projects/013_Darwin-Wallace-Evolution/07_Edit-Project/_mint_flow_v01_retake2.py` mirroring `_mint_flow_v01_retake1.py` (all guards inherited from `_mint_flow_v01_pass1.py`: studio Ultra account SHA-256, `SharedFlowAccounting` + `WriterLock`, `--floor 3000`, pre-Create live price = `100` cr, `Veo 3.1 - Fast` refusal, `>= 2026-12-05T00:00:00Z` refusal, max 1 take/row = take 3, hard cap `200` credits, `refuse_still_mint`, pinned `RETAKE_BOARD_v02.json` SHA-256 + Chief-approved `t3.png` SHA-256s + `video_take_3` prompt SHA-256s, own state `~/_desk/state/flow/hos013-retake2`, reservation `HOS013_RETAKE2`, raw `raw/v01_retake2`, archive `archive_v01_retake2/`, `keep: false` / `PENDING_REVIEW`). Run and verify `dry-run --floor 3000` first (`0 cr`, `0` Create clicks).\n2. Arm and submit the 2 take-3 rows (single batch of 2 rows, `≤ 200` Flow credits, `£0` cash). If submit will take >15 min, launch detached in `tmux` per `AGENTS.md`.\n3. Verify SHA-256 on both downloaded `.mp4`s and archive to `/Volumes/data/studio-live/History Of Science/02_Video-Projects/013_Darwin-Wallace-Evolution/04_Generated-Clips/archive_v01_retake2/` (**NEVER overwrite `archive_v01_pass1/` or `archive_v01_retake1/`**). Build 0.5 s contact sheets (full 8 s clips, plus a 0.25 s close sheet if helpful for row 63's hand/cover opening) and write machine receipts (`RETAKE2_RECEIPT.json` + sheets index) in OWB `jobs/reviews/<this_job_id>/` (or NAS `archive_v01_retake2/` + receipt). Keep HOS git 100% media-free!\n4. **Do NOT set `keep: true` on any take-3 plate** and **do NOT touch `REVIEW_STATE.json`**, `J3178` (`rows 56–62, 64–66`), `J3756` (`rows 3, 10, 24, 28, 47, 54`), or `J2529`.\n5. Update `02_Video-Projects/013_Darwin-Wallace-Evolution/status.json` (`status_board.py --check`), run `check_all.sh 02_Video-Projects/013_Darwin-Wallace-Evolution`, open a clean HOS PR, post receipts/sheets on HOS desk `#180`, and park for Chief UAT review (`keep` marks require Chief review).\n",
+      "ref": "J3757",
+      "film": "013",
+      "stage": "picture",
+      "after": "J3759",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T23:48Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T23:48Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Wait for Chief visual PASS on J3759 stills, then dry-run and mint 2 take-3 Veo 3.1 Quality clips (200 cr max, before 5 Dec)",
+      "due": "2026-12-02T18:00:00Z",
+      "kind": "video",
+      "plain": "Mint 2 take-3 Veo 3.1 Quality clips for Darwin & Wallace rows 49 and 63 (200 cr max, before 5 Dec) after Chief still PASS"
     }
   ],
   "focus": [
