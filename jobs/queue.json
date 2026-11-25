@@ -1,5 +1,5 @@
 {
-  "next_id": 3755,
+  "next_id": 3756,
   "jobs": [
     {
       "id": "J0001",
@@ -343680,6 +343680,36 @@
         "check_at": "2026-12-05T12:35:00Z",
         "release": "auto"
       }
+    },
+    {
+      "id": "J3755",
+      "title": "WW2 004-S1 (l7P2DdGCr-A): 7-day Short read and WW2:004 Related traffic",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** WW2 Short `004-S1` v01 (*Mark 14 Torpedo: Why It Ran 10 Feet Too Deep*, `l7P2DdGCr-A`) was uploaded Private in `J3753`, scheduled for **Mon 30 Nov 2026 12:30 London (`2026-11-30T12:30:00Z`)**, supporting parent long `WW2:004` (*Mark 14 Torpedo: Why Perfect Hits Failed*, planned air Tue 1 Dec 2026 17:00 London, not uploaded when this was queued). The Short's Related video is linked by `WW2:004`'s post-publish job once the long is Public.\n\n**Do (Mini; Field Order History `UCu94mInMFosxu3W0H6jlI6Q`, Studio CDP `9224` and the YouTube Analytics/Data API, after Mon 7 Dec 2026 12:35 London; never open or play any public video):**\n1. Read 7-day performance for Short `l7P2DdGCr-A` in Studio `9224` (Overview, Reach, Engagement, Audience): total and engaged views with the traffic-source breakdown (Shorts feed vs Browse/Search/Channel pages); **stayed to watch** vs swiped away (%); **average percentage viewed** and average view duration (vs 48.60 s runtime) with any early drop-off; **subscribers** gained/lost, likes and comments.\n2. Read the `WW2:004` long's traffic from Shorts / Related video in Studio `9224`, and verify `l7P2DdGCr-A`'s Related video link to the long is live (read the long's video id from `status.json`).\n3. Compare against Shorts `NoQQqrW2meM` and `RtEMDrfeKR8`; record the read in `ww2/05_Analytics/` and `ww2/02_Video-Projects/004_Why-US-Submarine-Torpedoes-Failed-21-Months/status.json` via a clean `ww2` PR, and queue the rules review (`studio/RULES.md` rule 12). Judge by strangers only (rule 8). £0.\n",
+      "ref": "J3753",
+      "film": "WW2:004",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claudecode",
+      "created_at": "2026-11-25T23:25Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T23:25Z",
+          "by": "claudecode",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Read 7-day Studio stats for l7P2DdGCr-A (views, stayed-to-watch, avg % viewed, subscribers, WW2:004 Shorts/Related traffic) after Mon 7 Dec 2026 12:35Z",
+      "due": "2026-12-07T14:00:00Z",
+      "kind": "studio",
+      "plain": "Read the first week's numbers for the Mark 14 torpedo depth Short and how many viewers it sent to the full film"
     }
   ],
   "focus": [

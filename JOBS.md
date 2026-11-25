@@ -111,6 +111,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3751 | mini | blocked | claudecode | – | review · Verify condition for J3744 |  |
 | J3753 | mini | claimed | claudecode | 2026-11-26T01:18Z | WW2:004 upload · studio · WW2 004-S1: upload Ben-approved Mark 14 Torpedo depth Short v01, scheduled Mon 30 Nov 12:30 London | J3570 |
 | J3754 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2 003-S3 (RtEMDrfeKR8): 7-day Short read and RqYjADxvJy8 Related traffic | J3752 |
+| J3755 | mini | open | – | – | WW2:004 upload · studio · WW2 004-S1 (l7P2DdGCr-A): 7-day Short read and WW2:004 Related traffic | J3753 |
 
 Recently finished:
 
