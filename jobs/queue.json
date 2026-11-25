@@ -334289,19 +334289,30 @@
           "at": "2026-11-25T05:52Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T05:55Z",
+          "by": "macbook-2",
+          "what": "step 1 of 6 done"
         }
       ],
-      "remaining_action": "Revise HOS:136 script, SOURCES, FACT_NOTES, and Shorts to v02 off PR #764 (4afb106f) and open HOS PR",
+      "remaining_action": "Checkout base branch and read v01 files, facts check, and editorial review",
       "due": "2026-11-30T18:00:00Z",
       "kind": "script",
       "plain": "Revise HOS 136 Trinity Test script, sources, and Shorts to v02 resolving all 14 blocking facts and editorial fixes",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-25T05:51Z",
+        "step": 1,
+        "of": 6,
+        "at": "2026-11-25T05:55Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Checkout branch and audit v01",
+          "Verify primary sources and math",
+          "Update script v02 and FACT_NOTES/SOURCES",
+          "Trim and fix Shorts S01/S02",
+          "Run gates and check_all",
+          "Push PR and update board/thread"
+        ]
       },
       "rerouted_from": {
         "needs": "any",
