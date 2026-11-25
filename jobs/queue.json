@@ -336231,13 +336231,13 @@
       "stage": "vo",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-25T19:23Z",
-      "eta": "2026-11-25T21:23Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T04:25Z",
-      "result": "",
+      "result": "Waiting for: ElevenLabs balance is at least 9,062 characters (read 8,003 of 121,114 left at 25 Nov; the full 6-part take needs 9,062; pool resets 2026-11-30T10:50Z)",
       "history": [
         {
           "at": "2026-11-25T04:25Z",
@@ -336263,6 +336263,16 @@
           "at": "2026-11-25T19:25Z",
           "by": "claudecode",
           "what": "step 1 of 5 done: Script hash matches c389c3cf; dry run 6 parts, 9,062 characters; live balance 8,003, so nothing recorded or spent"
+        },
+        {
+          "at": "2026-11-25T19:25Z",
+          "by": "claudecode",
+          "what": "blocked: Waiting for: ElevenLabs balance is at least 9,062 characters (read 8,003 of 121,114 left at 25 Nov; the full 6-part take needs 9,062; pool resets 2026-11-30T10:50Z)"
+        },
+        {
+          "at": "2026-11-25T19:25Z",
+          "by": "claudecode",
+          "what": "condition recorded; next verification 2026-11-30T11:00:00Z"
         }
       ],
       "remaining_action": "Record the six narration parts once the voice credit resets on 30 Nov",
@@ -336285,7 +336295,12 @@
       },
       "taskKeys": [
         "HOS:128"
-      ]
+      ],
+      "hold": {
+        "type": "credits",
+        "condition": "ElevenLabs balance is at least 9,062 characters (read 8,003 of 121,114 left at 25 Nov; the full 6-part take needs 9,062; pool resets 2026-11-30T10:50Z)",
+        "check_at": "2026-11-30T11:00:00Z"
+      }
     },
     {
       "id": "J3671",
