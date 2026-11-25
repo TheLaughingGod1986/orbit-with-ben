@@ -330200,9 +330200,14 @@
           "at": "2026-11-25T02:16Z",
           "by": "gemini",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-25T02:18Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Inspected PR #752, #758, #760, J3547, and all v02 script/Shorts/facts/packaging files; confirmed 5 J3629 FLAGs and duplicate _master_ filename hazard"
         }
       ],
-      "remaining_action": "Inspecting HOS PR #752, #758, #760, J3547, and v02 script/Shorts/facts artifacts",
+      "remaining_action": "Independently opening all MUST QUOTE URLs and NPS PDF for direct quote verification",
       "due": "2026-12-01T18:00:00Z",
       "kind": "review",
       "plain": "Check the corrected Edison and Tesla script against original sources and decide whether recording can begin",
@@ -330215,9 +330220,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-25T02:16Z",
+        "at": "2026-11-25T02:18Z",
         "by": "gemini",
         "plan": [
           "Inspect PR752/758/760 and v02 files",
@@ -330225,7 +330230,8 @@
           "Verify timings, Shorts, Teach/Craft and gates",
           "Write KEEP/FIX ruling and merge/queue if KEEP",
           "Update J3547/board and post reports"
-        ]
+        ],
+        "note": "Inspected PR #752, #758, #760, J3547, and all v02 script/Shorts/facts/packaging files; confirmed 5 J3629 FLAGs and dupli"
       },
       "taskKeys": [
         "HOS:128"
