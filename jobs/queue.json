@@ -333505,10 +333505,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T04:36Z",
+      "eta": "2026-11-25T06:36Z",
       "created_by": "relay",
       "created_at": "2026-11-25T04:19Z",
       "result": "",
@@ -333552,6 +333552,11 @@
           "at": "2026-11-25T04:36Z",
           "by": "gemini",
           "what": "reopened: Acting Chief closing parked verification J3669 after merging OWB PR #1303 (f6249791af) and recording J3434 hold (--type input --recheck J3669)"
+        },
+        {
+          "at": "2026-11-25T04:36Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parking J3669 for elected Chief (OWB PR #1303) and posting studio thread report",
@@ -333566,7 +333571,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T04:36Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3670",
