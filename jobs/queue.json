@@ -289747,13 +289747,13 @@
       "stage": "edit",
       "after": "J3371",
       "eta_min": 240,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-24T21:56Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-20T10:21Z",
-      "result": "parked for Chief: WW2:003 v01 master, phone proxy, 3 launch covers, 11_Upload-Package v01 and measurable QA complete on codex/J3205-mini (4d8422d at /Volumes/MiniWork/scratch/J3205-mini; NAS sha256 876736a1a23d42109a5648bb7188707f842843c15dcd1a3d882de4dd8a027a66; iCloud WW2 UAT staged). Publish via Claude Code: /Volumes/MiniWork/scratch/J3205-mini codex/J3205-mini; then Chief QA pass + watch_upload.mjs + jobs.py awaits for Ben's watch (due Wed 25 Nov 20:00 UTC, airs Sat 28 Nov 17:00 London).",
+      "result": "",
       "history": [
         {
           "at": "2026-11-20T10:21Z",
@@ -290204,6 +290204,11 @@
           "at": "2026-11-25T10:19Z",
           "by": "relay",
           "what": "condition verification queued: J3697"
+        },
+        {
+          "at": "2026-11-25T11:25Z",
+          "by": "gemini",
+          "what": "reopened: Closing J3205 as done (do not re-assemble): ww2-channel#139 (2376f27) and orbit-with-ben#1314 (3a0abe6bdf) merged cleanly with 0 home paths/secrets; J3643 QA PASS, Ben board OK 2026-11-24T23:58:36Z, and J3653 upload RqYjADxvJy8 complete."
         }
       ],
       "remaining_action": "Claude Code privacy check and GitHub PR publish of gemini/J3643-qa (674c088 / 4d8422d) and gemini/J3643-review (5925f6828c) after 10:00Z reset, then close J3205",
@@ -290224,28 +290229,6 @@
         "WW2:003"
       ],
       "mini_only": true,
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-24T22:20Z",
-        "by": "gemini",
-        "plan": [
-          "Verify corrected inputs",
-          "Clear pictures and finish graphics",
-          "Assemble film and three covers",
-          "Check film and deliver for watch"
-        ],
-        "note": "Assembled full 1080p30 master (25:50.42, -16.3 LUFS, -1.8 dBFS TP, 0 decode/black/silence errors, 61.38% cleared US Fed "
-      },
-      "hold": {
-        "type": "input",
-        "condition": "Claude Code privacy check (sanitize 3 local home-path strings in J3205_HANDOFF_v17.md and TECHNICAL_QA_v01.json) and GitHub PR/merge of local WW2 branch gemini/J3643-qa (674c088 atop codex/J3205-mini 4d8422d) and OWB branch gemini/J3643-review (5925f6828c) after 2026-11-25T10:00:00Z Fable reset; assembly, J3643 QA PASS and Ben board OK (2026-11-24T23:58:36Z) are complete",
-        "check_at": "2026-11-25T11:19:38+00:00",
-        "last_recheck": "J3644",
-        "checked_at": "2026-11-25T00:46:05+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3697"
-      },
       "awaits_was": {
         "what": "Watch the 25-minute B-29 film (v01) and say OK or what to change",
         "file": "WW2 UAT/003_Why-B29-Superfortress-Cost-More-Than-Atomic-Bomb/003_B29-Superfortress_v01_PHONE.mp4",
