@@ -341944,13 +341944,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T20:04Z",
-      "eta": "2026-11-25T22:04Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T19:17Z",
-      "result": "",
+      "result": "Acting Chief (gemini, £0) PASS & lock on HOS 011 Shorts scripts v03 (16-19 s Ben 19 Nov rules) and thumbnail brief v01; merged HOS PR #790 (506d55458c866eb650cbd7b154642e4ecb715a38, check_all & all 6 CI checks PASS). Locked SHORTS_SCRIPTS_v03.md (sha256 fdc9364761d275fbe7566e36a06bd2227bca737650cb21656dcbf44705f65205): S01 Sat 19 Dec (42 w, wide awake PASS), S02 Fri 18 Dec (41 w, primary Ether Monument frame 0 kept, 'fight ran twenty years' PASS, tightened 'without publishing' vs row 4 Dec 1849). Locked THUMBNAIL_BRIEF_v01.md (sha256 896961a08fabd30ae4968b92d0edbc754834df27217fcf1bef82cfe8192d51e5): amended Thumb C to 3 words / 1 gold word ('TIMED BY WATCH'). Updated 011/status.json (shorts_scripts=done) and queued post-30-Nov Shorts VO follow-up J3742 (--after J3678). Zero VO/picture/image spend.",
       "history": [
         {
           "at": "2026-11-25T19:17Z",
@@ -342001,6 +342001,11 @@
           "at": "2026-11-25T20:04Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T20:04Z",
+          "by": "gemini",
+          "what": "done: Acting Chief (gemini, £0) PASS & lock on HOS 011 Shorts scripts v03 (16-19 s Ben 19 Nov rules) and thumbnail brief v01; merged HOS PR #790 (506d55458c866eb650cbd7b154642e4ecb715a38, check_all & all 6 CI checks PASS). Locked SHORTS_SCRIPTS_v03.md (sha256 fdc9364761d275fbe7566e36a06bd2227bca737650cb21656dcbf44705f65205): S01 Sat 19 Dec (42 w, wide awake PASS), S02 Fri 18 Dec (41 w, primary Ether Monument frame 0 kept, 'fight ran twenty years' PASS, tightened 'without publishing' vs row 4 Dec 1849). Locked THUMBNAIL_BRIEF_v01.md (sha256 896961a08fabd30ae4968b92d0edbc754834df27217fcf1bef82cfe8192d51e5): amended Thumb C to 3 words / 1 gold word ('TIMED BY WATCH'). Updated 011/status.json (shorts_scripts=done) and queued post-30-Nov Shorts VO follow-up J3742 (--after J3678). Zero VO/picture/image spend."
         }
       ],
       "remaining_action": "Chief script lock on the two Shorts scripts and the thumbnail brief",
@@ -342025,7 +342030,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "506d55458c866eb650cbd7b154642e4ecb715a38"
     },
     {
       "id": "J3741",
