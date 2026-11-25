@@ -341557,16 +341557,21 @@
           "at": "2026-11-25T19:22Z",
           "by": "gemini",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-25T19:25Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Audited all 66 Flow prompts (0 real person names, 0 DNA terms, 0 text requests; caught 6 leaked stage-direction prefixes incl P1:01b 'Why?' quote), confirmed P5:16b must be a dedicated moving plate between P5:16a code graphic and P5:17 end card, verified live Flow balance 23,450 cr and 800 cr shared liability"
         }
       ],
-      "remaining_action": "Auditing HOS 011 PICTURE_PLAN_v03.json, 013 runner pattern, and Flow balance/J3691 notes",
+      "remaining_action": "Re-pricing pre/post-5-Dec Flow routes and drafting PICTURE_PLAN_v04 + PRICE_REVIEW_v04",
       "due": "2026-11-26T18:00:00Z",
       "kind": "assembly",
       "plain": "Price 011's 66 plates, fix P5:16b reuse, and build the guarded Flow runner at £0",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-25T19:22Z",
+        "at": "2026-11-25T19:25Z",
         "by": "gemini",
         "plan": [
           "Audit 66 Flow rows and P5:16b",
@@ -341574,7 +341579,8 @@
           "Resolve P5:16b and update plan docs",
           "Build and unit-test guarded runner",
           "Run check_all.sh and open HOS PR"
-        ]
+        ],
+        "note": "Audited all 66 Flow prompts (0 real person names, 0 DNA terms, 0 text requests; caught 6 leaked stage-direction prefixes"
       },
       "taskKeys": [
         "HOS:011"
