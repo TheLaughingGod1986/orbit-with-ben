@@ -337013,9 +337013,14 @@
           "at": "2026-11-25T10:31Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T10:31Z",
+          "by": "claudecode",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Verify readiness: Claude Code publication under J3530 after its usage reset, then shared-runtime audit and private dry run",
+      "remaining_action": "Reading J3519 and J3530 history",
       "kind": "review",
       "recheck_of": "J3519",
       "mini_only": true,
@@ -337031,11 +337036,15 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-25T10:31Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read J3519 and J3530 history",
+          "Check HOS remote main, branch and PR",
+          "Prove read-only audit and dry run if merged",
+          "Record result and report"
+        ]
       }
     },
     {
