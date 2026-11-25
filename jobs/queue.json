@@ -342626,16 +342626,21 @@
           "at": "2026-11-25T21:39Z",
           "by": "claudecode",
           "what": "step 5 of 7 done: Shot 54 with the G10e cross-fade rendered, picture joined (21,269 frames), score v03 and mix v03 built (-15.3 LUFS, -1.8 dBTP), v04 film written to the NAS; captions, chapters, description, metadata v02 and thumbnail C v02 built. Measured only, not watched or heard"
+        },
+        {
+          "at": "2026-11-25T21:41Z",
+          "by": "claudecode",
+          "what": "step 7 of 7 done: Technical checks pass (no freezes over 3 s, no repeats under 60 s, archive 52.2%, -15.3 LUFS, -1.6 dBTP, 0 caption overlaps, 0 US spellings); PR 168 opened; targeted watch-and-listen check queued"
         }
       ],
-      "remaining_action": "Running technical checks on v04, then opening the pull request",
+      "remaining_action": "Nothing left on this job; the watch-and-listen check and the Chief's merge come next",
       "due": "2026-11-28T20:00:00Z",
       "kind": "assembly",
       "plain": "Apply J3745 audiovisual QA fixes (shot 19 lower-third, Join 10 stray syllable, Chapter 8 alignment, A 9804 swap + A 23877 drift, Thumb C crop/arrow, G10e blast plate) to render ww2_005_st_nazaire_v04_mix.mp4 at £0.",
       "progress": {
-        "step": 5,
+        "step": 7,
         "of": 7,
-        "at": "2026-11-25T21:39Z",
+        "at": "2026-11-25T21:41Z",
         "by": "claudecode",
         "plan": [
           "Read v03 build and QA",
@@ -342646,7 +342651,7 @@
           "Captions, listing files, thumbnail C",
           "Technical checks, PR, queue verification"
         ],
-        "note": "Shot 54 with the G10e cross-fade rendered, picture joined (21,269 frames), score v03 and mix v03 built (-15.3 LUFS, -1.8"
+        "note": "Technical checks pass (no freezes over 3 s, no repeats under 60 s, archive 52.2%, -15.3 LUFS, -1.6 dBTP, 0 caption overl"
       },
       "taskKeys": [
         "WW2:005"
