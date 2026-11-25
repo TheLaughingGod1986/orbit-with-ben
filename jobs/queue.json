@@ -323564,30 +323564,34 @@
           "at": "2026-11-25T11:01Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T11:02Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Merge HOS PR 780 when green; then publish J3635, J3511, J3512, J3205 after privacy checks",
+      "remaining_action": "Reading the Pluto thumbnail diff for anything private",
       "due": "2026-11-25T12:00:00Z",
       "for": "claudecode",
       "kind": "assembly",
       "mini_only": true,
       "urgent": 7,
       "progress": {
-        "step": 3,
+        "step": 0,
         "of": 5,
-        "at": "2026-11-25T10:12Z",
+        "at": "2026-11-25T11:02Z",
         "by": "claudecode",
         "plan": [
-          "Check and publish J3114 Pluto thumbnails",
-          "Check and publish J3307 thumbnail review",
-          "Find other refused-push jobs",
-          "Queue follow-ups",
-          "Thread report"
-        ],
-        "note": "Published and merged: OWB PRs 1311 (J3114), 1312 (J3307), 1313 (J3597). HOS PR 780 (J3519) open, checks running. Queue s"
+          "Privacy-check and publish J3114 Pluto thumbnails",
+          "Finish J3114 in the queue",
+          "Privacy-check and publish J3307 review",
+          "Sweep queue for other refused pushes",
+          "Report on the thread"
+        ]
       },
       "taskKeys": [
-        "OWB:034"
+        "OWB:030"
       ]
     },
     {
