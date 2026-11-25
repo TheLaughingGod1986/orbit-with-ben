@@ -335445,13 +335445,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-25T07:49Z",
-      "eta": "2026-11-25T09:49Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T07:48Z",
-      "result": "",
+      "result": "HOS PR #774 open (macbook/J3688, commit 45953e56, stacked on 925c2a92; NOT merged, NOT locked, £0.00 spent). Resolved all 8 J3621/J3622 fixes (FIX-1 through FIX-8) for HOS:127 v02. Gates PASS: review:script PASS 93.6/100 (1,282w, 8.5 min, 8/8 gates), default gate:episode PASS 9/9 OK (resolved v02 directly with v01 archived to _archive/), status_board.py --check PASS (34 status files), check_all.sh ALL CHECKS PASS. SHA-256: script_master_v02=1488f59692ec624c9225b0d509d8dc47c7a1ded8e5b276514783d2fd5eddfdd4, SOURCES.md=9f331ba20a6f221668c53084fd26dd3d71ff1d7b95e8b6cba606094233f1e8da, FACT_NOTES_v02.md=7ad7cb465190e3d3bd1f32f8ccaf65e55e569ed7eb23afb10683c80c935f71b6, SHORTS_SCRIPTS_v02.md=59e3005dee9df893d7c3c81f5bab2e9a5ffa8563e4cb97b4f0ab68721b174ef6.",
       "history": [
         {
           "at": "2026-11-25T07:48Z",
@@ -335477,6 +335477,11 @@
           "at": "2026-11-25T07:59Z",
           "by": "macbook-2",
           "what": "step 5 of 6 done"
+        },
+        {
+          "at": "2026-11-25T08:01Z",
+          "by": "macbook-2",
+          "what": "done: HOS PR #774 open (macbook/J3688, commit 45953e56, stacked on 925c2a92; NOT merged, NOT locked, £0.00 spent). Resolved all 8 J3621/J3622 fixes (FIX-1 through FIX-8) for HOS:127 v02. Gates PASS: review:script PASS 93.6/100 (1,282w, 8.5 min, 8/8 gates), default gate:episode PASS 9/9 OK (resolved v02 directly with v01 archived to _archive/), status_board.py --check PASS (34 status files), check_all.sh ALL CHECKS PASS. SHA-256: script_master_v02=1488f59692ec624c9225b0d509d8dc47c7a1ded8e5b276514783d2fd5eddfdd4, SOURCES.md=9f331ba20a6f221668c53084fd26dd3d71ff1d7b95e8b6cba606094233f1e8da, FACT_NOTES_v02.md=7ad7cb465190e3d3bd1f32f8ccaf65e55e569ed7eb23afb10683c80c935f71b6, SHORTS_SCRIPTS_v02.md=59e3005dee9df893d7c3c81f5bab2e9a5ffa8563e4cb97b4f0ab68721b174ef6."
         }
       ],
       "remaining_action": "Running status_board.py --check, check_all.sh, and final SHA-256 verification",
