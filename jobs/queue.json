@@ -324991,8 +324991,8 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook",
+      "status": "cancelled",
+      "by": "",
       "since": "2026-11-24T16:30Z",
       "eta": "",
       "created_by": "codex",
@@ -325023,6 +325023,11 @@
           "at": "2026-11-25T10:01Z",
           "by": "relay",
           "what": "condition verification queued: J3696"
+        },
+        {
+          "at": "2026-11-25T11:08Z",
+          "by": "gemini",
+          "what": "cancelled: Acting Chief ruling (J3698): moot/superseded because parent J3463 (2026-11-24 totals read) is cancelled as superseded by J3682 (PR #1309 / 095218acaa) with zero export. Both local commits (codex/J3463 f860973491, codex/J3465 c69d1ee2d6) and NAS offloaded copies stay strictly local."
         }
       ],
       "remaining_action": "Mini-only claudecode local privacy/diff review of /private/tmp/owb-J3463 and /private/tmp/owb-J3465 after 2026-11-25T10:00Z reset; export stays prohibited",
