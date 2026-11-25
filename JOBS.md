@@ -104,7 +104,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3717 | mini | open | – | – | 064 thumbs · for gemini · review · Packaging panel (gemini): OWB 064 Every Planet Explained (3 titles, 3 thumbnails A/B/C, opening & chapters) |  |
 | J3718 | mini | open | – | – | 064 thumbs · for cursor · review · Packaging panel (cursor): OWB 064 Every Planet Explained (3 titles, 3 thumbnails A/B/C, opening & chapters) |  |
 | J3719 | mini | open (after J3718) | – | – | 064 thumbs · review · Packaging panel decision: OWB 064 Every Planet Explained (3 titles, 3 thumbnails A/B/C, opening & chapters) |  |
-| J3720 | mini | claimed | claudecode | 2026-11-25T16:43Z | review · Verify condition for J3022 |  |
+| J3720 | mini | blocked | claudecode | – | review · Verify condition for J3022 |  |
 
 Recently finished:
 
