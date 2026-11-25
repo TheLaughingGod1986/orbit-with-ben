@@ -338387,9 +338387,14 @@
           "at": "2026-11-25T12:10Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T12:10Z",
+          "by": "claudecode",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Verify PR #146 CLEAN PASS against J3492 condition, resolve parked J3664, and reopen J3492 (no lock or VO here)",
+      "remaining_action": "Check the Pedestal v04 claims pass really holds on the exact script file, then record whether the held script job can move",
       "due": "2026-11-26T12:00:00Z",
       "kind": "review",
       "plain": "Verify WW2:009 v04 CLEAN claims pass (J3642 PR #146), resolve superseded J3664, and reopen J3492",
@@ -338403,12 +338408,19 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-25T12:10Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read the held job and its history",
+          "Check the pull request files and hashes",
+          "Record the result on the held job",
+          "Report"
+        ]
+      },
+      "taskKeys": [
+        "WW2:009"
+      ]
     },
     {
       "id": "J3710",
