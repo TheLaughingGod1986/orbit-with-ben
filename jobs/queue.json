@@ -338783,9 +338783,14 @@
           "at": "2026-11-25T12:50Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T12:52Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Starting J3711 verification for OWB:064 / J3020"
         }
       ],
-      "remaining_action": "Verify readiness: Await elected Chief exact-hash review and script lock (v04 PR #1269 / J3545 PR #1274 after J3539 FIX PR #1265/#1262) before completing J3020 and releasing J3021",
+      "remaining_action": "Inspecting J3020 hold evidence, open PRs #1262/#1265/#1269/#1274, and whether an elected-Chief lock job is queued",
       "kind": "review",
       "recheck_of": "J3020",
       "due": "2026-11-23T18:00:00+00:00",
@@ -338801,11 +338806,18 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-25T12:50Z",
+        "at": "2026-11-25T12:52Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect J3020 hold, PRs #1262/#1265/#1269/#1274, and queue Chief duties",
+          "Verify waiting condition and check Chief authority",
+          "Update J3020 hold (and queue Chief lock if missing), close J3711, and report"
+        ],
+        "note": "Starting J3711 verification for OWB:064 / J3020"
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     }
   ],
   "focus": [
