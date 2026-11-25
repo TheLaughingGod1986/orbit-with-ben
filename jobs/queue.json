@@ -332791,15 +332791,20 @@
           "at": "2026-11-25T12:05Z",
           "by": "gemini",
           "what": "step 3 of 5 done: 21/21 primary/official source URLs live-fetched HTTP 200 (Gazette 38377/35695 PDFs via PDFKit, Roskill Ch.XIII/Table 27, Kindell 162 Eagle dead, Hague Parts 1b/2/3, ADM 267/84, uboat.net 160, IWM Commons captions); all 6 J3634 FLAG fixes + C15 polish + 31 unchanged PASS claims verified CLEAN (37 PASS, 0 FLAG, 0 UNVERIFIABLE)"
+        },
+        {
+          "at": "2026-11-25T12:06Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Wrote 01_Script/CLAIMS_CHECK_v04.md (CLEAN PASS: 37 PASS, 0 FLAG, 0 UNVERIFIABLE) and updated status.json sources stage to done (script remains review, not locked); verified 7/7 SHA-256 locks byte-for-byte unchanged"
         }
       ],
-      "remaining_action": "Writing CLAIMS_CHECK_v04.md, updating status.json sources stage, and verifying all byte-for-byte file locks",
+      "remaining_action": "Opening stacked PR on macbook/J3636, queuing J3492 condition verification, finishing J3642, and posting studio thread report",
       "kind": "facts",
       "plain": "Independent Gemini direct-source recheck of WW2 film 009 narration v04 after the 6 surgical J3634 fixes",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-25T12:05Z",
+        "at": "2026-11-25T12:06Z",
         "by": "gemini",
         "plan": [
           "Set up worktree & check v04 integrity",
@@ -332808,7 +332813,7 @@
           "Write CLAIMS_CHECK_v04.md & verify locks",
           "Push stacked PR, notify J3492 & report"
         ],
-        "note": "21/21 primary/official source URLs live-fetched HTTP 200 (Gazette 38377/35695 PDFs via PDFKit, Roskill Ch.XIII/Table 27,"
+        "note": "Wrote 01_Script/CLAIMS_CHECK_v04.md (CLEAN PASS: 37 PASS, 0 FLAG, 0 UNVERIFIABLE) and updated status.json sources stage "
       },
       "taskKeys": [
         "WW2:009"
