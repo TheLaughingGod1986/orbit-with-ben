@@ -340085,16 +340085,21 @@
           "at": "2026-11-25T15:04Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J3723; verified v02 master and separate VO/score stems on NAS studio-live"
+        },
+        {
+          "at": "2026-11-25T15:06Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Verified v01.srt matches v02 audio (1542.84s); measured exact VO silence windows -> Cut A 110.167-192.833s (82.667s), Cut B 269.708-311.500s (41.792s), total 124.458s, 65.75% archive across all 62 photos, min repeat gap 72.71s"
         }
       ],
-      "remaining_action": "Verify v01.srt timestamps on v02 audio and measure exact silence cut points for Cuts A and B",
+      "remaining_action": "Build v03 edit plan, cut list, shifted SRT, chapters and metadata in clean WW2 worktree",
       "due": "2026-11-30T12:00:00Z",
       "kind": "assembly",
       "plain": "Apply J3715 opening cuts A+B (124.5 s) to film 006 as zero-spend v03 keeping v02 untouched",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-25T15:04Z",
+        "at": "2026-11-25T15:06Z",
         "by": "gemini",
         "plan": [
           "Verify SRT sync and measure exact silence points",
@@ -340103,7 +340108,7 @@
           "Run technical QA and verify v02 untouched",
           "Open WW2 PR and complete handoff"
         ],
-        "note": "Claimed J3723; verified v02 master and separate VO/score stems on NAS studio-live"
+        "note": "Verified v01.srt matches v02 audio (1542.84s); measured exact VO silence windows -> Cut A 110.167-192.833s (82.667s), Cu"
       },
       "taskKeys": [
         "WW2:006"
