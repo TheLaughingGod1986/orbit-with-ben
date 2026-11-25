@@ -336418,9 +336418,14 @@
           "at": "2026-11-25T10:02Z",
           "by": "claudecode",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-25T10:04Z",
+          "by": "claudecode",
+          "what": "step 1 of 4 done: Read J3012/J3609 history: no probe receipt yet; Claude's 24 Nov 18:45 note assigns the probe to Claude Code. Live board is now deployment 1f8cac64 (source 0bc5d999), so Codex's 24 Nov candidate is stale"
         }
       ],
-      "remaining_action": "Reading J3012/J3609 history and evidence",
+      "remaining_action": "Rebuilding the probe candidate from the current live source and checking it matches production",
       "kind": "review",
       "recheck_of": "J3012",
       "due": "2026-11-24T18:00:00+00:00",
@@ -336434,16 +336439,17 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 4,
-        "at": "2026-11-25T10:02Z",
+        "at": "2026-11-25T10:04Z",
         "by": "claudecode",
         "plan": [
           "Read J3012 and J3609 history",
           "Check for approved probe receipts",
           "Record J3012 wait or reopen",
           "Finish and report"
-        ]
+        ],
+        "note": "Read J3012/J3609 history: no probe receipt yet; Claude's 24 Nov 18:45 note assigns the probe to Claude Code. Live board "
       }
     },
     {
