@@ -336841,9 +336841,14 @@
           "at": "2026-11-25T10:21Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T10:21Z",
+          "by": "claudecode",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Await the local privacy review and explicit approval for the proposed export files",
+      "remaining_action": "Checking whether the Field Order channel-totals read can be released",
       "kind": "review",
       "recheck_of": "J3463",
       "due": "2026-11-24T06:40:43+00:00",
@@ -336861,8 +336866,11 @@
         "of": 3,
         "at": "2026-11-25T10:21Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read parent job and its history",
+          "Check privacy review and approval state",
+          "Record outcome on parent and finish"
+        ]
       }
     },
     {
