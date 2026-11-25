@@ -337013,9 +337013,14 @@
           "at": "2026-11-25T10:38Z",
           "by": "claudecode",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-25T10:40Z",
+          "by": "claudecode",
+          "what": "step 2 of 4 done: Step 1: read J3512, J3530, J3611. Step 2: condition met. claudecode is running at 10:38Z 25 Nov (claimed J3700 and pushed queue commits), past the 10:00Z reset. Both unpushed branches intact at 5008d480 and bfb399e268; neither origin/main registers mpK3D6S7WLk; today's HOS snapshot reads it private, no publishAt."
         }
       ],
-      "remaining_action": "Reading J3512 history and evidence",
+      "remaining_action": "Reopening J3512 with the evidence note",
       "kind": "review",
       "recheck_of": "J3512",
       "mini_only": true,
@@ -337030,17 +337035,21 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-25T10:38Z",
+        "at": "2026-11-25T10:40Z",
         "by": "claudecode",
         "plan": [
           "Read J3512 history",
           "Check the waiting condition",
           "Reopen or re-park J3512",
           "Finish and report"
-        ]
-      }
+        ],
+        "note": "Step 1: read J3512, J3530, J3611. Step 2: condition met. claudecode is running at 10:38Z 25 Nov (claimed J3700 and pushe"
+      },
+      "taskKeys": [
+        "HOS:010"
+      ]
     },
     {
       "id": "J3701",
