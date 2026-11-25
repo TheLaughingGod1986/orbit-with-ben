@@ -123,6 +123,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3668 | mini | open | – | – | review · Verify condition for J3178 |  |
 | J3670 | mini | open | – | – | HOS:128 vo · vo · HOS 128 Edison vs Tesla: long voiceover (6 parts) from locked script v03 | HOS PR #762 (84af0f7d), J3660, J3547 |
 | J3671 | mini | open | – | – | HOS:128 vo · vo · HOS 128 Edison vs Tesla: Shorts S01 & S02 voiceover from locked v03 scripts | HOS PR #762 (84af0f7d), J3660, J3547, J3670 |
+| J3675 | any | open | – | – | HOS:136 script · script · HOS 136: correct Trinity Test script, sources & Shorts to v02 (14 J3552/J3553 fixes) | J3553 |
 
 Recently finished:
 
