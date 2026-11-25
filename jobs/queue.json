@@ -323569,29 +323569,38 @@
           "at": "2026-11-25T11:02Z",
           "by": "claudecode",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-25T11:03Z",
+          "by": "claudecode",
+          "what": "step 3 of 5 done: Resumed: PRs 1311, 1312, 1313 already merged by the earlier run; nothing re-pushed"
         }
       ],
-      "remaining_action": "Reading the Pluto thumbnail diff for anything private",
+      "remaining_action": "Merging HOS PR 780 and publishing J3635, J3511, J3512, J3205",
       "due": "2026-11-25T12:00:00Z",
       "for": "claudecode",
       "kind": "assembly",
       "mini_only": true,
       "urgent": 7,
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-25T11:02Z",
+        "at": "2026-11-25T11:03Z",
         "by": "claudecode",
         "plan": [
           "Privacy-check and publish J3114 Pluto thumbnails",
-          "Finish J3114 in the queue",
-          "Privacy-check and publish J3307 review",
-          "Sweep queue for other refused pushes",
+          "Publish J3307 review",
+          "Publish J3597 review",
+          "Publish the other refused pushes (J3519, J3635, J3511, J3512, J3205)",
           "Report on the thread"
-        ]
+        ],
+        "note": "Resumed: PRs 1311, 1312, 1313 already merged by the earlier run; nothing re-pushed"
       },
       "taskKeys": [
-        "OWB:030"
+        "OWB:034",
+        "OWB:006",
+        "OWB:024",
+        "OWB:005"
       ]
     },
     {
