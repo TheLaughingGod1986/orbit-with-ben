@@ -274072,10 +274072,10 @@
       "stage": "script",
       "after": "J3011",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T13:58Z",
+      "eta": "2026-11-25T15:58Z",
       "created_by": "codex",
       "created_at": "2026-11-17T23:36Z",
       "result": "",
@@ -274224,6 +274224,11 @@
           "at": "2026-11-25T13:58Z",
           "by": "gemini",
           "what": "reopened: Elected acting Chief (gemini) independently verified and locked OWB:064 v04 (SHA-256 556f3c8df68ee3cd1420ef03b8cedc04a7f0f79463d98ebf4d3d5e5753408db8; SOURCES.md 4a7e3fa5...); merged PRs #1269, #1274, #1322, and #1324 (jobs/reviews/J3711/CHIEF_RULING.md)."
+        },
+        {
+          "at": "2026-11-25T13:58Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Await elected Chief exact-hash review and script lock (v04 PR #1269 / J3545 PR #1274 after J3539 FIX PR #1265/#1262) before completing J3020 and releasing J3021",
@@ -274242,7 +274247,15 @@
       "taskKeys": [
         "OWB:064"
       ],
-      "escalated_at": "2026-11-18T06:14Z"
+      "escalated_at": "2026-11-18T06:14Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T13:58Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3021",
