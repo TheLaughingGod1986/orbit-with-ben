@@ -342767,27 +342767,31 @@
           "at": "2026-11-25T22:05Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T22:06Z",
+          "by": "claudecode",
+          "what": "step 0 of 6 done"
         }
       ],
-      "remaining_action": "Arm and submit the 8 take-2 rows in tmux (2 batches of 4)",
+      "remaining_action": "Reading the rules and the pass-1 runner before building the retake runner",
       "due": "2026-12-01T18:00:00Z",
       "kind": "video",
       "plain": "Build guarded retake runner and mint take 2 for 013's 8 confirmed RETAKE plates before 5 Dec (800 Flow cr max, £0 cash)",
       "mini_only": true,
       "progress": {
-        "step": 3,
+        "step": 0,
         "of": 6,
-        "at": "2026-11-25T21:31Z",
+        "at": "2026-11-25T22:06Z",
         "by": "claudecode",
         "plan": [
           "Read rules and pass-1 runner",
           "Build guarded retake runner",
           "Dry-run at floor 3000",
           "Submit 8 take-2 rows",
-          "Verify, archive, sheets, receipt",
-          "PR, desk post, park for Chief"
-        ],
-        "note": "Steps 2-3 done: runner built on HOS branch j3747-hos013-retake1-runner (d61a8212); plan + dry-run --floor 3000 pass (8 r"
+          "Archive, hash and contact sheets",
+          "Status, PR, desk post and park"
+        ]
       },
       "taskKeys": [
         "HOS:013"
