@@ -334799,16 +334799,21 @@
           "at": "2026-11-25T06:59Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Read ek9F61FVYqY 22-23 Nov 2026 Pacific from Studio 9224: 1,561 impressions, 0.9% CTR, returningViewers 0, newViewers suppressed ('—'; Unique viewers 25), 3-arm Thumbnail Test & Compare Running (no shares yet)."
+        },
+        {
+          "at": "2026-11-25T07:00Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Imported ek9F61FVYqY 48h Studio read via field-order-studio-import.ts (studio_read.json, board.json, READS.md rebuilt; 22/22 field-order vitest tests pass)."
         }
       ],
-      "remaining_action": "Importing strict dated Studio read and rebuilding board.json and READS.md in a clean worktree",
+      "remaining_action": "Committing analytics from clean worktree, opening PR, and checking CI/Chief status",
       "due": "2026-11-24T17:00:31Z",
       "kind": "studio",
       "plain": "Read how Mulberry Harbours: D-Day's Floating Ports performed in its first two days",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-25T06:59Z",
+        "at": "2026-11-25T07:00Z",
         "by": "gemini",
         "plan": [
           "Check Studio 9224 and API window",
@@ -334817,7 +334822,7 @@
           "Commit and push from clean worktree",
           "Report evidence and close J3680"
         ],
-        "note": "Read ek9F61FVYqY 22-23 Nov 2026 Pacific from Studio 9224: 1,561 impressions, 0.9% CTR, returningViewers 0, newViewers su"
+        "note": "Imported ek9F61FVYqY 48h Studio read via field-order-studio-import.ts (studio_read.json, board.json, READS.md rebuilt; 2"
       },
       "taskKeys": [
         "WW2:001"
