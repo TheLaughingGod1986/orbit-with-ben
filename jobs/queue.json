@@ -340283,20 +340283,35 @@
           "at": "2026-11-25T15:26Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T15:28Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Claimed J3725; inspecting 003-S1 pipeline, S01_COST_v03, and source assets."
         }
       ],
-      "remaining_action": "Build film 3's atomic-bomb Short and put it on Ben's watch",
+      "remaining_action": "Verify v01 master audio slice (00:00:00.160-00:00:37.800), STT word timings, and archive images",
       "due": "2026-11-27T12:00:00Z",
       "kind": "assembly",
       "urgent": 7,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T15:26Z",
+        "of": 6,
+        "at": "2026-11-25T15:28Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify v01 audio, STT timings & archive assets",
+          "Build portrait S01_COST_v03 & Short script",
+          "Render 1080x1920 master & run verification",
+          "Copy to NAS, inspect stills & copy to UAT",
+          "Register Ben watch card WW2:003-S3",
+          "Commit records, open/merge ww2 PR & report"
+        ],
+        "note": "Claimed J3725; inspecting 003-S1 pipeline, S01_COST_v03, and source assets."
+      },
+      "taskKeys": [
+        "WW2:003"
+      ]
     },
     {
       "id": "J3726",
