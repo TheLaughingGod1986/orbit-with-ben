@@ -323385,16 +323385,21 @@
           "at": "2026-11-25T10:12Z",
           "by": "claudecode",
           "what": "step 2 of 5 done: J3597 review published as OWB PR 1313; J3519 opened as HOS PR 780"
+        },
+        {
+          "at": "2026-11-25T10:12Z",
+          "by": "claudecode",
+          "what": "step 3 of 5 done: Published and merged: OWB PRs 1311 (J3114), 1312 (J3307), 1313 (J3597). HOS PR 780 (J3519) open, checks running. Queue search done"
         }
       ],
-      "remaining_action": "Merge the HOS audit fix (PR 780) when its checks pass; J3511, J3512, J3635, J3205 still to check",
+      "remaining_action": "Merge HOS PR 780 when green; then publish J3635, J3511, J3512, J3205 after privacy checks",
       "due": "2026-11-25T12:00:00Z",
       "for": "claudecode",
       "kind": "assembly",
       "mini_only": true,
       "urgent": 9,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
         "at": "2026-11-25T10:12Z",
         "by": "claudecode",
@@ -323405,7 +323410,7 @@
           "Queue follow-ups",
           "Thread report"
         ],
-        "note": "J3597 review published as OWB PR 1313; J3519 opened as HOS PR 780"
+        "note": "Published and merged: OWB PRs 1311 (J3114), 1312 (J3307), 1313 (J3597). HOS PR 780 (J3519) open, checks running. Queue s"
       },
       "taskKeys": [
         "OWB:034"
