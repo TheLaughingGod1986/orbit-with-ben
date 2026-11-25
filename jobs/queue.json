@@ -1,5 +1,5 @@
 {
-  "next_id": 3704,
+  "next_id": 3705,
   "jobs": [
     {
       "id": "J0001",
@@ -290218,7 +290218,7 @@
         "by": ""
       },
       "open_claim": true,
-      "urgent": 10,
+      "urgent": 8,
       "escalated_at": "2026-11-25T00:40Z",
       "taskKeys": [
         "WW2:003"
@@ -314310,7 +314310,7 @@
         "checked_at": "2026-11-24T20:15:33+00:00",
         "checked_by": "codex"
       },
-      "urgent": 4
+      "urgent": 3
     },
     {
       "id": "J3432",
@@ -314350,7 +314350,7 @@
       "remaining_action": "Assemble the film to its narration and archive plan, then QA and Ben's watch",
       "due": "2026-11-30T20:00:00Z",
       "kind": "assembly",
-      "urgent": 5
+      "urgent": 4
     },
     {
       "id": "J3433",
@@ -320842,7 +320842,7 @@
       "remaining_action": "Waiting for Ben’s login to finish Gravity’s Studio settings",
       "due": "2026-12-03T12:00:00Z",
       "kind": "studio",
-      "urgent": 7,
+      "urgent": 5,
       "mini_only": true,
       "delivers": [
         "HOS:009",
@@ -322507,7 +322507,7 @@
       "due": "2026-11-25T09:00:00Z",
       "kind": "assembly",
       "mini_only": true,
-      "urgent": 8,
+      "urgent": 6,
       "progress": {
         "step": 2,
         "of": 3,
@@ -323516,7 +323516,7 @@
       "for": "claudecode",
       "kind": "assembly",
       "mini_only": true,
-      "urgent": 9,
+      "urgent": 7,
       "progress": {
         "step": 3,
         "of": 5,
@@ -325897,19 +325897,19 @@
       "title": "WW2 pilot 2: read at 1,000 impressions or 48 hours, and change the title that day if click-through is under 2%",
       "needs": "mini",
       "repo": "ww2",
-      "body": "**Why (Ben, 24 Nov, in chat, on Claude's click-through summary: \"I like your idea for Fix 1 and for Fix for the rest of the films. Please set that and have it so.\" Set in ww2-channel `studio/RULES.md` (PR #97): rule 2 the searched name first, then one hook, no vague words, never the top video's title words; rule 8 strangers' click-through under 2% at ~1,000 impressions or the 48-hour read means a title or thumbnail change that day; rule 1 two or three Shorts per long film, linked to it.)**\n\nPilot 2, *How the U-Boats Lost Their Safest Hunting Ground* (`qfc6EBStOfo`), airs **Tue 24 Nov 17:00 London**. Rule 8 (as of PR #97): read it at about 1,000 impressions or 48 hours, whichever comes first, and act on click-through that day.\n\n**Do (Mini, Field Order History Studio and the YouTube Data API only; never open or play the public video, AGENTS.md):**\n1. **From Thu 26 Nov 17:05 UTC, or as soon as Studio shows 1,000 or more impressions if that comes first, record:** impressions, click-through by traffic source (suggested, browse, search), views, average view duration and percentage viewed, still watching at 30 seconds if Studio shows it, the suggesting videos, and the thumbnail Test & Compare state. Use strangers only: our own checks are excluded.\n2. **If strangers' click-through is under 2%:** start a **title Test & Compare** that day, keeping any running thumbnail test (if Studio allows only one test, start the title test the moment the thumbnail test ends, and say when).\n   - A = the current title.\n   - B = **Battle of the Atlantic: The Month U-Boats Lost** (46 characters).\n   - C = **How the U-Boats Lost the Battle of the Atlantic** (47 characters).\n   - First check both against the film's script and sources, and swap a word if either claims more than the film shows.\n   - \"battle of the atlantic\" is the searched name; the current title does not carry it.\n3. **If it is 2% or more:** no change.\n4. Write the numbers into the film's `status.json` and the result against `studio/LEARNINGS.md` lines 1-3 and 9 (held, failed, or not yet testable). This read triggers the rule 12 rules review as usual.\n\n**Guards.** Listing change only: no re-upload, no schedule or visibility change, no Studio editor cut. £0.\n\n**Timing (Claude, same day).** This job wakes at 24 hours (Wed 25 Nov 17:05 UTC). If Studio already shows 1,000 or more impressions, do the whole read and act now. If not, record the 24-hour numbers in one thread line and set a new date hold for Thu 26 Nov 17:05 UTC, then do the full read then.\n\n**Also, in the same Studio visit (Ben, 25 Nov 00:05 London, in chat: \"Two films same thumbnail is this a mistake\").** Rename the old private v05 upload `J9WGu8aPnHI` (*How the Allies Closed the U-Boats' Safest Hunting Ground*, 21 Nov) so its title starts **[OLD v05, replaced by qfc6EBStOfo]**. It stays Private, with no schedule; never delete it. Read the title back. This is a listing change on a private video only.",
+      "body": "**Why (Ben, 24 Nov, in chat, on Claude's click-through summary: \"I like your idea for Fix 1 and for Fix for the rest of the films. Please set that and have it so.\" Set in ww2-channel `studio/RULES.md` (PR #97): rule 2 the searched name first, then one hook, no vague words, never the top video's title words; rule 8 strangers' click-through under 2% at ~1,000 impressions or the 48-hour read means a title or thumbnail change that day; rule 1 two or three Shorts per long film, linked to it.)**\n\nPilot 2, *How the U-Boats Lost Their Safest Hunting Ground* (`qfc6EBStOfo`), airs **Tue 24 Nov 17:00 London**. Rule 8 (as of PR #97): read it at about 1,000 impressions or 48 hours, whichever comes first, and act on click-through that day.\n\n**Do (Mini, Field Order History Studio and the YouTube Data API only; never open or play the public video, AGENTS.md):**\n1. **From Thu 26 Nov 17:05 UTC, or as soon as Studio shows 1,000 or more impressions if that comes first, record:** impressions, click-through by traffic source (suggested, browse, search), views, average view duration and percentage viewed, still watching at 30 seconds if Studio shows it, the suggesting videos, and the thumbnail Test & Compare state. Use strangers only: our own checks are excluded.\n2. **If strangers' click-through is under 2%:** start a **title Test & Compare** that day, keeping any running thumbnail test (if Studio allows only one test, start the title test the moment the thumbnail test ends, and say when).\n   - A = the current title.\n   - B = **Battle of the Atlantic: The Month U-Boats Lost** (46 characters).\n   - C = **How the U-Boats Lost the Battle of the Atlantic** (47 characters).\n   - First check both against the film's script and sources, and swap a word if either claims more than the film shows.\n   - \"battle of the atlantic\" is the searched name; the current title does not carry it.\n3. **If it is 2% or more:** no change.\n4. Write the numbers into the film's `status.json` and the result against `studio/LEARNINGS.md` lines 1-3 and 9 (held, failed, or not yet testable). This read triggers the rule 12 rules review as usual.\n\n**Guards.** Listing change only: no re-upload, no schedule or visibility change, no Studio editor cut. £0.\n\n**Timing (Claude, same day).** This job wakes at 24 hours (Wed 25 Nov 17:05 UTC). If Studio already shows 1,000 or more impressions, do the whole read and act now. If not, record the 24-hour numbers in one thread line and set a new date hold for Thu 26 Nov 17:05 UTC, then do the full read then.\n\n**Also, in the same Studio visit (Ben, 25 Nov 00:05 London, in chat: \"Two films same thumbnail is this a mistake\").** Rename the old private v05 upload `J9WGu8aPnHI` (*How the Allies Closed the U-Boats' Safest Hunting Ground*, 21 Nov) so its title starts **[OLD v05, replaced by qfc6EBStOfo]**. It stays Private, with no schedule; never delete it. Read the title back. This is a listing change on a private video only.\n\n**Update (Claude, acting Chief, 25 Nov ~10:25 UTC): act now, directly.** Ben, Wed 25 Nov ~10:20 London, in chat: \"Looks like pilot 2 has done worse than the first.\" At 08:13Z: 792 impressions, 1.0% click-through (1.9% in the first wave), 16 views, 2:14 average view; likely past 1,000 impressions by now. Rule 8 (ww2 PR #97): under 2% at about 1,000 impressions means a change that day. A Test & Compare needs about 13 days at this traffic (Studio's own estimate on the running thumbnail test). So, as with pilot 1, change directly and measure before and after.\n\n**Do now (Studio 9224 and the Data API only; never play a video):**\n1. **Record the before numbers:** impressions, click-through by source, views, average view duration.\n2. **End the running B/C/D thumbnail test.** Record each arm's watch-time share if Studio shows one, then set **Design E** (`11_Upload-Package/ww2_002_thumb_E_uboat_hunted_v01.jpg`, J3645) as the thumbnail.\n3. **Change the title to *Battle of the Atlantic: The Month U-Boats Lost*.**\n   - First check it against the script and sources. The film's story is May 1943, when the U-boats were withdrawn from the North Atlantic.\n   - If \"the month U-boats lost\" overclaims, use *How the U-Boats Lost the Battle of the Atlantic* instead.\n4. **Read both back** in Studio and the API. Write the before numbers, the switch time, and the 7-day after-check to `status.json` and against `studio/LEARNINGS.md` line 9.\n   - Both changes go at once, so the 7-day read judges the pair; say so.\n\nListing changes only. £0.",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-25T08:10Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T16:35Z",
-      "result": "Waiting for: 24-hour check for WW2 pilot 2 (qfc6EBStOfo) at Wed 25 Nov 17:05 UTC: 08:13Z early look showed 792 impressions (<1,000), 1.0% CTR, 16 views, 2:14 AVD, B/C/D thumbnail test Running; private v05 J9WGu8aPnHI renamed and verified. At 17:05Z, if impressions >= 1,000 do full read and act on CTR (<2% -> title test + Design E per J3645, update status.json & LEARNINGS.md); otherwise record 24h numbers and hold for 48h (Thu 26 Nov 17:05 UTC).",
+      "result": "",
       "history": [
         {
           "at": "2026-11-24T16:35Z",
@@ -325985,35 +325985,21 @@
           "at": "2026-11-25T08:15Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-25T17:05:00Z"
+        },
+        {
+          "at": "2026-11-25T10:22Z",
+          "by": "claude",
+          "what": "reopened: Act now: under 2% at about 1,000 impressions (rule 8); direct title and thumbnail change."
         }
       ],
       "remaining_action": "At Wed 25 Nov 17:05 UTC (24h), check qfc6EBStOfo impressions; if >=1,000 run full read and act on CTR + Design E if <2%, else log 24h numbers and hold to Thu 26 Nov 17:05 UTC (48h)",
-      "due": "2026-11-26T20:00:00Z",
+      "due": "2026-11-25T14:00:00Z",
       "kind": "studio",
       "mini_only": true,
-      "progress": {
-        "step": 2,
-        "of": 5,
-        "at": "2026-11-25T08:13Z",
-        "by": "gemini",
-        "plan": [
-          "Check Studio CDP & YouTube API",
-          "Rename private v05 J9WGu8aPnHI",
-          "Read qfc6EBStOfo analytics & Test & Compare",
-          "Act on CTR if >=1000 impr else set hold",
-          "Update status/records & post report"
-        ],
-        "note": "Confirmed Studio CDP on 9224 and Data API for WW2; renamed private J9WGu8aPnHI to [OLD v05, replaced by qfc6EBStOfo] How"
-      },
       "taskKeys": [
         "WW2:002"
       ],
-      "hold": {
-        "type": "date",
-        "condition": "24-hour check for WW2 pilot 2 (qfc6EBStOfo) at Wed 25 Nov 17:05 UTC: 08:13Z early look showed 792 impressions (<1,000), 1.0% CTR, 16 views, 2:14 AVD, B/C/D thumbnail test Running; private v05 J9WGu8aPnHI renamed and verified. At 17:05Z, if impressions >= 1,000 do full read and act on CTR (<2% -> title test + Design E per J3645, update status.json & LEARNINGS.md); otherwise record 24h numbers and hold for 48h (Thu 26 Nov 17:05 UTC).",
-        "check_at": "2026-11-25T17:05:00Z",
-        "release": "auto"
-      }
+      "urgent": 10
     },
     {
       "id": "J3562",
@@ -331705,7 +331691,7 @@
       "due": "2026-11-24T23:30:00Z",
       "kind": "studio",
       "mini_only": true,
-      "urgent": 11,
+      "urgent": 9,
       "progress": {
         "step": 3,
         "of": 3,
@@ -337096,6 +337082,52 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3704",
+      "title": "WW2 pilot 2: read the retention graph at 48 hours and propose a cut for the biggest early drop",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** Ben, Wed 25 Nov ~10:20 London, in chat: \"Looks like pilot 2 has done worse than the first.\" At 08:13Z: 792 impressions, 1.0% click-through (1.9% in the first wave), 16 views, 2:14 average view; likely past 1,000 impressions by now. Rule 8 (ww2 PR #97): under 2% at about 1,000 impressions means a change that day. The 2:14 average view is about 10% of 22:28. For pilot 1, cutting a detour at 1:28 (J3419) took strangers' average view from 2:06 to 5:06. Studio's retention graph for pilot 2 should be ready about 48 hours after launch.\n\n**Do (Thu 26 Nov from 17:05 UTC; Studio and the Data API only):**\n1. Read pilot 2's retention curve: the 30-second and 1-minute marks, and every drop steeper than the curve around it in the first 5 minutes.\n2. Match each drop to the script line and the picture at that moment.\n3. If one stretch is a clear cliff (a detour, a slow explainer, a repeat), write the exact proposed Studio-editor trim (in and out times) with the reason and the expected gain. Put it on the thread for the Chief to take to Ben.\n   - Pilot 1's cut had Ben's go. Make no cut in this job.\n4. Write the curve numbers into `status.json` and the result against `studio/LEARNINGS.md` line 3. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 40,
+      "status": "blocked",
+      "by": "claude",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-25T10:22Z",
+      "result": "Waiting for: Pilot 2's 48-hour point (retention graph ready), 2026-11-26T17:05:00Z.",
+      "history": [
+        {
+          "at": "2026-11-25T10:22Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-25T10:22Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: Pilot 2's 48-hour point (retention graph ready), 2026-11-26T17:05:00Z."
+        },
+        {
+          "at": "2026-11-25T10:22Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-26T17:05:00Z"
+        }
+      ],
+      "remaining_action": "Read pilot 2's retention at 48 hours",
+      "due": "2026-11-26T20:00:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "hold": {
+        "type": "date",
+        "condition": "Pilot 2's 48-hour point (retention graph ready), 2026-11-26T17:05:00Z.",
+        "check_at": "2026-11-26T17:05:00Z",
+        "release": "auto"
+      }
     }
   ],
   "focus": [
