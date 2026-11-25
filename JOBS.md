@@ -125,7 +125,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3679 | mini | open | – | – | HOS:136 vo · vo · HOS 136 Trinity Test Explained: Shorts S01 & S02 voiceover from locked v02 scripts | HOS PR #767 (ab25f2de), J3677, J3553, J3678 |
 | J3681 | any | blocked | macbook-2 | – | review · Field Order History rules review ek9F61FVYqY 48h |  |
 | J3682 | mini | open | – | – | studio · Field Order History channel totals read 2026-11-25 |  |
-| J3683 | mini | open | – | – | review · Verify condition for J3565 |  |
+| J3683 | mini | claimed | macbook-2 | 2026-11-25T09:03Z | review · Verify condition for J3565 |  |
 
 Recently finished:
 
