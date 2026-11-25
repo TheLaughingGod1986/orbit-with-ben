@@ -329838,16 +329838,21 @@
           "at": "2026-11-25T11:49Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Saved & verified on reload: Paid promotion No, Automatic places off, Caption cert never aired US TV, Education Type Concept overview, Academic system England, Moderation Basic, AI use Yes, Not Made for Kids, Private/no publishAt, Related None, THE LINE cover & en-GB serving captions; setting Education Level = Key stage 4"
+        },
+        {
+          "at": "2026-11-25T11:52Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: All private-only Studio finishing on mpK3D6S7WLk saved & verified on reload (Paid promotion No, Automatic places off, Caption cert never aired US TV, Education Concept overview/England/Key stage 4, Moderation Basic, AI use Yes, Not Made for Kids, Private/no publishAt, Related None)"
         }
       ],
-      "remaining_action": "Save Education Level = Key stage 4, verify full reload readback, then run post-Studio channel:audit and lint:package",
+      "remaining_action": "Run post-Studio lint:package, channel:audit, and API verification on mpK3D6S7WLk, then commit HOS 010 records PR",
       "kind": "studio",
       "plain": "Schedule the approved dinosaur Short after its full film is ready",
       "mini_only": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-25T11:49Z",
+        "at": "2026-11-25T11:52Z",
         "by": "gemini",
         "plan": [
           "Check J3512 records & HOS 010 long state",
@@ -329856,7 +329861,7 @@
           "Update records/PRs if needed",
           "Report and wait/schedule J3611"
         ],
-        "note": "Saved & verified on reload: Paid promotion No, Automatic places off, Caption cert never aired US TV, Education Type Conc"
+        "note": "All private-only Studio finishing on mpK3D6S7WLk saved & verified on reload (Paid promotion No, Automatic places off, Ca"
       },
       "taskKeys": [
         "HOS:010"
