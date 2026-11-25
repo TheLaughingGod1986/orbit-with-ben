@@ -325654,13 +325654,13 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-25T08:10Z",
-      "eta": "2026-11-25T09:10Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T16:35Z",
-      "result": "",
+      "result": "Waiting for: 24-hour check for WW2 pilot 2 (qfc6EBStOfo) at Wed 25 Nov 17:05 UTC: 08:13Z early look showed 792 impressions (<1,000), 1.0% CTR, 16 views, 2:14 AVD, B/C/D thumbnail test Running; private v05 J9WGu8aPnHI renamed and verified. At 17:05Z, if impressions >= 1,000 do full read and act on CTR (<2% -> title test + Design E per J3645, update status.json & LEARNINGS.md); otherwise record 24h numbers and hold for 48h (Thu 26 Nov 17:05 UTC).",
       "history": [
         {
           "at": "2026-11-24T16:35Z",
@@ -325726,9 +325726,19 @@
           "at": "2026-11-25T08:13Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Confirmed Studio CDP on 9224 and Data API for WW2; renamed private J9WGu8aPnHI to [OLD v05, replaced by qfc6EBStOfo] How the Allies Closed the U-Boats' Safest Hunting Ground (Private, no schedule, API readback verified)"
+        },
+        {
+          "at": "2026-11-25T08:15Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: 24-hour check for WW2 pilot 2 (qfc6EBStOfo) at Wed 25 Nov 17:05 UTC: 08:13Z early look showed 792 impressions (<1,000), 1.0% CTR, 16 views, 2:14 AVD, B/C/D thumbnail test Running; private v05 J9WGu8aPnHI renamed and verified. At 17:05Z, if impressions >= 1,000 do full read and act on CTR (<2% -> title test + Design E per J3645, update status.json & LEARNINGS.md); otherwise record 24h numbers and hold for 48h (Thu 26 Nov 17:05 UTC)."
+        },
+        {
+          "at": "2026-11-25T08:15Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-25T17:05:00Z"
         }
       ],
-      "remaining_action": "Finish reading qfc6EBStOfo Studio analytics & Test & Compare",
+      "remaining_action": "At Wed 25 Nov 17:05 UTC (24h), check qfc6EBStOfo impressions; if >=1,000 run full read and act on CTR + Design E if <2%, else log 24h numbers and hold to Thu 26 Nov 17:05 UTC (48h)",
       "due": "2026-11-26T20:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -325748,7 +325758,13 @@
       },
       "taskKeys": [
         "WW2:002"
-      ]
+      ],
+      "hold": {
+        "type": "date",
+        "condition": "24-hour check for WW2 pilot 2 (qfc6EBStOfo) at Wed 25 Nov 17:05 UTC: 08:13Z early look showed 792 impressions (<1,000), 1.0% CTR, 16 views, 2:14 AVD, B/C/D thumbnail test Running; private v05 J9WGu8aPnHI renamed and verified. At 17:05Z, if impressions >= 1,000 do full read and act on CTR (<2% -> title test + Design E per J3645, update status.json & LEARNINGS.md); otherwise record 24h numbers and hold for 48h (Thu 26 Nov 17:05 UTC).",
+        "check_at": "2026-11-25T17:05:00Z",
+        "release": "auto"
+      }
     },
     {
       "id": "J3562",
