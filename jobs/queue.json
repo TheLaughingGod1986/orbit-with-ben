@@ -335525,9 +335525,14 @@
           "at": "2026-11-25T08:40Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T08:41Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3687 as acting Chief (Gemini)"
         }
       ],
-      "remaining_action": "Chief review & KEEP/FIX lock decision on HOS:137 v02 after independent facts verification (close J3565 on KEEP)",
+      "remaining_action": "Inspecting HOS:137 v02 PR, J3565 review, and related jobs",
       "due": "2026-12-08T18:00:00Z",
       "kind": "review",
       "plain": "Verify all 9 v02 fixes and exact quotes for Accidental Inventions, lock the script on KEEP, and close J3565.",
@@ -335541,12 +335546,21 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T08:40Z",
+        "of": 5,
+        "at": "2026-11-25T08:41Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect v02 PR and J3565 review",
+          "Verify FIX-1..FIX-9 and v02 hashes",
+          "Live HTTP exact-quote & facts check",
+          "Run script/episode/repo checks & CI",
+          "Chief ruling, merge/close PRs & update records"
+        ],
+        "note": "Claimed J3687 as acting Chief (Gemini)"
+      },
+      "taskKeys": [
+        "HOS:137"
+      ]
     },
     {
       "id": "J3688",
