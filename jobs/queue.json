@@ -315327,22 +315327,22 @@
     },
     {
       "id": "J3442",
-      "title": "Field Order History pilot 1: read the retention graph after the cut, find the next drop, propose up to two more clean cuts",
+      "title": "WW2 pilot 1: make Cut 1 (07:44-08:47, 63.6 s) in Studio Editor before the Short, then fix chapters, card and captions",
       "needs": "mini",
       "repo": "ww2",
-      "body": "**Why (Ben, Mon 23 Nov ~18:10 London: \"as we know the weak points of Pilot Video 1 ... are we working on perfecting that for Video 1, or just moving all these fixes into Video 2?\" Answer: both. Pilot 1 (`ek9F61FVYqY`) keeps being improved in place.)** Done so far on pilot 1: three-way thumbnail test (09:12Z 23 Nov), search-led title \"The Secret Floating Harbours of D-Day\" (13:51Z), the 3m45s detour cut with Studio's editor (live at 23:52, ~14:07Z), pinned question, retimed captions and chapters (J3419). Its first retention graph was \"not ready\" on 23 Nov; Studio says up to two days.\n\n**Do, once Studio shows the retention graph (check from Wed 25 Nov 09:00Z; if still not ready, re-check every 12 hours):**\n1. Read the audience retention graph for the edited film (23:52) and the key moments card. Record % still watching at 0:30, 1:00, 2:00, 5:00, 10:00, 15:00 and 20:00, and the times of the three steepest drops (use `scripts/retention_autopsy.py inspect ek9F61FVYqY --window 7d --channel ww2` once it has data; its `clips` command cuts 40-second clips around the drops for a watch with sound).\n2. For each steep drop, say what is on screen and in the narration there (a slow stretch, a run of figures, a detour, a weak picture). Where a drop sits on a passage that can be cut cleanly between sentences without losing the story, propose the exact cut (start/end on a pause, the joined sentences), at most two cuts, each under 90 seconds.\n3. Park the proposal for Claude's review with the evidence; after Claude's OK, make the cut(s) with Studio's editor exactly as J3419 did (retimed captions and chapters, end screen checked, Test & Compare preserved), and record before/after in ww2-channel `03_Picture/TRIM_RECEIPT_v02.md`.\n4. Write what you found in `studio/LEARNINGS.md` (rule 12): did the first cut hold strangers longer (prediction #3: strangers' average viewed above 18%)?\n\n**Guards.** Studio editor only: never re-upload, Replace or delete. Title and thumbnails stay with their own tests. £0.",
+      "body": "**Why (Ben, Mon 23 Nov ~18:10 London: \"as we know the weak points of Pilot Video 1 ... are we working on perfecting that for Video 1, or just moving all these fixes into Video 2?\" Answer: both. Pilot 1 (`ek9F61FVYqY`) keeps being improved in place.)** Done so far on pilot 1: three-way thumbnail test (09:12Z 23 Nov), search-led title \"The Secret Floating Harbours of D-Day\" (13:51Z), the 3m45s detour cut with Studio's editor (live at 23:52, ~14:07Z), pinned question, retimed captions and chapters (J3419). Its first retention graph was \"not ready\" on 23 Nov; Studio says up to two days.\n\n**Do, once Studio shows the retention graph (check from Wed 25 Nov 09:00Z; if still not ready, re-check every 12 hours):**\n1. Read the audience retention graph for the edited film (23:52) and the key moments card. Record % still watching at 0:30, 1:00, 2:00, 5:00, 10:00, 15:00 and 20:00, and the times of the three steepest drops (use `scripts/retention_autopsy.py inspect ek9F61FVYqY --window 7d --channel ww2` once it has data; its `clips` command cuts 40-second clips around the drops for a watch with sound).\n2. For each steep drop, say what is on screen and in the narration there (a slow stretch, a run of figures, a detour, a weak picture). Where a drop sits on a passage that can be cut cleanly between sentences without losing the story, propose the exact cut (start/end on a pause, the joined sentences), at most two cuts, each under 90 seconds.\n3. Park the proposal for Claude's review with the evidence; after Claude's OK, make the cut(s) with Studio's editor exactly as J3419 did (retimed captions and chapters, end screen checked, Test & Compare preserved), and record before/after in ww2-channel `03_Picture/TRIM_RECEIPT_v02.md`.\n4. Write what you found in `studio/LEARNINGS.md` (rule 12): did the first cut hold strangers longer (prediction #3: strangers' average viewed above 18%)?\n\n**Guards.** Studio editor only: never re-upload, Replace or delete. Title and thumbnails stay with their own tests. £0.\n\n**Update (Claude, acting Chief, 25 Nov ~11:30 UTC): Cut 1 approved; do it now.** Ben, Wed 25 Nov ~11:25 London, in chat: \"Okay, if we think we should make the cut on pilot 1, please go ahead and do this.\" Claude (acting Chief) approves Cut 1 of TRIM_PROPOSAL_v02 (ww2 #138, merged in #144). Cut 2 stays on HOLD.\n\n**Do (Mini, Field Order History Studio on 9224, Studio Editor; never play the public video):**\n1. **Record the before state:** live length 23:52, chapters, the info card time, the end-screen window, the captions track, and the running thumbnail test's state.\n2. **Trim exactly 07:44:00 to 08:47:15** on the live timeline, at 25 fps: 63.60 s, the Thames mud-pit stretch.\n   - The joined lines: \"...controlled by Kingston valves.\" then \"Across Britain, 45,000 workers from over 300 firms were mobilised.\"\n   - New length: about 22:48.\n   - If Studio will not edit while the thumbnail Test & Compare runs: end the test, keeping the arm with the highest watch-time share (or the current default if no shares are shown), then trim.\n   - Never delete or re-upload.\n3. **After the edit finishes processing:**\n   - Shift chapters 4 to 6 by -63.60 s (10:13 to 9:09, 14:48 to 13:44, 19:02 to 17:58) in the description.\n   - Check the captions line up after 7:44. If they don't, upload the en-GB v03 track shifted by -63.60 s after the cut point.\n   - Move the info card that points to pilot 2 (`qfc6EBStOfo`) from 19:02 to 17:58.\n   - Check the end screen still sits in the last 20 seconds and points to pilot 2 and Subscribe.\n4. **Read everything back** in Studio and the Data API: duration, description chapters, card, end screen, captions.\n5. **Write `TRIM_RECEIPT_v02.md`** (cut times, the edit's live time, the before and after state). Note in `status.json` that retention after this time is the post-cut sample, for J3605's 7-day read on 1 Dec.\n\n**Must be live before the Mulberry Short (`NoQQqrW2meM`) goes public on Thu 26 Nov 12:00 London.** If the Studio Editor is still processing by Thu 10:00, say so on the thread. Commit records locally; publish once at the end. £0.",
       "ref": "",
       "film": "",
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-25T09:15Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T17:51Z",
-      "result": "parked for Claude review: Studio retention graph read for ek9F61FVYqY (23:52, 20-23 Nov Pacific, n=27 pooled pre/post-trim) and TRIM_PROPOSAL_v02.md + LEARNINGS.md opened in ww2-channel PR #138. Recommend Cut 1 (07:44:00-08:47:15, 63.60s Thames mud-pit workaround) or defer ~48h for clean post-trim data; recommend HOLD on Cut 2 (03:07:15-03:29:12, 21.88s, Dieppe-detour confounded). No live Studio edit executed until Claude OK.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-23T17:51Z",
@@ -315398,33 +315398,21 @@
           "at": "2026-11-25T09:27Z",
           "by": "gemini",
           "what": "blocked: parked for Claude review: Studio retention graph read for ek9F61FVYqY (23:52, 20-23 Nov Pacific, n=27 pooled pre/post-trim) and TRIM_PROPOSAL_v02.md + LEARNINGS.md opened in ww2-channel PR #138. Recommend Cut 1 (07:44:00-08:47:15, 63.60s Thames mud-pit workaround) or defer ~48h for clean post-trim data; recommend HOLD on Cut 2 (03:07:15-03:29:12, 21.88s, Dieppe-detour confounded). No live Studio edit executed until Claude OK."
+        },
+        {
+          "at": "2026-11-25T11:31Z",
+          "by": "claude",
+          "what": "reopened: Ben's go and the Chief's OK for Cut 1 (07:44:00-08:47:15); execute before the Short on Thu 12:00 London."
         }
       ],
       "remaining_action": "Await Claude review and OK on TRIM_PROPOSAL_v02.md (ww2-channel PR #138) before any live Studio Editor cut",
-      "due": "2026-11-26T18:00:00Z",
+      "due": "2026-11-25T20:00:00Z",
       "kind": "studio",
       "mini_only": true,
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-25T09:26Z",
-        "by": "gemini",
-        "plan": [
-          "Read Studio retention graph",
-          "Inspect steep drops with video+audio if ready",
-          "Propose clean cuts or wait if still processing",
-          "Record findings and update learnings"
-        ],
-        "note": "Opened ww2-channel PR #138 (TRIM_PROPOSAL_v02.md + studio/LEARNINGS.md Prediction #3 update); left unmerged after Codex "
-      },
       "taskKeys": [
         "WW2:001"
       ],
-      "hold": {
-        "type": "input",
-        "condition": "parked for Claude review: Studio retention graph read for ek9F61FVYqY (23:52, 20-23 Nov Pacific, n=27 pooled pre/post-trim) and TRIM_PROPOSAL_v02.md + LEARNINGS.md opened in ww2-channel PR #138. Recommend Cut 1 (07:44:00-08:47:15, 63.60s Thames mud-pit workaround) or defer ~48h for clean post-trim data; recommend HOLD on Cut 2 (03:07:15-03:29:12, 21.88s, Dieppe-detour confounded). No live Studio edit executed until Claude OK.",
-        "check_at": "2026-11-25T15:27:30+00:00"
-      }
+      "urgent": 7
     },
     {
       "id": "J3443",
@@ -337821,7 +337809,7 @@
       "due": "2026-11-25T14:00:00Z",
       "kind": "studio",
       "mini_only": true,
-      "urgent": 7,
+      "urgent": 6,
       "progress": {
         "step": 4,
         "of": 5,

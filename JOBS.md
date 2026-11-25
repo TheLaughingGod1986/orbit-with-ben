@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J2529, J3431, J3432, J3501, J3704.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J2529, J3431, J3432, J3501, J3704, J3442.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -48,7 +48,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3415 | mini | blocked | – | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
 | J3431 | mini | blocked | codex | – | WW2:005 picture · image · WW2 film 005: top up the archive photographs to about two-thirds of screen time before the edit |  |
 | J3432 | mini | open (after J3431) | – | – | WW2:005 edit · assembly · WW2 film 005: edit, captions, three thumbnails and upload package, to Ben's watch |  |
-| J3442 | mini | blocked | gemini | – | studio · Field Order History pilot 1: read the retention graph after the cut, find the next drop, propose up to two more clean cuts |  |
+| J3442 | mini | open | – | – | studio · WW2 pilot 1: make Cut 1 (07:44-08:47, 63.6 s) in Studio Editor before the Short, then fix chapters, card and captions |  |
 | J3444 | mini | blocked | codex | – | 027 upload · studio · Earth equator Short: 24-hour reach read after Related repair |  |
 | J3469 | mini | open | – | – | review · Verify condition for J2704 |  |
 | J3471 | mini | blocked | macbook | – | review · Verify condition for J3415 |  |
