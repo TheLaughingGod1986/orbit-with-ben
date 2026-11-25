@@ -335008,13 +335008,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-25T07:03Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T07:03Z",
-      "result": "parked for Chief: Read-only verification complete in OWB PR #1308 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1308, macbook/J3683, commit 7d6137a04, jobs/reviews/J3683/REVIEW.md). Recommended CONDITION UNMET — DO NOT REOPEN J3565 for ordinary review: predecessor J3564 (HOS PR #769 7ae40acf, 9 OK / 15 PARTIAL / 4 FLAG + 8 primary upgrades) is done and J3565's independent v01 advisory review is already delivered in HOS PR #770 (638df933, 3/3 CI green, FIX before lock: FIX-1..FIX-9). J3683 fired automatically because J3565 retained after=J3564 without a hold dict (workflow_state.hold_due line 139), hiding J3565 from pending_chief_reviews. No Chief ruling on thread #954 or HOS desk #180; HOS PRs #747/#754/#769/#770 remain OPEN; no HOS:137 v02 rewrite or v02 facts recheck queued; HOS WIP 5/5 active. macbook-2 cannot call jobs.py wait J3565 --recheck J3683 (Chief-only by code, set_wait line 610). Elected Chief (Codex per live status) to merge OWB PR #1308, rule FIX on HOS PR #770, route v02 + facts recheck, update J3565 with wait --type input --recheck J3683 (or close if superseded), and close J3683. £0.00 spent; zero merges/uploads/NAS/HOS writes; all checkouts on main.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-25T07:03Z",
@@ -335055,6 +335055,11 @@
           "at": "2026-11-25T07:09Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: Read-only verification complete in OWB PR #1308 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1308, macbook/J3683, commit 7d6137a04, jobs/reviews/J3683/REVIEW.md). Recommended CONDITION UNMET — DO NOT REOPEN J3565 for ordinary review: predecessor J3564 (HOS PR #769 7ae40acf, 9 OK / 15 PARTIAL / 4 FLAG + 8 primary upgrades) is done and J3565's independent v01 advisory review is already delivered in HOS PR #770 (638df933, 3/3 CI green, FIX before lock: FIX-1..FIX-9). J3683 fired automatically because J3565 retained after=J3564 without a hold dict (workflow_state.hold_due line 139), hiding J3565 from pending_chief_reviews. No Chief ruling on thread #954 or HOS desk #180; HOS PRs #747/#754/#769/#770 remain OPEN; no HOS:137 v02 rewrite or v02 facts recheck queued; HOS WIP 5/5 active. macbook-2 cannot call jobs.py wait J3565 --recheck J3683 (Chief-only by code, set_wait line 610). Elected Chief (Codex per live status) to merge OWB PR #1308, rule FIX on HOS PR #770, route v02 + facts recheck, update J3565 with wait --type input --recheck J3683 (or close if superseded), and close J3683. £0.00 spent; zero merges/uploads/NAS/HOS writes; all checkouts on main."
+        },
+        {
+          "at": "2026-11-25T07:25Z",
+          "by": "gemini",
+          "what": "reopened: Acting Chief (gemini) claiming blocked verification J3683 for closure after ruling, PR merges, v02 chain J3685->J3686->J3687, and J3565 wait --recheck J3683 recorded"
         }
       ],
       "remaining_action": "Delivered OWB PR #1308; parking J3683 for elected Chief and posting report",
@@ -335069,19 +335074,7 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true,
-      "progress": {
-        "step": 4,
-        "of": 4,
-        "at": "2026-11-25T07:09Z",
-        "by": "macbook-2",
-        "plan": [
-          "Inspect J3565 & predecessor history",
-          "Check PRs, desk & studio thread",
-          "Update J3565 hold or reopen",
-          "Close J3683 & post report"
-        ]
-      }
+      "open_claim": true
     },
     {
       "id": "J3684",

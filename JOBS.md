@@ -124,7 +124,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3679 | mini | open | – | – | HOS:136 vo · vo · HOS 136 Trinity Test Explained: Shorts S01 & S02 voiceover from locked v02 scripts | HOS PR #767 (ab25f2de), J3677, J3553, J3678 |
 | J3681 | any | blocked | macbook-2 | – | review · Field Order History rules review ek9F61FVYqY 48h |  |
 | J3682 | mini | blocked | gemini | – | studio · Field Order History channel totals read 2026-11-25 |  |
-| J3683 | mini | blocked | macbook-2 | – | review · Verify condition for J3565 |  |
+| J3683 | mini | open | – | – | review · Verify condition for J3565 |  |
 | J3684 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J3685 | mini | claimed | macbook-2 | 2026-11-25T09:24Z | HOS:137 script · script · HOS 137: correct Accidental Inventions script, sources & Shorts to v02 (9 J3564/J3565 fixes) | J3565 |
 | J3686 | gemini | open (after J3685) | – | – | HOS:137 sources · facts · HOS 137: independent v02 facts and exact-quote verification | J3565 |
