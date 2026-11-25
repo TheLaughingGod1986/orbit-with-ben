@@ -343143,20 +343143,29 @@
           "at": "2026-11-25T22:25Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T22:26Z",
+          "by": "macbook-2",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "On MacBook slot 2, inspect /Users/ben/_desk/worker/slot2/ww2-channel (branch macbook/J3487, stashes, reflog), privacy-check and push PR or confirm lost",
+      "remaining_action": "Inspecting ww2-channel local git branches, stashes, reflog, and working tree",
       "due": "2026-11-27T18:00:00Z",
       "for": "macbook-2",
       "kind": "facts",
       "plain": "Check MacBook slot 2 for stuck Battle of the Bulge script work for WW2 016, push a PR if found, or confirm it is lost",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-25T22:25Z",
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-25T22:26Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect local ww2-channel git state",
+          "Verify Battle of the Bulge work & privacy",
+          "Publish branch & open PR (or document lost work)",
+          "Clean up checkout & report on studio thread"
+        ]
       }
     }
   ],
