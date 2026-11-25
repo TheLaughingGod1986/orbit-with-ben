@@ -334563,7 +334563,7 @@
       "title": "WW2:003 (B-29 RqYjADxvJy8): 48-hour Rule 8 read and same-day CTR check",
       "needs": "mini",
       "repo": "ww2",
-      "body": "**Why.** Rule 8 of `ww2/studio/RULES.md` requires a **48-hour read** (or at ~1,000 impressions, whichever comes first) for `WW2:003` (*B-29: Why It Cost More Than the Atomic Bomb*, `RqYjADxvJy8`, scheduled `2026-11-28T17:00:00Z`).\n\n**Do (at `2026-11-30T17:05:00Z`, Mini Studio `9224`, Field Order History `UCu94mInMFosxu3W0H6jlI6Q`):**\n1. **Read Studio Analytics (strangers only — Browse, Suggested, Search; never our own checks):** record impressions, strangers click-through rate (CTR), still watching at 30 seconds, average view duration (AVD) and % viewed, total views, traffic source split, retention drop points, and the 3-way Thumbnail Test & Compare watch-time share (`A: $3 BILLION`, `B: Wichita assembly no-text`, `C: ENGINE FIRES`).\n2. **Import dated read** using `07_Content-Ops/scripts/field-order-studio-import.ts` (null + missing reason for any suppressed field; never zero; no raw browser dumps/account details).\n3. **Apply Rule 8 bar check** (first-month bars: CTR ≥ 2%, 30 s ≥ 60%, average viewed ≥ 25%):\n   - If strangers' CTR is under 2% at ~1,000 impressions or 48 h, act **that same day** per Rule 8 (propose/queue a title Test & Compare keeping searched name `B-29` first, or a new thumbnail after/without breaking a winning test — never silently overwrite a running test without Chief ruling).\n   - If retention shows a sharp early cliff, note the exact timestamp for a Studio editor trim proposal.\n4. **Trigger Rule 12 rules review** (or verify `field-order-dispatch.ts` queued it) so Claude/Chief checks predictions in `ww2/studio/LEARNINGS.md` and updates `ww2/studio/RULES.md` the same day.\n5. **Commit receipt** from a clean worktree and post summary on the studio thread.\n\n**Guards.** Read-only on YouTube during the read. Never play the public video. Never delete any video. `£0`.\n",
+      "body": "**Why.** Rule 8 of `ww2/studio/RULES.md` requires a **48-hour read** (or at ~1,000 impressions, whichever comes first) for `WW2:003` (*B-29: Why It Cost More Than the Atomic Bomb*, `RqYjADxvJy8`, scheduled `2026-11-28T17:00:00Z`).\n\n**Do (at `2026-11-30T17:05:00Z`, Mini Studio `9224`, Field Order History `UCu94mInMFosxu3W0H6jlI6Q`):**\n1. **Read Studio Analytics (strangers only — Browse, Suggested, Search; never our own checks):** record impressions, strangers click-through rate (CTR), still watching at 30 seconds, average view duration (AVD) and % viewed, total views, traffic source split, retention drop points, and the 3-way Thumbnail Test & Compare watch-time share (`A: $3 BILLION`, `B: Wichita assembly no-text`, `C: ENGINE FIRES`).\n2. **Import dated read** using `07_Content-Ops/scripts/field-order-studio-import.ts` (null + missing reason for any suppressed field; never zero; no raw browser dumps/account details).\n3. **Apply Rule 8 bar check** (first-month bars: CTR ≥ 2%, 30 s ≥ 60%, average viewed ≥ 25%):\n   - If strangers' CTR is under 2% at ~1,000 impressions or 48 h, act **that same day** per Rule 8 (propose/queue a title Test & Compare keeping searched name `B-29` first, or a new thumbnail after/without breaking a winning test — never silently overwrite a running test without Chief ruling).\n   - If retention shows a sharp early cliff, note the exact timestamp for a Studio editor trim proposal.\n4. **Trigger Rule 12 rules review** (or verify `field-order-dispatch.ts` queued it) so Claude/Chief checks predictions in `ww2/studio/LEARNINGS.md` and updates `ww2/studio/RULES.md` the same day.\n5. **Commit receipt** from a clean worktree and post summary on the studio thread.\n\n**Guards.** Read-only on YouTube during the read. Never play the public video. Never delete any video. `£0`.\n\n\n**Update (Claude, acting Chief, Wed 25 Nov): first look at 24 hours, Sun 29 Nov 17:05Z.** Pilot 2 had about 880 impressions after 20 hours, so film 003 may reach rule 8's ~1,000 impressions before the 48-hour mark. Pilot 2 lost a day at 0.9% click-through.\n- At 24 h, record impressions, strangers' click-through and the test's share.\n- If impressions are about 1,000 or more, do the full read and the rule 8 action now.\n- Otherwise, write the numbers on this job and re-hold it with `jobs.py wait J3656 --type date --release-at-time` for 2026-11-30T17:05Z, then finish the full read then.\n- Film 003 was trimmed before air (J3714, ww2 `07_Edit/TRIM_PLAN_v01.md`, about 23:48). Read retention against the plan's prediction: strangers drop less from 1:00 to 5:00 than pilot 1's 11 points.",
       "ref": "",
       "film": "WW2:003",
       "stage": "upload",
@@ -334596,6 +334596,11 @@
           "at": "2026-11-25T01:05Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-30T17:05:00Z"
+        },
+        {
+          "at": "2026-11-25T14:03Z",
+          "by": "claude",
+          "what": "Chief: first look moved to 24 h (Sun 29 Nov 17:05Z) so a sub-2% click-through can be fixed a day sooner (rule 8: ~1,000 impressions or 48 h, whichever first)"
         }
       ],
       "remaining_action": "Wait until 48-hour window at 2026-11-30T17:05:00Z",
@@ -334612,8 +334617,8 @@
       },
       "hold": {
         "type": "date",
-        "condition": "48 hours after RqYjADxvJy8 scheduled Public launch (2026-11-28T17:00:00Z)",
-        "check_at": "2026-11-30T17:05:00Z",
+        "condition": "First look 24 hours after RqYjADxvJy8 goes Public (2026-11-28T17:00:00Z); full read at ~1,000 impressions or 48 hours, whichever comes first",
+        "check_at": "2026-11-29T17:05:00Z",
         "release": "auto"
       }
     },
