@@ -341852,13 +341852,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-25T19:35Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T19:17Z",
-      "result": "parked for Chief: price PASS and mint GO on HOS PR #789 (013 RETAKE_BOARD_v01, rows 3/10/24/28/47/49/54/63). Option A 8 x Veo 3.1 - Quality = 800 credits before 5 Dec (hold is 700, needs +100 for row 63); option B 78 or C 192 after 5 Dec with a new-model UAT. Worker advice: A. Nothing minted, 0 credits, rows 56-62/64-66 untouched (J3178).",
+      "result": "",
       "history": [
         {
           "at": "2026-11-25T19:17Z",
@@ -341899,6 +341899,11 @@
           "at": "2026-11-25T19:39Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: price PASS and mint GO on HOS PR #789 (013 RETAKE_BOARD_v01, rows 3/10/24/28/47/49/54/63). Option A 8 x Veo 3.1 - Quality = 800 credits before 5 Dec (hold is 700, needs +100 for row 63); option B 78 or C 192 after 5 Dec with a new-model UAT. Worker advice: A. Nothing minted, 0 credits, rows 56-62/64-66 untouched (J3178)."
+        },
+        {
+          "at": "2026-11-25T21:21Z",
+          "by": "gemini",
+          "what": "reopened: Acting Chief (gemini) review complete; HOS PR #789 merged as 37c49f91, desk #7174948698 posted, J3747 queued; closing J3738"
         }
       ],
       "remaining_action": "Chief price PASS and mint GO on the 8-row retake board",
@@ -341913,20 +341918,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 4,
-        "of": 5,
-        "at": "2026-11-25T19:39Z",
-        "by": "claudecode",
-        "plan": [
-          "Read brief and the 8 defects",
-          "Write retake prompts",
-          "Price against live Flow balance",
-          "Run checks and open PR",
-          "Park for Chief"
-        ],
-        "note": "HOS PR #789 open (0d243f72), check_all.sh ALL CHECKS PASS, 0 credits spent"
-      },
       "taskKeys": [
         "HOS:013"
       ]
