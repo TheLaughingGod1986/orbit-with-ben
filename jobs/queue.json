@@ -1,5 +1,5 @@
 {
-  "next_id": 3746,
+  "next_id": 3747,
   "jobs": [
     {
       "id": "J0001",
@@ -342421,6 +342421,36 @@
       "taskKeys": [
         "WW2:005"
       ]
+    },
+    {
+      "id": "J3746",
+      "title": "WW2 005: targeted zero-spend v04 fix pass from J3745 audiovisual QA",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** Elected Acting-Chief (`gemini`) full `14:46` audiovisual QA (`J3745`, `07_Edit/QA_REVIEW_J3745.md`) of `ww2_005_st_nazaire_v03_mix.mp4` (`SHA-256: 1a6b253f8e57185950749568e8d412d2a527966348ec8420d6d71458f7b5cf17`) found three factual/audio/chapter bugs and two visual/thumbnail fixes that must be cleared before staging `WW2:005` to Ben's watch (`J3432`, watch due Mon 30 Nov 20:00Z, planned air Thu 3 Dec 17:00 London).\n\n**Do (targeted zero-spend `v04` rebuild; £0 spend; zero new voice):**\n1. **Fix 1 — Remove duplicate/misattributed Ryder lower-third (`4:14–4:21`, shot 19 `G6`):** In `07_Edit/build_film_005_v03.py` (from `v02`), remove entry `19` from `NAMES` (`COMMANDER ROBERT RYDER` popped over `MUD FLATS` during Lord Louis Mountbatten narration and repeated 5 s later on Ryder's own photo `A 11960`). Keep entries `20` (Ryder on `A 11960`) and `34` (Beattie on `A 952`).\n2. **Fix 2 — Trim clipped stray `\"I-\"` syllable at Join 10 (`8:36.9–8:37.0`):** In `07_Edit/vo_splice_v04.py`, trim Span 10 (`P27.S1`) `master_out_s` from `659.47` to `659.00` (cleanly inside the `-78 dBFS` silence between `658.38` and `659.40`, before `P27.S2` onset at `659.420 s`). Keep all other 18 joins unchanged (verified seamless). Rebuild `st_nazaire_campbeltown_vo_recut_v04.wav`, `VO_SPLICE_MAP_v04.json`, and run `vo_join_check_v04.py`.\n3. **Fix 3 — Align Chapter 8 (`The Battleship That Never Came`) and its score cue:** Reassign shot 57 (`G13`, `AFTER / WHAT THE RAID WRECKED`) from Chapter 8 to Chapter 7 (`Late in the Morning`) in the resolved timeline (`TIMELINE_RESOLVED_v05`) so Chapter 8 and the B-flat major score cue start cleanly at shot 58 (`A 19624`, `\"And Tirpitz? She never came out into the Atlantic.\"`, `~13:27`) rather than mid-sentence at `13:15`. Rebuild `st_nazaire_score_v03.wav`, `st_nazaire_mix_v03.wav`, `ww2_005_en-GB_v02.srt`, `chapters_v02.json`, `DESCRIPTION_v02.txt`, and `metadata_v02.json` (preserving locked 44-char Rule-2 title `St Nazaire Raid: The Ship Turned Into a Bomb`).\n4. **Fix 4 — Replace frozen/strut-obscured `A 9804` (`0:41.75`) and unfreeze `A 23877` (`10:52.79`):**\n   - Swap shot 4 (`0:41.75`, `6.67 s`) from `A 9804` to verified official IWM photo **`A 22631`** (`j3431_a_22631.jpg`, `1300x975`, already in `ARCHIVE_PROVENANCE.md` and `IMAGE CREDITS`, caption `Alten Fjord anchorage, Norway: later Tirpitz reconnaissance`) with `5%` slow drift (next use at `~816 s`, `>760 s` gap; preserves `51.85%` archive share and zero `<60 s` repeats). Update `IMAGE CREDITS` / `photographs_credited` to drop `A 9804` (31 distinct official photos).\n   - Remove `A 23877` from `NO_MOVE` and apply subtle `3%` slow drift (`dz = 0.03`, `2x` Lanczos supersample) so `freezes_over_3s` is empty `[]`.\n5. **Fix 5 — Tighten Thumbnail `C` (`ONE TARGET`, `C 3317A`):** In `07_Edit/build_thumbs_005_v02.py`, crop `C 3317A` tightly onto the Normandie dry dock and smashed outer caisson (cropping out the distracting bottom-right U-boat pens) and add one single `#F5B800` Rule-2 arrow (`<=1 arrow`) pointing cleanly at the wrecked outer caisson. Save `ww2_005_thumb_C_v02.jpg`, `thumbnail_comparison_v02.jpg`, and `11_Upload-Package/THUMBNAIL_RECIPES_v02.json`.\n6. **Recommended Polish (same render, £0):** On shot 55 (`G10d`, `~12:02–12:36`, `34.2 s`), add a simple second code plate `G10e` (`LATE IN THE MORNING / THE CHARGE GOES OFF`, ruptured outer gate + flooding dock) cross-faded at the explosion beat (`~12:19.5`) so the climax has visual payoff instead of holding the intact gate through the blast.\n7. Render `ww2_005_st_nazaire_v04_mix.mp4` on NAS `studio-live` (using NAS scratch, never filling Mini local disk), run technical checks (`QA_TECHNICAL_v04.json`: confirm `freezes_over_3s: []`, `repeats_under_60s: []`, archive share `>=50%`, mix loudness `-17..-13 LUFS`, true peak `<=-1 dBFS`, `0` caption overlaps, `0` US spellings), commit metadata/scripts/reports on a `ww2-channel` PR, and queue a quick targeted `v04` audiovisual verification (`requires: audio_input,moving_video_input`) before Chief stages `J3432` to Ben's watch.\n\n**Guards.** £0 spend. Zero new voice. Keep NAS scratch off Mini internal SSD (Mini free disk < 7 GB). No `WW2 UAT` copy, no private R2 watch upload, no `jobs.py awaits`, and no YouTube upload, schedule, retitle, or privacy change.\n",
+      "ref": "",
+      "film": "WW2:005",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T20:47Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T20:47Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Rebuild WW2:005 v04 master, captions, chapters, and Thumb C v02 per QA_REVIEW_J3745.md at £0",
+      "due": "2026-11-28T20:00:00Z",
+      "kind": "assembly",
+      "plain": "Apply J3745 audiovisual QA fixes (shot 19 lower-third, Join 10 stray syllable, Chapter 8 alignment, A 9804 swap + A 23877 drift, Thumb C crop/arrow, G10e blast plate) to render ww2_005_st_nazaire_v04_mix.mp4 at £0."
     }
   ],
   "focus": [
