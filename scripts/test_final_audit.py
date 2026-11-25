@@ -64,6 +64,55 @@ class FinalAudit(unittest.TestCase):
                 self.assertEqual(check['kind'],'review')
                 self.assertEqual(bool(check.get('mini_only')),bool(extra.get('mini_only')))
 
+    def test_completed_predecessor_keeps_merge_review_in_chief_inbox(self):
+        # J3602's 20:28 block preceded the spurious J3616 check at 20:29.
+        parent={**row('J3601'),'status':'done'}
+        review={**row('J3602'),'status':'blocked','after':'J3601',
+                'result':'parked for Chief: review and merge PR #1287; worker cannot merge'}
+        data={'jobs':[parent,review],'next_id':3616}
+        before=copy.deepcopy(data)
+        self.assertFalse(w.hold_due(review,{'J3601':parent,'J3602':review},AT))
+        self.assertEqual(jobs.reconcile_holds(data,AT),[])
+        self.assertEqual(data,before)
+        self.assertEqual(w.state(review,{'J3601':parent},AT),'review')
+        with patch.object(cr,'read_json',return_value=data), patch.object(cr,'worker_capabilities',return_value={}), \
+             patch.object(cr,'_other_slugs',return_value=[]), patch('workflow_board.load_tracker',return_value={}):
+            self.assertEqual([j['id'] for j in cr.pending_chief_reviews(AT)],['J3602'])
+
+    def test_review_text_does_not_bypass_recorded_holds(self):
+        for kind in ('input','date','credits','test','capability','dependency','ben'):
+            for overdue in (False,True):
+                with self.subTest(kind=kind,overdue=overdue):
+                    parent={**row('P'),'status':'done'}
+                    hold={'type':kind,'condition':'Original condition still needs verification',
+                          'check_at':(AT+dt.timedelta(hours=-1 if overdue else 1)).isoformat()}
+                    # A dependency hold immediately verifies a completed predecessor by existing policy.
+                    j={**row('R'),'status':'blocked','after':'P','hold':hold,
+                       'result':'parked for Chief: review and merge'}
+                    data={'jobs':[parent,j],'next_id':1}
+                    self.assertEqual(w.state(j,{'P':parent},AT),'waiting')
+                    due=kind!='ben' and (overdue or kind=='dependency')
+                    self.assertEqual(w.hold_due(j,{'P':parent},AT),due)
+                    changed=jobs.reconcile_holds(data,AT)
+                    self.assertEqual(bool(changed),due)
+                    self.assertEqual(j['status'],'blocked')
+                    self.assertEqual(j['hold']['type'],kind)
+
+    def test_completed_dependency_verifies_nonreview_but_unresolved_review_waits(self):
+        for status in ('open','blocked','cancelled','missing'):
+            with self.subTest(status=status):
+                parent={**row('P'),'status':status}
+                j={**row('R'),'status':'blocked','after':'P','result':'parked for Chief: review'}
+                by_id={} if status=='missing' else {'P':parent}
+                self.assertFalse(w.hold_due(j,by_id,AT))
+                self.assertEqual(w.state(j,by_id,AT),'waiting')
+        parent={**row('P'),'status':'done'}
+        j={**row('R'),'status':'blocked','after':'P','result':'waiting for predecessor'}
+        data={'jobs':[parent,j],'next_id':1}
+        self.assertTrue(w.hold_due(j,{'P':parent},AT))
+        self.assertEqual(len(jobs.reconcile_holds(data,AT)),2)
+        self.assertEqual(j['hold']['type'],'dependency')
+
     def test_a_condition_check_is_portable_and_the_studio_job_itself_is_not(self):
         # The check reads the queue (20 Nov 2026). The Studio job it checks still needs the browser.
         for title, parent_portable in (('Studio: set Related video on the 026 Shorts', False), ('Review the docs wording', True)):
