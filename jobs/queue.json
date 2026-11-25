@@ -282846,16 +282846,21 @@
           "at": "2026-11-25T12:37Z",
           "by": "gemini",
           "what": "step 3 of 6 done: Cancelled all 3 Buffer posts for sY0PSQFxjp8 (6b02943702479690922e8c8e, 6b029438d5eabfb8cc8c2cf2, 6b029439d864a01105a3cbc9) at 2026-11-25T12:36:55Z; all 3 verified null via Buffer API"
+        },
+        {
+          "at": "2026-11-25T12:42Z",
+          "by": "gemini",
+          "what": "step 4 of 6 done: Opened OWB PR #1321 (UPLOADS, BUFFER_POSTS, LEARNINGS row 36, J3125 receipt; 28/28 tests PASS) and HOS PR #785 (library.json retired, 007 SHORTS_RELEASE unscheduled; check_all.sh PASS, channel:audit 75 videos 0 errors)"
         }
       ],
-      "remaining_action": "Update OWB records (UPLOADS, BUFFER_POSTS, LEARNINGS row 36) and HOS open-gate library",
+      "remaining_action": "Merge green OWB PR #1321 and HOS PR #785 as Acting Chief, then post HOS desk + OWB thread receipts",
       "due": "2026-11-24T12:00:00Z",
       "kind": "studio",
       "plain": "Check whether other Shorts are reaching viewers before the vaccine test airs",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 6,
-        "at": "2026-11-25T12:37Z",
+        "at": "2026-11-25T12:42Z",
         "by": "gemini",
         "plan": [
           "Verify authority and live state",
@@ -282865,7 +282870,7 @@
           "Update and merge HOS library and run checks",
           "Post desk and thread reports and close J3125"
         ],
-        "note": "Cancelled all 3 Buffer posts for sY0PSQFxjp8 (6b02943702479690922e8c8e, 6b029438d5eabfb8cc8c2cf2, 6b029439d864a01105a3cb"
+        "note": "Opened OWB PR #1321 (UPLOADS, BUFFER_POSTS, LEARNINGS row 36, J3125 receipt; 28/28 tests PASS) and HOS PR #785 (library."
       },
       "taskKeys": [
         "HOS:007"
