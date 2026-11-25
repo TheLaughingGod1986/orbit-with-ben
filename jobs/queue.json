@@ -341563,7 +341563,7 @@
     {
       "id": "J3738",
       "title": "HOS 013 Darwin & Wallace: £0 retake prompt & price board for 8 confirmed RETAKE plates",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Queued by Acting Chief (gemini, J3734, 25 Nov 2026). HOS 013 (Darwin & Wallace, Thu 31 Dec 2026) already has 66/66 pass-1 Flow plates minted (`48 KEEP` / `8 confirmed RETAKE` / `10 capability-held in J3178`).\n\n**Do (£0, NO minting in this job):**\n1. Scope a clean retake prompt + price board (`07_Edit-Project/RETAKE_BOARD_v01.json` & `.md`) for the **8 ALREADY-CONFIRMED RETAKE rows** from `jobs/reviews/J2529/REVIEW_STATE.json`: rows **`3, 10, 24, 28, 47, 49, 54, 63`**.\n2. Address each row's recorded Chief Grok defect cleanly, with zero real person names in any prompt, zero forbidden terms, and exact pricing against live Flow balance (~23,450 cr): pre-5-Dec `Veo 3.1 - Quality` (8 × 100 = 800 cr) vs post-5-Dec `Veo 3.1 - Lite` / `Omni 1.2 Flash` (J3691).\n3. Do NOT touch `REVIEW_STATE.json` marks on the 10 capability-held rows (`56-62, 64-66`) — those remain cleanly under `J3178` (`moving_video_input` hold escalated to Claude/Ben).\n4. Open a clean HOS PR with `check_all.sh` PASS and park for Chief price PASS & mint GO. £0 / 0 credits spent.\n",
       "ref": "J2529",
@@ -341583,12 +341583,25 @@
           "at": "2026-11-25T19:17Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-25T19:18Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred claudecode): Claude out of usage (Claude said it's out of usage until 2026-11-25T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: claudecode on its default"
         }
       ],
       "remaining_action": "Write RETAKE_BOARD_v01 for rows 3,10,24,28,47,49,54,63 (no real names) and park for Chief price PASS",
       "due": "2026-11-27T18:00:00Z",
       "kind": "script",
-      "plain": "Scope and price 013's 8 already-ruled retake plates at £0"
+      "plain": "Scope and price 013's 8 already-ruled retake plates at £0",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3739",
