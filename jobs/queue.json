@@ -333536,13 +333536,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T11:28Z",
-      "eta": "2026-11-25T13:28Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T00:47Z",
-      "result": "",
+      "result": "Chief review PASS & complete: verified ww2-channel#139 (2376f27, 3 home paths sanitized, 0 secrets) and orbit-with-ben#1314 (3a0abe6bdf, J3643 review + ww2-003-v01 register, 0 secrets) merged; PR #1296 closed as superseded; merged orbit-with-ben#1318 removing stray J3205 WW2 edit block from OWB 003 status.json; closed J3205 (done, not re-assembled), J3697 (condition MET), J3589 and J3558.",
       "history": [
         {
           "at": "2026-11-25T00:47Z",
@@ -333598,6 +333598,11 @@
           "at": "2026-11-25T11:28Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T11:28Z",
+          "by": "gemini",
+          "what": "done: Chief review PASS & complete: verified ww2-channel#139 (2376f27, 3 home paths sanitized, 0 secrets) and orbit-with-ben#1314 (3a0abe6bdf, J3643 review + ww2-003-v01 register, 0 secrets) merged; PR #1296 closed as superseded; merged orbit-with-ben#1318 removing stray J3205 WW2 edit block from OWB 003 status.json; closed J3205 (done, not re-assembled), J3697 (condition MET), J3589 and J3558."
         }
       ],
       "remaining_action": "Chief closes the assembly job with the two merge references",
@@ -333623,7 +333628,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "ww2-channel#139,orbit-with-ben#1314,orbit-with-ben#1318"
     },
     {
       "id": "J3655",
