@@ -341526,20 +341526,33 @@
           "at": "2026-11-25T19:21Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T19:22Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Re-price 66 Flow rows, resolve P5:16b overlap, build/test guarded runner, park for Chief GO",
+      "remaining_action": "Auditing HOS 011 PICTURE_PLAN_v03.json, 013 runner pattern, and Flow balance/J3691 notes",
       "due": "2026-11-26T18:00:00Z",
       "kind": "assembly",
       "plain": "Price 011's 66 plates, fix P5:16b reuse, and build the guarded Flow runner at £0",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T19:21Z",
+        "of": 5,
+        "at": "2026-11-25T19:22Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Audit 66 Flow rows and P5:16b",
+          "Re-price pre/post-5-Dec Flow routes",
+          "Resolve P5:16b and update plan docs",
+          "Build and unit-test guarded runner",
+          "Run check_all.sh and open HOS PR"
+        ]
+      },
+      "taskKeys": [
+        "HOS:011"
+      ]
     },
     {
       "id": "J3737",
