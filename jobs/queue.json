@@ -340625,10 +340625,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 180,
-      "status": "claimed",
-      "by": "claudecode",
-      "since": "2026-11-25T16:35Z",
-      "eta": "2026-11-25T19:35Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-25T16:05Z",
       "result": "",
@@ -340727,6 +340727,11 @@
           "at": "2026-11-25T16:45Z",
           "by": "claudecode",
           "what": "step 1 of 6 done: Navy archive pass running in background: 6 full-size masters kept so far, four checked by eye against their subjects"
+        },
+        {
+          "at": "2026-11-25T16:45Z",
+          "by": "claudecode",
+          "what": "released: New route found: the Navy archive (NHHC) serves its own full-size TIFF scans by catalogue number (about 30 MB, ~6,000 px wide). Pass 3 RUNNING detached: tmux J3728-nhhc; log ~/_desk/logs/J3728-nhhc.log; done file ~/_desk/logs/J3728-nhhc.done (missing = still running, do not start a second copy). 6 masters kept at release, including 4 of the 6 flagged preview-size scans so far checked present (80-G-19945, NH 83994, NH 63915 kept; NH 64495 present) and Thumb C's photo NH 63915. It fetches every listed number without a master, then sweeps ~130 neighbouring numbers in the same salvage runs (those rows say subject unverified). Own log RETRIEVAL_LOG_017_NHHC.json in the worktree (uncommitted until the run ends). Script pushed: ww2-channel claudecode/J3728-017-picture 086e1e5. Commons pass 1 ended (exit 0, 9 kept); Commons pass 2 still running (tmux J3728-pass2, waiting out 429s; .done missing). Files: NAS studio-live/ww2/02_Video-Projects/017_.../03_Picture/archive/ (NHHC files end _nhhc.tif). Checked by eye: NH 63915, 80-G-19945, NH 83994, 80-G-474789 match their listed subjects. For the edit and thumbnails: NHHC scans are greyscale prints with white borders and typed caption strips, so each needs cropping to the picture. Not on NHHC under this folder: NH 63916, 80-G-32462, 80-G-19934 (Thumb B), 80-G-410533 (Thumb A) not yet confirmed either way; if pass 2 does not bring them, look in the NARA catalogue. Next run: read the three logs and .done files; view every kept photo against its caption (drop duplicates of the same number, keep the larger); rewrite ARCHIVE_PROVENANCE.md with SHA-256 and beats; 3 thumbnails; picture plan; one PR. Maps already done (20a7e8c)."
         }
       ],
       "remaining_action": "Let the Navy-archive download finish, check each photo against its caption, log them, build the three thumbnails and write the picture plan",
