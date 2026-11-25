@@ -1,5 +1,5 @@
 {
-  "next_id": 3734,
+  "next_id": 3735,
   "jobs": [
     {
       "id": "J0001",
@@ -341169,6 +341169,36 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3734",
+      "title": "History of Science: one line-up to the end of January, a next job for every film, and pre-build while voice credits are at zero",
+      "needs": "any",
+      "repo": "hos",
+      "body": "**Why.** Ben, Wed 25 Nov, in chat: \"Seems like we're running low of history of science videos ... I think we've only got 1 or 2 videos left.\" Claude (acting Chief for the studio) checked on 25 Nov 16:30Z.\n- Only two HOS longs are finished: 008 Franklin (airs Thu 26 Nov) and 009 Gravity (scheduled Thu 3 Dec; only its Studio extras wait on Ben's login, J3501).\n- Topic ideas are not short: four search-led films are scripted (128 Edison vs Tesla, 136 Trinity, 137 Accidental Inventions, 127 Wright Brothers), plus 100-119 in `next_hos`.\n- What is short is finished films, and the records disagree on the line-up:\n  - `studio/plan.json` `hos-search-2027-01` puts 128 / 136 / 137 / 127 on Thu 10 / 17 / 24 / 31 Dec;\n  - `film_briefs.json` and the films' `status.json` still give 011 Anaesthesia Thu 10 Dec, 013 Darwin Thu 17 Dec, 012 Mendel Thu 24 Dec and 014 Anning Thu 31 Dec;\n  - 010 Alvarez and 009 both say Thu 3 Dec.\n- 011 (voice locked) has no live job at all.\n- 013 (voice locked) is stuck at the picture stage (J2529, J2652 and J3178 blocked or parked).\n- HOS fills 5 of its 5 WIP places (009, 010, 013, 128, 136), so 137's voice can't start.\n- Voice credits are at zero until the 30 Nov 10:50Z reset, and December's Creator allowance doesn't cover all three channels (ww2-channel `00_Brand/THREE_A_WEEK_2026-12.md` section 4). Ben has been asked about a plan upgrade; that is his decision.\n\n**Do (elected Chief for HOS, by Fri 27 Nov 18:00 UTC; £0; desk #180 for the HOS side).**\n1. **Make one line-up, one long per Thursday, from Thu 3 Dec to Thu 28 Jan.** Use what is actually closest to finished, not the order planned:\n   - The search-led films stay the plan for new topics (Ben's OK, 24 Nov).\n   - Films with voice already locked (010, 011, 013) fill the slots they can genuinely make, before any new voice is spent.\n   - A slot nothing can make by its date is skipped (never rushed). Christmas Eve may be skipped, as Field Order History did.\n   - Write the line-up into `studio/plan.json`, each film's `status.json` and `film_briefs.json`, so they agree.\n2. **Give every film in the line-up its next job**, in order:\n   - 011 and 013's picture first: rule on the parked J2652 and the J2529/J3178 picture blocks;\n   - the voice jobs after the 30 Nov reset (J3670/J3671 for 128, J3678/J3679 for 136), in air order.\n   - Free a WIP place by finishing or parking the film least likely to air in its slot.\n3. **Pre-build at £0 while the credits are at zero:** picture plans, Flow prompt boards, thumbnails and packages for the next three films, so each edit can start the day its voice lands.\n4. **Report on desk #180 and on this job:** the line-up, which films are finished, and the first Thursday with no film, if any. Claude takes anything that needs Ben to him.\n\n**Guards.** No spend beyond the written credit rules, no Flow mint without the usual price pass, no upload or schedule change, no change to a published video.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 90,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-25T18:08Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T18:08Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Make one HOS line-up to the end of January and give each film its next job",
+      "due": "2026-11-27T18:00:00Z",
+      "kind": "chief",
+      "urgent": 9
     }
   ],
   "focus": [

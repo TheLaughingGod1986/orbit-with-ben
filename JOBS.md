@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J2529, J3432, J3501, J3704, J3442, J3725, J3559.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J2529, J3432, J3501, J3704, J3442, J3725, J3559, J3734.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -112,6 +112,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3730 | mini | blocked | claudecode | – | review · Verify condition for J3487 |  |
 | J3731 | macbook | open | – | – | for claudecode · MacBook: publish (or confirm lost) the unpushed Battle of the Bulge work for J3487 |  |
 | J3733 | mini | open | – | – | review · Verify condition for J3508 |  |
+| J3734 | any | open | – | – | chief · History of Science: one line-up to the end of January, a next job for every film, and pre-build while voice credits are at zero |  |
 
 Recently finished:
 
