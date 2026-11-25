@@ -331643,13 +331643,13 @@
       "stage": "",
       "after": "",
       "eta_min": 20,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T10:39Z",
-      "eta": "2026-11-25T10:59Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T22:24Z",
-      "result": "",
+      "result": "Pilot 2 (qfc6EBStOfo) settings, copyright claims, and early reach verified by Codex (no setting or claim limiting it; 4 impressions / 0 views at 22:30Z 24 Nov; thread report #7146352575), privacy-checked and merged to ww2-channel main via PR #140 (3052547bf868b86023cddf5c2b79cae214c1e542; 02_Video-Projects/002_Closing-The-Atlantic-Black-Pit-May-1943/12_Analytics/SETTINGS_AND_REACH_2026-11-24.md). Read-only check, no settings changed, no playback, £0.",
       "history": [
         {
           "at": "2026-11-24T22:24Z",
@@ -331715,6 +331715,11 @@
           "at": "2026-11-25T10:39Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T10:39Z",
+          "by": "gemini",
+          "what": "done: Pilot 2 (qfc6EBStOfo) settings, copyright claims, and early reach verified by Codex (no setting or claim limiting it; 4 impressions / 0 views at 22:30Z 24 Nov; thread report #7146352575), privacy-checked and merged to ww2-channel main via PR #140 (3052547bf868b86023cddf5c2b79cae214c1e542; 02_Video-Projects/002_Closing-The-Atlantic-Black-Pit-May-1943/12_Analytics/SETTINGS_AND_REACH_2026-11-24.md). Read-only check, no settings changed, no playback, £0."
         }
       ],
       "remaining_action": "Claude Code privacy-check, push, PR and merge of codex/j3635-settings-audit (09320b462e) in ww2-channel, then close J3635",
@@ -331732,7 +331737,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "3052547bf8"
     },
     {
       "id": "J3636",

@@ -5,7 +5,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 
 **Focus film: 034, OWB:034.** Its jobs go first (Ben, 8 Oct: one film at a time).
 
-**Urgent, in this order: J2040, J2529, J3431, J3432, J3501, J3519, J3530, J3205, J3635, J3561.** After recorded deadlines, before other ready work.
+**Urgent, in this order: J2040, J2529, J3431, J3432, J3501, J3519, J3530, J3205, J3561.** After recorded deadlines, before other ready work.
 
 | Job | Needs | Status | Who | ETA (UTC) | Title | Ref |
 |---|---|---|---|---|---|---|
@@ -103,7 +103,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3610 | mini | open | – | – | 010 upload · studio · Schedule HOS 010 bird Short after its long is confirmed | J3511 |
 | J3611 | mini | open | – | – | 010 upload · studio · HOS 010 Short A: schedule only after actual long readiness and finish Studio checks | J3512 |
 | J3619 | mini | blocked | macbook-2 | – | review · Verify condition for J3486 |  |
-| J3635 | mini | claimed | gemini | 2026-11-25T10:59Z | studio · WW2 pilot 2: check its settings, claims and impressions now (0 views at 5 hours) |  |
 | J3642 | gemini | open | – | – | 009 sources · facts · WW2 009: independent Gemini direct-source recheck of v04 | https://github.com/TheLaughingGod1986/ww2-channel/pull/114 |
 | J3648 | mini | blocked | gemini | – | WW2:001 upload · studio · WW2 001-S1: 7-day read of Mulberry Short NoQQqrW2meM and pilot 1 Shorts/Related traffic |  |
 | J3649 | mini | blocked | gemini | – | 008 upload · studio · HOS 008 Franklin post-publish: link Shorts Related video -> YqCWYlv_LCY & verify T&C active | J3500 |
