@@ -331699,9 +331699,14 @@
           "at": "2026-11-25T01:02Z",
           "by": "gemini",
           "what": "step 5 of 6 done: Full Studio 9224 reload + Data API readback PASS: RqYjADxvJy8 processed HD, Private publishAt 2026-11-28T17:00:00Z, 43-char title, 7 chapters, en-GB caption serving, 3-way T&C saved (custom 1/2/3), Altered=Yes, Not MFK, PLPPi-oWEDYtA pos 2, End Screen qfc6EBStOfo+Subscribe"
+        },
+        {
+          "at": "2026-11-25T01:05Z",
+          "by": "gemini",
+          "what": "step 6 of 6 done: Merged ww2-channel PR #129 (b69d353) recording RqYjADxvJy8 upload + full readback; queued J3655 (post-publish 28 Nov 17:05Z) and J3656 (48h Rule 8 read 30 Nov 17:05Z)"
         }
       ],
-      "remaining_action": "Record RqYjADxvJy8 in ww2 status.json (PR + Chief merge), queue post-publish & 48h read jobs, post thread line",
+      "remaining_action": "Complete J3653 after ww2-channel PR #129 merge and follow-on job waits",
       "due": "2026-11-26T20:00:00Z",
       "kind": "studio",
       "plain": "Upload the Ben-approved B-29 film and schedule it for Saturday 17:00",
@@ -331721,9 +331726,9 @@
         "okRef": "board-check:WW2-003@2026-11-24T23:58:36.819Z"
       },
       "progress": {
-        "step": 5,
+        "step": 6,
         "of": 6,
-        "at": "2026-11-25T01:02Z",
+        "at": "2026-11-25T01:05Z",
         "by": "gemini",
         "plan": [
           "Verify files & package",
@@ -331733,7 +331738,7 @@
           "Read back & verify Studio + API",
           "Update status.json, queue follow-ons & report"
         ],
-        "note": "Full Studio 9224 reload + Data API readback PASS: RqYjADxvJy8 processed HD, Private publishAt 2026-11-28T17:00:00Z, 43-c"
+        "note": "Merged ww2-channel PR #129 (b69d353) recording RqYjADxvJy8 upload + full readback; queued J3655 (post-publish 28 Nov 17:"
       },
       "taskKeys": [
         "WW2:003"
