@@ -337215,10 +337215,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T10:38Z",
+      "eta": "2026-11-25T12:38Z",
       "created_by": "relay",
       "created_at": "2026-11-25T10:19Z",
       "result": "",
@@ -337267,6 +337267,11 @@
           "at": "2026-11-25T10:38Z",
           "by": "gemini",
           "what": "reopened: Acting Chief (gemini) taking parked J3703 review after verifying ww2-channel PR #140 (3052547bf8)."
+        },
+        {
+          "at": "2026-11-25T10:38Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Reopening the original job with the evidence and reporting",
@@ -337285,7 +337290,15 @@
       "open_claim": true,
       "taskKeys": [
         "WW2:002"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T10:38Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3704",
