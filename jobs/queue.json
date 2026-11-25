@@ -332022,16 +332022,21 @@
           "at": "2026-11-25T03:20Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J3651 after PR #1300 merged; reviewing tracker, launchd, and board publish flow"
+        },
+        {
+          "at": "2026-11-25T03:24Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Hand run complete (133 API units, 402/1500 daily, 5 breakouts, 162 farms filtered); dev.orbit.analytics-snapshot confirmed live at 06:40 London; PR opened: https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1301"
         }
       ],
-      "remaining_action": "Inspecting market_track.py, launchd schedule, and running the tracker by hand",
+      "remaining_action": "Waiting on PR CI, publishing fresh board data, and deploying Studio board Market tab",
       "due": "2026-12-03T12:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-25T03:20Z",
+        "at": "2026-11-25T03:24Z",
         "by": "gemini",
         "plan": [
           "Run market tracker & verify quota",
@@ -332040,7 +332045,7 @@
           "Verify live Market tab breakouts",
           "Post thread update & finish"
         ],
-        "note": "Claimed J3651 after PR #1300 merged; reviewing tracker, launchd, and board publish flow"
+        "note": "Hand run complete (133 API units, 402/1500 daily, 5 breakouts, 162 farms filtered); dev.orbit.analytics-snapshot confirm"
       }
     },
     {
