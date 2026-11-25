@@ -334439,16 +334439,21 @@
           "at": "2026-11-25T06:13Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Programmatic checks confirm v02 script (1,240 whitespace / 1,260 review:script words, 93.4/100 PASS, gate:episode 9/9 PASS), Part 01 milestones (13.6s/22.0s/22.0-29.2s/29.2-39.2s), S01=42w & S02=42w, and 0 stacked cards; opening LA-602 PDF pages 1,2,3,10,12,15,16 and verifying exact quotes"
+        },
+        {
+          "at": "2026-11-25T06:15Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Independently opened and verified all 20 FACT_NOTES_v02 rows, visually verified LA-602 PDF pp. 1,2,3,10,12,15,16, verified all 8 FLAGs + R20 + ADD-1..ADD-6 resolved (0 blocking flags), and confirmed check_all.sh ALL CHECKS PASS"
         }
       ],
-      "remaining_action": "Verifying LA-602 PDF pages visually and checking remaining verbatim quotes & edge cases",
+      "remaining_action": "Writing 01_Script/GEMINI_FACTS_CHECK_v02.md and updating status.json & production-status.md",
       "due": "2026-12-02T18:00:00Z",
       "kind": "facts",
       "plain": "Independently verify all v02 facts, quotes, and Shorts lengths for HOS 136 Trinity Test",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-25T06:13Z",
+        "at": "2026-11-25T06:15Z",
         "by": "gemini",
         "plan": [
           "Inspect v02 PR & J3552/J3553 flags",
@@ -334457,7 +334462,7 @@
           "Run programmatic word/timing & script checks",
           "Write GEMINI_FACTS_CHECK_v02.md, run check_all.sh & open PR"
         ],
-        "note": "Programmatic checks confirm v02 script (1,240 whitespace / 1,260 review:script words, 93.4/100 PASS, gate:episode 9/9 PA"
+        "note": "Independently opened and verified all 20 FACT_NOTES_v02 rows, visually verified LA-602 PDF pp. 1,2,3,10,12,15,16, verifi"
       },
       "taskKeys": [
         "HOS:136"
