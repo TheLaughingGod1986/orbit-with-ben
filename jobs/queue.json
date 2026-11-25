@@ -315626,9 +315626,14 @@
           "at": "2026-11-25T12:52Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T12:52Z",
+          "by": "claudecode",
+          "what": "step 2 of 6 done: Resumed; cut was saved 12:02:52Z, checking whether processing has finished"
         }
       ],
-      "remaining_action": "Once the video reads 22:48: shift chapters 4-6 by 63.6 s, move the card to 17:58, upload the v03 captions, check the end screen and the thumbnail test, read back, finish TRIM_RECEIPT_v02 and status.json from worktree ~/_desk/J3442/wt (commit 90898a4), then publish once",
+      "remaining_action": "Check Studio has finished the cut, then fix chapters, card and captions, read back and publish the records",
       "due": "2026-11-25T20:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -315637,12 +315642,19 @@
       ],
       "urgent": 7,
       "progress": {
-        "step": 0,
-        "of": 3,
+        "step": 2,
+        "of": 6,
         "at": "2026-11-25T12:52Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Record the before state",
+          "Make the cut in Studio",
+          "Wait for Studio to finish processing",
+          "Fix chapters, card and captions",
+          "Read everything back",
+          "Write the receipt and publish records"
+        ],
+        "note": "Resumed; cut was saved 12:02:52Z, checking whether processing has finished"
       }
     },
     {
