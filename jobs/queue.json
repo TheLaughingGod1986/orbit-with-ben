@@ -330045,16 +330045,21 @@
           "at": "2026-11-25T01:38Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Step 2: downloaded 16 institutional URLs, NPS NRIS 75001212 14-page PDF, and 9 secondary pages; verifying verbatim quotes and arithmetic"
+        },
+        {
+          "at": "2026-11-25T01:40Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Step 3: audited all 22 FACT_NOTES_v02 rows against live pages + 14-page NPS PDF; found Edison age-at-Holborn (34 vs 35), Ferraris date (18 vs 11 Mar 1888), Stanley birthdate misquote (22 vs 28 Nov), and unverified quote mismatches"
         }
       ],
-      "remaining_action": "Auditing Pearl Street, Stanley, AC physics, Niagara, Chicago, Ferraris, and secondary claims against live sources",
+      "remaining_action": "Verifying packaging numbers, visual cards, cable dimensions, Ferraris dates, Niagara route distance, and UK/US grid primary sources",
       "due": "2026-11-27T18:00:00Z",
       "kind": "facts",
       "plain": "Independently check every fact in the corrected Edison and Tesla film",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-25T01:38Z",
+        "at": "2026-11-25T01:40Z",
         "by": "gemini",
         "plan": [
           "Inspect v02 inputs, PR752 & J3547",
@@ -330063,7 +330068,7 @@
           "Verify cables, cards & nuclear handoff",
           "Write report, check & open PR"
         ],
-        "note": "Step 2: downloaded 16 institutional URLs, NPS NRIS 75001212 14-page PDF, and 9 secondary pages; verifying verbatim quote"
+        "note": "Step 3: audited all 22 FACT_NOTES_v02 rows against live pages + 14-page NPS PDF; found Edison age-at-Holborn (34 vs 35),"
       },
       "taskKeys": [
         "HOS:128"
