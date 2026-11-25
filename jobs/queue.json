@@ -1,5 +1,5 @@
 {
-  "next_id": 3650,
+  "next_id": 3652,
   "jobs": [
     {
       "id": "J0001",
@@ -331270,6 +331270,66 @@
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
       }
+    },
+    {
+      "id": "J3650",
+      "title": "Market intelligence: watchlist of ~90 channels, daily breakout tracker, weekly title/thumbnail tagging, and a Market tab on the board",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Why (Ben, 25 Nov ~00:15 London, in chat, on Claude's lean competitor-intelligence plan: \"Sounds good, once it's built let's have it as a new section in the dashbord, we can use the data to help us grow.\")** Today's search research found Pearl Harbor salvage through a 1,410-subscriber channel's 522k-view breakout. The goal is to see those every day instead of in a weekly manual sweep. The bigger gap is packaging (pilot 1: 0.6-1% click-through), so the main output is **which titles and thumbnails are winning in our three niches this week**, feeding `studio/RULES.md` rule 2 on each channel and every topic check.\n\n**Build (orbit-with-ben; if the studio engine has moved to its own repo by then under J3012, build it there):**\n\n1. **Watchlist** (`05_Analytics/market/watchlist.json`): about 90 channels, about 30 each for ww2 (Field Order History), owb (space) and hos (history of science).\n   - About half rising (under 6 months old, under 20k subscribers) and half proven benchmarks.\n   - Seed it from the research we already have: ww2-channel `PACKAGING_FINDINGS.md` (J3005, 14 channels), `05_Analytics/new_channel_research/` (J2987), `05_Analytics/*/search_research/*.md`, `05_Analytics/ww2/niche_benchmarks.json`.\n   - Verify each channel with the Data API (`channels.list`): id, created date, subscribers, niche, and a rising/benchmark label.\n\n2. **Daily tracker** (`scripts/market_track.py`), YouTube Data API only, using the key already set on the Mini (never print or commit it).\n   - **Reads:** new uploads since the last run (uploads playlist via `playlistItems.list`) and stats (`videos.list` in batches of 50). Snapshot views at about 6, 24 and 72 hours after each upload.\n   - **Per channel:** median views of its last 20 long uploads.\n   - **Breakout:** 3x or more the channel median at 24 h, or 100k+ views within 72 h on a channel under 20k subscribers.\n   - **Long vs Shorts:** long-form (over 4 minutes) first; Shorts flagged separately.\n   - **Farm filter:** drop likely AI content farms with likes/views under 0.015 or obviously templated \"What X said when...\" titles. Keep them in a separate list, never as models.\n   - **Quota guard:** at most 1,500 units a day; never `search.list` daily.\n   - **Storage:** keep snapshots compact (one small JSON a day, older days rolled up weekly) so git doesn't bloat.\n   - **Schedule:** daily, using the Mini's existing scheduled-sweep mechanism (say which).\n\n3. **Weekly tagging** (Mondays): for each breakout, tag the title pattern and the thumbnail. The thumbnail is read from its image URL with a vision model; that's image analysis only.\n   - **Title:** does it start with the searched name, how/why opener, a number, word count.\n   - **Thumbnail:** main subject and how much of the frame it fills at 168 px, words on it, face or no face, grade.\n   - **Write** `05_Analytics/market/weekly/<date>.md` with the top breakouts per niche and one line each: \"the angle we could take\", in our own format and within our rules.\n\n4. **Dashboard section \"Market\"** (`05_Analytics/kanban/board_site/`): a new tab, fed through the board's normal publish path.\n   - **Content:** this week's breakouts by niche (WW2 / Space / History of Science), each with thumbnail, title, channel and size, age, views per hour, multiple of channel median, long or Short, and the angle line.\n   - **Filters and summary:** by niche and long/Short, plus a small \"patterns this week\" summary (title openers and thumbnail traits that keep winning).\n   - Mobile-first like the rest of the board.\n\n5. **Tests:** unit tests for the breakout maths, the quota guard, the farm filter and the snapshot roll-up; a `test_studio_app.cjs` case for the Market tab. The full suite stays green.\n\n6. **Monthly discovery** (the first Monday of each month): a vidIQ outliers and similar-channels sweep, at most 40 credits, that proposes channels to swap into the watchlist. Never buy credits.\n\n**Guards.**\n- Read metadata only: no agent opens or plays any public video (AGENTS.md).\n- No revenue estimates.\n- No change to any channel.\n- £0 beyond existing subscriptions.\n\nOne PR for the Chief, with a short `05_Analytics/market/README.md` saying what each part does and how to read the tab. Due Wed 2 Dec 18:00 UTC. This is not urgent: the films and uploads due this week come first.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 480,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-25T00:30Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T00:30Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Build the watchlist, tracker, weekly tagging and the board's Market tab",
+      "due": "2026-12-02T18:00:00Z",
+      "kind": "studio",
+      "mini_only": true
+    },
+    {
+      "id": "J3651",
+      "title": "Market intelligence: first run, daily schedule live, and the Market tab deployed to the board",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "**Why.** Ben asked for the Market section on the dashboard once it's built (25 Nov).\n\n**Do (Mini), after the build PR is merged:**\n1. Run the tracker once by hand and confirm its quota use.\n2. Confirm the daily schedule is live.\n3. Rebuild and deploy the board (`python3 05_Analytics/kanban/board_site/build.py`, then `npx wrangler pages deploy dist --project-name studio-kanban`).\n4. Confirm the Market tab shows real breakouts on the live board, read from the published data file. Never play a video.\n5. One thread line with the link and the counts. £0.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "J3650",
+      "eta_min": 40,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-25T00:30Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T00:30Z",
+          "by": "claude",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Run the tracker, confirm the schedule, deploy the board's Market tab",
+      "due": "2026-12-03T12:00:00Z",
+      "kind": "assembly",
+      "mini_only": true
     }
   ],
   "focus": [
