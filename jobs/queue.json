@@ -314556,9 +314556,14 @@
           "at": "2026-11-25T03:17Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-28T13:00:00Z"
+        },
+        {
+          "at": "2026-11-25T03:55Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-12-01T20:00:00Z"
         }
       ],
-      "remaining_action": "Complete J3662 full private audiovisual QA then J3663 Chief decision, PR #107 merge and Ben watch staging (watch due 2026-12-02 20:00 UTC)",
+      "remaining_action": "Awaiting WW2:006 v02 repair (J3665) -> v02 QA (J3666) -> Chief watch staging (J3667) before Ben watch (due 2026-12-02 20:00 UTC)",
       "due": "2026-12-02T20:00:00Z",
       "kind": "assembly",
       "urgent": 6,
@@ -314580,12 +314585,9 @@
         "WW2:006"
       ],
       "hold": {
-        "type": "input",
-        "condition": "J3631 Chief ruling: CONDITION NOT MET — keep J3434 blocked (do not reopen assembly). Predecessor J3433 is done and WW2:006 v01 assembly is on ww2 PR #107 (sha256 7561d495..., 53.52% archive, 62 provenanced photos, 376 en-GB captions, 3 Rule-2/13 thumbs), but J3434 step-6 full private audiovisual QA is incomplete (only 3-clip 115s spot-check done; G00B 16:00 PM typo at 00:25/18:40, 14:32 spacing, and 19-33s diagram holds flagged), PR #107 is unmerged (picture stage still doing; coordinate with PR #98), and WW2 UAT/awaits_ben is not staged. Follow-up chain: J3662 full private audiovisual QA (due 2026-11-28T12:00Z) -> J3663 Chief decision, PR #107 merge and Ben watch staging (due 2026-12-01T12:00Z; Ben watch due 2026-12-02T20:00Z, air Sat 5 Dec 17:00 London).",
-        "check_at": "2026-11-28T13:00:00Z",
-        "last_recheck": "J3631",
-        "checked_at": "2026-11-25T03:17:43+00:00",
-        "checked_by": "gemini"
+        "type": "dependency",
+        "condition": "WW2:006 v01 HELD by elected acting Chief (J3663, 07_Edit/CHIEF_RULING_J3663.md) after J3662 full audiovisual QA (PR #132) found 4 hard visual/factual defects (G5 6x tofu boxes, G7 200 vs 280 lb contradiction, G00B 16:00 PM typo, G9 392/MPH gap), 3 copy/chronology issues, and 9 long static diagram holds. Awaiting linked zero-spend v02 chain: J3665 (v02 repair) -> J3666 (v02 full audiovisual QA) -> J3667 (Chief PASS & Ben watch staging, due 2026-12-02T20:00Z, air Sat 5 Dec 17:00 London).",
+        "check_at": "2026-12-01T20:00:00Z"
       },
       "escalated_at": "2026-11-24T23:38Z"
     },
