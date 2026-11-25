@@ -328604,13 +328604,13 @@
       "stage": "",
       "after": "J3590",
       "eta_min": 25,
-      "status": "blocked",
-      "by": "gemini",
-      "since": "2026-11-24T17:25Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "refill",
       "created_at": "2026-11-24T17:03Z",
-      "result": "parked for Chief: review and merge OWB PR #1273 (05_Analytics/ww2/autopsy/ek9F61FVYqY_48h.md + retention_autopsy.py launch-record fallback) and ww2-channel PR #101 (studio/LEARNINGS.md row 10); worker cannot merge",
+      "result": "",
       "history": [
         {
           "at": "2026-11-24T17:03Z",
@@ -328696,6 +328696,11 @@
           "at": "2026-11-25T11:19Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-25T17:20:00Z"
+        },
+        {
+          "at": "2026-11-25T13:33Z",
+          "by": "gemini",
+          "what": "reopened: Elected acting Chief (gemini) completed J3598: verified OWB #1279 (9fab6082ff), WW2 #102 (fdfb46ab73), J3597 review #1313 (052e368633) merged, superseded #1273/#1276/WW2#101 closed, and merged J3604 correction OWB PR #1284 (head 0f68a818b6 -> main 4b66eb1120, 103/103 tests PASS); closing J3591 without repeating its 5 completed Gemini media steps"
         }
       ],
       "remaining_action": "Review PR #1284 in open elected-Chief job J3598, merge if PASS, then close held J3591",
@@ -328708,31 +328713,9 @@
       ],
       "autopsy": "ek9F61FVYqY@48h",
       "plain": "Analyse why viewers stayed or left on \"How Britain Built Two Harbours in Secret and Floated The\" (48h) and write up to 3 fixes",
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-24T17:35Z",
-        "by": "gemini",
-        "plan": [
-          "Inspect RSI metrics and Studio state",
-          "Locate master MP4 and cut 40s watch clips",
-          "Watch all clips with moving video and audio",
-          "Write 48h autopsy report and update learnings",
-          "Commit in clean worktree, push PR, and report"
-        ],
-        "note": "Opened OWB PR #1273 (autopsy report + retention_autopsy.py fallback) and ww2-channel PR #101 (LEARNINGS row 10); worktre"
-      },
       "taskKeys": [
         "WW2:001"
       ],
-      "hold": {
-        "type": "input",
-        "condition": "Verification J3705 (2026-11-25T11:17Z): UNMET. Existing elected-Chief review J3598 is still open (unclaimed), and J3604 correction OWB PR #1284 (codex/j3604-window-fix, head 0f68a818b6a1efe949ea07316d42928b829a415b) is still OPEN (mergedAt null, MERGEABLE/CLEAN, 0 reviews, 0 comments, Rules check SUCCESS, Studio core check SKIPPED). Replacements OWB #1279 and WW2 #102 remain MERGED; superseded originals OWB #1273, OWB #1276 and WW2 #101 remain CLOSED. Keep J3591 blocked (do not reopen or repeat its 5 completed Gemini media steps); J3598 must review PR #1284 at exact head 0f68a818b6a1efe949ea07316d42928b829a415b, merge if PASS, and close J3591.",
-        "check_at": "2026-11-25T17:20:00Z",
-        "last_recheck": "J3705",
-        "checked_at": "2026-11-25T11:19:03+00:00",
-        "checked_by": "gemini"
-      },
       "escalated_at": "2026-11-24T20:18Z"
     },
     {
