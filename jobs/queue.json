@@ -342175,20 +342175,35 @@
           "at": "2026-11-25T20:15Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T20:15Z",
+          "by": "claudecode",
+          "what": "step 0 of 6 done: claimed; reading v03 renderer and edit plan"
         }
       ],
-      "remaining_action": "Re-render WW2:004 v04 from EDIT_PLAN_v03 with full-bleed 16:9 archive framing (zero blurred sidebars), reuse v03 audio, verify contact sheet, open ww2 PR",
+      "remaining_action": "Rebuild film 4's picture so every archive photo fills the screen, keeping the approved sound and timing",
       "due": "2026-11-26T20:00:00Z",
       "kind": "assembly",
       "plain": "Rebuild film 004 v04 so all archive photos fill 16:9 edge-to-edge (fixing Ben's 0:15 change note) while keeping J3715 Cuts A+B",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 6,
         "at": "2026-11-25T20:15Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read the v03 render and plan",
+          "Write the full-screen renderer",
+          "Test frames by eye",
+          "Full render on the NAS",
+          "Checks and contact sheet",
+          "Pull request and hand-off"
+        ],
+        "note": "claimed; reading v03 renderer and edit plan"
+      },
+      "taskKeys": [
+        "WW2:004"
+      ]
     },
     {
       "id": "J3744",
