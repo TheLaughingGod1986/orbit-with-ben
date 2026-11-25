@@ -336937,9 +336937,14 @@
           "at": "2026-11-25T10:56Z",
           "by": "claudecode",
           "what": "step 0 of 4 done"
+        },
+        {
+          "at": "2026-11-25T10:56Z",
+          "by": "claudecode",
+          "what": "step 3 of 4 done: WW2 PR 139 merged 10:16Z and OWB PR 1314 merged 10:18Z; both named files on main have 0 home-path strings"
         }
       ],
-      "remaining_action": "Reading J3205 history and evidence",
+      "remaining_action": "Reopening J3205 with the evidence note",
       "kind": "review",
       "recheck_of": "J3205",
       "mini_only": true,
@@ -336954,7 +336959,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 4,
         "at": "2026-11-25T10:56Z",
         "by": "claudecode",
@@ -336963,8 +336968,12 @@
           "Check privacy strings",
           "Check PR/merge state",
           "Reopen or re-wait J3205"
-        ]
-      }
+        ],
+        "note": "WW2 PR 139 merged 10:16Z and OWB PR 1314 merged 10:18Z; both named files on main have 0 home-path strings"
+      },
+      "taskKeys": [
+        "WW2:003"
+      ]
     },
     {
       "id": "J3698",
