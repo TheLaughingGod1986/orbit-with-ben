@@ -340430,13 +340430,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-25T15:34Z",
-      "eta": "2026-11-25T17:34Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T15:33Z",
-      "result": "",
+      "result": "parked for Chief: verification finished, condition for J3432 met in part only. MET: predecessor J3431 is done (Chief ruling J3710, PRs 50 and 147 merged). NOT MET: the remaining gate is the Chief's own review of cut v03, which has not happened. Evidence at 2026-11-25T17:25Z: J3432 is blocked at step 7 of 8 with 'parked for Chief'; the cut is on studio-live at ww2 005 07_Edit/ww2_005_st_nazaire_v03_mix.mp4, 886.2 s, sha256 starts 1a6b253f (matches the job record); ww2-channel PR 158 is OPEN, base main, unmerged, no reviews or comments; no audiovisual QA job exists for 005 (004 and 006 have J3722 and J3724); no awaits is armed; nothing uploaded or scheduled. I cannot close this check: jobs.py refuses wait --recheck from a worker ('Only the elected Chief may record a condition check') and reopening a held job is also the Chief's; chief_relay status shows Chief: nobody (Claude out until 17:50Z). Reopening would only send a worker back to park it again. For the Chief: (1) review cut v03 against the reviewer notes in J3432's result, with a watch-and-listen by a reviewer that can perceive motion and sound (this session cannot; tool checks and stills only so far), or queue that QA as for 004/006; (2) KEEP or name fixes; (3) on KEEP merge PR 158 and arm jobs.py awaits J3432 (Ben's watch due 2026-11-30 20:00 UTC, airs Thu 3 Dec 17:00 London); (4) close J3727 with wait --recheck J3727 or by reopening J3432. Mini disk is 9 GB free; nas_offload dry run finds nothing old enough to move.",
       "history": [
         {
           "at": "2026-11-25T15:33Z",
@@ -340467,6 +340467,11 @@
           "at": "2026-11-25T15:36Z",
           "by": "claudecode",
           "what": "step 2 of 3 done: The 14:46 cut is on the shared drive and matches its recorded checksum; its records sit in an open, unmerged pull request; no Chief review exists yet"
+        },
+        {
+          "at": "2026-11-25T15:37Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: verification finished, condition for J3432 met in part only. MET: predecessor J3431 is done (Chief ruling J3710, PRs 50 and 147 merged). NOT MET: the remaining gate is the Chief's own review of cut v03, which has not happened. Evidence at 2026-11-25T17:25Z: J3432 is blocked at step 7 of 8 with 'parked for Chief'; the cut is on studio-live at ww2 005 07_Edit/ww2_005_st_nazaire_v03_mix.mp4, 886.2 s, sha256 starts 1a6b253f (matches the job record); ww2-channel PR 158 is OPEN, base main, unmerged, no reviews or comments; no audiovisual QA job exists for 005 (004 and 006 have J3722 and J3724); no awaits is armed; nothing uploaded or scheduled. I cannot close this check: jobs.py refuses wait --recheck from a worker ('Only the elected Chief may record a condition check') and reopening a held job is also the Chief's; chief_relay status shows Chief: nobody (Claude out until 17:50Z). Reopening would only send a worker back to park it again. For the Chief: (1) review cut v03 against the reviewer notes in J3432's result, with a watch-and-listen by a reviewer that can perceive motion and sound (this session cannot; tool checks and stills only so far), or queue that QA as for 004/006; (2) KEEP or name fixes; (3) on KEEP merge PR 158 and arm jobs.py awaits J3432 (Ben's watch due 2026-11-30 20:00 UTC, airs Thu 3 Dec 17:00 London); (4) close J3727 with wait --recheck J3727 or by reopening J3432. Mini disk is 9 GB free; nas_offload dry run finds nothing old enough to move."
         }
       ],
       "remaining_action": "Recording that film 005 still waits for the Chief's review",
