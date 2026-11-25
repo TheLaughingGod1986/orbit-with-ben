@@ -342550,13 +342550,13 @@
       "stage": "edit",
       "after": "J3743",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-25T22:31Z",
-      "eta": "2026-11-26T00:31Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T20:15Z",
-      "result": "",
+      "result": "parked for Chief: full 100% audiovisual QA of WW2:004 v04 (SHA-256 62b9e10cf00e04d0fe662a08fb5ad266ae58158a1a4a0a73dce58b18364a8afa; v02 and v03 untouched) recommends PASS on ww2-channel PR #174 (d90b1b5, 07_Edit/QA_REVIEW_v04.md; assembly PR #172 open). Ben's 0:15 change and all 111 archive shots verified full-bleed 16:9 edge-to-edge with zero blurred sidebars, and J3715 Cuts A+B verified seamless (decoded audio MD5 c22b09bbfc31a14aa868c7c4f9f6d5d6 identical to v03). Ready for Chief PASS ruling, merge of PR #172 + PR #174, checksum-verified v04 copy to iCloud WW2 UAT (keeping v02 intact), private R2 upload ww2-004-v04, and Ben watch card WW2:004 update (jobs.py awaits J3430 ... --prev WW2-004 --fixed ..., due 2026-11-28 20:00 London, planned air 2026-12-01 17:00 London).",
       "history": [
         {
           "at": "2026-11-25T20:15Z",
@@ -342597,6 +342597,11 @@
           "at": "2026-11-25T22:47Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Step 3 done: opened ww2-channel PR #174 (d90b1b5, 07_Edit/QA_REVIEW_v04.md) recommending PASS for Ben's private watch; worktree cleaned."
+        },
+        {
+          "at": "2026-11-25T22:47Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: full 100% audiovisual QA of WW2:004 v04 (SHA-256 62b9e10cf00e04d0fe662a08fb5ad266ae58158a1a4a0a73dce58b18364a8afa; v02 and v03 untouched) recommends PASS on ww2-channel PR #174 (d90b1b5, 07_Edit/QA_REVIEW_v04.md; assembly PR #172 open). Ben's 0:15 change and all 111 archive shots verified full-bleed 16:9 edge-to-edge with zero blurred sidebars, and J3715 Cuts A+B verified seamless (decoded audio MD5 c22b09bbfc31a14aa868c7c4f9f6d5d6 identical to v03). Ready for Chief PASS ruling, merge of PR #172 + PR #174, checksum-verified v04 copy to iCloud WW2 UAT (keeping v02 intact), private R2 upload ww2-004-v04, and Ben watch card WW2:004 update (jobs.py awaits J3430 ... --prev WW2-004 --fixed ..., due 2026-11-28 20:00 London, planned air 2026-12-01 17:00 London)."
         }
       ],
       "remaining_action": "Parked for Chief to merge PR #172 + PR #174, stage v04 to iCloud WW2 UAT + R2 ww2-004-v04, and update Ben watch card WW2:004",
