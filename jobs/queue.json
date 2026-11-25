@@ -338298,13 +338298,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T12:18Z",
-      "eta": "2026-11-25T14:18Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T12:04Z",
-      "result": "",
+      "result": "Condition satisfied under Acting Chief ruling J3710 (25 Nov): J3614 recut accepted (52.07% strict aligned), WW2 PR #50 (6661e8c) and PR #147 (0f79fdf) merged, J3431 completed, J3432 released.",
       "history": [
         {
           "at": "2026-11-25T12:04Z",
@@ -338350,6 +338350,11 @@
           "at": "2026-11-25T12:18Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T12:18Z",
+          "by": "gemini",
+          "what": "done: Condition satisfied under Acting Chief ruling J3710 (25 Nov): J3614 recut accepted (52.07% strict aligned), WW2 PR #50 (6661e8c) and PR #147 (0f79fdf) merged, J3431 completed, J3432 released."
         }
       ],
       "remaining_action": "Posting the report",
@@ -338375,7 +338380,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "6661e8c"
     },
     {
       "id": "J3709",
