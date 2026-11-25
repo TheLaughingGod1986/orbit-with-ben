@@ -343323,9 +343323,14 @@
           "at": "2026-11-25T22:49Z",
           "by": "claudecode",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-25T22:52Z",
+          "by": "claudecode",
+          "what": "step 1 of 3 done: J3744 work is 3 of 4 done: QA report on ww2-channel PR 174 recommends PASS; rebuild job J3743 is done with PR 172 open"
         }
       ],
-      "remaining_action": "Reading J3744's hold, evidence and approvals",
+      "remaining_action": "Checking the masters on the NAS and the two pull requests",
       "kind": "review",
       "recheck_of": "J3744",
       "due": "2026-11-25T23:48:39+00:00",
@@ -343339,16 +343344,20 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-25T22:49Z",
+        "at": "2026-11-25T22:52Z",
         "by": "claudecode",
         "plan": [
           "Read J3744 and its history",
           "Check the predecessor and gates",
           "Reopen or re-hold J3744"
-        ]
-      }
+        ],
+        "note": "J3744 work is 3 of 4 done: QA report on ww2-channel PR 174 recommends PASS; rebuild job J3743 is done with PR 172 open"
+      },
+      "taskKeys": [
+        "WW2:004"
+      ]
     }
   ],
   "focus": [
