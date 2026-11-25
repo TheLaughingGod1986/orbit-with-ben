@@ -343876,13 +343876,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "claudecode",
-      "since": "2026-11-25T23:32Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T23:29Z",
-      "result": "parked for Chief: price PASS and mint GO on HOS 013 take-3 board (rows 49, 63). history-of-science PR 792 (e087177d), RETAKE_BOARD_v02; option A 200 Flow credits before 5 Dec; nothing minted, 0 credits spent; all checks pass. PR merge is the Chief's.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-25T23:29Z",
@@ -343928,6 +343928,11 @@
           "at": "2026-11-25T23:36Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: price PASS and mint GO on HOS 013 take-3 board (rows 49, 63). history-of-science PR 792 (e087177d), RETAKE_BOARD_v02; option A 200 Flow credits before 5 Dec; nothing minted, 0 credits spent; all checks pass. PR merge is the Chief's."
+        },
+        {
+          "at": "2026-11-25T23:49Z",
+          "by": "gemini",
+          "what": "reopened: Acting Chief (gemini) claiming J3757 to record PASS ruling, PR #792 merge (e10499f2), and J3759->J3760 follow-up"
         }
       ],
       "remaining_action": "Chief to approve the price and give the go-ahead to make the two new plates",
@@ -343942,20 +343947,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-25T23:35Z",
-        "by": "claudecode",
-        "plan": [
-          "Read brief and existing board",
-          "Write take-3 prompts and builder",
-          "Run checks",
-          "Status and PR",
-          "Desk post and park for Chief"
-        ],
-        "note": "PR 792 open, desk report posted; waiting on Chief price PASS and mint GO"
-      },
       "taskKeys": [
         "HOS:013"
       ]
