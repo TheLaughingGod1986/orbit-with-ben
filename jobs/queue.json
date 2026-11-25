@@ -340602,9 +340602,14 @@
           "at": "2026-11-25T21:28Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Step 1 done: verified v03 SHA-256 9d1968b7..2f585e & v02 untouched 60df8793..644a, 0 decode errors, -15.35 LUFS/-1.59 dBTP, faststart moov=32; verified audio+moving_video_input; inspected Cut A/B/bypassed/Part 3 in 720p; also found Ben already OKd WW2-006 v02 on board.json (2026-11-25T13:22:50Z) and measured 25 <50%-width + 89 50-70%-width boxed archive segments"
+        },
+        {
+          "at": "2026-11-25T21:31Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Steps 2-3 done: watched & listened 100% continuous v03 (all 16 lossless segments 00:00-23:38.37 + 4 720p join/Part 3 clips). Cut A (01:50.17), bypassed bottlenecks (02:28.5), Cut B (03:07.04, 0 TR 917 flash), Part 3 (CH 14317/14314), shifted chapters, 344 UK captions, 65.75% archive, min repeat 72.71s all PASS. Scratch cleaned. Writing PR & flagging Ben's existing v02 OK (13:22:50Z) + framing/description advisories for Chief."
         }
       ],
-      "remaining_action": "Watch and listen to 100% continuous v03 master across all 16 lossless segments (seg_00..seg_15)",
+      "remaining_action": "Write QA_REVIEW_J3724.md in clean worktree, open ww2-channel PR, post thread report, and park for Chief",
       "due": "2026-11-30T20:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -340621,9 +340626,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-25T21:28Z",
+        "at": "2026-11-25T21:31Z",
         "by": "gemini",
         "plan": [
           "Verify v03 artifact, PR and media capabilities",
@@ -340631,7 +340636,7 @@
           "Verify chapters, SRT sync, Rule 1 share, repeats and frames",
           "Open QA report PR and park for Chief"
         ],
-        "note": "Step 1 done: verified v03 SHA-256 9d1968b7..2f585e & v02 untouched 60df8793..644a, 0 decode errors, -15.35 LUFS/-1.59 dB"
+        "note": "Steps 2-3 done: watched & listened 100% continuous v03 (all 16 lossless segments 00:00-23:38.37 + 4 720p join/Part 3 cli"
       },
       "taskKeys": [
         "WW2:006"
