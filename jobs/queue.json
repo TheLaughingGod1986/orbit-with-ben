@@ -1,5 +1,5 @@
 {
-  "next_id": 3723,
+  "next_id": 3724,
   "jobs": [
     {
       "id": "J0001",
@@ -339979,6 +339979,36 @@
         "moving_video_input"
       ],
       "plain": "Run full audiovisual QA on film 004 v03 opening-cut master and park for Chief watch staging"
+    },
+    {
+      "id": "J3723",
+      "title": "WW2 006: v03 pre-watch opening trims (J3715 Cuts A+B, 124.5 s), chapters, captions and render",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** Acting-Chief (`gemini`) ruling on `J3715` (`ww2-channel` PR #155 `b1392f1`, `00_Brand/OPENING_CHECK_RULING_J3715_2026-11-25.md`, based on merged PR #154 `cbb67e3` `07_Edit/OPENING_CHECK_v01.md`). Film 006 (`De Havilland Mosquito: Why It Was Made of Wood`, airs Sat 5 Dec 17:00 London, Ben's watch due Wed 2 Dec 20:00Z) turns to 1939 aircraft/turret background at `1:50.4` until `3:26.5` and hits a 6-figure cluster at `4:30-5:00`. Live board/tracker (`J3434`, `006/status.json`) still shows `v02` waiting on Ben's watch. Chief approved Cuts A + B (`124.5 s`, archive share rises from `65.29%` to `65.75%`, verified zero spoken \"Albatross\"/\"Comet\" callbacks in Part 3) as a zero-spend `v03` pre-watch build keeping `v02` completely untouched so Ben can watch `v03` or confirm `v02`.\n\n**Do (zero-spend `v03` pre-watch assembly; £0):**\n1. **Keep `v02` completely untouched** on NAS (`studio-live`), iCloud `WW2 UAT`, and private R2 watch bucket (`ww2-006-v02`) — in case Ben already watched or preferred `v02` off-board.\n2. **Verify caption timing on `v02` audio first:** confirm `11_Upload-Package/ww2_006_en-GB_v01.srt` timestamps match `v02` audio (`1,542.84 s`) before cutting.\n3. **Apply Chief-approved Cuts A + B** on the `v02` timeline (existing narration only, zero new voice):\n   - **Cut A (`01:50.42-03:12.80`, `82.4 s`, captions 26-46):** measure exact silence points on audio (`+-0.3 s`, zero clipped words) joining *\"...the lowest loss rate of any bomber in the Royal Air Force.\"* -> *\"Weighed down by its defences, a British bomber of nineteen thirty-nine...\"* -> *\"At Hatfield Aerodrome...\"*. Remove old Chapter 1 card (*\"The metal and turret bottleneck\"*) and start renamed Chapter 1 (*\"De Havilland's proposal\"*) at `01:50`.\n   - **Cut B (`04:29.55-05:11.70`, `42.2 s`, captions 66-76, 1934 Comet + 1937 Albatross):** measure exact silence points (`+-0.3 s`, zero clipped words) joining *\"...perfecting fast wooden aeroplanes.\"* -> *\"In October nineteen thirty-nine, Bishop and Clarkson ran the wind tunnel and weight arithmetic for a twin-engine bomber built the same way...\"*. End Cut B cleanly on `CNA 1282` (`05:11.75`) so `TR 917` does not flash.\n4. **Update metadata & technical verification:**\n   - Start renamed Chapter 1 (*\"De Havilland's proposal\"*) at `01:50` and shift Chapters 2-6 (`-82.4 s` / `-124.5 s`); generate `11_Upload-Package/ww2_006_en-GB_v03.srt` and `07_Edit/SENTENCE_CUT_LIST_v03.md` / upload-package chapter timestamps.\n   - Verify archive share stays `>=50%` (expected `65.75%`), zero photos leave the film (`CH 14317` stays at `9:23`, `CH 14314` at `9:47`, credits unchanged), and all remaining asset repeat gaps stay `>=60 s` (expected `>80 s`).\n   - Render `ww2_006_mosquito_v03.mp4` (1080p 24fps CFR, `faststart`, smooth music crossfade across both cuts, integrated loudness ~`-14` to `-16 LUFS`, true peak `<= -1 dBTP`) to NAS `studio-live` and record SHA-256 and technical checks.\n5. **Open one `ww2-channel` PR** with the `v03` cut list, captions, chapters, and technical verification (parked for Chief; no merge) and close this job so the chained audiovisual QA job runs next.\n\n**Guards.** £0 spend. No new voice. No YouTube upload, schedule, retitle, or privacy change. Never overwrite `v02`. Do not claim audio/motion perception unless demonstrated.\n",
+      "ref": "b1392f1",
+      "film": "WW2:006",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T14:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T14:58Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify v01.srt on v02 audio, apply Cuts A+B to render v03 keeping v02 untouched, open ww2 PR",
+      "due": "2026-11-30T12:00:00Z",
+      "kind": "assembly",
+      "plain": "Apply J3715 opening cuts A+B (124.5 s) to film 006 as zero-spend v03 keeping v02 untouched"
     }
   ],
   "focus": [
