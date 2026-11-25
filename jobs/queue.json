@@ -343434,13 +343434,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T23:06Z",
-      "eta": "2026-11-26T01:06Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T22:57Z",
-      "result": "",
+      "result": "Uploaded Ben-approved WW2 003-S3 Short v01 as RtEMDrfeKR8 (Private, publishAt 2026-11-28T12:30:00Z, cat 27, en-GB, NOT MFK, altered content YES, cover frame 1 Enola Gay saved, Related video deferred to J3655 while RqYjADxvJy8 is scheduled). API + Studio 9224 reload readback PASS; merged ww2-channel#175; queued 7-day read J3754 (2026-12-05T12:35:00Z). £0.",
       "history": [
         {
           "at": "2026-11-25T22:57Z",
@@ -343481,6 +343481,11 @@
           "at": "2026-11-25T23:16Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Merged ww2-channel#175 with RtEMDrfeKR8 readback and queued 7-day read J3754"
+        },
+        {
+          "at": "2026-11-25T23:16Z",
+          "by": "gemini",
+          "what": "done: Uploaded Ben-approved WW2 003-S3 Short v01 as RtEMDrfeKR8 (Private, publishAt 2026-11-28T12:30:00Z, cat 27, en-GB, NOT MFK, altered content YES, cover frame 1 Enola Gay saved, Related video deferred to J3655 while RqYjADxvJy8 is scheduled). API + Studio 9224 reload readback PASS; merged ww2-channel#175; queued 7-day read J3754 (2026-12-05T12:35:00Z). £0."
         }
       ],
       "remaining_action": "Close J3752, put 7-day read J3754 on date hold, and post studio thread report",
@@ -343517,7 +343522,8 @@
       },
       "taskKeys": [
         "WW2:003"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/175"
     },
     {
       "id": "J3753",
