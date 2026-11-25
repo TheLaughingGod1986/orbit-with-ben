@@ -17,3 +17,17 @@ Uploaded **BLCuJ4EKic4**, *Could You Survive Stepping Onto Saturn's Moon Titan?*
 Related video is **None**: Studio picker search for T3cBBss1F60 returned no matching results while parent is Private. Keep J3508 on a typed public-condition hold; recheck **25 November 18:05Z** immediately after parent publication. Once Public, set Related to T3cBBss1F60 and verify after save. If parent slips, prevent the Short airing first. Recheck Short privacy/publishAt and Buffer registration; do not duplicate-upload. This is an external condition, not a missing approval.
 
 No listening or motion perception claimed in this session. Ben approved this exact finished cut; checks here used hashes, automated gates, API/Studio state and direct still-image inspection.
+
+## Related link set, 25 November 2026 (Claude Code covering, worker)
+
+Authority: J3508 brief (Ben's board OK, OWB:ASK:J0979, relayed in J3505) and J3733, where the acting Chief confirmed the parent film was Public and reopened this job for the Related link only. No upload this run.
+
+- **Before** (Studio, 19:01Z): BLCuJ4EKic4 Scheduled, Related video **None**.
+- **Change** (Studio, saved 19:02:51Z): Related video set to **T3cBBss1F60**, *What Would Happen If You Landed on Titan? (Seas of Liquid Gas)*. The picker card was matched by the video id in its markup, not by title alone.
+- **After** (fresh Studio load, 19:03:04Z): Related video reads *What Would Happen If You Landed on Titan? (Seas of Liquid Gas)*; title unchanged; Scheduled; nothing left unsaved; no test dialog appeared.
+- **YouTube Data API read-back** (19:03Z, read-only): BLCuJ4EKic4 on UC_esArsDKd3GJvOkeO0DUog, **private, publishAt 2026-12-02T11:30:00Z**, processed, PT31S, en-GB, standard en-GB caption track serving. T3cBBss1F60 **public**, publishedAt 2026-11-25T18:00:24Z. So the Short airs after its film.
+- **No privacy or publishAt change** was made on either video. Title, description, tags, cover and captions were not touched. No thumbnail test touched.
+- **Buffer:** still `deferred_7_day_window` in UPLOADS.json, no posts in BUFFER_POSTS.json yet; the daily Buffer check schedules them now the slot is inside its window. Not changed here.
+- Gate library entry stays `scheduled` for 2026-12-02. This is Test A opening v02, not the J2744 strike-match cut.
+
+Cover was not re-inspected this run (Codex verified it on 24 Nov). Nothing was played, watched or listened to; these are Studio and API state reads.
