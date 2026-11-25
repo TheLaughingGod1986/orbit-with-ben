@@ -317666,15 +317666,20 @@
           "at": "2026-11-25T10:21Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Confirmed Studio 9224 is logged into Field Order History (UCu94mInMFosxu3W0H6jlI6Q) and qfc6EBStOfo has 0 existing comments (Data API + Studio comments tab)."
+        },
+        {
+          "at": "2026-11-25T10:24Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Posted comment Ugyi4bTig55nbg0cu-54AaABAg via WW2 API (HTTP 200, exact match) and pinned in Studio 9224 at 2026-11-25T10:22:52Z ('Comment pinned' toast)."
         }
       ],
-      "remaining_action": "Post exact PINNED_COMMENT_v06.txt via Field Order History API and pin in Studio 9224",
+      "remaining_action": "Verify pinned state on signed-out readback, confirm no unintended changes, and record receipt",
       "kind": "studio",
       "plain": "Pin the question for viewers when the new U-boat film goes live",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-25T10:21Z",
+        "at": "2026-11-25T10:24Z",
         "by": "gemini",
         "plan": [
           "Verify qfc6EBStOfo is Public and read PINNED_COMMENT_v06.txt",
@@ -317683,7 +317688,7 @@
           "Verify pinned state and no unintended changes",
           "Record receipt, report on studio thread, and finish job"
         ],
-        "note": "Confirmed Studio 9224 is logged into Field Order History (UCu94mInMFosxu3W0H6jlI6Q) and qfc6EBStOfo has 0 existing comme"
+        "note": "Posted comment Ugyi4bTig55nbg0cu-54AaABAg via WW2 API (HTTP 200, exact match) and pinned in Studio 9224 at 2026-11-25T10"
       },
       "taskKeys": [
         "WW2:002"
