@@ -340625,10 +340625,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 180,
-      "status": "claimed",
-      "by": "claudecode",
-      "since": "2026-11-25T17:01Z",
-      "eta": "2026-11-25T20:01Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-25T16:05Z",
       "result": "",
@@ -340787,6 +340787,11 @@
           "at": "2026-11-25T17:06Z",
           "by": "claudecode",
           "what": "step 2 of 6 done: 76 photos now checked by eye and pushed (66a293e); two are Japanese-taken and held for the Chief, two aerials are listed with the wrong subject"
+        },
+        {
+          "at": "2026-11-25T17:06Z",
+          "by": "claudecode",
+          "what": "released: By-eye check now covers 76 photos (ww2-channel claudecode/J3728-017-picture 66a293e: CAPTION_CHECK_017.json plus both RETRIEVAL_LOG files as they stood at 17:20Z). Downloads STILL RUNNING detached, do not start second copies: tmux J3728-nhhc (log ~/_desk/logs/J3728-nhhc.log, done file ~/_desk/logs/J3728-nhhc.done) sweeping neighbouring NH numbers; tmux J3728-pass2 (log ~/_desk/logs/J3728-pass2.log, done file ~/_desk/logs/J3728-pass2.done) waiting out Commons 429s. Missing .done = still running. Findings: (1) NH 50930 and NH 50931 are captured Japanese photographs, not US Navy works: held out, Chief to rule on rule 5. (2) 80-G-387567 and 80-G-387568 show the Navy Yard waterfront, not California on the bottom as the provenance table says, and are near-duplicates. (3) Wanted subjects now in hand from the sweep: divers and salvage crews (NH 63919, 63921, 64303, 60673), California cofferdam (NH 55036), California in dry dock 9 Apr 1942 (NH 64483), a raised battleship pumping out under tow (NH 64491), Oklahoma after refloating 6 Nov 1943 (NH 64496). (4) 80-G-410534 shows Oklahoma larger in frame than thumbnail A's 80-G-410533. (5) 80-G-32462 is still 713 px only. About 20 sweep photos have the subject from the picture only: their NHHC catalogue captions are owed before a ship or date is named. Next run: read the two .done files and logs; look at anything added after 17:20Z; read NHHC catalogue captions for the rows marked caption still owed; rewrite ARCHIVE_PROVENANCE.md with collection, ID, licence, SHA-256 and beat per photo (SHA-256 is already in the logs); update PICTURE_PLAN_017.md counts with the new photos; still wanted: Nevada in Dry Dock 2, Nevada at Utah Beach, West Virginia in Tokyo Bay; then the one PR. Maps (20a7e8c) and thumbnails (9d30785) done earlier. Worktree /Volumes/MiniWork/scratch/J3728-wt; contact sheets in /Volumes/MiniWork/scratch/J3728-prev."
         }
       ],
       "remaining_action": "Let the downloads finish, log every photo with its checksum and beat, find the photos still missing, then open the PR",
