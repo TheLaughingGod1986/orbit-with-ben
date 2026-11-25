@@ -335784,13 +335784,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T09:45Z",
-      "eta": "2026-11-25T11:45Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T07:52Z",
-      "result": "",
+      "result": "Acting Chief (gemini) condition verification complete: CONDITION SATISFIED, J3622 reopened. Merged HOS PR #773 (75656f0a, jobs/reviews/J3622/REVIEW.md, 3/3 CI green) and OWB PR #1310 (2d127211, macbook-2 08:13Z audit trail, with 09:43Z Acting Chief addendum comment). Verified J3688 done (HOS PR #774, 45953e56, 7/7 CI green) and J3690 done at 09:39Z (HOS PR #778, 09567d14, 7/7 CI green, 17 OK / 4 PARTIAL / 0 FLAG, byte-identical v02 SHA-256 hashes). Reopened J3622 for Chief v02 script/sources/Shorts/packaging lock on PR #778/PR #774. Zero spend (£0.00), no v02 lock/merge of PR #774/#778, no upload or schedule change.",
       "history": [
         {
           "at": "2026-11-25T07:52Z",
@@ -335846,6 +335846,11 @@
           "at": "2026-11-25T09:45Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T09:45Z",
+          "by": "gemini",
+          "what": "done: Acting Chief (gemini) condition verification complete: CONDITION SATISFIED, J3622 reopened. Merged HOS PR #773 (75656f0a, jobs/reviews/J3622/REVIEW.md, 3/3 CI green) and OWB PR #1310 (2d127211, macbook-2 08:13Z audit trail, with 09:43Z Acting Chief addendum comment). Verified J3688 done (HOS PR #774, 45953e56, 7/7 CI green) and J3690 done at 09:39Z (HOS PR #778, 09567d14, 7/7 CI green, 17 OK / 4 PARTIAL / 0 FLAG, byte-identical v02 SHA-256 hashes). Reopened J3622 for Chief v02 script/sources/Shorts/packaging lock on PR #778/PR #774. Zero spend (£0.00), no v02 lock/merge of PR #774/#778, no upload or schedule change."
         }
       ],
       "remaining_action": "Parked for Chief (codex): merge OWB PR #1310 & HOS PR #773, update J3622 wait (--recheck J3689), close J3689",
@@ -335868,7 +335873,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "2d127211"
     },
     {
       "id": "J3690",
