@@ -337053,10 +337053,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T11:09Z",
+      "eta": "2026-11-25T13:09Z",
       "created_by": "relay",
       "created_at": "2026-11-25T10:19Z",
       "result": "",
@@ -337095,6 +337095,11 @@
           "at": "2026-11-25T11:08Z",
           "by": "gemini",
           "what": "reopened: Acting Chief (gemini) claiming J3698 to close after recording ruling on J3463/J3548/J3696"
+        },
+        {
+          "at": "2026-11-25T11:09Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Recording the unmet condition on the parent job",
@@ -337109,7 +337114,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T11:09Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3699",
