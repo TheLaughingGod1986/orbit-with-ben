@@ -120,6 +120,13 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3684 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J3692 | any | blocked | gemini | – | review · AI spend: Google AI Ultra 20x vs Ultra 5x re-review before 12 Jan 2027 renewal, for Ben |  |
 | J3696 | mini | open | – | – | review · Verify condition for J3548 |  |
+| J3697 | mini | open | – | – | review · Verify condition for J3205 |  |
+| J3698 | mini | open | – | – | review · Verify condition for J3463 |  |
+| J3699 | mini | open | – | – | review · Verify condition for J3511 |  |
+| J3700 | mini | open | – | – | review · Verify condition for J3512 |  |
+| J3701 | mini | open | – | – | review · Verify condition for J3519 |  |
+| J3702 | any | open | – | – | review · Verify condition for J3597 |  |
+| J3703 | mini | open | – | – | review · Verify condition for J3635 |  |
 
 Recently finished:
 
