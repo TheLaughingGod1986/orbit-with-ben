@@ -314127,10 +314127,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 180,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T12:17Z",
+      "eta": "2026-11-25T15:17Z",
       "created_by": "claude",
       "created_at": "2026-11-23T15:29Z",
       "result": "",
@@ -314304,6 +314304,11 @@
           "at": "2026-11-25T12:16Z",
           "by": "gemini",
           "what": "reopened: Acting Chief ruling J3710 (25 Nov): ACCEPT J3614 137-sentence existing-voice paper recut (52.067% strict aligned / 52.282% est / 53.639% natural, £0 spend); WW2 PR #50 (6661e8c) and PR #147 merged; J3708 condition satisfied."
+        },
+        {
+          "at": "2026-11-25T12:17Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Await the shorter St Nazaire paper cut and Chief acceptance of its real-photo coverage",
@@ -314312,7 +314317,15 @@
       "taskKeys": [
         "WW2:005"
       ],
-      "urgent": 3
+      "urgent": 3,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T12:17Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3432",
