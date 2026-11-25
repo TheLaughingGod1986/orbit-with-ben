@@ -1,5 +1,5 @@
 {
-  "next_id": 3742,
+  "next_id": 3743,
   "jobs": [
     {
       "id": "J0001",
@@ -342106,6 +342106,36 @@
       "taskKeys": [
         "WW2:004"
       ]
+    },
+    {
+      "id": "J3742",
+      "title": "HOS 011 Anaesthesia: Shorts S01 & S02 voiceover from locked v03 scripts",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Record the two 16–19 s search-titled Shorts (`S01` & `S02`) for HOS 011 (*Anesthesia: The Day Surgery Stopped Hurting*, Thu 17 Dec 2026 18:00 London) from the Acting Chief-locked v03 Shorts scripts (`J3740` Chief PASS/lock, `HOS PR #790` merged as `506d55458c866eb650cbd7b154642e4ecb715a38`).\n\n**Locked Shorts script (verify exact file & SHA-256 before spending any credit):**\n- Path: `02_Video-Projects/011_Surgery-Before-Anaesthesia/10_Shorts/SHORTS_SCRIPTS_v03.md`\n- SHA-256: `fdc9364761d275fbe7566e36a06bd2227bca737650cb21656dcbf44705f65205`\n- **Short A (`S01`, target Sat 19 Dec 2026 11:30 London — go-public-day Short):** *How Was Surgery Done Before Anesthesia?* (`42` spoken words, `~17.9 s` nominal; 16.0–19.0 s Ben 19 Nov Shorts house rules).\n- **Short B (`S02`, target Fri 18 Dec 2026 11:30 London):** *Who Invented Anesthesia?* (`41` spoken words, `~17.5 s` nominal; 16.0–19.0 s Ben 19 Nov Shorts house rules; record with zero opening dead air `first word ≤0.15 s`).\n- Never alter a single spoken word of the locked scripts (regenerate the sentence instead).\n\n**Voice & credit rules (Mac mini only; post-30-Nov ElevenLabs reset, behind 128 `J3670` and 136 `J3678` long VO):**\n1. Voice: **Ben Orbit Narrator** (`eleven_v3`), API only through `04_Audio/tools/el_client.py` / `vo_take.py` on the Mac mini under `desk-lock elevenlabs` (`--dry-run` first; one recorder at a time). Never use the ElevenLabs website or any other voice.\n2. Check live ElevenLabs balance first and log it with `ai_spend.py record --pool elevenlabs --film HOS:011`. Subscription credit floor is 0 (Ben, 9/12 Oct); spend nothing if balance is below what the take needs (~500 chars total); never buy credits, top up, or spill into paid billing. Long VO on 128/136 takes priority if ElevenLabs credit is tight; the 011 long airs on time Thu 17 Dec even if Shorts follow.\n3. Run `00_Brand/Channel-Setup/tools/vo_check_py312.sh` on both takes; verify both sit cleanly in the `16.0–19.0 s` runtime band with clean causal loops and `atempo <= 1.06`. A take whose word check did not run FAILS.\n4. Commit take metadata, word timings, exact audio SHA-256 hashes, and pasted `vo_check` outputs in a clean HOS PR (no media in git); update `status.json` and `production-status.md`; park for Chief VO PASS.\n\n**Guardrails:**\n- **No Shorts picture/frame-0 plate spend** until Chief passes the Shorts VO.\n- No upload, schedule, or Studio metadata change.\n",
+      "ref": "J3740",
+      "film": "011",
+      "stage": "vo",
+      "after": "J3678",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T20:02Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T20:02Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Record HOS 011 Shorts S01 & S02 VO from locked SHORTS_SCRIPTS_v03.md after J3678 and post-30-Nov ElevenLabs reset",
+      "due": "2026-12-05T18:00:00Z",
+      "kind": "vo",
+      "plain": "Record the two locked 16-19 s Shorts voiceovers for HOS 011 Anaesthesia after the 30 Nov voice reset"
     }
   ],
   "focus": [
