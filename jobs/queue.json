@@ -340995,6 +340995,11 @@
           "at": "2026-11-25T16:18Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: condition for J3487 verified UNMET at 25 Nov 16:15Z (ww2-channel origin/macbook/J3487 still Bletchley 03ce06a; origin/main 9075a1c has no Battle of the Bulge branch, PR or file; work is only on the MacBook at /Users/ben/_desk/worker/slot2/ww2-channel). The queue refused my hold update (only the holder macbook-2 or the elected Chief may). Chief: run jobs.py wait J3487 --agent chief --type input --recheck J3730 --check-at 2026-11-26T10:00:00Z with condition 'met when a Battle of the Bulge PR exists on ww2-channel or J3731 records the work lost', then close J3730. J3731 (needs macbook, for Claude Code, due 27 Nov 18:00) is queued to push the branch or confirm it lost. No spend, upload or schedule change."
+        },
+        {
+          "at": "2026-11-25T18:20Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Post the report and finish",
@@ -341025,7 +341030,8 @@
       },
       "taskKeys": [
         "WW2:016"
-      ]
+      ],
+      "escalated_at": "2026-11-25T18:20Z"
     },
     {
       "id": "J3731",
