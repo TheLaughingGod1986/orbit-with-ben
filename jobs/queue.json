@@ -1,5 +1,5 @@
 {
-  "next_id": 3654,
+  "next_id": 3655,
   "jobs": [
     {
       "id": "J0001",
@@ -331630,6 +331630,38 @@
         "okAt": "2026-11-24T23:58Z",
         "okRef": "board-check:WW2-003@2026-11-24T23:58:36.819Z"
       }
+    },
+    {
+      "id": "J3654",
+      "title": "Claude Code: privacy-check and publish WW2:003 J3205/J3643 branches (gemini/J3643-qa + gemini/J3643-review)",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** `J3205` (`WW2:003` v01 assembly, 3 covers, upload package & technical QA) and `J3643` (full QA PASS, private R2 watch upload `ww2-003-v01`, Ben's watch card) are finished locally, and Ben OK'd `v01` on the board (`2026-11-24T23:58:36.819Z`). Per Ben's 24 Nov 2026 rule (*let Claude Code push and merge all the pull requests*) and Claude's 24 Nov `23:12Z` Chief ruling on `J3205`, GitHub publication of the local branches waits for Claude Code (`claudecode`, Fable reset `2026-11-25T10:00:00Z`).\n\n**Do (Claude Code on the Mini after 10:00Z reset):**\n1. **WW2 repo (`ww2-channel`):**\n   - Local worktree `/Volumes/MiniWork/scratch/J3643-ww2`, branch `gemini/J3643-qa` (`674c088`, stacked directly atop `codex/J3205-mini` `4d8422d` at `/Volumes/MiniWork/scratch/J3205-mini`).\n   - Read the full diff against `origin/main` for privacy: no secrets, tokens, keys, emails, private IPs, revenue/payment figures, personal details, or raw Studio exports.\n   - **Flagged local paths to sanitize before pushing:** `J3633`/`J3644` found 3 local home-path strings (`/Users/benjaminoats/...`) in `02_Video-Projects/003_Why-B29-Superfortress-Cost-More-Than-Atomic-Bomb/07_Edit/J3205_HANDOFF_v17.md` (line 7) and `07_Edit/TECHNICAL_QA_v01.json` (lines 32–33). Replace those home-directory prefixes with relative paths (`~/_desk/...` / `WW2 UAT/...`) in a clean commit on the branch (or park for Chief if anything else fails privacy).\n   - Also update `02_Video-Projects/003_.../status.json` if still needed so `edit: done` reflects `J3205`/`J3643` + Ben's `v01` OK without clobbering any newer upload record on `main`.\n   - Push the branch, open the PR against `main`, verify required checks are green, and merge it.\n2. **OWB repo (`orbit-with-ben`):**\n   - Local worktree `/Volumes/MiniWork/scratch/J3643-owb`, branch `gemini/J3643-review` (`5925f6828c`, adds `jobs/reviews/J3643/REVIEW.md`, `EVIDENCE.json`, and `ww2-003-v01` in `05_Analytics/kanban/watch_uploads.json`).\n   - Read the full diff for privacy (already checked clean of home paths/secrets/emails/IPs), rebase/resolve cleanly if `watch_uploads.json` moved on `main`, run `test_watch_r2.py`, push, open the PR, and merge when green.\n3. **Close `J3205`** with both PR/merge refs once both PRs are merged (do not reopen `J3205` for assembly), and check whether open Chief housekeeping job `J3589` (`Chief: resolve 003 edit orphan-blocked`) and superseded `J3633` PR #1296 can be reconciled/closed.\n\n**Guards.** Records publishing only — zero YouTube/Studio writes, zero Buffer writes, zero NAS deletion, `£0`.\n",
+      "ref": "",
+      "film": "WW2:003",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T00:47Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T00:47Z",
+          "by": "gemini",
+          "what": "added for claudecode"
+        }
+      ],
+      "remaining_action": "After 10:00Z reset, sanitize 3 home paths, privacy-check, push/PR/merge gemini/J3643-qa and gemini/J3643-review, and close J3205",
+      "due": "2026-11-25T14:00:00Z",
+      "for": "claudecode",
+      "kind": "assembly",
+      "plain": "Privacy-check and publish the B-29 edit and QA branches to GitHub",
+      "mini_only": true
     }
   ],
   "focus": [
