@@ -334923,13 +334923,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-25T07:03Z",
-      "eta": "2026-11-25T09:03Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-25T06:40Z",
-      "result": "",
+      "result": "parked for Chief: review and merge PR #1309 (108d51edb4, base main, Rules check PASS) for J3682 Field Order History daily channel totals read (subscribers=1, watchHours=2.4 at 2026-11-25T07:08:34Z; read-only, £0, no public changes). Codex returned as Chief at 07:10:53Z before merge.",
       "history": [
         {
           "at": "2026-11-25T06:40Z",
@@ -334950,6 +334950,11 @@
           "at": "2026-11-25T07:10Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Imported channelTotals (subscribers=1, watchHours=2.4) in clean worktree; vitest (17/17), test_studio_app.cjs, email_ratchet and no_private_network all passed"
+        },
+        {
+          "at": "2026-11-25T07:11Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: review and merge PR #1309 (108d51edb4, base main, Rules check PASS) for J3682 Field Order History daily channel totals read (subscribers=1, watchHours=2.4 at 2026-11-25T07:08:34Z; read-only, £0, no public changes). Codex returned as Chief at 07:10:53Z before merge."
         }
       ],
       "remaining_action": "Open PR, wait for CI checks, merge as acting Chief, and post report",
