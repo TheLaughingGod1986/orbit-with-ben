@@ -320235,9 +320235,14 @@
           "at": "2026-11-25T16:06Z",
           "by": "relay",
           "what": "condition verification queued: J3730"
+        },
+        {
+          "at": "2026-11-25T22:22Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-26T00:30:00Z"
         }
       ],
-      "remaining_action": "Publish unpushed MacBook branch macbook/J3487 from /Users/ben/_desk/worker/slot2/ww2-channel via Claude Code after privacy check (or confirm branch state on MacBook for Chief reopen)",
+      "remaining_action": "Wait for MacBook slot 2 (J3750) to publish unpushed Battle of the Bulge branch from /Users/ben/_desk/worker/slot2/ww2-channel or confirm it lost",
       "due": "2026-12-16T18:00:00Z",
       "kind": "script",
       "plain": "Research, package and write the script for WW2 film 016 (Battle of the Bulge, one engineering or logistics question)",
@@ -320256,12 +320261,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "Acting-Chief verification J3620: condition UNMET. Post-reopen Battle of the Bulge work from macbook-2 (24 Nov 14:53-15:04Z) is not published: ww2-channel origin/macbook/J3487 remains at pre-reopen Bletchley commit 03ce06aeb6815306cdd3efdcf2edd4a1447b84be (merged in PR #84/#86), origin/main (be57e17ecd78bf940425b9829f1871ae2850a03b) still holds only superseded 016_Bletchley-Park-Enigma-Bombe (J3541 NO-GO, air 2026-12-31), and no new PR or remote branch exists for WW2:016 Battle of the Bulge. Target worktree /Users/ben/_desk/worker/slot2/ww2-channel (branch macbook/J3487) is a MacBook path (/Users/ben does not exist on the Mac mini), so Mini claudecode/J3530 cannot inspect or push it. Needs MacBook Claude Code (or MacBook check) to verify whether local branch macbook/J3487 still holds the unpushed Battle of the Bulge commits, privacy-check, push, open PR and merge when green (or confirm lost so Chief can reopen J3487 cleanly ahead of 2026-12-16 script lock). OWB PR #1254 (J3531) also remains open/unmerged. No spend, upload or schedule change.",
-        "check_at": "2026-11-25T17:06:07+00:00",
-        "last_recheck": "J3620",
-        "checked_at": "2026-11-25T10:04:30+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3730"
+        "condition": "Acting-Chief verification J3730 (25 Nov 22:22Z): condition UNMET. ww2-channel origin/macbook/J3487 remains at pre-reopen Bletchley commit 03ce06aeb6815306cdd3efdcf2edd4a1447b84be (merged PR #84/#86), origin/main (61daccd) still holds only superseded 016_Bletchley-Park-Enigma-Bombe (J3541 NO-GO, air 2026-12-31), and no Battle of the Bulge branch or PR exists. Deadlocked J3731 (needs=macbook + for=claudecode was unclaimable) cancelled and replaced with J3750 (needs=macbook, for=macbook-2, kind=facts). Met when J3750 publishes a privacy-checked Battle of the Bulge PR on ww2-channel or confirms the local branch/stash/reflog work is lost so Chief can reopen J3487 cleanly ahead of 2026-12-16 script lock.",
+        "check_at": "2026-11-26T00:30:00Z",
+        "last_recheck": "J3730",
+        "checked_at": "2026-11-25T22:22:58+00:00",
+        "checked_by": "gemini"
       }
     },
     {
