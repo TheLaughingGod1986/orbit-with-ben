@@ -340363,9 +340363,14 @@
           "at": "2026-11-25T19:44Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Recorded audio_input,moving_video_input via read_file probe; verified exact SHA-256 of v03 (1ffa642e...e244f) and untouched v02 (991dfba2...52dcb)"
+        },
+        {
+          "at": "2026-11-25T19:45Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Watched+listened 720p Cut A (~05:02) and Cut B (~05:33) joins plus seg_00-01 (00:00-04:02): both joins clean (0 clipped syllables, 0 G11B flash, smooth music bed)"
         }
       ],
-      "remaining_action": "Watching/listening to Cut A & Cut B joins (720p) and full v03 cut",
+      "remaining_action": "Continuing full v03 watch/listen (04:00-21:35)",
       "due": "2026-11-27T20:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -340382,9 +340387,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-25T19:44Z",
+        "at": "2026-11-25T19:45Z",
         "by": "gemini",
         "plan": [
           "Probe audio/video input & verify v03 files",
@@ -340393,7 +340398,7 @@
           "Verify chapters, SRT, archive share & repeats",
           "Write QA PR & report"
         ],
-        "note": "Recorded audio_input,moving_video_input via read_file probe; verified exact SHA-256 of v03 (1ffa642e...e244f) and untouc"
+        "note": "Watched+listened 720p Cut A (~05:02) and Cut B (~05:33) joins plus seg_00-01 (00:00-04:02): both joins clean (0 clipped "
       },
       "taskKeys": [
         "WW2:004"
