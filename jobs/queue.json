@@ -338407,9 +338407,14 @@
           "at": "2026-11-25T12:12Z",
           "by": "claudecode",
           "what": "step 2 of 4 done: PR 146 at 649af06: v04 hash 5ea74805 matches, 46/46 parity and 14077 chars recomputed, 6/6 old files unchanged, 5 cited sources re-fetched with quotes found and byte sizes matching Gemini's ledger"
+        },
+        {
+          "at": "2026-11-25T12:13Z",
+          "by": "claudecode",
+          "what": "step 3 of 4 done: Review recorded in OWB PR 1319 (bb42b585d9): condition met on exact v04; releasing the J3492 hold is refused to workers, so it goes to the Chief"
         }
       ],
-      "remaining_action": "Record the verified result on the held Pedestal script job and hand the superseded check to the Chief",
+      "remaining_action": "Chief releases the held Pedestal script job with the evidence note and closes the older superseded check",
       "due": "2026-11-26T12:00:00Z",
       "kind": "review",
       "plain": "Verify WW2:009 v04 CLEAN claims pass (J3642 PR #146), resolve superseded J3664, and reopen J3492",
@@ -338422,9 +338427,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-25T12:12Z",
+        "at": "2026-11-25T12:13Z",
         "by": "claudecode",
         "plan": [
           "Read the held job and its history",
@@ -338432,7 +338437,7 @@
           "Record the result on the held job",
           "Report"
         ],
-        "note": "PR 146 at 649af06: v04 hash 5ea74805 matches, 46/46 parity and 14077 chars recomputed, 6/6 old files unchanged, 5 cited "
+        "note": "Review recorded in OWB PR 1319 (bb42b585d9): condition met on exact v04; releasing the J3492 hold is refused to workers,"
       },
       "taskKeys": [
         "WW2:009"
