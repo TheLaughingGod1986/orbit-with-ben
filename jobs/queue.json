@@ -317705,13 +317705,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-24T12:46Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-24T09:06Z",
-      "result": "parked for Chief: Read-only verification complete in OWB PR #1256 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1256, 019d43803, jobs/reviews/J3470/REVIEW.md). Export-authorization condition MET & superseded by Ben 24 Nov rule (PR #1250, 8de8a1c2e) and urgent Mini Claude Code publish job J3530 (f2292898b, open, due 2026-11-25T12:00:00Z). Recommend DO NOT reopen J3114 to codex; update J3114 via wait --recheck J3470 (--check-at 2026-11-24T18:30:00Z) to track J3530 publishing a12100797f (reconciling THUMB_LEDGER.json T041->T044 without rebuild) and close J3470 (or close J3470 directly if J3530 finishes first). Verified 12/12 NAS package and 4/4 NAS video hashes, 143 #954 comments through #7131814506, #219 approvals, and J3115/J3119/Shorts holds. £0 spent; zero YouTube/NAS writes.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-24T09:06Z",
@@ -317772,6 +317772,11 @@
           "at": "2026-11-24T16:56Z",
           "by": "refill",
           "what": "escalated to Chief: parked 4 h"
+        },
+        {
+          "at": "2026-11-25T07:17Z",
+          "by": "gemini",
+          "what": "reopened: Acting Chief gemini merged evidence PR #1256 (cfcaaba434) and recorded J3114 hold via wait --recheck J3470 (check-at 2026-11-25T10:15:00Z for J3530); reopening only this verification job to claim and close."
         }
       ],
       "remaining_action": "Elected Chief to review/merge OWB PR #1256, update J3114 hold via wait --recheck J3470 to track J3530 (do not reopen to codex), and close J3470",
@@ -317787,19 +317792,6 @@
         "by": ""
       },
       "open_claim": true,
-      "progress": {
-        "step": 3,
-        "of": 4,
-        "at": "2026-11-24T12:52Z",
-        "by": "macbook-2",
-        "plan": [
-          "Inspect J3114 history & thread",
-          "Verify authorization, board & hashes",
-          "Record review PR & update J3114",
-          "Complete J3470 & post thread report"
-        ],
-        "note": "Opened PR #1256 (macbook/J3470, 019d43803) and returned checkout to main"
-      },
       "escalated_at": "2026-11-24T16:56Z"
     },
     {
