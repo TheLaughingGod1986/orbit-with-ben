@@ -342355,9 +342355,14 @@
           "at": "2026-11-25T20:29Z",
           "by": "gemini",
           "what": "step 1 of 6 done: Step 1 done: SHA-256 verified exact match; 10 90-second 720p audiovisual chunks built on NAS scratch."
+        },
+        {
+          "at": "2026-11-25T20:30Z",
+          "by": "gemini",
+          "what": "step 2 of 6 done: Step 2 done (0:00-4:30): Joins 1-5 seamless; caught factual lower-third bug at 4:14-4:21 (COMMANDER ROBERT RYDER pops over MUD FLATS during Mountbatten narration, then repeats at 4:27); A 9804 frozen/obscured by struts at 0:42."
         }
       ],
-      "remaining_action": "Watching and listening to chunks 01-03 (0:00 to 4:30) with audio_input and moving_video_input",
+      "remaining_action": "Watching and listening to chunks 04-06 (4:30 to 9:00) with audio_input and moving_video_input",
       "due": "2026-11-28T20:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -342374,9 +342379,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 6,
-        "at": "2026-11-25T20:29Z",
+        "at": "2026-11-25T20:30Z",
         "by": "gemini",
         "plan": [
           "Verify master hash and split chunks",
@@ -342386,7 +342391,7 @@
           "Audit splices, captions, thumbs, package",
           "Write QA report and open PR"
         ],
-        "note": "Step 1 done: SHA-256 verified exact match; 10 90-second 720p audiovisual chunks built on NAS scratch."
+        "note": "Step 2 done (0:00-4:30): Joins 1-5 seamless; caught factual lower-third bug at 4:14-4:21 (COMMANDER ROBERT RYDER pops ov"
       },
       "taskKeys": [
         "WW2:005"
