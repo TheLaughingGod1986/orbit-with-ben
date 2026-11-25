@@ -332017,19 +332017,30 @@
           "at": "2026-11-25T03:19Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T03:20Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3651 after PR #1300 merged; reviewing tracker, launchd, and board publish flow"
         }
       ],
-      "remaining_action": "Run the tracker, confirm the schedule, deploy the board's Market tab",
+      "remaining_action": "Inspecting market_track.py, launchd schedule, and running the tracker by hand",
       "due": "2026-12-03T12:00:00Z",
       "kind": "assembly",
       "mini_only": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T03:19Z",
+        "of": 5,
+        "at": "2026-11-25T03:20Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Run market tracker & verify quota",
+          "Confirm daily launchd schedule",
+          "Publish board data & deploy board site",
+          "Verify live Market tab breakouts",
+          "Post thread update & finish"
+        ],
+        "note": "Claimed J3651 after PR #1300 merged; reviewing tracker, launchd, and board publish flow"
       }
     },
     {
