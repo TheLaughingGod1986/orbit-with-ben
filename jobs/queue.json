@@ -344032,16 +344032,21 @@
           "at": "2026-11-25T23:51Z",
           "by": "gemini",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-25T23:53Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Verified RETAKE_BOARD_v02.json sha256 and both pinned prompt sha256s; inspected t1 defects and style_refs"
         }
       ],
-      "remaining_action": "Inspecting RETAKE_BOARD_v02.json, Flow image tools, and existing t1 stills",
+      "remaining_action": "Probing Flow UI (:9222) and minting row 49 take-3 start still (0 cr)",
       "due": "2026-11-29T18:00:00Z",
       "kind": "image",
       "plain": "Mint 2 free take-3 Flow start stills for Darwin & Wallace rows 49 and 63 and park for Chief visual PASS",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-25T23:51Z",
+        "at": "2026-11-25T23:53Z",
         "by": "gemini",
         "plan": [
           "Inspect board, tools & Flow UI",
@@ -344049,7 +344054,8 @@
           "Mint row 63 take-3 still (0 cr)",
           "Visual verify, compare sheet & archive",
           "Post receipt on HOS #180 & park for Chief PASS"
-        ]
+        ],
+        "note": "Verified RETAKE_BOARD_v02.json sha256 and both pinned prompt sha256s; inspected t1 defects and style_refs"
       },
       "taskKeys": [
         "HOS:013"
