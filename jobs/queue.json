@@ -332933,9 +332933,14 @@
           "at": "2026-11-25T03:34Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T03:36Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Master SHA-256 verified exact (7561d495...); audio_input and moving_video_input demonstrated via read_file probe on 00:00-00:15."
         }
       ],
-      "remaining_action": "Run full private end-to-end audiovisual QA on WW2:006 v01 master (sha256 7561d495...)",
+      "remaining_action": "Register demonstrated audio/video capabilities and split master into lossless continuous segments",
       "due": "2026-11-28T12:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -332953,12 +332958,22 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T03:34Z",
+        "of": 6,
+        "at": "2026-11-25T03:36Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify master & register capabilities",
+          "Watch & listen 00:00-09:00",
+          "Watch & listen 09:00-18:00",
+          "Watch & listen 18:00-25:43 & inspect flagged frames",
+          "Verify captions, provenance & thumbnails",
+          "Write QA_REVIEW_v01.md & open ww2 PR"
+        ],
+        "note": "Master SHA-256 verified exact (7561d495...); audio_input and moving_video_input demonstrated via read_file probe on 00:0"
+      },
+      "taskKeys": [
+        "WW2:006"
+      ]
     },
     {
       "id": "J3663",
