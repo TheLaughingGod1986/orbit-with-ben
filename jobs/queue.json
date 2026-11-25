@@ -1,5 +1,5 @@
 {
-  "next_id": 3727,
+  "next_id": 3728,
   "jobs": [
     {
       "id": "J0001",
@@ -314920,6 +314920,11 @@
           "at": "2026-11-25T15:32Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: film 005 cut v03 and its package are built and need the review and the hand to Ben's watch (PASS, merge and awaits are not a worker's). Steps 1-7 of 8 done. Cut: studio-live ww2 film folder 07_Edit/ww2_005_st_nazaire_v03_mix.mp4 (14:46, 1080p, 21,269 frames, decodes clean, sha256 1a6b253f...; scratch copy /Volumes/MiniWork/scratch/J3432/out). Narration recut v03 per ruling J3715, 2.5 s ending hold and fade, no picture repeat under 60 s, 51.85% archive, mix -15.3 LUFS, peak -1.8 dBFS. Captions 214 cues and nine chapters; three thumbnails and the 168/320 sheet in the NAS 10_Thumbnail folder (FLOATING BOMB on NH 98510, 4 TONS INSIDE on A 952, ONE TARGET on C 3317A); package v01 text in 11_Upload-Package. Records: ww2-channel PR 158 (branch claudecode/J3432-vo-splice, worktree /Volumes/MiniWork/worktrees/J3432-ww2); PR 148 merged at 15:21Z. Tool checks and stills only (07_Edit/QA_TECHNICAL_v03.json): nobody has watched the motion or heard the sound. For the reviewer: (1) two photographs are held still, A 9804 at 0:42 for 6.7 s inside the first two minutes and A 23877 at 10:53 for 8.9 s (NO_MOVE in the build script; give them a slow move if their files allow); (2) plates G10 46.8 s (three stages), G8 30.6 s, G7 30.1 s, G12 29.5 s are long single shots; (3) the pumping station, winding houses and gate are spoken but not labelled on the photographs; (4) thumbnails, hook line and pinned question are worker drafts; (5) SOURCES R10 piece numbers unconfirmed, left out of the description. After a KEEP: merge PR 158, then jobs.py awaits J3432 with the NAS cut copied to the UAT folder, due 2026-11-30 20:00 UTC, airs Thu 3 Dec 17:00 London. Nothing uploaded or scheduled. Nothing running detached. Disk: Mini 9 GB free, MiniWork 11 GB."
+        },
+        {
+          "at": "2026-11-25T15:33Z",
+          "by": "relay",
+          "what": "condition verification queued: J3727"
         }
       ],
       "remaining_action": "Quality checks on the St Nazaire cut, then put it on Ben's board for his watch",
@@ -314945,7 +314950,13 @@
       },
       "taskKeys": [
         "WW2:005"
-      ]
+      ],
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-25T16:33:29+00:00",
+        "recheck_task": "J3727"
+      }
     },
     {
       "id": "J3433",
@@ -340402,6 +340413,37 @@
           "Open PR, clean up, finish and post report"
         ]
       }
+    },
+    {
+      "id": "J3727",
+      "title": "Verify condition for J3432",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3432: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3432 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-25T15:33Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T15:33Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Quality checks on the St Nazaire cut, then put it on Ben's board for his watch",
+      "kind": "review",
+      "recheck_of": "J3432",
+      "due": "2026-11-25T16:33:29+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
