@@ -335475,10 +335475,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "macbook",
-      "since": "2026-11-25T07:53Z",
-      "eta": "2026-11-25T09:53Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T07:52Z",
       "result": "",
@@ -335492,6 +335492,11 @@
           "at": "2026-11-25T07:53Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T07:53Z",
+          "by": "macbook",
+          "what": "released: MacBook worker run on claude ended (exit 1) with the job still open; picked up again next run; claude paused on the MacBook until 2026-11-25T09:53:42Z, so the next run uses the next agent in the chain"
         }
       ],
       "remaining_action": "Verify readiness: Review and lock HOS:127 v02 script, sources, Shorts & packaging once J3688 and v02 facts re-verification complete",
