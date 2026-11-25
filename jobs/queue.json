@@ -1,5 +1,5 @@
 {
-  "next_id": 3744,
+  "next_id": 3745,
   "jobs": [
     {
       "id": "J0001",
@@ -342176,6 +342176,40 @@
       "due": "2026-11-26T20:00:00Z",
       "kind": "assembly",
       "plain": "Rebuild film 004 v04 so all archive photos fill 16:9 edge-to-edge (fixing Ben's 0:15 change note) while keeping J3715 Cuts A+B"
+    },
+    {
+      "id": "J3744",
+      "title": "WW2 004: full private audiovisual QA of v04 master (full-bleed 16:9 + Cuts A+B) for Chief watch stage",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** Follows the `WW2:004` `v04` full-bleed 16:9 archive framing rebuild (Chief ruling `J3741`, answering Ben's `2026-11-25T13:21:30.216Z` board `change` verdict on `WW2-004` `v02`: `\"0:15 Image is not full screen, is cut like a short\"`, while preserving `J3715` Cuts A+B). Required before Chief stages `v04` on Ben's watch card `WW2:004` (`--prev WW2-004`, watch due **Sat 28 Nov 20:00Z**, planned air **Tue 1 Dec 17:00 London**).\n\n**Do (private audiovisual QA; requires real `audio_input,moving_video_input`; £0):**\n1. Inspect the `v04` master `ww2_004_torpedoes_v04.mp4` on NAS `studio-live` (verify exact SHA-256 matches the `v04` assembly PR) and verify `v02` and `v03` remain untouched.\n2. Watch and listen to 100% of the `v04` cut with demonstrated `audio_input,moving_video_input`, paying special attention to:\n   - **Ben's `0:15` change & film-wide 16:9 archive framing:** verify `0:00–0:35` (especially `0:15` `P01_04_C24` and `0:21` `P01_05_N11`) and all square/portrait archive shots fill 16:9 cleanly edge-to-edge with **zero** blurred sidebars / \"cut like a short\" pillarboxes and **zero** awkwardly chopped heads, faces, or subjects.\n   - **Both `J3715` cut joins:** Cut A (`~05:02.50`) and Cut B (`~05:33.29`) remain seamless in speech, music, and picture (zero clipped syllables, zero `G11B` flash, clean Part 3 card timing).\n   - **Technical & package checks:** `0` decode errors, `-14` to `-16 LUFS` / `<= -1.0 dBFS` true peak, `moov` faststart, `52.88%` verified archive share (`>=50%`, Rule 1), `0` new `<60 s` repeat regressions, synced `337`-cue `ww2_004_en-GB_v03.srt` captions, shifted chapters, `upload_authorized: false`.\n3. Record the audiovisual QA report in `07_Edit/QA_REVIEW_v04.md` on a `ww2-channel` PR and **park for Chief** to merge the `v04` assembly + QA PRs, copy checksum-verified `v04` to iCloud `WW2 UAT` (keeping `v02` intact), upload `ww2-004-v04` to the private R2 watch bucket, and update Ben's watch card `WW2:004` (`jobs.py awaits J3430 ... --prev WW2-004 --fixed ...`, due `2026-11-28 20:00` London, planned air `2026-12-01 17:00` London).\n\n**Guards.** £0 spend. No YouTube upload, schedule, retitle, or privacy change. Never claim to hear audio or watch motion without real demonstrated `audio_input,moving_video_input`. Clean up any temporary review proxy clips immediately after review (Mini disk `<7 GB` free — use NAS scratch for any proxy).\n",
+      "ref": "1a152ff",
+      "film": "WW2:004",
+      "stage": "edit",
+      "after": "J3743",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T20:15Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T20:15Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Wait for J3743, then run full audiovisual QA of WW2:004 v04 master and park for Chief watch staging",
+      "due": "2026-11-27T20:00:00Z",
+      "kind": "qa",
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ],
+      "plain": "Watch and listen to film 004 v04 end-to-end to verify Ben's 0:15 full-screen fix and Cuts A+B before Chief watch staging"
     }
   ],
   "focus": [
