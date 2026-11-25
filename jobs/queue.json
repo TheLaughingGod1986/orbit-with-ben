@@ -331405,9 +331405,14 @@
           "at": "2026-11-25T00:32Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T00:34Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done: Claimed J3652; reading J3597, J3591, J3604, J3598 and local branch codex/j3597-review"
         }
       ],
-      "remaining_action": "Verify readiness: Publish the completed review record through the approved route",
+      "remaining_action": "Verify J3597 waiting condition, local branch commit 1eb13065c3, and publication route",
       "kind": "review",
       "recheck_of": "J3597",
       "due": "2026-11-25T01:32:06+00:00",
@@ -331423,11 +331428,18 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-25T00:32Z",
+        "at": "2026-11-25T00:34Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect J3597 hold and local commit",
+          "Verify publication route and approval status",
+          "Record condition outcome and finish J3652"
+        ],
+        "note": "Claimed J3652; reading J3597, J3591, J3604, J3598 and local branch codex/j3597-review"
+      },
+      "taskKeys": [
+        "WW2:001"
+      ]
     }
   ],
   "focus": [
