@@ -335117,10 +335117,10 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-25T07:24Z",
+      "eta": "2026-11-25T09:24Z",
       "created_by": "gemini",
       "created_at": "2026-11-25T07:23Z",
       "result": "",
@@ -335129,12 +335129,25 @@
           "at": "2026-11-25T07:23Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-25T07:24Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Build HOS:137 v02 script, sources and Shorts off PR #769 (7ae40acf) resolving FIX-1..FIX-9 and open PR to main",
       "due": "2026-12-01T18:00:00Z",
       "kind": "script",
-      "plain": "Fix the 9 factual, timing and Shorts defects in the Accidental Inventions script, sources and Shorts to v02."
+      "plain": "Fix the 9 factual, timing and Shorts defects in the Accidental Inventions script, sources and Shorts to v02.",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T07:24Z",
+        "by": "macbook-2",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3686",
