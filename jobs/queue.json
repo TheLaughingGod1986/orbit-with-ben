@@ -1,5 +1,5 @@
 {
-  "next_id": 3694,
+  "next_id": 3695,
   "jobs": [
     {
       "id": "J0001",
@@ -315310,6 +315310,11 @@
           "at": "2026-11-23T17:51Z",
           "by": "claude",
           "what": "condition recorded; next verification 2026-11-25T09:00:00Z"
+        },
+        {
+          "at": "2026-11-25T09:04Z",
+          "by": "relay",
+          "what": "condition verification queued: J3694"
         }
       ],
       "remaining_action": "Read the retention graph once Studio shows it, then propose cuts at the steepest drops",
@@ -315319,7 +315324,8 @@
       "hold": {
         "type": "date",
         "condition": "Studio shows the audience retention graph for ek9F61FVYqY (it said 'not ready yet, up to two days' on 23 Nov)",
-        "check_at": "2026-11-25T09:00:00Z"
+        "check_at": "2026-11-25T10:04:44+00:00",
+        "recheck_task": "J3694"
       }
     },
     {
@@ -336079,6 +336085,38 @@
         "WW2:001"
       ],
       "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/issues/954#issuecomment-7157670925"
+    },
+    {
+      "id": "J3694",
+      "title": "Verify condition for J3442",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3442: Studio shows the audience retention graph for ek9F61FVYqY (it said 'not ready yet, up to two days' on 23 Nov). Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3442 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-25T09:04Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T09:04Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Read the retention graph once Studio shows it, then propose cuts at the steepest drops",
+      "kind": "review",
+      "recheck_of": "J3442",
+      "mini_only": true,
+      "due": "2026-11-25T10:04:44+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
