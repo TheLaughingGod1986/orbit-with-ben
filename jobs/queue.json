@@ -332624,9 +332624,14 @@
           "at": "2026-11-25T02:38Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T02:39Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Verify HOS 128 v03 diff/hashes/default gate:episode and decide Chief script lock + VO queueing.",
+      "remaining_action": "Inspecting J3630 review, J3659 delivery PR, and J3547",
       "due": "2026-12-01T18:00:00Z",
       "kind": "review",
       "plain": "Verify HOS 128 v03 resolves all 6 J3630 blocking fixes, then decide KEEP/lock, merge PR, close J3547, and queue VO.",
@@ -332640,12 +332645,20 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T02:38Z",
+        "of": 5,
+        "at": "2026-11-25T02:39Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect J3630 review and v03 PR",
+          "Verify FIX-1..6, polishes, hashes, and claims",
+          "Run review:script, default gate:episode, and check_all.sh",
+          "Record Chief KEEP/FIX decision and execute merge/queue actions",
+          "Post reports and finish J3660"
+        ]
+      },
+      "taskKeys": [
+        "HOS:128"
+      ]
     }
   ],
   "focus": [
