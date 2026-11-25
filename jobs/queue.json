@@ -337089,13 +337089,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T10:48Z",
-      "eta": "2026-11-25T12:48Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T10:19Z",
-      "result": "",
+      "result": "Chief ruling: condition MET after Acting Chief (gemini) verified and merged green HOS PR #780 (head ba026b48, merge d58d290e, diff-identical to Codex 91c93f44, privacy-clean, all 6 CI checks SUCCESS). Reopened J3519 for final step (safe shared HOS main pull, PGOPTIONS read-only channel:audit proof, and J3512 private-upload dry-run proof; no upload/schedule/DB write/spend). J3530 can skip PR #780.",
       "history": [
         {
           "at": "2026-11-25T10:19Z",
@@ -337141,6 +337141,11 @@
           "at": "2026-11-25T10:48Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T10:48Z",
+          "by": "gemini",
+          "what": "done: Chief ruling: condition MET after Acting Chief (gemini) verified and merged green HOS PR #780 (head ba026b48, merge d58d290e, diff-identical to Codex 91c93f44, privacy-clean, all 6 CI checks SUCCESS). Reopened J3519 for final step (safe shared HOS main pull, PGOPTIONS read-only channel:audit proof, and J3512 private-upload dry-run proof; no upload/schedule/DB write/spend). J3530 can skip PR #780."
         }
       ],
       "remaining_action": "Nothing left",
@@ -337164,7 +337169,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/780 (d58d290e)"
     },
     {
       "id": "J3702",
