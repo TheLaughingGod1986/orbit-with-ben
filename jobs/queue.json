@@ -339677,10 +339677,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T14:59Z",
+      "eta": "2026-11-25T15:59Z",
       "created_by": "claude",
       "created_at": "2026-11-25T14:30Z",
       "result": "",
@@ -339704,12 +339704,25 @@
           "at": "2026-11-25T14:59Z",
           "by": "gemini",
           "what": "reopened: Acting Chief closing J3715 after verifying ww2 PR #154/#155 and queuing follow-ups J3721->J3722 (004) and J3723->J3724 (006)"
+        },
+        {
+          "at": "2026-11-25T14:59Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Check films 004-006's first eight minutes and propose at most two cuts each",
       "due": "2026-11-26T18:00:00Z",
       "kind": "review",
-      "urgent": 7
+      "urgent": 7,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T14:59Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3716",
