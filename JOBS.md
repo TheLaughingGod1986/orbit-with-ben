@@ -111,7 +111,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3731 | macbook | open | – | – | for claudecode · MacBook: publish (or confirm lost) the unpushed Battle of the Bulge work for J3487 |  |
 | J3735 | mini | blocked | claudecode | – | review · Verify condition for J2886 |  |
 | J3736 | mini | claimed | gemini | 2026-11-25T21:21Z | 011 picture · assembly · HOS 011 Anaesthesia: £0 Flow pass-1 price pass (66 plates), P5:16b fix & guarded runner build | J3734 |
-| J3737 | mini | claimed | claudecode | 2026-11-25T21:18Z | 013 picture · review · HOS 013 Darwin & Wallace: non-producer review & port of J2652 v03f-r4 (ad52a2dc) to main | J2652 |
+| J3737 | mini | blocked | claudecode | – | 013 picture · review · HOS 013 Darwin & Wallace: non-producer review & port of J2652 v03f-r4 (ad52a2dc) to main | J2652 |
 | J3738 | mini | open | – | – | 013 picture · script · HOS 013 Darwin & Wallace: £0 retake prompt & price board for 8 confirmed RETAKE plates | J2529 |
 | J3739 | mini | open (after J3678) | – | – | 137 vo · vo · HOS 137 Accidental Inventions: long VO (5 parts) & Shorts S01/S02 VO from locked v02 scripts | J3734 |
 | J3740 | mini | open | – | – | 011 script · script · HOS 011 Anaesthesia: £0 Shorts scripts v03 (16-19 s) & thumbnail brief | J3734 |

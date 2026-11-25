@@ -341565,13 +341565,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-25T19:18Z",
-      "eta": "2026-11-25T21:18Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T19:17Z",
-      "result": "",
+      "result": "parked for Chief: non-producer review of ad52a2dc finds the 3 card items fixed and the recomputed timing checks holding; port is HOS PR 787 (041a2c45), check_all 10/10 PASS locally. Chief to confirm CI, merge PR 787 and close J2652 as done. Not merged, J2652 not closed. £0.",
       "history": [
         {
           "at": "2026-11-25T19:17Z",
@@ -341607,6 +341607,11 @@
           "at": "2026-11-25T19:22Z",
           "by": "claudecode",
           "what": "step 4 of 5 done: Ported as HOS PR 787 (041a2c45); check_all 10/10 PASS locally"
+        },
+        {
+          "at": "2026-11-25T19:22Z",
+          "by": "claudecode",
+          "what": "blocked: parked for Chief: non-producer review of ad52a2dc finds the 3 card items fixed and the recomputed timing checks holding; port is HOS PR 787 (041a2c45), check_all 10/10 PASS locally. Chief to confirm CI, merge PR 787 and close J2652 as done. Not merged, J2652 not closed. £0."
         }
       ],
       "remaining_action": "Chief to confirm CI on HOS PR 787, merge it and close J2652",
