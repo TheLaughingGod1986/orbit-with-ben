@@ -334729,13 +334729,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "macbook-2",
       "since": "2026-11-25T06:42Z",
-      "eta": "2026-11-25T08:42Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-25T06:40Z",
-      "result": "",
+      "result": "Waiting for: J3680 (Field Order History analytics read ek9F61FVYqY 48h) finishes and imports 2026-11-22..2026-11-23 Studio reach, CTR, and Test & Compare numbers into channels/ww2/05_Analytics/READS.md and board.json",
       "history": [
         {
           "at": "2026-11-25T06:40Z",
@@ -334746,9 +334746,19 @@
           "at": "2026-11-25T06:42Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T06:46Z",
+          "by": "macbook-2",
+          "what": "blocked: Waiting for: J3680 (Field Order History analytics read ek9F61FVYqY 48h) finishes and imports 2026-11-22..2026-11-23 Studio reach, CTR, and Test & Compare numbers into channels/ww2/05_Analytics/READS.md and board.json"
+        },
+        {
+          "at": "2026-11-25T06:46Z",
+          "by": "macbook-2",
+          "what": "condition recorded; next verification 2026-11-25T08:45:00Z"
         }
       ],
-      "remaining_action": "Update the channel's rules from what Mulberry Harbours: D-Day's Floating Ports's first two days taught us",
+      "remaining_action": "After J3680 imports ek9F61FVYqY 48h Studio numbers into READS.md and board.json, run the Field Order History rules review",
       "due": "2026-11-25T05:00:31Z",
       "kind": "review",
       "plain": "Update the channel's rules from what Mulberry Harbours: D-Day's Floating Ports's first two days taught us",
@@ -334759,6 +334769,11 @@
         "by": "macbook-2",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "J3680 (Field Order History analytics read ek9F61FVYqY 48h) finishes and imports 2026-11-22..2026-11-23 Studio reach, CTR, and Test & Compare numbers into channels/ww2/05_Analytics/READS.md and board.json",
+        "check_at": "2026-11-25T08:45:00Z"
       }
     },
     {
