@@ -336109,6 +336109,11 @@
           "at": "2026-11-25T09:04Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-25T09:04Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-25T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Verify readiness: Read the retention graph once Studio shows it, then propose cuts at the steepest drops",
@@ -336116,7 +336121,15 @@
       "recheck_of": "J3442",
       "mini_only": true,
       "due": "2026-11-25T10:04:44+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
