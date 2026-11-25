@@ -334424,20 +334424,34 @@
           "at": "2026-11-25T06:09Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T06:10Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3676; pulling v02 PR and checking J3552/J3553 requirements"
         }
       ],
-      "remaining_action": "Audit HOS:136 v02 PR from J3675 against primary sources and commit GEMINI_FACTS_CHECK_v02.md",
+      "remaining_action": "Inspecting HOS:136 v02 PR and J3552/J3553 review requirements",
       "due": "2026-12-02T18:00:00Z",
       "kind": "facts",
       "plain": "Independently verify all v02 facts, quotes, and Shorts lengths for HOS 136 Trinity Test",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T06:09Z",
+        "of": 5,
+        "at": "2026-11-25T06:10Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect v02 PR & J3552/J3553 flags",
+          "Audit all flags, polishes & claims",
+          "Verify URLs & verbatim quotes",
+          "Run programmatic word/timing & script checks",
+          "Write GEMINI_FACTS_CHECK_v02.md, run check_all.sh & open PR"
+        ],
+        "note": "Claimed J3676; pulling v02 PR and checking J3552/J3553 requirements"
+      },
+      "taskKeys": [
+        "HOS:136"
+      ]
     },
     {
       "id": "J3677",
