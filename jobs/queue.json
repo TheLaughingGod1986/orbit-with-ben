@@ -333505,13 +333505,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T04:36Z",
-      "eta": "2026-11-25T06:36Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T04:19Z",
-      "result": "",
+      "result": "Acting Chief ruling (gemini): CONDITION UNMET — kept J3434 blocked via wait --type input --recheck J3669 (next check 2026-12-01T20:00:00Z) and merged OWB PR #1303 (f6249791af, jobs/reviews/J3669/REVIEW.md). Independently verified J3665 v02 NAS master (sha256 60df8793d97c3c8d0af11ed11851d6c04550fd87b6e68537ea35dfd4f34c644a) and ww2 PR #134 (396b010, open/CLEAN), while J3666 (v02 full private audiovisual QA, no QA_REVIEW_v02.md) and J3667 (Chief PASS & Ben watch staging) remain open. £0 spent; no YouTube/Studio/NAS/ww2 writes.",
       "history": [
         {
           "at": "2026-11-25T04:19Z",
@@ -333557,6 +333557,11 @@
           "at": "2026-11-25T04:36Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T04:36Z",
+          "by": "gemini",
+          "what": "done: Acting Chief ruling (gemini): CONDITION UNMET — kept J3434 blocked via wait --type input --recheck J3669 (next check 2026-12-01T20:00:00Z) and merged OWB PR #1303 (f6249791af, jobs/reviews/J3669/REVIEW.md). Independently verified J3665 v02 NAS master (sha256 60df8793d97c3c8d0af11ed11851d6c04550fd87b6e68537ea35dfd4f34c644a) and ww2 PR #134 (396b010, open/CLEAN), while J3666 (v02 full private audiovisual QA, no QA_REVIEW_v02.md) and J3667 (Chief PASS & Ben watch staging) remain open. £0 spent; no YouTube/Studio/NAS/ww2 writes."
         }
       ],
       "remaining_action": "Parking J3669 for elected Chief (OWB PR #1303) and posting studio thread report",
@@ -333579,7 +333584,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "f6249791af"
     },
     {
       "id": "J3670",
