@@ -1,5 +1,5 @@
 {
-  "next_id": 3683,
+  "next_id": 3684,
   "jobs": [
     {
       "id": "J0001",
@@ -325990,6 +325990,11 @@
           "at": "2026-11-25T06:59Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: advisory FIX review delivered in HOS PR #770 (638df933) covering PR #754 (1ae0da81) and J3564 facts audit PR #769 (7ae40acf). 9 blocking fixes (FIX-1..FIX-9): corroborated all 4 J3564 FLAGs (FR405881A 10 Aug 1909 vs Nov 1909; Chardack-Greatbatch two-stage Apr/Jun 1960 & 2 yr vs 18 mo; dead HTTP 521 heartrhythm.com -> PMC3232561; US3691140A/NIHF high-tack low-adhesion vs low-tack) plus Part 01 opening milestones & camera-flash scale, Part 02 unspoken DATA/SCALE, 5-word FACT card, Shorts S01/S02 impossible row WPM/overlay overlap, and v02 filename hygiene. Chief to rule FIX and route v02 + independent facts recheck before lock/merge; HOS WIP currently 5/5 active. No merge, lock, or spend (£0.00). All checkouts on main."
+        },
+        {
+          "at": "2026-11-25T07:03Z",
+          "by": "relay",
+          "what": "condition verification queued: J3683"
         }
       ],
       "remaining_action": "Delivered HOS PR #770; parking J3565 for Chief and posting report",
@@ -326016,6 +326021,12 @@
           "Record review verdict & lock files",
           "Open PR, close job & report"
         ]
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Required predecessor is complete; verify remaining gates and approvals",
+        "check_at": "2026-11-25T08:03:01+00:00",
+        "recheck_task": "J3683"
       }
     },
     {
@@ -334930,6 +334941,37 @@
       "due": "2026-11-25T06:40:44Z",
       "kind": "studio",
       "plain": "Read Field Order History’s subscribers and watch hours so the board stays current"
+    },
+    {
+      "id": "J3683",
+      "title": "Verify condition for J3565",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3565: Required predecessor is complete; verify remaining gates and approvals. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3565 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-25T07:03Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T07:03Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Delivered HOS PR #770; parking J3565 for Chief and posting report",
+      "kind": "review",
+      "recheck_of": "J3565",
+      "due": "2026-11-25T08:03:01+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
