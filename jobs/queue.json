@@ -322546,9 +322546,14 @@
           "at": "2026-11-25T10:52Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Read-only channel:audit exits 0 (75 videos, 0 errors); J3512 exact package --dry-run exits 0 (ok:true, private, publishAt null, Shorts gate PASS); check_all.sh ALL CHECKS PASS"
+        },
+        {
+          "at": "2026-11-25T10:53Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Posted thread report on Studio thread #954"
         }
       ],
-      "remaining_action": "Post thread line and mark J3519 done",
+      "remaining_action": "Complete J3519",
       "due": "2026-11-25T09:00:00Z",
       "kind": "assembly",
       "mini_only": true,
@@ -322559,16 +322564,16 @@
         "HOS:010"
       ],
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-25T10:52Z",
+        "at": "2026-11-25T10:53Z",
         "by": "gemini",
         "plan": [
           "Verify HOS main and Prisma 7.10.1 runtime",
           "Prove read-only channel:audit, J3512 dry-run and tests",
           "Post thread report and close J3519"
         ],
-        "note": "Read-only channel:audit exits 0 (75 videos, 0 errors); J3512 exact package --dry-run exits 0 (ok:true, private, publishA"
+        "note": "Posted thread report on Studio thread #954"
       }
     },
     {
