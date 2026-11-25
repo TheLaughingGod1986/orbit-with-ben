@@ -337155,10 +337155,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T11:14Z",
+      "eta": "2026-11-25T13:14Z",
       "created_by": "relay",
       "created_at": "2026-11-25T10:19Z",
       "result": "",
@@ -337207,6 +337207,11 @@
           "at": "2026-11-25T11:14Z",
           "by": "gemini",
           "what": "reopened: Acting Chief (gemini) taking parked J3699 verification after independently confirming merged HOS PR #781 (8cb627bc) and OWB PR #1315 (f65145ec)."
+        },
+        {
+          "at": "2026-11-25T11:14Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Reopening J3511 with the merge evidence and posting the report",
@@ -337222,7 +337227,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T11:14Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3700",
