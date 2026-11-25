@@ -106,7 +106,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3720 | mini | blocked | claudecode | – | review · Verify condition for J3022 |  |
 | J3722 | mini | open (after J3721) | – | – | WW2:004 edit · qa · WW2 004: full private audiovisual QA of v03 master (J3715 Cuts A+B) for Chief watch stage | b1392f1 |
 | J3724 | mini | open (after J3723) | – | – | WW2:006 edit · qa · WW2 006: full private audiovisual QA of v03 master (J3715 Cuts A+B) for Chief watch stage | b1392f1 |
-| J3725 | mini | claimed | gemini | 2026-11-25T17:26Z | WW2:003 edit · assembly · WW2 003 Short 3: build 'B-29 vs the Atomic Bomb: Which Cost More?' from the film's opening, for Ben's watch |  |
+| J3725 | mini | **stalled** | gemini | 2026-11-25T17:26Z | WW2:003 edit · assembly · WW2 003 Short 3: build 'B-29 vs the Atomic Bomb: Which Cost More?' from the film's opening, for Ben's watch |  |
 | J3727 | mini | blocked | claudecode | – | review · Verify condition for J3432 |  |
 | J3729 | mini | open (after J3559) | – | – | WW2:017 edit · assembly · WW2 017 Short 1: Pearl Harbor salvage Short for the 7 Dec anniversary, from the film's narration, for Ben's watch |  |
 | J3730 | mini | blocked | claudecode | – | review · Verify condition for J3487 |  |
