@@ -332938,9 +332938,14 @@
           "at": "2026-11-25T03:36Z",
           "by": "gemini",
           "what": "step 0 of 6 done: Master SHA-256 verified exact (7561d495...); audio_input and moving_video_input demonstrated via read_file probe on 00:00-00:15."
+        },
+        {
+          "at": "2026-11-25T03:37Z",
+          "by": "gemini",
+          "what": "step 1 of 6 done: Master SHA-256 & ffprobe verified; audio_input & moving_video_input registered; lossless 18-segment split ready (1542.854s continuous)."
         }
       ],
-      "remaining_action": "Register demonstrated audio/video capabilities and split master into lossless continuous segments",
+      "remaining_action": "Watch and listen continuously to Part 1 (00:00-09:08, seg_00 through seg_05)",
       "due": "2026-11-28T12:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -332957,9 +332962,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-11-25T03:36Z",
+        "at": "2026-11-25T03:37Z",
         "by": "gemini",
         "plan": [
           "Verify master & register capabilities",
@@ -332969,7 +332974,7 @@
           "Verify captions, provenance & thumbnails",
           "Write QA_REVIEW_v01.md & open ww2 PR"
         ],
-        "note": "Master SHA-256 verified exact (7561d495...); audio_input and moving_video_input demonstrated via read_file probe on 00:0"
+        "note": "Master SHA-256 & ffprobe verified; audio_input & moving_video_input registered; lossless 18-segment split ready (1542.85"
       },
       "taskKeys": [
         "WW2:006"
