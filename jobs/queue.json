@@ -330071,9 +330071,14 @@
           "at": "2026-11-25T07:42Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T07:42Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Reviewing HOS:127 package-first scoring, v01 script draft, verified sources and Shorts for Chief lock",
+      "remaining_action": "Inspecting HOS PR #756 and J3621 independent facts audit PR #771",
       "due": "2026-12-11T18:00:00Z",
       "kind": "review",
       "plain": "Review and Chief-lock HOS 127 package-first scoring, v01 script draft, verified sources and Shorts (PR #756)",
@@ -330087,12 +330092,20 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-25T07:42Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect PR #756 & J3621 facts audit",
+          "Audit package-first titles, thumbs & Shorts",
+          "Review v01 script, sources & J3621 findings",
+          "Apply Chief ruling (merge or send-back)",
+          "Post desk & thread reports and close J3622"
+        ]
+      },
+      "taskKeys": [
+        "HOS:127"
+      ]
     },
     {
       "id": "J3623",
