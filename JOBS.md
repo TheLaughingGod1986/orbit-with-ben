@@ -108,7 +108,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3742 | mini | open (after J3678) | – | – | 011 vo · vo · HOS 011 Anaesthesia: Shorts S01 & S02 voiceover from locked v03 scripts | J3740 |
 | J3744 | mini | open (after J3743) | – | – | WW2:004 edit · qa · WW2 004: full private audiovisual QA of v04 master (full-bleed 16:9 + Cuts A+B) for Chief watch stage | 1a152ff |
 | J3745 | mini | blocked | gemini | – | WW2:005 edit · qa · WW2 005: full private audiovisual QA of v03 master (J3715 Cuts A+B) for Chief watch stage | 27eb9df |
-| J3747 | mini | open | – | – | 013 picture · video · HOS 013 Darwin & Wallace: mint take-2 retakes for 8 confirmed RETAKE rows (Option A, 800 Flow cr max, before 5 Dec) | J3738 |
+| J3747 | mini | claimed | claudecode | 2026-11-26T00:28Z | 013 picture · video · HOS 013 Darwin & Wallace: mint take-2 retakes for 8 confirmed RETAKE rows (Option A, 800 Flow cr max, before 5 Dec) | J3738 |
 | J3748 | mini | blocked | gemini | – | WW2:005 edit · qa · WW2 005: targeted audiovisual check of v04 master (six J3746 changes) before Chief watch stage | 9562103 |
 | J3750 | macbook | claimed | macbook-2 | 2026-11-25T22:55Z | for macbook-2 · facts · MacBook slot 2: inspect and publish (or confirm lost) unpushed J3487 Battle of the Bulge work |  |
 
