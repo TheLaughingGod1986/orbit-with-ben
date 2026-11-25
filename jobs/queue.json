@@ -342396,9 +342396,14 @@
           "at": "2026-11-25T20:55Z",
           "by": "gemini",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-25T20:56Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Master SHA-256 1a6b253f8e57185950749568e8d412d2a527966348ec8420d6d71458f7b5cf17 verified (1920x1080 24fps 21269 frames 886.21s AAC 48kHz stereo); audio_input & moving_video_input demonstrated via read_file probes"
         }
       ],
-      "remaining_action": "Verifying NAS v03 master hash and probing session audio/video input capability",
+      "remaining_action": "Watching and listening to full v03 cut chunks 0:00-7:30 (splices 1-8, A 9804 freeze, G5/G6/G7/G11/G16)",
       "due": "2026-11-28T20:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -342415,9 +342420,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-25T20:55Z",
+        "at": "2026-11-25T20:56Z",
         "by": "gemini",
         "plan": [
           "Verify master & test AV input",
@@ -342425,7 +342430,8 @@
           "Review 7:30-14:46 AV chunks",
           "Check captions, chapters & thumbnails",
           "Commit QA review PR & report"
-        ]
+        ],
+        "note": "Master SHA-256 1a6b253f8e57185950749568e8d412d2a527966348ec8420d6d71458f7b5cf17 verified (1920x1080 24fps 21269 frames 8"
       },
       "taskKeys": [
         "WW2:005"
