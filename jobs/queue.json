@@ -341593,16 +341593,21 @@
           "at": "2026-11-25T19:33Z",
           "by": "gemini",
           "what": "step 4 of 5 done: Built PICTURE_PLAN_v04, parts v04, PROMPT_AUDIT_v04 (67/67 clean, P5:16b resolved to dedicated moving plate), PRICE_REVIEW_v04, PASS1_SCOPE_J3736, guarded runner _mint_flow_v01_pass1.py, and tests/test_hos011_pass1_runner.py"
+        },
+        {
+          "at": "2026-11-25T19:34Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: All checks PASS (66+10 unit tests, check_all.sh 12/12 PASS); opened HOS PR #788 parked for Chief price PASS / mint GO; £0 / 0 credits spent"
         }
       ],
-      "remaining_action": "Running unit tests, check_all.sh, and opening HOS PR",
+      "remaining_action": "Done — parked on HOS PR #788 for Chief price PASS / mint GO",
       "due": "2026-11-26T18:00:00Z",
       "kind": "assembly",
       "plain": "Price 011's 66 plates, fix P5:16b reuse, and build the guarded Flow runner at £0",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-25T19:33Z",
+        "at": "2026-11-25T19:34Z",
         "by": "gemini",
         "plan": [
           "Audit 66 Flow rows and P5:16b",
@@ -341611,7 +341616,7 @@
           "Build and unit-test guarded runner",
           "Run check_all.sh and open HOS PR"
         ],
-        "note": "Built PICTURE_PLAN_v04, parts v04, PROMPT_AUDIT_v04 (67/67 clean, P5:16b resolved to dedicated moving plate), PRICE_REVI"
+        "note": "All checks PASS (66+10 unit tests, check_all.sh 12/12 PASS); opened HOS PR #788 parked for Chief price PASS / mint GO; £"
       },
       "taskKeys": [
         "HOS:011"
