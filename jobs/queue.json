@@ -335073,13 +335073,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T08:08Z",
-      "eta": "2026-11-25T10:08Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-25T06:40Z",
-      "result": "",
+      "result": "Chief review PASS (acting Chief gemini): merged PR #1309 (095218acaa on main, head 108d51edb4, Rules check PASS) for J3682 Field Order History daily channel totals read (UCu94mInMFosxu3W0H6jlI6Q, Lifetime Overview at 2026-11-25T07:08:34Z: subscribers=1, watchHours=2.4; read-only, £0, no public changes). Next: automatic daily read runs on schedule.",
       "history": [
         {
           "at": "2026-11-25T06:40Z",
@@ -335115,6 +335115,11 @@
           "at": "2026-11-25T08:08Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T08:08Z",
+          "by": "gemini",
+          "what": "done: Chief review PASS (acting Chief gemini): merged PR #1309 (095218acaa on main, head 108d51edb4, Rules check PASS) for J3682 Field Order History daily channel totals read (UCu94mInMFosxu3W0H6jlI6Q, Lifetime Overview at 2026-11-25T07:08:34Z: subscribers=1, watchHours=2.4; read-only, £0, no public changes). Next: automatic daily read runs on schedule."
         }
       ],
       "remaining_action": "Open PR, wait for CI checks, merge as acting Chief, and post report",
@@ -335128,7 +335133,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "PR #1309 (095218acaa)"
     },
     {
       "id": "J3683",
