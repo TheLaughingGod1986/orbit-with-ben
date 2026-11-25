@@ -1,5 +1,5 @@
 {
-  "next_id": 3714,
+  "next_id": 3715,
   "jobs": [
     {
       "id": "J0001",
@@ -339448,6 +339448,52 @@
           "Reopen or re-hold, and report"
         ],
         "note": "Held job kept blocked with the real unmet condition: the Chief's merge and ruling on WW2 pull request 151"
+      }
+    },
+    {
+      "id": "J3714",
+      "title": "WW2 film 3 (B-29): two pre-air trims in Studio editor (01:33.70-03:03.00, 06:51.90-07:24.70), then chapters, captions and end screen",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why (Ben, Wed 25 Nov 2026 ~13:45 London, in chat: \"Please make the changes\")**, in reply to the acting Chief's (Claude's) answer to \"Taking the learning from 1 and 2 what should we change in 3\". Ben had OK'd film 003 v01 in full (J3205). These two trims are the only change.\n- Pilot 1 lost its suggested viewers at about 2:06, where a background detour began.\n- Pilot 1 Cut 1 (J3442) removed a dense run of figures.\n- Film 003 has the same shape: background from 1:34, and the engine-fire story not until 7:46.\n\nThe plan, captions, chapters and description are in ww2-channel PR #152 (merged): `02_Video-Projects/003_Why-B29-Superfortress-Cost-More-Than-Atomic-Bomb/07_Edit/TRIM_PLAN_v01.md`. Follow it exactly.\n\n**Do (Mini, Field Order History Studio on 9224, Studio editor; `RqYjADxvJy8` is Private, scheduled Sat 28 Nov 17:00 London):**\n1. **Record the before state:**\n   - length (25:50);\n   - the description's chapters;\n   - the end screen (pilot 2 `qfc6EBStOfo` + Subscribe, 25:30:08-25:50:09);\n   - the en-GB caption track;\n   - the saved three-way thumbnail Test & Compare;\n   - the schedule.\n2. **Find the exact points.** On the NAS master `07_Edit/v01/ww2_003_b29_superfortress_v01.mp4` (sha256 `876736a1...`), run `ffmpeg silencedetect` around each point. Put each point in the middle of the silence, moving it at most 0.3 s.\n   - Cut B's end is the latest silent frame at or before 07:24.71. Never clip \"Every\".\n   - Note the music level on each side of each join.\n3. **In one editor session, on the original timeline, cut:**\n   - **A: 01:33.70 to 03:03.00** (89.30 s). Joined: \"...and what it got for the money.\" then \"It had a long, thin wing...\".\n   - **B: 06:51.90 to 07:24.70** (32.80 s). Joined: \"...an industry from nothing to make them.\" then \"Every B-29 was made of more than forty thousand parts...\".\n   - If the editor shows a shifted timeline after cut A, B becomes 05:22.60 to 05:55.40.\n   - Save. New length is about 23:48.\n4. **If the points you cut differ from the plan,** run `python3 07_Edit/build_trim_package_003_v01.py <A start-end> <B start-end>` in the film folder. It rewrites `11_Upload-Package/ww2_003_en-GB_v02.srt` and prints the chapters to use. Then update `DESCRIPTION_v02.txt` to match.\n5. **After the edit finishes processing:**\n   - Paste `DESCRIPTION_v02.txt` as the description: new chapters, and the credits for the two dropped photos removed.\n   - If the en-GB captions no longer line up after 1:34, replace the track with v02.\n   - Put the end screen back in the last 20 s, pointing to pilot 2 and Subscribe.\n6. **Read everything back in Studio and the Data API:**\n   - duration;\n   - description chapters;\n   - captions;\n   - end screen;\n   - schedule still `2026-11-28T17:00:00Z` and Private;\n   - Test & Compare still saved;\n   - title and thumbnails unchanged.\n7. **Records** (ww2-channel, one PR for the Chief):\n   - `07_Edit/TRIM_RECEIPT_v01.md`: the points actually cut, silence measurements, music levels at each join, the edit's processed time, and the before and after state.\n   - `status.json`: release duration, captions and end screen.\n   - Add a `studio/LEARNINGS.md` line with the prediction from the plan: strangers' retention drops less from 1:00 to 5:00 than pilot 1's 11 points. Film 003's 48-hour read (30 Nov 17:05Z) checks it.\n   - Also make two 20-second clips around the joins (01:23-01:43 and 05:12-05:32 on the new timeline), rendered locally from the master with the same cuts. Save them as `07_Edit/v01_trim/join_A.mp4` and `join_B.mp4` on the NAS, so Ben can listen if he wants. No worker can hear audio.\n\n**Must be processed and read back by Fri 27 Nov 12:00 UTC.** If the editor is still processing at Fri 10:00, say so on this job.\n\n**Guards.**\n- Studio editor only. Never re-upload, Replace or delete the video. Never change the schedule, privacy, title, tags or thumbnails.\n- If Studio refuses to edit while the thumbnail test is saved, stop and block for the Chief. Never delete the test.\n- Never play a public video.\n- Commit records locally and publish once at the end. £0.",
+      "ref": "",
+      "film": "WW2:003",
+      "stage": "",
+      "after": "",
+      "eta_min": 60,
+      "status": "blocked",
+      "by": "claude",
+      "since": "",
+      "eta": "",
+      "created_by": "claude",
+      "created_at": "2026-11-25T14:02Z",
+      "result": "Waiting for: Start after pilot 2's retention read (J3704, Thu 26 Nov 17:05Z), so the Chief can fold in anything it shows; the trims are approved either way.",
+      "history": [
+        {
+          "at": "2026-11-25T14:02Z",
+          "by": "claude",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-25T14:02Z",
+          "by": "claude",
+          "what": "blocked: Waiting for: Start after pilot 2's retention read (J3704, Thu 26 Nov 17:05Z), so the Chief can fold in anything it shows; the trims are approved either way."
+        },
+        {
+          "at": "2026-11-25T14:02Z",
+          "by": "claude",
+          "what": "condition recorded; next verification 2026-11-26T17:30:00Z"
+        }
+      ],
+      "remaining_action": "Make film 3's two pre-air trims",
+      "due": "2026-11-27T12:00:00Z",
+      "kind": "studio",
+      "mini_only": true,
+      "hold": {
+        "type": "date",
+        "condition": "Start after pilot 2's retention read (J3704, Thu 26 Nov 17:05Z), so the Chief can fold in anything it shows; the trims are approved either way.",
+        "check_at": "2026-11-26T17:30:00Z",
+        "release": "auto"
       }
     }
   ],
