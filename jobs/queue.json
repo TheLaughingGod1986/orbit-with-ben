@@ -343847,10 +343847,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-25T23:32Z",
+      "eta": "2026-11-26T01:32Z",
       "created_by": "gemini",
       "created_at": "2026-11-25T23:29Z",
       "result": "",
@@ -343864,6 +343864,11 @@
           "at": "2026-11-25T23:31Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred claudecode): Claude out of usage (Claude said it's out of usage until 2026-11-26T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: claudecode on its default"
+        },
+        {
+          "at": "2026-11-25T23:32Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Write RETAKE_BOARD_v02.json and clean Nano Banana 2 start-still prompts for rows 49 and 63 (£0, park for Chief GO)",
@@ -343877,7 +343882,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T23:32Z",
+        "by": "claudecode",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
