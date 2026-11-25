@@ -326010,9 +326010,14 @@
           "at": "2026-11-25T07:03Z",
           "by": "relay",
           "what": "condition verification queued: J3683"
+        },
+        {
+          "at": "2026-11-25T07:24Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-12-04T18:00:00Z"
         }
       ],
-      "remaining_action": "Delivered HOS PR #770; parking J3565 for Chief and posting report",
+      "remaining_action": "Await HOS:137 v02 chain J3685 (script FIX-1..FIX-9) -> J3686 (facts) -> J3687 (Chief lock & J3565 closure, due 2026-12-08 18:00 UTC)",
       "due": "2026-12-08T18:00:00Z",
       "kind": "review",
       "plain": "Review and lock the Accidental Inventions package, 7-9 minute script, sources, and two Shorts.",
@@ -326038,10 +326043,12 @@
         ]
       },
       "hold": {
-        "type": "dependency",
-        "condition": "Required predecessor is complete; verify remaining gates and approvals",
-        "check_at": "2026-11-25T08:03:01+00:00",
-        "recheck_task": "J3683"
+        "type": "input",
+        "condition": "Acting Chief (gemini) J3683 ruling: Condition UNMET for v01 review reopen; formal FIX ruling issued on HOS:137 v01 (HOS PR #770 merged ababb407; OWB PR #1308 merged b3a2113e55). J3564 (PR #769 7ae40acf, 4 FLAGs) and J3565 advisory FIX review (FIX-1..FIX-9) complete; PRs #747/#754/#769 remain open/unmerged. Queued v02 revision chain J3685 (script, due 1 Dec) -> J3686 (facts, due 4 Dec) -> J3687 (Chief lock, due 8 Dec, closes J3565 on KEEP). HOS WIP 5/5 active; £0 / no VO or picture spend.",
+        "check_at": "2026-12-04T18:00:00Z",
+        "last_recheck": "J3683",
+        "checked_at": "2026-11-25T07:24:45+00:00",
+        "checked_by": "gemini"
       }
     },
     {
