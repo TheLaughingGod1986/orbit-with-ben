@@ -342199,10 +342199,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "claudecode",
-      "since": "2026-11-25T21:05Z",
-      "eta": "2026-11-25T23:05Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T20:14Z",
       "result": "",
@@ -342296,6 +342296,11 @@
           "at": "2026-11-25T21:11Z",
           "by": "claudecode",
           "what": "step 4 of 6 done: Scan-edge trim added for every photo (15 had a visible scan border); re-render and checks running detached"
+        },
+        {
+          "at": "2026-11-25T21:19Z",
+          "by": "claudecode",
+          "what": "released: Scan-edge trim added for every photo; re-render plus join plus check running detached in tmux J3743-rerender, log ~/_desk/logs/J3743-rerender.log, marker ~/_desk/logs/J3743-rerender.done (missing = still running; 0 = done, then read verify exit and RENDER_QA_v04.json). Next: read the sheet, write hand-off and metadata, open the pull request, park for Chief. Worktree /Volumes/MiniWork/scratch/wt-ww2-J3743 branch J3743-004-v04 at 58425c2."
         }
       ],
       "remaining_action": "Wait for the re-render and its checks, look at the new sheet, then open the pull request",
