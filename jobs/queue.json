@@ -342781,17 +342781,22 @@
           "at": "2026-11-25T22:06Z",
           "by": "claudecode",
           "what": "step 0 of 6 done"
+        },
+        {
+          "at": "2026-11-25T22:07Z",
+          "by": "claudecode",
+          "what": "step 1 of 6 done: Rules, retake board (8 rows, take 2, prompts and stills hashed) and pass-1 runner read. Mini disk has 5 GB free; offload dry run found nothing old enough to move."
         }
       ],
-      "remaining_action": "Reading the rules and the pass-1 runner before building the retake runner",
+      "remaining_action": "Building the guarded retake runner on top of the pass-1 guards",
       "due": "2026-12-01T18:00:00Z",
       "kind": "video",
       "plain": "Build guarded retake runner and mint take 2 for 013's 8 confirmed RETAKE plates before 5 Dec (800 Flow cr max, £0 cash)",
       "mini_only": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 6,
-        "at": "2026-11-25T22:06Z",
+        "at": "2026-11-25T22:07Z",
         "by": "claudecode",
         "plan": [
           "Read rules and pass-1 runner",
@@ -342800,7 +342805,8 @@
           "Submit 8 take-2 rows",
           "Archive, hash and contact sheets",
           "Status, PR, desk post and park"
-        ]
+        ],
+        "note": "Rules, retake board (8 rows, take 2, prompts and stills hashed) and pass-1 runner read. Mini disk has 5 GB free; offload"
       },
       "taskKeys": [
         "HOS:013"
