@@ -337668,13 +337668,13 @@
       "stage": "",
       "after": "",
       "eta_min": 40,
-      "status": "claimed",
+      "status": "blocked",
       "by": "claudecode",
       "since": "2026-11-25T11:16Z",
-      "eta": "2026-11-25T11:56Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-25T10:22Z",
-      "result": "",
+      "result": "Waiting for: Pilot 2 retention graph: Studio said 'Audience retention isn't ready yet' at 25 Nov 11:18Z; read it at the 48-hour mark",
       "history": [
         {
           "at": "2026-11-25T10:22Z",
@@ -337720,9 +337720,19 @@
           "at": "2026-11-25T11:20Z",
           "by": "claudecode",
           "what": "step 4 of 5 done: Numbers for both pilots in status.json (ww2-channel PR 145) and on the thread; pilot 2 retention not ready in Studio at 11:18Z"
+        },
+        {
+          "at": "2026-11-25T11:20Z",
+          "by": "claudecode",
+          "what": "blocked: Waiting for: Pilot 2 retention graph: Studio said 'Audience retention isn't ready yet' at 25 Nov 11:18Z; read it at the 48-hour mark"
+        },
+        {
+          "at": "2026-11-25T11:20Z",
+          "by": "claudecode",
+          "what": "condition recorded; next verification 2026-11-26T17:05:00Z"
         }
       ],
-      "remaining_action": "Reading pilot 2's retention curve once Studio shows it (Thu 26 Nov 17:05 UTC)",
+      "remaining_action": "Read pilot 2's retention curve, match drops to script and picture, propose any trim to the Chief, write LEARNINGS line 3",
       "due": "2026-11-25T14:00:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -337744,7 +337754,13 @@
       "taskKeys": [
         "WW2:001",
         "WW2:002"
-      ]
+      ],
+      "hold": {
+        "type": "date",
+        "condition": "Pilot 2 retention graph: Studio said 'Audience retention isn't ready yet' at 25 Nov 11:18Z; read it at the 48-hour mark",
+        "check_at": "2026-11-26T17:05:00Z",
+        "release": "auto"
+      }
     },
     {
       "id": "J3705",
