@@ -78,7 +78,8 @@ FULL_EVERY_S = 2 * 60     # a full rebuild at least this often even when no ref 
 CHANNEL_SPARSE = ["/STATUS.md", "/00_Brand/Channel-Setup/kanban/index.html", "/studio-core/CORE_FILES.json"]
 # STUDIO_SPARSE: the studio's own files, read from the repo that carries them.
 STUDIO_SPARSE = ["/scripts/", "/channels/", "/jobs/", "/05_Analytics/kanban/", "/05_Analytics/ai_spend/",
-                 "/05_Analytics/dashboard/data.json", "/00_Brand/Channel-Setup/social/*/UPLOADS.json"]  # tracker + per-channel social uploads registries
+                 "/05_Analytics/dashboard/data.json", "/05_Analytics/market/board.json",
+                 "/00_Brand/Channel-Setup/social/*/UPLOADS.json"]  # tracker, market intel & social uploads registries
 # A channel that keeps one status file per film also has its upload results beside them (actual schedules,
 # excluding dry runs).
 FILM_STATUS_SPARSE = ["/02_Video-Projects/*/11_Upload-Package/PACKAGE_UPLOAD_RESULT*.json",
@@ -842,6 +843,7 @@ def run_once(a) -> int:
         log(f"progress24h not built: {e}")
     add_plan(board, at)
     add_field_order(board)
+    add_market(board)
     add_alerts(board, at, dry_run=a.dry_run)
     return finish(a, at, prev, prev_path, key, docs, board, hashes, checks, checks_at, {**checks_meta, **health})
 
@@ -874,6 +876,22 @@ def add_field_order(board: dict) -> None:
     except (OSError, ValueError):
         board["fieldOrder"] = {"name": "Field Order History", "targets": [], "films": [],
                                "note": "Analytics could not be read; progress is unknown."}
+
+
+def add_market(board: dict) -> None:
+    """Market intelligence tab data (`05_Analytics/market/board.json`); missing data stays explicitly pending."""
+    fallback = {
+        "schemaVersion": 1, "updatedAt": "", "watchlistTotal": 0, "farmFilteredCount": 0,
+        "niches": {}, "patterns": {"count": 0, "title_openers": [], "thumbnail_traits": []},
+        "breakouts": [],
+    }
+    try:
+        source = wt() / "05_Analytics/market/board.json"
+        board["market"] = json.loads(source.read_text()) if source.is_file() else {
+            **fallback, "note": "Market tracker has not published a snapshot yet.",
+        }
+    except (OSError, ValueError):
+        board["market"] = {**fallback, "note": "Market intelligence could not be read."}
 
 
 def add_plan(board: dict, at: dt.datetime) -> None:

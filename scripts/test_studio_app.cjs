@@ -7,7 +7,7 @@ assert(source.includes(hook), 'studio_app.js keeps its test hook');
 const context = {Date, Intl, URLSearchParams, console, location: {hash: ''}, document: {getElementById: () => ({})}, window: {}};
 vm.createContext(context);
 vm.runInContext(source.slice(0, source.indexOf(hook)) + `
-  globalThis.test = {planOverview,stuckModel,stuckSection,slotsText,urgentBannerHtml,renderView,fieldOrderCard,agentReason,parseWeeklyReset,normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, channelsSection, channelsPage, channelCard, channelLight, channelFacts, firstDayCard, firstDaySection, firstDayPage, firstDayNext, planCard, planSection, planPage, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
+  globalThis.test = {market,marketPatternsCard,marketBreakoutCard,setMarketFilter:(n,f)=>{marketNiche=n||'all';marketFormat=f||'all';},planOverview,stuckModel,stuckSection,slotsText,urgentBannerHtml,renderView,fieldOrderCard,agentReason,parseWeeklyReset,normalizeCut,kind,unconfirmedCut,reviewQueueInfo,activityVideoContext,stageExplanation, stageExplanationHtml, milestoneCard, blockerJobs, blockerModel, blockerGuide, blockerReason, currentStageCard, videoProductionRow, activityCard, recordedTaskProgress, overviewModel, scheduledThisWeek, uniqueVideos, producingVideos, weekDates, progressStats, currentProduction, stageView, forecastView, sortVideos, videoUpdated, conciseEvidence, uatOutlook, milestoneProgress, productionDetail, renderTab, summary, schedule, progressOf, forBen, stage, tickDoc, canTick, uat, agentLight, readiness, videoGroups, videoLane, listingLine, isScheduledNotPublic, isQa, needsBenWatch, doing, detail, etaOf, etaText, macbookState, meterless, poolMeter, jobGroups, inProgress, thumb, overview, forecastLine, machinesCard, qWhen, p24FilmCard, p24FilmHasActiveWork, p24MergeFilms, workingOnNow, last24Section, p24Totals, p24HydrateFilmItems, p24SortFilmItems, videoHasActiveWork, partitionProgressVideos, videoFilmKey, videoProgressDelta, VIDEO_LANE_COPY, videosHashParams, videosLaneFromHash, videosFocusFromHash, videosJumpHref, defaultVideosLane, ensureVideosLanding, channelsSection, channelsPage, channelCard, channelLight, channelFacts, firstDayCard, firstDaySection, firstDayPage, firstDayNext, planCard, planSection, planPage, jobPage, jobRow, jobPlain, jobWaiting, jobQueueLine, jobStateLine, agentQueue, jobCard, agents, setBoard: b => { board = b; }, setSeg: s => { seg = s; videosLaneChosen = true; }, resetVideosLanding: () => { videosLaneChosen = false; videosLandingApplied = false; seg = 'all'; }, getSeg: () => seg};
 })();`, context);
 const t = context.test;
 const NOW = Date.parse('2026-10-28T20:00:00Z');
@@ -1778,4 +1778,68 @@ assert(!fieldHtml.includes('(undefined'));
   const full = {...board, models: sb.models, owb: {...(board.owb || {}), jobs: [...((board.owb || {}).jobs || []), ...sb.owb.jobs]}};
   assert(t.renderView(full, 'overview', at).includes('overview-stuck'), 'Overview shows the panel');
   console.log('Stuck panel OK');
+}
+
+// J3650: Market intelligence tab renders breakouts, escapes text, supports niche/format filters, and shows weekly patterns.
+{
+  const mktBoard = {
+    ...board,
+    market: {
+      schemaVersion: 1,
+      updatedAt: '2026-11-25T06:40:00Z',
+      watchlistTotal: 90,
+      farmFilteredCount: 4,
+      patterns: {
+        count: 2,
+        avg_word_count: 8.5,
+        pct_searched_name: 50.0,
+        pct_how_why: 50.0,
+        pct_has_number: 50.0,
+        title_openers: [{key: 'searched_name', label: 'Searched subject first', count: 1, pct: 50.0}],
+        thumbnail_traits: [{label: 'Bright grade', count: 1, pct: 50.0}],
+      },
+      breakouts: [
+        {
+          videoId: 'vidWW2', niche: 'ww2', format: 'long',
+          title: 'Pearl Harbor Salvage <script>: How 21 Winches Raised a Battleship',
+          thumbnail: 'https://i.ytimg.com/vi/vidWW2/hqdefault.jpg',
+          channel: 'Rising Eng', subscribers: 1410, tier: 'rising',
+          ageHours: 36, views: 522000, viewsPerHour: 14500, multiple: 530.0,
+          angle: 'Field Order long: archive-photo salvage breakdown.',
+          thumbTags: {grade: 'bright', fillPct: 68.5},
+        },
+        {
+          videoId: 'vidOWB', niche: 'owb', format: 'short',
+          title: 'Why Is Europa Ice Cracked?',
+          thumbnail: 'https://i.ytimg.com/vi/vidOWB/hqdefault.jpg',
+          channel: 'Space Lab', subscribers: 85000, tier: 'benchmark',
+          ageHours: 24, views: 95000, viewsPerHour: 3958, multiple: 4.2,
+          angle: 'Orbit Short: 22-27s wonder-led question on Europa.',
+          thumbTags: {grade: 'normal', fillPct: 54.0},
+        },
+      ],
+    },
+  };
+  t.setMarketFilter('all', 'all');
+  const html = t.renderView(mktBoard, 'market', NOW);
+  assert(html.includes('<h1>Market</h1>'), 'Market heading renders');
+  assert(html.includes('90 channels tracked') && html.includes('4 farms filtered'), 'Market metadata renders');
+  assert(html.includes('Patterns this week') && html.includes('Searched subject first'), 'Patterns summary renders');
+  assert(html.includes('Pearl Harbor Salvage &lt;script&gt;') && !html.includes('<script>'), 'Market escapes titles');
+  assert(html.includes('530.0× median') && html.includes('14.5k/hr') && html.includes('1.4k subs'), 'Breakout metrics render');
+  assert(html.includes('Angle we could take:') && html.includes('Field Order long:'), 'Angle line renders');
+  assert(html.includes('vidWW2/hqdefault.jpg') && html.includes('Rising'), 'Thumbnail and rising tag render');
+
+  t.setMarketFilter('owb', 'short');
+  const filtered = t.renderTab('market', mktBoard, NOW);
+  assert(filtered.includes('Why Is Europa Ice Cracked?') && !filtered.includes('Pearl Harbor Salvage'), 'Niche + format filters narrow breakouts');
+
+  t.setMarketFilter('hos', 'all');
+  const emptyFiltered = t.renderTab('market', mktBoard, NOW);
+  assert(emptyFiltered.includes('No breakouts match the current filter'), 'Empty filter state renders cleanly');
+
+  t.setMarketFilter('all', 'all');
+  const pending = t.renderTab('market', {...board, market: {breakouts: [], note: 'Pending first sweep'}}, NOW);
+  assert(pending.includes('Pending first sweep'), 'Pending empty market state renders cleanly');
+  console.log('Market tab OK');
 }
