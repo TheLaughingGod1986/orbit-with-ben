@@ -1,5 +1,5 @@
 {
-  "next_id": 3659,
+  "next_id": 3660,
   "jobs": [
     {
       "id": "J0001",
@@ -332474,6 +332474,36 @@
         "HOS:010"
       ],
       "done_ref": "https://github.com/TheLaughingGod1986/orbit-with-ben/issues/954#issuecomment-7149654569"
+    },
+    {
+      "id": "J3659",
+      "title": "HOS 128: fix 6 J3630/J3629 blocking items to v03 (Edison age, Ferraris date/verb, FACT_NOTES quotes, Arm B search, single master filename)",
+      "needs": "any",
+      "repo": "hos",
+      "body": "Acting Chief ruling on J3630 (HOS PR #761 / jobs/reviews/J3630/REVIEW.md): FIX, not locked on v02 (PR #758 dc99d234 / PR #760 6f0ff4a3). Start from PR #760 head 6f0ff4a3 (which already includes PR #758 and J3629's GEMINI_FACTS_CHECK_v02.md) and deliver clean v03 in a reviewable HOS PR. No VO, picture, thumbnail, or scheduling spend.\n\nApply all 6 blocking fixes plus 3 minor alignment polishes (all replacement facts and primary quotes already independently verified in J3629 and J3630):\n1. FIX-1 (Long Part 01, line 21 — Edison age at Holborn Viaduct): Born 11 Feb 1847 (NPS), Edison was 34 on 12 Jan 1882 (Holborn Viaduct), not 35. Change to \"thirty-four-year-old Edison\" (or move \"thirty-five-year-old\" to Pearl Street in Sep 1882).\n2. FIX-2 (Long Part 03, lines 87 & 90; FACT_NOTES Row 11; SOURCES.md; PRE_BUILD_VIDIQ_AUDIT.md L11 — Galileo Ferraris): Change \"eleventh of March ... published\" to \"On the eighteenth of March, eighteen eighty-eight, Italian physics professor Galileo Ferraris presented the same rotating-field discovery in Turin — yet never patented his work.\" Change visual stamp to `WHEN: Turin, 18 March 1888` (note: lecture/memoir presented 18 March 1888 to Royal Academy of Sciences of Turin; published April 1888).\n3. FIX-3 (FACT_NOTES Row 8 — William Stanley Jr. birthdate): Fix misquote \"born 28 November 1858\" to verbatim ETHW \"William Stanley was born in Brooklyn, New York, 22 November 1858\".\n4. FIX-4 (FACT_NOTES Row 10 + primary upgrades + Row 2 ellipsis): Replace the non-existent Wikipedia Induction_motor quote with verbatim USPTO US381968A + Sylvanus P. Thompson quote (\"no commutator or connection of any kind with the armature was required\"). Add `[...]` ellipsis in Row 2. Fold in all 6 verified primary institutional upgrades from GEMINI_FACTS_CHECK_v02.md (Rutgers Edison death 18 Oct 1931 & 1888 Harold Brown experiments, ETHW George Westinghouse death 1914/03/12, Library of Congress Kemmler 6 Aug 1890 execution, UK SI 2002/2665 Reg. 27 50 Hz / 230 V, US DOE Electricity 101 110-120 V / 60 Hz) and log Chief's Niagara ruling (NPS NRIS 75001212 \"22 miles\" / \"15 November 1896\" accepted with ETHW \"20 miles\" / US DOE \"Nov. 16\" variance logged).\n5. FIX-5 (Packaging Arm B collision check): Run `python3 00_Brand/Channel-Setup/tools/public_search.py` on Candidate Title Arm B (\"Thomas Edison vs Nikola Tesla: How AC Won the War of Currents\"), save dated JSON evidence in `11_Upload-Package/`, and update PACKAGE_FIRST_SCORING, PRE_BUILD_VIDIQ_AUDIT, and LAUNCH_PLAN with the actual dated result (or mark Arm B pending if not run). Keep Working Title Arm A (\"Why Do We Use AC Instead of DC? (Edison vs Tesla)\"), Thumb A (WASTED AS HEAT), Thumb C (HIGH VOLTAGE), and optional Thumb B (22 MILES AWAY) explicitly as unrendered drafts (not rendered packaging PASS).\n6. FIX-6 (Single `master` filename per STUDIO_PLAYBOOK.md §3 L85): Rename superseded `edison_tesla_ac_dc_script_master_v01.md` and `edison_tesla_ac_dc_script_master_v02.md` without `master` (e.g. `_v01_draft.md`, `_v02_draft.md`) so ONLY `edison_tesla_ac_dc_script_master_v03.md` carries `master`.\n7. Three minor alignment polishes: (a) Part 01 L19 visual note: \"six giant iron dynamos driven by coal-fired steam engines\" (matches ETHW); (b) Part 06 L161 DATA #6 card: align strictly to spoken numbers (50 or 60 cycles/sec; remove unspoken 120 V or 230 V from card unless spoken); (c) Short S02 overlay window `TESLA PATENT · 1888`: shift `6.0-8.6 s` -> `6.4-8.6 s` to align with the 6.4 s spoken line (still clear of 9.0-14.0 s title).\n\nValidation required on exact v03 (pasted outputs + SHA-256 hashes in PR and production-status.md):\n- `npm run review:script -- --file .../edison_tesla_ac_dc_script_master_v03.md` (>=90 PASS)\n- `npm run gate:episode -- --project ../02_Video-Projects/128_...` WITHOUT `--script` (must pick `edison_tesla_ac_dc_script_master_v03.md` and PASS)\n- `bash 00_Brand/Channel-Setup/tools/check_all.sh 02_Video-Projects/128_...` (ALL CHECKS PASS)\n- Preserve Thu 10 Dec 2026 18:00 London target and Mon 7 Dec -> Thu 17 Dec slip contingency. No VO/picture spend or self-lock.\n",
+      "ref": "HOS PR #761 (J3630), HOS PR #760 (J3629), HOS PR #758 (J3628)",
+      "film": "HOS:128",
+      "stage": "script",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T02:24Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T02:24Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Deliver HOS 128 v03 fixing Edison age, Ferraris date/verb, FACT_NOTES quotes/upgrades, Arm B search check, and single master filename.",
+      "due": "2026-12-01T12:00:00Z",
+      "kind": "script",
+      "plain": "Apply the 6 J3630/J3629 blocking fixes to HOS 128 v02 and deliver clean v03 for Chief script lock."
     }
   ],
   "focus": [
