@@ -341045,20 +341045,29 @@
           "at": "2026-11-25T17:32Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T17:32Z",
+          "by": "claudecode",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Read the Short's Studio numbers 6 h after it went live, record them and give the verdict",
+      "remaining_action": "Checking the video in Studio for faults",
       "due": "2026-11-25T19:31:00Z",
       "kind": "studio",
       "launch": "_dVWVUnbDzA@6",
       "plain": "Check how \"Where Will the International Space Station Crash?\" is doing 6 hours after it went live",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-25T17:32Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Check the video for faults in Studio",
+          "Read the first-day numbers",
+          "Store the numbers",
+          "Judge and close"
+        ]
       }
     }
   ],
