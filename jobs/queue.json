@@ -329823,20 +329823,34 @@
           "at": "2026-11-25T11:43Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T11:44Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3611; inspecting J3512 PR #749, HOS 010 long status, and HOS Studio CDP"
         }
       ],
-      "remaining_action": "HOS 010 Short A: schedule only after actual long readiness and finish Studio checks",
+      "remaining_action": "Inspect J3512 records, HOS 010 long status, and Studio browser state",
       "kind": "studio",
       "plain": "Schedule the approved dinosaur Short after its full film is ready",
       "mini_only": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T11:43Z",
+        "of": 5,
+        "at": "2026-11-25T11:44Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Check J3512 records & HOS 010 long state",
+          "Run Studio-only readback on mpK3D6S7WLk",
+          "Run lint:package and channel:audit",
+          "Update records/PRs if needed",
+          "Report and wait/schedule J3611"
+        ],
+        "note": "Claimed J3611; inspecting J3512 PR #749, HOS 010 long status, and HOS Studio CDP"
+      },
+      "taskKeys": [
+        "HOS:010"
+      ]
     },
     {
       "id": "J3612",
