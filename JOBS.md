@@ -122,7 +122,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3697 | mini | open | – | – | review · Verify condition for J3205 |  |
 | J3698 | mini | blocked | claudecode | – | review · Verify condition for J3463 |  |
 | J3699 | mini | blocked | claudecode | – | review · Verify condition for J3511 |  |
-| J3700 | mini | open | – | – | review · Verify condition for J3512 |  |
+| J3700 | mini | claimed | claudecode | 2026-11-25T12:38Z | review · Verify condition for J3512 |  |
 | J3701 | mini | blocked | claudecode | – | review · Verify condition for J3519 |  |
 | J3702 | mini | blocked | claudecode | – | review · Verify condition for J3597 |  |
 | J3703 | mini | blocked | claudecode | – | review · Verify condition for J3635 |  |
