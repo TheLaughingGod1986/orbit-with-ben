@@ -332602,13 +332602,13 @@
       "stage": "script",
       "after": "J3659",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-25T02:38Z",
-      "eta": "2026-11-25T04:38Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T02:24Z",
-      "result": "",
+      "result": "parked for Chief: all 6 FIX items, 3 polishes, 8/8 v03 SHA-256 hashes, Arm B 0-collision evidence, review:script 91.9/100 PASS, default gate:episode (no --script) PASS on v03, and check_all.sh PASS verified in HOS PR #763 (advisory RECOMMEND KEEP); chief_relay.py status returned Chief: Codex at 02:41:49Z before protected calls, so PR #762 merge, J3547 closure, and HOS 128 long+Shorts VO queueing are handed back to elected Chief",
       "history": [
         {
           "at": "2026-11-25T02:24Z",
@@ -332649,6 +332649,11 @@
           "at": "2026-11-25T02:44Z",
           "by": "gemini",
           "what": "step 4 of 5 done: Published advisory KEEP verification PR #763 (check_all.sh PASS); chief_relay.py status returned Chief: Codex at 02:41:49Z before protected calls, handing protected merge/J3547-close/VO-queue back to elected Chief"
+        },
+        {
+          "at": "2026-11-25T02:44Z",
+          "by": "gemini",
+          "what": "blocked: parked for Chief: all 6 FIX items, 3 polishes, 8/8 v03 SHA-256 hashes, Arm B 0-collision evidence, review:script 91.9/100 PASS, default gate:episode (no --script) PASS on v03, and check_all.sh PASS verified in HOS PR #763 (advisory RECOMMEND KEEP); chief_relay.py status returned Chief: Codex at 02:41:49Z before protected calls, so PR #762 merge, J3547 closure, and HOS 128 long+Shorts VO queueing are handed back to elected Chief"
         }
       ],
       "remaining_action": "Parking J3660 for elected Chief protected calls and posting reports",
