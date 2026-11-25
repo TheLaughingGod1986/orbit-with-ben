@@ -330281,10 +330281,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T03:17Z",
+      "eta": "2026-11-25T05:17Z",
       "created_by": "relay",
       "created_at": "2026-11-24T21:35Z",
       "result": "",
@@ -330338,6 +330338,11 @@
           "at": "2026-11-25T03:17Z",
           "by": "gemini",
           "what": "reopened: Chief evidence review finished; reopen verification only to record completion. OWB PR #1295 merged; J3434 remains held with last_recheck J3631 and follow-ups J3662/J3663."
+        },
+        {
+          "at": "2026-11-25T03:17Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Park J3631 for elected Chief (PR #1295 open) and post studio thread report",
@@ -330353,7 +330358,15 @@
         "by": ""
       },
       "open_claim": true,
-      "escalated_at": "2026-11-25T00:40Z"
+      "escalated_at": "2026-11-25T00:40Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T03:17Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3632",
