@@ -330760,9 +330760,14 @@
           "at": "2026-11-25T04:37Z",
           "by": "relay",
           "what": "condition verification queued: J3672"
+        },
+        {
+          "at": "2026-11-25T04:41Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-25T10:15:00Z"
         }
       ],
-      "remaining_action": "Publishing the completed audit note through the approved handoff",
+      "remaining_action": "Claude Code privacy-check, push, PR and merge of codex/j3635-settings-audit (09320b462e) in ww2-channel, then close J3635",
       "due": "2026-11-24T23:30:00Z",
       "kind": "studio",
       "mini_only": true,
@@ -330784,9 +330789,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/j3635-ww2 codex/j3635-settings-audit",
-        "check_at": "2026-11-25T05:37:22+00:00",
-        "recheck_task": "J3672"
+        "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/j3635-ww2 codex/j3635-settings-audit (commit 09320b462e4e22f1c3aee89743eb41e7f2aae757 not pushed/PR'd/merged to ww2-channel main 8df668465c; claudecode down until 2026-11-25T10:00:00Z)",
+        "check_at": "2026-11-25T10:15:00Z",
+        "last_recheck": "J3672",
+        "checked_at": "2026-11-25T04:41:21+00:00",
+        "checked_by": "gemini"
       }
     },
     {
