@@ -331792,13 +331792,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-25T01:05Z",
-      "eta": "2026-11-25T03:05Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T01:04Z",
-      "result": "",
+      "result": "Waiting for: RqYjADxvJy8 scheduled to go Public at Sat 28 Nov 2026 17:00:00Z",
       "history": [
         {
           "at": "2026-11-25T01:04Z",
@@ -331809,9 +331809,19 @@
           "at": "2026-11-25T01:05Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T01:05Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: RqYjADxvJy8 scheduled to go Public at Sat 28 Nov 2026 17:00:00Z"
+        },
+        {
+          "at": "2026-11-25T01:05Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-28T17:05:00Z"
         }
       ],
-      "remaining_action": "After 2026-11-28T17:05:00Z verify RqYjADxvJy8 Public + 3-way T&C running, post & pin PINNED_COMMENT_v01.txt, link pilot 2 / Shorts",
+      "remaining_action": "Wait until 2026-11-28T17:05:00Z after RqYjADxvJy8 goes Public",
       "due": "2026-11-28T18:00:00Z",
       "kind": "studio",
       "plain": "Confirm B-29 film RqYjADxvJy8 is live with its 3-way thumbnail test running, pin its question, and cross-link pilot 2 and Shorts",
@@ -331822,6 +331832,12 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
+      },
+      "hold": {
+        "type": "date",
+        "condition": "RqYjADxvJy8 scheduled to go Public at Sat 28 Nov 2026 17:00:00Z",
+        "check_at": "2026-11-28T17:05:00Z",
+        "release": "auto"
       }
     },
     {
