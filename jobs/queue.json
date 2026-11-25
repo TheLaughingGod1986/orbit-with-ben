@@ -342391,9 +342391,14 @@
           "at": "2026-11-25T20:43Z",
           "by": "gemini",
           "what": "step 5 of 6 done: Step 5 done: Forensic audio audit confirmed clipped stray 'I-' syllable from P27.S2 at Join 10 (659.42-659.47s / 8:37.0); Cuts A+B and Joins 15-16 clean; SRT 0 US spellings; Ch 8 off by 12.7s; Thumb C busy at 168x94. NAS scratch cleaned."
+        },
+        {
+          "at": "2026-11-25T20:55Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Writing 07_Edit/QA_REVIEW_J3745.md in clean ww2 worktree, opening PR, and executing Chief ruling",
+      "remaining_action": "Verifying NAS v03 master hash and probing session audio/video input capability",
       "due": "2026-11-28T20:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -342410,19 +342415,17 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 5,
-        "of": 6,
-        "at": "2026-11-25T20:43Z",
+        "step": 0,
+        "of": 5,
+        "at": "2026-11-25T20:55Z",
         "by": "gemini",
         "plan": [
-          "Verify master hash and split chunks",
-          "Watch and listen 0:00 to 4:30",
-          "Watch and listen 4:30 to 9:00",
-          "Watch and listen 9:00 to 14:46",
-          "Audit splices, captions, thumbs, package",
-          "Write QA report and open PR"
-        ],
-        "note": "Step 5 done: Forensic audio audit confirmed clipped stray 'I-' syllable from P27.S2 at Join 10 (659.42-659.47s / 8:37.0)"
+          "Verify master & test AV input",
+          "Review 0:00-7:30 AV chunks",
+          "Review 7:30-14:46 AV chunks",
+          "Check captions, chapters & thumbnails",
+          "Commit QA review PR & report"
+        ]
       },
       "taskKeys": [
         "WW2:005"
