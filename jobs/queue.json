@@ -274378,20 +274378,35 @@
           "at": "2026-11-25T14:17Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T14:18Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Started J3022 from locked v04 script and locked VO v01 (683.86s)"
         }
       ],
-      "remaining_action": "Prepare shelf pictures, graphics and three thumbnails for the every-planet film",
+      "remaining_action": "Auditing existing shelf picture assets and verifying official NASA Mercury/Neptune sources",
       "due": "2026-12-04T18:00:00Z",
       "kind": "chart",
       "plain": "Prepare shelf pictures, graphics and three thumbnails for the every-planet film",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T14:17Z",
+        "of": 6,
+        "at": "2026-11-25T14:18Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Audit shelf media and fetch NASA plates",
+          "Build timestamped shot list and provenance pool",
+          "Render fresh per-row code graphics",
+          "Build and score Thumbnails A, B and C",
+          "Finalize film-specific music plan and hashes",
+          "Commit package and queue packaging panel"
+        ],
+        "note": "Started J3022 from locked v04 script and locked VO v01 (683.86s)"
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3023",
