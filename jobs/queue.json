@@ -342034,10 +342034,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-25T19:53Z",
+      "eta": "2026-11-25T21:53Z",
       "created_by": "relay",
       "created_at": "2026-11-25T19:52Z",
       "result": "",
@@ -342051,6 +342051,11 @@
           "at": "2026-11-25T19:53Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred claudecode): Claude out of usage (Claude said it's out of usage until 2026-11-25T21:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: claudecode on its default"
+        },
+        {
+          "at": "2026-11-25T19:53Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Parked for Chief merge, WW2 UAT copy, private R2 watch upload, and WW2:004 watch card update",
@@ -342065,7 +342070,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T19:53Z",
+        "by": "claudecode",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
