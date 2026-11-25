@@ -272578,13 +272578,13 @@
       "stage": "",
       "after": "",
       "eta_min": 240,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-25T10:12Z",
-      "eta": "2026-11-25T14:12Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-17T19:00Z",
-      "result": "",
+      "result": "Waiting for: Wait for Thu 26 Nov 2026 day-before notice window ahead of Fri 27 Nov 10:00 London studio move (board token probe PASSED 25 Nov 10:05Z in #7159250002, verified 10:11Z; preserve 3/4 progress on reopen; no further probe needed)",
       "history": [
         {
           "at": "2026-11-17T19:00Z",
@@ -273650,6 +273650,16 @@
           "at": "2026-11-25T10:12Z",
           "by": "gemini",
           "what": "deadline: 2026-11-26T18:00:00Z"
+        },
+        {
+          "at": "2026-11-25T10:13Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: Wait for Thu 26 Nov 2026 day-before notice window ahead of Fri 27 Nov 10:00 London studio move (board token probe PASSED 25 Nov 10:05Z in #7159250002, verified 10:11Z; preserve 3/4 progress on reopen; no further probe needed)"
+        },
+        {
+          "at": "2026-11-25T10:13Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-26T08:00:00Z"
         }
       ],
       "remaining_action": "Post Thu 26 Nov day-before move notice on thread, then run Fri 27 Nov 10:00 London studio repo move (preserve 3/4)",
@@ -273682,6 +273692,15 @@
           "Verify access and complete scheduled move"
         ],
         "note": "Token probe PASSED 25 Nov 10:05Z (#7159250002, verified 10:11Z); waiting for Thu 26 Nov notice window."
+      },
+      "hold": {
+        "type": "date",
+        "condition": "Wait for Thu 26 Nov 2026 day-before notice window ahead of Fri 27 Nov 10:00 London studio move (board token probe PASSED 25 Nov 10:05Z in #7159250002, verified 10:11Z; preserve 3/4 progress on reopen; no further probe needed)",
+        "check_at": "2026-11-26T08:00:00Z",
+        "release": "auto",
+        "last_recheck": "J3695",
+        "checked_at": "2026-11-25T10:13:04+00:00",
+        "checked_by": "gemini"
       }
     },
     {
