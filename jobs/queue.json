@@ -342388,6 +342388,11 @@
           "at": "2026-11-25T21:50Z",
           "by": "claudecode",
           "what": "step 4 of 6 done: Two Lockwood shots re-rendered; film being re-joined on the NAS, then the full check runs (about 15 minutes). Hand-off text drafted meanwhile"
+        },
+        {
+          "at": "2026-11-25T21:50Z",
+          "by": "claudecode",
+          "what": "step 4 of 6 done: If this run is cut off: third pass runs detached in tmux J3743-pass3 (log ~/_desk/logs/J3743-pass3.log, marker ~/_desk/logs/J3743-pass3.done; missing = still running, never start a second copy). When the marker is 0 and the log says verify exit 0: read v04_master/qa_contact_sheet_v04.jpg by eye, run python3 ~/_desk/logs/J3743-finish.py (writes HANDOFF_v04.md and metadata_v04.json), commit with RENDER_QA_v04.json in /Volumes/MiniWork/scratch/wt-ww2-J3743 (branch J3743-004-v04, at 473b4c9), open the pull request, park for Chief"
         }
       ],
       "remaining_action": "Wait for the two re-done Lockwood shots, the re-join and the checks, look at the new sheet, then open the pull request",
@@ -342407,7 +342412,7 @@
           "Checks and contact sheet",
           "Pull request and hand-off"
         ],
-        "note": "Two Lockwood shots re-rendered; film being re-joined on the NAS, then the full check runs (about 15 minutes). Hand-off t"
+        "note": "If this run is cut off: third pass runs detached in tmux J3743-pass3 (log ~/_desk/logs/J3743-pass3.log, marker ~/_desk/l"
       },
       "taskKeys": [
         "WW2:004"
