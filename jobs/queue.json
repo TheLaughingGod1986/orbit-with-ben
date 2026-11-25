@@ -333060,9 +333060,14 @@
           "at": "2026-11-25T03:53Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Verified NAS v01 SHA-256 exact match (7561d495...), confirmed Chief: Gemini, verified PR #107/#132 hygiene and source root causes in draw_maps_006.py & build_package_006_v01.py; ruling: HOLD v01 for zero-spend v02 repair"
+        },
+        {
+          "at": "2026-11-25T03:56Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Merged ww2 PR #107 (v01 baseline records only, NOT a PASS) and PR #132 (J3662 QA_REVIEW_v01.md); queued linked £0 v02 chain J3665 -> J3666 -> J3667 and updated J3434 dependency hold"
         }
       ],
-      "remaining_action": "Checking G13 sourced figures and executing Chief ruling: merging PR #107/#132 baseline records, recording CHIEF_RULING_J3663.md + status.json reconciliation, and queuing v02 chain",
+      "remaining_action": "Opening and merging Chief ruling PR (CHIEF_RULING_J3663.md, status.json picture=done & Rule-2 confirmation, metadata_v01.json held) and validating JSON/hygiene",
       "due": "2026-12-01T12:00:00Z",
       "kind": "chief",
       "plain": "Review WW2 Mosquito QA and PR #107, merge or repair, and stage Ben's watch",
@@ -333075,9 +333080,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-25T03:53Z",
+        "at": "2026-11-25T03:56Z",
         "by": "gemini",
         "plan": [
           "Inspect J3662 QA PR #132, PR #107, PR #98 and J3639 precedent",
@@ -333086,7 +333091,7 @@
           "Update queue, board and Chief review artifact",
           "Post Chief report on studio thread"
         ],
-        "note": "Verified NAS v01 SHA-256 exact match (7561d495...), confirmed Chief: Gemini, verified PR #107/#132 hygiene and source ro"
+        "note": "Merged ww2 PR #107 (v01 baseline records only, NOT a PASS) and PR #132 (J3662 QA_REVIEW_v01.md); queued linked £0 v02 ch"
       },
       "taskKeys": [
         "WW2:006"
