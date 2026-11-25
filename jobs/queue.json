@@ -334257,10 +334257,10 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook-2",
+      "since": "2026-11-25T05:52Z",
+      "eta": "2026-11-25T07:52Z",
       "created_by": "gemini",
       "created_at": "2026-11-25T05:49Z",
       "result": "",
@@ -334284,6 +334284,11 @@
           "at": "2026-11-25T05:53Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-25T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
+        },
+        {
+          "at": "2026-11-25T05:52Z",
+          "by": "macbook-2",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Revise HOS:136 script, SOURCES, FACT_NOTES, and Shorts to v02 off PR #764 (4afb106f) and open HOS PR",
