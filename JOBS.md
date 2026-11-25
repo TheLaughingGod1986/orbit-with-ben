@@ -125,7 +125,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3682 | mini | blocked | gemini | – | studio · Field Order History channel totals read 2026-11-25 |  |
 | J3684 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J3687 | mini | open (after J3686) | – | – | HOS:137 script · review · HOS 137: verify v02 fixes and Chief script lock decision (close J3565 if KEEP) | J3565 |
-| J3689 | mini | open | – | – | review · Verify condition for J3622 |  |
+| J3689 | mini | claimed | macbook-2 | 2026-11-25T10:05Z | review · Verify condition for J3622 |  |
 
 Recently finished:
 
