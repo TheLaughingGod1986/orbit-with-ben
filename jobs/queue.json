@@ -330195,9 +330195,14 @@
           "at": "2026-11-25T02:16Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T02:16Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "HOS 128: direct quote check and corrected script lock decision",
+      "remaining_action": "Inspecting HOS PR #752, #758, #760, J3547, and v02 script/Shorts/facts artifacts",
       "due": "2026-12-01T18:00:00Z",
       "kind": "review",
       "plain": "Check the corrected Edison and Tesla script against original sources and decide whether recording can begin",
@@ -330211,12 +330216,20 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-25T02:16Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect PR752/758/760 and v02 files",
+          "Open and quote-check all MUST QUOTE sources",
+          "Verify timings, Shorts, Teach/Craft and gates",
+          "Write KEEP/FIX ruling and merge/queue if KEEP",
+          "Update J3547/board and post reports"
+        ]
+      },
+      "taskKeys": [
+        "HOS:128"
+      ]
     },
     {
       "id": "J3631",
