@@ -325557,16 +325557,21 @@
           "at": "2026-11-25T13:02Z",
           "by": "gemini",
           "what": "step 2 of 4 done: Downloaded full S1 PDF (526 pp.) and S2 article, verified all cited printed pages (pp.226-228, 250-264, 299-316) plus Commons/Flickr/NARA archive records and technical-manual references"
+        },
+        {
+          "at": "2026-11-25T13:07Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Wrote 01_Script/CLAIMS_CHECK_v01.md (14 PASS, 7 FLAG across 21 mapped passages) and updated status.json; SCRIPT.md and NARRATION_v01.txt untouched"
         }
       ],
-      "remaining_action": "Compiling passage-by-passage PASS/FLAG audit into 01_Script/CLAIMS_CHECK_v01.md",
+      "remaining_action": "Fixing exact character deltas, committing to gemini/J3550-ww2-015-claims-check, opening WW2 stage PR, and posting report",
       "for": "gemini",
       "kind": "facts",
       "plain": "Check the facts in the Sherman tank story",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 4,
-        "at": "2026-11-25T13:02Z",
+        "at": "2026-11-25T13:07Z",
         "by": "gemini",
         "plan": [
           "Inspect J3486 draft and sources",
@@ -325574,7 +325579,7 @@
           "Write CLAIMS_CHECK_v01.md",
           "Open WW2 stage PR and report"
         ],
-        "note": "Downloaded full S1 PDF (526 pp.) and S2 article, verified all cited printed pages (pp.226-228, 250-264, 299-316) plus Co"
+        "note": "Wrote 01_Script/CLAIMS_CHECK_v01.md (14 PASS, 7 FLAG across 21 mapped passages) and updated status.json; SCRIPT.md and N"
       },
       "taskKeys": [
         "WW2:015"
