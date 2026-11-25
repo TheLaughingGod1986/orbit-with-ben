@@ -255954,10 +255954,10 @@
       "stage": "",
       "after": "J2844",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T13:17Z",
+      "eta": "2026-11-25T15:17Z",
       "created_by": "macbook-2",
       "created_at": "2026-11-14T17:11Z",
       "result": "",
@@ -256011,6 +256011,11 @@
           "at": "2026-11-25T10:01Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred claudecode): Codex is unavailable or lacks required input; next in its chain: claudecode on its default"
+        },
+        {
+          "at": "2026-11-25T13:17Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Confirming the finished T005 report in Studio before the approved thumbnail comparison can start",
@@ -256028,7 +256033,15 @@
       ],
       "escalated_at": "2026-11-19T02:32Z",
       "mini_only": true,
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T13:17Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J2847",
