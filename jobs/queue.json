@@ -342462,16 +342462,21 @@
           "at": "2026-11-25T22:24Z",
           "by": "claudecode",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-25T22:25Z",
+          "by": "claudecode",
+          "what": "step 3 of 5 done: Earlier runs: render_004_v04.py written, v04 master rendered on NAS, third check pass ended exit 0"
         }
       ],
-      "remaining_action": "Reading the v03 render code and edit plan",
+      "remaining_action": "Reading the contact sheet and Lockwood frames by eye, then handoff and PR",
       "due": "2026-11-26T20:00:00Z",
       "kind": "assembly",
       "plain": "Rebuild film 004 v04 so all archive photos fill 16:9 edge-to-edge (fixing Ben's 0:15 change note) while keeping J3715 Cuts A+B",
       "progress": {
-        "step": 0,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-25T22:24Z",
+        "at": "2026-11-25T22:25Z",
         "by": "claudecode",
         "plan": [
           "Read v02/v03 render code and plan",
@@ -342479,7 +342484,8 @@
           "Render v04 on NAS (detached)",
           "Border check, contact sheet, QA json",
           "PR and handoff"
-        ]
+        ],
+        "note": "Earlier runs: render_004_v04.py written, v04 master rendered on NAS, third check pass ended exit 0"
       },
       "taskKeys": [
         "WW2:004"
