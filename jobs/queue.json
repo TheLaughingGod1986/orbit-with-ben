@@ -342601,27 +342601,31 @@
           "at": "2026-11-25T21:32Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T21:33Z",
+          "by": "claudecode",
+          "what": "step 0 of 7 done"
         }
       ],
-      "remaining_action": "Draw the explosion plate, rebuild score, mix, captions and metadata for the chapter 8 move, tighten thumbnail C, then render and check v04",
+      "remaining_action": "Reading the v03 build scripts and QA notes for St Nazaire",
       "due": "2026-11-28T20:00:00Z",
       "kind": "assembly",
       "plain": "Apply J3745 audiovisual QA fixes (shot 19 lower-third, Join 10 stray syllable, Chapter 8 alignment, A 9804 swap + A 23877 drift, Thumb C crop/arrow, G10e blast plate) to render ww2_005_st_nazaire_v04_mix.mp4 at £0.",
       "progress": {
-        "step": 3,
+        "step": 0,
         "of": 7,
-        "at": "2026-11-25T20:57Z",
+        "at": "2026-11-25T21:33Z",
         "by": "claudecode",
         "plan": [
-          "Check brief and v03 build files",
-          "Lower-third, photo swap and drift fixes in build script",
-          "Voice splice trim and join check",
-          "Chapter 8 move, score, mix, captions, metadata",
-          "Thumbnail C and explosion plate",
-          "Render v04 on NAS scratch",
-          "Technical checks, PR and verification job"
-        ],
-        "note": "Lower third, photo swap, drift and splice trim built; narration length unchanged at 883.718 s; three changed shots re-re"
+          "Read v03 build and QA",
+          "Fix name card, VO join, chapter 8",
+          "Swap and unfreeze pictures, add blast plate",
+          "Rebuild VO, score, mix",
+          "Render v04 on the NAS",
+          "Technical checks and thumbnail C",
+          "PR and queue verification"
+        ]
       },
       "taskKeys": [
         "WW2:005"
