@@ -340132,16 +340132,21 @@
           "at": "2026-11-25T15:14Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Heartbeat: render_006_v03.py building trimmed VO and crossfaded score mix on NAS staging scratch (brief NFS pause recovered)"
+        },
+        {
+          "at": "2026-11-25T15:18Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Heartbeat: v03 audio mix ready (-15.3 LUFS, -1.8 dBTP); 125/154 video segments rendered on NAS staging scratch"
         }
       ],
-      "remaining_action": "Render v03 trimmed audio mix and 1080p 24fps CFR video master to NAS studio-live",
+      "remaining_action": "Finish rendering final 29/154 segments, mux v03 master, verify decode/loudness and copy to NAS",
       "due": "2026-11-30T12:00:00Z",
       "kind": "assembly",
       "plain": "Apply J3715 opening cuts A+B (124.5 s) to film 006 as zero-spend v03 keeping v02 untouched",
       "progress": {
         "step": 2,
         "of": 5,
-        "at": "2026-11-25T15:14Z",
+        "at": "2026-11-25T15:18Z",
         "by": "gemini",
         "plan": [
           "Verify SRT sync and measure exact silence points",
@@ -340150,7 +340155,7 @@
           "Run technical QA and verify v02 untouched",
           "Open WW2 PR and complete handoff"
         ],
-        "note": "Heartbeat: render_006_v03.py building trimmed VO and crossfaded score mix on NAS staging scratch (brief NFS pause recove"
+        "note": "Heartbeat: v03 audio mix ready (-15.3 LUFS, -1.8 dBTP); 125/154 video segments rendered on NAS staging scratch"
       },
       "taskKeys": [
         "WW2:006"
