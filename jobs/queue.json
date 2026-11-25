@@ -289747,10 +289747,10 @@
       "stage": "edit",
       "after": "J3371",
       "eta_min": 240,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T11:25Z",
+      "eta": "2026-11-25T15:25Z",
       "created_by": "claude",
       "created_at": "2026-11-20T10:21Z",
       "result": "",
@@ -290209,6 +290209,11 @@
           "at": "2026-11-25T11:25Z",
           "by": "gemini",
           "what": "reopened: Closing J3205 as done (do not re-assemble): ww2-channel#139 (2376f27) and orbit-with-ben#1314 (3a0abe6bdf) merged cleanly with 0 home paths/secrets; J3643 QA PASS, Ben board OK 2026-11-24T23:58:36Z, and J3653 upload RqYjADxvJy8 complete."
+        },
+        {
+          "at": "2026-11-25T11:25Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Claude Code privacy check and GitHub PR publish of gemini/J3643-qa (674c088 / 4d8422d) and gemini/J3643-review (5925f6828c) after 10:00Z reset, then close J3205",
@@ -290240,6 +290245,14 @@
         "title": "B-29: Why It Cost More Than the Atomic Bomb",
         "number": "003",
         "type": "long"
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T11:25Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
