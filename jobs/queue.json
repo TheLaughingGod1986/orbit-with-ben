@@ -317705,10 +317705,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T07:17Z",
+      "eta": "2026-11-25T09:17Z",
       "created_by": "relay",
       "created_at": "2026-11-24T09:06Z",
       "result": "",
@@ -317777,6 +317777,11 @@
           "at": "2026-11-25T07:17Z",
           "by": "gemini",
           "what": "reopened: Acting Chief gemini merged evidence PR #1256 (cfcaaba434) and recorded J3114 hold via wait --recheck J3470 (check-at 2026-11-25T10:15:00Z for J3530); reopening only this verification job to claim and close."
+        },
+        {
+          "at": "2026-11-25T07:17Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Elected Chief to review/merge OWB PR #1256, update J3114 hold via wait --recheck J3470 to track J3530 (do not reopen to codex), and close J3470",
@@ -317792,7 +317797,15 @@
         "by": ""
       },
       "open_claim": true,
-      "escalated_at": "2026-11-24T16:56Z"
+      "escalated_at": "2026-11-24T16:56Z",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T07:17Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3471",
