@@ -335088,13 +335088,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-25T06:42Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-25T06:40Z",
-      "result": "Waiting for: J3680 (Field Order History analytics read ek9F61FVYqY 48h) finishes and imports 2026-11-22..2026-11-23 Studio reach, CTR, and Test & Compare numbers into channels/ww2/05_Analytics/READS.md and board.json",
+      "result": "",
       "history": [
         {
           "at": "2026-11-25T06:40Z",
@@ -335120,26 +335120,17 @@
           "at": "2026-11-25T08:53Z",
           "by": "relay",
           "what": "condition verification queued: J3693"
+        },
+        {
+          "at": "2026-11-25T08:56Z",
+          "by": "gemini",
+          "what": "reopened: Condition SATISFIED (verified by Acting Chief gemini in J3693 at 2026-11-25T08:55Z): J3680 is done (2026-11-25T07:02Z, OWB PR #1307 commit a668cf8f1b, evidence in jobs/reviews/J3680/EVIDENCE.md) and imported ek9F61FVYqY (WW2:001 Mulberry Harbours: D-Day's Floating Ports) 2026-11-22..2026-11-23 Pacific 48h Studio metrics into channels/ww2/05_Analytics/READS.md, channels/ww2/05_Analytics/board.json, and channels/ww2/05_Analytics/studio_read.json (1,561 impressions, 0.9% CTR, returningViewers 0, newViewers null with explicit Studio suppression note, testCompare status=running with 3-arm thumbnail test active and no watch-time shares yet; intact on origin/main after PR #1309 commit 095218acaa). All original J3681 gates remain valid (read-only on YouTube, £0, ww2-channel PR for Chief merge, no live packaging changes). Verification only: no upload, spend, or schedule changes."
         }
       ],
       "remaining_action": "After J3680 imports ek9F61FVYqY 48h Studio numbers into READS.md and board.json, run the Field Order History rules review",
       "due": "2026-11-25T05:00:31Z",
       "kind": "review",
-      "plain": "Update the channel's rules from what Mulberry Harbours: D-Day's Floating Ports's first two days taught us",
-      "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-25T06:42Z",
-        "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      },
-      "hold": {
-        "type": "dependency",
-        "condition": "J3680 (Field Order History analytics read ek9F61FVYqY 48h) finishes and imports 2026-11-22..2026-11-23 Studio reach, CTR, and Test & Compare numbers into channels/ww2/05_Analytics/READS.md and board.json",
-        "check_at": "2026-11-25T09:53:00+00:00",
-        "recheck_task": "J3693"
-      }
+      "plain": "Update the channel's rules from what Mulberry Harbours: D-Day's Floating Ports's first two days taught us"
     },
     {
       "id": "J3682",

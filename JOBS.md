@@ -119,7 +119,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3671 | mini | open | – | – | HOS:128 vo · vo · HOS 128 Edison vs Tesla: Shorts S01 & S02 voiceover from locked v03 scripts | HOS PR #762 (84af0f7d), J3660, J3547, J3670 |
 | J3678 | mini | open | – | – | 136 vo · vo · HOS 136 Trinity Test Explained: long voiceover (5 parts) from locked script v02 | HOS PR #767 (ab25f2de), J3677, J3553 |
 | J3679 | mini | open | – | – | HOS:136 vo · vo · HOS 136 Trinity Test Explained: Shorts S01 & S02 voiceover from locked v02 scripts | HOS PR #767 (ab25f2de), J3677, J3553, J3678 |
-| J3681 | any | blocked | macbook-2 | – | review · Field Order History rules review ek9F61FVYqY 48h |  |
+| J3681 | any | open | – | – | review · Field Order History rules review ek9F61FVYqY 48h |  |
 | J3684 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
 | J3689 | mini | blocked | macbook-2 | – | review · Verify condition for J3622 |  |
 | J3690 | gemini | open | – | – | HOS:127 sources · facts · HOS 127: independent v02 facts and exact-quote verification | J3622 |
