@@ -1,5 +1,5 @@
 {
-  "next_id": 3665,
+  "next_id": 3666,
   "jobs": [
     {
       "id": "J0001",
@@ -333175,6 +333175,36 @@
           "Finish J3664 and report on studio thread"
         ]
       }
+    },
+    {
+      "id": "J3665",
+      "title": "WW2 006: v02 zero-spend visual/graphic repair, pacing trim and render",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "Elected acting Chief ruling (`J3663`, `07_Edit/CHIEF_RULING_J3663.md` and `07_Edit/QA_REVIEW_v01.md` on `ww2-channel` `main`): `v01` is HELD for a targeted zero-spend (`£0`) visual/graphic/edit repair (`v02`) before Ben's watch (due `2026-12-02T20:00:00Z`, planned air `Sat 5 Dec 17:00` London / `2026-12-05T17:00:00Z`). Do NOT re-voice, do NOT spend money/credits, do NOT upload, and do NOT copy to `WW2 UAT/`.\n\n**Preserve unchanged (already passed in `J3662` full audiovisual QA):**\n- Locked VO (`02_Voiceover/mosquito_plywood_bomber_vo_v01.*`, `25:42.84`, zero clicks/stumbles) and zero-spend score bed (`05_Music/mosquito_score_v01.wav`, SHA-256 `9d8bb4442734c18c8119a2e824e27f7a1ff5db11e6962ef05945ec42740807df`), keeping final mix around `-15.3 LUFS`, true peak `<= -1.0 dBTP`, score `~20 LU` below VO.\n- Verified archive photography (`>= 53.5%` real archive across the existing 62 provenanced official photos in `03_Picture/ARCHIVE_PROVENANCE.md`, `0` excluded photos `CH 719`/`C 5284`/`CH 10111`/`TR 930` in film body, `<= 3` uses/photo, `0` `<60 s` repeats, honest captions/context qualifiers, masked footers with zero internal IDs or shot-list boilerplate).\n- `11_Upload-Package/ww2_006_en-GB_v01.srt` (`376` en-GB cues, `0` overlaps, `0` US slips) and all 3 verified Rule-2/13 thumbnails (`A`, `B`, `C` + `thumbnail_comparison_v01.jpg`, hashes unchanged).\n- Adopted Rule-2 title **`De Havilland Mosquito: Why It Was Made of Wood`** (`46` chars `<= 50`), `upload_authorized: false`, air `2026-12-05T17:00:00Z`, watch due `2026-12-02T20:00:00Z`.\n\n**Mandatory `v02` fixes (from `07_Edit/QA_REVIEW_v01.md` and `CHIEF_RULING_J3663.md`):**\n1. **Must-fix visual/factual bugs (4 items):**\n   - **`G5` (`03_Picture/draw_maps_006.py` lines 310–312, appears at `01:15` & `09:29`):** Replace the missing-glyph `·` (`U+00B7`) separator rendered as six hollow tofu boxes (`□`) in `FONT_BOLD` across all three birch/balsa sandwich labels with a verified supported glyph (e.g. ASCII `|` or ` - `). Visually inspect rendered `G5` frame to confirm `0` tofu boxes.\n   - **`G7` (`03_Picture/draw_maps_006.py` lines 350–362, appears at `11:41`):** Re-render `G7` from updated `draw_maps_006.py` so the yellow box reads **`Under 280 lb`** (fixing the stale `Less than 200 lb` contradiction in the pre-rendered NAS MP4) matching top-right `UNDER 280 LB` and spoken *\"fewer than 280 pounds, under 7%\"*; change `BARE WING` (line 350) -> **`BARE AIRFRAME`**; clip or delay the inner wipe-in text at `11:41–11:42` so `DOUGLAS FIR BOX SPARS · 10 FUEL TANKS INSIDE THE WING` never overflows past its expanding box.\n   - **`G00B` (`07_Edit/build_package_006_v01.py` line 158, appears at `00:21` & `18:31`):** Fix **`16:00 PM`** -> **`4:00 PM`** (matching `11:00 AM` beside it, or consistent 24-hour `11:00` / `16:00`).\n   - **`G9` (`03_Picture/draw_maps_006.py` lines 391–392, appears at `14:24`):** Fix hardcoded `x=720` for `\"MPH\"` so `392 MPH` sits together cleanly as one unit with normal kerning (no ~450 px gap).\n2. **Copy, spelling & layout clarity fixes (3 items):**\n   - **`G17` (`07_Edit/build_package_006_v01.py` line 265):** Re-render `G17` fresh and visually verify the rendered PNG reads **`ZERO ALUMINIUM DRAIN`** (UK spelling — `v01` rendered `ALUMINUM`).\n   - **`G13` (`03_Picture/draw_maps_006.py` lines 480–481, appears at `21:49`):** Resolve duplicate identical `HEAVY BOMBERS` bar labels (`2.2%` and `3.5%`) by labelling them distinctly per `CLAIMS_CHECK.md` (`~2.2%–3.5%` range across heavy bombers, e.g. `HEAVY BOMBERS (LOW)   2.2%` and `HEAVY BOMBERS (HIGH)   3.5%`, or one sourced range bar `HEAVY BOMBERS   2.2%–3.5%` matching the VO *\"less than a third of the heavy-bomber average\"*).\n   - **`G10` & `G11` (`03_Picture/draw_maps_006.py` lines 413, 424–433):** Nudge `VICTORIA TERRASSE` slightly below/left of the yellow Oslo route line on `G10`, and align the `RELEASE` dot onto the blue `CAT` arc intersection on `G11`.\n3. **Chronology & pacing fixes in `EDIT_PLAN_v02.json` (zero new archive search; reuse existing 62 provenanced photos while maintaining `>= 53.5%` archive, `<= 3` uses/photo, `0` `<60 s` repeats):**\n   - Replace anachronistic `G17` (`May–July 1940` Beaverbrook / Salisbury Hall spoiler) at `02:20–02:37` (1939 metal shortages VO) with existing 1939 metal-bomber archive/diagram context; replace anachronistic `G15` (`Sep 1939–Mar 1940`) reuse at `08:26–08:40` (May–July 1940 stop orders VO) with existing Beaverbrook/Salisbury Hall context.\n   - Remove the unreadable `2.6 s` `G18` flash at `05:09–05:12`.\n   - Break up the longest static diagram holds and consecutive diagram runs (`G19` `43.8 s`, `G22+G7` `52.4 s`, `G18+G5` `53.5 s`, `G11+G11b` `44.3 s`, `G16` `34.2 s`, `G4` `31.6 s`, `G23` `30.6 s`, `G3` `28.0 s`, `G8` `23.3 s`) with clean archive intercuts so no single diagram holds static past `~20 s` and no two diagrams run back-to-back without real archive between them.\n4. **Reproducible NAS asset paths & safe disk scratch:**\n   - Write all re-rendered `v02` legacy graphics to `/Volumes/data/studio-live/ww2/02_Video-Projects/006_De-Havilland-Mosquito-Plywood-Balsa-Bomber/03_Picture/maps_v02/` and all `v02` bespoke diagram PNGs to `.../03_Picture/bespoke_diagrams_v02/` (do NOT point `EDIT_PLAN_v02.json` to Mini local scratch `/Volumes/MiniWork/scratch/`).\n   - Keep Mini root disk safe (use NAS render scratch if Mini `/` has `< 20 GB` free; delete temp segment scratch after render).\n   - Render `07_Edit/v02_master/ww2_006_mosquito_v02.mp4` (`1920x1080`, `24 fps`), run fresh technical QA (`ffprobe`, full `ffmpeg` null decode, loudness/true-peak, archive share `>= 53.5%`, SHA-256 receipts, updated `qa_contact_sheet_v02.jpg`), and visually verify stills of every patched diagram (`G5`, `G7`, `G00B`, `G9`, `G17`, `G13`, `G10`, `G11`). Do NOT claim perceptual audio/motion review.\n   - Update `11_Upload-Package/metadata_v02.json` (status `READY_FOR_V02_QA_NO_UPLOAD`, `upload_authorized: false`) and `status.json` (preserving all 7 stages with `picture: done`).\n   - Open a clean `ww2-channel` PR from `origin/main` and record the exact `v02` master path and SHA-256 for the dependent full audiovisual QA job.\n",
+      "ref": "",
+      "film": "006",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T03:54Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T03:54Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Fix G5/G7/G00B/G9/G17/G13/G10/G11 graphics, break long static diagram holds with existing provenanced archive, store bespoke diagrams on NAS, and render v02 master",
+      "due": "2026-11-28T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Patch WW2 006 v01 visual/factual diagram defects and static holds at £0 spend, render v02 master on NAS"
     }
   ],
   "focus": [

@@ -125,6 +125,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3660 | mini | open (after J3659) | – | – | HOS:128 script · review · HOS 128: verify v03 fixes and Chief script lock decision (close J3547 if KEEP) | HOS PR #761 (J3630), J3547, J3659 |
 | J3663 | mini | claimed | gemini | 2026-11-25T05:50Z | WW2:006 edit · chief · WW2 006: Chief decision on v01 delivery, PR #107 merge and Ben watch staging |  |
 | J3664 | mini | blocked | macbook-2 | – | review · Verify condition for J3492 |  |
+| J3665 | mini | open | – | – | 006 edit · assembly · WW2 006: v02 zero-spend visual/graphic repair, pacing trim and render |  |
 
 Recently finished:
 
