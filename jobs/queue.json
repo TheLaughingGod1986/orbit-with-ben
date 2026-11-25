@@ -330215,9 +330215,14 @@
           "at": "2026-11-25T02:23Z",
           "by": "gemini",
           "what": "step 4 of 5 done: Opened HOS PR #761 (6dee6dbf, jobs/reviews/J3630/REVIEW.md) with full direct-quote audit and Acting Chief FIX ruling; check_all.sh PASS"
+        },
+        {
+          "at": "2026-11-25T02:24Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Published HOS PR #761, queued J3659 -> J3660, recorded ruling on original J3547 (remains blocked until lock)."
         }
       ],
-      "remaining_action": "Queueing v03 script fix and lock follow-up jobs, recording ruling on J3547, finishing J3630, and posting desk/thread reports",
+      "remaining_action": "J3630 complete; v03 fix (J3659) and lock review (J3660) queued",
       "due": "2026-12-01T18:00:00Z",
       "kind": "review",
       "plain": "Check the corrected Edison and Tesla script against original sources and decide whether recording can begin",
@@ -330230,9 +330235,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-25T02:23Z",
+        "at": "2026-11-25T02:24Z",
         "by": "gemini",
         "plan": [
           "Inspect PR752/758/760 and v02 files",
@@ -330241,7 +330246,7 @@
           "Write KEEP/FIX ruling and merge/queue if KEEP",
           "Update J3547/board and post reports"
         ],
-        "note": "Opened HOS PR #761 (6dee6dbf, jobs/reviews/J3630/REVIEW.md) with full direct-quote audit and Acting Chief FIX ruling; ch"
+        "note": "Published HOS PR #761, queued J3659 -> J3660, recorded ruling on original J3547 (remains blocked until lock)."
       },
       "taskKeys": [
         "HOS:128"
