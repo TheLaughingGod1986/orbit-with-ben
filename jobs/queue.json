@@ -343564,9 +343564,14 @@
           "at": "2026-11-25T23:18Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T23:18Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done: Claimed; reading brief and the prior Short upload precedent"
         }
       ],
-      "remaining_action": "Verify master SHA-256 and upload 004-S1 v01 Private scheduled Mon 30 Nov 12:30 London",
+      "remaining_action": "Verify master hash, then upload Short 004-S1 v01 Private scheduled Mon 30 Nov 12:30 London",
       "due": "2026-11-29T12:00:00Z",
       "kind": "studio",
       "plain": "Upload Ben-approved Short 004-S1 v01 Private, scheduled Mon 30 Nov 12:30 London",
@@ -343586,12 +343591,21 @@
       },
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 5,
         "at": "2026-11-25T23:18Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify approved master",
+          "Upload Private and scheduled",
+          "Read back in Studio and API",
+          "Record in status via PR",
+          "Queue 7-day read"
+        ],
+        "note": "Claimed; reading brief and the prior Short upload precedent"
+      },
+      "taskKeys": [
+        "WW2:004"
+      ]
     },
     {
       "id": "J3754",
