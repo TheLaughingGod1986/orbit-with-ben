@@ -342056,9 +342056,14 @@
           "at": "2026-11-25T19:53Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T19:53Z",
+          "by": "claudecode",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Parked for Chief merge, WW2 UAT copy, private R2 watch upload, and WW2:004 watch card update",
+      "remaining_action": "Checking whether the Field Order film 4 v03 check can restart",
       "kind": "review",
       "recheck_of": "J3722",
       "due": "2026-11-25T20:52:53+00:00",
@@ -342076,9 +342081,15 @@
         "of": 3,
         "at": "2026-11-25T19:53Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read J3722 and its evidence",
+          "Verify predecessor, master and capability",
+          "Reopen or re-hold J3722, record"
+        ]
+      },
+      "taskKeys": [
+        "WW2:004"
+      ]
     }
   ],
   "focus": [
