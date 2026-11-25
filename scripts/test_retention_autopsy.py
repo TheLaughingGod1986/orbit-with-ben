@@ -215,6 +215,68 @@ class AutopsyQueueWiringTests(unittest.TestCase):
                 scores = ra.score_metrics(ctx["metrics"], {"values": {}}, ra.niche_benchmark("ww2", window))
                 self.assertTrue(all(v["niche_rsi"] is None for v in scores.values()))
 
+    def test_mixed_snapshots_do_not_score_wrong_window_launch_views(self):
+        for reading_hours, window in ((6, "48h"), (48, "7d")):
+            with self.subTest(reading_hours=reading_hours, window=window), \
+                 mock.patch.object(ra, "_all_snapshots", return_value=[
+                     (t("2026-11-29T17:00:00"), {"videos": [{"id": "other", "views": 999}]}),
+                 ]), \
+                 mock.patch.object(lc, "load_record", return_value={
+                     "wentLive": "2026-11-22T17:00Z", "seconds": 1432,
+                     "readings": [{"hours": reading_hours, "views": 123}],
+                 }):
+                ctx = ra.video_context("ww2", "probe", window)
+                self.assertIsNone(ctx["launch_reading"])
+                self.assertIsNone(ctx["metrics"]["views"])
+                scores = ra.score_metrics(ctx["metrics"], {"values": {"views": 100}},
+                                          ra.niche_benchmark("ww2", window))
+                self.assertIsNone(scores["views"]["ch_rsi"])
+                self.assertIsNone(scores["views"]["niche_rsi"])
+                txt = ra.inspect_text("ww2", "probe", window)
+                self.assertIn(f"not scored as {window} evidence", txt)
+                views_row = next(line for line in txt.splitlines() if line.startswith("| Views |"))
+                self.assertEqual(views_row.split(" | ")[1], "—")
+                self.assertTrue(views_row.endswith("| — |"))
+
+    def test_historical_target_snapshot_supplies_window_views_when_latest_omits_target(self):
+        for hours, window in ((48, "48h"), (168, "7d")):
+            pub = t("2026-11-22T17:00:00")
+            with self.subTest(window=window), \
+                 mock.patch.object(ra, "_all_snapshots", return_value=[
+                     (pub + dt.timedelta(hours=hours), {"videos": [{"id": "probe", "views": 456}]}),
+                     (pub + dt.timedelta(hours=240), {"videos": [{"id": "other", "views": 999}]}),
+                 ]), \
+                 mock.patch.object(lc, "load_record", return_value={
+                     "wentLive": pub.isoformat(), "seconds": 1432,
+                     "readings": [{"hours": 6, "views": 123}],
+                 }):
+                self.assertEqual(ra.video_context("ww2", "probe", window)["metrics"]["views"], 456)
+
+    def test_exact_window_launch_views_override_unrelated_snapshots(self):
+        for hours, window in ((48, "48h"), (168, "7d")):
+            with self.subTest(window=window), \
+                 mock.patch.object(ra, "_all_snapshots", return_value=[
+                     (t("2026-11-29T17:00:00"), {"videos": [{"id": "other", "views": 999}]}),
+                 ]), \
+                 mock.patch.object(lc, "load_record", return_value={
+                     "wentLive": "2026-11-22T17:00Z", "seconds": 1432,
+                     "readings": [{"hours": hours, "views": 0, "impressions": 20, "ctr": 0}],
+                 }):
+                ctx = ra.video_context("ww2", "probe", window)
+                self.assertEqual(ctx["metrics"]["views"], 0)
+                self.assertEqual(ctx["metrics"]["impressions"], 20)
+                self.assertEqual(ctx["metrics"]["ctr"], 0)
+                self.assertIsNone(ctx["non_window_launch_proxy"])
+
+    def test_out_of_window_target_snapshot_views_are_unavailable(self):
+        pub = t("2026-11-22T17:00:00")
+        with mock.patch.object(ra, "_all_snapshots", return_value=[
+                 (pub + dt.timedelta(hours=240), {"videos": [{
+                     "id": "probe", "publishedAt": pub.isoformat(), "views": 999,
+                 }]}),
+             ]), mock.patch.object(lc, "load_record", return_value={}):
+            self.assertIsNone(ra.video_context("ww2", "probe", "48h")["metrics"]["views"])
+
     def test_exact_7d_reading_supplies_impressions_ctr_and_views(self):
         with mock.patch.object(ra, "_all_snapshots", return_value=[]), \
              mock.patch.object(lc, "load_record", return_value={
