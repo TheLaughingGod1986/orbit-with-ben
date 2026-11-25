@@ -332534,9 +332534,14 @@
           "at": "2026-11-25T02:28Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Inspected PR #760/#761 and created clean worktree /Volumes/MiniWork/desk/worktrees/hos-J3659 from 6f0ff4a3."
+        },
+        {
+          "at": "2026-11-25T02:28Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Ran public_search.py on Candidate Title Arm B and saved evidence_2026-11-25_public_search_arm_b.json."
         }
       ],
-      "remaining_action": "Running public_search.py Arm B collision check and preparing v03 edits",
+      "remaining_action": "Applying all 6 blocking fixes and 3 polishes to v03 files and renaming superseded master drafts",
       "due": "2026-12-01T12:00:00Z",
       "kind": "script",
       "plain": "Apply the 6 J3630/J3629 blocking fixes to HOS 128 v02 and deliver clean v03 for Chief script lock.",
@@ -332549,7 +332554,7 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
         "at": "2026-11-25T02:28Z",
         "by": "gemini",
@@ -332560,7 +332565,7 @@
           "Run review:script, gate:episode, check_all.sh and record SHA-256",
           "Open HOS PR, update status, and report on desk/thread"
         ],
-        "note": "Inspected PR #760/#761 and created clean worktree /Volumes/MiniWork/desk/worktrees/hos-J3659 from 6f0ff4a3."
+        "note": "Ran public_search.py on Candidate Title Arm B and saved evidence_2026-11-25_public_search_arm_b.json."
       },
       "taskKeys": [
         "HOS:128"
