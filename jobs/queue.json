@@ -325883,16 +325883,21 @@
           "at": "2026-11-25T06:42Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Independently verified all 24 FACT_NOTES rows, 23 live URLs, primary patents (US3057356A, US3633A, US1098342A, FR405881A, US3691140A), PMC3232561, PMC5403050, Nobel/NIHF/3M sources, Shorts, 13 WHO cards & packaging JSON; identified 4 blocking FLAGs + 8 PARTIAL nuances"
+        },
+        {
+          "at": "2026-11-25T06:46Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Wrote 01_Script/GEMINI_FACTS_CHECK_v01.md and updated status.json & production-status.md on clean worktree branch gemini/J3564-hos137-facts-audit (long & Shorts scripts byte-for-byte untouched)"
         }
       ],
-      "remaining_action": "Write independent audit GEMINI_FACTS_CHECK_v01.md and update status.json & production-status.md on clean worktree",
+      "remaining_action": "Run HOS check_all.sh, status_board, no-private-network, email ratchet checks and open follow-on PR",
       "due": "2026-12-08T18:00:00Z",
       "kind": "facts",
       "plain": "Fact-check every spoken claim, quote, date, and guardrail in the Accidental Inventions v01 script and Shorts.",
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-25T06:42Z",
+        "at": "2026-11-25T06:46Z",
         "by": "gemini",
         "plan": [
           "Fetch PR #754 & inspect files",
@@ -325901,7 +325906,7 @@
           "Run HOS checks & push PR",
           "Update queue, desk & thread reports"
         ],
-        "note": "Independently verified all 24 FACT_NOTES rows, 23 live URLs, primary patents (US3057356A, US3633A, US1098342A, FR405881A"
+        "note": "Wrote 01_Script/GEMINI_FACTS_CHECK_v01.md and updated status.json & production-status.md on clean worktree branch gemini"
       },
       "taskKeys": [
         "HOS:137"
