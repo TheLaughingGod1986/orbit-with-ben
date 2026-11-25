@@ -333479,9 +333479,14 @@
           "at": "2026-11-25T04:21Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T04:22Z",
+          "by": "macbook-2",
+          "what": "step 1 of 4 done"
         }
       ],
-      "remaining_action": "Verify readiness: Awaiting WW2:006 v02 repair (J3665) -> v02 QA (J3666) -> Chief watch staging (J3667) before Ben watch (due 2026-12-02 20:00 UTC)",
+      "remaining_action": "Inspecting J3434, J3663, J3665, J3666, J3667, WW2 PRs and evidence",
       "kind": "review",
       "recheck_of": "J3434",
       "due": "2026-11-25T05:19:14+00:00",
@@ -333495,12 +333500,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-25T04:21Z",
+        "step": 1,
+        "of": 4,
+        "at": "2026-11-25T04:22Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect J3434 and linked v02 chain",
+          "Verify WW2 006 PRs and NAS evidence",
+          "Update J3434 status and finish J3669",
+          "Post report to studio thread"
+        ]
       }
     }
   ],
