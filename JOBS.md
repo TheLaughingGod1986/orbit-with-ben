@@ -125,6 +125,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3689 | mini | blocked | macbook-2 | – | review · Verify condition for J3622 |  |
 | J3690 | gemini | open | – | – | HOS:127 sources · facts · HOS 127: independent v02 facts and exact-quote verification | J3622 |
 | J3692 | any | blocked | gemini | – | review · AI spend: Google AI Ultra 20x vs Ultra 5x re-review before 12 Jan 2027 renewal, for Ben |  |
+| J3693 | any | open | – | – | review · Verify condition for J3681 |  |
 
 Recently finished:
 
