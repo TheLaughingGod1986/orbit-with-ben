@@ -331647,13 +331647,13 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T00:48Z",
-      "eta": "2026-11-25T02:48Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T00:46Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-25T00:46Z",
@@ -331704,6 +331704,11 @@
           "at": "2026-11-25T01:05Z",
           "by": "gemini",
           "what": "step 6 of 6 done: Merged ww2-channel PR #129 (b69d353) recording RqYjADxvJy8 upload + full readback; queued J3655 (post-publish 28 Nov 17:05Z) and J3656 (48h Rule 8 read 30 Nov 17:05Z)"
+        },
+        {
+          "at": "2026-11-25T01:05Z",
+          "by": "gemini",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Complete J3653 after ww2-channel PR #129 merge and follow-on job waits",
