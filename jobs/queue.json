@@ -340235,6 +340235,11 @@
           "at": "2026-11-25T15:46Z",
           "by": "claudecode",
           "what": "step 4 of 5 done: Independent re-check passed: hashes match, v02 untouched, -15.3 LUFS / -1.6 dBTP, 0 decode errors, cuts inside narration pauses, 344 captions clean; branch gemini/J3723-006-v03 pushed at b611e68"
+        },
+        {
+          "at": "2026-11-25T15:49Z",
+          "by": "claudecode",
+          "what": "step 5 of 5 done: ww2-channel PR #159 opened against main (parked for Chief, not merged)"
         }
       ],
       "remaining_action": "Open the WW2 pull request for the v03 package (GitHub is returning server errors on pull-request creation)",
@@ -340242,9 +340247,9 @@
       "kind": "assembly",
       "plain": "Apply J3715 opening cuts A+B (124.5 s) to film 006 as zero-spend v03 keeping v02 untouched",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-25T15:46Z",
+        "at": "2026-11-25T15:49Z",
         "by": "claudecode",
         "plan": [
           "Verify SRT sync and measure exact silence points",
@@ -340253,7 +340258,7 @@
           "Run technical QA and verify v02 untouched",
           "Open WW2 PR and complete handoff"
         ],
-        "note": "Independent re-check passed: hashes match, v02 untouched, -15.3 LUFS / -1.6 dBTP, 0 decode errors, cuts inside narration"
+        "note": "ww2-channel PR #159 opened against main (parked for Chief, not merged)"
       },
       "taskKeys": [
         "WW2:006"
