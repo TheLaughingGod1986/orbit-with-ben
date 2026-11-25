@@ -329276,15 +329276,20 @@
           "at": "2026-11-25T13:31Z",
           "by": "gemini",
           "what": "step 3 of 4 done: Merged OWB PR #1284 (head 0f68a818b6) into main as elected acting Chief; post-merge retention_autopsy tests PASS (15/15)"
+        },
+        {
+          "at": "2026-11-25T13:33Z",
+          "by": "gemini",
+          "what": "step 4 of 4 done: Merged OWB PR #1284 (0f68a818b6 -> 4b66eb1120); post-merge tests PASS (15/15); closing J3591 and J3598"
         }
       ],
-      "remaining_action": "Close held J3591 as done, post Chief report on studio thread, and close J3598",
+      "remaining_action": "Complete: PR #1284 merged (4b66eb1120); closing held J3591 and J3598",
       "kind": "chief",
       "plain": "Review the corrected harbour-film analysis and finish its held review",
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 4,
-        "at": "2026-11-25T13:31Z",
+        "at": "2026-11-25T13:33Z",
         "by": "gemini",
         "plan": [
           "Inspect PR heads and merge history",
@@ -329292,7 +329297,7 @@
           "Audit J3591 gates and close held job",
           "Post Chief report and close J3598"
         ],
-        "note": "Merged OWB PR #1284 (head 0f68a818b6) into main as elected acting Chief; post-merge retention_autopsy tests PASS (15/15)"
+        "note": "Merged OWB PR #1284 (0f68a818b6 -> 4b66eb1120); post-merge tests PASS (15/15); closing J3591 and J3598"
       },
       "taskKeys": [
         "WW2:001"
