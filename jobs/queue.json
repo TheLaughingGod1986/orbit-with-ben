@@ -339835,9 +339835,14 @@
           "at": "2026-11-25T14:43Z",
           "by": "claudecode",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-25T14:44Z",
+          "by": "claudecode",
+          "what": "step 2 of 3 done: J3716-J3719 all still open; 05_Analytics/tests/panels/owb-064-every-planet/ absent on origin/main (no critiques, no DECISION.md)"
         }
       ],
-      "remaining_action": "Reading J3022 history and the panel decision file",
+      "remaining_action": "Re-parking J3022 on the unmet panel condition",
       "kind": "review",
       "recheck_of": "J3022",
       "due": "2026-11-25T15:40:58+00:00",
@@ -339851,15 +339856,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 2,
         "of": 3,
-        "at": "2026-11-25T14:43Z",
+        "at": "2026-11-25T14:44Z",
         "by": "claudecode",
         "plan": [
           "Read J3022 and panel jobs",
           "Check DECISION.md and gates",
           "Reopen or re-wait J3022, report"
-        ]
+        ],
+        "note": "J3716-J3719 all still open; 05_Analytics/tests/panels/owb-064-every-planet/ absent on origin/main (no critiques, no DECI"
       },
       "taskKeys": [
         "OWB:064"
