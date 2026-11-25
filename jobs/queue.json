@@ -1,5 +1,5 @@
 {
-  "next_id": 3745,
+  "next_id": 3746,
   "jobs": [
     {
       "id": "J0001",
@@ -342277,6 +342277,40 @@
         "by": ""
       },
       "open_claim": true
+    },
+    {
+      "id": "J3745",
+      "title": "WW2 005: full private audiovisual QA of v03 master (J3715 Cuts A+B) for Chief watch stage",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** Follows `J3432` (`ww2-channel` PR #158, merged at `27eb9df`) and Acting-Chief (`gemini`) ruling `J3727` (`07_Edit/CHIEF_RULING_J3727.md`). All `v03` checks to date are tool-only and stills-only (`QA_TECHNICAL_v03.json`: `TOOL_CHECKS_ONLY_NOT_WATCHED_NOT_HEARD`, `MIX_TECHNICAL_CHECK_v02.json`: `MEASURED_ONLY_NOBODY_HAS_LISTENED`). Required before the Chief stages `ww2_005_st_nazaire_v03_mix.mp4` privately for Ben's watch (`J3432`, watch due Mon 30 Nov 20:00Z, planned air Thu 3 Dec 17:00 London).\n\n**Do (private audiovisual QA; requires real demonstrated `audio_input,moving_video_input`; £0):**\n1. Verify `ww2_005_st_nazaire_v03_mix.mp4` on NAS `studio-live` (`/Volumes/data/studio-live/ww2/02_Video-Projects/005_St-Nazaire-Raid-HMS-Campbeltown-Dry-Dock/07_Edit/ww2_005_st_nazaire_v03_mix.mp4`) matches exact SHA-256 `1a6b253f8e57185950749568e8d412d2a527966348ec8420d6d71458f7b5cf17` (`1920x1080`, `24 fps`, `21,269` frames, `886.21 s` = `14:46`).\n2. Watch and listen to the full `14:46` cut in chunks with real demonstrated `audio_input` and `moving_video_input`, checking specifically:\n   - **All 19 VO splice joins** (`recut_v03`, `07_Edit/VO_SPLICE_MAP_v03.json`, especially `J3715` Cut A `P04.S2` ~`01:08` and Cut B `P10` ~`02:45`): zero clipped syllables, audible clicks, breath jumps, or unnatural cadence;\n   - **Zero-spend synthetic score bed** (`st_nazaire_score_v02.wav`, `-35.0 LUFS`, 20 LU under voice, 9 chapter cues): pleasant under speech, smooth chapter transitions, zero distracting buzz/hum, clean 2.5 s ending hold + 1.5 s fade to black;\n   - **Two `NO_MOVE` frozen photographs flagged in `QA_TECHNICAL_v03.json`:** `A 9804` (`0:41.75`, `6.67 s`, inside the first two minutes — also visually obscured by aircraft struts) and `A 23877` (`10:52.79`, `8.89 s`). Judge explicitly whether either breaks viewer flow and warrants a subtle slow drift or photo swap in a quick zero-spend `v04`, or is acceptable as-is;\n   - **Long single-plate diagrams & visual flow:** `G5` (`31.8 s`), `G6` (`28.8 s`), `G7` (`30.1 s`), `G10` (`46.8 s` 3-stage impact + `34.2 s` daybreak `G10d`), `G12` (`29.5 s`), `G8` (`30.6 s`) — verify pacing, crispness, zero clipped titles, smooth motion on `NORMANDIE DOCK` moving labels (shots 18, 47, 56), and clean lower-third name cards (`COMMANDER ROBERT RYDER`, `LIEUTENANT-COMMANDER STEPHEN BEATTIE`);\n   - **Captions, chapters & framing:** `11_Upload-Package/ww2_005_en-GB_v01.srt` (`214` cues) sync and British spelling, 9 chapters alignment, full-bleed 16:9 archive framing with zero blurred bars/borders, zero archive watermarks, zero `<60 s` repeat regressions (`51.85%` archive);\n   - **Thumbnails & package review:** judge `10_Thumbnail/thumbnail_comparison_v01.jpg` (`A: FLOATING BOMB`, `B: 4 TONS INSIDE`, `C: ONE TARGET` — specifically check whether `C` on `C 3317A` reads clearly at `168x94` px or needs a tighter crop / single Rule-2 arrow), verify the Rule-2-synced title (`St Nazaire Raid: The Ship Turned Into a Bomb`, 44 chars), description hook, and pinned question.\n3. Commit `07_Edit/QA_REVIEW_<job-id>.md` on a `ww2-channel` PR recommending **PASS** (ready for Chief staging to iCloud `WW2 UAT`, private R2 watch bucket, and `jobs.py awaits J3432`) or **FIX** (exact concrete zero-spend `v04` items). **Park for Chief** to merge and rule.\n\n**Guards.** £0 spend. Zero new voice. No `WW2 UAT` copy, no R2 watch upload, no `jobs.py awaits`, and no YouTube upload, schedule, retitle, or privacy change. Never claim to hear audio or watch motion without real demonstrated `audio_input,moving_video_input` in the QA session.\n",
+      "ref": "27eb9df",
+      "film": "WW2:005",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T20:23Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T20:23Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Watch and listen to WW2 005 v03 verifying 19 VO splices, score bed, static holds, long plates, captions and thumbnails, then park PR for Chief",
+      "due": "2026-11-28T20:00:00Z",
+      "kind": "qa",
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ],
+      "plain": "Run full audiovisual QA on film 005 v03 master (19 VO splices, synthetic score, motion, captions, thumbs) and park for Chief watch staging"
     }
   ],
   "focus": [
