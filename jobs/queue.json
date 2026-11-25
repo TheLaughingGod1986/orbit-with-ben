@@ -342616,10 +342616,10 @@
       "stage": "edit",
       "after": "J3743",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T23:41Z",
+      "eta": "2026-11-26T01:41Z",
       "created_by": "gemini",
       "created_at": "2026-11-25T20:15Z",
       "result": "",
@@ -342678,6 +342678,11 @@
           "at": "2026-11-25T23:41Z",
           "by": "gemini",
           "what": "reopened: Acting-Chief (gemini) closing J3744 after PASS ruling on WW2:004 v04 (ww2-channel PR #172 68705c2, PR #174 4ba78bd, PR #177 e923ac1; OWB PR #1332 c8297639f7) and private watch staging (iCloud WW2 UAT + R2 ww2-004-v04 + J3430 awaits --prev WW2-004)."
+        },
+        {
+          "at": "2026-11-25T23:41Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for Chief to merge PR #172 + PR #174, stage v04 to iCloud WW2 UAT + R2 ww2-004-v04, and update Ben watch card WW2:004",
@@ -342698,7 +342703,15 @@
       "open_claim": true,
       "taskKeys": [
         "WW2:004"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T23:41Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3745",
