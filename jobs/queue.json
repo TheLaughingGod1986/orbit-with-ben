@@ -332122,9 +332122,14 @@
           "at": "2026-11-25T01:29Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Confirmed condition UNMET: neither codex/J3512-resume (HOS, local only at 5008d480) nor codex/J3512-registry (OWB, local only at bfb399e268) is pushed/merged to main; exact NAS SHA256 verified; claudecode down until 2026-11-25T10:00:00Z."
+        },
+        {
+          "at": "2026-11-25T01:32Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Updated J3512 wait hold (--recheck J3658, check-at 2026-11-25T10:15:00Z) and posted reports on OWB #954 and HOS desk #694."
         }
       ],
-      "remaining_action": "Updating J3512 wait hold (--recheck J3658), posting reports, and finishing J3658",
+      "remaining_action": "Verification complete; J3512 hold updated for post-reset Claude Code publication",
       "kind": "review",
       "recheck_of": "J3512",
       "mini_only": true,
@@ -332139,16 +332144,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-25T01:29Z",
+        "at": "2026-11-25T01:32Z",
         "by": "gemini",
         "plan": [
           "Read J3512 job history, PRs, and local scratch branches",
           "Inspect diffs and check whether J3512 publish condition is met",
           "Update J3512 wait/reopen state, close J3658, and post report"
         ],
-        "note": "Confirmed condition UNMET: neither codex/J3512-resume (HOS, local only at 5008d480) nor codex/J3512-registry (OWB, local"
+        "note": "Updated J3512 wait hold (--recheck J3658, check-at 2026-11-25T10:15:00Z) and posted reports on OWB #954 and HOS desk #69"
       },
       "taskKeys": [
         "HOS:010"
