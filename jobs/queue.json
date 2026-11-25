@@ -342795,9 +342795,14 @@
           "at": "2026-11-25T22:09Z",
           "by": "claudecode",
           "what": "step 3 of 6 done: Correction: steps 1-3 were already done by the 21:31Z run (runner on HOS branch j3747-hos013-retake1-runner d61a8212, dry-run passed). Picking up at the submit step."
+        },
+        {
+          "at": "2026-11-25T22:10Z",
+          "by": "claudecode",
+          "what": "step 3 of 6 done: Second dry-run passed (0 clicks, 0 credits; headroom after the 800 cap 21,850 vs floor 3,000). Batch 1 launched detached; batch 2 follows only if batch 1 exits 0."
         }
       ],
-      "remaining_action": "Checking the shared Flow reservation, then submitting batch 1 of the take-2 retakes",
+      "remaining_action": "Submitting the 8 take-2 rows on Flow (batch 1 of 2 running in tmux J3747-retake)",
       "due": "2026-12-01T18:00:00Z",
       "kind": "video",
       "plain": "Build guarded retake runner and mint take 2 for 013's 8 confirmed RETAKE plates before 5 Dec (800 Flow cr max, £0 cash)",
@@ -342805,7 +342810,7 @@
       "progress": {
         "step": 3,
         "of": 6,
-        "at": "2026-11-25T22:09Z",
+        "at": "2026-11-25T22:10Z",
         "by": "claudecode",
         "plan": [
           "Read rules and pass-1 runner",
@@ -342815,7 +342820,7 @@
           "Archive, hash and contact sheets",
           "Status, PR, desk post and park"
         ],
-        "note": "Correction: steps 1-3 were already done by the 21:31Z run (runner on HOS branch j3747-hos013-retake1-runner d61a8212, dr"
+        "note": "Second dry-run passed (0 clicks, 0 credits; headroom after the 800 cap 21,850 vs floor 3,000). Batch 1 launched detached"
       },
       "taskKeys": [
         "HOS:013"
