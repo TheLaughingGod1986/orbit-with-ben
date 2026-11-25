@@ -335457,10 +335457,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "macbook",
+      "since": "2026-11-25T07:53Z",
+      "eta": "2026-11-25T09:53Z",
       "created_by": "relay",
       "created_at": "2026-11-25T07:52Z",
       "result": "",
@@ -335469,13 +335469,26 @@
           "at": "2026-11-25T07:52Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-25T07:53Z",
+          "by": "macbook",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify readiness: Review and lock HOS:127 v02 script, sources, Shorts & packaging once J3688 and v02 facts re-verification complete",
       "kind": "review",
       "recheck_of": "J3622",
       "due": "2026-11-25T08:52:44+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T07:53Z",
+        "by": "macbook",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     }
   ],
   "focus": [
