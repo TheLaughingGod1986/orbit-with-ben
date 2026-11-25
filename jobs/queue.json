@@ -325542,20 +325542,32 @@
           "at": "2026-11-25T12:57Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T12:57Z",
+          "by": "gemini",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Verify the draft against its sources and record exact corrections",
+      "remaining_action": "Fetching macbook/J3486 and reading film 015 SCRIPT.md and SOURCES.md",
       "for": "gemini",
       "kind": "facts",
       "plain": "Check the facts in the Sherman tank story",
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-25T12:57Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect J3486 draft and sources",
+          "Independently verify claims against primary sources",
+          "Write CLAIMS_CHECK_v01.md",
+          "Open WW2 stage PR and report"
+        ]
+      },
+      "taskKeys": [
+        "WW2:015"
+      ]
     },
     {
       "id": "J3551",
