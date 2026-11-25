@@ -282836,16 +282836,21 @@
           "at": "2026-11-25T12:35Z",
           "by": "gemini",
           "what": "step 1 of 6 done: Verified Chief authority (gemini) and live YouTube API pre-state: sY0PSQFxjp8 private publishAt 2026-11-28T11:30:00Z; jkUZpyO71lU and wkyGOKepjeQ private publishAt null"
+        },
+        {
+          "at": "2026-11-25T12:36Z",
+          "by": "gemini",
+          "what": "step 2 of 6 done: Unscheduled sY0PSQFxjp8 via HOS YouTube Data API; verified read-back at 2026-11-25T12:36:34Z (private, publishAt null, madeForKids false; jkUZpyO71lU and wkyGOKepjeQ unchanged private/null); captured cropped Studio receipt"
         }
       ],
-      "remaining_action": "Unschedule sY0PSQFxjp8 via HOS YouTube Data API and capture API read-back + cropped Studio receipt",
+      "remaining_action": "Cancel 3 Buffer posts for sY0PSQFxjp8 and verify via Buffer API",
       "due": "2026-11-24T12:00:00Z",
       "kind": "studio",
       "plain": "Check whether other Shorts are reaching viewers before the vaccine test airs",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 6,
-        "at": "2026-11-25T12:35Z",
+        "at": "2026-11-25T12:36Z",
         "by": "gemini",
         "plan": [
           "Verify authority and live state",
@@ -282855,7 +282860,7 @@
           "Update and merge HOS library and run checks",
           "Post desk and thread reports and close J3125"
         ],
-        "note": "Verified Chief authority (gemini) and live YouTube API pre-state: sY0PSQFxjp8 private publishAt 2026-11-28T11:30:00Z; jk"
+        "note": "Unscheduled sY0PSQFxjp8 via HOS YouTube Data API; verified read-back at 2026-11-25T12:36:34Z (private, publishAt null, m"
       },
       "taskKeys": [
         "HOS:007"
