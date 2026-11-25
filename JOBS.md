@@ -120,7 +120,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3678 | mini | open | – | – | 136 vo · vo · HOS 136 Trinity Test Explained: long voiceover (5 parts) from locked script v02 | HOS PR #767 (ab25f2de), J3677, J3553 |
 | J3679 | mini | open | – | – | HOS:136 vo · vo · HOS 136 Trinity Test Explained: Shorts S01 & S02 voiceover from locked v02 scripts | HOS PR #767 (ab25f2de), J3677, J3553, J3678 |
 | J3684 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
-| J3689 | mini | open | – | – | review · Verify condition for J3622 |  |
+| J3689 | mini | claimed | gemini | 2026-11-25T11:45Z | review · Verify condition for J3622 |  |
 | J3692 | any | blocked | gemini | – | review · AI spend: Google AI Ultra 20x vs Ultra 5x re-review before 12 Jan 2027 renewal, for Ben |  |
 
 Recently finished:

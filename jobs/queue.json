@@ -335784,10 +335784,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T09:45Z",
+      "eta": "2026-11-25T11:45Z",
       "created_by": "relay",
       "created_at": "2026-11-25T07:52Z",
       "result": "",
@@ -335841,6 +335841,11 @@
           "at": "2026-11-25T09:44Z",
           "by": "gemini",
           "what": "reopened: Acting Chief (gemini) taking over parked condition verification J3689 to record satisfied ruling and close."
+        },
+        {
+          "at": "2026-11-25T09:45Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Parked for Chief (codex): merge OWB PR #1310 & HOS PR #773, update J3622 wait (--recheck J3689), close J3689",
@@ -335855,7 +335860,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T09:45Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3690",
