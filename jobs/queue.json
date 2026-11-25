@@ -1,5 +1,5 @@
 {
-  "next_id": 3671,
+  "next_id": 3672,
   "jobs": [
     {
       "id": "J0001",
@@ -333556,6 +333556,36 @@
       "due": "2026-12-03T18:00:00Z",
       "kind": "vo",
       "plain": "Record and vo_check the 6-part long narration for HOS 128 from locked script v03 using Ben Orbit Narrator"
+    },
+    {
+      "id": "J3671",
+      "title": "HOS 128 Edison vs Tesla: Shorts S01 & S02 voiceover from locked v03 scripts",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Record the two 16-19 s search-titled Shorts (`S01` & `S02`) for HOS 128 (*Why Do We Use AC Instead of DC? (Edison vs Tesla)*) from the Acting Chief-locked v03 Shorts scripts (J3660 KEEP/lock; HOS PR #762 merged as `84af0f7d05701a5147d7ad7fb30403a0152e80ff`).\n\n**Locked Shorts script (exact file & hash — verify before spending any credit):**\n- Path: `02_Video-Projects/128_Edison-Tesla-Westinghouse-Why-Do-We-Use-AC-Instead-Of-DC/10_Shorts/SHORTS_SCRIPTS_v03.md`\n- SHA-256: `1132ad9f8b44d4e545f699bf702b83894370effb34afe37ce12b25a2080694e7`\n- **Short A (`S01`, target Fri 11 Dec 11:30 London):** *Why Couldn't Thomas Edison's DC Power Cross a City?* (39 spoken words; target 16-19 s per Ben 19 Nov Shorts house rules).\n- **Short B (`S02`, target Sat 12 Dec 11:30 London):** *How Did Nikola Tesla's AC Beat Edison's DC?* (40 spoken words; target 16-19 s per Ben 19 Nov Shorts house rules).\n- Never alter a spoken word of the locked scripts.\n\n**Voice & credit rules (Mac mini only):**\n1. Voice: **Ben Orbit Narrator** (`eleven_v3`, speed 1.04 as house HOS Shorts), API only through `04_Audio/tools/el_client.py` / `vo_take.py` on the Mac mini under `desk-lock elevenlabs` (`--dry-run` first; one recorder at a time). Never use the ElevenLabs website or any other voice.\n2. Check live ElevenLabs balance first and log it with `ai_spend.py record --pool elevenlabs --film HOS:128`. Subscription credit floor is 0 (Ben, 9/12 Oct); spend nothing if balance is below what the take needs; never buy credits, top up, or spill into paid billing. Long VO takes priority if ElevenLabs credit is tight.\n3. Run `00_Brand/Channel-Setup/tools/vo_check_py312.sh` on both takes; verify both sit cleanly in the 16-19 s runtime band with clean causal loops; `atempo <= 1.06`.\n4. Commit take metadata, word timings, exact audio SHA-256 hashes, and pasted `vo_check` outputs in a clean HOS PR (no media in git); update `status.json` and `production-status.md`; queue/park for Chief VO review and PASS.\n\n**Schedule & guardrails:**\n- Preserve **Thu 10 Dec 2026, 18:00 London** long target (Fri 11 Dec / Sat 12 Dec Shorts) and **Mon 7 Dec -> Thu 17 Dec** slip contingency.\n- **No picture, thumbnail, or scheduling spend** until Chief passes the VO.\n",
+      "ref": "HOS PR #762 (84af0f7d), J3660, J3547, J3670",
+      "film": "HOS:128",
+      "stage": "vo",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T04:25Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T04:25Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "HOS 128 Edison vs Tesla: Shorts S01 & S02 voiceover from locked v03 scripts",
+      "due": "2026-12-03T18:00:00Z",
+      "kind": "vo",
+      "plain": "Record and vo_check Shorts S01 and S02 narration for HOS 128 from locked SHORTS_SCRIPTS_v03.md"
     }
   ],
   "focus": [
