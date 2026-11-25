@@ -338261,10 +338261,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T12:30Z",
+      "eta": "2026-11-25T14:30Z",
       "created_by": "relay",
       "created_at": "2026-11-25T12:04Z",
       "result": "",
@@ -338298,6 +338298,11 @@
           "at": "2026-11-25T12:30Z",
           "by": "gemini",
           "what": "reopened: Acting Chief evidence review complete (PR #1320 / c2ad86f9e2): J3125 reopened with exact First-24h Studio readback; reopening verification task to claim and close."
+        },
+        {
+          "at": "2026-11-25T12:30Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Read J3125 evidence and decide whether the first-24h Shorts-feed condition is proven",
@@ -338312,7 +338317,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T12:30Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3708",
