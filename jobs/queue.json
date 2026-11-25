@@ -340615,16 +340615,21 @@
           "at": "2026-11-25T16:09Z",
           "by": "claudecode",
           "what": "step 1 of 6 done: Step 1: disk checked (7 GB internal, 11 GB work SSD; nothing old enough to offload; cache clear started). Photos go straight to the NAS film folder."
+        },
+        {
+          "at": "2026-11-25T16:10Z",
+          "by": "claudecode",
+          "what": "step 1 of 6 done: Harvest script pushed (ww2-channel claudecode/J3728-017-picture, 6f0da84); full download running detached, 3 of ~107 numbers fetched at release."
         }
       ],
-      "remaining_action": "Downloading full-size archive photos (running detached in tmux J3728-harvest)",
+      "remaining_action": "Downloading full-size archive photos (detached: tmux J3728-harvest)",
       "due": "2026-11-28T20:00:00Z",
       "kind": "image",
       "urgent": 9,
       "progress": {
         "step": 1,
         "of": 6,
-        "at": "2026-11-25T16:09Z",
+        "at": "2026-11-25T16:10Z",
         "by": "claudecode",
         "plan": [
           "Free disk space",
@@ -340634,7 +340639,7 @@
           "Build three thumbnails",
           "Write picture plan and open PR"
         ],
-        "note": "Step 1: disk checked (7 GB internal, 11 GB work SSD; nothing old enough to offload; cache clear started). Photos go stra"
+        "note": "Harvest script pushed (ww2-channel claudecode/J3728-017-picture, 6f0da84); full download running detached, 3 of ~107 num"
       },
       "taskKeys": [
         "WW2:017"
