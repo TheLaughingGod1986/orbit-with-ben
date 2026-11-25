@@ -1,5 +1,5 @@
 {
-  "next_id": 3736,
+  "next_id": 3737,
   "jobs": [
     {
       "id": "J0001",
@@ -341461,6 +341461,36 @@
       "taskKeys": [
         "OWB:032"
       ]
+    },
+    {
+      "id": "J3736",
+      "title": "HOS 011 Anaesthesia: £0 Flow pass-1 price pass (66 plates), P5:16b fix & guarded runner build",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Queued by Acting Chief (gemini, J3734, 25 Nov 2026). HOS 011 (Anesthesia: The Day Surgery Stopped Hurting) is promoted into active HOS WIP for **Thu 17 Dec 2026 18:00 London** (Ben watch Mon 14 Dec; 0 new long VO credits needed; all 26 free rows & timing rough v11 built in J2563/PR #650; zero capability holds).\n\n**Do (£0, NO minting in this job):**\n1. Re-price the 66 Flow rows in `02_Video-Projects/011_Surgery-Before-Anaesthesia/07_Edit-Project/PICTURE_PLAN_v03.json` against live Flow balance (~23,450 cr as of 24 Nov) and Google Flow's 5 Dec 2026 model transition (J3691: pre-5-Dec `Veo 3.1 - Quality` 100 cr = 6,600 cr vs post-5-Dec `Veo 3.1 - Lite` 5 cr / 0 cr Lower Priority + `Omni 1.2 Flash` 720p 24 cr for fragile light & Explorer). Recommend the fastest clean route to hit Mon 14 Dec watch.\n2. Verify all 66 prompts contain zero real person names (per 013 Flow lesson), zero forbidden words (\"same DNA\", \"lab DNA\"), and zero text requests.\n3. Resolve `P5:16b` (J2563 flagged 3.13 s overlap if reusing `P1:07b`): either scope 1 dedicated Flow plate or a clean £0 archive/code graphic so 93/93 rows have zero overlap.\n4. Build and unit-test a guarded pass-1 Flow runner (mirroring `013`'s `_mint_flow_v01_pass1.py` with live balance check, `--floor 3000`, shared writer lock, `generation_authorized: false`, and unarmed dry-run refusal).\n5. Open a clean HOS PR with `check_all.sh` PASS and park for Chief price PASS / mint GO. £0 / 0 credits spent.\n",
+      "ref": "J3734",
+      "film": "011",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T19:16Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T19:16Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Re-price 66 Flow rows, resolve P5:16b overlap, build/test guarded runner, park for Chief GO",
+      "due": "2026-11-26T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Price 011's 66 plates, fix P5:16b reuse, and build the guarded Flow runner at £0"
     }
   ],
   "focus": [
