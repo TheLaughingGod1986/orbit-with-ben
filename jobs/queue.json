@@ -340625,13 +340625,13 @@
       "stage": "picture",
       "after": "",
       "eta_min": 180,
-      "status": "claimed",
+      "status": "done",
       "by": "claudecode",
       "since": "2026-11-25T17:18Z",
-      "eta": "2026-11-25T20:18Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-25T16:05Z",
-      "result": "",
+      "result": "ww2-channel PR 161 open for the Chief (branch claudecode/J3728-017-picture, ee6aaa2): 107 Navy photo numbers on the NAS (104 usable) logged with collection, licence, SHA-256, by-eye note and beat; picture plan v02 puts Navy photos in hand at 64% of screen time (67% if 3 wanted views are found), 59 photos on beats, 45 spare; 3 code maps and 3 thumbnails included. Chief to rule: NH 50930/50931 are Japanese-taken (held out); 20% of screen time uses photos whose catalogue captions are still to be read before naming a ship or date; map caveats in the PR. Not done: Nevada in Dry Dock 2, Nevada off Utah Beach, West Virginia in Tokyo Bay not found; 80-G-32462 and NH 64484 too small; plan's explanatory diagrams not drawn (outside this job). Commons download still running detached (tmux J3728-pass2, log ~/_desk/logs/J3728-pass2.log, done file ~/_desk/logs/J3728-pass2.done): do not start a second copy; when it ends re-run build_provenance_017.py and commit RETRIEVAL_LOG_017.json.",
       "history": [
         {
           "at": "2026-11-25T16:05Z",
@@ -340842,6 +340842,11 @@
           "at": "2026-11-25T17:21Z",
           "by": "claudecode",
           "what": "step 6 of 6 done: Picture plan finished: Navy photos in hand carry 64% of screen time (was 43%); 107 photo numbers logged, 59 on a beat; pull request 161 opened for the Chief"
+        },
+        {
+          "at": "2026-11-25T17:21Z",
+          "by": "claudecode",
+          "what": "done: ww2-channel PR 161 open for the Chief (branch claudecode/J3728-017-picture, ee6aaa2): 107 Navy photo numbers on the NAS (104 usable) logged with collection, licence, SHA-256, by-eye note and beat; picture plan v02 puts Navy photos in hand at 64% of screen time (67% if 3 wanted views are found), 59 photos on beats, 45 spare; 3 code maps and 3 thumbnails included. Chief to rule: NH 50930/50931 are Japanese-taken (held out); 20% of screen time uses photos whose catalogue captions are still to be read before naming a ship or date; map caveats in the PR. Not done: Nevada in Dry Dock 2, Nevada off Utah Beach, West Virginia in Tokyo Bay not found; 80-G-32462 and NH 64484 too small; plan's explanatory diagrams not drawn (outside this job). Commons download still running detached (tmux J3728-pass2, log ~/_desk/logs/J3728-pass2.log, done file ~/_desk/logs/J3728-pass2.done): do not start a second copy; when it ends re-run build_provenance_017.py and commit RETRIEVAL_LOG_017.json."
         }
       ],
       "remaining_action": "Chief reviews ww2-channel pull request 161",
@@ -340865,7 +340870,8 @@
       },
       "taskKeys": [
         "WW2:017"
-      ]
+      ],
+      "done_ref": "https://github.com/TheLaughingGod1986/ww2-channel/pull/161"
     },
     {
       "id": "J3729",
