@@ -282764,13 +282764,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T12:32Z",
-      "eta": "2026-11-25T14:32Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-19T10:22Z",
-      "result": "",
+      "result": "Gate failed (0/3 named controls >=50% day-1 feed share; Bks_JLId1ew 8/23=34.8%, Sq_lV89VMUs & fgsR8yAHr5s unavailable per J3188/J3707). Unscheduled sY0PSQFxjp8 ONLY via HOS YouTube Data API (read-back 2026-11-25T12:36:34Z: private, publishAt null, madeForKids false; jkUZpyO71lU & wkyGOKepjeQ verified private/null; upload kept). Cancelled all 3 Buffer posts (6b02943702479690922e8c8e, 6b029438d5eabfb8cc8c2cf2, 6b029439d864a01105a3cbc9 -> null at 12:36:55Z; buffer-mirror dry-run 0 changes). Merged OWB PR #1321 (9a21295cf2: UPLOADS, BUFFER_POSTS, LEARNINGS row 36, J3125 receipt) and HOS PR #785 (39eef903: library.json retired, 007 SHORTS_RELEASE unscheduled; check_all.sh PASS, channel:audit 75 videos 0 errors). Posted HOS desk receipt with cropped Studio image (7162773188) and OWB thread report (7162774316). 29 Nov Variolation readout not queued; 008 Short C 4sYTV_rQcqs already scheduled 29 Nov under J3500. GBP 0.",
       "history": [
         {
           "at": "2026-11-19T10:22Z",
@@ -282861,6 +282861,11 @@
           "at": "2026-11-25T12:44Z",
           "by": "gemini",
           "what": "step 6 of 6 done: Posted HOS desk receipt #7162773188 (with cropped Studio image) and OWB thread report #7162774316; closing J3125"
+        },
+        {
+          "at": "2026-11-25T12:44Z",
+          "by": "gemini",
+          "what": "done: Gate failed (0/3 named controls >=50% day-1 feed share; Bks_JLId1ew 8/23=34.8%, Sq_lV89VMUs & fgsR8yAHr5s unavailable per J3188/J3707). Unscheduled sY0PSQFxjp8 ONLY via HOS YouTube Data API (read-back 2026-11-25T12:36:34Z: private, publishAt null, madeForKids false; jkUZpyO71lU & wkyGOKepjeQ verified private/null; upload kept). Cancelled all 3 Buffer posts (6b02943702479690922e8c8e, 6b029438d5eabfb8cc8c2cf2, 6b029439d864a01105a3cbc9 -> null at 12:36:55Z; buffer-mirror dry-run 0 changes). Merged OWB PR #1321 (9a21295cf2: UPLOADS, BUFFER_POSTS, LEARNINGS row 36, J3125 receipt) and HOS PR #785 (39eef903: library.json retired, 007 SHORTS_RELEASE unscheduled; check_all.sh PASS, channel:audit 75 videos 0 errors). Posted HOS desk receipt with cropped Studio image (7162773188) and OWB thread report (7162774316). 29 Nov Variolation readout not queued; 008 Short C 4sYTV_rQcqs already scheduled 29 Nov under J3500. GBP 0."
         }
       ],
       "remaining_action": "Done",
