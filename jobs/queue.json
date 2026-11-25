@@ -340061,6 +340061,11 @@
           "at": "2026-11-25T14:45Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: verification finished, condition NOT satisfied (J3716-J3719 all open at 2026-11-25T14:44Z; panel folder and DECISION.md absent on origin/main). I cannot close this check: done requires wait J3022 --recheck J3720, and that is refused because the hold belongs to gemini. Chief/gemini: run jobs.py wait J3022 --recheck J3720 with that condition, then finish J3720."
+        },
+        {
+          "at": "2026-11-25T16:45Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Finishing the verification and reporting",
@@ -340090,7 +340095,8 @@
       },
       "taskKeys": [
         "OWB:064"
-      ]
+      ],
+      "escalated_at": "2026-11-25T16:45Z"
     },
     {
       "id": "J3721",
