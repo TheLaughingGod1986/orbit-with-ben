@@ -274160,9 +274160,14 @@
           "at": "2026-11-24T13:26Z",
           "by": "codex",
           "what": "condition recorded; next verification 2026-11-25T18:00:00Z"
+        },
+        {
+          "at": "2026-11-25T12:47Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-25T13:00:00Z"
         }
       ],
-      "remaining_action": "Correct the planet script and verify its sources before narration can start",
+      "remaining_action": "Await elected Chief exact-hash review and script lock (v04 PR #1269 / J3545 PR #1274 after J3539 FIX PR #1265/#1262) before completing J3020 and releasing J3021",
       "due": "2026-11-23T18:00:00Z",
       "kind": "script",
       "plain": "Write and check the script for the every-planet film",
@@ -274187,11 +274192,8 @@
       ],
       "hold": {
         "type": "dependency",
-        "condition": "J3520 FIX on v02 0dd5ea6c reconfirms J3051: Jupiter mass scope, Galileo transmission versus crushing, Earth equatorial/wind qualifiers and Neptune ratio require correction. Wait for J3538 corrected v03 and J3539 independent source verification and exact-hash PASS. Only then complete J3020; J3021 remains gated on J3020. Ruling: PR 1260, jobs/reviews/J3520/CHIEF_RULING.md.",
-        "check_at": "2026-11-25T18:00:00Z",
-        "last_recheck": "J3051",
-        "checked_at": "2026-11-24T13:26:40+00:00",
-        "checked_by": "codex"
+        "condition": "J3539 independent review is FIX on exact v03 hash 9d5cd3bd256652621441cece4f3ac250be32d0abb08fbadd12835e3684d4851f (PR #1265 alongside PR #1262; Mercury tilt, Mars magnetic history, Saturn haze uncertainty, Uranus scope, Venus ocean, citations/teaching). Correction J3544 (PR #1269, v04 556f3c8d) and independent recheck J3545 (PR #1274, advisory PASS on v04 556f3c8d) are now done. J3020 stays blocked and J3021 stays dependent on J3020 until elected Chief independently reviews and locks the exact passing candidate and completes J3020. No script lock, approval, narration or generation authorized by J3546.",
+        "check_at": "2026-11-25T13:00:00Z"
       },
       "escalated_at": "2026-11-18T06:14Z"
     },
