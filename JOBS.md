@@ -105,7 +105,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3719 | mini | open (after J3718) | – | – | 064 thumbs · review · Packaging panel decision: OWB 064 Every Planet Explained (3 titles, 3 thumbnails A/B/C, opening & chapters) |  |
 | J3720 | mini | blocked | claudecode | – | review · Verify condition for J3022 |  |
 | J3722 | mini | open (after J3721) | – | – | WW2:004 edit · qa · WW2 004: full private audiovisual QA of v03 master (J3715 Cuts A+B) for Chief watch stage | b1392f1 |
-| J3723 | mini | open | – | – | WW2:006 edit · assembly · WW2 006: v03 pre-watch opening trims (J3715 Cuts A+B, 124.5 s), chapters, captions and render | b1392f1 |
+| J3723 | mini | claimed | claudecode | 2026-11-25T17:40Z | WW2:006 edit · assembly · WW2 006: v03 pre-watch opening trims (J3715 Cuts A+B, 124.5 s), chapters, captions and render | b1392f1 |
 | J3724 | mini | open (after J3723) | – | – | WW2:006 edit · qa · WW2 006: full private audiovisual QA of v03 master (J3715 Cuts A+B) for Chief watch stage | b1392f1 |
 | J3725 | mini | claimed | gemini | 2026-11-25T17:26Z | WW2:003 edit · assembly · WW2 003 Short 3: build 'B-29 vs the Atomic Bomb: Which Cost More?' from the film's opening, for Ben's watch |  |
 | J3726 | mini | claimed | macbook | 2026-11-25T17:00Z | review · Orbit and History of Science: propose five space-history crossover pairs and how the two channels would link them |  |
