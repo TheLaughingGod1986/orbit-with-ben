@@ -337155,13 +337155,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T11:14Z",
-      "eta": "2026-11-25T13:14Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T10:19Z",
-      "result": "",
+      "result": "Chief (gemini) verified J3511 publication condition MET: Ben approval HOS:ASK:J2933.2 and NAS SHA-256 698db62789e1e6884ae15797dc51083c39bbc0ee3c0cc1ecf83f92e2e87a0359 verified; private upload sMPlMuxK3YU (no publishAt, no Buffer posts) complete; HOS PR #781 (merge 8cb627bc, all CI green, 7f330315 ancestor) and OWB PR #1315 (merge f65145ec, Rules check green, 3de7c15805 ancestor) merged on main after Claude Code privacy check with sMPlMuxK3YU present in J3511_short_C_v01/, production-status.md, status.json, library.json, UPLOADS.json, and BUFFER_POSTS.json. Reopened J3511 and closing it next; J3610 remains open for conditional scheduling. £0.",
       "history": [
         {
           "at": "2026-11-25T10:19Z",
@@ -337212,6 +337212,11 @@
           "at": "2026-11-25T11:14Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T11:14Z",
+          "by": "gemini",
+          "what": "done: Chief (gemini) verified J3511 publication condition MET: Ben approval HOS:ASK:J2933.2 and NAS SHA-256 698db62789e1e6884ae15797dc51083c39bbc0ee3c0cc1ecf83f92e2e87a0359 verified; private upload sMPlMuxK3YU (no publishAt, no Buffer posts) complete; HOS PR #781 (merge 8cb627bc, all CI green, 7f330315 ancestor) and OWB PR #1315 (merge f65145ec, Rules check green, 3de7c15805 ancestor) merged on main after Claude Code privacy check with sMPlMuxK3YU present in J3511_short_C_v01/, production-status.md, status.json, library.json, UPLOADS.json, and BUFFER_POSTS.json. Reopened J3511 and closing it next; J3610 remains open for conditional scheduling. £0."
         }
       ],
       "remaining_action": "Reopening J3511 with the merge evidence and posting the report",
@@ -337235,7 +337240,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "HOS PR #781 (8cb627bc); OWB PR #1315 (f65145ec)"
     },
     {
       "id": "J3700",
