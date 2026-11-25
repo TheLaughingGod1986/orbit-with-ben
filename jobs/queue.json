@@ -1,5 +1,5 @@
 {
-  "next_id": 3710,
+  "next_id": 3711,
   "jobs": [
     {
       "id": "J0001",
@@ -338352,6 +338352,36 @@
       "due": "2026-11-26T12:00:00Z",
       "kind": "review",
       "plain": "Verify WW2:009 v04 CLEAN claims pass (J3642 PR #146), resolve superseded J3664, and reopen J3492"
+    },
+    {
+      "id": "J3710",
+      "title": "St Nazaire: Chief ruling on the J3614 shorter paper recut (accept, merge PR 50, release the edit; or fix)",
+      "needs": "any",
+      "repo": "ww2",
+      "body": "Chief decision owed on WW2 film 005 (St Nazaire): accept or reject the shorter existing-voice paper recut that J3614 delivered. Found by the J3708 condition check (Claude Code, worker, 25 Nov 2026): the J3600 ruling asked for three things before J3431 can finish, and only this one is outstanding, with no job owning it.\n\n**What is already in place (checked 25 Nov, text and numbers only; no audio or motion perception claimed):**\n- J3614 is done with a KEEP recommendation. Deliverables are on ww2-channel PR 50 (branch codex/J3431-archive, head 337af58): 01_Script/SCRIPT_RECUT_v02_J3614.md, 01_Script/RECUT_SENTENCE_LIST_J3614.md and .json, 03_Picture/PICTURE_PLAN_RECUT_J3614.md and .json, 03_Picture/REVIEW_J3614.md, 03_Picture/VALIDATION_J3614.md.\n- PR 50 is open, unmerged, and GitHub reads it MERGEABLE / CLEAN against main. Its status.json keeps all seven stages with picture blocked and edit todo.\n- Independent re-sum of the 39 paragraphs in PICTURE_PLAN_RECUT_J3614.json: photo 492.08 s of 935.61 s spoken, plus 5.60 s of chapter gaps = 941.21 s, 52.28% (word-estimate timing); 486.61 s of 934.58 s, 52.07% (voice-aligned, strict); 501.30 s, 53.64% (aligned, natural). 61 photo segments, 31 distinct image IDs, 137 of 184 sentences kept. These match the J3614 report. WW2 rule 1 floor is 50%.\n\n**Decide (one ruling, recorded on the thread and on J3431):**\n1. Is the 137-sentence cut a coherent film (it drops the Bismarck detour, tide and route detail, the RAF diversion, signalling, the two Victoria Cross vignettes, press and medal lists), and is cutting the locked narration this way accepted? This is an editorial change to a locked script, so it is the Chief's call, not a worker's.\n2. Is 52.07% photo-dominant on the strict aligned basis accepted under rule 1 (at least half)?\n3. If accepted: merge PR 50 (check its base is main), record the acceptance, complete J3431 so J3432 (the edit) is released with the existing-take splice scope, originals untouched. If rejected: say exactly what to fix or shelve this version, and update the J3431 hold.\n\n**Timing.** Ben's watch for this film is due 30 Nov 20:00 UTC and it airs Thu 3 Dec 17:00 London; the edit (J3432) cannot start until this is ruled. A film that is not ready skips its slot and Ben is told.\n\n**Guards.** No spend, no upload, no schedule or title change, nothing deleted on the NAS. Splice smoothness is still to be proven in the edit and at Ben's watch.\n",
+      "ref": "",
+      "film": "WW2:005",
+      "stage": "picture",
+      "after": "",
+      "eta_min": 25,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claudecode",
+      "created_at": "2026-11-25T12:07Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T12:07Z",
+          "by": "claudecode",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Rule on the shorter St Nazaire cut and its 52% real-photo plan, then release or hold the edit",
+      "due": "2026-11-25T20:00:00Z",
+      "kind": "chief",
+      "plain": "Decide whether the shorter St Nazaire film, told with enough real archive photographs, can go to the edit"
     }
   ],
   "focus": [

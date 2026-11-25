@@ -109,6 +109,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3707 | mini | open | – | – | review · Verify condition for J3125 |  |
 | J3708 | mini | claimed | claudecode | 2026-11-25T14:06Z | review · Verify condition for J3431 |  |
 | J3709 | mini | open | – | – | WW2:009 script · review · WW2 009: verify J3492 condition after CLEAN J3642 v04 claims pass | https://github.com/TheLaughingGod1986/ww2-channel/pull/146 |
+| J3710 | any | open | – | – | WW2:005 picture · chief · St Nazaire: Chief ruling on the J3614 shorter paper recut (accept, merge PR 50, release the edit; or fix) |  |
 
 Recently finished:
 
