@@ -325073,9 +325073,14 @@
           "at": "2026-11-25T06:30Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T06:34Z",
+          "by": "macbook-2",
+          "what": "step 1 of 2 done"
         }
       ],
-      "remaining_action": "Wait for J3675 (v02 fix) -> J3676 (v02 facts) -> J3677 (Chief v02 lock, which closes J3553 on KEEP)",
+      "remaining_action": "Closing J3553 per Acting Chief J3677 KEEP & script lock and posting studio report",
       "due": "2026-12-04T18:00:00Z",
       "kind": "review",
       "rerouted_from": {
@@ -325090,12 +325095,14 @@
         "HOS:136"
       ],
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-25T06:30Z",
+        "step": 1,
+        "of": 2,
+        "at": "2026-11-25T06:34Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Verify J3677 Acting Chief lock & merged PRs",
+          "Close J3553 and post studio report"
+        ]
       }
     },
     {
