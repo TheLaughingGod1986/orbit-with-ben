@@ -788,10 +788,24 @@ def settle_uploaded(videos: list[dict], card: dict, row: dict, now: datetime) ->
     card.pop("approved", None)
 
 
+def card_names(videos: list[dict]) -> dict:
+    """{name: card} by each card's key and every name its ask gave it (`aliases`)."""
+    by_key = {v["key"]: v for v in videos}
+    for v in videos:
+        for name in v.get("aliases") or []:
+            by_key.setdefault(name, v)
+    return by_key
+
+
 def ask_card(e: dict) -> dict:
-    """A card of its own for an entry with no existing card (a Short not uploaded yet, a re-cut swap)."""
+    """A card of its own for an entry with no existing card (a Short not uploaded yet, a re-cut swap).
+
+    It keeps the name the ask gave it (`card`) as an alias: the upload job names that card in `delivers` or
+    `approved_from` (25 Nov 2026: WW2 001-S1 was uploaded by J3646, but the board kept "waiting for an upload job" on
+    WW2:ASK:J3542 for 17 hours because nothing matched the two names)."""
     airs = e.get("airs") or ""
-    return {"key": f"{e['channel']}:ASK:{e['id']}", "checkId": ask_check_id(e), "channel": e["channel"],
+    return {"key": f"{e['channel']}:ASK:{e['id']}", "aliases": [e["card"]] if e.get("card") else [],
+            "checkId": ask_check_id(e), "channel": e["channel"],
             "number": e.get("number") or "", "title": e.get("title") or e.get("what") or e["id"], "type": e["type"],
             "version": e.get("version") or "", "air": airs[:10], "airText": london_slot(airs) if airs else "",
             "lane": "ready", "line": "", "waitingOn": "Ben", "readyFor": "Ben", "notes": [], "flags": [], "okNote": "",
@@ -800,7 +814,7 @@ def ask_card(e: dict) -> dict:
 
 
 def add_asks(videos: list[dict], asks: list[dict], checks: dict, now: datetime, files: dict | None = None) -> None:
-    by_key = {v["key"]: v for v in videos}
+    by_key = card_names(videos)
     for e in asks or []:
         if not ask_live(e, checks):
             continue
@@ -809,6 +823,8 @@ def add_asks(videos: list[dict], asks: list[dict], checks: dict, now: datetime, 
             card = ask_card(e)
             videos.append(card)
             by_key[card["key"]] = card
+            for name in card["aliases"]:
+                by_key.setdefault(name, card)
         apply_ask(card, e, checks, now)
         row = matched_upload(e, files)
         if row and card.get("lane") == "approved":
@@ -964,7 +980,7 @@ def approved_card(e: dict) -> dict:
 
 def add_approved(videos: list[dict], entries: list[dict], jobs_by_id: dict, now: datetime,
                  files: dict | None = None) -> None:
-    by_key = {v["key"]: v for v in videos}
+    by_key = card_names(videos)
     for e in entries or []:
         if e.get("jobStatus") == "cancelled":
             # shown with a warning for 2 days (or until it would have aired), so Ben sees it didn't go ahead
