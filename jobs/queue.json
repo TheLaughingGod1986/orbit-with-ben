@@ -1,5 +1,5 @@
 {
-  "next_id": 3748,
+  "next_id": 3749,
   "jobs": [
     {
       "id": "J0001",
@@ -342725,6 +342725,40 @@
       "taskKeys": [
         "HOS:013"
       ]
+    },
+    {
+      "id": "J3748",
+      "title": "WW2 005: targeted audiovisual check of v04 master (six J3746 changes) before Chief watch stage",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** J3746 built `ww2_005_st_nazaire_v04_mix.mp4` (film's studio-live `07_Edit` folder, SHA-256 `55ffac7219d623d3442fa4214a5d638db804514121f63fced848f7f973e4603c`, 14:46) from the J3745 QA fixes. Tool checks pass (`07_Edit/QA_TECHNICAL_v04.json`, ww2-channel PR #168), but nobody has watched or heard v04. This is the quick targeted check before the Chief stages `J3432` to Ben's watch (due Mon 30 Nov 20:00Z).\n\n**Do (needs real audio and moving-picture input; private NAS copy only, never a public page):**\n1. `4:10-4:25` (shot 19, Loire map): no Ryder lower third over the map; it appears once, on his photograph (shot 20).\n2. `8:30-8:45` (join 10, 659.0 s): the stray \"I-\" syllable is gone and the pause before P27.S2 sounds natural, with no click.\n3. `0:38-0:50` (shot 4): A 22631 (Alten Fjord) reads cleanly with its caption, slow drift, no strut. `10:50-11:00`: A 23877 drifts, not frozen.\n4. `12:02-12:36` (shot 54): the cross-fade from the intact gate to plate G10e (THE CHARGE GOES OFF) lands on the explosion line at about 12:19.5 and reads clearly; judge the plate itself (worker drawing, not yet reviewed).\n5. `13:10-13:35`: G13 sits under chapter 7; the score changes to the chapter 8 cue at 13:27 on \"And Tirpitz?\", not mid-sentence. Listen for a clean cue change.\n6. Thumbnail C v02 (`10_Thumbnail/ww2_005_thumb_C_v02.jpg`, sheet `thumbnail_comparison_v02.jpg`): the dock reads as the one target at 168 px, one arrow, pens out of frame.\n7. Spot-listen two other joins and the ending fade to confirm nothing else moved (narration length is unchanged at 883.718 s).\n\n**Out.** `07_Edit/QA_REVIEW_v04.md` with KEEP or FIX (exact list) on a ww2-channel PR, then park for the Chief to merge PR #168 and stage `J3432`. A reviewer without real audio or moving-picture input parks with a capability hold and does not judge from stills or measurements.\n\n**Guards.** £0. No UAT copy, no watch upload, no `jobs.py awaits`, nothing on YouTube.\n",
+      "ref": "9562103",
+      "film": "WW2:005",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "claudecode",
+      "created_at": "2026-11-25T21:41Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T21:41Z",
+          "by": "claudecode",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Watch and listen to the six changed moments in St Nazaire v04 and write keep or fix",
+      "due": "2026-11-28T20:00:00Z",
+      "kind": "qa",
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ],
+      "plain": "Watch and listen to the six changed moments in the St Nazaire film's new version before it goes to Ben's watch"
     }
   ],
   "focus": [

@@ -114,6 +114,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3745 | mini | blocked | gemini | – | WW2:005 edit · qa · WW2 005: full private audiovisual QA of v03 master (J3715 Cuts A+B) for Chief watch stage | 27eb9df |
 | J3746 | mini | claimed | claudecode | 2026-11-25T23:32Z | WW2:005 edit · assembly · WW2 005: targeted zero-spend v04 fix pass from J3745 audiovisual QA |  |
 | J3747 | mini | open | – | – | 013 picture · video · HOS 013 Darwin & Wallace: mint take-2 retakes for 8 confirmed RETAKE rows (Option A, 800 Flow cr max, before 5 Dec) | J3738 |
+| J3748 | mini | open | – | – | WW2:005 edit · qa · WW2 005: targeted audiovisual check of v04 master (six J3746 changes) before Chief watch stage | 9562103 |
 
 Recently finished:
 
