@@ -113,7 +113,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3731 | macbook | open | – | – | for claudecode · MacBook: publish (or confirm lost) the unpushed Battle of the Bulge work for J3487 |  |
 | J3733 | mini | open | – | – | review · Verify condition for J3508 |  |
 | J3734 | any | open | – | – | chief · History of Science: one line-up to the end of January, a next job for every film, and pre-build while voice credits are at zero |  |
-| J3735 | mini | open | – | – | review · Verify condition for J2886 |  |
+| J3735 | mini | claimed | claudecode | 2026-11-25T20:12Z | review · Verify condition for J2886 |  |
 
 Recently finished:
 
