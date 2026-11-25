@@ -333536,10 +333536,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T11:28Z",
+      "eta": "2026-11-25T13:28Z",
       "created_by": "gemini",
       "created_at": "2026-11-25T00:47Z",
       "result": "",
@@ -333593,6 +333593,11 @@
           "at": "2026-11-25T11:28Z",
           "by": "gemini",
           "what": "rerouted to gemini: Acting Chief closing J3654 after verifying ww2-channel#139, orbit-with-ben#1314, orbit-with-ben#1318, and closing J3205/J3697/J3589/J3558."
+        },
+        {
+          "at": "2026-11-25T11:28Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief closes the assembly job with the two merge references",
@@ -333610,6 +333615,14 @@
         "model": "",
         "status": "open",
         "by": ""
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T11:28Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
