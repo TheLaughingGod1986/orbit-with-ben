@@ -315335,16 +315335,21 @@
           "at": "2026-11-25T09:21Z",
           "by": "gemini",
           "what": "step 1 of 4 done: Live Studio retention curve is now ready for ek9F61FVYqY (23:52 timeline, 20-23 Nov Pacific batch, 100 pts, All 15.8%/4:07, New 16.46%/4:19). Extracted exact checkpoints and steepest drops."
+        },
+        {
+          "at": "2026-11-25T09:24Z",
+          "by": "gemini",
+          "what": "step 2 of 4 done: Watched 6 mapped H.264+AAC drop clips via read_file (capabilities recorded); verified exact 25fps cut boundaries (Cut 1: 07:44:00-08:47:15, 63.6s; Cut 2 conditional: 03:07:15-03:29:12, 21.9s)."
         }
       ],
-      "remaining_action": "Watch 40s clips around the steepest retention drops and inspect daily pre/post-trim split",
+      "remaining_action": "Write TRIM_PROPOSAL_v02.md and update studio/LEARNINGS.md in clean ww2 worktree",
       "due": "2026-11-26T18:00:00Z",
       "kind": "studio",
       "mini_only": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 4,
-        "at": "2026-11-25T09:21Z",
+        "at": "2026-11-25T09:24Z",
         "by": "gemini",
         "plan": [
           "Read Studio retention graph",
@@ -315352,7 +315357,7 @@
           "Propose clean cuts or wait if still processing",
           "Record findings and update learnings"
         ],
-        "note": "Live Studio retention curve is now ready for ek9F61FVYqY (23:52 timeline, 20-23 Nov Pacific batch, 100 pts, All 15.8%/4:"
+        "note": "Watched 6 mapped H.264+AAC drop clips via read_file (capabilities recorded); verified exact 25fps cut boundaries (Cut 1:"
       },
       "taskKeys": [
         "WW2:001"
