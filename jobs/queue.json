@@ -332100,9 +332100,14 @@
           "at": "2026-11-25T01:27Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T01:28Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Publish finished upload and registration records through Claude Code privacy review",
+      "remaining_action": "Reading J3512 history, GitHub PRs, and local scratch branches",
       "kind": "review",
       "recheck_of": "J3512",
       "mini_only": true,
@@ -332119,11 +332124,17 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-25T01:27Z",
+        "at": "2026-11-25T01:28Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read J3512 job history, PRs, and local scratch branches",
+          "Inspect diffs and check whether J3512 publish condition is met",
+          "Update J3512 wait/reopen state, close J3658, and post report"
+        ]
+      },
+      "taskKeys": [
+        "HOS:010"
+      ]
     }
   ],
   "focus": [
