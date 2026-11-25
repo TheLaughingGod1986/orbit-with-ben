@@ -1,5 +1,5 @@
 {
-  "next_id": 3711,
+  "next_id": 3712,
   "jobs": [
     {
       "id": "J0001",
@@ -274165,6 +274165,11 @@
           "at": "2026-11-25T12:47Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-25T13:00:00Z"
+        },
+        {
+          "at": "2026-11-25T12:49Z",
+          "by": "relay",
+          "what": "condition verification queued: J3711"
         }
       ],
       "remaining_action": "Await elected Chief exact-hash review and script lock (v04 PR #1269 / J3545 PR #1274 after J3539 FIX PR #1265/#1262) before completing J3020 and releasing J3021",
@@ -274193,7 +274198,8 @@
       "hold": {
         "type": "dependency",
         "condition": "J3539 independent review is FIX on exact v03 hash 9d5cd3bd256652621441cece4f3ac250be32d0abb08fbadd12835e3684d4851f (PR #1265 alongside PR #1262; Mercury tilt, Mars magnetic history, Saturn haze uncertainty, Uranus scope, Venus ocean, citations/teaching). Correction J3544 (PR #1269, v04 556f3c8d) and independent recheck J3545 (PR #1274, advisory PASS on v04 556f3c8d) are now done. J3020 stays blocked and J3021 stays dependent on J3020 until elected Chief independently reviews and locks the exact passing candidate and completes J3020. No script lock, approval, narration or generation authorized by J3546.",
-        "check_at": "2026-11-25T13:00:00Z"
+        "check_at": "2026-11-25T13:49:37+00:00",
+        "recheck_task": "J3711"
       },
       "escalated_at": "2026-11-18T06:14Z"
     },
@@ -338749,6 +338755,37 @@
         "WW2:005"
       ],
       "done_ref": "0f79fdf"
+    },
+    {
+      "id": "J3711",
+      "title": "Verify condition for J3020",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3020: J3539 independent review is FIX on exact v03 hash 9d5cd3bd256652621441cece4f3ac250be32d0abb08fbadd12835e3684d4851f (PR #1265 alongside PR #1262; Mercury tilt, Mars magnetic history, Saturn haze uncertainty, Uranus scope, Venus ocean, citations/teaching). Correction J3544 (PR #1269, v04 556f3c8d) and independent recheck J3545 (PR #1274, advisory PASS on v04 556f3c8d) are now done. J3020 stays blocked and J3021 stays dependent on J3020 until elected Chief independently reviews and locks the exact passing candidate and completes J3020. No script lock, approval, narration or generation authorized by J3546.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3020 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-25T12:49Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T12:49Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Await elected Chief exact-hash review and script lock (v04 PR #1269 / J3545 PR #1274 after J3539 FIX PR #1265/#1262) before completing J3020 and releasing J3021",
+      "kind": "review",
+      "recheck_of": "J3020",
+      "due": "2026-11-23T18:00:00+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
