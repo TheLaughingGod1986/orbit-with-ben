@@ -121,7 +121,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3698 | mini | blocked | claudecode | – | review · Verify condition for J3463 |  |
 | J3699 | mini | blocked | claudecode | – | review · Verify condition for J3511 |  |
 | J3700 | mini | blocked | claudecode | – | review · Verify condition for J3512 |  |
-| J3701 | mini | blocked | claudecode | – | review · Verify condition for J3519 |  |
+| J3701 | mini | open | – | – | review · Verify condition for J3519 |  |
 | J3704 | mini | blocked | claude | – | studio · WW2 pilot 2: read the retention graph at 48 hours and propose a cut for the biggest early drop |  |
 
 Recently finished:
