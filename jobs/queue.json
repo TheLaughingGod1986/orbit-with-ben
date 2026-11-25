@@ -340616,10 +340616,10 @@
       "stage": "picture",
       "after": "",
       "eta_min": 180,
-      "status": "claimed",
-      "by": "claudecode",
-      "since": "2026-11-25T16:23Z",
-      "eta": "2026-11-25T19:23Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-25T16:05Z",
       "result": "",
@@ -340668,6 +340668,11 @@
           "at": "2026-11-25T16:25Z",
           "by": "claudecode",
           "what": "step 0 of 6 done: 8 photos on the NAS; most downloads refused by Wikimedia rate limit; second polite pass chained in background"
+        },
+        {
+          "at": "2026-11-25T16:25Z",
+          "by": "claudecode",
+          "what": "released: Pass 1 still running (tmux J3728-harvest; no .done yet): 8 photos kept on the NAS, 23 of 43 tried failed with HTTP 429 because Wikimedia refuses original-file downloads after a few large files (Retry-After 600 s). Pass 2 is chained detached and starts by itself when pass 1 ends: tmux J3728-pass2; log ~/_desk/logs/J3728-pass2.log; done file ~/_desk/logs/J3728-pass2.done (missing = still running or waiting, do not start another copy). It retries every error row waiting out the 429, takes the 3840 px Commons JPEG where an original stays refused (logged as master still owed), then reads the 260 files in the two Commons salvage categories and keeps Public-domain ones with an NH / 80-G / 19-N number until 60 unique. Could take several hours. Worktree /Volumes/MiniWork/scratch/J3728-wt, ww2-channel branch claudecode/J3728-017-picture at ec8b246 (both scripts pushed; RETRIEVAL_LOG_017.json uncommitted until pass 2 ends). Next run: read both .done files and the log; check each kept caption against its subject; rewrite ARCHIVE_PROVENANCE.md with SHA-256 and beats; draw 3 maps; 3 thumbnails; picture plan; one PR. No maps, thumbnails or plan started yet."
         }
       ],
       "remaining_action": "Finish downloading the Pearl Harbor salvage photos (running in the background), then log them, draw the maps, build thumbnails and write the picture plan",
