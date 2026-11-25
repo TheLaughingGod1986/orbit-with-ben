@@ -339953,13 +339953,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "claudecode",
       "since": "2026-11-25T15:00Z",
-      "eta": "2026-11-25T17:00Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T14:58Z",
-      "result": "",
+      "result": "done",
       "history": [
         {
           "at": "2026-11-25T14:58Z",
@@ -339990,6 +339990,11 @@
           "at": "2026-11-25T15:10Z",
           "by": "claudecode",
           "what": "step 6 of 6 done: v03 on NAS (sha256 1ffa642e, 1295.542 s, -15.7 LUFS, -1.5 dBTP, 0 decode errors); ww2-channel PR 156 (b6571f8) open for Chief"
+        },
+        {
+          "at": "2026-11-25T15:10Z",
+          "by": "claudecode",
+          "what": "done: done"
         }
       ],
       "remaining_action": "Nothing left on this job; the watch-and-listen check of the new cut is next",
@@ -340013,7 +340018,8 @@
       },
       "taskKeys": [
         "WW2:004"
-      ]
+      ],
+      "done_ref": "b6571f8"
     },
     {
       "id": "J3722",
