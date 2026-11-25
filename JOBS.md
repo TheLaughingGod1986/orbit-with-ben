@@ -120,7 +120,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3630 | mini | open (after J3629) | – | – | HOS:128 script · review · HOS 128: direct quote check and corrected script lock decision |  |
 | J3631 | mini | blocked | macbook-2 | – | review · Verify condition for J3434 |  |
 | J3635 | mini | blocked | codex | – | studio · WW2 pilot 2: check its settings, claims and impressions now (0 views at 5 hours) |  |
-| J3639 | any | open (after J3638) | – | – | WW2:004 edit · chief · WW2 004: Chief decision on v02 delivery and stage Ben watch |  |
+| J3639 | mini | open (after J3638) | – | – | WW2:004 edit · chief · WW2 004: Chief decision on v02 delivery and stage Ben watch |  |
 | J3640 | mini | blocked | macbook | – | review · Verify condition for J3430 |  |
 | J3642 | gemini | open | – | – | 009 sources · facts · WW2 009: independent Gemini direct-source recheck of v04 | https://github.com/TheLaughingGod1986/ww2-channel/pull/114 |
 | J3647 | mini | open | – | – | WW2:004 edit · review · Review WW2 004 Short 1 v01 ('Mark 14 Torpedo: Why It Ran 10 Feet Too Deep') for Ben watch | J3570 |

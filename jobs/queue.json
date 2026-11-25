@@ -330876,7 +330876,7 @@
     {
       "id": "J3639",
       "title": "WW2 004: Chief decision on v02 delivery and stage Ben watch",
-      "needs": "any",
+      "needs": "mini",
       "repo": "ww2",
       "body": "Follow-up to `J3625` Chief ruling (`07_Edit/CHIEF_RULING_J3625.md`): after `WW2:004` `v02` visual/graphic repair and genuine full private audiovisual QA of `v02`, the elected Chief rechecks authority (`chief_relay.py status`) and decides `v02` delivery.\n\n**Do:**\n1. Review the `v02` repair PR and `v02` full audiovisual QA PR against `ww2-channel` `main` and `studio/RULES.md` (preserving all 6 prior production stages, expanded provenance, `>=50%` real archive, Rule-2 title `Mark 14 Torpedo: Why Perfect Hits Failed`, and schedule air `2026-12-01T17:00:00Z` / watch due `2026-11-28T20:00:00Z`).\n2. Resolve any remaining failure rather than waiving it. Only if `v02` cleanly passes full audiovisual QA and technical checks:\n   - Merge the reviewed clean PRs to `ww2-channel` `main`.\n   - Independently verify the exact `v02` master SHA-256 on NAS `studio-live` and make a checksum-verified private copy in `WW2 UAT/` (`004_Why-US-Submarine-Torpedoes-Failed-21-Months/`).\n   - Set `J3430 awaits` with due `2026-11-28T20:00Z` and air `2026-12-01T17:00Z`, and verify the board watch link/card.\n   - Preserve Ben's approval requirement before any upload; complete `J3430` only once Ben's watch staging is delivered cleanly.\n3. If any gate fails, keep `J3430` held with precise follow-up. No upload, spending, or public/schedule change authorised by this job.\n",
       "ref": "",
@@ -330896,12 +330896,25 @@
           "at": "2026-11-24T22:54Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-25T01:41Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Codex out of usage; next in its chain: gemini"
         }
       ],
       "remaining_action": "Review WW2:004 v02 delivery and full audiovisual QA, merge clean PRs, copy verified v02 master to WW2 UAT and set J3430 awaits",
       "due": "2026-11-28T12:00:00Z",
       "kind": "chief",
-      "plain": "Approve the repaired torpedo film v02 and put it on Ben's watch page"
+      "plain": "Approve the repaired torpedo film v02 and put it on Ben's watch page",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     },
     {
       "id": "J3640",
