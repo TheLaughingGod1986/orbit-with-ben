@@ -337698,13 +337698,26 @@
           "at": "2026-11-25T11:12Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-25T11:13Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred claudecode): Claude out of usage (Claude said it's out of usage until 2026-11-25T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: claudecode on its default"
         }
       ],
       "remaining_action": "Verify readiness: Review PR #1284 in open elected-Chief job J3598, merge if PASS, then close held J3591",
       "kind": "review",
       "recheck_of": "J3591",
       "due": "2026-11-25T05:03:00+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
