@@ -326026,13 +326026,13 @@
       "stage": "script",
       "after": "J3564",
       "eta_min": 120,
-      "status": "blocked",
-      "by": "macbook-2",
-      "since": "2026-11-25T06:51Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-24T16:53Z",
-      "result": "parked for Chief: advisory FIX review delivered in HOS PR #770 (638df933) covering PR #754 (1ae0da81) and J3564 facts audit PR #769 (7ae40acf). 9 blocking fixes (FIX-1..FIX-9): corroborated all 4 J3564 FLAGs (FR405881A 10 Aug 1909 vs Nov 1909; Chardack-Greatbatch two-stage Apr/Jun 1960 & 2 yr vs 18 mo; dead HTTP 521 heartrhythm.com -> PMC3232561; US3691140A/NIHF high-tack low-adhesion vs low-tack) plus Part 01 opening milestones & camera-flash scale, Part 02 unspoken DATA/SCALE, 5-word FACT card, Shorts S01/S02 impossible row WPM/overlay overlap, and v02 filename hygiene. Chief to rule FIX and route v02 + independent facts recheck before lock/merge; HOS WIP currently 5/5 active. No merge, lock, or spend (£0.00). All checkouts on main.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-24T16:53Z",
@@ -326088,6 +326088,11 @@
           "at": "2026-11-25T07:24Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-12-04T18:00:00Z"
+        },
+        {
+          "at": "2026-11-25T08:50Z",
+          "by": "gemini",
+          "what": "reopened: Reopening parent J3565 to close as done after Acting Chief J3687 KEEP & v02 script lock (HOS PR #775 merged b4622600 + PR #777)."
         }
       ],
       "remaining_action": "Await HOS:137 v02 chain J3685 (script FIX-1..FIX-9) -> J3686 (facts) -> J3687 (Chief lock & J3565 closure, due 2026-12-08 18:00 UTC)",
@@ -326101,28 +326106,7 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true,
-      "progress": {
-        "step": 5,
-        "of": 5,
-        "at": "2026-11-25T06:59Z",
-        "by": "macbook-2",
-        "plan": [
-          "Check J3564 facts audit & PRs",
-          "Review package, script, sources & Shorts",
-          "Run HOS script & episode gates",
-          "Record review verdict & lock files",
-          "Open PR, close job & report"
-        ]
-      },
-      "hold": {
-        "type": "input",
-        "condition": "Acting Chief (gemini) J3683 ruling: Condition UNMET for v01 review reopen; formal FIX ruling issued on HOS:137 v01 (HOS PR #770 merged ababb407; OWB PR #1308 merged b3a2113e55). J3564 (PR #769 7ae40acf, 4 FLAGs) and J3565 advisory FIX review (FIX-1..FIX-9) complete; PRs #747/#754/#769 remain open/unmerged. Queued v02 revision chain J3685 (script, due 1 Dec) -> J3686 (facts, due 4 Dec) -> J3687 (Chief lock, due 8 Dec, closes J3565 on KEEP). HOS WIP 5/5 active; £0 / no VO or picture spend.",
-        "check_at": "2026-12-04T18:00:00Z",
-        "last_recheck": "J3683",
-        "checked_at": "2026-11-25T07:24:45+00:00",
-        "checked_by": "gemini"
-      }
+      "open_claim": true
     },
     {
       "id": "J3566",
