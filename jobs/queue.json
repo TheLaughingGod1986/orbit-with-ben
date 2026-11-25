@@ -342421,9 +342421,14 @@
           "at": "2026-11-25T20:58Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Reviewed 0:00-8:02 AV chunks: splices 1-8 (incl. J3715 Cuts A & B) seamless, score clean; caught premature duplicate COMMANDER ROBERT RYDER lower-third colliding with MUD FLATS on G6 at 4:14-4:20 during Mountbatten line, plus A 9804 6.67s freeze/strut-obscured still at 0:41.75"
+        },
+        {
+          "at": "2026-11-25T21:02Z",
+          "by": "gemini",
+          "what": "step 3 of 5 done: Finished watching & listening to all 15 AV chunks (0:00-14:46.21): verified splices 1-19 (probing faint onset at Join 10 8:37), confirmed Ryder duplicate card bug on G6 4:14, A 9804 & A 23877 freezes, G8 missing casualty labels, C 3317A thumb C legibility, clean ending hold/fade"
         }
       ],
-      "remaining_action": "Watching and listening to full v03 cut chunks 7:30-14:46 (splices 9-19, G10/G12/G8/G10d, A 23877 freeze, ending fade)",
+      "remaining_action": "Verifying Join 10 onset, captions/chapters sync, and drafting QA_REVIEW_J3745.md",
       "due": "2026-11-28T20:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -342440,9 +342445,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 5,
-        "at": "2026-11-25T20:58Z",
+        "at": "2026-11-25T21:02Z",
         "by": "gemini",
         "plan": [
           "Verify master & test AV input",
@@ -342451,7 +342456,7 @@
           "Check captions, chapters & thumbnails",
           "Commit QA review PR & report"
         ],
-        "note": "Reviewed 0:00-8:02 AV chunks: splices 1-8 (incl. J3715 Cuts A & B) seamless, score clean; caught premature duplicate COM"
+        "note": "Finished watching & listening to all 15 AV chunks (0:00-14:46.21): verified splices 1-19 (probing faint onset at Join 10"
       },
       "taskKeys": [
         "WW2:005"
