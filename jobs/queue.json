@@ -238043,13 +238043,13 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T19:40Z",
-      "eta": "2026-11-25T21:40Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-11T22:56Z",
-      "result": "",
+      "result": "Acting Chief (gemini, 25 Nov 2026) closed J2652 done after independent non-producer review & clean port by claudecode in J3737 (HOS PR #787, head 041a2c45, merged to HOS main as 1950fce1, 5/5 CI green, check_all.sh 10/10 PASS). All 3 prior Claude/Chief card items verified fixed; all 7 checks from Chief ruling #6808560760 PASS (incl. exact NAS SHA-256 verification of locked VO WAV hos_013_vo_v03a.wav = 83717812...796e0); PICTURE_PLAN_v02 untouched; P5:02b Hooker lower third full-size check legible/unclipped (minor box-overlap polish nudge logged for final edit assembly). Not a final edit PASS or Ben-watch submission. £0 / 0 credits.",
       "history": [
         {
           "at": "2026-11-11T22:56Z",
@@ -238380,6 +238380,11 @@
           "at": "2026-11-25T19:40Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T19:40Z",
+          "by": "gemini",
+          "what": "done: Acting Chief (gemini, 25 Nov 2026) closed J2652 done after independent non-producer review & clean port by claudecode in J3737 (HOS PR #787, head 041a2c45, merged to HOS main as 1950fce1, 5/5 CI green, check_all.sh 10/10 PASS). All 3 prior Claude/Chief card items verified fixed; all 7 checks from Chief ruling #6808560760 PASS (incl. exact NAS SHA-256 verification of locked VO WAV hos_013_vo_v03a.wav = 83717812...796e0); PICTURE_PLAN_v02 untouched; P5:02b Hooker lower third full-size check legible/unclipped (minor box-overlap polish nudge logged for final edit assembly). Not a final edit PASS or Ben-watch submission. £0 / 0 credits."
         }
       ],
       "remaining_action": "Non-producer / Chief review of v03f-r4 390px sheets on HOS PR #551 (ad52a2dc) and desk #180 #6958713817",
@@ -238406,7 +238411,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "https://github.com/TheLaughingGod1986/history-of-science/pull/787"
     },
     {
       "id": "J2653",
