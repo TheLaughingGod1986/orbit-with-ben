@@ -314628,10 +314628,10 @@
       "stage": "edit",
       "after": "J3431",
       "eta_min": 480,
-      "status": "claimed",
-      "by": "claudecode",
-      "since": "2026-11-25T15:15Z",
-      "eta": "2026-11-25T23:15Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-23T15:29Z",
       "result": "",
@@ -314875,6 +314875,11 @@
           "at": "2026-11-25T15:18Z",
           "by": "claudecode",
           "what": "step 3 of 8 done: Chief's two opening cuts folded into narration (14:44, joins pass tool check) and picture plan (53% archive); look-alike pair gone; cut not rebuilt yet; one photo now repeats after 50 s"
+        },
+        {
+          "at": "2026-11-25T15:19Z",
+          "by": "claudecode",
+          "what": "released: Still step 3 of 8 done; step 4 reopened by the Chief ruling J3715 (ww2 00_Brand/OPENING_CHECK_RULING_J3715_2026-11-25.md): Cut A (P04.S2, 11.30 s) and Cut B (P10, 39.56 s) are now folded into the narration and the picture timeline, but the cut is NOT rebuilt. Done this run: narration recut v03, 14:43.72 (883.718 s), all 19 joins pass the silence and click tool check, not listened to: scratch/J3432/vo/st_nazaire_campbeltown_vo_recut_v03.wav and the film's NAS folder 02_Voiceover/recut_v03/ (07_Edit/vo_splice_v03.py, VO_SPLICE_MAP_v03.json). Picture timeline 03_Picture/TIMELINE_RESOLVED_v03_J3715.json: 68 shots, 468.53 s photo = 53.02% archive (matches the ruling), no gaps; A 7901, A 7898, A 7902 leave the film (drop their credits); this also removes the look-alike pair. Commit add8e3d on ww2 branch claudecode/J3432-vo-splice (PR 148, worktree /Volumes/MiniWork/worktrees/J3432-ww2; merge is Chief's). Nothing running detached. ONE NEW FAULT the ruling missed: C 2351 (shot index 18, 205.72-237.54, \"the town of St Nazaire was packed with\") now comes 49.9 s after its previous use (ends 155.86); rule 1 needs 60 s. Fix first: give the first 10.2 s or more of that shot to a free pool photo that honestly fits (C 4775 or another St Nazaire/Loire view) or extend shot 17, keeping archive at or above 50%. Then: (1) point build_film_005_v01.py at the v03 timeline and recut_v03.wav; shot numbers moved (old shots 15-19 gone, later ones are 5 lower), so clear scratch/segments and fix the shot keys in PHOTO_LABELS_005.json (23, 52, 61 become 18, 47, 56) and the G10d daybreak shot (59 becomes 54); (2) build_score_005_v01.py to the new length plus a 2-3 s ending hold and fade, cues on the new chapter times; remix, measure; (3) full rebuild (about 70 s), stills check. v02_mix.mp4 in scratch/out is superseded. Then captions, chapters, thumbnails, package, QA. Disk: Mini 9 GB free, MiniWork 10 GB."
         }
       ],
       "remaining_action": "Fix one photograph that now repeats too soon, rebuild the St Nazaire cut to the shorter approved narration with an ending hold, then captions, thumbnails and package",
