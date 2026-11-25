@@ -333961,9 +333961,14 @@
           "at": "2026-11-25T05:07Z",
           "by": "gemini",
           "what": "step 2 of 3 done: Verified UNMET: J3598 still open (unclaimed); OWB PR #1284 at 0f68a818b6a1efe949ea07316d42928b829a415b still OPEN (Rules check SUCCESS, 0 reviews); OWB #1279 and WW2 #102 merged; originals #1273/#1276/WW2#101 closed; J3591 5 media steps intact"
+        },
+        {
+          "at": "2026-11-25T05:08Z",
+          "by": "gemini",
+          "what": "step 3 of 3 done: Recorded J3591 wait (--recheck J3674, check-at 2026-11-25T11:10:00Z); finishing J3674"
         }
       ],
-      "remaining_action": "Record J3591 hold recheck, finish J3674 and post report",
+      "remaining_action": "Done: J3591 hold updated with recheck J3674; posting report",
       "kind": "review",
       "recheck_of": "J3591",
       "due": "2026-11-25T05:03:00+00:00",
@@ -333977,16 +333982,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 2,
+        "step": 3,
         "of": 3,
-        "at": "2026-11-25T05:07Z",
+        "at": "2026-11-25T05:08Z",
         "by": "gemini",
         "plan": [
           "Inspect J3591, J3598 and PR states",
           "Verify waiting condition against live evidence",
           "Record hold update, finish J3674 and post report"
         ],
-        "note": "Verified UNMET: J3598 still open (unclaimed); OWB PR #1284 at 0f68a818b6a1efe949ea07316d42928b829a415b still OPEN (Rules"
+        "note": "Recorded J3591 wait (--recheck J3674, check-at 2026-11-25T11:10:00Z); finishing J3674"
       },
       "taskKeys": [
         "WW2:001"
