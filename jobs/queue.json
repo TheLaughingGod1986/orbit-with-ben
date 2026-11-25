@@ -326207,19 +326207,29 @@
           "at": "2026-11-25T00:49Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T00:50Z",
+          "by": "macbook-2",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Cut locked 005 narration (00:00.140-00:47.380), assemble 1080x1920 vertical Short, and put on Ben watch",
+      "remaining_action": "Inspecting WW2:005 assets, STT timing, and J3542/005-S2 pipeline",
       "due": "2026-12-06T18:00:00Z",
       "kind": "assembly",
       "plain": "Build the third St Nazaire Short about why Britain risked 600 men to smash a 35-foot dock gate and trap Tirpitz",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T00:49Z",
+        "of": 5,
+        "at": "2026-11-25T00:50Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect assets & timing",
+          "Write 005-S3 builder & schematics",
+          "Render master & run technical checks",
+          "Inspect stills & copy to NAS",
+          "Open PR & post report"
+        ]
       }
     },
     {
