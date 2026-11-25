@@ -340740,9 +340740,14 @@
           "at": "2026-11-25T16:15Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T16:15Z",
+          "by": "claudecode",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Verify readiness: Publish unpushed MacBook branch macbook/J3487 from /Users/ben/_desk/worker/slot2/ww2-channel via Claude Code after privacy check (or confirm branch state on MacBo",
+      "remaining_action": "Read J3487 history and check whether the Battle of the Bulge work is published",
       "kind": "review",
       "recheck_of": "J3487",
       "due": "2026-11-25T17:06:07+00:00",
@@ -340757,12 +340762,19 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
+        "of": 4,
         "at": "2026-11-25T16:15Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Read J3487 history",
+          "Check ww2 remote for Bulge work",
+          "Record wait or reopen J3487",
+          "Finish and report"
+        ]
+      },
+      "taskKeys": [
+        "WW2:016"
+      ]
     }
   ],
   "focus": [
