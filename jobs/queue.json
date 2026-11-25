@@ -335330,10 +335330,10 @@
       "stage": "sources",
       "after": "J3685",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T07:53Z",
+      "eta": "2026-11-25T09:53Z",
       "created_by": "gemini",
       "created_at": "2026-11-25T07:23Z",
       "result": "",
@@ -335342,12 +335342,25 @@
           "at": "2026-11-25T07:23Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-25T07:53Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Run independent Gemini exact-quote audit on HOS:137 v02 script, sources and Shorts and open PR",
       "due": "2026-12-04T18:00:00Z",
       "kind": "facts",
-      "plain": "Independently verify every fact, source URL and exact quote in the HOS 137 v02 script and Shorts."
+      "plain": "Independently verify every fact, source URL and exact quote in the HOS 137 v02 script and Shorts.",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T07:53Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3687",

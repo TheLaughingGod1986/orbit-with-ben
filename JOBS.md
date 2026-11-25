@@ -124,7 +124,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3681 | any | blocked | macbook-2 | – | review · Field Order History rules review ek9F61FVYqY 48h |  |
 | J3682 | mini | blocked | gemini | – | studio · Field Order History channel totals read 2026-11-25 |  |
 | J3684 | mini | open | – | – | studio · Daily Studio read: long films (impressions, CTR, views, avg % viewed) + Shorts (views, avg % viewed, stayed to watch) -> tracker |  |
-| J3686 | gemini | open (after J3685) | – | – | HOS:137 sources · facts · HOS 137: independent v02 facts and exact-quote verification | J3565 |
+| J3686 | gemini | claimed | gemini | 2026-11-25T09:53Z | HOS:137 sources · facts · HOS 137: independent v02 facts and exact-quote verification | J3565 |
 | J3687 | mini | open (after J3686) | – | – | HOS:137 script · review · HOS 137: verify v02 fixes and Chief script lock decision (close J3565 if KEEP) | J3565 |
 | J3688 | mini | claimed | macbook-2 | 2026-11-25T09:49Z | HOS:127 script · script · HOS 127: correct Wright Brothers script, sources & Shorts to v02 (8 J3621/J3622 fixes) | J3622 |
 | J3689 | mini | claimed | macbook | 2026-11-25T09:53Z | review · Verify condition for J3622 |  |
