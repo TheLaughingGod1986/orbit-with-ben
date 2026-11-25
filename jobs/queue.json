@@ -340658,26 +340658,30 @@
           "at": "2026-11-25T16:23Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T16:23Z",
+          "by": "claudecode",
+          "what": "step 0 of 6 done"
         }
       ],
-      "remaining_action": "Downloading full-size archive photos (detached: tmux J3728-harvest)",
+      "remaining_action": "Pull full-size archive photos for the Pearl Harbor salvage film and log them",
       "due": "2026-11-28T20:00:00Z",
       "kind": "image",
       "urgent": 9,
       "progress": {
-        "step": 1,
+        "step": 0,
         "of": 6,
-        "at": "2026-11-25T16:10Z",
+        "at": "2026-11-25T16:23Z",
         "by": "claudecode",
         "plan": [
-          "Free disk space",
-          "Download full-size archive photos",
-          "Log provenance and hashes",
-          "Draw the three maps",
+          "Pull full-size masters for the 26 candidates",
+          "Add Navy/NARA photos to reach 45-60",
+          "Log every photo in the provenance file",
+          "Draw the three code maps",
           "Build three thumbnails",
-          "Write picture plan and open PR"
-        ],
-        "note": "Harvest script pushed (ww2-channel claudecode/J3728-017-picture, 6f0da84); full download running detached, 3 of ~107 num"
+          "Write the picture plan and open the PR"
+        ]
       },
       "taskKeys": [
         "WW2:017"
