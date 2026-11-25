@@ -1,5 +1,5 @@
 {
-  "next_id": 3672,
+  "next_id": 3673,
   "jobs": [
     {
       "id": "J0001",
@@ -330755,6 +330755,11 @@
           "at": "2026-11-24T22:33Z",
           "by": "codex",
           "what": "blocked: publish via Claude Code: /Volumes/MiniWork/scratch/j3635-ww2 codex/j3635-settings-audit"
+        },
+        {
+          "at": "2026-11-25T04:37Z",
+          "by": "relay",
+          "what": "condition verification queued: J3672"
         }
       ],
       "remaining_action": "Publishing the completed audit note through the approved handoff",
@@ -330780,7 +330785,8 @@
       "hold": {
         "type": "input",
         "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/j3635-ww2 codex/j3635-settings-audit",
-        "check_at": "2026-11-25T04:33:00+00:00"
+        "check_at": "2026-11-25T05:37:22+00:00",
+        "recheck_task": "J3672"
       }
     },
     {
@@ -333646,6 +333652,38 @@
       "due": "2026-12-03T18:00:00Z",
       "kind": "vo",
       "plain": "Record and vo_check Shorts S01 and S02 narration for HOS 128 from locked SHORTS_SCRIPTS_v03.md"
+    },
+    {
+      "id": "J3672",
+      "title": "Verify condition for J3635",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3635: publish via Claude Code: /Volumes/MiniWork/scratch/j3635-ww2 codex/j3635-settings-audit. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3635 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-25T04:37Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T04:37Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: Publishing the completed audit note through the approved handoff",
+      "kind": "review",
+      "recheck_of": "J3635",
+      "mini_only": true,
+      "due": "2026-11-24T23:30:00+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
