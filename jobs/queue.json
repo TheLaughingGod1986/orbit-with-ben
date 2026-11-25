@@ -343382,13 +343382,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T23:41Z",
-      "eta": "2026-11-26T01:41Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T22:48Z",
-      "result": "",
+      "result": "Acting-Chief (gemini) review & ruling complete (ww2-channel PR #172 merged 68705c2; PR #174 merged 4ba78bd; PR #177 merged e923ac1, 07_Edit/CHIEF_RULING_J3751.md; OWB PR #1332 merged c8297639f7): predecessor J3743 and J3744 v04 full audiovisual QA PASS verified; NAS v04 SHA-256 (62b9e10c...364a8afa), untouched v03 (1ffa642e...) & v02 (991dfba2...) re-verified; qa_contact_sheet_v04.jpg checked by eye (0:15 full-bleed 16:9 confirmed); C10 edge labels, tight portrait cap crowns, pan lead-ins, and 31-tile sheet ruled non-blocking. Staged checksum-verified v04 in WW2 UAT (keeping v02 + 3 thumbnails intact) + private R2 (ww2-004-v04 verified) and updated J3430 awaits_ben to v04 (--prev WW2-004, due 28 Nov 20:00Z, planned air 1 Dec 17:00Z). J3744 closed. £0 spend; upload_authorized: false; no YouTube upload/schedule.",
       "history": [
         {
           "at": "2026-11-25T22:48Z",
@@ -343434,6 +343434,11 @@
           "at": "2026-11-25T23:41Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T23:41Z",
+          "by": "gemini",
+          "what": "done: Acting-Chief (gemini) review & ruling complete (ww2-channel PR #172 merged 68705c2; PR #174 merged 4ba78bd; PR #177 merged e923ac1, 07_Edit/CHIEF_RULING_J3751.md; OWB PR #1332 merged c8297639f7): predecessor J3743 and J3744 v04 full audiovisual QA PASS verified; NAS v04 SHA-256 (62b9e10c...364a8afa), untouched v03 (1ffa642e...) & v02 (991dfba2...) re-verified; qa_contact_sheet_v04.jpg checked by eye (0:15 full-bleed 16:9 confirmed); C10 edge labels, tight portrait cap crowns, pan lead-ins, and 31-tile sheet ruled non-blocking. Staged checksum-verified v04 in WW2 UAT (keeping v02 + 3 thumbnails intact) + private R2 (ww2-004-v04 verified) and updated J3430 awaits_ben to v04 (--prev WW2-004, due 28 Nov 20:00Z, planned air 1 Dec 17:00Z). J3744 closed. £0 spend; upload_authorized: false; no YouTube upload/schedule."
         }
       ],
       "remaining_action": "Parking for the Chief to rule on the film 4 v04 check and stage it for Ben's watch",
@@ -343459,7 +343464,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "e923ac1"
     },
     {
       "id": "J3752",
