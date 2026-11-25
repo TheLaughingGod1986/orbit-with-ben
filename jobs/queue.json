@@ -342193,10 +342193,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
-      "by": "claudecode",
-      "since": "2026-11-25T20:23Z",
-      "eta": "2026-11-25T22:23Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-25T20:14Z",
       "result": "",
@@ -342245,6 +342245,11 @@
           "at": "2026-11-25T20:34Z",
           "by": "claudecode",
           "what": "step 3 of 6 done: 12 segments redone with head-safe framing; all 173 rendered; film being joined and checked on the NAS (tmux J3743-master)"
+        },
+        {
+          "at": "2026-11-25T20:40Z",
+          "by": "claudecode",
+          "what": "released: Join and checks running detached: tmux J3743-master, log ~/_desk/logs/J3743-master.log, done file ~/_desk/logs/J3743-master.done (missing = still running; never start a second copy; it runs render_004_v04.py then --verify in one chain). Done this run: all three preview sheets read by eye; 7 portrait photos lost heads during the move (C05 C06 C07 C08 C21 C34 N08), fixed with a per-photo pan limit in FOCAL_v04.json ([focal, max travel px]) and re-previewed clean; all 173 segments rendered. Worktree /Volumes/MiniWork/scratch/wt-ww2-J3743, branch J3743-004-v04 pushed (a3480d8). Next run: 1) read .done (0 = master written to v04_master and every check true; the log ends with the RENDER_QA summary); if non-zero read the log, and if only the master exists run --verify alone; 2) Read v04_master/qa_contact_sheet_v04.jpg by eye (no side bars, no chopped heads); 3) write 07_Edit/HANDOFF_v04.md and 11_Upload-Package/metadata_v04.json (copy metadata_v03.json; version v04, status pending audiovisual QA, master sha256 from RENDER_QA_v04.json, v03 captions and chapters, upload_authorized false), commit with RENDER_QA_v04.json, open the ww2-channel PR, park for Chief (no merge), close the job so J3744 runs. v01-v03 untouched; no upload; nothing spent."
         }
       ],
       "remaining_action": "Join the whole film on the NAS, then run the side-bar check and the 32-frame sheet",
