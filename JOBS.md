@@ -112,7 +112,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3742 | mini | open (after J3678) | – | – | 011 vo · vo · HOS 011 Anaesthesia: Shorts S01 & S02 voiceover from locked v03 scripts | J3740 |
 | J3743 | mini | claimed | claudecode | 2026-11-25T23:05Z | WW2:004 edit · assembly · WW2 004: v04 full-bleed 16:9 archive framing rebuild (Ben 0:15 change) + J3715 Cuts A+B | 1a152ff |
 | J3744 | mini | open (after J3743) | – | – | WW2:004 edit · qa · WW2 004: full private audiovisual QA of v04 master (full-bleed 16:9 + Cuts A+B) for Chief watch stage | 1a152ff |
-| J3745 | mini | claimed | gemini | 2026-11-25T22:26Z | WW2:005 edit · qa · WW2 005: full private audiovisual QA of v03 master (J3715 Cuts A+B) for Chief watch stage | 27eb9df |
+| J3745 | mini | blocked | gemini | – | WW2:005 edit · qa · WW2 005: full private audiovisual QA of v03 master (J3715 Cuts A+B) for Chief watch stage | 27eb9df |
 | J3746 | mini | open | – | – | WW2:005 edit · assembly · WW2 005: targeted zero-spend v04 fix pass from J3745 audiovisual QA |  |
 
 Recently finished:
