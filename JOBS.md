@@ -133,7 +133,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3642 | gemini | open | – | – | 009 sources · facts · WW2 009: independent Gemini direct-source recheck of v04 | https://github.com/TheLaughingGod1986/ww2-channel/pull/114 |
 | J3644 | mini | open | – | – | review · Verify condition for J3205 |  |
 | J3647 | mini | open | – | – | WW2:004 edit · review · Review WW2 004 Short 1 v01 ('Mark 14 Torpedo: Why It Ran 10 Feet Too Deep') for Ben watch | J3570 |
-| J3648 | mini | open | – | – | WW2:001 upload · studio · WW2 001-S1: 7-day read of Mulberry Short NoQQqrW2meM and pilot 1 Shorts/Related traffic |  |
+| J3648 | mini | claimed | gemini | 2026-11-25T02:08Z | WW2:001 upload · studio · WW2 001-S1: 7-day read of Mulberry Short NoQQqrW2meM and pilot 1 Shorts/Related traffic |  |
 
 Recently finished:
 
