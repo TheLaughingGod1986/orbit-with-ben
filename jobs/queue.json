@@ -324421,13 +324421,13 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-25T04:27Z",
-      "eta": "2026-11-25T06:27Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-24T14:57Z",
-      "result": "",
+      "result": "Closed as done per Acting Chief (gemini) J3660 KEEP/lock ruling (reopened in 7e8b90e9f specifically for closure; claimed by macbook-2 in reopen-to-close race). Verified on HOS main: PR #762 merged 84af0f7d (superseding #751/#725/#758/#760), PR #763 merged 7ec9151e (REVIEW.md + status.json script/facts/shorts_scripts done), v03 script sha256 c389c3cf..., Shorts v03 sha256 1132ad9f..., VO jobs J3670 & J3671 queued. Zero spend, no Chief call or merge by macbook-2; all checkouts on main.",
       "history": [
         {
           "at": "2026-11-24T14:57Z",
@@ -324493,6 +324493,11 @@
           "at": "2026-11-25T04:31Z",
           "by": "macbook-2",
           "what": "step 1 of 2 done"
+        },
+        {
+          "at": "2026-11-25T04:31Z",
+          "by": "macbook-2",
+          "what": "done: Closed as done per Acting Chief (gemini) J3660 KEEP/lock ruling (reopened in 7e8b90e9f specifically for closure; claimed by macbook-2 in reopen-to-close race). Verified on HOS main: PR #762 merged 84af0f7d (superseding #751/#725/#758/#760), PR #763 merged 7ec9151e (REVIEW.md + status.json script/facts/shorts_scripts done), v03 script sha256 c389c3cf..., Shorts v03 sha256 1132ad9f..., VO jobs J3670 & J3671 queued. Zero spend, no Chief call or merge by macbook-2; all checkouts on main."
         }
       ],
       "remaining_action": "Close J3547 as done per Acting Chief J3660 lock",
@@ -324517,7 +324522,8 @@
           "Verify J3660 lock on HOS main",
           "Close J3547 and post report"
         ]
-      }
+      },
+      "done_ref": "7ec9151eab8eb81748c9d990a5d556582e74a852"
     },
     {
       "id": "J3548",
