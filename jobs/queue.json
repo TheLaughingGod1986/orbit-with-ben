@@ -256021,9 +256021,14 @@
           "at": "2026-11-25T13:18Z",
           "by": "gemini",
           "what": "step 0 of 5 done"
+        },
+        {
+          "at": "2026-11-25T13:20Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Verified approved B Mo93x0fxB1Q_B_v05.jpg sha256=95d1a92bd988667743c068e4fe69d67b5d6eeea7097aad2a28de9151d7836578, Orbit With Ben channel UC_esArsDKd3GJvOkeO0DUog, live title and SILENCE thumbnail match manifest."
         }
       ],
-      "remaining_action": "Verify approved B file hash, manifest baseline, and Studio CDP 9223",
+      "remaining_action": "Fresh read Studio A/B test report and confirm visibility and T005 state",
       "kind": "studio",
       "plain": "Test the approved new thumbnail for the Fermi Paradox video",
       "rerouted_from": {
@@ -256040,9 +256045,9 @@
       "mini_only": true,
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-25T13:18Z",
+        "at": "2026-11-25T13:20Z",
         "by": "gemini",
         "plan": [
           "Verify approved B and baseline",
@@ -256050,7 +256055,8 @@
           "Arm T038 thumbnail-only test",
           "Reload and verify running",
           "Update ledger and post report"
-        ]
+        ],
+        "note": "Verified approved B Mo93x0fxB1Q_B_v05.jpg sha256=95d1a92bd988667743c068e4fe69d67b5d6eeea7097aad2a28de9151d7836578, Orbit"
       }
     },
     {
