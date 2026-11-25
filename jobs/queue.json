@@ -325960,9 +325960,14 @@
           "at": "2026-11-25T06:51Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T06:52Z",
+          "by": "macbook-2",
+          "what": "step 1 of 5 done"
         }
       ],
-      "remaining_action": "Review and lock HOS:137 PR #754 after independent facts audit J3564",
+      "remaining_action": "Inspecting J3564 facts audit and HOS PR #754",
       "due": "2026-12-08T18:00:00Z",
       "kind": "review",
       "plain": "Review and lock the Accidental Inventions package, 7-9 minute script, sources, and two Shorts.",
@@ -325975,12 +325980,17 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-25T06:51Z",
+        "step": 1,
+        "of": 5,
+        "at": "2026-11-25T06:52Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Check J3564 facts audit & PRs",
+          "Review package, script, sources & Shorts",
+          "Run HOS script & episode gates",
+          "Record review verdict & lock files",
+          "Open PR, close job & report"
+        ]
       }
     },
     {
