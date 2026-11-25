@@ -332105,9 +332105,14 @@
           "at": "2026-11-25T01:28Z",
           "by": "gemini",
           "what": "step 0 of 3 done"
+        },
+        {
+          "at": "2026-11-25T01:29Z",
+          "by": "gemini",
+          "what": "step 1 of 3 done: Read J3512 history, PR #749, and both Codex scratch worktrees (J3512-resume at 5008d480, J3512-registry at bfb399e268)."
         }
       ],
-      "remaining_action": "Reading J3512 history, GitHub PRs, and local scratch branches",
+      "remaining_action": "Verifying publication status, diffs, NAS master hash, and claudecode reset",
       "kind": "review",
       "recheck_of": "J3512",
       "mini_only": true,
@@ -332122,15 +332127,16 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-25T01:28Z",
+        "at": "2026-11-25T01:29Z",
         "by": "gemini",
         "plan": [
           "Read J3512 job history, PRs, and local scratch branches",
           "Inspect diffs and check whether J3512 publish condition is met",
           "Update J3512 wait/reopen state, close J3658, and post report"
-        ]
+        ],
+        "note": "Read J3512 history, PR #749, and both Codex scratch worktrees (J3512-resume at 5008d480, J3512-registry at bfb399e268)."
       },
       "taskKeys": [
         "HOS:010"
