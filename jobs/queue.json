@@ -341944,10 +341944,10 @@
       "stage": "script",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T20:04Z",
+      "eta": "2026-11-25T22:04Z",
       "created_by": "gemini",
       "created_at": "2026-11-25T19:17Z",
       "result": "",
@@ -341996,6 +341996,11 @@
           "at": "2026-11-25T20:03Z",
           "by": "gemini",
           "what": "reopened: Acting Chief review complete; HOS PR #790 merged as 506d5545; closing J3740"
+        },
+        {
+          "at": "2026-11-25T20:04Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Chief script lock on the two Shorts scripts and the thumbnail brief",
@@ -342012,7 +342017,15 @@
       "open_claim": true,
       "taskKeys": [
         "HOS:011"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T20:04Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3741",
