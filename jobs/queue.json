@@ -330921,9 +330921,14 @@
           "at": "2026-11-25T01:48Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T01:49Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done: Claimed J3639 as elected acting Chief (gemini); starting review of v02 repair and QA PRs."
         }
       ],
-      "remaining_action": "Review WW2:004 v02 delivery and full audiovisual QA, merge clean PRs, copy verified v02 master to WW2 UAT and set J3430 awaits",
+      "remaining_action": "Reviewing PR #115 (J3637 v02 repair) and PR #130 (J3638 v02 audiovisual QA) against main and studio/RULES.md",
       "due": "2026-11-28T12:00:00Z",
       "kind": "chief",
       "plain": "Approve the repaired torpedo film v02 and put it on Ben's watch page",
@@ -330937,12 +330942,21 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T01:48Z",
+        "of": 5,
+        "at": "2026-11-25T01:49Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Review v02 repair and QA PRs",
+          "Verify master SHA-256 and technical gates",
+          "Merge clean PRs and record Chief ruling",
+          "Stage checksum-verified UAT copy and J3430 awaits",
+          "Verify board watch card and post report"
+        ],
+        "note": "Claimed J3639 as elected acting Chief (gemini); starting review of v02 repair and QA PRs."
+      },
+      "taskKeys": [
+        "WW2:004"
+      ]
     },
     {
       "id": "J3640",
