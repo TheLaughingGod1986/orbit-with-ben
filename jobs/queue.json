@@ -336913,7 +336913,7 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
+      "status": "cancelled",
       "by": "",
       "since": "",
       "eta": "",
@@ -336930,6 +336930,11 @@
           "at": "2026-11-25T10:01Z",
           "by": "relay",
           "what": "opened to any worker in its chain (preferred claudecode): Claude out of usage (Claude said it's out of usage until 2026-11-25T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: claudecode on its default"
+        },
+        {
+          "at": "2026-11-25T11:08Z",
+          "by": "gemini",
+          "what": "cancelled: Acting Chief ruling (J3698): moot because J3548 and parent J3463 are cancelled as superseded by J3682 (PR #1309 / 095218acaa) with zero export."
         }
       ],
       "remaining_action": "Verify readiness: Mini-only claudecode local privacy/diff review of /private/tmp/owb-J3463 and /private/tmp/owb-J3465 after 2026-11-25T10:00Z reset; export stays prohibited",
