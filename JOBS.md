@@ -111,7 +111,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3754 | mini | blocked | gemini | – | WW2:003 upload · studio · WW2 003-S3 (RtEMDrfeKR8): 7-day Short read and RqYjADxvJy8 Related traffic | J3752 |
 | J3755 | mini | blocked | claudecode | – | WW2:004 upload · studio · WW2 004-S1 (l7P2DdGCr-A): 7-day Short read and WW2:004 Related traffic | J3753 |
 | J3756 | mini | blocked | gemini | – | 013 picture · review · HOS 013: continuous 24-fps playback review of 6 visually clean take-2 retake plates (rows 3,10,24,28,47,54) | J3747 |
-| J3757 | any | open | – | – | 013 picture · script · HOS 013: build take-3 retake board and clean start-still prompts for rows 49 and 63 (£0, before 5 Dec) | J3747 |
+| J3757 | mini | open | – | – | 013 picture · script · HOS 013: build take-3 retake board and clean start-still prompts for rows 49 and 63 (£0, before 5 Dec) | J3747 |
 
 Recently finished:
 

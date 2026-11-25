@@ -343839,7 +343839,7 @@
     {
       "id": "J3757",
       "title": "HOS 013: build take-3 retake board and clean start-still prompts for rows 49 and 63 (£0, before 5 Dec)",
-      "needs": "any",
+      "needs": "mini",
       "repo": "hos",
       "body": "Acting Chief (`gemini`, J3747, 25 Nov 2026) follow-up to scope and price **take 3 + clean start stills** for the **2 confirmed take-2 RETAKE rows** of HOS 013 (*Darwin & Wallace*, Thu 31 Dec 2026) — **`£0` cash, `0` Flow credits spent in this job** (board/spec only; no browser open, no minting before Chief GO).\n\n**Why urgent before `2026-12-05T00:00:00Z`:** `Veo 3.1 - Quality` retires on 5 Dec 2026 (`studio/RULES.md`, `J3691`). Option A (`2 × Veo 3.1 - Quality = 200 cr`, <1% of the `22,650 cr` live balance) matches the 48 KEEP pass-1 plates and 6 visually-clean take-2 plates with zero new-model style-UAT delay.\n\n**Exact 2 confirmed take-2 RETAKE rows (from Acting Chief `gemini` J3747 review of `archive_v01_retake1/`):**\n\n1. **Row `49` — `P4:12_lyell_hooker_bundle`** (`parts/part-04_plates_v02.json`, film `360.98–366.34 s`, `use_s: 5.36`):\n   - **Take-2 defect (`P04_12_lyell_hooker_bundle_t2.mp4`, sha256 `7045735282bdb79ff497840baf4bfb908880604917c5f35ef9b00b6dcfe3d04f`):** At `2.0–2.5 s`, the left gentleman hands the brown tied bundle to the top-hatted gentleman who already carries a light-coloured ribbon-tied parcel under his left arm (holding 2 bundles). At `3.0–5.5 s` (inside the `0.00–5.36 s` used window), as he turns to climb the steps, the light parcel vanishes/merges into one shrinking brown bundle; at `6.0–7.0 s` the light parcel magically reappears under his left arm while the brown bundle disappears.\n   - **Root cause:** Take-1 start still `P04_12_lyell_hooker_bundle_t1.png` already shows **two** bulky separate bundles (one under arm + one thick stack on the step), causing Veo to dissolve one when a single carrier walks up the steps.\n   - **Fix required in `RETAKE_BOARD_v02.json`:** Write a fresh `t3` start-still prompt (for 0-credit Flow Nano Banana 2) + take-3 Veo prompt so there is **no two-parcel hand-off disappearance** — e.g. either one single combined ribbon-tied bundle on the step (carried up by one gentleman while the other walks beside him) OR both gentlemen already holding one bundle each on the step and climbing together without handing off. Zero real person names, zero forbidden terms.\n\n2. **Row `63` — `P6:06a_origin_fifth_edition`** (`parts/part-06_plates_v02.json`, film `485.64–490.60 s`, `use_s: 4.96`):\n   - **Take-2 defect (`P06_06a_origin_fifth_edition_t2.mp4`, sha256 `42ddd51a2b09e3e17ece9a1b9bd56bc17cb3be50bb5d3ad4a96030163f8ec84b`):** Bright luminous golden light glows out of the interior of the green cloth-bound book from `0.0–2.0 s` (inside the `0.00–4.96 s` used window), directly violating the no-glow rule; the front cover is jaggedly cracked across the middle (`0.0–2.0 s`) and morphs flat into green pages (`2.5–3.5 s`); the folded letter curls into mid-air and flips itself (`4.0–4.5 s`).\n   - **Root cause:** Take-1 start still `P06_06a_origin_fifth_edition_t1.png` **itself** already contains the jaggedly cracked green cover and bright warm yellow-orange glow inside the open pages! Reusing `t1.png` guarantees failure at `0.0 s`.\n   - **Fix required in `RETAKE_BOARD_v02.json`:** **Mandatory fresh start still `P06_06a_origin_fifth_edition_t3.png`** (0-credit Flow Nano Banana 2): an **intact, undamaged, uncracked** green cloth-bound book resting flat/opening gently on a mahogany desk beside a flat folded handwritten letter (scribble lines only, no readable words), lit **exclusively by cool grey overcast window light** from one side, matte cream pages with neutral grey-beige shadow in the gutter, **zero** yellow/gold/warm light or glow. Pair with a clean take-3 Veo prompt (letter stays flat on the desk, glasses stay in place, intact green cover hinges open naturally). Zero real person names, zero forbidden terms.\n\n**Do (`£0` cash, `0` Flow credits — board/spec PR only):**\n1. Build `02_Video-Projects/013_Darwin-Wallace-Evolution/07_Edit-Project/RETAKE_BOARD_v02.json` + `_build_retake_board_v02.py` (with `--check`, verifying 0 real person names, 0 forbidden terms, pinned SHA-256 of take-3 still prompts & Veo prompts).\n2. Price against the live Flow balance (`22,650 cr` post-J3747, `--floor 3000`):\n   - Option A (pre-5-Dec): `2 × Nano Banana 2` stills (`0 cr`) + `2 × Veo 3.1 - Quality` (`8 s`, `200 cr` total; balance `22,650 -> 22,450 cr`)\n   - Option B (post-5-Dec): `2 × Nano Banana 2` stills (`0 cr`) + `2 × Veo 3.1 - Lite` (`10 cr`) or `2 × Omni 1.2 Flash` (`48 cr`) with first-use style UAT\n3. Do **NOT** touch `REVIEW_STATE.json`, `archive_v01_pass1/`, `archive_v01_retake1/`, `J3178` (`rows 56–62, 64–66`), the 6 visually-clean take-2 rows (`3, 10, 24, 28, 47, 54`), or `J2529`.\n4. Update `02_Video-Projects/013_Darwin-Wallace-Evolution/status.json` (`status_board.py --check`), run `check_all.sh 02_Video-Projects/013_Darwin-Wallace-Evolution`, open a clean HOS PR, post on HOS desk, and park for Chief price PASS & mint GO (`£0` / `0 cr`).\n",
       "ref": "J3747",
@@ -343859,12 +343859,25 @@
           "at": "2026-11-25T23:29Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-25T23:31Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred claudecode): Claude out of usage (Claude said it's out of usage until 2026-11-26T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: claudecode on its default"
         }
       ],
       "remaining_action": "Write RETAKE_BOARD_v02.json and clean Nano Banana 2 start-still prompts for rows 49 and 63 (£0, park for Chief GO)",
       "due": "2026-11-28T18:00:00Z",
       "kind": "script",
-      "plain": "Scope and price take-3 retakes and fresh start stills for the 2 failed Darwin & Wallace retake rows"
+      "plain": "Scope and price take-3 retakes and fresh start stills for the 2 failed Darwin & Wallace retake rows",
+      "rerouted_from": {
+        "needs": "any",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
