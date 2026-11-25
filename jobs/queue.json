@@ -336495,13 +336495,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T10:13Z",
-      "eta": "2026-11-25T12:13Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T10:01Z",
-      "result": "",
+      "result": "CONDITION SATISFIED (verified 25 Nov 10:11Z): Claude Code's bounded probe (35d29502, 25 Nov 10:05Z, #7159250002) returned 401 anon and 200 ok/private/contentsRead:true on studio rehearsal/j3012 @ 534cf0f7; independently verified live deploy 1f8cac64 (0bc5d999) restored, 35d29502 deleted (404), BOARD_MIGRATION_PROBE absent from 10 prod bindings, /api/migration 404 anon+auth, / /tracker /ai 200, PR #1075 merged, split streak 12. Reopened J3012 to clear input hold and stale rejection, preserved 3/4 progress, updated due to 2026-11-26T18:00:00Z, and set auto-release date hold for Thu 26 Nov 08:00Z day-before notice before Fri 27 Nov 10:00 London move. No further probe needed. £0.",
       "history": [
         {
           "at": "2026-11-25T10:01Z",
@@ -336557,6 +336557,11 @@
           "at": "2026-11-25T10:13Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T10:13Z",
+          "by": "gemini",
+          "what": "done: CONDITION SATISFIED (verified 25 Nov 10:11Z): Claude Code's bounded probe (35d29502, 25 Nov 10:05Z, #7159250002) returned 401 anon and 200 ok/private/contentsRead:true on studio rehearsal/j3012 @ 534cf0f7; independently verified live deploy 1f8cac64 (0bc5d999) restored, 35d29502 deleted (404), BOARD_MIGRATION_PROBE absent from 10 prod bindings, /api/migration 404 anon+auth, / /tracker /ai 200, PR #1075 merged, split streak 12. Reopened J3012 to clear input hold and stale rejection, preserved 3/4 progress, updated due to 2026-11-26T18:00:00Z, and set auto-release date hold for Thu 26 Nov 08:00Z day-before notice before Fri 27 Nov 10:00 London move. No further probe needed. £0."
         }
       ],
       "remaining_action": "Posting the report so the Chief can reopen J3012",
@@ -336579,7 +336584,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "7159250002"
     },
     {
       "id": "J3696",
