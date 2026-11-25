@@ -325654,10 +325654,10 @@
       "stage": "",
       "after": "",
       "eta_min": 60,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T08:10Z",
+      "eta": "2026-11-25T09:10Z",
       "created_by": "claude",
       "created_at": "2026-11-24T16:35Z",
       "result": "",
@@ -325711,12 +325711,25 @@
           "at": "2026-11-25T08:04Z",
           "by": "relay",
           "what": "reopened: its start time 2026-11-25T08:00:00+00:00 has come (release-at-time hold)"
+        },
+        {
+          "at": "2026-11-25T08:10Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Look at pilot 2 at 24 hours",
       "due": "2026-11-26T20:00:00Z",
       "kind": "studio",
-      "mini_only": true
+      "mini_only": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T08:10Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3562",
