@@ -46,7 +46,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3365 | mini | open | – | – | thumb · Weekly HOS thumbnail audit: every long + Short thumb vs style, CTR and competitors -> new Test & Compare Bs for the weakest |  |
 | J3369 | mini | blocked | codex | – | 001 thumbs · studio · Field Order History pilot 1: 48-hour thumbnail decision |  |
 | J3415 | mini | blocked | – | – | studio · Reply to new viewer comments on Orbit With Ben (daily) |  |
-| J3432 | mini | claimed | claudecode | 2026-11-25T20:20Z | WW2:005 edit · assembly · WW2 film 005: edit, captions, three thumbnails and upload package, to Ben's watch |  |
+| J3432 | mini | open (after J3431) | – | – | WW2:005 edit · assembly · WW2 film 005: edit, captions, three thumbnails and upload package, to Ben's watch |  |
 | J3442 | mini | blocked | claudecode | – | studio · WW2 pilot 1: make Cut 1 (07:44-08:47, 63.6 s) in Studio Editor before the Short, then fix chapters, card and captions |  |
 | J3444 | mini | blocked | codex | – | 027 upload · studio · Earth equator Short: 24-hour reach read after Related repair |  |
 | J3469 | mini | open | – | – | review · Verify condition for J2704 |  |
