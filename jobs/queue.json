@@ -340480,6 +340480,11 @@
           "at": "2026-11-25T18:52Z",
           "by": "gemini",
           "what": "step 4 of 5 done: Master verified on NAS & iCloud UAT (SHA-256 b047c494...); WW2 PR #162 opened"
+        },
+        {
+          "at": "2026-11-25T18:53Z",
+          "by": "gemini",
+          "what": "waits on Ben: Watch B-29 vs the Atomic Bomb: Which Cost More? (Short 003-S3 v01, 40.5s) and say OK or what to change (by 2026-11-27 18:00 London)"
         }
       ],
       "remaining_action": "Publishing WW2:003-S3 watch card for Ben and finishing J3725",
@@ -340502,7 +340507,19 @@
       },
       "taskKeys": [
         "WW2:003"
-      ]
+      ],
+      "awaits_ben": {
+        "what": "Watch B-29 vs the Atomic Bomb: Which Cost More? (Short 003-S3 v01, 40.5s) and say OK or what to change",
+        "file": "WW2 UAT/003_Why-B29-Superfortress-Cost-More-Than-Atomic-Bomb/Shorts/003_S3_Cost_Comparison_v01/b29_atomic_bomb_cost_short_v01.mp4",
+        "version": "v01",
+        "due": "2026-11-27T18:00Z",
+        "airs": "2026-11-28T12:30Z",
+        "ifNot": "Hold the Short; nothing uploads or schedules without your OK",
+        "card": "WW2:003-S3",
+        "title": "B-29 vs the Atomic Bomb: Which Cost More?",
+        "number": "003-S3",
+        "type": "short"
+      }
     },
     {
       "id": "J3726",
