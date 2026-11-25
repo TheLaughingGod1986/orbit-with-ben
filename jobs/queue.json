@@ -341286,13 +341286,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T22:23Z",
-      "eta": "2026-11-26T00:23Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T16:06Z",
-      "result": "",
+      "result": "Acting-Chief verification complete (25 Nov 22:22Z): condition UNMET for J3487 (WW2:016 Battle of the Bulge). Verified ww2-channel origin/macbook/J3487 remains at pre-reopen Bletchley commit 03ce06aeb6815306cdd3efdcf2edd4a1447b84be (PR #84/#86) and origin/main (61daccd) holds no Battle of the Bulge branch, PR or files. Diagnosed claudecode's J3731 as an unclaimable deadlock (needs=macbook + for=claudecode refused by both macbook and macbook-2 while both sat idle); cancelled J3731 and queued replacement J3750 (needs=macbook, for=macbook-2, kind=facts, verified claimable by macbook-2 on gemini-argon) to inspect /Users/ben/_desk/worker/slot2/ww2-channel (branch, stashes, reflog), privacy-check and push PR or confirm lost. Recorded J3487 hold update with --recheck J3730 (next check 2026-11-26T00:30:00Z). No spend, upload or schedule change.",
       "history": [
         {
           "at": "2026-11-25T16:06Z",
@@ -341348,6 +341348,11 @@
           "at": "2026-11-25T22:23Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Cancelled deadlocked J3731; queued J3750 for macbook-2; updated J3487 wait (--recheck J3730, check 26 Nov 00:30Z)"
+        },
+        {
+          "at": "2026-11-25T22:23Z",
+          "by": "gemini",
+          "what": "done: Acting-Chief verification complete (25 Nov 22:22Z): condition UNMET for J3487 (WW2:016 Battle of the Bulge). Verified ww2-channel origin/macbook/J3487 remains at pre-reopen Bletchley commit 03ce06aeb6815306cdd3efdcf2edd4a1447b84be (PR #84/#86) and origin/main (61daccd) holds no Battle of the Bulge branch, PR or files. Diagnosed claudecode's J3731 as an unclaimable deadlock (needs=macbook + for=claudecode refused by both macbook and macbook-2 while both sat idle); cancelled J3731 and queued replacement J3750 (needs=macbook, for=macbook-2, kind=facts, verified claimable by macbook-2 on gemini-argon) to inspect /Users/ben/_desk/worker/slot2/ww2-channel (branch, stashes, reflog), privacy-check and push PR or confirm lost. Recorded J3487 hold update with --recheck J3730 (next check 2026-11-26T00:30:00Z). No spend, upload or schedule change."
         }
       ],
       "remaining_action": "Close J3730 and post studio thread report",
