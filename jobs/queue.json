@@ -1,5 +1,5 @@
 {
-  "next_id": 3692,
+  "next_id": 3693,
   "jobs": [
     {
       "id": "J0001",
@@ -335743,6 +335743,36 @@
       "due": "2026-12-03T18:00:00Z",
       "kind": "assembly",
       "plain": "Prepare HOS Flow script and rules PR before Veo 3.1 Fast/Quality retire on 5 Dec"
+    },
+    {
+      "id": "J3692",
+      "title": "AI spend: Google AI Ultra 20x vs Ultra 5x re-review before 12 Jan 2027 renewal, for Ben",
+      "needs": "any",
+      "repo": "owb",
+      "body": "**Why (Chief follow-up from J3489, 25 Nov 2026):** In `05_Analytics/ai_spend/GOOGLE_PLAN_REVIEW_2026-12.md` (PR #1305), the studio recommended keeping **Google AI Ultra 20x (£189.99/mo)** through December 2026 and re-reviewing on **Mon 4 Jan 2027** (ahead of the 12 Jan 2027 renewal) once we have clean post-Neon Gemini quota weeks and post-5 Dec Flow credit burn.\n\n**Do, on/after Mon 4 Jan 2027 (due Fri 8 Jan 18:00 London):**\n1. Analyse December actuals from `05_Analytics/ai_spend/ledger.jsonl` and `~/_desk/state/chief/runs.jsonl`:\n   - Post-5 Dec Flow credit spend by channel under Veo 3.1 Lite / Omni Flash 1.2 (against Ultra 5x's 10,000 cr/mo cap).\n   - Four clean 7-day post-Neon Gemini weekly quota weeks on Ultra 20x (without launch resets) and the actual overflow vs unique-lane share.\n   - Cloud/Vertex credit usage and remaining balance.\n2. Re-check current UK Google AI plan pricing and limits on `one.google.com` and `antigravity.google` (Ultra 5x £79.99/mo vs Ultra 20x £189.99/mo).\n3. Recommend plainly whether Ben should stay on Ultra 20x or step down to Ultra 5x (saving £110/mo, with or without Gemini overflow throttling) before 12 Jan 2027, factoring in the first monthly channel scorecard.\n4. Save to `05_Analytics/ai_spend/GOOGLE_PLAN_REVIEW_2027-01.md` (via PR) and post on the studio thread for Ben. **Ben makes any subscription change himself; agents never change a subscription.**\n\n**Guards:** Read-only. £0.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T08:21Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T08:21Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Wait until Mon 4 Jan 2027, then review December Gemini/Flow actuals before 12 Jan renewal",
+      "due": "2027-01-08T18:00:00Z",
+      "kind": "review",
+      "plain": "Re-review Google AI Ultra 20x vs Ultra 5x in early Jan 2027 after December usage data"
     }
   ],
   "focus": [
