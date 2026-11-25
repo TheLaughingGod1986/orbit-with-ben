@@ -326052,6 +326052,11 @@
           "at": "2026-11-25T13:16Z",
           "by": "relay",
           "what": "condition verification queued: J3713"
+        },
+        {
+          "at": "2026-11-25T15:20Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Resolve archive coverage and facts then test the opening before locking narration",
@@ -326078,7 +326083,8 @@
         "condition": "Required predecessor is complete; verify remaining gates and approvals",
         "check_at": "2026-11-25T14:16:10+00:00",
         "recheck_task": "J3713"
-      }
+      },
+      "escalated_at": "2026-11-25T15:20Z"
     },
     {
       "id": "J3552",
@@ -339618,6 +339624,11 @@
           "at": "2026-11-25T13:20Z",
           "by": "claudecode",
           "what": "blocked: parked for Chief: verification done, condition for J3551 is met in part only. J3550 is done and the J3551 review is delivered in WW2 pull request 151 (macbook/J3551 b9e2bb1, base main, clean, mergeable, owner's account, stacked on 87 and 150): NO-GO for Sherman draft v01, no lock, no voice job, no spend. J3551 was not reopened because the work is finished; it stays blocked (jobs.py wait recorded, recheck J3713, next check 19:30Z). Chief: merge pull request 151, rule on the NO-GO and whether to scope the one bounded web photo search that lane could not run, then run jobs.py done J3551 and release or close parent J3486 (and its check J3619), then done J3713."
+        },
+        {
+          "at": "2026-11-25T15:20Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Chief to merge WW2 pull request 151 and close the Sherman review",
@@ -339644,7 +339655,8 @@
           "Reopen or re-hold, and report"
         ],
         "note": "Held job kept blocked with the real unmet condition: the Chief's merge and ruling on WW2 pull request 151"
-      }
+      },
+      "escalated_at": "2026-11-25T15:20Z"
     },
     {
       "id": "J3714",
