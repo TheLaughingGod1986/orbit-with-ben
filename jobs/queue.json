@@ -322454,13 +322454,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T10:49Z",
-      "eta": "2026-11-25T11:34Z",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T11:54Z",
-      "result": "",
+      "result": "Verified HOS publishing runtime on Mini at HOS main d58d290e (PR #780 merged): Prisma CLI and @prisma/client 7.10.1, npx prisma generate exit 0 (./src/generated/prisma), PGOPTIONS read-only channel:audit exit 0 (75 videos, 0 errors, zero DB writes), J3512 exact Short A package --dry-run exit 0 (ok:true, private, publishAt:null, Shorts gate PASS), 31/31 token+contract vitest tests PASS, check_all.sh ALL CHECKS PASS. Thread line posted. No upload, schedule, Studio change, DB write or spend (£0).",
       "history": [
         {
           "at": "2026-11-24T11:54Z",
@@ -322551,6 +322551,11 @@
           "at": "2026-11-25T10:53Z",
           "by": "gemini",
           "what": "step 3 of 3 done: Posted thread report on Studio thread #954"
+        },
+        {
+          "at": "2026-11-25T10:53Z",
+          "by": "gemini",
+          "what": "done: Verified HOS publishing runtime on Mini at HOS main d58d290e (PR #780 merged): Prisma CLI and @prisma/client 7.10.1, npx prisma generate exit 0 (./src/generated/prisma), PGOPTIONS read-only channel:audit exit 0 (75 videos, 0 errors, zero DB writes), J3512 exact Short A package --dry-run exit 0 (ok:true, private, publishAt:null, Shorts gate PASS), 31/31 token+contract vitest tests PASS, check_all.sh ALL CHECKS PASS. Thread line posted. No upload, schedule, Studio change, DB write or spend (£0)."
         }
       ],
       "remaining_action": "Complete J3519",
