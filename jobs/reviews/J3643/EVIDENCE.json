@@ -1,0 +1,100 @@
+{
+  "job": "J3643",
+  "parent_job": "J3205",
+  "film": "WW2:003",
+  "version": "v01",
+  "reviewed_at": "2026-11-24T23:44:00Z",
+  "reviewer": "gemini",
+  "independence_note": "Dispatched to gemini on qa lane while claude, claudecode, codex, and cursor were out of usage; gemini also completed J3205 final assembly. All hashes, decodes, loudness/black/silence scans, SRT/STT diffs, provenance checks, visual sheets, covers, and direct A/V clips were freshly re-executed from scratch on the exact NAS files. No YouTube upload/schedule.",
+  "verdict": "PASS_FOR_BEN_WATCH",
+  "spend_gbp": 0.0,
+  "youtube_writes": 0,
+  "perception_demonstrated": [
+    "audio_input",
+    "moving_video_input",
+    "still_image_inspection"
+  ],
+  "av_clips_directly_inspected": [
+    "00:00-00:12 (opening narration, music bed, animated Manhattan Project bar reveal)",
+    "00:36-00:48 (B-29 to XB-29 cut, Seattle prototype crash narration, smooth Ken Burns motion)",
+    "25:38-25:50 (final Wichita-to-flight cut, closing narration 'Fifi and Doc, still fly today', zero drift)"
+  ],
+  "master": {
+    "relative_nas_path": "ww2/02_Video-Projects/003_Why-B29-Superfortress-Cost-More-Than-Atomic-Bomb/07_Edit/v01/ww2_003_b29_superfortress_v01.mp4",
+    "sha256": "876736a1a23d42109a5648bb7188707f842843c15dcd1a3d882de4dd8a027a66",
+    "size_bytes": 381034590,
+    "video": "1920x1080, 30fps, h264 High yuv420p, 46509 frames, 1550.298s",
+    "audio": "aac LC stereo, 48000Hz, 191444bps, 1550.293s",
+    "decode_exit_code": 0,
+    "loudness_lufs": -16.3,
+    "lra_lu": 4.4,
+    "true_peak_dbfs": -1.8,
+    "black_intervals_ge_0_5s": 0,
+    "silence_intervals_ge_2_5s": 0
+  },
+  "phone_proxy": {
+    "relative_nas_path": "ww2/02_Video-Projects/003_Why-B29-Superfortress-Cost-More-Than-Atomic-Bomb/07_Edit/v01/ww2_003_b29_superfortress_v01_PHONE.mp4",
+    "sha256": "7e105c11e6219a0372010d21ff2ba3f493dfa265a4b70ccbb733d0c785ff38ac",
+    "size_bytes": 170239867,
+    "video": "1280x720, 30fps, h264 High yuv420p, 46505 frames",
+    "watch_id": "ww2-003-v01",
+    "r2_key": "watch/ww2-003-v01/9112ecb2f213eb74-ww2_003_b29_superfortress_v01_PHONE.mp4"
+  },
+  "captions": {
+    "file": "11_Upload-Package/ww2_003_en-GB_v01.srt",
+    "sha256": "8836e6472e1cf360a231be7a37d9269dcc253f4350b8f9cb436c8935af9dbe7a",
+    "cues": 401,
+    "span_s": [0.16, 1550.38],
+    "overlaps": 0,
+    "bad_durations": 0,
+    "lines_over_48_chars": 0,
+    "srt_words": 3501,
+    "stt_words": 3501,
+    "raw_similarity": 0.9957,
+    "diff_hunks": 15,
+    "diff_nature": "All 15 hunks are UK/US orthography conversions only (aeroplane, pressurised, calibre, analogue, programme/s, harbour, centres, labourers)"
+  },
+  "archive_and_graphics": {
+    "shots_total": 74,
+    "duration_s": 1550.42,
+    "archive_seconds": 951.635,
+    "archive_share_pct": 61.38,
+    "graphic_seconds": 598.785,
+    "graphic_share_pct": 38.62,
+    "graphic_clips_inspected": 27,
+    "unique_archive_photos": 40,
+    "provenance_sha256_verified": "40/40",
+    "excluded_candidates_present": 0,
+    "min_repeat_gap_s": 102.8,
+    "max_cover_upscale": 2.177,
+    "rule13_ad_safety": "PASS"
+  },
+  "rule3_first_two_minutes": {
+    "pass": true,
+    "concrete_moment_within_30s": "00:00-00:22 ($1.9B Manhattan Project vs $3B B-29 cost bars + 00:22.92 B-29 in flight)",
+    "promise_by_45s": "00:23-00:46 (most expensive weapon didn't work; 00:38.62 Seattle XB-29 crash killing 32)",
+    "story_moving_by_60s": "00:47-01:33 (engine fires, Kansas fleet, 200 mph jet stream, 1,600 pre-flight orders); 01:34 Ch. 2 Hap Arnold & Pacific range map",
+    "answers_title_in_opening": false,
+    "channel_intro_or_in_this_video": false,
+    "chapters_verified": 7
+  },
+  "covers_168px": {
+    "pass": true,
+    "variants": [
+      {"variant": "A", "text": "$3 BILLION", "sha256_match": true, "clear_of_duration_badge": true},
+      {"variant": "B", "text": "", "sha256_match": true, "clear_of_duration_badge": true},
+      {"variant": "C", "text": "ENGINE FIRES", "sha256_match": true, "clear_of_duration_badge": true}
+    ],
+    "title": "B-29: Why It Cost More Than the Atomic Bomb",
+    "title_chars": 43,
+    "rule2_pass": true,
+    "rule13_pass": true
+  },
+  "watch_card": {
+    "job": "J3205",
+    "card": "WW2:003",
+    "version": "v01",
+    "due_utc": "2026-11-25T20:00Z",
+    "planned_air_london": "2026-11-28 17:00"
+  }
+}

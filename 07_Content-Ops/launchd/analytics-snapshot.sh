@@ -235,6 +235,17 @@ main() {
     (( $? == 142 )) && code=1   # a stopped gate is worth the "needs a look" notice; a normal gate result is not
   fi
   (cd 07_Content-Ops && npx tsx scripts/analytics-report.ts) || code=1
+  # Daily Market intelligence sweep (J3650): read-only Data API (<=1,500 units/day), weekly tagging on Mondays,
+  # monthly vidIQ discovery proposal on the first Monday of each month (<=40 credits, never buys credits).
+  if [[ -f scripts/market_track.py && -f "$data/market/watchlist.json" ]]; then
+    MARKET_ENV_FILE="$repo/07_Content-Ops/.env" within 300 python3 scripts/market_track.py daily || code=1
+    if [[ "$(TZ=Europe/London date +%u)" == "1" ]]; then
+      MARKET_ENV_FILE="$repo/07_Content-Ops/.env" within 180 python3 scripts/market_track.py weekly || code=1
+      if (( 10#$(TZ=Europe/London date +%d) <= 7 )); then
+        MARKET_ENV_FILE="$repo/07_Content-Ops/.env" within 120 python3 scripts/market_track.py discover || code=1
+      fi
+    fi
+  fi
 
   local p
   local commit_paths=()

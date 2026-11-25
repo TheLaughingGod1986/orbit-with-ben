@@ -1499,6 +1499,71 @@ def push_heartbeat(at: dt.datetime, state: str, agent: str = "", note: str = "")
         log(f"heartbeat not pushed: {e}")
 
 
+def busy_slots(at: dt.datetime, n: int) -> set:
+    """Slots with a live execution lease or a held run lock."""
+    busy = {int(e.get("slot", 0)) for e in current_executions(at)}
+    for i in range(n):
+        path = d(f"run-{i}.lock")
+        if not path.exists():
+            continue
+        probe = open(path, "a+")
+        try:
+            fcntl.flock(probe, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            fcntl.flock(probe, fcntl.LOCK_UN)
+        except OSError:
+            busy.add(i)
+        finally:
+            probe.close()
+    return busy
+
+
+def spawn_second_slot(at: dt.datetime, parent_slot: int | None = None) -> bool:
+    """Start one detached `run` for another free slot (24 Nov 2026, J3521).
+
+    launchd never starts the relay again while a run is working, so slot 1 never opened and the Mini worked one job
+    at a time with 50 waiting. A launchd run now starts one more run in its own session (so launchd's clean-up of
+    this run cannot stop it), which waits CHIEF_SPAWN_DELAY seconds for this run's lease and then takes the next free
+    slot under the usual memory guard. Job boundaries retry if that child has exited.
+    A spawned run never spawns again. CHIEF_SPAWN_SLOTS=0 turns this off."""
+    if os.environ.get("CHIEF_SPAWN_SLOTS", "1") == "0" or os.environ.get("CHIEF_SPAWNED") == "1":
+        return False
+    if (STATE / "chief-relay.pause").exists():
+        return False
+    n = parallel_limit()
+    if n < 2:
+        return False
+    try:
+        d().mkdir(parents=True, exist_ok=True)
+        busy = busy_slots(at, n)
+        # Startup still needs a slot for this parent. At a job boundary its
+        # held run lock already counts it, even between execution leases.
+        if parent_slot is not None:
+            busy.add(parent_slot)
+            if not (set(workers_up(at)) - other_slot_workers(at, -1)):
+                return False
+        if len(busy) >= n - (parent_slot is None):
+            return False
+        if not memory_for_new_slot():
+            return False
+        # The child inherits this reservation through its delay and lifetime.
+        # Closing the parent's copy (without LOCK_UN) leaves the child's flock
+        # held, preventing duplicate pending runners at fast job boundaries.
+        with open(d("spawn.lock"), "a+") as reservation:
+            try:
+                fcntl.flock(reservation, fcntl.LOCK_EX | fcntl.LOCK_NB)
+            except OSError:
+                return False
+            subprocess.Popen([sys.executable, str(pathlib.Path(__file__).resolve()), "run"],
+                             env={**os.environ, "CHIEF_SPAWNED": "1"}, cwd=str(pathlib.Path(__file__).resolve().parent),
+                             stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                             pass_fds=(reservation.fileno(),), start_new_session=True)
+        log("spawned a second run for another free slot")
+        return True
+    except (OSError, ValueError) as e:
+        log(f"second slot not spawned: {e}")
+        return False
+
+
 def cmd_run(at: dt.datetime) -> int:
     if (STATE / "chief-relay.pause").exists():
         log("skip: paused")
@@ -1513,21 +1578,7 @@ def cmd_run(at: dt.datetime) -> int:
     # Up to CHIEF_PARALLEL slots (default 2, cap 3). Each holds its own lock and runs one agent.
     # A second slot waits when free memory is under CHIEF_SLOT_MIN_GB (default 3). CHIEF_PARALLEL=1 is the old single run.
     n = parallel_limit()
-    busy = set()
-    for e in current_executions(at):
-        busy.add(int(e.get("slot", 0)))
-    for i in range(n):
-        path = d(f"run-{i}.lock")
-        if not path.exists():
-            continue
-        probe = open(path, "a+")
-        try:
-            fcntl.flock(probe, fcntl.LOCK_EX | fcntl.LOCK_NB)
-            fcntl.flock(probe, fcntl.LOCK_UN)
-        except OSError:
-            busy.add(i)
-        finally:
-            probe.close()
+    busy = busy_slots(at, n)
     if len(busy) >= n:
         log("skip: all parallel slots are working")
         push_heartbeat(at, "busy", note="every parallel slot is still working")
@@ -2470,6 +2521,10 @@ def run_locked(at: dt.datetime, slot: int = 0) -> int:
         finally:
             _select_unlock(held)
         write_slot_json(slot, "runner", {"pid":os.getpid(),"version":LOADED_VERSION,"desiredVersion":code_version(),"at":iso(started),"state":"working","job":execution["job"],"slot":slot})
+        # Publish our selected worker first, so the child cannot choose it.
+        # This safe boundary is also reached when an unavailable worker returns
+        # during a long parent chain. Active workers are never interrupted.
+        spawn_second_slot(now(), parent_slot=slot)
         try:
             code, tail = run_cli(who, prompt, cap, model)
         finally:
@@ -2674,6 +2729,11 @@ def main(argv=None) -> int:
     if a.cmd == "status":
         return cmd_status(at)
     if a.cmd == "run":
+        if os.environ.get("CHIEF_SPAWNED") == "1":
+            time.sleep(max(0, int(os.environ.get("CHIEF_SPAWN_DELAY", "20") or 0)))
+            at = now()
+        else:
+            spawn_second_slot(at)
         return cmd_run(at)
     if a.cmd == "seen":
         seen(a.agent, at)
