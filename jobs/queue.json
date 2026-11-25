@@ -323351,10 +323351,10 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "claimed",
-      "by": "claudecode",
-      "since": "2026-11-25T10:07Z",
-      "eta": "2026-11-25T10:52Z",
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T12:25Z",
       "result": "",
@@ -323403,6 +323403,11 @@
           "at": "2026-11-25T10:12Z",
           "by": "claudecode",
           "what": "step 3 of 5 done: Published and merged: OWB PRs 1311 (J3114), 1312 (J3307), 1313 (J3597). HOS PR 780 (J3519) open, checks running. Queue search done"
+        },
+        {
+          "at": "2026-11-25T10:12Z",
+          "by": "claudecode",
+          "what": "released: Stopping at the run limit. Done: OWB PRs 1311 (J3114, 28dfe21fa6), 1312 (J3307, ecce03004a), 1313 (J3597, 052e368633) merged. Chief must release the holds on J3114/J3307/J3597 (worker cannot). Next run: merge HOS PR 780 (J3519) when green and rerun its read-only audit; push J3635 (read, clean, /Volumes/MiniWork/scratch/j3635-ww2); privacy-read then publish J3511, J3512 (two branches each) and J3205 (clean 3 home-path strings first). J3487 is on the MacBook; J3463 excluded. My worktrees: /Volumes/MiniWork/scratch/j3530-*."
         }
       ],
       "remaining_action": "Merge HOS PR 780 when green; then publish J3635, J3511, J3512, J3205 after privacy checks",
