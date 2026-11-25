@@ -341588,16 +341588,21 @@
           "at": "2026-11-25T19:26Z",
           "by": "gemini",
           "what": "step 2 of 5 done: Re-priced all 4 routes (67 plates incl P5:16b): Route A pre-5-Dec Quality 6,700 cr (15,950 cr headroom above 800 liability; +12,950 over floor 3000; fastest clean path to Mon 14 Dec watch), Route B1 post-5-Dec hybrid 29 Omni 1.2 Flash + 38 Lite = 886 cr (-86.8%), Route B2 with Lite Lower Priority = 696 cr (-89.6%), Route C all-Omni = 1,608 cr"
+        },
+        {
+          "at": "2026-11-25T19:33Z",
+          "by": "gemini",
+          "what": "step 4 of 5 done: Built PICTURE_PLAN_v04, parts v04, PROMPT_AUDIT_v04 (67/67 clean, P5:16b resolved to dedicated moving plate), PRICE_REVIEW_v04, PASS1_SCOPE_J3736, guarded runner _mint_flow_v01_pass1.py, and tests/test_hos011_pass1_runner.py"
         }
       ],
-      "remaining_action": "Building PICTURE_PLAN_v04, part boards v04, PROMPT_AUDIT_v04, and PRICE_REVIEW_v04",
+      "remaining_action": "Running unit tests, check_all.sh, and opening HOS PR",
       "due": "2026-11-26T18:00:00Z",
       "kind": "assembly",
       "plain": "Price 011's 66 plates, fix P5:16b reuse, and build the guarded Flow runner at £0",
       "progress": {
-        "step": 2,
+        "step": 4,
         "of": 5,
-        "at": "2026-11-25T19:26Z",
+        "at": "2026-11-25T19:33Z",
         "by": "gemini",
         "plan": [
           "Audit 66 Flow rows and P5:16b",
@@ -341606,7 +341611,7 @@
           "Build and unit-test guarded runner",
           "Run check_all.sh and open HOS PR"
         ],
-        "note": "Re-priced all 4 routes (67 plates incl P5:16b): Route A pre-5-Dec Quality 6,700 cr (15,950 cr headroom above 800 liabili"
+        "note": "Built PICTURE_PLAN_v04, parts v04, PROMPT_AUDIT_v04 (67/67 clean, P5:16b resolved to dedicated moving plate), PRICE_REVI"
       },
       "taskKeys": [
         "HOS:011"
