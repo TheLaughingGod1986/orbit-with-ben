@@ -1,5 +1,5 @@
 {
-  "next_id": 3724,
+  "next_id": 3725,
   "jobs": [
     {
       "id": "J0001",
@@ -340014,6 +340014,40 @@
       "due": "2026-11-30T12:00:00Z",
       "kind": "assembly",
       "plain": "Apply J3715 opening cuts A+B (124.5 s) to film 006 as zero-spend v03 keeping v02 untouched"
+    },
+    {
+      "id": "J3724",
+      "title": "WW2 006: full private audiovisual QA of v03 master (J3715 Cuts A+B) for Chief watch stage",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** Follows the `WW2:006` `v03` pre-watch opening-cut assembly (`J3715` acting-Chief ruling, `ww2-channel` PR #155 `b1392f1`). Required before Chief stages `v03` privately for Ben's watch on card `WW2:006` (watch due Wed 2 Dec 20:00Z, planned air Sat 5 Dec 17:00 London) alongside intact `v02`.\n\n**Do (private audiovisual QA; requires real `audio_input,moving_video_input`; £0):**\n1. Inspect the `v03` master `ww2_006_mosquito_v03.mp4` on NAS `studio-live` (verify exact SHA-256 matches the assembly PR) and verify `v02` remains untouched.\n2. Watch and listen to the full `v03` cut — paying extra attention to both `J3715` cut joins and downstream context:\n   - Cut A join (`~01:50`, *\"...lowest loss rate...\"* -> *\"Weighed down by its defences...\"* -> *\"At Hatfield Aerodrome...\"*): zero clipped syllables, clean visual transition, renamed Chapter 1 (*\"De Havilland's proposal\"*) cleanly timed, smooth music continuity. Also listen to *\"bypassed both bottlenecks\"* (`~02:29`) to confirm it reads naturally in context.\n   - Cut B join (`~03:07`, *\"...perfecting fast wooden aeroplanes.\"* -> *\"In October nineteen thirty-nine, Bishop and Clarkson...\"*): zero clipped syllables, clean end on `CNA 1282` with zero `TR 917` flash, smooth music continuity.\n   - Part 3 (`~07:25-08:50` shifted): verify `CH 14317` and `CH 14314` visuals and narration stand cleanly without the removed Albatross/Comet introduction.\n3. Verify shifted chapters, `ww2_006_en-GB_v03.srt` caption sync, Rule 1 archive share (`>=50%`, expected `65.75%`), no `<60 s` repeat regressions, no framing/border/label/audio defects across the full runtime.\n4. Record the audiovisual QA report in a `ww2-channel` PR and **park for Chief** to merge both PRs and stage `v03` privately on Ben's watch card `WW2:006` (explicitly noting `v02` remains intact if Ben already OK'd/preferred `v02` off-board).\n\n**Guards.** £0 spend. No YouTube upload, schedule, retitle, or privacy change. Never claim to hear audio or watch motion without real demonstrated `audio_input,moving_video_input`.\n",
+      "ref": "b1392f1",
+      "film": "WW2:006",
+      "stage": "edit",
+      "after": "J3723",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T14:58Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T14:58Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Watch and listen to WW2 006 v03 verifying both cut joins, bottlenecks line and Part 3, then park PR for Chief",
+      "due": "2026-11-30T20:00:00Z",
+      "kind": "qa",
+      "required_capabilities": [
+        "audio_input",
+        "moving_video_input"
+      ],
+      "plain": "Run full audiovisual QA on film 006 v03 opening-cut master and park for Chief watch staging alongside v02"
     }
   ],
   "focus": [
