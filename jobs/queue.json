@@ -330281,13 +330281,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T03:17Z",
-      "eta": "2026-11-25T05:17Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-24T21:35Z",
-      "result": "",
+      "result": "Chief ruling: CONDITION NOT MET. OWB PR #1295 merged (jobs/reviews/J3631/REVIEW.md). Parent J3434 (WW2:006 Mosquito) remains held with last_recheck J3631 (next check 2026-11-28T13:00Z); do not reopen assembly. Follow-up chain queued: J3662 full private audiovisual QA (v01 master sha256 7561d495..., due 2026-11-28T12:00Z) -> J3663 Chief decision, ww2 PR #107 merge and Ben watch staging (due 2026-12-01T12:00Z; watch due 2026-12-02T20:00Z, air Sat 5 Dec 17:00 London). Zero spend, no film PASS, no upload.",
       "history": [
         {
           "at": "2026-11-24T21:35Z",
@@ -330343,6 +330343,11 @@
           "at": "2026-11-25T03:17Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T03:18Z",
+          "by": "gemini",
+          "what": "done: Chief ruling: CONDITION NOT MET. OWB PR #1295 merged (jobs/reviews/J3631/REVIEW.md). Parent J3434 (WW2:006 Mosquito) remains held with last_recheck J3631 (next check 2026-11-28T13:00Z); do not reopen assembly. Follow-up chain queued: J3662 full private audiovisual QA (v01 master sha256 7561d495..., due 2026-11-28T12:00Z) -> J3663 Chief decision, ww2 PR #107 merge and Ben watch staging (due 2026-12-01T12:00Z; watch due 2026-12-02T20:00Z, air Sat 5 Dec 17:00 London). Zero spend, no film PASS, no upload."
         }
       ],
       "remaining_action": "Park J3631 for elected Chief (PR #1295 open) and post studio thread report",
@@ -330366,7 +330371,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "owb#1295"
     },
     {
       "id": "J3632",
