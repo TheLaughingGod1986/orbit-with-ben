@@ -111,6 +111,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3748 | mini | blocked | gemini | – | WW2:005 edit · qa · WW2 005: targeted audiovisual check of v04 master (six J3746 changes) before Chief watch stage | 9562103 |
 | J3751 | mini | blocked | claudecode | – | review · Verify condition for J3744 |  |
 | J3752 | mini | open | – | – | WW2:003 upload · studio · WW2 003-S3: upload Ben-approved B-29 vs Atomic Bomb Short v01, scheduled Sat 28 Nov 12:30 London | J3725 |
+| J3753 | mini | open | – | – | WW2:004 upload · studio · WW2 004-S1: upload Ben-approved Mark 14 Torpedo depth Short v01, scheduled Mon 30 Nov 12:30 London | J3570 |
 
 Recently finished:
 

@@ -1,5 +1,5 @@
 {
-  "next_id": 3753,
+  "next_id": 3754,
   "jobs": [
     {
       "id": "J0001",
@@ -327950,6 +327950,11 @@
           "at": "2026-11-25T02:11Z",
           "by": "gemini",
           "what": "waits on Ben: Watch Mark 14 Torpedo: Why It Ran 10 Feet Too Deep (Short 004-S1 v01, 48.6s) and say OK or what to change (by 2026-11-28 18:00 London)"
+        },
+        {
+          "at": "2026-11-25T22:57Z",
+          "by": "gemini",
+          "what": "no longer waits on Ben: OK'd, delivered by J3753"
         }
       ],
       "remaining_action": "Copy verified master and receipts to NAS with SHA-256 check, commit records, and open PR",
@@ -327970,7 +327975,7 @@
         ],
         "note": "Visual + technical QA PASS on polished v01 (60.41% archive, 1.10x max upscale, -16.6 LUFS, 0 overlaps)"
       },
-      "awaits_ben": {
+      "awaits_was": {
         "what": "Watch Mark 14 Torpedo: Why It Ran 10 Feet Too Deep (Short 004-S1 v01, 48.6s) and say OK or what to change",
         "file": "WW2 UAT/004_Why-US-Submarine-Torpedoes-Failed-21-Months/Shorts/004_S1_v01/mark14_depth_short_v01.mp4",
         "version": "v01",
@@ -343445,6 +343450,55 @@
         "job": "J3725",
         "okAt": "2026-11-25T22:57Z",
         "okRef": "J3725"
+      }
+    },
+    {
+      "id": "J3753",
+      "title": "WW2 004-S1: upload Ben-approved Mark 14 Torpedo depth Short v01, scheduled Mon 30 Nov 12:30 London",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** Ben OK'd WW2 Short `004-S1` v01 (*Mark 14 Torpedo: Why It Ran 10 Feet Too Deep*) on the Studio Kanban board (`WW2:ASK:J3570`, `verdict: ok`, `version: v01`, `2026-11-25T13:20:37.545Z`). Built in `J3570` (`ww2-channel` PR #117) and passed Chief review `J3647`. Acting Chief (`gemini`, `chief_relay.py status` verified) queues the delivery upload job.\n\n**Exact approved master (verify SHA-256 before upload — never upload a different cut):**\n- File: `/Volumes/data/studio-live/ww2/02_Video-Projects/004_Why-US-Submarine-Torpedoes-Failed-21-Months/Shorts/004_S1_v01/mark14_depth_short_v01.mp4`\n- SHA-256: `fef4e0566ece342650cf4501a50f04042372cdad21be94b90740971b9b68e2e8` (`25,815,067` bytes, `48.60 s`, 1080x1920 25fps)\n\n**Do (Mini; Field Order History `UCu94mInMFosxu3W0H6jlI6Q`, Studio CDP `9224` and `YOUTUBE_REFRESH_TOKEN_WW2` only; never open or play a public video):**\n1. Verify master SHA-256 matches `fef4e0566ece342650cf4501a50f04042372cdad21be94b90740971b9b68e2e8`.\n2. Upload v01 **Private**, scheduled **Mon 30 Nov 2026 12:30 London (`2026-11-30T12:30:00Z`)**. Do not clash with FOH long slots (`17:00`).\n   - **Title (44 chars):** `Mark 14 Torpedo: Why It Ran 10 Feet Too Deep`\n   - **Description:** exact public copy from `ww2/02_Video-Projects/004_Why-US-Submarine-Torpedoes-Failed-21-Months/Shorts/004_S1_v01/metadata.json` (clean viewer text + Rowland & Boyd 1953 source + NARA RG 80 PD credits + honest AI voice line; zero internal job IDs).\n   - **Tags:** `Mark 14 torpedo, WW2 submarines, US Navy WW2, Pacific War, WW2 engineering, Bureau of Ordnance, World War 2`\n   - **Settings:** Category Education (`27`), language `en-GB`, Not made for kids, altered/synthetic content Yes.\n   - **Cover frame:** opening frame (`MARK 14 TORPEDO: 10 FEET TOO DEEP`).\n   - **Related video:** parent long `WW2:004` (*Mark 14 Torpedo: Why Perfect Hits Failed*) airs Tue 1 Dec 2026 17:00 London (in v04 edit, not yet uploaded). Leave Related video unset at upload per `00_Brand/SHORTS_PLAN_2026-12.md` §1; `WW2:004`'s post-publish job links this Short's Related video once `WW2:004` is Public.\n3. Read everything back in Studio `9224` (after reload) and the YouTube Data API (`privacyStatus=private`, `publishAt=2026-11-30T12:30:00Z`, Not made for kids, altered content Yes).\n4. Record the YouTube video ID and readback in `ww2/02_Video-Projects/004_Why-US-Submarine-Torpedoes-Failed-21-Months/status.json` via a clean `ww2` PR.\n5. Queue a 7-day read (`jobs.py wait ... --type date --release-at-time`, due Mon 7 Dec 2026 12:35 London) covering Short views, stayed-to-watch, avg % viewed, subscribers, and `WW2:004` Shorts/Related traffic.\n6. **If anything is wrong at upload, park for the Chief.** Never upload a different cut than the one Ben OK'd. £0.\n",
+      "ref": "J3570",
+      "film": "WW2:004",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T22:57Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T22:57Z",
+          "by": "gemini",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-25T22:57Z",
+          "by": "gemini",
+          "what": "approved by Ben: Watch Mark 14 Torpedo: Why It Ran 10 Feet Too Deep (Short 004-S1 v01, 48.6s) and say OK or what to change v01 (asked in J3570)"
+        }
+      ],
+      "remaining_action": "Verify master SHA-256 and upload 004-S1 v01 Private scheduled Mon 30 Nov 12:30 London",
+      "due": "2026-11-29T12:00:00Z",
+      "kind": "studio",
+      "plain": "Upload Ben-approved Short 004-S1 v01 Private, scheduled Mon 30 Nov 12:30 London",
+      "approved_from": {
+        "what": "Watch Mark 14 Torpedo: Why It Ran 10 Feet Too Deep (Short 004-S1 v01, 48.6s) and say OK or what to change",
+        "file": "WW2 UAT/004_Why-US-Submarine-Torpedoes-Failed-21-Months/Shorts/004_S1_v01/mark14_depth_short_v01.mp4",
+        "version": "v01",
+        "airs": "2026-11-30T12:30Z",
+        "card": "WW2:004-S1",
+        "title": "Mark 14 Torpedo: Why It Ran 10 Feet Too Deep",
+        "number": "004-S1",
+        "type": "short",
+        "channel": "WW2",
+        "job": "J3570",
+        "okAt": "2026-11-25T22:57Z",
+        "okRef": "J3570"
       }
     }
   ],
