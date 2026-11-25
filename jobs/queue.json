@@ -330187,13 +330187,13 @@
       "stage": "script",
       "after": "J3621",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T09:47Z",
-      "eta": "2026-11-25T11:47Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-24T21:13Z",
-      "result": "",
+      "result": "Acting Chief (gemini) KEEP & SCRIPT LOCK on HOS:127 v02 (Wright Brothers First Flight: The 1901 Wind Tunnel): independently verified FIX-1..FIX-8, byte-for-byte PR #774/#778 match, 15/15 direct live HTTP primary quote endpoints (55/55 substrings, 0 missing; corroborating J3690 17 OK / 4 PARTIAL / 0 FLAG), 0 title collisions across 80 search rows, Part 01 milestones, <=4w cards/labels, review:script PASS 93.6/100 (1,282w), default gate:episode PASS 9/9, and check_all.sh ALL CHECKS PASS. Merged HOS PR #778 (d4186e33, auto-merging #708/#756/#771/#774) and lock PR #779 (672748dd, jobs/reviews/J3622/LOCK_REVIEW_v02.md + locked status.json/production-status.md). Locked SHA-256: script_v02=1488f596..., SOURCES=9f331ba2..., FACT_NOTES_v02=7ad7cb46..., SHORTS_v02=59e3005d.... Rule G WIP respected (5/5 HOS active): long VO and Shorts VO cleanly held behind HOS:137 until an open HOS slot clears. Posted HOS desk #694 and OWB studio thread reports. £0.00 spent; no upload/schedule.",
       "history": [
         {
           "at": "2026-11-24T21:13Z",
@@ -330289,6 +330289,11 @@
           "at": "2026-11-25T09:59Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Merged HOS PR #778 (d4186e33) and lock PR #779 (672748dd), posted desk & thread reports; £0.00 spent"
+        },
+        {
+          "at": "2026-11-25T09:59Z",
+          "by": "gemini",
+          "what": "done: Acting Chief (gemini) KEEP & SCRIPT LOCK on HOS:127 v02 (Wright Brothers First Flight: The 1901 Wind Tunnel): independently verified FIX-1..FIX-8, byte-for-byte PR #774/#778 match, 15/15 direct live HTTP primary quote endpoints (55/55 substrings, 0 missing; corroborating J3690 17 OK / 4 PARTIAL / 0 FLAG), 0 title collisions across 80 search rows, Part 01 milestones, <=4w cards/labels, review:script PASS 93.6/100 (1,282w), default gate:episode PASS 9/9, and check_all.sh ALL CHECKS PASS. Merged HOS PR #778 (d4186e33, auto-merging #708/#756/#771/#774) and lock PR #779 (672748dd, jobs/reviews/J3622/LOCK_REVIEW_v02.md + locked status.json/production-status.md). Locked SHA-256: script_v02=1488f596..., SOURCES=9f331ba2..., FACT_NOTES_v02=7ad7cb46..., SHORTS_v02=59e3005d.... Rule G WIP respected (5/5 HOS active): long VO and Shorts VO cleanly held behind HOS:137 until an open HOS slot clears. Posted HOS desk #694 and OWB studio thread reports. £0.00 spent; no upload/schedule."
         }
       ],
       "remaining_action": "Complete — HOS:127 v02 script, sources & Shorts LOCKED (PR #778 & PR #779 merged)",
