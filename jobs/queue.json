@@ -337179,10 +337179,10 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T10:43Z",
+      "eta": "2026-11-25T12:43Z",
       "created_by": "relay",
       "created_at": "2026-11-25T10:19Z",
       "result": "",
@@ -337226,6 +337226,11 @@
           "at": "2026-11-25T10:43Z",
           "by": "gemini",
           "what": "reopened: Acting Chief (gemini) taking parked J3702 review after verifying OWB PR #1313 (052e368633)."
+        },
+        {
+          "at": "2026-11-25T10:43Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Finishing the verification and reporting to the Chief",
@@ -337240,7 +337245,15 @@
         "status": "open",
         "by": ""
       },
-      "open_claim": true
+      "open_claim": true,
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T10:43Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3703",
