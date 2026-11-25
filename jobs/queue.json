@@ -324976,13 +324976,13 @@
       "stage": "script",
       "after": "J3552",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "macbook-2",
       "since": "2026-11-25T06:30Z",
-      "eta": "2026-11-25T08:30Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-24T15:46Z",
-      "result": "",
+      "result": "Administrative closure per Acting Chief (gemini) J3677 KEEP & script lock (#7154899975). Acting Chief reopened J3553 (415782cc7) to close it as done after merging HOS PR #765 (fc86aa62, J3553 v01 FIX ruling), HOS PR #767 (ab25f2de, v02 script/sources/Shorts/facts superseding #746/#753/#764/#766), HOS PR #768 (78fd3221, J3677 REVIEW.md + locked status.json), OWB PR #1306 (90613b82ca, WIP rotation), and queuing J3678/J3679; macbook-2 claimed J3553 in the reopen->done window. Independently verified merged commits, status_board.py --check PASS, and exact locked v02 SHA-256 hashes (85fb1286..., 060acf45..., 899156a3..., e1df5d81...) on HOS main. No new Chief ruling, no PR needed, £0.00 spent.",
       "history": [
         {
           "at": "2026-11-24T15:46Z",
@@ -325078,6 +325078,11 @@
           "at": "2026-11-25T06:34Z",
           "by": "macbook-2",
           "what": "step 1 of 2 done"
+        },
+        {
+          "at": "2026-11-25T06:34Z",
+          "by": "macbook-2",
+          "what": "done: Administrative closure per Acting Chief (gemini) J3677 KEEP & script lock (#7154899975). Acting Chief reopened J3553 (415782cc7) to close it as done after merging HOS PR #765 (fc86aa62, J3553 v01 FIX ruling), HOS PR #767 (ab25f2de, v02 script/sources/Shorts/facts superseding #746/#753/#764/#766), HOS PR #768 (78fd3221, J3677 REVIEW.md + locked status.json), OWB PR #1306 (90613b82ca, WIP rotation), and queuing J3678/J3679; macbook-2 claimed J3553 in the reopen->done window. Independently verified merged commits, status_board.py --check PASS, and exact locked v02 SHA-256 hashes (85fb1286..., 060acf45..., 899156a3..., e1df5d81...) on HOS main. No new Chief ruling, no PR needed, £0.00 spent."
         }
       ],
       "remaining_action": "Closing J3553 per Acting Chief J3677 KEEP & script lock and posting studio report",
@@ -325103,7 +325108,8 @@
           "Verify J3677 Acting Chief lock & merged PRs",
           "Close J3553 and post studio report"
         ]
-      }
+      },
+      "done_ref": "J3677 / HOS PR #765 (fc86aa62) / HOS PR #767 (ab25f2de) / HOS PR #768 (78fd3221) / OWB PR #1306 (90613b82ca)"
     },
     {
       "id": "J3554",
