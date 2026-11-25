@@ -332037,6 +332037,11 @@
           "at": "2026-11-25T01:19Z",
           "by": "relay",
           "what": "added"
+        },
+        {
+          "at": "2026-11-25T01:20Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-25T07:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Verify readiness: Publish finished upload and registration records through Claude Code privacy review",
@@ -332044,7 +332049,15 @@
       "recheck_of": "J3512",
       "mini_only": true,
       "due": "2026-11-25T02:19:54+00:00",
-      "due_kind": "condition-verification"
+      "due_kind": "condition-verification",
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
