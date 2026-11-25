@@ -336932,9 +336932,14 @@
           "at": "2026-11-25T10:55Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T10:56Z",
+          "by": "claudecode",
+          "what": "step 0 of 4 done"
         }
       ],
-      "remaining_action": "Verify readiness: Claude Code privacy check and GitHub PR publish of gemini/J3643-qa (674c088 / 4d8422d) and gemini/J3643-review (5925f6828c) after 10:00Z reset, then close J3205",
+      "remaining_action": "Reading J3205 history and evidence",
       "kind": "review",
       "recheck_of": "J3205",
       "mini_only": true,
@@ -336950,11 +336955,15 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T10:55Z",
+        "of": 4,
+        "at": "2026-11-25T10:56Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read J3205 history",
+          "Check privacy strings",
+          "Check PR/merge state",
+          "Reopen or re-wait J3205"
+        ]
       }
     },
     {
