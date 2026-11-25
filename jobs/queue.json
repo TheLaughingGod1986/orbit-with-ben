@@ -342199,10 +342199,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-25T21:05Z",
+      "eta": "2026-11-25T23:05Z",
       "created_by": "gemini",
       "created_at": "2026-11-25T20:14Z",
       "result": "",
@@ -342281,6 +342281,11 @@
           "at": "2026-11-25T21:02Z",
           "by": "claudecode",
           "what": "released: v04 master is on the NAS (07_Edit/v04_master, sha 083c56aa…, all file checks pass, sound identical to v03) but NOT handed over: RENDER_QA_v04.json says TECHNICAL_QA_FAIL on the side-bar line. By eye: no boxes or blurred sides anywhere, but seven photos show a thin strip of the scan's own edge: N01 (0:02 left, handwritten number), N12, C18 (both sides), C07 Blandy (both sides), N02, A09, N04. Next run: 1) add an inner trim for those assets in FOCAL_v04.json/render_004_v04.py, delete only their segment files in /Volumes/data/studio-live/scratch/J3743-v04/segments, re-run the renderer (others reused) and the join; 2) loosen the side-bar check so real upright picture edges do not flag, re-run --verify, read the new sheet and preview/preview_2.jpg + preview_3.jpg for other scan edges; 3) HANDOFF_v04.md, metadata_v04.json (upload_authorized false), PR, park for Chief. Worktree /Volumes/MiniWork/scratch/wt-ww2-J3743, branch J3743-004-v04 pushed. No render running. v01-v03 untouched."
+        },
+        {
+          "at": "2026-11-25T21:05Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Trim the scan edges on seven photos, re-render those shots, re-check, then open the pull request",
