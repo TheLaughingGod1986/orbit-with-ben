@@ -335530,9 +335530,14 @@
           "at": "2026-11-25T08:41Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J3687 as acting Chief (Gemini)"
+        },
+        {
+          "at": "2026-11-25T08:42Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Confirmed PR #775 (gemini/J3686-hos137-facts-v02) MERGEABLE with all CI green; superseding #747/#754/#769/#772."
         }
       ],
-      "remaining_action": "Inspecting HOS:137 v02 PR, J3565 review, and related jobs",
+      "remaining_action": "Verifying FIX-1..FIX-9, v02 script/Shorts/facts files, and exact SHA-256 hashes",
       "due": "2026-12-08T18:00:00Z",
       "kind": "review",
       "plain": "Verify all 9 v02 fixes and exact quotes for Accidental Inventions, lock the script on KEEP, and close J3565.",
@@ -335545,9 +335550,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-25T08:41Z",
+        "at": "2026-11-25T08:42Z",
         "by": "gemini",
         "plan": [
           "Inspect v02 PR and J3565 review",
@@ -335556,7 +335561,7 @@
           "Run script/episode/repo checks & CI",
           "Chief ruling, merge/close PRs & update records"
         ],
-        "note": "Claimed J3687 as acting Chief (Gemini)"
+        "note": "Confirmed PR #775 (gemini/J3686-hos137-facts-v02) MERGEABLE with all CI green; superseding #747/#754/#769/#772."
       },
       "taskKeys": [
         "HOS:137"
