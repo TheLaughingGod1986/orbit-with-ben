@@ -113,6 +113,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3739 | mini | open (after J3678) | – | – | 137 vo · vo · HOS 137 Accidental Inventions: long VO (5 parts) & Shorts S01/S02 VO from locked v02 scripts | J3734 |
 | J3741 | mini | blocked | claudecode | – | review · Verify condition for J3722 |  |
 | J3742 | mini | open (after J3678) | – | – | 011 vo · vo · HOS 011 Anaesthesia: Shorts S01 & S02 voiceover from locked v03 scripts | J3740 |
+| J3743 | mini | open | – | – | WW2:004 edit · assembly · WW2 004: v04 full-bleed 16:9 archive framing rebuild (Ben 0:15 change) + J3715 Cuts A+B | 1a152ff |
 
 Recently finished:
 

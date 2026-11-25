@@ -1,5 +1,5 @@
 {
-  "next_id": 3743,
+  "next_id": 3744,
   "jobs": [
     {
       "id": "J0001",
@@ -342146,6 +342146,36 @@
       "due": "2026-12-05T18:00:00Z",
       "kind": "vo",
       "plain": "Record the two locked 16-19 s Shorts voiceovers for HOS 011 Anaesthesia after the 30 Nov voice reset"
+    },
+    {
+      "id": "J3743",
+      "title": "WW2 004: v04 full-bleed 16:9 archive framing rebuild (Ben 0:15 change) + J3715 Cuts A+B",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** Elected acting Chief (`gemini`) ruling on `J3741` / `J3722` (`ww2-channel` `07_Edit/CHIEF_RULING_J3741.md`). While `v03` (`J3721` PR #156, `J3722` PR #163) passed audiovisual QA on its `J3715` Cuts A+B joins (`-61.8 s`, `21:35.54`), **Ben had already recorded a live board `change` verdict on `WW2:004` (`v02`, check `WW2-004`, `2026-11-25T13:21:30.216Z`, `J3430`):**\n\n> **`0:15 Image is not full screen, is cut like a short`**\n\nDirect Chief inspection of `v03` at `0:12–0:26` confirmed `v03` inherited `render_004_v02.py`'s `1760×880` boxed-over-blurred-navy layout across all archive shots (97 archive segments with aspect ratio `< 1.35`, starting at `0:00–0:28` including `P01_04_C24` at `0:15` and `P01_05_N11` at `0:21`). That violates `studio/RULES.md` Rule 1 (*\"archive photos fill 16:9 cleanly\"*) and leaves Ben's explicit change request unaddressed. Film airs **Tue 1 Dec 17:00 London**; Ben's watch due **Sat 28 Nov 20:00Z**.\n\n**Do (zero-spend `v04` full-bleed 16:9 archive framing rebuild; £0):**\n1. **Keep `v01`, `v02`, and `v03` completely untouched** on NAS (`studio-live`), iCloud `WW2 UAT`, and R2 (`ww2-004-v02`). Do NOT touch Ben's watch card yet (that follows `v04` audiovisual QA and Chief PASS).\n2. **Use NAS scratch only** (`/Volumes/data/studio-live/scratch/<job>-v04/` — Mini local disk has `<7 GB` free; never write render scratch to Mini local disk).\n3. **Preserve the already-verified `v03` timeline and audio (`J3715` Cuts A+B):**\n   - Drive video rendering from `07_Edit/EDIT_PLAN_v03.json` (`173` segments, `31,093` frames = `1295.542 s` / `21:35.54`, `52.88%` archive across all 50 verified photos, `0` new `<60 s` repeat regressions).\n   - Reuse the exact `v03` cut audio track from `/Volumes/data/studio-live/ww2/02_Video-Projects/004_Why-US-Submarine-Torpedoes-Failed-21-Months/07_Edit/v03_master/ww2_004_torpedoes_v03.mp4` (`-c:a copy` or lossless extract + AAC 256k mux matching exact `1295.542 s` duration, integrated `-15.7 LUFS`, true peak `-1.5 dBFS`, zero new voice, preserving the `J3722`-verified Cut A and Cut B audio crossfades).\n   - Keep `ww2_004_en-GB_v03.srt` (`337` cues), `chapters_v03.json`, and `DESCRIPTION_v03.txt` timing exact (no timeline shift vs `v03`).\n4. **Fix archive photo framing film-wide (`render_004_v04.py`) so ZERO photos look \"cut like a short\":**\n   - Eliminate `render_004_v02.py`'s `1760×880` boxed-over-blurred-navy pillarbox layout and box border lines completely.\n   - Every archive photo must fill the full **1920 px width edge-to-edge** (full-bleed 16:9 frame `1920×1080`, or `1920×954` full-width above the bottom caption bar with the lower-third bar overlaid cleanly; **zero blurred sidebars, zero dark side margins, zero box frame around the photo**).\n   - All 50 source archive scans in `WW2:004` are high-resolution (`>= 1736 px` wide, up to `5707 px`), so full-width `1920 px` cover framing stays `<= 1.15×` upscale (well under the `2.35×` cap).\n   - For square and portrait archive photos (the 97 segments with source aspect ratio `< 1.35`, especially `0:00–0:28` `N01`, `N07`, `C11`, `C24` at `0:15`, `N11` at `0:21`, and portraits like Lockwood/Nimitz/Halsey/Blandy): use **subject-aware focal framing** (upper-centre crop or smooth slow vertical pan/tilt across the photo at full `1920 px` width) so faces, heads, cranes/torpedoes (`C24` at `0:15`), and submarines are cleanly framed with zero chopped heads or missing subjects. Keep subtle Ken Burns motion smooth.\n   - Keep all animated code diagrams (`draw_maps_004.py`) and chapter cards clean as in `v02`/`v03` (zero dips-to-black, zero tofu glyphs, zero boilerplate).\n5. **Render & verify on NAS `studio-live`:**\n   - Output: `/Volumes/data/studio-live/ww2/02_Video-Projects/004_Why-US-Submarine-Torpedoes-Failed-21-Months/07_Edit/v04_master/ww2_004_torpedoes_v04.mp4` (`1920x1080`, `24/1` fps CFR, `31,093` frames, H.264 `yuv420p`, `faststart` `moov` before `mdat`, `0` decode errors, `-14` to `-16 LUFS`, true peak `<= -1.0 dBFS`, A/V sync diff `< 0.05 s`).\n   - Run an automated border/pillarbox check on sampled frames from every archive segment (verifying full-width picture edges with zero vertical sidebar seams) AND build a 32-frame QA contact sheet (`qa_contact_sheet_v04.jpg`) explicitly showing `0:02, 0:05, 0:09, 0:15, 0:24, 0:30, 0:36` plus representative portrait/narrow archive segments across Parts 2–6; inspect the contact sheet by eye (`read_file`) to confirm zero chopped heads/subjects and zero sidebars.\n   - Delete NAS scratch intermediates only if unneeded after `v04` passes checks (never delete `v01`/`v02`/`v03` masters).\n6. **Open one `ww2-channel` PR** with `07_Edit/render_004_v04.py`, `07_Edit/RENDER_QA_v04.json`, `07_Edit/HANDOFF_v04.md`, and `11_Upload-Package/metadata_v04.json` (`upload_authorized: false`, referencing `ww2_004_torpedoes_v04.mp4` SHA-256 and `v03` captions/chapters), park for Chief (no merge), and close this job so the chained `v04` audiovisual QA job runs immediately.\n\n**Guards.** £0 spend. No new voice. No YouTube upload, schedule, retitle, or privacy change. Do not overwrite `v02`/`v03` or change Ben's watch card yet. Do not claim audio/motion perception unless demonstrated.\n",
+      "ref": "1a152ff",
+      "film": "WW2:004",
+      "stage": "edit",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T20:14Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T20:14Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Re-render WW2:004 v04 from EDIT_PLAN_v03 with full-bleed 16:9 archive framing (zero blurred sidebars), reuse v03 audio, verify contact sheet, open ww2 PR",
+      "due": "2026-11-26T20:00:00Z",
+      "kind": "assembly",
+      "plain": "Rebuild film 004 v04 so all archive photos fill 16:9 edge-to-edge (fixing Ben's 0:15 change note) while keeping J3715 Cuts A+B"
     }
   ],
   "focus": [
