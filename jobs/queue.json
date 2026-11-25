@@ -338238,9 +338238,14 @@
           "at": "2026-11-25T12:07Z",
           "by": "macbook",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T12:08Z",
+          "by": "macbook",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Read matching first-day traffic sources on 25 November; retain the vaccine gate and 26 November stop deadline",
+      "remaining_action": "Read J3125 evidence and decide whether the first-24h Shorts-feed condition is proven",
       "kind": "review",
       "recheck_of": "J3125",
       "due": "2026-11-24T12:00:00+00:00",
@@ -338256,10 +338261,13 @@
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-25T12:07Z",
+        "at": "2026-11-25T12:08Z",
         "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Read J3125 history and evidence",
+          "Check for matching-window evidence",
+          "Record wait or reopen, report"
+        ]
       }
     },
     {
