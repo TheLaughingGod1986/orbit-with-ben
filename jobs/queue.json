@@ -335911,16 +335911,21 @@
           "at": "2026-11-25T09:28Z",
           "by": "gemini",
           "what": "step 0 of 5 done: Claimed J3690; starting independent HOS:127 v02 facts and exact-quote verification"
+        },
+        {
+          "at": "2026-11-25T09:29Z",
+          "by": "gemini",
+          "what": "step 1 of 5 done: Clean worktree created on origin/macbook/J3688 (45953e56); all 4 v02 SHA-256 hashes verified byte-for-byte identical"
         }
       ],
-      "remaining_action": "Stacking clean HOS worktree on origin/macbook/J3688 and verifying v02 file hashes",
+      "remaining_action": "Independently fetching and verifying all live MUST QUOTE URLs and verbatim quotes in SOURCES.md and FACT_NOTES_v02.md",
       "due": "2026-12-09T18:00:00Z",
       "kind": "facts",
       "plain": "Fact-check the revised Wright Brothers script, sources, and Shorts",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-25T09:28Z",
+        "at": "2026-11-25T09:29Z",
         "by": "gemini",
         "plan": [
           "Create worktree and verify v02 hashes",
@@ -335929,7 +335934,7 @@
           "Write GEMINI_FACTS_CHECK_v02.md and run check_all.sh",
           "Push PR and post desk handoff"
         ],
-        "note": "Claimed J3690; starting independent HOS:127 v02 facts and exact-quote verification"
+        "note": "Clean worktree created on origin/macbook/J3688 (45953e56); all 4 v02 SHA-256 hashes verified byte-for-byte identical"
       },
       "taskKeys": [
         "HOS:127"
