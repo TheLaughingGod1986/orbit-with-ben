@@ -343542,10 +343542,10 @@
       "stage": "upload",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-25T23:18Z",
+      "eta": "2026-11-26T01:18Z",
       "created_by": "gemini",
       "created_at": "2026-11-25T22:57Z",
       "result": "",
@@ -343559,6 +343559,11 @@
           "at": "2026-11-25T22:57Z",
           "by": "gemini",
           "what": "approved by Ben: Watch Mark 14 Torpedo: Why It Ran 10 Feet Too Deep (Short 004-S1 v01, 48.6s) and say OK or what to change v01 (asked in J3570)"
+        },
+        {
+          "at": "2026-11-25T23:18Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Verify master SHA-256 and upload 004-S1 v01 Private scheduled Mon 30 Nov 12:30 London",
@@ -343578,6 +343583,14 @@
         "job": "J3570",
         "okAt": "2026-11-25T22:57Z",
         "okRef": "J3570"
+      },
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T23:18Z",
+        "by": "claudecode",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
       }
     },
     {
