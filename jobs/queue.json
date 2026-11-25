@@ -1,5 +1,5 @@
 {
-  "next_id": 3752,
+  "next_id": 3753,
   "jobs": [
     {
       "id": "J0001",
@@ -340832,6 +340832,11 @@
           "at": "2026-11-25T18:54Z",
           "by": "gemini",
           "what": "done: Built WW2 003-S3 ('B-29 vs the Atomic Bomb: Which Cost More?', 40.52s, 1080x1920 25fps, -16.70 LUFS / -1.83 dBFS TP, 66.24% verified PD archive + native portrait animated S01_COST_v03, Rule 13 aircraft-only, £0 spend). Verified master SHA-256 b047c49455230cd8360e40d2f6669b151ced19d0ae315aefc9e96ef5d0de79ec on NAS and iCloud WW2 UAT; WW2 PR #162 merged; Ben watch card WW2:003-S3 published (due Fri 27 Nov 18:00 UTC). No upload before Ben's OK."
+        },
+        {
+          "at": "2026-11-25T22:57Z",
+          "by": "gemini",
+          "what": "no longer waits on Ben: OK'd, delivered by J3752"
         }
       ],
       "remaining_action": "Complete — awaiting Ben's watch OK on WW2:003-S3",
@@ -340855,7 +340860,8 @@
       "taskKeys": [
         "WW2:003"
       ],
-      "awaits_ben": {
+      "done_ref": "ww2-channel#162",
+      "awaits_was": {
         "what": "Watch B-29 vs the Atomic Bomb: Which Cost More? (Short 003-S3 v01, 40.5s) and say OK or what to change",
         "file": "WW2 UAT/003_Why-B29-Superfortress-Cost-More-Than-Atomic-Bomb/Shorts/003_S3_Cost_Comparison_v01/b29_atomic_bomb_cost_short_v01.mp4",
         "version": "v01",
@@ -340866,8 +340872,7 @@
         "title": "B-29 vs the Atomic Bomb: Which Cost More?",
         "number": "003-S3",
         "type": "short"
-      },
-      "done_ref": "ww2-channel#162"
+      }
     },
     {
       "id": "J3726",
@@ -343392,6 +343397,55 @@
       "taskKeys": [
         "WW2:004"
       ]
+    },
+    {
+      "id": "J3752",
+      "title": "WW2 003-S3: upload Ben-approved B-29 vs Atomic Bomb Short v01, scheduled Sat 28 Nov 12:30 London",
+      "needs": "mini",
+      "repo": "ww2",
+      "body": "**Why.** Ben OK'd WW2 Short `003-S3` v01 (*B-29 vs the Atomic Bomb: Which Cost More?*) on the Studio Kanban board (`WW2:ASK:J3725`, `verdict: ok`, `version: v01`, `2026-11-25T20:57:49.468Z`). Built in `J3725` (`ww2-channel` PR #162). Acting Chief (`gemini`, `chief_relay.py status` verified) queues the delivery upload job.\n\n**Exact approved master (verify SHA-256 before upload — never upload a different cut):**\n- File: `/Volumes/data/studio-live/ww2/02_Video-Projects/003_Why-B29-Superfortress-Cost-More-Than-Atomic-Bomb/Shorts/003_S3_Cost_Comparison_v01/b29_atomic_bomb_cost_short_v01.mp4`\n- SHA-256: `b047c49455230cd8360e40d2f6669b151ced19d0ae315aefc9e96ef5d0de79ec` (`10,187,355` bytes, `40.52 s`, 1080x1920 25fps)\n\n**Do (Mini; Field Order History `UCu94mInMFosxu3W0H6jlI6Q`, Studio CDP `9224` and `YOUTUBE_REFRESH_TOKEN_WW2` only; never open or play a public video):**\n1. Verify master SHA-256 matches `b047c49455230cd8360e40d2f6669b151ced19d0ae315aefc9e96ef5d0de79ec`.\n2. Upload v01 **Private**, scheduled **Sat 28 Nov 2026 12:30 London (`2026-11-28T12:30:00Z`)**. Do not clash with FOH long slots (`17:00`).\n   - **Title (41 chars):** `B-29 vs the Atomic Bomb: Which Cost More?`\n   - **Description:** exact public copy from `003_S3_Cost_Comparison_v01/metadata.json` on NAS (do not include any internal status or job IDs; omit the parenthetical \"(Related video linked to RqYjADxvJy8 once public)\" and write clean viewer copy: \"Watch the full B-29 documentary on Field Order History: B-29: Why It Cost More Than the Atomic Bomb (airs Sat 28 Nov 2026 at 17:00 London).\" followed by the Sources and Images lines).\n   - **Tags:** `B-29 Superfortress, Manhattan Project, atomic bomb, WW2 engineering, WW2 aircraft, Boeing B-29, World War 2`\n   - **Settings:** Category Education (`27`), language `en-GB`, Not made for kids, altered/synthetic content Yes (matches parent long `RqYjADxvJy8`).\n   - **Cover frame:** opening frame (Enola Gay + `COST MORE THAN THE BOMB`).\n   - **Related video:** parent long `RqYjADxvJy8` goes Public at Sat 28 Nov 2026 17:00 London (4.5 h later). If Studio `9224` allows linking scheduled `RqYjADxvJy8` now, set and verify it; otherwise leave unset and ensure `J3655` (due `2026-11-28T17:05:00Z`) links this Short's Related video to `RqYjADxvJy8` immediately after `RqYjADxvJy8` reads Public.\n3. Read everything back in Studio `9224` (after reload) and the YouTube Data API (`privacyStatus=private`, `publishAt=2026-11-28T12:30:00Z`, Not made for kids, altered content Yes).\n4. Record the YouTube video ID and readback in `ww2/02_Video-Projects/003_Why-B29-Superfortress-Cost-More-Than-Atomic-Bomb/status.json` via a clean `ww2` PR.\n5. Queue a 7-day read (`jobs.py wait ... --type date --release-at-time`, due Sat 5 Dec 2026 12:35 London) covering Short views, stayed-to-watch, avg % viewed, subscribers, and `RqYjADxvJy8` Shorts/Related traffic.\n6. **If anything is wrong at upload, park for the Chief.** Never upload a different cut than the one Ben OK'd. £0.\n",
+      "ref": "J3725",
+      "film": "WW2:003",
+      "stage": "upload",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T22:57Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T22:57Z",
+          "by": "gemini",
+          "what": "added"
+        },
+        {
+          "at": "2026-11-25T22:57Z",
+          "by": "gemini",
+          "what": "approved by Ben: Watch B-29 vs the Atomic Bomb: Which Cost More? (Short 003-S3 v01, 40.5s) and say OK or what to change v01 (asked in J3725)"
+        }
+      ],
+      "remaining_action": "Verify master SHA-256 and upload 003-S3 v01 Private scheduled Sat 28 Nov 12:30 London",
+      "due": "2026-11-27T18:00:00Z",
+      "kind": "studio",
+      "plain": "Upload Ben-approved Short 003-S3 v01 Private, scheduled Sat 28 Nov 12:30 London",
+      "approved_from": {
+        "what": "Watch B-29 vs the Atomic Bomb: Which Cost More? (Short 003-S3 v01, 40.5s) and say OK or what to change",
+        "file": "WW2 UAT/003_Why-B29-Superfortress-Cost-More-Than-Atomic-Bomb/Shorts/003_S3_Cost_Comparison_v01/b29_atomic_bomb_cost_short_v01.mp4",
+        "version": "v01",
+        "airs": "2026-11-28T12:30Z",
+        "card": "WW2:003-S3",
+        "title": "B-29 vs the Atomic Bomb: Which Cost More?",
+        "number": "003-S3",
+        "type": "short",
+        "channel": "WW2",
+        "job": "J3725",
+        "okAt": "2026-11-25T22:57Z",
+        "okRef": "J3725"
+      }
     }
   ],
   "focus": [
