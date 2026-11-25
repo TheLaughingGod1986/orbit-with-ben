@@ -335535,9 +335535,14 @@
           "at": "2026-11-25T08:42Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Confirmed PR #775 (gemini/J3686-hos137-facts-v02) MERGEABLE with all CI green; superseding #747/#754/#769/#772."
+        },
+        {
+          "at": "2026-11-25T08:43Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Read all v02 files and confirmed SHA-256 hashes match PR #772/#775 byte-for-byte."
         }
       ],
-      "remaining_action": "Verifying FIX-1..FIX-9, v02 script/Shorts/facts files, and exact SHA-256 hashes",
+      "remaining_action": "Running live HTTP exact-quote verification, script/Shorts timing audit, and HOS repo gates",
       "due": "2026-12-08T18:00:00Z",
       "kind": "review",
       "plain": "Verify all 9 v02 fixes and exact quotes for Accidental Inventions, lock the script on KEEP, and close J3565.",
@@ -335550,9 +335555,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-25T08:42Z",
+        "at": "2026-11-25T08:43Z",
         "by": "gemini",
         "plan": [
           "Inspect v02 PR and J3565 review",
@@ -335561,7 +335566,7 @@
           "Run script/episode/repo checks & CI",
           "Chief ruling, merge/close PRs & update records"
         ],
-        "note": "Confirmed PR #775 (gemini/J3686-hos137-facts-v02) MERGEABLE with all CI green; superseding #747/#754/#769/#772."
+        "note": "Read all v02 files and confirmed SHA-256 hashes match PR #772/#775 byte-for-byte."
       },
       "taskKeys": [
         "HOS:137"
