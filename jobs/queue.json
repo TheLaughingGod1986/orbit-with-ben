@@ -327962,13 +327962,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T11:27Z",
-      "eta": "2026-11-25T13:27Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-24T17:03Z",
-      "result": "",
+      "result": "Resolved: stray OWB 003 edit:blocked (ref bc431ff, WW2 J3205 commit) caused by unprefixed studio.py call on 24 Nov 17:03Z removed in orbit-with-ben#1318; OWB 003 status.json restored to pre-d393eba896 state.",
       "history": [
         {
           "at": "2026-11-24T17:03Z",
@@ -327979,6 +327979,11 @@
           "at": "2026-11-25T11:27Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T11:27Z",
+          "by": "gemini",
+          "what": "done: Resolved: stray OWB 003 edit:blocked (ref bc431ff, WW2 J3205 commit) caused by unprefixed studio.py call on 24 Nov 17:03Z removed in orbit-with-ben#1318; OWB 003 status.json restored to pre-d393eba896 state."
         }
       ],
       "remaining_action": "Chief resolves 003 edit handoff and records the next owner/action",
@@ -327996,7 +328001,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "orbit-with-ben#1318"
     },
     {
       "id": "J3590",

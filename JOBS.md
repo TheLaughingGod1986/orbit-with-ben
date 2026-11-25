@@ -86,7 +86,6 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3585 | mini | open (after J3517) | – | – | WW2:010 edit · assembly · WW2 010 Short 3: build 'Churchill AVRE: The 40-Pound Flying Dustbin Gun' for Ben watch | J3563 |
 | J3586 | mini | open (after J3555) | – | – | WW2:014 vo · vo · WW2 film 014: narration in Ben's voice (Dambusters, post-reset) |  |
 | J3588 | mini | blocked | gemini | – | review · Verify condition for J3369 |  |
-| J3589 | mini | claimed | gemini | 2026-11-25T13:27Z | chief · Chief: resolve 003 edit orphan-blocked |  |
 | J3591 | mini | blocked | gemini | – | review · `gemini-argon` · Retention autopsy (48h): "How Britain Built Two Harbours in Secret and Floated Them to Nor" (ek9F61FVYqY) |  |
 | J3593 | mini | blocked | gemini | – | review · Verify condition for J3417 |  |
 | J3598 | any | open (after J3596) | – | – | chief · Review J3596 corrections and finish held J3591 autopsy |  |
