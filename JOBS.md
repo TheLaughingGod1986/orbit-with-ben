@@ -125,7 +125,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3666 | mini | open (after J3665) | – | – | 006 edit · qa · WW2 006: full private audiovisual QA of v02 master |  |
 | J3667 | mini | open (after J3666) | – | – | 006 edit · chief · WW2 006: Chief decision on v02 delivery and Ben watch staging |  |
 | J3668 | mini | open | – | – | review · Verify condition for J3178 |  |
-| J3669 | mini | blocked | macbook-2 | – | review · Verify condition for J3434 |  |
+| J3669 | mini | open | – | – | review · Verify condition for J3434 |  |
 | J3670 | mini | open | – | – | HOS:128 vo · vo · HOS 128 Edison vs Tesla: long voiceover (6 parts) from locked script v03 | HOS PR #762 (84af0f7d), J3660, J3547 |
 | J3671 | mini | open | – | – | HOS:128 vo · vo · HOS 128 Edison vs Tesla: Shorts S01 & S02 voiceover from locked v03 scripts | HOS PR #762 (84af0f7d), J3660, J3547, J3670 |
 
