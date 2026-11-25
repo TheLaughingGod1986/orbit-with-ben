@@ -323387,18 +323387,23 @@
           "at": "2026-11-25T10:09Z",
           "by": "claudecode",
           "what": "step 0 of 5 done: Pluto commit passed the privacy check; pushed with ledger row renumbered T044"
+        },
+        {
+          "at": "2026-11-25T10:10Z",
+          "by": "claudecode",
+          "what": "step 1 of 5 done: Pluto thumbnails merged as PR 1311 (28dfe21fa6); J3114 finished so J3115 can start"
         }
       ],
-      "remaining_action": "Wait for checks on the Pluto pull request, then merge",
+      "remaining_action": "Merge the J3307 review record once its checks report",
       "due": "2026-11-25T12:00:00Z",
       "for": "claudecode",
       "kind": "assembly",
       "mini_only": true,
       "urgent": 9,
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 5,
-        "at": "2026-11-25T10:09Z",
+        "at": "2026-11-25T10:10Z",
         "by": "claudecode",
         "plan": [
           "Check and publish J3114 Pluto thumbnails",
@@ -323407,7 +323412,7 @@
           "Queue follow-ups",
           "Thread report"
         ],
-        "note": "Pluto commit passed the privacy check; pushed with ledger row renumbered T044"
+        "note": "Pluto thumbnails merged as PR 1311 (28dfe21fa6); J3114 finished so J3115 can start"
       },
       "taskKeys": [
         "OWB:034"
