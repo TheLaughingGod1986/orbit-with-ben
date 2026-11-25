@@ -121,7 +121,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3692 | any | blocked | gemini | – | review · AI spend: Google AI Ultra 20x vs Ultra 5x re-review before 12 Jan 2027 renewal, for Ben |  |
 | J3696 | mini | open | – | – | review · Verify condition for J3548 |  |
 | J3697 | mini | open | – | – | review · Verify condition for J3205 |  |
-| J3698 | mini | claimed | claudecode | 2026-11-25T12:21Z | review · Verify condition for J3463 |  |
+| J3698 | mini | blocked | claudecode | – | review · Verify condition for J3463 |  |
 | J3699 | mini | open | – | – | review · Verify condition for J3511 |  |
 | J3700 | mini | open | – | – | review · Verify condition for J3512 |  |
 | J3701 | mini | open | – | – | review · Verify condition for J3519 |  |
