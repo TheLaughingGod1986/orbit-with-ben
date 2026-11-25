@@ -324928,13 +324928,13 @@
       "stage": "script",
       "after": "J3552",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "blocked",
       "by": "gemini",
       "since": "2026-11-25T05:44Z",
-      "eta": "2026-11-25T07:44Z",
+      "eta": "",
       "created_by": "gemini",
       "created_at": "2026-11-24T15:46Z",
-      "result": "",
+      "result": "Waiting for: Waiting on HOS:136 v02 script fix (J3675), independent v02 facts audit (J3676), and Chief v02 script lock decision (J3677) to achieve KEEP before locking script and closing J3553; Acting Chief FIX ruling published in HOS PR #765 (jobs/reviews/J3553/REVIEW.md)",
       "history": [
         {
           "at": "2026-11-24T15:46Z",
@@ -325005,9 +325005,19 @@
           "at": "2026-11-25T05:53Z",
           "by": "gemini",
           "what": "step 4 of 4 done: Formal Acting Chief FIX ruling published in HOS PR #765 (c01472ce), posted on HOS desk #694, PR #753, and OWB thread; v02 chain J3675->J3676->J3677 queued; parking J3553 in dependency wait on J3677"
+        },
+        {
+          "at": "2026-11-25T05:53Z",
+          "by": "gemini",
+          "what": "blocked: Waiting for: Waiting on HOS:136 v02 script fix (J3675), independent v02 facts audit (J3676), and Chief v02 script lock decision (J3677) to achieve KEEP before locking script and closing J3553; Acting Chief FIX ruling published in HOS PR #765 (jobs/reviews/J3553/REVIEW.md)"
+        },
+        {
+          "at": "2026-11-25T05:53Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-12-01T18:00:00Z"
         }
       ],
-      "remaining_action": "Waiting on J3675 (v02 fix) -> J3676 (v02 facts) -> J3677 (Chief v02 lock, which closes J3553 on KEEP)",
+      "remaining_action": "Wait for J3675 (v02 fix) -> J3676 (v02 facts) -> J3677 (Chief v02 lock, which closes J3553 on KEEP)",
       "due": "2026-12-04T18:00:00Z",
       "kind": "review",
       "rerouted_from": {
@@ -325033,6 +325043,11 @@
           "Post rulings to HOS desk, PR #753, and OWB thread and finish J3553"
         ],
         "note": "Formal Acting Chief FIX ruling published in HOS PR #765 (c01472ce), posted on HOS desk #694, PR #753, and OWB thread; v0"
+      },
+      "hold": {
+        "type": "dependency",
+        "condition": "Waiting on HOS:136 v02 script fix (J3675), independent v02 facts audit (J3676), and Chief v02 script lock decision (J3677) to achieve KEEP before locking script and closing J3553; Acting Chief FIX ruling published in HOS PR #765 (jobs/reviews/J3553/REVIEW.md)",
+        "check_at": "2026-12-01T18:00:00Z"
       }
     },
     {
