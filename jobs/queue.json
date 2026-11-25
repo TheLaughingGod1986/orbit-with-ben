@@ -322454,13 +322454,13 @@
       "stage": "",
       "after": "",
       "eta_min": 45,
-      "status": "blocked",
-      "by": "codex",
-      "since": "2026-11-24T12:37Z",
+      "status": "open",
+      "by": "",
+      "since": "",
       "eta": "",
       "created_by": "claude",
       "created_at": "2026-11-24T11:54Z",
-      "result": "publish via Claude Code: /Volumes/MiniWork/scratch/J3519-hos codex/J3519; commit 91c93f44. Review four-file diff for private data, push/open PR and merge with green checks, then pull shared HOS main and rerun PGOPTIONS read-only channel:audit. Shared runtime already restored to Prisma 7.10.1; J3512 exact private-upload dry run exits 0. Branch audit exits 0 (68 videos, zero errors), 33 targeted tests and check_all pass. No upload, schedule, database write or spend. Automatic review rejected Codex push and required Claude Code publication.",
+      "result": "",
       "history": [
         {
           "at": "2026-11-24T11:54Z",
@@ -322521,6 +322521,11 @@
           "at": "2026-11-25T10:19Z",
           "by": "relay",
           "what": "condition verification queued: J3701"
+        },
+        {
+          "at": "2026-11-25T10:48Z",
+          "by": "gemini",
+          "what": "reopened: Chief review J3701: condition MET. Acting Chief (gemini) verified HOS PR #780 (claudecode/J3519-readonly-audit, head ba026b482826541d7856b882377f4cef0d30723c, published by claudecode under J3530) is diff-identical to Codex 91c93f44, privacy-clean, MERGEABLE/CLEAN, all 6 CI checks SUCCESS, and merged PR #780 into HOS main (d58d290eacd0889e971c151a125994a6a7db41a8). Next (J3519 final step): safely pull shared HOS main, confirm Prisma 7.10.1 runtime, prove PGOPTIONS='-c default_transaction_read_only=on' npm run channel:audit exits 0 and J3512 private-upload --dry-run exits 0 (no upload, schedule, DB write, or spend; J3512 already uploaded mpK3D6S7WLk privately so dry-run only). No upload or approval gates waived."
         }
       ],
       "remaining_action": "Claude Code publication under J3530 after its usage reset, then shared-runtime audit and private dry run",
@@ -322528,32 +322533,11 @@
       "kind": "assembly",
       "mini_only": true,
       "urgent": 6,
-      "progress": {
-        "step": 2,
-        "of": 3,
-        "at": "2026-11-24T12:42Z",
-        "by": "codex",
-        "plan": [
-          "Inspect runtime and dry run",
-          "Restore locked dependencies",
-          "Verify audit and dry run"
-        ],
-        "note": "Prisma generation, J3512 dry run, read-only live audit (68 videos, zero errors), 33 targeted tests and all check_all che"
-      },
       "taskKeys": [
         "HOS:008",
         "HOS:009",
         "HOS:010"
-      ],
-      "hold": {
-        "type": "input",
-        "condition": "Chief review J3613: still unmet. HOS remote main is 12eceaff; codex/J3519 has no remote branch or PR. Local 91c93f44 contains the reviewed read-only audit fix; shared Prisma/client are 7.10.1 but main lacks readOnly:true. Existing Claude Code publication job J3530 owns privacy review, push, PR and green-check merge of /Volumes/MiniWork/scratch/J3519-hos branch codex/J3519. Claude Code is usage-limited until 25 Nov 10:00Z; verify at 10:15Z, not an assumed completion time. Then pull shared HOS main safely and prove PGOPTIONS read-only channel:audit plus J3512 private dry run. Prior push refusal retained; no upload or approval gates waived.",
-        "check_at": "2026-11-25T11:19:38+00:00",
-        "last_recheck": "J3613",
-        "checked_at": "2026-11-24T20:29:40+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3701"
-      }
+      ]
     },
     {
       "id": "J3520",
