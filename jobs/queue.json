@@ -325868,20 +325868,33 @@
           "at": "2026-11-25T06:34Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T06:35Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Independently verify all 24 claims in HOS:137 SOURCES.md, FACT_NOTES_v01.md, long script, and Shorts (PR #754)",
+      "remaining_action": "Fetch HOS PR #754 files and inspect J3513/J3503 context and downstream jobs",
       "due": "2026-12-08T18:00:00Z",
       "kind": "facts",
       "plain": "Fact-check every spoken claim, quote, date, and guardrail in the Accidental Inventions v01 script and Shorts.",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T06:34Z",
+        "of": 5,
+        "at": "2026-11-25T06:35Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Fetch PR #754 & inspect files",
+          "Independently verify all claims & 6 guardrails",
+          "Write independent audit on clean worktree",
+          "Run HOS checks & push PR",
+          "Update queue, desk & thread reports"
+        ]
+      },
+      "taskKeys": [
+        "HOS:137"
+      ]
     },
     {
       "id": "J3565",
