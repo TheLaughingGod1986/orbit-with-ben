@@ -340090,19 +340090,30 @@
           "at": "2026-11-25T22:24Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T22:25Z",
+          "by": "gemini",
+          "what": "step 0 of 3 done"
         }
       ],
-      "remaining_action": "Packaging panel (gemini): OWB 064 Every Planet Explained (3 titles, 3 thumbnails A/B/C, opening & chapters)",
+      "remaining_action": "Inspecting OWB 064 packaging docs, shot list, and thumbnail images",
       "for": "gemini",
       "kind": "review",
       "progress": {
         "step": 0,
         "of": 3,
-        "at": "2026-11-25T22:24Z",
+        "at": "2026-11-25T22:25Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Inspect OWB 064 packaging docs and thumbnails",
+          "Write independent critique in gemini.md",
+          "Commit critique to main and mark J3717 done"
+        ]
+      },
+      "taskKeys": [
+        "OWB:064"
+      ]
     },
     {
       "id": "J3718",
