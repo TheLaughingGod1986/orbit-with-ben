@@ -326098,9 +326098,14 @@
           "at": "2026-11-25T08:51Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T08:54Z",
+          "by": "macbook-2",
+          "what": "step 1 of 2 done"
         }
       ],
-      "remaining_action": "Await HOS:137 v02 chain J3685 (script FIX-1..FIX-9) -> J3686 (facts) -> J3687 (Chief lock & J3565 closure, due 2026-12-08 18:00 UTC)",
+      "remaining_action": "Verify merged HOS commits, locked v02 SHA-256 hashes, status_board.py --check, and PR states before administrative closure",
       "due": "2026-12-08T18:00:00Z",
       "kind": "review",
       "plain": "Review and lock the Accidental Inventions package, 7-9 minute script, sources, and two Shorts.",
@@ -326113,12 +326118,14 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-25T08:51Z",
+        "step": 1,
+        "of": 2,
+        "at": "2026-11-25T08:54Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Verify J3687 lock on HOS main",
+          "Close J3565 and post report"
+        ]
       }
     },
     {
