@@ -335562,6 +335562,11 @@
           "at": "2026-11-25T07:53Z",
           "by": "macbook",
           "what": "released: MacBook worker run on claude ended (exit 1) with the job still open; picked up again next run; claude paused on the MacBook until 2026-11-25T09:53:42Z, so the next run uses the next agent in the chain"
+        },
+        {
+          "at": "2026-11-25T08:04Z",
+          "by": "relay",
+          "what": "opened to any worker in its chain (preferred gemini): Claude out of usage (Claude said it's out of usage until 2026-11-25T12:50:00Z: four runs a day to save usage (Ben, 11 Nov)); next in its chain: gemini on gemini-4-neon-high"
         }
       ],
       "remaining_action": "Verify readiness: Review and lock HOS:127 v02 script, sources, Shorts & packaging once J3688 and v02 facts re-verification complete",
@@ -335576,7 +335581,15 @@
         "by": "macbook",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "rerouted_from": {
+        "needs": "mini",
+        "for": "",
+        "model": "",
+        "status": "open",
+        "by": ""
+      },
+      "open_claim": true
     }
   ],
   "focus": [
