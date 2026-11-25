@@ -341583,16 +341583,21 @@
           "at": "2026-11-25T19:25Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Audited all 66 Flow prompts (0 real person names, 0 DNA terms, 0 text requests; caught 6 leaked stage-direction prefixes incl P1:01b 'Why?' quote), confirmed P5:16b must be a dedicated moving plate between P5:16a code graphic and P5:17 end card, verified live Flow balance 23,450 cr and 800 cr shared liability"
+        },
+        {
+          "at": "2026-11-25T19:26Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Re-priced all 4 routes (67 plates incl P5:16b): Route A pre-5-Dec Quality 6,700 cr (15,950 cr headroom above 800 liability; +12,950 over floor 3000; fastest clean path to Mon 14 Dec watch), Route B1 post-5-Dec hybrid 29 Omni 1.2 Flash + 38 Lite = 886 cr (-86.8%), Route B2 with Lite Lower Priority = 696 cr (-89.6%), Route C all-Omni = 1,608 cr"
         }
       ],
-      "remaining_action": "Re-pricing pre/post-5-Dec Flow routes and drafting PICTURE_PLAN_v04 + PRICE_REVIEW_v04",
+      "remaining_action": "Building PICTURE_PLAN_v04, part boards v04, PROMPT_AUDIT_v04, and PRICE_REVIEW_v04",
       "due": "2026-11-26T18:00:00Z",
       "kind": "assembly",
       "plain": "Price 011's 66 plates, fix P5:16b reuse, and build the guarded Flow runner at £0",
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-25T19:25Z",
+        "at": "2026-11-25T19:26Z",
         "by": "gemini",
         "plan": [
           "Audit 66 Flow rows and P5:16b",
@@ -341601,7 +341606,7 @@
           "Build and unit-test guarded runner",
           "Run check_all.sh and open HOS PR"
         ],
-        "note": "Audited all 66 Flow prompts (0 real person names, 0 DNA terms, 0 text requests; caught 6 leaked stage-direction prefixes"
+        "note": "Re-priced all 4 routes (67 plates incl P5:16b): Route A pre-5-Dec Quality 6,700 cr (15,950 cr headroom above 800 liabili"
       },
       "taskKeys": [
         "HOS:011"
