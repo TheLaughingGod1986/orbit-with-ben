@@ -342380,9 +342380,14 @@
           "at": "2026-11-25T20:34Z",
           "by": "gemini",
           "what": "step 4 of 6 done: Step 4 done (9:00-14:46): Full 14:46 watched and heard. Ending 2.5s hold + 1.5s fade clean; G10 3-stage smooth; caught Chapter 8 stamp mismatch (13:15 vs 13:27 Tirpitz start), G10d static 34.2s through explosion, A 23877 frozen 8.89s, G8 missing casualty callouts."
+        },
+        {
+          "at": "2026-11-25T20:43Z",
+          "by": "gemini",
+          "what": "step 5 of 6 done: Step 5 done: Forensic audio audit confirmed clipped stray 'I-' syllable from P27.S2 at Join 10 (659.42-659.47s / 8:37.0); Cuts A+B and Joins 15-16 clean; SRT 0 US spellings; Ch 8 off by 12.7s; Thumb C busy at 168x94. NAS scratch cleaned."
         }
       ],
-      "remaining_action": "Running close-up splice audio inspection (Join 10 and Cuts A/B), British-spelling caption audit, and thumbnail/package review",
+      "remaining_action": "Writing 07_Edit/QA_REVIEW_J3745.md in clean ww2 worktree, opening PR, and executing Chief ruling",
       "due": "2026-11-28T20:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -342399,9 +342404,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 6,
-        "at": "2026-11-25T20:34Z",
+        "at": "2026-11-25T20:43Z",
         "by": "gemini",
         "plan": [
           "Verify master hash and split chunks",
@@ -342411,7 +342416,7 @@
           "Audit splices, captions, thumbs, package",
           "Write QA report and open PR"
         ],
-        "note": "Step 4 done (9:00-14:46): Full 14:46 watched and heard. Ending 2.5s hold + 1.5s fade clean; G10 3-stage smooth; caught C"
+        "note": "Step 5 done: Forensic audio audit confirmed clipped stray 'I-' syllable from P27.S2 at Join 10 (659.42-659.47s / 8:37.0)"
       },
       "taskKeys": [
         "WW2:005"
