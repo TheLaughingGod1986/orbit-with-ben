@@ -332805,9 +332805,14 @@
           "at": "2026-11-25T04:22Z",
           "by": "gemini",
           "what": "step 1 of 5 done: Inspected J3660 history, PR #762 (9bc20d9c, 7/7 CI green, MERGEABLE), PR #763 (7131ec0a, advisory KEEP parked for Chief handback), and J3630 REVIEW.md"
+        },
+        {
+          "at": "2026-11-25T04:23Z",
+          "by": "gemini",
+          "what": "step 2 of 5 done: Independently verified on 9bc20d9c: 8/8 exact v03 SHA-256 hashes, FIX-1..FIX-6 and 3 polishes, 0 unverified new spoken claims, Arm B 0-collision evidence (2026-11-25), review:script 91.9/100 PASS, default gate:episode (no --script) picks v03 PASS, check_all.sh ALL CHECKS PASS"
         }
       ],
-      "remaining_action": "Independently verifying v03 hashes, diffs, FIX-1..FIX-6, polishes, and gates on PR #762",
+      "remaining_action": "Confirming Chief authority, merging HOS PR #762 (v03), and closing superseded PRs #758/#760/#751/#725",
       "due": "2026-12-01T18:00:00Z",
       "kind": "review",
       "plain": "Verify HOS 128 v03 resolves all 6 J3630 blocking fixes, then decide KEEP/lock, merge PR, close J3547, and queue VO.",
@@ -332823,9 +332828,9 @@
         "HOS:128"
       ],
       "progress": {
-        "step": 1,
+        "step": 2,
         "of": 5,
-        "at": "2026-11-25T04:22Z",
+        "at": "2026-11-25T04:23Z",
         "by": "gemini",
         "plan": [
           "Inspect J3660 history and PRs 762/763",
@@ -332834,7 +332839,7 @@
           "Close J3547 and queue HOS 128 VO jobs",
           "Post reports and complete J3660"
         ],
-        "note": "Inspected J3660 history, PR #762 (9bc20d9c, 7/7 CI green, MERGEABLE), PR #763 (7131ec0a, advisory KEEP parked for Chief "
+        "note": "Independently verified on 9bc20d9c: 8/8 exact v03 SHA-256 hashes, FIX-1..FIX-6 and 3 polishes, 0 unverified new spoken c"
       }
     },
     {
