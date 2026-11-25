@@ -327390,9 +327390,14 @@
           "at": "2026-11-25T05:04Z",
           "by": "relay",
           "what": "condition verification queued: J3674"
+        },
+        {
+          "at": "2026-11-25T05:07Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-25T11:10:00Z"
         }
       ],
-      "remaining_action": "Review the completed correction in J3598, then close the harbour audience analysis",
+      "remaining_action": "Review PR #1284 in open elected-Chief job J3598, merge if PASS, then close held J3591",
       "due": "2026-11-25T05:03:00Z",
       "kind": "review",
       "model": "gemini-argon",
@@ -327421,12 +327426,11 @@
       ],
       "hold": {
         "type": "input",
-        "condition": "J3595 ruling: original merge-only advisory is superseded by J3597 FIX. J3604 completed correction PR #1284 at 0f68a818b6a1efe949ea07316d42928b829a415b (OPEN, Rules check SUCCESS). Existing elected-Chief review J3598 must assess that exact head, regression evidence and merge before J3591 closes. Preserve five completed Gemini media steps; no repeat watch. Replacements OWB #1279 and WW2 #102 already merged.",
-        "check_at": "2026-11-25T06:04:42+00:00",
-        "last_recheck": "J3595",
-        "checked_at": "2026-11-24T18:38:22+00:00",
-        "checked_by": "codex",
-        "recheck_task": "J3674"
+        "condition": "Verification J3674 (2026-11-25T05:07Z): UNMET. Existing elected-Chief review J3598 is still open (unclaimed), and J3604 correction OWB PR #1284 (codex/j3604-window-fix, head 0f68a818b6a1efe949ea07316d42928b829a415b) is still OPEN (mergedAt null, 0 reviews, Rules check SUCCESS, Studio core check SKIPPED). Replacements OWB #1279 and WW2 #102 remain merged; superseded originals OWB #1273, OWB #1276 and WW2 #101 are CLOSED. Keep J3591 blocked (do not reopen or repeat its 5 completed Gemini media steps); J3598 must review PR #1284 at exact head 0f68a818b6a1efe949ea07316d42928b829a415b, merge if PASS, and close J3591.",
+        "check_at": "2026-11-25T11:10:00Z",
+        "last_recheck": "J3674",
+        "checked_at": "2026-11-25T05:07:48+00:00",
+        "checked_by": "gemini"
       },
       "escalated_at": "2026-11-24T20:18Z"
     },
