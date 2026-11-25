@@ -333251,18 +333251,23 @@
           "at": "2026-11-25T10:17Z",
           "by": "claudecode",
           "what": "step 3 of 6 done: ww2-channel PR 139 merged (2376f27); OWB branch read clean, replayed on main with both register sides kept, watch test 9 OK, pushed"
+        },
+        {
+          "at": "2026-11-25T10:18Z",
+          "by": "claudecode",
+          "what": "step 4 of 6 done: OWB PR 1314 merged (data-only, no CI by design; watch test 9 OK locally)"
         }
       ],
-      "remaining_action": "Wait for the OWB pull request checks, merge, then close the assembly job",
+      "remaining_action": "Close the assembly job and tidy the leftover verification records",
       "due": "2026-11-25T14:00:00Z",
       "for": "claudecode",
       "kind": "assembly",
       "plain": "Privacy-check and publish the B-29 edit and QA branches to GitHub",
       "mini_only": true,
       "progress": {
-        "step": 3,
+        "step": 4,
         "of": 6,
-        "at": "2026-11-25T10:17Z",
+        "at": "2026-11-25T10:18Z",
         "by": "claudecode",
         "plan": [
           "Privacy-read WW2 diff",
@@ -333272,7 +333277,7 @@
           "Close J3205 and reconcile leftovers",
           "Report"
         ],
-        "note": "ww2-channel PR 139 merged (2376f27); OWB branch read clean, replayed on main with both register sides kept, watch test 9"
+        "note": "OWB PR 1314 merged (data-only, no CI by design; watch test 9 OK locally)"
       },
       "taskKeys": [
         "WW2:003"
