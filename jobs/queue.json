@@ -290135,6 +290135,11 @@
           "at": "2026-11-24T23:45Z",
           "by": "gemini",
           "what": "waits on Ben: Watch the 25-minute B-29 film (v01) and say OK or what to change (by 2026-11-25 20:00 London)"
+        },
+        {
+          "at": "2026-11-25T00:40Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Chief QA review, board watch upload (watch_upload.mjs + awaits), and Claude Code PR publish for codex/J3205-mini",
@@ -290150,7 +290155,7 @@
       },
       "open_claim": true,
       "urgent": 10,
-      "escalated_at": "2026-11-22T15:18Z",
+      "escalated_at": "2026-11-25T00:40Z",
       "taskKeys": [
         "WW2:003"
       ],
@@ -330021,6 +330026,11 @@
           "at": "2026-11-24T22:05Z",
           "by": "macbook-2",
           "what": "blocked: parked for Chief: Read-only verification complete in OWB PR #1295 (https://github.com/TheLaughingGod1986/orbit-with-ben/pull/1295, 7f1fe867e, jobs/reviews/J3631/REVIEW.md). Condition UNMET for J3434 (WW2:006 De Havilland Mosquito) — keep J3434 blocked, do NOT reopen assembly. Predecessor J3433 is done and gemini finished steps 1-5 in ww2 PR #107 (a251f00, OPEN/CLEAN, 0 reviews); exact NAS SHA-256 verified for master (7561d495..., 1080p24, 1542.832s, 0.0057s A/V diff), score (9d8bb444...), 3 Rule-2 thumbnails + sheet, QA sheet; 53.52% archive across 62/62 provenanced photos, 376 monotonic en-GB SRT cues (0 US spellings), Rule-2 title matches J3562 PR #98, playlist PLPPi-oWEDYtA verified. Remaining gates: (1) Chief review/merge of ww2 PR #107 (confirm title, picture=done, PR #98 ordering); (2) J3434 step-6 full private audiovisual watch-through decision per J3560/J3624 precedent (only 3-clip 115s spot-check done; minor 16:00 PM typo on G00B at 00:25/18:40 and 19-33s diagram holds flagged); (3) WW2 UAT copy + jobs.py awaits not staged (watch due 2026-12-02 20:00 UTC, air Sat 5 Dec 17:00 London remain valid). Elected Chief to merge PR #1295, record jobs.py wait J3434 --check-at 2026-11-25T12:00:00Z --type input --recheck J3631, rule on full QA vs PR #107 merge/staging, and close J3631. Zero spend, zero YouTube/NAS changes."
+        },
+        {
+          "at": "2026-11-25T00:40Z",
+          "by": "refill",
+          "what": "escalated to Chief: parked 2 h"
         }
       ],
       "remaining_action": "Park J3631 for elected Chief (PR #1295 open) and post studio thread report",
@@ -330048,7 +330058,8 @@
           "Post report on studio thread"
         ],
         "note": "Opened OWB PR #1295 (macbook/J3631, 7f1fe867e) and returned checkout to main"
-      }
+      },
+      "escalated_at": "2026-11-25T00:40Z"
     },
     {
       "id": "J3632",
