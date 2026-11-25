@@ -325893,14 +325893,19 @@
           "at": "2026-11-25T06:48Z",
           "by": "gemini",
           "what": "step 4 of 5 done: All HOS checks PASS (check_all.sh, review:script 92.6/100, gate:episode PASS, test_no_private_network 5/5); opened HOS PR #769 (gemini/J3564-hos137-facts-audit, commit 7ae40acf)"
+        },
+        {
+          "at": "2026-11-25T06:48Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Completed independent facts audit (9 OK / 15 PARTIAL / 4 FLAG + 8 primary upgrades) in HOS PR #769; posted desk & thread reports"
         }
       ],
-      "remaining_action": "Mark J3564 done, post HOS desk & OWB thread reports, and hand off to J3565",
+      "remaining_action": "Done — handed off to J3565",
       "due": "2026-12-08T18:00:00Z",
       "kind": "facts",
       "plain": "Fact-check every spoken claim, quote, date, and guardrail in the Accidental Inventions v01 script and Shorts.",
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 5,
         "at": "2026-11-25T06:48Z",
         "by": "gemini",
@@ -325911,7 +325916,7 @@
           "Run HOS checks & push PR",
           "Update queue, desk & thread reports"
         ],
-        "note": "All HOS checks PASS (check_all.sh, review:script 92.6/100, gate:episode PASS, test_no_private_network 5/5); opened HOS P"
+        "note": "Completed independent facts audit (9 OK / 15 PARTIAL / 4 FLAG + 8 primary upgrades) in HOS PR #769; posted desk & thread"
       },
       "taskKeys": [
         "HOS:137"
