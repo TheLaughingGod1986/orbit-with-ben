@@ -335572,20 +335572,28 @@
           "at": "2026-11-25T08:05Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T08:06Z",
+          "by": "macbook-2",
+          "what": "step 1 of 3 done"
         }
       ],
-      "remaining_action": "Verify readiness: Review and lock HOS:127 v02 script, sources, Shorts & packaging once J3688 and v02 facts re-verification complete",
+      "remaining_action": "Inspecting J3622, J3688, related jobs, and HOS PRs",
       "kind": "review",
       "recheck_of": "J3622",
       "due": "2026-11-25T08:52:44+00:00",
       "due_kind": "condition-verification",
       "progress": {
-        "step": 0,
+        "step": 1,
         "of": 3,
-        "at": "2026-11-25T07:53Z",
-        "by": "macbook",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "at": "2026-11-25T08:06Z",
+        "by": "macbook-2",
+        "plan": [
+          "Inspect J3622, J3688, queue and HOS PRs",
+          "Verify waiting conditions and evidence",
+          "Record wait/reopen, finish J3689 and post report"
+        ]
       },
       "rerouted_from": {
         "needs": "mini",
