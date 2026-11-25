@@ -273640,9 +273640,14 @@
           "at": "2026-11-25T10:12Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T10:12Z",
+          "by": "gemini",
+          "what": "step 3 of 4 done: Token probe PASSED 25 Nov 10:05Z (#7159250002, verified 10:11Z); waiting for Thu 26 Nov notice window."
         }
       ],
-      "remaining_action": "Resolve the production-probe approval block and verify runtime token access before the Thursday notice and Friday move",
+      "remaining_action": "Post Thu 26 Nov day-before move notice on thread, then run Fri 27 Nov 10:00 London studio repo move (preserve 3/4)",
       "due": "2026-11-24T18:00:00Z",
       "kind": "chief",
       "plain": "Move the studio's own machinery into the new 'studio' repo Ben made, safely, after a clean week",
@@ -273661,12 +273666,17 @@
       "for": "gemini",
       "model": "gemini-argon",
       "progress": {
-        "step": 0,
-        "of": 3,
+        "step": 3,
+        "of": 4,
         "at": "2026-11-25T10:12Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect migration dependencies",
+          "Write and rehearse runbook",
+          "Publish preparation",
+          "Verify access and complete scheduled move"
+        ],
+        "note": "Token probe PASSED 25 Nov 10:05Z (#7159250002, verified 10:11Z); waiting for Thu 26 Nov notice window."
       }
     },
     {
