@@ -335396,19 +335396,30 @@
           "at": "2026-11-25T07:49Z",
           "by": "macbook-2",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T07:50Z",
+          "by": "macbook-2",
+          "what": "step 1 of 6 done"
         }
       ],
-      "remaining_action": "Build HOS:127 v02 on branch stacked on origin/gemini/J3621-hos127-facts-audit (925c2a92) resolving FIX-1 through FIX-8 and open PR",
+      "remaining_action": "Inspecting HOS 127 v01 files and J3621/J3622 reviews",
       "due": "2026-12-08T18:00:00Z",
       "kind": "script",
       "plain": "Build corrected HOS:127 v02 script, sources, fact notes, Shorts & packaging resolving 8 J3621/J3622 FIX items",
       "progress": {
-        "step": 0,
-        "of": 3,
-        "at": "2026-11-25T07:49Z",
+        "step": 1,
+        "of": 6,
+        "at": "2026-11-25T07:50Z",
         "by": "macbook-2",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Inspect v01 and reviews",
+          "Apply script & source fixes",
+          "Update Shorts & packaging docs",
+          "Sync status files",
+          "Run verification gates",
+          "Push PR & report"
+        ]
       }
     }
   ],
