@@ -1,5 +1,5 @@
 {
-  "next_id": 3677,
+  "next_id": 3678,
   "jobs": [
     {
       "id": "J0001",
@@ -334285,6 +334285,36 @@
       "due": "2026-12-02T18:00:00Z",
       "kind": "facts",
       "plain": "Independently verify all v02 facts, quotes, and Shorts lengths for HOS 136 Trinity Test"
+    },
+    {
+      "id": "J3677",
+      "title": "HOS 136: verify v02 fixes and Chief script lock decision (close J3553 if KEEP)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "Chief / Acting Chief direct exact-quote check and script lock decision on `HOS:136` (*Trinity Test Explained: Could It Ignite the Sky?*, Cluster 2 Film 2, target Thu 17 Dec 2026 18:00 London; Ben's watch Mon 14 Dec; script lock due Fri 4 Dec) `v02` PR after independent `v02` facts audit completes.\n\n**Checklist:**\n1. Verify live `chief_relay.py status` before any protected Chief call.\n2. Confirm all 8 `J3552` blocking `FLAG`s, 2 `R20` polishes, and 6 `J3553` `ADD-1`–`ADD-6` items are cleanly resolved on exact SHA-256 hashes, with zero unverified new spoken claims, `review:script >= 90`, default `gate:episode` (no `--script`) PASS on single `*_script_master_v02.md`, `check_all.sh` PASS, and `7/7` CI green.\n3. Confirm packaging draft lock candidates (Primary Arm A `48c`, T&C Arms B/C, Thumb A `AIR ON FIRE?` / Thumb B `MEASURED BY PAPER` with §2.6 hand-verified chalkboard ink & §2.9 3-way T&C note at `thumbnails` stage, Shorts S01 `44c` & S02 `58c`).\n4. **If KEEP:** Chief merges the `v02` PR onto HOS `main` (superseding PRs `#746`, `#753`, `#764`), records `jobs/reviews/<this_id>/REVIEW.md` and `status.json` (`script`, `facts`, `shorts_scripts` `done`), reopens/closes **`J3553`** as `done`, and queues `HOS:136` long + Shorts VO jobs only under Rule G WIP rules (no VO/picture spend before KEEP).\n5. **If FIX:** Record blocking items in `jobs/reviews/<this_id>/REVIEW.md`, keep `J3553` blocked, do not merge or spend (`£0.00`), and queue `v03` fix.\n",
+      "ref": "J3553",
+      "film": "HOS:136",
+      "stage": "script",
+      "after": "J3676",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T05:49Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T05:49Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify HOS:136 v02 (J3675) + facts check (J3676), decide KEEP/FIX, merge and close J3553 if KEEP",
+      "due": "2026-12-04T18:00:00Z",
+      "kind": "review",
+      "plain": "Chief review and lock decision on HOS 136 Trinity Test v02 after independent facts audit"
     }
   ],
   "focus": [
