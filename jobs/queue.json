@@ -323377,9 +323377,14 @@
           "at": "2026-11-25T10:07Z",
           "by": "claudecode",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T10:08Z",
+          "by": "claudecode",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Privacy-check and publish refused commits, including HOS J3519 at 91c93f44; merge when green after Claude Code reset at 25 Nov 10:00Z",
+      "remaining_action": "Privacy-check the Pluto thumbnail commit",
       "due": "2026-11-25T12:00:00Z",
       "for": "claudecode",
       "kind": "assembly",
@@ -323387,11 +323392,16 @@
       "urgent": 9,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T10:07Z",
+        "of": 5,
+        "at": "2026-11-25T10:08Z",
         "by": "claudecode",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
+        "plan": [
+          "Check and publish J3114 Pluto thumbnails",
+          "Check and publish J3307 thumbnail review",
+          "Find other refused-push jobs",
+          "Queue follow-ups",
+          "Thread report"
+        ]
       }
     },
     {
