@@ -126,6 +126,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3687 | mini | open (after J3686) | – | – | HOS:137 script · review · HOS 137: verify v02 fixes and Chief script lock decision (close J3565 if KEEP) | J3565 |
 | J3689 | mini | blocked | macbook-2 | – | review · Verify condition for J3622 |  |
 | J3690 | gemini | open | – | – | HOS:127 sources · facts · HOS 127: independent v02 facts and exact-quote verification | J3622 |
+| J3691 | mini | open | – | – | assembly · HOS Flow: adapt tooling & rules PR for 5 Dec retirement of Veo 3.1 Fast/Quality (Veo 3.1 Lite + Omni Flash 1.2) |  |
 
 Recently finished:
 

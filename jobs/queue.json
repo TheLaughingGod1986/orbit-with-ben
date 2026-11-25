@@ -1,5 +1,5 @@
 {
-  "next_id": 3691,
+  "next_id": 3692,
   "jobs": [
     {
       "id": "J0001",
@@ -335713,6 +335713,36 @@
       "due": "2026-12-09T18:00:00Z",
       "kind": "facts",
       "plain": "Fact-check the revised Wright Brothers script, sources, and Shorts"
+    },
+    {
+      "id": "J3691",
+      "title": "HOS Flow: adapt tooling & rules PR for 5 Dec retirement of Veo 3.1 Fast/Quality (Veo 3.1 Lite + Omni Flash 1.2)",
+      "needs": "mini",
+      "repo": "hos",
+      "body": "**Why (Chief follow-up from J3489, 25 Nov 2026):** Google's Flow credit documentation (`support.google.com/flow/answer/16526234`) states that **Veo 3.1 Fast (10 cr)**, **Veo 3.1 Quality (100 cr)**, and **Omni Flash 1.1** retire on **5 Dec 2026**, replaced by **Veo 3.1 Lite** (5 cr on Ultra; 0 cr Lower Priority on Ultra 20x) and **Omni Flash 1.2** (3 cr/s at 720p = 18–24 cr for 6–8 s; 0 cr 1080p upscale). HOS currently selects Veo 3.1 Fast/Quality in `04_Audio/tools/orbit_flow_veo_ui.py` and bans Omni in `studio/RULES.md` / `AGENTS.md`.\n\n**Do, by Thu 3 Dec 18:00 London (before the 5 Dec retirement):**\n1. Inspect `04_Audio/tools/orbit_flow_veo_ui.py` (in HOS) and do a **read-only** check of the Flow UI model picker on CDP `:9222` (0 credits spent — do not click Generate/Create) to verify exact model labels, aspect-ratio/duration selectors, and Lower Priority toggle for Veo 3.1 Lite and Omni Flash 1.2.\n2. Open a clean PR in `history-of-science` updating `04_Audio/tools/orbit_flow_veo_ui.py` (plus unit tests / dry-run verification) to support the post-5 Dec model lineup cleanly while keeping existing defaults safe until cutover.\n3. Draft the matching `studio/RULES.md` and `AGENTS.md` wording update (replacing retired Veo 3.1 Fast/Quality with the post-5 Dec Flow model policy — clarifying whether HOS uses Veo 3.1 Lite only or also allows Flow Omni Flash 1.2) and park the PR for **elected Chief PASS/merge** (workers never change `AGENTS.md` / Never list without Chief ruling).\n\n**Guards:** 0 credits spent, £0, read-only Flow browser check only (use `cdp_tabs.py` `reuse_page`, never open new tabs or close Chrome). Do not merge `AGENTS.md` / `studio/RULES.md` changes without elected Chief PASS.\n",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "gemini",
+      "created_at": "2026-11-25T08:21Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T08:21Z",
+          "by": "gemini",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Inspect HOS Flow UI read-only and open PR updating orbit_flow_veo_ui.py + rules for Chief review before 5 Dec",
+      "due": "2026-12-03T18:00:00Z",
+      "kind": "assembly",
+      "plain": "Prepare HOS Flow script and rules PR before Veo 3.1 Fast/Quality retire on 5 Dec"
     }
   ],
   "focus": [
