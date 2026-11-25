@@ -330173,13 +330173,13 @@
       "stage": "script",
       "after": "J3629",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T02:16Z",
-      "eta": "2026-11-25T04:16Z",
+      "eta": "",
       "created_by": "codex",
       "created_at": "2026-11-24T21:33Z",
-      "result": "",
+      "result": "Acting Chief ruling on HOS 128 v02 (PR #758 dc99d234 / PR #760 6f0ff4a3): FIX (NOT LOCKED). Direct exact-quote verification across all MUST QUOTE URLs + 14-page scanned NPS NRIS 75001212 PDF confirmed 5 J3629 FLAGs + new FIX-6 (duplicate _master_ breaks default gate:episode). Published HOS PR #761 (6dee6dbf, jobs/reviews/J3630/REVIEW.md); accepted NPS 22 miles / 15 Nov 1896 with ETHW 20 miles variance logged (Thumb B optional behind Thumb A/C; all thumbs unrendered drafts). Queued J3659 (v03 script fix) -> J3660 (v03 Chief lock). Recorded ruling on J3547 (remains blocked until lock). No merge, no VO, no scheduling, £0 spent; Thu 10 Dec target & Mon 7 Dec -> Thu 17 Dec slip contingency preserved.",
       "history": [
         {
           "at": "2026-11-24T21:33Z",
@@ -330220,6 +330220,11 @@
           "at": "2026-11-25T02:24Z",
           "by": "gemini",
           "what": "step 5 of 5 done: Published HOS PR #761, queued J3659 -> J3660, recorded ruling on original J3547 (remains blocked until lock)."
+        },
+        {
+          "at": "2026-11-25T02:24Z",
+          "by": "gemini",
+          "what": "done: Acting Chief ruling on HOS 128 v02 (PR #758 dc99d234 / PR #760 6f0ff4a3): FIX (NOT LOCKED). Direct exact-quote verification across all MUST QUOTE URLs + 14-page scanned NPS NRIS 75001212 PDF confirmed 5 J3629 FLAGs + new FIX-6 (duplicate _master_ breaks default gate:episode). Published HOS PR #761 (6dee6dbf, jobs/reviews/J3630/REVIEW.md); accepted NPS 22 miles / 15 Nov 1896 with ETHW 20 miles variance logged (Thumb B optional behind Thumb A/C; all thumbs unrendered drafts). Queued J3659 (v03 script fix) -> J3660 (v03 Chief lock). Recorded ruling on J3547 (remains blocked until lock). No merge, no VO, no scheduling, £0 spent; Thu 10 Dec target & Mon 7 Dec -> Thu 17 Dec slip contingency preserved."
         }
       ],
       "remaining_action": "J3630 complete; v03 fix (J3659) and lock review (J3660) queued",
@@ -330250,7 +330255,8 @@
       },
       "taskKeys": [
         "HOS:128"
-      ]
+      ],
+      "done_ref": "HOS PR #761, J3659, J3660"
     },
     {
       "id": "J3631",
