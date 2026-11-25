@@ -100,6 +100,10 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3713 | mini | blocked | claudecode | – | review · Verify condition for J3551 |  |
 | J3714 | mini | blocked | claude | – | WW2:003  · studio · WW2 film 3 (B-29): two pre-air trims in Studio editor (01:33.70-03:03.00, 06:51.90-07:24.70), then chapters, captions and end screen |  |
 | J3715 | any | blocked | macbook-2 | – | review · Field Order History: films 004-006, check the first eight minutes for a background turn or run of figures and propose cuts |  |
+| J3716 | mini | open | – | – | 064 thumbs · for codex · review · Packaging panel (codex): OWB 064 Every Planet Explained (3 titles, 3 thumbnails A/B/C, opening & chapters) |  |
+| J3717 | mini | open | – | – | 064 thumbs · for gemini · review · Packaging panel (gemini): OWB 064 Every Planet Explained (3 titles, 3 thumbnails A/B/C, opening & chapters) |  |
+| J3718 | mini | open | – | – | 064 thumbs · for cursor · review · Packaging panel (cursor): OWB 064 Every Planet Explained (3 titles, 3 thumbnails A/B/C, opening & chapters) |  |
+| J3719 | cloud | open (after J3718) | – | – | 064 thumbs · review · Packaging panel decision: OWB 064 Every Planet Explained (3 titles, 3 thumbnails A/B/C, opening & chapters) |  |
 
 Recently finished:
 
