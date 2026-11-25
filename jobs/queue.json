@@ -339953,10 +339953,10 @@
       "stage": "edit",
       "after": "",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "claudecode",
+      "since": "2026-11-25T15:00Z",
+      "eta": "2026-11-25T17:00Z",
       "created_by": "gemini",
       "created_at": "2026-11-25T14:58Z",
       "result": "",
@@ -339965,12 +339965,25 @@
           "at": "2026-11-25T14:58Z",
           "by": "gemini",
           "what": "added"
+        },
+        {
+          "at": "2026-11-25T15:00Z",
+          "by": "claudecode",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Check board for Ben v02 OK, apply Cuts A+B to render v03, verify >=50% archive and open ww2 PR",
       "due": "2026-11-27T12:00:00Z",
       "kind": "assembly",
-      "plain": "Apply J3715 opening cuts A+B (61.8 s) to film 004 as zero-spend v03 keeping v02 untouched"
+      "plain": "Apply J3715 opening cuts A+B (61.8 s) to film 004 as zero-spend v03 keeping v02 untouched",
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T15:00Z",
+        "by": "claudecode",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3722",
