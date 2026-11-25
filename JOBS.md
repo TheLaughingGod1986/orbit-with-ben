@@ -96,7 +96,7 @@ Any agent able to do a job may claim it: `jobs.py next --agent <you> --can <what
 | J3589 | mini | open | – | – | chief · Chief: resolve 003 edit orphan-blocked |  |
 | J3591 | mini | blocked | gemini | – | review · `gemini-argon` · Retention autopsy (48h): "How Britain Built Two Harbours in Secret and Floated Them to Nor" (ek9F61FVYqY) |  |
 | J3593 | mini | blocked | gemini | – | review · Verify condition for J3417 |  |
-| J3597 | any | open (after J3596) | – | – | chief · Review corrected J3591 autopsy PRs after J3596 |  |
+| J3597 | any | claimed | gemini | 2026-11-25T12:43Z | chief · Review corrected J3591 autopsy PRs after J3596 |  |
 | J3598 | any | open (after J3596) | – | – | chief · Review J3596 corrections and finish held J3591 autopsy |  |
 | J3605 | mini | blocked | codex | – | WW2:001 upload · studio · WW2 pilot 1: seven-day outcome after searched-name title change |  |
 | J3606 | mini | open | – | – | for claudecode · assembly · Publish final Mulberry Short records after the corrected cut is verified |  |

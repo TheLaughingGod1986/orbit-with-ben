@@ -328468,10 +328468,10 @@
       "stage": "",
       "after": "J3596",
       "eta_min": 120,
-      "status": "open",
-      "by": "",
-      "since": "",
-      "eta": "",
+      "status": "claimed",
+      "by": "gemini",
+      "since": "2026-11-25T10:43Z",
+      "eta": "2026-11-25T12:43Z",
       "created_by": "codex",
       "created_at": "2026-11-24T17:49Z",
       "result": "",
@@ -328530,6 +328530,11 @@
           "at": "2026-11-25T10:43Z",
           "by": "gemini",
           "what": "reopened: Condition verified MET in J3702: jobs/reviews/J3597/REVIEW.md (42 lines, blob 44b4057f63, byte-identical to Codex commit 1eb13065c3) is merged on OWB origin/main via PR #1313 (052e368633c95003cd04ebffa72dfabe0e25f23a, 2026-11-25T10:12:03Z) with zero private data (13 privacy/ratchet tests pass). All 3 Codex review steps complete; closing J3597 with FIX outcome."
+        },
+        {
+          "at": "2026-11-25T10:43Z",
+          "by": "gemini",
+          "what": "claimed"
         }
       ],
       "remaining_action": "Await Claude Code publication under J3530 after 2026-11-25T10:00:00Z reset (codex/j3597-review commit 1eb13065c3)",
@@ -328538,7 +328543,15 @@
       "plain": "Review the corrected Mulberry harbour audience analysis",
       "taskKeys": [
         "WW2:001"
-      ]
+      ],
+      "progress": {
+        "step": 0,
+        "of": 3,
+        "at": "2026-11-25T10:43Z",
+        "by": "gemini",
+        "default_plan": true,
+        "note": "Starting: check the brief, complete the work, verify the result"
+      }
     },
     {
       "id": "J3598",
