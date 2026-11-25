@@ -342791,9 +342791,14 @@
           "at": "2026-11-25T21:46Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T21:47Z",
+          "by": "gemini",
+          "what": "step 0 of 5 done"
         }
       ],
-      "remaining_action": "Watch and listen to the six changed moments in St Nazaire v04 and write keep or fix",
+      "remaining_action": "Verifying v04 master, reading J3745/J3746 refs, and probing audio/video perception",
       "due": "2026-11-28T20:00:00Z",
       "kind": "qa",
       "required_capabilities": [
@@ -342811,12 +342816,20 @@
       "open_claim": true,
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T21:46Z",
+        "of": 5,
+        "at": "2026-11-25T21:47Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify v04 master and probe media input",
+          "Review targeted clips and extra joins",
+          "Review thumbnail C v02 and 168 px sheet",
+          "Write QA_REVIEW_v04.md and open ww2 PR",
+          "Report on thread and hand off J3748"
+        ]
+      },
+      "taskKeys": [
+        "WW2:005"
+      ]
     },
     {
       "id": "J3749",
