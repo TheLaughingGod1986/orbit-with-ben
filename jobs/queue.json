@@ -330962,9 +330962,14 @@
           "at": "2026-11-25T01:58Z",
           "by": "gemini",
           "what": "step 4 of 5 done: Signed watch URL https://board.oppti.dev/api/watch?v=ww2-004-v02 verified HTTP 302; J3430 awaits set (due 2026-11-28T20:00Z, air 2026-12-01T17:00Z)."
+        },
+        {
+          "at": "2026-11-25T02:00Z",
+          "by": "gemini",
+          "what": "step 5 of 5 done: Verified board_check ok=true (problems=[], site=200), WW2:004 in Ready for OK with HTTP 302 watch link ww2-004-v02 (board-data 8dbbf181)."
         }
       ],
-      "remaining_action": "Completing J3430 after verified watch staging, verifying board_check ok=true on WW2:004 Ready for OK card, and posting final report",
+      "remaining_action": "Completing J3639, closing J3430 with awaits_ben preserved, and posting studio thread report",
       "due": "2026-11-28T12:00:00Z",
       "kind": "chief",
       "plain": "Approve the repaired torpedo film v02 and put it on Ben's watch page",
@@ -330977,9 +330982,9 @@
       },
       "open_claim": true,
       "progress": {
-        "step": 4,
+        "step": 5,
         "of": 5,
-        "at": "2026-11-25T01:58Z",
+        "at": "2026-11-25T02:00Z",
         "by": "gemini",
         "plan": [
           "Review v02 repair and QA PRs",
@@ -330988,7 +330993,7 @@
           "Stage checksum-verified UAT copy and J3430 awaits",
           "Verify board watch card and post report"
         ],
-        "note": "Signed watch URL https://board.oppti.dev/api/watch?v=ww2-004-v02 verified HTTP 302; J3430 awaits set (due 2026-11-28T20:"
+        "note": "Verified board_check ok=true (problems=[], site=200), WW2:004 in Ready for OK with HTTP 302 watch link ww2-004-v02 (boar"
       },
       "taskKeys": [
         "WW2:004"
