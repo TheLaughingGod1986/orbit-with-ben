@@ -134,13 +134,13 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [How Does the Heart Pump Blood?](https://youtu.be/el30-mHiH-0) | 2 d | 541 | 27.3% | MISS | 66.0% | WATCH |
-| [How Do Plants Make Oxygen?](https://youtu.be/Bks_JLId1ew) | 3 d | 67 | 46.7% | too few to judge | 96.0% | too few to judge |
-| [How Does a Blood Pressure Cuff Work?](https://youtu.be/l8bxm9L3zl8) | 4 d | 29 | 38.5% | too few to judge | - | no read |
-| [How Do Plants Clean the Air?](https://youtu.be/ChbsigHD5_o) | 6 d | 5 | 100.0% | too few to judge | - | no read |
-| [Why Is It Called a Vaccine?](https://youtu.be/xgx2lYHhYZM) | 7 d | 4 | 100.0% | too few to judge | - | no read |
-| [What Is Dalton's Atomic Theory?](https://youtu.be/xzKoHg0E0_U) | 8 d | 249 | 54.3% | WATCH | 61.0% | WATCH |
-| [The Blood Vessels Finer Than a Hair](https://youtu.be/Wvjd8g0CpzE) | 9 d | 218 | 15.4% | MISS | 74.0% | PASS |
-| [What Was the Edward Jenner Experiment?](https://youtu.be/cLKDiYP55J8) | 11 d | 47 | 43.5% | too few to judge | 67.0% | too few to judge |
+| [How Does the Heart Pump Blood?](https://youtu.be/el30-mHiH-0) | 3 d | 552 | 27.0% | MISS | 65.0% | WATCH |
+| [How Do Plants Make Oxygen?](https://youtu.be/Bks_JLId1ew) | 4 d | 88 | 52.8% | too few to judge | 92.0% | too few to judge |
+| [How Does a Blood Pressure Cuff Work?](https://youtu.be/l8bxm9L3zl8) | 5 d | 31 | 38.5% | too few to judge | - | no read |
+| [How Do Plants Clean the Air?](https://youtu.be/ChbsigHD5_o) | 7 d | 5 | 100.0% | too few to judge | - | no read |
+| [Why Is It Called a Vaccine?](https://youtu.be/xgx2lYHhYZM) | 8 d | 4 | 100.0% | too few to judge | - | no read |
+| [What Is Dalton's Atomic Theory?](https://youtu.be/xzKoHg0E0_U) | 9 d | 264 | 55.8% | WATCH | 62.0% | WATCH |
+| [The Blood Vessels Finer Than a Hair](https://youtu.be/Wvjd8g0CpzE) | 10 d | 218 | 15.4% | MISS | 74.0% | PASS |
+| [What Was the Edward Jenner Experiment?](https://youtu.be/cLKDiYP55J8) | 12 d | 47 | 43.5% | too few to judge | 67.0% | too few to judge |
 
 Stayed to watch: 0 of 3 judged Shorts at 60%+. Average viewed: 1 of 3 at 70%+.

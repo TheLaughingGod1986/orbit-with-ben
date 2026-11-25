@@ -214,16 +214,15 @@ Studio reads for Shorts aired in the last 14 days. Stayed to watch: PASS 60%+, W
 
 | Short | Age | Studio views | Stayed | Verdict | Avg viewed | Verdict |
 |---|---:|---:|---:|---|---:|---|
-| [Why Do You Weigh Less at Earth's Equator?](https://youtu.be/Dm4xsF1Ateg) | 43 h (early) | 28 | 39.3% | too few to judge | - | no read |
-| [Muons Shouldn't Reach the Ground. They Do.](https://youtu.be/2YiV_zDgLJg) | 3 d | 254 | 44.9% | MISS | 66.0% | WATCH |
-| [Will Asteroid 2024 YR4 Hit the Moon in 2032?](https://youtu.be/93JL_IK57EM) | 4 d | 1000 | 42.7% | MISS | 80.0% | PASS |
-| [How Close Will the Supermoon Get on November 24?](https://youtu.be/HXacmpYkXcA) | 5 d | 76 | 36.1% | too few to judge | 58.0% | too few to judge |
-| [If Voyager Needs 75,000 Years, How Far Is the Nearest Star?](https://youtu.be/dH_yCRmzkMo) | 6 d | 27 | 92.3% | too few to judge | 79.0% | too few to judge |
-| [How Far From Earth Is Voyager 1 Right Now?](https://youtu.be/9q_OvQ1Rd8Y) | 7 d | 281 | 27.7% | MISS | 104.0% | LOOP |
-| [If You Can't See the Nearest Star, How Far Away Is It?](https://youtu.be/aEfdxex__Bo) | 8 d | 476 | 37.1% | MISS | 151.0% | LOOP |
-| [How Did a Helicopter Fly 72 Times on Mars?](https://youtu.be/RT-ec4_GcOk) | 10 d | 1200 | 50.7% | WATCH | 100.0% | LOOP |
-| [Why Does Pluto's Giant Ice Heart Have Zero Craters?](https://youtu.be/z5V6gIXXYs8) | 11 d | 383 | 39.8% | MISS | 99.0% | PASS |
-| [How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?](https://youtu.be/uhZSRcvngvE) | 12 d | 60 | 43.2% | too few to judge | 59.0% | too few to judge |
-| [Why Did a 90-Day Mars Rover Last 14 Years?](https://youtu.be/B1z2dv7m7Vk) | 13 d | 110 | 52.7% | WATCH | 72.0% | PASS |
+| [Why Do You Weigh Less at Earth's Equator?](https://youtu.be/Dm4xsF1Ateg) | 2 d | 32 | 41.9% | too few to judge | 65.0% | too few to judge |
+| [Muons Shouldn't Reach the Ground. They Do.](https://youtu.be/2YiV_zDgLJg) | 4 d | 259 | 45.2% | WATCH | 66.0% | WATCH |
+| [Will Asteroid 2024 YR4 Hit the Moon in 2032?](https://youtu.be/93JL_IK57EM) | 5 d | 1000 | 42.2% | MISS | 81.0% | PASS |
+| [How Close Will the Supermoon Get on November 24?](https://youtu.be/HXacmpYkXcA) | 6 d | 95 | 39.1% | too few to judge | 69.0% | too few to judge |
+| [If Voyager Needs 75,000 Years, How Far Is the Nearest Star?](https://youtu.be/dH_yCRmzkMo) | 7 d | 27 | 92.3% | too few to judge | 79.0% | too few to judge |
+| [How Far From Earth Is Voyager 1 Right Now?](https://youtu.be/9q_OvQ1Rd8Y) | 8 d | 281 | 27.7% | MISS | 104.0% | LOOP |
+| [If You Can't See the Nearest Star, How Far Away Is It?](https://youtu.be/aEfdxex__Bo) | 9 d | 478 | 37.2% | MISS | 150.0% | LOOP |
+| [How Did a Helicopter Fly 72 Times on Mars?](https://youtu.be/RT-ec4_GcOk) | 11 d | 1200 | 50.7% | WATCH | 100.0% | LOOP |
+| [Why Does Pluto's Giant Ice Heart Have Zero Craters?](https://youtu.be/z5V6gIXXYs8) | 12 d | 383 | 39.8% | MISS | 99.0% | PASS |
+| [How Did Martian Wind Keep a 90-Day Rover Alive for 14 Years?](https://youtu.be/uhZSRcvngvE) | 13 d | 60 | 43.2% | too few to judge | 59.0% | too few to judge |
 
-Stayed to watch: 0 of 7 judged Shorts at 60%+. Average viewed: 6 of 7 at 70%+.
+Stayed to watch: 0 of 6 judged Shorts at 60%+. Average viewed: 5 of 6 at 70%+.
