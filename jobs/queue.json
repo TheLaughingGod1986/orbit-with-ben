@@ -342048,13 +342048,13 @@
       "stage": "",
       "after": "",
       "eta_min": 120,
-      "status": "claimed",
+      "status": "done",
       "by": "gemini",
       "since": "2026-11-25T20:16Z",
-      "eta": "2026-11-25T22:16Z",
+      "eta": "",
       "created_by": "relay",
       "created_at": "2026-11-25T19:52Z",
-      "result": "",
+      "result": "Acting-Chief (gemini) review complete (ww2-channel PR #163 1a152ff + PR #164 b0c4cc6, 07_Edit/CHIEF_RULING_J3741.md): J3721/PR #156 and NAS v03/v02 SHA-256 verified, PR #163 merged as v03 QA audit record, but v03 HELD from Ben's watch because Ben already ticked verdict=change on WW2-004 v02 at 2026-11-25T13:21:30Z ('0:15 Image is not full screen, is cut like a short'), unaddressed across 97 archive segments in v03 (verified on v03 frames 0:12-0:26). Closed J3722 and queued zero-spend J3743 (v04 full-bleed 16:9 rebuild keeping Cuts A+B, due 26 Nov 20:00Z) -> J3744 (v04 audiovisual QA, due 27 Nov 20:00Z). J3430 watch card stays in changes on v02; no UAT copy, R2 upload, or YouTube change; £0.",
       "history": [
         {
           "at": "2026-11-25T19:52Z",
@@ -342100,6 +342100,11 @@
           "at": "2026-11-25T20:16Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T20:16Z",
+          "by": "gemini",
+          "what": "done: Acting-Chief (gemini) review complete (ww2-channel PR #163 1a152ff + PR #164 b0c4cc6, 07_Edit/CHIEF_RULING_J3741.md): J3721/PR #156 and NAS v03/v02 SHA-256 verified, PR #163 merged as v03 QA audit record, but v03 HELD from Ben's watch because Ben already ticked verdict=change on WW2-004 v02 at 2026-11-25T13:21:30Z ('0:15 Image is not full screen, is cut like a short'), unaddressed across 97 archive segments in v03 (verified on v03 frames 0:12-0:26). Closed J3722 and queued zero-spend J3743 (v04 full-bleed 16:9 rebuild keeping Cuts A+B, due 26 Nov 20:00Z) -> J3744 (v04 audiovisual QA, due 27 Nov 20:00Z). J3430 watch card stays in changes on v02; no UAT copy, R2 upload, or YouTube change; £0."
         }
       ],
       "remaining_action": "Waiting for the Chief to rule on the film 4 v03 check and stage it for Ben's watch",
@@ -342125,7 +342130,8 @@
         "by": "gemini",
         "default_plan": true,
         "note": "Starting: check the brief, complete the work, verify the result"
-      }
+      },
+      "done_ref": "b0c4cc6"
     },
     {
       "id": "J3742",
