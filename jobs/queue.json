@@ -1,5 +1,5 @@
 {
-  "next_id": 3712,
+  "next_id": 3713,
   "jobs": [
     {
       "id": "J0001",
@@ -322298,6 +322298,11 @@
           "at": "2026-11-25T10:59Z",
           "by": "gemini",
           "what": "condition recorded; next verification 2026-11-25T11:45:00Z"
+        },
+        {
+          "at": "2026-11-25T13:09Z",
+          "by": "relay",
+          "what": "condition verification queued: J3712"
         }
       ],
       "remaining_action": "J3530 (claudecode): privacy-check, rebase, push, open PRs & merge green codex/J3512-resume (HOS) + codex/J3512-registry (OWB); then close J3512. Do not re-upload mpK3D6S7WLk.",
@@ -322338,10 +322343,11 @@
       "hold": {
         "type": "input",
         "condition": "Acting-Chief ruling (J3700, 25 Nov 10:58Z): publication condition STILL UNMET; do NOT reopen J3512 (kind=studio would misroute and collide with J3530). Private upload mpK3D6S7WLk (What Killed the Dinosaurs?, exact Ben-approved SHA256 ea29e26487d6631416449c9adf712f51b1b9508db06b7b6c29edc4236970fe59, HOS:ASK:J2933.1) is verified complete (25 Nov HOS snapshot: private, publishAt null, 0 views); do NOT re-upload. Both finished branches remain local-only and unmerged: (1) HOS /Volumes/MiniWork/scratch/J3512-resume codex/J3512-resume at 5008d48040e4f696fcdf4e3cb6042ae7736a2285 (2 ahead, 53 behind HOS origin/main d58d290e; supersedes PR #749; HOS main lacks J3512_short_A_v01/ and mpK3D6S7WLk); (2) OWB /Volumes/MiniWork/scratch/J3512-registry codex/J3512-registry at bfb399e2680be44bdfbb4af1b6f791859e0fde76 (1 ahead, 1148 behind OWB origin/main; OWB main lacks mpK3D6S7WLk in social/hos/UPLOADS.json and BUFFER_POSTS.json; OWB stash@{0} preserves copy). claudecode is UP and owns formal privacy review, rebase onto current mains (preserving J3511 sMPlMuxK3YU entries), push, PRs, and green-check merges under open urgent job J3530 (for=claudecode, due 12:00Z; only open claudecode job). Close J3512 once both PRs merge on origin/main. J3611 owns conditional scheduling and remaining Studio checks.",
-        "check_at": "2026-11-25T11:45:00Z",
+        "check_at": "2026-11-25T14:09:47+00:00",
         "last_recheck": "J3700",
         "checked_at": "2026-11-25T10:59:10+00:00",
-        "checked_by": "gemini"
+        "checked_by": "gemini",
+        "recheck_task": "J3712"
       }
     },
     {
@@ -338939,6 +338945,38 @@
       "taskKeys": [
         "OWB:064"
       ]
+    },
+    {
+      "id": "J3712",
+      "title": "Verify condition for J3512",
+      "needs": "mini",
+      "repo": "owb",
+      "body": "Verify the waiting condition for J3512: Acting-Chief ruling (J3700, 25 Nov 10:58Z): publication condition STILL UNMET; do NOT reopen J3512 (kind=studio would misroute and collide with J3530). Private upload mpK3D6S7WLk (What Killed the Dinosaurs?, exact Ben-approved SHA256 ea29e26487d6631416449c9adf712f51b1b9508db06b7b6c29edc4236970fe59, HOS:ASK:J2933.1) is verified complete (25 Nov HOS snapshot: private, publishAt null, 0 views); do NOT re-upload. Both finished branches remain local-only and unmerged: (1) HOS /Volumes/MiniWork/scratch/J3512-resume codex/J3512-resume at 5008d48040e4f696fcdf4e3cb6042ae7736a2285 (2 ahead, 53 behind HOS origin/main d58d290e; supersedes PR #749; HOS main lacks J3512_short_A_v01/ and mpK3D6S7WLk); (2) OWB /Volumes/MiniWork/scratch/J3512-registry codex/J3512-registry at bfb399e2680be44bdfbb4af1b6f791859e0fde76 (1 ahead, 1148 behind OWB origin/main; OWB main lacks mpK3D6S7WLk in social/hos/UPLOADS.json and BUFFER_POSTS.json; OWB stash@{0} preserves copy). claudecode is UP and owns formal privacy review, rebase onto current mains (preserving J3511 sMPlMuxK3YU entries), push, PRs, and green-check merges under open urgent job J3530 (for=claudecode, due 12:00Z; only open claudecode job). Close J3512 once both PRs merge on origin/main. J3611 owns conditional scheduling and remaining Studio checks.. Read the original job, latest result, evidence and approval history. This is a verification task, not permission to upload, spend or change a schedule. If the condition is proven satisfied, and all original gates/Ben approvals remain valid, reopen the original job with an evidence note. Otherwise keep it blocked and run jobs.py wait J3512 --agent <your agent id> --condition '<actual unmet condition>' --check-at '<next sensible UTC time>' --type input --recheck RECHECK_ID. Use this task's actual id for RECHECK_ID. Then finish this verification task. Never infer test completion, public status or restored credits from a date alone. If you cannot verify, record why and follow the original recorded retry date, or retry in six hours when none is specified. Update --action with the actual unfinished action if needed.",
+      "ref": "",
+      "film": "",
+      "stage": "",
+      "after": "",
+      "eta_min": 120,
+      "status": "open",
+      "by": "",
+      "since": "",
+      "eta": "",
+      "created_by": "relay",
+      "created_at": "2026-11-25T13:09Z",
+      "result": "",
+      "history": [
+        {
+          "at": "2026-11-25T13:09Z",
+          "by": "relay",
+          "what": "added"
+        }
+      ],
+      "remaining_action": "Verify readiness: J3530 (claudecode): privacy-check, rebase, push, open PRs & merge green codex/J3512-resume (HOS) + codex/J3512-registry (OWB); then close J3512. Do not re-upload ",
+      "kind": "review",
+      "recheck_of": "J3512",
+      "mini_only": true,
+      "due": "2026-11-25T12:00:00+00:00",
+      "due_kind": "condition-verification"
     }
   ],
   "focus": [
