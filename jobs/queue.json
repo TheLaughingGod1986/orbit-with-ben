@@ -282826,20 +282826,35 @@
           "at": "2026-11-25T12:32Z",
           "by": "gemini",
           "what": "claimed"
+        },
+        {
+          "at": "2026-11-25T12:34Z",
+          "by": "gemini",
+          "what": "step 0 of 6 done: Claimed J3125; reading J3707 Chief decision and checking HOS API/Buffer/CDP 9460 tools"
         }
       ],
-      "remaining_action": "Unschedule sY0PSQFxjp8 (clear publishAt, leave Private), cancel 3 Buffer posts, update UPLOADS/BUFFER_POSTS/library/LEARNINGS row 36 before Thu 26 Nov 18:00Z",
+      "remaining_action": "Verify Chief authority, J3707 ruling, and current API/Buffer/Studio state",
       "due": "2026-11-24T12:00:00Z",
       "kind": "studio",
       "plain": "Check whether other Shorts are reaching viewers before the vaccine test airs",
       "progress": {
         "step": 0,
-        "of": 3,
-        "at": "2026-11-25T12:32Z",
+        "of": 6,
+        "at": "2026-11-25T12:34Z",
         "by": "gemini",
-        "default_plan": true,
-        "note": "Starting: check the brief, complete the work, verify the result"
-      }
+        "plan": [
+          "Verify authority and live state",
+          "Unschedule sY0PSQFxjp8 and capture Studio receipt",
+          "Cancel 3 Buffer posts",
+          "Update and merge OWB records and LEARNINGS row 36",
+          "Update and merge HOS library and run checks",
+          "Post desk and thread reports and close J3125"
+        ],
+        "note": "Claimed J3125; reading J3707 Chief decision and checking HOS API/Buffer/CDP 9460 tools"
+      },
+      "taskKeys": [
+        "HOS:007"
+      ]
     },
     {
       "id": "J3126",
