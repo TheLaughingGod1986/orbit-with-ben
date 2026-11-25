@@ -342655,17 +342655,22 @@
           "at": "2026-11-25T21:28Z",
           "by": "claudecode",
           "what": "step 1 of 6 done: Step 1 done: read pass-1 runner guards, RETAKE_BOARD_v01 (8 rows, take 2, prompt_retake + start_still hashes). No credits spent, no Flow opened."
+        },
+        {
+          "at": "2026-11-25T21:31Z",
+          "by": "claudecode",
+          "what": "step 3 of 6 done: Steps 2-3 done: runner built on HOS branch j3747-hos013-retake1-runner (d61a8212); plan + dry-run --floor 3000 pass (8 rows, 2x4, 800 cr, 0 clicks, 0 credits). No submit yet."
         }
       ],
-      "remaining_action": "Building the retake runner as a guarded wrapper over the pass-1 runner",
+      "remaining_action": "Arm and submit the 8 take-2 rows in tmux (2 batches of 4)",
       "due": "2026-12-01T18:00:00Z",
       "kind": "video",
       "plain": "Build guarded retake runner and mint take 2 for 013's 8 confirmed RETAKE plates before 5 Dec (800 Flow cr max, £0 cash)",
       "mini_only": true,
       "progress": {
-        "step": 1,
+        "step": 3,
         "of": 6,
-        "at": "2026-11-25T21:28Z",
+        "at": "2026-11-25T21:31Z",
         "by": "claudecode",
         "plan": [
           "Read rules and pass-1 runner",
@@ -342675,7 +342680,7 @@
           "Verify, archive, sheets, receipt",
           "PR, desk post, park for Chief"
         ],
-        "note": "Step 1 done: read pass-1 runner guards, RETAKE_BOARD_v01 (8 rows, take 2, prompt_retake + start_still hashes). No credit"
+        "note": "Steps 2-3 done: runner built on HOS branch j3747-hos013-retake1-runner (d61a8212); plan + dry-run --floor 3000 pass (8 r"
       },
       "taskKeys": [
         "HOS:013"
