@@ -322028,9 +322028,14 @@
           "at": "2026-11-25T10:19Z",
           "by": "relay",
           "what": "condition verification queued: J3700"
+        },
+        {
+          "at": "2026-11-25T10:59Z",
+          "by": "gemini",
+          "what": "condition recorded; next verification 2026-11-25T11:45:00Z"
         }
       ],
-      "remaining_action": "Privacy-review, push, open PRs, and merge green for codex/J3512-resume (HOS) and codex/J3512-registry (OWB) via claudecode (J3530) after 2026-11-25T10:00:00Z reset; do not re-upload mpK3D6S7WLk",
+      "remaining_action": "J3530 (claudecode): privacy-check, rebase, push, open PRs & merge green codex/J3512-resume (HOS) + codex/J3512-registry (OWB); then close J3512. Do not re-upload mpK3D6S7WLk.",
       "due": "2026-11-25T12:00:00Z",
       "kind": "studio",
       "plain": "Upload the dinosaur extinction Short you approved as a private video",
@@ -322067,12 +322072,11 @@
       },
       "hold": {
         "type": "input",
-        "condition": "publish via Claude Code: /Volumes/MiniWork/scratch/J3512-resume codex/J3512-resume at 5008d480 (unpushed; HOS origin/main 6b44c291 lacks J3512_short_A_v01/ and mpK3D6S7WLk; supersedes PR #749) and /Volumes/MiniWork/scratch/J3512-registry codex/J3512-registry at bfb399e268 (unpushed; OWB origin/main a3b2f0e708 lacks mpK3D6S7WLk; OWB stash@{0} holds byte-identical copy). PRIVATE UPLOAD COMPLETE mpK3D6S7WLk no publishAt, no Buffer posts; do not re-upload. J3611 owns conditional scheduling. Waiting on claudecode reset at 2026-11-25T10:00:00Z for J3530 publication.",
-        "check_at": "2026-11-25T11:19:38+00:00",
-        "last_recheck": "J3658",
-        "checked_at": "2026-11-25T01:31:39+00:00",
-        "checked_by": "gemini",
-        "recheck_task": "J3700"
+        "condition": "Acting-Chief ruling (J3700, 25 Nov 10:58Z): publication condition STILL UNMET; do NOT reopen J3512 (kind=studio would misroute and collide with J3530). Private upload mpK3D6S7WLk (What Killed the Dinosaurs?, exact Ben-approved SHA256 ea29e26487d6631416449c9adf712f51b1b9508db06b7b6c29edc4236970fe59, HOS:ASK:J2933.1) is verified complete (25 Nov HOS snapshot: private, publishAt null, 0 views); do NOT re-upload. Both finished branches remain local-only and unmerged: (1) HOS /Volumes/MiniWork/scratch/J3512-resume codex/J3512-resume at 5008d48040e4f696fcdf4e3cb6042ae7736a2285 (2 ahead, 53 behind HOS origin/main d58d290e; supersedes PR #749; HOS main lacks J3512_short_A_v01/ and mpK3D6S7WLk); (2) OWB /Volumes/MiniWork/scratch/J3512-registry codex/J3512-registry at bfb399e2680be44bdfbb4af1b6f791859e0fde76 (1 ahead, 1148 behind OWB origin/main; OWB main lacks mpK3D6S7WLk in social/hos/UPLOADS.json and BUFFER_POSTS.json; OWB stash@{0} preserves copy). claudecode is UP and owns formal privacy review, rebase onto current mains (preserving J3511 sMPlMuxK3YU entries), push, PRs, and green-check merges under open urgent job J3530 (for=claudecode, due 12:00Z; only open claudecode job). Close J3512 once both PRs merge on origin/main. J3611 owns conditional scheduling and remaining Studio checks.",
+        "check_at": "2026-11-25T11:45:00Z",
+        "last_recheck": "J3700",
+        "checked_at": "2026-11-25T10:59:10+00:00",
+        "checked_by": "gemini"
       }
     },
     {
